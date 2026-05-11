@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'entity::Reference' has no attributes.
+The class 'entity::Attribute' has no attributes.
+The class 'Type' has no attributes.
+The class 'entity::Datatype' has no attributes.
+The class 'entity::NamedElement' has the following attributes: 'name' of type str.
+The class 'entity::Type' has no attributes.
+The class 'entity::Namespace' has no attributes.
+The class 'entity::Entity' has no attributes.
+The class 'NamedElement' has no attributes.
+'entity::Namespace' is a specialization of 'NamedElement'.
+'entity::Entity' is a specialization of 'Type'.
+'entity::Attribute' is a specialization of 'NamedElement'.
+'entity::Datatype' is a specialization of 'Type'.
+'entity::Reference' is a specialization of 'NamedElement'.
+'entity::Type' is a specialization of 'NamedElement'.
+'entity::Reference' (role 'entity_Reference', cardinality 0..*) is associated with 'entity::Entity' (role 'entity_Entity', cardinality 0..*).
+'entity::Attribute' (role 'entity_Attribute11', cardinality 0..*) is associated with 'entity::Datatype' (role 'entity_Datatype', cardinality 0..*).
+'entity::Entity' (role 'entity_Entity2', cardinality 0..*) is associated with 'entity::Attribute' (role 'entity_Attribute', cardinality 0..*).
+'entity::Namespace' (role 'entity_Namespace4', cardinality 0..*) is associated with 'entity::Namespace' (role 'entity_Namespace6', cardinality 0..*).
+'entity::Reference' (role 'entity_Reference8', cardinality 0..*) is associated with 'entity::Entity' (role 'entity_Entity9', cardinality 0..*).
+'entity::Namespace' (role 'entity_Namespace', cardinality 0..*) is associated with 'entity::Type' (role 'entity_Type', cardinality 0..*).

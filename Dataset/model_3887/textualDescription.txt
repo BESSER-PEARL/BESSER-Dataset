@@ -1,0 +1,148 @@
+The model has 43 class(es).
+The class 'gama::ELayer' has the following attributes: 'text' of type str; 'file' of type str; 'color' of type str; 'isColorCst' of type str; 'chart_type' of type str; 'size' of type str; 'agents' of type str; 'aspect' of type str; 'colorRBG' of type str; 'type' of type str; 'species' of type str; 'grid' of type str; 'showLines' of type bool; 'gamlCode' of type str.
+The class 'gama::EFacet' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'EGamaLink' has no attributes.
+The class 'gama::EGUIExperiment' has no attributes.
+The class 'gama::ELayerAspect' has the following attributes: 'texture' of type str; 'rotate' of type str; 'type' of type str; 'path' of type str; 'empty' of type str; 'isColorCst' of type str; 'points' of type str; 'textSize' of type str; 'text' of type str; 'imageSize' of type str; 'shape' of type str; 'heigth' of type str; 'expression' of type str; 'at' of type str; 'shapeType' of type str; 'depth' of type str; 'color' of type str; 'radius' of type str; 'size' of type str; 'gamlCode' of type str; 'colorRBG' of type str; 'width' of type str.
+The class 'gama::EMonitor' has the following attributes: 'value' of type str.
+The class 'gama::EEquationLink' has no attributes.
+The class 'EExperiment' has no attributes.
+The class 'gama::EExperimentLink' has no attributes.
+The class 'gama::ETaskLink' has no attributes.
+The class 'gama::EGamaLink' has no attributes.
+The class 'gama::EParameter' has the following attributes: 'category' of type str; 'step' of type str; 'init' of type str; 'among' of type str; 'variable' of type str; 'max' of type str; 'min' of type str.
+The class 'gama::EAspectLink' has no attributes.
+The class 'gama::EReflexLink' has no attributes.
+The class 'gama::EEquation' has the following attributes: 'gamlCode' of type str.
+The class 'gama::EDisplay' has the following attributes: 'layerList' of type str; 'gamlCode' of type str; 'defineGamlCode' of type bool.
+The class 'gama::EPerceive' has the following attributes: 'gamlCode' of type str.
+The class 'gama::ESpecies' has the following attributes: 'reflexList' of type str; 'init' of type str; 'skills' of type str.
+The class 'gama::EWorldAgent' has no attributes.
+The class 'gama::EState' has the following attributes: 'gamlCode' of type str.
+The class 'gama::EVariable' has the following attributes: 'update' of type str; 'function' of type str; 'init' of type str; 'max' of type str; 'error' of type str; 'hasError' of type str; 'type' of type str; 'min' of type str; 'name' of type str.
+The class 'gama::EActionLink' has no attributes.
+The class 'gama::EChartLayer' has the following attributes: 'value' of type str; 'color' of type str; 'style' of type str.
+The class 'gama::EPerceiveLink' has no attributes.
+The class 'gama::EGrid' has no attributes.
+The class 'gama::EAction' has the following attributes: 'returnType' of type str; 'gamlCode' of type str.
+The class 'gama::ESubSpeciesLink' has no attributes.
+The class 'gama::EGamaModel' has the following attributes: 'name' of type str.
+The class 'ESpecies' has no attributes.
+The class 'gama::ERuleLink' has no attributes.
+The class 'gama::ETask' has the following attributes: 'gamlCode' of type str.
+The class 'gama::EStateLink' has no attributes.
+The class 'gama::EGamaObject' has the following attributes: 'error' of type str; 'colorPicto' of type str; 'name' of type str; 'hasError' of type str.
+The class 'gama::EPlan' has the following attributes: 'gamlCode' of type str.
+The class 'gama::EInheritLink' has no attributes.
+The class 'gama::ERule' has the following attributes: 'gamlCode' of type str.
+The class 'gama::EDisplayLink' has no attributes.
+The class 'gama::EReflex' has the following attributes: 'gamlCode' of type str.
+The class 'EGamaObject' has no attributes.
+The class 'gama::EPlanLink' has no attributes.
+The class 'gama::EAspect' has the following attributes: 'defineGamlCode' of type bool; 'gamlCode' of type str.
+The class 'gama::EExperiment' has no attributes.
+The class 'gama::EBatchExperiment' has no attributes.
+'gama::EAspectLink' is a specialization of 'EGamaLink'.
+'gama::EInheritLink' is a specialization of 'EGamaLink'.
+'gama::EStateLink' is a specialization of 'EGamaLink'.
+'gama::EActionLink' is a specialization of 'EGamaLink'.
+'gama::EReflexLink' is a specialization of 'EGamaLink'.
+'gama::EPerceive' is a specialization of 'EGamaObject'.
+'gama::EBatchExperiment' is a specialization of 'EExperiment'.
+'gama::EPerceiveLink' is a specialization of 'EGamaLink'.
+'gama::EChartLayer' is a specialization of 'EGamaObject'.
+'gama::ELayer' is a specialization of 'EGamaObject'.
+'gama::EAction' is a specialization of 'EGamaObject'.
+'gama::ERuleLink' is a specialization of 'EGamaLink'.
+'gama::EExperimentLink' is a specialization of 'EGamaLink'.
+'gama::EAspect' is a specialization of 'EGamaObject'.
+'gama::EEquation' is a specialization of 'EGamaObject'.
+'gama::EGrid' is a specialization of 'ESpecies'.
+'gama::EPlanLink' is a specialization of 'EGamaLink'.
+'gama::ESpecies' is a specialization of 'EGamaObject'.
+'gama::EExperiment' is a specialization of 'ESpecies'.
+'gama::EEquationLink' is a specialization of 'EGamaLink'.
+'gama::EState' is a specialization of 'EGamaObject'.
+'gama::ESubSpeciesLink' is a specialization of 'EGamaLink'.
+'gama::EDisplay' is a specialization of 'EGamaObject'.
+'gama::ELayerAspect' is a specialization of 'EGamaObject'.
+'gama::EReflex' is a specialization of 'EGamaObject'.
+'gama::EParameter' is a specialization of 'EGamaObject'.
+'gama::EPlan' is a specialization of 'EGamaObject'.
+'gama::EMonitor' is a specialization of 'EGamaObject'.
+'gama::ETaskLink' is a specialization of 'EGamaLink'.
+'gama::EDisplayLink' is a specialization of 'EGamaLink'.
+'gama::EWorldAgent' is a specialization of 'ESpecies'.
+'gama::ERule' is a specialization of 'EGamaObject'.
+'gama::EGUIExperiment' is a specialization of 'EExperiment'.
+'gama::ETask' is a specialization of 'EGamaObject'.
+'gama::ERule' (role 'gama_ERule157', cardinality 0..*) is associated with 'gama::ERuleLink' (role 'gama_ERuleLink156', cardinality 0..*).
+'gama::EExperiment' (role 'gama_EExperiment52', cardinality 0..*) is associated with 'gama::EParameter' (role 'gama_EParameter', cardinality 0..*).
+'gama::ETaskLink' (role 'gama_ETaskLink143', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies144', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies64', cardinality 0..*) is associated with 'gama::ESubSpeciesLink' (role 'gama_ESubSpeciesLink63', cardinality 0..*).
+'gama::EFacet' (role 'gama_EFacet119', cardinality 0..*) is associated with 'gama::EGamaObject' (role 'gama_EGamaObject120', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies21', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies19', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies105', cardinality 0..*) is associated with 'gama::EExperimentLink' (role 'gama_EExperimentLink104', cardinality 0..*).
+'gama::EState' (role 'gama_EState135', cardinality 0..*) is associated with 'gama::EStateLink' (role 'gama_EStateLink134', cardinality 0..*).
+'gama::EGamaObject' (role 'objects', cardinality 0..*) is associated with 'gama::EGamaModel' (role 'EGamaModel', cardinality 0..*).
+'gama::EEquationLink' (role 'gama_EEquationLink164', cardinality 0..*) is associated with 'gama::EEquation' (role 'gama_EEquation165', cardinality 0..*).
+'gama::EExperimentLink' (role 'gama_EExperimentLink48', cardinality 0..*) is associated with 'gama::EExperiment' (role 'gama_EExperiment', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies31', cardinality 0..*) is associated with 'gama::EPerceiveLink' (role 'gama_EPerceiveLink', cardinality 0..*).
+'gama::ETaskLink' (role 'gama_ETaskLink', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies29', cardinality 0..*).
+'gama::EGamaObject' (role 'gama_EGamaObject97', cardinality 0..*) is associated with 'gama::EVariable' (role 'gama_EVariable96', cardinality 0..*).
+'gama::EDisplay' (role 'gama_EDisplay100', cardinality 0..*) is associated with 'gama::ELayer' (role 'gama_ELayer99', cardinality 0..*).
+'gama::EActionLink' (role 'gama_EActionLink69', cardinality 0..*) is associated with 'gama::EAction' (role 'gama_EAction70', cardinality 0..*).
+'gama::EGamaObject' (role 'gama_EGamaObject', cardinality 0..*) is associated with 'gama::EFacet' (role 'gama_EFacet', cardinality 0..*).
+'gama::EDisplayLink' (role 'gama_EDisplayLink89', cardinality 0..*) is associated with 'gama::EDisplay' (role 'gama_EDisplay', cardinality 0..*).
+'gama::EPlanLink' (role 'gama_EPlanLink122', cardinality 0..*) is associated with 'gama::EPlan' (role 'gama_EPlan', cardinality 0..*).
+'gama::EPlan' (role 'gama_EPlan129', cardinality 0..*) is associated with 'gama::EPlanLink' (role 'gama_EPlanLink128', cardinality 0..*).
+'gama::EPlanLink' (role 'gama_EPlanLink131', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies132', cardinality 0..*).
+'gama::ERule' (role 'gama_ERule', cardinality 0..*) is associated with 'gama::ERuleLink' (role 'gama_ERuleLink154', cardinality 0..*).
+'gama::EStateLink' (role 'gama_EStateLink137', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies138', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies117', cardinality 0..*) is associated with 'gama::EInheritLink' (role 'gama_EInheritLink116', cardinality 0..*).
+'gama::EAspect' (role 'gama_EAspect44', cardinality 0..*) is associated with 'gama::ELayerAspect' (role 'gama_ELayerAspect', cardinality 0..*).
+'gama::EGUIExperiment' (role 'gama_EGUIExperiment', cardinality 0..*) is associated with 'gama::EDisplayLink' (role 'gama_EDisplayLink87', cardinality 0..*).
+'gama::EAspectLink' (role 'gama_EAspectLink75', cardinality 0..*) is associated with 'gama::EAspect' (role 'gama_EAspect76', cardinality 0..*).
+'gama::EExperimentLink' (role 'gama_EExperimentLink107', cardinality 0..*) is associated with 'gama::EExperiment' (role 'gama_EExperiment108', cardinality 0..*).
+'gama::EReflexLink' (role 'gama_EReflexLink46', cardinality 0..*) is associated with 'gama::EReflex' (role 'gama_EReflex', cardinality 0..*).
+'gama::EVariable' (role 'gama_EVariable40', cardinality 0..*) is associated with 'gama::EAction' (role 'gama_EAction39', cardinality 0..*).
+'gama::EPerceive' (role 'gama_EPerceive149', cardinality 0..*) is associated with 'gama::EPerceiveLink' (role 'gama_EPerceiveLink148', cardinality 0..*).
+'gama::EChartLayer' (role 'gama_EChartLayer', cardinality 0..*) is associated with 'gama::ELayer' (role 'gama_ELayer102', cardinality 0..*).
+'gama::ETask' (role 'gama_ETask', cardinality 0..*) is associated with 'gama::ETaskLink' (role 'gama_ETaskLink126', cardinality 0..*).
+'gama::ELayer' (role 'gama_ELayer', cardinality 0..*) is associated with 'gama::EDisplay' (role 'gama_EDisplay91', cardinality 0..*).
+'gama::EGamaModel' (role 'model', cardinality 0..*) is associated with 'gama::EGamaObject' (role 'EGamaObject', cardinality 0..*).
+'gama::EReflexLink' (role 'gama_EReflexLink', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies13', cardinality 0..*).
+'gama::ERuleLink' (role 'gama_ERuleLink', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies33', cardinality 0..*).
+'gama::EEquationLink' (role 'gama_EEquationLink162', cardinality 0..*) is associated with 'gama::EEquation' (role 'gama_EEquation', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies35', cardinality 0..*) is associated with 'gama::EEquationLink' (role 'gama_EEquationLink', cardinality 0..*).
+'gama::EAction' (role 'gama_EAction', cardinality 0..*) is associated with 'gama::EActionLink' (role 'gama_EActionLink37', cardinality 0..*).
+'gama::EDisplayLink' (role 'gama_EDisplayLink', cardinality 0..*) is associated with 'gama::EExperiment' (role 'gama_EExperiment50', cardinality 0..*).
+'gama::EReflex' (role 'gama_EReflex82', cardinality 0..*) is associated with 'gama::EReflexLink' (role 'gama_EReflexLink81', cardinality 0..*).
+'gama::EAspect' (role 'gama_EAspect111', cardinality 0..*) is associated with 'gama::ELayerAspect' (role 'gama_ELayerAspect110', cardinality 0..*).
+'gama::EPerceiveLink' (role 'gama_EPerceiveLink146', cardinality 0..*) is associated with 'gama::EPerceive' (role 'gama_EPerceive', cardinality 0..*).
+'gama::EExperiment' (role 'gama_EExperiment54', cardinality 0..*) is associated with 'gama::EMonitor' (role 'gama_EMonitor', cardinality 0..*).
+'gama::EGamaLink' (role 'gama_EGamaLink', cardinality 0..*) is associated with 'gama::EGamaObject' (role 'gama_EGamaObject56', cardinality 0..*).
+'gama::EEquationLink' (role 'gama_EEquationLink167', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies168', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies27', cardinality 0..*) is associated with 'gama::EStateLink' (role 'gama_EStateLink', cardinality 0..*).
+'gama::ESubSpeciesLink' (role 'gama_ESubSpeciesLink66', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies67', cardinality 0..*).
+'gama::EVariable' (role 'gama_EVariable', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies', cardinality 0..*).
+'gama::EInheritLink' (role 'gama_EInheritLink', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies23', cardinality 0..*).
+'gama::EState' (role 'gama_EState', cardinality 0..*) is associated with 'gama::EStateLink' (role 'gama_EStateLink124', cardinality 0..*).
+'gama::EDisplayLink' (role 'gama_EDisplayLink94', cardinality 0..*) is associated with 'gama::EDisplay' (role 'gama_EDisplay93', cardinality 0..*).
+'gama::ETask' (role 'gama_ETask141', cardinality 0..*) is associated with 'gama::ETaskLink' (role 'gama_ETaskLink140', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies152', cardinality 0..*) is associated with 'gama::EPerceiveLink' (role 'gama_EPerceiveLink151', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies73', cardinality 0..*) is associated with 'gama::EActionLink' (role 'gama_EActionLink72', cardinality 0..*).
+'gama::EGamaModel' (role 'model2', cardinality 0..*) is associated with 'gama::EGamaLink' (role 'EGamaLink', cardinality 0..*).
+'gama::ERuleLink' (role 'gama_ERuleLink159', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies160', cardinality 0..*).
+'gama::EGamaLink' (role 'gama_EGamaLink58', cardinality 0..*) is associated with 'gama::EGamaObject' (role 'gama_EGamaObject59', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies9', cardinality 0..*) is associated with 'gama::EAspectLink' (role 'gama_EAspectLink', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies15', cardinality 0..*) is associated with 'gama::ESubSpeciesLink' (role 'gama_ESubSpeciesLink', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies79', cardinality 0..*) is associated with 'gama::EAspectLink' (role 'gama_EAspectLink78', cardinality 0..*).
+'gama::EAspectLink' (role 'gama_EAspectLink42', cardinality 0..*) is associated with 'gama::EAspect' (role 'gama_EAspect', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies114', cardinality 0..*) is associated with 'gama::EInheritLink' (role 'gama_EInheritLink113', cardinality 0..*).
+'gama::EGamaLink' (role 'links', cardinality 0..*) is associated with 'gama::EGamaModel' (role 'EGamaModel61', cardinality 0..*).
+'gama::EActionLink' (role 'gama_EActionLink', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies11', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies25', cardinality 0..*) is associated with 'gama::EPlanLink' (role 'gama_EPlanLink', cardinality 0..*).
+'gama::EReflexLink' (role 'gama_EReflexLink84', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies85', cardinality 0..*).
+'gama::ESpecies' (role 'gama_ESpecies7', cardinality 0..*) is associated with 'gama::EExperimentLink' (role 'gama_EExperimentLink', cardinality 0..*).
+'gama::ESubSpeciesLink' (role 'gama_ESubSpeciesLink18', cardinality 0..*) is associated with 'gama::ESpecies' (role 'gama_ESpecies17', cardinality 0..*).

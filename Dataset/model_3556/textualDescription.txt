@@ -1,0 +1,176 @@
+The model has 73 class(es).
+The class 'nuSMV::ArrayType' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'nuSMV::Type' has no attributes.
+The class 'SimpleExpression' has no attributes.
+The class 'nuSMV::FrozenVariableDeclaration' has no attributes.
+The class 'nuSMV::ParsExpression' has the following attributes: 'isNext' of type bool.
+The class 'SimpleType' has no attributes.
+The class 'nuSMV::NuSmvModel' has no attributes.
+The class 'nuSMV::BinaryExpression' has the following attributes: 'op' of type str; 'operator' of type str.
+The class 'nuSMV::TransConstraint' has the following attributes: 'semicolon' of type bool.
+The class 'nuSMV::DefineBody' has the following attributes: 'var' of type str; 'semicolon' of type bool.
+The class 'nuSMV::ConstantsDeclaration' has the following attributes: 'constants' of type str; 'semicolon' of type bool.
+The class 'nuSMV::UnsignedWordType' has the following attributes: 'uWordNumber' of type str.
+The class 'nuSMV::InitBody' has no attributes.
+The class 'nuSMV::SingleRTCTLExpression' has no attributes.
+The class 'nuSMV::SimpleType' has no attributes.
+The class 'nuSMV::FormalParameter' has the following attributes: 'name' of type str.
+The class 'nuSMV::SetValueParameter' has no attributes.
+The class 'nuSMV::FairnessConstraint' has the following attributes: 'semicolon' of type bool.
+The class 'nuSMV::RangeExpression' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'nuSMV::RTCTLExpression' has no attributes.
+The class 'nuSMV::Not' has no attributes.
+The class 'nuSMV::JusticeExpression' has no attributes.
+The class 'nuSMV::AssignBody' has the following attributes: 'array' of type str; 'semicolon' of type bool.
+The class 'nuSMV::VarBody' has the following attributes: 'name' of type str; 'semicolon' of type bool.
+The class 'nuSMV::CompassionExpression' has no attributes.
+The class 'nuSMV::AsyncrProcessType' has no attributes.
+The class 'FairnessConstraint' has no attributes.
+The class 'nuSMV::Var' has no attributes.
+The class 'nuSMV::InvarConstraint' has the following attributes: 'semicolon' of type bool.
+The class 'nuSMV::CTLExpression' has no attributes.
+The class 'RTCTLExpression' has no attributes.
+The class 'nuSMV::NextExpression' has no attributes.
+The class 'nuSMV::IntervalExpression' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'nuSMV::LTLExpression' has no attributes.
+The class 'nuSMV::SyncrProcessType' has no attributes.
+The class 'nuSMV::NextBody' has no attributes.
+The class 'nuSMV::CaseSimpleExpression' has no attributes.
+The class 'nuSMV::BooleanType' has no attributes.
+The class 'Type' has no attributes.
+The class 'nuSMV::SignedWordType' has the following attributes: 'signedNumber' of type str.
+The class 'nuSMV::FairnessExpression' has no attributes.
+The class 'nuSMV::UntilCTLexpression' has the following attributes: 'ea' of type str.
+The class 'nuSMV::IntervalType' has the following attributes: 'low' of type str; 'high' of type str.
+The class 'nuSMV::ModuleType' has no attributes.
+The class 'nuSMV::UnaryFunctionExpression' has the following attributes: 'function' of type str.
+The class 'nuSMV::InitConstraint' has the following attributes: 'semicolon' of type bool.
+The class 'ModuleElement' has no attributes.
+The class 'nuSMV::VarBodyAssign' has no attributes.
+The class 'nuSMV::Module' has the following attributes: 'name' of type str.
+The class 'nuSMV::LtlSpecification' has the following attributes: 'name' of type str; 'nameId' of type bool; 'semicolon' of type bool.
+The class 'nuSMV::CaseSimpleAssignementExpression' has no attributes.
+The class 'nuSMV::EObject' has no attributes.
+The class 'nuSMV::CtlSpecification' has the following attributes: 'semicolon' of type bool; 'name' of type str; 'nameKeyWord' of type bool; 'specKeyWord' of type str.
+The class 'nuSMV::ComputeSpecification' has the following attributes: 'minMax' of type str.
+The class 'nuSMV::ValueExpression' has the following attributes: 'value' of type str.
+The class 'ModuleType' has no attributes.
+The class 'nuSMV::EnumType' has no attributes.
+The class 'nuSMV::WordExpression' has the following attributes: 'value' of type str.
+The class 'nuSMV::Val' has the following attributes: 'num' of type str; 'name' of type str.
+The class 'nuSMV::SetElementExpression' has no attributes.
+The class 'nuSMV::UnaryRTCTLExpression' has the following attributes: 'unary' of type str.
+The class 'nuSMV::WordType' has the following attributes: 'wordNumber' of type str.
+The class 'nuSMV::VariableDeclaration' has no attributes.
+The class 'AssignBody' has no attributes.
+The class 'nuSMV::InvarSpecification' has the following attributes: 'semicolon' of type bool; 'name' of type str.
+The class 'nuSMV::SetExpression' has no attributes.
+The class 'nuSMV::ModuleElement' has no attributes.
+The class 'nuSMV::DefineDeclaration' has the following attributes: 'define' of type str.
+The class 'nuSMV::IVariableDeclaration' has no attributes.
+The class 'nuSMV::AssignConstraintElement' has the following attributes: 'assign' of type str.
+The class 'nuSMV::IsaDeclaration' has the following attributes: 'id' of type str.
+The class 'nuSMV::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'nuSMV::SimpleExpression' has no attributes.
+The enumeration 'operators' has the following literals: 'le', 'v', 's', 'ge', 'and_', 'or_', 'u', 'xor', 'l', 't', 'g', 'dis', 'xnor', 'equal'.
+'nuSMV::InvarSpecification' is a specialization of 'ModuleElement'.
+'nuSMV::UntilCTLexpression' is a specialization of 'SimpleExpression'.
+'nuSMV::FrozenVariableDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::SignedWordType' is a specialization of 'SimpleType'.
+'nuSMV::WordExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::VarBodyAssign' is a specialization of 'AssignBody'.
+'nuSMV::CaseSimpleExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::SyncrProcessType' is a specialization of 'ModuleType'.
+'nuSMV::LtlSpecification' is a specialization of 'ModuleElement'.
+'nuSMV::IntervalType' is a specialization of 'SimpleType'.
+'nuSMV::ValueExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::FairnessExpression' is a specialization of 'FairnessConstraint'.
+'nuSMV::ArrayType' is a specialization of 'SimpleType'.
+'nuSMV::InitConstraint' is a specialization of 'ModuleElement'.
+'nuSMV::IntervalExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::ParsExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::CompassionExpression' is a specialization of 'FairnessConstraint'.
+'nuSMV::AsyncrProcessType' is a specialization of 'ModuleType'.
+'nuSMV::BooleanType' is a specialization of 'SimpleType'.
+'nuSMV::UnsignedWordType' is a specialization of 'SimpleType'.
+'nuSMV::InvarConstraint' is a specialization of 'ModuleElement'.
+'nuSMV::IsaDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::IVariableDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::JusticeExpression' is a specialization of 'FairnessConstraint'.
+'nuSMV::WordType' is a specialization of 'SimpleType'.
+'nuSMV::VariableDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::CtlSpecification' is a specialization of 'ModuleElement'.
+'nuSMV::Var' is a specialization of 'SimpleExpression'.
+'nuSMV::AssignConstraintElement' is a specialization of 'ModuleElement'.
+'nuSMV::UnaryExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::SetExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::DefineDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::SingleRTCTLExpression' is a specialization of 'RTCTLExpression'.
+'nuSMV::UnaryFunctionExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::Not' is a specialization of 'SimpleExpression'.
+'nuSMV::UnaryRTCTLExpression' is a specialization of 'RTCTLExpression'.
+'nuSMV::SetElementExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::EnumType' is a specialization of 'SimpleType'.
+'nuSMV::BinaryExpression' is a specialization of 'SimpleExpression'.
+'nuSMV::FairnessConstraint' is a specialization of 'ModuleElement'.
+'nuSMV::InitBody' is a specialization of 'AssignBody'.
+'nuSMV::ModuleType' is a specialization of 'Type'.
+'nuSMV::ConstantsDeclaration' is a specialization of 'ModuleElement'.
+'nuSMV::NextBody' is a specialization of 'AssignBody'.
+'nuSMV::SimpleType' is a specialization of 'Type'.
+'nuSMV::ComputeSpecification' is a specialization of 'ModuleElement'.
+'nuSMV::TransConstraint' is a specialization of 'ModuleElement'.
+'nuSMV::SetValueParameter' is a specialization of 'SimpleExpression'.
+'nuSMV::UnaryFunctionExpression' (role 'nuSMV_UnaryFunctionExpression', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression100', cardinality 0..*).
+'nuSMV::ComputeSpecification' (role 'nuSMV_ComputeSpecification', cardinality 0..*) is associated with 'nuSMV::RTCTLExpression' (role 'nuSMV_RTCTLExpression', cardinality 0..*).
+'nuSMV::UnaryExpression' (role 'nuSMV_UnaryExpression', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression85', cardinality 0..*).
+'nuSMV::CTLExpression' (role 'nuSMV_CTLExpression', cardinality 0..*) is associated with 'nuSMV::CtlSpecification' (role 'nuSMV_CtlSpecification', cardinality 0..*).
+'nuSMV::InvarConstraint' (role 'nuSMV_InvarConstraint', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression31', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody52', cardinality 0..*) is associated with 'nuSMV::ModuleType' (role 'nuSMV_ModuleType51', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody9', cardinality 0..*) is associated with 'nuSMV::FrozenVariableDeclaration' (role 'nuSMV_FrozenVariableDeclaration', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody', cardinality 0..*) is associated with 'nuSMV::VariableDeclaration' (role 'nuSMV_VariableDeclaration', cardinality 0..*).
+'nuSMV::DefineDeclaration' (role 'nuSMV_DefineDeclaration', cardinality 0..*) is associated with 'nuSMV::DefineBody' (role 'nuSMV_DefineBody', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression29', cardinality 0..*) is associated with 'nuSMV::InitConstraint' (role 'nuSMV_InitConstraint', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression27', cardinality 0..*) is associated with 'nuSMV::TransConstraint' (role 'nuSMV_TransConstraint', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression40', cardinality 0..*) is associated with 'nuSMV::CompassionExpression' (role 'nuSMV_CompassionExpression39', cardinality 0..*).
+'nuSMV::RTCTLExpression' (role 'nuSMV_RTCTLExpression72', cardinality 0..*) is associated with 'nuSMV::ComputeSpecification' (role 'nuSMV_ComputeSpecification71', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression59', cardinality 0..*) is associated with 'nuSMV::CaseSimpleAssignementExpression' (role 'nuSMV_CaseSimpleAssignementExpression58', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression83', cardinality 0..*) is associated with 'nuSMV::ParsExpression' (role 'nuSMV_ParsExpression', cardinality 0..*).
+'nuSMV::SingleRTCTLExpression' (role 'nuSMV_SingleRTCTLExpression', cardinality 0..*) is associated with 'nuSMV::CTLExpression' (role 'nuSMV_CTLExpression102', cardinality 0..*).
+'nuSMV::InvarSpecification' (role 'nuSMV_InvarSpecification', cardinality 0..*) is associated with 'nuSMV::NextExpression' (role 'nuSMV_NextExpression43', cardinality 0..*).
+'nuSMV::AssignConstraintElement' (role 'nuSMV_AssignConstraintElement', cardinality 0..*) is associated with 'nuSMV::AssignBody' (role 'nuSMV_AssignBody', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression68', cardinality 0..*) is associated with 'nuSMV::LTLExpression' (role 'nuSMV_LTLExpression67', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression76', cardinality 0..*) is associated with 'nuSMV::BinaryExpression' (role 'nuSMV_BinaryExpression', cardinality 0..*).
+'nuSMV::UnaryRTCTLExpression' (role 'nuSMV_UnaryRTCTLExpression', cardinality 0..*) is associated with 'nuSMV::RangeExpression' (role 'nuSMV_RangeExpression', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression62', cardinality 0..*) is associated with 'nuSMV::CaseSimpleAssignementExpression' (role 'nuSMV_CaseSimpleAssignementExpression61', cardinality 0..*).
+'nuSMV::ModuleType' (role 'nuSMV_ModuleType48', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression49', cardinality 0..*).
+'nuSMV::InitBody' (role 'nuSMV_InitBody', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression24', cardinality 0..*).
+'nuSMV::NextExpression' (role 'nuSMV_NextExpression', cardinality 0..*) is associated with 'nuSMV::NextBody' (role 'nuSMV_NextBody', cardinality 0..*).
+'nuSMV::AssignBody' (role 'nuSMV_AssignBody19', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression20', cardinality 0..*).
+'nuSMV::Module' (role 'nuSMV_Module4', cardinality 0..*) is associated with 'nuSMV::ModuleElement' (role 'nuSMV_ModuleElement', cardinality 0..*).
+'nuSMV::Not' (role 'nuSMV_Not', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression81', cardinality 0..*).
+'nuSMV::EnumType' (role 'nuSMV_EnumType', cardinality 0..*) is associated with 'nuSMV::Val' (role 'nuSMV_Val', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression55', cardinality 0..*) is associated with 'nuSMV::NextExpression' (role 'nuSMV_NextExpression54', cardinality 0..*).
+'nuSMV::DefineBody' (role 'nuSMV_DefineBody14', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody7', cardinality 0..*) is associated with 'nuSMV::IVariableDeclaration' (role 'nuSMV_IVariableDeclaration', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody11', cardinality 0..*) is associated with 'nuSMV::Type' (role 'nuSMV_Type', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression37', cardinality 0..*) is associated with 'nuSMV::CompassionExpression' (role 'nuSMV_CompassionExpression', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression90', cardinality 0..*) is associated with 'nuSMV::Var' (role 'nuSMV_Var89', cardinality 0..*).
+'nuSMV::FormalParameter' (role 'nuSMV_FormalParameter94', cardinality 0..*) is associated with 'nuSMV::SetValueParameter' (role 'nuSMV_SetValueParameter', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression33', cardinality 0..*) is associated with 'nuSMV::FairnessExpression' (role 'nuSMV_FairnessExpression', cardinality 0..*).
+'nuSMV::Module' (role 'nuSMV_Module', cardinality 0..*) is associated with 'nuSMV::NuSmvModel' (role 'nuSMV_NuSmvModel', cardinality 0..*).
+'nuSMV::UntilCTLexpression' (role 'nuSMV_UntilCTLexpression', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression98', cardinality 0..*).
+'nuSMV::AssignBody' (role 'nuSMV_AssignBody17', cardinality 0..*) is associated with 'nuSMV::EObject' (role 'nuSMV_EObject', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression65', cardinality 0..*) is associated with 'nuSMV::CTLExpression' (role 'nuSMV_CTLExpression64', cardinality 0..*).
+'nuSMV::SimpleType' (role 'nuSMV_SimpleType', cardinality 0..*) is associated with 'nuSMV::ArrayType' (role 'nuSMV_ArrayType', cardinality 0..*).
+'nuSMV::Val' (role 'nuSMV_Val92', cardinality 0..*) is associated with 'nuSMV::SetElementExpression' (role 'nuSMV_SetElementExpression', cardinality 0..*).
+'nuSMV::LTLExpression' (role 'nuSMV_LTLExpression', cardinality 0..*) is associated with 'nuSMV::LtlSpecification' (role 'nuSMV_LtlSpecification', cardinality 0..*).
+'nuSMV::RTCTLExpression' (role 'nuSMV_RTCTLExpression106', cardinality 0..*) is associated with 'nuSMV::UnaryRTCTLExpression' (role 'nuSMV_UnaryRTCTLExpression105', cardinality 0..*).
+'nuSMV::FormalParameter' (role 'nuSMV_FormalParameter', cardinality 0..*) is associated with 'nuSMV::Module' (role 'nuSMV_Module2', cardinality 0..*).
+'nuSMV::VarBodyAssign' (role 'nuSMV_VarBodyAssign', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression22', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression79', cardinality 0..*) is associated with 'nuSMV::BinaryExpression' (role 'nuSMV_BinaryExpression78', cardinality 0..*).
+'nuSMV::JusticeExpression' (role 'nuSMV_JusticeExpression', cardinality 0..*) is associated with 'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression35', cardinality 0..*).
+'nuSMV::SimpleExpression' (role 'nuSMV_SimpleExpression96', cardinality 0..*) is associated with 'nuSMV::SetExpression' (role 'nuSMV_SetExpression', cardinality 0..*).
+'nuSMV::CaseSimpleExpression' (role 'nuSMV_CaseSimpleExpression', cardinality 0..*) is associated with 'nuSMV::CaseSimpleAssignementExpression' (role 'nuSMV_CaseSimpleAssignementExpression', cardinality 0..*).
+'nuSMV::Module' (role 'nuSMV_Module46', cardinality 0..*) is associated with 'nuSMV::ModuleType' (role 'nuSMV_ModuleType', cardinality 0..*).
+'nuSMV::VarBody' (role 'nuSMV_VarBody87', cardinality 0..*) is associated with 'nuSMV::Var' (role 'nuSMV_Var', cardinality 0..*).

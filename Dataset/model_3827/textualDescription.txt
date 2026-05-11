@@ -1,0 +1,108 @@
+The model has 55 class(es).
+The class 'logo::symbol::Procedure' has no attributes.
+The class 'logo::statement::Forward' has no attributes.
+The class 'statement::logo::Expression' has no attributes.
+The class 'logo::Logo' has no attributes.
+The class 'logo::statement::PenDown' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'logo::symbol::Variable' has no attributes.
+The class 'logo::statement::ControlStatement' has no attributes.
+The class 'ControlStatement' has no attributes.
+The class 'expression::logo::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'logo::statement::ProcedureDefinition' has the following attributes: 'name' of type str.
+The class 'logo::Statement' has no attributes.
+The class 'logo::binary::Mult' has no attributes.
+The class 'Constant' has no attributes.
+The class 'logo::constant::IntValue' has the following attributes: 'value' of type int.
+The class 'logo::binary::Minus' has no attributes.
+The class 'logo::binary::Greater' has no attributes.
+The class 'ExtendedExpression' has no attributes.
+The class 'logo::value::IntValue' has the following attributes: 'value' of type int.
+The class 'logo::control::While' has no attributes.
+The class 'logo::statement::PenUp' has no attributes.
+The class 'logo::statement::Left' has no attributes.
+The class 'ProcedureDefinition' has no attributes.
+The class 'logo::expression::VariableRead' has the following attributes: 'name' of type str.
+The class 'logo::Expression' has no attributes.
+The class 'logo::binary::Div' has no attributes.
+The class 'logo::binary::Lower' has no attributes.
+The class 'logo::Parameter' has the following attributes: 'name' of type str.
+The class 'logo::constant::BoolValue' has the following attributes: 'value' of type bool.
+The class 'Symbol' has no attributes.
+The class 'logo::Symbol' has the following attributes: 'name' of type str.
+The class 'logo::unary::Opposite' has no attributes.
+The class 'logo::Value' has no attributes.
+The class 'logo::expression::ExtendedExpression' has no attributes.
+The class 'logo::binary::Equals' has no attributes.
+The class 'logo::control::If' has no attributes.
+The class 'logo::statement::ProcedureCall' has no attributes.
+The class 'logo::extended::Or' has no attributes.
+The class 'Value' has no attributes.
+The class 'logo::control::Repeat' has no attributes.
+The class 'logo::statement::Right' has no attributes.
+The class 'logo::extended::And' has no attributes.
+The class 'Block' has no attributes.
+The class 'logo::statement::Block' has no attributes.
+The class 'Statement' has no attributes.
+The class 'logo::binary::Plus' has no attributes.
+The class 'logo::expression::Constant' has no attributes.
+The class 'logo::value::BoolValue' has the following attributes: 'value' of type bool.
+The class 'logo::expression::UnaryExpression' has no attributes.
+The class 'logo::expression::BinaryExpression' has no attributes.
+The class 'statement::logo::Parameter' has no attributes.
+The class 'logo::unary::Not' has no attributes.
+The class 'statement::logo::Statement' has no attributes.
+'logo::unary::Not' is a specialization of 'UnaryExpression'.
+'logo::expression::UnaryExpression' is a specialization of 'Expression'.
+'logo::binary::Greater' is a specialization of 'BinaryExpression'.
+'logo::binary::Minus' is a specialization of 'BinaryExpression'.
+'logo::unary::Opposite' is a specialization of 'UnaryExpression'.
+'logo::statement::ProcedureDefinition' is a specialization of 'Statement'.
+'logo::statement::ProcedureCall' is a specialization of 'Statement'.
+'logo::expression::ExtendedExpression' is a specialization of 'Expression'.
+'logo::symbol::Procedure' is a specialization of 'Symbol'.
+'logo::binary::Mult' is a specialization of 'BinaryExpression'.
+'logo::symbol::Variable' is a specialization of 'Symbol'.
+'logo::binary::Lower' is a specialization of 'BinaryExpression'.
+'logo::expression::Constant' is a specialization of 'Expression'.
+'logo::binary::Div' is a specialization of 'BinaryExpression'.
+'logo::statement::ControlStatement' is a specialization of 'Statement'.
+'logo::extended::Or' is a specialization of 'ExtendedExpression'.
+'logo::control::If' is a specialization of 'ControlStatement'.
+'logo::value::BoolValue' is a specialization of 'Value'.
+'logo::constant::IntValue' is a specialization of 'Constant'.
+'logo::value::IntValue' is a specialization of 'Value'.
+'logo::statement::Forward' is a specialization of 'Statement'.
+'logo::statement::Right' is a specialization of 'Statement'.
+'logo::constant::BoolValue' is a specialization of 'Constant'.
+'logo::statement::Left' is a specialization of 'Statement'.
+'logo::statement::PenUp' is a specialization of 'Statement'.
+'logo::control::Repeat' is a specialization of 'ControlStatement'.
+'logo::expression::BinaryExpression' is a specialization of 'Expression'.
+'logo::statement::PenDown' is a specialization of 'Statement'.
+'logo::control::While' is a specialization of 'ControlStatement'.
+'logo::binary::Plus' is a specialization of 'BinaryExpression'.
+'logo::binary::Equals' is a specialization of 'BinaryExpression'.
+'logo::statement::Block' is a specialization of 'Statement'.
+'logo::expression::VariableRead' is a specialization of 'Expression'.
+'logo::extended::And' is a specialization of 'ExtendedExpression'.
+'logo::statement::ProcedureCall' (role 'logo_statement_ProcedureCall', cardinality 0..*) is associated with 'statement::logo::Expression' (role 'statement_logo_Expression10', cardinality 0..*).
+'logo::statement::ProcedureDefinition' (role 'logo_statement_ProcedureDefinition', cardinality 0..*) is associated with 'statement::logo::Parameter' (role 'statement_logo_Parameter', cardinality 0..*).
+'statement::logo::Expression' (role 'statement_logo_Expression5', cardinality 0..*) is associated with 'logo::statement::Forward' (role 'logo_statement_Forward', cardinality 0..*).
+'expression::logo::Expression' (role 'expression_logo_Expression28', cardinality 0..*) is associated with 'logo::expression::BinaryExpression' (role 'logo_expression_BinaryExpression27', cardinality 0..*).
+'logo::Statement' (role 'logo_Statement', cardinality 0..*) is associated with 'logo::Logo' (role 'logo_Logo', cardinality 0..*).
+'Block' (role 'Block22', cardinality 0..*) is associated with 'logo::control::While' (role 'logo_control_While', cardinality 0..*).
+'logo::expression::BinaryExpression' (role 'logo_expression_BinaryExpression', cardinality 0..*) is associated with 'expression::logo::Expression' (role 'expression_logo_Expression', cardinality 0..*).
+'Block' (role 'Block24', cardinality 0..*) is associated with 'logo::control::Repeat' (role 'logo_control_Repeat', cardinality 0..*).
+'expression::logo::Expression' (role 'expression_logo_Expression30', cardinality 0..*) is associated with 'logo::expression::UnaryExpression' (role 'logo_expression_UnaryExpression', cardinality 0..*).
+'statement::logo::Expression' (role 'statement_logo_Expression16', cardinality 0..*) is associated with 'logo::statement::ControlStatement' (role 'logo_statement_ControlStatement', cardinality 0..*).
+'statement::logo::Expression' (role 'statement_logo_Expression3', cardinality 0..*) is associated with 'logo::statement::Left' (role 'logo_statement_Left', cardinality 0..*).
+'logo::statement::ProcedureDefinition' (role 'logo_statement_ProcedureDefinition8', cardinality 0..*) is associated with 'statement::logo::Statement' (role 'statement_logo_Statement', cardinality 0..*).
+'logo::control::If' (role 'logo_control_If19', cardinality 0..*) is associated with 'Block' (role 'Block20', cardinality 0..*).
+'expression::logo::Expression' (role 'expression_logo_Expression32', cardinality 0..*) is associated with 'logo::expression::ExtendedExpression' (role 'logo_expression_ExtendedExpression', cardinality 0..*).
+'statement::logo::Expression' (role 'statement_logo_Expression', cardinality 0..*) is associated with 'logo::statement::Right' (role 'logo_statement_Right', cardinality 0..*).
+'ProcedureDefinition' (role 'ProcedureDefinition', cardinality 0..*) is associated with 'logo::statement::ProcedureCall' (role 'logo_statement_ProcedureCall12', cardinality 0..*).
+'logo::control::If' (role 'logo_control_If', cardinality 0..*) is associated with 'Block' (role 'Block', cardinality 0..*).
+'statement::logo::Statement' (role 'statement_logo_Statement14', cardinality 0..*) is associated with 'logo::statement::Block' (role 'logo_statement_Block', cardinality 0..*).

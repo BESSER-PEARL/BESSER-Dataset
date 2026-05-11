@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'Classifier' has no attributes.
+The class 'simpleUML::MM::Class' has the following attributes: 'is_persistent' of type bool.
+The class 'simpleUML::MM::Association' has the following attributes: 'name' of type str.
+The class 'simpleUML::MM::ClassModel' has no attributes.
+The class 'simpleUML::MM::PrimitiveDataType' has no attributes.
+The class 'simpleUML::MM::Attribute' has the following attributes: 'is_primary' of type bool; 'name' of type str.
+The class 'simpleUML::MM::Classifier' has the following attributes: 'name' of type str.
+'simpleUML::MM::PrimitiveDataType' is a specialization of 'Classifier'.
+'simpleUML::MM::Class' is a specialization of 'Classifier'.
+'simpleUML::MM::Association' (role 'simpleUML_MM_Association15', cardinality 0..*) is associated with 'simpleUML::MM::ClassModel' (role 'simpleUML_MM_ClassModel14', cardinality 0..*).
+'simpleUML::MM::Attribute' (role 'simpleUML_MM_Attribute7', cardinality 0..*) is associated with 'simpleUML::MM::Class' (role 'simpleUML_MM_Class6', cardinality 0..*).
+'simpleUML::MM::Class' (role 'simpleUML_MM_Class3', cardinality 0..*) is associated with 'simpleUML::MM::Association' (role 'simpleUML_MM_Association2', cardinality 0..*).
+'simpleUML::MM::Association' (role 'simpleUML_MM_Association', cardinality 0..*) is associated with 'simpleUML::MM::Class' (role 'simpleUML_MM_Class', cardinality 0..*).
+'simpleUML::MM::Class' (role 'simpleUML_MM_Class8', cardinality 0..*) is associated with 'simpleUML::MM::Class' (role 'simpleUML_MM_Class10', cardinality 0..*).
+'simpleUML::MM::ClassModel' (role 'simpleUML_MM_ClassModel', cardinality 0..*) is associated with 'simpleUML::MM::Classifier' (role 'simpleUML_MM_Classifier12', cardinality 0..*).
+'simpleUML::MM::Attribute' (role 'simpleUML_MM_Attribute', cardinality 0..*) is associated with 'simpleUML::MM::Classifier' (role 'simpleUML_MM_Classifier', cardinality 0..*).

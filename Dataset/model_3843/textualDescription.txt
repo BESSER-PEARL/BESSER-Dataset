@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'FKey' has no attributes.
+The class 'RDBMS::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Column' has no attributes.
+The class 'RDBMS::Table' has the following attributes: 'tipo' of type str; 'name' of type str.
+The class 'RDBMS::FKey' has no attributes.
+The class 'Table' has no attributes.
+The class 'RDBMS::Schema' has the following attributes: 'name' of type str.
+'RDBMS::Table' (role 'RDBMS_Table', cardinality 0..*) is associated with 'FKey' (role 'FKey', cardinality 0..*).
+'Table' (role 'Table11', cardinality 0..*) is associated with 'RDBMS::Schema' (role 'RDBMS_Schema', cardinality 0..*).
+'Column' (role 'Column9', cardinality 0..*) is associated with 'RDBMS::FKey' (role 'RDBMS_FKey8', cardinality 0..*).
+'Column' (role 'Column5', cardinality 0..*) is associated with 'RDBMS::Table' (role 'RDBMS_Table4', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'RDBMS::FKey' (role 'RDBMS_FKey', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'RDBMS::Table' (role 'RDBMS_Table2', cardinality 0..*).

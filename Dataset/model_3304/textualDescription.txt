@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'model::NodeDecorator' has no attributes.
+The class 'model::EdgeDecorator' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'Decorator' has no attributes.
+The class 'model::Graph' has no attributes.
+The class 'model::STEMTime' has the following attributes: 'time' of type date.
+The class 'model::GraphDecorator' has no attributes.
+The class 'model::Decorator' has the following attributes: 'progress' of type float; 'graphDecorated' of type bool; 'enabled' of type bool.
+The class 'model::Comparable' has no attributes.
+The class 'model::DynamicLabel' has no attributes.
+The class 'model::Model' has no attributes.
+'model::Model' is a specialization of 'Identifiable'.
+'model::NodeDecorator' is a specialization of 'Decorator'.
+'model::EdgeDecorator' is a specialization of 'Decorator'.
+'model::Decorator' is a specialization of 'Identifiable'.
+'model::GraphDecorator' is a specialization of 'Decorator'.
+'model::Model' (role 'model_Model7', cardinality 0..*) is associated with 'model::GraphDecorator' (role 'model_GraphDecorator', cardinality 0..*).
+'model::Model' (role 'model_Model2', cardinality 0..*) is associated with 'model::Model' (role 'model_Model', cardinality 0..*).
+'model::Model' (role 'model_Model11', cardinality 0..*) is associated with 'model::EdgeDecorator' (role 'model_EdgeDecorator', cardinality 0..*).
+'model::Model' (role 'model_Model5', cardinality 0..*) is associated with 'model::Graph' (role 'model_Graph', cardinality 0..*).
+'model::Decorator' (role 'decorator', cardinality 0..*) is associated with 'model::DynamicLabel' (role 'graph.ecoreDynamicLabel', cardinality 0..*).
+'model::Decorator' (role 'decorators', cardinality 0..*) is associated with 'model::Graph' (role 'graph.ecoreGraph', cardinality 0..*).
+'model::NodeDecorator' (role 'model_NodeDecorator', cardinality 0..*) is associated with 'model::Model' (role 'model_Model9', cardinality 0..*).

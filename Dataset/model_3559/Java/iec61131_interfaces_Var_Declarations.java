@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class iec61131_interfaces_Var_Declarations extends RNV_Declarations {
+
+    private boolean constant;
+
+
+
+    public iec61131_interfaces_Var_Declarations(
+        boolean constant    ) {
+        super(
+        );
+        this.constant = constant;
+    }
+
+
+    public boolean getConstant() {
+        return constant;
+    }
+
+    public void setConstant(boolean constant) {
+        this.constant = constant;
+    }
+
+
+}

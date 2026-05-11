@@ -1,0 +1,52 @@
+The model has 15 class(es).
+The class 'umlstatemachineselect::StateMachine' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'umlstatemachineselect::State' has the following attributes: 'isOrthogonal' of type bool; 'isSubmachineState' of type bool; 'isComposite' of type bool; 'isSimple' of type bool.
+The class 'umlstatemachineselect::PseudoState' has the following attributes: 'kind' of type str.
+The class 'Behavior' has no attributes.
+The class 'umlstatemachineselect::Behavior' has no attributes.
+The class 'umlstatemachineselect::Event' has no attributes.
+The class 'umlstatemachineselect::ConnectionPointReference' has no attributes.
+The class 'umlstatemachineselect::Constraint' has no attributes.
+The class 'umlstatemachineselect::Region' has no attributes.
+The class 'umlstatemachineselect::FinalState' has no attributes.
+The class 'State' has no attributes.
+The class 'umlstatemachineselect::Vertex' has no attributes.
+The class 'umlstatemachineselect::Trigger' has no attributes.
+The class 'umlstatemachineselect::Transition' has the following attributes: 'kind' of type str.
+The enumeration 'PseudostateKind' has the following literals: 'deepHistory', 'junction', 'fork', 'join', 'terminate', 'exitPoint', 'choice', 'shallowHistory', 'entryPoint', 'initial'.
+The enumeration 'TransitionKind' has the following literals: 'internal', 'external', 'local'.
+'umlstatemachineselect::StateMachine' is a specialization of 'Behavior'.
+'umlstatemachineselect::ConnectionPointReference' is a specialization of 'Vertex'.
+'umlstatemachineselect::PseudoState' is a specialization of 'Vertex'.
+'umlstatemachineselect::FinalState' is a specialization of 'State'.
+'umlstatemachineselect::State' is a specialization of 'Vertex'.
+'umlstatemachineselect::Event' (role 'umlstatemachineselect_Event', cardinality 0..*) is associated with 'umlstatemachineselect::Trigger' (role 'umlstatemachineselect_Trigger57', cardinality 0..*).
+'umlstatemachineselect::Vertex' (role 'subvertex', cardinality 0..*) is associated with 'umlstatemachineselect::Region' (role 'Region12', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'Region18', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'transition', cardinality 0..*).
+'umlstatemachineselect::Trigger' (role 'umlstatemachineselect_Trigger47', cardinality 0..*) is associated with 'umlstatemachineselect::State' (role 'umlstatemachineselect_State46', cardinality 0..*).
+'umlstatemachineselect::Behavior' (role 'umlstatemachineselect_Behavior', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'umlstatemachineselect_Transition', cardinality 0..*).
+'umlstatemachineselect::State' (role 'State51', cardinality 0..*) is associated with 'umlstatemachineselect::ConnectionPointReference' (role 'connection', cardinality 0..*).
+'umlstatemachineselect::Behavior' (role 'umlstatemachineselect_Behavior38', cardinality 0..*) is associated with 'umlstatemachineselect::State' (role 'umlstatemachineselect_State37', cardinality 0..*).
+'umlstatemachineselect::StateMachine' (role 'StateMachine33', cardinality 0..*) is associated with 'umlstatemachineselect::State' (role 'submachineState', cardinality 0..*).
+'umlstatemachineselect::State' (role 'umlstatemachineselect_State40', cardinality 0..*) is associated with 'umlstatemachineselect::Behavior' (role 'umlstatemachineselect_Behavior41', cardinality 0..*).
+'umlstatemachineselect::State' (role 'state31', cardinality 0..*) is associated with 'umlstatemachineselect::ConnectionPointReference' (role 'ConnectionPointReference', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'container', cardinality 0..*) is associated with 'umlstatemachineselect::Vertex' (role 'Vertex', cardinality 0..*).
+'umlstatemachineselect::Transition' (role 'outgoing', cardinality 0..*) is associated with 'umlstatemachineselect::Vertex' (role 'Vertex22', cardinality 0..*).
+'umlstatemachineselect::State' (role 'State', cardinality 0..*) is associated with 'umlstatemachineselect::StateMachine' (role 'submachine', cardinality 0..*).
+'umlstatemachineselect::PseudoState' (role 'PseudoState', cardinality 0..*) is associated with 'umlstatemachineselect::StateMachine' (role 'stateMachine3', cardinality 0..*).
+'umlstatemachineselect::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'umlstatemachineselect::Region' (role 'region', cardinality 0..*).
+'umlstatemachineselect::PseudoState' (role 'umlstatemachineselect_PseudoState55', cardinality 0..*) is associated with 'umlstatemachineselect::ConnectionPointReference' (role 'umlstatemachineselect_ConnectionPointReference54', cardinality 0..*).
+'umlstatemachineselect::Vertex' (role 'target', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'Transition16', cardinality 0..*).
+'umlstatemachineselect::Trigger' (role 'umlstatemachineselect_Trigger', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'umlstatemachineselect_Transition27', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'container7', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'Transition', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'Region', cardinality 0..*) is associated with 'umlstatemachineselect::StateMachine' (role 'stateMachine', cardinality 0..*).
+'umlstatemachineselect::State' (role 'umlstatemachineselect_State', cardinality 0..*) is associated with 'umlstatemachineselect::Behavior' (role 'umlstatemachineselect_Behavior35', cardinality 0..*).
+'umlstatemachineselect::Transition' (role 'Transition14', cardinality 0..*) is associated with 'umlstatemachineselect::Vertex' (role 'source', cardinality 0..*).
+'umlstatemachineselect::Constraint' (role 'umlstatemachineselect_Constraint', cardinality 0..*) is associated with 'umlstatemachineselect::Transition' (role 'umlstatemachineselect_Transition25', cardinality 0..*).
+'umlstatemachineselect::Transition' (role 'incoming', cardinality 0..*) is associated with 'umlstatemachineselect::Vertex' (role 'Vertex20', cardinality 0..*).
+'umlstatemachineselect::State' (role 'umlstatemachineselect_State43', cardinality 0..*) is associated with 'umlstatemachineselect::Constraint' (role 'umlstatemachineselect_Constraint44', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'region9', cardinality 0..*) is associated with 'umlstatemachineselect::State' (role 'State10', cardinality 0..*).
+'umlstatemachineselect::Region' (role 'Region29', cardinality 0..*) is associated with 'umlstatemachineselect::State' (role 'state', cardinality 0..*).
+'umlstatemachineselect::PseudoState' (role 'connectionPoint', cardinality 0..*) is associated with 'umlstatemachineselect::StateMachine' (role 'StateMachine49', cardinality 0..*).
+'umlstatemachineselect::ConnectionPointReference' (role 'umlstatemachineselect_ConnectionPointReference', cardinality 0..*) is associated with 'umlstatemachineselect::PseudoState' (role 'umlstatemachineselect_PseudoState', cardinality 0..*).

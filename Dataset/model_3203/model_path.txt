@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ZeligsoftDev/CX4CBDDS/bundles/com.zeligsoft.domain.omg.corba.dsl/src-gen/com/zeligsoft/domain/omg/corba/dsl/IDL.ecore

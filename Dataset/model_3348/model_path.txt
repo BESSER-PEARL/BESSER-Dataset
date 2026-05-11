@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fabiostrocco/Swrtj/org.xtext.example.swrtj/src-gen/org/xtext/example/Swrtj.ecore

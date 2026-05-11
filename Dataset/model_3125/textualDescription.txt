@@ -1,0 +1,24 @@
+The model has 7 class(es).
+The class 'Classifier' has no attributes.
+The class 'UML::Association' has the following attributes: 'name' of type str.
+The class 'UML::Class' has the following attributes: 'kind' of type str.
+The class 'UML::Classifier' has the following attributes: 'name' of type str.
+The class 'UML::Attribute' has the following attributes: 'name' of type str.
+The class 'UML::PrimitiveDataType' has no attributes.
+The class 'UML::Package' has the following attributes: 'name' of type str.
+'UML::PrimitiveDataType' is a specialization of 'Classifier'.
+'UML::Class' is a specialization of 'Classifier'.
+'UML::Class' (role 'destination', cardinality 0..*) is associated with 'UML::Association' (role 'Association12', cardinality 0..*).
+'UML::Attribute' (role 'Attribute18', cardinality 0..*) is associated with 'UML::Classifier' (role 'type', cardinality 0..*).
+'UML::Package' (role 'Package', cardinality 0..*) is associated with 'UML::Classifier' (role 'classifier', cardinality 0..*).
+'UML::Class' (role 'Class25', cardinality 0..*) is associated with 'UML::Association' (role 'destinationOf', cardinality 0..*).
+'UML::Class' (role 'Class', cardinality 0..*) is associated with 'UML::Class' (role 'subclass', cardinality 0..*).
+'UML::Class' (role 'general', cardinality 0..*) is associated with 'UML::Class' (role 'Class8', cardinality 0..*).
+'UML::Class' (role 'Class23', cardinality 0..*) is associated with 'UML::Association' (role 'sourceOf', cardinality 0..*).
+'UML::Association' (role 'Association10', cardinality 0..*) is associated with 'UML::Class' (role 'source', cardinality 0..*).
+'UML::Attribute' (role 'typeOf', cardinality 0..*) is associated with 'UML::Classifier' (role 'Classifier16', cardinality 0..*).
+'UML::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'UML::Package' (role 'namespace', cardinality 0..*).
+'UML::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'UML::Class' (role 'owner', cardinality 0..*).
+'UML::Association' (role 'association', cardinality 0..*) is associated with 'UML::Package' (role 'Package21', cardinality 0..*).
+'UML::Class' (role 'Class14', cardinality 0..*) is associated with 'UML::Attribute' (role 'attribute', cardinality 0..*).
+'UML::Association' (role 'Association', cardinality 0..*) is associated with 'UML::Package' (role 'namespace2', cardinality 0..*).

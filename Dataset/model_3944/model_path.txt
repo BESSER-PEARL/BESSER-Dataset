@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nicoPae/atl2nmfs/resources/PetriNet2PathExp/PathExp.ecore

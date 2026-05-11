@@ -1,0 +1,100 @@
+The model has 46 class(es).
+The class 'ProvidedRole' has no attributes.
+The class 'componentBasedSystem::dataTypes::Complex' has no attributes.
+The class 'componentBasedSystem::behaviourDescription::Branch' has no attributes.
+The class 'componentBasedSystem::ComponentBasedSystem' has no attributes.
+The class 'dataTypes::ReturnType' has no attributes.
+The class 'dataTypes::ParameterType' has no attributes.
+The class 'componentBasedSystem::Environment' has no attributes.
+The class 'componentBasedSystem::roles::RequiredRole' has no attributes.
+The class 'componentBasedSystem::dataTypes::Simple' has the following attributes: 'kind' of type str.
+The class 'roles::componentBasedSystem::AssemblyContext' has no attributes.
+The class 'componentBasedSystem::Repository' has no attributes.
+The class 'componentBasedSystem::Allocation' has no attributes.
+The class 'componentBasedSystem::roles::AssemblyConnector' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::DelegationConnector' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::roles::ProvidedRole' has no attributes.
+The class 'componentBasedSystem::dataTypes::ParameterType' has no attributes.
+The class 'componentBasedSystem::dataTypes::ReturnType' has no attributes.
+The class 'Simple' has no attributes.
+The class 'DescriptionElement' has no attributes.
+The class 'componentBasedSystem::Interface' has the following attributes: 'name' of type str.
+The class 'AssemblyConnector' has no attributes.
+The class 'componentBasedSystem::behaviourDescription::InternalAction' has no attributes.
+The class 'componentBasedSystem::dataTypes::Type' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::behaviourDescription::DescriptionElement' has no attributes.
+The class 'Role' has no attributes.
+The class 'componentBasedSystem::Container' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::roles::Role' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::dataTypes::Void' has no attributes.
+The class 'ReturnType' has no attributes.
+The class 'componentBasedSystem::behaviourDescription::Loop' has no attributes.
+The class 'componentBasedSystem::Service' has no attributes.
+The class 'componentBasedSystem::Parameter' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'componentBasedSystem::behaviourDescription::BehaviourDescription' has no attributes.
+The class 'ParameterType' has no attributes.
+The class 'componentBasedSystem::AllocationContext' has no attributes.
+The class 'componentBasedSystem::behaviourDescription::ExternalCall' has no attributes.
+The class 'componentBasedSystem::Link' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::Component' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::CompositeComponent' has no attributes.
+The class 'BehaviourDescription' has no attributes.
+The class 'RequiredRole' has no attributes.
+The class 'componentBasedSystem::Signature' has the following attributes: 'name' of type str.
+The class 'componentBasedSystem::AssemblyContext' has the following attributes: 'name' of type str.
+The class 'Component' has no attributes.
+The class 'roles::componentBasedSystem::Interface' has no attributes.
+The enumeration 'simpleTypes' has the following literals: 'int', 'date', 'string', 'double', 'boolean', 'map', 'char', 'list', 'float', 'long'.
+'componentBasedSystem::dataTypes::Simple' is a specialization of 'dataTypes::ReturnType'.
+'componentBasedSystem::dataTypes::Complex' is a specialization of 'dataTypes::ReturnType'.
+'componentBasedSystem::dataTypes::Complex' is a specialization of 'dataTypes::ParameterType'.
+'componentBasedSystem::dataTypes::ParameterType' is a specialization of 'Type'.
+'componentBasedSystem::behaviourDescription::Loop' is a specialization of 'DescriptionElement'.
+'componentBasedSystem::dataTypes::Void' is a specialization of 'ReturnType'.
+'componentBasedSystem::dataTypes::ReturnType' is a specialization of 'Type'.
+'componentBasedSystem::roles::RequiredRole' is a specialization of 'Role'.
+'componentBasedSystem::CompositeComponent' is a specialization of 'Component'.
+'componentBasedSystem::roles::ProvidedRole' is a specialization of 'Role'.
+'componentBasedSystem::behaviourDescription::ExternalCall' is a specialization of 'DescriptionElement'.
+'componentBasedSystem::behaviourDescription::InternalAction' is a specialization of 'DescriptionElement'.
+'componentBasedSystem::behaviourDescription::Branch' is a specialization of 'DescriptionElement'.
+'componentBasedSystem::dataTypes::Simple' is a specialization of 'dataTypes::ParameterType'.
+'componentBasedSystem::Signature' (role 'componentBasedSystem_Signature33', cardinality 0..*) is associated with 'ReturnType' (role 'ReturnType', cardinality 0..*).
+'componentBasedSystem::roles::Role' (role 'componentBasedSystem_roles_Role', cardinality 0..*) is associated with 'roles::componentBasedSystem::Interface' (role 'roles_componentBasedSystem_Interface', cardinality 0..*).
+'componentBasedSystem::Service' (role 'componentBasedSystem_Service62', cardinality 0..*) is associated with 'componentBasedSystem::Signature' (role 'componentBasedSystem_Signature63', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole', cardinality 0..*) is associated with 'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem14', cardinality 0..*).
+'componentBasedSystem::CompositeComponent' (role 'componentBasedSystem_CompositeComponent28', cardinality 0..*) is associated with 'componentBasedSystem::DelegationConnector' (role 'componentBasedSystem_DelegationConnector', cardinality 0..*).
+'componentBasedSystem::Interface' (role 'componentBasedSystem_Interface54', cardinality 0..*) is associated with 'componentBasedSystem::Repository' (role 'componentBasedSystem_Repository53', cardinality 0..*).
+'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem', cardinality 0..*) is associated with 'componentBasedSystem::AssemblyContext' (role 'componentBasedSystem_AssemblyContext', cardinality 0..*).
+'componentBasedSystem::Parameter' (role 'componentBasedSystem_Parameter', cardinality 0..*) is associated with 'componentBasedSystem::Signature' (role 'componentBasedSystem_Signature31', cardinality 0..*).
+'Simple' (role 'Simple', cardinality 0..*) is associated with 'componentBasedSystem::dataTypes::Complex' (role 'componentBasedSystem_dataTypes_Complex', cardinality 0..*).
+'roles::componentBasedSystem::AssemblyContext' (role 'roles_componentBasedSystem_AssemblyContext80', cardinality 0..*) is associated with 'componentBasedSystem::roles::AssemblyConnector' (role 'componentBasedSystem_roles_AssemblyConnector79', cardinality 0..*).
+'Role' (role 'Role', cardinality 0..*) is associated with 'componentBasedSystem::DelegationConnector' (role 'componentBasedSystem_DelegationConnector45', cardinality 0..*).
+'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem4', cardinality 0..*) is associated with 'AssemblyConnector' (role 'AssemblyConnector', cardinality 0..*).
+'componentBasedSystem::roles::AssemblyConnector' (role 'componentBasedSystem_roles_AssemblyConnector77', cardinality 0..*) is associated with 'roles::componentBasedSystem::AssemblyContext' (role 'roles_componentBasedSystem_AssemblyContext', cardinality 0..*).
+'componentBasedSystem::Repository' (role 'componentBasedSystem_Repository', cardinality 0..*) is associated with 'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem8', cardinality 0..*).
+'componentBasedSystem::Interface' (role 'componentBasedSystem_Interface', cardinality 0..*) is associated with 'componentBasedSystem::Signature' (role 'componentBasedSystem_Signature', cardinality 0..*).
+'componentBasedSystem::Service' (role 'componentBasedSystem_Service', cardinality 0..*) is associated with 'componentBasedSystem::Component' (role 'componentBasedSystem_Component17', cardinality 0..*).
+'DescriptionElement' (role 'DescriptionElement69', cardinality 0..*) is associated with 'componentBasedSystem::behaviourDescription::BehaviourDescription' (role 'componentBasedSystem_behaviourDescription_BehaviourDescription', cardinality 0..*).
+'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem6', cardinality 0..*) is associated with 'componentBasedSystem::Allocation' (role 'componentBasedSystem_Allocation', cardinality 0..*).
+'componentBasedSystem::AllocationContext' (role 'componentBasedSystem_AllocationContext', cardinality 0..*) is associated with 'componentBasedSystem::Container' (role 'componentBasedSystem_Container40', cardinality 0..*).
+'componentBasedSystem::Link' (role 'componentBasedSystem_Link', cardinality 0..*) is associated with 'componentBasedSystem::Container' (role 'componentBasedSystem_Container', cardinality 0..*).
+'BehaviourDescription' (role 'BehaviourDescription', cardinality 0..*) is associated with 'componentBasedSystem::Component' (role 'componentBasedSystem_Component', cardinality 0..*).
+'componentBasedSystem::Component' (role 'componentBasedSystem_Component38', cardinality 0..*) is associated with 'componentBasedSystem::AssemblyContext' (role 'componentBasedSystem_AssemblyContext37', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole75', cardinality 0..*) is associated with 'componentBasedSystem::roles::AssemblyConnector' (role 'componentBasedSystem_roles_AssemblyConnector74', cardinality 0..*).
+'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem2', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'DescriptionElement' (role 'DescriptionElement67', cardinality 0..*) is associated with 'componentBasedSystem::behaviourDescription::Branch' (role 'componentBasedSystem_behaviourDescription_Branch', cardinality 0..*).
+'componentBasedSystem::Link' (role 'componentBasedSystem_Link51', cardinality 0..*) is associated with 'componentBasedSystem::Environment' (role 'componentBasedSystem_Environment50', cardinality 0..*).
+'componentBasedSystem::Component' (role 'componentBasedSystem_Component57', cardinality 0..*) is associated with 'componentBasedSystem::Repository' (role 'componentBasedSystem_Repository56', cardinality 0..*).
+'componentBasedSystem::Component' (role 'componentBasedSystem_Component19', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole20', cardinality 0..*).
+'componentBasedSystem::Environment' (role 'componentBasedSystem_Environment47', cardinality 0..*) is associated with 'componentBasedSystem::Container' (role 'componentBasedSystem_Container48', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole23', cardinality 0..*) is associated with 'componentBasedSystem::Component' (role 'componentBasedSystem_Component22', cardinality 0..*).
+'componentBasedSystem::Allocation' (role 'componentBasedSystem_Allocation59', cardinality 0..*) is associated with 'componentBasedSystem::AllocationContext' (role 'componentBasedSystem_AllocationContext60', cardinality 0..*).
+'componentBasedSystem::Environment' (role 'componentBasedSystem_Environment', cardinality 0..*) is associated with 'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem10', cardinality 0..*).
+'componentBasedSystem::Parameter' (role 'componentBasedSystem_Parameter35', cardinality 0..*) is associated with 'ParameterType' (role 'ParameterType', cardinality 0..*).
+'componentBasedSystem::roles::AssemblyConnector' (role 'componentBasedSystem_roles_AssemblyConnector', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole72', cardinality 0..*).
+'componentBasedSystem::AssemblyContext' (role 'componentBasedSystem_AssemblyContext43', cardinality 0..*) is associated with 'componentBasedSystem::AllocationContext' (role 'componentBasedSystem_AllocationContext42', cardinality 0..*).
+'DescriptionElement' (role 'DescriptionElement', cardinality 0..*) is associated with 'componentBasedSystem::behaviourDescription::Loop' (role 'componentBasedSystem_behaviourDescription_Loop', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole', cardinality 0..*) is associated with 'componentBasedSystem::ComponentBasedSystem' (role 'componentBasedSystem_ComponentBasedSystem12', cardinality 0..*).
+'componentBasedSystem::CompositeComponent' (role 'componentBasedSystem_CompositeComponent', cardinality 0..*) is associated with 'componentBasedSystem::AssemblyContext' (role 'componentBasedSystem_AssemblyContext26', cardinality 0..*).

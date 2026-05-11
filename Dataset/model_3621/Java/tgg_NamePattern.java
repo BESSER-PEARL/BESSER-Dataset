@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class tgg_NamePattern extends NamedElements, OperatorPattern {
+
+
+
+
+    public tgg_NamePattern(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

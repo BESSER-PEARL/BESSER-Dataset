@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'EObjectTreeElement' has no attributes.
+The class 'treeproxy::internal::EObject' has no attributes.
+The class 'internal::treeproxy::EReferenceTreeElement' has no attributes.
+The class 'internal::treeproxy::EStructuralFeatureTreeElement' has no attributes.
+The class 'treeproxy::internal::EAttribute' has no attributes.
+The class 'internal::treeproxy::TreeElement' has no attributes.
+The class 'internal::treeproxy::EAttributeTreeElement' has no attributes.
+The class 'treeproxy::internal::EReference' has no attributes.
+The class 'internal::treeproxy::EObjectTreeElement' has no attributes.
+The class 'EStructuralFeatureTreeElement' has no attributes.
+The class 'TreeElement' has no attributes.
+'internal::treeproxy::EReferenceTreeElement' is a specialization of 'EStructuralFeatureTreeElement'.
+'internal::treeproxy::EStructuralFeatureTreeElement' is a specialization of 'TreeElement'.
+'internal::treeproxy::EObjectTreeElement' is a specialization of 'TreeElement'.
+'internal::treeproxy::EAttributeTreeElement' is a specialization of 'EStructuralFeatureTreeElement'.
+'internal::treeproxy::EObjectTreeElement' (role 'parent', cardinality 0..*) is associated with 'EStructuralFeatureTreeElement' (role 'EStructuralFeatureTreeElement', cardinality 0..*).
+'internal::treeproxy::EStructuralFeatureTreeElement' (role 'parent8', cardinality 0..*) is associated with 'EObjectTreeElement' (role 'EObjectTreeElement9', cardinality 0..*).
+'treeproxy::internal::EAttribute' (role 'treeproxy_internal_EAttribute', cardinality 0..*) is associated with 'internal::treeproxy::EAttributeTreeElement' (role 'internal_treeproxy_EAttributeTreeElement', cardinality 0..*).
+'internal::treeproxy::EObjectTreeElement' (role 'internal_treeproxy_EObjectTreeElement', cardinality 0..*) is associated with 'treeproxy::internal::EObject' (role 'treeproxy_internal_EObject', cardinality 0..*).
+'EStructuralFeatureTreeElement' (role 'EStructuralFeatureTreeElement3', cardinality 0..*) is associated with 'internal::treeproxy::EObjectTreeElement' (role 'referedEObjectTE', cardinality 0..*).
+'EObjectTreeElement' (role 'EObjectTreeElement', cardinality 0..*) is associated with 'internal::treeproxy::EStructuralFeatureTreeElement' (role 'sfTreeElmement', cardinality 0..*).
+'treeproxy::internal::EReference' (role 'treeproxy_internal_EReference', cardinality 0..*) is associated with 'internal::treeproxy::EReferenceTreeElement' (role 'internal_treeproxy_EReferenceTreeElement', cardinality 0..*).

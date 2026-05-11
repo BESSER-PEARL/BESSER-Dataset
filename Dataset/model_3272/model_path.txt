@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mde-subtyping/web/subtyping.sm.atl/extended/binding0_reuse_mm.ecore

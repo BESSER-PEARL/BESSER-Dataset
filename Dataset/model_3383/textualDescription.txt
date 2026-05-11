@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'errors::Column' has no attributes.
+The class 'errors::Fk' has no attributes.
+The class 'errors::Errores' has no attributes.
+The class 'errors::Registry' has no attributes.
+The class 'errors::Error' has the following attributes: 'id' of type str; 'apply' of type str.
+The class 'Error' has no attributes.
+The class 'errors::CheckError' has the following attributes: 'porcent' of type str.
+The class 'errors::Table' has no attributes.
+The class 'errors::Ck' has no attributes.
+The class 'errors::ForeignError' has the following attributes: 'porcent' of type str.
+'errors::CheckError' is a specialization of 'Error'.
+'errors::ForeignError' is a specialization of 'Error'.
+'errors::ForeignError' (role 'errors_ForeignError6', cardinality 0..*) is associated with 'errors::Column' (role 'errors_Column', cardinality 0..*).
+'errors::ForeignError' (role 'errors_ForeignError10', cardinality 0..*) is associated with 'errors::Registry' (role 'errors_Registry', cardinality 0..*).
+'errors::ForeignError' (role 'errors_ForeignError3', cardinality 0..*) is associated with 'errors::Table' (role 'errors_Table4', cardinality 0..*).
+'errors::Registry' (role 'errors_Registry17', cardinality 0..*) is associated with 'errors::CheckError' (role 'errors_CheckError16', cardinality 0..*).
+'errors::Table' (role 'errors_Table14', cardinality 0..*) is associated with 'errors::CheckError' (role 'errors_CheckError13', cardinality 0..*).
+'errors::Ck' (role 'errors_Ck', cardinality 0..*) is associated with 'errors::CheckError' (role 'errors_CheckError', cardinality 0..*).
+'errors::Errores' (role 'errors_Errores', cardinality 0..*) is associated with 'errors::Error' (role 'errors_Error', cardinality 0..*).
+'errors::ForeignError' (role 'errors_ForeignError8', cardinality 0..*) is associated with 'errors::Fk' (role 'errors_Fk', cardinality 0..*).
+'errors::Table' (role 'errors_Table', cardinality 0..*) is associated with 'errors::ForeignError' (role 'errors_ForeignError', cardinality 0..*).

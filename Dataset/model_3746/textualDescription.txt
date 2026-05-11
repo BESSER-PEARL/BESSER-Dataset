@@ -1,0 +1,256 @@
+The model has 104 class(es).
+The class 'core::actionstep::RunQuery' has the following attributes: 'scrollable' of type bool; 'readOnly' of type bool; 'resultSetName' of type str.
+The class 'core::actionstep::InvokeSaflet' has the following attributes: 'labelText' of type str.
+The class 'core::actionstep::DBQueryId' has the following attributes: 'jdbcStatement' of type str; 'id' of type str.
+The class 'core::actionstep::UpdatetRow' has no attributes.
+The class 'core::saflet::Saflet' has the following attributes: 'active' of type bool; 'name' of type str; 'id' of type int; 'description' of type str; 'version' of type str.
+The class 'core::actionstep::CloseDBConnection' has no attributes.
+The class 'core::saflet::SafletEnvironment' has no attributes.
+The class 'core::scripting::SafletScriptFactory' has no attributes.
+The class 'core::actionstep::NextRow' has no attributes.
+The class 'core::actionstep::ExecuteQuery' has the following attributes: 'resultSetName' of type str.
+The class 'core::saflet::SafletContext' has the following attributes: 'sessionVariables' of type str; 'exceptions' of type str.
+The class 'SafletEnvironment' has no attributes.
+The class 'core::PlatformDisposition' has the following attributes: 'platformID' of type str; 'platformDependant' of type bool.
+The class 'GetColMapping' has no attributes.
+The class 'actionstep::Heavyweight' has no attributes.
+The class 'core::initiator::Initiator' has no attributes.
+The class 'core::actionstep::ExecuteScript' has no attributes.
+The class 'core::actionstep::Heavyweight' has no attributes.
+The class 'actionstep::core::EStringToStringMapEntry' has no attributes.
+The class 'SafletScript' has no attributes.
+The class 'core::actionstep::MoveToLastRow' has no attributes.
+The class 'SafletScriptEnvironment' has no attributes.
+The class 'core::actionstep::Finally' has no attributes.
+The class 'SafletContext' has no attributes.
+The class 'core::actionstep::MoveToInsertRow' has no attributes.
+The class 'core::scripting::RhinoScriptScope' has no attributes.
+The class 'core::actionstep::OutputParameter' has no attributes.
+The class 'actionstep::ActionStep' has no attributes.
+The class 'ScriptScopeFactory' has no attributes.
+The class 'core::scripting::RhinoSafletScriptFactory' has no attributes.
+The class 'core::actionstep::SetColValue' has the following attributes: 'setAsDatatype' of type str.
+The class 'core::actionstep::DBConnectionId' has the following attributes: 'jdbcConnection' of type str; 'id' of type str.
+The class 'Output' has no attributes.
+The class 'core::actionstep::QueryParamMapping' has the following attributes: 'setAsDatatype' of type str.
+The class 'QueryParamMapping' has no attributes.
+The class 'core::initiator::InitiatorInfo' has no attributes.
+The class 'core::ProductIdentifiable' has the following attributes: 'productId' of type str.
+The class 'actionstep::core::EObject' has no attributes.
+The class 'core::scripting::RhinoSafletScript' has the following attributes: 'rhinoScript' of type str.
+The class 'core::actionstep::PreviousRow' has no attributes.
+The class 'core::actionstep::SetColValues' has no attributes.
+The class 'core::actionstep::InputItem' has the following attributes: 'required' of type bool; 'parameterName' of type str.
+The class 'core::actionstep::ParameterizedInitiator' has no attributes.
+The class 'core::actionstep::DebugLog' has the following attributes: 'debugLevel' of type str.
+The class 'core::ThreadSensitive' has no attributes.
+The class 'core::actionstep::DynamicValue' has the following attributes: 'text' of type str; 'type' of type str.
+The class 'core::scripting::ScriptScopeFactory' has no attributes.
+The class 'core::scripting::ScriptScope' has the following attributes: 'scopeObject' of type str.
+The class 'core::call::CallSource2' has no attributes.
+The class 'core::call::CallConsumer2' has no attributes.
+The class 'Item' has no attributes.
+The class 'core::scripting::RhinoSafletScriptEnvironment' has no attributes.
+The class 'ThreadSensitive' has no attributes.
+The class 'core::actionstep::ActionStep' has the following attributes: 'active' of type bool; 'paused' of type bool; 'name' of type str.
+The class 'core::call::SafiCall' has the following attributes: 'uuid' of type str; 'name' of type str.
+The class 'CallConsumer1' has no attributes.
+The class 'core::call::CallConsumer1' has no attributes.
+The class 'ActionStep' has no attributes.
+The class 'core::actionstep::DBQueryParamId' has the following attributes: 'id' of type str; 'index' of type int.
+The class 'OutputParameter' has no attributes.
+The class 'InputItem' has no attributes.
+The class 'DBQueryParamId' has no attributes.
+The class 'core::actionstep::InsertRow' has no attributes.
+The class 'DBConnectionId' has no attributes.
+The class 'core::scripting::SafletScriptEnvironment' has no attributes.
+The class 'SetColMapping' has no attributes.
+The class 'core::scripting::SafletScript' has the following attributes: 'name' of type str; 'scriptText' of type str.
+The class 'core::actionstep::ExecuteUpdate' has no attributes.
+The class 'Finally' has no attributes.
+The class 'core::actionstep::Assignment' has no attributes.
+The class 'core::scripting::RhinoScriptScopeFactory' has no attributes.
+The class 'CaseItem' has no attributes.
+The class 'core::actionstep::Output' has the following attributes: 'name' of type str; 'outputType' of type str.
+The class 'ScriptScope' has no attributes.
+The class 'ProductIdentifiable' has no attributes.
+The class 'core::actionstep::GetColMapping' has the following attributes: 'getAsDatatype' of type str.
+The class 'core::actionstep::CaseItem' has no attributes.
+The class 'core::actionstep::Item' has the following attributes: 'labelText' of type str.
+The class 'core::call::CallSource1' has no attributes.
+The class 'core::actionstep::OpenDBConnection' has no attributes.
+The class 'core::actionstep::GetColValue' has the following attributes: 'getAsDatatype' of type str.
+The class 'core::actionstep::DBResultSetId' has the following attributes: 'jDBCResultSet' of type str; 'id' of type str; 'name' of type str.
+The class 'core::actionstep::Choice' has no attributes.
+The class 'core::actionstep::IfThen' has no attributes.
+The class 'core::actionstep::GetColValues' has no attributes.
+The class 'SafletScriptFactory' has no attributes.
+The class 'DBResultSetId' has no attributes.
+The class 'core::actionstep::SetColMapping' has the following attributes: 'setAsDatatype' of type str.
+The class 'saflet::core::Variable' has no attributes.
+The class 'Saflet' has no attributes.
+The class 'SafiCall' has no attributes.
+The class 'DBQueryId' has no attributes.
+The class 'Initiator' has no attributes.
+The class 'core::actionstep::DeleteRow' has no attributes.
+The class 'core::actionstep::ParameterizedActionstep' has no attributes.
+The class 'actionstep::ParameterizedActionstep' has no attributes.
+The class 'CallSource1' has no attributes.
+The class 'core::actionstep::SetQueryParam' has the following attributes: 'paramDatatype' of type str.
+The class 'core::actionstep::OpenQuery' has the following attributes: 'holdabilityMode' of type str; 'readOnly' of type bool; 'useCache' of type bool; 'scrollMode' of type str; 'scrollable' of type bool.
+The class 'initiator::Initiator' has no attributes.
+The class 'DynamicValue' has no attributes.
+The class 'core::actionstep::MoveToRow' has no attributes.
+The class 'core::actionstep::MoveToFirstRow' has no attributes.
+The class 'PlatformDisposition' has no attributes.
+The enumeration 'OutputType' has the following literals: 'Choice', 'Error', 'Default'.
+The enumeration 'InputType' has the following literals: 'Variable', 'Value'.
+The enumeration 'DynamicValueType' has the following literals: 'VariableName', 'Custom', 'ScriptText', 'LiteralText'.
+The enumeration 'DebugLevel' has the following literals: 'Error', 'Debug', 'Info', 'Warn'.
+'core::actionstep::PreviousRow' is a specialization of 'ActionStep'.
+'core::actionstep::InsertRow' is a specialization of 'ActionStep'.
+'core::actionstep::CloseDBConnection' is a specialization of 'ActionStep'.
+'core::call::CallConsumer2' is a specialization of 'CallConsumer1'.
+'core::actionstep::InvokeSaflet' is a specialization of 'ActionStep'.
+'core::actionstep::SetQueryParam' is a specialization of 'ActionStep'.
+'core::actionstep::DBConnectionId' is a specialization of 'ThreadSensitive'.
+'core::actionstep::DeleteRow' is a specialization of 'ActionStep'.
+'core::actionstep::RunQuery' is a specialization of 'actionstep::Heavyweight'.
+'core::actionstep::ParameterizedInitiator' is a specialization of 'actionstep::ParameterizedActionstep'.
+'core::scripting::RhinoSafletScript' is a specialization of 'SafletScript'.
+'core::actionstep::MoveToLastRow' is a specialization of 'ActionStep'.
+'core::call::SafiCall' is a specialization of 'ThreadSensitive'.
+'core::actionstep::IfThen' is a specialization of 'ActionStep'.
+'core::saflet::Saflet' is a specialization of 'ThreadSensitive'.
+'core::actionstep::SetColMapping' is a specialization of 'Item'.
+'core::call::CallSource2' is a specialization of 'CallSource1'.
+'core::call::SafiCall' is a specialization of 'PlatformDisposition'.
+'core::scripting::RhinoScriptScope' is a specialization of 'ScriptScope'.
+'core::actionstep::SetColValues' is a specialization of 'ActionStep'.
+'core::actionstep::Assignment' is a specialization of 'ActionStep'.
+'core::actionstep::GetColValue' is a specialization of 'ActionStep'.
+'core::actionstep::CaseItem' is a specialization of 'Item'.
+'core::actionstep::DebugLog' is a specialization of 'ActionStep'.
+'core::saflet::SafletContext' is a specialization of 'ThreadSensitive'.
+'core::initiator::Initiator' is a specialization of 'ActionStep'.
+'core::actionstep::Item' is a specialization of 'ThreadSensitive'.
+'core::actionstep::ActionStep' is a specialization of 'ThreadSensitive'.
+'core::actionstep::OpenQuery' is a specialization of 'ActionStep'.
+'core::actionstep::ActionStep' is a specialization of 'ProductIdentifiable'.
+'core::scripting::RhinoSafletScriptEnvironment' is a specialization of 'SafletScriptEnvironment'.
+'core::actionstep::Choice' is a specialization of 'ActionStep'.
+'core::saflet::Saflet' is a specialization of 'PlatformDisposition'.
+'core::actionstep::ParameterizedActionstep' is a specialization of 'ActionStep'.
+'core::actionstep::DynamicValue' is a specialization of 'ThreadSensitive'.
+'core::actionstep::DBQueryId' is a specialization of 'ThreadSensitive'.
+'core::actionstep::MoveToFirstRow' is a specialization of 'ActionStep'.
+'core::actionstep::QueryParamMapping' is a specialization of 'Item'.
+'core::actionstep::ParameterizedInitiator' is a specialization of 'initiator::Initiator'.
+'core::actionstep::MoveToRow' is a specialization of 'ActionStep'.
+'core::actionstep::OpenDBConnection' is a specialization of 'actionstep::Heavyweight'.
+'core::actionstep::InputItem' is a specialization of 'CaseItem'.
+'core::actionstep::UpdatetRow' is a specialization of 'actionstep::Heavyweight'.
+'core::actionstep::MoveToInsertRow' is a specialization of 'ActionStep'.
+'core::actionstep::ExecuteQuery' is a specialization of 'actionstep::Heavyweight'.
+'core::actionstep::ExecuteQuery' is a specialization of 'actionstep::ActionStep'.
+'core::actionstep::GetColValues' is a specialization of 'ActionStep'.
+'core::actionstep::DBResultSetId' is a specialization of 'ThreadSensitive'.
+'core::actionstep::SetColValue' is a specialization of 'ActionStep'.
+'core::actionstep::NextRow' is a specialization of 'ActionStep'.
+'core::actionstep::Finally' is a specialization of 'ActionStep'.
+'core::actionstep::ActionStep' is a specialization of 'PlatformDisposition'.
+'core::actionstep::ExecuteScript' is a specialization of 'ActionStep'.
+'core::actionstep::UpdatetRow' is a specialization of 'actionstep::ActionStep'.
+'core::actionstep::GetColMapping' is a specialization of 'Item'.
+'core::actionstep::OutputParameter' is a specialization of 'InputItem'.
+'core::saflet::SafletEnvironment' is a specialization of 'ThreadSensitive'.
+'core::actionstep::RunQuery' is a specialization of 'actionstep::ActionStep'.
+'core::scripting::RhinoScriptScopeFactory' is a specialization of 'ScriptScopeFactory'.
+'core::actionstep::OpenDBConnection' is a specialization of 'actionstep::ActionStep'.
+'core::scripting::RhinoSafletScriptFactory' is a specialization of 'SafletScriptFactory'.
+'core::actionstep::ExecuteUpdate' is a specialization of 'ActionStep'.
+'DynamicValue' (role 'DynamicValue66', cardinality 0..*) is associated with 'core::actionstep::GetColValue' (role 'core_actionstep_GetColValue65', cardinality 0..*).
+'core::call::CallConsumer2' (role 'core_call_CallConsumer2', cardinality 0..*) is associated with 'SafiCall' (role 'SafiCall179', cardinality 0..*).
+'core::actionstep::OpenDBConnection' (role 'core_actionstep_OpenDBConnection', cardinality 0..*) is associated with 'DBConnectionId' (role 'DBConnectionId', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue12', cardinality 0..*) is associated with 'core::actionstep::CaseItem' (role 'core_actionstep_CaseItem', cardinality 0..*).
+'DBQueryParamId' (role 'DBQueryParamId132', cardinality 0..*) is associated with 'core::actionstep::QueryParamMapping' (role 'core_actionstep_QueryParamMapping', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue69', cardinality 0..*) is associated with 'core::actionstep::GetColValue' (role 'core_actionstep_GetColValue68', cardinality 0..*).
+'core::actionstep::SetColMapping' (role 'core_actionstep_SetColMapping', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue111', cardinality 0..*).
+'core::actionstep::ActionStep' (role 'core_actionstep_ActionStep', cardinality 0..*) is associated with 'Output' (role 'Output3', cardinality 0..*).
+'actionstep::core::EStringToStringMapEntry' (role 'actionstep_core_EStringToStringMapEntry', cardinality 0..*) is associated with 'core::actionstep::DynamicValue' (role 'core_actionstep_DynamicValue22', cardinality 0..*).
+'core::actionstep::ExecuteUpdate' (role 'core_actionstep_ExecuteUpdate54', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue55', cardinality 0..*).
+'core::actionstep::GetColMapping' (role 'core_actionstep_GetColMapping', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue106', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue130', cardinality 0..*) is associated with 'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery129', cardinality 0..*).
+'core::call::CallConsumer1' (role 'core_call_CallConsumer1', cardinality 0..*) is associated with 'SafiCall' (role 'SafiCall177', cardinality 0..*).
+'SetColMapping' (role 'SetColMapping', cardinality 0..*) is associated with 'core::actionstep::SetColValues' (role 'core_actionstep_SetColValues85', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue127', cardinality 0..*) is associated with 'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery126', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue92', cardinality 0..*) is associated with 'core::actionstep::MoveToRow' (role 'core_actionstep_MoveToRow91', cardinality 0..*).
+'core::saflet::SafletContext' (role 'core_saflet_SafletContext172', cardinality 0..*) is associated with 'saflet::core::Variable' (role 'saflet_core_Variable', cardinality 0..*).
+'core::actionstep::InsertRow' (role 'core_actionstep_InsertRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId100', cardinality 0..*).
+'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery118', cardinality 0..*) is associated with 'DBQueryId' (role 'DBQueryId119', cardinality 0..*).
+'GetColMapping' (role 'GetColMapping', cardinality 0..*) is associated with 'core::actionstep::GetColValues' (role 'core_actionstep_GetColValues73', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId83', cardinality 0..*) is associated with 'core::actionstep::SetColValues' (role 'core_actionstep_SetColValues', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue33', cardinality 0..*) is associated with 'core::actionstep::DebugLog' (role 'core_actionstep_DebugLog', cardinality 0..*).
+'core::scripting::ScriptScopeFactory' (role 'core_scripting_ScriptScopeFactory153', cardinality 0..*) is associated with 'ScriptScope' (role 'ScriptScope154', cardinality 0..*).
+'core::actionstep::InvokeSaflet' (role 'core_actionstep_InvokeSaflet', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue31', cardinality 0..*).
+'SafletScriptFactory' (role 'SafletScriptFactory', cardinality 0..*) is associated with 'core::scripting::SafletScriptEnvironment' (role 'core_scripting_SafletScriptEnvironment145', cardinality 0..*).
+'SafiCall' (role 'SafiCall', cardinality 0..*) is associated with 'core::call::CallSource1' (role 'core_call_CallSource1', cardinality 0..*).
+'core::saflet::Saflet' (role 'core_saflet_Saflet168', cardinality 0..*) is associated with 'Finally' (role 'Finally', cardinality 0..*).
+'core::actionstep::SetColMapping' (role 'core_actionstep_SetColMapping113', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue114', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue135', cardinality 0..*) is associated with 'core::actionstep::QueryParamMapping' (role 'core_actionstep_QueryParamMapping134', cardinality 0..*).
+'core::actionstep::DebugLog' (role 'core_actionstep_DebugLog35', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue36', cardinality 0..*).
+'core::actionstep::ExecuteScript' (role 'core_actionstep_ExecuteScript', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue29', cardinality 0..*).
+'core::saflet::Saflet' (role 'core_saflet_Saflet159', cardinality 0..*) is associated with 'ScriptScope' (role 'ScriptScope160', cardinality 0..*).
+'ActionStep' (role 'ActionStep27', cardinality 0..*) is associated with 'core::actionstep::Output' (role 'outputs', cardinality 0..*).
+'Initiator' (role 'Initiator', cardinality 0..*) is associated with 'core::saflet::Saflet' (role 'core_saflet_Saflet', cardinality 0..*).
+'DBQueryId' (role 'DBQueryId57', cardinality 0..*) is associated with 'core::actionstep::ExecuteQuery' (role 'core_actionstep_ExecuteQuery', cardinality 0..*).
+'core::actionstep::CloseDBConnection' (role 'core_actionstep_CloseDBConnection', cardinality 0..*) is associated with 'DBConnectionId' (role 'DBConnectionId39', cardinality 0..*).
+'core::actionstep::PreviousRow' (role 'core_actionstep_PreviousRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId104', cardinality 0..*).
+'core::actionstep::ExecuteQuery' (role 'core_actionstep_ExecuteQuery59', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue81', cardinality 0..*) is associated with 'core::actionstep::SetColValue' (role 'core_actionstep_SetColValue80', cardinality 0..*).
+'Output' (role 'Output6', cardinality 0..*) is associated with 'core::actionstep::ActionStep' (role 'core_actionstep_ActionStep5', cardinality 0..*).
+'core::actionstep::ParameterizedActionstep' (role 'core_actionstep_ParameterizedActionstep15', cardinality 0..*) is associated with 'OutputParameter' (role 'OutputParameter', cardinality 0..*).
+'DBConnectionId' (role 'DBConnectionId43', cardinality 0..*) is associated with 'core::actionstep::OpenQuery' (role 'core_actionstep_OpenQuery42', cardinality 0..*).
+'core::actionstep::DeleteRow' (role 'core_actionstep_DeleteRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId96', cardinality 0..*).
+'CaseItem' (role 'CaseItem', cardinality 0..*) is associated with 'core::actionstep::Choice' (role 'core_actionstep_Choice', cardinality 0..*).
+'core::scripting::SafletScriptEnvironment' (role 'core_scripting_SafletScriptEnvironment', cardinality 0..*) is associated with 'SafletScript' (role 'SafletScript', cardinality 0..*).
+'core::scripting::ScriptScopeFactory' (role 'core_scripting_ScriptScopeFactory', cardinality 0..*) is associated with 'ScriptScope' (role 'ScriptScope151', cardinality 0..*).
+'SafletScript' (role 'SafletScript149', cardinality 0..*) is associated with 'core::scripting::SafletScriptFactory' (role 'core_scripting_SafletScriptFactory', cardinality 0..*).
+'DBConnectionId' (role 'DBConnectionId116', cardinality 0..*) is associated with 'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery', cardinality 0..*).
+'DBQueryId' (role 'DBQueryId52', cardinality 0..*) is associated with 'core::actionstep::ExecuteUpdate' (role 'core_actionstep_ExecuteUpdate', cardinality 0..*).
+'SafletContext' (role 'SafletContext', cardinality 0..*) is associated with 'core::saflet::Saflet' (role 'core_saflet_Saflet157', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId61', cardinality 0..*) is associated with 'core::actionstep::NextRow' (role 'core_actionstep_NextRow', cardinality 0..*).
+'core::actionstep::DynamicValue' (role 'core_actionstep_DynamicValue', cardinality 0..*) is associated with 'actionstep::core::EObject' (role 'actionstep_core_EObject', cardinality 0..*).
+'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery123', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId124', cardinality 0..*).
+'core::actionstep::IfThen' (role 'core_actionstep_IfThen', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue24', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId63', cardinality 0..*) is associated with 'core::actionstep::GetColValue' (role 'core_actionstep_GetColValue', cardinality 0..*).
+'core::actionstep::MoveToInsertRow' (role 'core_actionstep_MoveToInsertRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId98', cardinality 0..*).
+'core::actionstep::GetColMapping' (role 'core_actionstep_GetColMapping108', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue109', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId75', cardinality 0..*) is associated with 'core::actionstep::SetColValue' (role 'core_actionstep_SetColValue', cardinality 0..*).
+'core::actionstep::Assignment' (role 'core_actionstep_Assignment', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue', cardinality 0..*).
+'DBQueryId' (role 'DBQueryId', cardinality 0..*) is associated with 'core::actionstep::OpenQuery' (role 'core_actionstep_OpenQuery', cardinality 0..*).
+'core::actionstep::MoveToRow' (role 'core_actionstep_MoveToRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId89', cardinality 0..*).
+'core::actionstep::RunQuery' (role 'core_actionstep_RunQuery121', cardinality 0..*) is associated with 'QueryParamMapping' (role 'QueryParamMapping', cardinality 0..*).
+'ScriptScope' (role 'ScriptScope', cardinality 0..*) is associated with 'core::scripting::SafletScriptEnvironment' (role 'core_scripting_SafletScriptEnvironment143', cardinality 0..*).
+'core::actionstep::SetColValue' (role 'core_actionstep_SetColValue77', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue78', cardinality 0..*).
+'ActionStep' (role 'ActionStep140', cardinality 0..*) is associated with 'core::actionstep::Item' (role 'core_actionstep_Item139', cardinality 0..*).
+'core::saflet::SafletContext' (role 'core_saflet_SafletContext', cardinality 0..*) is associated with 'Saflet' (role 'Saflet170', cardinality 0..*).
+'SafletEnvironment' (role 'SafletEnvironment', cardinality 0..*) is associated with 'core::saflet::Saflet' (role 'core_saflet_Saflet166', cardinality 0..*).
+'core::actionstep::Choice' (role 'core_actionstep_Choice18', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue19', cardinality 0..*).
+'Output' (role 'Output', cardinality 0..*) is associated with 'core::actionstep::ActionStep' (role 'parent', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId94', cardinality 0..*) is associated with 'core::actionstep::MoveToLastRow' (role 'core_actionstep_MoveToLastRow', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId71', cardinality 0..*) is associated with 'core::actionstep::GetColValues' (role 'core_actionstep_GetColValues', cardinality 0..*).
+'core::actionstep::ParameterizedActionstep' (role 'core_actionstep_ParameterizedActionstep', cardinality 0..*) is associated with 'InputItem' (role 'InputItem', cardinality 0..*).
+'core::actionstep::Output' (role 'core_actionstep_Output', cardinality 0..*) is associated with 'ActionStep' (role 'ActionStep', cardinality 0..*).
+'DBQueryId' (role 'DBQueryId50', cardinality 0..*) is associated with 'core::actionstep::SetQueryParam' (role 'core_actionstep_SetQueryParam49', cardinality 0..*).
+'core::call::CallSource2' (role 'core_call_CallSource2', cardinality 0..*) is associated with 'SafiCall' (role 'SafiCall175', cardinality 0..*).
+'core::scripting::SafletScriptEnvironment' (role 'core_scripting_SafletScriptEnvironment147', cardinality 0..*) is associated with 'ScriptScopeFactory' (role 'ScriptScopeFactory', cardinality 0..*).
+'core::actionstep::UpdatetRow' (role 'core_actionstep_UpdatetRow', cardinality 0..*) is associated with 'DBResultSetId' (role 'DBResultSetId87', cardinality 0..*).
+'DBResultSetId' (role 'DBResultSetId102', cardinality 0..*) is associated with 'core::actionstep::MoveToFirstRow' (role 'core_actionstep_MoveToFirstRow', cardinality 0..*).
+'core::actionstep::Item' (role 'core_actionstep_Item', cardinality 0..*) is associated with 'ActionStep' (role 'ActionStep137', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue10', cardinality 0..*) is associated with 'core::actionstep::Assignment' (role 'core_actionstep_Assignment9', cardinality 0..*).
+'ActionStep' (role 'ActionStep162', cardinality 0..*) is associated with 'core::saflet::Saflet' (role 'saflet', cardinality 0..*).
+'core::actionstep::SetQueryParam' (role 'core_actionstep_SetQueryParam', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue45', cardinality 0..*).
+'SafletScriptEnvironment' (role 'SafletScriptEnvironment', cardinality 0..*) is associated with 'core::saflet::Saflet' (role 'core_saflet_Saflet164', cardinality 0..*).
+'Saflet' (role 'Saflet', cardinality 0..*) is associated with 'core::actionstep::ActionStep' (role 'actionsteps', cardinality 0..*).
+'core::actionstep::SetQueryParam' (role 'core_actionstep_SetQueryParam47', cardinality 0..*) is associated with 'DBQueryParamId' (role 'DBQueryParamId', cardinality 0..*).

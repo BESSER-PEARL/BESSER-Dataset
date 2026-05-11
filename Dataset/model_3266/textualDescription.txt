@@ -1,0 +1,1209 @@
+The model has 372 class(es).
+The class 'aadl2::NamedElement' has the following attributes: 'name' of type str; 'qualifiedName' of type str.
+The class 'aadl2::AbstractNamedValue' has no attributes.
+The class 'aadl2::AccessSpecification' has the following attributes: 'category' of type str; 'kind' of type str.
+The class 'aadl2::Operation' has the following attributes: 'op' of type str.
+The class 'aadl2::ComponentPrototypeBinding' has no attributes.
+The class 'FeaturePrototypeActual' has no attributes.
+The class 'aadl2::RealLiteral' has the following attributes: 'value' of type str.
+The class 'aadl2::Generalization_' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'BasicProperty' has no attributes.
+The class 'aadl2::ReferenceValue' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'aadl2::PortSpecification' has the following attributes: 'category' of type str; 'direction' of type str; 'in_' of type str; 'out' of type str.
+The class 'aadl2::BehavioredImplementation' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'aadl2::ClassifierValue' has no attributes.
+The class 'aadl2::Classifier' has the following attributes: 'noProperties' of type str; 'noPrototypes' of type str; 'noAnnexes' of type str.
+The class 'aadl2::SubprogramCall' has no attributes.
+The class 'aadl2::MetaclassReference' has the following attributes: 'annexName' of type str; 'metaclassName' of type str.
+The class 'aadl2::SubprogramCallSequence' has no attributes.
+The class 'aadl2::PropertyValue' has no attributes.
+The class 'aadl2::ModalPropertyValue' has no attributes.
+The class 'aadl2::FeatureGroupPrototypeActual' has no attributes.
+The class 'ArraySizeProperty' has no attributes.
+The class 'aadl2::PrivatePackageSection' has no attributes.
+The class 'aadl2::BasicProperty' has no attributes.
+The class 'aadl2::BasicPropertyAssociation' has no attributes.
+The class 'PrototypeBinding' has no attributes.
+The class 'aadl2::EnumerationLiteral' has no attributes.
+The class 'aadl2::FeatureGroupPrototypeBinding' has no attributes.
+The class 'aadl2::IntegerLiteral' has the following attributes: 'value' of type str; 'base' of type str.
+The class 'Subprogram' has no attributes.
+The class 'aadl2::RangeValue' has no attributes.
+The class 'Type' has no attributes.
+The class 'PropertyOwner' has no attributes.
+The class 'AnnexSubclause' has no attributes.
+The class 'SubprogramSubcomponentType' has no attributes.
+The class 'ContainedNamedElement' has no attributes.
+The class 'aadl2::PropertyType' has no attributes.
+The class 'aadl2::SubprogramClassifier' has no attributes.
+The class 'aadl2::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'FlowFeature' has no attributes.
+The class 'aadl2::PropertyOwner' has no attributes.
+The class 'aadl2::BusAccess' has the following attributes: 'virtual' of type str.
+The class 'aadl2::PropertyConstant' has no attributes.
+The class 'aadl2::ConnectedElement' has no attributes.
+The class 'aadl2::RecordType' has no attributes.
+The class 'ModalElement' has no attributes.
+The class 'aadl2::ClassifierFeature' has no attributes.
+The class 'ComponentImplementation' has no attributes.
+The class 'aadl2::AbstractType' has no attributes.
+The class 'aadl2::VirtualProcessorPrototype' has no attributes.
+The class 'aadl2::VirtualProcessorClassifier' has no attributes.
+The class 'aadl2::TypedElement' has no attributes.
+The class 'aadl2::PublicPackageSection' has no attributes.
+The class 'NumberValue' has no attributes.
+The class 'aadl2::GroupExtension' has no attributes.
+The class 'aadl2::PropertyAssociation' has the following attributes: 'constant' of type str; 'append' of type str.
+The class 'aadl2::ContainedNamedElement' has no attributes.
+The class 'aadl2::VirtualBusPrototype' has no attributes.
+The class 'aadl2::Element' has no attributes.
+The class 'AbstractSubcomponentType' has no attributes.
+The class 'AbstractNamedValue' has no attributes.
+The class 'aadl2::ModeBinding' has no attributes.
+The class 'VirtualProcessorClassifier' has no attributes.
+The class 'aadl2::EndToEndFlowSegment' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'aadl2::AbstractClassifier' has no attributes.
+The class 'aadl2::NamedValue' has no attributes.
+The class 'PropertyValue' has no attributes.
+The class 'aadl2::VirtualProcessorType' has no attributes.
+The class 'VirtualBusClassifier' has no attributes.
+The class 'aadl2::NumberValue' has no attributes.
+The class 'aadl2::Property' has the following attributes: 'emptyListDefault' of type str; 'inherit' of type str.
+The class 'Element' has no attributes.
+The class 'aadl2::FlowSegment' has no attributes.
+The class 'aadl2::AbstractSubcomponentType' has no attributes.
+The class 'aadl2::Comment' has the following attributes: 'body' of type str.
+The class 'Abstract' has no attributes.
+The class 'aadl2::StringLiteral' has the following attributes: 'value' of type str.
+The class 'aadl2::DefaultAnnexSubclause' has the following attributes: 'sourceText' of type str.
+The class 'aadl2::VirtualProcessorImplementation' has no attributes.
+The class 'Subcomponent' has no attributes.
+The class 'aadl2::ThreadPrototype' has no attributes.
+The class 'aadl2::Access' has the following attributes: 'kind' of type str; 'category' of type str.
+The class 'aadl2::ThreadGroupClassifier' has no attributes.
+The class 'Connection' has no attributes.
+The class 'aadl2::ThreadGroupPrototype' has no attributes.
+The class 'aadl2::VirtualBusType' has no attributes.
+The class 'aadl2::AccessConnectionEnd' has no attributes.
+The class 'AccessConnectionEnd' has no attributes.
+The class 'aadl2::DataClassifier' has no attributes.
+The class 'aadl2::ThreadGroupImplementation' has no attributes.
+The class 'aadl2::VirtualBusImplementation' has no attributes.
+The class 'aadl2::PropertySet' has no attributes.
+The class 'aadl2::SubprogramGroupSubcomponentType' has no attributes.
+The class 'aadl2::ListValue' has no attributes.
+The class 'ModeFeature' has no attributes.
+The class 'aadl2::Abstract' has no attributes.
+The class 'aadl2::RecordValue' has no attributes.
+The class 'aadl2::FeaturePrototype' has the following attributes: 'out' of type str; 'direction' of type str; 'in_' of type str.
+The class 'TriggerPort' has no attributes.
+The class 'aadl2::NumericRange' has no attributes.
+The class 'aadl2::Port' has the following attributes: 'category' of type str.
+The class 'aadl2::ComputedValue' has the following attributes: 'function' of type str.
+The class 'aadl2::Type' has no attributes.
+The class 'ParameterConnectionEnd' has no attributes.
+The class 'DeviceSubcomponentType' has no attributes.
+The class 'aadl2::AadlString' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'Port' has no attributes.
+The class 'aadl2::Prototype' has no attributes.
+The class 'aadl2::DataSubcomponentType' has no attributes.
+The class 'aadl2::SubprogramGroupType' has no attributes.
+The class 'aadl2::ModalElement' has no attributes.
+The class 'aadl2::SubprogramPrototype' has no attributes.
+The class 'aadl2::GlobalNamespace' has no attributes.
+The class 'PortConnectionEnd' has no attributes.
+The class 'aadl2::DirectedRelationship' has no attributes.
+The class 'aadl2::ParameterConnectionEnd' has no attributes.
+The class 'aadl2::AadlBoolean' has no attributes.
+The class 'aadl2::SubprogramGroupClassifier' has no attributes.
+The class 'SubprogramClassifier' has no attributes.
+The class 'aadl2::AnnexSubclause' has no attributes.
+The class 'aadl2::EnumerationType' has no attributes.
+The class 'aadl2::SystemType' has no attributes.
+The class 'aadl2::Mode' has the following attributes: 'derived' of type str; 'initial' of type str.
+The class 'AbstractFeatureClassifier' has no attributes.
+The class 'Access' has no attributes.
+The class 'aadl2::SubprogramGroupImplementation' has no attributes.
+The class 'aadl2::SystemClassifier' has no attributes.
+The class 'aadl2::SubprogramGroupPrototype' has no attributes.
+The class 'aadl2::SubprogramSubcomponentType' has no attributes.
+The class 'aadl2::NonListType' has no attributes.
+The class 'aadl2::AadlInteger' has no attributes.
+The class 'aadl2::PortConnectionEnd' has no attributes.
+The class 'EnumerationType' has no attributes.
+The class 'FeatureType' has no attributes.
+The class 'aadl2::DataPrototype' has no attributes.
+The class 'aadl2::FeatureGroupConnectionEnd' has no attributes.
+The class 'aadl2::DeviceImplementation' has no attributes.
+The class 'aadl2::EventDataPort' has no attributes.
+The class 'SubprogramGroupClassifier' has no attributes.
+The class 'aadl2::AbstractFeatureClassifier' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'aadl2::Parameter' has no attributes.
+The class 'aadl2::PrototypeBinding' has no attributes.
+The class 'aadl2::SubprogramType' has no attributes.
+The class 'aadl2::DataPort' has no attributes.
+The class 'aadl2::DeviceClassifier' has no attributes.
+The class 'Data' has no attributes.
+The class 'aadl2::MemoryType' has no attributes.
+The class 'aadl2::Relationship' has no attributes.
+The class 'aadl2::SubprogramGroupAccess' has no attributes.
+The class 'aadl2::BusFeatureClassifier' has no attributes.
+The class 'aadl2::EventPort' has no attributes.
+The class 'aadl2::RangeType' has no attributes.
+The class 'aadl2::SubprogramAccess' has no attributes.
+The class 'aadl2::Data' has no attributes.
+The class 'aadl2::PropertyExpression' has no attributes.
+The class 'aadl2::MemoryImplementation' has no attributes.
+The class 'aadl2::MemoryClassifier' has no attributes.
+The class 'DeviceClassifier' has no attributes.
+The class 'BusSubcomponentType' has no attributes.
+The class 'aadl2::DevicePrototype' has no attributes.
+The class 'aadl2::SubprogramImplementation' has no attributes.
+The class 'aadl2::DefaultAnnexLibrary' has the following attributes: 'sourceText' of type str.
+The class 'ProcessorFeature' has no attributes.
+The class 'aadl2::SystemPrototype' has no attributes.
+The class 'aadl2::CalledSubprogram' has no attributes.
+The class 'DataSubcomponentType' has no attributes.
+The class 'aadl2::AnnexLibrary' has no attributes.
+The class 'aadl2::ProcessorClassifier' has no attributes.
+The class 'Generalization_' has no attributes.
+The class 'aadl2::ThreadImplementation' has no attributes.
+The class 'MemoryClassifier' has no attributes.
+The class 'InternalFeature' has no attributes.
+The class 'ProcessorClassifier' has no attributes.
+The class 'aadl2::DataAccess' has no attributes.
+The class 'EndToEndFlowElement' has no attributes.
+The class 'aadl2::ProcessorPrototype' has no attributes.
+The class 'aadl2::EndToEndFlowElement' has no attributes.
+The class 'aadl2::ProcessorImplementation' has no attributes.
+The class 'aadl2::FlowElement' has no attributes.
+The class 'aadl2::MemoryPrototype' has no attributes.
+The class 'aadl2::ProcessClassifier' has no attributes.
+The class 'aadl2::ClassifierType' has no attributes.
+The class 'aadl2::DeviceType' has no attributes.
+The class 'AnnexLibrary' has no attributes.
+The class 'DataClassifier' has no attributes.
+The class 'aadl2::ComponentTypeRename' has the following attributes: 'category' of type str.
+The class 'aadl2::DataImplementation' has no attributes.
+The class 'aadl2::Subprogram' has no attributes.
+The class 'Feature' has no attributes.
+The class 'aadl2::AbstractPrototype' has no attributes.
+The class 'PackageSection' has no attributes.
+The class 'aadl2::DirectedFeature' has the following attributes: 'direction' of type str; 'out' of type str; 'in_' of type str.
+The class 'ComponentType' has no attributes.
+The class 'ThreadGroup' has no attributes.
+The class 'aadl2::FeatureGroupTypeRename' has no attributes.
+The class 'aadl2::DataType' has no attributes.
+The class 'aadl2::BusType' has no attributes.
+The class 'CallContext' has no attributes.
+The class 'aadl2::BusPrototype' has no attributes.
+The class 'aadl2::ReferenceType' has no attributes.
+The class 'BusClassifier' has no attributes.
+The class 'aadl2::ListType' has no attributes.
+The class 'aadl2::FeatureType' has no attributes.
+The class 'ModalPath' has no attributes.
+The class 'aadl2::ModelUnit' has no attributes.
+The class 'DirectedFeature' has no attributes.
+The class 'aadl2::BusClassifier' has no attributes.
+The class 'aadl2::CallContext' has no attributes.
+The class 'Thread' has no attributes.
+The class 'Context' has no attributes.
+The class 'aadl2::SystemImplementation' has no attributes.
+The class 'ComponentPrototype' has no attributes.
+The class 'FlowElement' has no attributes.
+The class 'VirtualBus' has no attributes.
+The class 'aadl2::FeatureGroupPrototype' has no attributes.
+The class 'aadl2::PackageSection' has the following attributes: 'noAnnexes' of type str; 'noProperties' of type str.
+The class 'aadl2::VirtualProcessor' has no attributes.
+The class 'aadl2::VirtualBus' has no attributes.
+The class 'aadl2::PackageRename' has the following attributes: 'renameAll' of type str.
+The class 'FeatureGroupConnectionEnd' has no attributes.
+The class 'aadl2::AadlPackage' has no attributes.
+The class 'aadl2::ProcessorType' has no attributes.
+The class 'aadl2::NumberType' has no attributes.
+The class 'aadl2::FeatureGroup' has the following attributes: 'inverse' of type str.
+The class 'aadl2::ProcessType' has no attributes.
+The class 'aadl2::FeaturePrototypeActual' has no attributes.
+The class 'ModelUnit' has no attributes.
+The class 'aadl2::ProcessImplementation' has no attributes.
+The class 'aadl2::ThreadGroup' has no attributes.
+The class 'aadl2::UnitsType' has no attributes.
+The class 'aadl2::FeatureGroupType' has no attributes.
+The class 'ProcessClassifier' has no attributes.
+The class 'aadl2::ThreadClassifier' has no attributes.
+The class 'aadl2::FlowFeature' has no attributes.
+The class 'aadl2::ProcessPrototype' has no attributes.
+The class 'aadl2::ModeTransition' has no attributes.
+The class 'Flow' has no attributes.
+The class 'aadl2::ModalPath' has no attributes.
+The class 'FeatureConnectionEnd' has no attributes.
+The class 'SystemClassifier' has no attributes.
+The class 'aadl2::FeatureClassifier' has no attributes.
+The class 'aadl2::Flow' has no attributes.
+The class 'AbstractClassifier' has no attributes.
+The class 'ThreadClassifier' has no attributes.
+The class 'aadl2::ThreadType' has no attributes.
+The class 'aadl2::ComponentPrototype' has the following attributes: 'array' of type str.
+The class 'SubprogramGroup' has no attributes.
+The class 'ProcessorSubcomponentType' has no attributes.
+The class 'aadl2::BusImplementation' has no attributes.
+The class 'aadl2::TypeExtension' has no attributes.
+The class 'aadl2::Feature' has no attributes.
+The class 'aadl2::Processor' has no attributes.
+The class 'NumberType' has no attributes.
+The class 'aadl2::FlowSpecification' has the following attributes: 'kind' of type str.
+The class 'aadl2::FlowEnd' has no attributes.
+The class 'ThreadGroupClassifier' has no attributes.
+The class 'aadl2::ThreadGroupType' has no attributes.
+The class 'aadl2::SubcomponentType' has no attributes.
+The class 'Process' has no attributes.
+The class 'aadl2::Context' has no attributes.
+The class 'aadl2::Bus' has no attributes.
+The class 'aadl2::Memory' has no attributes.
+The class 'aadl2::ModeTransitionTrigger' has no attributes.
+The class 'aadl2::TriggerPort' has no attributes.
+The class 'aadl2::Realization' has no attributes.
+The class 'NonListType' has no attributes.
+The class 'aadl2::ProcessorFeature' has no attributes.
+The class 'System' has no attributes.
+The class 'aadl2::EventSource' has no attributes.
+The class 'Device' has no attributes.
+The class 'aadl2::AbstractFeature' has no attributes.
+The class 'aadl2::VirtualBusSubcomponent' has no attributes.
+The class 'Memory' has no attributes.
+The class 'aadl2::SubprogramSubcomponent' has no attributes.
+The class 'Bus' has no attributes.
+The class 'aadl2::InternalFeature' has the following attributes: 'direction' of type str; 'out' of type str; 'in_' of type str.
+The class 'aadl2::System' has no attributes.
+The class 'aadl2::ProcessorSubcomponent' has no attributes.
+The class 'SubcomponentType' has no attributes.
+The class 'FeatureClassifier' has no attributes.
+The class 'aadl2::SystemSubcomponent' has no attributes.
+The class 'aadl2::PortProxy' has the following attributes: 'direction' of type str; 'in_' of type str; 'out' of type str.
+The class 'aadl2::EventDataSource' has no attributes.
+The class 'aadl2::ThreadGroupSubcomponent' has no attributes.
+The class 'aadl2::SubprogramProxy' has no attributes.
+The class 'aadl2::ComponentClassifier' has the following attributes: 'derivedModes' of type str; 'noFlows' of type str; 'noModes' of type str.
+The class 'Classifier' has no attributes.
+The class 'aadl2::VirtualProcessorSubcomponent' has no attributes.
+The class 'aadl2::BusSubcomponentType' has no attributes.
+The class 'aadl2::ProcessorSubcomponentType' has no attributes.
+The class 'Prototype' has no attributes.
+The class 'MemorySubcomponentType' has no attributes.
+The class 'aadl2::ProcessSubcomponent' has no attributes.
+The class 'aadl2::FeatureConnectionEnd' has no attributes.
+The class 'aadl2::EndToEndFlow' has no attributes.
+The class 'BehavioredImplementation' has no attributes.
+The class 'aadl2::FlowImplementation' has the following attributes: 'kind' of type str.
+The class 'aadl2::FeatureConnection' has no attributes.
+The class 'aadl2::Device' has no attributes.
+The class 'aadl2::SubprogramGroupSubcomponent' has no attributes.
+The class 'aadl2::AccessConnection' has the following attributes: 'accessCategory' of type str.
+The class 'ConnectionEnd' has no attributes.
+The class 'aadl2::DataSubcomponent' has no attributes.
+The class 'aadl2::FeatureGroupConnection' has no attributes.
+The class 'aadl2::ThreadSubcomponent' has no attributes.
+The class 'aadl2::PortConnection' has no attributes.
+The class 'aadl2::MemorySubcomponent' has no attributes.
+The class 'aadl2::DeviceSubcomponentType' has no attributes.
+The class 'aadl2::ComponentType' has the following attributes: 'noFeatures' of type str.
+The class 'aadl2::BusSubcomponent' has no attributes.
+The class 'ArrayableElement' has no attributes.
+The class 'aadl2::AbstractImplementation' has no attributes.
+The class 'ComponentClassifier' has no attributes.
+The class 'aadl2::SystemSubcomponentType' has no attributes.
+The class 'aadl2::Subcomponent' has the following attributes: 'allModes' of type str.
+The class 'aadl2::ProcessSubcomponentType' has no attributes.
+The class 'aadl2::ParameterConnection' has no attributes.
+The class 'aadl2::ArraySize' has the following attributes: 'size' of type str.
+The class 'aadl2::VirtualBusSubcomponentType' has no attributes.
+The class 'aadl2::ComponentImplementation' has the following attributes: 'noCalls' of type str; 'noConnections' of type str; 'noSubcomponents' of type str.
+The class 'ThreadSubcomponentType' has no attributes.
+The class 'aadl2::DeviceSubcomponent' has no attributes.
+The class 'VirtualBusSubcomponentType' has no attributes.
+The class 'aadl2::ComponentImplementationReference' has no attributes.
+The class 'aadl2::ThreadSubcomponentType' has no attributes.
+The class 'aadl2::StructuralFeature' has no attributes.
+The class 'aadl2::ThreadGroupSubcomponentType' has no attributes.
+The class 'aadl2::MemorySubcomponentType' has no attributes.
+The class 'aadl2::AbstractSubcomponent' has no attributes.
+The class 'BusFeatureClassifier' has no attributes.
+The class 'aadl2::ArraySizeProperty' has no attributes.
+The class 'VirtualProcessorSubcomponentType' has no attributes.
+The class 'SystemSubcomponentType' has no attributes.
+The class 'aadl2::ModeFeature' has no attributes.
+The class 'aadl2::RefinableElement' has no attributes.
+The class 'aadl2::Process' has no attributes.
+The class 'aadl2::BehavioralFeature' has no attributes.
+The class 'aadl2::Thread' has no attributes.
+The class 'aadl2::ArrayRange' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'SubprogramGroupSubcomponentType' has no attributes.
+The class 'CalledSubprogram' has no attributes.
+The class 'aadl2::ArrayableElement' has no attributes.
+The class 'aadl2::SubprogramGroup' has no attributes.
+The class 'ClassifierFeature' has no attributes.
+The class 'aadl2::VirtualProcessorSubcomponentType' has no attributes.
+The class 'aadl2::ArrayDimension' has no attributes.
+The class 'ProcessSubcomponentType' has no attributes.
+The class 'RefinableElement' has no attributes.
+The class 'aadl2::ContainmentPathElement' has the following attributes: 'annexName' of type str.
+The class 'ThreadGroupSubcomponentType' has no attributes.
+The class 'aadl2::RecordField' has no attributes.
+The class 'aadl2::ImplementationExtension' has no attributes.
+The class 'aadl2::VirtualBusClassifier' has no attributes.
+The class 'VirtualProcessor' has no attributes.
+The class 'aadl2::Connection' has the following attributes: 'bidirectional' of type str.
+The class 'aadl2::ComponentPrototypeActual' has the following attributes: 'category' of type str.
+The class 'DirectedRelationship' has no attributes.
+The class 'aadl2::ConnectionEnd' has no attributes.
+The class 'PropertyExpression' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'aadl2::FeaturePrototypeBinding' has no attributes.
+The class 'aadl2::Namespace' has no attributes.
+The class 'Processor' has no attributes.
+The class 'aadl2::FeaturePrototypeReference' has the following attributes: 'out' of type str; 'in_' of type str; 'direction' of type str.
+The class 'aadl2::UnitLiteral' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'aadl2::AadlReal' has no attributes.
+The enumeration 'OperationKind' has the following literals: 'minus', 'plus', 'and_', 'not_', 'or_'.
+The enumeration 'ComponentCategory' has the following literals: 'virtualProcessor', 'subprogram', 'bus', 'process', 'thread', 'processor', 'memory', 'virtualBus', 'system', 'device', 'threadGroup', 'subprogramGroup', 'data', 'abstract'.
+The enumeration 'AccessType' has the following literals: 'requires', 'provides'.
+The enumeration 'AccessCategory' has the following literals: 'subprogramGroup', 'data', 'bus', 'virtualBus', 'subprogram'.
+The enumeration 'PortCategory' has the following literals: 'data', 'eventData', 'event'.
+The enumeration 'FlowKind' has the following literals: 'path', 'source', 'sink'.
+The enumeration 'DirectionType' has the following literals: 'in_', 'inOut', 'out'.
+'aadl2::ThreadImplementation' is a specialization of 'BehavioredImplementation'.
+'aadl2::VirtualBusSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::ThreadImplementation' is a specialization of 'ThreadClassifier'.
+'aadl2::VirtualBusSubcomponentType' is a specialization of 'BusFeatureClassifier'.
+'aadl2::ThreadPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::ThreadGroupSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadPrototype' is a specialization of 'Thread'.
+'aadl2::ThreadSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadPrototype' is a specialization of 'ThreadSubcomponentType'.
+'aadl2::SystemSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadGroupClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::ProcessSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadGroupClassifier' is a specialization of 'ThreadGroup'.
+'aadl2::MemorySubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadGroupClassifier' is a specialization of 'ThreadGroupSubcomponentType'.
+'aadl2::DeviceSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadGroupImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::AbstractImplementation' is a specialization of 'BehavioredImplementation'.
+'aadl2::ThreadGroupImplementation' is a specialization of 'ThreadGroupClassifier'.
+'aadl2::AbstractImplementation' is a specialization of 'AbstractClassifier'.
+'aadl2::ThreadGroupPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::BusSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadGroupPrototype' is a specialization of 'ThreadGroup'.
+'aadl2::BusSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::ThreadGroupPrototype' is a specialization of 'ThreadGroupSubcomponentType'.
+'aadl2::BusSubcomponentType' is a specialization of 'BusFeatureClassifier'.
+'aadl2::VirtualBusClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::ProcessorSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::VirtualBusClassifier' is a specialization of 'VirtualBus'.
+'aadl2::BusSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualBusClassifier' is a specialization of 'VirtualBusSubcomponentType'.
+'aadl2::BusSubcomponent' is a specialization of 'AccessConnectionEnd'.
+'aadl2::VirtualBusType' is a specialization of 'ComponentType'.
+'aadl2::BusSubcomponent' is a specialization of 'Bus'.
+'aadl2::VirtualBusType' is a specialization of 'VirtualBusClassifier'.
+'aadl2::DataSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualProcessorType' is a specialization of 'ComponentType'.
+'aadl2::DataSubcomponent' is a specialization of 'AccessConnectionEnd'.
+'aadl2::VirtualProcessorType' is a specialization of 'VirtualProcessorClassifier'.
+'aadl2::DataSubcomponent' is a specialization of 'Data'.
+'aadl2::VirtualBusImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::DataSubcomponent' is a specialization of 'ParameterConnectionEnd'.
+'aadl2::VirtualBusImplementation' is a specialization of 'VirtualBusClassifier'.
+'aadl2::DataSubcomponent' is a specialization of 'PortConnectionEnd'.
+'aadl2::VirtualBusPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::DeviceSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualBusPrototype' is a specialization of 'VirtualBus'.
+'aadl2::DeviceSubcomponent' is a specialization of 'Device'.
+'aadl2::VirtualBusPrototype' is a specialization of 'VirtualBusSubcomponentType'.
+'aadl2::Device' is a specialization of 'NamedElement'.
+'aadl2::VirtualProcessorClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::MemorySubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualProcessorClassifier' is a specialization of 'VirtualProcessor'.
+'aadl2::MemorySubcomponent' is a specialization of 'Memory'.
+'aadl2::VirtualProcessorClassifier' is a specialization of 'VirtualProcessorSubcomponentType'.
+'aadl2::Memory' is a specialization of 'NamedElement'.
+'aadl2::VirtualProcessorImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::ProcessSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualProcessorImplementation' is a specialization of 'VirtualProcessorClassifier'.
+'aadl2::ProcessSubcomponent' is a specialization of 'Process'.
+'aadl2::StringLiteral' is a specialization of 'PropertyValue'.
+'aadl2::Bus' is a specialization of 'NamedElement'.
+'aadl2::VirtualProcessorPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::Processor' is a specialization of 'NamedElement'.
+'aadl2::VirtualProcessorPrototype' is a specialization of 'VirtualProcessor'.
+'aadl2::SystemSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::VirtualProcessorPrototype' is a specialization of 'VirtualProcessorSubcomponentType'.
+'aadl2::SystemSubcomponent' is a specialization of 'System'.
+'aadl2::BasicPropertyAssociation' is a specialization of 'Element'.
+'aadl2::System' is a specialization of 'NamedElement'.
+'aadl2::PropertyConstant' is a specialization of 'TypedElement'.
+'aadl2::SubprogramSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::PropertyConstant' is a specialization of 'AbstractNamedValue'.
+'aadl2::SubprogramSubcomponent' is a specialization of 'AccessConnectionEnd'.
+'aadl2::PropertyConstant' is a specialization of 'ArraySizeProperty'.
+'aadl2::SubprogramSubcomponent' is a specialization of 'Subprogram'.
+'aadl2::EnumerationLiteral' is a specialization of 'NamedElement'.
+'aadl2::SubprogramGroupSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::EnumerationLiteral' is a specialization of 'AbstractNamedValue'.
+'aadl2::SubprogramGroupSubcomponent' is a specialization of 'AccessConnectionEnd'.
+'aadl2::ClassifierValue' is a specialization of 'PropertyOwner'.
+'aadl2::SubprogramGroupSubcomponent' is a specialization of 'SubprogramGroup'.
+'aadl2::ClassifierValue' is a specialization of 'PropertyValue'.
+'aadl2::SubprogramGroupSubcomponent' is a specialization of 'CallContext'.
+'aadl2::PropertyValue' is a specialization of 'PropertyExpression'.
+'aadl2::SubprogramGroup' is a specialization of 'NamedElement'.
+'aadl2::NumberValue' is a specialization of 'PropertyValue'.
+'aadl2::Process' is a specialization of 'NamedElement'.
+'aadl2::UnitLiteral' is a specialization of 'EnumerationLiteral'.
+'aadl2::ProcessorSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::RealLiteral' is a specialization of 'NumberValue'.
+'aadl2::ProcessorSubcomponent' is a specialization of 'Processor'.
+'aadl2::Operation' is a specialization of 'PropertyExpression'.
+'aadl2::Thread' is a specialization of 'NamedElement'.
+'aadl2::ReferenceValue' is a specialization of 'ContainedNamedElement'.
+'aadl2::ThreadGroupSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::ReferenceValue' is a specialization of 'PropertyValue'.
+'aadl2::ThreadGroupSubcomponent' is a specialization of 'ThreadGroup'.
+'aadl2::BooleanLiteral' is a specialization of 'PropertyValue'.
+'aadl2::ThreadGroup' is a specialization of 'NamedElement'.
+'aadl2::RangeValue' is a specialization of 'PropertyValue'.
+'aadl2::VirtualBusSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::IntegerLiteral' is a specialization of 'NumberValue'.
+'aadl2::VirtualBusSubcomponent' is a specialization of 'AccessConnectionEnd'.
+'aadl2::NamedValue' is a specialization of 'PropertyValue'.
+'aadl2::VirtualBusSubcomponent' is a specialization of 'VirtualBus'.
+'aadl2::PropertySet' is a specialization of 'Namespace'.
+'aadl2::VirtualBus' is a specialization of 'NamedElement'.
+'aadl2::PropertySet' is a specialization of 'ModelUnit'.
+'aadl2::VirtualProcessorSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::RecordValue' is a specialization of 'PropertyValue'.
+'aadl2::VirtualProcessorSubcomponent' is a specialization of 'VirtualProcessor'.
+'aadl2::ComputedValue' is a specialization of 'PropertyValue'.
+'aadl2::ThreadSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::ListValue' is a specialization of 'PropertyExpression'.
+'aadl2::ThreadSubcomponent' is a specialization of 'Thread'.
+'aadl2::GlobalNamespace' is a specialization of 'Namespace'.
+'aadl2::AbstractPrototype' is a specialization of 'ProcessSubcomponentType'.
+'aadl2::UnitsType' is a specialization of 'EnumerationType'.
+'aadl2::AbstractPrototype' is a specialization of 'SubprogramGroupSubcomponentType'.
+'aadl2::NonListType' is a specialization of 'PropertyType'.
+'aadl2::AbstractPrototype' is a specialization of 'SubprogramSubcomponentType'.
+'aadl2::AadlBoolean' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'SystemSubcomponentType'.
+'aadl2::AadlString' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'ThreadGroupSubcomponentType'.
+'aadl2::AadlInteger' is a specialization of 'NumberType'.
+'aadl2::AbstractPrototype' is a specialization of 'ThreadSubcomponentType'.
+'aadl2::NumberType' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'VirtualBusSubcomponentType'.
+'aadl2::RangeType' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'VirtualProcessorSubcomponentType'.
+'aadl2::EnumerationType' is a specialization of 'Namespace'.
+'aadl2::BusClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::EnumerationType' is a specialization of 'NonListType'.
+'aadl2::BusClassifier' is a specialization of 'Bus'.
+'aadl2::NumericRange' is a specialization of 'Element'.
+'aadl2::BusClassifier' is a specialization of 'BusSubcomponentType'.
+'aadl2::AadlReal' is a specialization of 'NumberType'.
+'aadl2::BusType' is a specialization of 'ComponentType'.
+'aadl2::ClassifierType' is a specialization of 'NonListType'.
+'aadl2::BusType' is a specialization of 'BusClassifier'.
+'aadl2::RecordType' is a specialization of 'Namespace'.
+'aadl2::VirtualProcessor' is a specialization of 'NamedElement'.
+'aadl2::RecordType' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::RecordField' is a specialization of 'BasicProperty'.
+'aadl2::AbstractPrototype' is a specialization of 'Abstract'.
+'aadl2::ReferenceType' is a specialization of 'NonListType'.
+'aadl2::AbstractPrototype' is a specialization of 'AbstractSubcomponentType'.
+'aadl2::ListType' is a specialization of 'PropertyType'.
+'aadl2::AbstractPrototype' is a specialization of 'BusSubcomponentType'.
+'aadl2::AbstractPrototype' is a specialization of 'DataSubcomponentType'.
+'aadl2::AbstractPrototype' is a specialization of 'DeviceSubcomponentType'.
+'aadl2::AbstractPrototype' is a specialization of 'MemorySubcomponentType'.
+'aadl2::AbstractPrototype' is a specialization of 'ProcessorSubcomponentType'.
+'aadl2::BusImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::BusImplementation' is a specialization of 'BusClassifier'.
+'aadl2::DataImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::DataImplementation' is a specialization of 'DataClassifier'.
+'aadl2::BusPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::BusPrototype' is a specialization of 'Bus'.
+'aadl2::BusPrototype' is a specialization of 'BusSubcomponentType'.
+'aadl2::DataType' is a specialization of 'ComponentType'.
+'aadl2::DataType' is a specialization of 'DataClassifier'.
+'aadl2::DataType' is a specialization of 'CallContext'.
+'aadl2::DeviceType' is a specialization of 'ComponentType'.
+'aadl2::DeviceType' is a specialization of 'DeviceClassifier'.
+'aadl2::DataPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::DataPrototype' is a specialization of 'Data'.
+'aadl2::DataPrototype' is a specialization of 'DataSubcomponentType'.
+'aadl2::DeviceClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::DeviceClassifier' is a specialization of 'Device'.
+'aadl2::DeviceClassifier' is a specialization of 'DeviceSubcomponentType'.
+'aadl2::DeviceImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::DeviceImplementation' is a specialization of 'DeviceClassifier'.
+'aadl2::DevicePrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::DevicePrototype' is a specialization of 'Device'.
+'aadl2::DevicePrototype' is a specialization of 'DeviceSubcomponentType'.
+'aadl2::MemoryClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::MemoryClassifier' is a specialization of 'Memory'.
+'aadl2::MemoryClassifier' is a specialization of 'MemorySubcomponentType'.
+'aadl2::MemoryType' is a specialization of 'ComponentType'.
+'aadl2::MemoryType' is a specialization of 'MemoryClassifier'.
+'aadl2::MemoryImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::MemoryImplementation' is a specialization of 'MemoryClassifier'.
+'aadl2::SubprogramImplementation' is a specialization of 'BehavioredImplementation'.
+'aadl2::SubprogramImplementation' is a specialization of 'SubprogramClassifier'.
+'aadl2::MemoryPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::MemoryPrototype' is a specialization of 'Memory'.
+'aadl2::MemoryPrototype' is a specialization of 'MemorySubcomponentType'.
+'aadl2::SubprogramType' is a specialization of 'ComponentType'.
+'aadl2::SubprogramType' is a specialization of 'SubprogramClassifier'.
+'aadl2::SubprogramType' is a specialization of 'CallContext'.
+'aadl2::SubprogramGroupImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::SubprogramGroupImplementation' is a specialization of 'SubprogramGroupClassifier'.
+'aadl2::SubprogramPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::SubprogramPrototype' is a specialization of 'Subprogram'.
+'aadl2::SubprogramPrototype' is a specialization of 'SubprogramSubcomponentType'.
+'aadl2::Comment' is a specialization of 'Element'.
+'aadl2::SubcomponentType' is a specialization of 'Type'.
+'aadl2::SubprogramGroupClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::SubprogramGroupClassifier' is a specialization of 'SubprogramGroup'.
+'aadl2::PropertyAssociation' is a specialization of 'Element'.
+'aadl2::SubprogramGroupClassifier' is a specialization of 'SubprogramGroupSubcomponentType'.
+'aadl2::Type' is a specialization of 'NamedElement'.
+'aadl2::SubprogramGroupType' is a specialization of 'ComponentType'.
+'aadl2::NamedElement' is a specialization of 'Element'.
+'aadl2::SubprogramGroupType' is a specialization of 'SubprogramGroupClassifier'.
+'aadl2::BasicProperty' is a specialization of 'TypedElement'.
+'aadl2::SubprogramGroupType' is a specialization of 'CallContext'.
+'aadl2::Property' is a specialization of 'BasicProperty'.
+'aadl2::SystemType' is a specialization of 'ComponentType'.
+'aadl2::Property' is a specialization of 'AbstractNamedValue'.
+'aadl2::SystemType' is a specialization of 'SystemClassifier'.
+'aadl2::MetaclassReference' is a specialization of 'PropertyOwner'.
+'aadl2::SubprogramGroupPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::PropertyOwner' is a specialization of 'Element'.
+'aadl2::SubprogramGroupPrototype' is a specialization of 'SubprogramGroup'.
+'aadl2::Classifier' is a specialization of 'Namespace'.
+'aadl2::SubprogramGroupPrototype' is a specialization of 'SubprogramGroupSubcomponentType'.
+'aadl2::Classifier' is a specialization of 'Type'.
+'aadl2::SystemClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::TypedElement' is a specialization of 'NamedElement'.
+'aadl2::SystemClassifier' is a specialization of 'System'.
+'aadl2::PropertyType' is a specialization of 'Type'.
+'aadl2::SystemClassifier' is a specialization of 'SystemSubcomponentType'.
+'aadl2::PropertyExpression' is a specialization of 'Element'.
+'aadl2::SystemImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::Namespace' is a specialization of 'NamedElement'.
+'aadl2::SystemImplementation' is a specialization of 'SystemClassifier'.
+'aadl2::ClassifierFeature' is a specialization of 'NamedElement'.
+'aadl2::SystemPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::Relationship' is a specialization of 'Element'.
+'aadl2::SystemPrototype' is a specialization of 'System'.
+'aadl2::AnnexSubclause' is a specialization of 'ModalElement'.
+'aadl2::SystemPrototype' is a specialization of 'SystemSubcomponentType'.
+'aadl2::ModalElement' is a specialization of 'NamedElement'.
+'aadl2::ProcessorImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::Mode' is a specialization of 'ModeFeature'.
+'aadl2::ProcessorImplementation' is a specialization of 'ProcessorClassifier'.
+'aadl2::Generalization_' is a specialization of 'DirectedRelationship'.
+'aadl2::ProcessorClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::DirectedRelationship' is a specialization of 'Relationship'.
+'aadl2::ProcessorClassifier' is a specialization of 'Processor'.
+'aadl2::PrototypeBinding' is a specialization of 'Element'.
+'aadl2::ProcessorClassifier' is a specialization of 'ProcessorSubcomponentType'.
+'aadl2::ContainedNamedElement' is a specialization of 'Element'.
+'aadl2::ProcessorType' is a specialization of 'ComponentType'.
+'aadl2::ModeFeature' is a specialization of 'ClassifierFeature'.
+'aadl2::ProcessorType' is a specialization of 'ProcessorClassifier'.
+'aadl2::Prototype' is a specialization of 'StructuralFeature'.
+'aadl2::ProcessorPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::Prototype' is a specialization of 'CalledSubprogram'.
+'aadl2::ProcessorPrototype' is a specialization of 'Processor'.
+'aadl2::StructuralFeature' is a specialization of 'RefinableElement'.
+'aadl2::ProcessorPrototype' is a specialization of 'ProcessorSubcomponentType'.
+'aadl2::StructuralFeature' is a specialization of 'ClassifierFeature'.
+'aadl2::ProcessClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::RefinableElement' is a specialization of 'NamedElement'.
+'aadl2::ProcessClassifier' is a specialization of 'Process'.
+'aadl2::ArrayRange' is a specialization of 'Element'.
+'aadl2::ProcessClassifier' is a specialization of 'ProcessSubcomponentType'.
+'aadl2::ModalPropertyValue' is a specialization of 'ModalElement'.
+'aadl2::ProcessType' is a specialization of 'ComponentType'.
+'aadl2::ContainmentPathElement' is a specialization of 'Element'.
+'aadl2::ProcessType' is a specialization of 'ProcessClassifier'.
+'aadl2::ArraySize' is a specialization of 'Element'.
+'aadl2::ProcessPrototype' is a specialization of 'ComponentPrototype'.
+'aadl2::ArrayableElement' is a specialization of 'Element'.
+'aadl2::ProcessPrototype' is a specialization of 'Process'.
+'aadl2::BehavioralFeature' is a specialization of 'ClassifierFeature'.
+'aadl2::ProcessPrototype' is a specialization of 'ProcessSubcomponentType'.
+'aadl2::ComponentImplementationReference' is a specialization of 'Element'.
+'aadl2::ProcessImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::ArrayDimension' is a specialization of 'Element'.
+'aadl2::ProcessImplementation' is a specialization of 'ProcessClassifier'.
+'aadl2::ComponentImplementation' is a specialization of 'ComponentClassifier'.
+'aadl2::ThreadClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::ComponentClassifier' is a specialization of 'Classifier'.
+'aadl2::ThreadClassifier' is a specialization of 'Thread'.
+'aadl2::ComponentClassifier' is a specialization of 'SubcomponentType'.
+'aadl2::ThreadClassifier' is a specialization of 'ThreadSubcomponentType'.
+'aadl2::ComponentClassifier' is a specialization of 'FeatureClassifier'.
+'aadl2::ThreadType' is a specialization of 'ComponentType'.
+'aadl2::ModeTransitionTrigger' is a specialization of 'Element'.
+'aadl2::ThreadType' is a specialization of 'ThreadClassifier'.
+'aadl2::Context' is a specialization of 'NamedElement'.
+'aadl2::ThreadGroupType' is a specialization of 'ComponentType'.
+'aadl2::TriggerPort' is a specialization of 'NamedElement'.
+'aadl2::ThreadGroupType' is a specialization of 'ThreadGroupClassifier'.
+'aadl2::ComponentType' is a specialization of 'ComponentClassifier'.
+'aadl2::VirtualBusSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::ModeTransition' is a specialization of 'ModeFeature'.
+'aadl2::Feature' is a specialization of 'StructuralFeature'.
+'aadl2::Feature' is a specialization of 'FeatureConnectionEnd'.
+'aadl2::Feature' is a specialization of 'ArrayableElement'.
+'aadl2::FlowFeature' is a specialization of 'StructuralFeature'.
+'aadl2::FlowFeature' is a specialization of 'Flow'.
+'aadl2::Flow' is a specialization of 'NamedElement'.
+'aadl2::ModalPath' is a specialization of 'ModalElement'.
+'aadl2::FeatureConnectionEnd' is a specialization of 'ConnectionEnd'.
+'aadl2::ConnectionEnd' is a specialization of 'NamedElement'.
+'aadl2::ComponentPrototype' is a specialization of 'Prototype'.
+'aadl2::ComponentPrototype' is a specialization of 'SubcomponentType'.
+'aadl2::ComponentPrototype' is a specialization of 'FeatureClassifier'.
+'aadl2::FlowSpecification' is a specialization of 'FlowFeature'.
+'aadl2::FlowSpecification' is a specialization of 'ModalPath'.
+'aadl2::FlowSpecification' is a specialization of 'FlowElement'.
+'aadl2::FeatureGroup' is a specialization of 'DirectedFeature'.
+'aadl2::FeatureGroup' is a specialization of 'Context'.
+'aadl2::FeatureGroup' is a specialization of 'FeatureGroupConnectionEnd'.
+'aadl2::FeatureGroup' is a specialization of 'CallContext'.
+'aadl2::DirectedFeature' is a specialization of 'Feature'.
+'aadl2::FlowElement' is a specialization of 'EndToEndFlowElement'.
+'aadl2::EndToEndFlowElement' is a specialization of 'NamedElement'.
+'aadl2::FlowEnd' is a specialization of 'Element'.
+'aadl2::TypeExtension' is a specialization of 'Generalization_'.
+'aadl2::FeatureGroupConnectionEnd' is a specialization of 'ConnectionEnd'.
+'aadl2::FeatureGroupType' is a specialization of 'Classifier'.
+'aadl2::FeatureGroupType' is a specialization of 'FeatureType'.
+'aadl2::GroupExtension' is a specialization of 'Generalization_'.
+'aadl2::BusFeatureClassifier' is a specialization of 'FeatureClassifier'.
+'aadl2::DataAccess' is a specialization of 'Access'.
+'aadl2::DataAccess' is a specialization of 'FlowElement'.
+'aadl2::DataAccess' is a specialization of 'ParameterConnectionEnd'.
+'aadl2::DataAccess' is a specialization of 'PortConnectionEnd'.
+'aadl2::ParameterConnectionEnd' is a specialization of 'ConnectionEnd'.
+'aadl2::PortConnectionEnd' is a specialization of 'ConnectionEnd'.
+'aadl2::DataSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::DataSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::BusAccess' is a specialization of 'Access'.
+'aadl2::AbstractFeatureClassifier' is a specialization of 'FeatureClassifier'.
+'aadl2::Access' is a specialization of 'Feature'.
+'aadl2::Access' is a specialization of 'AccessConnectionEnd'.
+'aadl2::AccessConnectionEnd' is a specialization of 'ConnectionEnd'.
+'aadl2::EventDataPort' is a specialization of 'Port'.
+'aadl2::EventDataPort' is a specialization of 'Context'.
+'aadl2::EventDataPort' is a specialization of 'ParameterConnectionEnd'.
+'aadl2::EventPort' is a specialization of 'Port'.
+'aadl2::Parameter' is a specialization of 'DirectedFeature'.
+'aadl2::Parameter' is a specialization of 'Context'.
+'aadl2::Parameter' is a specialization of 'ParameterConnectionEnd'.
+'aadl2::SubprogramAccess' is a specialization of 'Access'.
+'aadl2::SubprogramAccess' is a specialization of 'Context'.
+'aadl2::SubprogramAccess' is a specialization of 'CalledSubprogram'.
+'aadl2::DataPort' is a specialization of 'Port'.
+'aadl2::DataPort' is a specialization of 'Context'.
+'aadl2::DataPort' is a specialization of 'ParameterConnectionEnd'.
+'aadl2::Port' is a specialization of 'DirectedFeature'.
+'aadl2::Port' is a specialization of 'PortConnectionEnd'.
+'aadl2::Port' is a specialization of 'TriggerPort'.
+'aadl2::FeaturePrototype' is a specialization of 'Prototype'.
+'aadl2::FeatureGroupPrototype' is a specialization of 'Prototype'.
+'aadl2::FeatureGroupPrototype' is a specialization of 'FeatureType'.
+'aadl2::Subcomponent' is a specialization of 'StructuralFeature'.
+'aadl2::Subcomponent' is a specialization of 'ModalElement'.
+'aadl2::Subcomponent' is a specialization of 'Context'.
+'aadl2::SubprogramSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::SubprogramSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::SubprogramGroupAccess' is a specialization of 'Access'.
+'aadl2::SubprogramGroupAccess' is a specialization of 'CallContext'.
+'aadl2::SubprogramGroupSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::SubprogramGroupSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::AbstractFeature' is a specialization of 'DirectedFeature'.
+'aadl2::AbstractFeature' is a specialization of 'TriggerPort'.
+'aadl2::ModeBinding' is a specialization of 'Element'.
+'aadl2::Subcomponent' is a specialization of 'FlowElement'.
+'aadl2::Subcomponent' is a specialization of 'ArrayableElement'.
+'aadl2::FlowSegment' is a specialization of 'Element'.
+'aadl2::Connection' is a specialization of 'StructuralFeature'.
+'aadl2::Connection' is a specialization of 'ModalPath'.
+'aadl2::Connection' is a specialization of 'FlowElement'.
+'aadl2::FlowImplementation' is a specialization of 'ModalPath'.
+'aadl2::FlowImplementation' is a specialization of 'ClassifierFeature'.
+'aadl2::FlowImplementation' is a specialization of 'Flow'.
+'aadl2::Realization' is a specialization of 'Generalization_'.
+'aadl2::EndToEndFlow' is a specialization of 'FlowFeature'.
+'aadl2::EndToEndFlow' is a specialization of 'ModalPath'.
+'aadl2::EndToEndFlow' is a specialization of 'EndToEndFlowElement'.
+'aadl2::EndToEndFlowSegment' is a specialization of 'Element'.
+'aadl2::ConnectedElement' is a specialization of 'Element'.
+'aadl2::ImplementationExtension' is a specialization of 'Generalization_'.
+'aadl2::AccessConnection' is a specialization of 'Connection'.
+'aadl2::ParameterConnection' is a specialization of 'Connection'.
+'aadl2::PortConnection' is a specialization of 'Connection'.
+'aadl2::FeatureConnection' is a specialization of 'Connection'.
+'aadl2::AbstractSubcomponent' is a specialization of 'Subcomponent'.
+'aadl2::AbstractSubcomponent' is a specialization of 'Abstract'.
+'aadl2::Abstract' is a specialization of 'NamedElement'.
+'aadl2::AbstractSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::AbstractSubcomponentType' is a specialization of 'AbstractFeatureClassifier'.
+'aadl2::DataClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::DataClassifier' is a specialization of 'Data'.
+'aadl2::DataClassifier' is a specialization of 'DataSubcomponentType'.
+'aadl2::Data' is a specialization of 'NamedElement'.
+'aadl2::PortProxy' is a specialization of 'ProcessorFeature'.
+'aadl2::PortProxy' is a specialization of 'FeatureConnectionEnd'.
+'aadl2::PortProxy' is a specialization of 'PortConnectionEnd'.
+'aadl2::PortProxy' is a specialization of 'TriggerPort'.
+'aadl2::FeatureGroupConnection' is a specialization of 'Connection'.
+'aadl2::ProcessorFeature' is a specialization of 'StructuralFeature'.
+'aadl2::InternalFeature' is a specialization of 'StructuralFeature'.
+'aadl2::InternalFeature' is a specialization of 'FeatureConnectionEnd'.
+'aadl2::InternalFeature' is a specialization of 'PortConnectionEnd'.
+'aadl2::InternalFeature' is a specialization of 'TriggerPort'.
+'aadl2::EventSource' is a specialization of 'InternalFeature'.
+'aadl2::EventDataSource' is a specialization of 'InternalFeature'.
+'aadl2::AnnexLibrary' is a specialization of 'NamedElement'.
+'aadl2::DefaultAnnexLibrary' is a specialization of 'AnnexLibrary'.
+'aadl2::DefaultAnnexSubclause' is a specialization of 'AnnexSubclause'.
+'aadl2::SubprogramProxy' is a specialization of 'ProcessorFeature'.
+'aadl2::SubprogramProxy' is a specialization of 'AccessConnectionEnd'.
+'aadl2::SubprogramProxy' is a specialization of 'CalledSubprogram'.
+'aadl2::SubprogramClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::SubprogramClassifier' is a specialization of 'Subprogram'.
+'aadl2::SubprogramClassifier' is a specialization of 'SubprogramSubcomponentType'.
+'aadl2::Subprogram' is a specialization of 'NamedElement'.
+'aadl2::Subprogram' is a specialization of 'CalledSubprogram'.
+'aadl2::PackageRename' is a specialization of 'NamedElement'.
+'aadl2::PublicPackageSection' is a specialization of 'PackageSection'.
+'aadl2::PackageSection' is a specialization of 'Namespace'.
+'aadl2::ModelUnit' is a specialization of 'NamedElement'.
+'aadl2::PrivatePackageSection' is a specialization of 'PackageSection'.
+'aadl2::ComponentTypeRename' is a specialization of 'NamedElement'.
+'aadl2::FeatureGroupTypeRename' is a specialization of 'NamedElement'.
+'aadl2::AadlPackage' is a specialization of 'ModelUnit'.
+'aadl2::FeatureGroupPrototypeBinding' is a specialization of 'PrototypeBinding'.
+'aadl2::FeatureGroupPrototypeActual' is a specialization of 'FeaturePrototypeActual'.
+'aadl2::ComponentPrototypeBinding' is a specialization of 'PrototypeBinding'.
+'aadl2::ComponentPrototypeActual' is a specialization of 'ArrayableElement'.
+'aadl2::AccessSpecification' is a specialization of 'FeaturePrototypeActual'.
+'aadl2::PortSpecification' is a specialization of 'FeaturePrototypeActual'.
+'aadl2::FeaturePrototypeActual' is a specialization of 'ArrayableElement'.
+'aadl2::FeaturePrototypeBinding' is a specialization of 'PrototypeBinding'.
+'aadl2::FeaturePrototypeReference' is a specialization of 'FeaturePrototypeActual'.
+'aadl2::SubprogramCallSequence' is a specialization of 'BehavioralFeature'.
+'aadl2::SubprogramCallSequence' is a specialization of 'ModalElement'.
+'aadl2::SubprogramCall' is a specialization of 'BehavioralFeature'.
+'aadl2::SubprogramCall' is a specialization of 'Context'.
+'aadl2::BehavioredImplementation' is a specialization of 'ComponentImplementation'.
+'aadl2::AbstractType' is a specialization of 'ComponentType'.
+'aadl2::AbstractType' is a specialization of 'AbstractClassifier'.
+'aadl2::AbstractType' is a specialization of 'CallContext'.
+'aadl2::AbstractClassifier' is a specialization of 'ComponentClassifier'.
+'aadl2::AbstractClassifier' is a specialization of 'Abstract'.
+'aadl2::AbstractClassifier' is a specialization of 'AbstractSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'BusSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'DataSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'DeviceSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'MemorySubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'ProcessorSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'ProcessSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'SubprogramGroupSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'SubprogramSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'SystemSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'ThreadGroupSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'ThreadSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'VirtualBusSubcomponentType'.
+'aadl2::AbstractClassifier' is a specialization of 'VirtualProcessorSubcomponentType'.
+'aadl2::VirtualProcessorSubcomponentType' is a specialization of 'SubcomponentType'.
+'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation459', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent', cardinality 0..*).
+'aadl2::ComponentType' (role 'aadl2_ComponentType', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation99', cardinality 0..*).
+'aadl2::PropertySet' (role 'aadl2_PropertySet844', cardinality 0..*) is associated with 'aadl2::Property' (role 'aadl2_Property845', cardinality 0..*).
+'aadl2::DataClassifier' (role 'aadl2_DataClassifier', cardinality 0..*) is associated with 'aadl2::EventDataSource' (role 'aadl2_EventDataSource344', cardinality 0..*).
+'aadl2::ComponentType' (role 'aadl2_ComponentType163', cardinality 0..*) is associated with 'aadl2::TypeExtension' (role 'aadl2_TypeExtension', cardinality 0..*).
+'aadl2::ComponentType' (role 'aadl2_ComponentType161', cardinality 0..*) is associated with 'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification', cardinality 0..*).
+'aadl2::ArraySize' (role 'aadl2_ArraySize', cardinality 0..*) is associated with 'aadl2::ArrayDimension' (role 'aadl2_ArrayDimension', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent547', cardinality 0..*) is associated with 'aadl2::DeviceImplementation' (role 'aadl2_DeviceImplementation546', cardinality 0..*).
+'aadl2::ComponentType' (role 'aadl2_ComponentType157', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType159', cardinality 0..*).
+'aadl2::AbstractSubcomponent' (role 'aadl2_AbstractSubcomponent342', cardinality 0..*) is associated with 'aadl2::AbstractSubcomponentType' (role 'aadl2_AbstractSubcomponentType', cardinality 0..*).
+'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding97', cardinality 0..*) is associated with 'aadl2::ComponentImplementationReference' (role 'aadl2_ComponentImplementationReference96', cardinality 0..*).
+'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType785', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort786', cardinality 0..*).
+'aadl2::Feature' (role 'aadl2_Feature', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType156', cardinality 0..*).
+'aadl2::EndToEndFlowSegment' (role 'aadl2_EndToEndFlowSegment339', cardinality 0..*) is associated with 'aadl2::Context' (role 'aadl2_Context340', cardinality 0..*).
+'aadl2::ComponentImplementationReference' (role 'aadl2_ComponentImplementationReference', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort504', cardinality 0..*) is associated with 'aadl2::BusType' (role 'aadl2_BusType503', cardinality 0..*).
+'aadl2::PropertySet' (role 'aadl2_PropertySet847', cardinality 0..*) is associated with 'aadl2::PropertyConstant' (role 'aadl2_PropertyConstant848', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier177', cardinality 0..*) is associated with 'aadl2::Feature' (role 'aadl2_Feature176', cardinality 0..*).
+'aadl2::ThreadSubcomponent' (role 'aadl2_ThreadSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation461', cardinality 0..*).
+'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement322', cardinality 0..*) is associated with 'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement324', cardinality 0..*).
+'aadl2::ThreadGroupSubcomponent' (role 'aadl2_ThreadGroupSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation463', cardinality 0..*).
+'aadl2::ArrayDimension' (role 'aadl2_ArrayDimension93', cardinality 0..*) is associated with 'aadl2::ArrayableElement' (role 'aadl2_ArrayableElement', cardinality 0..*).
+'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement321', cardinality 0..*) is associated with 'aadl2::ConnectionEnd' (role 'aadl2_ConnectionEnd', cardinality 0..*).
+'aadl2::Feature' (role 'aadl2_Feature172', cardinality 0..*) is associated with 'aadl2::Feature' (role 'aadl2_Feature174', cardinality 0..*).
+'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess517', cardinality 0..*) is associated with 'aadl2::DataType' (role 'aadl2_DataType516', cardinality 0..*).
+'aadl2::PropertySet' (role 'aadl2_PropertySet850', cardinality 0..*) is associated with 'aadl2::ModelUnit' (role 'aadl2_ModelUnit851', cardinality 0..*).
+'aadl2::ArraySizeProperty' (role 'aadl2_ArraySizeProperty', cardinality 0..*) is associated with 'aadl2::ArraySize' (role 'aadl2_ArraySize91', cardinality 0..*).
+'aadl2::Feature' (role 'aadl2_Feature171', cardinality 0..*) is associated with 'aadl2::FeatureClassifier' (role 'aadl2_FeatureClassifier', cardinality 0..*).
+'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement318', cardinality 0..*) is associated with 'aadl2::Context' (role 'aadl2_Context319', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType867', cardinality 0..*) is associated with 'aadl2::UnitsType' (role 'aadl2_UnitsType868', cardinality 0..*).
+'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement85', cardinality 0..*) is associated with 'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement83', cardinality 0..*).
+'aadl2::PropertySet' (role 'aadl2_PropertySet859', cardinality 0..*) is associated with 'aadl2::GlobalNamespace' (role 'aadl2_GlobalNamespace858', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation465', cardinality 0..*).
+'aadl2::ComponentPrototype' (role 'aadl2_ComponentPrototype', cardinality 0..*) is associated with 'aadl2::Feature' (role 'aadl2_Feature169', cardinality 0..*).
+'aadl2::Connection' (role 'aadl2_Connection314', cardinality 0..*) is associated with 'aadl2::Connection' (role 'aadl2_Connection316', cardinality 0..*).
+'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement81', cardinality 0..*) is associated with 'aadl2::NamedElement' (role 'aadl2_NamedElement82', cardinality 0..*).
+'aadl2::Mode' (role 'aadl2_Mode148', cardinality 0..*) is associated with 'aadl2::ModeTransition' (role 'aadl2_ModeTransition147', cardinality 0..*).
+'aadl2::EndToEndFlowElement' (role 'aadl2_EndToEndFlowElement', cardinality 0..*) is associated with 'aadl2::EndToEndFlowSegment' (role 'aadl2_EndToEndFlowSegment337', cardinality 0..*).
+'aadl2::BusImplementation' (role 'aadl2_BusImplementation', cardinality 0..*) is associated with 'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent509', cardinality 0..*).
+'aadl2::ArrayRange' (role 'aadl2_ArrayRange', cardinality 0..*) is associated with 'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement79', cardinality 0..*).
+'aadl2::EndToEndFlow' (role 'aadl2_EndToEndFlow335', cardinality 0..*) is associated with 'aadl2::EndToEndFlowSegment' (role 'aadl2_EndToEndFlowSegment', cardinality 0..*).
+'aadl2::ModeTransition' (role 'aadl2_ModeTransition144', cardinality 0..*) is associated with 'aadl2::Mode' (role 'aadl2_Mode145', cardinality 0..*).
+'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement77', cardinality 0..*) is associated with 'aadl2::ContainedNamedElement' (role 'aadl2_ContainedNamedElement76', cardinality 0..*).
+'aadl2::DataAccess' (role 'aadl2_DataAccess514', cardinality 0..*) is associated with 'aadl2::DataType' (role 'aadl2_DataType513', cardinality 0..*).
+'aadl2::EndToEndFlow' (role 'aadl2_EndToEndFlow331', cardinality 0..*) is associated with 'aadl2::EndToEndFlow' (role 'aadl2_EndToEndFlow333', cardinality 0..*).
+'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier142', cardinality 0..*) is associated with 'aadl2::ModeTransition' (role 'aadl2_ModeTransition', cardinality 0..*).
+'aadl2::VirtualProcessorSubcomponent' (role 'aadl2_VirtualProcessorSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation467', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression88', cardinality 0..*) is associated with 'aadl2::ModalPropertyValue' (role 'aadl2_ModalPropertyValue87', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent797', cardinality 0..*) is associated with 'aadl2::VirtualProcessorImplementation' (role 'aadl2_VirtualProcessorImplementation', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType', cardinality 0..*) is associated with 'aadl2::UnitsType' (role 'aadl2_UnitsType', cardinality 0..*).
+'aadl2::Realization' (role 'aadl2_Realization329', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType330', cardinality 0..*).
+'aadl2::TriggerPort' (role 'aadl2_TriggerPort', cardinality 0..*) is associated with 'aadl2::ModeTransitionTrigger' (role 'aadl2_ModeTransitionTrigger154', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess511', cardinality 0..*) is associated with 'aadl2::DataType' (role 'aadl2_DataType', cardinality 0..*).
+'aadl2::Prototype' (role 'aadl2_Prototype62', cardinality 0..*) is associated with 'aadl2::Prototype' (role 'aadl2_Prototype64', cardinality 0..*).
+'aadl2::DataSubcomponentType' (role 'aadl2_DataSubcomponentType472', cardinality 0..*) is associated with 'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent471', cardinality 0..*).
+'aadl2::UnitsType' (role 'aadl2_UnitsType863', cardinality 0..*) is associated with 'aadl2::NumberType' (role 'aadl2_NumberType862', cardinality 0..*).
+'aadl2::BasicProperty' (role 'aadl2_BasicProperty802', cardinality 0..*) is associated with 'aadl2::BasicPropertyAssociation' (role 'aadl2_BasicPropertyAssociation', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation327', cardinality 0..*) is associated with 'aadl2::ImplementationExtension' (role 'aadl2_ImplementationExtension326', cardinality 0..*).
+'aadl2::ProcessorSubcomponent' (role 'aadl2_ProcessorSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation453', cardinality 0..*).
+'aadl2::Context' (role 'aadl2_Context', cardinality 0..*) is associated with 'aadl2::ModeTransitionTrigger' (role 'aadl2_ModeTransitionTrigger152', cardinality 0..*).
+'aadl2::ContainmentPathElement' (role 'aadl2_ContainmentPathElement', cardinality 0..*) is associated with 'aadl2::ContainedNamedElement' (role 'aadl2_ContainedNamedElement74', cardinality 0..*).
+'aadl2::FlowImplementation' (role 'aadl2_FlowImplementation299', cardinality 0..*) is associated with 'aadl2::FlowEnd' (role 'aadl2_FlowEnd300', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType865', cardinality 0..*) is associated with 'aadl2::NumericRange' (role 'aadl2_NumericRange', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression805', cardinality 0..*) is associated with 'aadl2::BasicPropertyAssociation' (role 'aadl2_BasicPropertyAssociation804', cardinality 0..*).
+'aadl2::ModeTransition' (role 'aadl2_ModeTransition150', cardinality 0..*) is associated with 'aadl2::ModeTransitionTrigger' (role 'aadl2_ModeTransitionTrigger', cardinality 0..*).
+'aadl2::Prototype' (role 'aadl2_Prototype72', cardinality 0..*) is associated with 'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding71', cardinality 0..*).
+'aadl2::FlowImplementation' (role 'aadl2_FlowImplementation297', cardinality 0..*) is associated with 'aadl2::FlowSegment' (role 'aadl2_FlowSegment', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType879', cardinality 0..*) is associated with 'aadl2::RangeType' (role 'aadl2_RangeType', cardinality 0..*).
+'aadl2::DeviceSubcomponent' (role 'aadl2_DeviceSubcomponent474', cardinality 0..*) is associated with 'aadl2::DeviceSubcomponentType' (role 'aadl2_DeviceSubcomponentType', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType810', cardinality 0..*) is associated with 'aadl2::PropertyConstant' (role 'aadl2_PropertyConstant809', cardinality 0..*).
+'aadl2::InternalFeature' (role 'aadl2_InternalFeature', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation130', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType807', cardinality 0..*) is associated with 'aadl2::PropertyConstant' (role 'aadl2_PropertyConstant', cardinality 0..*).
+'aadl2::RefinableElement' (role 'aadl2_RefinableElement69', cardinality 0..*) is associated with 'aadl2::RefinableElement' (role 'aadl2_RefinableElement67', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier825', cardinality 0..*) is associated with 'aadl2::ClassifierValue' (role 'aadl2_ClassifierValue', cardinality 0..*).
+'aadl2::BusType' (role 'aadl2_BusType506', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort507', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType882', cardinality 0..*) is associated with 'aadl2::RangeType' (role 'aadl2_RangeType881', cardinality 0..*).
+'aadl2::FlowImplementation' (role 'aadl2_FlowImplementation294', cardinality 0..*) is associated with 'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification295', cardinality 0..*).
+'aadl2::RangeValue' (role 'aadl2_RangeValue', cardinality 0..*) is associated with 'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression827', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation128', cardinality 0..*) is associated with 'aadl2::ProcessorFeature' (role 'aadl2_ProcessorFeature', cardinality 0..*).
+'aadl2::RefinableElement' (role 'aadl2_RefinableElement', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'aadl2_Classifier66', cardinality 0..*).
+'aadl2::NumberType' (role 'aadl2_NumberType885', cardinality 0..*) is associated with 'aadl2::RangeType' (role 'aadl2_RangeType884', cardinality 0..*).
+'aadl2::Connection' (role 'aadl2_Connection312', cardinality 0..*) is associated with 'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement313', cardinality 0..*).
+'aadl2::DeviceType' (role 'aadl2_DeviceType526', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort527', cardinality 0..*).
+'aadl2::FeatureGroupConnection' (role 'aadl2_FeatureGroupConnection', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation126', cardinality 0..*).
+'aadl2::Element' (role 'aadl2_Element58', cardinality 0..*) is associated with 'aadl2::DirectedRelationship' (role 'aadl2_DirectedRelationship57', cardinality 0..*).
+'aadl2::EnumerationType' (role 'aadl2_EnumerationType', cardinality 0..*) is associated with 'aadl2::EnumerationLiteral' (role 'aadl2_EnumerationLiteral', cardinality 0..*).
+'aadl2::ConnectedElement' (role 'aadl2_ConnectedElement', cardinality 0..*) is associated with 'aadl2::Connection' (role 'aadl2_Connection310', cardinality 0..*).
+'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent519', cardinality 0..*) is associated with 'aadl2::DataImplementation' (role 'aadl2_DataImplementation', cardinality 0..*).
+'aadl2::Element' (role 'aadl2_Element55', cardinality 0..*) is associated with 'aadl2::DirectedRelationship' (role 'aadl2_DirectedRelationship', cardinality 0..*).
+'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier', cardinality 0..*) is associated with 'aadl2::Mode' (role 'aadl2_Mode140', cardinality 0..*).
+'aadl2::FlowSegment' (role 'aadl2_FlowSegment307', cardinality 0..*) is associated with 'aadl2::Context' (role 'aadl2_Context308', cardinality 0..*).
+'aadl2::RangeValue' (role 'aadl2_RangeValue832', cardinality 0..*) is associated with 'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression833', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType842', cardinality 0..*) is associated with 'aadl2::PropertySet' (role 'aadl2_PropertySet', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression872', cardinality 0..*) is associated with 'aadl2::NumericRange' (role 'aadl2_NumericRange871', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression830', cardinality 0..*) is associated with 'aadl2::RangeValue' (role 'aadl2_RangeValue829', cardinality 0..*).
+'aadl2::Classifier' (role 'Classifier53', cardinality 0..*) is associated with 'aadl2::Generalization_' (role 'generalization', cardinality 0..*).
+'aadl2::SubprogramProxy' (role 'aadl2_SubprogramProxy', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation138', cardinality 0..*).
+'aadl2::UnitLiteral' (role 'aadl2_UnitLiteral', cardinality 0..*) is associated with 'aadl2::NumberValue' (role 'aadl2_NumberValue', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression875', cardinality 0..*) is associated with 'aadl2::NumericRange' (role 'aadl2_NumericRange874', cardinality 0..*).
+'aadl2::FlowSegment' (role 'aadl2_FlowSegment305', cardinality 0..*) is associated with 'aadl2::FlowElement' (role 'aadl2_FlowElement', cardinality 0..*).
+'aadl2::DeviceType' (role 'aadl2_DeviceType529', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort530', cardinality 0..*).
+'aadl2::AbstractNamedValue' (role 'aadl2_AbstractNamedValue', cardinality 0..*) is associated with 'aadl2::NamedValue' (role 'aadl2_NamedValue', cardinality 0..*).
+'aadl2::Generalization_' (role 'aadl2_Generalization', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'aadl2_Classifier51', cardinality 0..*).
+'aadl2::DeviceType' (role 'aadl2_DeviceType', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort524', cardinality 0..*).
+'aadl2::MetaclassReference' (role 'aadl2_MetaclassReference877', cardinality 0..*) is associated with 'aadl2::ClassifierType' (role 'aadl2_ClassifierType', cardinality 0..*).
+'aadl2::PortProxy' (role 'aadl2_PortProxy', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation136', cardinality 0..*).
+'aadl2::FlowImplementation' (role 'aadl2_FlowImplementation302', cardinality 0..*) is associated with 'aadl2::FlowEnd' (role 'aadl2_FlowEnd303', cardinality 0..*).
+'aadl2::VirtualProcessorSubcomponent' (role 'aadl2_VirtualProcessorSubcomponent496', cardinality 0..*) is associated with 'aadl2::VirtualProcessorSubcomponentType' (role 'aadl2_VirtualProcessorSubcomponentType', cardinality 0..*).
+'aadl2::ModalElement' (role 'aadl2_ModalElement', cardinality 0..*) is associated with 'aadl2::Mode' (role 'aadl2_Mode', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation134', cardinality 0..*) is associated with 'aadl2::EventDataSource' (role 'aadl2_EventDataSource', cardinality 0..*).
+'aadl2::ListType' (role 'aadl2_ListType896', cardinality 0..*) is associated with 'aadl2::PropertyType' (role 'aadl2_PropertyType897', cardinality 0..*).
+'aadl2::VirtualBusSubcomponentType' (role 'aadl2_VirtualBusSubcomponentType', cardinality 0..*) is associated with 'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent494', cardinality 0..*).
+'aadl2::ModeBinding' (role 'aadl2_ModeBinding', cardinality 0..*) is associated with 'aadl2::Subcomponent' (role 'aadl2_Subcomponent277', cardinality 0..*).
+'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent544', cardinality 0..*) is associated with 'aadl2::DeviceImplementation' (role 'aadl2_DeviceImplementation543', cardinality 0..*).
+'aadl2::UnitLiteral' (role 'aadl2_UnitLiteral818', cardinality 0..*) is associated with 'aadl2::UnitLiteral' (role 'aadl2_UnitLiteral820', cardinality 0..*).
+'aadl2::Relationship' (role 'aadl2_Relationship', cardinality 0..*) is associated with 'aadl2::Element' (role 'aadl2_Element60', cardinality 0..*).
+'aadl2::EventSource' (role 'aadl2_EventSource', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation132', cardinality 0..*).
+'aadl2::Subcomponent' (role 'aadl2_Subcomponent274', cardinality 0..*) is associated with 'aadl2::ComponentPrototype' (role 'aadl2_ComponentPrototype275', cardinality 0..*).
+'aadl2::BasicProperty' (role 'aadl2_BasicProperty887', cardinality 0..*) is associated with 'aadl2::RecordType' (role 'aadl2_RecordType', cardinality 0..*).
+'aadl2::NumberValue' (role 'aadl2_NumberValue823', cardinality 0..*) is associated with 'aadl2::UnitLiteral' (role 'aadl2_UnitLiteral822', cardinality 0..*).
+'aadl2::Operation' (role 'aadl2_Operation', cardinality 0..*) is associated with 'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression835', cardinality 0..*).
+'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent522', cardinality 0..*) is associated with 'aadl2::DataImplementation' (role 'aadl2_DataImplementation521', cardinality 0..*).
+'aadl2::RecordValue' (role 'aadl2_RecordValue', cardinality 0..*) is associated with 'aadl2::BasicPropertyAssociation' (role 'aadl2_BasicPropertyAssociation837', cardinality 0..*).
+'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'aadl2_Classifier43', cardinality 0..*).
+'aadl2::EndToEndFlow' (role 'aadl2_EndToEndFlow', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation114', cardinality 0..*).
+'aadl2::MetaclassReference' (role 'aadl2_MetaclassReference889', cardinality 0..*) is associated with 'aadl2::ReferenceType' (role 'aadl2_ReferenceType', cardinality 0..*).
+'aadl2::Subcomponent' (role 'aadl2_Subcomponent271', cardinality 0..*) is associated with 'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding272', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier41', cardinality 0..*) is associated with 'aadl2::Prototype' (role 'aadl2_Prototype', cardinality 0..*).
+'aadl2::ThreadType' (role 'aadl2_ThreadType722', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess723', cardinality 0..*).
+'aadl2::DataPort' (role 'aadl2_DataPort501', cardinality 0..*) is associated with 'aadl2::BusType' (role 'aadl2_BusType500', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType891', cardinality 0..*) is associated with 'aadl2::ListType' (role 'aadl2_ListType', cardinality 0..*).
+'aadl2::Realization' (role 'aadl2_Realization', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation112', cardinality 0..*).
+'aadl2::Subcomponent' (role 'aadl2_Subcomponent269', cardinality 0..*) is associated with 'aadl2::SubcomponentType' (role 'aadl2_SubcomponentType', cardinality 0..*).
+'aadl2::BusAccess' (role 'aadl2_BusAccess498', cardinality 0..*) is associated with 'aadl2::BusType' (role 'aadl2_BusType', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier39', cardinality 0..*) is associated with 'aadl2::AnnexSubclause' (role 'aadl2_AnnexSubclause', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation110', cardinality 0..*) is associated with 'aadl2::ImplementationExtension' (role 'aadl2_ImplementationExtension', cardinality 0..*).
+'aadl2::ListType' (role 'aadl2_ListType893', cardinality 0..*) is associated with 'aadl2::PropertyType' (role 'aadl2_PropertyType894', cardinality 0..*).
+'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType788', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess789', cardinality 0..*).
+'aadl2::Mode' (role 'aadl2_Mode292', cardinality 0..*) is associated with 'aadl2::ModeBinding' (role 'aadl2_ModeBinding291', cardinality 0..*).
+'aadl2::ThreadSubcomponent' (role 'aadl2_ThreadSubcomponent490', cardinality 0..*) is associated with 'aadl2::ThreadSubcomponentType' (role 'aadl2_ThreadSubcomponentType', cardinality 0..*).
+'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess792', cardinality 0..*) is associated with 'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType791', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation108', cardinality 0..*) is associated with 'aadl2::Connection' (role 'aadl2_Connection', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier35', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'aadl2_Classifier37', cardinality 0..*).
+'aadl2::ModeBinding' (role 'aadl2_ModeBinding288', cardinality 0..*) is associated with 'aadl2::Mode' (role 'aadl2_Mode289', cardinality 0..*).
+'aadl2::Generalization_' (role 'Generalization_', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'specific', cardinality 0..*).
+'aadl2::FlowImplementation' (role 'aadl2_FlowImplementation', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation106', cardinality 0..*).
+'aadl2::ThreadGroupSubcomponentType' (role 'aadl2_ThreadGroupSubcomponentType', cardinality 0..*) is associated with 'aadl2::ThreadGroupSubcomponent' (role 'aadl2_ThreadGroupSubcomponent492', cardinality 0..*).
+'aadl2::Subcomponent' (role 'aadl2_Subcomponent285', cardinality 0..*) is associated with 'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier286', cardinality 0..*).
+'aadl2::PropertyConstant' (role 'aadl2_PropertyConstant812', cardinality 0..*) is associated with 'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression813', cardinality 0..*).
+'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent487', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponentType' (role 'aadl2_SubprogramGroupSubcomponentType488', cardinality 0..*).
+'aadl2::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'aadl2::ClassifierFeature' (role 'classifierFeature', cardinality 0..*).
+'aadl2::FeatureConnection' (role 'aadl2_FeatureConnection', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation124', cardinality 0..*).
+'aadl2::Subcomponent' (role 'aadl2_Subcomponent281', cardinality 0..*) is associated with 'aadl2::Subcomponent' (role 'aadl2_Subcomponent283', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType816', cardinality 0..*) is associated with 'aadl2::PropertyConstant' (role 'aadl2_PropertyConstant815', cardinality 0..*).
+'aadl2::SubprogramSubcomponentType' (role 'aadl2_SubprogramSubcomponentType485', cardinality 0..*) is associated with 'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent484', cardinality 0..*).
+'aadl2::NamedElement' (role 'aadl2_NamedElement48', cardinality 0..*) is associated with 'aadl2::Namespace' (role 'aadl2_Namespace47', cardinality 0..*).
+'aadl2::ComponentImplementationReference' (role 'aadl2_ComponentImplementationReference280', cardinality 0..*) is associated with 'aadl2::Subcomponent' (role 'aadl2_Subcomponent279', cardinality 0..*).
+'aadl2::SystemSubcomponentType' (role 'aadl2_SystemSubcomponentType', cardinality 0..*) is associated with 'aadl2::SystemSubcomponent' (role 'aadl2_SystemSubcomponent482', cardinality 0..*).
+'aadl2::NamedElement' (role 'aadl2_NamedElement45', cardinality 0..*) is associated with 'aadl2::Namespace' (role 'aadl2_Namespace', cardinality 0..*).
+'aadl2::AbstractFeature' (role 'aadl2_AbstractFeature259', cardinality 0..*) is associated with 'aadl2::FeaturePrototype' (role 'aadl2_FeaturePrototype', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation120', cardinality 0..*) is associated with 'aadl2::ParameterConnection' (role 'aadl2_ParameterConnection', cardinality 0..*).
+'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType794', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess795', cardinality 0..*).
+'aadl2::ProcessorSubcomponentType' (role 'aadl2_ProcessorSubcomponentType', cardinality 0..*) is associated with 'aadl2::ProcessorSubcomponent' (role 'aadl2_ProcessorSubcomponent480', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation122', cardinality 0..*) is associated with 'aadl2::PortConnection' (role 'aadl2_PortConnection', cardinality 0..*).
+'aadl2::TypedElement' (role 'aadl2_TypedElement', cardinality 0..*) is associated with 'aadl2::Type' (role 'aadl2_Type', cardinality 0..*).
+'aadl2::AccessConnection' (role 'aadl2_AccessConnection', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation118', cardinality 0..*).
+'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess257', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponentType' (role 'aadl2_SubprogramGroupSubcomponentType', cardinality 0..*).
+'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent703', cardinality 0..*) is associated with 'aadl2::ProcessImplementation' (role 'aadl2_ProcessImplementation702', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression839', cardinality 0..*) is associated with 'aadl2::ListValue' (role 'aadl2_ListValue', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent469', cardinality 0..*) is associated with 'aadl2::BusSubcomponentType' (role 'aadl2_BusSubcomponentType', cardinality 0..*).
+'aadl2::AbstractSubcomponent' (role 'aadl2_AbstractSubcomponent', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation116', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType28', cardinality 0..*) is associated with 'aadl2::BasicProperty' (role 'aadl2_BasicProperty27', cardinality 0..*).
+'aadl2::PublicPackageSection' (role 'aadl2_PublicPackageSection856', cardinality 0..*) is associated with 'aadl2::GlobalNamespace' (role 'aadl2_GlobalNamespace', cardinality 0..*).
+'aadl2::FeatureGroupPrototype' (role 'aadl2_FeatureGroupPrototype266', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType267', cardinality 0..*).
+'aadl2::PropertySet' (role 'aadl2_PropertySet853', cardinality 0..*) is associated with 'aadl2::AnnexSubclause' (role 'aadl2_AnnexSubclause854', cardinality 0..*).
+'aadl2::ProcessSubcomponentType' (role 'aadl2_ProcessSubcomponentType', cardinality 0..*) is associated with 'aadl2::ProcessSubcomponent' (role 'aadl2_ProcessSubcomponent478', cardinality 0..*).
+'aadl2::NamedElement' (role 'aadl2_NamedElement33', cardinality 0..*) is associated with 'aadl2::Classifier' (role 'aadl2_Classifier32', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation104', cardinality 0..*) is associated with 'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation102', cardinality 0..*).
+'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier264', cardinality 0..*) is associated with 'aadl2::FeaturePrototype' (role 'aadl2_FeaturePrototype263', cardinality 0..*).
+'aadl2::AbstractFeatureClassifier' (role 'aadl2_AbstractFeatureClassifier', cardinality 0..*) is associated with 'aadl2::AbstractFeature' (role 'aadl2_AbstractFeature261', cardinality 0..*).
+'aadl2::VirtualProcessorSubcomponent' (role 'aadl2_VirtualProcessorSubcomponent800', cardinality 0..*) is associated with 'aadl2::VirtualProcessorImplementation' (role 'aadl2_VirtualProcessorImplementation799', cardinality 0..*).
+'aadl2::ComponentImplementation' (role 'aadl2_ComponentImplementation101', cardinality 0..*) is associated with 'aadl2::Subcomponent' (role 'aadl2_Subcomponent', cardinality 0..*).
+'aadl2::DeviceType' (role 'aadl2_DeviceType532', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess533', cardinality 0..*).
+'aadl2::MemorySubcomponent' (role 'aadl2_MemorySubcomponent476', cardinality 0..*) is associated with 'aadl2::MemorySubcomponentType' (role 'aadl2_MemorySubcomponentType', cardinality 0..*).
+'aadl2::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'aadl2::ClassifierFeature' (role 'ClassifierFeature', cardinality 0..*).
+'aadl2::AccessSpecification' (role 'aadl2_AccessSpecification404', cardinality 0..*) is associated with 'aadl2::ComponentPrototype' (role 'aadl2_ComponentPrototype405', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation649', cardinality 0..*) is associated with 'aadl2::VirtualProcessorSubcomponent' (role 'aadl2_VirtualProcessorSubcomponent650', cardinality 0..*).
+'aadl2::SystemType' (role 'aadl2_SystemType605', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort606', cardinality 0..*).
+'aadl2::DataSubcomponentType' (role 'aadl2_DataSubcomponentType247', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort246', cardinality 0..*).
+'aadl2::PropertyExpression' (role 'aadl2_PropertyExpression', cardinality 0..*) is associated with 'aadl2::Property' (role 'aadl2_Property14', cardinality 0..*).
+'aadl2::SubprogramSubcomponentType' (role 'aadl2_SubprogramSubcomponentType', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess255', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType385', cardinality 0..*) is associated with 'aadl2::FeatureGroupTypeRename' (role 'aadl2_FeatureGroupTypeRename384', cardinality 0..*).
+'aadl2::VirtualBusType' (role 'aadl2_VirtualBusType772', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort773', cardinality 0..*).
+'aadl2::PublicPackageSection' (role 'PublicPackageSection', cardinality 0..*) is associated with 'aadl2::PrivatePackageSection' (role 'privateSection', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation625', cardinality 0..*) is associated with 'aadl2::DeviceSubcomponent' (role 'aadl2_DeviceSubcomponent626', cardinality 0..*).
+'aadl2::MemorySubcomponent' (role 'aadl2_MemorySubcomponent629', cardinality 0..*) is associated with 'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation628', cardinality 0..*).
+'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation457', cardinality 0..*) is associated with 'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent', cardinality 0..*).
+'aadl2::PropertyAssociation' (role 'aadl2_PropertyAssociation12', cardinality 0..*) is associated with 'aadl2::ModalPropertyValue' (role 'aadl2_ModalPropertyValue', cardinality 0..*).
+'aadl2::Parameter' (role 'aadl2_Parameter252', cardinality 0..*) is associated with 'aadl2::DataSubcomponentType' (role 'aadl2_DataSubcomponentType253', cardinality 0..*).
+'aadl2::VirtualBusType' (role 'aadl2_VirtualBusType769', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort770', cardinality 0..*).
+'aadl2::AadlPackage' (role 'aadl2_AadlPackage377', cardinality 0..*) is associated with 'aadl2::PrivatePackageSection' (role 'aadl2_PrivatePackageSection378', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort714', cardinality 0..*) is associated with 'aadl2::ThreadType' (role 'aadl2_ThreadType713', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort739', cardinality 0..*) is associated with 'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType738', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier', cardinality 0..*) is associated with 'aadl2::PropertyAssociation' (role 'aadl2_PropertyAssociation10', cardinality 0..*).
+'aadl2::ComponentTypeRename' (role 'aadl2_ComponentTypeRename381', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType382', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent669', cardinality 0..*) is associated with 'aadl2::ProcessorImplementation' (role 'aadl2_ProcessorImplementation', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort249', cardinality 0..*) is associated with 'aadl2::DataSubcomponentType' (role 'aadl2_DataSubcomponentType250', cardinality 0..*).
+'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent623', cardinality 0..*) is associated with 'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation622', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation631', cardinality 0..*) is associated with 'aadl2::ProcessSubcomponent' (role 'aadl2_ProcessSubcomponent632', cardinality 0..*).
+'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation455', cardinality 0..*) is associated with 'aadl2::SystemSubcomponent' (role 'aadl2_SystemSubcomponent', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType25', cardinality 0..*) is associated with 'aadl2::BasicProperty' (role 'aadl2_BasicProperty24', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation634', cardinality 0..*) is associated with 'aadl2::ProcessorSubcomponent' (role 'aadl2_ProcessorSubcomponent635', cardinality 0..*).
+'aadl2::BusFeatureClassifier' (role 'aadl2_BusFeatureClassifier', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess242', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent620', cardinality 0..*) is associated with 'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation', cardinality 0..*).
+'aadl2::EventPort' (role 'aadl2_EventPort717', cardinality 0..*) is associated with 'aadl2::ThreadType' (role 'aadl2_ThreadType716', cardinality 0..*).
+'aadl2::PublicPackageSection' (role 'aadl2_PublicPackageSection375', cardinality 0..*) is associated with 'aadl2::AadlPackage' (role 'aadl2_AadlPackage374', cardinality 0..*).
+'aadl2::PropertyType' (role 'aadl2_PropertyType', cardinality 0..*) is associated with 'aadl2::BasicProperty' (role 'aadl2_BasicProperty', cardinality 0..*).
+'aadl2::DataSubcomponentType' (role 'aadl2_DataSubcomponentType', cardinality 0..*) is associated with 'aadl2::DataAccess' (role 'aadl2_DataAccess244', cardinality 0..*).
+'aadl2::ComponentPrototypeActual' (role 'aadl2_ComponentPrototypeActual388', cardinality 0..*) is associated with 'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding389', cardinality 0..*).
+'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation451', cardinality 0..*) is associated with 'aadl2::ProcessSubcomponent' (role 'aadl2_ProcessSubcomponent', cardinality 0..*).
+'aadl2::SubprogramGroupImplementation' (role 'aadl2_SubprogramGroupImplementation597', cardinality 0..*) is associated with 'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent598', cardinality 0..*).
+'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent638', cardinality 0..*) is associated with 'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation637', cardinality 0..*).
+'aadl2::PackageRename' (role 'aadl2_PackageRename', cardinality 0..*) is associated with 'aadl2::PackageSection' (role 'aadl2_PackageSection', cardinality 0..*).
+'aadl2::ComponentPrototypeBinding' (role 'aadl2_ComponentPrototypeBinding', cardinality 0..*) is associated with 'aadl2::ComponentPrototypeActual' (role 'aadl2_ComponentPrototypeActual', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation640', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent641', cardinality 0..*).
+'aadl2::ThreadType' (role 'aadl2_ThreadType725', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess726', cardinality 0..*).
+'aadl2::SubprogramGroupImplementation' (role 'aadl2_SubprogramGroupImplementation594', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent595', cardinality 0..*).
+'aadl2::AadlPackage' (role 'aadl2_AadlPackage', cardinality 0..*) is associated with 'aadl2::PackageRename' (role 'aadl2_PackageRename368', cardinality 0..*).
+'aadl2::PrototypeBinding' (role 'aadl2_PrototypeBinding396', cardinality 0..*) is associated with 'aadl2::FeatureGroupPrototypeActual' (role 'aadl2_FeatureGroupPrototypeActual395', cardinality 0..*).
+'aadl2::Parameter' (role 'aadl2_Parameter', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType230', cardinality 0..*).
+'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType750', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess751', cardinality 0..*).
+'aadl2::PublicPackageSection' (role 'publicSection', cardinality 0..*) is associated with 'aadl2::PrivatePackageSection' (role 'PrivatePackageSection', cardinality 0..*).
+'aadl2::DataAccess' (role 'aadl2_DataAccess603', cardinality 0..*) is associated with 'aadl2::SystemType' (role 'aadl2_SystemType602', cardinality 0..*).
+'aadl2::MemorySubcomponent' (role 'aadl2_MemorySubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation449', cardinality 0..*).
+'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation643', cardinality 0..*) is associated with 'aadl2::SystemSubcomponent' (role 'aadl2_SystemSubcomponent644', cardinality 0..*).
+'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType747', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess748', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType227', cardinality 0..*) is associated with 'aadl2::FeatureGroup' (role 'aadl2_FeatureGroup228', cardinality 0..*).
+'aadl2::Property' (role 'aadl2_Property21', cardinality 0..*) is associated with 'aadl2::PropertyOwner' (role 'aadl2_PropertyOwner', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType654', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort655', cardinality 0..*).
+'aadl2::DefaultAnnexSubclause' (role 'aadl2_DefaultAnnexSubclause', cardinality 0..*) is associated with 'aadl2::AnnexSubclause' (role 'aadl2_AnnexSubclause352', cardinality 0..*).
+'aadl2::EventPort' (role 'aadl2_EventPort', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType225', cardinality 0..*).
+'aadl2::SystemType' (role 'aadl2_SystemType', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess600', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType663', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess664', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier19', cardinality 0..*) is associated with 'aadl2::Property' (role 'aadl2_Property18', cardinality 0..*).
+'aadl2::PackageSection' (role 'aadl2_PackageSection366', cardinality 0..*) is associated with 'aadl2::ModelUnit' (role 'aadl2_ModelUnit', cardinality 0..*).
+'aadl2::SubprogramGroupType' (role 'aadl2_SubprogramGroupType589', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess590', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType240', cardinality 0..*) is associated with 'aadl2::GroupExtension' (role 'aadl2_GroupExtension239', cardinality 0..*).
+'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation447', cardinality 0..*) is associated with 'aadl2::DeviceSubcomponent' (role 'aadl2_DeviceSubcomponent', cardinality 0..*).
+'aadl2::AadlPackage' (role 'aadl2_AadlPackage372', cardinality 0..*) is associated with 'aadl2::PrivatePackageSection' (role 'aadl2_PrivatePackageSection', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType666', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess667', cardinality 0..*).
+'aadl2::PropertyAssociation' (role 'aadl2_PropertyAssociation8', cardinality 0..*) is associated with 'aadl2::ContainedNamedElement' (role 'aadl2_ContainedNamedElement', cardinality 0..*).
+'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType744', cardinality 0..*) is associated with 'aadl2::DataAccess' (role 'aadl2_DataAccess745', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess536', cardinality 0..*) is associated with 'aadl2::DeviceType' (role 'aadl2_DeviceType535', cardinality 0..*).
+'aadl2::AnnexLibrary' (role 'aadl2_AnnexLibrary364', cardinality 0..*) is associated with 'aadl2::PackageSection' (role 'aadl2_PackageSection363', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType236', cardinality 0..*) is associated with 'aadl2::AbstractFeature' (role 'aadl2_AbstractFeature237', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort652', cardinality 0..*).
+'aadl2::PropertyAssociation' (role 'aadl2_PropertyAssociation6', cardinality 0..*) is associated with 'aadl2::Property' (role 'aadl2_Property', cardinality 0..*).
+'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation445', cardinality 0..*).
+'aadl2::FeatureGroupTypeRename' (role 'aadl2_FeatureGroupTypeRename', cardinality 0..*) is associated with 'aadl2::PackageSection' (role 'aadl2_PackageSection361', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType234', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess', cardinality 0..*).
+'aadl2::ProcessType' (role 'aadl2_ProcessType', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort680', cardinality 0..*).
+'aadl2::ProcessImplementation' (role 'aadl2_ProcessImplementation699', cardinality 0..*) is associated with 'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent700', cardinality 0..*).
+'aadl2::NamedElement' (role 'aadl2_NamedElement', cardinality 0..*) is associated with 'aadl2::PropertyAssociation' (role 'aadl2_PropertyAssociation', cardinality 0..*).
+'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier402', cardinality 0..*) is associated with 'aadl2::AccessSpecification' (role 'aadl2_AccessSpecification', cardinality 0..*).
+'aadl2::DataPort' (role 'aadl2_DataPort736', cardinality 0..*) is associated with 'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType', cardinality 0..*).
+'aadl2::ThreadGroupType' (role 'aadl2_ThreadGroupType741', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort742', cardinality 0..*).
+'aadl2::MemorySubcomponent' (role 'aadl2_MemorySubcomponent563', cardinality 0..*) is associated with 'aadl2::MemoryImplementation' (role 'aadl2_MemoryImplementation562', cardinality 0..*).
+'aadl2::Element' (role 'aadl2_Element3', cardinality 0..*) is associated with 'aadl2::Comment' (role 'aadl2_Comment', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType232', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent', cardinality 0..*) is associated with 'aadl2::AbstractImplementation' (role 'aadl2_AbstractImplementation', cardinality 0..*).
+'aadl2::PackageSection' (role 'aadl2_PackageSection356', cardinality 0..*) is associated with 'aadl2::ComponentTypeRename' (role 'aadl2_ComponentTypeRename', cardinality 0..*).
+'aadl2::Feature' (role 'aadl2_Feature207', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType206', cardinality 0..*).
+'aadl2::Element' (role 'aadl2_Element0', cardinality 0..*) is associated with 'aadl2::Element' (role 'aadl2_Element', cardinality 0..*).
+'aadl2::MemoryType' (role 'aadl2_MemoryType', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess549', cardinality 0..*).
+'aadl2::ThreadGroupSubcomponent' (role 'aadl2_ThreadGroupSubcomponent759', cardinality 0..*) is associated with 'aadl2::ThreadGroupImplementation' (role 'aadl2_ThreadGroupImplementation758', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent560', cardinality 0..*) is associated with 'aadl2::MemoryImplementation' (role 'aadl2_MemoryImplementation', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType223', cardinality 0..*).
+'aadl2::AbstractType' (role 'aadl2_AbstractType441', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess442', cardinality 0..*).
+'aadl2::Classifier' (role 'aadl2_Classifier359', cardinality 0..*) is associated with 'aadl2::PackageSection' (role 'aadl2_PackageSection358', cardinality 0..*).
+'aadl2::SubprogramGroupImplementation' (role 'aadl2_SubprogramGroupImplementation', cardinality 0..*) is associated with 'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent592', cardinality 0..*).
+'aadl2::SubprogramClassifier' (role 'aadl2_SubprogramClassifier', cardinality 0..*) is associated with 'aadl2::SubprogramProxy' (role 'aadl2_SubprogramProxy349', cardinality 0..*).
+'aadl2::BehavioredImplementation' (role 'aadl2_BehavioredImplementation', cardinality 0..*) is associated with 'aadl2::SubprogramCall' (role 'aadl2_SubprogramCall419', cardinality 0..*).
+'aadl2::ProcessorImplementation' (role 'aadl2_ProcessorImplementation671', cardinality 0..*) is associated with 'aadl2::MemorySubcomponent' (role 'aadl2_MemorySubcomponent672', cardinality 0..*).
+'aadl2::PortProxy' (role 'aadl2_PortProxy346', cardinality 0..*) is associated with 'aadl2::DataClassifier' (role 'aadl2_DataClassifier347', cardinality 0..*).
+'aadl2::AbstractType' (role 'aadl2_AbstractType438', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort439', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType221', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort', cardinality 0..*).
+'aadl2::ThreadGroupImplementation' (role 'aadl2_ThreadGroupImplementation', cardinality 0..*) is associated with 'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent753', cardinality 0..*).
+'aadl2::DefaultAnnexLibrary' (role 'aadl2_DefaultAnnexLibrary', cardinality 0..*) is associated with 'aadl2::AnnexLibrary' (role 'aadl2_AnnexLibrary', cardinality 0..*).
+'aadl2::DataAccess' (role 'aadl2_DataAccess720', cardinality 0..*) is associated with 'aadl2::ThreadType' (role 'aadl2_ThreadType719', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType219', cardinality 0..*) is associated with 'aadl2::DataAccess' (role 'aadl2_DataAccess', cardinality 0..*).
+'aadl2::BusSubcomponent' (role 'aadl2_BusSubcomponent541', cardinality 0..*) is associated with 'aadl2::DeviceImplementation' (role 'aadl2_DeviceImplementation', cardinality 0..*).
+'aadl2::ThreadSubcomponent' (role 'aadl2_ThreadSubcomponent756', cardinality 0..*) is associated with 'aadl2::ThreadGroupImplementation' (role 'aadl2_ThreadGroupImplementation755', cardinality 0..*).
+'aadl2::DataPort' (role 'aadl2_DataPort711', cardinality 0..*) is associated with 'aadl2::ThreadType' (role 'aadl2_ThreadType', cardinality 0..*).
+'aadl2::BusAccess' (role 'aadl2_BusAccess', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType217', cardinality 0..*).
+'aadl2::EventPort' (role 'aadl2_EventPort436', cardinality 0..*) is associated with 'aadl2::AbstractType' (role 'aadl2_AbstractType435', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType215', cardinality 0..*) is associated with 'aadl2::GroupExtension' (role 'aadl2_GroupExtension', cardinality 0..*).
+'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess539', cardinality 0..*) is associated with 'aadl2::DeviceType' (role 'aadl2_DeviceType538', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent647', cardinality 0..*) is associated with 'aadl2::SystemImplementation' (role 'aadl2_SystemImplementation646', cardinality 0..*).
+'aadl2::AbstractType' (role 'aadl2_AbstractType432', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort433', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType213', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType211', cardinality 0..*).
+'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent734', cardinality 0..*) is associated with 'aadl2::ThreadImplementation' (role 'aadl2_ThreadImplementation733', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort618', cardinality 0..*) is associated with 'aadl2::SystemType' (role 'aadl2_SystemType617', cardinality 0..*).
+'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType210', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType208', cardinality 0..*).
+'aadl2::AbstractType' (role 'aadl2_AbstractType429', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess430', cardinality 0..*).
+'aadl2::SystemType' (role 'aadl2_SystemType614', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort615', cardinality 0..*).
+'aadl2::FlowEnd' (role 'aadl2_FlowEnd194', cardinality 0..*) is associated with 'aadl2::Feature' (role 'aadl2_Feature195', cardinality 0..*).
+'aadl2::AbstractType' (role 'aadl2_AbstractType426', cardinality 0..*) is associated with 'aadl2::DataAccess' (role 'aadl2_DataAccess427', cardinality 0..*).
+'aadl2::ThreadImplementation' (role 'aadl2_ThreadImplementation', cardinality 0..*) is associated with 'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent728', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess612', cardinality 0..*) is associated with 'aadl2::SystemType' (role 'aadl2_SystemType611', cardinality 0..*).
+'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent731', cardinality 0..*) is associated with 'aadl2::ThreadImplementation' (role 'aadl2_ThreadImplementation730', cardinality 0..*).
+'aadl2::SystemType' (role 'aadl2_SystemType608', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess609', cardinality 0..*).
+'aadl2::FlowEnd' (role 'aadl2_FlowEnd191', cardinality 0..*) is associated with 'aadl2::Context' (role 'aadl2_Context192', cardinality 0..*).
+'aadl2::BusAccess' (role 'aadl2_BusAccess424', cardinality 0..*) is associated with 'aadl2::AbstractType' (role 'aadl2_AbstractType', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType660', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess661', cardinality 0..*).
+'aadl2::ProcessImplementation' (role 'aadl2_ProcessImplementation', cardinality 0..*) is associated with 'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent697', cardinality 0..*).
+'aadl2::AadlPackage' (role 'aadl2_AadlPackage370', cardinality 0..*) is associated with 'aadl2::PublicPackageSection' (role 'aadl2_PublicPackageSection', cardinality 0..*).
+'aadl2::ModeFeature' (role 'aadl2_ModeFeature', cardinality 0..*) is associated with 'aadl2::ModalPath' (role 'aadl2_ModalPath', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess587', cardinality 0..*) is associated with 'aadl2::SubprogramGroupType' (role 'aadl2_SubprogramGroupType', cardinality 0..*).
+'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent585', cardinality 0..*) is associated with 'aadl2::SubprogramImplementation' (role 'aadl2_SubprogramImplementation584', cardinality 0..*).
+'aadl2::ProcessType' (role 'aadl2_ProcessType694', cardinality 0..*) is associated with 'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess695', cardinality 0..*).
+'aadl2::SubprogramCallSequence' (role 'aadl2_SubprogramCallSequence422', cardinality 0..*) is associated with 'aadl2::BehavioredImplementation' (role 'aadl2_BehavioredImplementation421', cardinality 0..*).
+'aadl2::FeatureGroupPrototype' (role 'aadl2_FeatureGroupPrototype', cardinality 0..*) is associated with 'aadl2::FeatureGroup' (role 'aadl2_FeatureGroup204', cardinality 0..*).
+'aadl2::ProcessorImplementation' (role 'aadl2_ProcessorImplementation677', cardinality 0..*) is associated with 'aadl2::VirtualProcessorSubcomponent' (role 'aadl2_VirtualProcessorSubcomponent678', cardinality 0..*).
+'aadl2::ProcessorType' (role 'aadl2_ProcessorType657', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort658', cardinality 0..*).
+'aadl2::FeatureGroup' (role 'aadl2_FeatureGroup202', cardinality 0..*) is associated with 'aadl2::FeatureGroupType' (role 'aadl2_FeatureGroupType', cardinality 0..*).
+'aadl2::PortSpecification' (role 'aadl2_PortSpecification409', cardinality 0..*) is associated with 'aadl2::ComponentPrototype' (role 'aadl2_ComponentPrototype410', cardinality 0..*).
+'aadl2::SubprogramType' (role 'aadl2_SubprogramType567', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort568', cardinality 0..*).
+'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess692', cardinality 0..*) is associated with 'aadl2::ProcessType' (role 'aadl2_ProcessType691', cardinality 0..*).
+'aadl2::Parameter' (role 'aadl2_Parameter571', cardinality 0..*) is associated with 'aadl2::SubprogramType' (role 'aadl2_SubprogramType570', cardinality 0..*).
+'aadl2::ProcessType' (role 'aadl2_ProcessType688', cardinality 0..*) is associated with 'aadl2::DataAccess' (role 'aadl2_DataAccess689', cardinality 0..*).
+'aadl2::FeatureGroup' (role 'aadl2_FeatureGroup200', cardinality 0..*) is associated with 'aadl2::FeatureType' (role 'aadl2_FeatureType', cardinality 0..*).
+'aadl2::FeatureGroupPrototypeActual' (role 'aadl2_FeatureGroupPrototypeActual', cardinality 0..*) is associated with 'aadl2::FeatureGroupPrototypeBinding' (role 'aadl2_FeatureGroupPrototypeBinding', cardinality 0..*).
+'aadl2::SubprogramType' (role 'aadl2_SubprogramType', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort565', cardinality 0..*).
+'aadl2::SubprogramCall' (role 'aadl2_SubprogramCall417', cardinality 0..*) is associated with 'aadl2::CallContext' (role 'aadl2_CallContext', cardinality 0..*).
+'aadl2::VirtualBusType' (role 'aadl2_VirtualBusType775', cardinality 0..*) is associated with 'aadl2::BusAccess' (role 'aadl2_BusAccess776', cardinality 0..*).
+'aadl2::ComponentType' (role 'aadl2_ComponentType198', cardinality 0..*) is associated with 'aadl2::TypeExtension' (role 'aadl2_TypeExtension197', cardinality 0..*).
+'aadl2::ComponentPrototypeActual' (role 'aadl2_ComponentPrototypeActual391', cardinality 0..*) is associated with 'aadl2::SubcomponentType' (role 'aadl2_SubcomponentType392', cardinality 0..*).
+'aadl2::ThreadGroupSubcomponent' (role 'aadl2_ThreadGroupSubcomponent709', cardinality 0..*) is associated with 'aadl2::ProcessImplementation' (role 'aadl2_ProcessImplementation708', cardinality 0..*).
+'aadl2::FeaturePrototypeActual' (role 'aadl2_FeaturePrototypeActual', cardinality 0..*) is associated with 'aadl2::FeaturePrototypeBinding' (role 'aadl2_FeaturePrototypeBinding', cardinality 0..*).
+'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification183', cardinality 0..*) is associated with 'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification181', cardinality 0..*).
+'aadl2::SubprogramCall' (role 'aadl2_SubprogramCall415', cardinality 0..*) is associated with 'aadl2::CalledSubprogram' (role 'aadl2_CalledSubprogram', cardinality 0..*).
+'aadl2::SubprogramType' (role 'aadl2_SubprogramType576', cardinality 0..*) is associated with 'aadl2::SubprogramAccess' (role 'aadl2_SubprogramAccess577', cardinality 0..*).
+'aadl2::SubprogramSubcomponent' (role 'aadl2_SubprogramSubcomponent762', cardinality 0..*) is associated with 'aadl2::ThreadGroupImplementation' (role 'aadl2_ThreadGroupImplementation761', cardinality 0..*).
+'aadl2::SubprogramGroupAccess' (role 'aadl2_SubprogramGroupAccess580', cardinality 0..*) is associated with 'aadl2::SubprogramType' (role 'aadl2_SubprogramType579', cardinality 0..*).
+'aadl2::ComponentPrototype' (role 'aadl2_ComponentPrototype179', cardinality 0..*) is associated with 'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier180', cardinality 0..*).
+'aadl2::SubprogramGroupSubcomponent' (role 'aadl2_SubprogramGroupSubcomponent765', cardinality 0..*) is associated with 'aadl2::ThreadGroupImplementation' (role 'aadl2_ThreadGroupImplementation764', cardinality 0..*).
+'aadl2::ProcessImplementation' (role 'aadl2_ProcessImplementation705', cardinality 0..*) is associated with 'aadl2::ThreadSubcomponent' (role 'aadl2_ThreadSubcomponent706', cardinality 0..*).
+'aadl2::SubprogramCallSequence' (role 'aadl2_SubprogramCallSequence', cardinality 0..*) is associated with 'aadl2::SubprogramCall' (role 'aadl2_SubprogramCall', cardinality 0..*).
+'aadl2::DataAccess' (role 'aadl2_DataAccess574', cardinality 0..*) is associated with 'aadl2::SubprogramType' (role 'aadl2_SubprogramType573', cardinality 0..*).
+'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort780', cardinality 0..*).
+'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification187', cardinality 0..*) is associated with 'aadl2::FlowEnd' (role 'aadl2_FlowEnd188', cardinality 0..*).
+'aadl2::FeaturePrototype' (role 'aadl2_FeaturePrototype412', cardinality 0..*) is associated with 'aadl2::FeaturePrototypeReference' (role 'aadl2_FeaturePrototypeReference', cardinality 0..*).
+'aadl2::FlowEnd' (role 'aadl2_FlowEnd', cardinality 0..*) is associated with 'aadl2::FlowSpecification' (role 'aadl2_FlowSpecification185', cardinality 0..*).
+'aadl2::SubprogramImplementation' (role 'aadl2_SubprogramImplementation', cardinality 0..*) is associated with 'aadl2::DataSubcomponent' (role 'aadl2_DataSubcomponent582', cardinality 0..*).
+'aadl2::PortSpecification' (role 'aadl2_PortSpecification', cardinality 0..*) is associated with 'aadl2::ComponentClassifier' (role 'aadl2_ComponentClassifier407', cardinality 0..*).
+'aadl2::VirtualBusType' (role 'aadl2_VirtualBusType', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort767', cardinality 0..*).
+'aadl2::ProcessType' (role 'aadl2_ProcessType685', cardinality 0..*) is associated with 'aadl2::EventPort' (role 'aadl2_EventPort686', cardinality 0..*).
+'aadl2::MemoryType' (role 'aadl2_MemoryType551', cardinality 0..*) is associated with 'aadl2::DataPort' (role 'aadl2_DataPort552', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent675', cardinality 0..*) is associated with 'aadl2::ProcessorImplementation' (role 'aadl2_ProcessorImplementation674', cardinality 0..*).
+'aadl2::AbstractFeature' (role 'aadl2_AbstractFeature', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType167', cardinality 0..*).
+'aadl2::EventPort' (role 'aadl2_EventPort558', cardinality 0..*) is associated with 'aadl2::MemoryType' (role 'aadl2_MemoryType557', cardinality 0..*).
+'aadl2::MemoryType' (role 'aadl2_MemoryType554', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort555', cardinality 0..*).
+'aadl2::EventDataPort' (role 'aadl2_EventDataPort783', cardinality 0..*) is associated with 'aadl2::VirtualProcessorType' (role 'aadl2_VirtualProcessorType782', cardinality 0..*).
+'aadl2::VirtualBusSubcomponent' (role 'aadl2_VirtualBusSubcomponent778', cardinality 0..*) is associated with 'aadl2::VirtualBusImplementation' (role 'aadl2_VirtualBusImplementation', cardinality 0..*).
+'aadl2::ProcessType' (role 'aadl2_ProcessType682', cardinality 0..*) is associated with 'aadl2::EventDataPort' (role 'aadl2_EventDataPort683', cardinality 0..*).
+'aadl2::MetaclassReference' (role 'aadl2_MetaclassReference', cardinality 0..*) is associated with 'aadl2::Property' (role 'aadl2_Property16', cardinality 0..*).
+'aadl2::FeatureGroup' (role 'aadl2_FeatureGroup', cardinality 0..*) is associated with 'aadl2::ComponentType' (role 'aadl2_ComponentType165', cardinality 0..*).
+'aadl2::FeatureType' (role 'aadl2_FeatureType399', cardinality 0..*) is associated with 'aadl2::FeatureGroupPrototypeActual' (role 'aadl2_FeatureGroupPrototypeActual398', cardinality 0..*).

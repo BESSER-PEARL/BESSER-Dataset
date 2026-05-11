@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Named' has no attributes.
+The class 'transform::Grammar' has no attributes.
+The class 'transform::Transformation' has no attributes.
+The class 'transform::Graph' has no attributes.
+'transform::Transformation' is a specialization of 'Named'.
+'transform::Transformation' (role 'transform_Transformation', cardinality 0..*) is associated with 'transform::Graph' (role 'transform_Graph', cardinality 0..*).
+'transform::Transformation' (role 'transform_Transformation2', cardinality 0..*) is associated with 'transform::Grammar' (role 'transform_Grammar', cardinality 0..*).

@@ -1,0 +1,96 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class minuml1_Transition extends ModelElement {
+
+
+
+
+
+
+    private minuml1_Guard minuml1_guard;
+
+
+
+
+    private minuml1_StateMachine minuml1_statemachine;
+
+
+
+
+    private minuml1_StateVertex minuml1_statevertex;
+
+
+
+
+    private minuml1_StateVertex minuml1_statevertex;
+
+
+
+
+    private minuml1_StateVertex minuml1_statevertex;
+
+
+
+
+    private minuml1_StateVertex minuml1_statevertex;
+
+
+    public minuml1_Transition(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public minuml1_Guard getMinuml1_guard() {
+        return minuml1_guard;
+    }
+
+    public void setMinuml1_guard(minuml1_Guard minuml1_guard) {
+        this.minuml1_guard = minuml1_guard;
+    }
+    public minuml1_StateMachine getMinuml1_statemachine() {
+        return minuml1_statemachine;
+    }
+
+    public void setMinuml1_statemachine(minuml1_StateMachine minuml1_statemachine) {
+        this.minuml1_statemachine = minuml1_statemachine;
+    }
+    public minuml1_StateVertex getMinuml1_statevertex() {
+        return minuml1_statevertex;
+    }
+
+    public void setMinuml1_statevertex(minuml1_StateVertex minuml1_statevertex) {
+        this.minuml1_statevertex = minuml1_statevertex;
+    }
+    public minuml1_StateVertex getMinuml1_statevertex() {
+        return minuml1_statevertex;
+    }
+
+    public void setMinuml1_statevertex(minuml1_StateVertex minuml1_statevertex) {
+        this.minuml1_statevertex = minuml1_statevertex;
+    }
+    public minuml1_StateVertex getMinuml1_statevertex() {
+        return minuml1_statevertex;
+    }
+
+    public void setMinuml1_statevertex(minuml1_StateVertex minuml1_statevertex) {
+        this.minuml1_statevertex = minuml1_statevertex;
+    }
+    public minuml1_StateVertex getMinuml1_statevertex() {
+        return minuml1_statevertex;
+    }
+
+    public void setMinuml1_statevertex(minuml1_StateVertex minuml1_statevertex) {
+        this.minuml1_statevertex = minuml1_statevertex;
+    }
+
+}

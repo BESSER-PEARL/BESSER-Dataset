@@ -1,0 +1,351 @@
+The model has 117 class(es).
+The class 'myDsl::PrimaryExpr' has no attributes.
+The class 'myDsl::StatementList' has no attributes.
+The class 'myDsl::LabeledStmt' has no attributes.
+The class 'myDsl::LiteralTypeLinha' has no attributes.
+The class 'myDsl::Index' has no attributes.
+The class 'myDsl::TypeNameLinha' has the following attributes: 'id' of type str.
+The class 'myDsl::MethodSpec' has no attributes.
+The class 'myDsl::Label' has the following attributes: 'id' of type str.
+The class 'myDsl::TypeSwitchCase' has the following attributes: 'case' of type str; 'default' of type str.
+The class 'myDsl::BasicLit' has the following attributes: 'imaginary_lit' of type str; 'int_lit' of type str; 'float_lit' of type str; 'string_lit' of type str; 'rune_lit' of type str.
+The class 'myDsl::SimpleStmtLinha' has the following attributes: 'aNY_OTHER' of type str.
+The class 'myDsl::Expression' has no attributes.
+The class 'myDsl::Type' has no attributes.
+The class 'myDsl::IfStmt' has the following attributes: 'else_' of type str; 'if_' of type str.
+The class 'myDsl::Slice' has no attributes.
+The class 'myDsl::SelectStmt' has the following attributes: 'select' of type str.
+The class 'myDsl::GoStmt' has the following attributes: 'go' of type str.
+The class 'myDsl::FunctionBody' has no attributes.
+The class 'myDsl::PostStmt' has no attributes.
+The class 'myDsl::ForStmtLinha' has the following attributes: 'vazio' of type str.
+The class 'myDsl::SwitchStmt' has no attributes.
+The class 'myDsl::ExprSwitchCase' has the following attributes: 'case' of type str; 'default' of type str.
+The class 'myDsl::MethodName' has the following attributes: 'id' of type str.
+The class 'myDsl::FunctionName' has the following attributes: 'id' of type str.
+The class 'myDsl::ElementList' has no attributes.
+The class 'myDsl::Expression::Linha' has no attributes.
+The class 'myDsl::Condition' has no attributes.
+The class 'myDsl::TypeAssertion' has no attributes.
+The class 'myDsl::Parameters' has no attributes.
+The class 'myDsl::ContinueStmt' has the following attributes: 'continue_' of type str.
+The class 'myDsl::TypeDecl' has the following attributes: 'typekeyword' of type str.
+The class 'myDsl::ShortVarDecl' has no attributes.
+The class 'myDsl::KeyedElement' has no attributes.
+The class 'myDsl::CommCase' has the following attributes: 'case' of type str; 'default' of type str.
+The class 'myDsl::ElementType' has no attributes.
+The class 'myDsl::TopLevelDecl' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::TypeSpec' has no attributes.
+The class 'myDsl::TypeList' has no attributes.
+The class 'myDsl::ArrayLength' has no attributes.
+The class 'myDsl::InterfaceTypeName' has no attributes.
+The class 'myDsl::ExprSwitchStmt' has the following attributes: 'switch' of type str.
+The class 'myDsl::Literal' has no attributes.
+The class 'myDsl::RecvExpr' has no attributes.
+The class 'myDsl::ForStmt' has the following attributes: 'range' of type str; 'for_' of type str.
+The class 'myDsl::Element' has no attributes.
+The class 'myDsl::ReceiverType' has no attributes.
+The class 'myDsl::KeyType' has no attributes.
+The class 'myDsl::ImportSpec' has the following attributes: 'sTRING_LIT' of type str.
+The class 'myDsl::MethodDecl' has no attributes.
+The class 'myDsl::Tag' has the following attributes: 'string_lit' of type str.
+The class 'myDsl::LiteralType' has no attributes.
+The class 'myDsl::StructType' has the following attributes: 'struct' of type str.
+The class 'myDsl::TypeSwitchStmt' has the following attributes: 'switch' of type str.
+The class 'myDsl::MethodExpr' has no attributes.
+The class 'myDsl::Statement' has no attributes.
+The class 'myDsl::Result' has no attributes.
+The class 'myDsl::ChannelTypeLinha' has the following attributes: 'aNY_OTHER' of type str.
+The class 'myDsl::assign::op' has the following attributes: 'aDD_OP' of type str; 'mUL_OP' of type str.
+The class 'myDsl::ConstDecl' has the following attributes: 'const' of type str.
+The class 'myDsl::FunctionType' has the following attributes: 'func' of type str.
+The class 'myDsl::CommCaseLinha' has no attributes.
+The class 'myDsl::Declaration' has no attributes.
+The class 'myDsl::VarDecl' has the following attributes: 'var' of type str.
+The class 'myDsl::TypeLit' has no attributes.
+The class 'myDsl::ParameterDecl' has no attributes.
+The class 'myDsl::PrimaryExprLinha' has no attributes.
+The class 'myDsl::ChannelType' has the following attributes: 'chan' of type str.
+The class 'myDsl::FallthroughStmt' has the following attributes: 'fallthrough' of type str.
+The class 'myDsl::Receiver' has no attributes.
+The class 'myDsl::ReturnStmt' has the following attributes: 'return_' of type str.
+The class 'myDsl::VarSpec' has no attributes.
+The class 'myDsl::IfStmtLinha' has the following attributes: 'else_' of type str.
+The class 'myDsl::BINARY::OP' has the following attributes: 'rEL_OP' of type str; 'aDD_OP' of type str.
+The class 'myDsl::Key' has no attributes.
+The class 'myDsl::Block' has no attributes.
+The class 'myDsl::Operand' has no attributes.
+The class 'myDsl::ParameterList' has no attributes.
+The class 'myDsl::Signature' has no attributes.
+The class 'myDsl::IdentifierList' has the following attributes: 'id' of type str; 'id1' of type str.
+The class 'myDsl::FunctionLit' has the following attributes: 'func' of type str.
+The class 'myDsl::UnaryExpr' has no attributes.
+The class 'myDsl::Arguments' has no attributes.
+The class 'myDsl::CompositeLit' has no attributes.
+The class 'myDsl::FunctionDecl' has no attributes.
+The class 'myDsl::FieldDecl' has no attributes.
+The class 'myDsl::AliasDecl' has the following attributes: 'id' of type str.
+The class 'myDsl::SourceFile' has no attributes.
+The class 'myDsl::PointerType' has no attributes.
+The class 'myDsl::DeferStmt' has the following attributes: 'defer' of type str.
+The class 'myDsl::CommClause' has no attributes.
+The class 'myDsl::SimpleStmt' has no attributes.
+The class 'myDsl::MapType' has the following attributes: 'map' of type str.
+The class 'myDsl::FieldName' has the following attributes: 'id' of type str.
+The class 'myDsl::ExprCaseClause' has no attributes.
+The class 'myDsl::LiteralValue' has no attributes.
+The class 'myDsl::TypeDef' has the following attributes: 'id' of type str.
+The class 'myDsl::BreakStmt' has the following attributes: 'break_' of type str.
+The class 'myDsl::ForStmtLinhaLinha' has the following attributes: 'range' of type str.
+The class 'myDsl::ExpressionList' has no attributes.
+The class 'myDsl::ImportDecl' has the following attributes: 'importt' of type str.
+The class 'myDsl::GotoStmt' has the following attributes: 'goto' of type str.
+The class 'myDsl::Selector' has the following attributes: 'id' of type str.
+The class 'myDsl::PackageClause' has the following attributes: 'package' of type str.
+The class 'myDsl::ConstSpec' has no attributes.
+The class 'myDsl::EmptyStmt' has the following attributes: 'aNY_OTHER' of type str.
+The class 'myDsl::PackageName' has the following attributes: 'id' of type str.
+The class 'myDsl::Expression1' has no attributes.
+The class 'myDsl::BaseType' has no attributes.
+The class 'myDsl::EmbeddedField' has no attributes.
+The class 'myDsl::OperandName' has the following attributes: 'id' of type str.
+The class 'myDsl::InterfaceType' has the following attributes: 'interface' of type str.
+The class 'myDsl::TypeSwitchGuard' has the following attributes: 'id' of type str; 'type' of type str.
+The class 'myDsl::TypeName' has the following attributes: 'id' of type str.
+The class 'myDsl::TypeCaseClause' has no attributes.
+The class 'myDsl::Conversion' has no attributes.
+The class 'myDsl::TypeLitLinha' has no attributes.
+'myDsl::Slice' (role 'myDsl_Slice279', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression280', cardinality 0..*).
+'myDsl::CommCaseLinha' (role 'myDsl_CommCaseLinha', cardinality 0..*) is associated with 'myDsl::CommCase' (role 'myDsl_CommCase536', cardinality 0..*).
+'myDsl::IdentifierList' (role 'myDsl_IdentifierList545', cardinality 0..*) is associated with 'myDsl::CommCaseLinha' (role 'myDsl_CommCaseLinha544', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type289', cardinality 0..*) is associated with 'myDsl::TypeAssertion' (role 'myDsl_TypeAssertion288', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt400', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block401', cardinality 0..*).
+'myDsl::BaseType' (role 'myDsl_BaseType', cardinality 0..*) is associated with 'myDsl::PointerType' (role 'myDsl_PointerType45', cardinality 0..*).
+'myDsl::LiteralValue' (role 'myDsl_LiteralValue', cardinality 0..*) is associated with 'myDsl::CompositeLit' (role 'myDsl_CompositeLit205', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block', cardinality 0..*) is associated with 'myDsl::StatementList' (role 'myDsl_StatementList', cardinality 0..*).
+'myDsl::FunctionType' (role 'myDsl_FunctionType50', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature', cardinality 0..*).
+'myDsl::Result' (role 'myDsl_Result56', cardinality 0..*) is associated with 'myDsl::Parameters' (role 'myDsl_Parameters57', cardinality 0..*).
+'myDsl::ParameterList' (role 'myDsl_ParameterList66', cardinality 0..*) is associated with 'myDsl::ParameterDecl' (role 'myDsl_ParameterDecl67', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type4', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type6', cardinality 0..*).
+'myDsl::MethodName' (role 'myDsl_MethodName', cardinality 0..*) is associated with 'myDsl::MethodSpec' (role 'myDsl_MethodSpec77', cardinality 0..*).
+'myDsl::LiteralTypeLinha' (role 'myDsl_LiteralTypeLinha221', cardinality 0..*) is associated with 'myDsl::ElementType' (role 'myDsl_ElementType222', cardinality 0..*).
+'myDsl::MethodSpec' (role 'myDsl_MethodSpec82', cardinality 0..*) is associated with 'myDsl::InterfaceTypeName' (role 'myDsl_InterfaceTypeName', cardinality 0..*).
+'myDsl::Element' (role 'myDsl_Element246', cardinality 0..*) is associated with 'myDsl::LiteralValue' (role 'myDsl_LiteralValue247', cardinality 0..*).
+'myDsl::EmptyStmt' (role 'myDsl_EmptyStmt', cardinality 0..*) is associated with 'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt363', cardinality 0..*).
+'myDsl::MethodSpec' (role 'myDsl_MethodSpec79', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature80', cardinality 0..*).
+'myDsl::ExpressionList' (role 'myDsl_ExpressionList127', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression128', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt389', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression390', cardinality 0..*).
+'myDsl::Parameters' (role 'myDsl_Parameters189', cardinality 0..*) is associated with 'myDsl::Receiver' (role 'myDsl_Receiver188', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression283', cardinality 0..*) is associated with 'myDsl::Slice' (role 'myDsl_Slice282', cardinality 0..*).
+'myDsl::Arguments' (role 'myDsl_Arguments291', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList292', cardinality 0..*).
+'myDsl::FunctionLit' (role 'myDsl_FunctionLit252', cardinality 0..*) is associated with 'myDsl::FunctionBody' (role 'myDsl_FunctionBody253', cardinality 0..*).
+'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha491', cardinality 0..*) is associated with 'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha', cardinality 0..*).
+'myDsl::TypeLit' (role 'myDsl_TypeLit10', cardinality 0..*) is associated with 'myDsl::StructType' (role 'myDsl_StructType', cardinality 0..*).
+'myDsl::VarDecl' (role 'myDsl_VarDecl148', cardinality 0..*) is associated with 'myDsl::VarSpec' (role 'myDsl_VarSpec', cardinality 0..*).
+'myDsl::Declaration' (role 'myDsl_Declaration', cardinality 0..*) is associated with 'myDsl::ConstDecl' (role 'myDsl_ConstDecl', cardinality 0..*).
+'myDsl::Operand' (role 'myDsl_Operand', cardinality 0..*) is associated with 'myDsl::Literal' (role 'myDsl_Literal', cardinality 0..*).
+'myDsl::EmptyStmt' (role 'myDsl_EmptyStmt473', cardinality 0..*) is associated with 'myDsl::ForStmt' (role 'myDsl_ForStmt472', cardinality 0..*).
+'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt370', cardinality 0..*) is associated with 'myDsl::ShortVarDecl' (role 'myDsl_ShortVarDecl371', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression494', cardinality 0..*) is associated with 'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha493', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression131', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList130', cardinality 0..*).
+'myDsl::Expression1' (role 'myDsl_Expression1317', cardinality 0..*) is associated with 'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha316', cardinality 0..*).
+'myDsl::StatementList' (role 'myDsl_StatementList101', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement', cardinality 0..*).
+'myDsl::FunctionLit' (role 'myDsl_FunctionLit249', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature250', cardinality 0..*).
+'myDsl::PackageName' (role 'myDsl_PackageName582', cardinality 0..*) is associated with 'myDsl::ImportSpec' (role 'myDsl_ImportSpec581', cardinality 0..*).
+'myDsl::FallthroughStmt' (role 'myDsl_FallthroughStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement348', cardinality 0..*).
+'myDsl::SourceFile' (role 'myDsl_SourceFile567', cardinality 0..*) is associated with 'myDsl::PackageClause' (role 'myDsl_PackageClause', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type36', cardinality 0..*) is associated with 'myDsl::FieldDecl' (role 'myDsl_FieldDecl35', cardinality 0..*).
+'myDsl::UnaryExpr' (role 'myDsl_UnaryExpr', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression305', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement353', cardinality 0..*).
+'myDsl::LiteralType' (role 'myDsl_LiteralType', cardinality 0..*) is associated with 'myDsl::CompositeLit' (role 'myDsl_CompositeLit203', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement336', cardinality 0..*) is associated with 'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt', cardinality 0..*).
+'myDsl::RecvExpr' (role 'myDsl_RecvExpr549', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression550', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement387', cardinality 0..*) is associated with 'myDsl::LabeledStmt' (role 'myDsl_LabeledStmt386', cardinality 0..*).
+'myDsl::ForStmt' (role 'myDsl_ForStmt475', cardinality 0..*) is associated with 'myDsl::ShortVarDecl' (role 'myDsl_ShortVarDecl476', cardinality 0..*).
+'myDsl::GoStmt' (role 'myDsl_GoStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement338', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type29', cardinality 0..*) is associated with 'myDsl::ElementType' (role 'myDsl_ElementType28', cardinality 0..*).
+'myDsl::TypeSwitchCase' (role 'myDsl_TypeSwitchCase459', cardinality 0..*) is associated with 'myDsl::TypeList' (role 'myDsl_TypeList', cardinality 0..*).
+'myDsl::MethodDecl' (role 'myDsl_MethodDecl185', cardinality 0..*) is associated with 'myDsl::FunctionBody' (role 'myDsl_FunctionBody186', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block422', cardinality 0..*) is associated with 'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha421', cardinality 0..*).
+'myDsl::ExprSwitchStmt' (role 'myDsl_ExprSwitchStmt428', cardinality 0..*) is associated with 'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt429', cardinality 0..*).
+'myDsl::LabeledStmt' (role 'myDsl_LabeledStmt384', cardinality 0..*) is associated with 'myDsl::Label' (role 'myDsl_Label', cardinality 0..*).
+'myDsl::CommCase' (role 'myDsl_CommCase533', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression534', cardinality 0..*).
+'myDsl::MapType' (role 'myDsl_MapType89', cardinality 0..*) is associated with 'myDsl::ElementType' (role 'myDsl_ElementType90', cardinality 0..*).
+'myDsl::LabeledStmt' (role 'myDsl_LabeledStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement334', cardinality 0..*).
+'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha272', cardinality 0..*) is associated with 'myDsl::TypeAssertion' (role 'myDsl_TypeAssertion', cardinality 0..*).
+'myDsl::ExprCaseClause' (role 'myDsl_ExprCaseClause', cardinality 0..*) is associated with 'myDsl::ExprSwitchStmt' (role 'myDsl_ExprSwitchStmt434', cardinality 0..*).
+'myDsl::MapType' (role 'myDsl_MapType', cardinality 0..*) is associated with 'myDsl::TypeLit' (role 'myDsl_TypeLit18', cardinality 0..*).
+'myDsl::TypeSwitchStmt' (role 'myDsl_TypeSwitchStmt447', cardinality 0..*) is associated with 'myDsl::TypeSwitchGuard' (role 'myDsl_TypeSwitchGuard', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression518', cardinality 0..*) is associated with 'myDsl::Condition' (role 'myDsl_Condition517', cardinality 0..*).
+'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt365', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression366', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression432', cardinality 0..*) is associated with 'myDsl::ExprSwitchStmt' (role 'myDsl_ExprSwitchStmt431', cardinality 0..*).
+'myDsl::TypeLit' (role 'myDsl_TypeLit16', cardinality 0..*) is associated with 'myDsl::InterfaceType' (role 'myDsl_InterfaceType', cardinality 0..*).
+'myDsl::MethodDecl' (role 'myDsl_MethodDecl', cardinality 0..*) is associated with 'myDsl::TopLevelDecl' (role 'myDsl_TopLevelDecl112', cardinality 0..*).
+'myDsl::LiteralTypeLinha' (role 'myDsl_LiteralTypeLinha', cardinality 0..*) is associated with 'myDsl::LiteralType' (role 'myDsl_LiteralType216', cardinality 0..*).
+'myDsl::FunctionType' (role 'myDsl_FunctionType', cardinality 0..*) is associated with 'myDsl::TypeLit' (role 'myDsl_TypeLit14', cardinality 0..*).
+'myDsl::Receiver' (role 'myDsl_Receiver', cardinality 0..*) is associated with 'myDsl::MethodDecl' (role 'myDsl_MethodDecl177', cardinality 0..*).
+'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha274', cardinality 0..*) is associated with 'myDsl::Arguments' (role 'myDsl_Arguments', cardinality 0..*).
+'myDsl::TypeSwitchStmt' (role 'myDsl_TypeSwitchStmt449', cardinality 0..*) is associated with 'myDsl::TypeCaseClause' (role 'myDsl_TypeCaseClause', cardinality 0..*).
+'myDsl::Result' (role 'myDsl_Result', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature54', cardinality 0..*).
+'myDsl::Literal' (role 'myDsl_Literal199', cardinality 0..*) is associated with 'myDsl::CompositeLit' (role 'myDsl_CompositeLit', cardinality 0..*).
+'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha', cardinality 0..*) is associated with 'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt368', cardinality 0..*).
+'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha514', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression515', cardinality 0..*).
+'myDsl::ReceiverType' (role 'myDsl_ReceiverType302', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type303', cardinality 0..*).
+'myDsl::ElementList' (role 'myDsl_ElementList228', cardinality 0..*) is associated with 'myDsl::KeyedElement' (role 'myDsl_KeyedElement229', cardinality 0..*).
+'myDsl::ExprCaseClause' (role 'myDsl_ExprCaseClause438', cardinality 0..*) is associated with 'myDsl::StatementList' (role 'myDsl_StatementList439', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block175', cardinality 0..*) is associated with 'myDsl::FunctionBody' (role 'myDsl_FunctionBody174', cardinality 0..*).
+'myDsl::EmptyStmt' (role 'myDsl_EmptyStmt395', cardinality 0..*) is associated with 'myDsl::IfStmt' (role 'myDsl_IfStmt394', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt404', cardinality 0..*) is associated with 'myDsl::IfStmt' (role 'myDsl_IfStmt402', cardinality 0..*).
+'myDsl::PostStmt' (role 'myDsl_PostStmt520', cardinality 0..*) is associated with 'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt521', cardinality 0..*).
+'myDsl::FieldDecl' (role 'myDsl_FieldDecl40', cardinality 0..*) is associated with 'myDsl::Tag' (role 'myDsl_Tag', cardinality 0..*).
+'myDsl::TypeDecl' (role 'myDsl_TypeDecl133', cardinality 0..*) is associated with 'myDsl::TypeSpec' (role 'myDsl_TypeSpec', cardinality 0..*).
+'myDsl::TypeLitLinha' (role 'myDsl_TypeLitLinha', cardinality 0..*) is associated with 'myDsl::TypeLit' (role 'myDsl_TypeLit8', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type48', cardinality 0..*) is associated with 'myDsl::BaseType' (role 'myDsl_BaseType47', cardinality 0..*).
+'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha', cardinality 0..*) is associated with 'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr257', cardinality 0..*).
+'myDsl::ArrayLength' (role 'myDsl_ArrayLength219', cardinality 0..*) is associated with 'myDsl::LiteralTypeLinha' (role 'myDsl_LiteralTypeLinha218', cardinality 0..*).
+'myDsl::Signature' (role 'myDsl_Signature170', cardinality 0..*) is associated with 'myDsl::FunctionDecl' (role 'myDsl_FunctionDecl169', cardinality 0..*).
+'myDsl::Slice' (role 'myDsl_Slice', cardinality 0..*) is associated with 'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha270', cardinality 0..*).
+'myDsl::Key' (role 'myDsl_Key237', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression238', cardinality 0..*).
+'myDsl::FunctionBody' (role 'myDsl_FunctionBody', cardinality 0..*) is associated with 'myDsl::FunctionDecl' (role 'myDsl_FunctionDecl172', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression413', cardinality 0..*) is associated with 'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha412', cardinality 0..*).
+'myDsl::ParameterList' (role 'myDsl_ParameterList', cardinality 0..*) is associated with 'myDsl::Parameters' (role 'myDsl_Parameters62', cardinality 0..*).
+'myDsl::SourceFile' (role 'myDsl_SourceFile', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).
+'myDsl::ElementType' (role 'myDsl_ElementType98', cardinality 0..*) is associated with 'myDsl::ChannelType' (role 'myDsl_ChannelType97', cardinality 0..*).
+'myDsl::FieldDecl' (role 'myDsl_FieldDecl', cardinality 0..*) is associated with 'myDsl::StructType' (role 'myDsl_StructType31', cardinality 0..*).
+'myDsl::KeyType' (role 'myDsl_KeyType92', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type93', cardinality 0..*).
+'myDsl::SwitchStmt' (role 'myDsl_SwitchStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement355', cardinality 0..*).
+'myDsl::TypeCaseClause' (role 'myDsl_TypeCaseClause456', cardinality 0..*) is associated with 'myDsl::StatementList' (role 'myDsl_StatementList457', cardinality 0..*).
+'myDsl::DeferStmt' (role 'myDsl_DeferStmt564', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression565', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression489', cardinality 0..*) is associated with 'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha488', cardinality 0..*).
+'myDsl::Conversion' (role 'myDsl_Conversion325', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type326', cardinality 0..*).
+'myDsl::OperandName' (role 'myDsl_OperandName', cardinality 0..*) is associated with 'myDsl::Operand' (role 'myDsl_Operand192', cardinality 0..*).
+'myDsl::ForStmt' (role 'myDsl_ForStmt482', cardinality 0..*) is associated with 'myDsl::IdentifierList' (role 'myDsl_IdentifierList483', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt406', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block407', cardinality 0..*).
+'myDsl::ShortVarDecl' (role 'myDsl_ShortVarDecl164', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList165', cardinality 0..*).
+'myDsl::SwitchStmt' (role 'myDsl_SwitchStmt424', cardinality 0..*) is associated with 'myDsl::ExprSwitchStmt' (role 'myDsl_ExprSwitchStmt', cardinality 0..*).
+'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha320', cardinality 0..*) is associated with 'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha318', cardinality 0..*).
+'myDsl::ConstSpec' (role 'myDsl_ConstSpec', cardinality 0..*) is associated with 'myDsl::ConstDecl' (role 'myDsl_ConstDecl114', cardinality 0..*).
+'myDsl::FunctionDecl' (role 'myDsl_FunctionDecl', cardinality 0..*) is associated with 'myDsl::TopLevelDecl' (role 'myDsl_TopLevelDecl110', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression307', cardinality 0..*) is associated with 'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha', cardinality 0..*).
+'myDsl::UnaryExpr' (role 'myDsl_UnaryExpr309', cardinality 0..*) is associated with 'myDsl::Expression1' (role 'myDsl_Expression1', cardinality 0..*).
+'myDsl::assign::op' (role 'myDsl_assign_op503', cardinality 0..*) is associated with 'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha502', cardinality 0..*).
+'myDsl::KeyType' (role 'myDsl_KeyType', cardinality 0..*) is associated with 'myDsl::MapType' (role 'myDsl_MapType87', cardinality 0..*).
+'myDsl::IdentifierList' (role 'myDsl_IdentifierList162', cardinality 0..*) is associated with 'myDsl::ShortVarDecl' (role 'myDsl_ShortVarDecl', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement346', cardinality 0..*) is associated with 'myDsl::GotoStmt' (role 'myDsl_GotoStmt', cardinality 0..*).
+'myDsl::ExprCaseClause' (role 'myDsl_ExprCaseClause436', cardinality 0..*) is associated with 'myDsl::ExprSwitchCase' (role 'myDsl_ExprSwitchCase', cardinality 0..*).
+'myDsl::PostStmt' (role 'myDsl_PostStmt', cardinality 0..*) is associated with 'myDsl::ForStmt' (role 'myDsl_ForStmt480', cardinality 0..*).
+'myDsl::TypeLit' (role 'myDsl_TypeLit20', cardinality 0..*) is associated with 'myDsl::ChannelType' (role 'myDsl_ChannelType', cardinality 0..*).
+'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha505', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList506', cardinality 0..*).
+'myDsl::Result' (role 'myDsl_Result59', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type60', cardinality 0..*).
+'myDsl::TopLevelDecl' (role 'myDsl_TopLevelDecl572', cardinality 0..*) is associated with 'myDsl::SourceFile' (role 'myDsl_SourceFile571', cardinality 0..*).
+'myDsl::ChannelType' (role 'myDsl_ChannelType95', cardinality 0..*) is associated with 'myDsl::ChannelTypeLinha' (role 'myDsl_ChannelTypeLinha', cardinality 0..*).
+'myDsl::TypeList' (role 'myDsl_TypeList461', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type462', cardinality 0..*).
+'myDsl::ExpressionList' (role 'myDsl_ExpressionList442', cardinality 0..*) is associated with 'myDsl::ExprSwitchCase' (role 'myDsl_ExprSwitchCase441', cardinality 0..*).
+'myDsl::ElementType' (role 'myDsl_ElementType', cardinality 0..*) is associated with 'myDsl::TypeLitLinha' (role 'myDsl_TypeLitLinha24', cardinality 0..*).
+'myDsl::ExpressionList' (role 'myDsl_ExpressionList553', cardinality 0..*) is associated with 'myDsl::ReturnStmt' (role 'myDsl_ReturnStmt552', cardinality 0..*).
+'myDsl::Declaration' (role 'myDsl_Declaration108', cardinality 0..*) is associated with 'myDsl::TopLevelDecl' (role 'myDsl_TopLevelDecl', cardinality 0..*).
+'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha314', cardinality 0..*) is associated with 'myDsl::BINARY::OP' (role 'myDsl_BINARY_OP', cardinality 0..*).
+'myDsl::ForStmt' (role 'myDsl_ForStmt470', cardinality 0..*) is associated with 'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha', cardinality 0..*).
+'myDsl::ShortVarDecl' (role 'myDsl_ShortVarDecl398', cardinality 0..*) is associated with 'myDsl::IfStmt' (role 'myDsl_IfStmt397', cardinality 0..*).
+'myDsl::FieldDecl' (role 'myDsl_FieldDecl38', cardinality 0..*) is associated with 'myDsl::EmbeddedField' (role 'myDsl_EmbeddedField', cardinality 0..*).
+'myDsl::MapType' (role 'myDsl_MapType211', cardinality 0..*) is associated with 'myDsl::LiteralType' (role 'myDsl_LiteralType210', cardinality 0..*).
+'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha264', cardinality 0..*) is associated with 'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha266', cardinality 0..*).
+'myDsl::IfStmt' (role 'myDsl_IfStmt392', cardinality 0..*) is associated with 'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha', cardinality 0..*).
+'myDsl::SelectStmt' (role 'myDsl_SelectStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement357', cardinality 0..*).
+'myDsl::Arguments' (role 'myDsl_Arguments294', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type295', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression244', cardinality 0..*) is associated with 'myDsl::Element' (role 'myDsl_Element243', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement342', cardinality 0..*) is associated with 'myDsl::BreakStmt' (role 'myDsl_BreakStmt', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type146', cardinality 0..*) is associated with 'myDsl::TypeDef' (role 'myDsl_TypeDef145', cardinality 0..*).
+'myDsl::ForStmt' (role 'myDsl_ForStmt485', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block486', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement344', cardinality 0..*) is associated with 'myDsl::ContinueStmt' (role 'myDsl_ContinueStmt', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type3', cardinality 0..*) is associated with 'myDsl::TypeLit' (role 'myDsl_TypeLit', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type73', cardinality 0..*) is associated with 'myDsl::ParameterDecl' (role 'myDsl_ParameterDecl72', cardinality 0..*).
+'myDsl::ImportDecl' (role 'myDsl_ImportDecl', cardinality 0..*) is associated with 'myDsl::SourceFile' (role 'myDsl_SourceFile569', cardinality 0..*).
+'myDsl::SwitchStmt' (role 'myDsl_SwitchStmt426', cardinality 0..*) is associated with 'myDsl::TypeSwitchStmt' (role 'myDsl_TypeSwitchStmt', cardinality 0..*).
+'myDsl::SimpleStmt' (role 'myDsl_SimpleStmt445', cardinality 0..*) is associated with 'myDsl::TypeSwitchStmt' (role 'myDsl_TypeSwitchStmt444', cardinality 0..*).
+'myDsl::Key' (role 'myDsl_Key235', cardinality 0..*) is associated with 'myDsl::FieldName' (role 'myDsl_FieldName', cardinality 0..*).
+'myDsl::ParameterList' (role 'myDsl_ParameterList64', cardinality 0..*) is associated with 'myDsl::ParameterDecl' (role 'myDsl_ParameterDecl', cardinality 0..*).
+'myDsl::ForStmt' (role 'myDsl_ForStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement359', cardinality 0..*).
+'myDsl::MethodDecl' (role 'myDsl_MethodDecl182', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature183', cardinality 0..*).
+'myDsl::assign::op' (role 'myDsl_assign_op', cardinality 0..*) is associated with 'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha379', cardinality 0..*).
+'myDsl::FunctionLit' (role 'myDsl_FunctionLit', cardinality 0..*) is associated with 'myDsl::Literal' (role 'myDsl_Literal201', cardinality 0..*).
+'myDsl::PackageClause' (role 'myDsl_PackageClause574', cardinality 0..*) is associated with 'myDsl::PackageName' (role 'myDsl_PackageName', cardinality 0..*).
+'myDsl::LiteralValue' (role 'myDsl_LiteralValue241', cardinality 0..*) is associated with 'myDsl::Key' (role 'myDsl_Key240', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type143', cardinality 0..*) is associated with 'myDsl::AliasDecl' (role 'myDsl_AliasDecl142', cardinality 0..*).
+'myDsl::TypeName' (role 'myDsl_TypeName214', cardinality 0..*) is associated with 'myDsl::LiteralType' (role 'myDsl_LiteralType213', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression468', cardinality 0..*) is associated with 'myDsl::ForStmt' (role 'myDsl_ForStmt467', cardinality 0..*).
+'myDsl::Condition' (role 'myDsl_Condition497', cardinality 0..*) is associated with 'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha496', cardinality 0..*).
+'myDsl::ForStmtLinha' (role 'myDsl_ForStmtLinha499', cardinality 0..*) is associated with 'myDsl::PostStmt' (role 'myDsl_PostStmt500', cardinality 0..*).
+'myDsl::CommClause' (role 'myDsl_CommClause', cardinality 0..*) is associated with 'myDsl::SelectStmt' (role 'myDsl_SelectStmt526', cardinality 0..*).
+'myDsl::Condition' (role 'myDsl_Condition', cardinality 0..*) is associated with 'myDsl::ForStmt' (role 'myDsl_ForStmt478', cardinality 0..*).
+'myDsl::Label' (role 'myDsl_Label562', cardinality 0..*) is associated with 'myDsl::GotoStmt' (role 'myDsl_GotoStmt561', cardinality 0..*).
+'myDsl::FieldDecl' (role 'myDsl_FieldDecl33', cardinality 0..*) is associated with 'myDsl::IdentifierList' (role 'myDsl_IdentifierList', cardinality 0..*).
+'myDsl::StructType' (role 'myDsl_StructType208', cardinality 0..*) is associated with 'myDsl::LiteralType' (role 'myDsl_LiteralType207', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression542', cardinality 0..*) is associated with 'myDsl::CommCaseLinha' (role 'myDsl_CommCaseLinha541', cardinality 0..*).
+'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha409', cardinality 0..*) is associated with 'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha410', cardinality 0..*).
+'myDsl::CommCase' (role 'myDsl_CommCase', cardinality 0..*) is associated with 'myDsl::CommClause' (role 'myDsl_CommClause528', cardinality 0..*).
+'myDsl::IdentifierList' (role 'myDsl_IdentifierList120', cardinality 0..*) is associated with 'myDsl::ConstSpec' (role 'myDsl_ConstSpec119', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block351', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement350', cardinality 0..*).
+'myDsl::TypeLit' (role 'myDsl_TypeLit12', cardinality 0..*) is associated with 'myDsl::PointerType' (role 'myDsl_PointerType', cardinality 0..*).
+'myDsl::ElementList' (role 'myDsl_ElementList226', cardinality 0..*) is associated with 'myDsl::KeyedElement' (role 'myDsl_KeyedElement', cardinality 0..*).
+'myDsl::Parameters' (role 'myDsl_Parameters', cardinality 0..*) is associated with 'myDsl::Signature' (role 'myDsl_Signature52', cardinality 0..*).
+'myDsl::TypeDecl' (role 'myDsl_TypeDecl', cardinality 0..*) is associated with 'myDsl::Declaration' (role 'myDsl_Declaration104', cardinality 0..*).
+'myDsl::Operand' (role 'myDsl_Operand194', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression195', cardinality 0..*).
+'myDsl::TypeName' (role 'myDsl_TypeName43', cardinality 0..*) is associated with 'myDsl::EmbeddedField' (role 'myDsl_EmbeddedField42', cardinality 0..*).
+'myDsl::ElementList' (role 'myDsl_ElementList', cardinality 0..*) is associated with 'myDsl::LiteralValue' (role 'myDsl_LiteralValue224', cardinality 0..*).
+'myDsl::CommCaseLinha' (role 'myDsl_CommCaseLinha538', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression539', cardinality 0..*).
+'myDsl::TypeSpec' (role 'myDsl_TypeSpec140', cardinality 0..*) is associated with 'myDsl::TypeDef' (role 'myDsl_TypeDef', cardinality 0..*).
+'myDsl::MethodExpr' (role 'myDsl_MethodExpr297', cardinality 0..*) is associated with 'myDsl::ReceiverType' (role 'myDsl_ReceiverType', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type465', cardinality 0..*) is associated with 'myDsl::TypeList' (role 'myDsl_TypeList464', cardinality 0..*).
+'myDsl::RecvExpr' (role 'myDsl_RecvExpr', cardinality 0..*) is associated with 'myDsl::CommCaseLinha' (role 'myDsl_CommCaseLinha547', cardinality 0..*).
+'myDsl::MethodName' (role 'myDsl_MethodName300', cardinality 0..*) is associated with 'myDsl::MethodExpr' (role 'myDsl_MethodExpr299', cardinality 0..*).
+'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr259', cardinality 0..*) is associated with 'myDsl::Conversion' (role 'myDsl_Conversion', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression374', cardinality 0..*) is associated with 'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha373', cardinality 0..*).
+'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha508', cardinality 0..*) is associated with 'myDsl::Condition' (role 'myDsl_Condition509', cardinality 0..*).
+'myDsl::InterfaceTypeName' (role 'myDsl_InterfaceTypeName84', cardinality 0..*) is associated with 'myDsl::TypeName' (role 'myDsl_TypeName85', cardinality 0..*).
+'myDsl::TypeDecl' (role 'myDsl_TypeDecl135', cardinality 0..*) is associated with 'myDsl::TypeSpec' (role 'myDsl_TypeSpec136', cardinality 0..*).
+'myDsl::Index' (role 'myDsl_Index', cardinality 0..*) is associated with 'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha268', cardinality 0..*).
+'myDsl::TypeLitLinha' (role 'myDsl_TypeLitLinha22', cardinality 0..*) is associated with 'myDsl::ArrayLength' (role 'myDsl_ArrayLength', cardinality 0..*).
+'myDsl::ImportDecl' (role 'myDsl_ImportDecl578', cardinality 0..*) is associated with 'myDsl::ImportSpec' (role 'myDsl_ImportSpec579', cardinality 0..*).
+'myDsl::Declaration' (role 'myDsl_Declaration106', cardinality 0..*) is associated with 'myDsl::VarDecl' (role 'myDsl_VarDecl', cardinality 0..*).
+'myDsl::VarSpec' (role 'myDsl_VarSpec151', cardinality 0..*) is associated with 'myDsl::VarDecl' (role 'myDsl_VarDecl150', cardinality 0..*).
+'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr323', cardinality 0..*) is associated with 'myDsl::UnaryExpr' (role 'myDsl_UnaryExpr322', cardinality 0..*).
+'myDsl::ConstSpec' (role 'myDsl_ConstSpec122', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type123', cardinality 0..*).
+'myDsl::InterfaceType' (role 'myDsl_InterfaceType75', cardinality 0..*) is associated with 'myDsl::MethodSpec' (role 'myDsl_MethodSpec', cardinality 0..*).
+'myDsl::Declaration' (role 'myDsl_Declaration332', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement331', cardinality 0..*).
+'myDsl::DeferStmt' (role 'myDsl_DeferStmt', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement361', cardinality 0..*).
+'myDsl::Key' (role 'myDsl_Key', cardinality 0..*) is associated with 'myDsl::KeyedElement' (role 'myDsl_KeyedElement231', cardinality 0..*).
+'myDsl::Expression1' (role 'myDsl_Expression1311', cardinality 0..*) is associated with 'myDsl::Expression::Linha' (role 'myDsl_Expression_Linha312', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression524', cardinality 0..*) is associated with 'myDsl::GoStmt' (role 'myDsl_GoStmt523', cardinality 0..*).
+'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr261', cardinality 0..*) is associated with 'myDsl::MethodExpr' (role 'myDsl_MethodExpr', cardinality 0..*).
+'myDsl::ExpressionList' (role 'myDsl_ExpressionList160', cardinality 0..*) is associated with 'myDsl::VarSpec' (role 'myDsl_VarSpec159', cardinality 0..*).
+'myDsl::PrimaryExprLinha' (role 'myDsl_PrimaryExprLinha263', cardinality 0..*) is associated with 'myDsl::Selector' (role 'myDsl_Selector', cardinality 0..*).
+'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha381', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList382', cardinality 0..*).
+'myDsl::ContinueStmt' (role 'myDsl_ContinueStmt558', cardinality 0..*) is associated with 'myDsl::Label' (role 'myDsl_Label559', cardinality 0..*).
+'myDsl::ConstSpec' (role 'myDsl_ConstSpec125', cardinality 0..*) is associated with 'myDsl::ExpressionList' (role 'myDsl_ExpressionList', cardinality 0..*).
+'myDsl::MethodDecl' (role 'myDsl_MethodDecl179', cardinality 0..*) is associated with 'myDsl::MethodName' (role 'myDsl_MethodName180', cardinality 0..*).
+'myDsl::Index' (role 'myDsl_Index276', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression277', cardinality 0..*).
+'myDsl::KeyedElement' (role 'myDsl_KeyedElement233', cardinality 0..*) is associated with 'myDsl::Element' (role 'myDsl_Element', cardinality 0..*).
+'myDsl::ImportSpec' (role 'myDsl_ImportSpec', cardinality 0..*) is associated with 'myDsl::ImportDecl' (role 'myDsl_ImportDecl576', cardinality 0..*).
+'myDsl::AliasDecl' (role 'myDsl_AliasDecl', cardinality 0..*) is associated with 'myDsl::TypeSpec' (role 'myDsl_TypeSpec138', cardinality 0..*).
+'myDsl::Conversion' (role 'myDsl_Conversion328', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression329', cardinality 0..*).
+'myDsl::StatementList' (role 'myDsl_StatementList531', cardinality 0..*) is associated with 'myDsl::CommClause' (role 'myDsl_CommClause530', cardinality 0..*).
+'myDsl::Operand' (role 'myDsl_Operand255', cardinality 0..*) is associated with 'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr', cardinality 0..*).
+'myDsl::TypeCaseClause' (role 'myDsl_TypeCaseClause454', cardinality 0..*) is associated with 'myDsl::TypeSwitchCase' (role 'myDsl_TypeSwitchCase', cardinality 0..*).
+'myDsl::VarSpec' (role 'myDsl_VarSpec156', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type157', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement340', cardinality 0..*) is associated with 'myDsl::ReturnStmt' (role 'myDsl_ReturnStmt', cardinality 0..*).
+'myDsl::BreakStmt' (role 'myDsl_BreakStmt555', cardinality 0..*) is associated with 'myDsl::Label' (role 'myDsl_Label556', cardinality 0..*).
+'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha418', cardinality 0..*) is associated with 'myDsl::IfStmt' (role 'myDsl_IfStmt419', cardinality 0..*).
+'myDsl::Literal' (role 'myDsl_Literal197', cardinality 0..*) is associated with 'myDsl::BasicLit' (role 'myDsl_BasicLit', cardinality 0..*).
+'myDsl::Slice' (role 'myDsl_Slice285', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression286', cardinality 0..*).
+'myDsl::ParameterDecl' (role 'myDsl_ParameterDecl69', cardinality 0..*) is associated with 'myDsl::IdentifierList' (role 'myDsl_IdentifierList70', cardinality 0..*).
+'myDsl::IdentifierList' (role 'myDsl_IdentifierList154', cardinality 0..*) is associated with 'myDsl::VarSpec' (role 'myDsl_VarSpec153', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression377', cardinality 0..*) is associated with 'myDsl::SimpleStmtLinha' (role 'myDsl_SimpleStmtLinha376', cardinality 0..*).
+'myDsl::ConstSpec' (role 'myDsl_ConstSpec117', cardinality 0..*) is associated with 'myDsl::ConstDecl' (role 'myDsl_ConstDecl116', cardinality 0..*).
+'myDsl::ForStmtLinhaLinha' (role 'myDsl_ForStmtLinhaLinha511', cardinality 0..*) is associated with 'myDsl::PostStmt' (role 'myDsl_PostStmt512', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type', cardinality 0..*) is associated with 'myDsl::TypeName' (role 'myDsl_TypeName', cardinality 0..*).
+'myDsl::FunctionDecl' (role 'myDsl_FunctionDecl167', cardinality 0..*) is associated with 'myDsl::FunctionName' (role 'myDsl_FunctionName', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*) is associated with 'myDsl::ArrayLength' (role 'myDsl_ArrayLength26', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block416', cardinality 0..*) is associated with 'myDsl::IfStmtLinha' (role 'myDsl_IfStmtLinha415', cardinality 0..*).
+'myDsl::PrimaryExpr' (role 'myDsl_PrimaryExpr452', cardinality 0..*) is associated with 'myDsl::TypeSwitchGuard' (role 'myDsl_TypeSwitchGuard451', cardinality 0..*).

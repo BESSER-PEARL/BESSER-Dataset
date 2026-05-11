@@ -1,0 +1,69 @@
+The model has 32 class(es).
+The class 'tracker::BovineBison' has the following attributes: 'buffaloBreed' of type str.
+The class 'tracker::TagRetired' has no attributes.
+The class 'tracker::BovineBeef' has the following attributes: 'beefBreed' of type str.
+The class 'tracker::TagAllocated' has no attributes.
+The class 'tracker::ReplacedTag' has the following attributes: 'oldAin' of type str.
+The class 'tracker::Animals' has no attributes.
+The class 'tracker::Exported' has no attributes.
+The class 'Animal' has no attributes.
+The class 'tracker::Ovine' has the following attributes: 'sheepBreed' of type str.
+The class 'tracker::EventHistory' has no attributes.
+The class 'tracker::Swine' has the following attributes: 'swineBreed' of type str.
+The class 'tracker::Bovine' has no attributes.
+The class 'tracker::AnimalMissing' has no attributes.
+The class 'tracker::LostTag' has no attributes.
+The class 'tracker::Died' has no attributes.
+The class 'tracker::Imported' has no attributes.
+The class 'tracker::Premises' has the following attributes: 'premisesId' of type str; 'emailContact' of type str.
+The class 'tracker::ICVI' has no attributes.
+The class 'tracker::Slaughtered' has no attributes.
+The class 'tracker::BovineDairy' has the following attributes: 'dairyBreed' of type str.
+The class 'tracker::TagApplied' has no attributes.
+The class 'tracker::MovedIn' has the following attributes: 'sourcePin' of type str.
+The class 'tracker::Event' has the following attributes: 'comments' of type str; 'electronicallyRead' of type bool; 'eventCode' of type int; 'correction' of type bool; 'id' of type str; 'dateTime' of type str.
+The class 'tracker::MovedOut' has the following attributes: 'destinationPin' of type str.
+The class 'tracker::Animal' has the following attributes: 'idNumber' of type str; 'sex' of type str; 'species' of type str; 'age' of type str; 'breed' of type str; 'sexCode' of type str; 'birthDate' of type str; 'speciesCode' of type str.
+The class 'Bovine' has no attributes.
+The class 'tracker::Sighting' has no attributes.
+The class 'tracker::AnimalId' has the following attributes: 'idNumber' of type str; 'usainNumberUsed' of type bool.
+The class 'tracker::UnAppliedTags' has no attributes.
+The class 'tracker::WeighIn' has the following attributes: 'weight' of type int.
+The class 'Event' has no attributes.
+The class 'tracker::FairRegistration' has the following attributes: 'parent' of type str; 'address' of type str; 'participant' of type str; 'phone' of type str; 'club' of type str.
+The enumeration 'DairyBreed' has the following literals: 'GU', 'WW', 'AY', 'BS', 'GD', 'JE', 'LD', 'FM', 'Unspecified', 'HO', 'MS'.
+The enumeration 'BeefBreed' has the following literals: 'CA', 'MR', 'BF', 'CN', 'KB', 'CG', 'NE', 'GE', 'AN', 'SA', 'DE', 'LU', 'FA', 'CP', 'RR', 'RA', 'AB', 'HP', 'SW', 'AL', 'GS', 'RO', 'XX', 'AM', 'RD', 'AU', 'WB', 'HH', 'FC', 'PR', 'HC', 'SV', 'TI', 'GZ', 'BD', 'SP', 'CB', 'MO', 'AR', 'AK', 'SS', 'HB', 'BB', 'TN', 'TP', 'DR', 'FB', 'WP', 'AE', 'SM', 'DF', 'MC', 'BH', 'CH', 'RB', 'AW', 'TA', 'DN', 'MU', 'PI', 'XT', 'ME', 'MH', 'BR', 'HY', 'SH', 'TL', 'LO', 'ER', 'FP', 'BM', 'PZ', 'BU', 'DL', 'GV', 'NS', 'BW', 'SL', 'RP', 'MA', 'BL', 'RN', 'BO', 'BI', 'IS', 'FR', 'CM', 'NR', 'IB', 'BE', 'SI', 'WF', 'GY', 'TG', 'BG', 'LM', 'RW', 'PA', 'YA', 'SX', 'KY', 'SG', 'LR', 'SE', 'FL', 'DS', 'GI', 'NM', 'MI', 'GA', 'SB', 'Unspecified', 'CU', 'RS', 'AF', 'BN', 'GR', 'ML', 'BQ', 'BA', 'MG', 'DJ', 'DB'.
+The enumeration 'SwineBreed' has the following literals: 'LB', 'PC', 'HA', 'TM', 'LC', 'PE', 'WS', 'Unspecified', 'DU', 'SO', 'YO', 'BK', 'CW', 'RW', 'LW', 'LA'.
+The enumeration 'Sex' has the following literals: 'S', 'C', 'M', 'Unspecified', 'F'.
+The enumeration 'BisonBreed' has the following literals: 'Unspecified', 'WO', 'PB'.
+The enumeration 'SheepBreed' has the following literals: 'LI', 'NC', 'RY', 'OU', 'NL', 'ZS', 'FB', 'ST', 'RG', 'XM', 'Unspecified', 'CP', 'BC', 'RV', 'TU', 'IL', 'SU', 'MP', 'BF', 'BO', 'CL', 'LE', 'CO', 'CF', 'DP', 'KK', 'HS', 'DL', 'TX', 'SC', 'CD', 'XL', 'OX', 'MM', 'KH', 'PE', 'SX', 'SR', 'BL', 'CR', 'BW', 'SL', 'LY', 'HY', 'ER', 'HL', 'TA', 'RI', 'MT', 'KA', 'PO', 'RM', 'DH', 'FN'.
+'tracker::MovedOut' is a specialization of 'Event'.
+'tracker::BovineBison' is a specialization of 'Bovine'.
+'tracker::AnimalMissing' is a specialization of 'Event'.
+'tracker::MovedIn' is a specialization of 'Event'.
+'tracker::TagApplied' is a specialization of 'Event'.
+'tracker::BovineBeef' is a specialization of 'Bovine'.
+'tracker::LostTag' is a specialization of 'Event'.
+'tracker::WeighIn' is a specialization of 'Event'.
+'tracker::ReplacedTag' is a specialization of 'Event'.
+'tracker::BovineDairy' is a specialization of 'Bovine'.
+'tracker::Bovine' is a specialization of 'Animal'.
+'tracker::Ovine' is a specialization of 'Animal'.
+'tracker::TagRetired' is a specialization of 'Event'.
+'tracker::ICVI' is a specialization of 'Event'.
+'tracker::TagAllocated' is a specialization of 'Event'.
+'tracker::Swine' is a specialization of 'Animal'.
+'tracker::Slaughtered' is a specialization of 'Event'.
+'tracker::Sighting' is a specialization of 'Event'.
+'tracker::Exported' is a specialization of 'Event'.
+'tracker::Imported' is a specialization of 'Event'.
+'tracker::Died' is a specialization of 'Event'.
+'tracker::FairRegistration' is a specialization of 'Event'.
+'tracker::AnimalId' (role 'tracker_AnimalId2', cardinality 0..*) is associated with 'tracker::Event' (role 'tracker_Event', cardinality 0..*).
+'tracker::EventHistory' (role 'tracker_EventHistory', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises5', cardinality 0..*).
+'tracker::UnAppliedTags' (role 'tracker_UnAppliedTags', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises7', cardinality 0..*).
+'tracker::AnimalId' (role 'tracker_AnimalId', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal', cardinality 0..*).
+'tracker::Animals' (role 'tracker_Animals12', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal13', cardinality 0..*).
+'tracker::EventHistory' (role 'tracker_EventHistory9', cardinality 0..*) is associated with 'tracker::Event' (role 'tracker_Event10', cardinality 0..*).
+'tracker::Premises' (role 'tracker_Premises', cardinality 0..*) is associated with 'tracker::Animals' (role 'tracker_Animals', cardinality 0..*).
+'tracker::AnimalId' (role 'tracker_AnimalId16', cardinality 0..*) is associated with 'tracker::UnAppliedTags' (role 'tracker_UnAppliedTags15', cardinality 0..*).

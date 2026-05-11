@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'timeBasedRouting::TimeRange' has the following attributes: 'name' of type str; 'endRange' of type date; 'startRange' of type date.
+The class 'timeBasedRouting::TimeBasedRouting' has no attributes.
+The class 'ActionStep' has no attributes.
+The class 'timeBasedRouting::DailyOccursModel' has the following attributes: 'skipDays' of type int; 'startDate' of type date.
+The class 'CaseItem' has no attributes.
+The class 'timeBasedRouting::TimeItem' has the following attributes: 'description' of type str.
+The class 'timeBasedRouting::OccursModel' has the following attributes: 'mode' of type str; 'description' of type str.
+The class 'timeBasedRouting::MonthlyOccursModel' has the following attributes: 'dayIndex' of type int; 'skipMonths' of type int; 'dayOccurence' of type str; 'startDate' of type date; 'byIndex' of type bool; 'day' of type str.
+The class 'timeBasedRouting::WeeklyOccursModel' has the following attributes: 'skipWeeks' of type int; 'startDate' of type date; 'days' of type str.
+The class 'OccursModel' has no attributes.
+The class 'DynamicValue' has no attributes.
+The enumeration 'OccursMode' has the following literals: 'MONTHLY', 'DAILY', 'WEEKLY'.
+The enumeration 'DayOccurrence' has the following literals: 'THIRD', 'LAST', 'FOURTH', 'FIRST', 'SECOND'.
+The enumeration 'Day' has the following literals: 'SATURDAY', 'SUNDAY', 'WEDNESDAY', 'THURSDAY', 'TUESDAY', 'MONDAY', 'FRIDAY'.
+'timeBasedRouting::TimeBasedRouting' is a specialization of 'ActionStep'.
+'timeBasedRouting::WeeklyOccursModel' is a specialization of 'OccursModel'.
+'timeBasedRouting::DailyOccursModel' is a specialization of 'OccursModel'.
+'timeBasedRouting::TimeItem' is a specialization of 'CaseItem'.
+'timeBasedRouting::MonthlyOccursModel' is a specialization of 'OccursModel'.
+'timeBasedRouting::OccursModel' (role 'timeBasedRouting_OccursModel', cardinality 0..*) is associated with 'timeBasedRouting::TimeRange' (role 'timeBasedRouting_TimeRange', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue', cardinality 0..*) is associated with 'timeBasedRouting::TimeBasedRouting' (role 'timeBasedRouting_TimeBasedRouting', cardinality 0..*).
+'timeBasedRouting::TimeItem' (role 'timeBasedRouting_TimeItem', cardinality 0..*) is associated with 'timeBasedRouting::TimeBasedRouting' (role 'timeBasedRouting_TimeBasedRouting2', cardinality 0..*).

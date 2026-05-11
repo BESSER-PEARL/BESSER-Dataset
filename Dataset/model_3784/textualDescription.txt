@@ -1,0 +1,43 @@
+The model has 10 class(es).
+The class 'test::TestElementToStringMap' has the following attributes: 'value' of type str.
+The class 'test::TestType' has the following attributes: 'name' of type str.
+The class 'EObject' has no attributes.
+The class 'test::TestElement' has the following attributes: 'description' of type str; 'name' of type str; 'featureMapEntries' of type str; 'strings' of type str.
+The class 'test::StringToTestElementMap' has the following attributes: 'key' of type str.
+The class 'test::TypeWithFeatureMapContainment' has the following attributes: 'mapContainment' of type str.
+The class 'test::TestElementToTestElementMap' has no attributes.
+The class 'TestType' has no attributes.
+The class 'test::TypeWithFeatureMapNonContainment' has the following attributes: 'map' of type str.
+The class 'test::StringToStringMap' has the following attributes: 'value' of type str; 'key' of type str.
+'test::TestElement' is a specialization of 'EObject'.
+'test::TypeWithFeatureMapNonContainment' is a specialization of 'TestType'.
+'test::TypeWithFeatureMapContainment' is a specialization of 'TestType'.
+'test::TestElement' (role 'test_TestElement24', cardinality 0..*) is associated with 'test::TestElementToStringMap' (role 'test_TestElementToStringMap', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement53', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement51', cardinality 0..*).
+'test::TestElement' (role 'TestElement41', cardinality 0..*) is associated with 'test::TestElement' (role 'container2', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement10', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement12', cardinality 0..*).
+'test::TypeWithFeatureMapContainment' (role 'test_TypeWithFeatureMapContainment', cardinality 0..*) is associated with 'test::TestType' (role 'test_TestType74', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement50', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement48', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement56', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement54', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement0', cardinality 0..*).
+'test::TypeWithFeatureMapContainment' (role 'test_TypeWithFeatureMapContainment76', cardinality 0..*) is associated with 'test::TestType' (role 'test_TestType77', cardinality 0..*).
+'test::TestElement' (role 'nonContained_NToM', cardinality 0..*) is associated with 'test::TestElement' (role 'TestElement38', cardinality 0..*).
+'test::TestType' (role 'test_TestType', cardinality 0..*) is associated with 'test::TypeWithFeatureMapNonContainment' (role 'test_TypeWithFeatureMapNonContainment', cardinality 0..*).
+'test::TestElementToTestElementMap' (role 'test_TestElementToTestElementMap61', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement62', cardinality 0..*).
+'test::TestElement' (role 'containedElements2', cardinality 0..*) is associated with 'test::TestElement' (role 'TestElement44', cardinality 0..*).
+'test::TestElement' (role 'TestElement18', cardinality 0..*) is associated with 'test::TestElement' (role 'containedElement', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement68', cardinality 0..*) is associated with 'test::StringToTestElementMap' (role 'test_StringToTestElementMap67', cardinality 0..*).
+'test::TestElement' (role 'TestElement32', cardinality 0..*) is associated with 'test::TestElement' (role 'nonContained_NTo1', cardinality 0..*).
+'test::TypeWithFeatureMapNonContainment' (role 'test_TypeWithFeatureMapNonContainment71', cardinality 0..*) is associated with 'test::TestType' (role 'test_TestType72', cardinality 0..*).
+'test::TestElement' (role 'TestElement29', cardinality 0..*) is associated with 'test::TestElement' (role 'nonContained_1ToN', cardinality 0..*).
+'test::TestElement' (role 'srefContainer', cardinality 0..*) is associated with 'test::TestElement' (role 'TestElement9', cardinality 0..*).
+'test::TestElementToStringMap' (role 'test_TestElementToStringMap58', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement59', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement26', cardinality 0..*) is associated with 'test::StringToTestElementMap' (role 'test_StringToTestElementMap', cardinality 0..*).
+'test::TestElementToTestElementMap' (role 'test_TestElementToTestElementMap64', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement65', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement22', cardinality 0..*) is associated with 'test::StringToStringMap' (role 'test_StringToStringMap', cardinality 0..*).
+'test::TestElement' (role 'nonContained_MToN', cardinality 0..*) is associated with 'test::TestElement' (role 'TestElement35', cardinality 0..*).
+'test::TestElement' (role 'containedElements', cardinality 0..*) is associated with 'test::TestElement' (role 'TestElement15', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement47', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement45', cardinality 0..*).
+'test::TestElement' (role 'TestElement', cardinality 0..*) is associated with 'test::TestElement' (role 'container', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement20', cardinality 0..*) is associated with 'test::TestElementToTestElementMap' (role 'test_TestElementToTestElementMap', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement6', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement4', cardinality 0..*).

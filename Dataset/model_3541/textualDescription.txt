@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'emapvselistentry::NewEClass4' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'emapvselistentry::NewEClass2' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'emapvselistentry::NewEClass1' has no attributes.
+The class 'emapvselistentry::NewEClass5' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'emapvselistentry::NewEClass3' has the following attributes: 'key' of type str; 'value' of type str.
+'emapvselistentry::NewEClass1' (role 'emapvselistentry_NewEClass12', cardinality 0..*) is associated with 'emapvselistentry::NewEClass3' (role 'emapvselistentry_NewEClass3', cardinality 0..*).
+'emapvselistentry::NewEClass1' (role 'emapvselistentry_NewEClass14', cardinality 0..*) is associated with 'emapvselistentry::NewEClass4' (role 'emapvselistentry_NewEClass4', cardinality 0..*).
+'emapvselistentry::NewEClass1' (role 'emapvselistentry_NewEClass1', cardinality 0..*) is associated with 'emapvselistentry::NewEClass2' (role 'emapvselistentry_NewEClass2', cardinality 0..*).
+'emapvselistentry::NewEClass1' (role 'emapvselistentry_NewEClass16', cardinality 0..*) is associated with 'emapvselistentry::NewEClass5' (role 'emapvselistentry_NewEClass5', cardinality 0..*).

@@ -1,0 +1,274 @@
+The model has 67 class(es).
+The class 'xpdl1::ImplementationType' has no attributes.
+The class 'xpdl1::ExtendedAttributesType' has no attributes.
+The class 'xpdl1::PackageType' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'xpdl1::TypeDeclarationsType' has no attributes.
+The class 'xpdl1::NoType' has no attributes.
+The class 'xpdl1::ResponsiblesType' has the following attributes: 'responsible' of type str.
+The class 'xpdl1::UnionTypeType' has no attributes.
+The class 'xpdl1::BlockActivityType' has the following attributes: 'blockId' of type str.
+The class 'xpdl1::ExternalReferenceType' has the following attributes: 'namespace' of type str; 'location' of type str; 'xref' of type str.
+The class 'xpdl1::DocumentRoot' has the following attributes: 'initialValue' of type str; 'codepage' of type str; 'countrykey' of type str; 'priority' of type str; 'xPDLVersion' of type str; 'length' of type str; 'mixed' of type str; 'author' of type str; 'vendor' of type str; 'actualParameter' of type str; 'responsible' of type str; 'validFrom' of type str; 'version' of type str; 'created' of type str; 'icon' of type str; 'waitingTime' of type str; 'cost' of type str; 'costUnit' of type str; 'description' of type str; 'priorityUnit' of type str; 'validTo' of type str; 'documentation' of type str; 'performer' of type str; 'limit' of type str; 'workingTime' of type str; 'duration' of type str.
+The class 'xpdl1::FormalParametersType' has no attributes.
+The class 'xpdl1::ConditionType' has the following attributes: 'mixed' of type str; 'type' of type str; 'group' of type str.
+The class 'xpdl1::DeadlineType' has the following attributes: 'execution' of type str.
+The class 'xpdl1::ScriptType' has the following attributes: 'grammar' of type str; 'version' of type str; 'type' of type str.
+The class 'xpdl1::SplitType' has the following attributes: 'type' of type str.
+The class 'xpdl1::RecordTypeType' has no attributes.
+The class 'xpdl1::ArrayTypeType' has the following attributes: 'lowerIndex' of type str; 'upperIndex' of type str.
+The class 'xpdl1::ApplicationType' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type str.
+The class 'xpdl1::ActualParametersType' has the following attributes: 'actualParameter' of type str.
+The class 'xpdl1::ParticipantsType' has no attributes.
+The class 'xpdl1::DataTypeType' has no attributes.
+The class 'xpdl1::BasicTypeType' has the following attributes: 'type' of type str.
+The class 'xpdl1::DataFieldsType' has no attributes.
+The class 'xpdl1::RouteType' has no attributes.
+The class 'xpdl1::ListTypeType' has no attributes.
+The class 'xpdl1::ConformanceClassType' has the following attributes: 'graphConformance' of type str.
+The class 'xpdl1::JoinType' has the following attributes: 'type' of type str.
+The class 'xpdl1::SchemaTypeType' has the following attributes: 'any' of type str.
+The class 'xpdl1::EObject' has no attributes.
+The class 'xpdl1::WorkflowProcessesType' has no attributes.
+The class 'xpdl1::ParticipantTypeType' has the following attributes: 'type' of type str.
+The class 'xpdl1::ManualType' has no attributes.
+The class 'xpdl1::MemberType' has no attributes.
+The class 'xpdl1::EnumerationValueType' has the following attributes: 'name' of type str.
+The class 'xpdl1::FormalParameterType' has the following attributes: 'id' of type str; 'mode' of type str; 'index' of type str; 'description' of type str.
+The class 'xpdl1::EStringToStringMapEntry' has no attributes.
+The class 'xpdl1::ActivitiesType' has no attributes.
+The class 'xpdl1::SimulationInformationType' has the following attributes: 'cost' of type str; 'instantiation' of type str.
+The class 'xpdl1::StartModeType' has no attributes.
+The class 'xpdl1::ActivitySetsType' has no attributes.
+The class 'xpdl1::TransitionRefType' has the following attributes: 'id' of type str.
+The class 'xpdl1::PackageHeaderType' has the following attributes: 'description' of type str; 'created' of type str; 'documentation' of type str; 'priorityUnit' of type str; 'costUnit' of type str; 'xPDLVersion' of type str; 'vendor' of type str.
+The class 'xpdl1::TransitionRefsType' has no attributes.
+The class 'xpdl1::AutomaticType' has no attributes.
+The class 'xpdl1::ProcessHeaderType' has the following attributes: 'durationUnit' of type str; 'validTo' of type str; 'validFrom' of type str; 'description' of type str; 'limit' of type str; 'created' of type str; 'priority' of type str.
+The class 'xpdl1::TransitionRestrictionType' has no attributes.
+The class 'xpdl1::DeclaredTypeType' has the following attributes: 'id' of type str.
+The class 'xpdl1::TypeDeclarationType' has the following attributes: 'id' of type str; 'description' of type str; 'name' of type str.
+The class 'xpdl1::TransitionsType' has no attributes.
+The class 'xpdl1::ExternalPackageType' has the following attributes: 'href' of type str.
+The class 'xpdl1::EnumerationTypeType' has no attributes.
+The class 'xpdl1::ActivityType' has the following attributes: 'id' of type str; 'performer' of type str; 'icon' of type str; 'description' of type str; 'name' of type str; 'priority' of type str; 'limit' of type str; 'documentation' of type str.
+The class 'xpdl1::WorkflowProcessType' has the following attributes: 'id' of type str; 'name' of type str; 'accessLevel' of type str.
+The class 'xpdl1::TimeEstimationType' has the following attributes: 'duration' of type str; 'waitingTime' of type str; 'workingTime' of type str.
+The class 'xpdl1::TransitionRestrictionsType' has no attributes.
+The class 'xpdl1::SubFlowType' has the following attributes: 'id' of type str; 'execution' of type str.
+The class 'xpdl1::XpressionType' has the following attributes: 'any' of type str; 'mixed' of type str; 'group' of type str.
+The class 'xpdl1::ToolType' has the following attributes: 'description' of type str; 'id' of type str; 'type' of type str.
+The class 'xpdl1::RedefinableHeaderType' has the following attributes: 'publicationStatus' of type str; 'countrykey' of type str; 'author' of type str; 'codepage' of type str; 'version' of type str.
+The class 'xpdl1::ApplicationsType' has no attributes.
+The class 'xpdl1::ExtendedAttributeType' has the following attributes: 'name' of type str; 'value' of type str; 'group' of type str; 'any' of type str; 'mixed' of type str.
+The class 'xpdl1::FinishModeType' has no attributes.
+The class 'xpdl1::DataFieldType' has the following attributes: 'length' of type str; 'initialValue' of type str; 'isArray' of type str; 'name' of type str; 'description' of type str; 'id' of type str.
+The class 'xpdl1::TransitionType' has the following attributes: 'from_' of type str; 'id' of type str; 'to' of type str; 'description' of type str; 'name' of type str.
+The class 'xpdl1::ActivitySetType' has the following attributes: 'id' of type str.
+The class 'xpdl1::ParticipantType' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type str.
+The class 'xpdl1::ExternalPackagesType' has no attributes.
+The enumeration 'ModeType' has the following literals: 'INOUT', 'IN', 'OUT'.
+The enumeration 'TypeType3' has the following literals: 'PERFORMER', 'DATETIME', 'BOOLEAN', 'STRING', 'INTEGER', 'FLOAT', 'REFERENCE'.
+The enumeration 'DurationUnitType' has the following literals: 'Y', 'm1', 'M', 'D', 's', 'h'.
+The enumeration 'GraphConformanceType' has the following literals: 'LOOPBLOCKED', 'NONBLOCKED', 'FULLBLOCKED'.
+The enumeration 'ExecutionType1' has the following literals: 'SYNCHR', 'ASYNCHR'.
+The enumeration 'TypeType2' has the following literals: 'CONDITION', 'OTHERWISE', 'EXCEPTION', 'DEFAULTEXCEPTION'.
+The enumeration 'TypeType' has the following literals: 'XOR', 'AND'.
+The enumeration 'TypeType4' has the following literals: 'AND', 'XOR'.
+The enumeration 'TypeType5' has the following literals: 'APPLICATION', 'PROCEDURE'.
+The enumeration 'TypeType1' has the following literals: 'RESOURCESET', 'ORGANIZATIONALUNIT', 'SYSTEM', 'RESOURCE', 'HUMAN', 'ROLE'.
+The enumeration 'InstantiationType' has the following literals: 'ONCE', 'MULTIPLE'.
+The enumeration 'PublicationStatusType' has the following literals: 'RELEASED', 'UNDERTEST', 'UNDERREVISION'.
+The enumeration 'ExecutionType' has the following literals: 'SYNCHR', 'ASYNCHR'.
+The enumeration 'IsArrayType' has the following literals: 'TRUE', 'FALSE'.
+The enumeration 'AccessLevelType' has the following literals: 'PUBLIC', 'PRIVATE'.
+'xpdl1::ApplicationType' (role 'xpdl1_ApplicationType27', cardinality 0..*) is associated with 'xpdl1::FormalParametersType' (role 'xpdl1_FormalParametersType', cardinality 0..*).
+'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType316', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType315', cardinality 0..*).
+'xpdl1::ConditionType' (role 'xpdl1_ConditionType128', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot127', cardinality 0..*).
+'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType', cardinality 0..*) is associated with 'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType35', cardinality 0..*).
+'xpdl1::TransitionsType' (role 'xpdl1_TransitionsType502', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType501', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType', cardinality 0..*) is associated with 'xpdl1::ActivityType' (role 'xpdl1_ActivityType24', cardinality 0..*).
+'xpdl1::ParticipantsType' (role 'xpdl1_ParticipantsType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot192', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot182', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType47', cardinality 0..*) is associated with 'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType49', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType337', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType336', cardinality 0..*).
+'xpdl1::ActivitySetType' (role 'xpdl1_ActivitySetType103', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot102', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType18', cardinality 0..*) is associated with 'xpdl1::DeadlineType' (role 'xpdl1_DeadlineType', cardinality 0..*).
+'xpdl1::DataFieldType' (role 'xpdl1_DataFieldType55', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType', cardinality 0..*).
+'xpdl1::ImplementationType' (role 'xpdl1_ImplementationType285', cardinality 0..*) is associated with 'xpdl1::SubFlowType' (role 'xpdl1_SubFlowType286', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType265', cardinality 0..*) is associated with 'xpdl1::ExternalPackageType' (role 'xpdl1_ExternalPackageType264', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot141', cardinality 0..*) is associated with 'xpdl1::DeadlineType' (role 'xpdl1_DeadlineType142', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot157', cardinality 0..*) is associated with 'xpdl1::ExternalPackageType' (role 'xpdl1_ExternalPackageType', cardinality 0..*).
+'xpdl1::AutomaticType' (role 'xpdl1_AutomaticType268', cardinality 0..*) is associated with 'xpdl1::FinishModeType' (role 'xpdl1_FinishModeType267', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot138', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType139', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot203', cardinality 0..*) is associated with 'xpdl1::ResponsiblesType' (role 'xpdl1_ResponsiblesType', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType459', cardinality 0..*) is associated with 'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType460', cardinality 0..*).
+'xpdl1::ActivitiesType' (role 'xpdl1_ActivitiesType499', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType498', cardinality 0..*).
+'xpdl1::ToolType' (role 'xpdl1_ToolType414', cardinality 0..*) is associated with 'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType415', cardinality 0..*).
+'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType454', cardinality 0..*) is associated with 'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType453', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType456', cardinality 0..*) is associated with 'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType457', cardinality 0..*).
+'xpdl1::DeadlineType' (role 'xpdl1_DeadlineType87', cardinality 0..*) is associated with 'xpdl1::EObject' (role 'xpdl1_EObject', cardinality 0..*).
+'xpdl1::MemberType' (role 'xpdl1_MemberType339', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType340', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot135', cardinality 0..*) is associated with 'xpdl1::DataFieldsType' (role 'xpdl1_DataFieldsType136', cardinality 0..*).
+'xpdl1::PackageType' (role 'xpdl1_PackageType369', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessesType' (role 'xpdl1_WorkflowProcessesType370', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType297', cardinality 0..*) is associated with 'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType298', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType39', cardinality 0..*) is associated with 'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType40', cardinality 0..*).
+'xpdl1::ActualParametersType' (role 'xpdl1_ActualParametersType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot108', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType16', cardinality 0..*) is associated with 'xpdl1::FinishModeType' (role 'xpdl1_FinishModeType', cardinality 0..*).
+'xpdl1::TransitionType' (role 'xpdl1_TransitionType432', cardinality 0..*) is associated with 'xpdl1::ConditionType' (role 'xpdl1_ConditionType433', cardinality 0..*).
+'xpdl1::PackageHeaderType' (role 'xpdl1_PackageHeaderType343', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType342', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot188', cardinality 0..*) is associated with 'xpdl1::PackageHeaderType' (role 'xpdl1_PackageHeaderType', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot223', cardinality 0..*) is associated with 'xpdl1::TimeEstimationType' (role 'xpdl1_TimeEstimationType', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType468', cardinality 0..*) is associated with 'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType469', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType8', cardinality 0..*) is associated with 'xpdl1::RouteType' (role 'xpdl1_RouteType', cardinality 0..*).
+'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType322', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType321', cardinality 0..*).
+'xpdl1::DataFieldsType' (role 'xpdl1_DataFieldsType367', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType366', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot194', cardinality 0..*) is associated with 'xpdl1::ParticipantTypeType' (role 'xpdl1_ParticipantTypeType', cardinality 0..*).
+'xpdl1::MemberType' (role 'xpdl1_MemberType324', cardinality 0..*) is associated with 'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType325', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType309', cardinality 0..*) is associated with 'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType310', cardinality 0..*).
+'xpdl1::TypeDeclarationsType' (role 'xpdl1_TypeDeclarationsType358', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType357', cardinality 0..*).
+'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType382', cardinality 0..*) is associated with 'xpdl1::ParticipantType' (role 'xpdl1_ParticipantType381', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType463', cardinality 0..*) is associated with 'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType462', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType373', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType372', cardinality 0..*).
+'xpdl1::ParticipantsType' (role 'xpdl1_ParticipantsType490', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType489', cardinality 0..*).
+'xpdl1::TransitionsType' (role 'xpdl1_TransitionsType429', cardinality 0..*) is associated with 'xpdl1::TransitionType' (role 'xpdl1_TransitionType430', cardinality 0..*).
+'xpdl1::TransitionRefsType' (role 'xpdl1_TransitionRefsType417', cardinality 0..*) is associated with 'xpdl1::TransitionRefType' (role 'xpdl1_TransitionRefType418', cardinality 0..*).
+'xpdl1::TransitionRestrictionsType' (role 'xpdl1_TransitionRestrictionsType236', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot235', cardinality 0..*).
+'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType475', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessesType' (role 'xpdl1_WorkflowProcessesType474', cardinality 0..*).
+'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType145', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot144', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType436', cardinality 0..*) is associated with 'xpdl1::TransitionType' (role 'xpdl1_TransitionType435', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType117', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot116', cardinality 0..*).
+'xpdl1::ConditionType' (role 'xpdl1_ConditionType', cardinality 0..*) is associated with 'xpdl1::XpressionType' (role 'xpdl1_XpressionType', cardinality 0..*).
+'xpdl1::ActivitiesType' (role 'xpdl1_ActivitiesType', cardinality 0..*) is associated with 'xpdl1::ActivityType' (role 'xpdl1_ActivityType', cardinality 0..*).
+'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType480', cardinality 0..*) is associated with 'xpdl1::RedefinableHeaderType' (role 'xpdl1_RedefinableHeaderType481', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType505', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType504', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType51', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType', cardinality 0..*).
+'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType246', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot245', cardinality 0..*).
+'xpdl1::TransitionRestrictionType' (role 'xpdl1_TransitionRestrictionType421', cardinality 0..*) is associated with 'xpdl1::TransitionRestrictionsType' (role 'xpdl1_TransitionRestrictionsType420', cardinality 0..*).
+'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType122', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot121', cardinality 0..*).
+'xpdl1::ApplicationsType' (role 'xpdl1_ApplicationsType364', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType363', cardinality 0..*).
+'xpdl1::TransitionsType' (role 'xpdl1_TransitionsType', cardinality 0..*) is associated with 'xpdl1::ActivitySetType' (role 'xpdl1_ActivitySetType6', cardinality 0..*).
+'xpdl1::TransitionRestrictionType' (role 'xpdl1_TransitionRestrictionType423', cardinality 0..*) is associated with 'xpdl1::JoinType' (role 'xpdl1_JoinType424', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType22', cardinality 0..*) is associated with 'xpdl1::TransitionRestrictionsType' (role 'xpdl1_TransitionRestrictionsType', cardinality 0..*).
+'xpdl1::StartModeType' (role 'xpdl1_StartModeType219', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot218', cardinality 0..*).
+'xpdl1::ToolType' (role 'xpdl1_ToolType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot225', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot154', cardinality 0..*) is associated with 'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType155', cardinality 0..*).
+'xpdl1::MemberType' (role 'xpdl1_MemberType327', cardinality 0..*) is associated with 'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType328', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType37', cardinality 0..*) is associated with 'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType', cardinality 0..*).
+'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType477', cardinality 0..*) is associated with 'xpdl1::ProcessHeaderType' (role 'xpdl1_ProcessHeaderType478', cardinality 0..*).
+'xpdl1::PackageType' (role 'xpdl1_PackageType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot186', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot250', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessesType' (role 'xpdl1_WorkflowProcessesType', cardinality 0..*).
+'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType289', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType288', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot248', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot221', cardinality 0..*) is associated with 'xpdl1::SubFlowType' (role 'xpdl1_SubFlowType', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType447', cardinality 0..*) is associated with 'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType448', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType14', cardinality 0..*) is associated with 'xpdl1::StartModeType' (role 'xpdl1_StartModeType', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType81', cardinality 0..*) is associated with 'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType82', cardinality 0..*).
+'xpdl1::ParticipantsType' (role 'xpdl1_ParticipantsType361', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType360', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType291', cardinality 0..*) is associated with 'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType292', cardinality 0..*).
+'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType76', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType75', cardinality 0..*).
+'xpdl1::ExternalPackagesType' (role 'xpdl1_ExternalPackagesType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot159', cardinality 0..*).
+'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType471', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType472', cardinality 0..*).
+'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType162', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot161', cardinality 0..*).
+'xpdl1::NoType' (role 'xpdl1_NoType280', cardinality 0..*) is associated with 'xpdl1::ImplementationType' (role 'xpdl1_ImplementationType279', cardinality 0..*).
+'xpdl1::ManualType' (role 'xpdl1_ManualType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot180', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot208', cardinality 0..*) is associated with 'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType209', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot243', cardinality 0..*) is associated with 'xpdl1::TypeDeclarationsType' (role 'xpdl1_TypeDeclarationsType', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot96', cardinality 0..*) is associated with 'xpdl1::ActivitiesType' (role 'xpdl1_ActivitiesType97', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType', cardinality 0..*) is associated with 'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType42', cardinality 0..*) is associated with 'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType', cardinality 0..*).
+'xpdl1::RedefinableHeaderType' (role 'xpdl1_RedefinableHeaderType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot201', cardinality 0..*).
+'xpdl1::MemberType' (role 'xpdl1_MemberType391', cardinality 0..*) is associated with 'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType390', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot172', cardinality 0..*) is associated with 'xpdl1::ImplementationType' (role 'xpdl1_ImplementationType173', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType58', cardinality 0..*) is associated with 'xpdl1::DataFieldType' (role 'xpdl1_DataFieldType57', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType300', cardinality 0..*) is associated with 'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType301', cardinality 0..*).
+'xpdl1::EnumerationValueType' (role 'xpdl1_EnumerationValueType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot150', cardinality 0..*).
+'xpdl1::TransitionType' (role 'xpdl1_TransitionType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot227', cardinality 0..*).
+'xpdl1::DataFieldType' (role 'xpdl1_DataFieldType', cardinality 0..*) is associated with 'xpdl1::DataFieldsType' (role 'xpdl1_DataFieldsType', cardinality 0..*).
+'xpdl1::TransitionRestrictionType' (role 'xpdl1_TransitionRestrictionType426', cardinality 0..*) is associated with 'xpdl1::SplitType' (role 'xpdl1_SplitType427', cardinality 0..*).
+'xpdl1::TransitionsType' (role 'xpdl1_TransitionsType239', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot238', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot93', cardinality 0..*) is associated with 'xpdl1::EStringToStringMapEntry' (role 'xpdl1_EStringToStringMapEntry94', cardinality 0..*).
+'xpdl1::ApplicationType' (role 'xpdl1_ApplicationType29', cardinality 0..*) is associated with 'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType', cardinality 0..*).
+'xpdl1::ActivitySetType' (role 'xpdl1_ActivitySetType3', cardinality 0..*) is associated with 'xpdl1::ActivitiesType' (role 'xpdl1_ActivitiesType4', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType84', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType85', cardinality 0..*).
+'xpdl1::TimeEstimationType' (role 'xpdl1_TimeEstimationType388', cardinality 0..*) is associated with 'xpdl1::ProcessHeaderType' (role 'xpdl1_ProcessHeaderType387', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot241', cardinality 0..*).
+'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType67', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType66', cardinality 0..*).
+'xpdl1::ActivitySetsType' (role 'xpdl1_ActivitySetsType496', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType495', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot110', cardinality 0..*) is associated with 'xpdl1::ApplicationType' (role 'xpdl1_ApplicationType111', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot167', cardinality 0..*) is associated with 'xpdl1::FormalParameterType' (role 'xpdl1_FormalParameterType', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot213', cardinality 0..*) is associated with 'xpdl1::SimulationInformationType' (role 'xpdl1_SimulationInformationType214', cardinality 0..*).
+'xpdl1::ApplicationsType' (role 'xpdl1_ApplicationsType', cardinality 0..*) is associated with 'xpdl1::ApplicationType' (role 'xpdl1_ApplicationType', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType277', cardinality 0..*) is associated with 'xpdl1::FormalParameterType' (role 'xpdl1_FormalParameterType276', cardinality 0..*).
+'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType44', cardinality 0..*) is associated with 'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType', cardinality 0..*).
+'xpdl1::TransitionRestrictionType' (role 'xpdl1_TransitionRestrictionType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot233', cardinality 0..*).
+'xpdl1::TransitionRefsType' (role 'xpdl1_TransitionRefsType400', cardinality 0..*) is associated with 'xpdl1::SplitType' (role 'xpdl1_SplitType399', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot132', cardinality 0..*) is associated with 'xpdl1::DataFieldType' (role 'xpdl1_DataFieldType133', cardinality 0..*).
+'xpdl1::SubFlowType' (role 'xpdl1_SubFlowType408', cardinality 0..*) is associated with 'xpdl1::ActualParametersType' (role 'xpdl1_ActualParametersType409', cardinality 0..*).
+'xpdl1::XpressionType' (role 'xpdl1_XpressionType253', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot252', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot231', cardinality 0..*) is associated with 'xpdl1::TransitionRefsType' (role 'xpdl1_TransitionRefsType', cardinality 0..*).
+'xpdl1::ExternalPackagesType' (role 'xpdl1_ExternalPackagesType261', cardinality 0..*) is associated with 'xpdl1::ExternalPackageType' (role 'xpdl1_ExternalPackageType262', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType100', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot99', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot229', cardinality 0..*) is associated with 'xpdl1::TransitionRefType' (role 'xpdl1_TransitionRefType', cardinality 0..*).
+'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType451', cardinality 0..*) is associated with 'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType450', cardinality 0..*).
+'xpdl1::MemberType' (role 'xpdl1_MemberType330', cardinality 0..*) is associated with 'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType331', cardinality 0..*).
+'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType79', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType78', cardinality 0..*).
+'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType385', cardinality 0..*) is associated with 'xpdl1::ParticipantType' (role 'xpdl1_ParticipantType384', cardinality 0..*).
+'xpdl1::AutomaticType' (role 'xpdl1_AutomaticType403', cardinality 0..*) is associated with 'xpdl1::StartModeType' (role 'xpdl1_StartModeType402', cardinality 0..*).
+'xpdl1::ParticipantType' (role 'xpdl1_ParticipantType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot190', cardinality 0..*).
+'xpdl1::ExtendedAttributeType' (role 'xpdl1_ExtendedAttributeType259', cardinality 0..*) is associated with 'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType258', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot147', cardinality 0..*) is associated with 'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType148', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot105', cardinality 0..*) is associated with 'xpdl1::ActivitySetsType' (role 'xpdl1_ActivitySetsType106', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot164', cardinality 0..*) is associated with 'xpdl1::FinishModeType' (role 'xpdl1_FinishModeType165', cardinality 0..*).
+'xpdl1::UnionTypeType' (role 'xpdl1_UnionTypeType304', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType303', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType306', cardinality 0..*) is associated with 'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType307', cardinality 0..*).
+'xpdl1::ApplicationType' (role 'xpdl1_ApplicationType31', cardinality 0..*) is associated with 'xpdl1::ExtendedAttributesType' (role 'xpdl1_ExtendedAttributesType32', cardinality 0..*).
+'xpdl1::ConformanceClassType' (role 'xpdl1_ConformanceClassType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot130', cardinality 0..*).
+'xpdl1::ProcessHeaderType' (role 'xpdl1_ProcessHeaderType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot196', cardinality 0..*).
+'xpdl1::ConformanceClassType' (role 'xpdl1_ConformanceClassType349', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType348', cardinality 0..*).
+'xpdl1::EnumerationValueType' (role 'xpdl1_EnumerationValueType256', cardinality 0..*) is associated with 'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType255', cardinality 0..*).
+'xpdl1::PackageType' (role 'xpdl1_PackageType351', cardinality 0..*) is associated with 'xpdl1::ScriptType' (role 'xpdl1_ScriptType352', cardinality 0..*).
+'xpdl1::ParticipantTypeType' (role 'xpdl1_ParticipantTypeType379', cardinality 0..*) is associated with 'xpdl1::ParticipantType' (role 'xpdl1_ParticipantType378', cardinality 0..*).
+'xpdl1::ApplicationsType' (role 'xpdl1_ApplicationsType493', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType492', cardinality 0..*).
+'xpdl1::ScriptType' (role 'xpdl1_ScriptType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot211', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType69', cardinality 0..*) is associated with 'xpdl1::ExternalReferenceType' (role 'xpdl1_ExternalReferenceType70', cardinality 0..*).
+'xpdl1::ParticipantsType' (role 'xpdl1_ParticipantsType375', cardinality 0..*) is associated with 'xpdl1::ParticipantType' (role 'xpdl1_ParticipantType376', cardinality 0..*).
+'xpdl1::ImplementationType' (role 'xpdl1_ImplementationType', cardinality 0..*) is associated with 'xpdl1::ActivityType' (role 'xpdl1_ActivityType10', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType444', cardinality 0..*) is associated with 'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType445', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot198', cardinality 0..*) is associated with 'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType199', cardinality 0..*).
+'xpdl1::StartModeType' (role 'xpdl1_StartModeType405', cardinality 0..*) is associated with 'xpdl1::ManualType' (role 'xpdl1_ManualType406', cardinality 0..*).
+'xpdl1::TypeDeclarationsType' (role 'xpdl1_TypeDeclarationsType438', cardinality 0..*) is associated with 'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType439', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType60', cardinality 0..*) is associated with 'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType61', cardinality 0..*).
+'xpdl1::ApplicationsType' (role 'xpdl1_ApplicationsType114', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot113', cardinality 0..*).
+'xpdl1::SimulationInformationType' (role 'xpdl1_SimulationInformationType396', cardinality 0..*) is associated with 'xpdl1::TimeEstimationType' (role 'xpdl1_TimeEstimationType397', cardinality 0..*).
+'xpdl1::ActivityType' (role 'xpdl1_ActivityType12', cardinality 0..*) is associated with 'xpdl1::BlockActivityType' (role 'xpdl1_BlockActivityType', cardinality 0..*).
+'xpdl1::PackageType' (role 'xpdl1_PackageType354', cardinality 0..*) is associated with 'xpdl1::ExternalPackagesType' (role 'xpdl1_ExternalPackagesType355', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType313', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType311', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType441', cardinality 0..*) is associated with 'xpdl1::BasicTypeType' (role 'xpdl1_BasicTypeType442', cardinality 0..*).
+'xpdl1::JoinType' (role 'xpdl1_JoinType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot175', cardinality 0..*).
+'xpdl1::ActivitySetType' (role 'xpdl1_ActivitySetType', cardinality 0..*) is associated with 'xpdl1::ActivitySetsType' (role 'xpdl1_ActivitySetsType', cardinality 0..*).
+'xpdl1::RouteType' (role 'xpdl1_RouteType206', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot205', cardinality 0..*).
+'xpdl1::FormalParametersType' (role 'xpdl1_FormalParametersType273', cardinality 0..*) is associated with 'xpdl1::FormalParameterType' (role 'xpdl1_FormalParameterType274', cardinality 0..*).
+'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType334', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType333', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot177', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType178', cardinality 0..*).
+'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType63', cardinality 0..*) is associated with 'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType64', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot216', cardinality 0..*) is associated with 'xpdl1::SplitType' (role 'xpdl1_SplitType', cardinality 0..*).
+'xpdl1::DataFieldsType' (role 'xpdl1_DataFieldsType487', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType486', cardinality 0..*).
+'xpdl1::ImplementationType' (role 'xpdl1_ImplementationType282', cardinality 0..*) is associated with 'xpdl1::ToolType' (role 'xpdl1_ToolType283', cardinality 0..*).
+'xpdl1::FinishModeType' (role 'xpdl1_FinishModeType270', cardinality 0..*) is associated with 'xpdl1::ManualType' (role 'xpdl1_ManualType271', cardinality 0..*).
+'xpdl1::TypeDeclarationType' (role 'xpdl1_TypeDeclarationType465', cardinality 0..*) is associated with 'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType466', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot124', cardinality 0..*) is associated with 'xpdl1::BlockActivityType' (role 'xpdl1_BlockActivityType125', cardinality 0..*).
+'xpdl1::EnumerationTypeType' (role 'xpdl1_EnumerationTypeType', cardinality 0..*) is associated with 'xpdl1::ArrayTypeType' (role 'xpdl1_ArrayTypeType46', cardinality 0..*).
+'xpdl1::FormalParametersType' (role 'xpdl1_FormalParametersType484', cardinality 0..*) is associated with 'xpdl1::WorkflowProcessType' (role 'xpdl1_WorkflowProcessType483', cardinality 0..*).
+'xpdl1::ResponsiblesType' (role 'xpdl1_ResponsiblesType394', cardinality 0..*) is associated with 'xpdl1::RedefinableHeaderType' (role 'xpdl1_RedefinableHeaderType393', cardinality 0..*).
+'xpdl1::ExtendedAttributeType' (role 'xpdl1_ExtendedAttributeType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot152', cardinality 0..*).
+'xpdl1::SimulationInformationType' (role 'xpdl1_SimulationInformationType', cardinality 0..*) is associated with 'xpdl1::ActivityType' (role 'xpdl1_ActivityType20', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot169', cardinality 0..*) is associated with 'xpdl1::FormalParametersType' (role 'xpdl1_FormalParametersType170', cardinality 0..*).
+'xpdl1::ListTypeType' (role 'xpdl1_ListTypeType294', cardinality 0..*) is associated with 'xpdl1::SchemaTypeType' (role 'xpdl1_SchemaTypeType295', cardinality 0..*).
+'xpdl1::DeclaredTypeType' (role 'xpdl1_DeclaredTypeType319', cardinality 0..*) is associated with 'xpdl1::MemberType' (role 'xpdl1_MemberType318', cardinality 0..*).
+'xpdl1::RecordTypeType' (role 'xpdl1_RecordTypeType73', cardinality 0..*) is associated with 'xpdl1::DataTypeType' (role 'xpdl1_DataTypeType72', cardinality 0..*).
+'xpdl1::RedefinableHeaderType' (role 'xpdl1_RedefinableHeaderType346', cardinality 0..*) is associated with 'xpdl1::PackageType' (role 'xpdl1_PackageType345', cardinality 0..*).
+'xpdl1::DeadlineType' (role 'xpdl1_DeadlineType89', cardinality 0..*) is associated with 'xpdl1::EObject' (role 'xpdl1_EObject90', cardinality 0..*).
+'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot119', cardinality 0..*) is associated with 'xpdl1::AutomaticType' (role 'xpdl1_AutomaticType', cardinality 0..*).
+'xpdl1::NoType' (role 'xpdl1_NoType', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot184', cardinality 0..*).
+'xpdl1::EStringToStringMapEntry' (role 'xpdl1_EStringToStringMapEntry', cardinality 0..*) is associated with 'xpdl1::DocumentRoot' (role 'xpdl1_DocumentRoot', cardinality 0..*).
+'xpdl1::ToolType' (role 'xpdl1_ToolType411', cardinality 0..*) is associated with 'xpdl1::ActualParametersType' (role 'xpdl1_ActualParametersType412', cardinality 0..*).

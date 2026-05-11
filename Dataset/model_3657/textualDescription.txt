@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'company::Employee' has the following attributes: 'name' of type str; 'age' of type str; 'salary' of type str.
+The class 'company::Freelance' has the following attributes: 'assignment' of type str.
+The class 'Employee' has no attributes.
+The class 'company::Student' has no attributes.
+The class 'company::Company' has the following attributes: 'name' of type str; 'eotmDelta' of type str.
+The class 'company::Department' has the following attributes: 'biggestNumberOfStudentsOrFreelancers' of type str; 'maxJuniors' of type str; 'budget' of type str; 'name' of type str.
+The class 'company::Division' has the following attributes: 'budget' of type str; 'numberEmployeesOfTheMonth' of type str; 'name' of type str.
+'company::Student' is a specialization of 'Employee'.
+'company::Freelance' is a specialization of 'Employee'.
+'company::Department' (role 'company_Department20', cardinality 0..*) is associated with 'company::Division' (role 'company_Division', cardinality 0..*).
+'company::Division' (role 'Division', cardinality 0..*) is associated with 'company::Employee' (role 'director', cardinality 0..*).
+'company::Division' (role 'division', cardinality 0..*) is associated with 'company::Company' (role 'Company', cardinality 0..*).
+'company::Division' (role 'Division28', cardinality 0..*) is associated with 'company::Company' (role 'company', cardinality 0..*).
+'company::Employee' (role 'company_Employee', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee4', cardinality 0..*).
+'company::Division' (role 'directed', cardinality 0..*) is associated with 'company::Employee' (role 'Employee22', cardinality 0..*).
+'company::Employee' (role 'company_Employee25', cardinality 0..*) is associated with 'company::Division' (role 'company_Division24', cardinality 0..*).
+'company::Employee' (role 'Employee10', cardinality 0..*) is associated with 'company::Department' (role 'managed', cardinality 0..*).
+'company::Employee' (role 'company_Employee30', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).
+'company::Student' (role 'company_Student', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee7', cardinality 0..*).
+'company::Department' (role 'parentDepartment', cardinality 0..*) is associated with 'company::Department' (role 'Department13', cardinality 0..*).
+'company::Department' (role 'subDepartment', cardinality 0..*) is associated with 'company::Department' (role 'Department16', cardinality 0..*).
+'company::Department' (role 'Department', cardinality 0..*) is associated with 'company::Employee' (role 'employee', cardinality 0..*).
+'company::Employee' (role 'company_Employee18', cardinality 0..*) is associated with 'company::Department' (role 'company_Department', cardinality 0..*).
+'company::Employee' (role 'Employee', cardinality 0..*) is associated with 'company::Department' (role 'employer', cardinality 0..*).
+'company::Employee' (role 'boss', cardinality 0..*) is associated with 'company::Department' (role 'Department2', cardinality 0..*).

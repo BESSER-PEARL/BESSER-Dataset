@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'uml::Attribute' has no attributes.
+The class 'uml::UMLSpecification' has no attributes.
+The class 'uml::Class' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uml::NamedElement' has the following attributes: 'name' of type str.
+The class 'uml::Association' has no attributes.
+'uml::UMLSpecification' is a specialization of 'NamedElement'.
+'uml::Attribute' is a specialization of 'NamedElement'.
+'uml::Class' is a specialization of 'NamedElement'.
+'uml::Association' is a specialization of 'NamedElement'.
+'uml::Class' (role 'uml_Class11', cardinality 0..*) is associated with 'uml::Attribute' (role 'uml_Attribute10', cardinality 0..*).
+'uml::Class' (role 'uml_Class', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association', cardinality 0..*).
+'uml::Class' (role 'uml_Class3', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association2', cardinality 0..*).
+'uml::Attribute' (role 'uml_Attribute', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class8', cardinality 0..*).
+'uml::UMLSpecification' (role 'uml_UMLSpecification15', cardinality 0..*) is associated with 'uml::Association' (role 'uml_Association16', cardinality 0..*).
+'uml::UMLSpecification' (role 'uml_UMLSpecification', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class13', cardinality 0..*).
+'uml::Class' (role 'uml_Class6', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class4', cardinality 0..*).

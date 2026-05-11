@@ -1,0 +1,47 @@
+The model has 21 class(es).
+The class 'datatype::EnumLiteral' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'datatype::Property' has the following attributes: 'description' of type str; 'multiplicity' of type bool; 'name' of type str.
+The class 'datatype::ObjectPropertyType' has no attributes.
+The class 'datatype::EnumLiteralPropertyAttribute' has the following attributes: 'type' of type str.
+The class 'PropertyAttribute' has no attributes.
+The class 'datatype::PropertyAttribute' has no attributes.
+The class 'datatype::Constraint' has the following attributes: 'constraintValues' of type str; 'type' of type str.
+The class 'datatype::ComplexPrimitivePropertyType' has no attributes.
+The class 'ComplexPrimitivePropertyType' has no attributes.
+The class 'datatype::PrimitivePropertyType' has the following attributes: 'type' of type str.
+The class 'datatype::Enum' has no attributes.
+The class 'Type' has no attributes.
+The class 'datatype::BooleanPropertyAttribute' has the following attributes: 'value' of type bool; 'type' of type str.
+The class 'datatype::ConstraintRule' has no attributes.
+The class 'datatype::Type' has no attributes.
+The class 'datatype::Presence' has the following attributes: 'mandatory' of type bool.
+The class 'datatype::Entity' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'Model' has no attributes.
+The class 'datatype::PropertyType' has no attributes.
+The class 'datatype::DictionaryPropertyType' has no attributes.
+The enumeration 'EnumLiteralPropertyAttributeType' has the following literals: 'measurementUnit'.
+The enumeration 'PrimitiveType' has the following literals: 'base64Binary', 'double', 'int', 'float', 'long', 'string', 'datetime', 'short', 'boolean', 'byte'.
+The enumeration 'BooleanPropertyAttributeType' has the following literals: 'eventable', 'writable', 'readable'.
+The enumeration 'ConstraintIntervalType' has the following literals: 'mimetype', 'min', 'max', 'scaling', 'regex', 'strlen'.
+'datatype::BooleanPropertyAttribute' is a specialization of 'PropertyAttribute'.
+'datatype::PrimitivePropertyType' is a specialization of 'PropertyType'.
+'datatype::Type' is a specialization of 'Model'.
+'datatype::Enum' is a specialization of 'Type'.
+'datatype::EnumLiteralPropertyAttribute' is a specialization of 'PropertyAttribute'.
+'datatype::ComplexPrimitivePropertyType' is a specialization of 'PropertyType'.
+'datatype::DictionaryPropertyType' is a specialization of 'ComplexPrimitivePropertyType'.
+'datatype::Entity' is a specialization of 'Type'.
+'datatype::ObjectPropertyType' is a specialization of 'PropertyType'.
+'datatype::EnumLiteral' (role 'datatype_EnumLiteral15', cardinality 0..*) is associated with 'datatype::EnumLiteralPropertyAttribute' (role 'datatype_EnumLiteralPropertyAttribute', cardinality 0..*).
+'datatype::ConstraintRule' (role 'datatype_ConstraintRule', cardinality 0..*) is associated with 'datatype::Property' (role 'datatype_Property7', cardinality 0..*).
+'datatype::Type' (role 'datatype_Type', cardinality 0..*) is associated with 'datatype::ObjectPropertyType' (role 'datatype_ObjectPropertyType', cardinality 0..*).
+'datatype::Presence' (role 'datatype_Presence', cardinality 0..*) is associated with 'datatype::Property' (role 'datatype_Property5', cardinality 0..*).
+'datatype::Entity' (role 'datatype_Entity', cardinality 0..*) is associated with 'datatype::Entity' (role 'datatype_Entity0', cardinality 0..*).
+'datatype::Property' (role 'datatype_Property9', cardinality 0..*) is associated with 'datatype::PropertyType' (role 'datatype_PropertyType', cardinality 0..*).
+'datatype::Entity' (role 'datatype_Entity3', cardinality 0..*) is associated with 'datatype::Property' (role 'datatype_Property', cardinality 0..*).
+'datatype::DictionaryPropertyType' (role 'datatype_DictionaryPropertyType21', cardinality 0..*) is associated with 'datatype::PropertyType' (role 'datatype_PropertyType22', cardinality 0..*).
+'datatype::PropertyType' (role 'datatype_PropertyType19', cardinality 0..*) is associated with 'datatype::DictionaryPropertyType' (role 'datatype_DictionaryPropertyType', cardinality 0..*).
+'datatype::EnumLiteral' (role 'datatype_EnumLiteral', cardinality 0..*) is associated with 'datatype::Enum' (role 'datatype_Enum', cardinality 0..*).
+'datatype::ConstraintRule' (role 'datatype_ConstraintRule17', cardinality 0..*) is associated with 'datatype::Constraint' (role 'datatype_Constraint', cardinality 0..*).
+'datatype::PropertyAttribute' (role 'datatype_PropertyAttribute', cardinality 0..*) is associated with 'datatype::Property' (role 'datatype_Property11', cardinality 0..*).

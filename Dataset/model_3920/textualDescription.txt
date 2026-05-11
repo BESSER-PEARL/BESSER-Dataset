@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'entityDsl::Property' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'entityDsl::Type' has the following attributes: 'name' of type str.
+The class 'entityDsl::SimpleType' has no attributes.
+The class 'Type' has no attributes.
+The class 'entityDsl::Model' has no attributes.
+The class 'entityDsl::Entity' has no attributes.
+'entityDsl::SimpleType' is a specialization of 'Type'.
+'entityDsl::Entity' is a specialization of 'Type'.
+'entityDsl::Property' (role 'entityDsl_Property', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity4', cardinality 0..*).
+'entityDsl::Model' (role 'entityDsl_Model', cardinality 0..*) is associated with 'entityDsl::Type' (role 'entityDsl_Type', cardinality 0..*).
+'entityDsl::Entity' (role 'entityDsl_Entity', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity1', cardinality 0..*).
+'entityDsl::Type' (role 'entityDsl_Type7', cardinality 0..*) is associated with 'entityDsl::Property' (role 'entityDsl_Property6', cardinality 0..*).

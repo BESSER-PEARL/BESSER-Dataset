@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'rdb::Relation' has the following attributes: 'source_kind' of type str; 'bendpoint' of type str; 'target_kind' of type str; 'type' of type str; 'comment' of type str; 'column_name' of type str; 'referenced_column_name' of type str; 'constraint_name' of type str.
+The class 'rdb::Table' has the following attributes: 'comment' of type str; 'constraints' of type str; 'name' of type str; 'schema' of type str; 'logicalName' of type str.
+The class 'rdb::UserComment' has the following attributes: 'comment' of type str.
+The class 'rdb::Style' has the following attributes: 'columnNullCheck' of type str; 'columnType' of type str; 'columnComment' of type str; 'grid' of type str; 'columnName' of type str; 'tableTitle' of type str; 'columnPrimaryKey' of type str; 'scale' of type str.
+The class 'rdb::View' has no attributes.
+The class 'ERDInfo' has no attributes.
+The class 'Table' has no attributes.
+The class 'rdb::DB' has the following attributes: 'comment' of type str; 'id' of type str; 'dbType' of type str; 'key' of type str; 'sid' of type str; 'url' of type str.
+The class 'rdb::ERDInfo' has the following attributes: 'autoLayout' of type bool; 'version' of type str.
+The class 'rdb::Column' has the following attributes: 'comment' of type str; 'default' of type str; 'type' of type str; 'extra' of type str; 'logicalField' of type str; 'key' of type str; 'field' of type str; 'null' of type str.
+The enumeration 'RelationKind' has the following literals: 'ZERO_OR_ONE', 'ONE_OR_MANY', 'ZERO_OR_MANY', 'ONLY_ONE'.
+'rdb::DB' is a specialization of 'ERDInfo'.
+'rdb::View' is a specialization of 'Table'.
+'rdb::Relation' (role 'Relation11', cardinality 0..*) is associated with 'rdb::Table' (role 'source', cardinality 0..*).
+'rdb::Table' (role 'Table', cardinality 0..*) is associated with 'rdb::DB' (role 'db', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table23', cardinality 0..*) is associated with 'rdb::View' (role 'rdb_View', cardinality 0..*).
+'rdb::UserComment' (role 'rdb_UserComment', cardinality 0..*) is associated with 'rdb::DB' (role 'rdb_DB', cardinality 0..*).
+'rdb::DB' (role 'DB', cardinality 0..*) is associated with 'rdb::Table' (role 'tables', cardinality 0..*).
+'rdb::DB' (role 'DB21', cardinality 0..*) is associated with 'rdb::Relation' (role 'references', cardinality 0..*).
+'rdb::Style' (role 'styledReference', cardinality 0..*) is associated with 'rdb::DB' (role 'DB26', cardinality 0..*).
+'rdb::Column' (role 'Column', cardinality 0..*) is associated with 'rdb::Table' (role 'table', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table', cardinality 0..*) is associated with 'rdb::UserComment' (role 'rdb_UserComment13', cardinality 0..*).
+'rdb::Table' (role 'Table19', cardinality 0..*) is associated with 'rdb::Relation' (role 'incomingLinks', cardinality 0..*).
+'rdb::Column' (role 'columns', cardinality 0..*) is associated with 'rdb::Table' (role 'Table15', cardinality 0..*).
+'rdb::ERDInfo' (role 'rdb_ERDInfo', cardinality 0..*) is associated with 'rdb::Style' (role 'rdb_Style', cardinality 0..*).
+'rdb::Relation' (role 'Relation', cardinality 0..*) is associated with 'rdb::DB' (role 'db2', cardinality 0..*).
+'rdb::Relation' (role 'Relation9', cardinality 0..*) is associated with 'rdb::Table' (role 'target', cardinality 0..*).
+'rdb::Style' (role 'Style', cardinality 0..*) is associated with 'rdb::DB' (role 'db5', cardinality 0..*).
+'rdb::Table' (role 'Table17', cardinality 0..*) is associated with 'rdb::Relation' (role 'outgoingLinks', cardinality 0..*).

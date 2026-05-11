@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'dfamodel::State' has the following attributes: 'isEnd' of type bool; 'id' of type str; 'isStart' of type bool.
+The class 'dfamodel::Transition' has the following attributes: 'input' of type str.
+The class 'dfamodel::DFA' has no attributes.
+'dfamodel::State' (role 'from_', cardinality 0..*) is associated with 'dfamodel::Transition' (role 'Transition', cardinality 0..*).
+'dfamodel::State' (role 'State', cardinality 0..*) is associated with 'dfamodel::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'dfamodel::State' (role 'State5', cardinality 0..*) is associated with 'dfamodel::Transition' (role 'incomingTransitions', cardinality 0..*).
+'dfamodel::DFA' (role 'dfamodel_DFA2', cardinality 0..*) is associated with 'dfamodel::Transition' (role 'dfamodel_Transition', cardinality 0..*).
+'dfamodel::DFA' (role 'dfamodel_DFA', cardinality 0..*) is associated with 'dfamodel::State' (role 'dfamodel_State', cardinality 0..*).
+'dfamodel::Transition' (role 'Transition8', cardinality 0..*) is associated with 'dfamodel::State' (role 'to', cardinality 0..*).

@@ -1,0 +1,293 @@
+The model has 86 class(es).
+The class 'xal::SubAdministrativeAreaName' has the following attributes: 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str; 'code' of type str.
+The class 'xal::MailStopName' has the following attributes: 'code' of type str; 'type' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::PostalCode' has the following attributes: 'type' of type str; 'any' of type str; 'anyAttribute' of type str.
+The class 'xal::AddressLatitudeDirection' has the following attributes: 'anyAttribute' of type str; 'type' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::Department' has the following attributes: 'type' of type str; 'anyAttribute' of type str; 'any' of type str.
+The class 'xal::DependentThoroughfare' has the following attributes: 'any' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::AddressLatitude' has the following attributes: 'mixed' of type str; 'code' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::Locality' has the following attributes: 'type' of type str; 'usageType' of type str; 'indicator' of type str; 'any' of type str; 'anyAttribute' of type str.
+The class 'xal::DependentLocalityName' has the following attributes: 'mixed' of type str; 'code' of type str; 'type' of type str; 'anyAttribute' of type str.
+The class 'xal::Thoroughfare' has the following attributes: 'type' of type str; 'group' of type str; 'dependentThoroughfares' of type str; 'dependentThoroughfaresType' of type str; 'dependentThoroughfaresConnector' of type str; 'any' of type str; 'dependentThoroughfaresIndicator' of type str; 'anyAttribute' of type str.
+The class 'xal::SubPremiseNumberSuffix' has the following attributes: 'code' of type str; 'numberSuffixSeparator' of type str; 'type' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::Firm' has the following attributes: 'anyAttribute' of type str; 'type' of type str; 'any' of type str.
+The class 'xal::ThoroughfareName' has the following attributes: 'type' of type str; 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::Barcode' has the following attributes: 'anyAttribute' of type str; 'type' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::PremiseLocation' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::Country' has the following attributes: 'any' of type str; 'anyAttribute' of type str.
+The class 'xal::MailStop' has the following attributes: 'anyAttribute' of type str; 'type' of type str; 'any' of type str.
+The class 'xal::AddressLongitude' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'code' of type str; 'type' of type str.
+The class 'xal::PostalRouteNumber' has the following attributes: 'code' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::SubPremiseNumberPrefix' has the following attributes: 'code' of type str; 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str; 'numberPrefixSeparator' of type str.
+The class 'xal::CountryNameCode' has the following attributes: 'scheme' of type str; 'code' of type str; 'mixed' of type str; 'anyAttribute' of type str.
+The class 'xal::MailStopNumber' has the following attributes: 'code' of type str; 'anyAttribute' of type str; 'nameNumberSeparator' of type str; 'mixed' of type str.
+The class 'xal::ThoroughfareNumberPrefix' has the following attributes: 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str; 'numberPrefixSeparator' of type str; 'code' of type str.
+The class 'xal::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'xal::PostBoxNumberPrefix' has the following attributes: 'code' of type str; 'mixed' of type str; 'numberPrefixSeparator' of type str; 'anyAttribute' of type str.
+The class 'xal::PostBoxNumber' has the following attributes: 'code' of type str; 'mixed' of type str; 'anyAttribute' of type str.
+The class 'xal::PremiseNumberRangeTo' has no attributes.
+The class 'xal::PostTownSuffix' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::LargeMailUserIdentifier' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str; 'type' of type str; 'indicator' of type str.
+The class 'xal::LargeMailUserName' has the following attributes: 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str; 'code' of type str.
+The class 'xal::AdministrativeArea' has the following attributes: 'indicator' of type str; 'usageType' of type str; 'anyAttribute' of type str; 'any' of type str; 'type' of type str.
+The class 'xal::SortingCode' has the following attributes: 'code' of type str; 'type' of type str.
+The class 'xal::SubPremise' has the following attributes: 'type' of type str; 'anyAttribute' of type str; 'any' of type str.
+The class 'xal::PostTownName' has the following attributes: 'code' of type str; 'mixed' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::EStringToStringMapEntry' has no attributes.
+The class 'xal::AddressLines' has the following attributes: 'any' of type str; 'anyAttribute' of type str.
+The class 'xal::PostOfficeName' has the following attributes: 'code' of type str; 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str.
+The class 'xal::KeyLineCode' has the following attributes: 'code' of type str; 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str.
+The class 'xal::Premise' has the following attributes: 'premiseDependencyType' of type str; 'anyAttribute' of type str; 'type' of type str; 'any' of type str; 'premiseThoroughfareConnector' of type str; 'premiseDependency' of type str.
+The class 'xal::ThoroughfareNumberFrom' has the following attributes: 'code' of type str; 'mixed' of type str; 'anyAttribute' of type str.
+The class 'xal::PostBoxNumberSuffix' has the following attributes: 'mixed' of type str; 'code' of type str; 'numberSuffixSeparator' of type str; 'anyAttribute' of type str.
+The class 'xal::PremiseNumber' has the following attributes: 'indicator' of type str; 'code' of type str; 'numberTypeOccurrence' of type str; 'mixed' of type str; 'numberType' of type str; 'type' of type str; 'anyAttribute' of type str; 'indicatorOccurrence' of type str.
+The class 'xal::PremiseNumberRange' has the following attributes: 'indicator' of type str; 'indicatorOccurence' of type str; 'separator' of type str; 'rangeType' of type str; 'type' of type str; 'numberRangeOccurence' of type str.
+The class 'xal::AdministrativeAreaName' has the following attributes: 'code' of type str; 'anyAttribute' of type str; 'type' of type str; 'mixed' of type str.
+The class 'xal::SubPremiseName' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str; 'type' of type str; 'typeOccurrence' of type str.
+The class 'xal::PremiseNumberPrefix' has the following attributes: 'anyAttribute' of type str; 'numberPrefixSeparator' of type str; 'code' of type str; 'value' of type str; 'type' of type str.
+The class 'xal::PremiseNumberRangeFrom' has no attributes.
+The class 'xal::ThoroughfareTrailingType' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'code' of type str; 'type' of type str.
+The class 'xal::SupplementaryPostalServiceData' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'type' of type str; 'code' of type str.
+The class 'xal::PostTown' has the following attributes: 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::AddressLine' has the following attributes: 'anyAttribute' of type str; 'mixed' of type str; 'code' of type str; 'type' of type str.
+The class 'xal::PremiseNumberSuffix' has the following attributes: 'mixed' of type str; 'type' of type str; 'code' of type str; 'anyAttribute' of type str; 'numberSuffixSeparator' of type str.
+The class 'xal::ThoroughfareNumber' has the following attributes: 'anyAttribute' of type str; 'indicator' of type str; 'numberOccurrence' of type str; 'numberType' of type str; 'code' of type str; 'mixed' of type str; 'indicatorOccurrence' of type str; 'type' of type str.
+The class 'xal::LocalityName' has the following attributes: 'anyAttribute' of type str; 'mixed' of type str; 'type' of type str; 'code' of type str.
+The class 'xal::ThoroughfareNumberRange' has the following attributes: 'indicatorOccurrence' of type str; 'anyAttribute' of type str; 'numberRangeOccurrence' of type str; 'code' of type str; 'rangeType' of type str; 'type' of type str; 'separator' of type str; 'indicator' of type str.
+The class 'xal::AddressDetails' has the following attributes: 'anyAttribute' of type str; 'currentStatus' of type str; 'validFromDate' of type str; 'usage' of type str; 'validToDate' of type str; 'code' of type str; 'addressDetailsKey' of type str; 'any' of type str; 'addressType' of type str.
+The class 'xal::PremiseName' has the following attributes: 'typeOccurrence' of type str; 'anyAttribute' of type str; 'mixed' of type str; 'type' of type str; 'code' of type str.
+The class 'xal::ThoroughfareLeadingType' has the following attributes: 'code' of type str; 'anyAttribute' of type str; 'mixed' of type str; 'type' of type str.
+The class 'xal::PostalServiceElements' has the following attributes: 'any' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::PostOfficeNumber' has the following attributes: 'indicatorOccurrence' of type str; 'indicator' of type str; 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::DepartmentName' has the following attributes: 'mixed' of type str; 'type' of type str; 'code' of type str; 'anyAttribute' of type str.
+The class 'xal::PostBox' has the following attributes: 'anyAttribute' of type str; 'any' of type str; 'indicator' of type str; 'type' of type str.
+The class 'xal::PostBoxNumberExtension' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'numberExtensionSeparator' of type str.
+The class 'xal::Xal' has the following attributes: 'any' of type str; 'anyAttribute' of type str; 'version' of type str.
+The class 'xal::AddressIdentifier' has the following attributes: 'anyAttribute' of type str; 'mixed' of type str; 'type' of type str; 'identifierType' of type str; 'code' of type str.
+The class 'xal::DependentLocality' has the following attributes: 'usageType' of type str; 'connector' of type str; 'indicator' of type str; 'any' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::PostalCodeNumber' has the following attributes: 'type' of type str; 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str.
+The class 'xal::ThoroughfarePostDirection' has the following attributes: 'mixed' of type str; 'type' of type str; 'anyAttribute' of type str; 'code' of type str.
+The class 'xal::LargeMailUser' has the following attributes: 'type' of type str; 'any' of type str; 'anyAttribute' of type str.
+The class 'xal::ThoroughfareNumberTo' has the following attributes: 'code' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::PostalCodeNumberExtension' has the following attributes: 'numberExtensionSeparator' of type str; 'anyAttribute' of type str; 'type' of type str; 'mixed' of type str; 'code' of type str.
+The class 'xal::AddressLongitudeDirection' has the following attributes: 'type' of type str; 'mixed' of type str; 'anyAttribute' of type str; 'code' of type str.
+The class 'xal::EndorsementLineCode' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'code' of type str; 'type' of type str.
+The class 'xal::SubPremiseNumber' has the following attributes: 'code' of type str; 'indicatorOccurrence' of type str; 'numberTypeOccurrence' of type str; 'mixed' of type str; 'indicator' of type str; 'premiseNumberSeparator' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::Address' has the following attributes: 'code' of type str; 'type' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::PostalRouteName' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'mixed' of type str; 'type' of type str.
+The class 'xal::PostalRoute' has the following attributes: 'any' of type str; 'type' of type str; 'anyAttribute' of type str.
+The class 'xal::SubPremiseLocation' has the following attributes: 'code' of type str; 'mixed' of type str.
+The class 'xal::PostOffice' has the following attributes: 'any' of type str; 'type' of type str; 'indicator' of type str; 'anyAttribute' of type str.
+The class 'xal::CountryName' has the following attributes: 'code' of type str; 'mixed' of type str; 'anyAttribute' of type str; 'type' of type str.
+The class 'xal::ThoroughfareNumberSuffix' has the following attributes: 'code' of type str; 'type' of type str; 'numberSuffixSeparator' of type str; 'anyAttribute' of type str; 'mixed' of type str.
+The class 'xal::SubAdministrativeArea' has the following attributes: 'type' of type str; 'any' of type str; 'indicator' of type str; 'anyAttribute' of type str; 'usageType' of type str.
+The class 'xal::ThoroughfarePreDirection' has the following attributes: 'anyAttribute' of type str; 'code' of type str; 'type' of type str; 'mixed' of type str.
+The class 'xal::FirmName' has the following attributes: 'code' of type str; 'type' of type str; 'mixed' of type str; 'anyAttribute' of type str.
+The class 'xal::DependentLocalityNumber' has the following attributes: 'mixed' of type str; 'anyAttribute' of type str; 'nameNumberOccurrence' of type str; 'code' of type str.
+The class 'xal::BuildingName' has the following attributes: 'mixed' of type str; 'code' of type str; 'typeOccurrence' of type str; 'type' of type str; 'anyAttribute' of type str.
+The enumeration 'IndicatorOccurrence1' has the following literals: 'Before', 'After'.
+The enumeration 'NumberTypeOccurrence' has the following literals: 'After', 'Before'.
+The enumeration 'IndicatorOccurence' has the following literals: 'Before', 'After'.
+The enumeration 'IndicatorOccurrence' has the following literals: 'Before', 'After'.
+The enumeration 'NumberRangeOccurrence' has the following literals: 'AfterType', 'AfterName', 'BeforeType', 'BeforeName'.
+The enumeration 'TypeOccurrence' has the following literals: 'Before', 'After'.
+The enumeration 'DependentThoroughfaresType' has the following literals: 'Yes', 'No'.
+The enumeration 'IndicatorOccurrence2' has the following literals: 'Before', 'After'.
+The enumeration 'TypeOccurrence2' has the following literals: 'Before', 'After'.
+The enumeration 'NumberOccurrence' has the following literals: 'BeforeName', 'AfterName', 'AfterType', 'BeforeType'.
+The enumeration 'RangeTypeType' has the following literals: 'Odd', 'Even'.
+The enumeration 'NameNumberOccurrence' has the following literals: 'Before', 'After'.
+The enumeration 'IndicatorOccurrence3' has the following literals: 'Before', 'After'.
+The enumeration 'NumberTypeType' has the following literals: 'Range', 'Single'.
+The enumeration 'IndicatorOccurrence4' has the following literals: 'Before', 'After'.
+The enumeration 'NumberTypeOccurrence1' has the following literals: 'After', 'Before'.
+The enumeration 'NumberTypeType1' has the following literals: 'Range', 'Single'.
+The enumeration 'TypeOccurrence1' has the following literals: 'After', 'Before'.
+The enumeration 'NumberRangeOccurence' has the following literals: 'BeforeName', 'BeforeType', 'AfterType', 'AfterName'.
+'xal::Premise' (role 'xal_Premise199', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality198', cardinality 0..*).
+'xal::PremiseNumberPrefix' (role 'xal_PremiseNumberPrefix306', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise305', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise392', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode393', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare409', cardinality 0..*) is associated with 'xal::ThoroughfareNumberSuffix' (role 'xal_ThoroughfareNumberSuffix410', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot136', cardinality 0..*) is associated with 'xal::ThoroughfareNumber' (role 'xal_ThoroughfareNumber', cardinality 0..*).
+'xal::BuildingName' (role 'xal_BuildingName', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser164', cardinality 0..*).
+'xal::DependentLocalityNumber' (role 'xal_DependentLocalityNumber', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality59', cardinality 0..*).
+'xal::ThoroughfareNumberTo' (role 'xal_ThoroughfareNumberTo461', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine462', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality189', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice190', cardinality 0..*).
+'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea359', cardinality 0..*) is associated with 'xal::SubAdministrativeAreaName' (role 'xal_SubAdministrativeAreaName', cardinality 0..*).
+'xal::Department' (role 'xal_Department149', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm148', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare398', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine399', cardinality 0..*).
+'xal::PremiseNumberRange' (role 'xal_PremiseNumberRange', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise303', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine208', cardinality 0..*) is associated with 'xal::MailStop' (role 'xal_MailStop207', cardinality 0..*).
+'xal::Barcode' (role 'xal_Barcode', cardinality 0..*) is associated with 'xal::PostalServiceElements' (role 'xal_PostalServiceElements239', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality195', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare196', cardinality 0..*).
+'xal::ThoroughfareNumberTo' (role 'xal_ThoroughfareNumberTo467', cardinality 0..*) is associated with 'xal::ThoroughfareNumber' (role 'xal_ThoroughfareNumber468', cardinality 0..*).
+'xal::ThoroughfareNumberPrefix' (role 'xal_ThoroughfareNumberPrefix407', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare406', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise300', cardinality 0..*) is associated with 'xal::PremiseNumber' (role 'xal_PremiseNumber301', cardinality 0..*).
+'xal::ThoroughfarePostDirection' (role 'xal_ThoroughfarePostDirection', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare91', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality431', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare430', cardinality 0..*).
+'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea', cardinality 0..*) is associated with 'xal::AdministrativeArea' (role 'xal_AdministrativeArea21', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode217', cardinality 0..*) is associated with 'xal::PostalCodeNumber' (role 'xal_PostalCodeNumber', cardinality 0..*).
+'xal::PremiseLocation' (role 'xal_PremiseLocation', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise298', cardinality 0..*).
+'xal::AdministrativeAreaName' (role 'xal_AdministrativeAreaName', cardinality 0..*) is associated with 'xal::AdministrativeArea' (role 'xal_AdministrativeArea19', cardinality 0..*).
+'xal::Firm' (role 'xal_Firm146', cardinality 0..*) is associated with 'xal::FirmName' (role 'xal_FirmName', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea16', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine17', cardinality 0..*).
+'xal::PostOffice' (role 'xal_PostOffice277', cardinality 0..*) is associated with 'xal::PostalRoute' (role 'xal_PostalRoute278', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode', cardinality 0..*) is associated with 'xal::AdministrativeArea' (role 'xal_AdministrativeArea28', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine46', cardinality 0..*) is associated with 'xal::Department' (role 'xal_Department', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare418', cardinality 0..*) is associated with 'xal::ThoroughfareName' (role 'xal_ThoroughfareName419', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine', cardinality 0..*) is associated with 'xal::AddressLines' (role 'xal_AddressLines14', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot129', cardinality 0..*) is associated with 'xal::PremiseNumberPrefix' (role 'xal_PremiseNumberPrefix', cardinality 0..*).
+'xal::ThoroughfareNumberFrom' (role 'xal_ThoroughfareNumberFrom457', cardinality 0..*) is associated with 'xal::ThoroughfareNumberRange' (role 'xal_ThoroughfareNumberRange456', cardinality 0..*).
+'xal::PostTown' (role 'xal_PostTown291', cardinality 0..*) is associated with 'xal::PostTownSuffix' (role 'xal_PostTownSuffix', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot124', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise125', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality63', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise314', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails8', cardinality 0..*).
+'xal::ThoroughfareTrailingType' (role 'xal_ThoroughfareTrailingType', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare89', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine55', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot131', cardinality 0..*) is associated with 'xal::PremiseNumberSuffix' (role 'xal_PremiseNumberSuffix', cardinality 0..*).
+'xal::PostOffice' (role 'xal_PostOffice283', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode284', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise381', cardinality 0..*) is associated with 'xal::SubPremiseNumberSuffix' (role 'xal_SubPremiseNumberSuffix', cardinality 0..*).
+'xal::LargeMailUserIdentifier' (role 'xal_LargeMailUserIdentifier', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser162', cardinality 0..*).
+'xal::SubPremiseLocation' (role 'xal_SubPremiseLocation', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise375', cardinality 0..*).
+'xal::PostOfficeNumber' (role 'xal_PostOfficeNumber', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice275', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode214', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine215', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox267', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode268', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox184', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality183', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise311', cardinality 0..*) is associated with 'xal::BuildingName' (role 'xal_BuildingName312', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality202', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality201', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode205', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality204', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise324', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise326', cardinality 0..*).
+'xal::ThoroughfareNumberFrom' (role 'xal_ThoroughfareNumberFrom', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine442', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea23', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality24', cardinality 0..*).
+'xal::AddressLatitude' (role 'xal_AddressLatitude', cardinality 0..*) is associated with 'xal::PostalServiceElements' (role 'xal_PostalServiceElements243', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot', cardinality 0..*) is associated with 'xal::EStringToStringMapEntry' (role 'xal_EStringToStringMapEntry', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements245', cardinality 0..*) is associated with 'xal::AddressLatitudeDirection' (role 'xal_AddressLatitudeDirection', cardinality 0..*).
+'xal::ThoroughfarePreDirection' (role 'xal_ThoroughfarePreDirection', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare83', cardinality 0..*).
+'xal::PostTownName' (role 'xal_PostTownName', cardinality 0..*) is associated with 'xal::PostTown' (role 'xal_PostTown289', cardinality 0..*).
+'xal::LargeMailUser' (role 'xal_LargeMailUser157', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine158', cardinality 0..*).
+'xal::PostOffice' (role 'xal_PostOffice273', cardinality 0..*) is associated with 'xal::PostOfficeName' (role 'xal_PostOfficeName', cardinality 0..*).
+'xal::ThoroughfareLeadingType' (role 'xal_ThoroughfareLeadingType416', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare415', cardinality 0..*).
+'xal::PostBoxNumberExtension' (role 'xal_PostBoxNumberExtension', cardinality 0..*) is associated with 'xal::PostBox' (role 'xal_PostBox262', cardinality 0..*).
+'xal::LargeMailUserName' (role 'xal_LargeMailUserName', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser160', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine254', cardinality 0..*) is associated with 'xal::PostBox' (role 'xal_PostBox253', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot138', cardinality 0..*) is associated with 'xal::ThoroughfareNumberPrefix' (role 'xal_ThoroughfareNumberPrefix', cardinality 0..*).
+'xal::ThoroughfareLeadingType' (role 'xal_ThoroughfareLeadingType', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare85', cardinality 0..*).
+'xal::PremiseNumberRangeTo' (role 'xal_PremiseNumberRangeTo344', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine345', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox260', cardinality 0..*) is associated with 'xal::PostBoxNumberSuffix' (role 'xal_PostBoxNumberSuffix', cardinality 0..*).
+'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea356', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine357', cardinality 0..*).
+'xal::Xal' (role 'xal_Xal473', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails474', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality68', cardinality 0..*) is associated with 'xal::PostalRoute' (role 'xal_PostalRoute', cardinality 0..*).
+'xal::Xal' (role 'xal_Xal', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot142', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea38', cardinality 0..*) is associated with 'xal::Country' (role 'xal_Country37', cardinality 0..*).
+'xal::PostalRoute' (role 'xal_PostalRoute226', cardinality 0..*) is associated with 'xal::PostalRouteName' (role 'xal_PostalRouteName', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements235', cardinality 0..*) is associated with 'xal::EndorsementLineCode' (role 'xal_EndorsementLineCode', cardinality 0..*).
+'xal::LargeMailUser' (role 'xal_LargeMailUser187', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality186', cardinality 0..*).
+'xal::BuildingName' (role 'xal_BuildingName384', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise383', cardinality 0..*).
+'xal::AddressLines' (role 'xal_AddressLines', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails4', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot94', cardinality 0..*) is associated with 'xal::EStringToStringMapEntry' (role 'xal_EStringToStringMapEntry95', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails10', cardinality 0..*).
+'xal::Country' (role 'xal_Country', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails6', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails12', cardinality 0..*).
+'xal::ThoroughfareTrailingType' (role 'xal_ThoroughfareTrailingType422', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare421', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode155', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm154', cardinality 0..*).
+'xal::SubPremiseNumberPrefix' (role 'xal_SubPremiseNumberPrefix', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise379', cardinality 0..*).
+'xal::PremiseNumberSuffix' (role 'xal_PremiseNumberSuffix309', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise308', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements241', cardinality 0..*) is associated with 'xal::SortingCode' (role 'xal_SortingCode', cardinality 0..*).
+'xal::SubPremiseName' (role 'xal_SubPremiseName', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise373', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality73', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements233', cardinality 0..*) is associated with 'xal::AddressIdentifier' (role 'xal_AddressIdentifier', cardinality 0..*).
+'xal::MailStop' (role 'xal_MailStop152', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm151', cardinality 0..*).
+'xal::PostOffice' (role 'xal_PostOffice122', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot121', cardinality 0..*).
+'xal::ThoroughfareNumberFrom' (role 'xal_ThoroughfareNumberFrom447', cardinality 0..*) is associated with 'xal::ThoroughfareNumber' (role 'xal_ThoroughfareNumber448', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot118', cardinality 0..*) is associated with 'xal::PostBox' (role 'xal_PostBox119', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine31', cardinality 0..*) is associated with 'xal::Country' (role 'xal_Country30', cardinality 0..*).
+'xal::PremiseNumberRangeTo' (role 'xal_PremiseNumberRangeTo347', cardinality 0..*) is associated with 'xal::PremiseNumberPrefix' (role 'xal_PremiseNumberPrefix348', cardinality 0..*).
+'xal::LargeMailUser' (role 'xal_LargeMailUser166', cardinality 0..*) is associated with 'xal::Department' (role 'xal_Department167', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements249', cardinality 0..*) is associated with 'xal::AddressLongitudeDirection' (role 'xal_AddressLongitudeDirection', cardinality 0..*).
+'xal::Country' (role 'xal_Country35', cardinality 0..*) is associated with 'xal::CountryName' (role 'xal_CountryName', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine287', cardinality 0..*) is associated with 'xal::PostTown' (role 'xal_PostTown286', cardinality 0..*).
+'xal::Department' (role 'xal_Department50', cardinality 0..*) is associated with 'xal::MailStop' (role 'xal_MailStop', cardinality 0..*).
+'xal::ThoroughfareName' (role 'xal_ThoroughfareName', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare87', cardinality 0..*).
+'xal::MailStop' (role 'xal_MailStop390', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise389', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality70', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare71', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise396', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise394', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality57', cardinality 0..*) is associated with 'xal::DependentLocalityName' (role 'xal_DependentLocalityName', cardinality 0..*).
+'xal::PostalCodeNumberExtension' (role 'xal_PostalCodeNumberExtension', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode219', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality192', cardinality 0..*) is associated with 'xal::PostalRoute' (role 'xal_PostalRoute193', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode440', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare439', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality65', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice66', cardinality 0..*).
+'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea367', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode368', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine101', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot100', cardinality 0..*).
+'xal::Firm' (role 'xal_Firm317', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise316', cardinality 0..*).
+'xal::ThoroughfareNumberRange' (role 'xal_ThoroughfareNumberRange', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare404', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox256', cardinality 0..*) is associated with 'xal::PostBoxNumber' (role 'xal_PostBoxNumber', cardinality 0..*).
+'xal::PremiseNumberSuffix' (role 'xal_PremiseNumberSuffix342', cardinality 0..*) is associated with 'xal::PremiseNumberRangeFrom' (role 'xal_PremiseNumberRangeFrom341', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality41', cardinality 0..*) is associated with 'xal::Country' (role 'xal_Country40', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise386', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm387', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare401', cardinality 0..*) is associated with 'xal::ThoroughfareNumber' (role 'xal_ThoroughfareNumber402', cardinality 0..*).
+'xal::DepartmentName' (role 'xal_DepartmentName', cardinality 0..*) is associated with 'xal::Department' (role 'xal_Department48', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine81', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox231', cardinality 0..*) is associated with 'xal::PostalRoute' (role 'xal_PostalRoute230', cardinality 0..*).
+'xal::PremiseNumberRangeFrom' (role 'xal_PremiseNumberRangeFrom', cardinality 0..*) is associated with 'xal::PremiseNumberRange' (role 'xal_PremiseNumberRange328', cardinality 0..*).
+'xal::Firm' (role 'xal_Firm265', cardinality 0..*) is associated with 'xal::PostBox' (role 'xal_PostBox264', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality61', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode221', cardinality 0..*) is associated with 'xal::PostTown' (role 'xal_PostTown', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox281', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice280', cardinality 0..*).
+'xal::PremiseNumberPrefix' (role 'xal_PremiseNumberPrefix336', cardinality 0..*) is associated with 'xal::PremiseNumberRangeFrom' (role 'xal_PremiseNumberRangeFrom335', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality362', cardinality 0..*) is associated with 'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea361', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise293', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine294', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise319', cardinality 0..*) is associated with 'xal::MailStop' (role 'xal_MailStop320', cardinality 0..*).
+'xal::Address' (role 'xal_Address', cardinality 0..*) is associated with 'xal::AddressDetails' (role 'xal_AddressDetails2', cardinality 0..*).
+'xal::Country' (role 'xal_Country43', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare44', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements237', cardinality 0..*) is associated with 'xal::KeyLineCode' (role 'xal_KeyLineCode', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine144', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm', cardinality 0..*).
+'xal::ThoroughfareNumberSuffix' (role 'xal_ThoroughfareNumberSuffix471', cardinality 0..*) is associated with 'xal::ThoroughfareNumberTo' (role 'xal_ThoroughfareNumberTo470', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot109', cardinality 0..*) is associated with 'xal::Department' (role 'xal_Department110', cardinality 0..*).
+'xal::Department' (role 'xal_Department52', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode53', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox258', cardinality 0..*) is associated with 'xal::PostBoxNumberPrefix' (role 'xal_PostBoxNumberPrefix', cardinality 0..*).
+'xal::AddressDetails' (role 'xal_AddressDetails', cardinality 0..*) is associated with 'xal::PostalServiceElements' (role 'xal_PostalServiceElements', cardinality 0..*).
+'xal::SupplementaryPostalServiceData' (role 'xal_SupplementaryPostalServiceData', cardinality 0..*) is associated with 'xal::PostalServiceElements' (role 'xal_PostalServiceElements251', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine454', cardinality 0..*) is associated with 'xal::ThoroughfareNumberRange' (role 'xal_ThoroughfareNumberRange453', cardinality 0..*).
+'xal::ThoroughfareNumberPrefix' (role 'xal_ThoroughfareNumberPrefix465', cardinality 0..*) is associated with 'xal::ThoroughfareNumberTo' (role 'xal_ThoroughfareNumberTo464', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea26', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice', cardinality 0..*).
+'xal::MailStopNumber' (role 'xal_MailStopNumber', cardinality 0..*) is associated with 'xal::MailStop' (role 'xal_MailStop212', cardinality 0..*).
+'xal::SubPremise' (role 'xal_SubPremise370', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine371', cardinality 0..*).
+'xal::PremiseNumber' (role 'xal_PremiseNumber339', cardinality 0..*) is associated with 'xal::PremiseNumberRangeFrom' (role 'xal_PremiseNumberRangeFrom338', cardinality 0..*).
+'xal::AdministrativeArea' (role 'xal_AdministrativeArea104', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot103', cardinality 0..*).
+'xal::CountryNameCode' (role 'xal_CountryNameCode', cardinality 0..*) is associated with 'xal::Country' (role 'xal_Country33', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot112', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality113', cardinality 0..*).
+'xal::PremiseNumber' (role 'xal_PremiseNumber351', cardinality 0..*) is associated with 'xal::PremiseNumberRangeTo' (role 'xal_PremiseNumberRangeTo350', cardinality 0..*).
+'xal::MailStop' (role 'xal_MailStop210', cardinality 0..*) is associated with 'xal::MailStopName' (role 'xal_MailStopName', cardinality 0..*).
+'xal::AddressDetails' (role 'xal_AddressDetails98', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot97', cardinality 0..*).
+'xal::LargeMailUser' (role 'xal_LargeMailUser172', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare173', cardinality 0..*).
+'xal::PremiseNumberRangeFrom' (role 'xal_PremiseNumberRangeFrom332', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine333', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise296', cardinality 0..*) is associated with 'xal::PremiseName' (role 'xal_PremiseName', cardinality 0..*).
+'xal::PostalRouteNumber' (role 'xal_PostalRouteNumber', cardinality 0..*) is associated with 'xal::PostalRoute' (role 'xal_PostalRoute228', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine179', cardinality 0..*) is associated with 'xal::Locality' (role 'xal_Locality178', cardinality 0..*).
+'xal::PostalServiceElements' (role 'xal_PostalServiceElements247', cardinality 0..*) is associated with 'xal::AddressLongitude' (role 'xal_AddressLongitude', cardinality 0..*).
+'xal::DependentLocality' (role 'xal_DependentLocality74', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality76', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare134', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot133', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare436', cardinality 0..*) is associated with 'xal::Firm' (role 'xal_Firm437', cardinality 0..*).
+'xal::PostBox' (role 'xal_PostBox170', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser169', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare427', cardinality 0..*) is associated with 'xal::DependentThoroughfare' (role 'xal_DependentThoroughfare428', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode323', cardinality 0..*) is associated with 'xal::Premise' (role 'xal_Premise322', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode176', cardinality 0..*) is associated with 'xal::LargeMailUser' (role 'xal_LargeMailUser175', cardinality 0..*).
+'xal::ThoroughfareNumberTo' (role 'xal_ThoroughfareNumberTo', cardinality 0..*) is associated with 'xal::ThoroughfareNumberRange' (role 'xal_ThoroughfareNumberRange459', cardinality 0..*).
+'xal::PostOffice' (role 'xal_PostOffice365', cardinality 0..*) is associated with 'xal::SubAdministrativeArea' (role 'xal_SubAdministrativeArea364', cardinality 0..*).
+'xal::ThoroughfareNumberSuffix' (role 'xal_ThoroughfareNumberSuffix', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot140', cardinality 0..*).
+'xal::PremiseNumberRange' (role 'xal_PremiseNumberRange330', cardinality 0..*) is associated with 'xal::PremiseNumberRangeTo' (role 'xal_PremiseNumberRangeTo', cardinality 0..*).
+'xal::SubPremiseNumber' (role 'xal_SubPremiseNumber', cardinality 0..*) is associated with 'xal::SubPremise' (role 'xal_SubPremise377', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot127', cardinality 0..*) is associated with 'xal::PremiseNumber' (role 'xal_PremiseNumber', cardinality 0..*).
+'xal::Premise' (role 'xal_Premise434', cardinality 0..*) is associated with 'xal::Thoroughfare' (role 'xal_Thoroughfare433', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare424', cardinality 0..*) is associated with 'xal::ThoroughfarePostDirection' (role 'xal_ThoroughfarePostDirection425', cardinality 0..*).
+'xal::Thoroughfare' (role 'xal_Thoroughfare412', cardinality 0..*) is associated with 'xal::ThoroughfarePreDirection' (role 'xal_ThoroughfarePreDirection413', cardinality 0..*).
+'xal::ThoroughfareNumberFrom' (role 'xal_ThoroughfareNumberFrom450', cardinality 0..*) is associated with 'xal::ThoroughfareNumberSuffix' (role 'xal_ThoroughfareNumberSuffix451', cardinality 0..*).
+'xal::PostalCode' (role 'xal_PostalCode79', cardinality 0..*) is associated with 'xal::DependentLocality' (role 'xal_DependentLocality78', cardinality 0..*).
+'xal::DocumentRoot' (role 'xal_DocumentRoot115', cardinality 0..*) is associated with 'xal::PostalCode' (role 'xal_PostalCode116', cardinality 0..*).
+'xal::ThoroughfareNumberFrom' (role 'xal_ThoroughfareNumberFrom444', cardinality 0..*) is associated with 'xal::ThoroughfareNumberPrefix' (role 'xal_ThoroughfareNumberPrefix445', cardinality 0..*).
+'xal::Locality' (role 'xal_Locality181', cardinality 0..*) is associated with 'xal::LocalityName' (role 'xal_LocalityName', cardinality 0..*).
+'xal::PostalRoute' (role 'xal_PostalRoute223', cardinality 0..*) is associated with 'xal::AddressLine' (role 'xal_AddressLine224', cardinality 0..*).
+'xal::AddressLine' (role 'xal_AddressLine271', cardinality 0..*) is associated with 'xal::PostOffice' (role 'xal_PostOffice270', cardinality 0..*).
+'xal::PremiseNumberRangeTo' (role 'xal_PremiseNumberRangeTo353', cardinality 0..*) is associated with 'xal::PremiseNumberSuffix' (role 'xal_PremiseNumberSuffix354', cardinality 0..*).
+'xal::CountryName' (role 'xal_CountryName107', cardinality 0..*) is associated with 'xal::DocumentRoot' (role 'xal_DocumentRoot106', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'my::FKRelation' has the following attributes: 'label' of type str.
+The class 'my::Table' has no attributes.
+The class 'my::Database' has no attributes.
+The class 'my::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'my::Column' has the following attributes: 'unique' of type bool; 'type' of type str; 'size' of type int; 'primary' of type bool.
+The enumeration 'ColumnType' has the following literals: 'Char', 'Date', 'Number'.
+'my::Table' is a specialization of 'NamedElement'.
+'my::Database' is a specialization of 'NamedElement'.
+'my::Column' is a specialization of 'NamedElement'.
+'my::Database' (role 'my_Database4', cardinality 0..*) is associated with 'my::FKRelation' (role 'my_FKRelation', cardinality 0..*).
+'my::Column' (role 'my_Column', cardinality 0..*) is associated with 'my::Table' (role 'my_Table', cardinality 0..*).
+'my::Column' (role 'my_Column10', cardinality 0..*) is associated with 'my::FKRelation' (role 'my_FKRelation9', cardinality 0..*).
+'my::Table' (role 'my_Table2', cardinality 0..*) is associated with 'my::Database' (role 'my_Database', cardinality 0..*).
+'my::Column' (role 'my_Column7', cardinality 0..*) is associated with 'my::FKRelation' (role 'my_FKRelation6', cardinality 0..*).

@@ -1,0 +1,49 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class coCoMM_CoCo  {
+
+    private String configScenario;
+
+
+
+
+
+    private List<coCoMM_FeatureModel> cocomm_featuremodels;
+
+
+    public coCoMM_CoCo(
+        String configScenario    ) {
+        this.configScenario = configScenario;
+        this.cocomm_featuremodels = new ArrayList<>();
+    }
+
+    public coCoMM_CoCo(
+        String configScenario        ArrayList<coCoMM_FeatureModel> cocomm_featuremodels    ) {
+        this.configScenario = configScenario;
+        this.cocomm_featuremodels = cocomm_featuremodels;
+    }
+
+    public String getConfigscenario() {
+        return configScenario;
+    }
+
+    public void setConfigscenario(String configScenario) {
+        this.configScenario = configScenario;
+    }
+
+    public List<coCoMM_FeatureModel> getCocomm_featuremodels() {
+        return cocomm_featuremodels;
+    }
+
+    public void addCocomm_featuremodel(Cocomm_featuremodel cocomm_featuremodel) {
+        this.cocomm_featuremodels.add(cocomm_featuremodel);
+    }
+
+}

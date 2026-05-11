@@ -1,0 +1,31 @@
+The model has 15 class(es).
+The class 'DataBase' has no attributes.
+The class 'MySQL::EnumColumn' has no attributes.
+The class 'EnumSet' has no attributes.
+The class 'MySQL::Table' has no attributes.
+The class 'MySQL::NamedElement' has the following attributes: 'name' of type str.
+The class 'EnumItem' has no attributes.
+The class 'MySQL::ForeignColumn' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'MySQL::IntegerColumn' has the following attributes: 'isAutoIncrement' of type str.
+The class 'Table' has no attributes.
+The class 'MySQL::EnumItem' has no attributes.
+The class 'MySQL::Column' has the following attributes: 'isPrimaryKey' of type str; 'type' of type str; 'defaultValue' of type str; 'comment' of type str.
+The class 'Column' has no attributes.
+The class 'MySQL::DataBase' has no attributes.
+The class 'MySQL::EnumSet' has no attributes.
+'MySQL::EnumItem' is a specialization of 'NamedElement'.
+'MySQL::Column' is a specialization of 'NamedElement'.
+'MySQL::DataBase' is a specialization of 'NamedElement'.
+'MySQL::Table' is a specialization of 'NamedElement'.
+'MySQL::IntegerColumn' is a specialization of 'Column'.
+'MySQL::ForeignColumn' is a specialization of 'Column'.
+'MySQL::EnumColumn' is a specialization of 'Column'.
+'Column' (role 'Column', cardinality 0..*) is associated with 'MySQL::Table' (role 'table', cardinality 0..*).
+'MySQL::Table' (role 'tables', cardinality 0..*) is associated with 'DataBase' (role 'DataBase', cardinality 0..*).
+'MySQL::Column' (role 'columns', cardinality 0..*) is associated with 'Table' (role 'Table4', cardinality 0..*).
+'MySQL::EnumColumn' (role 'MySQL_EnumColumn', cardinality 0..*) is associated with 'EnumSet' (role 'EnumSet', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'MySQL::DataBase' (role 'database', cardinality 0..*).
+'MySQL::EnumItem' (role 'enumItems', cardinality 0..*) is associated with 'EnumSet' (role 'EnumSet8', cardinality 0..*).
+'Table' (role 'Table10', cardinality 0..*) is associated with 'MySQL::ForeignColumn' (role 'MySQL_ForeignColumn', cardinality 0..*).
+'EnumItem' (role 'EnumItem', cardinality 0..*) is associated with 'MySQL::EnumSet' (role 'enumSet', cardinality 0..*).

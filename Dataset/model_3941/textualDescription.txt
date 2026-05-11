@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'UmlMM::Operation' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'UmlMM::Property' has the following attributes: 'lower' of type int; 'name' of type str; 'upper' of type int.
+The class 'UmlMM::DataType' has the following attributes: 'name' of type str.
+The class 'UmlMM::Classifier' has no attributes.
+The class 'UmlMM::Parameter' has the following attributes: 'name' of type str.
+The class 'UmlMM::UmlPackage' has the following attributes: 'name' of type str.
+The class 'UmlMM::Class' has the following attributes: 'name' of type str.
+'UmlMM::Class' is a specialization of 'Classifier'.
+'UmlMM::DataType' is a specialization of 'Classifier'.
+'UmlMM::Class' (role '_Class', cardinality 0..*) is associated with 'UmlMM::Operation' (role 'Operation', cardinality 0..*).
+'UmlMM::Class' (role 'Class13', cardinality 0..*) is associated with 'UmlMM::Property' (role '_property', cardinality 0..*).
+'UmlMM::Classifier' (role 'UmlMM_Classifier11', cardinality 0..*) is associated with 'UmlMM::Property' (role 'UmlMM_Property', cardinality 0..*).
+'UmlMM::UmlPackage' (role '_UmlPackage', cardinality 0..*) is associated with 'UmlMM::Classifier' (role 'Classifier', cardinality 0..*).
+'UmlMM::Operation' (role 'operation', cardinality 0..*) is associated with 'UmlMM::Class' (role 'Class', cardinality 0..*).
+'UmlMM::Classifier' (role 'elements', cardinality 0..*) is associated with 'UmlMM::UmlPackage' (role 'UmlPackage', cardinality 0..*).
+'UmlMM::Operation' (role '_Operation', cardinality 0..*) is associated with 'UmlMM::Parameter' (role 'Parameter', cardinality 0..*).
+'UmlMM::Parameter' (role 'UmlMM_Parameter', cardinality 0..*) is associated with 'UmlMM::Classifier' (role 'UmlMM_Classifier', cardinality 0..*).
+'UmlMM::Parameter' (role 'parameter', cardinality 0..*) is associated with 'UmlMM::Operation' (role 'Operation9', cardinality 0..*).
+'UmlMM::Property' (role 'Property', cardinality 0..*) is associated with 'UmlMM::Class' (role '_Class4', cardinality 0..*).

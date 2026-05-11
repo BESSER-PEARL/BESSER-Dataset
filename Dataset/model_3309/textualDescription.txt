@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'fd::FiniteDifference' has no attributes.
+The class 'Solver' has no attributes.
+'fd::FiniteDifference' is a specialization of 'Solver'.

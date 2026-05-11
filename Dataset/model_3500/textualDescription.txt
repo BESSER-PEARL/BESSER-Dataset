@@ -1,0 +1,49 @@
+The model has 19 class(es).
+The class 'while::EqExp' has no attributes.
+The class 'while::Program' has no attributes.
+The class 'while::VarExp' has no attributes.
+The class 'while::BinaryExp' has no attributes.
+The class 'while::AndExp' has no attributes.
+The class 'while::NEqExp' has no attributes.
+The class 'Statement' has no attributes.
+The class 'while::Assignment' has no attributes.
+The class 'while::BoolExp' has no attributes.
+The class 'while::If' has no attributes.
+The class 'Exp' has no attributes.
+The class 'BinaryExp' has no attributes.
+The class 'while::Exp' has no attributes.
+The class 'while::Var' has the following attributes: 'id' of type str.
+The class 'while::Ret' has no attributes.
+The class 'while::While' has no attributes.
+The class 'BoolExp' has no attributes.
+The class 'while::Statement' has no attributes.
+The class 'while::Val' has the following attributes: 'id' of type str.
+'while::VarExp' is a specialization of 'Exp'.
+'while::While' is a specialization of 'Statement'.
+'while::EqExp' is a specialization of 'BoolExp'.
+'while::AndExp' is a specialization of 'BinaryExp'.
+'while::EqExp' is a specialization of 'BinaryExp'.
+'while::NEqExp' is a specialization of 'BoolExp'.
+'while::Assignment' is a specialization of 'Statement'.
+'while::Val' is a specialization of 'Exp'.
+'while::NEqExp' is a specialization of 'BinaryExp'.
+'while::BoolExp' is a specialization of 'Exp'.
+'while::Ret' is a specialization of 'Statement'.
+'while::If' is a specialization of 'Statement'.
+'while::AndExp' is a specialization of 'BoolExp'.
+'while::BinaryExp' is a specialization of 'Exp'.
+'while::Statement' (role 'while_Statement', cardinality 0..*) is associated with 'while::Program' (role 'while_Program', cardinality 0..*).
+'while::Var' (role 'while_Var25', cardinality 0..*) is associated with 'while::VarExp' (role 'while_VarExp', cardinality 0..*).
+'while::If' (role 'while_If', cardinality 0..*) is associated with 'while::BoolExp' (role 'while_BoolExp13', cardinality 0..*).
+'while::If' (role 'while_If15', cardinality 0..*) is associated with 'while::Statement' (role 'while_Statement16', cardinality 0..*).
+'while::Assignment' (role 'while_Assignment29', cardinality 0..*) is associated with 'while::Exp' (role 'while_Exp30', cardinality 0..*).
+'while::If' (role 'while_If18', cardinality 0..*) is associated with 'while::Statement' (role 'while_Statement19', cardinality 0..*).
+'while::BinaryExp' (role 'while_BinaryExp', cardinality 0..*) is associated with 'while::Exp' (role 'while_Exp', cardinality 0..*).
+'while::Exp' (role 'while_Exp32', cardinality 0..*) is associated with 'while::Ret' (role 'while_Ret', cardinality 0..*).
+'while::BinaryExp' (role 'while_BinaryExp22', cardinality 0..*) is associated with 'while::Exp' (role 'while_Exp23', cardinality 0..*).
+'while::Statement' (role 'while_Statement8', cardinality 0..*) is associated with 'while::While' (role 'while_While7', cardinality 0..*).
+'while::Statement' (role 'while_Statement11', cardinality 0..*) is associated with 'while::Statement' (role 'while_Statement9', cardinality 0..*).
+'while::Var' (role 'while_Var27', cardinality 0..*) is associated with 'while::Assignment' (role 'while_Assignment', cardinality 0..*).
+'while::Program' (role 'while_Program4', cardinality 0..*) is associated with 'while::Val' (role 'while_Val', cardinality 0..*).
+'while::BoolExp' (role 'while_BoolExp', cardinality 0..*) is associated with 'while::While' (role 'while_While', cardinality 0..*).
+'while::Program' (role 'while_Program2', cardinality 0..*) is associated with 'while::Var' (role 'while_Var', cardinality 0..*).

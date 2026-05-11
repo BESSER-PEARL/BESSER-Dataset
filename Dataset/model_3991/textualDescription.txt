@@ -1,0 +1,48 @@
+The model has 22 class(es).
+The class 'xpdl::XSDSchema' has no attributes.
+The class 'Extensible' has no attributes.
+The class 'xpdl::TypeDeclarationType' has the following attributes: 'name' of type str; 'id' of type str; 'description' of type str.
+The class 'xpdl::ExternalPackages' has no attributes.
+The class 'XpdlTypeType' has no attributes.
+The class 'xpdl::ExtendedAttributesType' has no attributes.
+The class 'xpdl::ExternalReferenceType' has the following attributes: 'namespace' of type str; 'location' of type str; 'xref' of type str.
+The class 'xpdl::TypeDeclarationsType' has no attributes.
+The class 'XSDAnnotation' has no attributes.
+The class 'xpdl::Extensible' has no attributes.
+The class 'xpdl::XpdlTypeType' has no attributes.
+The class 'xpdl::DeclaredTypeType' has the following attributes: 'id' of type str.
+The class 'xpdl::BasicTypeType' has the following attributes: 'type' of type str.
+The class 'xpdl::ExtendedAttributeType' has the following attributes: 'any' of type str; 'mixed' of type str; 'value' of type str; 'group' of type str; 'name' of type str.
+The class 'xpdl::ScriptType' has the following attributes: 'version' of type str; 'type' of type str; 'grammar' of type str.
+The class 'xpdl::SchemaTypeType' has no attributes.
+The class 'xpdl::DataTypeType' has the following attributes: 'carnotType' of type str.
+The class 'xpdl::FormalParameterType' has the following attributes: 'description' of type str; 'name' of type str; 'id' of type str; 'mode' of type str.
+The class 'xpdl::extensions::ExtendedAnnotationType' has no attributes.
+The class 'ExtendedAnnotationType' has no attributes.
+The class 'xpdl::FormalParametersType' has no attributes.
+The class 'xpdl::ExternalPackage' has the following attributes: 'id' of type str; 'href' of type str; 'name' of type str.
+The enumeration 'TypeType' has the following literals: 'REFERENCE', 'INTEGER', 'PERFORMER', 'STRING', 'BOOLEAN', 'DATETIME', 'FLOAT'.
+The enumeration 'ModeType' has the following literals: 'OUT', 'IN', 'INOUT'.
+'xpdl::TypeDeclarationType' is a specialization of 'Extensible'.
+'xpdl::DeclaredTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl::ExternalReferenceType' is a specialization of 'XpdlTypeType'.
+'xpdl::ExternalPackage' is a specialization of 'Extensible'.
+'xpdl::BasicTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl::SchemaTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl::extensions::ExtendedAnnotationType' is a specialization of 'XSDAnnotation'.
+'xpdl::TypeDeclarationType' (role 'xpdl_TypeDeclarationType24', cardinality 0..*) is associated with 'xpdl::DeclaredTypeType' (role 'xpdl_DeclaredTypeType25', cardinality 0..*).
+'xpdl::ExternalPackage' (role 'xpdl_ExternalPackage', cardinality 0..*) is associated with 'xpdl::ExternalPackages' (role 'xpdl_ExternalPackages', cardinality 0..*).
+'xpdl::ExternalReferenceType' (role 'xpdl_ExternalReferenceType', cardinality 0..*) is associated with 'xpdl::DataTypeType' (role 'xpdl_DataTypeType6', cardinality 0..*).
+'xpdl::BasicTypeType' (role 'xpdl_BasicTypeType22', cardinality 0..*) is associated with 'xpdl::TypeDeclarationType' (role 'xpdl_TypeDeclarationType21', cardinality 0..*).
+'ExtendedAnnotationType' (role 'ExtendedAnnotationType', cardinality 0..*) is associated with 'xpdl::ExtendedAttributeType' (role 'xpdl_ExtendedAttributeType9', cardinality 0..*).
+'xpdl::DeclaredTypeType' (role 'xpdl_DeclaredTypeType', cardinality 0..*) is associated with 'xpdl::DataTypeType' (role 'xpdl_DataTypeType2', cardinality 0..*).
+'xpdl::TypeDeclarationType' (role 'xpdl_TypeDeclarationType', cardinality 0..*) is associated with 'xpdl::TypeDeclarationsType' (role 'xpdl_TypeDeclarationsType', cardinality 0..*).
+'xpdl::ExternalReferenceType' (role 'xpdl_ExternalReferenceType31', cardinality 0..*) is associated with 'xpdl::TypeDeclarationType' (role 'xpdl_TypeDeclarationType30', cardinality 0..*).
+'xpdl::ExtendedAttributesType' (role 'xpdl_ExtendedAttributesType11', cardinality 0..*) is associated with 'xpdl::Extensible' (role 'xpdl_Extensible', cardinality 0..*).
+'xpdl::SchemaTypeType' (role 'xpdl_SchemaTypeType', cardinality 0..*) is associated with 'xpdl::DataTypeType' (role 'xpdl_DataTypeType4', cardinality 0..*).
+'xpdl::ExtendedAttributesType' (role 'xpdl_ExtendedAttributesType', cardinality 0..*) is associated with 'xpdl::ExtendedAttributeType' (role 'xpdl_ExtendedAttributeType', cardinality 0..*).
+'xpdl::BasicTypeType' (role 'xpdl_BasicTypeType', cardinality 0..*) is associated with 'xpdl::DataTypeType' (role 'xpdl_DataTypeType', cardinality 0..*).
+'xpdl::DataTypeType' (role 'xpdl_DataTypeType16', cardinality 0..*) is associated with 'xpdl::FormalParameterType' (role 'xpdl_FormalParameterType15', cardinality 0..*).
+'xpdl::FormalParametersType' (role 'xpdl_FormalParametersType', cardinality 0..*) is associated with 'xpdl::FormalParameterType' (role 'xpdl_FormalParameterType', cardinality 0..*).
+'xpdl::SchemaTypeType' (role 'xpdl_SchemaTypeType18', cardinality 0..*) is associated with 'xpdl::XSDSchema' (role 'xpdl_XSDSchema', cardinality 0..*).
+'xpdl::TypeDeclarationType' (role 'xpdl_TypeDeclarationType27', cardinality 0..*) is associated with 'xpdl::SchemaTypeType' (role 'xpdl_SchemaTypeType28', cardinality 0..*).

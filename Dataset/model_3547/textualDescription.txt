@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'testenums::Root' has the following attributes: 'enums' of type str; 'enum' of type str.
+The enumeration 'Enum1' has the following literals: 'LITERAL1', 'LITERAL0'.

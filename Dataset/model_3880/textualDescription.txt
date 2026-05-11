@@ -1,0 +1,73 @@
+The model has 25 class(es).
+The class 'flinkie2::Question' has the following attributes: 'text' of type str.
+The class 'Node' has no attributes.
+The class 'flinkie2::BooleanEvaluation' has no attributes.
+The class 'flinkie2::Comparison' has the following attributes: 'operator' of type str.
+The class 'flinkie2::TwoOpInt' has the following attributes: 'operator' of type str.
+The class 'flinkie2::VariableExpr' has no attributes.
+The class 'IntExpr' has no attributes.
+The class 'flinkie2::OneOpBool' has the following attributes: 'operator' of type str.
+The class 'flinkie2::AssignStat' has no attributes.
+The class 'flinkie2::BracExprBool' has no attributes.
+The class 'flinkie2::BoolVal' has the following attributes: 'value' of type bool.
+The class 'flinkie2::BoolExpr' has no attributes.
+The class 'flinkie2::Number' has the following attributes: 'value' of type int.
+The class 'flinkie2::Init' has no attributes.
+The class 'flinkie2::Message' has the following attributes: 'text' of type str.
+The class 'flinkie2::IntExpr' has no attributes.
+The class 'flinkie2::FlowChart' has no attributes.
+The class 'flinkie2::OneOpInt' has the following attributes: 'operator' of type str.
+The class 'flinkie2::DeclStat' has no attributes.
+The class 'BoolExpr' has no attributes.
+The class 'flinkie2::TwoOpBool' has the following attributes: 'operator' of type str.
+The class 'flinkie2::Variable' has the following attributes: 'name' of type str.
+The class 'flinkie2::Node' has no attributes.
+The class 'flinkie2::BracExprInt' has no attributes.
+The class 'flinkie2::Option' has the following attributes: 'text' of type str.
+The enumeration 'EIntOneOp' has the following literals: 'MIN'.
+The enumeration 'ECompOp' has the following literals: 'LT', 'NE', 'LE', 'EQ', 'GE', 'GT'.
+The enumeration 'EBoolOneOp' has the following literals: 'NOT'.
+The enumeration 'EBoolVal' has the following literals: 'TRUE', 'FALSE'.
+The enumeration 'EIntTwoOp' has the following literals: 'ADD', 'MUL', 'SUB', 'DIV'.
+The enumeration 'EBoolTwoOp' has the following literals: 'AND', 'XOR', 'OR'.
+'flinkie2::BracExprBool' is a specialization of 'BoolExpr'.
+'flinkie2::OneOpInt' is a specialization of 'IntExpr'.
+'flinkie2::VariableExpr' is a specialization of 'IntExpr'.
+'flinkie2::Message' is a specialization of 'Node'.
+'flinkie2::Question' is a specialization of 'Node'.
+'flinkie2::OneOpBool' is a specialization of 'BoolExpr'.
+'flinkie2::Number' is a specialization of 'IntExpr'.
+'flinkie2::TwoOpBool' is a specialization of 'BoolExpr'.
+'flinkie2::Comparison' is a specialization of 'BoolExpr'.
+'flinkie2::BooleanEvaluation' is a specialization of 'Node'.
+'flinkie2::BracExprInt' is a specialization of 'IntExpr'.
+'flinkie2::BoolVal' is a specialization of 'BoolExpr'.
+'flinkie2::TwoOpInt' is a specialization of 'IntExpr'.
+'flinkie2::BooleanEvaluation' (role 'flinkie2_BooleanEvaluation10', cardinality 0..*) is associated with 'flinkie2::Node' (role 'flinkie2_Node11', cardinality 0..*).
+'flinkie2::IntExpr' (role 'flinkie2_IntExpr63', cardinality 0..*) is associated with 'flinkie2::Comparison' (role 'flinkie2_Comparison62', cardinality 0..*).
+'flinkie2::AssignStat' (role 'flinkie2_AssignStat25', cardinality 0..*) is associated with 'flinkie2::Option' (role 'flinkie2_Option24', cardinality 0..*).
+'flinkie2::Node' (role 'flinkie2_Node8', cardinality 0..*) is associated with 'flinkie2::BooleanEvaluation' (role 'flinkie2_BooleanEvaluation7', cardinality 0..*).
+'flinkie2::VariableExpr' (role 'flinkie2_VariableExpr48', cardinality 0..*) is associated with 'flinkie2::Variable' (role 'flinkie2_Variable49', cardinality 0..*).
+'flinkie2::BooleanEvaluation' (role 'flinkie2_BooleanEvaluation', cardinality 0..*) is associated with 'flinkie2::AssignStat' (role 'flinkie2_AssignStat', cardinality 0..*).
+'flinkie2::BracExprBool' (role 'flinkie2_BracExprBool', cardinality 0..*) is associated with 'flinkie2::BoolExpr' (role 'flinkie2_BoolExpr58', cardinality 0..*).
+'flinkie2::IntExpr' (role 'flinkie2_IntExpr31', cardinality 0..*) is associated with 'flinkie2::TwoOpInt' (role 'flinkie2_TwoOpInt', cardinality 0..*).
+'flinkie2::FlowChart' (role 'flinkie2_FlowChart43', cardinality 0..*) is associated with 'flinkie2::Init' (role 'flinkie2_Init44', cardinality 0..*).
+'flinkie2::DeclStat' (role 'flinkie2_DeclStat4', cardinality 0..*) is associated with 'flinkie2::Variable' (role 'flinkie2_Variable', cardinality 0..*).
+'flinkie2::BoolExpr' (role 'flinkie2_BoolExpr51', cardinality 0..*) is associated with 'flinkie2::OneOpBool' (role 'flinkie2_OneOpBool', cardinality 0..*).
+'flinkie2::Node' (role 'flinkie2_Node22', cardinality 0..*) is associated with 'flinkie2::Message' (role 'flinkie2_Message21', cardinality 0..*).
+'flinkie2::OneOpInt' (role 'flinkie2_OneOpInt', cardinality 0..*) is associated with 'flinkie2::IntExpr' (role 'flinkie2_IntExpr', cardinality 0..*).
+'flinkie2::IntExpr' (role 'flinkie2_IntExpr34', cardinality 0..*) is associated with 'flinkie2::TwoOpInt' (role 'flinkie2_TwoOpInt33', cardinality 0..*).
+'flinkie2::AssignStat' (role 'flinkie2_AssignStat19', cardinality 0..*) is associated with 'flinkie2::Message' (role 'flinkie2_Message', cardinality 0..*).
+'flinkie2::Init' (role 'flinkie2_Init', cardinality 0..*) is associated with 'flinkie2::DeclStat' (role 'flinkie2_DeclStat', cardinality 0..*).
+'flinkie2::Option' (role 'flinkie2_Option', cardinality 0..*) is associated with 'flinkie2::Question' (role 'flinkie2_Question', cardinality 0..*).
+'flinkie2::BooleanEvaluation' (role 'flinkie2_BooleanEvaluation13', cardinality 0..*) is associated with 'flinkie2::BoolExpr' (role 'flinkie2_BoolExpr', cardinality 0..*).
+'flinkie2::TwoOpBool' (role 'flinkie2_TwoOpBool', cardinality 0..*) is associated with 'flinkie2::BoolExpr' (role 'flinkie2_BoolExpr53', cardinality 0..*).
+'flinkie2::FlowChart' (role 'flinkie2_FlowChart', cardinality 0..*) is associated with 'flinkie2::Node' (role 'flinkie2_Node41', cardinality 0..*).
+'flinkie2::Comparison' (role 'flinkie2_Comparison', cardinality 0..*) is associated with 'flinkie2::IntExpr' (role 'flinkie2_IntExpr60', cardinality 0..*).
+'flinkie2::AssignStat' (role 'flinkie2_AssignStat38', cardinality 0..*) is associated with 'flinkie2::IntExpr' (role 'flinkie2_IntExpr39', cardinality 0..*).
+'flinkie2::Init' (role 'flinkie2_Init2', cardinality 0..*) is associated with 'flinkie2::Node' (role 'flinkie2_Node', cardinality 0..*).
+'flinkie2::AssignStat' (role 'flinkie2_AssignStat36', cardinality 0..*) is associated with 'flinkie2::VariableExpr' (role 'flinkie2_VariableExpr', cardinality 0..*).
+'flinkie2::BracExprInt' (role 'flinkie2_BracExprInt', cardinality 0..*) is associated with 'flinkie2::IntExpr' (role 'flinkie2_IntExpr46', cardinality 0..*).
+'flinkie2::Option' (role 'flinkie2_Option27', cardinality 0..*) is associated with 'flinkie2::Node' (role 'flinkie2_Node28', cardinality 0..*).
+'flinkie2::BoolExpr' (role 'flinkie2_BoolExpr56', cardinality 0..*) is associated with 'flinkie2::TwoOpBool' (role 'flinkie2_TwoOpBool55', cardinality 0..*).
+'flinkie2::Question' (role 'flinkie2_Question16', cardinality 0..*) is associated with 'flinkie2::AssignStat' (role 'flinkie2_AssignStat17', cardinality 0..*).

@@ -1,0 +1,45 @@
+The model has 21 class(es).
+The class 'featuremodel::Rule' has the following attributes: 'code' of type str; 'language' of type str.
+The class 'featuremodel::Constraint' has the following attributes: 'id' of type str.
+The class 'featuremodel::AttributeValueEObject' has no attributes.
+The class 'featuremodel::AttributeTypeEObject' has no attributes.
+The class 'featuremodel::AttributeValueString' has the following attributes: 'value' of type str.
+The class 'featuremodel::Attribute' has the following attributes: 'id' of type str; 'name' of type str; 'setable' of type bool.
+The class 'featuremodel::AttributeTypeString' has no attributes.
+The class 'AttributeValue' has no attributes.
+The class 'featuremodel::Description' has the following attributes: 'id' of type str; 'text' of type str.
+The class 'featuremodel::AttributeTypeBoolean' has no attributes.
+The class 'featuremodel::AttributeTypeInt' has no attributes.
+The class 'featuremodel::AttributeValueInt' has the following attributes: 'value' of type int.
+The class 'featuremodel::Feature' has the following attributes: 'id' of type str; 'name' of type str; 'type' of type str.
+The class 'featuremodel::AttributeType' has no attributes.
+The class 'AttributeType' has no attributes.
+The class 'featuremodel::FeatureModel' has the following attributes: 'id' of type str; 'version' of type str.
+The class 'Rule' has no attributes.
+The class 'featuremodel::Group' has the following attributes: 'upper' of type int; 'lower' of type int; 'id' of type str.
+The class 'featuremodel::EObject' has no attributes.
+The class 'featuremodel::AttributeValueBoolean' has the following attributes: 'value' of type bool.
+The class 'featuremodel::AttributeValue' has no attributes.
+The enumeration 'VariabilityType' has the following literals: 'alternative', 'optional', 'or_', 'mandatory'.
+'featuremodel::AttributeTypeBoolean' is a specialization of 'AttributeType'.
+'featuremodel::AttributeValueString' is a specialization of 'AttributeValue'.
+'featuremodel::AttributeTypeString' is a specialization of 'AttributeType'.
+'featuremodel::AttributeValueEObject' is a specialization of 'AttributeValue'.
+'featuremodel::AttributeValueInt' is a specialization of 'AttributeValue'.
+'featuremodel::AttributeTypeEObject' is a specialization of 'AttributeType'.
+'featuremodel::AttributeTypeInt' is a specialization of 'AttributeType'.
+'featuremodel::AttributeValueBoolean' is a specialization of 'AttributeValue'.
+'featuremodel::Constraint' is a specialization of 'Rule'.
+'featuremodel::Feature' (role 'featuremodel_Feature13', cardinality 0..*) is associated with 'featuremodel::Description' (role 'featuremodel_Description14', cardinality 0..*).
+'featuremodel::Group' (role 'featuremodel_Group20', cardinality 0..*) is associated with 'featuremodel::Feature' (role 'featuremodel_Feature19', cardinality 0..*).
+'featuremodel::Description' (role 'featuremodel_Description23', cardinality 0..*) is associated with 'featuremodel::Attribute' (role 'featuremodel_Attribute22', cardinality 0..*).
+'featuremodel::Feature' (role 'featuremodel_Feature16', cardinality 0..*) is associated with 'featuremodel::Attribute' (role 'featuremodel_Attribute17', cardinality 0..*).
+'featuremodel::FeatureModel' (role 'featuremodel_FeatureModel6', cardinality 0..*) is associated with 'featuremodel::Constraint' (role 'featuremodel_Constraint', cardinality 0..*).
+'featuremodel::FeatureModel' (role 'featuremodel_FeatureModel2', cardinality 0..*) is associated with 'featuremodel::Attribute' (role 'featuremodel_Attribute', cardinality 0..*).
+'featuremodel::Attribute' (role 'featuremodel_Attribute25', cardinality 0..*) is associated with 'featuremodel::AttributeValue' (role 'featuremodel_AttributeValue', cardinality 0..*).
+'featuremodel::Attribute' (role 'featuremodel_Attribute27', cardinality 0..*) is associated with 'featuremodel::AttributeType' (role 'featuremodel_AttributeType', cardinality 0..*).
+'featuremodel::Description' (role 'featuremodel_Description', cardinality 0..*) is associated with 'featuremodel::FeatureModel' (role 'featuremodel_FeatureModel', cardinality 0..*).
+'featuremodel::Feature' (role 'featuremodel_Feature11', cardinality 0..*) is associated with 'featuremodel::Group' (role 'featuremodel_Group', cardinality 0..*).
+'featuremodel::Description' (role 'featuremodel_Description9', cardinality 0..*) is associated with 'featuremodel::Constraint' (role 'featuremodel_Constraint8', cardinality 0..*).
+'featuremodel::FeatureModel' (role 'featuremodel_FeatureModel4', cardinality 0..*) is associated with 'featuremodel::Feature' (role 'featuremodel_Feature', cardinality 0..*).
+'featuremodel::AttributeValueEObject' (role 'featuremodel_AttributeValueEObject', cardinality 0..*) is associated with 'featuremodel::EObject' (role 'featuremodel_EObject', cardinality 0..*).

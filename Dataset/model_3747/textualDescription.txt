@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'actionpak1::UnscheduleSaflet' has no attributes.
+The class 'actionstep::ParameterizedInitiator' has no attributes.
+The class 'ActionStep' has no attributes.
+The class 'DynamicValue' has no attributes.
+The class 'ParameterizedInitiator' has no attributes.
+The class 'call::CallSource1' has no attributes.
+The class 'actionpak1::ActionstepTest' has no attributes.
+The class 'ParameterizedActionstep' has no attributes.
+The class 'actionpak1::CustomInitiator' has no attributes.
+The class 'actionpak1::InvokeSaflet2' has the following attributes: 'labelText' of type str.
+The class 'actionpak1::IncomingCall2' has the following attributes: 'callName' of type str.
+The class 'actionpak1::ScheduleSaflet' has no attributes.
+'actionpak1::UnscheduleSaflet' is a specialization of 'ActionStep'.
+'actionpak1::IncomingCall2' is a specialization of 'actionstep::ParameterizedInitiator'.
+'actionpak1::IncomingCall2' is a specialization of 'call::CallSource1'.
+'actionpak1::CustomInitiator' is a specialization of 'ParameterizedInitiator'.
+'actionpak1::InvokeSaflet2' is a specialization of 'ParameterizedActionstep'.
+'actionpak1::ActionstepTest' is a specialization of 'ActionStep'.
+'actionpak1::ScheduleSaflet' is a specialization of 'ParameterizedActionstep'.
+'actionpak1::InvokeSaflet2' (role 'actionpak1_InvokeSaflet2', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue2', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue13', cardinality 0..*) is associated with 'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet12', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue4', cardinality 0..*) is associated with 'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet', cardinality 0..*).
+'actionpak1::UnscheduleSaflet' (role 'actionpak1_UnscheduleSaflet', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue24', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue22', cardinality 0..*) is associated with 'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet21', cardinality 0..*).
+'actionpak1::ActionstepTest' (role 'actionpak1_ActionstepTest', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue', cardinality 0..*).
+'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet6', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue7', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue10', cardinality 0..*) is associated with 'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet9', cardinality 0..*).
+'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet15', cardinality 0..*) is associated with 'DynamicValue' (role 'DynamicValue16', cardinality 0..*).
+'DynamicValue' (role 'DynamicValue19', cardinality 0..*) is associated with 'actionpak1::ScheduleSaflet' (role 'actionpak1_ScheduleSaflet18', cardinality 0..*).

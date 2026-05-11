@@ -1,0 +1,133 @@
+The model has 49 class(es).
+The class 'Feature' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'OccurrenceSpecification' has no attributes.
+The class 'Message' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'behavior::BehaviorExecutionSpecification' has no attributes.
+The class 'behavior::NamedElement' has the following attributes: 'Archpoint' of type bool; 'name' of type str.
+The class 'behavior::Event' has no attributes.
+The class 'behavior::RedefinableElement' has no attributes.
+The class 'behavior::ExecutionSpecification' has no attributes.
+The class 'ExecutionSpecification' has no attributes.
+The class 'Element' has no attributes.
+The class 'Class' has no attributes.
+The class 'behavior::Operation' has no attributes.
+The class 'behavior::DestructionEvent' has no attributes.
+The class 'MessageEnd' has no attributes.
+The class 'Object' has no attributes.
+The class 'behavior::BehavioralFeature' has no attributes.
+The class 'behavior::GeneralOrdering' has no attributes.
+The class 'behavior::Namespace' has no attributes.
+The class 'behavior::ExecutionEvent' has no attributes.
+The class 'behavior::Feature' has the following attributes: 'isStatic' of type bool.
+The class 'behavior::BehavioredClassifier' has no attributes.
+The class 'behavior::Class' has no attributes.
+The class 'behavior::Element' has no attributes.
+The class 'Event' has no attributes.
+The class 'behavior::MessageOccurrenceSpecification' has no attributes.
+The class 'InteractionFragment' has no attributes.
+The class 'behavior::AlternativeMessage' has no attributes.
+The class 'behavior::Actor' has no attributes.
+The class 'behavior::OptionalMessage' has no attributes.
+The class 'behavior::OccurrenceSpecification' has no attributes.
+The class 'behavior::InteractionFragment' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'behavior::Message' has the following attributes: 'MessageOrder' of type int.
+The class 'BehavioredClassifier' has no attributes.
+The class 'behavior::Object' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'behavior::Interaction' has no attributes.
+The class 'behavior::Behavior' has no attributes.
+The class 'behavior::Lifeline' has no attributes.
+The class 'behavior::Classifier' has the following attributes: 'isAbstract' of type bool.
+The class 'behavior::MessageEnd' has no attributes.
+The class 'behavior::Connector' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'behavior::Comment' has the following attributes: 'body' of type str.
+The class 'behavior::CreatEvent' has no attributes.
+The class 'behavior::ExecutionOccurrenceSpecification' has no attributes.
+'behavior::Connector' is a specialization of 'Feature'.
+'behavior::ExecutionSpecification' is a specialization of 'InteractionFragment'.
+'behavior::BehavioralFeature' is a specialization of 'Feature'.
+'behavior::CreatEvent' is a specialization of 'Event'.
+'behavior::Feature' is a specialization of 'RedefinableElement'.
+'behavior::AlternativeMessage' is a specialization of 'Message'.
+'behavior::Message' is a specialization of 'NamedElement'.
+'behavior::ExecutionOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'behavior::Interaction' is a specialization of 'InteractionFragment'.
+'behavior::NamedElement' is a specialization of 'Element'.
+'behavior::InteractionFragment' is a specialization of 'NamedElement'.
+'behavior::Event' is a specialization of 'NamedElement'.
+'behavior::RedefinableElement' is a specialization of 'NamedElement'.
+'behavior::BehavioralFeature' is a specialization of 'NamedElement'.
+'behavior::Classifier' is a specialization of 'Namespace'.
+'behavior::OptionalMessage' is a specialization of 'Message'.
+'behavior::BehavioredClassifier' is a specialization of 'Classifier'.
+'behavior::ExecutionEvent' is a specialization of 'Event'.
+'behavior::Behavior' is a specialization of 'Class'.
+'behavior::Actor' is a specialization of 'Object'.
+'behavior::GeneralOrdering' is a specialization of 'NamedElement'.
+'behavior::Object' is a specialization of 'BehavioredClassifier'.
+'behavior::BehaviorExecutionSpecification' is a specialization of 'ExecutionSpecification'.
+'behavior::OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+'behavior::MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'behavior::MessageEnd' is a specialization of 'NamedElement'.
+'behavior::Namespace' is a specialization of 'NamedElement'.
+'behavior::DestructionEvent' is a specialization of 'Event'.
+'behavior::Class' is a specialization of 'BehavioredClassifier'.
+'behavior::Comment' is a specialization of 'Element'.
+'behavior::Interaction' is a specialization of 'Behavior'.
+'behavior::MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+'behavior::Lifeline' is a specialization of 'NamedElement'.
+'behavior::Operation' is a specialization of 'BehavioralFeature'.
+'behavior::Interaction' (role 'enclosingInteraction', cardinality 0..*) is associated with 'behavior::InteractionFragment' (role 'InteractionFragment49', cardinality 0..*).
+'behavior::BehavioredClassifier' (role 'actor', cardinality 0..*) is associated with 'behavior::Lifeline' (role 'Lifeline', cardinality 0..*).
+'behavior::MessageOccurrenceSpecification' (role 'behavior_MessageOccurrenceSpecification', cardinality 0..*) is associated with 'behavior::Event' (role 'behavior_Event', cardinality 0..*).
+'behavior::GeneralOrdering' (role 'GeneralOrdering', cardinality 0..*) is associated with 'behavior::OccurrenceSpecification' (role 'before', cardinality 0..*).
+'behavior::AlternativeMessage' (role 'behavior_AlternativeMessage', cardinality 0..*) is associated with 'behavior::Message' (role 'behavior_Message92', cardinality 0..*).
+'behavior::Lifeline' (role 'include', cardinality 0..*) is associated with 'behavior::BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*).
+'behavior::BehavioredClassifier' (role 'behavior_BehavioredClassifier7', cardinality 0..*) is associated with 'behavior::Behavior' (role 'behavior_Behavior8', cardinality 0..*).
+'behavior::Connector' (role 'behavior_Connector', cardinality 0..*) is associated with 'behavior::Message' (role 'behavior_Message41', cardinality 0..*).
+'behavior::Connector' (role 'behavior_Connector79', cardinality 0..*) is associated with 'behavior::Behavior' (role 'behavior_Behavior80', cardinality 0..*).
+'behavior::ExecutionOccurrenceSpecification' (role 'behavior_ExecutionOccurrenceSpecification', cardinality 0..*) is associated with 'behavior::ExecutionSpecification' (role 'behavior_ExecutionSpecification87', cardinality 0..*).
+'behavior::Behavior' (role 'behavior_Behavior', cardinality 0..*) is associated with 'behavior::BehavioredClassifier' (role 'behavior_BehavioredClassifier', cardinality 0..*).
+'behavior::OccurrenceSpecification' (role 'after', cardinality 0..*) is associated with 'behavior::GeneralOrdering' (role 'GeneralOrdering70', cardinality 0..*).
+'behavior::InteractionFragment' (role 'InteractionFragment', cardinality 0..*) is associated with 'behavior::Lifeline' (role 'covered', cardinality 0..*).
+'behavior::Behavior' (role 'behavior_Behavior5', cardinality 0..*) is associated with 'behavior::Behavior' (role 'behavior_Behavior3', cardinality 0..*).
+'behavior::Message' (role 'message', cardinality 0..*) is associated with 'behavior::Interaction' (role 'Interaction', cardinality 0..*).
+'behavior::Lifeline' (role 'Lifeline56', cardinality 0..*) is associated with 'behavior::Interaction' (role 'interaction55', cardinality 0..*).
+'behavior::GeneralOrdering' (role 'behavior_GeneralOrdering', cardinality 0..*) is associated with 'behavior::InteractionFragment' (role 'behavior_InteractionFragment', cardinality 0..*).
+'behavior::Interaction' (role 'behavior_Interaction', cardinality 0..*) is associated with 'behavior::BehavioredClassifier' (role 'behavior_BehavioredClassifier51', cardinality 0..*).
+'behavior::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'behavior::Feature' (role 'Feature', cardinality 0..*).
+'behavior::OccurrenceSpecification' (role 'behavior_OccurrenceSpecification', cardinality 0..*) is associated with 'behavior::ExecutionSpecification' (role 'behavior_ExecutionSpecification', cardinality 0..*).
+'behavior::Message' (role 'Message', cardinality 0..*) is associated with 'behavior::Interaction' (role 'interaction58', cardinality 0..*).
+'behavior::OccurrenceSpecification' (role 'behavior_OccurrenceSpecification74', cardinality 0..*) is associated with 'behavior::ExecutionSpecification' (role 'behavior_ExecutionSpecification73', cardinality 0..*).
+'behavior::Comment' (role 'behavior_Comment', cardinality 0..*) is associated with 'behavior::Element' (role 'behavior_Element', cardinality 0..*).
+'behavior::Interaction' (role 'Interaction44', cardinality 0..*) is associated with 'behavior::Lifeline' (role 'lifeline', cardinality 0..*).
+'behavior::InteractionFragment' (role 'fragment', cardinality 0..*) is associated with 'behavior::Interaction' (role 'Interaction62', cardinality 0..*).
+'behavior::MessageEnd' (role 'behavior_MessageEnd76', cardinality 0..*) is associated with 'behavior::Message' (role 'behavior_Message77', cardinality 0..*).
+'behavior::MessageEnd' (role 'behavior_MessageEnd', cardinality 0..*) is associated with 'behavior::Message' (role 'behavior_Message', cardinality 0..*).
+'behavior::DestructionEvent' (role 'DestructionEvent', cardinality 0..*) is associated with 'behavior::Lifeline' (role 'end', cardinality 0..*).
+'behavior::Element' (role 'behavior_Element29', cardinality 0..*) is associated with 'behavior::Element' (role 'behavior_Element31', cardinality 0..*).
+'behavior::Element' (role 'behavior_Element32', cardinality 0..*) is associated with 'behavior::Element' (role 'behavior_Element34', cardinality 0..*).
+'behavior::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'behavior::Feature' (role 'feature', cardinality 0..*).
+'behavior::Lifeline' (role 'behavior_Lifeline', cardinality 0..*) is associated with 'behavior::BehaviorExecutionSpecification' (role 'behavior_BehaviorExecutionSpecification', cardinality 0..*).
+'behavior::Message' (role 'behavior_Message38', cardinality 0..*) is associated with 'behavior::MessageEnd' (role 'behavior_MessageEnd39', cardinality 0..*).
+'behavior::Classifier' (role 'behavior_Classifier14', cardinality 0..*) is associated with 'behavior::Classifier' (role 'behavior_Classifier16', cardinality 0..*).
+'behavior::Behavior' (role 'method', cardinality 0..*) is associated with 'behavior::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'behavior::Behavior' (role 'Behavior', cardinality 0..*) is associated with 'behavior::BehavioralFeature' (role 'specification', cardinality 0..*).
+'behavior::Lifeline' (role 'Lifeline82', cardinality 0..*) is associated with 'behavior::DestructionEvent' (role 'endby', cardinality 0..*).
+'behavior::DestructionEvent' (role 'destructionevent', cardinality 0..*) is associated with 'behavior::Interaction' (role 'Interaction84', cardinality 0..*).
+'behavior::GeneralOrdering' (role 'toBefore', cardinality 0..*) is associated with 'behavior::OccurrenceSpecification' (role 'OccurrenceSpecification90', cardinality 0..*).
+'behavior::Behavior' (role 'behavior_Behavior11', cardinality 0..*) is associated with 'behavior::BehavioredClassifier' (role 'behavior_BehavioredClassifier10', cardinality 0..*).
+'behavior::Comment' (role 'behavior_Comment65', cardinality 0..*) is associated with 'behavior::Element' (role 'behavior_Element66', cardinality 0..*).
+'behavior::GeneralOrdering' (role 'toAfter', cardinality 0..*) is associated with 'behavior::OccurrenceSpecification' (role 'OccurrenceSpecification', cardinality 0..*).
+'behavior::Classifier' (role 'behavior_Classifier', cardinality 0..*) is associated with 'behavior::NamedElement' (role 'behavior_NamedElement', cardinality 0..*).
+'behavior::DestructionEvent' (role 'DestructionEvent53', cardinality 0..*) is associated with 'behavior::Interaction' (role 'interaction', cardinality 0..*).
+'behavior::Classifier' (role 'behavior_Classifier22', cardinality 0..*) is associated with 'behavior::Class' (role 'behavior_Class', cardinality 0..*).
+'behavior::RedefinableElement' (role 'behavior_RedefinableElement25', cardinality 0..*) is associated with 'behavior::RedefinableElement' (role 'behavior_RedefinableElement27', cardinality 0..*).
+'behavior::RedefinableElement' (role 'behavior_RedefinableElement', cardinality 0..*) is associated with 'behavior::Classifier' (role 'behavior_Classifier24', cardinality 0..*).
+'behavior::Classifier' (role 'behavior_Classifier19', cardinality 0..*) is associated with 'behavior::Classifier' (role 'behavior_Classifier17', cardinality 0..*).
+'behavior::Lifeline' (role 'Lifeline60', cardinality 0..*) is associated with 'behavior::InteractionFragment' (role 'coveredBy', cardinality 0..*).

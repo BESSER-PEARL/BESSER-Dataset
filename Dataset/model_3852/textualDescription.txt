@@ -1,0 +1,40 @@
+The model has 19 class(es).
+The class 'dDL::Tabname' has the following attributes: 'basename' of type str; 'id' of type str.
+The class 'dDL::ISNULL' has the following attributes: 'nonNull' of type bool; 'null' of type bool.
+The class 'dDL::Sequence::options' has the following attributes: 'increment' of type str; 'minvalue' of type str; 'cycle' of type str; 'noorder' of type str; 'order' of type str; 'nomaxvalue' of type str; 'start' of type str; 'cache' of type str; 'maxvalue' of type str; 'nocache' of type str; 'nominvalue' of type str; 'nocycle' of type str.
+The class 'dDL::Primary::key' has no attributes.
+The class 'dDL::Create::sequence' has the following attributes: 'id' of type str.
+The class 'dDL::Comment' has the following attributes: 'string' of type str; 'columnId' of type str.
+The class 'dDL::Unique::key' has no attributes.
+The class 'dDL::Key' has no attributes.
+The class 'Definition' has no attributes.
+The class 'dDL::Colname' has the following attributes: 'id' of type str.
+The class 'dDL::Definition' has no attributes.
+The class 'dDL::TYPE' has the following attributes: 'id' of type str.
+The class 'dDL::Alter::table' has the following attributes: 'enable' of type str; 'id' of type str; 'add' of type str.
+The class 'dDL::Foreign::key' has no attributes.
+The class 'dDL::Column' has the following attributes: 'number' of type int; 'id' of type str.
+The class 'dDL::Create::table' has the following attributes: 'id' of type str.
+The class 'dDL::Constraint' has the following attributes: 'id' of type str.
+The class 'Key' has no attributes.
+The class 'dDL::Data::definition' has no attributes.
+'dDL::Comment' is a specialization of 'Definition'.
+'dDL::Create::sequence' is a specialization of 'Definition'.
+'dDL::Primary::key' is a specialization of 'Key'.
+'dDL::Unique::key' is a specialization of 'Key'.
+'dDL::Foreign::key' is a specialization of 'Key'.
+'dDL::Alter::table' is a specialization of 'Definition'.
+'dDL::Create::table' is a specialization of 'Definition'.
+'dDL::Colname' (role 'dDL_Colname21', cardinality 0..*) is associated with 'dDL::Key' (role 'dDL_Key20', cardinality 0..*).
+'dDL::ISNULL' (role 'dDL_ISNULL', cardinality 0..*) is associated with 'dDL::Column' (role 'dDL_Column7', cardinality 0..*).
+'dDL::Sequence::options' (role 'dDL_Sequence_options', cardinality 0..*) is associated with 'dDL::Create::sequence' (role 'dDL_Create_sequence', cardinality 0..*).
+'dDL::Definition' (role 'dDL_Definition', cardinality 0..*) is associated with 'dDL::Data::definition' (role 'dDL_Data_definition', cardinality 0..*).
+'dDL::Alter::table' (role 'dDL_Alter_table', cardinality 0..*) is associated with 'dDL::Tabname' (role 'dDL_Tabname', cardinality 0..*).
+'dDL::Create::table' (role 'dDL_Create_table3', cardinality 0..*) is associated with 'dDL::Constraint' (role 'dDL_Constraint', cardinality 0..*).
+'dDL::Tabname' (role 'dDL_Tabname23', cardinality 0..*) is associated with 'dDL::Foreign::key' (role 'dDL_Foreign_key', cardinality 0..*).
+'dDL::TYPE' (role 'dDL_TYPE', cardinality 0..*) is associated with 'dDL::Column' (role 'dDL_Column5', cardinality 0..*).
+'dDL::Tabname' (role 'dDL_Tabname13', cardinality 0..*) is associated with 'dDL::Comment' (role 'dDL_Comment', cardinality 0..*).
+'dDL::Constraint' (role 'dDL_Constraint11', cardinality 0..*) is associated with 'dDL::Alter::table' (role 'dDL_Alter_table10', cardinality 0..*).
+'dDL::Column' (role 'dDL_Column', cardinality 0..*) is associated with 'dDL::Create::table' (role 'dDL_Create_table', cardinality 0..*).
+'dDL::Constraint' (role 'dDL_Constraint18', cardinality 0..*) is associated with 'dDL::Key' (role 'dDL_Key', cardinality 0..*).
+'dDL::Colname' (role 'dDL_Colname', cardinality 0..*) is associated with 'dDL::Comment' (role 'dDL_Comment15', cardinality 0..*).

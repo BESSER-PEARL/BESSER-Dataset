@@ -1,0 +1,82 @@
+The model has 33 class(es).
+The class 'remes::ToCompositeModeEdge' has no attributes.
+The class 'remes::EntryConditionalTopEdge' has no attributes.
+The class 'InitEdge' has no attributes.
+The class 'remes::FromCompositeModeInitEdge' has no attributes.
+The class 'ToSubModeEdge' has no attributes.
+The class 'Edge' has no attributes.
+The class 'remes::ToSubModeEdge' has no attributes.
+The class 'remes::FromConditionalConnectorEdge' has no attributes.
+The class 'FromConditionalConnectorEdge' has no attributes.
+The class 'remes::ExitEdge' has no attributes.
+The class 'remes::ToConditionalConnectorEdge' has no attributes.
+The class 'ToConditionalConnectorEdge' has no attributes.
+The class 'remes::EntryConditionalSubEdge' has no attributes.
+The class 'remes::FromSubModeEdge' has no attributes.
+The class 'remes::ExitConditionalTopEdge' has no attributes.
+The class 'remes::ExitConditionalSubEdge' has no attributes.
+The class 'remes::FromCompositeModeEdge' has no attributes.
+The class 'FromSubModeEdge' has no attributes.
+The class 'remes::CompositeMode' has no attributes.
+The class 'remes::SubMode' has the following attributes: 'resourceClassC' of type str; 'resourceClassA' of type str; 'resourceClassB' of type str; 'invariant' of type str; 'isUrgent' of type str.
+The class 'remes::EntryInitEdge' has no attributes.
+The class 'remes::ConditionalConnector' has the following attributes: 'name' of type str.
+The class 'Mode' has no attributes.
+The class 'remes::Edge' has the following attributes: 'actionBody' of type str; 'actionGuard' of type str.
+The class 'remes::Mode' has the following attributes: 'name' of type str; 'initialization' of type str.
+The class 'FromCompositeModeEdge' has no attributes.
+The class 'remes::InternalEdge' has no attributes.
+The class 'FromCompositeModeInitEdge' has no attributes.
+The class 'remes::EntryConditionalTopInitEdge' has no attributes.
+The class 'remes::InitEdge' has the following attributes: 'initialization' of type str.
+The class 'ToCompositeModeEdge' has no attributes.
+The class 'remes::EntryEdge' has no attributes.
+The class 'remes::RemesDiagram' has no attributes.
+'remes::EntryConditionalSubEdge' is a specialization of 'Edge'.
+'remes::ExitConditionalSubEdge' is a specialization of 'FromSubModeEdge'.
+'remes::InternalEdge' is a specialization of 'Edge'.
+'remes::EntryEdge' is a specialization of 'ToSubModeEdge'.
+'remes::EntryInitEdge' is a specialization of 'ToSubModeEdge'.
+'remes::SubMode' is a specialization of 'Mode'.
+'remes::EntryConditionalTopInitEdge' is a specialization of 'FromCompositeModeInitEdge'.
+'remes::ExitEdge' is a specialization of 'Edge'.
+'remes::EntryEdge' is a specialization of 'FromCompositeModeEdge'.
+'remes::EntryConditionalTopInitEdge' is a specialization of 'InitEdge'.
+'remes::EntryConditionalTopEdge' is a specialization of 'FromCompositeModeEdge'.
+'remes::EntryConditionalTopInitEdge' is a specialization of 'ToConditionalConnectorEdge'.
+'remes::EntryConditionalSubEdge' is a specialization of 'FromConditionalConnectorEdge'.
+'remes::EntryConditionalTopEdge' is a specialization of 'ToConditionalConnectorEdge'.
+'remes::EntryConditionalTopEdge' is a specialization of 'Edge'.
+'remes::ExitEdge' is a specialization of 'ToCompositeModeEdge'.
+'remes::EntryInitEdge' is a specialization of 'InitEdge'.
+'remes::EntryInitEdge' is a specialization of 'FromCompositeModeInitEdge'.
+'remes::InternalEdge' is a specialization of 'ToSubModeEdge'.
+'remes::EntryConditionalSubEdge' is a specialization of 'ToSubModeEdge'.
+'remes::ExitConditionalTopEdge' is a specialization of 'FromConditionalConnectorEdge'.
+'remes::ExitConditionalTopEdge' is a specialization of 'ToCompositeModeEdge'.
+'remes::ExitConditionalSubEdge' is a specialization of 'ToConditionalConnectorEdge'.
+'remes::ExitEdge' is a specialization of 'FromSubModeEdge'.
+'remes::EntryEdge' is a specialization of 'Edge'.
+'remes::ExitConditionalSubEdge' is a specialization of 'Edge'.
+'remes::InternalEdge' is a specialization of 'FromSubModeEdge'.
+'remes::CompositeMode' is a specialization of 'Mode'.
+'remes::ExitConditionalTopEdge' is a specialization of 'Edge'.
+'remes::CompositeMode' (role 'parent', cardinality 0..*) is associated with 'remes::SubMode' (role 'SubMode', cardinality 0..*).
+'remes::ConditionalConnector' (role 'ConditionalConnector17', cardinality 0..*) is associated with 'remes::FromConditionalConnectorEdge' (role 'exitEdges', cardinality 0..*).
+'remes::Mode' (role 'remes_Mode', cardinality 0..*) is associated with 'remes::RemesDiagram' (role 'remes_RemesDiagram', cardinality 0..*).
+'remes::ToSubModeEdge' (role 'entryEdges34', cardinality 0..*) is associated with 'remes::SubMode' (role 'SubMode35', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode30', cardinality 0..*) is associated with 'remes::ToCompositeModeEdge' (role 'exitEdges29', cardinality 0..*).
+'remes::FromSubModeEdge' (role 'exitEdges19', cardinality 0..*) is associated with 'remes::SubMode' (role 'SubMode20', cardinality 0..*).
+'remes::FromCompositeModeInitEdge' (role 'initEdge', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'CompositeMode15', cardinality 0..*).
+'remes::ConditionalConnector' (role 'ConditionalConnector32', cardinality 0..*) is associated with 'remes::ToConditionalConnectorEdge' (role 'entryEdges', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode', cardinality 0..*) is associated with 'remes::ConditionalConnector' (role 'conditionalConnectors', cardinality 0..*).
+'remes::FromCompositeModeInitEdge' (role 'FromCompositeModeInitEdge', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'connectFrom', cardinality 0..*).
+'remes::SubMode' (role 'connectFrom25', cardinality 0..*) is associated with 'remes::FromSubModeEdge' (role 'FromSubModeEdge', cardinality 0..*).
+'remes::SubMode' (role 'connectTo23', cardinality 0..*) is associated with 'remes::ToSubModeEdge' (role 'ToSubModeEdge', cardinality 0..*).
+'remes::SubMode' (role 'subModes', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'CompositeMode27', cardinality 0..*).
+'remes::FromCompositeModeEdge' (role 'FromCompositeModeEdge', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'connectFrom3', cardinality 0..*).
+'remes::ToCompositeModeEdge' (role 'ToCompositeModeEdge', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'connectTo', cardinality 0..*).
+'remes::ConditionalConnector' (role 'ConditionalConnector', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'parent6', cardinality 0..*).
+'remes::ToConditionalConnectorEdge' (role 'ToConditionalConnectorEdge', cardinality 0..*) is associated with 'remes::ConditionalConnector' (role 'connectTo8', cardinality 0..*).
+'remes::ConditionalConnector' (role 'connectFrom10', cardinality 0..*) is associated with 'remes::FromConditionalConnectorEdge' (role 'FromConditionalConnectorEdge', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode13', cardinality 0..*) is associated with 'remes::FromCompositeModeEdge' (role 'entryEdge', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'table::NamedElement' has the following attributes: 'name' of type str.
+The class 'table::Table' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'table::Column' has the following attributes: 'type' of type str.
+'table::Table' is a specialization of 'NamedElement'.
+'table::Column' is a specialization of 'NamedElement'.
+'table::Table' (role 'table_Table', cardinality 0..*) is associated with 'table::Column' (role 'table_Column', cardinality 0..*).
+'table::Table' (role 'table_Table2', cardinality 0..*) is associated with 'table::Column' (role 'table_Column3', cardinality 0..*).

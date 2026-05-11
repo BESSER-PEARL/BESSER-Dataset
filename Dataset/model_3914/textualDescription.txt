@@ -1,0 +1,195 @@
+The model has 88 class(es).
+The class 'composition::Identifier' has no attributes.
+The class 'cm::repository::Parameter' has the following attributes: 'name' of type str.
+The class 'ProvidedRole' has no attributes.
+The class 'InterfaceProvidingEntity' has no attributes.
+The class 'DelegationConnector' has no attributes.
+The class 'composition::NamedElement' has no attributes.
+The class 'Role' has no attributes.
+The class 'cm::seff::Automaton' has no attributes.
+The class 'cm::composition::Entity' has no attributes.
+The class 'RepositoryComponent' has no attributes.
+The class 'RequiredRole' has no attributes.
+The class 'cm::composition::InterfaceRequiringEntity' has no attributes.
+The class 'cm::repository::ProvidedRole' has no attributes.
+The class 'cm::composition::AssemblyConnector' has no attributes.
+The class 'cm::repository::ComponentType' has no attributes.
+The class 'cm::composition::DelegationConnector' has no attributes.
+The class 'Repository' has no attributes.
+The class 'cm::composition::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'composition::ComposedStructure' has no attributes.
+The class 'ServiceEffectSpecification' has no attributes.
+The class 'cm::composition::NamedElement' has the following attributes: 'entityName' of type str.
+The class 'cm::composition::ComposedProvidingRequiringEntity' has no attributes.
+The class 'cm::seff::InternalAction' has no attributes.
+The class 'cm::composition::ProvidedDelegationConnector' has no attributes.
+The class 'ComponentType' has no attributes.
+The class 'cm::repository::CompositeDataType' has no attributes.
+The class 'cm::repository::Signature' has no attributes.
+The class 'seff::ServiceEffectSpecification' has no attributes.
+The class 'cm::seff::SimpleBehaviorSpecification' has no attributes.
+The class 'cm::composition::AssemblyContext' has no attributes.
+The class 'cm::repository::Interface' has no attributes.
+The class 'cm::composition::RequiredDelegationConnector' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'cm::repository::RepositoryComponent' has no attributes.
+The class 'InterfaceProvidingRequiringEntity' has no attributes.
+The class 'repository::RepositoryComponent' has no attributes.
+The class 'cm::composition::SubSystem' has no attributes.
+The class 'cm::repository::ExceptionType' has the following attributes: 'name' of type str; 'message' of type str.
+The class 'InterfaceRequiringEntity' has no attributes.
+The class 'cm::repository::RequiredRole' has no attributes.
+The class 'composition::InterfaceProvidingEntity' has no attributes.
+The class 'cm::composition::System' has no attributes.
+The class 'cm::repository::CollectionDataType' has no attributes.
+The class 'cm::composition::ComposedStructure' has no attributes.
+The class 'ComponentTypeImplementation' has no attributes.
+The class 'cm::seff::AbstractAction' has no attributes.
+The class 'repository::ComponentTypeImplementation' has no attributes.
+The class 'cm::composition::InterfaceProvidingEntity' has no attributes.
+The class 'composition::ComposedProvidingRequiringEntity' has no attributes.
+The class 'cm::repository::BasicComponent' has no attributes.
+The class 'cm::repository::CompositeComponent' has no attributes.
+The class 'cm::seff::StartAction' has no attributes.
+The class 'composition::InterfaceRequiringEntity' has no attributes.
+The class 'cm::composition::Identifier' has the following attributes: 'id' of type str.
+The class 'cm::seff::ServiceEffectSpecification' has no attributes.
+The class 'cm::repository::Repository' has the following attributes: 'description' of type str.
+The class 'Signature' has no attributes.
+The class 'repository::DataType' has no attributes.
+The class 'cm::seff::ExternalCallAction' has no attributes.
+The class 'cm::seff::StopAction' has no attributes.
+The class 'cm::repository::DataType' has no attributes.
+The class 'CompositeDataType' has no attributes.
+The class 'composition::Entity' has no attributes.
+The class 'seff::Automaton' has no attributes.
+The class 'Connector' has no attributes.
+The class 'cm::repository::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'cm::seff::InternalBehaviour' has no attributes.
+The class 'BranchAction' has no attributes.
+The class 'Entity' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'InternalBehaviour' has no attributes.
+The class 'cm::repository::InnerDeclaration' has no attributes.
+The class 'BasicComponent' has no attributes.
+The class 'InnerDeclaration' has no attributes.
+The class 'cm::repository::ComponentTypeImplementation' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'composition::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'ComposedStructure' has no attributes.
+The class 'cm::seff::BranchAction' has no attributes.
+The class 'ProbabilisticBranchTransition' has no attributes.
+The class 'AssemblyContext' has no attributes.
+The class 'DataType' has no attributes.
+The class 'cm::composition::Connector' has no attributes.
+The class 'cm::repository::Role' has no attributes.
+The class 'ExceptionType' has no attributes.
+The class 'cm::seff::ProbabilisticBranchTransition' has the following attributes: 'branchProbability' of type float.
+The class 'Automaton' has no attributes.
+The class 'Interface' has no attributes.
+The enumeration 'PrimitiveType' has the following literals: 'STRING', 'BYTE', 'INT', 'DOUBLE', 'LONG', 'CHAR', 'BOOL'.
+'cm::repository::ComponentTypeImplementation' is a specialization of 'RepositoryComponent'.
+'cm::seff::StopAction' is a specialization of 'AbstractAction'.
+'cm::composition::Entity' is a specialization of 'composition::NamedElement'.
+'cm::composition::ComposedProvidingRequiringEntity' is a specialization of 'composition::InterfaceProvidingRequiringEntity'.
+'cm::repository::CollectionDataType' is a specialization of 'repository::DataType'.
+'cm::seff::ProbabilisticBranchTransition' is a specialization of 'composition::Entity'.
+'cm::repository::BasicComponent' is a specialization of 'ComponentTypeImplementation'.
+'cm::repository::CompositeDataType' is a specialization of 'composition::Entity'.
+'cm::composition::ComposedProvidingRequiringEntity' is a specialization of 'composition::ComposedStructure'.
+'cm::seff::SimpleBehaviorSpecification' is a specialization of 'seff::ServiceEffectSpecification'.
+'cm::repository::Interface' is a specialization of 'Entity'.
+'cm::repository::Repository' is a specialization of 'Entity'.
+'cm::seff::BranchAction' is a specialization of 'AbstractAction'.
+'cm::repository::Role' is a specialization of 'Entity'.
+'cm::repository::Signature' is a specialization of 'Entity'.
+'cm::seff::StartAction' is a specialization of 'AbstractAction'.
+'cm::repository::CompositeDataType' is a specialization of 'repository::DataType'.
+'cm::composition::RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+'cm::seff::InternalAction' is a specialization of 'AbstractAction'.
+'cm::composition::AssemblyConnector' is a specialization of 'Connector'.
+'cm::composition::SubSystem' is a specialization of 'repository::RepositoryComponent'.
+'cm::seff::SimpleBehaviorSpecification' is a specialization of 'seff::Automaton'.
+'cm::composition::ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+'cm::composition::Entity' is a specialization of 'composition::Identifier'.
+'cm::repository::CompositeComponent' is a specialization of 'composition::ComposedProvidingRequiringEntity'.
+'cm::composition::InterfaceRequiringEntity' is a specialization of 'Entity'.
+'cm::composition::SubSystem' is a specialization of 'composition::ComposedProvidingRequiringEntity'.
+'cm::repository::CompositeComponent' is a specialization of 'repository::ComponentTypeImplementation'.
+'cm::composition::System' is a specialization of 'composition::ComposedProvidingRequiringEntity'.
+'cm::repository::CollectionDataType' is a specialization of 'composition::Entity'.
+'cm::repository::PrimitiveDataType' is a specialization of 'DataType'.
+'cm::repository::InnerDeclaration' is a specialization of 'NamedElement'.
+'cm::composition::System' is a specialization of 'composition::Entity'.
+'cm::composition::ComposedStructure' is a specialization of 'Entity'.
+'cm::composition::AssemblyContext' is a specialization of 'Entity'.
+'cm::composition::InterfaceProvidingRequiringEntity' is a specialization of 'composition::InterfaceProvidingEntity'.
+'cm::composition::Connector' is a specialization of 'Entity'.
+'cm::composition::DelegationConnector' is a specialization of 'Connector'.
+'cm::seff::ProbabilisticBranchTransition' is a specialization of 'seff::Automaton'.
+'cm::composition::InterfaceProvidingEntity' is a specialization of 'Entity'.
+'cm::repository::ProvidedRole' is a specialization of 'Role'.
+'cm::repository::RequiredRole' is a specialization of 'Role'.
+'cm::composition::InterfaceProvidingRequiringEntity' is a specialization of 'composition::InterfaceRequiringEntity'.
+'cm::seff::AbstractAction' is a specialization of 'Entity'.
+'cm::seff::ExternalCallAction' is a specialization of 'AbstractAction'.
+'cm::repository::ComponentType' is a specialization of 'RepositoryComponent'.
+'cm::repository::RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+'cm::repository::Repository' (role 'repository11', cardinality 0..*) is associated with 'Interface' (role 'Interface12', cardinality 0..*).
+'Connector' (role 'Connector', cardinality 0..*) is associated with 'cm::composition::ComposedStructure' (role 'parentStructure43', cardinality 0..*).
+'cm::composition::AssemblyConnector' (role 'cm_composition_AssemblyConnector61', cardinality 0..*) is associated with 'AssemblyContext' (role 'AssemblyContext62', cardinality 0..*).
+'cm::repository::Signature' (role 'signature', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'ComponentType' (role 'ComponentType', cardinality 0..*) is associated with 'cm::repository::ComponentTypeImplementation' (role 'cm_repository_ComponentTypeImplementation', cardinality 0..*).
+'Interface' (role 'Interface28', cardinality 0..*) is associated with 'cm::repository::Signature' (role 'signatures', cardinality 0..*).
+'cm::composition::AssemblyConnector' (role 'cm_composition_AssemblyConnector67', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole68', cardinality 0..*).
+'Repository' (role 'Repository8', cardinality 0..*) is associated with 'cm::repository::DataType' (role 'dataTypes', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction89', cardinality 0..*) is associated with 'cm::seff::AbstractAction' (role 'predecessor', cardinality 0..*).
+'cm::repository::Interface' (role 'interface', cardinality 0..*) is associated with 'Signature' (role 'Signature21', cardinality 0..*).
+'cm::composition::ComposedStructure' (role 'parentStructure', cardinality 0..*) is associated with 'AssemblyContext' (role 'AssemblyContext', cardinality 0..*).
+'ProbabilisticBranchTransition' (role 'ProbabilisticBranchTransition', cardinality 0..*) is associated with 'cm::seff::InternalBehaviour' (role 'cm_seff_InternalBehaviour', cardinality 0..*).
+'cm::repository::CompositeDataType' (role 'cm_repository_CompositeDataType', cardinality 0..*) is associated with 'CompositeDataType' (role 'CompositeDataType', cardinality 0..*).
+'cm::repository::Signature' (role 'cm_repository_Signature25', cardinality 0..*) is associated with 'DataType' (role 'DataType26', cardinality 0..*).
+'cm::repository::Repository' (role 'repository', cardinality 0..*) is associated with 'RepositoryComponent' (role 'RepositoryComponent', cardinality 0..*).
+'ProbabilisticBranchTransition' (role 'ProbabilisticBranchTransition100', cardinality 0..*) is associated with 'cm::seff::BranchAction' (role 'branchAction', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole65', cardinality 0..*) is associated with 'cm::composition::AssemblyConnector' (role 'cm_composition_AssemblyConnector64', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction', cardinality 0..*) is associated with 'cm::seff::InternalBehaviour' (role 'internalBehaviour', cardinality 0..*).
+'Signature' (role 'Signature95', cardinality 0..*) is associated with 'cm::seff::ExternalCallAction' (role 'cm_seff_ExternalCallAction', cardinality 0..*).
+'cm::composition::InterfaceRequiringEntity' (role 'requiringEntity', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole76', cardinality 0..*).
+'cm::repository::InnerDeclaration' (role 'innerDeclaration', cardinality 0..*) is associated with 'CompositeDataType' (role 'CompositeDataType39', cardinality 0..*).
+'cm::composition::ProvidedDelegationConnector' (role 'cm_composition_ProvidedDelegationConnector', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole', cardinality 0..*).
+'Signature' (role 'Signature', cardinality 0..*) is associated with 'cm::repository::Parameter' (role 'parameters', cardinality 0..*).
+'ServiceEffectSpecification' (role 'ServiceEffectSpecification', cardinality 0..*) is associated with 'cm::repository::BasicComponent' (role 'basicComponent', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole', cardinality 0..*) is associated with 'cm::composition::RequiredDelegationConnector' (role 'cm_composition_RequiredDelegationConnector', cardinality 0..*).
+'BasicComponent' (role 'BasicComponent', cardinality 0..*) is associated with 'cm::seff::ServiceEffectSpecification' (role 'serviceEffectSpecifications', cardinality 0..*).
+'cm::repository::RequiredRole' (role 'cm_repository_RequiredRole', cardinality 0..*) is associated with 'Interface' (role 'Interface31', cardinality 0..*).
+'DataType' (role 'DataType33', cardinality 0..*) is associated with 'cm::repository::CollectionDataType' (role 'cm_repository_CollectionDataType', cardinality 0..*).
+'BranchAction' (role 'BranchAction', cardinality 0..*) is associated with 'cm::seff::ProbabilisticBranchTransition' (role 'branchTransitions', cardinality 0..*).
+'cm::composition::AssemblyContext' (role 'cm_composition_AssemblyContext', cardinality 0..*) is associated with 'RepositoryComponent' (role 'RepositoryComponent72', cardinality 0..*).
+'ExceptionType' (role 'ExceptionType', cardinality 0..*) is associated with 'cm::repository::Signature' (role 'cm_repository_Signature', cardinality 0..*).
+'cm::composition::Connector' (role 'connectors', cardinality 0..*) is associated with 'ComposedStructure' (role 'ComposedStructure', cardinality 0..*).
+'cm::repository::Interface' (role 'cm_repository_Interface', cardinality 0..*) is associated with 'Interface' (role 'Interface17', cardinality 0..*).
+'cm::composition::AssemblyConnector' (role 'cm_composition_AssemblyConnector', cardinality 0..*) is associated with 'AssemblyContext' (role 'AssemblyContext59', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction87', cardinality 0..*) is associated with 'cm::seff::AbstractAction' (role 'successor', cardinality 0..*).
+'Repository' (role 'Repository19', cardinality 0..*) is associated with 'cm::repository::Interface' (role 'interfaces', cardinality 0..*).
+'cm::composition::InterfaceProvidingEntity' (role 'providingEntity', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole74', cardinality 0..*).
+'InnerDeclaration' (role 'InnerDeclaration', cardinality 0..*) is associated with 'cm::repository::CompositeDataType' (role 'compositeDataType', cardinality 0..*).
+'Repository' (role 'Repository', cardinality 0..*) is associated with 'cm::repository::RepositoryComponent' (role 'components', cardinality 0..*).
+'cm::repository::ProvidedRole' (role 'cm_repository_ProvidedRole', cardinality 0..*) is associated with 'Interface' (role 'Interface', cardinality 0..*).
+'Automaton' (role 'Automaton', cardinality 0..*) is associated with 'cm::seff::AbstractAction' (role 'steps93', cardinality 0..*).
+'AssemblyContext' (role 'AssemblyContext50', cardinality 0..*) is associated with 'cm::composition::ProvidedDelegationConnector' (role 'cm_composition_ProvidedDelegationConnector49', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole54', cardinality 0..*) is associated with 'cm::composition::RequiredDelegationConnector' (role 'cm_composition_RequiredDelegationConnector53', cardinality 0..*).
+'ProbabilisticBranchTransition' (role 'ProbabilisticBranchTransition103', cardinality 0..*) is associated with 'cm::seff::SimpleBehaviorSpecification' (role 'cm_seff_SimpleBehaviorSpecification', cardinality 0..*).
+'cm::repository::ProvidedRole' (role 'providedRoles', cardinality 0..*) is associated with 'InterfaceProvidingEntity' (role 'InterfaceProvidingEntity', cardinality 0..*).
+'cm::seff::ServiceEffectSpecification' (role 'cm_seff_ServiceEffectSpecification', cardinality 0..*) is associated with 'Signature' (role 'Signature78', cardinality 0..*).
+'DataType' (role 'DataType37', cardinality 0..*) is associated with 'cm::repository::InnerDeclaration' (role 'cm_repository_InnerDeclaration', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole98', cardinality 0..*) is associated with 'cm::seff::ExternalCallAction' (role 'cm_seff_ExternalCallAction97', cardinality 0..*).
+'cm::repository::Repository' (role 'repository14', cardinality 0..*) is associated with 'DataType' (role 'DataType15', cardinality 0..*).
+'AssemblyContext' (role 'AssemblyContext57', cardinality 0..*) is associated with 'cm::composition::RequiredDelegationConnector' (role 'cm_composition_RequiredDelegationConnector56', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole47', cardinality 0..*) is associated with 'cm::composition::ProvidedDelegationConnector' (role 'cm_composition_ProvidedDelegationConnector46', cardinality 0..*).
+'cm::repository::RequiredRole' (role 'requiredRoles', cardinality 0..*) is associated with 'InterfaceRequiringEntity' (role 'InterfaceRequiringEntity', cardinality 0..*).
+'ComposedStructure' (role 'ComposedStructure70', cardinality 0..*) is associated with 'cm::composition::AssemblyContext' (role 'assemblyContexts', cardinality 0..*).
+'InternalBehaviour' (role 'InternalBehaviour91', cardinality 0..*) is associated with 'cm::seff::AbstractAction' (role 'steps', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'cm::repository::Parameter' (role 'cm_repository_Parameter', cardinality 0..*).
+'ServiceEffectSpecification' (role 'ServiceEffectSpecification83', cardinality 0..*) is associated with 'cm::seff::InternalBehaviour' (role 'internalBehaviours', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction105', cardinality 0..*) is associated with 'cm::seff::Automaton' (role 'specification', cardinality 0..*).
+'InternalBehaviour' (role 'InternalBehaviour', cardinality 0..*) is associated with 'cm::seff::ServiceEffectSpecification' (role 'serviceEffectSpecifications81', cardinality 0..*).

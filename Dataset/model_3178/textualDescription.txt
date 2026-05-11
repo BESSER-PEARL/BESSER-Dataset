@@ -1,0 +1,78 @@
+The model has 27 class(es).
+The class 'tym::Block' has no attributes.
+The class 'tym::StringConstant' has the following attributes: 'value' of type str.
+The class 'tym::Plus' has no attributes.
+The class 'tym::IntConstant' has the following attributes: 'value' of type int.
+The class 'tym::EObject' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'tym::VariableRef' has no attributes.
+The class 'tym::FunctionBlock' has no attributes.
+The class 'tym::BoolConstant' has the following attributes: 'value' of type str.
+The class 'tym::And' has no attributes.
+The class 'tym::Comparison' has the following attributes: 'op' of type str.
+The class 'tym::Model' has no attributes.
+The class 'tym::Equality' has the following attributes: 'op' of type str.
+The class 'tym::PrintStatement' has no attributes.
+The class 'tym::TestStatement' has no attributes.
+The class 'tym::Minus' has no attributes.
+The class 'tym::Or' has no attributes.
+The class 'tym::AbstractElement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'tym::FunctionCall' has no attributes.
+The class 'tym::Not' has no attributes.
+The class 'tym::Expression' has no attributes.
+The class 'tym::LoopStatement' has no attributes.
+The class 'tym::Return' has no attributes.
+The class 'tym::Function' has the following attributes: 'return_' of type str; 'name' of type str.
+The class 'tym::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'tym::Variable' has the following attributes: 'vartype' of type str; 'name' of type str.
+'tym::And' is a specialization of 'Expression'.
+'tym::Equality' is a specialization of 'Expression'.
+'tym::Minus' is a specialization of 'Expression'.
+'tym::Not' is a specialization of 'Expression'.
+'tym::Comparison' is a specialization of 'Expression'.
+'tym::Or' is a specialization of 'Expression'.
+'tym::Return' is a specialization of 'AbstractElement'.
+'tym::BoolConstant' is a specialization of 'Expression'.
+'tym::StringConstant' is a specialization of 'Expression'.
+'tym::PrintStatement' is a specialization of 'AbstractElement'.
+'tym::TestStatement' is a specialization of 'AbstractElement'.
+'tym::LoopStatement' is a specialization of 'AbstractElement'.
+'tym::IntConstant' is a specialization of 'Expression'.
+'tym::VariableRef' is a specialization of 'Expression'.
+'tym::Plus' is a specialization of 'Expression'.
+'tym::FunctionCall' is a specialization of 'AbstractElement'.
+'tym::MulOrDiv' is a specialization of 'Expression'.
+'tym::Variable' is a specialization of 'AbstractElement'.
+'tym::AbstractElement' (role 'tym_AbstractElement23', cardinality 0..*) is associated with 'tym::FunctionBlock' (role 'tym_FunctionBlock22', cardinality 0..*).
+'tym::EObject' (role 'tym_EObject13', cardinality 0..*) is associated with 'tym::TestStatement' (role 'tym_TestStatement', cardinality 0..*).
+'tym::Or' (role 'tym_Or', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression36', cardinality 0..*).
+'tym::TestStatement' (role 'tym_TestStatement15', cardinality 0..*) is associated with 'tym::Block' (role 'tym_Block', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression49', cardinality 0..*) is associated with 'tym::Equality' (role 'tym_Equality48', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression71', cardinality 0..*) is associated with 'tym::Not' (role 'tym_Not', cardinality 0..*).
+'tym::Variable' (role 'tym_Variable', cardinality 0..*) is associated with 'tym::Variable' (role 'tym_Variable1', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression', cardinality 0..*) is associated with 'tym::FunctionCall' (role 'tym_FunctionCall34', cardinality 0..*).
+'tym::Function' (role 'tym_Function', cardinality 0..*) is associated with 'tym::Variable' (role 'tym_Variable7', cardinality 0..*).
+'tym::Function' (role 'tym_Function9', cardinality 0..*) is associated with 'tym::FunctionBlock' (role 'tym_FunctionBlock', cardinality 0..*).
+'tym::EObject' (role 'tym_EObject25', cardinality 0..*) is associated with 'tym::LoopStatement' (role 'tym_LoopStatement', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression69', cardinality 0..*) is associated with 'tym::MulOrDiv' (role 'tym_MulOrDiv68', cardinality 0..*).
+'tym::EObject' (role 'tym_EObject11', cardinality 0..*) is associated with 'tym::PrintStatement' (role 'tym_PrintStatement', cardinality 0..*).
+'tym::Minus' (role 'tym_Minus', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression61', cardinality 0..*).
+'tym::Plus' (role 'tym_Plus', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression56', cardinality 0..*).
+'tym::Plus' (role 'tym_Plus58', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression59', cardinality 0..*).
+'tym::Return' (role 'tym_Return', cardinality 0..*) is associated with 'tym::EObject' (role 'tym_EObject30', cardinality 0..*).
+'tym::Or' (role 'tym_Or38', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression39', cardinality 0..*).
+'tym::Block' (role 'tym_Block20', cardinality 0..*) is associated with 'tym::AbstractElement' (role 'tym_AbstractElement', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression66', cardinality 0..*) is associated with 'tym::MulOrDiv' (role 'tym_MulOrDiv', cardinality 0..*).
+'tym::Minus' (role 'tym_Minus63', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression64', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression51', cardinality 0..*) is associated with 'tym::Comparison' (role 'tym_Comparison', cardinality 0..*).
+'tym::Function' (role 'tym_Function32', cardinality 0..*) is associated with 'tym::FunctionCall' (role 'tym_FunctionCall', cardinality 0..*).
+'tym::TestStatement' (role 'tym_TestStatement17', cardinality 0..*) is associated with 'tym::Block' (role 'tym_Block18', cardinality 0..*).
+'tym::LoopStatement' (role 'tym_LoopStatement27', cardinality 0..*) is associated with 'tym::Block' (role 'tym_Block28', cardinality 0..*).
+'tym::Expression' (role 'tym_Expression54', cardinality 0..*) is associated with 'tym::Comparison' (role 'tym_Comparison53', cardinality 0..*).
+'tym::EObject' (role 'tym_EObject', cardinality 0..*) is associated with 'tym::Model' (role 'tym_Model', cardinality 0..*).
+'tym::VariableRef' (role 'tym_VariableRef', cardinality 0..*) is associated with 'tym::Variable' (role 'tym_Variable73', cardinality 0..*).
+'tym::And' (role 'tym_And43', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression44', cardinality 0..*).
+'tym::EObject' (role 'tym_EObject5', cardinality 0..*) is associated with 'tym::Variable' (role 'tym_Variable4', cardinality 0..*).
+'tym::Equality' (role 'tym_Equality', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression46', cardinality 0..*).
+'tym::And' (role 'tym_And', cardinality 0..*) is associated with 'tym::Expression' (role 'tym_Expression41', cardinality 0..*).

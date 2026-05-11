@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class behavioral_elements_common_behavior_CallAction extends Action {
+
+
+
+
+    public behavioral_elements_common_behavior_CallAction(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

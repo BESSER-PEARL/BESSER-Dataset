@@ -1,0 +1,185 @@
+The model has 58 class(es).
+The class 'debugSeq::DapSwjPins' has no attributes.
+The class 'debugSeq::Comparison' has the following attributes: 'op' of type str.
+The class 'debugSeq::StringConstant' has the following attributes: 'value' of type str.
+The class 'debugSeq::DebugSeqModel' has no attributes.
+The class 'debugSeq::Statement' has no attributes.
+The class 'debugSeq::Ternary' has no attributes.
+The class 'debugSeq::QueryValue' has the following attributes: 'message' of type str.
+The class 'debugSeq::Assignment' has the following attributes: 'op' of type str.
+The class 'debugSeq::VariableRef' has no attributes.
+The class 'debugSeq::Block' has the following attributes: 'atomic' of type str.
+The class 'Parameter' has no attributes.
+The class 'debugSeq::Rem' has no attributes.
+The class 'CodeBlock' has no attributes.
+The class 'debugSeq::Equality' has the following attributes: 'op' of type str.
+The class 'debugSeq::Expression' has no attributes.
+The class 'debugSeq::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'debugSeq::BitAnd' has no attributes.
+The class 'debugSeq::Div' has no attributes.
+The class 'debugSeq::Read16' has no attributes.
+The class 'debugSeq::ReadDP' has no attributes.
+The class 'debugSeq::IntConstant' has the following attributes: 'value' of type str.
+The class 'debugSeq::DebugVars' has the following attributes: 'pname' of type str; 'configfile' of type str; 'version' of type str.
+The class 'debugSeq::ReadAP' has no attributes.
+The class 'debugSeq::Write32' has no attributes.
+The class 'debugSeq::DapJtagSequence' has no attributes.
+The class 'debugSeq::DapWriteABORT' has no attributes.
+The class 'debugSeq::LoadDebugInfo' has the following attributes: 'path' of type str.
+The class 'debugSeq::Control' has the following attributes: 'timeout' of type str.
+The class 'debugSeq::Write8' has no attributes.
+The class 'debugSeq::Minus' has no attributes.
+The class 'debugSeq::Shift' has the following attributes: 'op' of type str.
+The class 'debugSeq::CodeBlock' has the following attributes: 'info' of type str.
+The class 'debugSeq::BitNot' has no attributes.
+The class 'debugSeq::Read64' has no attributes.
+The class 'debugSeq::WriteAP' has no attributes.
+The class 'debugSeq::DapSwjClock' has no attributes.
+The class 'debugSeq::SequenceCall' has the following attributes: 'seqname' of type str.
+The class 'debugSeq::Message' has the following attributes: 'format' of type str.
+The class 'debugSeq::Query' has the following attributes: 'message' of type str.
+The class 'debugSeq::Write64' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'debugSeq::Parameter' has no attributes.
+The class 'debugSeq::WriteDP' has no attributes.
+The class 'debugSeq::Mul' has no attributes.
+The class 'debugSeq::And' has no attributes.
+The class 'debugSeq::Read32' has no attributes.
+The class 'debugSeq::BitOr' has no attributes.
+The class 'debugSeq::Sequences' has no attributes.
+The class 'debugSeq::BitXor' has no attributes.
+The class 'debugSeq::Write16' has no attributes.
+The class 'debugSeq::Read8' has no attributes.
+The class 'debugSeq::DapDelay' has no attributes.
+The class 'debugSeq::DapSwjSequence' has no attributes.
+The class 'debugSeq::Or' has no attributes.
+The class 'debugSeq::Sequence' has the following attributes: 'name' of type str; 'disable' of type str; 'info' of type str; 'pname' of type str.
+The class 'debugSeq::Not' has no attributes.
+The class 'debugSeq::Plus' has no attributes.
+'debugSeq::VariableDeclaration' is a specialization of 'Statement'.
+'debugSeq::LoadDebugInfo' is a specialization of 'Expression'.
+'debugSeq::DapWriteABORT' is a specialization of 'Expression'.
+'debugSeq::Expression' is a specialization of 'Statement'.
+'debugSeq::Write64' is a specialization of 'Expression'.
+'debugSeq::Not' is a specialization of 'Expression'.
+'debugSeq::BitNot' is a specialization of 'Expression'.
+'debugSeq::Write32' is a specialization of 'Expression'.
+'debugSeq::WriteDP' is a specialization of 'Expression'.
+'debugSeq::DapSwjClock' is a specialization of 'Expression'.
+'debugSeq::DapJtagSequence' is a specialization of 'Expression'.
+'debugSeq::Message' is a specialization of 'Expression'.
+'debugSeq::QueryValue' is a specialization of 'Expression'.
+'debugSeq::Comparison' is a specialization of 'Expression'.
+'debugSeq::Shift' is a specialization of 'Expression'.
+'debugSeq::SequenceCall' is a specialization of 'Expression'.
+'debugSeq::Mul' is a specialization of 'Expression'.
+'debugSeq::BitAnd' is a specialization of 'Expression'.
+'debugSeq::DapSwjPins' is a specialization of 'Expression'.
+'debugSeq::Div' is a specialization of 'Expression'.
+'debugSeq::Rem' is a specialization of 'Expression'.
+'debugSeq::IntConstant' is a specialization of 'Expression'.
+'debugSeq::Write8' is a specialization of 'Expression'.
+'debugSeq::ReadDP' is a specialization of 'Expression'.
+'debugSeq::BitXor' is a specialization of 'Expression'.
+'debugSeq::Read32' is a specialization of 'Expression'.
+'debugSeq::WriteAP' is a specialization of 'Expression'.
+'debugSeq::Minus' is a specialization of 'Expression'.
+'debugSeq::Assignment' is a specialization of 'Expression'.
+'debugSeq::Read16' is a specialization of 'Expression'.
+'debugSeq::And' is a specialization of 'Expression'.
+'debugSeq::DapSwjSequence' is a specialization of 'Expression'.
+'debugSeq::BitOr' is a specialization of 'Expression'.
+'debugSeq::VariableRef' is a specialization of 'Expression'.
+'debugSeq::Read8' is a specialization of 'Expression'.
+'debugSeq::Equality' is a specialization of 'Expression'.
+'debugSeq::Or' is a specialization of 'Expression'.
+'debugSeq::StringConstant' is a specialization of 'Expression'.
+'debugSeq::Plus' is a specialization of 'Expression'.
+'debugSeq::Write16' is a specialization of 'Expression'.
+'debugSeq::Query' is a specialization of 'Expression'.
+'debugSeq::Block' is a specialization of 'CodeBlock'.
+'debugSeq::DapDelay' is a specialization of 'Expression'.
+'debugSeq::Control' is a specialization of 'CodeBlock'.
+'debugSeq::ReadAP' is a specialization of 'Expression'.
+'debugSeq::Ternary' is a specialization of 'Expression'.
+'debugSeq::Read64' is a specialization of 'Expression'.
+'debugSeq::Expression' is a specialization of 'Parameter'.
+'debugSeq::Expression' (role 'debugSeq_Expression69', cardinality 0..*) is associated with 'debugSeq::Shift' (role 'debugSeq_Shift', cardinality 0..*).
+'debugSeq::DapWriteABORT' (role 'debugSeq_DapWriteABORT', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression158', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression154', cardinality 0..*) is associated with 'debugSeq::WriteDP' (role 'debugSeq_WriteDP153', cardinality 0..*).
+'debugSeq::Or' (role 'debugSeq_Or36', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression37', cardinality 0..*).
+'debugSeq::Query' (role 'debugSeq_Query105', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression106', cardinality 0..*).
+'debugSeq::WriteAP' (role 'debugSeq_WriteAP148', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression149', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression136', cardinality 0..*) is associated with 'debugSeq::Write32' (role 'debugSeq_Write32', cardinality 0..*).
+'debugSeq::DebugSeqModel' (role 'debugSeq_DebugSeqModel', cardinality 0..*) is associated with 'debugSeq::DebugVars' (role 'debugSeq_DebugVars', cardinality 0..*).
+'debugSeq::CodeBlock' (role 'debugSeq_CodeBlock19', cardinality 0..*) is associated with 'debugSeq::Control' (role 'debugSeq_Control18', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression32', cardinality 0..*) is associated with 'debugSeq::Ternary' (role 'debugSeq_Ternary31', cardinality 0..*).
+'debugSeq::Read64' (role 'debugSeq_Read64', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression120', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression173', cardinality 0..*) is associated with 'debugSeq::DapSwjSequence' (role 'debugSeq_DapSwjSequence172', cardinality 0..*).
+'debugSeq::DapSwjSequence' (role 'debugSeq_DapSwjSequence', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression170', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression47', cardinality 0..*) is associated with 'debugSeq::BitOr' (role 'debugSeq_BitOr46', cardinality 0..*).
+'debugSeq::Equality' (role 'debugSeq_Equality61', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression62', cardinality 0..*).
+'debugSeq::Sequence' (role 'debugSeq_Sequence9', cardinality 0..*) is associated with 'debugSeq::CodeBlock' (role 'debugSeq_CodeBlock', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression74', cardinality 0..*) is associated with 'debugSeq::Plus' (role 'debugSeq_Plus', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression82', cardinality 0..*) is associated with 'debugSeq::Minus' (role 'debugSeq_Minus81', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression72', cardinality 0..*) is associated with 'debugSeq::Shift' (role 'debugSeq_Shift71', cardinality 0..*).
+'debugSeq::DapJtagSequence' (role 'debugSeq_DapJtagSequence180', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression181', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression84', cardinality 0..*) is associated with 'debugSeq::Mul' (role 'debugSeq_Mul', cardinality 0..*).
+'debugSeq::Statement' (role 'debugSeq_Statement', cardinality 0..*) is associated with 'debugSeq::DebugVars' (role 'debugSeq_DebugVars4', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression52', cardinality 0..*) is associated with 'debugSeq::BitXor' (role 'debugSeq_BitXor51', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression67', cardinality 0..*) is associated with 'debugSeq::Comparison' (role 'debugSeq_Comparison66', cardinality 0..*).
+'debugSeq::DapJtagSequence' (role 'debugSeq_DapJtagSequence177', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression178', cardinality 0..*).
+'debugSeq::BitOr' (role 'debugSeq_BitOr', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression44', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression124', cardinality 0..*) is associated with 'debugSeq::ReadDP' (role 'debugSeq_ReadDP', cardinality 0..*).
+'debugSeq::DapSwjPins' (role 'debugSeq_DapSwjPins', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression160', cardinality 0..*).
+'debugSeq::Or' (role 'debugSeq_Or', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression34', cardinality 0..*).
+'debugSeq::DapSwjPins' (role 'debugSeq_DapSwjPins165', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression166', cardinality 0..*).
+'debugSeq::QueryValue' (role 'debugSeq_QueryValue', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression108', cardinality 0..*).
+'debugSeq::Write16' (role 'debugSeq_Write16', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression131', cardinality 0..*).
+'debugSeq::DapDelay' (role 'debugSeq_DapDelay', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression156', cardinality 0..*).
+'debugSeq::Minus' (role 'debugSeq_Minus', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression79', cardinality 0..*).
+'debugSeq::DapSwjPins' (role 'debugSeq_DapSwjPins162', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression163', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression', cardinality 0..*) is associated with 'debugSeq::VariableDeclaration' (role 'debugSeq_VariableDeclaration', cardinality 0..*).
+'debugSeq::And' (role 'debugSeq_And', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression39', cardinality 0..*).
+'debugSeq::Read8' (role 'debugSeq_Read8', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression114', cardinality 0..*).
+'debugSeq::Block' (role 'debugSeq_Block', cardinality 0..*) is associated with 'debugSeq::Statement' (role 'debugSeq_Statement11', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression24', cardinality 0..*) is associated with 'debugSeq::Assignment' (role 'debugSeq_Assignment23', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression103', cardinality 0..*) is associated with 'debugSeq::Query' (role 'debugSeq_Query', cardinality 0..*).
+'debugSeq::BitAnd' (role 'debugSeq_BitAnd56', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression57', cardinality 0..*).
+'debugSeq::Div' (role 'debugSeq_Div91', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression92', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression151', cardinality 0..*) is associated with 'debugSeq::WriteDP' (role 'debugSeq_WriteDP', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression144', cardinality 0..*) is associated with 'debugSeq::Write64' (role 'debugSeq_Write64143', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression94', cardinality 0..*) is associated with 'debugSeq::Rem' (role 'debugSeq_Rem', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression89', cardinality 0..*) is associated with 'debugSeq::Div' (role 'debugSeq_Div', cardinality 0..*).
+'debugSeq::ReadAP' (role 'debugSeq_ReadAP', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression122', cardinality 0..*).
+'debugSeq::Read32' (role 'debugSeq_Read32', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression118', cardinality 0..*).
+'debugSeq::Sequence' (role 'debugSeq_Sequence', cardinality 0..*) is associated with 'debugSeq::Sequences' (role 'debugSeq_Sequences7', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression126', cardinality 0..*) is associated with 'debugSeq::Write8' (role 'debugSeq_Write8', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression21', cardinality 0..*) is associated with 'debugSeq::Assignment' (role 'debugSeq_Assignment', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression87', cardinality 0..*) is associated with 'debugSeq::Mul' (role 'debugSeq_Mul86', cardinality 0..*).
+'debugSeq::Write16' (role 'debugSeq_Write16133', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression134', cardinality 0..*).
+'debugSeq::VariableRef' (role 'debugSeq_VariableRef', cardinality 0..*) is associated with 'debugSeq::VariableDeclaration' (role 'debugSeq_VariableDeclaration183', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression29', cardinality 0..*) is associated with 'debugSeq::Ternary' (role 'debugSeq_Ternary28', cardinality 0..*).
+'debugSeq::Parameter' (role 'debugSeq_Parameter', cardinality 0..*) is associated with 'debugSeq::Message' (role 'debugSeq_Message112', cardinality 0..*).
+'debugSeq::Sequences' (role 'debugSeq_Sequences', cardinality 0..*) is associated with 'debugSeq::DebugSeqModel' (role 'debugSeq_DebugSeqModel2', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression26', cardinality 0..*) is associated with 'debugSeq::Ternary' (role 'debugSeq_Ternary', cardinality 0..*).
+'debugSeq::Read16' (role 'debugSeq_Read16', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression116', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression99', cardinality 0..*) is associated with 'debugSeq::Not' (role 'debugSeq_Not', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression42', cardinality 0..*) is associated with 'debugSeq::And' (role 'debugSeq_And41', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression139', cardinality 0..*) is associated with 'debugSeq::Write32' (role 'debugSeq_Write32138', cardinality 0..*).
+'debugSeq::BitXor' (role 'debugSeq_BitXor', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression49', cardinality 0..*).
+'debugSeq::Write64' (role 'debugSeq_Write64', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression141', cardinality 0..*).
+'debugSeq::Comparison' (role 'debugSeq_Comparison', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression64', cardinality 0..*).
+'debugSeq::Equality' (role 'debugSeq_Equality', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression59', cardinality 0..*).
+'debugSeq::Control' (role 'debugSeq_Control15', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression16', cardinality 0..*).
+'debugSeq::BitAnd' (role 'debugSeq_BitAnd', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression54', cardinality 0..*).
+'debugSeq::Message' (role 'debugSeq_Message', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression110', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression101', cardinality 0..*) is associated with 'debugSeq::BitNot' (role 'debugSeq_BitNot', cardinality 0..*).
+'debugSeq::Rem' (role 'debugSeq_Rem96', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression97', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression146', cardinality 0..*) is associated with 'debugSeq::WriteAP' (role 'debugSeq_WriteAP', cardinality 0..*).
+'debugSeq::DapJtagSequence' (role 'debugSeq_DapJtagSequence', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression175', cardinality 0..*).
+'debugSeq::Write8' (role 'debugSeq_Write8128', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression129', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression13', cardinality 0..*) is associated with 'debugSeq::Control' (role 'debugSeq_Control', cardinality 0..*).
+'debugSeq::Expression' (role 'debugSeq_Expression168', cardinality 0..*) is associated with 'debugSeq::DapSwjClock' (role 'debugSeq_DapSwjClock', cardinality 0..*).
+'debugSeq::Plus' (role 'debugSeq_Plus76', cardinality 0..*) is associated with 'debugSeq::Expression' (role 'debugSeq_Expression77', cardinality 0..*).

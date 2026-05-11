@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MaximeMillier/L3/COO/meta-model state machine/model/metaModelSM.ecore

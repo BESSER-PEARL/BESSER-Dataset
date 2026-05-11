@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/clagms/TrNet/TrNetCompilation/model/original_minimal_metamodel.ecore

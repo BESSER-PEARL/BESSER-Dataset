@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'CLASS::Attribute' has the following attributes: 'multiValued' of type bool.
+The class 'CLASS::DataType' has no attributes.
+The class 'CLASS::System' has the following attributes: 'name' of type str.
+The class 'CLASS::Classifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'CLASS::NamedElement' has the following attributes: 'name' of type str.
+The class 'CLASS::Class' has the following attributes: 'isAbstract' of type bool.
+'CLASS::Attribute' is a specialization of 'NamedElement'.
+'CLASS::Class' is a specialization of 'Classifier'.
+'CLASS::Classifier' is a specialization of 'NamedElement'.
+'CLASS::DataType' is a specialization of 'Classifier'.
+'CLASS::Class' (role 'CLASS_Class', cardinality 0..*) is associated with 'CLASS::Class' (role 'CLASS_Class1', cardinality 0..*).
+'CLASS::Attribute' (role 'CLASS_Attribute', cardinality 0..*) is associated with 'CLASS::Classifier' (role 'CLASS_Classifier', cardinality 0..*).
+'CLASS::NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'CLASS::System' (role 'system', cardinality 0..*).
+'CLASS::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'CLASS::Class' (role 'owner', cardinality 0..*).
+'CLASS::NamedElement' (role 'elements', cardinality 0..*) is associated with 'CLASS::System' (role 'System', cardinality 0..*).
+'CLASS::Class' (role 'Class', cardinality 0..*) is associated with 'CLASS::Attribute' (role 'attributes', cardinality 0..*).

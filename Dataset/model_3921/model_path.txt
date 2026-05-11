@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rzhilkibaev/eclipse-snippets/xtext-indenting/org.xtext.example.mydsl/src-gen/org/xtext/example/MyDsl.ecore

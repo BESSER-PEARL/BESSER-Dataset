@@ -1,0 +1,83 @@
+The model has 34 class(es).
+The class 'myDsl::Plus' has no attributes.
+The class 'myDsl::StringConstant' has the following attributes: 'value' of type str.
+The class 'myDsl::Rule' has no attributes.
+The class 'myDsl::Equality' has the following attributes: 'op' of type str.
+The class 'BasicType' has no attributes.
+The class 'myDsl::Entity' has the following attributes: 'name' of type str.
+The class 'myDsl::BoolType' has the following attributes: 'value' of type str.
+The class 'myDsl::IntType' has the following attributes: 'value' of type int.
+The class 'myDsl::Verb' has the following attributes: 'qa' of type str; 'verb' of type str.
+The class 'myDsl::Or' has no attributes.
+The class 'myDsl::ArrayType' has no attributes.
+The class 'myDsl::ValueType' has no attributes.
+The class 'Expression' has no attributes.
+The class 'myDsl::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'myDsl::Condition' has no attributes.
+The class 'myDsl::Attribute' has the following attributes: 'name' of type str.
+The class 'Member' has no attributes.
+The class 'myDsl::Member' has no attributes.
+The class 'myDsl::StringType' has the following attributes: 'value' of type str.
+The class 'myDsl::And' has no attributes.
+The class 'myDsl::Not' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'ElementType' has no attributes.
+The class 'myDsl::Comparison' has the following attributes: 'op' of type str.
+The class 'myDsl::BoolConstant' has the following attributes: 'value' of type str.
+The class 'myDsl::BasicType' has no attributes.
+The class 'myDsl::IsServer' has the following attributes: 'value' of type str.
+The class 'myDsl::ArrayElement' has no attributes.
+The class 'myDsl::Minus' has no attributes.
+The class 'myDsl::ElementType' has no attributes.
+The class 'myDsl::VariableConstant' has no attributes.
+The class 'myDsl::Expression' has no attributes.
+The class 'myDsl::EntityType' has no attributes.
+The class 'myDsl::IntConstant' has the following attributes: 'value' of type int.
+'myDsl::VariableConstant' is a specialization of 'Expression'.
+'myDsl::IntType' is a specialization of 'BasicType'.
+'myDsl::Plus' is a specialization of 'Expression'.
+'myDsl::IntConstant' is a specialization of 'Expression'.
+'myDsl::And' is a specialization of 'Expression'.
+'myDsl::Comparison' is a specialization of 'Expression'.
+'myDsl::StringType' is a specialization of 'BasicType'.
+'myDsl::BoolType' is a specialization of 'BasicType'.
+'myDsl::Minus' is a specialization of 'Expression'.
+'myDsl::Or' is a specialization of 'Expression'.
+'myDsl::ArrayType' is a specialization of 'ElementType'.
+'myDsl::BasicType' is a specialization of 'ElementType'.
+'myDsl::BoolConstant' is a specialization of 'Expression'.
+'myDsl::EntityType' is a specialization of 'ElementType'.
+'myDsl::Not' is a specialization of 'Expression'.
+'myDsl::Verb' is a specialization of 'Member'.
+'myDsl::StringConstant' is a specialization of 'Expression'.
+'myDsl::Entity' is a specialization of 'Member'.
+'myDsl::Equality' is a specialization of 'Expression'.
+'myDsl::MulOrDiv' is a specialization of 'Expression'.
+'myDsl::Equality' (role 'myDsl_Equality34', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression35', cardinality 0..*).
+'myDsl::Minus' (role 'myDsl_Minus49', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression50', cardinality 0..*).
+'myDsl::MulOrDiv' (role 'myDsl_MulOrDiv', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression52', cardinality 0..*).
+'myDsl::ValueType' (role 'myDsl_ValueType', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute5', cardinality 0..*).
+'myDsl::Condition' (role 'myDsl_Condition20', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression25', cardinality 0..*) is associated with 'myDsl::Or' (role 'myDsl_Or24', cardinality 0..*).
+'myDsl::Equality' (role 'myDsl_Equality', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression32', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression30', cardinality 0..*) is associated with 'myDsl::And' (role 'myDsl_And29', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression22', cardinality 0..*) is associated with 'myDsl::Or' (role 'myDsl_Or', cardinality 0..*).
+'myDsl::Verb' (role 'myDsl_Verb', cardinality 0..*) is associated with 'myDsl::Rule' (role 'myDsl_Rule', cardinality 0..*).
+'myDsl::ValueType' (role 'myDsl_ValueType7', cardinality 0..*) is associated with 'myDsl::ElementType' (role 'myDsl_ElementType', cardinality 0..*).
+'myDsl::And' (role 'myDsl_And', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression27', cardinality 0..*).
+'myDsl::Not' (role 'myDsl_Not', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression57', cardinality 0..*).
+'myDsl::MulOrDiv' (role 'myDsl_MulOrDiv54', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression55', cardinality 0..*).
+'myDsl::VariableConstant' (role 'myDsl_VariableConstant', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute59', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity3', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute', cardinality 0..*).
+'myDsl::Comparison' (role 'myDsl_Comparison', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression37', cardinality 0..*).
+'myDsl::Member' (role 'myDsl_Member', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression42', cardinality 0..*) is associated with 'myDsl::Plus' (role 'myDsl_Plus', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*) is associated with 'myDsl::IsServer' (role 'myDsl_IsServer', cardinality 0..*).
+'myDsl::Minus' (role 'myDsl_Minus', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression47', cardinality 0..*).
+'myDsl::EntityType' (role 'myDsl_EntityType', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity9', cardinality 0..*).
+'myDsl::ArrayType' (role 'myDsl_ArrayType', cardinality 0..*) is associated with 'myDsl::ArrayElement' (role 'myDsl_ArrayElement', cardinality 0..*).
+'myDsl::BasicType' (role 'myDsl_BasicType', cardinality 0..*) is associated with 'myDsl::ArrayElement' (role 'myDsl_ArrayElement12', cardinality 0..*).
+'myDsl::Comparison' (role 'myDsl_Comparison39', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression40', cardinality 0..*).
+'myDsl::Rule' (role 'myDsl_Rule15', cardinality 0..*) is associated with 'myDsl::Condition' (role 'myDsl_Condition', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression45', cardinality 0..*) is associated with 'myDsl::Plus' (role 'myDsl_Plus44', cardinality 0..*).
+'myDsl::Rule' (role 'myDsl_Rule17', cardinality 0..*) is associated with 'myDsl::ArrayType' (role 'myDsl_ArrayType18', cardinality 0..*).

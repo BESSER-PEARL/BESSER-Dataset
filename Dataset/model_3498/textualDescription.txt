@@ -1,0 +1,29 @@
+The model has 10 class(es).
+The class 'feaMo::FeatureModel' has the following attributes: 'name' of type str.
+The class 'feaMo::FeatureConstraint' has the following attributes: 'rel' of type str.
+The class 'feaMo::FeamoFSelector' has no attributes.
+The class 'feaMo::Model' has no attributes.
+The class 'feaMo::FeatureDef' has no attributes.
+The class 'feaMo::Feature' has the following attributes: 'name' of type str.
+The class 'feaMo::FeamoFeatureConfig' has the following attributes: 'name' of type str.
+The class 'feaMo::FeatureDetails' has no attributes.
+The class 'feaMo::FeatureGroup' has no attributes.
+The class 'feaMo::SimpleFeature' has no attributes.
+'feaMo::FeatureGroup' (role 'feaMo_FeatureGroup17', cardinality 0..*) is associated with 'feaMo::SimpleFeature' (role 'feaMo_SimpleFeature18', cardinality 0..*).
+'feaMo::Feature' (role 'feaMo_Feature32', cardinality 0..*) is associated with 'feaMo::FeatureConstraint' (role 'feaMo_FeatureConstraint31', cardinality 0..*).
+'feaMo::SimpleFeature' (role 'feaMo_SimpleFeature15', cardinality 0..*) is associated with 'feaMo::FeatureGroup' (role 'feaMo_FeatureGroup14', cardinality 0..*).
+'feaMo::FeamoFeatureConfig' (role 'feaMo_FeamoFeatureConfig', cardinality 0..*) is associated with 'feaMo::Model' (role 'feaMo_Model2', cardinality 0..*).
+'feaMo::SimpleFeature' (role 'feaMo_SimpleFeature', cardinality 0..*) is associated with 'feaMo::FeatureGroup' (role 'feaMo_FeatureGroup12', cardinality 0..*).
+'feaMo::FeatureModel' (role 'feaMo_FeatureModel6', cardinality 0..*) is associated with 'feaMo::FeatureDef' (role 'feaMo_FeatureDef', cardinality 0..*).
+'feaMo::SimpleFeature' (role 'feaMo_SimpleFeature22', cardinality 0..*) is associated with 'feaMo::Feature' (role 'feaMo_Feature23', cardinality 0..*).
+'feaMo::FeatureDetails' (role 'feaMo_FeatureDetails10', cardinality 0..*) is associated with 'feaMo::FeatureGroup' (role 'feaMo_FeatureGroup', cardinality 0..*).
+'feaMo::Feature' (role 'feaMo_Feature35', cardinality 0..*) is associated with 'feaMo::FeatureConstraint' (role 'feaMo_FeatureConstraint34', cardinality 0..*).
+'feaMo::FeamoFeatureConfig' (role 'feaMo_FeamoFeatureConfig42', cardinality 0..*) is associated with 'feaMo::Feature' (role 'feaMo_Feature43', cardinality 0..*).
+'feaMo::Feature' (role 'feaMo_Feature37', cardinality 0..*) is associated with 'feaMo::FeamoFSelector' (role 'feaMo_FeamoFSelector', cardinality 0..*).
+'feaMo::FeatureModel' (role 'feaMo_FeatureModel4', cardinality 0..*) is associated with 'feaMo::FeatureDetails' (role 'feaMo_FeatureDetails', cardinality 0..*).
+'feaMo::Feature' (role 'feaMo_Feature26', cardinality 0..*) is associated with 'feaMo::FeatureDef' (role 'feaMo_FeatureDef25', cardinality 0..*).
+'feaMo::FeamoFeatureConfig' (role 'feaMo_FeamoFeatureConfig39', cardinality 0..*) is associated with 'feaMo::FeatureModel' (role 'feaMo_FeatureModel40', cardinality 0..*).
+'feaMo::FeatureDetails' (role 'feaMo_FeatureDetails29', cardinality 0..*) is associated with 'feaMo::FeatureDef' (role 'feaMo_FeatureDef28', cardinality 0..*).
+'feaMo::FeatureModel' (role 'feaMo_FeatureModel8', cardinality 0..*) is associated with 'feaMo::FeatureConstraint' (role 'feaMo_FeatureConstraint', cardinality 0..*).
+'feaMo::Model' (role 'feaMo_Model', cardinality 0..*) is associated with 'feaMo::FeatureModel' (role 'feaMo_FeatureModel', cardinality 0..*).
+'feaMo::Feature' (role 'feaMo_Feature', cardinality 0..*) is associated with 'feaMo::SimpleFeature' (role 'feaMo_SimpleFeature20', cardinality 0..*).

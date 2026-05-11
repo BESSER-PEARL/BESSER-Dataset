@@ -1,0 +1,57 @@
+The model has 31 class(es).
+The class 'standard::StandardPopulationInitializer' has the following attributes: 'useDensity' of type bool; 'individuals' of type float.
+The class 'standard::IntegrationDecorator' has no attributes.
+The class 'standard::StochasticStandardPopulationModel' has the following attributes: 'gain' of type float.
+The class 'standard::PopulationModel' has the following attributes: 'populationIdentifier' of type str; 'targetISOKey' of type str; 'name' of type str.
+The class 'standard::IntegrationLabelValue' has no attributes.
+The class 'PopulationModelLabelValue' has no attributes.
+The class 'standard::PopulationModelLabel' has the following attributes: 'populationIdentifier' of type str.
+The class 'DynamicNodeLabel' has no attributes.
+The class 'standard::DemographicPopulationModel' has no attributes.
+The class 'IntegrationLabel' has no attributes.
+The class 'Modifiable' has no attributes.
+The class 'standard::PopulationLabel' has no attributes.
+The class 'standard::YetiPopulationInitializer' has no attributes.
+The class 'PopulationInitializer' has no attributes.
+The class 'PopulationModel' has no attributes.
+The class 'PopulationModelLabel' has no attributes.
+The class 'standard::PopulationGroup' has the following attributes: 'fraction' of type float; 'identifier' of type str.
+The class 'standard::StandardPopulationModel' has the following attributes: 'deathRate' of type float; 'birthRate' of type float; 'timePeriod' of type str.
+The class 'EarthSciencePopulationInitializer' has no attributes.
+The class 'IntegrationDecorator' has no attributes.
+The class 'standard::IntegrationLabel' has no attributes.
+The class 'standard::EarthSciencePopulationInitializer' has no attributes.
+The class 'standard::PopulationModelLabelValue' has no attributes.
+The class 'standard::PopulationInitializer' has the following attributes: 'targetISOKey' of type str; 'populationIdentifier' of type str.
+The class 'standard::StandardPopulationModelLabel' has no attributes.
+The class 'standard::StandardPopulationModelLabelValue' has the following attributes: 'deaths' of type float; 'incidence' of type float; 'count' of type float; 'births' of type float; 'density' of type float.
+The class 'NodeDecorator' has no attributes.
+The class 'LabelValue' has no attributes.
+The class 'standard::SeasonalPopulationModel' has the following attributes: 'modulationAmplitude' of type float; 'period' of type float; 'useLatitude' of type bool; 'phase' of type float.
+The class 'IntegrationLabelValue' has no attributes.
+The class 'StandardPopulationModel' has no attributes.
+'standard::YetiPopulationInitializer' is a specialization of 'EarthSciencePopulationInitializer'.
+'standard::StandardPopulationModelLabelValue' is a specialization of 'IntegrationLabelValue'.
+'standard::PopulationInitializer' is a specialization of 'NodeDecorator'.
+'standard::StandardPopulationModel' is a specialization of 'IntegrationDecorator'.
+'standard::PopulationModelLabelValue' is a specialization of 'LabelValue'.
+'standard::StochasticStandardPopulationModel' is a specialization of 'StandardPopulationModel'.
+'standard::StandardPopulationModelLabel' is a specialization of 'IntegrationLabel'.
+'standard::EarthSciencePopulationInitializer' is a specialization of 'PopulationInitializer'.
+'standard::PopulationInitializer' is a specialization of 'Modifiable'.
+'standard::PopulationModel' is a specialization of 'Modifiable'.
+'standard::StandardPopulationModelLabel' is a specialization of 'PopulationModelLabel'.
+'standard::SeasonalPopulationModel' is a specialization of 'StandardPopulationModel'.
+'standard::StandardPopulationModelLabelValue' is a specialization of 'PopulationModelLabelValue'.
+'standard::DemographicPopulationModel' is a specialization of 'StandardPopulationModel'.
+'standard::StandardPopulationModel' is a specialization of 'PopulationModel'.
+'standard::StandardPopulationInitializer' is a specialization of 'PopulationInitializer'.
+'standard::PopulationModelLabel' is a specialization of 'DynamicNodeLabel'.
+'standard::PopulationModel' is a specialization of 'NodeDecorator'.
+'standard::StandardPopulationModelLabelValue' (role 'standard_StandardPopulationModelLabelValue13', cardinality 0..*) is associated with 'standard::StandardPopulationModelLabel' (role 'standard_StandardPopulationModelLabel12', cardinality 0..*).
+'standard::StandardPopulationModelLabel' (role 'standard_StandardPopulationModelLabel9', cardinality 0..*) is associated with 'standard::StandardPopulationModelLabelValue' (role 'standard_StandardPopulationModelLabelValue10', cardinality 0..*).
+'standard::StandardPopulationModelLabelValue' (role 'standard_StandardPopulationModelLabelValue', cardinality 0..*) is associated with 'standard::StandardPopulationModelLabel' (role 'standard_StandardPopulationModelLabel', cardinality 0..*).
+'standard::StandardPopulationModelLabelValue' (role 'standard_StandardPopulationModelLabelValue4', cardinality 0..*) is associated with 'standard::StandardPopulationModelLabel' (role 'standard_StandardPopulationModelLabel3', cardinality 0..*).
+'standard::PopulationModelLabel' (role 'standard_PopulationModelLabel', cardinality 0..*) is associated with 'standard::PopulationLabel' (role 'standard_PopulationLabel', cardinality 0..*).
+'standard::StandardPopulationModelLabelValue' (role 'standard_StandardPopulationModelLabelValue7', cardinality 0..*) is associated with 'standard::StandardPopulationModelLabel' (role 'standard_StandardPopulationModelLabel6', cardinality 0..*).
+'standard::DemographicPopulationModel' (role 'standard_DemographicPopulationModel', cardinality 0..*) is associated with 'standard::PopulationGroup' (role 'standard_PopulationGroup', cardinality 0..*).

@@ -1,0 +1,80 @@
+The model has 37 class(es).
+The class 'NamedElement' has no attributes.
+The class 'XPath::IsTextTest' has no attributes.
+The class 'XPath::NodeTest' has no attributes.
+The class 'XPath::ParentAxis' has no attributes.
+The class 'XPath::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'XPath::PrecedingSiblingAxis' has no attributes.
+The class 'XPath::FollowingSiblingAxis' has no attributes.
+The class 'XPath::NamespaceAxis' has no attributes.
+The class 'Expression' has no attributes.
+The class 'XPath::LiteralExp' has no attributes.
+The class 'XPath::PrecedingAxis' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'XPath::StringExp' has the following attributes: 'symbol' of type str.
+The class 'XPath::IsNodeTest' has no attributes.
+The class 'XPath::WildCardTest' has no attributes.
+The class 'XPath::Step' has no attributes.
+The class 'XPath::FollowingAxis' has no attributes.
+The class 'NodeTest' has no attributes.
+The class 'XPath::AncestorAxis' has no attributes.
+The class 'XPath::IntegerExp' has the following attributes: 'symbol' of type str.
+The class 'XPath::SelfAxis' has no attributes.
+The class 'XPath::ChildAxis' has no attributes.
+The class 'XPath::DescendantAxis' has no attributes.
+The class 'XPath::Expression' has no attributes.
+The class 'XPath::Predicate' has no attributes.
+The class 'XPath::NamedElement' has the following attributes: 'name' of type str.
+The class 'XPath::DescendantOrSelfAxis' has no attributes.
+The class 'XPath::Axis' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'XPath::FunctionCallExp' has no attributes.
+The class 'XPath::NameTest' has no attributes.
+The class 'Axis' has no attributes.
+The class 'XPath::PathExpression' has the following attributes: 'isAbsolute' of type str.
+The class 'XPath::AttributeAxis' has no attributes.
+The class 'XPath::OperatorCallExp' has no attributes.
+The class 'XPath::AncestorOrSelfAxis' has no attributes.
+The class 'XPath::VariableExp' has no attributes.
+'XPath::VariableExp' is a specialization of 'NamedElement'.
+'XPath::NameTest' is a specialization of 'NamedElement'.
+'XPath::WildCardTest' is a specialization of 'NodeTest'.
+'XPath::IsNodeTest' is a specialization of 'NodeTest'.
+'XPath::AncestorAxis' is a specialization of 'Axis'.
+'XPath::PrecedingAxis' is a specialization of 'Axis'.
+'XPath::PrecedingSiblingAxis' is a specialization of 'Axis'.
+'XPath::VariableExp' is a specialization of 'Expression'.
+'XPath::ParentAxis' is a specialization of 'Axis'.
+'XPath::OperatorCallExp' is a specialization of 'NamedElement'.
+'XPath::NodeTest' is a specialization of 'LocatedElement'.
+'XPath::Step' is a specialization of 'LocatedElement'.
+'XPath::Predicate' is a specialization of 'LocatedElement'.
+'XPath::NameTest' is a specialization of 'NodeTest'.
+'XPath::FunctionCallExp' is a specialization of 'NamedElement'.
+'XPath::NamedElement' is a specialization of 'LocatedElement'.
+'XPath::SelfAxis' is a specialization of 'Axis'.
+'XPath::OperatorCallExp' is a specialization of 'Expression'.
+'XPath::IsTextTest' is a specialization of 'NodeTest'.
+'XPath::LiteralExp' is a specialization of 'Expression'.
+'XPath::IntegerExp' is a specialization of 'LiteralExp'.
+'XPath::AttributeAxis' is a specialization of 'Axis'.
+'XPath::AncestorOrSelfAxis' is a specialization of 'Axis'.
+'XPath::Expression' is a specialization of 'LocatedElement'.
+'XPath::NamespaceAxis' is a specialization of 'Axis'.
+'XPath::StringExp' is a specialization of 'LiteralExp'.
+'XPath::ChildAxis' is a specialization of 'Axis'.
+'XPath::DescendantAxis' is a specialization of 'Axis'.
+'XPath::FollowingSiblingAxis' is a specialization of 'Axis'.
+'XPath::Axis' is a specialization of 'LocatedElement'.
+'XPath::FollowingAxis' is a specialization of 'Axis'.
+'XPath::FunctionCallExp' is a specialization of 'Expression'.
+'XPath::PathExpression' is a specialization of 'Expression'.
+'XPath::DescendantOrSelfAxis' is a specialization of 'Axis'.
+'XPath::Step' (role 'XPath_Step2', cardinality 0..*) is associated with 'XPath::Axis' (role 'XPath_Axis', cardinality 0..*).
+'XPath::PathExpression' (role 'XPath_PathExpression', cardinality 0..*) is associated with 'XPath::Step' (role 'XPath_Step', cardinality 0..*).
+'XPath::Expression' (role 'XPath_Expression10', cardinality 0..*) is associated with 'XPath::OperatorCallExp' (role 'XPath_OperatorCallExp', cardinality 0..*).
+'XPath::Step' (role 'XPath_Step6', cardinality 0..*) is associated with 'XPath::Predicate' (role 'XPath_Predicate', cardinality 0..*).
+'XPath::Expression' (role 'XPath_Expression13', cardinality 0..*) is associated with 'XPath::OperatorCallExp' (role 'XPath_OperatorCallExp12', cardinality 0..*).
+'XPath::Expression' (role 'XPath_Expression15', cardinality 0..*) is associated with 'XPath::FunctionCallExp' (role 'XPath_FunctionCallExp', cardinality 0..*).
+'XPath::Predicate' (role 'XPath_Predicate8', cardinality 0..*) is associated with 'XPath::Expression' (role 'XPath_Expression', cardinality 0..*).
+'XPath::Step' (role 'XPath_Step4', cardinality 0..*) is associated with 'XPath::NodeTest' (role 'XPath_NodeTest', cardinality 0..*).

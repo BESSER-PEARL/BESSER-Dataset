@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'in::x::X' has no attributes.
+The class 'in::B' has no attributes.
+The class 'B' has no attributes.
+The class 'in::C' has no attributes.
+The class 'in::A' has no attributes.
+The class 'C' has no attributes.
+'in::A' is a specialization of 'C'.
+'in::A' is a specialization of 'B'.

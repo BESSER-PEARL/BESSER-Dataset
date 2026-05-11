@@ -1,0 +1,35 @@
+The model has 13 class(es).
+The class 'subsetUnion::Element::Level10' has no attributes.
+The class 'Element' has no attributes.
+The class 'subsetUnion::Element::Level5' has no attributes.
+The class 'subsetUnion::Element::Level6' has no attributes.
+The class 'subsetUnion::Element' has the following attributes: 'name' of type str.
+The class 'subsetUnion::Element::Level3' has no attributes.
+The class 'subsetUnion::Element::Level1' has no attributes.
+The class 'subsetUnion::Container' has the following attributes: 'name' of type str.
+The class 'subsetUnion::Element::Level8' has no attributes.
+The class 'subsetUnion::Element::Level7' has no attributes.
+The class 'subsetUnion::Element::Level2' has no attributes.
+The class 'subsetUnion::Element::Level9' has no attributes.
+The class 'subsetUnion::Element::Level4' has no attributes.
+'subsetUnion::Element::Level4' is a specialization of 'Element'.
+'subsetUnion::Element::Level1' is a specialization of 'Element'.
+'subsetUnion::Element::Level10' is a specialization of 'Element'.
+'subsetUnion::Element::Level8' is a specialization of 'Element'.
+'subsetUnion::Element::Level5' is a specialization of 'Element'.
+'subsetUnion::Element::Level2' is a specialization of 'Element'.
+'subsetUnion::Element::Level7' is a specialization of 'Element'.
+'subsetUnion::Element::Level3' is a specialization of 'Element'.
+'subsetUnion::Element::Level9' is a specialization of 'Element'.
+'subsetUnion::Element::Level6' is a specialization of 'Element'.
+'subsetUnion::Container' (role 'subsetUnion_Container', cardinality 0..*) is associated with 'subsetUnion::Element' (role 'subsetUnion_Element', cardinality 0..*).
+'subsetUnion::Element::Level4' (role 'subsetUnion_Element_Level4', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container8', cardinality 0..*).
+'subsetUnion::Element::Level6' (role 'subsetUnion_Element_Level6', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container12', cardinality 0..*).
+'subsetUnion::Element::Level1' (role 'subsetUnion_Element_Level1', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container2', cardinality 0..*).
+'subsetUnion::Element::Level5' (role 'subsetUnion_Element_Level5', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container10', cardinality 0..*).
+'subsetUnion::Element::Level8' (role 'subsetUnion_Element_Level8', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container16', cardinality 0..*).
+'subsetUnion::Container' (role 'subsetUnion_Container18', cardinality 0..*) is associated with 'subsetUnion::Element::Level9' (role 'subsetUnion_Element_Level9', cardinality 0..*).
+'subsetUnion::Container' (role 'subsetUnion_Container20', cardinality 0..*) is associated with 'subsetUnion::Element::Level10' (role 'subsetUnion_Element_Level10', cardinality 0..*).
+'subsetUnion::Container' (role 'subsetUnion_Container4', cardinality 0..*) is associated with 'subsetUnion::Element::Level2' (role 'subsetUnion_Element_Level2', cardinality 0..*).
+'subsetUnion::Element::Level3' (role 'subsetUnion_Element_Level3', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container6', cardinality 0..*).
+'subsetUnion::Element::Level7' (role 'subsetUnion_Element_Level7', cardinality 0..*) is associated with 'subsetUnion::Container' (role 'subsetUnion_Container14', cardinality 0..*).

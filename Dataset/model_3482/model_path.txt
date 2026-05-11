@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/extFM/extFM-Tooling/plugins/org.js.model.feature.ptnet.m2m.atl/src/main/metamodel/feature.ecore

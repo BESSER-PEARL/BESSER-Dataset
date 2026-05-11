@@ -1,0 +1,42 @@
+The model has 22 class(es).
+The class 'MigrationEdgeLabel' has no attributes.
+The class 'transport::PacketTransportLabelValue' has the following attributes: 'capacity' of type float.
+The class 'transport::PipeTransportEdgeLabelValue' has the following attributes: 'maxFlow' of type float; 'timePeriod' of type str.
+The class 'transport::STEMTime' has no attributes.
+The class 'transport::TransportSystem' has no attributes.
+The class 'PopulationEdge' has no attributes.
+The class 'DynamicLabel' has no attributes.
+The class 'LabelValue' has no attributes.
+The class 'Node' has no attributes.
+The class 'EdgeLabel' has no attributes.
+The class 'transport::PacketTransportLabel' has no attributes.
+The class 'transport::PacketStyleTransportSystem' has no attributes.
+The class 'transport::PipeStyleTransportSystem' has the following attributes: 'maxCapacity' of type float.
+The class 'transport::LoadUnloadEdge' has the following attributes: 'loadingEdge' of type bool.
+The class 'transport::PipeTransportEdge' has no attributes.
+The class 'NodeLabel' has no attributes.
+The class 'transport::LoadUnloadEdgeLabel' has the following attributes: 'activatedRate' of type float.
+The class 'EdgeDecorator' has no attributes.
+The class 'TransportSystem' has no attributes.
+The class 'transport::PacketStyleTransportSystemDecorator' has no attributes.
+The class 'MigrationEdge' has no attributes.
+The class 'transport::PipeTransportEdgeLabel' has no attributes.
+'transport::PacketStyleTransportSystemDecorator' is a specialization of 'EdgeDecorator'.
+'transport::LoadUnloadEdge' is a specialization of 'MigrationEdge'.
+'transport::LoadUnloadEdgeLabel' is a specialization of 'DynamicLabel'.
+'transport::TransportSystem' is a specialization of 'Node'.
+'transport::LoadUnloadEdgeLabel' is a specialization of 'MigrationEdgeLabel'.
+'transport::PacketStyleTransportSystem' is a specialization of 'TransportSystem'.
+'transport::PacketTransportLabel' is a specialization of 'NodeLabel'.
+'transport::PipeTransportEdgeLabelValue' is a specialization of 'LabelValue'.
+'transport::PipeStyleTransportSystem' is a specialization of 'TransportSystem'.
+'transport::PipeTransportEdgeLabel' is a specialization of 'EdgeLabel'.
+'transport::PacketTransportLabelValue' is a specialization of 'LabelValue'.
+'transport::PipeTransportEdge' is a specialization of 'PopulationEdge'.
+'transport::LoadUnloadEdgeLabel' (role 'transport_LoadUnloadEdgeLabel', cardinality 0..*) is associated with 'transport::STEMTime' (role 'transport_STEMTime', cardinality 0..*).
+'transport::STEMTime' (role 'transport_STEMTime3', cardinality 0..*) is associated with 'transport::LoadUnloadEdgeLabel' (role 'transport_LoadUnloadEdgeLabel2', cardinality 0..*).
+'transport::PacketTransportLabel' (role 'transport_PacketTransportLabel', cardinality 0..*) is associated with 'transport::PacketStyleTransportSystem' (role 'transport_PacketStyleTransportSystem', cardinality 0..*).
+'transport::PacketStyleTransportSystem' (role 'transport_PacketStyleTransportSystem8', cardinality 0..*) is associated with 'transport::LoadUnloadEdge' (role 'transport_LoadUnloadEdge9', cardinality 0..*).
+'transport::PipeStyleTransportSystem' (role 'transport_PipeStyleTransportSystem', cardinality 0..*) is associated with 'transport::PipeTransportEdge' (role 'transport_PipeTransportEdge', cardinality 0..*).
+'transport::PacketStyleTransportSystem' (role 'transport_PacketStyleTransportSystem6', cardinality 0..*) is associated with 'transport::LoadUnloadEdge' (role 'transport_LoadUnloadEdge', cardinality 0..*).
+'transport::PipeStyleTransportSystem' (role 'transport_PipeStyleTransportSystem12', cardinality 0..*) is associated with 'transport::PipeTransportEdge' (role 'transport_PipeTransportEdge13', cardinality 0..*).

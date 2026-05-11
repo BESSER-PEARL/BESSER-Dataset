@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'rk::RungeKutta' has the following attributes: 'relativeTolerance' of type float.
+The class 'Solver' has no attributes.
+'rk::RungeKutta' is a specialization of 'Solver'.

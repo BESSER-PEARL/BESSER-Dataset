@@ -1,0 +1,127 @@
+The model has 43 class(es).
+The class 'java::Type::declaration' has the following attributes: 'doc' of type str.
+The class 'java::Interface::declaration' has the following attributes: 'modifiers' of type str; 'extend' of type str; 'extends' of type str; 'interfaceName' of type str.
+The class 'java::Return::Statement' has no attributes.
+The class 'java::Import::statement' has the following attributes: 'packagename' of type str; 'classname' of type str.
+The class 'java::Static::initializer' has the following attributes: 'static' of type str.
+The class 'java::Expression::aux' has the following attributes: 'bitSign' of type str; 'stringSign' of type str; 'name' of type str; 'logicalSign' of type str; 'numericSign' of type str; 'testingSign' of type str; 'sgin' of type str.
+The class 'java::Variable::declarator' has the following attributes: 'name' of type str.
+The class 'java::Method::call' has no attributes.
+The class 'java::Variable::initializer' has no attributes.
+The class 'java::For::Statement' has the following attributes: 'pv' of type str.
+The class 'java::Head' has no attributes.
+The class 'Return::value' has no attributes.
+The class 'java::Literal::Expression' has the following attributes: 'exp' of type str; 'string' of type str; 'char' of type str; 'exp1' of type int.
+The class 'java::Parameter::list::method::call' has the following attributes: 'name' of type str; 'parameters' of type str.
+The class 'java::While::Statement' has no attributes.
+The class 'java::If::Statement' has no attributes.
+The class 'java::Statement' has the following attributes: 'name' of type str.
+The class 'java::Field::declaration' has the following attributes: 'debug' of type str; 'doc' of type str.
+The class 'java::Type' has the following attributes: 'name' of type str.
+The class 'java::Ampersand::Rule' has the following attributes: 'a2' of type str; 'a1' of type str.
+The class 'java::Numeric::Expression::NR' has the following attributes: 'sinal_numeric' of type str.
+The class 'java::Return::value' has the following attributes: 'name' of type str.
+The class 'java::Expression' has the following attributes: 'null' of type str; 'this' of type str; 'super' of type str; 'name' of type str.
+The class 'java::Creating::Expression' has the following attributes: 'className' of type str; 'typeSpecifier' of type str.
+The class 'java::Statement::block' has no attributes.
+The class 'java::Switch::Statement' has no attributes.
+The class 'java::Compilation::unit' has no attributes.
+The class 'java::Do::Statement' has no attributes.
+The class 'java::Bit::Expression::NR' has no attributes.
+The class 'java::Parameter' has the following attributes: 'name' of type str.
+The class 'java::Logical::Expression::NR' has the following attributes: 'false' of type str; 'true' of type str.
+The class 'java::Package::statement' has the following attributes: 'name' of type str.
+The class 'java::Variable::declaration' has the following attributes: 'modifiers' of type str.
+The class 'java::EObject' has no attributes.
+The class 'java::Float::Literal' has the following attributes: 'decimalDigits1' of type int; 'exp' of type str; 'decimalDigits2' of type int; 'floatTypeSufix' of type str.
+The class 'java::Cast::Expression' has no attributes.
+The class 'java::Arg::List' has no attributes.
+The class 'Statement' has no attributes.
+The class 'java::Try::statement' has the following attributes: 'try_' of type str; 'catchs' of type str; 'finally_' of type str.
+The class 'java::Class::declaration' has the following attributes: 'implements' of type str; 'extend' of type str; 'modifiers' of type str; 'implement' of type str; 'className' of type str.
+The class 'java::Constructor::declaration' has the following attributes: 'modifiers' of type str; 'name' of type str.
+The class 'java::Method::declaration' has the following attributes: 'modifiers' of type str; 'name' of type str; 'debug' of type str.
+The class 'java::Parameter::list' has no attributes.
+'java::Method::call' is a specialization of 'Return::value'.
+'java::Literal::Expression' is a specialization of 'Return::value'.
+'java::Statement::block' is a specialization of 'Statement'.
+'java::Parameter::list::method::call' (role 'java_Parameter_list_method_call', cardinality 0..*) is associated with 'java::Method::call' (role 'java_Method_call', cardinality 0..*).
+'java::Cast::Expression' (role 'java_Cast_Expression93', cardinality 0..*) is associated with 'java::Type' (role 'java_Type94', cardinality 0..*).
+'java::Parameter' (role 'java_Parameter', cardinality 0..*) is associated with 'java::Parameter::list' (role 'java_Parameter_list27', cardinality 0..*).
+'java::Expression' (role 'java_Expression52', cardinality 0..*) is associated with 'java::Numeric::Expression::NR' (role 'java_Numeric_Expression_NR', cardinality 0..*).
+'java::Expression' (role 'java_Expression56', cardinality 0..*) is associated with 'java::Logical::Expression::NR' (role 'java_Logical_Expression_NR', cardinality 0..*).
+'java::Try::statement' (role 'java_Try_statement191', cardinality 0..*) is associated with 'java::Parameter' (role 'java_Parameter192', cardinality 0..*).
+'java::Method::declaration' (role 'java_Method_declaration17', cardinality 0..*) is associated with 'java::Parameter::list' (role 'java_Parameter_list', cardinality 0..*).
+'java::For::Statement' (role 'java_For_Statement', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement132', cardinality 0..*).
+'java::Statement' (role 'java_Statement169', cardinality 0..*) is associated with 'java::While::Statement' (role 'java_While_Statement168', cardinality 0..*).
+'java::Try::statement' (role 'java_Try_statement194', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement195', cardinality 0..*).
+'java::Variable::declaration' (role 'java_Variable_declaration39', cardinality 0..*) is associated with 'java::Variable::declarator' (role 'java_Variable_declarator40', cardinality 0..*).
+'java::Compilation::unit' (role 'java_Compilation_unit2', cardinality 0..*) is associated with 'java::Package::statement' (role 'java_Package_statement', cardinality 0..*).
+'java::Ampersand::Rule' (role 'java_Ampersand_Rule', cardinality 0..*) is associated with 'java::Expression::aux' (role 'java_Expression_aux80', cardinality 0..*).
+'java::Expression' (role 'java_Expression166', cardinality 0..*) is associated with 'java::While::Statement' (role 'java_While_Statement165', cardinality 0..*).
+'java::Statement' (role 'java_Statement123', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression124', cardinality 0..*).
+'java::Arg::List' (role 'java_Arg_List105', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression106', cardinality 0..*).
+'java::Expression::aux' (role 'java_Expression_aux77', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression78', cardinality 0..*).
+'java::Variable::initializer' (role 'java_Variable_initializer', cardinality 0..*) is associated with 'java::Variable::declarator' (role 'java_Variable_declarator42', cardinality 0..*).
+'java::Parameter::list' (role 'java_Parameter_list22', cardinality 0..*) is associated with 'java::Constructor::declaration' (role 'java_Constructor_declaration', cardinality 0..*).
+'java::Type' (role 'java_Type35', cardinality 0..*) is associated with 'java::Variable::declaration' (role 'java_Variable_declaration', cardinality 0..*).
+'java::Expression' (role 'java_Expression91', cardinality 0..*) is associated with 'java::Creating::Expression' (role 'java_Creating_Expression90', cardinality 0..*).
+'java::Expression::aux' (role 'java_Expression_aux82', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression83', cardinality 0..*).
+'java::Class::declaration' (role 'java_Class_declaration', cardinality 0..*) is associated with 'java::Field::declaration' (role 'java_Field_declaration11', cardinality 0..*).
+'java::Statement' (role 'java_Statement139', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement137', cardinality 0..*).
+'java::Expression' (role 'java_Expression64', cardinality 0..*) is associated with 'java::Literal::Expression' (role 'java_Literal_Expression', cardinality 0..*).
+'java::Expression' (role 'java_Expression109', cardinality 0..*) is associated with 'java::Arg::List' (role 'java_Arg_List108', cardinality 0..*).
+'java::Expression' (role 'java_Expression160', cardinality 0..*) is associated with 'java::For::Statement' (role 'java_For_Statement159', cardinality 0..*).
+'java::Statement' (role 'java_Statement198', cardinality 0..*) is associated with 'java::Try::statement' (role 'java_Try_statement197', cardinality 0..*).
+'java::For::Statement' (role 'java_For_Statement153', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression154', cardinality 0..*).
+'java::Expression' (role 'java_Expression142', cardinality 0..*) is associated with 'java::Switch::Statement' (role 'java_Switch_Statement141', cardinality 0..*).
+'java::Expression::aux' (role 'java_Expression_aux74', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression75', cardinality 0..*).
+'java::Statement' (role 'java_Statement134', cardinality 0..*) is associated with 'java::Switch::Statement' (role 'java_Switch_Statement', cardinality 0..*).
+'java::If::Statement' (role 'java_If_Statement183', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement184', cardinality 0..*).
+'java::Arg::List' (role 'java_Arg_List', cardinality 0..*) is associated with 'java::Expression::aux' (role 'java_Expression_aux66', cardinality 0..*).
+'java::Do::Statement' (role 'java_Do_Statement', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement128', cardinality 0..*).
+'java::Statement' (role 'java_Statement172', cardinality 0..*) is associated with 'java::Do::Statement' (role 'java_Do_Statement171', cardinality 0..*).
+'java::Statement' (role 'java_Statement', cardinality 0..*) is associated with 'java::Statement::block' (role 'java_Statement_block116', cardinality 0..*).
+'java::Import::statement' (role 'java_Import_statement', cardinality 0..*) is associated with 'java::Compilation::unit' (role 'java_Compilation_unit4', cardinality 0..*).
+'java::If::Statement' (role 'java_If_Statement', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement126', cardinality 0..*).
+'java::Variable::initializer' (role 'java_Variable_initializer45', cardinality 0..*) is associated with 'java::Variable::initializer' (role 'java_Variable_initializer47', cardinality 0..*).
+'java::Expression' (role 'java_Expression178', cardinality 0..*) is associated with 'java::If::Statement' (role 'java_If_Statement177', cardinality 0..*).
+'java::Parameter' (role 'java_Parameter32', cardinality 0..*) is associated with 'java::Type' (role 'java_Type33', cardinality 0..*).
+'java::Cast::Expression' (role 'java_Cast_Expression', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression60', cardinality 0..*).
+'java::While::Statement' (role 'java_While_Statement', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement130', cardinality 0..*).
+'java::Head' (role 'java_Head', cardinality 0..*) is associated with 'java::Compilation::unit' (role 'java_Compilation_unit', cardinality 0..*).
+'java::Compilation::unit' (role 'java_Compilation_unit6', cardinality 0..*) is associated with 'java::Type::declaration' (role 'java_Type_declaration', cardinality 0..*).
+'java::Constructor::declaration' (role 'java_Constructor_declaration24', cardinality 0..*) is associated with 'java::Statement::block' (role 'java_Statement_block25', cardinality 0..*).
+'java::Expression' (role 'java_Expression54', cardinality 0..*) is associated with 'java::Expression::aux' (role 'java_Expression_aux', cardinality 0..*).
+'java::Expression' (role 'java_Expression97', cardinality 0..*) is associated with 'java::Cast::Expression' (role 'java_Cast_Expression96', cardinality 0..*).
+'java::Statement::block' (role 'java_Statement_block114', cardinality 0..*) is associated with 'java::Static::initializer' (role 'java_Static_initializer', cardinality 0..*).
+'java::Statement' (role 'java_Statement181', cardinality 0..*) is associated with 'java::If::Statement' (role 'java_If_Statement180', cardinality 0..*).
+'java::Variable::initializer' (role 'java_Variable_initializer50', cardinality 0..*) is associated with 'java::Variable::initializer' (role 'java_Variable_initializer48', cardinality 0..*).
+'java::Expression::aux' (role 'java_Expression_aux69', cardinality 0..*) is associated with 'java::Expression::aux' (role 'java_Expression_aux67', cardinality 0..*).
+'java::Type::declaration' (role 'java_Type_declaration8', cardinality 0..*) is associated with 'java::EObject' (role 'java_EObject', cardinality 0..*).
+'java::Expression' (role 'java_Expression103', cardinality 0..*) is associated with 'java::Logical::Expression::NR' (role 'java_Logical_Expression_NR102', cardinality 0..*).
+'java::Variable::declarator' (role 'java_Variable_declarator', cardinality 0..*) is associated with 'java::Variable::declaration' (role 'java_Variable_declaration37', cardinality 0..*).
+'java::Literal::Expression' (role 'java_Literal_Expression85', cardinality 0..*) is associated with 'java::Float::Literal' (role 'java_Float_Literal', cardinality 0..*).
+'java::Field::declaration' (role 'java_Field_declaration13', cardinality 0..*) is associated with 'java::EObject' (role 'java_EObject14', cardinality 0..*).
+'java::Creating::Expression' (role 'java_Creating_Expression', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression62', cardinality 0..*).
+'java::Return::Statement' (role 'java_Return_Statement', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement118', cardinality 0..*).
+'java::Statement' (role 'java_Statement136', cardinality 0..*) is associated with 'java::Try::statement' (role 'java_Try_statement', cardinality 0..*).
+'java::Expression' (role 'java_Expression58', cardinality 0..*) is associated with 'java::Bit::Expression::NR' (role 'java_Bit_Expression_NR', cardinality 0..*).
+'java::Creating::Expression' (role 'java_Creating_Expression87', cardinality 0..*) is associated with 'java::Arg::List' (role 'java_Arg_List88', cardinality 0..*).
+'java::Interface::declaration' (role 'java_Interface_declaration', cardinality 0..*) is associated with 'java::Field::declaration' (role 'java_Field_declaration', cardinality 0..*).
+'java::Statement' (role 'java_Statement189', cardinality 0..*) is associated with 'java::Try::statement' (role 'java_Try_statement188', cardinality 0..*).
+'java::Statement::block' (role 'java_Statement_block', cardinality 0..*) is associated with 'java::Method::declaration' (role 'java_Method_declaration19', cardinality 0..*).
+'java::Switch::Statement' (role 'java_Switch_Statement147', cardinality 0..*) is associated with 'java::Statement' (role 'java_Statement148', cardinality 0..*).
+'java::Expression' (role 'java_Expression112', cardinality 0..*) is associated with 'java::Numeric::Expression::NR' (role 'java_Numeric_Expression_NR111', cardinality 0..*).
+'java::Expression' (role 'java_Expression157', cardinality 0..*) is associated with 'java::For::Statement' (role 'java_For_Statement156', cardinality 0..*).
+'java::Return::Statement' (role 'java_Return_Statement186', cardinality 0..*) is associated with 'java::Return::value' (role 'java_Return_value', cardinality 0..*).
+'java::Parameter::list' (role 'java_Parameter_list29', cardinality 0..*) is associated with 'java::Parameter' (role 'java_Parameter30', cardinality 0..*).
+'java::Statement' (role 'java_Statement120', cardinality 0..*) is associated with 'java::Variable::declaration' (role 'java_Variable_declaration121', cardinality 0..*).
+'java::Expression' (role 'java_Expression100', cardinality 0..*) is associated with 'java::Bit::Expression::NR' (role 'java_Bit_Expression_NR99', cardinality 0..*).
+'java::Statement' (role 'java_Statement163', cardinality 0..*) is associated with 'java::For::Statement' (role 'java_For_Statement162', cardinality 0..*).
+'java::Switch::Statement' (role 'java_Switch_Statement144', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression145', cardinality 0..*).
+'java::For::Statement' (role 'java_For_Statement150', cardinality 0..*) is associated with 'java::Variable::declaration' (role 'java_Variable_declaration151', cardinality 0..*).
+'java::Expression' (role 'java_Expression72', cardinality 0..*) is associated with 'java::Expression::aux' (role 'java_Expression_aux71', cardinality 0..*).
+'java::Do::Statement' (role 'java_Do_Statement174', cardinality 0..*) is associated with 'java::Expression' (role 'java_Expression175', cardinality 0..*).
+'java::Expression' (role 'java_Expression', cardinality 0..*) is associated with 'java::Variable::initializer' (role 'java_Variable_initializer44', cardinality 0..*).
+'java::Method::declaration' (role 'java_Method_declaration', cardinality 0..*) is associated with 'java::Type' (role 'java_Type', cardinality 0..*).

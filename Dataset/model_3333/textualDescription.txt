@@ -1,0 +1,85 @@
+The model has 30 class(es).
+The class 'JDTParent' has no attributes.
+The class 'JDTMethodBody' has no attributes.
+The class 'JDTTypeRoot' has no attributes.
+The class 'JDTType' has no attributes.
+The class 'jdtmm::JDTParent' has the following attributes: 'flags' of type str.
+The class 'JDTJavaElement' has no attributes.
+The class 'jdtmm::JDTMember' has the following attributes: 'visibility' of type str; 'explicitPlainTextRequiredImports' of type str.
+The class 'jdtmm::JDTPackageFragment' has no attributes.
+The class 'jdtmm::JDTJavaModel' has no attributes.
+The class 'jdtmm::JDTClass' has no attributes.
+The class 'jdtmm::JDTParentJavaElement' has no attributes.
+The class 'jdtmm::JDTOpaqueBody' has the following attributes: '_body' of type str.
+The class 'jdtmm::JDTPackageFragmentRoot' has no attributes.
+The class 'jdtmm::JDTMethod' has the following attributes: 'final' of type str; 'abstract' of type str; 'static' of type str; 'constructor' of type str; 'synchronized' of type str.
+The class 'jdtmm::JDTTypeParameter' has no attributes.
+The class 'jdtmm::JDTInterface' has no attributes.
+The class 'jdtmm::JDTMethodBody' has no attributes.
+The class 'jdtmm::JDTTypeRoot' has no attributes.
+The class 'jdtmm::JDTEnum' has no attributes.
+The class 'jdtmm::JDTCompilationUnit' has no attributes.
+The class 'jdtmm::JDTException' has no attributes.
+The class 'jdtmm::JDTType' has the following attributes: 'enum' of type str; 'final' of type str; 'superInterfaceNames' of type str; 'static' of type str; 'interface' of type str; 'superClassName' of type str; 'class_' of type str; 'abstract' of type str.
+The class 'jdtmm::JDTImportDeclaration' has no attributes.
+The class 'jdtmm::JDTParameter' has the following attributes: 'isMultiValued' of type str; 'final' of type str.
+The class 'jdtmm::JDTJavaProject' has no attributes.
+The class 'jdtmm::JDTJavaElement' has the following attributes: 'elementType' of type str; 'generated' of type str; 'comment' of type str; 'elementName' of type str.
+The class 'JDTMember' has no attributes.
+The class 'jdtmm::JDTImportContainer' has no attributes.
+The class 'JDTParentJavaElement' has no attributes.
+The class 'jdtmm::JDTField' has the following attributes: 'value' of type str; 'static' of type str; 'generateGetter' of type str; 'isMultiValued' of type str; 'final' of type str; 'generateSetter' of type str; 'abstract' of type str.
+The enumeration 'TrueFalseDefault' has the following literals: 'false', 'true', 'default'.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'public', 'private'.
+'jdtmm::JDTImportDeclaration' is a specialization of 'JDTJavaElement'.
+'jdtmm::JDTJavaProject' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTType' is a specialization of 'JDTMember'.
+'jdtmm::JDTJavaModel' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTInterface' is a specialization of 'JDTType'.
+'jdtmm::JDTEnum' is a specialization of 'JDTType'.
+'jdtmm::JDTParentJavaElement' is a specialization of 'JDTParent'.
+'jdtmm::JDTParameter' is a specialization of 'JDTMember'.
+'jdtmm::JDTPackageFragment' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTCompilationUnit' is a specialization of 'JDTTypeRoot'.
+'jdtmm::JDTField' is a specialization of 'JDTMember'.
+'jdtmm::JDTTypeParameter' is a specialization of 'JDTJavaElement'.
+'jdtmm::JDTClass' is a specialization of 'JDTType'.
+'jdtmm::JDTImportContainer' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTOpaqueBody' is a specialization of 'JDTMethodBody'.
+'jdtmm::JDTParentJavaElement' is a specialization of 'JDTJavaElement'.
+'jdtmm::JDTTypeRoot' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTMethod' is a specialization of 'JDTMember'.
+'jdtmm::JDTMember' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTPackageFragmentRoot' is a specialization of 'JDTParentJavaElement'.
+'jdtmm::JDTTypeParameter' (role 'typeParameters', cardinality 0..*) is associated with 'jdtmm::JDTMember' (role 'JDTMember', cardinality 0..*).
+'jdtmm::JDTType' (role 'jdtmm_JDTType32', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'jdtmm_JDTType30', cardinality 0..*).
+'jdtmm::JDTType' (role 'JDTType', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'methods', cardinality 0..*).
+'jdtmm::JDTParameter' (role 'JDTParameter4', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'parameterOwner', cardinality 0..*).
+'jdtmm::JDTType' (role 'owner21', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'JDTType22', cardinality 0..*).
+'jdtmm::JDTJavaProject' (role 'javaProject', cardinality 0..*) is associated with 'jdtmm::JDTJavaModel' (role 'JDTJavaModel', cardinality 0..*).
+'jdtmm::JDTParameter' (role 'parameters', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'JDTMethod53', cardinality 0..*).
+'jdtmm::JDTType' (role 'JDTType39', cardinality 0..*) is associated with 'jdtmm::JDTCompilationUnit' (role 'compilationUnit', cardinality 0..*).
+'jdtmm::JDTType' (role 'JDTType26', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'types25', cardinality 0..*).
+'jdtmm::JDTMethodBody' (role 'bodies', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'JDTMethod', cardinality 0..*).
+'jdtmm::JDTParent' (role 'parent', cardinality 0..*) is associated with 'jdtmm::JDTJavaElement' (role 'JDTJavaElement', cardinality 0..*).
+'jdtmm::JDTField' (role 'jdtmm_JDTField', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'jdtmm_JDTType34', cardinality 0..*).
+'jdtmm::JDTPackageFragmentRoot' (role 'packageFragmentRoot', cardinality 0..*) is associated with 'jdtmm::JDTPackageFragment' (role 'JDTPackageFragment45', cardinality 0..*).
+'jdtmm::JDTType' (role 'jdtmm_JDTType', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'jdtmm_JDTMethod', cardinality 0..*).
+'jdtmm::JDTParameter' (role 'jdtmm_JDTParameter', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'jdtmm_JDTType55', cardinality 0..*).
+'jdtmm::JDTJavaProject' (role 'javaProject48', cardinality 0..*) is associated with 'jdtmm::JDTPackageFragmentRoot' (role 'JDTPackageFragmentRoot49', cardinality 0..*).
+'jdtmm::JDTMethod' (role 'owner', cardinality 0..*) is associated with 'jdtmm::JDTMethodBody' (role 'JDTMethodBody', cardinality 0..*).
+'jdtmm::JDTJavaElement' (role 'children', cardinality 0..*) is associated with 'jdtmm::JDTParent' (role 'JDTParent', cardinality 0..*).
+'jdtmm::JDTPackageFragmentRoot' (role 'JDTPackageFragmentRoot', cardinality 0..*) is associated with 'jdtmm::JDTPackageFragment' (role 'packageFragments', cardinality 0..*).
+'jdtmm::JDTParameter' (role 'returnType', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'JDTMethod57', cardinality 0..*).
+'jdtmm::JDTField' (role 'fields', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'JDTType36', cardinality 0..*).
+'jdtmm::JDTType' (role 'jdtmm_JDTType9', cardinality 0..*) is associated with 'jdtmm::JDTMember' (role 'jdtmm_JDTMember', cardinality 0..*).
+'jdtmm::JDTType' (role 'owner17', cardinality 0..*) is associated with 'jdtmm::JDTField' (role 'JDTField', cardinality 0..*).
+'jdtmm::JDTJavaProject' (role 'JDTJavaProject51', cardinality 0..*) is associated with 'jdtmm::JDTJavaModel' (role 'javaModel', cardinality 0..*).
+'jdtmm::JDTParameter' (role 'JDTParameter', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'returnOwner', cardinality 0..*).
+'jdtmm::JDTType' (role 'types', cardinality 0..*) is associated with 'jdtmm::JDTCompilationUnit' (role 'JDTCompilationUnit', cardinality 0..*).
+'jdtmm::JDTPackageFragmentRoot' (role 'packageFragmentRoots', cardinality 0..*) is associated with 'jdtmm::JDTJavaProject' (role 'JDTJavaProject', cardinality 0..*).
+'jdtmm::JDTType' (role 'owner14', cardinality 0..*) is associated with 'jdtmm::JDTMethod' (role 'JDTMethod15', cardinality 0..*).
+'jdtmm::JDTType' (role 'jdtmm_JDTType29', cardinality 0..*) is associated with 'jdtmm::JDTType' (role 'jdtmm_JDTType27', cardinality 0..*).
+'jdtmm::JDTPackageFragment' (role 'JDTPackageFragment', cardinality 0..*) is associated with 'jdtmm::JDTCompilationUnit' (role 'compilationUnits', cardinality 0..*).
+'jdtmm::JDTCompilationUnit' (role 'JDTCompilationUnit42', cardinality 0..*) is associated with 'jdtmm::JDTPackageFragment' (role 'packageFragment', cardinality 0..*).
+'jdtmm::JDTMember' (role 'declaringMember', cardinality 0..*) is associated with 'jdtmm::JDTTypeParameter' (role 'JDTTypeParameter', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'errors::ForeignError' has the following attributes: 'porcent' of type int.
+The class 'errors::Table' has no attributes.
+The class 'errors::Errores' has no attributes.
+The class 'errors::Column' has no attributes.
+The class 'errors::Error' has the following attributes: 'apply' of type bool; 'id' of type int.
+The class 'Error' has no attributes.
+The class 'errors::Fk' has no attributes.
+'errors::ForeignError' is a specialization of 'Error'.
+'errors::Error' (role 'errors_Error', cardinality 0..*) is associated with 'errors::Errores' (role 'errors_Errores', cardinality 0..*).
+'errors::ForeignError' (role 'errors_ForeignError', cardinality 0..*) is associated with 'errors::Table' (role 'errors_Table', cardinality 0..*).
+'errors::Column' (role 'errors_Column', cardinality 0..*) is associated with 'errors::ForeignError' (role 'errors_ForeignError6', cardinality 0..*).
+'errors::Fk' (role 'errors_Fk', cardinality 0..*) is associated with 'errors::ForeignError' (role 'errors_ForeignError8', cardinality 0..*).
+'errors::ForeignError' (role 'errors_ForeignError3', cardinality 0..*) is associated with 'errors::Table' (role 'errors_Table4', cardinality 0..*).

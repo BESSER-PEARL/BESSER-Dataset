@@ -1,0 +1,103 @@
+The model has 34 class(es).
+The class 'core::CORENamedElement' has the following attributes: 'name' of type str.
+The class 'core::COREConcern' has no attributes.
+The class 'core::COREBinding' has no attributes.
+The class 'core::COREContribution' has the following attributes: 'relativeWeight' of type int.
+The class 'core::COREFeatureModel' has no attributes.
+The class 'core::LayoutElement' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'core::COREReuseConfiguration' has no attributes.
+The class 'core::COREModel' has no attributes.
+The class 'core::COREReuse' has no attributes.
+The class 'core::COREImpactModel' has no attributes.
+The class 'core::COREFeature' has the following attributes: 'parentRelationship' of type str.
+The class 'COREModel' has no attributes.
+The class 'core::LayoutContainerMap' has no attributes.
+The class 'core::COREImpactNode' has the following attributes: 'offset' of type float; 'scalingFactor' of type float.
+The class 'core::COREModelCompositionSpecification' has no attributes.
+The class 'COREModelElement' has no attributes.
+The class 'core::COREImpactModelBinding' has no attributes.
+The class 'core::COREPattern' has no attributes.
+The class 'CORENamedElement' has no attributes.
+The class 'COREConfiguration' has no attributes.
+The class 'core::COREInterface' has no attributes.
+The class 'core::COREWeightedMapping' has the following attributes: 'weight' of type int.
+The class 'core::CORERelativity::Opt2' has the following attributes: 'probabilisticValue' of type float.
+The class 'COREImpactNode' has no attributes.
+The class 'core::COREModelElement' has the following attributes: 'partiality' of type str; 'visibility' of type str.
+The class 'core::COREConfiguration' has no attributes.
+The class 'core::CORERelativity' has the following attributes: 'probabilisticValue' of type float.
+The class 'core::COREModelReuse' has no attributes.
+The class 'core::CORECompositionSpecification' has no attributes.
+The class 'core::COREMapping' has no attributes.
+The class 'core::COREConcernConfiguration' has no attributes.
+The class 'core::LayoutMap' has no attributes.
+The class 'core::COREFeatureImpactNode' has the following attributes: 'relativeFeatureWeight' of type int.
+The class 'core::EObject' has no attributes.
+The enumeration 'COREPartialityType' has the following literals: 'none', 'concern', 'public'.
+The enumeration 'COREFeatureRelationshipType' has the following literals: 'XOR', 'Optional', 'Mandatory', 'None_', 'OR'.
+The enumeration 'COREVisibilityType' has the following literals: 'public', 'concern'.
+'core::COREConcernConfiguration' is a specialization of 'COREConfiguration'.
+'core::COREModel' is a specialization of 'CORENamedElement'.
+'core::COREImpactNode' is a specialization of 'COREModelElement'.
+'core::COREReuse' is a specialization of 'CORENamedElement'.
+'core::COREFeature' is a specialization of 'COREModelElement'.
+'core::COREConcern' is a specialization of 'CORENamedElement'.
+'core::COREFeatureImpactNode' is a specialization of 'COREImpactNode'.
+'core::COREReuseConfiguration' is a specialization of 'COREConfiguration'.
+'core::CORERelativity' is a specialization of 'COREModelElement'.
+'core::COREFeatureModel' is a specialization of 'COREModel'.
+'core::COREImpactModel' is a specialization of 'COREModel'.
+'core::COREModelElement' is a specialization of 'CORENamedElement'.
+'core::COREFeature' (role 'COREFeature', cardinality 0..*) is associated with 'core::COREModel' (role 'realizedBy', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface44', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement45', cardinality 0..*).
+'core::COREContribution' (role 'COREContribution', cardinality 0..*) is associated with 'core::COREImpactNode' (role 'source63', cardinality 0..*).
+'core::COREConcern' (role 'core_COREConcern', cardinality 0..*) is associated with 'core::COREInterface' (role 'core_COREInterface', cardinality 0..*).
+'core::COREReuseConfiguration' (role 'core_COREReuseConfiguration', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse55', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse59', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse61', cardinality 0..*).
+'core::EObject' (role 'core_EObject99', cardinality 0..*) is associated with 'core::LayoutContainerMap' (role 'core_LayoutContainerMap98', cardinality 0..*).
+'core::LayoutMap' (role 'core_LayoutMap', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject', cardinality 0..*).
+'core::COREImpactNode' (role 'impacts', cardinality 0..*) is associated with 'core::COREContribution' (role 'COREContribution65', cardinality 0..*).
+'core::COREFeature' (role 'COREFeature25', cardinality 0..*) is associated with 'core::COREFeature' (role 'children', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature80', cardinality 0..*) is associated with 'core::COREFeatureModel' (role 'core_COREFeatureModel79', cardinality 0..*).
+'core::LayoutMap' (role 'core_LayoutMap102', cardinality 0..*) is associated with 'core::LayoutContainerMap' (role 'core_LayoutContainerMap101', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature31', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature29', cardinality 0..*).
+'core::COREFeatureModel' (role 'core_COREFeatureModel', cardinality 0..*) is associated with 'core::COREConcern' (role 'core_COREConcern13', cardinality 0..*).
+'core::COREImpactNode' (role 'core_COREImpactNode', cardinality 0..*) is associated with 'core::COREImpactModel' (role 'core_COREImpactModel', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature26', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature28', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface38', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature39', cardinality 0..*).
+'core::CORERelativity::Opt2' (role 'core_CORERelativity_Opt2', cardinality 0..*) is associated with 'core::COREFeatureModel' (role 'core_COREFeatureModel87', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse57', cardinality 0..*) is associated with 'core::COREReuseConfiguration' (role 'core_COREReuseConfiguration58', cardinality 0..*).
+'core::COREConcernConfiguration' (role 'core_COREConcernConfiguration109', cardinality 0..*) is associated with 'core::COREReuseConfiguration' (role 'core_COREReuseConfiguration108', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface47', cardinality 0..*) is associated with 'core::COREImpactNode' (role 'core_COREImpactNode48', cardinality 0..*).
+'core::COREFeatureModel' (role 'core_COREFeatureModel82', cardinality 0..*) is associated with 'core::COREConcernConfiguration' (role 'core_COREConcernConfiguration', cardinality 0..*).
+'core::COREContribution' (role 'outgoing', cardinality 0..*) is associated with 'core::COREImpactNode' (role 'COREImpactNode', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse112', cardinality 0..*) is associated with 'core::COREReuseConfiguration' (role 'core_COREReuseConfiguration111', cardinality 0..*).
+'core::COREWeightedMapping' (role 'core_COREWeightedMapping', cardinality 0..*) is associated with 'core::COREFeatureImpactNode' (role 'core_COREFeatureImpactNode106', cardinality 0..*).
+'core::COREImpactNode' (role 'COREImpactNode93', cardinality 0..*) is associated with 'core::COREContribution' (role 'incoming', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature104', cardinality 0..*) is associated with 'core::COREFeatureImpactNode' (role 'core_COREFeatureImpactNode', cardinality 0..*).
+'core::COREFeature' (role 'source', cardinality 0..*) is associated with 'core::CORERelativity::Opt2' (role 'CORERelativity_Opt2', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature77', cardinality 0..*) is associated with 'core::COREFeatureModel' (role 'core_COREFeatureModel76', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature71', cardinality 0..*) is associated with 'core::COREConfiguration' (role 'core_COREConfiguration70', cardinality 0..*).
+'core::CORERelativity' (role 'core_CORERelativity114', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature115', cardinality 0..*).
+'core::COREFeature' (role 'COREFeature121', cardinality 0..*) is associated with 'core::CORERelativity::Opt2' (role 'incoming120', cardinality 0..*).
+'core::LayoutContainerMap' (role 'core_LayoutContainerMap', cardinality 0..*) is associated with 'core::COREImpactModel' (role 'core_COREImpactModel7', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface41', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement42', cardinality 0..*).
+'core::COREConfiguration' (role 'core_COREConfiguration67', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature68', cardinality 0..*).
+'core::COREModel' (role 'models', cardinality 0..*) is associated with 'core::COREConcern' (role 'COREConcern', cardinality 0..*).
+'core::COREContribution' (role 'core_COREContribution', cardinality 0..*) is associated with 'core::COREImpactModel' (role 'core_COREImpactModel9', cardinality 0..*).
+'core::COREConfiguration' (role 'core_COREConfiguration', cardinality 0..*) is associated with 'core::COREInterface' (role 'core_COREInterface50', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse52', cardinality 0..*) is associated with 'core::COREConcern' (role 'core_COREConcern53', cardinality 0..*).
+'core::COREConcern' (role 'coreConcern', cardinality 0..*) is associated with 'core::COREModel' (role 'COREModel', cardinality 0..*).
+'core::CORERelativity' (role 'core_CORERelativity', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature33', cardinality 0..*).
+'core::COREModel' (role 'core_COREModel2', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement', cardinality 0..*).
+'core::COREFeature' (role 'parent', cardinality 0..*) is associated with 'core::COREFeature' (role 'COREFeature22', cardinality 0..*).
+'core::CORERelativity::Opt2' (role 'CORERelativity_Opt236', cardinality 0..*) is associated with 'core::COREFeature' (role 'features', cardinality 0..*).
+'core::COREConcernConfiguration' (role 'core_COREConcernConfiguration85', cardinality 0..*) is associated with 'core::COREFeatureModel' (role 'core_COREFeatureModel84', cardinality 0..*).
+'core::COREConfiguration' (role 'core_COREConfiguration73', cardinality 0..*) is associated with 'core::COREReuseConfiguration' (role 'core_COREReuseConfiguration74', cardinality 0..*).
+'core::LayoutElement' (role 'core_LayoutElement', cardinality 0..*) is associated with 'core::LayoutMap' (role 'core_LayoutMap96', cardinality 0..*).
+'core::COREModelReuse' (role 'core_COREModelReuse', cardinality 0..*) is associated with 'core::COREModel' (role 'core_COREModel', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse', cardinality 0..*).
+'core::COREConcern' (role 'core_COREConcern15', cardinality 0..*) is associated with 'core::COREImpactModel' (role 'core_COREImpactModel16', cardinality 0..*).
+'core::CORERelativity::Opt2' (role 'outgoing117', cardinality 0..*) is associated with 'core::COREFeature' (role 'COREFeature118', cardinality 0..*).
+'core::COREFeature' (role 'realizes', cardinality 0..*) is associated with 'core::COREModel' (role 'COREModel18', cardinality 0..*).
+'core::COREModelReuse' (role 'core_COREModelReuse89', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse90', cardinality 0..*).

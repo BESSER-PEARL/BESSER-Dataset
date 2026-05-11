@@ -1,0 +1,117 @@
+The model has 49 class(es).
+The class 'Birthing' has no attributes.
+The class 'tracker::Imported' has no attributes.
+The class 'tracker::Mastitis' has the following attributes: 'origin' of type str; 'location' of type str.
+The class 'tracker::LostTag' has no attributes.
+The class 'tracker::Equine' has the following attributes: 'horseBreed' of type str.
+The class 'tracker::AnimalMissing' has no attributes.
+The class 'Animal' has no attributes.
+The class 'tracker::TagAllocated' has no attributes.
+The class 'MedicalCondition' has no attributes.
+The class 'tracker::MovedIn' has the following attributes: 'sourcePin' of type str.
+The class 'tracker::Slaughtered' has no attributes.
+The class 'tracker::Swine' has the following attributes: 'rightEarNotching' of type int; 'leftEarNotching' of type int; 'swineBreed' of type str.
+The class 'tracker::MovedOut' has the following attributes: 'destinationPin' of type str.
+The class 'tracker::Calving' has no attributes.
+The class 'tracker::MedicalTreatment' has the following attributes: 'method' of type str; 'product' of type str; 'quantity' of type str; 'manufacturer' of type str; 'treatment' of type str; 'lot' of type str; 'name' of type str.
+The class 'Bovine' has no attributes.
+The class 'tracker::MedicalCondition' has no attributes.
+The class 'tracker::GenericEvent' has no attributes.
+The class 'tracker::WeighIn' has the following attributes: 'weightGainPerDay' of type str; 'weight' of type str.
+The class 'tracker::Ovine' has the following attributes: 'scrapieTag' of type str; 'sheepBreed' of type str.
+The class 'tracker::USOvineGrading' has the following attributes: 'qualityGradeLevel' of type str; 'qualityGrade' of type str.
+The class 'tracker::TagApplied' has no attributes.
+The class 'tracker::EventSchema' has the following attributes: 'animalType' of type str; 'description' of type str; 'name' of type str.
+The class 'tracker::Schema' has no attributes.
+The class 'tracker::EventAttribute' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'tracker::BovineBeef' has the following attributes: 'beefBreed' of type str.
+The class 'tracker::Premises' has the following attributes: 'name' of type str; 'emailContact' of type str; 'uri' of type str; 'premisesId' of type str.
+The class 'tracker::Bovine' has no attributes.
+The class 'tracker::EventAttributeSchema' has the following attributes: 'dataType' of type str; 'description' of type str; 'name' of type str.
+The class 'tracker::MilkTest' has the following attributes: 'percentButterFat' of type float; 'percentProtein' of type float; 'poundsProduced' of type float; 'otherSolids' of type float; 'somaticCellCounts' of type int.
+The class 'tracker::TagRetired' has no attributes.
+The class 'tracker::Event' has the following attributes: 'comments' of type str; 'correction' of type bool; 'eventCode' of type int; 'electronicallyRead' of type bool; 'dateTime' of type date; 'id' of type str.
+The class 'tracker::Exported' has no attributes.
+The class 'tracker::Birthing' has the following attributes: 'difficulty' of type str; 'assisted' of type bool; 'viability' of type bool.
+The class 'tracker::Animal' has the following attributes: 'ageInDays' of type int; 'visualID' of type str; 'comments' of type str; 'type' of type str; 'weight' of type str; 'alternativeID' of type str; 'sexCode' of type str; 'lastEventDateTime' of type date; 'breed' of type str; 'birthDate' of type date; 'sex' of type str; 'speciesCode' of type str; 'weightGainPerDay' of type str; 'id' of type str; 'species' of type str.
+The class 'tracker::Tag' has the following attributes: 'id' of type str; 'usainNumberUsed' of type bool.
+The class 'tracker::Location' has the following attributes: 'name' of type str.
+The class 'tracker::BovineDairy' has the following attributes: 'dairyBreed' of type str.
+The class 'tracker::Died' has no attributes.
+The class 'tracker::BirthDefect' has the following attributes: 'freemartin' of type bool.
+The class 'tracker::USBeefGrading' has the following attributes: 'yieldGrade' of type str; 'qualityGrade' of type str; 'qualityGradeLevel' of type str.
+The class 'Event' has no attributes.
+The class 'tracker::Sighting' has no attributes.
+The class 'tracker::ICVI' has no attributes.
+The class 'tracker::ReplacedTag' has the following attributes: 'usainNumberUsedForOldId' of type bool; 'oldId' of type str.
+The class 'tracker::Caprine' has the following attributes: 'goatBreed' of type str.
+The class 'tracker::HerdTest' has the following attributes: 'pregnant' of type bool; 'daysSinceBredEstimate' of type int; 'bredDateEstimate' of type date.
+The class 'tracker::BovineBison' has the following attributes: 'buffaloBreed' of type str.
+The class 'tracker::USSwineGrading' has the following attributes: 'qualityGrade' of type str.
+The enumeration 'Treatment' has the following literals: 'Vitamin', 'Prevention', 'Unspecified', 'Hormone', 'Vaccination'.
+The enumeration 'Level' has the following literals: 'Average', 'Low', 'Unspecified', 'High'.
+The enumeration 'Sex' has the following literals: 'M', 'Unspecified', 'F', 'S', 'C'.
+The enumeration 'BisonBreed' has the following literals: 'PB', 'WO', 'Unspecified'.
+The enumeration 'GoatBreed' has the following literals: 'AI', 'OH', 'LN', 'BZ', 'ND', 'Unspecified', 'AG', 'TO', 'NU', 'CS', 'EN', 'PY'.
+The enumeration 'HorseBreed' has the following literals: 'HF', 'FH', 'AP', 'TP', 'IC', 'RH', 'SE', 'FR', 'TH', 'CM', 'OB', 'MN', 'PF', 'Unspecified', 'PV', 'PW', 'WE', 'QH', 'HK', 'VK', 'HT', 'NK', 'PN', 'RU', 'AC', 'FJ', 'SY', 'NO', 'CI', 'DW', 'GL', 'EX', 'HN', 'TW', 'HV', 'AD', 'MU', 'WU', 'CV', 'HG', 'HW', 'PL', 'AO', 'AS', 'PH', 'CY', 'TF', 'NF', 'SN', 'FE', 'DT', 'BW', 'LZ', 'WF', 'AA', 'BU', 'SF', 'WI', 'WW', 'BY', 'WG', 'PT', 'HU', 'MF', 'OL', 'TR', 'FC'.
+The enumeration 'EventDataType' has the following literals: 'Integer', 'Boolean', 'String'.
+The enumeration 'BeefBreed' has the following literals: 'NS', 'DR', 'CA', 'HP', 'AR', 'IS', 'SA', 'FC', 'LU', 'IB', 'MR', 'BR', 'RD', 'MO', 'NM', 'GY', 'ER', 'TP', 'CB', 'MG', 'HB', 'SH', 'AL', 'BB', 'MA', 'FA', 'CP', 'AW', 'RS', 'CN', 'AF', 'SP', 'DJ', 'BA', 'BG', 'KB', 'WF', 'HY', 'WB', 'BE', 'FP', 'RB', 'AB', 'RO', 'NE', 'SB', 'PA', 'SM', 'XX', 'DN', 'GS', 'ME', 'BM', 'DB', 'SV', 'DL', 'AN', 'MU', 'FB', 'BH', 'TN', 'GZ', 'DF', 'MH', 'GR', 'BQ', 'BW', 'CM', 'SG', 'GV', 'DS', 'SE', 'CG', 'KY', 'PR', 'YA', 'PI', 'SS', 'RW', 'NR', 'SW', 'AK', 'GE', 'Unspecified', 'AM', 'RA', 'AU', 'CU', 'PZ', 'SX', 'GA', 'TG', 'XT', 'MC', 'BI', 'LO', 'RN', 'TI', 'DE', 'TA', 'BO', 'LR', 'FL', 'CH', 'SI', 'BU', 'AE', 'BL', 'HC', 'BD', 'SL', 'ML', 'RP', 'BN', 'MI', 'TL', 'WP', 'BF', 'RR', 'FR', 'LM', 'GI', 'HH'.
+The enumeration 'USSwineQualityGrade' has the following literals: 'Three', 'Two', 'Four', 'Unspecified', 'One'.
+The enumeration 'USQualityGrade' has the following literals: 'Unspecified', 'Prime', 'Standard', 'Choice', 'Select'.
+The enumeration 'SheepBreed' has the following literals: 'OU', 'RG', 'NL', 'IL', 'BW', 'FB', 'BL', 'BO', 'SX', 'TA', 'SU', 'SC', 'XM', 'DL', 'HY', 'CP', 'CR', 'SR', 'ST', 'CF', 'CO', 'PE', 'XL', 'ER', 'MP', 'CL', 'RI', 'KK', 'KA', 'MM', 'RM', 'BC', 'ZS', 'LY', 'LI', 'PO', 'HL', 'NC', 'BF', 'OX', 'Unspecified', 'RY', 'LE', 'MT', 'SL', 'RV', 'HS', 'FN', 'TU', 'CD', 'KH', 'DP', 'TX', 'DH'.
+The enumeration 'USBeefYieldGrade' has the following literals: 'Two', 'Four', 'Unspecified', 'Three', 'Five', 'One'.
+The enumeration 'TreatmentMethod' has the following literals: 'Nasal', 'Salve', 'Intramuscular', 'Unspecified'.
+The enumeration 'OneToTen' has the following literals: 'Nine', 'Six', 'Ten', 'Unspecified', 'One', 'Two', 'Five', 'Seven', 'Eight', 'Four', 'Three'.
+The enumeration 'DairyBreed' has the following literals: 'GU', 'Unspecified', 'LD', 'AY', 'HO', 'FM', 'WW', 'MS', 'GD', 'JE', 'BS'.
+The enumeration 'SwineBreed' has the following literals: 'CW', 'DU', 'PE', 'Unspecified', 'TM', 'LB', 'YO', 'WS', 'HA', 'LA', 'PC', 'RW', 'BK', 'LC', 'LW', 'SO'.
+The enumeration 'AnimalType' has the following literals: 'Swine', 'Ovine', 'Unspecified', 'Caprine', 'BovineDairy', 'Equine', 'BovineBeef', 'BovineBison'.
+'tracker::Swine' is a specialization of 'Animal'.
+'tracker::USOvineGrading' is a specialization of 'Event'.
+'tracker::USSwineGrading' is a specialization of 'Event'.
+'tracker::MovedIn' is a specialization of 'Event'.
+'tracker::ReplacedTag' is a specialization of 'Event'.
+'tracker::BovineBison' is a specialization of 'Bovine'.
+'tracker::MedicalCondition' is a specialization of 'Event'.
+'tracker::Ovine' is a specialization of 'Animal'.
+'tracker::AnimalMissing' is a specialization of 'Event'.
+'tracker::ICVI' is a specialization of 'Event'.
+'tracker::Bovine' is a specialization of 'Animal'.
+'tracker::Mastitis' is a specialization of 'MedicalCondition'.
+'tracker::Birthing' is a specialization of 'Event'.
+'tracker::Sighting' is a specialization of 'Event'.
+'tracker::Slaughtered' is a specialization of 'Event'.
+'tracker::WeighIn' is a specialization of 'Event'.
+'tracker::MovedOut' is a specialization of 'Event'.
+'tracker::Died' is a specialization of 'Event'.
+'tracker::BovineBeef' is a specialization of 'Bovine'.
+'tracker::HerdTest' is a specialization of 'Event'.
+'tracker::Imported' is a specialization of 'Event'.
+'tracker::TagRetired' is a specialization of 'Event'.
+'tracker::TagApplied' is a specialization of 'Event'.
+'tracker::MilkTest' is a specialization of 'Event'.
+'tracker::BirthDefect' is a specialization of 'Event'.
+'tracker::USBeefGrading' is a specialization of 'Event'.
+'tracker::MedicalTreatment' is a specialization of 'Event'.
+'tracker::GenericEvent' is a specialization of 'Event'.
+'tracker::Exported' is a specialization of 'Event'.
+'tracker::TagAllocated' is a specialization of 'Event'.
+'tracker::Caprine' is a specialization of 'Animal'.
+'tracker::LostTag' is a specialization of 'Event'.
+'tracker::Equine' is a specialization of 'Animal'.
+'tracker::Calving' is a specialization of 'Birthing'.
+'tracker::BovineDairy' is a specialization of 'Bovine'.
+'tracker::Event' (role 'Event', cardinality 0..*) is associated with 'tracker::Tag' (role 'tag', cardinality 0..*).
+'tracker::GenericEvent' (role 'tracker_GenericEvent', cardinality 0..*) is associated with 'tracker::EventAttribute' (role 'tracker_EventAttribute', cardinality 0..*).
+'tracker::EventSchema' (role 'tracker_EventSchema26', cardinality 0..*) is associated with 'tracker::EventAttributeSchema' (role 'tracker_EventAttributeSchema', cardinality 0..*).
+'tracker::Tag' (role 'Tag', cardinality 0..*) is associated with 'tracker::Event' (role 'events', cardinality 0..*).
+'tracker::Schema' (role 'tracker_Schema', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises17', cardinality 0..*).
+'tracker::ReplacedTag' (role 'tracker_ReplacedTag', cardinality 0..*) is associated with 'tracker::Tag' (role 'tracker_Tag19', cardinality 0..*).
+'tracker::Tag' (role 'tracker_Tag13', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises12', cardinality 0..*).
+'tracker::Animal' (role 'tracker_Animal10', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises', cardinality 0..*).
+'tracker::Animal' (role 'tracker_Animal1', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal3', cardinality 0..*).
+'tracker::Premises' (role 'tracker_Premises15', cardinality 0..*) is associated with 'tracker::Location' (role 'tracker_Location', cardinality 0..*).
+'tracker::Schema' (role 'tracker_Schema28', cardinality 0..*) is associated with 'tracker::EventSchema' (role 'tracker_EventSchema29', cardinality 0..*).
+'tracker::EventSchema' (role 'tracker_EventSchema', cardinality 0..*) is associated with 'tracker::GenericEvent' (role 'tracker_GenericEvent24', cardinality 0..*).
+'tracker::Animal' (role 'tracker_Animal6', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal4', cardinality 0..*).
+'tracker::Tag' (role 'tracker_Tag', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal', cardinality 0..*).
+'tracker::Location' (role 'tracker_Location21', cardinality 0..*) is associated with 'tracker::Sighting' (role 'tracker_Sighting', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'mongoQuery::FieldSelection' has the following attributes: 'key' of type str; 'enabled' of type int.
+The class 'mongoQuery::Selector' has no attributes.
+The class 'mongoQuery::JsonDate' has the following attributes: 'day' of type int; 'second' of type int; 'dateString' of type str; 'year' of type int; 'milliseconds' of type int; 'hour' of type int; 'minute' of type int; 'millisecond' of type int; 'month' of type int.
+The class 'Query' has no attributes.
+The class 'mongoQuery::Selection' has no attributes.
+The class 'mongoQuery::Query' has the following attributes: 'integerValue' of type int; 'key' of type str; 'stringValue' of type str; 'numberValue' of type float.
+The class 'mongoQuery::QueryObject' has no attributes.
+The class 'mongoQuery::Array' has no attributes.
+'mongoQuery::QueryObject' is a specialization of 'Query'.
+'mongoQuery::JsonDate' (role 'mongoQuery_JsonDate', cardinality 0..*) is associated with 'mongoQuery::Query' (role 'mongoQuery_Query9', cardinality 0..*).
+'mongoQuery::Selector' (role 'mongoQuery_Selector', cardinality 0..*) is associated with 'mongoQuery::Query' (role 'mongoQuery_Query', cardinality 0..*).
+'mongoQuery::Query' (role 'mongoQuery_Query19', cardinality 0..*) is associated with 'mongoQuery::QueryObject' (role 'mongoQuery_QueryObject', cardinality 0..*).
+'mongoQuery::Query' (role 'mongoQuery_Query5', cardinality 0..*) is associated with 'mongoQuery::Query' (role 'mongoQuery_Query7', cardinality 0..*).
+'mongoQuery::FieldSelection' (role 'mongoQuery_FieldSelection', cardinality 0..*) is associated with 'mongoQuery::Selection' (role 'mongoQuery_Selection4', cardinality 0..*).
+'mongoQuery::Query' (role 'mongoQuery_Query17', cardinality 0..*) is associated with 'mongoQuery::Array' (role 'mongoQuery_Array16', cardinality 0..*).
+'mongoQuery::Array' (role 'mongoQuery_Array', cardinality 0..*) is associated with 'mongoQuery::Query' (role 'mongoQuery_Query11', cardinality 0..*).
+'mongoQuery::Selector' (role 'mongoQuery_Selector2', cardinality 0..*) is associated with 'mongoQuery::Selection' (role 'mongoQuery_Selection', cardinality 0..*).
+'mongoQuery::Query' (role 'mongoQuery_Query12', cardinality 0..*) is associated with 'mongoQuery::Query' (role 'mongoQuery_Query14', cardinality 0..*).

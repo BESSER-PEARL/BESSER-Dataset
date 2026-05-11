@@ -1,0 +1,123 @@
+The model has 48 class(es).
+The class 'dmx::DNamedElement' has no attributes.
+The class 'DContext' has no attributes.
+The class 'dmx::DmxDecimalLiteral' has the following attributes: 'value' of type str.
+The class 'dmx::DmxListExpression' has no attributes.
+The class 'dmx::DmxBinaryOperation' has the following attributes: 'operator' of type str.
+The class 'dmx::DmxFilter' has no attributes.
+The class 'dmx::DmxCastExpression' has no attributes.
+The class 'dmx::DmxBooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'dmx::DmxComplexObject' has no attributes.
+The class 'dmx::DType' has no attributes.
+The class 'dmx::DmxInstanceOfExpression' has no attributes.
+The class 'DModel' has no attributes.
+The class 'dmx::DmxArchetype' has the following attributes: 'baseType' of type str.
+The class 'dmx::DmxIfExpression' has no attributes.
+The class 'dmx::DComplexType' has no attributes.
+The class 'dmx::DmxField' has no attributes.
+The class 'dmx::DmxMemberNavigation' has the following attributes: 'explicitOperationCall' of type bool; 'before' of type bool.
+The class 'dmx::DmxCallArguments' has no attributes.
+The class 'dmx::DmxUrlLiteral' has the following attributes: 'display' of type str; 'value' of type str.
+The class 'dmx::DmxTest' has the following attributes: 'name' of type str.
+The class 'dmx::DNavigableMember' has no attributes.
+The class 'dmx::IStaticReferenceTarget' has no attributes.
+The class 'dmx::DmxContextReference' has the following attributes: 'before' of type bool; 'all' of type bool.
+The class 'dmx::DmxFilterTypeDescriptor' has the following attributes: 'collection' of type bool; 'single' of type str; 'multiTyped' of type bool.
+The class 'dmx::DmxAssignment' has no attributes.
+The class 'dmx::DmxCorrelationVariable' has no attributes.
+The class 'dmx::DmxDetail' has no attributes.
+The class 'DNavigableMember' has no attributes.
+The class 'dmx::DmxStaticReference' has the following attributes: 'displayName' of type str; 'plural' of type bool.
+The class 'INavigableMemberContainer' has no attributes.
+The class 'dmx::DmxDateLiteral' has the following attributes: 'value' of type date.
+The class 'dmx::DExpression' has no attributes.
+The class 'dmx::DmxTestContext' has no attributes.
+The class 'dmx::DmxUndefinedLiteral' has no attributes.
+The class 'dmx::DmxModel' has no attributes.
+The class 'dmx::DmxFunctionCall' has no attributes.
+The class 'dmx::DmxStringLiteral' has the following attributes: 'value' of type str.
+The class 'dmx::DmxEntity' has no attributes.
+The class 'DPrimitive' has no attributes.
+The class 'dmx::DmxBaseTypeSet' has the following attributes: 'members' of type str; 'name' of type str.
+The class 'DExpression' has no attributes.
+The class 'dmx::DmxFilterParameter' has the following attributes: 'name' of type str.
+The class 'dmx::DFeature' has no attributes.
+The class 'dmx::DmxNaturalLiteral' has the following attributes: 'value' of type int.
+The class 'ITypeContainer' has no attributes.
+The class 'DmxComplexObject' has no attributes.
+The class 'dmx::DmxUnaryOperation' has the following attributes: 'operator' of type str.
+The class 'dmx::DmxPredicateWithCorrelationVariable' has no attributes.
+The enumeration 'DmxBinaryOperator' has the following literals: 'POWER', 'EQUAL', 'NOT_EQUAL', 'XOR', 'SUBTRACT', 'DIVIDE', 'GREATER_OR_EQUAL', 'MODULO', 'SINGLE_ARROW', 'LESS', 'GREATER', 'DOUBLE_ARROW', 'AND', 'ADD', 'UNTIL', 'MULTIPLY', 'LESS_OR_EQUAL', 'OR', 'IN'.
+The enumeration 'DmxBaseType' has the following literals: 'BOOLEAN', 'UNDEFINED', 'TIMEPOINT', 'AMBIGUOUS', 'STATE_EVENT', 'STATE', 'ENUM', 'AGGREGATE', 'NUMBER', 'COMPLEX', 'IDENTIFIER', 'VOID', 'TEXT', 'NOTIFICATION', 'SERVICE'.
+The enumeration 'DmxUnaryOperator' has the following literals: 'NOT', 'MINUS', 'PLUS'.
+'dmx::DmxNaturalLiteral' is a specialization of 'DExpression'.
+'dmx::DmxField' is a specialization of 'DNavigableMember'.
+'dmx::DmxUrlLiteral' is a specialization of 'DExpression'.
+'dmx::DmxModel' is a specialization of 'DModel'.
+'dmx::DmxIfExpression' is a specialization of 'DExpression'.
+'dmx::DmxPredicateWithCorrelationVariable' is a specialization of 'DExpression'.
+'dmx::DmxBinaryOperation' is a specialization of 'DExpression'.
+'dmx::DmxListExpression' is a specialization of 'DExpression'.
+'dmx::DmxCorrelationVariable' is a specialization of 'DNavigableMember'.
+'dmx::DmxModel' is a specialization of 'ITypeContainer'.
+'dmx::DmxUndefinedLiteral' is a specialization of 'DExpression'.
+'dmx::DmxDetail' is a specialization of 'DmxComplexObject'.
+'dmx::DmxBooleanLiteral' is a specialization of 'DExpression'.
+'dmx::DmxFilter' is a specialization of 'DNavigableMember'.
+'dmx::DmxComplexObject' is a specialization of 'INavigableMemberContainer'.
+'dmx::DmxTestContext' is a specialization of 'DContext'.
+'dmx::DmxAssignment' is a specialization of 'DExpression'.
+'dmx::DmxPredicateWithCorrelationVariable' is a specialization of 'INavigableMemberContainer'.
+'dmx::DmxArchetype' is a specialization of 'DPrimitive'.
+'dmx::DmxDateLiteral' is a specialization of 'DExpression'.
+'dmx::DmxFunctionCall' is a specialization of 'DExpression'.
+'dmx::DmxDecimalLiteral' is a specialization of 'DExpression'.
+'dmx::DmxComplexObject' is a specialization of 'DExpression'.
+'dmx::DmxUnaryOperation' is a specialization of 'DExpression'.
+'dmx::DmxCastExpression' is a specialization of 'DExpression'.
+'dmx::DmxMemberNavigation' is a specialization of 'DExpression'.
+'dmx::DmxStaticReference' is a specialization of 'DExpression'.
+'dmx::DmxEntity' is a specialization of 'DmxComplexObject'.
+'dmx::DmxInstanceOfExpression' is a specialization of 'DExpression'.
+'dmx::DmxTest' is a specialization of 'INavigableMemberContainer'.
+'dmx::DmxContextReference' is a specialization of 'DExpression'.
+'dmx::DmxStringLiteral' is a specialization of 'DExpression'.
+'dmx::DExpression' (role 'dmx_DExpression72', cardinality 0..*) is associated with 'dmx::DmxIfExpression' (role 'dmx_DmxIfExpression', cardinality 0..*).
+'dmx::DmxFilterParameter' (role 'dmx_DmxFilterParameter20', cardinality 0..*) is associated with 'dmx::DmxFilterTypeDescriptor' (role 'dmx_DmxFilterTypeDescriptor21', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression42', cardinality 0..*) is associated with 'dmx::DmxCallArguments' (role 'dmx_DmxCallArguments41', cardinality 0..*).
+'dmx::DmxFilter' (role 'dmx_DmxFilter13', cardinality 0..*) is associated with 'dmx::DmxFilterTypeDescriptor' (role 'dmx_DmxFilterTypeDescriptor', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression58', cardinality 0..*) is associated with 'dmx::DmxUnaryOperation' (role 'dmx_DmxUnaryOperation', cardinality 0..*).
+'dmx::DmxCastExpression' (role 'dmx_DmxCastExpression62', cardinality 0..*) is associated with 'dmx::DType' (role 'dmx_DType63', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression78', cardinality 0..*) is associated with 'dmx::DmxIfExpression' (role 'dmx_DmxIfExpression77', cardinality 0..*).
+'dmx::DmxTestContext' (role 'dmx_DmxTestContext', cardinality 0..*) is associated with 'dmx::DmxTest' (role 'dmx_DmxTest4', cardinality 0..*).
+'dmx::DNavigableMember' (role 'dmx_DNavigableMember', cardinality 0..*) is associated with 'dmx::DmxAssignment' (role 'dmx_DmxAssignment25', cardinality 0..*).
+'dmx::DmxMemberNavigation' (role 'dmx_DmxMemberNavigation39', cardinality 0..*) is associated with 'dmx::DmxCallArguments' (role 'dmx_DmxCallArguments', cardinality 0..*).
+'dmx::DmxBaseTypeSet' (role 'dmx_DmxBaseTypeSet18', cardinality 0..*) is associated with 'dmx::DmxFilterTypeDescriptor' (role 'dmx_DmxFilterTypeDescriptor17', cardinality 0..*).
+'dmx::DmxTest' (role 'dmx_DmxTest', cardinality 0..*) is associated with 'dmx::DmxModel' (role 'dmx_DmxModel2', cardinality 0..*).
+'dmx::DmxBinaryOperation' (role 'dmx_DmxBinaryOperation51', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression52', cardinality 0..*).
+'dmx::DNavigableMember' (role 'dmx_DNavigableMember69', cardinality 0..*) is associated with 'dmx::DmxStaticReference' (role 'dmx_DmxStaticReference68', cardinality 0..*).
+'dmx::DmxAssignment' (role 'dmx_DmxAssignment', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression23', cardinality 0..*).
+'dmx::DmxField' (role 'dmx_DmxField85', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression86', cardinality 0..*).
+'dmx::DmxCorrelationVariable' (role 'dmx_DmxCorrelationVariable', cardinality 0..*) is associated with 'dmx::DmxPredicateWithCorrelationVariable' (role 'dmx_DmxPredicateWithCorrelationVariable', cardinality 0..*).
+'dmx::DmxAssignment' (role 'dmx_DmxAssignment27', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression28', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression9', cardinality 0..*) is associated with 'dmx::DmxTestContext' (role 'dmx_DmxTestContext8', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression32', cardinality 0..*) is associated with 'dmx::DmxPredicateWithCorrelationVariable' (role 'dmx_DmxPredicateWithCorrelationVariable31', cardinality 0..*).
+'dmx::DNamedElement' (role 'dmx_DNamedElement', cardinality 0..*) is associated with 'dmx::DmxContextReference' (role 'dmx_DmxContextReference', cardinality 0..*).
+'dmx::DmxInstanceOfExpression' (role 'dmx_DmxInstanceOfExpression', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression54', cardinality 0..*).
+'dmx::DType' (role 'dmx_DType', cardinality 0..*) is associated with 'dmx::DmxInstanceOfExpression' (role 'dmx_DmxInstanceOfExpression56', cardinality 0..*).
+'dmx::DmxField' (role 'dmx_DmxField', cardinality 0..*) is associated with 'dmx::DmxComplexObject' (role 'dmx_DmxComplexObject81', cardinality 0..*).
+'dmx::DExpression' (role 'dmx_DExpression60', cardinality 0..*) is associated with 'dmx::DmxCastExpression' (role 'dmx_DmxCastExpression', cardinality 0..*).
+'dmx::DmxBinaryOperation' (role 'dmx_DmxBinaryOperation', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression49', cardinality 0..*).
+'dmx::DComplexType' (role 'dmx_DComplexType', cardinality 0..*) is associated with 'dmx::DmxComplexObject' (role 'dmx_DmxComplexObject', cardinality 0..*).
+'dmx::DmxFilter' (role 'dmx_DmxFilter15', cardinality 0..*) is associated with 'dmx::DmxBaseTypeSet' (role 'dmx_DmxBaseTypeSet', cardinality 0..*).
+'dmx::DmxFunctionCall' (role 'dmx_DmxFunctionCall', cardinality 0..*) is associated with 'dmx::DmxFilter' (role 'dmx_DmxFilter44', cardinality 0..*).
+'dmx::DmxModel' (role 'dmx_DmxModel', cardinality 0..*) is associated with 'dmx::DmxFilter' (role 'dmx_DmxFilter', cardinality 0..*).
+'dmx::DmxTest' (role 'dmx_DmxTest6', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression', cardinality 0..*).
+'dmx::DmxIfExpression' (role 'dmx_DmxIfExpression74', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression75', cardinality 0..*).
+'dmx::DmxMemberNavigation' (role 'dmx_DmxMemberNavigation36', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression37', cardinality 0..*).
+'dmx::IStaticReferenceTarget' (role 'dmx_IStaticReferenceTarget', cardinality 0..*) is associated with 'dmx::DmxStaticReference' (role 'dmx_DmxStaticReference', cardinality 0..*).
+'dmx::DmxFilter' (role 'dmx_DmxFilter11', cardinality 0..*) is associated with 'dmx::DmxFilterParameter' (role 'dmx_DmxFilterParameter', cardinality 0..*).
+'dmx::DmxMemberNavigation' (role 'dmx_DmxMemberNavigation', cardinality 0..*) is associated with 'dmx::DNavigableMember' (role 'dmx_DNavigableMember34', cardinality 0..*).
+'dmx::DmxFunctionCall' (role 'dmx_DmxFunctionCall46', cardinality 0..*) is associated with 'dmx::DmxCallArguments' (role 'dmx_DmxCallArguments47', cardinality 0..*).
+'dmx::DmxField' (role 'dmx_DmxField83', cardinality 0..*) is associated with 'dmx::DFeature' (role 'dmx_DFeature', cardinality 0..*).
+'dmx::DmxListExpression' (role 'dmx_DmxListExpression', cardinality 0..*) is associated with 'dmx::DExpression' (role 'dmx_DExpression65', cardinality 0..*).

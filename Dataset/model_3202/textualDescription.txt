@@ -1,0 +1,216 @@
+The model has 84 class(es).
+The class 'langc::ConditionalStatement' has no attributes.
+The class 'langc::Name' has the following attributes: 'name' of type str.
+The class 'langc::LabeledClause' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'langc::DereferenceExpr' has no attributes.
+The class 'langc::FileDependency' has no attributes.
+The class 'langc::DependencyBlob' has the following attributes: 'text' of type str; 'markerComment' of type str.
+The class 'langc::VariableDeclaration' has the following attributes: 'linkage' of type str.
+The class 'langc::ElementList' has no attributes.
+The class 'langc::UserElement' has the following attributes: 'kind' of type str.
+The class 'langc::CodeBlob' has the following attributes: 'text' of type str; 'markerComment' of type str.
+The class 'langc::Function' has the following attributes: 'linkage' of type str.
+The class 'langc::FunctionCall' has no attributes.
+The class 'UserElement' has no attributes.
+The class 'langc::AddressOfExpr' has no attributes.
+The class 'langc::System' has no attributes.
+The class 'Literal' has no attributes.
+The class 'langc::IntegralLiteral' has the following attributes: 'bytes' of type str; 'signed' of type bool; 'value' of type str.
+The class 'langc::UserInclude' has no attributes.
+The class 'langc::IndexExpr' has no attributes.
+The class 'langc::Macro' has no attributes.
+The class 'langc::FunctionPointer' has no attributes.
+The class 'langc::ElementAccess' has no attributes.
+The class 'langc::CastExpr' has no attributes.
+The class 'Statement' has no attributes.
+The class 'langc::ElementReference' has the following attributes: 'cvQualifier' of type str; 'pointerSpec' of type str.
+The class 'langc::DependencyList' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'langc::SwitchStatement' has no attributes.
+The class 'langc::ReturnStatement' has no attributes.
+The class 'langc::Statement' has no attributes.
+The class 'Sizeof' has no attributes.
+The class 'langc::BuiltInType' has the following attributes: 'type' of type str.
+The class 'langc::SwitchClause' has the following attributes: 'fallthrough' of type bool.
+The class 'langc::BinaryOperation' has the following attributes: 'operator' of type str.
+The class 'langc::Typedef' has no attributes.
+The class 'Element' has no attributes.
+The class 'CodeBlock' has no attributes.
+The class 'langc::ExpressionStatement' has no attributes.
+The class 'Directive' has no attributes.
+The class 'langc::Union' has no attributes.
+The class 'langc::MemberAccess' has no attributes.
+The class 'langc::SizeofExpr' has no attributes.
+The class 'langc::BindableValue' has no attributes.
+The class 'langc::Enum' has no attributes.
+The class 'Expression' has no attributes.
+The class 'langc::SubSystem' has the following attributes: 'name' of type str.
+The class 'langc::Element' has no attributes.
+The class 'langc::FunctionImplementation' has no attributes.
+The class 'langc::SystemInclude' has no attributes.
+The class 'langc::FolderName' has the following attributes: 'api' of type bool.
+The class 'langc::FunctionAddress' has no attributes.
+The class 'SwitchClause' has no attributes.
+The class 'langc::Dependency' has no attributes.
+The class 'langc::SystemFileName' has no attributes.
+The class 'ExpressionStatement' has no attributes.
+The class 'langc::Structure' has no attributes.
+The class 'langc::CodeBlock' has the following attributes: 'forceBraces' of type bool.
+The class 'langc::WhileStatement' has no attributes.
+The class 'langc::ExpressionBlob' has the following attributes: 'text' of type str.
+The class 'langc::Literal' has the following attributes: 'primitiveType' of type str.
+The class 'langc::Enumerator' has no attributes.
+The class 'langc::SizeofType' has no attributes.
+The class 'langc::LogicalComparison' has the following attributes: 'operator' of type str.
+The class 'langc::NamedReference' has no attributes.
+The class 'langc::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'langc::NamedElement' has no attributes.
+The class 'langc::Struct' has no attributes.
+The class 'langc::BlockInitializer' has no attributes.
+The class 'langc::LinkableArtifact' has the following attributes: 'name' of type str.
+The class 'langc::FloatingLiteral' has the following attributes: 'value' of type float.
+The class 'Name' has no attributes.
+The class 'langc::Expression' has the following attributes: 'precendence' of type int.
+The class 'FileName' has no attributes.
+The class 'langc::BreakStatement' has no attributes.
+The class 'langc::FileName' has the following attributes: 'hasObjectCode' of type bool.
+The class 'Structure' has no attributes.
+The class 'langc::VariableDeclarationStatement' has no attributes.
+The class 'langc::Directive' has no attributes.
+The class 'BindableValue' has no attributes.
+The class 'langc::StringLiteral' has the following attributes: 'value' of type str.
+The class 'langc::Sizeof' has no attributes.
+The class 'ElementAccess' has no attributes.
+The class 'FileDependency' has no attributes.
+The enumeration 'CVQualifier' has the following literals: 'volatile', 'unqualified', 'const'.
+The enumeration 'ElementKind' has the following literals: 'headerOnly', 'implOnly', 'default'.
+The enumeration 'Operator' has the following literals: 'bitwise_and', 'assign', 'add', 'subtract', 'bitwise_or', 'assign_add'.
+The enumeration 'BooleanOperator' has the following literals: 'or_', 'and_', 'less_than', 'equivalent', 'greater_than', 'less_than_equal', 'not_equivalent', 'greater_than_equal'.
+The enumeration 'Pointer' has the following literals: 'const_volatile_pointer', 'invalid', 'pointer', 'volatile_pointer', 'const_pointer'.
+The enumeration 'LinkageSpec' has the following literals: 'unspecified', 'extern', 'static'.
+The enumeration 'PrimitiveType' has the following literals: 'int8', 'char', 'long', 'int32', 'void', 'uint32', 'uint16', 'uint8', 'int16', 'float', 'double'.
+'langc::DereferenceExpr' is a specialization of 'Expression'.
+'langc::CastExpr' is a specialization of 'Expression'.
+'langc::FloatingLiteral' is a specialization of 'Literal'.
+'langc::AddressOfExpr' is a specialization of 'Expression'.
+'langc::FunctionCall' is a specialization of 'Expression'.
+'langc::Structure' is a specialization of 'NamedElement'.
+'langc::Union' is a specialization of 'Structure'.
+'langc::Enum' is a specialization of 'NamedElement'.
+'langc::ExpressionStatement' is a specialization of 'Statement'.
+'langc::ExpressionBlob' is a specialization of 'Expression'.
+'langc::IntegralLiteral' is a specialization of 'Literal'.
+'langc::BreakStatement' is a specialization of 'Statement'.
+'langc::Sizeof' is a specialization of 'Expression'.
+'langc::Struct' is a specialization of 'Structure'.
+'langc::SystemInclude' is a specialization of 'FileDependency'.
+'langc::Macro' is a specialization of 'BindableValue'.
+'langc::MemberAccess' is a specialization of 'ElementAccess'.
+'langc::ElementReference' is a specialization of 'BindableValue'.
+'langc::SystemFileName' is a specialization of 'FileName'.
+'langc::Literal' is a specialization of 'Expression'.
+'langc::LabeledClause' is a specialization of 'SwitchClause'.
+'langc::ConditionalStatement' is a specialization of 'CodeBlock'.
+'langc::BlockInitializer' is a specialization of 'Expression'.
+'langc::NamedElement' is a specialization of 'BindableValue'.
+'langc::BuiltInType' is a specialization of 'Element'.
+'langc::CodeBlock' is a specialization of 'Statement'.
+'langc::StringLiteral' is a specialization of 'Expression'.
+'langc::LogicalComparison' is a specialization of 'Expression'.
+'langc::Function' is a specialization of 'NamedElement'.
+'langc::DependencyBlob' is a specialization of 'Dependency'.
+'langc::FileDependency' is a specialization of 'Dependency'.
+'langc::UserInclude' is a specialization of 'FileDependency'.
+'langc::UserElement' is a specialization of 'Element'.
+'langc::CharacterLiteral' is a specialization of 'Literal'.
+'langc::FileName' is a specialization of 'Name'.
+'langc::FunctionAddress' is a specialization of 'Expression'.
+'langc::SizeofType' is a specialization of 'Sizeof'.
+'langc::CodeBlob' is a specialization of 'CodeBlock'.
+'langc::ReturnStatement' is a specialization of 'ExpressionStatement'.
+'langc::VariableDeclarationStatement' is a specialization of 'Statement'.
+'langc::IndexExpr' is a specialization of 'Expression'.
+'langc::NamedElement' is a specialization of 'UserElement'.
+'langc::Typedef' is a specialization of 'NamedElement'.
+'langc::FunctionImplementation' is a specialization of 'UserElement'.
+'langc::FolderName' is a specialization of 'Name'.
+'langc::SizeofExpr' is a specialization of 'Sizeof'.
+'langc::SwitchClause' is a specialization of 'CodeBlock'.
+'langc::WhileStatement' is a specialization of 'CodeBlock'.
+'langc::FunctionPointer' is a specialization of 'UserElement'.
+'langc::VariableDeclaration' is a specialization of 'NamedElement'.
+'langc::SwitchStatement' is a specialization of 'Statement'.
+'langc::Macro' is a specialization of 'Directive'.
+'langc::Enumerator' is a specialization of 'BindableValue'.
+'langc::BinaryOperation' is a specialization of 'Expression'.
+'langc::ElementAccess' is a specialization of 'Expression'.
+'langc::FileDependency' (role 'langc_FileDependency', cardinality 0..*) is associated with 'langc::FileName' (role 'langc_FileName85', cardinality 0..*).
+'langc::System' (role 'langc_System143', cardinality 0..*) is associated with 'langc::FolderName' (role 'langc_FolderName144', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression20', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference21', cardinality 0..*).
+'langc::Element' (role 'langc_Element', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference16', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList38', cardinality 0..*) is associated with 'langc::DependencyList' (role 'langc_DependencyList39', cardinality 0..*).
+'langc::NamedReference' (role 'langc_NamedReference54', cardinality 0..*) is associated with 'langc::Structure' (role 'langc_Structure', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression70', cardinality 0..*) is associated with 'langc::MemberAccess' (role 'langc_MemberAccess', cardinality 0..*).
+'langc::System' (role 'langc_System146', cardinality 0..*) is associated with 'langc::LinkableArtifact' (role 'langc_LinkableArtifact', cardinality 0..*).
+'langc::ElementReference' (role 'langc_ElementReference59', cardinality 0..*) is associated with 'langc::FunctionPointer' (role 'langc_FunctionPointer58', cardinality 0..*).
+'langc::NamedReference' (role 'langc_NamedReference10', cardinality 0..*) is associated with 'langc::Name' (role 'langc_Name11', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList', cardinality 0..*) is associated with 'langc::UserElement' (role 'langc_UserElement', cardinality 0..*).
+'langc::Name' (role 'langc_Name1', cardinality 0..*) is associated with 'langc::Name' (role 'langc_Name3', cardinality 0..*).
+'langc::SizeofExpr' (role 'langc_SizeofExpr', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression133', cardinality 0..*).
+'langc::BinaryOperation' (role 'langc_BinaryOperation51', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression52', cardinality 0..*).
+'langc::ElementReference' (role 'langc_ElementReference87', cardinality 0..*) is associated with 'langc::CastExpr' (role 'langc_CastExpr', cardinality 0..*).
+'langc::NamedElement' (role 'langc_NamedElement', cardinality 0..*) is associated with 'langc::Name' (role 'langc_Name', cardinality 0..*).
+'langc::VariableDeclarationStatement' (role 'langc_VariableDeclarationStatement', cardinality 0..*) is associated with 'langc::VariableDeclaration' (role 'langc_VariableDeclaration119', cardinality 0..*).
+'langc::Enumerator' (role 'langc_Enumerator', cardinality 0..*) is associated with 'langc::Enum' (role 'langc_Enum', cardinality 0..*).
+'langc::UserElement' (role 'langc_UserElement153', cardinality 0..*) is associated with 'langc::LinkableArtifact' (role 'langc_LinkableArtifact152', cardinality 0..*).
+'langc::Function' (role 'langc_Function8', cardinality 0..*) is associated with 'langc::FunctionImplementation' (role 'langc_FunctionImplementation', cardinality 0..*).
+'langc::Dependency' (role 'langc_Dependency', cardinality 0..*) is associated with 'langc::DependencyList' (role 'langc_DependencyList95', cardinality 0..*).
+'langc::FunctionCall' (role 'langc_FunctionCall', cardinality 0..*) is associated with 'langc::Function' (role 'langc_Function23', cardinality 0..*).
+'langc::FunctionImplementation' (role 'langc_FunctionImplementation138', cardinality 0..*) is associated with 'langc::Function' (role 'langc_Function139', cardinality 0..*).
+'langc::CastExpr' (role 'langc_CastExpr89', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression90', cardinality 0..*).
+'langc::Function' (role 'langc_Function6', cardinality 0..*) is associated with 'langc::NamedReference' (role 'langc_NamedReference', cardinality 0..*).
+'langc::UserElement' (role 'langc_UserElement92', cardinality 0..*) is associated with 'langc::FileName' (role 'langc_FileName93', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList31', cardinality 0..*) is associated with 'langc::FileName' (role 'langc_FileName', cardinality 0..*).
+'langc::IndexExpr' (role 'langc_IndexExpr125', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression126', cardinality 0..*).
+'langc::BlockInitializer' (role 'langc_BlockInitializer', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression121', cardinality 0..*).
+'langc::CodeBlob' (role 'langc_CodeBlob', cardinality 0..*) is associated with 'langc::DependencyBlob' (role 'langc_DependencyBlob', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression26', cardinality 0..*) is associated with 'langc::FunctionCall' (role 'langc_FunctionCall25', cardinality 0..*).
+'langc::LogicalComparison' (role 'langc_LogicalComparison', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression128', cardinality 0..*).
+'langc::AddressOfExpr' (role 'langc_AddressOfExpr', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression105', cardinality 0..*).
+'langc::SizeofType' (role 'langc_SizeofType', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference97', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression49', cardinality 0..*) is associated with 'langc::BinaryOperation' (role 'langc_BinaryOperation', cardinality 0..*).
+'langc::IndexExpr' (role 'langc_IndexExpr', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression123', cardinality 0..*).
+'langc::ElementReference' (role 'langc_ElementReference18', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression131', cardinality 0..*) is associated with 'langc::LogicalComparison' (role 'langc_LogicalComparison130', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList41', cardinality 0..*) is associated with 'langc::Directive' (role 'langc_Directive', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression66', cardinality 0..*) is associated with 'langc::VariableDeclaration' (role 'langc_VariableDeclaration65', cardinality 0..*).
+'langc::FunctionImplementation' (role 'langc_FunctionImplementation150', cardinality 0..*) is associated with 'langc::LinkableArtifact' (role 'langc_LinkableArtifact149', cardinality 0..*).
+'langc::SwitchStatement' (role 'langc_SwitchStatement', cardinality 0..*) is associated with 'langc::SwitchClause' (role 'langc_SwitchClause', cardinality 0..*).
+'langc::Typedef' (role 'langc_Typedef', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference68', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList72', cardinality 0..*) is associated with 'langc::SubSystem' (role 'langc_SubSystem', cardinality 0..*).
+'langc::SubSystem' (role 'langc_SubSystem141', cardinality 0..*) is associated with 'langc::System' (role 'langc_System', cardinality 0..*).
+'langc::IntegralLiteral' (role 'langc_IntegralLiteral', cardinality 0..*) is associated with 'langc::Enumerator' (role 'langc_Enumerator80', cardinality 0..*).
+'langc::Name' (role 'langc_Name83', cardinality 0..*) is associated with 'langc::Enumerator' (role 'langc_Enumerator82', cardinality 0..*).
+'langc::FolderName' (role 'langc_FolderName77', cardinality 0..*) is associated with 'langc::SubSystem' (role 'langc_SubSystem76', cardinality 0..*).
+'langc::ElementList' (role 'langc_ElementList43', cardinality 0..*) is associated with 'langc::Directive' (role 'langc_Directive44', cardinality 0..*).
+'langc::Function' (role 'langc_Function', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference', cardinality 0..*).
+'langc::DependencyList' (role 'langc_DependencyList', cardinality 0..*) is associated with 'langc::ElementList' (role 'langc_ElementList36', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression46', cardinality 0..*) is associated with 'langc::ExpressionStatement' (role 'langc_ExpressionStatement', cardinality 0..*).
+'langc::FunctionPointer' (role 'langc_FunctionPointer', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference56', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression107', cardinality 0..*) is associated with 'langc::DereferenceExpr' (role 'langc_DereferenceExpr', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression109', cardinality 0..*) is associated with 'langc::WhileStatement' (role 'langc_WhileStatement', cardinality 0..*).
+'langc::Macro' (role 'langc_Macro116', cardinality 0..*) is associated with 'langc::Name' (role 'langc_Name117', cardinality 0..*).
+'langc::VariableDeclaration' (role 'langc_VariableDeclaration', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference63', cardinality 0..*).
+'langc::CodeBlock' (role 'langc_CodeBlock', cardinality 0..*) is associated with 'langc::Statement' (role 'langc_Statement', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression99', cardinality 0..*) is associated with 'langc::LabeledClause' (role 'langc_LabeledClause', cardinality 0..*).
+'langc::NamedReference' (role 'langc_NamedReference13', cardinality 0..*) is associated with 'langc::ElementReference' (role 'langc_ElementReference14', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression155', cardinality 0..*) is associated with 'langc::ConditionalStatement' (role 'langc_ConditionalStatement', cardinality 0..*).
+'langc::SwitchStatement' (role 'langc_SwitchStatement102', cardinality 0..*) is associated with 'langc::Expression' (role 'langc_Expression103', cardinality 0..*).
+'langc::FolderName' (role 'langc_FolderName', cardinality 0..*) is associated with 'langc::SubSystem' (role 'langc_SubSystem74', cardinality 0..*).
+'langc::Name' (role 'langc_Name111', cardinality 0..*) is associated with 'langc::Macro' (role 'langc_Macro', cardinality 0..*).
+'langc::ElementAccess' (role 'langc_ElementAccess', cardinality 0..*) is associated with 'langc::Name' (role 'langc_Name28', cardinality 0..*).
+'langc::Element' (role 'langc_Element34', cardinality 0..*) is associated with 'langc::ElementList' (role 'langc_ElementList33', cardinality 0..*).
+'langc::CodeBlock' (role 'langc_CodeBlock136', cardinality 0..*) is associated with 'langc::FunctionImplementation' (role 'langc_FunctionImplementation135', cardinality 0..*).
+'langc::Expression' (role 'langc_Expression114', cardinality 0..*) is associated with 'langc::Macro' (role 'langc_Macro113', cardinality 0..*).
+'langc::FunctionAddress' (role 'langc_FunctionAddress', cardinality 0..*) is associated with 'langc::Function' (role 'langc_Function61', cardinality 0..*).

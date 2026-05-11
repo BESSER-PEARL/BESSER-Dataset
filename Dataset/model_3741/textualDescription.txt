@@ -1,0 +1,33 @@
+The model has 11 class(es).
+The class 'genericsql::PrimaryKey' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'genericsql::DataBase' has no attributes.
+The class 'genericsql::ForeignKey' has no attributes.
+The class 'genericsql::Check' has the following attributes: 'expression' of type str.
+The class 'genericsql::Table' has no attributes.
+The class 'genericsql::Constraint' has no attributes.
+The class 'genericsql::NamedElement' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'NamedElement' has no attributes.
+The class 'genericsql::Field' has the following attributes: 'autoIcrement' of type bool; 'specificType' of type str; 'notNull' of type bool; 'type' of type str; 'unique' of type bool; 'defaultValue' of type str; 'size' of type int.
+The class 'genericsql::Unique' has no attributes.
+The enumeration 'Type' has the following literals: 'bigInt', 'double', 'byteArray', 'int', 'undefined', 'varchar', 'date', 'boolean'.
+'genericsql::Table' is a specialization of 'NamedElement'.
+'genericsql::DataBase' is a specialization of 'NamedElement'.
+'genericsql::ForeignKey' is a specialization of 'NamedElement'.
+'genericsql::PrimaryKey' is a specialization of 'NamedElement'.
+'genericsql::Unique' is a specialization of 'Constraint'.
+'genericsql::Check' is a specialization of 'Constraint'.
+'genericsql::Field' is a specialization of 'NamedElement'.
+'genericsql::Field' (role 'genericsql_Field12', cardinality 0..*) is associated with 'genericsql::ForeignKey' (role 'genericsql_ForeignKey', cardinality 0..*).
+'genericsql::DataBase' (role 'database', cardinality 0..*) is associated with 'genericsql::Table' (role 'Table', cardinality 0..*).
+'genericsql::Table' (role 'Table19', cardinality 0..*) is associated with 'genericsql::Field' (role 'fields', cardinality 0..*).
+'genericsql::Table' (role 'tables', cardinality 0..*) is associated with 'genericsql::DataBase' (role 'DataBase', cardinality 0..*).
+'genericsql::PrimaryKey' (role 'primaryKey', cardinality 0..*) is associated with 'genericsql::Table' (role 'Table10', cardinality 0..*).
+'genericsql::PrimaryKey' (role 'genericsql_PrimaryKey17', cardinality 0..*) is associated with 'genericsql::ForeignKey' (role 'genericsql_ForeignKey16', cardinality 0..*).
+'genericsql::Field' (role 'genericsql_Field22', cardinality 0..*) is associated with 'genericsql::Constraint' (role 'genericsql_Constraint21', cardinality 0..*).
+'genericsql::Field' (role 'genericsql_Field', cardinality 0..*) is associated with 'genericsql::PrimaryKey' (role 'genericsql_PrimaryKey', cardinality 0..*).
+'genericsql::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'genericsql::Table' (role 'table3', cardinality 0..*).
+'genericsql::Table' (role 'table5', cardinality 0..*) is associated with 'genericsql::Field' (role 'Field', cardinality 0..*).
+'genericsql::Table' (role 'Table14', cardinality 0..*) is associated with 'genericsql::ForeignKey' (role 'foreignKeys', cardinality 0..*).
+'genericsql::PrimaryKey' (role 'PrimaryKey', cardinality 0..*) is associated with 'genericsql::Table' (role 'table', cardinality 0..*).
+'genericsql::Constraint' (role 'genericsql_Constraint', cardinality 0..*) is associated with 'genericsql::Table' (role 'genericsql_Table', cardinality 0..*).

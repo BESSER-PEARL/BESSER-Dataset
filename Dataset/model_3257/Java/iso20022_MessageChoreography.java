@@ -1,0 +1,53 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class iso20022_MessageChoreography extends TopLevelCatalogueEntry {
+
+
+
+
+
+
+    private iso20022_MessageDefinition iso20022_messagedefinition;
+
+
+
+
+    private List<iso20022_MessageDefinition> iso20022_messagedefinitions;
+
+
+    public iso20022_MessageChoreography(
+    ) {
+        super(
+        );
+        this.iso20022_messagedefinitions = new ArrayList<>();
+    }
+
+    public iso20022_MessageChoreography(
+        ArrayList<iso20022_MessageDefinition> iso20022_messagedefinitions    ) {
+        this.iso20022_messagedefinitions = iso20022_messagedefinitions;
+    }
+
+
+    public iso20022_MessageDefinition getIso20022_messagedefinition() {
+        return iso20022_messagedefinition;
+    }
+
+    public void setIso20022_messagedefinition(iso20022_MessageDefinition iso20022_messagedefinition) {
+        this.iso20022_messagedefinition = iso20022_messagedefinition;
+    }
+    public List<iso20022_MessageDefinition> getIso20022_messagedefinitions() {
+        return iso20022_messagedefinitions;
+    }
+
+    public void addIso20022_messagedefinition(Iso20022_messagedefinition iso20022_messagedefinition) {
+        this.iso20022_messagedefinitions.add(iso20022_messagedefinition);
+    }
+
+}

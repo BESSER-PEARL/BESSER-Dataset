@@ -1,0 +1,71 @@
+The model has 25 class(es).
+The class 'iot::VariableRef' has no attributes.
+The class 'iot::IntConstant' has the following attributes: 'value' of type int.
+The class 'iot::Or' has no attributes.
+The class 'iot::Estado' has the following attributes: 'name' of type str.
+The class 'iot::AbstractElement' has no attributes.
+The class 'iot::BoolConstant' has the following attributes: 'value' of type str.
+The class 'iot::IfStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'iot::And' has no attributes.
+The class 'iot::Equality' has the following attributes: 'op' of type str.
+The class 'iot::StringConstant' has the following attributes: 'value' of type str.
+The class 'iot::Comparison' has the following attributes: 'op' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'iot::Minus' has no attributes.
+The class 'iot::Expression' has no attributes.
+The class 'iot::Transicion' has no attributes.
+The class 'iot::IfBlock' has no attributes.
+The class 'iot::Not' has no attributes.
+The class 'iot::Model' has no attributes.
+The class 'iot::Variable' has the following attributes: 'name' of type str.
+The class 'iot::Etiqueta' has the following attributes: 'typeName' of type str; 'value' of type str; 'name' of type str.
+The class 'iot::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'iot::Plus' has no attributes.
+The class 'iot::Dispositivo' has the following attributes: 'name' of type str.
+The class 'iot::Evento' has the following attributes: 'typeName' of type str; 'name' of type str.
+'iot::BoolConstant' is a specialization of 'Expression'.
+'iot::Minus' is a specialization of 'Expression'.
+'iot::Not' is a specialization of 'Expression'.
+'iot::Or' is a specialization of 'Expression'.
+'iot::And' is a specialization of 'Expression'.
+'iot::IntConstant' is a specialization of 'Expression'.
+'iot::MulOrDiv' is a specialization of 'Expression'.
+'iot::Expression' is a specialization of 'AbstractElement'.
+'iot::VariableRef' is a specialization of 'Expression'.
+'iot::StringConstant' is a specialization of 'Expression'.
+'iot::IfStatement' is a specialization of 'AbstractElement'.
+'iot::Comparison' is a specialization of 'Expression'.
+'iot::Plus' is a specialization of 'Expression'.
+'iot::Variable' is a specialization of 'AbstractElement'.
+'iot::Equality' is a specialization of 'Expression'.
+'iot::IfBlock' (role 'iot_IfBlock25', cardinality 0..*) is associated with 'iot::IfStatement' (role 'iot_IfStatement24', cardinality 0..*).
+'iot::Not' (role 'iot_Not', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression67', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression52', cardinality 0..*) is associated with 'iot::Plus' (role 'iot_Plus', cardinality 0..*).
+'iot::Evento' (role 'iot_Evento16', cardinality 0..*) is associated with 'iot::Transicion' (role 'iot_Transicion15', cardinality 0..*).
+'iot::Evento' (role 'iot_Evento', cardinality 0..*) is associated with 'iot::Dispositivo' (role 'iot_Dispositivo9', cardinality 0..*).
+'iot::AbstractElement' (role 'iot_AbstractElement28', cardinality 0..*) is associated with 'iot::IfBlock' (role 'iot_IfBlock27', cardinality 0..*).
+'iot::Dispositivo' (role 'iot_Dispositivo3', cardinality 0..*) is associated with 'iot::Dispositivo' (role 'iot_Dispositivo1', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression45', cardinality 0..*) is associated with 'iot::Equality' (role 'iot_Equality44', cardinality 0..*).
+'iot::Etiqueta' (role 'iot_Etiqueta', cardinality 0..*) is associated with 'iot::Dispositivo' (role 'iot_Dispositivo5', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression62', cardinality 0..*) is associated with 'iot::MulOrDiv' (role 'iot_MulOrDiv', cardinality 0..*).
+'iot::Comparison' (role 'iot_Comparison', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression47', cardinality 0..*).
+'iot::Estado' (role 'iot_Estado13', cardinality 0..*) is associated with 'iot::AbstractElement' (role 'iot_AbstractElement', cardinality 0..*).
+'iot::Or' (role 'iot_Or', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression32', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression50', cardinality 0..*) is associated with 'iot::Comparison' (role 'iot_Comparison49', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression42', cardinality 0..*) is associated with 'iot::Equality' (role 'iot_Equality', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression55', cardinality 0..*) is associated with 'iot::Plus' (role 'iot_Plus54', cardinality 0..*).
+'iot::Minus' (role 'iot_Minus59', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression60', cardinality 0..*).
+'iot::Dispositivo' (role 'iot_Dispositivo11', cardinality 0..*) is associated with 'iot::Transicion' (role 'iot_Transicion', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression35', cardinality 0..*) is associated with 'iot::Or' (role 'iot_Or34', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression40', cardinality 0..*) is associated with 'iot::And' (role 'iot_And39', cardinality 0..*).
+'iot::Minus' (role 'iot_Minus', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression57', cardinality 0..*).
+'iot::Estado' (role 'iot_Estado19', cardinality 0..*) is associated with 'iot::Transicion' (role 'iot_Transicion18', cardinality 0..*).
+'iot::IfStatement' (role 'iot_IfStatement22', cardinality 0..*) is associated with 'iot::IfBlock' (role 'iot_IfBlock', cardinality 0..*).
+'iot::VariableRef' (role 'iot_VariableRef', cardinality 0..*) is associated with 'iot::Variable' (role 'iot_Variable69', cardinality 0..*).
+'iot::Dispositivo' (role 'iot_Dispositivo7', cardinality 0..*) is associated with 'iot::Estado' (role 'iot_Estado', cardinality 0..*).
+'iot::Variable' (role 'iot_Variable', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression30', cardinality 0..*).
+'iot::Dispositivo' (role 'iot_Dispositivo', cardinality 0..*) is associated with 'iot::Model' (role 'iot_Model', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression', cardinality 0..*) is associated with 'iot::IfStatement' (role 'iot_IfStatement', cardinality 0..*).
+'iot::MulOrDiv' (role 'iot_MulOrDiv64', cardinality 0..*) is associated with 'iot::Expression' (role 'iot_Expression65', cardinality 0..*).
+'iot::Expression' (role 'iot_Expression37', cardinality 0..*) is associated with 'iot::And' (role 'iot_And', cardinality 0..*).

@@ -1,0 +1,188 @@
+The model has 68 class(es).
+The class 'Assignee' has no attributes.
+The class 'miniJava::Not' has no attributes.
+The class 'miniJava::IntegerTypeRef' has no attributes.
+The class 'miniJava::NewObject' has no attributes.
+The class 'miniJava::TypeRef' has no attributes.
+The class 'miniJava::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'miniJava::Symbol' has no attributes.
+The class 'miniJava::StringTypeRef' has no attributes.
+The class 'miniJava::Minus' has no attributes.
+The class 'miniJava::Neg' has no attributes.
+The class 'miniJava::Or' has no attributes.
+The class 'miniJava::Member' has the following attributes: 'access' of type str.
+The class 'miniJava::Class' has the following attributes: 'abstract' of type bool.
+The class 'miniJava::Program' has the following attributes: 'name' of type str.
+The class 'miniJava::SuperiorOrEqual' has no attributes.
+The class 'miniJava::Field' has no attributes.
+The class 'Expression' has no attributes.
+The class 'SingleTypeRef' has no attributes.
+The class 'miniJava::Interface' has no attributes.
+The class 'miniJava::Multiplication' has no attributes.
+The class 'miniJava::PrintStatement' has no attributes.
+The class 'miniJava::Inequality' has no attributes.
+The class 'miniJava::ArrayLength' has no attributes.
+The class 'miniJava::BooleanTypeRef' has no attributes.
+The class 'miniJava::VoidTypeRef' has no attributes.
+The class 'miniJava::Super' has no attributes.
+The class 'miniJava::Plus' has no attributes.
+The class 'Statement' has no attributes.
+The class 'miniJava::Method' has the following attributes: 'abstract' of type bool; 'static' of type bool.
+The class 'miniJava::Block' has no attributes.
+The class 'miniJava::FieldAccess' has no attributes.
+The class 'miniJava::IfStatement' has no attributes.
+The class 'miniJava::ForStatement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'miniJava::This' has no attributes.
+The class 'miniJava::ClassRef' has no attributes.
+The class 'miniJava::VariableDeclaration' has no attributes.
+The class 'miniJava::SymbolRef' has no attributes.
+The class 'miniJava::TypedDeclaration' has no attributes.
+The class 'miniJava::Expression' has no attributes.
+The class 'miniJava::Statement' has no attributes.
+The class 'miniJava::NewArray' has no attributes.
+The class 'miniJava::And' has no attributes.
+The class 'miniJava::MethodCall' has no attributes.
+The class 'miniJava::Parameter' has no attributes.
+The class 'TypeRef' has no attributes.
+The class 'miniJava::SingleTypeRef' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'miniJava::Assignee' has no attributes.
+The class 'miniJava::TypeDeclaration' has the following attributes: 'accessLevel' of type str.
+The class 'miniJava::ArrayTypeRef' has no attributes.
+The class 'miniJava::StringConstant' has the following attributes: 'value' of type str.
+The class 'miniJava::Inferior' has no attributes.
+The class 'miniJava::Assignment' has no attributes.
+The class 'Member' has no attributes.
+The class 'TypedDeclaration' has no attributes.
+The class 'miniJava::NamedElement' has the following attributes: 'name' of type str.
+The class 'Symbol' has no attributes.
+The class 'miniJava::BoolConstant' has the following attributes: 'value' of type str.
+The class 'miniJava::Equality' has no attributes.
+The class 'miniJava::Superior' has no attributes.
+The class 'miniJava::ArrayAccess' has no attributes.
+The class 'miniJava::Division' has no attributes.
+The class 'miniJava::WhileStatement' has no attributes.
+The class 'miniJava::Return' has no attributes.
+The class 'miniJava::IntConstant' has the following attributes: 'value' of type int.
+The class 'miniJava::InferiorOrEqual' has no attributes.
+The class 'miniJava::Null' has no attributes.
+The enumeration 'AccessLevel' has the following literals: 'PUBLIC', 'PRIVATE', 'PROTECTED'.
+'miniJava::Minus' is a specialization of 'Expression'.
+'miniJava::Or' is a specialization of 'Expression'.
+'miniJava::VariableDeclaration' is a specialization of 'Symbol'.
+'miniJava::Member' is a specialization of 'TypedDeclaration'.
+'miniJava::BoolConstant' is a specialization of 'Expression'.
+'miniJava::Parameter' is a specialization of 'Symbol'.
+'miniJava::Method' is a specialization of 'Member'.
+'miniJava::PrintStatement' is a specialization of 'Statement'.
+'miniJava::NewObject' is a specialization of 'Expression'.
+'miniJava::Class' is a specialization of 'TypeDeclaration'.
+'miniJava::Inferior' is a specialization of 'Expression'.
+'miniJava::Plus' is a specialization of 'Expression'.
+'miniJava::SuperiorOrEqual' is a specialization of 'Expression'.
+'miniJava::TypedDeclaration' is a specialization of 'NamedElement'.
+'miniJava::Expression' is a specialization of 'Assignee'.
+'miniJava::Block' is a specialization of 'Statement'.
+'miniJava::WhileStatement' is a specialization of 'Statement'.
+'miniJava::StringTypeRef' is a specialization of 'SingleTypeRef'.
+'miniJava::BooleanTypeRef' is a specialization of 'SingleTypeRef'.
+'miniJava::Assignment' is a specialization of 'Statement'.
+'miniJava::IntConstant' is a specialization of 'Expression'.
+'miniJava::SingleTypeRef' is a specialization of 'TypeRef'.
+'miniJava::ForStatement' is a specialization of 'Statement'.
+'miniJava::Inequality' is a specialization of 'Expression'.
+'miniJava::Not' is a specialization of 'Expression'.
+'miniJava::SymbolRef' is a specialization of 'Expression'.
+'miniJava::Multiplication' is a specialization of 'Expression'.
+'miniJava::Symbol' is a specialization of 'TypedDeclaration'.
+'miniJava::VariableDeclaration' is a specialization of 'Assignee'.
+'miniJava::NewArray' is a specialization of 'Expression'.
+'miniJava::And' is a specialization of 'Expression'.
+'miniJava::Field' is a specialization of 'Member'.
+'miniJava::MethodCall' is a specialization of 'Expression'.
+'miniJava::ArrayLength' is a specialization of 'Expression'.
+'miniJava::Return' is a specialization of 'Statement'.
+'miniJava::Interface' is a specialization of 'TypeDeclaration'.
+'miniJava::ClassRef' is a specialization of 'SingleTypeRef'.
+'miniJava::Equality' is a specialization of 'Expression'.
+'miniJava::IfStatement' is a specialization of 'Statement'.
+'miniJava::This' is a specialization of 'Expression'.
+'miniJava::Expression' is a specialization of 'Statement'.
+'miniJava::TypeDeclaration' is a specialization of 'NamedElement'.
+'miniJava::Superior' is a specialization of 'Expression'.
+'miniJava::IntegerTypeRef' is a specialization of 'SingleTypeRef'.
+'miniJava::FieldAccess' is a specialization of 'Expression'.
+'miniJava::Null' is a specialization of 'Expression'.
+'miniJava::Neg' is a specialization of 'Expression'.
+'miniJava::ArrayTypeRef' is a specialization of 'TypeRef'.
+'miniJava::VoidTypeRef' is a specialization of 'SingleTypeRef'.
+'miniJava::InferiorOrEqual' is a specialization of 'Expression'.
+'miniJava::ArrayAccess' is a specialization of 'Expression'.
+'miniJava::Division' is a specialization of 'Expression'.
+'miniJava::Super' is a specialization of 'Expression'.
+'miniJava::StringConstant' is a specialization of 'Expression'.
+'miniJava::FieldAccess' (role 'miniJava_FieldAccess125', cardinality 0..*) is associated with 'miniJava::Field' (role 'miniJava_Field126', cardinality 0..*).
+'miniJava::Return' (role 'miniJava_Return', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression18', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method', cardinality 0..*) is associated with 'miniJava::Parameter' (role 'miniJava_Parameter', cardinality 0..*).
+'miniJava::ForStatement' (role 'miniJava_ForStatement', cardinality 0..*) is associated with 'miniJava::Assignment' (role 'miniJava_Assignment', cardinality 0..*).
+'miniJava::PrintStatement' (role 'miniJava_PrintStatement', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression16', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression28', cardinality 0..*) is associated with 'miniJava::WhileStatement' (role 'miniJava_WhileStatement', cardinality 0..*).
+'miniJava::Class' (role 'miniJava_Class136', cardinality 0..*) is associated with 'miniJava::NewObject' (role 'miniJava_NewObject', cardinality 0..*).
+'miniJava::ClassRef' (role 'miniJava_ClassRef', cardinality 0..*) is associated with 'miniJava::TypeDeclaration' (role 'miniJava_TypeDeclaration43', cardinality 0..*).
+'miniJava::Block' (role 'miniJava_Block26', cardinality 0..*) is associated with 'miniJava::IfStatement' (role 'miniJava_IfStatement25', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression107', cardinality 0..*) is associated with 'miniJava::Division' (role 'miniJava_Division', cardinality 0..*).
+'miniJava::TypeDeclaration' (role 'miniJava_TypeDeclaration6', cardinality 0..*) is associated with 'miniJava::Member' (role 'miniJava_Member', cardinality 0..*).
+'miniJava::Inequality' (role 'miniJava_Inequality', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression67', cardinality 0..*).
+'miniJava::NewArray' (role 'miniJava_NewArray143', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression144', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression77', cardinality 0..*) is associated with 'miniJava::InferiorOrEqual' (role 'miniJava_InferiorOrEqual', cardinality 0..*).
+'miniJava::Superior' (role 'miniJava_Superior', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression82', cardinality 0..*).
+'miniJava::Inferior' (role 'miniJava_Inferior', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression87', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement', cardinality 0..*) is associated with 'miniJava::Block' (role 'miniJava_Block14', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression139', cardinality 0..*) is associated with 'miniJava::NewObject' (role 'miniJava_NewObject138', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression121', cardinality 0..*) is associated with 'miniJava::Neg' (role 'miniJava_Neg', cardinality 0..*).
+'miniJava::Minus' (role 'miniJava_Minus99', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression100', cardinality 0..*).
+'miniJava::MethodCall' (role 'miniJava_MethodCall133', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression134', cardinality 0..*).
+'miniJava::WhileStatement' (role 'miniJava_WhileStatement30', cardinality 0..*) is associated with 'miniJava::Block' (role 'miniJava_Block31', cardinality 0..*).
+'miniJava::Minus' (role 'miniJava_Minus', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression97', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression110', cardinality 0..*) is associated with 'miniJava::Division' (role 'miniJava_Division109', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression80', cardinality 0..*) is associated with 'miniJava::InferiorOrEqual' (role 'miniJava_InferiorOrEqual79', cardinality 0..*).
+'miniJava::SingleTypeRef' (role 'miniJava_SingleTypeRef', cardinality 0..*) is associated with 'miniJava::ArrayTypeRef' (role 'miniJava_ArrayTypeRef', cardinality 0..*).
+'miniJava::FieldAccess' (role 'miniJava_FieldAccess', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression123', cardinality 0..*).
+'miniJava::Not' (role 'miniJava_Not', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression119', cardinality 0..*).
+'miniJava::ArrayAccess' (role 'miniJava_ArrayAccess114', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression115', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression72', cardinality 0..*) is associated with 'miniJava::SuperiorOrEqual' (role 'miniJava_SuperiorOrEqual', cardinality 0..*).
+'miniJava::Inferior' (role 'miniJava_Inferior89', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression90', cardinality 0..*).
+'miniJava::Equality' (role 'miniJava_Equality64', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression65', cardinality 0..*).
+'miniJava::Assignment' (role 'miniJava_Assignment38', cardinality 0..*) is associated with 'miniJava::ForStatement' (role 'miniJava_ForStatement37', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression60', cardinality 0..*) is associated with 'miniJava::And' (role 'miniJava_And59', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression117', cardinality 0..*) is associated with 'miniJava::ArrayLength' (role 'miniJava_ArrayLength', cardinality 0..*).
+'miniJava::TypeDeclaration' (role 'miniJava_TypeDeclaration', cardinality 0..*) is associated with 'miniJava::Program' (role 'miniJava_Program2', cardinality 0..*).
+'miniJava::Block' (role 'miniJava_Block41', cardinality 0..*) is associated with 'miniJava::ForStatement' (role 'miniJava_ForStatement40', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression105', cardinality 0..*) is associated with 'miniJava::Multiplication' (role 'miniJava_Multiplication104', cardinality 0..*).
+'miniJava::Class' (role 'miniJava_Class', cardinality 0..*) is associated with 'miniJava::Class' (role 'miniJava_Class7', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression70', cardinality 0..*) is associated with 'miniJava::Inequality' (role 'miniJava_Inequality69', cardinality 0..*).
+'miniJava::SymbolRef' (role 'miniJava_SymbolRef', cardinality 0..*) is associated with 'miniJava::Symbol' (role 'miniJava_Symbol', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method11', cardinality 0..*) is associated with 'miniJava::Block' (role 'miniJava_Block', cardinality 0..*).
+'miniJava::NewArray' (role 'miniJava_NewArray', cardinality 0..*) is associated with 'miniJava::TypeRef' (role 'miniJava_TypeRef141', cardinality 0..*).
+'miniJava::IfStatement' (role 'miniJava_IfStatement', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression20', cardinality 0..*).
+'miniJava::Program' (role 'miniJava_Program', cardinality 0..*) is associated with 'miniJava::Import' (role 'miniJava_Import', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression35', cardinality 0..*) is associated with 'miniJava::ForStatement' (role 'miniJava_ForStatement34', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression55', cardinality 0..*) is associated with 'miniJava::Or' (role 'miniJava_Or54', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression49', cardinality 0..*) is associated with 'miniJava::Assignment' (role 'miniJava_Assignment48', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression85', cardinality 0..*) is associated with 'miniJava::Superior' (role 'miniJava_Superior84', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression95', cardinality 0..*) is associated with 'miniJava::Plus' (role 'miniJava_Plus94', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression52', cardinality 0..*) is associated with 'miniJava::Or' (role 'miniJava_Or', cardinality 0..*).
+'miniJava::TypedDeclaration' (role 'miniJava_TypedDeclaration', cardinality 0..*) is associated with 'miniJava::TypeRef' (role 'miniJava_TypeRef', cardinality 0..*).
+'miniJava::Plus' (role 'miniJava_Plus', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression92', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression128', cardinality 0..*) is associated with 'miniJava::MethodCall' (role 'miniJava_MethodCall', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method131', cardinality 0..*) is associated with 'miniJava::MethodCall' (role 'miniJava_MethodCall130', cardinality 0..*).
+'miniJava::Interface' (role 'miniJava_Interface', cardinality 0..*) is associated with 'miniJava::TypeDeclaration' (role 'miniJava_TypeDeclaration4', cardinality 0..*).
+'miniJava::And' (role 'miniJava_And', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression57', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression', cardinality 0..*) is associated with 'miniJava::Field' (role 'miniJava_Field', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression75', cardinality 0..*) is associated with 'miniJava::SuperiorOrEqual' (role 'miniJava_SuperiorOrEqual74', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression62', cardinality 0..*) is associated with 'miniJava::Equality' (role 'miniJava_Equality', cardinality 0..*).
+'miniJava::Expression' (role 'miniJava_Expression102', cardinality 0..*) is associated with 'miniJava::Multiplication' (role 'miniJava_Multiplication', cardinality 0..*).
+'miniJava::Assignment' (role 'miniJava_Assignment46', cardinality 0..*) is associated with 'miniJava::Assignee' (role 'miniJava_Assignee', cardinality 0..*).
+'miniJava::ArrayAccess' (role 'miniJava_ArrayAccess', cardinality 0..*) is associated with 'miniJava::Expression' (role 'miniJava_Expression112', cardinality 0..*).
+'miniJava::IfStatement' (role 'miniJava_IfStatement22', cardinality 0..*) is associated with 'miniJava::Block' (role 'miniJava_Block23', cardinality 0..*).

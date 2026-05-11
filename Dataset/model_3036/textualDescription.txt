@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'basicfsm::InitialState' has no attributes.
+The class 'basicfsm::Machine' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'basicfsm::Guard' has no attributes.
+The class 'basicfsm::Action' has no attributes.
+The class 'basicfsm::Trans' has the following attributes: 'event' of type str.
+The class 'basicfsm::State' has the following attributes: 'name' of type str.
+'basicfsm::InitialState' is a specialization of 'State'.
+'basicfsm::State' (role 'State', cardinality 0..*) is associated with 'basicfsm::Trans' (role 'out', cardinality 0..*).
+'basicfsm::Trans' (role 'basicfsm_Trans', cardinality 0..*) is associated with 'basicfsm::Machine' (role 'basicfsm_Machine2', cardinality 0..*).
+'basicfsm::Trans' (role 'Trans', cardinality 0..*) is associated with 'basicfsm::State' (role 'tgt', cardinality 0..*).
+'basicfsm::Trans' (role 'basicfsm_Trans12', cardinality 0..*) is associated with 'basicfsm::Action' (role 'basicfsm_Action', cardinality 0..*).
+'basicfsm::State' (role 'src', cardinality 0..*) is associated with 'basicfsm::Trans' (role 'Trans5', cardinality 0..*).
+'basicfsm::Trans' (role 'in_', cardinality 0..*) is associated with 'basicfsm::State' (role 'State8', cardinality 0..*).
+'basicfsm::State' (role 'basicfsm_State', cardinality 0..*) is associated with 'basicfsm::Machine' (role 'basicfsm_Machine', cardinality 0..*).
+'basicfsm::Guard' (role 'basicfsm_Guard', cardinality 0..*) is associated with 'basicfsm::Trans' (role 'basicfsm_Trans10', cardinality 0..*).

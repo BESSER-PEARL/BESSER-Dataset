@@ -1,0 +1,256 @@
+The model has 103 class(es).
+The class 'oogen::OOInitializerList' has no attributes.
+The class 'oogen::OOFor' has no attributes.
+The class 'oogen::OOArithmeticExpression' has no attributes.
+The class 'oogen::OOOneOperandLogicalExpression' has no attributes.
+The class 'oogen::OOFieldReferenceExpression' has the following attributes: 'fieldName' of type str.
+The class 'oogen::OONotExpression' has no attributes.
+The class 'oogen::OOTwoOperandAssignableExpression' has the following attributes: 'assigned' of type bool.
+The class 'oogen::OOIf' has no attributes.
+The class 'oogen::OOTwoOperandLogicalExpression' has no attributes.
+The class 'oogen::OOIndexing' has no attributes.
+The class 'oogen::OOXorExpression' has no attributes.
+The class 'oogen::OOPlusExpression' has no attributes.
+The class 'oogen::OOLogicalExpression' has no attributes.
+The class 'OOOneOperandLogicalExpression' has no attributes.
+The class 'oogen::OOBitWiseRightShift' has no attributes.
+The class 'oogen::OOPackage' has the following attributes: 'name' of type str.
+The class 'oogen::OOBracketedExpression' has no attributes.
+The class 'oogen::OOType' has the following attributes: 'collectionType' of type str; 'arrayDimensions' of type int; 'numberOfIndirections' of type int; 'baseType' of type str.
+The class 'oogen::OOComparatorExpression' has no attributes.
+The class 'oogen::OONotEqualsExpression' has no attributes.
+The class 'oogen::OOVariableReferenceExpression' has no attributes.
+The class 'oogen::OOBitwiseXorExpression' has no attributes.
+The class 'oogen::OOEqualsExpression' has no attributes.
+The class 'oogen::OOStatement' has no attributes.
+The class 'OOLogicalExpression' has no attributes.
+The class 'oogen::OOPrefixIncrementExpression' has no attributes.
+The class 'oogen::OOContinue' has no attributes.
+The class 'OOArithmeticExpression' has no attributes.
+The class 'oogen::OOLanguageSpecificSnippet' has the following attributes: 'lang' of type str; 'code' of type str.
+The class 'oogen::OOBoolLiteral' has the following attributes: 'value' of type bool.
+The class 'oogen::OOCommentOwner' has no attributes.
+The class 'oogen::OOClass' has the following attributes: 'keep' of type bool; 'languages' of type str; 'name' of type str.
+The class 'oogen::OOModuloExpression' has no attributes.
+The class 'oogen::OOEmptyStatement' has no attributes.
+The class 'oogen::OOConditionalStatement' has no attributes.
+The class 'OOCommentOwner' has no attributes.
+The class 'oogen::OOAndExpression' has no attributes.
+The class 'oogen::OOTwoOperandArithmeticExpression' has no attributes.
+The class 'oogen::OOAdditionExpression' has no attributes.
+The class 'oogen::OOMethod' has the following attributes: 'static' of type bool; 'languages' of type str; 'visibility' of type str; 'name' of type str.
+The class 'oogen::OOFloatLiteral' has the following attributes: 'value' of type float.
+The class 'oogen::OOBreak' has no attributes.
+The class 'oogen::OOFunctionCallExpression' has the following attributes: 'functionName' of type str.
+The class 'oogen::OOAssignmentExpression' has no attributes.
+The class 'oogen::OOBitWiseLeftShift' has no attributes.
+The class 'oogen::OODefault' has no attributes.
+The class 'oogen::OOMultiplicationExpression' has no attributes.
+The class 'OOCompoundStatement' has no attributes.
+The class 'OOVariable' has no attributes.
+The class 'oogen::OOEnumeration' has the following attributes: 'name' of type str; 'options' of type str.
+The class 'oogen::OOModel' has no attributes.
+The class 'oogen::OOBitwiseOrExpression' has no attributes.
+The class 'oogen::OOIntegerLiteral' has the following attributes: 'value' of type int.
+The class 'oogen::OOComment' has the following attributes: 'text' of type str; 'isBlockComment' of type bool.
+The class 'OOStatement' has no attributes.
+The class 'oogen::OOLogicalLiteral' has the following attributes: 'value' of type bool.
+The class 'oogen::OOCase' has no attributes.
+The class 'OOTwoOperandAssignableExpression' has no attributes.
+The class 'oogen::OODivisionExpression' has no attributes.
+The class 'oogen::OOPowerExpression' has no attributes.
+The class 'oogen::OONewArray' has no attributes.
+The class 'oogen::OODoubleLiteral' has the following attributes: 'value' of type float.
+The class 'oogen::OOThisLiteral' has no attributes.
+The class 'oogen::OOSubtractionExpression' has no attributes.
+The class 'oogen::OODoWhile' has no attributes.
+The class 'oogen::OOLongLiteral' has the following attributes: 'value' of type str.
+The class 'oogen::OOCompoundStatement' has no attributes.
+The class 'oogen::OOOrExpression' has no attributes.
+The class 'oogen::OOBitwiseAndExpression' has no attributes.
+The class 'oogen::OOMember' has the following attributes: 'languages' of type str; 'visibility' of type str; 'static' of type bool.
+The class 'OOExpression' has no attributes.
+The class 'oogen::OOPostfixDecrementExpression' has no attributes.
+The class 'oogen::OOTernaryOperator' has no attributes.
+The class 'oogen::OOExpression' has no attributes.
+The class 'OOOneOperandArithmeticExpression' has no attributes.
+The class 'oogen::OOReturn' has no attributes.
+The class 'oogen::OOTypeCast' has no attributes.
+The class 'oogen::OOConstructor' has the following attributes: 'visibility' of type str; 'className' of type str.
+The class 'oogen::OOEmptyExpression' has no attributes.
+The class 'oogen::OOForEach' has no attributes.
+The class 'OOTwoOperandArithmeticExpression' has no attributes.
+The class 'oogen::OOWhile' has no attributes.
+The class 'oogen::OOVariable' has the following attributes: 'transient' of type bool; 'name' of type str.
+The class 'oogen::OONewClass' has the following attributes: 'className' of type str.
+The class 'oogen::OOGreaterThanExpression' has no attributes.
+The class 'oogen::OORootExpression' has no attributes.
+The class 'oogen::OOLanguageSpecificExpression' has no attributes.
+The class 'oogen::OOIntegerDivisionExpression' has no attributes.
+The class 'OOComparatorExpression' has no attributes.
+The class 'oogen::OOGreaterEqualsExpression' has no attributes.
+The class 'oogen::OOLessThanExpression' has no attributes.
+The class 'OOConditionalStatement' has no attributes.
+The class 'oogen::OOOneOperandArithmeticExpression' has no attributes.
+The class 'oogen::OONullLiteral' has no attributes.
+The class 'oogen::OOStringLiteral' has the following attributes: 'value' of type str.
+The class 'oogen::OOLessEqualsExpression' has no attributes.
+The class 'oogen::OOPostfixIncrementExpression' has no attributes.
+The class 'oogen::OOVariableDeclarationList' has no attributes.
+The class 'oogen::OOMinusExpression' has no attributes.
+The class 'oogen::OOPrefixDecrementExpression' has no attributes.
+The class 'OOTwoOperandLogicalExpression' has no attributes.
+The class 'oogen::OOBitWiseComplement' has no attributes.
+The class 'oogen::OOSwitch' has no attributes.
+The enumeration 'OOCollectionType' has the following literals: 'LIST', 'NONE', 'SET'.
+The enumeration 'OOLanguage' has the following literals: 'CPP', 'JAVA'.
+The enumeration 'OOVisibility' has the following literals: 'PACKAGE', 'PRIVATE', 'PUBLIC', 'PROTECTED'.
+The enumeration 'OOBaseType' has the following literals: 'DOUBLE', 'OBJECT', 'BYTE', 'STRING', 'INT', 'LONG', 'BOOLEAN'.
+'oogen::OOTwoOperandArithmeticExpression' is a specialization of 'OOArithmeticExpression'.
+'oogen::OOOneOperandArithmeticExpression' is a specialization of 'OOArithmeticExpression'.
+'oogen::OOForEach' is a specialization of 'OOStatement'.
+'oogen::OONullLiteral' is a specialization of 'OOExpression'.
+'oogen::OOGreaterEqualsExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOSwitch' is a specialization of 'OOStatement'.
+'oogen::OOBitWiseRightShift' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOIntegerLiteral' is a specialization of 'OOArithmeticExpression'.
+'oogen::OODoWhile' is a specialization of 'OOConditionalStatement'.
+'oogen::OONewClass' is a specialization of 'OOExpression'.
+'oogen::OOTwoOperandAssignableExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+'oogen::OOMinusExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOConditionalStatement' is a specialization of 'OOStatement'.
+'oogen::OOIf' is a specialization of 'OOConditionalStatement'.
+'oogen::OOGreaterThanExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOPrefixDecrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOVariableDeclarationList' is a specialization of 'OOStatement'.
+'oogen::OOThisLiteral' is a specialization of 'OOExpression'.
+'oogen::OONotExpression' is a specialization of 'OOOneOperandLogicalExpression'.
+'oogen::OOStatement' is a specialization of 'OOCommentOwner'.
+'oogen::OOContinue' is a specialization of 'OOStatement'.
+'oogen::OOWhile' is a specialization of 'OOConditionalStatement'.
+'oogen::OOPowerExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+'oogen::OOModuloExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOTwoOperandLogicalExpression' is a specialization of 'OOLogicalExpression'.
+'oogen::OOEqualsExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOOneOperandLogicalExpression' is a specialization of 'OOLogicalExpression'.
+'oogen::OOStringLiteral' is a specialization of 'OOExpression'.
+'oogen::OOBitWiseComplement' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOEmptyExpression' is a specialization of 'OOExpression'.
+'oogen::OOBitwiseAndExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOTypeCast' is a specialization of 'OOExpression'.
+'oogen::OOBoolLiteral' is a specialization of 'OOExpression'.
+'oogen::OOPostfixIncrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOOrExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+'oogen::OOPostfixDecrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOIntegerDivisionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OONotEqualsExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOXorExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+'oogen::OOClass' is a specialization of 'OOCommentOwner'.
+'oogen::OOReturn' is a specialization of 'OOStatement'.
+'oogen::OOFunctionCallExpression' is a specialization of 'OOExpression'.
+'oogen::OOSubtractionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOAssignmentExpression' is a specialization of 'OOExpression'.
+'oogen::OOAdditionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOTernaryOperator' is a specialization of 'OOLogicalExpression'.
+'oogen::OOCase' is a specialization of 'OOCompoundStatement'.
+'oogen::OOBitwiseXorExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOLanguageSpecificExpression' is a specialization of 'OOLogicalExpression'.
+'oogen::OOIndexing' is a specialization of 'OOExpression'.
+'oogen::OOLessEqualsExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOFieldReferenceExpression' is a specialization of 'OOExpression'.
+'oogen::OOFloatLiteral' is a specialization of 'OOArithmeticExpression'.
+'oogen::OOMultiplicationExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOMember' is a specialization of 'OOVariable'.
+'oogen::OOBitWiseLeftShift' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOVariable' is a specialization of 'OOStatement'.
+'oogen::OOArithmeticExpression' is a specialization of 'OOExpression'.
+'oogen::OOLessThanExpression' is a specialization of 'OOComparatorExpression'.
+'oogen::OOEmptyStatement' is a specialization of 'OOStatement'.
+'oogen::OODoubleLiteral' is a specialization of 'OOArithmeticExpression'.
+'oogen::OODefault' is a specialization of 'OOCompoundStatement'.
+'oogen::OOLogicalExpression' is a specialization of 'OOExpression'.
+'oogen::OOExpression' is a specialization of 'OOStatement'.
+'oogen::OOLogicalLiteral' is a specialization of 'OOLogicalExpression'.
+'oogen::OONewArray' is a specialization of 'OOExpression'.
+'oogen::OOBreak' is a specialization of 'OOStatement'.
+'oogen::OOBitwiseOrExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOVariableReferenceExpression' is a specialization of 'OOExpression'.
+'oogen::OOPrefixIncrementExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOConditionalStatement' is a specialization of 'OOCompoundStatement'.
+'oogen::OOLongLiteral' is a specialization of 'OOArithmeticExpression'.
+'oogen::OOComparatorExpression' is a specialization of 'OOLogicalExpression'.
+'oogen::OOAndExpression' is a specialization of 'OOTwoOperandLogicalExpression'.
+'oogen::OORootExpression' is a specialization of 'OOTwoOperandArithmeticExpression'.
+'oogen::OOMethod' is a specialization of 'OOCommentOwner'.
+'oogen::OODivisionExpression' is a specialization of 'OOTwoOperandAssignableExpression'.
+'oogen::OOCompoundStatement' is a specialization of 'OOStatement'.
+'oogen::OOInitializerList' is a specialization of 'OOExpression'.
+'oogen::OOEnumeration' is a specialization of 'OOCommentOwner'.
+'oogen::OOLanguageSpecificExpression' is a specialization of 'OOExpression'.
+'oogen::OOPlusExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOFor' is a specialization of 'OOConditionalStatement'.
+'oogen::OOBracketedExpression' is a specialization of 'OOOneOperandArithmeticExpression'.
+'oogen::OOExpression' (role 'oogen_OOExpression99', cardinality 0..*) is associated with 'oogen::OOSwitch' (role 'oogen_OOSwitch', cardinality 0..*).
+'oogen::OOType' (role 'oogen_OOType', cardinality 0..*) is associated with 'oogen::OOVariable' (role 'oogen_OOVariable', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression74', cardinality 0..*) is associated with 'oogen::OOConditionalStatement' (role 'oogen_OOConditionalStatement', cardinality 0..*).
+'oogen::OOMethod' (role 'oogen_OOMethod', cardinality 0..*) is associated with 'oogen::OOClass' (role 'oogen_OOClass5', cardinality 0..*).
+'oogen::OOTypeCast' (role 'oogen_OOTypeCast', cardinality 0..*) is associated with 'oogen::OOType' (role 'oogen_OOType85', cardinality 0..*).
+'oogen::OOType' (role 'oogen_OOType18', cardinality 0..*) is associated with 'oogen::OOEnumeration' (role 'oogen_OOEnumeration19', cardinality 0..*).
+'oogen::OOSwitch' (role 'oogen_OOSwitch101', cardinality 0..*) is associated with 'oogen::OOCase' (role 'oogen_OOCase', cardinality 0..*).
+'oogen::OOTwoOperandArithmeticExpression' (role 'oogen_OOTwoOperandArithmeticExpression', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression52', cardinality 0..*).
+'oogen::OOModel' (role 'oogen_OOModel34', cardinality 0..*) is associated with 'oogen::OOVariable' (role 'oogen_OOVariable35', cardinality 0..*).
+'oogen::OOIf' (role 'oogen_OOIf67', cardinality 0..*) is associated with 'oogen::OOIf' (role 'oogen_OOIf65', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression95', cardinality 0..*) is associated with 'oogen::OOComparatorExpression' (role 'oogen_OOComparatorExpression94', cardinality 0..*).
+'oogen::OOConstructor' (role 'oogen_OOConstructor', cardinality 0..*) is associated with 'oogen::OOClass' (role 'oogen_OOClass7', cardinality 0..*).
+'oogen::OOEnumeration' (role 'oogen_OOEnumeration', cardinality 0..*) is associated with 'oogen::OOPackage' (role 'oogen_OOPackage', cardinality 0..*).
+'oogen::OOVariable' (role 'oogen_OOVariable108', cardinality 0..*) is associated with 'oogen::OOVariableDeclarationList' (role 'oogen_OOVariableDeclarationList', cardinality 0..*).
+'oogen::OOPackage' (role 'oogen_OOPackage29', cardinality 0..*) is associated with 'oogen::OOModel' (role 'oogen_OOModel', cardinality 0..*).
+'oogen::OOSwitch' (role 'oogen_OOSwitch103', cardinality 0..*) is associated with 'oogen::OODefault' (role 'oogen_OODefault', cardinality 0..*).
+'oogen::OOClass' (role 'OOClass', cardinality 0..*) is associated with 'oogen::OOPackage' (role 'package', cardinality 0..*).
+'oogen::OOVariable' (role 'oogen_OOVariable22', cardinality 0..*) is associated with 'oogen::OOMethod' (role 'oogen_OOMethod21', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression60', cardinality 0..*) is associated with 'oogen::OOTwoOperandLogicalExpression' (role 'oogen_OOTwoOperandLogicalExpression59', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression106', cardinality 0..*) is associated with 'oogen::OOCase' (role 'oogen_OOCase105', cardinality 0..*).
+'oogen::OOInitializerList' (role 'oogen_OOInitializerList140', cardinality 0..*) is associated with 'oogen::OONewArray' (role 'oogen_OONewArray139', cardinality 0..*).
+'oogen::OOVariable' (role 'oogen_OOVariable76', cardinality 0..*) is associated with 'oogen::OOForEach' (role 'oogen_OOForEach', cardinality 0..*).
+'oogen::OOAssignmentExpression' (role 'oogen_OOAssignmentExpression49', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression50', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression88', cardinality 0..*) is associated with 'oogen::OOTypeCast' (role 'oogen_OOTypeCast87', cardinality 0..*).
+'oogen::OOPackage' (role 'OOPackage', cardinality 0..*) is associated with 'oogen::OOClass' (role 'classes', cardinality 0..*).
+'oogen::OOLanguageSpecificSnippet' (role 'oogen_OOLanguageSpecificSnippet', cardinality 0..*) is associated with 'oogen::OOLanguageSpecificExpression' (role 'oogen_OOLanguageSpecificExpression', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression112', cardinality 0..*) is associated with 'oogen::OOTernaryOperator' (role 'oogen_OOTernaryOperator', cardinality 0..*).
+'oogen::OONewArray' (role 'oogen_OONewArray', cardinality 0..*) is associated with 'oogen::OOType' (role 'oogen_OOType137', cardinality 0..*).
+'oogen::OOTernaryOperator' (role 'oogen_OOTernaryOperator117', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression118', cardinality 0..*).
+'oogen::OOType' (role 'oogen_OOType15', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression16', cardinality 0..*).
+'oogen::OOFor' (role 'oogen_OOFor', cardinality 0..*) is associated with 'oogen::OOStatement' (role 'oogen_OOStatement69', cardinality 0..*).
+'oogen::OOTwoOperandArithmeticExpression' (role 'oogen_OOTwoOperandArithmeticExpression54', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression55', cardinality 0..*).
+'oogen::OOConstructor' (role 'oogen_OOConstructor131', cardinality 0..*) is associated with 'oogen::OOVariable' (role 'oogen_OOVariable132', cardinality 0..*).
+'oogen::OOIndexing' (role 'oogen_OOIndexing44', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression45', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression115', cardinality 0..*) is associated with 'oogen::OOTernaryOperator' (role 'oogen_OOTernaryOperator114', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression62', cardinality 0..*) is associated with 'oogen::OOOneOperandLogicalExpression' (role 'oogen_OOOneOperandLogicalExpression', cardinality 0..*).
+'oogen::OOEnumeration' (role 'oogen_OOEnumeration146', cardinality 0..*) is associated with 'oogen::OOPackage' (role 'oogen_OOPackage147', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression90', cardinality 0..*) is associated with 'oogen::OONewClass' (role 'oogen_OONewClass', cardinality 0..*).
+'oogen::OOInitializerList' (role 'oogen_OOInitializerList', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression124', cardinality 0..*).
+'oogen::OOTwoOperandLogicalExpression' (role 'oogen_OOTwoOperandLogicalExpression', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression57', cardinality 0..*).
+'oogen::OOComment' (role 'oogen_OOComment', cardinality 0..*) is associated with 'oogen::OOCommentOwner' (role 'oogen_OOCommentOwner', cardinality 0..*).
+'oogen::OOStatement' (role 'oogen_OOStatement64', cardinality 0..*) is associated with 'oogen::OOIf' (role 'oogen_OOIf', cardinality 0..*).
+'oogen::OOCompoundStatement' (role 'oogen_OOCompoundStatement', cardinality 0..*) is associated with 'oogen::OOStatement' (role 'oogen_OOStatement97', cardinality 0..*).
+'oogen::OOIndexing' (role 'oogen_OOIndexing', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression42', cardinality 0..*).
+'oogen::OOStatement' (role 'oogen_OOStatement82', cardinality 0..*) is associated with 'oogen::OOForEach' (role 'oogen_OOForEach81', cardinality 0..*).
+'oogen::OOFor' (role 'oogen_OOFor71', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression72', cardinality 0..*).
+'oogen::OOClass' (role 'oogen_OOClass', cardinality 0..*) is associated with 'oogen::OOMember' (role 'oogen_OOMember', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression92', cardinality 0..*) is associated with 'oogen::OOComparatorExpression' (role 'oogen_OOComparatorExpression', cardinality 0..*).
+'oogen::OOFunctionCallExpression' (role 'oogen_OOFunctionCallExpression128', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression129', cardinality 0..*).
+'oogen::OOMethod' (role 'oogen_OOMethod24', cardinality 0..*) is associated with 'oogen::OOType' (role 'oogen_OOType25', cardinality 0..*).
+'oogen::OOStatement' (role 'oogen_OOStatement135', cardinality 0..*) is associated with 'oogen::OOConstructor' (role 'oogen_OOConstructor134', cardinality 0..*).
+'oogen::OOComment' (role 'oogen_OOComment144', cardinality 0..*) is associated with 'oogen::OOCommentOwner' (role 'oogen_OOCommentOwner143', cardinality 0..*).
+'oogen::OOOneOperandArithmeticExpression' (role 'oogen_OOOneOperandArithmeticExpression', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression110', cardinality 0..*).
+'oogen::OOType' (role 'oogen_OOType12', cardinality 0..*) is associated with 'oogen::OOClass' (role 'oogen_OOClass13', cardinality 0..*).
+'oogen::OOVariable' (role 'oogen_OOVariable79', cardinality 0..*) is associated with 'oogen::OOForEach' (role 'oogen_OOForEach78', cardinality 0..*).
+'oogen::OOVariableReferenceExpression' (role 'oogen_OOVariableReferenceExpression', cardinality 0..*) is associated with 'oogen::OOVariable' (role 'oogen_OOVariable122', cardinality 0..*).
+'oogen::OOExpression' (role 'oogen_OOExpression47', cardinality 0..*) is associated with 'oogen::OOAssignmentExpression' (role 'oogen_OOAssignmentExpression', cardinality 0..*).
+'oogen::OOFieldReferenceExpression' (role 'oogen_OOFieldReferenceExpression', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression120', cardinality 0..*).
+'oogen::OOMethod' (role 'oogen_OOMethod27', cardinality 0..*) is associated with 'oogen::OOStatement' (role 'oogen_OOStatement', cardinality 0..*).
+'oogen::OOVariable' (role 'oogen_OOVariable10', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression', cardinality 0..*).
+'oogen::OOPackage' (role 'oogen_OOPackage32', cardinality 0..*) is associated with 'oogen::OOModel' (role 'oogen_OOModel31', cardinality 0..*).
+'oogen::OOModel' (role 'oogen_OOModel37', cardinality 0..*) is associated with 'oogen::OOMethod' (role 'oogen_OOMethod38', cardinality 0..*).
+'oogen::OOReturn' (role 'oogen_OOReturn', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression40', cardinality 0..*).
+'oogen::OOFunctionCallExpression' (role 'oogen_OOFunctionCallExpression', cardinality 0..*) is associated with 'oogen::OOExpression' (role 'oogen_OOExpression126', cardinality 0..*).

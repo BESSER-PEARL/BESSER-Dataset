@@ -1,0 +1,31 @@
+The model has 11 class(es).
+The class 'workflow::IOutputPort' has no attributes.
+The class 'workflow::IWorkflowNode' has the following attributes: 'isFinish' of type bool; 'isStart' of type bool.
+The class 'workflow::ILink' has no attributes.
+The class 'IPort' has no attributes.
+The class 'IWorkflowElement' has no attributes.
+The class 'workflow::IWorkflowJob' has the following attributes: 'jobDescription' of type str; 'jobDescriptionFileName' of type str.
+The class 'workflow::IPort' has the following attributes: 'fileName' of type str.
+The class 'IWorkflowNode' has no attributes.
+The class 'workflow::IInputPort' has no attributes.
+The class 'workflow::IWorkflowElement' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'workflow::IWorkflow' has no attributes.
+'workflow::IInputPort' is a specialization of 'IPort'.
+'workflow::ILink' is a specialization of 'IWorkflowElement'.
+'workflow::IWorkflowJob' is a specialization of 'IWorkflowNode'.
+'workflow::IOutputPort' is a specialization of 'IPort'.
+'workflow::IWorkflowNode' is a specialization of 'IWorkflowElement'.
+'workflow::IPort' is a specialization of 'IWorkflowElement'.
+'workflow::IWorkflow' is a specialization of 'IWorkflowElement'.
+'workflow::ILink' (role 'ILink10', cardinality 0..*) is associated with 'workflow::IOutputPort' (role 'source', cardinality 0..*).
+'workflow::ILink' (role 'ILink', cardinality 0..*) is associated with 'workflow::IInputPort' (role 'target', cardinality 0..*).
+'workflow::IWorkflowNode' (role 'node', cardinality 0..*) is associated with 'workflow::IOutputPort' (role 'IOutputPort19', cardinality 0..*).
+'workflow::IWorkflow' (role 'IWorkflow', cardinality 0..*) is associated with 'workflow::ILink' (role 'links', cardinality 0..*).
+'workflow::IInputPort' (role 'inputs', cardinality 0..*) is associated with 'workflow::IWorkflowNode' (role 'IWorkflowNode', cardinality 0..*).
+'workflow::IWorkflowNode' (role 'IWorkflowNode8', cardinality 0..*) is associated with 'workflow::IOutputPort' (role 'outputs', cardinality 0..*).
+'workflow::IWorkflow' (role 'workflow', cardinality 0..*) is associated with 'workflow::IWorkflowNode' (role 'IWorkflowNode12', cardinality 0..*).
+'workflow::IWorkflow' (role 'workflow14', cardinality 0..*) is associated with 'workflow::ILink' (role 'ILink15', cardinality 0..*).
+'workflow::ILink' (role 'links4', cardinality 0..*) is associated with 'workflow::IOutputPort' (role 'IOutputPort', cardinality 0..*).
+'workflow::ILink' (role 'links2', cardinality 0..*) is associated with 'workflow::IInputPort' (role 'IInputPort', cardinality 0..*).
+'workflow::IWorkflowNode' (role 'node21', cardinality 0..*) is associated with 'workflow::IInputPort' (role 'IInputPort22', cardinality 0..*).
+'workflow::IWorkflow' (role 'IWorkflow17', cardinality 0..*) is associated with 'workflow::IWorkflowNode' (role 'nodes', cardinality 0..*).

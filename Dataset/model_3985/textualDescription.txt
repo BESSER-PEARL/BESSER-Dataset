@@ -1,0 +1,68 @@
+The model has 23 class(es).
+The class 'failureLogic::SecurityViolation' has no attributes.
+The class 'failureLogic::FailureLogicPackage' has no attributes.
+The class 'failureLogic::MarkovChain' has no attributes.
+The class 'BaseElement' has no attributes.
+The class 'failureLogic::FaultTree' has no attributes.
+The class 'failureLogic::FailureModel' has no attributes.
+The class 'failureLogic::ProbDistParam' has the following attributes: 'value' of type str.
+The class 'Failure' has no attributes.
+The class 'failureLogic::MinimalCutset' has no attributes.
+The class 'failureLogic::ProbDist' has the following attributes: 'type' of type str.
+The class 'FailureModel' has no attributes.
+The class 'failureLogic::FMEDAEntry' has the following attributes: 'diagnosisRate' of type float.
+The class 'failureLogic::Gate' has the following attributes: 'gateType' of type str.
+The class 'failureLogic::Failure' has the following attributes: 'failureRate' of type float; 'isCcf' of type bool; 'failureClass' of type str; 'originType' of type str.
+The class 'Cause' has no attributes.
+The class 'ODEProductPackage' has no attributes.
+The class 'failureLogic::FMEA' has the following attributes: 'type' of type str.
+The class 'failureLogic::Cause' has the following attributes: 'causeType' of type str.
+The class 'failureLogic::MinimalCutSets' has no attributes.
+The class 'failureLogic::Transition' has the following attributes: 'transition' of type float.
+The class 'failureLogic::State' has the following attributes: 'isInitialState' of type bool; 'isFailState' of type bool.
+The class 'FMEAEntry' has no attributes.
+The class 'failureLogic::FMEAEntry' has no attributes.
+The enumeration 'FailureOriginType' has the following literals: 'Internal', 'Input', 'Output'.
+The enumeration 'FMEAType' has the following literals: 'FMEDA', 'FMEA'.
+The enumeration 'GateType' has the following literals: 'NOT', 'VOTE', 'XOR', 'SAND', 'OutputEvent', 'POR', 'PAND', 'OR', 'InputEvent', 'AND'.
+The enumeration 'CauseType' has the following literals: 'InputEvent', 'Gate', 'OutputEvent', 'BasicEvent'.
+'failureLogic::Cause' is a specialization of 'BaseElement'.
+'failureLogic::State' is a specialization of 'BaseElement'.
+'failureLogic::MinimalCutSets' is a specialization of 'BaseElement'.
+'failureLogic::ProbDistParam' is a specialization of 'BaseElement'.
+'failureLogic::Gate' is a specialization of 'Cause'.
+'failureLogic::FMEAEntry' is a specialization of 'BaseElement'.
+'failureLogic::FailureLogicPackage' is a specialization of 'ODEProductPackage'.
+'failureLogic::Failure' is a specialization of 'BaseElement'.
+'failureLogic::FMEA' is a specialization of 'FailureModel'.
+'failureLogic::ProbDist' is a specialization of 'BaseElement'.
+'failureLogic::MinimalCutset' is a specialization of 'BaseElement'.
+'failureLogic::SecurityViolation' is a specialization of 'Failure'.
+'failureLogic::FailureModel' is a specialization of 'BaseElement'.
+'failureLogic::FMEDAEntry' is a specialization of 'FMEAEntry'.
+'failureLogic::Transition' is a specialization of 'BaseElement'.
+'failureLogic::FaultTree' is a specialization of 'FailureModel'.
+'failureLogic::MarkovChain' is a specialization of 'FailureModel'.
+'failureLogic::FMEAEntry' (role 'failureLogic_FMEAEntry46', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure47', cardinality 0..*).
+'failureLogic::Cause' (role 'failureLogic_Cause', cardinality 0..*) is associated with 'failureLogic::FaultTree' (role 'failureLogic_FaultTree', cardinality 0..*).
+'failureLogic::FailureModel' (role 'failureLogic_FailureModel8', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure9', cardinality 0..*).
+'failureLogic::MarkovChain' (role 'failureLogic_MarkovChain31', cardinality 0..*) is associated with 'failureLogic::State' (role 'failureLogic_State', cardinality 0..*).
+'failureLogic::FailureModel' (role 'failureLogic_FailureModel12', cardinality 0..*) is associated with 'failureLogic::FailureModel' (role 'failureLogic_FailureModel10', cardinality 0..*).
+'failureLogic::Failure' (role 'failureLogic_Failure4', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure2', cardinality 0..*).
+'failureLogic::MarkovChain' (role 'failureLogic_MarkovChain', cardinality 0..*) is associated with 'failureLogic::Transition' (role 'failureLogic_Transition', cardinality 0..*).
+'failureLogic::Transition' (role 'failureLogic_Transition42', cardinality 0..*) is associated with 'failureLogic::State' (role 'failureLogic_State43', cardinality 0..*).
+'failureLogic::Transition' (role 'failureLogic_Transition39', cardinality 0..*) is associated with 'failureLogic::State' (role 'failureLogic_State40', cardinality 0..*).
+'failureLogic::FMEAEntry' (role 'failureLogic_FMEAEntry', cardinality 0..*) is associated with 'failureLogic::FMEA' (role 'failureLogic_FMEA', cardinality 0..*).
+'failureLogic::ProbDistParam' (role 'failureLogic_ProbDistParam', cardinality 0..*) is associated with 'failureLogic::ProbDist' (role 'failureLogic_ProbDist22', cardinality 0..*).
+'failureLogic::Failure' (role 'failureLogic_Failure50', cardinality 0..*) is associated with 'failureLogic::FMEAEntry' (role 'failureLogic_FMEAEntry49', cardinality 0..*).
+'failureLogic::MinimalCutSets' (role 'failureLogic_MinimalCutSets14', cardinality 0..*) is associated with 'failureLogic::MinimalCutset' (role 'failureLogic_MinimalCutset', cardinality 0..*).
+'failureLogic::MinimalCutset' (role 'failureLogic_MinimalCutset19', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure20', cardinality 0..*).
+'failureLogic::MinimalCutSets' (role 'failureLogic_MinimalCutSets16', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure17', cardinality 0..*).
+'failureLogic::FailureModel' (role 'failureLogic_FailureModel', cardinality 0..*) is associated with 'failureLogic::FailureLogicPackage' (role 'failureLogic_FailureLogicPackage', cardinality 0..*).
+'failureLogic::MinimalCutSets' (role 'failureLogic_MinimalCutSets', cardinality 0..*) is associated with 'failureLogic::FailureModel' (role 'failureLogic_FailureModel6', cardinality 0..*).
+'failureLogic::Gate' (role 'failureLogic_Gate', cardinality 0..*) is associated with 'failureLogic::Cause' (role 'failureLogic_Cause28', cardinality 0..*).
+'failureLogic::ProbDist' (role 'failureLogic_ProbDist', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure', cardinality 0..*).
+'failureLogic::ProbDist' (role 'failureLogic_ProbDist52', cardinality 0..*) is associated with 'failureLogic::FMEDAEntry' (role 'failureLogic_FMEDAEntry', cardinality 0..*).
+'failureLogic::ProbDist' (role 'failureLogic_ProbDist37', cardinality 0..*) is associated with 'failureLogic::Transition' (role 'failureLogic_Transition36', cardinality 0..*).
+'failureLogic::Cause' (role 'failureLogic_Cause25', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure26', cardinality 0..*).
+'failureLogic::State' (role 'failureLogic_State33', cardinality 0..*) is associated with 'failureLogic::Failure' (role 'failureLogic_Failure34', cardinality 0..*).

@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'grammarSql::Table' has the following attributes: 'name' of type str.
+The class 'grammarSql::ForeignKey' has no attributes.
+The class 'grammarSql::Reference' has no attributes.
+The class 'grammarSql::Model' has no attributes.
+The class 'grammarSql::PrimaryKey' has no attributes.
+The class 'grammarSql::Column' has the following attributes: 'type' of type str; 'isNotNull' of type bool; 'name' of type str.
+The class 'grammarSql::EObject' has no attributes.
+'grammarSql::Column' (role 'grammarSql_Column', cardinality 0..*) is associated with 'grammarSql::PrimaryKey' (role 'grammarSql_PrimaryKey', cardinality 0..*).
+'grammarSql::Column' (role 'grammarSql_Column13', cardinality 0..*) is associated with 'grammarSql::Reference' (role 'grammarSql_Reference12', cardinality 0..*).
+'grammarSql::Table' (role 'grammarSql_Table10', cardinality 0..*) is associated with 'grammarSql::Reference' (role 'grammarSql_Reference9', cardinality 0..*).
+'grammarSql::Column' (role 'grammarSql_Column5', cardinality 0..*) is associated with 'grammarSql::ForeignKey' (role 'grammarSql_ForeignKey', cardinality 0..*).
+'grammarSql::Table' (role 'grammarSql_Table2', cardinality 0..*) is associated with 'grammarSql::EObject' (role 'grammarSql_EObject', cardinality 0..*).
+'grammarSql::Reference' (role 'grammarSql_Reference', cardinality 0..*) is associated with 'grammarSql::ForeignKey' (role 'grammarSql_ForeignKey7', cardinality 0..*).
+'grammarSql::Model' (role 'grammarSql_Model', cardinality 0..*) is associated with 'grammarSql::Table' (role 'grammarSql_Table', cardinality 0..*).

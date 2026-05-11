@@ -1,0 +1,178 @@
+The model has 81 class(es).
+The class 'behaviour::IntConstantExpression' has the following attributes: 'value' of type int.
+The class 'behaviour::OccupationBooleanFunction' has the following attributes: 'functionName' of type str.
+The class 'behaviour::UnaryFunction' has no attributes.
+The class 'Node' has no attributes.
+The class 'behaviour::BooleanPrimitive' has the following attributes: 'primitive' of type str.
+The class 'behaviour::NamedFunction' has no attributes.
+The class 'behaviour::Remove' has no attributes.
+The class 'behaviour::Decision' has no attributes.
+The class 'behaviour::NumericPrimitive' has no attributes.
+The class 'behaviour::Type' has the following attributes: 'type' of type str.
+The class 'ExecutableNode' has no attributes.
+The class 'behaviour::Move' has no attributes.
+The class 'behaviour::UnconditionedEdge' has no attributes.
+The class 'behaviour::CoordinateLocationExpression' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'behaviour::UnaryEntityFunction' has the following attributes: 'functionName' of type str.
+The class 'behaviour::StringConstantExpression' has the following attributes: 'value' of type str.
+The class 'VariableClass' has no attributes.
+The class 'behaviour::Merge' has no attributes.
+The class 'behaviour::FunctionCallExpression' has no attributes.
+The class 'behaviour::TimeExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'behaviour::ConstantExpression' has no attributes.
+The class 'behaviour::Start' has no attributes.
+The class 'behaviour::VariableClass' has the following attributes: 'variableName' of type str.
+The class 'behaviour::ExecutableNode' has no attributes.
+The class 'ConstantExpression' has no attributes.
+The class 'behaviour::Die' has no attributes.
+The class 'behaviour::UnaryLocationFunction' has the following attributes: 'functionName' of type str.
+The class 'behaviour::LocationSetPrimitive' has the following attributes: 'primitive' of type str.
+The class 'behaviour::Edge' has no attributes.
+The class 'behaviour::ParameterClass' has no attributes.
+The class 'Edge' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'behaviour::BinaryBooleanFunction' has no attributes.
+The class 'behaviour::Function' has no attributes.
+The class 'behaviour::ControlNode' has no attributes.
+The class 'behaviour::EntityPrimive' has the following attributes: 'primitive' of type str.
+The class 'behaviour::Behavior' has the following attributes: 'behaviorName' of type str; 'frequency' of type str.
+The class 'Duration' has no attributes.
+The class 'behaviour::FloatConstantExpression' has the following attributes: 'value' of type float.
+The class 'behaviour::UnaryStringFunction' has the following attributes: 'functionName' of type str.
+The class 'behaviour::AnonymousFunction' has no attributes.
+The class 'behaviour::EntitySetPrimitive' has the following attributes: 'primitive' of type str.
+The class 'behaviour::BinaryLocationFunction' has no attributes.
+The class 'PrimitiveActivity' has no attributes.
+The class 'NamedFunction' has no attributes.
+The class 'behaviour::Node' has no attributes.
+The class 'behaviour::End' has no attributes.
+The class 'behaviour::Fork' has no attributes.
+The class 'behaviour::EntityClass' has the following attributes: 'entityName' of type str.
+The class 'behaviour::FalseEdge' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'BinaryFunction' has no attributes.
+The class 'behaviour::EquationBehaviour' has no attributes.
+The class 'behaviour::NameLocationExpression' has the following attributes: 'name' of type str.
+The class 'behaviour::LogicBooleanFunction' has the following attributes: 'functionName' of type str.
+The class 'behaviour::LocationExpression' has no attributes.
+The class 'behaviour::LocationPrimitive' has the following attributes: 'primitive' of type str.
+The class 'behaviour::PrimitiveExpression' has no attributes.
+The class 'behaviour::ComparisonBooleanFunction' has the following attributes: 'functionName' of type str.
+The class 'LocationExpression' has no attributes.
+The class 'behaviour::Reproduce' has no attributes.
+The class 'behaviour::PrimitiveActivity' has no attributes.
+The class 'behaviour::TrueEdge' has no attributes.
+The class 'PrimitiveExpression' has no attributes.
+The class 'behaviour::Equation' has no attributes.
+The class 'behaviour::Duration' has the following attributes: 'durationTime' of type int.
+The class 'behaviour::BinaryArithmeticFunction' has the following attributes: 'functionName' of type str.
+The class 'Function' has no attributes.
+The class 'behaviour::AttributeClass' has no attributes.
+The class 'BinaryBooleanFunction' has no attributes.
+The class 'behaviour::ActivityDiagramBehavior' has no attributes.
+The class 'behaviour::Add' has no attributes.
+The class 'behaviour::BinaryFunction' has no attributes.
+The class 'behaviour::While' has no attributes.
+The class 'behaviour::Join' has no attributes.
+The class 'behaviour::Expression' has no attributes.
+The class 'TimeExpression' has no attributes.
+The class 'UnaryFunction' has no attributes.
+The class 'behaviour::MonthDuration' has the following attributes: 'month' of type str.
+The class 'behaviour::UnaryNumericFunction' has the following attributes: 'functionName' of type str.
+The enumeration 'UnaryNumericFunctionEnum' has the following literals: 'random'.
+The enumeration 'OccupationBooleanFunctionEnum' has the following literals: 'Occupied'.
+The enumeration 'LocationSetPrimiveEnum' has the following literals: 'space', 'neighbourhood'.
+The enumeration 'BooleanPrimitiveEnum' has the following literals: 'true', 'false'.
+The enumeration 'TypeEnum' has the following literals: 'string', 'int', 'locationset', 'boolean', 'location', 'entityset', 'entity', 'float'.
+The enumeration 'DurationTypeEnum' has the following literals: 'weekly', 'monthly'.
+The enumeration 'EntityPrimitiveEnum' has the following literals: 'oneOf'.
+The enumeration 'LocationPrimiveEnum' has the following literals: 'bottom', 'left', 'right', 'here', 'top'.
+The enumeration 'MonthsEnum' has the following literals: 'September', 'March', 'November', 'August', 'October', 'January', 'December', 'Februrary', 'June', 'July', 'April', 'May'.
+The enumeration 'EntitySetPrimiveEnum' has the following literals: 'all', 'neighbours'.
+The enumeration 'LogicBooleanFunctionEnum' has the following literals: 'NOT', 'AND', 'OR'.
+The enumeration 'UnaryStringFunctionEnum' has the following literals: 'Get'.
+The enumeration 'UnaryEntityFunctionEnum' has the following literals: 'oneof'.
+The enumeration 'UnaryLocationEnum' has the following literals: 'toplocation', 'oneofneighbour', 'oneof'.
+The enumeration 'WeekDaysEnum' has the following literals: 'wednesday', 'tuesday', 'saturday', 'thursday', 'friday', 'monday', 'sunday'.
+The enumeration 'ArithmeticFunctionEnum' has the following literals: 'Division', 'Times', 'Sum', 'Minus'.
+The enumeration 'UnaryLocationFunctionEnum' has the following literals: 'RandomNeighbourhoodLocation', 'OneOf', 'BottomLocation', 'BottomLeftLocation', 'RightLocation', 'TopRightLocation', 'TopLeftLocation', 'RandomLocation', 'BottomRightLocation', 'LeftLocation', 'TopLocation'.
+The enumeration 'ComparisonBooleanFunctionEnum' has the following literals: 'GreaterThan', 'GreaterOrEequalThan', 'LessOrEqualThan', 'LessThan', 'Equal', 'NotEqual'.
+'behaviour::ActivityDiagramBehavior' is a specialization of 'ExecutableNode'.
+'behaviour::While' is a specialization of 'TimeExpression'.
+'behaviour::ExecutableNode' is a specialization of 'Node'.
+'behaviour::LocationPrimitive' is a specialization of 'PrimitiveExpression'.
+'behaviour::FloatConstantExpression' is a specialization of 'ConstantExpression'.
+'behaviour::UnaryLocationFunction' is a specialization of 'UnaryFunction'.
+'behaviour::EquationBehaviour' is a specialization of 'Behavior'.
+'behaviour::BinaryLocationFunction' is a specialization of 'BinaryFunction'.
+'behaviour::UnaryStringFunction' is a specialization of 'UnaryFunction'.
+'behaviour::AttributeClass' is a specialization of 'VariableClass'.
+'behaviour::MonthDuration' is a specialization of 'Duration'.
+'behaviour::BinaryArithmeticFunction' is a specialization of 'BinaryFunction'.
+'behaviour::Merge' is a specialization of 'ControlNode'.
+'behaviour::NameLocationExpression' is a specialization of 'LocationExpression'.
+'behaviour::Reproduce' is a specialization of 'PrimitiveActivity'.
+'behaviour::IntConstantExpression' is a specialization of 'ConstantExpression'.
+'behaviour::BooleanPrimitive' is a specialization of 'PrimitiveExpression'.
+'behaviour::PrimitiveActivity' is a specialization of 'ExecutableNode'.
+'behaviour::ComparisonBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+'behaviour::EntityPrimive' is a specialization of 'PrimitiveExpression'.
+'behaviour::LocationExpression' is a specialization of 'Expression'.
+'behaviour::AnonymousFunction' is a specialization of 'Function'.
+'behaviour::ConstantExpression' is a specialization of 'Expression'.
+'behaviour::ControlNode' is a specialization of 'Node'.
+'behaviour::ParameterClass' is a specialization of 'VariableClass'.
+'behaviour::Die' is a specialization of 'PrimitiveActivity'.
+'behaviour::UnaryNumericFunction' is a specialization of 'UnaryFunction'.
+'behaviour::TrueEdge' is a specialization of 'Edge'.
+'behaviour::LocationSetPrimitive' is a specialization of 'PrimitiveExpression'.
+'behaviour::OccupationBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+'behaviour::ActivityDiagramBehavior' is a specialization of 'Behavior'.
+'behaviour::Join' is a specialization of 'ControlNode'.
+'behaviour::Fork' is a specialization of 'ControlNode'.
+'behaviour::Remove' is a specialization of 'PrimitiveActivity'.
+'behaviour::BinaryFunction' is a specialization of 'NamedFunction'.
+'behaviour::End' is a specialization of 'ControlNode'.
+'behaviour::PrimitiveExpression' is a specialization of 'Expression'.
+'behaviour::EntitySetPrimitive' is a specialization of 'PrimitiveExpression'.
+'behaviour::LogicBooleanFunction' is a specialization of 'BinaryBooleanFunction'.
+'behaviour::TimeExpression' is a specialization of 'ControlNode'.
+'behaviour::BinaryBooleanFunction' is a specialization of 'BinaryFunction'.
+'behaviour::StringConstantExpression' is a specialization of 'ConstantExpression'.
+'behaviour::Decision' is a specialization of 'ControlNode'.
+'behaviour::CoordinateLocationExpression' is a specialization of 'LocationExpression'.
+'behaviour::FalseEdge' is a specialization of 'Edge'.
+'behaviour::UnaryEntityFunction' is a specialization of 'UnaryFunction'.
+'behaviour::UnconditionedEdge' is a specialization of 'Edge'.
+'behaviour::Start' is a specialization of 'ControlNode'.
+'behaviour::Move' is a specialization of 'PrimitiveActivity'.
+'behaviour::UnaryFunction' is a specialization of 'NamedFunction'.
+'behaviour::VariableClass' is a specialization of 'Expression'.
+'behaviour::Add' is a specialization of 'PrimitiveActivity'.
+'behaviour::FunctionCallExpression' is a specialization of 'Expression'.
+'behaviour::NamedFunction' is a specialization of 'Function'.
+'behaviour::Behavior' (role 'behaviour_Behavior15', cardinality 0..*) is associated with 'behaviour::Duration' (role 'behaviour_Duration', cardinality 0..*).
+'behaviour::AttributeClass' (role 'behaviour_AttributeClass47', cardinality 0..*) is associated with 'behaviour::Add' (role 'behaviour_Add', cardinality 0..*).
+'behaviour::Node' (role 'behaviour_Node', cardinality 0..*) is associated with 'behaviour::ActivityDiagramBehavior' (role 'behaviour_ActivityDiagramBehavior28', cardinality 0..*).
+'behaviour::ActivityDiagramBehavior' (role 'behaviour_ActivityDiagramBehavior', cardinality 0..*) is associated with 'behaviour::Start' (role 'behaviour_Start', cardinality 0..*).
+'behaviour::Function' (role 'behaviour_Function6', cardinality 0..*) is associated with 'behaviour::Type' (role 'behaviour_Type7', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression41', cardinality 0..*) is associated with 'behaviour::TimeExpression' (role 'behaviour_TimeExpression', cardinality 0..*).
+'behaviour::EntityClass' (role 'behaviour_EntityClass', cardinality 0..*) is associated with 'behaviour::Behavior' (role 'behaviour_Behavior', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression43', cardinality 0..*) is associated with 'behaviour::Decision' (role 'behaviour_Decision', cardinality 0..*).
+'behaviour::AttributeClass' (role 'behaviour_AttributeClass', cardinality 0..*) is associated with 'behaviour::EntityClass' (role 'behaviour_EntityClass13', cardinality 0..*).
+'behaviour::AttributeClass' (role 'behaviour_AttributeClass49', cardinality 0..*) is associated with 'behaviour::Remove' (role 'behaviour_Remove', cardinality 0..*).
+'behaviour::ActivityDiagramBehavior' (role 'behaviour_ActivityDiagramBehavior26', cardinality 0..*) is associated with 'behaviour::Edge' (role 'behaviour_Edge', cardinality 0..*).
+'behaviour::Move' (role 'behaviour_Move', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression45', cardinality 0..*).
+'behaviour::Duration' (role 'behaviour_Duration18', cardinality 0..*) is associated with 'behaviour::Behavior' (role 'behaviour_Behavior17', cardinality 0..*).
+'behaviour::Equation' (role 'behaviour_Equation30', cardinality 0..*) is associated with 'behaviour::AttributeClass' (role 'behaviour_AttributeClass31', cardinality 0..*).
+'behaviour::Equation' (role 'behaviour_Equation33', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression', cardinality 0..*).
+'behaviour::End' (role 'behaviour_End', cardinality 0..*) is associated with 'behaviour::ActivityDiagramBehavior' (role 'behaviour_ActivityDiagramBehavior24', cardinality 0..*).
+'behaviour::Edge' (role 'behaviour_Edge35', cardinality 0..*) is associated with 'behaviour::Node' (role 'behaviour_Node36', cardinality 0..*).
+'behaviour::VariableClass' (role 'behaviour_VariableClass', cardinality 0..*) is associated with 'behaviour::Type' (role 'behaviour_Type', cardinality 0..*).
+'behaviour::Type' (role 'behaviour_Type10', cardinality 0..*) is associated with 'behaviour::Function' (role 'behaviour_Function9', cardinality 0..*).
+'behaviour::VariableClass' (role 'behaviour_VariableClass2', cardinality 0..*) is associated with 'behaviour::FunctionCallExpression' (role 'behaviour_FunctionCallExpression', cardinality 0..*).
+'behaviour::Equation' (role 'behaviour_Equation', cardinality 0..*) is associated with 'behaviour::EquationBehaviour' (role 'behaviour_EquationBehaviour', cardinality 0..*).
+'behaviour::Edge' (role 'behaviour_Edge38', cardinality 0..*) is associated with 'behaviour::Node' (role 'behaviour_Node39', cardinality 0..*).
+'behaviour::Behavior' (role 'behaviour_Behavior20', cardinality 0..*) is associated with 'behaviour::ParameterClass' (role 'behaviour_ParameterClass', cardinality 0..*).
+'behaviour::Function' (role 'behaviour_Function', cardinality 0..*) is associated with 'behaviour::FunctionCallExpression' (role 'behaviour_FunctionCallExpression4', cardinality 0..*).

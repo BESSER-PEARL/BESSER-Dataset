@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Class::DataType' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'Class::Attribute' has the following attributes: 'multiValued' of type str.
+The class 'Class::Class' has the following attributes: 'isAbstract' of type str.
+The class 'Class' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Class::Classifier' has no attributes.
+The class 'Class::NamedElt' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+'Class::Classifier' is a specialization of 'NamedElt'.
+'Class::Class' is a specialization of 'Classifier'.
+'Class::DataType' is a specialization of 'Classifier'.
+'Class::Attribute' is a specialization of 'NamedElt'.
+'Class' (role 'Class4', cardinality 0..*) is associated with 'Class::Attribute' (role 'attr', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'Class::Attribute' (role 'Class_Attribute', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'Class::Class' (role 'owner', cardinality 0..*).
+'Class::Class' (role 'Class_Class', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'Classifier' has no attributes.
+The class 'classdiagram::Class' has the following attributes: 'is_persistent' of type bool.
+The class 'classdiagram::Association' has the following attributes: 'name' of type str.
+The class 'classdiagram::Package' has the following attributes: 'name' of type str.
+The class 'classdiagram::PrimitiveDataType' has no attributes.
+The class 'classdiagram::Classifier' has the following attributes: 'name' of type str.
+The class 'classdiagram::Attribute' has the following attributes: 'is_primary' of type bool; 'name' of type str.
+'classdiagram::PrimitiveDataType' is a specialization of 'Classifier'.
+'classdiagram::Class' is a specialization of 'Classifier'.
+'classdiagram::Class' (role 'classdiagram_Class', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'classdiagram_Attribute', cardinality 0..*).
+'classdiagram::Classifier' (role 'classdiagram_Classifier9', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'classdiagram_Attribute8', cardinality 0..*).
+'classdiagram::Association' (role 'classdiagram_Association', cardinality 0..*) is associated with 'classdiagram::Package' (role 'classdiagram_Package2', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class12', cardinality 0..*) is associated with 'classdiagram::Association' (role 'classdiagram_Association11', cardinality 0..*).
+'classdiagram::Classifier' (role 'classdiagram_Classifier', cardinality 0..*) is associated with 'classdiagram::Package' (role 'classdiagram_Package', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class15', cardinality 0..*) is associated with 'classdiagram::Association' (role 'classdiagram_Association14', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class4', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class6', cardinality 0..*).

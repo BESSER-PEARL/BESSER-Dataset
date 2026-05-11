@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'company::Employee' has the following attributes: 'age' of type int; 'lastName' of type str; 'firstName' of type str.
+The class 'company::Department' has the following attributes: 'number' of type int.
+The class 'company::Company' has the following attributes: 'name' of type str.
+The class 'company::TestClass' has the following attributes: 'stringAttribute2' of type str; 'stringAttribute1' of type str; 'intAttribute2' of type int; 'intAttribute1' of type int.
+'company::Employee' (role 'company_Employee', cardinality 0..*) is associated with 'company::Department' (role 'company_Department', cardinality 0..*).
+'company::Department' (role 'company_Department2', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).

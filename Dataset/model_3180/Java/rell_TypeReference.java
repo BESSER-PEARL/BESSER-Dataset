@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class rell_TypeReference  {
+
+
+
+
+
+
+    private rell_VariableDeclaration rell_variabledeclaration;
+
+
+    public rell_TypeReference(
+    ) {
+    }
+
+
+
+    public rell_VariableDeclaration getRell_variabledeclaration() {
+        return rell_variabledeclaration;
+    }
+
+    public void setRell_variabledeclaration(rell_VariableDeclaration rell_variabledeclaration) {
+        this.rell_variabledeclaration = rell_variabledeclaration;
+    }
+
+}

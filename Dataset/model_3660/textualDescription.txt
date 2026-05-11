@@ -1,0 +1,24 @@
+The model has 6 class(es).
+The class 'Projects::Training' has no attributes.
+The class 'Project' has no attributes.
+The class 'Projects::Project' has the following attributes: 'status' of type str; 'name' of type str; 'size' of type str.
+The class 'Projects::Company' has the following attributes: 'name' of type str.
+The class 'Projects::Qualification' has the following attributes: 'description' of type str.
+The class 'Projects::Worker' has the following attributes: 'nickname' of type str; 'salary' of type int.
+The enumeration 'ProjectSize' has the following literals: 'big', 'small', 'medium'.
+The enumeration 'ProjectStatus' has the following literals: 'finished', 'active', 'suspended', 'planned'.
+'Projects::Training' is a specialization of 'Project'.
+'Projects::Qualification' (role 'Qualification', cardinality 0..*) is associated with 'Projects::Worker' (role 'workers', cardinality 0..*).
+'Projects::Project' (role 'Project19', cardinality 0..*) is associated with 'Projects::Project' (role 'predecessors', cardinality 0..*).
+'Projects::Qualification' (role 'trained', cardinality 0..*) is associated with 'Projects::Training' (role 'Training', cardinality 0..*).
+'Projects::Qualification' (role 'requirements', cardinality 0..*) is associated with 'Projects::Project' (role 'Project23', cardinality 0..*).
+'Projects::Project' (role 'projects9', cardinality 0..*) is associated with 'Projects::Worker' (role 'Worker10', cardinality 0..*).
+'Projects::Company' (role 'employer', cardinality 0..*) is associated with 'Projects::Worker' (role 'Worker', cardinality 0..*).
+'Projects::Qualification' (role 'qualifications', cardinality 0..*) is associated with 'Projects::Worker' (role 'Worker21', cardinality 0..*).
+'Projects::Project' (role 'Project5', cardinality 0..*) is associated with 'Projects::Worker' (role 'members', cardinality 0..*).
+'Projects::Training' (role 'trainings', cardinality 0..*) is associated with 'Projects::Qualification' (role 'Qualification26', cardinality 0..*).
+'Projects::Project' (role 'successors', cardinality 0..*) is associated with 'Projects::Project' (role 'Project16', cardinality 0..*).
+'Projects::Project' (role 'Project', cardinality 0..*) is associated with 'Projects::Company' (role 'company', cardinality 0..*).
+'Projects::Qualification' (role 'Qualification13', cardinality 0..*) is associated with 'Projects::Project' (role 'projects12', cardinality 0..*).
+'Projects::Company' (role 'Company7', cardinality 0..*) is associated with 'Projects::Project' (role 'projects', cardinality 0..*).
+'Projects::Company' (role 'Company', cardinality 0..*) is associated with 'Projects::Worker' (role 'employees', cardinality 0..*).

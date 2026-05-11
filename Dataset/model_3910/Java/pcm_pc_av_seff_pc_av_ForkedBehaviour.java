@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class pcm_pc_av_seff_pc_av_ForkedBehaviour extends ResourceDemandingBehaviour {
+
+
+
+
+
+
+    private SynchronisationPoint synchronisationpoint;
+
+
+    public pcm_pc_av_seff_pc_av_ForkedBehaviour(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public SynchronisationPoint getSynchronisationpoint() {
+        return synchronisationpoint;
+    }
+
+    public void setSynchronisationpoint(SynchronisationPoint synchronisationpoint) {
+        this.synchronisationpoint = synchronisationpoint;
+    }
+
+}

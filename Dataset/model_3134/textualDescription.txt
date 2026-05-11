@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'ClassDiagram::PrimitiveType' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ClassDiagram::Parameter' has the following attributes: 'name' of type str.
+The class 'TypedElement' has no attributes.
+The class 'ClassDiagram::TypedElement' has no attributes.
+The class 'ClassDiagram::Model' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'ClassDiagram::Operation' has no attributes.
+The class 'ClassDiagram::Attribute' has the following attributes: 'multivalued' of type bool.
+The class 'ClassDiagram::Class' has no attributes.
+The class 'ClassDiagram::StructuralFeature' has the following attributes: 'visibility' of type str; 'name' of type str.
+The class 'ClassDiagram::Classifier' has the following attributes: 'name' of type str.
+'ClassDiagram::Parameter' is a specialization of 'TypedElement'.
+'ClassDiagram::Operation' is a specialization of 'StructuralFeature'.
+'ClassDiagram::PrimitiveType' is a specialization of 'Classifier'.
+'ClassDiagram::StructuralFeature' is a specialization of 'TypedElement'.
+'ClassDiagram::Attribute' is a specialization of 'StructuralFeature'.
+'ClassDiagram::Class' is a specialization of 'Classifier'.
+'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier', cardinality 0..*) is associated with 'ClassDiagram::Model' (role 'ClassDiagram_Model', cardinality 0..*).
+'ClassDiagram::Class' (role 'Class', cardinality 0..*) is associated with 'ClassDiagram::Class' (role 'childs', cardinality 0..*).
+'ClassDiagram::Class' (role 'parents', cardinality 0..*) is associated with 'ClassDiagram::Class' (role 'Class6', cardinality 0..*).
+'ClassDiagram::StructuralFeature' (role 'features', cardinality 0..*) is associated with 'ClassDiagram::Class' (role 'Class8', cardinality 0..*).
+'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier10', cardinality 0..*) is associated with 'ClassDiagram::TypedElement' (role 'ClassDiagram_TypedElement', cardinality 0..*).
+'ClassDiagram::Operation' (role 'Operation', cardinality 0..*) is associated with 'ClassDiagram::Parameter' (role 'params', cardinality 0..*).
+'ClassDiagram::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'ClassDiagram::Operation' (role 'paramOf', cardinality 0..*).
+'ClassDiagram::Class' (role 'owner', cardinality 0..*) is associated with 'ClassDiagram::StructuralFeature' (role 'StructuralFeature', cardinality 0..*).

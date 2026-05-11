@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'school::SpecialBook' has no attributes.
+The class 'Book' has no attributes.
+The class 'school::School' has no attributes.
+The class 'school::Book' has no attributes.
+The class 'school::Pupil' has the following attributes: 'name' of type str.
+'school::SpecialBook' is a specialization of 'Book'.
+'school::Pupil' (role 'school_Pupil', cardinality 0..*) is associated with 'school::School' (role 'school_School', cardinality 0..*).
+'school::Pupil' (role 'school_Pupil2', cardinality 0..*) is associated with 'school::Book' (role 'school_Book', cardinality 0..*).

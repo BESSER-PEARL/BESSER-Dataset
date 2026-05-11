@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'entity::Service' has no attributes.
+The class 'Member' has no attributes.
+The class 'Type' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'entity::Member' has no attributes.
+The class 'entity::NamedElement' has the following attributes: 'name' of type str.
+The class 'entity::Field' has no attributes.
+The class 'entity::Package' has no attributes.
+The class 'entity::Method' has the following attributes: 'isAbstract' of type bool.
+The class 'entity::Type' has no attributes.
+The class 'entity::Entity' has no attributes.
+'entity::Service' is a specialization of 'Type'.
+'entity::Package' is a specialization of 'NamedElement'.
+'entity::Entity' is a specialization of 'Type'.
+'entity::Method' is a specialization of 'Member'.
+'entity::Member' is a specialization of 'NamedElement'.
+'entity::Field' is a specialization of 'Member'.
+'entity::Type' is a specialization of 'NamedElement'.
+'entity::Entity' (role 'entity_Entity', cardinality 0..*) is associated with 'entity::Member' (role 'entity_Member', cardinality 0..*).
+'entity::Package' (role 'entity_Package', cardinality 0..*) is associated with 'entity::Type' (role 'entity_Type', cardinality 0..*).
+'entity::Service' (role 'entity_Service', cardinality 0..*) is associated with 'entity::Method' (role 'entity_Method', cardinality 0..*).

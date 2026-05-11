@@ -1,0 +1,31 @@
+The model has 14 class(es).
+The class 'Classifier' has no attributes.
+The class 'Model' has no attributes.
+The class 'LedsCodeModel::ClassDiagram' has the following attributes: 'name' of type str.
+The class 'LedsCodeModel::Specification' has the following attributes: 'createdDate' of type date; 'name' of type str.
+The class 'LedsCodeModel::AbstractClass' has no attributes.
+The class 'LedsCodeModel::Attribute' has the following attributes: 'name' of type str.
+The class 'LedsCodeModel::Association' has the following attributes: 'name' of type str.
+The class 'LedsCodeModel::Model' has no attributes.
+The class 'AbstractClass' has no attributes.
+The class 'LedsCodeModel::Feature' has the following attributes: 'language' of type str; 'orm' of type str; 'applicationType' of type str; 'dataBaseName' of type str; 'engine' of type str.
+The class 'LedsCodeModel::Class' has the following attributes: 'abstract' of type bool; 'stereotypeClass' of type str.
+The class 'LedsCodeModel::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'LedsCodeModel::ENUM' has the following attributes: 'values' of type str.
+The class 'LedsCodeModel::Classifier' has the following attributes: 'name' of type str.
+The enumeration 'PrimitiveData' has the following literals: 'int', 'String', 'short', 'float', 'byte', 'char', 'double', 'long', 'boolean'.
+The enumeration 'StereotypeAttribute' has the following literals: 'Password', 'User'.
+The enumeration 'StereotypeClass' has the following literals: 'View', 'Security', 'Entity'.
+'LedsCodeModel::Class' is a specialization of 'AbstractClass'.
+'LedsCodeModel::AbstractClass' is a specialization of 'Classifier'.
+'LedsCodeModel::PrimitiveDataType' is a specialization of 'Classifier'.
+'LedsCodeModel::ClassDiagram' is a specialization of 'Model'.
+'LedsCodeModel::ENUM' is a specialization of 'AbstractClass'.
+'LedsCodeModel::Specification' (role 'LedsCodeModel_Specification', cardinality 0..*) is associated with 'LedsCodeModel::Model' (role 'LedsCodeModel_Model', cardinality 0..*).
+'LedsCodeModel::Association' (role 'LedsCodeModel_Association13', cardinality 0..*) is associated with 'LedsCodeModel::Class' (role 'LedsCodeModel_Class14', cardinality 0..*).
+'LedsCodeModel::Class' (role 'LedsCodeModel_Class7', cardinality 0..*) is associated with 'LedsCodeModel::Class' (role 'LedsCodeModel_Class5', cardinality 0..*).
+'LedsCodeModel::AbstractClass' (role 'LedsCodeModel_AbstractClass', cardinality 0..*) is associated with 'LedsCodeModel::ClassDiagram' (role 'LedsCodeModel_ClassDiagram', cardinality 0..*).
+'LedsCodeModel::Specification' (role 'LedsCodeModel_Specification2', cardinality 0..*) is associated with 'LedsCodeModel::Feature' (role 'LedsCodeModel_Feature', cardinality 0..*).
+'LedsCodeModel::Classifier' (role 'LedsCodeModel_Classifier', cardinality 0..*) is associated with 'LedsCodeModel::Attribute' (role 'LedsCodeModel_Attribute9', cardinality 0..*).
+'LedsCodeModel::Attribute' (role 'LedsCodeModel_Attribute', cardinality 0..*) is associated with 'LedsCodeModel::Class' (role 'LedsCodeModel_Class', cardinality 0..*).
+'LedsCodeModel::Class' (role 'LedsCodeModel_Class11', cardinality 0..*) is associated with 'LedsCodeModel::Association' (role 'LedsCodeModel_Association', cardinality 0..*).

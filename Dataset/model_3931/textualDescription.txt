@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'configDsl::Config' has the following attributes: 'srcFolder' of type str; 'mainClass' of type str; 'appName' of type str; 'outFolder' of type str.
+The class 'configDsl::Generator' has the following attributes: 'genClass' of type str; 'bundle' of type str; 'name' of type str.
+'configDsl::Generator' (role 'configDsl_Generator', cardinality 0..*) is associated with 'configDsl::Config' (role 'configDsl_Config', cardinality 0..*).
+'configDsl::Generator' (role 'configDsl_Generator3', cardinality 0..*) is associated with 'configDsl::Config' (role 'configDsl_Config2', cardinality 0..*).

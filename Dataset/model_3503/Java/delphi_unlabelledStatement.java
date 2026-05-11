@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class delphi_unlabelledStatement extends CSTrace {
+
+
+
+
+
+
+    private delphi_statement delphi_statement;
+
+
+    public delphi_unlabelledStatement(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public delphi_statement getDelphi_statement() {
+        return delphi_statement;
+    }
+
+    public void setDelphi_statement(delphi_statement delphi_statement) {
+        this.delphi_statement = delphi_statement;
+    }
+
+}

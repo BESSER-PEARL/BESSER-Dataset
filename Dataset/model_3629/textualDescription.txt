@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'stateChart::CompositeState' has no attributes.
+The class 'stateChart::State' has the following attributes: 'exit' of type str; 'action' of type str; 'entry' of type str.
+The class 'stateChart::SimpleState' has no attributes.
+The class 'stateChart::Region' has the following attributes: 'note' of type str; 'name' of type str.
+The class 'stateChart::FinalState' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'stateChart::PseudoState' has the following attributes: 'PseudoStateType' of type str.
+The class 'State' has no attributes.
+The class 'stateChart::StateMachine' has the following attributes: 'name' of type str.
+The class 'stateChart::Transient' has the following attributes: 'name' of type str; 'priority' of type int; 'effect' of type str; 'trigger' of type str; 'guard' of type str.
+The class 'stateChart::Vertex' has the following attributes: 'name' of type str; 'note' of type str; 'isActive' of type bool.
+The enumeration 'PseudoStateType' has the following literals: 'Fork', 'EntryPoint', 'Join', 'ShadowHistory', 'Terminate', 'Initial', 'Junction', 'DeepHistory', 'Choice', 'ExitPoint'.
+'stateChart::State' is a specialization of 'Vertex'.
+'stateChart::CompositeState' is a specialization of 'State'.
+'stateChart::PseudoState' is a specialization of 'Vertex'.
+'stateChart::SimpleState' is a specialization of 'State'.
+'stateChart::FinalState' is a specialization of 'State'.
+'stateChart::Region' (role 'stateChart_Region2', cardinality 0..*) is associated with 'stateChart::Vertex' (role 'stateChart_Vertex', cardinality 0..*).
+'stateChart::Transient' (role 'stateChart_Transient7', cardinality 0..*) is associated with 'stateChart::Vertex' (role 'stateChart_Vertex8', cardinality 0..*).
+'stateChart::Transient' (role 'stateChart_Transient', cardinality 0..*) is associated with 'stateChart::Region' (role 'stateChart_Region', cardinality 0..*).
+'stateChart::Vertex' (role 'stateChart_Vertex5', cardinality 0..*) is associated with 'stateChart::Transient' (role 'stateChart_Transient4', cardinality 0..*).
+'stateChart::CompositeState' (role 'stateChart_CompositeState', cardinality 0..*) is associated with 'stateChart::Region' (role 'stateChart_Region12', cardinality 0..*).
+'stateChart::Region' (role 'stateChart_Region10', cardinality 0..*) is associated with 'stateChart::StateMachine' (role 'stateChart_StateMachine', cardinality 0..*).

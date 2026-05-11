@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'menus::Person' has the following attributes: 'pregnant' of type bool; 'dateOfBirth' of type date; 'lastname' of type str; 'sex' of type str; 'firstname' of type str.
+The class 'menus::PersonDirectory' has no attributes.
+The enumeration 'Gender' has the following literals: 'UNSPECIFIED', 'FEMALE', 'MALE'.
+'menus::Person' (role 'menus_Person', cardinality 0..*) is associated with 'menus::Person' (role 'menus_Person0', cardinality 0..*).
+'menus::PersonDirectory' (role 'menus_PersonDirectory', cardinality 0..*) is associated with 'menus::Person' (role 'menus_Person3', cardinality 0..*).

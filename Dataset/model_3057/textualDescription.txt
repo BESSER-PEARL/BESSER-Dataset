@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'titan::DataType' has the following attributes: 'type' of type str.
+The class 'DataType' has no attributes.
+The class 'titan::Module' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'titan::Entity' has the following attributes: 'name' of type str.
+The class 'Reference' has no attributes.
+The class 'titan::SingleReference' has no attributes.
+The class 'titan::MultiReference' has no attributes.
+The class 'titan::MultiDataType' has the following attributes: 'unique' of type bool.
+The class 'titan::Reference' has the following attributes: 'unique' of type bool.
+The class 'titan::Feature' has the following attributes: 'name' of type str.
+The class 'titan::Package' has the following attributes: 'name' of type str.
+The class 'titan::SingleDataType' has no attributes.
+The enumeration 'DataTypes' has the following literals: 'String', 'Boolean', 'Long', 'Integer', 'Double'.
+The enumeration 'InternalDSLType' has the following literals: 'NestedFunctions'.
+'titan::DataType' is a specialization of 'Feature'.
+'titan::MultiReference' is a specialization of 'Reference'.
+'titan::MultiDataType' is a specialization of 'DataType'.
+'titan::SingleDataType' is a specialization of 'DataType'.
+'titan::Reference' is a specialization of 'Feature'.
+'titan::SingleReference' is a specialization of 'Reference'.
+'titan::Entity' (role 'titan_Entity3', cardinality 0..*) is associated with 'titan::Entity' (role 'titan_Entity5', cardinality 0..*).
+'titan::Package' (role 'titan_Package', cardinality 0..*) is associated with 'titan::Module' (role 'titan_Module', cardinality 0..*).
+'titan::Reference' (role 'titan_Reference11', cardinality 0..*) is associated with 'titan::MultiReference' (role 'titan_MultiReference', cardinality 0..*).
+'titan::Package' (role 'titan_Package2', cardinality 0..*) is associated with 'titan::Entity' (role 'titan_Entity', cardinality 0..*).
+'titan::Entity' (role 'titan_Entity7', cardinality 0..*) is associated with 'titan::Feature' (role 'titan_Feature', cardinality 0..*).
+'titan::DataType' (role 'titan_DataType', cardinality 0..*) is associated with 'titan::MultiDataType' (role 'titan_MultiDataType', cardinality 0..*).
+'titan::Entity' (role 'titan_Entity9', cardinality 0..*) is associated with 'titan::Reference' (role 'titan_Reference', cardinality 0..*).

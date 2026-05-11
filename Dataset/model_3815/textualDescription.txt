@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'example::InterfacePlayer' has no attributes.
+The class 'example::AbstractPlayer' has no attributes.
+The class 'example::Player' has no attributes.

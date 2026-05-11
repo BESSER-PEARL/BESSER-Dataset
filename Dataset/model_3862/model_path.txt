@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Gabitchov/org.eclipse.papyrus/plugins/facet/org.eclipse.papyrus.emf.facet.custom.metamodel/model/treeproxy-0.2.0.ecore

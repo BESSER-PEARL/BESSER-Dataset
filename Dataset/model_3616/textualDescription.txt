@@ -1,0 +1,345 @@
+The model has 0 class(es).
+The enumeration 'CareTeamCategory' does not specify any literals.
+The enumeration 'ContractResourceLegalStateCodes' does not specify any literals.
+The enumeration 'ConditionStage' does not specify any literals.
+The enumeration 'VaccineAdministeredValueSet' does not specify any literals.
+The enumeration 'NetworkTypeCodes' does not specify any literals.
+The enumeration 'ConditionProblemDiagnosisCodes' has the following literals: '_160245001'.
+The enumeration 'Verificationresultcommunicationmethod' does not specify any literals.
+The enumeration 'SupplyType' does not specify any literals.
+The enumeration 'ImmunizationRouteCodes' has the following literals: 'im', 'sq', 'trnsderm', 'idinj', 'po', 'ivinj', 'nasinhlc'.
+The enumeration 'HandlingConditionSet' does not specify any literals.
+The enumeration 'DesignationUse' has the following literals: '_900000000000003001', '_900000000000013009'.
+The enumeration 'CoverageClassCodes' does not specify any literals.
+The enumeration 'DoseAndRateType' does not specify any literals.
+The enumeration 'ReasonMedicationGivenCodes' does not specify any literals.
+The enumeration 'FhirDefinedType' does not specify any literals.
+The enumeration 'ProvenanceActivityType' has the following literals: 'update', 'append', 'mask', 'la', 'create', 'delete', 'label', 'pseud', 'deid', 'nullify', 'anony'.
+The enumeration 'ActionParticipantRole' does not specify any literals.
+The enumeration 'AppointmentCancellationReason' does not specify any literals.
+The enumeration 'ListEmptyReasons' does not specify any literals.
+The enumeration 'AuditEventSourceType' does not specify any literals.
+The enumeration 'V3ParticipationMode' does not specify any literals.
+The enumeration 'FhirDeviceTypes' does not specify any literals.
+The enumeration 'ProvenanceParticipantType' does not specify any literals.
+The enumeration 'FundsReservationCodes' does not specify any literals.
+The enumeration 'EpisodeOfCareType' does not specify any literals.
+The enumeration 'SignatureTypeCodes' does not specify any literals.
+The enumeration 'AdverseEventCausalityMethod' does not specify any literals.
+The enumeration 'Ensembl' does not specify any literals.
+The enumeration 'ClaimInformationCategoryCodes' does not specify any literals.
+The enumeration 'MedicationStatusCodes' does not specify any literals.
+The enumeration 'ImmunizationRecommendationDateCriterionCodes' has the following literals: '_309807', '_309815', '_597781', '_597773'.
+The enumeration 'MediaType' does not specify any literals.
+The enumeration 'ImagingStudySeriesPerformerFunction' has the following literals: 'con', 'ref', 'sprf', 'vrf', 'prf'.
+The enumeration 'RestfulSecurityService' does not specify any literals.
+The enumeration 'ServiceProvisionConditions' does not specify any literals.
+The enumeration 'ProcedureFollowUpCodesSnomedcT' has the following literals: '_18949003', '_225164002', '_447346005', '_229506003', '_30549001', '_241031001', '_35963001', '_394725008', '_274441001', '_359825008'.
+The enumeration 'ParticipantType' has the following literals: 'pprf', 'sprf', 'part'.
+The enumeration 'MedicationDispenseStatusReasonCodes' does not specify any literals.
+The enumeration 'MeasureType' does not specify any literals.
+The enumeration 'DetectedIssueCategory' does not specify any literals.
+The enumeration 'SecurityRoleType' has the following literals: 'hpowatt', 'amender', 'emp', 'dpowatt', '_110151', '_110152', 'ircp', 'covpty', 'downgrder', 'affl', '_110154', 'not_', 'intprter', 'prov', 'invsbj', 'agnt', 'conswit', 'consenter', 'grantor', 'aut', 'auwa', 'la', 'depen', 'coauth', 'pat', 'wit', 'ircpa', 'aucg', 'classifier', '_110155', 'copart', 'autm', 'delegatee', 'evtwit', 'assigned', 'grantee', 'cont', 'aulr', 'delegator', 'guadltm', 'guard', 'reviewer', 'claim', '_110153', 'econ', 'source', 'promsk', 'cst', 'trc', 'inf', '_110150', 'gt', 'named', 'spowatt', 'trans', 'declassifier', 'powatt', 'excest', 'verf', 'nok', 'primauth', 'resprsn', 'valid'.
+The enumeration 'ContractTermSubtypeCodes' does not specify any literals.
+The enumeration 'ImmunizationSubpotentReason' does not specify any literals.
+The enumeration 'ContractResourceScopeCodes' does not specify any literals.
+The enumeration 'AuditEventEntityType' does not specify any literals.
+The enumeration 'ConsentScopeCodes' does not specify any literals.
+The enumeration 'MissingToothReasonCodes' does not specify any literals.
+The enumeration 'FacilityTypeCodeValueSet' has the following literals: '_79993009', '_11424001', '_90484001', '_69362002', '_5584006', '_46224007', '_14866005', '_23392004', '_394777002', '_10531005', '_41844007', '_78001009', '_33022008', '_73770003', '_52668009', '_77931003', '_1773006', '_10206005', '_35971002', '_413817003', '_310205006', '_39350007', '_901005', '_36125001', '_272501009', '_275576008', '_58482006', '_32074000', '_225732001', '_284546000', '_45618002', '_2849009', '_78088001', '_331006', '_405607001', '_309900005', '_20078004', '_25681007', '_72311000', '_73644007', '_37550003', '_360957003', '_419955002', '_413456002', '_45899008', '_51563005', '_42665001', '_4322002', '_31628002', '_81234003', '_38238005', '_48311003', '_3729002', '_37546005', '_19602009', '_62480006', '_57159002', '_409519008', '_309898008', '_59374000', '_36293008', '_50569004', '_83891005', '_56189001', '_39913001', '_56293002', '_2081004', '_418518002', '_224687002', '_6827000', '_80522000', '_89972002', '_394759007', '_360966004', '_91154008', '_22549003', '_82242000', '_1814000', '_79491001'.
+The enumeration 'CertaintySubcomponentType' does not specify any literals.
+The enumeration 'Validationtype' does not specify any literals.
+The enumeration 'ImmunizationFunctionCodes' has the following literals: 'ap', 'op'.
+The enumeration 'CarePlanActivityOutcome' does not specify any literals.
+The enumeration 'ProcedureNotPerformedReasonSnomeDCT' does not specify any literals.
+The enumeration 'ResearchStudyReasonStopped' does not specify any literals.
+The enumeration 'MeasurePopulationType' does not specify any literals.
+The enumeration 'DocumentReferenceFormatCodeSet' does not specify any literals.
+The enumeration 'SnomedctClinicalFindingsA' does not specify any literals.
+The enumeration 'ReferralMethod' does not specify any literals.
+The enumeration 'ImmunizationTargetDiseaseCodes' has the following literals: '_36989005', '_398102009', '_397430003', '_1857005', '_14189004', '_36653000', '_709410003', '_76902006', '_27836007'.
+The enumeration 'FhirDeviceStatusReason' does not specify any literals.
+The enumeration 'CodesForImmunizationSiteOfAdministration' has the following literals: 'ra', 'la'.
+The enumeration 'DietCodes' does not specify any literals.
+The enumeration 'ServiceRequestOrderDetailsCodes' has the following literals: '_47545007', '_243150007', '_243144002', '_286812008', '_59427005'.
+The enumeration 'DiagnosticServiceSectionCodes' does not specify any literals.
+The enumeration 'OrganizationType' does not specify any literals.
+The enumeration 'ImmunizationEvaluationDoseStatusReasonCodes' does not specify any literals.
+The enumeration 'CoverageTypeAndSelfPayCodes' does not specify any literals.
+The enumeration 'MedicationRequestCourseOfTherapyCodes' does not specify any literals.
+The enumeration 'FormCodes' does not specify any literals.
+The enumeration 'ResourceType' has the following literals: 'riskEvidenceSynthesis', 'detectedIssue', 'enrollmentResponse', 'testReport', 'goal', 'immunizationEvaluation', 'media', 'structureDefinition', 'diagnosticReport', 'searchParameter', 'flag', 'clinicalImpression', 'substanceReferenceInformation', 'substance', 'medicationRequest', 'messageDefinition', 'namingSystem', 'measureReport', 'auditEvent', 'bodyStructure', 'visionPrescription', 'familyMemberHistory', 'researchElementDefinition', 'compartmentDefinition', 'subscription', 'schedule', 'testScript', 'messageHeader', 'episodeOfCare', 'medicinalProductIndication', 'researchStudy', 'medicinalProductInteraction', 'resource', 'list', 'substanceProtein', 'medicinalProductUndesirableEffect', 'supplyDelivery', 'encounter', 'terminologyCapabilities', 'binary', 'slot', 'deviceMetric', 'invoice', 'appointmentResponse', 'location', 'organization', 'bundle', 'communicationRequest', 'communication', 'guidanceResponse', 'carePlan', 'questionnaire', 'molecularSequence', 'specimenDefinition', 'evidence', 'medicationDispense', 'evidenceVariable', 'substanceSourceMaterial', 'medicationStatement', 'adverseEvent', 'medicinalProductAuthorization', 'substanceNucleicAcid', 'procedure', 'deviceDefinition', 'researchDefinition', 'nutritionOrder', 'enrollmentRequest', 'documentManifest', 'insurancePlan', 'composition', 'condition', 'operationDefinition', 'observationDefinition', 'careTeam', 'contract', 'structureMap', 'supplyRequest', 'conceptMap', 'catalogEntry', 'observation', 'domainResource', 'medicinalProductPharmaceutical', 'medicationKnowledge', 'provenance', 'group', 'medication', 'medicinalProductContraindication', 'codeSystem', 'immunization', 'measure', 'effectEvidenceSynthesis', 'paymentNotice', 'valueSet', 'deviceUseStatement', 'parameters', 'capabilityStatement', 'coverage', 'coverageEligibilityResponse', 'medicationAdministration', 'planDefinition', 'substanceSpecification', 'questionnaireResponse', 'operationOutcome', 'chargeItemDefinition', 'verificationResult', 'medicinalProduct', 'linkage', 'documentReference', 'practitionerRole', 'healthcareService', 'eventDefinition', 'medicinalProductIngredient', 'medicinalProductManufactured', 'implementationGuide', 'substancePolymer', 'patient', 'endpoint', 'medicinalProductPackaged', 'exampleScenario', 'activityDefinition', 'biologicallyDerivedProduct', 'explanationOfBenefit', 'requestGroup', 'riskAssessment', 'researchSubject', 'deviceRequest', 'person', 'serviceRequest', 'appointment', 'task', 'chargeItem', 'account', 'paymentReconciliation', 'organizationAffiliation', 'basic', 'consent', 'practitioner', 'allergyIntolerance', 'imagingStudy', 'immunizationRecommendation', 'coverageEligibilityRequest', 'claim', 'specimen', 'graphDefinition', 'claimResponse', 'relatedPerson', 'device', 'library'.
+The enumeration 'Diet' does not specify any literals.
+The enumeration 'ProcedureCodesSnomedcT' does not specify any literals.
+The enumeration 'ProcedureDeviceActionCodes' does not specify any literals.
+The enumeration 'InsurancePlanType' does not specify any literals.
+The enumeration 'ExampleRelatedClaimRelationshipCodes' does not specify any literals.
+The enumeration 'V20916' does not specify any literals.
+The enumeration 'MeasureScoring' does not specify any literals.
+The enumeration 'RejectionCriterion' does not specify any literals.
+The enumeration 'Pushtypeavailable' does not specify any literals.
+The enumeration 'PractitionerRole' does not specify any literals.
+The enumeration 'ProcessPriorityCodes' does not specify any literals.
+The enumeration 'SnomedctDrugTherapyStatusCodes' does not specify any literals.
+The enumeration 'SnomedctAdditionalDosageInstructions' does not specify any literals.
+The enumeration 'FlagCategory' does not specify any literals.
+The enumeration 'ExampleDiagnosisTypeCodes' does not specify any literals.
+The enumeration 'ObservationCategoryCodes' does not specify any literals.
+The enumeration 'ContractResourceScopeCodesB' does not specify any literals.
+The enumeration 'BenefitTypeCodes' does not specify any literals.
+The enumeration 'MedicationRequestCategoryCodes' does not specify any literals.
+The enumeration 'MedicationDispensePerformerFunctionCodes' does not specify any literals.
+The enumeration 'MedicationDispenseCategoryCodes' does not specify any literals.
+The enumeration 'TimingAbbreviation' has the following literals: 'tid', 'q8h', 'q3h', 'bid', 'bed', 'pm', 'qod', 'q6h', 'wk', 'q4h', 'q2h', 'mo', 'am', 'qid', 'q1h', 'qd'.
+The enumeration 'V3SubstanceAdminSubstitutionReason' does not specify any literals.
+The enumeration 'ExampleMessageReasonCodes' does not specify any literals.
+The enumeration 'V3FamilyMember' does not specify any literals.
+The enumeration 'V20116' does not specify any literals.
+The enumeration 'CompositeMeasureScoring' does not specify any literals.
+The enumeration 'OralSiteCodes' does not specify any literals.
+The enumeration 'ContractActorRoleCodes' does not specify any literals.
+The enumeration 'ClaimTypeCodes' does not specify any literals.
+The enumeration 'Program' does not specify any literals.
+The enumeration 'GoalAchievementStatus' does not specify any literals.
+The enumeration 'ImmunizationEvaluationDoseStatusCodes' does not specify any literals.
+The enumeration 'UcumCodes' does not specify any literals.
+The enumeration 'ContainerMaterials' has the following literals: '_61088005', '_32039001', '_425620007'.
+The enumeration 'DocumentSectionCodes' has the following literals: '_113480', '_597724', '_187765', '_295543', '_518480', '_423467', '_697300', '_87163', '_115352', '_611509B', '_578526', '_597765', '_86538', '_423442', '_102103', '_101576', '_297622', '_551226', '_551093', '_115378', '_102186A', '_474205', '_114934', '_101543', '_292995', '_101642', '_597732', '_309542', '_597690', '_102236', '_101832', '_101840', '_295493', '_462408', '_611491', '_102186', '_102160', '_113290', '_597708', '_597757', '_295451', '_487652', '_86488', '_597682', '_462648', '_475194', '_597716', '_611509', '_188417', '_102228', '_487686', '_113696', '_101873', '_423491', '_101600', '_423483', '_462416'.
+The enumeration 'AuditEventSubType' has the following literals: '_110131', '_110128', '_110127', '_110132', '_110134', '_110139', '_110121', '_110135', '_110138', '_110122', '_110136', '_110142', '_110120', '_110125', '_110129', '_110140', '_110124', '_110130', '_110137', '_110123', '_110126', '_110133', '_110141'.
+The enumeration 'Validationprocess' does not specify any literals.
+The enumeration 'ModifierTypeCodes' does not specify any literals.
+The enumeration 'V3ServiceDeliveryLocationRoleType' does not specify any literals.
+The enumeration 'SnomedctAdministrationMethodCodes' does not specify any literals.
+The enumeration 'AdjudicationValueCodes' does not specify any literals.
+The enumeration 'GoalStartEvent' has the following literals: '_32485007', '_442137000', '_386216000', '_308283009'.
+The enumeration 'BenefitTermCodes' does not specify any literals.
+The enumeration 'FdAStandardSequence' does not specify any literals.
+The enumeration 'MedicationKnowledgeCharacteristicCodes' does not specify any literals.
+The enumeration 'QuestionnaireQuestionCodes' does not specify any literals.
+The enumeration 'ProcedurePerformerRoleCodes' does not specify any literals.
+The enumeration 'ExamplePaymentTypeCodes' does not specify any literals.
+The enumeration 'SnomedctClinicalFindings' does not specify any literals.
+The enumeration 'AuditEventEntityRole' does not specify any literals.
+The enumeration 'ListOrderCodes' does not specify any literals.
+The enumeration 'EnteralFormulaAdditiveTypeCode' does not specify any literals.
+The enumeration 'ExpressionLanguage' does not specify any literals.
+The enumeration 'ImmunizationRecommendationReasonCodes' has the following literals: '_77386006', '_77176002'.
+The enumeration 'DefinitionUseCodes' does not specify any literals.
+The enumeration 'SupplyRequestReason' does not specify any literals.
+The enumeration 'ServiceRequestCategoryCodes' has the following literals: '_409073007', '_387713003', '_409063005', '_363679005', '_108252007'.
+The enumeration 'FlagCode' does not specify any literals.
+The enumeration 'ManifestationAndSymptomCodes' does not specify any literals.
+The enumeration 'ConsentCategoryCodes' has the following literals: '_570168', '_642926', '_570176', '_592840'.
+The enumeration 'AccountTypes' does not specify any literals.
+The enumeration 'ExampleProviderQualificationCodes' does not specify any literals.
+The enumeration 'PlanDefinitionType' does not specify any literals.
+The enumeration 'CoverageCopayTypeCodes' does not specify any literals.
+The enumeration 'AdjudicationReasonCodes' does not specify any literals.
+The enumeration 'CoverageEligibilityResponseAuthSupportCodes' does not specify any literals.
+The enumeration 'ImmunizationRecommendationStatusCodes' does not specify any literals.
+The enumeration 'PrecisionEstimateType' does not specify any literals.
+The enumeration 'LoincDiagnosticReportCodes' does not specify any literals.
+The enumeration 'ImmunizationProgramEligibility' does not specify any literals.
+The enumeration 'EvidenceVariantState' does not specify any literals.
+The enumeration 'GoalPriority' does not specify any literals.
+The enumeration 'ChargeItemCode' does not specify any literals.
+The enumeration 'CarePlanCategory' does not specify any literals.
+The enumeration 'SpecialArrangements' does not specify any literals.
+The enumeration 'ClaimPayeeTypeCodes' does not specify any literals.
+The enumeration 'Canpushupdates' does not specify any literals.
+The enumeration 'ClaimCareTeamRoleCodes' does not specify any literals.
+The enumeration 'LoincCodes' does not specify any literals.
+The enumeration 'DataType' has the following literals: 'money', 'element', 'base64Binary', 'population', 'quantity', 'triggerDefinition', 'code', 'markdown', 'backboneElement', 'productShelfLife', 'xhtml', 'marketingStatus', 'canonical', 'integer', 'age', 'range', 'codeableConcept', 'dateTime', 'time', 'address', 'coding', 'elementDefinition', 'instant', 'prodCharacteristic', 'identifier', 'narrative', 'ratio', 'humanName', 'sampledData', 'string', 'dataRequirement', 'attachment', 'date', 'relatedArtifact', 'decimal', 'moneyQuantity', 'distance', 'annotation', 'positiveInt', 'expression', 'usageContext', 'contactDetail', 'contactPoint', 'url', 'count', 'signature', 'unsignedInt', 'period', 'oid', 'uuid', 'boolean', 'uri', 'substanceAmount', 'contributor', 'parameterDefinition', 'reference', 'timing', 'dosage', 'simpleQuantity', 'duration', 'id', 'extension', 'meta'.
+The enumeration 'FhirSpecimenCollectionMethod' has the following literals: '_129300006', '_73416001', '_129323009', '_129314006', '_386089008', '_129316008', '_225113003', '_70777001', '_129304002', '_278450005'.
+The enumeration 'SnomedctAnatomicalStructureForAdministrationSiteCodes' does not specify any literals.
+The enumeration 'ExampleUseCodesForList' does not specify any literals.
+The enumeration 'Primarysourcetype' does not specify any literals.
+The enumeration 'MediaModality' does not specify any literals.
+The enumeration 'EncounterType' does not specify any literals.
+The enumeration 'OperationOutcomeCodes' does not specify any literals.
+The enumeration 'ConsentContentClass' has the following literals: 'applicationhl7cdaxml', 'httphl7orgfhirStructureDefinitionlipidprofile'.
+The enumeration 'ExampleRevenueCenterCodes' does not specify any literals.
+The enumeration 'ConsentPolicyRuleCodes' does not specify any literals.
+The enumeration 'EnteralRouteCodes' has the following literals: 'jjtinstl', 'po', 'gjt', 'ojj', 'eft', 'ngt', 'ogt', 'entinstl', 'gt'.
+The enumeration 'Chromosomehuman' does not specify any literals.
+The enumeration 'V20493' does not specify any literals.
+The enumeration 'ExampleServicePlaceCodes' does not specify any literals.
+The enumeration 'ContractResourceSecurityControlCodes' does not specify any literals.
+The enumeration 'AcquisitionModality' has the following literals: 'bdus', 'px', 'rf', 'cr', 'oss', 'mr', 'eps', 'us', 'sm', 'ar', 'dx', 'xa', 'bmd', 'xc', 'ivoct', 'mg', 'rg', 'oam', 'opr', 'ivus', 'va', 'opv', 'nm', 'gm', 'oct', 'io', 'ker', 'pt', 'opm', 'es', 'ct', 'op', 'ecg', 'opt', 'srf', 'hd', 'len'.
+The enumeration 'SupplementTypeCodes' has the following literals: '_444361000124102', '_443011000124100', '_442971000124100', '_443021000124108', '_441531000124102', '_443111000124101', '_442931000124103', '_442651000124102', '_442961000124107', '_443431000124102', '_443441000124107', '_441561000124106', '_443461000124106', '_443361000124100', '_443501000124106', '_442901000124106', '_442911000124109', '_444371000124109', '_443401000124105', '_443561000124107', '_441591000124103', '_443451000124109', '_443031000124106', '_443771000124106', '_442981000124102', '_441601000124106', '_442941000124108', '_442951000124105', '_443391000124108', '_443411000124108', '_444381000124107', '_441671000124100', '_443471000124104', '_443491000124103', '_442991000124104', '_441571000124104', '_444401000124107', '_444431000124104', '_444331000124106', '_443051000124104', '_443351000124102', '_443481000124101', '_443421000124100', '_444321000124108', '_442921000124101'.
+The enumeration 'TestScriptProfileOriginType' does not specify any literals.
+The enumeration 'ProvenanceHistoryRecordActivityCodes' has the following literals: 'create', 'reactivate', 'abort', 'delete', 'activate', 'release', 'nullify', 'suspend', 'resume', 'complete', 'cancel', 'hold', 'update', 'obsolete'.
+The enumeration 'EncounterReasonCodes' does not specify any literals.
+The enumeration 'MediaTypeCode' has the following literals: '_110035', '_110032', '_110036', '_110034', '_110037', '_110038', '_110030', '_110031', '_110033', '_110010'.
+The enumeration 'MessageTransport' does not specify any literals.
+The enumeration 'MedicationAdministrationPerformerFunctionCodes' does not specify any literals.
+The enumeration 'CommunicationTopic' does not specify any literals.
+The enumeration 'ImmunizationStatusReasonCodes' has the following literals: 'ostock', 'immune', 'medprec', 'patobj'.
+The enumeration 'GoalCategory' does not specify any literals.
+The enumeration 'V3ActCode' does not specify any literals.
+The enumeration 'ExampleVisionPrescriptionProductCodes' does not specify any literals.
+The enumeration 'V20487' does not specify any literals.
+The enumeration 'SubstanceCode' does not specify any literals.
+The enumeration 'CatalogType' does not specify any literals.
+The enumeration 'ConditionCategoryCodes' does not specify any literals.
+The enumeration 'ExceptionCodes' does not specify any literals.
+The enumeration 'SnomedctSupplyItem' does not specify any literals.
+The enumeration 'EndpointConnectionType' does not specify any literals.
+The enumeration 'DataAbsentReason' does not specify any literals.
+The enumeration 'ConsentActionCodes' does not specify any literals.
+The enumeration 'TestScriptProfileDestinationType' does not specify any literals.
+The enumeration 'PatientContactRelationship' does not specify any literals.
+The enumeration 'AdverseEventCausalityAssessment' does not specify any literals.
+The enumeration 'ImmunizationFundingSource' does not specify any literals.
+The enumeration 'AuditEventId' has the following literals: '_110114', '_110101', '_110113', '_110109', '_110106', '_110105', '_110103', '_110110', '_110112', '_110108', '_110100', '_110104', '_110111', '_110107', '_110102'.
+The enumeration 'ObservationMethods' does not specify any literals.
+The enumeration 'ImmunizationOriginCodes' has the following literals: 'record', 'recall', 'school', 'provider'.
+The enumeration 'SubscriberRelationshipCodes' does not specify any literals.
+The enumeration 'MedicationKnowledgePackageTypeCodes' does not specify any literals.
+The enumeration 'AllSecurityLabels' does not specify any literals.
+The enumeration 'PaymentTypeCodes' does not specify any literals.
+The enumeration 'V3ActConsentDirective' does not specify any literals.
+The enumeration 'ConditionDiagnosisSeverity' has the following literals: '_255604002', '_24484000', '_6736007'.
+The enumeration 'MedicationAdministrationCategoryCodes' does not specify any literals.
+The enumeration 'CertaintySubcomponentRating' does not specify any literals.
+The enumeration 'ActionType' does not specify any literals.
+The enumeration 'ContainerCap' does not specify any literals.
+The enumeration 'LibraryType' does not specify any literals.
+The enumeration 'ClinicalImpressionPrognosis' does not specify any literals.
+The enumeration 'IcD10Codes' has the following literals: '_123456', '_112233', '_123457', '_997755', '_987654', '_321789', '_123987'.
+The enumeration 'ImmunizationRecommendationTargetDiseaseCodes' has the following literals: '_36653000', '_36989005', '_76902006', '_1857005', '_397430003', '_709410003', '_27836007', '_398102009', '_14189004'.
+The enumeration 'CommunicationCategory' does not specify any literals.
+The enumeration 'TextureModifiedFoodTypeCodes' has the following literals: '_264331002', '_72511004', '_227518002', '_226760005', '_255620007', '_226529007', '_74242007', '_227210005', '_28647000', '_22836000', '_226887002', '_102263004', '_44027008', '_227415002'.
+The enumeration 'V3ActIncidentCode' does not specify any literals.
+The enumeration 'PreparePatient' does not specify any literals.
+The enumeration 'ConditionOutcomeCodes' does not specify any literals.
+The enumeration 'UsageContextType' does not specify any literals.
+The enumeration 'ContractResourceAssetTypeCodes' does not specify any literals.
+The enumeration 'DischargeDisposition' does not specify any literals.
+The enumeration 'V20092' does not specify any literals.
+The enumeration 'ExampleClaimSubTypeCodes' does not specify any literals.
+The enumeration 'TestScriptOperationCode' does not specify any literals.
+The enumeration 'V2036027' does not specify any literals.
+The enumeration 'IdentifierTypeCodes' has the following literals: 'ppn', 'udi', 'dl', 'md', 'sb', 'plac', 'tax', 'mr', 'prn', 'fill', 'jhn', 'niip', 'mcn', 'en', 'acsn', 'dr', 'brn', 'sno'.
+The enumeration 'StudyType' does not specify any literals.
+The enumeration 'ProcedureReasonCodes' does not specify any literals.
+The enumeration 'ContractResourceScopeCodesA' does not specify any literals.
+The enumeration 'VitalSigns' has the following literals: '_27086', '_84780', '_294637', '_853531', '_92791', '_88674', '_83105', '_84806', '_391565', '_84624', '_98434', '_83022', '_853549'.
+The enumeration 'ContractTypeCodes' does not specify any literals.
+The enumeration 'EffectEstimateType' does not specify any literals.
+The enumeration 'LocationType' does not specify any literals.
+The enumeration 'MessageEvent' does not specify any literals.
+The enumeration 'OrganizationAffiliationRole' does not specify any literals.
+The enumeration 'ProcedureCategoryCodesSnomedcT' has the following literals: '_409073007', '_103693007', '_387713003', '_24642003', '_409063005', '_410606002', '_46947000'.
+The enumeration 'ContractResourcePartyRoleCodes' does not specify any literals.
+The enumeration 'MedicationRequestStatusReasonCodes' does not specify any literals.
+The enumeration 'V20371' does not specify any literals.
+The enumeration 'V3ActReason' does not specify any literals.
+The enumeration 'TextureModifierCodes' has the following literals: '_228060008', '_228053002', '_441761000124103', '_228059003', '_228049004', '_439091000124107', '_441881000124103', '_228057001', '_441791000124106', '_228058006', '_228056005', '_228055009', '_441771000124105', '_441751000124100'.
+The enumeration 'Laterality' has the following literals: '_419161000', '_51440002', '_419465000'.
+The enumeration 'Validationstatus' does not specify any literals.
+The enumeration 'ContractSubtypeCodes' does not specify any literals.
+The enumeration 'ResearchStudyObjectiveType' does not specify any literals.
+The enumeration 'SnomedctReasonMedicationNotGivenCodes' does not specify any literals.
+The enumeration 'SnomedctMorphologicAbnormalities' does not specify any literals.
+The enumeration 'SubstanceCategoryCodes' does not specify any literals.
+The enumeration 'AllergyIntoleranceSubstanceProductConditionAndNegationCodes' does not specify any literals.
+The enumeration 'QuestionnaireAnswerCodes' does not specify any literals.
+The enumeration 'DeviceMetricAndComponentTypes' does not specify any literals.
+The enumeration 'PatientRelationshipType' does not specify any literals.
+The enumeration 'V3ActSubstanceAdminSubstitutionCode' does not specify any literals.
+The enumeration 'PaymentAdjustmentReasonCodes' does not specify any literals.
+The enumeration 'SynthesisType' does not specify any literals.
+The enumeration 'PracticeSettingCodeValueSet' has the following literals: '_408467006', '_408443003', '_394612005', '_419321007', '_419983000', '_394587001', '_394580004', '_419365004', '_394589003', '_394604002', '_420208008', '_408455009', '_394579002', '_422191005', '_408460008a', '_418652005', '_394599008', '_408448007', '_394812008', '_394605001', '_394733009', '_394810000', '_418058008', '_418535003', '_408470005', '_394600006', '_394915009', '_394592004', '_394594003', '_408465003', '_394802001', '_394809005', '_394598000', '_408454008', '_394576009', '_394607009', '_419772000', '_408460008', '_394821009', '_410005002', '_408475000', '_394804000', '_420112009', '_394602003', '_418018006', '_418862001', '_408449004', '_394808002', '_409967009', '_394588006', '_421661004', '_394593009', '_408441001', '_394806003', '_394608004a', '_408472002', '_394914008', '_419610006', '_408450004', '_419815003', '_394916005', '_408480009', '_419043006', '_408463005', '_394801008', '_394585009', '_418002000', '_394583002', '_394606000', '_408440000', '_394601005', '_408474001', '_394586005', '_408446006', '_394811001', '_408476004', '_408471009', '_394582007', '_394590007', '_408444009', '_394581000', '_394608004', '_410001006', '_394649004', '_409968004', '_394611003', '_408468001', '_394814009', '_408459003', '_394577000', '_419192003', '_416304004', '_418112009', '_408447002', '_408464004', '_419170002', '_394882004', '_418960008', '_394807007', '_394732004', '_394539006', '_394584008', '_394803006', '_408477008', '_394609007', '_419472004', '_394610002', '_408462000', '_408466002', '_394597005', '_408461007', '_394913002', '_408478003', '_394578005', '_394591006', '_394813003', '_408469009'.
+The enumeration 'ObservationReferenceRangeAppliesToCodes' has the following literals: '_77386006', '_248152002', '_248153007'.
+The enumeration 'SnomedctRouteCodes' does not specify any literals.
+The enumeration 'CommunicationNotDoneReason' does not specify any literals.
+The enumeration 'InvestigationType' has the following literals: '_271336007', '_160237006'.
+The enumeration 'UnitTypeCodes' does not specify any literals.
+The enumeration 'MediaCollectionViewProjection' does not specify any literals.
+The enumeration 'ContractResourceActionStatusCodes' does not specify any literals.
+The enumeration 'V20276' does not specify any literals.
+The enumeration 'SnomedctBodyStructures' does not specify any literals.
+The enumeration 'AdmitSource' does not specify any literals.
+The enumeration 'ExampleProcedureTypeCodes' does not specify any literals.
+The enumeration 'SnomedctMedicationCodes' does not specify any literals.
+The enumeration 'DeviceSafety' has the following literals: 'c106038', 'c101673', 'c113844', 'c106045', 'c106047', 'c106046'.
+The enumeration 'NutrientModifierCodes' has the following literals: '_39972003', '_33463005', '_88480006'.
+The enumeration 'FoodTypeCodes' does not specify any literals.
+The enumeration 'ContractResourceDefinitionSubtypeCodes' does not specify any literals.
+The enumeration 'Failureaction' does not specify any literals.
+The enumeration 'SpecimenCollection' has the following literals: '_386089008', '_129304002', '_129314006', '_225113003', '_70777001', '_278450005', '_129316008', '_129323009', '_129300006', '_73416001'.
+The enumeration 'ImmunizationEvaluationTargetDiseaseCodes' has the following literals: '_709410003', '_36653000', '_76902006', '_398102009', '_1857005', '_36989005', '_14189004', '_27836007', '_397430003'.
+The enumeration 'SnomedctFormCodes' does not specify any literals.
+The enumeration 'AdverseEventCategory' does not specify any literals.
+The enumeration 'ContactEntityType' does not specify any literals.
+The enumeration 'PaymentStatusCodes' does not specify any literals.
+The enumeration 'ContractSignerTypeCodes' does not specify any literals.
+The enumeration 'ContractTermTypeCodes' does not specify any literals.
+The enumeration 'DetectedIssueMitigationAction' does not specify any literals.
+The enumeration 'BasicResourceTypes' does not specify any literals.
+The enumeration 'DocumentClassValueSet' has the following literals: '_278952', '_264366', '_341222', '_115436', '_114884', '_297523', '_564476', '_297515', '_115063', '_470427', '_264424', '_188425', '_341404', '_286344', '_347484', '_155085', '_278978', '_285700', '_347757', '_535765', '_187617', '_470393', '_341172', '_564450', '_570168', '_297507', '_278986', '_341214', '_114850', '_571331', '_470468', '_114868', '_341339', '_470492', '_286195', '_113696', '_470450', '_187260', '_187484', '_278960', '_264416', '_570176', '_297499', '_115048', '_341099'.
+The enumeration 'ContractResourceAssetSubTypeCodes' does not specify any literals.
+The enumeration 'FamilyHistoryAbsentReason' does not specify any literals.
+The enumeration 'ExampleDiagnosisOnAdmissionCodes' does not specify any literals.
+The enumeration 'FluidConsistencyTypeCodes' has the following literals: '_439021000124105', '_439081000124109', '_439041000124103', '_439031000124108'.
+The enumeration 'ResearchStudyPhase' does not specify any literals.
+The enumeration 'SpecialCourtesy' has the following literals: 'vip', 'ext', 'unk', 'nrm', 'stf', 'prf'.
+The enumeration 'ServiceType' does not specify any literals.
+The enumeration 'ConditionStageType' has the following literals: '_261023001', '_260998006'.
+The enumeration 'ContractResourceAssetScopeCodes' does not specify any literals.
+The enumeration 'ProvenanceParticipantRole' does not specify any literals.
+The enumeration 'ResearchStudyPrimaryPurposeType' does not specify any literals.
+The enumeration 'BenefitCategoryCodes' does not specify any literals.
+The enumeration 'ContractResourceAssetContextCodes' does not specify any literals.
+The enumeration 'EnteralFormulaTypeCodes' has the following literals: '_442921000124101', '_443461000124106', '_443031000124106', '_442951000124105', '_441531000124102', '_443051000124104', '_443771000124106', '_441561000124106', '_443351000124102', '_443421000124100', '_443111000124101', '_443471000124104', '_441601000124106', '_441671000124100', '_443451000124109', '_441571000124104', '_442971000124100', '_443481000124101', '_442651000124102', '_443021000124108', '_443491000124103', '_443411000124108', '_442961000124107', '_443561000124107', '_441591000124103', '_444431000124104', '_443361000124100', '_442981000124102', '_442941000124108', '_442931000124103', '_443401000124105', '_443011000124100', '_443431000124102', '_443501000124106', '_442911000124109', '_442991000124104'.
+The enumeration 'ServiceCategory' does not specify any literals.
+The enumeration 'ParticipationRoleType' has the following literals: 'declassifier', 'verf', '_110152', 'intprter', 'grantor', 'autm', 'la', 'excest', 'hpowatt', '_110153', 'pat', 'evtwit', 'invsbj', 'coauth', 'consenter', '_110150', 'affl', 'covpty', 'delegatee', 'guadltm', 'resprsn', 'spowatt', 'source', 'agnt', 'assigned', 'not_', 'grantee', 'gt', 'copart', 'powatt', 'promsk', 'depen', 'aulr', 'aut', 'ircp', 'wit', 'valid', '_110154', 'primauth', 'nok', 'guard', 'delegator', 'classifier', 'amender', 'conswit', 'trc', 'trans', 'reviewer', 'inf', 'auwa', '_110155', 'downgrder', 'dpowatt', 'emp', 'claim', 'prov', 'named', 'cst', 'econ', 'cont', 'ircpa', 'aucg', '_110151'.
+The enumeration 'EndpointPayloadType' has the following literals: 'urnihepatapsrcancerendometrium2010', 'urnihecardimaging2011', 'urnihepccaps2007', 'urnihepccnn2007', 'urnihedentPdf', 'urnihepharmpadv2010', 'urnhl7orgsdwgccdanonXmlBody11', 'urnihepccedpn2007', 'urnihepcccm2008', 'urnihepccmds2009', 'urnihepatapsrcancerall2010', 'urnihepccppvs2010', 'urnihepccic2009', 'urnihepcctrs2011', 'urnihelabxdlab2008', 'urnihepccirc2008', 'urnihecardCrC2012', 'urnihepatapsrcancersalivaryGland2010', 'urnihepatapsrcancerprostate2010', 'urnihepatapsrcancerliver2010', 'urnihepatapsrcancerkidney2010', 'urnihepccets2011', 'urnihepatapsrcancercervix2010', 'urnihecardEprCIE2014', 'urnihepccxphr2007A', 'urnihepatapsrcanceresophagus2010', 'urnihepccedr2007', 'urnihepatapsrcancerthyroid2010', 'urniheradPdf', 'urnihepatapsrcancertestis2010', 'urnihepharmpml2013', 'urnhl7orgsdwgccdastructuredBody11', 'urniheitixdw2011workflowDoc', 'urnihepatapsrcancercolon2010', 'urnihedentText', 'urnihepccxphr2007', 'urnihepharmdis2010', 'urnihepatapsrcancerbreast2010', 'urniheitidsgenveloping2014', 'urnihepatapsrall2010', 'urnihepccxdsms2007', 'urnihepatapsrcancerlipOralCavity2010', 'urnihepccits2011', 'urnihepatapsrcancerstomach2010', 'urniheitixdssdpdf2008', 'urnihepcclds2009', 'urnihepccnds2010', 'urnihepccldhp2009', 'urnihepatapsrcancerpharynx2010', 'urniheradText', 'urnihepccaprhandp2008', 'urnihepatapsrcancerlung2010', 'urnihepcccrc2008', 'urnihepatapsrcancerpancreas2010', 'urnihepatapsrcancerlarynx2010', 'urnihepccaprlab2008', 'urnihepccapredu2008', 'urniheitibppc2007', 'urniheitixdssdtext2008', 'urnihepatapsrcancerskin2010', 'urnihepccctn2007', 'urnihepatapsrcancerurinaryBladder2010', 'urnihepcchp2008', 'urnihepatapsrcancerovary2010', 'urnihepcctn2007', 'urnihepcchandp2008', 'urnihedentCdAImagingReportStructuredHeadings2013', 'urnihepharmpre2010', 'urniheradCdAImagingReportStructuredHeadings2013', 'urnihepccedes2007', 'urniheitibppcsd2007', 'urniheitidsgdetached2014'.
+The enumeration 'ObjectLifecycleEvents' does not specify any literals.
+The enumeration 'QualityOfEvidenceRating' does not specify any literals.
+The enumeration 'FhirDocumentTypeCodes' does not specify any literals.
+The enumeration 'DefinitionTopic' does not specify any literals.
+The enumeration 'IcD10ProcedureCodes' does not specify any literals.
+The enumeration 'DeviceType' does not specify any literals.
+The enumeration 'UsclsCodes' does not specify any literals.
+The enumeration 'ContractContentDerivationCodes' does not specify any literals.
+The enumeration 'SpecimenProcessingProcedure' does not specify any literals.
+The enumeration 'DiagnosisRole' does not specify any literals.
+The enumeration 'SurfaceCodes' does not specify any literals.
+The enumeration 'MeasureDataUsage' does not specify any literals.
+The enumeration 'ContractResourceDecisionModeCodes' does not specify any literals.
+The enumeration 'RiskEstimateType' does not specify any literals.
+The enumeration 'V3ActEncounterCode' does not specify any literals.
+The enumeration 'ContractResourceExpirationTypeCodes' does not specify any literals.
+The enumeration 'AdjudicationErrorCodes' does not specify any literals.
+The enumeration 'SnomedctMedicationAsNeededReasonCodes' does not specify any literals.
+The enumeration 'ContextOfUseValueSet' does not specify any literals.
+The enumeration 'ConsentContentCodes' does not specify any literals.
+The enumeration 'RiskProbability' does not specify any literals.
+The enumeration 'V3ActPharmacySupplyType' does not specify any literals.
+The enumeration 'ImmunizationReasonCodes' has the following literals: '_429060002', '_281657000'.
+The enumeration 'PatientMedicineChangeTypes' does not specify any literals.
+The enumeration 'ProcedureOutcomeCodesSnomedcT' has the following literals: '_385671000', '_385669000', '_385670004'.
+The enumeration 'SpecimenContainerType' does not specify any literals.
+The enumeration 'ExampleCoverageFinancialExceptionCodes' does not specify any literals.
+The enumeration 'TaskCode' does not specify any literals.
+The enumeration 'ParticipantRoles' does not specify any literals.
+The enumeration 'CommonTags' does not specify any literals.
+The enumeration 'MaritalStatusCodes' has the following literals: 'unk'.
+The enumeration 'CommonLanguages' has the following literals: 'fr', 'da', 'zhSg', 'cs', 'no', 'nlBe', 'enGb', 'frCh', 'enAu', 'ruRu', 'deDe', 'sr', 'zh', 'es', 'hr', 'sv', 'esAr', 'itIt', 'pl', 'en', 'hi', 'pa', 'enSg', 'ja', 'zhTw', 'noNo', 'enUs', 'fyNl', 'srRs', 'de', 'bn', 'zhHk', 'enNz', 'frFr', 'fi', 'ptBr', 'el', 'enIn', 'nl', 'deAt', 'fy', 'esUy', 'ru', 'ko', 'deCh', 'zhCn', 'pt', 'esEs', 'itCh', 'nlNl', 'ar', 'te', 'enCa', 'svSe', 'it', 'frBe'.
+The enumeration 'AdverseEventSeriousness' does not specify any literals.
+The enumeration 'ObservationReferenceRangeMeaningCodes' does not specify any literals.
+The enumeration 'SubjectType' has the following literals: 'location', 'device', 'patient', 'practitioner', 'organization'.
+The enumeration 'ObservationInterpretationCodes' does not specify any literals.
+The enumeration 'ContractActionCodes' does not specify any literals.
+The enumeration 'ExampleDiagnosisRelatedGroupCodes' does not specify any literals.
+The enumeration 'ExampleProgramReasonCodes' does not specify any literals.
+The enumeration 'V3PurposeOfUse' does not specify any literals.
+The enumeration 'FdAMethod' does not specify any literals.
+The enumeration 'ContractResourceAssetAvailiabilityCodes' does not specify any literals.
+The enumeration 'JurisdictionValueSet' does not specify any literals.
+The enumeration 'BodystructureLocationQualifier' has the following literals: '_255551008', '_351726001', '_419465000', '_255561001', '_261183002', '_264217000', '_51440002', '_261122009', '_352730000', '_261089000', '_419161000', '_49370004'.
+The enumeration 'V3ActPriority' does not specify any literals.
+The enumeration 'ContractResourceDefinitionTypeCodes' does not specify any literals.
+The enumeration 'Need' does not specify any literals.

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'basetest::BaseModel' has no attributes.
+The class 'basetest::EObject' has no attributes.
+'basetest::BaseModel' (role 'basetest_BaseModel', cardinality 0..*) is associated with 'basetest::EObject' (role 'basetest_EObject', cardinality 0..*).

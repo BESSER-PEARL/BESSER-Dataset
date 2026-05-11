@@ -1,0 +1,64 @@
+The model has 28 class(es).
+The class 'xpdl2::ExtendedAttributeType' has the following attributes: 'name' of type str; 'mixed' of type str; 'value' of type str; 'group' of type str; 'any' of type str.
+The class 'XSDAnnotation' has no attributes.
+The class 'xpdl2::TypeDeclarationType' has the following attributes: 'id' of type str; 'name' of type str; 'description' of type str.
+The class 'xpdl2::DataTypeType' has the following attributes: 'carnotType' of type str.
+The class 'xpdl2::extensions::LoopDataRefType' has the following attributes: 'loopCounterRef' of type str; 'outputItemRef' of type str; 'inputItemRef' of type str.
+The class 'xpdl2::DeclaredTypeType' has the following attributes: 'id' of type str.
+The class 'xpdl2::extensions::ExtendedAnnotationType' has no attributes.
+The class 'xpdl2::ExpressionType' has the following attributes: 'scriptType' of type str; 'scriptGrammar' of type str; 'any' of type str; 'mixed' of type str; 'group' of type str; 'scriptVersion' of type str.
+The class 'xpdl2::LoopStandardType' has the following attributes: 'loopMaximum' of type str; 'testTime' of type str.
+The class 'LoopDataRefType' has no attributes.
+The class 'ExtendedAnnotationType' has no attributes.
+The class 'xpdl2::BasicTypeType' has the following attributes: 'type' of type str.
+The class 'Extensible' has no attributes.
+The class 'xpdl2::ExternalReferenceType' has the following attributes: 'location' of type str; 'uuid' of type str; 'namespace' of type str; 'xref' of type str.
+The class 'xpdl2::Extensible' has no attributes.
+The class 'xpdl2::ExtendedAttributesType' has no attributes.
+The class 'xpdl2::FormalParameterType' has the following attributes: 'id' of type str; 'mode' of type str; 'name' of type str; 'description' of type str.
+The class 'xpdl2::XSDSchema' has no attributes.
+The class 'xpdl2::LoopType' has the following attributes: 'loopType' of type str.
+The class 'xpdl2::XpdlTypeType' has no attributes.
+The class 'xpdl2::LoopMultiInstanceType' has the following attributes: 'mIFlowCondition' of type str; 'mIOrdering' of type str.
+The class 'XpdlTypeType' has no attributes.
+The class 'xpdl2::SchemaTypeType' has no attributes.
+The class 'xpdl2::TypeDeclarationsType' has no attributes.
+The class 'xpdl2::ExternalPackage' has the following attributes: 'href' of type str; 'name' of type str; 'id' of type str.
+The class 'xpdl2::FormalParametersType' has no attributes.
+The class 'xpdl2::ExternalPackages' has no attributes.
+The class 'xpdl2::ScriptType' has the following attributes: 'type' of type str; 'version' of type str; 'grammar' of type str.
+The enumeration 'TestTimeType' has the following literals: 'Before', 'After'.
+The enumeration 'MIOrderingType' has the following literals: 'Parallel', 'Sequential'.
+The enumeration 'TypeType' has the following literals: 'INTEGER', 'DATETIME', 'REFERENCE', 'BOOLEAN', 'STRING', 'PERFORMER', 'FLOAT'.
+The enumeration 'ModeType' has the following literals: 'OUT', 'IN', 'INOUT'.
+The enumeration 'MIFlowConditionType' has the following literals: 'None_', 'All', 'Complex', 'One'.
+The enumeration 'LoopTypeType' has the following literals: 'MultiInstance', 'Standard'.
+'xpdl2::BasicTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl2::DeclaredTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl2::extensions::ExtendedAnnotationType' is a specialization of 'XSDAnnotation'.
+'xpdl2::ExternalReferenceType' is a specialization of 'XpdlTypeType'.
+'xpdl2::SchemaTypeType' is a specialization of 'XpdlTypeType'.
+'xpdl2::TypeDeclarationType' is a specialization of 'Extensible'.
+'xpdl2::ExternalPackage' is a specialization of 'Extensible'.
+'xpdl2::TypeDeclarationType' (role 'xpdl2_TypeDeclarationType40', cardinality 0..*) is associated with 'xpdl2::SchemaTypeType' (role 'xpdl2_SchemaTypeType41', cardinality 0..*).
+'xpdl2::LoopMultiInstanceType' (role 'xpdl2_LoopMultiInstanceType19', cardinality 0..*) is associated with 'xpdl2::ExpressionType' (role 'xpdl2_ExpressionType20', cardinality 0..*).
+'xpdl2::ExtendedAttributesType' (role 'xpdl2_ExtendedAttributesType', cardinality 0..*) is associated with 'xpdl2::ExtendedAttributeType' (role 'xpdl2_ExtendedAttributeType', cardinality 0..*).
+'xpdl2::Extensible' (role 'xpdl2_Extensible', cardinality 0..*) is associated with 'xpdl2::ExtendedAttributesType' (role 'xpdl2_ExtendedAttributesType11', cardinality 0..*).
+'xpdl2::TypeDeclarationsType' (role 'xpdl2_TypeDeclarationsType', cardinality 0..*) is associated with 'xpdl2::TypeDeclarationType' (role 'xpdl2_TypeDeclarationType', cardinality 0..*).
+'xpdl2::FormalParametersType' (role 'xpdl2_FormalParametersType', cardinality 0..*) is associated with 'xpdl2::FormalParameterType' (role 'xpdl2_FormalParameterType', cardinality 0..*).
+'xpdl2::DataTypeType' (role 'xpdl2_DataTypeType4', cardinality 0..*) is associated with 'xpdl2::SchemaTypeType' (role 'xpdl2_SchemaTypeType', cardinality 0..*).
+'xpdl2::LoopMultiInstanceType' (role 'xpdl2_LoopMultiInstanceType29', cardinality 0..*) is associated with 'xpdl2::LoopType' (role 'xpdl2_LoopType28', cardinality 0..*).
+'xpdl2::LoopType' (role 'xpdl2_LoopType', cardinality 0..*) is associated with 'xpdl2::LoopStandardType' (role 'xpdl2_LoopStandardType26', cardinality 0..*).
+'xpdl2::FormalParameterType' (role 'xpdl2_FormalParameterType15', cardinality 0..*) is associated with 'xpdl2::DataTypeType' (role 'xpdl2_DataTypeType16', cardinality 0..*).
+'xpdl2::SchemaTypeType' (role 'xpdl2_SchemaTypeType31', cardinality 0..*) is associated with 'xpdl2::XSDSchema' (role 'xpdl2_XSDSchema', cardinality 0..*).
+'xpdl2::DeclaredTypeType' (role 'xpdl2_DeclaredTypeType38', cardinality 0..*) is associated with 'xpdl2::TypeDeclarationType' (role 'xpdl2_TypeDeclarationType37', cardinality 0..*).
+'xpdl2::LoopMultiInstanceType' (role 'xpdl2_LoopMultiInstanceType', cardinality 0..*) is associated with 'xpdl2::ExpressionType' (role 'xpdl2_ExpressionType', cardinality 0..*).
+'ExtendedAnnotationType' (role 'ExtendedAnnotationType', cardinality 0..*) is associated with 'xpdl2::ExtendedAttributeType' (role 'xpdl2_ExtendedAttributeType9', cardinality 0..*).
+'xpdl2::TypeDeclarationType' (role 'xpdl2_TypeDeclarationType34', cardinality 0..*) is associated with 'xpdl2::BasicTypeType' (role 'xpdl2_BasicTypeType35', cardinality 0..*).
+'xpdl2::LoopStandardType' (role 'xpdl2_LoopStandardType', cardinality 0..*) is associated with 'xpdl2::ExpressionType' (role 'xpdl2_ExpressionType24', cardinality 0..*).
+'xpdl2::DataTypeType' (role 'xpdl2_DataTypeType2', cardinality 0..*) is associated with 'xpdl2::DeclaredTypeType' (role 'xpdl2_DeclaredTypeType', cardinality 0..*).
+'xpdl2::ExternalReferenceType' (role 'xpdl2_ExternalReferenceType', cardinality 0..*) is associated with 'xpdl2::DataTypeType' (role 'xpdl2_DataTypeType6', cardinality 0..*).
+'xpdl2::TypeDeclarationType' (role 'xpdl2_TypeDeclarationType43', cardinality 0..*) is associated with 'xpdl2::ExternalReferenceType' (role 'xpdl2_ExternalReferenceType44', cardinality 0..*).
+'xpdl2::BasicTypeType' (role 'xpdl2_BasicTypeType', cardinality 0..*) is associated with 'xpdl2::DataTypeType' (role 'xpdl2_DataTypeType', cardinality 0..*).
+'xpdl2::ExternalPackages' (role 'xpdl2_ExternalPackages', cardinality 0..*) is associated with 'xpdl2::ExternalPackage' (role 'xpdl2_ExternalPackage', cardinality 0..*).
+'LoopDataRefType' (role 'LoopDataRefType', cardinality 0..*) is associated with 'xpdl2::LoopMultiInstanceType' (role 'xpdl2_LoopMultiInstanceType22', cardinality 0..*).

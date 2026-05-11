@@ -1,0 +1,76 @@
+The model has 23 class(es).
+The class 'feature::Elimination' has the following attributes: 'defaultSelection' of type str.
+The class 'feature::OrFeatureGroup' has no attributes.
+The class 'HybridElement' has no attributes.
+The class 'feature::DisplayName' has the following attributes: 'displayName' of type str.
+The class 'feature::Feature' has the following attributes: 'transitiveEliminationState' of type str.
+The class 'feature::GroupMembership' has no attributes.
+The class 'FeatureGroup' has no attributes.
+The class 'feature::Mandatory' has no attributes.
+The class 'feature::RootRelationship' has no attributes.
+The class 'feature::ChildRelationship' has no attributes.
+The class 'feature::FeatureExclusion' has no attributes.
+The class 'FeatureDependency' has no attributes.
+The class 'feature::Option' has no attributes.
+The class 'feature::FeatureGroup' has no attributes.
+The class 'HybridDimension' has no attributes.
+The class 'feature::FeatureDependency' has no attributes.
+The class 'feature::Invariant' has no attributes.
+The class 'UUIDElement' has no attributes.
+The class 'feature::FeatureRequirement' has no attributes.
+The class 'feature::FeatureModel' has no attributes.
+The class 'feature::DefaultBinding' has no attributes.
+The class 'feature::Preference' has no attributes.
+The class 'feature::XorFeatureGroup' has no attributes.
+'feature::GroupMembership' is a specialization of 'HybridElement'.
+'feature::FeatureGroup' is a specialization of 'HybridElement'.
+'feature::XorFeatureGroup' is a specialization of 'FeatureGroup'.
+'feature::FeatureExclusion' is a specialization of 'FeatureDependency'.
+'feature::FeatureModel' is a specialization of 'HybridDimension'.
+'feature::RootRelationship' is a specialization of 'HybridElement'.
+'feature::Feature' is a specialization of 'HybridElement'.
+'feature::Mandatory' is a specialization of 'HybridElement'.
+'feature::FeatureRequirement' is a specialization of 'FeatureDependency'.
+'feature::Feature' is a specialization of 'UUIDElement'.
+'feature::ChildRelationship' is a specialization of 'HybridElement'.
+'feature::FeatureDependency' is a specialization of 'UUIDElement'.
+'feature::DisplayName' is a specialization of 'HybridElement'.
+'feature::OrFeatureGroup' is a specialization of 'FeatureGroup'.
+'feature::Elimination' is a specialization of 'HybridElement'.
+'feature::FeatureGroup' is a specialization of 'UUIDElement'.
+'feature::FeatureDependency' is a specialization of 'HybridElement'.
+'feature::RootRelationship' (role 'incomingRoots', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature45', cardinality 0..*).
+'feature::Feature' (role 'child', cardinality 0..*) is associated with 'feature::ChildRelationship' (role 'ChildRelationship7', cardinality 0..*).
+'feature::ChildRelationship' (role 'ChildRelationship', cardinality 0..*) is associated with 'feature::Feature' (role 'parent', cardinality 0..*).
+'feature::Feature' (role 'feature', cardinality 0..*) is associated with 'feature::DisplayName' (role 'DisplayName', cardinality 0..*).
+'feature::ChildRelationship' (role 'children', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature47', cardinality 0..*).
+'feature::GroupMembership' (role 'groupedFeatures', cardinality 0..*) is associated with 'feature::FeatureGroup' (role 'FeatureGroup32', cardinality 0..*).
+'feature::Invariant' (role 'feature_Invariant59', cardinality 0..*) is associated with 'feature::Elimination' (role 'feature_Elimination', cardinality 0..*).
+'feature::Feature' (role 'Feature49', cardinality 0..*) is associated with 'feature::ChildRelationship' (role 'parents', cardinality 0..*).
+'feature::Feature' (role 'Feature23', cardinality 0..*) is associated with 'feature::DisplayName' (role 'names', cardinality 0..*).
+'feature::FeatureGroup' (role 'groups', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature28', cardinality 0..*).
+'feature::DefaultBinding' (role 'feature_DefaultBinding62', cardinality 0..*) is associated with 'feature::Elimination' (role 'feature_Elimination61', cardinality 0..*).
+'feature::Elimination' (role 'Elimination', cardinality 0..*) is associated with 'feature::Feature' (role 'feature16', cardinality 0..*).
+'feature::ChildRelationship' (role 'feature_ChildRelationship53', cardinality 0..*) is associated with 'feature::Preference' (role 'feature_Preference', cardinality 0..*).
+'feature::FeatureDependency' (role 'incomingDependencies', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature38', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature19', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature21', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel', cardinality 0..*) is associated with 'feature::RootRelationship' (role 'feature_RootRelationship', cardinality 0..*).
+'feature::RootRelationship' (role 'feature_RootRelationship40', cardinality 0..*) is associated with 'feature::Invariant' (role 'feature_Invariant41', cardinality 0..*).
+'feature::Feature' (role 'Feature55', cardinality 0..*) is associated with 'feature::Mandatory' (role 'mandatory', cardinality 0..*).
+'feature::FeatureDependency' (role 'FeatureDependency', cardinality 0..*) is associated with 'feature::Feature' (role 'targetFeature', cardinality 0..*).
+'feature::GroupMembership' (role 'groupedBy', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature30', cardinality 0..*).
+'feature::Invariant' (role 'feature_Invariant34', cardinality 0..*) is associated with 'feature::FeatureDependency' (role 'feature_FeatureDependency', cardinality 0..*).
+'feature::FeatureModel' (role 'FeatureModel', cardinality 0..*) is associated with 'feature::Feature' (role 'features', cardinality 0..*).
+'feature::Feature' (role 'parentFeature', cardinality 0..*) is associated with 'feature::FeatureGroup' (role 'FeatureGroup', cardinality 0..*).
+'feature::Feature' (role 'Feature', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'featureModel', cardinality 0..*).
+'feature::GroupMembership' (role 'GroupMembership', cardinality 0..*) is associated with 'feature::Feature' (role 'groupedFeature', cardinality 0..*).
+'feature::FeatureGroup' (role 'group', cardinality 0..*) is associated with 'feature::GroupMembership' (role 'GroupMembership25', cardinality 0..*).
+'feature::ChildRelationship' (role 'feature_ChildRelationship', cardinality 0..*) is associated with 'feature::Invariant' (role 'feature_Invariant51', cardinality 0..*).
+'feature::Feature' (role 'feature18', cardinality 0..*) is associated with 'feature::RootRelationship' (role 'RootRelationship', cardinality 0..*).
+'feature::Feature' (role 'Feature36', cardinality 0..*) is associated with 'feature::FeatureDependency' (role 'outgoingDependencies', cardinality 0..*).
+'feature::Elimination' (role 'eliminations', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature57', cardinality 0..*).
+'feature::DefaultBinding' (role 'feature_DefaultBinding', cardinality 0..*) is associated with 'feature::RootRelationship' (role 'feature_RootRelationship43', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature', cardinality 0..*) is associated with 'feature::Option' (role 'feature_Option', cardinality 0..*).
+'feature::FeatureDependency' (role 'FeatureDependency12', cardinality 0..*) is associated with 'feature::Feature' (role 'sourceFeature', cardinality 0..*).
+'feature::Mandatory' (role 'Mandatory', cardinality 0..*) is associated with 'feature::Feature' (role 'feature14', cardinality 0..*).
+'feature::Invariant' (role 'feature_Invariant', cardinality 0..*) is associated with 'feature::FeatureGroup' (role 'feature_FeatureGroup', cardinality 0..*).

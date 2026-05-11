@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'workflow::Statement' has the following attributes: 'exec_order' of type int.
+The class 'Statement' has no attributes.
+The class 'workflow::ForEach' has the following attributes: 'element' of type str; 'sequence' of type str.
+The class 'workflow::Workflow' has the following attributes: 'name' of type str.
+The class 'workflow::Recipe' has the following attributes: 'name' of type str.
+The class 'workflow::Condition' has the following attributes: 'expression' of type str; 'description' of type str.
+The class 'workflow::Parameter' has the following attributes: 'option' of type str; 'data' of type str.
+The class 'workflow::OutputParameter' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'workflow::InputParameter' has no attributes.
+The class 'workflow::Program' has the following attributes: 'exec_order' of type int; 'description' of type str; 'name_exec' of type str.
+The class 'workflow::SimpleCommand' has the following attributes: 'description' of type str.
+'workflow::InputParameter' is a specialization of 'Parameter'.
+'workflow::OutputParameter' is a specialization of 'Parameter'.
+'workflow::SimpleCommand' is a specialization of 'Statement'.
+'workflow::Condition' is a specialization of 'Statement'.
+'workflow::ForEach' is a specialization of 'Statement'.
+'workflow::Recipe' (role 'workflow_Recipe2', cardinality 0..*) is associated with 'workflow::Statement' (role 'workflow_Statement', cardinality 0..*).
+'workflow::Program' (role 'workflow_Program', cardinality 0..*) is associated with 'workflow::Parameter' (role 'workflow_Parameter', cardinality 0..*).
+'workflow::OutputParameter' (role 'workflow_OutputParameter13', cardinality 0..*) is associated with 'workflow::InputParameter' (role 'workflow_InputParameter14', cardinality 0..*).
+'workflow::Recipe' (role 'workflow_Recipe', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow_Workflow', cardinality 0..*).
+'workflow::Program' (role 'workflow_Program10', cardinality 0..*) is associated with 'workflow::SimpleCommand' (role 'workflow_SimpleCommand', cardinality 0..*).
+'workflow::Condition' (role 'workflow_Condition6', cardinality 0..*) is associated with 'workflow::Statement' (role 'workflow_Statement7', cardinality 0..*).
+'workflow::ForEach' (role 'workflow_ForEach', cardinality 0..*) is associated with 'workflow::Statement' (role 'workflow_Statement16', cardinality 0..*).
+'workflow::InputParameter' (role 'workflow_InputParameter', cardinality 0..*) is associated with 'workflow::OutputParameter' (role 'workflow_OutputParameter', cardinality 0..*).
+'workflow::Condition' (role 'workflow_Condition', cardinality 0..*) is associated with 'workflow::Statement' (role 'workflow_Statement4', cardinality 0..*).

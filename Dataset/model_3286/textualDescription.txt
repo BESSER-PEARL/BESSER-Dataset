@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'traceability::EDFDGraphTrace' has no attributes.
+The class 'traceability::GraphEndToEndTrace' has no attributes.
+The class 'traceability::EDFDToGraph' has no attributes.
+The class 'traceability::Graph' has no attributes.
+The class 'traceability::Identifiable' has no attributes.
+The class 'traceability::EDFD' has no attributes.
+The class 'traceability::NamedEntity' has no attributes.
+'traceability::EDFDToGraph' (role 'traceability_EDFDToGraph9', cardinality 0..*) is associated with 'traceability::GraphEndToEndTrace' (role 'traceability_GraphEndToEndTrace', cardinality 0..*).
+'traceability::Identifiable' (role 'traceability_Identifiable16', cardinality 0..*) is associated with 'traceability::GraphEndToEndTrace' (role 'traceability_GraphEndToEndTrace15', cardinality 0..*).
+'traceability::GraphEndToEndTrace' (role 'traceability_GraphEndToEndTrace18', cardinality 0..*) is associated with 'traceability::Identifiable' (role 'traceability_Identifiable19', cardinality 0..*).
+'traceability::EDFDGraphTrace' (role 'traceability_EDFDGraphTrace', cardinality 0..*) is associated with 'traceability::EDFDToGraph' (role 'traceability_EDFDToGraph', cardinality 0..*).
+'traceability::EDFDGraphTrace' (role 'traceability_EDFDGraphTrace13', cardinality 0..*) is associated with 'traceability::Identifiable' (role 'traceability_Identifiable', cardinality 0..*).
+'traceability::EDFD' (role 'traceability_EDFD', cardinality 0..*) is associated with 'traceability::EDFDToGraph' (role 'traceability_EDFDToGraph2', cardinality 0..*).
+'traceability::Graph' (role 'traceability_Graph7', cardinality 0..*) is associated with 'traceability::EDFDToGraph' (role 'traceability_EDFDToGraph6', cardinality 0..*).
+'traceability::EDFDGraphTrace' (role 'traceability_EDFDGraphTrace11', cardinality 0..*) is associated with 'traceability::NamedEntity' (role 'traceability_NamedEntity', cardinality 0..*).
+'traceability::EDFDToGraph' (role 'traceability_EDFDToGraph4', cardinality 0..*) is associated with 'traceability::Graph' (role 'traceability_Graph', cardinality 0..*).

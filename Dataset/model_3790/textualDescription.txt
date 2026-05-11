@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'model::TestContainer' has no attributes.
+The class 'model::Metadata' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'model::TestProblem' has the following attributes: 'message' of type str; 'problemType' of type str.
+The class 'TestElement' has no attributes.
+The class 'TestProblem' has no attributes.
+The class 'model::TraceStackframe' has no attributes.
+The class 'model::TraceElement' has the following attributes: 'message' of type str.
+The class 'model::TestElement' has the following attributes: 'name' of type str; 'endTimestamp' of type str; 'description' of type str; 'elementUnderTest' of type str; 'target' of type str; 'progressState' of type str; 'startTimestamp' of type str; 'testState' of type str.
+The class 'TestContainer' has no attributes.
+The class 'model::TraceException' has no attributes.
+The class 'model::TestRoot' has the following attributes: 'testRunner' of type str.
+The class 'model::ComparisonProblem' has the following attributes: 'expected' of type str; 'actual' of type str.
+The class 'model::TestCaseElement' has no attributes.
+The class 'TraceElement' has no attributes.
+The enumeration 'ProgressState' has the following literals: 'NOT_STARTED', 'COMPLETED', 'STOPPED', 'RUNNING'.
+The enumeration 'TestState' has the following literals: 'IGNORED', 'ERROR', 'PASS', 'NOT_RUN', 'FAILURE'.
+The enumeration 'ProblemType' has the following literals: 'ASSERTION', 'ERROR', 'ASSUMPTION'.
+'model::TestRoot' is a specialization of 'TestContainer'.
+'model::TestContainer' is a specialization of 'TestElement'.
+'model::TestCaseElement' is a specialization of 'TestElement'.
+'model::ComparisonProblem' is a specialization of 'TestProblem'.
+'model::TraceException' is a specialization of 'TraceElement'.
+'model::TraceStackframe' is a specialization of 'TraceElement'.
+'model::TestElement' (role 'TestElement', cardinality 0..*) is associated with 'model::TestContainer' (role 'parent', cardinality 0..*).
+'model::TestElement' (role 'model_TestElement', cardinality 0..*) is associated with 'model::TestProblem' (role 'model_TestProblem', cardinality 0..*).
+'model::TestProblem' (role 'model_TestProblem4', cardinality 0..*) is associated with 'model::TraceElement' (role 'model_TraceElement', cardinality 0..*).
+'model::TestContainer' (role 'TestContainer', cardinality 0..*) is associated with 'model::TestElement' (role 'children', cardinality 0..*).

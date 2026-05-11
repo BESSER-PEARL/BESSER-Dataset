@@ -1,0 +1,22 @@
+The model has 13 class(es).
+The class 'TypeA::ObjectS' has the following attributes: 'nameS' of type str.
+The class 'TypeA::ObjectX' has the following attributes: 'nameX' of type str.
+The class 'ObjectR' has no attributes.
+The class 'TypeA::ObjectR' has the following attributes: 'nameR' of type str.
+The class 'ObjectX' has no attributes.
+The class 'AA' has no attributes.
+The class 'TypeA::B' has the following attributes: 'nameB' of type str.
+The class 'TypeA::ListElement' has the following attributes: 'nameListElement' of type str.
+The class 'TypeA::AA' has the following attributes: 'nameA' of type str.
+The class 'TypeA::ObjectY' has the following attributes: 'nameY' of type str.
+The class 'TypeA::C' has the following attributes: 'nameC' of type str.
+The class 'TypeA::D' has the following attributes: 'nameD' of type str.
+The class 'B' has no attributes.
+'TypeA::B' is a specialization of 'AA'.
+'TypeA::C' is a specialization of 'B'.
+'TypeA::ObjectY' is a specialization of 'ObjectX'.
+'TypeA::D' is a specialization of 'AA'.
+'TypeA::ObjectS' is a specialization of 'ObjectR'.
+'ObjectR' (role 'ObjectR', cardinality 0..*) is associated with 'TypeA::ListElement' (role 'TypeA_ListElement4', cardinality 0..*).
+'ObjectX' (role 'ObjectX', cardinality 0..*) is associated with 'TypeA::ListElement' (role 'TypeA_ListElement2', cardinality 0..*).
+'AA' (role 'AA', cardinality 0..*) is associated with 'TypeA::ListElement' (role 'TypeA_ListElement', cardinality 0..*).

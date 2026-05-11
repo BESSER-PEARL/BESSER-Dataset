@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'iOI::Employee' has the following attributes: 'name' of type str; 'salary' of type int.
+The class 'iOI::Manager' has no attributes.
+The class 'iOI::Position' has the following attributes: 'name' of type str.
+The class 'iOI::Department' has the following attributes: 'name' of type str.
+The class 'Employee' has no attributes.
+The class 'iOI::Model' has the following attributes: 'name' of type str.
+The class 'iOI::Company' has the following attributes: 'name' of type str.
+'iOI::Manager' is a specialization of 'Employee'.
+'iOI::Position' (role 'iOI_Position4', cardinality 0..*) is associated with 'iOI::Company' (role 'iOI_Company3', cardinality 0..*).
+'iOI::Employee' (role 'iOI_Employee', cardinality 0..*) is associated with 'iOI::Position' (role 'iOI_Position', cardinality 0..*).
+'iOI::Department' (role 'iOI_Department12', cardinality 0..*) is associated with 'iOI::Department' (role 'iOI_Department14', cardinality 0..*).
+'iOI::Department' (role 'iOI_Department8', cardinality 0..*) is associated with 'iOI::Manager' (role 'iOI_Manager', cardinality 0..*).
+'iOI::Company' (role 'iOI_Company', cardinality 0..*) is associated with 'iOI::Model' (role 'iOI_Model', cardinality 0..*).
+'iOI::Department' (role 'iOI_Department10', cardinality 0..*) is associated with 'iOI::Employee' (role 'iOI_Employee11', cardinality 0..*).
+'iOI::Department' (role 'iOI_Department', cardinality 0..*) is associated with 'iOI::Company' (role 'iOI_Company6', cardinality 0..*).

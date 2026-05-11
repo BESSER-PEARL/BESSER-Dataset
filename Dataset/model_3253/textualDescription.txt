@@ -1,0 +1,171 @@
+The model has 53 class(es).
+The class 'BehavioralFeature' has no attributes.
+The class 'cmof::Enumeration' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'cmof::NamedElement' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'cmof::DataType' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'cmof::ValueSpecification' has no attributes.
+The class 'cmof::Association' has the following attributes: 'isDerived' of type bool.
+The class 'cmof::Parameter' has the following attributes: 'default' of type str; 'direction' of type str.
+The class 'cmof::Namespace' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'cmof::BehavioralFeature' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'cmof::Argument' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'DirectedRelationship' has no attributes.
+The class 'cmof::Type' has no attributes.
+The class 'cmof::Package' has the following attributes: 'uRI' of type str.
+The class 'Classifier' has no attributes.
+The class 'cmof::Operation' has the following attributes: 'isQuery' of type bool.
+The class 'cmof::Comment' has the following attributes: 'body' of type str.
+The class 'cmof::Tag' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'NamedElement' has no attributes.
+The class 'cmof::StructuralFeature' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'cmof::Feature' has no attributes.
+The class 'cmof::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'cmof::Relationship' has no attributes.
+The class 'cmof::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'cmof::Exception' has the following attributes: 'description' of type str.
+The class 'cmof::PackageMerge' has no attributes.
+The class 'cmof::Link' has no attributes.
+The class 'cmof::EnumerationLiteral' has no attributes.
+The class 'cmof::RedefinableElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'cmof::Element' has no attributes.
+The class 'cmof::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'cmof::Property' has the following attributes: 'isReadOnly' of type bool; 'isID' of type bool; 'default' of type str; 'isDerived' of type bool; 'isComposite' of type bool; 'isDerivedUnion' of type bool.
+The class 'cmof::Factory' has no attributes.
+The class 'cmof::TypedElement' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'cmof::PrimitiveType' has no attributes.
+The class 'cmof::DirectedRelationship' has no attributes.
+The class 'DataType' has no attributes.
+The class 'cmof::PackageableElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Element' has no attributes.
+The class 'cmof::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'cmof::Classifier' has no attributes.
+The class 'cmof::Expression' has no attributes.
+The class 'Feature' has no attributes.
+The class 'cmof::MultiplicityElement' has the following attributes: 'isOrdered' of type bool; 'isUnique' of type bool; 'lower' of type int; 'upper' of type int.
+The class 'cmof::Constraint' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'package', 'public', 'protected'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'return_', 'in_', 'inout', 'out'.
+'cmof::StructuralFeature' is a specialization of 'TypedElement'.
+'cmof::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'cmof::Expression' is a specialization of 'ValueSpecification'.
+'cmof::Enumeration' is a specialization of 'DataType'.
+'cmof::Association' is a specialization of 'Classifier'.
+'cmof::Package' is a specialization of 'Namespace'.
+'cmof::Relationship' is a specialization of 'Element'.
+'cmof::Property' is a specialization of 'MultiplicityElement'.
+'cmof::Constraint' is a specialization of 'PackageableElement'.
+'cmof::Package' is a specialization of 'PackageableElement'.
+'cmof::Parameter' is a specialization of 'TypedElement'.
+'cmof::PrimitiveType' is a specialization of 'DataType'.
+'cmof::ElementImport' is a specialization of 'DirectedRelationship'.
+'cmof::ValueSpecification' is a specialization of 'TypedElement'.
+'cmof::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'cmof::ValueSpecification' is a specialization of 'PackageableElement'.
+'cmof::RedefinableElement' is a specialization of 'NamedElement'.
+'cmof::PackageableElement' is a specialization of 'NamedElement'.
+'cmof::StructuralFeature' is a specialization of 'Feature'.
+'cmof::BehavioralFeature' is a specialization of 'Feature'.
+'cmof::TypedElement' is a specialization of 'NamedElement'.
+'cmof::Feature' is a specialization of 'RedefinableElement'.
+'cmof::Type' is a specialization of 'PackageableElement'.
+'cmof::PackageMerge' is a specialization of 'DirectedRelationship'.
+'cmof::PackageImport' is a specialization of 'DirectedRelationship'.
+'cmof::Parameter' is a specialization of 'MultiplicityElement'.
+'cmof::Property' is a specialization of 'StructuralFeature'.
+'cmof::Class' is a specialization of 'Classifier'.
+'cmof::Comment' is a specialization of 'Element'.
+'cmof::Operation' is a specialization of 'MultiplicityElement'.
+'cmof::Operation' is a specialization of 'BehavioralFeature'.
+'cmof::BehavioralFeature' is a specialization of 'Namespace'.
+'cmof::Association' is a specialization of 'Relationship'.
+'cmof::Classifier' is a specialization of 'Type'.
+'cmof::Operation' is a specialization of 'TypedElement'.
+'cmof::Namespace' is a specialization of 'NamedElement'.
+'cmof::NamedElement' is a specialization of 'Element'.
+'cmof::EnumerationLiteral' is a specialization of 'NamedElement'.
+'cmof::DataType' is a specialization of 'Classifier'.
+'cmof::Tag' is a specialization of 'Element'.
+'cmof::MultiplicityElement' is a specialization of 'Element'.
+'cmof::Factory' is a specialization of 'Element'.
+'cmof::Classifier' is a specialization of 'Namespace'.
+'cmof::DirectedRelationship' is a specialization of 'Relationship'.
+'cmof::Element' (role 'owner', cardinality 0..*) is associated with 'cmof::Element' (role 'Element', cardinality 0..*).
+'cmof::Package' (role 'cmof_Package', cardinality 0..*) is associated with 'cmof::PackageableElement' (role 'cmof_PackageableElement53', cardinality 0..*).
+'cmof::Operation' (role 'cmof_Operation90', cardinality 0..*) is associated with 'cmof::Constraint' (role 'cmof_Constraint', cardinality 0..*).
+'cmof::DirectedRelationship' (role 'cmof_DirectedRelationship69', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element70', cardinality 0..*).
+'cmof::Exception' (role 'cmof_Exception133', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element134', cardinality 0..*).
+'cmof::Element' (role 'cmof_Element72', cardinality 0..*) is associated with 'cmof::Relationship' (role 'cmof_Relationship', cardinality 0..*).
+'cmof::Element' (role 'cmof_Element131', cardinality 0..*) is associated with 'cmof::Exception' (role 'cmof_Exception', cardinality 0..*).
+'cmof::Link' (role 'cmof_Link143', cardinality 0..*) is associated with 'cmof::Association' (role 'cmof_Association144', cardinality 0..*).
+'cmof::Classifier' (role 'cmof_Classifier46', cardinality 0..*) is associated with 'cmof::RedefinableElement' (role 'cmof_RedefinableElement', cardinality 0..*).
+'cmof::BehavioralFeature' (role 'cmof_BehavioralFeature', cardinality 0..*) is associated with 'cmof::Parameter' (role 'cmof_Parameter', cardinality 0..*).
+'cmof::Constraint' (role 'cmof_Constraint116', cardinality 0..*) is associated with 'cmof::ValueSpecification' (role 'cmof_ValueSpecification', cardinality 0..*).
+'cmof::Tag' (role 'cmof_Tag', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element146', cardinality 0..*).
+'cmof::Association' (role 'cmof_Association78', cardinality 0..*) is associated with 'cmof::Property' (role 'cmof_Property79', cardinality 0..*).
+'cmof::Classifier' (role 'cmof_Classifier6', cardinality 0..*) is associated with 'cmof::NamedElement' (role 'cmof_NamedElement', cardinality 0..*).
+'cmof::Class' (role 'Class', cardinality 0..*) is associated with 'cmof::Property' (role 'ownedAttribute43', cardinality 0..*).
+'cmof::PackageMerge' (role 'packageMerge', cardinality 0..*) is associated with 'cmof::Package' (role 'Package65', cardinality 0..*).
+'cmof::ElementImport' (role 'cmof_ElementImport', cardinality 0..*) is associated with 'cmof::PackageableElement' (role 'cmof_PackageableElement119', cardinality 0..*).
+'cmof::Operation' (role 'cmof_Operation92', cardinality 0..*) is associated with 'cmof::Constraint' (role 'cmof_Constraint93', cardinality 0..*).
+'cmof::Property' (role 'Property86', cardinality 0..*) is associated with 'cmof::DataType' (role 'datatype85', cardinality 0..*).
+'cmof::Namespace' (role 'Namespace125', cardinality 0..*) is associated with 'cmof::PackageImport' (role 'packageImport', cardinality 0..*).
+'cmof::Property' (role 'Property', cardinality 0..*) is associated with 'cmof::Class' (role 'class_', cardinality 0..*).
+'cmof::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'cmof::DataType' (role 'DataType', cardinality 0..*).
+'cmof::Property' (role 'cmof_Property37', cardinality 0..*) is associated with 'cmof::Property' (role 'cmof_Property35', cardinality 0..*).
+'cmof::Element' (role 'cmof_Element23', cardinality 0..*) is associated with 'cmof::Comment' (role 'cmof_Comment22', cardinality 0..*).
+'cmof::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'cmof::Namespace' (role 'namespace', cardinality 0..*).
+'cmof::Package' (role 'receivingPackage', cardinality 0..*) is associated with 'cmof::PackageMerge' (role 'PackageMerge', cardinality 0..*).
+'cmof::Package' (role 'cmof_Package63', cardinality 0..*) is associated with 'cmof::PackageMerge' (role 'cmof_PackageMerge', cardinality 0..*).
+'cmof::Class' (role 'cmof_Class', cardinality 0..*) is associated with 'cmof::Class' (role 'cmof_Class27', cardinality 0..*).
+'cmof::Feature' (role 'feature', cardinality 0..*) is associated with 'cmof::Classifier' (role 'Classifier', cardinality 0..*).
+'cmof::Namespace' (role 'cmof_Namespace111', cardinality 0..*) is associated with 'cmof::Constraint' (role 'cmof_Constraint110', cardinality 0..*).
+'cmof::Constraint' (role 'ownedRule', cardinality 0..*) is associated with 'cmof::Namespace' (role 'Namespace', cardinality 0..*).
+'cmof::Namespace' (role 'importingNamespace11', cardinality 0..*) is associated with 'cmof::PackageImport' (role 'PackageImport', cardinality 0..*).
+'cmof::Operation' (role 'Operation', cardinality 0..*) is associated with 'cmof::Class' (role 'class_26', cardinality 0..*).
+'cmof::Operation' (role 'ownedOperation100', cardinality 0..*) is associated with 'cmof::DataType' (role 'DataType101', cardinality 0..*).
+'cmof::Element' (role 'ownedElement', cardinality 0..*) is associated with 'cmof::Element' (role 'Element19', cardinality 0..*).
+'cmof::PackageImport' (role 'cmof_PackageImport', cardinality 0..*) is associated with 'cmof::Package' (role 'cmof_Package123', cardinality 0..*).
+'cmof::NamedElement' (role 'cmof_NamedElement14', cardinality 0..*) is associated with 'cmof::Namespace' (role 'cmof_Namespace13', cardinality 0..*).
+'cmof::Property' (role 'cmof_Property41', cardinality 0..*) is associated with 'cmof::Property' (role 'cmof_Property39', cardinality 0..*).
+'cmof::Comment' (role 'cmof_Comment', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element', cardinality 0..*).
+'cmof::Package' (role 'Package', cardinality 0..*) is associated with 'cmof::Type' (role 'ownedType', cardinality 0..*).
+'cmof::Package' (role 'Package57', cardinality 0..*) is associated with 'cmof::Package' (role 'nestingPackage', cardinality 0..*).
+'cmof::Link' (role 'cmof_Link140', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element141', cardinality 0..*).
+'cmof::Link' (role 'cmof_Link', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element138', cardinality 0..*).
+'cmof::PackageableElement' (role 'cmof_PackageableElement', cardinality 0..*) is associated with 'cmof::Namespace' (role 'cmof_Namespace', cardinality 0..*).
+'cmof::Property' (role 'Property81', cardinality 0..*) is associated with 'cmof::Association' (role 'owningAssociation', cardinality 0..*).
+'cmof::Namespace' (role 'Namespace121', cardinality 0..*) is associated with 'cmof::ElementImport' (role 'elementImport', cardinality 0..*).
+'cmof::Package' (role 'package', cardinality 0..*) is associated with 'cmof::Type' (role 'Type', cardinality 0..*).
+'cmof::Element' (role 'cmof_Element67', cardinality 0..*) is associated with 'cmof::DirectedRelationship' (role 'cmof_DirectedRelationship', cardinality 0..*).
+'cmof::Association' (role 'association', cardinality 0..*) is associated with 'cmof::Property' (role 'Property76', cardinality 0..*).
+'cmof::Property' (role 'cmof_Property', cardinality 0..*) is associated with 'cmof::Classifier' (role 'cmof_Classifier', cardinality 0..*).
+'cmof::Association' (role 'cmof_Association', cardinality 0..*) is associated with 'cmof::Type' (role 'cmof_Type74', cardinality 0..*).
+'cmof::Package' (role 'cmof_Package136', cardinality 0..*) is associated with 'cmof::Factory' (role 'cmof_Factory', cardinality 0..*).
+'cmof::Operation' (role 'cmof_Operation108', cardinality 0..*) is associated with 'cmof::Parameter' (role 'cmof_Parameter107', cardinality 0..*).
+'cmof::Association' (role 'Association', cardinality 0..*) is associated with 'cmof::Property' (role 'ownedEnd', cardinality 0..*).
+'cmof::Package' (role 'Package60', cardinality 0..*) is associated with 'cmof::Package' (role 'nestedPackage', cardinality 0..*).
+'cmof::Constraint' (role 'cmof_Constraint96', cardinality 0..*) is associated with 'cmof::Operation' (role 'cmof_Operation95', cardinality 0..*).
+'cmof::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'cmof::Class' (role 'Class98', cardinality 0..*).
+'cmof::RedefinableElement' (role 'cmof_RedefinableElement49', cardinality 0..*) is associated with 'cmof::RedefinableElement' (role 'cmof_RedefinableElement47', cardinality 0..*).
+'cmof::Constraint' (role 'cmof_Constraint113', cardinality 0..*) is associated with 'cmof::Element' (role 'cmof_Element114', cardinality 0..*).
+'cmof::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'cmof::Enumeration' (role 'enumeration', cardinality 0..*).
+'cmof::Property' (role 'cmof_Property32', cardinality 0..*) is associated with 'cmof::Property' (role 'cmof_Property34', cardinality 0..*).
+'cmof::TypedElement' (role 'cmof_TypedElement', cardinality 0..*) is associated with 'cmof::Type' (role 'cmof_Type', cardinality 0..*).
+'cmof::Type' (role 'cmof_Type105', cardinality 0..*) is associated with 'cmof::BehavioralFeature' (role 'cmof_BehavioralFeature104', cardinality 0..*).
+'cmof::ValueSpecification' (role 'cmof_ValueSpecification127', cardinality 0..*) is associated with 'cmof::Expression' (role 'cmof_Expression', cardinality 0..*).
+'cmof::Operation' (role 'cmof_Operation87', cardinality 0..*) is associated with 'cmof::Operation' (role 'cmof_Operation', cardinality 0..*).
+'cmof::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'cmof::ElementImport' (role 'ElementImport', cardinality 0..*).
+'cmof::DataType' (role 'datatype', cardinality 0..*) is associated with 'cmof::Operation' (role 'Operation83', cardinality 0..*).
+'cmof::Property' (role 'memberEnd', cardinality 0..*) is associated with 'cmof::Association' (role 'Association31', cardinality 0..*).
+'cmof::Classifier' (role 'cmof_Classifier2', cardinality 0..*) is associated with 'cmof::Classifier' (role 'cmof_Classifier4', cardinality 0..*).
+'cmof::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'cmof::Feature' (role 'Feature', cardinality 0..*).
+'cmof::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'cmof::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).

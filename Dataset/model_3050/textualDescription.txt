@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'myDot::DotExpression' has no attributes.
+The class 'myDot::Entity' has the following attributes: 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'myDot::Usage' has no attributes.
+The class 'myDot::Ref' has no attributes.
+The class 'myDot::Feature' has the following attributes: 'name' of type str.
+The class 'myDot::EntityRef' has no attributes.
+The class 'myDot::Attribute' has the following attributes: 'type' of type str.
+The class 'myDot::Model' has no attributes.
+The class 'Ref' has no attributes.
+The class 'myDot::Reference' has no attributes.
+The enumeration 'DataType' has the following literals: 'int', 'string'.
+'myDot::Reference' is a specialization of 'Feature'.
+'myDot::Attribute' is a specialization of 'Feature'.
+'myDot::EntityRef' is a specialization of 'Ref'.
+'myDot::DotExpression' is a specialization of 'Ref'.
+'myDot::Entity' (role 'myDot_Entity15', cardinality 0..*) is associated with 'myDot::EntityRef' (role 'myDot_EntityRef', cardinality 0..*).
+'myDot::Usage' (role 'myDot_Usage', cardinality 0..*) is associated with 'myDot::Model' (role 'myDot_Model2', cardinality 0..*).
+'myDot::Ref' (role 'myDot_Ref10', cardinality 0..*) is associated with 'myDot::DotExpression' (role 'myDot_DotExpression', cardinality 0..*).
+'myDot::Model' (role 'myDot_Model', cardinality 0..*) is associated with 'myDot::Entity' (role 'myDot_Entity', cardinality 0..*).
+'myDot::Entity' (role 'myDot_Entity4', cardinality 0..*) is associated with 'myDot::Feature' (role 'myDot_Feature', cardinality 0..*).
+'myDot::Ref' (role 'myDot_Ref', cardinality 0..*) is associated with 'myDot::Usage' (role 'myDot_Usage8', cardinality 0..*).
+'myDot::Entity' (role 'myDot_Entity6', cardinality 0..*) is associated with 'myDot::Reference' (role 'myDot_Reference', cardinality 0..*).
+'myDot::Feature' (role 'myDot_Feature13', cardinality 0..*) is associated with 'myDot::DotExpression' (role 'myDot_DotExpression12', cardinality 0..*).

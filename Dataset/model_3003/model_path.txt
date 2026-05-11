@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rseidi/Amethyst/org.amethystlang/bin/org/amethystlang/Amethyst.ecore

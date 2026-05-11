@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'BinaryExp' has no attributes.
+The class 'fl::ArgumentExp' has no attributes.
+The class 'fl::Argument' has the following attributes: 'name' of type str.
+The class 'fl::BinaryExp' has no attributes.
+The class 'fl::LiteralExp' has the following attributes: 'value' of type int.
+The class 'fl::MinusExp' has no attributes.
+The class 'fl::Program' has no attributes.
+The class 'Exp' has no attributes.
+The class 'fl::ApplyExp' has no attributes.
+The class 'fl::IfThenElseExp' has no attributes.
+The class 'fl::Exp' has no attributes.
+The class 'fl::PlusExp' has no attributes.
+The class 'fl::Function' has the following attributes: 'name' of type str.
+The class 'fl::EqualExp' has no attributes.
+'fl::PlusExp' is a specialization of 'BinaryExp'.
+'fl::LiteralExp' is a specialization of 'Exp'.
+'fl::IfThenElseExp' is a specialization of 'Exp'.
+'fl::BinaryExp' is a specialization of 'Exp'.
+'fl::MinusExp' is a specialization of 'BinaryExp'.
+'fl::ArgumentExp' is a specialization of 'Exp'.
+'fl::ApplyExp' is a specialization of 'Exp'.
+'fl::EqualExp' is a specialization of 'BinaryExp'.
+'fl::Argument' (role 'fl_Argument6', cardinality 0..*) is associated with 'fl::ArgumentExp' (role 'fl_ArgumentExp', cardinality 0..*).
+'fl::IfThenElseExp' (role 'fl_IfThenElseExp13', cardinality 0..*) is associated with 'fl::Exp' (role 'fl_Exp14', cardinality 0..*).
+'fl::BinaryExp' (role 'fl_BinaryExp23', cardinality 0..*) is associated with 'fl::Exp' (role 'fl_Exp24', cardinality 0..*).
+'fl::Exp' (role 'fl_Exp19', cardinality 0..*) is associated with 'fl::ApplyExp' (role 'fl_ApplyExp18', cardinality 0..*).
+'fl::BinaryExp' (role 'fl_BinaryExp', cardinality 0..*) is associated with 'fl::Exp' (role 'fl_Exp21', cardinality 0..*).
+'fl::Program' (role 'fl_Program', cardinality 0..*) is associated with 'fl::Function' (role 'fl_Function', cardinality 0..*).
+'fl::Exp' (role 'fl_Exp', cardinality 0..*) is associated with 'fl::Function' (role 'fl_Function4', cardinality 0..*).
+'fl::IfThenElseExp' (role 'fl_IfThenElseExp', cardinality 0..*) is associated with 'fl::Exp' (role 'fl_Exp8', cardinality 0..*).
+'fl::Exp' (role 'fl_Exp11', cardinality 0..*) is associated with 'fl::IfThenElseExp' (role 'fl_IfThenElseExp10', cardinality 0..*).
+'fl::Function' (role 'fl_Function16', cardinality 0..*) is associated with 'fl::ApplyExp' (role 'fl_ApplyExp', cardinality 0..*).
+'fl::Argument' (role 'fl_Argument', cardinality 0..*) is associated with 'fl::Function' (role 'fl_Function2', cardinality 0..*).

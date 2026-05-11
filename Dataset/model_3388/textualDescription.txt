@@ -1,0 +1,33 @@
+The model has 13 class(es).
+The class 'fds::FunctionalDependency' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'fds::PrimaryKey' has no attributes.
+The class 'fds::Column' has no attributes.
+The class 'fds::ForeignKey' has no attributes.
+The class 'fds::NamedElement' has the following attributes: 'name' of type str.
+The class 'fds::Table' has no attributes.
+The class 'fds::RestrictionColumn' has no attributes.
+The class 'fds::Restriction' has no attributes.
+The class 'fds::Database' has no attributes.
+The class 'CandidateKey' has no attributes.
+The class 'Restriction' has no attributes.
+The class 'fds::CandidateKey' has no attributes.
+'fds::Database' is a specialization of 'NamedElement'.
+'fds::CandidateKey' is a specialization of 'Restriction'.
+'fds::PrimaryKey' is a specialization of 'CandidateKey'.
+'fds::RestrictionColumn' is a specialization of 'NamedElement'.
+'fds::ForeignKey' is a specialization of 'Restriction'.
+'fds::Column' is a specialization of 'NamedElement'.
+'fds::Restriction' is a specialization of 'NamedElement'.
+'fds::Table' is a specialization of 'NamedElement'.
+'fds::Column' (role 'fds_Column17', cardinality 0..*) is associated with 'fds::RestrictionColumn' (role 'fds_RestrictionColumn', cardinality 0..*).
+'fds::Column' (role 'fds_Column', cardinality 0..*) is associated with 'fds::Table' (role 'fds_Table2', cardinality 0..*).
+'fds::RestrictionColumn' (role 'RestrictionColumn', cardinality 0..*) is associated with 'fds::Restriction' (role 'restriction', cardinality 0..*).
+'fds::Restriction' (role 'fds_Restriction', cardinality 0..*) is associated with 'fds::Table' (role 'fds_Table6', cardinality 0..*).
+'fds::PrimaryKey' (role 'fds_PrimaryKey', cardinality 0..*) is associated with 'fds::ForeignKey' (role 'fds_ForeignKey', cardinality 0..*).
+'fds::Restriction' (role 'Restriction', cardinality 0..*) is associated with 'fds::RestrictionColumn' (role 'restrictionsColumns', cardinality 0..*).
+'fds::RestrictionColumn' (role 'fds_RestrictionColumn20', cardinality 0..*) is associated with 'fds::RestrictionColumn' (role 'fds_RestrictionColumn18', cardinality 0..*).
+'fds::FunctionalDependency' (role 'fds_FunctionalDependency13', cardinality 0..*) is associated with 'fds::Column' (role 'fds_Column14', cardinality 0..*).
+'fds::Table' (role 'fds_Table', cardinality 0..*) is associated with 'fds::Database' (role 'fds_Database', cardinality 0..*).
+'fds::FunctionalDependency' (role 'fds_FunctionalDependency', cardinality 0..*) is associated with 'fds::Table' (role 'fds_Table4', cardinality 0..*).
+'fds::Column' (role 'fds_Column11', cardinality 0..*) is associated with 'fds::FunctionalDependency' (role 'fds_FunctionalDependency10', cardinality 0..*).

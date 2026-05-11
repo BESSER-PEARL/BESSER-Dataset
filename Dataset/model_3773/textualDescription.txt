@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'feature::Model' has the following attributes: 'features' of type str.
+The class 'feature::Feature' has the following attributes: 'min' of type int; 'name' of type str; 'attribute' of type str; 'max' of type int; 'isSelected' of type bool.
+'feature::Feature' (role 'feature_Feature', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature0', cardinality 0..*).

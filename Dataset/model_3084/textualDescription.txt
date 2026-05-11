@@ -1,0 +1,187 @@
+The model has 74 class(es).
+The class 'cppmodel::CPPNamedElement' has the following attributes: 'cppName' of type str.
+The class 'CPPNamedElement' has no attributes.
+The class 'cppmodel::CPPEnumerator' has the following attributes: 'cppValue' of type str.
+The class 'cppmodel::CPPEvent' has no attributes.
+The class 'cppmodel::CPPPackage' has no attributes.
+The class 'cppmodel::CPPEnumType' has no attributes.
+The class 'cppmodel::CPPSignal' has no attributes.
+The class 'cppmodel::State' has no attributes.
+The class 'cppmodel::CPPComponent' has no attributes.
+The class 'cppmodel::CPPFormalParameter' has the following attributes: 'passingMode' of type str.
+The class 'OOPLEnumerator' has no attributes.
+The class 'cppmodel::CPPClassReference' has no attributes.
+The class 'cppmodel::CPPUserDefinedType' has no attributes.
+The class 'cppmodel::CPPOperation' has no attributes.
+The class 'cppmodel::XTPort' has no attributes.
+The class 'cppmodel::XTProtocol' has no attributes.
+The class 'cppmodel::CPPStructType' has no attributes.
+The class 'cppmodel::CPPPort' has no attributes.
+The class 'cppmodel::TypedMultiplicityElement' has no attributes.
+The class 'cppmodel::CPPSourceFile' has the following attributes: 'generationName' of type str; 'generationPath' of type str; 'generationDirectory' of type str.
+The class 'cppmodel::Signal' has no attributes.
+The class 'cppmodel::CPPDirectory' has the following attributes: 'parentDirectory' of type str; 'path' of type str; 'name' of type str.
+The class 'OOPLEnumType' has no attributes.
+The class 'cppmodel::Transition' has no attributes.
+The class 'cppmodel::CPPRelation' has no attributes.
+The class 'OOPLUserDefinedType' has no attributes.
+The class 'cppmodel::CPPState' has no attributes.
+The class 'cppmodel::Model' has no attributes.
+The class 'cppmodel::CPPHeaderFile' has the following attributes: 'includePath' of type str; 'includeName' of type str; 'includeDirectory' of type str.
+The class 'OOPLStructType' has no attributes.
+The class 'cppmodel::CPPProtocolOperationDefinition' has no attributes.
+The class 'OOPLClassRefSimpleCollection' has no attributes.
+The class 'OOPLClassReferenceStorage' has no attributes.
+The class 'OOPLStructMember' has no attributes.
+The class 'OOPLClassRefAssocCollection' has no attributes.
+The class 'cppmodel::XTProtocolOperationImplementation' has no attributes.
+The class 'cppmodel::Attribute' has no attributes.
+The class 'cppmodel::CPPExternalBridge' has the following attributes: 'cppExternalNamespace' of type str.
+The class 'cppmodel::OOPLNameProvider' has no attributes.
+The class 'cppmodel::Parameter' has no attributes.
+The class 'cppmodel::CPPStructMember' has no attributes.
+The class 'CPPQualifiedNamedElement' has no attributes.
+The class 'cppmodel::CPPBodyFile' has no attributes.
+The class 'cppmodel::CPPMakeFile' has no attributes.
+The class 'OOPLBasicType' has no attributes.
+The class 'CPPSourceFile' has no attributes.
+The class 'cppmodel::CPPClassRefAssocCollection' has the following attributes: 'cppContainer' of type str.
+The class 'cppmodel::OOPLDataType' has no attributes.
+The class 'cppmodel::CPPModel' has no attributes.
+The class 'cppmodel::XTEvent' has no attributes.
+The class 'cppmodel::CPPBasicType' has the following attributes: 'cppSpecifier' of type str.
+The class 'cppmodel::CPPExternalLibrary' has no attributes.
+The class 'cppmodel::CPPTransition' has no attributes.
+The class 'cppmodel::Package' has no attributes.
+The class 'cppmodel::CPPProtocol' has no attributes.
+The class 'OOPLClassReference' has no attributes.
+The class 'OOPLRelation' has no attributes.
+The class 'cppmodel::CPPExternalHeaderInclusion' has the following attributes: 'comment' of type str.
+The class 'cppmodel::Operation' has no attributes.
+The class 'cppmodel::CPPClass' has no attributes.
+The class 'cppmodel::CPPQualifiedNamedElement' has the following attributes: 'cppPrefix' of type str; 'cppQualifiedName' of type str.
+The class 'cppmodel::CPPSequence' has the following attributes: 'cppContainer' of type str.
+The class 'OOPLClass' has no attributes.
+The class 'cppmodel::CPPClassReferenceStorage' has no attributes.
+The class 'OOPLSequence' has no attributes.
+The class 'cppmodel::Snippet' has no attributes.
+The class 'cppmodel::CPPProtocolOperationImplementation' has no attributes.
+The class 'cppmodel::XTProtocolOperationDefinition' has no attributes.
+The class 'cppmodel::CPPAttribute' has no attributes.
+The class 'cppmodel::XTComponent' has no attributes.
+The class 'cppmodel::XTClass' has no attributes.
+The class 'cppmodel::CPPClassRefSimpleCollection' has the following attributes: 'cppContainer' of type str.
+The class 'cppmodel::CPPReturnValue' has no attributes.
+The class 'cppmodel::CPPExternalHeader' has the following attributes: 'name' of type str.
+The enumeration 'CPPParameterPassingKind' has the following literals: 'BY_VALUE', 'BY_CONSTANT_REFERENCE', 'BY_REFERENCE'.
+'cppmodel::CPPClass' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPProtocolOperationImplementation' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPStructType' is a specialization of 'OOPLStructType'.
+'cppmodel::CPPQualifiedNamedElement' is a specialization of 'CPPNamedElement'.
+'cppmodel::CPPEnumType' is a specialization of 'OOPLEnumType'.
+'cppmodel::CPPEnumerator' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPOperation' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPUserDefinedType' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPEnumerator' is a specialization of 'OOPLEnumerator'.
+'cppmodel::CPPTransition' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPExternalBridge' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPRelation' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPComponent' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPClassRefSimpleCollection' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPSequence' is a specialization of 'OOPLSequence'.
+'cppmodel::CPPStructMember' is a specialization of 'OOPLStructMember'.
+'cppmodel::CPPEnumType' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPHeaderFile' is a specialization of 'CPPSourceFile'.
+'cppmodel::CPPRelation' is a specialization of 'OOPLRelation'.
+'cppmodel::CPPClassRefAssocCollection' is a specialization of 'OOPLClassRefAssocCollection'.
+'cppmodel::CPPClassReferenceStorage' is a specialization of 'OOPLClassReferenceStorage'.
+'cppmodel::CPPModel' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPBasicType' is a specialization of 'OOPLBasicType'.
+'cppmodel::CPPClass' is a specialization of 'OOPLClass'.
+'cppmodel::CPPProtocol' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPClassRefSimpleCollection' is a specialization of 'OOPLClassRefSimpleCollection'.
+'cppmodel::CPPAttribute' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPMakeFile' is a specialization of 'CPPSourceFile'.
+'cppmodel::CPPProtocolOperationDefinition' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPFormalParameter' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPClassReference' is a specialization of 'OOPLClassReference'.
+'cppmodel::CPPClassRefAssocCollection' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPUserDefinedType' is a specialization of 'OOPLUserDefinedType'.
+'cppmodel::CPPStructMember' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPClassReferenceStorage' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPClassReference' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPBodyFile' is a specialization of 'CPPSourceFile'.
+'cppmodel::CPPStructType' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPPort' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPEvent' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPPackage' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPReturnValue' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPBasicType' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPState' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPSignal' is a specialization of 'CPPQualifiedNamedElement'.
+'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent', cardinality 0..*) is associated with 'cppmodel::XTComponent' (role 'cppmodel_XTComponent', cardinality 0..*).
+'cppmodel::CPPReturnValue' (role 'cppmodel_CPPReturnValue137', cardinality 0..*) is associated with 'cppmodel::CPPSequence' (role 'cppmodel_CPPSequence138', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile10', cardinality 0..*) is associated with 'cppmodel::CPPModel' (role 'cppmodel_CPPModel9', cardinality 0..*).
+'cppmodel::Snippet' (role 'cppmodel_Snippet118', cardinality 0..*) is associated with 'cppmodel::CPPState' (role 'cppmodel_CPPState117', cardinality 0..*).
+'cppmodel::CPPOperation' (role 'cppmodel_CPPOperation', cardinality 0..*) is associated with 'cppmodel::Operation' (role 'cppmodel_Operation', cardinality 0..*).
+'cppmodel::Model' (role 'cppmodel_Model', cardinality 0..*) is associated with 'cppmodel::CPPModel' (role 'cppmodel_CPPModel', cardinality 0..*).
+'cppmodel::CPPPort' (role 'cppmodel_CPPPort97', cardinality 0..*) is associated with 'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile98', cardinality 0..*).
+'cppmodel::CPPSequence' (role 'cppmodel_CPPSequence', cardinality 0..*) is associated with 'cppmodel::CPPAttribute' (role 'cppmodel_CPPAttribute109', cardinality 0..*).
+'cppmodel::CPPReturnValue' (role 'cppmodel_CPPReturnValue140', cardinality 0..*) is associated with 'cppmodel::TypedMultiplicityElement' (role 'cppmodel_TypedMultiplicityElement', cardinality 0..*).
+'cppmodel::CPPEvent' (role 'cppmodel_CPPEvent', cardinality 0..*) is associated with 'cppmodel::XTEvent' (role 'cppmodel_XTEvent', cardinality 0..*).
+'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent82', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory83', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile62', cardinality 0..*) is associated with 'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent61', cardinality 0..*).
+'cppmodel::CPPSourceFile' (role 'cppmodel_CPPSourceFile', cardinality 0..*) is associated with 'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile48', cardinality 0..*).
+'cppmodel::CPPClassRefAssocCollection' (role 'cppmodel_CPPClassRefAssocCollection', cardinality 0..*) is associated with 'cppmodel::CPPAttribute' (role 'cppmodel_CPPAttribute', cardinality 0..*).
+'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent67', cardinality 0..*) is associated with 'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile68', cardinality 0..*).
+'cppmodel::CPPSequence' (role 'cppmodel_CPPSequence130', cardinality 0..*) is associated with 'cppmodel::CPPFormalParameter' (role 'cppmodel_CPPFormalParameter129', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile95', cardinality 0..*) is associated with 'cppmodel::CPPPort' (role 'cppmodel_CPPPort94', cardinality 0..*).
+'cppmodel::CPPMakeFile' (role 'cppmodel_CPPMakeFile', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory58', cardinality 0..*).
+'cppmodel::CPPProtocolOperationDefinition' (role 'cppmodel_CPPProtocolOperationDefinition', cardinality 0..*) is associated with 'cppmodel::XTProtocolOperationDefinition' (role 'cppmodel_XTProtocolOperationDefinition', cardinality 0..*).
+'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile', cardinality 0..*) is associated with 'cppmodel::CPPModel' (role 'cppmodel_CPPModel5', cardinality 0..*).
+'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent79', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory80', cardinality 0..*).
+'cppmodel::CPPExternalBridge' (role 'cppmodel_CPPExternalBridge149', cardinality 0..*) is associated with 'cppmodel::XTClass' (role 'cppmodel_XTClass', cardinality 0..*).
+'cppmodel::CPPState' (role 'cppmodel_CPPState', cardinality 0..*) is associated with 'cppmodel::State' (role 'cppmodel_State', cardinality 0..*).
+'cppmodel::CPPQualifiedNamedElement' (role 'cppmodel_CPPQualifiedNamedElement', cardinality 0..*) is associated with 'cppmodel::CPPQualifiedNamedElement' (role 'cppmodel_CPPQualifiedNamedElement1', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory37', cardinality 0..*) is associated with 'cppmodel::CPPPackage' (role 'cppmodel_CPPPackage36', cardinality 0..*).
+'cppmodel::Signal' (role 'cppmodel_Signal', cardinality 0..*) is associated with 'cppmodel::CPPSignal' (role 'cppmodel_CPPSignal', cardinality 0..*).
+'cppmodel::Snippet' (role 'cppmodel_Snippet122', cardinality 0..*) is associated with 'cppmodel::CPPTransition' (role 'cppmodel_CPPTransition121', cardinality 0..*).
+'cppmodel::CPPReturnValue' (role 'cppmodel_CPPReturnValue', cardinality 0..*) is associated with 'cppmodel::OOPLDataType' (role 'cppmodel_OOPLDataType135', cardinality 0..*).
+'cppmodel::CPPPackage' (role 'cppmodel_CPPPackage30', cardinality 0..*) is associated with 'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile31', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile46', cardinality 0..*) is associated with 'cppmodel::CPPProtocol' (role 'cppmodel_CPPProtocol45', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory74', cardinality 0..*) is associated with 'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent73', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile13', cardinality 0..*) is associated with 'cppmodel::CPPModel' (role 'cppmodel_CPPModel12', cardinality 0..*).
+'cppmodel::CPPExternalHeader' (role 'cppmodel_CPPExternalHeader142', cardinality 0..*) is associated with 'cppmodel::CPPExternalLibrary' (role 'cppmodel_CPPExternalLibrary', cardinality 0..*).
+'cppmodel::CPPOperation' (role 'cppmodel_CPPOperation88', cardinality 0..*) is associated with 'cppmodel::Snippet' (role 'cppmodel_Snippet', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory77', cardinality 0..*) is associated with 'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent76', cardinality 0..*).
+'cppmodel::CPPPort' (role 'cppmodel_CPPPort100', cardinality 0..*) is associated with 'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile101', cardinality 0..*).
+'cppmodel::CPPPort' (role 'cppmodel_CPPPort', cardinality 0..*) is associated with 'cppmodel::XTPort' (role 'cppmodel_XTPort', cardinality 0..*).
+'cppmodel::Attribute' (role 'cppmodel_Attribute', cardinality 0..*) is associated with 'cppmodel::CPPAttribute' (role 'cppmodel_CPPAttribute107', cardinality 0..*).
+'cppmodel::XTProtocolOperationImplementation' (role 'cppmodel_XTProtocolOperationImplementation', cardinality 0..*) is associated with 'cppmodel::CPPProtocolOperationImplementation' (role 'cppmodel_CPPProtocolOperationImplementation', cardinality 0..*).
+'cppmodel::OOPLNameProvider' (role 'cppmodel_OOPLNameProvider', cardinality 0..*) is associated with 'cppmodel::CPPNamedElement' (role 'cppmodel_CPPNamedElement', cardinality 0..*).
+'cppmodel::CPPExternalHeader' (role 'cppmodel_CPPExternalHeader', cardinality 0..*) is associated with 'cppmodel::CPPExternalHeaderInclusion' (role 'cppmodel_CPPExternalHeaderInclusion85', cardinality 0..*).
+'cppmodel::CPPFormalParameter' (role 'cppmodel_CPPFormalParameter132', cardinality 0..*) is associated with 'cppmodel::OOPLDataType' (role 'cppmodel_OOPLDataType133', cardinality 0..*).
+'cppmodel::Package' (role 'cppmodel_Package', cardinality 0..*) is associated with 'cppmodel::CPPPackage' (role 'cppmodel_CPPPackage', cardinality 0..*).
+'cppmodel::CPPPort' (role 'cppmodel_CPPPort91', cardinality 0..*) is associated with 'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile92', cardinality 0..*).
+'cppmodel::Transition' (role 'cppmodel_Transition', cardinality 0..*) is associated with 'cppmodel::CPPTransition' (role 'cppmodel_CPPTransition', cardinality 0..*).
+'cppmodel::CPPPackage' (role 'cppmodel_CPPPackage27', cardinality 0..*) is associated with 'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile28', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory18', cardinality 0..*) is associated with 'cppmodel::CPPModel' (role 'cppmodel_CPPModel17', cardinality 0..*).
+'cppmodel::CPPPackage' (role 'cppmodel_CPPPackage33', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory34', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile71', cardinality 0..*) is associated with 'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent70', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory55', cardinality 0..*) is associated with 'cppmodel::CPPSourceFile' (role 'cppmodel_CPPSourceFile56', cardinality 0..*).
+'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile65', cardinality 0..*) is associated with 'cppmodel::CPPComponent' (role 'cppmodel_CPPComponent64', cardinality 0..*).
+'cppmodel::CPPFormalParameter' (role 'cppmodel_CPPFormalParameter', cardinality 0..*) is associated with 'cppmodel::Parameter' (role 'cppmodel_Parameter', cardinality 0..*).
+'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile147', cardinality 0..*) is associated with 'cppmodel::CPPExternalBridge' (role 'cppmodel_CPPExternalBridge146', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile144', cardinality 0..*) is associated with 'cppmodel::CPPExternalBridge' (role 'cppmodel_CPPExternalBridge', cardinality 0..*).
+'cppmodel::CPPModel' (role 'cppmodel_CPPModel20', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory21', cardinality 0..*).
+'cppmodel::CPPModel' (role 'cppmodel_CPPModel15', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory', cardinality 0..*).
+'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory51', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory53', cardinality 0..*).
+'cppmodel::CPPTransition' (role 'cppmodel_CPPTransition124', cardinality 0..*) is associated with 'cppmodel::Snippet' (role 'cppmodel_Snippet125', cardinality 0..*).
+'cppmodel::CPPBodyFile' (role 'cppmodel_CPPBodyFile42', cardinality 0..*) is associated with 'cppmodel::CPPClass' (role 'cppmodel_CPPClass41', cardinality 0..*).
+'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile39', cardinality 0..*) is associated with 'cppmodel::CPPClass' (role 'cppmodel_CPPClass', cardinality 0..*).
+'cppmodel::CPPAttribute' (role 'cppmodel_CPPAttribute111', cardinality 0..*) is associated with 'cppmodel::OOPLDataType' (role 'cppmodel_OOPLDataType', cardinality 0..*).
+'cppmodel::CPPState' (role 'cppmodel_CPPState114', cardinality 0..*) is associated with 'cppmodel::Snippet' (role 'cppmodel_Snippet115', cardinality 0..*).
+'cppmodel::CPPModel' (role 'cppmodel_CPPModel7', cardinality 0..*) is associated with 'cppmodel::CPPHeaderFile' (role 'cppmodel_CPPHeaderFile', cardinality 0..*).
+'cppmodel::CPPProtocol' (role 'cppmodel_CPPProtocol', cardinality 0..*) is associated with 'cppmodel::XTProtocol' (role 'cppmodel_XTProtocol', cardinality 0..*).
+'cppmodel::CPPModel' (role 'cppmodel_CPPModel23', cardinality 0..*) is associated with 'cppmodel::CPPDirectory' (role 'cppmodel_CPPDirectory24', cardinality 0..*).
+'cppmodel::CPPExternalHeaderInclusion' (role 'cppmodel_CPPExternalHeaderInclusion', cardinality 0..*) is associated with 'cppmodel::CPPSourceFile' (role 'cppmodel_CPPSourceFile50', cardinality 0..*).

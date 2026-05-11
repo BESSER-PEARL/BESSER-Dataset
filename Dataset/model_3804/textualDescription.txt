@@ -1,0 +1,25 @@
+The model has 7 class(es).
+The class 'ER::ERSchema' has no attributes.
+The class 'ER::Relship' has the following attributes: 'name' of type str.
+The class 'ER::ERAttribute' has the following attributes: 'name' of type str; 'isKey' of type bool.
+The class 'ER::ERElem' has no attributes.
+The class 'ER::Entity' has the following attributes: 'name' of type str.
+The class 'ER::RelshipEnd' has the following attributes: 'name' of type str.
+The class 'ERElem' has no attributes.
+'ER::Relship' is a specialization of 'ERElem'.
+'ER::ERSchema' is a specialization of 'ERElem'.
+'ER::Entity' is a specialization of 'ERElem'.
+'ER::RelshipEnd' is a specialization of 'ERElem'.
+'ER::ERAttribute' is a specialization of 'ERElem'.
+'ER::Relship' (role 'relship', cardinality 0..*) is associated with 'ER::ERAttribute' (role 'ERAttribute8', cardinality 0..*).
+'ER::Entity' (role 'entities', cardinality 0..*) is associated with 'ER::ERSchema' (role 'ERSchema', cardinality 0..*).
+'ER::Relship' (role 'Relship23', cardinality 0..*) is associated with 'ER::ERAttribute' (role 'attrs22', cardinality 0..*).
+'ER::Relship' (role 'Relship15', cardinality 0..*) is associated with 'ER::RelshipEnd' (role 'ends', cardinality 0..*).
+'ER::ERSchema' (role 'schema2', cardinality 0..*) is associated with 'ER::Relship' (role 'Relship', cardinality 0..*).
+'ER::Entity' (role 'Entity', cardinality 0..*) is associated with 'ER::ERSchema' (role 'schema', cardinality 0..*).
+'ER::ERSchema' (role 'ERSchema13', cardinality 0..*) is associated with 'ER::Relship' (role 'relships', cardinality 0..*).
+'ER::RelshipEnd' (role 'ends17', cardinality 0..*) is associated with 'ER::Entity' (role 'Entity18', cardinality 0..*).
+'ER::Entity' (role 'entity5', cardinality 0..*) is associated with 'ER::RelshipEnd' (role 'RelshipEnd', cardinality 0..*).
+'ER::Entity' (role 'Entity20', cardinality 0..*) is associated with 'ER::ERAttribute' (role 'attrs', cardinality 0..*).
+'ER::RelshipEnd' (role 'RelshipEnd11', cardinality 0..*) is associated with 'ER::Relship' (role 'relship10', cardinality 0..*).
+'ER::Entity' (role 'entity', cardinality 0..*) is associated with 'ER::ERAttribute' (role 'ERAttribute', cardinality 0..*).

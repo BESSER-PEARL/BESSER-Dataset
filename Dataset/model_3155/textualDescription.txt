@@ -1,0 +1,335 @@
+The model has 107 class(es).
+The class 'sadl::ModelName' has the following attributes: 'version' of type str; 'annType' of type str; 'alias' of type str; 'baseUri' of type str.
+The class 'sadl::PropValPartialTriple' has no attributes.
+The class 'sadl::MaxCardinality' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'sadl::InstanceDeclaration' has the following attributes: 'article' of type str.
+The class 'sadl::HasValueCondition' has no attributes.
+The class 'sadl::Import' has the following attributes: 'importURI' of type str; 'alias' of type str.
+The class 'sadl::OrderList' has no attributes.
+The class 'sadl::MaxCardCondition' has the following attributes: 'card' of type str.
+The class 'sadl::Cardinality' has no attributes.
+The class 'sadl::ComplementOfClass' has no attributes.
+The class 'sadl::AddlClassInfo' has no attributes.
+The class 'sadl::MergedTriples' has no attributes.
+The class 'sadl::VariableList' has no attributes.
+The class 'sadl::Display' has the following attributes: 'displayString' of type str; 'model' of type str.
+The class 'InstanceDeclarationStatement' has no attributes.
+The class 'sadl::IsInverseOf' has no attributes.
+The class 'sadl::DataTypeRestriction' has the following attributes: 'basetype' of type str; 'basetypes' of type str.
+The class 'sadl::IntersectionResource' has no attributes.
+The class 'sadl::TypedBNode' has the following attributes: 'article' of type str.
+The class 'sadl::SomeValuesCondition' has no attributes.
+The class 'sadl::ExistingResourceList' has no attributes.
+The class 'sadl::Object' has no attributes.
+The class 'sadl::Statement' has no attributes.
+The class 'sadl::SelectExpression' has the following attributes: 'distinct' of type str; 'allVars' of type str; 'orderby' of type str.
+The class 'sadl::ExplicitValue' has the following attributes: 'valueList' of type str; 'term' of type str.
+The class 'sadl::AllValuesCondition' has no attributes.
+The class 'sadl::Range' has the following attributes: 'single' of type str; 'list' of type str; 'lists' of type str.
+The class 'sadl::UnaryOpExpression' has the following attributes: 'op' of type str.
+The class 'sadl::UserDefinedDataType' has no attributes.
+The class 'sadl::Model' has no attributes.
+The class 'sadl::BinaryOpExpression' has the following attributes: 'op' of type str.
+The class 'sadl::PropertyOfClass' has no attributes.
+The class 'sadl::ExistentialNegation' has no attributes.
+The class 'sadl::ContentList' has the following attributes: 'annContent' of type str.
+The class 'sadl::DisjointClasses' has no attributes.
+The class 'sadl::ModelElement' has no attributes.
+The class 'sadl::SubTypeOf' has no attributes.
+The class 'sadl::EmbeddedInstanceDeclaration' has no attributes.
+The class 'sadl::Condition' has no attributes.
+The class 'sadl::ValueRow' has no attributes.
+The class 'sadl::InstancesAllDifferent' has no attributes.
+The class 'sadl::ResourceName' has the following attributes: 'name' of type str; 'annType' of type str.
+The class 'sadl::WithPhrase' has no attributes.
+The class 'sadl::SomeValuesFrom' has no attributes.
+The class 'sadl::ExistingInstanceAttribution' has no attributes.
+The class 'sadl::TypeDeclaration' has no attributes.
+The class 'sadl::InstAttrSPV' has no attributes.
+The class 'sadl::FunctionalProperty' has no attributes.
+The class 'sadl::MinCardCondition' has the following attributes: 'card' of type str.
+The class 'sadl::JunctionExpression' has the following attributes: 'op' of type str.
+The class 'sadl::MinCardinality' has no attributes.
+The class 'sadl::AdditionalPropertyInfo' has the following attributes: 'isTrans' of type str; 'isfunc' of type str; 'isinvfunc' of type str; 'isSym' of type str.
+The class 'GraphPattern' has no attributes.
+The class 'sadl::UnionResource' has no attributes.
+The class 'sadl::WithChain' has no attributes.
+The class 'sadl::ElementSet' has no attributes.
+The class 'sadl::OfPhrase' has the following attributes: 'article' of type str.
+The class 'sadl::ClassDeclaration' has no attributes.
+The class 'sadl::Explanation' has the following attributes: 'rulename' of type str.
+The class 'sadl::EnumeratedAllAndSomeValuesFrom' has no attributes.
+The class 'sadl::AllValuesFrom' has no attributes.
+The class 'sadl::InstAttrPSV' has no attributes.
+The class 'sadl::InverseFunctionalProperty' has no attributes.
+The class 'sadl::Facets' has the following attributes: 'regex' of type str; 'min' of type str; 'minlen' of type str; 'max' of type str; 'maxlen' of type str; 'values' of type str; 'maxexin' of type str; 'minexin' of type str; 'len' of type str.
+The class 'sadl::ResourceByName' has no attributes.
+The class 'sadl::SymmetricalProperty' has no attributes.
+The class 'sadl::Test' has no attributes.
+The class 'sadl::PropertyDeclaration' has the following attributes: 'article' of type str.
+The class 'sadl::InverseProperty' has no attributes.
+The class 'sadl::ResourceList' has no attributes.
+The class 'sadl::Rule' has the following attributes: 'name' of type str.
+The class 'EmbeddedInstanceDeclaration' has no attributes.
+The class 'sadl::OfPatternReturningValues' has no attributes.
+The class 'sadl::EquivalentConcepts' has no attributes.
+The class 'sadl::GraphPattern' has no attributes.
+The class 'sadl::Query' has no attributes.
+The class 'sadl::ConstructExpression' has no attributes.
+The class 'ResourceBySetOp' has no attributes.
+The class 'sadl::AskQueryExpression' has no attributes.
+The class 'sadl::LiteralValue' has the following attributes: 'literalString' of type str; 'literalNumber' of type str; 'literalBoolean' of type str.
+The class 'sadl::ValueTable' has no attributes.
+The class 'sadl::OrderElement' has the following attributes: 'order' of type str.
+The class 'sadl::Expression' has the following attributes: 'func' of type str.
+The class 'sadl::PropOfSubj' has no attributes.
+The class 'sadl::EObject' has no attributes.
+The class 'Expression' has no attributes.
+The class 'sadl::SubjProp' has no attributes.
+The class 'sadl::InstanceDifferentFrom' has no attributes.
+The class 'sadl::DefaultValue' has the following attributes: 'level' of type str.
+The class 'sadl::ResourceBySetOp' has the following attributes: 'op' of type str; 'annType' of type str.
+The class 'ResourceIdentifier' has no attributes.
+The class 'sadl::IntervalValue' has the following attributes: 'op' of type str.
+The class 'sadl::RangeType' has the following attributes: 'dataType' of type str.
+The class 'sadl::HasValue' has no attributes.
+The class 'sadl::Expr' has no attributes.
+The class 'sadl::EnumeratedAllValuesFrom' has no attributes.
+The class 'sadl::InstanceDeclarationStatement' has no attributes.
+The class 'sadl::ResourceByRestriction' has the following attributes: 'annType' of type str.
+The class 'sadl::ResourceIdentifier' has no attributes.
+The class 'sadl::EnumeratedInstances' has no attributes.
+The class 'Statement' has no attributes.
+The class 'sadl::NecessaryAndSufficient' has the following attributes: 'article' of type str.
+The class 'sadl::CardCondition' has the following attributes: 'card' of type str.
+The class 'Condition' has no attributes.
+The class 'sadl::TransitiveProperty' has no attributes.
+The class 'sadl::LiteralList' has no attributes.
+The enumeration 'DataType' has the following literals: 'string', 'double', 'boolean', 'long', 'data', 'float', 'dateTime', 'decimal', 'hexBinary', 'base64Binary', 'anyURI', 'gDay', 'int', 'gMonth', 'date', 'duration', 'time', 'gMonthDay', 'gYearMonth', 'gYear'.
+'sadl::InverseProperty' is a specialization of 'Statement'.
+'sadl::Rule' is a specialization of 'ModelElement'.
+'sadl::Expr' is a specialization of 'ModelElement'.
+'sadl::HasValue' is a specialization of 'Statement'.
+'sadl::ResourceByName' is a specialization of 'ResourceIdentifier'.
+'sadl::TransitiveProperty' is a specialization of 'Statement'.
+'sadl::MinCardCondition' is a specialization of 'Condition'.
+'sadl::Statement' is a specialization of 'ModelElement'.
+'sadl::InstanceDeclarationStatement' is a specialization of 'Statement'.
+'sadl::ConstructExpression' is a specialization of 'Expression'.
+'sadl::InstAttrPSV' is a specialization of 'GraphPattern'.
+'sadl::BinaryOpExpression' is a specialization of 'Expression'.
+'sadl::AllValuesCondition' is a specialization of 'Condition'.
+'sadl::PropOfSubj' is a specialization of 'GraphPattern'.
+'sadl::UnionResource' is a specialization of 'ResourceBySetOp'.
+'sadl::ResourceBySetOp' is a specialization of 'ResourceIdentifier'.
+'sadl::InverseFunctionalProperty' is a specialization of 'Statement'.
+'sadl::Query' is a specialization of 'ModelElement'.
+'sadl::SubTypeOf' is a specialization of 'GraphPattern'.
+'sadl::AskQueryExpression' is a specialization of 'Expression'.
+'sadl::ExistingInstanceAttribution' is a specialization of 'Statement'.
+'sadl::EnumeratedAllValuesFrom' is a specialization of 'Statement'.
+'sadl::SubjProp' is a specialization of 'GraphPattern'.
+'sadl::UnaryOpExpression' is a specialization of 'Expression'.
+'sadl::ComplementOfClass' is a specialization of 'Statement'.
+'sadl::SelectExpression' is a specialization of 'Expression'.
+'sadl::InstanceDeclaration' is a specialization of 'InstanceDeclarationStatement'.
+'sadl::Cardinality' is a specialization of 'Statement'.
+'sadl::IntersectionResource' is a specialization of 'ResourceBySetOp'.
+'sadl::AllValuesFrom' is a specialization of 'Statement'.
+'sadl::PropertyDeclaration' is a specialization of 'Statement'.
+'sadl::MergedTriples' is a specialization of 'GraphPattern'.
+'sadl::CardCondition' is a specialization of 'Condition'.
+'sadl::SomeValuesCondition' is a specialization of 'Condition'.
+'sadl::EquivalentConcepts' is a specialization of 'Statement'.
+'sadl::EnumeratedAllAndSomeValuesFrom' is a specialization of 'Statement'.
+'sadl::Display' is a specialization of 'ModelElement'.
+'sadl::ExistentialNegation' is a specialization of 'GraphPattern'.
+'sadl::MinCardinality' is a specialization of 'Statement'.
+'sadl::ClassDeclaration' is a specialization of 'Statement'.
+'sadl::MaxCardinality' is a specialization of 'Statement'.
+'sadl::Test' is a specialization of 'ModelElement'.
+'sadl::DisjointClasses' is a specialization of 'Statement'.
+'sadl::ResourceByRestriction' is a specialization of 'ResourceIdentifier'.
+'sadl::Explanation' is a specialization of 'ModelElement'.
+'sadl::SomeValuesFrom' is a specialization of 'Statement'.
+'sadl::NecessaryAndSufficient' is a specialization of 'Statement'.
+'sadl::InstanceDifferentFrom' is a specialization of 'Statement'.
+'sadl::MaxCardCondition' is a specialization of 'Condition'.
+'sadl::FunctionalProperty' is a specialization of 'Statement'.
+'sadl::HasValueCondition' is a specialization of 'Condition'.
+'sadl::InstanceDeclaration' is a specialization of 'EmbeddedInstanceDeclaration'.
+'sadl::JunctionExpression' is a specialization of 'Expression'.
+'sadl::InstancesAllDifferent' is a specialization of 'Statement'.
+'sadl::InstAttrSPV' is a specialization of 'GraphPattern'.
+'sadl::SymmetricalProperty' is a specialization of 'Statement'.
+'sadl::UserDefinedDataType' is a specialization of 'Statement'.
+'sadl::DefaultValue' is a specialization of 'Statement'.
+'sadl::ResourceBySetOp' (role 'sadl_ResourceBySetOp', cardinality 0..*) is associated with 'sadl::ContentList' (role 'sadl_ContentList16', cardinality 0..*).
+'sadl::AllValuesFrom' (role 'sadl_AllValuesFrom', cardinality 0..*) is associated with 'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass', cardinality 0..*).
+'sadl::HasValueCondition' (role 'sadl_HasValueCondition', cardinality 0..*) is associated with 'sadl::HasValue' (role 'sadl_HasValue104', cardinality 0..*).
+'sadl::Cardinality' (role 'sadl_Cardinality119', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName120', cardinality 0..*).
+'sadl::TypedBNode' (role 'sadl_TypedBNode232', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier233', cardinality 0..*).
+'sadl::InstanceDifferentFrom' (role 'sadl_InstanceDifferentFrom', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName250', cardinality 0..*).
+'sadl::EnumeratedAllValuesFrom' (role 'sadl_EnumeratedAllValuesFrom153', cardinality 0..*) is associated with 'sadl::EObject' (role 'sadl_EObject', cardinality 0..*).
+'sadl::DisjointClasses' (role 'sadl_DisjointClasses72', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier73', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName222', cardinality 0..*) is associated with 'sadl::TransitiveProperty' (role 'sadl_TransitiveProperty', cardinality 0..*).
+'sadl::SomeValuesFrom' (role 'sadl_SomeValuesFrom96', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier97', cardinality 0..*).
+'sadl::Expr' (role 'sadl_Expr', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression316', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue351', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression350', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName218', cardinality 0..*) is associated with 'sadl::InverseFunctionalProperty' (role 'sadl_InverseFunctionalProperty', cardinality 0..*).
+'sadl::LiteralList' (role 'sadl_LiteralList', cardinality 0..*) is associated with 'sadl::LiteralValue' (role 'sadl_LiteralValue', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier38', cardinality 0..*) is associated with 'sadl::ClassDeclaration' (role 'sadl_ClassDeclaration37', cardinality 0..*).
+'sadl::EObject' (role 'sadl_EObject291', cardinality 0..*) is associated with 'sadl::WithPhrase' (role 'sadl_WithPhrase290', cardinality 0..*).
+'sadl::InstanceDifferentFrom' (role 'sadl_InstanceDifferentFrom252', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName253', cardinality 0..*).
+'sadl::EnumeratedAllAndSomeValuesFrom' (role 'sadl_EnumeratedAllAndSomeValuesFrom', cardinality 0..*) is associated with 'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass155', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier197', cardinality 0..*) is associated with 'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration196', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName', cardinality 0..*) is associated with 'sadl::ContentList' (role 'sadl_ContentList8', cardinality 0..*).
+'sadl::ValueRow' (role 'sadl_ValueRow400', cardinality 0..*) is associated with 'sadl::ValueTable' (role 'sadl_ValueTable399', cardinality 0..*).
+'sadl::TypedBNode' (role 'sadl_TypedBNode', cardinality 0..*) is associated with 'sadl::NecessaryAndSufficient' (role 'sadl_NecessaryAndSufficient', cardinality 0..*).
+'sadl::OrderElement' (role 'sadl_OrderElement337', cardinality 0..*) is associated with 'sadl::ResourceName' (role 'sadl_ResourceName338', cardinality 0..*).
+'sadl::InstAttrSPV' (role 'sadl_InstAttrSPV370', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression371', cardinality 0..*).
+'sadl::AdditionalPropertyInfo' (role 'sadl_AdditionalPropertyInfo211', cardinality 0..*) is associated with 'sadl::Range' (role 'sadl_Range212', cardinality 0..*).
+'sadl::MergedTriples' (role 'sadl_MergedTriples295', cardinality 0..*) is associated with 'sadl::TypedBNode' (role 'sadl_TypedBNode296', cardinality 0..*).
+'sadl::EObject' (role 'sadl_EObject265', cardinality 0..*) is associated with 'sadl::ExistingInstanceAttribution' (role 'sadl_ExistingInstanceAttribution264', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName281', cardinality 0..*) is associated with 'sadl::OfPatternReturningValues' (role 'sadl_OfPatternReturningValues280', cardinality 0..*).
+'sadl::ClassDeclaration' (role 'sadl_ClassDeclaration32', cardinality 0..*) is associated with 'sadl::AddlClassInfo' (role 'sadl_AddlClassInfo', cardinality 0..*).
+'sadl::InverseProperty' (role 'sadl_InverseProperty', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName224', cardinality 0..*).
+'sadl::ExistingInstanceAttribution' (role 'sadl_ExistingInstanceAttribution259', cardinality 0..*) is associated with 'sadl::PropValPartialTriple' (role 'sadl_PropValPartialTriple260', cardinality 0..*).
+'sadl::AddlClassInfo' (role 'sadl_AddlClassInfo51', cardinality 0..*) is associated with 'sadl::Condition' (role 'sadl_Condition52', cardinality 0..*).
+'sadl::OfPatternReturningValues' (role 'sadl_OfPatternReturningValues', cardinality 0..*) is associated with 'sadl::ExistingInstanceAttribution' (role 'sadl_ExistingInstanceAttribution262', cardinality 0..*).
+'sadl::EnumeratedInstances' (role 'sadl_EnumeratedInstances40', cardinality 0..*) is associated with 'sadl::ResourceList' (role 'sadl_ResourceList41', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression413', cardinality 0..*) is associated with 'sadl::BinaryOpExpression' (role 'sadl_BinaryOpExpression412', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName288', cardinality 0..*) is associated with 'sadl::WithPhrase' (role 'sadl_WithPhrase287', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName192', cardinality 0..*) is associated with 'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration191', cardinality 0..*).
+'sadl::PropValPartialTriple' (role 'sadl_PropValPartialTriple275', cardinality 0..*) is associated with 'sadl::InstanceDeclaration' (role 'sadl_InstanceDeclaration276', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName24', cardinality 0..*) is associated with 'sadl::ResourceByRestriction' (role 'sadl_ResourceByRestriction23', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression410', cardinality 0..*) is associated with 'sadl::BinaryOpExpression' (role 'sadl_BinaryOpExpression', cardinality 0..*).
+'sadl::InstanceDeclaration' (role 'sadl_InstanceDeclaration238', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName239', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName358', cardinality 0..*) is associated with 'sadl::PropOfSubj' (role 'sadl_PropOfSubj357', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName257', cardinality 0..*) is associated with 'sadl::ExistingInstanceAttribution' (role 'sadl_ExistingInstanceAttribution', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName327', cardinality 0..*) is associated with 'sadl::ConstructExpression' (role 'sadl_ConstructExpression', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue394', cardinality 0..*) is associated with 'sadl::LiteralValue' (role 'sadl_LiteralValue395', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier149', cardinality 0..*) is associated with 'sadl::AllValuesCondition' (role 'sadl_AllValuesCondition148', cardinality 0..*).
+'sadl::SubjProp' (role 'sadl_SubjProp', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName360', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName100', cardinality 0..*) is associated with 'sadl::SomeValuesFrom' (role 'sadl_SomeValuesFrom99', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue403', cardinality 0..*) is associated with 'sadl::ValueRow' (role 'sadl_ValueRow402', cardinality 0..*).
+'sadl::OfPhrase' (role 'sadl_OfPhrase301', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName302', cardinality 0..*).
+'sadl::ExistingResourceList' (role 'sadl_ExistingResourceList76', cardinality 0..*) is associated with 'sadl::DisjointClasses' (role 'sadl_DisjointClasses75', cardinality 0..*).
+'sadl::NecessaryAndSufficient' (role 'sadl_NecessaryAndSufficient186', cardinality 0..*) is associated with 'sadl::Condition' (role 'sadl_Condition187', cardinality 0..*).
+'sadl::WithPhrase' (role 'sadl_WithPhrase363', cardinality 0..*) is associated with 'sadl::SubjProp' (role 'sadl_SubjProp362', cardinality 0..*).
+'sadl::InstAttrPSV' (role 'sadl_InstAttrPSV375', cardinality 0..*) is associated with 'sadl::ExplicitValue' (role 'sadl_ExplicitValue376', cardinality 0..*).
+'sadl::InstAttrPSV' (role 'sadl_InstAttrPSV', cardinality 0..*) is associated with 'sadl::PropOfSubj' (role 'sadl_PropOfSubj373', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue', cardinality 0..*) is associated with 'sadl::DefaultValue' (role 'sadl_DefaultValue162', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName189', cardinality 0..*) is associated with 'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration', cardinality 0..*).
+'sadl::ModelElement' (role 'sadl_ModelElement', cardinality 0..*) is associated with 'sadl::Model' (role 'sadl_Model4', cardinality 0..*).
+'sadl::MaxCardinality' (role 'sadl_MaxCardinality136', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier137', cardinality 0..*).
+'sadl::Rule' (role 'sadl_Rule310', cardinality 0..*) is associated with 'sadl::ElementSet' (role 'sadl_ElementSet311', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName330', cardinality 0..*) is associated with 'sadl::ConstructExpression' (role 'sadl_ConstructExpression329', cardinality 0..*).
+'sadl::TypedBNode' (role 'sadl_TypedBNode248', cardinality 0..*) is associated with 'sadl::TypeDeclaration' (role 'sadl_TypeDeclaration247', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass112', cardinality 0..*) is associated with 'sadl::Cardinality' (role 'sadl_Cardinality', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName230', cardinality 0..*) is associated with 'sadl::IsInverseOf' (role 'sadl_IsInverseOf229', cardinality 0..*).
+'sadl::SomeValuesCondition' (role 'sadl_SomeValuesCondition164', cardinality 0..*) is associated with 'sadl::EObject' (role 'sadl_EObject165', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass92', cardinality 0..*) is associated with 'sadl::SomeValuesFrom' (role 'sadl_SomeValuesFrom', cardinality 0..*).
+'sadl::TypeDeclaration' (role 'sadl_TypeDeclaration244', cardinality 0..*) is associated with 'sadl::ResourceName' (role 'sadl_ResourceName245', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName304', cardinality 0..*) is associated with 'sadl::VariableList' (role 'sadl_VariableList', cardinality 0..*).
+'sadl::ExistingResourceList' (role 'sadl_ExistingResourceList', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier', cardinality 0..*).
+'sadl::ClassDeclaration' (role 'sadl_ClassDeclaration34', cardinality 0..*) is associated with 'sadl::ResourceList' (role 'sadl_ResourceList35', cardinality 0..*).
+'sadl::FunctionalProperty' (role 'sadl_FunctionalProperty', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName216', cardinality 0..*).
+'sadl::SomeValuesFrom' (role 'sadl_SomeValuesFrom94', cardinality 0..*) is associated with 'sadl::SomeValuesCondition' (role 'sadl_SomeValuesCondition', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression342', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression344', cardinality 0..*).
+'sadl::PropOfSubj' (role 'sadl_PropOfSubj', cardinality 0..*) is associated with 'sadl::OfPhrase' (role 'sadl_OfPhrase355', cardinality 0..*).
+'sadl::OrderList' (role 'sadl_OrderList', cardinality 0..*) is associated with 'sadl::SelectExpression' (role 'sadl_SelectExpression325', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue168', cardinality 0..*) is associated with 'sadl::HasValueCondition' (role 'sadl_HasValueCondition167', cardinality 0..*).
+'sadl::EnumeratedAllValuesFrom' (role 'sadl_EnumeratedAllValuesFrom', cardinality 0..*) is associated with 'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass151', cardinality 0..*).
+'sadl::ExistentialNegation' (role 'sadl_ExistentialNegation', cardinality 0..*) is associated with 'sadl::VariableList' (role 'sadl_VariableList383', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier117', cardinality 0..*) is associated with 'sadl::Cardinality' (role 'sadl_Cardinality116', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName10', cardinality 0..*) is associated with 'sadl::ResourceList' (role 'sadl_ResourceList', cardinality 0..*).
+'sadl::HasValue' (role 'sadl_HasValue106', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier107', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName365', cardinality 0..*) is associated with 'sadl::InstAttrSPV' (role 'sadl_InstAttrSPV', cardinality 0..*).
+'sadl::OfPhrase' (role 'sadl_OfPhrase293', cardinality 0..*) is associated with 'sadl::MergedTriples' (role 'sadl_MergedTriples', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue391', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName392', cardinality 0..*).
+'sadl::EnumeratedInstances' (role 'sadl_EnumeratedInstances', cardinality 0..*) is associated with 'sadl::ClassDeclaration' (role 'sadl_ClassDeclaration30', cardinality 0..*).
+'sadl::ResourceByRestriction' (role 'sadl_ResourceByRestriction26', cardinality 0..*) is associated with 'sadl::Condition' (role 'sadl_Condition', cardinality 0..*).
+'sadl::NecessaryAndSufficient' (role 'sadl_NecessaryAndSufficient180', cardinality 0..*) is associated with 'sadl::ResourceName' (role 'sadl_ResourceName181', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName184', cardinality 0..*) is associated with 'sadl::NecessaryAndSufficient' (role 'sadl_NecessaryAndSufficient183', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName143', cardinality 0..*) is associated with 'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass142', cardinality 0..*).
+'sadl::WithChain' (role 'sadl_WithChain', cardinality 0..*) is associated with 'sadl::WithPhrase' (role 'sadl_WithPhrase', cardinality 0..*).
+'sadl::RangeType' (role 'sadl_RangeType', cardinality 0..*) is associated with 'sadl::Range' (role 'sadl_Range54', cardinality 0..*).
+'sadl::MaxCardinality' (role 'sadl_MaxCardinality139', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName140', cardinality 0..*).
+'sadl::SymmetricalProperty' (role 'sadl_SymmetricalProperty', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName220', cardinality 0..*).
+'sadl::Import' (role 'sadl_Import', cardinality 0..*) is associated with 'sadl::Model' (role 'sadl_Model2', cardinality 0..*).
+'sadl::UserDefinedDataType' (role 'sadl_UserDefinedDataType61', cardinality 0..*) is associated with 'sadl::DataTypeRestriction' (role 'sadl_DataTypeRestriction', cardinality 0..*).
+'sadl::PropValPartialTriple' (role 'sadl_PropValPartialTriple272', cardinality 0..*) is associated with 'sadl::ExplicitValue' (role 'sadl_ExplicitValue273', cardinality 0..*).
+'sadl::SelectExpression' (role 'sadl_SelectExpression', cardinality 0..*) is associated with 'sadl::VariableList' (role 'sadl_VariableList323', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression314', cardinality 0..*) is associated with 'sadl::Test' (role 'sadl_Test', cardinality 0..*).
+'sadl::InstanceDeclaration' (role 'sadl_InstanceDeclaration236', cardinality 0..*) is associated with 'sadl::PropValPartialTriple' (role 'sadl_PropValPartialTriple', cardinality 0..*).
+'sadl::OfPatternReturningValues' (role 'sadl_OfPatternReturningValues283', cardinality 0..*) is associated with 'sadl::TypedBNode' (role 'sadl_TypedBNode284', cardinality 0..*).
+'sadl::IntervalValue' (role 'sadl_IntervalValue', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression348', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName70', cardinality 0..*) is associated with 'sadl::DisjointClasses' (role 'sadl_DisjointClasses', cardinality 0..*).
+'sadl::ElementSet' (role 'sadl_ElementSet308', cardinality 0..*) is associated with 'sadl::Rule' (role 'sadl_Rule307', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression386', cardinality 0..*) is associated with 'sadl::ExistentialNegation' (role 'sadl_ExistentialNegation385', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression405', cardinality 0..*) is associated with 'sadl::JunctionExpression' (role 'sadl_JunctionExpression', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression321', cardinality 0..*) is associated with 'sadl::ElementSet' (role 'sadl_ElementSet320', cardinality 0..*).
+'sadl::ComplementOfClass' (role 'sadl_ComplementOfClass80', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier81', cardinality 0..*).
+'sadl::SubTypeOf' (role 'sadl_SubTypeOf', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName378', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression339', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression341', cardinality 0..*).
+'sadl::ContentList' (role 'sadl_ContentList', cardinality 0..*) is associated with 'sadl::ModelName' (role 'sadl_ModelName6', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass102', cardinality 0..*) is associated with 'sadl::HasValue' (role 'sadl_HasValue', cardinality 0..*).
+'sadl::Explanation' (role 'sadl_Explanation', cardinality 0..*) is associated with 'sadl::EObject' (role 'sadl_EObject318', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass160', cardinality 0..*) is associated with 'sadl::DefaultValue' (role 'sadl_DefaultValue', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier200', cardinality 0..*) is associated with 'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration199', cardinality 0..*).
+'sadl::ResourceByRestriction' (role 'sadl_ResourceByRestriction', cardinality 0..*) is associated with 'sadl::ContentList' (role 'sadl_ContentList21', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName130', cardinality 0..*) is associated with 'sadl::MinCardinality' (role 'sadl_MinCardinality129', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier68', cardinality 0..*) is associated with 'sadl::EquivalentConcepts' (role 'sadl_EquivalentConcepts67', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName203', cardinality 0..*) is associated with 'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration202', cardinality 0..*).
+'sadl::ResourceBySetOp' (role 'sadl_ResourceBySetOp18', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier19', cardinality 0..*).
+'sadl::ExplicitValue' (role 'sadl_ExplicitValue397', cardinality 0..*) is associated with 'sadl::ValueRow' (role 'sadl_ValueRow', cardinality 0..*).
+'sadl::ExistingResourceList' (role 'sadl_ExistingResourceList255', cardinality 0..*) is associated with 'sadl::InstancesAllDifferent' (role 'sadl_InstancesAllDifferent', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression353', cardinality 0..*) is associated with 'sadl::ValueTable' (role 'sadl_ValueTable', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName381', cardinality 0..*) is associated with 'sadl::SubTypeOf' (role 'sadl_SubTypeOf380', cardinality 0..*).
+'sadl::InstanceDeclaration' (role 'sadl_InstanceDeclaration', cardinality 0..*) is associated with 'sadl::TypeDeclaration' (role 'sadl_TypeDeclaration', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier127', cardinality 0..*) is associated with 'sadl::MinCardinality' (role 'sadl_MinCardinality126', cardinality 0..*).
+'sadl::EObject' (role 'sadl_EObject267', cardinality 0..*) is associated with 'sadl::Object' (role 'sadl_Object', cardinality 0..*).
+'sadl::HasValue' (role 'sadl_HasValue109', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName110', cardinality 0..*).
+'sadl::EnumeratedAllAndSomeValuesFrom' (role 'sadl_EnumeratedAllAndSomeValuesFrom157', cardinality 0..*) is associated with 'sadl::EObject' (role 'sadl_EObject158', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName59', cardinality 0..*) is associated with 'sadl::UserDefinedDataType' (role 'sadl_UserDefinedDataType', cardinality 0..*).
+'sadl::AddlClassInfo' (role 'sadl_AddlClassInfo49', cardinality 0..*) is associated with 'sadl::Range' (role 'sadl_Range', cardinality 0..*).
+'sadl::ModelName' (role 'sadl_ModelName', cardinality 0..*) is associated with 'sadl::Model' (role 'sadl_Model', cardinality 0..*).
+'sadl::MinCardCondition' (role 'sadl_MinCardCondition', cardinality 0..*) is associated with 'sadl::MinCardinality' (role 'sadl_MinCardinality124', cardinality 0..*).
+'sadl::Query' (role 'sadl_Query', cardinality 0..*) is associated with 'sadl::Expression' (role 'sadl_Expression', cardinality 0..*).
+'sadl::ClassDeclaration' (role 'sadl_ClassDeclaration', cardinality 0..*) is associated with 'sadl::ResourceName' (role 'sadl_ResourceName28', cardinality 0..*).
+'sadl::ElementSet' (role 'sadl_ElementSet', cardinality 0..*) is associated with 'sadl::Rule' (role 'sadl_Rule', cardinality 0..*).
+'sadl::IsInverseOf' (role 'sadl_IsInverseOf227', cardinality 0..*) is associated with 'sadl::InverseProperty' (role 'sadl_InverseProperty226', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression346', cardinality 0..*) is associated with 'sadl::GraphPattern' (role 'sadl_GraphPattern', cardinality 0..*).
+'sadl::AllValuesFrom' (role 'sadl_AllValuesFrom89', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName90', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass122', cardinality 0..*) is associated with 'sadl::MinCardinality' (role 'sadl_MinCardinality', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass145', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier146', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName13', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName44', cardinality 0..*) is associated with 'sadl::AddlClassInfo' (role 'sadl_AddlClassInfo43', cardinality 0..*).
+'sadl::OrderElement' (role 'sadl_OrderElement', cardinality 0..*) is associated with 'sadl::OrderList' (role 'sadl_OrderList335', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName65', cardinality 0..*) is associated with 'sadl::EquivalentConcepts' (role 'sadl_EquivalentConcepts', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression389', cardinality 0..*) is associated with 'sadl::IntervalValue' (role 'sadl_IntervalValue388', cardinality 0..*).
+'sadl::PropValPartialTriple' (role 'sadl_PropValPartialTriple269', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName270', cardinality 0..*).
+'sadl::AddlClassInfo' (role 'sadl_AddlClassInfo46', cardinality 0..*) is associated with 'sadl::ResourceName' (role 'sadl_ResourceName47', cardinality 0..*).
+'sadl::ResourceByName' (role 'sadl_ResourceByName368', cardinality 0..*) is associated with 'sadl::InstAttrSPV' (role 'sadl_InstAttrSPV367', cardinality 0..*).
+'sadl::PropertyDeclaration' (role 'sadl_PropertyDeclaration194', cardinality 0..*) is associated with 'sadl::AdditionalPropertyInfo' (role 'sadl_AdditionalPropertyInfo', cardinality 0..*).
+'sadl::AllValuesFrom' (role 'sadl_AllValuesFrom86', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier87', cardinality 0..*).
+'sadl::Expression' (role 'sadl_Expression408', cardinality 0..*) is associated with 'sadl::JunctionExpression' (role 'sadl_JunctionExpression407', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName333', cardinality 0..*) is associated with 'sadl::ConstructExpression' (role 'sadl_ConstructExpression332', cardinality 0..*).
+'sadl::ComplementOfClass' (role 'sadl_ComplementOfClass', cardinality 0..*) is associated with 'sadl::ResourceByName' (role 'sadl_ResourceByName78', cardinality 0..*).
+'sadl::AllValuesFrom' (role 'sadl_AllValuesFrom84', cardinality 0..*) is associated with 'sadl::AllValuesCondition' (role 'sadl_AllValuesCondition', cardinality 0..*).
+'sadl::MergedTriples' (role 'sadl_MergedTriples298', cardinality 0..*) is associated with 'sadl::WithChain' (role 'sadl_WithChain299', cardinality 0..*).
+'sadl::Facets' (role 'sadl_Facets', cardinality 0..*) is associated with 'sadl::DataTypeRestriction' (role 'sadl_DataTypeRestriction63', cardinality 0..*).
+'sadl::MaxCardCondition' (role 'sadl_MaxCardCondition173', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier174', cardinality 0..*).
+'sadl::Cardinality' (role 'sadl_Cardinality114', cardinality 0..*) is associated with 'sadl::CardCondition' (role 'sadl_CardCondition', cardinality 0..*).
+'sadl::AdditionalPropertyInfo' (role 'sadl_AdditionalPropertyInfo208', cardinality 0..*) is associated with 'sadl::Condition' (role 'sadl_Condition209', cardinality 0..*).
+'sadl::AdditionalPropertyInfo' (role 'sadl_AdditionalPropertyInfo214', cardinality 0..*) is associated with 'sadl::IsInverseOf' (role 'sadl_IsInverseOf', cardinality 0..*).
+'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier177', cardinality 0..*) is associated with 'sadl::CardCondition' (role 'sadl_CardCondition176', cardinality 0..*).
+'sadl::AdditionalPropertyInfo' (role 'sadl_AdditionalPropertyInfo205', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier206', cardinality 0..*).
+'sadl::PropertyOfClass' (role 'sadl_PropertyOfClass132', cardinality 0..*) is associated with 'sadl::MaxCardinality' (role 'sadl_MaxCardinality', cardinality 0..*).
+'sadl::OfPhrase' (role 'sadl_OfPhrase', cardinality 0..*) is associated with 'sadl::OfPatternReturningValues' (role 'sadl_OfPatternReturningValues278', cardinality 0..*).
+'sadl::MaxCardinality' (role 'sadl_MaxCardinality134', cardinality 0..*) is associated with 'sadl::MaxCardCondition' (role 'sadl_MaxCardCondition', cardinality 0..*).
+'sadl::RangeType' (role 'sadl_RangeType56', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier57', cardinality 0..*).
+'sadl::ResourceName' (role 'sadl_ResourceName242', cardinality 0..*) is associated with 'sadl::InstanceDeclaration' (role 'sadl_InstanceDeclaration241', cardinality 0..*).
+'sadl::MinCardCondition' (role 'sadl_MinCardCondition170', cardinality 0..*) is associated with 'sadl::ResourceIdentifier' (role 'sadl_ResourceIdentifier171', cardinality 0..*).

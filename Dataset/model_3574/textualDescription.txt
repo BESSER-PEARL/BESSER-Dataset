@@ -1,0 +1,61 @@
+The model has 22 class(es).
+The class 'expressions::ShiftExpression' has the following attributes: 'type' of type str.
+The class 'expressions::ConstExpression' has no attributes.
+The class 'expressions::MultExpression' has the following attributes: 'type' of type str.
+The class 'expressions::AddExpression' has the following attributes: 'type' of type str.
+The class 'expressions::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'FileRegion' has no attributes.
+The class 'expressions::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'expressions::ScopeLiteral' has no attributes.
+The class 'expressions::WideStringLiteral' has the following attributes: 'value' of type str.
+The class 'expressions::Expression' has no attributes.
+The class 'expressions::CharacterLiteral' has the following attributes: 'value' of type str.
+The class 'expressions::WideCharacterLiteral' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'expressions::IdlTypeDcl' has no attributes.
+The class 'expressions::FloatingPointLiteral' has the following attributes: 'value' of type float.
+The class 'expressions::StringLiteral' has the following attributes: 'value' of type str.
+The class 'expressions::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'expressions::AndExpression' has no attributes.
+The class 'expressions::FixedPtLiteral' has the following attributes: 'value' of type str; 'decimalPart' of type int; 'integerPart' of type int.
+The class 'expressions::XOrExpression' has no attributes.
+The class 'expressions::OrExpression' has no attributes.
+The class 'expressions::UnaryExpression' has the following attributes: 'type' of type str.
+The enumeration 'MultiType' has the following literals: 'DIVISION', 'MODULATION', 'MULTIPLICATION'.
+The enumeration 'ShiftType' has the following literals: 'RIGHT', 'LEFT'.
+The enumeration 'AddType' has the following literals: 'SUBTRACTION', 'ADDITION'.
+The enumeration 'UnaryType' has the following literals: 'NEGATIVE', 'POSITIVE', 'TILDE'.
+'expressions::ConstExpression' is a specialization of 'Expression'.
+'expressions::FloatingPointLiteral' is a specialization of 'Expression'.
+'expressions::AndExpression' is a specialization of 'Expression'.
+'expressions::Expression' is a specialization of 'FileRegion'.
+'expressions::UnaryExpression' is a specialization of 'Expression'.
+'expressions::ShiftExpression' is a specialization of 'Expression'.
+'expressions::AddExpression' is a specialization of 'Expression'.
+'expressions::FixedPtLiteral' is a specialization of 'Expression'.
+'expressions::WideCharacterLiteral' is a specialization of 'Expression'.
+'expressions::WideStringLiteral' is a specialization of 'Expression'.
+'expressions::BooleanLiteral' is a specialization of 'Expression'.
+'expressions::CharacterLiteral' is a specialization of 'Expression'.
+'expressions::OrExpression' is a specialization of 'Expression'.
+'expressions::ScopeLiteral' is a specialization of 'Expression'.
+'expressions::IntegerLiteral' is a specialization of 'Expression'.
+'expressions::XOrExpression' is a specialization of 'Expression'.
+'expressions::StringLiteral' is a specialization of 'Expression'.
+'expressions::DoubleLiteral' is a specialization of 'Expression'.
+'expressions::MultExpression' is a specialization of 'Expression'.
+'expressions::Expression' (role 'expressions_Expression2', cardinality 0..*) is associated with 'expressions::OrExpression' (role 'expressions_OrExpression', cardinality 0..*).
+'expressions::UnaryExpression' (role 'expressions_UnaryExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression32', cardinality 0..*).
+'expressions::MultExpression' (role 'expressions_MultExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression27', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression20', cardinality 0..*) is associated with 'expressions::ShiftExpression' (role 'expressions_ShiftExpression19', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression17', cardinality 0..*) is associated with 'expressions::ShiftExpression' (role 'expressions_ShiftExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression22', cardinality 0..*) is associated with 'expressions::AddExpression' (role 'expressions_AddExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'expressions::ConstExpression' (role 'expressions_ConstExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression10', cardinality 0..*) is associated with 'expressions::XOrExpression' (role 'expressions_XOrExpression9', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression30', cardinality 0..*) is associated with 'expressions::MultExpression' (role 'expressions_MultExpression29', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression7', cardinality 0..*) is associated with 'expressions::XOrExpression' (role 'expressions_XOrExpression', cardinality 0..*).
+'expressions::ScopeLiteral' (role 'expressions_ScopeLiteral', cardinality 0..*) is associated with 'expressions::IdlTypeDcl' (role 'expressions_IdlTypeDcl', cardinality 0..*).
+'expressions::AddExpression' (role 'expressions_AddExpression24', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression25', cardinality 0..*).
+'expressions::AndExpression' (role 'expressions_AndExpression14', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression15', cardinality 0..*).
+'expressions::AndExpression' (role 'expressions_AndExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression12', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression5', cardinality 0..*) is associated with 'expressions::OrExpression' (role 'expressions_OrExpression4', cardinality 0..*).

@@ -1,0 +1,32 @@
+The model has 13 class(es).
+The class 'Dependency' has no attributes.
+The class 'assignment6::model::UnaryDependency' has no attributes.
+The class 'Feature' has no attributes.
+The class 'assignment6::model::IntegerFeature' has the following attributes: 'step' of type int; 'minValue' of type int; 'maxValue' of type int; 'value' of type int.
+The class 'assignment6::model::IntegerValueDependency' has the following attributes: 'value' of type int.
+The class 'UnaryDependency' has no attributes.
+The class 'assignment6::model::Group' has the following attributes: 'name' of type str; 'groupType' of type str.
+The class 'assignment6::model::IsSelectedDependency' has no attributes.
+The class 'assignment6::model::Feature' has the following attributes: 'name' of type str; 'selected' of type bool; 'mandatory' of type bool.
+The class 'assignment6::model::BinaryDependency' has the following attributes: 'operator' of type str.
+The class 'assignment6::model::Dependency' has the following attributes: 'not_' of type bool.
+The class 'assignment6::model::Configurator' has the following attributes: 'name' of type str.
+The class 'assignment6::model::SimpleFeature' has no attributes.
+The enumeration 'BinaryOperator' has the following literals: 'AND', 'OR'.
+The enumeration 'GroupType' has the following literals: 'XOR', 'OR'.
+'assignment6::model::SimpleFeature' is a specialization of 'Feature'.
+'assignment6::model::IntegerFeature' is a specialization of 'Feature'.
+'assignment6::model::BinaryDependency' is a specialization of 'Dependency'.
+'assignment6::model::UnaryDependency' is a specialization of 'Dependency'.
+'assignment6::model::IsSelectedDependency' is a specialization of 'UnaryDependency'.
+'assignment6::model::IntegerValueDependency' is a specialization of 'UnaryDependency'.
+'assignment6::model::IsSelectedDependency' (role 'assignment6_model_IsSelectedDependency', cardinality 0..*) is associated with 'assignment6::model::Feature' (role 'assignment6_model_Feature19', cardinality 0..*).
+'assignment6::model::IntegerFeature' (role 'assignment6_model_IntegerFeature', cardinality 0..*) is associated with 'assignment6::model::IntegerValueDependency' (role 'assignment6_model_IntegerValueDependency', cardinality 0..*).
+'assignment6::model::Dependency' (role 'assignment6_model_Dependency', cardinality 0..*) is associated with 'assignment6::model::Feature' (role 'assignment6_model_Feature10', cardinality 0..*).
+'assignment6::model::Dependency' (role 'assignment6_model_Dependency14', cardinality 0..*) is associated with 'assignment6::model::BinaryDependency' (role 'assignment6_model_BinaryDependency', cardinality 0..*).
+'assignment6::model::Group' (role 'assignment6_model_Group', cardinality 0..*) is associated with 'assignment6::model::Configurator' (role 'assignment6_model_Configurator2', cardinality 0..*).
+'assignment6::model::BinaryDependency' (role 'assignment6_model_BinaryDependency16', cardinality 0..*) is associated with 'assignment6::model::Dependency' (role 'assignment6_model_Dependency17', cardinality 0..*).
+'assignment6::model::Feature' (role 'assignment6_model_Feature5', cardinality 0..*) is associated with 'assignment6::model::Feature' (role 'assignment6_model_Feature3', cardinality 0..*).
+'assignment6::model::SimpleFeature' (role 'assignment6_model_SimpleFeature', cardinality 0..*) is associated with 'assignment6::model::Group' (role 'assignment6_model_Group12', cardinality 0..*).
+'assignment6::model::Feature' (role 'assignment6_model_Feature', cardinality 0..*) is associated with 'assignment6::model::Configurator' (role 'assignment6_model_Configurator', cardinality 0..*).
+'assignment6::model::Group' (role 'assignment6_model_Group8', cardinality 0..*) is associated with 'assignment6::model::Feature' (role 'assignment6_model_Feature7', cardinality 0..*).

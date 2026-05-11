@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ftsrg/gamma/plugins/de.uni_paderborn.uppaal/model/uppaal.ecore

@@ -1,0 +1,90 @@
+The model has 44 class(es).
+The class 'EntityModelElement' has no attributes.
+The class 'classLayout2Frontend::EntityModelElement' has the following attributes: 'displayName' of type str; 'name' of type str; 'description' of type str.
+The class 'classLayout2Frontend::ElementView' has the following attributes: 'name' of type str; 'description' of type str; 'displayName' of type str.
+The class 'classLayout2Frontend::PrimitiveType' has no attributes.
+The class 'classLayout2Frontend::Association' has the following attributes: 'many' of type bool.
+The class 'classLayout2Frontend::Project' has the following attributes: 'name' of type str.
+The class 'classLayout2Frontend::Composition' has no attributes.
+The class 'AtomicView' has no attributes.
+The class 'classLayout2Frontend::AtomicView' has no attributes.
+The class 'classLayout2Frontend::InputText' has the following attributes: 'multiline' of type bool.
+The class 'classLayout2Frontend::Enumeration' has no attributes.
+The class 'classLayout2Frontend::EntitiesModel' has the following attributes: 'name' of type str.
+The class 'classLayout2Frontend::IterationContainer' has no attributes.
+The class 'classLayout2Frontend::InputForm' has no attributes.
+The class 'classLayout2Frontend::PageView' has the following attributes: 'layoutType' of type str; 'name' of type str.
+The class 'classLayout2Frontend::Image' has the following attributes: 'height' of type float; 'width' of type float.
+The class 'ElementView' has no attributes.
+The class 'classLayout2Frontend::StaticContainer' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'classLayout2Frontend::Dropdownlist' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'classLayout2Frontend::Autocomplete' has the following attributes: 'multiple' of type bool.
+The class 'classLayout2Frontend::Output' has no attributes.
+The class 'Selection' has no attributes.
+The class 'classLayout2Frontend::ContainerView' has no attributes.
+The class 'classLayout2Frontend::Entity' has the following attributes: 'isAbstract' of type bool.
+The class 'classLayout2Frontend::PropertyType' has no attributes.
+The class 'classLayout2Frontend::IterationFilter' has no attributes.
+The class 'classLayout2Frontend::Literal' has the following attributes: 'value' of type int.
+The class 'classLayout2Frontend::TextArea' has the following attributes: 'isTitle' of type bool; 'value' of type str.
+The class 'classLayout2Frontend::RadioButtonGroup' has no attributes.
+The class 'Association' has no attributes.
+The class 'classLayout2Frontend::FileUpload' has no attributes.
+The class 'classLayout2Frontend::Selection' has no attributes.
+The class 'classLayout2Frontend::StructuralFeature' has the following attributes: 'required' of type bool.
+The class 'ContainerView' has no attributes.
+The class 'classLayout2Frontend::SiteView' has the following attributes: 'name' of type str; 'displayName' of type str; 'templateColor' of type str; 'templateName' of type str.
+The class 'Input' has no attributes.
+The class 'classLayout2Frontend::Property' has the following attributes: 'defaultValue' of type str.
+The class 'Output' has no attributes.
+The class 'classLayout2Frontend::List' has the following attributes: 'multiple' of type bool.
+The class 'classLayout2Frontend::CheckList' has no attributes.
+The class 'classLayout2Frontend::Input' has the following attributes: 'label' of type str.
+The class 'classLayout2Frontend::Reference' has no attributes.
+The enumeration 'LayoutType' has the following literals: 'TWO_COLUMNS', 'SINGLE_COLUMN', 'THREE_COLUMNS', 'LEFT_BAR', 'RIGHT_BAR'.
+'classLayout2Frontend::StructuralFeature' is a specialization of 'EntityModelElement'.
+'classLayout2Frontend::Composition' is a specialization of 'Association'.
+'classLayout2Frontend::InputForm' is a specialization of 'ContainerView'.
+'classLayout2Frontend::PropertyType' is a specialization of 'EntityModelElement'.
+'classLayout2Frontend::Autocomplete' is a specialization of 'Selection'.
+'classLayout2Frontend::TextArea' is a specialization of 'Output'.
+'classLayout2Frontend::InputText' is a specialization of 'Input'.
+'classLayout2Frontend::Association' is a specialization of 'StructuralFeature'.
+'classLayout2Frontend::IterationContainer' is a specialization of 'ContainerView'.
+'classLayout2Frontend::RadioButtonGroup' is a specialization of 'Selection'.
+'classLayout2Frontend::PrimitiveType' is a specialization of 'PropertyType'.
+'classLayout2Frontend::Property' is a specialization of 'StructuralFeature'.
+'classLayout2Frontend::Reference' is a specialization of 'Association'.
+'classLayout2Frontend::Input' is a specialization of 'AtomicView'.
+'classLayout2Frontend::Literal' is a specialization of 'EntityModelElement'.
+'classLayout2Frontend::Image' is a specialization of 'Output'.
+'classLayout2Frontend::Output' is a specialization of 'AtomicView'.
+'classLayout2Frontend::CheckList' is a specialization of 'Selection'.
+'classLayout2Frontend::List' is a specialization of 'Selection'.
+'classLayout2Frontend::ContainerView' is a specialization of 'ElementView'.
+'classLayout2Frontend::StaticContainer' is a specialization of 'ContainerView'.
+'classLayout2Frontend::Enumeration' is a specialization of 'PropertyType'.
+'classLayout2Frontend::Dropdownlist' is a specialization of 'Selection'.
+'classLayout2Frontend::Selection' is a specialization of 'Input'.
+'classLayout2Frontend::Entity' is a specialization of 'EntityModelElement'.
+'classLayout2Frontend::FileUpload' is a specialization of 'Input'.
+'classLayout2Frontend::AtomicView' is a specialization of 'ElementView'.
+'classLayout2Frontend::EntityModelElement' (role 'classLayout2Frontend_EntityModelElement', cardinality 0..*) is associated with 'classLayout2Frontend::EntitiesModel' (role 'classLayout2Frontend_EntitiesModel10', cardinality 0..*).
+'classLayout2Frontend::Project' (role 'classLayout2Frontend_Project4', cardinality 0..*) is associated with 'classLayout2Frontend::PageView' (role 'classLayout2Frontend_PageView', cardinality 0..*).
+'classLayout2Frontend::Project' (role 'classLayout2Frontend_Project', cardinality 0..*) is associated with 'classLayout2Frontend::EntitiesModel' (role 'classLayout2Frontend_EntitiesModel', cardinality 0..*).
+'classLayout2Frontend::ContainerView' (role 'classLayout2Frontend_ContainerView', cardinality 0..*) is associated with 'classLayout2Frontend::Project' (role 'classLayout2Frontend_Project6', cardinality 0..*).
+'classLayout2Frontend::Entity' (role 'classLayout2Frontend_Entity32', cardinality 0..*) is associated with 'classLayout2Frontend::ContainerView' (role 'classLayout2Frontend_ContainerView31', cardinality 0..*).
+'classLayout2Frontend::Entity' (role 'classLayout2Frontend_Entity15', cardinality 0..*) is associated with 'classLayout2Frontend::StructuralFeature' (role 'classLayout2Frontend_StructuralFeature', cardinality 0..*).
+'classLayout2Frontend::Input' (role 'classLayout2Frontend_Input', cardinality 0..*) is associated with 'classLayout2Frontend::IterationFilter' (role 'classLayout2Frontend_IterationFilter', cardinality 0..*).
+'classLayout2Frontend::Literal' (role 'classLayout2Frontend_Literal', cardinality 0..*) is associated with 'classLayout2Frontend::Enumeration' (role 'classLayout2Frontend_Enumeration', cardinality 0..*).
+'classLayout2Frontend::ContainerView' (role 'classLayout2Frontend_ContainerView28', cardinality 0..*) is associated with 'classLayout2Frontend::ElementView' (role 'classLayout2Frontend_ElementView29', cardinality 0..*).
+'classLayout2Frontend::SiteView' (role 'classLayout2Frontend_SiteView', cardinality 0..*) is associated with 'classLayout2Frontend::Project' (role 'classLayout2Frontend_Project2', cardinality 0..*).
+'classLayout2Frontend::PageView' (role 'classLayout2Frontend_PageView21', cardinality 0..*) is associated with 'classLayout2Frontend::ElementView' (role 'classLayout2Frontend_ElementView', cardinality 0..*).
+'classLayout2Frontend::Entity' (role 'classLayout2Frontend_Entity11', cardinality 0..*) is associated with 'classLayout2Frontend::Entity' (role 'classLayout2Frontend_Entity13', cardinality 0..*).
+'classLayout2Frontend::SiteView' (role 'classLayout2Frontend_SiteView23', cardinality 0..*) is associated with 'classLayout2Frontend::PageView' (role 'classLayout2Frontend_PageView24', cardinality 0..*).
+'classLayout2Frontend::IterationContainer' (role 'classLayout2Frontend_IterationContainer', cardinality 0..*) is associated with 'classLayout2Frontend::IterationFilter' (role 'classLayout2Frontend_IterationFilter26', cardinality 0..*).
+'classLayout2Frontend::StructuralFeature' (role 'classLayout2Frontend_StructuralFeature18', cardinality 0..*) is associated with 'classLayout2Frontend::AtomicView' (role 'classLayout2Frontend_AtomicView', cardinality 0..*).
+'classLayout2Frontend::PropertyType' (role 'classLayout2Frontend_PropertyType', cardinality 0..*) is associated with 'classLayout2Frontend::Property' (role 'classLayout2Frontend_Property', cardinality 0..*).
+'classLayout2Frontend::Entity' (role 'classLayout2Frontend_Entity', cardinality 0..*) is associated with 'classLayout2Frontend::Association' (role 'classLayout2Frontend_Association', cardinality 0..*).

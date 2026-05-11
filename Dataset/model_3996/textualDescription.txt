@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'Classifier' has no attributes.
+The class 'Class::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'Class::NamedElt' has the following attributes: 'name' of type str.
+The class 'Class::Attribute' has the following attributes: 'multiValued' of type bool.
+The class 'NamedElt' has no attributes.
+The class 'Class::Classifier' has no attributes.
+The class 'Class::DataType' has no attributes.
+The class 'Class::Package' has no attributes.
+'Class::Class' is a specialization of 'Classifier'.
+'Class::Attribute' is a specialization of 'NamedElt'.
+'Class::Package' is a specialization of 'NamedElt'.
+'Class::Classifier' is a specialization of 'NamedElt'.
+'Class::DataType' is a specialization of 'Classifier'.
+'Class::Package' (role 'package', cardinality 0..*) is associated with 'Class::Classifier' (role 'Classifier', cardinality 0..*).
+'Class::Class' (role 'Class_Class', cardinality 0..*) is associated with 'Class::Class' (role 'Class_Class2', cardinality 0..*).
+'Class::Classifier' (role 'elems', cardinality 0..*) is associated with 'Class::Package' (role 'Package', cardinality 0..*).
+'Class::Attribute' (role 'Class_Attribute', cardinality 0..*) is associated with 'Class::Classifier' (role 'Class_Classifier', cardinality 0..*).
+'Class::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'Class::Class' (role 'owner', cardinality 0..*).
+'Class::Class' (role 'Class', cardinality 0..*) is associated with 'Class::Attribute' (role 'att', cardinality 0..*).

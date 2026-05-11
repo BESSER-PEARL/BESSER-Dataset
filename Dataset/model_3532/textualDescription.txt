@@ -1,0 +1,37 @@
+The model has 20 class(es).
+The class 'emfrelations::ConceptA10' has no attributes.
+The class 'emfrelations::ConceptA9' has no attributes.
+The class 'emfrelations::ConceptB11' has no attributes.
+The class 'emfrelations::ConceptA5' has no attributes.
+The class 'emfrelations::ConceptB2' has no attributes.
+The class 'emfrelations::ConceptB8' has no attributes.
+The class 'emfrelations::ConceptB4' has no attributes.
+The class 'emfrelations::ConceptB3' has no attributes.
+The class 'emfrelations::ConceptA11' has no attributes.
+The class 'emfrelations::ConceptB0' has no attributes.
+The class 'emfrelations::ConceptA8' has no attributes.
+The class 'emfrelations::ConceptA0' has no attributes.
+The class 'emfrelations::ConceptA4' has no attributes.
+The class 'emfrelations::ConceptB5' has no attributes.
+The class 'emfrelations::ConceptA3' has no attributes.
+The class 'emfrelations::ConceptB9' has no attributes.
+The class 'emfrelations::ConceptA2' has no attributes.
+The class 'emfrelations::ConceptA1' has no attributes.
+The class 'emfrelations::ConceptB1' has no attributes.
+The class 'emfrelations::ConceptB10' has no attributes.
+'emfrelations::ConceptA11' (role 'emfrelations_ConceptA11', cardinality 0..*) is associated with 'emfrelations::ConceptB11' (role 'emfrelations_ConceptB11', cardinality 0..*).
+'emfrelations::ConceptA5' (role 'concepta5', cardinality 0..*) is associated with 'emfrelations::ConceptB5' (role 'ConceptB5', cardinality 0..*).
+'emfrelations::ConceptA2' (role 'concepta2', cardinality 0..*) is associated with 'emfrelations::ConceptB2' (role 'ConceptB2', cardinality 0..*).
+'emfrelations::ConceptA3' (role 'concepta3', cardinality 0..*) is associated with 'emfrelations::ConceptB3' (role 'ConceptB3', cardinality 0..*).
+'emfrelations::ConceptA4' (role 'ConceptA4', cardinality 0..*) is associated with 'emfrelations::ConceptB4' (role 'conceptb4', cardinality 0..*).
+'emfrelations::ConceptA8' (role 'emfrelations_ConceptA8', cardinality 0..*) is associated with 'emfrelations::ConceptB8' (role 'emfrelations_ConceptB8', cardinality 0..*).
+'emfrelations::ConceptB0' (role 'conceptb0', cardinality 0..*) is associated with 'emfrelations::ConceptA0' (role 'ConceptA0', cardinality 0..*).
+'emfrelations::ConceptA1' (role 'concepta1', cardinality 0..*) is associated with 'emfrelations::ConceptB1' (role 'ConceptB1', cardinality 0..*).
+'emfrelations::ConceptA9' (role 'emfrelations_ConceptA9', cardinality 0..*) is associated with 'emfrelations::ConceptB9' (role 'emfrelations_ConceptB9', cardinality 0..*).
+'emfrelations::ConceptB3' (role 'conceptb3', cardinality 0..*) is associated with 'emfrelations::ConceptA3' (role 'ConceptA3', cardinality 0..*).
+'emfrelations::ConceptA5' (role 'ConceptA5', cardinality 0..*) is associated with 'emfrelations::ConceptB5' (role 'conceptb5', cardinality 0..*).
+'emfrelations::ConceptA4' (role 'concepta4', cardinality 0..*) is associated with 'emfrelations::ConceptB4' (role 'ConceptB4', cardinality 0..*).
+'emfrelations::ConceptB1' (role 'conceptb1', cardinality 0..*) is associated with 'emfrelations::ConceptA1' (role 'ConceptA1', cardinality 0..*).
+'emfrelations::ConceptB10' (role 'emfrelations_ConceptB10', cardinality 0..*) is associated with 'emfrelations::ConceptA10' (role 'emfrelations_ConceptA10', cardinality 0..*).
+'emfrelations::ConceptB2' (role 'conceptb2', cardinality 0..*) is associated with 'emfrelations::ConceptA2' (role 'ConceptA2', cardinality 0..*).
+'emfrelations::ConceptB0' (role 'ConceptB0', cardinality 0..*) is associated with 'emfrelations::ConceptA0' (role 'concepta0', cardinality 0..*).

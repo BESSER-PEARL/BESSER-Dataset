@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'era::Attribute' has the following attributes: 'name' of type str.
+The class 'era::System' has no attributes.
+The class 'era::Relationship' has the following attributes: 'name' of type str.
+The class 'era::Entity' has the following attributes: 'inDomain' of type str; 'name' of type str.
+'era::Entity' (role 'entities', cardinality 0..*) is associated with 'era::Relationship' (role 'Relationship', cardinality 0..*).
+'era::System' (role 'System', cardinality 0..*) is associated with 'era::Entity' (role 'entity', cardinality 0..*).
+'era::Entity' (role 'Entity', cardinality 0..*) is associated with 'era::System' (role 'system', cardinality 0..*).
+'era::Entity' (role 'Entity4', cardinality 0..*) is associated with 'era::Relationship' (role 'relationships', cardinality 0..*).

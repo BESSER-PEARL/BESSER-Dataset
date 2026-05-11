@@ -1,0 +1,56 @@
+The model has 21 class(es).
+The class 'profile::CR' has the following attributes: 'inverted' of type str.
+The class 'profile::CodeSystemVersion' has the following attributes: 'version' of type str; 'fullName' of type str; 'source' of type str; 'status' of type str; 'releaseDate' of type str; 'statusDate' of type str; 'identifier' of type str; 'url' of type str; 'effectiveDate' of type str.
+The class 'profile::Classifier' has no attributes.
+The class 'profile::CD' has the following attributes: 'codeSystemVersion' of type str; 'code' of type str; 'displayName' of type str; 'codeSystemName' of type str; 'codeSystem' of type str.
+The class 'profile::NullValueSetConstraint' has the following attributes: 'version' of type str; 'name' of type str; 'identifier' of type str; 'binding' of type str.
+The class 'profile::ValueSetConstraints' has no attributes.
+The class 'profile::ConceptDomainConstraint' has the following attributes: 'name' of type str; 'identifier' of type str.
+The class 'profile::Enumeration' has no attributes.
+The class 'profile::EnumerationLiteral' has no attributes.
+The class 'profile::Class' has no attributes.
+The class 'profile::ContextToValueSet' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'profile::ValueSetContextBinding' has the following attributes: 'effectiveDate' of type str.
+The class 'profile::UsageContext' has the following attributes: 'status' of type str; 'statusDate' of type str; 'identifier' of type str.
+The class 'profile::ValueSetVersion' has the following attributes: 'statusDate' of type str; 'effectiveDate' of type str; 'expirationDate' of type str; 'type' of type str; 'binding' of type str; 'source' of type str; 'definition' of type str; 'url' of type str; 'version' of type str; 'identifier' of type str; 'releaseDate' of type str; 'fullName' of type str; 'revisionDate' of type str; 'status' of type str.
+The class 'profile::CodeSystemConstraint' has the following attributes: 'displayName' of type str; 'version' of type str; 'code' of type str; 'name' of type str; 'binding' of type str; 'identifier' of type str.
+The class 'profile::ValueSetCode' has the following attributes: 'usageNote' of type str; 'conceptName' of type str.
+The class 'profile::Context' has no attributes.
+The class 'profile::Property' has no attributes.
+The class 'profile::CodedType' has no attributes.
+The class 'profile::ConceptDomain' has the following attributes: 'fullName' of type str; 'statusDate' of type str; 'identifier' of type str; 'status' of type str.
+The class 'profile::ValueSetConstraint' has the following attributes: 'name' of type str; 'version' of type str; 'uri' of type str; 'binding' of type str; 'guidance' of type str; 'identifier' of type str; 'extensibility' of type str.
+The enumeration 'BindingKind' has the following literals: 'Dynamic', 'Static'.
+The enumeration 'Guidance' has the following literals: 'RESTRICT', 'CLOSED', 'FIXED', 'OPEN', 'EXTEND'.
+The enumeration 'StatusKind' has the following literals: 'Inactive', 'Active'.
+The enumeration 'ValueSetType' has the following literals: 'Intensional', 'Extensional'.
+The enumeration 'Extensibility' has the following literals: 'CEA', 'NEA'.
+The enumeration 'ValueSetBinding' has the following literals: 'Direct', 'Indirect'.
+'profile::ValueSetContextBinding' (role 'profile_ValueSetContextBinding41', cardinality 0..*) is associated with 'profile::ValueSetVersion' (role 'profile_ValueSetVersion42', cardinality 0..*).
+'profile::CD' (role 'profile_CD', cardinality 0..*) is associated with 'profile::CR' (role 'profile_CR', cardinality 0..*).
+'profile::ValueSetVersion' (role 'profile_ValueSetVersion29', cardinality 0..*) is associated with 'profile::CodeSystemVersion' (role 'profile_CodeSystemVersion30', cardinality 0..*).
+'profile::ConceptDomain' (role 'profile_ConceptDomain39', cardinality 0..*) is associated with 'profile::ValueSetContextBinding' (role 'profile_ValueSetContextBinding', cardinality 0..*).
+'profile::EnumerationLiteral' (role 'profile_EnumerationLiteral', cardinality 0..*) is associated with 'profile::ValueSetCode' (role 'profile_ValueSetCode37', cardinality 0..*).
+'profile::ConceptDomainConstraint' (role 'profile_ConceptDomainConstraint12', cardinality 0..*) is associated with 'profile::Property' (role 'profile_Property', cardinality 0..*).
+'profile::NullValueSetConstraint' (role 'profile_NullValueSetConstraint', cardinality 0..*) is associated with 'profile::ValueSetVersion' (role 'profile_ValueSetVersion56', cardinality 0..*).
+'profile::CodedType' (role 'profile_CodedType', cardinality 0..*) is associated with 'profile::Classifier' (role 'profile_Classifier', cardinality 0..*).
+'profile::ValueSetConstraint' (role 'profile_ValueSetConstraint', cardinality 0..*) is associated with 'profile::ValueSetVersion' (role 'profile_ValueSetVersion', cardinality 0..*).
+'profile::ConceptDomain' (role 'profile_ConceptDomain14', cardinality 0..*) is associated with 'profile::Class' (role 'profile_Class', cardinality 0..*).
+'profile::ValueSetConstraint' (role 'profile_ValueSetConstraint26', cardinality 0..*) is associated with 'profile::Property' (role 'profile_Property27', cardinality 0..*).
+'profile::CR' (role 'profile_CR5', cardinality 0..*) is associated with 'profile::CD' (role 'profile_CD6', cardinality 0..*).
+'profile::CodeSystemVersion' (role 'profile_CodeSystemVersion35', cardinality 0..*) is associated with 'profile::ValueSetCode' (role 'profile_ValueSetCode', cardinality 0..*).
+'profile::Property' (role 'profile_Property52', cardinality 0..*) is associated with 'profile::ValueSetConstraints' (role 'profile_ValueSetConstraints', cardinality 0..*).
+'profile::CR' (role 'profile_CR8', cardinality 0..*) is associated with 'profile::CD' (role 'profile_CD9', cardinality 0..*).
+'profile::Enumeration' (role 'profile_Enumeration33', cardinality 0..*) is associated with 'profile::ValueSetVersion' (role 'profile_ValueSetVersion32', cardinality 0..*).
+'profile::ValueSetContextBinding' (role 'profile_ValueSetContextBinding44', cardinality 0..*) is associated with 'profile::UsageContext' (role 'profile_UsageContext', cardinality 0..*).
+'profile::Property' (role 'profile_Property59', cardinality 0..*) is associated with 'profile::NullValueSetConstraint' (role 'profile_NullValueSetConstraint58', cardinality 0..*).
+'profile::Property' (role 'profile_Property21', cardinality 0..*) is associated with 'profile::CodeSystemConstraint' (role 'profile_CodeSystemConstraint20', cardinality 0..*).
+'profile::UsageContext' (role 'profile_UsageContext49', cardinality 0..*) is associated with 'profile::Class' (role 'profile_Class50', cardinality 0..*).
+'profile::Enumeration' (role 'profile_Enumeration', cardinality 0..*) is associated with 'profile::CodeSystemVersion' (role 'profile_CodeSystemVersion23', cardinality 0..*).
+'profile::ValueSetConstraints' (role 'profile_ValueSetConstraints54', cardinality 0..*) is associated with 'profile::ContextToValueSet' (role 'profile_ContextToValueSet', cardinality 0..*).
+'profile::ConceptDomain' (role 'profile_ConceptDomain', cardinality 0..*) is associated with 'profile::ConceptDomainConstraint' (role 'profile_ConceptDomainConstraint', cardinality 0..*).
+'profile::Enumeration' (role 'profile_Enumeration61', cardinality 0..*) is associated with 'profile::Context' (role 'profile_Context', cardinality 0..*).
+'profile::ValueSetContextBinding' (role 'profile_ValueSetContextBinding46', cardinality 0..*) is associated with 'profile::Class' (role 'profile_Class47', cardinality 0..*).
+'profile::CodeSystemVersion' (role 'profile_CodeSystemVersion', cardinality 0..*) is associated with 'profile::CodeSystemConstraint' (role 'profile_CodeSystemConstraint', cardinality 0..*).
+'profile::CD' (role 'profile_CD3', cardinality 0..*) is associated with 'profile::CD' (role 'profile_CD1', cardinality 0..*).
+'profile::CodeSystemConstraint' (role 'profile_CodeSystemConstraint17', cardinality 0..*) is associated with 'profile::CR' (role 'profile_CR18', cardinality 0..*).

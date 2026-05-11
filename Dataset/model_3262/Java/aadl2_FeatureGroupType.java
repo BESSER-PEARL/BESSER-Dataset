@@ -1,0 +1,65 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class aadl2_FeatureGroupType extends Classifier, FeatureType {
+
+
+
+
+
+
+    private aadl2_FeatureGroupType aadl2_featuregrouptype;
+
+
+
+
+    private List<aadl2_Feature> aadl2_features;
+
+
+
+
+    private aadl2_FeatureGroupType aadl2_featuregrouptype;
+
+
+    public aadl2_FeatureGroupType(
+    ) {
+        super(
+        );
+        this.aadl2_features = new ArrayList<>();
+    }
+
+    public aadl2_FeatureGroupType(
+        ArrayList<aadl2_Feature> aadl2_features    ) {
+        this.aadl2_features = aadl2_features;
+    }
+
+
+    public aadl2_FeatureGroupType getAadl2_featuregrouptype() {
+        return aadl2_featuregrouptype;
+    }
+
+    public void setAadl2_featuregrouptype(aadl2_FeatureGroupType aadl2_featuregrouptype) {
+        this.aadl2_featuregrouptype = aadl2_featuregrouptype;
+    }
+    public List<aadl2_Feature> getAadl2_features() {
+        return aadl2_features;
+    }
+
+    public void addAadl2_feature(Aadl2_feature aadl2_feature) {
+        this.aadl2_features.add(aadl2_feature);
+    }
+    public aadl2_FeatureGroupType getAadl2_featuregrouptype() {
+        return aadl2_featuregrouptype;
+    }
+
+    public void setAadl2_featuregrouptype(aadl2_FeatureGroupType aadl2_featuregrouptype) {
+        this.aadl2_featuregrouptype = aadl2_featuregrouptype;
+    }
+
+}

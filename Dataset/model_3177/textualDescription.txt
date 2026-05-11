@@ -1,0 +1,71 @@
+The model has 25 class(es).
+The class 'iotdsl::IfBlock' has no attributes.
+The class 'iotdsl::And' has no attributes.
+The class 'iotdsl::Or' has no attributes.
+The class 'iotdsl::Transition' has the following attributes: 'name' of type str.
+The class 'iotdsl::Not' has no attributes.
+The class 'iotdsl::Plus' has no attributes.
+The class 'Action' has no attributes.
+The class 'iotdsl::Equality' has the following attributes: 'op' of type str.
+The class 'iotdsl::Device' has the following attributes: 'name' of type str.
+The class 'iotdsl::Action' has no attributes.
+The class 'iotdsl::Event' has the following attributes: 'name' of type str.
+The class 'iotdsl::Expression' has no attributes.
+The class 'iotdsl::Attribute' has the following attributes: 'value' of type str; 'typeName' of type str; 'tag' of type str.
+The class 'iotdsl::Iot' has no attributes.
+The class 'iotdsl::IfStatement' has no attributes.
+The class 'iotdsl::Variable' has the following attributes: 'name' of type str.
+The class 'iotdsl::StringConstant' has the following attributes: 'value' of type str.
+The class 'iotdsl::State' has the following attributes: 'name' of type str.
+The class 'iotdsl::Comparison' has the following attributes: 'op' of type str.
+The class 'iotdsl::BoolConstant' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'iotdsl::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'iotdsl::VariableRef' has no attributes.
+The class 'iotdsl::IntConstant' has the following attributes: 'value' of type int.
+The class 'iotdsl::Minus' has no attributes.
+'iotdsl::And' is a specialization of 'Expression'.
+'iotdsl::Plus' is a specialization of 'Expression'.
+'iotdsl::Or' is a specialization of 'Expression'.
+'iotdsl::Equality' is a specialization of 'Expression'.
+'iotdsl::Not' is a specialization of 'Expression'.
+'iotdsl::IntConstant' is a specialization of 'Expression'.
+'iotdsl::Variable' is a specialization of 'Action'.
+'iotdsl::MulOrDiv' is a specialization of 'Expression'.
+'iotdsl::BoolConstant' is a specialization of 'Expression'.
+'iotdsl::StringConstant' is a specialization of 'Expression'.
+'iotdsl::Comparison' is a specialization of 'Expression'.
+'iotdsl::VariableRef' is a specialization of 'Expression'.
+'iotdsl::Minus' is a specialization of 'Expression'.
+'iotdsl::IfStatement' is a specialization of 'Expression'.
+'iotdsl::Expression' is a specialization of 'Action'.
+'iotdsl::Expression' (role 'iotdsl_Expression57', cardinality 0..*) is associated with 'iotdsl::Minus' (role 'iotdsl_Minus', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression42', cardinality 0..*) is associated with 'iotdsl::Equality' (role 'iotdsl_Equality', cardinality 0..*).
+'iotdsl::And' (role 'iotdsl_And39', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression40', cardinality 0..*).
+'iotdsl::Device' (role 'iotdsl_Device', cardinality 0..*) is associated with 'iotdsl::Iot' (role 'iotdsl_Iot', cardinality 0..*).
+'iotdsl::And' (role 'iotdsl_And', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression37', cardinality 0..*).
+'iotdsl::Or' (role 'iotdsl_Or', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression32', cardinality 0..*).
+'iotdsl::State' (role 'iotdsl_State', cardinality 0..*) is associated with 'iotdsl::Device' (role 'iotdsl_Device7', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression65', cardinality 0..*) is associated with 'iotdsl::MulOrDiv' (role 'iotdsl_MulOrDiv64', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression62', cardinality 0..*) is associated with 'iotdsl::MulOrDiv' (role 'iotdsl_MulOrDiv', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression', cardinality 0..*) is associated with 'iotdsl::Variable' (role 'iotdsl_Variable', cardinality 0..*).
+'iotdsl::IfStatement' (role 'iotdsl_IfStatement', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression22', cardinality 0..*).
+'iotdsl::Transition' (role 'iotdsl_Transition18', cardinality 0..*) is associated with 'iotdsl::State' (role 'iotdsl_State19', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression60', cardinality 0..*) is associated with 'iotdsl::Minus' (role 'iotdsl_Minus59', cardinality 0..*).
+'iotdsl::Equality' (role 'iotdsl_Equality44', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression45', cardinality 0..*).
+'iotdsl::IfStatement' (role 'iotdsl_IfStatement24', cardinality 0..*) is associated with 'iotdsl::IfBlock' (role 'iotdsl_IfBlock', cardinality 0..*).
+'iotdsl::Plus' (role 'iotdsl_Plus54', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression55', cardinality 0..*).
+'iotdsl::Device' (role 'iotdsl_Device5', cardinality 0..*) is associated with 'iotdsl::Attribute' (role 'iotdsl_Attribute', cardinality 0..*).
+'iotdsl::Event' (role 'iotdsl_Event', cardinality 0..*) is associated with 'iotdsl::Device' (role 'iotdsl_Device9', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression35', cardinality 0..*) is associated with 'iotdsl::Or' (role 'iotdsl_Or34', cardinality 0..*).
+'iotdsl::Transition' (role 'iotdsl_Transition', cardinality 0..*) is associated with 'iotdsl::Device' (role 'iotdsl_Device11', cardinality 0..*).
+'iotdsl::Comparison' (role 'iotdsl_Comparison', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression47', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression50', cardinality 0..*) is associated with 'iotdsl::Comparison' (role 'iotdsl_Comparison49', cardinality 0..*).
+'iotdsl::Event' (role 'iotdsl_Event16', cardinality 0..*) is associated with 'iotdsl::Transition' (role 'iotdsl_Transition15', cardinality 0..*).
+'iotdsl::Device' (role 'iotdsl_Device3', cardinality 0..*) is associated with 'iotdsl::Device' (role 'iotdsl_Device1', cardinality 0..*).
+'iotdsl::Variable' (role 'iotdsl_Variable69', cardinality 0..*) is associated with 'iotdsl::VariableRef' (role 'iotdsl_VariableRef', cardinality 0..*).
+'iotdsl::Action' (role 'iotdsl_Action30', cardinality 0..*) is associated with 'iotdsl::IfBlock' (role 'iotdsl_IfBlock29', cardinality 0..*).
+'iotdsl::Plus' (role 'iotdsl_Plus', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression52', cardinality 0..*).
+'iotdsl::IfBlock' (role 'iotdsl_IfBlock27', cardinality 0..*) is associated with 'iotdsl::IfStatement' (role 'iotdsl_IfStatement26', cardinality 0..*).
+'iotdsl::Action' (role 'iotdsl_Action', cardinality 0..*) is associated with 'iotdsl::State' (role 'iotdsl_State13', cardinality 0..*).
+'iotdsl::Not' (role 'iotdsl_Not', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression67', cardinality 0..*).

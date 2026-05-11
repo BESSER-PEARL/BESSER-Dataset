@@ -1,0 +1,273 @@
+The model has 135 class(es).
+The class 'Auditing' has no attributes.
+The class 'events::ErrorEventDefinition' has no attributes.
+The class 'Monitoring' has no attributes.
+The class 'DataInput' has no attributes.
+The class 'MessageFlow' has no attributes.
+The class 'ReceiveTask' has no attributes.
+The class 'ResourceRole' has no attributes.
+The class 'ComplexBehaviorDefinition' has no attributes.
+The class 'AdHocSubProcess' has no attributes.
+The class 'events::ImplicitThrowEvent' has no attributes.
+The class 'BaseElement' has no attributes.
+The class 'events::Event' has no attributes.
+The class 'GlobalScriptTask' has no attributes.
+The class 'correlations::CorrelationPropertyBinding' has no attributes.
+The class 'choreographyactivities::ChoreographyActivity' has no attributes.
+The class 'EndPoint' has no attributes.
+The class 'FormalExpression' has no attributes.
+The class 'ItemDefinition' has no attributes.
+The class 'DataStore' has no attributes.
+The class 'Participant' has no attributes.
+The class 'flows::FlowNode' has no attributes.
+The class 'Choreography' has no attributes.
+The class 'Message' has no attributes.
+The class 'GlobalBusinessRuleTask' has no attributes.
+The class 'bpmn2::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'ParticipantMultiplicity' has no attributes.
+The class 'events::EventDefinition' has no attributes.
+The class 'DataOutputAssociation' has no attributes.
+The class 'PartnerRole' has no attributes.
+The class 'events::Signal' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'events::TerminateEventDefinition' has no attributes.
+The class 'CallableElement' has no attributes.
+The class 'gateways::ExclusiveGateway' has no attributes.
+The class 'DataInputAssociation' has no attributes.
+The class 'artifacts::Category' has no attributes.
+The class 'SendTask' has no attributes.
+The class 'ResourceAssignmentExpression' has no attributes.
+The class 'Import' has no attributes.
+The class 'gateways::ParallelGateway' has no attributes.
+The class 'DataObjectReference' has no attributes.
+The class 'bpmn2::EObject' has no attributes.
+The class 'artifacts::TextAnnotation' has no attributes.
+The class 'gateways::InclusiveGateway' has no attributes.
+The class 'LaneSet' has no attributes.
+The class 'Interface' has no attributes.
+The class 'artifacts::Association' has no attributes.
+The class 'ManualTask' has no attributes.
+The class 'GlobalConversation' has no attributes.
+The class 'choreographyactivities::SubChoreography' has no attributes.
+The class 'InputOutputBinding' has no attributes.
+The class 'events::SignalEventDefinition' has no attributes.
+The class 'artifacts::Artifact' has no attributes.
+The class 'events::EndEvent' has no attributes.
+The class 'GlobalTask' has no attributes.
+The class 'Conversation' has no attributes.
+The class 'ConversationLink' has no attributes.
+The class 'CallConversation' has no attributes.
+The class 'GlobalManualTask' has no attributes.
+The class 'Definitions' has no attributes.
+The class 'ScriptTask' has no attributes.
+The class 'extension::Extension' has no attributes.
+The class 'choreographyactivities::ChoreographyTask' has no attributes.
+The class 'MultiInstanceLoopCharacteristics' has no attributes.
+The class 'correlations::CorrelationSubscription' has no attributes.
+The class 'events::CompensateEventDefinition' has no attributes.
+The class 'BusinessRuleTask' has no attributes.
+The class 'events::IntermediateCatchEvent' has no attributes.
+The class 'Property' has no attributes.
+The class 'DataObject' has no attributes.
+The class 'events::StartEvent' has no attributes.
+The class 'flows::FlowElement' has no attributes.
+The class 'ParticipantAssociation' has no attributes.
+The class 'artifacts::CategoryValue' has no attributes.
+The class 'Transaction' has no attributes.
+The class 'Lane' has no attributes.
+The class 'PartnerEntity' has no attributes.
+The class 'events::ThrowEvent' has no attributes.
+The class 'Operation' has no attributes.
+The class 'gateways::EventBasedGateway' has no attributes.
+The class 'Process' has no attributes.
+The class 'events::ConditionalEventDefinition' has no attributes.
+The class 'ResourceParameter' has no attributes.
+The class 'events::IntermediateThrowEvent' has no attributes.
+The class 'SubConversation' has no attributes.
+The class 'ResourceParameterBinding' has no attributes.
+The class 'HumanPerformer' has no attributes.
+The class 'flows::SequenceFlow' has no attributes.
+The class 'ServiceTask' has no attributes.
+The class 'DataAssociation' has no attributes.
+The class 'Rendering' has no attributes.
+The class 'GlobalChoreographyTask' has no attributes.
+The class 'correlations::CorrelationProperty' has no attributes.
+The class 'InputSet' has no attributes.
+The class 'MessageFlowAssociation' has no attributes.
+The class 'events::LinkEventDefinition' has no attributes.
+The class 'DataState' has no attributes.
+The class 'choreographyactivities::CallChoreography' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'PotentialOwner' has no attributes.
+The class 'ConversationAssociation' has no attributes.
+The class 'Performer' has no attributes.
+The class 'Task' has no attributes.
+The class 'Escalation' has no attributes.
+The class 'UserTask' has no attributes.
+The class 'artifacts::Group' has no attributes.
+The class 'Expression' has no attributes.
+The class 'extension::ExtensionAttributeValue' has no attributes.
+The class 'events::EscalationEventDefinition' has no attributes.
+The class 'OutputSet' has no attributes.
+The class 'Documentation' has no attributes.
+The class 'InputOutputSpecification' has no attributes.
+The class 'correlations::CorrelationKey' has no attributes.
+The class 'StandardLoopCharacteristics' has no attributes.
+The class 'gateways::ComplexGateway' has no attributes.
+The class 'CallActivity' has no attributes.
+The class 'RootElement' has no attributes.
+The class 'DataStoreReference' has no attributes.
+The class 'events::BoundaryEvent' has no attributes.
+The class 'correlations::CorrelationPropertyRetrievalExpression' has no attributes.
+The class 'gateways::Gateway' has no attributes.
+The class 'events::CancelEventDefinition' has no attributes.
+The class 'events::TimerEventDefinition' has no attributes.
+The class 'ConversationNode' has no attributes.
+The class 'Activity' has no attributes.
+The class 'GlobalUserTask' has no attributes.
+The class 'Error' has no attributes.
+The class 'Collaboration' has no attributes.
+The class 'events::CatchEvent' has no attributes.
+The class 'bpmn2::EStringToStringMapEntry' has no attributes.
+The class 'LoopCharacteristics' has no attributes.
+The class 'SubProcess' has no attributes.
+The class 'MessageEventDefinition' has no attributes.
+The class 'Resource' has no attributes.
+The class 'DataOutput' has no attributes.
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot275', cardinality 0..*) is associated with 'UserTask' (role 'UserTask', cardinality 0..*).
+'Transaction' (role 'Transaction', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot273', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot70', cardinality 0..*) is associated with 'ConversationLink' (role 'ConversationLink', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot254', cardinality 0..*) is associated with 'choreographyactivities::SubChoreography' (role 'choreographyactivities_SubChoreography', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot13', cardinality 0..*) is associated with 'Assignment' (role 'Assignment', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot19', cardinality 0..*) is associated with 'BaseElement' (role 'BaseElement', cardinality 0..*).
+'ResourceAssignmentExpression' (role 'ResourceAssignmentExpression', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot230', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot92', cardinality 0..*) is associated with 'DataOutput' (role 'DataOutput', cardinality 0..*).
+'DataAssociation' (role 'DataAssociation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot82', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot146', cardinality 0..*) is associated with 'GlobalTask' (role 'GlobalTask', cardinality 0..*).
+'Process' (role 'Process', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot218', cardinality 0..*).
+'Error' (role 'Error', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot110', cardinality 0..*).
+'Documentation' (role 'Documentation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot104', cardinality 0..*).
+'HumanPerformer' (role 'HumanPerformer', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot152', cardinality 0..*).
+'events::ImplicitThrowEvent' (role 'events_ImplicitThrowEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot158', cardinality 0..*).
+'RootElement' (role 'RootElement', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot42', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot124', cardinality 0..*).
+'events::CompensateEventDefinition' (role 'events_CompensateEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot58', cardinality 0..*).
+'Choreography' (role 'Choreography', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot50', cardinality 0..*).
+'events::LinkEventDefinition' (role 'events_LinkEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot182', cardinality 0..*).
+'events::Signal' (role 'events_Signal', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot246', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot186', cardinality 0..*) is associated with 'ManualTask' (role 'ManualTask', cardinality 0..*).
+'MessageFlowAssociation' (role 'MessageFlowAssociation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot194', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot269', cardinality 0..*) is associated with 'events::ThrowEvent' (role 'events_ThrowEvent', cardinality 0..*).
+'Escalation' (role 'Escalation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot114', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot166', cardinality 0..*) is associated with 'Interface' (role 'Interface', cardinality 0..*).
+'events::IntermediateCatchEvent' (role 'events_IntermediateCatchEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot168', cardinality 0..*).
+'artifacts::TextAnnotation' (role 'artifacts_TextAnnotation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot267', cardinality 0..*).
+'gateways::EventBasedGateway' (role 'gateways_EventBasedGateway', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot120', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot64', cardinality 0..*) is associated with 'events::ConditionalEventDefinition' (role 'events_ConditionalEventDefinition', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot208', cardinality 0..*) is associated with 'ParticipantAssociation' (role 'ParticipantAssociation', cardinality 0..*).
+'events::EndEvent' (role 'events_EndEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot106', cardinality 0..*).
+'flows::FlowNode' (role 'flows_FlowNode', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot130', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot17', cardinality 0..*) is associated with 'Auditing' (role 'Auditing', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot234', cardinality 0..*) is associated with 'ResourceParameterBinding' (role 'ResourceParameterBinding', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot126', cardinality 0..*) is associated with 'extension::Extension' (role 'extension_Extension', cardinality 0..*).
+'ScriptTask' (role 'ScriptTask', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot238', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot206', cardinality 0..*) is associated with 'Participant' (role 'Participant', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot90', cardinality 0..*) is associated with 'DataObjectReference' (role 'DataObjectReference', cardinality 0..*).
+'DataInputAssociation' (role 'DataInputAssociation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot86', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot150', cardinality 0..*) is associated with 'artifacts::Group' (role 'artifacts_Group', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot98', cardinality 0..*) is associated with 'DataStore' (role 'DataStore', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot11', cardinality 0..*) is associated with 'artifacts::Artifact' (role 'artifacts_Artifact', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot21', cardinality 0..*) is associated with 'BaseElement' (role 'BaseElement22', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot204', cardinality 0..*) is associated with 'gateways::ParallelGateway' (role 'gateways_ParallelGateway', cardinality 0..*).
+'ConversationAssociation' (role 'ConversationAssociation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot68', cardinality 0..*).
+'Message' (role 'Message', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot188', cardinality 0..*).
+'events::ErrorEventDefinition' (role 'events_ErrorEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot112', cardinality 0..*).
+'Performer' (role 'Performer', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot154', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot32', cardinality 0..*) is associated with 'choreographyactivities::CallChoreography' (role 'choreographyactivities_CallChoreography', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot52', cardinality 0..*) is associated with 'Collaboration' (role 'Collaboration', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot88', cardinality 0..*) is associated with 'DataObject' (role 'DataObject', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot242', cardinality 0..*) is associated with 'flows::SequenceFlow' (role 'flows_SequenceFlow', cardinality 0..*).
+'InputSet' (role 'InputSet', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot164', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot258', cardinality 0..*) is associated with 'SubProcess' (role 'SubProcess', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot190', cardinality 0..*) is associated with 'MessageEventDefinition' (role 'MessageEventDefinition', cardinality 0..*).
+'events::EscalationEventDefinition' (role 'events_EscalationEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot116', cardinality 0..*).
+'gateways::Gateway' (role 'gateways_Gateway', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot134', cardinality 0..*).
+'correlations::CorrelationSubscription' (role 'correlations_CorrelationSubscription', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot80', cardinality 0..*).
+'events::EventDefinition' (role 'events_EventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot40', cardinality 0..*).
+'flows::FlowElement' (role 'flows_FlowElement', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot9', cardinality 0..*).
+'FormalExpression' (role 'FormalExpression', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot132', cardinality 0..*).
+'events::TerminateEventDefinition' (role 'events_TerminateEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot262', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot172', cardinality 0..*) is associated with 'InputOutputBinding' (role 'InputOutputBinding', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot214', cardinality 0..*) is associated with 'PartnerRole' (role 'PartnerRole', cardinality 0..*).
+'ComplexBehaviorDefinition' (role 'ComplexBehaviorDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot60', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot148', cardinality 0..*) is associated with 'GlobalUserTask' (role 'GlobalUserTask', cardinality 0..*).
+'gateways::ExclusiveGateway' (role 'gateways_ExclusiveGateway', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot122', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot84', cardinality 0..*) is associated with 'DataInput' (role 'DataInput', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot200', cardinality 0..*).
+'artifacts::Association' (role 'artifacts_Association', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot15', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot36', cardinality 0..*) is associated with 'ConversationNode' (role 'ConversationNode', cardinality 0..*).
+'correlations::CorrelationProperty' (role 'correlations_CorrelationProperty', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot74', cardinality 0..*).
+'ReceiveTask' (role 'ReceiveTask', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot222', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot196', cardinality 0..*) is associated with 'Monitoring' (role 'Monitoring', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot78', cardinality 0..*) is associated with 'correlations::CorrelationPropertyRetrievalExpression' (role 'correlations_CorrelationPropertyRetrievalExpression', cardinality 0..*).
+'EndPoint' (role 'EndPoint', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot108', cardinality 0..*).
+'gateways::InclusiveGateway' (role 'gateways_InclusiveGateway', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot162', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot136', cardinality 0..*) is associated with 'GlobalBusinessRuleTask' (role 'GlobalBusinessRuleTask', cardinality 0..*).
+'artifacts::Category' (role 'artifacts_Category', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot46', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot228', cardinality 0..*) is associated with 'Resource' (role 'Resource', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot264', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject265', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot2', cardinality 0..*) is associated with 'bpmn2::EStringToStringMapEntry' (role 'bpmn2_EStringToStringMapEntry3', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot176', cardinality 0..*) is associated with 'ItemDefinition' (role 'ItemDefinition', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot271', cardinality 0..*) is associated with 'events::TimerEventDefinition' (role 'events_TimerEventDefinition', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot256', cardinality 0..*) is associated with 'SubConversation' (role 'SubConversation', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot226', cardinality 0..*) is associated with 'Rendering' (role 'Rendering', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot66', cardinality 0..*) is associated with 'Conversation' (role 'Conversation', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot102', cardinality 0..*) is associated with 'Definitions' (role 'Definitions', cardinality 0..*).
+'events::CatchEvent' (role 'events_CatchEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot44', cardinality 0..*).
+'AdHocSubProcess' (role 'AdHocSubProcess', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot7', cardinality 0..*).
+'gateways::ComplexGateway' (role 'gateways_ComplexGateway', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot62', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot96', cardinality 0..*) is associated with 'DataState' (role 'DataState', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot192', cardinality 0..*) is associated with 'MessageFlow' (role 'MessageFlow', cardinality 0..*).
+'ServiceTask' (role 'ServiceTask', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot244', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot220', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'correlations::CorrelationPropertyBinding' (role 'correlations_CorrelationPropertyBinding', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot76', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot142', cardinality 0..*) is associated with 'GlobalManualTask' (role 'GlobalManualTask', cardinality 0..*).
+'MultiInstanceLoopCharacteristics' (role 'MultiInstanceLoopCharacteristics', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot198', cardinality 0..*).
+'CallableElement' (role 'CallableElement', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot28', cardinality 0..*).
+'events::Event' (role 'events_Event', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot118', cardinality 0..*).
+'DataOutputAssociation' (role 'DataOutputAssociation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot94', cardinality 0..*).
+'Activity' (role 'Activity', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot5', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot26', cardinality 0..*) is associated with 'BusinessRuleTask' (role 'BusinessRuleTask', cardinality 0..*).
+'bpmn2::EStringToStringMapEntry' (role 'bpmn2_EStringToStringMapEntry', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot', cardinality 0..*).
+'SendTask' (role 'SendTask', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot240', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot224', cardinality 0..*) is associated with 'Relationship' (role 'Relationship', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot48', cardinality 0..*) is associated with 'artifacts::CategoryValue' (role 'artifacts_CategoryValue', cardinality 0..*).
+'extension::ExtensionAttributeValue' (role 'extension_ExtensionAttributeValue', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot128', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot210', cardinality 0..*) is associated with 'ParticipantMultiplicity' (role 'ParticipantMultiplicity', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot248', cardinality 0..*) is associated with 'events::SignalEventDefinition' (role 'events_SignalEventDefinition', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot100', cardinality 0..*) is associated with 'DataStoreReference' (role 'DataStoreReference', cardinality 0..*).
+'events::CancelEventDefinition' (role 'events_CancelEventDefinition', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot38', cardinality 0..*).
+'Import' (role 'Import', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot160', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot232', cardinality 0..*) is associated with 'ResourceParameter' (role 'ResourceParameter', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot156', cardinality 0..*) is associated with 'ResourceRole' (role 'ResourceRole', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot174', cardinality 0..*) is associated with 'InputOutputSpecification' (role 'InputOutputSpecification', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot216', cardinality 0..*) is associated with 'PotentialOwner' (role 'PotentialOwner', cardinality 0..*).
+'events::StartEvent' (role 'events_StartEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot252', cardinality 0..*).
+'Lane' (role 'Lane', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot178', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot24', cardinality 0..*) is associated with 'events::BoundaryEvent' (role 'events_BoundaryEvent', cardinality 0..*).
+'choreographyactivities::ChoreographyTask' (role 'choreographyactivities_ChoreographyTask', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot56', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot138', cardinality 0..*) is associated with 'GlobalChoreographyTask' (role 'GlobalChoreographyTask', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot180', cardinality 0..*) is associated with 'LaneSet' (role 'LaneSet', cardinality 0..*).
+'OutputSet' (role 'OutputSet', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot202', cardinality 0..*).
+'Task' (role 'Task', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot260', cardinality 0..*).
+'events::IntermediateThrowEvent' (role 'events_IntermediateThrowEvent', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot170', cardinality 0..*).
+'correlations::CorrelationKey' (role 'correlations_CorrelationKey', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot72', cardinality 0..*).
+'choreographyactivities::ChoreographyActivity' (role 'choreographyactivities_ChoreographyActivity', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot54', cardinality 0..*).
+'CallConversation' (role 'CallConversation', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot34', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot184', cardinality 0..*) is associated with 'LoopCharacteristics' (role 'LoopCharacteristics', cardinality 0..*).
+'PartnerEntity' (role 'PartnerEntity', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot212', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot236', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot250', cardinality 0..*) is associated with 'StandardLoopCharacteristics' (role 'StandardLoopCharacteristics', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot140', cardinality 0..*) is associated with 'GlobalConversation' (role 'GlobalConversation', cardinality 0..*).
+'CallActivity' (role 'CallActivity', cardinality 0..*) is associated with 'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot30', cardinality 0..*).
+'bpmn2::DocumentRoot' (role 'bpmn2_DocumentRoot144', cardinality 0..*) is associated with 'GlobalScriptTask' (role 'GlobalScriptTask', cardinality 0..*).

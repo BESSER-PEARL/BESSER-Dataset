@@ -1,0 +1,51 @@
+The model has 24 class(es).
+The class 'llp::IOInstruction' has no attributes.
+The class 'llp::MemoryReference' has the following attributes: 'address' of type str.
+The class 'SynchronisationInstruction' has no attributes.
+The class 'llp::ControlFlowInstruction' has no attributes.
+The class 'DataAccessPattern' has no attributes.
+The class 'llp::DataAccessPattern' has no attributes.
+The class 'llp::WriteInstruction' has no attributes.
+The class 'llp::CommitInstruction' has no attributes.
+The class 'llp::RepetitionInstruction' has the following attributes: 'numberOfRepetitions' of type int.
+The class 'llp::SynchronisationInstruction' has no attributes.
+The class 'llp::ControlFlowBranchingInstruction' has no attributes.
+The class 'llp::CacheInstruction' has no attributes.
+The class 'IOInstruction' has no attributes.
+The class 'llp::LockInstruction' has no attributes.
+The class 'llp::UnlockInstruction' has no attributes.
+The class 'llp::Block' has no attributes.
+The class 'ControlFlowInstruction' has no attributes.
+The class 'llp::ParenthesisInstruction' has no attributes.
+The class 'llp::SkipInstruction' has no attributes.
+The class 'llp::SpawnInstruction' has no attributes.
+The class 'llp::LowLevelProgram' has no attributes.
+The class 'llp::ReadInstruction' has no attributes.
+The class 'llp::Task' has the following attributes: 'name' of type str.
+The class 'CacheInstruction' has no attributes.
+'llp::SpawnInstruction' is a specialization of 'DataAccessPattern'.
+'llp::RepetitionInstruction' is a specialization of 'ControlFlowInstruction'.
+'llp::ControlFlowInstruction' is a specialization of 'DataAccessPattern'.
+'llp::LockInstruction' is a specialization of 'SynchronisationInstruction'.
+'llp::ParenthesisInstruction' is a specialization of 'ControlFlowInstruction'.
+'llp::SkipInstruction' is a specialization of 'ControlFlowInstruction'.
+'llp::ControlFlowBranchingInstruction' is a specialization of 'ControlFlowInstruction'.
+'llp::CacheInstruction' is a specialization of 'DataAccessPattern'.
+'llp::UnlockInstruction' is a specialization of 'SynchronisationInstruction'.
+'llp::IOInstruction' is a specialization of 'DataAccessPattern'.
+'llp::CommitInstruction' is a specialization of 'CacheInstruction'.
+'llp::WriteInstruction' is a specialization of 'IOInstruction'.
+'llp::SynchronisationInstruction' is a specialization of 'DataAccessPattern'.
+'llp::ReadInstruction' is a specialization of 'IOInstruction'.
+'llp::Block' (role 'llp_Block5', cardinality 0..*) is associated with 'llp::Task' (role 'llp_Task4', cardinality 0..*).
+'llp::LowLevelProgram' (role 'llp_LowLevelProgram2', cardinality 0..*) is associated with 'llp::Block' (role 'llp_Block', cardinality 0..*).
+'llp::LowLevelProgram' (role 'llp_LowLevelProgram', cardinality 0..*) is associated with 'llp::Task' (role 'llp_Task', cardinality 0..*).
+'llp::CommitInstruction' (role 'llp_CommitInstruction', cardinality 0..*) is associated with 'llp::MemoryReference' (role 'llp_MemoryReference10', cardinality 0..*).
+'llp::Block' (role 'llp_Block14', cardinality 0..*) is associated with 'llp::ControlFlowBranchingInstruction' (role 'llp_ControlFlowBranchingInstruction', cardinality 0..*).
+'llp::Block' (role 'llp_Block7', cardinality 0..*) is associated with 'llp::DataAccessPattern' (role 'llp_DataAccessPattern', cardinality 0..*).
+'llp::RepetitionInstruction' (role 'llp_RepetitionInstruction', cardinality 0..*) is associated with 'llp::Block' (role 'llp_Block19', cardinality 0..*).
+'llp::MemoryReference' (role 'llp_MemoryReference', cardinality 0..*) is associated with 'llp::IOInstruction' (role 'llp_IOInstruction', cardinality 0..*).
+'llp::Task' (role 'llp_Task12', cardinality 0..*) is associated with 'llp::SpawnInstruction' (role 'llp_SpawnInstruction', cardinality 0..*).
+'llp::Block' (role 'llp_Block17', cardinality 0..*) is associated with 'llp::ControlFlowBranchingInstruction' (role 'llp_ControlFlowBranchingInstruction16', cardinality 0..*).
+'llp::ParenthesisInstruction' (role 'llp_ParenthesisInstruction', cardinality 0..*) is associated with 'llp::Block' (role 'llp_Block23', cardinality 0..*).
+'llp::SynchronisationInstruction' (role 'llp_SynchronisationInstruction', cardinality 0..*) is associated with 'llp::MemoryReference' (role 'llp_MemoryReference21', cardinality 0..*).

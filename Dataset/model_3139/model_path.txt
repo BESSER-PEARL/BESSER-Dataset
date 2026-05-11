@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/AlFranzis/SmartMatcher/SmartMatcherTrunk/models/SystemTests/TestCase_UML/UML_light/UML_1.4.2_CD.ecore

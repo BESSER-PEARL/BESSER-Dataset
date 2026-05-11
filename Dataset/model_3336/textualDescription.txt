@@ -1,0 +1,29 @@
+The model has 9 class(es).
+The class 'javaz::JavaClass' has the following attributes: 'rewritable' of type bool; 'final' of type bool; 'needToGenerate' of type bool; 'public' of type bool; 'kind' of type str.
+The class 'javaz::Javaz' has no attributes.
+The class 'javaz::Method' has the following attributes: 'synchronized' of type bool; 'constructor' of type bool; 'abstract' of type bool; 'static' of type bool; 'native' of type bool; 'visibility' of type str; 'final' of type bool.
+The class 'javaz::Field' has the following attributes: 'visibility' of type str; 'transient' of type bool; 'static' of type bool; 'volatile' of type bool; 'final' of type bool; 'type' of type str.
+The class 'javaz::JavaPackageX' has the following attributes: 'needToGenerate' of type bool.
+The class 'JavaElement' has no attributes.
+The class 'javaz::Block' has the following attributes: 'content' of type str.
+The class 'javaz::JavaParameter' has the following attributes: 'final' of type bool; 'parameterKind' of type str; 'kind' of type str; 'type' of type str.
+The class 'javaz::JavaElement' has the following attributes: 'name' of type str.
+The enumeration 'JavaVisibilityKind' has the following literals: 'PRIVATE', 'PUBLIC', 'PACKAGE', 'PROTECTED'.
+The enumeration 'JavaParameterKind' has the following literals: 'RETURN', 'OUT', 'IN', 'INOUT'.
+The enumeration 'JavaKind' has the following literals: 'INTERFACE', 'CLASS', 'EXCEPTION'.
+'javaz::JavaPackageX' is a specialization of 'JavaElement'.
+'javaz::JavaClass' is a specialization of 'JavaElement'.
+'javaz::JavaParameter' is a specialization of 'JavaElement'.
+'javaz::Method' is a specialization of 'JavaElement'.
+'javaz::Field' is a specialization of 'JavaElement'.
+'javaz::Javaz' is a specialization of 'JavaElement'.
+'javaz::Method' (role 'javaz_Method22', cardinality 0..*) is associated with 'javaz::Block' (role 'javaz_Block', cardinality 0..*).
+'javaz::Method' (role 'javaz_Method', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass4', cardinality 0..*).
+'javaz::JavaClass' (role 'javaz_JavaClass13', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass15', cardinality 0..*).
+'javaz::JavaClass' (role 'javaz_JavaClass18', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass16', cardinality 0..*).
+'javaz::JavaPackageX' (role 'javaz_JavaPackageX', cardinality 0..*) is associated with 'javaz::Javaz' (role 'javaz_Javaz', cardinality 0..*).
+'javaz::JavaClass' (role 'javaz_JavaClass11', cardinality 0..*) is associated with 'javaz::JavaPackageX' (role 'javaz_JavaPackageX12', cardinality 0..*).
+'javaz::JavaParameter' (role 'javaz_JavaParameter', cardinality 0..*) is associated with 'javaz::Method' (role 'javaz_Method20', cardinality 0..*).
+'javaz::Field' (role 'javaz_Field', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass6', cardinality 0..*).
+'javaz::Javaz' (role 'javaz_Javaz2', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass', cardinality 0..*).
+'javaz::JavaClass' (role 'javaz_JavaClass9', cardinality 0..*) is associated with 'javaz::JavaClass' (role 'javaz_JavaClass7', cardinality 0..*).

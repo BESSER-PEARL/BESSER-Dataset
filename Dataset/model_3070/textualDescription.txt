@@ -1,0 +1,85 @@
+The model has 21 class(es).
+The class 'myDsl::RestAPI' has no attributes.
+The class 'myDsl::Transformation' has no attributes.
+The class 'myDsl::PrimitiveType' has no attributes.
+The class 'myDsl::ValidationService' has no attributes.
+The class 'myDsl::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::ModelMapper' has no attributes.
+The class 'myDsl::RestExceptionList' has no attributes.
+The class 'myDsl::ExceptionMapper' has the following attributes: 'name' of type str.
+The class 'myDsl::Block' has the following attributes: 'code' of type str.
+The class 'myDsl::RestException' has the following attributes: 'message' of type str; 'statusCode' of type str.
+The class 'myDsl::DataModelMethodConclusion' has no attributes.
+The class 'Type' has no attributes.
+The class 'myDsl::RestModel' has the following attributes: 'id' of type str; 'self' of type str.
+The class 'myDsl::Service' has the following attributes: 'updateby' of type str; 'name' of type str; 'deleteby' of type str; 'findby' of type str.
+The class 'myDsl::BaseException' has the following attributes: 'errorCode' of type str; 'message' of type str.
+The class 'myDsl::DataModel' has the following attributes: 'id' of type str.
+The class 'myDsl::Resource' has the following attributes: 'updateby' of type str; 'findby' of type str; 'name' of type str; 'deleteby' of type str.
+The class 'myDsl::DomainModel' has no attributes.
+The class 'myDsl::RestModelMethodConclusion' has no attributes.
+The class 'myDsl::DataAccessObject' has the following attributes: 'updateby' of type str; 'deleteby' of type str; 'name' of type str; 'findby' of type str.
+The enumeration 'RestStatusCode' has the following literals: 'CLIENT_ERROR', 'INFORMATIONAL', 'SUCCESS', 'SERVER_ERROR', 'REDIRECTION', 'NETWORK_ERROR'.
+'myDsl::RestModel' is a specialization of 'Type'.
+'myDsl::PrimitiveType' is a specialization of 'Type'.
+'myDsl::ModelMapper' is a specialization of 'Type'.
+'myDsl::DataModel' is a specialization of 'Type'.
+'myDsl::RestModel' (role 'myDsl_RestModel18', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature19', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource52', cardinality 0..*) is associated with 'myDsl::RestModel' (role 'myDsl_RestModel53', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject113', cardinality 0..*) is associated with 'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion114', cardinality 0..*).
+'myDsl::Service' (role 'myDsl_Service98', cardinality 0..*) is associated with 'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList99', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject110', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block111', cardinality 0..*).
+'myDsl::DataModel' (role 'myDsl_DataModel108', cardinality 0..*) is associated with 'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject107', cardinality 0..*).
+'myDsl::DataModel' (role 'myDsl_DataModel23', cardinality 0..*) is associated with 'myDsl::Transformation' (role 'myDsl_Transformation22', cardinality 0..*).
+'myDsl::Service' (role 'myDsl_Service75', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block76', cardinality 0..*).
+'myDsl::RestAPI' (role 'myDsl_RestAPI6', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service', cardinality 0..*).
+'myDsl::Service' (role 'myDsl_Service32', cardinality 0..*) is associated with 'myDsl::Resource' (role 'myDsl_Resource31', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type', cardinality 0..*) is associated with 'myDsl::DomainModel' (role 'myDsl_DomainModel', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource61', cardinality 0..*) is associated with 'myDsl::RestModelMethodConclusion' (role 'myDsl_RestModelMethodConclusion62', cardinality 0..*).
+'myDsl::DataModel' (role 'myDsl_DataModel', cardinality 0..*) is associated with 'myDsl::DataModel' (role 'myDsl_DataModel11', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block90', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service89', cardinality 0..*).
+'myDsl::Service' (role 'myDsl_Service80', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block81', cardinality 0..*).
+'myDsl::RestModel' (role 'myDsl_RestModel144', cardinality 0..*) is associated with 'myDsl::RestModelMethodConclusion' (role 'myDsl_RestModelMethodConclusion143', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource40', cardinality 0..*) is associated with 'myDsl::ValidationService' (role 'myDsl_ValidationService', cardinality 0..*).
+'myDsl::Service' (role 'myDsl_Service78', cardinality 0..*) is associated with 'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion', cardinality 0..*).
+'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList141', cardinality 0..*) is associated with 'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion140', cardinality 0..*).
+'myDsl::RestModel' (role 'myDsl_RestModel26', cardinality 0..*) is associated with 'myDsl::Transformation' (role 'myDsl_Transformation25', cardinality 0..*).
+'myDsl::ExceptionMapper' (role 'myDsl_ExceptionMapper', cardinality 0..*) is associated with 'myDsl::RestAPI' (role 'myDsl_RestAPI10', cardinality 0..*).
+'myDsl::ModelMapper' (role 'myDsl_ModelMapper', cardinality 0..*) is associated with 'myDsl::Transformation' (role 'myDsl_Transformation', cardinality 0..*).
+'myDsl::DataModel' (role 'myDsl_DataModel73', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service72', cardinality 0..*).
+'myDsl::RestModel' (role 'myDsl_RestModel', cardinality 0..*) is associated with 'myDsl::RestModel' (role 'myDsl_RestModel15', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject119', cardinality 0..*) is associated with 'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion120', cardinality 0..*).
+'myDsl::RestAPI' (role 'myDsl_RestAPI4', cardinality 0..*) is associated with 'myDsl::Resource' (role 'myDsl_Resource', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource34', cardinality 0..*) is associated with 'myDsl::ExceptionMapper' (role 'myDsl_ExceptionMapper35', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource49', cardinality 0..*) is associated with 'myDsl::RestModelMethodConclusion' (role 'myDsl_RestModelMethodConclusion50', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource64', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block65', cardinality 0..*).
+'myDsl::DomainModel' (role 'myDsl_DomainModel2', cardinality 0..*) is associated with 'myDsl::RestAPI' (role 'myDsl_RestAPI', cardinality 0..*).
+'myDsl::ValidationService' (role 'myDsl_ValidationService104', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block105', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource67', cardinality 0..*) is associated with 'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature', cardinality 0..*) is associated with 'myDsl::DataModel' (role 'myDsl_DataModel14', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type29', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature28', cardinality 0..*).
+'myDsl::DataModel' (role 'myDsl_DataModel87', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service86', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block47', cardinality 0..*) is associated with 'myDsl::Resource' (role 'myDsl_Resource46', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block132', cardinality 0..*) is associated with 'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject131', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject122', cardinality 0..*) is associated with 'myDsl::DataModel' (role 'myDsl_DataModel123', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block59', cardinality 0..*) is associated with 'myDsl::Resource' (role 'myDsl_Resource58', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject70', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service69', cardinality 0..*).
+'myDsl::RestAPI' (role 'myDsl_RestAPI8', cardinality 0..*) is associated with 'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject', cardinality 0..*).
+'myDsl::RestModel' (role 'myDsl_RestModel102', cardinality 0..*) is associated with 'myDsl::ValidationService' (role 'myDsl_ValidationService101', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject134', cardinality 0..*) is associated with 'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList135', cardinality 0..*).
+'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion93', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service92', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource42', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block', cardinality 0..*).
+'myDsl::Block' (role 'myDsl_Block96', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service95', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject116', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block117', cardinality 0..*).
+'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion84', cardinality 0..*) is associated with 'myDsl::Service' (role 'myDsl_Service83', cardinality 0..*).
+'myDsl::ValidationService' (role 'myDsl_ValidationService56', cardinality 0..*) is associated with 'myDsl::Resource' (role 'myDsl_Resource55', cardinality 0..*).
+'myDsl::ExceptionMapper' (role 'myDsl_ExceptionMapper151', cardinality 0..*) is associated with 'myDsl::RestException' (role 'myDsl_RestException152', cardinality 0..*).
+'myDsl::RestException' (role 'myDsl_RestException', cardinality 0..*) is associated with 'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList149', cardinality 0..*).
+'myDsl::RestModelMethodConclusion' (role 'myDsl_RestModelMethodConclusion146', cardinality 0..*) is associated with 'myDsl::RestExceptionList' (role 'myDsl_RestExceptionList147', cardinality 0..*).
+'myDsl::BaseException' (role 'myDsl_BaseException', cardinality 0..*) is associated with 'myDsl::ExceptionMapper' (role 'myDsl_ExceptionMapper154', cardinality 0..*).
+'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject125', cardinality 0..*) is associated with 'myDsl::Block' (role 'myDsl_Block126', cardinality 0..*).
+'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion129', cardinality 0..*) is associated with 'myDsl::DataAccessObject' (role 'myDsl_DataAccessObject128', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource44', cardinality 0..*) is associated with 'myDsl::RestModelMethodConclusion' (role 'myDsl_RestModelMethodConclusion', cardinality 0..*).
+'myDsl::DataModelMethodConclusion' (role 'myDsl_DataModelMethodConclusion137', cardinality 0..*) is associated with 'myDsl::DataModel' (role 'myDsl_DataModel138', cardinality 0..*).
+'myDsl::Resource' (role 'myDsl_Resource37', cardinality 0..*) is associated with 'myDsl::RestModel' (role 'myDsl_RestModel38', cardinality 0..*).

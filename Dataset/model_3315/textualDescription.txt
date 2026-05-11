@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'traceability::Deployment' has no attributes.
+The class 'traceability::CyberPhysicalSystem' has no attributes.
+The class 'traceability::Identifiable' has no attributes.
+The class 'traceability::CPSToDeployment' has no attributes.
+The class 'traceability::CPS2DeploymentTrace' has no attributes.
+The class 'traceability::DeploymentElement' has no attributes.
+'traceability::Deployment' (role 'traceability_Deployment', cardinality 0..*) is associated with 'traceability::CPSToDeployment' (role 'traceability_CPSToDeployment2', cardinality 0..*).
+'traceability::CPSToDeployment' (role 'traceability_CPSToDeployment', cardinality 0..*) is associated with 'traceability::CyberPhysicalSystem' (role 'traceability_CyberPhysicalSystem', cardinality 0..*).
+'traceability::CPS2DeploymentTrace' (role 'traceability_CPS2DeploymentTrace', cardinality 0..*) is associated with 'traceability::CPSToDeployment' (role 'traceability_CPSToDeployment4', cardinality 0..*).
+'traceability::CPS2DeploymentTrace' (role 'traceability_CPS2DeploymentTrace6', cardinality 0..*) is associated with 'traceability::Identifiable' (role 'traceability_Identifiable', cardinality 0..*).
+'traceability::CPS2DeploymentTrace' (role 'traceability_CPS2DeploymentTrace8', cardinality 0..*) is associated with 'traceability::DeploymentElement' (role 'traceability_DeploymentElement', cardinality 0..*).

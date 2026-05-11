@@ -1,0 +1,29 @@
+The model has 14 class(es).
+The class 'domainmodel::XExpression' has no attributes.
+The class 'domainmodel::JvmFormalParameter' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'domainmodel::DomainModel' has no attributes.
+The class 'domainmodel::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'domainmodel::Feature' has the following attributes: 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'domainmodel::Entity' has the following attributes: 'name' of type str.
+The class 'domainmodel::Operation' has no attributes.
+The class 'domainmodel::JvmParameterizedTypeReference' has no attributes.
+The class 'domainmodel::JvmTypeReference' has no attributes.
+The class 'domainmodel::AbstractElement' has no attributes.
+The class 'domainmodel::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'domainmodel::Property' has no attributes.
+'domainmodel::PackageDeclaration' is a specialization of 'AbstractElement'.
+'domainmodel::Import' is a specialization of 'AbstractElement'.
+'domainmodel::Property' is a specialization of 'Feature'.
+'domainmodel::Entity' is a specialization of 'AbstractElement'.
+'domainmodel::Operation' is a specialization of 'Feature'.
+'domainmodel::Operation' (role 'domainmodel_Operation15', cardinality 0..*) is associated with 'domainmodel::XExpression' (role 'domainmodel_XExpression', cardinality 0..*).
+'domainmodel::Property' (role 'domainmodel_Property', cardinality 0..*) is associated with 'domainmodel::Property' (role 'domainmodel_Property8', cardinality 0..*).
+'domainmodel::Entity' (role 'domainmodel_Entity5', cardinality 0..*) is associated with 'domainmodel::JvmParameterizedTypeReference' (role 'domainmodel_JvmParameterizedTypeReference', cardinality 0..*).
+'domainmodel::AbstractElement' (role 'domainmodel_AbstractElement2', cardinality 0..*) is associated with 'domainmodel::PackageDeclaration' (role 'domainmodel_PackageDeclaration', cardinality 0..*).
+'domainmodel::Property' (role 'domainmodel_Property12', cardinality 0..*) is associated with 'domainmodel::Property' (role 'domainmodel_Property10', cardinality 0..*).
+'domainmodel::Operation' (role 'domainmodel_Operation', cardinality 0..*) is associated with 'domainmodel::JvmFormalParameter' (role 'domainmodel_JvmFormalParameter', cardinality 0..*).
+'domainmodel::Feature' (role 'domainmodel_Feature', cardinality 0..*) is associated with 'domainmodel::Entity' (role 'domainmodel_Entity', cardinality 0..*).
+'domainmodel::AbstractElement' (role 'domainmodel_AbstractElement', cardinality 0..*) is associated with 'domainmodel::DomainModel' (role 'domainmodel_DomainModel', cardinality 0..*).
+'domainmodel::Feature' (role 'domainmodel_Feature7', cardinality 0..*) is associated with 'domainmodel::JvmTypeReference' (role 'domainmodel_JvmTypeReference', cardinality 0..*).

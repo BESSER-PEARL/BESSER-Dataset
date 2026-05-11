@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'DFAAutomaton::Transition' has no attributes.
+The class 'DFAAutomaton::Automaton' has the following attributes: 'name' of type str.
+The class 'DFAAutomaton::State' has the following attributes: 'name' of type str; 'isInitial' of type bool; 'isFinal' of type bool.
+The class 'DFAAutomaton::CompositeState' has no attributes.
+The class 'State' has no attributes.
+The class 'DFAAutomaton::AlphabetSymbol' has the following attributes: 'symbol' of type str.
+'DFAAutomaton::CompositeState' is a specialization of 'State'.
+'DFAAutomaton::Transition' (role 'DFAAutomaton_Transition11', cardinality 0..*) is associated with 'DFAAutomaton::AlphabetSymbol' (role 'DFAAutomaton_AlphabetSymbol12', cardinality 0..*).
+'DFAAutomaton::State' (role 'DFAAutomaton_State8', cardinality 0..*) is associated with 'DFAAutomaton::Transition' (role 'DFAAutomaton_Transition7', cardinality 0..*).
+'DFAAutomaton::Transition' (role 'DFAAutomaton_Transition', cardinality 0..*) is associated with 'DFAAutomaton::Automaton' (role 'DFAAutomaton_Automaton2', cardinality 0..*).
+'DFAAutomaton::Automaton' (role 'DFAAutomaton_Automaton4', cardinality 0..*) is associated with 'DFAAutomaton::AlphabetSymbol' (role 'DFAAutomaton_AlphabetSymbol', cardinality 0..*).
+'DFAAutomaton::Transition' (role 'incoming', cardinality 0..*) is associated with 'DFAAutomaton::State' (role 'State', cardinality 0..*).
+'DFAAutomaton::Transition' (role 'Transition', cardinality 0..*) is associated with 'DFAAutomaton::State' (role 'to', cardinality 0..*).
+'DFAAutomaton::State' (role 'DFAAutomaton_State', cardinality 0..*) is associated with 'DFAAutomaton::Automaton' (role 'DFAAutomaton_Automaton', cardinality 0..*).

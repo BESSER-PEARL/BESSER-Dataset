@@ -1,0 +1,54 @@
+The model has 20 class(es).
+The class 'core::COREPattern' has no attributes.
+The class 'core::COREModelElement' has no attributes.
+The class 'core::COREStrategy' has no attributes.
+The class 'core::COREFeatureModel' has no attributes.
+The class 'core::COREMapping' has no attributes.
+The class 'core::COREBinding' has no attributes.
+The class 'core::COREModel' has no attributes.
+The class 'CORENamedElement' has no attributes.
+The class 'core::COREReuse' has no attributes.
+The class 'CORECompositionSpecification' has no attributes.
+The class 'COREModel' has no attributes.
+The class 'core::COREConcern' has no attributes.
+The class 'core::CORENamedElement' has the following attributes: 'name' of type str.
+The class 'core::COREImpactModel' has no attributes.
+The class 'core::COREInterface' has no attributes.
+The class 'core::COREFeature' has no attributes.
+The class 'core::CORECompositionSpecification' has no attributes.
+The class 'core::COREImpactModelElement' has no attributes.
+The class 'COREModelElement' has no attributes.
+The class 'core::COREConfiguration' has no attributes.
+'core::COREPattern' is a specialization of 'CORECompositionSpecification'.
+'core::COREImpactModel' is a specialization of 'COREModel'.
+'core::COREStrategy' is a specialization of 'CORENamedElement'.
+'core::COREFeature' is a specialization of 'COREModelElement'.
+'core::COREConcern' is a specialization of 'CORENamedElement'.
+'core::COREFeatureModel' is a specialization of 'COREModel'.
+'core::COREModelElement' is a specialization of 'CORENamedElement'.
+'core::COREImpactModelElement' is a specialization of 'COREModelElement'.
+'core::COREModel' is a specialization of 'CORENamedElement'.
+'core::COREBinding' is a specialization of 'CORECompositionSpecification'.
+'core::COREConfiguration' is a specialization of 'CORENamedElement'.
+'core::COREInterface' (role 'core_COREInterface28', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement29', cardinality 0..*).
+'core::COREModel' (role 'COREModel', cardinality 0..*) is associated with 'core::COREFeature' (role 'realizes', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse42', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature43', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface34', cardinality 0..*) is associated with 'core::COREImpactModelElement' (role 'core_COREImpactModelElement', cardinality 0..*).
+'core::COREStrategy' (role 'core_COREStrategy22', cardinality 0..*) is associated with 'core::COREConfiguration' (role 'core_COREConfiguration23', cardinality 0..*).
+'core::COREBinding' (role 'core_COREBinding', cardinality 0..*) is associated with 'core::COREMapping' (role 'core_COREMapping', cardinality 0..*).
+'core::COREConcern' (role 'core_COREConcern7', cardinality 0..*) is associated with 'core::COREInterface' (role 'core_COREInterface', cardinality 0..*).
+'core::COREModelElement' (role 'core_COREModelElement20', cardinality 0..*) is associated with 'core::COREMapping' (role 'core_COREMapping19', cardinality 0..*).
+'core::COREConfiguration' (role 'core_COREConfiguration48', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature49', cardinality 0..*).
+'core::COREModelElement' (role 'core_COREModelElement32', cardinality 0..*) is associated with 'core::COREInterface' (role 'core_COREInterface31', cardinality 0..*).
+'core::COREConfiguration' (role 'core_COREConfiguration45', cardinality 0..*) is associated with 'core::COREConcern' (role 'core_COREConcern46', cardinality 0..*).
+'core::CORECompositionSpecification' (role 'core_CORECompositionSpecification40', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse39', cardinality 0..*).
+'core::COREMapping' (role 'core_COREMapping16', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement17', cardinality 0..*).
+'core::COREModel' (role 'core_COREModel2', cardinality 0..*) is associated with 'core::COREModelElement' (role 'core_COREModelElement', cardinality 0..*).
+'core::COREInterface' (role 'core_COREInterface25', cardinality 0..*) is associated with 'core::COREFeature' (role 'core_COREFeature26', cardinality 0..*).
+'core::COREReuse' (role 'core_COREReuse', cardinality 0..*) is associated with 'core::COREModel' (role 'core_COREModel', cardinality 0..*).
+'core::COREModel' (role 'realizedBy', cardinality 0..*) is associated with 'core::COREFeature' (role 'COREFeature', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature11', cardinality 0..*) is associated with 'core::COREConfiguration' (role 'core_COREConfiguration', cardinality 0..*).
+'core::COREModel' (role 'core_COREModel14', cardinality 0..*) is associated with 'core::CORECompositionSpecification' (role 'core_CORECompositionSpecification', cardinality 0..*).
+'core::COREFeature' (role 'core_COREFeature', cardinality 0..*) is associated with 'core::COREStrategy' (role 'core_COREStrategy', cardinality 0..*).
+'core::COREConcern' (role 'core_COREConcern37', cardinality 0..*) is associated with 'core::COREReuse' (role 'core_COREReuse36', cardinality 0..*).
+'core::COREConcern' (role 'core_COREConcern', cardinality 0..*) is associated with 'core::COREModel' (role 'core_COREModel5', cardinality 0..*).

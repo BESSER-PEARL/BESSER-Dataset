@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'detachelist::Contacts' has no attributes.
+The class 'detachelist::Person' has the following attributes: 'name' of type str.
+'detachelist::Person' (role 'detachelist_Person', cardinality 0..*) is associated with 'detachelist::Contacts' (role 'detachelist_Contacts', cardinality 0..*).
+'detachelist::Person' (role 'detachelist_Person6', cardinality 0..*) is associated with 'detachelist::Person' (role 'detachelist_Person4', cardinality 0..*).
+'detachelist::Person' (role 'detachelist_Person3', cardinality 0..*) is associated with 'detachelist::Contacts' (role 'detachelist_Contacts2', cardinality 0..*).

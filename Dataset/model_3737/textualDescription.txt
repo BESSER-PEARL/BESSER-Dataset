@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'UML2::QualifierValue' has no attributes.
+The class 'UML2::Property' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'UML2::LinkEndCreationData' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'UML2::Port' has no attributes.
+The class 'UML2::LinkEndData' has no attributes.
+The class 'Property' has no attributes.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::LinkEndData' (role 'UML2_LinkEndData', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property8', cardinality 0..*) is associated with 'UML2::QualifierValue' (role 'UML2_QualifierValue7', cardinality 0..*).
+'UML2::QualifierValue' (role 'UML2_QualifierValue', cardinality 0..*) is associated with 'UML2::LinkEndData' (role 'UML2_LinkEndData2', cardinality 0..*).
+'UML2::Property' (role 'UML2_Property3', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property5', cardinality 0..*).

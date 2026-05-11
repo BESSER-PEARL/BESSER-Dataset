@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/srirammails/emftriple/tags/0.7/tests/com.emftriple.example/model/employee.ecore

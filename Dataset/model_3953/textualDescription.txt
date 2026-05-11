@@ -1,0 +1,86 @@
+The model has 34 class(es).
+The class 'soopl::Property' has the following attributes: 'upperBound' of type int; 'lowerBound' of type int; 'multiValued' of type bool.
+The class 'soopl::Action' has no attributes.
+The class 'soopl::NamedElement' has the following attributes: 'name' of type str.
+The class 'soopl::ParameterBinding' has no attributes.
+The class 'soopl::IsInStateCondition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'soopl::SimpleTypeParameter' has the following attributes: 'dataType' of type str.
+The class 'soopl::Transition' has no attributes.
+The class 'IsInStateCondition' has no attributes.
+The class 'soopl::StatefulClass' has no attributes.
+The class 'soopl::StateClass' has no attributes.
+The class 'soopl::ComplexTypeParameter' has no attributes.
+The class 'soopl::PropertyIsInState' has no attributes.
+The class 'soopl::Method' has no attributes.
+The class 'soopl::ComplexTypeProperty' has no attributes.
+The class 'soopl::SimpleTypeProperty' has the following attributes: 'dataType' of type str.
+The class 'soopl::CallMethodOfParameter' has no attributes.
+The class 'Class' has no attributes.
+The class 'soopl::Guard' has no attributes.
+The class 'soopl::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'soopl::Parameter' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'soopl::TransitionMethod' has no attributes.
+The class 'soopl::ParameterIsInState' has no attributes.
+The class 'soopl::StateImplementationClass' has no attributes.
+The class 'Guard' has no attributes.
+The class 'soopl::AssignProperty' has no attributes.
+The class 'soopl::CallMethodAction' has no attributes.
+The class 'Method' has no attributes.
+The class 'Action' has no attributes.
+The class 'Property' has no attributes.
+The class 'soopl::Package' has no attributes.
+The class 'soopl::CallMethodOfProperty' has no attributes.
+The class 'CallMethodAction' has no attributes.
+The enumeration 'DataType' has the following literals: 'Integer', 'Boolean', 'String'.
+'soopl::SimpleTypeProperty' is a specialization of 'Property'.
+'soopl::ParameterIsInState' is a specialization of 'IsInStateCondition'.
+'soopl::StatefulClass' is a specialization of 'Class'.
+'soopl::PropertyIsInState' is a specialization of 'IsInStateCondition'.
+'soopl::AssignProperty' is a specialization of 'Action'.
+'soopl::Parameter' is a specialization of 'NamedElement'.
+'soopl::Package' is a specialization of 'NamedElement'.
+'soopl::IsInStateCondition' is a specialization of 'Guard'.
+'soopl::StateImplementationClass' is a specialization of 'Class'.
+'soopl::ComplexTypeParameter' is a specialization of 'Parameter'.
+'soopl::Class' is a specialization of 'NamedElement'.
+'soopl::CallMethodOfProperty' is a specialization of 'CallMethodAction'.
+'soopl::StateClass' is a specialization of 'Class'.
+'soopl::CallMethodOfParameter' is a specialization of 'CallMethodAction'.
+'soopl::ComplexTypeProperty' is a specialization of 'Property'.
+'soopl::SimpleTypeParameter' is a specialization of 'Parameter'.
+'soopl::Method' is a specialization of 'NamedElement'.
+'soopl::TransitionMethod' is a specialization of 'Method'.
+'soopl::CallMethodAction' is a specialization of 'Action'.
+'soopl::Property' is a specialization of 'NamedElement'.
+'soopl::StateImplementationClass' (role 'soopl_StateImplementationClass53', cardinality 0..*) is associated with 'soopl::IsInStateCondition' (role 'soopl_IsInStateCondition', cardinality 0..*).
+'soopl::ComplexTypeParameter' (role 'soopl_ComplexTypeParameter', cardinality 0..*) is associated with 'soopl::Class' (role 'soopl_Class41', cardinality 0..*).
+'soopl::StateClass' (role 'soopl_StateClass', cardinality 0..*) is associated with 'soopl::StatefulClass' (role 'soopl_StatefulClass15', cardinality 0..*).
+'soopl::ParameterIsInState' (role 'soopl_ParameterIsInState', cardinality 0..*) is associated with 'soopl::Parameter' (role 'soopl_Parameter57', cardinality 0..*).
+'soopl::ParameterBinding' (role 'soopl_ParameterBinding50', cardinality 0..*) is associated with 'soopl::Parameter' (role 'soopl_Parameter51', cardinality 0..*).
+'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty55', cardinality 0..*) is associated with 'soopl::PropertyIsInState' (role 'soopl_PropertyIsInState', cardinality 0..*).
+'soopl::StateImplementationClass' (role 'soopl_StateImplementationClass39', cardinality 0..*) is associated with 'soopl::Transition' (role 'soopl_Transition38', cardinality 0..*).
+'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty', cardinality 0..*) is associated with 'soopl::Class' (role 'soopl_Class26', cardinality 0..*).
+'soopl::Parameter' (role 'soopl_Parameter63', cardinality 0..*) is associated with 'soopl::AssignProperty' (role 'soopl_AssignProperty', cardinality 0..*).
+'soopl::Class' (role 'soopl_Class12', cardinality 0..*) is associated with 'soopl::Class' (role 'soopl_Class10', cardinality 0..*).
+'soopl::Class' (role 'soopl_Class9', cardinality 0..*) is associated with 'soopl::Property' (role 'soopl_Property', cardinality 0..*).
+'soopl::StatefulClass' (role 'soopl_StatefulClass', cardinality 0..*) is associated with 'soopl::StateImplementationClass' (role 'soopl_StateImplementationClass', cardinality 0..*).
+'soopl::ParameterBinding' (role 'soopl_ParameterBinding47', cardinality 0..*) is associated with 'soopl::Property' (role 'soopl_Property48', cardinality 0..*).
+'soopl::Transition' (role 'soopl_Transition', cardinality 0..*) is associated with 'soopl::TransitionMethod' (role 'soopl_TransitionMethod', cardinality 0..*).
+'soopl::Transition' (role 'soopl_Transition34', cardinality 0..*) is associated with 'soopl::Action' (role 'soopl_Action', cardinality 0..*).
+'soopl::Method' (role 'soopl_Method', cardinality 0..*) is associated with 'soopl::Class' (role 'soopl_Class7', cardinality 0..*).
+'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty27', cardinality 0..*) is associated with 'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty29', cardinality 0..*).
+'soopl::Package' (role 'Package5', cardinality 0..*) is associated with 'soopl::Package' (role 'packages', cardinality 0..*).
+'soopl::Package' (role 'soopl_Package', cardinality 0..*) is associated with 'soopl::Class' (role 'soopl_Class', cardinality 0..*).
+'soopl::Parameter' (role 'soopl_Parameter61', cardinality 0..*) is associated with 'soopl::CallMethodOfParameter' (role 'soopl_CallMethodOfParameter', cardinality 0..*).
+'soopl::StatefulClass' (role 'soopl_StatefulClass18', cardinality 0..*) is associated with 'soopl::StateClass' (role 'soopl_StateClass17', cardinality 0..*).
+'soopl::StateImplementationClass' (role 'soopl_StateImplementationClass20', cardinality 0..*) is associated with 'soopl::Method' (role 'soopl_Method21', cardinality 0..*).
+'soopl::Method' (role 'soopl_Method31', cardinality 0..*) is associated with 'soopl::Parameter' (role 'soopl_Parameter', cardinality 0..*).
+'soopl::CallMethodOfProperty' (role 'soopl_CallMethodOfProperty', cardinality 0..*) is associated with 'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty59', cardinality 0..*).
+'soopl::ComplexTypeProperty' (role 'soopl_ComplexTypeProperty66', cardinality 0..*) is associated with 'soopl::AssignProperty' (role 'soopl_AssignProperty65', cardinality 0..*).
+'soopl::StateImplementationClass' (role 'soopl_StateImplementationClass23', cardinality 0..*) is associated with 'soopl::StateClass' (role 'soopl_StateClass24', cardinality 0..*).
+'soopl::CallMethodAction' (role 'soopl_CallMethodAction45', cardinality 0..*) is associated with 'soopl::ParameterBinding' (role 'soopl_ParameterBinding', cardinality 0..*).
+'soopl::Method' (role 'soopl_Method43', cardinality 0..*) is associated with 'soopl::CallMethodAction' (role 'soopl_CallMethodAction', cardinality 0..*).
+'soopl::Transition' (role 'soopl_Transition36', cardinality 0..*) is associated with 'soopl::Guard' (role 'soopl_Guard', cardinality 0..*).
+'soopl::Package' (role 'Package', cardinality 0..*) is associated with 'soopl::Package' (role 'parentPackage', cardinality 0..*).

@@ -1,0 +1,28 @@
+The model has 9 class(es).
+The class 'nosql::Options' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'nosql::Column' has the following attributes: 'size' of type str; 'datatype' of type str; 'name' of type str.
+The class 'nosql::Index' has the following attributes: 'name' of type str; 'reference' of type str.
+The class 'nosql::ColumnFamily' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'nosql::Row' has no attributes.
+The class 'nosql::PK' has no attributes.
+The class 'nosql::Cell' has the following attributes: 'value' of type str.
+The class 'nosql::KeySpace' has the following attributes: 'name' of type str.
+The class 'ColumnFamily' has no attributes.
+The enumeration 'Type' has the following literals: 'varint', 'bigint', 'blob', 'int', 'uuid', 'double', 'ascii', 'decimal', 'counter', 'text', 'timestamp', 'float', 'boolean', 'varchar', 'timeuuid'.
+'nosql::Row' is a specialization of 'ColumnFamily'.
+'nosql::KeySpace' (role 'nosql_KeySpace2', cardinality 0..*) is associated with 'nosql::ColumnFamily' (role 'nosql_ColumnFamily', cardinality 0..*).
+'nosql::Column' (role 'nosql_Column31', cardinality 0..*) is associated with 'nosql::PK' (role 'nosql_PK30', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily13', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column14', cardinality 0..*).
+'nosql::Options' (role 'nosql_Options', cardinality 0..*) is associated with 'nosql::KeySpace' (role 'nosql_KeySpace4', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily28', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column27', cardinality 0..*).
+'nosql::KeySpace' (role 'nosql_KeySpace6', cardinality 0..*) is associated with 'nosql::Options' (role 'nosql_Options7', cardinality 0..*).
+'nosql::Row' (role 'nosql_Row33', cardinality 0..*) is associated with 'nosql::Cell' (role 'nosql_Cell', cardinality 0..*).
+'nosql::ColumnFamily' (role 'nosql_ColumnFamily19', cardinality 0..*) is associated with 'nosql::PK' (role 'nosql_PK20', cardinality 0..*).
+'nosql::Row' (role 'nosql_Row', cardinality 0..*) is associated with 'nosql::ColumnFamily' (role 'nosql_ColumnFamily22', cardinality 0..*).
+'nosql::KeySpace' (role 'nosql_KeySpace', cardinality 0..*) is associated with 'nosql::Index' (role 'nosql_Index', cardinality 0..*).
+'nosql::Row' (role 'nosql_Row35', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column36', cardinality 0..*).
+'nosql::Cell' (role 'nosql_Cell38', cardinality 0..*) is associated with 'nosql::Column' (role 'nosql_Column39', cardinality 0..*).
+'nosql::KeySpace' (role 'nosql_KeySpace9', cardinality 0..*) is associated with 'nosql::PK' (role 'nosql_PK', cardinality 0..*).
+'nosql::KeySpace' (role 'nosql_KeySpace25', cardinality 0..*) is associated with 'nosql::ColumnFamily' (role 'nosql_ColumnFamily24', cardinality 0..*).
+'nosql::Options' (role 'nosql_Options17', cardinality 0..*) is associated with 'nosql::ColumnFamily' (role 'nosql_ColumnFamily16', cardinality 0..*).
+'nosql::Column' (role 'nosql_Column', cardinality 0..*) is associated with 'nosql::Index' (role 'nosql_Index11', cardinality 0..*).

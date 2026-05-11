@@ -1,0 +1,97 @@
+The model has 31 class(es).
+The class 'expressions::Plus' has no attributes.
+The class 'expressions::Minus' has no attributes.
+The class 'expressions::Div' has no attributes.
+The class 'expressions::LExpression' has no attributes.
+The class 'AExpression' has no attributes.
+The class 'SomeValue' has no attributes.
+The class 'expressions::Greater' has no attributes.
+The class 'expressions::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'expressions::Variable' has the following attributes: 'varName' of type str.
+The class 'expressions::Pow' has no attributes.
+The class 'expressions::SomeValue' has no attributes.
+The class 'expressions::Imply' has no attributes.
+The class 'expressions::CExpression' has no attributes.
+The class 'expressions::Mod' has no attributes.
+The class 'expressions::Or' has no attributes.
+The class 'expressions::AExpression' has no attributes.
+The class 'expressions::LessOrEqual' has no attributes.
+The class 'expressions::GreaterOrEqual' has no attributes.
+The class 'expressions::Approx' has no attributes.
+The class 'CExpression' has no attributes.
+The class 'expressions::NumberValue' has the following attributes: 'numValue' of type str.
+The class 'expressions::And' has no attributes.
+The class 'expressions::Not' has no attributes.
+The class 'expressions::Unequal' has no attributes.
+The class 'expressions::Less' has no attributes.
+The class 'LExpression' has no attributes.
+The class 'expressions::Equal' has no attributes.
+The class 'expressions::Multi' has no attributes.
+The class 'expressions::Xor' has no attributes.
+The class 'expressions::Equivalent' has no attributes.
+The class 'expressions::StringValue' has the following attributes: 'strValue' of type str.
+'expressions::SomeValue' is a specialization of 'CExpression'.
+'expressions::Variable' is a specialization of 'AExpression'.
+'expressions::NumberValue' is a specialization of 'AExpression'.
+'expressions::Less' is a specialization of 'CExpression'.
+'expressions::Plus' is a specialization of 'AExpression'.
+'expressions::And' is a specialization of 'LExpression'.
+'expressions::Imply' is a specialization of 'LExpression'.
+'expressions::BooleanValue' is a specialization of 'LExpression'.
+'expressions::Unequal' is a specialization of 'CExpression'.
+'expressions::GreaterOrEqual' is a specialization of 'CExpression'.
+'expressions::Multi' is a specialization of 'AExpression'.
+'expressions::Mod' is a specialization of 'AExpression'.
+'expressions::AExpression' is a specialization of 'SomeValue'.
+'expressions::Div' is a specialization of 'AExpression'.
+'expressions::Equivalent' is a specialization of 'LExpression'.
+'expressions::BooleanValue' is a specialization of 'SomeValue'.
+'expressions::CExpression' is a specialization of 'LExpression'.
+'expressions::Or' is a specialization of 'LExpression'.
+'expressions::StringValue' is a specialization of 'SomeValue'.
+'expressions::Not' is a specialization of 'LExpression'.
+'expressions::Approx' is a specialization of 'CExpression'.
+'expressions::Minus' is a specialization of 'AExpression'.
+'expressions::Pow' is a specialization of 'AExpression'.
+'expressions::Variable' is a specialization of 'LExpression'.
+'expressions::Xor' is a specialization of 'LExpression'.
+'expressions::Greater' is a specialization of 'CExpression'.
+'expressions::Equal' is a specialization of 'CExpression'.
+'expressions::LessOrEqual' is a specialization of 'CExpression'.
+'expressions::Equivalent' (role 'expressions_Equivalent', cardinality 0..*) is associated with 'expressions::LExpression' (role 'expressions_LExpression', cardinality 0..*).
+'expressions::Div' (role 'expressions_Div77', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression78', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue54', cardinality 0..*) is associated with 'expressions::Unequal' (role 'expressions_Unequal53', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression25', cardinality 0..*) is associated with 'expressions::Not' (role 'expressions_Not', cardinality 0..*).
+'expressions::Minus' (role 'expressions_Minus67', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression68', cardinality 0..*).
+'expressions::Less' (role 'expressions_Less', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue31', cardinality 0..*).
+'expressions::GreaterOrEqual' (role 'expressions_GreaterOrEqual', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue36', cardinality 0..*).
+'expressions::GreaterOrEqual' (role 'expressions_GreaterOrEqual38', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue39', cardinality 0..*).
+'expressions::Plus' (role 'expressions_Plus', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression', cardinality 0..*).
+'expressions::And' (role 'expressions_And22', cardinality 0..*) is associated with 'expressions::LExpression' (role 'expressions_LExpression23', cardinality 0..*).
+'expressions::Or' (role 'expressions_Or', cardinality 0..*) is associated with 'expressions::LExpression' (role 'expressions_LExpression10', cardinality 0..*).
+'expressions::Plus' (role 'expressions_Plus62', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression63', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression5', cardinality 0..*) is associated with 'expressions::Imply' (role 'expressions_Imply', cardinality 0..*).
+'expressions::Less' (role 'expressions_Less33', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue34', cardinality 0..*).
+'expressions::Pow' (role 'expressions_Pow', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression85', cardinality 0..*).
+'expressions::Mod' (role 'expressions_Mod', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression80', cardinality 0..*).
+'expressions::Greater' (role 'expressions_Greater', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue41', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue46', cardinality 0..*) is associated with 'expressions::Equal' (role 'expressions_Equal', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression18', cardinality 0..*) is associated with 'expressions::Xor' (role 'expressions_Xor17', cardinality 0..*).
+'expressions::LessOrEqual' (role 'expressions_LessOrEqual28', cardinality 0..*) is associated with 'expressions::SomeValue' (role 'expressions_SomeValue29', cardinality 0..*).
+'expressions::Multi' (role 'expressions_Multi72', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression73', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression15', cardinality 0..*) is associated with 'expressions::Xor' (role 'expressions_Xor', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression13', cardinality 0..*) is associated with 'expressions::Or' (role 'expressions_Or12', cardinality 0..*).
+'expressions::Equivalent' (role 'expressions_Equivalent2', cardinality 0..*) is associated with 'expressions::LExpression' (role 'expressions_LExpression3', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue51', cardinality 0..*) is associated with 'expressions::Unequal' (role 'expressions_Unequal', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression20', cardinality 0..*) is associated with 'expressions::And' (role 'expressions_And', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue', cardinality 0..*) is associated with 'expressions::LessOrEqual' (role 'expressions_LessOrEqual', cardinality 0..*).
+'expressions::AExpression' (role 'expressions_AExpression75', cardinality 0..*) is associated with 'expressions::Div' (role 'expressions_Div', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue49', cardinality 0..*) is associated with 'expressions::Equal' (role 'expressions_Equal48', cardinality 0..*).
+'expressions::AExpression' (role 'expressions_AExpression88', cardinality 0..*) is associated with 'expressions::Pow' (role 'expressions_Pow87', cardinality 0..*).
+'expressions::AExpression' (role 'expressions_AExpression83', cardinality 0..*) is associated with 'expressions::Mod' (role 'expressions_Mod82', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue56', cardinality 0..*) is associated with 'expressions::Approx' (role 'expressions_Approx', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue59', cardinality 0..*) is associated with 'expressions::Approx' (role 'expressions_Approx58', cardinality 0..*).
+'expressions::SomeValue' (role 'expressions_SomeValue44', cardinality 0..*) is associated with 'expressions::Greater' (role 'expressions_Greater43', cardinality 0..*).
+'expressions::Minus' (role 'expressions_Minus', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression65', cardinality 0..*).
+'expressions::Multi' (role 'expressions_Multi', cardinality 0..*) is associated with 'expressions::AExpression' (role 'expressions_AExpression70', cardinality 0..*).
+'expressions::LExpression' (role 'expressions_LExpression8', cardinality 0..*) is associated with 'expressions::Imply' (role 'expressions_Imply7', cardinality 0..*).

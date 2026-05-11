@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'NewEClass4' has no attributes.
+The class 'multipleinheritence::NewEClass1' has the following attributes: 'f1' of type int.
+The class 'multipleinheritence::NewEClass2' has the following attributes: 'f2' of type int.
+The class 'NewEClass3' has no attributes.
+The class 'multipleinheritence::NewEClass4' has the following attributes: 'f4' of type int.
+The class 'multipleinheritence::NewEClass3' has the following attributes: 'f3' of type int.
+The class 'multipleinheritence::NewEClass5' has the following attributes: 'f5' of type int.
+The class 'NewEClass5' has no attributes.
+The class 'NewEClass2' has no attributes.
+'multipleinheritence::NewEClass3' is a specialization of 'NewEClass5'.
+'multipleinheritence::NewEClass1' is a specialization of 'NewEClass3'.
+'multipleinheritence::NewEClass1' is a specialization of 'NewEClass2'.
+'multipleinheritence::NewEClass3' is a specialization of 'NewEClass4'.

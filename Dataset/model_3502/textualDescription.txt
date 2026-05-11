@@ -1,0 +1,126 @@
+The model has 46 class(es).
+The class 'go::SignatureDel' has the following attributes: 'id' of type str.
+The class 'go::ElseCondition' has no attributes.
+The class 'go::ForDecl' has no attributes.
+The class 'go::ArrayValue' has no attributes.
+The class 'go::Condition' has no attributes.
+The class 'go::IGUAL' has the following attributes: 'igual' of type str.
+The class 'go::PostStmt' has no attributes.
+The class 'go::IfStmt' has no attributes.
+The class 'go::Parameters' has no attributes.
+The class 'go::InitStmt' has no attributes.
+The class 'go::ForClause' has no attributes.
+The class 'go::LITERAIS::BASICOS' has the following attributes: 'numero' of type str; 'string' of type str.
+The class 'go::EXPRESSAO' has no attributes.
+The class 'go::Signature' has no attributes.
+The class 'go::VarCall' has the following attributes: 'id' of type str.
+The class 'go::LiteraisList' has the following attributes: 'vir' of type str.
+The class 'go::BOOL::OP' has no attributes.
+The class 'go::ARIT::EXPR' has the following attributes: 'num' of type str; 'atr' of type str; 'num1' of type str; 'op' of type str; 'num2' of type str.
+The class 'go::RangeDecl' has no attributes.
+The class 'ElseIfCondition' has no attributes.
+The class 'go::BLOCK' has no attributes.
+The class 'go::ReturnStmt' has no attributes.
+The class 'go::Const' has the following attributes: 'const' of type str.
+The class 'go::BasicType' has the following attributes: 'float' of type str; 'boolean' of type str; 'string' of type str; 'int' of type str.
+The class 'go::PONTOSIGUAL' has the following attributes: 'op' of type str.
+The class 'go::ArrayType' has the following attributes: 'qtd' of type str.
+The class 'go::EObject' has no attributes.
+The class 'go::PARAMETERS::LIST' has the following attributes: 'vir' of type str.
+The class 'go::BINARY::EXP' has the following attributes: 'arit' of type str.
+The class 'go::PARAMETER' has the following attributes: 'id' of type str.
+The class 'go::VarDecl' has no attributes.
+The class 'go::BOOLEAN::VALUE' has the following attributes: 'falso' of type str; 'verdadeiro' of type str.
+The class 'go::FunctionCall' has the following attributes: 'id' of type str.
+The class 'go::Types' has no attributes.
+The class 'go::Assignment' has the following attributes: 'id' of type str; 'qtd' of type str.
+The class 'go::Init' has no attributes.
+The class 'go::IfCondition' has no attributes.
+The class 'go::EXPRESSAOLINHA' has no attributes.
+The class 'go::COMPARISON' has the following attributes: 'igual' of type str; 'menorque' of type str; 'maiorigualque' of type str; 'maiorque' of type str; 'menorigualque' of type str.
+The class 'go::GoDecl' has no attributes.
+The class 'go::IDList' has the following attributes: 'idList' of type str; 'vir' of type str.
+The class 'go::TIPO' has no attributes.
+The class 'go::FunctionType' has the following attributes: 'nome' of type str.
+The class 'go::ElseIfCondition' has no attributes.
+The class 'go::Chamada' has no attributes.
+The class 'go::Var' has the following attributes: 'var' of type str.
+'go::IfCondition' is a specialization of 'ElseIfCondition'.
+'go::EXPRESSAO' (role 'go_EXPRESSAO143', cardinality 0..*) is associated with 'go::ElseCondition' (role 'go_ElseCondition', cardinality 0..*).
+'go::IGUAL' (role 'go_IGUAL62', cardinality 0..*) is associated with 'go::Assignment' (role 'go_Assignment', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO95', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl96', cardinality 0..*).
+'go::PARAMETERS::LIST' (role 'go_PARAMETERS_LIST168', cardinality 0..*) is associated with 'go::FunctionCall' (role 'go_FunctionCall167', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO75', cardinality 0..*) is associated with 'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA74', cardinality 0..*).
+'go::ForDecl' (role 'go_ForDecl', cardinality 0..*) is associated with 'go::ForClause' (role 'go_ForClause', cardinality 0..*).
+'go::LITERAIS::BASICOS' (role 'go_LITERAIS_BASICOS102', cardinality 0..*) is associated with 'go::ReturnStmt' (role 'go_ReturnStmt', cardinality 0..*).
+'go::ReturnStmt' (role 'go_ReturnStmt104', cardinality 0..*) is associated with 'go::FunctionCall' (role 'go_FunctionCall105', cardinality 0..*).
+'go::RangeDecl' (role 'go_RangeDecl18', cardinality 0..*) is associated with 'go::PONTOSIGUAL' (role 'go_PONTOSIGUAL', cardinality 0..*).
+'go::RangeDecl' (role 'go_RangeDecl', cardinality 0..*) is associated with 'go::ForDecl' (role 'go_ForDecl9', cardinality 0..*).
+'go::ARIT::EXPR' (role 'go_ARIT_EXPR', cardinality 0..*) is associated with 'go::PostStmt' (role 'go_PostStmt33', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO98', cardinality 0..*) is associated with 'go::Chamada' (role 'go_Chamada', cardinality 0..*).
+'go::IfCondition' (role 'go_IfCondition183', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt182', cardinality 0..*).
+'go::BINARY::EXP' (role 'go_BINARY_EXP', cardinality 0..*) is associated with 'go::EXPRESSAO' (role 'go_EXPRESSAO83', cardinality 0..*).
+'go::SignatureDel' (role 'go_SignatureDel58', cardinality 0..*) is associated with 'go::TIPO' (role 'go_TIPO', cardinality 0..*).
+'go::ForClause' (role 'go_ForClause26', cardinality 0..*) is associated with 'go::Condition' (role 'go_Condition', cardinality 0..*).
+'go::IGUAL' (role 'go_IGUAL', cardinality 0..*) is associated with 'go::RangeDecl' (role 'go_RangeDecl16', cardinality 0..*).
+'go::VarDecl' (role 'go_VarDecl45', cardinality 0..*) is associated with 'go::SignatureDel' (role 'go_SignatureDel', cardinality 0..*).
+'go::LITERAIS::BASICOS' (role 'go_LITERAIS_BASICOS', cardinality 0..*) is associated with 'go::EXPRESSAO' (role 'go_EXPRESSAO85', cardinality 0..*).
+'go::IDList' (role 'go_IDList', cardinality 0..*) is associated with 'go::RangeDecl' (role 'go_RangeDecl14', cardinality 0..*).
+'go::LiteraisList' (role 'go_LiteraisList', cardinality 0..*) is associated with 'go::ArrayValue' (role 'go_ArrayValue110', cardinality 0..*).
+'go::LITERAIS::BASICOS' (role 'go_LITERAIS_BASICOS154', cardinality 0..*) is associated with 'go::PARAMETER' (role 'go_PARAMETER153', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO93', cardinality 0..*) is associated with 'go::ArrayValue' (role 'go_ArrayValue', cardinality 0..*).
+'go::ARIT::EXPR' (role 'go_ARIT_EXPR176', cardinality 0..*) is associated with 'go::VarCall' (role 'go_VarCall177', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO80', cardinality 0..*) is associated with 'go::FunctionType' (role 'go_FunctionType81', cardinality 0..*).
+'go::RangeDecl' (role 'go_RangeDecl20', cardinality 0..*) is associated with 'go::VarCall' (role 'go_VarCall', cardinality 0..*).
+'go::GoDecl' (role 'go_GoDecl4', cardinality 0..*) is associated with 'go::FunctionType' (role 'go_FunctionType', cardinality 0..*).
+'go::BOOL::OP' (role 'go_BOOL_OP', cardinality 0..*) is associated with 'go::BINARY::EXP' (role 'go_BINARY_EXP125', cardinality 0..*).
+'go::LiteraisList' (role 'go_LiteraisList112', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO146', cardinality 0..*) is associated with 'go::BLOCK' (role 'go_BLOCK145', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO100', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt', cardinality 0..*).
+'go::LITERAIS::BASICOS' (role 'go_LITERAIS_BASICOS114', cardinality 0..*) is associated with 'go::BOOLEAN::VALUE' (role 'go_BOOLEAN_VALUE', cardinality 0..*).
+'go::Assignment' (role 'go_Assignment88', cardinality 0..*) is associated with 'go::EXPRESSAO' (role 'go_EXPRESSAO87', cardinality 0..*).
+'go::ReturnStmt' (role 'go_ReturnStmt149', cardinality 0..*) is associated with 'go::BLOCK' (role 'go_BLOCK148', cardinality 0..*).
+'go::PostStmt' (role 'go_PostStmt', cardinality 0..*) is associated with 'go::ForClause' (role 'go_ForClause28', cardinality 0..*).
+'go::ElseIfCondition' (role 'go_ElseIfCondition', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt185', cardinality 0..*).
+'go::ForDecl' (role 'go_ForDecl91', cardinality 0..*) is associated with 'go::EXPRESSAO' (role 'go_EXPRESSAO90', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO141', cardinality 0..*) is associated with 'go::IfCondition' (role 'go_IfCondition140', cardinality 0..*).
+'go::Assignment' (role 'go_Assignment67', cardinality 0..*) is associated with 'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA68', cardinality 0..*).
+'go::BasicType' (role 'go_BasicType165', cardinality 0..*) is associated with 'go::ArrayType' (role 'go_ArrayType164', cardinality 0..*).
+'go::EXPRESSAO' (role 'go_EXPRESSAO40', cardinality 0..*) is associated with 'go::Condition' (role 'go_Condition39', cardinality 0..*).
+'go::PARAMETER' (role 'go_PARAMETER', cardinality 0..*) is associated with 'go::PARAMETERS::LIST' (role 'go_PARAMETERS_LIST151', cardinality 0..*).
+'go::RangeDecl' (role 'go_RangeDecl22', cardinality 0..*) is associated with 'go::FunctionCall' (role 'go_FunctionCall', cardinality 0..*).
+'go::IfCondition' (role 'go_IfCondition', cardinality 0..*) is associated with 'go::Condition' (role 'go_Condition138', cardinality 0..*).
+'go::Types' (role 'go_Types159', cardinality 0..*) is associated with 'go::BasicType' (role 'go_BasicType', cardinality 0..*).
+'go::VarDecl' (role 'go_VarDecl55', cardinality 0..*) is associated with 'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA56', cardinality 0..*).
+'go::VarDecl' (role 'go_VarDecl47', cardinality 0..*) is associated with 'go::IGUAL' (role 'go_IGUAL48', cardinality 0..*).
+'go::ArrayType' (role 'go_ArrayType', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl53', cardinality 0..*).
+'go::ARIT::EXPR' (role 'go_ARIT_EXPR173', cardinality 0..*) is associated with 'go::VarCall' (role 'go_VarCall174', cardinality 0..*).
+'go::Init' (role 'go_Init', cardinality 0..*) is associated with 'go::GoDecl' (role 'go_GoDecl', cardinality 0..*).
+'go::PONTOSIGUAL' (role 'go_PONTOSIGUAL51', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl50', cardinality 0..*).
+'go::FunctionType' (role 'go_FunctionType129', cardinality 0..*) is associated with 'go::BLOCK' (role 'go_BLOCK', cardinality 0..*).
+'go::Chamada' (role 'go_Chamada170', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject171', cardinality 0..*).
+'go::ReturnStmt' (role 'go_ReturnStmt107', cardinality 0..*) is associated with 'go::VarCall' (role 'go_VarCall108', cardinality 0..*).
+'go::Signature' (role 'go_Signature131', cardinality 0..*) is associated with 'go::Parameters' (role 'go_Parameters', cardinality 0..*).
+'go::GoDecl' (role 'go_GoDecl12', cardinality 0..*) is associated with 'go::ForDecl' (role 'go_ForDecl11', cardinality 0..*).
+'go::Const' (role 'go_Const', cardinality 0..*) is associated with 'go::TIPO' (role 'go_TIPO72', cardinality 0..*).
+'go::ForClause' (role 'go_ForClause24', cardinality 0..*) is associated with 'go::InitStmt' (role 'go_InitStmt', cardinality 0..*).
+'go::FunctionType' (role 'go_FunctionType127', cardinality 0..*) is associated with 'go::Signature' (role 'go_Signature', cardinality 0..*).
+'go::PARAMETERS::LIST' (role 'go_PARAMETERS_LIST', cardinality 0..*) is associated with 'go::Parameters' (role 'go_Parameters136', cardinality 0..*).
+'go::PARAMETER' (role 'go_PARAMETER156', cardinality 0..*) is associated with 'go::Types' (role 'go_Types157', cardinality 0..*).
+'go::Assignment' (role 'go_Assignment64', cardinality 0..*) is associated with 'go::PONTOSIGUAL' (role 'go_PONTOSIGUAL65', cardinality 0..*).
+'go::Types' (role 'go_Types134', cardinality 0..*) is associated with 'go::Signature' (role 'go_Signature133', cardinality 0..*).
+'go::GoDecl' (role 'go_GoDecl6', cardinality 0..*) is associated with 'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA', cardinality 0..*).
+'go::ARIT::EXPR' (role 'go_ARIT_EXPR179', cardinality 0..*) is associated with 'go::VarCall' (role 'go_VarCall180', cardinality 0..*).
+'go::SignatureDel' (role 'go_SignatureDel60', cardinality 0..*) is associated with 'go::Types' (role 'go_Types', cardinality 0..*).
+'go::FunctionCall' (role 'go_FunctionCall123', cardinality 0..*) is associated with 'go::BINARY::EXP' (role 'go_BINARY_EXP122', cardinality 0..*).
+'go::Var' (role 'go_Var', cardinality 0..*) is associated with 'go::TIPO' (role 'go_TIPO70', cardinality 0..*).
+'go::InitStmt' (role 'go_InitStmt30', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl31', cardinality 0..*).
+'go::VarCall' (role 'go_VarCall120', cardinality 0..*) is associated with 'go::BINARY::EXP' (role 'go_BINARY_EXP119', cardinality 0..*).
+'go::Condition' (role 'go_Condition37', cardinality 0..*) is associated with 'go::COMPARISON' (role 'go_COMPARISON', cardinality 0..*).
+'go::Types' (role 'go_Types161', cardinality 0..*) is associated with 'go::ArrayType' (role 'go_ArrayType162', cardinality 0..*).
+'go::VarDecl' (role 'go_VarDecl', cardinality 0..*) is associated with 'go::GoDecl' (role 'go_GoDecl2', cardinality 0..*).
+'go::ElseCondition' (role 'go_ElseCondition188', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt187', cardinality 0..*).
+'go::IDList' (role 'go_IDList41', cardinality 0..*) is associated with 'go::IDList' (role 'go_IDList43', cardinality 0..*).
+'go::Condition' (role 'go_Condition35', cardinality 0..*) is associated with 'go::EXPRESSAO' (role 'go_EXPRESSAO', cardinality 0..*).
+'go::BINARY::EXP' (role 'go_BINARY_EXP116', cardinality 0..*) is associated with 'go::LITERAIS::BASICOS' (role 'go_LITERAIS_BASICOS117', cardinality 0..*).
+'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA76', cardinality 0..*) is associated with 'go::EXPRESSAOLINHA' (role 'go_EXPRESSAOLINHA78', cardinality 0..*).

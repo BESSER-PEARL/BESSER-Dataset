@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'extlibrary::Borrower' has no attributes.
+The class 'extlibrary::Item' has no attributes.
+The class 'extlibrary::Borrowable' has no attributes.
+The class 'extlibrary::Book' has no attributes.
+The enumeration 'BookCategory' does not specify any literals.
+'extlibrary::Borrowable' (role 'extlibrary_Borrowable3', cardinality 0..*) is associated with 'extlibrary::Borrower' (role 'extlibrary_Borrower2', cardinality 0..*).
+'extlibrary::Borrowable' (role 'extlibrary_Borrowable', cardinality 0..*) is associated with 'extlibrary::Borrower' (role 'extlibrary_Borrower', cardinality 0..*).

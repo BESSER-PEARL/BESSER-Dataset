@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'markov::Label' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'markov::Transition' has the following attributes: 'probability' of type float.
+The class 'markov::MarkovChain' has no attributes.
+The class 'markov::Entity' has the following attributes: 'Name' of type str.
+The class 'Entity' has no attributes.
+The class 'markov::State' has the following attributes: 'traces' of type str; 'type' of type str.
+The enumeration 'StateType' has the following literals: 'Default', 'Failure', 'Start', 'Success'.
+'markov::MarkovChain' is a specialization of 'Entity'.
+'markov::Transition' is a specialization of 'Entity'.
+'markov::State' is a specialization of 'Entity'.
+'markov::Transition' (role 'markov_Transition10', cardinality 0..*) is associated with 'markov::MarkovChain' (role 'markov_MarkovChain9', cardinality 0..*).
+'markov::Transition' (role 'markov_Transition4', cardinality 0..*) is associated with 'markov::State' (role 'markov_State5', cardinality 0..*).
+'markov::Transition' (role 'markov_Transition', cardinality 0..*) is associated with 'markov::State' (role 'markov_State2', cardinality 0..*).
+'markov::State' (role 'markov_State7', cardinality 0..*) is associated with 'markov::MarkovChain' (role 'markov_MarkovChain', cardinality 0..*).
+'markov::State' (role 'markov_State', cardinality 0..*) is associated with 'markov::Label' (role 'markov_Label', cardinality 0..*).

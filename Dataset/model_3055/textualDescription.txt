@@ -1,0 +1,32 @@
+The model has 15 class(es).
+The class 'entityDsl::DataType' has the following attributes: 'type' of type str.
+The class 'WinFormControlType' has no attributes.
+The class 'entityDsl::Entity' has the following attributes: 'name' of type str.
+The class 'entityDsl::RadioButton' has the following attributes: 'text' of type str.
+The class 'entityDsl::TextBox' has the following attributes: 'maxTextLength' of type int; 'name' of type str; 'minTextLength' of type int.
+The class 'entityDsl::Attribute' has the following attributes: 'required' of type str; 'name' of type str.
+The class 'entityDsl::TrackBar' has the following attributes: 'denominator' of type int; 'defaultTick' of type int; 'minimumValue' of type int; 'maximumValue' of type int; 'increment' of type int; 'stringValues' of type str.
+The class 'entityDsl::ComboBox' has no attributes.
+The class 'entityDsl::Domainmodel' has the following attributes: 'applicationName' of type str.
+The class 'entityDsl::CheckBox' has no attributes.
+The class 'entityDsl::Spinner' has the following attributes: 'defaultValue' of type int; 'minimumValue' of type int; 'maximumValue' of type int.
+The class 'entityDsl::ComboBoxItem' has the following attributes: 'text' of type str.
+The class 'entityDsl::RadioButtonGroup' has no attributes.
+The class 'entityDsl::Label' has the following attributes: 'text' of type str.
+The class 'entityDsl::WinFormControlType' has the following attributes: 'name' of type str.
+'entityDsl::CheckBox' is a specialization of 'WinFormControlType'.
+'entityDsl::Spinner' is a specialization of 'WinFormControlType'.
+'entityDsl::TrackBar' is a specialization of 'WinFormControlType'.
+'entityDsl::RadioButtonGroup' is a specialization of 'WinFormControlType'.
+'entityDsl::ComboBox' is a specialization of 'WinFormControlType'.
+'entityDsl::WinFormControlType' (role 'entityDsl_WinFormControlType', cardinality 0..*) is associated with 'entityDsl::Attribute' (role 'entityDsl_Attribute4', cardinality 0..*).
+'entityDsl::Attribute' (role 'entityDsl_Attribute', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity2', cardinality 0..*).
+'entityDsl::TextBox' (role 'entityDsl_TextBox', cardinality 0..*) is associated with 'entityDsl::WinFormControlType' (role 'entityDsl_WinFormControlType8', cardinality 0..*).
+'entityDsl::ComboBoxItem' (role 'entityDsl_ComboBoxItem', cardinality 0..*) is associated with 'entityDsl::ComboBox' (role 'entityDsl_ComboBox', cardinality 0..*).
+'entityDsl::TextBox' (role 'entityDsl_TextBox15', cardinality 0..*) is associated with 'entityDsl::DataType' (role 'entityDsl_DataType16', cardinality 0..*).
+'entityDsl::TrackBar' (role 'entityDsl_TrackBar', cardinality 0..*) is associated with 'entityDsl::DataType' (role 'entityDsl_DataType', cardinality 0..*).
+'entityDsl::Entity' (role 'entityDsl_Entity', cardinality 0..*) is associated with 'entityDsl::Domainmodel' (role 'entityDsl_Domainmodel', cardinality 0..*).
+'entityDsl::DataType' (role 'entityDsl_DataType20', cardinality 0..*) is associated with 'entityDsl::ComboBox' (role 'entityDsl_ComboBox19', cardinality 0..*).
+'entityDsl::RadioButton' (role 'entityDsl_RadioButton', cardinality 0..*) is associated with 'entityDsl::RadioButtonGroup' (role 'entityDsl_RadioButtonGroup', cardinality 0..*).
+'entityDsl::Attribute' (role 'entityDsl_Attribute6', cardinality 0..*) is associated with 'entityDsl::Label' (role 'entityDsl_Label', cardinality 0..*).
+'entityDsl::DataType' (role 'entityDsl_DataType13', cardinality 0..*) is associated with 'entityDsl::RadioButtonGroup' (role 'entityDsl_RadioButtonGroup12', cardinality 0..*).

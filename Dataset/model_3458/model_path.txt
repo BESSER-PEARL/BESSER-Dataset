@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/clementquinton/DynaCheck/src/main/resources/metamodel/FeatureModel.ecore

@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'MultiPopulationSIRDiseaseModel' has no attributes.
+The class 'multipopulation::DoubleValueList' has no attributes.
+The class 'multipopulation::MultiPopulationSIRDiseaseModel' has no attributes.
+The class 'multipopulation::MultiPopulationSEIRDiseaseModel' has no attributes.
+The class 'StandardDiseaseModel' has no attributes.
+The class 'multipopulation::StringValueList' has no attributes.
+The class 'multipopulation::MultiPopulationSIDiseaseModel' has the following attributes: 'characteristicMixingDistance' of type float; 'roadNetworkInfectiousProportion' of type float; 'physicallyAdjacentInfectiousProportion' of type float.
+The class 'multipopulation::DoubleValueMatrix' has no attributes.
+The class 'MultiPopulationSIDiseaseModel' has no attributes.
+'multipopulation::MultiPopulationSIDiseaseModel' is a specialization of 'StandardDiseaseModel'.
+'multipopulation::MultiPopulationSIRDiseaseModel' is a specialization of 'MultiPopulationSIDiseaseModel'.
+'multipopulation::MultiPopulationSEIRDiseaseModel' is a specialization of 'MultiPopulationSIRDiseaseModel'.
+'multipopulation::MultiPopulationSIDiseaseModel' (role 'multipopulation_MultiPopulationSIDiseaseModel', cardinality 0..*) is associated with 'multipopulation::StringValueList' (role 'multipopulation_StringValueList', cardinality 0..*).
+'multipopulation::DoubleValueList' (role 'multipopulation_DoubleValueList9', cardinality 0..*) is associated with 'multipopulation::MultiPopulationSIRDiseaseModel' (role 'multipopulation_MultiPopulationSIRDiseaseModel', cardinality 0..*).
+'multipopulation::MultiPopulationSIDiseaseModel' (role 'multipopulation_MultiPopulationSIDiseaseModel6', cardinality 0..*) is associated with 'multipopulation::DoubleValueList' (role 'multipopulation_DoubleValueList7', cardinality 0..*).
+'multipopulation::DoubleValueList' (role 'multipopulation_DoubleValueList11', cardinality 0..*) is associated with 'multipopulation::MultiPopulationSEIRDiseaseModel' (role 'multipopulation_MultiPopulationSEIRDiseaseModel', cardinality 0..*).
+'multipopulation::DoubleValueList' (role 'multipopulation_DoubleValueList', cardinality 0..*) is associated with 'multipopulation::MultiPopulationSIDiseaseModel' (role 'multipopulation_MultiPopulationSIDiseaseModel4', cardinality 0..*).
+'multipopulation::DoubleValueMatrix' (role 'multipopulation_DoubleValueMatrix', cardinality 0..*) is associated with 'multipopulation::MultiPopulationSIDiseaseModel' (role 'multipopulation_MultiPopulationSIDiseaseModel2', cardinality 0..*).

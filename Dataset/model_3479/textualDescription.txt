@@ -1,0 +1,76 @@
+The model has 33 class(es).
+The class 'feature::AndExpression' has no attributes.
+The class 'feature::Annotation' has no attributes.
+The class 'feature::ContinuousDomain' has no attributes.
+The class 'Domain' has no attributes.
+The class 'feature::EnumDomain' has the following attributes: 'values' of type str.
+The class 'feature::Identifiable' has the following attributes: 'id' of type str.
+The class 'feature::UnaryExpression' has no attributes.
+The class 'feature::ImpliesExpression' has no attributes.
+The class 'feature::AttributeReference' has no attributes.
+The class 'feature::AttributeValueLiteral' has the following attributes: 'value' of type str.
+The class 'feature::Expression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'feature::Domain' has no attributes.
+The class 'feature::Attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'feature::FeatureModel' has the following attributes: 'name' of type str.
+The class 'UnaryExpression' has no attributes.
+The class 'feature::ExcludesExpression' has no attributes.
+The class 'feature::AttributeOperand' has no attributes.
+The class 'feature::NotExpression' has no attributes.
+The class 'AtomicExpression' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'feature::NestedExpression' has no attributes.
+The class 'feature::Constraint' has no attributes.
+The class 'Expression' has no attributes.
+The class 'feature::Feature' has the following attributes: 'selected' of type str; 'name' of type str.
+The class 'feature::AtomicExpression' has no attributes.
+The class 'feature::Interval' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+The class 'feature::FeatureReference' has no attributes.
+The class 'feature::BinaryExpression' has no attributes.
+The class 'feature::Group' has the following attributes: 'minCardinality' of type int; 'maxCardinality' of type int.
+The class 'AttributeOperand' has no attributes.
+The class 'feature::AttributeComparisonExpression' has the following attributes: 'operator' of type str.
+The class 'feature::OrExpression' has no attributes.
+The enumeration 'SelectedState' has the following literals: 'undetermined', 'deselected', 'selected'.
+The enumeration 'AttributeComparisonOperator' has the following literals: 'equal', 'greaterThan', 'lessThan', 'lessThanOrEqual', 'unequal', 'greaterThanOrEqual'.
+'feature::AndExpression' is a specialization of 'BinaryExpression'.
+'feature::ExcludesExpression' is a specialization of 'BinaryExpression'.
+'feature::EnumDomain' is a specialization of 'Domain'.
+'feature::AttributeValueLiteral' is a specialization of 'AttributeOperand'.
+'feature::AtomicExpression' is a specialization of 'Expression'.
+'feature::FeatureReference' is a specialization of 'AtomicExpression'.
+'feature::ContinuousDomain' is a specialization of 'Domain'.
+'feature::BinaryExpression' is a specialization of 'Expression'.
+'feature::ImpliesExpression' is a specialization of 'BinaryExpression'.
+'feature::NotExpression' is a specialization of 'UnaryExpression'.
+'feature::OrExpression' is a specialization of 'BinaryExpression'.
+'feature::UnaryExpression' is a specialization of 'Expression'.
+'feature::Group' is a specialization of 'Identifiable'.
+'feature::AttributeComparisonExpression' is a specialization of 'AtomicExpression'.
+'feature::Constraint' is a specialization of 'Identifiable'.
+'feature::Feature' is a specialization of 'Identifiable'.
+'feature::AttributeReference' is a specialization of 'AttributeOperand'.
+'feature::NestedExpression' is a specialization of 'UnaryExpression'.
+'feature::Expression' (role 'feature_Expression26', cardinality 0..*) is associated with 'feature::UnaryExpression' (role 'feature_UnaryExpression', cardinality 0..*).
+'feature::Annotation' (role 'Annotation', cardinality 0..*) is associated with 'feature::Feature' (role 'feature13', cardinality 0..*).
+'feature::Attribute' (role 'feature_Attribute', cardinality 0..*) is associated with 'feature::Domain' (role 'feature_Domain', cardinality 0..*).
+'feature::FeatureModel' (role 'FeatureModel', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'children', cardinality 0..*).
+'feature::Expression' (role 'feature_Expression', cardinality 0..*) is associated with 'feature::Constraint' (role 'feature_Constraint18', cardinality 0..*).
+'feature::Expression' (role 'feature_Expression28', cardinality 0..*) is associated with 'feature::BinaryExpression' (role 'feature_BinaryExpression', cardinality 0..*).
+'feature::Attribute' (role 'feature_Attribute39', cardinality 0..*) is associated with 'feature::AttributeReference' (role 'feature_AttributeReference', cardinality 0..*).
+'feature::AttributeComparisonExpression' (role 'feature_AttributeComparisonExpression36', cardinality 0..*) is associated with 'feature::AttributeOperand' (role 'feature_AttributeOperand37', cardinality 0..*).
+'feature::Feature' (role 'Feature23', cardinality 0..*) is associated with 'feature::Annotation' (role 'annotations', cardinality 0..*).
+'feature::Constraint' (role 'feature_Constraint', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'feature_FeatureModel7', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature', cardinality 0..*).
+'feature::Feature' (role 'feature', cardinality 0..*) is associated with 'feature::Attribute' (role 'Attribute', cardinality 0..*).
+'feature::AttributeOperand' (role 'feature_AttributeOperand', cardinality 0..*) is associated with 'feature::AttributeComparisonExpression' (role 'feature_AttributeComparisonExpression', cardinality 0..*).
+'feature::Group' (role 'Group', cardinality 0..*) is associated with 'feature::Feature' (role 'parentFeature', cardinality 0..*).
+'feature::FeatureModel' (role 'parent', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'FeatureModel4', cardinality 0..*).
+'feature::Group' (role 'parentGroup', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature16', cardinality 0..*).
+'feature::Expression' (role 'feature_Expression31', cardinality 0..*) is associated with 'feature::BinaryExpression' (role 'feature_BinaryExpression30', cardinality 0..*).
+'feature::Feature' (role 'childFeatures', cardinality 0..*) is associated with 'feature::Group' (role 'Group11', cardinality 0..*).
+'feature::Group' (role 'groups', cardinality 0..*) is associated with 'feature::Feature' (role 'Feature', cardinality 0..*).
+'feature::Interval' (role 'feature_Interval', cardinality 0..*) is associated with 'feature::ContinuousDomain' (role 'feature_ContinuousDomain', cardinality 0..*).
+'feature::FeatureReference' (role 'feature_FeatureReference', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature33', cardinality 0..*).
+'feature::Feature' (role 'Feature20', cardinality 0..*) is associated with 'feature::Attribute' (role 'attributes', cardinality 0..*).

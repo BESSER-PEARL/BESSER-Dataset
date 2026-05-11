@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'test::Contact' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'test::Address' has the following attributes: 'street' of type str; 'city' of type str.
+The class 'test::Person' has the following attributes: 'lastname' of type str; 'firstname' of type str.
+The enumeration 'ContactType' has the following literals: 'EMAIL', 'PHONE'.
+'test::Person' (role 'test_Person', cardinality 0..*) is associated with 'test::Address' (role 'test_Address', cardinality 0..*).
+'test::Contact' (role 'test_Contact', cardinality 0..*) is associated with 'test::Person' (role 'test_Person2', cardinality 0..*).

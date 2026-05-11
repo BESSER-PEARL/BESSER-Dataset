@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/csy-traceability/b-metamodel/metamodels/B.ecore

@@ -1,0 +1,42 @@
+The model has 22 class(es).
+The class 'features::modeling::Constraints' has no attributes.
+The class 'features::modeling::NOT' has no attributes.
+The class 'features::modeling::G' has no attributes.
+The class 'features::modeling::GXOR' has no attributes.
+The class 'features::modeling::EX' has no attributes.
+The class 'features::modeling::E' has no attributes.
+The class 'Group' has no attributes.
+The class 'features::modeling::AND' has no attributes.
+The class 'features::modeling::Constraint' has no attributes.
+The class 'Feature' has no attributes.
+The class 'features::modeling::Group' has no attributes.
+The class 'features::modeling::PropositionOR' has no attributes.
+The class 'features::modeling::GOR' has no attributes.
+The class 'features::modeling::R' has no attributes.
+The class 'features::modeling::I' has no attributes.
+The class 'E' has no attributes.
+The class 'features::modeling::Feature' has the following attributes: 'ID' of type str.
+The class 'features::modeling::EMAND' has no attributes.
+The class 'features::modeling::F' has no attributes.
+The class 'features::modeling::Edge' has no attributes.
+The class 'features::modeling::PropFormulaCNF' has no attributes.
+The class 'Constraint' has no attributes.
+'features::modeling::I' is a specialization of 'Constraint'.
+'features::modeling::EX' is a specialization of 'Constraint'.
+'features::modeling::GXOR' is a specialization of 'Group'.
+'features::modeling::R' is a specialization of 'Feature'.
+'features::modeling::EMAND' is a specialization of 'E'.
+'features::modeling::GOR' is a specialization of 'Group'.
+'features::modeling::G' (role 'features_modeling_G', cardinality 0..*) is associated with 'features::modeling::R' (role 'features_modeling_R', cardinality 0..*).
+'features::modeling::Constraints' (role 'features_modeling_Constraints', cardinality 0..*) is associated with 'features::modeling::Constraint' (role 'features_modeling_Constraint17', cardinality 0..*).
+'features::modeling::NOT' (role 'features_modeling_NOT25', cardinality 0..*) is associated with 'features::modeling::Feature' (role 'features_modeling_Feature26', cardinality 0..*).
+'features::modeling::Feature' (role 'features_modeling_Feature21', cardinality 0..*) is associated with 'features::modeling::PropositionOR' (role 'features_modeling_PropositionOR20', cardinality 0..*).
+'features::modeling::E' (role 'features_modeling_E', cardinality 0..*) is associated with 'features::modeling::Edge' (role 'features_modeling_Edge11', cardinality 0..*).
+'features::modeling::Feature' (role 'features_modeling_Feature15', cardinality 0..*) is associated with 'features::modeling::Group' (role 'features_modeling_Group', cardinality 0..*).
+'features::modeling::PropFormulaCNF' (role 'features_modeling_PropFormulaCNF', cardinality 0..*) is associated with 'features::modeling::PropositionOR' (role 'features_modeling_PropositionOR', cardinality 0..*).
+'features::modeling::Feature' (role 'features_modeling_Feature1', cardinality 0..*) is associated with 'features::modeling::Feature' (role 'features_modeling_Feature', cardinality 0..*).
+'features::modeling::Feature' (role 'features_modeling_Feature4', cardinality 0..*) is associated with 'features::modeling::F' (role 'features_modeling_F', cardinality 0..*).
+'features::modeling::R' (role 'features_modeling_R7', cardinality 0..*) is associated with 'features::modeling::F' (role 'features_modeling_F6', cardinality 0..*).
+'features::modeling::Constraint' (role 'features_modeling_Constraint', cardinality 0..*) is associated with 'features::modeling::Feature' (role 'features_modeling_Feature13', cardinality 0..*).
+'features::modeling::PropositionOR' (role 'features_modeling_PropositionOR23', cardinality 0..*) is associated with 'features::modeling::NOT' (role 'features_modeling_NOT', cardinality 0..*).
+'features::modeling::Feature' (role 'features_modeling_Feature9', cardinality 0..*) is associated with 'features::modeling::Edge' (role 'features_modeling_Edge', cardinality 0..*).

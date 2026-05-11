@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'NamedElement' has no attributes.
+The class 'Selects::Tabla' has the following attributes: 'tabAlias' of type str.
+The class 'Selects::Fichero' has no attributes.
+The class 'Selects::Aplicacion' has no attributes.
+The class 'Selects::Join' has no attributes.
+The class 'Selects::From' has no attributes.
+The class 'Selects::Where' has no attributes.
+The class 'Selects::Select' has no attributes.
+The class 'Selects::NamedElement' has the following attributes: 'nombre' of type str.
+The class 'Selects::Operando' has the following attributes: 'columna' of type str; 'tabla' of type str.
+'Selects::Fichero' is a specialization of 'NamedElement'.
+'Selects::Tabla' is a specialization of 'NamedElement'.
+'Selects::Join' (role 'Selects_Join', cardinality 0..*) is associated with 'Selects::Where' (role 'Selects_Where10', cardinality 0..*).
+'Selects::From' (role 'Selects_From8', cardinality 0..*) is associated with 'Selects::Tabla' (role 'Selects_Tabla', cardinality 0..*).
+'Selects::Fichero' (role 'Selects_Fichero2', cardinality 0..*) is associated with 'Selects::Select' (role 'Selects_Select', cardinality 0..*).
+'Selects::Select' (role 'Selects_Select6', cardinality 0..*) is associated with 'Selects::Where' (role 'Selects_Where', cardinality 0..*).
+'Selects::Fichero' (role 'Selects_Fichero', cardinality 0..*) is associated with 'Selects::Aplicacion' (role 'Selects_Aplicacion', cardinality 0..*).
+'Selects::Operando' (role 'Selects_Operando', cardinality 0..*) is associated with 'Selects::Join' (role 'Selects_Join12', cardinality 0..*).
+'Selects::Join' (role 'Selects_Join14', cardinality 0..*) is associated with 'Selects::Operando' (role 'Selects_Operando15', cardinality 0..*).
+'Selects::From' (role 'Selects_From', cardinality 0..*) is associated with 'Selects::Select' (role 'Selects_Select4', cardinality 0..*).

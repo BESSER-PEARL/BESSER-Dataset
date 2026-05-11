@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Database::DB' has the following attributes: 'title' of type str.
+The class 'Database::Table' has the following attributes: 'heading' of type str.
+The class 'Database::Column' has the following attributes: 'name' of type str.
+'Database::Table' (role 'Database_Table2', cardinality 0..*) is associated with 'Database::Column' (role 'Database_Column', cardinality 0..*).
+'Database::Table' (role 'Database_Table', cardinality 0..*) is associated with 'Database::DB' (role 'Database_DB', cardinality 0..*).

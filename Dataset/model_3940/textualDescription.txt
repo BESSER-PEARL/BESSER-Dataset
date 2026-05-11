@@ -1,0 +1,39 @@
+The model has 17 class(es).
+The class 'myDsl01::Window' has the following attributes: 'title' of type str; 'name' of type str.
+The class 'myDsl01::Attribute' has the following attributes: 'type' of type str; 'optional' of type bool.
+The class 'UIElement' has no attributes.
+The class 'myDsl01::UIElement' has the following attributes: 'name' of type str.
+The class 'myDsl01::EntryWindow' has no attributes.
+The class 'myDsl01::Entity' has the following attributes: 'abstract' of type bool; 'name' of type str.
+The class 'Property' has no attributes.
+The class 'myDsl01::Button' has the following attributes: 'text' of type str; 'kind' of type str.
+The class 'myDsl01::ListWindow' has no attributes.
+The class 'myDsl01::Label' has the following attributes: 'text' of type str.
+The class 'myDsl01::Field' has no attributes.
+The class 'myDsl01::Model' has no attributes.
+The class 'Window' has no attributes.
+The class 'myDsl01::Property' has the following attributes: 'name' of type str.
+The class 'myDsl01::Reference' has the following attributes: 'multiplicity' of type str.
+The class 'myDsl01::Bounds' has the following attributes: 'width' of type int; 'x' of type int; 'y' of type int; 'height' of type int.
+The class 'myDsl01::Size' has the following attributes: 'height' of type int; 'width' of type int.
+The enumeration 'AttributeType' has the following literals: 'Date', 'Integer', 'String'.
+The enumeration 'ButtonKind' has the following literals: 'cancel', 'delete', 'createEdit'.
+The enumeration 'MultiplicityKind' has the following literals: 'Single', 'Multiple'.
+'myDsl01::Reference' is a specialization of 'Property'.
+'myDsl01::ListWindow' is a specialization of 'Window'.
+'myDsl01::Button' is a specialization of 'UIElement'.
+'myDsl01::Field' is a specialization of 'UIElement'.
+'myDsl01::Label' is a specialization of 'UIElement'.
+'myDsl01::EntryWindow' is a specialization of 'Window'.
+'myDsl01::Attribute' is a specialization of 'Property'.
+'myDsl01::Entity' (role 'myDsl01_Entity5', cardinality 0..*) is associated with 'myDsl01::Entity' (role 'myDsl01_Entity3', cardinality 0..*).
+'myDsl01::Reference' (role 'myDsl01_Reference12', cardinality 0..*) is associated with 'myDsl01::Reference' (role 'myDsl01_Reference10', cardinality 0..*).
+'myDsl01::UIElement' (role 'myDsl01_UIElement', cardinality 0..*) is associated with 'myDsl01::EntryWindow' (role 'myDsl01_EntryWindow', cardinality 0..*).
+'myDsl01::Window' (role 'myDsl01_Window14', cardinality 0..*) is associated with 'myDsl01::Entity' (role 'myDsl01_Entity15', cardinality 0..*).
+'myDsl01::Property' (role 'myDsl01_Property', cardinality 0..*) is associated with 'myDsl01::Entity' (role 'myDsl01_Entity7', cardinality 0..*).
+'myDsl01::Model' (role 'myDsl01_Model', cardinality 0..*) is associated with 'myDsl01::Entity' (role 'myDsl01_Entity', cardinality 0..*).
+'myDsl01::Field' (role 'myDsl01_Field', cardinality 0..*) is associated with 'myDsl01::Property' (role 'myDsl01_Property22', cardinality 0..*).
+'myDsl01::Bounds' (role 'myDsl01_Bounds', cardinality 0..*) is associated with 'myDsl01::UIElement' (role 'myDsl01_UIElement20', cardinality 0..*).
+'myDsl01::Size' (role 'myDsl01_Size', cardinality 0..*) is associated with 'myDsl01::Window' (role 'myDsl01_Window17', cardinality 0..*).
+'myDsl01::Model' (role 'myDsl01_Model2', cardinality 0..*) is associated with 'myDsl01::Window' (role 'myDsl01_Window', cardinality 0..*).
+'myDsl01::Entity' (role 'myDsl01_Entity9', cardinality 0..*) is associated with 'myDsl01::Reference' (role 'myDsl01_Reference', cardinality 0..*).

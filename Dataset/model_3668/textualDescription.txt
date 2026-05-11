@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'exo1::Company' has no attributes.
+The class 'exo1::Project' has the following attributes: 'name' of type str; 'budget' of type int.
+The class 'exo1::Employee' has the following attributes: 'salary' of type str; 'name' of type str.
+The class 'exo1::Departement' has the following attributes: 'location' of type str; 'budget' of type int; 'name' of type str.
+'exo1::Departement' (role 'Departement10', cardinality 0..*) is associated with 'exo1::Employee' (role 'employees9', cardinality 0..*).
+'exo1::Departement' (role 'departements', cardinality 0..*) is associated with 'exo1::Employee' (role 'Employee', cardinality 0..*).
+'exo1::Project' (role 'Project7', cardinality 0..*) is associated with 'exo1::Employee' (role 'employees', cardinality 0..*).
+'exo1::Departement' (role 'departement', cardinality 0..*) is associated with 'exo1::Project' (role 'Project', cardinality 0..*).
+'exo1::Project' (role 'exo1_Project', cardinality 0..*) is associated with 'exo1::Company' (role 'exo1_Company13', cardinality 0..*).
+'exo1::Departement' (role 'exo1_Departement', cardinality 0..*) is associated with 'exo1::Company' (role 'exo1_Company15', cardinality 0..*).
+'exo1::Employee' (role 'Employee5', cardinality 0..*) is associated with 'exo1::Project' (role 'projects4', cardinality 0..*).
+'exo1::Departement' (role 'Departement', cardinality 0..*) is associated with 'exo1::Project' (role 'projects', cardinality 0..*).
+'exo1::Employee' (role 'exo1_Employee', cardinality 0..*) is associated with 'exo1::Company' (role 'exo1_Company', cardinality 0..*).

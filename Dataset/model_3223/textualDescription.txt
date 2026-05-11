@@ -1,0 +1,394 @@
+The model has 148 class(es).
+The class 'ansic::type::qualifier' has the following attributes: 'namez' of type str.
+The class 'ansic::TypeQualifierListLinhaAtion' has no attributes.
+The class 'ansic::StructOrUnionSpecifierComplementAction' has no attributes.
+The class 'ansic::equality::expression' has no attributes.
+The class 'ansic::jump::statement' has the following attributes: 'return_vazio' of type str; 'identifier' of type str; 'break_' of type str; 'return_' of type str.
+The class 'ansic::shift::expression::complement' has no attributes.
+The class 'ansic::TranlationUnitLinhaAction' has no attributes.
+The class 'ansic::init::declarator' has no attributes.
+The class 'ansic::pointer' has no attributes.
+The class 'ansic::relational::expression' has no attributes.
+The class 'ansic::postfix::expression::linha' has no attributes.
+The class 'ansic::EnumeratorListLinhaAction' has no attributes.
+The class 'type::qualifier::list::linha' has no attributes.
+The class 'ansic::DirectAbstractDeclarratorLinhaAction' has no attributes.
+The class 'ansic::initializer::list' has no attributes.
+The class 'ansic::DeclarationListLinhaAction' has no attributes.
+The class 'ansic::additive::expression' has no attributes.
+The class 'ansic::argument::expression::list::linha' has no attributes.
+The class 'ansic::PostFixEmpryParams' has no attributes.
+The class 'ansic::generic::assoc::list::linha' has no attributes.
+The class 'ansic::PlusPlus' has the following attributes: 'plus' of type str.
+The class 'ansic::declaration::specifiers' has the following attributes: 'storage_class_specifier' of type str; 'function_specifier' of type str.
+The class 'ansic::statement' has no attributes.
+The class 'ansic::multiplicative::expression::complement' has no attributes.
+The class 'ansic::DomainModel' has no attributes.
+The class 'ansic::shift::expression' has no attributes.
+The class 'ansic::enumeration::constant' has the following attributes: 'identifier' of type str.
+The class 'ansic::additive::expression::complement' has no attributes.
+The class 'unary::expression' has no attributes.
+The class 'ansic::enumerator' has no attributes.
+The class 'initializer::list::linha' has no attributes.
+The class 'ansic::logical::and::expression' has no attributes.
+The class 'ansic::block::item::list' has no attributes.
+The class 'ansic::IdentifierListLinhaAction' has the following attributes: 'identifier' of type str.
+The class 'ansic::exclusive::or::expression' has no attributes.
+The class 'ansic::ArgumentExpressionListLinhaAction' has no attributes.
+The class 'generic::assoc::list::linha' has no attributes.
+The class 'ansic::init::declarator::list::linha' has no attributes.
+The class 'direct::abstract::declarator::linha' has no attributes.
+The class 'postfix::expression::complement' has no attributes.
+The class 'ansic::generic::selection' has the following attributes: '_generic' of type str.
+The class 'ansic::external::declaration' has no attributes.
+The class 'ansic::exclusive::or::expression::linha' has no attributes.
+The class 'ansic::identifier::list' has the following attributes: 'identifier' of type str.
+The class 'ansic::designator::list' has no attributes.
+The class 'ansic::declaration::list' has no attributes.
+The class 'ansic::PostfixExpressionLinhaAction' has no attributes.
+The class 'ansic::type::qualifier::list' has no attributes.
+The class 'ansic::direct::abstract::declarator::linha' has no attributes.
+The class 'ansic::initializer::list::complement' has no attributes.
+The class 'ansic::StructDeclaratorListLinhaAction' has no attributes.
+The class 'ansic::inclusive::or::expression::linha' has no attributes.
+The class 'identifier::list::linha' has no attributes.
+The class 'ansic::designation' has no attributes.
+The class 'ansic::and::expression' has no attributes.
+The class 'ansic::translation::unit' has no attributes.
+The class 'ansic::expression::statement' has no attributes.
+The class 'ansic::logical::or::expression' has no attributes.
+The class 'ansic::direct::declarator::linha' has no attributes.
+The class 'translation::unit::linha' has no attributes.
+The class 'ansic::abstract::declarator' has no attributes.
+The class 'ansic::postfix::expression::complement' has the following attributes: 'identifier' of type str.
+The class 'ansic::unary::expression' has the following attributes: 'unary_operator' of type str.
+The class 'ansic::designator' has the following attributes: 'identifier' of type str.
+The class 'ansic::conditional::expression::linha' has no attributes.
+The class 'ansic::init::declarator::list' has no attributes.
+The class 'ansic::struct::declarator' has no attributes.
+The class 'ansic::selection::statement' has no attributes.
+The class 'designator::list::linha' has no attributes.
+The class 'ansic::relational::expression::linha' has no attributes.
+The class 'argument::expression::list::linha' has no attributes.
+The class 'ansic::direct::abstract::declarator::complement' has no attributes.
+The class 'ansic::struct::or::union::specifier::complement' has no attributes.
+The class 'ansic::enumerator::list' has no attributes.
+The class 'ansic::type::specifier' has the following attributes: 'type_name_str' of type str.
+The class 'ansic::DesignatorListLinhaAction' has no attributes.
+The class 'ansic::constant' has the following attributes: 'char' of type str; 'enumz' of type str; 'f_constant' of type str; 'i_constant' of type int.
+The class 'ansic::atomic::type::specifier' has no attributes.
+The class 'struct::declarator::list::linha' has no attributes.
+The class 'ansic::logical::or::expression::linha' has no attributes.
+The class 'ansic::StructDeclarationListLinhaAction' has no attributes.
+The class 'ansic::equality::expression::linha' has no attributes.
+The class 'ansic::inclusive::or::expression' has no attributes.
+The class 'ansic::declarator' has no attributes.
+The class 'ansic::initializer::list::linha' has no attributes.
+The class 'ansic::static::assert::declaration' has no attributes.
+The class 'ansic::enum::specifier' has the following attributes: 'identifier' of type str.
+The class 'ansic::logical::and::expression::linha' has no attributes.
+The class 'ansic::parameter::list::linha' has no attributes.
+The class 'ansic::struct::declaration::list' has no attributes.
+The class 'ansic::direct::abstract::declarator' has no attributes.
+The class 'ansic::struct::declarator::list::linha' has no attributes.
+The class 'postfix::expression::linha' has no attributes.
+The class 'ansic::conditional::expression' has no attributes.
+The class 'ansic::function::definition' has no attributes.
+The class 'ansic::specifier::qualifier::list' has no attributes.
+The class 'ansic::direct::declarator' has the following attributes: 'identifier' of type str.
+The class 'ansic::shift::expression::linha' has no attributes.
+The class 'ansic::expression' has no attributes.
+The class 'ansic::parameter::lista' has no attributes.
+The class 'ansic::GenericAssocListLinhaAction' has no attributes.
+The class 'ansic::labeled::statement' has the following attributes: 'identifier' of type str.
+The class 'ansic::translation::unit::linha' has no attributes.
+The class 'ansic::argument::expression::list' has no attributes.
+The class 'ansic::declaration' has no attributes.
+The class 'ansic::block::item' has no attributes.
+The class 'ansic::constant::expression' has no attributes.
+The class 'ansic::relational::expression::complement' has no attributes.
+The class 'ansic::multiplicative::expression' has no attributes.
+The class 'ansic::InitializerListLinhaAction' has no attributes.
+The class 'direct::abstract::declarator::complement' has no attributes.
+The class 'ansic::enumerator::list::linha' has no attributes.
+The class 'ansic::InitDecclaratorListLinhaAction' has no attributes.
+The class 'ansic::alignment::specifier' has no attributes.
+The class 'init::declarator::list::linha' has no attributes.
+The class 'ansic::type::qualifier::list::linha' has no attributes.
+The class 'ansic::iteration::statement' has no attributes.
+The class 'ansic::struct::declaration' has no attributes.
+The class 'ansic::designator::list::linha' has no attributes.
+The class 'postfix::expression' has no attributes.
+The class 'ansic::generic::assoc::list' has no attributes.
+The class 'ansic::equality::expression::complement' has no attributes.
+The class 'struct::or::union::specifier::complement' has no attributes.
+The class 'ansic::primary::expression' has the following attributes: 'identifier' of type str.
+The class 'ansic::struct::declarator::list' has no attributes.
+The class 'ansic::multiplicative::expression::linha' has no attributes.
+The class 'ansic::additive::expression::linha' has no attributes.
+The class 'ansic::block::item::list::linha' has no attributes.
+The class 'declaration::list::linha' has no attributes.
+The class 'ansic::expression::linha' has no attributes.
+The class 'struct::declaration::list::linha' has no attributes.
+The class 'ansic::type::name' has no attributes.
+The class 'ansic::identifier::list::linha' has no attributes.
+The class 'ansic::string::ufcg' has the following attributes: '__func__' of type str; 'string_literal' of type str.
+The class 'ansic::compound::statement' has no attributes.
+The class 'ansic::direct::declarator::complemento' has no attributes.
+The class 'enumerator::list::linha' has no attributes.
+The class 'ansic::declaration::list::linha' has no attributes.
+The class 'ansic::parameter::declaration' has no attributes.
+The class 'ansic::parameter::type::list' has no attributes.
+The class 'ansic::struct::or::union::specifier' has the following attributes: 'identifier' of type str; 'struct_or_union' of type str.
+The class 'ansic::postfix::expression' has no attributes.
+The class 'ansic::cast::expression' has no attributes.
+The class 'ansic::generic::association' has the following attributes: 'default' of type str.
+The class 'ansic::and::expression::linha' has no attributes.
+The class 'ansic::assignment::expression' has the following attributes: 'assignment_operator' of type str.
+The class 'ansic::struct::declaration::list::linha' has no attributes.
+The class 'ansic::initializer' has no attributes.
+'ansic::InitializerListLinhaAction' is a specialization of 'initializer::list::linha'.
+'ansic::DesignatorListLinhaAction' is a specialization of 'designator::list::linha'.
+'ansic::PostFixEmpryParams' is a specialization of 'postfix::expression::complement'.
+'ansic::StructDeclaratorListLinhaAction' is a specialization of 'struct::declarator::list::linha'.
+'ansic::PlusPlus' is a specialization of 'unary::expression'.
+'ansic::StructOrUnionSpecifierComplementAction' is a specialization of 'struct::or::union::specifier::complement'.
+'ansic::DeclarationListLinhaAction' is a specialization of 'declaration::list::linha'.
+'ansic::ArgumentExpressionListLinhaAction' is a specialization of 'argument::expression::list::linha'.
+'ansic::type::name' is a specialization of 'postfix::expression'.
+'ansic::GenericAssocListLinhaAction' is a specialization of 'generic::assoc::list::linha'.
+'ansic::StructDeclarationListLinhaAction' is a specialization of 'struct::declaration::list::linha'.
+'ansic::InitDecclaratorListLinhaAction' is a specialization of 'init::declarator::list::linha'.
+'ansic::TypeQualifierListLinhaAtion' is a specialization of 'type::qualifier::list::linha'.
+'ansic::DirectAbstractDeclarratorLinhaAction' is a specialization of 'direct::abstract::declarator::linha'.
+'ansic::TranlationUnitLinhaAction' is a specialization of 'translation::unit::linha'.
+'ansic::PostfixExpressionLinhaAction' is a specialization of 'postfix::expression::linha'.
+'ansic::EnumeratorListLinhaAction' is a specialization of 'enumerator::list::linha'.
+'ansic::IdentifierListLinhaAction' is a specialization of 'identifier::list::linha'.
+'ansic::type::qualifier::list' is a specialization of 'direct::abstract::declarator::complement'.
+'ansic::parameter::declaration' (role 'ansic_parameter_declaration', cardinality 0..*) is associated with 'ansic::parameter::lista' (role 'ansic_parameter_lista132', cardinality 0..*).
+'ansic::StructDeclaratorListLinhaAction' (role 'ansic_StructDeclaratorListLinhaAction', cardinality 0..*) is associated with 'ansic::struct::declarator' (role 'ansic_struct_declarator498', cardinality 0..*).
+'ansic::pointer' (role 'ansic_pointer104', cardinality 0..*) is associated with 'ansic::pointer' (role 'ansic_pointer102', cardinality 0..*).
+'ansic::primary::expression' (role 'ansic_primary_expression183', cardinality 0..*) is associated with 'ansic::generic::selection' (role 'ansic_generic_selection', cardinality 0..*).
+'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list71', cardinality 0..*) is associated with 'ansic::type::qualifier' (role 'ansic_type_qualifier72', cardinality 0..*).
+'ansic::cast::expression' (role 'ansic_cast_expression', cardinality 0..*) is associated with 'ansic::unary::expression' (role 'ansic_unary_expression239', cardinality 0..*).
+'ansic::equality::expression::linha' (role 'ansic_equality_expression_linha308', cardinality 0..*) is associated with 'ansic::equality::expression::linha' (role 'ansic_equality_expression_linha306', cardinality 0..*).
+'ansic::struct::declaration::list::linha' (role 'ansic_struct_declaration_list_linha', cardinality 0..*) is associated with 'ansic::struct::declaration::list' (role 'ansic_struct_declaration_list48', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression377', cardinality 0..*) is associated with 'ansic::expression::statement' (role 'ansic_expression_statement376', cardinality 0..*).
+'ansic::logical::or::expression::linha' (role 'ansic_logical_or_expression_linha425', cardinality 0..*) is associated with 'ansic::logical::or::expression::linha' (role 'ansic_logical_or_expression_linha427', cardinality 0..*).
+'ansic::relational::expression::linha' (role 'ansic_relational_expression_linha295', cardinality 0..*) is associated with 'ansic::relational::expression::linha' (role 'ansic_relational_expression_linha297', cardinality 0..*).
+'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list456', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name455', cardinality 0..*).
+'ansic::block::item::list::linha' (role 'ansic_block_item_list_linha', cardinality 0..*) is associated with 'ansic::block::item::list' (role 'ansic_block_item_list362', cardinality 0..*).
+'ansic::pointer' (role 'ansic_pointer', cardinality 0..*) is associated with 'ansic::declarator' (role 'ansic_declarator97', cardinality 0..*).
+'ansic::argument::expression::list' (role 'ansic_argument_expression_list', cardinality 0..*) is associated with 'ansic::postfix::expression::complement' (role 'ansic_postfix_expression_complement229', cardinality 0..*).
+'ansic::and::expression::linha' (role 'ansic_and_expression_linha385', cardinality 0..*) is associated with 'ansic::and::expression::linha' (role 'ansic_and_expression_linha387', cardinality 0..*).
+'ansic::shift::expression' (role 'ansic_shift_expression', cardinality 0..*) is associated with 'ansic::additive::expression' (role 'ansic_additive_expression277', cardinality 0..*).
+'ansic::identifier::list' (role 'ansic_identifier_list178', cardinality 0..*) is associated with 'ansic::identifier::list::linha' (role 'ansic_identifier_list_linha', cardinality 0..*).
+'ansic::unary::expression' (role 'ansic_unary_expression447', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression446', cardinality 0..*).
+'ansic::declaration::list' (role 'ansic_declaration_list95', cardinality 0..*) is associated with 'ansic::declaration::list::linha' (role 'ansic_declaration_list_linha', cardinality 0..*).
+'ansic::and::expression' (role 'ansic_and_expression', cardinality 0..*) is associated with 'ansic::equality::expression' (role 'ansic_equality_expression379', cardinality 0..*).
+'ansic::declaration' (role 'ansic_declaration93', cardinality 0..*) is associated with 'ansic::declaration::list' (role 'ansic_declaration_list92', cardinality 0..*).
+'ansic::logical::or::expression' (role 'ansic_logical_or_expression', cardinality 0..*) is associated with 'ansic::logical::and::expression' (role 'ansic_logical_and_expression419', cardinality 0..*).
+'ansic::designator' (role 'ansic_designator222', cardinality 0..*) is associated with 'ansic::conditional::expression' (role 'ansic_conditional_expression', cardinality 0..*).
+'ansic::InitDecclaratorListLinhaAction' (role 'ansic_InitDecclaratorListLinhaAction', cardinality 0..*) is associated with 'ansic::init::declarator' (role 'ansic_init_declarator549', cardinality 0..*).
+'ansic::abstract::declarator' (role 'ansic_abstract_declarator153', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator152', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression198', cardinality 0..*) is associated with 'ansic::generic::association' (role 'ansic_generic_association197', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement332', cardinality 0..*) is associated with 'ansic::iteration::statement' (role 'ansic_iteration_statement331', cardinality 0..*).
+'ansic::ArgumentExpressionListLinhaAction' (role 'ansic_ArgumentExpressionListLinhaAction', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression545', cardinality 0..*).
+'ansic::TypeQualifierListLinhaAtion' (role 'ansic_TypeQualifierListLinhaAtion510', cardinality 0..*) is associated with 'ansic::type::qualifier::list::linha' (role 'ansic_type_qualifier_list_linha511', cardinality 0..*).
+'ansic::direct::abstract::declarator::complement' (role 'ansic_direct_abstract_declarator_complement', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression170', cardinality 0..*).
+'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers', cardinality 0..*) is associated with 'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers9', cardinality 0..*).
+'ansic::declarator' (role 'ansic_declarator', cardinality 0..*) is associated with 'ansic::struct::declarator' (role 'ansic_struct_declarator63', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement319', cardinality 0..*) is associated with 'ansic::selection::statement' (role 'ansic_selection_statement', cardinality 0..*).
+'ansic::StructDeclarationListLinhaAction' (role 'ansic_StructDeclarationListLinhaAction495', cardinality 0..*) is associated with 'ansic::struct::declaration::list::linha' (role 'ansic_struct_declaration_list_linha496', cardinality 0..*).
+'ansic::argument::expression::list' (role 'ansic_argument_expression_list231', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression232', cardinality 0..*).
+'ansic::alignment::specifier' (role 'ansic_alignment_specifier18', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name', cardinality 0..*).
+'ansic::parameter::type::list' (role 'ansic_parameter_type_list176', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator::complement' (role 'ansic_direct_abstract_declarator_complement175', cardinality 0..*).
+'ansic::enumerator::list::linha' (role 'ansic_enumerator_list_linha', cardinality 0..*) is associated with 'ansic::enumerator::list' (role 'ansic_enumerator_list32', cardinality 0..*).
+'ansic::type::specifier' (role 'ansic_type_specifier24', cardinality 0..*) is associated with 'ansic::struct::or::union::specifier' (role 'ansic_struct_or_union_specifier', cardinality 0..*).
+'ansic::constant' (role 'ansic_constant', cardinality 0..*) is associated with 'ansic::primary::expression' (role 'ansic_primary_expression', cardinality 0..*).
+'ansic::multiplicative::expression::linha' (role 'ansic_multiplicative_expression_linha260', cardinality 0..*) is associated with 'ansic::multiplicative::expression::linha' (role 'ansic_multiplicative_expression_linha258', cardinality 0..*).
+'ansic::equality::expression' (role 'ansic_equality_expression303', cardinality 0..*) is associated with 'ansic::equality::expression::linha' (role 'ansic_equality_expression_linha', cardinality 0..*).
+'ansic::expression::linha' (role 'ansic_expression_linha', cardinality 0..*) is associated with 'ansic::expression' (role 'ansic_expression464', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement321', cardinality 0..*) is associated with 'ansic::iteration::statement' (role 'ansic_iteration_statement', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement353', cardinality 0..*) is associated with 'ansic::labeled::statement' (role 'ansic_labeled_statement352', cardinality 0..*).
+'ansic::designator::list::linha' (role 'ansic_designator_list_linha', cardinality 0..*) is associated with 'ansic::designator::list' (role 'ansic_designator_list220', cardinality 0..*).
+'ansic::designator::list' (role 'ansic_designator_list', cardinality 0..*) is associated with 'ansic::designation' (role 'ansic_designation216', cardinality 0..*).
+'ansic::direct::abstract::declarator::complement' (role 'ansic_direct_abstract_declarator_complement513', cardinality 0..*) is associated with 'ansic::DirectAbstractDeclarratorLinhaAction' (role 'ansic_DirectAbstractDeclarratorLinhaAction', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression', cardinality 0..*) is associated with 'ansic::direct::declarator::complemento' (role 'ansic_direct_declarator_complemento124', cardinality 0..*).
+'ansic::type::qualifier' (role 'ansic_type_qualifier107', cardinality 0..*) is associated with 'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list106', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement374', cardinality 0..*) is associated with 'ansic::block::item' (role 'ansic_block_item373', cardinality 0..*).
+'ansic::initializer::list' (role 'ansic_initializer_list204', cardinality 0..*) is associated with 'ansic::designation' (role 'ansic_designation', cardinality 0..*).
+'ansic::unary::expression' (role 'ansic_unary_expression237', cardinality 0..*) is associated with 'ansic::unary::expression' (role 'ansic_unary_expression235', cardinality 0..*).
+'ansic::StructOrUnionSpecifierComplementAction' (role 'ansic_StructOrUnionSpecifierComplementAction', cardinality 0..*) is associated with 'ansic::struct::declaration::list' (role 'ansic_struct_declaration_list491', cardinality 0..*).
+'ansic::direct::abstract::declarator::linha' (role 'ansic_direct_abstract_declarator_linha', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator164', cardinality 0..*).
+'ansic::parameter::declaration' (role 'ansic_parameter_declaration139', cardinality 0..*) is associated with 'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers140', cardinality 0..*).
+'ansic::enum::specifier' (role 'ansic_enum_specifier', cardinality 0..*) is associated with 'ansic::type::specifier' (role 'ansic_type_specifier26', cardinality 0..*).
+'ansic::struct::or::union::specifier' (role 'ansic_struct_or_union_specifier42', cardinality 0..*) is associated with 'ansic::struct::declaration::list' (role 'ansic_struct_declaration_list', cardinality 0..*).
+'ansic::parameter::type::list' (role 'ansic_parameter_type_list162', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator161', cardinality 0..*).
+'ansic::additive::expression' (role 'ansic_additive_expression287', cardinality 0..*) is associated with 'ansic::shift::expression::complement' (role 'ansic_shift_expression_complement286', cardinality 0..*).
+'ansic::labeled::statement' (role 'ansic_labeled_statement', cardinality 0..*) is associated with 'ansic::statement' (role 'ansic_statement', cardinality 0..*).
+'ansic::type::qualifier' (role 'ansic_type_qualifier', cardinality 0..*) is associated with 'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers14', cardinality 0..*).
+'ansic::declaration' (role 'ansic_declaration77', cardinality 0..*) is associated with 'ansic::init::declarator::list' (role 'ansic_init_declarator_list', cardinality 0..*).
+'ansic::relational::expression::linha' (role 'ansic_relational_expression_linha', cardinality 0..*) is associated with 'ansic::relational::expression' (role 'ansic_relational_expression291', cardinality 0..*).
+'ansic::exclusive::or::expression' (role 'ansic_exclusive_or_expression399', cardinality 0..*) is associated with 'ansic::inclusive::or::expression' (role 'ansic_inclusive_or_expression', cardinality 0..*).
+'ansic::parameter::declaration' (role 'ansic_parameter_declaration145', cardinality 0..*) is associated with 'ansic::abstract::declarator' (role 'ansic_abstract_declarator', cardinality 0..*).
+'ansic::declarator' (role 'ansic_declarator86', cardinality 0..*) is associated with 'ansic::function::definition' (role 'ansic_function_definition85', cardinality 0..*).
+'ansic::relational::expression' (role 'ansic_relational_expression301', cardinality 0..*) is associated with 'ansic::equality::expression' (role 'ansic_equality_expression', cardinality 0..*).
+'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers83', cardinality 0..*) is associated with 'ansic::function::definition' (role 'ansic_function_definition82', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression450', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression448', cardinality 0..*).
+'ansic::init::declarator' (role 'ansic_init_declarator480', cardinality 0..*) is associated with 'ansic::declarator' (role 'ansic_declarator481', cardinality 0..*).
+'ansic::struct::or::union::specifier' (role 'ansic_struct_or_union_specifier44', cardinality 0..*) is associated with 'ansic::struct::or::union::specifier::complement' (role 'ansic_struct_or_union_specifier_complement', cardinality 0..*).
+'ansic::direct::declarator::linha' (role 'ansic_direct_declarator_linha', cardinality 0..*) is associated with 'ansic::direct::declarator' (role 'ansic_direct_declarator111', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression186', cardinality 0..*) is associated with 'ansic::generic::selection' (role 'ansic_generic_selection185', cardinality 0..*).
+'ansic::PostfixExpressionLinhaAction' (role 'ansic_PostfixExpressionLinhaAction', cardinality 0..*) is associated with 'ansic::postfix::expression::complement' (role 'ansic_postfix_expression_complement530', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression159', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator158', cardinality 0..*).
+'ansic::generic::assoc::list' (role 'ansic_generic_assoc_list190', cardinality 0..*) is associated with 'ansic::generic::association' (role 'ansic_generic_association', cardinality 0..*).
+'ansic::initializer::list::complement' (role 'ansic_initializer_list_complement213', cardinality 0..*) is associated with 'ansic::initializer' (role 'ansic_initializer214', cardinality 0..*).
+'ansic::exclusive::or::expression::linha' (role 'ansic_exclusive_or_expression_linha397', cardinality 0..*) is associated with 'ansic::exclusive::or::expression::linha' (role 'ansic_exclusive_or_expression_linha395', cardinality 0..*).
+'ansic::postfix::expression' (role 'ansic_postfix_expression234', cardinality 0..*) is associated with 'ansic::unary::expression' (role 'ansic_unary_expression', cardinality 0..*).
+'ansic::init::declarator::list' (role 'ansic_init_declarator_list477', cardinality 0..*) is associated with 'ansic::init::declarator::list::linha' (role 'ansic_init_declarator_list_linha478', cardinality 0..*).
+'ansic::conditional::expression' (role 'ansic_conditional_expression438', cardinality 0..*) is associated with 'ansic::conditional::expression::linha' (role 'ansic_conditional_expression_linha437', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement317', cardinality 0..*) is associated with 'ansic::expression::statement' (role 'ansic_expression_statement', cardinality 0..*).
+'ansic::additive::expression::linha' (role 'ansic_additive_expression_linha', cardinality 0..*) is associated with 'ansic::additive::expression' (role 'ansic_additive_expression267', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression462', cardinality 0..*) is associated with 'ansic::expression' (role 'ansic_expression461', cardinality 0..*).
+'ansic::additive::expression' (role 'ansic_additive_expression', cardinality 0..*) is associated with 'ansic::multiplicative::expression' (role 'ansic_multiplicative_expression265', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression326', cardinality 0..*) is associated with 'ansic::jump::statement' (role 'ansic_jump_statement325', cardinality 0..*).
+'ansic::abstract::declarator' (role 'ansic_abstract_declarator147', cardinality 0..*) is associated with 'ansic::pointer' (role 'ansic_pointer148', cardinality 0..*).
+'ansic::parameter::list::linha' (role 'ansic_parameter_list_linha', cardinality 0..*) is associated with 'ansic::parameter::declaration' (role 'ansic_parameter_declaration134', cardinality 0..*).
+'ansic::parameter::lista' (role 'ansic_parameter_lista', cardinality 0..*) is associated with 'ansic::parameter::type::list' (role 'ansic_parameter_type_list130', cardinality 0..*).
+'ansic::declaration' (role 'ansic_declaration', cardinality 0..*) is associated with 'ansic::external::declaration' (role 'ansic_external_declaration8', cardinality 0..*).
+'ansic::iteration::statement' (role 'ansic_iteration_statement334', cardinality 0..*) is associated with 'ansic::expression::statement' (role 'ansic_expression_statement335', cardinality 0..*).
+'ansic::parameter::list::linha' (role 'ansic_parameter_list_linha135', cardinality 0..*) is associated with 'ansic::parameter::list::linha' (role 'ansic_parameter_list_linha137', cardinality 0..*).
+'ansic::multiplicative::expression::linha' (role 'ansic_multiplicative_expression_linha257', cardinality 0..*) is associated with 'ansic::multiplicative::expression::complement' (role 'ansic_multiplicative_expression_complement', cardinality 0..*).
+'ansic::relational::expression::complement' (role 'ansic_relational_expression_complement', cardinality 0..*) is associated with 'ansic::shift::expression' (role 'ansic_shift_expression299', cardinality 0..*).
+'ansic::block::item::list::linha' (role 'ansic_block_item_list_linha368', cardinality 0..*) is associated with 'ansic::block::item::list::linha' (role 'ansic_block_item_list_linha366', cardinality 0..*).
+'ansic::declarator' (role 'ansic_declarator143', cardinality 0..*) is associated with 'ansic::parameter::declaration' (role 'ansic_parameter_declaration142', cardinality 0..*).
+'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers12', cardinality 0..*) is associated with 'ansic::type::specifier' (role 'ansic_type_specifier', cardinality 0..*).
+'ansic::block::item' (role 'ansic_block_item', cardinality 0..*) is associated with 'ansic::block::item::list' (role 'ansic_block_item_list360', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression443', cardinality 0..*) is associated with 'ansic::conditional::expression' (role 'ansic_conditional_expression444', cardinality 0..*).
+'ansic::generic::assoc::list::linha' (role 'ansic_generic_assoc_list_linha', cardinality 0..*) is associated with 'ansic::generic::assoc::list' (role 'ansic_generic_assoc_list192', cardinality 0..*).
+'ansic::ArgumentExpressionListLinhaAction' (role 'ansic_ArgumentExpressionListLinhaAction547', cardinality 0..*) is associated with 'ansic::argument::expression::list::linha' (role 'ansic_argument_expression_list_linha', cardinality 0..*).
+'ansic::conditional::expression' (role 'ansic_conditional_expression429', cardinality 0..*) is associated with 'ansic::logical::or::expression' (role 'ansic_logical_or_expression430', cardinality 0..*).
+'ansic::exclusive::or::expression::linha' (role 'ansic_exclusive_or_expression_linha', cardinality 0..*) is associated with 'ansic::exclusive::or::expression' (role 'ansic_exclusive_or_expression391', cardinality 0..*).
+'ansic::relational::expression' (role 'ansic_relational_expression', cardinality 0..*) is associated with 'ansic::shift::expression' (role 'ansic_shift_expression289', cardinality 0..*).
+'ansic::exclusive::or::expression' (role 'ansic_exclusive_or_expression404', cardinality 0..*) is associated with 'ansic::inclusive::or::expression::linha' (role 'ansic_inclusive_or_expression_linha403', cardinality 0..*).
+'ansic::additive::expression::complement' (role 'ansic_additive_expression_complement', cardinality 0..*) is associated with 'ansic::additive::expression::linha' (role 'ansic_additive_expression_linha269', cardinality 0..*).
+'ansic::multiplicative::expression::complement' (role 'ansic_multiplicative_expression_complement262', cardinality 0..*) is associated with 'ansic::cast::expression' (role 'ansic_cast_expression263', cardinality 0..*).
+'ansic::DeclarationListLinhaAction' (role 'ansic_DeclarationListLinhaAction', cardinality 0..*) is associated with 'ansic::declaration' (role 'ansic_declaration503', cardinality 0..*).
+'ansic::additive::expression::linha' (role 'ansic_additive_expression_linha270', cardinality 0..*) is associated with 'ansic::additive::expression::linha' (role 'ansic_additive_expression_linha272', cardinality 0..*).
+'ansic::initializer::list::complement' (role 'ansic_initializer_list_complement', cardinality 0..*) is associated with 'ansic::designation' (role 'ansic_designation211', cardinality 0..*).
+'ansic::TypeQualifierListLinhaAtion' (role 'ansic_TypeQualifierListLinhaAtion', cardinality 0..*) is associated with 'ansic::type::qualifier' (role 'ansic_type_qualifier508', cardinality 0..*).
+'ansic::cast::expression' (role 'ansic_cast_expression247', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name248', cardinality 0..*).
+'ansic::translation::unit::linha' (role 'ansic_translation_unit_linha', cardinality 0..*) is associated with 'ansic::translation::unit' (role 'ansic_translation_unit4', cardinality 0..*).
+'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list173', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator::complement' (role 'ansic_direct_abstract_declarator_complement172', cardinality 0..*).
+'ansic::selection::statement' (role 'ansic_selection_statement349', cardinality 0..*) is associated with 'ansic::statement' (role 'ansic_statement350', cardinality 0..*).
+'ansic::multiplicative::expression' (role 'ansic_multiplicative_expression275', cardinality 0..*) is associated with 'ansic::additive::expression::complement' (role 'ansic_additive_expression_complement274', cardinality 0..*).
+'ansic::conditional::expression::linha' (role 'ansic_conditional_expression_linha441', cardinality 0..*) is associated with 'ansic::conditional::expression::linha' (role 'ansic_conditional_expression_linha439', cardinality 0..*).
+'ansic::logical::and::expression::linha' (role 'ansic_logical_and_expression_linha415', cardinality 0..*) is associated with 'ansic::logical::and::expression::linha' (role 'ansic_logical_and_expression_linha417', cardinality 0..*).
+'ansic::init::declarator::list::linha' (role 'ansic_init_declarator_list_linha552', cardinality 0..*) is associated with 'ansic::InitDecclaratorListLinhaAction' (role 'ansic_InitDecclaratorListLinhaAction551', cardinality 0..*).
+'ansic::EnumeratorListLinhaAction' (role 'ansic_EnumeratorListLinhaAction', cardinality 0..*) is associated with 'ansic::enumerator' (role 'ansic_enumerator486', cardinality 0..*).
+'ansic::TranlationUnitLinhaAction' (role 'ansic_TranlationUnitLinhaAction', cardinality 0..*) is associated with 'ansic::external::declaration' (role 'ansic_external_declaration520', cardinality 0..*).
+'ansic::relational::expression' (role 'ansic_relational_expression311', cardinality 0..*) is associated with 'ansic::equality::expression::complement' (role 'ansic_equality_expression_complement310', cardinality 0..*).
+'ansic::DeclarationListLinhaAction' (role 'ansic_DeclarationListLinhaAction505', cardinality 0..*) is associated with 'ansic::declaration::list::linha' (role 'ansic_declaration_list_linha506', cardinality 0..*).
+'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers75', cardinality 0..*) is associated with 'ansic::declaration' (role 'ansic_declaration74', cardinality 0..*).
+'ansic::postfix::expression::linha' (role 'ansic_postfix_expression_linha', cardinality 0..*) is associated with 'ansic::postfix::expression' (role 'ansic_postfix_expression202', cardinality 0..*).
+'ansic::equality::expression::linha' (role 'ansic_equality_expression_linha305', cardinality 0..*) is associated with 'ansic::equality::expression::complement' (role 'ansic_equality_expression_complement', cardinality 0..*).
+'ansic::external::declaration' (role 'ansic_external_declaration', cardinality 0..*) is associated with 'ansic::translation::unit' (role 'ansic_translation_unit2', cardinality 0..*).
+'ansic::type::name' (role 'ansic_type_name458', cardinality 0..*) is associated with 'ansic::abstract::declarator' (role 'ansic_abstract_declarator459', cardinality 0..*).
+'ansic::conditional::expression::linha' (role 'ansic_conditional_expression_linha', cardinality 0..*) is associated with 'ansic::conditional::expression' (role 'ansic_conditional_expression432', cardinality 0..*).
+'ansic::generic::assoc::list' (role 'ansic_generic_assoc_list', cardinality 0..*) is associated with 'ansic::generic::selection' (role 'ansic_generic_selection188', cardinality 0..*).
+'ansic::postfix::expression::linha' (role 'ansic_postfix_expression_linha533', cardinality 0..*) is associated with 'ansic::PostfixExpressionLinhaAction' (role 'ansic_PostfixExpressionLinhaAction532', cardinality 0..*).
+'ansic::atomic::type::specifier' (role 'ansic_atomic_type_specifier39', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name40', cardinality 0..*).
+'ansic::compound::statement' (role 'ansic_compound_statement', cardinality 0..*) is associated with 'ansic::function::definition' (role 'ansic_function_definition90', cardinality 0..*).
+'ansic::direct::declarator::complemento' (role 'ansic_direct_declarator_complemento121', cardinality 0..*) is associated with 'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list122', cardinality 0..*).
+'ansic::shift::expression::linha' (role 'ansic_shift_expression_linha284', cardinality 0..*) is associated with 'ansic::shift::expression::linha' (role 'ansic_shift_expression_linha282', cardinality 0..*).
+'ansic::conditional::expression' (role 'ansic_conditional_expression356', cardinality 0..*) is associated with 'ansic::labeled::statement' (role 'ansic_labeled_statement355', cardinality 0..*).
+'ansic::type::name' (role 'ansic_type_name452', cardinality 0..*) is associated with 'ansic::initializer::list' (role 'ansic_initializer_list453', cardinality 0..*).
+'ansic::declaration' (role 'ansic_declaration371', cardinality 0..*) is associated with 'ansic::block::item' (role 'ansic_block_item370', cardinality 0..*).
+'ansic::StructDeclaratorListLinhaAction' (role 'ansic_StructDeclaratorListLinhaAction500', cardinality 0..*) is associated with 'ansic::struct::declarator::list::linha' (role 'ansic_struct_declarator_list_linha501', cardinality 0..*).
+'ansic::translation::unit::linha' (role 'ansic_translation_unit_linha523', cardinality 0..*) is associated with 'ansic::TranlationUnitLinhaAction' (role 'ansic_TranlationUnitLinhaAction522', cardinality 0..*).
+'ansic::enum::specifier' (role 'ansic_enum_specifier28', cardinality 0..*) is associated with 'ansic::enumerator::list' (role 'ansic_enumerator_list', cardinality 0..*).
+'ansic::struct::declaration' (role 'ansic_struct_declaration', cardinality 0..*) is associated with 'ansic::struct::declaration::list' (role 'ansic_struct_declaration_list46', cardinality 0..*).
+'ansic::struct::declarator::list' (role 'ansic_struct_declarator_list', cardinality 0..*) is associated with 'ansic::struct::declaration' (role 'ansic_struct_declaration52', cardinality 0..*).
+'ansic::static::assert::declaration' (role 'ansic_static_assert_declaration224', cardinality 0..*) is associated with 'ansic::constant::expression' (role 'ansic_constant_expression225', cardinality 0..*).
+'ansic::and::expression' (role 'ansic_and_expression389', cardinality 0..*) is associated with 'ansic::exclusive::or::expression' (role 'ansic_exclusive_or_expression', cardinality 0..*).
+'ansic::assignment::expression' (role 'ansic_assignment_expression168', cardinality 0..*) is associated with 'ansic::initializer' (role 'ansic_initializer167', cardinality 0..*).
+'ansic::DesignatorListLinhaAction' (role 'ansic_DesignatorListLinhaAction', cardinality 0..*) is associated with 'ansic::designator' (role 'ansic_designator540', cardinality 0..*).
+'ansic::identifier::list::linha' (role 'ansic_identifier_list_linha518', cardinality 0..*) is associated with 'ansic::IdentifierListLinhaAction' (role 'ansic_IdentifierListLinhaAction', cardinality 0..*).
+'ansic::logical::and::expression' (role 'ansic_logical_and_expression', cardinality 0..*) is associated with 'ansic::inclusive::or::expression' (role 'ansic_inclusive_or_expression409', cardinality 0..*).
+'ansic::inclusive::or::expression::linha' (role 'ansic_inclusive_or_expression_linha405', cardinality 0..*) is associated with 'ansic::inclusive::or::expression::linha' (role 'ansic_inclusive_or_expression_linha407', cardinality 0..*).
+'ansic::declaration::list' (role 'ansic_declaration_list', cardinality 0..*) is associated with 'ansic::function::definition' (role 'ansic_function_definition88', cardinality 0..*).
+'ansic::enumerator::list::linha' (role 'ansic_enumerator_list_linha489', cardinality 0..*) is associated with 'ansic::EnumeratorListLinhaAction' (role 'ansic_EnumeratorListLinhaAction488', cardinality 0..*).
+'ansic::direct::declarator::linha' (role 'ansic_direct_declarator_linha119', cardinality 0..*) is associated with 'ansic::direct::declarator::linha' (role 'ansic_direct_declarator_linha117', cardinality 0..*).
+'ansic::logical::and::expression' (role 'ansic_logical_and_expression411', cardinality 0..*) is associated with 'ansic::logical::and::expression::linha' (role 'ansic_logical_and_expression_linha', cardinality 0..*).
+'ansic::InitializerListLinhaAction' (role 'ansic_InitializerListLinhaAction537', cardinality 0..*) is associated with 'ansic::init::declarator::list::linha' (role 'ansic_init_declarator_list_linha538', cardinality 0..*).
+'ansic::initializer' (role 'ansic_initializer', cardinality 0..*) is associated with 'ansic::initializer::list' (role 'ansic_initializer_list', cardinality 0..*).
+'ansic::expression::statement' (role 'ansic_expression_statement338', cardinality 0..*) is associated with 'ansic::iteration::statement' (role 'ansic_iteration_statement337', cardinality 0..*).
+'ansic::iteration::statement' (role 'ansic_iteration_statement340', cardinality 0..*) is associated with 'ansic::declaration' (role 'ansic_declaration341', cardinality 0..*).
+'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator', cardinality 0..*) is associated with 'ansic::abstract::declarator' (role 'ansic_abstract_declarator150', cardinality 0..*).
+'ansic::exclusive::or::expression::linha' (role 'ansic_exclusive_or_expression_linha393', cardinality 0..*) is associated with 'ansic::and::expression' (role 'ansic_and_expression394', cardinality 0..*).
+'ansic::unary::expression' (role 'ansic_unary_expression241', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name242', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression', cardinality 0..*) is associated with 'ansic::primary::expression' (role 'ansic_primary_expression181', cardinality 0..*).
+'ansic::multiplicative::expression' (role 'ansic_multiplicative_expression255', cardinality 0..*) is associated with 'ansic::multiplicative::expression::linha' (role 'ansic_multiplicative_expression_linha', cardinality 0..*).
+'ansic::statement' (role 'ansic_statement347', cardinality 0..*) is associated with 'ansic::selection::statement' (role 'ansic_selection_statement346', cardinality 0..*).
+'ansic::initializer' (role 'ansic_initializer207', cardinality 0..*) is associated with 'ansic::initializer::list' (role 'ansic_initializer_list206', cardinality 0..*).
+'ansic::initializer::list::complement' (role 'ansic_initializer_list_complement535', cardinality 0..*) is associated with 'ansic::InitializerListLinhaAction' (role 'ansic_InitializerListLinhaAction', cardinality 0..*).
+'ansic::enumerator' (role 'ansic_enumerator36', cardinality 0..*) is associated with 'ansic::constant::expression' (role 'ansic_constant_expression37', cardinality 0..*).
+'ansic::and::expression::linha' (role 'ansic_and_expression_linha', cardinality 0..*) is associated with 'ansic::and::expression' (role 'ansic_and_expression381', cardinality 0..*).
+'ansic::static::assert::declaration' (role 'ansic_static_assert_declaration', cardinality 0..*) is associated with 'ansic::struct::declaration' (role 'ansic_struct_declaration54', cardinality 0..*).
+'ansic::multiplicative::expression' (role 'ansic_multiplicative_expression', cardinality 0..*) is associated with 'ansic::cast::expression' (role 'ansic_cast_expression253', cardinality 0..*).
+'ansic::struct::declarator::list' (role 'ansic_struct_declarator_list58', cardinality 0..*) is associated with 'ansic::struct::declarator::list::linha' (role 'ansic_struct_declarator_list_linha', cardinality 0..*).
+'ansic::generic::association' (role 'ansic_generic_association194', cardinality 0..*) is associated with 'ansic::type::name' (role 'ansic_type_name195', cardinality 0..*).
+'ansic::init::declarator::list::linha' (role 'ansic_init_declarator_list_linha', cardinality 0..*) is associated with 'ansic::initializer::list' (role 'ansic_initializer_list209', cardinality 0..*).
+'ansic::type::specifier' (role 'ansic_type_specifier66', cardinality 0..*) is associated with 'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list65', cardinality 0..*).
+'ansic::designator::list' (role 'ansic_designator_list218', cardinality 0..*) is associated with 'ansic::designator' (role 'ansic_designator', cardinality 0..*).
+'ansic::expression::linha' (role 'ansic_expression_linha466', cardinality 0..*) is associated with 'ansic::assignment::expression' (role 'ansic_assignment_expression467', cardinality 0..*).
+'ansic::identifier::list' (role 'ansic_identifier_list', cardinality 0..*) is associated with 'ansic::direct::declarator::complemento' (role 'ansic_direct_declarator_complemento128', cardinality 0..*).
+'ansic::declaration::list::linha' (role 'ansic_declaration_list_linha543', cardinality 0..*) is associated with 'ansic::DesignatorListLinhaAction' (role 'ansic_DesignatorListLinhaAction542', cardinality 0..*).
+'ansic::type::specifier' (role 'ansic_type_specifier22', cardinality 0..*) is associated with 'ansic::atomic::type::specifier' (role 'ansic_atomic_type_specifier', cardinality 0..*).
+'ansic::constant::expression' (role 'ansic_constant_expression', cardinality 0..*) is associated with 'ansic::alignment::specifier' (role 'ansic_alignment_specifier20', cardinality 0..*).
+'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list', cardinality 0..*) is associated with 'ansic::struct::declaration' (role 'ansic_struct_declaration50', cardinality 0..*).
+'ansic::direct::declarator::linha' (role 'ansic_direct_declarator_linha116', cardinality 0..*) is associated with 'ansic::direct::declarator::complemento' (role 'ansic_direct_declarator_complemento', cardinality 0..*).
+'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list69', cardinality 0..*) is associated with 'ansic::specifier::qualifier::list' (role 'ansic_specifier_qualifier_list67', cardinality 0..*).
+'ansic::enumerator' (role 'ansic_enumerator34', cardinality 0..*) is associated with 'ansic::enumeration::constant' (role 'ansic_enumeration_constant', cardinality 0..*).
+'ansic::postfix::expression' (role 'ansic_postfix_expression', cardinality 0..*) is associated with 'ansic::primary::expression' (role 'ansic_primary_expression200', cardinality 0..*).
+'ansic::shift::expression::complement' (role 'ansic_shift_expression_complement294', cardinality 0..*) is associated with 'ansic::relational::expression::linha' (role 'ansic_relational_expression_linha293', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression329', cardinality 0..*) is associated with 'ansic::iteration::statement' (role 'ansic_iteration_statement328', cardinality 0..*).
+'ansic::jump::statement' (role 'ansic_jump_statement', cardinality 0..*) is associated with 'ansic::statement' (role 'ansic_statement323', cardinality 0..*).
+'ansic::equality::expression' (role 'ansic_equality_expression384', cardinality 0..*) is associated with 'ansic::and::expression::linha' (role 'ansic_and_expression_linha383', cardinality 0..*).
+'ansic::expression::linha' (role 'ansic_expression_linha468', cardinality 0..*) is associated with 'ansic::expression::linha' (role 'ansic_expression_linha470', cardinality 0..*).
+'ansic::generic::assoc::list::linha' (role 'ansic_generic_assoc_list_linha528', cardinality 0..*) is associated with 'ansic::GenericAssocListLinhaAction' (role 'ansic_GenericAssocListLinhaAction527', cardinality 0..*).
+'ansic::parameter::type::list' (role 'ansic_parameter_type_list', cardinality 0..*) is associated with 'ansic::direct::declarator::complemento' (role 'ansic_direct_declarator_complemento126', cardinality 0..*).
+'ansic::translation::unit' (role 'ansic_translation_unit', cardinality 0..*) is associated with 'ansic::DomainModel' (role 'ansic_DomainModel', cardinality 0..*).
+'ansic::inclusive::or::expression' (role 'ansic_inclusive_or_expression401', cardinality 0..*) is associated with 'ansic::inclusive::or::expression::linha' (role 'ansic_inclusive_or_expression_linha', cardinality 0..*).
+'ansic::logical::and::expression::linha' (role 'ansic_logical_and_expression_linha413', cardinality 0..*) is associated with 'ansic::inclusive::or::expression' (role 'ansic_inclusive_or_expression414', cardinality 0..*).
+'ansic::struct::declaration' (role 'ansic_struct_declaration493', cardinality 0..*) is associated with 'ansic::StructDeclarationListLinhaAction' (role 'ansic_StructDeclarationListLinhaAction', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression344', cardinality 0..*) is associated with 'ansic::selection::statement' (role 'ansic_selection_statement343', cardinality 0..*).
+'ansic::alignment::specifier' (role 'ansic_alignment_specifier', cardinality 0..*) is associated with 'ansic::declaration::specifiers' (role 'ansic_declaration_specifiers16', cardinality 0..*).
+'ansic::struct::declarator' (role 'ansic_struct_declarator60', cardinality 0..*) is associated with 'ansic::constant::expression' (role 'ansic_constant_expression61', cardinality 0..*).
+'ansic::direct::declarator' (role 'ansic_direct_declarator', cardinality 0..*) is associated with 'ansic::declarator' (role 'ansic_declarator99', cardinality 0..*).
+'ansic::direct::abstract::declarator::linha' (role 'ansic_direct_abstract_declarator_linha516', cardinality 0..*) is associated with 'ansic::DirectAbstractDeclarratorLinhaAction' (role 'ansic_DirectAbstractDeclarratorLinhaAction515', cardinality 0..*).
+'ansic::type::qualifier::list::linha' (role 'ansic_type_qualifier_list_linha', cardinality 0..*) is associated with 'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list109', cardinality 0..*).
+'ansic::direct::declarator' (role 'ansic_direct_declarator113', cardinality 0..*) is associated with 'ansic::declarator' (role 'ansic_declarator114', cardinality 0..*).
+'ansic::shift::expression::complement' (role 'ansic_shift_expression_complement', cardinality 0..*) is associated with 'ansic::shift::expression::linha' (role 'ansic_shift_expression_linha281', cardinality 0..*).
+'ansic::logical::or::expression::linha' (role 'ansic_logical_or_expression_linha', cardinality 0..*) is associated with 'ansic::logical::or::expression' (role 'ansic_logical_or_expression421', cardinality 0..*).
+'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list156', cardinality 0..*) is associated with 'ansic::direct::abstract::declarator' (role 'ansic_direct_abstract_declarator155', cardinality 0..*).
+'ansic::block::item' (role 'ansic_block_item365', cardinality 0..*) is associated with 'ansic::block::item::list::linha' (role 'ansic_block_item_list_linha364', cardinality 0..*).
+'ansic::postfix::expression::complement' (role 'ansic_postfix_expression_complement', cardinality 0..*) is associated with 'ansic::expression' (role 'ansic_expression227', cardinality 0..*).
+'ansic::struct::declarator::list' (role 'ansic_struct_declarator_list56', cardinality 0..*) is associated with 'ansic::struct::declarator' (role 'ansic_struct_declarator', cardinality 0..*).
+'ansic::cast::expression' (role 'ansic_cast_expression251', cardinality 0..*) is associated with 'ansic::cast::expression' (role 'ansic_cast_expression249', cardinality 0..*).
+'ansic::shift::expression' (role 'ansic_shift_expression279', cardinality 0..*) is associated with 'ansic::shift::expression::linha' (role 'ansic_shift_expression_linha', cardinality 0..*).
+'ansic::external::declaration' (role 'ansic_external_declaration6', cardinality 0..*) is associated with 'ansic::function::definition' (role 'ansic_function_definition', cardinality 0..*).
+'ansic::init::declarator' (role 'ansic_init_declarator483', cardinality 0..*) is associated with 'ansic::initializer' (role 'ansic_initializer484', cardinality 0..*).
+'ansic::unary::expression' (role 'ansic_unary_expression245', cardinality 0..*) is associated with 'ansic::cast::expression' (role 'ansic_cast_expression244', cardinality 0..*).
+'ansic::logical::and::expression' (role 'ansic_logical_and_expression424', cardinality 0..*) is associated with 'ansic::logical::or::expression::linha' (role 'ansic_logical_or_expression_linha423', cardinality 0..*).
+'ansic::pointer' (role 'ansic_pointer101', cardinality 0..*) is associated with 'ansic::type::qualifier::list' (role 'ansic_type_qualifier_list', cardinality 0..*).
+'ansic::compound::statement' (role 'ansic_compound_statement315', cardinality 0..*) is associated with 'ansic::statement' (role 'ansic_statement314', cardinality 0..*).
+'ansic::compound::statement' (role 'ansic_compound_statement358', cardinality 0..*) is associated with 'ansic::block::item::list' (role 'ansic_block_item_list', cardinality 0..*).
+'ansic::expression' (role 'ansic_expression435', cardinality 0..*) is associated with 'ansic::conditional::expression::linha' (role 'ansic_conditional_expression_linha434', cardinality 0..*).
+'ansic::generic::association' (role 'ansic_generic_association525', cardinality 0..*) is associated with 'ansic::GenericAssocListLinhaAction' (role 'ansic_GenericAssocListLinhaAction', cardinality 0..*).
+'ansic::enumerator::list' (role 'ansic_enumerator_list30', cardinality 0..*) is associated with 'ansic::enumerator' (role 'ansic_enumerator', cardinality 0..*).
+'ansic::init::declarator' (role 'ansic_init_declarator', cardinality 0..*) is associated with 'ansic::init::declarator::list' (role 'ansic_init_declarator_list475', cardinality 0..*).
+'ansic::constant::expression' (role 'ansic_constant_expression472', cardinality 0..*) is associated with 'ansic::conditional::expression' (role 'ansic_conditional_expression473', cardinality 0..*).
+'ansic::static::assert::declaration' (role 'ansic_static_assert_declaration80', cardinality 0..*) is associated with 'ansic::declaration' (role 'ansic_declaration79', cardinality 0..*).

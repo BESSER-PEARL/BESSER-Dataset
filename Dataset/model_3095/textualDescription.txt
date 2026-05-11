@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'Classifier' has no attributes.
+The class 'ClassMM::Association' has the following attributes: 'name' of type str.
+The class 'ClassMM::ClassModel' has no attributes.
+The class 'ClassMM::PrimitiveDataType' has no attributes.
+The class 'ClassMM::Classifier' has the following attributes: 'name' of type str.
+The class 'ClassMM::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type str.
+The class 'ClassMM::Class' has the following attributes: 'is_persistent' of type str.
+'ClassMM::Class' is a specialization of 'Classifier'.
+'ClassMM::PrimitiveDataType' is a specialization of 'Classifier'.
+'ClassMM::Association' (role 'ClassMM_Association15', cardinality 0..*) is associated with 'ClassMM::ClassModel' (role 'ClassMM_ClassModel14', cardinality 0..*).
+'ClassMM::Classifier' (role 'ClassMM_Classifier', cardinality 0..*) is associated with 'ClassMM::Attribute' (role 'ClassMM_Attribute', cardinality 0..*).
+'ClassMM::ClassModel' (role 'ClassMM_ClassModel', cardinality 0..*) is associated with 'ClassMM::Classifier' (role 'ClassMM_Classifier12', cardinality 0..*).
+'ClassMM::Class' (role 'ClassMM_Class6', cardinality 0..*) is associated with 'ClassMM::Attribute' (role 'ClassMM_Attribute7', cardinality 0..*).
+'ClassMM::Class' (role 'ClassMM_Class', cardinality 0..*) is associated with 'ClassMM::Association' (role 'ClassMM_Association', cardinality 0..*).
+'ClassMM::Class' (role 'ClassMM_Class10', cardinality 0..*) is associated with 'ClassMM::Class' (role 'ClassMM_Class8', cardinality 0..*).
+'ClassMM::Association' (role 'ClassMM_Association2', cardinality 0..*) is associated with 'ClassMM::Class' (role 'ClassMM_Class3', cardinality 0..*).

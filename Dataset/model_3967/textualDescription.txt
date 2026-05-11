@@ -1,0 +1,78 @@
+The model has 43 class(es).
+The class 'StandardProfile::File' has no attributes.
+The class 'StandardProfile::Component' has no attributes.
+The class 'StandardProfile::Class' has no attributes.
+The class 'StandardProfile::Utility' has no attributes.
+The class 'StandardProfile::Metamodel' has no attributes.
+The class 'StandardProfile::Focus' has no attributes.
+The class 'StandardProfile::Library' has no attributes.
+The class 'StandardProfile::Classifier' has no attributes.
+The class 'StandardProfile::Source' has no attributes.
+The class 'StandardProfile::Abstraction' has no attributes.
+The class 'StandardProfile::Destroy' has no attributes.
+The class 'StandardProfile::Call' has no attributes.
+The class 'StandardProfile::Responsibility' has no attributes.
+The class 'StandardProfile::Create' has no attributes.
+The class 'StandardProfile::SystemModel' has no attributes.
+The class 'StandardProfile::BuildComponent' has no attributes.
+The class 'StandardProfile::Refine' has no attributes.
+The class 'StandardProfile::Implement' has no attributes.
+The class 'StandardProfile::Auxiliary' has no attributes.
+The class 'File' has no attributes.
+The class 'StandardProfile::Process' has no attributes.
+The class 'StandardProfile::Service' has no attributes.
+The class 'StandardProfile::Script' has no attributes.
+The class 'StandardProfile::Type' has no attributes.
+The class 'StandardProfile::Executable' has no attributes.
+The class 'StandardProfile::Entity' has no attributes.
+The class 'StandardProfile::Instantiate' has no attributes.
+The class 'StandardProfile::Derive' has no attributes.
+The class 'StandardProfile::ImplementationClass' has no attributes.
+The class 'StandardProfile::Framework' has no attributes.
+The class 'StandardProfile::Usage' has no attributes.
+The class 'StandardProfile::Realization' has no attributes.
+The class 'StandardProfile::Artifact' has no attributes.
+The class 'StandardProfile::Document' has no attributes.
+The class 'StandardProfile::Model' has no attributes.
+The class 'StandardProfile::Metaclass' has no attributes.
+The class 'StandardProfile::ModelLibrary' has no attributes.
+The class 'StandardProfile::BehavioralFeature' has no attributes.
+The class 'StandardProfile::Package' has no attributes.
+The class 'StandardProfile::Send' has no attributes.
+The class 'StandardProfile::Subsystem' has no attributes.
+The class 'StandardProfile::Trace' has no attributes.
+The class 'StandardProfile::Specification' has no attributes.
+'StandardProfile::Document' is a specialization of 'File'.
+'StandardProfile::Script' is a specialization of 'File'.
+'StandardProfile::Library' is a specialization of 'File'.
+'StandardProfile::Source' is a specialization of 'File'.
+'StandardProfile::Executable' is a specialization of 'File'.
+'StandardProfile::Package' (role 'StandardProfile_Package', cardinality 0..*) is associated with 'StandardProfile::Framework' (role 'StandardProfile_Framework', cardinality 0..*).
+'StandardProfile::Subsystem' (role 'StandardProfile_Subsystem', cardinality 0..*) is associated with 'StandardProfile::Component' (role 'StandardProfile_Component38', cardinality 0..*).
+'StandardProfile::Usage' (role 'StandardProfile_Usage30', cardinality 0..*) is associated with 'StandardProfile::Responsibility' (role 'StandardProfile_Responsibility', cardinality 0..*).
+'StandardProfile::Type' (role 'StandardProfile_Type', cardinality 0..*) is associated with 'StandardProfile::Class' (role 'StandardProfile_Class42', cardinality 0..*).
+'StandardProfile::Metaclass' (role 'StandardProfile_Metaclass', cardinality 0..*) is associated with 'StandardProfile::Class' (role 'StandardProfile_Class21', cardinality 0..*).
+'StandardProfile::ModelLibrary' (role 'StandardProfile_ModelLibrary', cardinality 0..*) is associated with 'StandardProfile::Package' (role 'StandardProfile_Package23', cardinality 0..*).
+'StandardProfile::Artifact' (role 'StandardProfile_Artifact', cardinality 0..*) is associated with 'StandardProfile::File' (role 'StandardProfile_File', cardinality 0..*).
+'StandardProfile::Model' (role 'StandardProfile_Model49', cardinality 0..*) is associated with 'StandardProfile::SystemModel' (role 'StandardProfile_SystemModel', cardinality 0..*).
+'StandardProfile::BehavioralFeature' (role 'StandardProfile_BehavioralFeature8', cardinality 0..*) is associated with 'StandardProfile::Destroy' (role 'StandardProfile_Destroy', cardinality 0..*).
+'StandardProfile::Abstraction' (role 'StandardProfile_Abstraction', cardinality 0..*) is associated with 'StandardProfile::Derive' (role 'StandardProfile_Derive', cardinality 0..*).
+'StandardProfile::ImplementationClass' (role 'StandardProfile_ImplementationClass', cardinality 0..*) is associated with 'StandardProfile::Class' (role 'StandardProfile_Class17', cardinality 0..*).
+'StandardProfile::Create' (role 'StandardProfile_Create4', cardinality 0..*) is associated with 'StandardProfile::Usage' (role 'StandardProfile_Usage5', cardinality 0..*).
+'StandardProfile::Component' (role 'StandardProfile_Component25', cardinality 0..*) is associated with 'StandardProfile::Process' (role 'StandardProfile_Process', cardinality 0..*).
+'StandardProfile::Service' (role 'StandardProfile_Service', cardinality 0..*) is associated with 'StandardProfile::Component' (role 'StandardProfile_Component34', cardinality 0..*).
+'StandardProfile::Class' (role 'StandardProfile_Class', cardinality 0..*) is associated with 'StandardProfile::Auxiliary' (role 'StandardProfile_Auxiliary', cardinality 0..*).
+'StandardProfile::Instantiate' (role 'StandardProfile_Instantiate', cardinality 0..*) is associated with 'StandardProfile::Usage' (role 'StandardProfile_Usage19', cardinality 0..*).
+'StandardProfile::Entity' (role 'StandardProfile_Entity', cardinality 0..*) is associated with 'StandardProfile::Component' (role 'StandardProfile_Component', cardinality 0..*).
+'StandardProfile::Model' (role 'StandardProfile_Model', cardinality 0..*) is associated with 'StandardProfile::Metamodel' (role 'StandardProfile_Metamodel', cardinality 0..*).
+'StandardProfile::Trace' (role 'StandardProfile_Trace', cardinality 0..*) is associated with 'StandardProfile::Abstraction' (role 'StandardProfile_Abstraction40', cardinality 0..*).
+'StandardProfile::Create' (role 'StandardProfile_Create', cardinality 0..*) is associated with 'StandardProfile::BehavioralFeature' (role 'StandardProfile_BehavioralFeature', cardinality 0..*).
+'StandardProfile::Refine' (role 'StandardProfile_Refine', cardinality 0..*) is associated with 'StandardProfile::Abstraction' (role 'StandardProfile_Abstraction28', cardinality 0..*).
+'StandardProfile::Usage' (role 'StandardProfile_Usage32', cardinality 0..*) is associated with 'StandardProfile::Send' (role 'StandardProfile_Send', cardinality 0..*).
+'StandardProfile::Usage' (role 'StandardProfile_Usage', cardinality 0..*) is associated with 'StandardProfile::Call' (role 'StandardProfile_Call', cardinality 0..*).
+'StandardProfile::Component' (role 'StandardProfile_Component15', cardinality 0..*) is associated with 'StandardProfile::Implement' (role 'StandardProfile_Implement', cardinality 0..*).
+'StandardProfile::Component' (role 'StandardProfile_Component46', cardinality 0..*) is associated with 'StandardProfile::BuildComponent' (role 'StandardProfile_BuildComponent', cardinality 0..*).
+'StandardProfile::Utility' (role 'StandardProfile_Utility', cardinality 0..*) is associated with 'StandardProfile::Class' (role 'StandardProfile_Class44', cardinality 0..*).
+'StandardProfile::Classifier' (role 'StandardProfile_Classifier', cardinality 0..*) is associated with 'StandardProfile::Realization' (role 'StandardProfile_Realization', cardinality 0..*).
+'StandardProfile::Focus' (role 'StandardProfile_Focus', cardinality 0..*) is associated with 'StandardProfile::Class' (role 'StandardProfile_Class12', cardinality 0..*).
+'StandardProfile::Classifier' (role 'StandardProfile_Classifier36', cardinality 0..*) is associated with 'StandardProfile::Specification' (role 'StandardProfile_Specification', cardinality 0..*).

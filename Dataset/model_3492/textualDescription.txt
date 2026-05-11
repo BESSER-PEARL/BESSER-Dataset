@@ -1,0 +1,294 @@
+The model has 114 class(es).
+The class 'vM::EnumStringDef' has no attributes.
+The class 'vM::RealAttrDefComplement' has the following attributes: 'max' of type str; 'min' of type str.
+The class 'vM::Constraints' has no attributes.
+The class 'vM::Objectives' has no attributes.
+The class 'vM::IntegerAttrDefComplement' has the following attributes: 'max' of type str; 'min' of type str.
+The class 'vM::IntegerDefaultDef' has the following attributes: 'value' of type int.
+The class 'vM::Version' has the following attributes: 'main' of type int; 'tail' of type int.
+The class 'vM::NumericExpression::List' has no attributes.
+The class 'vM::RealAttrDefUnbounded' has the following attributes: 'value' of type str.
+The class 'ComplexExpression' has no attributes.
+The class 'vM::Excludes' has no attributes.
+The class 'vM::Integer::ATT::ID' has no attributes.
+The class 'ExtendedValuation' has no attributes.
+The class 'vM::Xorgroup' has no attributes.
+The class 'vM::AttributeDescription' has the following attributes: 'description' of type str.
+The class 'vM::ObjectiveExpression' has the following attributes: 'op' of type str.
+The class 'vM::EnumIntegerDef' has no attributes.
+The class 'vM::BasicAttrDef' has no attributes.
+The class 'vM::RealAttrValuation' has no attributes.
+The class 'vM::Enum::Integer::ATT::ID' has no attributes.
+The class 'vM::IntegerAttrDefBounded' has no attributes.
+The class 'vM::StringExpression' has the following attributes: 'value' of type str.
+The class 'vM::LeftImplication' has no attributes.
+The class 'BasicAttrDef' has no attributes.
+The class 'vM::PairFeatureReal' has the following attributes: 'value' of type str.
+The class 'BasicAttrValuation' has no attributes.
+The class 'vM::EnumAttrDef' has the following attributes: 'value' of type str.
+The class 'vM::FeaturesGroup' has no attributes.
+The class 'vM::Requires' has no attributes.
+The class 'vM::FeatureDescription' has the following attributes: 'description' of type str.
+The class 'vM::Inequality' has no attributes.
+The class 'vM::Abstract::ATT::ID' has the following attributes: 'name' of type str.
+The class 'vM::IntegerAttrDefUnbounded' has the following attributes: 'value' of type str.
+The class 'EnumAttrDef' has no attributes.
+The class 'vM::BooleanExpression' has the following attributes: 'op' of type str; 'value' of type str.
+The class 'vM::BrackedExpression' has no attributes.
+The class 'vM::RealAttrDef' has no attributes.
+The class 'vM::Less' has no attributes.
+The class 'vM::RightImplication' has no attributes.
+The class 'vM::Greaterequal' has no attributes.
+The class 'vM::Model' has no attributes.
+The class 'VmBlock' has no attributes.
+The class 'vM::Attributes' has no attributes.
+The class 'vM::AttrDef' has the following attributes: 'notDecidable' of type bool; 'runTime' of type bool; 'notTranslatable' of type bool.
+The class 'vM::ComplexExpression' has no attributes.
+The class 'Abstract::ATT::ID' has no attributes.
+The class 'vM::Enum::String::ATT::ID' has no attributes.
+The class 'vM::RealDefaultDef' has the following attributes: 'value' of type str.
+The class 'vM::CardinalityBased' has the following attributes: 'all' of type bool; 'min' of type str; 'max' of type str.
+The class 'vM::FeatureDefinition' has no attributes.
+The class 'vM::IntegerDeltaDef' has the following attributes: 'value' of type int.
+The class 'vM::And' has no attributes.
+The class 'FeaturesGroup' has no attributes.
+The class 'vM::BooleanExpression::List' has no attributes.
+The class 'vM::Configuration' has the following attributes: 'name' of type str.
+The class 'vM::String::ATT::ID' has no attributes.
+The class 'vM::Minus' has no attributes.
+The class 'vM::BasicAttrValuation' has the following attributes: 'value' of type str.
+The class 'vM::IntegerAttrDef' has no attributes.
+The class 'vM::Descriptions' has no attributes.
+The class 'vM::StringDefaultDef' has the following attributes: 'value' of type str.
+The class 'vM::Plus' has no attributes.
+The class 'vM::TableBasedValuationByAttributeForInteger' has no attributes.
+The class 'vM::Equality' has no attributes.
+The class 'vM::BoolDefaultDef' has the following attributes: 'value' of type str.
+The class 'vM::StringAttrValuation' has no attributes.
+The class 'vM::FeatureHierarchy' has no attributes.
+The class 'vM::Boolean::ATT::ID' has no attributes.
+The class 'vM::Division' has no attributes.
+The class 'IntegerAttrDef' has no attributes.
+The class 'vM::TableBasedValuationByFeature' has no attributes.
+The class 'FeatureDefinition' has no attributes.
+The class 'vM::MetaDataDeclaration' has the following attributes: 'author' of type str; 'publication' of type str; 'date' of type str; 'description' of type str; 'organization' of type str; 'name' of type str.
+The class 'vM::Enum::Real::ATT::ID' has no attributes.
+The class 'vM::Expression' has no attributes.
+The class 'vM::PrimitiveExpression' has no attributes.
+The class 'vM::RealDeltaDef' has the following attributes: 'value' of type str.
+The class 'vM::Email' has the following attributes: 'username' of type str; 'domain' of type str.
+The class 'vM::BiImplication' has no attributes.
+The class 'vM::StringAttrDef' has the following attributes: 'value' of type str.
+The class 'vM::EnumRealDef' has no attributes.
+The class 'vM::Or' has no attributes.
+The class 'vM::PairFeatureInteger' has the following attributes: 'value' of type str.
+The class 'vM::Objective' has the following attributes: 'name' of type str; 'op' of type str.
+The class 'vM::Multiplication' has no attributes.
+The class 'vM::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'vM::BooleanAttrValuation' has no attributes.
+The class 'vM::Relationships' has no attributes.
+The class 'vM::AdvancedAttrValuation' has no attributes.
+The class 'vM::ExtendedValuation' has no attributes.
+The class 'vM::TableBasedValuationByAttributeForReal' has no attributes.
+The class 'TableBasedValuationByAttribute' has no attributes.
+The class 'vM::VmBlock' has no attributes.
+The class 'vM::Greater' has no attributes.
+The class 'vM::ImportDeclaration' has the following attributes: 'importedNamespace' of type str.
+The class 'vM::AttHead' has the following attributes: 'forAllFeatures' of type bool.
+The class 'vM::Constraint' has the following attributes: 'not_' of type bool; 'name' of type str.
+The class 'vM::PairAttributeValue' has the following attributes: 'value' of type str.
+The class 'RealAttrDef' has no attributes.
+The class 'vM::Orgroup' has no attributes.
+The class 'vM::RealAttrDefBounded' has no attributes.
+The class 'vM::Lessequal' has no attributes.
+The class 'vM::IntegerAttrValuation' has no attributes.
+The class 'vM::TableBasedValuationByFeatureAndClone' has the following attributes: 'name' of type str.
+The class 'vM::Feature' has the following attributes: 'optional' of type bool; 'name' of type str; 'notTranslatable' of type bool; 'min' of type str; 'max' of type str; 'notDecidable' of type bool; 'runTime' of type bool.
+The class 'vM::SpecialExpression' has the following attributes: 'op' of type str.
+The class 'vM::Configurations' has no attributes.
+The class 'vM::BooleanAttrDef' has the following attributes: 'value' of type str.
+The class 'vM::If' has no attributes.
+The class 'vM::TableBasedValuationByAttribute' has no attributes.
+The class 'vM::NumericExpression' has the following attributes: 'value' of type str; 'op' of type str.
+The class 'vM::BooleanValuation' has the following attributes: 'notSelected' of type bool.
+The class 'Expression' has no attributes.
+The class 'vM::Real::ATT::ID' has no attributes.
+'vM::Lessequal' is a specialization of 'ComplexExpression'.
+'vM::Excludes' is a specialization of 'ComplexExpression'.
+'vM::SpecialExpression' is a specialization of 'Expression'.
+'vM::Inequality' is a specialization of 'ComplexExpression'.
+'vM::Expression' is a specialization of 'ComplexExpression'.
+'vM::BasicAttrValuation' is a specialization of 'ExtendedValuation'.
+'vM::Relationships' is a specialization of 'VmBlock'.
+'vM::Orgroup' is a specialization of 'FeaturesGroup'.
+'vM::Requires' is a specialization of 'ComplexExpression'.
+'vM::Division' is a specialization of 'ComplexExpression'.
+'vM::MetaDataDeclaration' is a specialization of 'VmBlock'.
+'vM::EnumIntegerDef' is a specialization of 'EnumAttrDef'.
+'vM::PrimitiveExpression' is a specialization of 'Expression'.
+'vM::If' is a specialization of 'ComplexExpression'.
+'vM::FeatureHierarchy' is a specialization of 'FeatureDefinition'.
+'vM::NumericExpression' is a specialization of 'Expression'.
+'vM::AdvancedAttrValuation' is a specialization of 'ExtendedValuation'.
+'vM::IntegerAttrDefBounded' is a specialization of 'IntegerAttrDef'.
+'vM::Greaterequal' is a specialization of 'ComplexExpression'.
+'vM::IntegerAttrValuation' is a specialization of 'BasicAttrValuation'.
+'vM::Multiplication' is a specialization of 'ComplexExpression'.
+'vM::Descriptions' is a specialization of 'VmBlock'.
+'vM::PackageDeclaration' is a specialization of 'VmBlock'.
+'vM::EnumRealDef' is a specialization of 'EnumAttrDef'.
+'vM::Enum::Integer::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::Greater' is a specialization of 'ComplexExpression'.
+'vM::StringAttrDef' is a specialization of 'BasicAttrDef'.
+'vM::Enum::String::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::RealAttrValuation' is a specialization of 'BasicAttrValuation'.
+'vM::BooleanAttrDef' is a specialization of 'BasicAttrDef'.
+'vM::Constraints' is a specialization of 'VmBlock'.
+'vM::RealAttrDefBounded' is a specialization of 'RealAttrDef'.
+'vM::String::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::TableBasedValuationByAttributeForReal' is a specialization of 'TableBasedValuationByAttribute'.
+'vM::Objectives' is a specialization of 'VmBlock'.
+'vM::Equality' is a specialization of 'ComplexExpression'.
+'vM::CardinalityBased' is a specialization of 'FeaturesGroup'.
+'vM::StringAttrValuation' is a specialization of 'BasicAttrValuation'.
+'vM::Attributes' is a specialization of 'VmBlock'.
+'vM::Configurations' is a specialization of 'VmBlock'.
+'vM::ImportDeclaration' is a specialization of 'VmBlock'.
+'vM::RealAttrDef' is a specialization of 'BasicAttrDef'.
+'vM::FeaturesGroup' is a specialization of 'FeatureDefinition'.
+'vM::Integer::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::Real::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::IntegerAttrDefUnbounded' is a specialization of 'IntegerAttrDef'.
+'vM::Feature' is a specialization of 'FeatureDefinition'.
+'vM::IntegerAttrDef' is a specialization of 'BasicAttrDef'.
+'vM::RightImplication' is a specialization of 'ComplexExpression'.
+'vM::RealAttrDefUnbounded' is a specialization of 'RealAttrDef'.
+'vM::Xorgroup' is a specialization of 'FeaturesGroup'.
+'vM::BooleanAttrValuation' is a specialization of 'BasicAttrValuation'.
+'vM::TableBasedValuationByAttributeForInteger' is a specialization of 'TableBasedValuationByAttribute'.
+'vM::Enum::Real::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::Boolean::ATT::ID' is a specialization of 'Abstract::ATT::ID'.
+'vM::BiImplication' is a specialization of 'ComplexExpression'.
+'vM::Plus' is a specialization of 'ComplexExpression'.
+'vM::Or' is a specialization of 'ComplexExpression'.
+'vM::And' is a specialization of 'ComplexExpression'.
+'vM::BrackedExpression' is a specialization of 'Expression'.
+'vM::StringExpression' is a specialization of 'Expression'.
+'vM::Less' is a specialization of 'ComplexExpression'.
+'vM::LeftImplication' is a specialization of 'ComplexExpression'.
+'vM::BooleanExpression' is a specialization of 'Expression'.
+'vM::Minus' is a specialization of 'ComplexExpression'.
+'vM::EnumStringDef' is a specialization of 'EnumAttrDef'.
+'vM::MetaDataDeclaration' (role 'vM_MetaDataDeclaration5', cardinality 0..*) is associated with 'vM::Email' (role 'vM_Email', cardinality 0..*).
+'vM::BasicAttrValuation' (role 'vM_BasicAttrValuation', cardinality 0..*) is associated with 'vM::Attributes' (role 'vM_Attributes15', cardinality 0..*).
+'vM::BooleanValuation' (role 'vM_BooleanValuation', cardinality 0..*) is associated with 'vM::Configuration' (role 'vM_Configuration100', cardinality 0..*).
+'vM::BoolDefaultDef' (role 'vM_BoolDefaultDef', cardinality 0..*) is associated with 'vM::BooleanAttrDef' (role 'vM_BooleanAttrDef22', cardinality 0..*).
+'vM::PairAttributeValue' (role 'vM_PairAttributeValue132', cardinality 0..*) is associated with 'vM::TableBasedValuationByFeature' (role 'vM_TableBasedValuationByFeature131', cardinality 0..*).
+'vM::EnumStringDef' (role 'vM_EnumStringDef', cardinality 0..*) is associated with 'vM::Enum::String::ATT::ID' (role 'vM_Enum_String_ATT_ID', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression225', cardinality 0..*) is associated with 'vM::Minus' (role 'vM_Minus224', cardinality 0..*).
+'vM::Relationships' (role 'vM_Relationships', cardinality 0..*) is associated with 'vM::FeatureHierarchy' (role 'vM_FeatureHierarchy', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression207', cardinality 0..*) is associated with 'vM::Greater' (role 'vM_Greater', cardinality 0..*).
+'vM::Feature' (role 'vM_Feature70', cardinality 0..*) is associated with 'vM::PrimitiveExpression' (role 'vM_PrimitiveExpression', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression165', cardinality 0..*) is associated with 'vM::LeftImplication' (role 'vM_LeftImplication164', cardinality 0..*).
+'vM::IntegerAttrDefBounded' (role 'vM_IntegerAttrDefBounded31', cardinality 0..*) is associated with 'vM::IntegerAttrDefComplement' (role 'vM_IntegerAttrDefComplement32', cardinality 0..*).
+'vM::Requires' (role 'vM_Requires', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression241', cardinality 0..*).
+'vM::IntegerDefaultDef' (role 'vM_IntegerDefaultDef', cardinality 0..*) is associated with 'vM::IntegerAttrDef' (role 'vM_IntegerAttrDef28', cardinality 0..*).
+'vM::EnumAttrDef' (role 'vM_EnumAttrDef', cardinality 0..*) is associated with 'vM::AttrDef' (role 'vM_AttrDef19', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression192', cardinality 0..*) is associated with 'vM::Inequality' (role 'vM_Inequality', cardinality 0..*).
+'vM::IntegerDeltaDef' (role 'vM_IntegerDeltaDef', cardinality 0..*) is associated with 'vM::IntegerAttrDefComplement' (role 'vM_IntegerAttrDefComplement34', cardinality 0..*).
+'vM::BooleanExpression' (role 'vM_BooleanExpression91', cardinality 0..*) is associated with 'vM::BooleanExpression::List' (role 'vM_BooleanExpression_List90', cardinality 0..*).
+'vM::Feature' (role 'vM_Feature124', cardinality 0..*) is associated with 'vM::TableBasedValuationByFeatureAndClone' (role 'vM_TableBasedValuationByFeatureAndClone123', cardinality 0..*).
+'vM::Descriptions' (role 'vM_Descriptions', cardinality 0..*) is associated with 'vM::FeatureDescription' (role 'vM_FeatureDescription', cardinality 0..*).
+'vM::Boolean::ATT::ID' (role 'vM_Boolean_ATT_ID114', cardinality 0..*) is associated with 'vM::BooleanAttrValuation' (role 'vM_BooleanAttrValuation', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression210', cardinality 0..*) is associated with 'vM::Greater' (role 'vM_Greater209', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression160', cardinality 0..*) is associated with 'vM::If' (role 'vM_If159', cardinality 0..*).
+'vM::Boolean::ATT::ID' (role 'vM_Boolean_ATT_ID', cardinality 0..*) is associated with 'vM::BooleanAttrDef' (role 'vM_BooleanAttrDef', cardinality 0..*).
+'vM::Minus' (role 'vM_Minus', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression222', cardinality 0..*).
+'vM::AttrDef' (role 'vM_AttrDef17', cardinality 0..*) is associated with 'vM::BasicAttrDef' (role 'vM_BasicAttrDef', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression232', cardinality 0..*) is associated with 'vM::Division' (role 'vM_Division', cardinality 0..*).
+'vM::StringAttrDef' (role 'vM_StringAttrDef25', cardinality 0..*) is associated with 'vM::StringDefaultDef' (role 'vM_StringDefaultDef', cardinality 0..*).
+'vM::AttributeDescription' (role 'vM_AttributeDescription63', cardinality 0..*) is associated with 'vM::Abstract::ATT::ID' (role 'vM_Abstract_ATT_ID', cardinality 0..*).
+'vM::TableBasedValuationByAttributeForInteger' (role 'vM_TableBasedValuationByAttributeForInteger', cardinality 0..*) is associated with 'vM::Integer::ATT::ID' (role 'vM_Integer_ATT_ID137', cardinality 0..*).
+'vM::Equality' (role 'vM_Equality189', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression190', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression235', cardinality 0..*) is associated with 'vM::Division' (role 'vM_Division234', cardinality 0..*).
+'vM::RealDefaultDef' (role 'vM_RealDefaultDef', cardinality 0..*) is associated with 'vM::RealAttrDef' (role 'vM_RealAttrDef37', cardinality 0..*).
+'vM::Version' (role 'vM_Version', cardinality 0..*) is associated with 'vM::MetaDataDeclaration' (role 'vM_MetaDataDeclaration', cardinality 0..*).
+'vM::RealAttrDefBounded' (role 'vM_RealAttrDefBounded', cardinality 0..*) is associated with 'vM::RealAttrDefComplement' (role 'vM_RealAttrDefComplement', cardinality 0..*).
+'vM::Attributes' (role 'vM_Attributes', cardinality 0..*) is associated with 'vM::AttrDef' (role 'vM_AttrDef', cardinality 0..*).
+'vM::FeatureDefinition' (role 'vM_FeatureDefinition', cardinality 0..*) is associated with 'vM::FeatureHierarchy' (role 'vM_FeatureHierarchy10', cardinality 0..*).
+'vM::LeftImplication' (role 'vM_LeftImplication', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression162', cardinality 0..*).
+'vM::TableBasedValuationByFeature' (role 'vM_TableBasedValuationByFeature128', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature129', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression237', cardinality 0..*) is associated with 'vM::Excludes' (role 'vM_Excludes', cardinality 0..*).
+'vM::ObjectiveExpression' (role 'vM_ObjectiveExpression96', cardinality 0..*) is associated with 'vM::PrimitiveExpression' (role 'vM_PrimitiveExpression97', cardinality 0..*).
+'vM::Or' (role 'vM_Or179', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression180', cardinality 0..*).
+'vM::IntegerAttrValuation' (role 'vM_IntegerAttrValuation', cardinality 0..*) is associated with 'vM::Integer::ATT::ID' (role 'vM_Integer_ATT_ID112', cardinality 0..*).
+'vM::PairAttributeValue' (role 'vM_PairAttributeValue', cardinality 0..*) is associated with 'vM::TableBasedValuationByFeatureAndClone' (role 'vM_TableBasedValuationByFeatureAndClone126', cardinality 0..*).
+'vM::FeatureHierarchy' (role 'vM_FeatureHierarchy8', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression185', cardinality 0..*) is associated with 'vM::And' (role 'vM_And184', cardinality 0..*).
+'vM::Real::ATT::ID' (role 'vM_Real_ATT_ID', cardinality 0..*) is associated with 'vM::RealAttrDef' (role 'vM_RealAttrDef', cardinality 0..*).
+'vM::Model' (role 'vM_Model', cardinality 0..*) is associated with 'vM::VmBlock' (role 'vM_VmBlock', cardinality 0..*).
+'vM::SpecialExpression' (role 'vM_SpecialExpression', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature68', cardinality 0..*).
+'vM::Expression' (role 'vM_Expression244', cardinality 0..*) is associated with 'vM::Requires' (role 'vM_Requires243', cardinality 0..*).
+'vM::BiImplication' (role 'vM_BiImplication', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression172', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression200', cardinality 0..*) is associated with 'vM::Less' (role 'vM_Less199', cardinality 0..*).
+'vM::NumericExpression::List' (role 'vM_NumericExpression_List', cardinality 0..*) is associated with 'vM::NumericExpression' (role 'vM_NumericExpression85', cardinality 0..*).
+'vM::FeatureDescription' (role 'vM_FeatureDescription57', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature58', cardinality 0..*).
+'vM::IntegerAttrDef' (role 'vM_IntegerAttrDef', cardinality 0..*) is associated with 'vM::Integer::ATT::ID' (role 'vM_Integer_ATT_ID', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression177', cardinality 0..*) is associated with 'vM::Or' (role 'vM_Or', cardinality 0..*).
+'vM::Configurations' (role 'vM_Configurations', cardinality 0..*) is associated with 'vM::Configuration' (role 'vM_Configuration', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression217', cardinality 0..*) is associated with 'vM::Plus' (role 'vM_Plus', cardinality 0..*).
+'vM::RealDeltaDef' (role 'vM_RealDeltaDef', cardinality 0..*) is associated with 'vM::RealAttrDefComplement' (role 'vM_RealAttrDefComplement40', cardinality 0..*).
+'vM::Descriptions' (role 'vM_Descriptions55', cardinality 0..*) is associated with 'vM::AttributeDescription' (role 'vM_AttributeDescription', cardinality 0..*).
+'vM::PairFeatureReal' (role 'vM_PairFeatureReal148', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature149', cardinality 0..*).
+'vM::AdvancedAttrValuation' (role 'vM_AdvancedAttrValuation', cardinality 0..*) is associated with 'vM::TableBasedValuationByFeature' (role 'vM_TableBasedValuationByFeature', cardinality 0..*).
+'vM::Greaterequal' (role 'vM_Greaterequal214', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression215', cardinality 0..*).
+'vM::Inequality' (role 'vM_Inequality194', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression195', cardinality 0..*).
+'vM::TableBasedValuationByAttributeForReal' (role 'vM_TableBasedValuationByAttributeForReal', cardinality 0..*) is associated with 'vM::Real::ATT::ID' (role 'vM_Real_ATT_ID144', cardinality 0..*).
+'vM::Constraint' (role 'vM_Constraint66', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression', cardinality 0..*).
+'vM::EnumStringDef' (role 'vM_EnumStringDef43', cardinality 0..*) is associated with 'vM::StringDefaultDef' (role 'vM_StringDefaultDef44', cardinality 0..*).
+'vM::EnumIntegerDef' (role 'vM_EnumIntegerDef47', cardinality 0..*) is associated with 'vM::IntegerDefaultDef' (role 'vM_IntegerDefaultDef48', cardinality 0..*).
+'vM::BooleanExpression' (role 'vM_BooleanExpression', cardinality 0..*) is associated with 'vM::BooleanExpression' (role 'vM_BooleanExpression76', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression220', cardinality 0..*) is associated with 'vM::Plus' (role 'vM_Plus219', cardinality 0..*).
+'vM::Abstract::ATT::ID' (role 'vM_Abstract_ATT_ID75', cardinality 0..*) is associated with 'vM::PrimitiveExpression' (role 'vM_PrimitiveExpression74', cardinality 0..*).
+'vM::Constraint' (role 'vM_Constraint', cardinality 0..*) is associated with 'vM::Constraints' (role 'vM_Constraints', cardinality 0..*).
+'vM::Configuration' (role 'vM_Configuration102', cardinality 0..*) is associated with 'vM::ExtendedValuation' (role 'vM_ExtendedValuation', cardinality 0..*).
+'vM::PairFeatureInteger' (role 'vM_PairFeatureInteger', cardinality 0..*) is associated with 'vM::TableBasedValuationByAttributeForInteger' (role 'vM_TableBasedValuationByAttributeForInteger139', cardinality 0..*).
+'vM::Greaterequal' (role 'vM_Greaterequal', cardinality 0..*) is associated with 'vM::Greater' (role 'vM_Greater212', cardinality 0..*).
+'vM::Feature' (role 'vM_Feature142', cardinality 0..*) is associated with 'vM::PairFeatureInteger' (role 'vM_PairFeatureInteger141', cardinality 0..*).
+'vM::BrackedExpression' (role 'vM_BrackedExpression', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression81', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression197', cardinality 0..*) is associated with 'vM::Less' (role 'vM_Less', cardinality 0..*).
+'vM::Feature' (role 'vM_Feature61', cardinality 0..*) is associated with 'vM::AttributeDescription' (role 'vM_AttributeDescription60', cardinality 0..*).
+'vM::Excludes' (role 'vM_Excludes239', cardinality 0..*) is associated with 'vM::Expression' (role 'vM_Expression', cardinality 0..*).
+'vM::Enum::Integer::ATT::ID' (role 'vM_Enum_Integer_ATT_ID', cardinality 0..*) is associated with 'vM::EnumIntegerDef' (role 'vM_EnumIntegerDef', cardinality 0..*).
+'vM::EnumRealDef' (role 'vM_EnumRealDef', cardinality 0..*) is associated with 'vM::Enum::Real::ATT::ID' (role 'vM_Enum_Real_ATT_ID', cardinality 0..*).
+'vM::Abstract::ATT::ID' (role 'vM_Abstract_ATT_ID154', cardinality 0..*) is associated with 'vM::AttHead' (role 'vM_AttHead155', cardinality 0..*).
+'vM::BooleanValuation' (role 'vM_BooleanValuation104', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature105', cardinality 0..*).
+'vM::EnumRealDef' (role 'vM_EnumRealDef51', cardinality 0..*) is associated with 'vM::RealDefaultDef' (role 'vM_RealDefaultDef52', cardinality 0..*).
+'vM::FeatureDefinition' (role 'vM_FeatureDefinition12', cardinality 0..*) is associated with 'vM::FeaturesGroup' (role 'vM_FeaturesGroup', cardinality 0..*).
+'vM::PrimitiveExpression' (role 'vM_PrimitiveExpression72', cardinality 0..*) is associated with 'vM::AttHead' (role 'vM_AttHead', cardinality 0..*).
+'vM::AttHead' (role 'vM_AttHead151', cardinality 0..*) is associated with 'vM::Feature' (role 'vM_Feature152', cardinality 0..*).
+'vM::And' (role 'vM_And', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression182', cardinality 0..*).
+'vM::BooleanExpression' (role 'vM_BooleanExpression79', cardinality 0..*) is associated with 'vM::BooleanExpression::List' (role 'vM_BooleanExpression_List', cardinality 0..*).
+'vM::Objective' (role 'vM_Objective94', cardinality 0..*) is associated with 'vM::ObjectiveExpression' (role 'vM_ObjectiveExpression', cardinality 0..*).
+'vM::BasicAttrValuation' (role 'vM_BasicAttrValuation107', cardinality 0..*) is associated with 'vM::AttHead' (role 'vM_AttHead108', cardinality 0..*).
+'vM::IntegerAttrDefBounded' (role 'vM_IntegerAttrDefBounded', cardinality 0..*) is associated with 'vM::IntegerAttrDefComplement' (role 'vM_IntegerAttrDefComplement', cardinality 0..*).
+'vM::TableBasedValuationByAttributeForReal' (role 'vM_TableBasedValuationByAttributeForReal146', cardinality 0..*) is associated with 'vM::PairFeatureReal' (role 'vM_PairFeatureReal', cardinality 0..*).
+'vM::TableBasedValuationByAttribute' (role 'vM_TableBasedValuationByAttribute', cardinality 0..*) is associated with 'vM::AdvancedAttrValuation' (role 'vM_AdvancedAttrValuation119', cardinality 0..*).
+'vM::Real::ATT::ID' (role 'vM_Real_ATT_ID110', cardinality 0..*) is associated with 'vM::RealAttrValuation' (role 'vM_RealAttrValuation', cardinality 0..*).
+'vM::RightImplication' (role 'vM_RightImplication169', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression170', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression157', cardinality 0..*) is associated with 'vM::If' (role 'vM_If', cardinality 0..*).
+'vM::Objective' (role 'vM_Objective', cardinality 0..*) is associated with 'vM::Objectives' (role 'vM_Objectives', cardinality 0..*).
+'vM::Lessequal' (role 'vM_Lessequal204', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression205', cardinality 0..*).
+'vM::Less' (role 'vM_Less202', cardinality 0..*) is associated with 'vM::Lessequal' (role 'vM_Lessequal', cardinality 0..*).
+'vM::ComplexExpression' (role 'vM_ComplexExpression230', cardinality 0..*) is associated with 'vM::Multiplication' (role 'vM_Multiplication229', cardinality 0..*).
+'vM::BiImplication' (role 'vM_BiImplication174', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression175', cardinality 0..*).
+'vM::RightImplication' (role 'vM_RightImplication', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression167', cardinality 0..*).
+'vM::String::ATT::ID' (role 'vM_String_ATT_ID116', cardinality 0..*) is associated with 'vM::StringAttrValuation' (role 'vM_StringAttrValuation', cardinality 0..*).
+'vM::NumericExpression' (role 'vM_NumericExpression88', cardinality 0..*) is associated with 'vM::NumericExpression::List' (role 'vM_NumericExpression_List87', cardinality 0..*).
+'vM::PackageDeclaration' (role 'vM_PackageDeclaration', cardinality 0..*) is associated with 'vM::VmBlock' (role 'vM_VmBlock2', cardinality 0..*).
+'vM::TableBasedValuationByFeatureAndClone' (role 'vM_TableBasedValuationByFeatureAndClone', cardinality 0..*) is associated with 'vM::AdvancedAttrValuation' (role 'vM_AdvancedAttrValuation121', cardinality 0..*).
+'vM::Multiplication' (role 'vM_Multiplication', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression227', cardinality 0..*).
+'vM::StringAttrDef' (role 'vM_StringAttrDef', cardinality 0..*) is associated with 'vM::String::ATT::ID' (role 'vM_String_ATT_ID', cardinality 0..*).
+'vM::PairAttributeValue' (role 'vM_PairAttributeValue134', cardinality 0..*) is associated with 'vM::Abstract::ATT::ID' (role 'vM_Abstract_ATT_ID135', cardinality 0..*).
+'vM::Equality' (role 'vM_Equality', cardinality 0..*) is associated with 'vM::ComplexExpression' (role 'vM_ComplexExpression187', cardinality 0..*).
+'vM::NumericExpression' (role 'vM_NumericExpression', cardinality 0..*) is associated with 'vM::NumericExpression' (role 'vM_NumericExpression82', cardinality 0..*).

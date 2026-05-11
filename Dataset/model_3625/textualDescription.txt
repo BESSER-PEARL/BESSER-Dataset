@@ -1,0 +1,45 @@
+The model has 18 class(es).
+The class 'minuml1::Partition' has no attributes.
+The class 'minuml1::BooleanExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'minuml1::StateVertex' has no attributes.
+The class 'minuml1::CompositeState' has no attributes.
+The class 'minuml1::StateMachine' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'minuml1::FinalState' has no attributes.
+The class 'minuml1::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'StateMachine' has no attributes.
+The class 'minuml1::ModelElement' has the following attributes: 'name' of type str.
+The class 'minuml1::State' has no attributes.
+The class 'minuml1::ActivityGraph' has no attributes.
+The class 'minuml1::ObjectFlowState' has no attributes.
+The class 'minuml1::Transition' has no attributes.
+The class 'minuml1::Guard' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'State' has no attributes.
+The class 'minuml1::ActionState' has the following attributes: 'isDynamic' of type bool.
+The enumeration 'PseudostateKind' has the following literals: 'junction', 'fork', 'join', 'inital'.
+'minuml1::FinalState' is a specialization of 'State'.
+'minuml1::ObjectFlowState' is a specialization of 'State'.
+'minuml1::Partition' is a specialization of 'ModelElement'.
+'minuml1::State' is a specialization of 'StateVertex'.
+'minuml1::Guard' is a specialization of 'ModelElement'.
+'minuml1::StateVertex' is a specialization of 'ModelElement'.
+'minuml1::ActivityGraph' is a specialization of 'StateMachine'.
+'minuml1::CompositeState' is a specialization of 'State'.
+'minuml1::ActionState' is a specialization of 'State'.
+'minuml1::StateMachine' is a specialization of 'ModelElement'.
+'minuml1::Transition' is a specialization of 'ModelElement'.
+'minuml1::Pseudostate' is a specialization of 'StateVertex'.
+'minuml1::CompositeState' (role 'minuml1_CompositeState', cardinality 0..*) is associated with 'minuml1::StateVertex' (role 'minuml1_StateVertex', cardinality 0..*).
+'minuml1::Guard' (role 'minuml1_Guard', cardinality 0..*) is associated with 'minuml1::Transition' (role 'minuml1_Transition15', cardinality 0..*).
+'minuml1::ObjectFlowState' (role 'minuml1_ObjectFlowState', cardinality 0..*) is associated with 'minuml1::ModelElement' (role 'minuml1_ModelElement', cardinality 0..*).
+'minuml1::Partition' (role 'Partition', cardinality 0..*) is associated with 'minuml1::ModelElement' (role 'contents', cardinality 0..*).
+'minuml1::Partition' (role 'partition', cardinality 0..*) is associated with 'minuml1::ModelElement' (role 'ModelElement', cardinality 0..*).
+'minuml1::Transition' (role 'outgoing', cardinality 0..*) is associated with 'minuml1::StateVertex' (role 'StateVertex', cardinality 0..*).
+'minuml1::Guard' (role 'minuml1_Guard17', cardinality 0..*) is associated with 'minuml1::BooleanExpression' (role 'minuml1_BooleanExpression', cardinality 0..*).
+'minuml1::StateVertex' (role 'target', cardinality 0..*) is associated with 'minuml1::Transition' (role 'Transition8', cardinality 0..*).
+'minuml1::StateVertex' (role 'source', cardinality 0..*) is associated with 'minuml1::Transition' (role 'Transition', cardinality 0..*).
+'minuml1::Partition' (role 'minuml1_Partition', cardinality 0..*) is associated with 'minuml1::ActivityGraph' (role 'minuml1_ActivityGraph', cardinality 0..*).
+'minuml1::Transition' (role 'incoming', cardinality 0..*) is associated with 'minuml1::StateVertex' (role 'StateVertex13', cardinality 0..*).
+'minuml1::StateMachine' (role 'minuml1_StateMachine', cardinality 0..*) is associated with 'minuml1::State' (role 'minuml1_State', cardinality 0..*).
+'minuml1::Transition' (role 'minuml1_Transition', cardinality 0..*) is associated with 'minuml1::StateMachine' (role 'minuml1_StateMachine3', cardinality 0..*).

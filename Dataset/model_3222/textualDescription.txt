@@ -1,0 +1,176 @@
+The model has 78 class(es).
+The class 'RepositoryDecl' has no attributes.
+The class 'ClockRDL::declarations::RelationInstanceDecl' has the following attributes: 'qualifiedName' of type str.
+The class 'ClockRDL::literals::ArrayLiteral' has no attributes.
+The class 'ClockRDL::expressions::ConditionalExp' has no attributes.
+The class 'ClockRDL::expressions::ClockReference' has no attributes.
+The class 'ClockRDL::literals::QueueLiteral' has no attributes.
+The class 'ClockRDL::declarations::FormalToActualMapEntry' has the following attributes: 'key' of type str.
+The class 'expressions::Literal' has no attributes.
+The class 'statements::BlockStmt' has no attributes.
+The class 'ClockRDL::expressions::Literal' has no attributes.
+The class 'ClockRDL::declarations::TransitionDecl' has no attributes.
+The class 'declarations::ArgumentDecl' has no attributes.
+The class 'ClockRDL::declarations::LibraryItemDecl' has no attributes.
+The class 'ClockRDL::declarations::ConstantDecl' has no attributes.
+The class 'declarations::ClockDecl' has no attributes.
+The class 'kernel::Element' has no attributes.
+The class 'VariableDecl' has no attributes.
+The class 'kernel::Declaration' has no attributes.
+The class 'ClockRDL::literals::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'ReferenceExp' has no attributes.
+The class 'NamedDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ClockRDL::kernel::NamedElement' has the following attributes: 'name' of type str.
+The class 'ClockRDL::literals::RecordLiteral' has no attributes.
+The class 'declarations::LibraryItemDecl' has no attributes.
+The class 'ClockRDL::expressions::PrefixedExp' has no attributes.
+The class 'ClockRDL::kernel::Statement' has no attributes.
+The class 'literals::FieldLiteral' has no attributes.
+The class 'kernel::NamedElement' has no attributes.
+The class 'kernel::Statement' has no attributes.
+The class 'ClockRDL::expressions::IndexedExp' has no attributes.
+The class 'ClockRDL::statements::BlockStmt' has no attributes.
+The class 'ClockRDL::expressions::ReferenceExp' has no attributes.
+The class 'PrefixedExp' has no attributes.
+The class 'ClockRDL::statements::ReturnStmt' has no attributes.
+The class 'AbstractFunctionDecl' has no attributes.
+The class 'ClockRDL::kernel::NamedDeclaration' has no attributes.
+The class 'ClockRDL::declarations::AbstractFunctionDecl' has no attributes.
+The class 'ClockRDL::declarations::LibraryDecl' has no attributes.
+The class 'ClockRDL::literals::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'ClockRDL::statements::LoopStmt' has no attributes.
+The class 'ClockRDL::expressions::SelectedExp' has the following attributes: 'selector' of type str.
+The class 'ClockRDL::statements::AssignmentStmt' has the following attributes: 'operator' of type str.
+The class 'literals::ClockLiteral' has no attributes.
+The class 'ClockRDL::statements::ConditionalStmt' has no attributes.
+The class 'Element' has no attributes.
+The class 'ClockRDL::declarations::PrimitiveRelationDecl' has no attributes.
+The class 'declarations::RelationInstanceDecl' has no attributes.
+The class 'ClockRDL::declarations::SystemDecl' has no attributes.
+The class 'ClockRDL::kernel::Declaration' has no attributes.
+The class 'declarations::TransitionDecl' has no attributes.
+The class 'ClockRDL::kernel::Expression' has no attributes.
+The class 'declarations::FormalToActualMapEntry' has no attributes.
+The class 'AbstractRelationDecl' has no attributes.
+The class 'declarations::RepositoryDecl' has no attributes.
+The class 'ClockRDL::literals::FieldLiteral' has no attributes.
+The class 'expressions::PrefixedExp' has no attributes.
+The class 'ClockRDL::kernel::Element' has no attributes.
+The class 'ClockRDL::expressions::FunctionCallExp' has no attributes.
+The class 'kernel::NamedDeclaration' has no attributes.
+The class 'ClockRDL::declarations::ClockDecl' has no attributes.
+The class 'ClockRDL::declarations::AbstractRelationDecl' has no attributes.
+The class 'ClockRDL::expressions::UnaryExp' has the following attributes: 'operator' of type str.
+The class 'Statement' has no attributes.
+The class 'ClockRDL::expressions::ParenExp' has no attributes.
+The class 'ClockRDL::declarations::ArgumentDecl' has no attributes.
+The class 'Literal' has no attributes.
+The class 'ClockRDL::declarations::FunctionDecl' has no attributes.
+The class 'kernel::Expression' has no attributes.
+The class 'ClockRDL::expressions::BinaryExp' has the following attributes: 'operator' of type str.
+The class 'ClockRDL::declarations::VariableDecl' has no attributes.
+The class 'ClockRDL::declarations::CompositeRelationDecl' has no attributes.
+The class 'expressions::ClockReference' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'declarations::AbstractRelationDecl' has no attributes.
+The class 'ClockRDL::literals::ClockLiteral' has the following attributes: 'isInternal' of type str; 'name' of type str.
+The class 'ClockRDL::declarations::PrimitiveFunctionDecl' has no attributes.
+The class 'ClockRDL::declarations::RepositoryDecl' has no attributes.
+The enumeration 'UnaryOperator' has the following literals: 'UPLUS', 'UMINUS', 'UNOT'.
+The enumeration 'AssignmentOperator' has the following literals: 'ANDASSIGN', 'MINUSASSIGN', 'ORASSIGN', 'MULTASSIGN', 'DIVASSIGN', 'PLUSASSIGN', 'ASSIGN', 'MODASSIGN'.
+The enumeration 'BinaryOperator' has the following literals: 'BNAND', 'BGE', 'BDIV', 'BMUL', 'BLT', 'BMOD', 'BNOR', 'BLE', 'BPLUS', 'BEQ', 'BAND', 'BNE', 'BOR', 'BXOR', 'BMINUS', 'BGT'.
+'ClockRDL::kernel::Declaration' is a specialization of 'Element'.
+'ClockRDL::expressions::PrefixedExp' is a specialization of 'Expression'.
+'ClockRDL::statements::BlockStmt' is a specialization of 'Statement'.
+'ClockRDL::statements::LoopStmt' is a specialization of 'Statement'.
+'ClockRDL::declarations::ArgumentDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::expressions::ParenExp' is a specialization of 'Expression'.
+'ClockRDL::statements::ReturnStmt' is a specialization of 'Statement'.
+'ClockRDL::expressions::ClockReference' is a specialization of 'ReferenceExp'.
+'ClockRDL::literals::FieldLiteral' is a specialization of 'kernel::NamedElement'.
+'ClockRDL::declarations::RepositoryDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::expressions::FunctionCallExp' is a specialization of 'expressions::PrefixedExp'.
+'ClockRDL::declarations::AbstractRelationDecl' is a specialization of 'kernel::NamedDeclaration'.
+'ClockRDL::declarations::VariableDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::declarations::PrimitiveRelationDecl' is a specialization of 'AbstractRelationDecl'.
+'ClockRDL::expressions::SelectedExp' is a specialization of 'PrefixedExp'.
+'ClockRDL::expressions::FunctionCallExp' is a specialization of 'kernel::Statement'.
+'ClockRDL::kernel::NamedDeclaration' is a specialization of 'kernel::Declaration'.
+'ClockRDL::kernel::Expression' is a specialization of 'kernel::Element'.
+'ClockRDL::literals::FieldLiteral' is a specialization of 'expressions::Literal'.
+'ClockRDL::statements::ConditionalStmt' is a specialization of 'Statement'.
+'ClockRDL::declarations::LibraryDecl' is a specialization of 'declarations::LibraryItemDecl'.
+'ClockRDL::literals::QueueLiteral' is a specialization of 'Literal'.
+'ClockRDL::literals::BooleanLiteral' is a specialization of 'Literal'.
+'ClockRDL::expressions::ReferenceExp' is a specialization of 'Expression'.
+'ClockRDL::declarations::PrimitiveFunctionDecl' is a specialization of 'AbstractFunctionDecl'.
+'ClockRDL::declarations::TransitionDecl' is a specialization of 'Declaration'.
+'ClockRDL::declarations::FunctionDecl' is a specialization of 'AbstractFunctionDecl'.
+'ClockRDL::declarations::ClockDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::kernel::NamedDeclaration' is a specialization of 'kernel::NamedElement'.
+'ClockRDL::statements::AssignmentStmt' is a specialization of 'Statement'.
+'ClockRDL::declarations::LibraryItemDecl' is a specialization of 'Declaration'.
+'ClockRDL::declarations::SystemDecl' is a specialization of 'RepositoryDecl'.
+'ClockRDL::expressions::Literal' is a specialization of 'Expression'.
+'ClockRDL::expressions::BinaryExp' is a specialization of 'Expression'.
+'ClockRDL::expressions::IndexedExp' is a specialization of 'PrefixedExp'.
+'ClockRDL::kernel::Statement' is a specialization of 'Element'.
+'ClockRDL::declarations::AbstractRelationDecl' is a specialization of 'declarations::LibraryItemDecl'.
+'ClockRDL::kernel::NamedElement' is a specialization of 'Element'.
+'ClockRDL::expressions::UnaryExp' is a specialization of 'Expression'.
+'ClockRDL::literals::ClockLiteral' is a specialization of 'Literal'.
+'ClockRDL::declarations::LibraryDecl' is a specialization of 'declarations::RepositoryDecl'.
+'ClockRDL::declarations::ConstantDecl' is a specialization of 'VariableDecl'.
+'ClockRDL::kernel::Expression' is a specialization of 'kernel::Statement'.
+'ClockRDL::literals::RecordLiteral' is a specialization of 'Literal'.
+'ClockRDL::declarations::RelationInstanceDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::declarations::CompositeRelationDecl' is a specialization of 'AbstractRelationDecl'.
+'ClockRDL::declarations::AbstractFunctionDecl' is a specialization of 'NamedDeclaration'.
+'ClockRDL::literals::IntegerLiteral' is a specialization of 'Literal'.
+'ClockRDL::literals::ArrayLiteral' is a specialization of 'Literal'.
+'ClockRDL::expressions::ConditionalExp' is a specialization of 'Expression'.
+'declarations::FormalToActualMapEntry' (role 'declarations_FormalToActualMapEntry', cardinality 0..*) is associated with 'ClockRDL::declarations::RelationInstanceDecl' (role 'ClockRDL_declarations_RelationInstanceDecl77', cardinality 0..*).
+'ClockRDL::statements::BlockStmt' (role 'ClockRDL_statements_BlockStmt52', cardinality 0..*) is associated with 'kernel::Statement' (role 'kernel_Statement', cardinality 0..*).
+'ClockRDL::literals::RecordLiteral' (role 'ClockRDL_literals_RecordLiteral', cardinality 0..*) is associated with 'literals::FieldLiteral' (role 'literals_FieldLiteral', cardinality 0..*).
+'ClockRDL::statements::ConditionalStmt' (role 'ClockRDL_statements_ConditionalStmt40', cardinality 0..*) is associated with 'statements::BlockStmt' (role 'statements_BlockStmt41', cardinality 0..*).
+'ClockRDL::declarations::PrimitiveRelationDecl' (role 'ClockRDL_declarations_PrimitiveRelationDecl', cardinality 0..*) is associated with 'declarations::TransitionDecl' (role 'declarations_TransitionDecl', cardinality 0..*).
+'ClockRDL::declarations::TransitionDecl' (role 'ClockRDL_declarations_TransitionDecl64', cardinality 0..*) is associated with 'kernel::Statement' (role 'kernel_Statement65', cardinality 0..*).
+'declarations::ArgumentDecl' (role 'declarations_ArgumentDecl', cardinality 0..*) is associated with 'ClockRDL::declarations::AbstractFunctionDecl' (role 'ClockRDL_declarations_AbstractFunctionDecl', cardinality 0..*).
+'ClockRDL::literals::FieldLiteral' (role 'ClockRDL_literals_FieldLiteral', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression26', cardinality 0..*).
+'statements::BlockStmt' (role 'statements_BlockStmt46', cardinality 0..*) is associated with 'ClockRDL::statements::LoopStmt' (role 'ClockRDL_statements_LoopStmt45', cardinality 0..*).
+'ClockRDL::statements::BlockStmt' (role 'ClockRDL_statements_BlockStmt', cardinality 0..*) is associated with 'kernel::NamedDeclaration' (role 'kernel_NamedDeclaration50', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression22', cardinality 0..*) is associated with 'ClockRDL::expressions::ConditionalExp' (role 'ClockRDL_expressions_ConditionalExp21', cardinality 0..*).
+'ClockRDL::declarations::CompositeRelationDecl' (role 'ClockRDL_declarations_CompositeRelationDecl', cardinality 0..*) is associated with 'declarations::ClockDecl' (role 'declarations_ClockDecl', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression29', cardinality 0..*) is associated with 'ClockRDL::literals::QueueLiteral' (role 'ClockRDL_literals_QueueLiteral', cardinality 0..*).
+'kernel::NamedDeclaration' (role 'kernel_NamedDeclaration70', cardinality 0..*) is associated with 'ClockRDL::declarations::AbstractRelationDecl' (role 'ClockRDL_declarations_AbstractRelationDecl69', cardinality 0..*).
+'kernel::NamedDeclaration' (role 'kernel_NamedDeclaration', cardinality 0..*) is associated with 'ClockRDL::expressions::ReferenceExp' (role 'ClockRDL_expressions_ReferenceExp', cardinality 0..*).
+'ClockRDL::declarations::ClockDecl' (role 'ClockRDL_declarations_ClockDecl', cardinality 0..*) is associated with 'literals::ClockLiteral' (role 'literals_ClockLiteral', cardinality 0..*).
+'declarations::ArgumentDecl' (role 'declarations_ArgumentDecl67', cardinality 0..*) is associated with 'ClockRDL::declarations::AbstractRelationDecl' (role 'ClockRDL_declarations_AbstractRelationDecl', cardinality 0..*).
+'ClockRDL::expressions::ConditionalExp' (role 'ClockRDL_expressions_ConditionalExp18', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression19', cardinality 0..*).
+'ClockRDL::expressions::IndexedExp' (role 'ClockRDL_expressions_IndexedExp', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression4', cardinality 0..*).
+'ClockRDL::expressions::BinaryExp' (role 'ClockRDL_expressions_BinaryExp', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression11', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression24', cardinality 0..*) is associated with 'ClockRDL::literals::ArrayLiteral' (role 'ClockRDL_literals_ArrayLiteral', cardinality 0..*).
+'declarations::LibraryItemDecl' (role 'LibraryItemDecl', cardinality 0..*) is associated with 'ClockRDL::declarations::RepositoryDecl' (role 'library', cardinality 0..*).
+'ClockRDL::declarations::FunctionDecl' (role 'ClockRDL_declarations_FunctionDecl', cardinality 0..*) is associated with 'statements::BlockStmt' (role 'statements_BlockStmt58', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression34', cardinality 0..*) is associated with 'ClockRDL::statements::AssignmentStmt' (role 'ClockRDL_statements_AssignmentStmt33', cardinality 0..*).
+'ClockRDL::expressions::ParenExp' (role 'ClockRDL_expressions_ParenExp', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression6', cardinality 0..*) is associated with 'ClockRDL::expressions::FunctionCallExp' (role 'ClockRDL_expressions_FunctionCallExp', cardinality 0..*).
+'ClockRDL::statements::ReturnStmt' (role 'ClockRDL_statements_ReturnStmt', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression48', cardinality 0..*).
+'ClockRDL::statements::AssignmentStmt' (role 'ClockRDL_statements_AssignmentStmt', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression31', cardinality 0..*).
+'declarations::RepositoryDecl' (role 'RepositoryDecl', cardinality 0..*) is associated with 'ClockRDL::declarations::LibraryItemDecl' (role 'libraries', cardinality 0..*).
+'ClockRDL::declarations::CompositeRelationDecl' (role 'ClockRDL_declarations_CompositeRelationDecl74', cardinality 0..*) is associated with 'declarations::RelationInstanceDecl' (role 'declarations_RelationInstanceDecl', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression60', cardinality 0..*) is associated with 'ClockRDL::declarations::TransitionDecl' (role 'ClockRDL_declarations_TransitionDecl', cardinality 0..*).
+'kernel::Declaration' (role 'kernel_Declaration', cardinality 0..*) is associated with 'ClockRDL::declarations::FormalToActualMapEntry' (role 'ClockRDL_declarations_FormalToActualMapEntry81', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression14', cardinality 0..*) is associated with 'ClockRDL::expressions::BinaryExp' (role 'ClockRDL_expressions_BinaryExp13', cardinality 0..*).
+'declarations::AbstractRelationDecl' (role 'declarations_AbstractRelationDecl', cardinality 0..*) is associated with 'ClockRDL::declarations::RelationInstanceDecl' (role 'ClockRDL_declarations_RelationInstanceDecl', cardinality 0..*).
+'ClockRDL::expressions::PrefixedExp' (role 'ClockRDL_expressions_PrefixedExp', cardinality 0..*) is associated with 'kernel::Expression' (role 'kernel_Expression2', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression9', cardinality 0..*) is associated with 'ClockRDL::expressions::UnaryExp' (role 'ClockRDL_expressions_UnaryExp', cardinality 0..*).
+'statements::BlockStmt' (role 'statements_BlockStmt', cardinality 0..*) is associated with 'ClockRDL::statements::ConditionalStmt' (role 'ClockRDL_statements_ConditionalStmt38', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression43', cardinality 0..*) is associated with 'ClockRDL::statements::LoopStmt' (role 'ClockRDL_statements_LoopStmt', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression36', cardinality 0..*) is associated with 'ClockRDL::statements::ConditionalStmt' (role 'ClockRDL_statements_ConditionalStmt', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression16', cardinality 0..*) is associated with 'ClockRDL::expressions::ConditionalExp' (role 'ClockRDL_expressions_ConditionalExp', cardinality 0..*).
+'expressions::ClockReference' (role 'expressions_ClockReference', cardinality 0..*) is associated with 'ClockRDL::declarations::TransitionDecl' (role 'ClockRDL_declarations_TransitionDecl62', cardinality 0..*).
+'declarations::RelationInstanceDecl' (role 'declarations_RelationInstanceDecl85', cardinality 0..*) is associated with 'ClockRDL::declarations::SystemDecl' (role 'ClockRDL_declarations_SystemDecl', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression79', cardinality 0..*) is associated with 'ClockRDL::declarations::FormalToActualMapEntry' (role 'ClockRDL_declarations_FormalToActualMapEntry', cardinality 0..*).
+'kernel::Expression' (role 'kernel_Expression55', cardinality 0..*) is associated with 'ClockRDL::declarations::VariableDecl' (role 'ClockRDL_declarations_VariableDecl', cardinality 0..*).

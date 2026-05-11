@@ -1,0 +1,270 @@
+The model has 148 class(es).
+The class 'sql::value::SimpleValue' has no attributes.
+The class 'sql::from::JoinTableExpression' has no attributes.
+The class 'sql::value::ValueOperationDivide' has no attributes.
+The class 'sql::from::JoinOperationRight' has no attributes.
+The class 'from::Table' has no attributes.
+The class 'sql::value::ValueOperationMultiply' has no attributes.
+The class 'sql::from::JoinOperationInner' has no attributes.
+The class 'sql::expression::ExpressionOperationOr' has no attributes.
+The class 'sql::condition::ConditionOperationUnEqual' has no attributes.
+The class 'sql::column::ColumnOperationCount' has no attributes.
+The class 'parameter::SelectParameterDistinct' has no attributes.
+The class 'sql::from::JoinOperationLeft' has no attributes.
+The class 'ColumnOperation' has no attributes.
+The class 'sql::value::ConditionValue' has no attributes.
+The class 'sql::expression::ExpressionOperation' has no attributes.
+The class 'sql::condition::BetweenCondition' has no attributes.
+The class 'sql::orderBy::OrderByParameterDesc' has no attributes.
+The class 'sql::column::ColumnOperation' has no attributes.
+The class 'sql::condition::ConditionOperationEqual' has no attributes.
+The class 'OrderByExpression' has no attributes.
+The class 'sql::condition::Condition' has no attributes.
+The class 'sql::sqlDataTypes::String' has no attributes.
+The class 'sql::value::Value' has no attributes.
+The class 'sql::sqlDataTypes::Double' has no attributes.
+The class 'sql::sqlDataTypes::Real' has no attributes.
+The class 'sql::value::ValueFrontOperationPlus' has no attributes.
+The class 'Condition' has no attributes.
+The class 'sql::condition::InCondition' has no attributes.
+The class 'sql::value::FunctionValue' has the following attributes: 'functionName' of type str.
+The class 'sql::set::SetOperationMinus' has no attributes.
+The class 'sql::from::FromExpression' has no attributes.
+The class 'Value' has no attributes.
+The class 'Expression' has no attributes.
+The class 'sql::value::ValueOperation' has no attributes.
+The class 'OrderByParameter' has no attributes.
+The class 'sql::condition::LikeCondition' has no attributes.
+The class 'sql::from::Table' has the following attributes: 'name' of type str.
+The class 'expression::AndOrExpressionOperation' has no attributes.
+The class 'sql::value::ValueFrontOperationMinus' has no attributes.
+The class 'sql::column::ColumnExpression' has no attributes.
+The class 'sql::term::SimpleTermString' has no attributes.
+The class 'sql::from::JoinOperation' has no attributes.
+The class 'sql::term::SimpleTermInteger' has no attributes.
+The class 'sql::sqlDataTypes::DataType' has no attributes.
+The class 'sql::having::HavingExpression' has no attributes.
+The class 'JoinOperation' has no attributes.
+The class 'set::SetExpression' has no attributes.
+The class 'SetOperation' has no attributes.
+The class 'sql::term::CountStarTerm' has no attributes.
+The class 'value::ValueFrontOperation' has no attributes.
+The class 'from::TableExpression' has no attributes.
+The class 'sql::term::SimpleTerm' has the following attributes: 'value' of type str.
+The class 'sql::column::SingleColumnExpression' has the following attributes: 'alias' of type str.
+The class 'SimpleCondition' has no attributes.
+The class 'from::TableListExpression' has no attributes.
+The class 'sql::column::ColumnOperationMax' has no attributes.
+The class 'sql::value::ValueFrontOperation' has no attributes.
+The class 'expression::ExpressionOperationNot' has no attributes.
+The class 'sql::sqlDataTypes::Integer' has no attributes.
+The class 'SelectExpression' has no attributes.
+The class 'column::ColumnExpression' has no attributes.
+The class 'sql::term::BooleanTermFalse' has no attributes.
+The class 'sql::term::SimpleTermChar' has no attributes.
+The class 'sql::term::StarTerm' has no attributes.
+The class 'limit::LimitExpression' has no attributes.
+The class 'sql::column::ColumnOperationMin' has no attributes.
+The class 'sql::parameter::SelectParameterAll' has no attributes.
+The class 'condition::ConditionOperation' has no attributes.
+The class 'having::HavingExpression' has no attributes.
+The class 'BooleanTerm' has no attributes.
+The class 'sql::column::ColumnOperationSum' has no attributes.
+The class 'column::SingleColumnExpression' has no attributes.
+The class 'from::JoinOperation' has no attributes.
+The class 'sql::orderBy::OrderByAliasExpression' has the following attributes: 'alias' of type str.
+The class 'sql::condition::ConditionOperationLesser' has no attributes.
+The class 'sql::set::SetOperationExcept' has no attributes.
+The class 'sql::term::NullTerm' has no attributes.
+The class 'sql::set::SetExpression' has no attributes.
+The class 'sql::orderBy::OrderByParameter' has no attributes.
+The class 'AndOrExpressionOperation' has no attributes.
+The class 'sql::expression::SimpleExpression' has no attributes.
+The class 'sql::condition::ExistsCondition' has no attributes.
+The class 'sql::limit::LimitExpression' has the following attributes: 'offset' of type str; 'limit' of type str.
+The class 'sql::expression::ExpressionOperationAnd' has no attributes.
+The class 'term::Term' has no attributes.
+The class 'sql::sqlDataTypes::Date' has no attributes.
+The class 'sql::where::WhereExpression' has no attributes.
+The class 'sql::term::BooleanTerm' has no attributes.
+The class 'sql::condition::SimpleCondition' has no attributes.
+The class 'sql::column::ColumnOperationEvery' has no attributes.
+The class 'sql::groupBy::GroupByExpression' has no attributes.
+The class 'ValueFrontOperation' has no attributes.
+The class 'DataType' has no attributes.
+The class 'sql::column::Column' has the following attributes: 'name' of type str.
+The class 'sql::orderBy::OrderByColumnExpression' has no attributes.
+The class 'sql::term::BooleanTermTrue' has no attributes.
+The class 'sql::term::SimpleTermFloat' has no attributes.
+The class 'sql::sqlDataTypes::Float' has no attributes.
+The class 'sql::condition::ConditionOperationUnEqual2' has no attributes.
+The class 'SimpleTerm' has no attributes.
+The class 'sql::condition::OperationCondition' has no attributes.
+The class 'sql::condition::ConditionOperationLessEqual' has no attributes.
+The class 'value::ValueOperation' has no attributes.
+The class 'sql::value::ValueOperationParallel' has no attributes.
+The class 'set::SetOperation' has no attributes.
+The class 'sql::set::SetOperationUnion' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'sql::expression::Expression' has no attributes.
+The class 'ConditionOperation' has no attributes.
+The class 'sql::term::ColumnTerm' has no attributes.
+The class 'ValueOperation' has no attributes.
+The class 'SelectParameter' has no attributes.
+The class 'sql::term::Term' has no attributes.
+The class 'sql::from::JoinOperationOuter' has no attributes.
+The class 'sql::sqlDataTypes::Boolean' has no attributes.
+The class 'groupBy::GroupByExpression' has no attributes.
+The class 'sql::expression::ExpressionOperationNot' has no attributes.
+The class 'sql::from::TableExpression' has the following attributes: 'label' of type str.
+The class 'sql::from::TableListExpression' has no attributes.
+The class 'sql::condition::ConditionOperation' has no attributes.
+The class 'from::JoinTableExpression' has no attributes.
+The class 'sql::set::SetOperationIntersect' has no attributes.
+The class 'condition::Condition' has no attributes.
+The class 'Term' has no attributes.
+The class 'parameter::SelectParameter' has no attributes.
+The class 'sql::condition::IsNullCondition' has no attributes.
+The class 'sql::column::ColumnOperationSome' has no attributes.
+The class 'sql::orderBy::OrderBySelectExpression' has no attributes.
+The class 'sql::parameter::SelectParameter' has no attributes.
+The class 'value::Value' has no attributes.
+The class 'sql::set::SetOperation' has no attributes.
+The class 'sql::orderBy::OrderByParameterAsc' has no attributes.
+The class 'from::FromExpression' has no attributes.
+The class 'sql::select::SelectExpression' has no attributes.
+The class 'orderBy::OrderByParameter' has no attributes.
+The class 'Date' has no attributes.
+The class 'sql::condition::ConditionOperationGreater' has no attributes.
+The class 'orderBy::OrderByExpression' has no attributes.
+The class 'sql::parameter::SelectParameterDistinct' has no attributes.
+The class 'column::ColumnOperation' has no attributes.
+The class 'where::WhereExpression' has no attributes.
+The class 'sql::orderBy::OrderByExpression' has no attributes.
+The class 'sql::expression::AndOrExpressionOperation' has no attributes.
+The class 'sql::condition::ConditionOperationGreatEqual' has no attributes.
+The class 'column::Column' has no attributes.
+The class 'sql::sqlDataTypes::TimeStamp' has no attributes.
+The class 'sql::column::ColumnOperationAvg' has no attributes.
+The class 'ExpressionOperation' has no attributes.
+'sql::expression::SimpleExpression' is a specialization of 'Expression'.
+'sql::term::NullTerm' is a specialization of 'Term'.
+'sql::term::SimpleTermFloat' is a specialization of 'SimpleTerm'.
+'sql::condition::ConditionOperationLesser' is a specialization of 'ConditionOperation'.
+'sql::expression::ExpressionOperationAnd' is a specialization of 'AndOrExpressionOperation'.
+'sql::term::SimpleTermString' is a specialization of 'SimpleTerm'.
+'sql::value::ValueFrontOperationMinus' is a specialization of 'ValueFrontOperation'.
+'sql::column::ColumnOperationSome' is a specialization of 'ColumnOperation'.
+'sql::sqlDataTypes::String' is a specialization of 'DataType'.
+'sql::set::SetOperationIntersect' is a specialization of 'SetOperation'.
+'sql::column::ColumnOperationCount' is a specialization of 'ColumnOperation'.
+'sql::sqlDataTypes::Date' is a specialization of 'DataType'.
+'sql::parameter::SelectParameterDistinct' is a specialization of 'SelectParameter'.
+'sql::term::BooleanTermFalse' is a specialization of 'BooleanTerm'.
+'sql::sqlDataTypes::TimeStamp' is a specialization of 'Date'.
+'sql::condition::ConditionOperationEqual' is a specialization of 'ConditionOperation'.
+'sql::value::ValueFrontOperationPlus' is a specialization of 'ValueFrontOperation'.
+'sql::value::ValueFrontOperation' is a specialization of 'ValueOperation'.
+'sql::column::ColumnOperationAvg' is a specialization of 'ColumnOperation'.
+'sql::set::SetOperationUnion' is a specialization of 'SetOperation'.
+'sql::expression::ExpressionOperationNot' is a specialization of 'ExpressionOperation'.
+'sql::value::FunctionValue' is a specialization of 'Value'.
+'sql::term::BooleanTermTrue' is a specialization of 'BooleanTerm'.
+'sql::sqlDataTypes::Integer' is a specialization of 'DataType'.
+'sql::set::SetOperationExcept' is a specialization of 'SetOperation'.
+'sql::term::ColumnTerm' is a specialization of 'Term'.
+'sql::condition::ConditionOperationUnEqual2' is a specialization of 'ConditionOperation'.
+'sql::term::SimpleTerm' is a specialization of 'Term'.
+'sql::term::SimpleTermChar' is a specialization of 'SimpleTerm'.
+'sql::sqlDataTypes::Boolean' is a specialization of 'DataType'.
+'sql::column::ColumnOperationMin' is a specialization of 'ColumnOperation'.
+'sql::orderBy::OrderByAliasExpression' is a specialization of 'OrderByExpression'.
+'sql::set::SetOperationMinus' is a specialization of 'SetOperation'.
+'sql::condition::OperationCondition' is a specialization of 'SimpleCondition'.
+'sql::condition::SimpleCondition' is a specialization of 'Condition'.
+'sql::from::JoinOperationInner' is a specialization of 'JoinOperation'.
+'sql::value::ValueOperationMultiply' is a specialization of 'ValueOperation'.
+'sql::value::SimpleValue' is a specialization of 'Value'.
+'sql::condition::ConditionOperationGreater' is a specialization of 'ConditionOperation'.
+'sql::condition::ConditionOperationLessEqual' is a specialization of 'ConditionOperation'.
+'sql::orderBy::OrderByParameterDesc' is a specialization of 'OrderByParameter'.
+'sql::expression::ExpressionOperationOr' is a specialization of 'AndOrExpressionOperation'.
+'sql::expression::AndOrExpressionOperation' is a specialization of 'ExpressionOperation'.
+'sql::value::ValueOperationDivide' is a specialization of 'ValueOperation'.
+'sql::column::ColumnOperationSum' is a specialization of 'ColumnOperation'.
+'sql::orderBy::OrderBySelectExpression' is a specialization of 'OrderByExpression'.
+'sql::from::JoinOperationRight' is a specialization of 'JoinOperation'.
+'sql::column::ColumnOperationEvery' is a specialization of 'ColumnOperation'.
+'sql::condition::IsNullCondition' is a specialization of 'SimpleCondition'.
+'sql::value::ValueOperationParallel' is a specialization of 'ValueOperation'.
+'sql::condition::ConditionOperationGreatEqual' is a specialization of 'ConditionOperation'.
+'sql::parameter::SelectParameterAll' is a specialization of 'SelectParameter'.
+'sql::condition::ConditionOperationUnEqual' is a specialization of 'ConditionOperation'.
+'sql::term::StarTerm' is a specialization of 'Term'.
+'sql::sqlDataTypes::Double' is a specialization of 'DataType'.
+'sql::sqlDataTypes::Real' is a specialization of 'DataType'.
+'sql::condition::BetweenCondition' is a specialization of 'SimpleCondition'.
+'sql::term::BooleanTerm' is a specialization of 'Term'.
+'sql::from::JoinOperationLeft' is a specialization of 'JoinOperation'.
+'sql::value::ConditionValue' is a specialization of 'Value'.
+'sql::column::ColumnOperationMax' is a specialization of 'ColumnOperation'.
+'sql::condition::ExistsCondition' is a specialization of 'SimpleCondition'.
+'sql::from::JoinOperationOuter' is a specialization of 'JoinOperation'.
+'sql::term::SimpleTermInteger' is a specialization of 'SimpleTerm'.
+'sql::term::CountStarTerm' is a specialization of 'Term'.
+'sql::condition::LikeCondition' is a specialization of 'SimpleCondition'.
+'sql::condition::InCondition' is a specialization of 'SimpleCondition'.
+'sql::orderBy::OrderByColumnExpression' is a specialization of 'OrderByExpression'.
+'sql::orderBy::OrderByParameterAsc' is a specialization of 'OrderByParameter'.
+'sql::sqlDataTypes::Float' is a specialization of 'DataType'.
+'condition::Condition' (role 'condition_Condition', cardinality 0..*) is associated with 'sql::expression::SimpleExpression' (role 'sql_expression_SimpleExpression61', cardinality 0..*).
+'sql::set::SetOperationIntersect' (role 'sql_set_SetOperationIntersect', cardinality 0..*) is associated with 'parameter::SelectParameterDistinct' (role 'parameter_SelectParameterDistinct58', cardinality 0..*).
+'sql::condition::InCondition' (role 'sql_condition_InCondition', cardinality 0..*) is associated with 'SelectExpression' (role 'SelectExpression71', cardinality 0..*).
+'value::ValueFrontOperation' (role 'value_ValueFrontOperation', cardinality 0..*) is associated with 'sql::value::SimpleValue' (role 'sql_value_SimpleValue81', cardinality 0..*).
+'sql::where::WhereExpression' (role 'sql_where_WhereExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression39', cardinality 0..*).
+'expression::ExpressionOperationNot' (role 'expression_ExpressionOperationNot67', cardinality 0..*) is associated with 'sql::condition::IsNullCondition' (role 'sql_condition_IsNullCondition', cardinality 0..*).
+'expression::ExpressionOperationNot' (role 'expression_ExpressionOperationNot', cardinality 0..*) is associated with 'sql::expression::SimpleExpression' (role 'sql_expression_SimpleExpression63', cardinality 0..*).
+'column::Column' (role 'column_Column90', cardinality 0..*) is associated with 'sql::term::ColumnTerm' (role 'sql_term_ColumnTerm89', cardinality 0..*).
+'condition::ConditionOperation' (role 'condition_ConditionOperation', cardinality 0..*) is associated with 'sql::condition::OperationCondition' (role 'sql_condition_OperationCondition', cardinality 0..*).
+'value::Value' (role 'value_Value', cardinality 0..*) is associated with 'sql::condition::SimpleCondition' (role 'sql_condition_SimpleCondition', cardinality 0..*).
+'from::Table' (role 'from_Table87', cardinality 0..*) is associated with 'sql::term::ColumnTerm' (role 'sql_term_ColumnTerm', cardinality 0..*).
+'sql::from::JoinTableExpression' (role 'sql_from_JoinTableExpression', cardinality 0..*) is associated with 'from::JoinOperation' (role 'from_JoinOperation', cardinality 0..*).
+'sql::set::SetExpression' (role 'sql_set_SetExpression51', cardinality 0..*) is associated with 'set::SetOperation' (role 'set_SetOperation', cardinality 0..*).
+'sql::select::SelectExpression' (role 'sql_select_SelectExpression14', cardinality 0..*) is associated with 'orderBy::OrderByExpression' (role 'orderBy_OrderByExpression', cardinality 0..*).
+'from::TableListExpression' (role 'from_TableListExpression', cardinality 0..*) is associated with 'sql::from::FromExpression' (role 'sql_from_FromExpression', cardinality 0..*).
+'sql::from::TableExpression' (role 'sql_from_TableExpression27', cardinality 0..*) is associated with 'from::Table' (role 'from_Table', cardinality 0..*).
+'sql::from::JoinTableExpression' (role 'sql_from_JoinTableExpression36', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression37', cardinality 0..*).
+'parameter::SelectParameterDistinct' (role 'parameter_SelectParameterDistinct56', cardinality 0..*) is associated with 'sql::set::SetOperationExcept' (role 'sql_set_SetOperationExcept', cardinality 0..*).
+'sql::from::JoinTableExpression' (role 'sql_from_JoinTableExpression33', cardinality 0..*) is associated with 'from::TableExpression' (role 'from_TableExpression34', cardinality 0..*).
+'value::Value' (role 'value_Value85', cardinality 0..*) is associated with 'sql::value::FunctionValue' (role 'sql_value_FunctionValue', cardinality 0..*).
+'sql::set::SetOperationUnion' (role 'sql_set_SetOperationUnion', cardinality 0..*) is associated with 'parameter::SelectParameter' (role 'parameter_SelectParameter53', cardinality 0..*).
+'sql::select::SelectExpression' (role 'sql_select_SelectExpression', cardinality 0..*) is associated with 'parameter::SelectParameter' (role 'parameter_SelectParameter', cardinality 0..*).
+'sql::select::SelectExpression' (role 'sql_select_SelectExpression6', cardinality 0..*) is associated with 'where::WhereExpression' (role 'where_WhereExpression', cardinality 0..*).
+'column::ColumnExpression' (role 'column_ColumnExpression', cardinality 0..*) is associated with 'sql::select::SelectExpression' (role 'sql_select_SelectExpression2', cardinality 0..*).
+'SelectExpression' (role 'SelectExpression43', cardinality 0..*) is associated with 'sql::orderBy::OrderBySelectExpression' (role 'sql_orderBy_OrderBySelectExpression', cardinality 0..*).
+'sql::from::TableExpression' (role 'sql_from_TableExpression', cardinality 0..*) is associated with 'SelectExpression' (role 'SelectExpression', cardinality 0..*).
+'sql::condition::ExistsCondition' (role 'sql_condition_ExistsCondition', cardinality 0..*) is associated with 'SelectExpression' (role 'SelectExpression69', cardinality 0..*).
+'sql::condition::LikeCondition' (role 'sql_condition_LikeCondition', cardinality 0..*) is associated with 'expression::ExpressionOperationNot' (role 'expression_ExpressionOperationNot76', cardinality 0..*).
+'column::Column' (role 'column_Column93', cardinality 0..*) is associated with 'sql::term::ColumnTerm' (role 'sql_term_ColumnTerm92', cardinality 0..*).
+'limit::LimitExpression' (role 'limit_LimitExpression', cardinality 0..*) is associated with 'sql::select::SelectExpression' (role 'sql_select_SelectExpression16', cardinality 0..*).
+'column::ColumnOperation' (role 'column_ColumnOperation', cardinality 0..*) is associated with 'sql::column::SingleColumnExpression' (role 'sql_column_SingleColumnExpression20', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression45', cardinality 0..*) is associated with 'sql::groupBy::GroupByExpression' (role 'sql_groupBy_GroupByExpression', cardinality 0..*).
+'expression::AndOrExpressionOperation' (role 'expression_AndOrExpressionOperation', cardinality 0..*) is associated with 'sql::expression::SimpleExpression' (role 'sql_expression_SimpleExpression', cardinality 0..*).
+'from::TableExpression' (role 'from_TableExpression', cardinality 0..*) is associated with 'sql::from::TableListExpression' (role 'sql_from_TableListExpression', cardinality 0..*).
+'sql::value::ConditionValue' (role 'sql_value_ConditionValue', cardinality 0..*) is associated with 'condition::Condition' (role 'condition_Condition83', cardinality 0..*).
+'sql::select::SelectExpression' (role 'sql_select_SelectExpression8', cardinality 0..*) is associated with 'groupBy::GroupByExpression' (role 'groupBy_GroupByExpression', cardinality 0..*).
+'sql::select::SelectExpression' (role 'sql_select_SelectExpression4', cardinality 0..*) is associated with 'from::FromExpression' (role 'from_FromExpression', cardinality 0..*).
+'sql::orderBy::OrderByExpression' (role 'sql_orderBy_OrderByExpression', cardinality 0..*) is associated with 'orderBy::OrderByParameter' (role 'orderBy_OrderByParameter', cardinality 0..*).
+'parameter::SelectParameterDistinct' (role 'parameter_SelectParameterDistinct', cardinality 0..*) is associated with 'sql::set::SetOperationMinus' (role 'sql_set_SetOperationMinus', cardinality 0..*).
+'set::SetExpression' (role 'set_SetExpression', cardinality 0..*) is associated with 'sql::select::SelectExpression' (role 'sql_select_SelectExpression12', cardinality 0..*).
+'SelectExpression' (role 'SelectExpression49', cardinality 0..*) is associated with 'sql::set::SetExpression' (role 'sql_set_SetExpression', cardinality 0..*).
+'sql::condition::InCondition' (role 'sql_condition_InCondition73', cardinality 0..*) is associated with 'expression::ExpressionOperationNot' (role 'expression_ExpressionOperationNot74', cardinality 0..*).
+'sql::having::HavingExpression' (role 'sql_having_HavingExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression47', cardinality 0..*).
+'sql::column::SingleColumnExpression' (role 'sql_column_SingleColumnExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression', cardinality 0..*).
+'sql::value::SimpleValue' (role 'sql_value_SimpleValue79', cardinality 0..*) is associated with 'value::ValueOperation' (role 'value_ValueOperation', cardinality 0..*).
+'having::HavingExpression' (role 'having_HavingExpression', cardinality 0..*) is associated with 'sql::select::SelectExpression' (role 'sql_select_SelectExpression10', cardinality 0..*).
+'sql::column::SingleColumnExpression' (role 'sql_column_SingleColumnExpression22', cardinality 0..*) is associated with 'parameter::SelectParameter' (role 'parameter_SelectParameter23', cardinality 0..*).
+'from::JoinTableExpression' (role 'from_JoinTableExpression', cardinality 0..*) is associated with 'sql::from::TableListExpression' (role 'sql_from_TableListExpression30', cardinality 0..*).
+'sql::orderBy::OrderByColumnExpression' (role 'sql_orderBy_OrderByColumnExpression', cardinality 0..*) is associated with 'column::Column' (role 'column_Column', cardinality 0..*).
+'sql::column::ColumnExpression' (role 'sql_column_ColumnExpression', cardinality 0..*) is associated with 'column::SingleColumnExpression' (role 'column_SingleColumnExpression', cardinality 0..*).
+'sql::value::SimpleValue' (role 'sql_value_SimpleValue', cardinality 0..*) is associated with 'term::Term' (role 'term_Term', cardinality 0..*).

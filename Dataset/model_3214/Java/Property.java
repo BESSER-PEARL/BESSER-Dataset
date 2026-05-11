@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Property  {
+
+
+
+
+
+
+    private gast_functions_Method gast_functions_method;
+
+
+
+
+    private gast_types_GASTClass gast_types_gastclass;
+
+
+    public Property(
+    ) {
+    }
+
+
+
+    public gast_functions_Method getGast_functions_method() {
+        return gast_functions_method;
+    }
+
+    public void setGast_functions_method(gast_functions_Method gast_functions_method) {
+        this.gast_functions_method = gast_functions_method;
+    }
+    public gast_types_GASTClass getGast_types_gastclass() {
+        return gast_types_gastclass;
+    }
+
+    public void setGast_types_gastclass(gast_types_GASTClass gast_types_gastclass) {
+        this.gast_types_gastclass = gast_types_gastclass;
+    }
+
+}

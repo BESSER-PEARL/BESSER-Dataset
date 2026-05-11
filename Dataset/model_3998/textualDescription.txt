@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Class::Attribute' has the following attributes: 'derive' of type bool; 'name' of type str; 'id' of type str.
+The class 'Class::Class' has the following attributes: 'name' of type str; 'id' of type str.
+'Class::Class' (role 'Class', cardinality 0..*) is associated with 'Class::Attribute' (role 'attributes', cardinality 0..*).
+'Class::Class' (role 'type', cardinality 0..*) is associated with 'Class::Attribute' (role 'Attribute', cardinality 0..*).

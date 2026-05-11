@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'school::Teacher' has the following attributes: 'name' of type str.
+The class 'school::ClassRoom' has the following attributes: 'number' of type int.
+The class 'school::Matter' has no attributes.
+The class 'school::Notation' has the following attributes: 'value' of type int.
+The class 'Matter' has no attributes.
+The class 'school::Math' has no attributes.
+The class 'school::Student' has the following attributes: 'name' of type str; 'age' of type int.
+The class 'school::School' has the following attributes: 'rank' of type int; 'name' of type str.
+The class 'school::Academy' has the following attributes: 'name' of type str.
+'school::Math' is a specialization of 'Matter'.
+'school::Notation' (role 'school_Notation', cardinality 0..*) is associated with 'school::Student' (role 'school_Student20', cardinality 0..*).
+'school::Teacher' (role 'school_Teacher15', cardinality 0..*) is associated with 'school::ClassRoom' (role 'school_ClassRoom14', cardinality 0..*).
+'school::ClassRoom' (role 'school_ClassRoom', cardinality 0..*) is associated with 'school::School' (role 'school_School6', cardinality 0..*).
+'school::School' (role 'school_School8', cardinality 0..*) is associated with 'school::Teacher' (role 'school_Teacher9', cardinality 0..*).
+'school::Academy' (role 'school_Academy', cardinality 0..*) is associated with 'school::Teacher' (role 'school_Teacher', cardinality 0..*).
+'school::School' (role 'school_School11', cardinality 0..*) is associated with 'school::Student' (role 'school_Student12', cardinality 0..*).
+'school::Student' (role 'school_Student', cardinality 0..*) is associated with 'school::Academy' (role 'school_Academy2', cardinality 0..*).
+'school::Student' (role 'school_Student18', cardinality 0..*) is associated with 'school::ClassRoom' (role 'school_ClassRoom17', cardinality 0..*).
+'school::School' (role 'school_School', cardinality 0..*) is associated with 'school::Academy' (role 'school_Academy4', cardinality 0..*).

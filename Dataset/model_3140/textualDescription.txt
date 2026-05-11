@@ -1,0 +1,48 @@
+The model has 20 class(es).
+The class 'Content' has no attributes.
+The class 'BuiltInType' has no attributes.
+The class 'Type' has no attributes.
+The class 'classes::Type' has no attributes.
+The class 'classes::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'classes::ClassRef' has no attributes.
+The class 'classes::ConstantRef' has no attributes.
+The class 'classes::Attribute' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'classes::IntegerType' has no attributes.
+The class 'classes::ClassModel' has no attributes.
+The class 'classes::Association' has the following attributes: 'name' of type str.
+The class 'classes::Description' has the following attributes: 'description' of type str.
+The class 'classes::StringType' has no attributes.
+The class 'classes::Constant' has the following attributes: 'name' of type str.
+The class 'Value' has no attributes.
+The class 'classes::Value' has no attributes.
+The class 'Description' has no attributes.
+The class 'classes::Class' has the following attributes: 'name' of type str.
+The class 'classes::Content' has no attributes.
+The class 'classes::BuiltInType' has no attributes.
+The enumeration 'Visibility' has the following literals: 'public', 'protected', 'private'.
+'classes::StringType' is a specialization of 'BuiltInType'.
+'classes::Class' is a specialization of 'Description'.
+'classes::IntegerType' is a specialization of 'BuiltInType'.
+'classes::Constant' is a specialization of 'Content'.
+'classes::Constant' is a specialization of 'Description'.
+'classes::BuiltInType' is a specialization of 'Type'.
+'classes::Class' is a specialization of 'Content'.
+'classes::ClassRef' is a specialization of 'Type'.
+'classes::Association' is a specialization of 'Description'.
+'classes::IntegerLiteral' is a specialization of 'Value'.
+'classes::ConstantRef' is a specialization of 'Value'.
+'classes::Attribute' is a specialization of 'Description'.
+'classes::Association' is a specialization of 'Content'.
+'classes::Value' (role 'classes_Value21', cardinality 0..*) is associated with 'classes::Attribute' (role 'classes_Attribute20', cardinality 0..*).
+'classes::Class' (role 'classes_Class14', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class12', cardinality 0..*).
+'classes::Attribute' (role 'classes_Attribute18', cardinality 0..*) is associated with 'classes::Type' (role 'classes_Type', cardinality 0..*).
+'classes::Constant' (role 'classes_Constant', cardinality 0..*) is associated with 'classes::Value' (role 'classes_Value', cardinality 0..*).
+'classes::Class' (role 'classes_Class16', cardinality 0..*) is associated with 'classes::Attribute' (role 'classes_Attribute', cardinality 0..*).
+'classes::Class' (role 'classes_Class', cardinality 0..*) is associated with 'classes::Association' (role 'classes_Association', cardinality 0..*).
+'classes::Attribute' (role 'classes_Attribute23', cardinality 0..*) is associated with 'classes::Value' (role 'classes_Value24', cardinality 0..*).
+'classes::Class' (role 'classes_Class5', cardinality 0..*) is associated with 'classes::Association' (role 'classes_Association4', cardinality 0..*).
+'classes::ConstantRef' (role 'classes_ConstantRef', cardinality 0..*) is associated with 'classes::Constant' (role 'classes_Constant28', cardinality 0..*).
+'classes::Association' (role 'classes_Association7', cardinality 0..*) is associated with 'classes::Value' (role 'classes_Value8', cardinality 0..*).
+'classes::Association' (role 'classes_Association10', cardinality 0..*) is associated with 'classes::Value' (role 'classes_Value11', cardinality 0..*).
+'classes::Class' (role 'classes_Class26', cardinality 0..*) is associated with 'classes::ClassRef' (role 'classes_ClassRef', cardinality 0..*).
+'classes::Content' (role 'classes_Content', cardinality 0..*) is associated with 'classes::ClassModel' (role 'classes_ClassModel', cardinality 0..*).

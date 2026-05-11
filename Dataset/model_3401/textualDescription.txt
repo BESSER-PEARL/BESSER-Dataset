@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Person::Model' has no attributes.
+The class 'Person::Person' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+'Person::Person' (role 'Person_Person1', cardinality 0..*) is associated with 'Person::Person' (role 'Person_Person3', cardinality 0..*).
+'Person::Model' (role 'Person_Model', cardinality 0..*) is associated with 'Person::Person' (role 'Person_Person', cardinality 0..*).

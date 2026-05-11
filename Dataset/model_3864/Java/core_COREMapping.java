@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class core_COREMapping  {
+
+
+
+
+
+
+    private core_COREModelElement core_coremodelelement;
+
+
+
+
+    private core_COREBinding core_corebinding;
+
+
+
+
+    private core_COREModelElement core_coremodelelement;
+
+
+    public core_COREMapping(
+    ) {
+    }
+
+
+
+    public core_COREModelElement getCore_coremodelelement() {
+        return core_coremodelelement;
+    }
+
+    public void setCore_coremodelelement(core_COREModelElement core_coremodelelement) {
+        this.core_coremodelelement = core_coremodelelement;
+    }
+    public core_COREBinding getCore_corebinding() {
+        return core_corebinding;
+    }
+
+    public void setCore_corebinding(core_COREBinding core_corebinding) {
+        this.core_corebinding = core_corebinding;
+    }
+    public core_COREModelElement getCore_coremodelelement() {
+        return core_coremodelelement;
+    }
+
+    public void setCore_coremodelelement(core_COREModelElement core_coremodelelement) {
+        this.core_coremodelelement = core_coremodelelement;
+    }
+
+}

@@ -1,0 +1,73 @@
+The model has 24 class(es).
+The class 'umlClass::Relationship' has no attributes.
+The class 'umlClass::Package' has no attributes.
+The class 'umlClass::AlternativeOperation' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'umlClass::Element' has no attributes.
+The class 'umlClass::DirectedRelationship' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'umlClass::Classifier' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'umlClass::DataType' has no attributes.
+The class 'Operation' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'umlClass::TypedElement' has no attributes.
+The class 'umlClass::Operation' has the following attributes: 'upper' of type str; 'lower' of type str; 'isQuery' of type str; 'isUnique' of type str; 'isOrdered' of type str.
+The class 'umlClass::StructuralFeature' has the following attributes: 'isReadOnly' of type str.
+The class 'umlClass::Class' has the following attributes: 'isActive' of type str.
+The class 'Element' has no attributes.
+The class 'umlClass::Association' has no attributes.
+The class 'umlClass::Generalization' has no attributes.
+The class 'umlClass::Property' has no attributes.
+The class 'umlClass::OptionalOperation' has no attributes.
+The class 'umlClass::NamedElement' has the following attributes: 'Archpoint' of type str; 'name' of type str.
+'umlClass::Relationship' is a specialization of 'Element'.
+'umlClass::Package' is a specialization of 'NamedElement'.
+'umlClass::Class' is a specialization of 'Classifier'.
+'umlClass::Association' is a specialization of 'Relationship'.
+'umlClass::Property' is a specialization of 'StructuralFeature'.
+'umlClass::StructuralFeature' is a specialization of 'TypedElement'.
+'umlClass::Operation' is a specialization of 'NamedElement'.
+'umlClass::AlternativeOperation' is a specialization of 'Operation'.
+'umlClass::DataType' is a specialization of 'Classifier'.
+'umlClass::Association' is a specialization of 'Classifier'.
+'umlClass::DirectedRelationship' is a specialization of 'Relationship'.
+'umlClass::NamedElement' is a specialization of 'Element'.
+'umlClass::Generalization' is a specialization of 'DirectedRelationship'.
+'umlClass::Classifier' is a specialization of 'NamedElement'.
+'umlClass::OptionalOperation' is a specialization of 'Operation'.
+'umlClass::TypedElement' is a specialization of 'NamedElement'.
+'umlClass::Property' (role 'umlClass_Property24', cardinality 0..*) is associated with 'umlClass::Property' (role 'umlClass_Property26', cardinality 0..*).
+'umlClass::Property' (role 'Property47', cardinality 0..*) is associated with 'umlClass::DataType' (role 'datatype', cardinality 0..*).
+'umlClass::Operation' (role 'umlClass_Operation', cardinality 0..*) is associated with 'umlClass::AlternativeOperation' (role 'umlClass_AlternativeOperation', cardinality 0..*).
+'umlClass::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'umlClass::Property' (role 'attribute', cardinality 0..*).
+'umlClass::Property' (role 'ownedAttribute18', cardinality 0..*) is associated with 'umlClass::DataType' (role 'DataType', cardinality 0..*).
+'umlClass::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'umlClass::Property' (role 'Property32', cardinality 0..*).
+'umlClass::Association' (role 'Association23', cardinality 0..*) is associated with 'umlClass::Property' (role 'memberEnd', cardinality 0..*).
+'umlClass::Association' (role 'Association', cardinality 0..*) is associated with 'umlClass::Property' (role 'ownedEnd', cardinality 0..*).
+'umlClass::Package' (role 'Package', cardinality 0..*) is associated with 'umlClass::Classifier' (role 'classifiers', cardinality 0..*).
+'umlClass::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'umlClass::Classifier' (role 'specific', cardinality 0..*).
+'umlClass::Class' (role 'umlClass_Class56', cardinality 0..*) is associated with 'umlClass::Generalization' (role 'umlClass_Generalization', cardinality 0..*).
+'umlClass::Class' (role 'umlClass_Class40', cardinality 0..*) is associated with 'umlClass::Association' (role 'umlClass_Association39', cardinality 0..*).
+'umlClass::Package' (role 'package', cardinality 0..*) is associated with 'umlClass::Classifier' (role 'Classifier52', cardinality 0..*).
+'umlClass::Class' (role 'umlClass_Class9', cardinality 0..*) is associated with 'umlClass::Class' (role 'umlClass_Class', cardinality 0..*).
+'umlClass::Element' (role 'Element64', cardinality 0..*) is associated with 'umlClass::Element' (role 'owner', cardinality 0..*).
+'umlClass::DataType' (role 'DataType45', cardinality 0..*) is associated with 'umlClass::Operation' (role 'ownedOperation44', cardinality 0..*).
+'umlClass::Class' (role 'umlClass_Class12', cardinality 0..*) is associated with 'umlClass::Association' (role 'umlClass_Association', cardinality 0..*).
+'umlClass::Property' (role 'umlClass_Property37', cardinality 0..*) is associated with 'umlClass::Association' (role 'umlClass_Association36', cardinality 0..*).
+'umlClass::Classifier' (role 'umlClass_Classifier', cardinality 0..*) is associated with 'umlClass::Classifier' (role 'umlClass_Classifier1', cardinality 0..*).
+'umlClass::Property' (role 'Property', cardinality 0..*) is associated with 'umlClass::Classifier' (role 'classifier', cardinality 0..*).
+'umlClass::Property' (role 'Property34', cardinality 0..*) is associated with 'umlClass::Association' (role 'association', cardinality 0..*).
+'umlClass::Property' (role 'Property8', cardinality 0..*) is associated with 'umlClass::Class' (role 'class_7', cardinality 0..*).
+'umlClass::Property' (role 'umlClass_Property27', cardinality 0..*) is associated with 'umlClass::Property' (role 'umlClass_Property29', cardinality 0..*).
+'umlClass::Generalization' (role 'umlClass_Generalization58', cardinality 0..*) is associated with 'umlClass::Class' (role 'umlClass_Class59', cardinality 0..*).
+'umlClass::Operation' (role 'Operation50', cardinality 0..*) is associated with 'umlClass::DataType' (role 'datatype49', cardinality 0..*).
+'umlClass::Element' (role 'Element', cardinality 0..*) is associated with 'umlClass::Element' (role 'ownedElement', cardinality 0..*).
+'umlClass::Classifier' (role 'umlClass_Classifier15', cardinality 0..*) is associated with 'umlClass::Class' (role 'umlClass_Class14', cardinality 0..*).
+'umlClass::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'umlClass::Class' (role 'Class42', cardinality 0..*).
+'umlClass::Property' (role 'umlClass_Property19', cardinality 0..*) is associated with 'umlClass::Property' (role 'umlClass_Property', cardinality 0..*).
+'umlClass::Class' (role 'class_', cardinality 0..*) is associated with 'umlClass::Operation' (role 'Operation', cardinality 0..*).
+'umlClass::Classifier' (role 'Classifier54', cardinality 0..*) is associated with 'umlClass::Generalization' (role 'generalization', cardinality 0..*).
+'umlClass::Class' (role 'Class', cardinality 0..*) is associated with 'umlClass::Property' (role 'ownedAttribute', cardinality 0..*).

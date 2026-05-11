@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'fl::Literal' has the following attributes: 'info' of type str.
+The class 'fl::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'fl::Function' has the following attributes: 'arg' of type str; 'name' of type str.
+The class 'fl::Apply' has the following attributes: 'name' of type str.
+The class 'Expr' has no attributes.
+The class 'fl::Argument' has the following attributes: 'name' of type str.
+The class 'fl::Expr' has no attributes.
+The class 'fl::ProgramType' has no attributes.
+The class 'fl::Binary' has the following attributes: 'ops' of type str.
+The class 'fl::EStringToStringMapEntry' has no attributes.
+The class 'fl::IfThenElse' has no attributes.
+The enumeration 'Ops' has the following literals: 'Plus', 'Minus', 'Equal'.
+'fl::Binary' is a specialization of 'Expr'.
+'fl::IfThenElse' is a specialization of 'Expr'.
+'fl::Apply' is a specialization of 'Expr'.
+'fl::Argument' is a specialization of 'Expr'.
+'fl::Literal' is a specialization of 'Expr'.
+'fl::Expr' (role 'fl_Expr18', cardinality 0..*) is associated with 'fl::IfThenElse' (role 'fl_IfThenElse', cardinality 0..*).
+'fl::Binary' (role 'fl_Binary', cardinality 0..*) is associated with 'fl::Expr' (role 'fl_Expr2', cardinality 0..*).
+'fl::Expr' (role 'fl_Expr24', cardinality 0..*) is associated with 'fl::IfThenElse' (role 'fl_IfThenElse23', cardinality 0..*).
+'fl::Expr' (role 'fl_Expr5', cardinality 0..*) is associated with 'fl::Binary' (role 'fl_Binary4', cardinality 0..*).
+'fl::Function' (role 'fl_Function', cardinality 0..*) is associated with 'fl::Expr' (role 'fl_Expr16', cardinality 0..*).
+'fl::Expr' (role 'fl_Expr', cardinality 0..*) is associated with 'fl::Apply' (role 'fl_Apply', cardinality 0..*).
+'fl::DocumentRoot' (role 'fl_DocumentRoot8', cardinality 0..*) is associated with 'fl::EStringToStringMapEntry' (role 'fl_EStringToStringMapEntry9', cardinality 0..*).
+'fl::Expr' (role 'fl_Expr12', cardinality 0..*) is associated with 'fl::DocumentRoot' (role 'fl_DocumentRoot11', cardinality 0..*).
+'fl::EStringToStringMapEntry' (role 'fl_EStringToStringMapEntry', cardinality 0..*) is associated with 'fl::DocumentRoot' (role 'fl_DocumentRoot', cardinality 0..*).
+'fl::Function' (role 'fl_Function27', cardinality 0..*) is associated with 'fl::ProgramType' (role 'fl_ProgramType26', cardinality 0..*).
+'fl::IfThenElse' (role 'fl_IfThenElse20', cardinality 0..*) is associated with 'fl::Expr' (role 'fl_Expr21', cardinality 0..*).
+'fl::DocumentRoot' (role 'fl_DocumentRoot14', cardinality 0..*) is associated with 'fl::ProgramType' (role 'fl_ProgramType', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'UML2WithID::Port' has no attributes.
+The class 'UML2WithID::Extension' has no attributes.
+The class 'UML2WithID::ExtensionEnd' has no attributes.
+The class 'UML2WithID::Association' has no attributes.
+The class 'UML2WithID::CommunicationPath' has no attributes.
+The class 'UML2WithID::Element' has the following attributes: 'ID' of type str.
+The class 'Property' has no attributes.
+The class 'UML2WithID::AssociationClass' has no attributes.
+The class 'UML2WithID::Property' has the following attributes: 'aggregation' of type str.
+The class 'Element' has no attributes.
+The class 'Association' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'none', 'shared', 'composite'.
+'UML2WithID::Port' is a specialization of 'Property'.
+'UML2WithID::Association' is a specialization of 'Element'.
+'UML2WithID::AssociationClass' is a specialization of 'Element'.
+'UML2WithID::Extension' is a specialization of 'Association'.
+'UML2WithID::Property' is a specialization of 'Element'.
+'UML2WithID::Port' is a specialization of 'Element'.
+'UML2WithID::AssociationClass' is a specialization of 'Association'.
+'UML2WithID::Extension' is a specialization of 'Element'.
+'UML2WithID::ExtensionEnd' is a specialization of 'Property'.
+'UML2WithID::CommunicationPath' is a specialization of 'Association'.
+'UML2WithID::ExtensionEnd' is a specialization of 'Element'.
+'UML2WithID::CommunicationPath' is a specialization of 'Element'.
+'UML2WithID::Property' (role 'UML2WithID_Property', cardinality 0..*) is associated with 'UML2WithID::Association' (role 'UML2WithID_Association', cardinality 0..*).

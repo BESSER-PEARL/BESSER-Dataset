@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'database::DB' has no attributes.
+The class 'database::Column' has no attributes.
+The class 'database::Table' has no attributes.
+'database::Table' (role 'database_Table5', cardinality 0..*) is associated with 'database::Column' (role 'database_Column4', cardinality 0..*).
+'database::DB' (role 'database_DB', cardinality 0..*) is associated with 'database::Table' (role 'database_Table', cardinality 0..*).
+'database::Column' (role 'database_Column', cardinality 0..*) is associated with 'database::Table' (role 'database_Table2', cardinality 0..*).

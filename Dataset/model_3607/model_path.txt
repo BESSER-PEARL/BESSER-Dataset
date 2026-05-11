@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/Mogwai/applications/panama/fr.inria.atlanmod.mogwai.applications.panama.neo4j/model/panamaNeo4j.ecore

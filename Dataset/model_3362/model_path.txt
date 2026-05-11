@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/yinonavraham/sqlite-db-modeler-plugin-4android/org.ynn.sqlitedb.modeler.model/model/sqlitedb.ecore

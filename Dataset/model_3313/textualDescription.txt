@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'viatraTraceability::AbstractElement' has no attributes.
+The class 'viatraTraceability::DepToGSPNTrace' has no attributes.
+The class 'viatraTraceability::DepToGSPN' has no attributes.
+The class 'viatraTraceability::PetriNet' has no attributes.
+The class 'viatraTraceability::Identification' has no attributes.
+The class 'viatraTraceability::DepModel' has no attributes.
+'viatraTraceability::DepToGSPNTrace' (role 'viatraTraceability_DepToGSPNTrace', cardinality 0..*) is associated with 'viatraTraceability::DepToGSPN' (role 'viatraTraceability_DepToGSPN4', cardinality 0..*).
+'viatraTraceability::DepToGSPN' (role 'viatraTraceability_DepToGSPN', cardinality 0..*) is associated with 'viatraTraceability::PetriNet' (role 'viatraTraceability_PetriNet', cardinality 0..*).
+'viatraTraceability::DepModel' (role 'viatraTraceability_DepModel', cardinality 0..*) is associated with 'viatraTraceability::DepToGSPN' (role 'viatraTraceability_DepToGSPN2', cardinality 0..*).
+'viatraTraceability::Identification' (role 'viatraTraceability_Identification', cardinality 0..*) is associated with 'viatraTraceability::DepToGSPNTrace' (role 'viatraTraceability_DepToGSPNTrace8', cardinality 0..*).
+'viatraTraceability::AbstractElement' (role 'viatraTraceability_AbstractElement', cardinality 0..*) is associated with 'viatraTraceability::DepToGSPNTrace' (role 'viatraTraceability_DepToGSPNTrace6', cardinality 0..*).

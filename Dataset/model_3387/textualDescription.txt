@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'JPA::PersistenceUnit' has no attributes.
+The class 'JPA::ManyToOne' has the following attributes: 'referencedEntityName' of type str; 'referencedPropertyName' of type str; 'name' of type str; 'type' of type str.
+The class 'JPA::Property' has the following attributes: 'name' of type str; 'comment' of type str.
+The class 'JPA::ManyToMany' has no attributes.
+The class 'JPA::Entity' has the following attributes: 'comment' of type str; 'name' of type str.
+The class 'JPA::Anotation' has no attributes.
+The class 'JPA::Table' has the following attributes: 'name' of type str.
+The class 'JPA::Column' has the following attributes: 'fetch' of type str; 'nullable' of type bool; 'type' of type str; 'name' of type str.
+The class 'JPA::EntityPk' has the following attributes: 'name' of type str.
+The class 'JPA::OneToOne' has the following attributes: 'name' of type str; 'referencedEntityName' of type str; 'referencedPropertyName' of type str; 'type' of type str.
+The class 'JPA::OneToMany' has the following attributes: 'referencedEntityName' of type str; 'name' of type str; 'type' of type str.
+The class 'Anotation' has no attributes.
+The enumeration 'Cascade' has the following literals: 'REMOVE', 'MERGE', 'ALL', 'REFRESH', 'PERSIST'.
+The enumeration 'Fetch' has the following literals: 'EAGER', 'LAZY'.
+'JPA::OneToMany' is a specialization of 'Anotation'.
+'JPA::Column' is a specialization of 'Anotation'.
+'JPA::ManyToMany' is a specialization of 'Anotation'.
+'JPA::EntityPk' is a specialization of 'Anotation'.
+'JPA::OneToOne' is a specialization of 'Anotation'.
+'JPA::ManyToOne' is a specialization of 'Anotation'.
+'JPA::Table' is a specialization of 'Anotation'.
+'JPA::Anotation' (role 'JPA_Anotation', cardinality 0..*) is associated with 'JPA::Entity' (role 'JPA_Entity4', cardinality 0..*).
+'JPA::Anotation' (role 'JPA_Anotation7', cardinality 0..*) is associated with 'JPA::Property' (role 'JPA_Property6', cardinality 0..*).
+'JPA::Entity' (role 'JPA_Entity2', cardinality 0..*) is associated with 'JPA::Property' (role 'JPA_Property', cardinality 0..*).
+'JPA::Property' (role 'JPA_Property9', cardinality 0..*) is associated with 'JPA::EntityPk' (role 'JPA_EntityPk', cardinality 0..*).
+'JPA::Entity' (role 'JPA_Entity', cardinality 0..*) is associated with 'JPA::PersistenceUnit' (role 'JPA_PersistenceUnit', cardinality 0..*).

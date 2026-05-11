@@ -1,0 +1,356 @@
+The model has 121 class(es).
+The class 'dom::BetweenExpression' has the following attributes: 'not_' of type bool; 'operator' of type str.
+The class 'dom::AvailableFlag' has no attributes.
+The class 'dom::LiteralValue' has no attributes.
+The class 'dom::PropertyValue' has the following attributes: 'segments' of type str; 'classProperty' of type bool; 'name' of type str.
+The class 'AttributeFlag' has no attributes.
+The class 'dom::ManyToMany' has the following attributes: 'columnName' of type str; 'inverse' of type bool; 'tableName' of type str.
+The class 'dom::ValidatorReference' has no attributes.
+The class 'dom::InExpression' has the following attributes: 'not_' of type bool; 'operator' of type str.
+The class 'dom::NullLiteralValue' has no attributes.
+The class 'dom::FunctionCall' has the following attributes: 'function' of type str.
+The class 'dom::EqualityExpr' has no attributes.
+The class 'dom::MemberOfExpression' has the following attributes: 'not_' of type bool; 'memberOf' of type str; 'operator' of type str.
+The class 'dom::RealLiteralValue' has the following attributes: 'value' of type str.
+The class 'dom::SelectProperties' has the following attributes: 'distinct' of type bool.
+The class 'dom::Constraint' has no attributes.
+The class 'JoinEntity' has no attributes.
+The class 'dom::AttributeValidationProperty' has no attributes.
+The class 'dom::ParenthesizedExpression' has no attributes.
+The class 'dom::SimpleType' has no attributes.
+The class 'SelectStatement' has no attributes.
+The class 'dom::ValueObject' has no attributes.
+The class 'dom::PropertyAssignment' has no attributes.
+The class 'dom::CaseExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dom::SortOrderElement' has the following attributes: 'sortOrder' of type str.
+The class 'dom::PresentableFeature' has the following attributes: 'name' of type str.
+The class 'dom::CallableStatement' has the following attributes: 'functionCall' of type bool; 'name' of type str.
+The class 'dom::QueryParameterValue' has no attributes.
+The class 'Dependant' has no attributes.
+The class 'dom::TransientFlag' has no attributes.
+The class 'IDocumentable' has no attributes.
+The class 'dom::IncrementerReference' has no attributes.
+The class 'dom::CastFunction' has the following attributes: 'name' of type str; 'function' of type str.
+The class 'dom::AttributeGroup' has the following attributes: 'filter' of type bool; 'name' of type str; 'key' of type bool; 'unique' of type bool; 'sortorder' of type bool.
+The class 'dom::CollectionFunction' has the following attributes: 'function' of type str.
+The class 'dom::JoinEntity' has the following attributes: 'name' of type str.
+The class 'ExpressionFlag' has no attributes.
+The class 'dom::FromRange' has no attributes.
+The class 'dom::Dao' has the following attributes: 'tableName' of type str; 'discriminator' of type str; 'qualifier' of type str.
+The class 'dom::AttributeFlag' has no attributes.
+The class 'dom::Expression' has no attributes.
+The class 'dom::SubQuery' has no attributes.
+The class 'dom::Type' has no attributes.
+The class 'dom::OneToMany' has the following attributes: 'columnName' of type str.
+The class 'dom::Dependant' has no attributes.
+The class 'dom::DaoFeature' has no attributes.
+The class 'dom::InCollectionElements' has the following attributes: 'name' of type str; 'reference' of type str.
+The class 'dom::QueryOperation' has no attributes.
+The class 'dom::ReadOnlyFlag' has no attributes.
+The class 'dom::DerivedFlag' has no attributes.
+The class 'dom::QuantifiedExpression' has the following attributes: 'quantifier' of type str; 'name' of type str.
+The class 'dom::AttributeProperty' has no attributes.
+The class 'dom::Service' has no attributes.
+The class 'dom::Column' has the following attributes: 'columnName' of type str.
+The class 'dom::DeleteStatement' has the following attributes: 'name' of type str.
+The class 'dom::AggregateFunction' has the following attributes: 'all' of type bool; 'function' of type str; 'from_' of type str; 'distinct' of type bool.
+The class 'dom::QueryParameterReference' has no attributes.
+The class 'dom::Operation' has the following attributes: 'expression' of type str.
+The class 'dom::SelectClass' has the following attributes: 'class_' of type str.
+The class 'dom::UpdateStatement' has the following attributes: 'name' of type str; 'versioned' of type bool.
+The class 'dom::TrimFunction' has the following attributes: 'mode' of type str; 'function' of type str.
+The class 'DaoFeature' has no attributes.
+The class 'dom::CallOutputParameter' has the following attributes: 'name' of type str.
+The class 'dom::SqlType' has no attributes.
+The class 'LiteralValue' has no attributes.
+The class 'FromRange' has no attributes.
+The class 'Type' has no attributes.
+The class 'QueryParameterReference' has no attributes.
+The class 'dom::DaoOperation' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'QlStatement' has no attributes.
+The class 'dom::RequiredFlag' has no attributes.
+The class 'dom::StringLiteralValue' has the following attributes: 'value' of type str.
+The class 'dom::BooleanLiteralValue' has the following attributes: 'isTrue' of type bool.
+The class 'dom::PropertyMapping' has the following attributes: 'toRight' of type bool; 'toLeft' of type bool; 'biDirectional' of type bool.
+The class 'dom::CallInputParameter' has the following attributes: 'name' of type str.
+The class 'dom::FeatureReference' has the following attributes: 'all' of type bool.
+The class 'dom::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'dom::AttributeTextProperty' has the following attributes: 'labelText' of type str; 'tooltipText' of type str; 'unitText' of type str; 'hstoreColumn' of type str.
+The class 'dom::FromClass' has the following attributes: 'popertyFetch' of type bool.
+The class 'dom::ManyToOne' has the following attributes: 'columnName' of type str; 'derived' of type bool.
+The class 'dom::EmptyLiteralValue' has no attributes.
+The class 'dom::IElementWithNoName' has the following attributes: 'noName' of type str.
+The class 'ReferenceableByXmadslVariable' has no attributes.
+The class 'dom::QueryParameter' has no attributes.
+The class 'dom::QlStatement' has no attributes.
+The class 'dom::DelegateOperation' has the following attributes: 'name' of type str; 'crudOperationType' of type str; 'many' of type bool.
+The class 'dom::AttributeSortOrder' has the following attributes: 'desc' of type bool; 'asc' of type bool.
+The class 'dom::ConditionsBlock' has no attributes.
+The class 'dom::ComplexType' has no attributes.
+The class 'dom::DataBaseConstraint' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'dom::Join' has the following attributes: 'fetch' of type bool; 'type' of type str; 'propertyFetch' of type bool.
+The class 'DaoOperation' has no attributes.
+The class 'dom::Property' has the following attributes: 'name' of type str; 'defaultValue' of type str.
+The class 'ComplexType' has no attributes.
+The class 'dom::OneToOne' has no attributes.
+The class 'dom::WhenClause' has no attributes.
+The class 'dom::Entity' has no attributes.
+The class 'PresentableFeature' has no attributes.
+The class 'dom::SelectObject' has the following attributes: 'name' of type str.
+The class 'dom::NotExpression' has no attributes.
+The class 'dom::Mapper' has the following attributes: 'toLeft' of type bool; 'toRight' of type bool; 'biDirectional' of type bool.
+The class 'dom::InClass' has the following attributes: 'name' of type str; 'class_' of type str.
+The class 'dom::IntegerLiteralValue' has the following attributes: 'value' of type str.
+The class 'dom::ExpressionFlag' has no attributes.
+The class 'dom::Parameter' has the following attributes: 'name' of type str; 'many' of type bool.
+The class 'dom::Function' has no attributes.
+The class 'dom::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'dom::DataView' has no attributes.
+The class 'QueryParameter' has no attributes.
+The class 'dom::InCollection' has the following attributes: 'alias' of type str; 'path' of type str.
+The class 'dom::Attribute' has the following attributes: 'identifier' of type bool; 'derived' of type bool; 'readOnly' of type bool; 'transient' of type bool; 'reference' of type bool; 'defaultValue' of type str; 'composition' of type bool; 'required' of type bool; 'version' of type bool; 'dataTypeName' of type str; 'many' of type bool.
+The class 'dom::InsertStatement' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'dom::AliasedExpression' has the following attributes: 'name' of type str.
+The class 'AttributeProperty' has no attributes.
+The class 'dom::LikeExpression' has the following attributes: 'operator' of type str; 'not_' of type bool.
+The class 'dom::DataTypeAndTypeParameter' has no attributes.
+The class 'dom::ApplicationSession' has no attributes.
+The class 'dom::SelectStatement' has no attributes.
+The class 'dom::AltWhenClause' has no attributes.
+The class 'dom::BoolLiteral' has no attributes.
+The enumeration 'CrudOperationType' has the following literals: 'NULL', 'UPDATE', 'READ', 'CREATE', 'ALL', 'DELETE'.
+The enumeration 'DataBaseConstraintType' has the following literals: 'INDEX', 'NULL', 'UNIQUE', 'PRIMARY', 'NATURAL'.
+'dom::SubQuery' is a specialization of 'Expression'.
+'dom::CollectionFunction' is a specialization of 'Expression'.
+'dom::QueryParameterValue' is a specialization of 'Expression'.
+'dom::Join' is a specialization of 'JoinEntity'.
+'dom::Property' is a specialization of 'ReferenceableByXmadslVariable'.
+'dom::Operation' is a specialization of 'IDocumentable'.
+'dom::OneToOne' is a specialization of 'DaoFeature'.
+'dom::IElementWithNoName' is a specialization of 'QueryParameterReference'.
+'dom::Dao' is a specialization of 'ModelElement'.
+'dom::OneToMany' is a specialization of 'DaoFeature'.
+'dom::BooleanLiteralValue' is a specialization of 'LiteralValue'.
+'dom::SelectStatement' is a specialization of 'QlStatement'.
+'dom::Service' is a specialization of 'ModelElement'.
+'dom::SelectObject' is a specialization of 'SelectStatement'.
+'dom::QueryOperation' is a specialization of 'IDocumentable'.
+'dom::RealLiteralValue' is a specialization of 'LiteralValue'.
+'dom::ManyToOne' is a specialization of 'DaoFeature'.
+'dom::DataView' is a specialization of 'ComplexType'.
+'dom::Service' is a specialization of 'Dependant'.
+'dom::Attribute' is a specialization of 'IDocumentable'.
+'dom::FunctionCall' is a specialization of 'Expression'.
+'dom::LikeExpression' is a specialization of 'Expression'.
+'dom::TransientFlag' is a specialization of 'AttributeFlag'.
+'dom::PropertyValue' is a specialization of 'Expression'.
+'dom::DeleteStatement' is a specialization of 'QlStatement'.
+'dom::Parameter' is a specialization of 'QueryParameterReference'.
+'dom::Dao' is a specialization of 'Dependant'.
+'dom::ParenthesizedExpression' is a specialization of 'Expression'.
+'dom::AggregateFunction' is a specialization of 'Expression'.
+'dom::Parameter' is a specialization of 'QueryParameter'.
+'dom::Entity' is a specialization of 'Dependant'.
+'dom::QueryOperation' is a specialization of 'DaoOperation'.
+'dom::InClass' is a specialization of 'FromRange'.
+'dom::AttributeValidationProperty' is a specialization of 'AttributeProperty'.
+'dom::StringLiteralValue' is a specialization of 'LiteralValue'.
+'dom::CaseExpression' is a specialization of 'Expression'.
+'dom::ExpressionFlag' is a specialization of 'AttributeFlag'.
+'dom::Entity' is a specialization of 'ComplexType'.
+'dom::InCollection' is a specialization of 'FromRange'.
+'dom::Operation' is a specialization of 'DaoOperation'.
+'dom::AvailableFlag' is a specialization of 'ExpressionFlag'.
+'dom::InsertStatement' is a specialization of 'QlStatement'.
+'dom::ValueObject' is a specialization of 'ComplexType'.
+'dom::FromClass' is a specialization of 'JoinEntity'.
+'dom::ManyToMany' is a specialization of 'DaoFeature'.
+'dom::ComplexType' is a specialization of 'ModelElement'.
+'dom::TrimFunction' is a specialization of 'Expression'.
+'dom::Attribute' is a specialization of 'ReferenceableByXmadslVariable'.
+'dom::NullLiteralValue' is a specialization of 'LiteralValue'.
+'dom::DelegateOperation' is a specialization of 'IDocumentable'.
+'dom::SelectProperties' is a specialization of 'SelectStatement'.
+'dom::ReadOnlyFlag' is a specialization of 'ExpressionFlag'.
+'dom::AliasedExpression' is a specialization of 'Expression'.
+'dom::SelectClass' is a specialization of 'SelectStatement'.
+'dom::MemberOfExpression' is a specialization of 'Expression'.
+'dom::FeatureReference' is a specialization of 'PresentableFeature'.
+'dom::EmptyLiteralValue' is a specialization of 'LiteralValue'.
+'dom::IntegerLiteralValue' is a specialization of 'LiteralValue'.
+'dom::NotExpression' is a specialization of 'Expression'.
+'dom::BetweenExpression' is a specialization of 'Expression'.
+'dom::AttributeGroup' is a specialization of 'IDocumentable'.
+'dom::Attribute' is a specialization of 'PresentableFeature'.
+'dom::FromClass' is a specialization of 'FromRange'.
+'dom::FeatureReference' is a specialization of 'IDocumentable'.
+'dom::InCollectionElements' is a specialization of 'FromRange'.
+'dom::UpdateStatement' is a specialization of 'QlStatement'.
+'dom::ComplexType' is a specialization of 'Type'.
+'dom::AttributeFlag' is a specialization of 'AttributeProperty'.
+'dom::CastFunction' is a specialization of 'Expression'.
+'dom::QuantifiedExpression' is a specialization of 'Expression'.
+'dom::Property' is a specialization of 'IDocumentable'.
+'dom::ApplicationSession' is a specialization of 'ModelElement'.
+'dom::Column' is a specialization of 'DaoFeature'.
+'dom::UnaryExpression' is a specialization of 'Expression'.
+'dom::CallableStatement' is a specialization of 'QlStatement'.
+'dom::DerivedFlag' is a specialization of 'AttributeFlag'.
+'dom::IElementWithNoName' is a specialization of 'ReferenceableByXmadslVariable'.
+'dom::LiteralValue' is a specialization of 'Expression'.
+'dom::InExpression' is a specialization of 'Expression'.
+'dom::BinaryExpression' is a specialization of 'Expression'.
+'dom::AttributeTextProperty' is a specialization of 'AttributeProperty'.
+'dom::Attribute' is a specialization of 'QueryParameterReference'.
+'dom::Mapper' is a specialization of 'ModelElement'.
+'dom::RequiredFlag' is a specialization of 'ExpressionFlag'.
+'dom::Expression' (role 'dom_Expression301', cardinality 0..*) is associated with 'dom::CaseExpression' (role 'dom_CaseExpression300', cardinality 0..*).
+'dom::AttributeGroup' (role 'dom_AttributeGroup124', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute125', cardinality 0..*).
+'dom::LikeExpression' (role 'dom_LikeExpression354', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression355', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity82', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute83', cardinality 0..*).
+'dom::Dependant' (role 'dom_Dependant', cardinality 0..*) is associated with 'dom::Service' (role 'dom_Service', cardinality 0..*).
+'dom::InsertStatement' (role 'dom_InsertStatement224', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression225', cardinality 0..*).
+'dom::Join' (role 'dom_Join275', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression276', cardinality 0..*).
+'dom::StringLiteralValue' (role 'dom_StringLiteralValue', cardinality 0..*) is associated with 'dom::TrimFunction' (role 'dom_TrimFunction', cardinality 0..*).
+'dom::BinaryExpression' (role 'dom_BinaryExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression329', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression254', cardinality 0..*) is associated with 'dom::SelectStatement' (role 'dom_SelectStatement253', cardinality 0..*).
+'dom::OneToOne' (role 'dom_OneToOne', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao146', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity222', cardinality 0..*) is associated with 'dom::InsertStatement' (role 'dom_InsertStatement', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao140', cardinality 0..*) is associated with 'dom::DataBaseConstraint' (role 'dom_DataBaseConstraint', cardinality 0..*).
+'dom::AttributeProperty' (role 'dom_AttributeProperty', cardinality 0..*) is associated with 'dom::FeatureReference' (role 'dom_FeatureReference45', cardinality 0..*).
+'dom::AggregateFunction' (role 'dom_AggregateFunction291', cardinality 0..*) is associated with 'dom::CollectionFunction' (role 'dom_CollectionFunction', cardinality 0..*).
+'dom::WhenClause' (role 'dom_WhenClause308', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression309', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression281', cardinality 0..*) is associated with 'dom::FunctionCall' (role 'dom_FunctionCall', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute130', cardinality 0..*) is associated with 'dom::DaoFeature' (role 'dom_DaoFeature', cardinality 0..*).
+'dom::Mapper' (role 'dom_Mapper52', cardinality 0..*) is associated with 'dom::ComplexType' (role 'dom_ComplexType53', cardinality 0..*).
+'dom::DataView' (role 'dom_DataView25', cardinality 0..*) is associated with 'dom::DelegateOperation' (role 'dom_DelegateOperation24', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression257', cardinality 0..*) is associated with 'dom::SelectStatement' (role 'dom_SelectStatement256', cardinality 0..*).
+'dom::Service' (role 'dom_Service6', cardinality 0..*) is associated with 'dom::Operation' (role 'dom_Operation', cardinality 0..*).
+'dom::DataBaseConstraint' (role 'dom_DataBaseConstraint165', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao164', cardinality 0..*).
+'dom::Service' (role 'dom_Service8', cardinality 0..*) is associated with 'dom::DelegateOperation' (role 'dom_DelegateOperation', cardinality 0..*).
+'dom::FeatureReference' (role 'dom_FeatureReference42', cardinality 0..*) is associated with 'dom::DataView' (role 'dom_DataView43', cardinality 0..*).
+'dom::CallOutputParameter' (role 'dom_CallOutputParameter219', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute220', cardinality 0..*).
+'dom::ConditionsBlock' (role 'dom_ConditionsBlock205', cardinality 0..*) is associated with 'dom::ApplicationSession' (role 'dom_ApplicationSession204', cardinality 0..*).
+'dom::Column' (role 'dom_Column153', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao152', cardinality 0..*).
+'dom::Type' (role 'dom_Type105', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute104', cardinality 0..*).
+'dom::SelectStatement' (role 'dom_SelectStatement', cardinality 0..*) is associated with 'dom::InsertStatement' (role 'dom_InsertStatement227', cardinality 0..*).
+'dom::UpdateStatement' (role 'dom_UpdateStatement238', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression239', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression312', cardinality 0..*) is associated with 'dom::WhenClause' (role 'dom_WhenClause311', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression341', cardinality 0..*) is associated with 'dom::BetweenExpression' (role 'dom_BetweenExpression', cardinality 0..*).
+'dom::UnaryExpression' (role 'dom_UnaryExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression359', cardinality 0..*).
+'dom::CaseExpression' (role 'dom_CaseExpression', cardinality 0..*) is associated with 'dom::WhenClause' (role 'dom_WhenClause', cardinality 0..*).
+'dom::Constraint' (role 'dom_Constraint', cardinality 0..*) is associated with 'dom::AttributeValidationProperty' (role 'dom_AttributeValidationProperty', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression332', cardinality 0..*) is associated with 'dom::BinaryExpression' (role 'dom_BinaryExpression331', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression266', cardinality 0..*) is associated with 'dom::SelectClass' (role 'dom_SelectClass', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute3', cardinality 0..*) is associated with 'dom::ComplexType' (role 'dom_ComplexType2', cardinality 0..*).
+'dom::InExpression' (role 'dom_InExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression336', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity73', cardinality 0..*) is associated with 'dom::AttributeGroup' (role 'dom_AttributeGroup74', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute98', cardinality 0..*) is associated with 'dom::AttributeProperty' (role 'dom_AttributeProperty99', cardinality 0..*).
+'dom::ApplicationSession' (role 'dom_ApplicationSession', cardinality 0..*) is associated with 'dom::Property' (role 'dom_Property200', cardinality 0..*).
+'dom::JoinEntity' (role 'dom_JoinEntity', cardinality 0..*) is associated with 'dom::Join' (role 'dom_Join270', cardinality 0..*).
+'dom::CastFunction' (role 'dom_CastFunction', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression287', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression325', cardinality 0..*) is associated with 'dom::ParenthesizedExpression' (role 'dom_ParenthesizedExpression', cardinality 0..*).
+'dom::AttributeGroup' (role 'dom_AttributeGroup77', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity76', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute295', cardinality 0..*) is associated with 'dom::QueryParameterValue' (role 'dom_QueryParameterValue294', cardinality 0..*).
+'dom::CallableStatement' (role 'dom_CallableStatement208', cardinality 0..*) is associated with 'dom::CallOutputParameter' (role 'dom_CallOutputParameter', cardinality 0..*).
+'dom::AltWhenClause' (role 'dom_AltWhenClause', cardinality 0..*) is associated with 'dom::CaseExpression' (role 'dom_CaseExpression306', cardinality 0..*).
+'dom::AltWhenClause' (role 'dom_AltWhenClause317', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression318', cardinality 0..*).
+'dom::InExpression' (role 'dom_InExpression338', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression339', cardinality 0..*).
+'dom::DelegateOperation' (role 'dom_DelegateOperation20', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao71', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity70', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute61', cardinality 0..*) is associated with 'dom::PropertyMapping' (role 'dom_PropertyMapping60', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression327', cardinality 0..*) is associated with 'dom::AliasedExpression' (role 'dom_AliasedExpression', cardinality 0..*).
+'dom::Property' (role 'dom_Property', cardinality 0..*) is associated with 'dom::SimpleType' (role 'dom_SimpleType', cardinality 0..*).
+'dom::ConditionsBlock' (role 'dom_ConditionsBlock', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity68', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity229', cardinality 0..*) is associated with 'dom::DeleteStatement' (role 'dom_DeleteStatement', cardinality 0..*).
+'dom::QuantifiedExpression' (role 'dom_QuantifiedExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression297', cardinality 0..*).
+'dom::CollectionFunction' (role 'dom_CollectionFunction320', cardinality 0..*) is associated with 'dom::PropertyValue' (role 'dom_PropertyValue321', cardinality 0..*).
+'dom::CallInputParameter' (role 'dom_CallInputParameter', cardinality 0..*) is associated with 'dom::CallableStatement' (role 'dom_CallableStatement', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute48', cardinality 0..*) is associated with 'dom::FeatureReference' (role 'dom_FeatureReference47', cardinality 0..*).
+'dom::Column' (role 'dom_Column156', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao155', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute120', cardinality 0..*) is associated with 'dom::AttributeTextProperty' (role 'dom_AttributeTextProperty', cardinality 0..*).
+'dom::Column' (role 'dom_Column179', cardinality 0..*) is associated with 'dom::Column' (role 'dom_Column181', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity268', cardinality 0..*) is associated with 'dom::FromClass' (role 'dom_FromClass', cardinality 0..*).
+'dom::BoolLiteral' (role 'dom_BoolLiteral', cardinality 0..*) is associated with 'dom::DerivedFlag' (role 'dom_DerivedFlag', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression344', cardinality 0..*) is associated with 'dom::BetweenExpression' (role 'dom_BetweenExpression343', cardinality 0..*).
+'dom::SelectProperties' (role 'dom_SelectProperties', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression264', cardinality 0..*).
+'dom::ManyToMany' (role 'dom_ManyToMany', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao150', cardinality 0..*).
+'dom::Join' (role 'dom_Join272', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute273', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao144', cardinality 0..*) is associated with 'dom::ManyToOne' (role 'dom_ManyToOne', cardinality 0..*).
+'dom::DaoOperation' (role 'dom_DaoOperation29', cardinality 0..*) is associated with 'dom::Type' (role 'dom_Type30', cardinality 0..*).
+'dom::CallOutputParameter' (role 'dom_CallOutputParameter216', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute217', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression304', cardinality 0..*) is associated with 'dom::CaseExpression' (role 'dom_CaseExpression303', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute93', cardinality 0..*) is associated with 'dom::IncrementerReference' (role 'dom_IncrementerReference', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity66', cardinality 0..*) is associated with 'dom::AttributeGroup' (role 'dom_AttributeGroup', cardinality 0..*).
+'dom::DelegateOperation' (role 'dom_DelegateOperation18', cardinality 0..*) is associated with 'dom::DataView' (role 'dom_DataView', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao142', cardinality 0..*) is associated with 'dom::Column' (role 'dom_Column', cardinality 0..*).
+'dom::Column' (role 'dom_Column159', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao158', cardinality 0..*).
+'dom::Function' (role 'dom_Function', cardinality 0..*) is associated with 'dom::ApplicationSession' (role 'dom_ApplicationSession202', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute', cardinality 0..*) is associated with 'dom::ComplexType' (role 'dom_ComplexType', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression315', cardinality 0..*) is associated with 'dom::AltWhenClause' (role 'dom_AltWhenClause314', cardinality 0..*).
+'dom::FeatureReference' (role 'dom_FeatureReference', cardinality 0..*) is associated with 'dom::DataView' (role 'dom_DataView35', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity85', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute86', cardinality 0..*).
+'dom::SortOrderElement' (role 'dom_SortOrderElement261', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression262', cardinality 0..*).
+'dom::DataView' (role 'dom_DataView31', cardinality 0..*) is associated with 'dom::DataView' (role 'dom_DataView33', cardinality 0..*).
+'dom::AttributeGroup' (role 'dom_AttributeGroup122', cardinality 0..*) is associated with 'dom::AttributeSortOrder' (role 'dom_AttributeSortOrder', cardinality 0..*).
+'dom::Type' (role 'dom_Type', cardinality 0..*) is associated with 'dom::Parameter' (role 'dom_Parameter16', cardinality 0..*).
+'dom::Operation' (role 'dom_Operation11', cardinality 0..*) is associated with 'dom::Parameter' (role 'dom_Parameter', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao161', cardinality 0..*) is associated with 'dom::DataBaseConstraint' (role 'dom_DataBaseConstraint162', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute80', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity79', cardinality 0..*).
+'dom::FromRange' (role 'dom_FromRange', cardinality 0..*) is associated with 'dom::SelectStatement' (role 'dom_SelectStatement246', cardinality 0..*).
+'dom::TransientFlag' (role 'dom_TransientFlag', cardinality 0..*) is associated with 'dom::BoolLiteral' (role 'dom_BoolLiteral115', cardinality 0..*).
+'dom::EqualityExpr' (role 'dom_EqualityExpr', cardinality 0..*) is associated with 'dom::ExpressionFlag' (role 'dom_ExpressionFlag', cardinality 0..*).
+'dom::QueryParameterReference' (role 'dom_QueryParameterReference', cardinality 0..*) is associated with 'dom::QueryParameterValue' (role 'dom_QueryParameterValue', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression289', cardinality 0..*) is associated with 'dom::AggregateFunction' (role 'dom_AggregateFunction', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao148', cardinality 0..*) is associated with 'dom::OneToMany' (role 'dom_OneToMany', cardinality 0..*).
+'dom::PropertyMapping' (role 'dom_PropertyMapping57', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute58', cardinality 0..*).
+'dom::MemberOfExpression' (role 'dom_MemberOfExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression357', cardinality 0..*).
+'dom::AttributeGroup' (role 'dom_AttributeGroup102', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute101', cardinality 0..*).
+'dom::SelectStatement' (role 'dom_SelectStatement250', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression251', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity64', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity62', cardinality 0..*).
+'dom::Mapper' (role 'dom_Mapper55', cardinality 0..*) is associated with 'dom::PropertyMapping' (role 'dom_PropertyMapping', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute91', cardinality 0..*) is associated with 'dom::DataTypeAndTypeParameter' (role 'dom_DataTypeAndTypeParameter', cardinality 0..*).
+'dom::Type' (role 'dom_Type178', cardinality 0..*) is associated with 'dom::Column' (role 'dom_Column177', cardinality 0..*).
+'dom::TrimFunction' (role 'dom_TrimFunction284', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression285', cardinality 0..*).
+'dom::PropertyValue' (role 'dom_PropertyValue278', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression279', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute111', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute109', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity133', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao132', cardinality 0..*).
+'dom::AttributeValidationProperty' (role 'dom_AttributeValidationProperty118', cardinality 0..*) is associated with 'dom::ValidatorReference' (role 'dom_ValidatorReference', cardinality 0..*).
+'dom::QueryOperation' (role 'dom_QueryOperation169', cardinality 0..*) is associated with 'dom::QlStatement' (role 'dom_QlStatement', cardinality 0..*).
+'dom::ComplexType' (role 'dom_ComplexType50', cardinality 0..*) is associated with 'dom::Mapper' (role 'dom_Mapper', cardinality 0..*).
+'dom::Column' (role 'dom_Column192', cardinality 0..*) is associated with 'dom::OneToMany' (role 'dom_OneToMany191', cardinality 0..*).
+'dom::SelectStatement' (role 'dom_SelectStatement248', cardinality 0..*) is associated with 'dom::Join' (role 'dom_Join', cardinality 0..*).
+'dom::DeleteStatement' (role 'dom_DeleteStatement231', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression232', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression347', cardinality 0..*) is associated with 'dom::BetweenExpression' (role 'dom_BetweenExpression346', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute214', cardinality 0..*) is associated with 'dom::CallInputParameter' (role 'dom_CallInputParameter213', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity88', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute89', cardinality 0..*).
+'dom::FeatureReference' (role 'dom_FeatureReference37', cardinality 0..*) is associated with 'dom::Entity' (role 'dom_Entity', cardinality 0..*).
+'dom::CallInputParameter' (role 'dom_CallInputParameter210', cardinality 0..*) is associated with 'dom::QueryParameter' (role 'dom_QueryParameter211', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute195', cardinality 0..*) is associated with 'dom::DataBaseConstraint' (role 'dom_DataBaseConstraint194', cardinality 0..*).
+'dom::SortOrderElement' (role 'dom_SortOrderElement', cardinality 0..*) is associated with 'dom::SelectStatement' (role 'dom_SelectStatement259', cardinality 0..*).
+'dom::FeatureReference' (role 'dom_FeatureReference39', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute40', cardinality 0..*).
+'dom::PropertyAssignment' (role 'dom_PropertyAssignment241', cardinality 0..*) is associated with 'dom::PropertyValue' (role 'dom_PropertyValue', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression334', cardinality 0..*) is associated with 'dom::NotExpression' (role 'dom_NotExpression', cardinality 0..*).
+'dom::AttributeSortOrder' (role 'dom_AttributeSortOrder127', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute128', cardinality 0..*).
+'dom::SelectStatement' (role 'dom_SelectStatement323', cardinality 0..*) is associated with 'dom::SubQuery' (role 'dom_SubQuery', cardinality 0..*).
+'dom::Dao' (role 'dom_Dao138', cardinality 0..*) is associated with 'dom::QueryOperation' (role 'dom_QueryOperation', cardinality 0..*).
+'dom::ManyToOne' (role 'dom_ManyToOne183', cardinality 0..*) is associated with 'dom::Type' (role 'dom_Type184', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression349', cardinality 0..*) is associated with 'dom::LikeExpression' (role 'dom_LikeExpression', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute94', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute96', cardinality 0..*).
+'dom::Column' (role 'dom_Column189', cardinality 0..*) is associated with 'dom::ManyToOne' (role 'dom_ManyToOne188', cardinality 0..*).
+'dom::QueryParameter' (role 'dom_QueryParameter171', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute172', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute198', cardinality 0..*) is associated with 'dom::DataBaseConstraint' (role 'dom_DataBaseConstraint197', cardinality 0..*).
+'dom::UpdateStatement' (role 'dom_UpdateStatement236', cardinality 0..*) is associated with 'dom::PropertyAssignment' (role 'dom_PropertyAssignment', cardinality 0..*).
+'dom::SqlType' (role 'dom_SqlType', cardinality 0..*) is associated with 'dom::ManyToOne' (role 'dom_ManyToOne186', cardinality 0..*).
+'dom::DelegateOperation' (role 'dom_DelegateOperation14', cardinality 0..*) is associated with 'dom::Operation' (role 'dom_Operation13', cardinality 0..*).
+'dom::Attribute' (role 'dom_Attribute106', cardinality 0..*) is associated with 'dom::Attribute' (role 'dom_Attribute108', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression', cardinality 0..*) is associated with 'dom::DelegateOperation' (role 'dom_DelegateOperation27', cardinality 0..*).
+'dom::DaoOperation' (role 'dom_DaoOperation', cardinality 0..*) is associated with 'dom::DelegateOperation' (role 'dom_DelegateOperation22', cardinality 0..*).
+'dom::PropertyAssignment' (role 'dom_PropertyAssignment243', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression244', cardinality 0..*).
+'dom::DataTypeAndTypeParameter' (role 'dom_DataTypeAndTypeParameter175', cardinality 0..*) is associated with 'dom::Column' (role 'dom_Column174', cardinality 0..*).
+'dom::QueryParameter' (role 'dom_QueryParameter', cardinality 0..*) is associated with 'dom::QueryOperation' (role 'dom_QueryOperation167', cardinality 0..*).
+'dom::Entity' (role 'dom_Entity234', cardinality 0..*) is associated with 'dom::UpdateStatement' (role 'dom_UpdateStatement', cardinality 0..*).
+'dom::Operation' (role 'dom_Operation136', cardinality 0..*) is associated with 'dom::Dao' (role 'dom_Dao135', cardinality 0..*).
+'dom::LikeExpression' (role 'dom_LikeExpression351', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression352', cardinality 0..*).

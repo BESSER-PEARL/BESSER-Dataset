@@ -1,0 +1,488 @@
+The model has 200 class(es).
+The class 'ModifierExtensionsContainer' has no attributes.
+The class 'odemcustom::SetGenContextStatement' has the following attributes: 'addAfterContext' of type bool.
+The class 'SimpleStatement' has no attributes.
+The class 'odemcustom::TypeAccess' has no attributes.
+The class 'odemcustom::ExpandExpression' has no attributes.
+The class 'odemcustom::PropertyType' has no attributes.
+The class 'odemcustom::AnnotatableElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'CompositeStatement' has no attributes.
+The class 'odemcustom::StringPropertyType' has no attributes.
+The class 'odemcustom::Type' has no attributes.
+The class 'odemcustom::ActivateObject' has the following attributes: 'priority' of type int.
+The class 'odemcustom::StringLiteral' has the following attributes: 'value' of type str.
+The class 'odemcustom::Assignment' has no attributes.
+The class 'odemcustom::ClassSimilar' has no attributes.
+The class 'odemcustom::Classifier' has no attributes.
+The class 'odemcustom::BoolType' has no attributes.
+The class 'odemcustom::DoubleType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'odemcustom::Import' has the following attributes: 'file' of type str.
+The class 'odemcustom::BinaryOperator' has no attributes.
+The class 'odemcustom::StringType' has no attributes.
+The class 'odemcustom::MetaAccess' has no attributes.
+The class 'odemcustom::MappingPart' has no attributes.
+The class 'Type' has no attributes.
+The class 'odemcustom::MetaLiteral' has no attributes.
+The class 'odemcustom::Plus' has no attributes.
+The class 'odemcustom::Return' has no attributes.
+The class 'odemcustom::NamedExtension' has no attributes.
+The class 'odemcustom::Contains' has no attributes.
+The class 'odemcustom::Less' has no attributes.
+The class 'odemcustom::SizeOfSet' has no attributes.
+The class 'odemcustom::Advance' has no attributes.
+The class 'odemcustom::DeprecatedProcedureCallStatement' has no attributes.
+The class 'odemcustom::EmptySet' has no attributes.
+The class 'ExpandableElement' has no attributes.
+The class 'odemcustom::Or' has no attributes.
+The class 'odemcustom::SimpleAnnotation' has the following attributes: 'value' of type str.
+The class 'odemcustom::RhsExpression' has no attributes.
+The class 'odemcustom::ReferencePropertyType' has the following attributes: 'rawReference' of type bool.
+The class 'NamedExtension' has no attributes.
+The class 'odemcustom::SuperLiteral' has no attributes.
+The class 'odemcustom::Interface' has no attributes.
+The class 'odemcustom::AlternativeExpr' has no attributes.
+The class 'odemcustom::Pattern' has the following attributes: 'top' of type bool.
+The class 'odemcustom::EvalExpr' has no attributes.
+The class 'StructuredPropertyType' has no attributes.
+The class 'odemcustom::RemoveFromSet' has no attributes.
+The class 'Statement' has no attributes.
+The class 'odemcustom::Div' has no attributes.
+The class 'ClassSimilar' has no attributes.
+The class 'odemcustom::UnaryOperator' has no attributes.
+The class 'odemcustom::AfterInSet' has no attributes.
+The class 'odemcustom::TextualSyntaxDef' has no attributes.
+The class 'odemcustom::ResumeGenStatement' has no attributes.
+The class 'odemcustom::CompositePropertyType' has the following attributes: 'list' of type bool.
+The class 'odemcustom::QuotedClassContent' has no attributes.
+The class 'odemcustom::Neg' has no attributes.
+The class 'odemcustom::ObjectAt' has no attributes.
+The class 'odemcustom::Minus' has no attributes.
+The class 'odemcustom::EmbeddableExtensionsContainer' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'odemcustom::NativeBinding' has the following attributes: 'targetType' of type str; 'targetLanguage' of type str.
+The class 'odemcustom::FixedMappingPart' has the following attributes: 'code' of type str.
+The class 'odemcustom::Constructor' has no attributes.
+The class 'odemcustom::Not' has no attributes.
+The class 'ReferableRhsType' has no attributes.
+The class 'odemcustom::WaitUntil' has no attributes.
+The class 'odemcustom::Procedure' has the following attributes: 'clazz' of type bool.
+The class 'odemcustom::FindContainer' has no attributes.
+The class 'SetOp' has no attributes.
+The class 'odemcustom::QuotedExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'odemcustom::ReferableRhsType' has no attributes.
+The class 'odemcustom::IndexOf' has no attributes.
+The class 'odemcustom::Cast' has no attributes.
+The class 'SetStatement' has no attributes.
+The class 'odemcustom::VariableAccess' has no attributes.
+The class 'odemcustom::CompositeStatement' has no attributes.
+The class 'odemcustom::PropertyBindingExpr' has the following attributes: 'operator' of type str.
+The class 'odemcustom::BreakStatement' has no attributes.
+The class 'odemcustom::OptionalExpr' has no attributes.
+The class 'odemcustom::LastInSet' has no attributes.
+The class 'odemcustom::StructuredPropertyType' has no attributes.
+The class 'odemcustom::IfStatement' has no attributes.
+The class 'VariableAccess' has no attributes.
+The class 'odemcustom::ExpandSection' has no attributes.
+The class 'odemcustom::StartCodeBlock' has no attributes.
+The class 'odemcustom::L1Expr' has no attributes.
+The class 'odemcustom::QuotedCode' has no attributes.
+The class 'Module' has no attributes.
+The class 'odemcustom::IntPropertyType' has no attributes.
+The class 'odemcustom::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'odemcustom::SetOp' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'odemcustom::RuntimeExpr' has no attributes.
+The class 'odemcustom::CodeQuoteExpression' has no attributes.
+The class 'odemcustom::Mul' has no attributes.
+The class 'odemcustom::TrueLiteral' has no attributes.
+The class 'odemcustom::BooleanPropertyType' has the following attributes: 'terminal' of type str.
+The class 'odemcustom::ElementAccess' has no attributes.
+The class 'CodeBlock' has no attributes.
+The class 'odemcustom::SimpleStatement' has no attributes.
+The class 'PredefinedId' has no attributes.
+The class 'odemcustom::MetaExpr' has no attributes.
+The class 'ExpressionStatement' has no attributes.
+The class 'odemcustom::Terminate' has no attributes.
+The class 'odemcustom::Annotation' has no attributes.
+The class 'odemcustom::Greater' has no attributes.
+The class 'odemcustom::AddToSet' has no attributes.
+The class 'odemcustom::MeLiteral' has no attributes.
+The class 'ElementAccess' has no attributes.
+The class 'odemcustom::KeyValuePair' has no attributes.
+The class 'odemcustom::ActiveLiteral' has no attributes.
+The class 'odemcustom::IdPropertyType' has no attributes.
+The class 'odemcustom::SaveGenStatement' has no attributes.
+The class 'odemcustom::VoidType' has no attributes.
+The class 'StatementExpression' has no attributes.
+The class 'odemcustom::ExpandableElement' has no attributes.
+The class 'odemcustom::ExpressionStatement' has no attributes.
+The class 'odemcustom::CodeBlock' has no attributes.
+The class 'odemcustom::ContinueStatement' has no attributes.
+The class 'odemcustom::ArbitraryExpr' has no attributes.
+The class 'odemcustom::DynamicMappingPart' has no attributes.
+The class 'odemcustom::DepIdentifiableElement' has no attributes.
+The class 'odemcustom::Construct' has the following attributes: 'concreteSyntax' of type str.
+The class 'AnnotatableElement' has no attributes.
+The class 'odemcustom::Parameter' has no attributes.
+The class 'RhsExpression' has no attributes.
+The class 'odemcustom::StatementExpression' has no attributes.
+The class 'odemcustom::AbstractVariable' has no attributes.
+The class 'odemcustom::TypeLiteral' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'odemcustom::NotEqual' has no attributes.
+The class 'odemcustom::Wait' has no attributes.
+The class 'odemcustom::Extension' has no attributes.
+The class 'odemcustom::ExpandStatement' has no attributes.
+The class 'odemcustom::IncludePattern' has no attributes.
+The class 'odemcustom::QuotedModuleContent' has no attributes.
+The class 'odemcustom::PrimitiveType' has no attributes.
+The class 'odemcustom::ExtensionDefinition' has no attributes.
+The class 'odemcustom::MappingStatement' has no attributes.
+The class 'odemcustom::NamedElement' has the following attributes: 'name' of type str.
+The class 'odemcustom::PotentiallyHiddenIdElements' has no attributes.
+The class 'odemcustom::WhileStatement' has no attributes.
+The class 'AbstractVariable' has no attributes.
+The class 'odemcustom::IdResolution' has the following attributes: 'metaModelPlatformURI' of type str.
+The class 'odemcustom::TimeLiteral' has no attributes.
+The class 'odemcustom::RuleExpr' has no attributes.
+The class 'odemcustom::Module' has no attributes.
+The class 'odemcustom::InstanceOf' has no attributes.
+The class 'odemcustom::IntType' has no attributes.
+The class 'odemcustom::GreaterEqual' has no attributes.
+The class 'odemcustom::Model' has no attributes.
+The class 'QuotedCode' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'MappingPart' has no attributes.
+The class 'odemcustom::SetStatement' has no attributes.
+The class 'odemcustom::ClassContentExtension' has no attributes.
+The class 'odemcustom::AtLeastOneExpr' has no attributes.
+The class 'odemcustom::Equal' has no attributes.
+The class 'odemcustom::ArgumentExpression' has no attributes.
+The class 'odemcustom::IntLiteral' has the following attributes: 'value' of type int.
+The class 'odemcustom::NullLiteral' has no attributes.
+The class 'odemcustom::AnnotationApplication' has no attributes.
+The class 'odemcustom::CreateObject' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'odemcustom::PredefinedId' has no attributes.
+The class 'odemcustom::Expression' has no attributes.
+The class 'odemcustom::And' has no attributes.
+The class 'Extension' has no attributes.
+The class 'Construct' has no attributes.
+The class 'odemcustom::LessEqual' has no attributes.
+The class 'odemcustom::Statement' has no attributes.
+The class 'odemcustom::SequenceExpr' has no attributes.
+The class 'odemcustom::TargetStatement' has no attributes.
+The class 'odemcustom::FirstInSet' has no attributes.
+The class 'odemcustom::ResetGenContextStatement' has no attributes.
+The class 'odemcustom::BeforeInSet' has no attributes.
+The class 'odemcustom::Mod' has no attributes.
+The class 'odemcustom::Reactivate' has no attributes.
+The class 'odemcustom::ExtensionRule' has no attributes.
+The class 'odemcustom::TerminalExpr' has the following attributes: 'terminal' of type str.
+The class 'odemcustom::ClassAugment' has no attributes.
+The class 'odemcustom::TestStatement' has the following attributes: 'value' of type str.
+The class 'odemcustom::IdExpr' has no attributes.
+The class 'odemcustom::ForEachStatement' has no attributes.
+The class 'odemcustom::ConsiderIdElements' has no attributes.
+The class 'odemcustom::ModifierExtensionsContainer' has no attributes.
+The class 'odemcustom::Mapping' has no attributes.
+The class 'odemcustom::FalseLiteral' has no attributes.
+The class 'odemcustom::Print' has no attributes.
+The class 'odemcustom::ModuleContentExtension' has no attributes.
+The class 'odemcustom::Clazz' has the following attributes: 'active' of type bool.
+The class 'odemcustom::TypedElement' has the following attributes: 'isList' of type bool.
+The class 'EmbeddableExtensionsContainer' has no attributes.
+The class 'odemcustom::ProcedureCall' has no attributes.
+The class 'odemcustom::TsRule' has the following attributes: 'metaClassName' of type str.
+The class 'odemcustom::Variable' has the following attributes: 'control' of type bool; 'clazz' of type bool.
+The class 'odemcustom::QuotedStatements' has no attributes.
+The enumeration 'BindingExprOpKind' has the following literals: 'ADD', 'BOOL', 'ASSIGN'.
+'odemcustom::TargetStatement' is a specialization of 'Statement'.
+'odemcustom::SizeOfSet' is a specialization of 'SetOp'.
+'odemcustom::IntLiteral' is a specialization of 'Expression'.
+'odemcustom::Return' is a specialization of 'SimpleStatement'.
+'odemcustom::BoolType' is a specialization of 'PrimitiveType'.
+'odemcustom::SuperLiteral' is a specialization of 'PredefinedId'.
+'odemcustom::ExpandExpression' is a specialization of 'Expression'.
+'odemcustom::NullLiteral' is a specialization of 'Expression'.
+'odemcustom::CompositePropertyType' is a specialization of 'StructuredPropertyType'.
+'odemcustom::MappingStatement' is a specialization of 'Statement'.
+'odemcustom::MetaExpr' is a specialization of 'Expression'.
+'odemcustom::CodeQuoteExpression' is a specialization of 'Expression'.
+'odemcustom::SetStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::MeLiteral' is a specialization of 'PredefinedId'.
+'odemcustom::Less' is a specialization of 'BinaryOperator'.
+'odemcustom::MetaLiteral' is a specialization of 'PredefinedId'.
+'odemcustom::TypeAccess' is a specialization of 'ExpandableElement'.
+'odemcustom::VoidType' is a specialization of 'PrimitiveType'.
+'odemcustom::ClassContentExtension' is a specialization of 'NamedExtension'.
+'odemcustom::Variable' is a specialization of 'AbstractVariable'.
+'odemcustom::WhileStatement' is a specialization of 'CompositeStatement'.
+'odemcustom::CompositeStatement' is a specialization of 'Statement'.
+'odemcustom::PrimitiveType' is a specialization of 'Type'.
+'odemcustom::DynamicMappingPart' is a specialization of 'MappingPart'.
+'odemcustom::Statement' is a specialization of 'Construct'.
+'odemcustom::ForEachStatement' is a specialization of 'CompositeStatement'.
+'odemcustom::IntPropertyType' is a specialization of 'PropertyType'.
+'odemcustom::RuntimeExpr' is a specialization of 'RhsExpression'.
+'odemcustom::NamedElement' is a specialization of 'ExpandableElement'.
+'odemcustom::TimeLiteral' is a specialization of 'Expression'.
+'odemcustom::Procedure' is a specialization of 'TypedElement'.
+'odemcustom::FalseLiteral' is a specialization of 'Expression'.
+'odemcustom::StringPropertyType' is a specialization of 'PropertyType'.
+'odemcustom::CodeBlock' is a specialization of 'Construct'.
+'odemcustom::Procedure' is a specialization of 'CodeBlock'.
+'odemcustom::MetaAccess' is a specialization of 'VariableAccess'.
+'odemcustom::Parameter' is a specialization of 'AbstractVariable'.
+'odemcustom::AbstractVariable' is a specialization of 'NamedElement'.
+'odemcustom::Mod' is a specialization of 'BinaryOperator'.
+'odemcustom::Procedure' is a specialization of 'NamedElement'.
+'odemcustom::L1Expr' is a specialization of 'Expression'.
+'odemcustom::SequenceExpr' is a specialization of 'RhsExpression'.
+'odemcustom::IncludePattern' is a specialization of 'Statement'.
+'odemcustom::DoubleLiteral' is a specialization of 'Expression'.
+'odemcustom::EmptySet' is a specialization of 'SetStatement'.
+'odemcustom::Interface' is a specialization of 'Classifier'.
+'odemcustom::Classifier' is a specialization of 'Type'.
+'odemcustom::NotEqual' is a specialization of 'BinaryOperator'.
+'odemcustom::IdExpr' is a specialization of 'Expression'.
+'odemcustom::FindContainer' is a specialization of 'Statement'.
+'odemcustom::CreateObject' is a specialization of 'TypedElement'.
+'odemcustom::DoubleType' is a specialization of 'PrimitiveType'.
+'odemcustom::TrueLiteral' is a specialization of 'Expression'.
+'odemcustom::Plus' is a specialization of 'BinaryOperator'.
+'odemcustom::ExpandSection' is a specialization of 'CompositeStatement'.
+'odemcustom::Clazz' is a specialization of 'ClassSimilar'.
+'odemcustom::Terminate' is a specialization of 'SimpleStatement'.
+'odemcustom::ReferencePropertyType' is a specialization of 'StructuredPropertyType'.
+'odemcustom::AtLeastOneExpr' is a specialization of 'RhsExpression'.
+'odemcustom::Pattern' is a specialization of 'NamedElement'.
+'odemcustom::WaitUntil' is a specialization of 'SimpleStatement'.
+'odemcustom::And' is a specialization of 'BinaryOperator'.
+'odemcustom::TypeAccess' is a specialization of 'ElementAccess'.
+'odemcustom::AlternativeExpr' is a specialization of 'RhsExpression'.
+'odemcustom::Greater' is a specialization of 'BinaryOperator'.
+'odemcustom::IdPropertyType' is a specialization of 'PropertyType'.
+'odemcustom::Classifier' is a specialization of 'NamedElement'.
+'odemcustom::Cast' is a specialization of 'TypedElement'.
+'odemcustom::TerminalExpr' is a specialization of 'RhsExpression'.
+'odemcustom::QuotedClassContent' is a specialization of 'ClassSimilar'.
+'odemcustom::StringType' is a specialization of 'PrimitiveType'.
+'odemcustom::Procedure' is a specialization of 'AnnotatableElement'.
+'odemcustom::GreaterEqual' is a specialization of 'BinaryOperator'.
+'odemcustom::BeforeInSet' is a specialization of 'SetOp'.
+'odemcustom::Not' is a specialization of 'UnaryOperator'.
+'odemcustom::ReferableRhsType' is a specialization of 'NamedElement'.
+'odemcustom::ClassSimilar' is a specialization of 'EmbeddableExtensionsContainer'.
+'odemcustom::SaveGenStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::Variable' is a specialization of 'ModifierExtensionsContainer'.
+'odemcustom::Construct' is a specialization of 'NamedExtension'.
+'odemcustom::NamedExtension' is a specialization of 'NamedElement'.
+'odemcustom::Variable' is a specialization of 'Statement'.
+'odemcustom::SetOp' is a specialization of 'PredefinedId'.
+'odemcustom::QuotedClassContent' is a specialization of 'QuotedCode'.
+'odemcustom::ExpandStatement' is a specialization of 'Statement'.
+'odemcustom::ModuleContentExtension' is a specialization of 'NamedExtension'.
+'odemcustom::QuotedExpression' is a specialization of 'QuotedCode'.
+'odemcustom::Mul' is a specialization of 'BinaryOperator'.
+'odemcustom::Neg' is a specialization of 'UnaryOperator'.
+'odemcustom::Module' is a specialization of 'NamedElement'.
+'odemcustom::Minus' is a specialization of 'BinaryOperator'.
+'odemcustom::ObjectAt' is a specialization of 'SetOp'.
+'odemcustom::InstanceOf' is a specialization of 'BinaryOperator'.
+'odemcustom::ClassAugment' is a specialization of 'ClassSimilar'.
+'odemcustom::QuotedModuleContent' is a specialization of 'Module'.
+'odemcustom::AbstractVariable' is a specialization of 'TypedElement'.
+'odemcustom::BinaryOperator' is a specialization of 'Expression'.
+'odemcustom::LessEqual' is a specialization of 'BinaryOperator'.
+'odemcustom::Mapping' is a specialization of 'CodeBlock'.
+'odemcustom::EvalExpr' is a specialization of 'Expression'.
+'odemcustom::Div' is a specialization of 'BinaryOperator'.
+'odemcustom::RuleExpr' is a specialization of 'RhsExpression'.
+'odemcustom::OptionalExpr' is a specialization of 'RhsExpression'.
+'odemcustom::NamedExtension' is a specialization of 'Extension'.
+'odemcustom::Wait' is a specialization of 'SimpleStatement'.
+'odemcustom::StringLiteral' is a specialization of 'Expression'.
+'odemcustom::IfStatement' is a specialization of 'CompositeStatement'.
+'odemcustom::BreakStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::ConsiderIdElements' is a specialization of 'Statement'.
+'odemcustom::ElementAccess' is a specialization of 'Expression'.
+'odemcustom::ActivateObject' is a specialization of 'SimpleStatement'.
+'odemcustom::UnaryOperator' is a specialization of 'Expression'.
+'odemcustom::Advance' is a specialization of 'SimpleStatement'.
+'odemcustom::TypeLiteral' is a specialization of 'PredefinedId'.
+'odemcustom::ResetGenContextStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::FixedMappingPart' is a specialization of 'MappingPart'.
+'odemcustom::QuotedStatements' is a specialization of 'QuotedCode'.
+'odemcustom::ExpressionStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::TestStatement' is a specialization of 'Statement'.
+'odemcustom::IndexOf' is a specialization of 'SetOp'.
+'odemcustom::AddToSet' is a specialization of 'SetStatement'.
+'odemcustom::Equal' is a specialization of 'BinaryOperator'.
+'odemcustom::ClassSimilar' is a specialization of 'ModifierExtensionsContainer'.
+'odemcustom::IntType' is a specialization of 'PrimitiveType'.
+'odemcustom::ExtensionRule' is a specialization of 'NamedElement'.
+'odemcustom::Module' is a specialization of 'EmbeddableExtensionsContainer'.
+'odemcustom::CreateObject' is a specialization of 'Expression'.
+'odemcustom::ExpandExpression' is a specialization of 'StatementExpression'.
+'odemcustom::Cast' is a specialization of 'UnaryOperator'.
+'odemcustom::PropertyBindingExpr' is a specialization of 'NamedElement'.
+'odemcustom::StructuredPropertyType' is a specialization of 'PropertyType'.
+'odemcustom::Contains' is a specialization of 'SetOp'.
+'odemcustom::VariableAccess' is a specialization of 'ElementAccess'.
+'odemcustom::AfterInSet' is a specialization of 'SetOp'.
+'odemcustom::Clazz' is a specialization of 'Classifier'.
+'odemcustom::ProcedureCall' is a specialization of 'StatementExpression'.
+'odemcustom::ArbitraryExpr' is a specialization of 'RhsExpression'.
+'odemcustom::TsRule' is a specialization of 'ReferableRhsType'.
+'odemcustom::Annotation' is a specialization of 'NamedElement'.
+'odemcustom::ResumeGenStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::FirstInSet' is a specialization of 'SetOp'.
+'odemcustom::RemoveFromSet' is a specialization of 'SetStatement'.
+'odemcustom::SetGenContextStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::Or' is a specialization of 'BinaryOperator'.
+'odemcustom::VariableAccess' is a specialization of 'ExpandableElement'.
+'odemcustom::TsRule' is a specialization of 'NamedElement'.
+'odemcustom::Classifier' is a specialization of 'ReferableRhsType'.
+'odemcustom::StartCodeBlock' is a specialization of 'CodeBlock'.
+'odemcustom::DeprecatedProcedureCallStatement' is a specialization of 'ExpressionStatement'.
+'odemcustom::ActiveLiteral' is a specialization of 'Expression'.
+'odemcustom::ContinueStatement' is a specialization of 'SimpleStatement'.
+'odemcustom::PotentiallyHiddenIdElements' is a specialization of 'Statement'.
+'odemcustom::Reactivate' is a specialization of 'SimpleStatement'.
+'odemcustom::QuotedModuleContent' is a specialization of 'QuotedCode'.
+'odemcustom::BooleanPropertyType' is a specialization of 'PropertyType'.
+'odemcustom::SimpleAnnotation' is a specialization of 'NamedElement'.
+'odemcustom::LastInSet' is a specialization of 'SetOp'.
+'odemcustom::PropertyBindingExpr' is a specialization of 'RhsExpression'.
+'odemcustom::Assignment' is a specialization of 'SimpleStatement'.
+'odemcustom::ExtensionDefinition' is a specialization of 'NamedElement'.
+'odemcustom::SimpleStatement' is a specialization of 'Statement'.
+'odemcustom::Expression' is a specialization of 'Construct'.
+'odemcustom::Print' is a specialization of 'SimpleStatement'.
+'odemcustom::SetGenContextStatement' (role 'odemcustom_SetGenContextStatement', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression227', cardinality 0..*).
+'odemcustom::StartCodeBlock' (role 'odemcustom_StartCodeBlock58', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar57', cardinality 0..*).
+'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar66', cardinality 0..*) is associated with 'odemcustom::StartCodeBlock' (role 'odemcustom_StartCodeBlock67', cardinality 0..*).
+'odemcustom::Annotation' (role 'odemcustom_Annotation', cardinality 0..*) is associated with 'odemcustom::Module' (role 'odemcustom_Module13', cardinality 0..*).
+'odemcustom::IdExpr' (role 'odemcustom_IdExpr161', cardinality 0..*) is associated with 'odemcustom::IdExpr' (role 'odemcustom_IdExpr159', cardinality 0..*).
+'odemcustom::IfStatement' (role 'odemcustom_IfStatement121', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock122', cardinality 0..*).
+'odemcustom::TypedElement' (role 'odemcustom_TypedElement', cardinality 0..*) is associated with 'odemcustom::PrimitiveType' (role 'odemcustom_PrimitiveType', cardinality 0..*).
+'odemcustom::ArbitraryExpr' (role 'odemcustom_ArbitraryExpr', cardinality 0..*) is associated with 'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression200', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression87', cardinality 0..*) is associated with 'odemcustom::Variable' (role 'odemcustom_Variable86', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression216', cardinality 0..*) is associated with 'odemcustom::Mapping' (role 'odemcustom_Mapping215', cardinality 0..*).
+'odemcustom::ClassAugment' (role 'odemcustom_ClassAugment77', cardinality 0..*) is associated with 'odemcustom::Clazz' (role 'odemcustom_Clazz78', cardinality 0..*).
+'odemcustom::Import' (role 'odemcustom_Import', cardinality 0..*) is associated with 'odemcustom::Model' (role 'odemcustom_Model', cardinality 0..*).
+'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression196', cardinality 0..*) is associated with 'odemcustom::RuntimeExpr' (role 'odemcustom_RuntimeExpr', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression225', cardinality 0..*) is associated with 'odemcustom::MappingStatement' (role 'odemcustom_MappingStatement224', cardinality 0..*).
+'odemcustom::Variable' (role 'odemcustom_Variable138', cardinality 0..*) is associated with 'odemcustom::ForEachStatement' (role 'odemcustom_ForEachStatement', cardinality 0..*).
+'odemcustom::BinaryOperator' (role 'odemcustom_BinaryOperator151', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression152', cardinality 0..*).
+'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar53', cardinality 0..*) is associated with 'odemcustom::Interface' (role 'odemcustom_Interface', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression104', cardinality 0..*) is associated with 'odemcustom::Reactivate' (role 'odemcustom_Reactivate', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression98', cardinality 0..*) is associated with 'odemcustom::ProcedureCall' (role 'odemcustom_ProcedureCall', cardinality 0..*).
+'odemcustom::SetStatement' (role 'odemcustom_SetStatement114', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression115', cardinality 0..*).
+'odemcustom::WaitUntil' (role 'odemcustom_WaitUntil', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression102', cardinality 0..*).
+'odemcustom::Module' (role 'odemcustom_Module17', cardinality 0..*) is associated with 'odemcustom::Variable' (role 'odemcustom_Variable', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression94', cardinality 0..*) is associated with 'odemcustom::Assignment' (role 'odemcustom_Assignment93', cardinality 0..*).
+'odemcustom::ElementAccess' (role 'odemcustom_ElementAccess', cardinality 0..*) is associated with 'odemcustom::IdExpr' (role 'odemcustom_IdExpr172', cardinality 0..*).
+'odemcustom::Module' (role 'odemcustom_Module19', cardinality 0..*) is associated with 'odemcustom::IdResolution' (role 'odemcustom_IdResolution', cardinality 0..*).
+'odemcustom::VariableAccess' (role 'odemcustom_VariableAccess91', cardinality 0..*) is associated with 'odemcustom::Assignment' (role 'odemcustom_Assignment', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression144', cardinality 0..*) is associated with 'odemcustom::ForEachStatement' (role 'odemcustom_ForEachStatement143', cardinality 0..*).
+'odemcustom::AnnotatableElement' (role 'odemcustom_AnnotatableElement42', cardinality 0..*) is associated with 'odemcustom::SimpleAnnotation' (role 'odemcustom_SimpleAnnotation', cardinality 0..*).
+'odemcustom::Statement' (role 'odemcustom_Statement', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock', cardinality 0..*).
+'odemcustom::TsRule' (role 'odemcustom_TsRule185', cardinality 0..*) is associated with 'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression', cardinality 0..*).
+'odemcustom::ExpandExpression' (role 'odemcustom_ExpandExpression249', cardinality 0..*) is associated with 'odemcustom::ExpandableElement' (role 'odemcustom_ExpandableElement', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression231', cardinality 0..*) is associated with 'odemcustom::ResumeGenStatement' (role 'odemcustom_ResumeGenStatement', cardinality 0..*).
+'odemcustom::ReferencePropertyType' (role 'odemcustom_ReferencePropertyType', cardinality 0..*) is associated with 'odemcustom::Pattern' (role 'odemcustom_Pattern', cardinality 0..*).
+'odemcustom::IdExpr' (role 'odemcustom_IdExpr', cardinality 0..*) is associated with 'odemcustom::TypedElement' (role 'odemcustom_TypedElement25', cardinality 0..*).
+'odemcustom::ExpandStatement' (role 'odemcustom_ExpandStatement', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression237', cardinality 0..*).
+'odemcustom::WhileStatement' (role 'odemcustom_WhileStatement', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression133', cardinality 0..*).
+'odemcustom::Pattern' (role 'odemcustom_Pattern254', cardinality 0..*) is associated with 'odemcustom::Parameter' (role 'odemcustom_Parameter255', cardinality 0..*).
+'odemcustom::Pattern' (role 'odemcustom_Pattern252', cardinality 0..*) is associated with 'odemcustom::IdResolution' (role 'odemcustom_IdResolution251', cardinality 0..*).
+'odemcustom::ExtensionDefinition' (role 'odemcustom_ExtensionDefinition177', cardinality 0..*) is associated with 'odemcustom::TextualSyntaxDef' (role 'odemcustom_TextualSyntaxDef', cardinality 0..*).
+'odemcustom::AlternativeExpr' (role 'odemcustom_AlternativeExpr204', cardinality 0..*) is associated with 'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression205', cardinality 0..*).
+'odemcustom::Module' (role 'odemcustom_Module7', cardinality 0..*) is associated with 'odemcustom::Classifier' (role 'odemcustom_Classifier', cardinality 0..*).
+'odemcustom::ClassAugment' (role 'odemcustom_ClassAugment', cardinality 0..*) is associated with 'odemcustom::Module' (role 'odemcustom_Module9', cardinality 0..*).
+'odemcustom::Variable' (role 'odemcustom_Variable46', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar', cardinality 0..*).
+'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression194', cardinality 0..*) is associated with 'odemcustom::OptionalExpr' (role 'odemcustom_OptionalExpr', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock268', cardinality 0..*) is associated with 'odemcustom::FindContainer' (role 'odemcustom_FindContainer267', cardinality 0..*).
+'odemcustom::IdExpr' (role 'odemcustom_IdExpr167', cardinality 0..*) is associated with 'odemcustom::ArgumentExpression' (role 'odemcustom_ArgumentExpression', cardinality 0..*).
+'odemcustom::IfStatement' (role 'odemcustom_IfStatement', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression119', cardinality 0..*).
+'odemcustom::PropertyBindingExpr' (role 'odemcustom_PropertyBindingExpr', cardinality 0..*) is associated with 'odemcustom::PropertyType' (role 'odemcustom_PropertyType', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression106', cardinality 0..*) is associated with 'odemcustom::ActivateObject' (role 'odemcustom_ActivateObject', cardinality 0..*).
+'odemcustom::DynamicMappingPart' (role 'odemcustom_DynamicMappingPart', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression233', cardinality 0..*).
+'odemcustom::ExpressionStatement' (role 'odemcustom_ExpressionStatement', cardinality 0..*) is associated with 'odemcustom::StatementExpression' (role 'odemcustom_StatementExpression', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression218', cardinality 0..*) is associated with 'odemcustom::MetaExpr' (role 'odemcustom_MetaExpr', cardinality 0..*).
+'odemcustom::Parameter' (role 'odemcustom_Parameter75', cardinality 0..*) is associated with 'odemcustom::Constructor' (role 'odemcustom_Constructor74', cardinality 0..*).
+'odemcustom::Annotation' (role 'odemcustom_Annotation29', cardinality 0..*) is associated with 'odemcustom::Variable' (role 'odemcustom_Variable30', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression275', cardinality 0..*) is associated with 'odemcustom::IncludePattern' (role 'odemcustom_IncludePattern274', cardinality 0..*).
+'odemcustom::ModifierExtensionsContainer' (role 'odemcustom_ModifierExtensionsContainer', cardinality 0..*) is associated with 'odemcustom::Extension' (role 'odemcustom_Extension22', cardinality 0..*).
+'odemcustom::ConsiderIdElements' (role 'odemcustom_ConsiderIdElements', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression270', cardinality 0..*).
+'odemcustom::ExpandSection' (role 'odemcustom_ExpandSection', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock242', cardinality 0..*).
+'odemcustom::Classifier' (role 'odemcustom_Classifier188', cardinality 0..*) is associated with 'odemcustom::ExtensionRule' (role 'odemcustom_ExtensionRule187', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock258', cardinality 0..*) is associated with 'odemcustom::Pattern' (role 'odemcustom_Pattern257', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression', cardinality 0..*) is associated with 'odemcustom::KeyValuePair' (role 'odemcustom_KeyValuePair38', cardinality 0..*).
+'odemcustom::ForEachStatement' (role 'odemcustom_ForEachStatement140', cardinality 0..*) is associated with 'odemcustom::VariableAccess' (role 'odemcustom_VariableAccess141', cardinality 0..*).
+'odemcustom::PotentiallyHiddenIdElements' (role 'odemcustom_PotentiallyHiddenIdElements', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock260', cardinality 0..*).
+'odemcustom::AnnotationApplication' (role 'odemcustom_AnnotationApplication34', cardinality 0..*) is associated with 'odemcustom::KeyValuePair' (role 'odemcustom_KeyValuePair', cardinality 0..*).
+'odemcustom::ExtensionDefinition' (role 'odemcustom_ExtensionDefinition', cardinality 0..*) is associated with 'odemcustom::Module' (role 'odemcustom_Module11', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock265', cardinality 0..*) is associated with 'odemcustom::FindContainer' (role 'odemcustom_FindContainer264', cardinality 0..*).
+'odemcustom::ArgumentExpression' (role 'odemcustom_ArgumentExpression169', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression170', cardinality 0..*).
+'odemcustom::RuleExpr' (role 'odemcustom_RuleExpr208', cardinality 0..*) is associated with 'odemcustom::TsRule' (role 'odemcustom_TsRule209', cardinality 0..*).
+'odemcustom::Return' (role 'odemcustom_Return', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression100', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock220', cardinality 0..*) is associated with 'odemcustom::TargetStatement' (role 'odemcustom_TargetStatement', cardinality 0..*).
+'odemcustom::EmbeddableExtensionsContainer' (role 'odemcustom_EmbeddableExtensionsContainer', cardinality 0..*) is associated with 'odemcustom::Extension' (role 'odemcustom_Extension', cardinality 0..*).
+'odemcustom::AlternativeExpr' (role 'odemcustom_AlternativeExpr', cardinality 0..*) is associated with 'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression202', cardinality 0..*).
+'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar60', cardinality 0..*) is associated with 'odemcustom::StartCodeBlock' (role 'odemcustom_StartCodeBlock61', cardinality 0..*).
+'odemcustom::Statement' (role 'odemcustom_Statement247', cardinality 0..*) is associated with 'odemcustom::QuotedStatements' (role 'odemcustom_QuotedStatements', cardinality 0..*).
+'odemcustom::StartCodeBlock' (role 'odemcustom_StartCodeBlock', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar55', cardinality 0..*).
+'odemcustom::AddToSet' (role 'odemcustom_AddToSet', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression117', cardinality 0..*).
+'odemcustom::ExtensionDefinition' (role 'odemcustom_ExtensionDefinition174', cardinality 0..*) is associated with 'odemcustom::Classifier' (role 'odemcustom_Classifier175', cardinality 0..*).
+'odemcustom::Procedure' (role 'odemcustom_Procedure27', cardinality 0..*) is associated with 'odemcustom::Parameter' (role 'odemcustom_Parameter', cardinality 0..*).
+'odemcustom::BinaryOperator' (role 'odemcustom_BinaryOperator', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression149', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression96', cardinality 0..*) is associated with 'odemcustom::DeprecatedProcedureCallStatement' (role 'odemcustom_DeprecatedProcedureCallStatement', cardinality 0..*).
+'odemcustom::Clazz' (role 'odemcustom_Clazz71', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression72', cardinality 0..*).
+'odemcustom::Interface' (role 'odemcustom_Interface82', cardinality 0..*) is associated with 'odemcustom::Interface' (role 'odemcustom_Interface84', cardinality 0..*).
+'odemcustom::IfStatement' (role 'odemcustom_IfStatement127', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock128', cardinality 0..*).
+'odemcustom::Clazz' (role 'odemcustom_Clazz69', cardinality 0..*) is associated with 'odemcustom::Constructor' (role 'odemcustom_Constructor', cardinality 0..*).
+'odemcustom::Procedure' (role 'odemcustom_Procedure', cardinality 0..*) is associated with 'odemcustom::Module' (role 'odemcustom_Module15', cardinality 0..*).
+'odemcustom::TextualSyntaxDef' (role 'odemcustom_TextualSyntaxDef183', cardinality 0..*) is associated with 'odemcustom::TsRule' (role 'odemcustom_TsRule', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression245', cardinality 0..*) is associated with 'odemcustom::QuotedExpression' (role 'odemcustom_QuotedExpression', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock147', cardinality 0..*) is associated with 'odemcustom::ForEachStatement' (role 'odemcustom_ForEachStatement146', cardinality 0..*).
+'odemcustom::AnnotatableElement' (role 'odemcustom_AnnotatableElement', cardinality 0..*) is associated with 'odemcustom::AnnotationApplication' (role 'odemcustom_AnnotationApplication40', cardinality 0..*).
+'odemcustom::RuleExpr' (role 'odemcustom_RuleExpr', cardinality 0..*) is associated with 'odemcustom::ExtensionRule' (role 'odemcustom_ExtensionRule190', cardinality 0..*).
+'odemcustom::Parameter' (role 'odemcustom_Parameter262', cardinality 0..*) is associated with 'odemcustom::FindContainer' (role 'odemcustom_FindContainer', cardinality 0..*).
+'odemcustom::NativeBinding' (role 'odemcustom_NativeBinding', cardinality 0..*) is associated with 'odemcustom::Classifier' (role 'odemcustom_Classifier44', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression229', cardinality 0..*) is associated with 'odemcustom::SaveGenStatement' (role 'odemcustom_SaveGenStatement', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression235', cardinality 0..*) is associated with 'odemcustom::ExpandExpression' (role 'odemcustom_ExpandExpression', cardinality 0..*).
+'odemcustom::CodeQuoteExpression' (role 'odemcustom_CodeQuoteExpression', cardinality 0..*) is associated with 'odemcustom::QuotedCode' (role 'odemcustom_QuotedCode', cardinality 0..*).
+'odemcustom::IfStatement' (role 'odemcustom_IfStatement130', cardinality 0..*) is associated with 'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock131', cardinality 0..*).
+'odemcustom::MappingStatement' (role 'odemcustom_MappingStatement', cardinality 0..*) is associated with 'odemcustom::MappingPart' (role 'odemcustom_MappingPart222', cardinality 0..*).
+'odemcustom::CodeBlock' (role 'odemcustom_CodeBlock136', cardinality 0..*) is associated with 'odemcustom::WhileStatement' (role 'odemcustom_WhileStatement135', cardinality 0..*).
+'odemcustom::StartCodeBlock' (role 'odemcustom_StartCodeBlock64', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar63', cardinality 0..*).
+'odemcustom::EvalExpr' (role 'odemcustom_EvalExpr', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression156', cardinality 0..*).
+'odemcustom::ReferableRhsType' (role 'odemcustom_ReferableRhsType', cardinality 0..*) is associated with 'odemcustom::StructuredPropertyType' (role 'odemcustom_StructuredPropertyType', cardinality 0..*).
+'odemcustom::AnnotationApplication' (role 'odemcustom_AnnotationApplication', cardinality 0..*) is associated with 'odemcustom::Annotation' (role 'odemcustom_Annotation32', cardinality 0..*).
+'odemcustom::Pattern' (role 'odemcustom_Pattern272', cardinality 0..*) is associated with 'odemcustom::IncludePattern' (role 'odemcustom_IncludePattern', cardinality 0..*).
+'odemcustom::VariableAccess' (role 'odemcustom_VariableAccess', cardinality 0..*) is associated with 'odemcustom::KeyValuePair' (role 'odemcustom_KeyValuePair36', cardinality 0..*).
+'odemcustom::IfStatement' (role 'odemcustom_IfStatement124', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression125', cardinality 0..*).
+'odemcustom::Procedure' (role 'odemcustom_Procedure49', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar48', cardinality 0..*).
+'odemcustom::UnaryOperator' (role 'odemcustom_UnaryOperator', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression154', cardinality 0..*).
+'odemcustom::SequenceExpr' (role 'odemcustom_SequenceExpr', cardinality 0..*) is associated with 'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression192', cardinality 0..*).
+'odemcustom::Advance' (role 'odemcustom_Advance', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression108', cardinality 0..*).
+'odemcustom::RhsExpression' (role 'odemcustom_RhsExpression198', cardinality 0..*) is associated with 'odemcustom::AtLeastOneExpr' (role 'odemcustom_AtLeastOneExpr', cardinality 0..*).
+'odemcustom::ExtensionDefinition' (role 'odemcustom_ExtensionDefinition179', cardinality 0..*) is associated with 'odemcustom::Mapping' (role 'odemcustom_Mapping', cardinality 0..*).
+'odemcustom::Interface' (role 'odemcustom_Interface80', cardinality 0..*) is associated with 'odemcustom::Procedure' (role 'odemcustom_Procedure81', cardinality 0..*).
+'odemcustom::PredefinedId' (role 'odemcustom_PredefinedId', cardinality 0..*) is associated with 'odemcustom::IdExpr' (role 'odemcustom_IdExpr165', cardinality 0..*).
+'odemcustom::Expression' (role 'odemcustom_Expression240', cardinality 0..*) is associated with 'odemcustom::ExpandStatement' (role 'odemcustom_ExpandStatement239', cardinality 0..*).
+'odemcustom::NamedElement' (role 'odemcustom_NamedElement', cardinality 0..*) is associated with 'odemcustom::IdExpr' (role 'odemcustom_IdExpr163', cardinality 0..*).
+'odemcustom::Print' (role 'odemcustom_Print', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression110', cardinality 0..*).
+'odemcustom::ExtensionRule' (role 'odemcustom_ExtensionRule', cardinality 0..*) is associated with 'odemcustom::TextualSyntaxDef' (role 'odemcustom_TextualSyntaxDef181', cardinality 0..*).
+'odemcustom::SetStatement' (role 'odemcustom_SetStatement', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression112', cardinality 0..*).
+'odemcustom::Import' (role 'odemcustom_Import4', cardinality 0..*) is associated with 'odemcustom::Model' (role 'odemcustom_Model5', cardinality 0..*).
+'odemcustom::Mapping' (role 'odemcustom_Mapping213', cardinality 0..*) is associated with 'odemcustom::MappingPart' (role 'odemcustom_MappingPart', cardinality 0..*).
+'odemcustom::Clazz' (role 'odemcustom_Clazz', cardinality 0..*) is associated with 'odemcustom::ClassSimilar' (role 'odemcustom_ClassSimilar51', cardinality 0..*).
+'odemcustom::SetOp' (role 'odemcustom_SetOp', cardinality 0..*) is associated with 'odemcustom::Expression' (role 'odemcustom_Expression158', cardinality 0..*).
+'odemcustom::Module' (role 'odemcustom_Module', cardinality 0..*) is associated with 'odemcustom::Model' (role 'odemcustom_Model2', cardinality 0..*).

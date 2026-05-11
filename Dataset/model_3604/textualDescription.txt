@@ -1,0 +1,324 @@
+The model has 101 class(es).
+The class 'thingML::ProvidedPort' has no attributes.
+The class 'thingML::Enumeration' has no attributes.
+The class 'thingML::Variable' has no attributes.
+The class 'thingML::NotExpression' has no attributes.
+The class 'thingML::ConfigPropertyAssign' has no attributes.
+The class 'thingML::PrintAction' has the following attributes: 'line' of type bool.
+The class 'thingML::CastExpression' has the following attributes: 'isArray' of type bool.
+The class 'thingML::DoubleLiteral' has the following attributes: 'doubleValue' of type float.
+The class 'thingML::AbstractConnector' has no attributes.
+The class 'thingML::BooleanLiteral' has the following attributes: 'boolValue' of type bool.
+The class 'thingML::Thing' has the following attributes: 'fragment' of type bool.
+The class 'thingML::Import' has the following attributes: 'from_' of type str; 'importURI' of type str.
+The class 'thingML::TimesExpression' has no attributes.
+The class 'thingML::PropertyReference' has no attributes.
+The class 'thingML::Protocol' has no attributes.
+The class 'thingML::Message' has no attributes.
+The class 'thingML::State' has no attributes.
+The class 'thingML::NamedElement' has the following attributes: 'name' of type str.
+The class 'thingML::ArrayInit' has no attributes.
+The class 'thingML::LowerExpression' has no attributes.
+The class 'thingML::Decrement' has no attributes.
+The class 'thingML::MinusExpression' has no attributes.
+The class 'thingML::ThingMLModel' has no attributes.
+The class 'thingML::OrExpression' has no attributes.
+The class 'thingML::ForAction' has no attributes.
+The class 'thingML::Property' has the following attributes: 'readonly' of type bool.
+The class 'thingML::CharLiteral' has the following attributes: 'charValue' of type str.
+The class 'thingML::GreaterOrEqualExpression' has no attributes.
+The class 'Action' has no attributes.
+The class 'Literal' has no attributes.
+The class 'thingML::LowerOrEqualExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'thingML::EqualsExpression' has no attributes.
+The class 'thingML::TypeRef' has the following attributes: 'isArray' of type bool.
+The class 'thingML::AnnotatedElement' has no attributes.
+The class 'thingML::Literal' has no attributes.
+The class 'thingML::ReturnAction' has no attributes.
+The class 'thingML::LoopAction' has no attributes.
+The class 'thingML::EventReference' has no attributes.
+The class 'thingML::LocalVariable' has the following attributes: 'readonly' of type bool.
+The class 'thingML::Session' has no attributes.
+The class 'thingML::PrimitiveType' has the following attributes: 'ByteSize' of type str.
+The class 'AbstractConnector' has no attributes.
+The class 'thingML::Function' has the following attributes: 'abstract' of type bool.
+The class 'AnnotatedElement' has no attributes.
+The class 'Port' has no attributes.
+The class 'thingML::PlatformAnnotation' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'thingML::ActionBlock' has no attributes.
+The class 'thingML::ExternalConnector' has no attributes.
+The class 'thingML::FunctionCallExpression' has no attributes.
+The class 'thingML::Action' has no attributes.
+The class 'thingML::IntegerLiteral' has the following attributes: 'intValue' of type str.
+The class 'thingML::StringLiteral' has the following attributes: 'stringValue' of type str.
+The class 'thingML::EnumerationLiteral' has no attributes.
+The class 'thingML::UnaryMinus' has no attributes.
+The class 'thingML::DivExpression' has no attributes.
+The class 'StateContainer' has no attributes.
+The class 'thingML::Instance' has no attributes.
+The class 'thingML::Expression' has no attributes.
+The class 'Handler' has no attributes.
+The class 'thingML::ObjectType' has no attributes.
+The class 'thingML::FunctionCallStatement' has no attributes.
+The class 'thingML::PropertyAssign' has no attributes.
+The class 'thingML::StartSession' has no attributes.
+The class 'Event' has no attributes.
+The class 'thingML::InternalPort' has no attributes.
+The class 'thingML::Parameter' has no attributes.
+The class 'thingML::Region' has no attributes.
+The class 'thingML::Connector' has no attributes.
+The class 'thingML::ErrorAction' has the following attributes: 'line' of type bool.
+The class 'thingML::FinalState' has no attributes.
+The class 'thingML::RequiredPort' has the following attributes: 'optional' of type bool.
+The class 'thingML::ReceiveMessage' has no attributes.
+The class 'thingML::Type' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'thingML::ExternExpression' has the following attributes: 'expression' of type str.
+The class 'thingML::CompositeState' has no attributes.
+The class 'thingML::ModExpression' has no attributes.
+The class 'thingML::Configuration' has no attributes.
+The class 'thingML::InternalTransition' has no attributes.
+The class 'thingML::ConditionalAction' has no attributes.
+The class 'thingML::SendAction' has no attributes.
+The class 'thingML::StateContainer' has the following attributes: 'history' of type bool.
+The class 'Variable' has no attributes.
+The class 'thingML::GreaterExpression' has no attributes.
+The class 'thingML::Transition' has no attributes.
+The class 'thingML::VariableAssignment' has no attributes.
+The class 'thingML::NotEqualsExpression' has no attributes.
+The class 'thingML::Port' has no attributes.
+The class 'Type' has no attributes.
+The class 'thingML::ExternStatement' has the following attributes: 'statement' of type str.
+The class 'thingML::PlusExpression' has no attributes.
+The class 'thingML::Event' has no attributes.
+The class 'thingML::Increment' has no attributes.
+The class 'thingML::AndExpression' has no attributes.
+The class 'thingML::ExpressionGroup' has no attributes.
+The class 'thingML::ArrayIndex' has no attributes.
+The class 'thingML::EnumLiteralRef' has no attributes.
+The class 'thingML::Handler' has no attributes.
+The class 'State' has no attributes.
+The class 'thingML::ByteLiteral' has the following attributes: 'byteValue' of type str.
+'thingML::Connector' is a specialization of 'AbstractConnector'.
+'thingML::Protocol' is a specialization of 'AnnotatedElement'.
+'thingML::State' is a specialization of 'AnnotatedElement'.
+'thingML::ProvidedPort' is a specialization of 'Port'.
+'thingML::ConditionalAction' is a specialization of 'Action'.
+'thingML::Instance' is a specialization of 'NamedElement'.
+'thingML::VariableAssignment' is a specialization of 'Action'.
+'thingML::AbstractConnector' is a specialization of 'AnnotatedElement'.
+'thingML::ReceiveMessage' is a specialization of 'Event'.
+'thingML::CastExpression' is a specialization of 'Expression'.
+'thingML::Transition' is a specialization of 'Handler'.
+'thingML::MinusExpression' is a specialization of 'Expression'.
+'thingML::Instance' is a specialization of 'AnnotatedElement'.
+'thingML::DivExpression' is a specialization of 'Expression'.
+'thingML::TimesExpression' is a specialization of 'Expression'.
+'thingML::AbstractConnector' is a specialization of 'NamedElement'.
+'thingML::CharLiteral' is a specialization of 'Literal'.
+'thingML::Session' is a specialization of 'StateContainer'.
+'thingML::Configuration' is a specialization of 'AnnotatedElement'.
+'thingML::Type' is a specialization of 'AnnotatedElement'.
+'thingML::ArrayInit' is a specialization of 'Expression'.
+'thingML::Message' is a specialization of 'AnnotatedElement'.
+'thingML::ObjectType' is a specialization of 'Type'.
+'thingML::ExpressionGroup' is a specialization of 'Expression'.
+'thingML::ForAction' is a specialization of 'Action'.
+'thingML::ReturnAction' is a specialization of 'Action'.
+'thingML::PropertyAssign' is a specialization of 'AnnotatedElement'.
+'thingML::Protocol' is a specialization of 'NamedElement'.
+'thingML::Parameter' is a specialization of 'Variable'.
+'thingML::FunctionCallStatement' is a specialization of 'Action'.
+'thingML::GreaterExpression' is a specialization of 'Expression'.
+'thingML::ByteLiteral' is a specialization of 'Literal'.
+'thingML::ActionBlock' is a specialization of 'Action'.
+'thingML::NotEqualsExpression' is a specialization of 'Expression'.
+'thingML::Message' is a specialization of 'NamedElement'.
+'thingML::PrimitiveType' is a specialization of 'Type'.
+'thingML::OrExpression' is a specialization of 'Expression'.
+'thingML::LocalVariable' is a specialization of 'Variable'.
+'thingML::RequiredPort' is a specialization of 'Port'.
+'thingML::PrintAction' is a specialization of 'Action'.
+'thingML::Event' is a specialization of 'NamedElement'.
+'thingML::EnumerationLiteral' is a specialization of 'AnnotatedElement'.
+'thingML::StartSession' is a specialization of 'Action'.
+'thingML::InternalTransition' is a specialization of 'Handler'.
+'thingML::AndExpression' is a specialization of 'Expression'.
+'thingML::Variable' is a specialization of 'NamedElement'.
+'thingML::Increment' is a specialization of 'Action'.
+'thingML::Handler' is a specialization of 'AnnotatedElement'.
+'thingML::EnumerationLiteral' is a specialization of 'NamedElement'.
+'thingML::FinalState' is a specialization of 'State'.
+'thingML::NotExpression' is a specialization of 'Expression'.
+'thingML::Type' is a specialization of 'NamedElement'.
+'thingML::Region' is a specialization of 'StateContainer'.
+'thingML::Property' is a specialization of 'Variable'.
+'thingML::ArrayIndex' is a specialization of 'Expression'.
+'thingML::EventReference' is a specialization of 'Expression'.
+'thingML::PropertyReference' is a specialization of 'Expression'.
+'thingML::ExternStatement' is a specialization of 'Action'.
+'thingML::StateContainer' is a specialization of 'NamedElement'.
+'thingML::Port' is a specialization of 'AnnotatedElement'.
+'thingML::EnumLiteralRef' is a specialization of 'Literal'.
+'thingML::IntegerLiteral' is a specialization of 'Literal'.
+'thingML::BooleanLiteral' is a specialization of 'Literal'.
+'thingML::Decrement' is a specialization of 'Action'.
+'thingML::DoubleLiteral' is a specialization of 'Literal'.
+'thingML::Handler' is a specialization of 'NamedElement'.
+'thingML::ModExpression' is a specialization of 'Expression'.
+'thingML::SendAction' is a specialization of 'Action'.
+'thingML::Port' is a specialization of 'NamedElement'.
+'thingML::CompositeState' is a specialization of 'StateContainer'.
+'thingML::FunctionCallExpression' is a specialization of 'Expression'.
+'thingML::ErrorAction' is a specialization of 'Action'.
+'thingML::StateContainer' is a specialization of 'AnnotatedElement'.
+'thingML::StringLiteral' is a specialization of 'Literal'.
+'thingML::State' is a specialization of 'NamedElement'.
+'thingML::LowerOrEqualExpression' is a specialization of 'Expression'.
+'thingML::Function' is a specialization of 'AnnotatedElement'.
+'thingML::Literal' is a specialization of 'Expression'.
+'thingML::LoopAction' is a specialization of 'Action'.
+'thingML::LocalVariable' is a specialization of 'Action'.
+'thingML::EqualsExpression' is a specialization of 'Expression'.
+'thingML::Thing' is a specialization of 'Type'.
+'thingML::Configuration' is a specialization of 'NamedElement'.
+'thingML::CompositeState' is a specialization of 'State'.
+'thingML::ExternExpression' is a specialization of 'Expression'.
+'thingML::UnaryMinus' is a specialization of 'Expression'.
+'thingML::Function' is a specialization of 'NamedElement'.
+'thingML::LowerExpression' is a specialization of 'Expression'.
+'thingML::InternalPort' is a specialization of 'Port'.
+'thingML::ExternalConnector' is a specialization of 'AbstractConnector'.
+'thingML::Enumeration' is a specialization of 'Type'.
+'thingML::GreaterOrEqualExpression' is a specialization of 'Expression'.
+'thingML::PlusExpression' is a specialization of 'Expression'.
+'thingML::Variable' is a specialization of 'AnnotatedElement'.
+'thingML::ForAction' (role 'thingML_ForAction130', cardinality 0..*) is associated with 'thingML::Parameter' (role 'thingML_Parameter131', cardinality 0..*).
+'thingML::EnumerationLiteral' (role 'thingML_EnumerationLiteral19', cardinality 0..*) is associated with 'thingML::Literal' (role 'thingML_Literal', cardinality 0..*).
+'thingML::Thing' (role 'thingML_Thing25', cardinality 0..*) is associated with 'thingML::Port' (role 'thingML_Port', cardinality 0..*).
+'thingML::TypeRef' (role 'thingML_TypeRef47', cardinality 0..*) is associated with 'thingML::Function' (role 'thingML_Function46', cardinality 0..*).
+'thingML::VariableAssignment' (role 'thingML_VariableAssignment118', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression119', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action', cardinality 0..*) is associated with 'thingML::Function' (role 'thingML_Function49', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression39', cardinality 0..*) is associated with 'thingML::PropertyAssign' (role 'thingML_PropertyAssign38', cardinality 0..*).
+'thingML::Transition' (role 'thingML_Transition82', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State83', cardinality 0..*).
+'thingML::Type' (role 'thingML_Type295', cardinality 0..*) is associated with 'thingML::CastExpression' (role 'thingML_CastExpression294', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression277', cardinality 0..*) is associated with 'thingML::TimesExpression' (role 'thingML_TimesExpression', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression104', cardinality 0..*) is associated with 'thingML::ExternStatement' (role 'thingML_ExternStatement', cardinality 0..*).
+'thingML::ThingMLModel' (role 'thingML_ThingMLModel', cardinality 0..*) is associated with 'thingML::Import' (role 'thingML_Import', cardinality 0..*).
+'thingML::FunctionCallStatement' (role 'thingML_FunctionCallStatement161', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression162', cardinality 0..*).
+'thingML::NotEqualsExpression' (role 'thingML_NotEqualsExpression244', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression245', cardinality 0..*).
+'thingML::PlusExpression' (role 'thingML_PlusExpression269', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression270', cardinality 0..*).
+'thingML::Port' (role 'thingML_Port60', cardinality 0..*) is associated with 'thingML::Message' (role 'thingML_Message61', cardinality 0..*).
+'thingML::Variable' (role 'thingML_Variable126', cardinality 0..*) is associated with 'thingML::Decrement' (role 'thingML_Decrement', cardinality 0..*).
+'thingML::LowerExpression' (role 'thingML_LowerExpression254', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression255', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression301', cardinality 0..*) is associated with 'thingML::UnaryMinus' (role 'thingML_UnaryMinus', cardinality 0..*).
+'thingML::Port' (role 'thingML_Port222', cardinality 0..*) is associated with 'thingML::ExternalConnector' (role 'thingML_ExternalConnector221', cardinality 0..*).
+'thingML::SendAction' (role 'thingML_SendAction', cardinality 0..*) is associated with 'thingML::Port' (role 'thingML_Port108', cardinality 0..*).
+'thingML::Instance' (role 'thingML_Instance', cardinality 0..*) is associated with 'thingML::Configuration' (role 'thingML_Configuration186', cardinality 0..*).
+'thingML::Property' (role 'thingML_Property36', cardinality 0..*) is associated with 'thingML::PropertyAssign' (role 'thingML_PropertyAssign35', cardinality 0..*).
+'thingML::Enumeration' (role 'thingML_Enumeration168', cardinality 0..*) is associated with 'thingML::EnumLiteralRef' (role 'thingML_EnumLiteralRef', cardinality 0..*).
+'thingML::Handler' (role 'thingML_Handler79', cardinality 0..*) is associated with 'thingML::Action' (role 'thingML_Action80', cardinality 0..*).
+'thingML::Message' (role 'thingML_Message58', cardinality 0..*) is associated with 'thingML::Port' (role 'thingML_Port57', cardinality 0..*).
+'thingML::Session' (role 'thingML_Session157', cardinality 0..*) is associated with 'thingML::StartSession' (role 'thingML_StartSession', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression306', cardinality 0..*) is associated with 'thingML::ArrayIndex' (role 'thingML_ArrayIndex305', cardinality 0..*).
+'thingML::Thing' (role 'thingML_Thing193', cardinality 0..*) is associated with 'thingML::Instance' (role 'thingML_Instance192', cardinality 0..*).
+'thingML::Property' (role 'thingML_Property63', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State', cardinality 0..*).
+'thingML::State' (role 'thingML_State92', cardinality 0..*) is associated with 'thingML::StateContainer' (role 'thingML_StateContainer', cardinality 0..*).
+'thingML::Parameter' (role 'thingML_Parameter128', cardinality 0..*) is associated with 'thingML::ForAction' (role 'thingML_ForAction', cardinality 0..*).
+'thingML::Thing' (role 'thingML_Thing29', cardinality 0..*) is associated with 'thingML::Function' (role 'thingML_Function', cardinality 0..*).
+'thingML::Protocol' (role 'thingML_Protocol', cardinality 0..*) is associated with 'thingML::ThingMLModel' (role 'thingML_ThingMLModel4', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression267', cardinality 0..*) is associated with 'thingML::PlusExpression' (role 'thingML_PlusExpression', cardinality 0..*).
+'thingML::Thing' (role 'thingML_Thing33', cardinality 0..*) is associated with 'thingML::CompositeState' (role 'thingML_CompositeState', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression275', cardinality 0..*) is associated with 'thingML::MinusExpression' (role 'thingML_MinusExpression274', cardinality 0..*).
+'thingML::CastExpression' (role 'thingML_CastExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression292', cardinality 0..*).
+'thingML::Function' (role 'thingML_Function181', cardinality 0..*) is associated with 'thingML::FunctionCallExpression' (role 'thingML_FunctionCallExpression', cardinality 0..*).
+'thingML::Function' (role 'thingML_Function44', cardinality 0..*) is associated with 'thingML::Parameter' (role 'thingML_Parameter', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action69', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State68', cardinality 0..*).
+'thingML::EnumerationLiteral' (role 'thingML_EnumerationLiteral', cardinality 0..*) is associated with 'thingML::Enumeration' (role 'thingML_Enumeration17', cardinality 0..*).
+'thingML::EqualsExpression' (role 'thingML_EqualsExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression237', cardinality 0..*).
+'thingML::Property' (role 'thingML_Property51', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression52', cardinality 0..*).
+'thingML::Variable' (role 'thingML_Variable116', cardinality 0..*) is associated with 'thingML::VariableAssignment' (role 'thingML_VariableAssignment', cardinality 0..*).
+'thingML::ConditionalAction' (role 'thingML_ConditionalAction148', cardinality 0..*) is associated with 'thingML::Action' (role 'thingML_Action149', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression303', cardinality 0..*) is associated with 'thingML::ArrayIndex' (role 'thingML_ArrayIndex', cardinality 0..*).
+'thingML::LocalVariable' (role 'thingML_LocalVariable', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression106', cardinality 0..*).
+'thingML::ActionBlock' (role 'thingML_ActionBlock', cardinality 0..*) is associated with 'thingML::Action' (role 'thingML_Action102', cardinality 0..*).
+'thingML::Type' (role 'thingML_Type11', cardinality 0..*) is associated with 'thingML::TypeRef' (role 'thingML_TypeRef10', cardinality 0..*).
+'thingML::NotEqualsExpression' (role 'thingML_NotEqualsExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression242', cardinality 0..*).
+'thingML::EventReference' (role 'thingML_EventReference178', cardinality 0..*) is associated with 'thingML::Parameter' (role 'thingML_Parameter179', cardinality 0..*).
+'thingML::Type' (role 'thingML_Type', cardinality 0..*) is associated with 'thingML::ThingMLModel' (role 'thingML_ThingMLModel2', cardinality 0..*).
+'thingML::InternalTransition' (role 'thingML_InternalTransition', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State71', cardinality 0..*).
+'thingML::AndExpression' (role 'thingML_AndExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression232', cardinality 0..*).
+'thingML::LowerOrEqualExpression' (role 'thingML_LowerOrEqualExpression264', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression265', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression250', cardinality 0..*) is associated with 'thingML::GreaterExpression' (role 'thingML_GreaterExpression249', cardinality 0..*).
+'thingML::Connector' (role 'thingML_Connector214', cardinality 0..*) is associated with 'thingML::Instance' (role 'thingML_Instance215', cardinality 0..*).
+'thingML::Parameter' (role 'thingML_Parameter55', cardinality 0..*) is associated with 'thingML::Message' (role 'thingML_Message54', cardinality 0..*).
+'thingML::Function' (role 'thingML_Function159', cardinality 0..*) is associated with 'thingML::FunctionCallStatement' (role 'thingML_FunctionCallStatement', cardinality 0..*).
+'thingML::PropertyReference' (role 'thingML_PropertyReference', cardinality 0..*) is associated with 'thingML::ForAction' (role 'thingML_ForAction133', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression114', cardinality 0..*) is associated with 'thingML::SendAction' (role 'thingML_SendAction113', cardinality 0..*).
+'thingML::ArrayInit' (role 'thingML_ArrayInit', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression166', cardinality 0..*).
+'thingML::NotExpression' (role 'thingML_NotExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression299', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action141', cardinality 0..*) is associated with 'thingML::LoopAction' (role 'thingML_LoopAction140', cardinality 0..*).
+'thingML::Connector' (role 'thingML_Connector', cardinality 0..*) is associated with 'thingML::Instance' (role 'thingML_Instance210', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action66', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State65', cardinality 0..*).
+'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign207', cardinality 0..*) is associated with 'thingML::PlatformAnnotation' (role 'thingML_PlatformAnnotation208', cardinality 0..*).
+'thingML::Instance' (role 'thingML_Instance196', cardinality 0..*) is associated with 'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign195', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression260', cardinality 0..*) is associated with 'thingML::GreaterOrEqualExpression' (role 'thingML_GreaterOrEqualExpression259', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression90', cardinality 0..*) is associated with 'thingML::Session' (role 'thingML_Session89', cardinality 0..*).
+'thingML::ErrorAction' (role 'thingML_ErrorAction', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression155', cardinality 0..*).
+'thingML::DivExpression' (role 'thingML_DivExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression282', cardinality 0..*).
+'thingML::AnnotatedElement' (role 'thingML_AnnotatedElement', cardinality 0..*) is associated with 'thingML::PlatformAnnotation' (role 'thingML_PlatformAnnotation', cardinality 0..*).
+'thingML::VariableAssignment' (role 'thingML_VariableAssignment121', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression122', cardinality 0..*).
+'thingML::Configuration' (role 'thingML_Configuration188', cardinality 0..*) is associated with 'thingML::AbstractConnector' (role 'thingML_AbstractConnector', cardinality 0..*).
+'thingML::LowerExpression' (role 'thingML_LowerExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression252', cardinality 0..*).
+'thingML::EventReference' (role 'thingML_EventReference', cardinality 0..*) is associated with 'thingML::Event' (role 'thingML_Event176', cardinality 0..*).
+'thingML::PropertyAssign' (role 'thingML_PropertyAssign', cardinality 0..*) is associated with 'thingML::Thing' (role 'thingML_Thing31', cardinality 0..*).
+'thingML::TypeRef' (role 'thingML_TypeRef', cardinality 0..*) is associated with 'thingML::Variable' (role 'thingML_Variable', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression153', cardinality 0..*) is associated with 'thingML::PrintAction' (role 'thingML_PrintAction', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression285', cardinality 0..*) is associated with 'thingML::DivExpression' (role 'thingML_DivExpression284', cardinality 0..*).
+'thingML::TypeRef' (role 'thingML_TypeRef13', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression', cardinality 0..*).
+'thingML::Handler' (role 'thingML_Handler', cardinality 0..*) is associated with 'thingML::Event' (role 'thingML_Event', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression257', cardinality 0..*) is associated with 'thingML::GreaterOrEqualExpression' (role 'thingML_GreaterOrEqualExpression', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression272', cardinality 0..*) is associated with 'thingML::MinusExpression' (role 'thingML_MinusExpression', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression164', cardinality 0..*) is associated with 'thingML::ExternExpression' (role 'thingML_ExternExpression', cardinality 0..*).
+'thingML::RequiredPort' (role 'thingML_RequiredPort', cardinality 0..*) is associated with 'thingML::Connector' (role 'thingML_Connector212', cardinality 0..*).
+'thingML::Property' (role 'thingML_Property', cardinality 0..*) is associated with 'thingML::Thing' (role 'thingML_Thing27', cardinality 0..*).
+'thingML::Increment' (role 'thingML_Increment', cardinality 0..*) is associated with 'thingML::Variable' (role 'thingML_Variable124', cardinality 0..*).
+'thingML::Thing' (role 'thingML_Thing', cardinality 0..*) is associated with 'thingML::Thing' (role 'thingML_Thing20', cardinality 0..*).
+'thingML::ReturnAction' (role 'thingML_ReturnAction', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression151', cardinality 0..*).
+'thingML::EnumLiteralRef' (role 'thingML_EnumLiteralRef170', cardinality 0..*) is associated with 'thingML::EnumerationLiteral' (role 'thingML_EnumerationLiteral171', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression227', cardinality 0..*) is associated with 'thingML::OrExpression' (role 'thingML_OrExpression', cardinality 0..*).
+'thingML::TimesExpression' (role 'thingML_TimesExpression279', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression280', cardinality 0..*).
+'thingML::ProvidedPort' (role 'thingML_ProvidedPort', cardinality 0..*) is associated with 'thingML::Connector' (role 'thingML_Connector217', cardinality 0..*).
+'thingML::Instance' (role 'thingML_Instance219', cardinality 0..*) is associated with 'thingML::ExternalConnector' (role 'thingML_ExternalConnector', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression235', cardinality 0..*) is associated with 'thingML::AndExpression' (role 'thingML_AndExpression234', cardinality 0..*).
+'thingML::Property' (role 'thingML_Property199', cardinality 0..*) is associated with 'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign198', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action146', cardinality 0..*) is associated with 'thingML::ConditionalAction' (role 'thingML_ConditionalAction145', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression240', cardinality 0..*) is associated with 'thingML::EqualsExpression' (role 'thingML_EqualsExpression239', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression205', cardinality 0..*) is associated with 'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign204', cardinality 0..*).
+'thingML::ModExpression' (role 'thingML_ModExpression289', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression290', cardinality 0..*).
+'thingML::Configuration' (role 'thingML_Configuration', cardinality 0..*) is associated with 'thingML::ThingMLModel' (role 'thingML_ThingMLModel6', cardinality 0..*).
+'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign', cardinality 0..*) is associated with 'thingML::Configuration' (role 'thingML_Configuration190', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression42', cardinality 0..*) is associated with 'thingML::PropertyAssign' (role 'thingML_PropertyAssign41', cardinality 0..*).
+'thingML::CompositeState' (role 'thingML_CompositeState87', cardinality 0..*) is associated with 'thingML::Session' (role 'thingML_Session', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression262', cardinality 0..*) is associated with 'thingML::LowerOrEqualExpression' (role 'thingML_LowerOrEqualExpression', cardinality 0..*).
+'thingML::StateContainer' (role 'thingML_StateContainer94', cardinality 0..*) is associated with 'thingML::State' (role 'thingML_State95', cardinality 0..*).
+'thingML::Variable' (role 'thingML_Variable174', cardinality 0..*) is associated with 'thingML::PropertyReference' (role 'thingML_PropertyReference173', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression202', cardinality 0..*) is associated with 'thingML::ConfigPropertyAssign' (role 'thingML_ConfigPropertyAssign201', cardinality 0..*).
+'thingML::ReceiveMessage' (role 'thingML_ReceiveMessage', cardinality 0..*) is associated with 'thingML::Port' (role 'thingML_Port97', cardinality 0..*).
+'thingML::Protocol' (role 'thingML_Protocol225', cardinality 0..*) is associated with 'thingML::ExternalConnector' (role 'thingML_ExternalConnector224', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression297', cardinality 0..*) is associated with 'thingML::ExpressionGroup' (role 'thingML_ExpressionGroup', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression138', cardinality 0..*) is associated with 'thingML::LoopAction' (role 'thingML_LoopAction', cardinality 0..*).
+'thingML::ReceiveMessage' (role 'thingML_ReceiveMessage99', cardinality 0..*) is associated with 'thingML::Message' (role 'thingML_Message100', cardinality 0..*).
+'thingML::Handler' (role 'thingML_Handler76', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression77', cardinality 0..*).
+'thingML::Enumeration' (role 'thingML_Enumeration', cardinality 0..*) is associated with 'thingML::TypeRef' (role 'thingML_TypeRef15', cardinality 0..*).
+'thingML::CompositeState' (role 'thingML_CompositeState85', cardinality 0..*) is associated with 'thingML::Region' (role 'thingML_Region', cardinality 0..*).
+'thingML::SendAction' (role 'thingML_SendAction110', cardinality 0..*) is associated with 'thingML::Message' (role 'thingML_Message111', cardinality 0..*).
+'thingML::OrExpression' (role 'thingML_OrExpression229', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression230', cardinality 0..*).
+'thingML::FunctionCallExpression' (role 'thingML_FunctionCallExpression183', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression184', cardinality 0..*).
+'thingML::ModExpression' (role 'thingML_ModExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression287', cardinality 0..*).
+'thingML::Expression' (role 'thingML_Expression143', cardinality 0..*) is associated with 'thingML::ConditionalAction' (role 'thingML_ConditionalAction', cardinality 0..*).
+'thingML::Action' (role 'thingML_Action136', cardinality 0..*) is associated with 'thingML::ForAction' (role 'thingML_ForAction135', cardinality 0..*).
+'thingML::GreaterExpression' (role 'thingML_GreaterExpression', cardinality 0..*) is associated with 'thingML::Expression' (role 'thingML_Expression247', cardinality 0..*).
+'thingML::Message' (role 'thingML_Message', cardinality 0..*) is associated with 'thingML::Thing' (role 'thingML_Thing23', cardinality 0..*).
+'thingML::State' (role 'thingML_State73', cardinality 0..*) is associated with 'thingML::Transition' (role 'thingML_Transition', cardinality 0..*).

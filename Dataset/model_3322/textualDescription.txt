@@ -1,0 +1,158 @@
+The model has 51 class(es).
+The class 'simpleJava::creating::aux' has no attributes.
+The class 'type::declaration' has no attributes.
+The class 'simpleJava::exp::aux' has no attributes.
+The class 'simpleJava::try::statement' has no attributes.
+The class 'simpleJava::creating::expression' has no attributes.
+The class 'simpleJava::package::statement' has no attributes.
+The class 'simpleJava::logical::expression' has the following attributes: 'operador' of type str.
+The class 'expression::aux' has no attributes.
+The class 'simpleJava::type::specifier' has the following attributes: 'nome' of type str.
+The class 'expression' has no attributes.
+The class 'simpleJava::doc::comment' has the following attributes: 'comentario' of type str.
+The class 'simpleJava::literal::expression' has the following attributes: 'string' of type str; 'inteiro' of type str; 'l_float' of type str; 'decimal' of type str.
+The class 'simpleJava::switch::statement' has no attributes.
+The class 'simpleJava::bit::expression' has the following attributes: 'operador' of type str.
+The class 'simpleJava::static::initializer' has no attributes.
+The class 'simpleJava::package::name::aux' has the following attributes: 'nomePacote' of type str.
+The class 'simpleJava::variable::declarator' has the following attributes: 'op' of type str; 'nomeVariavel' of type str.
+The class 'simpleJava::numeric::expression' has the following attributes: 'operador' of type str.
+The class 'simpleJava::interface::declaration' has the following attributes: 'nomeInterface' of type str.
+The class 'simpleJava::constructor::declaration' has the following attributes: 'nomeContrutor' of type str.
+The class 'simpleJava::newBlock' has no attributes.
+The class 'simpleJava::method::declaration' has the following attributes: 'nomeMetodo' of type str.
+The class 'simpleJava::expression::aux' has the following attributes: 'operador' of type str.
+The class 'simpleJava::variable::declaration' has no attributes.
+The class 'exp::aux' has no attributes.
+The class 'simpleJava::class::declaration' has the following attributes: 'nomeClasse' of type str.
+The class 'simpleJava::name' has the following attributes: 'nome' of type str.
+The class 'newBlock' has no attributes.
+The class 'simpleJava::while::statement' has no attributes.
+The class 'simpleJava::field::declaration' has no attributes.
+The class 'simpleJava::arglist' has the following attributes: 'nomeParametro' of type str.
+The class 'simpleJava::parameter' has the following attributes: 'nomeParametro' of type str.
+The class 'simpleJava::do::statement' has no attributes.
+The class 'simpleJava::variable::initializer' has no attributes.
+The class 'simpleJava::statement::block' has no attributes.
+The class 'creating::aux' has no attributes.
+The class 'simpleJava::type' has no attributes.
+The class 'simpleJava::if::statement' has no attributes.
+The class 'simpleJava::aux' has no attributes.
+The class 'simpleJava::expression' has the following attributes: 'identificador' of type str.
+The class 'simpleJava::for::statement' has no attributes.
+The class 'simpleJava::statement' has the following attributes: 'break_' of type str; 'continue_' of type str.
+The class 'simpleJava::mais::aux' has the following attributes: 'operador' of type str.
+The class 'simpleJava::type::declaration' has no attributes.
+The class 'simpleJava::Model' has no attributes.
+The class 'simpleJava::parameter::list' has no attributes.
+The class 'variable::declarator' has no attributes.
+The class 'simpleJava::compilation::unit' has no attributes.
+The class 'Model' has no attributes.
+The class 'simpleJava::import::statement' has no attributes.
+The class 'simpleJava::MODIFIER' has the following attributes: 'modificador' of type str.
+'simpleJava::expression' is a specialization of 'expression::aux'.
+'simpleJava::aux' is a specialization of 'creating::aux'.
+'simpleJava::type' is a specialization of 'exp::aux'.
+'simpleJava::constructor::declaration' is a specialization of 'newBlock'.
+'simpleJava::arglist' is a specialization of 'variable::declarator'.
+'simpleJava::aux' is a specialization of 'expression::aux'.
+'simpleJava::compilation::unit' is a specialization of 'Model'.
+'simpleJava::exp::aux' is a specialization of 'expression'.
+'simpleJava::doc::comment' is a specialization of 'type::declaration'.
+'simpleJava::name' is a specialization of 'expression::aux'.
+'simpleJava::expression' (role 'simpleJava_expression93', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement92', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression90', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement89', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block181', cardinality 0..*) is associated with 'simpleJava::static::initializer' (role 'simpleJava_static_initializer180', cardinality 0..*).
+'simpleJava::field::declaration' (role 'simpleJava_field_declaration41', cardinality 0..*) is associated with 'simpleJava::constructor::declaration' (role 'simpleJava_constructor_declaration', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression205', cardinality 0..*) is associated with 'simpleJava::literal::expression' (role 'simpleJava_literal_expression', cardinality 0..*).
+'simpleJava::import::statement' (role 'simpleJava_import_statement', cardinality 0..*) is associated with 'simpleJava::compilation::unit' (role 'simpleJava_compilation_unit2', cardinality 0..*).
+'simpleJava::for::statement' (role 'simpleJava_for_statement', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement77', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement118', cardinality 0..*) is associated with 'simpleJava::if::statement' (role 'simpleJava_if_statement117', cardinality 0..*).
+'simpleJava::logical::expression' (role 'simpleJava_logical_expression221', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression222', cardinality 0..*).
+'simpleJava::type' (role 'simpleJava_type241', cardinality 0..*) is associated with 'simpleJava::type::specifier' (role 'simpleJava_type_specifier242', cardinality 0..*).
+'simpleJava::type' (role 'simpleJava_type234', cardinality 0..*) is associated with 'simpleJava::arglist' (role 'simpleJava_arglist233', cardinality 0..*).
+'simpleJava::method::declaration' (role 'simpleJava_method_declaration', cardinality 0..*) is associated with 'simpleJava::field::declaration' (role 'simpleJava_field_declaration39', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression163', cardinality 0..*) is associated with 'simpleJava::switch::statement' (role 'simpleJava_switch_statement162', cardinality 0..*).
+'simpleJava::switch::statement' (role 'simpleJava_switch_statement168', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement169', cardinality 0..*).
+'simpleJava::compilation::unit' (role 'simpleJava_compilation_unit4', cardinality 0..*) is associated with 'simpleJava::type::declaration' (role 'simpleJava_type_declaration', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression139', cardinality 0..*) is associated with 'simpleJava::for::statement' (role 'simpleJava_for_statement138', cardinality 0..*).
+'simpleJava::field::declaration' (role 'simpleJava_field_declaration43', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration', cardinality 0..*).
+'simpleJava::bit::expression' (role 'simpleJava_bit_expression224', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression225', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression166', cardinality 0..*) is associated with 'simpleJava::switch::statement' (role 'simpleJava_switch_statement165', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block104', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration103', cardinality 0..*).
+'simpleJava::type::specifier' (role 'simpleJava_type_specifier', cardinality 0..*) is associated with 'simpleJava::creating::expression' (role 'simpleJava_creating_expression187', cardinality 0..*).
+'simpleJava::parameter::list' (role 'simpleJava_parameter_list58', cardinality 0..*) is associated with 'simpleJava::parameter' (role 'simpleJava_parameter59', cardinality 0..*).
+'simpleJava::variable::initializer' (role 'simpleJava_variable_initializer', cardinality 0..*) is associated with 'simpleJava::variable::declarator' (role 'simpleJava_variable_declarator106', cardinality 0..*).
+'simpleJava::constructor::declaration' (role 'simpleJava_constructor_declaration177', cardinality 0..*) is associated with 'simpleJava::statement::block' (role 'simpleJava_statement_block178', cardinality 0..*).
+'simpleJava::package::name::aux' (role 'simpleJava_package_name_aux239', cardinality 0..*) is associated with 'simpleJava::package::name::aux' (role 'simpleJava_package_name_aux237', cardinality 0..*).
+'simpleJava::MODIFIER' (role 'simpleJava_MODIFIER48', cardinality 0..*) is associated with 'simpleJava::method::declaration' (role 'simpleJava_method_declaration47', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement', cardinality 0..*) is associated with 'simpleJava::statement::block' (role 'simpleJava_statement_block61', cardinality 0..*).
+'simpleJava::MODIFIER' (role 'simpleJava_MODIFIER172', cardinality 0..*) is associated with 'simpleJava::constructor::declaration' (role 'simpleJava_constructor_declaration171', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression202', cardinality 0..*) is associated with 'simpleJava::creating::expression' (role 'simpleJava_creating_expression203', cardinality 0..*).
+'simpleJava::name' (role 'simpleJava_name183', cardinality 0..*) is associated with 'simpleJava::creating::expression' (role 'simpleJava_creating_expression', cardinality 0..*).
+'simpleJava::arglist' (role 'simpleJava_arglist217', cardinality 0..*) is associated with 'simpleJava::creating::aux' (role 'simpleJava_creating_aux216', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block69', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement68', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression127', cardinality 0..*) is associated with 'simpleJava::do::statement' (role 'simpleJava_do_statement126', cardinality 0..*).
+'simpleJava::parameter::list' (role 'simpleJava_parameter_list', cardinality 0..*) is associated with 'simpleJava::method::declaration' (role 'simpleJava_method_declaration52', cardinality 0..*).
+'simpleJava::parameter::list' (role 'simpleJava_parameter_list175', cardinality 0..*) is associated with 'simpleJava::constructor::declaration' (role 'simpleJava_constructor_declaration174', cardinality 0..*).
+'simpleJava::field::declaration' (role 'simpleJava_field_declaration45', cardinality 0..*) is associated with 'simpleJava::static::initializer' (role 'simpleJava_static_initializer', cardinality 0..*).
+'simpleJava::while::statement' (role 'simpleJava_while_statement132', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement133', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement66', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression', cardinality 0..*).
+'simpleJava::exp::aux' (role 'simpleJava_exp_aux', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression194', cardinality 0..*).
+'simpleJava::doc::comment' (role 'simpleJava_doc_comment', cardinality 0..*) is associated with 'simpleJava::field::declaration' (role 'simpleJava_field_declaration37', cardinality 0..*).
+'simpleJava::do::statement' (role 'simpleJava_do_statement', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement73', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block157', cardinality 0..*) is associated with 'simpleJava::try::statement' (role 'simpleJava_try_statement156', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement63', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration64', cardinality 0..*).
+'simpleJava::compilation::unit' (role 'simpleJava_compilation_unit', cardinality 0..*) is associated with 'simpleJava::package::statement' (role 'simpleJava_package_statement', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement87', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement85', cardinality 0..*).
+'simpleJava::field::declaration' (role 'simpleJava_field_declaration35', cardinality 0..*) is associated with 'simpleJava::interface::declaration' (role 'simpleJava_interface_declaration34', cardinality 0..*).
+'simpleJava::expression::aux' (role 'simpleJava_expression_aux208', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression209', cardinality 0..*).
+'simpleJava::method::declaration' (role 'simpleJava_method_declaration50', cardinality 0..*) is associated with 'simpleJava::type' (role 'simpleJava_type', cardinality 0..*).
+'simpleJava::for::statement' (role 'simpleJava_for_statement144', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression145', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement71', cardinality 0..*) is associated with 'simpleJava::if::statement' (role 'simpleJava_if_statement', cardinality 0..*).
+'simpleJava::creating::expression' (role 'simpleJava_creating_expression189', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression190', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement124', cardinality 0..*) is associated with 'simpleJava::do::statement' (role 'simpleJava_do_statement123', cardinality 0..*).
+'simpleJava::statement' (role 'simpleJava_statement83', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression84', cardinality 0..*).
+'simpleJava::expression::aux' (role 'simpleJava_expression_aux212', cardinality 0..*) is associated with 'simpleJava::expression::aux' (role 'simpleJava_expression_aux214', cardinality 0..*).
+'simpleJava::MODIFIER' (role 'simpleJava_MODIFIER', cardinality 0..*) is associated with 'simpleJava::class::declaration' (role 'simpleJava_class_declaration15', cardinality 0..*).
+'simpleJava::MODIFIER' (role 'simpleJava_MODIFIER96', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration95', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression196', cardinality 0..*) is associated with 'simpleJava::logical::expression' (role 'simpleJava_logical_expression', cardinality 0..*).
+'simpleJava::if::statement' (role 'simpleJava_if_statement120', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement121', cardinality 0..*).
+'simpleJava::try::statement' (role 'simpleJava_try_statement', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement79', cardinality 0..*).
+'simpleJava::class::declaration' (role 'simpleJava_class_declaration26', cardinality 0..*) is associated with 'simpleJava::class::declaration' (role 'simpleJava_class_declaration24', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression200', cardinality 0..*) is associated with 'simpleJava::bit::expression' (role 'simpleJava_bit_expression', cardinality 0..*).
+'simpleJava::name' (role 'simpleJava_name236', cardinality 0..*) is associated with 'simpleJava::package::name::aux' (role 'simpleJava_package_name_aux', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression228', cardinality 0..*) is associated with 'simpleJava::numeric::expression' (role 'simpleJava_numeric_expression227', cardinality 0..*).
+'simpleJava::interface::declaration' (role 'simpleJava_interface_declaration31', cardinality 0..*) is associated with 'simpleJava::name' (role 'simpleJava_name32', cardinality 0..*).
+'simpleJava::creating::expression' (role 'simpleJava_creating_expression185', cardinality 0..*) is associated with 'simpleJava::creating::aux' (role 'simpleJava_creating_aux', cardinality 0..*).
+'simpleJava::variable::declarator' (role 'simpleJava_variable_declarator', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration101', cardinality 0..*).
+'simpleJava::aux' (role 'simpleJava_aux', cardinality 0..*) is associated with 'simpleJava::expression' (role 'simpleJava_expression219', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block160', cardinality 0..*) is associated with 'simpleJava::try::statement' (role 'simpleJava_try_statement159', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression130', cardinality 0..*) is associated with 'simpleJava::while::statement' (role 'simpleJava_while_statement129', cardinality 0..*).
+'simpleJava::name' (role 'simpleJava_name18', cardinality 0..*) is associated with 'simpleJava::class::declaration' (role 'simpleJava_class_declaration17', cardinality 0..*).
+'simpleJava::name' (role 'simpleJava_name9', cardinality 0..*) is associated with 'simpleJava::import::statement' (role 'simpleJava_import_statement8', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression115', cardinality 0..*) is associated with 'simpleJava::if::statement' (role 'simpleJava_if_statement114', cardinality 0..*).
+'simpleJava::expression::aux' (role 'simpleJava_expression_aux', cardinality 0..*) is associated with 'simpleJava::arglist' (role 'simpleJava_arglist', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression198', cardinality 0..*) is associated with 'simpleJava::numeric::expression' (role 'simpleJava_numeric_expression', cardinality 0..*).
+'simpleJava::package::statement' (role 'simpleJava_package_statement6', cardinality 0..*) is associated with 'simpleJava::name' (role 'simpleJava_name', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block', cardinality 0..*) is associated with 'simpleJava::method::declaration' (role 'simpleJava_method_declaration54', cardinality 0..*).
+'simpleJava::interface::declaration' (role 'simpleJava_interface_declaration28', cardinality 0..*) is associated with 'simpleJava::MODIFIER' (role 'simpleJava_MODIFIER29', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression109', cardinality 0..*) is associated with 'simpleJava::variable::initializer' (role 'simpleJava_variable_initializer108', cardinality 0..*).
+'simpleJava::for::statement' (role 'simpleJava_for_statement135', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration136', cardinality 0..*).
+'simpleJava::type' (role 'simpleJava_type56', cardinality 0..*) is associated with 'simpleJava::parameter' (role 'simpleJava_parameter', cardinality 0..*).
+'simpleJava::try::statement' (role 'simpleJava_try_statement153', cardinality 0..*) is associated with 'simpleJava::parameter' (role 'simpleJava_parameter154', cardinality 0..*).
+'simpleJava::type' (role 'simpleJava_type99', cardinality 0..*) is associated with 'simpleJava::variable::declaration' (role 'simpleJava_variable_declaration98', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression142', cardinality 0..*) is associated with 'simpleJava::for::statement' (role 'simpleJava_for_statement141', cardinality 0..*).
+'simpleJava::expression::aux' (role 'simpleJava_expression_aux211', cardinality 0..*) is associated with 'simpleJava::mais::aux' (role 'simpleJava_mais_aux', cardinality 0..*).
+'simpleJava::switch::statement' (role 'simpleJava_switch_statement', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement81', cardinality 0..*).
+'simpleJava::for::statement' (role 'simpleJava_for_statement147', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement148', cardinality 0..*).
+'simpleJava::field::declaration' (role 'simpleJava_field_declaration', cardinality 0..*) is associated with 'simpleJava::class::declaration' (role 'simpleJava_class_declaration23', cardinality 0..*).
+'simpleJava::type::declaration' (role 'simpleJava_type_declaration11', cardinality 0..*) is associated with 'simpleJava::class::declaration' (role 'simpleJava_class_declaration', cardinality 0..*).
+'simpleJava::creating::expression' (role 'simpleJava_creating_expression192', cardinality 0..*) is associated with 'simpleJava::newBlock' (role 'simpleJava_newBlock', cardinality 0..*).
+'simpleJava::interface::declaration' (role 'simpleJava_interface_declaration', cardinality 0..*) is associated with 'simpleJava::type::declaration' (role 'simpleJava_type_declaration13', cardinality 0..*).
+'simpleJava::class::declaration' (role 'simpleJava_class_declaration20', cardinality 0..*) is associated with 'simpleJava::name' (role 'simpleJava_name21', cardinality 0..*).
+'simpleJava::variable::initializer' (role 'simpleJava_variable_initializer112', cardinality 0..*) is associated with 'simpleJava::variable::initializer' (role 'simpleJava_variable_initializer110', cardinality 0..*).
+'simpleJava::name' (role 'simpleJava_name245', cardinality 0..*) is associated with 'simpleJava::type' (role 'simpleJava_type244', cardinality 0..*).
+'simpleJava::expression' (role 'simpleJava_expression231', cardinality 0..*) is associated with 'simpleJava::arglist' (role 'simpleJava_arglist230', cardinality 0..*).
+'simpleJava::while::statement' (role 'simpleJava_while_statement', cardinality 0..*) is associated with 'simpleJava::statement' (role 'simpleJava_statement75', cardinality 0..*).
+'simpleJava::statement::block' (role 'simpleJava_statement_block151', cardinality 0..*) is associated with 'simpleJava::try::statement' (role 'simpleJava_try_statement150', cardinality 0..*).

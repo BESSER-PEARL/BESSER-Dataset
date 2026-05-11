@@ -1,0 +1,96 @@
+The model has 41 class(es).
+The class 'hlp::SubtractExpression' has no attributes.
+The class 'hlp::UnaryExpression' has no attributes.
+The class 'hlp::BinaryExpression' has no attributes.
+The class 'ConditionalLoop' has no attributes.
+The class 'hlp::MultiplyExpression' has no attributes.
+The class 'hlp::ScheduleInstruction' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'hlp::Statement' has no attributes.
+The class 'hlp::Task' has no attributes.
+The class 'hlp::AtomicExpression' has no attributes.
+The class 'hlp::Nameable' has the following attributes: 'name' of type str.
+The class 'hlp::HighLevelProgram' has no attributes.
+The class 'hlp::Variable' has no attributes.
+The class 'hlp::DivideExpression' has no attributes.
+The class 'hlp::ParenthesisExpression' has no attributes.
+The class 'Loop' has no attributes.
+The class 'hlp::SynchronizedStatement' has no attributes.
+The class 'hlp::ConditionalLoop' has no attributes.
+The class 'AtomicExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'hlp::WhileLoop' has no attributes.
+The class 'hlp::AddExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'hlp::IfStatement' has no attributes.
+The class 'hlp::ForLoop' has the following attributes: 'incrementing' of type bool.
+The class 'hlp::Condition' has the following attributes: 'operator' of type str.
+The class 'hlp::ArithmeticExpression' has no attributes.
+The class 'hlp::ExpressionStatement' has no attributes.
+The class 'hlp::VariableDeclaration' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'hlp::Assignment' has no attributes.
+The class 'hlp::LiteralValue' has the following attributes: 'rawValue' of type str.
+The class 'hlp::VariableReference' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'hlp::Block' has no attributes.
+The class 'hlp::Expression' has no attributes.
+The class 'hlp::UnaryMinusExpression' has no attributes.
+The class 'hlp::Loop' has no attributes.
+The class 'hlp::VariableDeclarationScope' has no attributes.
+The class 'VariableDeclarationScope' has no attributes.
+The enumeration 'ComparisonOperator' has the following literals: 'GREATER_THAN', 'EQUAL', 'LESS_THAN_OR_EQUAL', 'LESS_THAN', 'UNEQUAL', 'GREATER_THAN_OR_EQUAL'.
+'hlp::UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+'hlp::SubtractExpression' is a specialization of 'ArithmeticExpression'.
+'hlp::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'hlp::SynchronizedStatement' is a specialization of 'Statement'.
+'hlp::Task' is a specialization of 'Nameable'.
+'hlp::DivideExpression' is a specialization of 'ArithmeticExpression'.
+'hlp::HighLevelProgram' is a specialization of 'Nameable'.
+'hlp::VariableReference' is a specialization of 'AtomicExpression'.
+'hlp::Loop' is a specialization of 'Statement'.
+'hlp::LiteralValue' is a specialization of 'AtomicExpression'.
+'hlp::ForLoop' is a specialization of 'Loop'.
+'hlp::UnaryExpression' is a specialization of 'Expression'.
+'hlp::AddExpression' is a specialization of 'ArithmeticExpression'.
+'hlp::AtomicExpression' is a specialization of 'Expression'.
+'hlp::ParenthesisExpression' is a specialization of 'Expression'.
+'hlp::ConditionalLoop' is a specialization of 'Loop'.
+'hlp::HighLevelProgram' is a specialization of 'VariableDeclarationScope'.
+'hlp::IfStatement' is a specialization of 'Statement'.
+'hlp::MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+'hlp::Assignment' is a specialization of 'Statement'.
+'hlp::BinaryExpression' is a specialization of 'Expression'.
+'hlp::Variable' is a specialization of 'Nameable'.
+'hlp::WhileLoop' is a specialization of 'ConditionalLoop'.
+'hlp::Task' is a specialization of 'VariableDeclarationScope'.
+'hlp::ExpressionStatement' is a specialization of 'Statement'.
+'hlp::ParenthesisExpression' (role 'hlp_ParenthesisExpression', cardinality 0..*) is associated with 'hlp::Expression' (role 'hlp_Expression19', cardinality 0..*).
+'hlp::Block' (role 'hlp_Block', cardinality 0..*) is associated with 'hlp::Statement' (role 'hlp_Statement', cardinality 0..*).
+'hlp::IfStatement' (role 'hlp_IfStatement24', cardinality 0..*) is associated with 'hlp::Block' (role 'hlp_Block25', cardinality 0..*).
+'hlp::Block' (role 'hlp_Block22', cardinality 0..*) is associated with 'hlp::IfStatement' (role 'hlp_IfStatement', cardinality 0..*).
+'hlp::VariableDeclaration' (role 'hlp_VariableDeclaration35', cardinality 0..*) is associated with 'hlp::VariableDeclarationScope' (role 'hlp_VariableDeclarationScope', cardinality 0..*).
+'hlp::SynchronizedStatement' (role 'hlp_SynchronizedStatement55', cardinality 0..*) is associated with 'hlp::VariableReference' (role 'hlp_VariableReference56', cardinality 0..*).
+'hlp::Loop' (role 'hlp_Loop', cardinality 0..*) is associated with 'hlp::Block' (role 'hlp_Block37', cardinality 0..*).
+'hlp::ForLoop' (role 'hlp_ForLoop43', cardinality 0..*) is associated with 'hlp::Expression' (role 'hlp_Expression44', cardinality 0..*).
+'hlp::ForLoop' (role 'hlp_ForLoop', cardinality 0..*) is associated with 'hlp::VariableReference' (role 'hlp_VariableReference41', cardinality 0..*).
+'hlp::Condition' (role 'hlp_Condition32', cardinality 0..*) is associated with 'hlp::Expression' (role 'hlp_Expression33', cardinality 0..*).
+'hlp::Assignment' (role 'hlp_Assignment', cardinality 0..*) is associated with 'hlp::VariableReference' (role 'hlp_VariableReference', cardinality 0..*).
+'hlp::SynchronizedStatement' (role 'hlp_SynchronizedStatement', cardinality 0..*) is associated with 'hlp::Block' (role 'hlp_Block53', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression49', cardinality 0..*) is associated with 'hlp::ExpressionStatement' (role 'hlp_ExpressionStatement', cardinality 0..*).
+'hlp::ScheduleInstruction' (role 'hlp_ScheduleInstruction', cardinality 0..*) is associated with 'hlp::HighLevelProgram' (role 'hlp_HighLevelProgram2', cardinality 0..*).
+'hlp::Condition' (role 'hlp_Condition', cardinality 0..*) is associated with 'hlp::IfStatement' (role 'hlp_IfStatement27', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression', cardinality 0..*) is associated with 'hlp::VariableDeclaration' (role 'hlp_VariableDeclaration5', cardinality 0..*).
+'hlp::Task' (role 'hlp_Task58', cardinality 0..*) is associated with 'hlp::Block' (role 'hlp_Block59', cardinality 0..*).
+'hlp::BinaryExpression' (role 'hlp_BinaryExpression', cardinality 0..*) is associated with 'hlp::Expression' (role 'hlp_Expression14', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression47', cardinality 0..*) is associated with 'hlp::ForLoop' (role 'hlp_ForLoop46', cardinality 0..*).
+'hlp::VariableReference' (role 'hlp_VariableReference11', cardinality 0..*) is associated with 'hlp::Variable' (role 'hlp_Variable12', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression9', cardinality 0..*) is associated with 'hlp::Assignment' (role 'hlp_Assignment8', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression17', cardinality 0..*) is associated with 'hlp::BinaryExpression' (role 'hlp_BinaryExpression16', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression30', cardinality 0..*) is associated with 'hlp::Condition' (role 'hlp_Condition29', cardinality 0..*).
+'hlp::VariableDeclaration' (role 'hlp_VariableDeclaration', cardinality 0..*) is associated with 'hlp::Variable' (role 'hlp_Variable', cardinality 0..*).
+'hlp::Task' (role 'hlp_Task', cardinality 0..*) is associated with 'hlp::HighLevelProgram' (role 'hlp_HighLevelProgram', cardinality 0..*).
+'hlp::Expression' (role 'hlp_Expression51', cardinality 0..*) is associated with 'hlp::UnaryExpression' (role 'hlp_UnaryExpression', cardinality 0..*).
+'hlp::ConditionalLoop' (role 'hlp_ConditionalLoop', cardinality 0..*) is associated with 'hlp::Condition' (role 'hlp_Condition39', cardinality 0..*).
+'hlp::Task' (role 'hlp_Task62', cardinality 0..*) is associated with 'hlp::ScheduleInstruction' (role 'hlp_ScheduleInstruction61', cardinality 0..*).

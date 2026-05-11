@@ -1,0 +1,35 @@
+The model has 17 class(es).
+The class 'actions::Parameter' has no attributes.
+The class 'actions::Role' has no attributes.
+The class 'actions::Condition' has no attributes.
+The class 'actions::AtomicActionResult' has the following attributes: 'hasDensity' of type float.
+The class 'AtomicProcess' has no attributes.
+The class 'actions::Participant' has no attributes.
+The class 'Action' has no attributes.
+The class 'Process' has no attributes.
+The class 'ActionResult' has no attributes.
+The class 'actions::Distribution' has the following attributes: 'id' of type int; 'datapoint' of type float; 'density' of type float; 'version' of type int.
+The class 'actions::CompositeAction' has no attributes.
+The class 'actions::Expression' has no attributes.
+The class 'actions::AtomicAction' has no attributes.
+The class 'actions::ActionResult' has the following attributes: 'version' of type int; 'id' of type int.
+The class 'actions::Action' has no attributes.
+The class 'actions::ActionsCollection' has the following attributes: 'id' of type int; 'ns' of type str; 'version' of type int.
+The class 'CompositeProcess' has no attributes.
+'actions::CompositeAction' is a specialization of 'Action'.
+'actions::AtomicActionResult' is a specialization of 'ActionResult'.
+'actions::Action' is a specialization of 'Process'.
+'actions::CompositeAction' is a specialization of 'CompositeProcess'.
+'actions::AtomicAction' is a specialization of 'Action'.
+'actions::AtomicAction' is a specialization of 'AtomicProcess'.
+'actions::Distribution' (role 'actions_Distribution', cardinality 0..*) is associated with 'actions::AtomicActionResult' (role 'actions_AtomicActionResult9', cardinality 0..*).
+'actions::AtomicActionResult' (role 'actions_AtomicActionResult11', cardinality 0..*) is associated with 'actions::Distribution' (role 'actions_Distribution12', cardinality 0..*).
+'actions::AtomicAction' (role 'actions_AtomicAction', cardinality 0..*) is associated with 'actions::AtomicActionResult' (role 'actions_AtomicActionResult', cardinality 0..*).
+'actions::ActionsCollection' (role 'actions_ActionsCollection19', cardinality 0..*) is associated with 'actions::Participant' (role 'actions_Participant', cardinality 0..*).
+'actions::AtomicActionResult' (role 'actions_AtomicActionResult14', cardinality 0..*) is associated with 'actions::Distribution' (role 'actions_Distribution15', cardinality 0..*).
+'actions::Expression' (role 'actions_Expression', cardinality 0..*) is associated with 'actions::ActionResult' (role 'actions_ActionResult4', cardinality 0..*).
+'actions::Expression' (role 'actions_Expression7', cardinality 0..*) is associated with 'actions::ActionResult' (role 'actions_ActionResult6', cardinality 0..*).
+'actions::Role' (role 'actions_Role', cardinality 0..*) is associated with 'actions::Action' (role 'actions_Action', cardinality 0..*).
+'actions::Action' (role 'actions_Action17', cardinality 0..*) is associated with 'actions::ActionsCollection' (role 'actions_ActionsCollection', cardinality 0..*).
+'actions::ActionsCollection' (role 'actions_ActionsCollection21', cardinality 0..*) is associated with 'actions::Parameter' (role 'actions_Parameter', cardinality 0..*).
+'actions::ActionResult' (role 'actions_ActionResult', cardinality 0..*) is associated with 'actions::Condition' (role 'actions_Condition', cardinality 0..*).

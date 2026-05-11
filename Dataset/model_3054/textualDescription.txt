@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'hibernate::NamedElement' has the following attributes: 'name' of type str.
+The class 'hibernate::DataType' has the following attributes: 'type' of type str.
+The class 'hibernate::Package' has no attributes.
+The class 'Feature' has no attributes.
+The class 'hibernate::Feature' has the following attributes: 'many' of type bool; 'annotations' of type str.
+The class 'hibernate::Entity' has the following attributes: 'annotations' of type str.
+The class 'hibernate::Module' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'hibernate::Reference' has no attributes.
+The enumeration 'DataTypes' has the following literals: 'Long', 'Object', 'Boolean', 'Integer', 'Double', 'String'.
+The enumeration 'EntityAnnotation' has the following literals: 'Cache'.
+The enumeration 'FetureAnnotation' has the following literals: 'Id', 'Index', 'Ignore', 'Load'.
+'hibernate::Module' is a specialization of 'NamedElement'.
+'hibernate::Package' is a specialization of 'NamedElement'.
+'hibernate::DataType' is a specialization of 'Feature'.
+'hibernate::Reference' is a specialization of 'Feature'.
+'hibernate::Feature' is a specialization of 'NamedElement'.
+'hibernate::Entity' is a specialization of 'NamedElement'.
+'hibernate::Reference' (role 'hibernate_Reference', cardinality 0..*) is associated with 'hibernate::Entity' (role 'hibernate_Entity9', cardinality 0..*).
+'hibernate::Entity' (role 'hibernate_Entity4', cardinality 0..*) is associated with 'hibernate::Feature' (role 'hibernate_Feature', cardinality 0..*).
+'hibernate::Package' (role 'hibernate_Package', cardinality 0..*) is associated with 'hibernate::Module' (role 'hibernate_Module', cardinality 0..*).
+'hibernate::Entity' (role 'hibernate_Entity5', cardinality 0..*) is associated with 'hibernate::Entity' (role 'hibernate_Entity7', cardinality 0..*).
+'hibernate::Package' (role 'hibernate_Package2', cardinality 0..*) is associated with 'hibernate::Entity' (role 'hibernate_Entity', cardinality 0..*).

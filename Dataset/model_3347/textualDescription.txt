@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Map::Map' has no attributes.
+The class 'Map::Address' has the following attributes: 'name' of type str; 'latitude' of type float; 'downtown' of type bool; 'telephone' of type str; 'longitude' of type float; 'pictures' of type str; 'description' of type str.
+'Map::Map' (role 'Map_Map', cardinality 0..*) is associated with 'Map::Address' (role 'Map_Address', cardinality 0..*).

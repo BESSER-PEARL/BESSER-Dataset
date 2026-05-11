@@ -1,0 +1,25 @@
+The model has 10 class(es).
+The class 'Person' has no attributes.
+The class 'VorkursModel::Person' has the following attributes: 'gender' of type str; 'firstname' of type str; 'subject' of type str; 'lastname' of type str.
+The class 'VorkursModel::Student' has no attributes.
+The class 'VorkursModel::Qualification' has the following attributes: 'hasProgrammingExperience' of type bool; 'programminLanguage' of type str; 'hasPCExperience' of type bool; 'Language' of type str.
+The class 'VorkursModel::RegistrationSystem' has no attributes.
+The class 'VorkursModel::Room' has the following attributes: 'hasComputers' of type bool; 'roomNr' of type int; 'sockets' of type bool; 'seats' of type int.
+The class 'VorkursModel::Address' has the following attributes: 'street' of type str; 'state' of type str; 'zip' of type str; 'city' of type str.
+The class 'VorkursModel::TeachingAssistant' has no attributes.
+The class 'VorkursModel::Contact' has the following attributes: 'phonenumber' of type str; 'Email' of type str.
+The class 'VorkursModel::Notebook' has the following attributes: 'OperatingSystem' of type str; 'hasWLAN' of type bool.
+The enumeration 'Nationality' has the following literals: 'other', 'French', 'German', 'English', 'Spanish'.
+The enumeration 'Gender' has the following literals: 'Male', 'Female'.
+The enumeration 'ProgrammingLanguage' has the following literals: 'C_CPP', 'other', 'Java', 'Pascal_Delphi'.
+The enumeration 'OperatingSystem' has the following literals: 'other', 'Linux_Unix', 'MacOS', 'Windows'.
+The enumeration 'Subject' has the following literals: 'ComputerScience', 'Physics', 'BusinessEngineering', 'CES', 'Mathematics', 'AppliedGeographics', 'MechanicalEngineering'.
+'VorkursModel::Student' is a specialization of 'Person'.
+'VorkursModel::TeachingAssistant' is a specialization of 'Person'.
+'VorkursModel::Person' (role 'VorkursModel_Person5', cardinality 0..*) is associated with 'VorkursModel::Notebook' (role 'VorkursModel_Notebook', cardinality 0..*).
+'VorkursModel::RegistrationSystem' (role 'VorkursModel_RegistrationSystem', cardinality 0..*) is associated with 'VorkursModel::Student' (role 'VorkursModel_Student', cardinality 0..*).
+'VorkursModel::Contact' (role 'VorkursModel_Contact9', cardinality 0..*) is associated with 'VorkursModel::Address' (role 'VorkursModel_Address', cardinality 0..*).
+'VorkursModel::TeachingAssistant' (role 'VorkursModel_TeachingAssistant', cardinality 0..*) is associated with 'VorkursModel::RegistrationSystem' (role 'VorkursModel_RegistrationSystem2', cardinality 0..*).
+'VorkursModel::Qualification' (role 'VorkursModel_Qualification', cardinality 0..*) is associated with 'VorkursModel::Person' (role 'VorkursModel_Person7', cardinality 0..*).
+'VorkursModel::Contact' (role 'VorkursModel_Contact', cardinality 0..*) is associated with 'VorkursModel::Person' (role 'VorkursModel_Person', cardinality 0..*).
+'VorkursModel::TeachingAssistant' (role 'VorkursModel_TeachingAssistant11', cardinality 0..*) is associated with 'VorkursModel::Room' (role 'VorkursModel_Room', cardinality 0..*).

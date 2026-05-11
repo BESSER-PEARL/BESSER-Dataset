@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jfbrazeau/EMF-To-GraphViz/org.emftools.samples.school/model/school.ecore

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/CoqTL/fr.inria.atlanmod.coqtl.coq/examples/Class2Relational/resource/Class.ecore

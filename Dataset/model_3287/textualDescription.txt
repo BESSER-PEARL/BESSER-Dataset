@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'dSLPolicies::Model' has no attributes.
+The class 'dSLPolicies::GraphPolicies' has the following attributes: 'graphModelPolicies' of type str.
+The class 'dSLPolicies::Policies' has the following attributes: 'sync' of type bool; 'nocheck' of type bool.
+The class 'dSLPolicies::PathGeneratorStopCondition' has no attributes.
+The class 'dSLPolicies::GraphElement' has the following attributes: 'name' of type str.
+The class 'dSLPolicies::AlgorithmType' has the following attributes: 'type' of type str.
+The class 'dSLPolicies::Severity' has the following attributes: 'level' of type str.
+The class 'dSLPolicies::StopCondition' has the following attributes: 'pathtype' of type str; 'value' of type int; 'percentage' of type str.
+'dSLPolicies::Policies' (role 'dSLPolicies_Policies4', cardinality 0..*) is associated with 'dSLPolicies::PathGeneratorStopCondition' (role 'dSLPolicies_PathGeneratorStopCondition', cardinality 0..*).
+'dSLPolicies::GraphElement' (role 'dSLPolicies_GraphElement', cardinality 0..*) is associated with 'dSLPolicies::StopCondition' (role 'dSLPolicies_StopCondition15', cardinality 0..*).
+'dSLPolicies::StopCondition' (role 'dSLPolicies_StopCondition', cardinality 0..*) is associated with 'dSLPolicies::PathGeneratorStopCondition' (role 'dSLPolicies_PathGeneratorStopCondition10', cardinality 0..*).
+'dSLPolicies::GraphPolicies' (role 'dSLPolicies_GraphPolicies', cardinality 0..*) is associated with 'dSLPolicies::Model' (role 'dSLPolicies_Model', cardinality 0..*).
+'dSLPolicies::PathGeneratorStopCondition' (role 'dSLPolicies_PathGeneratorStopCondition12', cardinality 0..*) is associated with 'dSLPolicies::StopCondition' (role 'dSLPolicies_StopCondition13', cardinality 0..*).
+'dSLPolicies::GraphPolicies' (role 'dSLPolicies_GraphPolicies2', cardinality 0..*) is associated with 'dSLPolicies::Policies' (role 'dSLPolicies_Policies', cardinality 0..*).
+'dSLPolicies::AlgorithmType' (role 'dSLPolicies_AlgorithmType', cardinality 0..*) is associated with 'dSLPolicies::PathGeneratorStopCondition' (role 'dSLPolicies_PathGeneratorStopCondition8', cardinality 0..*).
+'dSLPolicies::Severity' (role 'dSLPolicies_Severity', cardinality 0..*) is associated with 'dSLPolicies::Policies' (role 'dSLPolicies_Policies6', cardinality 0..*).

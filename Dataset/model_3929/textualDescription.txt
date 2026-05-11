@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'Type' has no attributes.
+The class 'myDsl::Datatype' has no attributes.
+The class 'myDsl::Namespace' has the following attributes: 'name' of type str.
+The class 'Element' has no attributes.
+The class 'myDsl::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'myDsl::Property' has the following attributes: 'name' of type str.
+The class 'myDsl::File' has no attributes.
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::Element' has no attributes.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+'myDsl::Type' is a specialization of 'Element'.
+'myDsl::Namespace' is a specialization of 'Element'.
+'myDsl::Import' is a specialization of 'Element'.
+'myDsl::Datatype' is a specialization of 'Type'.
+'myDsl::Entity' is a specialization of 'Type'.
+'myDsl::Property' (role 'myDsl_Property5', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type', cardinality 0..*).
+'myDsl::Property' (role 'myDsl_Property', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*).
+'myDsl::Element' (role 'myDsl_Element2', cardinality 0..*) is associated with 'myDsl::Namespace' (role 'myDsl_Namespace', cardinality 0..*).
+'myDsl::File' (role 'myDsl_File', cardinality 0..*) is associated with 'myDsl::Element' (role 'myDsl_Element', cardinality 0..*).

@@ -1,0 +1,114 @@
+The model has 44 class(es).
+The class 'sexec::Step' has the following attributes: 'comment' of type str.
+The class 'sexec::EnterState' has no attributes.
+The class 'Check' has no attributes.
+The class 'ExecutionNode' has no attributes.
+The class 'sexec::StateVector' has the following attributes: 'size' of type int; 'offset' of type int.
+The class 'sexec::TimeEvent' has the following attributes: 'periodic' of type bool.
+The class 'Step' has no attributes.
+The class 'sexec::ExecutionScope' has no attributes.
+The class 'Trace' has no attributes.
+The class 'sexec::StateCase' has no attributes.
+The class 'MappedElement' has no attributes.
+The class 'sexec::ExecutionRegion' has no attributes.
+The class 'sexec::TraceBeginRunCycle' has no attributes.
+The class 'sexec::CheckRef' has no attributes.
+The class 'sexec::StateSwitch' has the following attributes: 'stateConfigurationIdx' of type int.
+The class 'sexec::ExecutionChoice' has no attributes.
+The class 'sexec::HistoryEntry' has the following attributes: 'deep' of type bool.
+The class 'sexec::ExecutionExit' has no attributes.
+The class 'sexec::ReactionFired' has no attributes.
+The class 'sexec::Execution' has no attributes.
+The class 'ScopedElement' has no attributes.
+The class 'sexec::SaveHistory' has the following attributes: 'deep' of type bool.
+The class 'sexec::TraceEndRunCycle' has no attributes.
+The class 'sexec::UnscheduleTimeEvent' has no attributes.
+The class 'sexec::Call' has no attributes.
+The class 'sexec::Trace' has no attributes.
+The class 'sexec::Check' has no attributes.
+The class 'sexec::MappedElement' has no attributes.
+The class 'Event' has no attributes.
+The class 'sexec::ExecutionEntry' has no attributes.
+The class 'sexec::ExitState' has no attributes.
+The class 'ExecutionScope' has no attributes.
+The class 'sexec::ExecutionNode' has the following attributes: 'simpleName' of type str.
+The class 'sexec::ExecutionState' has the following attributes: 'leaf' of type bool.
+The class 'sexec::ExecutionFlow' has no attributes.
+The class 'sexec::TraceStateExited' has no attributes.
+The class 'sexec::Expression' has no attributes.
+The class 'sexec::EObject' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sexec::TraceStateEntered' has no attributes.
+The class 'sexec::TraceNodeExecuted' has no attributes.
+The class 'sexec::ExecutionSynchronization' has no attributes.
+The class 'sexec::ScheduleTimeEvent' has no attributes.
+The class 'sexec::TraceReactionWillFire' has no attributes.
+'sexec::Call' is a specialization of 'Step'.
+'sexec::ExecutionScope' is a specialization of 'NamedElement'.
+'sexec::ExecutionChoice' is a specialization of 'ExecutionNode'.
+'sexec::SaveHistory' is a specialization of 'Step'.
+'sexec::ExecutionFlow' is a specialization of 'ScopedElement'.
+'sexec::TraceEndRunCycle' is a specialization of 'Trace'.
+'sexec::ExecutionFlow' is a specialization of 'ExecutionNode'.
+'sexec::ExecutionEntry' is a specialization of 'ExecutionNode'.
+'sexec::ReactionFired' is a specialization of 'Trace'.
+'sexec::Step' is a specialization of 'NamedElement'.
+'sexec::ExecutionState' is a specialization of 'ExecutionNode'.
+'sexec::TraceBeginRunCycle' is a specialization of 'Trace'.
+'sexec::ExecutionState' is a specialization of 'ExecutionScope'.
+'sexec::ExecutionFlow' is a specialization of 'ExecutionScope'.
+'sexec::HistoryEntry' is a specialization of 'Step'.
+'sexec::TraceStateExited' is a specialization of 'Trace'.
+'sexec::ExecutionScope' is a specialization of 'MappedElement'.
+'sexec::Trace' is a specialization of 'Step'.
+'sexec::ScheduleTimeEvent' is a specialization of 'Step'.
+'sexec::TraceStateEntered' is a specialization of 'Trace'.
+'sexec::CheckRef' is a specialization of 'Check'.
+'sexec::TraceNodeExecuted' is a specialization of 'Trace'.
+'sexec::Execution' is a specialization of 'Step'.
+'sexec::EnterState' is a specialization of 'Step'.
+'sexec::ExitState' is a specialization of 'Step'.
+'sexec::ExecutionExit' is a specialization of 'ExecutionNode'.
+'sexec::ExecutionSynchronization' is a specialization of 'ExecutionNode'.
+'sexec::TimeEvent' is a specialization of 'Event'.
+'sexec::Check' is a specialization of 'Step'.
+'sexec::StateSwitch' is a specialization of 'Step'.
+'sexec::TraceReactionWillFire' is a specialization of 'Trace'.
+'sexec::ExecutionRegion' is a specialization of 'ExecutionScope'.
+'sexec::UnscheduleTimeEvent' is a specialization of 'Step'.
+'sexec::ExecutionNode' is a specialization of 'NamedElement'.
+'sexec::ExecutionNode' is a specialization of 'MappedElement'.
+'sexec::ExecutionScope' (role 'sexec_ExecutionScope', cardinality 0..*) is associated with 'sexec::StateVector' (role 'sexec_StateVector20', cardinality 0..*).
+'sexec::ExecutionState' (role 'sexec_ExecutionState40', cardinality 0..*) is associated with 'sexec::ExitState' (role 'sexec_ExitState', cardinality 0..*).
+'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow3', cardinality 0..*) is associated with 'sexec::ExecutionNode' (role 'sexec_ExecutionNode', cardinality 0..*).
+'sexec::ExecutionState' (role 'sexec_ExecutionState14', cardinality 0..*) is associated with 'sexec::Step' (role 'sexec_Step15', cardinality 0..*).
+'sexec::EnterState' (role 'sexec_EnterState', cardinality 0..*) is associated with 'sexec::ExecutionState' (role 'sexec_ExecutionState38', cardinality 0..*).
+'sexec::HistoryEntry' (role 'sexec_HistoryEntry', cardinality 0..*) is associated with 'sexec::Step' (role 'sexec_Step60', cardinality 0..*).
+'sexec::TimeEvent' (role 'sexec_TimeEvent46', cardinality 0..*) is associated with 'sexec::UnscheduleTimeEvent' (role 'sexec_UnscheduleTimeEvent', cardinality 0..*).
+'sexec::EObject' (role 'sexec_EObject', cardinality 0..*) is associated with 'sexec::MappedElement' (role 'sexec_MappedElement', cardinality 0..*).
+'sexec::ScheduleTimeEvent' (role 'sexec_ScheduleTimeEvent43', cardinality 0..*) is associated with 'sexec::Expression' (role 'sexec_Expression44', cardinality 0..*).
+'sexec::StateCase' (role 'sexec_StateCase', cardinality 0..*) is associated with 'sexec::StateSwitch' (role 'sexec_StateSwitch', cardinality 0..*).
+'sexec::TraceNodeExecuted' (role 'sexec_TraceNodeExecuted', cardinality 0..*) is associated with 'sexec::ExecutionNode' (role 'sexec_ExecutionNode68', cardinality 0..*).
+'sexec::Step' (role 'sexec_Step', cardinality 0..*) is associated with 'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow9', cardinality 0..*).
+'sexec::Check' (role 'check', cardinality 0..*) is associated with 'sexec::CheckRef' (role 'CheckRef', cardinality 0..*).
+'sexec::Step' (role 'sexec_Step56', cardinality 0..*) is associated with 'sexec::StateCase' (role 'sexec_StateCase55', cardinality 0..*).
+'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow', cardinality 0..*) is associated with 'sexec::ExecutionState' (role 'sexec_ExecutionState', cardinality 0..*).
+'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow11', cardinality 0..*) is associated with 'sexec::Step' (role 'sexec_Step12', cardinality 0..*).
+'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion27', cardinality 0..*) is associated with 'sexec::StateVector' (role 'sexec_StateVector28', cardinality 0..*).
+'sexec::SaveHistory' (role 'sexec_SaveHistory', cardinality 0..*) is associated with 'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion58', cardinality 0..*).
+'sexec::ExecutionScope' (role 'ExecutionScope', cardinality 0..*) is associated with 'sexec::ExecutionScope' (role 'superScope', cardinality 0..*).
+'sexec::ExecutionScope' (role 'subScopes', cardinality 0..*) is associated with 'sexec::ExecutionScope' (role 'ExecutionScope25', cardinality 0..*).
+'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion63', cardinality 0..*) is associated with 'sexec::HistoryEntry' (role 'sexec_HistoryEntry62', cardinality 0..*).
+'sexec::Step' (role 'sexec_Step18', cardinality 0..*) is associated with 'sexec::ExecutionState' (role 'sexec_ExecutionState17', cardinality 0..*).
+'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow7', cardinality 0..*) is associated with 'sexec::StateVector' (role 'sexec_StateVector', cardinality 0..*).
+'sexec::Check' (role 'sexec_Check', cardinality 0..*) is associated with 'sexec::Expression' (role 'sexec_Expression', cardinality 0..*).
+'sexec::ExecutionState' (role 'sexec_ExecutionState72', cardinality 0..*) is associated with 'sexec::TraceStateExited' (role 'sexec_TraceStateExited', cardinality 0..*).
+'sexec::TraceStateEntered' (role 'sexec_TraceStateEntered', cardinality 0..*) is associated with 'sexec::ExecutionState' (role 'sexec_ExecutionState70', cardinality 0..*).
+'sexec::CheckRef' (role 'refs', cardinality 0..*) is associated with 'sexec::Check' (role 'Check', cardinality 0..*).
+'sexec::ExecutionFlow' (role 'sexec_ExecutionFlow5', cardinality 0..*) is associated with 'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion', cardinality 0..*).
+'sexec::ExecutionNode' (role 'sexec_ExecutionNode31', cardinality 0..*) is associated with 'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion30', cardinality 0..*).
+'sexec::TimeEvent' (role 'sexec_TimeEvent', cardinality 0..*) is associated with 'sexec::ScheduleTimeEvent' (role 'sexec_ScheduleTimeEvent', cardinality 0..*).
+'sexec::HistoryEntry' (role 'sexec_HistoryEntry65', cardinality 0..*) is associated with 'sexec::Step' (role 'sexec_Step66', cardinality 0..*).
+'sexec::Expression' (role 'sexec_Expression36', cardinality 0..*) is associated with 'sexec::Execution' (role 'sexec_Execution', cardinality 0..*).
+'sexec::ExecutionState' (role 'sexec_ExecutionState53', cardinality 0..*) is associated with 'sexec::StateCase' (role 'sexec_StateCase52', cardinality 0..*).
+'sexec::StateSwitch' (role 'sexec_StateSwitch49', cardinality 0..*) is associated with 'sexec::ExecutionRegion' (role 'sexec_ExecutionRegion50', cardinality 0..*).

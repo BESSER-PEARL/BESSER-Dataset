@@ -1,0 +1,253 @@
+The model has 91 class(es).
+The class 'b::Range' has the following attributes: 'lowerBound' of type int.
+The class 'b::If' has no attributes.
+The class 'b::TypeConstraint' has no attributes.
+The class 'b::Call' has no attributes.
+The class 'b::IfCond' has no attributes.
+The class 'b::Imports' has no attributes.
+The class 'b::Machine' has no attributes.
+The class 'b::BeginBody' has no attributes.
+The class 'b::CondEq' has no attributes.
+The class 'b::Operation' has the following attributes: 'name' of type str.
+The class 'b::ReturnTypeExpr' has no attributes.
+The class 'b::Values' has no attributes.
+The class 'b::StringLiteral' has the following attributes: 'value' of type str.
+The class 'b::BoolLiteral' has the following attributes: 'constant' of type str; 'value' of type str.
+The class 'b::InitialisationExpr' has no attributes.
+The class 'Return' has no attributes.
+The class 'b::EObject' has no attributes.
+The class 'b::ConcreteConstants' has no attributes.
+The class 'b::ReturnOr' has no attributes.
+The class 'ReturnTypeExpr' has no attributes.
+The class 'b::InvariantExpr' has no attributes.
+The class 'b::Ref' has no attributes.
+The class 'BeginBody' has no attributes.
+The class 'b::Implementation' has no attributes.
+The class 'b::Var' has no attributes.
+The class 'b::DefinitionCall' has no attributes.
+The class 'FinalExpr' has no attributes.
+The class 'b::CondLessThan' has no attributes.
+The class 'b::Skip' has no attributes.
+The class 'b::ImplyExpr' has no attributes.
+The class 'b::InequalityExpr' has the following attributes: 'op' of type str.
+The class 'b::ConstantExpr' has the following attributes: 'constant' of type str.
+The class 'b::PropertyExpr' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'b::Arg' has no attributes.
+The class 'b::Sets' has no attributes.
+The class 'b::ConcreteVariables' has no attributes.
+The class 'b::Assign' has no attributes.
+The class 'b::Condition' has no attributes.
+The class 'Body' has no attributes.
+The class 'Type' has no attributes.
+The class 'b::AssertionExpr' has no attributes.
+The class 'b::PreExpr' has no attributes.
+The class 'b::Assertions' has no attributes.
+The class 'b::PropertyTyped' has no attributes.
+The class 'b::Case' has no attributes.
+The class 'b::NegExpr' has no attributes.
+The class 'b::PrimitiveType' has the following attributes: 'type' of type str.
+The class 'b::AndExpr' has no attributes.
+The class 'b::Seq' has no attributes.
+The class 'ReturnExpr' has no attributes.
+The class 'b::PropertyRange' has no attributes.
+The class 'b::Sees' has no attributes.
+The class 'b::Variable' has the following attributes: 'name' of type str.
+The class 'b::Properties' has no attributes.
+The class 'Condition' has no attributes.
+The class 'b::ReturnTuple' has no attributes.
+The class 'b::Pre' has no attributes.
+The class 'b::Abstraction' has the following attributes: 'name' of type str.
+The class 'b::ReturnExpr' has no attributes.
+The class 'Statement' has no attributes.
+The class 'b::BoolTest' has no attributes.
+The class 'b::ValueExpr' has the following attributes: 'value' of type str.
+The class 'Expr' has no attributes.
+The class 'b::Definitions' has no attributes.
+The class 'b::Body' has no attributes.
+The class 'b::LogicalExpr' has no attributes.
+The class 'b::IntLiteral' has the following attributes: 'value' of type int.
+The class 'b::Type' has no attributes.
+The class 'b::ArgMinus' has no attributes.
+The class 'b::CaseExpr' has no attributes.
+The class 'b::Statement' has no attributes.
+The class 'b::Expr' has no attributes.
+The class 'PropertyExpr' has no attributes.
+The class 'b::Set' has no attributes.
+The class 'LogicalExpr' has no attributes.
+The class 'b::Operations' has no attributes.
+The class 'b::Definition' has the following attributes: 'name' of type str.
+The class 'b::Invariant' has no attributes.
+The class 'b::SimpleCall' has no attributes.
+The class 'b::LocalOperations' has no attributes.
+The class 'b::CondMinus' has no attributes.
+The class 'b::CondAnd' has no attributes.
+The class 'b::Initialisation' has no attributes.
+The class 'b::EqualExpr' has no attributes.
+The class 'Arg' has no attributes.
+The class 'b::Begin' has no attributes.
+The class 'b::FinalExpr' has no attributes.
+The class 'b::CondNeg' has no attributes.
+The class 'b::Neg' has no attributes.
+The class 'b::Return' has no attributes.
+The enumeration 'PrimitiveTypeEnum' has the following literals: 'BOOL', 'NAT1', 'STRING', 'INT', 'NAT'.
+The enumeration 'InequalityOp' has the following literals: 'GREATER', 'GREATER_EQ', 'LESS_EQ', 'LESS'.
+The enumeration 'BoolLiteralEnum' has the following literals: 'FALSE', 'TRUE'.
+'b::Ref' is a specialization of 'Condition'.
+'b::FinalExpr' is a specialization of 'BeginBody'.
+'b::IntLiteral' is a specialization of 'Arg'.
+'b::Seq' is a specialization of 'BeginBody'.
+'b::BoolTest' is a specialization of 'ReturnExpr'.
+'b::BoolLiteral' is a specialization of 'ReturnExpr'.
+'b::Skip' is a specialization of 'Body'.
+'b::Call' is a specialization of 'Expr'.
+'b::PrimitiveType' is a specialization of 'Type'.
+'b::InequalityExpr' is a specialization of 'LogicalExpr'.
+'b::Ref' is a specialization of 'LogicalExpr'.
+'b::TypeConstraint' is a specialization of 'LogicalExpr'.
+'b::Case' is a specialization of 'Expr'.
+'b::If' is a specialization of 'FinalExpr'.
+'b::Call' is a specialization of 'Statement'.
+'b::BoolLiteral' is a specialization of 'Arg'.
+'b::ArgMinus' is a specialization of 'Arg'.
+'b::AndExpr' is a specialization of 'LogicalExpr'.
+'b::Ref' is a specialization of 'Arg'.
+'b::Var' is a specialization of 'Body'.
+'b::PropertyTyped' is a specialization of 'PropertyExpr'.
+'b::PropertyRange' is a specialization of 'PropertyExpr'.
+'b::Var' is a specialization of 'Expr'.
+'b::Var' is a specialization of 'FinalExpr'.
+'b::ReturnTypeExpr' is a specialization of 'Return'.
+'b::Assign' is a specialization of 'Statement'.
+'b::EqualExpr' is a specialization of 'LogicalExpr'.
+'b::DefinitionCall' is a specialization of 'LogicalExpr'.
+'b::If' is a specialization of 'Expr'.
+'b::CondMinus' is a specialization of 'Condition'.
+'b::Neg' is a specialization of 'ReturnExpr'.
+'b::If' is a specialization of 'Body'.
+'b::ReturnOr' is a specialization of 'ReturnTypeExpr'.
+'b::CondAnd' is a specialization of 'Condition'.
+'b::NegExpr' is a specialization of 'LogicalExpr'.
+'b::IntLiteral' is a specialization of 'Condition'.
+'b::Machine' is a specialization of 'Abstraction'.
+'b::BoolTest' is a specialization of 'LogicalExpr'.
+'b::Assign' is a specialization of 'Expr'.
+'b::ReturnTuple' is a specialization of 'Return'.
+'b::CondLessThan' is a specialization of 'Condition'.
+'b::Ref' is a specialization of 'Type'.
+'b::Case' is a specialization of 'FinalExpr'.
+'b::IntLiteral' is a specialization of 'LogicalExpr'.
+'b::Ref' is a specialization of 'ReturnExpr'.
+'b::CondNeg' is a specialization of 'Condition'.
+'b::StringLiteral' is a specialization of 'Arg'.
+'b::Begin' is a specialization of 'Body'.
+'b::Implementation' is a specialization of 'Abstraction'.
+'b::ConstantExpr' is a specialization of 'LogicalExpr'.
+'b::BoolLiteral' is a specialization of 'Condition'.
+'b::Return' is a specialization of 'FinalExpr'.
+'b::ImplyExpr' is a specialization of 'LogicalExpr'.
+'b::Skip' is a specialization of 'Expr'.
+'b::Pre' is a specialization of 'Body'.
+'b::Seq' is a specialization of 'Body'.
+'b::CondEq' is a specialization of 'Condition'.
+'b::Return' is a specialization of 'Expr'.
+'b::Definition' (role 'b_Definition78', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable79', cardinality 0..*).
+'b::Values' (role 'b_Values', cardinality 0..*) is associated with 'b::Implementation' (role 'b_Implementation23', cardinality 0..*).
+'b::ReturnOr' (role 'b_ReturnOr', cardinality 0..*) is associated with 'b::ReturnTypeExpr' (role 'b_ReturnTypeExpr224', cardinality 0..*).
+'b::Arg' (role 'b_Arg228', cardinality 0..*) is associated with 'b::ArgMinus' (role 'b_ArgMinus', cardinality 0..*).
+'b::CondLessThan' (role 'b_CondLessThan', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition207', cardinality 0..*).
+'b::If' (role 'b_If', cardinality 0..*) is associated with 'b::IfCond' (role 'b_IfCond', cardinality 0..*).
+'b::Arg' (role 'b_Arg160', cardinality 0..*) is associated with 'b::SimpleCall' (role 'b_SimpleCall159', cardinality 0..*).
+'b::InitialisationExpr' (role 'b_InitialisationExpr52', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable53', cardinality 0..*).
+'b::Var' (role 'b_Var', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable123', cardinality 0..*).
+'b::PreExpr' (role 'b_PreExpr120', cardinality 0..*) is associated with 'b::Type' (role 'b_Type121', cardinality 0..*).
+'b::IfCond' (role 'b_IfCond110', cardinality 0..*) is associated with 'b::Expr' (role 'b_Expr111', cardinality 0..*).
+'b::CondMinus' (role 'b_CondMinus214', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition215', cardinality 0..*).
+'b::Set' (role 'b_Set92', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable93', cardinality 0..*).
+'b::Machine' (role 'b_Machine', cardinality 0..*) is associated with 'b::ConcreteVariables' (role 'b_ConcreteVariables', cardinality 0..*).
+'b::ValueExpr' (role 'b_ValueExpr', cardinality 0..*) is associated with 'b::Values' (role 'b_Values33', cardinality 0..*).
+'b::AssertionExpr' (role 'b_AssertionExpr', cardinality 0..*) is associated with 'b::Assertions' (role 'b_Assertions68', cardinality 0..*).
+'b::Operation' (role 'b_Operation163', cardinality 0..*) is associated with 'b::LocalOperations' (role 'b_LocalOperations162', cardinality 0..*).
+'b::Variable' (role 'b_Variable219', cardinality 0..*) is associated with 'b::ReturnTuple' (role 'b_ReturnTuple', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction31', cardinality 0..*) is associated with 'b::Imports' (role 'b_Imports30', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction28', cardinality 0..*) is associated with 'b::Sees' (role 'b_Sees27', cardinality 0..*).
+'b::CaseExpr' (role 'b_CaseExpr141', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable142', cardinality 0..*).
+'b::Type' (role 'b_Type170', cardinality 0..*) is associated with 'b::PropertyTyped' (role 'b_PropertyTyped', cardinality 0..*).
+'b::Case' (role 'b_Case139', cardinality 0..*) is associated with 'b::CaseExpr' (role 'b_CaseExpr', cardinality 0..*).
+'b::AssertionExpr' (role 'b_AssertionExpr73', cardinality 0..*) is associated with 'b::Type' (role 'b_Type74', cardinality 0..*).
+'b::LogicalExpr' (role 'b_LogicalExpr222', cardinality 0..*) is associated with 'b::ReturnTuple' (role 'b_ReturnTuple221', cardinality 0..*).
+'b::CondAnd' (role 'b_CondAnd', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition200', cardinality 0..*).
+'b::Var' (role 'b_Var125', cardinality 0..*) is associated with 'b::Seq' (role 'b_Seq', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction4', cardinality 0..*) is associated with 'b::Definitions' (role 'b_Definitions', cardinality 0..*).
+'b::Begin' (role 'b_Begin', cardinality 0..*) is associated with 'b::BeginBody' (role 'b_BeginBody', cardinality 0..*).
+'b::LogicalExpr' (role 'b_LogicalExpr191', cardinality 0..*) is associated with 'b::NegExpr' (role 'b_NegExpr', cardinality 0..*).
+'b::DefinitionCall' (role 'b_DefinitionCall', cardinality 0..*) is associated with 'b::Definition' (role 'b_Definition83', cardinality 0..*).
+'b::Implementation' (role 'b_Implementation21', cardinality 0..*) is associated with 'b::Imports' (role 'b_Imports', cardinality 0..*).
+'b::Variable' (role 'b_Variable66', cardinality 0..*) is associated with 'b::Range' (role 'b_Range', cardinality 0..*).
+'b::PreExpr' (role 'b_PreExpr117', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable118', cardinality 0..*).
+'b::Seq' (role 'b_Seq147', cardinality 0..*) is associated with 'b::EObject' (role 'b_EObject', cardinality 0..*).
+'b::IfCond' (role 'b_IfCond108', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition', cardinality 0..*).
+'b::Variable' (role 'b_Variable165', cardinality 0..*) is associated with 'b::Ref' (role 'b_Ref', cardinality 0..*).
+'b::Operations' (role 'b_Operations95', cardinality 0..*) is associated with 'b::Operation' (role 'b_Operation', cardinality 0..*).
+'b::InequalityExpr' (role 'b_InequalityExpr183', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr184', cardinality 0..*).
+'b::Variable' (role 'b_Variable101', cardinality 0..*) is associated with 'b::Operation' (role 'b_Operation100', cardinality 0..*).
+'b::Case' (role 'b_Case', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable137', cardinality 0..*).
+'b::Type' (role 'b_Type135', cardinality 0..*) is associated with 'b::ReturnTypeExpr' (role 'b_ReturnTypeExpr134', cardinality 0..*).
+'b::Variable' (role 'b_Variable38', cardinality 0..*) is associated with 'b::ConcreteVariables' (role 'b_ConcreteVariables37', cardinality 0..*).
+'b::Variable' (role 'b_Variable98', cardinality 0..*) is associated with 'b::Operation' (role 'b_Operation97', cardinality 0..*).
+'b::ConcreteConstants' (role 'b_ConcreteConstants', cardinality 0..*) is associated with 'b::Abstraction' (role 'b_Abstraction2', cardinality 0..*).
+'b::LocalOperations' (role 'b_LocalOperations', cardinality 0..*) is associated with 'b::Implementation' (role 'b_Implementation25', cardinality 0..*).
+'b::Variable' (role 'b_Variable149', cardinality 0..*) is associated with 'b::Call' (role 'b_Call', cardinality 0..*).
+'b::BoolTest' (role 'b_BoolTest', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr193', cardinality 0..*).
+'b::Invariant' (role 'b_Invariant43', cardinality 0..*) is associated with 'b::InvariantExpr' (role 'b_InvariantExpr', cardinality 0..*).
+'b::CondNeg' (role 'b_CondNeg', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition217', cardinality 0..*).
+'b::Assign' (role 'b_Assign130', cardinality 0..*) is associated with 'b::ReturnExpr' (role 'b_ReturnExpr', cardinality 0..*).
+'b::Pre' (role 'b_Pre', cardinality 0..*) is associated with 'b::PreExpr' (role 'b_PreExpr', cardinality 0..*).
+'b::ReturnTypeExpr' (role 'b_ReturnTypeExpr', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable132', cardinality 0..*).
+'b::Sets' (role 'b_Sets', cardinality 0..*) is associated with 'b::Machine' (role 'b_Machine17', cardinality 0..*).
+'b::Machine' (role 'b_Machine15', cardinality 0..*) is associated with 'b::Assertions' (role 'b_Assertions', cardinality 0..*).
+'b::CondEq' (role 'b_CondEq', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition202', cardinality 0..*).
+'b::PropertyRange' (role 'b_PropertyRange', cardinality 0..*) is associated with 'b::Range' (role 'b_Range172', cardinality 0..*).
+'b::Implementation' (role 'b_Implementation', cardinality 0..*) is associated with 'b::Machine' (role 'b_Machine19', cardinality 0..*).
+'b::SimpleCall' (role 'b_SimpleCall', cardinality 0..*) is associated with 'b::Operation' (role 'b_Operation157', cardinality 0..*).
+'b::Definition' (role 'b_Definition81', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr', cardinality 0..*).
+'b::PropertyExpr' (role 'b_PropertyExpr63', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable64', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction', cardinality 0..*) is associated with 'b::Sees' (role 'b_Sees', cardinality 0..*).
+'b::Call' (role 'b_Call154', cardinality 0..*) is associated with 'b::Arg' (role 'b_Arg155', cardinality 0..*).
+'b::Variable' (role 'b_Variable71', cardinality 0..*) is associated with 'b::AssertionExpr' (role 'b_AssertionExpr70', cardinality 0..*).
+'b::Ref' (role 'b_Ref167', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable168', cardinality 0..*).
+'b::TypeConstraint' (role 'b_TypeConstraint', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable195', cardinality 0..*).
+'b::LogicalExpr' (role 'b_LogicalExpr181', cardinality 0..*) is associated with 'b::InequalityExpr' (role 'b_InequalityExpr', cardinality 0..*).
+'b::InvariantExpr' (role 'b_InvariantExpr48', cardinality 0..*) is associated with 'b::Type' (role 'b_Type', cardinality 0..*).
+'b::Variable' (role 'b_Variable46', cardinality 0..*) is associated with 'b::InvariantExpr' (role 'b_InvariantExpr45', cardinality 0..*).
+'b::EqualExpr' (role 'b_EqualExpr', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr186', cardinality 0..*).
+'b::InitialisationExpr' (role 'b_InitialisationExpr55', cardinality 0..*) is associated with 'b::Type' (role 'b_Type56', cardinality 0..*).
+'b::Variable' (role 'b_Variable90', cardinality 0..*) is associated with 'b::Set' (role 'b_Set89', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction6', cardinality 0..*) is associated with 'b::Properties' (role 'b_Properties', cardinality 0..*).
+'b::Variable' (role 'b_Variable128', cardinality 0..*) is associated with 'b::Assign' (role 'b_Assign', cardinality 0..*).
+'b::Expr' (role 'b_Expr145', cardinality 0..*) is associated with 'b::CaseExpr' (role 'b_CaseExpr144', cardinality 0..*).
+'b::Variable' (role 'b_Variable', cardinality 0..*) is associated with 'b::ValueExpr' (role 'b_ValueExpr35', cardinality 0..*).
+'b::Expr' (role 'b_Expr', cardinality 0..*) is associated with 'b::If' (role 'b_If106', cardinality 0..*).
+'b::ImplyExpr' (role 'b_ImplyExpr', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr176', cardinality 0..*).
+'b::CondMinus' (role 'b_CondMinus', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition212', cardinality 0..*).
+'b::InitialisationExpr' (role 'b_InitialisationExpr', cardinality 0..*) is associated with 'b::Initialisation' (role 'b_Initialisation50', cardinality 0..*).
+'b::CondEq' (role 'b_CondEq204', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition205', cardinality 0..*).
+'b::ConcreteConstants' (role 'b_ConcreteConstants40', cardinality 0..*) is associated with 'b::Variable' (role 'b_Variable41', cardinality 0..*).
+'b::Operation' (role 'b_Operation152', cardinality 0..*) is associated with 'b::Call' (role 'b_Call151', cardinality 0..*).
+'b::Arg' (role 'b_Arg231', cardinality 0..*) is associated with 'b::ArgMinus' (role 'b_ArgMinus230', cardinality 0..*).
+'b::LogicalExpr' (role 'b_LogicalExpr189', cardinality 0..*) is associated with 'b::EqualExpr' (role 'b_EqualExpr188', cardinality 0..*).
+'b::TypeConstraint' (role 'b_TypeConstraint197', cardinality 0..*) is associated with 'b::Type' (role 'b_Type198', cardinality 0..*).
+'b::Invariant' (role 'b_Invariant', cardinality 0..*) is associated with 'b::Machine' (role 'b_Machine11', cardinality 0..*).
+'b::PropertyExpr' (role 'b_PropertyExpr61', cardinality 0..*) is associated with 'b::Properties' (role 'b_Properties60', cardinality 0..*).
+'b::Machine' (role 'b_Machine13', cardinality 0..*) is associated with 'b::Initialisation' (role 'b_Initialisation', cardinality 0..*).
+'b::Arg' (role 'b_Arg', cardinality 0..*) is associated with 'b::DefinitionCall' (role 'b_DefinitionCall85', cardinality 0..*).
+'b::Definitions' (role 'b_Definitions76', cardinality 0..*) is associated with 'b::Definition' (role 'b_Definition', cardinality 0..*).
+'b::Operation' (role 'b_Operation103', cardinality 0..*) is associated with 'b::Body' (role 'b_Body', cardinality 0..*).
+'b::AndExpr' (role 'b_AndExpr', cardinality 0..*) is associated with 'b::LogicalExpr' (role 'b_LogicalExpr174', cardinality 0..*).
+'b::Expr' (role 'b_Expr115', cardinality 0..*) is associated with 'b::Pre' (role 'b_Pre114', cardinality 0..*).
+'b::Abstraction' (role 'b_Abstraction8', cardinality 0..*) is associated with 'b::Operations' (role 'b_Operations', cardinality 0..*).
+'b::Properties' (role 'b_Properties58', cardinality 0..*) is associated with 'b::PropertyExpr' (role 'b_PropertyExpr', cardinality 0..*).
+'b::LogicalExpr' (role 'b_LogicalExpr179', cardinality 0..*) is associated with 'b::ImplyExpr' (role 'b_ImplyExpr178', cardinality 0..*).
+'b::Neg' (role 'b_Neg', cardinality 0..*) is associated with 'b::ReturnExpr' (role 'b_ReturnExpr226', cardinality 0..*).
+'b::Sets' (role 'b_Sets87', cardinality 0..*) is associated with 'b::Set' (role 'b_Set', cardinality 0..*).
+'b::CondLessThan' (role 'b_CondLessThan209', cardinality 0..*) is associated with 'b::Condition' (role 'b_Condition210', cardinality 0..*).

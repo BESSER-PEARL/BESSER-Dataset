@@ -1,0 +1,151 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class cmof_Operation extends BehavioralFeature {
+
+    private String upper;
+    private String lower;
+    private String isOrdered;
+    private String isUnique;
+    private String isQuery;
+
+
+
+
+
+    private cmof_Parameter cmof_parameter;
+
+
+
+
+    private cmof_Class cmof_class;
+
+
+
+
+    private cmof_DataType cmof_datatype;
+
+
+
+
+    private cmof_DataType cmof_datatype;
+
+
+
+
+    private cmof_Class cmof_class;
+
+
+
+
+    private List<cmof_Operation> cmof_operations;
+
+
+    public cmof_Operation(
+        String upper,        String lower,        String isOrdered,        String isUnique,        String isQuery    ) {
+        super(
+        );
+        this.upper = upper;
+        this.lower = lower;
+        this.isOrdered = isOrdered;
+        this.isUnique = isUnique;
+        this.isQuery = isQuery;
+        this.cmof_operations = new ArrayList<>();
+    }
+
+    public cmof_Operation(
+        String upper,        String lower,        String isOrdered,        String isUnique,        String isQuery        ArrayList<cmof_Operation> cmof_operations    ) {
+        this.upper = upper;
+        this.lower = lower;
+        this.isOrdered = isOrdered;
+        this.isUnique = isUnique;
+        this.isQuery = isQuery;
+        this.cmof_operations = cmof_operations;
+    }
+
+    public String getUpper() {
+        return upper;
+    }
+
+    public void setUpper(String upper) {
+        this.upper = upper;
+    }
+    public String getLower() {
+        return lower;
+    }
+
+    public void setLower(String lower) {
+        this.lower = lower;
+    }
+    public String getIsordered() {
+        return isOrdered;
+    }
+
+    public void setIsordered(String isOrdered) {
+        this.isOrdered = isOrdered;
+    }
+    public String getIsunique() {
+        return isUnique;
+    }
+
+    public void setIsunique(String isUnique) {
+        this.isUnique = isUnique;
+    }
+    public String getIsquery() {
+        return isQuery;
+    }
+
+    public void setIsquery(String isQuery) {
+        this.isQuery = isQuery;
+    }
+
+    public cmof_Parameter getCmof_parameter() {
+        return cmof_parameter;
+    }
+
+    public void setCmof_parameter(cmof_Parameter cmof_parameter) {
+        this.cmof_parameter = cmof_parameter;
+    }
+    public cmof_Class getCmof_class() {
+        return cmof_class;
+    }
+
+    public void setCmof_class(cmof_Class cmof_class) {
+        this.cmof_class = cmof_class;
+    }
+    public cmof_DataType getCmof_datatype() {
+        return cmof_datatype;
+    }
+
+    public void setCmof_datatype(cmof_DataType cmof_datatype) {
+        this.cmof_datatype = cmof_datatype;
+    }
+    public cmof_DataType getCmof_datatype() {
+        return cmof_datatype;
+    }
+
+    public void setCmof_datatype(cmof_DataType cmof_datatype) {
+        this.cmof_datatype = cmof_datatype;
+    }
+    public cmof_Class getCmof_class() {
+        return cmof_class;
+    }
+
+    public void setCmof_class(cmof_Class cmof_class) {
+        this.cmof_class = cmof_class;
+    }
+    public List<cmof_Operation> getCmof_operations() {
+        return cmof_operations;
+    }
+
+    public void addCmof_operation(Cmof_operation cmof_operation) {
+        this.cmof_operations.add(cmof_operation);
+    }
+
+}

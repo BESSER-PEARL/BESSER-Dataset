@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'modelA::A' has the following attributes: 'a' of type int.
+The class 'modelA::B' has the following attributes: 'b' of type bool.

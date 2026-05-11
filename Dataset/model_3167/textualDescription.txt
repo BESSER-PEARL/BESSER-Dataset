@@ -1,0 +1,185 @@
+The model has 77 class(es).
+The class 'core::TypedWithClass' has no attributes.
+The class 'core::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'core::RepresentModel' has no attributes.
+The class 'core::KeywordParameter' has the following attributes: 'keyword' of type str.
+The class 'core::TraceElement' has no attributes.
+The class 'core::RequireModelParameter' has no attributes.
+The class 'core::ClosureDeclaration' has no attributes.
+The class 'DefinitionParameter' has no attributes.
+The class 'core::NumLiteral' has the following attributes: 'value' of type int.
+The class 'RepresentModel' has no attributes.
+The class 'Statement' has no attributes.
+The class 'core::ResolveLink' has the following attributes: 'featureName' of type str; 'linkName' of type str; 'isExternal' of type str.
+The class 'core::ModuleDefinition' has no attributes.
+The class 'core::DefineVariable' has no attributes.
+The class 'InlineFeature' has no attributes.
+The class 'core::ModuleParameter' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'core::ImportedModel' has no attributes.
+The class 'core::EclecticTransformationDefinition' has no attributes.
+The class 'RequireParameter' has no attributes.
+The class 'core::InlineFeature' has the following attributes: 'multivalued' of type bool.
+The class 'TypeExpression' has no attributes.
+The class 'ModuleDefinition' has no attributes.
+The class 'core::InlineModel' has no attributes.
+The class 'core::KeywordMethodCall' has no attributes.
+The class 'core::ClosureParameter' has no attributes.
+The class 'SingleAnnotation' has no attributes.
+The class 'core::RequireParameter' has the following attributes: 'formalParameterName' of type str.
+The class 'core::BinaryExpr' has the following attributes: 'binaryOp' of type str.
+The class 'core::TracedModelParameter' has no attributes.
+The class 'core::TraceUse' has no attributes.
+The class 'ClassUse' has no attributes.
+The class 'core::PutTrace' has no attributes.
+The class 'core::PotencyAnnotation' has the following attributes: 'value' of type str.
+The class 'core::TraceCompareExpression' has the following attributes: 'multivaluedTag' of type bool.
+The class 'core::TransformationDefinitionParameter' has no attributes.
+The class 'core::LocatedElement' has the following attributes: 'file' of type str; 'column' of type int; 'row' of type int.
+The class 'core::VariableReference' has no attributes.
+The class 'core::IfBranch' has no attributes.
+The class 'core::MetamodelModelAnnotation' has the following attributes: 'metamodel' of type str.
+The class 'core::AnnotableElement' has no attributes.
+The class 'core::OptimizationsAnnotation' has the following attributes: 'enabled' of type bool.
+The class 'core::NamedElement' has the following attributes: 'name' of type str.
+The class 'core::SingleAnnotation' has no attributes.
+The class 'core::MatchTrace' has the following attributes: 'cardinality' of type str.
+The class 'core::PutTraceParameter' has no attributes.
+The class 'core::RequireDeclaration' has the following attributes: 'default' of type str; 'name' of type str.
+The class 'Annotation' has no attributes.
+The class 'core::TypeExpression' has no attributes.
+The class 'core::InlineClass' has no attributes.
+The class 'core::UseDeclaration' has the following attributes: 'module' of type str; 'as_' of type str.
+The class 'core::TransformationDefinition' has no attributes.
+The class 'core::MethodCall' has the following attributes: 'withParameters' of type bool; 'methodName' of type str.
+The class 'core::ModelReference' has no attributes.
+The class 'core::DefinitionParameter' has no attributes.
+The class 'AnnotableElement' has no attributes.
+The class 'core::StringLiteral' has the following attributes: 'value' of type str.
+The class 'Variable' has no attributes.
+The class 'Expression' has no attributes.
+The class 'core::GenericAnnotation' has the following attributes: 'name' of type str.
+The class 'core::Statement' has no attributes.
+The class 'core::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'NamedElement' has no attributes.
+The class 'core::TraceInterface' has no attributes.
+The class 'core::Variable' has the following attributes: 'name' of type str.
+The class 'core::InlineReference' has no attributes.
+The class 'core::ImplicitlyAnnotableElement' has no attributes.
+The class 'core::Annotation' has no attributes.
+The class 'core::IfExpr' has no attributes.
+The class 'core::AnnotationParameter' has no attributes.
+The class 'core::PropertyWrite' has the following attributes: '_property' of type str.
+The class 'core::ClassUse' has the following attributes: 'className' of type str; 'strictType' of type bool.
+The class 'ImplicitlyAnnotableElement' has no attributes.
+The class 'core::InlineAttribute' has no attributes.
+The class 'TransformationDefinition' has no attributes.
+The class 'core::Expression' has no attributes.
+The class 'core::TraceDefinition' has no attributes.
+The enumeration 'BinaryOp' has the following literals: 'ADD', 'DIV', 'MUL', 'SUB', 'EQUAL'.
+The enumeration 'ResolveTraceCardinality' has the following literals: 'MANY', 'ONE_ONE', 'ZERO_OR_ONE'.
+'core::TransformationDefinition' is a specialization of 'ModuleDefinition'.
+'core::Expression' is a specialization of 'Statement'.
+'core::ModelReference' is a specialization of 'ClassUse'.
+'core::VariableReference' is a specialization of 'Expression'.
+'core::RequireDeclaration' is a specialization of 'RepresentModel'.
+'core::Statement' is a specialization of 'LocatedElement'.
+'core::ClosureParameter' is a specialization of 'Variable'.
+'core::UseDeclaration' is a specialization of 'RepresentModel'.
+'core::OptimizationsAnnotation' is a specialization of 'Annotation'.
+'core::TraceElement' is a specialization of 'NamedElement'.
+'core::ModuleDefinition' is a specialization of 'LocatedElement'.
+'core::StringLiteral' is a specialization of 'Expression'.
+'core::InlineClass' is a specialization of 'NamedElement'.
+'core::BooleanLiteral' is a specialization of 'Expression'.
+'core::MatchTrace' is a specialization of 'Expression'.
+'core::ImportedModel' is a specialization of 'RepresentModel'.
+'core::ModuleDefinition' is a specialization of 'NamedElement'.
+'core::TransformationDefinitionParameter' is a specialization of 'RepresentModel'.
+'core::ModuleParameter' is a specialization of 'DefinitionParameter'.
+'core::SingleAnnotation' is a specialization of 'Annotation'.
+'core::ResolveLink' is a specialization of 'Expression'.
+'core::ClassUse' is a specialization of 'ImplicitlyAnnotableElement'.
+'core::TracedModelParameter' is a specialization of 'RepresentModel'.
+'core::NumLiteral' is a specialization of 'Expression'.
+'core::ModelReference' is a specialization of 'Expression'.
+'core::ModuleDefinition' is a specialization of 'AnnotableElement'.
+'core::RepresentModel' is a specialization of 'AnnotableElement'.
+'core::IfExpr' is a specialization of 'Expression'.
+'core::ClosureDeclaration' is a specialization of 'Expression'.
+'core::PutTrace' is a specialization of 'Expression'.
+'core::InlineModel' is a specialization of 'RepresentModel'.
+'core::ClassUse' is a specialization of 'TypeExpression'.
+'core::DoubleLiteral' is a specialization of 'Expression'.
+'core::PropertyWrite' is a specialization of 'Expression'.
+'core::TransformationDefinitionParameter' is a specialization of 'DefinitionParameter'.
+'core::BinaryExpr' is a specialization of 'Expression'.
+'core::RequireModelParameter' is a specialization of 'RequireParameter'.
+'core::InlineAttribute' is a specialization of 'InlineFeature'.
+'core::TraceUse' is a specialization of 'TypeExpression'.
+'core::DefineVariable' is a specialization of 'Statement'.
+'core::TracedModelParameter' is a specialization of 'DefinitionParameter'.
+'core::PotencyAnnotation' is a specialization of 'SingleAnnotation'.
+'core::TraceInterface' is a specialization of 'ModuleDefinition'.
+'core::InlineReference' is a specialization of 'InlineFeature'.
+'core::DefinitionParameter' is a specialization of 'NamedElement'.
+'core::MethodCall' is a specialization of 'Expression'.
+'core::InlineFeature' is a specialization of 'NamedElement'.
+'core::TraceDefinition' is a specialization of 'NamedElement'.
+'core::KeywordMethodCall' is a specialization of 'Expression'.
+'core::DefineVariable' is a specialization of 'Variable'.
+'core::InlineModel' is a specialization of 'ModuleDefinition'.
+'core::MetamodelModelAnnotation' is a specialization of 'Annotation'.
+'core::ImportedModel' is a specialization of 'NamedElement'.
+'core::EclecticTransformationDefinition' is a specialization of 'TransformationDefinition'.
+'core::AnnotableElement' (role 'AnnotableElement', cardinality 0..*) is associated with 'core::Annotation' (role 'annotatedWith', cardinality 0..*).
+'core::TraceDefinition' (role 'core_TraceDefinition74', cardinality 0..*) is associated with 'core::TraceInterface' (role 'core_TraceInterface', cardinality 0..*).
+'core::Variable' (role 'core_Variable', cardinality 0..*) is associated with 'core::PropertyWrite' (role 'core_PropertyWrite', cardinality 0..*).
+'core::InlineModel' (role 'core_InlineModel', cardinality 0..*) is associated with 'core::TransformationDefinition' (role 'core_TransformationDefinition11', cardinality 0..*).
+'core::Annotation' (role 'core_Annotation', cardinality 0..*) is associated with 'core::TransformationDefinition' (role 'core_TransformationDefinition13', cardinality 0..*).
+'core::MethodCall' (role 'core_MethodCall', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression31', cardinality 0..*).
+'core::IfBranch' (role 'core_IfBranch', cardinality 0..*) is associated with 'core::IfExpr' (role 'core_IfExpr', cardinality 0..*).
+'core::ClosureDeclaration' (role 'core_ClosureDeclaration49', cardinality 0..*) is associated with 'core::ClosureParameter' (role 'core_ClosureParameter', cardinality 0..*).
+'core::TraceCompareExpression' (role 'core_TraceCompareExpression94', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression95', cardinality 0..*).
+'core::KeywordMethodCall' (role 'core_KeywordMethodCall', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression36', cardinality 0..*).
+'core::InlineFeature' (role 'core_InlineFeature', cardinality 0..*) is associated with 'core::InlineClass' (role 'core_InlineClass82', cardinality 0..*).
+'core::PutTraceParameter' (role 'core_PutTraceParameter104', cardinality 0..*) is associated with 'core::TraceElement' (role 'core_TraceElement105', cardinality 0..*).
+'core::TransformationDefinition' (role 'core_TransformationDefinition6', cardinality 0..*) is associated with 'core::TransformationDefinitionParameter' (role 'core_TransformationDefinitionParameter7', cardinality 0..*).
+'core::TransformationDefinition' (role 'core_TransformationDefinition', cardinality 0..*) is associated with 'core::TransformationDefinitionParameter' (role 'core_TransformationDefinitionParameter', cardinality 0..*).
+'core::Statement' (role 'core_Statement67', cardinality 0..*) is associated with 'core::IfBranch' (role 'core_IfBranch66', cardinality 0..*).
+'core::TransformationDefinition' (role 'core_TransformationDefinition19', cardinality 0..*) is associated with 'core::EclecticTransformationDefinition' (role 'core_EclecticTransformationDefinition', cardinality 0..*).
+'core::TraceElement' (role 'core_TraceElement', cardinality 0..*) is associated with 'core::TraceDefinition' (role 'core_TraceDefinition76', cardinality 0..*).
+'core::TraceElement' (role 'core_TraceElement92', cardinality 0..*) is associated with 'core::TraceCompareExpression' (role 'core_TraceCompareExpression91', cardinality 0..*).
+'core::ImportedModel' (role 'core_ImportedModel', cardinality 0..*) is associated with 'core::TransformationDefinition' (role 'core_TransformationDefinition9', cardinality 0..*).
+'core::UseDeclaration' (role 'core_UseDeclaration', cardinality 0..*) is associated with 'core::TransformationDefinition' (role 'core_TransformationDefinition15', cardinality 0..*).
+'core::TraceDefinition' (role 'core_TraceDefinition87', cardinality 0..*) is associated with 'core::MatchTrace' (role 'core_MatchTrace', cardinality 0..*).
+'core::VariableReference' (role 'core_VariableReference', cardinality 0..*) is associated with 'core::Variable' (role 'core_Variable29', cardinality 0..*).
+'core::Expression' (role 'core_Expression102', cardinality 0..*) is associated with 'core::PutTraceParameter' (role 'core_PutTraceParameter101', cardinality 0..*).
+'core::UseDeclaration' (role 'core_UseDeclaration54', cardinality 0..*) is associated with 'core::ResolveLink' (role 'core_ResolveLink53', cardinality 0..*).
+'core::ResolveLink' (role 'core_ResolveLink', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression51', cardinality 0..*).
+'core::IfBranch' (role 'core_IfBranch61', cardinality 0..*) is associated with 'core::IfExpr' (role 'core_IfExpr60', cardinality 0..*).
+'core::InlineFeature' (role 'core_InlineFeature84', cardinality 0..*) is associated with 'core::TypeExpression' (role 'core_TypeExpression85', cardinality 0..*).
+'core::RequireParameter' (role 'core_RequireParameter', cardinality 0..*) is associated with 'core::RequireDeclaration' (role 'core_RequireDeclaration21', cardinality 0..*).
+'core::ClassUse' (role 'core_ClassUse72', cardinality 0..*) is associated with 'core::TypedWithClass' (role 'core_TypedWithClass', cardinality 0..*).
+'core::TraceUse' (role 'core_TraceUse', cardinality 0..*) is associated with 'core::TraceDefinition' (role 'core_TraceDefinition', cardinality 0..*).
+'core::ImplicitlyAnnotableElement' (role 'core_ImplicitlyAnnotableElement', cardinality 0..*) is associated with 'core::SingleAnnotation' (role 'core_SingleAnnotation', cardinality 0..*).
+'core::IfExpr' (role 'core_IfExpr57', cardinality 0..*) is associated with 'core::IfBranch' (role 'core_IfBranch58', cardinality 0..*).
+'core::TransformationDefinition' (role 'core_TransformationDefinition17', cardinality 0..*) is associated with 'core::RequireDeclaration' (role 'core_RequireDeclaration', cardinality 0..*).
+'core::BinaryExpr' (role 'core_BinaryExpr45', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression46', cardinality 0..*).
+'core::MatchTrace' (role 'core_MatchTrace89', cardinality 0..*) is associated with 'core::TraceCompareExpression' (role 'core_TraceCompareExpression', cardinality 0..*).
+'core::RequireModelParameter' (role 'core_RequireModelParameter', cardinality 0..*) is associated with 'core::RepresentModel' (role 'core_RepresentModel', cardinality 0..*).
+'core::GenericAnnotation' (role 'core_GenericAnnotation', cardinality 0..*) is associated with 'core::AnnotationParameter' (role 'core_AnnotationParameter', cardinality 0..*).
+'core::AnnotableElement' (role 'annotatedElement', cardinality 0..*) is associated with 'core::Annotation' (role 'Annotation', cardinality 0..*).
+'core::DefineVariable' (role 'core_DefineVariable', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression', cardinality 0..*).
+'core::RepresentModel' (role 'core_RepresentModel69', cardinality 0..*) is associated with 'core::ClassUse' (role 'core_ClassUse', cardinality 0..*).
+'core::TypeExpression' (role 'core_TypeExpression', cardinality 0..*) is associated with 'core::TraceElement' (role 'core_TraceElement78', cardinality 0..*).
+'core::TraceDefinition' (role 'core_TraceDefinition97', cardinality 0..*) is associated with 'core::PutTrace' (role 'core_PutTrace', cardinality 0..*).
+'core::Expression' (role 'core_Expression41', cardinality 0..*) is associated with 'core::KeywordParameter' (role 'core_KeywordParameter40', cardinality 0..*).
+'core::Expression' (role 'core_Expression43', cardinality 0..*) is associated with 'core::BinaryExpr' (role 'core_BinaryExpr', cardinality 0..*).
+'core::KeywordMethodCall' (role 'core_KeywordMethodCall38', cardinality 0..*) is associated with 'core::KeywordParameter' (role 'core_KeywordParameter', cardinality 0..*).
+'core::PutTrace' (role 'core_PutTrace99', cardinality 0..*) is associated with 'core::PutTraceParameter' (role 'core_PutTraceParameter', cardinality 0..*).
+'core::PropertyWrite' (role 'core_PropertyWrite26', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression27', cardinality 0..*).
+'core::Expression' (role 'core_Expression64', cardinality 0..*) is associated with 'core::IfBranch' (role 'core_IfBranch63', cardinality 0..*).
+'core::Statement' (role 'core_Statement', cardinality 0..*) is associated with 'core::ClosureDeclaration' (role 'core_ClosureDeclaration', cardinality 0..*).
+'core::Expression' (role 'core_Expression34', cardinality 0..*) is associated with 'core::MethodCall' (role 'core_MethodCall33', cardinality 0..*).
+'core::InlineModel' (role 'core_InlineModel80', cardinality 0..*) is associated with 'core::InlineClass' (role 'core_InlineClass', cardinality 0..*).

@@ -1,0 +1,358 @@
+The model has 134 class(es).
+The class 'iot2::Input' has no attributes.
+The class 'iot2::Statement::If::Then::Else::ElseIfPart' has no attributes.
+The class 'iot2::Expression::VarArgs' has no attributes.
+The class 'iot2::Statement::While' has no attributes.
+The class 'iot2::ControlNode' has no attributes.
+The class 'iot2::Block' has no attributes.
+The class 'iot2::Offer' has no attributes.
+The class 'iot2::Expression::Larger::Equal' has no attributes.
+The class 'iot2::Function' has the following attributes: 'parameters' of type str; 'varArgs' of type bool.
+The class 'iot2::Expression::Multiplication' has no attributes.
+The class 'iot2::TypedefDef' has no attributes.
+The class 'iot2::Statement::For::Numeric' has the following attributes: 'iteratorName' of type str.
+The class 'iot2::IDLType' has the following attributes: 'typeCode' of type str.
+The class 'Field' has no attributes.
+The class 'iot2::Sensor' has no attributes.
+The class 'iot2::ControlFlow' has no attributes.
+The class 'iot2::Statement::If::Then::Else' has no attributes.
+The class 'Expression' has no attributes.
+The class 'iot2::ActivityNode' has the following attributes: 'running' of type str.
+The class 'Value' has no attributes.
+The class 'iot2::ActivityEdge' has no attributes.
+The class 'iot2::Expression::AccessMember' has the following attributes: 'memberName' of type str.
+The class 'iot2::Expression::Invert' has no attributes.
+The class 'Statement' has no attributes.
+The class 'iot2::Expression::Exponentiation' has no attributes.
+The class 'iot2::BooleanVariable' has no attributes.
+The class 'iot2::LastStatement::ReturnWithValue' has no attributes.
+The class 'iot2::Field::AddEntryToTable::Brackets' has no attributes.
+The class 'iot2::Actuator' has no attributes.
+The class 'iot2::Statement::Block' has no attributes.
+The class 'iot2::Expression::Plus' has no attributes.
+The class 'iot2::HWComponent' has the following attributes: 'name' of type bool.
+The class 'iot2::Field' has the following attributes: 'identifier' of type str.
+The class 'Statement::FunctioncallOrAssignment' has no attributes.
+The class 'iot2::BooleanBinaryExpression' has the following attributes: 'operator' of type bool.
+The class 'iot2::Statement::Repeat' has no attributes.
+The class 'iot2::Variable' has the following attributes: 'name' of type str.
+The class 'iot2::Expression::Or' has no attributes.
+The class 'iot2::System' has the following attributes: 'name' of type str.
+The class 'iot2::Action' has no attributes.
+The class 'iot2::Expression::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'iot2::Expression::Division' has no attributes.
+The class 'iot2::IntegerExpression' has no attributes.
+The class 'iot2::BooleanUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'iot2::Expression::TableConstructor' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'iot2::Expression::Modulo' has no attributes.
+The class 'iot2::OperationDef' has the following attributes: 'contexts' of type str; 'isOneway' of type bool.
+The class 'iot2::Board' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'iot2::ForkNode' has no attributes.
+The class 'iot2::ControlToken' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'iot2::Expression::Number' has the following attributes: 'value' of type float.
+The class 'iot2::NamedElement' has the following attributes: 'identifier' of type str; 'name' of type str.
+The class 'Token' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'iot2::InputValue' has no attributes.
+The class 'iot2::Statement::CallFunction' has no attributes.
+The class 'LastStatement' has no attributes.
+The class 'iot2::Expression::Concatenation' has no attributes.
+The class 'HWComponent' has no attributes.
+The class 'iot2::PrimitiveDef' has the following attributes: 'kind' of type str.
+The class 'iot2::InitialNode' has no attributes.
+The class 'iot2::ActivityFinalNode' has no attributes.
+The class 'iot2::Container' has no attributes.
+The class 'iot2::Statement::Assignment' has no attributes.
+The class 'iot2::Environment' has no attributes.
+The class 'iot2::ParameterDef' has the following attributes: 'identifier' of type str; 'direction' of type str.
+The class 'iot2::ExceptionDef' has the following attributes: 'typeCode' of type str.
+The class 'iot2::Expression::Smaller::Equal' has no attributes.
+The class 'iot2::Statement::FunctioncallOrAssignment' has no attributes.
+The class 'iot2::ExecutableNode' has no attributes.
+The class 'IDLType' has no attributes.
+The class 'iot2::Field::AppendEntryToTable' has no attributes.
+The class 'iot2::DecisionNode' has no attributes.
+The class 'Contained' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'iot2::LastStatement::Break' has no attributes.
+The class 'Typed' has no attributes.
+The class 'iot2::Statement::GlobalFunction::Declaration' has the following attributes: 'functionName' of type str; 'prefix' of type str.
+The class 'iot2::Expression::Negate' has no attributes.
+The class 'iot2::BooleanExpression' has no attributes.
+The class 'iot2::LastStatement::Return' has no attributes.
+The class 'iot2::Expression::Equal' has no attributes.
+The class 'iot2::Expression::CallFunction' has no attributes.
+The class 'iot2::Typed' has no attributes.
+The class 'Variable' has no attributes.
+The class 'iot2::Expression::And' has no attributes.
+The class 'iot2::Field::AddEntryToTable' has the following attributes: 'key' of type str.
+The class 'iot2::Expression::Function' has no attributes.
+The class 'iot2::IntegerValue' has the following attributes: 'value' of type int.
+The class 'iot2::Expression::AccessArray' has no attributes.
+The class 'iot2::ForkedToken' has the following attributes: 'remainingOffersCount' of type str.
+The class 'iot2::Chunk' has no attributes.
+The class 'iot2::Statement' has no attributes.
+The class 'iot2::Contained' has the following attributes: 'version' of type str; 'repositoryId' of type str; 'absoluteName' of type str.
+The class 'iot2::Expression' has no attributes.
+The class 'iot2::Expression::False' has no attributes.
+The class 'iot2::Token' has no attributes.
+The class 'iot2::Expression::Not::Equal' has no attributes.
+The class 'Chunk' has no attributes.
+The class 'iot2::Value' has no attributes.
+The class 'iot2::Statement::Local::Variable::Declaration' has the following attributes: 'variableNames' of type str.
+The class 'iot2::FinalNode' has no attributes.
+The class 'iot2::Sketch' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'iot2::IntegerVariable' has no attributes.
+The class 'iot2::Expression::Length' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'iot2::JoinNode' has no attributes.
+The class 'Action' has no attributes.
+The class 'iot2::Expression::Nil' has no attributes.
+The class 'iot2::Statement::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'iot2::Statement::For::Generic' has the following attributes: 'names' of type str.
+The class 'iot2::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'iot2::Expression::VariableName' has the following attributes: 'variable' of type bool.
+The class 'ControlNode' has no attributes.
+The class 'iot2::Expression::True' has no attributes.
+The class 'iot2::Statement::LocalFunction::Declaration' has the following attributes: 'functionName' of type str.
+The class 'iot2::Expression::Larger' has no attributes.
+The class 'iot2::IntegerComparisonExpression' has the following attributes: 'operator' of type str.
+The class 'iot2::Expression::Smaller' has no attributes.
+The class 'IntegerExpression' has no attributes.
+The class 'iot2::Expression::Minus' has no attributes.
+The class 'iot2::OpaqueAction' has no attributes.
+The class 'iot2::Trace' has no attributes.
+The class 'iot2::Activity' has no attributes.
+The class 'iot2::Context' has no attributes.
+The class 'LastStatement::Return' has no attributes.
+The class 'iot2::Functioncall::Arguments' has no attributes.
+The class 'iot2::IntegerCalculationExpression' has the following attributes: 'operator' of type str.
+The class 'iot2::MergeNode' has no attributes.
+The class 'iot2::Expression::String' has the following attributes: 'value' of type str.
+The class 'iot2::LastStatement' has no attributes.
+The enumeration 'BooleanUnaryOperator' has the following literals: 'NOT'.
+The enumeration 'IntegerCalculationOperator' has the following literals: 'ADD', 'SUBRACT'.
+The enumeration 'PrimitiveKind' has the following literals: 'PK_TYPECODE', 'PK_ULONG', 'PK_CHAR', 'PK_ANY', 'PK_WSTRING', 'PK_DOUBLE', 'PK_SHORT', 'PK_PRINCIPAL', 'PK_WCHAR', 'PK_NULL', 'PK_ULONGLONG', 'PK_LONGDOUBLE', 'PK_OBJREF', 'PK_VOID', 'PK_FLOAT', 'PK_STRING', 'PK_USHORT', 'PK_LONGLONG', 'PK_LONG', 'PK_BOOLEAN', 'PK_OCTET'.
+The enumeration 'ParameterMode' has the following literals: 'PARAM_IN', 'PARAM_INOUT', 'PARAM_OUT'.
+The enumeration 'IntegerComparisonOperator' has the following literals: 'GREATER_EQUALS', 'EQUALS', 'GREATER', 'SMALLER', 'SMALLER_EQUALS'.
+The enumeration 'BoardType' has the following literals: 'RaspberryPi', 'BeagleBoard', 'Arduino'.
+The enumeration 'BooleanBinaryOperator' has the following literals: 'OR', 'AND'.
+'iot2::Statement::CallMemberFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'iot2::Expression::Length' is a specialization of 'Expression'.
+'iot2::BooleanValue' is a specialization of 'Value'.
+'iot2::Expression::Plus' is a specialization of 'Expression'.
+'iot2::Contained' is a specialization of 'NamedElement'.
+'iot2::Expression::Smaller::Equal' is a specialization of 'Expression'.
+'iot2::Statement::FunctioncallOrAssignment' is a specialization of 'Statement'.
+'iot2::IntegerCalculationExpression' is a specialization of 'IntegerExpression'.
+'iot2::Expression' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'iot2::Expression::AccessMember' is a specialization of 'Expression'.
+'iot2::MergeNode' is a specialization of 'ControlNode'.
+'iot2::ActivityEdge' is a specialization of 'NamedElement'.
+'iot2::Activity' is a specialization of 'NamedElement'.
+'iot2::FinalNode' is a specialization of 'ControlNode'.
+'iot2::Expression::Exponentiation' is a specialization of 'Expression'.
+'iot2::Expression::Negate' is a specialization of 'Expression'.
+'iot2::OperationDef' is a specialization of 'Contained'.
+'iot2::BooleanUnaryExpression' is a specialization of 'BooleanExpression'.
+'iot2::Statement::Repeat' is a specialization of 'Statement'.
+'iot2::OperationDef' is a specialization of 'Typed'.
+'iot2::TypedefDef' is a specialization of 'IDLType'.
+'iot2::ControlNode' is a specialization of 'ActivityNode'.
+'iot2::BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+'iot2::Expression::Equal' is a specialization of 'Expression'.
+'iot2::Expression::Modulo' is a specialization of 'Expression'.
+'iot2::Action' is a specialization of 'ExecutableNode'.
+'iot2::Statement::For::Numeric' is a specialization of 'Statement'.
+'iot2::Statement::If::Then::Else' is a specialization of 'Statement'.
+'iot2::Expression::Larger::Equal' is a specialization of 'Expression'.
+'iot2::ParameterDef' is a specialization of 'Typed'.
+'iot2::Statement::LocalFunction::Declaration' is a specialization of 'Statement'.
+'iot2::OpaqueAction' is a specialization of 'Action'.
+'iot2::Expression::Minus' is a specialization of 'Expression'.
+'iot2::Expression::Number' is a specialization of 'Expression'.
+'iot2::ControlFlow' is a specialization of 'ActivityEdge'.
+'iot2::Expression::TableConstructor' is a specialization of 'Expression'.
+'iot2::Field' is a specialization of 'Typed'.
+'iot2::ForkedToken' is a specialization of 'Token'.
+'iot2::Expression::Larger' is a specialization of 'Expression'.
+'iot2::Expression::True' is a specialization of 'Expression'.
+'iot2::Expression::CallFunction' is a specialization of 'Expression'.
+'iot2::Statement::Block' is a specialization of 'Statement'.
+'iot2::Expression::VarArgs' is a specialization of 'Expression'.
+'iot2::Statement::For::Generic' is a specialization of 'Statement'.
+'iot2::Statement::CallFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'iot2::Field::AppendEntryToTable' is a specialization of 'Field'.
+'iot2::Expression::Not::Equal' is a specialization of 'Expression'.
+'iot2::Actuator' is a specialization of 'HWComponent'.
+'iot2::DecisionNode' is a specialization of 'ControlNode'.
+'iot2::Expression::Smaller' is a specialization of 'Expression'.
+'iot2::Expression::Division' is a specialization of 'Expression'.
+'iot2::ForkNode' is a specialization of 'ControlNode'.
+'iot2::Expression::String' is a specialization of 'Expression'.
+'iot2::Statement::GlobalFunction::Declaration' is a specialization of 'Statement'.
+'iot2::Expression::Concatenation' is a specialization of 'Expression'.
+'iot2::PrimitiveDef' is a specialization of 'IDLType'.
+'iot2::Field::AddEntryToTable' is a specialization of 'Field'.
+'iot2::BooleanExpression' is a specialization of 'Expression'.
+'iot2::IntegerComparisonExpression' is a specialization of 'IntegerExpression'.
+'iot2::Expression::False' is a specialization of 'Expression'.
+'iot2::Statement::While' is a specialization of 'Statement'.
+'iot2::Statement::Local::Variable::Declaration' is a specialization of 'Statement'.
+'iot2::IntegerVariable' is a specialization of 'Variable'.
+'iot2::Block' is a specialization of 'Chunk'.
+'iot2::Expression::AccessArray' is a specialization of 'Expression'.
+'iot2::Expression::VariableName' is a specialization of 'Expression'.
+'iot2::IntegerValue' is a specialization of 'Value'.
+'iot2::ExceptionDef' is a specialization of 'Contained'.
+'iot2::LastStatement::ReturnWithValue' is a specialization of 'LastStatement::Return'.
+'iot2::Expression::Invert' is a specialization of 'Expression'.
+'iot2::Sensor' is a specialization of 'HWComponent'.
+'iot2::LastStatement::Break' is a specialization of 'LastStatement'.
+'iot2::Statement::Assignment' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'iot2::ExecutableNode' is a specialization of 'ActivityNode'.
+'iot2::ActivityNode' is a specialization of 'NamedElement'.
+'iot2::Container' is a specialization of 'Contained'.
+'iot2::IntegerExpression' is a specialization of 'Expression'.
+'iot2::ControlToken' is a specialization of 'Token'.
+'iot2::Expression::Nil' is a specialization of 'Expression'.
+'iot2::Expression::Multiplication' is a specialization of 'Expression'.
+'iot2::LastStatement::Return' is a specialization of 'LastStatement'.
+'iot2::Expression::Function' is a specialization of 'Expression'.
+'iot2::TypedefDef' is a specialization of 'Contained'.
+'iot2::BooleanVariable' is a specialization of 'Variable'.
+'iot2::InitialNode' is a specialization of 'ControlNode'.
+'iot2::Expression::CallMemberFunction' is a specialization of 'Expression'.
+'iot2::Field::AddEntryToTable::Brackets' is a specialization of 'Field'.
+'iot2::Expression::And' is a specialization of 'Expression'.
+'iot2::ActivityFinalNode' is a specialization of 'FinalNode'.
+'iot2::JoinNode' is a specialization of 'ControlNode'.
+'iot2::Expression::Or' is a specialization of 'Expression'.
+'iot2::Expression::Modulo' (role 'iot2_Expression_Modulo184', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression185', cardinality 0..*).
+'iot2::IntegerComparisonExpression' (role 'iot2_IntegerComparisonExpression', cardinality 0..*) is associated with 'iot2::BooleanVariable' (role 'iot2_BooleanVariable246', cardinality 0..*).
+'iot2::Statement::If::Then::Else' (role 'iot2_Statement_If_Then_Else', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression52', cardinality 0..*).
+'iot2::ActivityNode' (role 'target', cardinality 0..*) is associated with 'iot2::ActivityEdge' (role 'ActivityEdge218', cardinality 0..*).
+'iot2::Context' (role 'iot2_Context271', cardinality 0..*) is associated with 'iot2::Context' (role 'iot2_Context269', cardinality 0..*).
+'iot2::Contained' (role 'contains', cardinality 0..*) is associated with 'iot2::Container' (role 'Container', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression191', cardinality 0..*) is associated with 'iot2::Expression::Invert' (role 'iot2_Expression_Invert', cardinality 0..*).
+'iot2::Function' (role 'iot2_Function89', cardinality 0..*) is associated with 'iot2::Expression::Function' (role 'iot2_Expression_Function', cardinality 0..*).
+'iot2::Value' (role 'iot2_Value', cardinality 0..*) is associated with 'iot2::Variable' (role 'iot2_Variable233', cardinality 0..*).
+'iot2::Activity' (role 'iot2_Activity14', cardinality 0..*) is associated with 'iot2::ActivityEdge' (role 'iot2_ActivityEdge', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef21', cardinality 0..*) is associated with 'iot2::ParameterDef' (role 'iot2_ParameterDef', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression147', cardinality 0..*) is associated with 'iot2::Expression::Equal' (role 'iot2_Expression_Equal', cardinality 0..*).
+'iot2::BooleanVariable' (role 'iot2_BooleanVariable248', cardinality 0..*) is associated with 'iot2::BooleanUnaryExpression' (role 'iot2_BooleanUnaryExpression', cardinality 0..*).
+'iot2::ActivityEdge' (role 'outgoing', cardinality 0..*) is associated with 'iot2::ActivityNode' (role 'ActivityNode221', cardinality 0..*).
+'iot2::Statement::While' (role 'iot2_Statement_While', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression42', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block60', cardinality 0..*) is associated with 'iot2::Statement::If::Then::Else' (role 'iot2_Statement_If_Then_Else59', cardinality 0..*).
+'iot2::Expression::Or' (role 'iot2_Expression_Or', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression117', cardinality 0..*).
+'iot2::Statement::CallFunction' (role 'iot2_Statement_CallFunction', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression112', cardinality 0..*).
+'iot2::Statement::For::Numeric' (role 'iot2_Statement_For_Numeric', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression68', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef', cardinality 0..*) is associated with 'iot2::HWComponent' (role 'iot2_HWComponent11', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression228', cardinality 0..*) is associated with 'iot2::OpaqueAction' (role 'iot2_OpaqueAction', cardinality 0..*).
+'iot2::BooleanBinaryExpression' (role 'iot2_BooleanBinaryExpression', cardinality 0..*) is associated with 'iot2::BooleanVariable' (role 'iot2_BooleanVariable250', cardinality 0..*).
+'iot2::Expression::Division' (role 'iot2_Expression_Division179', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression180', cardinality 0..*).
+'iot2::Trace' (role 'iot2_Trace', cardinality 0..*) is associated with 'iot2::Context' (role 'iot2_Context', cardinality 0..*).
+'iot2::Expression::Plus' (role 'iot2_Expression_Plus164', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression165', cardinality 0..*).
+'iot2::Contained' (role 'Contained', cardinality 0..*) is associated with 'iot2::Container' (role 'definedIn', cardinality 0..*).
+'iot2::Functioncall::Arguments' (role 'iot2_Functioncall_Arguments201', cardinality 0..*) is associated with 'iot2::Expression::CallMemberFunction' (role 'iot2_Expression_CallMemberFunction200', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression', cardinality 0..*) is associated with 'iot2::Field' (role 'iot2_Field34', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression208', cardinality 0..*) is associated with 'iot2::Expression::AccessArray' (role 'iot2_Expression_AccessArray', cardinality 0..*).
+'iot2::Expression::Not::Equal' (role 'iot2_Expression_Not_Equal154', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression155', cardinality 0..*).
+'iot2::InputValue' (role 'iot2_InputValue257', cardinality 0..*) is associated with 'iot2::Variable' (role 'iot2_Variable258', cardinality 0..*).
+'iot2::Expression::Larger::Equal' (role 'iot2_Expression_Larger_Equal', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression132', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef231', cardinality 0..*) is associated with 'iot2::OpaqueAction' (role 'iot2_OpaqueAction230', cardinality 0..*).
+'iot2::Statement::CallMemberFunction' (role 'iot2_Statement_CallMemberFunction109', cardinality 0..*) is associated with 'iot2::Functioncall::Arguments' (role 'iot2_Functioncall_Arguments110', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression170', cardinality 0..*) is associated with 'iot2::Expression::Minus' (role 'iot2_Expression_Minus169', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block45', cardinality 0..*) is associated with 'iot2::Statement::While' (role 'iot2_Statement_While44', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block77', cardinality 0..*) is associated with 'iot2::Statement::For::Numeric' (role 'iot2_Statement_For_Numeric76', cardinality 0..*).
+'iot2::Expression::Concatenation' (role 'iot2_Expression_Concatenation', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression157', cardinality 0..*).
+'iot2::HWComponent' (role 'iot2_HWComponent7', cardinality 0..*) is associated with 'iot2::Board' (role 'iot2_Board6', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression102', cardinality 0..*) is associated with 'iot2::Statement::Assignment' (role 'iot2_Statement_Assignment', cardinality 0..*).
+'iot2::Expression::AccessArray' (role 'iot2_Expression_AccessArray210', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression211', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block66', cardinality 0..*) is associated with 'iot2::Statement::If::Then::Else::ElseIfPart' (role 'iot2_Statement_If_Then_Else_ElseIfPart65', cardinality 0..*).
+'iot2::Offer' (role 'iot2_Offer', cardinality 0..*) is associated with 'iot2::ActivityEdge' (role 'iot2_ActivityEdge225', cardinality 0..*).
+'iot2::Expression::Smaller' (role 'iot2_Expression_Smaller', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression137', cardinality 0..*).
+'iot2::Statement::For::Generic' (role 'iot2_Statement_For_Generic', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression79', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression213', cardinality 0..*) is associated with 'iot2::Expression::AccessMember' (role 'iot2_Expression_AccessMember', cardinality 0..*).
+'iot2::InputValue' (role 'iot2_InputValue260', cardinality 0..*) is associated with 'iot2::Input' (role 'iot2_Input', cardinality 0..*).
+'iot2::BooleanExpression' (role 'iot2_BooleanExpression', cardinality 0..*) is associated with 'iot2::BooleanVariable' (role 'iot2_BooleanVariable242', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression182', cardinality 0..*) is associated with 'iot2::Expression::Modulo' (role 'iot2_Expression_Modulo', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block38', cardinality 0..*) is associated with 'iot2::LastStatement' (role 'iot2_LastStatement', cardinality 0..*).
+'iot2::Statement::Local::Variable::Declaration' (role 'iot2_Statement_Local_Variable_Declaration', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression87', cardinality 0..*).
+'iot2::IntegerVariable' (role 'iot2_IntegerVariable244', cardinality 0..*) is associated with 'iot2::IntegerCalculationExpression' (role 'iot2_IntegerCalculationExpression', cardinality 0..*).
+'iot2::Statement::For::Numeric' (role 'iot2_Statement_For_Numeric70', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression71', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression172', cardinality 0..*) is associated with 'iot2::Expression::Multiplication' (role 'iot2_Expression_Multiplication', cardinality 0..*).
+'iot2::Expression::Larger::Equal' (role 'iot2_Expression_Larger_Equal134', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression135', cardinality 0..*).
+'iot2::Field' (role 'iot2_Field91', cardinality 0..*) is associated with 'iot2::Expression::TableConstructor' (role 'iot2_Expression_TableConstructor', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block55', cardinality 0..*) is associated with 'iot2::Statement::If::Then::Else' (role 'iot2_Statement_If_Then_Else54', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression120', cardinality 0..*) is associated with 'iot2::Expression::Or' (role 'iot2_Expression_Or119', cardinality 0..*).
+'iot2::Expression::Concatenation' (role 'iot2_Expression_Concatenation159', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression160', cardinality 0..*).
+'iot2::IntegerVariable' (role 'iot2_IntegerVariable', cardinality 0..*) is associated with 'iot2::IntegerExpression' (role 'iot2_IntegerExpression', cardinality 0..*).
+'iot2::BooleanBinaryExpression' (role 'iot2_BooleanBinaryExpression252', cardinality 0..*) is associated with 'iot2::BooleanVariable' (role 'iot2_BooleanVariable253', cardinality 0..*).
+'iot2::Expression::Multiplication' (role 'iot2_Expression_Multiplication174', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression175', cardinality 0..*).
+'iot2::Expression::Smaller::Equal' (role 'iot2_Expression_Smaller_Equal', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression142', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block36', cardinality 0..*) is associated with 'iot2::Statement' (role 'iot2_Statement', cardinality 0..*).
+'iot2::Variable' (role 'iot2_Variable', cardinality 0..*) is associated with 'iot2::Activity' (role 'iot2_Activity16', cardinality 0..*).
+'iot2::LastStatement::ReturnWithValue' (role 'iot2_LastStatement_ReturnWithValue', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression100', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef23', cardinality 0..*) is associated with 'iot2::ExceptionDef' (role 'iot2_ExceptionDef', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression177', cardinality 0..*) is associated with 'iot2::Expression::Division' (role 'iot2_Expression_Division', cardinality 0..*).
+'iot2::Token' (role 'iot2_Token281', cardinality 0..*) is associated with 'iot2::ForkedToken' (role 'iot2_ForkedToken', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef25', cardinality 0..*) is associated with 'iot2::Block' (role 'iot2_Block', cardinality 0..*).
+'iot2::Board' (role 'iot2_Board', cardinality 0..*) is associated with 'iot2::System' (role 'iot2_System2', cardinality 0..*).
+'iot2::HWComponent' (role 'iot2_HWComponent', cardinality 0..*) is associated with 'iot2::System' (role 'iot2_System', cardinality 0..*).
+'iot2::Statement::For::Numeric' (role 'iot2_Statement_For_Numeric73', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression74', cardinality 0..*).
+'iot2::Statement::Assignment' (role 'iot2_Statement_Assignment104', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression105', cardinality 0..*).
+'iot2::Expression::Larger' (role 'iot2_Expression_Larger', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression127', cardinality 0..*).
+'iot2::JoinNode' (role 'iot2_JoinNode', cardinality 0..*) is associated with 'iot2::Context' (role 'iot2_Context276', cardinality 0..*).
+'iot2::Statement::LocalFunction::Declaration' (role 'iot2_Statement_LocalFunction_Declaration', cardinality 0..*) is associated with 'iot2::Function' (role 'iot2_Function85', cardinality 0..*).
+'iot2::Expression::Not::Equal' (role 'iot2_Expression_Not_Equal', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression152', cardinality 0..*).
+'iot2::BooleanVariable' (role 'iot2_BooleanVariable', cardinality 0..*) is associated with 'iot2::ControlFlow' (role 'iot2_ControlFlow', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression98', cardinality 0..*) is associated with 'iot2::Field::AddEntryToTable::Brackets' (role 'iot2_Field_AddEntryToTable_Brackets', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression107', cardinality 0..*) is associated with 'iot2::Statement::CallMemberFunction' (role 'iot2_Statement_CallMemberFunction', cardinality 0..*).
+'iot2::Expression::CallMemberFunction' (role 'iot2_Expression_CallMemberFunction', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression198', cardinality 0..*).
+'iot2::Function' (role 'iot2_Function', cardinality 0..*) is associated with 'iot2::Statement::GlobalFunction::Declaration' (role 'iot2_Statement_GlobalFunction_Declaration', cardinality 0..*).
+'iot2::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'iot2::ActivityNode' (role 'source', cardinality 0..*).
+'iot2::Variable' (role 'iot2_Variable19', cardinality 0..*) is associated with 'iot2::Activity' (role 'iot2_Activity18', cardinality 0..*).
+'iot2::Expression::Smaller::Equal' (role 'iot2_Expression_Smaller_Equal144', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression145', cardinality 0..*).
+'iot2::Variable' (role 'iot2_Variable235', cardinality 0..*) is associated with 'iot2::Value' (role 'iot2_Value236', cardinality 0..*).
+'iot2::Block' (role 'iot2_Block94', cardinality 0..*) is associated with 'iot2::Function' (role 'iot2_Function93', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression130', cardinality 0..*) is associated with 'iot2::Expression::Larger' (role 'iot2_Expression_Larger129', cardinality 0..*).
+'iot2::Statement::If::Then::Else' (role 'iot2_Statement_If_Then_Else57', cardinality 0..*) is associated with 'iot2::Statement::If::Then::Else::ElseIfPart' (role 'iot2_Statement_If_Then_Else_ElseIfPart', cardinality 0..*).
+'iot2::Statement::Repeat' (role 'iot2_Statement_Repeat49', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression50', cardinality 0..*).
+'iot2::IntegerExpression' (role 'iot2_IntegerExpression239', cardinality 0..*) is associated with 'iot2::IntegerVariable' (role 'iot2_IntegerVariable240', cardinality 0..*).
+'iot2::Activity' (role 'iot2_Activity268', cardinality 0..*) is associated with 'iot2::Context' (role 'iot2_Context267', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression196', cardinality 0..*) is associated with 'iot2::Expression::Exponentiation' (role 'iot2_Expression_Exponentiation195', cardinality 0..*).
+'iot2::ActivityNode' (role 'iot2_ActivityNode', cardinality 0..*) is associated with 'iot2::Token' (role 'iot2_Token264', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression193', cardinality 0..*) is associated with 'iot2::Expression::Exponentiation' (role 'iot2_Expression_Exponentiation', cardinality 0..*).
+'iot2::Offer' (role 'iot2_Offer262', cardinality 0..*) is associated with 'iot2::Token' (role 'iot2_Token', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression189', cardinality 0..*) is associated with 'iot2::Expression::Length' (role 'iot2_Expression_Length', cardinality 0..*).
+'iot2::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'iot2::ActivityNode' (role 'ActivityNode223', cardinality 0..*).
+'iot2::Expression::Minus' (role 'iot2_Expression_Minus', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression167', cardinality 0..*).
+'iot2::IDLType' (role 'iot2_IDLType', cardinality 0..*) is associated with 'iot2::Typed' (role 'iot2_Typed', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression162', cardinality 0..*) is associated with 'iot2::Expression::Plus' (role 'iot2_Expression_Plus', cardinality 0..*).
+'iot2::TypedefDef' (role 'iot2_TypedefDef', cardinality 0..*) is associated with 'iot2::Typed' (role 'iot2_Typed30', cardinality 0..*).
+'iot2::Functioncall::Arguments' (role 'iot2_Functioncall_Arguments', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression96', cardinality 0..*).
+'iot2::ActivityNode' (role 'iot2_ActivityNode279', cardinality 0..*) is associated with 'iot2::Trace' (role 'iot2_Trace278', cardinality 0..*).
+'iot2::Statement::Repeat' (role 'iot2_Statement_Repeat', cardinality 0..*) is associated with 'iot2::Block' (role 'iot2_Block47', cardinality 0..*).
+'iot2::Environment' (role 'iot2_Environment214', cardinality 0..*) is associated with 'iot2::Environment' (role 'iot2_Environment', cardinality 0..*).
+'iot2::InputValue' (role 'iot2_InputValue', cardinality 0..*) is associated with 'iot2::Value' (role 'iot2_Value255', cardinality 0..*).
+'iot2::Expression::CallFunction' (role 'iot2_Expression_CallFunction', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression203', cardinality 0..*).
+'iot2::Field' (role 'iot2_Field', cardinality 0..*) is associated with 'iot2::ExceptionDef' (role 'iot2_ExceptionDef32', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression150', cardinality 0..*) is associated with 'iot2::Expression::Equal' (role 'iot2_Expression_Equal149', cardinality 0..*).
+'iot2::Activity' (role 'iot2_Activity', cardinality 0..*) is associated with 'iot2::Sketch' (role 'iot2_Sketch9', cardinality 0..*).
+'iot2::Expression::CallFunction' (role 'iot2_Expression_CallFunction205', cardinality 0..*) is associated with 'iot2::Functioncall::Arguments' (role 'iot2_Functioncall_Arguments206', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression63', cardinality 0..*) is associated with 'iot2::Statement::If::Then::Else::ElseIfPart' (role 'iot2_Statement_If_Then_Else_ElseIfPart62', cardinality 0..*).
+'iot2::Functioncall::Arguments' (role 'iot2_Functioncall_Arguments115', cardinality 0..*) is associated with 'iot2::Statement::CallFunction' (role 'iot2_Statement_CallFunction114', cardinality 0..*).
+'iot2::Expression::Smaller' (role 'iot2_Expression_Smaller139', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression140', cardinality 0..*).
+'iot2::System' (role 'iot2_System4', cardinality 0..*) is associated with 'iot2::Sketch' (role 'iot2_Sketch', cardinality 0..*).
+'iot2::InputValue' (role 'iot2_InputValue274', cardinality 0..*) is associated with 'iot2::Context' (role 'iot2_Context273', cardinality 0..*).
+'iot2::Statement::For::Generic' (role 'iot2_Statement_For_Generic81', cardinality 0..*) is associated with 'iot2::Block' (role 'iot2_Block82', cardinality 0..*).
+'iot2::Expression' (role 'iot2_Expression125', cardinality 0..*) is associated with 'iot2::Expression::And' (role 'iot2_Expression_And124', cardinality 0..*).
+'iot2::Activity' (role 'activity', cardinality 0..*) is associated with 'iot2::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'iot2::Expression::And' (role 'iot2_Expression_And', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression122', cardinality 0..*).
+'iot2::Expression::Negate' (role 'iot2_Expression_Negate', cardinality 0..*) is associated with 'iot2::Expression' (role 'iot2_Expression187', cardinality 0..*).
+'iot2::Statement::Block' (role 'iot2_Statement_Block', cardinality 0..*) is associated with 'iot2::Block' (role 'iot2_Block40', cardinality 0..*).
+'iot2::ActivityNode' (role 'nodes', cardinality 0..*) is associated with 'iot2::Activity' (role 'Activity', cardinality 0..*).

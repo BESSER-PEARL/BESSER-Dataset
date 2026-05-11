@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'exercises::State' has the following attributes: 'isEnd' of type bool; 'isStart' of type bool; 'id' of type str.
+The class 'NamableElement' has no attributes.
+The class 'exercises::NamableElement' has the following attributes: 'name' of type str.
+The class 'exercises::Transition' has the following attributes: 'input' of type str.
+The class 'exercises::DFA' has no attributes.
+'exercises::Transition' is a specialization of 'NamableElement'.
+'exercises::DFA' is a specialization of 'NamableElement'.
+'exercises::State' is a specialization of 'NamableElement'.
+'exercises::Transition' (role 'exercises_Transition8', cardinality 0..*) is associated with 'exercises::State' (role 'exercises_State7', cardinality 0..*).
+'exercises::State' (role 'exercises_State4', cardinality 0..*) is associated with 'exercises::Transition' (role 'exercises_Transition5', cardinality 0..*).
+'exercises::Transition' (role 'exercises_Transition', cardinality 0..*) is associated with 'exercises::DFA' (role 'exercises_DFA2', cardinality 0..*).
+'exercises::State' (role 'exercises_State', cardinality 0..*) is associated with 'exercises::DFA' (role 'exercises_DFA', cardinality 0..*).

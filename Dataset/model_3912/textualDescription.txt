@@ -1,0 +1,743 @@
+The model has 298 class(es).
+The class 'pcm::av::av::reliability::av::av::SoftwareInducedFailureType' has no attributes.
+The class 'pcm::av::av::GlobalScope' has no attributes.
+The class 'pcm::av::av::repository::av::av::OperationSignature' has no attributes.
+The class 'ProcessingResourceType' has no attributes.
+The class 'SpecifiedOutputParameterAbstraction' has no attributes.
+The class 'seff::performance::av::av::InfrastructureCall' has no attributes.
+The class 'VariableCharacterisation' has no attributes.
+The class 'Variable' has no attributes.
+The class 'pcm::av::av::reliability::av::av::HardwareInducedFailureType' has no attributes.
+The class 'PassiveResource' has no attributes.
+The class 'CallAction' has no attributes.
+The class 'ClosedWorkload' has no attributes.
+The class 'pcm::av::av::reliability::av::av::FailureOccurrenceDescription' has the following attributes: 'failureProbability' of type float.
+The class 'pcm::av::av::entity::av::av::ResourceProvidedRole' has no attributes.
+The class 'RandomVariable' has no attributes.
+The class 'pcm::av::av::core::av::av::PCMRandomVariable' has no attributes.
+The class 'pcm::av::av::repository::av::av::SourceRole' has no attributes.
+The class 'pcm::av::av::parameter::av::av::CharacterisedVariable' has the following attributes: 'characterisationType' of type str.
+The class 'repository::av::av::ImplementationComponentType' has no attributes.
+The class 'pcm::av::av::PerJoinPointScope' has no attributes.
+The class 'pcm::av::av::repository::av::av::ProvidesComponentType' has no attributes.
+The class 'OpenWorkload' has no attributes.
+The class 'Loop' has no attributes.
+The class 'entity::av::av::ComposedProvidingRequiringEntity' has no attributes.
+The class 'composition::av::av::AssemblyEventConnector' has no attributes.
+The class 'composition::av::av::EventChannelSinkConnector' has no attributes.
+The class 'pcm::av::av::protocol::av::av::Protocol' has the following attributes: 'protocolTypeID' of type str.
+The class 'pcm::av::av::AdviceAdvice' has no attributes.
+The class 'pcm::av::av::repository::av::av::OperationInterface' has no attributes.
+The class 'pcm::av::av::DummyClass' has no attributes.
+The class 'seff::performance::av::av::ParametricResourceDemand' has no attributes.
+The class 'pcm::av::av::reliability::av::av::InternalFailureOccurrenceDescription' has no attributes.
+The class 'CompositeDataType' has no attributes.
+The class 'seff::performance::av::av::ResourceCall' has no attributes.
+The class 'AbstractBranchTransition' has no attributes.
+The class 'entity::av::av::InterfaceProvidingEntity' has no attributes.
+The class 'InternalAction' has no attributes.
+The class 'FailureOccurrenceDescription' has no attributes.
+The class 'SoftwareInducedFailureType' has no attributes.
+The class 'qos::reliability::av::av::SpecifiedReliabilityAnnotation' has no attributes.
+The class 'pcm::av::av::entity::av::av::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'ResourceInterface' has no attributes.
+The class 'pcm::av::av::reliability::av::av::ExternalFailureOccurrenceDescription' has no attributes.
+The class 'pcm::av::av::repository::av::av::CompositeComponent' has no attributes.
+The class 'CommunicationLinkResourceType' has no attributes.
+The class 'entity::av::av::ResourceInterfaceProvidingEntity' has no attributes.
+The class 'Role' has no attributes.
+The class 'pcm::av::av::reliability::av::av::NetworkInducedFailureType' has no attributes.
+The class 'NetworkInducedFailureType' has no attributes.
+The class 'AbstractInternalControlFlowAction' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::ResourceInterface' has no attributes.
+The class 'pcm::av::av::seff::av::av::StopAction' has no attributes.
+The class 'pcm::av::av::reliability::av::av::FailureType' has no attributes.
+The class 'ProcessingResourceSpecification' has no attributes.
+The class 'pcm::av::av::reliability::av::av::ResourceTimeoutFailureType' has no attributes.
+The class 'CommunicationLinkResourceSpecification' has no attributes.
+The class 'InternalFailureOccurrenceDescription' has no attributes.
+The class 'pcm::av::av::subsystem::av::av::SubSystem' has no attributes.
+The class 'Delay' has no attributes.
+The class 'pcm::av::av::seff::av::av::AbstractInternalControlFlowAction' has no attributes.
+The class 'pcm::av::av::Advice' has no attributes.
+The class 'LinkingResource' has no attributes.
+The class 'RequiredRole' has no attributes.
+The class 'pcm::av::av::resourceenvironment::av::av::ResourceEnvironment' has no attributes.
+The class 'pcm::av::av::resourceenvironment::av::av::ResourceContainer' has no attributes.
+The class 'pcm::av::av::seff::av::av::AbstractLoopAction' has no attributes.
+The class 'SchedulingPolicy' has no attributes.
+The class 'entity::av::av::ResourceInterfaceRequiringEntity' has no attributes.
+The class 'pcm::av::av::seff::av::av::BranchAction' has no attributes.
+The class 'entity::av::av::Entity' has no attributes.
+The class 'BranchAction' has no attributes.
+The class 'pcm::av::av::entity::av::av::InterfaceRequiringEntity' has no attributes.
+The class 'pcm::av::av::seff::av::av::AbstractBranchTransition' has no attributes.
+The class 'pcm::av::av::system::av::av::System' has no attributes.
+The class 'ProvidedRole' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::CommunicationLinkResourceType' has no attributes.
+The class 'Entity' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::ResourceRepository' has no attributes.
+The class 'composition::av::av::ComposedStructure' has no attributes.
+The class 'ResourceRepository' has no attributes.
+The class 'pcm::av::av::qos::reliability::av::av::SpecifiedReliabilityAnnotation' has no attributes.
+The class 'pcm::av::av::qos::performance::av::av::ComponentSpecifiedExecutionTime' has no attributes.
+The class 'entity::av::av::ResourceRequiredRole' has no attributes.
+The class 'pcm::av::av::resourceenvironment::av::av::LinkingResource' has no attributes.
+The class 'UnitCarryingElement' has no attributes.
+The class 'pcm::av::av::qos::performance::av::av::SpecifiedExecutionTime' has no attributes.
+The class 'qos::performance::av::av::SpecifiedExecutionTime' has no attributes.
+The class 'QoSAnnotations' has no attributes.
+The class 'GuardedBranchTransition' has no attributes.
+The class 'pcm::av::av::repository::av::av::CompleteComponentType' has no attributes.
+The class 'ForkAction' has no attributes.
+The class 'pcm::av::av::qosannotations::av::av::SpecifiedQoSAnnotation' has no attributes.
+The class 'pcm::av::av::repository::av::av::OperationProvidedRole' has no attributes.
+The class 'pcm::av::av::repository::av::av::SinkRole' has no attributes.
+The class 'LoopAction' has no attributes.
+The class 'pcm::av::av::seff::reliability::av::av::FailureHandlingEntity' has no attributes.
+The class 'seff::av::av::CallReturnAction' has no attributes.
+The class 'pcm::av::av::entity::av::av::ComposedProvidingRequiringEntity' has no attributes.
+The class 'pcm::av::av::seff::reliability::av::av::RecoveryAction' has no attributes.
+The class 'pcm::av::av::seff::av::av::ResourceDemandingSEFF' has no attributes.
+The class 'entity::av::av::ResourceProvidedRole' has no attributes.
+The class 'entity::av::av::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'seff::reliability::av::av::RecoveryActionBehaviour' has no attributes.
+The class 'pcm::av::av::entity::av::av::ResourceInterfaceProvidingEntity' has no attributes.
+The class 'pcm::av::av::entity::av::av::Entity' has no attributes.
+The class 'pcm::av::av::seff::reliability::av::av::RecoveryActionBehaviour' has no attributes.
+The class 'composition::av::av::EventChannel' has no attributes.
+The class 'pcm::av::av::seff::av::av::ForkedBehaviour' has no attributes.
+The class 'pcm::av::av::entity::av::av::ResourceInterfaceProvidingRequiringEntity' has no attributes.
+The class 'pcm::av::av::seff::performance::av::av::ParametricResourceDemand' has no attributes.
+The class 'pcm::av::av::entity::av::av::NamedElement' has the following attributes: 'entityName' of type str.
+The class 'pcm::av::av::seff::performance::av::av::ResourceCall' has no attributes.
+The class 'pcm::av::av::repository::av::av::CollectionDataType' has no attributes.
+The class 'repository::av::av::DataType' has no attributes.
+The class 'ForkedBehaviour' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::ResourceSignature' has the following attributes: 'resourceServiceId' of type int.
+The class 'Branch' has no attributes.
+The class 'pcm::av::av::seff::av::av::ForkAction' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' has the following attributes: 'priority' of type int.
+The class 'seff::av::av::CallAction' has no attributes.
+The class 'pcm::av::av::seff::av::av::ReleaseAction' has no attributes.
+The class 'AbstractUserAction' has no attributes.
+The class 'pcm::av::av::seff::av::av::StartAction' has no attributes.
+The class 'UserData' has no attributes.
+The class 'pcm::av::av::seff::av::av::ResourceDemandingInternalBehaviour' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::UsageModel' has no attributes.
+The class 'ResourceDemandingInternalBehaviour' has no attributes.
+The class 'OperationSignature' has no attributes.
+The class 'pcm::av::av::composition::av::av::DelegationConnector' has no attributes.
+The class 'pcm::av::av::composition::av::av::ComposedStructure' has no attributes.
+The class 'seff::av::av::ResourceDemandingBehaviour' has no attributes.
+The class 'SourceRole' has no attributes.
+The class 'seff::av::av::ServiceEffectSpecification' has no attributes.
+The class 'pcm::av::av::composition::av::av::Connector' has no attributes.
+The class 'pcm::av::av::seff::av::av::AcquireAction' has the following attributes: 'timeoutValue' of type float; 'timeout' of type bool.
+The class 'Connector' has no attributes.
+The class 'pcm::av::av::seff::av::av::ProbabilisticBranchTransition' has the following attributes: 'branchProbability' of type float.
+The class 'pcm::av::av::seff::av::av::CallReturnAction' has no attributes.
+The class 'pcm::av::av::seff::av::av::LoopAction' has no attributes.
+The class 'PCMRandomVariable' has no attributes.
+The class 'composition::av::av::ResourceRequiredDelegationConnector' has no attributes.
+The class 'OperationInterface' has no attributes.
+The class 'seff::reliability::av::av::FailureHandlingEntity' has no attributes.
+The class 'composition::av::av::AssemblyContext' has no attributes.
+The class 'seff::av::av::AbstractAction' has no attributes.
+The class 'composition::av::av::Connector' has no attributes.
+The class 'pcm::av::av::entity::av::av::ResourceRequiredRole' has no attributes.
+The class 'pcm::av::av::seff::av::av::ExternalCallAction' has the following attributes: 'retryCount' of type int.
+The class 'EventGroup' has no attributes.
+The class 'pcm::av::av::seff::performance::av::av::InfrastructureCall' has no attributes.
+The class 'pcm::av::av::seff::av::av::SynchronisationPoint' has no attributes.
+The class 'pcm::av::av::composition::av::av::EventChannel' has no attributes.
+The class 'pcm::av::av::composition::av::av::ResourceRequiredDelegationConnector' has no attributes.
+The class 'pcm::av::av::seff::av::av::InternalAction' has no attributes.
+The class 'pcm::av::av::qosannotations::av::av::QoSAnnotations' has no attributes.
+The class 'pcm::av::av::composition::av::av::EventChannelSourceConnector' has no attributes.
+The class 'pcm::av::av::seff::av::av::EmitEventAction' has no attributes.
+The class 'pcm::av::av::repository::av::av::InfrastructureProvidedRole' has no attributes.
+The class 'pcm::av::av::composition::av::av::EventChannelSinkConnector' has no attributes.
+The class 'seff::av::av::AbstractInternalControlFlowAction' has no attributes.
+The class 'composition::av::av::EventChannelSourceConnector' has no attributes.
+The class 'InfrastructureRequiredRole' has no attributes.
+The class 'OperationRequiredRole' has no attributes.
+The class 'ProvidesComponentType' has no attributes.
+The class 'pcm::av::av::seff::av::av::InternalCallAction' has no attributes.
+The class 'pcm::av::av::seff::av::av::SetVariableAction' has no attributes.
+The class 'pcm::av::av::composition::av::av::RequiredDelegationConnector' has no attributes.
+The class 'pcm::av::av::seff::av::av::GuardedBranchTransition' has no attributes.
+The class 'OperationProvidedRole' has no attributes.
+The class 'pcm::av::av::seff::av::av::ServiceEffectSpecification' has the following attributes: 'seffTypeID' of type str.
+The class 'pcm::av::av::composition::av::av::ProvidedDelegationConnector' has no attributes.
+The class 'pcm::av::av::seff::av::av::CollectionIteratorAction' has no attributes.
+The class 'SinkRole' has no attributes.
+The class 'pcm::av::av::seff::av::av::CallAction' has no attributes.
+The class 'pcm::av::av::composition::av::av::AssemblyEventConnector' has no attributes.
+The class 'VariableUsage' has no attributes.
+The class 'SpecifiedExecutionTime' has no attributes.
+The class 'pcm::av::av::composition::av::av::AssemblyConnector' has no attributes.
+The class 'SpecifiedQoSAnnotation' has no attributes.
+The class 'DelegationConnector' has no attributes.
+The class 'pcm::av::av::qos::performance::av::av::SystemSpecifiedExecutionTime' has no attributes.
+The class 'pcm::av::av::seff::av::av::AbstractAction' has no attributes.
+The class 'pcm::av::av::qosannotations::av::av::SpecifiedOutputParameterAbstraction' has no attributes.
+The class 'InfrastructureProvidedRole' has no attributes.
+The class 'ExternalFailureOccurrenceDescription' has no attributes.
+The class 'System' has no attributes.
+The class 'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' has no attributes.
+The class 'pcm::av::av::composition::av::av::ProvidedInfrastructureDelegationConnector' has no attributes.
+The class 'pcm::av::av::composition::av::av::SinkDelegationConnector' has no attributes.
+The class 'pcm::av::av::composition::av::av::SourceDelegationConnector' has no attributes.
+The class 'pcm::av::av::seff::av::av::ResourceDemandingBehaviour' has no attributes.
+The class 'ResourceDemandingBehaviour' has no attributes.
+The class 'pcm::av::av::composition::av::av::RequiredResourceDelegationConnector' has no attributes.
+The class 'AbstractLoopAction' has no attributes.
+The class 'pcm::av::av::composition::av::av::RequiredInfrastructureDelegationConnector' has no attributes.
+The class 'ResourceEnvironment' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'RepositoryComponent' has no attributes.
+The class 'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' has the following attributes: 'MTTF' of type float; 'MTTR' of type float; 'numberOfReplicas' of type int; 'requiredByContainer' of type bool.
+The class 'pcm::av::av::usagemodel::av::av::Workload' has no attributes.
+The class 'pcm::av::av::composition::av::av::AssemblyContext' has no attributes.
+The class 'pcm::av::av::allocation::av::av::AllocationContext' has no attributes.
+The class 'UsageModel' has no attributes.
+The class 'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' has the following attributes: 'failureProbability' of type float.
+The class 'pcm::av::av::repository::av::av::InnerDeclaration' has no attributes.
+The class 'Allocation' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::UsageScenario' has no attributes.
+The class 'UsageScenario' has no attributes.
+The class 'AllocationContext' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::UserData' has no attributes.
+The class 'Workload' has no attributes.
+The class 'repository::av::av::RepositoryComponent' has no attributes.
+The class 'pcm::av::av::allocation::av::av::Allocation' has no attributes.
+The class 'ScenarioBehaviour' has no attributes.
+The class 'pcm::av::av::completions::av::av::CompletionRepository' has no attributes.
+The class 'pcm::av::av::completions::av::av::Completion' has no attributes.
+The class 'entity::av::av::NamedElement' has no attributes.
+The class 'Completion' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'pcm::av::av::completions::av::av::NetworkDemandParametricResourceDemand' has no attributes.
+The class 'InnerDeclaration' has no attributes.
+The class 'ExternalCallAction' has no attributes.
+The class 'pcm::av::av::entity::av::av::ResourceInterfaceRequiringEntity' has no attributes.
+The class 'pcm::av::av::completions::av::av::DelegatingExternalCallAction' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::SchedulingPolicy' has no attributes.
+The class 'pcm::av::av::repository::av::av::PassiveResource' has no attributes.
+The class 'InfrastructureInterface' has no attributes.
+The class 'ParametricResourceDemand' has no attributes.
+The class 'pcm::av::av::repository::av::av::ExceptionType' has the following attributes: 'exceptionName' of type str; 'exceptionMessage' of type str.
+The class 'HardwareInducedFailureType' has no attributes.
+The class 'pcm::av::av::repository::av::av::Repository' has the following attributes: 'repositoryDescription' of type str.
+The class 'pcm::av::av::repository::av::av::InfrastructureSignature' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'ResourceContainer' has no attributes.
+The class 'ResourceType' has no attributes.
+The class 'ExceptionType' has no attributes.
+The class 'pcm::av::av::repository::av::av::Signature' has no attributes.
+The class 'parameter::av::av::pcm::av::av::AbstractNamedReference' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' has no attributes.
+The class 'pcm::av::av::parameter::av::av::VariableCharacterisation' has the following attributes: 'type' of type str.
+The class 'pcm::av::av::repository::av::av::CompositeDataType' has no attributes.
+The class 'seff::reliability::av::av::RecoveryAction' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::BranchTransition' has the following attributes: 'branchProbability' of type float.
+The class 'pcm::av::av::usagemodel::av::av::Branch' has no attributes.
+The class 'ResourceDemandingSEFF' has no attributes.
+The class 'BranchTransition' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::OpenWorkload' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::ResourceType' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::Start' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::Stop' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::Loop' has no attributes.
+The class 'pcm::av::av::repository::av::av::Interface' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::ClosedWorkload' has the following attributes: 'population' of type int.
+The class 'BasicComponent' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::Delay' has no attributes.
+The class 'pcm::av::av::usagemodel::av::av::AbstractUserAction' has no attributes.
+The class 'InterfaceProvidingRequiringEntity' has no attributes.
+The class 'pcm::av::av::repository::av::av::BasicComponent' has no attributes.
+The class 'pcm::av::av::repository::av::av::InfrastructureInterface' has no attributes.
+The class 'ResourceTimeoutFailureType' has no attributes.
+The class 'pcm::av::av::repository::av::av::RequiredRole' has no attributes.
+The class 'pcm::av::av::repository::av::av::OperationRequiredRole' has no attributes.
+The class 'pcm::av::av::EObject' has no attributes.
+The class 'pcm::av::av::repository::av::av::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'Signature' has no attributes.
+The class 'pcm::av::av::repository::av::av::EventType' has no attributes.
+The class 'pcm::av::av::repository::av::av::EventGroup' has no attributes.
+The class 'DataType' has no attributes.
+The class 'pcm::av::av::resourcetype::av::av::ProcessingResourceType' has no attributes.
+The class 'ImplementationComponentType' has no attributes.
+The class 'pcm::av::av::repository::av::av::InfrastructureRequiredRole' has no attributes.
+The class 'pcm::av::av::parameter::av::av::VariableUsage' has no attributes.
+The class 'pcm::av::av::repository::av::av::RequiredCharacterisation' has the following attributes: 'type' of type str.
+The class 'RequiredCharacterisation' has no attributes.
+The class 'Protocol' has no attributes.
+The class 'pcm::av::av::repository::av::av::DataType' has no attributes.
+The class 'ResourceSignature' has no attributes.
+The class 'EventType' has no attributes.
+The class 'pcm::av::av::GlobalScopeGlobalScope' has no attributes.
+The class 'CallReturnAction' has no attributes.
+The class 'entity::av::av::InterfaceRequiringEntity' has no attributes.
+The class 'InfrastructureSignature' has no attributes.
+The class 'EntryLevelSystemCall' has no attributes.
+The class 'pcm::av::av::PerJoinPointScopePerJoinPointScope' has no attributes.
+The class 'SetVariableAction' has no attributes.
+The class 'pcm::av::av::repository::av::av::Parameter' has the following attributes: 'parameterName' of type str; 'modifier__Parameter' of type str.
+The class 'pcm::av::av::repository::av::av::ProvidedRole' has no attributes.
+The class 'pcm::av::av::repository::av::av::ImplementationComponentType' has the following attributes: 'componentType' of type str.
+The class 'pcm::av::av::repository::av::av::RepositoryComponent' has no attributes.
+The class 'CompleteComponentType' has no attributes.
+The class 'Repository' has no attributes.
+The class 'pcm::av::av::repository::av::av::Role' has no attributes.
+The class 'ServiceEffectSpecification' has no attributes.
+The class 'FailureType' has no attributes.
+The class 'SynchronisationPoint' has no attributes.
+The class 'pcm::av::av::entity::av::av::InterfaceProvidingEntity' has no attributes.
+The class 'Interface' has no attributes.
+The enumeration 'ComponentType' has the following literals: 'BUSINESS_COMPONENT', 'INFRASTRUCTURE_COMPONENT'.
+The enumeration 'ParameterModifier' has the following literals: 'none', 'inout', 'out', 'in_'.
+The enumeration 'PrimitiveTypeEnum' has the following literals: 'BYTE', 'LONG', 'INT', 'STRING', 'CHAR', 'DOUBLE', 'BOOL'.
+The enumeration 'VariableCharacterisationType' has the following literals: 'NUMBER_OF_ELEMENTS', 'BYTESIZE', 'VALUE', 'STRUCTURE', 'TYPE'.
+'pcm::av::av::system::av::av::System' is a specialization of 'entity::av::av::Entity'.
+'pcm::av::av::system::av::av::System' is a specialization of 'entity::av::av::ComposedProvidingRequiringEntity'.
+'pcm::av::av::repository::av::av::Repository' is a specialization of 'Entity'.
+'pcm::av::av::resourceenvironment::av::av::ResourceEnvironment' is a specialization of 'NamedElement'.
+'pcm::av::av::repository::av::av::Interface' is a specialization of 'Entity'.
+'pcm::av::av::resourceenvironment::av::av::LinkingResource' is a specialization of 'Entity'.
+'pcm::av::av::repository::av::av::EventGroup' is a specialization of 'Interface'.
+'pcm::av::av::resourceenvironment::av::av::ResourceContainer' is a specialization of 'Entity'.
+'pcm::av::av::repository::av::av::EventType' is a specialization of 'Signature'.
+'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' is a specialization of 'Identifier'.
+'pcm::av::av::repository::av::av::Signature' is a specialization of 'Entity'.
+'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' is a specialization of 'Identifier'.
+'pcm::av::av::repository::av::av::InfrastructureSignature' is a specialization of 'Signature'.
+'pcm::av::av::allocation::av::av::AllocationContext' is a specialization of 'Entity'.
+'pcm::av::av::repository::av::av::InfrastructureInterface' is a specialization of 'Interface'.
+'pcm::av::av::allocation::av::av::Allocation' is a specialization of 'Entity'.
+'pcm::av::av::repository::av::av::InfrastructureRequiredRole' is a specialization of 'RequiredRole'.
+'pcm::av::av::subsystem::av::av::SubSystem' is a specialization of 'entity::av::av::ComposedProvidingRequiringEntity'.
+'pcm::av::av::repository::av::av::RequiredRole' is a specialization of 'Role'.
+'pcm::av::av::subsystem::av::av::SubSystem' is a specialization of 'repository::av::av::RepositoryComponent'.
+'pcm::av::av::repository::av::av::OperationSignature' is a specialization of 'Signature'.
+'pcm::av::av::completions::av::av::Completion' is a specialization of 'entity::av::av::ComposedProvidingRequiringEntity'.
+'pcm::av::av::repository::av::av::OperationInterface' is a specialization of 'Interface'.
+'pcm::av::av::completions::av::av::Completion' is a specialization of 'repository::av::av::ImplementationComponentType'.
+'pcm::av::av::repository::av::av::OperationRequiredRole' is a specialization of 'RequiredRole'.
+'pcm::av::av::completions::av::av::DelegatingExternalCallAction' is a specialization of 'ExternalCallAction'.
+'pcm::av::av::repository::av::av::SourceRole' is a specialization of 'RequiredRole'.
+'pcm::av::av::completions::av::av::NetworkDemandParametricResourceDemand' is a specialization of 'ParametricResourceDemand'.
+'pcm::av::av::repository::av::av::SinkRole' is a specialization of 'ProvidedRole'.
+'pcm::av::av::repository::av::av::OperationProvidedRole' is a specialization of 'ProvidedRole'.
+'pcm::av::av::repository::av::av::InfrastructureProvidedRole' is a specialization of 'ProvidedRole'.
+'pcm::av::av::repository::av::av::CompleteComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::av::av::repository::av::av::ProvidesComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::av::av::repository::av::av::CompositeComponent' is a specialization of 'entity::av::av::ComposedProvidingRequiringEntity'.
+'pcm::av::av::repository::av::av::CompositeComponent' is a specialization of 'repository::av::av::ImplementationComponentType'.
+'pcm::av::av::repository::av::av::PrimitiveDataType' is a specialization of 'DataType'.
+'pcm::av::av::repository::av::av::CollectionDataType' is a specialization of 'entity::av::av::Entity'.
+'pcm::av::av::repository::av::av::CollectionDataType' is a specialization of 'repository::av::av::DataType'.
+'pcm::av::av::repository::av::av::CompositeDataType' is a specialization of 'entity::av::av::Entity'.
+'pcm::av::av::repository::av::av::CompositeDataType' is a specialization of 'repository::av::av::DataType'.
+'pcm::av::av::repository::av::av::InnerDeclaration' is a specialization of 'NamedElement'.
+'pcm::av::av::repository::av::av::Role' is a specialization of 'Entity'.
+'pcm::av::av::resourcetype::av::av::ResourceSignature' is a specialization of 'Entity'.
+'pcm::av::av::resourcetype::av::av::ProcessingResourceType' is a specialization of 'ResourceType'.
+'pcm::av::av::resourcetype::av::av::ResourceType' is a specialization of 'entity::av::av::Entity'.
+'pcm::av::av::resourcetype::av::av::ResourceType' is a specialization of 'UnitCarryingElement'.
+'pcm::av::av::resourcetype::av::av::ResourceType' is a specialization of 'entity::av::av::ResourceInterfaceProvidingEntity'.
+'pcm::av::av::resourcetype::av::av::SchedulingPolicy' is a specialization of 'Entity'.
+'pcm::av::av::resourcetype::av::av::CommunicationLinkResourceType' is a specialization of 'ResourceType'.
+'pcm::av::av::resourcetype::av::av::ResourceInterface' is a specialization of 'Entity'.
+'pcm::av::av::core::av::av::PCMRandomVariable' is a specialization of 'RandomVariable'.
+'pcm::av::av::parameter::av::av::CharacterisedVariable' is a specialization of 'Variable'.
+'pcm::av::av::repository::av::av::ProvidedRole' is a specialization of 'Role'.
+'pcm::av::av::reliability::av::av::HardwareInducedFailureType' is a specialization of 'FailureType'.
+'pcm::av::av::entity::av::av::ResourceProvidedRole' is a specialization of 'Role'.
+'pcm::av::av::reliability::av::av::SoftwareInducedFailureType' is a specialization of 'FailureType'.
+'pcm::av::av::entity::av::av::InterfaceProvidingRequiringEntity' is a specialization of 'entity::av::av::InterfaceProvidingEntity'.
+'pcm::av::av::reliability::av::av::InternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+'pcm::av::av::entity::av::av::InterfaceProvidingRequiringEntity' is a specialization of 'entity::av::av::InterfaceRequiringEntity'.
+'pcm::av::av::reliability::av::av::NetworkInducedFailureType' is a specialization of 'FailureType'.
+'pcm::av::av::entity::av::av::InterfaceProvidingEntity' is a specialization of 'Entity'.
+'pcm::av::av::reliability::av::av::ExternalFailureOccurrenceDescription' is a specialization of 'FailureOccurrenceDescription'.
+'pcm::av::av::entity::av::av::InterfaceRequiringEntity' is a specialization of 'entity::av::av::Entity'.
+'pcm::av::av::reliability::av::av::ResourceTimeoutFailureType' is a specialization of 'SoftwareInducedFailureType'.
+'pcm::av::av::entity::av::av::InterfaceRequiringEntity' is a specialization of 'entity::av::av::ResourceInterfaceRequiringEntity'.
+'pcm::av::av::reliability::av::av::FailureType' is a specialization of 'Entity'.
+'pcm::av::av::entity::av::av::ResourceInterfaceRequiringEntity' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::StopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::entity::av::av::ResourceInterfaceProvidingEntity' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::AbstractInternalControlFlowAction' is a specialization of 'AbstractAction'.
+'pcm::av::av::entity::av::av::ComposedProvidingRequiringEntity' is a specialization of 'composition::av::av::ComposedStructure'.
+'pcm::av::av::seff::av::av::AbstractAction' is a specialization of 'Entity'.
+'pcm::av::av::entity::av::av::ComposedProvidingRequiringEntity' is a specialization of 'entity::av::av::InterfaceProvidingRequiringEntity'.
+'pcm::av::av::seff::av::av::ResourceDemandingBehaviour' is a specialization of 'Identifier'.
+'pcm::av::av::entity::av::av::ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity::av::av::ResourceInterfaceRequiringEntity'.
+'pcm::av::av::seff::av::av::AbstractLoopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::entity::av::av::ResourceInterfaceProvidingRequiringEntity' is a specialization of 'entity::av::av::ResourceInterfaceProvidingEntity'.
+'pcm::av::av::seff::av::av::AbstractBranchTransition' is a specialization of 'Entity'.
+'pcm::av::av::entity::av::av::Entity' is a specialization of 'Identifier'.
+'pcm::av::av::seff::av::av::BranchAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::entity::av::av::Entity' is a specialization of 'entity::av::av::NamedElement'.
+'pcm::av::av::seff::av::av::StartAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::composition::av::av::DelegationConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::ResourceDemandingSEFF' is a specialization of 'Identifier'.
+'pcm::av::av::composition::av::av::Connector' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::ResourceDemandingSEFF' is a specialization of 'seff::av::av::ServiceEffectSpecification'.
+'pcm::av::av::composition::av::av::ComposedStructure' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::ResourceDemandingSEFF' is a specialization of 'seff::av::av::ResourceDemandingBehaviour'.
+'pcm::av::av::entity::av::av::ResourceRequiredRole' is a specialization of 'Role'.
+'pcm::av::av::seff::av::av::ResourceDemandingInternalBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+'pcm::av::av::composition::av::av::EventChannel' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::ReleaseAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::composition::av::av::EventChannelSourceConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::ForkAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::composition::av::av::EventChannelSinkConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::ForkedBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+'pcm::av::av::composition::av::av::RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::ExternalCallAction' is a specialization of 'seff::av::av::AbstractAction'.
+'pcm::av::av::composition::av::av::ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::ExternalCallAction' is a specialization of 'seff::av::av::CallReturnAction'.
+'pcm::av::av::composition::av::av::AssemblyConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::ExternalCallAction' is a specialization of 'seff::reliability::av::av::FailureHandlingEntity'.
+'pcm::av::av::composition::av::av::AssemblyEventConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::LoopAction' is a specialization of 'AbstractLoopAction'.
+'pcm::av::av::composition::av::av::SinkDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::CallReturnAction' is a specialization of 'CallAction'.
+'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' is a specialization of 'Connector'.
+'pcm::av::av::seff::av::av::ProbabilisticBranchTransition' is a specialization of 'AbstractBranchTransition'.
+'pcm::av::av::composition::av::av::ProvidedInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::AcquireAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::composition::av::av::RequiredInfrastructureDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::CollectionIteratorAction' is a specialization of 'AbstractLoopAction'.
+'pcm::av::av::composition::av::av::RequiredResourceDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::GuardedBranchTransition' is a specialization of 'AbstractBranchTransition'.
+'pcm::av::av::composition::av::av::SourceDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::av::av::seff::av::av::SetVariableAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::composition::av::av::AssemblyContext' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::InternalCallAction' is a specialization of 'seff::av::av::CallAction'.
+'pcm::av::av::usagemodel::av::av::UsageScenario' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::InternalCallAction' is a specialization of 'seff::av::av::AbstractInternalControlFlowAction'.
+'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::av::av::EmitEventAction' is a specialization of 'seff::av::av::AbstractAction'.
+'pcm::av::av::usagemodel::av::av::AbstractUserAction' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::EmitEventAction' is a specialization of 'seff::av::av::CallAction'.
+'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' is a specialization of 'Entity'.
+'pcm::av::av::seff::av::av::InternalAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::usagemodel::av::av::Branch' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::performance::av::av::InfrastructureCall' is a specialization of 'CallAction'.
+'pcm::av::av::usagemodel::av::av::Loop' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::performance::av::av::ResourceCall' is a specialization of 'CallAction'.
+'pcm::av::av::usagemodel::av::av::Stop' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::reliability::av::av::RecoveryActionBehaviour' is a specialization of 'seff::reliability::av::av::FailureHandlingEntity'.
+'pcm::av::av::usagemodel::av::av::Start' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::reliability::av::av::RecoveryActionBehaviour' is a specialization of 'seff::av::av::ResourceDemandingBehaviour'.
+'pcm::av::av::usagemodel::av::av::OpenWorkload' is a specialization of 'Workload'.
+'pcm::av::av::seff::reliability::av::av::RecoveryAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::av::av::usagemodel::av::av::Delay' is a specialization of 'AbstractUserAction'.
+'pcm::av::av::seff::reliability::av::av::FailureHandlingEntity' is a specialization of 'Entity'.
+'pcm::av::av::usagemodel::av::av::ClosedWorkload' is a specialization of 'Workload'.
+'pcm::av::av::qosannotations::av::av::QoSAnnotations' is a specialization of 'Entity'.
+'pcm::av::av::repository::av::av::PassiveResource' is a specialization of 'Entity'.
+'pcm::av::av::qos::performance::av::av::SystemSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+'pcm::av::av::repository::av::av::BasicComponent' is a specialization of 'ImplementationComponentType'.
+'pcm::av::av::qos::performance::av::av::SpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+'pcm::av::av::repository::av::av::ImplementationComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::av::av::qos::performance::av::av::ComponentSpecifiedExecutionTime' is a specialization of 'SpecifiedExecutionTime'.
+'pcm::av::av::repository::av::av::RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+'pcm::av::av::qos::reliability::av::av::SpecifiedReliabilityAnnotation' is a specialization of 'SpecifiedQoSAnnotation'.
+'composition::av::av::EventChannelSinkConnector' (role 'EventChannelSinkConnector', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'filterCondition__EventChannelSinkConnector', cardinality 0..*).
+'SinkRole' (role 'SinkRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannelSinkConnector' (role 'pcm_av_av_composition_av_av_EventChannelSinkConnector', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext145', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector144', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable205', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::ClosedWorkload' (role 'closedWorkload_PCMRandomVariable', cardinality 0..*).
+'entity::av::av::InterfaceRequiringEntity' (role 'InterfaceRequiringEntity', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::RequiredRole' (role 'requiredRoles_InterfaceRequiringEntity', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'AssemblyContext314', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'configParameterUsages__AssemblyContext', cardinality 0..*).
+'PassiveResource' (role 'PassiveResource365', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ReleaseAction' (role 'pcm_av_av_seff_av_av_ReleaseAction', cardinality 0..*).
+'ForkAction' (role 'ForkAction', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ForkedBehaviour' (role 'asynchronousForkedBehaviours_ForkAction', cardinality 0..*).
+'seff::reliability::av::av::RecoveryActionBehaviour' (role 'RecoveryActionBehaviour', cardinality 0..*) is associated with 'pcm::av::av::seff::reliability::av::av::RecoveryAction' (role 'recoveryAction__RecoveryActionBehaviour', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ResourceEnvironment' (role 'resourceEnvironment_ResourceContainer', cardinality 0..*).
+'ExternalFailureOccurrenceDescription' (role 'ExternalFailureOccurrenceDescription', cardinality 0..*) is associated with 'pcm::av::av::qos::reliability::av::av::SpecifiedReliabilityAnnotation' (role 'specifiedReliabilityAnnotation__ExternalFailureOccurrenceDescription', cardinality 0..*).
+'ProcessingResourceSpecification' (role 'ProcessingResourceSpecification467', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ResourceContainer' (role 'resourceContainer_ProcessingResourceSpecification', cardinality 0..*).
+'InfrastructureRequiredRole' (role 'InfrastructureRequiredRole411', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::InfrastructureCall' (role 'pcm_av_av_seff_performance_av_av_InfrastructureCall410', cardinality 0..*).
+'pcm::av::av::allocation::av::av::Allocation' (role 'pcm_av_av_allocation_av_av_Allocation502', cardinality 0..*) is associated with 'System' (role 'System503', cardinality 0..*).
+'System' (role 'System', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::QoSAnnotations' (role 'qosAnnotations_System', cardinality 0..*).
+'composition::av::av::AssemblyEventConnector' (role 'AssemblyEventConnector', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'filterCondition__AssemblyEventConnector', cardinality 0..*).
+'OperationProvidedRole' (role 'OperationProvidedRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ProvidedDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector', cardinality 0..*).
+'ResourceInterface' (role 'ResourceInterface35', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceRequiredRole' (role 'pcm_av_av_entity_av_av_ResourceRequiredRole', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable104', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyEventConnector' (role 'assemblyEventConnector__FilterCondition', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext147', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredResourceDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage176', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' (role 'entryLevelSystemCall_OutputParameterUsage', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable207', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::PassiveResource' (role 'passiveResource_capacity_PCMRandomVariable', cardinality 0..*).
+'FailureType' (role 'FailureType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Repository' (role 'repository__FailureType', cardinality 0..*).
+'Parameter' (role 'Parameter246', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::EventType' (role 'eventType__Parameter', cardinality 0..*).
+'ResourceInterface' (role 'ResourceInterface290', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceSignature' (role 'resourceSignatures__ResourceInterface', cardinality 0..*).
+'InternalAction' (role 'InternalAction', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::InternalFailureOccurrenceDescription' (role 'internalFailureOccurrenceDescriptions__InternalAction', cardinality 0..*).
+'seff::performance::av::av::ResourceCall' (role 'ResourceCall340', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractInternalControlFlowAction' (role 'action__ResourceCall', cardinality 0..*).
+'PassiveResource' (role 'PassiveResource388', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AcquireAction' (role 'pcm_av_av_seff_av_av_AcquireAction', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable453', cardinality 0..*) is associated with 'pcm::av::av::qos::performance::av::av::SpecifiedExecutionTime' (role 'specifiedExecutionTime_PCMRandomVariable', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer482', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' (role 'activeResourceSpecifications_ResourceContainer', cardinality 0..*).
+'AbstractInternalControlFlowAction' (role 'AbstractInternalControlFlowAction413', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::ResourceCall' (role 'resourceCall__Action', cardinality 0..*).
+'pcm::av::av::qos::performance::av::av::ComponentSpecifiedExecutionTime' (role 'pcm_av_av_qos_performance_av_av_ComponentSpecifiedExecutionTime', cardinality 0..*) is associated with 'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext455', cardinality 0..*).
+'Loop' (role 'Loop', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'loopIteration_Loop', cardinality 0..*).
+'OperationProvidedRole' (role 'OperationProvidedRole70', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ProvidedDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector69', cardinality 0..*).
+'entity::av::av::ResourceInterfaceRequiringEntity' (role 'ResourceInterfaceRequiringEntity', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceRequiredRole' (role 'resourceRequiredRoles__ResourceInterfaceRequiringEntity', cardinality 0..*).
+'SourceRole' (role 'SourceRole106', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::SourceDelegationConnector' (role 'pcm_av_av_composition_av_av_SourceDelegationConnector', cardinality 0..*).
+'entity::av::av::ResourceRequiredRole' (role 'entity_av_av_ResourceRequiredRole153', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredResourceDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector152', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage178', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' (role 'entryLevelSystemCall_InputParameterUsage', cardinality 0..*).
+'BasicComponent' (role 'BasicComponent', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::PassiveResource' (role 'passiveResource_BasicComponent', cardinality 0..*).
+'DataType' (role 'DataType232', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Repository' (role 'repository__DataType', cardinality 0..*).
+'Parameter' (role 'Parameter263', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::OperationSignature' (role 'operationSignature__Parameter', cardinality 0..*).
+'ResourceRepository' (role 'ResourceRepository', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceType' (role 'availableResourceTypes_ResourceRepository', cardinality 0..*).
+'seff::performance::av::av::ParametricResourceDemand' (role 'ParametricResourceDemand336', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractInternalControlFlowAction' (role 'action_ParametricResourceDemand', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractAction' (role 'successor_AbstractAction', cardinality 0..*).
+'InfrastructureSignature' (role 'InfrastructureSignature405', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::InfrastructureCall' (role 'pcm_av_av_seff_performance_av_av_InfrastructureCall', cardinality 0..*).
+'Allocation' (role 'Allocation', cardinality 0..*) is associated with 'pcm::av::av::allocation::av::av::AllocationContext' (role 'allocationContexts_Allocation', cardinality 0..*).
+'pcm::av::av::qosannotations::av::av::SpecifiedQoSAnnotation' (role 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation437', cardinality 0..*) is associated with 'Role' (role 'Role', cardinality 0..*).
+'pcm::av::av::core::av::av::PCMRandomVariable' (role 'interArrivalTime_OpenWorkload', cardinality 0..*) is associated with 'OpenWorkload' (role 'OpenWorkload', cardinality 0..*).
+'pcm::av::av::composition::av::av::ProvidedDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedDelegationConnector72', cardinality 0..*) is associated with 'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext73', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'AssemblyContext', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ComposedStructure' (role 'parentStructure__AssemblyContext', cardinality 0..*).
+'SourceRole' (role 'SourceRole109', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::SourceDelegationConnector' (role 'pcm_av_av_composition_av_av_SourceDelegationConnector108', cardinality 0..*).
+'pcm::av::av::composition::av::av::AssemblyContext' (role 'assemblyContexts__ComposedStructure', cardinality 0..*) is associated with 'composition::av::av::ComposedStructure' (role 'ComposedStructure155', cardinality 0..*).
+'AbstractUserAction' (role 'AbstractUserAction', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::AbstractUserAction' (role 'predecessor', cardinality 0..*).
+'pcm::av::av::repository::av::av::PassiveResource' (role 'passiveResource__ResourceTimeoutFailureType', cardinality 0..*) is associated with 'ResourceTimeoutFailureType' (role 'ResourceTimeoutFailureType', cardinality 0..*).
+'Interface' (role 'Interface234', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Interface' (role 'pcm_av_av_repository_av_av_Interface', cardinality 0..*).
+'pcm::av::av::repository::av::av::OperationSignature' (role 'pcm_av_av_repository_av_av_OperationSignature', cardinality 0..*) is associated with 'DataType' (role 'DataType265', cardinality 0..*).
+'ResourceInterface' (role 'ResourceInterface294', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceRepository' (role 'resourceRepository__ResourceInterface', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction343', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractAction' (role 'predecessor_AbstractAction', cardinality 0..*).
+'OperationSignature' (role 'OperationSignature381', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ExternalCallAction' (role 'pcm_av_av_seff_av_av_ExternalCallAction', cardinality 0..*).
+'SchedulingPolicy' (role 'SchedulingPolicy475', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' (role 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable422', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::ParametricResourceDemand' (role 'parametricResourceDemand_PCMRandomVariable', cardinality 0..*).
+'pcm::av::av::allocation::av::av::AllocationContext' (role 'pcm_av_av_allocation_av_av_AllocationContext498', cardinality 0..*) is associated with 'composition::av::av::EventChannel' (role 'composition_av_av_EventChannel', cardinality 0..*).
+'BasicComponent' (role 'BasicComponent361', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ServiceEffectSpecification' (role 'serviceEffectSpecifications__BasicComponent', cardinality 0..*).
+'composition::av::av::ComposedStructure' (role 'ComposedStructure', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::Connector' (role 'connectors__ComposedStructure', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage449', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::SpecifiedOutputParameterAbstraction' (role 'specifiedOutputParameterAbstraction_expectedExternalOutputs_VariableUsage', cardinality 0..*).
+'OperationRequiredRole' (role 'OperationRequiredRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredDelegationConnector', cardinality 0..*).
+'Delay' (role 'Delay', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'timeSpecification_Delay', cardinality 0..*).
+'pcm::av::av::composition::av::av::SourceDelegationConnector' (role 'pcm_av_av_composition_av_av_SourceDelegationConnector111', cardinality 0..*) is associated with 'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext112', cardinality 0..*).
+'pcm::av::av::composition::av::av::ComposedStructure' (role 'parentStructure_ResourceRequiredDelegationConnector', cardinality 0..*) is associated with 'composition::av::av::ResourceRequiredDelegationConnector' (role 'ResourceRequiredDelegationConnector', cardinality 0..*).
+'RepositoryComponent' (role 'RepositoryComponent', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyContext' (role 'pcm_av_av_composition_av_av_AssemblyContext', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::AbstractUserAction' (role 'successor', cardinality 0..*) is associated with 'AbstractUserAction' (role 'AbstractUserAction181', cardinality 0..*).
+'ServiceEffectSpecification' (role 'ServiceEffectSpecification', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::BasicComponent' (role 'basicComponent_ServiceEffectSpecification', cardinality 0..*).
+'pcm::av::av::repository::av::av::Interface' (role 'pcm_av_av_repository_av_av_Interface236', cardinality 0..*) is associated with 'Protocol' (role 'Protocol', cardinality 0..*).
+'OperationSignature' (role 'OperationSignature267', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::OperationInterface' (role 'interface__OperationSignature', cardinality 0..*).
+'pcm::av::av::resourcetype::av::av::ResourceRepository' (role 'resourceRepository__SchedulingPolicy', cardinality 0..*) is associated with 'SchedulingPolicy' (role 'SchedulingPolicy', cardinality 0..*).
+'FailureType' (role 'FailureType330', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::ExternalFailureOccurrenceDescription' (role 'pcm_av_av_reliability_av_av_ExternalFailureOccurrenceDescription', cardinality 0..*).
+'pcm::av::av::seff::av::av::AbstractAction' (role 'steps_Behaviour', cardinality 0..*) is associated with 'ResourceDemandingBehaviour' (role 'ResourceDemandingBehaviour', cardinality 0..*).
+'ResourceDemandingInternalBehaviour' (role 'ResourceDemandingInternalBehaviour396', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::InternalCallAction' (role 'pcm_av_av_seff_av_av_InternalCallAction', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable490', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' (role 'communicationLinkResourceSpecifcation_throughput_PCMRandomVariable', cardinality 0..*).
+'pcm::av::av::EObject' (role 'pcm_av_av_EObject', cardinality 0..*) is associated with 'pcm::av::av::AdviceAdvice' (role 'pcm_av_av_AdviceAdvice', cardinality 0..*).
+'CommunicationLinkResourceSpecification' (role 'CommunicationLinkResourceSpecification', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'throughput_CommunicationLinkResourceSpecification', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannelSinkConnector' (role 'eventChannelSinkConnector__FilterCondition', cardinality 0..*).
+'composition::av::av::EventChannel' (role 'EventChannel', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ComposedStructure' (role 'parentStructure__EventChannel', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext114', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::SinkDelegationConnector' (role 'pcm_av_av_composition_av_av_SinkDelegationConnector', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyContext' (role 'assemblyContext__VariableUsage', cardinality 0..*).
+'ScenarioBehaviour' (role 'ScenarioBehaviour183', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::AbstractUserAction' (role 'actions_ScenarioBehaviour', cardinality 0..*).
+'PassiveResource' (role 'PassiveResource212', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::BasicComponent' (role 'basicComponent_PassiveResource', cardinality 0..*).
+'RequiredCharacterisation' (role 'RequiredCharacterisation', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Interface' (role 'interface_RequiredCharacterisation', cardinality 0..*).
+'OperationInterface' (role 'OperationInterface269', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::OperationRequiredRole' (role 'pcm_av_av_repository_av_av_OperationRequiredRole', cardinality 0..*).
+'ResourceType' (role 'ResourceType', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceRepository' (role 'resourceRepository_ResourceType', cardinality 0..*).
+'AbstractLoopAction' (role 'AbstractLoopAction', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ResourceDemandingBehaviour' (role 'bodyBehaviour_Loop346', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage375', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::SynchronisationPoint' (role 'synchronisationPoint_VariableUsage', cardinality 0..*).
+'pcm::av::av::resourceenvironment::av::av::ResourceContainer' (role 'resourceContainer_ResourceEnvironment', cardinality 0..*) is associated with 'ResourceEnvironment' (role 'ResourceEnvironment469', cardinality 0..*).
+'ResourceDemandingBehaviour' (role 'ResourceDemandingBehaviour354', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractBranchTransition' (role 'abstractBranchTransition_ResourceDemandingBehaviour', cardinality 0..*).
+'entity::av::av::ResourceRequiredRole' (role 'entity_av_av_ResourceRequiredRole415', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::ResourceCall' (role 'pcm_av_av_seff_performance_av_av_ResourceCall', cardinality 0..*).
+'AllocationContext' (role 'AllocationContext', cardinality 0..*) is associated with 'pcm::av::av::allocation::av::av::Allocation' (role 'allocation_AllocationContext', cardinality 0..*).
+'VariableCharacterisation' (role 'VariableCharacterisation305', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'variableUsage_VariableCharacterisation', cardinality 0..*).
+'pcm::av::av::qosannotations::av::av::QoSAnnotations' (role 'qosAnnotations_SpecifiedQoSAnnotation', cardinality 0..*) is associated with 'SpecifiedQoSAnnotation' (role 'SpecifiedQoSAnnotation', cardinality 0..*).
+'pcm::av::av::EObject' (role 'pcm_av_av_EObject2', cardinality 0..*) is associated with 'pcm::av::av::GlobalScopeGlobalScope' (role 'pcm_av_av_GlobalScopeGlobalScope', cardinality 0..*).
+'ProcessingResourceSpecification' (role 'ProcessingResourceSpecification', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'processingRate_ProcessingResourceSpecification', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext64', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannelSinkConnector' (role 'pcm_av_av_composition_av_av_EventChannelSinkConnector63', cardinality 0..*).
+'composition::av::av::Connector' (role 'Connector', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ComposedStructure' (role 'parentStructure__Connector', cardinality 0..*).
+'SinkRole' (role 'SinkRole117', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::SinkDelegationConnector' (role 'pcm_av_av_composition_av_av_SinkDelegationConnector116', cardinality 0..*).
+'UsageScenario' (role 'UsageScenario', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::Workload' (role 'workload_UsageScenario', cardinality 0..*).
+'UsageScenario' (role 'UsageScenario185', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' (role 'scenarioBehaviour_UsageScenario', cardinality 0..*).
+'CompleteComponentType' (role 'CompleteComponentType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::ImplementationComponentType' (role 'pcm_av_av_repository_av_av_ImplementationComponentType', cardinality 0..*).
+'Repository' (role 'Repository239', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Interface' (role 'interfaces__Repository', cardinality 0..*).
+'EventGroup' (role 'EventGroup271', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::SourceRole' (role 'pcm_av_av_repository_av_av_SourceRole', cardinality 0..*).
+'ResourceRepository' (role 'ResourceRepository298', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::SchedulingPolicy' (role 'schedulingPolicies__ResourceRepository', cardinality 0..*).
+'SoftwareInducedFailureType' (role 'SoftwareInducedFailureType', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::InternalFailureOccurrenceDescription' (role 'internalFailureOccurrenceDescriptions__SoftwareInducedFailureType', cardinality 0..*).
+'AbstractBranchTransition' (role 'AbstractBranchTransition', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ResourceDemandingBehaviour' (role 'branchBehaviour_BranchTransition', cardinality 0..*).
+'Parameter' (role 'Parameter390', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::CollectionIteratorAction' (role 'pcm_av_av_seff_av_av_CollectionIteratorAction', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage322', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableCharacterisation' (role 'variableCharacterisation_VariableUsage', cardinality 0..*).
+'LinkingResource' (role 'LinkingResource484', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' (role 'communicationLinkResourceSpecifications_LinkingResource', cardinality 0..*).
+'seff::reliability::av::av::RecoveryActionBehaviour' (role 'seff_reliability_av_av_RecoveryActionBehaviour', cardinality 0..*) is associated with 'pcm::av::av::seff::reliability::av::av::RecoveryActionBehaviour' (role 'pcm_av_av_seff_reliability_av_av_RecoveryActionBehaviour', cardinality 0..*).
+'pcm::av::av::PerJoinPointScopePerJoinPointScope' (role 'pcm_av_av_PerJoinPointScopePerJoinPointScope', cardinality 0..*) is associated with 'pcm::av::av::EObject' (role 'pcm_av_av_EObject4', cardinality 0..*).
+'pcm::av::av::core::av::av::PCMRandomVariable' (role 'latency_CommunicationLinkResourceSpecification', cardinality 0..*) is associated with 'CommunicationLinkResourceSpecification' (role 'CommunicationLinkResourceSpecification28', cardinality 0..*).
+'pcm::av::av::composition::av::av::EventChannelSinkConnector' (role 'eventChannelSinkConnector__EventChannel', cardinality 0..*) is associated with 'composition::av::av::EventChannel' (role 'EventChannel66', cardinality 0..*).
+'entity::av::av::ResourceRequiredRole' (role 'entity_av_av_ResourceRequiredRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ResourceRequiredDelegationConnector' (role 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector', cardinality 0..*).
+'SinkRole' (role 'SinkRole120', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::SinkDelegationConnector' (role 'pcm_av_av_composition_av_av_SinkDelegationConnector119', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::UsageScenario' (role 'usageScenario_UsageModel', cardinality 0..*) is associated with 'UsageModel' (role 'UsageModel', cardinality 0..*).
+'BranchTransition' (role 'BranchTransition', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' (role 'branchedBehaviour_BranchTransition', cardinality 0..*).
+'pcm::av::av::repository::av::av::ImplementationComponentType' (role 'pcm_av_av_repository_av_av_ImplementationComponentType215', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage216', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::RequiredCharacterisation' (role 'pcm_av_av_repository_av_av_RequiredCharacterisation', cardinality 0..*).
+'pcm::av::av::repository::av::av::SinkRole' (role 'pcm_av_av_repository_av_av_SinkRole', cardinality 0..*) is associated with 'EventGroup' (role 'EventGroup273', cardinality 0..*).
+'NetworkInducedFailureType' (role 'NetworkInducedFailureType', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::CommunicationLinkResourceType' (role 'communicationLinkResourceType__NetworkInducedFailureType', cardinality 0..*).
+'seff::performance::av::av::InfrastructureCall' (role 'InfrastructureCall338', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractInternalControlFlowAction' (role 'action__InfrastructureCall', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction349', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ResourceDemandingBehaviour' (role 'resourceDemandingBehaviour_AbstractAction', cardinality 0..*).
+'pcm::av::av::seff::av::av::ForkAction' (role 'forkAction_SynchronisationPoint', cardinality 0..*) is associated with 'SynchronisationPoint' (role 'SynchronisationPoint370', cardinality 0..*).
+'pcm::av::av::parameter::av::av::VariableUsage' (role 'pcm_av_av_parameter_av_av_VariableUsage', cardinality 0..*) is associated with 'parameter::av::av::pcm::av::av::AbstractNamedReference' (role 'parameter_av_av_pcm_av_av_AbstractNamedReference', cardinality 0..*).
+'CommunicationLinkResourceSpecification' (role 'CommunicationLinkResourceSpecification464', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::LinkingResource' (role 'linkingResource_CommunicationLinkResourceSpecification', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer462', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::LinkingResource' (role 'pcm_av_av_resourceenvironment_av_av_LinkingResource', cardinality 0..*).
+'pcm::av::av::seff::performance::av::av::InfrastructureCall' (role 'infrastructureCall__PCMRandomVariable', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable407', cardinality 0..*).
+'ProcessingResourceType' (role 'ProcessingResourceType478', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' (role 'pcm_av_av_resourceenvironment_av_av_ProcessingResourceSpecification477', cardinality 0..*).
+'QoSAnnotations' (role 'QoSAnnotations', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::SpecifiedQoSAnnotation' (role 'specifiedQoSAnnotations_QoSAnnotations', cardinality 0..*).
+'pcm::av::av::EObject' (role 'pcm_av_av_EObject6', cardinality 0..*) is associated with 'pcm::av::av::Advice' (role 'pcm_av_av_Advice', cardinality 0..*).
+'entity::av::av::ResourceInterfaceProvidingEntity' (role 'ResourceInterfaceProvidingEntity', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceProvidedRole' (role 'resourceProvidedRoles__ResourceInterfaceProvidingEntity', cardinality 0..*).
+'OperationRequiredRole' (role 'OperationRequiredRole77', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredDelegationConnector76', cardinality 0..*).
+'pcm::av::av::composition::av::av::ResourceRequiredDelegationConnector' (role 'pcm_av_av_composition_av_av_ResourceRequiredDelegationConnector45', cardinality 0..*) is associated with 'entity::av::av::ResourceRequiredRole' (role 'entity_av_av_ResourceRequiredRole46', cardinality 0..*).
+'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' (role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector', cardinality 0..*) is associated with 'InfrastructureProvidedRole' (role 'InfrastructureProvidedRole', cardinality 0..*).
+'ScenarioBehaviour' (role 'ScenarioBehaviour', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UsageScenario' (role 'usageScenario_SenarioBehaviour', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' (role 'scenarioBehaviour_AbstractUserAction', cardinality 0..*) is associated with 'AbstractUserAction' (role 'AbstractUserAction190', cardinality 0..*).
+'Repository' (role 'Repository', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::RepositoryComponent' (role 'components__Repository', cardinality 0..*).
+'pcm::av::av::repository::av::av::RequiredCharacterisation' (role 'requiredCharacterisations', cardinality 0..*) is associated with 'Interface' (role 'Interface242', cardinality 0..*).
+'OperationInterface' (role 'OperationInterface275', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::OperationProvidedRole' (role 'pcm_av_av_repository_av_av_OperationProvidedRole', cardinality 0..*).
+'pcm::av::av::resourcetype::av::av::ResourceInterface' (role 'resourceInterfaces__ResourceRepository', cardinality 0..*) is associated with 'ResourceRepository' (role 'ResourceRepository301', cardinality 0..*).
+'pcm::av::av::reliability::av::av::HardwareInducedFailureType' (role 'hardwareInducedFailureType__ProcessingResourceType', cardinality 0..*) is associated with 'ProcessingResourceType' (role 'ProcessingResourceType', cardinality 0..*).
+'pcm::av::av::seff::av::av::AbstractLoopAction' (role 'abstractLoopAction_ResourceDemandingBehaviour', cardinality 0..*) is associated with 'ResourceDemandingBehaviour' (role 'ResourceDemandingBehaviour351', cardinality 0..*).
+'OperationRequiredRole' (role 'OperationRequiredRole384', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ExternalCallAction' (role 'pcm_av_av_seff_av_av_ExternalCallAction383', cardinality 0..*).
+'pcm::av::av::resourceenvironment::av::av::ResourceEnvironment' (role 'resourceEnvironment_LinkingResource', cardinality 0..*) is associated with 'LinkingResource' (role 'LinkingResource', cardinality 0..*).
+'pcm::av::av::system::av::av::System' (role 'system_QoSAnnotations', cardinality 0..*) is associated with 'QoSAnnotations' (role 'QoSAnnotations458', cardinality 0..*).
+'ProcessingResourceType' (role 'ProcessingResourceType424', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::ParametricResourceDemand' (role 'pcm_av_av_seff_performance_av_av_ParametricResourceDemand', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable367', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::LoopAction' (role 'loopAction_PCMRandomVariable', cardinality 0..*).
+'pcm::av::av::EObject' (role 'pcm_av_av_EObject8', cardinality 0..*) is associated with 'pcm::av::av::GlobalScope' (role 'pcm_av_av_GlobalScope', cardinality 0..*).
+'ResourceInterface' (role 'ResourceInterface', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceProvidedRole' (role 'pcm_av_av_entity_av_av_ResourceProvidedRole', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext80', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredDelegationConnector79', cardinality 0..*).
+'composition::av::av::ComposedStructure' (role 'ComposedStructure48', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ResourceRequiredDelegationConnector' (role 'resourceRequiredDelegationConnectors_ComposedStructure', cardinality 0..*).
+'InfrastructureRequiredRole' (role 'InfrastructureRequiredRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' (role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector123', cardinality 0..*).
+'Workload' (role 'Workload', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UsageScenario' (role 'usageScenario_Workload', cardinality 0..*).
+'Branch' (role 'Branch', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::BranchTransition' (role 'branchTransitions_Branch', cardinality 0..*).
+'entity::av::av::InterfaceProvidingEntity' (role 'InterfaceProvidingEntity', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::ProvidedRole' (role 'providedRoles_InterfaceProvidingEntity', cardinality 0..*).
+'EventType' (role 'EventType244', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::EventGroup' (role 'eventGroup__EventType', cardinality 0..*).
+'InfrastructureInterface' (role 'InfrastructureInterface277', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::InfrastructureProvidedRole' (role 'pcm_av_av_repository_av_av_InfrastructureProvidedRole', cardinality 0..*).
+'ResourceSignature' (role 'ResourceSignature303', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceInterface' (role 'resourceInterface__ResourceSignature', cardinality 0..*).
+'PassiveResource' (role 'PassiveResource332', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::ResourceTimeoutFailureType' (role 'resourceTimeoutFailureType__PassiveResource', cardinality 0..*).
+'BranchAction' (role 'BranchAction', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::AbstractBranchTransition' (role 'branches_Branch', cardinality 0..*).
+'EventType' (role 'EventType398', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::EmitEventAction' (role 'pcm_av_av_seff_av_av_EmitEventAction', cardinality 0..*).
+'SourceRole' (role 'SourceRole401', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::EmitEventAction' (role 'pcm_av_av_seff_av_av_EmitEventAction400', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer492', cardinality 0..*) is associated with 'pcm::av::av::allocation::av::av::AllocationContext' (role 'pcm_av_av_allocation_av_av_AllocationContext', cardinality 0..*).
+'FailureType' (role 'FailureType433', cardinality 0..*) is associated with 'pcm::av::av::seff::reliability::av::av::FailureHandlingEntity' (role 'pcm_av_av_seff_reliability_av_av_FailureHandlingEntity', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::InterfaceProvidingEntity' (role 'providingEntity_ProvidedRole', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext82', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyConnector' (role 'pcm_av_av_composition_av_av_AssemblyConnector', cardinality 0..*).
+'pcm::av::av::EObject' (role 'pcm_av_av_EObject10', cardinality 0..*) is associated with 'pcm::av::av::PerJoinPointScope' (role 'pcm_av_av_PerJoinPointScope', cardinality 0..*).
+'EventGroup' (role 'EventGroup', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannel' (role 'pcm_av_av_composition_av_av_EventChannel', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext126', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' (role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector125', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext163', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UserData' (role 'pcm_av_av_usagemodel_av_av_UserData', cardinality 0..*).
+'ScenarioBehaviour' (role 'ScenarioBehaviour193', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::BranchTransition' (role 'branchTransition_ScenarioBehaviour', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Parameter' (role 'pcm_av_av_repository_av_av_Parameter', cardinality 0..*).
+'EventGroup' (role 'EventGroup248', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::EventType' (role 'eventTypes__EventGroup', cardinality 0..*).
+'OperationInterface' (role 'OperationInterface', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::OperationSignature' (role 'signatures__OperationInterface', cardinality 0..*).
+'OperationSignature' (role 'OperationSignature', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' (role 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall174', cardinality 0..*).
+'Parameter' (role 'Parameter288', cardinality 0..*) is associated with 'pcm::av::av::resourcetype::av::av::ResourceSignature' (role 'resourceSignature__Parameter', cardinality 0..*).
+'ForkedBehaviour' (role 'ForkedBehaviour', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ForkAction' (role 'forkAction_ForkedBehaivour', cardinality 0..*).
+'pcm::av::av::seff::av::av::SynchronisationPoint' (role 'synchronisingBehaviours_ForkAction', cardinality 0..*) is associated with 'ForkAction' (role 'ForkAction377', cardinality 0..*).
+'pcm::av::av::qosannotations::av::av::SpecifiedOutputParameterAbstraction' (role 'specifiedOutputParameterAbstractions_QoSAnnotations', cardinality 0..*) is associated with 'QoSAnnotations' (role 'QoSAnnotations451', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer471', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ResourceContainer' (role 'parentResourceContainer__ResourceContainer', cardinality 0..*).
+'pcm::av::av::seff::performance::av::av::ResourceCall' (role 'pcm_av_av_seff_performance_av_av_ResourceCall417', cardinality 0..*) is associated with 'ResourceSignature' (role 'ResourceSignature418', cardinality 0..*).
+'Completion' (role 'Completion', cardinality 0..*) is associated with 'pcm::av::av::completions::av::av::CompletionRepository' (role 'pcm_av_av_completions_av_av_CompletionRepository', cardinality 0..*).
+'Signature' (role 'Signature444', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::SpecifiedOutputParameterAbstraction' (role 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction', cardinality 0..*).
+'pcm::av::av::entity::av::av::InterfaceRequiringEntity' (role 'requiringEntity_RequiredRole', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole', cardinality 0..*).
+'pcm::av::av::composition::av::av::AssemblyConnector' (role 'pcm_av_av_composition_av_av_AssemblyConnector84', cardinality 0..*) is associated with 'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext85', cardinality 0..*).
+'ClosedWorkload' (role 'ClosedWorkload', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'thinkTime_ClosedWorkload', cardinality 0..*).
+'composition::av::av::EventChannelSourceConnector' (role 'EventChannelSourceConnector', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannel' (role 'eventChannel__EventChannelSourceConnector', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext129', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyInfrastructureConnector' (role 'pcm_av_av_composition_av_av_AssemblyInfrastructureConnector128', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::UserData' (role 'userData_UsageModel', cardinality 0..*) is associated with 'UsageModel' (role 'UsageModel165', cardinality 0..*).
+'BranchTransition' (role 'BranchTransition195', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::Branch' (role 'branch_BranchTransition', cardinality 0..*).
+'pcm::av::av::repository::av::av::Parameter' (role 'parameters__InfrastructureSignature', cardinality 0..*) is associated with 'InfrastructureSignature' (role 'InfrastructureSignature', cardinality 0..*).
+'ExceptionType' (role 'ExceptionType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Signature' (role 'pcm_av_av_repository_av_av_Signature', cardinality 0..*).
+'pcm::av::av::repository::av::av::CompleteComponentType' (role 'pcm_av_av_repository_av_av_CompleteComponentType', cardinality 0..*) is associated with 'ProvidesComponentType' (role 'ProvidesComponentType', cardinality 0..*).
+'UserData' (role 'UserData307', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'userDataParameterUsages_UserData', cardinality 0..*).
+'pcm::av::av::reliability::av::av::NetworkInducedFailureType' (role 'networkInducedFailureType__CommunicationLinkResourceType', cardinality 0..*) is associated with 'CommunicationLinkResourceType' (role 'CommunicationLinkResourceType', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable392', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::GuardedBranchTransition' (role 'guardedBranchTransition_PCMRandomVariable', cardinality 0..*).
+'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' (role 'pcm_av_av_resourceenvironment_av_av_CommunicationLinkResourceSpecification', cardinality 0..*) is associated with 'CommunicationLinkResourceType' (role 'CommunicationLinkResourceType486', cardinality 0..*).
+'seff::reliability::av::av::RecoveryAction' (role 'RecoveryAction', cardinality 0..*) is associated with 'pcm::av::av::seff::reliability::av::av::RecoveryActionBehaviour' (role 'recoveryActionBehaviours__RecoveryAction', cardinality 0..*).
+'EntryLevelSystemCall' (role 'EntryLevelSystemCall', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'inputParameterUsages_EntryLevelSystemCall', cardinality 0..*).
+'entity::av::av::ResourceRequiredRole' (role 'ResourceRequiredRole', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceInterfaceRequiringEntity' (role 'resourceInterfaceRequiringEntity__ResourceRequiredRole', cardinality 0..*).
+'OperationProvidedRole' (role 'OperationProvidedRole88', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyConnector' (role 'pcm_av_av_composition_av_av_AssemblyConnector87', cardinality 0..*).
+'pcm::av::av::core::av::av::PCMRandomVariable' (role 'capacity_PassiveResource', cardinality 0..*) is associated with 'PassiveResource' (role 'PassiveResource', cardinality 0..*).
+'pcm::av::av::composition::av::av::EventChannel' (role 'eventChannel__EventChannelSinkConnector', cardinality 0..*) is associated with 'composition::av::av::EventChannelSinkConnector' (role 'EventChannelSinkConnector52', cardinality 0..*).
+'pcm::av::av::composition::av::av::ProvidedInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector', cardinality 0..*) is associated with 'InfrastructureProvidedRole' (role 'InfrastructureProvidedRole131', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage167', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UserData' (role 'userData_VariableUsage', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::Loop' (role 'loop_LoopIteration', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable197', cardinality 0..*).
+'OperationSignature' (role 'OperationSignature222', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Parameter' (role 'parameters__OperationSignature', cardinality 0..*).
+'pcm::av::av::repository::av::av::Signature' (role 'pcm_av_av_repository_av_av_Signature251', cardinality 0..*) is associated with 'FailureType' (role 'FailureType252', cardinality 0..*).
+'DataType' (role 'DataType280', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::CollectionDataType' (role 'pcm_av_av_repository_av_av_CollectionDataType', cardinality 0..*).
+'pcm::av::av::resourcetype::av::av::ProcessingResourceType' (role 'processingResourceType__HardwareInducedFailureType', cardinality 0..*) is associated with 'HardwareInducedFailureType' (role 'HardwareInducedFailureType', cardinality 0..*).
+'pcm::av::av::seff::av::av::CallAction' (role 'callAction__VariableUsage', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage358', cardinality 0..*).
+'SynchronisationPoint' (role 'SynchronisationPoint372', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ForkedBehaviour' (role 'synchronousForkedBehaviours_SynchronisationPoint', cardinality 0..*).
+'ResourceEnvironment' (role 'ResourceEnvironment', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::LinkingResource' (role 'linkingResources__ResourceEnvironment', cardinality 0..*).
+'AbstractInternalControlFlowAction' (role 'AbstractInternalControlFlowAction', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::InfrastructureCall' (role 'infrastructureCall__Action', cardinality 0..*).
+'ResourceEnvironment' (role 'ResourceEnvironment500', cardinality 0..*) is associated with 'pcm::av::av::allocation::av::av::Allocation' (role 'pcm_av_av_allocation_av_av_Allocation', cardinality 0..*).
+'Signature' (role 'Signature', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ServiceEffectSpecification' (role 'pcm_av_av_seff_av_av_ServiceEffectSpecification', cardinality 0..*).
+'SpecifiedOutputParameterAbstraction' (role 'SpecifiedOutputParameterAbstraction440', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::QoSAnnotations' (role 'qosAnnotations_SpecifiedOutputParameterAbstraction', cardinality 0..*).
+'LoopAction' (role 'LoopAction', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'iterationCount_LoopAction', cardinality 0..*).
+'OperationRequiredRole' (role 'OperationRequiredRole91', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyConnector' (role 'pcm_av_av_composition_av_av_AssemblyConnector90', cardinality 0..*).
+'VariableCharacterisation' (role 'VariableCharacterisation', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'specification_VariableCharacterisation', cardinality 0..*).
+'composition::av::av::ComposedStructure' (role 'ComposedStructure54', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannel' (role 'eventChannel__ComposedStructure', cardinality 0..*).
+'InfrastructureProvidedRole' (role 'InfrastructureProvidedRole134', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ProvidedInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector133', cardinality 0..*).
+'UsageScenario' (role 'UsageScenario169', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UsageModel' (role 'usageModel_UsageScenario', cardinality 0..*).
+'ScenarioBehaviour' (role 'ScenarioBehaviour199', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::Loop' (role 'loop_ScenarioBehaviour', cardinality 0..*).
+'EventType' (role 'EventType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Parameter' (role 'parameter__EventType', cardinality 0..*).
+'Parameter' (role 'Parameter254', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::InfrastructureSignature' (role 'infrastructureSignature__Parameter', cardinality 0..*).
+'CompositeDataType' (role 'CompositeDataType', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::CompositeDataType' (role 'pcm_av_av_repository_av_av_CompositeDataType', cardinality 0..*).
+'SynchronisationPoint' (role 'SynchronisationPoint', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'outputParameterUsage_SynchronisationPoint', cardinality 0..*).
+'InternalFailureOccurrenceDescription' (role 'InternalFailureOccurrenceDescription', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::SoftwareInducedFailureType' (role 'softwareInducedFailureType__InternalFailureOccurrenceDescription', cardinality 0..*).
+'pcm::av::av::seff::av::av::CallReturnAction' (role 'callReturnAction__VariableUsage', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage386', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable480', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ProcessingResourceSpecification' (role 'processingResourceSpecification_processingRate_PCMRandomVariable', cardinality 0..*).
+'AbstractBranchTransition' (role 'AbstractBranchTransition356', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::BranchAction' (role 'branchAction_AbstractBranchTransition', cardinality 0..*).
+'pcm::av::av::seff::performance::av::av::ParametricResourceDemand' (role 'resourceDemand_Action', cardinality 0..*) is associated with 'AbstractInternalControlFlowAction' (role 'AbstractInternalControlFlowAction426', cardinality 0..*).
+'GuardedBranchTransition' (role 'GuardedBranchTransition', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'branchCondition_GuardedBranchTransition', cardinality 0..*).
+'SinkRole' (role 'SinkRole93', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyEventConnector' (role 'pcm_av_av_composition_av_av_AssemblyEventConnector', cardinality 0..*).
+'seff::performance::av::av::InfrastructureCall' (role 'InfrastructureCall', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'numberOfCalls__InfrastructureCall', cardinality 0..*).
+'SourceRole' (role 'SourceRole', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannelSourceConnector' (role 'pcm_av_av_composition_av_av_EventChannelSourceConnector', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext137', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::ProvidedInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_ProvidedInfrastructureDelegationConnector136', cardinality 0..*).
+'UserData' (role 'UserData', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::UsageModel' (role 'usageModel_UserData', cardinality 0..*).
+'Loop' (role 'Loop188', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::ScenarioBehaviour' (role 'bodyBehaviour_Loop', cardinality 0..*).
+'ResourceSignature' (role 'ResourceSignature', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Parameter' (role 'parameter__ResourceSignature', cardinality 0..*).
+'InfrastructureInterface' (role 'InfrastructureInterface', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::InfrastructureSignature' (role 'infrastructureSignatures__InfrastructureInterface', cardinality 0..*).
+'InnerDeclaration' (role 'InnerDeclaration', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::CompositeDataType' (role 'compositeDataType_InnerDeclaration', cardinality 0..*).
+'CallReturnAction' (role 'CallReturnAction', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'returnVariableUsage__CallReturnAction', cardinality 0..*).
+'pcm::av::av::reliability::av::av::FailureType' (role 'failureTypes__Repository', cardinality 0..*) is associated with 'Repository' (role 'Repository334', cardinality 0..*).
+'pcm::av::av::seff::av::av::ResourceDemandingInternalBehaviour' (role 'resourceDemandingInternalBehaviours', cardinality 0..*) is associated with 'ResourceDemandingSEFF' (role 'ResourceDemandingSEFF', cardinality 0..*).
+'InternalFailureOccurrenceDescription' (role 'InternalFailureOccurrenceDescription403', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::InternalAction' (role 'internalAction__InternalFailureOccurrenceDescription', cardinality 0..*).
+'CallAction' (role 'CallAction', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'inputVariableUsages__CallAction', cardinality 0..*).
+'pcm::av::av::allocation::av::av::AllocationContext' (role 'pcm_av_av_allocation_av_av_AllocationContext494', cardinality 0..*) is associated with 'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext495', cardinality 0..*).
+'Signature' (role 'Signature435', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::SpecifiedQoSAnnotation' (role 'pcm_av_av_qosannotations_av_av_SpecifiedQoSAnnotation', cardinality 0..*).
+'pcm::av::av::core::av::av::PCMRandomVariable' (role 'specification_SpecifiedExecutionTime', cardinality 0..*) is associated with 'qos::performance::av::av::SpecifiedExecutionTime' (role 'SpecifiedExecutionTime', cardinality 0..*).
+'pcm::av::av::composition::av::av::AssemblyEventConnector' (role 'pcm_av_av_composition_av_av_AssemblyEventConnector95', cardinality 0..*) is associated with 'SourceRole' (role 'SourceRole96', cardinality 0..*).
+'seff::performance::av::av::ResourceCall' (role 'ResourceCall', cardinality 0..*) is associated with 'pcm::av::av::core::av::av::PCMRandomVariable' (role 'numberOfCalls__ResourceCall', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::EventChannelSourceConnector' (role 'pcm_av_av_composition_av_av_EventChannelSourceConnector57', cardinality 0..*).
+'InfrastructureRequiredRole' (role 'InfrastructureRequiredRole139', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::RequiredInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector', cardinality 0..*).
+'pcm::av::av::composition::av::av::RequiredResourceDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredResourceDelegationConnector149', cardinality 0..*) is associated with 'entity::av::av::ResourceRequiredRole' (role 'entity_av_av_ResourceRequiredRole150', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable201', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::OpenWorkload' (role 'openWorkload_PCMRandomVariable', cardinality 0..*).
+'pcm::av::av::repository::av::av::DataType' (role 'dataTypes__Repository', cardinality 0..*) is associated with 'Repository' (role 'Repository226', cardinality 0..*).
+'InfrastructureSignature' (role 'InfrastructureSignature257', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::InfrastructureInterface' (role 'infrastructureInterface__InfrastructureSignature', cardinality 0..*).
+'pcm::av::av::repository::av::av::InnerDeclaration' (role 'pcm_av_av_repository_av_av_InnerDeclaration', cardinality 0..*) is associated with 'DataType' (role 'DataType284', cardinality 0..*).
+'SetVariableAction' (role 'SetVariableAction', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'localVariableUsages_SetVariableAction', cardinality 0..*).
+'ResourceDemandingInternalBehaviour' (role 'ResourceDemandingInternalBehaviour', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::ResourceDemandingSEFF' (role 'resourceDemandingSEFF_ResourceDemandingInternalBehaviour', cardinality 0..*).
+'ForkedBehaviour' (role 'ForkedBehaviour379', cardinality 0..*) is associated with 'pcm::av::av::seff::av::av::SynchronisationPoint' (role 'synchronisationPoint_ForkedBehaviour', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable320', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableCharacterisation' (role 'variableCharacterisation_Specification', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer473', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::ResourceContainer' (role 'nestedResourceContainers__ResourceContainer', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable420', cardinality 0..*) is associated with 'pcm::av::av::seff::performance::av::av::ResourceCall' (role 'resourceCall__PCMRandomVariable', cardinality 0..*).
+'CommunicationLinkResourceType' (role 'CommunicationLinkResourceType507', cardinality 0..*) is associated with 'pcm::av::av::completions::av::av::NetworkDemandParametricResourceDemand' (role 'pcm_av_av_completions_av_av_NetworkDemandParametricResourceDemand', cardinality 0..*).
+'Role' (role 'Role447', cardinality 0..*) is associated with 'pcm::av::av::qosannotations::av::av::SpecifiedOutputParameterAbstraction' (role 'pcm_av_av_qosannotations_av_av_SpecifiedOutputParameterAbstraction446', cardinality 0..*).
+'entity::av::av::ResourceProvidedRole' (role 'ResourceProvidedRole', cardinality 0..*) is associated with 'pcm::av::av::entity::av::av::ResourceInterfaceProvidingEntity' (role 'resourceInterfaceProvidingEntity__ResourceProvidedRole', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext99', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyEventConnector' (role 'pcm_av_av_composition_av_av_AssemblyEventConnector98', cardinality 0..*).
+'pcm::av::av::core::av::av::PCMRandomVariable' (role 'specification_ParametericResourceDemand', cardinality 0..*) is associated with 'seff::performance::av::av::ParametricResourceDemand' (role 'ParametricResourceDemand', cardinality 0..*).
+'pcm::av::av::composition::av::av::EventChannelSourceConnector' (role 'eventChannelSourceConnector__EventChannel', cardinality 0..*) is associated with 'composition::av::av::EventChannel' (role 'EventChannel59', cardinality 0..*).
+'pcm::av::av::composition::av::av::RequiredInfrastructureDelegationConnector' (role 'pcm_av_av_composition_av_av_RequiredInfrastructureDelegationConnector141', cardinality 0..*) is associated with 'InfrastructureRequiredRole' (role 'InfrastructureRequiredRole142', cardinality 0..*).
+'OperationProvidedRole' (role 'OperationProvidedRole172', cardinality 0..*) is associated with 'pcm::av::av::usagemodel::av::av::EntryLevelSystemCall' (role 'pcm_av_av_usagemodel_av_av_EntryLevelSystemCall', cardinality 0..*).
+'pcm::av::av::usagemodel::av::av::Delay' (role 'delay_TimeSpecification', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable203', cardinality 0..*).
+'RepositoryComponent' (role 'RepositoryComponent228', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Repository' (role 'repository__RepositoryComponent', cardinality 0..*).
+'pcm::av::av::repository::av::av::InfrastructureRequiredRole' (role 'pcm_av_av_repository_av_av_InfrastructureRequiredRole', cardinality 0..*) is associated with 'InfrastructureInterface' (role 'InfrastructureInterface259', cardinality 0..*).
+'CompositeDataType' (role 'CompositeDataType286', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::InnerDeclaration' (role 'innerDeclaration_CompositeDataType', cardinality 0..*).
+'pcm::av::av::parameter::av::av::VariableUsage' (role 'expectedExternalOutputs_SpecifiedOutputParameterAbstraction', cardinality 0..*) is associated with 'SpecifiedOutputParameterAbstraction' (role 'SpecifiedOutputParameterAbstraction', cardinality 0..*).
+'qos::reliability::av::av::SpecifiedReliabilityAnnotation' (role 'SpecifiedReliabilityAnnotation', cardinality 0..*) is associated with 'pcm::av::av::reliability::av::av::ExternalFailureOccurrenceDescription' (role 'externalFailureOccurrenceDescriptions__SpecifiedReliabilityAnnotation', cardinality 0..*).
+'pcm::av::av::seff::av::av::SetVariableAction' (role 'setVariableAction_VariableUsage', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage394', cardinality 0..*).
+'EntryLevelSystemCall' (role 'EntryLevelSystemCall317', cardinality 0..*) is associated with 'pcm::av::av::parameter::av::av::VariableUsage' (role 'outputParameterUsages_EntryLevelSystemCall', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable488', cardinality 0..*) is associated with 'pcm::av::av::resourceenvironment::av::av::CommunicationLinkResourceSpecification' (role 'communicationLinkResourceSpecification_latency_PCMRandomVariable', cardinality 0..*).
+'Interface' (role 'Interface', cardinality 0..*) is associated with 'pcm::av::av::repository::av::av::Repository' (role 'repository__Interface', cardinality 0..*).
+'pcm::av::av::seff::reliability::av::av::RecoveryAction' (role 'pcm_av_av_seff_reliability_av_av_RecoveryAction', cardinality 0..*) is associated with 'seff::reliability::av::av::RecoveryActionBehaviour' (role 'seff_reliability_av_av_RecoveryActionBehaviour430', cardinality 0..*).
+'composition::av::av::AssemblyContext' (role 'composition_av_av_AssemblyContext102', cardinality 0..*) is associated with 'pcm::av::av::composition::av::av::AssemblyEventConnector' (role 'pcm_av_av_composition_av_av_AssemblyEventConnector101', cardinality 0..*).

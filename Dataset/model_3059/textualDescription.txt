@@ -1,0 +1,41 @@
+The model has 15 class(es).
+The class 'muddle::MuddleElement' has the following attributes: 'id' of type str.
+The class 'muddle::LinkElementType' has no attributes.
+The class 'muddle::MuddleElementType' has no attributes.
+The class 'muddle::RealType' has no attributes.
+The class 'muddle::Feature' has the following attributes: 'name' of type str; 'primary' of type bool; 'many' of type bool; 'runtime' of type bool.
+The class 'muddle::Type' has the following attributes: 'name' of type str.
+The class 'muddle::BooleanType' has no attributes.
+The class 'muddle::Muddle' has no attributes.
+The class 'Type' has no attributes.
+The class 'muddle::StringType' has no attributes.
+The class 'MuddleElementType' has no attributes.
+The class 'muddle::Slot' has the following attributes: 'values' of type str.
+The class 'muddle::IntegerType' has no attributes.
+The class 'muddle::PrimitiveType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+'muddle::IntegerType' is a specialization of 'PrimitiveType'.
+'muddle::BooleanType' is a specialization of 'PrimitiveType'.
+'muddle::RealType' is a specialization of 'PrimitiveType'.
+'muddle::MuddleElementType' is a specialization of 'Type'.
+'muddle::PrimitiveType' is a specialization of 'Type'.
+'muddle::LinkElementType' is a specialization of 'MuddleElementType'.
+'muddle::StringType' is a specialization of 'PrimitiveType'.
+'muddle::MuddleElementType' (role 'MuddleElementType24', cardinality 0..*) is associated with 'muddle::MuddleElementType' (role 'superTypes', cardinality 0..*).
+'muddle::MuddleElementType' (role 'MuddleElementType21', cardinality 0..*) is associated with 'muddle::MuddleElementType' (role 'subTypes', cardinality 0..*).
+'muddle::MuddleElementType' (role 'MuddleElementType12', cardinality 0..*) is associated with 'muddle::Feature' (role 'features', cardinality 0..*).
+'muddle::Type' (role 'muddle_Type10', cardinality 0..*) is associated with 'muddle::Feature' (role 'muddle_Feature', cardinality 0..*).
+'muddle::MuddleElement' (role 'elements', cardinality 0..*) is associated with 'muddle::Muddle' (role 'Muddle', cardinality 0..*).
+'muddle::MuddleElementType' (role 'owningType', cardinality 0..*) is associated with 'muddle::Feature' (role 'Feature18', cardinality 0..*).
+'muddle::MuddleElementType' (role 'type', cardinality 0..*) is associated with 'muddle::MuddleElement' (role 'MuddleElement16', cardinality 0..*).
+'muddle::Type' (role 'muddle_Type', cardinality 0..*) is associated with 'muddle::Muddle' (role 'muddle_Muddle', cardinality 0..*).
+'muddle::Feature' (role 'muddle_Feature35', cardinality 0..*) is associated with 'muddle::LinkElementType' (role 'muddle_LinkElementType34', cardinality 0..*).
+'muddle::Feature' (role 'Feature', cardinality 0..*) is associated with 'muddle::Slot' (role 'slots', cardinality 0..*).
+'muddle::Feature' (role 'feature', cardinality 0..*) is associated with 'muddle::Slot' (role 'Slot14', cardinality 0..*).
+'muddle::LinkElementType' (role 'muddle_LinkElementType28', cardinality 0..*) is associated with 'muddle::Feature' (role 'muddle_Feature29', cardinality 0..*).
+'muddle::Feature' (role 'muddle_Feature26', cardinality 0..*) is associated with 'muddle::LinkElementType' (role 'muddle_LinkElementType', cardinality 0..*).
+'muddle::MuddleElement' (role 'instances', cardinality 0..*) is associated with 'muddle::MuddleElementType' (role 'MuddleElementType', cardinality 0..*).
+'muddle::Feature' (role 'muddle_Feature32', cardinality 0..*) is associated with 'muddle::LinkElementType' (role 'muddle_LinkElementType31', cardinality 0..*).
+'muddle::Muddle' (role 'muddle', cardinality 0..*) is associated with 'muddle::MuddleElement' (role 'MuddleElement', cardinality 0..*).
+'muddle::Slot' (role 'Slot', cardinality 0..*) is associated with 'muddle::MuddleElement' (role 'owningElement', cardinality 0..*).
+'muddle::MuddleElement' (role 'MuddleElement8', cardinality 0..*) is associated with 'muddle::Slot' (role 'slots7', cardinality 0..*).

@@ -1,0 +1,447 @@
+The model has 183 class(es).
+The class 'r1::Median' has no attributes.
+The class 'r1::Round' has no attributes.
+The class 'r1::Current' has the following attributes: 'scope' of type str.
+The class 'r1::CodeSystemRef' has the following attributes: 'name' of type str; 'libraryName' of type str.
+The class 'r1::NamedTypeSpecifier' has the following attributes: 'name' of type str.
+The class 'r1::ProperIn' has the following attributes: 'precision' of type str.
+The class 'r1::IntervalTypeSpecifier' has no attributes.
+The class 'r1::ByExpression' has no attributes.
+The class 'r1::Quantity' has the following attributes: 'value' of type str; 'unit' of type str.
+The class 'r1::Less' has no attributes.
+The class 'r1::Subtract' has no attributes.
+The class 'r1::BinaryExpression' has no attributes.
+The class 'r1::PopulationVariance' has no attributes.
+The class 'NaryExpression' has no attributes.
+The class 'r1::ByDirection' has no attributes.
+The class 'r1::Not' has no attributes.
+The class 'r1::ExpressionDef' has the following attributes: 'name' of type str; 'accessLevel' of type str; 'context' of type str.
+The class 'r1::Interval' has the following attributes: 'lowClosed' of type str; 'highClosed' of type str.
+The class 'r1::Substring' has no attributes.
+The class 'Expression' has no attributes.
+The class 'r1::Without' has no attributes.
+The class 'r1::TimezoneFrom' has no attributes.
+The class 'r1::EObject' has no attributes.
+The class 'r1::OperandDef' has the following attributes: 'name' of type str; 'operandType' of type str.
+The class 'r1::Before' has the following attributes: 'precision' of type str.
+The class 'r1::ForEach' has the following attributes: 'scope' of type str.
+The class 'r1::ProperIncludedIn' has the following attributes: 'precision' of type str.
+The class 'r1::Times' has no attributes.
+The class 'r1::Variance' has no attributes.
+The class 'r1::Equal' has no attributes.
+The class 'r1::ByColumn' has the following attributes: 'path' of type str.
+The class 'r1::TruncatedDivide' has no attributes.
+The class 'r1::NaryExpression' has no attributes.
+The class 'r1::TypeSpecifier' has no attributes.
+The class 'r1::Log' has no attributes.
+The class 'r1::Mode' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'r1::FunctionDef' has no attributes.
+The class 'r1::IdentifierRef' has the following attributes: 'name' of type str; 'libraryName' of type str.
+The class 'r1::Indexer' has no attributes.
+The class 'r1::Concept' has the following attributes: 'display' of type str.
+The class 'r1::Power' has no attributes.
+The class 'r1::NotEqual' has no attributes.
+The class 'r1::InCodeSystem' has no attributes.
+The class 'r1::OverlapsAfter' has the following attributes: 'precision' of type str.
+The class 'r1::Instance' has the following attributes: 'classType' of type str.
+The class 'AggregateExpression' has no attributes.
+The class 'r1::OperandRef' has the following attributes: 'name' of type str.
+The class 'r1::Multiply' has no attributes.
+The class 'r1::AggregateExpression' has the following attributes: 'path' of type str.
+The class 'r1::End' has no attributes.
+The class 'r1::MeetsBefore' has the following attributes: 'precision' of type str.
+The class 'r1::InValueSet' has no attributes.
+The class 'TypeSpecifier' has no attributes.
+The class 'r1::UnaryExpression' has no attributes.
+The class 'r1::MinValue' has the following attributes: 'valueType' of type str.
+The class 'r1::Property' has the following attributes: 'path' of type str; 'scope' of type str.
+The class 'r1::Start' has no attributes.
+The class 'AliasedQuerySource' has no attributes.
+The class 'r1::Abs' has no attributes.
+The class 'r1::Successor' has no attributes.
+The class 'r1::FunctionRef' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'r1::If' has no attributes.
+The class 'r1::Overlaps' has the following attributes: 'precision' of type str.
+The class 'RelationshipClause' has no attributes.
+The class 'r1::PositionOf' has no attributes.
+The class 'r1::ProperContains' has the following attributes: 'precision' of type str.
+The class 'r1::Convert' has the following attributes: 'toType' of type str.
+The class 'r1::Except' has no attributes.
+The class 'r1::GreaterOrEqual' has no attributes.
+The class 'r1::After' has the following attributes: 'precision' of type str.
+The class 'r1::List' has no attributes.
+The class 'r1::AllTrue' has no attributes.
+The class 'r1::Query' has no attributes.
+The class 'r1::SameOrBefore' has the following attributes: 'precision' of type str.
+The class 'r1::And' has no attributes.
+The class 'r1::Or' has no attributes.
+The class 'r1::Truncate' has no attributes.
+The class 'r1::DateTime' has no attributes.
+The class 'r1::Upper' has no attributes.
+The class 'r1::Lower' has no attributes.
+The class 'r1::DefineClause' has the following attributes: 'identifier' of type str.
+The class 'r1::Ends' has the following attributes: 'precision' of type str.
+The class 'r1::IndexOf' has no attributes.
+The class 'Element' has no attributes.
+The class 'r1::Ceiling' has no attributes.
+The class 'r1::Today' has no attributes.
+The class 'r1::Predecessor' has no attributes.
+The class 'r1::TimeOfDay' has no attributes.
+The class 'r1::AliasRef' has the following attributes: 'name' of type str.
+The class 'r1::As' has the following attributes: 'strict' of type str; 'asType' of type str.
+The class 'r1::Is' has the following attributes: 'isType' of type str.
+The class 'r1::AnyTrue' has no attributes.
+The class 'r1::ExpressionRef' has the following attributes: 'libraryName' of type str; 'name' of type str.
+The class 'r1::Code' has the following attributes: 'code' of type str; 'display' of type str.
+The class 'r1::Expand' has no attributes.
+The class 'r1::Starts' has the following attributes: 'precision' of type str.
+The class 'r1::CalculateAgeAt' has the following attributes: 'precision' of type str.
+The class 'r1::Filter' has the following attributes: 'scope' of type str.
+The class 'r1::Retrieve' has the following attributes: 'dateProperty' of type str; 'dateLowProperty' of type str; 'scope' of type str; 'dataType' of type str; 'idProperty' of type str; 'templateId' of type str; 'codeProperty' of type str; 'dateHighProperty' of type str.
+The class 'r1::Length' has no attributes.
+The class 'r1::Union' has no attributes.
+The class 'r1::ValueSetRef' has the following attributes: 'libraryName' of type str; 'name' of type str.
+The class 'r1::IncludedIn' has the following attributes: 'precision' of type str.
+The class 'r1::Element' has the following attributes: 'localId' of type str.
+The class 'r1::Intersect' has no attributes.
+The class 'r1::TupleTypeSpecifier' has no attributes.
+The class 'r1::InstanceElement' has the following attributes: 'name' of type str.
+The class 'r1::DateTimeComponentFrom' has the following attributes: 'precision' of type str.
+The class 'r1::With' has no attributes.
+The class 'r1::Meets' has the following attributes: 'precision' of type str.
+The class 'r1::MaxValue' has the following attributes: 'valueType' of type str.
+The class 'r1::Width' has no attributes.
+The class 'r1::PopulationStdDev' has no attributes.
+The class 'r1::Expression' has no attributes.
+The class 'r1::Time' has no attributes.
+The class 'r1::IsTrue' has no attributes.
+The class 'r1::IsNull' has no attributes.
+The class 'r1::Count' has no attributes.
+The class 'r1::Ln' has no attributes.
+The class 'r1::Includes' has the following attributes: 'precision' of type str.
+The class 'r1::SameOrAfter' has the following attributes: 'precision' of type str.
+The class 'r1::ProperIncludes' has the following attributes: 'precision' of type str.
+The class 'r1::Max' has no attributes.
+The class 'r1::Min' has no attributes.
+The class 'r1::Tuple' has no attributes.
+The class 'r1::StdDev' has no attributes.
+The class 'r1::Avg' has no attributes.
+The class 'r1::Literal' has the following attributes: 'value' of type str; 'valueType' of type str.
+The class 'r1::Floor' has no attributes.
+The class 'r1::CalculateAge' has the following attributes: 'precision' of type str.
+The class 'r1::Null' has the following attributes: 'valueType' of type str.
+The class 'r1::SameAs' has the following attributes: 'precision' of type str.
+The class 'r1::Greater' has no attributes.
+The class 'SortByItem' has no attributes.
+The class 'r1::ParameterDef' has the following attributes: 'name' of type str; 'accessLevel' of type str; 'parameterType' of type str.
+The class 'r1::ValueSetDef' has the following attributes: 'version' of type str; 'accessLevel' of type str; 'id' of type str; 'name' of type str.
+The class 'r1::MeetsAfter' has the following attributes: 'precision' of type str.
+The class 'r1::DurationBetween' has the following attributes: 'precision' of type str.
+The class 'ExpressionRef' has no attributes.
+The class 'r1::Add' has no attributes.
+The class 'r1::SingletonFrom' has no attributes.
+The class 'r1::AliasedQuerySource' has the following attributes: 'alias' of type str.
+The class 'r1::CodeSystemDef' has the following attributes: 'name' of type str; 'accessLevel' of type str; 'id' of type str; 'version' of type str.
+The class 'r1::OverlapsBefore' has the following attributes: 'precision' of type str.
+The class 'r1::Xor' has no attributes.
+The class 'r1::Last' has the following attributes: 'orderBy' of type str.
+The class 'r1::LessOrEqual' has no attributes.
+The class 'r1::Sum' has no attributes.
+The class 'r1::TupleElementDefinition' has the following attributes: 'name' of type str.
+The class 'r1::ReturnClause' has the following attributes: 'distinct' of type str.
+The class 'r1::CaseItem' has no attributes.
+The class 'r1::TupleElement' has the following attributes: 'name' of type str.
+The class 'r1::Combine' has no attributes.
+The class 'r1::Divide' has no attributes.
+The class 'r1::Negate' has no attributes.
+The class 'r1::SortClause' has no attributes.
+The class 'r1::Distinct' has no attributes.
+The class 'r1::IsFalse' has no attributes.
+The class 'r1::QueryDefineRef' has the following attributes: 'name' of type str.
+The class 'r1::Collapse' has no attributes.
+The class 'r1::Exists' has no attributes.
+The class 'r1::First' has the following attributes: 'orderBy' of type str.
+The class 'r1::TimeFrom' has no attributes.
+The class 'r1::ParameterRef' has the following attributes: 'name' of type str; 'libraryName' of type str.
+The class 'r1::Split' has no attributes.
+The class 'r1::Matches' has no attributes.
+The class 'ExpressionDef' has no attributes.
+The class 'r1::ListTypeSpecifier' has no attributes.
+The class 'r1::SortByItem' has the following attributes: 'direction' of type str.
+The class 'r1::RelationshipClause' has no attributes.
+The class 'r1::In' has the following attributes: 'precision' of type str.
+The class 'r1::DifferenceBetween' has the following attributes: 'precision' of type str.
+The class 'r1::Modulo' has no attributes.
+The class 'r1::Coalesce' has no attributes.
+The class 'r1::DateFrom' has no attributes.
+The class 'r1::Sort' has no attributes.
+The class 'r1::Now' has no attributes.
+The class 'r1::Contains' has the following attributes: 'precision' of type str.
+The class 'r1::Concatenate' has no attributes.
+The class 'r1::Case' has no attributes.
+The class 'r1::TernaryExpression' has no attributes.
+The enumeration 'SortDirection' has the following literals: 'asc', 'desc', 'ascending', 'descending'.
+The enumeration 'AccessModifier' has the following literals: 'Private', 'Public'.
+The enumeration 'DateTimePrecision' has the following literals: 'Year', 'Hour', 'Week', 'Second', 'Millisecond', 'Month', 'Day', 'Minute'.
+'r1::CalculateAge' is a specialization of 'UnaryExpression'.
+'r1::Indexer' is a specialization of 'BinaryExpression'.
+'r1::IsTrue' is a specialization of 'UnaryExpression'.
+'r1::Power' is a specialization of 'BinaryExpression'.
+'r1::Divide' is a specialization of 'BinaryExpression'.
+'r1::Modulo' is a specialization of 'BinaryExpression'.
+'r1::SingletonFrom' is a specialization of 'UnaryExpression'.
+'r1::Width' is a specialization of 'UnaryExpression'.
+'r1::Contains' is a specialization of 'BinaryExpression'.
+'r1::NamedTypeSpecifier' is a specialization of 'TypeSpecifier'.
+'r1::QueryDefineRef' is a specialization of 'Expression'.
+'r1::CodeSystemDef' is a specialization of 'Element'.
+'r1::DateTime' is a specialization of 'Expression'.
+'r1::ValueSetDef' is a specialization of 'Element'.
+'r1::FunctionRef' is a specialization of 'ExpressionRef'.
+'r1::PositionOf' is a specialization of 'Expression'.
+'r1::Ceiling' is a specialization of 'UnaryExpression'.
+'r1::InValueSet' is a specialization of 'Expression'.
+'r1::AllTrue' is a specialization of 'AggregateExpression'.
+'r1::Quantity' is a specialization of 'Expression'.
+'r1::Code' is a specialization of 'Expression'.
+'r1::Times' is a specialization of 'BinaryExpression'.
+'r1::DurationBetween' is a specialization of 'BinaryExpression'.
+'r1::Variance' is a specialization of 'AggregateExpression'.
+'r1::With' is a specialization of 'RelationshipClause'.
+'r1::Current' is a specialization of 'Expression'.
+'r1::Less' is a specialization of 'BinaryExpression'.
+'r1::Without' is a specialization of 'RelationshipClause'.
+'r1::Retrieve' is a specialization of 'Expression'.
+'r1::Start' is a specialization of 'UnaryExpression'.
+'r1::MaxValue' is a specialization of 'Expression'.
+'r1::SameOrAfter' is a specialization of 'BinaryExpression'.
+'r1::Mode' is a specialization of 'AggregateExpression'.
+'r1::Includes' is a specialization of 'BinaryExpression'.
+'r1::If' is a specialization of 'Expression'.
+'r1::ExpressionDef' is a specialization of 'Element'.
+'r1::Last' is a specialization of 'Expression'.
+'r1::Today' is a specialization of 'Expression'.
+'r1::ReturnClause' is a specialization of 'Element'.
+'r1::DefineClause' is a specialization of 'Element'.
+'r1::Sort' is a specialization of 'Expression'.
+'r1::IndexOf' is a specialization of 'Expression'.
+'r1::Filter' is a specialization of 'Expression'.
+'r1::IsNull' is a specialization of 'UnaryExpression'.
+'r1::NotEqual' is a specialization of 'BinaryExpression'.
+'r1::StdDev' is a specialization of 'AggregateExpression'.
+'r1::Upper' is a specialization of 'UnaryExpression'.
+'r1::IncludedIn' is a specialization of 'BinaryExpression'.
+'r1::As' is a specialization of 'UnaryExpression'.
+'r1::Min' is a specialization of 'AggregateExpression'.
+'r1::OverlapsBefore' is a specialization of 'BinaryExpression'.
+'r1::ByColumn' is a specialization of 'SortByItem'.
+'r1::Exists' is a specialization of 'UnaryExpression'.
+'r1::Now' is a specialization of 'Expression'.
+'r1::GreaterOrEqual' is a specialization of 'BinaryExpression'.
+'r1::Time' is a specialization of 'Expression'.
+'r1::Before' is a specialization of 'BinaryExpression'.
+'r1::TimeFrom' is a specialization of 'UnaryExpression'.
+'r1::Lower' is a specialization of 'UnaryExpression'.
+'r1::MeetsBefore' is a specialization of 'BinaryExpression'.
+'r1::DateFrom' is a specialization of 'UnaryExpression'.
+'r1::Xor' is a specialization of 'BinaryExpression'.
+'r1::Matches' is a specialization of 'BinaryExpression'.
+'r1::Length' is a specialization of 'UnaryExpression'.
+'r1::Median' is a specialization of 'AggregateExpression'.
+'r1::Multiply' is a specialization of 'BinaryExpression'.
+'r1::Property' is a specialization of 'Expression'.
+'r1::Tuple' is a specialization of 'Expression'.
+'r1::Max' is a specialization of 'AggregateExpression'.
+'r1::Starts' is a specialization of 'BinaryExpression'.
+'r1::Substring' is a specialization of 'Expression'.
+'r1::Coalesce' is a specialization of 'NaryExpression'.
+'r1::Collapse' is a specialization of 'UnaryExpression'.
+'r1::Greater' is a specialization of 'BinaryExpression'.
+'r1::SameOrBefore' is a specialization of 'BinaryExpression'.
+'r1::IntervalTypeSpecifier' is a specialization of 'TypeSpecifier'.
+'r1::Convert' is a specialization of 'UnaryExpression'.
+'r1::InCodeSystem' is a specialization of 'Expression'.
+'r1::UnaryExpression' is a specialization of 'Expression'.
+'r1::Sum' is a specialization of 'AggregateExpression'.
+'r1::Case' is a specialization of 'Expression'.
+'r1::IsFalse' is a specialization of 'UnaryExpression'.
+'r1::Split' is a specialization of 'Expression'.
+'r1::Distinct' is a specialization of 'UnaryExpression'.
+'r1::Null' is a specialization of 'Expression'.
+'r1::AnyTrue' is a specialization of 'AggregateExpression'.
+'r1::Intersect' is a specialization of 'BinaryExpression'.
+'r1::Ln' is a specialization of 'UnaryExpression'.
+'r1::Combine' is a specialization of 'Expression'.
+'r1::AliasedQuerySource' is a specialization of 'Element'.
+'r1::Instance' is a specialization of 'Expression'.
+'r1::TruncatedDivide' is a specialization of 'BinaryExpression'.
+'r1::MinValue' is a specialization of 'Expression'.
+'r1::Log' is a specialization of 'BinaryExpression'.
+'r1::LessOrEqual' is a specialization of 'BinaryExpression'.
+'r1::ValueSetRef' is a specialization of 'Expression'.
+'r1::Abs' is a specialization of 'UnaryExpression'.
+'r1::ProperContains' is a specialization of 'BinaryExpression'.
+'r1::Except' is a specialization of 'BinaryExpression'.
+'r1::ListTypeSpecifier' is a specialization of 'TypeSpecifier'.
+'r1::List' is a specialization of 'Expression'.
+'r1::PopulationVariance' is a specialization of 'AggregateExpression'.
+'r1::ForEach' is a specialization of 'Expression'.
+'r1::Equal' is a specialization of 'BinaryExpression'.
+'r1::Union' is a specialization of 'BinaryExpression'.
+'r1::Avg' is a specialization of 'AggregateExpression'.
+'r1::BinaryExpression' is a specialization of 'Expression'.
+'r1::DifferenceBetween' is a specialization of 'BinaryExpression'.
+'r1::Overlaps' is a specialization of 'BinaryExpression'.
+'r1::CalculateAgeAt' is a specialization of 'BinaryExpression'.
+'r1::IdentifierRef' is a specialization of 'Expression'.
+'r1::Negate' is a specialization of 'UnaryExpression'.
+'r1::Or' is a specialization of 'BinaryExpression'.
+'r1::TimeOfDay' is a specialization of 'Expression'.
+'r1::Not' is a specialization of 'UnaryExpression'.
+'r1::Literal' is a specialization of 'Expression'.
+'r1::ProperIn' is a specialization of 'BinaryExpression'.
+'r1::End' is a specialization of 'UnaryExpression'.
+'r1::TimezoneFrom' is a specialization of 'UnaryExpression'.
+'r1::Expression' is a specialization of 'Element'.
+'r1::Ends' is a specialization of 'BinaryExpression'.
+'r1::OperandRef' is a specialization of 'Expression'.
+'r1::In' is a specialization of 'BinaryExpression'.
+'r1::OverlapsAfter' is a specialization of 'BinaryExpression'.
+'r1::DateTimeComponentFrom' is a specialization of 'UnaryExpression'.
+'r1::Round' is a specialization of 'Expression'.
+'r1::AliasRef' is a specialization of 'Expression'.
+'r1::Add' is a specialization of 'BinaryExpression'.
+'r1::ParameterRef' is a specialization of 'Expression'.
+'r1::Interval' is a specialization of 'Expression'.
+'r1::PopulationStdDev' is a specialization of 'AggregateExpression'.
+'r1::MeetsAfter' is a specialization of 'BinaryExpression'.
+'r1::FunctionDef' is a specialization of 'ExpressionDef'.
+'r1::Successor' is a specialization of 'UnaryExpression'.
+'r1::RelationshipClause' is a specialization of 'AliasedQuerySource'.
+'r1::SortClause' is a specialization of 'Element'.
+'r1::And' is a specialization of 'BinaryExpression'.
+'r1::Count' is a specialization of 'AggregateExpression'.
+'r1::ParameterDef' is a specialization of 'Element'.
+'r1::ExpressionRef' is a specialization of 'Expression'.
+'r1::SortByItem' is a specialization of 'Element'.
+'r1::AggregateExpression' is a specialization of 'Expression'.
+'r1::Truncate' is a specialization of 'UnaryExpression'.
+'r1::Predecessor' is a specialization of 'UnaryExpression'.
+'r1::Concatenate' is a specialization of 'NaryExpression'.
+'r1::ProperIncludedIn' is a specialization of 'BinaryExpression'.
+'r1::Subtract' is a specialization of 'BinaryExpression'.
+'r1::NaryExpression' is a specialization of 'Expression'.
+'r1::SameAs' is a specialization of 'BinaryExpression'.
+'r1::TypeSpecifier' is a specialization of 'Element'.
+'r1::ProperIncludes' is a specialization of 'BinaryExpression'.
+'r1::Meets' is a specialization of 'BinaryExpression'.
+'r1::ByDirection' is a specialization of 'SortByItem'.
+'r1::Floor' is a specialization of 'UnaryExpression'.
+'r1::Expand' is a specialization of 'UnaryExpression'.
+'r1::OperandDef' is a specialization of 'Element'.
+'r1::Query' is a specialization of 'Expression'.
+'r1::Concept' is a specialization of 'Expression'.
+'r1::After' is a specialization of 'BinaryExpression'.
+'r1::TernaryExpression' is a specialization of 'Expression'.
+'r1::TupleElementDefinition' is a specialization of 'Element'.
+'r1::ByExpression' is a specialization of 'SortByItem'.
+'r1::TupleTypeSpecifier' is a specialization of 'TypeSpecifier'.
+'r1::CaseItem' is a specialization of 'Element'.
+'r1::First' is a specialization of 'Expression'.
+'r1::Is' is a specialization of 'UnaryExpression'.
+'r1::CodeSystemRef' is a specialization of 'Expression'.
+'r1::IntervalTypeSpecifier' (role 'r1_IntervalTypeSpecifier', cardinality 0..*) is associated with 'r1::TypeSpecifier' (role 'r1_TypeSpecifier108', cardinality 0..*).
+'r1::UnaryExpression' (role 'r1_UnaryExpression', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression216', cardinality 0..*).
+'r1::Concept' (role 'r1_Concept', cardinality 0..*) is associated with 'r1::Code' (role 'r1_Code28', cardinality 0..*).
+'r1::RelationshipClause' (role 'r1_RelationshipClause156', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression157', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression179', cardinality 0..*) is associated with 'r1::Split' (role 'r1_Split', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression67', cardinality 0..*) is associated with 'r1::ForEach' (role 'r1_ForEach', cardinality 0..*).
+'r1::TupleElement' (role 'r1_TupleElement', cardinality 0..*) is associated with 'r1::Tuple' (role 'r1_Tuple', cardinality 0..*).
+'r1::ReturnClause' (role 'r1_ReturnClause', cardinality 0..*) is associated with 'r1::Query' (role 'r1_Query152', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression50', cardinality 0..*) is associated with 'r1::DateTime' (role 'r1_DateTime49', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier', cardinality 0..*) is associated with 'r1::As' (role 'r1_As', cardinality 0..*).
+'r1::ParameterDef' (role 'r1_ParameterDef132', cardinality 0..*) is associated with 'r1::TypeSpecifier' (role 'r1_TypeSpecifier133', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression200', cardinality 0..*) is associated with 'r1::Time' (role 'r1_Time199', cardinality 0..*).
+'r1::Round' (role 'r1_Round169', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression170', cardinality 0..*).
+'r1::DefineClause' (role 'r1_DefineClause145', cardinality 0..*) is associated with 'r1::Query' (role 'r1_Query144', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression130', cardinality 0..*) is associated with 'r1::ParameterDef' (role 'r1_ParameterDef', cardinality 0..*).
+'r1::AliasedQuerySource' (role 'r1_AliasedQuerySource142', cardinality 0..*) is associated with 'r1::Query' (role 'r1_Query', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression7', cardinality 0..*) is associated with 'r1::ByExpression' (role 'r1_ByExpression', cardinality 0..*).
+'r1::Sort' (role 'r1_Sort', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression172', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression65', cardinality 0..*) is associated with 'r1::First' (role 'r1_First', cardinality 0..*).
+'r1::ValueSetRef' (role 'r1_ValueSetRef', cardinality 0..*) is associated with 'r1::InValueSet' (role 'r1_InValueSet112', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression91', cardinality 0..*) is associated with 'r1::IndexOf' (role 'r1_IndexOf90', cardinality 0..*).
+'r1::DateTime' (role 'r1_DateTime46', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression47', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression203', cardinality 0..*) is associated with 'r1::Time' (role 'r1_Time202', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression73', cardinality 0..*) is associated with 'r1::FunctionRef' (role 'r1_FunctionRef', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression194', cardinality 0..*) is associated with 'r1::Time' (role 'r1_Time', cardinality 0..*).
+'r1::TupleTypeSpecifier' (role 'r1_TupleTypeSpecifier', cardinality 0..*) is associated with 'r1::TupleElementDefinition' (role 'r1_TupleElementDefinition214', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression41', cardinality 0..*) is associated with 'r1::DateTime' (role 'r1_DateTime40', cardinality 0..*).
+'r1::If' (role 'r1_If80', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression81', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier118', cardinality 0..*) is associated with 'r1::List' (role 'r1_List', cardinality 0..*).
+'r1::Round' (role 'r1_Round', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression167', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier123', cardinality 0..*) is associated with 'r1::ListTypeSpecifier' (role 'r1_ListTypeSpecifier', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression140', cardinality 0..*) is associated with 'r1::Property' (role 'r1_Property', cardinality 0..*).
+'r1::Retrieve' (role 'r1_Retrieve161', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression162', cardinality 0..*).
+'r1::ReturnClause' (role 'r1_ReturnClause164', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression165', cardinality 0..*).
+'r1::Filter' (role 'r1_Filter', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression60', cardinality 0..*).
+'r1::EObject' (role 'r1_EObject', cardinality 0..*) is associated with 'r1::Element' (role 'r1_Element', cardinality 0..*).
+'r1::SortClause' (role 'r1_SortClause', cardinality 0..*) is associated with 'r1::Query' (role 'r1_Query154', cardinality 0..*).
+'r1::BinaryExpression' (role 'r1_BinaryExpression', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression5', cardinality 0..*).
+'r1::CodeSystemRef' (role 'r1_CodeSystemRef', cardinality 0..*) is associated with 'r1::Code' (role 'r1_Code', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression116', cardinality 0..*) is associated with 'r1::Last' (role 'r1_Last', cardinality 0..*).
+'r1::DateTime' (role 'r1_DateTime37', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression38', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression182', cardinality 0..*) is associated with 'r1::Split' (role 'r1_Split181', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression53', cardinality 0..*) is associated with 'r1::DateTime' (role 'r1_DateTime52', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression55', cardinality 0..*) is associated with 'r1::DefineClause' (role 'r1_DefineClause', cardinality 0..*).
+'r1::DateTime' (role 'r1_DateTime43', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression44', cardinality 0..*).
+'r1::OperandDef' (role 'r1_OperandDef', cardinality 0..*) is associated with 'r1::FunctionDef' (role 'r1_FunctionDef', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression20', cardinality 0..*) is associated with 'r1::CaseItem' (role 'r1_CaseItem19', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier128', cardinality 0..*) is associated with 'r1::OperandDef' (role 'r1_OperandDef127', cardinality 0..*).
+'r1::IndexOf' (role 'r1_IndexOf', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression88', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression75', cardinality 0..*) is associated with 'r1::If' (role 'r1_If', cardinality 0..*).
+'r1::If' (role 'r1_If77', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression78', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression138', cardinality 0..*) is associated with 'r1::PositionOf' (role 'r1_PositionOf137', cardinality 0..*).
+'r1::ValueSetDef' (role 'r1_ValueSetDef', cardinality 0..*) is associated with 'r1::CodeSystemRef' (role 'r1_CodeSystemRef218', cardinality 0..*).
+'r1::Interval' (role 'r1_Interval99', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression100', cardinality 0..*).
+'r1::Interval' (role 'r1_Interval', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression97', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression17', cardinality 0..*) is associated with 'r1::CaseItem' (role 'r1_CaseItem16', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier114', cardinality 0..*) is associated with 'r1::Is' (role 'r1_Is', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression26', cardinality 0..*) is associated with 'r1::Combine' (role 'r1_Combine25', cardinality 0..*).
+'r1::Time' (role 'r1_Time205', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression206', cardinality 0..*).
+'r1::TernaryExpression' (role 'r1_TernaryExpression', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression192', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression150', cardinality 0..*) is associated with 'r1::Query' (role 'r1_Query149', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression70', cardinality 0..*) is associated with 'r1::ForEach' (role 'r1_ForEach69', cardinality 0..*).
+'r1::SortClause' (role 'r1_SortClause176', cardinality 0..*) is associated with 'r1::SortByItem' (role 'r1_SortByItem177', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression95', cardinality 0..*) is associated with 'r1::InstanceElement' (role 'r1_InstanceElement94', cardinality 0..*).
+'r1::DateTime' (role 'r1_DateTime', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression32', cardinality 0..*).
+'r1::Substring' (role 'r1_Substring186', cardinality 0..*) is associated with 'r1::EObject' (role 'r1_EObject187', cardinality 0..*).
+'r1::Interval' (role 'r1_Interval102', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression103', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression210', cardinality 0..*) is associated with 'r1::TupleElement' (role 'r1_TupleElement209', cardinality 0..*).
+'r1::PositionOf' (role 'r1_PositionOf', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression135', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier212', cardinality 0..*) is associated with 'r1::TupleElementDefinition' (role 'r1_TupleElementDefinition', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression9', cardinality 0..*) is associated with 'r1::Case' (role 'r1_Case', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression83', cardinality 0..*) is associated with 'r1::InCodeSystem' (role 'r1_InCodeSystem', cardinality 0..*).
+'r1::NaryExpression' (role 'r1_NaryExpression', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression125', cardinality 0..*).
+'r1::CaseItem' (role 'r1_CaseItem', cardinality 0..*) is associated with 'r1::Case' (role 'r1_Case11', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression', cardinality 0..*) is associated with 'r1::AggregateExpression' (role 'r1_AggregateExpression', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression35', cardinality 0..*) is associated with 'r1::DateTime' (role 'r1_DateTime34', cardinality 0..*).
+'r1::Substring' (role 'r1_Substring', cardinality 0..*) is associated with 'r1::EObject' (role 'r1_EObject184', cardinality 0..*).
+'r1::ExpressionDef' (role 'r1_ExpressionDef', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression58', cardinality 0..*).
+'r1::TypeSpecifier' (role 'r1_TypeSpecifier30', cardinality 0..*) is associated with 'r1::Convert' (role 'r1_Convert', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression63', cardinality 0..*) is associated with 'r1::Filter' (role 'r1_Filter62', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression106', cardinality 0..*) is associated with 'r1::Interval' (role 'r1_Interval105', cardinality 0..*).
+'r1::Time' (role 'r1_Time196', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression197', cardinality 0..*).
+'r1::Query' (role 'r1_Query147', cardinality 0..*) is associated with 'r1::RelationshipClause' (role 'r1_RelationshipClause', cardinality 0..*).
+'r1::Sort' (role 'r1_Sort174', cardinality 0..*) is associated with 'r1::SortByItem' (role 'r1_SortByItem', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression110', cardinality 0..*) is associated with 'r1::InValueSet' (role 'r1_InValueSet', cardinality 0..*).
+'r1::InstanceElement' (role 'r1_InstanceElement', cardinality 0..*) is associated with 'r1::Instance' (role 'r1_Instance', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression121', cardinality 0..*) is associated with 'r1::List' (role 'r1_List120', cardinality 0..*).
+'r1::Expression' (role 'r1_Expression14', cardinality 0..*) is associated with 'r1::Case' (role 'r1_Case13', cardinality 0..*).
+'r1::AliasedQuerySource' (role 'r1_AliasedQuerySource', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression2', cardinality 0..*).
+'r1::EObject' (role 'r1_EObject190', cardinality 0..*) is associated with 'r1::Substring' (role 'r1_Substring189', cardinality 0..*).
+'r1::Retrieve' (role 'r1_Retrieve', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression159', cardinality 0..*).
+'r1::InCodeSystem' (role 'r1_InCodeSystem85', cardinality 0..*) is associated with 'r1::CodeSystemRef' (role 'r1_CodeSystemRef86', cardinality 0..*).
+'r1::Combine' (role 'r1_Combine', cardinality 0..*) is associated with 'r1::Expression' (role 'r1_Expression23', cardinality 0..*).

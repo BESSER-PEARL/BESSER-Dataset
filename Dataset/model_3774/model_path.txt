@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse-passage/passage/bundles/org.eclipse.passage.lic.features.ecore/model/features.ecore

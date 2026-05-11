@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'myDsl::ParentChildConstraint' has no attributes.
+The class 'myDsl::MandatoryTreeConstraint' has no attributes.
+The class 'myDsl::TreeConstraint' has no attributes.
+The class 'myDsl::OrAlternativeTreeConstraint' has the following attributes: 'max' of type int; 'min' of type int.
+The class 'myDsl::FM' has no attributes.
+The class 'TreeConstraint' has no attributes.
+The class 'myDsl::Feature' has the following attributes: 'name' of type str.
+The class 'myDsl::FeatureAttribute' has the following attributes: 'defaultValue' of type int; 'attributeType' of type str; 'nullValue' of type int; 'maxValue' of type int; 'minValue' of type int.
+The class 'myDsl::OptionalTreeConstraint' has no attributes.
+The class 'myDsl::CrossTreeConstraint' has the following attributes: 'type' of type str.
+'myDsl::MandatoryTreeConstraint' is a specialization of 'TreeConstraint'.
+'myDsl::OptionalTreeConstraint' is a specialization of 'TreeConstraint'.
+'myDsl::OrAlternativeTreeConstraint' is a specialization of 'TreeConstraint'.
+'myDsl::Feature' (role 'myDsl_Feature13', cardinality 0..*) is associated with 'myDsl::MandatoryTreeConstraint' (role 'myDsl_MandatoryTreeConstraint', cardinality 0..*).
+'myDsl::ParentChildConstraint' (role 'myDsl_ParentChildConstraint', cardinality 0..*) is associated with 'myDsl::FM' (role 'myDsl_FM2', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature15', cardinality 0..*) is associated with 'myDsl::OptionalTreeConstraint' (role 'myDsl_OptionalTreeConstraint', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature9', cardinality 0..*) is associated with 'myDsl::ParentChildConstraint' (role 'myDsl_ParentChildConstraint8', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature23', cardinality 0..*) is associated with 'myDsl::CrossTreeConstraint' (role 'myDsl_CrossTreeConstraint22', cardinality 0..*).
+'myDsl::FM' (role 'myDsl_FM', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature26', cardinality 0..*) is associated with 'myDsl::FeatureAttribute' (role 'myDsl_FeatureAttribute25', cardinality 0..*).
+'myDsl::CrossTreeConstraint' (role 'myDsl_CrossTreeConstraint19', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature20', cardinality 0..*).
+'myDsl::TreeConstraint' (role 'myDsl_TreeConstraint', cardinality 0..*) is associated with 'myDsl::ParentChildConstraint' (role 'myDsl_ParentChildConstraint11', cardinality 0..*).
+'myDsl::FM' (role 'myDsl_FM6', cardinality 0..*) is associated with 'myDsl::CrossTreeConstraint' (role 'myDsl_CrossTreeConstraint', cardinality 0..*).
+'myDsl::OrAlternativeTreeConstraint' (role 'myDsl_OrAlternativeTreeConstraint', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature17', cardinality 0..*).
+'myDsl::FeatureAttribute' (role 'myDsl_FeatureAttribute', cardinality 0..*) is associated with 'myDsl::FM' (role 'myDsl_FM4', cardinality 0..*).

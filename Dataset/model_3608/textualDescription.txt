@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'panamaRelational::PanamaOfficers' has the following attributes: 'company' of type str; 'name' of type str.

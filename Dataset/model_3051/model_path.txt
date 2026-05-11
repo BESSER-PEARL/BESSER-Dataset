@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/RvonMassow/Xrest/org.eclipse.xtext.example.domainmodel/model/Domainmodel.ecore

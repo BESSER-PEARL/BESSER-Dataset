@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'BD::EsquemaBD' has no attributes.
+The class 'BD::Tabla' has the following attributes: 'nombre' of type str.
+The class 'BD::Columna' has the following attributes: 'tipo' of type str; 'nombre' of type str.
+The enumeration 'TipoPrimitivo' has the following literals: 'Double', 'Date', 'String', 'Integer', 'Boolean'.
+'BD::Tabla' (role 'BD_Tabla2', cardinality 0..*) is associated with 'BD::Columna' (role 'BD_Columna', cardinality 0..*).
+'BD::Tabla' (role 'BD_Tabla', cardinality 0..*) is associated with 'BD::EsquemaBD' (role 'BD_EsquemaBD', cardinality 0..*).

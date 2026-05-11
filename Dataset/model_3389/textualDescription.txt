@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'Fragmentos::Fichero' has the following attributes: 'nombre' of type str.
+The class 'Fragmentos::Aplicacion' has no attributes.
+The class 'Fragmentos::Fragmento' has the following attributes: 'numLinea' of type int; 'texto' of type str; 'posCaracter' of type int.
+'Fragmentos::Fichero' (role 'Fragmentos_Fichero4', cardinality 0..*) is associated with 'Fragmentos::Fragmento' (role 'Fragmentos_Fragmento5', cardinality 0..*).
+'Fragmentos::Aplicacion' (role 'Fragmentos_Aplicacion', cardinality 0..*) is associated with 'Fragmentos::Fichero' (role 'Fragmentos_Fichero', cardinality 0..*).
+'Fragmentos::Fragmento' (role 'Fragmentos_Fragmento', cardinality 0..*) is associated with 'Fragmentos::Fichero' (role 'Fragmentos_Fichero2', cardinality 0..*).
+'Fragmentos::Fragmento' (role 'Fragmentos_Fragmento8', cardinality 0..*) is associated with 'Fragmentos::Fragmento' (role 'Fragmentos_Fragmento6', cardinality 0..*).

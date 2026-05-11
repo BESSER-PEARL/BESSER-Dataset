@@ -1,0 +1,10 @@
+The model has 2 class(es).
+The class 'noreflectioncompany::Company' has the following attributes: 'name' of type str; 'size' of type str.
+The class 'noreflectioncompany::Employee' has the following attributes: 'hasNameAsAttribute' of type bool; 'name' of type str.
+The enumeration 'CompanySizeKind' has the following literals: 'small', 'large', 'medium'.
+'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee1', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee', cardinality 0..*).
+'noreflectioncompany::Company' (role 'company', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'Employee', cardinality 0..*).
+'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee9', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee7', cardinality 0..*).
+'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee10', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee12', cardinality 0..*).
+'noreflectioncompany::Company' (role 'Company', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'employees', cardinality 0..*).
+'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee6', cardinality 0..*) is associated with 'noreflectioncompany::Employee' (role 'noreflectioncompany_Employee4', cardinality 0..*).

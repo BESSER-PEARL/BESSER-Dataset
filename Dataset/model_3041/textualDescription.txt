@@ -1,0 +1,98 @@
+The model has 44 class(es).
+The class 'actions::ThrowAction' has the following attributes: 'eventID' of type str.
+The class 'actions::StandAloneAction' has no attributes.
+The class 'DataBag' has no attributes.
+The class 'actions::RemoveBagAction' has no attributes.
+The class 'core::AbstractModelElement' has no attributes.
+The class 'actions::TimeAction' has the following attributes: 'time' of type int.
+The class 'actions::Action' has no attributes.
+The class 'actions::PostGenerationAction' has no attributes.
+The class 'ILogicFunction' has no attributes.
+The class 'actions::SetDataAction' has no attributes.
+The class 'actions::ActivateFeatureAction' has no attributes.
+The class 'DependentAction' has no attributes.
+The class 'IFeature' has no attributes.
+The class 'actions::PreGenerationAction' has no attributes.
+The class 'actions::TermAction' has no attributes.
+The class 'actions::PreGenerationSequence' has no attributes.
+The class 'ReconfigurationAction' has no attributes.
+The class 'actions::EObject' has no attributes.
+The class 'PostGenerationAction' has no attributes.
+The class 'actions::SetPropertyAction' has no attributes.
+The class 'actions::GetFeatureStateAction' has no attributes.
+The class 'DataLeaf' has no attributes.
+The class 'IDataNodeFunction' has no attributes.
+The class 'core::ITopLevelElement' has no attributes.
+The class 'FeatureVersion' has no attributes.
+The class 'PreGenerationAction' has no attributes.
+The class 'actions::ReconfigurationAction' has no attributes.
+The class 'rules::IRealTimeConsumer' has no attributes.
+The class 'actions::FailAction' has no attributes.
+The class 'actions::GetDataAction' has no attributes.
+The class 'actions::ActionReference' has no attributes.
+The class 'DataElement' has no attributes.
+The class 'actions::DependentAction' has no attributes.
+The class 'actions::PostGenerationSequence' has no attributes.
+The class 'IContextVariable' has no attributes.
+The class 'actions::TimedConditionAction' has the following attributes: 'frequency' of type int.
+The class 'actions::GetRealTimeAction' has the following attributes: 'timeHint' of type str.
+The class 'actions::DeactivateFeatureAction' has no attributes.
+The class 'actions::Term' has no attributes.
+The class 'Action' has no attributes.
+The class 'actions::GetPropertyAction' has no attributes.
+The class 'ITimeConsumer' has no attributes.
+The class 'IArithmetricFunction' has no attributes.
+The class 'IValueFunction' has no attributes.
+'actions::PostGenerationAction' is a specialization of 'Action'.
+'actions::ActivateFeatureAction' is a specialization of 'PostGenerationAction'.
+'actions::GetRealTimeAction' is a specialization of 'DependentAction'.
+'actions::SetDataAction' is a specialization of 'ReconfigurationAction'.
+'actions::RemoveBagAction' is a specialization of 'ReconfigurationAction'.
+'actions::GetRealTimeAction' is a specialization of 'PreGenerationAction'.
+'actions::SetPropertyAction' is a specialization of 'PostGenerationAction'.
+'actions::FailAction' is a specialization of 'PostGenerationAction'.
+'actions::ActivateFeatureAction' is a specialization of 'ReconfigurationAction'.
+'actions::DependentAction' is a specialization of 'PostGenerationAction'.
+'actions::TimedConditionAction' is a specialization of 'core::ITopLevelElement'.
+'actions::ActionReference' is a specialization of 'PreGenerationAction'.
+'actions::GetPropertyAction' is a specialization of 'DependentAction'.
+'actions::DeactivateFeatureAction' is a specialization of 'PostGenerationAction'.
+'actions::ReconfigurationAction' is a specialization of 'PreGenerationAction'.
+'actions::TimedConditionAction' is a specialization of 'rules::IRealTimeConsumer'.
+'actions::PreGenerationAction' is a specialization of 'Action'.
+'actions::FailAction' is a specialization of 'PreGenerationAction'.
+'actions::DeactivateFeatureAction' is a specialization of 'ReconfigurationAction'.
+'actions::TermAction' is a specialization of 'PostGenerationAction'.
+'actions::ThrowAction' is a specialization of 'PreGenerationAction'.
+'actions::TimeAction' is a specialization of 'PreGenerationAction'.
+'actions::TimedConditionAction' is a specialization of 'core::AbstractModelElement'.
+'actions::TermAction' is a specialization of 'PreGenerationAction'.
+'actions::GetDataAction' is a specialization of 'PreGenerationAction'.
+'actions::StandAloneAction' is a specialization of 'core::AbstractModelElement'.
+'actions::GetFeatureStateAction' is a specialization of 'PreGenerationAction'.
+'actions::PreGenerationSequence' is a specialization of 'PreGenerationAction'.
+'actions::PostGenerationSequence' is a specialization of 'PostGenerationAction'.
+'actions::GetFeatureStateAction' is a specialization of 'DependentAction'.
+'actions::StandAloneAction' is a specialization of 'core::ITopLevelElement'.
+'IFeature' (role 'IFeature35', cardinality 0..*) is associated with 'actions::GetFeatureStateAction' (role 'actions_GetFeatureStateAction', cardinality 0..*).
+'actions::SetDataAction' (role 'actions_SetDataAction', cardinality 0..*) is associated with 'IValueFunction' (role 'IValueFunction', cardinality 0..*).
+'IDataNodeFunction' (role 'IDataNodeFunction19', cardinality 0..*) is associated with 'actions::GetDataAction' (role 'actions_GetDataAction', cardinality 0..*).
+'actions::StandAloneAction' (role 'actions_StandAloneAction4', cardinality 0..*) is associated with 'actions::PreGenerationAction' (role 'actions_PreGenerationAction', cardinality 0..*).
+'DataLeaf' (role 'DataLeaf33', cardinality 0..*) is associated with 'actions::GetPropertyAction' (role 'actions_GetPropertyAction', cardinality 0..*).
+'actions::StandAloneAction' (role 'actions_StandAloneAction', cardinality 0..*) is associated with 'actions::ActionReference' (role 'actions_ActionReference', cardinality 0..*).
+'actions::PostGenerationAction' (role 'actions_PostGenerationAction', cardinality 0..*) is associated with 'actions::PostGenerationSequence' (role 'actions_PostGenerationSequence', cardinality 0..*).
+'IContextVariable' (role 'IContextVariable', cardinality 0..*) is associated with 'actions::StandAloneAction' (role 'actions_StandAloneAction6', cardinality 0..*).
+'DataElement' (role 'DataElement', cardinality 0..*) is associated with 'actions::SetPropertyAction' (role 'actions_SetPropertyAction30', cardinality 0..*).
+'actions::Term' (role 'actions_Term', cardinality 0..*) is associated with 'actions::TermAction' (role 'actions_TermAction', cardinality 0..*).
+'FeatureVersion' (role 'FeatureVersion', cardinality 0..*) is associated with 'actions::ActivateFeatureAction' (role 'actions_ActivateFeatureAction25', cardinality 0..*).
+'IFeature' (role 'IFeature27', cardinality 0..*) is associated with 'actions::DeactivateFeatureAction' (role 'actions_DeactivateFeatureAction', cardinality 0..*).
+'actions::SetPropertyAction' (role 'actions_SetPropertyAction', cardinality 0..*) is associated with 'DataLeaf' (role 'DataLeaf', cardinality 0..*).
+'actions::PreGenerationSequence' (role 'actions_PreGenerationSequence', cardinality 0..*) is associated with 'actions::PreGenerationAction' (role 'actions_PreGenerationAction12', cardinality 0..*).
+'actions::EObject' (role 'actions_EObject', cardinality 0..*) is associated with 'actions::ActionReference' (role 'actions_ActionReference2', cardinality 0..*).
+'actions::SetDataAction' (role 'actions_SetDataAction17', cardinality 0..*) is associated with 'IDataNodeFunction' (role 'IDataNodeFunction', cardinality 0..*).
+'actions::TimeAction' (role 'actions_TimeAction', cardinality 0..*) is associated with 'ITimeConsumer' (role 'ITimeConsumer', cardinality 0..*).
+'actions::ActivateFeatureAction' (role 'actions_ActivateFeatureAction', cardinality 0..*) is associated with 'IFeature' (role 'IFeature', cardinality 0..*).
+'actions::RemoveBagAction' (role 'actions_RemoveBagAction', cardinality 0..*) is associated with 'DataBag' (role 'DataBag', cardinality 0..*).
+'ILogicFunction' (role 'ILogicFunction', cardinality 0..*) is associated with 'actions::TimedConditionAction' (role 'actions_TimedConditionAction10', cardinality 0..*).
+'actions::TimedConditionAction' (role 'actions_TimedConditionAction', cardinality 0..*) is associated with 'actions::PreGenerationAction' (role 'actions_PreGenerationAction8', cardinality 0..*).
+'actions::RemoveBagAction' (role 'actions_RemoveBagAction22', cardinality 0..*) is associated with 'IArithmetricFunction' (role 'IArithmetricFunction', cardinality 0..*).

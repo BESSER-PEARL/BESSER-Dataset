@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'entityDsl::Entity' has no attributes.
+The class 'AbstractType' has no attributes.
+The class 'entityDsl::Module' has no attributes.
+The class 'entityDsl::AbstractType' has no attributes.
+The class 'entityDsl::BooleanType' has no attributes.
+The class 'entityDsl::EntityReference' has no attributes.
+The class 'entityDsl::IntType' has no attributes.
+The class 'entityDsl::Named' has the following attributes: 'name' of type str.
+The class 'entityDsl::Attribute' has no attributes.
+The class 'entityDsl::StringType' has no attributes.
+The class 'Named' has no attributes.
+'entityDsl::IntType' is a specialization of 'AbstractType'.
+'entityDsl::EntityReference' is a specialization of 'AbstractType'.
+'entityDsl::Attribute' is a specialization of 'Named'.
+'entityDsl::BooleanType' is a specialization of 'AbstractType'.
+'entityDsl::StringType' is a specialization of 'AbstractType'.
+'entityDsl::Module' is a specialization of 'Named'.
+'entityDsl::Entity' is a specialization of 'Named'.
+'entityDsl::Module' (role 'entityDsl_Module', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity', cardinality 0..*).
+'entityDsl::Attribute' (role 'entityDsl_Attribute4', cardinality 0..*) is associated with 'entityDsl::AbstractType' (role 'entityDsl_AbstractType', cardinality 0..*).
+'entityDsl::EntityReference' (role 'entityDsl_EntityReference', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity6', cardinality 0..*).
+'entityDsl::Attribute' (role 'entityDsl_Attribute', cardinality 0..*) is associated with 'entityDsl::Entity' (role 'entityDsl_Entity2', cardinality 0..*).

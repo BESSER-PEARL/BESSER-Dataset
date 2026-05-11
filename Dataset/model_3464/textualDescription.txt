@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'featuremodels::ContainmentAssociation' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+The class 'featuremodels::Attribute' has the following attributes: 'name' of type str.
+The class 'featuremodels::SimpleAttribute' has the following attributes: 'type' of type str; 'value' of type str.
+The class 'featuremodels::Constraint' has the following attributes: 'type' of type str; 'name' of type str; 'rule' of type str.
+The class 'Attribute' has no attributes.
+The class 'featuremodels::FeatureModel' has the following attributes: 'name' of type str.
+The class 'featuremodels::Instance' has the following attributes: 'descritpion' of type str; 'id' of type str.
+The class 'featuremodels::Feature' has the following attributes: 'root' of type bool; 'upperBound' of type int; 'lowerBound' of type int; 'required' of type bool; 'name' of type str.
+The enumeration 'ConstraintType' has the following literals: 'EXCLUDES', 'REQUIRES'.
+'featuremodels::SimpleAttribute' is a specialization of 'Attribute'.
+'featuremodels::Feature' (role 'featuremodels_Feature22', cardinality 0..*) is associated with 'featuremodels::Instance' (role 'featuremodels_Instance21', cardinality 0..*).
+'featuremodels::Feature' (role 'Feature4', cardinality 0..*) is associated with 'featuremodels::Feature' (role 'subFeatures', cardinality 0..*).
+'featuremodels::Constraint' (role 'featuremodels_Constraint', cardinality 0..*) is associated with 'featuremodels::FeatureModel' (role 'featuremodels_FeatureModel17', cardinality 0..*).
+'featuremodels::Feature' (role 'Feature11', cardinality 0..*) is associated with 'featuremodels::ContainmentAssociation' (role 'containerParent', cardinality 0..*).
+'featuremodels::Feature' (role 'Feature13', cardinality 0..*) is associated with 'featuremodels::ContainmentAssociation' (role 'containers', cardinality 0..*).
+'featuremodels::FeatureModel' (role 'featuremodels_FeatureModel19', cardinality 0..*) is associated with 'featuremodels::Instance' (role 'featuremodels_Instance', cardinality 0..*).
+'featuremodels::Feature' (role 'subFeatures7', cardinality 0..*) is associated with 'featuremodels::ContainmentAssociation' (role 'ContainmentAssociation8', cardinality 0..*).
+'featuremodels::Feature' (role 'featuremodels_Feature', cardinality 0..*) is associated with 'featuremodels::Attribute' (role 'featuremodels_Attribute', cardinality 0..*).
+'featuremodels::Feature' (role 'Feature', cardinality 0..*) is associated with 'featuremodels::Feature' (role 'featureParent', cardinality 0..*).
+'featuremodels::ContainmentAssociation' (role 'ContainmentAssociation', cardinality 0..*) is associated with 'featuremodels::Feature' (role 'parent', cardinality 0..*).
+'featuremodels::Feature' (role 'featuremodels_Feature15', cardinality 0..*) is associated with 'featuremodels::FeatureModel' (role 'featuremodels_FeatureModel', cardinality 0..*).

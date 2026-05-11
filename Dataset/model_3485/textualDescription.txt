@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'featureModelMetamodel::Constraint' has the following attributes: 'code' of type str; 'id' of type str; 'language' of type str.
+The class 'featureModelMetamodel::Multiplicity_' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'featureModelMetamodel::ConfigurationModel' has no attributes.
+The class 'featureModelMetamodel::ClonableSelection' has the following attributes: 'instance' of type str.
+The class 'featureModelMetamodel::Feature' has the following attributes: 'variabilityType' of type str; 'id' of type str; 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'Multiplicity_' has no attributes.
+The class 'featureModelMetamodel::Attribute' has no attributes.
+The class 'featureModelMetamodel::AbstractFeature' has no attributes.
+The class 'featureModelMetamodel::ClonableFeature' has no attributes.
+The class 'featureModelMetamodel::VariableFeature' has no attributes.
+The class 'Selection' has no attributes.
+The class 'featureModelMetamodel::Selection' has the following attributes: 'state' of type str; 'name' of type str.
+The class 'featureModelMetamodel::FeatureModel' has no attributes.
+The class 'featureModelMetamodel::GroupMultiplicity' has no attributes.
+The enumeration 'VariabilityType' has the following literals: 'alternative', 'optional', 'or_', 'mandatory'.
+The enumeration 'SelectionState' has the following literals: 'selected', 'unselected'.
+'featureModelMetamodel::VariableFeature' is a specialization of 'Feature'.
+'featureModelMetamodel::ClonableSelection' is a specialization of 'Selection'.
+'featureModelMetamodel::GroupMultiplicity' is a specialization of 'Multiplicity_'.
+'featureModelMetamodel::AbstractFeature' is a specialization of 'Feature'.
+'featureModelMetamodel::ClonableFeature' is a specialization of 'Feature'.
+'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature6', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature8', cardinality 0..*).
+'featureModelMetamodel::ConfigurationModel' (role 'featureModelMetamodel_ConfigurationModel', cardinality 0..*) is associated with 'featureModelMetamodel::Selection' (role 'featureModelMetamodel_Selection23', cardinality 0..*).
+'featureModelMetamodel::Attribute' (role 'featureModelMetamodel_Attribute', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature5', cardinality 0..*).
+'featureModelMetamodel::Selection' (role 'featureModelMetamodel_Selection', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature21', cardinality 0..*).
+'featureModelMetamodel::GroupMultiplicity' (role 'featureModelMetamodel_GroupMultiplicity', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature3', cardinality 0..*).
+'featureModelMetamodel::GroupMultiplicity' (role 'featureModelMetamodel_GroupMultiplicity18', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature19', cardinality 0..*).
+'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature16', cardinality 0..*) is associated with 'featureModelMetamodel::FeatureModel' (role 'featureModelMetamodel_FeatureModel15', cardinality 0..*).
+'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature0', cardinality 0..*).
+'featureModelMetamodel::Multiplicity_' (role 'featureModelMetamodel_Multiplicity', cardinality 0..*) is associated with 'featureModelMetamodel::ClonableFeature' (role 'featureModelMetamodel_ClonableFeature', cardinality 0..*).
+'featureModelMetamodel::FeatureModel' (role 'featureModelMetamodel_FeatureModel', cardinality 0..*) is associated with 'featureModelMetamodel::Feature' (role 'featureModelMetamodel_Feature11', cardinality 0..*).
+'featureModelMetamodel::Constraint' (role 'featureModelMetamodel_Constraint', cardinality 0..*) is associated with 'featureModelMetamodel::FeatureModel' (role 'featureModelMetamodel_FeatureModel13', cardinality 0..*).

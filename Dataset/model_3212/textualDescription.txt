@@ -1,0 +1,297 @@
+The model has 125 class(es).
+The class 'OPLmetamodel::ArrayType' has no attributes.
+The class 'OPLmetamodel::NumericType' has no attributes.
+The class 'OPLmetamodel::EnumLiteral' has no attributes.
+The class 'OPLmetamodel::Assertion' has no attributes.
+The class 'OPLmetamodel::AllExpression' has no attributes.
+The class 'RangeType' has no attributes.
+The class 'OPLmetamodel::ActivityDeclaration' has the following attributes: 'earliestStartTime' of type str; 'latestEndTime' of type str.
+The class 'OPLmetamodel::Record' has the following attributes: 'isTuple' of type bool; 'name' of type str.
+The class 'OPLmetamodel::SearchProcedure' has no attributes.
+The class 'OPLmetamodel::DefinedType' has no attributes.
+The class 'OPLmetamodel::IntegerRangeType' has no attributes.
+The class 'OPLmetamodel::StringType' has no attributes.
+The class 'OPLmetamodel::CollectionExpression' has the following attributes: 'isUnique' of type bool.
+The class 'OPLmetamodel::Objective' has the following attributes: 'isLinearRelaxation' of type bool; 'action' of type str.
+The class 'OPLmetamodel::Initialization' has no attributes.
+The class 'OPLmetamodel::Interval' has the following attributes: 'isOptional' of type bool.
+The class 'PrimitiveType' has no attributes.
+The class 'OPLmetamodel::In' has no attributes.
+The class 'OPLmetamodel::BooleanExpression' has the following attributes: 'body' of type str.
+The class 'Initialization' has no attributes.
+The class 'DataInitMethods' has no attributes.
+The class 'Reference' has no attributes.
+The class 'OPLmetamodel::BlockExpression' has no attributes.
+The class 'OPLmetamodel::Function' has no attributes.
+The class 'OPLmetamodel::Sequence' has no attributes.
+The class 'Function' has no attributes.
+The class 'OPLmetamodel::Model' has the following attributes: 'id' of type str; 'isConstraintProblem' of type bool.
+The class 'OPLmetamodel::FormalParameter' has the following attributes: 'isOrdered' of type bool.
+The class 'OPLmetamodel::TupleBinding' has no attributes.
+The class 'OPLmetamodel::BindingRef' has no attributes.
+The class 'OPLmetamodel::StringExpression' has the following attributes: 'body' of type str.
+The class 'DefinedType' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'OPLmetamodel::FunctionCall' has the following attributes: 'functionName' of type str.
+The class 'Declaration' has no attributes.
+The class 'ScriptStatement' has no attributes.
+The class 'OPLmetamodel::Error' has no attributes.
+The class 'OPLmetamodel::ArrayValue' has no attributes.
+The class 'OPLmetamodel::SetValue' has no attributes.
+The class 'OPLmetamodel::Reference' has the following attributes: 'name' of type str.
+The class 'PathExpression' has no attributes.
+The class 'OPLmetamodel::ParameterDeclaration' has no attributes.
+The class 'OPLmetamodel::Entity' has no attributes.
+The class 'OPLmetamodel::IntegerType' has no attributes.
+The class 'OPLmetamodel::PositiveFloatType' has no attributes.
+The class 'OPLmetamodel::FloatType' has no attributes.
+The class 'OPLmetamodel::Constraint' has the following attributes: 'name' of type str.
+The class 'OPLmetamodel::AbstractType' has no attributes.
+The class 'OPLmetamodel::IfExpression' has no attributes.
+The class 'OPLmetamodel::Writeln' has the following attributes: 'string' of type str; 'arg' of type str.
+The class 'IntegerType' has no attributes.
+The class 'OPLmetamodel::StepFunction' has no attributes.
+The class 'OPLmetamodel::ScheduleInitialization' has no attributes.
+The class 'OPLmetamodel::BinaryOperator' has the following attributes: 'op' of type str.
+The class 'OPLmetamodel::ReflectiveFunction' has no attributes.
+The class 'OPLmetamodel::PositiveIntegerType' has no attributes.
+The class 'ParameterDomain' has no attributes.
+The class 'OPLmetamodel::ScriptStatement' has no attributes.
+The class 'OPLmetamodel::QueryUser' has the following attributes: 'ask' of type str.
+The class 'OPLmetamodel::SetType' has the following attributes: 'name' of type str.
+The class 'OPLmetamodel::Operator' has no attributes.
+The class 'OPLmetamodel::BinaryExpression' has no attributes.
+The class 'NumericExpression' has no attributes.
+The class 'OPLmetamodel::BooleanBlock' has no attributes.
+The class 'OPLmetamodel::CumulativeFunction' has no attributes.
+The class 'OPLmetamodel::RecordValue' has no attributes.
+The class 'OPLmetamodel::FunctionRef' has the following attributes: 'name' of type str.
+The class 'OPLmetamodel::Extension' has no attributes.
+The class 'PrimitiveExpression' has no attributes.
+The class 'OPLmetamodel::Script' has the following attributes: 'isMain' of type bool.
+The class 'OPLmetamodel::BooleanType' has no attributes.
+The class 'OPLmetamodel::FloatRangeType' has no attributes.
+The class 'OPLmetamodel::PathExpression' has no attributes.
+The class 'OPLmetamodel::PiecewiseExpression' has no attributes.
+The class 'OPLmetamodel::Number' has no attributes.
+The class 'OPLmetamodel::PiecewiseLinearFunction' has no attributes.
+The class 'OPLmetamodel::FloatExpression' has the following attributes: 'body' of type str.
+The class 'OPLmetamodel::DeferredInit' has no attributes.
+The class 'OPLmetamodel::ArraySlotConstraint' has no attributes.
+The class 'OPLmetamodel::ParameterDomain' has no attributes.
+The class 'OPLmetamodel::Expression' has no attributes.
+The class 'OPLmetamodel::RangeExpression' has no attributes.
+The class 'CollectionExpression' has no attributes.
+The class 'OPLmetamodel::EnumerationType' has no attributes.
+The class 'OPLmetamodel::UnaryExpression' has the following attributes: 'op' of type str.
+The class 'OPLmetamodel::RecordField' has the following attributes: 'name' of type str.
+The class 'AbstractType' has no attributes.
+The class 'BuiltInFunction' has no attributes.
+The class 'OPLmetamodel::ArrayDereference' has no attributes.
+The class 'OPLmetamodel::Setting' has no attributes.
+The class 'OPLmetamodel::ResourceDeclaration' has no attributes.
+The class 'OPLmetamodel::VariableBinding' has no attributes.
+The class 'OPLmetamodel::IndexValuePair' has no attributes.
+The class 'OPLmetamodel::DisplayInstruction' has no attributes.
+The class 'OPLmetamodel::AbstractBinaryOperator' has no attributes.
+The class 'OPLmetamodel::DataInitMethods' has no attributes.
+The class 'OPLmetamodel::RelationalInit' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'PiecewiseLinearFunction' has no attributes.
+The class 'OPLmetamodel::RelationalOperator' has the following attributes: 'op' of type str.
+The class 'Constraint' has no attributes.
+The class 'OPLmetamodel::RangeType' has no attributes.
+The class 'OPLmetamodel::RelationalExpression' has the following attributes: 'redefinedOp' of type str.
+The class 'OPLmetamodel::BuiltInFunction' has no attributes.
+The class 'OPLmetamodel::IfConstraint' has no attributes.
+The class 'Expression' has no attributes.
+The class 'OPLmetamodel::PathDereference' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'OPLmetamodel::PrimitiveExpression' has no attributes.
+The class 'OPLmetamodel::ParameterRef' has no attributes.
+The class 'OPLmetamodel::PrimitiveType' has no attributes.
+The class 'OPLmetamodel::NumericExpression' has no attributes.
+The class 'OPLmetamodel::DataDeclaration' has the following attributes: 'isDecisionVar' of type bool; 'isDecisionExpr' of type bool.
+The class 'OPLmetamodel::DataObject' has the following attributes: 'body' of type str.
+The class 'OPLmetamodel::Declaration' has the following attributes: 'order' of type IntegerType.
+The class 'SetType' has no attributes.
+The class 'FloatType' has no attributes.
+The class 'AbstractBinaryOperator' has no attributes.
+The class 'OPLmetamodel::ReadFile' has the following attributes: 'path' of type str.
+The class 'OPLmetamodel::Comprehension' has no attributes.
+The class 'OPLmetamodel::StateFunction' has no attributes.
+The class 'OPLmetamodel::DataRef' has no attributes.
+The class 'OPLmetamodel::ForAllConstraint' has no attributes.
+The class 'OPLmetamodel::IntegerExpression' has the following attributes: 'body' of type str.
+The class 'OPLmetamodel::AggregateExp' has the following attributes: 'op' of type str.
+The enumeration 'SetOp' has the following literals: 'inter', 'symdiff', 'diff', 'union'.
+The enumeration 'BinaryOp' has the following literals: 'subtract', 'union', 'diff', 'inter', 'symdiff', 'divide', 'mod', 'percent', 'add', 'multiply', 'power'.
+The enumeration 'Quantifier' has the following literals: 'forAll'.
+The enumeration 'OptimizationMode' has the following literals: 'minimize', 'solve', 'maximize'.
+The enumeration 'LogicalOp' has the following literals: 'conjunction', 'and_', 'or_', 'disjunction', 'negation'.
+The enumeration 'RelationalOp' has the following literals: 'greaterThan', 'lessThanOrEqualTo', 'equalTo', 'greaterThanOrEqualTo', 'notEqualTo', 'lessThan'.
+The enumeration 'AggOp' has the following literals: 'inter', 'union', 'prod', 'max', 'sum', 'and_', 'min', 'or_'.
+The enumeration 'UnaryOp' has the following literals: 'unaryMinus', 'negate'.
+The enumeration 'MembershipOp' has the following literals: 'not_in', 'or_', 'and_', 'in_', 'conjunction'.
+'OPLmetamodel::ReadFile' is a specialization of 'DataInitMethods'.
+'OPLmetamodel::SetValue' is a specialization of 'Expression'.
+'OPLmetamodel::FloatType' is a specialization of 'NumericType'.
+'OPLmetamodel::ScheduleInitialization' is a specialization of 'Declaration'.
+'OPLmetamodel::NumericExpression' is a specialization of 'PrimitiveExpression'.
+'OPLmetamodel::EnumLiteral' is a specialization of 'PrimitiveExpression'.
+'OPLmetamodel::IfExpression' is a specialization of 'Expression'.
+'OPLmetamodel::Objective' is a specialization of 'Declaration'.
+'OPLmetamodel::RelationalOperator' is a specialization of 'AbstractBinaryOperator'.
+'OPLmetamodel::NumericType' is a specialization of 'PrimitiveType'.
+'OPLmetamodel::RangeType' is a specialization of 'SetType'.
+'OPLmetamodel::Function' is a specialization of 'Declaration'.
+'OPLmetamodel::FloatExpression' is a specialization of 'NumericExpression'.
+'OPLmetamodel::PiecewiseLinearFunction' is a specialization of 'Function'.
+'OPLmetamodel::ForAllConstraint' is a specialization of 'Constraint'.
+'OPLmetamodel::Reference' is a specialization of 'Expression'.
+'OPLmetamodel::StringType' is a specialization of 'PrimitiveType'.
+'OPLmetamodel::FunctionCall' is a specialization of 'PathExpression'.
+'OPLmetamodel::DataRef' is a specialization of 'Reference'.
+'OPLmetamodel::SetType' is a specialization of 'DefinedType'.
+'OPLmetamodel::RelationalInit' is a specialization of 'Initialization'.
+'OPLmetamodel::IndexValuePair' is a specialization of 'Expression'.
+'OPLmetamodel::RelationalExpression' is a specialization of 'BinaryExpression'.
+'OPLmetamodel::RecordValue' is a specialization of 'Expression'.
+'OPLmetamodel::IfConstraint' is a specialization of 'Constraint'.
+'OPLmetamodel::PositiveIntegerType' is a specialization of 'IntegerType'.
+'OPLmetamodel::Extension' is a specialization of 'CollectionExpression'.
+'OPLmetamodel::ResourceDeclaration' is a specialization of 'Declaration'.
+'OPLmetamodel::IntegerType' is a specialization of 'NumericType'.
+'OPLmetamodel::Constraint' is a specialization of 'Declaration'.
+'OPLmetamodel::DataDeclaration' is a specialization of 'Declaration'.
+'OPLmetamodel::CollectionExpression' is a specialization of 'Expression'.
+'OPLmetamodel::AggregateExp' is a specialization of 'Expression'.
+'OPLmetamodel::QueryUser' is a specialization of 'DataInitMethods'.
+'OPLmetamodel::EnumLiteral' is a specialization of 'PrimitiveType'.
+'OPLmetamodel::EnumerationType' is a specialization of 'SetType'.
+'OPLmetamodel::RangeExpression' is a specialization of 'NumericExpression'.
+'OPLmetamodel::Record' is a specialization of 'DefinedType'.
+'OPLmetamodel::ArraySlotConstraint' is a specialization of 'Expression'.
+'OPLmetamodel::IntegerRangeType' is a specialization of 'IntegerType'.
+'OPLmetamodel::Setting' is a specialization of 'Declaration'.
+'OPLmetamodel::StringExpression' is a specialization of 'PrimitiveExpression'.
+'OPLmetamodel::ArrayValue' is a specialization of 'Expression'.
+'OPLmetamodel::BinaryOperator' is a specialization of 'AbstractBinaryOperator'.
+'OPLmetamodel::BuiltInFunction' is a specialization of 'Function'.
+'OPLmetamodel::BindingRef' is a specialization of 'Reference'.
+'OPLmetamodel::Assertion' is a specialization of 'Declaration'.
+'OPLmetamodel::DataObject' is a specialization of 'Initialization'.
+'OPLmetamodel::IntegerExpression' is a specialization of 'NumericExpression'.
+'OPLmetamodel::Script' is a specialization of 'Declaration'.
+'OPLmetamodel::IntegerRangeType' is a specialization of 'RangeType'.
+'OPLmetamodel::FloatRangeType' is a specialization of 'RangeType'.
+'OPLmetamodel::RelationalExpression' is a specialization of 'BooleanExpression'.
+'OPLmetamodel::DefinedType' is a specialization of 'Declaration'.
+'OPLmetamodel::StepFunction' is a specialization of 'PiecewiseLinearFunction'.
+'OPLmetamodel::ArrayDereference' is a specialization of 'PathExpression'.
+'OPLmetamodel::Record' is a specialization of 'ParameterDomain'.
+'OPLmetamodel::ArrayType' is a specialization of 'DefinedType'.
+'OPLmetamodel::BooleanType' is a specialization of 'PrimitiveType'.
+'OPLmetamodel::UnaryExpression' is a specialization of 'Expression'.
+'OPLmetamodel::PathDereference' is a specialization of 'PathExpression'.
+'OPLmetamodel::CumulativeFunction' is a specialization of 'Function'.
+'OPLmetamodel::PositiveFloatType' is a specialization of 'FloatType'.
+'OPLmetamodel::PrimitiveExpression' is a specialization of 'Expression'.
+'OPLmetamodel::DefinedType' is a specialization of 'AbstractType'.
+'OPLmetamodel::BinaryExpression' is a specialization of 'Expression'.
+'OPLmetamodel::Writeln' is a specialization of 'ScriptStatement'.
+'OPLmetamodel::FloatRangeType' is a specialization of 'FloatType'.
+'OPLmetamodel::ParameterRef' is a specialization of 'Reference'.
+'OPLmetamodel::BlockExpression' is a specialization of 'Expression'.
+'OPLmetamodel::PathExpression' is a specialization of 'Expression'.
+'OPLmetamodel::Comprehension' is a specialization of 'CollectionExpression'.
+'OPLmetamodel::BooleanExpression' is a specialization of 'PrimitiveExpression'.
+'OPLmetamodel::ReflectiveFunction' is a specialization of 'BuiltInFunction'.
+'OPLmetamodel::PrimitiveType' is a specialization of 'AbstractType'.
+'OPLmetamodel::ActivityDeclaration' is a specialization of 'Declaration'.
+'OPLmetamodel::StateFunction' is a specialization of 'Function'.
+'OPLmetamodel::SetType' is a specialization of 'ParameterDomain'.
+'OPLmetamodel::AbstractType' (role 'OPLmetamodel_AbstractType', cardinality 0..*) is associated with 'OPLmetamodel::ArrayType' (role 'OPLmetamodel_ArrayType', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model121', cardinality 0..*) is associated with 'OPLmetamodel::Declaration' (role 'OPLmetamodel_Declaration', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression126', cardinality 0..*) is associated with 'OPLmetamodel::Objective' (role 'OPLmetamodel_Objective125', cardinality 0..*).
+'OPLmetamodel::RecordField' (role 'OPLmetamodel_RecordField147', cardinality 0..*) is associated with 'OPLmetamodel::AbstractType' (role 'OPLmetamodel_AbstractType148', cardinality 0..*).
+'OPLmetamodel::AllExpression' (role 'OPLmetamodel_AllExpression', cardinality 0..*) is associated with 'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter5', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression53', cardinality 0..*) is associated with 'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter52', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model', cardinality 0..*) is associated with 'OPLmetamodel::DefinedType' (role 'OPLmetamodel_DefinedType', cardinality 0..*).
+'OPLmetamodel::IfExpression' (role 'OPLmetamodel_IfExpression', cardinality 0..*) is associated with 'OPLmetamodel::BooleanExpression' (role 'OPLmetamodel_BooleanExpression77', cardinality 0..*).
+'OPLmetamodel::EnumLiteral' (role 'OPLmetamodel_EnumLiteral', cardinality 0..*) is associated with 'OPLmetamodel::EnumerationType' (role 'OPLmetamodel_EnumerationType', cardinality 0..*).
+'OPLmetamodel::RangeExpression' (role 'OPLmetamodel_RangeExpression137', cardinality 0..*) is associated with 'OPLmetamodel::NumericType' (role 'OPLmetamodel_NumericType138', cardinality 0..*).
+'OPLmetamodel::Interval' (role 'OPLmetamodel_Interval86', cardinality 0..*) is associated with 'OPLmetamodel::NumericType' (role 'OPLmetamodel_NumericType', cardinality 0..*).
+'OPLmetamodel::AbstractType' (role 'OPLmetamodel_AbstractType36', cardinality 0..*) is associated with 'OPLmetamodel::DataDeclaration' (role 'OPLmetamodel_DataDeclaration35', cardinality 0..*).
+'OPLmetamodel::FunctionCall' (role 'OPLmetamodel_FunctionCall', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression68', cardinality 0..*).
+'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint72', cardinality 0..*) is associated with 'OPLmetamodel::IfConstraint' (role 'OPLmetamodel_IfConstraint71', cardinality 0..*).
+'OPLmetamodel::RecordValue' (role 'OPLmetamodel_RecordValue', cardinality 0..*) is associated with 'OPLmetamodel::IndexValuePair' (role 'OPLmetamodel_IndexValuePair150', cardinality 0..*).
+'OPLmetamodel::DataDeclaration' (role 'OPLmetamodel_DataDeclaration97', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model96', cardinality 0..*).
+'OPLmetamodel::DataRef' (role 'OPLmetamodel_DataRef33', cardinality 0..*) is associated with 'OPLmetamodel::DataDeclaration' (role 'OPLmetamodel_DataDeclaration', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression55', cardinality 0..*) is associated with 'OPLmetamodel::Extension' (role 'OPLmetamodel_Extension', cardinality 0..*).
+'OPLmetamodel::BindingRef' (role 'OPLmetamodel_BindingRef', cardinality 0..*) is associated with 'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter50', cardinality 0..*).
+'OPLmetamodel::AbstractType' (role 'OPLmetamodel_AbstractType168', cardinality 0..*) is associated with 'OPLmetamodel::SetType' (role 'OPLmetamodel_SetType', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression80', cardinality 0..*) is associated with 'OPLmetamodel::IfExpression' (role 'OPLmetamodel_IfExpression79', cardinality 0..*).
+'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter', cardinality 0..*) is associated with 'OPLmetamodel::AggregateExp' (role 'OPLmetamodel_AggregateExp', cardinality 0..*).
+'OPLmetamodel::AllExpression' (role 'OPLmetamodel_AllExpression7', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression8', cardinality 0..*).
+'OPLmetamodel::IfConstraint' (role 'OPLmetamodel_IfConstraint', cardinality 0..*) is associated with 'OPLmetamodel::BooleanExpression' (role 'OPLmetamodel_BooleanExpression', cardinality 0..*).
+'OPLmetamodel::PathDereference' (role 'OPLmetamodel_PathDereference', cardinality 0..*) is associated with 'OPLmetamodel::Reference' (role 'OPLmetamodel_Reference128', cardinality 0..*).
+'OPLmetamodel::TupleBinding' (role 'OPLmetamodel_TupleBinding', cardinality 0..*) is associated with 'OPLmetamodel::BindingRef' (role 'OPLmetamodel_BindingRef176', cardinality 0..*).
+'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint', cardinality 0..*) is associated with 'OPLmetamodel::Assertion' (role 'OPLmetamodel_Assertion', cardinality 0..*).
+'OPLmetamodel::IfExpression' (role 'OPLmetamodel_IfExpression82', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression83', cardinality 0..*).
+'OPLmetamodel::RangeExpression' (role 'OPLmetamodel_RangeExpression', cardinality 0..*) is associated with 'OPLmetamodel::NumericExpression' (role 'OPLmetamodel_NumericExpression', cardinality 0..*).
+'OPLmetamodel::ActivityDeclaration' (role 'OPLmetamodel_ActivityDeclaration108', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model107', cardinality 0..*).
+'OPLmetamodel::ScriptStatement' (role 'OPLmetamodel_ScriptStatement', cardinality 0..*) is associated with 'OPLmetamodel::Script' (role 'OPLmetamodel_Script161', cardinality 0..*).
+'OPLmetamodel::VariableBinding' (role 'OPLmetamodel_VariableBinding', cardinality 0..*) is associated with 'OPLmetamodel::RelationalInit' (role 'OPLmetamodel_RelationalInit154', cardinality 0..*).
+'OPLmetamodel::Interval' (role 'OPLmetamodel_Interval88', cardinality 0..*) is associated with 'OPLmetamodel::StepFunction' (role 'OPLmetamodel_StepFunction', cardinality 0..*).
+'OPLmetamodel::Sequence' (role 'OPLmetamodel_Sequence', cardinality 0..*) is associated with 'OPLmetamodel::Interval' (role 'OPLmetamodel_Interval163', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression43', cardinality 0..*) is associated with 'OPLmetamodel::DisplayInstruction' (role 'OPLmetamodel_DisplayInstruction', cardinality 0..*).
+'OPLmetamodel::Entity' (role 'OPLmetamodel_Entity', cardinality 0..*) is associated with 'OPLmetamodel::SetType' (role 'OPLmetamodel_SetType170', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression178', cardinality 0..*) is associated with 'OPLmetamodel::UnaryExpression' (role 'OPLmetamodel_UnaryExpression', cardinality 0..*).
+'OPLmetamodel::IndexValuePair' (role 'OPLmetamodel_IndexValuePair92', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression93', cardinality 0..*).
+'OPLmetamodel::RangeType' (role 'OPLmetamodel_RangeType', cardinality 0..*) is associated with 'OPLmetamodel::Interval' (role 'OPLmetamodel_Interval', cardinality 0..*).
+'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint75', cardinality 0..*) is associated with 'OPLmetamodel::IfConstraint' (role 'OPLmetamodel_IfConstraint74', cardinality 0..*).
+'OPLmetamodel::ResourceDeclaration' (role 'OPLmetamodel_ResourceDeclaration', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model110', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model112', cardinality 0..*) is associated with 'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint113', cardinality 0..*).
+'OPLmetamodel::BindingRef' (role 'OPLmetamodel_BindingRef181', cardinality 0..*) is associated with 'OPLmetamodel::VariableBinding' (role 'OPLmetamodel_VariableBinding180', cardinality 0..*).
+'OPLmetamodel::RangeExpression' (role 'OPLmetamodel_RangeExpression134', cardinality 0..*) is associated with 'OPLmetamodel::NumericExpression' (role 'OPLmetamodel_NumericExpression135', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression172', cardinality 0..*) is associated with 'OPLmetamodel::SetValue' (role 'OPLmetamodel_SetValue', cardinality 0..*).
+'OPLmetamodel::Function' (role 'OPLmetamodel_Function105', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model104', cardinality 0..*).
+'OPLmetamodel::BindingRef' (role 'OPLmetamodel_BindingRef152', cardinality 0..*) is associated with 'OPLmetamodel::RelationalInit' (role 'OPLmetamodel_RelationalInit', cardinality 0..*).
+'OPLmetamodel::BinaryExpression' (role 'OPLmetamodel_BinaryExpression', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression22', cardinality 0..*).
+'OPLmetamodel::BlockExpression' (role 'OPLmetamodel_BlockExpression', cardinality 0..*) is associated with 'OPLmetamodel::BooleanBlock' (role 'OPLmetamodel_BooleanBlock', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression12', cardinality 0..*) is associated with 'OPLmetamodel::ArrayDereference' (role 'OPLmetamodel_ArrayDereference11', cardinality 0..*).
+'OPLmetamodel::Script' (role 'OPLmetamodel_Script158', cardinality 0..*) is associated with 'OPLmetamodel::Reference' (role 'OPLmetamodel_Reference159', cardinality 0..*).
+'OPLmetamodel::DisplayInstruction' (role 'OPLmetamodel_DisplayInstruction45', cardinality 0..*) is associated with 'OPLmetamodel::ParameterDeclaration' (role 'OPLmetamodel_ParameterDeclaration', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression', cardinality 0..*) is associated with 'OPLmetamodel::AggregateExp' (role 'OPLmetamodel_AggregateExp3', cardinality 0..*).
+'OPLmetamodel::ScheduleInitialization' (role 'OPLmetamodel_ScheduleInitialization', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model115', cardinality 0..*).
+'OPLmetamodel::RelationalInit' (role 'OPLmetamodel_RelationalInit156', cardinality 0..*) is associated with 'OPLmetamodel::RelationalExpression' (role 'OPLmetamodel_RelationalExpression', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model123', cardinality 0..*) is associated with 'OPLmetamodel::SearchProcedure' (role 'OPLmetamodel_SearchProcedure', cardinality 0..*).
+'OPLmetamodel::StateFunction' (role 'OPLmetamodel_StateFunction', cardinality 0..*) is associated with 'OPLmetamodel::SetType' (role 'OPLmetamodel_SetType174', cardinality 0..*).
+'OPLmetamodel::ArrayDereference' (role 'OPLmetamodel_ArrayDereference14', cardinality 0..*) is associated with 'OPLmetamodel::ArraySlotConstraint' (role 'OPLmetamodel_ArraySlotConstraint', cardinality 0..*).
+'OPLmetamodel::NumericType' (role 'OPLmetamodel_NumericType141', cardinality 0..*) is associated with 'OPLmetamodel::RangeType' (role 'OPLmetamodel_RangeType140', cardinality 0..*).
+'OPLmetamodel::ParameterDomain' (role 'OPLmetamodel_ParameterDomain', cardinality 0..*) is associated with 'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter48', cardinality 0..*).
+'OPLmetamodel::Function' (role 'OPLmetamodel_Function63', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression64', cardinality 0..*).
+'OPLmetamodel::Record' (role 'OPLmetamodel_Record', cardinality 0..*) is associated with 'OPLmetamodel::RecordField' (role 'OPLmetamodel_RecordField', cardinality 0..*).
+'OPLmetamodel::ForAllConstraint' (role 'OPLmetamodel_ForAllConstraint59', cardinality 0..*) is associated with 'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint60', cardinality 0..*).
+'OPLmetamodel::Function' (role 'OPLmetamodel_Function', cardinality 0..*) is associated with 'OPLmetamodel::FunctionRef' (role 'OPLmetamodel_FunctionRef', cardinality 0..*).
+'OPLmetamodel::PathExpression' (role 'OPLmetamodel_PathExpression131', cardinality 0..*) is associated with 'OPLmetamodel::PathDereference' (role 'OPLmetamodel_PathDereference130', cardinality 0..*).
+'OPLmetamodel::Objective' (role 'OPLmetamodel_Objective', cardinality 0..*) is associated with 'OPLmetamodel::Model' (role 'OPLmetamodel_Model102', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression25', cardinality 0..*) is associated with 'OPLmetamodel::BinaryExpression' (role 'OPLmetamodel_BinaryExpression24', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model117', cardinality 0..*) is associated with 'OPLmetamodel::Script' (role 'OPLmetamodel_Script', cardinality 0..*).
+'OPLmetamodel::DataRef' (role 'OPLmetamodel_DataRef', cardinality 0..*) is associated with 'OPLmetamodel::ArrayType' (role 'OPLmetamodel_ArrayType17', cardinality 0..*).
+'OPLmetamodel::Sequence' (role 'OPLmetamodel_Sequence165', cardinality 0..*) is associated with 'OPLmetamodel::DefinedType' (role 'OPLmetamodel_DefinedType166', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model99', cardinality 0..*) is associated with 'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint100', cardinality 0..*).
+'OPLmetamodel::AbstractBinaryOperator' (role 'OPLmetamodel_AbstractBinaryOperator', cardinality 0..*) is associated with 'OPLmetamodel::BinaryExpression' (role 'OPLmetamodel_BinaryExpression27', cardinality 0..*).
+'OPLmetamodel::ForAllConstraint' (role 'OPLmetamodel_ForAllConstraint', cardinality 0..*) is associated with 'OPLmetamodel::FormalParameter' (role 'OPLmetamodel_FormalParameter57', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression90', cardinality 0..*) is associated with 'OPLmetamodel::IndexValuePair' (role 'OPLmetamodel_IndexValuePair', cardinality 0..*).
+'OPLmetamodel::ArrayDereference' (role 'OPLmetamodel_ArrayDereference', cardinality 0..*) is associated with 'OPLmetamodel::PathExpression' (role 'OPLmetamodel_PathExpression', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression31', cardinality 0..*) is associated with 'OPLmetamodel::Constraint' (role 'OPLmetamodel_Constraint30', cardinality 0..*).
+'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression184', cardinality 0..*) is associated with 'OPLmetamodel::VariableBinding' (role 'OPLmetamodel_VariableBinding183', cardinality 0..*).
+'OPLmetamodel::Model' (role 'OPLmetamodel_Model119', cardinality 0..*) is associated with 'OPLmetamodel::Setting' (role 'OPLmetamodel_Setting', cardinality 0..*).
+'OPLmetamodel::ActivityDeclaration' (role 'OPLmetamodel_ActivityDeclaration', cardinality 0..*) is associated with 'OPLmetamodel::Number' (role 'OPLmetamodel_Number', cardinality 0..*).
+'OPLmetamodel::Reference' (role 'OPLmetamodel_Reference', cardinality 0..*) is associated with 'OPLmetamodel::Function' (role 'OPLmetamodel_Function66', cardinality 0..*).
+'OPLmetamodel::ArrayValue' (role 'OPLmetamodel_ArrayValue', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression19', cardinality 0..*).
+'OPLmetamodel::Initialization' (role 'OPLmetamodel_Initialization', cardinality 0..*) is associated with 'OPLmetamodel::DataDeclaration' (role 'OPLmetamodel_DataDeclaration38', cardinality 0..*).
+'OPLmetamodel::DataDeclaration' (role 'OPLmetamodel_DataDeclaration40', cardinality 0..*) is associated with 'OPLmetamodel::Expression' (role 'OPLmetamodel_Expression41', cardinality 0..*).
+'OPLmetamodel::NumericType' (role 'OPLmetamodel_NumericType144', cardinality 0..*) is associated with 'OPLmetamodel::RangeType' (role 'OPLmetamodel_RangeType143', cardinality 0..*).

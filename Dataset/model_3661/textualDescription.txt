@@ -1,0 +1,31 @@
+The model has 12 class(es).
+The class 'Project' has no attributes.
+The class 'employee::Degree' has the following attributes: 'name' of type str.
+The class 'employee::Project' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'employee::Directory' has the following attributes: 'name' of type str.
+The class 'employee::EmailAddress' has the following attributes: 'address' of type str.
+The class 'employee::Employee' has the following attributes: 'gender' of type str; 'salary' of type float; 'lastName' of type str; 'firstName' of type str; 'responsibilities' of type str.
+The class 'employee::SmallProject' has no attributes.
+The class 'employee::EmploymentPeriod' has the following attributes: 'startDate' of type date; 'endDate' of type date.
+The class 'employee::JobTitle' has the following attributes: 'title' of type str.
+The class 'employee::LargeProject' has the following attributes: 'budget' of type float; 'milestone' of type date.
+The class 'employee::Address' has the following attributes: 'province' of type str; 'country' of type str; 'postalCode' of type str; 'street' of type str; 'city' of type str.
+The class 'employee::PhoneNumber' has the following attributes: 'type' of type str; 'number' of type str; 'areaCode' of type str.
+The enumeration 'Gender' has the following literals: 'Male', 'Female'.
+'employee::SmallProject' is a specialization of 'Project'.
+'employee::LargeProject' is a specialization of 'Project'.
+'employee::Employee' (role 'employee_Employee16', cardinality 0..*) is associated with 'employee::JobTitle' (role 'employee_JobTitle17', cardinality 0..*).
+'employee::Employee' (role 'employee_Employee29', cardinality 0..*) is associated with 'employee::Project' (role 'employee_Project30', cardinality 0..*).
+'employee::JobTitle' (role 'employee_JobTitle', cardinality 0..*) is associated with 'employee::Directory' (role 'employee_Directory4', cardinality 0..*).
+'employee::Employee' (role 'employee_Employee12', cardinality 0..*) is associated with 'employee::EmploymentPeriod' (role 'employee_EmploymentPeriod', cardinality 0..*).
+'employee::Directory' (role 'employee_Directory2', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee', cardinality 0..*).
+'employee::Employee' (role 'Employee20', cardinality 0..*) is associated with 'employee::Employee' (role 'managedEmployees', cardinality 0..*).
+'employee::PhoneNumber' (role 'PhoneNumber', cardinality 0..*) is associated with 'employee::Employee' (role 'owner', cardinality 0..*).
+'employee::Address' (role 'employee_Address', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee14', cardinality 0..*).
+'employee::Degree' (role 'employee_Degree27', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee26', cardinality 0..*).
+'employee::PhoneNumber' (role 'phoneNumbers', cardinality 0..*) is associated with 'employee::Employee' (role 'Employee', cardinality 0..*).
+'employee::Employee' (role 'Employee23', cardinality 0..*) is associated with 'employee::Employee' (role 'manager', cardinality 0..*).
+'employee::Degree' (role 'employee_Degree', cardinality 0..*) is associated with 'employee::Directory' (role 'employee_Directory6', cardinality 0..*).
+'employee::Project' (role 'employee_Project8', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee9', cardinality 0..*).
+'employee::Project' (role 'employee_Project', cardinality 0..*) is associated with 'employee::Directory' (role 'employee_Directory', cardinality 0..*).
+'employee::Employee' (role 'employee_Employee32', cardinality 0..*) is associated with 'employee::EmailAddress' (role 'employee_EmailAddress', cardinality 0..*).

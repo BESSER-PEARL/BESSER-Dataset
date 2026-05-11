@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'softwaretraces::Feature' has the following attributes: 'name' of type str.
+The class 'softwaretraces::Model' has the following attributes: 'resourceFileName' of type str.
+The class 'MyNode' has no attributes.
+The class 'softwaretraces::Trace' has the following attributes: 'lineNumber' of type int; 'projectName' of type str; 'fileName' of type str.
+The class 'softwaretraces::MyNode' has no attributes.
+'softwaretraces::Trace' is a specialization of 'MyNode'.
+'softwaretraces::Model' is a specialization of 'MyNode'.
+'softwaretraces::Feature' is a specialization of 'MyNode'.
+'softwaretraces::Trace' (role 'softwaretraces_Trace', cardinality 0..*) is associated with 'softwaretraces::Model' (role 'softwaretraces_Model2', cardinality 0..*).
+'softwaretraces::Trace' (role 'softwaretraces_Trace11', cardinality 0..*) is associated with 'softwaretraces::Trace' (role 'softwaretraces_Trace9', cardinality 0..*).
+'softwaretraces::Feature' (role 'softwaretraces_Feature5', cardinality 0..*) is associated with 'softwaretraces::Feature' (role 'softwaretraces_Feature3', cardinality 0..*).
+'softwaretraces::Trace' (role 'softwaretraces_Trace8', cardinality 0..*) is associated with 'softwaretraces::Feature' (role 'softwaretraces_Feature7', cardinality 0..*).
+'softwaretraces::Model' (role 'softwaretraces_Model', cardinality 0..*) is associated with 'softwaretraces::Feature' (role 'softwaretraces_Feature', cardinality 0..*).

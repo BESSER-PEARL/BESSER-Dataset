@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'StochasticSIRDiseaseModel' has no attributes.
+The class 'example::ExampleDiseaseModel' has the following attributes: 'modulationPeriod' of type float; 'seasonalModulationFloor' of type float; 'modulationPhaseShift' of type float; 'seasonalModulationExponent' of type float.
+'example::ExampleDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.

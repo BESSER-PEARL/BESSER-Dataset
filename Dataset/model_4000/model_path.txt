@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/clagms/TrNet/TrNetCompilation/model/Classes.ecore

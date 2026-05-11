@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'AbstractColumnMapper' has no attributes.
+The class 'db2EntityDsl::Attribute' has no attributes.
+The class 'db2EntityDsl::EntityColumnMapper' has no attributes.
+'db2EntityDsl::EntityColumnMapper' is a specialization of 'AbstractColumnMapper'.
+'db2EntityDsl::Attribute' (role 'db2EntityDsl_Attribute', cardinality 0..*) is associated with 'db2EntityDsl::EntityColumnMapper' (role 'db2EntityDsl_EntityColumnMapper', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'Identifiable' has no attributes.
+The class 'LatticeGraphGenerator' has no attributes.
+The class 'graphgenerators::PajekNetGraphGenerator' has the following attributes: 'dataFile_net' of type str; 'colArea' of type int; 'area' of type float; 'zoomFactor' of type int.
+The class 'graphgenerators::SquareLatticeGraphGenerator' has the following attributes: 'ySize' of type int; 'xSize' of type int; 'area' of type float.
+The class 'graphgenerators::PlateCarreeGlobeGraphGenerator' has the following attributes: 'radius' of type float; 'angularStep' of type int.
+The class 'graphgenerators::MigrationEdgeGraphGenerator' has the following attributes: 'migrationRate' of type float; 'population' of type str; 'location' of type str.
+The class 'graphgenerators::LatticeGraphGenerator' has the following attributes: 'useNearestNeighbors' of type bool; 'useNextNearestNeighbors' of type bool; 'periodicBoundaries' of type bool.
+The class 'graphgenerators::GraphGenerator' has no attributes.
+The class 'GraphGenerator' has no attributes.
+'graphgenerators::MigrationEdgeGraphGenerator' is a specialization of 'GraphGenerator'.
+'graphgenerators::PajekNetGraphGenerator' is a specialization of 'GraphGenerator'.
+'graphgenerators::PlateCarreeGlobeGraphGenerator' is a specialization of 'LatticeGraphGenerator'.
+'graphgenerators::GraphGenerator' is a specialization of 'Identifiable'.
+'graphgenerators::SquareLatticeGraphGenerator' is a specialization of 'LatticeGraphGenerator'.
+'graphgenerators::LatticeGraphGenerator' is a specialization of 'GraphGenerator'.

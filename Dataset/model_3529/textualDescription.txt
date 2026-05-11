@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'test1::ConceptA' has no attributes.
+The class 'test1::ConceptB' has no attributes.
+The class 'ConceptA' has no attributes.
+'test1::ConceptB' is a specialization of 'ConceptA'.

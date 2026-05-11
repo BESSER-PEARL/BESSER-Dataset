@@ -1,0 +1,88 @@
+The model has 37 class(es).
+The class 'caltrop::TypedOutputPort' has no attributes.
+The class 'caltrop::PortPattern' has no attributes.
+The class 'caltrop::ChannelSelector' has no attributes.
+The class 'caltrop::EventAction' has no attributes.
+The class 'caltrop::OutputAction' has no attributes.
+The class 'caltrop::CaltropActorImpl' has no attributes.
+The class 'AbstractTypedIOPort' has no attributes.
+The class 'ActionPattern' has no attributes.
+The class 'caltrop::ReAction' has no attributes.
+The class 'ReAction' has no attributes.
+The class 'JvmTypedObj' has no attributes.
+The class 'NamedObj' has no attributes.
+The class 'caltrop::KeywordChannelSelector' has the following attributes: 'keyword' of type str.
+The class 'ChannelSelector' has no attributes.
+The class 'caltrop::Schedule' has no attributes.
+The class 'caltrop::ExpressionChannelSelector' has the following attributes: 'many' of type bool.
+The class 'caltrop::StateVariable' has the following attributes: 'constant' of type bool.
+The class 'caltrop::Transition' has the following attributes: 'tags' of type str.
+The class 'caltrop::ActorParameter' has no attributes.
+The class 'Relation' has no attributes.
+The class 'caltrop::OutputPattern' has no attributes.
+The class 'caltrop::JvmTypedObj' has no attributes.
+The class 'caltrop::ActionPattern' has no attributes.
+The class 'Variable' has no attributes.
+The class 'caltrop::Port' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'caltrop::ConversionRelation' has the following attributes: 'valueVar' of type str.
+The class 'PortPattern' has no attributes.
+The class 'caltrop::TypedInputPort' has no attributes.
+The class 'caltrop::JvmTypeReference' has no attributes.
+The class 'caltrop::State' has no attributes.
+The class 'caltrop::FunctionDeclaration' has no attributes.
+The class 'caltrop::XExpression' has no attributes.
+The class 'caltrop::EventPattern' has the following attributes: 'name' of type str; '_property' of type bool; 'qualifier' of type str; 'variables' of type str.
+The class 'caltrop::InputPattern' has the following attributes: 'variables' of type str.
+The class 'caltrop::FireAction' has no attributes.
+The class 'OutputAction' has no attributes.
+The enumeration 'ChannelSelectorKeyword' has the following literals: 'ANY', 'ALL'.
+'caltrop::State' is a specialization of 'NamedObj'.
+'caltrop::StateVariable' is a specialization of 'Variable'.
+'caltrop::FireAction' is a specialization of 'ReAction'.
+'caltrop::InputPattern' is a specialization of 'PortPattern'.
+'caltrop::TypedInputPort' is a specialization of 'AbstractTypedIOPort'.
+'caltrop::OutputAction' is a specialization of 'NamedObj'.
+'caltrop::FunctionDeclaration' is a specialization of 'JvmTypedObj'.
+'caltrop::TypedOutputPort' is a specialization of 'AbstractTypedIOPort'.
+'caltrop::ConversionRelation' is a specialization of 'Relation'.
+'caltrop::ActorParameter' is a specialization of 'Parameter'.
+'caltrop::ReAction' is a specialization of 'OutputAction'.
+'caltrop::EventPattern' is a specialization of 'ActionPattern'.
+'caltrop::OutputPattern' is a specialization of 'PortPattern'.
+'caltrop::InputPattern' is a specialization of 'ActionPattern'.
+'caltrop::EventAction' is a specialization of 'ReAction'.
+'caltrop::KeywordChannelSelector' is a specialization of 'ChannelSelector'.
+'caltrop::ExpressionChannelSelector' is a specialization of 'ChannelSelector'.
+'caltrop::State' (role 'caltrop_State52', cardinality 0..*) is associated with 'caltrop::Transition' (role 'caltrop_Transition', cardinality 0..*).
+'caltrop::XExpression' (role 'caltrop_XExpression19', cardinality 0..*) is associated with 'caltrop::OutputAction' (role 'caltrop_OutputAction18', cardinality 0..*).
+'caltrop::Transition' (role 'transitions', cardinality 0..*) is associated with 'caltrop::State' (role 'State50', cardinality 0..*).
+'caltrop::OutputAction' (role 'caltrop_OutputAction13', cardinality 0..*) is associated with 'caltrop::OutputPattern' (role 'caltrop_OutputPattern', cardinality 0..*).
+'caltrop::XExpression' (role 'caltrop_XExpression34', cardinality 0..*) is associated with 'caltrop::OutputPattern' (role 'caltrop_OutputPattern33', cardinality 0..*).
+'caltrop::OutputAction' (role 'caltrop_OutputAction21', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression22', cardinality 0..*).
+'caltrop::XExpression' (role 'caltrop_XExpression24', cardinality 0..*) is associated with 'caltrop::PortPattern' (role 'caltrop_PortPattern', cardinality 0..*).
+'caltrop::EventPattern' (role 'caltrop_EventPattern', cardinality 0..*) is associated with 'caltrop::EventAction' (role 'caltrop_EventAction', cardinality 0..*).
+'caltrop::StateVariable' (role 'caltrop_StateVariable56', cardinality 0..*) is associated with 'caltrop::EventPattern' (role 'caltrop_EventPattern55', cardinality 0..*).
+'caltrop::CaltropActorImpl' (role 'caltrop_CaltropActorImpl', cardinality 0..*) is associated with 'caltrop::StateVariable' (role 'caltrop_StateVariable', cardinality 0..*).
+'caltrop::Port' (role 'caltrop_Port', cardinality 0..*) is associated with 'caltrop::PortPattern' (role 'caltrop_PortPattern28', cardinality 0..*).
+'caltrop::State' (role 'states', cardinality 0..*) is associated with 'caltrop::Schedule' (role 'Schedule', cardinality 0..*).
+'caltrop::EventPattern' (role 'caltrop_EventPattern61', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression62', cardinality 0..*).
+'caltrop::OutputAction' (role 'caltrop_OutputAction', cardinality 0..*) is associated with 'caltrop::CaltropActorImpl' (role 'caltrop_CaltropActorImpl4', cardinality 0..*).
+'caltrop::FireAction' (role 'caltrop_FireAction', cardinality 0..*) is associated with 'caltrop::InputPattern' (role 'caltrop_InputPattern', cardinality 0..*).
+'caltrop::FunctionDeclaration' (role 'caltrop_FunctionDeclaration38', cardinality 0..*) is associated with 'caltrop::JvmTypedObj' (role 'caltrop_JvmTypedObj', cardinality 0..*).
+'caltrop::PortPattern' (role 'caltrop_PortPattern30', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression31', cardinality 0..*).
+'caltrop::EventPattern' (role 'caltrop_EventPattern58', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression59', cardinality 0..*).
+'caltrop::State' (role 'caltrop_State', cardinality 0..*) is associated with 'caltrop::Schedule' (role 'caltrop_Schedule45', cardinality 0..*).
+'caltrop::XExpression' (role 'caltrop_XExpression', cardinality 0..*) is associated with 'caltrop::OutputAction' (role 'caltrop_OutputAction11', cardinality 0..*).
+'caltrop::OutputAction' (role 'caltrop_OutputAction15', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression16', cardinality 0..*).
+'caltrop::CaltropActorImpl' (role 'caltrop_CaltropActorImpl6', cardinality 0..*) is associated with 'caltrop::FunctionDeclaration' (role 'caltrop_FunctionDeclaration', cardinality 0..*).
+'caltrop::ExpressionChannelSelector' (role 'caltrop_ExpressionChannelSelector', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression36', cardinality 0..*).
+'caltrop::ConversionRelation' (role 'caltrop_ConversionRelation', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression64', cardinality 0..*).
+'caltrop::PortPattern' (role 'caltrop_PortPattern26', cardinality 0..*) is associated with 'caltrop::ChannelSelector' (role 'caltrop_ChannelSelector', cardinality 0..*).
+'caltrop::FunctionDeclaration' (role 'caltrop_FunctionDeclaration43', cardinality 0..*) is associated with 'caltrop::JvmTypeReference' (role 'caltrop_JvmTypeReference', cardinality 0..*).
+'caltrop::CaltropActorImpl' (role 'caltrop_CaltropActorImpl2', cardinality 0..*) is associated with 'caltrop::ReAction' (role 'caltrop_ReAction', cardinality 0..*).
+'caltrop::XExpression' (role 'caltrop_XExpression67', cardinality 0..*) is associated with 'caltrop::ConversionRelation' (role 'caltrop_ConversionRelation66', cardinality 0..*).
+'caltrop::FunctionDeclaration' (role 'caltrop_FunctionDeclaration40', cardinality 0..*) is associated with 'caltrop::XExpression' (role 'caltrop_XExpression41', cardinality 0..*).
+'caltrop::Transition' (role 'Transition', cardinality 0..*) is associated with 'caltrop::State' (role 'source', cardinality 0..*).
+'caltrop::Schedule' (role 'schedule', cardinality 0..*) is associated with 'caltrop::State' (role 'State', cardinality 0..*).
+'caltrop::Schedule' (role 'caltrop_Schedule', cardinality 0..*) is associated with 'caltrop::CaltropActorImpl' (role 'caltrop_CaltropActorImpl8', cardinality 0..*).

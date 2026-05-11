@@ -1,0 +1,83 @@
+The model has 27 class(es).
+The class 'java::Field' has the following attributes: 'name' of type str; 'isStatic' of type bool; 'default' of type str; 'isFinal' of type bool.
+The class 'java::Generalization' has the following attributes: 'name' of type str.
+The class 'java::AnnotationInstance' has the following attributes: 'name' of type str.
+The class 'java::Annotation' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'java::AnnotationInstanceValue' has the following attributes: 'name' of type str; 'value' of type str; 'id' of type int.
+The class 'Contained' has no attributes.
+The class 'java::AnnotationInstanceParameter' has the following attributes: 'name' of type str.
+The class 'java::Package' has the following attributes: 'name' of type str.
+The class 'java::AssertStatement' has no attributes.
+The class 'java::Statement' has the following attributes: 'name' of type str.
+The class 'java::Container' has no attributes.
+The class 'java::Method' has the following attributes: 'isDefault' of type bool; 'name' of type str; 'concurrency' of type str; 'isAbstract' of type bool; 'isStatic' of type bool; 'isFinal' of type bool.
+The class 'java::GETExpression' has the following attributes: 'leftSide' of type str; 'rightSide' of type str.
+The class 'java::InterfaceImplementation' has the following attributes: 'name' of type str.
+The class 'java::Import' has the following attributes: 'name' of type str.
+The class 'java::System' has the following attributes: 'name' of type str.
+The class 'java::Contained' has the following attributes: 'visibility' of type str.
+The class 'java::Class' has the following attributes: 'isFinal' of type bool; 'isAbstract' of type bool; 'isStatic' of type bool.
+The class 'java::Classifier' has the following attributes: 'name' of type str.
+The class 'Container' has no attributes.
+The class 'java::Annotable' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Annotable' has no attributes.
+The class 'java::Argument' has the following attributes: 'name' of type str; 'order' of type int.
+The class 'java::Interface' has no attributes.
+The class 'java::GenericBinding' has the following attributes: 'name' of type str.
+'java::Field' is a specialization of 'Annotable'.
+'java::Method' is a specialization of 'Contained'.
+'java::Interface' is a specialization of 'Classifier'.
+'java::AssertStatement' is a specialization of 'Statement'.
+'java::Classifier' is a specialization of 'Annotable'.
+'java::Interface' is a specialization of 'Contained'.
+'java::Field' is a specialization of 'Contained'.
+'java::Method' is a specialization of 'Annotable'.
+'java::Classifier' is a specialization of 'Container'.
+'java::Class' is a specialization of 'Classifier'.
+'java::Annotation' is a specialization of 'Classifier'.
+'java::Classifier' is a specialization of 'Contained'.
+'java::Package' is a specialization of 'Container'.
+'java::Interface' is a specialization of 'Container'.
+'java::Classifier' (role 'java_Classifier51', cardinality 0..*) is associated with 'java::GenericBinding' (role 'java_GenericBinding50', cardinality 0..*).
+'java::Package' (role 'Package', cardinality 0..*) is associated with 'java::System' (role 'system', cardinality 0..*).
+'java::Classifier' (role 'generalizator', cardinality 0..*) is associated with 'java::Generalization' (role 'Generalization', cardinality 0..*).
+'java::Classifier' (role 'Classifier33', cardinality 0..*) is associated with 'java::Method' (role 'methods', cardinality 0..*).
+'java::AssertStatement' (role 'AssertStatement', cardinality 0..*) is associated with 'java::GETExpression' (role 'assertion', cardinality 0..*).
+'java::Package' (role 'packages', cardinality 0..*) is associated with 'java::System' (role 'System', cardinality 0..*).
+'java::InterfaceImplementation' (role 'java_InterfaceImplementation', cardinality 0..*) is associated with 'java::Interface' (role 'java_Interface', cardinality 0..*).
+'java::Import' (role 'java_Import', cardinality 0..*) is associated with 'java::Classifier' (role 'java_Classifier24', cardinality 0..*).
+'java::Annotable' (role 'Annotable', cardinality 0..*) is associated with 'java::AnnotationInstance' (role 'annotationInstances', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier30', cardinality 0..*) is associated with 'java::Method' (role 'java_Method', cardinality 0..*).
+'java::AnnotationInstance' (role 'AnnotationInstance', cardinality 0..*) is associated with 'java::Annotable' (role 'annotable', cardinality 0..*).
+'java::Field' (role 'java_Field', cardinality 0..*) is associated with 'java::Classifier' (role 'java_Classifier20', cardinality 0..*).
+'java::Classifier' (role 'containingClassifier15', cardinality 0..*) is associated with 'java::Method' (role 'Method', cardinality 0..*).
+'java::AnnotationInstance' (role 'java_AnnotationInstance', cardinality 0..*) is associated with 'java::Annotation' (role 'java_Annotation', cardinality 0..*).
+'java::AnnotationInstanceParameter' (role 'parameters', cardinality 0..*) is associated with 'java::AnnotationInstance' (role 'AnnotationInstance60', cardinality 0..*).
+'java::GenericBinding' (role 'genericBindings', cardinality 0..*) is associated with 'java::Classifier' (role 'Classifier53', cardinality 0..*).
+'java::Contained' (role 'Contained', cardinality 0..*) is associated with 'java::Container' (role 'container', cardinality 0..*).
+'java::Class' (role 'extendingClasses', cardinality 0..*) is associated with 'java::Class' (role 'Class', cardinality 0..*).
+'java::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'java::InterfaceImplementation' (role 'interfaceImplementations', cardinality 0..*).
+'java::Classifier' (role 'Classifier22', cardinality 0..*) is associated with 'java::Field' (role 'fields', cardinality 0..*).
+'java::Argument' (role 'Argument', cardinality 0..*) is associated with 'java::Method' (role 'usingMethod', cardinality 0..*).
+'java::AnnotationInstanceParameter' (role 'AnnotationInstanceParameter62', cardinality 0..*) is associated with 'java::AnnotationInstanceValue' (role 'values', cardinality 0..*).
+'java::Classifier' (role 'Classifier11', cardinality 0..*) is associated with 'java::Generalization' (role 'generalization', cardinality 0..*).
+'java::Class' (role 'java_Class', cardinality 0..*) is associated with 'java::Contained' (role 'java_Contained', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier', cardinality 0..*) is associated with 'java::Generalization' (role 'java_Generalization', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier48', cardinality 0..*) is associated with 'java::GenericBinding' (role 'java_GenericBinding', cardinality 0..*).
+'java::Contained' (role 'containedElements', cardinality 0..*) is associated with 'java::Container' (role 'Container', cardinality 0..*).
+'java::Method' (role 'Method45', cardinality 0..*) is associated with 'java::Argument' (role 'arguments', cardinality 0..*).
+'java::Import' (role 'imports', cardinality 0..*) is associated with 'java::Classifier' (role 'Classifier26', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier43', cardinality 0..*) is associated with 'java::Argument' (role 'java_Argument', cardinality 0..*).
+'java::Method' (role 'method', cardinality 0..*) is associated with 'java::Statement' (role 'Statement', cardinality 0..*).
+'java::Classifier' (role 'containingClassifier', cardinality 0..*) is associated with 'java::Field' (role 'Field', cardinality 0..*).
+'java::Class' (role 'Class6', cardinality 0..*) is associated with 'java::Class' (role 'extendedClass', cardinality 0..*).
+'java::Classifier' (role 'usingClassifier', cardinality 0..*) is associated with 'java::GenericBinding' (role 'GenericBinding', cardinality 0..*).
+'java::Classifier' (role 'java_Classifier36', cardinality 0..*) is associated with 'java::Method' (role 'java_Method35', cardinality 0..*).
+'java::GETExpression' (role 'GETExpression', cardinality 0..*) is associated with 'java::AssertStatement' (role 'containerStatement', cardinality 0..*).
+'java::Statement' (role 'body', cardinality 0..*) is associated with 'java::Method' (role 'Method39', cardinality 0..*).
+'java::AnnotationInstanceParameter' (role 'parameter', cardinality 0..*) is associated with 'java::AnnotationInstanceValue' (role 'AnnotationInstanceValue', cardinality 0..*).
+'java::Import' (role 'Import', cardinality 0..*) is associated with 'java::Classifier' (role 'importing', cardinality 0..*).
+'java::InterfaceImplementation' (role 'InterfaceImplementation', cardinality 0..*) is associated with 'java::Classifier' (role 'implementer', cardinality 0..*).
+'java::AnnotationInstance' (role 'instance', cardinality 0..*) is associated with 'java::AnnotationInstanceParameter' (role 'AnnotationInstanceParameter', cardinality 0..*).

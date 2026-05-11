@@ -1,0 +1,78 @@
+The model has 29 class(es).
+The class 'sooml::Package' has no attributes.
+The class 'sooml::ReferenceIsInStateCondition' has no attributes.
+The class 'Action' has no attributes.
+The class 'IsInStateCondition' has no attributes.
+The class 'sooml::CallParameterOperationAction' has no attributes.
+The class 'sooml::State' has no attributes.
+The class 'sooml::Event' has no attributes.
+The class 'sooml::StructuralFeature' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+The class 'sooml::StateMachine' has no attributes.
+The class 'sooml::Parameter' has the following attributes: 'dataType' of type str.
+The class 'sooml::Guard' has no attributes.
+The class 'CallOperationAction' has no attributes.
+The class 'sooml::Action' has no attributes.
+The class 'sooml::Attribute' has the following attributes: 'dataType' of type str.
+The class 'sooml::Operation' has no attributes.
+The class 'sooml::IsInStateCondition' has no attributes.
+The class 'Guard' has no attributes.
+The class 'sooml::ParameterIsInStateCondition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sooml::Transition' has no attributes.
+The class 'sooml::EntryOperation' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'sooml::CallReferenceOperationAction' has no attributes.
+The class 'sooml::Reference' has no attributes.
+The class 'sooml::CallOperationAction' has no attributes.
+The class 'sooml::ReferenceAssignmentAction' has no attributes.
+The class 'sooml::Class' has no attributes.
+The class 'sooml::ParameterBinding' has no attributes.
+The class 'sooml::NamedElement' has the following attributes: 'name' of type str.
+The enumeration 'DataType' has the following literals: 'Integer', 'String', 'Complex', 'Boolean'.
+'sooml::Attribute' is a specialization of 'StructuralFeature'.
+'sooml::State' is a specialization of 'NamedElement'.
+'sooml::CallOperationAction' is a specialization of 'Action'.
+'sooml::Operation' is a specialization of 'NamedElement'.
+'sooml::StructuralFeature' is a specialization of 'NamedElement'.
+'sooml::CallReferenceOperationAction' is a specialization of 'CallOperationAction'.
+'sooml::Parameter' is a specialization of 'NamedElement'.
+'sooml::ReferenceAssignmentAction' is a specialization of 'Action'.
+'sooml::ParameterIsInStateCondition' is a specialization of 'IsInStateCondition'.
+'sooml::Class' is a specialization of 'NamedElement'.
+'sooml::CallParameterOperationAction' is a specialization of 'CallOperationAction'.
+'sooml::ReferenceIsInStateCondition' is a specialization of 'IsInStateCondition'.
+'sooml::IsInStateCondition' is a specialization of 'Guard'.
+'sooml::Package' is a specialization of 'NamedElement'.
+'sooml::Reference' is a specialization of 'StructuralFeature'.
+'sooml::EntryOperation' (role 'sooml_EntryOperation55', cardinality 0..*) is associated with 'sooml::Operation' (role 'sooml_Operation56', cardinality 0..*).
+'sooml::EntryOperation' (role 'sooml_EntryOperation', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State26', cardinality 0..*).
+'sooml::CallParameterOperationAction' (role 'sooml_CallParameterOperationAction', cardinality 0..*) is associated with 'sooml::Parameter' (role 'sooml_Parameter64', cardinality 0..*).
+'sooml::IsInStateCondition' (role 'sooml_IsInStateCondition', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State53', cardinality 0..*).
+'sooml::Parameter' (role 'sooml_Parameter40', cardinality 0..*) is associated with 'sooml::Class' (role 'sooml_Class41', cardinality 0..*).
+'sooml::Reference' (role 'sooml_Reference69', cardinality 0..*) is associated with 'sooml::ReferenceAssignmentAction' (role 'sooml_ReferenceAssignmentAction68', cardinality 0..*).
+'sooml::StructuralFeature' (role 'sooml_StructuralFeature', cardinality 0..*) is associated with 'sooml::Class' (role 'sooml_Class10', cardinality 0..*).
+'sooml::Class' (role 'sooml_Class12', cardinality 0..*) is associated with 'sooml::Reference' (role 'sooml_Reference', cardinality 0..*).
+'sooml::Class' (role 'Class', cardinality 0..*) is associated with 'sooml::StateMachine' (role 'stateMachine', cardinality 0..*).
+'sooml::Parameter' (role 'sooml_Parameter60', cardinality 0..*) is associated with 'sooml::ParameterIsInStateCondition' (role 'sooml_ParameterIsInStateCondition', cardinality 0..*).
+'sooml::Parameter' (role 'sooml_Parameter66', cardinality 0..*) is associated with 'sooml::ReferenceAssignmentAction' (role 'sooml_ReferenceAssignmentAction', cardinality 0..*).
+'sooml::Operation' (role 'sooml_Operation38', cardinality 0..*) is associated with 'sooml::Event' (role 'sooml_Event37', cardinality 0..*).
+'sooml::Package' (role 'parentPackage', cardinality 0..*) is associated with 'sooml::Package' (role 'Package', cardinality 0..*).
+'sooml::Transition' (role 'sooml_Transition28', cardinality 0..*) is associated with 'sooml::Action' (role 'sooml_Action', cardinality 0..*).
+'sooml::Operation' (role 'sooml_Operation43', cardinality 0..*) is associated with 'sooml::CallOperationAction' (role 'sooml_CallOperationAction', cardinality 0..*).
+'sooml::StructuralFeature' (role 'sooml_StructuralFeature48', cardinality 0..*) is associated with 'sooml::ParameterBinding' (role 'sooml_ParameterBinding47', cardinality 0..*).
+'sooml::Guard' (role 'sooml_Guard', cardinality 0..*) is associated with 'sooml::Transition' (role 'sooml_Transition30', cardinality 0..*).
+'sooml::Reference' (role 'sooml_Reference58', cardinality 0..*) is associated with 'sooml::ReferenceIsInStateCondition' (role 'sooml_ReferenceIsInStateCondition', cardinality 0..*).
+'sooml::Reference' (role 'sooml_Reference62', cardinality 0..*) is associated with 'sooml::CallReferenceOperationAction' (role 'sooml_CallReferenceOperationAction', cardinality 0..*).
+'sooml::StateMachine' (role 'sooml_StateMachine21', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State22', cardinality 0..*).
+'sooml::Transition' (role 'sooml_Transition34', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State35', cardinality 0..*).
+'sooml::ParameterBinding' (role 'sooml_ParameterBinding50', cardinality 0..*) is associated with 'sooml::Parameter' (role 'sooml_Parameter51', cardinality 0..*).
+'sooml::Package' (role 'Package5', cardinality 0..*) is associated with 'sooml::Package' (role 'packages', cardinality 0..*).
+'sooml::Package' (role 'sooml_Package', cardinality 0..*) is associated with 'sooml::Class' (role 'sooml_Class', cardinality 0..*).
+'sooml::ParameterBinding' (role 'sooml_ParameterBinding', cardinality 0..*) is associated with 'sooml::CallOperationAction' (role 'sooml_CallOperationAction45', cardinality 0..*).
+'sooml::Event' (role 'sooml_Event', cardinality 0..*) is associated with 'sooml::Transition' (role 'sooml_Transition32', cardinality 0..*).
+'sooml::Operation' (role 'sooml_Operation', cardinality 0..*) is associated with 'sooml::Class' (role 'sooml_Class8', cardinality 0..*).
+'sooml::Reference' (role 'sooml_Reference15', cardinality 0..*) is associated with 'sooml::Reference' (role 'sooml_Reference13', cardinality 0..*).
+'sooml::StateMachine' (role 'sooml_StateMachine', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State', cardinality 0..*).
+'sooml::Class' (role 'class_', cardinality 0..*) is associated with 'sooml::StateMachine' (role 'StateMachine', cardinality 0..*).
+'sooml::Operation' (role 'sooml_Operation17', cardinality 0..*) is associated with 'sooml::Parameter' (role 'sooml_Parameter', cardinality 0..*).
+'sooml::Transition' (role 'sooml_Transition', cardinality 0..*) is associated with 'sooml::State' (role 'sooml_State24', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Entity::Entity' has the following attributes: 'name' of type str; 'inDomain' of type str.
+The class 'Entity::System' has no attributes.
+'Entity::Entity' (role 'Entity', cardinality 0..*) is associated with 'Entity::System' (role 'system', cardinality 0..*).
+'Entity::System' (role 'System', cardinality 0..*) is associated with 'Entity::Entity' (role 'entity', cardinality 0..*).

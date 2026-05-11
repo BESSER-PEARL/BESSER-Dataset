@@ -1,0 +1,351 @@
+The model has 142 class(es).
+The class 'nonAttributeQualifiedIdentifier' has no attributes.
+The class 'aS3::typeExpression' has no attributes.
+The class 'aS3::Uses' has the following attributes: 'anytype' of type str; 'type' of type str.
+The class 'encapsulatedExpression' has no attributes.
+The class 'expressionQualifiedIdentifier' has no attributes.
+The class 'aS3::annotationFields' has no attributes.
+The class 'Expression' has no attributes.
+The class 'aS3::additiveExpression' has the following attributes: 'o' of type str.
+The class 'CaseStatement' has no attributes.
+The class 'aS3::traditionalForClause' has no attributes.
+The class 'aS3::shiftExpression' has the following attributes: 'o' of type str.
+The class 'aS3::regexpLiteral' has the following attributes: 's' of type str.
+The class 'aS3::Expression' has no attributes.
+The class 'aS3::logicalAndExpression' has the following attributes: 'o' of type str.
+The class 'aS3::relationalExpression' has the following attributes: 'o' of type str.
+The class 'aS3::BoolConstant' has the following attributes: 'value' of type str.
+The class 'aS3::literalField' has no attributes.
+The class 'assignmentExpression' has no attributes.
+The class 'aS3::Package' has the following attributes: 'name' of type str.
+The class 'aS3::element' has no attributes.
+The class 'aS3::unaryExpression' has no attributes.
+The class 'aS3::conditionalExpression' has the following attributes: 'op' of type str.
+The class 'SwitchStatement' has no attributes.
+The class 'aS3::nonemptyElementList' has no attributes.
+The class 'aS3::fieldName' has the following attributes: 'name' of type str; 'number' of type str.
+The class 'aS3::qualifiedIdentifier' has no attributes.
+The class 'aS3::RegexpConstant' has no attributes.
+The class 'aS3::functionExpression' has the following attributes: 'name' of type str.
+The class 'qualifiedIdentifier' has no attributes.
+The class 'Condition' has no attributes.
+The class 'aS3::ExpressionStatement' has no attributes.
+The class 'aS3::equalityExpression' has the following attributes: 'o' of type str.
+The class 'nonemptyElementList' has no attributes.
+The class 'aS3::ReturnStatement' has no attributes.
+The class 'aS3::TryStatement' has no attributes.
+The class 'aS3::AccessorRole' has the following attributes: 'accessor' of type str.
+The class 'aS3::Undefined' has no attributes.
+The class 'aS3::qualifiedIdent' has no attributes.
+The class 'aS3::propertyIdentifier' has no attributes.
+The class 'aS3::basicParameterDeclaration' has no attributes.
+The class 'aS3::primaryExpression' has no attributes.
+The class 'aS3::Null' has no attributes.
+The class 'aS3::directive' has no attributes.
+The class 'aS3::functionCommon' has no attributes.
+The class 'aS3::annotationField' has the following attributes: 'name' of type str.
+The class 'catchBlock' has no attributes.
+The class 'aS3::ForEachStatement' has no attributes.
+The class 'aS3::forInClauseDecl' has no attributes.
+The class 'aS3::Method' has the following attributes: 'name' of type str; 'anytype' of type str.
+The class 'aS3::forInClauseTail' has no attributes.
+The class 'aS3::brackets' has no attributes.
+The class 'elementList' has no attributes.
+The class 'element' has no attributes.
+The class 'aS3::forInClause' has no attributes.
+The class 'aS3::IfStatement' has no attributes.
+The class 'unaryExpressionNotPlusMinus' has no attributes.
+The class 'aS3::Class' has the following attributes: 'name' of type str.
+The class 'aS3::Member' has no attributes.
+The class 'parameterDefault' has no attributes.
+The class 'aS3::parameterDeclaration' has no attributes.
+The class 'qualifiedIdent' has no attributes.
+The class 'forInClauseDecl' has no attributes.
+The class 'aS3::catchBlock' has no attributes.
+The class 'aS3::conditionalSubExpression' has no attributes.
+The class 'aS3::DefaultStatement' has no attributes.
+The class 'aS3::expressionList' has no attributes.
+The class 'aS3::fieldList' has no attributes.
+The class 'parameterDeclaration' has no attributes.
+The class 'aS3::DoWhileStatement' has no attributes.
+The class 'aS3::ForStatement' has no attributes.
+The class 'aS3::WhileStatement' has no attributes.
+The class 'aS3::switchStatementList' has no attributes.
+The class 'aS3::expressionQualifiedIdentifier' has no attributes.
+The class 'aS3::nonAttributeQualifiedIdentifier' has no attributes.
+The class 'exprOrObjectLiteral' has no attributes.
+The class 'aS3::encapsulatedExpression' has no attributes.
+The class 'aS3::simpleQualifiedIdentifier' has no attributes.
+The class 'aS3::exprOrObjectLiteral' has no attributes.
+The class 'aS3::finallyBlock' has no attributes.
+The class 'aS3::Condition' has no attributes.
+The class 'aS3::NumberConstant' has the following attributes: 'value' of type str.
+The class 'forInClauseTail' has no attributes.
+The class 'aS3::forCond' has no attributes.
+The class 'aS3::parameterDefault' has no attributes.
+The class 'aS3::ThrowStatement' has no attributes.
+The class 'aS3::arrayLiteral' has no attributes.
+The class 'qualifier' has no attributes.
+The class 'aS3::logicalOrExpression' has the following attributes: 'o' of type str.
+The class 'aS3::Block' has no attributes.
+The class 'aS3::XmlConstant' has the following attributes: 'value' of type str.
+The class 'aS3::SymbolRef' has no attributes.
+The class 'aS3::forIter' has no attributes.
+The class 'aS3::e4xAttributeIdentifier' has no attributes.
+The class 'aS3::SwitchStatement' has no attributes.
+The class 'aS3::bitwiseAndExpression' has the following attributes: 'o' of type str.
+The class 'aS3::functionSignature' has no attributes.
+The class 'aS3::MethodBody' has no attributes.
+The class 'aS3::qualifier' has the following attributes: 'level' of type str.
+The class 'finallyBlock' has no attributes.
+The class 'aS3::EObject' has no attributes.
+The class 'aS3::assignmentExpression' has no attributes.
+The class 'aS3::Parameter' has the following attributes: 'anytype' of type str; 'name' of type str.
+The class 'aS3::InterfaceMethod' has the following attributes: 'name' of type str; 'anytype' of type str.
+The class 'aS3::Annotation' has the following attributes: 'name' of type str.
+The class 'aS3::VariableDeclaration' has the following attributes: 'name' of type str; 'anytype' of type str.
+The class 'aS3::forInit' has no attributes.
+The class 'aS3::fullNewSubexpression' has the following attributes: 'fnsd' of type str.
+The class 'aS3::namespaceName' has the following attributes: 'level' of type str.
+The class 'aS3::switchBlock' has no attributes.
+The class 'aS3::arguments' has no attributes.
+The class 'aS3::DefaultXMLNamespaceStatement' has no attributes.
+The class 'aS3::parameterRestDeclaration' has no attributes.
+The class 'aS3::Statement' has no attributes.
+The class 'aS3::WithStatement' has no attributes.
+The class 'aS3::objectLiteral' has no attributes.
+The class 'aS3::CaseStatement' has no attributes.
+The class 'aS3::postfixExpression' has no attributes.
+The class 'aS3::newExpression' has no attributes.
+The class 'aS3::parameterDeclarationList' has no attributes.
+The class 'aS3::bitwiseOrExpression' has the following attributes: 'o' of type str.
+The class 'brackets' has no attributes.
+The class 'aS3::identifier' has no attributes.
+The class 'aS3::elementList' has no attributes.
+The class 'aS3::StringConstant' has the following attributes: 'value' of type str.
+The class 'aS3::bitwiseXorExpression' has the following attributes: 'o' of type str.
+The class 'ThrowStatement' has no attributes.
+The class 'aS3::Model' has no attributes.
+The class 'aS3::Interface' has the following attributes: 'name' of type str; 'access' of type str.
+The class 'propertyIdentifier' has no attributes.
+The class 'aS3::propOrIdent' has no attributes.
+The class 'aS3::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'aS3::MemberVariableDeclaration' has the following attributes: 'anytype' of type str; 'name' of type str.
+The class 'aS3::unaryExpressionNotPlusMinus' has the following attributes: 'in_' of type str; 'de' of type str.
+The class 'DefaultXMLNamespaceStatement' has no attributes.
+The class 'aS3::Modifier' has the following attributes: 'final' of type bool; 'access' of type str; 'native' of type bool; 'static' of type bool; 'dynamic' of type bool.
+The class 'Statement' has no attributes.
+The class 'aS3::Imports' has no attributes.
+The class 'ExpressionStatement' has no attributes.
+The class 'aS3::identi' has the following attributes: 'i' of type str.
+The class 'aS3::This' has no attributes.
+The class 'conditionalExpression' has no attributes.
+The class 'aS3::multiplicativeExpression' has the following attributes: 'o' of type str.
+The enumeration 'AccessLevel' has the following literals: 'PRIVATE', 'PUBLIC', 'PROTECTED', 'INTERNAL'.
+'aS3::Condition' is a specialization of 'SwitchStatement'.
+'aS3::This' is a specialization of 'Expression'.
+'aS3::identi' is a specialization of 'forInClauseDecl'.
+'aS3::WhileStatement' is a specialization of 'Statement'.
+'aS3::Block' is a specialization of 'finallyBlock'.
+'aS3::parameterRestDeclaration' is a specialization of 'parameterDeclaration'.
+'aS3::SymbolRef' is a specialization of 'Expression'.
+'aS3::RegexpConstant' is a specialization of 'Expression'.
+'aS3::nonAttributeQualifiedIdentifier' is a specialization of 'qualifiedIdentifier'.
+'aS3::conditionalExpression' is a specialization of 'assignmentExpression'.
+'aS3::namespaceName' is a specialization of 'qualifiedIdent'.
+'aS3::TryStatement' is a specialization of 'Statement'.
+'aS3::ExpressionStatement' is a specialization of 'Statement'.
+'aS3::objectLiteral' is a specialization of 'exprOrObjectLiteral'.
+'aS3::unaryExpression' is a specialization of 'unaryExpressionNotPlusMinus'.
+'aS3::Block' is a specialization of 'Statement'.
+'aS3::Expression' is a specialization of 'ThrowStatement'.
+'aS3::postfixExpression' is a specialization of 'unaryExpressionNotPlusMinus'.
+'aS3::NumberConstant' is a specialization of 'Expression'.
+'aS3::BoolConstant' is a specialization of 'Expression'.
+'aS3::WithStatement' is a specialization of 'Statement'.
+'aS3::ForStatement' is a specialization of 'Statement'.
+'aS3::assignmentExpression' is a specialization of 'nonemptyElementList'.
+'aS3::assignmentExpression' is a specialization of 'encapsulatedExpression'.
+'aS3::XmlConstant' is a specialization of 'Expression'.
+'aS3::expressionList' is a specialization of 'brackets'.
+'aS3::IfStatement' is a specialization of 'Statement'.
+'aS3::Expression' is a specialization of 'DefaultXMLNamespaceStatement'.
+'aS3::identi' is a specialization of 'propertyIdentifier'.
+'aS3::expressionQualifiedIdentifier' is a specialization of 'nonAttributeQualifiedIdentifier'.
+'aS3::expressionList' is a specialization of 'ExpressionStatement'.
+'aS3::assignmentExpression' is a specialization of 'element'.
+'aS3::simpleQualifiedIdentifier' is a specialization of 'nonAttributeQualifiedIdentifier'.
+'aS3::logicalOrExpression' is a specialization of 'conditionalExpression'.
+'aS3::assignmentExpression' is a specialization of 'Expression'.
+'aS3::DefaultXMLNamespaceStatement' is a specialization of 'Statement'.
+'aS3::expressionList' is a specialization of 'forInClauseTail'.
+'aS3::SwitchStatement' is a specialization of 'Statement'.
+'aS3::identi' is a specialization of 'catchBlock'.
+'aS3::Expression' is a specialization of 'exprOrObjectLiteral'.
+'aS3::ThrowStatement' is a specialization of 'Statement'.
+'aS3::e4xAttributeIdentifier' is a specialization of 'qualifiedIdentifier'.
+'aS3::DoWhileStatement' is a specialization of 'Statement'.
+'aS3::Undefined' is a specialization of 'Expression'.
+'aS3::nonemptyElementList' is a specialization of 'elementList'.
+'aS3::VariableDeclaration' is a specialization of 'Statement'.
+'aS3::ForEachStatement' is a specialization of 'Statement'.
+'aS3::Null' is a specialization of 'Expression'.
+'aS3::encapsulatedExpression' is a specialization of 'expressionQualifiedIdentifier'.
+'aS3::Expression' is a specialization of 'CaseStatement'.
+'aS3::StringConstant' is a specialization of 'Expression'.
+'aS3::assignmentExpression' is a specialization of 'parameterDefault'.
+'aS3::propertyIdentifier' is a specialization of 'qualifier'.
+'aS3::basicParameterDeclaration' is a specialization of 'parameterDeclaration'.
+'aS3::Expression' is a specialization of 'Condition'.
+'aS3::VariableDeclaration' is a specialization of 'forInClauseDecl'.
+'aS3::ReturnStatement' is a specialization of 'Statement'.
+'aS3::Statement' (role 'aS3_Statement305', cardinality 0..*) is associated with 'aS3::ForEachStatement' (role 'aS3_ForEachStatement304', cardinality 0..*).
+'aS3::DoWhileStatement' (role 'aS3_DoWhileStatement343', cardinality 0..*) is associated with 'aS3::Condition' (role 'aS3_Condition344', cardinality 0..*).
+'aS3::identifier' (role 'aS3_identifier131', cardinality 0..*) is associated with 'aS3::propOrIdent' (role 'aS3_propOrIdent', cardinality 0..*).
+'aS3::Imports' (role 'aS3_Imports', cardinality 0..*) is associated with 'aS3::Model' (role 'aS3_Model2', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject96', cardinality 0..*) is associated with 'aS3::MemberVariableDeclaration' (role 'aS3_MemberVariableDeclaration95', cardinality 0..*).
+'aS3::forIter' (role 'aS3_forIter', cardinality 0..*) is associated with 'aS3::traditionalForClause' (role 'aS3_traditionalForClause318', cardinality 0..*).
+'aS3::Expression' (role 'aS3_Expression209', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression208', cardinality 0..*).
+'aS3::Interface' (role 'aS3_Interface62', cardinality 0..*) is associated with 'aS3::Class' (role 'aS3_Class61', cardinality 0..*).
+'aS3::newExpression' (role 'aS3_newExpression', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression220', cardinality 0..*).
+'aS3::assignmentExpression' (role 'aS3_assignmentExpression103', cardinality 0..*) is associated with 'aS3::VariableDeclaration' (role 'aS3_VariableDeclaration102', cardinality 0..*).
+'aS3::Uses' (role 'aS3_Uses', cardinality 0..*) is associated with 'aS3::directive' (role 'aS3_directive22', cardinality 0..*).
+'aS3::Imports' (role 'aS3_Imports10', cardinality 0..*) is associated with 'aS3::Package' (role 'aS3_Package9', cardinality 0..*).
+'aS3::identi' (role 'aS3_identi124', cardinality 0..*) is associated with 'aS3::typeExpression' (role 'aS3_typeExpression', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject259', cardinality 0..*) is associated with 'aS3::typeExpression' (role 'aS3_typeExpression258', cardinality 0..*).
+'aS3::unaryExpression' (role 'aS3_unaryExpression176', cardinality 0..*) is associated with 'aS3::unaryExpression' (role 'aS3_unaryExpression174', cardinality 0..*).
+'aS3::equalityExpression' (role 'aS3_equalityExpression165', cardinality 0..*) is associated with 'aS3::relationalExpression' (role 'aS3_relationalExpression', cardinality 0..*).
+'aS3::Condition' (role 'aS3_Condition', cardinality 0..*) is associated with 'aS3::switchBlock' (role 'aS3_switchBlock', cardinality 0..*).
+'aS3::postfixExpression' (role 'aS3_postfixExpression195', cardinality 0..*) is associated with 'aS3::e4xAttributeIdentifier' (role 'aS3_e4xAttributeIdentifier', cardinality 0..*).
+'aS3::forInClause' (role 'aS3_forInClause307', cardinality 0..*) is associated with 'aS3::ForStatement' (role 'aS3_ForStatement', cardinality 0..*).
+'aS3::bitwiseXorExpression' (role 'aS3_bitwiseXorExpression161', cardinality 0..*) is associated with 'aS3::bitwiseAndExpression' (role 'aS3_bitwiseAndExpression', cardinality 0..*).
+'aS3::conditionalSubExpression' (role 'aS3_conditionalSubExpression', cardinality 0..*) is associated with 'aS3::assignmentExpression' (role 'aS3_assignmentExpression151', cardinality 0..*).
+'aS3::primaryExpression' (role 'aS3_primaryExpression', cardinality 0..*) is associated with 'aS3::postfixExpression' (role 'aS3_postfixExpression', cardinality 0..*).
+'aS3::assignmentExpression' (role 'aS3_assignmentExpression', cardinality 0..*) is associated with 'aS3::MemberVariableDeclaration' (role 'aS3_MemberVariableDeclaration98', cardinality 0..*).
+'aS3::fullNewSubexpression' (role 'aS3_fullNewSubexpression', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression239', cardinality 0..*).
+'aS3::annotationField' (role 'aS3_annotationField27', cardinality 0..*) is associated with 'aS3::Expression' (role 'aS3_Expression', cardinality 0..*).
+'aS3::fieldName' (role 'aS3_fieldName120', cardinality 0..*) is associated with 'aS3::identi' (role 'aS3_identi', cardinality 0..*).
+'aS3::newExpression' (role 'aS3_newExpression236', cardinality 0..*) is associated with 'aS3::arguments' (role 'aS3_arguments237', cardinality 0..*).
+'aS3::expressionList' (role 'aS3_expressionList328', cardinality 0..*) is associated with 'aS3::forInit' (role 'aS3_forInit327', cardinality 0..*).
+'aS3::Method' (role 'aS3_Method70', cardinality 0..*) is associated with 'aS3::Annotation' (role 'aS3_Annotation71', cardinality 0..*).
+'aS3::IfStatement' (role 'aS3_IfStatement279', cardinality 0..*) is associated with 'aS3::Statement' (role 'aS3_Statement280', cardinality 0..*).
+'aS3::Statement' (role 'aS3_Statement274', cardinality 0..*) is associated with 'aS3::Condition' (role 'aS3_Condition275', cardinality 0..*).
+'aS3::functionExpression' (role 'aS3_functionExpression', cardinality 0..*) is associated with 'aS3::functionCommon' (role 'aS3_functionCommon', cardinality 0..*).
+'aS3::forInit' (role 'aS3_forInit', cardinality 0..*) is associated with 'aS3::traditionalForClause' (role 'aS3_traditionalForClause314', cardinality 0..*).
+'aS3::literalField' (role 'aS3_literalField116', cardinality 0..*) is associated with 'aS3::fieldName' (role 'aS3_fieldName', cardinality 0..*).
+'aS3::qualifiedIdentifier' (role 'aS3_qualifiedIdentifier', cardinality 0..*) is associated with 'aS3::postfixExpression' (role 'aS3_postfixExpression193', cardinality 0..*).
+'aS3::Expression' (role 'aS3_Expression149', cardinality 0..*) is associated with 'aS3::conditionalExpression' (role 'aS3_conditionalExpression', cardinality 0..*).
+'aS3::shiftExpression' (role 'aS3_shiftExpression', cardinality 0..*) is associated with 'aS3::relationalExpression' (role 'aS3_relationalExpression167', cardinality 0..*).
+'aS3::forCond' (role 'aS3_forCond330', cardinality 0..*) is associated with 'aS3::expressionList' (role 'aS3_expressionList331', cardinality 0..*).
+'aS3::directive' (role 'aS3_directive', cardinality 0..*) is associated with 'aS3::Package' (role 'aS3_Package12', cardinality 0..*).
+'aS3::postfixExpression' (role 'aS3_postfixExpression190', cardinality 0..*) is associated with 'aS3::Expression' (role 'aS3_Expression191', cardinality 0..*).
+'aS3::additiveExpression' (role 'aS3_additiveExpression171', cardinality 0..*) is associated with 'aS3::multiplicativeExpression' (role 'aS3_multiplicativeExpression', cardinality 0..*).
+'aS3::ForStatement' (role 'aS3_ForStatement309', cardinality 0..*) is associated with 'aS3::Statement' (role 'aS3_Statement310', cardinality 0..*).
+'aS3::fullNewSubexpression' (role 'aS3_fullNewSubexpression241', cardinality 0..*) is associated with 'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent242', cardinality 0..*).
+'aS3::forInClause' (role 'aS3_forInClause322', cardinality 0..*) is associated with 'aS3::forInClauseTail' (role 'aS3_forInClauseTail', cardinality 0..*).
+'aS3::IfStatement' (role 'aS3_IfStatement282', cardinality 0..*) is associated with 'aS3::Statement' (role 'aS3_Statement283', cardinality 0..*).
+'aS3::unaryExpression' (role 'aS3_unaryExpression182', cardinality 0..*) is associated with 'aS3::unaryExpression' (role 'aS3_unaryExpression180', cardinality 0..*).
+'aS3::Interface' (role 'aS3_Interface34', cardinality 0..*) is associated with 'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod', cardinality 0..*).
+'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod41', cardinality 0..*) is associated with 'aS3::AccessorRole' (role 'aS3_AccessorRole', cardinality 0..*).
+'aS3::encapsulatedExpression' (role 'aS3_encapsulatedExpression', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression222', cardinality 0..*).
+'aS3::Statement' (role 'aS3_Statement301', cardinality 0..*) is associated with 'aS3::switchStatementList' (role 'aS3_switchStatementList300', cardinality 0..*).
+'aS3::Member' (role 'aS3_Member68', cardinality 0..*) is associated with 'aS3::Method' (role 'aS3_Method', cardinality 0..*).
+'aS3::propOrIdent' (role 'aS3_propOrIdent230', cardinality 0..*) is associated with 'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent231', cardinality 0..*).
+'aS3::VariableDeclaration' (role 'aS3_VariableDeclaration325', cardinality 0..*) is associated with 'aS3::forInit' (role 'aS3_forInit324', cardinality 0..*).
+'aS3::Statement' (role 'aS3_Statement341', cardinality 0..*) is associated with 'aS3::DoWhileStatement' (role 'aS3_DoWhileStatement', cardinality 0..*).
+'aS3::primaryExpression' (role 'aS3_primaryExpression217', cardinality 0..*) is associated with 'aS3::functionExpression' (role 'aS3_functionExpression218', cardinality 0..*).
+'aS3::fieldList' (role 'aS3_fieldList', cardinality 0..*) is associated with 'aS3::objectLiteral' (role 'aS3_objectLiteral', cardinality 0..*).
+'aS3::assignmentExpression' (role 'aS3_assignmentExpression154', cardinality 0..*) is associated with 'aS3::conditionalSubExpression' (role 'aS3_conditionalSubExpression153', cardinality 0..*).
+'aS3::e4xAttributeIdentifier' (role 'aS3_e4xAttributeIdentifier202', cardinality 0..*) is associated with 'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent203', cardinality 0..*).
+'aS3::switchStatementList' (role 'aS3_switchStatementList298', cardinality 0..*) is associated with 'aS3::DefaultStatement' (role 'aS3_DefaultStatement297', cardinality 0..*).
+'aS3::Class' (role 'aS3_Class64', cardinality 0..*) is associated with 'aS3::Member' (role 'aS3_Member', cardinality 0..*).
+'aS3::WithStatement' (role 'aS3_WithStatement', cardinality 0..*) is associated with 'aS3::Condition' (role 'aS3_Condition346', cardinality 0..*).
+'aS3::Method' (role 'aS3_Method76', cardinality 0..*) is associated with 'aS3::AccessorRole' (role 'aS3_AccessorRole77', cardinality 0..*).
+'aS3::Block' (role 'aS3_Block285', cardinality 0..*) is associated with 'aS3::TryStatement' (role 'aS3_TryStatement', cardinality 0..*).
+'aS3::identi' (role 'aS3_identi264', cardinality 0..*) is associated with 'aS3::parameterDeclaration' (role 'aS3_parameterDeclaration', cardinality 0..*).
+'aS3::bitwiseXorExpression' (role 'aS3_bitwiseXorExpression', cardinality 0..*) is associated with 'aS3::bitwiseOrExpression' (role 'aS3_bitwiseOrExpression159', cardinality 0..*).
+'aS3::switchBlock' (role 'aS3_switchBlock295', cardinality 0..*) is associated with 'aS3::DefaultStatement' (role 'aS3_DefaultStatement', cardinality 0..*).
+'aS3::Modifier' (role 'aS3_Modifier56', cardinality 0..*) is associated with 'aS3::Class' (role 'aS3_Class55', cardinality 0..*).
+'aS3::unaryExpression' (role 'aS3_unaryExpression184', cardinality 0..*) is associated with 'aS3::unaryExpressionNotPlusMinus' (role 'aS3_unaryExpressionNotPlusMinus', cardinality 0..*).
+'aS3::brackets' (role 'aS3_brackets251', cardinality 0..*) is associated with 'aS3::encapsulatedExpression' (role 'aS3_encapsulatedExpression250', cardinality 0..*).
+'aS3::multiplicativeExpression' (role 'aS3_multiplicativeExpression173', cardinality 0..*) is associated with 'aS3::unaryExpression' (role 'aS3_unaryExpression', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject352', cardinality 0..*) is associated with 'aS3::SymbolRef' (role 'aS3_SymbolRef', cardinality 0..*).
+'aS3::arrayLiteral' (role 'aS3_arrayLiteral', cardinality 0..*) is associated with 'aS3::elementList' (role 'aS3_elementList', cardinality 0..*).
+'aS3::annotationField' (role 'aS3_annotationField', cardinality 0..*) is associated with 'aS3::annotationFields' (role 'aS3_annotationFields25', cardinality 0..*).
+'aS3::forInClause' (role 'aS3_forInClause320', cardinality 0..*) is associated with 'aS3::forInClauseDecl' (role 'aS3_forInClauseDecl', cardinality 0..*).
+'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod45', cardinality 0..*) is associated with 'aS3::EObject' (role 'aS3_EObject46', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject', cardinality 0..*) is associated with 'aS3::Model' (role 'aS3_Model4', cardinality 0..*).
+'aS3::Class' (role 'aS3_Class57', cardinality 0..*) is associated with 'aS3::Class' (role 'aS3_Class59', cardinality 0..*).
+'aS3::literalField' (role 'aS3_literalField', cardinality 0..*) is associated with 'aS3::fieldList' (role 'aS3_fieldList111', cardinality 0..*).
+'aS3::Expression' (role 'aS3_Expression206', cardinality 0..*) is associated with 'aS3::e4xAttributeIdentifier' (role 'aS3_e4xAttributeIdentifier205', cardinality 0..*).
+'aS3::Model' (role 'aS3_Model', cardinality 0..*) is associated with 'aS3::Package' (role 'aS3_Package', cardinality 0..*).
+'aS3::e4xAttributeIdentifier' (role 'aS3_e4xAttributeIdentifier225', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression224', cardinality 0..*).
+'aS3::encapsulatedExpression' (role 'aS3_encapsulatedExpression247', cardinality 0..*) is associated with 'aS3::propertyIdentifier' (role 'aS3_propertyIdentifier248', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject15', cardinality 0..*) is associated with 'aS3::Package' (role 'aS3_Package14', cardinality 0..*).
+'aS3::Modifier' (role 'aS3_Modifier', cardinality 0..*) is associated with 'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod39', cardinality 0..*).
+'aS3::identi' (role 'aS3_identi122', cardinality 0..*) is associated with 'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent', cardinality 0..*).
+'aS3::Condition' (role 'aS3_Condition336', cardinality 0..*) is associated with 'aS3::WhileStatement' (role 'aS3_WhileStatement', cardinality 0..*).
+'aS3::Modifier' (role 'aS3_Modifier93', cardinality 0..*) is associated with 'aS3::MemberVariableDeclaration' (role 'aS3_MemberVariableDeclaration92', cardinality 0..*).
+'aS3::arguments' (role 'aS3_arguments', cardinality 0..*) is associated with 'aS3::postfixExpression' (role 'aS3_postfixExpression197', cardinality 0..*).
+'aS3::CaseStatement' (role 'aS3_CaseStatement', cardinality 0..*) is associated with 'aS3::switchBlock' (role 'aS3_switchBlock293', cardinality 0..*).
+'aS3::ReturnStatement' (role 'aS3_ReturnStatement', cardinality 0..*) is associated with 'aS3::Expression' (role 'aS3_Expression291', cardinality 0..*).
+'aS3::typeExpression' (role 'aS3_typeExpression256', cardinality 0..*) is associated with 'aS3::functionSignature' (role 'aS3_functionSignature255', cardinality 0..*).
+'aS3::MemberVariableDeclaration' (role 'aS3_MemberVariableDeclaration89', cardinality 0..*) is associated with 'aS3::Annotation' (role 'aS3_Annotation90', cardinality 0..*).
+'aS3::Interface' (role 'aS3_Interface', cardinality 0..*) is associated with 'aS3::Annotation' (role 'aS3_Annotation29', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject234', cardinality 0..*) is associated with 'aS3::newExpression' (role 'aS3_newExpression233', cardinality 0..*).
+'aS3::VariableDeclaration' (role 'aS3_VariableDeclaration', cardinality 0..*) is associated with 'aS3::EObject' (role 'aS3_EObject100', cardinality 0..*).
+'aS3::assignmentExpression' (role 'aS3_assignmentExpression146', cardinality 0..*) is associated with 'aS3::EObject' (role 'aS3_EObject147', cardinality 0..*).
+'aS3::parameterDeclarationList' (role 'aS3_parameterDeclarationList', cardinality 0..*) is associated with 'aS3::functionSignature' (role 'aS3_functionSignature253', cardinality 0..*).
+'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent228', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression227', cardinality 0..*).
+'aS3::Import' (role 'aS3_Import', cardinality 0..*) is associated with 'aS3::Imports' (role 'aS3_Imports20', cardinality 0..*).
+'aS3::traditionalForClause' (role 'aS3_traditionalForClause316', cardinality 0..*) is associated with 'aS3::forCond' (role 'aS3_forCond', cardinality 0..*).
+'aS3::literalField' (role 'aS3_literalField114', cardinality 0..*) is associated with 'aS3::fieldList' (role 'aS3_fieldList113', cardinality 0..*).
+'aS3::Expression' (role 'aS3_Expression142', cardinality 0..*) is associated with 'aS3::switchStatementList' (role 'aS3_switchStatementList', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject7', cardinality 0..*) is associated with 'aS3::Model' (role 'aS3_Model6', cardinality 0..*).
+'aS3::functionSignature' (role 'aS3_functionSignature', cardinality 0..*) is associated with 'aS3::functionCommon' (role 'aS3_functionCommon49', cardinality 0..*).
+'aS3::finallyBlock' (role 'aS3_finallyBlock', cardinality 0..*) is associated with 'aS3::TryStatement' (role 'aS3_TryStatement287', cardinality 0..*).
+'aS3::logicalOrExpression' (role 'aS3_logicalOrExpression', cardinality 0..*) is associated with 'aS3::conditionalSubExpression' (role 'aS3_conditionalSubExpression156', cardinality 0..*).
+'aS3::simpleQualifiedIdentifier' (role 'aS3_simpleQualifiedIdentifier134', cardinality 0..*) is associated with 'aS3::qualifier' (role 'aS3_qualifier', cardinality 0..*).
+'aS3::basicParameterDeclaration' (role 'aS3_basicParameterDeclaration268', cardinality 0..*) is associated with 'aS3::parameterDefault' (role 'aS3_parameterDefault', cardinality 0..*).
+'aS3::Statement' (role 'aS3_Statement339', cardinality 0..*) is associated with 'aS3::WhileStatement' (role 'aS3_WhileStatement338', cardinality 0..*).
+'aS3::element' (role 'aS3_element', cardinality 0..*) is associated with 'aS3::literalField' (role 'aS3_literalField118', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject215', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression214', cardinality 0..*).
+'aS3::Statement' (role 'aS3_Statement349', cardinality 0..*) is associated with 'aS3::WithStatement' (role 'aS3_WithStatement348', cardinality 0..*).
+'aS3::Method' (role 'aS3_Method79', cardinality 0..*) is associated with 'aS3::Parameter' (role 'aS3_Parameter80', cardinality 0..*).
+'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod36', cardinality 0..*) is associated with 'aS3::Annotation' (role 'aS3_Annotation37', cardinality 0..*).
+'aS3::simpleQualifiedIdentifier' (role 'aS3_simpleQualifiedIdentifier136', cardinality 0..*) is associated with 'aS3::propertyIdentifier' (role 'aS3_propertyIdentifier137', cardinality 0..*).
+'aS3::basicParameterDeclaration' (role 'aS3_basicParameterDeclaration', cardinality 0..*) is associated with 'aS3::typeExpression' (role 'aS3_typeExpression266', cardinality 0..*).
+'aS3::catchBlock' (role 'aS3_catchBlock', cardinality 0..*) is associated with 'aS3::TryStatement' (role 'aS3_TryStatement289', cardinality 0..*).
+'aS3::InterfaceMethod' (role 'aS3_InterfaceMethod43', cardinality 0..*) is associated with 'aS3::Parameter' (role 'aS3_Parameter', cardinality 0..*).
+'aS3::expressionList' (role 'aS3_expressionList200', cardinality 0..*) is associated with 'aS3::arguments' (role 'aS3_arguments199', cardinality 0..*).
+'aS3::Annotation' (role 'aS3_Annotation53', cardinality 0..*) is associated with 'aS3::Class' (role 'aS3_Class', cardinality 0..*).
+'aS3::EObject' (role 'aS3_EObject83', cardinality 0..*) is associated with 'aS3::Method' (role 'aS3_Method82', cardinality 0..*).
+'aS3::expressionList' (role 'aS3_expressionList334', cardinality 0..*) is associated with 'aS3::forIter' (role 'aS3_forIter333', cardinality 0..*).
+'aS3::propOrIdent' (role 'aS3_propOrIdent188', cardinality 0..*) is associated with 'aS3::postfixExpression' (role 'aS3_postfixExpression187', cardinality 0..*).
+'aS3::regexpLiteral' (role 'aS3_regexpLiteral', cardinality 0..*) is associated with 'aS3::RegexpConstant' (role 'aS3_RegexpConstant', cardinality 0..*).
+'aS3::Package' (role 'aS3_Package17', cardinality 0..*) is associated with 'aS3::EObject' (role 'aS3_EObject18', cardinality 0..*).
+'aS3::bitwiseAndExpression' (role 'aS3_bitwiseAndExpression163', cardinality 0..*) is associated with 'aS3::equalityExpression' (role 'aS3_equalityExpression', cardinality 0..*).
+'aS3::qualifiedIdent' (role 'aS3_qualifiedIdent129', cardinality 0..*) is associated with 'aS3::identifier' (role 'aS3_identifier', cardinality 0..*).
+'aS3::propertyIdentifier' (role 'aS3_propertyIdentifier', cardinality 0..*) is associated with 'aS3::simpleQualifiedIdentifier' (role 'aS3_simpleQualifiedIdentifier', cardinality 0..*).
+'aS3::additiveExpression' (role 'aS3_additiveExpression', cardinality 0..*) is associated with 'aS3::shiftExpression' (role 'aS3_shiftExpression169', cardinality 0..*).
+'aS3::Block' (role 'aS3_Block127', cardinality 0..*) is associated with 'aS3::identi' (role 'aS3_identi126', cardinality 0..*).
+'aS3::simpleQualifiedIdentifier' (role 'aS3_simpleQualifiedIdentifier139', cardinality 0..*) is associated with 'aS3::brackets' (role 'aS3_brackets', cardinality 0..*).
+'aS3::Method' (role 'aS3_Method73', cardinality 0..*) is associated with 'aS3::Modifier' (role 'aS3_Modifier74', cardinality 0..*).
+'aS3::Parameter' (role 'aS3_Parameter105', cardinality 0..*) is associated with 'aS3::EObject' (role 'aS3_EObject106', cardinality 0..*).
+'aS3::MethodBody' (role 'aS3_MethodBody', cardinality 0..*) is associated with 'aS3::Statement' (role 'aS3_Statement', cardinality 0..*).
+'aS3::Member' (role 'aS3_Member66', cardinality 0..*) is associated with 'aS3::MemberVariableDeclaration' (role 'aS3_MemberVariableDeclaration', cardinality 0..*).
+'aS3::assignmentExpression' (role 'aS3_assignmentExpression144', cardinality 0..*) is associated with 'aS3::expressionList' (role 'aS3_expressionList', cardinality 0..*).
+'aS3::unaryExpression' (role 'aS3_unaryExpression179', cardinality 0..*) is associated with 'aS3::unaryExpression' (role 'aS3_unaryExpression177', cardinality 0..*).
+'aS3::Expression' (role 'aS3_Expression212', cardinality 0..*) is associated with 'aS3::primaryExpression' (role 'aS3_primaryExpression211', cardinality 0..*).
+'aS3::ForStatement' (role 'aS3_ForStatement312', cardinality 0..*) is associated with 'aS3::traditionalForClause' (role 'aS3_traditionalForClause', cardinality 0..*).
+'aS3::Parameter' (role 'aS3_Parameter262', cardinality 0..*) is associated with 'aS3::parameterDeclarationList' (role 'aS3_parameterDeclarationList261', cardinality 0..*).
+'aS3::Method' (role 'aS3_Method85', cardinality 0..*) is associated with 'aS3::Block' (role 'aS3_Block86', cardinality 0..*).
+'aS3::functionCommon' (role 'aS3_functionCommon51', cardinality 0..*) is associated with 'aS3::Block' (role 'aS3_Block', cardinality 0..*).
+'aS3::Annotation' (role 'aS3_Annotation', cardinality 0..*) is associated with 'aS3::annotationFields' (role 'aS3_annotationFields', cardinality 0..*).
+'aS3::logicalAndExpression' (role 'aS3_logicalAndExpression', cardinality 0..*) is associated with 'aS3::bitwiseOrExpression' (role 'aS3_bitwiseOrExpression', cardinality 0..*).
+'aS3::fullNewSubexpression' (role 'aS3_fullNewSubexpression244', cardinality 0..*) is associated with 'aS3::brackets' (role 'aS3_brackets245', cardinality 0..*).
+'aS3::Interface' (role 'aS3_Interface30', cardinality 0..*) is associated with 'aS3::Interface' (role 'aS3_Interface32', cardinality 0..*).
+'aS3::exprOrObjectLiteral' (role 'aS3_exprOrObjectLiteral', cardinality 0..*) is associated with 'aS3::Parameter' (role 'aS3_Parameter108', cardinality 0..*).
+'aS3::IfStatement' (role 'aS3_IfStatement', cardinality 0..*) is associated with 'aS3::Condition' (role 'aS3_Condition277', cardinality 0..*).
+'aS3::Block' (role 'aS3_Block270', cardinality 0..*) is associated with 'aS3::Statement' (role 'aS3_Statement271', cardinality 0..*).
+'aS3::forInClause' (role 'aS3_forInClause', cardinality 0..*) is associated with 'aS3::ForEachStatement' (role 'aS3_ForEachStatement', cardinality 0..*).

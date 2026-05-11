@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'CD::NamedElt' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'CD::DataType' has no attributes.
+The class 'CD::Attribute' has the following attributes: 'multiValued' of type str.
+The class 'CD::Package' has no attributes.
+The class 'CD::Classifier' has no attributes.
+The class 'CD::Class' has the following attributes: 'isAbstract' of type str.
+The class 'NamedElt' has no attributes.
+'CD::Attribute' is a specialization of 'NamedElt'.
+'CD::Package' is a specialization of 'Classifier'.
+'CD::DataType' is a specialization of 'Classifier'.
+'CD::Classifier' is a specialization of 'NamedElt'.
+'CD::Class' is a specialization of 'Classifier'.
+'CD::Classifier' (role 'CD_Classifier', cardinality 0..*) is associated with 'CD::Attribute' (role 'CD_Attribute', cardinality 0..*).
+'CD::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'CD::Class' (role 'owner', cardinality 0..*).
+'CD::Class' (role 'Class', cardinality 0..*) is associated with 'CD::Attribute' (role 'attr', cardinality 0..*).
+'CD::Class' (role 'CD_Class', cardinality 0..*) is associated with 'CD::Class' (role 'CD_Class0', cardinality 0..*).
+'CD::Classifier' (role 'CD_Classifier6', cardinality 0..*) is associated with 'CD::Package' (role 'CD_Package', cardinality 0..*).

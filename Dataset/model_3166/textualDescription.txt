@@ -1,0 +1,29 @@
+The model has 14 class(es).
+The class 'gtrace::MClassifier' has no attributes.
+The class 'gtrace::RRequirement' has no attributes.
+The class 'gtrace::MElement' has no attributes.
+The class 'TTrace' has no attributes.
+The class 'gtrace::TTraceModel' has the following attributes: 'name' of type str.
+The class 'gtrace::TRequirementTrace' has no attributes.
+The class 'gtrace::MStateMachine' has no attributes.
+The class 'gtrace::RScenario' has no attributes.
+The class 'gtrace::TTrace' has the following attributes: 'reviewed' of type str.
+The class 'gtrace::TScenarioTrace' has no attributes.
+The class 'gtrace::TScenarioStepTrace' has no attributes.
+The class 'gtrace::RScenarioStep' has no attributes.
+The class 'gtrace::MState' has no attributes.
+The class 'gtrace::MOperation' has no attributes.
+'gtrace::TScenarioTrace' is a specialization of 'TTrace'.
+'gtrace::TScenarioStepTrace' is a specialization of 'TTrace'.
+'gtrace::TRequirementTrace' is a specialization of 'TTrace'.
+'gtrace::TScenarioTrace' (role 'gtrace_TScenarioTrace12', cardinality 0..*) is associated with 'gtrace::MClassifier' (role 'gtrace_MClassifier', cardinality 0..*).
+'gtrace::TRequirementTrace' (role 'gtrace_TRequirementTrace', cardinality 0..*) is associated with 'gtrace::TTraceModel' (role 'gtrace_TTraceModel', cardinality 0..*).
+'gtrace::TTraceModel' (role 'gtrace_TTraceModel4', cardinality 0..*) is associated with 'gtrace::TScenarioStepTrace' (role 'gtrace_TScenarioStepTrace', cardinality 0..*).
+'gtrace::RScenario' (role 'gtrace_RScenario', cardinality 0..*) is associated with 'gtrace::TScenarioTrace' (role 'gtrace_TScenarioTrace10', cardinality 0..*).
+'gtrace::RRequirement' (role 'gtrace_RRequirement', cardinality 0..*) is associated with 'gtrace::TRequirementTrace' (role 'gtrace_TRequirementTrace6', cardinality 0..*).
+'gtrace::TRequirementTrace' (role 'gtrace_TRequirementTrace8', cardinality 0..*) is associated with 'gtrace::MElement' (role 'gtrace_MElement', cardinality 0..*).
+'gtrace::TScenarioTrace' (role 'gtrace_TScenarioTrace14', cardinality 0..*) is associated with 'gtrace::MStateMachine' (role 'gtrace_MStateMachine', cardinality 0..*).
+'gtrace::MOperation' (role 'gtrace_MOperation', cardinality 0..*) is associated with 'gtrace::TScenarioStepTrace' (role 'gtrace_TScenarioStepTrace18', cardinality 0..*).
+'gtrace::TTraceModel' (role 'gtrace_TTraceModel2', cardinality 0..*) is associated with 'gtrace::TScenarioTrace' (role 'gtrace_TScenarioTrace', cardinality 0..*).
+'gtrace::RScenarioStep' (role 'gtrace_RScenarioStep', cardinality 0..*) is associated with 'gtrace::TScenarioStepTrace' (role 'gtrace_TScenarioStepTrace16', cardinality 0..*).
+'gtrace::TScenarioStepTrace' (role 'gtrace_TScenarioStepTrace20', cardinality 0..*) is associated with 'gtrace::MState' (role 'gtrace_MState', cardinality 0..*).

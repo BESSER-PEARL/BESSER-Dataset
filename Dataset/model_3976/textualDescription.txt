@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'l3::Component' has no attributes.
+The class 'l3::BuildComponent' has no attributes.
+The class 'l3::SystemModel' has no attributes.
+The class 'l3::Model' has no attributes.
+The class 'l3::Metamodel' has no attributes.
+'l3::Metamodel' (role 'l3_Metamodel', cardinality 0..*) is associated with 'l3::Model' (role 'l3_Model', cardinality 0..*).
+'l3::Model' (role 'l3_Model3', cardinality 0..*) is associated with 'l3::SystemModel' (role 'l3_SystemModel', cardinality 0..*).
+'l3::BuildComponent' (role 'l3_BuildComponent', cardinality 0..*) is associated with 'l3::Component' (role 'l3_Component', cardinality 0..*).

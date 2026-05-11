@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'panamaNeo4j::Entity' has the following attributes: 'name' of type str.
+The class 'panamaNeo4j::Officer' has the following attributes: 'name' of type str.
+'panamaNeo4j::Entity' (role 'panamaNeo4j_Entity', cardinality 0..*) is associated with 'panamaNeo4j::Officer' (role 'panamaNeo4j_Officer', cardinality 0..*).

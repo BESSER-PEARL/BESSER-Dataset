@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class myDsl_Import extends Element {
+
+    private String importedNamespace;
+
+
+
+    public myDsl_Import(
+        String importedNamespace    ) {
+        super(
+        );
+        this.importedNamespace = importedNamespace;
+    }
+
+
+    public String getImportednamespace() {
+        return importedNamespace;
+    }
+
+    public void setImportednamespace(String importedNamespace) {
+        this.importedNamespace = importedNamespace;
+    }
+
+
+}

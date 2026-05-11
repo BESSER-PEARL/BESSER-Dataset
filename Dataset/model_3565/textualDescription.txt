@@ -1,0 +1,155 @@
+The model has 64 class(es).
+The class 'go::Condition' has no attributes.
+The class 'go::Subtration' has no attributes.
+The class 'ElseIfCondition' has no attributes.
+The class 'go::ElseIfCondition' has no attributes.
+The class 'Atri' has no attributes.
+The class 'go::Decl' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'go::CallFunc' has the following attributes: 'nameFunc' of type str.
+The class 'go::operationsOne' has no attributes.
+The class 'go::Division' has no attributes.
+The class 'go::ReAtrib' has the following attributes: 'name' of type str.
+The class 'OperationsOneEquals' has no attributes.
+The class 'I' has no attributes.
+The class 'SwitchCase' has no attributes.
+The class 'go::Expression' has no attributes.
+The class 'CallFor' has no attributes.
+The class 'go::CallFor' has no attributes.
+The class 'go::Atrib::Aux' has no attributes.
+The class 'go::Multiplication' has no attributes.
+The class 'go::Params' has the following attributes: 'type' of type str; 'params' of type str.
+The class 'go::Literal' has no attributes.
+The class 'go::Go' has no attributes.
+The class 'go::MultDecVars' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'T' has no attributes.
+The class 'go::F' has no attributes.
+The class 'operationsOne' has no attributes.
+The class 'Expression' has no attributes.
+The class 'go::AndExpression' has no attributes.
+The class 'go::Addition' has no attributes.
+The class 'go::TypeValue' has no attributes.
+The class 'go::varFor' has no attributes.
+The class 'go::Atrib' has the following attributes: 'type' of type str; 'name' of type str; 'modifier' of type str.
+The class 'go::AtribVar' has the following attributes: 'type' of type str; 'vars' of type str.
+The class 'go::I' has no attributes.
+The class 'TypeValue' has no attributes.
+The class 'varFor' has no attributes.
+The class 'go::Double' has the following attributes: 'd' of type int.
+The class 'Operations' has no attributes.
+The class 'go::Intg' has the following attributes: 'i' of type int.
+The class 'go::FunctionBody' has no attributes.
+The class 'go::ComparisonExpression' has no attributes.
+The class 'go::Atri' has no attributes.
+The class 'go::DecFunc' has the following attributes: 'returnType' of type str; 'name' of type str.
+The class 'go::T' has no attributes.
+The class 'go::Greeting' has no attributes.
+The class 'go::Numbers' has no attributes.
+The class 'go::Bool' has the following attributes: 'val' of type str.
+The class 'go::DecVars' has the following attributes: 'vars' of type str.
+The class 'go::OrExpression' has no attributes.
+The class 'go::DecVar' has no attributes.
+The class 'go::ElseCondition' has no attributes.
+The class 'go::Cases' has no attributes.
+The class 'go::Operations' has no attributes.
+The class 'Greeting' has no attributes.
+The class 'go::DataType' has the following attributes: 'name' of type str.
+The class 'go::IfCondition' has no attributes.
+The class 'go::FunctionReturn' has no attributes.
+The class 'go::EObject' has no attributes.
+The class 'Atrib::Aux' has no attributes.
+The class 'go::SwitchCase' has no attributes.
+The class 'go::Str' has the following attributes: 's' of type str.
+The class 'F' has no attributes.
+The class 'go::OperationsOneEquals' has no attributes.
+The class 'go::Variable' has the following attributes: 'name' of type str.
+The class 'go::Y' has no attributes.
+'go::Literal' is a specialization of 'Expression'.
+'go::F' is a specialization of 'T'.
+'go::ComparisonExpression' is a specialization of 'Expression'.
+'go::OrExpression' is a specialization of 'Expression'.
+'go::CallFunc' is a specialization of 'Atrib::Aux'.
+'go::Variable' is a specialization of 'Atrib::Aux'.
+'go::Variable' is a specialization of 'Expression'.
+'go::Bool' is a specialization of 'TypeValue'.
+'go::DataType' is a specialization of 'Greeting'.
+'go::Str' is a specialization of 'TypeValue'.
+'go::Atrib' is a specialization of 'varFor'.
+'go::AndExpression' is a specialization of 'Expression'.
+'go::MultDecVars' is a specialization of 'Greeting'.
+'go::Variable' is a specialization of 'SwitchCase'.
+'go::Variable' is a specialization of 'Greeting'.
+'go::T' is a specialization of 'I'.
+'go::Condition' is a specialization of 'Greeting'.
+'go::ReAtrib' is a specialization of 'varFor'.
+'go::Expression' is a specialization of 'varFor'.
+'go::Addition' is a specialization of 'Expression'.
+'go::T' is a specialization of 'Operations'.
+'go::varFor' is a specialization of 'CallFor'.
+'go::IfCondition' is a specialization of 'ElseIfCondition'.
+'go::Subtration' is a specialization of 'Expression'.
+'go::Variable' is a specialization of 'operationsOne'.
+'go::Variable' is a specialization of 'OperationsOneEquals'.
+'go::TypeValue' is a specialization of 'Atri'.
+'go::Operations' is a specialization of 'Atrib::Aux'.
+'go::DecVar' is a specialization of 'Greeting'.
+'go::Numbers' is a specialization of 'Expression'.
+'go::Multiplication' is a specialization of 'Expression'.
+'go::Division' is a specialization of 'Expression'.
+'go::SwitchCase' is a specialization of 'Greeting'.
+'go::CallFor' is a specialization of 'Greeting'.
+'go::DecFunc' is a specialization of 'Greeting'.
+'go::CallFunc' is a specialization of 'Greeting'.
+'go::Atri' is a specialization of 'Atrib::Aux'.
+'go::Numbers' is a specialization of 'TypeValue'.
+'go::Numbers' is a specialization of 'F'.
+'go::FunctionReturn' (role 'go_FunctionReturn74', cardinality 0..*) is associated with 'go::Atrib::Aux' (role 'go_Atrib_Aux75', cardinality 0..*).
+'go::OrExpression' (role 'go_OrExpression101', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression102', cardinality 0..*).
+'go::Double' (role 'go_Double', cardinality 0..*) is associated with 'go::Numbers' (role 'go_Numbers35', cardinality 0..*).
+'go::Atrib::Aux' (role 'go_Atrib_Aux', cardinality 0..*) is associated with 'go::AtribVar' (role 'go_AtribVar9', cardinality 0..*).
+'go::AndExpression' (role 'go_AndExpression106', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression107', cardinality 0..*).
+'go::Expression' (role 'go_Expression56', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression54', cardinality 0..*).
+'go::Expression' (role 'go_Expression92', cardinality 0..*) is associated with 'go::Multiplication' (role 'go_Multiplication91', cardinality 0..*).
+'go::Greeting' (role 'go_Greeting32', cardinality 0..*) is associated with 'go::Cases' (role 'go_Cases31', cardinality 0..*).
+'go::Greeting' (role 'go_Greeting53', cardinality 0..*) is associated with 'go::ElseCondition' (role 'go_ElseCondition52', cardinality 0..*).
+'go::Literal' (role 'go_Literal', cardinality 0..*) is associated with 'go::Bool' (role 'go_Bool', cardinality 0..*).
+'go::MultDecVars' (role 'go_MultDecVars', cardinality 0..*) is associated with 'go::TypeValue' (role 'go_TypeValue', cardinality 0..*).
+'go::OrExpression' (role 'go_OrExpression', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression99', cardinality 0..*).
+'go::Expression' (role 'go_Expression97', cardinality 0..*) is associated with 'go::Division' (role 'go_Division96', cardinality 0..*).
+'go::Expression' (role 'go_Expression109', cardinality 0..*) is associated with 'go::ComparisonExpression' (role 'go_ComparisonExpression', cardinality 0..*).
+'go::ElseCondition' (role 'go_ElseCondition', cardinality 0..*) is associated with 'go::Condition' (role 'go_Condition44', cardinality 0..*).
+'go::Addition' (role 'go_Addition81', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression82', cardinality 0..*).
+'go::ReAtrib' (role 'go_ReAtrib', cardinality 0..*) is associated with 'go::DecVar' (role 'go_DecVar7', cardinality 0..*).
+'go::AtribVar' (role 'go_AtribVar', cardinality 0..*) is associated with 'go::DecVar' (role 'go_DecVar5', cardinality 0..*).
+'go::Variable' (role 'go_Variable12', cardinality 0..*) is associated with 'go::Greeting' (role 'go_Greeting13', cardinality 0..*).
+'go::FunctionBody' (role 'go_FunctionBody', cardinality 0..*) is associated with 'go::DecFunc' (role 'go_DecFunc67', cardinality 0..*).
+'go::Atrib' (role 'go_Atrib', cardinality 0..*) is associated with 'go::DecVar' (role 'go_DecVar3', cardinality 0..*).
+'go::Params' (role 'go_Params', cardinality 0..*) is associated with 'go::DecFunc' (role 'go_DecFunc', cardinality 0..*).
+'go::Y' (role 'go_Y', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject39', cardinality 0..*).
+'go::IfCondition' (role 'go_IfCondition46', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression47', cardinality 0..*).
+'go::Expression' (role 'go_Expression84', cardinality 0..*) is associated with 'go::Subtration' (role 'go_Subtration', cardinality 0..*).
+'go::DecVar' (role 'go_DecVar', cardinality 0..*) is associated with 'go::Decl' (role 'go_Decl', cardinality 0..*).
+'go::Multiplication' (role 'go_Multiplication', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression89', cardinality 0..*).
+'go::Greeting' (role 'go_Greeting', cardinality 0..*) is associated with 'go::Go' (role 'go_Go', cardinality 0..*).
+'go::ReAtrib' (role 'go_ReAtrib23', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject24', cardinality 0..*).
+'go::Cases' (role 'go_Cases', cardinality 0..*) is associated with 'go::Variable' (role 'go_Variable', cardinality 0..*).
+'go::Atrib::Aux' (role 'go_Atrib_Aux27', cardinality 0..*) is associated with 'go::DecVars' (role 'go_DecVars', cardinality 0..*).
+'go::Greeting' (role 'go_Greeting70', cardinality 0..*) is associated with 'go::FunctionBody' (role 'go_FunctionBody69', cardinality 0..*).
+'go::Atrib' (role 'go_Atrib15', cardinality 0..*) is associated with 'go::Atrib::Aux' (role 'go_Atrib_Aux16', cardinality 0..*).
+'go::CallFor' (role 'go_CallFor', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject64', cardinality 0..*).
+'go::IfCondition' (role 'go_IfCondition', cardinality 0..*) is associated with 'go::Condition' (role 'go_Condition', cardinality 0..*).
+'go::Division' (role 'go_Division', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression94', cardinality 0..*).
+'go::CallFunc' (role 'go_CallFunc', cardinality 0..*) is associated with 'go::Params' (role 'go_Params77', cardinality 0..*).
+'go::AndExpression' (role 'go_AndExpression', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression104', cardinality 0..*).
+'go::Greeting' (role 'go_Greeting50', cardinality 0..*) is associated with 'go::IfCondition' (role 'go_IfCondition49', cardinality 0..*).
+'go::T' (role 'go_T', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject37', cardinality 0..*).
+'go::Addition' (role 'go_Addition', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression79', cardinality 0..*).
+'go::Expression' (role 'go_Expression87', cardinality 0..*) is associated with 'go::Subtration' (role 'go_Subtration86', cardinality 0..*).
+'go::ReAtrib' (role 'go_ReAtrib20', cardinality 0..*) is associated with 'go::Atrib::Aux' (role 'go_Atrib_Aux21', cardinality 0..*).
+'go::Atrib' (role 'go_Atrib18', cardinality 0..*) is associated with 'go::EObject' (role 'go_EObject', cardinality 0..*).
+'go::Intg' (role 'go_Intg', cardinality 0..*) is associated with 'go::Numbers' (role 'go_Numbers', cardinality 0..*).
+'go::Expression' (role 'go_Expression59', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression57', cardinality 0..*).
+'go::FunctionBody' (role 'go_FunctionBody72', cardinality 0..*) is associated with 'go::FunctionReturn' (role 'go_FunctionReturn', cardinality 0..*).
+'go::ComparisonExpression' (role 'go_ComparisonExpression111', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression112', cardinality 0..*).
+'go::Expression' (role 'go_Expression62', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression60', cardinality 0..*).
+'go::Cases' (role 'go_Cases29', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression', cardinality 0..*).
+'go::Condition' (role 'go_Condition42', cardinality 0..*) is associated with 'go::ElseIfCondition' (role 'go_ElseIfCondition', cardinality 0..*).

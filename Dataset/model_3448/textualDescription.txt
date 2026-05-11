@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'test::Person' has the following attributes: 'lastname' of type str; 'firstame' of type str; 'Grade' of type str.
+The class 'test::Student' has the following attributes: 'regNo' of type str.
+The class 'Person' has no attributes.
+The class 'test::Employee' has the following attributes: 'incomeLevel' of type str.
+The class 'test::University' has the following attributes: 'name' of type str.
+The enumeration 'EEnum0' does not specify any literals.
+The enumeration 'Grade' has the following literals: 'Professor', 'MSC', 'BSC', 'PHD', 'None_'.
+The enumeration 'incomeLevel' has the following literals: 'PostDoc', 'UnderGrad', 'Professor', 'PreDoc'.
+'test::Student' is a specialization of 'Person'.
+'test::Employee' is a specialization of 'Person'.
+'test::Person' (role 'test_Person4', cardinality 0..*) is associated with 'test::Person' (role 'test_Person2', cardinality 0..*).
+'test::Person' (role 'test_Person6', cardinality 0..*) is associated with 'test::University' (role 'test_University', cardinality 0..*).
+'test::Person' (role 'test_Person0', cardinality 0..*) is associated with 'test::Person' (role 'test_Person', cardinality 0..*).

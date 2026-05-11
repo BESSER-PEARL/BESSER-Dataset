@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'test::NamedElement' has the following attributes: 'Name' of type str.
+The class 'test::TestClassDelegate' has no attributes.
+The class 'test::TestPolicy' has no attributes.
+The class 'test::TestElementWrapper' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'test::TestElement' has no attributes.
+The class 'test::Root' has the following attributes: 'ttt' of type str.
+'test::TestElement' is a specialization of 'NamedElement'.
+'test::TestClassDelegate' is a specialization of 'NamedElement'.
+'test::TestElementWrapper' is a specialization of 'NamedElement'.
+'test::TestPolicy' is a specialization of 'NamedElement'.
+'test::Root' (role 'test_Root', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement', cardinality 0..*).
+'test::TestElementWrapper' (role 'test_TestElementWrapper', cardinality 0..*) is associated with 'test::TestElement' (role 'test_TestElement6', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement2', cardinality 0..*) is associated with 'test::TestPolicy' (role 'test_TestPolicy', cardinality 0..*).
+'test::TestElement' (role 'test_TestElement4', cardinality 0..*) is associated with 'test::TestClassDelegate' (role 'test_TestClassDelegate', cardinality 0..*).

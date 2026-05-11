@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'sql4csv::Query' has no attributes.
+The class 'sql4csv::ValueEquality' has the following attributes: 'right' of type str.
+The class 'sql4csv::Program' has no attributes.
+The class 'sql4csv::ColumnEquality' has no attributes.
+The class 'sql4csv::AndCondition' has no attributes.
+The class 'Condition' has no attributes.
+The class 'BinaryCondition' has no attributes.
+The class 'sql4csv::OrCondition' has no attributes.
+The class 'sql4csv::SQL4CSV' has no attributes.
+The class 'sql4csv::EObject' has no attributes.
+The class 'sql4csv::Table' has the following attributes: 'name' of type str.
+The class 'sql4csv::Equality' has no attributes.
+The class 'sql4csv::BinaryCondition' has no attributes.
+The class 'sql4csv::Condition' has no attributes.
+The class 'sql4csv::Column' has the following attributes: 'name' of type str.
+'sql4csv::AndCondition' is a specialization of 'BinaryCondition'.
+'sql4csv::BinaryCondition' is a specialization of 'Condition'.
+'sql4csv::OrCondition' is a specialization of 'BinaryCondition'.
+'sql4csv::Equality' is a specialization of 'Condition'.
+'sql4csv::BinaryCondition' (role 'sql4csv_BinaryCondition25', cardinality 0..*) is associated with 'sql4csv::Condition' (role 'sql4csv_Condition26', cardinality 0..*).
+'sql4csv::Equality' (role 'sql4csv_Equality21', cardinality 0..*) is associated with 'sql4csv::EObject' (role 'sql4csv_EObject', cardinality 0..*).
+'sql4csv::Condition' (role 'sql4csv_Condition', cardinality 0..*) is associated with 'sql4csv::Query' (role 'sql4csv_Query14', cardinality 0..*).
+'sql4csv::Equality' (role 'sql4csv_Equality23', cardinality 0..*) is associated with 'sql4csv::BinaryCondition' (role 'sql4csv_BinaryCondition', cardinality 0..*).
+'sql4csv::Table' (role 'sql4csv_Table', cardinality 0..*) is associated with 'sql4csv::Query' (role 'sql4csv_Query9', cardinality 0..*).
+'sql4csv::ColumnEquality' (role 'sql4csv_ColumnEquality', cardinality 0..*) is associated with 'sql4csv::Column' (role 'sql4csv_Column28', cardinality 0..*).
+'sql4csv::Query' (role 'sql4csv_Query4', cardinality 0..*) is associated with 'sql4csv::Column' (role 'sql4csv_Column', cardinality 0..*).
+'sql4csv::Query' (role 'sql4csv_Query6', cardinality 0..*) is associated with 'sql4csv::Column' (role 'sql4csv_Column7', cardinality 0..*).
+'sql4csv::Query' (role 'sql4csv_Query11', cardinality 0..*) is associated with 'sql4csv::Table' (role 'sql4csv_Table12', cardinality 0..*).
+'sql4csv::Equality' (role 'sql4csv_Equality', cardinality 0..*) is associated with 'sql4csv::Column' (role 'sql4csv_Column19', cardinality 0..*).
+'sql4csv::SQL4CSV' (role 'sql4csv_SQL4CSV', cardinality 0..*) is associated with 'sql4csv::Program' (role 'sql4csv_Program', cardinality 0..*).
+'sql4csv::Query' (role 'sql4csv_Query', cardinality 0..*) is associated with 'sql4csv::Program' (role 'sql4csv_Program2', cardinality 0..*).
+'sql4csv::Column' (role 'sql4csv_Column16', cardinality 0..*) is associated with 'sql4csv::Table' (role 'sql4csv_Table17', cardinality 0..*).

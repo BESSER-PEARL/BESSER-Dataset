@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'expression::PredicateIsNull' has no attributes.
+The class 'expression::PredicateComparisonOperator' has the following attributes: 'operator' of type str.
+The class 'expression::PredicateEqualityOperator' has no attributes.
+The class 'expression::PredicateIsOperator' has no attributes.
+The class 'expression::Predicate' has the following attributes: 'negated' of type bool.
+The class 'expression::PredicateIsEmpty' has no attributes.
+The class 'expression::PredicateBooleanOperator' has the following attributes: 'operator' of type str.
+The class 'expression::StringLiteral' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'expression::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'expression::Function' has the following attributes: 'name' of type str.
+The class 'expression::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'expression::Variable' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'expression::Literal' has no attributes.
+The class 'expression::PredicateLikeOperator' has no attributes.
+The class 'expression::TimeLiteral' has the following attributes: 'value' of type str.
+The class 'Literal' has no attributes.
+The class 'expression::NullLiteral' has no attributes.
+The class 'Predicate' has no attributes.
+The enumeration 'ComparisionOperator' has the following literals: 'LessThan', 'GreaterThan'.
+The enumeration 'BooleanOperator' has the following literals: 'And', 'Or'.
+'expression::Variable' is a specialization of 'Expression'.
+'expression::TimeLiteral' is a specialization of 'Literal'.
+'expression::StringLiteral' is a specialization of 'Literal'.
+'expression::Predicate' is a specialization of 'Expression'.
+'expression::Function' is a specialization of 'Expression'.
+'expression::IntegerLiteral' is a specialization of 'Literal'.
+'expression::PredicateComparisonOperator' is a specialization of 'Predicate'.
+'expression::Literal' is a specialization of 'Expression'.
+'expression::PredicateEqualityOperator' is a specialization of 'Predicate'.
+'expression::NullLiteral' is a specialization of 'Literal'.
+'expression::PredicateIsEmpty' is a specialization of 'Predicate'.
+'expression::BooleanLiteral' is a specialization of 'Literal'.
+'expression::PredicateBooleanOperator' is a specialization of 'Predicate'.
+'expression::PredicateLikeOperator' is a specialization of 'Predicate'.
+'expression::PredicateIsNull' is a specialization of 'Predicate'.
+'expression::PredicateIsOperator' is a specialization of 'Predicate'.
+'expression::Expression' (role 'expression_Expression4', cardinality 0..*) is associated with 'expression::PredicateEqualityOperator' (role 'expression_PredicateEqualityOperator3', cardinality 0..*).
+'expression::PredicateLikeOperator' (role 'expression_PredicateLikeOperator18', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression19', cardinality 0..*).
+'expression::PredicateBooleanOperator' (role 'expression_PredicateBooleanOperator', cardinality 0..*) is associated with 'expression::Predicate' (role 'expression_Predicate', cardinality 0..*).
+'expression::Variable' (role 'expression_Variable', cardinality 0..*) is associated with 'expression::PredicateIsEmpty' (role 'expression_PredicateIsEmpty', cardinality 0..*).
+'expression::PredicateIsOperator' (role 'expression_PredicateIsOperator13', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression14', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression', cardinality 0..*) is associated with 'expression::PredicateEqualityOperator' (role 'expression_PredicateEqualityOperator', cardinality 0..*).
+'expression::Variable' (role 'expression_Variable22', cardinality 0..*) is associated with 'expression::PredicateIsNull' (role 'expression_PredicateIsNull', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression11', cardinality 0..*) is associated with 'expression::PredicateIsOperator' (role 'expression_PredicateIsOperator', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression9', cardinality 0..*) is associated with 'expression::PredicateComparisonOperator' (role 'expression_PredicateComparisonOperator8', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression16', cardinality 0..*) is associated with 'expression::PredicateLikeOperator' (role 'expression_PredicateLikeOperator', cardinality 0..*).
+'expression::PredicateComparisonOperator' (role 'expression_PredicateComparisonOperator', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression6', cardinality 0..*).

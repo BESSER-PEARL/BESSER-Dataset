@@ -1,0 +1,25 @@
+The model has 7 class(es).
+The class 'autopl::HierarchicalState' has no attributes.
+The class 'autopl::Automaton' has no attributes.
+The class 'State' has no attributes.
+The class 'autopl::State' has the following attributes: 'isInitial' of type str; 'isFinal' of type str; 'name' of type str.
+The class 'autopl::Symbol' has the following attributes: 'name' of type str.
+The class 'autopl::Transition' has the following attributes: 'probability' of type str.
+The class 'autopl::Alphabet' has no attributes.
+The enumeration 'AcceptanceKind' has the following literals: 'Finite', 'Probabilistic', 'Infinite'.
+'autopl::HierarchicalState' is a specialization of 'State'.
+'autopl::Automaton' (role 'autopl_Automaton10', cardinality 0..*) is associated with 'autopl::State' (role 'autopl_State', cardinality 0..*).
+'autopl::HierarchicalState' (role 'autopl_HierarchicalState', cardinality 0..*) is associated with 'autopl::State' (role 'autopl_State35', cardinality 0..*).
+'autopl::Symbol' (role 'autopl_Symbol21', cardinality 0..*) is associated with 'autopl::Transition' (role 'autopl_Transition20', cardinality 0..*).
+'autopl::Alphabet' (role 'autopl_Alphabet6', cardinality 0..*) is associated with 'autopl::Automaton' (role 'autopl_Automaton5', cardinality 0..*).
+'autopl::Transition' (role 'autopl_Transition23', cardinality 0..*) is associated with 'autopl::Symbol' (role 'autopl_Symbol24', cardinality 0..*).
+'autopl::HierarchicalState' (role 'autopl_HierarchicalState37', cardinality 0..*) is associated with 'autopl::Transition' (role 'autopl_Transition38', cardinality 0..*).
+'autopl::Automaton' (role 'autopl_Automaton', cardinality 0..*) is associated with 'autopl::Alphabet' (role 'autopl_Alphabet', cardinality 0..*).
+'autopl::Symbol' (role 'autopl_Symbol27', cardinality 0..*) is associated with 'autopl::Transition' (role 'autopl_Transition26', cardinality 0..*).
+'autopl::Symbol' (role 'autopl_Symbol18', cardinality 0..*) is associated with 'autopl::Transition' (role 'autopl_Transition17', cardinality 0..*).
+'autopl::Transition' (role 'autopl_Transition32', cardinality 0..*) is associated with 'autopl::State' (role 'autopl_State33', cardinality 0..*).
+'autopl::State' (role 'autopl_State30', cardinality 0..*) is associated with 'autopl::Transition' (role 'autopl_Transition29', cardinality 0..*).
+'autopl::Transition' (role 'autopl_Transition', cardinality 0..*) is associated with 'autopl::Automaton' (role 'autopl_Automaton12', cardinality 0..*).
+'autopl::Automaton' (role 'autopl_Automaton2', cardinality 0..*) is associated with 'autopl::Alphabet' (role 'autopl_Alphabet3', cardinality 0..*).
+'autopl::Alphabet' (role 'autopl_Alphabet14', cardinality 0..*) is associated with 'autopl::Symbol' (role 'autopl_Symbol15', cardinality 0..*).
+'autopl::Symbol' (role 'autopl_Symbol', cardinality 0..*) is associated with 'autopl::Automaton' (role 'autopl_Automaton8', cardinality 0..*).

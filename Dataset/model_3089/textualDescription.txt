@@ -1,0 +1,61 @@
+The model has 21 class(es).
+The class 'AbstractBehavior' has no attributes.
+The class 'interaction::InteractionOperand' has no attributes.
+The class 'Structure' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'interaction::State' has no attributes.
+The class 'interaction::Part' has no attributes.
+The class 'interaction::SequenceMessage' has the following attributes: 'kind' of type str.
+The class 'interaction::AbstractEventOperation' has no attributes.
+The class 'interaction::Constraint' has no attributes.
+The class 'interaction::ExchangeItemElement' has no attributes.
+The class 'interaction::AbstractCapability' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'interaction::FunctionalChain' has no attributes.
+The class 'interaction::AbstractFunction' has no attributes.
+The class 'interaction::ExchangeItem' has no attributes.
+The class 'interaction::ValueSpecification' has no attributes.
+The class 'CapellaElement' has no attributes.
+The class 'AbstractFunctionalChainContainer' has no attributes.
+The class 'interaction::SequenceMessageValuation' has no attributes.
+The class 'interaction::Scenario' has the following attributes: 'kind' of type str; 'merged' of type bool.
+The class 'interaction::CombinedFragment' has the following attributes: 'operator' of type str.
+The enumeration 'InteractionOperatorKind' has the following literals: 'UNSET', 'LOOP', 'ASSERT', 'IGNORE', 'CRITICAL', 'SEQ', 'CONSIDER', 'PAR', 'NEG', 'OPT', 'ALT', 'STRICT'.
+The enumeration 'MessageKind' has the following literals: 'UNSET', 'REPLY', 'TIMER', 'CREATE', 'SYNCHRONOUS_CALL', 'DELETE', 'ASYNCHRONOUS_CALL'.
+The enumeration 'ScenarioKind' has the following literals: 'DATA_FLOW', 'INTERFACE', 'UNSET', 'FUNCTIONAL', 'INTERACTION'.
+'interaction::CombinedFragment' is a specialization of 'NamedElement'.
+'interaction::SequenceMessageValuation' is a specialization of 'CapellaElement'.
+'interaction::AbstractCapability' is a specialization of 'Structure'.
+'interaction::AbstractCapability' is a specialization of 'CapellaElement'.
+'interaction::InteractionOperand' is a specialization of 'NamedElement'.
+'interaction::Scenario' is a specialization of 'AbstractBehavior'.
+'interaction::SequenceMessage' is a specialization of 'NamedElement'.
+'interaction::AbstractCapability' is a specialization of 'AbstractFunctionalChainContainer'.
+'interaction::Scenario' is a specialization of 'Namespace'.
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability40', cardinality 0..*) is associated with 'interaction::Constraint' (role 'interaction_Constraint41', cardinality 0..*).
+'interaction::Scenario' (role 'interaction_Scenario34', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario36', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability50', cardinality 0..*) is associated with 'interaction::AbstractCapability' (role 'interaction_AbstractCapability48', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage4', cardinality 0..*) is associated with 'interaction::ExchangeItem' (role 'interaction_ExchangeItem', cardinality 0..*).
+'interaction::AbstractFunction' (role 'interaction_AbstractFunction27', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario26', cardinality 0..*).
+'interaction::InteractionOperand' (role 'interaction_InteractionOperand', cardinality 0..*) is associated with 'interaction::Constraint' (role 'interaction_Constraint62', cardinality 0..*).
+'interaction::Constraint' (role 'interaction_Constraint18', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage2', cardinality 0..*) is associated with 'interaction::AbstractEventOperation' (role 'interaction_AbstractEventOperation', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage11', cardinality 0..*) is associated with 'interaction::AbstractFunction' (role 'interaction_AbstractFunction', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage16', cardinality 0..*) is associated with 'interaction::SequenceMessageValuation' (role 'interaction_SequenceMessageValuation', cardinality 0..*).
+'interaction::FunctionalChain' (role 'interaction_FunctionalChain', cardinality 0..*) is associated with 'interaction::AbstractCapability' (role 'interaction_AbstractCapability60', cardinality 0..*).
+'interaction::Part' (role 'interaction_Part30', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario29', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage24', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario23', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability45', cardinality 0..*) is associated with 'interaction::AbstractCapability' (role 'interaction_AbstractCapability47', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability55', cardinality 0..*) is associated with 'interaction::State' (role 'interaction_State', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability51', cardinality 0..*) is associated with 'interaction::AbstractCapability' (role 'interaction_AbstractCapability53', cardinality 0..*).
+'interaction::Scenario' (role 'interaction_Scenario20', cardinality 0..*) is associated with 'interaction::Constraint' (role 'interaction_Constraint21', cardinality 0..*).
+'interaction::AbstractFunction' (role 'interaction_AbstractFunction14', cardinality 0..*) is associated with 'interaction::SequenceMessage' (role 'interaction_SequenceMessage13', cardinality 0..*).
+'interaction::Part' (role 'interaction_Part', cardinality 0..*) is associated with 'interaction::SequenceMessage' (role 'interaction_SequenceMessage6', cardinality 0..*).
+'interaction::Part' (role 'interaction_Part9', cardinality 0..*) is associated with 'interaction::SequenceMessage' (role 'interaction_SequenceMessage8', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability43', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario44', cardinality 0..*).
+'interaction::AbstractFunction' (role 'interaction_AbstractFunction58', cardinality 0..*) is associated with 'interaction::AbstractCapability' (role 'interaction_AbstractCapability57', cardinality 0..*).
+'interaction::Scenario' (role 'interaction_Scenario31', cardinality 0..*) is associated with 'interaction::Scenario' (role 'interaction_Scenario33', cardinality 0..*).
+'interaction::ValueSpecification' (role 'interaction_ValueSpecification', cardinality 0..*) is associated with 'interaction::SequenceMessageValuation' (role 'interaction_SequenceMessageValuation66', cardinality 0..*).
+'interaction::AbstractCapability' (role 'interaction_AbstractCapability', cardinality 0..*) is associated with 'interaction::Constraint' (role 'interaction_Constraint38', cardinality 0..*).
+'interaction::ExchangeItemElement' (role 'interaction_ExchangeItemElement', cardinality 0..*) is associated with 'interaction::SequenceMessageValuation' (role 'interaction_SequenceMessageValuation64', cardinality 0..*).
+'interaction::SequenceMessage' (role 'interaction_SequenceMessage', cardinality 0..*) is associated with 'interaction::Constraint' (role 'interaction_Constraint', cardinality 0..*).

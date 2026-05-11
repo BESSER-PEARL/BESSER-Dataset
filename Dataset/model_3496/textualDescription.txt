@@ -1,0 +1,54 @@
+The model has 22 class(es).
+The class 'servicefeaturemodel::ModifyRelationship' has the following attributes: 'orderNumber' of type int; 'targetParameterName' of type str; 'function' of type str; 'name' of type str.
+The class 'servicefeaturemodel::Service' has the following attributes: 'id' of type str; 'name' of type str; 'description' of type str.
+The class 'servicefeaturemodel::Requires' has no attributes.
+The class 'servicefeaturemodel::Variant' has no attributes.
+The class 'servicefeaturemodel::ServiceFeature' has the following attributes: 'featureType' of type str; 'maxAmount' of type int; 'required' of type bool; 'minAmount' of type int; 'associatedGSMElement' of type str; 'id' of type str; 'mapsToGSMElement' of type bool; 'description' of type str; 'name' of type str.
+The class 'servicefeaturemodel::XOR' has no attributes.
+The class 'servicefeaturemodel::ServiceFeatureDiagram' has the following attributes: 'description' of type str; 'id' of type str; 'name' of type str.
+The class 'servicefeaturemodel::OR' has the following attributes: 'maxFeaturesToChoose' of type int; 'minFeaturesToChoose' of type int.
+The class 'servicefeaturemodel::AttributeToAttributeModifyRelationship' has the following attributes: 'triggerParameterName' of type str.
+The class 'servicefeaturemodel::Attribute' has the following attributes: 'id' of type str; 'instantiationValue' of type str.
+The class 'servicefeaturemodel::MandatoryServiceFeature' has no attributes.
+The class 'ServiceFeature' has no attributes.
+The class 'servicefeaturemodel::Preference' has the following attributes: 'stakeholderGroup' of type str; 'creationDate' of type date; 'value' of type float; 'description' of type str.
+The class 'servicefeaturemodel::PossibleConfigurations' has no attributes.
+The class 'servicefeaturemodel::Excludes' has no attributes.
+The class 'ModifyRelationship' has no attributes.
+The class 'servicefeaturemodel::AttributeType' has the following attributes: 'customAttributeTypePriority' of type int; 'aggregationRule' of type str; 'toBeEvaluated' of type bool; 'name' of type str; 'description' of type str; 'scaleOrder' of type str; 'domain' of type str; 'requirement' of type str.
+The class 'servicefeaturemodel::OptionalServiceFeature' has no attributes.
+The class 'Variant' has no attributes.
+The class 'servicefeaturemodel::Configuration' has the following attributes: 'description' of type str; 'id' of type str; 'name' of type str.
+The class 'servicefeaturemodel::FeatureToAttributeModifyRelationship' has no attributes.
+The class 'servicefeaturemodel::AttributeTypes' has no attributes.
+The enumeration 'FeatureTypes' has the following literals: 'InstanceFeature', 'GroupingFeature', 'AbstractFeature'.
+The enumeration 'AttributeDomain' has the following literals: 'Boolean', 'Continuous'.
+The enumeration 'AggregationRules' has the following literals: 'AtLeastOnce', 'Maximum', 'Sum', 'Product', 'Minimum'.
+The enumeration 'ScaleOrders' has the following literals: 'LowerIsBetter', 'HigherIsBetter', 'ExistenceIsBetter'.
+'servicefeaturemodel::OptionalServiceFeature' is a specialization of 'ServiceFeature'.
+'servicefeaturemodel::FeatureToAttributeModifyRelationship' is a specialization of 'ModifyRelationship'.
+'servicefeaturemodel::OR' is a specialization of 'Variant'.
+'servicefeaturemodel::XOR' is a specialization of 'Variant'.
+'servicefeaturemodel::MandatoryServiceFeature' is a specialization of 'ServiceFeature'.
+'servicefeaturemodel::AttributeToAttributeModifyRelationship' is a specialization of 'ModifyRelationship'.
+'servicefeaturemodel::Attribute' (role 'servicefeaturemodel_Attribute', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature', cardinality 0..*).
+'servicefeaturemodel::ServiceFeatureDiagram' (role 'servicefeaturemodel_ServiceFeatureDiagram26', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature27', cardinality 0..*).
+'servicefeaturemodel::Configuration' (role 'servicefeaturemodel_Configuration33', cardinality 0..*) is associated with 'servicefeaturemodel::Attribute' (role 'servicefeaturemodel_Attribute34', cardinality 0..*).
+'servicefeaturemodel::Preference' (role 'servicefeaturemodel_Preference', cardinality 0..*) is associated with 'servicefeaturemodel::Configuration' (role 'servicefeaturemodel_Configuration31', cardinality 0..*).
+'servicefeaturemodel::AttributeTypes' (role 'servicefeaturemodel_AttributeTypes', cardinality 0..*) is associated with 'servicefeaturemodel::Service' (role 'servicefeaturemodel_Service4', cardinality 0..*).
+'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature9', cardinality 0..*) is associated with 'servicefeaturemodel::Requires' (role 'servicefeaturemodel_Requires', cardinality 0..*).
+'servicefeaturemodel::OptionalServiceFeature' (role 'servicefeaturemodel_OptionalServiceFeature', cardinality 0..*) is associated with 'servicefeaturemodel::Variant' (role 'servicefeaturemodel_Variant36', cardinality 0..*).
+'servicefeaturemodel::FeatureToAttributeModifyRelationship' (role 'servicefeaturemodel_FeatureToAttributeModifyRelationship', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature46', cardinality 0..*).
+'servicefeaturemodel::Attribute' (role 'servicefeaturemodel_Attribute16', cardinality 0..*) is associated with 'servicefeaturemodel::AttributeType' (role 'servicefeaturemodel_AttributeType', cardinality 0..*).
+'servicefeaturemodel::Excludes' (role 'servicefeaturemodel_Excludes23', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature24', cardinality 0..*).
+'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature11', cardinality 0..*) is associated with 'servicefeaturemodel::Excludes' (role 'servicefeaturemodel_Excludes', cardinality 0..*).
+'servicefeaturemodel::Configuration' (role 'servicefeaturemodel_Configuration39', cardinality 0..*) is associated with 'servicefeaturemodel::PossibleConfigurations' (role 'servicefeaturemodel_PossibleConfigurations38', cardinality 0..*).
+'servicefeaturemodel::Service' (role 'servicefeaturemodel_Service2', cardinality 0..*) is associated with 'servicefeaturemodel::PossibleConfigurations' (role 'servicefeaturemodel_PossibleConfigurations', cardinality 0..*).
+'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature21', cardinality 0..*) is associated with 'servicefeaturemodel::Requires' (role 'servicefeaturemodel_Requires20', cardinality 0..*).
+'servicefeaturemodel::Variant' (role 'servicefeaturemodel_Variant', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature7', cardinality 0..*).
+'servicefeaturemodel::AttributeType' (role 'servicefeaturemodel_AttributeType42', cardinality 0..*) is associated with 'servicefeaturemodel::AttributeTypes' (role 'servicefeaturemodel_AttributeTypes41', cardinality 0..*).
+'servicefeaturemodel::AttributeToAttributeModifyRelationship' (role 'servicefeaturemodel_AttributeToAttributeModifyRelationship', cardinality 0..*) is associated with 'servicefeaturemodel::Attribute' (role 'servicefeaturemodel_Attribute44', cardinality 0..*).
+'servicefeaturemodel::ServiceFeatureDiagram' (role 'servicefeaturemodel_ServiceFeatureDiagram', cardinality 0..*) is associated with 'servicefeaturemodel::Service' (role 'servicefeaturemodel_Service', cardinality 0..*).
+'servicefeaturemodel::ModifyRelationship' (role 'servicefeaturemodel_ModifyRelationship', cardinality 0..*) is associated with 'servicefeaturemodel::Attribute' (role 'servicefeaturemodel_Attribute18', cardinality 0..*).
+'servicefeaturemodel::Configuration' (role 'servicefeaturemodel_Configuration', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature29', cardinality 0..*).
+'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature12', cardinality 0..*) is associated with 'servicefeaturemodel::ServiceFeature' (role 'servicefeaturemodel_ServiceFeature14', cardinality 0..*).

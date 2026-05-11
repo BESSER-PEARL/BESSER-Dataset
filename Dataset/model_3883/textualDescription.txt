@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'graph::G' has no attributes.
+The class 'graph::Center' has no attributes.
+The class 'Node' has no attributes.
+The class 'graph::Boundary' has no attributes.
+The class 'graph::Node' has the following attributes: 'id' of type str.
+'graph::Center' is a specialization of 'Node'.
+'graph::Boundary' is a specialization of 'Node'.
+'graph::Node' (role 'graph_Node', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node0', cardinality 0..*).
+'graph::Node' (role 'graph_Node6', cardinality 0..*) is associated with 'graph::G' (role 'graph_G', cardinality 0..*).
+'graph::Node' (role 'graph_Node2', cardinality 0..*) is associated with 'graph::Node' (role 'graph_Node4', cardinality 0..*).

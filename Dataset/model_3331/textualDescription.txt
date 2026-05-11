@@ -1,0 +1,30 @@
+The model has 14 class(es).
+The class 'psample::Object' has the following attributes: 'Name' of type str.
+The class 'psample::Package' has the following attributes: 'Name' of type str.
+The class 'psample::PrimitiveTypeVariable' has the following attributes: 'isParameter' of type bool.
+The class 'TypedElement' has no attributes.
+The class 'psample::Variable' has the following attributes: 'isParameter' of type bool.
+The class 'Type' has no attributes.
+The class 'psample::Type' has no attributes.
+The class 'psample::Member' has no attributes.
+The class 'psample::Class' has no attributes.
+The class 'psample::Function' has no attributes.
+The class 'Object' has no attributes.
+The class 'psample::Interface' has no attributes.
+The class 'Member' has no attributes.
+The class 'psample::TypedElement' has no attributes.
+The enumeration 'Visibility' has the following literals: 'private', 'public', 'protected'.
+The enumeration 'PrimitiveTypes' has the following literals: 'double', 'int', 'string', 'bool'.
+'psample::TypedElement' is a specialization of 'Object'.
+'psample::PrimitiveTypeVariable' is a specialization of 'Type'.
+'psample::Variable' is a specialization of 'Member'.
+'psample::Interface' is a specialization of 'TypedElement'.
+'psample::Function' is a specialization of 'Member'.
+'psample::Class' is a specialization of 'TypedElement'.
+'psample::Member' is a specialization of 'Type'.
+'psample::Type' is a specialization of 'Object'.
+'psample::Package' (role 'psample_Package', cardinality 0..*) is associated with 'psample::TypedElement' (role 'psample_TypedElement', cardinality 0..*).
+'psample::Class' (role 'psample_Class', cardinality 0..*) is associated with 'psample::Member' (role 'psample_Member', cardinality 0..*).
+'psample::Function' (role 'psample_Function', cardinality 0..*) is associated with 'psample::PrimitiveTypeVariable' (role 'psample_PrimitiveTypeVariable5', cardinality 0..*).
+'psample::Function' (role 'psample_Function7', cardinality 0..*) is associated with 'psample::Variable' (role 'psample_Variable', cardinality 0..*).
+'psample::Class' (role 'psample_Class3', cardinality 0..*) is associated with 'psample::PrimitiveTypeVariable' (role 'psample_PrimitiveTypeVariable', cardinality 0..*).

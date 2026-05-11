@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'automaticexperiment::AutomaticExperiment' has the following attributes: 'referanceDataDir' of type str; 'errorFunction' of type str; 'reInit' of type bool; 'maximumNumberOfIterations' of type str; 'errorAnalysisAlgorithm' of type str; 'tolerance' of type float.
+The class 'automaticexperiment::Scenario' has no attributes.
+The class 'automaticexperiment::ModifiableParameter' has the following attributes: 'upperBound' of type float; 'featureName' of type str; 'step' of type float; 'initialValue' of type float; 'targetURI' of type str; 'lowerBound' of type float.
+The class 'Identifiable' has no attributes.
+The class 'automaticexperiment::EStructuralFeature' has no attributes.
+'automaticexperiment::AutomaticExperiment' is a specialization of 'Identifiable'.
+'automaticexperiment::AutomaticExperiment' (role 'automaticexperiment_AutomaticExperiment', cardinality 0..*) is associated with 'automaticexperiment::Scenario' (role 'automaticexperiment_Scenario', cardinality 0..*).
+'automaticexperiment::EStructuralFeature' (role 'automaticexperiment_EStructuralFeature', cardinality 0..*) is associated with 'automaticexperiment::ModifiableParameter' (role 'automaticexperiment_ModifiableParameter4', cardinality 0..*).
+'automaticexperiment::AutomaticExperiment' (role 'automaticexperiment_AutomaticExperiment2', cardinality 0..*) is associated with 'automaticexperiment::ModifiableParameter' (role 'automaticexperiment_ModifiableParameter', cardinality 0..*).

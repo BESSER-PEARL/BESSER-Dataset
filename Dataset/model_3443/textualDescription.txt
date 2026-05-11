@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'epdemo::Clazz' has the following attributes: 'Id' of type str; 'Name' of type str.
+The class 'epdemo::Teacher' has the following attributes: 'Id' of type str; 'Name' of type str.
+The class 'epdemo::Student' has the following attributes: 'Name' of type str; 'Id' of type str.
+The class 'epdemo::School' has the following attributes: 'Name' of type str; 'Id' of type str.
+'epdemo::School' (role 'epdemo_School4', cardinality 0..*) is associated with 'epdemo::Teacher' (role 'epdemo_Teacher', cardinality 0..*).
+'epdemo::Clazz' (role 'epdemo_Clazz9', cardinality 0..*) is associated with 'epdemo::Student' (role 'epdemo_Student10', cardinality 0..*).
+'epdemo::Clazz' (role 'epdemo_Clazz6', cardinality 0..*) is associated with 'epdemo::Teacher' (role 'epdemo_Teacher7', cardinality 0..*).
+'epdemo::School' (role 'epdemo_School2', cardinality 0..*) is associated with 'epdemo::Student' (role 'epdemo_Student', cardinality 0..*).
+'epdemo::School' (role 'epdemo_School', cardinality 0..*) is associated with 'epdemo::Clazz' (role 'epdemo_Clazz', cardinality 0..*).

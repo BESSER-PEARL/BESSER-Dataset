@@ -1,0 +1,489 @@
+The model has 201 class(es).
+The class 'dbl::NotEqual' has no attributes.
+The class 'dbl::FalseLiteral' has no attributes.
+The class 'dbl::EmbeddableExtensionsContainer' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'dbl::Extension' has no attributes.
+The class 'dbl::QuotedClassContent' has no attributes.
+The class 'dbl::FixedMappingPart' has the following attributes: 'code' of type str.
+The class 'dbl::ResumeGenStatement' has no attributes.
+The class 'dbl::AtLeastOneExpr' has no attributes.
+The class 'dbl::VariableAccess' has no attributes.
+The class 'dbl::Mapping' has no attributes.
+The class 'dbl::Parameter' has no attributes.
+The class 'dbl::AlternativeExpr' has no attributes.
+The class 'dbl::KeyValuePair' has no attributes.
+The class 'dbl::Cast' has no attributes.
+The class 'dbl::ArgumentExpression' has no attributes.
+The class 'dbl::BoolType' has no attributes.
+The class 'dbl::ArbitraryExpr' has no attributes.
+The class 'dbl::BooleanPropertyType' has the following attributes: 'terminal' of type str.
+The class 'dbl::BeforeInSet' has no attributes.
+The class 'dbl::DynamicMappingPart' has no attributes.
+The class 'QuotedCode' has no attributes.
+The class 'dbl::Classifier' has no attributes.
+The class 'dbl::RuleExpr' has no attributes.
+The class 'CodeBlock' has no attributes.
+The class 'VariableAccess' has no attributes.
+The class 'dbl::ResetGenContextStatement' has no attributes.
+The class 'dbl::Contains' has no attributes.
+The class 'dbl::ExtensionDefinition' has no attributes.
+The class 'dbl::Not' has no attributes.
+The class 'dbl::SetStatement' has no attributes.
+The class 'dbl::Expression' has no attributes.
+The class 'Extension' has no attributes.
+The class 'dbl::TypedElement' has the following attributes: 'isList' of type bool.
+The class 'dbl::RhsExpression' has no attributes.
+The class 'EmbeddableExtensionsContainer' has no attributes.
+The class 'dbl::EmptySet' has no attributes.
+The class 'dbl::TsRule' has the following attributes: 'metaClassName' of type str.
+The class 'dbl::GreaterEqual' has no attributes.
+The class 'dbl::SetGenContextStatement' has the following attributes: 'addAfterContext' of type bool.
+The class 'StructuredPropertyType' has no attributes.
+The class 'dbl::ExpandStatement' has no attributes.
+The class 'dbl::Mod' has no attributes.
+The class 'dbl::ReferableRhsType' has no attributes.
+The class 'dbl::IndexOf' has no attributes.
+The class 'dbl::IncludePattern' has no attributes.
+The class 'dbl::CodeBlock' has no attributes.
+The class 'PredefinedId' has no attributes.
+The class 'dbl::StartCodeBlock' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'dbl::ElementAccess' has no attributes.
+The class 'RhsExpression' has no attributes.
+The class 'dbl::IdExpr' has no attributes.
+The class 'NamedExtension' has no attributes.
+The class 'dbl::TextualSyntaxDef' has no attributes.
+The class 'Construct' has no attributes.
+The class 'AbstractVariable' has no attributes.
+The class 'dbl::Equal' has no attributes.
+The class 'dbl::ObjectAt' has no attributes.
+The class 'dbl::Clazz' has the following attributes: 'active' of type bool.
+The class 'dbl::QuotedCode' has no attributes.
+The class 'dbl::ActiveLiteral' has no attributes.
+The class 'dbl::ReferencePropertyType' has the following attributes: 'rawReference' of type bool.
+The class 'AnnotatableElement' has no attributes.
+The class 'ExpandableElement' has no attributes.
+The class 'dbl::TimeLiteral' has no attributes.
+The class 'dbl::IdResolution' has the following attributes: 'metaModelPlatformURI' of type str.
+The class 'dbl::MetaAccess' has no attributes.
+The class 'dbl::SimpleAnnotation' has the following attributes: 'value' of type str.
+The class 'dbl::FindContainer' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dbl::Minus' has no attributes.
+The class 'dbl::FirstInSet' has no attributes.
+The class 'dbl::Interface' has no attributes.
+The class 'dbl::Reactivate' has no attributes.
+The class 'dbl::IdPropertyType' has no attributes.
+The class 'dbl::EvalExpr' has no attributes.
+The class 'ModifierExtensionsContainer' has no attributes.
+The class 'dbl::Type' has no attributes.
+The class 'dbl::Div' has no attributes.
+The class 'dbl::SizeOfSet' has no attributes.
+The class 'dbl::BinaryOperator' has no attributes.
+The class 'dbl::AddToSet' has no attributes.
+The class 'dbl::Procedure' has the following attributes: 'clazz' of type bool.
+The class 'dbl::And' has no attributes.
+The class 'dbl::NativeBinding' has the following attributes: 'targetType' of type str; 'targetLanguage' of type str.
+The class 'dbl::StringLiteral' has the following attributes: 'value' of type str.
+The class 'dbl::Annotation' has no attributes.
+The class 'dbl::MappingPart' has no attributes.
+The class 'dbl::QuotedModuleContent' has no attributes.
+The class 'dbl::WhileStatement' has no attributes.
+The class 'dbl::IntType' has no attributes.
+The class 'dbl::SaveGenStatement' has no attributes.
+The class 'dbl::Terminate' has no attributes.
+The class 'dbl::DoubleType' has no attributes.
+The class 'dbl::Plus' has no attributes.
+The class 'StatementExpression' has no attributes.
+The class 'dbl::StringPropertyType' has no attributes.
+The class 'dbl::QuotedStatements' has no attributes.
+The class 'dbl::MeLiteral' has no attributes.
+The class 'dbl::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'dbl::L1Expr' has no attributes.
+The class 'dbl::LessEqual' has no attributes.
+The class 'dbl::InstanceOf' has no attributes.
+The class 'SetStatement' has no attributes.
+The class 'dbl::Greater' has no attributes.
+The class 'dbl::Neg' has no attributes.
+The class 'dbl::QuotedExpression' has no attributes.
+The class 'ClassSimilar' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'dbl::Model' has no attributes.
+The class 'dbl::StatementExpression' has no attributes.
+The class 'dbl::DepIdentifiableElement' has no attributes.
+The class 'dbl::PrimitiveType' has no attributes.
+The class 'dbl::SimpleStatement' has no attributes.
+The class 'dbl::LastInSet' has no attributes.
+The class 'dbl::Advance' has no attributes.
+The class 'dbl::AnnotatableElement' has no attributes.
+The class 'dbl::RemoveFromSet' has no attributes.
+The class 'dbl::Import' has the following attributes: 'file' of type str.
+The class 'dbl::ModifierExtensionsContainer' has no attributes.
+The class 'dbl::Less' has no attributes.
+The class 'dbl::SuperLiteral' has no attributes.
+The class 'ElementAccess' has no attributes.
+The class 'dbl::Mul' has no attributes.
+The class 'ReferableRhsType' has no attributes.
+The class 'dbl::TargetStatement' has no attributes.
+The class 'dbl::PredefinedId' has no attributes.
+The class 'dbl::ClassContentExtension' has no attributes.
+The class 'SimpleStatement' has no attributes.
+The class 'dbl::ExtensionRule' has no attributes.
+The class 'dbl::AbstractVariable' has no attributes.
+The class 'dbl::TypeLiteral' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'dbl::ClassAugment' has no attributes.
+The class 'dbl::Assignment' has no attributes.
+The class 'Module' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'dbl::ExpressionStatement' has no attributes.
+The class 'dbl::TypeAccess' has no attributes.
+The class 'dbl::ExpandSection' has no attributes.
+The class 'L1Expr' has no attributes.
+The class 'dbl::Module' has no attributes.
+The class 'dbl::WaitUntil' has no attributes.
+The class 'dbl::PropertyBindingExpr' has the following attributes: 'operator' of type str.
+The class 'dbl::Constructor' has no attributes.
+The class 'dbl::Statement' has no attributes.
+The class 'dbl::BreakStatement' has no attributes.
+The class 'dbl::ModuleContentExtension' has no attributes.
+The class 'dbl::NamedExtension' has no attributes.
+The class 'dbl::StringType' has no attributes.
+The class 'dbl::StructuredPropertyType' has no attributes.
+The class 'dbl::Construct' has the following attributes: 'concreteSyntax' of type str.
+The class 'dbl::Print' has no attributes.
+The class 'dbl::SetOp' has no attributes.
+The class 'dbl::Variable' has the following attributes: 'clazz' of type bool; 'control' of type bool.
+The class 'dbl::TerminalExpr' has the following attributes: 'terminal' of type str.
+The class 'ExpressionStatement' has no attributes.
+The class 'dbl::NamedElement' has the following attributes: 'name' of type str.
+The class 'dbl::TrueLiteral' has no attributes.
+The class 'dbl::PotentiallyHiddenIdElements' has no attributes.
+The class 'dbl::CreateObject' has no attributes.
+The class 'dbl::VoidType' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'dbl::NullLiteral' has no attributes.
+The class 'dbl::PropertyType' has no attributes.
+The class 'dbl::Pattern' has the following attributes: 'top' of type bool.
+The class 'dbl::UnaryOperator' has no attributes.
+The class 'dbl::Wait' has no attributes.
+The class 'dbl::Return' has no attributes.
+The class 'dbl::ForEachStatement' has no attributes.
+The class 'dbl::ExpandableElement' has no attributes.
+The class 'dbl::CompositePropertyType' has the following attributes: 'list' of type bool.
+The class 'dbl::AfterInSet' has no attributes.
+The class 'dbl::RuntimeExpr' has no attributes.
+The class 'dbl::IntLiteral' has the following attributes: 'value' of type int.
+The class 'dbl::ExpandExpression' has no attributes.
+The class 'dbl::CodeQuoteExpression' has no attributes.
+The class 'dbl::CompositeStatement' has no attributes.
+The class 'dbl::MetaExpr' has no attributes.
+The class 'dbl::ActivateObject' has the following attributes: 'priority' of type int.
+The class 'MappingPart' has no attributes.
+The class 'dbl::ProcedureCall' has no attributes.
+The class 'dbl::OptionalExpr' has no attributes.
+The class 'dbl::AnnotationApplication' has no attributes.
+The class 'CompositeStatement' has no attributes.
+The class 'dbl::ContinueStatement' has no attributes.
+The class 'dbl::Or' has no attributes.
+The class 'dbl::MetaLiteral' has no attributes.
+The class 'dbl::IfStatement' has no attributes.
+The class 'dbl::TestStatement' has the following attributes: 'value' of type str.
+The class 'Type' has no attributes.
+The class 'dbl::IntPropertyType' has no attributes.
+The class 'Statement' has no attributes.
+The class 'dbl::ClassSimilar' has no attributes.
+The class 'dbl::MappingStatement' has no attributes.
+The class 'dbl::DeprecatedProcedureCallStatement' has no attributes.
+The class 'SetOp' has no attributes.
+The class 'dbl::SequenceExpr' has no attributes.
+The class 'dbl::ConsiderIdElements' has no attributes.
+The enumeration 'BindingExprOpKind' has the following literals: 'BOOL', 'ASSIGN', 'ADD'.
+'dbl::TrueLiteral' is a specialization of 'L1Expr'.
+'dbl::MetaAccess' is a specialization of 'VariableAccess'.
+'dbl::StringType' is a specialization of 'PrimitiveType'.
+'dbl::ExpressionStatement' is a specialization of 'SimpleStatement'.
+'dbl::ConsiderIdElements' is a specialization of 'Statement'.
+'dbl::AbstractVariable' is a specialization of 'NamedElement'.
+'dbl::Advance' is a specialization of 'SimpleStatement'.
+'dbl::Cast' is a specialization of 'UnaryOperator'.
+'dbl::Pattern' is a specialization of 'NamedElement'.
+'dbl::ActivateObject' is a specialization of 'SimpleStatement'.
+'dbl::MappingStatement' is a specialization of 'Statement'.
+'dbl::LessEqual' is a specialization of 'BinaryOperator'.
+'dbl::NotEqual' is a specialization of 'BinaryOperator'.
+'dbl::Classifier' is a specialization of 'Type'.
+'dbl::QuotedModuleContent' is a specialization of 'QuotedCode'.
+'dbl::NamedExtension' is a specialization of 'Extension'.
+'dbl::ArbitraryExpr' is a specialization of 'RhsExpression'.
+'dbl::Cast' is a specialization of 'TypedElement'.
+'dbl::Return' is a specialization of 'SimpleStatement'.
+'dbl::RuleExpr' is a specialization of 'RhsExpression'.
+'dbl::WhileStatement' is a specialization of 'CompositeStatement'.
+'dbl::NullLiteral' is a specialization of 'L1Expr'.
+'dbl::QuotedExpression' is a specialization of 'QuotedCode'.
+'dbl::L1Expr' is a specialization of 'Expression'.
+'dbl::ResumeGenStatement' is a specialization of 'SimpleStatement'.
+'dbl::NamedExtension' is a specialization of 'NamedElement'.
+'dbl::EmptySet' is a specialization of 'SetStatement'.
+'dbl::AtLeastOneExpr' is a specialization of 'RhsExpression'.
+'dbl::QuotedClassContent' is a specialization of 'QuotedCode'.
+'dbl::StructuredPropertyType' is a specialization of 'PropertyType'.
+'dbl::BinaryOperator' is a specialization of 'Expression'.
+'dbl::ClassSimilar' is a specialization of 'EmbeddableExtensionsContainer'.
+'dbl::BoolType' is a specialization of 'PrimitiveType'.
+'dbl::Contains' is a specialization of 'SetOp'.
+'dbl::CompositePropertyType' is a specialization of 'StructuredPropertyType'.
+'dbl::AddToSet' is a specialization of 'SetStatement'.
+'dbl::StringPropertyType' is a specialization of 'PropertyType'.
+'dbl::SequenceExpr' is a specialization of 'RhsExpression'.
+'dbl::PotentiallyHiddenIdElements' is a specialization of 'Statement'.
+'dbl::FalseLiteral' is a specialization of 'L1Expr'.
+'dbl::Or' is a specialization of 'BinaryOperator'.
+'dbl::MeLiteral' is a specialization of 'PredefinedId'.
+'dbl::ClassContentExtension' is a specialization of 'NamedExtension'.
+'dbl::MetaLiteral' is a specialization of 'PredefinedId'.
+'dbl::Equal' is a specialization of 'BinaryOperator'.
+'dbl::QuotedModuleContent' is a specialization of 'Module'.
+'dbl::MetaExpr' is a specialization of 'Expression'.
+'dbl::Clazz' is a specialization of 'ClassSimilar'.
+'dbl::StringLiteral' is a specialization of 'L1Expr'.
+'dbl::WaitUntil' is a specialization of 'SimpleStatement'.
+'dbl::AbstractVariable' is a specialization of 'TypedElement'.
+'dbl::Not' is a specialization of 'UnaryOperator'.
+'dbl::Mod' is a specialization of 'BinaryOperator'.
+'dbl::CodeBlock' is a specialization of 'Construct'.
+'dbl::ExpandSection' is a specialization of 'CompositeStatement'.
+'dbl::BooleanPropertyType' is a specialization of 'PropertyType'.
+'dbl::Module' is a specialization of 'NamedElement'.
+'dbl::FindContainer' is a specialization of 'Statement'.
+'dbl::IdPropertyType' is a specialization of 'PropertyType'.
+'dbl::Plus' is a specialization of 'BinaryOperator'.
+'dbl::Annotation' is a specialization of 'NamedElement'.
+'dbl::Mapping' is a specialization of 'CodeBlock'.
+'dbl::SetOp' is a specialization of 'PredefinedId'.
+'dbl::Greater' is a specialization of 'BinaryOperator'.
+'dbl::Construct' is a specialization of 'NamedExtension'.
+'dbl::GreaterEqual' is a specialization of 'BinaryOperator'.
+'dbl::TypeLiteral' is a specialization of 'PredefinedId'.
+'dbl::TargetStatement' is a specialization of 'Statement'.
+'dbl::StartCodeBlock' is a specialization of 'CodeBlock'.
+'dbl::Neg' is a specialization of 'UnaryOperator'.
+'dbl::Variable' is a specialization of 'ModifierExtensionsContainer'.
+'dbl::ProcedureCall' is a specialization of 'StatementExpression'.
+'dbl::Procedure' is a specialization of 'CodeBlock'.
+'dbl::ClassSimilar' is a specialization of 'ModifierExtensionsContainer'.
+'dbl::AlternativeExpr' is a specialization of 'RhsExpression'.
+'dbl::AfterInSet' is a specialization of 'SetOp'.
+'dbl::Reactivate' is a specialization of 'SimpleStatement'.
+'dbl::Classifier' is a specialization of 'NamedElement'.
+'dbl::QuotedClassContent' is a specialization of 'ClassSimilar'.
+'dbl::Statement' is a specialization of 'Construct'.
+'dbl::CreateObject' is a specialization of 'L1Expr'.
+'dbl::SaveGenStatement' is a specialization of 'SimpleStatement'.
+'dbl::InstanceOf' is a specialization of 'BinaryOperator'.
+'dbl::PropertyBindingExpr' is a specialization of 'NamedElement'.
+'dbl::TsRule' is a specialization of 'ReferableRhsType'.
+'dbl::Classifier' is a specialization of 'ReferableRhsType'.
+'dbl::TypeAccess' is a specialization of 'ExpandableElement'.
+'dbl::FixedMappingPart' is a specialization of 'MappingPart'.
+'dbl::Minus' is a specialization of 'BinaryOperator'.
+'dbl::ModuleContentExtension' is a specialization of 'NamedExtension'.
+'dbl::SizeOfSet' is a specialization of 'SetOp'.
+'dbl::TestStatement' is a specialization of 'Statement'.
+'dbl::CompositeStatement' is a specialization of 'Statement'.
+'dbl::RuntimeExpr' is a specialization of 'RhsExpression'.
+'dbl::DeprecatedProcedureCallStatement' is a specialization of 'ExpressionStatement'.
+'dbl::IntPropertyType' is a specialization of 'PropertyType'.
+'dbl::Module' is a specialization of 'EmbeddableExtensionsContainer'.
+'dbl::Procedure' is a specialization of 'NamedElement'.
+'dbl::Terminate' is a specialization of 'SimpleStatement'.
+'dbl::ExpandExpression' is a specialization of 'Expression'.
+'dbl::ForEachStatement' is a specialization of 'CompositeStatement'.
+'dbl::Variable' is a specialization of 'AbstractVariable'.
+'dbl::Print' is a specialization of 'SimpleStatement'.
+'dbl::ObjectAt' is a specialization of 'SetOp'.
+'dbl::SetStatement' is a specialization of 'SimpleStatement'.
+'dbl::IncludePattern' is a specialization of 'Statement'.
+'dbl::Less' is a specialization of 'BinaryOperator'.
+'dbl::ElementAccess' is a specialization of 'Expression'.
+'dbl::Div' is a specialization of 'BinaryOperator'.
+'dbl::VariableAccess' is a specialization of 'ElementAccess'.
+'dbl::DoubleType' is a specialization of 'PrimitiveType'.
+'dbl::UnaryOperator' is a specialization of 'Expression'.
+'dbl::VariableAccess' is a specialization of 'ExpandableElement'.
+'dbl::RemoveFromSet' is a specialization of 'SetStatement'.
+'dbl::NamedElement' is a specialization of 'ExpandableElement'.
+'dbl::TimeLiteral' is a specialization of 'L1Expr'.
+'dbl::ReferableRhsType' is a specialization of 'NamedElement'.
+'dbl::SimpleAnnotation' is a specialization of 'NamedElement'.
+'dbl::QuotedStatements' is a specialization of 'QuotedCode'.
+'dbl::IfStatement' is a specialization of 'CompositeStatement'.
+'dbl::PropertyBindingExpr' is a specialization of 'RhsExpression'.
+'dbl::SimpleStatement' is a specialization of 'Statement'.
+'dbl::FirstInSet' is a specialization of 'SetOp'.
+'dbl::CreateObject' is a specialization of 'TypedElement'.
+'dbl::TsRule' is a specialization of 'NamedElement'.
+'dbl::BeforeInSet' is a specialization of 'SetOp'.
+'dbl::ReferencePropertyType' is a specialization of 'StructuredPropertyType'.
+'dbl::Mul' is a specialization of 'BinaryOperator'.
+'dbl::IndexOf' is a specialization of 'SetOp'.
+'dbl::ExpandStatement' is a specialization of 'Statement'.
+'dbl::IdExpr' is a specialization of 'L1Expr'.
+'dbl::Clazz' is a specialization of 'Classifier'.
+'dbl::Variable' is a specialization of 'Statement'.
+'dbl::IntLiteral' is a specialization of 'L1Expr'.
+'dbl::TerminalExpr' is a specialization of 'RhsExpression'.
+'dbl::DoubleLiteral' is a specialization of 'L1Expr'.
+'dbl::ActiveLiteral' is a specialization of 'L1Expr'.
+'dbl::TypeAccess' is a specialization of 'ElementAccess'.
+'dbl::Interface' is a specialization of 'Classifier'.
+'dbl::ExpandExpression' is a specialization of 'StatementExpression'.
+'dbl::ExtensionRule' is a specialization of 'NamedElement'.
+'dbl::IntType' is a specialization of 'PrimitiveType'.
+'dbl::ContinueStatement' is a specialization of 'SimpleStatement'.
+'dbl::Assignment' is a specialization of 'SimpleStatement'.
+'dbl::Procedure' is a specialization of 'AnnotatableElement'.
+'dbl::Procedure' is a specialization of 'TypedElement'.
+'dbl::LastInSet' is a specialization of 'SetOp'.
+'dbl::VoidType' is a specialization of 'PrimitiveType'.
+'dbl::Wait' is a specialization of 'SimpleStatement'.
+'dbl::ClassAugment' is a specialization of 'ClassSimilar'.
+'dbl::OptionalExpr' is a specialization of 'RhsExpression'.
+'dbl::CodeQuoteExpression' is a specialization of 'Expression'.
+'dbl::EvalExpr' is a specialization of 'Expression'.
+'dbl::SetGenContextStatement' is a specialization of 'SimpleStatement'.
+'dbl::Expression' is a specialization of 'Construct'.
+'dbl::ResetGenContextStatement' is a specialization of 'SimpleStatement'.
+'dbl::PrimitiveType' is a specialization of 'Type'.
+'dbl::SuperLiteral' is a specialization of 'PredefinedId'.
+'dbl::BreakStatement' is a specialization of 'SimpleStatement'.
+'dbl::DynamicMappingPart' is a specialization of 'MappingPart'.
+'dbl::ExtensionDefinition' is a specialization of 'NamedElement'.
+'dbl::And' is a specialization of 'BinaryOperator'.
+'dbl::Parameter' is a specialization of 'AbstractVariable'.
+'dbl::SetGenContextStatement' (role 'dbl_SetGenContextStatement', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression227', cardinality 0..*).
+'dbl::IdResolution' (role 'dbl_IdResolution', cardinality 0..*) is associated with 'dbl::Module' (role 'dbl_Module19', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression149', cardinality 0..*) is associated with 'dbl::BinaryOperator' (role 'dbl_BinaryOperator', cardinality 0..*).
+'dbl::Clazz' (role 'dbl_Clazz', cardinality 0..*) is associated with 'dbl::ClassSimilar' (role 'dbl_ClassSimilar51', cardinality 0..*).
+'dbl::Variable' (role 'dbl_Variable138', cardinality 0..*) is associated with 'dbl::ForEachStatement' (role 'dbl_ForEachStatement', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression115', cardinality 0..*) is associated with 'dbl::SetStatement' (role 'dbl_SetStatement114', cardinality 0..*).
+'dbl::Procedure' (role 'dbl_Procedure49', cardinality 0..*) is associated with 'dbl::ClassSimilar' (role 'dbl_ClassSimilar48', cardinality 0..*).
+'dbl::EmbeddableExtensionsContainer' (role 'dbl_EmbeddableExtensionsContainer', cardinality 0..*) is associated with 'dbl::Extension' (role 'dbl_Extension', cardinality 0..*).
+'dbl::Interface' (role 'dbl_Interface80', cardinality 0..*) is associated with 'dbl::Procedure' (role 'dbl_Procedure81', cardinality 0..*).
+'dbl::RhsExpression' (role 'dbl_RhsExpression198', cardinality 0..*) is associated with 'dbl::AtLeastOneExpr' (role 'dbl_AtLeastOneExpr', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression235', cardinality 0..*) is associated with 'dbl::ExpandExpression' (role 'dbl_ExpandExpression', cardinality 0..*).
+'dbl::DynamicMappingPart' (role 'dbl_DynamicMappingPart', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression233', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock131', cardinality 0..*) is associated with 'dbl::IfStatement' (role 'dbl_IfStatement130', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression216', cardinality 0..*) is associated with 'dbl::Mapping' (role 'dbl_Mapping215', cardinality 0..*).
+'dbl::ConsiderIdElements' (role 'dbl_ConsiderIdElements', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression270', cardinality 0..*).
+'dbl::ClassSimilar' (role 'dbl_ClassSimilar63', cardinality 0..*) is associated with 'dbl::StartCodeBlock' (role 'dbl_StartCodeBlock64', cardinality 0..*).
+'dbl::SaveGenStatement' (role 'dbl_SaveGenStatement', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression229', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression104', cardinality 0..*) is associated with 'dbl::Reactivate' (role 'dbl_Reactivate', cardinality 0..*).
+'dbl::TypedElement' (role 'dbl_TypedElement25', cardinality 0..*) is associated with 'dbl::IdExpr' (role 'dbl_IdExpr', cardinality 0..*).
+'dbl::KeyValuePair' (role 'dbl_KeyValuePair38', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression', cardinality 0..*).
+'dbl::RhsExpression' (role 'dbl_RhsExpression200', cardinality 0..*) is associated with 'dbl::ArbitraryExpr' (role 'dbl_ArbitraryExpr', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression117', cardinality 0..*) is associated with 'dbl::AddToSet' (role 'dbl_AddToSet', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression237', cardinality 0..*) is associated with 'dbl::ExpandStatement' (role 'dbl_ExpandStatement', cardinality 0..*).
+'dbl::IncludePattern' (role 'dbl_IncludePattern', cardinality 0..*) is associated with 'dbl::Pattern' (role 'dbl_Pattern272', cardinality 0..*).
+'dbl::ExtensionDefinition' (role 'dbl_ExtensionDefinition', cardinality 0..*) is associated with 'dbl::Module' (role 'dbl_Module11', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression144', cardinality 0..*) is associated with 'dbl::ForEachStatement' (role 'dbl_ForEachStatement143', cardinality 0..*).
+'dbl::RhsExpression' (role 'dbl_RhsExpression202', cardinality 0..*) is associated with 'dbl::AlternativeExpr' (role 'dbl_AlternativeExpr', cardinality 0..*).
+'dbl::Module' (role 'dbl_Module17', cardinality 0..*) is associated with 'dbl::Variable' (role 'dbl_Variable', cardinality 0..*).
+'dbl::IdExpr' (role 'dbl_IdExpr161', cardinality 0..*) is associated with 'dbl::IdExpr' (role 'dbl_IdExpr159', cardinality 0..*).
+'dbl::Module' (role 'dbl_Module13', cardinality 0..*) is associated with 'dbl::Annotation' (role 'dbl_Annotation', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression100', cardinality 0..*) is associated with 'dbl::Return' (role 'dbl_Return', cardinality 0..*).
+'dbl::Annotation' (role 'dbl_Annotation32', cardinality 0..*) is associated with 'dbl::AnnotationApplication' (role 'dbl_AnnotationApplication', cardinality 0..*).
+'dbl::AnnotationApplication' (role 'dbl_AnnotationApplication34', cardinality 0..*) is associated with 'dbl::KeyValuePair' (role 'dbl_KeyValuePair', cardinality 0..*).
+'dbl::IdExpr' (role 'dbl_IdExpr167', cardinality 0..*) is associated with 'dbl::ArgumentExpression' (role 'dbl_ArgumentExpression', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression72', cardinality 0..*) is associated with 'dbl::Clazz' (role 'dbl_Clazz71', cardinality 0..*).
+'dbl::IdResolution' (role 'dbl_IdResolution251', cardinality 0..*) is associated with 'dbl::Pattern' (role 'dbl_Pattern252', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression152', cardinality 0..*) is associated with 'dbl::BinaryOperator' (role 'dbl_BinaryOperator151', cardinality 0..*).
+'dbl::TsRule' (role 'dbl_TsRule209', cardinality 0..*) is associated with 'dbl::RuleExpr' (role 'dbl_RuleExpr208', cardinality 0..*).
+'dbl::Statement' (role 'dbl_Statement', cardinality 0..*) is associated with 'dbl::CodeBlock' (role 'dbl_CodeBlock', cardinality 0..*).
+'dbl::Procedure' (role 'dbl_Procedure27', cardinality 0..*) is associated with 'dbl::Parameter' (role 'dbl_Parameter', cardinality 0..*).
+'dbl::ClassSimilar' (role 'dbl_ClassSimilar57', cardinality 0..*) is associated with 'dbl::StartCodeBlock' (role 'dbl_StartCodeBlock58', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression245', cardinality 0..*) is associated with 'dbl::QuotedExpression' (role 'dbl_QuotedExpression', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression87', cardinality 0..*) is associated with 'dbl::Variable' (role 'dbl_Variable86', cardinality 0..*).
+'dbl::FindContainer' (role 'dbl_FindContainer', cardinality 0..*) is associated with 'dbl::Parameter' (role 'dbl_Parameter262', cardinality 0..*).
+'dbl::IfStatement' (role 'dbl_IfStatement127', cardinality 0..*) is associated with 'dbl::CodeBlock' (role 'dbl_CodeBlock128', cardinality 0..*).
+'dbl::MappingStatement' (role 'dbl_MappingStatement', cardinality 0..*) is associated with 'dbl::MappingPart' (role 'dbl_MappingPart222', cardinality 0..*).
+'dbl::Module' (role 'dbl_Module15', cardinality 0..*) is associated with 'dbl::Procedure' (role 'dbl_Procedure', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression133', cardinality 0..*) is associated with 'dbl::WhileStatement' (role 'dbl_WhileStatement', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression154', cardinality 0..*) is associated with 'dbl::UnaryOperator' (role 'dbl_UnaryOperator', cardinality 0..*).
+'dbl::ExtensionRule' (role 'dbl_ExtensionRule190', cardinality 0..*) is associated with 'dbl::RuleExpr' (role 'dbl_RuleExpr', cardinality 0..*).
+'dbl::Advance' (role 'dbl_Advance', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression108', cardinality 0..*).
+'dbl::PropertyType' (role 'dbl_PropertyType', cardinality 0..*) is associated with 'dbl::PropertyBindingExpr' (role 'dbl_PropertyBindingExpr', cardinality 0..*).
+'dbl::ExpandableElement' (role 'dbl_ExpandableElement', cardinality 0..*) is associated with 'dbl::ExpandExpression' (role 'dbl_ExpandExpression249', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression94', cardinality 0..*) is associated with 'dbl::Assignment' (role 'dbl_Assignment93', cardinality 0..*).
+'dbl::ExtensionDefinition' (role 'dbl_ExtensionDefinition174', cardinality 0..*) is associated with 'dbl::Classifier' (role 'dbl_Classifier175', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression102', cardinality 0..*) is associated with 'dbl::WaitUntil' (role 'dbl_WaitUntil', cardinality 0..*).
+'dbl::Print' (role 'dbl_Print', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression110', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression218', cardinality 0..*) is associated with 'dbl::MetaExpr' (role 'dbl_MetaExpr', cardinality 0..*).
+'dbl::Module' (role 'dbl_Module9', cardinality 0..*) is associated with 'dbl::ClassAugment' (role 'dbl_ClassAugment', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock122', cardinality 0..*) is associated with 'dbl::IfStatement' (role 'dbl_IfStatement121', cardinality 0..*).
+'dbl::KeyValuePair' (role 'dbl_KeyValuePair36', cardinality 0..*) is associated with 'dbl::VariableAccess' (role 'dbl_VariableAccess', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression156', cardinality 0..*) is associated with 'dbl::EvalExpr' (role 'dbl_EvalExpr', cardinality 0..*).
+'dbl::TextualSyntaxDef' (role 'dbl_TextualSyntaxDef183', cardinality 0..*) is associated with 'dbl::TsRule' (role 'dbl_TsRule', cardinality 0..*).
+'dbl::ModifierExtensionsContainer' (role 'dbl_ModifierExtensionsContainer', cardinality 0..*) is associated with 'dbl::Extension' (role 'dbl_Extension22', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression96', cardinality 0..*) is associated with 'dbl::DeprecatedProcedureCallStatement' (role 'dbl_DeprecatedProcedureCallStatement', cardinality 0..*).
+'dbl::ForEachStatement' (role 'dbl_ForEachStatement146', cardinality 0..*) is associated with 'dbl::CodeBlock' (role 'dbl_CodeBlock147', cardinality 0..*).
+'dbl::ExpandSection' (role 'dbl_ExpandSection', cardinality 0..*) is associated with 'dbl::CodeBlock' (role 'dbl_CodeBlock242', cardinality 0..*).
+'dbl::VariableAccess' (role 'dbl_VariableAccess91', cardinality 0..*) is associated with 'dbl::Assignment' (role 'dbl_Assignment', cardinality 0..*).
+'dbl::MappingPart' (role 'dbl_MappingPart', cardinality 0..*) is associated with 'dbl::Mapping' (role 'dbl_Mapping213', cardinality 0..*).
+'dbl::Constructor' (role 'dbl_Constructor', cardinality 0..*) is associated with 'dbl::Clazz' (role 'dbl_Clazz69', cardinality 0..*).
+'dbl::SetStatement' (role 'dbl_SetStatement', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression112', cardinality 0..*).
+'dbl::IfStatement' (role 'dbl_IfStatement', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression119', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock268', cardinality 0..*) is associated with 'dbl::FindContainer' (role 'dbl_FindContainer267', cardinality 0..*).
+'dbl::RuntimeExpr' (role 'dbl_RuntimeExpr', cardinality 0..*) is associated with 'dbl::RhsExpression' (role 'dbl_RhsExpression196', cardinality 0..*).
+'dbl::NamedElement' (role 'dbl_NamedElement', cardinality 0..*) is associated with 'dbl::IdExpr' (role 'dbl_IdExpr163', cardinality 0..*).
+'dbl::ReferableRhsType' (role 'dbl_ReferableRhsType', cardinality 0..*) is associated with 'dbl::StructuredPropertyType' (role 'dbl_StructuredPropertyType', cardinality 0..*).
+'dbl::NativeBinding' (role 'dbl_NativeBinding', cardinality 0..*) is associated with 'dbl::Classifier' (role 'dbl_Classifier44', cardinality 0..*).
+'dbl::Interface' (role 'dbl_Interface', cardinality 0..*) is associated with 'dbl::ClassSimilar' (role 'dbl_ClassSimilar53', cardinality 0..*).
+'dbl::Import' (role 'dbl_Import4', cardinality 0..*) is associated with 'dbl::Model' (role 'dbl_Model5', cardinality 0..*).
+'dbl::AnnotatableElement' (role 'dbl_AnnotatableElement42', cardinality 0..*) is associated with 'dbl::SimpleAnnotation' (role 'dbl_SimpleAnnotation', cardinality 0..*).
+'dbl::Pattern' (role 'dbl_Pattern', cardinality 0..*) is associated with 'dbl::ReferencePropertyType' (role 'dbl_ReferencePropertyType', cardinality 0..*).
+'dbl::ClassAugment' (role 'dbl_ClassAugment77', cardinality 0..*) is associated with 'dbl::Clazz' (role 'dbl_Clazz78', cardinality 0..*).
+'dbl::ClassSimilar' (role 'dbl_ClassSimilar55', cardinality 0..*) is associated with 'dbl::StartCodeBlock' (role 'dbl_StartCodeBlock', cardinality 0..*).
+'dbl::QuotedStatements' (role 'dbl_QuotedStatements', cardinality 0..*) is associated with 'dbl::Statement' (role 'dbl_Statement247', cardinality 0..*).
+'dbl::VariableAccess' (role 'dbl_VariableAccess141', cardinality 0..*) is associated with 'dbl::ForEachStatement' (role 'dbl_ForEachStatement140', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression225', cardinality 0..*) is associated with 'dbl::MappingStatement' (role 'dbl_MappingStatement224', cardinality 0..*).
+'dbl::TsRule' (role 'dbl_TsRule185', cardinality 0..*) is associated with 'dbl::RhsExpression' (role 'dbl_RhsExpression', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression106', cardinality 0..*) is associated with 'dbl::ActivateObject' (role 'dbl_ActivateObject', cardinality 0..*).
+'dbl::ResumeGenStatement' (role 'dbl_ResumeGenStatement', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression231', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock265', cardinality 0..*) is associated with 'dbl::FindContainer' (role 'dbl_FindContainer264', cardinality 0..*).
+'dbl::TypedElement' (role 'dbl_TypedElement', cardinality 0..*) is associated with 'dbl::PrimitiveType' (role 'dbl_PrimitiveType', cardinality 0..*).
+'dbl::Annotation' (role 'dbl_Annotation29', cardinality 0..*) is associated with 'dbl::Variable' (role 'dbl_Variable30', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock136', cardinality 0..*) is associated with 'dbl::WhileStatement' (role 'dbl_WhileStatement135', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock220', cardinality 0..*) is associated with 'dbl::TargetStatement' (role 'dbl_TargetStatement', cardinality 0..*).
+'dbl::ExtensionRule' (role 'dbl_ExtensionRule', cardinality 0..*) is associated with 'dbl::TextualSyntaxDef' (role 'dbl_TextualSyntaxDef181', cardinality 0..*).
+'dbl::Parameter' (role 'dbl_Parameter75', cardinality 0..*) is associated with 'dbl::Constructor' (role 'dbl_Constructor74', cardinality 0..*).
+'dbl::AlternativeExpr' (role 'dbl_AlternativeExpr204', cardinality 0..*) is associated with 'dbl::RhsExpression' (role 'dbl_RhsExpression205', cardinality 0..*).
+'dbl::IncludePattern' (role 'dbl_IncludePattern274', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression275', cardinality 0..*).
+'dbl::Variable' (role 'dbl_Variable46', cardinality 0..*) is associated with 'dbl::ClassSimilar' (role 'dbl_ClassSimilar', cardinality 0..*).
+'dbl::AnnotationApplication' (role 'dbl_AnnotationApplication40', cardinality 0..*) is associated with 'dbl::AnnotatableElement' (role 'dbl_AnnotatableElement', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression98', cardinality 0..*) is associated with 'dbl::ProcedureCall' (role 'dbl_ProcedureCall', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression125', cardinality 0..*) is associated with 'dbl::IfStatement' (role 'dbl_IfStatement124', cardinality 0..*).
+'dbl::ExtensionRule' (role 'dbl_ExtensionRule187', cardinality 0..*) is associated with 'dbl::Classifier' (role 'dbl_Classifier188', cardinality 0..*).
+'dbl::CodeQuoteExpression' (role 'dbl_CodeQuoteExpression', cardinality 0..*) is associated with 'dbl::QuotedCode' (role 'dbl_QuotedCode', cardinality 0..*).
+'dbl::StatementExpression' (role 'dbl_StatementExpression', cardinality 0..*) is associated with 'dbl::ExpressionStatement' (role 'dbl_ExpressionStatement', cardinality 0..*).
+'dbl::Module' (role 'dbl_Module7', cardinality 0..*) is associated with 'dbl::Classifier' (role 'dbl_Classifier', cardinality 0..*).
+'dbl::Import' (role 'dbl_Import', cardinality 0..*) is associated with 'dbl::Model' (role 'dbl_Model', cardinality 0..*).
+'dbl::IdExpr' (role 'dbl_IdExpr172', cardinality 0..*) is associated with 'dbl::ElementAccess' (role 'dbl_ElementAccess', cardinality 0..*).
+'dbl::RhsExpression' (role 'dbl_RhsExpression192', cardinality 0..*) is associated with 'dbl::SequenceExpr' (role 'dbl_SequenceExpr', cardinality 0..*).
+'dbl::ExtensionDefinition' (role 'dbl_ExtensionDefinition179', cardinality 0..*) is associated with 'dbl::Mapping' (role 'dbl_Mapping', cardinality 0..*).
+'dbl::ClassSimilar' (role 'dbl_ClassSimilar66', cardinality 0..*) is associated with 'dbl::StartCodeBlock' (role 'dbl_StartCodeBlock67', cardinality 0..*).
+'dbl::ArgumentExpression' (role 'dbl_ArgumentExpression169', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression170', cardinality 0..*).
+'dbl::Expression' (role 'dbl_Expression240', cardinality 0..*) is associated with 'dbl::ExpandStatement' (role 'dbl_ExpandStatement239', cardinality 0..*).
+'dbl::Interface' (role 'dbl_Interface82', cardinality 0..*) is associated with 'dbl::Interface' (role 'dbl_Interface84', cardinality 0..*).
+'dbl::TextualSyntaxDef' (role 'dbl_TextualSyntaxDef', cardinality 0..*) is associated with 'dbl::ExtensionDefinition' (role 'dbl_ExtensionDefinition177', cardinality 0..*).
+'dbl::ClassSimilar' (role 'dbl_ClassSimilar60', cardinality 0..*) is associated with 'dbl::StartCodeBlock' (role 'dbl_StartCodeBlock61', cardinality 0..*).
+'dbl::RhsExpression' (role 'dbl_RhsExpression194', cardinality 0..*) is associated with 'dbl::OptionalExpr' (role 'dbl_OptionalExpr', cardinality 0..*).
+'dbl::CodeBlock' (role 'dbl_CodeBlock258', cardinality 0..*) is associated with 'dbl::Pattern' (role 'dbl_Pattern257', cardinality 0..*).
+'dbl::PredefinedId' (role 'dbl_PredefinedId', cardinality 0..*) is associated with 'dbl::IdExpr' (role 'dbl_IdExpr165', cardinality 0..*).
+'dbl::Pattern' (role 'dbl_Pattern254', cardinality 0..*) is associated with 'dbl::Parameter' (role 'dbl_Parameter255', cardinality 0..*).
+'dbl::PotentiallyHiddenIdElements' (role 'dbl_PotentiallyHiddenIdElements', cardinality 0..*) is associated with 'dbl::CodeBlock' (role 'dbl_CodeBlock260', cardinality 0..*).
+'dbl::Model' (role 'dbl_Model2', cardinality 0..*) is associated with 'dbl::Module' (role 'dbl_Module', cardinality 0..*).
+'dbl::SetOp' (role 'dbl_SetOp', cardinality 0..*) is associated with 'dbl::Expression' (role 'dbl_Expression158', cardinality 0..*).

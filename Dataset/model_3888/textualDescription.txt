@@ -1,0 +1,203 @@
+The model has 86 class(es).
+The class 'gaml::IntLiteral' has no attributes.
+The class 'VarDefinition' has no attributes.
+The class 'gaml::S::If' has no attributes.
+The class 'gaml::Entry' has no attributes.
+The class 'EquationDefinition' has no attributes.
+The class 'gaml::TerminalExpression' has no attributes.
+The class 'gaml::UnitFakeDefinition' has no attributes.
+The class 'gaml::S::Definition' has no attributes.
+The class 'gaml::VarDefinition' has no attributes.
+The class 'gaml::S::Set' has no attributes.
+The class 'gaml::Access' has the following attributes: 'named_exp' of type str.
+The class 'gaml::HeadlessExperiment' has the following attributes: 'key' of type str; 'importURI' of type str; 'firstFacet' of type str; 'name' of type str.
+The class 'gaml::ActionRef' has no attributes.
+The class 'gaml::EquationDefinition' has no attributes.
+The class 'gaml::Parameter' has the following attributes: 'builtInFacetKey' of type str.
+The class 'gaml::VariableRef' has no attributes.
+The class 'gaml::S::Loop' has no attributes.
+The class 'gaml::SkillRef' has no attributes.
+The class 'gaml::S::Return' has no attributes.
+The class 'gaml::EquationFakeDefinition' has no attributes.
+The class 'gaml::S::Declaration' has no attributes.
+The class 'Entry' has no attributes.
+The class 'gaml::TypeInfo' has no attributes.
+The class 'gaml::TypeDefinition' has no attributes.
+The class 'gaml::ActionDefinition' has no attributes.
+The class 'gaml::Facet' has the following attributes: 'key' of type str.
+The class 'gaml::ColorLiteral' has no attributes.
+The class 'gaml::ActionFakeDefinition' has no attributes.
+The class 'gaml::BooleanLiteral' has no attributes.
+The class 'gaml::S::DirectAssignment' has no attributes.
+The class 'ActionDefinition' has no attributes.
+The class 'gaml::S::Action' has no attributes.
+The class 'gaml::Cast' has no attributes.
+The class 'GamlDefinition' has no attributes.
+The class 'gaml::S::Global' has no attributes.
+The class 'gaml::ArgumentPair' has no attributes.
+The class 'gaml::S::Species' has no attributes.
+The class 'gaml::Statement' has the following attributes: 'firstFacet' of type str; 'key' of type str.
+The class 'gaml::S::Reflex' has no attributes.
+The class 'gaml::DoubleLiteral' has no attributes.
+The class 'gaml::Expression' has the following attributes: 'op' of type str.
+The class 'gaml::Pair' has no attributes.
+The class 'gaml::Binary' has no attributes.
+The class 'gaml::EquationRef' has no attributes.
+The class 'gaml::StringLiteral' has no attributes.
+The class 'gaml::S::Do' has no attributes.
+The class 'gaml::Block' has no attributes.
+The class 'S::Assignment' has no attributes.
+The class 'S::Declaration' has no attributes.
+The class 'gaml::StandaloneBlock' has no attributes.
+The class 'gaml::Pragma' has the following attributes: 'name' of type str.
+The class 'gaml::Function' has no attributes.
+The class 'Expression' has no attributes.
+The class 'gaml::speciesOrGridDisplayStatement' has no attributes.
+The class 'gaml::Unit' has no attributes.
+The class 'gaml::S::Assignment' has no attributes.
+The class 'gaml::Import' has the following attributes: 'importURI' of type str.
+The class 'gaml::S::Var' has no attributes.
+The class 'gaml::Parameters' has no attributes.
+The class 'gaml::S::Experiment' has no attributes.
+The class 'gaml::If' has no attributes.
+The class 'gaml::VarFakeDefinition' has no attributes.
+The class 'gaml::StringEvaluator' has the following attributes: 'toto' of type str.
+The class 'gaml::ArgumentDefinition' has no attributes.
+The class 'gaml::SkillFakeDefinition' has no attributes.
+The class 'gaml::EObject' has no attributes.
+The class 'gaml::UnitName' has no attributes.
+The class 'TerminalExpression' has no attributes.
+The class 'gaml::S::Display' has the following attributes: 'name' of type str.
+The class 'gaml::Unary' has no attributes.
+The class 'gaml::GamlDefinition' has the following attributes: 'name' of type str.
+The class 'gaml::TypeFakeDefinition' has no attributes.
+The class 'gaml::ActionArguments' has no attributes.
+The class 'gaml::ExperimentFileStructure' has no attributes.
+The class 'gaml::Array' has no attributes.
+The class 'Statement' has no attributes.
+The class 'gaml::Model' has no attributes.
+The class 'gaml::S::Solve' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'gaml::S::Other' has no attributes.
+The class 'gaml::ReservedLiteral' has no attributes.
+The class 'gaml::ExpressionList' has no attributes.
+The class 'gaml::S::Equations' has no attributes.
+The class 'gaml::Point' has no attributes.
+The class 'gaml::TypeRef' has no attributes.
+The class 'S::Definition' has no attributes.
+'gaml::ExperimentFileStructure' is a specialization of 'Entry'.
+'gaml::SkillFakeDefinition' is a specialization of 'GamlDefinition'.
+'gaml::StringEvaluator' is a specialization of 'Entry'.
+'gaml::S::Do' is a specialization of 'Statement'.
+'gaml::EquationDefinition' is a specialization of 'GamlDefinition'.
+'gaml::ExpressionList' is a specialization of 'Expression'.
+'gaml::Access' is a specialization of 'Expression'.
+'gaml::S::Reflex' is a specialization of 'S::Declaration'.
+'gaml::S::Display' is a specialization of 'Statement'.
+'gaml::S::Declaration' is a specialization of 'Statement'.
+'gaml::ArgumentPair' is a specialization of 'Expression'.
+'gaml::Binary' is a specialization of 'Expression'.
+'gaml::S::Equations' is a specialization of 'EquationDefinition'.
+'gaml::BooleanLiteral' is a specialization of 'TerminalExpression'.
+'gaml::Array' is a specialization of 'Expression'.
+'gaml::VarFakeDefinition' is a specialization of 'VarDefinition'.
+'gaml::If' is a specialization of 'Expression'.
+'gaml::ReservedLiteral' is a specialization of 'TerminalExpression'.
+'gaml::S::Species' is a specialization of 'S::Declaration'.
+'gaml::S::Experiment' is a specialization of 'Statement'.
+'gaml::Cast' is a specialization of 'Expression'.
+'gaml::StandaloneBlock' is a specialization of 'Entry'.
+'gaml::TypeDefinition' is a specialization of 'ActionDefinition'.
+'gaml::S::Action' is a specialization of 'S::Definition'.
+'gaml::Parameters' is a specialization of 'Expression'.
+'gaml::DoubleLiteral' is a specialization of 'TerminalExpression'.
+'gaml::S::Loop' is a specialization of 'S::Declaration'.
+'gaml::Point' is a specialization of 'Expression'.
+'gaml::UnitFakeDefinition' is a specialization of 'GamlDefinition'.
+'gaml::S::Set' is a specialization of 'S::Assignment'.
+'gaml::UnitName' is a specialization of 'Expression'.
+'gaml::EquationRef' is a specialization of 'Expression'.
+'gaml::StringLiteral' is a specialization of 'TerminalExpression'.
+'gaml::S::Declaration' is a specialization of 'VarDefinition'.
+'gaml::VarDefinition' is a specialization of 'GamlDefinition'.
+'gaml::Unit' is a specialization of 'Expression'.
+'gaml::Pair' is a specialization of 'Expression'.
+'gaml::IntLiteral' is a specialization of 'TerminalExpression'.
+'gaml::ActionFakeDefinition' is a specialization of 'ActionDefinition'.
+'gaml::ActionRef' is a specialization of 'Expression'.
+'gaml::S::Species' is a specialization of 'Statement'.
+'gaml::Function' is a specialization of 'Expression'.
+'gaml::S::DirectAssignment' is a specialization of 'S::Assignment'.
+'gaml::ArgumentDefinition' is a specialization of 'VarDefinition'.
+'gaml::S::Solve' is a specialization of 'Statement'.
+'gaml::Model' is a specialization of 'Entry'.
+'gaml::SkillRef' is a specialization of 'Expression'.
+'gaml::Parameter' is a specialization of 'Expression'.
+'gaml::TypeFakeDefinition' is a specialization of 'TypeDefinition'.
+'gaml::S::Assignment' is a specialization of 'Statement'.
+'gaml::EquationFakeDefinition' is a specialization of 'EquationDefinition'.
+'gaml::S::If' is a specialization of 'Statement'.
+'gaml::S::Definition' is a specialization of 'ActionDefinition'.
+'gaml::S::Definition' is a specialization of 'S::Declaration'.
+'gaml::TypeDefinition' is a specialization of 'GamlDefinition'.
+'gaml::S::Equations' is a specialization of 'Statement'.
+'gaml::S::Species' is a specialization of 'TypeDefinition'.
+'gaml::Import' is a specialization of 'VarDefinition'.
+'gaml::S::Return' is a specialization of 'Statement'.
+'gaml::S::Global' is a specialization of 'Statement'.
+'gaml::Model' is a specialization of 'VarDefinition'.
+'gaml::speciesOrGridDisplayStatement' is a specialization of 'Statement'.
+'gaml::TypeRef' is a specialization of 'Expression'.
+'gaml::VariableRef' is a specialization of 'Expression'.
+'gaml::S::Var' is a specialization of 'S::Definition'.
+'gaml::ColorLiteral' is a specialization of 'TerminalExpression'.
+'gaml::TerminalExpression' is a specialization of 'Expression'.
+'gaml::Unary' is a specialization of 'Expression'.
+'gaml::Facet' is a specialization of 'VarDefinition'.
+'gaml::S::Other' is a specialization of 'Statement'.
+'gaml::S::Experiment' is a specialization of 'VarDefinition'.
+'gaml::ActionDefinition' is a specialization of 'GamlDefinition'.
+'gaml::TypeRef' (role 'gaml_TypeRef', cardinality 0..*) is associated with 'gaml::TypeDefinition' (role 'gaml_TypeDefinition', cardinality 0..*).
+'gaml::Statement' (role 'gaml_Statement', cardinality 0..*) is associated with 'gaml::Block' (role 'gaml_Block9', cardinality 0..*).
+'gaml::HeadlessExperiment' (role 'gaml_HeadlessExperiment', cardinality 0..*) is associated with 'gaml::ExperimentFileStructure' (role 'gaml_ExperimentFileStructure', cardinality 0..*).
+'gaml::Function' (role 'gaml_Function61', cardinality 0..*) is associated with 'gaml::Parameters' (role 'gaml_Parameters62', cardinality 0..*).
+'gaml::ArgumentDefinition' (role 'gaml_ArgumentDefinition44', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression45', cardinality 0..*).
+'gaml::Function' (role 'gaml_Function64', cardinality 0..*) is associated with 'gaml::ExpressionList' (role 'gaml_ExpressionList65', cardinality 0..*).
+'gaml::S::Assignment' (role 'gaml_S_Assignment', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression34', cardinality 0..*).
+'gaml::TypeInfo' (role 'gaml_TypeInfo76', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression77', cardinality 0..*).
+'gaml::Access' (role 'gaml_Access', cardinality 0..*) is associated with 'gaml::ExpressionList' (role 'gaml_ExpressionList81', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression', cardinality 0..*) is associated with 'gaml::StringEvaluator' (role 'gaml_StringEvaluator', cardinality 0..*).
+'gaml::Statement' (role 'gaml_Statement23', cardinality 0..*) is associated with 'gaml::Facet' (role 'gaml_Facet24', cardinality 0..*).
+'gaml::Model' (role 'gaml_Model6', cardinality 0..*) is associated with 'gaml::Block' (role 'gaml_Block7', cardinality 0..*).
+'gaml::S::If' (role 'gaml_S_If', cardinality 0..*) is associated with 'gaml::EObject' (role 'gaml_EObject', cardinality 0..*).
+'gaml::TypeInfo' (role 'gaml_TypeInfo73', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression74', cardinality 0..*).
+'gaml::ExpressionList' (role 'gaml_ExpressionList69', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression70', cardinality 0..*).
+'gaml::SkillRef' (role 'gaml_SkillRef', cardinality 0..*) is associated with 'gaml::SkillFakeDefinition' (role 'gaml_SkillFakeDefinition', cardinality 0..*).
+'gaml::ActionDefinition' (role 'gaml_ActionDefinition', cardinality 0..*) is associated with 'gaml::ActionRef' (role 'gaml_ActionRef', cardinality 0..*).
+'gaml::Statement' (role 'gaml_Statement26', cardinality 0..*) is associated with 'gaml::Block' (role 'gaml_Block27', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression48', cardinality 0..*) is associated with 'gaml::Facet' (role 'gaml_Facet47', cardinality 0..*).
+'gaml::VarDefinition' (role 'gaml_VarDefinition', cardinality 0..*) is associated with 'gaml::VariableRef' (role 'gaml_VariableRef', cardinality 0..*).
+'gaml::Point' (role 'gaml_Point', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression85', cardinality 0..*).
+'gaml::Facet' (role 'gaml_Facet50', cardinality 0..*) is associated with 'gaml::Block' (role 'gaml_Block51', cardinality 0..*).
+'gaml::S::Definition' (role 'gaml_S_Definition', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression30', cardinality 0..*).
+'gaml::ActionArguments' (role 'gaml_ActionArguments', cardinality 0..*) is associated with 'gaml::S::Definition' (role 'gaml_S_Definition32', cardinality 0..*).
+'gaml::Pragma' (role 'gaml_Pragma', cardinality 0..*) is associated with 'gaml::Model' (role 'gaml_Model', cardinality 0..*).
+'gaml::ActionArguments' (role 'gaml_ActionArguments39', cardinality 0..*) is associated with 'gaml::ArgumentDefinition' (role 'gaml_ArgumentDefinition', cardinality 0..*).
+'gaml::Function' (role 'gaml_Function67', cardinality 0..*) is associated with 'gaml::TypeInfo' (role 'gaml_TypeInfo', cardinality 0..*).
+'gaml::Parameters' (role 'gaml_Parameters', cardinality 0..*) is associated with 'gaml::ExpressionList' (role 'gaml_ExpressionList', cardinality 0..*).
+'gaml::Import' (role 'gaml_Import', cardinality 0..*) is associated with 'gaml::Model' (role 'gaml_Model4', cardinality 0..*).
+'gaml::UnitFakeDefinition' (role 'gaml_UnitFakeDefinition', cardinality 0..*) is associated with 'gaml::UnitName' (role 'gaml_UnitName', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression55', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression57', cardinality 0..*).
+'gaml::Block' (role 'gaml_Block18', cardinality 0..*) is associated with 'gaml::HeadlessExperiment' (role 'gaml_HeadlessExperiment17', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression12', cardinality 0..*) is associated with 'gaml::Block' (role 'gaml_Block11', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression79', cardinality 0..*) is associated with 'gaml::If' (role 'gaml_If', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression21', cardinality 0..*) is associated with 'gaml::Statement' (role 'gaml_Statement20', cardinality 0..*).
+'gaml::TypeRef' (role 'gaml_TypeRef89', cardinality 0..*) is associated with 'gaml::TypeInfo' (role 'gaml_TypeInfo90', cardinality 0..*).
+'gaml::HeadlessExperiment' (role 'gaml_HeadlessExperiment15', cardinality 0..*) is associated with 'gaml::Facet' (role 'gaml_Facet', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression54', cardinality 0..*) is associated with 'gaml::Expression' (role 'gaml_Expression52', cardinality 0..*).
+'gaml::ExpressionList' (role 'gaml_ExpressionList83', cardinality 0..*) is associated with 'gaml::Array' (role 'gaml_Array', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression42', cardinality 0..*) is associated with 'gaml::ArgumentDefinition' (role 'gaml_ArgumentDefinition41', cardinality 0..*).
+'gaml::EquationDefinition' (role 'gaml_EquationDefinition', cardinality 0..*) is associated with 'gaml::EquationRef' (role 'gaml_EquationRef', cardinality 0..*).
+'gaml::Expression' (role 'gaml_Expression59', cardinality 0..*) is associated with 'gaml::Function' (role 'gaml_Function', cardinality 0..*).
+'gaml::S::Assignment' (role 'gaml_S_Assignment36', cardinality 0..*) is associated with 'gaml::S::Equations' (role 'gaml_S_Equations', cardinality 0..*).
+'gaml::Block' (role 'gaml_Block', cardinality 0..*) is associated with 'gaml::StandaloneBlock' (role 'gaml_StandaloneBlock', cardinality 0..*).

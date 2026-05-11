@@ -1,0 +1,92 @@
+The model has 37 class(es).
+The class 'expressions::PrimitiveValueExpression' has no attributes.
+The class 'expressions::AssignmentExpression' has the following attributes: 'operator' of type str.
+The class 'expressions::NumericalMultiplyDivideExpression' has the following attributes: 'operator' of type str.
+The class 'Expression' has no attributes.
+The class 'expressions::FloatLiteral' has the following attributes: 'value' of type float.
+The class 'expressions::BitwiseOrExpression' has no attributes.
+The class 'expressions::Literal' has no attributes.
+The class 'expressions::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'expressions::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'expressions::TypeCastExpression' has no attributes.
+The class 'expressions::ArgumentExpression' has no attributes.
+The class 'expressions::UnaryExpression' has no attributes.
+The class 'expressions::NullLiteral' has no attributes.
+The class 'expressions::ConditionalExpression' has no attributes.
+The class 'expressions::BitwiseAndExpression' has no attributes.
+The class 'expressions::LogicalOrExpression' has no attributes.
+The class 'expressions::NumericalAddSubtractExpression' has the following attributes: 'operator' of type str.
+The class 'expressions::IntLiteral' has the following attributes: 'value' of type int.
+The class 'BinaryExpression' has no attributes.
+The class 'expressions::LogicalAndExpression' has no attributes.
+The class 'expressions::HexLiteral' has the following attributes: 'value' of type int.
+The class 'expressions::EObject' has no attributes.
+The class 'expressions::ParenthesizedExpression' has no attributes.
+The class 'expressions::LogicalNotExpression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'expressions::StringLiteral' has the following attributes: 'value' of type str.
+The class 'expressions::LogicalRelationExpression' has the following attributes: 'operator' of type str.
+The class 'expressions::NumericalUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'expressions::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'expressions::BinaryExpression' has no attributes.
+The class 'expressions::Type' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'expressions::ElementReferenceExpression' has the following attributes: 'operationCall' of type bool; 'arrayAccess' of type bool.
+The class 'expressions::FeatureCall' has the following attributes: 'arrayAccess' of type bool; 'operationCall' of type bool.
+The class 'ArgumentExpression' has no attributes.
+The class 'expressions::BitwiseXorExpression' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The enumeration 'AssignmentOperator' has the following literals: 'subAssign', 'addAssign', 'andAssign', 'multAssign', 'rightShiftAssign', 'divAssign', 'xorAssign', 'orAssign', 'assign', 'leftShiftAssign', 'modAssign'.
+The enumeration 'AdditiveOperator' has the following literals: 'minus', 'plus'.
+The enumeration 'BitwiseOperator' has the following literals: 'or_', 'and_', 'xor'.
+The enumeration 'MultiplicativeOperator' has the following literals: 'mod', 'div', 'mul'.
+The enumeration 'LogicalOperator' has the following literals: 'not_', 'and_', 'or_'.
+The enumeration 'UnaryOperator' has the following literals: 'complement', 'positive', 'negative'.
+The enumeration 'RelationalOperator' has the following literals: 'greaterEqual', 'notEquals', 'smaller', 'equals', 'smallerEqual', 'greater'.
+The enumeration 'ShiftOperator' has the following literals: 'right', 'left'.
+'expressions::StringLiteral' is a specialization of 'Literal'.
+'expressions::LogicalOrExpression' is a specialization of 'BinaryExpression'.
+'expressions::LogicalAndExpression' is a specialization of 'BinaryExpression'.
+'expressions::BitwiseOrExpression' is a specialization of 'BinaryExpression'.
+'expressions::AssignmentExpression' is a specialization of 'Expression'.
+'expressions::ArgumentExpression' is a specialization of 'Expression'.
+'expressions::ParenthesizedExpression' is a specialization of 'Expression'.
+'expressions::NumericalAddSubtractExpression' is a specialization of 'BinaryExpression'.
+'expressions::LogicalNotExpression' is a specialization of 'UnaryExpression'.
+'expressions::FeatureCall' is a specialization of 'ArgumentExpression'.
+'expressions::ShiftExpression' is a specialization of 'BinaryExpression'.
+'expressions::BinaryExpression' is a specialization of 'Expression'.
+'expressions::NullLiteral' is a specialization of 'Literal'.
+'expressions::BitwiseAndExpression' is a specialization of 'BinaryExpression'.
+'expressions::UnaryExpression' is a specialization of 'Expression'.
+'expressions::NumericalMultiplyDivideExpression' is a specialization of 'BinaryExpression'.
+'expressions::LogicalRelationExpression' is a specialization of 'BinaryExpression'.
+'expressions::ElementReferenceExpression' is a specialization of 'ArgumentExpression'.
+'expressions::DoubleLiteral' is a specialization of 'Literal'.
+'expressions::ConditionalExpression' is a specialization of 'Expression'.
+'expressions::BoolLiteral' is a specialization of 'Literal'.
+'expressions::BitwiseXorExpression' is a specialization of 'BinaryExpression'.
+'expressions::PrimitiveValueExpression' is a specialization of 'Expression'.
+'expressions::NumericalUnaryExpression' is a specialization of 'UnaryExpression'.
+'expressions::HexLiteral' is a specialization of 'Literal'.
+'expressions::FloatLiteral' is a specialization of 'Literal'.
+'expressions::TypeCastExpression' is a specialization of 'Expression'.
+'expressions::IntLiteral' is a specialization of 'Literal'.
+'expressions::Expression' (role 'expressions_Expression7', cardinality 0..*) is associated with 'expressions::ArgumentExpression' (role 'expressions_ArgumentExpression', cardinality 0..*).
+'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression14', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression23', cardinality 0..*) is associated with 'expressions::FeatureCall' (role 'expressions_FeatureCall', cardinality 0..*).
+'expressions::EObject' (role 'expressions_EObject30', cardinality 0..*) is associated with 'expressions::ElementReferenceExpression' (role 'expressions_ElementReferenceExpression', cardinality 0..*).
+'expressions::TypeCastExpression' (role 'expressions_TypeCastExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression37', cardinality 0..*).
+'expressions::ParenthesizedExpression' (role 'expressions_ParenthesizedExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression35', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression17', cardinality 0..*) is associated with 'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression16', cardinality 0..*).
+'expressions::Type' (role 'expressions_Type', cardinality 0..*) is associated with 'expressions::TypeCastExpression' (role 'expressions_TypeCastExpression39', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'expressions::BinaryExpression' (role 'expressions_BinaryExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression12', cardinality 0..*) is associated with 'expressions::AssignmentExpression' (role 'expressions_AssignmentExpression11', cardinality 0..*).
+'expressions::AssignmentExpression' (role 'expressions_AssignmentExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression9', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression33', cardinality 0..*) is associated with 'expressions::ElementReferenceExpression' (role 'expressions_ElementReferenceExpression32', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression28', cardinality 0..*) is associated with 'expressions::FeatureCall' (role 'expressions_FeatureCall27', cardinality 0..*).
+'expressions::BinaryExpression' (role 'expressions_BinaryExpression2', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression3', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression5', cardinality 0..*) is associated with 'expressions::UnaryExpression' (role 'expressions_UnaryExpression', cardinality 0..*).
+'expressions::Literal' (role 'expressions_Literal', cardinality 0..*) is associated with 'expressions::PrimitiveValueExpression' (role 'expressions_PrimitiveValueExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression20', cardinality 0..*) is associated with 'expressions::ConditionalExpression' (role 'expressions_ConditionalExpression19', cardinality 0..*).
+'expressions::FeatureCall' (role 'expressions_FeatureCall25', cardinality 0..*) is associated with 'expressions::EObject' (role 'expressions_EObject', cardinality 0..*).

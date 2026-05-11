@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'entities::SimpleType' has no attributes.
+The class 'entities::Property' has the following attributes: 'name' of type str; 'many' of type bool.
+The class 'entities::Model' has no attributes.
+The class 'Type' has no attributes.
+The class 'entities::Type' has the following attributes: 'name' of type str.
+The class 'entities::Entity' has no attributes.
+'entities::SimpleType' is a specialization of 'Type'.
+'entities::Entity' is a specialization of 'Type'.
+'entities::Type' (role 'entities_Type7', cardinality 0..*) is associated with 'entities::Property' (role 'entities_Property6', cardinality 0..*).
+'entities::Type' (role 'entities_Type', cardinality 0..*) is associated with 'entities::Model' (role 'entities_Model', cardinality 0..*).
+'entities::Property' (role 'entities_Property', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity4', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity2', cardinality 0..*).

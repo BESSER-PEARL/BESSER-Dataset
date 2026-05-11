@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'workflow::Port' has no attributes.
+The class 'workflow::LoopTask' has the following attributes: 'whileCondition' of type str.
+The class 'WorkflowNode' has no attributes.
+The class 'workflow::WorkflowNode' has the following attributes: 'isStart' of type bool; 'isFinish' of type bool.
+The class 'workflow::OutputPort' has no attributes.
+The class 'Port' has no attributes.
+The class 'workflow::Task' has no attributes.
+The class 'workflow::WorkflowElement' has the following attributes: 'height' of type int; 'width' of type int; 'comment' of type str; 'x' of type int; 'workFlowElementId' of type str; 'name' of type str; 'y' of type int.
+The class 'workflow::Comment' has no attributes.
+The class 'workflow::Workflow' has no attributes.
+The class 'WorkflowElement' has no attributes.
+The class 'workflow::InputPort' has no attributes.
+The class 'workflow::Fault' has no attributes.
+The class 'workflow::CompoundTask' has no attributes.
+The class 'workflow::TransformationTask' has the following attributes: 'transformExpression' of type str.
+The class 'CompoundTask' has no attributes.
+The class 'workflow::ConditionalOutputPort' has the following attributes: 'condition' of type str.
+The class 'OutputPort' has no attributes.
+The class 'workflow::Edge' has no attributes.
+The class 'workflow::ConditionalTask' has no attributes.
+'workflow::OutputPort' is a specialization of 'Port'.
+'workflow::Edge' is a specialization of 'WorkflowElement'.
+'workflow::Workflow' is a specialization of 'WorkflowElement'.
+'workflow::CompoundTask' is a specialization of 'WorkflowNode'.
+'workflow::TransformationTask' is a specialization of 'WorkflowNode'.
+'workflow::Port' is a specialization of 'WorkflowElement'.
+'workflow::LoopTask' is a specialization of 'CompoundTask'.
+'workflow::Task' is a specialization of 'WorkflowNode'.
+'workflow::Fault' is a specialization of 'OutputPort'.
+'workflow::ConditionalTask' is a specialization of 'WorkflowNode'.
+'workflow::WorkflowNode' is a specialization of 'WorkflowElement'.
+'workflow::ConditionalOutputPort' is a specialization of 'OutputPort'.
+'workflow::InputPort' is a specialization of 'Port'.
+'workflow::Comment' is a specialization of 'WorkflowElement'.
+'workflow::Workflow' (role 'Workflow10', cardinality 0..*) is associated with 'workflow::Edge' (role 'edges', cardinality 0..*).
+'workflow::Comment' (role 'Comment', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow4', cardinality 0..*).
+'workflow::WorkflowNode' (role 'node', cardinality 0..*) is associated with 'workflow::OutputPort' (role 'OutputPort', cardinality 0..*).
+'workflow::InputPort' (role 'target', cardinality 0..*) is associated with 'workflow::Edge' (role 'Edge20', cardinality 0..*).
+'workflow::Workflow' (role 'workflow', cardinality 0..*) is associated with 'workflow::WorkflowNode' (role 'WorkflowNode', cardinality 0..*).
+'workflow::OutputPort' (role 'source', cardinality 0..*) is associated with 'workflow::Edge' (role 'Edge24', cardinality 0..*).
+'workflow::InputPort' (role 'inputs', cardinality 0..*) is associated with 'workflow::WorkflowNode' (role 'WorkflowNode18', cardinality 0..*).
+'workflow::OutputPort' (role 'OutputPort16', cardinality 0..*) is associated with 'workflow::Edge' (role 'edges15', cardinality 0..*).
+'workflow::Edge' (role 'Edge', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow2', cardinality 0..*).
+'workflow::Workflow' (role 'Workflow27', cardinality 0..*) is associated with 'workflow::Comment' (role 'comments', cardinality 0..*).
+'workflow::InputPort' (role 'InputPort', cardinality 0..*) is associated with 'workflow::WorkflowNode' (role 'node8', cardinality 0..*).
+'workflow::WorkflowNode' (role 'WorkflowNode22', cardinality 0..*) is associated with 'workflow::OutputPort' (role 'outputs', cardinality 0..*).
+'workflow::InputPort' (role 'InputPort13', cardinality 0..*) is associated with 'workflow::Edge' (role 'edges12', cardinality 0..*).
+'workflow::WorkflowNode' (role 'nodes', cardinality 0..*) is associated with 'workflow::Workflow' (role 'Workflow', cardinality 0..*).
+'workflow::CompoundTask' (role 'workflow_CompoundTask', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow_Workflow', cardinality 0..*).

@@ -1,0 +1,133 @@
+The model has 49 class(es).
+The class 'altarica::NameRef' has no attributes.
+The class 'altarica::BaseType' has the following attributes: 'name' of type str.
+The class 'altarica::Block' has no attributes.
+The class 'altarica::Minus' has no attributes.
+The class 'altarica::TransitionOr' has no attributes.
+The class 'altarica::NamedType' has no attributes.
+The class 'altarica::Attribute' has no attributes.
+The class 'altarica::Conditional' has no attributes.
+The class 'altarica::Multiplication' has the following attributes: 'op' of type str.
+The class 'altarica::Addition' has the following attributes: 'op' of type str.
+The class 'NamedElement' has no attributes.
+The class 'altarica::ARString' has the following attributes: 'value' of type str.
+The class 'altarica::AbstractDeclaration' has no attributes.
+The class 'altarica::Transition' has no attributes.
+The class 'Type' has no attributes.
+The class 'altarica::Skip' has no attributes.
+The class 'altarica::Domain' has no attributes.
+The class 'altarica::Node' has no attributes.
+The class 'AbstractDeclaration' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'altarica::Instruction' has no attributes.
+The class 'altarica::EObject' has no attributes.
+The class 'altarica::Equal' has the following attributes: 'op' of type str.
+The class 'altarica::TransitionExpression' has no attributes.
+The class 'altarica::CaseExpression' has no attributes.
+The class 'altarica::ARBoolean' has the following attributes: 'value' of type str.
+The class 'altarica::SymbolicConstant' has no attributes.
+The class 'altarica::LogicalOr' has the following attributes: 'op' of type str.
+The class 'altarica::Event' has no attributes.
+The class 'altarica::TransitionAnd' has no attributes.
+The class 'Expression' has no attributes.
+The class 'altarica::FunctionCall' has the following attributes: 'name' of type str.
+The class 'altarica::Assignment' has no attributes.
+The class 'altarica::Type' has no attributes.
+The class 'altarica::Not' has no attributes.
+The class 'altarica::Observer' has no attributes.
+The class 'altarica::Error' has the following attributes: 'severity' of type str; 'message' of type str.
+The class 'altarica::ARNumber' has the following attributes: 'value' of type float.
+The class 'altarica::Model' has no attributes.
+The class 'altarica::Expression' has no attributes.
+The class 'altarica::LogicalAnd' has the following attributes: 'op' of type str.
+The class 'altarica::Parameter' has no attributes.
+The class 'TransitionExpression' has no attributes.
+The class 'altarica::NamedElement' has the following attributes: 'name' of type str.
+The class 'altarica::Declaration' has no attributes.
+The class 'altarica::LabeledTransition' has no attributes.
+The class 'altarica::Variable' has no attributes.
+The class 'altarica::SwitchExpression' has no attributes.
+The class 'Declaration' has no attributes.
+The enumeration 'Severity' has the following literals: 'WARNING', 'ERROR'.
+The enumeration 'BaseTypeEnum' has the following literals: 'BOOLEAN', 'INTEGER'.
+'altarica::Transition' is a specialization of 'TransitionExpression'.
+'altarica::Variable' is a specialization of 'NamedElement'.
+'altarica::Block' is a specialization of 'Instruction'.
+'altarica::NamedElement' is a specialization of 'AbstractDeclaration'.
+'altarica::Parameter' is a specialization of 'NamedElement'.
+'altarica::TransitionAnd' is a specialization of 'TransitionExpression'.
+'altarica::Skip' is a specialization of 'Instruction'.
+'altarica::Assignment' is a specialization of 'Instruction'.
+'altarica::TransitionOr' is a specialization of 'TransitionExpression'.
+'altarica::NameRef' is a specialization of 'Expression'.
+'altarica::SwitchExpression' is a specialization of 'Expression'.
+'altarica::Domain' is a specialization of 'NamedElement'.
+'altarica::Attribute' is a specialization of 'NamedElement'.
+'altarica::LogicalAnd' is a specialization of 'Expression'.
+'altarica::ARNumber' is a specialization of 'Expression'.
+'altarica::NamedElement' is a specialization of 'Declaration'.
+'altarica::BaseType' is a specialization of 'Type'.
+'altarica::NamedType' is a specialization of 'Type'.
+'altarica::FunctionCall' is a specialization of 'Expression'.
+'altarica::LogicalOr' is a specialization of 'Expression'.
+'altarica::Event' is a specialization of 'NamedElement'.
+'altarica::Equal' is a specialization of 'Expression'.
+'altarica::ARString' is a specialization of 'Expression'.
+'altarica::Node' is a specialization of 'NamedElement'.
+'altarica::Conditional' is a specialization of 'Instruction'.
+'altarica::Not' is a specialization of 'Expression'.
+'altarica::SymbolicConstant' is a specialization of 'NamedElement'.
+'altarica::Observer' is a specialization of 'NamedElement'.
+'altarica::Multiplication' is a specialization of 'Expression'.
+'altarica::Minus' is a specialization of 'Expression'.
+'altarica::ARBoolean' is a specialization of 'Expression'.
+'altarica::Addition' is a specialization of 'Expression'.
+'altarica::Multiplication' (role 'altarica_Multiplication', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression101', cardinality 0..*).
+'altarica::TransitionExpression' (role 'altarica_TransitionExpression57', cardinality 0..*) is associated with 'altarica::TransitionAnd' (role 'altarica_TransitionAnd56', cardinality 0..*).
+'altarica::Type' (role 'altarica_Type44', cardinality 0..*) is associated with 'altarica::Parameter' (role 'altarica_Parameter', cardinality 0..*).
+'altarica::Type' (role 'altarica_Type', cardinality 0..*) is associated with 'altarica::Variable' (role 'altarica_Variable', cardinality 0..*).
+'altarica::Variable' (role 'altarica_Variable37', cardinality 0..*) is associated with 'altarica::NamedElement' (role 'altarica_NamedElement38', cardinality 0..*).
+'altarica::LogicalOr' (role 'altarica_LogicalOr', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression81', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression40', cardinality 0..*) is associated with 'altarica::Attribute' (role 'altarica_Attribute', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression89', cardinality 0..*) is associated with 'altarica::LogicalAnd' (role 'altarica_LogicalAnd88', cardinality 0..*).
+'altarica::NamedType' (role 'altarica_NamedType', cardinality 0..*) is associated with 'altarica::NamedElement' (role 'altarica_NamedElement', cardinality 0..*).
+'altarica::Instruction' (role 'altarica_Instruction79', cardinality 0..*) is associated with 'altarica::Conditional' (role 'altarica_Conditional78', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression64', cardinality 0..*) is associated with 'altarica::Transition' (role 'altarica_Transition', cardinality 0..*).
+'altarica::CaseExpression' (role 'altarica_CaseExpression', cardinality 0..*) is associated with 'altarica::Instruction' (role 'altarica_Instruction', cardinality 0..*).
+'altarica::NamedElement' (role 'altarica_NamedElement42', cardinality 0..*) is associated with 'altarica::Event' (role 'altarica_Event', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression96', cardinality 0..*) is associated with 'altarica::Addition' (role 'altarica_Addition', cardinality 0..*).
+'altarica::Node' (role 'altarica_Node30', cardinality 0..*) is associated with 'altarica::LabeledTransition' (role 'altarica_LabeledTransition31', cardinality 0..*).
+'altarica::Block' (role 'altarica_Block', cardinality 0..*) is associated with 'altarica::Instruction' (role 'altarica_Instruction74', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression86', cardinality 0..*) is associated with 'altarica::LogicalAnd' (role 'altarica_LogicalAnd', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression76', cardinality 0..*) is associated with 'altarica::Conditional' (role 'altarica_Conditional', cardinality 0..*).
+'altarica::TransitionAnd' (role 'altarica_TransitionAnd', cardinality 0..*) is associated with 'altarica::TransitionExpression' (role 'altarica_TransitionExpression54', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression', cardinality 0..*) is associated with 'altarica::SwitchExpression' (role 'altarica_SwitchExpression19', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression99', cardinality 0..*) is associated with 'altarica::Addition' (role 'altarica_Addition98', cardinality 0..*).
+'altarica::Declaration' (role 'altarica_Declaration', cardinality 0..*) is associated with 'altarica::Node' (role 'altarica_Node', cardinality 0..*).
+'altarica::NameRef' (role 'altarica_NameRef13', cardinality 0..*) is associated with 'altarica::NameRef' (role 'altarica_NameRef15', cardinality 0..*).
+'altarica::AbstractDeclaration' (role 'altarica_AbstractDeclaration', cardinality 0..*) is associated with 'altarica::Model' (role 'altarica_Model2', cardinality 0..*).
+'altarica::Assignment' (role 'altarica_Assignment', cardinality 0..*) is associated with 'altarica::NameRef' (role 'altarica_NameRef69', cardinality 0..*).
+'altarica::Type' (role 'altarica_Type49', cardinality 0..*) is associated with 'altarica::Observer' (role 'altarica_Observer', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression106', cardinality 0..*) is associated with 'altarica::Not' (role 'altarica_Not', cardinality 0..*).
+'altarica::NamedElement' (role 'altarica_NamedElement27', cardinality 0..*) is associated with 'altarica::Domain' (role 'altarica_Domain', cardinality 0..*).
+'altarica::LabeledTransition' (role 'altarica_LabeledTransition', cardinality 0..*) is associated with 'altarica::NameRef' (role 'altarica_NameRef', cardinality 0..*).
+'altarica::Multiplication' (role 'altarica_Multiplication103', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression104', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression108', cardinality 0..*) is associated with 'altarica::Minus' (role 'altarica_Minus', cardinality 0..*).
+'altarica::Assignment' (role 'altarica_Assignment71', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression72', cardinality 0..*).
+'altarica::LogicalOr' (role 'altarica_LogicalOr83', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression84', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression110', cardinality 0..*) is associated with 'altarica::FunctionCall' (role 'altarica_FunctionCall', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression47', cardinality 0..*) is associated with 'altarica::Parameter' (role 'altarica_Parameter46', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression52', cardinality 0..*) is associated with 'altarica::Observer' (role 'altarica_Observer51', cardinality 0..*).
+'altarica::CaseExpression' (role 'altarica_CaseExpression17', cardinality 0..*) is associated with 'altarica::SwitchExpression' (role 'altarica_SwitchExpression', cardinality 0..*).
+'altarica::Model' (role 'altarica_Model', cardinality 0..*) is associated with 'altarica::Error' (role 'altarica_Error', cardinality 0..*).
+'altarica::CaseExpression' (role 'altarica_CaseExpression21', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression22', cardinality 0..*).
+'altarica::NamedElement' (role 'altarica_NamedElement12', cardinality 0..*) is associated with 'altarica::NameRef' (role 'altarica_NameRef11', cardinality 0..*).
+'altarica::Instruction' (role 'altarica_Instruction34', cardinality 0..*) is associated with 'altarica::Node' (role 'altarica_Node33', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression25', cardinality 0..*) is associated with 'altarica::CaseExpression' (role 'altarica_CaseExpression24', cardinality 0..*).
+'altarica::LabeledTransition' (role 'altarica_LabeledTransition6', cardinality 0..*) is associated with 'altarica::TransitionExpression' (role 'altarica_TransitionExpression', cardinality 0..*).
+'altarica::TransitionExpression' (role 'altarica_TransitionExpression59', cardinality 0..*) is associated with 'altarica::TransitionOr' (role 'altarica_TransitionOr', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression91', cardinality 0..*) is associated with 'altarica::Equal' (role 'altarica_Equal', cardinality 0..*).
+'altarica::TransitionExpression' (role 'altarica_TransitionExpression62', cardinality 0..*) is associated with 'altarica::TransitionOr' (role 'altarica_TransitionOr61', cardinality 0..*).
+'altarica::Instruction' (role 'altarica_Instruction9', cardinality 0..*) is associated with 'altarica::EObject' (role 'altarica_EObject', cardinality 0..*).
+'altarica::Equal' (role 'altarica_Equal93', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression94', cardinality 0..*).
+'altarica::Transition' (role 'altarica_Transition66', cardinality 0..*) is associated with 'altarica::Instruction' (role 'altarica_Instruction67', cardinality 0..*).

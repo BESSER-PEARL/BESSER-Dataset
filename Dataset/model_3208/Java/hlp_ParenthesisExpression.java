@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class hlp_ParenthesisExpression extends Expression {
+
+
+
+
+
+
+    private hlp_Expression hlp_expression;
+
+
+    public hlp_ParenthesisExpression(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public hlp_Expression getHlp_expression() {
+        return hlp_expression;
+    }
+
+    public void setHlp_expression(hlp_Expression hlp_expression) {
+        this.hlp_expression = hlp_expression;
+    }
+
+}

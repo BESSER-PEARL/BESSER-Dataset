@@ -1,0 +1,72 @@
+The model has 26 class(es).
+The class 'testintentionsAssistance::Double' has the following attributes: 'value' of type str.
+The class 'testintentionsAssistance::Model' has no attributes.
+The class 'Expression' has no attributes.
+The class 'testintentionsAssistance::OutVariable' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'testintentionsAssistance::STRING' has the following attributes: 'value' of type str.
+The class 'testintentionsAssistance::TestIntention' has the following attributes: 'description' of type str.
+The class 'testintentionsAssistance::Comparison' has the following attributes: 'op' of type str.
+The class 'testintentionsAssistance::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'testintentionsAssistance::AbstractElement' has no attributes.
+The class 'testintentionsAssistance::VariableRef' has no attributes.
+The class 'testintentionsAssistance::Boolean' has the following attributes: 'value' of type str.
+The class 'testintentionsAssistance::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'testintentionsAssistance::Inst' has no attributes.
+The class 'testintentionsAssistance::Plus' has no attributes.
+The class 'testintentionsAssistance::Function' has the following attributes: 'methode' of type str.
+The class 'testintentionsAssistance::DomainDeclaration' has the following attributes: 'name' of type str.
+The class 'testintentionsAssistance::Not' has no attributes.
+The class 'testintentionsAssistance::Expression' has no attributes.
+The class 'testintentionsAssistance::Data' has no attributes.
+The class 'testintentionsAssistance::Minus' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'testintentionsAssistance::Equality' has the following attributes: 'op' of type str.
+The class 'testintentionsAssistance::Or' has no attributes.
+The class 'testintentionsAssistance::INT' has the following attributes: 'value' of type int.
+The class 'testintentionsAssistance::And' has no attributes.
+The class 'testintentionsAssistance::Variable' has the following attributes: 'type' of type str; 'name' of type str.
+The enumeration 'Type' has the following literals: 'STRING', 'Double', 'Boolean', 'INT'.
+'testintentionsAssistance::DomainDeclaration' is a specialization of 'AbstractElement'.
+'testintentionsAssistance::TestIntention' is a specialization of 'AbstractElement'.
+'testintentionsAssistance::Boolean' is a specialization of 'Expression'.
+'testintentionsAssistance::VariableRef' is a specialization of 'Expression'.
+'testintentionsAssistance::STRING' is a specialization of 'Expression'.
+'testintentionsAssistance::Minus' is a specialization of 'Expression'.
+'testintentionsAssistance::Import' is a specialization of 'AbstractElement'.
+'testintentionsAssistance::Function' is a specialization of 'AbstractElement'.
+'testintentionsAssistance::Not' is a specialization of 'Expression'.
+'testintentionsAssistance::Data' is a specialization of 'AbstractElement'.
+'testintentionsAssistance::MulOrDiv' is a specialization of 'Expression'.
+'testintentionsAssistance::And' is a specialization of 'Expression'.
+'testintentionsAssistance::Double' is a specialization of 'Expression'.
+'testintentionsAssistance::Equality' is a specialization of 'Expression'.
+'testintentionsAssistance::INT' is a specialization of 'Expression'.
+'testintentionsAssistance::Or' is a specialization of 'Expression'.
+'testintentionsAssistance::Plus' is a specialization of 'Expression'.
+'testintentionsAssistance::Comparison' is a specialization of 'Expression'.
+'testintentionsAssistance::Function' (role 'testintentionsAssistance_Function5', cardinality 0..*) is associated with 'testintentionsAssistance::Variable' (role 'testintentionsAssistance_Variable', cardinality 0..*).
+'testintentionsAssistance::DomainDeclaration' (role 'testintentionsAssistance_DomainDeclaration', cardinality 0..*) is associated with 'testintentionsAssistance::Model' (role 'testintentionsAssistance_Model', cardinality 0..*).
+'testintentionsAssistance::Function' (role 'testintentionsAssistance_Function', cardinality 0..*) is associated with 'testintentionsAssistance::OutVariable' (role 'testintentionsAssistance_OutVariable', cardinality 0..*).
+'testintentionsAssistance::OutVariable' (role 'testintentionsAssistance_OutVariable19', cardinality 0..*) is associated with 'testintentionsAssistance::TestIntention' (role 'testintentionsAssistance_TestIntention18', cardinality 0..*).
+'testintentionsAssistance::Variable' (role 'testintentionsAssistance_Variable8', cardinality 0..*) is associated with 'testintentionsAssistance::Function' (role 'testintentionsAssistance_Function7', cardinality 0..*).
+'testintentionsAssistance::Variable' (role 'testintentionsAssistance_Variable12', cardinality 0..*) is associated with 'testintentionsAssistance::Inst' (role 'testintentionsAssistance_Inst11', cardinality 0..*).
+'testintentionsAssistance::Equality' (role 'testintentionsAssistance_Equality33', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression34', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression44', cardinality 0..*) is associated with 'testintentionsAssistance::Plus' (role 'testintentionsAssistance_Plus43', cardinality 0..*).
+'testintentionsAssistance::Minus' (role 'testintentionsAssistance_Minus48', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression49', cardinality 0..*).
+'testintentionsAssistance::Comparison' (role 'testintentionsAssistance_Comparison', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression36', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression39', cardinality 0..*) is associated with 'testintentionsAssistance::Comparison' (role 'testintentionsAssistance_Comparison38', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression', cardinality 0..*) is associated with 'testintentionsAssistance::Inst' (role 'testintentionsAssistance_Inst14', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression56', cardinality 0..*) is associated with 'testintentionsAssistance::Not' (role 'testintentionsAssistance_Not', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression51', cardinality 0..*) is associated with 'testintentionsAssistance::MulOrDiv' (role 'testintentionsAssistance_MulOrDiv', cardinality 0..*).
+'testintentionsAssistance::Variable' (role 'testintentionsAssistance_Variable58', cardinality 0..*) is associated with 'testintentionsAssistance::VariableRef' (role 'testintentionsAssistance_VariableRef', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression41', cardinality 0..*) is associated with 'testintentionsAssistance::Plus' (role 'testintentionsAssistance_Plus', cardinality 0..*).
+'testintentionsAssistance::MulOrDiv' (role 'testintentionsAssistance_MulOrDiv53', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression54', cardinality 0..*).
+'testintentionsAssistance::Minus' (role 'testintentionsAssistance_Minus', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression46', cardinality 0..*).
+'testintentionsAssistance::And' (role 'testintentionsAssistance_And28', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression29', cardinality 0..*).
+'testintentionsAssistance::Or' (role 'testintentionsAssistance_Or23', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression24', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression21', cardinality 0..*) is associated with 'testintentionsAssistance::Or' (role 'testintentionsAssistance_Or', cardinality 0..*).
+'testintentionsAssistance::TestIntention' (role 'testintentionsAssistance_TestIntention', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression16', cardinality 0..*).
+'testintentionsAssistance::AbstractElement' (role 'testintentionsAssistance_AbstractElement', cardinality 0..*) is associated with 'testintentionsAssistance::DomainDeclaration' (role 'testintentionsAssistance_DomainDeclaration2', cardinality 0..*).
+'testintentionsAssistance::Data' (role 'testintentionsAssistance_Data', cardinality 0..*) is associated with 'testintentionsAssistance::Inst' (role 'testintentionsAssistance_Inst', cardinality 0..*).
+'testintentionsAssistance::And' (role 'testintentionsAssistance_And', cardinality 0..*) is associated with 'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression26', cardinality 0..*).
+'testintentionsAssistance::Expression' (role 'testintentionsAssistance_Expression31', cardinality 0..*) is associated with 'testintentionsAssistance::Equality' (role 'testintentionsAssistance_Equality', cardinality 0..*).

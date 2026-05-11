@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/se-ubt/supermod/de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore

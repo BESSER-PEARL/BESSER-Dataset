@@ -1,0 +1,30 @@
+The model has 13 class(es).
+The class 'Company::Employee' has no attributes.
+The class 'Company::Client' has no attributes.
+The class 'Company::ServiceLine' has no attributes.
+The class 'Company::Organisation' has the following attributes: 'name' of type str; 'completeAddress' of type str; 'city' of type str.
+The class 'Company::Person' has the following attributes: 'fullName' of type str.
+The class 'Company::Division' has the following attributes: 'name' of type str.
+The class 'Company::Topic' has the following attributes: 'id' of type str.
+The class 'Division' has no attributes.
+The class 'Company::Category' has the following attributes: 'name' of type str.
+The class 'Company::CompanyModel' has no attributes.
+The class 'Company::Unit' has no attributes.
+The class 'Company::Project' has the following attributes: 'name' of type str; 'budget' of type int.
+The class 'Person' has no attributes.
+'Company::Employee' is a specialization of 'Person'.
+'Company::Unit' is a specialization of 'Division'.
+'Company::Client' is a specialization of 'Person'.
+'Company::ServiceLine' is a specialization of 'Division'.
+'Company::CompanyModel' (role 'Company_CompanyModel22', cardinality 0..*) is associated with 'Company::Division' (role 'Company_Division23', cardinality 0..*).
+'Company::Organisation' (role 'Company_Organisation15', cardinality 0..*) is associated with 'Company::CompanyModel' (role 'Company_CompanyModel', cardinality 0..*).
+'Company::Person' (role 'Company_Person2', cardinality 0..*) is associated with 'Company::Unit' (role 'Company_Unit', cardinality 0..*).
+'Company::Organisation' (role 'Company_Organisation6', cardinality 0..*) is associated with 'Company::Project' (role 'Company_Project7', cardinality 0..*).
+'Company::Organisation' (role 'Company_Organisation9', cardinality 0..*) is associated with 'Company::Division' (role 'Company_Division', cardinality 0..*).
+'Company::Person' (role 'Company_Person', cardinality 0..*) is associated with 'Company::Project' (role 'Company_Project', cardinality 0..*).
+'Company::Category' (role 'Category', cardinality 0..*) is associated with 'Company::Topic' (role 'topics', cardinality 0..*).
+'Company::CompanyModel' (role 'Company_CompanyModel19', cardinality 0..*) is associated with 'Company::Topic' (role 'Company_Topic20', cardinality 0..*).
+'Company::Topic' (role 'Topic', cardinality 0..*) is associated with 'Company::Category' (role 'category', cardinality 0..*).
+'Company::Person' (role 'Company_Person4', cardinality 0..*) is associated with 'Company::Organisation' (role 'Company_Organisation', cardinality 0..*).
+'Company::Category' (role 'Company_Category', cardinality 0..*) is associated with 'Company::CompanyModel' (role 'Company_CompanyModel17', cardinality 0..*).
+'Company::Project' (role 'Company_Project11', cardinality 0..*) is associated with 'Company::Topic' (role 'Company_Topic', cardinality 0..*).

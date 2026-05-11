@@ -1,0 +1,120 @@
+The model has 43 class(es).
+The class 'tgg::CorrType' has no attributes.
+The class 'tgg::AttrCondDef' has the following attributes: 'userDefined' of type bool.
+The class 'NamePattern' has no attributes.
+The class 'tgg::EReference' has no attributes.
+The class 'tgg::AttrCondDefLibrary' has no attributes.
+The class 'ParamValue' has no attributes.
+The class 'tgg::ObjectVariablePattern' has no attributes.
+The class 'tgg::ContextObjectVariablePattern' has the following attributes: 'name' of type str.
+The class 'tgg::CorrVariablePattern' has no attributes.
+The class 'tgg::NamePattern' has no attributes.
+The class 'tgg::EEnum' has no attributes.
+The class 'OperatorPattern' has no attributes.
+The class 'tgg::LinkVariablePattern' has no attributes.
+The class 'tgg::EAttribute' has no attributes.
+The class 'tgg::OperatorPattern' has no attributes.
+The class 'tgg::ContextLinkVariablePattern' has no attributes.
+The class 'tgg::EEnumLiteral' has no attributes.
+The class 'tgg::Nac' has no attributes.
+The class 'tgg::Import' has the following attributes: 'name' of type str.
+The class 'tgg::ParamValue' has no attributes.
+The class 'tgg::Param' has the following attributes: 'paramName' of type str.
+The class 'tgg::EnumExpression' has no attributes.
+The class 'tgg::AttributeExpression' has no attributes.
+The class 'tgg::LiteralExpression' has the following attributes: 'value' of type str.
+The class 'tgg::ComplementRule' has no attributes.
+The class 'NamedElements' has no attributes.
+The class 'tgg::EClass' has no attributes.
+The class 'tgg::AttrCond' has no attributes.
+The class 'tgg::AttributeConstraint' has the following attributes: 'op' of type str.
+The class 'tgg::Schema' has no attributes.
+The class 'tgg::Adornment' has the following attributes: 'value' of type str.
+The class 'tgg::Operator' has the following attributes: 'value' of type str.
+The class 'tgg::Rule' has the following attributes: 'abstractRule' of type bool.
+The class 'tgg::NamedElements' has the following attributes: 'name' of type str.
+The class 'tgg::Expression' has no attributes.
+The class 'tgg::EObject' has no attributes.
+The class 'tgg::TripleGraphGrammarFile' has no attributes.
+The class 'tgg::LocalVariable' has the following attributes: 'name' of type str.
+The class 'tgg::AttributeAssignment' has the following attributes: 'op' of type str.
+The class 'tgg::EPackage' has no attributes.
+The class 'Expression' has no attributes.
+The class 'tgg::Using' has the following attributes: 'importedNamespace' of type str.
+The class 'tgg::EDataType' has no attributes.
+'tgg::LiteralExpression' is a specialization of 'Expression'.
+'tgg::CorrVariablePattern' is a specialization of 'NamePattern'.
+'tgg::AttrCondDefLibrary' is a specialization of 'NamedElements'.
+'tgg::Expression' is a specialization of 'ParamValue'.
+'tgg::AttrCondDef' is a specialization of 'NamedElements'.
+'tgg::EnumExpression' is a specialization of 'Expression'.
+'tgg::Nac' is a specialization of 'NamedElements'.
+'tgg::CorrType' is a specialization of 'NamedElements'.
+'tgg::ComplementRule' is a specialization of 'NamedElements'.
+'tgg::NamePattern' is a specialization of 'NamedElements'.
+'tgg::AttributeExpression' is a specialization of 'Expression'.
+'tgg::LinkVariablePattern' is a specialization of 'OperatorPattern'.
+'tgg::Rule' is a specialization of 'NamedElements'.
+'tgg::LocalVariable' is a specialization of 'ParamValue'.
+'tgg::NamePattern' is a specialization of 'OperatorPattern'.
+'tgg::Schema' is a specialization of 'NamedElements'.
+'tgg::ObjectVariablePattern' is a specialization of 'NamePattern'.
+'tgg::LinkVariablePattern' (role 'tgg_LinkVariablePattern', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern79', cardinality 0..*).
+'tgg::AttributeAssignment' (role 'tgg_AttributeAssignment', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern75', cardinality 0..*).
+'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern77', cardinality 0..*) is associated with 'tgg::AttributeConstraint' (role 'tgg_AttributeConstraint', cardinality 0..*).
+'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern72', cardinality 0..*) is associated with 'tgg::EClass' (role 'tgg_EClass73', cardinality 0..*).
+'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule46', cardinality 0..*).
+'tgg::EEnumLiteral' (role 'tgg_EEnumLiteral', cardinality 0..*) is associated with 'tgg::EnumExpression' (role 'tgg_EnumExpression99', cardinality 0..*).
+'tgg::AttrCond' (role 'tgg_AttrCond58', cardinality 0..*) is associated with 'tgg::ParamValue' (role 'tgg_ParamValue', cardinality 0..*).
+'tgg::AttrCondDef' (role 'tgg_AttrCondDef61', cardinality 0..*) is associated with 'tgg::AttrCondDefLibrary' (role 'tgg_AttrCondDefLibrary60', cardinality 0..*).
+'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile8', cardinality 0..*) is associated with 'tgg::ComplementRule' (role 'tgg_ComplementRule', cardinality 0..*).
+'tgg::CorrVariablePattern' (role 'tgg_CorrVariablePattern69', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern70', cardinality 0..*).
+'tgg::AttrCondDef' (role 'tgg_AttrCondDef31', cardinality 0..*) is associated with 'tgg::Param' (role 'tgg_Param', cardinality 0..*).
+'tgg::ContextLinkVariablePattern' (role 'tgg_ContextLinkVariablePattern110', cardinality 0..*) is associated with 'tgg::EReference' (role 'tgg_EReference111', cardinality 0..*).
+'tgg::LinkVariablePattern' (role 'tgg_LinkVariablePattern107', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern108', cardinality 0..*).
+'tgg::ComplementRule' (role 'tgg_ComplementRule125', cardinality 0..*) is associated with 'tgg::CorrVariablePattern' (role 'tgg_CorrVariablePattern126', cardinality 0..*).
+'tgg::EPackage' (role 'tgg_EPackage17', cardinality 0..*) is associated with 'tgg::Schema' (role 'tgg_Schema16', cardinality 0..*).
+'tgg::EnumExpression' (role 'tgg_EnumExpression', cardinality 0..*) is associated with 'tgg::EEnum' (role 'tgg_EEnum', cardinality 0..*).
+'tgg::CorrType' (role 'tgg_CorrType24', cardinality 0..*) is associated with 'tgg::CorrType' (role 'tgg_CorrType22', cardinality 0..*).
+'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile12', cardinality 0..*) is associated with 'tgg::AttrCondDefLibrary' (role 'tgg_AttrCondDefLibrary', cardinality 0..*).
+'tgg::Schema' (role 'tgg_Schema19', cardinality 0..*) is associated with 'tgg::CorrType' (role 'tgg_CorrType', cardinality 0..*).
+'tgg::Adornment' (role 'tgg_Adornment36', cardinality 0..*) is associated with 'tgg::AttrCondDef' (role 'tgg_AttrCondDef35', cardinality 0..*).
+'tgg::EDataType' (role 'tgg_EDataType', cardinality 0..*) is associated with 'tgg::Param' (role 'tgg_Param38', cardinality 0..*).
+'tgg::Nac' (role 'tgg_Nac140', cardinality 0..*) is associated with 'tgg::AttrCond' (role 'tgg_AttrCond141', cardinality 0..*).
+'tgg::Import' (role 'tgg_Import', cardinality 0..*) is associated with 'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile', cardinality 0..*).
+'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern114', cardinality 0..*) is associated with 'tgg::ContextLinkVariablePattern' (role 'tgg_ContextLinkVariablePattern113', cardinality 0..*).
+'tgg::CorrType' (role 'tgg_CorrType26', cardinality 0..*) is associated with 'tgg::EClass' (role 'tgg_EClass', cardinality 0..*).
+'tgg::Rule' (role 'tgg_Rule43', cardinality 0..*) is associated with 'tgg::Schema' (role 'tgg_Schema44', cardinality 0..*).
+'tgg::AttrCond' (role 'tgg_AttrCond55', cardinality 0..*) is associated with 'tgg::AttrCondDef' (role 'tgg_AttrCondDef56', cardinality 0..*).
+'tgg::ComplementRule' (role 'tgg_ComplementRule122', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern123', cardinality 0..*).
+'tgg::Operator' (role 'tgg_Operator', cardinality 0..*) is associated with 'tgg::OperatorPattern' (role 'tgg_OperatorPattern', cardinality 0..*).
+'tgg::Nac' (role 'tgg_Nac', cardinality 0..*) is associated with 'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile10', cardinality 0..*).
+'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile4', cardinality 0..*) is associated with 'tgg::Schema' (role 'tgg_Schema', cardinality 0..*).
+'tgg::AttrCondDef' (role 'tgg_AttrCondDef33', cardinality 0..*) is associated with 'tgg::Adornment' (role 'tgg_Adornment', cardinality 0..*).
+'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile2', cardinality 0..*) is associated with 'tgg::Using' (role 'tgg_Using', cardinality 0..*).
+'tgg::Schema' (role 'tgg_Schema14', cardinality 0..*) is associated with 'tgg::EPackage' (role 'tgg_EPackage', cardinality 0..*).
+'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern49', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule48', cardinality 0..*).
+'tgg::Rule' (role 'tgg_Rule41', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule39', cardinality 0..*).
+'tgg::Nac' (role 'tgg_Nac137', cardinality 0..*) is associated with 'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern138', cardinality 0..*).
+'tgg::CorrVariablePattern' (role 'tgg_CorrVariablePattern63', cardinality 0..*) is associated with 'tgg::CorrType' (role 'tgg_CorrType64', cardinality 0..*).
+'tgg::Nac' (role 'tgg_Nac131', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule132', cardinality 0..*).
+'tgg::AttributeAssignment' (role 'tgg_AttributeAssignment92', cardinality 0..*) is associated with 'tgg::EAttribute' (role 'tgg_EAttribute93', cardinality 0..*).
+'tgg::AttributeConstraint' (role 'tgg_AttributeConstraint84', cardinality 0..*) is associated with 'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern83', cardinality 0..*).
+'tgg::Rule' (role 'tgg_Rule51', cardinality 0..*) is associated with 'tgg::CorrVariablePattern' (role 'tgg_CorrVariablePattern', cardinality 0..*).
+'tgg::Rule' (role 'tgg_Rule53', cardinality 0..*) is associated with 'tgg::AttrCond' (role 'tgg_AttrCond', cardinality 0..*).
+'tgg::AttributeAssignment' (role 'tgg_AttributeAssignment95', cardinality 0..*) is associated with 'tgg::Expression' (role 'tgg_Expression96', cardinality 0..*).
+'tgg::EClass' (role 'tgg_EClass81', cardinality 0..*) is associated with 'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern', cardinality 0..*).
+'tgg::Nac' (role 'tgg_Nac134', cardinality 0..*) is associated with 'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern135', cardinality 0..*).
+'tgg::ComplementRule' (role 'tgg_ComplementRule116', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule117', cardinality 0..*).
+'tgg::EClass' (role 'tgg_EClass29', cardinality 0..*) is associated with 'tgg::CorrType' (role 'tgg_CorrType28', cardinality 0..*).
+'tgg::AttributeExpression' (role 'tgg_AttributeExpression102', cardinality 0..*) is associated with 'tgg::EAttribute' (role 'tgg_EAttribute103', cardinality 0..*).
+'tgg::AttrCondDef' (role 'tgg_AttrCondDef', cardinality 0..*) is associated with 'tgg::Schema' (role 'tgg_Schema21', cardinality 0..*).
+'tgg::TripleGraphGrammarFile' (role 'tgg_TripleGraphGrammarFile6', cardinality 0..*) is associated with 'tgg::Rule' (role 'tgg_Rule', cardinality 0..*).
+'tgg::EAttribute' (role 'tgg_EAttribute', cardinality 0..*) is associated with 'tgg::AttributeConstraint' (role 'tgg_AttributeConstraint88', cardinality 0..*).
+'tgg::AttributeConstraint' (role 'tgg_AttributeConstraint90', cardinality 0..*) is associated with 'tgg::Expression' (role 'tgg_Expression', cardinality 0..*).
+'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern67', cardinality 0..*) is associated with 'tgg::CorrVariablePattern' (role 'tgg_CorrVariablePattern66', cardinality 0..*).
+'tgg::EObject' (role 'tgg_EObject', cardinality 0..*) is associated with 'tgg::AttributeExpression' (role 'tgg_AttributeExpression', cardinality 0..*).
+'tgg::LinkVariablePattern' (role 'tgg_LinkVariablePattern105', cardinality 0..*) is associated with 'tgg::EReference' (role 'tgg_EReference', cardinality 0..*).
+'tgg::AttrCond' (role 'tgg_AttrCond129', cardinality 0..*) is associated with 'tgg::ComplementRule' (role 'tgg_ComplementRule128', cardinality 0..*).
+'tgg::ContextLinkVariablePattern' (role 'tgg_ContextLinkVariablePattern', cardinality 0..*) is associated with 'tgg::ContextObjectVariablePattern' (role 'tgg_ContextObjectVariablePattern86', cardinality 0..*).
+'tgg::ComplementRule' (role 'tgg_ComplementRule119', cardinality 0..*) is associated with 'tgg::ObjectVariablePattern' (role 'tgg_ObjectVariablePattern120', cardinality 0..*).

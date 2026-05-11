@@ -1,0 +1,308 @@
+The model has 132 class(es).
+The class 'core::CommentableElement' has no attributes.
+The class 'uppaal::declarations::Variable' has no attributes.
+The class 'uppaal::expressions::BitwiseExpression' has the following attributes: 'operator' of type str.
+The class 'Type' has no attributes.
+The class 'uppaal::expressions::QuantificationExpression' has the following attributes: 'quantifier' of type str.
+The class 'uppaal::statements::IfStatement' has no attributes.
+The class 'uppaal::templates::Edge' has no attributes.
+The class 'Template' has no attributes.
+The class 'Initializer' has no attributes.
+The class 'core::TypedElement' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'global::PriorityItem' has no attributes.
+The class 'uppaal::declarations::TypedDeclaration' has no attributes.
+The class 'uppaal::global::ChannelPriorityGroup' has no attributes.
+The class 'uppaal::expressions::PreIncrementDecrementExpression' has no attributes.
+The class 'uppaal::templates::Synchronization' has the following attributes: 'kind' of type str.
+The class 'PriorityItem' has no attributes.
+The class 'uppaal::types::IntegerBounds' has no attributes.
+The class 'Function' has no attributes.
+The class 'uppaal::templates::RedefinedTemplate' has no attributes.
+The class 'uppaal::templates::Template' has no attributes.
+The class 'uppaal::types::ScalarTypeSpecification' has no attributes.
+The class 'uppaal::types::Library' has no attributes.
+The class 'uppaal::expressions::LiteralExpression' has the following attributes: 'text' of type str.
+The class 'Block' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uppaal::statements::ReturnStatement' has no attributes.
+The class 'declarations::Declaration' has no attributes.
+The class 'uppaal::statements::ExpressionStatement' has no attributes.
+The class 'uppaal::templates::Location' has the following attributes: 'locationTimeKind' of type str.
+The class 'uppaal::expressions::BitShiftExpression' has the following attributes: 'operator' of type str.
+The class 'uppaal::global::ChannelPriorityDeclaration' has no attributes.
+The class 'TypedDeclaration' has no attributes.
+The class 'uppaal::expressions::IncrementDecrementExpression' has the following attributes: 'operator' of type str.
+The class 'IntegerBounds' has no attributes.
+The class 'Expression' has no attributes.
+The class 'system::InstantiationList' has no attributes.
+The class 'uppaal::types::Type' has the following attributes: 'baseType' of type str.
+The class 'TypedElementContainer' has no attributes.
+The class 'uppaal::expressions::DataPrefixExpression' has the following attributes: 'prefix' of type str.
+The class 'uppaal::visuals::ColoredElement' has the following attributes: 'colorCode' of type str.
+The class 'uppaal::declarations::SystemDeclarations' has no attributes.
+The class 'global::ChannelPriorityGroup' has no attributes.
+The class 'system::System' has no attributes.
+The class 'declarations::TypedElementContainer' has no attributes.
+The class 'uppaal::expressions::PlusExpression' has no attributes.
+The class 'uppaal::expressions::LogicalExpression' has the following attributes: 'operator' of type str.
+The class 'uppaal::core::CommentableElement' has the following attributes: 'comment' of type str.
+The class 'Selection' has no attributes.
+The class 'uppaal::declarations::Initializer' has no attributes.
+The class 'uppaal::declarations::Declarations' has no attributes.
+The class 'uppaal::statements::WhileLoop' has no attributes.
+The class 'uppaal::types::StructTypeSpecification' has no attributes.
+The class 'uppaal::statements::Iteration' has no attributes.
+The class 'uppaal::declarations::GlobalDeclarations' has no attributes.
+The class 'uppaal::global::DefaultItem' has no attributes.
+The class 'RedefinedTemplate' has no attributes.
+The class 'uppaal::expressions::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'uppaal::declarations::Declaration' has no attributes.
+The class 'AbstractTemplate' has no attributes.
+The class 'Edge' has no attributes.
+The class 'uppaal::declarations::Parameter' has the following attributes: 'callType' of type str.
+The class 'uppaal::global::ChannelItem' has no attributes.
+The class 'uppaal::statements::Block' has no attributes.
+The class 'uppaal::statements::Statement' has no attributes.
+The class 'IdentifierExpression' has no attributes.
+The class 'IncrementDecrementExpression' has no attributes.
+The class 'uppaal::types::TypeExpression' has no attributes.
+The class 'core::NamedElement' has no attributes.
+The class 'uppaal::system::ProgressMeasure' has no attributes.
+The class 'GlobalDeclarations' has no attributes.
+The class 'uppaal::declarations::ParameterContainer' has no attributes.
+The class 'uppaal::expressions::MinMaxExpression' has the following attributes: 'operator' of type str.
+The class 'uppaal::expressions::IdentifierExpression' has no attributes.
+The class 'global::ChannelPriorityDeclaration' has no attributes.
+The class 'uppaal::expressions::FunctionCallExpression' has no attributes.
+The class 'uppaal::templates::AbstractTemplate' has no attributes.
+The class 'visuals::LinearElement' has no attributes.
+The class 'uppaal::core::NamedElement' has the following attributes: 'name' of type str.
+The class 'TypeExpression' has no attributes.
+The class 'Declarations' has no attributes.
+The class 'uppaal::system::System' has no attributes.
+The class 'Statement' has no attributes.
+The class 'uppaal::expressions::NegationExpression' has no attributes.
+The class 'uppaal::system::TemplateDeclaration' has no attributes.
+The class 'Location' has no attributes.
+The class 'ParameterContainer' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'SystemDeclarations' has no attributes.
+The class 'uppaal::core::TypedElement' has no attributes.
+The class 'uppaal::expressions::CompareExpression' has the following attributes: 'operator' of type str.
+The class 'uppaal::declarations::LocalDeclarations' has no attributes.
+The class 'visuals::PlanarElement' has no attributes.
+The class 'Synchronization' has no attributes.
+The class 'uppaal::expressions::PostIncrementDecrementExpression' has no attributes.
+The class 'PredefinedType' has no attributes.
+The class 'uppaal::types::DeclaredType' has no attributes.
+The class 'uppaal::statements::ForLoop' has no attributes.
+The class 'uppaal::system::InstantiationList' has no attributes.
+The class 'uppaal::global::PriorityItem' has no attributes.
+The class 'uppaal::declarations::ArrayInitializer' has no attributes.
+The class 'uppaal::statements::EmptyStatement' has no attributes.
+The class 'uppaal::declarations::TypedElementContainer' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'uppaal::statements::DoWhileLoop' has no attributes.
+The class 'system::ProgressMeasure' has no attributes.
+The class 'uppaal::visuals::PlanarElement' has no attributes.
+The class 'uppaal::visuals::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'Point' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'LocalDeclarations' has no attributes.
+The class 'uppaal::declarations::TypeDeclaration' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'visuals::ColoredElement' has no attributes.
+The class 'uppaal::expressions::ConditionExpression' has no attributes.
+The class 'uppaal::expressions::Expression' has no attributes.
+The class 'uppaal::visuals::LinearElement' has no attributes.
+The class 'uppaal::expressions::AssignmentExpression' has the following attributes: 'operator' of type str.
+The class 'DeclaredType' has no attributes.
+The class 'uppaal::declarations::ExpressionInitializer' has no attributes.
+The class 'uppaal::declarations::Function' has no attributes.
+The class 'uppaal::NTA' has no attributes.
+The class 'uppaal::expressions::BinaryExpression' has no attributes.
+The class 'uppaal::types::PredefinedType' has the following attributes: 'type' of type str.
+The class 'system::TemplateDeclaration' has no attributes.
+The class 'uppaal::types::RangeTypeSpecification' has no attributes.
+The class 'uppaal::expressions::ScopedIdentifierExpression' has no attributes.
+The class 'uppaal::expressions::MinusExpression' has no attributes.
+The class 'uppaal::templates::Selection' has no attributes.
+The class 'uppaal::expressions::ChannelPrefixExpression' has the following attributes: 'urgent' of type bool; 'broadcast' of type bool.
+The class 'TypeDeclaration' has no attributes.
+The class 'Variable' has no attributes.
+The enumeration 'BitShiftOperator' has the following literals: 'LEFT', 'RIGHT'.
+The enumeration 'CompareOperator' has the following literals: 'GREATER', 'EQUAL', 'LESS', 'UNEQUAL', 'GREATER_OR_EQUAL', 'LESS_OR_EQUAL'.
+The enumeration 'MinMaxOperator' has the following literals: 'MAX', 'MIN'.
+The enumeration 'BuiltInType' has the following literals: 'VOID', 'INT', 'CLOCK', 'CHAN', 'BOOL'.
+The enumeration 'LogicalOperator' has the following literals: 'AND', 'OR', 'IMPLY'.
+The enumeration 'AssignmentOperator' has the following literals: 'DIVIDE_EQUAL', 'BIT_OR_EQUAL', 'BIT_LEFT_EQUAL', 'TIMES_EQUAL', 'PLUS_EQUAL', 'EQUAL', 'MINUS_EQUAL', 'BIT_XOR_EQUAL', 'BIT_AND_EQUAL', 'MODULO_EQUAL', 'BIT_RIGHT_EQUAL'.
+The enumeration 'ArithmeticOperator' has the following literals: 'ADD', 'SUBTRACT', 'DIVIDE', 'MODULO', 'MULTIPLICATE'.
+The enumeration 'IncrementDecrementOperator' has the following literals: 'INCREMENT', 'DECREMENT'.
+The enumeration 'SynchronizationKind' has the following literals: 'SEND', 'RECEIVE'.
+The enumeration 'LocationKind' has the following literals: 'URGENT', 'NORMAL', 'COMMITED'.
+The enumeration 'DataVariablePrefix' has the following literals: 'CONST', 'META'.
+The enumeration 'Quantifier' has the following literals: 'UNIVERSAL', 'EXISTENTIAL'.
+The enumeration 'CallType' has the following literals: 'CALL_BY_REFERENCE', 'CALL_BY_VALUE'.
+The enumeration 'BitwiseOperator' has the following literals: 'AND', 'OR', 'XOR'.
+'uppaal::expressions::FunctionCallExpression' is a specialization of 'Expression'.
+'uppaal::NTA' is a specialization of 'core::CommentableElement'.
+'uppaal::declarations::Function' is a specialization of 'core::NamedElement'.
+'uppaal::declarations::ParameterContainer' is a specialization of 'TypedElementContainer'.
+'uppaal::statements::ExpressionStatement' is a specialization of 'Statement'.
+'uppaal::statements::Iteration' is a specialization of 'statements::Statement'.
+'uppaal::global::ChannelPriorityDeclaration' is a specialization of 'Declaration'.
+'uppaal::templates::Selection' is a specialization of 'TypedElementContainer'.
+'uppaal::expressions::QuantificationExpression' is a specialization of 'declarations::TypedElementContainer'.
+'uppaal::declarations::Variable' is a specialization of 'core::NamedElement'.
+'uppaal::declarations::Variable' is a specialization of 'core::TypedElement'.
+'uppaal::statements::ReturnStatement' is a specialization of 'Statement'.
+'uppaal::expressions::LiteralExpression' is a specialization of 'Expression'.
+'uppaal::expressions::LogicalExpression' is a specialization of 'BinaryExpression'.
+'uppaal::expressions::IncrementDecrementExpression' is a specialization of 'Expression'.
+'uppaal::declarations::TypedDeclaration' is a specialization of 'declarations::TypedElementContainer'.
+'uppaal::statements::Iteration' is a specialization of 'declarations::TypedElementContainer'.
+'uppaal::expressions::PostIncrementDecrementExpression' is a specialization of 'IncrementDecrementExpression'.
+'uppaal::expressions::ConditionExpression' is a specialization of 'Expression'.
+'uppaal::global::ChannelItem' is a specialization of 'PriorityItem'.
+'uppaal::statements::Block' is a specialization of 'Statement'.
+'uppaal::types::TypeExpression' is a specialization of 'Expression'.
+'uppaal::types::PredefinedType' is a specialization of 'Type'.
+'uppaal::expressions::MinusExpression' is a specialization of 'Expression'.
+'uppaal::types::RangeTypeSpecification' is a specialization of 'TypeExpression'.
+'uppaal::statements::WhileLoop' is a specialization of 'Statement'.
+'uppaal::types::ScalarTypeSpecification' is a specialization of 'TypeExpression'.
+'uppaal::expressions::BitShiftExpression' is a specialization of 'BinaryExpression'.
+'uppaal::templates::Edge' is a specialization of 'visuals::ColoredElement'.
+'uppaal::statements::DoWhileLoop' is a specialization of 'Statement'.
+'uppaal::declarations::GlobalDeclarations' is a specialization of 'Declarations'.
+'uppaal::templates::Edge' is a specialization of 'core::CommentableElement'.
+'uppaal::types::Type' is a specialization of 'NamedElement'.
+'uppaal::system::TemplateDeclaration' is a specialization of 'Declaration'.
+'uppaal::expressions::CompareExpression' is a specialization of 'BinaryExpression'.
+'uppaal::declarations::ArrayInitializer' is a specialization of 'Initializer'.
+'uppaal::expressions::PlusExpression' is a specialization of 'Expression'.
+'uppaal::expressions::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'uppaal::types::StructTypeSpecification' is a specialization of 'TypeExpression'.
+'uppaal::expressions::NegationExpression' is a specialization of 'Expression'.
+'uppaal::templates::Location' is a specialization of 'visuals::ColoredElement'.
+'uppaal::expressions::BitwiseExpression' is a specialization of 'BinaryExpression'.
+'uppaal::statements::IfStatement' is a specialization of 'Statement'.
+'uppaal::declarations::SystemDeclarations' is a specialization of 'Declarations'.
+'uppaal::statements::ForLoop' is a specialization of 'Statement'.
+'uppaal::expressions::DataPrefixExpression' is a specialization of 'Expression'.
+'uppaal::templates::AbstractTemplate' is a specialization of 'NamedElement'.
+'uppaal::expressions::PreIncrementDecrementExpression' is a specialization of 'IncrementDecrementExpression'.
+'uppaal::expressions::MinMaxExpression' is a specialization of 'BinaryExpression'.
+'uppaal::templates::RedefinedTemplate' is a specialization of 'AbstractTemplate'.
+'uppaal::declarations::Parameter' is a specialization of 'Variable'.
+'uppaal::expressions::ChannelPrefixExpression' is a specialization of 'Expression'.
+'uppaal::declarations::TypedDeclaration' is a specialization of 'declarations::Declaration'.
+'uppaal::expressions::BinaryExpression' is a specialization of 'Expression'.
+'uppaal::expressions::IdentifierExpression' is a specialization of 'Expression'.
+'uppaal::declarations::TypeDeclaration' is a specialization of 'Declaration'.
+'uppaal::expressions::AssignmentExpression' is a specialization of 'BinaryExpression'.
+'uppaal::templates::Location' is a specialization of 'visuals::PlanarElement'.
+'uppaal::templates::Edge' is a specialization of 'visuals::LinearElement'.
+'uppaal::statements::EmptyStatement' is a specialization of 'Statement'.
+'uppaal::types::DeclaredType' is a specialization of 'Type'.
+'uppaal::NTA' is a specialization of 'core::NamedElement'.
+'uppaal::declarations::ExpressionInitializer' is a specialization of 'Initializer'.
+'uppaal::declarations::LocalDeclarations' is a specialization of 'Declarations'.
+'uppaal::global::DefaultItem' is a specialization of 'PriorityItem'.
+'uppaal::templates::Template' is a specialization of 'AbstractTemplate'.
+'uppaal::expressions::ScopedIdentifierExpression' is a specialization of 'Expression'.
+'uppaal::expressions::QuantificationExpression' is a specialization of 'expressions::Expression'.
+'uppaal::templates::Location' is a specialization of 'core::CommentableElement'.
+'uppaal::declarations::Function' is a specialization of 'core::TypedElement'.
+'uppaal::templates::Location' is a specialization of 'core::NamedElement'.
+'Expression' (role 'Expression153', cardinality 0..*) is associated with 'uppaal::expressions::ConditionExpression' (role 'uppaal_expressions_ConditionExpression', cardinality 0..*).
+'Statement' (role 'Statement112', cardinality 0..*) is associated with 'uppaal::statements::DoWhileLoop' (role 'uppaal_statements_DoWhileLoop', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'uppaal::statements::Block' (role 'uppaal_statements_Block92', cardinality 0..*).
+'uppaal::statements::ExpressionStatement' (role 'uppaal_statements_ExpressionStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression127', cardinality 0..*).
+'TypedElement' (role 'TypedElement', cardinality 0..*) is associated with 'uppaal::declarations::TypedElementContainer' (role 'container', cardinality 0..*).
+'Expression' (role 'Expression159', cardinality 0..*) is associated with 'uppaal::expressions::ConditionExpression' (role 'uppaal_expressions_ConditionExpression158', cardinality 0..*).
+'IntegerBounds' (role 'IntegerBounds', cardinality 0..*) is associated with 'uppaal::types::RangeTypeSpecification' (role 'uppaal_types_RangeTypeSpecification', cardinality 0..*).
+'uppaal::templates::Synchronization' (role 'uppaal_templates_Synchronization', cardinality 0..*) is associated with 'IdentifierExpression' (role 'IdentifierExpression88', cardinality 0..*).
+'Location' (role 'Location75', cardinality 0..*) is associated with 'uppaal::templates::Edge' (role 'incomingEdges', cardinality 0..*).
+'ParameterContainer' (role 'ParameterContainer53', cardinality 0..*) is associated with 'uppaal::templates::AbstractTemplate' (role 'uppaal_templates_AbstractTemplate', cardinality 0..*).
+'LocalDeclarations' (role 'LocalDeclarations90', cardinality 0..*) is associated with 'uppaal::statements::Block' (role 'uppaal_statements_Block', cardinality 0..*).
+'Edge' (role 'Edge', cardinality 0..*) is associated with 'uppaal::templates::Template' (role 'parentTemplate57', cardinality 0..*).
+'Synchronization' (role 'Synchronization', cardinality 0..*) is associated with 'uppaal::templates::Edge' (role 'uppaal_templates_Edge84', cardinality 0..*).
+'Template' (role 'Template77', cardinality 0..*) is associated with 'uppaal::templates::Edge' (role 'edge', cardinality 0..*).
+'uppaal::system::InstantiationList' (role 'uppaal_system_InstantiationList', cardinality 0..*) is associated with 'AbstractTemplate' (role 'AbstractTemplate', cardinality 0..*).
+'Expression' (role 'Expression39', cardinality 0..*) is associated with 'uppaal::declarations::ExpressionInitializer' (role 'uppaal_declarations_ExpressionInitializer', cardinality 0..*).
+'Expression' (role 'Expression129', cardinality 0..*) is associated with 'uppaal::expressions::NegationExpression' (role 'uppaal_expressions_NegationExpression', cardinality 0..*).
+'uppaal::core::TypedElement' (role 'elements', cardinality 0..*) is associated with 'TypedElementContainer' (role 'TypedElementContainer', cardinality 0..*).
+'AbstractTemplate' (role 'AbstractTemplate62', cardinality 0..*) is associated with 'uppaal::templates::RedefinedTemplate' (role 'uppaal_templates_RedefinedTemplate', cardinality 0..*).
+'uppaal::NTA' (role 'uppaal_NTA', cardinality 0..*) is associated with 'GlobalDeclarations' (role 'GlobalDeclarations', cardinality 0..*).
+'uppaal::statements::ForLoop' (role 'uppaal_statements_ForLoop', cardinality 0..*) is associated with 'Expression' (role 'Expression94', cardinality 0..*).
+'Expression' (role 'Expression51', cardinality 0..*) is associated with 'uppaal::system::ProgressMeasure' (role 'uppaal_system_ProgressMeasure', cardinality 0..*).
+'Expression' (role 'Expression131', cardinality 0..*) is associated with 'uppaal::expressions::PlusExpression' (role 'uppaal_expressions_PlusExpression', cardinality 0..*).
+'NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'uppaal::expressions::IdentifierExpression' (role 'uppaal_expressions_IdentifierExpression', cardinality 0..*).
+'Block' (role 'Block', cardinality 0..*) is associated with 'uppaal::declarations::Function' (role 'uppaal_declarations_Function', cardinality 0..*).
+'uppaal::expressions::QuantificationExpression' (role 'uppaal_expressions_QuantificationExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression161', cardinality 0..*).
+'uppaal::templates::Edge' (role 'outgoingEdges', cardinality 0..*) is associated with 'Location' (role 'Location73', cardinality 0..*).
+'uppaal::types::IntegerBounds' (role 'uppaal_types_IntegerBounds17', cardinality 0..*) is associated with 'Expression' (role 'Expression18', cardinality 0..*).
+'uppaal::system::TemplateDeclaration' (role 'uppaal_system_TemplateDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression47', cardinality 0..*).
+'Expression' (role 'Expression151', cardinality 0..*) is associated with 'uppaal::expressions::FunctionCallExpression' (role 'uppaal_expressions_FunctionCallExpression150', cardinality 0..*).
+'LocalDeclarations' (role 'LocalDeclarations', cardinality 0..*) is associated with 'uppaal::templates::Template' (role 'uppaal_templates_Template', cardinality 0..*).
+'Expression' (role 'Expression163', cardinality 0..*) is associated with 'uppaal::expressions::IncrementDecrementExpression' (role 'uppaal_expressions_IncrementDecrementExpression', cardinality 0..*).
+'Location' (role 'Location', cardinality 0..*) is associated with 'uppaal::templates::Template' (role 'parentTemplate', cardinality 0..*).
+'Expression' (role 'Expression107', cardinality 0..*) is associated with 'uppaal::statements::WhileLoop' (role 'uppaal_statements_WhileLoop', cardinality 0..*).
+'uppaal::types::StructTypeSpecification' (role 'uppaal_types_StructTypeSpecification', cardinality 0..*) is associated with 'TypedDeclaration' (role 'TypedDeclaration', cardinality 0..*).
+'Expression' (role 'Expression125', cardinality 0..*) is associated with 'uppaal::statements::ReturnStatement' (role 'uppaal_statements_ReturnStatement', cardinality 0..*).
+'uppaal::expressions::ConditionExpression' (role 'uppaal_expressions_ConditionExpression155', cardinality 0..*) is associated with 'Expression' (role 'Expression156', cardinality 0..*).
+'uppaal::templates::Location' (role 'uppaal_templates_Location', cardinality 0..*) is associated with 'Expression' (role 'Expression67', cardinality 0..*).
+'Expression' (role 'Expression100', cardinality 0..*) is associated with 'uppaal::statements::ForLoop' (role 'uppaal_statements_ForLoop99', cardinality 0..*).
+'uppaal::declarations::TypeDeclaration' (role 'uppaal_declarations_TypeDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression30', cardinality 0..*).
+'uppaal::declarations::Declarations' (role 'uppaal_declarations_Declarations', cardinality 0..*) is associated with 'Declaration' (role 'Declaration', cardinality 0..*).
+'uppaal::expressions::ScopedIdentifierExpression' (role 'uppaal_expressions_ScopedIdentifierExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression144', cardinality 0..*).
+'Statement' (role 'Statement110', cardinality 0..*) is associated with 'uppaal::statements::WhileLoop' (role 'uppaal_statements_WhileLoop109', cardinality 0..*).
+'uppaal::declarations::Variable' (role 'uppaal_declarations_Variable34', cardinality 0..*) is associated with 'Initializer' (role 'Initializer', cardinality 0..*).
+'Statement' (role 'Statement123', cardinality 0..*) is associated with 'uppaal::statements::IfStatement' (role 'uppaal_statements_IfStatement122', cardinality 0..*).
+'uppaal::declarations::TypedElementContainer' (role 'uppaal_declarations_TypedElementContainer', cardinality 0..*) is associated with 'Expression' (role 'Expression36', cardinality 0..*).
+'uppaal::templates::Template' (role 'uppaal_templates_Template59', cardinality 0..*) is associated with 'Location' (role 'Location60', cardinality 0..*).
+'Expression' (role 'Expression135', cardinality 0..*) is associated with 'uppaal::expressions::BinaryExpression' (role 'uppaal_expressions_BinaryExpression', cardinality 0..*).
+'uppaal::core::TypedElement' (role 'uppaal_core_TypedElement', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'uppaal::global::ChannelPriorityGroup' (role 'uppaal_global_ChannelPriorityGroup', cardinality 0..*) is associated with 'global::PriorityItem' (role 'global_PriorityItem', cardinality 0..*).
+'uppaal::templates::Location' (role 'source', cardinality 0..*) is associated with 'Edge' (role 'Edge71', cardinality 0..*).
+'SystemDeclarations' (role 'SystemDeclarations', cardinality 0..*) is associated with 'uppaal::NTA' (role 'uppaal_NTA4', cardinality 0..*).
+'uppaal::types::Library' (role 'uppaal_types_Library', cardinality 0..*) is associated with 'PredefinedType' (role 'PredefinedType', cardinality 0..*).
+'uppaal::declarations::SystemDeclarations' (role 'uppaal_declarations_SystemDeclarations24', cardinality 0..*) is associated with 'system::ProgressMeasure' (role 'system_ProgressMeasure', cardinality 0..*).
+'uppaal::declarations::SystemDeclarations' (role 'uppaal_declarations_SystemDeclarations', cardinality 0..*) is associated with 'system::System' (role 'system_System', cardinality 0..*).
+'uppaal::declarations::Function' (role 'uppaal_declarations_Function27', cardinality 0..*) is associated with 'ParameterContainer' (role 'ParameterContainer', cardinality 0..*).
+'uppaal::expressions::DataPrefixExpression' (role 'uppaal_expressions_DataPrefixExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression166', cardinality 0..*).
+'Function' (role 'Function', cardinality 0..*) is associated with 'uppaal::expressions::FunctionCallExpression' (role 'uppaal_expressions_FunctionCallExpression', cardinality 0..*).
+'IdentifierExpression' (role 'IdentifierExpression147', cardinality 0..*) is associated with 'uppaal::expressions::ScopedIdentifierExpression' (role 'uppaal_expressions_ScopedIdentifierExpression146', cardinality 0..*).
+'uppaal::visuals::LinearElement' (role 'uppaal_visuals_LinearElement', cardinality 0..*) is associated with 'Point' (role 'Point169', cardinality 0..*).
+'Expression' (role 'Expression115', cardinality 0..*) is associated with 'uppaal::statements::DoWhileLoop' (role 'uppaal_statements_DoWhileLoop114', cardinality 0..*).
+'TypeDeclaration' (role 'TypeDeclaration', cardinality 0..*) is associated with 'uppaal::types::DeclaredType' (role 'type', cardinality 0..*).
+'Statement' (role 'Statement120', cardinality 0..*) is associated with 'uppaal::statements::IfStatement' (role 'uppaal_statements_IfStatement119', cardinality 0..*).
+'uppaal::templates::Edge' (role 'uppaal_templates_Edge86', cardinality 0..*) is associated with 'Selection' (role 'Selection', cardinality 0..*).
+'uppaal::declarations::Variable' (role 'uppaal_declarations_Variable', cardinality 0..*) is associated with 'Expression' (role 'Expression32', cardinality 0..*).
+'uppaal::statements::ForLoop' (role 'uppaal_statements_ForLoop102', cardinality 0..*) is associated with 'Statement' (role 'Statement103', cardinality 0..*).
+'global::ChannelPriorityGroup' (role 'global_ChannelPriorityGroup', cardinality 0..*) is associated with 'uppaal::global::ChannelPriorityDeclaration' (role 'uppaal_global_ChannelPriorityDeclaration', cardinality 0..*).
+'Expression' (role 'Expression142', cardinality 0..*) is associated with 'uppaal::expressions::IdentifierExpression' (role 'uppaal_expressions_IdentifierExpression141', cardinality 0..*).
+'system::InstantiationList' (role 'system_InstantiationList', cardinality 0..*) is associated with 'uppaal::system::System' (role 'uppaal_system_System', cardinality 0..*).
+'uppaal::types::IntegerBounds' (role 'uppaal_types_IntegerBounds', cardinality 0..*) is associated with 'Expression' (role 'Expression15', cardinality 0..*).
+'uppaal::templates::Location' (role 'location', cardinality 0..*) is associated with 'Template' (role 'Template65', cardinality 0..*).
+'Expression' (role 'Expression117', cardinality 0..*) is associated with 'uppaal::statements::IfStatement' (role 'uppaal_statements_IfStatement', cardinality 0..*).
+'Initializer' (role 'Initializer41', cardinality 0..*) is associated with 'uppaal::declarations::ArrayInitializer' (role 'uppaal_declarations_ArrayInitializer', cardinality 0..*).
+'global::ChannelPriorityDeclaration' (role 'global_ChannelPriorityDeclaration', cardinality 0..*) is associated with 'uppaal::declarations::GlobalDeclarations' (role 'uppaal_declarations_GlobalDeclarations', cardinality 0..*).
+'uppaal::templates::Location' (role 'target', cardinality 0..*) is associated with 'Edge' (role 'Edge69', cardinality 0..*).
+'uppaal::visuals::PlanarElement' (role 'uppaal_visuals_PlanarElement', cardinality 0..*) is associated with 'Point' (role 'Point', cardinality 0..*).
+'uppaal::templates::Edge' (role 'uppaal_templates_Edge', cardinality 0..*) is associated with 'Expression' (role 'Expression79', cardinality 0..*).
+'uppaal::types::DeclaredType' (role 'uppaal_types_DeclaredType', cardinality 0..*) is associated with 'Expression' (role 'Expression9', cardinality 0..*).
+'uppaal::templates::Edge' (role 'uppaal_templates_Edge81', cardinality 0..*) is associated with 'Expression' (role 'Expression82', cardinality 0..*).
+'uppaal::templates::RedefinedTemplate' (role 'declaredTemplate', cardinality 0..*) is associated with 'system::TemplateDeclaration' (role 'TemplateDeclaration', cardinality 0..*).
+'uppaal::statements::ForLoop' (role 'uppaal_statements_ForLoop96', cardinality 0..*) is associated with 'Expression' (role 'Expression97', cardinality 0..*).
+'uppaal::expressions::BinaryExpression' (role 'uppaal_expressions_BinaryExpression137', cardinality 0..*) is associated with 'Expression' (role 'Expression138', cardinality 0..*).
+'DeclaredType' (role 'DeclaredType', cardinality 0..*) is associated with 'uppaal::declarations::TypeDeclaration' (role 'typeDeclaration', cardinality 0..*).
+'uppaal::global::ChannelItem' (role 'uppaal_global_ChannelItem', cardinality 0..*) is associated with 'IdentifierExpression' (role 'IdentifierExpression', cardinality 0..*).
+'Template' (role 'Template', cardinality 0..*) is associated with 'uppaal::NTA' (role 'uppaal_NTA2', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'uppaal::expressions::ChannelPrefixExpression' (role 'uppaal_expressions_ChannelPrefixExpression', cardinality 0..*).
+'uppaal::system::TemplateDeclaration' (role 'declaration', cardinality 0..*) is associated with 'RedefinedTemplate' (role 'RedefinedTemplate', cardinality 0..*).
+'uppaal::expressions::MinusExpression' (role 'uppaal_expressions_MinusExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression133', cardinality 0..*).
+'uppaal::types::ScalarTypeSpecification' (role 'uppaal_types_ScalarTypeSpecification', cardinality 0..*) is associated with 'Expression' (role 'Expression11', cardinality 0..*).
+'Statement' (role 'Statement105', cardinality 0..*) is associated with 'uppaal::statements::Iteration' (role 'uppaal_statements_Iteration', cardinality 0..*).

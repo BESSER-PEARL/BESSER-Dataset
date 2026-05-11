@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'classes::NamedElement' has the following attributes: 'name' of type str.
+The class 'classes::Attribute' has the following attributes: 'isMany' of type bool.
+The class 'classes::Classifier' has no attributes.
+The class 'classes::TypedElement' has no attributes.
+The class 'classes::CModel' has no attributes.
+The class 'classes::CClass' has the following attributes: 'abstract' of type bool.
+The class 'classes::Datatype' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Classifier' has no attributes.
+'classes::Classifier' is a specialization of 'NamedElement'.
+'classes::Attribute' is a specialization of 'TypedElement'.
+'classes::Attribute' is a specialization of 'NamedElement'.
+'classes::Datatype' is a specialization of 'Classifier'.
+'classes::CClass' is a specialization of 'Classifier'.
+'classes::Classifier' (role 'classes_Classifier9', cardinality 0..*) is associated with 'classes::TypedElement' (role 'classes_TypedElement', cardinality 0..*).
+'classes::CClass' (role 'classes_CClass', cardinality 0..*) is associated with 'classes::CClass' (role 'classes_CClass1', cardinality 0..*).
+'classes::CModel' (role 'classes_CModel', cardinality 0..*) is associated with 'classes::Classifier' (role 'classes_Classifier', cardinality 0..*).
+'classes::CClass' (role 'classes_CClass5', cardinality 0..*) is associated with 'classes::CClass' (role 'classes_CClass7', cardinality 0..*).
+'classes::Attribute' (role 'classes_Attribute', cardinality 0..*) is associated with 'classes::CClass' (role 'classes_CClass4', cardinality 0..*).

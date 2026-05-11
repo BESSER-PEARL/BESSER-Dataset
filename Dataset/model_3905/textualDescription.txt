@@ -1,0 +1,213 @@
+The model has 99 class(es).
+The class 'shr5Management::Resourcen' has the following attributes: 'resource' of type int.
+The class 'shr5Management::SumToTenGenerator' has no attributes.
+The class 'SpecialType' has no attributes.
+The class 'shr5Management::CharacterGeneratorSystem' has no attributes.
+The class 'GeldWert' has no attributes.
+The class 'shr5Management::SpecialType' has the following attributes: 'skillValue' of type int; 'skillNumber' of type int.
+The class 'shr5Management::LifeModule' has the following attributes: 'karmaCost' of type int; 'moduleType' of type str; 'time' of type int.
+The class 'shr5Management::ModuleSkillGroupChange' has no attributes.
+The class 'shr5Management::Shr5Generator' has the following attributes: 'resourceSpend' of type int; 'spellPointSpend' of type int; 'skillPointSpend' of type int; 'karmaSpend' of type int; 'attributeSpend' of type int; 'startKarma' of type int; 'connectionSpend' of type int; 'groupPointSpend' of type int; 'startResources' of type int; 'karmaToResource' of type int; 'knownlegePointSpend' of type int; 'specialPointSpend' of type int.
+The class 'shr5Management::GamemasterManagement' has no attributes.
+The class 'Beschreibbar' has no attributes.
+The class 'shr5Management::LifeModulesSystem' has the following attributes: 'knowlegeSkillMax' of type int.
+The class 'shr5Management::EObject' has no attributes.
+The class 'shr5Management::Lifestyle' has no attributes.
+The class 'shr5Management::ContractPayment' has the following attributes: 'payed' of type bool.
+The class 'shr5Management::PlayerCharacter' has the following attributes: 'age' of type int.
+The class 'shr5Management::ModuleChange' has no attributes.
+The class 'shr5Management::Vertrag' has no attributes.
+The class 'shr5Management::CharacterGenerator' has the following attributes: 'currentInstruction' of type str; 'characterName' of type str; 'state' of type str.
+The class 'shr5Management::RangeTable' has no attributes.
+The class 'PersonaValueChange' has no attributes.
+The class 'shr5Management::EReference' has no attributes.
+The class 'Adept' has no attributes.
+The class 'shr5Management::Connection' has the following attributes: 'loyality' of type int; 'influence' of type int.
+The class 'Shr5System' has no attributes.
+The class 'shr5Management::Sprachfertigkeit' has no attributes.
+The class 'shr5Management::Adept' has the following attributes: 'magic' of type int.
+The class 'shr5Management::Fahrzeug' has no attributes.
+The class 'shr5Management::Shr5KarmaGenerator' has no attributes.
+The class 'shr5Management::Spellcaster' has the following attributes: 'spellPoints' of type int.
+The class 'shr5Management::NonPlayerCharacter' has no attributes.
+The class 'shr5Management::RangeTableEntry' has the following attributes: 'to' of type int; 'from_' of type int.
+The class 'shr5Management::FreeStyleGenerator' has no attributes.
+The class 'CharacterChange' has no attributes.
+The class 'ModuleChange' has no attributes.
+The class 'shr5Management::CharacterGroup' has no attributes.
+The class 'shr5Management::PrioritySystem' has the following attributes: 'karmaPoints' of type int.
+The class 'shr5Management::TrainingRange' has the following attributes: 'start' of type str; 'daysTrained' of type int; 'end' of type str.
+The class 'shr5Management::AttributeChange' has no attributes.
+The class 'shr5Management::TrainingsTime' has the following attributes: 'daysTrained' of type int; 'trainingComplete' of type bool; 'daysRemains' of type int.
+The class 'shr5Management::ModuleFeatureChange' has no attributes.
+The class 'shr5Management::ModuleSkillChange' has no attributes.
+The class 'RangeTableEntry' has no attributes.
+The class 'shr5Management::GeneratorStateToEStringMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'shr5Management::MartialartTechnique' has no attributes.
+The class 'shr5Management::GruntGroup' has the following attributes: 'professionalRating' of type int.
+The class 'shr5Management::ModuleAttributeChange' has no attributes.
+The class 'shr5Management::CharacterAdvancementSystem' has no attributes.
+The class 'shr5Management::EClass' has no attributes.
+The class 'shr5Management::TrainingRate' has the following attributes: 'timeUnit' of type str; 'factor' of type int.
+The class 'shr5Management::IncreaseCharacterPart' has no attributes.
+The class 'shr5Management::ModuleTeachableChange' has no attributes.
+The class 'shr5Management::GruntMembers' has the following attributes: 'count' of type int.
+The class 'shr5Management::AbstraktGegenstand' has no attributes.
+The class 'shr5Management::Shr5System' has the following attributes: 'maxConnectionRating' of type int; 'numberOfMaxAttributes' of type int; 'maxKarmaToResources' of type int; 'karmaToMagicFactor' of type int; 'maxMartialArtStyles' of type int; 'knowlegeSkillFactor' of type int; 'skillMax' of type int; 'numberOfSpecalism' of type int; 'charismaToConnectionFactor' of type int; 'sumToTenValue' of type int; 'freeMartialArtTechniques' of type int; 'karmaToResourceFactor' of type int; 'karmaToConnectionFactor' of type int; 'maxResourceToKeep' of type int; 'boundSprititServiceCost' of type int; 'maxKarmaToKeep' of type int.
+The class 'shr5Management::Advancement' has the following attributes: 'karmaFactor' of type int.
+The class 'shr5Management::KarmaGaint' has the following attributes: 'karma' of type int.
+The class 'shr5Management::PersonaMartialArtChange' has no attributes.
+The class 'shr5Management::Technomancer' has the following attributes: 'complexForms' of type int; 'resonanz' of type int.
+The class 'shr5Management::ManagedCharacter' has the following attributes: 'publicAwareness' of type int; 'height' of type int; 'dateofbirth' of type str; 'notorietyBasic' of type int; 'karmaGaint' of type int; 'sex' of type str; 'weight' of type int; 'notoriety' of type int; 'currentKarma' of type int; 'streetCred' of type int.
+The class 'shr5Management::PersonaChange' has no attributes.
+The class 'CharacterGeneratorSystem' has no attributes.
+The class 'Changes' has no attributes.
+The class 'PersonaChange' has no attributes.
+The class 'shr5Management::QuellenConstrain' has the following attributes: 'constrainType' of type str.
+The class 'shr5Management::AbstraktPersona' has no attributes.
+The class 'shr5Management::PersonaValueChange' has the following attributes: 'from_' of type int; 'to' of type int.
+The class 'shr5Management::PriorityCategorie' has the following attributes: 'cost' of type int; 'categorieName' of type str.
+The class 'shr5Management::FreeStyle' has no attributes.
+The class 'shr5Management::MartialartStyle' has no attributes.
+The class 'shr5Management::CharacterChange' has no attributes.
+The class 'shr5Management::LifestyleToStartMoney' has the following attributes: 'moneyFactor' of type int; 'numberOfW' of type int.
+The class 'shr5Management::KarmaGenerator' has the following attributes: 'startResources' of type int; 'startKarma' of type int; 'karmaToResource' of type int; 'choiseKarmaCost' of type int; 'karmaSpend' of type int; 'resourceSpend' of type int.
+The class 'shr5Management::Fertigkeit' has no attributes.
+The class 'PrioritySystem' has no attributes.
+The class 'PlayerManagement' has no attributes.
+The class 'ManagedCharacter' has no attributes.
+The class 'shr5Management::Shr5RuleGenerator' has no attributes.
+The class 'shr5Management::Attributes' has the following attributes: 'attibutePoints' of type int.
+The class 'shr5Management::DiaryEntry' has the following attributes: 'message' of type str; 'date' of type str.
+The class 'shr5Management::SourceBook' has no attributes.
+The class 'shr5Management::Spezies' has no attributes.
+The class 'shr5Management::Erlernbar' has no attributes.
+The class 'shr5Management::PlayerManagement' has no attributes.
+The class 'shr5Management::LifeModulesGenerator' has the following attributes: 'startingAge' of type int; 'moduleKarmaCost' of type int.
+The class 'shr5Management::MetaType' has the following attributes: 'specialPoints' of type int.
+The class 'PriorityCategorie' has no attributes.
+The class 'shr5Management::Quelle' has no attributes.
+The class 'shr5Management::FertigkeitsGruppe' has no attributes.
+The class 'shr5Management::CharacterDiary' has the following attributes: 'characterDate' of type str.
+The class 'shr5Management::ModuleTypeChange' has the following attributes: 'grade' of type int.
+The class 'DiaryEntry' has no attributes.
+The class 'Quelle' has no attributes.
+The class 'shr5Management::Skill' has the following attributes: 'skillPoints' of type int; 'groupPoints' of type int.
+The class 'shr5Management::Mudan' has no attributes.
+The class 'Shr5Generator' has no attributes.
+The class 'shr5Management::Changes' has the following attributes: 'changeApplied' of type bool; 'date' of type str; 'karmaCost' of type int; 'dateApplied' of type str.
+The class 'shr5Management::Pack' has no attributes.
+The class 'shr5Management::EAttribute' has no attributes.
+The enumeration 'GeneratorState' has the following literals: 'readyForCreation', 'commited', 'personaCreated', 'new'.
+The enumeration 'Sex' has the following literals: 'male', 'female', 'undefinde', 'none'.
+The enumeration 'QuellenConstrainType' has the following literals: 'notTogether', 'needOneOf'.
+The enumeration 'LifeModuleType' has the following literals: 'teenYears', 'formativeYears', 'realLife', 'nationality', 'furtherEducation'.
+'shr5Management::MetaType' is a specialization of 'PriorityCategorie'.
+'shr5Management::Mudan' is a specialization of 'SpecialType'.
+'shr5Management::CharacterGroup' is a specialization of 'Beschreibbar'.
+'shr5Management::CharacterAdvancementSystem' is a specialization of 'Beschreibbar'.
+'shr5Management::LifeModule' is a specialization of 'Beschreibbar'.
+'shr5Management::Shr5System' is a specialization of 'PrioritySystem'.
+'shr5Management::Adept' is a specialization of 'SpecialType'.
+'shr5Management::Pack' is a specialization of 'Beschreibbar'.
+'shr5Management::Pack' is a specialization of 'Quelle'.
+'shr5Management::ModuleTypeChange' is a specialization of 'ModuleChange'.
+'shr5Management::TrainingRate' is a specialization of 'RangeTableEntry'.
+'shr5Management::Spellcaster' is a specialization of 'Adept'.
+'shr5Management::Skill' is a specialization of 'PriorityCategorie'.
+'shr5Management::CharacterGeneratorSystem' is a specialization of 'Beschreibbar'.
+'shr5Management::PersonaChange' is a specialization of 'PersonaValueChange'.
+'shr5Management::KarmaGaint' is a specialization of 'Changes'.
+'shr5Management::AttributeChange' is a specialization of 'PersonaValueChange'.
+'shr5Management::Resourcen' is a specialization of 'PriorityCategorie'.
+'shr5Management::TrainingsTime' is a specialization of 'CharacterChange'.
+'shr5Management::NonPlayerCharacter' is a specialization of 'ManagedCharacter'.
+'shr5Management::PlayerManagement' is a specialization of 'Beschreibbar'.
+'shr5Management::CharacterChange' is a specialization of 'DiaryEntry'.
+'shr5Management::PrioritySystem' is a specialization of 'CharacterGeneratorSystem'.
+'shr5Management::LifeModulesSystem' is a specialization of 'Shr5System'.
+'shr5Management::Pack' is a specialization of 'GeldWert'.
+'shr5Management::CharacterGeneratorSystem' is a specialization of 'Quelle'.
+'shr5Management::PersonaValueChange' is a specialization of 'Changes'.
+'shr5Management::GruntGroup' is a specialization of 'Beschreibbar'.
+'shr5Management::PlayerCharacter' is a specialization of 'ManagedCharacter'.
+'shr5Management::SumToTenGenerator' is a specialization of 'Shr5Generator'.
+'shr5Management::PersonaMartialArtChange' is a specialization of 'PersonaChange'.
+'shr5Management::LifeModule' is a specialization of 'Quelle'.
+'shr5Management::SpecialType' is a specialization of 'PriorityCategorie'.
+'shr5Management::Technomancer' is a specialization of 'SpecialType'.
+'shr5Management::ModuleFeatureChange' is a specialization of 'ModuleChange'.
+'shr5Management::GamemasterManagement' is a specialization of 'PlayerManagement'.
+'shr5Management::ContractPayment' is a specialization of 'DiaryEntry'.
+'shr5Management::FreeStyle' is a specialization of 'CharacterGeneratorSystem'.
+'shr5Management::Attributes' is a specialization of 'PriorityCategorie'.
+'shr5Management::AbstraktGegenstand' (role 'shr5Management_AbstraktGegenstand', cardinality 0..*) is associated with 'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter3', cardinality 0..*).
+'shr5Management::CharacterDiary' (role 'shr5Management_CharacterDiary98', cardinality 0..*) is associated with 'shr5Management::DiaryEntry' (role 'shr5Management_DiaryEntry', cardinality 0..*).
+'shr5Management::Vertrag' (role 'shr5Management_Vertrag100', cardinality 0..*) is associated with 'shr5Management::ContractPayment' (role 'shr5Management_ContractPayment', cardinality 0..*).
+'shr5Management::GruntGroup' (role 'shr5Management_GruntGroup71', cardinality 0..*) is associated with 'shr5Management::GruntMembers' (role 'shr5Management_GruntMembers72', cardinality 0..*).
+'shr5Management::FreeStyleGenerator' (role 'shr5Management_FreeStyleGenerator42', cardinality 0..*) is associated with 'shr5Management::EClass' (role 'shr5Management_EClass43', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter9', cardinality 0..*) is associated with 'shr5Management::Fahrzeug' (role 'shr5Management_Fahrzeug', cardinality 0..*).
+'shr5Management::SpecialType' (role 'shr5Management_SpecialType54', cardinality 0..*) is associated with 'shr5Management::Shr5Generator' (role 'shr5Management_Shr5Generator53', cardinality 0..*).
+'shr5Management::CharacterGroup' (role 'shr5Management_CharacterGroup76', cardinality 0..*) is associated with 'shr5Management::PlayerManagement' (role 'shr5Management_PlayerManagement', cardinality 0..*).
+'shr5Management::ModuleChange' (role 'shr5Management_ModuleChange', cardinality 0..*) is associated with 'shr5Management::LifeModule' (role 'shr5Management_LifeModule118', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'ManagedCharacter32', cardinality 0..*) is associated with 'shr5Management::CharacterGenerator' (role 'chracterSource', cardinality 0..*).
+'shr5Management::TrainingRange' (role 'training', cardinality 0..*) is associated with 'shr5Management::TrainingsTime' (role 'TrainingsTime', cardinality 0..*).
+'shr5Management::PrioritySystem' (role 'shr5Management_PrioritySystem', cardinality 0..*) is associated with 'shr5Management::PriorityCategorie' (role 'shr5Management_PriorityCategorie', cardinality 0..*).
+'shr5Management::CharacterGeneratorSystem' (role 'shr5Management_CharacterGeneratorSystem', cardinality 0..*) is associated with 'shr5Management::GeneratorStateToEStringMapEntry' (role 'shr5Management_GeneratorStateToEStringMapEntry', cardinality 0..*).
+'shr5Management::LifeModulesSystem' (role 'shr5Management_LifeModulesSystem', cardinality 0..*) is associated with 'shr5Management::LifeModule' (role 'shr5Management_LifeModule116', cardinality 0..*).
+'shr5Management::MartialartStyle' (role 'shr5Management_MartialartStyle', cardinality 0..*) is associated with 'shr5Management::PersonaMartialArtChange' (role 'shr5Management_PersonaMartialArtChange', cardinality 0..*).
+'shr5Management::NonPlayerCharacter' (role 'shr5Management_NonPlayerCharacter', cardinality 0..*) is associated with 'shr5Management::GruntMembers' (role 'shr5Management_GruntMembers74', cardinality 0..*).
+'shr5Management::Shr5Generator' (role 'shr5Management_Shr5Generator46', cardinality 0..*) is associated with 'shr5Management::Skill' (role 'shr5Management_Skill', cardinality 0..*).
+'shr5Management::AbstraktPersona' (role 'shr5Management_AbstraktPersona', cardinality 0..*) is associated with 'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter', cardinality 0..*).
+'shr5Management::Resourcen' (role 'shr5Management_Resourcen', cardinality 0..*) is associated with 'shr5Management::Shr5Generator' (role 'shr5Management_Shr5Generator', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter62', cardinality 0..*) is associated with 'shr5Management::Connection' (role 'shr5Management_Connection61', cardinality 0..*).
+'shr5Management::PlayerManagement' (role 'shr5Management_PlayerManagement79', cardinality 0..*) is associated with 'shr5Management::PlayerManagement' (role 'shr5Management_PlayerManagement77', cardinality 0..*).
+'shr5Management::IncreaseCharacterPart' (role 'shr5Management_IncreaseCharacterPart', cardinality 0..*) is associated with 'shr5Management::EClass' (role 'shr5Management_EClass65', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter13', cardinality 0..*) is associated with 'shr5Management::Sprachfertigkeit' (role 'shr5Management_Sprachfertigkeit', cardinality 0..*).
+'shr5Management::QuellenConstrain' (role 'shr5Management_QuellenConstrain93', cardinality 0..*) is associated with 'shr5Management::Quelle' (role 'shr5Management_Quelle94', cardinality 0..*).
+'shr5Management::ModuleTeachableChange' (role 'shr5Management_ModuleTeachableChange', cardinality 0..*) is associated with 'shr5Management::Erlernbar' (role 'shr5Management_Erlernbar122', cardinality 0..*).
+'shr5Management::ModuleSkillGroupChange' (role 'shr5Management_ModuleSkillGroupChange', cardinality 0..*) is associated with 'shr5Management::FertigkeitsGruppe' (role 'shr5Management_FertigkeitsGruppe129', cardinality 0..*).
+'shr5Management::ModuleFeatureChange' (role 'shr5Management_ModuleFeatureChange', cardinality 0..*) is associated with 'shr5Management::EReference' (role 'shr5Management_EReference', cardinality 0..*).
+'shr5Management::EClass' (role 'shr5Management_EClass', cardinality 0..*) is associated with 'shr5Management::Shr5System' (role 'shr5Management_Shr5System', cardinality 0..*).
+'shr5Management::FertigkeitsGruppe' (role 'shr5Management_FertigkeitsGruppe', cardinality 0..*) is associated with 'shr5Management::SpecialType' (role 'shr5Management_SpecialType30', cardinality 0..*).
+'shr5Management::MetaType' (role 'shr5Management_MetaType86', cardinality 0..*) is associated with 'shr5Management::KarmaGenerator' (role 'shr5Management_KarmaGenerator', cardinality 0..*).
+'shr5Management::TrainingRange' (role 'TrainingRange', cardinality 0..*) is associated with 'shr5Management::TrainingsTime' (role 'trainingTime', cardinality 0..*).
+'shr5Management::Quelle' (role 'shr5Management_Quelle96', cardinality 0..*) is associated with 'shr5Management::Pack' (role 'shr5Management_Pack', cardinality 0..*).
+'shr5Management::Vertrag' (role 'shr5Management_Vertrag', cardinality 0..*) is associated with 'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter5', cardinality 0..*).
+'shr5Management::ModuleSkillChange' (role 'shr5Management_ModuleSkillChange', cardinality 0..*) is associated with 'shr5Management::Fertigkeit' (role 'shr5Management_Fertigkeit120', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'ManagedCharacter', cardinality 0..*) is associated with 'shr5Management::Changes' (role 'changes', cardinality 0..*).
+'shr5Management::AbstraktPersona' (role 'shr5Management_AbstraktPersona37', cardinality 0..*) is associated with 'shr5Management::FreeStyleGenerator' (role 'shr5Management_FreeStyleGenerator36', cardinality 0..*).
+'shr5Management::LifeModule' (role 'shr5Management_LifeModule', cardinality 0..*) is associated with 'shr5Management::LifeModulesGenerator' (role 'shr5Management_LifeModulesGenerator', cardinality 0..*).
+'shr5Management::Fertigkeit' (role 'shr5Management_Fertigkeit', cardinality 0..*) is associated with 'shr5Management::SpecialType' (role 'shr5Management_SpecialType28', cardinality 0..*).
+'shr5Management::SpecialType' (role 'shr5Management_SpecialType', cardinality 0..*) is associated with 'shr5Management::EClass' (role 'shr5Management_EClass26', cardinality 0..*).
+'shr5Management::Connection' (role 'shr5Management_Connection', cardinality 0..*) is associated with 'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter7', cardinality 0..*).
+'shr5Management::Shr5RuleGenerator' (role 'shr5Management_Shr5RuleGenerator', cardinality 0..*) is associated with 'shr5Management::SourceBook' (role 'shr5Management_SourceBook', cardinality 0..*).
+'shr5Management::Lifestyle' (role 'shr5Management_Lifestyle68', cardinality 0..*) is associated with 'shr5Management::LifestyleToStartMoney' (role 'shr5Management_LifestyleToStartMoney67', cardinality 0..*).
+'shr5Management::PersonaMartialArtChange' (role 'shr5Management_PersonaMartialArtChange133', cardinality 0..*) is associated with 'shr5Management::MartialartTechnique' (role 'shr5Management_MartialartTechnique', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'character', cardinality 0..*) is associated with 'shr5Management::Changes' (role 'Changes', cardinality 0..*).
+'shr5Management::CharacterGroup' (role 'shr5Management_CharacterGroup58', cardinality 0..*) is associated with 'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter59', cardinality 0..*).
+'shr5Management::FreeStyleGenerator' (role 'shr5Management_FreeStyleGenerator', cardinality 0..*) is associated with 'shr5Management::FreeStyle' (role 'shr5Management_FreeStyle', cardinality 0..*).
+'shr5Management::Changes' (role 'shr5Management_Changes', cardinality 0..*) is associated with 'shr5Management::CharacterChange' (role 'shr5Management_CharacterChange', cardinality 0..*).
+'shr5Management::ManagedCharacter' (role 'shr5Management_ManagedCharacter11', cardinality 0..*) is associated with 'shr5Management::Lifestyle' (role 'shr5Management_Lifestyle', cardinality 0..*).
+'shr5Management::GruntGroup' (role 'shr5Management_GruntGroup', cardinality 0..*) is associated with 'shr5Management::GruntMembers' (role 'shr5Management_GruntMembers', cardinality 0..*).
+'shr5Management::CharacterGroup' (role 'shr5Management_CharacterGroup', cardinality 0..*) is associated with 'shr5Management::CharacterGenerator' (role 'shr5Management_CharacterGenerator', cardinality 0..*).
+'shr5Management::Shr5Generator' (role 'shr5Management_Shr5Generator50', cardinality 0..*) is associated with 'shr5Management::MetaType' (role 'shr5Management_MetaType51', cardinality 0..*).
+'shr5Management::PlayerCharacter' (role 'shr5Management_PlayerCharacter', cardinality 0..*) is associated with 'shr5Management::CharacterDiary' (role 'shr5Management_CharacterDiary', cardinality 0..*).
+'shr5Management::SpecialType' (role 'shr5Management_SpecialType89', cardinality 0..*) is associated with 'shr5Management::KarmaGenerator' (role 'shr5Management_KarmaGenerator88', cardinality 0..*).
+'shr5Management::FreeStyleGenerator' (role 'shr5Management_FreeStyleGenerator39', cardinality 0..*) is associated with 'shr5Management::Spezies' (role 'shr5Management_Spezies40', cardinality 0..*).
+'shr5Management::EObject' (role 'shr5Management_EObject', cardinality 0..*) is associated with 'shr5Management::ModuleFeatureChange' (role 'shr5Management_ModuleFeatureChange127', cardinality 0..*).
+'shr5Management::GamemasterManagement' (role 'shr5Management_GamemasterManagement', cardinality 0..*) is associated with 'shr5Management::GruntGroup' (role 'shr5Management_GruntGroup81', cardinality 0..*).
+'shr5Management::LifeModule' (role 'shr5Management_LifeModule105', cardinality 0..*) is associated with 'shr5Management::LifeModulesGenerator' (role 'shr5Management_LifeModulesGenerator104', cardinality 0..*).
+'shr5Management::CharacterGeneratorSystem' (role 'shr5Management_CharacterGeneratorSystem20', cardinality 0..*) is associated with 'shr5Management::QuellenConstrain' (role 'shr5Management_QuellenConstrain', cardinality 0..*).
+'shr5Management::LifeModulesGenerator' (role 'shr5Management_LifeModulesGenerator110', cardinality 0..*) is associated with 'shr5Management::LifeModule' (role 'shr5Management_LifeModule111', cardinality 0..*).
+'shr5Management::CharacterAdvancementSystem' (role 'shr5Management_CharacterAdvancementSystem', cardinality 0..*) is associated with 'shr5Management::CharacterGeneratorSystem' (role 'shr5Management_CharacterGeneratorSystem18', cardinality 0..*).
+'shr5Management::LifeModulesGenerator' (role 'shr5Management_LifeModulesGenerator107', cardinality 0..*) is associated with 'shr5Management::LifeModule' (role 'shr5Management_LifeModule108', cardinality 0..*).
+'shr5Management::Erlernbar' (role 'shr5Management_Erlernbar', cardinality 0..*) is associated with 'shr5Management::PersonaChange' (role 'shr5Management_PersonaChange', cardinality 0..*).
+'shr5Management::ModuleAttributeChange' (role 'shr5Management_ModuleAttributeChange', cardinality 0..*) is associated with 'shr5Management::EAttribute' (role 'shr5Management_EAttribute124', cardinality 0..*).
+'shr5Management::LifestyleToStartMoney' (role 'shr5Management_LifestyleToStartMoney', cardinality 0..*) is associated with 'shr5Management::CharacterGeneratorSystem' (role 'shr5Management_CharacterGeneratorSystem16', cardinality 0..*).
+'shr5Management::QuellenConstrain' (role 'shr5Management_QuellenConstrain91', cardinality 0..*) is associated with 'shr5Management::Quelle' (role 'shr5Management_Quelle', cardinality 0..*).
+'shr5Management::Attributes' (role 'shr5Management_Attributes', cardinality 0..*) is associated with 'shr5Management::Shr5Generator' (role 'shr5Management_Shr5Generator48', cardinality 0..*).
+'shr5Management::Spezies' (role 'shr5Management_Spezies', cardinality 0..*) is associated with 'shr5Management::MetaType' (role 'shr5Management_MetaType', cardinality 0..*).
+'shr5Management::LifeModule' (role 'shr5Management_LifeModule114', cardinality 0..*) is associated with 'shr5Management::LifeModulesGenerator' (role 'shr5Management_LifeModulesGenerator113', cardinality 0..*).
+'shr5Management::AttributeChange' (role 'shr5Management_AttributeChange', cardinality 0..*) is associated with 'shr5Management::EAttribute' (role 'shr5Management_EAttribute', cardinality 0..*).
+'shr5Management::CharacterAdvancementSystem' (role 'shr5Management_CharacterAdvancementSystem83', cardinality 0..*) is associated with 'shr5Management::Advancement' (role 'shr5Management_Advancement', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'AbstractDataType' has no attributes.
+The class 'dbDsl::Root' has no attributes.
+The class 'dbDsl::CharType' has no attributes.
+The class 'dbDsl::NumberType' has no attributes.
+The class 'Root' has no attributes.
+The class 'dbDsl::Table' has the following attributes: 'name' of type str.
+The class 'dbDsl::AbstractDataType' has no attributes.
+The class 'dbDsl::AbstractColumnMapper' has no attributes.
+The class 'dbDsl::Database' has the following attributes: 'name' of type str.
+The class 'dbDsl::Column' has the following attributes: 'name' of type str.
+'dbDsl::Database' is a specialization of 'Root'.
+'dbDsl::CharType' is a specialization of 'AbstractDataType'.
+'dbDsl::NumberType' is a specialization of 'AbstractDataType'.
+'dbDsl::Table' (role 'dbDsl_Table2', cardinality 0..*) is associated with 'dbDsl::Column' (role 'dbDsl_Column', cardinality 0..*).
+'dbDsl::Database' (role 'dbDsl_Database', cardinality 0..*) is associated with 'dbDsl::Table' (role 'dbDsl_Table', cardinality 0..*).
+'dbDsl::AbstractColumnMapper' (role 'dbDsl_AbstractColumnMapper', cardinality 0..*) is associated with 'dbDsl::Column' (role 'dbDsl_Column6', cardinality 0..*).
+'dbDsl::Column' (role 'dbDsl_Column4', cardinality 0..*) is associated with 'dbDsl::AbstractDataType' (role 'dbDsl_AbstractDataType', cardinality 0..*).

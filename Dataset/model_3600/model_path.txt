@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/przigoda/model-finder/de.agra.emf.metamodels.SMTlib2extended/src/model/SMTlib2extended.ecore

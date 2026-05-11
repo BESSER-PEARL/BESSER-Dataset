@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'javaMetaModel::JElement' has the following attributes: 'name' of type str.
+The class 'JFeature' has no attributes.
+The class 'javaMetaModel::JReferenceTypePar' has the following attributes: 'refType' of type str.
+The class 'JField' has no attributes.
+The class 'javaMetaModel::JMethod' has no attributes.
+The class 'JParameter' has no attributes.
+The class 'javaMetaModel::JParameter' has the following attributes: 'direction' of type str.
+The class 'javaMetaModel::JAttribute' has the following attributes: 'primitiveType' of type str.
+The class 'javaMetaModel::JReference' has the following attributes: 'refType' of type str.
+The class 'javaMetaModel::JPrimitiveTypePar' has the following attributes: 'primitiveType' of type str.
+The class 'javaMetaModel::JFeature' has the following attributes: 'isStatic' of type bool; 'visibility' of type str.
+The class 'javaMetaModel::JClass' has the following attributes: 'isAbstract' of type bool; 'isFinal' of type bool.
+The class 'JElement' has no attributes.
+The class 'javaMetaModel::JPackage' has no attributes.
+The class 'javaMetaModel::JField' has no attributes.
+The enumeration 'Vis' has the following literals: 'protected', 'public', 'private'.
+The enumeration 'PrimitiveType' has the following literals: 'JChar', 'JInt', 'JFloat', 'JDouble', 'JShort', 'JLong', 'JBoolean', 'JByte'.
+The enumeration 'Direction' has the following literals: 'input', 'return_'.
+The enumeration 'ReferenceType' has the following literals: 'JInterfaceType', 'JArrayType', 'JClassType'.
+'javaMetaModel::JField' is a specialization of 'JFeature'.
+'javaMetaModel::JReference' is a specialization of 'JField'.
+'javaMetaModel::JClass' is a specialization of 'JElement'.
+'javaMetaModel::JParameter' is a specialization of 'JElement'.
+'javaMetaModel::JMethod' is a specialization of 'JFeature'.
+'javaMetaModel::JPackage' is a specialization of 'JElement'.
+'javaMetaModel::JReferenceTypePar' is a specialization of 'JParameter'.
+'javaMetaModel::JAttribute' is a specialization of 'JField'.
+'javaMetaModel::JFeature' is a specialization of 'JElement'.
+'javaMetaModel::JPrimitiveTypePar' is a specialization of 'JParameter'.
+'javaMetaModel::JPackage' (role 'owner10', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'JClass11', cardinality 0..*).
+'javaMetaModel::JFeature' (role 'jfeature', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'JClass14', cardinality 0..*).
+'javaMetaModel::JFeature' (role 'JFeature', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'owner2', cardinality 0..*).
+'javaMetaModel::JClass' (role 'JClass8', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'jsubClass', cardinality 0..*).
+'javaMetaModel::JClass' (role 'JClass', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'jsuperClass', cardinality 0..*).
+'javaMetaModel::JMethod' (role 'JMethod', cardinality 0..*) is associated with 'javaMetaModel::JParameter' (role 'jparameter', cardinality 0..*).
+'javaMetaModel::JParameter' (role 'JParameter', cardinality 0..*) is associated with 'javaMetaModel::JMethod' (role 'owner', cardinality 0..*).
+'javaMetaModel::JPackage' (role 'JPackage', cardinality 0..*) is associated with 'javaMetaModel::JClass' (role 'jclass', cardinality 0..*).

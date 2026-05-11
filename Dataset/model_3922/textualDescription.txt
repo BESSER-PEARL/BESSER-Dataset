@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::Import' has the following attributes: 'importURI' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::SimpleType' has no attributes.
+The class 'Type' has no attributes.
+The class 'myDsl::Property' has the following attributes: 'many' of type bool; 'name' of type str.
+'myDsl::SimpleType' is a specialization of 'Type'.
+'myDsl::Entity' is a specialization of 'Type'.
+'myDsl::Import' (role 'myDsl_Import', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).
+'myDsl::Property' (role 'myDsl_Property8', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type9', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model2', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type', cardinality 0..*).
+'myDsl::Property' (role 'myDsl_Property', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity6', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity3', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*).

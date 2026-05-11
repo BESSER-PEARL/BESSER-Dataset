@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Decorator' has no attributes.
+The class 'trigger::Trigger' has no attributes.
+The class 'trigger::Predicate' has no attributes.
+The class 'trigger::Decorator' has no attributes.
+'trigger::Trigger' is a specialization of 'Decorator'.
+'trigger::Trigger' (role 'trigger_Trigger2', cardinality 0..*) is associated with 'trigger::Decorator' (role 'trigger_Decorator', cardinality 0..*).
+'trigger::Trigger' (role 'trigger_Trigger', cardinality 0..*) is associated with 'trigger::Predicate' (role 'trigger_Predicate', cardinality 0..*).

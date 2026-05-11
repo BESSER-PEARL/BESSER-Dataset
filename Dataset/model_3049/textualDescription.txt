@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'myDsl::Reference' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Feature' has the following attributes: 'name' of type str.
+The class 'myDsl::Entity' has the following attributes: 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'myDsl::Attribute' has the following attributes: 'type' of type str.
+The enumeration 'Type' has the following literals: 'string', 'int'.
+'myDsl::Attribute' is a specialization of 'Feature'.
+'myDsl::Reference' is a specialization of 'Feature'.
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity2', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature', cardinality 0..*).
+'myDsl::Reference' (role 'myDsl_Reference', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity4', cardinality 0..*).

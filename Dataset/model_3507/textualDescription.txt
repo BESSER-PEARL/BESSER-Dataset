@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'factorydeclorder::B' has the following attributes: 'fb' of type str.
+The class 'factorydeclorder::C' has the following attributes: 'fc' of type bool.
+The class 'D' has no attributes.
+The class 'A' has no attributes.
+The class 'factorydeclorder::A' has the following attributes: 'fa' of type int.
+The class 'B' has no attributes.
+The class 'factorydeclorder::D' has no attributes.
+'factorydeclorder::A' is a specialization of 'D'.
+'factorydeclorder::A' is a specialization of 'B'.
+'factorydeclorder::C' is a specialization of 'B'.
+'factorydeclorder::C' is a specialization of 'A'.

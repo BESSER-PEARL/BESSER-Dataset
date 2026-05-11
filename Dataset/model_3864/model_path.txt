@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gmussbacher/seg.jUCMNav/src/seg/jUCMNav/emf/CORE.ecore

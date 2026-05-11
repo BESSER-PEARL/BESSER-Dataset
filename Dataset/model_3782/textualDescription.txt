@@ -1,0 +1,48 @@
+The model has 18 class(es).
+The class 'product::ProductClass' has no attributes.
+The class 'product::ProductImplementationElements' has no attributes.
+The class 'product::ProductDomainModels' has no attributes.
+The class 'product::ProductResourcesContainer' has the following attributes: 'name' of type str.
+The class 'product::ProductAspect' has no attributes.
+The class 'product::ProductFeatureConfiguration' has the following attributes: 'min' of type int; 'isSelected' of type bool; 'attribute' of type str; 'max' of type int; 'name' of type str.
+The class 'product::ProductComponent' has no attributes.
+The class 'product::Product' has no attributes.
+The class 'product::ProductFeaturesConfiguration' has the following attributes: 'name' of type str; 'attribute' of type str.
+The class 'product::ProductFile' has no attributes.
+The class 'product::ProductContainer' has the following attributes: 'name' of type str.
+The class 'product::ProductDomainModel' has the following attributes: 'name' of type str; 'elements' of type str.
+The class 'product::ProductFragmentContainer' has the following attributes: 'name' of type str.
+The class 'product::ProductFragment' has the following attributes: 'content' of type str.
+The class 'product::ProductEntity' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'ProductEntity' has no attributes.
+The class 'product::ProductFolder' has no attributes.
+The class 'product::ProductTemplate' has the following attributes: 'generateToPath' of type str.
+'product::ProductTemplate' is a specialization of 'ProductEntity'.
+'product::ProductComponent' is a specialization of 'ProductEntity'.
+'product::ProductAspect' is a specialization of 'ProductEntity'.
+'product::ProductFragment' is a specialization of 'ProductEntity'.
+'product::ProductClass' is a specialization of 'ProductEntity'.
+'product::ProductFile' is a specialization of 'ProductEntity'.
+'product::ProductFolder' is a specialization of 'ProductEntity'.
+'product::ProductFeaturesConfiguration' (role 'product_ProductFeaturesConfiguration', cardinality 0..*) is associated with 'product::Product' (role 'product_Product2', cardinality 0..*).
+'product::ProductFile' (role 'product_ProductFile37', cardinality 0..*) is associated with 'product::ProductFolder' (role 'product_ProductFolder36', cardinality 0..*).
+'product::ProductFolder' (role 'product_ProductFolder34', cardinality 0..*) is associated with 'product::ProductFolder' (role 'product_ProductFolder32', cardinality 0..*).
+'product::ProductComponent' (role 'product_ProductComponent22', cardinality 0..*) is associated with 'product::ProductAspect' (role 'product_ProductAspect', cardinality 0..*).
+'product::ProductResourcesContainer' (role 'product_ProductResourcesContainer14', cardinality 0..*) is associated with 'product::ProductFolder' (role 'product_ProductFolder', cardinality 0..*).
+'product::ProductDomainModels' (role 'product_ProductDomainModels', cardinality 0..*) is associated with 'product::Product' (role 'product_Product4', cardinality 0..*).
+'product::ProductImplementationElements' (role 'product_ProductImplementationElements', cardinality 0..*) is associated with 'product::Product' (role 'product_Product', cardinality 0..*).
+'product::ProductFolder' (role 'product_ProductFolder39', cardinality 0..*) is associated with 'product::ProductTemplate' (role 'product_ProductTemplate40', cardinality 0..*).
+'product::ProductImplementationElements' (role 'product_ProductImplementationElements10', cardinality 0..*) is associated with 'product::ProductResourcesContainer' (role 'product_ProductResourcesContainer', cardinality 0..*).
+'product::ProductTemplate' (role 'product_ProductTemplate', cardinality 0..*) is associated with 'product::ProductResourcesContainer' (role 'product_ProductResourcesContainer18', cardinality 0..*).
+'product::ProductComponent' (role 'product_ProductComponent27', cardinality 0..*) is associated with 'product::ProductTemplate' (role 'product_ProductTemplate28', cardinality 0..*).
+'product::ProductComponent' (role 'product_ProductComponent31', cardinality 0..*) is associated with 'product::ProductComponent' (role 'product_ProductComponent29', cardinality 0..*).
+'product::ProductComponent' (role 'product_ProductComponent24', cardinality 0..*) is associated with 'product::ProductFile' (role 'product_ProductFile25', cardinality 0..*).
+'product::ProductContainer' (role 'product_ProductContainer12', cardinality 0..*) is associated with 'product::ProductComponent' (role 'product_ProductComponent', cardinality 0..*).
+'product::ProductComponent' (role 'product_ProductComponent20', cardinality 0..*) is associated with 'product::ProductClass' (role 'product_ProductClass', cardinality 0..*).
+'product::ProductFeatureConfiguration' (role 'product_ProductFeatureConfiguration47', cardinality 0..*) is associated with 'product::ProductFeatureConfiguration' (role 'product_ProductFeatureConfiguration45', cardinality 0..*).
+'product::ProductDomainModel' (role 'product_ProductDomainModel', cardinality 0..*) is associated with 'product::ProductDomainModels' (role 'product_ProductDomainModels49', cardinality 0..*).
+'product::ProductFeaturesConfiguration' (role 'product_ProductFeaturesConfiguration44', cardinality 0..*) is associated with 'product::ProductFeatureConfiguration' (role 'product_ProductFeatureConfiguration', cardinality 0..*).
+'product::ProductImplementationElements' (role 'product_ProductImplementationElements8', cardinality 0..*) is associated with 'product::ProductFragmentContainer' (role 'product_ProductFragmentContainer', cardinality 0..*).
+'product::ProductImplementationElements' (role 'product_ProductImplementationElements6', cardinality 0..*) is associated with 'product::ProductContainer' (role 'product_ProductContainer', cardinality 0..*).
+'product::ProductFragment' (role 'product_ProductFragment', cardinality 0..*) is associated with 'product::ProductFragmentContainer' (role 'product_ProductFragmentContainer42', cardinality 0..*).
+'product::ProductResourcesContainer' (role 'product_ProductResourcesContainer16', cardinality 0..*) is associated with 'product::ProductFile' (role 'product_ProductFile', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'uispecDsl::TextFieldWidget' has the following attributes: 'length' of type int.
+The class 'uispecDsl::Field' has the following attributes: 'label' of type str.
+The class 'uispecDsl::ComboWidget' has the following attributes: 'values' of type str.
+The class 'uispecDsl::Widget' has no attributes.
+The class 'uispecDsl::Form' has the following attributes: 'name' of type str.
+The class 'uispecDsl::CheckBoxWidget' has no attributes.
+The class 'uispecDsl::Entity' has no attributes.
+The class 'uispecDsl::Attribute' has no attributes.
+The class 'Widget' has no attributes.
+The class 'uispecDsl::EntityReference' has no attributes.
+'uispecDsl::ComboWidget' is a specialization of 'Widget'.
+'uispecDsl::TextFieldWidget' is a specialization of 'Widget'.
+'uispecDsl::CheckBoxWidget' is a specialization of 'Widget'.
+'uispecDsl::EntityReference' (role 'uispecDsl_EntityReference4', cardinality 0..*) is associated with 'uispecDsl::Entity' (role 'uispecDsl_Entity', cardinality 0..*).
+'uispecDsl::EntityReference' (role 'uispecDsl_EntityReference', cardinality 0..*) is associated with 'uispecDsl::Form' (role 'uispecDsl_Form', cardinality 0..*).
+'uispecDsl::Field' (role 'uispecDsl_Field6', cardinality 0..*) is associated with 'uispecDsl::Widget' (role 'uispecDsl_Widget', cardinality 0..*).
+'uispecDsl::Form' (role 'uispecDsl_Form2', cardinality 0..*) is associated with 'uispecDsl::Field' (role 'uispecDsl_Field', cardinality 0..*).
+'uispecDsl::Attribute' (role 'uispecDsl_Attribute', cardinality 0..*) is associated with 'uispecDsl::Field' (role 'uispecDsl_Field8', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'features::FeatureVersion' has the following attributes: 'news' of type str; 'version' of type str.
+The class 'FeatureDescriptor' has no attributes.
+The class 'features::FeatureSet' has the following attributes: 'identifier' of type str; 'description' of type str; 'name' of type str.
+The class 'FeatureSetDescriptor' has no attributes.
+The class 'features::Feature' has the following attributes: 'identifier' of type str; 'description' of type str; 'provider' of type str; 'name' of type str.
+The class 'features::FeatureVersionDescriptor' has no attributes.
+The class 'features::FeatureDescriptor' has no attributes.
+The class 'FeatureVersionDescriptor' has no attributes.
+The class 'features::FeatureSetDescriptor' has no attributes.
+'features::FeatureVersion' is a specialization of 'FeatureVersionDescriptor'.
+'features::Feature' is a specialization of 'FeatureDescriptor'.
+'features::FeatureSet' is a specialization of 'FeatureSetDescriptor'.
+'features::FeatureVersion' (role 'featureVersions', cardinality 0..*) is associated with 'features::Feature' (role 'Feature4', cardinality 0..*).
+'features::FeatureSet' (role 'FeatureSet', cardinality 0..*) is associated with 'features::Feature' (role 'features', cardinality 0..*).
+'features::FeatureVersion' (role 'FeatureVersion', cardinality 0..*) is associated with 'features::Feature' (role 'feature', cardinality 0..*).
+'features::FeatureSet' (role 'featureSet', cardinality 0..*) is associated with 'features::Feature' (role 'Feature', cardinality 0..*).

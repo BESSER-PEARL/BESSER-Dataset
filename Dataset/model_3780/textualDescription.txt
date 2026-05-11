@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'feature::SimpleFeature' has the following attributes: 'valueString' of type str.
+The class 'SimpleIdentifier' has no attributes.
+The class 'feature::SimpleOntologyTerm' has no attributes.
+The class 'SimpleFeature' has no attributes.
+The class 'feature::FeatureSet' has no attributes.
+The class 'feature::Value' has no attributes.
+The class 'feature::AnnotatedSimpleFeature' has no attributes.
+The class 'feature::SimpleIdentifier' has no attributes.
+The class 'feature::Feature' has no attributes.
+The class 'feature::EvidenceCode' has no attributes.
+'feature::Feature' is a specialization of 'SimpleFeature'.
+'feature::FeatureSet' is a specialization of 'SimpleFeature'.
+'feature::SimpleFeature' is a specialization of 'SimpleIdentifier'.
+'feature::AnnotatedSimpleFeature' is a specialization of 'SimpleFeature'.
+'feature::SimpleOntologyTerm' (role 'feature_SimpleOntologyTerm9', cardinality 0..*) is associated with 'feature::SimpleFeature' (role 'feature_SimpleFeature8', cardinality 0..*).
+'feature::EvidenceCode' (role 'feature_EvidenceCode', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature5', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature', cardinality 0..*) is associated with 'feature::Value' (role 'feature_Value', cardinality 0..*).
+'feature::SimpleFeature' (role 'feature_SimpleFeature', cardinality 0..*) is associated with 'feature::FeatureSet' (role 'feature_FeatureSet', cardinality 0..*).
+'feature::AnnotatedSimpleFeature' (role 'feature_AnnotatedSimpleFeature', cardinality 0..*) is associated with 'feature::SimpleIdentifier' (role 'feature_SimpleIdentifier', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature3', cardinality 0..*) is associated with 'feature::SimpleOntologyTerm' (role 'feature_SimpleOntologyTerm', cardinality 0..*).

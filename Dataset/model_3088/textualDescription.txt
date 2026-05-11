@@ -1,0 +1,771 @@
+The model has 344 class(es).
+The class 'MARTE::HwCommunication::HwEndPoint' has no attributes.
+The class 'MARTE::HwCommunication::HwBus' has the following attributes: 'isSynchronous' of type str; 'isSerial' of type str; 'adressWidth' of type str; 'wordWidth' of type str.
+The class 'MARTE::HwStorageManager::HwDMA' has the following attributes: 'transferWidth' of type str; 'nbChannels' of type str.
+The class 'MARTE::Operators::Operator' has the following attributes: 'symbol' of type str; 'arity' of type str.
+The class 'NfpConstraint' has no attributes.
+The class 'Variables::MARTE::Property' has no attributes.
+The class 'MARTE::SW::Interaction::SwMutualExclusionResource' has the following attributes: 'concurrentAccessProtocol' of type str; 'mechanism' of type str.
+The class 'RSM::MARTE::MultiplicityElement' has no attributes.
+The class 'MARTE::DataTypes::TupleType' has no attributes.
+The class 'HwCommunicationResource' has no attributes.
+The class 'MARTE::GCM::ClientServerFeature' has the following attributes: 'kind' of type str.
+The class 'SW::Concurrency::MARTE::Element' has no attributes.
+The class 'MARTE::PAM::PaLogicalResource' has the following attributes: 'poolSize' of type str; 'throughput' of type str; 'utilization' of type str.
+The class 'NFPs::MARTE::EnumerationLiteral' has no attributes.
+The class 'Scheduler' has no attributes.
+The class 'MARTE::Alloc::Allocated' has the following attributes: 'kind' of type str.
+The class 'MARTE::GQAM::GaScenario' has the following attributes: 'respT' of type str; 'interOccT' of type str; 'utilization' of type str; 'hostDemandOps' of type str; 'throughput' of type str; 'utilizationOnHost' of type str; 'hostDemand' of type str.
+The class 'MARTE::GRM::ProcessingResource' has the following attributes: 'speedFactor' of type str.
+The class 'GRM::Scheduler' has no attributes.
+The class 'MARTE::SW::ResourceCore::SwAccessService' has the following attributes: 'isModifier' of type str.
+The class 'MARTE::HwComputing::HwProcessor' has the following attributes: 'architecture' of type str; 'nbPipelines' of type str; 'nbCores' of type str; 'nbALUs' of type str; 'mips' of type str; 'nbFPUs' of type str; 'ipc' of type str; 'nbStages' of type str.
+The class 'NFPs::NfpConstraint' has no attributes.
+The class 'GaStep' has no attributes.
+The class 'MARTE::CoreElements::Configuration' has no attributes.
+The class 'MARTE::Time::TimedConstraint' has the following attributes: 'interpretation' of type str.
+The class 'MARTE::GQAM::GaTimedObs' has the following attributes: 'laxity' of type str.
+The class 'TimedElement' has no attributes.
+The class 'GQAM::GaExecHost' has no attributes.
+The class 'CoreElements::MARTE::State' has no attributes.
+The class 'MARTE::Time::TimedDurationObservation' has the following attributes: 'obsKind' of type str.
+The class 'Time::MARTE::Behavior' has no attributes.
+The class 'Time::TimedProcessing' has no attributes.
+The class 'MARTE::GQAM::GaLatencyObs' has the following attributes: 'utility' of type str; 'latency' of type str; 'miss' of type str; 'maxJitter' of type str.
+The class 'NFPs::MARTE::Property' has no attributes.
+The class 'MARTE::SW::Concurrency::EntryPoint' has the following attributes: 'isReentrant' of type str.
+The class 'MARTE::NFPs::Nfp' has no attributes.
+The class 'HwMemory::HwCache' has no attributes.
+The class 'MARTE::RSM::DefaultLink' has no attributes.
+The class 'HwLayout::HwComponent' has no attributes.
+The class 'MARTE::HwCommunication::HwCommunicationResource' has no attributes.
+The class 'GCM::ClientServerSpecification' has no attributes.
+The class 'MARTE::PAM::PaRequestedStep' has no attributes.
+The class 'GQAM::GaTimedObs' has no attributes.
+The class 'MARTE::DataTypes::CollectionType' has no attributes.
+The class 'MARTE::GQAM::GaEventTrace' has the following attributes: 'content' of type str; 'format' of type str; 'location' of type str.
+The class 'MARTE::Alloc::NfpRefine' has no attributes.
+The class 'GQAM::GaWorkloadEvent' has no attributes.
+The class 'TupleType' has no attributes.
+The class 'MARTE::GCM::GCMTrigger' has no attributes.
+The class 'HLAM::MARTE::Port' has no attributes.
+The class 'HwComputing::HwISA' has no attributes.
+The class 'Alloc::MARTE::NamedElement' has no attributes.
+The class 'MARTE::Variables::ExpressionContext' has no attributes.
+The class 'MARTE::GQAM::GaWorkloadGenerator' has the following attributes: 'pop' of type str.
+The class 'GRM::MARTE::ExecutionSpecification' has no attributes.
+The class 'MARTE::SW::ResourceCore::SwResource' has no attributes.
+The class 'MARTE::SAM::SaStep' has the following attributes: 'schSlack' of type str; 'selfSuspensionBlocking' of type str; 'deadline' of type str; 'spareCap' of type str; 'readyT' of type str; 'numberSelfSuspensions' of type str; 'nonpreemptionBlocking' of type str; 'preemptT' of type str.
+The class 'Time::MARTE::Namespace' has no attributes.
+The class 'GRM::SynchronizationResource' has no attributes.
+The class 'GQAM::GaScenario' has no attributes.
+The class 'MARTE::RSM::Tiler' has the following attributes: 'fitting' of type str; 'tiler' of type str; 'paving' of type str; 'origin' of type str.
+The class 'GCM::MARTE::Feature' has no attributes.
+The class 'HLAM::MARTE::Behavior' has no attributes.
+The class 'SW::Concurrency::MARTE::NamedElement' has no attributes.
+The class 'HwComputing::HwProcessor' has no attributes.
+The class 'SAM::SaSharedResource' has no attributes.
+The class 'HwGeneral::HwResource' has no attributes.
+The class 'MARTE::HwDevice::HWSensor' has no attributes.
+The class 'GaExecHost' has no attributes.
+The class 'GRM::TimingResource' has no attributes.
+The class 'MARTE::SAM::SaAnalysisContext' has the following attributes: 'isSched' of type str; 'optCriterion' of type str.
+The class 'GCM::MARTE::Interface' has no attributes.
+The class 'MARTE::NFPs::Unit' has the following attributes: 'convFactor' of type str; 'convOffset' of type str.
+The class 'GaScenario' has no attributes.
+The class 'MARTE::SAM::SaSchedObs' has the following attributes: 'suspentions' of type str; 'overlaps' of type str; 'blockT' of type str.
+The class 'MARTE::HwDevice::HWActuator' has no attributes.
+The class 'MARTE::HLAM::RtUnit' has the following attributes: 'msgMaxSize' of type str; 'queueSchedPolicy' of type str; 'memorySize' of type str; 'isMain' of type str; 'queueSize' of type str; 'srPoolPolicy' of type str; 'srPoolSize' of type str; 'isDynamic' of type str; 'srPoolWaitingTime' of type str.
+The class 'GQAM::GaWorkloadGenerator' has no attributes.
+The class 'GRM::DeviceResource' has no attributes.
+The class 'MARTE::SW::Interaction::NotificationResource' has the following attributes: 'occurence' of type str; 'mechanism' of type str.
+The class 'MARTE::HLAM::PpUnit' has the following attributes: 'memorySize' of type str; 'concPolicy' of type str.
+The class 'MARTE::HwMemory::HwRAM' has the following attributes: 'isNonVolatile' of type str; 'writePolicy' of type str; 'organization' of type str; 'isSynchronous' of type str; 'repl_Policy' of type str; 'isStatic' of type str.
+The class 'MARTE::GQAM::GaStep' has the following attributes: 'blockT' of type str; 'selfDelay' of type str; 'rep' of type str; 'priority' of type str; 'isAtomic' of type str; 'servCount' of type str; 'prob' of type str.
+The class 'HwCommunication::HwMedia' has no attributes.
+The class 'MARTE::GRM::MutualExclusionResource' has the following attributes: 'ceiling' of type str; 'protectKind' of type str; 'otherProtectProtocol' of type str.
+The class 'SwCommunicationResource' has no attributes.
+The class 'MARTE::HLAM::RtAction' has the following attributes: 'isAtomic' of type str; 'msgSize' of type str; 'synchKind' of type str.
+The class 'MARTE::Variables::Var' has the following attributes: 'dir' of type str.
+The class 'MARTE::HwCommunication::HwMedia' has the following attributes: 'bandWidth' of type str.
+The class 'TimerResource' has no attributes.
+The class 'SW::Interaction::SwSynchronizationResource' has no attributes.
+The class 'MARTE::GRM::Release' has no attributes.
+The class 'CoreElements::Mode' has no attributes.
+The class 'GCM::MARTE::BehavioralFeature' has no attributes.
+The class 'MARTE::SW::Concurrency::SwSchedulableResource' has the following attributes: 'isStaticSchedulingFeature' of type str; 'isPreemptable' of type str.
+The class 'MARTE::Alloc::Allocate' has the following attributes: 'nature' of type str; 'kind' of type str.
+The class 'MARTE::HwGeneral::HwResourceService' has the following attributes: 'dissipation' of type str; 'consumption' of type str.
+The class 'GrService' has no attributes.
+The class 'MARTE::GRM::Resource' has the following attributes: 'isProtected' of type str; 'isActive' of type str; 'resMult' of type str.
+The class 'SwSynchronizationResource' has no attributes.
+The class 'Time::MARTE::Action' has no attributes.
+The class 'MARTE::NFPs::NfpType' has no attributes.
+The class 'HwTimingResource' has no attributes.
+The class 'MARTE::Time::ClockType' has the following attributes: 'isLogical' of type str; 'nature' of type str.
+The class 'SW::ResourceCore::MARTE::Property' has no attributes.
+The class 'MARTE::GRM::TimingResource' has no attributes.
+The class 'MARTE::HwLayout::HwComponent' has the following attributes: 'grid' of type str; 'position' of type str; 'dimensions' of type str; 'r_Conditions' of type str; 'weight' of type str; 'price' of type str; 'nbPins' of type str; 'staticConsumption' of type str; 'kind' of type str; 'area' of type str; 'staticDissipation' of type str.
+The class 'Time::MARTE::InstanceSpecification' has no attributes.
+The class 'MARTE::HwComputing::HwPLD' has the following attributes: 'ndLUT_Inputs' of type str; 'technology' of type str; 'nbFlipFlops' of type str; 'organization' of type str; 'nbLUTs' of type str.
+The class 'MARTE::HwCommunication::HwArbiter' has no attributes.
+The class 'MARTE::HwMemory::HwCache' has the following attributes: 'repl_Policy' of type str; 'level' of type str; 'structure' of type str; 'writePolicy' of type str; 'type' of type str.
+The class 'MARTE::GCM::DataEvent' has no attributes.
+The class 'MARTE::CoreElements::ModeBehavior' has no attributes.
+The class 'MARTE::Alloc::Assign' has the following attributes: 'nature' of type str; 'kind' of type str.
+The class 'Alloc::MARTE::Element' has no attributes.
+The class 'GQAM::MARTE::Operation' has no attributes.
+The class 'Alloc::MARTE::Dependency' has no attributes.
+The class 'InterruptResource' has no attributes.
+The class 'MARTE::GQAM::GaRelStep' has the following attributes: 'resUnits' of type str.
+The class 'HwCommunication::HwArbiter' has no attributes.
+The class 'MARTE::GQAM::GaCommStep' has no attributes.
+The class 'GaCommStep' has no attributes.
+The class 'SW::Interaction::MARTE::BehavioralFeature' has no attributes.
+The class 'GCM::MARTE::Behavior' has no attributes.
+The class 'MARTE::HwMemory::HwMemory' has the following attributes: 'adressSize' of type str; 'throughput' of type str; 'timings' of type str; 'memorySize' of type str.
+The class 'GRM::MARTE::BehavioralFeature' has no attributes.
+The class 'SwConcurrentResource' has no attributes.
+The class 'GRM::MARTE::Connector' has no attributes.
+The class 'SW::Concurrency::MARTE::TypedElement' has no attributes.
+The class 'HwCommunication::HwEndPoint' has no attributes.
+The class 'MARTE::HwComputing::HwComputingResource' has the following attributes: 'op_Frequencies' of type str.
+The class 'Time::MARTE::Enumeration' has no attributes.
+The class 'MARTE::SW::Interaction::SwInteractionResource' has the following attributes: 'waitingQueueCapacity' of type str; 'isIntraMemoryPartitionInteraction' of type bool; 'waitingQueuePolicy' of type str.
+The class 'MARTE::GQAM::GaCommChannel' has the following attributes: 'utilization' of type str; 'packetSize' of type str.
+The class 'MARTE::SW::Brokering::DeviceBroker' has the following attributes: 'accessPolicy' of type str; 'isBuffered' of type str.
+The class 'MARTE::HwStorageManager::HwMMU' has the following attributes: 'virtualAddrSpace' of type str; 'memoryProtection' of type str; 'nbEntries' of type str; 'physicalAddrSpace' of type str.
+The class 'MARTE::GRM::Acquire' has the following attributes: 'isBlocking' of type str.
+The class 'SW::Brokering::MARTE::BehavioralFeature' has no attributes.
+The class 'MARTE::SW::Interaction::SwCommunicationResource' has no attributes.
+The class 'MARTE::Time::TimedElement' has no attributes.
+The class 'Allocate' has no attributes.
+The class 'GRM::SecondaryScheduler' has no attributes.
+The class 'MARTE::SW::Interaction::SharedDataComResource' has no attributes.
+The class 'MARTE::GRM::SecondaryScheduler' has no attributes.
+The class 'Variables::MARTE::NamedElement' has no attributes.
+The class 'MARTE::GRM::StorageResource' has the following attributes: 'elementSize' of type str.
+The class 'MARTE::GRM::SchedulableResource' has the following attributes: 'schedParams' of type str.
+The class 'Time::ClockType' has no attributes.
+The class 'HwComponent' has no attributes.
+The class 'MARTE::PAM::PaCommStep' has no attributes.
+The class 'Alloc::MARTE::Abstraction' has no attributes.
+The class 'HwMedia' has no attributes.
+The class 'MARTE::SW::Concurrency::InterruptResource' has the following attributes: 'kind' of type str; 'isMaskable' of type str.
+The class 'MARTE::HwComputing::HwASIC' has no attributes.
+The class 'MARTE::SAM::SaCommStep' has the following attributes: 'deadline' of type str; 'spareCap' of type str; 'schSlack' of type str.
+The class 'MARTE::GCM::DataPool' has the following attributes: 'ordering' of type str.
+The class 'HwComputingResource' has no attributes.
+The class 'Time::MARTE::TimeEvent' has no attributes.
+The class 'GaAnalysisContext' has no attributes.
+The class 'MARTE::SW::Concurrency::MemoryPartition' has no attributes.
+The class 'MARTE::RSM::InterRepetition' has the following attributes: 'repetitionShapeDependence' of type str; 'isModulo' of type str.
+The class 'MARTE::GRM::ConcurrencyResource' has no attributes.
+The class 'HLAM::MARTE::Signal' has no attributes.
+The class 'SW::ResourceCore::MARTE::BehavioralFeature' has no attributes.
+The class 'GRM::MARTE::Property' has no attributes.
+The class 'Time::MARTE::TimeObservation' has no attributes.
+The class 'HLAM::MARTE::Operation' has no attributes.
+The class 'MARTE::RSM::Distribute' has the following attributes: 'repetitionSpace' of type str; 'fromTiler' of type str; 'toTiler' of type str; 'patternShape' of type str.
+The class 'GQAM::GaEventTrace' has no attributes.
+The class 'PAM::MARTE::NamedElement' has no attributes.
+The class 'GQAM::MARTE::TimeObservation' has no attributes.
+The class 'GRM::MARTE::Collaboration' has no attributes.
+The class 'GaCommHost' has no attributes.
+The class 'Time::MARTE::DurationObservation' has no attributes.
+The class 'HwTiming::HwClock' has no attributes.
+The class 'SwResource' has no attributes.
+The class 'MARTE::DataTypes::IntervalType' has no attributes.
+The class 'HwMemory::HwMemory' has no attributes.
+The class 'NFPs::MARTE::Constraint' has no attributes.
+The class 'GRM::MARTE::CollaborationUse' has no attributes.
+The class 'GQAM::MARTE::TimeEvent' has no attributes.
+The class 'Time::TimedElement' has no attributes.
+The class 'MARTE::SW::Interaction::MessageComResource' has the following attributes: 'messageQueuePolicy' of type str; 'mechanism' of type str; 'isFixedMessageSize' of type str.
+The class 'MARTE::RSM::Shaped' has the following attributes: 'shape' of type str.
+The class 'MARTE::HwPower::HwCoolingSupply' has the following attributes: 'coolingPower' of type str.
+The class 'GaTimedObs' has no attributes.
+The class 'MARTE::HwGeneral::HwResource' has the following attributes: 'description' of type str; 'frequency' of type str.
+The class 'Alloc::Allocated' has no attributes.
+The class 'MARTE::GRM::SynchronizationResource' has no attributes.
+The class 'GCM::MARTE::AnyReceiveEvent' has no attributes.
+The class 'MARTE::GRM::TimerResource' has the following attributes: 'isPeriodic' of type str; 'duration' of type str.
+The class 'MARTE::GRM::ClockResource' has no attributes.
+The class 'Operators::MARTE::Behavior' has no attributes.
+The class 'MARTE::HwTiming::HwTimingResource' has no attributes.
+The class 'MARTE::GCM::ClientServerPort' has the following attributes: 'kind' of type str; 'specificationKind' of type str.
+The class 'GRM::MARTE::ConnectableElement' has no attributes.
+The class 'GQAM::GaRequestedService' has no attributes.
+The class 'GRM::ResourceUsage' has no attributes.
+The class 'HwDevice' has no attributes.
+The class 'MARTE::GQAM::GaWorkloadBehavior' has no attributes.
+The class 'MARTE::HwComputing::HwBranchPredictor' has no attributes.
+The class 'MARTE::SW::Concurrency::Alarm' has the following attributes: 'isWatchdog' of type str.
+The class 'MARTE::GRM::Scheduler' has the following attributes: 'otherSchedPolicy' of type str; 'isPreemptible' of type str; 'schedule' of type str; 'schedPolicy' of type str.
+The class 'SW::Brokering::MARTE::TypedElement' has no attributes.
+The class 'MARTE::HLAM::RtFeature' has no attributes.
+The class 'NFPs::MARTE::Enumeration' has no attributes.
+The class 'MARTE::GRM::CommunicationEndPoint' has the following attributes: 'packetSize' of type str.
+The class 'MARTE::PAM::PaRunTInstance' has the following attributes: 'utilization' of type str; 'poolSize' of type str; 'unbddPool' of type str; 'throughput' of type str.
+The class 'Resource' has no attributes.
+The class 'CoreElements::MARTE::Transition' has no attributes.
+The class 'MARTE::HwDevice::HwSupport' has no attributes.
+The class 'Time::TimedInstantObservation' has no attributes.
+The class 'MutualExclusionResource' has no attributes.
+The class 'MARTE::SAM::SaSharedResource' has the following attributes: 'releaseT' of type str; 'isConsum' of type str; 'acquisT' of type str; 'isPreemp' of type str; 'capacity' of type str.
+The class 'MARTE::GCM::FlowSpecification' has no attributes.
+The class 'MARTE::Time::TimedValueSpecification' has the following attributes: 'interpretation' of type str.
+The class 'MARTE::GCM::GCMInvocatingBehavior' has no attributes.
+The class 'HwCommunication::HwCommunicationResource' has no attributes.
+The class 'GRM::MARTE::Classifier' has no attributes.
+The class 'Time::MARTE::Operation' has no attributes.
+The class 'GQAM::MARTE::Behavior' has no attributes.
+The class 'Alloc::MARTE::ActivityPartition' has no attributes.
+The class 'MARTE::Time::ClockConstraint' has the following attributes: 'isPrecedenceBased' of type bool; 'isChronometricBased' of type str; 'isCoincidenceBased' of type str.
+The class 'HLAM::MARTE::BehavioralFeature' has no attributes.
+The class 'HLAM::MARTE::InvocationAction' has no attributes.
+The class 'MARTE::CoreElements::ModeTransition' has no attributes.
+The class 'MARTE::GQAM::GaExecHost' has the following attributes: 'throughput' of type str; 'schedPriRange' of type str; 'cntxtSwT' of type str; 'clockOvh' of type str; 'utilization' of type str; 'memSize' of type str; 'commTxOvh' of type str; 'commRcvOvh' of type str.
+The class 'SAM::MARTE::BehavioralFeature' has no attributes.
+The class 'GRM::MutualExclusionResource' has no attributes.
+The class 'SW::ResourceCore::MARTE::TypedElement' has no attributes.
+The class 'GRM::ProcessingResource' has no attributes.
+The class 'MARTE::HwTiming::HwTimer' has the following attributes: 'counterWidth' of type str; 'nbCounters' of type str.
+The class 'MARTE::Time::TimedDomain' has no attributes.
+The class 'MARTE::PAM::PaResPassStep' has the following attributes: 'resUnits' of type str.
+The class 'DataTypes::MARTE::Property' has no attributes.
+The class 'MARTE::GQAM::GaResourcesPlatform' has no attributes.
+The class 'MARTE::GQAM::GaRequestedService' has no attributes.
+The class 'GCM::MARTE::Trigger' has no attributes.
+The class 'MARTE::SAM::SaCommHost' has the following attributes: 'isSched' of type str; 'schSlack' of type str.
+The class 'MARTE::Alloc::AllocateActivityGroup' has the following attributes: 'isUnique' of type str.
+The class 'MARTE::GQAM::GaAnalysisContext' has the following attributes: 'context' of type str.
+The class 'GRM::CommunicationEndPoint' has no attributes.
+The class 'HwStorageManager::HwMMU' has no attributes.
+The class 'GRM::ComputingResource' has no attributes.
+The class 'GCM::MARTE::Classifier' has no attributes.
+The class 'RSM::MARTE::ConnectorEnd' has no attributes.
+The class 'SchedulableResource' has no attributes.
+The class 'MARTE::GRM::ResourceUsage' has the following attributes: 'usedMemory' of type str; 'msgSize' of type str; 'powerPeak' of type str; 'execTime' of type str; 'allocatedMemory' of type str; 'energy' of type str.
+The class 'GQAM::GaWorkloadBehavior' has no attributes.
+The class 'MARTE::Time::TimedProcessing' has no attributes.
+The class 'HwComputing::HwBranchPredictor' has no attributes.
+The class 'MARTE::HwDevice::HwDevice' has no attributes.
+The class 'RSM::MARTE::Connector' has no attributes.
+The class 'CoreElements::MARTE::Package' has no attributes.
+The class 'GCM::MARTE::Port' has no attributes.
+The class 'MARTE::GCM::FlowPort' has the following attributes: 'direction' of type str; 'isAtomic' of type str.
+The class 'GRM::MARTE::InstanceSpecification' has no attributes.
+The class 'GRM::MARTE::NamedElement' has no attributes.
+The class 'GRM::StorageResource' has no attributes.
+The class 'MARTE::GQAM::GaCommHost' has the following attributes: 'throughput' of type str; 'utilization' of type str.
+The class 'MARTE::HwMemory::HwDrive' has the following attributes: 'sectorSize' of type str.
+The class 'HLAM::MARTE::Message' has no attributes.
+The class 'ProcessingResource' has no attributes.
+The class 'LinkTopology' has no attributes.
+The class 'GCM::MARTE::InvocationAction' has no attributes.
+The class 'GRM::MARTE::Behavior' has no attributes.
+The class 'SW::Concurrency::MARTE::BehavioralFeature' has no attributes.
+The class 'GRM::CommunicationMedia' has no attributes.
+The class 'GRM::SchedulableResource' has no attributes.
+The class 'HwComputing::HwComputingResource' has no attributes.
+The class 'MARTE::Time::Clock' has the following attributes: 'standard' of type str.
+The class 'CoreElements::MARTE::StateMachine' has no attributes.
+The class 'SW::Interaction::SwInteractionResource' has no attributes.
+The class 'Time::MARTE::Property' has no attributes.
+The class 'HwGeneral::HwResourceService' has no attributes.
+The class 'MARTE::HwCommunication::HwBridge' has no attributes.
+The class 'MARTE::RSM::LinkTopology' has no attributes.
+The class 'SW::Interaction::MARTE::TypedElement' has no attributes.
+The class 'SAM::MARTE::NamedElement' has no attributes.
+The class 'NFPs::Unit' has no attributes.
+The class 'HwStorageManager::HwStorageManager' has no attributes.
+The class 'HLAM::RtSpecification' has no attributes.
+The class 'MARTE::PAM::PaStep' has the following attributes: 'noSync' of type str; 'extOpCount' of type str; 'behavCount' of type str; 'extOpDemand' of type str.
+The class 'GQAM::MARTE::NamedElement' has no attributes.
+The class 'Time::MARTE::Event' has no attributes.
+The class 'Time::MARTE::Message' has no attributes.
+The class 'MARTE::GCM::GCMInvocationAction' has no attributes.
+The class 'MARTE::GRM::ComputingResource' has no attributes.
+The class 'PAM::PaStep' has no attributes.
+The class 'MARTE::RSM::Reshape' has the following attributes: 'patternShape' of type str; 'repetitonShape' of type str.
+The class 'CoreElements::Configuration' has no attributes.
+The class 'MARTE::GRM::DeviceResource' has no attributes.
+The class 'SW::Concurrency::MARTE::Namespace' has no attributes.
+The class 'GQAM::GaCommStep' has no attributes.
+The class 'Time::MARTE::Class' has no attributes.
+The class 'MARTE::HwMemory::HwROM' has the following attributes: 'type' of type str; 'organization' of type str.
+The class 'GRM::Resource' has no attributes.
+The class 'MARTE::GQAM::GaWorkloadEvent' has the following attributes: 'pattern' of type str.
+The class 'HwStorageManager' has no attributes.
+The class 'MARTE::HwDevice::HwI::O' has no attributes.
+The class 'GRM::MARTE::Lifeline' has no attributes.
+The class 'MARTE::HwStorageManager::HwStorageManager' has no attributes.
+The class 'Alloc::MARTE::Comment' has no attributes.
+The class 'HwMemory' has no attributes.
+The class 'MARTE::NFPs::NfpConstraint' has the following attributes: 'kind' of type str.
+The class 'MARTE::NFPs::Dimension' has the following attributes: 'baseExponent' of type int; 'symbol' of type str.
+The class 'GCM::MARTE::Property' has no attributes.
+The class 'MARTE::DataTypes::BoundedSubtype' has the following attributes: 'isMaxOpen' of type bool; 'maxValue' of type str; 'minValue' of type str; 'isMinOpen' of type bool.
+The class 'MARTE::Time::TimedEvent' has the following attributes: 'repetition' of type str.
+The class 'MARTE::SW::Brokering::MemoryBroker' has the following attributes: 'accessPolicy' of type str.
+The class 'MARTE::DataTypes::ChoiceType' has no attributes.
+The class 'MARTE::GRM::CommunicationMedia' has the following attributes: 'packetT' of type str; 'capacity' of type str; 'transmMode' of type str; 'blockT' of type str; 'elementSize' of type str.
+The class 'Time::Clock' has no attributes.
+The class 'MARTE::SW::Concurrency::SwTimerResource' has no attributes.
+The class 'MARTE::SW::Interaction::SwSynchronizationResource' has no attributes.
+The class 'HwMemory::HwRAM' has no attributes.
+The class 'MARTE::SW::Concurrency::SwConcurrentResource' has the following attributes: 'type' of type str; 'activationCapacity' of type str.
+The class 'MARTE::SAM::SaEndtoEndFlow' has the following attributes: 'end2EndT' of type str; 'schSlack' of type str; 'end2EndD' of type str; 'isSched' of type str.
+The class 'MARTE::HLAM::RtSpecification' has the following attributes: 'boundDl' of type str; 'relDl' of type str; 'utility' of type str; 'rdTime' of type str; 'priority' of type str; 'absDl' of type str; 'occKind' of type str; 'miss' of type str.
+The class 'TimingResource' has no attributes.
+The class 'MARTE::GQAM::GaAcqStep' has the following attributes: 'resUnits' of type str.
+The class 'GQAM::GaResourcesPlatform' has no attributes.
+The class 'MARTE::Time::TimedInstantObservation' has the following attributes: 'obsKind' of type str.
+The class 'MARTE::HwPower::HwPowerSupply' has the following attributes: 'capacity' of type str; 'suppliedPower' of type str.
+The class 'DataTypes::MARTE::DataType' has no attributes.
+The class 'CoreElements::MARTE::StructuredClassifier' has no attributes.
+The class 'MARTE::HwComputing::HwISA' has the following attributes: 'type' of type str; 'family' of type str; 'inst_Width' of type str.
+The class 'HwI::O' has no attributes.
+The class 'MARTE::GRM::GrService' has no attributes.
+The class 'SW::Concurrency::SwConcurrentResource' has no attributes.
+The class 'MARTE::GCM::FlowProperty' has the following attributes: 'direction' of type str.
+The class 'MARTE::CoreElements::Mode' has no attributes.
+The class 'HLAM::MARTE::BehavioredClassifier' has no attributes.
+The class 'GQAM::MARTE::Classifier' has no attributes.
+The class 'NFPs::Dimension' has no attributes.
+The class 'MARTE::HwTiming::HwClock' has no attributes.
+The class 'MARTE::GCM::ClientServerSpecification' has no attributes.
+The class 'MARTE::SAM::SaExecHost' has the following attributes: 'schedUtiliz' of type str; 'ISRprioRange' of type str; 'isSched' of type str; 'ISRswitchT' of type str; 'schSlack' of type str.
+The class 'HwResource' has no attributes.
+The class 'HLAM::MARTE::Comment' has no attributes.
+The class 'Time::MARTE::ValueSpecification' has no attributes.
+The class 'GQAM::GaStep' has no attributes.
+The class 'MARTE::HLAM::RtService' has the following attributes: 'exeKind' of type str; 'isAtomic' of type str; 'concPolicy' of type str; 'synchKind' of type str.
+The class 'Variables::ExpressionContext' has no attributes.
+The enumeration 'PLD_Class' has the following literals: 'rowBased', 'seaOfGates', 'undef', 'other', 'hierarchicalPLD', 'symetricalArray'.
+The enumeration 'NotificationKind' has the following literals: 'Memorized', 'Undef', 'Memoryless', 'Bounded', 'Other'.
+The enumeration 'AccessPolicyKind' has the following literals: 'Other', 'Read', 'Write', 'ReadWrite', 'Undef'.
+The enumeration 'ISA_Type' has the following literals: 'other', 'CISC', 'SIMD', 'VLIW', 'RISC', 'undef'.
+The enumeration 'AllocationKind' has the following literals: 'structural', 'behavioral', 'hybrid'.
+The enumeration 'ExecutionKind' has the following literals: 'remoteImmediate', 'deferred', 'localImmediate'.
+The enumeration 'InterruptKind' has the following literals: 'Other', 'HardwareInterruption', 'Undef', 'ProgrammedException', 'ProcessorDetectedException'.
+The enumeration 'ConstraintKind' has the following literals: 'offered', 'contract', 'required'.
+The enumeration 'ConcurrencyKind' has the following literals: 'writer', 'parallel', 'reader'.
+The enumeration 'ClientServerKind' has the following literals: 'required', 'proreq', 'provided'.
+The enumeration 'AssignmentNature' has the following literals: 'spatialDistribution', 'timeScheduling'.
+The enumeration 'AssignmentKind' has the following literals: 'hybrid', 'behavioral', 'structural'.
+The enumeration 'QueuePolicyKind' has the following literals: 'Priority', 'LIFO', 'FIFO', 'Other', 'Undef'.
+The enumeration 'FlowDirectionKind' has the following literals: 'out', 'inout', 'in_'.
+The enumeration 'MessageResourceKind' has the following literals: 'MessageQueue', 'Blackboard', 'Undef', 'Pipe', 'Other'.
+The enumeration 'LaxityKind' has the following literals: 'hard', 'other', 'soft'.
+The enumeration 'AllocationEndKind' has the following literals: 'both', 'undef', 'application', 'executionPlatform'.
+The enumeration 'DataPoolOrderingKind' has the following literals: 'FIFO', 'LIFO', 'UserDefined'.
+The enumeration 'MutualExclusionResourceKind' has the following literals: 'Other', 'BooleanSemaphore', 'CountSemaphore', 'Undef', 'Mutex'.
+The enumeration 'SynchronizationKind' has the following literals: 'synchronous', 'other', 'rendezVous', 'asynchronous', 'delayedSynchronous'.
+The enumeration 'CacheType' has the following literals: 'unified', 'data', 'other', 'undef', 'instruction'.
+The enumeration 'PortSpecificationKind' has the following literals: 'interfaceBased', 'featureBased', 'atomic'.
+The enumeration 'ConcurrentAccessProtocolKind' has the following literals: 'Other', 'PIP', 'PCP', 'NoPreemption', 'Undef'.
+The enumeration 'dummy' does not specify any literals.
+The enumeration 'VariableDirectionKind' has the following literals: 'in_', 'inout', 'out'.
+The enumeration 'ROM_Type' has the following literals: 'Flash', 'undef', 'maskedROM', 'EPROM', 'EEPROM', 'OTP_EPROM', 'other'.
+The enumeration 'OptimallityCriterionKind' has the following literals: 'meetHardDeadlines', 'minimizedMeanTardiness', 'other', 'minimizeMissedDeadlines', 'undef'.
+The enumeration 'CallConcurrencyKind' has the following literals: 'guarded', 'sequential', 'concurrent'.
+The enumeration 'Repl_Policy' has the following literals: 'FIFO', 'undef', 'random', 'LRU', 'other', 'NFU'.
+The enumeration 'PLD_Technology' has the following literals: 'antifuse', 'undef', 'flash', 'SRAM', 'other'.
+The enumeration 'NotificationResourceKind' has the following literals: 'Undef', 'Barrier', 'Event', 'Other'.
+The enumeration 'WritePolicy' has the following literals: 'undef', 'other', 'writeBack', 'writeThrough'.
+The enumeration 'ComponentState' has the following literals: 'storage', 'undef', 'other', 'operating'.
+The enumeration 'AllocationNature' has the following literals: 'spatialDistribution', 'timeScheduling'.
+The enumeration 'ConditionType' has the following literals: 'temperature', 'humidity', 'altitude', 'undef', 'shock', 'vibration', 'other'.
+The enumeration 'ComponentKind' has the following literals: 'other', 'unit', 'chip', 'channel', 'port', 'undef', 'card'.
+The enumeration 'PoolMgtPolicyKind' has the following literals: 'other', 'exception', 'infiniteWait', 'dynamic', 'timedWait'.
+'MARTE::SW::ResourceCore::SwResource' is a specialization of 'Resource'.
+'MARTE::HwStorageManager::HwDMA' is a specialization of 'HwCommunication::HwArbiter'.
+'MARTE::HwMemory::HwRAM' is a specialization of 'HwMemory'.
+'MARTE::SW::Interaction::NotificationResource' is a specialization of 'SwSynchronizationResource'.
+'MARTE::Time::TimedConstraint' is a specialization of 'Time::TimedElement'.
+'MARTE::HwCommunication::HwBridge' is a specialization of 'HwMedia'.
+'MARTE::HwMemory::HwMemory' is a specialization of 'GRM::StorageResource'.
+'MARTE::GRM::CommunicationEndPoint' is a specialization of 'Resource'.
+'MARTE::GQAM::GaCommStep' is a specialization of 'GaStep'.
+'MARTE::PAM::PaRequestedStep' is a specialization of 'GQAM::GaRequestedService'.
+'MARTE::HwComputing::HwComputingResource' is a specialization of 'GRM::ComputingResource'.
+'MARTE::RSM::Tiler' is a specialization of 'LinkTopology'.
+'MARTE::SW::Interaction::SwInteractionResource' is a specialization of 'SwResource'.
+'MARTE::HwComputing::HwProcessor' is a specialization of 'HwComputingResource'.
+'MARTE::HwDevice::HWSensor' is a specialization of 'HwI::O'.
+'MARTE::SW::Interaction::SwMutualExclusionResource' is a specialization of 'SW::Interaction::SwSynchronizationResource'.
+'MARTE::GQAM::GaTimedObs' is a specialization of 'NfpConstraint'.
+'MARTE::HwDevice::HwSupport' is a specialization of 'HwDevice'.
+'MARTE::SAM::SaCommStep' is a specialization of 'GaCommStep'.
+'MARTE::PAM::PaRequestedStep' is a specialization of 'PAM::PaStep'.
+'MARTE::NFPs::NfpType' is a specialization of 'TupleType'.
+'MARTE::GRM::SchedulableResource' is a specialization of 'Resource'.
+'MARTE::SAM::SaSharedResource' is a specialization of 'MutualExclusionResource'.
+'MARTE::Time::TimedConstraint' is a specialization of 'NFPs::NfpConstraint'.
+'MARTE::HwCommunication::HwMedia' is a specialization of 'GRM::CommunicationMedia'.
+'MARTE::PAM::PaCommStep' is a specialization of 'GQAM::GaCommStep'.
+'MARTE::GQAM::GaRelStep' is a specialization of 'GaStep'.
+'MARTE::SW::Interaction::SharedDataComResource' is a specialization of 'SwCommunicationResource'.
+'MARTE::HwCommunication::HwCommunicationResource' is a specialization of 'HwResource'.
+'MARTE::SW::Concurrency::SwSchedulableResource' is a specialization of 'GRM::SchedulableResource'.
+'MARTE::SW::Interaction::SwCommunicationResource' is a specialization of 'GRM::CommunicationMedia'.
+'MARTE::HwMemory::HwCache' is a specialization of 'HwMemory'.
+'MARTE::HwCommunication::HwEndPoint' is a specialization of 'HwCommunication::HwCommunicationResource'.
+'MARTE::SW::Concurrency::Alarm' is a specialization of 'InterruptResource'.
+'MARTE::HwStorageManager::HwStorageManager' is a specialization of 'GRM::StorageResource'.
+'MARTE::SW::Brokering::DeviceBroker' is a specialization of 'SwResource'.
+'MARTE::SAM::SaAnalysisContext' is a specialization of 'GaAnalysisContext'.
+'MARTE::SAM::SaCommHost' is a specialization of 'GaCommHost'.
+'MARTE::PAM::PaStep' is a specialization of 'GaStep'.
+'MARTE::GQAM::GaCommHost' is a specialization of 'GRM::CommunicationMedia'.
+'MARTE::HwGeneral::HwResource' is a specialization of 'Resource'.
+'MARTE::GQAM::GaStep' is a specialization of 'GaScenario'.
+'MARTE::HwDevice::HwDevice' is a specialization of 'GRM::DeviceResource'.
+'MARTE::HwCommunication::HwEndPoint' is a specialization of 'GRM::CommunicationEndPoint'.
+'MARTE::GRM::SynchronizationResource' is a specialization of 'Resource'.
+'MARTE::HwDevice::HWActuator' is a specialization of 'HwI::O'.
+'MARTE::SW::ResourceCore::SwAccessService' is a specialization of 'GrService'.
+'MARTE::HwStorageManager::HwStorageManager' is a specialization of 'HwGeneral::HwResource'.
+'MARTE::RSM::Distribute' is a specialization of 'Allocate'.
+'MARTE::HwComputing::HwASIC' is a specialization of 'HwComputingResource'.
+'MARTE::SW::Concurrency::SwTimerResource' is a specialization of 'TimerResource'.
+'MARTE::HwTiming::HwClock' is a specialization of 'HwTimingResource'.
+'MARTE::GRM::MutualExclusionResource' is a specialization of 'Resource'.
+'MARTE::RSM::DefaultLink' is a specialization of 'LinkTopology'.
+'MARTE::HwComputing::HwISA' is a specialization of 'HwResource'.
+'MARTE::SW::Concurrency::MemoryPartition' is a specialization of 'SwResource'.
+'MARTE::Time::TimedValueSpecification' is a specialization of 'TimedElement'.
+'MARTE::GQAM::GaRequestedService' is a specialization of 'GaStep'.
+'MARTE::GRM::SecondaryScheduler' is a specialization of 'Scheduler'.
+'MARTE::PAM::PaLogicalResource' is a specialization of 'Resource'.
+'MARTE::HwMemory::HwDrive' is a specialization of 'HwMemory'.
+'MARTE::HwLayout::HwComponent' is a specialization of 'HwResource'.
+'MARTE::HwTiming::HwTimingResource' is a specialization of 'GRM::TimingResource'.
+'MARTE::PAM::PaCommStep' is a specialization of 'PAM::PaStep'.
+'MARTE::HwComputing::HwBranchPredictor' is a specialization of 'HwResource'.
+'MARTE::HwStorageManager::HwMMU' is a specialization of 'HwStorageManager'.
+'MARTE::GQAM::GaCommChannel' is a specialization of 'SchedulableResource'.
+'MARTE::PAM::PaResPassStep' is a specialization of 'GaStep'.
+'MARTE::GRM::Acquire' is a specialization of 'GrService'.
+'MARTE::Time::TimedEvent' is a specialization of 'TimedElement'.
+'MARTE::HwMemory::HwMemory' is a specialization of 'HwGeneral::HwResource'.
+'MARTE::HwMemory::HwROM' is a specialization of 'HwMemory'.
+'MARTE::SW::Concurrency::EntryPoint' is a specialization of 'Allocate'.
+'MARTE::SAM::SaSchedObs' is a specialization of 'GaTimedObs'.
+'MARTE::HwCommunication::HwMedia' is a specialization of 'HwCommunication::HwCommunicationResource'.
+'MARTE::Time::TimedDurationObservation' is a specialization of 'TimedElement'.
+'MARTE::HwTiming::HwTimer' is a specialization of 'HwTimingResource'.
+'MARTE::GQAM::GaExecHost' is a specialization of 'GRM::Scheduler'.
+'MARTE::Time::ClockConstraint' is a specialization of 'Time::TimedElement'.
+'MARTE::HwDevice::HwI::O' is a specialization of 'HwDevice'.
+'MARTE::GRM::DeviceResource' is a specialization of 'ProcessingResource'.
+'MARTE::Time::ClockConstraint' is a specialization of 'NFPs::NfpConstraint'.
+'MARTE::HwComputing::HwPLD' is a specialization of 'HwComputingResource'.
+'MARTE::RSM::InterRepetition' is a specialization of 'LinkTopology'.
+'MARTE::GRM::ProcessingResource' is a specialization of 'Resource'.
+'MARTE::GRM::ComputingResource' is a specialization of 'ProcessingResource'.
+'MARTE::HwGeneral::HwResourceService' is a specialization of 'GrService'.
+'MARTE::SW::Interaction::MessageComResource' is a specialization of 'SwCommunicationResource'.
+'MARTE::GRM::TimerResource' is a specialization of 'TimingResource'.
+'MARTE::GRM::Scheduler' is a specialization of 'Resource'.
+'MARTE::HwDevice::HwDevice' is a specialization of 'HwGeneral::HwResource'.
+'MARTE::GQAM::GaAnalysisContext' is a specialization of 'Variables::ExpressionContext'.
+'MARTE::SW::Concurrency::SwConcurrentResource' is a specialization of 'SwResource'.
+'MARTE::RSM::Reshape' is a specialization of 'LinkTopology'.
+'MARTE::SAM::SaStep' is a specialization of 'GaStep'.
+'MARTE::HwCommunication::HwArbiter' is a specialization of 'HwCommunicationResource'.
+'MARTE::GQAM::GaAcqStep' is a specialization of 'GaStep'.
+'MARTE::HwStorageManager::HwDMA' is a specialization of 'HwStorageManager::HwStorageManager'.
+'MARTE::SW::Concurrency::InterruptResource' is a specialization of 'SwConcurrentResource'.
+'MARTE::HwCommunication::HwBus' is a specialization of 'HwMedia'.
+'MARTE::HwPower::HwPowerSupply' is a specialization of 'HwComponent'.
+'MARTE::GRM::Release' is a specialization of 'GrService'.
+'MARTE::GRM::TimingResource' is a specialization of 'Resource'.
+'MARTE::GRM::ClockResource' is a specialization of 'TimingResource'.
+'MARTE::SW::Interaction::SwMutualExclusionResource' is a specialization of 'GRM::MutualExclusionResource'.
+'MARTE::GQAM::GaExecHost' is a specialization of 'GRM::ComputingResource'.
+'MARTE::HwComputing::HwComputingResource' is a specialization of 'HwGeneral::HwResource'.
+'MARTE::SAM::SaExecHost' is a specialization of 'GaExecHost'.
+'MARTE::HwTiming::HwTimingResource' is a specialization of 'HwGeneral::HwResource'.
+'MARTE::SW::Brokering::MemoryBroker' is a specialization of 'SwResource'.
+'MARTE::GQAM::GaScenario' is a specialization of 'Time::TimedProcessing'.
+'MARTE::GRM::ConcurrencyResource' is a specialization of 'Resource'.
+'MARTE::Time::TimedInstantObservation' is a specialization of 'TimedElement'.
+'MARTE::GRM::StorageResource' is a specialization of 'Resource'.
+'MARTE::GQAM::GaScenario' is a specialization of 'GRM::ResourceUsage'.
+'MARTE::SW::Interaction::SwCommunicationResource' is a specialization of 'SW::Interaction::SwInteractionResource'.
+'MARTE::HwPower::HwCoolingSupply' is a specialization of 'HwComponent'.
+'MARTE::SW::Interaction::SwSynchronizationResource' is a specialization of 'SW::Interaction::SwInteractionResource'.
+'MARTE::Time::TimedProcessing' is a specialization of 'TimedElement'.
+'MARTE::GRM::CommunicationMedia' is a specialization of 'ProcessingResource'.
+'MARTE::SW::Concurrency::SwSchedulableResource' is a specialization of 'SW::Concurrency::SwConcurrentResource'.
+'MARTE::GQAM::GaLatencyObs' is a specialization of 'GaTimedObs'.
+'MARTE::GQAM::GaAnalysisContext' is a specialization of 'CoreElements::Configuration'.
+'MARTE::SW::Interaction::SwSynchronizationResource' is a specialization of 'GRM::SynchronizationResource'.
+'MARTE::GQAM::GaCommHost' is a specialization of 'GRM::Scheduler'.
+'MARTE::GCM::GCMInvocationAction' (role 'MARTE_GCM_GCMInvocationAction', cardinality 0..*) is associated with 'GCM::MARTE::InvocationAction' (role 'GCM_MARTE_InvocationAction', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource281', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature282', cardinality 0..*).
+'GRM::Scheduler' (role 'Scheduler', cardinality 0..*) is associated with 'MARTE::GRM::MutualExclusionResource' (role 'protectedSharedResources', cardinality 0..*).
+'NFPs::Dimension' (role 'NFPs_Dimension', cardinality 0..*) is associated with 'MARTE::NFPs::Dimension' (role 'MARTE_NFPs_Dimension', cardinality 0..*).
+'GQAM::GaStep' (role 'GaStep', cardinality 0..*) is associated with 'MARTE::GQAM::GaScenario' (role 'scenario', cardinality 0..*).
+'MARTE::GRM::Scheduler' (role 'host', cardinality 0..*) is associated with 'GRM::SchedulableResource' (role 'SchedulableResource', cardinality 0..*).
+'MARTE::Variables::ExpressionContext' (role 'MARTE_Variables_ExpressionContext', cardinality 0..*) is associated with 'Variables::MARTE::NamedElement' (role 'Variables_MARTE_NamedElement', cardinality 0..*).
+'HwGeneral::HwResource' (role 'HwGeneral_HwResource', cardinality 0..*) is associated with 'MARTE::HwGeneral::HwResource' (role 'MARTE_HwGeneral_HwResource232', cardinality 0..*).
+'GCM::MARTE::Behavior' (role 'GCM_MARTE_Behavior', cardinality 0..*) is associated with 'MARTE::GCM::DataPool' (role 'MARTE_GCM_DataPool453', cardinality 0..*).
+'MARTE::GRM::SchedulableResource' (role 'schedulableResources', cardinality 0..*) is associated with 'GRM::Scheduler' (role 'Scheduler121', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement267', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource266', cardinality 0..*).
+'CoreElements::Mode' (role 'CoreElements_Mode25', cardinality 0..*) is associated with 'MARTE::CoreElements::Configuration' (role 'MARTE_CoreElements_Configuration24', cardinality 0..*).
+'GRM::MARTE::ExecutionSpecification' (role 'GRM_MARTE_ExecutionSpecification', cardinality 0..*) is associated with 'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService127', cardinality 0..*).
+'GQAM::MARTE::TimeObservation' (role 'GQAM_MARTE_TimeObservation', cardinality 0..*) is associated with 'MARTE::GQAM::GaTimedObs' (role 'MARTE_GQAM_GaTimedObs', cardinality 0..*).
+'DataTypes::MARTE::Property' (role 'DataTypes_MARTE_Property170', cardinality 0..*) is associated with 'MARTE::DataTypes::TupleType' (role 'MARTE_DataTypes_TupleType', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement321', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource320', cardinality 0..*).
+'GQAM::GaScenario' (role 'GaScenario495', cardinality 0..*) is associated with 'MARTE::GQAM::GaStep' (role 'parentStep', cardinality 0..*).
+'MARTE::HwMemory::HwDrive' (role 'MARTE_HwMemory_HwDrive', cardinality 0..*) is associated with 'HwMemory::HwRAM' (role 'HwMemory_HwRAM225', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature311', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::InterruptResource' (role 'MARTE_SW_Concurrency_InterruptResource310', cardinality 0..*).
+'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType80', cardinality 0..*) is associated with 'Time::MARTE::Class' (role 'Time_MARTE_Class', cardinality 0..*).
+'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker378', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature379', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement302', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::InterruptResource' (role 'MARTE_SW_Concurrency_InterruptResource', cardinality 0..*).
+'MARTE::CoreElements::ModeTransition' (role 'MARTE_CoreElements_ModeTransition', cardinality 0..*) is associated with 'CoreElements::MARTE::Transition' (role 'CoreElements_MARTE_Transition', cardinality 0..*).
+'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature185', cardinality 0..*) is associated with 'HLAM::MARTE::Signal' (role 'HLAM_MARTE_Signal', cardinality 0..*).
+'MARTE::GRM::Resource' (role 'MARTE_GRM_Resource111', cardinality 0..*) is associated with 'GRM::MARTE::ConnectableElement' (role 'GRM_MARTE_ConnectableElement', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource290', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement291', cardinality 0..*).
+'MARTE::PAM::PaStep' (role 'MARTE_PAM_PaStep', cardinality 0..*) is associated with 'GQAM::GaScenario' (role 'GQAM_GaScenario530', cardinality 0..*).
+'HLAM::MARTE::BehavioralFeature' (role 'HLAM_MARTE_BehavioralFeature', cardinality 0..*) is associated with 'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature', cardinality 0..*).
+'Alloc::MARTE::Element' (role 'Alloc_MARTE_Element', cardinality 0..*) is associated with 'MARTE::Alloc::Assign' (role 'MARTE_Alloc_Assign40', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::EntryPoint' (role 'MARTE_SW_Concurrency_EntryPoint', cardinality 0..*).
+'GQAM::GaWorkloadGenerator' (role 'GQAM_GaWorkloadGenerator', cardinality 0..*) is associated with 'MARTE::GQAM::GaWorkloadEvent' (role 'MARTE_GQAM_GaWorkloadEvent', cardinality 0..*).
+'GQAM::MARTE::TimeObservation' (role 'GQAM_MARTE_TimeObservation500', cardinality 0..*) is associated with 'MARTE::GQAM::GaTimedObs' (role 'MARTE_GQAM_GaTimedObs499', cardinality 0..*).
+'SW::Brokering::MARTE::TypedElement' (role 'SW_Brokering_MARTE_TypedElement364', cardinality 0..*) is associated with 'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker', cardinality 0..*).
+'MARTE::GRM::Resource' (role 'MARTE_GRM_Resource105', cardinality 0..*) is associated with 'GRM::MARTE::InstanceSpecification' (role 'GRM_MARTE_InstanceSpecification', cardinality 0..*).
+'Time::MARTE::Property' (role 'Time_MARTE_Property67', cardinality 0..*) is associated with 'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType66', cardinality 0..*).
+'MARTE::HLAM::RtAction' (role 'MARTE_HLAM_RtAction', cardinality 0..*) is associated with 'HLAM::MARTE::BehavioralFeature' (role 'HLAM_MARTE_BehavioralFeature199', cardinality 0..*).
+'MARTE::NFPs::Nfp' (role 'MARTE_NFPs_Nfp', cardinality 0..*) is associated with 'NFPs::MARTE::Property' (role 'NFPs_MARTE_Property', cardinality 0..*).
+'MARTE::HwGeneral::HwResource' (role 'MARTE_HwGeneral_HwResource', cardinality 0..*) is associated with 'HwGeneral::HwResourceService' (role 'HwGeneral_HwResourceService', cardinality 0..*).
+'MARTE::PAM::PaRunTInstance' (role 'MARTE_PAM_PaRunTInstance539', cardinality 0..*) is associated with 'PAM::MARTE::NamedElement' (role 'PAM_MARTE_NamedElement', cardinality 0..*).
+'SW::Brokering::MARTE::TypedElement' (role 'SW_Brokering_MARTE_TypedElement367', cardinality 0..*) is associated with 'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker366', cardinality 0..*).
+'HwComputing::HwISA' (role 'HwComputing_HwISA', cardinality 0..*) is associated with 'MARTE::HwComputing::HwProcessor' (role 'MARTE_HwComputing_HwProcessor', cardinality 0..*).
+'MARTE::GRM::ResourceUsage' (role 'MARTE_GRM_ResourceUsage138', cardinality 0..*) is associated with 'GRM::ResourceUsage' (role 'GRM_ResourceUsage', cardinality 0..*).
+'Time::MARTE::Event' (role 'Time_MARTE_Event', cardinality 0..*) is associated with 'MARTE::Time::Clock' (role 'MARTE_Time_Clock60', cardinality 0..*).
+'MARTE::HwLayout::HwComponent' (role 'MARTE_HwLayout_HwComponent', cardinality 0..*) is associated with 'HwGeneral::HwResourceService' (role 'HwGeneral_HwResourceService236', cardinality 0..*).
+'RSM::MARTE::MultiplicityElement' (role 'RSM_MARTE_MultiplicityElement', cardinality 0..*) is associated with 'MARTE::RSM::Shaped' (role 'MARTE_RSM_Shaped', cardinality 0..*).
+'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource402', cardinality 0..*) is associated with 'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement403', cardinality 0..*).
+'GQAM::GaTimedObs' (role 'GQAM_GaTimedObs', cardinality 0..*) is associated with 'MARTE::GQAM::GaScenario' (role 'MARTE_GQAM_GaScenario487', cardinality 0..*).
+'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement389', cardinality 0..*) is associated with 'MARTE::SW::Interaction::MessageComResource' (role 'MARTE_SW_Interaction_MessageComResource', cardinality 0..*).
+'MARTE::GCM::DataPool' (role 'MARTE_GCM_DataPool455', cardinality 0..*) is associated with 'GCM::MARTE::Behavior' (role 'GCM_MARTE_Behavior456', cardinality 0..*).
+'MARTE::GCM::ClientServerSpecification' (role 'MARTE_GCM_ClientServerSpecification', cardinality 0..*) is associated with 'GCM::MARTE::Interface' (role 'GCM_MARTE_Interface436', cardinality 0..*).
+'MARTE::SAM::SaEndtoEndFlow' (role 'MARTE_SAM_SaEndtoEndFlow', cardinality 0..*) is associated with 'GQAM::GaTimedObs' (role 'GQAM_GaTimedObs521', cardinality 0..*).
+'MARTE::NFPs::Unit' (role 'MARTE_NFPs_Unit3', cardinality 0..*) is associated with 'NFPs::MARTE::EnumerationLiteral' (role 'NFPs_MARTE_EnumerationLiteral', cardinality 0..*).
+'NFPs::NfpConstraint' (role 'NFPs_NfpConstraint38', cardinality 0..*) is associated with 'MARTE::Alloc::Assign' (role 'MARTE_Alloc_Assign', cardinality 0..*).
+'MARTE::HLAM::RtAction' (role 'MARTE_HLAM_RtAction201', cardinality 0..*) is associated with 'HLAM::MARTE::InvocationAction' (role 'HLAM_MARTE_InvocationAction202', cardinality 0..*).
+'MARTE::GQAM::GaScenario' (role 'MARTE_GQAM_GaScenario', cardinality 0..*) is associated with 'GQAM::GaWorkloadEvent' (role 'GQAM_GaWorkloadEvent', cardinality 0..*).
+'MARTE::GCM::GCMInvocatingBehavior' (role 'MARTE_GCM_GCMInvocatingBehavior460', cardinality 0..*) is associated with 'GCM::MARTE::Port' (role 'GCM_MARTE_Port461', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadEvent' (role 'MARTE_GQAM_GaWorkloadEvent478', cardinality 0..*) is associated with 'GQAM::MARTE::NamedElement' (role 'GQAM_MARTE_NamedElement479', cardinality 0..*).
+'GQAM::GaStep' (role 'GaStep485', cardinality 0..*) is associated with 'MARTE::GQAM::GaScenario' (role 'childScenario', cardinality 0..*).
+'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource408', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature409', cardinality 0..*).
+'GRM::MARTE::Property' (role 'GRM_MARTE_Property', cardinality 0..*) is associated with 'MARTE::GRM::Resource' (role 'MARTE_GRM_Resource', cardinality 0..*).
+'MARTE::Time::TimedEvent' (role 'MARTE_Time_TimedEvent', cardinality 0..*) is associated with 'Time::MARTE::TimeEvent' (role 'Time_MARTE_TimeEvent', cardinality 0..*).
+'Alloc::Allocated' (role 'Alloc_Allocated', cardinality 0..*) is associated with 'MARTE::Alloc::Allocated' (role 'MARTE_Alloc_Allocated29', cardinality 0..*).
+'MARTE::Alloc::Allocated' (role 'MARTE_Alloc_Allocated', cardinality 0..*) is associated with 'Alloc::MARTE::NamedElement' (role 'Alloc_MARTE_NamedElement', cardinality 0..*).
+'GCM::MARTE::Feature' (role 'GCM_MARTE_Feature464', cardinality 0..*) is associated with 'MARTE::GCM::GCMInvocatingBehavior' (role 'MARTE_GCM_GCMInvocatingBehavior463', cardinality 0..*).
+'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource', cardinality 0..*) is associated with 'SW::ResourceCore::MARTE::TypedElement' (role 'SW_ResourceCore_MARTE_TypedElement', cardinality 0..*).
+'MARTE::SW::Interaction::SharedDataComResource' (role 'MARTE_SW_Interaction_SharedDataComResource', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature', cardinality 0..*).
+'GRM::SchedulableResource' (role 'GRM_SchedulableResource534', cardinality 0..*) is associated with 'MARTE::PAM::PaRunTInstance' (role 'MARTE_PAM_PaRunTInstance', cardinality 0..*).
+'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing', cardinality 0..*) is associated with 'Time::MARTE::Action' (role 'Time_MARTE_Action', cardinality 0..*).
+'MARTE::DataTypes::CollectionType' (role 'MARTE_DataTypes_CollectionType159', cardinality 0..*) is associated with 'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType160', cardinality 0..*).
+'MARTE::GCM::GCMTrigger' (role 'MARTE_GCM_GCMTrigger442', cardinality 0..*) is associated with 'GCM::MARTE::Feature' (role 'GCM_MARTE_Feature', cardinality 0..*).
+'Time::MARTE::InstanceSpecification' (role 'Time_MARTE_InstanceSpecification', cardinality 0..*) is associated with 'MARTE::Time::Clock' (role 'MARTE_Time_Clock', cardinality 0..*).
+'MARTE::HLAM::RtSpecification' (role 'MARTE_HLAM_RtSpecification196', cardinality 0..*) is associated with 'HLAM::MARTE::BehavioralFeature' (role 'HLAM_MARTE_BehavioralFeature197', cardinality 0..*).
+'HwTiming::HwClock' (role 'HwTiming_HwClock', cardinality 0..*) is associated with 'MARTE::HwTiming::HwTimer' (role 'MARTE_HwTiming_HwTimer', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadBehavior' (role 'MARTE_GQAM_GaWorkloadBehavior508', cardinality 0..*) is associated with 'GQAM::GaWorkloadEvent' (role 'GQAM_GaWorkloadEvent509', cardinality 0..*).
+'MARTE::Time::TimedInstantObservation' (role 'MARTE_Time_TimedInstantObservation', cardinality 0..*) is associated with 'Time::MARTE::TimeObservation' (role 'Time_MARTE_TimeObservation', cardinality 0..*).
+'MARTE::GRM::SchedulableResource' (role 'virtualProcessingUnits', cardinality 0..*) is associated with 'GRM::SecondaryScheduler' (role 'SecondaryScheduler', cardinality 0..*).
+'SW::ResourceCore::MARTE::BehavioralFeature' (role 'SW_ResourceCore_MARTE_BehavioralFeature', cardinality 0..*) is associated with 'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource247', cardinality 0..*).
+'GQAM::GaScenario' (role 'GaScenario', cardinality 0..*) is associated with 'MARTE::GQAM::GaStep' (role 'steps', cardinality 0..*).
+'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker355', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature356', cardinality 0..*).
+'MARTE::RSM::Tiler' (role 'MARTE_RSM_Tiler', cardinality 0..*) is associated with 'RSM::MARTE::ConnectorEnd' (role 'RSM_MARTE_ConnectorEnd', cardinality 0..*).
+'MARTE::HwComputing::HwProcessor' (role 'MARTE_HwComputing_HwProcessor209', cardinality 0..*) is associated with 'HwMemory::HwCache' (role 'HwMemory_HwCache', cardinality 0..*).
+'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker350', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature', cardinality 0..*).
+'MARTE::HwComputing::HwProcessor' (role 'MARTE_HwComputing_HwProcessor207', cardinality 0..*) is associated with 'HwComputing::HwBranchPredictor' (role 'HwComputing_HwBranchPredictor', cardinality 0..*).
+'MARTE::HwLayout::HwComponent' (role 'MARTE_HwLayout_HwComponent238', cardinality 0..*) is associated with 'HwLayout::HwComponent' (role 'HwLayout_HwComponent', cardinality 0..*).
+'GCM::MARTE::Interface' (role 'GCM_MARTE_Interface438', cardinality 0..*) is associated with 'MARTE::GCM::FlowSpecification' (role 'MARTE_GCM_FlowSpecification', cardinality 0..*).
+'CoreElements::Mode' (role 'CoreElements_Mode', cardinality 0..*) is associated with 'MARTE::NFPs::NfpConstraint' (role 'MARTE_NFPs_NfpConstraint6', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource284', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature285', cardinality 0..*).
+'GRM::Scheduler' (role 'GRM_Scheduler', cardinality 0..*) is associated with 'MARTE::GRM::ProcessingResource' (role 'MARTE_GRM_ProcessingResource', cardinality 0..*).
+'Time::MARTE::DurationObservation' (role 'Time_MARTE_DurationObservation', cardinality 0..*) is associated with 'MARTE::Time::TimedDurationObservation' (role 'MARTE_Time_TimedDurationObservation', cardinality 0..*).
+'MARTE::CoreElements::Mode' (role 'MARTE_CoreElements_Mode', cardinality 0..*) is associated with 'CoreElements::MARTE::State' (role 'CoreElements_MARTE_State', cardinality 0..*).
+'HwMemory::HwRAM' (role 'HwMemory_HwRAM', cardinality 0..*) is associated with 'MARTE::HwComputing::HwPLD' (role 'MARTE_HwComputing_HwPLD', cardinality 0..*).
+'MARTE::GRM::Resource' (role 'MARTE_GRM_Resource107', cardinality 0..*) is associated with 'GRM::MARTE::Classifier' (role 'GRM_MARTE_Classifier', cardinality 0..*).
+'Operators::MARTE::Behavior' (role 'Operators_MARTE_Behavior', cardinality 0..*) is associated with 'MARTE::Operators::Operator' (role 'MARTE_Operators_Operator', cardinality 0..*).
+'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement', cardinality 0..*) is associated with 'MARTE::SW::Interaction::SwInteractionResource' (role 'MARTE_SW_Interaction_SwInteractionResource', cardinality 0..*).
+'GCM::MARTE::BehavioralFeature' (role 'GCM_MARTE_BehavioralFeature', cardinality 0..*) is associated with 'MARTE::GCM::ClientServerFeature' (role 'MARTE_GCM_ClientServerFeature', cardinality 0..*).
+'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType72', cardinality 0..*) is associated with 'Time::MARTE::Operation' (role 'Time_MARTE_Operation', cardinality 0..*).
+'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature189', cardinality 0..*) is associated with 'HLAM::MARTE::InvocationAction' (role 'HLAM_MARTE_InvocationAction', cardinality 0..*).
+'MARTE::Alloc::Allocated' (role 'MARTE_Alloc_Allocated31', cardinality 0..*) is associated with 'Alloc::Allocated' (role 'Alloc_Allocated32', cardinality 0..*).
+'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature191', cardinality 0..*) is associated with 'HLAM::RtSpecification' (role 'HLAM_RtSpecification', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement261', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource260', cardinality 0..*).
+'GCM::MARTE::Interface' (role 'GCM_MARTE_Interface', cardinality 0..*) is associated with 'MARTE::GCM::ClientServerPort' (role 'MARTE_GCM_ClientServerPort429', cardinality 0..*).
+'NFPs::MARTE::Property' (role 'NFPs_MARTE_Property14', cardinality 0..*) is associated with 'MARTE::NFPs::NfpType' (role 'MARTE_NFPs_NfpType13', cardinality 0..*).
+'MARTE::Alloc::Assign' (role 'MARTE_Alloc_Assign42', cardinality 0..*) is associated with 'Alloc::MARTE::Element' (role 'Alloc_MARTE_Element43', cardinality 0..*).
+'MARTE::GRM::Scheduler' (role 'scheduler', cardinality 0..*) is associated with 'GRM::MutualExclusionResource' (role 'MutualExclusionResource', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement347', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::Alarm' (role 'MARTE_SW_Concurrency_Alarm', cardinality 0..*).
+'MARTE::HwGeneral::HwResource' (role 'MARTE_HwGeneral_HwResource229', cardinality 0..*) is associated with 'HwGeneral::HwResourceService' (role 'HwGeneral_HwResourceService230', cardinality 0..*).
+'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature373', cardinality 0..*) is associated with 'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker372', cardinality 0..*).
+'MARTE::PAM::PaRunTInstance' (role 'MARTE_PAM_PaRunTInstance536', cardinality 0..*) is associated with 'GQAM::GaExecHost' (role 'GQAM_GaExecHost537', cardinality 0..*).
+'Time::MARTE::ValueSpecification' (role 'Time_MARTE_ValueSpecification88', cardinality 0..*) is associated with 'MARTE::Time::TimedEvent' (role 'MARTE_Time_TimedEvent87', cardinality 0..*).
+'MARTE::SAM::SaStep' (role 'MARTE_SAM_SaStep528', cardinality 0..*) is associated with 'SAM::SaSharedResource' (role 'SAM_SaSharedResource', cardinality 0..*).
+'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType151', cardinality 0..*) is associated with 'MARTE::DataTypes::BoundedSubtype' (role 'MARTE_DataTypes_BoundedSubtype150', cardinality 0..*).
+'MARTE::DataTypes::ChoiceType' (role 'MARTE_DataTypes_ChoiceType', cardinality 0..*) is associated with 'DataTypes::MARTE::Property' (role 'DataTypes_MARTE_Property162', cardinality 0..*).
+'MARTE::Variables::Var' (role 'MARTE_Variables_Var', cardinality 0..*) is associated with 'Variables::MARTE::Property' (role 'Variables_MARTE_Property', cardinality 0..*).
+'MARTE::Alloc::AllocateActivityGroup' (role 'MARTE_Alloc_AllocateActivityGroup', cardinality 0..*) is associated with 'Alloc::MARTE::ActivityPartition' (role 'Alloc_MARTE_ActivityPartition', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource299', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement300', cardinality 0..*).
+'MARTE::GRM::ResourceUsage' (role 'MARTE_GRM_ResourceUsage140', cardinality 0..*) is associated with 'GRM::Resource' (role 'GRM_Resource141', cardinality 0..*).
+'GCM::MARTE::Interface' (role 'GCM_MARTE_Interface432', cardinality 0..*) is associated with 'MARTE::GCM::ClientServerPort' (role 'MARTE_GCM_ClientServerPort431', cardinality 0..*).
+'MARTE::HwStorageManager::HwDMA' (role 'MARTE_HwStorageManager_HwDMA', cardinality 0..*) is associated with 'HwComputing::HwProcessor' (role 'HwComputing_HwProcessor', cardinality 0..*).
+'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing93', cardinality 0..*) is associated with 'Time::MARTE::Message' (role 'Time_MARTE_Message', cardinality 0..*).
+'NFPs::Unit' (role 'NFPs_Unit', cardinality 0..*) is associated with 'MARTE::NFPs::Unit' (role 'MARTE_NFPs_Unit', cardinality 0..*).
+'MARTE::HwStorageManager::HwMMU' (role 'MARTE_HwStorageManager_HwMMU', cardinality 0..*) is associated with 'HwMemory::HwCache' (role 'HwMemory_HwCache223', cardinality 0..*).
+'SW::ResourceCore::MARTE::BehavioralFeature' (role 'SW_ResourceCore_MARTE_BehavioralFeature250', cardinality 0..*) is associated with 'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource249', cardinality 0..*).
+'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService135', cardinality 0..*) is associated with 'GRM::MARTE::CollaborationUse' (role 'GRM_MARTE_CollaborationUse', cardinality 0..*).
+'GRM::MARTE::BehavioralFeature' (role 'GRM_MARTE_BehavioralFeature', cardinality 0..*) is associated with 'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService129', cardinality 0..*).
+'GQAM::GaRequestedService' (role 'GQAM_GaRequestedService', cardinality 0..*) is associated with 'MARTE::GQAM::GaStep' (role 'MARTE_GQAM_GaStep492', cardinality 0..*).
+'DataTypes::MARTE::Property' (role 'DataTypes_MARTE_Property165', cardinality 0..*) is associated with 'MARTE::DataTypes::ChoiceType' (role 'MARTE_DataTypes_ChoiceType164', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadBehavior' (role 'MARTE_GQAM_GaWorkloadBehavior', cardinality 0..*) is associated with 'GQAM::GaScenario' (role 'GQAM_GaScenario506', cardinality 0..*).
+'HLAM::MARTE::Comment' (role 'HLAM_MARTE_Comment', cardinality 0..*) is associated with 'MARTE::HLAM::RtSpecification' (role 'MARTE_HLAM_RtSpecification194', cardinality 0..*).
+'GRM::ComputingResource' (role 'GRM_ComputingResource', cardinality 0..*) is associated with 'MARTE::GRM::Scheduler' (role 'MARTE_GRM_Scheduler114', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature276', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource275', cardinality 0..*).
+'GRM::MARTE::NamedElement' (role 'GRM_MARTE_NamedElement', cardinality 0..*) is associated with 'MARTE::GRM::ResourceUsage' (role 'MARTE_GRM_ResourceUsage', cardinality 0..*).
+'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature353', cardinality 0..*) is associated with 'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker352', cardinality 0..*).
+'MARTE::Alloc::NfpRefine' (role 'MARTE_Alloc_NfpRefine36', cardinality 0..*) is associated with 'NFPs::NfpConstraint' (role 'NFPs_NfpConstraint', cardinality 0..*).
+'MARTE::GRM::Scheduler' (role 'MARTE_GRM_Scheduler', cardinality 0..*) is associated with 'GRM::ProcessingResource' (role 'GRM_ProcessingResource', cardinality 0..*).
+'MARTE::SW::Concurrency::InterruptResource' (role 'MARTE_SW_Concurrency_InterruptResource304', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement305', cardinality 0..*).
+'Time::MARTE::Property' (role 'Time_MARTE_Property70', cardinality 0..*) is associated with 'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType69', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource293', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement294', cardinality 0..*).
+'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker375', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature376', cardinality 0..*).
+'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature387', cardinality 0..*) is associated with 'MARTE::SW::Interaction::SharedDataComResource' (role 'MARTE_SW_Interaction_SharedDataComResource386', cardinality 0..*).
+'GRM::Resource' (role 'GRM_Resource502', cardinality 0..*) is associated with 'MARTE::GQAM::GaAcqStep' (role 'MARTE_GQAM_GaAcqStep', cardinality 0..*).
+'GQAM::MARTE::Classifier' (role 'GQAM_MARTE_Classifier', cardinality 0..*) is associated with 'MARTE::GQAM::GaResourcesPlatform' (role 'MARTE_GQAM_GaResourcesPlatform519', cardinality 0..*).
+'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing98', cardinality 0..*) is associated with 'Time::MARTE::Event' (role 'Time_MARTE_Event99', cardinality 0..*).
+'NFPs::Unit' (role 'NFPs_Unit56', cardinality 0..*) is associated with 'MARTE::Time::Clock' (role 'MARTE_Time_Clock55', cardinality 0..*).
+'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService131', cardinality 0..*) is associated with 'GRM::MARTE::Behavior' (role 'GRM_MARTE_Behavior', cardinality 0..*).
+'MARTE::HLAM::RtService' (role 'MARTE_HLAM_RtService', cardinality 0..*) is associated with 'HLAM::MARTE::BehavioralFeature' (role 'HLAM_MARTE_BehavioralFeature204', cardinality 0..*).
+'HwMemory::HwMemory' (role 'HwMemory_HwMemory', cardinality 0..*) is associated with 'MARTE::HwStorageManager::HwStorageManager' (role 'MARTE_HwStorageManager_HwStorageManager', cardinality 0..*).
+'GCM::MARTE::Behavior' (role 'GCM_MARTE_Behavior458', cardinality 0..*) is associated with 'MARTE::GCM::GCMInvocatingBehavior' (role 'MARTE_GCM_GCMInvocatingBehavior', cardinality 0..*).
+'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker', cardinality 0..*) is associated with 'SW::Brokering::MARTE::TypedElement' (role 'SW_Brokering_MARTE_TypedElement', cardinality 0..*).
+'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::NamedElement' (role 'SW_Concurrency_MARTE_NamedElement', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature327', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource326', cardinality 0..*).
+'Time::MARTE::Namespace' (role 'Time_MARTE_Namespace', cardinality 0..*) is associated with 'MARTE::Time::TimedDomain' (role 'MARTE_Time_TimedDomain', cardinality 0..*).
+'SW::Concurrency::MARTE::Element' (role 'SW_Concurrency_MARTE_Element', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource', cardinality 0..*).
+'GRM::MARTE::Lifeline' (role 'GRM_MARTE_Lifeline', cardinality 0..*) is associated with 'MARTE::GRM::Resource' (role 'MARTE_GRM_Resource109', cardinality 0..*).
+'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource329', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature330', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement337', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::MemoryPartition' (role 'MARTE_SW_Concurrency_MemoryPartition336', cardinality 0..*).
+'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType77', cardinality 0..*) is associated with 'Time::MARTE::Operation' (role 'Time_MARTE_Operation78', cardinality 0..*).
+'MARTE::DataTypes::ChoiceType' (role 'MARTE_DataTypes_ChoiceType167', cardinality 0..*) is associated with 'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType168', cardinality 0..*).
+'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource317', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement318', cardinality 0..*).
+'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement400', cardinality 0..*) is associated with 'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource', cardinality 0..*).
+'GQAM::GaStep' (role 'GQAM_GaStep', cardinality 0..*) is associated with 'MARTE::GQAM::GaScenario' (role 'MARTE_GQAM_GaScenario482', cardinality 0..*).
+'MARTE::Alloc::Allocate' (role 'MARTE_Alloc_Allocate48', cardinality 0..*) is associated with 'NFPs::NfpConstraint' (role 'NFPs_NfpConstraint49', cardinality 0..*).
+'CoreElements::MARTE::StateMachine' (role 'CoreElements_MARTE_StateMachine', cardinality 0..*) is associated with 'MARTE::CoreElements::ModeBehavior' (role 'MARTE_CoreElements_ModeBehavior', cardinality 0..*).
+'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement392', cardinality 0..*) is associated with 'MARTE::SW::Interaction::MessageComResource' (role 'MARTE_SW_Interaction_MessageComResource391', cardinality 0..*).
+'MARTE::HwGeneral::HwResource' (role 'MARTE_HwGeneral_HwResource234', cardinality 0..*) is associated with 'HwCommunication::HwEndPoint' (role 'HwCommunication_HwEndPoint', cardinality 0..*).
+'MARTE::HLAM::RtUnit' (role 'MARTE_HLAM_RtUnit176', cardinality 0..*) is associated with 'HLAM::MARTE::Operation' (role 'HLAM_MARTE_Operation', cardinality 0..*).
+'MARTE::GCM::DataPool' (role 'MARTE_GCM_DataPool', cardinality 0..*) is associated with 'GCM::MARTE::Property' (role 'GCM_MARTE_Property451', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource287', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement288', cardinality 0..*).
+'Time::MARTE::Property' (role 'Time_MARTE_Property', cardinality 0..*) is associated with 'MARTE::Time::Clock' (role 'MARTE_Time_Clock58', cardinality 0..*).
+'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService133', cardinality 0..*) is associated with 'GRM::MARTE::Collaboration' (role 'GRM_MARTE_Collaboration', cardinality 0..*).
+'CoreElements::MARTE::Package' (role 'CoreElements_MARTE_Package', cardinality 0..*) is associated with 'MARTE::CoreElements::Configuration' (role 'MARTE_CoreElements_Configuration22', cardinality 0..*).
+'MARTE::DataTypes::IntervalType' (role 'MARTE_DataTypes_IntervalType', cardinality 0..*) is associated with 'DataTypes::MARTE::Property' (role 'DataTypes_MARTE_Property', cardinality 0..*).
+'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker369', cardinality 0..*) is associated with 'SW::Brokering::MARTE::TypedElement' (role 'SW_Brokering_MARTE_TypedElement370', cardinality 0..*).
+'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing95', cardinality 0..*) is associated with 'Time::MARTE::ValueSpecification' (role 'Time_MARTE_ValueSpecification96', cardinality 0..*).
+'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource405', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature406', cardinality 0..*).
+'HwCommunication::HwArbiter' (role 'HwArbiter', cardinality 0..*) is associated with 'MARTE::HwCommunication::HwMedia' (role 'controlledMedias', cardinality 0..*).
+'MARTE::Alloc::Assign' (role 'MARTE_Alloc_Assign45', cardinality 0..*) is associated with 'Alloc::MARTE::Comment' (role 'Alloc_MARTE_Comment', cardinality 0..*).
+'SW::ResourceCore::MARTE::TypedElement' (role 'SW_ResourceCore_MARTE_TypedElement245', cardinality 0..*) is associated with 'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource244', cardinality 0..*).
+'MARTE::Alloc::NfpRefine' (role 'MARTE_Alloc_NfpRefine', cardinality 0..*) is associated with 'Alloc::MARTE::Dependency' (role 'Alloc_MARTE_Dependency', cardinality 0..*).
+'Time::MARTE::Event' (role 'Time_MARTE_Event102', cardinality 0..*) is associated with 'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing101', cardinality 0..*).
+'HLAM::MARTE::BehavioredClassifier' (role 'HLAM_MARTE_BehavioredClassifier', cardinality 0..*) is associated with 'MARTE::HLAM::RtUnit' (role 'MARTE_HLAM_RtUnit178', cardinality 0..*).
+'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType155', cardinality 0..*) is associated with 'MARTE::DataTypes::IntervalType' (role 'MARTE_DataTypes_IntervalType154', cardinality 0..*).
+'GQAM::MARTE::Behavior' (role 'GQAM_MARTE_Behavior', cardinality 0..*) is associated with 'MARTE::GQAM::GaWorkloadGenerator' (role 'MARTE_GQAM_GaWorkloadGenerator', cardinality 0..*).
+'MARTE::GCM::ClientServerPort' (role 'MARTE_GCM_ClientServerPort', cardinality 0..*) is associated with 'GCM::MARTE::Port' (role 'GCM_MARTE_Port427', cardinality 0..*).
+'MARTE::Time::Clock' (role 'MARTE_Time_Clock53', cardinality 0..*) is associated with 'Time::ClockType' (role 'Time_ClockType', cardinality 0..*).
+'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature183', cardinality 0..*) is associated with 'HLAM::MARTE::Message' (role 'HLAM_MARTE_Message', cardinality 0..*).
+'MARTE::HwCommunication::HwEndPoint' (role 'MARTE_HwCommunication_HwEndPoint', cardinality 0..*) is associated with 'HwCommunication::HwMedia' (role 'HwCommunication_HwMedia219', cardinality 0..*).
+'DataTypes::MARTE::Property' (role 'DataTypes_MARTE_Property157', cardinality 0..*) is associated with 'MARTE::DataTypes::CollectionType' (role 'MARTE_DataTypes_CollectionType', cardinality 0..*).
+'GRM::MARTE::Connector' (role 'GRM_MARTE_Connector', cardinality 0..*) is associated with 'MARTE::GRM::CommunicationMedia' (role 'MARTE_GRM_CommunicationMedia', cardinality 0..*).
+'GQAM::MARTE::Operation' (role 'GQAM_MARTE_Operation', cardinality 0..*) is associated with 'MARTE::GQAM::GaRequestedService' (role 'MARTE_GQAM_GaRequestedService', cardinality 0..*).
+'HwCommunication::HwMedia' (role 'HwCommunication_HwMedia', cardinality 0..*) is associated with 'MARTE::HwCommunication::HwBridge' (role 'MARTE_HwCommunication_HwBridge', cardinality 0..*).
+'Alloc::MARTE::Abstraction' (role 'Alloc_MARTE_Abstraction', cardinality 0..*) is associated with 'MARTE::Alloc::Allocate' (role 'MARTE_Alloc_Allocate', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadBehavior' (role 'MARTE_GQAM_GaWorkloadBehavior511', cardinality 0..*) is associated with 'GQAM::MARTE::NamedElement' (role 'GQAM_MARTE_NamedElement512', cardinality 0..*).
+'MARTE::SW::Concurrency::InterruptResource' (role 'MARTE_SW_Concurrency_InterruptResource307', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature308', cardinality 0..*).
+'MARTE::Time::TimedProcessing' (role 'MARTE_Time_TimedProcessing91', cardinality 0..*) is associated with 'Time::MARTE::Behavior' (role 'Time_MARTE_Behavior', cardinality 0..*).
+'GCM::MARTE::Trigger' (role 'GCM_MARTE_Trigger', cardinality 0..*) is associated with 'MARTE::GCM::GCMTrigger' (role 'MARTE_GCM_GCMTrigger', cardinality 0..*).
+'MARTE::SW::ResourceCore::SwAccessService' (role 'MARTE_SW_ResourceCore_SwAccessService', cardinality 0..*) is associated with 'SW::ResourceCore::MARTE::Property' (role 'SW_ResourceCore_MARTE_Property', cardinality 0..*).
+'NFPs::MARTE::Property' (role 'NFPs_MARTE_Property8', cardinality 0..*) is associated with 'MARTE::NFPs::NfpType' (role 'MARTE_NFPs_NfpType', cardinality 0..*).
+'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource411', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature412', cardinality 0..*).
+'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource314', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement315', cardinality 0..*).
+'MARTE::GCM::GCMInvocatingBehavior' (role 'MARTE_GCM_GCMInvocatingBehavior466', cardinality 0..*) is associated with 'GCM::MARTE::InvocationAction' (role 'GCM_MARTE_InvocationAction467', cardinality 0..*).
+'SAM::MARTE::BehavioralFeature' (role 'SAM_MARTE_BehavioralFeature526', cardinality 0..*) is associated with 'MARTE::SAM::SaStep' (role 'MARTE_SAM_SaStep', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature340', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::MemoryPartition' (role 'MARTE_SW_Concurrency_MemoryPartition339', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadEvent' (role 'MARTE_GQAM_GaWorkloadEvent472', cardinality 0..*) is associated with 'GQAM::GaEventTrace' (role 'GQAM_GaEventTrace', cardinality 0..*).
+'Time::MARTE::Property' (role 'Time_MARTE_Property64', cardinality 0..*) is associated with 'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType63', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature324', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwSchedulableResource' (role 'MARTE_SW_Concurrency_SwSchedulableResource323', cardinality 0..*).
+'NFPs::MARTE::Property' (role 'NFPs_MARTE_Property11', cardinality 0..*) is associated with 'MARTE::NFPs::NfpType' (role 'MARTE_NFPs_NfpType10', cardinality 0..*).
+'GCM::MARTE::Feature' (role 'GCM_MARTE_Feature446', cardinality 0..*) is associated with 'MARTE::GCM::GCMInvocationAction' (role 'MARTE_GCM_GCMInvocationAction445', cardinality 0..*).
+'MARTE::GQAM::GaAnalysisContext' (role 'MARTE_GQAM_GaAnalysisContext', cardinality 0..*) is associated with 'GQAM::GaWorkloadBehavior' (role 'GQAM_GaWorkloadBehavior', cardinality 0..*).
+'MARTE::SW::Concurrency::MemoryPartition' (role 'MARTE_SW_Concurrency_MemoryPartition342', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature343', cardinality 0..*).
+'MARTE::CoreElements::Configuration' (role 'MARTE_CoreElements_Configuration', cardinality 0..*) is associated with 'CoreElements::MARTE::StructuredClassifier' (role 'CoreElements_MARTE_StructuredClassifier', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource263', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement264', cardinality 0..*).
+'NFPs::MARTE::Enumeration' (role 'NFPs_MARTE_Enumeration', cardinality 0..*) is associated with 'MARTE::NFPs::Dimension' (role 'MARTE_NFPs_Dimension17', cardinality 0..*).
+'Time::MARTE::Enumeration' (role 'Time_MARTE_Enumeration', cardinality 0..*) is associated with 'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType', cardinality 0..*).
+'GCM::MARTE::Classifier' (role 'GCM_MARTE_Classifier', cardinality 0..*) is associated with 'MARTE::GCM::DataEvent' (role 'MARTE_GCM_DataEvent449', cardinality 0..*).
+'MARTE::Time::ClockType' (role 'MARTE_Time_ClockType74', cardinality 0..*) is associated with 'Time::MARTE::Operation' (role 'Time_MARTE_Operation75', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature270', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource269', cardinality 0..*).
+'MARTE::SW::Brokering::MemoryBroker' (role 'MARTE_SW_Brokering_MemoryBroker381', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature382', cardinality 0..*).
+'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature423', cardinality 0..*) is associated with 'MARTE::SW::Interaction::SwMutualExclusionResource' (role 'MARTE_SW_Interaction_SwMutualExclusionResource422', cardinality 0..*).
+'MARTE::GCM::FlowProperty' (role 'MARTE_GCM_FlowProperty', cardinality 0..*) is associated with 'GCM::MARTE::Property' (role 'GCM_MARTE_Property', cardinality 0..*).
+'RSM::MARTE::Connector' (role 'RSM_MARTE_Connector', cardinality 0..*) is associated with 'MARTE::RSM::LinkTopology' (role 'MARTE_RSM_LinkTopology', cardinality 0..*).
+'MARTE::NFPs::NfpConstraint' (role 'MARTE_NFPs_NfpConstraint', cardinality 0..*) is associated with 'NFPs::MARTE::Constraint' (role 'NFPs_MARTE_Constraint', cardinality 0..*).
+'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature362', cardinality 0..*) is associated with 'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker361', cardinality 0..*).
+'MARTE::SW::Interaction::SwMutualExclusionResource' (role 'MARTE_SW_Interaction_SwMutualExclusionResource419', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature420', cardinality 0..*).
+'GQAM::GaResourcesPlatform' (role 'GQAM_GaResourcesPlatform', cardinality 0..*) is associated with 'MARTE::GQAM::GaAnalysisContext' (role 'MARTE_GQAM_GaAnalysisContext515', cardinality 0..*).
+'MARTE::SW::Concurrency::MemoryPartition' (role 'MARTE_SW_Concurrency_MemoryPartition', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement334', cardinality 0..*).
+'MARTE::GQAM::GaRelStep' (role 'MARTE_GQAM_GaRelStep', cardinality 0..*) is associated with 'GRM::Resource' (role 'GRM_Resource504', cardinality 0..*).
+'Time::MARTE::ValueSpecification' (role 'Time_MARTE_ValueSpecification', cardinality 0..*) is associated with 'MARTE::Time::TimedValueSpecification' (role 'MARTE_Time_TimedValueSpecification', cardinality 0..*).
+'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType173', cardinality 0..*) is associated with 'MARTE::DataTypes::TupleType' (role 'MARTE_DataTypes_TupleType172', cardinality 0..*).
+'MARTE::HLAM::PpUnit' (role 'MARTE_HLAM_PpUnit', cardinality 0..*) is associated with 'HLAM::MARTE::BehavioredClassifier' (role 'HLAM_MARTE_BehavioredClassifier180', cardinality 0..*).
+'MARTE::HwCommunication::HwArbiter' (role 'arbiters', cardinality 0..*) is associated with 'HwCommunication::HwMedia' (role 'HwMedia', cardinality 0..*).
+'MARTE::SW::Interaction::SwMutualExclusionResource' (role 'MARTE_SW_Interaction_SwMutualExclusionResource', cardinality 0..*) is associated with 'SW::Interaction::MARTE::TypedElement' (role 'SW_Interaction_MARTE_TypedElement417', cardinality 0..*).
+'MARTE::PAM::PaResPassStep' (role 'MARTE_PAM_PaResPassStep', cardinality 0..*) is associated with 'GRM::Resource' (role 'GRM_Resource532', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource258', cardinality 0..*).
+'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature398', cardinality 0..*) is associated with 'MARTE::SW::Interaction::MessageComResource' (role 'MARTE_SW_Interaction_MessageComResource397', cardinality 0..*).
+'GCM::MARTE::AnyReceiveEvent' (role 'GCM_MARTE_AnyReceiveEvent', cardinality 0..*) is associated with 'MARTE::GCM::DataEvent' (role 'MARTE_GCM_DataEvent', cardinality 0..*).
+'DataTypes::MARTE::DataType' (role 'DataTypes_MARTE_DataType', cardinality 0..*) is associated with 'MARTE::DataTypes::BoundedSubtype' (role 'MARTE_DataTypes_BoundedSubtype', cardinality 0..*).
+'MARTE::SAM::SaEndtoEndFlow' (role 'MARTE_SAM_SaEndtoEndFlow523', cardinality 0..*) is associated with 'SAM::MARTE::NamedElement' (role 'SAM_MARTE_NamedElement', cardinality 0..*).
+'MARTE::SAM::SaCommStep' (role 'MARTE_SAM_SaCommStep', cardinality 0..*) is associated with 'SAM::MARTE::BehavioralFeature' (role 'SAM_MARTE_BehavioralFeature', cardinality 0..*).
+'MARTE::HLAM::RtUnit' (role 'MARTE_HLAM_RtUnit', cardinality 0..*) is associated with 'HLAM::MARTE::Behavior' (role 'HLAM_MARTE_Behavior', cardinality 0..*).
+'SW::Concurrency::MARTE::Namespace' (role 'SW_Concurrency_MARTE_Namespace', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::MemoryPartition' (role 'MARTE_SW_Concurrency_MemoryPartition345', cardinality 0..*).
+'GCM::MARTE::Port' (role 'GCM_MARTE_Port', cardinality 0..*) is associated with 'MARTE::GCM::FlowPort' (role 'MARTE_GCM_FlowPort', cardinality 0..*).
+'Time::TimedInstantObservation' (role 'Time_TimedInstantObservation', cardinality 0..*) is associated with 'MARTE::HLAM::RtSpecification' (role 'MARTE_HLAM_RtSpecification', cardinality 0..*).
+'MARTE::SW::Brokering::DeviceBroker' (role 'MARTE_SW_Brokering_DeviceBroker358', cardinality 0..*) is associated with 'SW::Brokering::MARTE::BehavioralFeature' (role 'SW_Brokering_MARTE_BehavioralFeature359', cardinality 0..*).
+'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature415', cardinality 0..*) is associated with 'MARTE::SW::Interaction::NotificationResource' (role 'MARTE_SW_Interaction_NotificationResource414', cardinality 0..*).
+'MARTE::Time::TimedElement' (role 'MARTE_Time_TimedElement', cardinality 0..*) is associated with 'Time::Clock' (role 'Time_Clock', cardinality 0..*).
+'GQAM::MARTE::TimeEvent' (role 'GQAM_MARTE_TimeEvent', cardinality 0..*) is associated with 'MARTE::GQAM::GaWorkloadEvent' (role 'MARTE_GQAM_GaWorkloadEvent476', cardinality 0..*).
+'GRM::SchedulableResource' (role 'GRM_SchedulableResource', cardinality 0..*) is associated with 'MARTE::GQAM::GaStep' (role 'MARTE_GQAM_GaStep', cardinality 0..*).
+'MARTE::GRM::SecondaryScheduler' (role 'dependentScheduler', cardinality 0..*) is associated with 'GRM::SchedulableResource' (role 'SchedulableResource123', cardinality 0..*).
+'HwStorageManager::HwMMU' (role 'HwStorageManager_HwMMU', cardinality 0..*) is associated with 'MARTE::HwComputing::HwProcessor' (role 'MARTE_HwComputing_HwProcessor211', cardinality 0..*).
+'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource272', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature273', cardinality 0..*).
+'GRM::Resource' (role 'GRM_Resource517', cardinality 0..*) is associated with 'MARTE::GQAM::GaResourcesPlatform' (role 'MARTE_GQAM_GaResourcesPlatform', cardinality 0..*).
+'HLAM::MARTE::Port' (role 'HLAM_MARTE_Port', cardinality 0..*) is associated with 'MARTE::HLAM::RtFeature' (role 'MARTE_HLAM_RtFeature187', cardinality 0..*).
+'GQAM::MARTE::NamedElement' (role 'GQAM_MARTE_NamedElement', cardinality 0..*) is associated with 'MARTE::GQAM::GaEventTrace' (role 'MARTE_GQAM_GaEventTrace', cardinality 0..*).
+'SW::ResourceCore::MARTE::TypedElement' (role 'SW_ResourceCore_MARTE_TypedElement242', cardinality 0..*) is associated with 'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource241', cardinality 0..*).
+'MARTE::GCM::ClientServerPort' (role 'MARTE_GCM_ClientServerPort434', cardinality 0..*) is associated with 'GCM::ClientServerSpecification' (role 'GCM_ClientServerSpecification', cardinality 0..*).
+'MARTE::SW::Interaction::MessageComResource' (role 'MARTE_SW_Interaction_MessageComResource394', cardinality 0..*) is associated with 'SW::Interaction::MARTE::BehavioralFeature' (role 'SW_Interaction_MARTE_BehavioralFeature395', cardinality 0..*).
+'GQAM::GaExecHost' (role 'GQAM_GaExecHost', cardinality 0..*) is associated with 'MARTE::GQAM::GaStep' (role 'MARTE_GQAM_GaStep490', cardinality 0..*).
+'SW::Concurrency::MARTE::BehavioralFeature' (role 'SW_Concurrency_MARTE_BehavioralFeature279', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource278', cardinality 0..*).
+'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement297', cardinality 0..*) is associated with 'MARTE::SW::Concurrency::SwConcurrentResource' (role 'MARTE_SW_Concurrency_SwConcurrentResource296', cardinality 0..*).
+'SW::ResourceCore::MARTE::BehavioralFeature' (role 'SW_ResourceCore_MARTE_BehavioralFeature253', cardinality 0..*) is associated with 'MARTE::SW::ResourceCore::SwResource' (role 'MARTE_SW_ResourceCore_SwResource252', cardinality 0..*).
+'HwComputing::HwComputingResource' (role 'HwComputing_HwComputingResource', cardinality 0..*) is associated with 'MARTE::HwComputing::HwPLD' (role 'MARTE_HwComputing_HwPLD214', cardinality 0..*).
+'MARTE::SW::Concurrency::SwTimerResource' (role 'MARTE_SW_Concurrency_SwTimerResource', cardinality 0..*) is associated with 'SW::Concurrency::MARTE::TypedElement' (role 'SW_Concurrency_MARTE_TypedElement332', cardinality 0..*).
+'MARTE::GQAM::GaWorkloadEvent' (role 'MARTE_GQAM_GaWorkloadEvent474', cardinality 0..*) is associated with 'GQAM::GaScenario' (role 'GQAM_GaScenario', cardinality 0..*).
+'GRM::Resource' (role 'GRM_Resource', cardinality 0..*) is associated with 'MARTE::GRM::GrService' (role 'MARTE_GRM_GrService', cardinality 0..*).

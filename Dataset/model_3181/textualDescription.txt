@@ -1,0 +1,94 @@
+The model has 33 class(es).
+The class 'expressionDSL::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'expressionDSL::StructDef' has no attributes.
+The class 'expressionDSL::FunctionDef' has the following attributes: 'type' of type str.
+The class 'expressionDSL::Statement' has no attributes.
+The class 'expressionDSL::Or' has no attributes.
+The class 'expressionDSL::QualifiedRef' has no attributes.
+The class 'expressionDSL::IntConstant' has the following attributes: 'value' of type int.
+The class 'expressionDSL::Comparison' has the following attributes: 'op' of type str.
+The class 'expressionDSL::UnaryMinus' has no attributes.
+The class 'Named' has no attributes.
+The class 'expressionDSL::ConstDef' has the following attributes: 'type' of type str.
+The class 'SubField' has no attributes.
+The class 'expressionDSL::SubFieldDef' has the following attributes: 'type' of type str.
+The class 'expressionDSL::BinaryPlus' has no attributes.
+The class 'expressionDSL::FunctionCallStatement' has no attributes.
+The class 'expressionDSL::Named' has the following attributes: 'name' of type str.
+The class 'expressionDSL::Exponent' has no attributes.
+The class 'expressionDSL::FunctionCall' has no attributes.
+The class 'expressionDSL::Expression' has no attributes.
+The class 'expressionDSL::Dim' has the following attributes: 'arrayDimensions' of type int.
+The class 'expressionDSL::Not' has no attributes.
+The class 'expressionDSL::VariableAssignment' has the following attributes: 'op' of type str.
+The class 'expressionDSL::VariableArrayOrFunctionRef' has no attributes.
+The class 'expressionDSL::UnaryPlus' has no attributes.
+The class 'expressionDSL::Model' has no attributes.
+The class 'Statement' has no attributes.
+The class 'expressionDSL::StringConstant' has the following attributes: 'value' of type str.
+The class 'expressionDSL::And' has no attributes.
+The class 'expressionDSL::BooleanConstant' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'expressionDSL::BinaryMinus' has no attributes.
+The class 'expressionDSL::SubField' has no attributes.
+The class 'expressionDSL::VariableDef' has the following attributes: 'type' of type str.
+'expressionDSL::VariableAssignment' is a specialization of 'Statement'.
+'expressionDSL::Not' is a specialization of 'Expression'.
+'expressionDSL::MulOrDiv' is a specialization of 'Expression'.
+'expressionDSL::And' is a specialization of 'Expression'.
+'expressionDSL::StringConstant' is a specialization of 'Expression'.
+'expressionDSL::BinaryPlus' is a specialization of 'Expression'.
+'expressionDSL::Comparison' is a specialization of 'Expression'.
+'expressionDSL::StructDef' is a specialization of 'Statement'.
+'expressionDSL::Exponent' is a specialization of 'Expression'.
+'expressionDSL::ConstDef' is a specialization of 'Named'.
+'expressionDSL::ConstDef' is a specialization of 'Statement'.
+'expressionDSL::VariableArrayOrFunctionRef' is a specialization of 'Expression'.
+'expressionDSL::FunctionDef' is a specialization of 'Named'.
+'expressionDSL::FunctionCallStatement' is a specialization of 'Statement'.
+'expressionDSL::VariableDef' is a specialization of 'Statement'.
+'expressionDSL::BooleanConstant' is a specialization of 'Expression'.
+'expressionDSL::IntConstant' is a specialization of 'Expression'.
+'expressionDSL::StructDef' is a specialization of 'Named'.
+'expressionDSL::VariableDef' is a specialization of 'Named'.
+'expressionDSL::QualifiedRef' is a specialization of 'Expression'.
+'expressionDSL::UnaryPlus' is a specialization of 'Expression'.
+'expressionDSL::Or' is a specialization of 'Expression'.
+'expressionDSL::SubFieldDef' is a specialization of 'SubField'.
+'expressionDSL::BinaryMinus' is a specialization of 'Expression'.
+'expressionDSL::StructDef' is a specialization of 'SubField'.
+'expressionDSL::SubFieldDef' is a specialization of 'Named'.
+'expressionDSL::FunctionDef' is a specialization of 'Statement'.
+'expressionDSL::UnaryMinus' is a specialization of 'Expression'.
+'expressionDSL::Expression' (role 'expressionDSL_Expression64', cardinality 0..*) is associated with 'expressionDSL::Not' (role 'expressionDSL_Not', cardinality 0..*).
+'expressionDSL::Comparison' (role 'expressionDSL_Comparison37', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression38', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression48', cardinality 0..*) is associated with 'expressionDSL::BinaryMinus' (role 'expressionDSL_BinaryMinus47', cardinality 0..*).
+'expressionDSL::VariableDef' (role 'expressionDSL_VariableDef11', cardinality 0..*) is associated with 'expressionDSL::VariableAssignment' (role 'expressionDSL_VariableAssignment', cardinality 0..*).
+'expressionDSL::QualifiedRef' (role 'expressionDSL_QualifiedRef68', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression69', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression45', cardinality 0..*) is associated with 'expressionDSL::BinaryMinus' (role 'expressionDSL_BinaryMinus', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression', cardinality 0..*) is associated with 'expressionDSL::VariableAssignment' (role 'expressionDSL_VariableAssignment13', cardinality 0..*).
+'expressionDSL::MulOrDiv' (role 'expressionDSL_MulOrDiv52', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression53', cardinality 0..*).
+'expressionDSL::UnaryPlus' (role 'expressionDSL_UnaryPlus', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression60', cardinality 0..*).
+'expressionDSL::Model' (role 'expressionDSL_Model', cardinality 0..*) is associated with 'expressionDSL::Statement' (role 'expressionDSL_Statement', cardinality 0..*).
+'expressionDSL::Named' (role 'expressionDSL_Named', cardinality 0..*) is associated with 'expressionDSL::VariableArrayOrFunctionRef' (role 'expressionDSL_VariableArrayOrFunctionRef', cardinality 0..*).
+'expressionDSL::Dim' (role 'expressionDSL_Dim9', cardinality 0..*) is associated with 'expressionDSL::SubFieldDef' (role 'expressionDSL_SubFieldDef', cardinality 0..*).
+'expressionDSL::Dim' (role 'expressionDSL_Dim3', cardinality 0..*) is associated with 'expressionDSL::ConstDef' (role 'expressionDSL_ConstDef', cardinality 0..*).
+'expressionDSL::Or' (role 'expressionDSL_Or27', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression28', cardinality 0..*).
+'expressionDSL::Dim' (role 'expressionDSL_Dim', cardinality 0..*) is associated with 'expressionDSL::VariableDef' (role 'expressionDSL_VariableDef', cardinality 0..*).
+'expressionDSL::Comparison' (role 'expressionDSL_Comparison', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression35', cardinality 0..*).
+'expressionDSL::StructDef' (role 'expressionDSL_StructDef', cardinality 0..*) is associated with 'expressionDSL::Dim' (role 'expressionDSL_Dim5', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression25', cardinality 0..*) is associated with 'expressionDSL::Or' (role 'expressionDSL_Or', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression23', cardinality 0..*) is associated with 'expressionDSL::VariableArrayOrFunctionRef' (role 'expressionDSL_VariableArrayOrFunctionRef22', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression55', cardinality 0..*) is associated with 'expressionDSL::Exponent' (role 'expressionDSL_Exponent', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression40', cardinality 0..*) is associated with 'expressionDSL::BinaryPlus' (role 'expressionDSL_BinaryPlus', cardinality 0..*).
+'expressionDSL::Exponent' (role 'expressionDSL_Exponent57', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression58', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression33', cardinality 0..*) is associated with 'expressionDSL::And' (role 'expressionDSL_And32', cardinality 0..*).
+'expressionDSL::SubField' (role 'expressionDSL_SubField', cardinality 0..*) is associated with 'expressionDSL::StructDef' (role 'expressionDSL_StructDef7', cardinality 0..*).
+'expressionDSL::FunctionCallStatement' (role 'expressionDSL_FunctionCallStatement', cardinality 0..*) is associated with 'expressionDSL::FunctionCall' (role 'expressionDSL_FunctionCall', cardinality 0..*).
+'expressionDSL::And' (role 'expressionDSL_And', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression30', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression62', cardinality 0..*) is associated with 'expressionDSL::UnaryMinus' (role 'expressionDSL_UnaryMinus', cardinality 0..*).
+'expressionDSL::MulOrDiv' (role 'expressionDSL_MulOrDiv', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression50', cardinality 0..*).
+'expressionDSL::FunctionCall' (role 'expressionDSL_FunctionCall18', cardinality 0..*) is associated with 'expressionDSL::Expression' (role 'expressionDSL_Expression19', cardinality 0..*).
+'expressionDSL::FunctionCall' (role 'expressionDSL_FunctionCall16', cardinality 0..*) is associated with 'expressionDSL::FunctionDef' (role 'expressionDSL_FunctionDef', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression43', cardinality 0..*) is associated with 'expressionDSL::BinaryPlus' (role 'expressionDSL_BinaryPlus42', cardinality 0..*).
+'expressionDSL::Expression' (role 'expressionDSL_Expression66', cardinality 0..*) is associated with 'expressionDSL::QualifiedRef' (role 'expressionDSL_QualifiedRef', cardinality 0..*).

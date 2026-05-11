@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'UML2::Port' has no attributes.
+The class 'UML2::Property' has the following attributes: 'isComposite' of type bool; 'aggregation' of type str.
+The class 'Property' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'none', 'composite'.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::Port' is a specialization of 'Property'.

@@ -1,0 +1,316 @@
+The model has 151 class(es).
+The class 'C::Types::CompositeType' has no attributes.
+The class 'LogicExpression' has no attributes.
+The class 'Access' has no attributes.
+The class 'Type' has no attributes.
+The class 'C::Commands::WhileCommand' has no attributes.
+The class 'C::Declarations::ArrayDeclaration' has the following attributes: 'dimensions' of type str.
+The class 'C::Commands::ReturnCommand' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::ElseDirective' has no attributes.
+The class 'Expressions::ConstantExpression' has no attributes.
+The class 'C::Expressions::CastExpression' has no attributes.
+The class 'C::Sequencers::Break' has no attributes.
+The class 'C::Expressions::PrototypeAccess' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::Define' has the following attributes: 'value' of type str.
+The class 'Element' has no attributes.
+The class 'C::Types::Struct' has no attributes.
+The class 'C::Commands::Command' has no attributes.
+The class 'C::Declarations::ConstantDeclaration' has no attributes.
+The class 'C::Expressions::SimpleLogicExpression' has the following attributes: 'operator' of type str.
+The class 'C::Expressions::ShortLiteral' has the following attributes: 'value' of type int.
+The class 'C::Declarations::FragmentVariableDeclaration' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'C::Main::H::Unit' has no attributes.
+The class 'BlockedElement' has no attributes.
+The class 'Declarations::FragmentVariableDeclaration' has no attributes.
+The class 'Commands::LabelCommand' has no attributes.
+The class 'C::Main::Element' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::ComplexDirectiveDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'C::Commands::Assignment' has no attributes.
+The class 'CompilationDirectiveDeclarations::Endif' has no attributes.
+The class 'C::Types::Enum' has no attributes.
+The class 'C::Expressions::Literal' has no attributes.
+The class 'C::Types::PrimitiveType' has no attributes.
+The class 'C::Types::Type' has no attributes.
+The class 'Declarations::VariableDeclaration' has no attributes.
+The class 'Main::Unit' has no attributes.
+The class 'C::Commands::IterativeCommand' has no attributes.
+The class 'Expressions::ConditionalExpression' has no attributes.
+The class 'C::Expressions::CharLiteral' has the following attributes: 'value' of type str.
+The class 'C::Abstractions::BlockedElement' has no attributes.
+The class 'C::Expressions::Construction' has no attributes.
+The class 'C::Expressions::FloatLiteral' has the following attributes: 'value' of type float.
+The class 'C::Main::DeclarationsBlock' has no attributes.
+The class 'CompositeType' has no attributes.
+The class 'C::Declarations::Declaration' has the following attributes: 'modifier' of type str.
+The class 'Expressions::Construction' has no attributes.
+The class 'SimpleDirectiveDeclaration' has no attributes.
+The class 'ConditionalExpression' has no attributes.
+The class 'C::Types::Int' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::Ifndef' has no attributes.
+The class 'ComplexDirectiveDeclaration' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'Expressions::Literal' has no attributes.
+The class 'Declarations::CompositeVariableDeclaration' has no attributes.
+The class 'C::Types::Void' has no attributes.
+The class 'C::Main::FunctionsBlock' has no attributes.
+The class 'C::Commands::CaseOption' has no attributes.
+The class 'C::Types::FromHeader' has no attributes.
+The class 'VariableAccess' has no attributes.
+The class 'C::Declarations::TypeDefDeclaration' has no attributes.
+The class 'C::Types::Short' has no attributes.
+The class 'Expressions::VariableAccess' has no attributes.
+The class 'C::Commands::ForCommand' has no attributes.
+The class 'C::Commands::DefaultOption' has no attributes.
+The class 'Types::Array' has no attributes.
+The class 'C::Expressions::ConditionalExpression' has the following attributes: 'conector' of type str.
+The class 'Commands::Command' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::Include' has no attributes.
+The class 'C::Commands::FlowControlCommand' has no attributes.
+The class 'C::Types::Double' has no attributes.
+The class 'C::Expressions::ArithmeticExpression' has no attributes.
+The class 'C::Main::C::Unit' has no attributes.
+The class 'IterativeCommand' has no attributes.
+The class 'C::Expressions::Access' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::SimpleDirectiveDeclaration' has no attributes.
+The class 'C::Expressions::IntLiteral' has the following attributes: 'value' of type str.
+The class 'Main::DeclarationsBlock' has no attributes.
+The class 'C::Declarations::StructDeclaration' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::CompilationDirectiveDeclaration' has no attributes.
+The class 'Literal' has no attributes.
+The class 'C::Expressions::VariableAccess' has no attributes.
+The class 'Main::Element' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'C::Expressions::ConstantExpression' has no attributes.
+The class 'C::Declarations::SimpleVariableDeclaration' has no attributes.
+The class 'C::Expressions::BinaryArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'C::CompilationDirectiveDeclarations::Endif' has no attributes.
+The class 'DecisionCommand' has no attributes.
+The class 'Declarations::ConstantDeclaration' has no attributes.
+The class 'C::Abstractions::NamedElement' has the following attributes: 'name' of type str.
+The class 'C::Types::Char' has no attributes.
+The class 'C::Expressions::AtomicConditionalExpression' has no attributes.
+The class 'Abstractions::NamedElement' has no attributes.
+The class 'C::Expressions::LogicExpression' has no attributes.
+The class 'C::Sequencers::Goto' has no attributes.
+The class 'C::Commands::ExpressionCommand' has no attributes.
+The class 'C::Main::Function' has the following attributes: 'functionModifier' of type str; 'modifier' of type str.
+The class 'Declarations::SimpleVariableDeclaration' has no attributes.
+The class 'C::Declarations::PrototypeFunctionDeclaration' has the following attributes: 'isAPointer' of type str; 'functionModifier' of type str.
+The class 'FlowControlCommand' has no attributes.
+The class 'C::Sequencers::Sequencer' has no attributes.
+The class 'C::Declarations::EnumDeclaration' has no attributes.
+The class 'CompilationDirectiveDeclarations::CompilationDirectiveDeclaration' has no attributes.
+The class 'C::Expressions::UnaryArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'Commands::CaseOption' has no attributes.
+The class 'Main::Comment' has no attributes.
+The class 'Command' has no attributes.
+The class 'IfDirective' has no attributes.
+The class 'Commands::DefaultOption' has no attributes.
+The class 'Unit' has no attributes.
+The class 'C::Declarations::CompositeVariableDeclaration' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::Elif' has no attributes.
+The class 'C::Declarations::VariableDeclaration' has the following attributes: 'numberOfPointers' of type str; 'isAPointer' of type str.
+The class 'Types::PrimitiveType' has no attributes.
+The class 'C::Main::Program' has the following attributes: 'description' of type str.
+The class 'C::Commands::IfCommand' has no attributes.
+The class 'C::Types::Typedef' has no attributes.
+The class 'C::Expressions::StringLiteral' has the following attributes: 'value' of type str.
+The class 'Sequencer' has no attributes.
+The class 'C::Main::Unit' has no attributes.
+The class 'C::Expressions::ComposedConditionalExpression' has the following attributes: 'operator' of type str.
+The class 'C::CompilationDirectiveDeclarations::IfDirective' has no attributes.
+The class 'CompilationDirectiveDeclaration' has no attributes.
+The class 'Expressions::Access' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'Main::Function' has no attributes.
+The class 'C::Commands::DecisionCommand' has no attributes.
+The class 'C::Types::Float' has no attributes.
+The class 'C::Expressions::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'CompilationDirectiveDeclarations::ComplexDirectiveDeclaration' has no attributes.
+The class 'C::Expressions::DisplacementLogicExpression' has the following attributes: 'operator' of type str.
+The class 'C::Commands::SwitchCommand' has no attributes.
+The class 'Declarations::Declaration' has no attributes.
+The class 'Expressions::Expression' has no attributes.
+The class 'C::Expressions::FunctionCall' has no attributes.
+The class 'C::Commands::LabelCommand' has no attributes.
+The class 'Abstractions::BlockedElement' has no attributes.
+The class 'C::Expressions::ConstantAccess' has no attributes.
+The class 'C::CompilationDirectiveDeclarations::Ifdef' has no attributes.
+The class 'Declarations::ArrayDeclaration' has no attributes.
+The class 'C::Main::Comment' has no attributes.
+The class 'Types::Type' has no attributes.
+The class 'C::Expressions::Expression' has no attributes.
+The class 'Declarations::PrototypeFunctionDeclaration' has no attributes.
+The class 'C::Expressions::PointerVariableAccess' has no attributes.
+The class 'CompositeVariableDeclaration' has no attributes.
+The class 'Main::Block' has no attributes.
+The class 'C::Main::Block' has no attributes.
+The class 'C::Expressions::ArrayAccess' has no attributes.
+The class 'C::Types::Array' has no attributes.
+The enumeration 'BinaryOperatorKind' has the following literals: 'TIMES', 'MODULE', 'MINUS', 'PLUS', 'DIVIDED_BY'.
+The enumeration 'RelationalOperatorKind' has the following literals: 'NOT_EQUALS', 'GREATER_EQUALS', 'EQUALS', 'LESS_EQUALS', 'GREATER', 'none', 'LESS'.
+The enumeration 'DisplacementLogicOperatorKind' has the following literals: 'RIGHT_DISPLACEMENT', 'LEFT_DISPLACEMENT'.
+The enumeration 'SimpleLogicOperatorKind' has the following literals: 'NOT', 'AND', 'XOR', 'OR'.
+The enumeration 'FunctionModifierKind' has the following literals: 'interrupt', 'pascal', 'none', 'cdecl'.
+The enumeration 'UnaryOperatorKind' has the following literals: 'TIMES_EQUALS', 'MINUS', 'MINUS_EQUALS', 'PLUS_PLUS', 'PLUS_EQUALS', 'MINUS_MINUS', 'DIVIDED_BY_EQUALS'.
+The enumeration 'ModifierKind' has the following literals: 'static', 'volatile', 'register', 'none'.
+The enumeration 'RelationalConectorKind' has the following literals: 'AND', 'none', 'NOT', 'OR'.
+'C::Commands::Assignment' is a specialization of 'Command'.
+'C::Declarations::TypeDefDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+'C::CompilationDirectiveDeclarations::Ifdef' is a specialization of 'CompilationDirectiveDeclarations::ComplexDirectiveDeclaration'.
+'C::CompilationDirectiveDeclarations::ComplexDirectiveDeclaration' is a specialization of 'CompilationDirectiveDeclaration'.
+'C::Expressions::SimpleLogicExpression' is a specialization of 'LogicExpression'.
+'C::Commands::ExpressionCommand' is a specialization of 'Command'.
+'C::Commands::LabelCommand' is a specialization of 'Abstractions::NamedElement'.
+'C::Expressions::CharLiteral' is a specialization of 'Literal'.
+'C::Types::Double' is a specialization of 'PrimitiveType'.
+'C::Declarations::EnumDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+'C::Declarations::SimpleVariableDeclaration' is a specialization of 'Abstractions::BlockedElement'.
+'C::Declarations::StructDeclaration' is a specialization of 'CompositeVariableDeclaration'.
+'C::Expressions::Literal' is a specialization of 'Expression'.
+'C::Main::C::Unit' is a specialization of 'Unit'.
+'C::Declarations::Declaration' is a specialization of 'NamedElement'.
+'C::Expressions::FunctionCall' is a specialization of 'Abstractions::NamedElement'.
+'C::Expressions::FunctionCall' is a specialization of 'Expressions::Expression'.
+'C::Expressions::Construction' is a specialization of 'Expression'.
+'C::Expressions::ConditionalExpression' is a specialization of 'Expression'.
+'C::CompilationDirectiveDeclarations::Define' is a specialization of 'SimpleDirectiveDeclaration'.
+'C::Commands::Command' is a specialization of 'BlockedElement'.
+'C::CompilationDirectiveDeclarations::Include' is a specialization of 'SimpleDirectiveDeclaration'.
+'C::Commands::IfCommand' is a specialization of 'DecisionCommand'.
+'C::Types::Float' is a specialization of 'PrimitiveType'.
+'C::Expressions::FloatLiteral' is a specialization of 'Literal'.
+'C::Types::PrimitiveType' is a specialization of 'Type'.
+'C::Commands::FlowControlCommand' is a specialization of 'Command'.
+'C::Declarations::VariableDeclaration' is a specialization of 'Declaration'.
+'C::Types::Struct' is a specialization of 'CompositeType'.
+'C::Sequencers::Break' is a specialization of 'Sequencer'.
+'C::Expressions::Access' is a specialization of 'Expressions::Expression'.
+'C::Types::Void' is a specialization of 'PrimitiveType'.
+'C::Main::DeclarationsBlock' is a specialization of 'Element'.
+'C::Expressions::ArrayAccess' is a specialization of 'Access'.
+'C::Types::Array' is a specialization of 'CompositeType'.
+'C::Declarations::SimpleVariableDeclaration' is a specialization of 'Declarations::VariableDeclaration'.
+'C::Types::Int' is a specialization of 'Types::PrimitiveType'.
+'C::Expressions::CastExpression' is a specialization of 'Expression'.
+'C::Expressions::DoubleLiteral' is a specialization of 'Literal'.
+'C::Expressions::DisplacementLogicExpression' is a specialization of 'LogicExpression'.
+'C::Declarations::PrototypeFunctionDeclaration' is a specialization of 'Declaration'.
+'C::Main::Element' is a specialization of 'NamedElement'.
+'C::Commands::IterativeCommand' is a specialization of 'Command'.
+'C::Declarations::CompositeVariableDeclaration' is a specialization of 'VariableDeclaration'.
+'C::Types::Short' is a specialization of 'PrimitiveType'.
+'C::Main::Unit' is a specialization of 'NamedElement'.
+'C::Sequencers::Goto' is a specialization of 'Sequencer'.
+'C::CompilationDirectiveDeclarations::SimpleDirectiveDeclaration' is a specialization of 'Abstractions::NamedElement'.
+'C::Declarations::FragmentVariableDeclaration' is a specialization of 'Abstractions::NamedElement'.
+'C::Expressions::PointerVariableAccess' is a specialization of 'VariableAccess'.
+'C::Main::Comment' is a specialization of 'NamedElement'.
+'C::Main::FunctionsBlock' is a specialization of 'Element'.
+'C::Commands::ForCommand' is a specialization of 'IterativeCommand'.
+'C::Main::Function' is a specialization of 'Element'.
+'C::Expressions::ShortLiteral' is a specialization of 'Literal'.
+'C::Expressions::ArithmeticExpression' is a specialization of 'Expression'.
+'C::Expressions::StringLiteral' is a specialization of 'Literal'.
+'C::Types::Typedef' is a specialization of 'CompositeType'.
+'C::CompilationDirectiveDeclarations::SimpleDirectiveDeclaration' is a specialization of 'CompilationDirectiveDeclarations::CompilationDirectiveDeclaration'.
+'C::Declarations::ArrayDeclaration' is a specialization of 'Declarations::CompositeVariableDeclaration'.
+'C::CompilationDirectiveDeclarations::Ifndef' is a specialization of 'ComplexDirectiveDeclaration'.
+'C::Main::H::Unit' is a specialization of 'Unit'.
+'C::Commands::DecisionCommand' is a specialization of 'FlowControlCommand'.
+'C::Commands::ReturnCommand' is a specialization of 'FlowControlCommand'.
+'C::CompilationDirectiveDeclarations::IfDirective' is a specialization of 'ComplexDirectiveDeclaration'.
+'C::Types::FromHeader' is a specialization of 'Abstractions::NamedElement'.
+'C::Sequencers::Sequencer' is a specialization of 'BlockedElement'.
+'C::Commands::WhileCommand' is a specialization of 'IterativeCommand'.
+'C::Types::Enum' is a specialization of 'CompositeType'.
+'C::Expressions::ConstantExpression' is a specialization of 'Expression'.
+'C::Types::FromHeader' is a specialization of 'Types::Type'.
+'C::Commands::LabelCommand' is a specialization of 'Commands::Command'.
+'C::Commands::SwitchCommand' is a specialization of 'DecisionCommand'.
+'C::Declarations::FragmentVariableDeclaration' is a specialization of 'Declarations::VariableDeclaration'.
+'C::Expressions::PrototypeAccess' is a specialization of 'Access'.
+'C::Expressions::AtomicConditionalExpression' is a specialization of 'Expressions::ConditionalExpression'.
+'C::Expressions::BinaryArithmeticExpression' is a specialization of 'ArithmeticExpression'.
+'C::Types::Int' is a specialization of 'Types::Array'.
+'C::Expressions::ComposedConditionalExpression' is a specialization of 'ConditionalExpression'.
+'C::Types::Char' is a specialization of 'PrimitiveType'.
+'C::Expressions::ConstantAccess' is a specialization of 'Access'.
+'C::Expressions::UnaryArithmeticExpression' is a specialization of 'ArithmeticExpression'.
+'C::Declarations::ConstantDeclaration' is a specialization of 'Declaration'.
+'C::Expressions::LogicExpression' is a specialization of 'Expression'.
+'C::CompilationDirectiveDeclarations::ElseDirective' is a specialization of 'ComplexDirectiveDeclaration'.
+'C::Types::CompositeType' is a specialization of 'Type'.
+'C::Expressions::AtomicConditionalExpression' is a specialization of 'Abstractions::NamedElement'.
+'C::Expressions::VariableAccess' is a specialization of 'Access'.
+'C::CompilationDirectiveDeclarations::Ifdef' is a specialization of 'Abstractions::NamedElement'.
+'C::Expressions::Access' is a specialization of 'Abstractions::NamedElement'.
+'C::Declarations::ArrayDeclaration' is a specialization of 'Abstractions::BlockedElement'.
+'C::Expressions::IntLiteral' is a specialization of 'Literal'.
+'C::CompilationDirectiveDeclarations::Elif' is a specialization of 'IfDirective'.
+'C::Main::FunctionsBlock' (role 'C_Main_FunctionsBlock', cardinality 0..*) is associated with 'Main::Function' (role 'Main_Function', cardinality 0..*).
+'C::Main::Program' (role 'C_Main_Program', cardinality 0..*) is associated with 'Main::Unit' (role 'Main_Unit', cardinality 0..*).
+'C::Commands::IfCommand' (role 'C_Commands_IfCommand57', cardinality 0..*) is associated with 'Main::Block' (role 'Main_Block58', cardinality 0..*).
+'Declarations::Declaration' (role 'Declarations_Declaration', cardinality 0..*) is associated with 'C::Main::Function' (role 'C_Main_Function10', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression89', cardinality 0..*) is associated with 'C::Expressions::FunctionCall' (role 'C_Expressions_FunctionCall', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression102', cardinality 0..*) is associated with 'C::Expressions::LogicExpression' (role 'C_Expressions_LogicExpression', cardinality 0..*).
+'C::Expressions::ConstantAccess' (role 'C_Expressions_ConstantAccess', cardinality 0..*) is associated with 'Declarations::ConstantDeclaration' (role 'Declarations_ConstantDeclaration', cardinality 0..*).
+'C::Declarations::StructDeclaration' (role 'C_Declarations_StructDeclaration', cardinality 0..*) is associated with 'Declarations::SimpleVariableDeclaration' (role 'Declarations_SimpleVariableDeclaration', cardinality 0..*).
+'C::Commands::ForCommand' (role 'C_Commands_ForCommand', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression77', cardinality 0..*).
+'Expressions::Construction' (role 'Expressions_Construction', cardinality 0..*) is associated with 'C::Declarations::ArrayDeclaration' (role 'C_Declarations_ArrayDeclaration', cardinality 0..*).
+'Main::Comment' (role 'Main_Comment', cardinality 0..*) is associated with 'C::Main::Unit' (role 'C_Main_Unit', cardinality 0..*).
+'C::Main::H::Unit' (role 'C_Main_H_Unit', cardinality 0..*) is associated with 'Main::DeclarationsBlock' (role 'Main_DeclarationsBlock', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression50', cardinality 0..*) is associated with 'C::Commands::Assignment' (role 'C_Commands_Assignment49', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression83', cardinality 0..*) is associated with 'C::Commands::ForCommand' (role 'C_Commands_ForCommand82', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression87', cardinality 0..*) is associated with 'C::Expressions::Construction' (role 'C_Expressions_Construction', cardinality 0..*).
+'Main::Block' (role 'Main_Block8', cardinality 0..*) is associated with 'C::Main::Function' (role 'C_Main_Function7', cardinality 0..*).
+'C::Expressions::ArrayAccess' (role 'C_Expressions_ArrayAccess113', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression114', cardinality 0..*).
+'C::Expressions::CastExpression' (role 'C_Expressions_CastExpression', cardinality 0..*) is associated with 'Types::Type' (role 'Types_Type91', cardinality 0..*).
+'Commands::DefaultOption' (role 'Commands_DefaultOption', cardinality 0..*) is associated with 'C::Commands::SwitchCommand' (role 'C_Commands_SwitchCommand66', cardinality 0..*).
+'Expressions::Literal' (role 'Expressions_Literal68', cardinality 0..*) is associated with 'C::Commands::CaseOption' (role 'C_Commands_CaseOption', cardinality 0..*).
+'C::Commands::CaseOption' (role 'C_Commands_CaseOption70', cardinality 0..*) is associated with 'Main::Block' (role 'Main_Block71', cardinality 0..*).
+'C::Expressions::PrototypeAccess' (role 'C_Expressions_PrototypeAccess', cardinality 0..*) is associated with 'Declarations::PrototypeFunctionDeclaration' (role 'Declarations_PrototypeFunctionDeclaration', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression80', cardinality 0..*) is associated with 'C::Commands::ForCommand' (role 'C_Commands_ForCommand79', cardinality 0..*).
+'C::Declarations::PrototypeFunctionDeclaration' (role 'C_Declarations_PrototypeFunctionDeclaration', cardinality 0..*) is associated with 'Declarations::VariableDeclaration' (role 'Declarations_VariableDeclaration', cardinality 0..*).
+'Types::Type' (role 'Types_Type36', cardinality 0..*) is associated with 'C::Declarations::ArrayDeclaration' (role 'C_Declarations_ArrayDeclaration35', cardinality 0..*).
+'C::Expressions::ArrayAccess' (role 'C_Expressions_ArrayAccess', cardinality 0..*) is associated with 'Declarations::ArrayDeclaration' (role 'Declarations_ArrayDeclaration', cardinality 0..*).
+'C::Commands::SwitchCommand' (role 'C_Commands_SwitchCommand', cardinality 0..*) is associated with 'Expressions::VariableAccess' (role 'Expressions_VariableAccess', cardinality 0..*).
+'Declarations::FragmentVariableDeclaration' (role 'Declarations_FragmentVariableDeclaration', cardinality 0..*) is associated with 'C::Declarations::SimpleVariableDeclaration' (role 'C_Declarations_SimpleVariableDeclaration24', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression94', cardinality 0..*) is associated with 'C::Expressions::CastExpression' (role 'C_Expressions_CastExpression93', cardinality 0..*).
+'C::Main::Function' (role 'C_Main_Function', cardinality 0..*) is associated with 'Types::Type' (role 'Types_Type', cardinality 0..*).
+'C::Expressions::BinaryArithmeticExpression' (role 'C_Expressions_BinaryArithmeticExpression', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression98', cardinality 0..*).
+'Expressions::ConditionalExpression' (role 'Expressions_ConditionalExpression85', cardinality 0..*) is associated with 'C::Commands::WhileCommand' (role 'C_Commands_WhileCommand', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression52', cardinality 0..*) is associated with 'C::Commands::ReturnCommand' (role 'C_Commands_ReturnCommand', cardinality 0..*).
+'Declarations::VariableDeclaration' (role 'Declarations_VariableDeclaration107', cardinality 0..*) is associated with 'C::Expressions::VariableAccess' (role 'C_Expressions_VariableAccess', cardinality 0..*).
+'Types::Type' (role 'Types_Type22', cardinality 0..*) is associated with 'C::Declarations::SimpleVariableDeclaration' (role 'C_Declarations_SimpleVariableDeclaration', cardinality 0..*).
+'C::Expressions::ComposedConditionalExpression' (role 'C_Expressions_ComposedConditionalExpression', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression100', cardinality 0..*).
+'Declarations::Declaration' (role 'Declarations_Declaration16', cardinality 0..*) is associated with 'C::Main::DeclarationsBlock' (role 'C_Main_DeclarationsBlock', cardinality 0..*).
+'Expressions::Expression' (role 'Expressions_Expression27', cardinality 0..*) is associated with 'C::Declarations::SimpleVariableDeclaration' (role 'C_Declarations_SimpleVariableDeclaration26', cardinality 0..*).
+'C::Commands::LabelCommand' (role 'C_Commands_LabelCommand', cardinality 0..*) is associated with 'Commands::Command' (role 'Commands_Command', cardinality 0..*).
+'Expressions::ConditionalExpression' (role 'Expressions_ConditionalExpression', cardinality 0..*) is associated with 'C::Commands::IfCommand' (role 'C_Commands_IfCommand', cardinality 0..*).
+'Expressions::ConstantExpression' (role 'Expressions_ConstantExpression', cardinality 0..*) is associated with 'C::CompilationDirectiveDeclarations::IfDirective' (role 'C_CompilationDirectiveDeclarations_IfDirective', cardinality 0..*).
+'C::Sequencers::Goto' (role 'C_Sequencers_Goto', cardinality 0..*) is associated with 'Commands::LabelCommand' (role 'Commands_LabelCommand', cardinality 0..*).
+'Abstractions::BlockedElement' (role 'Abstractions_BlockedElement', cardinality 0..*) is associated with 'C::Main::Block' (role 'C_Main_Block', cardinality 0..*).
+'C::Declarations::PrototypeFunctionDeclaration' (role 'C_Declarations_PrototypeFunctionDeclaration30', cardinality 0..*) is associated with 'Types::Type' (role 'Types_Type31', cardinality 0..*).
+'C::Declarations::EnumDeclaration' (role 'C_Declarations_EnumDeclaration', cardinality 0..*) is associated with 'Expressions::Literal' (role 'Expressions_Literal', cardinality 0..*).
+'C::Commands::DefaultOption' (role 'C_Commands_DefaultOption', cardinality 0..*) is associated with 'Main::Block' (role 'Main_Block73', cardinality 0..*).
+'C::CompilationDirectiveDeclarations::Ifdef' (role 'C_CompilationDirectiveDeclarations_Ifdef', cardinality 0..*) is associated with 'CompilationDirectiveDeclarations::Endif' (role 'CompilationDirectiveDeclarations_Endif', cardinality 0..*).
+'C::Declarations::TypeDefDeclaration' (role 'C_Declarations_TypeDefDeclaration', cardinality 0..*) is associated with 'Types::Type' (role 'Types_Type39', cardinality 0..*).
+'C::Main::DeclarationsBlock' (role 'C_Main_DeclarationsBlock18', cardinality 0..*) is associated with 'CompilationDirectiveDeclarations::CompilationDirectiveDeclaration' (role 'CompilationDirectiveDeclarations_CompilationDirectiveDeclaration', cardinality 0..*).
+'C::Commands::Assignment' (role 'C_Commands_Assignment', cardinality 0..*) is associated with 'Expressions::Access' (role 'Expressions_Access', cardinality 0..*).
+'C::CompilationDirectiveDeclarations::CompilationDirectiveDeclaration' (role 'C_CompilationDirectiveDeclarations_CompilationDirectiveDeclaration', cardinality 0..*) is associated with 'Declarations::Declaration' (role 'Declarations_Declaration41', cardinality 0..*).
+'C::Declarations::ConstantDeclaration' (role 'C_Declarations_ConstantDeclaration', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression', cardinality 0..*).
+'C::Expressions::ArithmeticExpression' (role 'C_Expressions_ArithmeticExpression', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression96', cardinality 0..*).
+'C::Main::C::Unit' (role 'C_Main_C_Unit', cardinality 0..*) is associated with 'Main::Element' (role 'Main_Element', cardinality 0..*).
+'C::Abstractions::BlockedElement' (role 'C_Abstractions_BlockedElement', cardinality 0..*) is associated with 'Main::Block' (role 'Main_Block', cardinality 0..*).
+'C::Commands::ExpressionCommand' (role 'C_Commands_ExpressionCommand', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression54', cardinality 0..*).
+'C::Commands::IfCommand' (role 'C_Commands_IfCommand60', cardinality 0..*) is associated with 'Main::Block' (role 'Main_Block61', cardinality 0..*).
+'C::CompilationDirectiveDeclarations::Ifndef' (role 'C_CompilationDirectiveDeclarations_Ifndef', cardinality 0..*) is associated with 'CompilationDirectiveDeclarations::Endif' (role 'CompilationDirectiveDeclarations_Endif44', cardinality 0..*).
+'Main::Block' (role 'Main_Block75', cardinality 0..*) is associated with 'C::Commands::IterativeCommand' (role 'C_Commands_IterativeCommand', cardinality 0..*).
+'C::Expressions::ArrayAccess' (role 'C_Expressions_ArrayAccess110', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression111', cardinality 0..*).
+'C::Commands::SwitchCommand' (role 'C_Commands_SwitchCommand64', cardinality 0..*) is associated with 'Commands::CaseOption' (role 'Commands_CaseOption', cardinality 0..*).
+'C::Expressions::DisplacementLogicExpression' (role 'C_Expressions_DisplacementLogicExpression', cardinality 0..*) is associated with 'Expressions::Expression' (role 'Expressions_Expression104', cardinality 0..*).
+'C::Main::Block' (role 'C_Main_Block13', cardinality 0..*) is associated with 'Main::Comment' (role 'Main_Comment14', cardinality 0..*).

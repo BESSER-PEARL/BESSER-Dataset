@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'classes::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'classes::DataType' has no attributes.
+The class 'classes::Type' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'classes::Class' has no attributes.
+The class 'classes::Model' has no attributes.
+'classes::DataType' is a specialization of 'Type'.
+'classes::Class' is a specialization of 'Type'.
+'classes::Model' (role 'classes_Model', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class', cardinality 0..*).
+'classes::Class' (role 'classes_Class2', cardinality 0..*) is associated with 'classes::Attribute' (role 'classes_Attribute', cardinality 0..*).
+'classes::Attribute' (role 'classes_Attribute4', cardinality 0..*) is associated with 'classes::Type' (role 'classes_Type', cardinality 0..*).

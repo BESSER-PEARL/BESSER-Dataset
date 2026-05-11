@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/templarad/iArch/jp.ac.kyushu.iarch.model/model/Behavior.ecore

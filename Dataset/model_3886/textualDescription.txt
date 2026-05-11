@@ -1,0 +1,41 @@
+The model has 13 class(es).
+The class 'B::SET' has the following attributes: 'name' of type str.
+The class 'B::VariableList' has the following attributes: 'size' of type str.
+The class 'B::Begin' has no attributes.
+The class 'B::Machine' has the following attributes: 'name' of type str.
+The class 'B::Predicate' has no attributes.
+The class 'B::Expression' has the following attributes: 'expression' of type str.
+The class 'B::Skip' has no attributes.
+The class 'B::Variable' has the following attributes: 'name' of type str.
+The class 'B::Operation' has the following attributes: 'name' of type str.
+The class 'B::Action' has no attributes.
+The class 'B::Any' has no attributes.
+The class 'B::If' has no attributes.
+The class 'Expression' has no attributes.
+'B::Predicate' is a specialization of 'Expression'.
+'B::If' is a specialization of 'Expression'.
+'B::Skip' is a specialization of 'Expression'.
+'B::Any' is a specialization of 'Expression'.
+'B::Action' is a specialization of 'Expression'.
+'B::Begin' is a specialization of 'Expression'.
+'B::Predicate' (role 'B_Predicate21', cardinality 0..*) is associated with 'B::Operation' (role 'B_Operation20', cardinality 0..*).
+'B::If' (role 'B_If45', cardinality 0..*) is associated with 'B::Expression' (role 'B_Expression46', cardinality 0..*).
+'B::Begin' (role 'B_Begin', cardinality 0..*) is associated with 'B::Expression' (role 'B_Expression51', cardinality 0..*).
+'B::Variable' (role 'B_Variable22', cardinality 0..*) is associated with 'B::Variable' (role 'B_Variable24', cardinality 0..*).
+'B::Action' (role 'B_Action', cardinality 0..*) is associated with 'B::Machine' (role 'B_Machine11', cardinality 0..*).
+'B::Variable' (role 'B_Variable26', cardinality 0..*) is associated with 'B::Predicate' (role 'B_Predicate27', cardinality 0..*).
+'B::VariableList' (role 'B_VariableList18', cardinality 0..*) is associated with 'B::Operation' (role 'B_Operation17', cardinality 0..*).
+'B::VariableList' (role 'B_VariableList', cardinality 0..*) is associated with 'B::Operation' (role 'B_Operation15', cardinality 0..*).
+'B::Machine' (role 'B_Machine7', cardinality 0..*) is associated with 'B::Predicate' (role 'B_Predicate', cardinality 0..*).
+'B::SET' (role 'B_SET', cardinality 0..*) is associated with 'B::Machine' (role 'B_Machine3', cardinality 0..*).
+'B::Any' (role 'B_Any', cardinality 0..*) is associated with 'B::Variable' (role 'B_Variable35', cardinality 0..*).
+'B::Machine' (role 'B_Machine', cardinality 0..*) is associated with 'B::Machine' (role 'B_Machine0', cardinality 0..*).
+'B::VariableList' (role 'B_VariableList29', cardinality 0..*) is associated with 'B::Variable' (role 'B_Variable30', cardinality 0..*).
+'B::Predicate' (role 'B_Predicate49', cardinality 0..*) is associated with 'B::If' (role 'B_If48', cardinality 0..*).
+'B::Operation' (role 'B_Operation', cardinality 0..*) is associated with 'B::Machine' (role 'B_Machine5', cardinality 0..*).
+'B::Operation' (role 'B_Operation13', cardinality 0..*) is associated with 'B::Expression' (role 'B_Expression', cardinality 0..*).
+'B::Any' (role 'B_Any37', cardinality 0..*) is associated with 'B::Predicate' (role 'B_Predicate38', cardinality 0..*).
+'B::Variable' (role 'B_Variable', cardinality 0..*) is associated with 'B::Machine' (role 'B_Machine9', cardinality 0..*).
+'B::VariableList' (role 'B_VariableList32', cardinality 0..*) is associated with 'B::Variable' (role 'B_Variable33', cardinality 0..*).
+'B::Any' (role 'B_Any40', cardinality 0..*) is associated with 'B::Expression' (role 'B_Expression41', cardinality 0..*).
+'B::Expression' (role 'B_Expression43', cardinality 0..*) is associated with 'B::If' (role 'B_If', cardinality 0..*).

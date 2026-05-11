@@ -1,0 +1,33 @@
+The model has 10 class(es).
+The class 'fmp::Project' has no attributes.
+The class 'fmp::FeatureGroup' has no attributes.
+The class 'fmp::Node' has the following attributes: 'max' of type int; 'min' of type int; 'id' of type str.
+The class 'Node' has no attributes.
+The class 'fmp::TypedValue' has the following attributes: 'floatValue' of type str; 'stringValue' of type str; 'integerValue' of type str.
+The class 'Clonable' has no attributes.
+The class 'fmp::Constraint' has the following attributes: 'text' of type str.
+The class 'fmp::Reference' has no attributes.
+The class 'fmp::Clonable' has the following attributes: 'state' of type str.
+The class 'fmp::Feature' has the following attributes: 'name' of type str; 'valueType' of type str.
+The enumeration 'ConfigState' has the following literals: 'MACHINE_ELIMINATED', 'MACHINE_SELECTED', 'USER_ELIMINATED', 'UNDECIDED', 'USER_SELECTED'.
+The enumeration 'ValueType' has the following literals: 'FEATURE', 'STRING', 'FLOAT', 'NONE', 'INTEGER'.
+'fmp::Clonable' is a specialization of 'Node'.
+'fmp::Feature' is a specialization of 'Clonable'.
+'fmp::FeatureGroup' is a specialization of 'Node'.
+'fmp::Reference' is a specialization of 'Clonable'.
+'fmp::Feature' (role 'Feature', cardinality 0..*) is associated with 'fmp::Node' (role 'describedNode', cardinality 0..*).
+'fmp::Feature' (role 'fmp_Feature20', cardinality 0..*) is associated with 'fmp::Project' (role 'fmp_Project', cardinality 0..*).
+'fmp::Node' (role 'origin', cardinality 0..*) is associated with 'fmp::Node' (role 'Node10', cardinality 0..*).
+'fmp::Reference' (role 'Reference', cardinality 0..*) is associated with 'fmp::Feature' (role 'feature', cardinality 0..*).
+'fmp::Project' (role 'fmp_Project22', cardinality 0..*) is associated with 'fmp::Feature' (role 'fmp_Feature23', cardinality 0..*).
+'fmp::TypedValue' (role 'fmp_TypedValue', cardinality 0..*) is associated with 'fmp::Feature' (role 'fmp_Feature4', cardinality 0..*).
+'fmp::Node' (role 'Node13', cardinality 0..*) is associated with 'fmp::Node' (role 'confs', cardinality 0..*).
+'fmp::Feature' (role 'fmp_Feature26', cardinality 0..*) is associated with 'fmp::Project' (role 'fmp_Project25', cardinality 0..*).
+'fmp::TypedValue' (role 'fmp_TypedValue28', cardinality 0..*) is associated with 'fmp::Feature' (role 'fmp_Feature29', cardinality 0..*).
+'fmp::Feature' (role 'fmp_Feature', cardinality 0..*) is associated with 'fmp::Feature' (role 'fmp_Feature0', cardinality 0..*).
+'fmp::Clonable' (role 'prototype', cardinality 0..*) is associated with 'fmp::Clonable' (role 'Clonable', cardinality 0..*).
+'fmp::Node' (role 'fmp_Node14', cardinality 0..*) is associated with 'fmp::Node' (role 'fmp_Node', cardinality 0..*).
+'fmp::Clonable' (role 'Clonable34', cardinality 0..*) is associated with 'fmp::Clonable' (role 'clones', cardinality 0..*).
+'fmp::Feature' (role 'Feature18', cardinality 0..*) is associated with 'fmp::Reference' (role 'references', cardinality 0..*).
+'fmp::Node' (role 'Node', cardinality 0..*) is associated with 'fmp::Feature' (role 'properties', cardinality 0..*).
+'fmp::Feature' (role 'fmp_Feature7', cardinality 0..*) is associated with 'fmp::Constraint' (role 'fmp_Constraint', cardinality 0..*).

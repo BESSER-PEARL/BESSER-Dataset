@@ -1,0 +1,115 @@
+The model has 42 class(es).
+The class 'etricegen::BindingInstance' has no attributes.
+The class 'etricegen::SAPInstance' has no attributes.
+The class 'etricegen::ActorInterfaceInstance' has the following attributes: 'array' of type bool.
+The class 'etricegen::SPP' has no attributes.
+The class 'WiredStructureClass' has no attributes.
+The class 'etricegen::ServiceImplInstance' has no attributes.
+The class 'etricegen::LogicalSystem' has no attributes.
+The class 'etricegen::ActorInstance' has the following attributes: 'replIdx' of type int; 'unindexedName' of type str.
+The class 'etricegen::ProtocolClass' has no attributes.
+The class 'etricegen::SubSystemClass' has no attributes.
+The class 'etricegen::StructureInstance' has no attributes.
+The class 'etricegen::SAP' has no attributes.
+The class 'etricegen::SPPInstance' has no attributes.
+The class 'etricegen::Root' has the following attributes: 'library' of type bool.
+The class 'etricegen::InstanceBase' has the following attributes: 'name' of type str; 'nObjIDs' of type int; 'threadId' of type int; 'objId' of type int; 'path' of type str.
+The class 'etricegen::AbstractInstance' has no attributes.
+The class 'etricegen::ServiceImplementation' has no attributes.
+The class 'etricegen::WiredActorClass' has no attributes.
+The class 'etricegen::PortInstance' has the following attributes: 'kind' of type str.
+The class 'etricegen::GraphContainer' has no attributes.
+The class 'etricegen::ConnectionInstance' has no attributes.
+The class 'etricegen::SystemInstance' has no attributes.
+The class 'etricegen::RoomModel' has no attributes.
+The class 'AbstractInstance' has no attributes.
+The class 'InstanceBase' has no attributes.
+The class 'etricegen::Wire' has the following attributes: 'dataDriven' of type bool; 'path1' of type str; 'path2' of type str.
+The class 'etricegen::ActorClass' has no attributes.
+The class 'InterfaceItemInstance' has no attributes.
+The class 'etricegen::LayerConnection' has no attributes.
+The class 'etricegen::SubSystemInstance' has the following attributes: 'maxObjId' of type int.
+The class 'etricegen::WiredSubSystemClass' has no attributes.
+The class 'etricegen::OpenBinding' has the following attributes: 'path' of type str.
+The class 'etricegen::DataClass' has no attributes.
+The class 'etricegen::EnumerationType' has no attributes.
+The class 'etricegen::InterfaceItemInstance' has no attributes.
+The class 'etricegen::Binding' has no attributes.
+The class 'etricegen::OptionalActorInstance' has no attributes.
+The class 'etricegen::ExpandedActorClass' has no attributes.
+The class 'StructureInstance' has no attributes.
+The class 'etricegen::OpenServiceConnection' has the following attributes: 'path' of type str.
+The class 'etricegen::WiredStructureClass' has no attributes.
+The class 'etricegen::Port' has no attributes.
+The enumeration 'PortKind' has the following literals: 'interface', 'internal', 'external', 'relay'.
+'etricegen::ServiceImplInstance' is a specialization of 'InterfaceItemInstance'.
+'etricegen::ActorInstance' is a specialization of 'StructureInstance'.
+'etricegen::SystemInstance' is a specialization of 'InstanceBase'.
+'etricegen::ActorInterfaceInstance' is a specialization of 'AbstractInstance'.
+'etricegen::StructureInstance' is a specialization of 'AbstractInstance'.
+'etricegen::WiredActorClass' is a specialization of 'WiredStructureClass'.
+'etricegen::WiredSubSystemClass' is a specialization of 'WiredStructureClass'.
+'etricegen::InterfaceItemInstance' is a specialization of 'InstanceBase'.
+'etricegen::SPPInstance' is a specialization of 'InstanceBase'.
+'etricegen::PortInstance' is a specialization of 'InterfaceItemInstance'.
+'etricegen::AbstractInstance' is a specialization of 'InstanceBase'.
+'etricegen::SAPInstance' is a specialization of 'InterfaceItemInstance'.
+'etricegen::SubSystemInstance' is a specialization of 'StructureInstance'.
+'etricegen::OptionalActorInstance' is a specialization of 'StructureInstance'.
+'etricegen::SPPInstance' (role 'SPPInstance98', cardinality 0..*) is associated with 'etricegen::ConnectionInstance' (role 'incoming', cardinality 0..*).
+'etricegen::PortInstance' (role 'PortInstance', cardinality 0..*) is associated with 'etricegen::BindingInstance' (role 'bindings', cardinality 0..*).
+'etricegen::SystemInstance' (role 'etricegen_SystemInstance56', cardinality 0..*) is associated with 'etricegen::SubSystemInstance' (role 'etricegen_SubSystemInstance57', cardinality 0..*).
+'etricegen::WiredActorClass' (role 'etricegen_WiredActorClass', cardinality 0..*) is associated with 'etricegen::ActorClass' (role 'etricegen_ActorClass117', cardinality 0..*).
+'etricegen::WiredStructureClass' (role 'etricegen_WiredStructureClass104', cardinality 0..*) is associated with 'etricegen::OpenBinding' (role 'etricegen_OpenBinding', cardinality 0..*).
+'etricegen::LayerConnection' (role 'etricegen_LayerConnection', cardinality 0..*) is associated with 'etricegen::ConnectionInstance' (role 'etricegen_ConnectionInstance100', cardinality 0..*).
+'etricegen::BindingInstance' (role 'BindingInstance', cardinality 0..*) is associated with 'etricegen::PortInstance' (role 'ports', cardinality 0..*).
+'etricegen::SubSystemClass' (role 'etricegen_SubSystemClass', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root22', cardinality 0..*).
+'etricegen::SPPInstance' (role 'etricegen_SPPInstance87', cardinality 0..*) is associated with 'etricegen::SPP' (role 'etricegen_SPP', cardinality 0..*).
+'etricegen::ServiceImplInstance' (role 'etricegen_ServiceImplInstance92', cardinality 0..*) is associated with 'etricegen::ServiceImplementation' (role 'etricegen_ServiceImplementation', cardinality 0..*).
+'etricegen::OptionalActorInstance' (role 'etricegen_OptionalActorInstance70', cardinality 0..*) is associated with 'etricegen::SAPInstance' (role 'etricegen_SAPInstance71', cardinality 0..*).
+'etricegen::WiredSubSystemClass' (role 'etricegen_WiredSubSystemClass', cardinality 0..*) is associated with 'etricegen::SubSystemClass' (role 'etricegen_SubSystemClass119', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root', cardinality 0..*) is associated with 'etricegen::SystemInstance' (role 'etricegen_SystemInstance', cardinality 0..*).
+'etricegen::SAPInstance' (role 'etricegen_SAPInstance', cardinality 0..*) is associated with 'etricegen::StructureInstance' (role 'etricegen_StructureInstance41', cardinality 0..*).
+'etricegen::ConnectionInstance' (role 'ConnectionInstance90', cardinality 0..*) is associated with 'etricegen::SPPInstance' (role 'fromSPP', cardinality 0..*).
+'etricegen::ActorInstance' (role 'etricegen_ActorInstance', cardinality 0..*) is associated with 'etricegen::StructureInstance' (role 'etricegen_StructureInstance52', cardinality 0..*).
+'etricegen::StructureInstance' (role 'etricegen_StructureInstance', cardinality 0..*) is associated with 'etricegen::AbstractInstance' (role 'etricegen_AbstractInstance39', cardinality 0..*).
+'etricegen::InterfaceItemInstance' (role 'etricegen_InterfaceItemInstance75', cardinality 0..*) is associated with 'etricegen::InterfaceItemInstance' (role 'etricegen_InterfaceItemInstance77', cardinality 0..*).
+'etricegen::Port' (role 'etricegen_Port112', cardinality 0..*) is associated with 'etricegen::OpenBinding' (role 'etricegen_OpenBinding111', cardinality 0..*).
+'etricegen::StructureInstance' (role 'etricegen_StructureInstance48', cardinality 0..*) is associated with 'etricegen::BindingInstance' (role 'etricegen_BindingInstance', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root29', cardinality 0..*) is associated with 'etricegen::WiredStructureClass' (role 'etricegen_WiredStructureClass', cardinality 0..*).
+'etricegen::StructureInstance' (role 'etricegen_StructureInstance45', cardinality 0..*) is associated with 'etricegen::ServiceImplInstance' (role 'etricegen_ServiceImplInstance46', cardinality 0..*).
+'etricegen::ExpandedActorClass' (role 'etricegen_ExpandedActorClass124', cardinality 0..*) is associated with 'etricegen::GraphContainer' (role 'etricegen_GraphContainer', cardinality 0..*).
+'etricegen::EnumerationType' (role 'etricegen_EnumerationType', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root20', cardinality 0..*).
+'etricegen::OpenServiceConnection' (role 'etricegen_OpenServiceConnection109', cardinality 0..*) is associated with 'etricegen::WiredStructureClass' (role 'etricegen_WiredStructureClass108', cardinality 0..*).
+'etricegen::WiredStructureClass' (role 'etricegen_WiredStructureClass106', cardinality 0..*) is associated with 'etricegen::OpenServiceConnection' (role 'etricegen_OpenServiceConnection', cardinality 0..*).
+'etricegen::ActorInterfaceInstance' (role 'etricegen_ActorInterfaceInstance34', cardinality 0..*) is associated with 'etricegen::ServiceImplInstance' (role 'etricegen_ServiceImplInstance', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root16', cardinality 0..*) is associated with 'etricegen::ProtocolClass' (role 'etricegen_ProtocolClass', cardinality 0..*).
+'etricegen::ActorInterfaceInstance' (role 'etricegen_ActorInterfaceInstance', cardinality 0..*) is associated with 'etricegen::ActorClass' (role 'etricegen_ActorClass32', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root9', cardinality 0..*) is associated with 'etricegen::RoomModel' (role 'etricegen_RoomModel10', cardinality 0..*).
+'etricegen::ProtocolClass' (role 'etricegen_ProtocolClass115', cardinality 0..*) is associated with 'etricegen::OpenServiceConnection' (role 'etricegen_OpenServiceConnection114', cardinality 0..*).
+'etricegen::LogicalSystem' (role 'etricegen_LogicalSystem', cardinality 0..*) is associated with 'etricegen::SystemInstance' (role 'etricegen_SystemInstance59', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root12', cardinality 0..*) is associated with 'etricegen::ExpandedActorClass' (role 'etricegen_ExpandedActorClass', cardinality 0..*).
+'etricegen::ActorClass' (role 'etricegen_ActorClass', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root18', cardinality 0..*).
+'etricegen::ActorClass' (role 'etricegen_ActorClass68', cardinality 0..*) is associated with 'etricegen::OptionalActorInstance' (role 'etricegen_OptionalActorInstance67', cardinality 0..*).
+'etricegen::WiredStructureClass' (role 'etricegen_WiredStructureClass102', cardinality 0..*) is associated with 'etricegen::Wire' (role 'etricegen_Wire', cardinality 0..*).
+'etricegen::StructureInstance' (role 'etricegen_StructureInstance43', cardinality 0..*) is associated with 'etricegen::SPPInstance' (role 'etricegen_SPPInstance', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root4', cardinality 0..*) is associated with 'etricegen::SubSystemInstance' (role 'etricegen_SubSystemInstance5', cardinality 0..*).
+'etricegen::ActorInterfaceInstance' (role 'etricegen_ActorInterfaceInstance36', cardinality 0..*) is associated with 'etricegen::OptionalActorInstance' (role 'etricegen_OptionalActorInstance37', cardinality 0..*).
+'etricegen::Binding' (role 'etricegen_Binding', cardinality 0..*) is associated with 'etricegen::BindingInstance' (role 'etricegen_BindingInstance83', cardinality 0..*).
+'etricegen::ConnectionInstance' (role 'etricegen_ConnectionInstance', cardinality 0..*) is associated with 'etricegen::StructureInstance' (role 'etricegen_StructureInstance50', cardinality 0..*).
+'etricegen::ConnectionInstance' (role 'outgoing', cardinality 0..*) is associated with 'etricegen::SPPInstance' (role 'SPPInstance', cardinality 0..*).
+'etricegen::ActorClass' (role 'etricegen_ActorClass65', cardinality 0..*) is associated with 'etricegen::ActorInstance' (role 'etricegen_ActorInstance64', cardinality 0..*).
+'etricegen::SubSystemInstance' (role 'etricegen_SubSystemInstance', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root2', cardinality 0..*).
+'etricegen::AbstractInstance' (role 'etricegen_AbstractInstance', cardinality 0..*) is associated with 'etricegen::PortInstance' (role 'etricegen_PortInstance', cardinality 0..*).
+'etricegen::SubSystemClass' (role 'etricegen_SubSystemClass62', cardinality 0..*) is associated with 'etricegen::SubSystemInstance' (role 'etricegen_SubSystemInstance61', cardinality 0..*).
+'etricegen::ActorClass' (role 'etricegen_ActorClass27', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root26', cardinality 0..*).
+'etricegen::ExpandedActorClass' (role 'etricegen_ExpandedActorClass121', cardinality 0..*) is associated with 'etricegen::ActorClass' (role 'etricegen_ActorClass122', cardinality 0..*).
+'etricegen::RoomModel' (role 'etricegen_RoomModel', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root7', cardinality 0..*).
+'etricegen::ConnectionInstance' (role 'etricegen_ConnectionInstance94', cardinality 0..*) is associated with 'etricegen::AbstractInstance' (role 'etricegen_AbstractInstance95', cardinality 0..*).
+'etricegen::Port' (role 'etricegen_Port', cardinality 0..*) is associated with 'etricegen::PortInstance' (role 'etricegen_PortInstance79', cardinality 0..*).
+'etricegen::ProtocolClass' (role 'etricegen_ProtocolClass74', cardinality 0..*) is associated with 'etricegen::InterfaceItemInstance' (role 'etricegen_InterfaceItemInstance73', cardinality 0..*).
+'etricegen::SAPInstance' (role 'etricegen_SAPInstance85', cardinality 0..*) is associated with 'etricegen::SAP' (role 'etricegen_SAP', cardinality 0..*).
+'etricegen::Root' (role 'etricegen_Root24', cardinality 0..*) is associated with 'etricegen::OptionalActorInstance' (role 'etricegen_OptionalActorInstance', cardinality 0..*).
+'etricegen::DataClass' (role 'etricegen_DataClass', cardinality 0..*) is associated with 'etricegen::Root' (role 'etricegen_Root14', cardinality 0..*).
+'etricegen::InterfaceItemInstance' (role 'etricegen_InterfaceItemInstance', cardinality 0..*) is associated with 'etricegen::StructureInstance' (role 'etricegen_StructureInstance54', cardinality 0..*).
+'etricegen::SPPInstance' (role 'toSPP', cardinality 0..*) is associated with 'etricegen::ConnectionInstance' (role 'ConnectionInstance', cardinality 0..*).

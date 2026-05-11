@@ -1,0 +1,449 @@
+The model has 125 class(es).
+The class 'IGraphicalObject' has no attributes.
+The class 'carnot::EventHandlerType' has the following attributes: 'autoBind' of type str; 'logHandler' of type str; 'consumeOnMatch' of type str; 'unbindOnMatch' of type str.
+The class 'carnot::ModelerType' has the following attributes: 'email' of type str; 'password' of type str.
+The class 'FormalParameterMappingType' has no attributes.
+The class 'carnot::IIdentifiableModelElement' has no attributes.
+The class 'IExtensibleElement' has no attributes.
+The class 'carnot::OrganizationType' has no attributes.
+The class 'carnot::DataPathType' has the following attributes: 'key' of type str; 'dataPath' of type str; 'direction' of type str; 'descriptor' of type str.
+The class 'carnot::IModelElement' has the following attributes: 'elementOid' of type str.
+The class 'carnot::ExternalReferenceType' has no attributes.
+The class 'carnot::ISwimlaneSymbol' has the following attributes: 'collapsed' of type str; 'orientation' of type str.
+The class 'carnot::FormalParametersType' has no attributes.
+The class 'carnot::IFlowObjectSymbol' has no attributes.
+The class 'ISymbolContainer' has no attributes.
+The class 'carnot::LaneSymbol' has no attributes.
+The class 'carnot::PublicInterfaceSymbol' has no attributes.
+The class 'carnot::TypeDeclarationsType' has no attributes.
+The class 'carnot::TriggersConnectionType' has no attributes.
+The class 'AbstractEventSymbol' has no attributes.
+The class 'carnot::ExecutedByConnectionType' has no attributes.
+The class 'carnot::ExternalPackages' has no attributes.
+The class 'carnot::ActivityType' has the following attributes: 'loopCondition' of type str; 'join' of type str; 'hibernateOnCreation' of type str; 'allowsAbortByPerformer' of type str; 'split' of type str; 'loopType' of type str; 'subProcessMode' of type str; 'implementation' of type str.
+The class 'FormalParameterMappingsType' has no attributes.
+The class 'carnot::IntermediateEventSymbol' has no attributes.
+The class 'carnot::AccessPointType' has the following attributes: 'direction' of type str.
+The class 'carnot::ViewableType' has no attributes.
+The class 'IIdentifiableModelElement' has no attributes.
+The class 'extensions::carnot::DataType' has no attributes.
+The class 'IdRefOwner' has no attributes.
+The class 'carnot::IModelElementNodeSymbol' has no attributes.
+The class 'IEventHandlerOwner' has no attributes.
+The class 'carnot::EObject' has no attributes.
+The class 'IModelElementNodeSymbol' has no attributes.
+The class 'carnot::GenericLinkConnectionType' has no attributes.
+The class 'carnot::ExternalPackage' has no attributes.
+The class 'carnot::extensions::FormalParameterMappingType' has no attributes.
+The class 'carnot::TriggerTypeType' has the following attributes: 'pullTriggerEvaluator' of type str; 'pullTrigger' of type str; 'panelClass' of type str; 'rule' of type str.
+The class 'carnot::ContextType' has no attributes.
+The class 'carnot::IModelParticipantSymbol' has no attributes.
+The class 'IMetaType' has no attributes.
+The class 'carnot::GroupSymbolType' has no attributes.
+The class 'carnot::EStringToStringMapEntry' has no attributes.
+The class 'carnot::ProcessSymbolType' has no attributes.
+The class 'carnot::ActivitySymbolType' has no attributes.
+The class 'carnot::LinkTypeType' has the following attributes: 'targetSymbol' of type str; 'sourceClass' of type str; 'sourceSymbol' of type str; 'sourceRole' of type str; 'lineColor' of type str; 'lineStyle' of type str; 'targetRole' of type str; 'showRoleNames' of type str; 'showLinkTypeName' of type str; 'targetClass' of type str; 'targetCardinality' of type str; 'sourceCardinality' of type str.
+The class 'carnot::TeamLeadConnectionType' has no attributes.
+The class 'carnot::ITypedElement' has no attributes.
+The class 'IIdentifiableElement' has no attributes.
+The class 'carnot::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'carnot::ModelerSymbolType' has no attributes.
+The class 'carnot::AbstractEventSymbol' has the following attributes: 'label' of type str.
+The class 'carnot::ApplicationContextTypeType' has the following attributes: 'hasMappingId' of type str; 'hasApplicationPath' of type str; 'accessPointProviderClass' of type str; 'panelClass' of type str; 'validatorClass' of type str.
+The class 'carnot::ApplicationTypeType' has the following attributes: 'accessPointProviderClass' of type str; 'panelClass' of type str; 'instanceClass' of type str; 'synchronous' of type str; 'validatorClass' of type str.
+The class 'carnot::OrganizationSymbolType' has no attributes.
+The class 'carnot::INodeSymbol' has the following attributes: 'width' of type str; 'height' of type str; 'yPos' of type str; 'xPos' of type str; 'shape' of type str.
+The class 'carnot::ApplicationType' has the following attributes: 'interactive' of type str.
+The class 'carnot::ParameterMappingType' has the following attributes: 'dataPath' of type str; 'parameter' of type str; 'parameterPath' of type str.
+The class 'carnot::AbstractEventAction' has no attributes.
+The class 'carnot::IdRefOwner' has no attributes.
+The class 'carnot::ConditionalPerformerSymbolType' has no attributes.
+The class 'carnot::RoleSymbolType' has no attributes.
+The class 'carnot::IModelParticipant' has no attributes.
+The class 'carnot::AttributeType' has the following attributes: 'mixed' of type str; 'name' of type str; 'value' of type str; 'group' of type str; 'any' of type str; 'type' of type str.
+The class 'carnot::TextType' has the following attributes: 'mixed' of type str.
+The class 'carnot::PerformsConnectionType' has no attributes.
+The class 'carnot::IEventHandlerOwner' has no attributes.
+The class 'carnot::Coordinates' has the following attributes: 'yPos' of type str; 'xPos' of type str.
+The class 'carnot::GatewaySymbol' has the following attributes: 'flowKind' of type str.
+The class 'carnot::DataTypeType' has the following attributes: 'readable' of type str; 'valueCreator' of type str; 'accessPathEditor' of type str; 'writable' of type str; 'panelClass' of type str; 'storageStrategy' of type str; 'instanceClass' of type str; 'validatorClass' of type str; 'evaluator' of type str.
+The class 'carnot::ConditionalPerformerType' has the following attributes: 'dataPath' of type str; 'isUser' of type str.
+The class 'carnot::IExtensibleElement' has no attributes.
+The class 'carnot::TransitionConnectionType' has the following attributes: 'points' of type str.
+The class 'carnot::DataMappingType' has the following attributes: 'applicationAccessPoint' of type str; 'direction' of type str; 'dataPath' of type str; 'applicationPath' of type str; 'context' of type str.
+The class 'carnot::DataType' has the following attributes: 'predefined' of type str.
+The class 'AbstractEventAction' has no attributes.
+The class 'carnot::EventActionType' has no attributes.
+The class 'carnot::RoleType' has the following attributes: 'cardinality' of type int.
+The class 'carnot::AnnotationSymbolType' has no attributes.
+The class 'carnot::extensions::FormalParameterMappingsType' has no attributes.
+The class 'carnot::PartOfConnectionType' has no attributes.
+The class 'carnot::LoopType' has no attributes.
+The class 'IFlowObjectSymbol' has no attributes.
+The class 'carnot::TriggerType' has no attributes.
+The class 'carnot::IMetaType' has the following attributes: 'isPredefined' of type str.
+The class 'carnot::IAccessPointOwner' has no attributes.
+The class 'ITypedElement' has no attributes.
+The class 'carnot::DiagramType' has the following attributes: 'orientation' of type str; 'name' of type str; 'mode' of type str.
+The class 'carnot::ScriptType' has no attributes.
+The class 'IModelElement' has no attributes.
+The class 'extensions::carnot::FormalParameterType' has no attributes.
+The class 'carnot::DataMappingConnectionType' has no attributes.
+The class 'carnot::ISymbolContainer' has the following attributes: 'connections' of type str; 'nodes' of type str.
+The class 'carnot::UnbindActionType' has no attributes.
+The class 'carnot::PoolSymbol' has the following attributes: 'boundaryVisible' of type str.
+The class 'carnot::IIdentifiableElement' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'carnot::XmlTextNode' has the following attributes: 'mixed' of type str.
+The class 'carnot::EventConditionTypeType' has the following attributes: 'binderClass' of type str; 'implementation' of type str; 'activityCondition' of type str; 'pullEventEmitterClass' of type str; 'processCondition' of type str; 'panelClass' of type str; 'rule' of type str.
+The class 'carnot::DataSymbolType' has no attributes.
+The class 'carnot::QualityControlType' has no attributes.
+The class 'IModelParticipantSymbol' has no attributes.
+The class 'carnot::DescriptionType' has the following attributes: 'mixed' of type str.
+The class 'carnot::ProcessDefinitionType' has the following attributes: 'defaultPriority' of type str.
+The class 'carnot::WorksForConnectionType' has no attributes.
+The class 'carnot::IdRef' has the following attributes: 'ref' of type str.
+The class 'carnot::ModelType' has the following attributes: 'vendor' of type str; 'author' of type str; 'carnotVersion' of type str; 'created' of type str; 'oid' of type str; 'modelOID' of type str.
+The class 'carnot::Code' has the following attributes: 'code' of type str; 'value' of type str; 'name' of type str.
+The class 'IAccessPointOwner' has no attributes.
+The class 'IModelParticipant' has no attributes.
+The class 'carnot::TransitionType' has the following attributes: 'forkOnTraversal' of type str; 'condition' of type str.
+The class 'INodeSymbol' has no attributes.
+The class 'carnot::TextSymbolType' has the following attributes: 'text' of type str.
+The class 'carnot::IGraphicalObject' has the following attributes: 'style' of type str; 'fillColor' of type str; 'borderColor' of type str.
+The class 'ISwimlaneSymbol' has no attributes.
+The class 'carnot::ParticipantType' has no attributes.
+The class 'carnot::StartEventSymbol' has no attributes.
+The class 'carnot::RefersToConnectionType' has no attributes.
+The class 'carnot::SubProcessOfConnectionType' has no attributes.
+The class 'carnot::IConnectionSymbol' has the following attributes: 'sourceAnchor' of type str; 'targetAnchor' of type str; 'routing' of type str.
+The class 'carnot::EventActionTypeType' has the following attributes: 'activityAction' of type str; 'unsupportedContexts' of type str; 'supportedConditionTypes' of type str; 'actionClass' of type str; 'processAction' of type str; 'panelClass' of type str.
+The class 'carnot::EndEventSymbol' has no attributes.
+The class 'carnot::BindActionType' has no attributes.
+The class 'carnot::ViewType' has the following attributes: 'name' of type str.
+The class 'carnot::ApplicationSymbolType' has no attributes.
+The class 'carnot::IdentifiableReference' has no attributes.
+The class 'IConnectionSymbol' has no attributes.
+The enumeration 'ImplementationType' has the following literals: 'push', 'engine', 'pull'.
+The enumeration 'ActivityImplementationType' has the following literals: 'Subprocess', 'Manual', 'Application', 'Route'.
+The enumeration 'RoutingType' has the following literals: 'Default', 'ShortestPath', 'Manhattan', 'Explicit'.
+The enumeration 'OrientationType' has the following literals: 'Horizontal', 'Vertical'.
+The enumeration 'LinkCardinality' has the following literals: 'One', 'Unknown', 'Many'.
+The enumeration 'FlowControlType' has the following literals: 'split', 'none', 'join'.
+The enumeration 'JoinSplitType' has the following literals: 'XOR', 'None_', 'AND', 'OR'.
+The enumeration 'LinkEndStyle' has the following literals: 'FilledRhombus', 'FilledTriangle', 'Unknown', 'EmptyRhombus', 'OpenTriangle', 'EmptyTriangle', 'NoArrow'.
+The enumeration 'SubProcessModeType' has the following literals: 'sync_shared', 'async_separate', 'sync_separate'.
+The enumeration 'DiagramModeType' has the following literals: 'MODE_4_0_0', 'MODE_4_5_0'.
+The enumeration 'LinkLineStyle' has the following literals: 'LongStrokes', 'ShortStrokes', 'Unknown', 'Normal'.
+The enumeration 'LoopType' has the following literals: 'Repeat', 'While', 'None_', 'Unknown'.
+The enumeration 'LinkColor' has the following literals: 'Black', 'Red', 'DarkBlue', 'Yellow', 'LightGray', 'Unknown', 'Blue', 'DarkGray'.
+The enumeration 'DirectionType' has the following literals: 'IN', 'INOUT', 'OUT'.
+'carnot::ApplicationTypeType' is a specialization of 'IMetaType'.
+'carnot::DiagramType' is a specialization of 'IExtensibleElement'.
+'carnot::IIdentifiableModelElement' is a specialization of 'IModelElement'.
+'carnot::ConditionalPerformerSymbolType' is a specialization of 'IModelParticipantSymbol'.
+'carnot::ProcessSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::RoleType' is a specialization of 'IModelParticipant'.
+'carnot::EventActionTypeType' is a specialization of 'IMetaType'.
+'carnot::IFlowObjectSymbol' is a specialization of 'INodeSymbol'.
+'carnot::IModelParticipant' is a specialization of 'IIdentifiableModelElement'.
+'carnot::AccessPointType' is a specialization of 'ITypedElement'.
+'carnot::PartOfConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::AbstractEventSymbol' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::IModelElementNodeSymbol' is a specialization of 'INodeSymbol'.
+'carnot::ActivitySymbolType' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::IIdentifiableModelElement' is a specialization of 'IExtensibleElement'.
+'carnot::EventHandlerType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::PerformsConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ConditionalPerformerType' is a specialization of 'IModelParticipant'.
+'carnot::RefersToConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::DataMappingType' is a specialization of 'IIdentifiableElement'.
+'carnot::EventHandlerType' is a specialization of 'ITypedElement'.
+'carnot::AbstractEventAction' is a specialization of 'ITypedElement'.
+'carnot::TransitionType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::IIdentifiableModelElement' is a specialization of 'IIdentifiableElement'.
+'carnot::DataMappingType' is a specialization of 'IExtensibleElement'.
+'carnot::DataPathType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::DataMappingType' is a specialization of 'IModelElement'.
+'carnot::LinkTypeType' is a specialization of 'IMetaType'.
+'carnot::IModelParticipantSymbol' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::DataMappingConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ExecutedByConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ActivityType' is a specialization of 'IdRefOwner'.
+'carnot::ISwimlaneSymbol' is a specialization of 'IIdentifiableElement'.
+'carnot::EventConditionTypeType' is a specialization of 'IMetaType'.
+'carnot::ActivityType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::PoolSymbol' is a specialization of 'ISymbolContainer'.
+'carnot::AnnotationSymbolType' is a specialization of 'INodeSymbol'.
+'carnot::ModelerType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::OrganizationSymbolType' is a specialization of 'IModelParticipantSymbol'.
+'carnot::StartEventSymbol' is a specialization of 'AbstractEventSymbol'.
+'carnot::GroupSymbolType' is a specialization of 'INodeSymbol'.
+'carnot::ProcessDefinitionType' is a specialization of 'IdRefOwner'.
+'carnot::ContextType' is a specialization of 'IExtensibleElement'.
+'carnot::GroupSymbolType' is a specialization of 'ISymbolContainer'.
+'carnot::EndEventSymbol' is a specialization of 'AbstractEventSymbol'.
+'carnot::ParameterMappingType' is a specialization of 'IModelElement'.
+'carnot::ViewType' is a specialization of 'IModelElement'.
+'carnot::IntermediateEventSymbol' is a specialization of 'AbstractEventSymbol'.
+'carnot::UnbindActionType' is a specialization of 'AbstractEventAction'.
+'carnot::IConnectionSymbol' is a specialization of 'IGraphicalObject'.
+'carnot::AccessPointType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::DataSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::PoolSymbol' is a specialization of 'ISwimlaneSymbol'.
+'carnot::ModelType' is a specialization of 'IIdentifiableElement'.
+'carnot::LaneSymbol' is a specialization of 'ISymbolContainer'.
+'carnot::ContextType' is a specialization of 'IModelElement'.
+'carnot::EventActionType' is a specialization of 'AbstractEventAction'.
+'carnot::RoleSymbolType' is a specialization of 'IModelParticipantSymbol'.
+'carnot::ActivityType' is a specialization of 'IEventHandlerOwner'.
+'carnot::TextSymbolType' is a specialization of 'INodeSymbol'.
+'carnot::ModelType' is a specialization of 'IExtensibleElement'.
+'carnot::TransitionConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ApplicationContextTypeType' is a specialization of 'IMetaType'.
+'carnot::LaneSymbol' is a specialization of 'ISwimlaneSymbol'.
+'carnot::ContextType' is a specialization of 'IAccessPointOwner'.
+'carnot::ApplicationSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::ApplicationType' is a specialization of 'IAccessPointOwner'.
+'carnot::IMetaType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::GenericLinkConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::TriggerTypeType' is a specialization of 'IMetaType'.
+'carnot::IGraphicalObject' is a specialization of 'IModelElement'.
+'carnot::EventHandlerType' is a specialization of 'IAccessPointOwner'.
+'carnot::ApplicationType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::PublicInterfaceSymbol' is a specialization of 'AbstractEventSymbol'.
+'carnot::ModelerSymbolType' is a specialization of 'IModelElementNodeSymbol'.
+'carnot::DiagramType' is a specialization of 'ISymbolContainer'.
+'carnot::OrganizationType' is a specialization of 'IModelParticipant'.
+'carnot::GenericLinkConnectionType' is a specialization of 'ITypedElement'.
+'carnot::BindActionType' is a specialization of 'AbstractEventAction'.
+'carnot::TeamLeadConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::DataType' is a specialization of 'ITypedElement'.
+'carnot::TriggersConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ActivitySymbolType' is a specialization of 'IFlowObjectSymbol'.
+'carnot::ProcessDefinitionType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::GatewaySymbol' is a specialization of 'IFlowObjectSymbol'.
+'carnot::TriggerType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::ApplicationType' is a specialization of 'ITypedElement'.
+'carnot::TriggerType' is a specialization of 'IAccessPointOwner'.
+'carnot::AbstractEventSymbol' is a specialization of 'IFlowObjectSymbol'.
+'carnot::WorksForConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::ProcessDefinitionType' is a specialization of 'IEventHandlerOwner'.
+'carnot::ContextType' is a specialization of 'ITypedElement'.
+'carnot::DataTypeType' is a specialization of 'IMetaType'.
+'carnot::ISwimlaneSymbol' is a specialization of 'INodeSymbol'.
+'carnot::LinkTypeType' is a specialization of 'IExtensibleElement'.
+'carnot::INodeSymbol' is a specialization of 'IGraphicalObject'.
+'carnot::AbstractEventAction' is a specialization of 'IIdentifiableModelElement'.
+'carnot::DataType' is a specialization of 'IIdentifiableModelElement'.
+'carnot::ViewType' is a specialization of 'IExtensibleElement'.
+'carnot::ISymbolContainer' is a specialization of 'IExtensibleElement'.
+'carnot::DiagramType' is a specialization of 'IModelElement'.
+'carnot::SubProcessOfConnectionType' is a specialization of 'IConnectionSymbol'.
+'carnot::TriggerType' is a specialization of 'ITypedElement'.
+'carnot::IModelParticipantSymbol' (role 'IModelParticipantSymbol357', cardinality 0..*) is associated with 'carnot::TriggersConnectionType' (role 'triggeredEvents', cardinality 0..*).
+'carnot::TeamLeadConnectionType' (role 'carnot_TeamLeadConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer58', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType215', cardinality 0..*) is associated with 'carnot::ApplicationTypeType' (role 'carnot_ApplicationTypeType', cardinality 0..*).
+'carnot::IFlowObjectSymbol' (role 'sourceActivitySymbol', cardinality 0..*) is associated with 'carnot::TransitionConnectionType' (role 'TransitionConnectionType70', cardinality 0..*).
+'carnot::PartOfConnectionType' (role 'PartOfConnectionType257', cardinality 0..*) is associated with 'carnot::OrganizationSymbolType' (role 'organizationSymbol', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer44', cardinality 0..*) is associated with 'carnot::PartOfConnectionType' (role 'carnot_PartOfConnectionType', cardinality 0..*).
+'carnot::EndEventSymbol' (role 'carnot_EndEventSymbol', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer16', cardinality 0..*).
+'carnot::IConnectionSymbol' (role 'carnot_IConnectionSymbol', cardinality 0..*) is associated with 'carnot::Coordinates' (role 'carnot_Coordinates', cardinality 0..*).
+'carnot::IEventHandlerOwner' (role 'carnot_IEventHandlerOwner', cardinality 0..*) is associated with 'carnot::EventHandlerType' (role 'carnot_EventHandlerType', cardinality 0..*).
+'carnot::TeamLeadConnectionType' (role 'TeamLeadConnectionType318', cardinality 0..*) is associated with 'carnot::RoleSymbolType' (role 'teamLeadSymbol', cardinality 0..*).
+'carnot::IFlowObjectSymbol' (role 'IFlowObjectSymbol', cardinality 0..*) is associated with 'carnot::TransitionConnectionType' (role 'outTransitions', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer22', cardinality 0..*) is associated with 'carnot::IntermediateEventSymbol' (role 'carnot_IntermediateEventSymbol', cardinality 0..*).
+'carnot::ApplicationContextTypeType' (role 'carnot_ApplicationContextTypeType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType217', cardinality 0..*).
+'carnot::XmlTextNode' (role 'carnot_XmlTextNode', cardinality 0..*) is associated with 'carnot::AttributeType' (role 'carnot_AttributeType128', cardinality 0..*).
+'carnot::AnnotationSymbolType' (role 'carnot_AnnotationSymbolType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer8', cardinality 0..*).
+'carnot::PoolSymbol' (role 'poolSymbols', cardinality 0..*) is associated with 'carnot::DiagramType' (role 'DiagramType', cardinality 0..*).
+'carnot::LinkTypeType' (role 'linkType', cardinality 0..*) is associated with 'carnot::GenericLinkConnectionType' (role 'GenericLinkConnectionType205', cardinality 0..*).
+'carnot::StartEventSymbol' (role 'startEventSymbol', cardinality 0..*) is associated with 'carnot::TriggersConnectionType' (role 'TriggersConnectionType324', cardinality 0..*).
+'carnot::TriggerType' (role 'TriggerType365', cardinality 0..*) is associated with 'carnot::TriggerTypeType' (role 'type364', cardinality 0..*).
+'carnot::DataMappingType' (role 'DataMappingType', cardinality 0..*) is associated with 'carnot::DataType' (role 'data', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer20', cardinality 0..*) is associated with 'carnot::GroupSymbolType' (role 'carnot_GroupSymbolType', cardinality 0..*).
+'carnot::DataType' (role 'data161', cardinality 0..*) is associated with 'carnot::DataPathType' (role 'DataPathType', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'teamSymbol', cardinality 0..*) is associated with 'carnot::TeamLeadConnectionType' (role 'TeamLeadConnectionType', cardinality 0..*).
+'carnot::ProcessSymbolType' (role 'subprocessSymbol', cardinality 0..*) is associated with 'carnot::SubProcessOfConnectionType' (role 'SubProcessOfConnectionType305', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType231', cardinality 0..*) is associated with 'carnot::ModelerType' (role 'carnot_ModelerType', cardinality 0..*).
+'carnot::DiagramType' (role 'carnot_DiagramType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType249', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType235', cardinality 0..*) is associated with 'carnot::RoleType' (role 'carnot_RoleType', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType233', cardinality 0..*) is associated with 'carnot::QualityControlType' (role 'carnot_QualityControlType', cardinality 0..*).
+'carnot::DataTypeType' (role 'DataTypeType', cardinality 0..*) is associated with 'carnot::DataType' (role 'data153', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer10', cardinality 0..*) is associated with 'carnot::ApplicationSymbolType' (role 'carnot_ApplicationSymbolType', cardinality 0..*).
+'carnot::StartEventSymbol' (role 'carnot_StartEventSymbol', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer34', cardinality 0..*).
+'carnot::DataMappingType' (role 'carnot_DataMappingType', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'carnot_ActivityType', cardinality 0..*).
+'carnot::StartEventSymbol' (role 'startingEventSymbols', cardinality 0..*) is associated with 'carnot::TriggerType' (role 'TriggerType', cardinality 0..*).
+'carnot::PerformsConnectionType' (role 'performsConnections', cardinality 0..*) is associated with 'carnot::ActivitySymbolType' (role 'ActivitySymbolType274', cardinality 0..*).
+'carnot::ProcessSymbolType' (role 'ProcessSymbolType331', cardinality 0..*) is associated with 'carnot::SubProcessOfConnectionType' (role 'parentProcesses', cardinality 0..*).
+'carnot::WorksForConnectionType' (role 'carnot_WorksForConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer56', cardinality 0..*).
+'carnot::ConditionalPerformerType' (role 'ConditionalPerformerType', cardinality 0..*) is associated with 'carnot::ConditionalPerformerSymbolType' (role 'conditionalPerformerSymbols', cardinality 0..*).
+'carnot::ViewType' (role 'carnot_ViewType368', cardinality 0..*) is associated with 'carnot::DescriptionType' (role 'carnot_DescriptionType369', cardinality 0..*).
+'carnot::IFlowObjectSymbol' (role 'targetActivitySymbol', cardinality 0..*) is associated with 'carnot::TransitionConnectionType' (role 'TransitionConnectionType', cardinality 0..*).
+'carnot::IExtensibleElement' (role 'carnot_IExtensibleElement', cardinality 0..*) is associated with 'carnot::AttributeType' (role 'carnot_AttributeType', cardinality 0..*).
+'carnot::EventActionTypeType' (role 'carnot_EventActionTypeType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType223', cardinality 0..*).
+'carnot::ProcessSymbolType' (role 'processSymbol', cardinality 0..*) is associated with 'carnot::SubProcessOfConnectionType' (role 'SubProcessOfConnectionType', cardinality 0..*).
+'carnot::DataMappingConnectionType' (role 'DataMappingConnectionType', cardinality 0..*) is associated with 'carnot::ActivitySymbolType' (role 'activitySymbol89', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer32', cardinality 0..*) is associated with 'carnot::RoleSymbolType' (role 'carnot_RoleSymbolType', cardinality 0..*).
+'carnot::SubProcessOfConnectionType' (role 'subProcesses', cardinality 0..*) is associated with 'carnot::ProcessSymbolType' (role 'ProcessSymbolType329', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'process', cardinality 0..*) is associated with 'carnot::ProcessSymbolType' (role 'ProcessSymbolType', cardinality 0..*).
+'carnot::DescriptionType' (role 'carnot_DescriptionType', cardinality 0..*) is associated with 'carnot::IIdentifiableModelElement' (role 'carnot_IIdentifiableModelElement', cardinality 0..*).
+'carnot::DataMappingType' (role 'dataMappings143', cardinality 0..*) is associated with 'carnot::DataType' (role 'DataType144', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'activitySymbols', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'ActivityType83', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer18', cardinality 0..*) is associated with 'carnot::GatewaySymbol' (role 'carnot_GatewaySymbol', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'activitySymbol', cardinality 0..*) is associated with 'carnot::PerformsConnectionType' (role 'PerformsConnectionType85', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType209', cardinality 0..*) is associated with 'carnot::DescriptionType' (role 'carnot_DescriptionType210', cardinality 0..*).
+'carnot::DataMappingConnectionType' (role 'DataMappingConnectionType150', cardinality 0..*) is associated with 'carnot::DataSymbolType' (role 'dataSymbol', cardinality 0..*).
+'carnot::LaneSymbol' (role 'childLanes', cardinality 0..*) is associated with 'carnot::ISwimlaneSymbol' (role 'ISwimlaneSymbol203', cardinality 0..*).
+'carnot::DataSymbolType' (role 'DataSymbolType156', cardinality 0..*) is associated with 'carnot::DataType' (role 'data155', cardinality 0..*).
+'carnot::ApplicationType' (role 'application123', cardinality 0..*) is associated with 'carnot::ApplicationSymbolType' (role 'ApplicationSymbolType', cardinality 0..*).
+'carnot::ModelerSymbolType' (role 'ModelerSymbolType', cardinality 0..*) is associated with 'carnot::ModelerType' (role 'modeler', cardinality 0..*).
+'carnot::TriggerTypeType' (role 'carnot_TriggerTypeType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType219', cardinality 0..*).
+'carnot::AttributeType' (role 'attribute', cardinality 0..*) is associated with 'carnot::IdentifiableReference' (role 'IdentifiableReference', cardinality 0..*).
+'carnot::OrganizationType' (role 'organization', cardinality 0..*) is associated with 'carnot::OrganizationSymbolType' (role 'OrganizationSymbolType', cardinality 0..*).
+'carnot::LaneSymbol' (role 'lanes', cardinality 0..*) is associated with 'carnot::PoolSymbol' (role 'PoolSymbol201', cardinality 0..*).
+'carnot::GenericLinkConnectionType' (role 'linkInstances', cardinality 0..*) is associated with 'carnot::LinkTypeType' (role 'LinkTypeType', cardinality 0..*).
+'carnot::DataType' (role 'data158', cardinality 0..*) is associated with 'carnot::ConditionalPerformerType' (role 'ConditionalPerformerType159', cardinality 0..*).
+'carnot::ApplicationTypeType' (role 'ApplicationTypeType', cardinality 0..*) is associated with 'carnot::ApplicationType' (role 'applications', cardinality 0..*).
+'carnot::TransitionConnectionType' (role 'carnot_TransitionConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer54', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType239', cardinality 0..*) is associated with 'carnot::ConditionalPerformerType' (role 'carnot_ConditionalPerformerType', cardinality 0..*).
+'carnot::PerformsConnectionType' (role 'PerformsConnectionType', cardinality 0..*) is associated with 'carnot::IModelParticipantSymbol' (role 'participantSymbol', cardinality 0..*).
+'carnot::StartEventSymbol' (role 'StartEventSymbol355', cardinality 0..*) is associated with 'carnot::TriggersConnectionType' (role 'triggersConnections', cardinality 0..*).
+'carnot::IModelElement' (role 'carnot_IModelElement', cardinality 0..*) is associated with 'carnot::ViewableType' (role 'carnot_ViewableType', cardinality 0..*).
+'carnot::EventActionTypeType' (role 'EventActionTypeType', cardinality 0..*) is associated with 'carnot::AbstractEventAction' (role 'actionInstances', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'OrganizationSymbolType377', cardinality 0..*) is associated with 'carnot::WorksForConnectionType' (role 'memberRoles', cardinality 0..*).
+'carnot::EObject' (role 'carnot_EObject', cardinality 0..*) is associated with 'carnot::IdentifiableReference' (role 'carnot_IdentifiableReference', cardinality 0..*).
+'carnot::ParameterMappingType' (role 'carnot_ParameterMappingType', cardinality 0..*) is associated with 'carnot::TriggerType' (role 'carnot_TriggerType359', cardinality 0..*).
+'carnot::INodeSymbol' (role 'sourceSymbol', cardinality 0..*) is associated with 'carnot::GenericLinkConnectionType' (role 'GenericLinkConnectionType64', cardinality 0..*).
+'carnot::DataPathType' (role 'carnot_DataPathType', cardinality 0..*) is associated with 'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType290', cardinality 0..*).
+'carnot::SubProcessOfConnectionType' (role 'carnot_SubProcessOfConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer52', cardinality 0..*).
+'carnot::DataTypeType' (role 'type166', cardinality 0..*) is associated with 'carnot::DataType' (role 'DataType167', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType286', cardinality 0..*) is associated with 'carnot::TransitionType' (role 'carnot_TransitionType', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer38', cardinality 0..*) is associated with 'carnot::DataMappingConnectionType' (role 'carnot_DataMappingConnectionType', cardinality 0..*).
+'carnot::TextType' (role 'carnot_TextType', cardinality 0..*) is associated with 'carnot::AnnotationSymbolType' (role 'carnot_AnnotationSymbolType112', cardinality 0..*).
+'carnot::RoleSymbolType' (role 'RoleSymbolType', cardinality 0..*) is associated with 'carnot::RoleType' (role 'role', cardinality 0..*).
+'carnot::AttributeType' (role 'AttributeType', cardinality 0..*) is associated with 'carnot::IdentifiableReference' (role 'reference', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType241', cardinality 0..*).
+'carnot::DataType' (role 'DataType', cardinality 0..*) is associated with 'carnot::ConditionalPerformerType' (role 'conditionalPerformers', cardinality 0..*).
+'carnot::TriggerType' (role 'trigger', cardinality 0..*) is associated with 'carnot::StartEventSymbol' (role 'StartEventSymbol362', cardinality 0..*).
+'carnot::RoleSymbolType' (role 'RoleSymbolType337', cardinality 0..*) is associated with 'carnot::TeamLeadConnectionType' (role 'teams336', cardinality 0..*).
+'carnot::IdRefOwner' (role 'carnot_IdRefOwner', cardinality 0..*) is associated with 'carnot::IdRef' (role 'carnot_IdRef193', cardinality 0..*).
+'carnot::ViewType' (role 'carnot_ViewType374', cardinality 0..*) is associated with 'carnot::ViewableType' (role 'carnot_ViewableType375', cardinality 0..*).
+'carnot::ExternalPackage' (role 'carnot_ExternalPackage', cardinality 0..*) is associated with 'carnot::IdRef' (role 'carnot_IdRef', cardinality 0..*).
+'carnot::TextSymbolType' (role 'carnot_TextSymbolType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer36', cardinality 0..*).
+'carnot::DataSymbolType' (role 'DataSymbolType', cardinality 0..*) is associated with 'carnot::DataMappingConnectionType' (role 'dataMappings141', cardinality 0..*).
+'carnot::ModelerSymbolType' (role 'modelerSymbols', cardinality 0..*) is associated with 'carnot::ModelerType' (role 'ModelerType', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'organizationSymbols', cardinality 0..*) is associated with 'carnot::OrganizationType' (role 'OrganizationType', cardinality 0..*).
+'carnot::ApplicationSymbolType' (role 'ApplicationSymbolType190', cardinality 0..*) is associated with 'carnot::ExecutedByConnectionType' (role 'executingActivities189', cardinality 0..*).
+'carnot::INodeSymbol' (role 'targetSymbol', cardinality 0..*) is associated with 'carnot::GenericLinkConnectionType' (role 'GenericLinkConnectionType', cardinality 0..*).
+'carnot::INodeSymbol' (role 'INodeSymbol199', cardinality 0..*) is associated with 'carnot::GenericLinkConnectionType' (role 'inLinks', cardinality 0..*).
+'carnot::ISwimlaneSymbol' (role 'performedSwimlanes', cardinality 0..*) is associated with 'carnot::IModelParticipant' (role 'IModelParticipant', cardinality 0..*).
+'carnot::DescriptionType' (role 'carnot_DescriptionType136', cardinality 0..*) is associated with 'carnot::ContextType' (role 'carnot_ContextType135', cardinality 0..*).
+'carnot::ApplicationContextTypeType' (role 'ApplicationContextTypeType', cardinality 0..*) is associated with 'carnot::ContextType' (role 'contexts', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType245', cardinality 0..*) is associated with 'carnot::ScriptType' (role 'carnot_ScriptType', cardinality 0..*).
+'carnot::RoleSymbolType' (role 'participantSymbol315', cardinality 0..*) is associated with 'carnot::WorksForConnectionType' (role 'WorksForConnectionType316', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'organizationSymbol259', cardinality 0..*) is associated with 'carnot::WorksForConnectionType' (role 'WorksForConnectionType', cardinality 0..*).
+'carnot::GenericLinkConnectionType' (role 'outLinks', cardinality 0..*) is associated with 'carnot::INodeSymbol' (role 'INodeSymbol', cardinality 0..*).
+'carnot::ConditionalPerformerSymbolType' (role 'ConditionalPerformerSymbolType', cardinality 0..*) is associated with 'carnot::ConditionalPerformerType' (role 'participant133', cardinality 0..*).
+'carnot::DataType' (role 'DataType266', cardinality 0..*) is associated with 'carnot::ParameterMappingType' (role 'parameterMappings', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType243', cardinality 0..*) is associated with 'carnot::ExternalPackages' (role 'carnot_ExternalPackages', cardinality 0..*).
+'carnot::ActivityType' (role 'ActivityType295', cardinality 0..*) is associated with 'carnot::ProcessDefinitionType' (role 'implementationProcess', cardinality 0..*).
+'carnot::OrganizationType' (role 'carnot_OrganizationType262', cardinality 0..*) is associated with 'carnot::ParticipantType' (role 'carnot_ParticipantType', cardinality 0..*).
+'carnot::AccessPointType' (role 'carnot_AccessPointType', cardinality 0..*) is associated with 'carnot::IAccessPointOwner' (role 'carnot_IAccessPointOwner', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer50', cardinality 0..*) is associated with 'carnot::RefersToConnectionType' (role 'carnot_RefersToConnectionType', cardinality 0..*).
+'carnot::ActivityType' (role 'ActivityType351', cardinality 0..*) is associated with 'carnot::TransitionType' (role 'inTransitions350', cardinality 0..*).
+'carnot::PerformsConnectionType' (role 'carnot_PerformsConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer46', cardinality 0..*).
+'carnot::TransitionConnectionType' (role 'TransitionConnectionType353', cardinality 0..*) is associated with 'carnot::TransitionType' (role 'transition', cardinality 0..*).
+'carnot::ContextType' (role 'carnot_ContextType', cardinality 0..*) is associated with 'carnot::ApplicationType' (role 'carnot_ApplicationType', cardinality 0..*).
+'carnot::GenericLinkConnectionType' (role 'carnot_GenericLinkConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer42', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer28', cardinality 0..*) is associated with 'carnot::ProcessSymbolType' (role 'carnot_ProcessSymbolType', cardinality 0..*).
+'carnot::ApplicationType' (role 'ApplicationType', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'executedActivities', cardinality 0..*).
+'carnot::IGraphicalObject' (role 'to', cardinality 0..*) is associated with 'carnot::RefersToConnectionType' (role 'RefersToConnectionType', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType251', cardinality 0..*) is associated with 'carnot::LinkTypeType' (role 'carnot_LinkTypeType', cardinality 0..*).
+'carnot::ExecutedByConnectionType' (role 'ExecutedByConnectionType115', cardinality 0..*) is associated with 'carnot::ApplicationSymbolType' (role 'applicationSymbol', cardinality 0..*).
+'carnot::DataType' (role 'carnot_DataType226', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType225', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'ActivitySymbolType139', cardinality 0..*) is associated with 'carnot::DataMappingConnectionType' (role 'dataMappings', cardinality 0..*).
+'carnot::EventConditionTypeType' (role 'EventConditionTypeType', cardinality 0..*) is associated with 'carnot::EventHandlerType' (role 'eventHandlers', cardinality 0..*).
+'carnot::EventConditionTypeType' (role 'carnot_EventConditionTypeType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType221', cardinality 0..*).
+'carnot::IModelParticipantSymbol' (role 'IModelParticipantSymbol', cardinality 0..*) is associated with 'carnot::PerformsConnectionType' (role 'performedActivities276', cardinality 0..*).
+'carnot::ExecutedByConnectionType' (role 'carnot_ExecutedByConnectionType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer40', cardinality 0..*).
+'carnot::TriggersConnectionType' (role 'TriggersConnectionType', cardinality 0..*) is associated with 'carnot::IModelParticipantSymbol' (role 'participantSymbol78', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType228', cardinality 0..*) is associated with 'carnot::ApplicationType' (role 'carnot_ApplicationType229', cardinality 0..*).
+'carnot::TransitionType' (role 'carnot_TransitionType344', cardinality 0..*) is associated with 'carnot::XmlTextNode' (role 'carnot_XmlTextNode345', cardinality 0..*).
+'carnot::ActivityType' (role 'carnot_ActivityType110', cardinality 0..*) is associated with 'carnot::LoopType' (role 'carnot_LoopType', cardinality 0..*).
+'carnot::EventHandlerType' (role 'carnot_EventHandlerType184', cardinality 0..*) is associated with 'carnot::UnbindActionType' (role 'carnot_UnbindActionType', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType247', cardinality 0..*) is associated with 'carnot::TypeDeclarationsType' (role 'carnot_TypeDeclarationsType', cardinality 0..*).
+'carnot::TransitionType' (role 'TransitionType106', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'from_105', cardinality 0..*).
+'carnot::EventActionType' (role 'carnot_EventActionType', cardinality 0..*) is associated with 'carnot::EventHandlerType' (role 'carnot_EventHandlerType182', cardinality 0..*).
+'carnot::ActivityType' (role 'carnot_ActivityType108', cardinality 0..*) is associated with 'carnot::Code' (role 'carnot_Code', cardinality 0..*).
+'carnot::RoleType' (role 'RoleType', cardinality 0..*) is associated with 'carnot::OrganizationType' (role 'teams', cardinality 0..*).
+'carnot::extensions::FormalParameterMappingType' (role 'carnot_extensions_FormalParameterMappingType382', cardinality 0..*) is associated with 'extensions::carnot::FormalParameterType' (role 'extensions_carnot_FormalParameterType', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer48', cardinality 0..*) is associated with 'carnot::TriggersConnectionType' (role 'carnot_TriggersConnectionType', cardinality 0..*).
+'carnot::ActivityType' (role 'ActivityType121', cardinality 0..*) is associated with 'carnot::ApplicationType' (role 'application', cardinality 0..*).
+'carnot::OrganizationType' (role 'OrganizationType320', cardinality 0..*) is associated with 'carnot::RoleType' (role 'teamLead', cardinality 0..*).
+'carnot::ISwimlaneSymbol' (role 'parentLane', cardinality 0..*) is associated with 'carnot::LaneSymbol' (role 'LaneSymbol', cardinality 0..*).
+'carnot::Code' (role 'carnot_Code308', cardinality 0..*) is associated with 'carnot::QualityControlType' (role 'carnot_QualityControlType307', cardinality 0..*).
+'carnot::ExecutedByConnectionType' (role 'ExecutedByConnectionType', cardinality 0..*) is associated with 'carnot::ActivitySymbolType' (role 'activitySymbol87', cardinality 0..*).
+'carnot::PartOfConnectionType' (role 'superOrganizations', cardinality 0..*) is associated with 'carnot::OrganizationSymbolType' (role 'OrganizationSymbolType272', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType253', cardinality 0..*) is associated with 'carnot::ViewType' (role 'carnot_ViewType', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer12', cardinality 0..*) is associated with 'carnot::ConditionalPerformerSymbolType' (role 'carnot_ConditionalPerformerSymbolType', cardinality 0..*).
+'carnot::WorksForConnectionType' (role 'organizationMemberships', cardinality 0..*) is associated with 'carnot::RoleSymbolType' (role 'RoleSymbolType379', cardinality 0..*).
+'carnot::TeamLeadConnectionType' (role 'teamLead333', cardinality 0..*) is associated with 'carnot::OrganizationSymbolType' (role 'OrganizationSymbolType334', cardinality 0..*).
+'carnot::OrganizationType' (role 'carnot_OrganizationType', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType237', cardinality 0..*).
+'carnot::ParticipantType' (role 'ParticipantType', cardinality 0..*) is associated with 'carnot::IModelParticipant' (role 'participant75', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType298', cardinality 0..*) is associated with 'carnot::FormalParametersType' (role 'carnot_FormalParametersType', cardinality 0..*).
+'carnot::DataTypeType' (role 'carnot_DataTypeType', cardinality 0..*) is associated with 'carnot::AccessPointType' (role 'carnot_AccessPointType81', cardinality 0..*).
+'carnot::BindActionType' (role 'carnot_BindActionType', cardinality 0..*) is associated with 'carnot::EventHandlerType' (role 'carnot_EventHandlerType180', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'ActivitySymbolType', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'activity', cardinality 0..*).
+'carnot::ActivityType' (role 'executingActivities', cardinality 0..*) is associated with 'carnot::ProcessDefinitionType' (role 'ProcessDefinitionType', cardinality 0..*).
+'carnot::RoleType' (role 'RoleType313', cardinality 0..*) is associated with 'carnot::RoleSymbolType' (role 'roleSymbols', cardinality 0..*).
+'carnot::PublicInterfaceSymbol' (role 'carnot_PublicInterfaceSymbol', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer30', cardinality 0..*).
+'extensions::carnot::DataType' (role 'extensions_carnot_DataType', cardinality 0..*) is associated with 'carnot::extensions::FormalParameterMappingType' (role 'carnot_extensions_FormalParameterMappingType', cardinality 0..*).
+'carnot::ParticipantType' (role 'participantAssociations', cardinality 0..*) is associated with 'carnot::IModelParticipant' (role 'IModelParticipant268', cardinality 0..*).
+'carnot::IGraphicalObject' (role 'IGraphicalObject', cardinality 0..*) is associated with 'carnot::RefersToConnectionType' (role 'referingFromConnections', cardinality 0..*).
+'carnot::ActivityType' (role 'ActivityType327', cardinality 0..*) is associated with 'carnot::StartEventSymbol' (role 'startingEventSymbols326', cardinality 0..*).
+'carnot::ViewType' (role 'carnot_ViewType370', cardinality 0..*) is associated with 'carnot::ViewType' (role 'carnot_ViewType372', cardinality 0..*).
+'carnot::ContextType' (role 'ContextType', cardinality 0..*) is associated with 'carnot::ApplicationContextTypeType' (role 'type', cardinality 0..*).
+'carnot::ExecutedByConnectionType' (role 'executedByConnections', cardinality 0..*) is associated with 'carnot::ActivitySymbolType' (role 'ActivitySymbolType187', cardinality 0..*).
+'carnot::IModelParticipant' (role 'carnot_IModelParticipant', cardinality 0..*) is associated with 'carnot::ISwimlaneSymbol' (role 'carnot_ISwimlaneSymbol', cardinality 0..*).
+'carnot::ExternalReferenceType' (role 'carnot_ExternalReferenceType', cardinality 0..*) is associated with 'carnot::DataType' (role 'carnot_DataType', cardinality 0..*).
+'carnot::AbstractEventAction' (role 'AbstractEventAction', cardinality 0..*) is associated with 'carnot::EventActionTypeType' (role 'type176', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType288', cardinality 0..*) is associated with 'carnot::TriggerType' (role 'carnot_TriggerType', cardinality 0..*).
+'carnot::GatewaySymbol' (role 'GatewaySymbol', cardinality 0..*) is associated with 'carnot::ActivitySymbolType' (role 'activitySymbol91', cardinality 0..*).
+'carnot::EventConditionTypeType' (role 'type178', cardinality 0..*) is associated with 'carnot::EventHandlerType' (role 'EventHandlerType', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'suborganizationSymbol', cardinality 0..*) is associated with 'carnot::PartOfConnectionType' (role 'PartOfConnectionType', cardinality 0..*).
+'carnot::ApplicationType' (role 'ApplicationType126', cardinality 0..*) is associated with 'carnot::ApplicationTypeType' (role 'type125', cardinality 0..*).
+'carnot::EStringToStringMapEntry' (role 'carnot_EStringToStringMapEntry172', cardinality 0..*) is associated with 'carnot::DocumentRoot' (role 'carnot_DocumentRoot171', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer26', cardinality 0..*) is associated with 'carnot::OrganizationSymbolType' (role 'carnot_OrganizationSymbolType', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'carnot_ActivitySymbolType', cardinality 0..*) is associated with 'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer', cardinality 0..*).
+'carnot::IFlowObjectSymbol' (role 'IFlowObjectSymbol340', cardinality 0..*) is associated with 'carnot::TransitionConnectionType' (role 'inTransitions', cardinality 0..*).
+'carnot::TriggerType' (role 'triggers', cardinality 0..*) is associated with 'carnot::TriggerTypeType' (role 'TriggerTypeType', cardinality 0..*).
+'carnot::ApplicationSymbolType' (role 'applicationSymbols', cardinality 0..*) is associated with 'carnot::ApplicationType' (role 'ApplicationType117', cardinality 0..*).
+'carnot::ActivityType' (role 'carnot_ActivityType284', cardinality 0..*) is associated with 'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType283', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer14', cardinality 0..*) is associated with 'carnot::DataSymbolType' (role 'carnot_DataSymbolType', cardinality 0..*).
+'carnot::EStringToStringMapEntry' (role 'carnot_EStringToStringMapEntry', cardinality 0..*) is associated with 'carnot::DocumentRoot' (role 'carnot_DocumentRoot', cardinality 0..*).
+'carnot::TransitionType' (role 'TransitionType', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'to103', cardinality 0..*).
+'carnot::PoolSymbol' (role 'PoolSymbol', cardinality 0..*) is associated with 'carnot::DiagramType' (role 'diagram', cardinality 0..*).
+'carnot::IGraphicalObject' (role 'IGraphicalObject311', cardinality 0..*) is associated with 'carnot::RefersToConnectionType' (role 'referingToConnections', cardinality 0..*).
+'carnot::DataSymbolType' (role 'dataSymbols', cardinality 0..*) is associated with 'carnot::DataType' (role 'DataType148', cardinality 0..*).
+'carnot::ModelType' (role 'carnot_ModelType', cardinality 0..*) is associated with 'carnot::DocumentRoot' (role 'carnot_DocumentRoot174', cardinality 0..*).
+'carnot::ISwimlaneSymbol' (role 'ISwimlaneSymbol', cardinality 0..*) is associated with 'carnot::IModelParticipant' (role 'participant', cardinality 0..*).
+'carnot::RefersToConnectionType' (role 'RefersToConnectionType61', cardinality 0..*) is associated with 'carnot::IGraphicalObject' (role 'from_', cardinality 0..*).
+'carnot::ActivityType' (role 'startActivity', cardinality 0..*) is associated with 'carnot::StartEventSymbol' (role 'StartEventSymbol', cardinality 0..*).
+'carnot::IModelParticipant' (role 'carnot_IModelParticipant99', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'carnot_ActivityType98', cardinality 0..*).
+'carnot::LaneSymbol' (role 'LaneSymbol281', cardinality 0..*) is associated with 'carnot::PoolSymbol' (role 'parentPool', cardinality 0..*).
+'carnot::TransitionConnectionType' (role 'transitionConnections', cardinality 0..*) is associated with 'carnot::TransitionType' (role 'TransitionType342', cardinality 0..*).
+'carnot::OrganizationSymbolType' (role 'OrganizationSymbolType270', cardinality 0..*) is associated with 'carnot::PartOfConnectionType' (role 'subOrganizations', cardinality 0..*).
+'carnot::extensions::FormalParameterMappingsType' (role 'carnot_extensions_FormalParameterMappingsType', cardinality 0..*) is associated with 'FormalParameterMappingType' (role 'FormalParameterMappingType', cardinality 0..*).
+'carnot::IModelParticipant' (role 'performer', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'ActivityType', cardinality 0..*).
+'carnot::IModelParticipant' (role 'IModelParticipant96', cardinality 0..*) is associated with 'carnot::ActivityType' (role 'performedActivities', cardinality 0..*).
+'carnot::DataTypeType' (role 'carnot_DataTypeType213', cardinality 0..*) is associated with 'carnot::ModelType' (role 'carnot_ModelType212', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'ProcessDefinitionType302', cardinality 0..*) is associated with 'carnot::ProcessSymbolType' (role 'processSymbols', cardinality 0..*).
+'carnot::ActivityType' (role 'ActivityType348', cardinality 0..*) is associated with 'carnot::TransitionType' (role 'outTransitions347', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType292', cardinality 0..*) is associated with 'carnot::DiagramType' (role 'carnot_DiagramType293', cardinality 0..*).
+'carnot::DataPathType' (role 'dataPaths', cardinality 0..*) is associated with 'carnot::DataType' (role 'DataType146', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType300', cardinality 0..*) is associated with 'FormalParameterMappingsType' (role 'FormalParameterMappingsType', cardinality 0..*).
+'carnot::ISymbolContainer' (role 'carnot_ISymbolContainer24', cardinality 0..*) is associated with 'carnot::ModelerSymbolType' (role 'carnot_ModelerSymbolType', cardinality 0..*).
+'carnot::ActivitySymbolType' (role 'ActivitySymbolType195', cardinality 0..*) is associated with 'carnot::GatewaySymbol' (role 'gatewaySymbols', cardinality 0..*).
+'carnot::ProcessDefinitionType' (role 'carnot_ProcessDefinitionType279', cardinality 0..*) is associated with 'carnot::PoolSymbol' (role 'carnot_PoolSymbol', cardinality 0..*).
+'carnot::ParameterMappingType' (role 'ParameterMappingType', cardinality 0..*) is associated with 'carnot::DataType' (role 'data163', cardinality 0..*).

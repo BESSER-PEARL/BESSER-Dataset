@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/DevBoost/EMFText/Core/Tests/org.emftext.test/src/org/emftext/test/genclass_sorting/iec61131.ecore

@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'uppaalSMC::NSTA' has no attributes.
+The class 'Type' has no attributes.
+The class 'NTA' has no attributes.
+The class 'Expression' has no attributes.
+The class 'uppaalSMC::ExponentialLocation' has no attributes.
+The class 'Edge' has no attributes.
+The class 'Location' has no attributes.
+The class 'uppaalSMC::DoubleType' has no attributes.
+The class 'uppaalSMC::ChanceNode' has no attributes.
+The class 'uppaalSMC::ChanceEdge' has the following attributes: 'weight' of type int.
+'uppaalSMC::ChanceNode' is a specialization of 'Location'.
+'uppaalSMC::NSTA' is a specialization of 'NTA'.
+'uppaalSMC::ChanceEdge' is a specialization of 'Edge'.
+'uppaalSMC::DoubleType' is a specialization of 'Type'.
+'uppaalSMC::ExponentialLocation' is a specialization of 'Location'.
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'uppaalSMC::ExponentialLocation' (role 'uppaalSMC_ExponentialLocation', cardinality 0..*).
+'uppaalSMC::NSTA' (role 'uppaalSMC_NSTA', cardinality 0..*) is associated with 'uppaalSMC::DoubleType' (role 'uppaalSMC_DoubleType', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/melange/tests/fr.inria.diverse.melange.tests/tests-inputs/metamodels/merge/ConflictingAttribute.ecore

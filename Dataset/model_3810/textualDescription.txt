@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'example::Player' has the following attributes: 'compression1' of type str.
+The class 'example::Codec' has no attributes.
+'example::Codec' (role 'example_Codec', cardinality 0..*) is associated with 'example::Player' (role 'example_Player', cardinality 0..*).

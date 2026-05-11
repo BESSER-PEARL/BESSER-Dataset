@@ -1,0 +1,65 @@
+The model has 21 class(es).
+The class 'HyLinearTemporalElement' has no attributes.
+The class 'feature::HyEnumLiteral' has no attributes.
+The class 'feature::HyVersion' has the following attributes: 'number' of type str.
+The class 'feature::HyNumberAttribute' has the following attributes: 'default' of type int; 'min' of type int; 'max' of type int.
+The class 'feature::HyFeatureAttribute' has no attributes.
+The class 'HyTemporalElement' has no attributes.
+The class 'feature::HyEnum' has no attributes.
+The class 'HyNamedElement' has no attributes.
+The class 'feature::HyContextModel' has no attributes.
+The class 'feature::HyFeature' has the following attributes: 'deprecatedSince' of type date.
+The class 'feature::HyGroupComposition' has no attributes.
+The class 'feature::HyFeatureType' has the following attributes: 'type' of type str.
+The class 'feature::HyRootFeature' has no attributes.
+The class 'feature::HyFeatureModel' has no attributes.
+The class 'feature::HyStringAttribute' has the following attributes: 'default' of type str.
+The class 'feature::HyGroupType' has the following attributes: 'type' of type str.
+The class 'HyFeatureAttribute' has no attributes.
+The class 'feature::HyFeatureChild' has no attributes.
+The class 'feature::HyBooleanAttribute' has the following attributes: 'default' of type bool.
+The class 'feature::HyGroup' has no attributes.
+The class 'feature::HyEnumAttribute' has no attributes.
+The enumeration 'HyGroupTypeEnum' has the following literals: 'AND', 'ALTERNATIVE', 'OR'.
+The enumeration 'HyFeatureTypeEnum' has the following literals: 'MANDATORY', 'OPTIONAL'.
+'feature::HyFeatureType' is a specialization of 'HyLinearTemporalElement'.
+'feature::HyBooleanAttribute' is a specialization of 'HyFeatureAttribute'.
+'feature::HyNumberAttribute' is a specialization of 'HyFeatureAttribute'.
+'feature::HyFeatureAttribute' is a specialization of 'HyTemporalElement'.
+'feature::HyVersion' is a specialization of 'HyTemporalElement'.
+'feature::HyFeature' is a specialization of 'HyNamedElement'.
+'feature::HyFeatureChild' is a specialization of 'HyLinearTemporalElement'.
+'feature::HyFeature' is a specialization of 'HyTemporalElement'.
+'feature::HyEnumAttribute' is a specialization of 'HyFeatureAttribute'.
+'feature::HyGroupComposition' is a specialization of 'HyLinearTemporalElement'.
+'feature::HyGroupType' is a specialization of 'HyLinearTemporalElement'.
+'feature::HyStringAttribute' is a specialization of 'HyFeatureAttribute'.
+'feature::HyFeatureAttribute' is a specialization of 'HyNamedElement'.
+'feature::HyRootFeature' is a specialization of 'HyLinearTemporalElement'.
+'feature::HyGroup' is a specialization of 'HyTemporalElement'.
+'feature::HyFeature' (role 'feature_HyFeature', cardinality 0..*) is associated with 'feature::HyFeatureType' (role 'feature_HyFeatureType', cardinality 0..*).
+'feature::HyFeature' (role 'feature12', cardinality 0..*) is associated with 'feature::HyFeatureAttribute' (role 'HyFeatureAttribute', cardinality 0..*).
+'feature::HyRootFeature' (role 'feature_HyRootFeature38', cardinality 0..*) is associated with 'feature::HyFeature' (role 'feature_HyFeature39', cardinality 0..*).
+'feature::HyEnumAttribute' (role 'feature_HyEnumAttribute', cardinality 0..*) is associated with 'feature::HyEnum' (role 'feature_HyEnum32', cardinality 0..*).
+'feature::HyEnum' (role 'feature_HyEnum', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'feature_HyFeatureModel5', cardinality 0..*).
+'feature::HyFeatureChild' (role 'childOf', cardinality 0..*) is associated with 'feature::HyGroup' (role 'HyGroup48', cardinality 0..*).
+'feature::HyGroupComposition' (role 'parentOf', cardinality 0..*) is associated with 'feature::HyGroup' (role 'HyGroup41', cardinality 0..*).
+'feature::HyContextModel' (role 'feature_HyContextModel', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'feature_HyFeatureModel7', cardinality 0..*).
+'feature::HyFeature' (role 'feature', cardinality 0..*) is associated with 'feature::HyVersion' (role 'HyVersion', cardinality 0..*).
+'feature::HyEnumLiteral' (role 'feature_HyEnumLiteral', cardinality 0..*) is associated with 'feature::HyEnumAttribute' (role 'feature_HyEnumAttribute34', cardinality 0..*).
+'feature::HyFeature' (role 'HyFeature24', cardinality 0..*) is associated with 'feature::HyVersion' (role 'versions', cardinality 0..*).
+'feature::HyFeatureModel' (role 'feature_HyFeatureModel', cardinality 0..*) is associated with 'feature::HyRootFeature' (role 'feature_HyRootFeature', cardinality 0..*).
+'feature::HyFeatureAttribute' (role 'attributes', cardinality 0..*) is associated with 'feature::HyFeature' (role 'HyFeature36', cardinality 0..*).
+'feature::HyGroupComposition' (role 'HyGroupComposition17', cardinality 0..*) is associated with 'feature::HyGroup' (role 'compositionOf', cardinality 0..*).
+'feature::HyFeatureChild' (role 'parentOf45', cardinality 0..*) is associated with 'feature::HyFeature' (role 'HyFeature46', cardinality 0..*).
+'feature::HyFeature' (role 'features15', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'HyFeatureModel', cardinality 0..*).
+'feature::HyFeature' (role 'parent', cardinality 0..*) is associated with 'feature::HyFeatureChild' (role 'HyFeatureChild', cardinality 0..*).
+'feature::HyFeature' (role 'HyFeature', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'featureModel', cardinality 0..*).
+'feature::HyFeatureChild' (role 'HyFeatureChild19', cardinality 0..*) is associated with 'feature::HyGroup' (role 'childGroup', cardinality 0..*).
+'feature::HyVersion' (role 'supersedingVersions', cardinality 0..*) is associated with 'feature::HyVersion' (role 'HyVersion30', cardinality 0..*).
+'feature::HyGroupComposition' (role 'HyGroupComposition', cardinality 0..*) is associated with 'feature::HyFeature' (role 'features', cardinality 0..*).
+'feature::HyFeature' (role 'HyFeature43', cardinality 0..*) is associated with 'feature::HyGroupComposition' (role 'groupMembership', cardinality 0..*).
+'feature::HyGroupType' (role 'feature_HyGroupType', cardinality 0..*) is associated with 'feature::HyGroup' (role 'feature_HyGroup', cardinality 0..*).
+'feature::HyGroup' (role 'groups', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'HyFeatureModel22', cardinality 0..*).
+'feature::HyGroup' (role 'HyGroup', cardinality 0..*) is associated with 'feature::HyFeatureModel' (role 'featureModel3', cardinality 0..*).
+'feature::HyVersion' (role 'HyVersion27', cardinality 0..*) is associated with 'feature::HyVersion' (role 'supersededVersion', cardinality 0..*).

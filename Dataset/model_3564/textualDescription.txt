@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'pascal::expression' has no attributes.
+The class 'pascal::var::block' has no attributes.
+The class 'pascal::EObject' has no attributes.
+The class 'expression' has no attributes.
+The class 'pascal::statement' has no attributes.
+The class 'pascal::var::decl' has the following attributes: 'var_type' of type str; 'value' of type str; 'var_id' of type str.
+The class 'pascal::rel::expression' has the following attributes: 'second' of type str; 'open' of type str; 'close' of type str; 'first' of type str; 'op' of type str.
+The class 'pascal::atrib' has the following attributes: 'var_id' of type str.
+The class 'pascal::block' has no attributes.
+The class 'pascal::program' has the following attributes: 'name' of type str.
+The class 'pascal::var::list' has the following attributes: 'var_type' of type str; 'var_id' of type str; 'var_ids' of type str.
+The class 'pascal::arit::expression' has the following attributes: 'value' of type str.
+The class 'pascal::repetitive::arit::expression' has the following attributes: 'value' of type str; 'op' of type str.
+The class 'pascal::Pascal' has no attributes.
+The enumeration 'type' has the following literals: 'BOOLEAN', 'INTEGER', 'STRING'.
+'pascal::arit::expression' is a specialization of 'expression'.
+'pascal::rel::expression' is a specialization of 'expression'.
+'pascal::atrib' (role 'pascal_atrib', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement10', cardinality 0..*).
+'pascal::program' (role 'pascal_program', cardinality 0..*) is associated with 'pascal::Pascal' (role 'pascal_Pascal', cardinality 0..*).
+'pascal::var::block' (role 'pascal_var_block6', cardinality 0..*) is associated with 'pascal::EObject' (role 'pascal_EObject', cardinality 0..*).
+'pascal::var::block' (role 'pascal_var_block', cardinality 0..*) is associated with 'pascal::Pascal' (role 'pascal_Pascal2', cardinality 0..*).
+'pascal::repetitive::arit::expression' (role 'pascal_repetitive_arit_expression14', cardinality 0..*) is associated with 'pascal::repetitive::arit::expression' (role 'pascal_repetitive_arit_expression16', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression', cardinality 0..*) is associated with 'pascal::atrib' (role 'pascal_atrib12', cardinality 0..*).
+'pascal::Pascal' (role 'pascal_Pascal4', cardinality 0..*) is associated with 'pascal::block' (role 'pascal_block', cardinality 0..*).
+'pascal::arit::expression' (role 'pascal_arit_expression', cardinality 0..*) is associated with 'pascal::repetitive::arit::expression' (role 'pascal_repetitive_arit_expression', cardinality 0..*).
+'pascal::statement' (role 'pascal_statement', cardinality 0..*) is associated with 'pascal::block' (role 'pascal_block8', cardinality 0..*).

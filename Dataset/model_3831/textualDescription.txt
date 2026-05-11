@@ -1,0 +1,37 @@
+The model has 11 class(es).
+The class 'exhaustive::OperationsTest' has no attributes.
+The class 'exhaustive::AttributesTest' has the following attributes: 'orderedYes' of type str; 'unsettableNo' of type str; 'derivedYes' of type str; 'volatileNo' of type str; 'changeableYes' of type float; 'transientNo' of type str; 'uniqueNo' of type str; 'changeableNo' of type str; 'volatileYes' of type str; 'unsettableYes' of type str; 'idYes' of type str; 'lowerBound1' of type str; 'upperBoundN' of type str; 'defaultValue' of type str; 'upperBound0' of type str; 'upperBound1' of type date; 'uniqueYes' of type str; 'lowerBound2' of type str; 'lowerBound0' of type int; 'lowerBoundN' of type str; 'orderenedNo' of type str; 'idNo' of type str; 'transientYes' of type float; 'upperBound2' of type str; 'derivedNo' of type str.
+The class 'exhaustive::MultipleSuperTest' has no attributes.
+The class 'MultipleSuperTest' has no attributes.
+The class 'exhaustive::InterfaceTest' has no attributes.
+The class 'InterfaceTest' has no attributes.
+The class 'OperationsTest' has no attributes.
+The class 'exhaustive::AbstractTest' has no attributes.
+The class 'exhaustive::GenericTest' has the following attributes: 'genericAttr' of type str.
+The class 'AbstractTest' has no attributes.
+The class 'exhaustive::ReferencesTest' has no attributes.
+The enumeration 'UnserializableEnumTest' has the following literals: 'name1', 'name2'.
+The enumeration 'SerializableEnumTest' has the following literals: 'name3', 'name4'.
+'exhaustive::ReferencesTest' is a specialization of 'AbstractTest'.
+'exhaustive::MultipleSuperTest' is a specialization of 'InterfaceTest'.
+'exhaustive::MultipleSuperTest' is a specialization of 'AbstractTest'.
+'exhaustive::AbstractTest' is a specialization of 'OperationsTest'.
+'exhaustive::AttributesTest' is a specialization of 'InterfaceTest'.
+'exhaustive::InterfaceTest' is a specialization of 'OperationsTest'.
+'exhaustive::AttributesTest' is a specialization of 'MultipleSuperTest'.
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest34', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest35', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest16', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest17', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest8', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest28', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest29', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest32', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest31', cardinality 0..*).
+'exhaustive::MultipleSuperTest' (role 'exhaustive_MultipleSuperTest', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest5', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest14', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest13', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest25', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest26', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'ReferencesTest', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'opposite1', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'opposite2', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'AttributesTest', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest11', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest10', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest23', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest22', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest', cardinality 0..*) is associated with 'exhaustive::AbstractTest' (role 'exhaustive_AbstractTest', cardinality 0..*).
+'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest19', cardinality 0..*) is associated with 'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest20', cardinality 0..*).
+'exhaustive::AbstractTest' (role 'exhaustive_AbstractTest3', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest2', cardinality 0..*).
+'exhaustive::AttributesTest' (role 'exhaustive_AttributesTest38', cardinality 0..*) is associated with 'exhaustive::ReferencesTest' (role 'exhaustive_ReferencesTest37', cardinality 0..*).

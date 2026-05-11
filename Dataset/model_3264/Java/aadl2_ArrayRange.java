@@ -1,0 +1,42 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class aadl2_ArrayRange extends Element {
+
+    private String upperBound;
+    private String lowerBound;
+
+
+
+    public aadl2_ArrayRange(
+        String upperBound,        String lowerBound    ) {
+        super(
+        );
+        this.upperBound = upperBound;
+        this.lowerBound = lowerBound;
+    }
+
+
+    public String getUpperbound() {
+        return upperBound;
+    }
+
+    public void setUpperbound(String upperBound) {
+        this.upperBound = upperBound;
+    }
+    public String getLowerbound() {
+        return lowerBound;
+    }
+
+    public void setLowerbound(String lowerBound) {
+        this.lowerBound = lowerBound;
+    }
+
+
+}

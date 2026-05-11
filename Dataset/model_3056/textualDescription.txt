@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'entities::ReferenceProperty' has the following attributes: 'many' of type bool.
+The class 'entities::Property' has the following attributes: 'name' of type str.
+The class 'entities::SimpleProperty' has the following attributes: 'type' of type str.
+The class 'entities::Model' has no attributes.
+The class 'Property' has no attributes.
+The class 'entities::Entity' has the following attributes: 'name' of type str.
+'entities::ReferenceProperty' is a specialization of 'Property'.
+'entities::SimpleProperty' is a specialization of 'Property'.
+'entities::Entity' (role 'entities_Entity1', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity3', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity5', cardinality 0..*) is associated with 'entities::Property' (role 'entities_Property', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity7', cardinality 0..*) is associated with 'entities::ReferenceProperty' (role 'entities_ReferenceProperty', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity', cardinality 0..*) is associated with 'entities::Model' (role 'entities_Model', cardinality 0..*).

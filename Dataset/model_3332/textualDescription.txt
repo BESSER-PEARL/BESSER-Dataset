@@ -1,0 +1,174 @@
+The model has 71 class(es).
+The class 'AbstractMClass' has no attributes.
+The class 'AbstractMPackageContainer' has no attributes.
+The class 'model::MExternalClass' has no attributes.
+The class 'AbstractMDeclaredType' has no attributes.
+The class 'AbstractMMethodImplementation' has no attributes.
+The class 'model::AbstractMDeclaredType' has the following attributes: 'name' of type str.
+The class 'model::MMethodDeclarationParameter' has no attributes.
+The class 'model::CBlockStatement' has no attributes.
+The class 'AbstractMResource' has no attributes.
+The class 'AbstractMExternalType' has no attributes.
+The class 'model::MConstructorParameter' has the following attributes: 'final' of type bool.
+The class 'model::AbstractMTypeContainer' has no attributes.
+The class 'model::CUnparsedStatement' has the following attributes: 'code' of type str.
+The class 'model::MDeclaredMethodImplementation' has no attributes.
+The class 'model::MAbstractDeclaredClass' has no attributes.
+The class 'AbstractCStatement' has no attributes.
+The class 'model::CExpressionStatement' has no attributes.
+The class 'model::MExternalInterface' has no attributes.
+The class 'model::AbstractMClass' has no attributes.
+The class 'model::MInterfaceMethodDeclaration' has no attributes.
+The class 'model::AbstractMExternalType' has the following attributes: 'fullQualifiedName' of type str.
+The class 'AbstractCExpression' has no attributes.
+The class 'model::AbstractMResource' has the following attributes: 'derived' of type bool; 'name' of type str.
+The class 'model::MInstanceClassFieldDeclaration' has the following attributes: 'transient' of type bool.
+The class 'AbstractMTypeReference' has no attributes.
+The class 'model::AbstractMType' has no attributes.
+The class 'model::CConditionalExpression' has no attributes.
+The class 'model::AbstractMMethodDeclaration' has no attributes.
+The class 'model::MRoot' has no attributes.
+The class 'AbstractMImplementableMethodDeclaration' has no attributes.
+The class 'model::AbstractMTypeReference' has the following attributes: 'array' of type bool.
+The class 'model::MDeclaredInterface' has no attributes.
+The class 'model::AbstractMMethodLike' has no attributes.
+The class 'AbstractMTypeContainer' has no attributes.
+The class 'model::MPackage' has the following attributes: 'name' of type str.
+The class 'model::MConstantInterfaceFieldDeclaration' has no attributes.
+The class 'AbstractMType' has no attributes.
+The class 'model::MExternalTypeReference' has no attributes.
+The class 'model::AbstractModifiers' has the following attributes: 'synchronized' of type bool; 'visibility' of type str; 'final' of type bool.
+The class 'model::AbstractMClassFieldDeclaration' has the following attributes: 'visibility' of type str; 'final' of type bool.
+The class 'model::AbstractCExpression' has no attributes.
+The class 'AbstractMClassFieldDeclaration' has no attributes.
+The class 'model::MConstructor' has no attributes.
+The class 'model::MMethodImplementationParameter' has the following attributes: 'final' of type bool; 'name' of type str.
+The class 'model::MStaticClassFieldDeclaration' has no attributes.
+The class 'model::AbstractMImplementableMethodDeclaration' has no attributes.
+The class 'model::MCompilationUnit' has no attributes.
+The class 'AbstractMMethodLike' has no attributes.
+The class 'model::AbstractMFieldDeclaration' has no attributes.
+The class 'model::AbstractMInterface' has no attributes.
+The class 'model::MImplicitMethodDeclaration' has no attributes.
+The class 'model::AbstractMPackageContainer' has no attributes.
+The class 'AbstractMFieldDeclaration' has no attributes.
+The class 'AbstractModifiers' has no attributes.
+The class 'model::MAbstractClassMethodDeclaration' has the following attributes: 'visibility' of type str.
+The class 'model::CIfStatement' has no attributes.
+The class 'model::AbstractMTypeWithNameDeclaration' has the following attributes: 'name' of type str.
+The class 'model::AbstractMMethodImplementation' has no attributes.
+The class 'model::AbstractCStatement' has no attributes.
+The class 'AbstractMMethodDeclaration' has no attributes.
+The class 'AbstractMInterface' has no attributes.
+The class 'MDeclaredClass' has no attributes.
+The class 'model::CDeclarationStatement' has the following attributes: 'final' of type bool.
+The class 'model::MDeclaredTypeReference' has no attributes.
+The class 'AbstractMTypeWithNameDeclaration' has no attributes.
+The class 'model::MResource' has the following attributes: 'content' of type str.
+The class 'model::MDeclaredClass' has no attributes.
+The class 'model::MPrimitiveTypeReference' has the following attributes: 'type' of type str.
+The class 'model::MNativeMethodDeclaration' has no attributes.
+The class 'model::CUnparsedExpression' has the following attributes: 'code' of type str.
+The class 'model::MDirectMethodImplementation' has no attributes.
+The enumeration 'MVisibility' has the following literals: 'PROTECTED', 'PRIVATE', 'DEFAULT', 'PUBLIC'.
+The enumeration 'MPrimitiveTypes' has the following literals: 'int', 'char', 'boolean', 'byte', 'short', 'long', 'double', 'float'.
+'model::MDeclaredClass' is a specialization of 'AbstractMDeclaredType'.
+'model::CDeclarationStatement' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'model::AbstractMFieldDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'model::AbstractMMethodDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'model::CExpressionStatement' is a specialization of 'AbstractCStatement'.
+'model::MStaticClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+'model::MConstructorParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'model::CUnparsedStatement' is a specialization of 'AbstractCStatement'.
+'model::MDeclaredClass' is a specialization of 'AbstractMClass'.
+'model::MExternalClass' is a specialization of 'AbstractMClass'.
+'model::AbstractMInterface' is a specialization of 'AbstractMType'.
+'model::MDeclaredMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+'model::MAbstractDeclaredClass' is a specialization of 'MDeclaredClass'.
+'model::CUnparsedExpression' is a specialization of 'AbstractCExpression'.
+'model::MExternalTypeReference' is a specialization of 'AbstractMTypeReference'.
+'model::CConditionalExpression' is a specialization of 'AbstractCExpression'.
+'model::MExternalInterface' is a specialization of 'AbstractMExternalType'.
+'model::MPackage' is a specialization of 'AbstractMPackageContainer'.
+'model::CBlockStatement' is a specialization of 'AbstractCStatement'.
+'model::MConstantInterfaceFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+'model::CIfStatement' is a specialization of 'AbstractCStatement'.
+'model::MMethodDeclarationParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'model::AbstractMClass' is a specialization of 'AbstractMType'.
+'model::MNativeMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'model::MInstanceClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+'model::MDeclaredInterface' is a specialization of 'AbstractMDeclaredType'.
+'model::AbstractMDeclaredType' is a specialization of 'AbstractMTypeContainer'.
+'model::MPrimitiveTypeReference' is a specialization of 'AbstractMTypeReference'.
+'model::MDirectMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+'model::MAbstractClassMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+'model::CDeclarationStatement' is a specialization of 'AbstractCStatement'.
+'model::AbstractMImplementableMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'model::MExternalClass' is a specialization of 'AbstractMExternalType'.
+'model::MConstructor' is a specialization of 'AbstractMMethodLike'.
+'model::MDeclaredTypeReference' is a specialization of 'AbstractMTypeReference'.
+'model::MImplicitMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'model::MDeclaredInterface' is a specialization of 'AbstractMInterface'.
+'model::AbstractMMethodLike' is a specialization of 'AbstractModifiers'.
+'model::MCompilationUnit' is a specialization of 'AbstractMResource'.
+'model::MRoot' is a specialization of 'AbstractMPackageContainer'.
+'model::MInterfaceMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+'model::MCompilationUnit' is a specialization of 'AbstractMTypeContainer'.
+'model::MExternalInterface' is a specialization of 'AbstractMInterface'.
+'model::MResource' is a specialization of 'AbstractMResource'.
+'model::AbstractMClassFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+'model::AbstractMMethodImplementation' is a specialization of 'AbstractMMethodLike'.
+'model::MCompilationUnit' (role 'model_MCompilationUnit', cardinality 0..*) is associated with 'model::AbstractMType' (role 'model_AbstractMType', cardinality 0..*).
+'model::AbstractMDeclaredType' (role 'types', cardinality 0..*) is associated with 'model::AbstractMTypeContainer' (role 'AbstractMTypeContainer', cardinality 0..*).
+'model::MDeclaredInterface' (role 'model_MDeclaredInterface', cardinality 0..*) is associated with 'model::AbstractMInterface' (role 'model_AbstractMInterface35', cardinality 0..*).
+'model::MPackage' (role 'packages', cardinality 0..*) is associated with 'model::AbstractMPackageContainer' (role 'AbstractMPackageContainer', cardinality 0..*).
+'model::AbstractMTypeContainer' (role 'typeContainer', cardinality 0..*) is associated with 'model::AbstractMDeclaredType' (role 'AbstractMDeclaredType', cardinality 0..*).
+'model::AbstractMMethodImplementation' (role 'methodImplementation', cardinality 0..*) is associated with 'model::MMethodImplementationParameter' (role 'MMethodImplementationParameter', cardinality 0..*).
+'model::CExpressionStatement' (role 'model_CExpressionStatement', cardinality 0..*) is associated with 'model::AbstractCExpression' (role 'model_AbstractCExpression75', cardinality 0..*).
+'model::AbstractCStatement' (role 'model_AbstractCStatement83', cardinality 0..*) is associated with 'model::CIfStatement' (role 'model_CIfStatement82', cardinality 0..*).
+'model::MConstructorParameter' (role 'MConstructorParameter', cardinality 0..*) is associated with 'model::MConstructor' (role 'constructor', cardinality 0..*).
+'model::MDeclaredTypeReference' (role 'model_MDeclaredTypeReference', cardinality 0..*) is associated with 'model::AbstractMDeclaredType' (role 'model_AbstractMDeclaredType', cardinality 0..*).
+'model::MDeclaredClass' (role 'owner29', cardinality 0..*) is associated with 'model::AbstractMMethodImplementation' (role 'AbstractMMethodImplementation', cardinality 0..*).
+'model::MDeclaredClass' (role 'MDeclaredClass', cardinality 0..*) is associated with 'model::MStaticClassFieldDeclaration' (role 'staticFields', cardinality 0..*).
+'model::MDeclaredInterface' (role 'owner39', cardinality 0..*) is associated with 'model::MInterfaceMethodDeclaration' (role 'MInterfaceMethodDeclaration', cardinality 0..*).
+'model::AbstractMTypeReference' (role 'model_AbstractMTypeReference', cardinality 0..*) is associated with 'model::AbstractMTypeWithNameDeclaration' (role 'model_AbstractMTypeWithNameDeclaration', cardinality 0..*).
+'model::MAbstractDeclaredClass' (role 'owner33', cardinality 0..*) is associated with 'model::MAbstractClassMethodDeclaration' (role 'MAbstractClassMethodDeclaration', cardinality 0..*).
+'model::MMethodImplementationParameter' (role 'parameters62', cardinality 0..*) is associated with 'model::AbstractMMethodImplementation' (role 'AbstractMMethodImplementation63', cardinality 0..*).
+'model::MDeclaredMethodImplementation' (role 'implementations', cardinality 0..*) is associated with 'model::AbstractMImplementableMethodDeclaration' (role 'AbstractMImplementableMethodDeclaration', cardinality 0..*).
+'model::MConstantInterfaceFieldDeclaration' (role 'MConstantInterfaceFieldDeclaration', cardinality 0..*) is associated with 'model::MDeclaredInterface' (role 'owner37', cardinality 0..*).
+'model::MDeclaredClass' (role 'owner', cardinality 0..*) is associated with 'model::MStaticClassFieldDeclaration' (role 'MStaticClassFieldDeclaration', cardinality 0..*).
+'model::MDeclaredClass' (role 'model_MDeclaredClass22', cardinality 0..*) is associated with 'model::AbstractMInterface' (role 'model_AbstractMInterface', cardinality 0..*).
+'model::AbstractMResource' (role 'superOf', cardinality 0..*) is associated with 'model::AbstractMResource' (role 'AbstractMResource8', cardinality 0..*).
+'model::CIfStatement' (role 'model_CIfStatement', cardinality 0..*) is associated with 'model::AbstractCExpression' (role 'model_AbstractCExpression77', cardinality 0..*).
+'model::MDeclaredInterface' (role 'MDeclaredInterface52', cardinality 0..*) is associated with 'model::MInterfaceMethodDeclaration' (role 'methods', cardinality 0..*).
+'model::MRoot' (role 'root', cardinality 0..*) is associated with 'model::AbstractMExternalType' (role 'AbstractMExternalType', cardinality 0..*).
+'model::MConstructor' (role 'MConstructor', cardinality 0..*) is associated with 'model::MDeclaredClass' (role 'owner27', cardinality 0..*).
+'model::AbstractMClass' (role 'model_AbstractMClass', cardinality 0..*) is associated with 'model::MDeclaredClass' (role 'model_MDeclaredClass', cardinality 0..*).
+'model::MDeclaredClass' (role 'MDeclaredClass43', cardinality 0..*) is associated with 'model::MInstanceClassFieldDeclaration' (role 'instanceFields', cardinality 0..*).
+'model::CConditionalExpression' (role 'model_CConditionalExpression', cardinality 0..*) is associated with 'model::AbstractCExpression' (role 'model_AbstractCExpression85', cardinality 0..*).
+'model::MImplicitMethodDeclaration' (role 'MImplicitMethodDeclaration', cardinality 0..*) is associated with 'model::MDirectMethodImplementation' (role 'owner60', cardinality 0..*).
+'model::AbstractMImplementableMethodDeclaration' (role 'declaration49', cardinality 0..*) is associated with 'model::MDeclaredMethodImplementation' (role 'MDeclaredMethodImplementation', cardinality 0..*).
+'model::MNativeMethodDeclaration' (role 'MNativeMethodDeclaration', cardinality 0..*) is associated with 'model::MDeclaredClass' (role 'owner31', cardinality 0..*).
+'model::MPackage' (role 'MPackage5', cardinality 0..*) is associated with 'model::AbstractMResource' (role 'resources', cardinality 0..*).
+'model::AbstractCStatement' (role 'model_AbstractCStatement80', cardinality 0..*) is associated with 'model::CIfStatement' (role 'model_CIfStatement79', cardinality 0..*).
+'model::MDeclaredClass' (role 'MDeclaredClass65', cardinality 0..*) is associated with 'model::MConstructor' (role 'constructors', cardinality 0..*).
+'model::AbstractCExpression' (role 'model_AbstractCExpression88', cardinality 0..*) is associated with 'model::CConditionalExpression' (role 'model_CConditionalExpression87', cardinality 0..*).
+'model::CDeclarationStatement' (role 'model_CDeclarationStatement', cardinality 0..*) is associated with 'model::AbstractCExpression' (role 'model_AbstractCExpression73', cardinality 0..*).
+'model::CBlockStatement' (role 'model_CBlockStatement', cardinality 0..*) is associated with 'model::AbstractCStatement' (role 'model_AbstractCStatement71', cardinality 0..*).
+'model::AbstractCExpression' (role 'model_AbstractCExpression', cardinality 0..*) is associated with 'model::AbstractMFieldDeclaration' (role 'model_AbstractMFieldDeclaration', cardinality 0..*).
+'model::MRoot' (role 'MRoot', cardinality 0..*) is associated with 'model::AbstractMExternalType' (role 'externalTypes', cardinality 0..*).
+'model::MNativeMethodDeclaration' (role 'nativeMethods', cardinality 0..*) is associated with 'model::MDeclaredClass' (role 'MDeclaredClass54', cardinality 0..*).
+'model::AbstractMMethodDeclaration' (role 'methodDeclaration', cardinality 0..*) is associated with 'model::MMethodDeclarationParameter' (role 'MMethodDeclarationParameter', cardinality 0..*).
+'model::AbstractMPackageContainer' (role 'packageContainer', cardinality 0..*) is associated with 'model::MPackage' (role 'MPackage', cardinality 0..*).
+'model::MPackage' (role 'package', cardinality 0..*) is associated with 'model::AbstractMResource' (role 'AbstractMResource', cardinality 0..*).
+'model::MDeclaredClass' (role 'owner25', cardinality 0..*) is associated with 'model::MInstanceClassFieldDeclaration' (role 'MInstanceClassFieldDeclaration', cardinality 0..*).
+'model::CConditionalExpression' (role 'model_CConditionalExpression90', cardinality 0..*) is associated with 'model::AbstractCExpression' (role 'model_AbstractCExpression91', cardinality 0..*).
+'model::AbstractCStatement' (role 'model_AbstractCStatement', cardinality 0..*) is associated with 'model::AbstractMMethodLike' (role 'model_AbstractMMethodLike', cardinality 0..*).
+'model::MConstructorParameter' (role 'parameters68', cardinality 0..*) is associated with 'model::MConstructor' (role 'MConstructor69', cardinality 0..*).
+'model::MDeclaredInterface' (role 'MDeclaredInterface', cardinality 0..*) is associated with 'model::MConstantInterfaceFieldDeclaration' (role 'constants', cardinality 0..*).
+'model::AbstractMResource' (role 'derivedFrom', cardinality 0..*) is associated with 'model::AbstractMResource' (role 'AbstractMResource11', cardinality 0..*).
+'model::MExternalTypeReference' (role 'model_MExternalTypeReference', cardinality 0..*) is associated with 'model::AbstractMExternalType' (role 'model_AbstractMExternalType', cardinality 0..*).
+'model::AbstractMMethodImplementation' (role 'implementedMethods', cardinality 0..*) is associated with 'model::MDeclaredClass' (role 'MDeclaredClass56', cardinality 0..*).
+'model::MImplicitMethodDeclaration' (role 'declaration', cardinality 0..*) is associated with 'model::MDirectMethodImplementation' (role 'MDirectMethodImplementation', cardinality 0..*).
+'model::MAbstractDeclaredClass' (role 'MAbstractDeclaredClass', cardinality 0..*) is associated with 'model::MAbstractClassMethodDeclaration' (role 'abstractMethods', cardinality 0..*).
+'model::MMethodDeclarationParameter' (role 'parameters', cardinality 0..*) is associated with 'model::AbstractMMethodDeclaration' (role 'AbstractMMethodDeclaration', cardinality 0..*).

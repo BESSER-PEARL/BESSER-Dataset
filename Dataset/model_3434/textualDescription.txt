@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'school::store' has the following attributes: 'lastIn' of type str.
+The class 'school::ClassLevel' has the following attributes: 'level' of type int.
+The class 'school::Room' has the following attributes: 'location' of type str.
+The class 'school::Student' has the following attributes: 'name' of type str.
+The class 'school::SchoolYear' has the following attributes: 'year' of type date.
+The class 'school::NewEClass7' has no attributes.
+The class 'school::Teacher' has the following attributes: 'name' of type str.
+The class 'school::ClassGroup' has the following attributes: 'name' of type str.
+'school::ClassGroup' (role 'school_ClassGroup', cardinality 0..*) is associated with 'school::Student' (role 'school_Student', cardinality 0..*).
+'school::SchoolYear' (role 'school_SchoolYear13', cardinality 0..*) is associated with 'school::Student' (role 'school_Student14', cardinality 0..*).
+'school::ClassLevel' (role 'school_ClassLevel17', cardinality 0..*) is associated with 'school::SchoolYear' (role 'school_SchoolYear16', cardinality 0..*).
+'school::ClassGroup' (role 'school_ClassGroup11', cardinality 0..*) is associated with 'school::SchoolYear' (role 'school_SchoolYear', cardinality 0..*).
+'school::ClassGroup' (role 'school_ClassGroup6', cardinality 0..*) is associated with 'school::Room' (role 'school_Room', cardinality 0..*).
+'school::ClassLevel' (role 'school_ClassLevel', cardinality 0..*) is associated with 'school::ClassGroup' (role 'school_ClassGroup4', cardinality 0..*).
+'school::ClassGroup' (role 'school_ClassGroup2', cardinality 0..*) is associated with 'school::Teacher' (role 'school_Teacher', cardinality 0..*).
+'school::Teacher' (role 'school_Teacher8', cardinality 0..*) is associated with 'school::Room' (role 'school_Room9', cardinality 0..*).

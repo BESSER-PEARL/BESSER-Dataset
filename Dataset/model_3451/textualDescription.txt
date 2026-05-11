@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'School::School' has no attributes.
+The class 'School::SchoolRoom' has no attributes.
+The class 'School::Clock' has no attributes.
+The class 'School::Buzzer' has no attributes.
+'School::Buzzer' (role 'alarm', cardinality 0..*) is associated with 'School::Clock' (role 'Clock', cardinality 0..*).
+'School::Clock' (role 'School_Clock', cardinality 0..*) is associated with 'School::School' (role 'School_School2', cardinality 0..*).
+'School::Buzzer' (role 'School_Buzzer', cardinality 0..*) is associated with 'School::SchoolRoom' (role 'School_SchoolRoom4', cardinality 0..*).
+'School::SchoolRoom' (role 'School_SchoolRoom', cardinality 0..*) is associated with 'School::School' (role 'School_School', cardinality 0..*).
+'School::Clock' (role 'ring', cardinality 0..*) is associated with 'School::Buzzer' (role 'Buzzer', cardinality 0..*).

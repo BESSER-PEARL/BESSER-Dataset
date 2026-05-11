@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hegyibalint/BScThesisCode/hu.bme.mit.inf.qea.model/model/EventAutomatonModel.ecore

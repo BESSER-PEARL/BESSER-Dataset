@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'featureModel::GroupedFeature' has no attributes.
+The class 'Constant' has no attributes.
+The class 'featureModel::Group' has the following attributes: 'inclusive' of type bool.
+The class 'Expression' has no attributes.
+The class 'featureModel::SolitaryFeature' has the following attributes: 'required' of type str.
+The class 'featureModel::NULL' has no attributes.
+The class 'Feature' has no attributes.
+The class 'featureModel::Constant' has no attributes.
+The class 'featureModel::Number' has the following attributes: 'value' of type int.
+The class 'featureModel::BinaryOperation' has the following attributes: 'operator' of type str.
+The class 'featureModel::Identifier' has the following attributes: 'name' of type str.
+The class 'featureModel::Expression' has no attributes.
+The class 'featureModel::Feature' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'featureModel::Model' has no attributes.
+The class 'featureModel::UnaryOperation' has the following attributes: 'operator' of type str.
+The enumeration 'UnaryOperator' has the following literals: 'Minus', 'Not'.
+The enumeration 'BinaryOperator' has the following literals: 'And', 'Divide', 'Equals', 'Higher', 'Or', 'Subtract', 'Add', 'Lower', 'Multiply'.
+The enumeration 'SimpleType' has the following literals: 'boolean', 'String', 'nulltype', 'int', 'double'.
+The enumeration 'SolitaryType' has the following literals: 'Mandatory', 'Optional'.
+'featureModel::UnaryOperation' is a specialization of 'Expression'.
+'featureModel::Number' is a specialization of 'Constant'.
+'featureModel::SolitaryFeature' is a specialization of 'Feature'.
+'featureModel::Constant' is a specialization of 'Expression'.
+'featureModel::Identifier' is a specialization of 'Expression'.
+'featureModel::GroupedFeature' is a specialization of 'Feature'.
+'featureModel::NULL' is a specialization of 'Constant'.
+'featureModel::BinaryOperation' is a specialization of 'Expression'.
+'featureModel::Identifier' (role 'featureModel_Identifier', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature17', cardinality 0..*).
+'featureModel::GroupedFeature' (role 'featureModel_GroupedFeature', cardinality 0..*) is associated with 'featureModel::Group' (role 'featureModel_Group8', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature', cardinality 0..*) is associated with 'featureModel::Group' (role 'featureModel_Group', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature6', cardinality 0..*) is associated with 'featureModel::Model' (role 'featureModel_Model', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature2', cardinality 0..*) is associated with 'featureModel::SolitaryFeature' (role 'featureModel_SolitaryFeature', cardinality 0..*).
+'featureModel::Expression' (role 'featureModel_Expression', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature4', cardinality 0..*).
+'featureModel::Expression' (role 'featureModel_Expression15', cardinality 0..*) is associated with 'featureModel::UnaryOperation' (role 'featureModel_UnaryOperation', cardinality 0..*).
+'featureModel::BinaryOperation' (role 'featureModel_BinaryOperation12', cardinality 0..*) is associated with 'featureModel::Expression' (role 'featureModel_Expression13', cardinality 0..*).
+'featureModel::BinaryOperation' (role 'featureModel_BinaryOperation', cardinality 0..*) is associated with 'featureModel::Expression' (role 'featureModel_Expression10', cardinality 0..*).

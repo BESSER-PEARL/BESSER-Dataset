@@ -1,0 +1,42 @@
+The model has 19 class(es).
+The class 'soa::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'soa::Service' has the following attributes: 'name' of type str.
+The class 'soa::Module' has the following attributes: 'event' of type str; 'name' of type str; 'version' of type str.
+The class 'soa::EntitiesFeature' has no attributes.
+The class 'soa::Model' has no attributes.
+The class 'soa::Operation' has the following attributes: 'name' of type str.
+The class 'FeatureType' has no attributes.
+The class 'soa::FeatureType' has no attributes.
+The class 'soa::Exceptions' has no attributes.
+The class 'soa::Enum' has the following attributes: 'features' of type str.
+The class 'soa::Feature' has the following attributes: 'name' of type str.
+The class 'soa::Entities' has the following attributes: 'name' of type str.
+The class 'soa::PrimitiveFeature' has the following attributes: 'type' of type str.
+The class 'soa::Entity' has no attributes.
+The class 'soa::GenericListFeature' has no attributes.
+The class 'Entities' has no attributes.
+The class 'soa::Architecture' has the following attributes: 'name' of type str.
+The class 'soa::Exception' has the following attributes: 'name' of type str; 'msg' of type str.
+The class 'soa::Comment' has the following attributes: 'value' of type str.
+The enumeration 'PrimitiveType' has the following literals: 'Float', 'Decimal', 'Date', 'Integer', 'Timestamp', 'Double', 'Boolean', 'Long', 'Byte', 'Short', 'Datetime', 'String'.
+'soa::EntitiesFeature' is a specialization of 'FeatureType'.
+'soa::PrimitiveFeature' is a specialization of 'FeatureType'.
+'soa::GenericListFeature' is a specialization of 'FeatureType'.
+'soa::Enum' is a specialization of 'Entities'.
+'soa::Entity' is a specialization of 'Entities'.
+'soa::Feature' (role 'soa_Feature15', cardinality 0..*) is associated with 'soa::FeatureType' (role 'soa_FeatureType', cardinality 0..*).
+'soa::Module' (role 'soa_Module2', cardinality 0..*) is associated with 'soa::Import' (role 'soa_Import', cardinality 0..*).
+'soa::Feature' (role 'soa_Feature', cardinality 0..*) is associated with 'soa::Entity' (role 'soa_Entity', cardinality 0..*).
+'soa::Operation' (role 'soa_Operation31', cardinality 0..*) is associated with 'soa::Exception' (role 'soa_Exception32', cardinality 0..*).
+'soa::EntitiesFeature' (role 'soa_EntitiesFeature', cardinality 0..*) is associated with 'soa::Entities' (role 'soa_Entities17', cardinality 0..*).
+'soa::Module' (role 'soa_Module6', cardinality 0..*) is associated with 'soa::Exceptions' (role 'soa_Exceptions', cardinality 0..*).
+'soa::Operation' (role 'soa_Operation28', cardinality 0..*) is associated with 'soa::Feature' (role 'soa_Feature29', cardinality 0..*).
+'soa::Module' (role 'soa_Module4', cardinality 0..*) is associated with 'soa::Model' (role 'soa_Model', cardinality 0..*).
+'soa::Entities' (role 'soa_Entities', cardinality 0..*) is associated with 'soa::Model' (role 'soa_Model10', cardinality 0..*).
+'soa::Feature' (role 'soa_Feature13', cardinality 0..*) is associated with 'soa::Comment' (role 'soa_Comment', cardinality 0..*).
+'soa::Exception' (role 'soa_Exception', cardinality 0..*) is associated with 'soa::Exceptions' (role 'soa_Exceptions21', cardinality 0..*).
+'soa::Operation' (role 'soa_Operation25', cardinality 0..*) is associated with 'soa::Feature' (role 'soa_Feature26', cardinality 0..*).
+'soa::Architecture' (role 'soa_Architecture', cardinality 0..*) is associated with 'soa::Module' (role 'soa_Module', cardinality 0..*).
+'soa::Service' (role 'soa_Service23', cardinality 0..*) is associated with 'soa::Operation' (role 'soa_Operation', cardinality 0..*).
+'soa::Service' (role 'soa_Service', cardinality 0..*) is associated with 'soa::Module' (role 'soa_Module8', cardinality 0..*).
+'soa::FeatureType' (role 'soa_FeatureType19', cardinality 0..*) is associated with 'soa::GenericListFeature' (role 'soa_GenericListFeature', cardinality 0..*).

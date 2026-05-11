@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'XPath::NamedElement' has the following attributes: 'name' of type str.
+The class 'XPath::Expression' has no attributes.
+The class 'XPath::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'commentsBefore' of type str; 'location' of type str.
+The class 'LocatedElement' has no attributes.
+The class 'LiteralExp' has no attributes.
+The class 'XPath::LiteralExp' has no attributes.
+The class 'XPath::VariableExp' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'XPath::StringExp' has the following attributes: 'symbol' of type str.
+The class 'XPath::IntegerExp' has the following attributes: 'symbol' of type str.
+The class 'XPath::OperatorCallExp' has no attributes.
+'XPath::IntegerExp' is a specialization of 'LiteralExp'.
+'XPath::Expression' is a specialization of 'LocatedElement'.
+'XPath::StringExp' is a specialization of 'LiteralExp'.
+'XPath::OperatorCallExp' is a specialization of 'LocatedElement'.
+'XPath::LiteralExp' is a specialization of 'Expression'.
+'XPath::VariableExp' is a specialization of 'Expression'.
+'XPath::OperatorCallExp' is a specialization of 'NamedElement'.
+'XPath::NamedElement' is a specialization of 'LocatedElement'.
+'XPath::VariableExp' is a specialization of 'NamedElement'.
+'XPath::OperatorCallExp' (role 'XPath_OperatorCallExp2', cardinality 0..*) is associated with 'XPath::Expression' (role 'XPath_Expression3', cardinality 0..*).
+'XPath::OperatorCallExp' (role 'XPath_OperatorCallExp', cardinality 0..*) is associated with 'XPath::Expression' (role 'XPath_Expression', cardinality 0..*).

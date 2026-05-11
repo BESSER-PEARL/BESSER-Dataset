@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'traceabilitymodel::File' has the following attributes: 'URI' of type str; 'ID' of type str; 'name' of type str.
+The class 'traceabilitymodel::TraceableSegment' has the following attributes: 'startColumn' of type str; 'startLine' of type str; 'startPos' of type str; 'endLine' of type str; 'endColumn' of type str; 'endPos' of type str.
+The class 'traceabilitymodel::ModelElementRef' has the following attributes: 'ID' of type str; 'uri' of type str; 'featureRef' of type str; 'name' of type str.
+The class 'traceabilitymodel::Trace' has the following attributes: 'sourceOperationID' of type str; 'specificationName' of type str; 'sourceOperationName' of type str.
+The class 'traceabilitymodel::MetaModel' has the following attributes: 'name' of type str; 'nsUri' of type str.
+The class 'traceabilitymodel::Block' has the following attributes: 'endLine' of type str; 'startColumn' of type str; 'endColumn' of type str; 'startPos' of type str; 'endPos' of type str; 'startLine' of type str; 'ID' of type str; 'protectedBlock' of type bool.
+The class 'traceabilitymodel::TraceModel' has no attributes.
+'traceabilitymodel::Block' (role 'traceabilitymodel_Block', cardinality 0..*) is associated with 'traceabilitymodel::TraceableSegment' (role 'traceabilitymodel_TraceableSegment6', cardinality 0..*).
+'traceabilitymodel::File' (role 'traceabilitymodel_File18', cardinality 0..*) is associated with 'traceabilitymodel::Block' (role 'traceabilitymodel_Block19', cardinality 0..*).
+'traceabilitymodel::Trace' (role 'traceabilitymodel_Trace8', cardinality 0..*) is associated with 'traceabilitymodel::TraceModel' (role 'traceabilitymodel_TraceModel', cardinality 0..*).
+'traceabilitymodel::MetaModel' (role 'traceabilitymodel_MetaModel', cardinality 0..*) is associated with 'traceabilitymodel::ModelElementRef' (role 'traceabilitymodel_ModelElementRef', cardinality 0..*).
+'traceabilitymodel::TraceModel' (role 'traceabilitymodel_TraceModel15', cardinality 0..*) is associated with 'traceabilitymodel::MetaModel' (role 'traceabilitymodel_MetaModel16', cardinality 0..*).
+'traceabilitymodel::TraceModel' (role 'traceabilitymodel_TraceModel10', cardinality 0..*) is associated with 'traceabilitymodel::File' (role 'traceabilitymodel_File', cardinality 0..*).
+'traceabilitymodel::Trace' (role 'traceabilitymodel_Trace3', cardinality 0..*) is associated with 'traceabilitymodel::ModelElementRef' (role 'traceabilitymodel_ModelElementRef4', cardinality 0..*).
+'traceabilitymodel::TraceModel' (role 'traceabilitymodel_TraceModel12', cardinality 0..*) is associated with 'traceabilitymodel::ModelElementRef' (role 'traceabilitymodel_ModelElementRef13', cardinality 0..*).
+'traceabilitymodel::TraceableSegment' (role 'traceabilitymodel_TraceableSegment', cardinality 0..*) is associated with 'traceabilitymodel::Trace' (role 'traceabilitymodel_Trace', cardinality 0..*).

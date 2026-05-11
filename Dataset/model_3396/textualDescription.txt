@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'ramRoot::MTpos::::Man' has no attributes.
+The class 'MTpos::::Element' has no attributes.
+The class 'ramRoot::GenericNode' has no attributes.
+The class 'MT::::Element' has no attributes.
+The class 'ramRoot::MTpos::::Person' has the following attributes: 'name' of type str.
+The class 'ramRoot::MTpos::::Element' has no attributes.
+The class 'ramRoot::MTpre::::Classroom' has the following attributes: 'id' of type str.
+The class 'ramRoot::MT::::Element' has the following attributes: 'MT__isProcessed' of type bool; 'MT__label' of type str.
+The class 'ramRoot::MTpre::::Element' has the following attributes: 'MT__matchSubtype' of type bool.
+The class 'ramRoot::MTpos::::Classroom' has the following attributes: 'id' of type str.
+The class 'MTpre::::Person' has no attributes.
+The class 'MTpos::::Person' has no attributes.
+The class 'ramRoot::MTpre::::Person' has the following attributes: 'name' of type str.
+The class 'ramRoot::MTpos::::Woman' has no attributes.
+The class 'ramRoot::MTpre::::Woman' has no attributes.
+The class 'MTpre::::Element' has no attributes.
+The class 'ramRoot::MTpre::::Man' has no attributes.
+'ramRoot::GenericNode' is a specialization of 'MT::::Element'.
+'ramRoot::MTpre::::Man' is a specialization of 'MTpre::::Person'.
+'ramRoot::MTpos::::Classroom' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpos::::Woman' is a specialization of 'MTpos::::Person'.
+'ramRoot::MTpos::::Man' is a specialization of 'MTpos::::Person'.
+'ramRoot::MTpos::::Element' is a specialization of 'MT::::Element'.
+'ramRoot::MTpre::::Woman' is a specialization of 'MTpre::::Person'.
+'ramRoot::MTpre::::Element' is a specialization of 'MT::::Element'.
+'ramRoot::MTpos::::Person' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpre::::Classroom' is a specialization of 'MTpre::::Element'.
+'ramRoot::MTpre::::Person' is a specialization of 'MTpre::::Element'.
+'ramRoot::MTpos::::Person' (role 'ramRoot_MTpos__Person4', cardinality 0..*) is associated with 'ramRoot::MTpos::::Person' (role 'ramRoot_MTpos__Person2', cardinality 0..*).
+'ramRoot::MTpre::::Person' (role 'ramRoot_MTpre__Person14', cardinality 0..*) is associated with 'ramRoot::MTpre::::Classroom' (role 'ramRoot_MTpre__Classroom13', cardinality 0..*).
+'ramRoot::MTpre::::Classroom' (role 'ramRoot_MTpre__Classroom', cardinality 0..*) is associated with 'ramRoot::MTpre::::Person' (role 'ramRoot_MTpre__Person', cardinality 0..*).
+'ramRoot::MTpos::::Classroom' (role 'ramRoot_MTpos__Classroom6', cardinality 0..*) is associated with 'ramRoot::MTpos::::Person' (role 'ramRoot_MTpos__Person7', cardinality 0..*).
+'ramRoot::MTpos::::Classroom' (role 'ramRoot_MTpos__Classroom', cardinality 0..*) is associated with 'ramRoot::MTpos::::Person' (role 'ramRoot_MTpos__Person', cardinality 0..*).
+'ramRoot::MTpre::::Person' (role 'ramRoot_MTpre__Person11', cardinality 0..*) is associated with 'ramRoot::MTpre::::Person' (role 'ramRoot_MTpre__Person9', cardinality 0..*).
+'ramRoot::GenericNode' (role 'ramRoot_GenericNode', cardinality 0..*) is associated with 'ramRoot::MT::::Element' (role 'ramRoot_MT__Element', cardinality 0..*).

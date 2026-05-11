@@ -1,0 +1,226 @@
+The model has 80 class(es).
+The class 'amethyst::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'amethyst::TagLoopInitializerDeclaration' has no attributes.
+The class 'amethyst::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'amethyst::RangeLiteral' has no attributes.
+The class 'amethyst::Expression' has no attributes.
+The class 'amethyst::WhenStatement' has no attributes.
+The class 'amethyst::AssignmentExpression' has no attributes.
+The class 'amethyst::PropertyDeclaration' has no attributes.
+The class 'amethyst::AndExpression' has no attributes.
+The class 'amethyst::TagLoopExpression' has no attributes.
+The class 'amethyst::NextStatement' has no attributes.
+The class 'amethyst::AnyType' has no attributes.
+The class 'amethyst::AbstractType' has no attributes.
+The class 'amethyst::CaseStatement' has no attributes.
+The class 'amethyst::DefinitionType' has no attributes.
+The class 'amethyst::MemberAccessExpression' has no attributes.
+The class 'amethyst::UnaryMinusExpression' has no attributes.
+The class 'AbstractType' has no attributes.
+The class 'amethyst::NotExpression' has no attributes.
+The class 'amethyst::ElseIfStatement' has no attributes.
+The class 'amethyst::ClassType' has no attributes.
+The class 'amethyst::OrExpression' has no attributes.
+The class 'amethyst::SelfExpression' has no attributes.
+The class 'amethyst::JsCodeStatement' has the following attributes: 'value' of type str.
+The class 'amethyst::ParameterDeclaration' has no attributes.
+The class 'amethyst::StringLiteral' has the following attributes: 'value' of type str.
+The class 'Statement' has no attributes.
+The class 'amethyst::ClassDeclaration' has no attributes.
+The class 'amethyst::EObject' has no attributes.
+The class 'amethyst::ReturnStatement' has no attributes.
+The class 'amethyst::SymbolReference' has no attributes.
+The class 'amethyst::MultiplicativeExpression' has the following attributes: 'operator' of type str.
+The class 'amethyst::InExpression' has no attributes.
+The class 'amethyst::BooleanType' has no attributes.
+The class 'amethyst::ArrayType' has no attributes.
+The class 'amethyst::Symbol' has the following attributes: 'name' of type str.
+The class 'amethyst::Type' has no attributes.
+The class 'Literal' has no attributes.
+The class 'amethyst::CharRangeLiteral' has no attributes.
+The class 'amethyst::ParenthisedExpression' has no attributes.
+The class 'amethyst::IfStatement' has no attributes.
+The class 'amethyst::CallExpression' has no attributes.
+The class 'amethyst::FloatType' has no attributes.
+The class 'amethyst::IndexAccessExpression' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'amethyst::IntLiteral' has the following attributes: 'value' of type int.
+The class 'amethyst::Literal' has no attributes.
+The class 'amethyst::Module' has the following attributes: 'name' of type str.
+The class 'amethyst::BreakStatement' has no attributes.
+The class 'amethyst::TagAttribute' has no attributes.
+The class 'amethyst::ForStatement' has no attributes.
+The class 'amethyst::TagExpression' has no attributes.
+The class 'amethyst::NewExpression' has no attributes.
+The class 'amethyst::EqualityExpression' has the following attributes: 'operator' of type str.
+The class 'Symbol' has no attributes.
+The class 'amethyst::Statement' has no attributes.
+The class 'amethyst::IntType' has no attributes.
+The class 'amethyst::SuperExpression' has no attributes.
+The class 'amethyst::DefinitionDeclaration' has the following attributes: 'static' of type bool.
+The class 'amethyst::VariableDeclaration' has no attributes.
+The class 'RangeLiteral' has no attributes.
+The class 'amethyst::FloatLiteral' has the following attributes: 'value' of type float.
+The class 'amethyst::TagDeclaration' has no attributes.
+The class 'amethyst::NumberRangeLiteral' has no attributes.
+The class 'amethyst::CaseElseStatement' has no attributes.
+The class 'amethyst::CharType' has no attributes.
+The class 'amethyst::TypeCastExpression' has no attributes.
+The class 'amethyst::ElseStatement' has no attributes.
+The class 'amethyst::PrimitiveType' has no attributes.
+The class 'amethyst::ForInitializerDeclaration' has no attributes.
+The class 'amethyst::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'Expression' has no attributes.
+The class 'amethyst::WhileStatement' has no attributes.
+The class 'amethyst::StringType' has no attributes.
+The class 'amethyst::CharLiteral' has the following attributes: 'value' of type str.
+The class 'amethyst::MatchingExpression' has the following attributes: 'operator' of type str.
+The class 'amethyst::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'amethyst::AdditiveExpression' has the following attributes: 'operator' of type str.
+The class 'Type' has no attributes.
+The class 'amethyst::NullLiteral' has no attributes.
+'amethyst::UnaryMinusExpression' is a specialization of 'Expression'.
+'amethyst::ElseStatement' is a specialization of 'Statement'.
+'amethyst::BooleanType' is a specialization of 'PrimitiveType'.
+'amethyst::ArrayType' is a specialization of 'AbstractType'.
+'amethyst::ClassDeclaration' is a specialization of 'Symbol'.
+'amethyst::ShiftExpression' is a specialization of 'Expression'.
+'amethyst::InExpression' is a specialization of 'Expression'.
+'amethyst::CharRangeLiteral' is a specialization of 'RangeLiteral'.
+'amethyst::CaseElseStatement' is a specialization of 'Statement'.
+'amethyst::AnyType' is a specialization of 'PrimitiveType'.
+'amethyst::Symbol' is a specialization of 'Statement'.
+'amethyst::VariableDeclaration' is a specialization of 'Symbol'.
+'amethyst::IndexAccessExpression' is a specialization of 'Expression'.
+'amethyst::CallExpression' is a specialization of 'Expression'.
+'amethyst::AssignmentExpression' is a specialization of 'Expression'.
+'amethyst::OrExpression' is a specialization of 'Expression'.
+'amethyst::SelfExpression' is a specialization of 'Expression'.
+'amethyst::ParameterDeclaration' is a specialization of 'Symbol'.
+'amethyst::ParenthisedExpression' is a specialization of 'Expression'.
+'amethyst::SymbolReference' is a specialization of 'Expression'.
+'amethyst::EqualityExpression' is a specialization of 'Expression'.
+'amethyst::AndExpression' is a specialization of 'Expression'.
+'amethyst::IntType' is a specialization of 'PrimitiveType'.
+'amethyst::ElseIfStatement' is a specialization of 'Statement'.
+'amethyst::NewExpression' is a specialization of 'Expression'.
+'amethyst::NumberRangeLiteral' is a specialization of 'RangeLiteral'.
+'amethyst::CharType' is a specialization of 'PrimitiveType'.
+'amethyst::CaseStatement' is a specialization of 'Statement'.
+'amethyst::JsCodeStatement' is a specialization of 'Statement'.
+'amethyst::IfStatement' is a specialization of 'Statement'.
+'amethyst::SuperExpression' is a specialization of 'Expression'.
+'amethyst::ClassType' is a specialization of 'Type'.
+'amethyst::MultiplicativeExpression' is a specialization of 'Expression'.
+'amethyst::MatchingExpression' is a specialization of 'Expression'.
+'amethyst::FloatLiteral' is a specialization of 'Literal'.
+'amethyst::StringLiteral' is a specialization of 'Literal'.
+'amethyst::TypeCastExpression' is a specialization of 'Expression'.
+'amethyst::FloatType' is a specialization of 'PrimitiveType'.
+'amethyst::DefinitionDeclaration' is a specialization of 'Symbol'.
+'amethyst::Literal' is a specialization of 'Expression'.
+'amethyst::WhileStatement' is a specialization of 'Statement'.
+'amethyst::PrimitiveType' is a specialization of 'Type'.
+'amethyst::StringType' is a specialization of 'PrimitiveType'.
+'amethyst::MemberAccessExpression' is a specialization of 'Expression'.
+'amethyst::BreakStatement' is a specialization of 'Statement'.
+'amethyst::DefinitionType' is a specialization of 'PrimitiveType'.
+'amethyst::ReturnStatement' is a specialization of 'Statement'.
+'amethyst::CharLiteral' is a specialization of 'Literal'.
+'amethyst::NextStatement' is a specialization of 'Statement'.
+'amethyst::Expression' is a specialization of 'Statement'.
+'amethyst::RelationalExpression' is a specialization of 'Expression'.
+'amethyst::NotExpression' is a specialization of 'Expression'.
+'amethyst::NullLiteral' is a specialization of 'Literal'.
+'amethyst::PropertyDeclaration' is a specialization of 'Symbol'.
+'amethyst::ForInitializerDeclaration' is a specialization of 'Symbol'.
+'amethyst::TagLoopInitializerDeclaration' is a specialization of 'Symbol'.
+'amethyst::ForStatement' is a specialization of 'Statement'.
+'amethyst::Type' is a specialization of 'AbstractType'.
+'amethyst::WhenStatement' is a specialization of 'Statement'.
+'amethyst::AdditiveExpression' is a specialization of 'Expression'.
+'amethyst::BooleanLiteral' is a specialization of 'Literal'.
+'amethyst::IntLiteral' is a specialization of 'Literal'.
+'amethyst::RangeLiteral' is a specialization of 'Literal'.
+'amethyst::EqualityExpression' (role 'amethyst_EqualityExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression142', cardinality 0..*).
+'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration42', cardinality 0..*) is associated with 'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration40', cardinality 0..*).
+'amethyst::MatchingExpression' (role 'amethyst_MatchingExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression162', cardinality 0..*).
+'amethyst::ClassType' (role 'amethyst_ClassType181', cardinality 0..*) is associated with 'amethyst::NewExpression' (role 'amethyst_NewExpression', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression92', cardinality 0..*) is associated with 'amethyst::WhileStatement' (role 'amethyst_WhileStatement', cardinality 0..*).
+'amethyst::OrExpression' (role 'amethyst_OrExpression129', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression130', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression140', cardinality 0..*) is associated with 'amethyst::RelationalExpression' (role 'amethyst_RelationalExpression139', cardinality 0..*).
+'amethyst::CallExpression' (role 'amethyst_CallExpression119', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression120', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression107', cardinality 0..*) is associated with 'amethyst::AssignmentExpression' (role 'amethyst_AssignmentExpression', cardinality 0..*).
+'amethyst::IndexAccessExpression' (role 'amethyst_IndexAccessExpression114', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression115', cardinality 0..*).
+'amethyst::InExpression' (role 'amethyst_InExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression167', cardinality 0..*).
+'amethyst::TagDeclaration' (role 'amethyst_TagDeclaration5', cardinality 0..*) is associated with 'amethyst::TagLoopExpression' (role 'amethyst_TagLoopExpression', cardinality 0..*).
+'amethyst::ArrayType' (role 'amethyst_ArrayType', cardinality 0..*) is associated with 'amethyst::Type' (role 'amethyst_Type', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression186', cardinality 0..*) is associated with 'amethyst::ParenthisedExpression' (role 'amethyst_ParenthisedExpression', cardinality 0..*).
+'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration47', cardinality 0..*) is associated with 'amethyst::Symbol' (role 'amethyst_Symbol48', cardinality 0..*).
+'amethyst::AndExpression' (role 'amethyst_AndExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression132', cardinality 0..*).
+'amethyst::TagLoopExpression' (role 'amethyst_TagLoopExpression13', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression', cardinality 0..*).
+'amethyst::Symbol' (role 'amethyst_Symbol45', cardinality 0..*) is associated with 'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration44', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement80', cardinality 0..*) is associated with 'amethyst::CaseStatement' (role 'amethyst_CaseStatement79', cardinality 0..*).
+'amethyst::Symbol' (role 'amethyst_Symbol22', cardinality 0..*) is associated with 'amethyst::SymbolReference' (role 'amethyst_SymbolReference', cardinality 0..*).
+'amethyst::AbstractType' (role 'amethyst_AbstractType39', cardinality 0..*) is associated with 'amethyst::ParameterDeclaration' (role 'amethyst_ParameterDeclaration', cardinality 0..*).
+'amethyst::AdditiveExpression' (role 'amethyst_AdditiveExpression154', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression155', cardinality 0..*).
+'amethyst::TagAttribute' (role 'amethyst_TagAttribute17', cardinality 0..*) is associated with 'amethyst::PropertyDeclaration' (role 'amethyst_PropertyDeclaration', cardinality 0..*).
+'amethyst::IntLiteral' (role 'amethyst_IntLiteral190', cardinality 0..*) is associated with 'amethyst::NumberRangeLiteral' (role 'amethyst_NumberRangeLiteral189', cardinality 0..*).
+'amethyst::DefinitionDeclaration' (role 'amethyst_DefinitionDeclaration36', cardinality 0..*) is associated with 'amethyst::Statement' (role 'amethyst_Statement37', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression122', cardinality 0..*) is associated with 'amethyst::MemberAccessExpression' (role 'amethyst_MemberAccessExpression', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement103', cardinality 0..*) is associated with 'amethyst::ForStatement' (role 'amethyst_ForStatement102', cardinality 0..*).
+'amethyst::ForStatement' (role 'amethyst_ForStatement99', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression100', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression135', cardinality 0..*) is associated with 'amethyst::AndExpression' (role 'amethyst_AndExpression134', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement85', cardinality 0..*) is associated with 'amethyst::CaseElseStatement' (role 'amethyst_CaseElseStatement', cardinality 0..*).
+'amethyst::ElseStatement' (role 'amethyst_ElseStatement', cardinality 0..*) is associated with 'amethyst::Statement' (role 'amethyst_Statement75', cardinality 0..*).
+'amethyst::NotExpression' (role 'amethyst_NotExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression174', cardinality 0..*).
+'amethyst::ElseIfStatement' (role 'amethyst_ElseIfStatement69', cardinality 0..*) is associated with 'amethyst::Statement' (role 'amethyst_Statement70', cardinality 0..*).
+'amethyst::ReturnStatement' (role 'amethyst_ReturnStatement', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression105', cardinality 0..*).
+'amethyst::RelationalExpression' (role 'amethyst_RelationalExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression137', cardinality 0..*).
+'amethyst::MultiplicativeExpression' (role 'amethyst_MultiplicativeExpression159', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression160', cardinality 0..*).
+'amethyst::UnaryMinusExpression' (role 'amethyst_UnaryMinusExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression172', cardinality 0..*).
+'amethyst::DefinitionDeclaration' (role 'amethyst_DefinitionDeclaration', cardinality 0..*) is associated with 'amethyst::Symbol' (role 'amethyst_Symbol31', cardinality 0..*).
+'amethyst::Import' (role 'amethyst_Import', cardinality 0..*) is associated with 'amethyst::Module' (role 'amethyst_Module', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement', cardinality 0..*) is associated with 'amethyst::Module' (role 'amethyst_Module2', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression127', cardinality 0..*) is associated with 'amethyst::OrExpression' (role 'amethyst_OrExpression', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression152', cardinality 0..*) is associated with 'amethyst::AdditiveExpression' (role 'amethyst_AdditiveExpression', cardinality 0..*).
+'amethyst::DefinitionDeclaration' (role 'amethyst_DefinitionDeclaration33', cardinality 0..*) is associated with 'amethyst::AbstractType' (role 'amethyst_AbstractType34', cardinality 0..*).
+'amethyst::Symbol' (role 'amethyst_Symbol125', cardinality 0..*) is associated with 'amethyst::MemberAccessExpression' (role 'amethyst_MemberAccessExpression124', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression57', cardinality 0..*) is associated with 'amethyst::PropertyDeclaration' (role 'amethyst_PropertyDeclaration56', cardinality 0..*).
+'amethyst::CaseStatement' (role 'amethyst_CaseStatement82', cardinality 0..*) is associated with 'amethyst::Statement' (role 'amethyst_Statement83', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression59', cardinality 0..*) is associated with 'amethyst::IfStatement' (role 'amethyst_IfStatement', cardinality 0..*).
+'amethyst::InExpression' (role 'amethyst_InExpression169', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression170', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement73', cardinality 0..*) is associated with 'amethyst::ElseIfStatement' (role 'amethyst_ElseIfStatement72', cardinality 0..*).
+'amethyst::TagLoopExpression' (role 'amethyst_TagLoopExpression11', cardinality 0..*) is associated with 'amethyst::Symbol' (role 'amethyst_Symbol', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression117', cardinality 0..*) is associated with 'amethyst::CallExpression' (role 'amethyst_CallExpression', cardinality 0..*).
+'amethyst::VariableDeclaration' (role 'amethyst_VariableDeclaration28', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression29', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression77', cardinality 0..*) is associated with 'amethyst::CaseStatement' (role 'amethyst_CaseStatement', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression110', cardinality 0..*) is associated with 'amethyst::AssignmentExpression' (role 'amethyst_AssignmentExpression109', cardinality 0..*).
+'amethyst::AbstractType' (role 'amethyst_AbstractType54', cardinality 0..*) is associated with 'amethyst::PropertyDeclaration' (role 'amethyst_PropertyDeclaration53', cardinality 0..*).
+'amethyst::Symbol' (role 'amethyst_Symbol97', cardinality 0..*) is associated with 'amethyst::ForStatement' (role 'amethyst_ForStatement', cardinality 0..*).
+'amethyst::WhenStatement' (role 'amethyst_WhenStatement', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression87', cardinality 0..*).
+'amethyst::VariableDeclaration' (role 'amethyst_VariableDeclaration', cardinality 0..*) is associated with 'amethyst::AbstractType' (role 'amethyst_AbstractType', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression165', cardinality 0..*) is associated with 'amethyst::MatchingExpression' (role 'amethyst_MatchingExpression164', cardinality 0..*).
+'amethyst::TagDeclaration' (role 'amethyst_TagDeclaration51', cardinality 0..*) is associated with 'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration50', cardinality 0..*).
+'amethyst::EObject' (role 'amethyst_EObject', cardinality 0..*) is associated with 'amethyst::TagDeclaration' (role 'amethyst_TagDeclaration9', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression67', cardinality 0..*) is associated with 'amethyst::ElseIfStatement' (role 'amethyst_ElseIfStatement', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression184', cardinality 0..*) is associated with 'amethyst::NewExpression' (role 'amethyst_NewExpression183', cardinality 0..*).
+'amethyst::CharLiteral' (role 'amethyst_CharLiteral194', cardinality 0..*) is associated with 'amethyst::CharRangeLiteral' (role 'amethyst_CharRangeLiteral193', cardinality 0..*).
+'amethyst::CharLiteral' (role 'amethyst_CharLiteral', cardinality 0..*) is associated with 'amethyst::CharRangeLiteral' (role 'amethyst_CharRangeLiteral', cardinality 0..*).
+'amethyst::EqualityExpression' (role 'amethyst_EqualityExpression144', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression145', cardinality 0..*).
+'amethyst::TagDeclaration' (role 'amethyst_TagDeclaration', cardinality 0..*) is associated with 'amethyst::ClassType' (role 'amethyst_ClassType', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression15', cardinality 0..*) is associated with 'amethyst::TagExpression' (role 'amethyst_TagExpression', cardinality 0..*).
+'amethyst::TagDeclaration' (role 'amethyst_TagDeclaration7', cardinality 0..*) is associated with 'amethyst::TagAttribute' (role 'amethyst_TagAttribute', cardinality 0..*).
+'amethyst::TypeCastExpression' (role 'amethyst_TypeCastExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression176', cardinality 0..*).
+'amethyst::IntLiteral' (role 'amethyst_IntLiteral', cardinality 0..*) is associated with 'amethyst::NumberRangeLiteral' (role 'amethyst_NumberRangeLiteral', cardinality 0..*).
+'amethyst::ShiftExpression' (role 'amethyst_ShiftExpression149', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression150', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression157', cardinality 0..*) is associated with 'amethyst::MultiplicativeExpression' (role 'amethyst_MultiplicativeExpression', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression20', cardinality 0..*) is associated with 'amethyst::TagAttribute' (role 'amethyst_TagAttribute19', cardinality 0..*).
+'amethyst::ClassType' (role 'amethyst_ClassType25', cardinality 0..*) is associated with 'amethyst::ClassDeclaration' (role 'amethyst_ClassDeclaration', cardinality 0..*).
+'amethyst::Expression' (role 'amethyst_Expression112', cardinality 0..*) is associated with 'amethyst::IndexAccessExpression' (role 'amethyst_IndexAccessExpression', cardinality 0..*).
+'amethyst::AbstractType' (role 'amethyst_AbstractType179', cardinality 0..*) is associated with 'amethyst::TypeCastExpression' (role 'amethyst_TypeCastExpression178', cardinality 0..*).
+'amethyst::WhileStatement' (role 'amethyst_WhileStatement94', cardinality 0..*) is associated with 'amethyst::Statement' (role 'amethyst_Statement95', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement65', cardinality 0..*) is associated with 'amethyst::IfStatement' (role 'amethyst_IfStatement64', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement90', cardinality 0..*) is associated with 'amethyst::WhenStatement' (role 'amethyst_WhenStatement89', cardinality 0..*).
+'amethyst::Statement' (role 'amethyst_Statement62', cardinality 0..*) is associated with 'amethyst::IfStatement' (role 'amethyst_IfStatement61', cardinality 0..*).
+'amethyst::ShiftExpression' (role 'amethyst_ShiftExpression', cardinality 0..*) is associated with 'amethyst::Expression' (role 'amethyst_Expression147', cardinality 0..*).

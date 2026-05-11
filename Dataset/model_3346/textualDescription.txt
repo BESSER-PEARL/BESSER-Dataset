@@ -1,0 +1,155 @@
+The model has 50 class(es).
+The class 'MOFScriptModel::IfStatement' has no attributes.
+The class 'MOFScriptModel::Expression' has no attributes.
+The class 'MOFScriptModel::CreateExpressionParameter' has the following attributes: 'name' of type str.
+The class 'MOFScriptModel::Advice' has the following attributes: 'pointCutRef' of type str; 'name' of type str; 'operator' of type str; 'code' of type str.
+The class 'MOFScriptModel::PointCut' has the following attributes: 'typeMatch' of type str; 'name' of type str.
+The class 'ValueExpression' has no attributes.
+The class 'MOFScriptTransformation' has no attributes.
+The class 'MOFScriptModel::Trace' has no attributes.
+The class 'MOFScriptModel::DebugStatement' has the following attributes: 'specification' of type str; 'vars' of type str.
+The class 'MOFScriptModel::MOFScriptImport' has the following attributes: 'type' of type str; 'importSemantics' of type str; 'uri' of type str; 'name' of type str.
+The class 'MOFScriptModel::StatementBlock' has the following attributes: 'id' of type str; 'reference' of type str; 'protected' of type bool.
+The class 'MOFScriptModel::ReturnStatement' has no attributes.
+The class 'MOFScriptModel::PrintStatement' has the following attributes: 'printCommand' of type str; 'context' of type str.
+The class 'MOFScriptModel::MOFScriptStatement' has no attributes.
+The class 'MOFScriptStatement' has no attributes.
+The class 'MOFScriptModel::FunctionCallStatement' has no attributes.
+The class 'MOFScriptModel::IteratorStatement' has the following attributes: 'type' of type str; 'variable' of type str.
+The class 'MOFScriptModel::FunctionCall' has the following attributes: 'name' of type str; 'transformationContext' of type str; 'isSuperCall' of type bool.
+The class 'SimpleExpression' has no attributes.
+The class 'MOFScriptModel::VariableDeclaration' has the following attributes: 'constant' of type bool; 'type' of type str; 'name' of type str.
+The class 'MOFScriptModel::CreateExpression' has the following attributes: 'type' of type str.
+The class 'MOFScriptModel::MOFScriptComment' has the following attributes: 'singleLine' of type bool; 'commentText' of type str; 'docStyle' of type bool.
+The class 'MOFScriptModel::MOFScriptStatementOwner' has no attributes.
+The class 'MOFScriptModel::PointCutExpression' has the following attributes: 'operator' of type str; 'combinationOperator' of type str; 'expressionString' of type str.
+The class 'MOFScriptModel::CreateStatement' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'MOFScriptModel::MOFScriptObject' has the following attributes: 'column' of type int; 'line' of type int.
+The class 'MOFScriptModel::Reference' has the following attributes: 'name' of type str.
+The class 'MOFScriptModel::LogicalExpression' has the following attributes: 'operator' of type str.
+The class 'MOFScriptModel::M2MTrace' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'MOFScriptModel::ValueExpression' has the following attributes: 'specification' of type str.
+The class 'MOFScriptModel::MOFScriptAspect' has no attributes.
+The class 'MOFScriptModel::BreakStatement' has no attributes.
+The class 'MOFScriptModel::SelectExpression' has the following attributes: 'variable' of type str; 'type' of type str.
+The class 'MOFScriptModel::MOFScriptTransformation' has the following attributes: 'name' of type str; 'extendsName' of type str.
+The class 'MOFScriptModel::MOFScriptParameter' has the following attributes: 'name' of type str; 'type' of type str; 'direction' of type str; 'typePrefix' of type str.
+The class 'Trace' has no attributes.
+The class 'MOFScriptModel::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'MOFScriptModel::WhileStatement' has no attributes.
+The class 'MOFScriptStatementOwner' has no attributes.
+The class 'MOFScriptModel::ResultAssignment' has the following attributes: 'operator' of type str; 'resultPart' of type str.
+The class 'MOFScriptModel::SimpleExpression' has no attributes.
+The class 'MOFScriptModel::MOFScriptSpecification' has no attributes.
+The class 'MOFScriptModel::VariableDeclarationStatement' has no attributes.
+The class 'MOFScriptModel::GeneralAssignment' has the following attributes: 'name' of type str; 'operator' of type str.
+The class 'MOFScriptModel::ComparisonExpression' has the following attributes: 'operator' of type str.
+The class 'MOFScriptObject' has no attributes.
+The class 'MOFScriptModel::Literal' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'Expression' has no attributes.
+The class 'MOFScriptModel::FileStatement' has the following attributes: 'append' of type bool; 'fileReference' of type str; 'use' of type bool.
+The class 'MOFScriptModel::TransformationRule' has the following attributes: 'name' of type str; 'isEntryPoint' of type bool; 'accessLevel' of type str; 'return_' of type str; 'isAbstract' of type bool.
+The enumeration 'ParameterDirection' has the following literals: 'OUT', 'INOUT', 'IN'.
+The enumeration 'ImportType' has the following literals: 'TRANSFORMATION', 'LIBRARY'.
+The enumeration 'AdviceOperator' has the following literals: 'BEFORE', 'AFTER', 'AROUND'.
+The enumeration 'AccessLevel' has the following literals: 'PRIVATE', 'PROTECTED', 'NONE', 'PUBLIC'.
+The enumeration 'ComparisonOperator' has the following literals: 'OR', 'LE', 'AND', 'EQ', 'LT', 'GT', 'GE', 'NE'.
+The enumeration 'PointCutCombinationOperator' has the following literals: 'AND', 'OR', 'XOR', 'NONE'.
+The enumeration 'ArithmeticOperator' has the following literals: 'PLUS', 'MULT', 'MINUS', 'DIV'.
+The enumeration 'AssignmentOperator' has the following literals: 'EQ', 'PLUS_EQ'.
+The enumeration 'ImportSemantics' has the following literals: 'IMPORT', 'ACCESS'.
+The enumeration 'PointCutOperator' has the following literals: 'TARGET', 'EXECUTE', 'CALL'.
+The enumeration 'LogicalOperator' has the following literals: 'AND', 'OR', 'NONE', 'NOT'.
+The enumeration 'LiteralType' has the following literals: 'NULL', 'BOOLEAN', 'REAL', 'STRING', 'INTEGER'.
+'MOFScriptModel::ReturnStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::ResultAssignment' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::Advice' is a specialization of 'MOFScriptStatementOwner'.
+'MOFScriptModel::FunctionCallStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::BreakStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::CreateExpression' is a specialization of 'Expression'.
+'MOFScriptModel::MOFScriptStatementOwner' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::CreateExpressionParameter' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::Trace' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::MOFScriptStatement' is a specialization of 'MOFScriptStatementOwner'.
+'MOFScriptModel::TransformationRule' is a specialization of 'MOFScriptStatementOwner'.
+'MOFScriptModel::PrintStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::GeneralAssignment' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::VariableDeclaration' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::Literal' is a specialization of 'SimpleExpression'.
+'MOFScriptModel::DebugStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::MOFScriptSpecification' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::IteratorStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::Expression' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::SelectExpression' is a specialization of 'ValueExpression'.
+'MOFScriptModel::LogicalExpression' is a specialization of 'Expression'.
+'MOFScriptModel::ValueExpression' is a specialization of 'Expression'.
+'MOFScriptModel::SimpleExpression' is a specialization of 'ValueExpression'.
+'MOFScriptModel::FunctionCall' is a specialization of 'SimpleExpression'.
+'MOFScriptModel::WhileStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::ArithmeticExpression' is a specialization of 'ValueExpression'.
+'MOFScriptModel::MOFScriptAspect' is a specialization of 'MOFScriptTransformation'.
+'MOFScriptModel::IfStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::M2MTrace' is a specialization of 'Trace'.
+'MOFScriptModel::Reference' is a specialization of 'SimpleExpression'.
+'MOFScriptModel::MOFScriptParameter' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::ComparisonExpression' is a specialization of 'Expression'.
+'MOFScriptModel::CreateStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::MOFScriptImport' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::FileStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::MOFScriptComment' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::MOFScriptTransformation' is a specialization of 'MOFScriptObject'.
+'MOFScriptModel::VariableDeclarationStatement' is a specialization of 'MOFScriptStatement'.
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression42', cardinality 0..*) is associated with 'MOFScriptModel::IteratorStatement' (role 'MOFScriptModel_IteratorStatement41', cardinality 0..*).
+'MOFScriptModel::VariableDeclaration' (role 'MOFScriptModel_VariableDeclaration15', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression', cardinality 0..*).
+'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression47', cardinality 0..*) is associated with 'MOFScriptModel::LogicalExpression' (role 'MOFScriptModel_LogicalExpression46', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation28', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation26', cardinality 0..*).
+'MOFScriptModel::FunctionCallStatement' (role 'MOFScriptModel_FunctionCallStatement', cardinality 0..*) is associated with 'MOFScriptModel::FunctionCall' (role 'MOFScriptModel_FunctionCall61', cardinality 0..*).
+'MOFScriptModel::ArithmeticExpression' (role 'MOFScriptModel_ArithmeticExpression67', cardinality 0..*) is associated with 'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression68', cardinality 0..*).
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression72', cardinality 0..*) is associated with 'MOFScriptModel::ComparisonExpression' (role 'MOFScriptModel_ComparisonExpression', cardinality 0..*).
+'MOFScriptModel::SimpleExpression' (role 'MOFScriptModel_SimpleExpression50', cardinality 0..*) is associated with 'MOFScriptModel::SimpleExpression' (role 'MOFScriptModel_SimpleExpression48', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'owner30', cardinality 0..*) is associated with 'MOFScriptModel::TransformationRule' (role 'TransformationRule', cardinality 0..*).
+'MOFScriptModel::MOFScriptParameter' (role 'MOFScriptModel_MOFScriptParameter7', cardinality 0..*) is associated with 'MOFScriptModel::TransformationRule' (role 'MOFScriptModel_TransformationRule6', cardinality 0..*).
+'MOFScriptModel::TransformationRule' (role 'MOFScriptModel_TransformationRule55', cardinality 0..*) is associated with 'MOFScriptModel::FunctionCall' (role 'MOFScriptModel_FunctionCall54', cardinality 0..*).
+'MOFScriptModel::GeneralAssignment' (role 'MOFScriptModel_GeneralAssignment', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression59', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation21', cardinality 0..*) is associated with 'MOFScriptModel::VariableDeclaration' (role 'MOFScriptModel_VariableDeclaration22', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation', cardinality 0..*) is associated with 'MOFScriptModel::VariableDeclaration' (role 'MOFScriptModel_VariableDeclaration19', cardinality 0..*).
+'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression99', cardinality 0..*) is associated with 'MOFScriptModel::SelectExpression' (role 'MOFScriptModel_SelectExpression', cardinality 0..*).
+'MOFScriptModel::StatementBlock' (role 'MOFScriptModel_StatementBlock', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptStatementOwner' (role 'MOFScriptModel_MOFScriptStatementOwner11', cardinality 0..*).
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression65', cardinality 0..*) is associated with 'MOFScriptModel::ArithmeticExpression' (role 'MOFScriptModel_ArithmeticExpression', cardinality 0..*).
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression109', cardinality 0..*) is associated with 'MOFScriptModel::CreateExpressionParameter' (role 'MOFScriptModel_CreateExpressionParameter108', cardinality 0..*).
+'MOFScriptModel::FunctionCall' (role 'MOFScriptModel_FunctionCall105', cardinality 0..*) is associated with 'MOFScriptModel::SelectExpression' (role 'MOFScriptModel_SelectExpression104', cardinality 0..*).
+'MOFScriptModel::IteratorStatement' (role 'MOFScriptModel_IteratorStatement38', cardinality 0..*) is associated with 'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression39', cardinality 0..*).
+'MOFScriptModel::PointCut' (role 'MOFScriptModel_PointCut92', cardinality 0..*) is associated with 'MOFScriptModel::Advice' (role 'MOFScriptModel_Advice91', cardinality 0..*).
+'MOFScriptModel::ComparisonExpression' (role 'MOFScriptModel_ComparisonExpression74', cardinality 0..*) is associated with 'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression75', cardinality 0..*).
+'MOFScriptModel::MOFScriptParameter' (role 'MOFScriptModel_MOFScriptParameter25', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation24', cardinality 0..*).
+'MOFScriptModel::TransformationRule' (role 'MOFScriptModel_TransformationRule1', cardinality 0..*) is associated with 'MOFScriptModel::TransformationRule' (role 'MOFScriptModel_TransformationRule', cardinality 0..*).
+'MOFScriptModel::IteratorStatement' (role 'MOFScriptModel_IteratorStatement36', cardinality 0..*) is associated with 'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression', cardinality 0..*).
+'MOFScriptModel::Reference' (role 'MOFScriptModel_Reference', cardinality 0..*) is associated with 'MOFScriptModel::M2MTrace' (role 'MOFScriptModel_M2MTrace', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptModel_MOFScriptTransformation82', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptSpecification' (role 'MOFScriptModel_MOFScriptSpecification', cardinality 0..*).
+'MOFScriptModel::MOFScriptImport' (role 'MOFScriptModel_MOFScriptImport', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptSpecification' (role 'MOFScriptModel_MOFScriptSpecification84', cardinality 0..*).
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression52', cardinality 0..*) is associated with 'MOFScriptModel::FunctionCall' (role 'MOFScriptModel_FunctionCall', cardinality 0..*).
+'MOFScriptModel::MOFScriptStatement' (role 'statements', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptStatementOwner' (role 'MOFScriptStatementOwner', cardinality 0..*).
+'MOFScriptModel::MOFScriptAspect' (role 'MOFScriptModel_MOFScriptAspect', cardinality 0..*) is associated with 'MOFScriptModel::Advice' (role 'MOFScriptModel_Advice', cardinality 0..*).
+'MOFScriptModel::SelectExpression' (role 'MOFScriptModel_SelectExpression101', cardinality 0..*) is associated with 'MOFScriptModel::SimpleExpression' (role 'MOFScriptModel_SimpleExpression102', cardinality 0..*).
+'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression63', cardinality 0..*) is associated with 'MOFScriptModel::PrintStatement' (role 'MOFScriptModel_PrintStatement', cardinality 0..*).
+'MOFScriptModel::MOFScriptTransformation' (role 'MOFScriptTransformation', cardinality 0..*) is associated with 'MOFScriptModel::TransformationRule' (role 'transformationrules', cardinality 0..*).
+'MOFScriptModel::FileStatement' (role 'MOFScriptModel_FileStatement', cardinality 0..*) is associated with 'MOFScriptModel::ValueExpression' (role 'MOFScriptModel_ValueExpression70', cardinality 0..*).
+'MOFScriptModel::MOFScriptObject' (role 'MOFScriptModel_MOFScriptObject', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptComment' (role 'MOFScriptModel_MOFScriptComment', cardinality 0..*).
+'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression57', cardinality 0..*) is associated with 'MOFScriptModel::ResultAssignment' (role 'MOFScriptModel_ResultAssignment', cardinality 0..*).
+'MOFScriptModel::MOFScriptStatement' (role 'MOFScriptStatement', cardinality 0..*) is associated with 'MOFScriptModel::MOFScriptStatementOwner' (role 'owner', cardinality 0..*).
+'MOFScriptModel::PointCut' (role 'MOFScriptModel_PointCut94', cardinality 0..*) is associated with 'MOFScriptModel::PointCutExpression' (role 'MOFScriptModel_PointCutExpression', cardinality 0..*).
+'MOFScriptModel::IfStatement' (role 'MOFScriptModel_IfStatement80', cardinality 0..*) is associated with 'MOFScriptModel::IfStatement' (role 'MOFScriptModel_IfStatement78', cardinality 0..*).
+'MOFScriptModel::MOFScriptStatementOwner' (role 'MOFScriptModel_MOFScriptStatementOwner', cardinality 0..*) is associated with 'MOFScriptModel::VariableDeclaration' (role 'MOFScriptModel_VariableDeclaration', cardinality 0..*).
+'MOFScriptModel::CreateExpressionParameter' (role 'MOFScriptModel_CreateExpressionParameter', cardinality 0..*) is associated with 'MOFScriptModel::CreateExpression' (role 'MOFScriptModel_CreateExpression', cardinality 0..*).
+'MOFScriptModel::LogicalExpression' (role 'MOFScriptModel_LogicalExpression', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression44', cardinality 0..*).
+'MOFScriptModel::VariableDeclarationStatement' (role 'MOFScriptModel_VariableDeclarationStatement', cardinality 0..*) is associated with 'MOFScriptModel::VariableDeclaration' (role 'MOFScriptModel_VariableDeclaration113', cardinality 0..*).
+'MOFScriptModel::ReturnStatement' (role 'MOFScriptModel_ReturnStatement', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression111', cardinality 0..*).
+'MOFScriptModel::MOFScriptAspect' (role 'MOFScriptModel_MOFScriptAspect89', cardinality 0..*) is associated with 'MOFScriptModel::PointCut' (role 'MOFScriptModel_PointCut', cardinality 0..*).
+'MOFScriptModel::Reference' (role 'MOFScriptModel_Reference117', cardinality 0..*) is associated with 'MOFScriptModel::M2MTrace' (role 'MOFScriptModel_M2MTrace116', cardinality 0..*).
+'MOFScriptModel::MOFScriptStatement' (role 'MOFScriptModel_MOFScriptStatement', cardinality 0..*) is associated with 'MOFScriptModel::StatementBlock' (role 'MOFScriptModel_StatementBlock17', cardinality 0..*).
+'MOFScriptModel::MOFScriptParameter' (role 'MOFScriptModel_MOFScriptParameter', cardinality 0..*) is associated with 'MOFScriptModel::TransformationRule' (role 'MOFScriptModel_TransformationRule4', cardinality 0..*).
+'MOFScriptModel::IteratorStatement' (role 'MOFScriptModel_IteratorStatement', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression32', cardinality 0..*).
+'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression77', cardinality 0..*) is associated with 'MOFScriptModel::IfStatement' (role 'MOFScriptModel_IfStatement', cardinality 0..*).
+'MOFScriptModel::SimpleExpression' (role 'MOFScriptModel_SimpleExpression', cardinality 0..*) is associated with 'MOFScriptModel::IteratorStatement' (role 'MOFScriptModel_IteratorStatement34', cardinality 0..*).
+'MOFScriptModel::PointCutExpression' (role 'MOFScriptModel_PointCutExpression95', cardinality 0..*) is associated with 'MOFScriptModel::PointCutExpression' (role 'MOFScriptModel_PointCutExpression97', cardinality 0..*).
+'MOFScriptModel::WhileStatement' (role 'MOFScriptModel_WhileStatement', cardinality 0..*) is associated with 'MOFScriptModel::Expression' (role 'MOFScriptModel_Expression86', cardinality 0..*).

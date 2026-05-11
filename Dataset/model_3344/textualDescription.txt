@@ -1,0 +1,93 @@
+The model has 31 class(es).
+The class 'JavaSimplified::IfStatement' has no attributes.
+The class 'JavaSimplified::Comment' has the following attributes: 'isJavadoc' of type bool.
+The class 'JavaSimplified::Literal' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'JavaSimplified::MethodInvocation' has no attributes.
+The class 'JavaSimplified::CommentStatement' has no attributes.
+The class 'JavaSimplified::Expression' has no attributes.
+The class 'JavaSimplified::JavaClass' has the following attributes: 'imports' of type str.
+The class 'TypedElement' has no attributes.
+The class 'JavaSimplified::NamedElement' has no attributes.
+The class 'JavaSimplified::ReturnStatement' has no attributes.
+The class 'JavaSimplified::Parameter' has no attributes.
+The class 'JavaSimplified::MethodCall' has no attributes.
+The class 'JavaSimplified::VariableDeclarationStatement' has no attributes.
+The class 'JavaSimplified::StringElement' has the following attributes: 'strValue' of type str.
+The class 'CommentedElement' has no attributes.
+The class 'JavaSimplified::TypedElement' has no attributes.
+The class 'JavaSimplified::Type' has the following attributes: 'type' of type str.
+The class 'JavaSimplified::Name' has the following attributes: 'identifier' of type str.
+The class 'JavaSimplified::Field' has the following attributes: 'visibility' of type str.
+The class 'JavaSimplified::Method' has the following attributes: 'exceptions' of type str.
+The class 'JavaSimplified::InfixExpression' has the following attributes: 'operator' of type str.
+The class 'JavaSimplified::ClassInstanceCreation' has no attributes.
+The class 'JavaSimplified::Statement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'JavaSimplified::CastExpression' has no attributes.
+The class 'JavaSimplified::CommentedElement' has no attributes.
+The class 'JavaSimplified::ExpressionStatement' has no attributes.
+The class 'JavaSimplified::Assignment' has the following attributes: 'operator' of type str.
+The class 'Expression' has no attributes.
+The class 'StringElement' has no attributes.
+The enumeration 'InfixOperatorType' has the following literals: 'CONDITIONAL_AND', 'NOT_EQUALS', 'CONDITIONAL_OR', 'EQUALS'.
+The enumeration 'LiteralType' has the following literals: 'INTEGER', 'STRING', 'NULL', 'BOOLEAN'.
+The enumeration 'VisibilityType' has the following literals: 'PRIVATE', 'PACKAGE', 'PUBLIC', 'PROTECTED'.
+The enumeration 'AssignmentOperatorType' has the following literals: 'ASSIGN', 'PLUS_ASSIGN'.
+'JavaSimplified::Name' is a specialization of 'Expression'.
+'JavaSimplified::Field' is a specialization of 'CommentedElement'.
+'JavaSimplified::JavaClass' is a specialization of 'NamedElement'.
+'JavaSimplified::CommentStatement' is a specialization of 'Statement'.
+'JavaSimplified::Method' is a specialization of 'NamedElement'.
+'JavaSimplified::InfixExpression' is a specialization of 'Expression'.
+'JavaSimplified::Statement' is a specialization of 'StringElement'.
+'JavaSimplified::CastExpression' is a specialization of 'Expression'.
+'JavaSimplified::MethodInvocation' is a specialization of 'Expression'.
+'JavaSimplified::VariableDeclarationStatement' is a specialization of 'Statement'.
+'JavaSimplified::VariableDeclarationStatement' is a specialization of 'TypedElement'.
+'JavaSimplified::VariableDeclarationStatement' is a specialization of 'NamedElement'.
+'JavaSimplified::ExpressionStatement' is a specialization of 'Statement'.
+'JavaSimplified::Field' is a specialization of 'TypedElement'.
+'JavaSimplified::Method' is a specialization of 'StringElement'.
+'JavaSimplified::JavaClass' is a specialization of 'CommentedElement'.
+'JavaSimplified::Parameter' is a specialization of 'TypedElement'.
+'JavaSimplified::ClassInstanceCreation' is a specialization of 'Expression'.
+'JavaSimplified::Comment' is a specialization of 'StringElement'.
+'JavaSimplified::Assignment' is a specialization of 'Expression'.
+'JavaSimplified::Literal' is a specialization of 'Expression'.
+'JavaSimplified::Method' is a specialization of 'CommentedElement'.
+'JavaSimplified::ReturnStatement' is a specialization of 'Statement'.
+'JavaSimplified::Parameter' is a specialization of 'NamedElement'.
+'JavaSimplified::Field' is a specialization of 'StringElement'.
+'JavaSimplified::Field' is a specialization of 'NamedElement'.
+'JavaSimplified::Expression' is a specialization of 'StringElement'.
+'JavaSimplified::IfStatement' is a specialization of 'Statement'.
+'JavaSimplified::CastExpression' (role 'JavaSimplified_CastExpression', cardinality 0..*) is associated with 'JavaSimplified::Name' (role 'JavaSimplified_Name32', cardinality 0..*).
+'JavaSimplified::Field' (role 'JavaSimplified_Field', cardinality 0..*) is associated with 'JavaSimplified::JavaClass' (role 'JavaSimplified_JavaClass', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression20', cardinality 0..*) is associated with 'JavaSimplified::IfStatement' (role 'JavaSimplified_IfStatement', cardinality 0..*).
+'JavaSimplified::MethodCall' (role 'JavaSimplified_MethodCall43', cardinality 0..*) is associated with 'JavaSimplified::MethodCall' (role 'JavaSimplified_MethodCall45', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression', cardinality 0..*) is associated with 'JavaSimplified::Field' (role 'JavaSimplified_Field7', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression55', cardinality 0..*) is associated with 'JavaSimplified::Assignment' (role 'JavaSimplified_Assignment', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression28', cardinality 0..*) is associated with 'JavaSimplified::VariableDeclarationStatement' (role 'JavaSimplified_VariableDeclarationStatement', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression58', cardinality 0..*) is associated with 'JavaSimplified::Assignment' (role 'JavaSimplified_Assignment57', cardinality 0..*).
+'JavaSimplified::Method' (role 'JavaSimplified_Method', cardinality 0..*) is associated with 'JavaSimplified::JavaClass' (role 'JavaSimplified_JavaClass5', cardinality 0..*).
+'JavaSimplified::InfixExpression' (role 'JavaSimplified_InfixExpression52', cardinality 0..*) is associated with 'JavaSimplified::Expression' (role 'JavaSimplified_Expression53', cardinality 0..*).
+'JavaSimplified::MethodCall' (role 'JavaSimplified_MethodCall47', cardinality 0..*) is associated with 'JavaSimplified::Name' (role 'JavaSimplified_Name48', cardinality 0..*).
+'JavaSimplified::CommentedElement' (role 'JavaSimplified_CommentedElement', cardinality 0..*) is associated with 'JavaSimplified::Comment' (role 'JavaSimplified_Comment', cardinality 0..*).
+'JavaSimplified::ClassInstanceCreation' (role 'JavaSimplified_ClassInstanceCreation62', cardinality 0..*) is associated with 'JavaSimplified::Type' (role 'JavaSimplified_Type63', cardinality 0..*).
+'JavaSimplified::MethodCall' (role 'JavaSimplified_MethodCall', cardinality 0..*) is associated with 'JavaSimplified::MethodInvocation' (role 'JavaSimplified_MethodInvocation39', cardinality 0..*).
+'JavaSimplified::Type' (role 'JavaSimplified_Type', cardinality 0..*) is associated with 'JavaSimplified::TypedElement' (role 'JavaSimplified_TypedElement', cardinality 0..*).
+'JavaSimplified::ExpressionStatement' (role 'JavaSimplified_ExpressionStatement', cardinality 0..*) is associated with 'JavaSimplified::Expression' (role 'JavaSimplified_Expression18', cardinality 0..*).
+'JavaSimplified::Statement' (role 'JavaSimplified_Statement23', cardinality 0..*) is associated with 'JavaSimplified::IfStatement' (role 'JavaSimplified_IfStatement22', cardinality 0..*).
+'JavaSimplified::NamedElement' (role 'JavaSimplified_NamedElement', cardinality 0..*) is associated with 'JavaSimplified::Name' (role 'JavaSimplified_Name', cardinality 0..*).
+'JavaSimplified::Name' (role 'JavaSimplified_Name37', cardinality 0..*) is associated with 'JavaSimplified::MethodInvocation' (role 'JavaSimplified_MethodInvocation', cardinality 0..*).
+'JavaSimplified::CastExpression' (role 'JavaSimplified_CastExpression34', cardinality 0..*) is associated with 'JavaSimplified::Type' (role 'JavaSimplified_Type35', cardinality 0..*).
+'JavaSimplified::Statement' (role 'JavaSimplified_Statement', cardinality 0..*) is associated with 'JavaSimplified::Method' (role 'JavaSimplified_Method11', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression30', cardinality 0..*) is associated with 'JavaSimplified::ReturnStatement' (role 'JavaSimplified_ReturnStatement', cardinality 0..*).
+'JavaSimplified::Statement' (role 'JavaSimplified_Statement26', cardinality 0..*) is associated with 'JavaSimplified::IfStatement' (role 'JavaSimplified_IfStatement25', cardinality 0..*).
+'JavaSimplified::Method' (role 'JavaSimplified_Method9', cardinality 0..*) is associated with 'JavaSimplified::Parameter' (role 'JavaSimplified_Parameter', cardinality 0..*).
+'JavaSimplified::CommentStatement' (role 'JavaSimplified_CommentStatement', cardinality 0..*) is associated with 'JavaSimplified::Comment' (role 'JavaSimplified_Comment16', cardinality 0..*).
+'JavaSimplified::InfixExpression' (role 'JavaSimplified_InfixExpression', cardinality 0..*) is associated with 'JavaSimplified::Expression' (role 'JavaSimplified_Expression50', cardinality 0..*).
+'JavaSimplified::Method' (role 'JavaSimplified_Method13', cardinality 0..*) is associated with 'JavaSimplified::Type' (role 'JavaSimplified_Type14', cardinality 0..*).
+'JavaSimplified::Expression' (role 'JavaSimplified_Expression60', cardinality 0..*) is associated with 'JavaSimplified::ClassInstanceCreation' (role 'JavaSimplified_ClassInstanceCreation', cardinality 0..*).
+'JavaSimplified::MethodCall' (role 'JavaSimplified_MethodCall41', cardinality 0..*) is associated with 'JavaSimplified::Expression' (role 'JavaSimplified_Expression42', cardinality 0..*).

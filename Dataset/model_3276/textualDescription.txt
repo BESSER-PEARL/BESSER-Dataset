@@ -1,0 +1,18 @@
+The model has 4 class(es).
+The class 'sm::StateMachine' has the following attributes: 'name' of type str.
+The class 'sm::Observation' has the following attributes: 'time' of type str.
+The class 'sm::State' has the following attributes: 'name' of type str.
+The class 'sm::Transition' has the following attributes: 'name' of type str.
+'sm::StateMachine' (role 'sm_StateMachine34', cardinality 0..*) is associated with 'sm::Observation' (role 'sm_Observation33', cardinality 0..*).
+'sm::Observation' (role 'sm_Observation30', cardinality 0..*) is associated with 'sm::State' (role 'sm_State31', cardinality 0..*).
+'sm::Observation' (role 'sm_Observation', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine10', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'sm_State', cardinality 0..*).
+'sm::State' (role 'sm_State6', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine5', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine2', cardinality 0..*) is associated with 'sm::State' (role 'sm_State3', cardinality 0..*).
+'sm::State' (role 'sm_State15', cardinality 0..*) is associated with 'sm::Observation' (role 'sm_Observation16', cardinality 0..*).
+'sm::Transition' (role 'sm_Transition', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine8', cardinality 0..*).
+'sm::State' (role 'sm_State12', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine13', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine19', cardinality 0..*) is associated with 'sm::State' (role 'sm_State18', cardinality 0..*).
+'sm::State' (role 'sm_State22', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition21', cardinality 0..*).
+'sm::State' (role 'sm_State25', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition24', cardinality 0..*).
+'sm::Transition' (role 'sm_Transition27', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine28', cardinality 0..*).

@@ -1,0 +1,90 @@
+The model has 36 class(es).
+The class 'conversation::Import' has the following attributes: 'alias' of type str.
+The class 'conversation::StateMachine' has no attributes.
+The class 'conversation::Transition' has the following attributes: 'requiresExecution' of type bool.
+The class 'Import' has no attributes.
+The class 'PublishableByMe' has no attributes.
+The class 'conversation::Service' has no attributes.
+The class 'conversation::State' has the following attributes: 'join' of type bool; 'requiresExecution' of type bool; 'name' of type str.
+The class 'conversation::PublicEvent' has no attributes.
+The class 'conversation::Event' has the following attributes: 'name' of type str.
+The class 'conversation::PublishableByOthers' has no attributes.
+The class 'conversation::SubscribableByOthers' has no attributes.
+The class 'conversation::Junction' has no attributes.
+The class 'conversation::Join' has no attributes.
+The class 'PubliclySubscribable' has no attributes.
+The class 'conversation::Agent' has the following attributes: 'name' of type str; 'connectionType' of type str; 'stateMachineType' of type str; 'accessRequirement' of type str.
+The class 'conversation::AgentImport' has no attributes.
+The class 'PubliclyPublishable' has no attributes.
+The class 'Event' has no attributes.
+The class 'State' has no attributes.
+The class 'conversation::PubliclySubscribable' has no attributes.
+The class 'conversation::Projection' has no attributes.
+The class 'PublicEvent' has no attributes.
+The class 'conversation::Conversation' has the following attributes: 'name' of type str.
+The class 'SubscribableByMe' has no attributes.
+The class 'conversation::PubliclyPublishable' has no attributes.
+The class 'conversation::TypeImport' has no attributes.
+The class 'conversation::Decision' has no attributes.
+The class 'conversation::SubscribableByMe' has no attributes.
+The class 'conversation::ProjectionField' has no attributes.
+The class 'SubscribableByOthers' has no attributes.
+The class 'conversation::PublishableByMe' has no attributes.
+The class 'conversation::PublicPubSub' has no attributes.
+The class 'PublishableByOthers' has no attributes.
+The class 'conversation::RestService' has no attributes.
+The class 'conversation::PrivatePubSub' has no attributes.
+The class 'conversation::View' has no attributes.
+The enumeration 'ConnectionType' has the following literals: 'dependent', 'independent'.
+The enumeration 'StateMachineType' has the following literals: 'finite', 'infinite', 'stateless'.
+'conversation::PubliclyPublishable' is a specialization of 'SubscribableByMe'.
+'conversation::PublicPubSub' is a specialization of 'PubliclySubscribable'.
+'conversation::PublishableByMe' is a specialization of 'Event'.
+'conversation::PrivatePubSub' is a specialization of 'SubscribableByMe'.
+'conversation::PublicEvent' is a specialization of 'Event'.
+'conversation::SubscribableByMe' is a specialization of 'Event'.
+'conversation::AgentImport' is a specialization of 'Import'.
+'conversation::PubliclySubscribable' is a specialization of 'SubscribableByOthers'.
+'conversation::Decision' is a specialization of 'State'.
+'conversation::PubliclyPublishable' is a specialization of 'PublicEvent'.
+'conversation::PubliclyPublishable' is a specialization of 'PublishableByOthers'.
+'conversation::PubliclySubscribable' is a specialization of 'PublicEvent'.
+'conversation::SubscribableByOthers' is a specialization of 'Event'.
+'conversation::PubliclySubscribable' is a specialization of 'PublishableByMe'.
+'conversation::TypeImport' is a specialization of 'Import'.
+'conversation::PrivatePubSub' is a specialization of 'PublishableByMe'.
+'conversation::PublishableByOthers' is a specialization of 'Event'.
+'conversation::PublicPubSub' is a specialization of 'PubliclyPublishable'.
+'conversation::Join' is a specialization of 'State'.
+'conversation::Transition' (role 'transition', cardinality 0..*) is associated with 'conversation::PrivatePubSub' (role 'PrivatePubSub', cardinality 0..*).
+'conversation::StateMachine' (role 'stateMachine', cardinality 0..*) is associated with 'conversation::Agent' (role 'Agent26', cardinality 0..*).
+'conversation::Conversation' (role 'conversation_Conversation9', cardinality 0..*) is associated with 'conversation::AgentImport' (role 'conversation_AgentImport', cardinality 0..*).
+'conversation::Transition' (role 'Transition', cardinality 0..*) is associated with 'conversation::PrivatePubSub' (role 'causedBy', cardinality 0..*).
+'conversation::TypeImport' (role 'conversation_TypeImport', cardinality 0..*) is associated with 'conversation::Conversation' (role 'conversation_Conversation7', cardinality 0..*).
+'conversation::Projection' (role 'conversation_Projection30', cardinality 0..*) is associated with 'conversation::Event' (role 'conversation_Event', cardinality 0..*).
+'conversation::State' (role 'conversation_State38', cardinality 0..*) is associated with 'conversation::Transition' (role 'conversation_Transition37', cardinality 0..*).
+'conversation::TypeImport' (role 'conversation_TypeImport55', cardinality 0..*) is associated with 'conversation::Projection' (role 'conversation_Projection56', cardinality 0..*).
+'conversation::ProjectionField' (role 'conversation_ProjectionField63', cardinality 0..*) is associated with 'conversation::Junction' (role 'conversation_Junction62', cardinality 0..*).
+'conversation::State' (role 'conversation_State32', cardinality 0..*) is associated with 'conversation::Transition' (role 'conversation_Transition33', cardinality 0..*).
+'conversation::View' (role 'conversation_View', cardinality 0..*) is associated with 'conversation::Conversation' (role 'conversation_Conversation11', cardinality 0..*).
+'conversation::Transition' (role 'conversation_Transition', cardinality 0..*) is associated with 'conversation::StateMachine' (role 'conversation_StateMachine28', cardinality 0..*).
+'conversation::StateMachine' (role 'StateMachine35', cardinality 0..*) is associated with 'conversation::State' (role 'states', cardinality 0..*).
+'conversation::Junction' (role 'conversation_Junction', cardinality 0..*) is associated with 'conversation::Join' (role 'conversation_Join', cardinality 0..*).
+'conversation::Agent' (role 'conversation_Agent', cardinality 0..*) is associated with 'conversation::Projection' (role 'conversation_Projection13', cardinality 0..*).
+'conversation::Conversation' (role 'conversation_Conversation', cardinality 0..*) is associated with 'conversation::Projection' (role 'conversation_Projection', cardinality 0..*).
+'conversation::Transition' (role 'conversation_Transition45', cardinality 0..*) is associated with 'conversation::PublishableByMe' (role 'conversation_PublishableByMe', cardinality 0..*).
+'conversation::Agent' (role 'Agent', cardinality 0..*) is associated with 'conversation::Conversation' (role 'parent', cardinality 0..*).
+'conversation::Junction' (role 'conversation_Junction59', cardinality 0..*) is associated with 'conversation::SubscribableByOthers' (role 'conversation_SubscribableByOthers60', cardinality 0..*).
+'conversation::Agent' (role 'agents', cardinality 0..*) is associated with 'conversation::Conversation' (role 'Conversation', cardinality 0..*).
+'conversation::Conversation' (role 'conversation_Conversation3', cardinality 0..*) is associated with 'conversation::RestService' (role 'conversation_RestService', cardinality 0..*).
+'conversation::PubliclySubscribable' (role 'PubliclySubscribable', cardinality 0..*) is associated with 'conversation::Agent' (role 'parent17', cardinality 0..*).
+'conversation::Agent' (role 'conversation_Agent20', cardinality 0..*) is associated with 'conversation::Projection' (role 'conversation_Projection21', cardinality 0..*).
+'conversation::StateMachine' (role 'conversation_StateMachine', cardinality 0..*) is associated with 'conversation::State' (role 'conversation_State', cardinality 0..*).
+'conversation::Transition' (role 'conversation_Transition47', cardinality 0..*) is associated with 'conversation::ProjectionField' (role 'conversation_ProjectionField', cardinality 0..*).
+'conversation::PublishableByOthers' (role 'conversation_PublishableByOthers', cardinality 0..*) is associated with 'conversation::Transition' (role 'conversation_Transition43', cardinality 0..*).
+'conversation::AgentImport' (role 'conversation_AgentImport52', cardinality 0..*) is associated with 'conversation::Agent' (role 'conversation_Agent53', cardinality 0..*).
+'conversation::State' (role 'State', cardinality 0..*) is associated with 'conversation::StateMachine' (role 'parent24', cardinality 0..*).
+'conversation::SubscribableByOthers' (role 'conversation_SubscribableByOthers', cardinality 0..*) is associated with 'conversation::Transition' (role 'conversation_Transition40', cardinality 0..*).
+'conversation::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'conversation::Agent' (role 'parent15', cardinality 0..*).
+'conversation::PubliclySubscribable' (role 'sendables', cardinality 0..*) is associated with 'conversation::Agent' (role 'Agent49', cardinality 0..*).
+'conversation::Conversation' (role 'conversation_Conversation5', cardinality 0..*) is associated with 'conversation::Service' (role 'conversation_Service', cardinality 0..*).

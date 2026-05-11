@@ -1,0 +1,190 @@
+The model has 74 class(es).
+The class 'ccore::ExtItem' has no attributes.
+The class 'ccore::Item' has the following attributes: 'displayName' of type str; 'qualifiedName' of type str; 'twVersion' of type int; 'committedBy' of type str; 'itemHidden' of type bool; 'twCommittedDate' of type str; 'twRequireNewRev' of type bool; 'itemReadonly' of type bool; 'twRevModified' of type bool; 'isvalid' of type bool.
+The class 'ENamedElement' has no attributes.
+The class 'ccore::InteractionController' has no attributes.
+The class 'ccore::ComposerType' has no attributes.
+The class 'ccore::ExportedContent' has no attributes.
+The class 'ccore::EEnum' has no attributes.
+The class 'ccore::RuntimeItem' has the following attributes: 'className' of type str; 'extendsClass' of type bool.
+The class 'ccore::Page' has the following attributes: 'idRuntime' of type str; 'description' of type str; 'title' of type str; 'label' of type str.
+The class 'ccore::TypeDefinition' has the following attributes: 'idRuntime' of type str.
+The class 'ccore::ActionExtItemType' has no attributes.
+The class 'ccore::ModelController' has no attributes.
+The class 'LongAttribute' has no attributes.
+The class 'ccore::LongAttribute' has no attributes.
+The class 'ccore::EPackage' has no attributes.
+The class 'ccore::ExtentedType' has no attributes.
+The class 'ccore::TimeAttribute' has the following attributes: 'initWithTheCurrentTime' of type bool.
+The class 'DBObject' has no attributes.
+The class 'ccore::DateAttribute' has no attributes.
+The class 'ccore::RuntimeItemType' has no attributes.
+The class 'ccore::ContentItem' has no attributes.
+The class 'ccore::ComputedString' has the following attributes: 'expression' of type str.
+The class 'EAttribute' has no attributes.
+The class 'ccore::GroupOfAttributes' has the following attributes: 'column' of type int.
+The class 'ccore::ViewItemType' has the following attributes: 'isRootElement' of type bool; 'ref' of type bool.
+The class 'ccore::ExporterType' has no attributes.
+The class 'ccore::Exporter' has the following attributes: 'types' of type str.
+The class 'ccore::UnresolvedAttributeType' has no attributes.
+The class 'ccore::MenuAction' has no attributes.
+The class 'RuntimeItem' has no attributes.
+The class 'ccore::Cadse' has the following attributes: 'itemRepoURL' of type str; 'description' of type str; 'defaultContentRepoURL' of type str; 'itemRepoLogin' of type str; 'executed' of type bool; 'itemRepoPasswd' of type str; 'idDefinition' of type str.
+The class 'ccore::IntegerAttribute' has no attributes.
+The class 'EReference' has no attributes.
+The class 'ccore::ViewLinkType' has the following attributes: 'displayCreate' of type str; 'canCreateLink' of type bool; 'canCreateItem' of type bool; 'aggregation' of type bool.
+The class 'ccore::MenuGroup' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'ccore::Composer' has the following attributes: 'types' of type str.
+The class 'EEnum' has no attributes.
+The class 'ccore::WCListener' has no attributes.
+The class 'ccore::GenInformation' has the following attributes: 'cSTName' of type str.
+The class 'ccore::Display' has the following attributes: 'extendsIC' of type bool; 'extendsUI' of type bool; 'extendsMC' of type bool.
+The class 'Attribute' has no attributes.
+The class 'RuntimeItemType' has no attributes.
+The class 'ccore::KeyDefinition' has no attributes.
+The class 'ccore::LinkType' has the following attributes: 'aggregation' of type bool; 'composition' of type bool; 'kind' of type int; 'twCoupled' of type bool; 'max' of type int; 'mapping' of type bool; 'hidden' of type bool; 'linkManager' of type str; 'min' of type int; 'selection' of type str; 'annotation' of type bool; 'group' of type bool; 'twDestEvol' of type str.
+The class 'ccore::BindingDesc' has no attributes.
+The class 'ccore::MenuAbstract' has the following attributes: 'label' of type str; 'path' of type str; 'icon' of type str.
+The class 'ccore::UUIDAttribute' has no attributes.
+The class 'EPackage' has no attributes.
+The class 'ccore::ContentItemType' has the following attributes: 'extendsClass' of type bool.
+The class 'ccore::DBObject' has the following attributes: 'uuid_lsb' of type str; 'objectId' of type int; 'uuid_msb' of type str.
+The class 'EClass' has no attributes.
+The class 'ItemType' has no attributes.
+The class 'ccore::ViewDescription' has no attributes.
+The class 'ccore::BindExt' has no attributes.
+The class 'ccore::EStructuralFeature' has no attributes.
+The class 'ccore::Field' has the following attributes: 'position' of type str; 'label' of type str; 'editable' of type bool.
+The class 'ccore::DynamicActions' has no attributes.
+The class 'ccore::Attribute' has the following attributes: 'tWRevSpecific' of type bool; 'isList' of type bool; 'tWCommitKind' of type str; 'devGenerated' of type bool; 'mustBeInitialized' of type bool; 'cannotBeUndefined' of type bool; 'hiddenInComputedPages' of type bool; 'tWUpdateKind' of type str; '_final' of type bool; 'require' of type bool; 'natif' of type bool; 'tWEvol' of type str; 'idRuntime' of type str.
+The class 'ccore::Menu' has no attributes.
+The class 'ccore::EClass' has no attributes.
+The class 'ccore::DoubleAttribute' has no attributes.
+The class 'ccore::ViewModel' has no attributes.
+The class 'BindingDesc' has no attributes.
+The class 'ccore::BooleanAttribute' has no attributes.
+The class 'ccore::UIValidator' has no attributes.
+The class 'ccore::View' has the following attributes: 'icon' of type str.
+The class 'ccore::GroupExtItem' has no attributes.
+The class 'ccore::EnumType' has the following attributes: 'values' of type str; 'javaClass' of type str; 'mustBeGenerated' of type bool.
+The class 'ccore::ItemType' has the following attributes: 'messageErrorId' of type str; 'humanName' of type str; 'overwriteDefaultPages' of type bool; 'itemManagerClass' of type str; 'hasShortName' of type bool; 'isMetaItemType' of type bool; 'isRootElement' of type bool; 'hasContent' of type bool; 'itemFactoryClass' of type str; 'isInstanceHidden' of type bool; 'isInstanceAbstract' of type bool; 'managerClass' of type str; 'packageName' of type str; 'validateNameRe' of type str; 'qualifiedNameTemplate' of type str; 'icon' of type str; 'displayNameTemplate' of type str; 'hasUniqueName' of type bool; 'customManager' of type bool.
+The class 'ccore::StringAttribute' has the following attributes: 'notEmpty' of type bool.
+The class 'ccore::Enum' has the following attributes: 'values' of type str; 'enumClazz' of type str.
+The class 'ccore::ComposerLink' has no attributes.
+The class 'Item' has no attributes.
+The enumeration 'TWUpdateKind' has the following literals: 'merge', 'none', 'compute'.
+The enumeration 'TWCommitKind' has the following literals: 'reconcile', 'none', 'conflict'.
+The enumeration 'TWDestEvol' has the following literals: 'effective', 'immutable', 'mutable', 'branch', 'finalDest'.
+The enumeration 'PositionEnum' has the following literals: 'group', 'none', 'right', 'defaultpos', 'left', 'top'.
+The enumeration 'TWEvol' has the following literals: 'twMutable', 'twTransient', 'twFinal', 'twImmutable'.
+'ccore::Composer' is a specialization of 'RuntimeItem'.
+'ccore::KeyDefinition' is a specialization of 'Item'.
+'ccore::LongAttribute' is a specialization of 'Attribute'.
+'ccore::Field' is a specialization of 'Item'.
+'ccore::UUIDAttribute' is a specialization of 'Attribute'.
+'ccore::ContentItemType' is a specialization of 'ItemType'.
+'ccore::ModelController' is a specialization of 'RuntimeItem'.
+'ccore::LinkType' is a specialization of 'Attribute'.
+'ccore::ComposerType' is a specialization of 'RuntimeItemType'.
+'ccore::ExporterType' is a specialization of 'RuntimeItemType'.
+'ccore::BindingDesc' is a specialization of 'DBObject'.
+'ccore::DateAttribute' is a specialization of 'Attribute'.
+'ccore::Attribute' is a specialization of 'EAttribute'.
+'ccore::Exporter' is a specialization of 'RuntimeItem'.
+'ccore::Cadse' is a specialization of 'Item'.
+'ccore::ExtentedType' is a specialization of 'TypeDefinition'.
+'ccore::StringAttribute' is a specialization of 'Attribute'.
+'ccore::Attribute' is a specialization of 'Item'.
+'ccore::Enum' is a specialization of 'Attribute'.
+'ccore::Item' is a specialization of 'ENamedElement'.
+'ccore::IntegerAttribute' is a specialization of 'Attribute'.
+'ccore::TypeDefinition' is a specialization of 'EClass'.
+'ccore::RuntimeItemType' is a specialization of 'ItemType'.
+'ccore::BooleanAttribute' is a specialization of 'Attribute'.
+'ccore::EnumType' is a specialization of 'EEnum'.
+'ccore::ItemType' is a specialization of 'TypeDefinition'.
+'ccore::InteractionController' is a specialization of 'RuntimeItem'.
+'ccore::LinkType' is a specialization of 'EReference'.
+'ccore::TimeAttribute' is a specialization of 'LongAttribute'.
+'ccore::BindExt' is a specialization of 'BindingDesc'.
+'ccore::DoubleAttribute' is a specialization of 'Attribute'.
+'ccore::TypeDefinition' is a specialization of 'Item'.
+'ccore::Item' is a specialization of 'DBObject'.
+'ccore::Cadse' is a specialization of 'EPackage'.
+'ccore::RuntimeItem' is a specialization of 'Item'.
+'ccore::Display' is a specialization of 'RuntimeItem'.
+'ccore::Page' (role 'ccore_Page125', cardinality 0..*) is associated with 'ccore::Page' (role 'ccore_Page123', cardinality 0..*).
+'ccore::Item' (role 'ownerItem68', cardinality 0..*) is associated with 'ccore::Exporter' (role 'Exporter', cardinality 0..*).
+'ccore::MenuAbstract' (role 'ccore_MenuAbstract', cardinality 0..*) is associated with 'ccore::Menu' (role 'ccore_Menu92', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType80', cardinality 0..*) is associated with 'ccore::ViewItemType' (role 'ccore_ViewItemType', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType29', cardinality 0..*) is associated with 'ccore::ContentItemType' (role 'ccore_ContentItemType', cardinality 0..*).
+'ccore::Attribute' (role 'ccore_Attribute130', cardinality 0..*) is associated with 'ccore::GroupOfAttributes' (role 'ccore_GroupOfAttributes129', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType19', cardinality 0..*) is associated with 'ccore::WCListener' (role 'ccore_WCListener', cardinality 0..*).
+'ccore::WCListener' (role 'ccore_WCListener73', cardinality 0..*) is associated with 'ccore::Attribute' (role 'ccore_Attribute72', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType22', cardinality 0..*) is associated with 'ccore::ItemType' (role 'ccore_ItemType20', cardinality 0..*).
+'ccore::Field' (role 'ccore_Field', cardinality 0..*) is associated with 'ccore::TypeDefinition' (role 'ccore_TypeDefinition2', cardinality 0..*).
+'ccore::Item' (role 'ccore_Item57', cardinality 0..*) is associated with 'ccore::Item' (role 'ccore_Item59', cardinality 0..*).
+'ccore::KeyDefinition' (role 'ccore_KeyDefinition', cardinality 0..*) is associated with 'ccore::ItemType' (role 'ccore_ItemType27', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType107', cardinality 0..*) is associated with 'ccore::WCListener' (role 'ccore_WCListener106', cardinality 0..*).
+'ccore::EnumType' (role 'ccore_EnumType127', cardinality 0..*) is associated with 'ccore::EEnum' (role 'ccore_EEnum', cardinality 0..*).
+'ccore::Item' (role 'Item148', cardinality 0..*) is associated with 'ccore::Exporter' (role 'exporters', cardinality 0..*).
+'ccore::EStructuralFeature' (role 'ccore_EStructuralFeature', cardinality 0..*) is associated with 'ccore::KeyDefinition' (role 'ccore_KeyDefinition75', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType', cardinality 0..*) is associated with 'ccore::ExtentedType' (role 'ccore_ExtentedType', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition13', cardinality 0..*) is associated with 'ccore::EClass' (role 'ccore_EClass', cardinality 0..*).
+'ccore::Item' (role 'ccore_Item65', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse66', cardinality 0..*).
+'ccore::KeyDefinition' (role 'ccore_KeyDefinition78', cardinality 0..*) is associated with 'ccore::KeyDefinition' (role 'ccore_KeyDefinition76', cardinality 0..*).
+'ccore::View' (role 'ccore_View161', cardinality 0..*) is associated with 'ccore::ViewModel' (role 'ccore_ViewModel', cardinality 0..*).
+'ccore::ViewLinkType' (role 'ccore_ViewLinkType135', cardinality 0..*) is associated with 'ccore::LinkType' (role 'ccore_LinkType136', cardinality 0..*).
+'ccore::Field' (role 'ccore_Field117', cardinality 0..*) is associated with 'ccore::ModelController' (role 'ccore_ModelController', cardinality 0..*).
+'ccore::Composer' (role 'ccore_Composer145', cardinality 0..*) is associated with 'ccore::ComposerLink' (role 'ccore_ComposerLink', cardinality 0..*).
+'ccore::ActionExtItemType' (role 'ccore_ActionExtItemType', cardinality 0..*) is associated with 'ccore::Menu' (role 'ccore_Menu', cardinality 0..*).
+'ccore::Exporter' (role 'ccore_Exporter', cardinality 0..*) is associated with 'ccore::ComposerLink' (role 'ccore_ComposerLink154', cardinality 0..*).
+'ccore::LinkType' (role 'ccore_LinkType157', cardinality 0..*) is associated with 'ccore::ComposerLink' (role 'ccore_ComposerLink156', cardinality 0..*).
+'ccore::Attribute' (role 'ccore_Attribute113', cardinality 0..*) is associated with 'ccore::Field' (role 'ccore_Field112', cardinality 0..*).
+'ccore::ViewItemType' (role 'ccore_ViewItemType82', cardinality 0..*) is associated with 'ccore::ViewLinkType' (role 'ccore_ViewLinkType', cardinality 0..*).
+'ccore::Item' (role 'ccore_Item61', cardinality 0..*) is associated with 'ccore::Attribute' (role 'ccore_Attribute62', cardinality 0..*).
+'ccore::Attribute' (role 'ccore_Attribute', cardinality 0..*) is associated with 'ccore::TypeDefinition' (role 'ccore_TypeDefinition', cardinality 0..*).
+'ccore::ContentItem' (role 'ccore_ContentItem', cardinality 0..*) is associated with 'ccore::ContentItem' (role 'ccore_ContentItem151', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType31', cardinality 0..*) is associated with 'ccore::ExporterType' (role 'ccore_ExporterType', cardinality 0..*).
+'ccore::InteractionController' (role 'ccore_InteractionController', cardinality 0..*) is associated with 'ccore::Field' (role 'ccore_Field115', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType15', cardinality 0..*) is associated with 'ccore::ItemType' (role 'ccore_ItemType17', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition4', cardinality 0..*) is associated with 'ccore::Page' (role 'ccore_Page', cardinality 0..*).
+'ccore::UIValidator' (role 'ccore_UIValidator93', cardinality 0..*) is associated with 'ccore::UIValidator' (role 'ccore_UIValidator95', cardinality 0..*).
+'ccore::ViewItemType' (role 'ccore_ViewItemType159', cardinality 0..*) is associated with 'ccore::View' (role 'ccore_View', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType56', cardinality 0..*) is associated with 'ccore::Item' (role 'ccore_Item55', cardinality 0..*).
+'ccore::Cadse' (role 'ccore_Cadse37', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse', cardinality 0..*).
+'ccore::Item' (role 'ccore_Item141', cardinality 0..*) is associated with 'ccore::GroupExtItem' (role 'ccore_GroupExtItem140', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType86', cardinality 0..*) is associated with 'ccore::BindExt' (role 'ccore_BindExt', cardinality 0..*).
+'ccore::GroupExtItem' (role 'ccore_GroupExtItem', cardinality 0..*) is associated with 'ccore::Item' (role 'ccore_Item138', cardinality 0..*).
+'ccore::Enum' (role 'ccore_Enum', cardinality 0..*) is associated with 'ccore::EnumType' (role 'ccore_EnumType', cardinality 0..*).
+'ccore::GroupOfAttributes' (role 'ccore_GroupOfAttributes131', cardinality 0..*) is associated with 'ccore::GroupOfAttributes' (role 'ccore_GroupOfAttributes133', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType172', cardinality 0..*) is associated with 'ccore::DBObject' (role 'ccore_DBObject', cardinality 0..*).
+'ccore::ExtentedType' (role 'ccore_ExtentedType47', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse46', cardinality 0..*).
+'ccore::Item' (role 'Item', cardinality 0..*) is associated with 'ccore::Composer' (role 'composers', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType35', cardinality 0..*) is associated with 'ccore::ContentItemType' (role 'ccore_ContentItemType36', cardinality 0..*).
+'ccore::Cadse' (role 'ccore_Cadse40', cardinality 0..*) is associated with 'ccore::ItemType' (role 'ccore_ItemType41', cardinality 0..*).
+'ccore::BindingDesc' (role 'ccore_BindingDesc163', cardinality 0..*) is associated with 'ccore::Item' (role 'ccore_Item164', cardinality 0..*).
+'ccore::Attribute' (role 'ccore_Attribute98', cardinality 0..*) is associated with 'ccore::UIValidator' (role 'ccore_UIValidator97', cardinality 0..*).
+'ccore::Item' (role 'ownerItem', cardinality 0..*) is associated with 'ccore::ContentItem' (role 'ContentItem', cardinality 0..*).
+'ccore::BindExt' (role 'ccore_BindExt88', cardinality 0..*) is associated with 'ccore::ExtentedType' (role 'ccore_ExtentedType89', cardinality 0..*).
+'ccore::LinkType' (role 'ccore_LinkType103', cardinality 0..*) is associated with 'ccore::TypeDefinition' (role 'ccore_TypeDefinition104', cardinality 0..*).
+'ccore::LinkType' (role 'ccore_LinkType143', cardinality 0..*) is associated with 'ccore::Composer' (role 'ccore_Composer', cardinality 0..*).
+'ccore::KeyDefinition' (role 'ccore_KeyDefinition44', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse43', cardinality 0..*).
+'ccore::Item' (role 'ccore_Item167', cardinality 0..*) is associated with 'ccore::BindingDesc' (role 'ccore_BindingDesc166', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition6', cardinality 0..*) is associated with 'ccore::UIValidator' (role 'ccore_UIValidator', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition84', cardinality 0..*) is associated with 'ccore::ViewDescription' (role 'ccore_ViewDescription', cardinality 0..*).
+'ccore::Cadse' (role 'ccore_Cadse53', cardinality 0..*) is associated with 'ccore::Item' (role 'ccore_Item', cardinality 0..*).
+'ccore::ItemType' (role 'ccore_ItemType24', cardinality 0..*) is associated with 'ccore::ExtentedType' (role 'ccore_ExtentedType25', cardinality 0..*).
+'ccore::Attribute' (role 'ccore_Attribute122', cardinality 0..*) is associated with 'ccore::Page' (role 'ccore_Page121', cardinality 0..*).
+'ccore::ComposerType' (role 'ccore_ComposerType', cardinality 0..*) is associated with 'ccore::ItemType' (role 'ccore_ItemType33', cardinality 0..*).
+'ccore::BindingDesc' (role 'ccore_BindingDesc', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse51', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition8', cardinality 0..*) is associated with 'ccore::Page' (role 'ccore_Page9', cardinality 0..*).
+'ccore::WCListener' (role 'ccore_WCListener109', cardinality 0..*) is associated with 'ccore::Attribute' (role 'ccore_Attribute110', cardinality 0..*).
+'ccore::BindingDesc' (role 'ccore_BindingDesc169', cardinality 0..*) is associated with 'ccore::LinkType' (role 'ccore_LinkType170', cardinality 0..*).
+'ccore::Display' (role 'ccore_Display', cardinality 0..*) is associated with 'ccore::Field' (role 'ccore_Field119', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition11', cardinality 0..*) is associated with 'ccore::GroupOfAttributes' (role 'ccore_GroupOfAttributes', cardinality 0..*).
+'ccore::Composer' (role 'Composer', cardinality 0..*) is associated with 'ccore::Item' (role 'ownerItem70', cardinality 0..*).
+'ccore::Item' (role 'Item150', cardinality 0..*) is associated with 'ccore::ContentItem' (role 'contents', cardinality 0..*).
+'ccore::EPackage' (role 'ccore_EPackage', cardinality 0..*) is associated with 'ccore::Cadse' (role 'ccore_Cadse49', cardinality 0..*).
+'ccore::TypeDefinition' (role 'ccore_TypeDefinition101', cardinality 0..*) is associated with 'ccore::LinkType' (role 'ccore_LinkType', cardinality 0..*).

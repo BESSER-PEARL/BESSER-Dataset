@@ -1,0 +1,73 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class cmof_Tag extends Element {
+
+    private String name;
+    private String value;
+
+
+
+
+
+    private cmof_Element cmof_element;
+
+
+
+
+    private List<cmof_Element> cmof_elements;
+
+
+    public cmof_Tag(
+        String name,        String value    ) {
+        super(
+        );
+        this.name = name;
+        this.value = value;
+        this.cmof_elements = new ArrayList<>();
+    }
+
+    public cmof_Tag(
+        String name,        String value        ArrayList<cmof_Element> cmof_elements    ) {
+        this.name = name;
+        this.value = value;
+        this.cmof_elements = cmof_elements;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public cmof_Element getCmof_element() {
+        return cmof_element;
+    }
+
+    public void setCmof_element(cmof_Element cmof_element) {
+        this.cmof_element = cmof_element;
+    }
+    public List<cmof_Element> getCmof_elements() {
+        return cmof_elements;
+    }
+
+    public void addCmof_element(Cmof_element cmof_element) {
+        this.cmof_elements.add(cmof_element);
+    }
+
+}

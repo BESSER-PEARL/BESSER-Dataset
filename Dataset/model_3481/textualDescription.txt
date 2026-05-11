@@ -1,0 +1,54 @@
+The model has 23 class(es).
+The class 'AttributeOperand' has no attributes.
+The class 'feature::FeatureConstraint' has no attributes.
+The class 'feature::Imply' has no attributes.
+The class 'feature::AttributeOperand' has no attributes.
+The class 'FeatureConstraint' has no attributes.
+The class 'feature::FeatureModel' has the following attributes: 'name' of type str.
+The class 'Constraint' has no attributes.
+The class 'feature::Identifiable' has the following attributes: 'id' of type str.
+The class 'Domain' has no attributes.
+The class 'feature::NumericalDomain' has no attributes.
+The class 'feature::DomainValue' has the following attributes: 'int' of type int; 'name' of type str.
+The class 'feature::DiscreteDomain' has no attributes.
+The class 'feature::AttributeReference' has no attributes.
+The class 'feature::Feature' has the following attributes: 'name' of type str; 'configurationState' of type str.
+The class 'Identifiable' has no attributes.
+The class 'feature::Exclude' has no attributes.
+The class 'feature::Group' has the following attributes: 'maxCardinality' of type int; 'minCardinality' of type int.
+The class 'feature::Interval' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+The class 'feature::AttributeValue' has the following attributes: 'name' of type str; 'int' of type int.
+The class 'feature::Constraint' has no attributes.
+The class 'feature::Domain' has no attributes.
+The class 'feature::Attribute' has the following attributes: 'name' of type str; 'deselectedDomainValues' of type str; 'value' of type str.
+The class 'feature::AttributeConstraint' has the following attributes: 'operator' of type str.
+The enumeration 'Relop' has the following literals: 'lessThanOrEqual', 'greaterThanOrEqual', 'unequal', 'lessThan', 'greaterThan', 'equal'.
+The enumeration 'FeatureState' has the following literals: 'selected', 'unbound', 'deselected'.
+'feature::Domain' is a specialization of 'Identifiable'.
+'feature::AttributeConstraint' is a specialization of 'Constraint'.
+'feature::AttributeValue' is a specialization of 'AttributeOperand'.
+'feature::NumericalDomain' is a specialization of 'Domain'.
+'feature::Imply' is a specialization of 'FeatureConstraint'.
+'feature::DiscreteDomain' is a specialization of 'Domain'.
+'feature::AttributeReference' is a specialization of 'AttributeOperand'.
+'feature::Feature' is a specialization of 'Identifiable'.
+'feature::FeatureConstraint' is a specialization of 'Constraint'.
+'feature::Constraint' is a specialization of 'Identifiable'.
+'feature::Exclude' is a specialization of 'FeatureConstraint'.
+'feature::Group' is a specialization of 'Identifiable'.
+'feature::Domain' (role 'feature_Domain13', cardinality 0..*) is associated with 'feature::Attribute' (role 'feature_Attribute', cardinality 0..*).
+'feature::Group' (role 'feature_Group9', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature10', cardinality 0..*).
+'feature::Feature' (role 'Feature', cardinality 0..*) is associated with 'feature::Attribute' (role 'attributes', cardinality 0..*).
+'feature::NumericalDomain' (role 'feature_NumericalDomain', cardinality 0..*) is associated with 'feature::Interval' (role 'feature_Interval', cardinality 0..*).
+'feature::FeatureConstraint' (role 'feature_FeatureConstraint28', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature29', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature24', cardinality 0..*) is associated with 'feature::AttributeReference' (role 'feature_AttributeReference23', cardinality 0..*).
+'feature::AttributeConstraint' (role 'feature_AttributeConstraint', cardinality 0..*) is associated with 'feature::AttributeOperand' (role 'feature_AttributeOperand', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel2', cardinality 0..*) is associated with 'feature::Domain' (role 'feature_Domain', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature7', cardinality 0..*) is associated with 'feature::Group' (role 'feature_Group', cardinality 0..*).
+'feature::DomainValue' (role 'feature_DomainValue', cardinality 0..*) is associated with 'feature::DiscreteDomain' (role 'feature_DiscreteDomain', cardinality 0..*).
+'feature::AttributeConstraint' (role 'feature_AttributeConstraint18', cardinality 0..*) is associated with 'feature::AttributeOperand' (role 'feature_AttributeOperand19', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel4', cardinality 0..*) is associated with 'feature::Constraint' (role 'feature_Constraint', cardinality 0..*).
+'feature::FeatureConstraint' (role 'feature_FeatureConstraint', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature26', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel', cardinality 0..*) is associated with 'feature::Feature' (role 'feature_Feature', cardinality 0..*).
+'feature::AttributeReference' (role 'feature_AttributeReference', cardinality 0..*) is associated with 'feature::Attribute' (role 'feature_Attribute21', cardinality 0..*).
+'feature::Feature' (role 'feature', cardinality 0..*) is associated with 'feature::Attribute' (role 'Attribute', cardinality 0..*).

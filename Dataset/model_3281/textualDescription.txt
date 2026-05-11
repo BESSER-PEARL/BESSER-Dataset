@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'sm::Graph' has the following attributes: 'name' of type str.
+The class 'sm::State' has no attributes.
+The class 'sm::Transition' has no attributes.
+The class 'Mark' has no attributes.
+The class 'sm::Observation' has no attributes.
+The class 'Edge' has no attributes.
+The class 'sm::Mark' has the following attributes: 'time' of type str.
+The class 'sm::Edge' has the following attributes: 'name' of type str.
+The class 'Graph' has no attributes.
+The class 'Node' has no attributes.
+The class 'sm::Node' has the following attributes: 'name' of type str.
+The class 'sm::StateMachine' has no attributes.
+'sm::Observation' is a specialization of 'Mark'.
+'sm::StateMachine' is a specialization of 'Graph'.
+'sm::Transition' is a specialization of 'Edge'.
+'sm::State' is a specialization of 'Node'.
+'sm::Node' (role 'node', cardinality 0..*) is associated with 'sm::Mark' (role 'Mark13', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'sm_State', cardinality 0..*).
+'sm::Graph' (role 'graph11', cardinality 0..*) is associated with 'sm::Mark' (role 'Mark', cardinality 0..*).
+'sm::Graph' (role 'Graph20', cardinality 0..*) is associated with 'sm::Edge' (role 'edges', cardinality 0..*).
+'sm::Mark' (role 'mark', cardinality 0..*) is associated with 'sm::Node' (role 'Node22', cardinality 0..*).
+'sm::Node' (role 'sm_Node18', cardinality 0..*) is associated with 'sm::Edge' (role 'sm_Edge17', cardinality 0..*).
+'sm::Graph' (role 'graph', cardinality 0..*) is associated with 'sm::Node' (role 'Node', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine6', cardinality 0..*) is associated with 'sm::State' (role 'sm_State5', cardinality 0..*).
+'sm::Graph' (role 'Graph24', cardinality 0..*) is associated with 'sm::Mark' (role 'marks', cardinality 0..*).
+'sm::Node' (role 'nodes', cardinality 0..*) is associated with 'sm::Graph' (role 'Graph', cardinality 0..*).
+'sm::Graph' (role 'graph9', cardinality 0..*) is associated with 'sm::Edge' (role 'Edge', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine2', cardinality 0..*) is associated with 'sm::State' (role 'sm_State3', cardinality 0..*).
+'sm::Edge' (role 'sm_Edge', cardinality 0..*) is associated with 'sm::Node' (role 'sm_Node', cardinality 0..*).

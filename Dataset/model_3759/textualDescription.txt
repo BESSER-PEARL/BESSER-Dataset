@@ -1,0 +1,129 @@
+The model has 47 class(es).
+The class 'rdbms::RdbmsViewValueField' has no attributes.
+The class 'RdbmsTableOperation' has no attributes.
+The class 'rdbms::RdbmsFieldType' has the following attributes: 'uuid' of type str; 'size' of type int; 'description' of type str; 'precision' of type int; 'rdbmsTypeName' of type str; 'scale' of type int; 'name' of type str; 'storageByte' of type int.
+The class 'rdbms::RdbmsConfiguration' has the following attributes: 'dialect' of type str.
+The class 'rdbms::RdbmsModifyTableOperation' has the following attributes: 'nameChanged' of type str.
+The class 'rdbms::RdbmsViewAliasField' has no attributes.
+The class 'RdbmsViewAliasField' has no attributes.
+The class 'rdbms::RdbmsTableAlias' has no attributes.
+The class 'rdbms::RdbmsViewField' has the following attributes: 'inherited' of type bool.
+The class 'rdbms::RdbmsDeleteFieldOperation' has no attributes.
+The class 'rdbms::RdbmsField' has the following attributes: 'precision' of type int; 'storageByte' of type int; 'mandatory' of type bool; 'scale' of type int; 'rdbmsTypeName' of type str; 'size' of type int.
+The class 'rdbms::RdbmsTable' has no attributes.
+The class 'rdbms::RdbmsView' has the following attributes: 'originUuid' of type str.
+The class 'rdbms::RdbmsModifyFieldOperation' has the following attributes: 'nameChanged' of type str; 'mandatoryChanged' of type bool; 'typeChanged' of type bool; 'changedValueFieldToForeignKey' of type str; 'sizeChanged' of type str; 'changedForeignKeyToValueField' of type str.
+The class 'rdbms::RdbmsTableOperation' has no attributes.
+The class 'rdbms::RdbmsLabelExpression' has the following attributes: 'text' of type str.
+The class 'rdbms::RdbmsUniqueConstraint' has no attributes.
+The class 'rdbms::RdbmsForeignKey' has the following attributes: 'inheritenceBased' of type bool; 'deleteOnCascade' of type bool; 'deferred' of type bool; 'readOnly' of type bool; 'foreignKeySqlName' of type str.
+The class 'rdbms::RdbmsValueField' has the following attributes: 'technical' of type bool.
+The class 'RdbmsField' has no attributes.
+The class 'RdbmsElement' has no attributes.
+The class 'RdbmsTable' has no attributes.
+The class 'RdbmsViewField' has no attributes.
+The class 'rdbms::RdbmsJunctionTable' has no attributes.
+The class 'rdbms::RdbmsViewIdentifierField' has no attributes.
+The class 'RdbmsExpression' has no attributes.
+The class 'rdbms::RdbmsOperationMeta' has no attributes.
+The class 'rdbms::RdbmsFeature' has the following attributes: 'name' of type str.
+The class 'rdbms::RdbmsIndex' has the following attributes: 'unique' of type bool.
+The class 'rdbms::RdbmsCreateTableOperation' has no attributes.
+The class 'rdbms::RdbmsIdentifierField' has no attributes.
+The class 'rdbms::RdbmsViewRelation' has the following attributes: 'name' of type str.
+The class 'rdbms::RdbmsViewRecord' has no attributes.
+The class 'rdbms::RdbmsViewForeignIdentifierField' has no attributes.
+The class 'rdbms::RdbmsCreateFieldOperation' has no attributes.
+The class 'rdbms::RdbmsElement' has the following attributes: 'description' of type str; 'originalName' of type str; 'fullName' of type str; 'originalPackage' of type str; 'sqlName' of type str; 'shortName' of type str; 'name' of type str; 'uuid' of type str.
+The class 'rdbms::RdbmsDeleteTableOperation' has no attributes.
+The class 'RdbmsIdentifierField' has no attributes.
+The class 'rdbms::RdbmsExpression' has the following attributes: 'expression' of type str.
+The class 'rdbms::RdbmsRelationExpression' has no attributes.
+The class 'RdbmsViewTableField' has no attributes.
+The class 'rdbms::RdbmsViewTableField' has the following attributes: 'foreign' of type bool.
+The class 'rdbms::RdbmsFieldOperation' has the following attributes: 'reviewRequired' of type bool.
+The class 'rdbms::RdbmsViewRecordValue' has the following attributes: 'value' of type str.
+The class 'RdbmsFieldOperation' has no attributes.
+The class 'rdbms::RdbmsViewExpressionField' has the following attributes: 'expression' of type str.
+The class 'rdbms::RdbmsModel' has the following attributes: 'version' of type str.
+'rdbms::RdbmsView' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsTableAlias' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsFieldOperation' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsViewValueField' is a specialization of 'RdbmsViewAliasField'.
+'rdbms::RdbmsExpression' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsViewAliasField' is a specialization of 'RdbmsViewTableField'.
+'rdbms::RdbmsModifyFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+'rdbms::RdbmsCreateFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+'rdbms::RdbmsModifyTableOperation' is a specialization of 'RdbmsTableOperation'.
+'rdbms::RdbmsViewForeignIdentifierField' is a specialization of 'RdbmsViewTableField'.
+'rdbms::RdbmsField' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsViewTableField' is a specialization of 'RdbmsViewField'.
+'rdbms::RdbmsViewIdentifierField' is a specialization of 'RdbmsViewAliasField'.
+'rdbms::RdbmsDeleteFieldOperation' is a specialization of 'RdbmsFieldOperation'.
+'rdbms::RdbmsJunctionTable' is a specialization of 'RdbmsTable'.
+'rdbms::RdbmsForeignKey' is a specialization of 'RdbmsIdentifierField'.
+'rdbms::RdbmsRelationExpression' is a specialization of 'RdbmsExpression'.
+'rdbms::RdbmsLabelExpression' is a specialization of 'RdbmsExpression'.
+'rdbms::RdbmsIndex' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsTableOperation' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsValueField' is a specialization of 'RdbmsField'.
+'rdbms::RdbmsViewExpressionField' is a specialization of 'RdbmsViewField'.
+'rdbms::RdbmsDeleteTableOperation' is a specialization of 'RdbmsTableOperation'.
+'rdbms::RdbmsCreateTableOperation' is a specialization of 'RdbmsTableOperation'.
+'rdbms::RdbmsTable' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsIdentifierField' is a specialization of 'RdbmsField'.
+'rdbms::RdbmsViewField' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsUniqueConstraint' is a specialization of 'RdbmsElement'.
+'rdbms::RdbmsViewRecordValue' (role 'rdbms_RdbmsViewRecordValue', cardinality 0..*) is associated with 'rdbms::RdbmsViewRecord' (role 'rdbms_RdbmsViewRecord91', cardinality 0..*).
+'rdbms::RdbmsForeignKey' (role 'RdbmsForeignKey', cardinality 0..*) is associated with 'rdbms::RdbmsIdentifierField' (role 'referenceKey', cardinality 0..*).
+'rdbms::RdbmsOperationMeta' (role 'rdbms_RdbmsOperationMeta106', cardinality 0..*) is associated with 'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel107', cardinality 0..*).
+'rdbms::RdbmsModifyTableOperation' (role 'rdbms_RdbmsModifyTableOperation', cardinality 0..*) is associated with 'rdbms::RdbmsCreateFieldOperation' (role 'rdbms_RdbmsCreateFieldOperation', cardinality 0..*).
+'rdbms::RdbmsTable' (role 'RdbmsTable87', cardinality 0..*) is associated with 'rdbms::RdbmsIndex' (role 'indexes', cardinality 0..*).
+'rdbms::RdbmsViewRelation' (role 'rdbms_RdbmsViewRelation77', cardinality 0..*) is associated with 'rdbms::RdbmsIdentifierField' (role 'rdbms_RdbmsIdentifierField78', cardinality 0..*).
+'rdbms::RdbmsModifyTableOperation' (role 'rdbms_RdbmsModifyTableOperation59', cardinality 0..*) is associated with 'rdbms::RdbmsModifyFieldOperation' (role 'rdbms_RdbmsModifyFieldOperation', cardinality 0..*).
+'rdbms::RdbmsIdentifierField' (role 'rdbms_RdbmsIdentifierField', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable', cardinality 0..*).
+'rdbms::RdbmsIndex' (role 'RdbmsIndex', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'table5', cardinality 0..*).
+'rdbms::RdbmsFeature' (role 'rdbms_RdbmsFeature', cardinality 0..*) is associated with 'rdbms::RdbmsConfiguration' (role 'rdbms_RdbmsConfiguration47', cardinality 0..*).
+'rdbms::RdbmsForeignKey' (role 'rdbms_RdbmsForeignKey', cardinality 0..*) is associated with 'rdbms::RdbmsJunctionTable' (role 'rdbms_RdbmsJunctionTable', cardinality 0..*).
+'rdbms::RdbmsTableAlias' (role 'rdbms_RdbmsTableAlias', cardinality 0..*) is associated with 'rdbms::RdbmsView' (role 'rdbms_RdbmsView', cardinality 0..*).
+'rdbms::RdbmsField' (role 'RdbmsField', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'table', cardinality 0..*).
+'rdbms::RdbmsModifyTableOperation' (role 'rdbms_RdbmsModifyTableOperation63', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable64', cardinality 0..*).
+'rdbms::RdbmsModifyFieldOperation' (role 'rdbms_RdbmsModifyFieldOperation68', cardinality 0..*) is associated with 'rdbms::RdbmsField' (role 'rdbms_RdbmsField69', cardinality 0..*).
+'rdbms::RdbmsField' (role 'rdbms_RdbmsField66', cardinality 0..*) is associated with 'rdbms::RdbmsFieldOperation' (role 'rdbms_RdbmsFieldOperation', cardinality 0..*).
+'rdbms::RdbmsViewIdentifierField' (role 'rdbms_RdbmsViewIdentifierField', cardinality 0..*) is associated with 'rdbms::RdbmsView' (role 'rdbms_RdbmsView26', cardinality 0..*).
+'rdbms::RdbmsViewRecord' (role 'rdbms_RdbmsViewRecord93', cardinality 0..*) is associated with 'rdbms::RdbmsView' (role 'rdbms_RdbmsView94', cardinality 0..*).
+'rdbms::RdbmsExpression' (role 'rdbms_RdbmsExpression', cardinality 0..*) is associated with 'rdbms::RdbmsViewExpressionField' (role 'rdbms_RdbmsViewExpressionField', cardinality 0..*).
+'rdbms::RdbmsTableAlias' (role 'rdbms_RdbmsTableAlias75', cardinality 0..*) is associated with 'rdbms::RdbmsViewRelation' (role 'rdbms_RdbmsViewRelation74', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel104', cardinality 0..*) is associated with 'rdbms::RdbmsOperationMeta' (role 'rdbms_RdbmsOperationMeta', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel', cardinality 0..*) is associated with 'rdbms::RdbmsFieldType' (role 'rdbms_RdbmsFieldType33', cardinality 0..*).
+'rdbms::RdbmsTableOperation' (role 'rdbms_RdbmsTableOperation101', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable102', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel110', cardinality 0..*) is associated with 'rdbms::RdbmsOperationMeta' (role 'rdbms_RdbmsOperationMeta109', cardinality 0..*).
+'rdbms::RdbmsViewRelation' (role 'rdbms_RdbmsViewRelation80', cardinality 0..*) is associated with 'rdbms::RdbmsIdentifierField' (role 'rdbms_RdbmsIdentifierField81', cardinality 0..*).
+'rdbms::RdbmsView' (role 'RdbmsView', cardinality 0..*) is associated with 'rdbms::RdbmsViewField' (role 'fields30', cardinality 0..*).
+'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable6', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable8', cardinality 0..*).
+'rdbms::RdbmsTableOperation' (role 'rdbms_RdbmsTableOperation', cardinality 0..*) is associated with 'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel43', cardinality 0..*).
+'rdbms::RdbmsFieldType' (role 'rdbms_RdbmsFieldType', cardinality 0..*) is associated with 'rdbms::RdbmsField' (role 'rdbms_RdbmsField', cardinality 0..*).
+'rdbms::RdbmsTableAlias' (role 'rdbms_RdbmsTableAlias56', cardinality 0..*) is associated with 'rdbms::RdbmsViewAliasField' (role 'rdbms_RdbmsViewAliasField55', cardinality 0..*).
+'rdbms::RdbmsViewRecordValue' (role 'rdbms_RdbmsViewRecordValue99', cardinality 0..*) is associated with 'rdbms::RdbmsViewValueField' (role 'rdbms_RdbmsViewValueField', cardinality 0..*).
+'rdbms::RdbmsUniqueConstraint' (role 'uniqueConstraints', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'RdbmsTable13', cardinality 0..*).
+'rdbms::RdbmsViewIdentifierField' (role 'rdbms_RdbmsViewIdentifierField85', cardinality 0..*) is associated with 'rdbms::RdbmsViewForeignIdentifierField' (role 'rdbms_RdbmsViewForeignIdentifierField', cardinality 0..*).
+'rdbms::RdbmsForeignKey' (role 'foreignKeys', cardinality 0..*) is associated with 'rdbms::RdbmsIdentifierField' (role 'RdbmsIdentifierField', cardinality 0..*).
+'rdbms::RdbmsIndex' (role 'rdbms_RdbmsIndex', cardinality 0..*) is associated with 'rdbms::RdbmsField' (role 'rdbms_RdbmsField89', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel41', cardinality 0..*) is associated with 'rdbms::RdbmsConfiguration' (role 'rdbms_RdbmsConfiguration', cardinality 0..*).
+'rdbms::RdbmsView' (role 'RdbmsView52', cardinality 0..*) is associated with 'rdbms::RdbmsTableAlias' (role 'tables', cardinality 0..*).
+'rdbms::RdbmsModifyTableOperation' (role 'rdbms_RdbmsModifyTableOperation61', cardinality 0..*) is associated with 'rdbms::RdbmsDeleteFieldOperation' (role 'rdbms_RdbmsDeleteFieldOperation', cardinality 0..*).
+'rdbms::RdbmsViewTableField' (role 'rdbms_RdbmsViewTableField', cardinality 0..*) is associated with 'rdbms::RdbmsField' (role 'rdbms_RdbmsField83', cardinality 0..*).
+'rdbms::RdbmsViewRelation' (role 'rdbms_RdbmsViewRelation', cardinality 0..*) is associated with 'rdbms::RdbmsView' (role 'rdbms_RdbmsView24', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel38', cardinality 0..*) is associated with 'rdbms::RdbmsView' (role 'rdbms_RdbmsView39', cardinality 0..*).
+'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel35', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable36', cardinality 0..*).
+'rdbms::RdbmsForeignKey' (role 'rdbms_RdbmsForeignKey19', cardinality 0..*) is associated with 'rdbms::RdbmsJunctionTable' (role 'rdbms_RdbmsJunctionTable18', cardinality 0..*).
+'rdbms::RdbmsViewIdentifierField' (role 'rdbms_RdbmsViewIdentifierField97', cardinality 0..*) is associated with 'rdbms::RdbmsViewRecordValue' (role 'rdbms_RdbmsViewRecordValue96', cardinality 0..*).
+'rdbms::RdbmsTable' (role 'RdbmsTable', cardinality 0..*) is associated with 'rdbms::RdbmsField' (role 'fields', cardinality 0..*).
+'rdbms::RdbmsView' (role 'view', cardinality 0..*) is associated with 'rdbms::RdbmsViewField' (role 'RdbmsViewField', cardinality 0..*).
+'rdbms::RdbmsView' (role 'view28', cardinality 0..*) is associated with 'rdbms::RdbmsTableAlias' (role 'RdbmsTableAlias', cardinality 0..*).
+'rdbms::RdbmsTable' (role 'table2', cardinality 0..*) is associated with 'rdbms::RdbmsUniqueConstraint' (role 'RdbmsUniqueConstraint', cardinality 0..*).
+'rdbms::RdbmsViewRecord' (role 'rdbms_RdbmsViewRecord', cardinality 0..*) is associated with 'rdbms::RdbmsModel' (role 'rdbms_RdbmsModel45', cardinality 0..*).
+'rdbms::RdbmsTableAlias' (role 'rdbms_RdbmsTableAlias49', cardinality 0..*) is associated with 'rdbms::RdbmsTable' (role 'rdbms_RdbmsTable50', cardinality 0..*).
+'rdbms::RdbmsViewRelation' (role 'rdbms_RdbmsViewRelation71', cardinality 0..*) is associated with 'rdbms::RdbmsTableAlias' (role 'rdbms_RdbmsTableAlias72', cardinality 0..*).
+'rdbms::RdbmsField' (role 'rdbms_RdbmsField15', cardinality 0..*) is associated with 'rdbms::RdbmsUniqueConstraint' (role 'rdbms_RdbmsUniqueConstraint', cardinality 0..*).
+'rdbms::RdbmsViewAliasField' (role 'rdbms_RdbmsViewAliasField', cardinality 0..*) is associated with 'rdbms::RdbmsRelationExpression' (role 'rdbms_RdbmsRelationExpression', cardinality 0..*).

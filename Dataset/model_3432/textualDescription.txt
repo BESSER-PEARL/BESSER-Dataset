@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'myDsl::Student' has the following attributes: 'registrationNum' of type int.
+The class 'myDsl::School' has the following attributes: 'name' of type str.
+The class 'myDsl::Teacher' has no attributes.
+The class 'myDsl::Person' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+The class 'myDsl::SchoolModel' has no attributes.
+'myDsl::Teacher' is a specialization of 'Person'.
+'myDsl::Student' is a specialization of 'Person'.
+'myDsl::School' (role 'myDsl_School2', cardinality 0..*) is associated with 'myDsl::Person' (role 'myDsl_Person', cardinality 0..*).
+'myDsl::School' (role 'myDsl_School', cardinality 0..*) is associated with 'myDsl::SchoolModel' (role 'myDsl_SchoolModel', cardinality 0..*).
+'myDsl::Teacher' (role 'myDsl_Teacher', cardinality 0..*) is associated with 'myDsl::Student' (role 'myDsl_Student', cardinality 0..*).

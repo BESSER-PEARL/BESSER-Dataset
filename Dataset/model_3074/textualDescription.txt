@@ -1,0 +1,51 @@
+The model has 24 class(es).
+The class 'oml::Class' has the following attributes: 'isAbstract' of type str.
+The class 'oml::Datatype' has no attributes.
+The class 'Feature' has no attributes.
+The class 'oml::Classifier' has no attributes.
+The class 'oml::Parameter' has no attributes.
+The class 'oml::Model' has no attributes.
+The class 'Package' has no attributes.
+The class 'oml::PackageableElement' has no attributes.
+The class 'oml::StructuralFeature' has the following attributes: 'isMany' of type str.
+The class 'oml::Operation' has no attributes.
+The class 'AnnotatedElement' has no attributes.
+The class 'Class' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'oml::AnnotatedElement' has no attributes.
+The class 'oml::Annotation' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'oml::ExternalClass' has no attributes.
+The class 'oml::Reference' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'oml::Attribute' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'oml::Package' has no attributes.
+The class 'oml::Feature' has the following attributes: 'visibility' of type str.
+The class 'oml::NamedElement' has the following attributes: 'name' of type str.
+The enumeration 'VisibilityEnum' has the following literals: 'private', 'public'.
+'oml::Operation' is a specialization of 'Feature'.
+'oml::Attribute' is a specialization of 'StructuralFeature'.
+'oml::Classifier' is a specialization of 'PackageableElement'.
+'oml::StructuralFeature' is a specialization of 'Feature'.
+'oml::Class' is a specialization of 'Classifier'.
+'oml::Feature' is a specialization of 'NamedElement'.
+'oml::Reference' is a specialization of 'StructuralFeature'.
+'oml::Model' is a specialization of 'Package'.
+'oml::Datatype' is a specialization of 'Classifier'.
+'oml::Parameter' is a specialization of 'NamedElement'.
+'oml::NamedElement' is a specialization of 'AnnotatedElement'.
+'oml::PackageableElement' is a specialization of 'NamedElement'.
+'oml::ExternalClass' is a specialization of 'Class'.
+'oml::Package' is a specialization of 'PackageableElement'.
+'oml::Feature' (role 'oml_Feature', cardinality 0..*) is associated with 'oml::Classifier' (role 'oml_Classifier', cardinality 0..*).
+'oml::Class' (role 'Class7', cardinality 0..*) is associated with 'oml::Class' (role 'extends', cardinality 0..*).
+'oml::Class' (role 'Class10', cardinality 0..*) is associated with 'oml::Feature' (role 'features', cardinality 0..*).
+'oml::Classifier' (role 'oml_Classifier15', cardinality 0..*) is associated with 'oml::Parameter' (role 'oml_Parameter', cardinality 0..*).
+'oml::PackageableElement' (role 'PackageableElement', cardinality 0..*) is associated with 'oml::Package' (role 'package', cardinality 0..*).
+'oml::Parameter' (role 'parameters', cardinality 0..*) is associated with 'oml::Operation' (role 'Operation', cardinality 0..*).
+'oml::Annotation' (role 'oml_Annotation', cardinality 0..*) is associated with 'oml::AnnotatedElement' (role 'oml_AnnotatedElement', cardinality 0..*).
+'oml::Class' (role 'owner', cardinality 0..*) is associated with 'oml::Feature' (role 'Feature', cardinality 0..*).
+'oml::Package' (role 'Package', cardinality 0..*) is associated with 'oml::PackageableElement' (role 'contents', cardinality 0..*).
+'oml::Class' (role 'Class', cardinality 0..*) is associated with 'oml::Class' (role 'extendedBy', cardinality 0..*).
+'oml::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'oml::Operation' (role 'owner13', cardinality 0..*).

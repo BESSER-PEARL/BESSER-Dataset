@@ -1,0 +1,45 @@
+The model has 18 class(es).
+The class 'SuperCall' has no attributes.
+The class 'archDSL::CertainCall' has no attributes.
+The class 'archDSL::AltCall' has the following attributes: 'opt' of type bool.
+The class 'archDSL::UncertainInterface' has the following attributes: 'name' of type str.
+The class 'archDSL::OptMethod' has the following attributes: 'type' of type str.
+The class 'archDSL::Model' has no attributes.
+The class 'archDSL::Behavior' has no attributes.
+The class 'archDSL::Param' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'archDSL::Connector' has the following attributes: 'name' of type str.
+The class 'archDSL::UncertainConnector' has the following attributes: 'name' of type str.
+The class 'archDSL::Interface' has the following attributes: 'name' of type str.
+The class 'SuperMethod' has no attributes.
+The class 'archDSL::Method' has the following attributes: 'type' of type str.
+The class 'archDSL::SuperMethod' has the following attributes: 'name' of type str.
+The class 'archDSL::UncertainBehavior' has the following attributes: 'name' of type str.
+The class 'archDSL::OptCall' has no attributes.
+The class 'archDSL::AltMethod' has the following attributes: 'a_name' of type str; 'type' of type str.
+The class 'archDSL::SuperCall' has no attributes.
+'archDSL::AltCall' is a specialization of 'SuperCall'.
+'archDSL::CertainCall' is a specialization of 'SuperCall'.
+'archDSL::OptMethod' is a specialization of 'SuperMethod'.
+'archDSL::AltMethod' is a specialization of 'SuperMethod'.
+'archDSL::Method' is a specialization of 'SuperMethod'.
+'archDSL::OptCall' is a specialization of 'SuperCall'.
+'archDSL::Behavior' (role 'archDSL_Behavior33', cardinality 0..*) is associated with 'archDSL::Interface' (role 'archDSL_Interface34', cardinality 0..*).
+'archDSL::Interface' (role 'archDSL_Interface', cardinality 0..*) is associated with 'archDSL::Model' (role 'archDSL_Model', cardinality 0..*).
+'archDSL::Interface' (role 'archDSL_Interface23', cardinality 0..*) is associated with 'archDSL::UncertainConnector' (role 'archDSL_UncertainConnector22', cardinality 0..*).
+'archDSL::UncertainInterface' (role 'archDSL_UncertainInterface13', cardinality 0..*) is associated with 'archDSL::AltMethod' (role 'archDSL_AltMethod', cardinality 0..*).
+'archDSL::OptMethod' (role 'archDSL_OptMethod', cardinality 0..*) is associated with 'archDSL::UncertainInterface' (role 'archDSL_UncertainInterface15', cardinality 0..*).
+'archDSL::UncertainConnector' (role 'archDSL_UncertainConnector25', cardinality 0..*) is associated with 'archDSL::UncertainBehavior' (role 'archDSL_UncertainBehavior', cardinality 0..*).
+'archDSL::SuperMethod' (role 'archDSL_SuperMethod42', cardinality 0..*) is associated with 'archDSL::AltCall' (role 'archDSL_AltCall', cardinality 0..*).
+'archDSL::UncertainInterface' (role 'archDSL_UncertainInterface10', cardinality 0..*) is associated with 'archDSL::Interface' (role 'archDSL_Interface11', cardinality 0..*).
+'archDSL::Behavior' (role 'archDSL_Behavior27', cardinality 0..*) is associated with 'archDSL::Interface' (role 'archDSL_Interface28', cardinality 0..*).
+'archDSL::Connector' (role 'archDSL_Connector', cardinality 0..*) is associated with 'archDSL::Model' (role 'archDSL_Model8', cardinality 0..*).
+'archDSL::UncertainBehavior' (role 'archDSL_UncertainBehavior39', cardinality 0..*) is associated with 'archDSL::Interface' (role 'archDSL_Interface40', cardinality 0..*).
+'archDSL::Behavior' (role 'archDSL_Behavior20', cardinality 0..*) is associated with 'archDSL::Connector' (role 'archDSL_Connector19', cardinality 0..*).
+'archDSL::Behavior' (role 'archDSL_Behavior30', cardinality 0..*) is associated with 'archDSL::Method' (role 'archDSL_Method31', cardinality 0..*).
+'archDSL::UncertainInterface' (role 'archDSL_UncertainInterface', cardinality 0..*) is associated with 'archDSL::Model' (role 'archDSL_Model2', cardinality 0..*).
+'archDSL::Method' (role 'archDSL_Method', cardinality 0..*) is associated with 'archDSL::Interface' (role 'archDSL_Interface17', cardinality 0..*).
+'archDSL::UncertainConnector' (role 'archDSL_UncertainConnector', cardinality 0..*) is associated with 'archDSL::Model' (role 'archDSL_Model6', cardinality 0..*).
+'archDSL::UncertainBehavior' (role 'archDSL_UncertainBehavior37', cardinality 0..*) is associated with 'archDSL::SuperCall' (role 'archDSL_SuperCall', cardinality 0..*).
+'archDSL::SuperCall' (role 'archDSL_SuperCall44', cardinality 0..*) is associated with 'archDSL::SuperMethod' (role 'archDSL_SuperMethod45', cardinality 0..*).
+'archDSL::Behavior' (role 'archDSL_Behavior', cardinality 0..*) is associated with 'archDSL::Model' (role 'archDSL_Model4', cardinality 0..*).
+'archDSL::SuperMethod' (role 'archDSL_SuperMethod', cardinality 0..*) is associated with 'archDSL::Param' (role 'archDSL_Param', cardinality 0..*).

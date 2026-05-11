@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'TestPackage::UberClass' has no attributes.
+The class 'TestPackage::SuperClass' has no attributes.
+The class 'TestPackage::SubPackage::SubTestClass' has the following attributes: 'testBooleanAttr' of type bool; 'testAttr' of type date; 'testRealAttr' of type str; 'testStringAttr' of type str; 'testIntAttr' of type int.
+The class 'TestPackage::TestInterface' has no attributes.
+The class 'SuperClass' has no attributes.
+The class 'TestPackage::TestClass' has the following attributes: 'testAttr7' of type int; 'testAttr1' of type int; 'testAttr2' of type int; 'testAttr' of type date; 'testIntAttr' of type int; 'testStringAttr' of type str; 'testBooleanAttr' of type bool; 'testAttr5' of type int; 'testAttr4' of type int; 'testAttr8' of type int; 'testAttr3' of type int; 'testRealAttr' of type str; 'testUnlimitedNaturalAttr' of type str; 'testAttr6' of type int.
+The class 'TestPackage::SubPackage::SubTestInterface' has no attributes.
+The class 'UberClass' has no attributes.
+The enumeration 'SubTestEnum' does not specify any literals.
+The enumeration 'TestEnum' does not specify any literals.
+'TestPackage::TestClass' is a specialization of 'SuperClass'.
+'TestPackage::TestClass' is a specialization of 'UberClass'.
+'TestPackage::TestInterface' is a specialization of 'SuperClass'.

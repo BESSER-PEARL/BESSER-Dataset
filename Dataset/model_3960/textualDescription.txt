@@ -1,0 +1,237 @@
+The model has 74 class(es).
+The class 'ClassesProv::Relationship' has no attributes.
+The class 'ClassesProv::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'ClassesProv::Usage' has no attributes.
+The class 'ClassesProv::Namespace' has no attributes.
+The class 'DataType' has no attributes.
+The class 'ClassesProv::Feature' has the following attributes: 'isStatic' of type bool.
+The class 'Namespace' has no attributes.
+The class 'ClassesProv::DirectedRelationship' has no attributes.
+The class 'ClassesProv::Association' has the following attributes: 'isDerived' of type bool.
+The class 'RedefinableElement' has no attributes.
+The class 'ClassesProv::Generalization' has the following attributes: 'isSubstitutable' of type bool.
+The class 'DirectedRelationship' has no attributes.
+The class 'ClassesProv::Substitution' has no attributes.
+The class 'ClassesProv::PackageImport' has no attributes.
+The class 'ClassesProv::PackageableElement' has no attributes.
+The class 'ClassesProv::ValueSpecification' has no attributes.
+The class 'ClassesProv::TypedElement' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'ClassesProv::StructuralFeature' has the following attributes: 'isReadOnly' of type bool.
+The class 'LiteralSpecification' has no attributes.
+The class 'ClassesProv::LiteralReal' has no attributes.
+The class 'ClassesProv::LiteralString' has no attributes.
+The class 'ClassesProv::Expression' has the following attributes: 'symbol' of type str.
+The class 'ClassesProv::Interface' has no attributes.
+The class 'ClassesProv::Parameter' has the following attributes: 'default' of type str.
+The class 'Association' has no attributes.
+The class 'ClassesProv::LiteralUnilimitedNatural' has no attributes.
+The class 'ClassesProv::DataType' has no attributes.
+The class 'ClassesProv::Slot' has no attributes.
+The class 'ClassesProv::LiteralSpecification' has no attributes.
+The class 'ClassesProv::PrimitiveType' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'ClassesProv::Abstraction' has no attributes.
+The class 'ClassesProv::Operation' has the following attributes: 'isOrdered' of type bool; 'isUnique' of type bool; 'isQuery' of type bool; 'upper' of type int; 'lower' of type int.
+The class 'Feature' has no attributes.
+The class 'ClassesProv::LiteralBoolean' has no attributes.
+The class 'ClassesProv::LiteralNull' has no attributes.
+The class 'ClassesProv::NamedElement' has the following attributes: 'name' of type str; 'qualifiedName' of type str.
+The class 'ClassesProv::Property' has the following attributes: 'isDerivedUnion' of type bool; 'default' of type str; 'isDerived' of type bool; 'isID' of type bool; 'isComposite' of type bool.
+The class 'ClassesProv::InstanceValue' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'ClassesProv::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'Realization' has no attributes.
+The class 'Element' has no attributes.
+The class 'ClassesProv::MultiplicityElement' has the following attributes: 'upper' of type int; 'isOrdered' of type bool; 'isUnique' of type bool; 'lower' of type int.
+The class 'ClassesProv::LiteralInteger' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Class' has no attributes.
+The class 'ClassesProv::Type' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'ClassesProv::InstanceSpecification' has no attributes.
+The class 'ClassesProv::InterfaceRealization' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'ClassesProv::Constraint' has no attributes.
+The class 'ClassesProv::EnumerationLiteral' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'ClassesProv::GeneralizationSet' has the following attributes: 'isCovering' of type bool; 'isDisjoint' of type bool.
+The class 'ClassesProv::BehavioralFeature' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'ClassesProv::Classifier' has the following attributes: 'isAbstract' of type bool; 'isFinalSpecialization' of type bool.
+The class 'ClassesProv::AssociationClass' has no attributes.
+The class 'ClassesProv::Enumeration' has no attributes.
+The class 'ClassesProv::PackageMerge' has no attributes.
+The class 'ClassesProv::Dependency' has no attributes.
+The class 'ClassesProv::Realization' has no attributes.
+The class 'Type' has no attributes.
+The class 'ClassesProv::Element' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'ClassesProv::Class' has no attributes.
+The class 'ClassesProv::Package' has the following attributes: 'URI' of type str.
+The class 'Relationship' has no attributes.
+The class 'ClassesProv::ElementImport' has the following attributes: 'alias' of type str.
+'ClassesProv::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'ClassesProv::DirectedRelationship' is a specialization of 'Relationship'.
+'ClassesProv::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'ClassesProv::Constraint' is a specialization of 'PackageableElement'.
+'ClassesProv::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'ClassesProv::Class' is a specialization of 'Classifier'.
+'ClassesProv::BehavioralFeature' is a specialization of 'Feature'.
+'ClassesProv::Package' is a specialization of 'Namespace'.
+'ClassesProv::Package' is a specialization of 'PackageableElement'.
+'ClassesProv::PackageImport' is a specialization of 'DirectedRelationship'.
+'ClassesProv::Expression' is a specialization of 'ValueSpecification'.
+'ClassesProv::Generalization' is a specialization of 'DirectedRelationship'.
+'ClassesProv::PackageMerge' is a specialization of 'DirectedRelationship'.
+'ClassesProv::Type' is a specialization of 'PackageableElement'.
+'ClassesProv::Dependency' is a specialization of 'DirectedRelationship'.
+'ClassesProv::InterfaceRealization' is a specialization of 'Realization'.
+'ClassesProv::NamedElement' is a specialization of 'Element'.
+'ClassesProv::Realization' is a specialization of 'Abstraction'.
+'ClassesProv::Substitution' is a specialization of 'Realization'.
+'ClassesProv::InstanceSpecification' is a specialization of 'PackageableElement'.
+'ClassesProv::Enumeration' is a specialization of 'DataType'.
+'ClassesProv::Namespace' is a specialization of 'NamedElement'.
+'ClassesProv::Association' is a specialization of 'Classifier'.
+'ClassesProv::Slot' is a specialization of 'Element'.
+'ClassesProv::Classifier' is a specialization of 'RedefinableElement'.
+'ClassesProv::Interface' is a specialization of 'Classifier'.
+'ClassesProv::Relationship' is a specialization of 'Element'.
+'ClassesProv::Usage' is a specialization of 'Dependency'.
+'ClassesProv::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'ClassesProv::DataType' is a specialization of 'Classifier'.
+'ClassesProv::ValueSpecification' is a specialization of 'PackageableElement'.
+'ClassesProv::LiteralReal' is a specialization of 'LiteralSpecification'.
+'ClassesProv::AssociationClass' is a specialization of 'Class'.
+'ClassesProv::LiteralNull' is a specialization of 'LiteralSpecification'.
+'ClassesProv::RedefinableElement' is a specialization of 'NamedElement'.
+'ClassesProv::GeneralizationSet' is a specialization of 'PackageableElement'.
+'ClassesProv::Classifier' is a specialization of 'Namespace'.
+'ClassesProv::PackageableElement' is a specialization of 'NamedElement'.
+'ClassesProv::MultiplicityElement' is a specialization of 'Element'.
+'ClassesProv::BehavioralFeature' is a specialization of 'Namespace'.
+'ClassesProv::Parameter' is a specialization of 'TypedElement'.
+'ClassesProv::Association' is a specialization of 'Relationship'.
+'ClassesProv::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'ClassesProv::Feature' is a specialization of 'RedefinableElement'.
+'ClassesProv::ElementImport' is a specialization of 'DirectedRelationship'.
+'ClassesProv::Operation' is a specialization of 'BehavioralFeature'.
+'ClassesProv::TypedElement' is a specialization of 'NamedElement'.
+'ClassesProv::ValueSpecification' is a specialization of 'TypedElement'.
+'ClassesProv::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'ClassesProv::PrimitiveType' is a specialization of 'DataType'.
+'ClassesProv::Dependency' is a specialization of 'PackageableElement'.
+'ClassesProv::LiteralString' is a specialization of 'LiteralSpecification'.
+'ClassesProv::Abstraction' is a specialization of 'Dependency'.
+'ClassesProv::StructuralFeature' is a specialization of 'TypedElement'.
+'ClassesProv::Property' is a specialization of 'StructuralFeature'.
+'ClassesProv::Classifier' is a specialization of 'Type'.
+'ClassesProv::StructuralFeature' is a specialization of 'Feature'.
+'ClassesProv::LiteralUnilimitedNatural' is a specialization of 'LiteralSpecification'.
+'ClassesProv::AssociationClass' is a specialization of 'Association'.
+'ClassesProv::Property' (role 'ClassesProv_Property133', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property135', cardinality 0..*).
+'ClassesProv::Constraint' (role 'ClassesProv_Constraint186', cardinality 0..*) is associated with 'ClassesProv::Operation' (role 'ClassesProv_Operation185', cardinality 0..*).
+'ClassesProv::Generalization' (role 'ClassesProv_Generalization', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier123', cardinality 0..*).
+'ClassesProv::BehavioralFeature' (role 'ClassesProv_BehavioralFeature', cardinality 0..*) is associated with 'ClassesProv::Parameter' (role 'ClassesProv_Parameter', cardinality 0..*).
+'ClassesProv::Package' (role 'ClassesProv_Package232', cardinality 0..*) is associated with 'ClassesProv::PackageMerge' (role 'ClassesProv_PackageMerge231', cardinality 0..*).
+'ClassesProv::Association' (role 'ClassesProv_Association149', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property148', cardinality 0..*).
+'ClassesProv::Namespace' (role 'ClassesProv_Namespace9', cardinality 0..*) is associated with 'ClassesProv::PackageableElement' (role 'ClassesProv_PackageableElement', cardinality 0..*).
+'ClassesProv::Type' (role 'ClassesProv_Type71', cardinality 0..*) is associated with 'ClassesProv::TypedElement' (role 'ClassesProv_TypedElement', cardinality 0..*).
+'ClassesProv::Interface' (role 'ClassesProv_Interface259', cardinality 0..*) is associated with 'ClassesProv::Operation' (role 'ClassesProv_Operation260', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property137', cardinality 0..*) is associated with 'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification138', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier121', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier119', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification76', cardinality 0..*) is associated with 'ClassesProv::Expression' (role 'ClassesProv_Expression', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property144', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property142', cardinality 0..*).
+'ClassesProv::Type' (role 'ClassesProv_Type172', cardinality 0..*) is associated with 'ClassesProv::BehavioralFeature' (role 'ClassesProv_BehavioralFeature171', cardinality 0..*).
+'ClassesProv::RedefinableElement' (role 'ClassesProv_RedefinableElement107', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier108', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier162', cardinality 0..*) is associated with 'ClassesProv::Generalization' (role 'ClassesProv_Generalization161', cardinality 0..*).
+'ClassesProv::Generalization' (role 'ClassesProv_Generalization164', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier165', cardinality 0..*).
+'ClassesProv::PackageMerge' (role 'ClassesProv_PackageMerge234', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package235', cardinality 0..*).
+'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement241', cardinality 0..*) is associated with 'ClassesProv::Dependency' (role 'ClassesProv_Dependency240', cardinality 0..*).
+'ClassesProv::Namespace' (role 'ClassesProv_Namespace89', cardinality 0..*) is associated with 'ClassesProv::Constraint' (role 'ClassesProv_Constraint88', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier113', cardinality 0..*) is associated with 'ClassesProv::Feature' (role 'ClassesProv_Feature', cardinality 0..*).
+'ClassesProv::Class' (role 'ClassesProv_Class207', cardinality 0..*) is associated with 'ClassesProv::Class' (role 'ClassesProv_Class205', cardinality 0..*).
+'ClassesProv::Dependency' (role 'ClassesProv_Dependency237', cardinality 0..*) is associated with 'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement238', cardinality 0..*).
+'ClassesProv::RedefinableElement' (role 'ClassesProv_RedefinableElement104', cardinality 0..*) is associated with 'ClassesProv::RedefinableElement' (role 'ClassesProv_RedefinableElement', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification67', cardinality 0..*) is associated with 'ClassesProv::Slot' (role 'ClassesProv_Slot', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification61', cardinality 0..*) is associated with 'ClassesProv::MultiplicityElement' (role 'ClassesProv_MultiplicityElement62', cardinality 0..*).
+'ClassesProv::Enumeration' (role 'ClassesProv_Enumeration229', cardinality 0..*) is associated with 'ClassesProv::EnumerationLiteral' (role 'ClassesProv_EnumerationLiteral228', cardinality 0..*).
+'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification', cardinality 0..*) is associated with 'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification69', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property157', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property159', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier265', cardinality 0..*) is associated with 'ClassesProv::GeneralizationSet' (role 'ClassesProv_GeneralizationSet264', cardinality 0..*).
+'ClassesProv::Parameter' (role 'ClassesProv_Parameter177', cardinality 0..*) is associated with 'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification178', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification84', cardinality 0..*) is associated with 'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification83', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier115', cardinality 0..*).
+'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement', cardinality 0..*) is associated with 'ClassesProv::Namespace' (role 'ClassesProv_Namespace', cardinality 0..*).
+'ClassesProv::GeneralizationSet' (role 'ClassesProv_GeneralizationSet267', cardinality 0..*) is associated with 'ClassesProv::Generalization' (role 'ClassesProv_Generalization268', cardinality 0..*).
+'ClassesProv::Feature' (role 'ClassesProv_Feature129', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier130', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property156', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property154', cardinality 0..*).
+'ClassesProv::Class' (role 'ClassesProv_Class200', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier201', cardinality 0..*).
+'ClassesProv::PackageMerge' (role 'ClassesProv_PackageMerge', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package45', cardinality 0..*).
+'ClassesProv::OpaqueExpression' (role 'ClassesProv_OpaqueExpression', cardinality 0..*) is associated with 'ClassesProv::Abstraction' (role 'ClassesProv_Abstraction', cardinality 0..*).
+'ClassesProv::PackageImport' (role 'ClassesProv_PackageImport', cardinality 0..*) is associated with 'ClassesProv::Namespace' (role 'ClassesProv_Namespace19', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation', cardinality 0..*) is associated with 'ClassesProv::Type' (role 'ClassesProv_Type180', cardinality 0..*).
+'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement7', cardinality 0..*) is associated with 'ClassesProv::Dependency' (role 'ClassesProv_Dependency', cardinality 0..*).
+'ClassesProv::Interface' (role 'ClassesProv_Interface', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property153', cardinality 0..*).
+'ClassesProv::Element' (role 'ClassesProv_Element92', cardinality 0..*) is associated with 'ClassesProv::Constraint' (role 'ClassesProv_Constraint91', cardinality 0..*).
+'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement12', cardinality 0..*) is associated with 'ClassesProv::Namespace' (role 'ClassesProv_Namespace11', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation204', cardinality 0..*) is associated with 'ClassesProv::Class' (role 'ClassesProv_Class203', cardinality 0..*).
+'ClassesProv::Class' (role 'ClassesProv_Class', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property132', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification101', cardinality 0..*) is associated with 'ClassesProv::Slot' (role 'ClassesProv_Slot100', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification', cardinality 0..*) is associated with 'ClassesProv::MultiplicityElement' (role 'ClassesProv_MultiplicityElement', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property139', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property141', cardinality 0..*).
+'ClassesProv::Namespace' (role 'ClassesProv_Namespace14', cardinality 0..*) is associated with 'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement15', cardinality 0..*).
+'ClassesProv::Substitution' (role 'ClassesProv_Substitution247', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier248', cardinality 0..*).
+'ClassesProv::Constraint' (role 'ClassesProv_Constraint189', cardinality 0..*) is associated with 'ClassesProv::Operation' (role 'ClassesProv_Operation188', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation191', cardinality 0..*) is associated with 'ClassesProv::Class' (role 'ClassesProv_Class192', cardinality 0..*).
+'ClassesProv::Class' (role 'ClassesProv_Class209', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property210', cardinality 0..*).
+'ClassesProv::ElementImport' (role 'ClassesProv_ElementImport23', cardinality 0..*) is associated with 'ClassesProv::PackageableElement' (role 'ClassesProv_PackageableElement24', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property146', cardinality 0..*) is associated with 'ClassesProv::Association' (role 'ClassesProv_Association', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier127', cardinality 0..*) is associated with 'ClassesProv::GeneralizationSet' (role 'ClassesProv_GeneralizationSet', cardinality 0..*).
+'ClassesProv::Package' (role 'ClassesProv_Package33', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package35', cardinality 0..*).
+'ClassesProv::Package' (role 'ClassesProv_Package38', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package36', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property151', cardinality 0..*) is associated with 'ClassesProv::DataType' (role 'ClassesProv_DataType', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property219', cardinality 0..*) is associated with 'ClassesProv::Association' (role 'ClassesProv_Association218', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier116', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier118', cardinality 0..*).
+'ClassesProv::Element' (role 'ClassesProv_Element', cardinality 0..*) is associated with 'ClassesProv::Element' (role 'ClassesProv_Element0', cardinality 0..*).
+'ClassesProv::PackageImport' (role 'ClassesProv_PackageImport29', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property257', cardinality 0..*) is associated with 'ClassesProv::Interface' (role 'ClassesProv_Interface256', cardinality 0..*).
+'ClassesProv::BehavioralFeature' (role 'ClassesProv_BehavioralFeature175', cardinality 0..*) is associated with 'ClassesProv::Parameter' (role 'ClassesProv_Parameter174', cardinality 0..*).
+'ClassesProv::Constraint' (role 'ClassesProv_Constraint183', cardinality 0..*) is associated with 'ClassesProv::Operation' (role 'ClassesProv_Operation182', cardinality 0..*).
+'ClassesProv::Relationship' (role 'ClassesProv_Relationship', cardinality 0..*) is associated with 'ClassesProv::Element' (role 'ClassesProv_Element47', cardinality 0..*).
+'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification78', cardinality 0..*) is associated with 'ClassesProv::InstanceValue' (role 'ClassesProv_InstanceValue', cardinality 0..*).
+'ClassesProv::Element' (role 'ClassesProv_Element52', cardinality 0..*) is associated with 'ClassesProv::DirectedRelationship' (role 'ClassesProv_DirectedRelationship51', cardinality 0..*).
+'ClassesProv::GeneralizationSet' (role 'ClassesProv_GeneralizationSet168', cardinality 0..*) is associated with 'ClassesProv::Generalization' (role 'ClassesProv_Generalization167', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier251', cardinality 0..*) is associated with 'ClassesProv::Interface' (role 'ClassesProv_Interface250', cardinality 0..*).
+'ClassesProv::Enumeration' (role 'ClassesProv_Enumeration', cardinality 0..*) is associated with 'ClassesProv::EnumerationLiteral' (role 'ClassesProv_EnumerationLiteral', cardinality 0..*).
+'ClassesProv::Interface' (role 'ClassesProv_Interface252', cardinality 0..*) is associated with 'ClassesProv::Interface' (role 'ClassesProv_Interface254', cardinality 0..*).
+'ClassesProv::PackageImport' (role 'ClassesProv_PackageImport31', cardinality 0..*) is associated with 'ClassesProv::Namespace' (role 'ClassesProv_Namespace32', cardinality 0..*).
+'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification98', cardinality 0..*) is associated with 'ClassesProv::Slot' (role 'ClassesProv_Slot97', cardinality 0..*).
+'ClassesProv::Namespace' (role 'ClassesProv_Namespace17', cardinality 0..*) is associated with 'ClassesProv::ElementImport' (role 'ClassesProv_ElementImport', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property216', cardinality 0..*) is associated with 'ClassesProv::Association' (role 'ClassesProv_Association215', cardinality 0..*).
+'ClassesProv::Constraint' (role 'ClassesProv_Constraint', cardinality 0..*) is associated with 'ClassesProv::Namespace' (role 'ClassesProv_Namespace21', cardinality 0..*).
+'ClassesProv::Constraint' (role 'ClassesProv_Constraint65', cardinality 0..*) is associated with 'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification64', cardinality 0..*).
+'ClassesProv::Classifier' (role 'ClassesProv_Classifier125', cardinality 0..*) is associated with 'ClassesProv::Substitution' (role 'ClassesProv_Substitution', cardinality 0..*).
+'ClassesProv::Type' (role 'ClassesProv_Type73', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package74', cardinality 0..*).
+'ClassesProv::PackageableElement' (role 'ClassesProv_PackageableElement41', cardinality 0..*) is associated with 'ClassesProv::Package' (role 'ClassesProv_Package40', cardinality 0..*).
+'ClassesProv::Element' (role 'ClassesProv_Element2', cardinality 0..*) is associated with 'ClassesProv::Element' (role 'ClassesProv_Element4', cardinality 0..*).
+'ClassesProv::DataType' (role 'ClassesProv_DataType221', cardinality 0..*) is associated with 'ClassesProv::Property' (role 'ClassesProv_Property222', cardinality 0..*).
+'ClassesProv::Property' (role 'ClassesProv_Property213', cardinality 0..*) is associated with 'ClassesProv::Association' (role 'ClassesProv_Association212', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification95', cardinality 0..*) is associated with 'ClassesProv::Constraint' (role 'ClassesProv_Constraint94', cardinality 0..*).
+'ClassesProv::Package' (role 'ClassesProv_Package43', cardinality 0..*) is associated with 'ClassesProv::Type' (role 'ClassesProv_Type', cardinality 0..*).
+'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification80', cardinality 0..*) is associated with 'ClassesProv::Slot' (role 'ClassesProv_Slot81', cardinality 0..*).
+'ClassesProv::InstanceSpecification' (role 'ClassesProv_InstanceSpecification86', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation197', cardinality 0..*) is associated with 'ClassesProv::Interface' (role 'ClassesProv_Interface198', cardinality 0..*).
+'ClassesProv::StructuralFeature' (role 'ClassesProv_StructuralFeature', cardinality 0..*) is associated with 'ClassesProv::Slot' (role 'ClassesProv_Slot103', cardinality 0..*).
+'ClassesProv::Interface' (role 'ClassesProv_Interface262', cardinality 0..*) is associated with 'ClassesProv::InterfaceRealization' (role 'ClassesProv_InterfaceRealization', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation225', cardinality 0..*) is associated with 'ClassesProv::DataType' (role 'ClassesProv_DataType224', cardinality 0..*).
+'ClassesProv::DirectedRelationship' (role 'ClassesProv_DirectedRelationship', cardinality 0..*) is associated with 'ClassesProv::Element' (role 'ClassesProv_Element49', cardinality 0..*).
+'ClassesProv::NamedElement' (role 'ClassesProv_NamedElement111', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier110', cardinality 0..*).
+'ClassesProv::MultiplicityElement' (role 'ClassesProv_MultiplicityElement55', cardinality 0..*) is associated with 'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification56', cardinality 0..*).
+'ClassesProv::Namespace' (role 'ClassesProv_Namespace27', cardinality 0..*) is associated with 'ClassesProv::ElementImport' (role 'ClassesProv_ElementImport26', cardinality 0..*).
+'ClassesProv::Substitution' (role 'ClassesProv_Substitution244', cardinality 0..*) is associated with 'ClassesProv::Classifier' (role 'ClassesProv_Classifier245', cardinality 0..*).
+'ClassesProv::ValueSpecification' (role 'ClassesProv_ValueSpecification58', cardinality 0..*) is associated with 'ClassesProv::MultiplicityElement' (role 'ClassesProv_MultiplicityElement59', cardinality 0..*).
+'ClassesProv::Operation' (role 'ClassesProv_Operation194', cardinality 0..*) is associated with 'ClassesProv::DataType' (role 'ClassesProv_DataType195', cardinality 0..*).

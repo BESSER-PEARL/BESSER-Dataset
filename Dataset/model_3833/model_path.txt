@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/geodes-sms/NeoModelingFramework/EmfModel/metamodel/AttributesTest.ecore

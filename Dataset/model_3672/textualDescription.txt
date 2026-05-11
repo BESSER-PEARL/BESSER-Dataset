@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'Demo::Department' has the following attributes: 'location' of type bool; 'name' of type bool; 'budget' of type int.
+The class 'Demo::Project' has the following attributes: 'budget' of type int; 'name' of type bool.
+The class 'Demo::Employee' has the following attributes: 'name' of type bool; 'salary' of type int.
+'Demo::Employee' (role 'WorksOn_employee', cardinality 0..*) is associated with 'Demo::Project' (role 'Project', cardinality 0..*).
+'Demo::Department' (role 'Department8', cardinality 0..*) is associated with 'Demo::Project' (role 'Controls_project', cardinality 0..*).
+'Demo::Department' (role 'WorksIn_department', cardinality 0..*) is associated with 'Demo::Employee' (role 'Employee', cardinality 0..*).
+'Demo::Department' (role 'Controls_department', cardinality 0..*) is associated with 'Demo::Project' (role 'Project4', cardinality 0..*).
+'Demo::Department' (role 'Department', cardinality 0..*) is associated with 'Demo::Employee' (role 'WorksIn_employee', cardinality 0..*).
+'Demo::Employee' (role 'Employee6', cardinality 0..*) is associated with 'Demo::Project' (role 'WorksOn_project', cardinality 0..*).

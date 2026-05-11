@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'UML2::StructuralFeature' has the following attributes: 'isReadOnly' of type bool.
+The class 'Property' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'UML2::Property' has the following attributes: 'isDerivedUnion' of type bool.
+The class 'UML2::Port' has no attributes.
+The class 'StructuralFeature' has no attributes.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::Property' is a specialization of 'StructuralFeature'.

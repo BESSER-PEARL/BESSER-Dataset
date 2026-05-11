@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'smalluml::Role' has the following attributes: 'Multiplicity' of type str.
+The class 'smalluml::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'smalluml::SchemaUML' has no attributes.
+The class 'smalluml::Generalisation' has no attributes.
+The class 'smalluml::Association' has the following attributes: 'name' of type str.
+The class 'smalluml::Methode' has the following attributes: 'name' of type str; 'returnType' of type str.
+The class 'smalluml::SmallClass' has the following attributes: 'name' of type str.
+'smalluml::Generalisation' (role 'smalluml_Generalisation13', cardinality 0..*) is associated with 'smalluml::SmallClass' (role 'smalluml_SmallClass14', cardinality 0..*).
+'smalluml::Attribute' (role 'smalluml_Attribute23', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association22', cardinality 0..*).
+'smalluml::Generalisation' (role 'smalluml_Generalisation10', cardinality 0..*) is associated with 'smalluml::SmallClass' (role 'smalluml_SmallClass11', cardinality 0..*).
+'smalluml::SmallClass' (role 'smalluml_SmallClass', cardinality 0..*) is associated with 'smalluml::SchemaUML' (role 'smalluml_SchemaUML2', cardinality 0..*).
+'smalluml::Association' (role 'smalluml_Association', cardinality 0..*) is associated with 'smalluml::SchemaUML' (role 'smalluml_SchemaUML4', cardinality 0..*).
+'smalluml::Generalisation' (role 'smalluml_Generalisation', cardinality 0..*) is associated with 'smalluml::SchemaUML' (role 'smalluml_SchemaUML', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association25', cardinality 0..*).
+'smalluml::SmallClass' (role 'smalluml_SmallClass6', cardinality 0..*) is associated with 'smalluml::Attribute' (role 'smalluml_Attribute', cardinality 0..*).
+'smalluml::Methode' (role 'smalluml_Methode', cardinality 0..*) is associated with 'smalluml::SmallClass' (role 'smalluml_SmallClass8', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role27', cardinality 0..*) is associated with 'smalluml::SmallClass' (role 'smalluml_SmallClass28', cardinality 0..*).
+'smalluml::Association' (role 'smalluml_Association16', cardinality 0..*) is associated with 'smalluml::SmallClass' (role 'smalluml_SmallClass17', cardinality 0..*).
+'smalluml::SmallClass' (role 'smalluml_SmallClass20', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association19', cardinality 0..*).

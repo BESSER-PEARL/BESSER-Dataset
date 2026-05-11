@@ -1,0 +1,35 @@
+The model has 10 class(es).
+The class 'Constraint' has no attributes.
+The class 'FeatureModel::Constraint' has the following attributes: 'code' of type str; 'language' of type str.
+The class 'FeatureModel::RequireConstraint' has no attributes.
+The class 'FeatureModel::Feature' has the following attributes: 'mandatory' of type bool; 'abstract' of type bool.
+The class 'FeatureModel::Comment' has the following attributes: 'text' of type str.
+The class 'FeatureModel::FeatureModel' has the following attributes: 'version' of type float.
+The class 'FeatureModel::NamedElement' has the following attributes: 'name' of type str.
+The class 'FeatureModel::ExcludeConstraint' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'FeatureModel::Group' has the following attributes: 'groupType' of type str.
+The enumeration 'GroupType' has the following literals: 'ALT', 'OR'.
+'FeatureModel::ExcludeConstraint' is a specialization of 'Constraint'.
+'FeatureModel::Constraint' is a specialization of 'NamedElement'.
+'FeatureModel::Feature' is a specialization of 'NamedElement'.
+'FeatureModel::Group' is a specialization of 'NamedElement'.
+'FeatureModel::Comment' is a specialization of 'NamedElement'.
+'FeatureModel::RequireConstraint' is a specialization of 'Constraint'.
+'FeatureModel::FeatureModel' is a specialization of 'NamedElement'.
+'FeatureModel::Group' (role 'FeatureModel_Group', cardinality 0..*) is associated with 'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel6', cardinality 0..*).
+'FeatureModel::Feature' (role 'requiredFeature', cardinality 0..*) is associated with 'FeatureModel::RequireConstraint' (role 'RequireConstraint', cardinality 0..*).
+'FeatureModel::Comment' (role 'FeatureModel_Comment', cardinality 0..*) is associated with 'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel', cardinality 0..*).
+'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel2', cardinality 0..*) is associated with 'FeatureModel::Constraint' (role 'FeatureModel_Constraint', cardinality 0..*).
+'FeatureModel::ExcludeConstraint' (role 'ExcludeConstraint', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'excludedFeatureA', cardinality 0..*).
+'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel4', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'FeatureModel_Feature', cardinality 0..*).
+'FeatureModel::Group' (role 'Group', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'features', cardinality 0..*).
+'FeatureModel::Feature' (role 'Feature21', cardinality 0..*) is associated with 'FeatureModel::RequireConstraint' (role 'requireConstraints', cardinality 0..*).
+'FeatureModel::ExcludeConstraint' (role 'excludeConstraintsA', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'Feature23', cardinality 0..*).
+'FeatureModel::Feature' (role 'Feature25', cardinality 0..*) is associated with 'FeatureModel::ExcludeConstraint' (role 'excludeConstraintsB', cardinality 0..*).
+'FeatureModel::Comment' (role 'FeatureModel_Comment8', cardinality 0..*) is associated with 'FeatureModel::NamedElement' (role 'FeatureModel_NamedElement', cardinality 0..*).
+'FeatureModel::ExcludeConstraint' (role 'ExcludeConstraint18', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'excludedFeatureB', cardinality 0..*).
+'FeatureModel::RequireConstraint' (role 'RequireConstraint14', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'feature', cardinality 0..*).
+'FeatureModel::Feature' (role 'FeatureModel_Feature9', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'FeatureModel_Feature11', cardinality 0..*).
+'FeatureModel::Feature' (role 'Feature', cardinality 0..*) is associated with 'FeatureModel::RequireConstraint' (role 'requiredConstraints', cardinality 0..*).
+'FeatureModel::Group' (role 'group', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'Feature27', cardinality 0..*).

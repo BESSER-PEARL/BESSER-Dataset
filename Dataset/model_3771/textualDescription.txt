@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'rootpkg2::Token' has no attributes.

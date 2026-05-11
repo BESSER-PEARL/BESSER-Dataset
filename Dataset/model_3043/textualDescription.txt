@@ -1,0 +1,324 @@
+The model has 121 class(es).
+The class 'Parameter' has no attributes.
+The class 'behavioral::elements::common::behavior::ActionSequence' has no attributes.
+The class 'behavioral::elements::common::behavior::SendAction' has no attributes.
+The class 'behavioral::elements::state::machines::StateVertex' has no attributes.
+The class 'behavioral::elements::common::behavior::LinkObject' has no attributes.
+The class 'ActivityGraph' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'common::behavior::Object' has no attributes.
+The class 'CompositeState' has no attributes.
+The class 'behavioral::elements::activity::graphs::SubactivityState' has the following attributes: 'isDynamic' of type str.
+The class 'behavioral::elements::state::machines::State' has no attributes.
+The class 'common::behavior::Link' has no attributes.
+The class 'ArgListsExpression' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'behavioral::elements::common::behavior::DataValue' has no attributes.
+The class 'behavioral::elements::activity::graphs::ActionState' has the following attributes: 'isDynamic' of type str.
+The class 'StateMachine' has no attributes.
+The class 'behavioral::elements::common::behavior::CallAction' has no attributes.
+The class 'behavioral::elements::activity::graphs::ClassifierInState' has no attributes.
+The class 'behavioral::elements::state::machines::ChangeEvent' has no attributes.
+The class 'Operation' has no attributes.
+The class 'behavioral::elements::state::machines::Guard' has no attributes.
+The class 'behavioral::elements::common::behavior::ReturnAction' has no attributes.
+The class 'behavioral::elements::state::machines::SignalEvent' has no attributes.
+The class 'behavioral::elements::common::behavior::TerminateAction' has no attributes.
+The class 'IterationExpression' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'behavioral::elements::state::machines::Transition' has no attributes.
+The class 'behavioral::elements::common::behavior::Stimulus' has no attributes.
+The class 'behavioral::elements::common::behavior::Signal' has no attributes.
+The class 'Guard' has no attributes.
+The class 'behavioral::elements::common::behavior::Argument' has no attributes.
+The class 'behavioral::elements::state::machines::CompositeState' has the following attributes: 'isConcurrent' of type str.
+The class 'Expression' has no attributes.
+The class 'CollaborationInstanceSet' has no attributes.
+The class 'behavioral::elements::common::behavior::Reception' has the following attributes: 'isAbstract' of type str; 'isLeaf' of type str; 'isRoot' of type str; 'specification' of type str.
+The class 'AttributeLink' has no attributes.
+The class 'behavioral::elements::common::behavior::LinkEnd' has no attributes.
+The class 'Collaboration' has no attributes.
+The class 'AssociationEnd' has no attributes.
+The class 'behavioral::elements::collaborations::ClassifierRole' has no attributes.
+The class 'behavioral::elements::common::behavior::SubsystemInstance' has no attributes.
+The class 'Multiplicity_' has no attributes.
+The class 'ComponentInstance' has no attributes.
+The class 'behavioral::elements::use::cases::UseCase' has no attributes.
+The class 'behavioral::elements::state::machines::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'Extend' has no attributes.
+The class 'ObjectSetExpression' has no attributes.
+The class 'behavioral::elements::common::behavior::Action' has the following attributes: 'isAsynchronous' of type str.
+The class 'behavioral::elements::state::machines::SimpleState' has no attributes.
+The class 'Include' has no attributes.
+The class 'behavioral::elements::state::machines::SubmachineState' has no attributes.
+The class 'LinkEnd' has no attributes.
+The class 'Message' has no attributes.
+The class 'behavioral::elements::state::machines::SynchState' has the following attributes: 'bound' of type str.
+The class 'InteractionInstanceSet' has no attributes.
+The class 'behavioral::elements::state::machines::StubState' has the following attributes: 'referenceState' of type str.
+The class 'Instance' has no attributes.
+The class 'behavioral::elements::common::behavior::Exception' has no attributes.
+The class 'behavioral::elements::state::machines::FinalState' has no attributes.
+The class 'behavioral::elements::common::behavior::ComponentInstance' has no attributes.
+The class 'behavioral::elements::collaborations::Collaboration' has no attributes.
+The class 'NodeInstance' has no attributes.
+The class 'core::GeneralizableElement' has no attributes.
+The class 'behavioral::elements::common::behavior::NodeInstance' has no attributes.
+The class 'core::Namespace' has no attributes.
+The class 'behavioral::elements::state::machines::StateMachine' has no attributes.
+The class 'behavioral::elements::activity::graphs::Partition' has no attributes.
+The class 'Interaction' has no attributes.
+The class 'State' has no attributes.
+The class 'behavioral::elements::common::behavior::Object' has no attributes.
+The class 'behavioral::elements::common::behavior::Instance' has no attributes.
+The class 'ExtensionPoint' has no attributes.
+The class 'ClassifierRole' has no attributes.
+The class 'behavioral::elements::common::behavior::Link' has no attributes.
+The class 'Feature' has no attributes.
+The class 'behavioral::elements::use::cases::Actor' has no attributes.
+The class 'Association' has no attributes.
+The class 'behavioral::elements::collaborations::AssociationRole' has no attributes.
+The class 'behavioral::elements::use::cases::UseCaseInstance' has no attributes.
+The class 'ActionExpression' has no attributes.
+The class 'behavioral::elements::collaborations::AssociationEndRole' has no attributes.
+The class 'behavioral::elements::use::cases::Extend' has no attributes.
+The class 'Argument' has no attributes.
+The class 'behavioral::elements::collaborations::Message' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'ActionSequence' has no attributes.
+The class 'behavioral::elements::collaborations::CollaborationInstanceSet' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Stimulus' has no attributes.
+The class 'AssociationRole' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'Transition' has no attributes.
+The class 'behavioral::elements::collaborations::Interaction' has no attributes.
+The class 'behavioral::elements::use::cases::Include' has no attributes.
+The class 'behavioral::elements::common::behavior::CreateAction' has no attributes.
+The class 'Link' has no attributes.
+The class 'behavioral::elements::collaborations::InteractionInstanceSet' has no attributes.
+The class 'behavioral::elements::use::cases::ExtensionPoint' has the following attributes: 'location' of type str.
+The class 'Action' has no attributes.
+The class 'SimpleState' has no attributes.
+The class 'Event' has no attributes.
+The class 'behavioral::elements::common::behavior::DestroyAction' has no attributes.
+The class 'behavioral::elements::activity::graphs::CallState' has no attributes.
+The class 'behavioral::elements::state::machines::TimeEvent' has no attributes.
+The class 'behavioral::elements::common::behavior::UninterpretedAction' has no attributes.
+The class 'ActionState' has no attributes.
+The class 'TimeExpression' has no attributes.
+The class 'behavioral::elements::common::behavior::AttributeLink' has no attributes.
+The class 'Reception' has no attributes.
+The class 'behavioral::elements::state::machines::CallEvent' has no attributes.
+The class 'behavioral::elements::activity::graphs::ObjectFlowState' has the following attributes: 'isSynch' of type str.
+The class 'Attribute' has no attributes.
+The class 'SendAction' has no attributes.
+The class 'SignalEvent' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'SubmachineState' has no attributes.
+The class 'behavioral::elements::activity::graphs::ActivityGraph' has no attributes.
+The class 'Partition' has no attributes.
+The class 'behavioral::elements::state::machines::Event' has no attributes.
+The class 'Signal' has no attributes.
+'behavioral::elements::common::behavior::Action' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::SimpleState' is a specialization of 'State'.
+'behavioral::elements::common::behavior::Exception' is a specialization of 'Signal'.
+'behavioral::elements::common::behavior::Signal' is a specialization of 'Classifier'.
+'behavioral::elements::state::machines::SubmachineState' is a specialization of 'CompositeState'.
+'behavioral::elements::common::behavior::ComponentInstance' is a specialization of 'Instance'.
+'behavioral::elements::common::behavior::Object' is a specialization of 'Instance'.
+'behavioral::elements::state::machines::SynchState' is a specialization of 'StateVertex'.
+'behavioral::elements::common::behavior::NodeInstance' is a specialization of 'Instance'.
+'behavioral::elements::common::behavior::Link' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::StubState' is a specialization of 'StateVertex'.
+'behavioral::elements::state::machines::StateMachine' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::CreateAction' is a specialization of 'Action'.
+'behavioral::elements::state::machines::FinalState' is a specialization of 'State'.
+'behavioral::elements::use::cases::Actor' is a specialization of 'Classifier'.
+'behavioral::elements::common::behavior::DestroyAction' is a specialization of 'Action'.
+'behavioral::elements::collaborations::Collaboration' is a specialization of 'core::GeneralizableElement'.
+'behavioral::elements::use::cases::UseCaseInstance' is a specialization of 'Instance'.
+'behavioral::elements::common::behavior::UninterpretedAction' is a specialization of 'Action'.
+'behavioral::elements::collaborations::Collaboration' is a specialization of 'core::Namespace'.
+'behavioral::elements::use::cases::Extend' is a specialization of 'Relationship'.
+'behavioral::elements::common::behavior::AttributeLink' is a specialization of 'ModelElement'.
+'behavioral::elements::collaborations::Message' is a specialization of 'ModelElement'.
+'behavioral::elements::use::cases::Include' is a specialization of 'Relationship'.
+'behavioral::elements::common::behavior::SendAction' is a specialization of 'Action'.
+'behavioral::elements::collaborations::AssociationRole' is a specialization of 'Association'.
+'behavioral::elements::use::cases::ExtensionPoint' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::ActionSequence' is a specialization of 'Action'.
+'behavioral::elements::collaborations::AssociationEndRole' is a specialization of 'AssociationEnd'.
+'behavioral::elements::state::machines::TimeEvent' is a specialization of 'Event'.
+'behavioral::elements::common::behavior::LinkObject' is a specialization of 'common::behavior::Object'.
+'behavioral::elements::collaborations::CollaborationInstanceSet' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::CallEvent' is a specialization of 'Event'.
+'behavioral::elements::common::behavior::LinkObject' is a specialization of 'common::behavior::Link'.
+'behavioral::elements::collaborations::Interaction' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::Event' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::DataValue' is a specialization of 'Instance'.
+'behavioral::elements::collaborations::InteractionInstanceSet' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::StateVertex' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::CallAction' is a specialization of 'Action'.
+'behavioral::elements::activity::graphs::ActionState' is a specialization of 'SimpleState'.
+'behavioral::elements::state::machines::State' is a specialization of 'StateVertex'.
+'behavioral::elements::common::behavior::ReturnAction' is a specialization of 'Action'.
+'behavioral::elements::activity::graphs::CallState' is a specialization of 'ActionState'.
+'behavioral::elements::state::machines::ChangeEvent' is a specialization of 'Event'.
+'behavioral::elements::common::behavior::TerminateAction' is a specialization of 'Action'.
+'behavioral::elements::activity::graphs::ObjectFlowState' is a specialization of 'SimpleState'.
+'behavioral::elements::state::machines::Guard' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::Stimulus' is a specialization of 'ModelElement'.
+'behavioral::elements::activity::graphs::ActivityGraph' is a specialization of 'StateMachine'.
+'behavioral::elements::state::machines::SignalEvent' is a specialization of 'Event'.
+'behavioral::elements::common::behavior::Argument' is a specialization of 'ModelElement'.
+'behavioral::elements::activity::graphs::Partition' is a specialization of 'ModelElement'.
+'behavioral::elements::state::machines::Transition' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::Reception' is a specialization of 'BehavioralFeature'.
+'behavioral::elements::activity::graphs::SubactivityState' is a specialization of 'SubmachineState'.
+'behavioral::elements::state::machines::CompositeState' is a specialization of 'State'.
+'behavioral::elements::common::behavior::LinkEnd' is a specialization of 'ModelElement'.
+'behavioral::elements::common::behavior::Instance' is a specialization of 'ModelElement'.
+'behavioral::elements::activity::graphs::ClassifierInState' is a specialization of 'Classifier'.
+'behavioral::elements::collaborations::ClassifierRole' is a specialization of 'Classifier'.
+'behavioral::elements::common::behavior::SubsystemInstance' is a specialization of 'Instance'.
+'behavioral::elements::state::machines::Pseudostate' is a specialization of 'StateVertex'.
+'behavioral::elements::use::cases::UseCase' is a specialization of 'Classifier'.
+'Signal' (role 'Signal134', cardinality 0..*) is associated with 'behavioral::elements::state::machines::SignalEvent' (role 'occurrence133', cardinality 0..*).
+'Collaboration' (role 'Collaboration240', cardinality 0..*) is associated with 'behavioral::elements::collaborations::CollaborationInstanceSet' (role 'collaborationInstanceSet', cardinality 0..*).
+'behavioral::elements::collaborations::Message' (role 'message', cardinality 0..*) is associated with 'Interaction' (role 'Interaction201', cardinality 0..*).
+'ModelElement' (role 'ModelElement251', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::Partition' (role 'behavioral_elements_activity_graphs_Partition', cardinality 0..*).
+'Instance' (role 'Instance33', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::AttributeLink' (role 'slot', cardinality 0..*).
+'Instance' (role 'Instance75', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::ComponentInstance' (role 'componentInstance', cardinality 0..*).
+'Action' (role 'Action', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::ActionSequence' (role 'actionSequence', cardinality 0..*).
+'Action' (role 'Action128', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'behavioral_elements_state_machines_State127', cardinality 0..*).
+'behavioral::elements::state::machines::Transition' (role 'transition', cardinality 0..*) is associated with 'Guard' (role 'Guard', cardinality 0..*).
+'behavioral::elements::collaborations::CollaborationInstanceSet' (role 'behavioral_elements_collaborations_CollaborationInstanceSet', cardinality 0..*) is associated with 'Instance' (role 'Instance242', cardinality 0..*).
+'Message' (role 'Message203', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'behavioral_elements_collaborations_Message', cardinality 0..*).
+'behavioral::elements::activity::graphs::Partition' (role 'partition', cardinality 0..*) is associated with 'ActivityGraph' (role 'ActivityGraph', cardinality 0..*).
+'LinkEnd' (role 'LinkEnd35', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::AttributeLink' (role 'qualifiedValue', cardinality 0..*).
+'behavioral::elements::common::behavior::NodeInstance' (role 'nodeInstance', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance77', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Argument' (role 'behavioral_elements_common_behavior_Argument', cardinality 0..*).
+'TimeExpression' (role 'TimeExpression', cardinality 0..*) is associated with 'behavioral::elements::state::machines::TimeEvent' (role 'behavioral_elements_state_machines_TimeEvent', cardinality 0..*).
+'Action' (role 'Action138', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'transition137', cardinality 0..*).
+'Link' (role 'Link245', cardinality 0..*) is associated with 'behavioral::elements::collaborations::CollaborationInstanceSet' (role 'behavioral_elements_collaborations_CollaborationInstanceSet244', cardinality 0..*).
+'behavioral::elements::collaborations::Message' (role 'behavioral_elements_collaborations_Message205', cardinality 0..*) is associated with 'ClassifierRole' (role 'ClassifierRole', cardinality 0..*).
+'ArgListsExpression' (role 'ArgListsExpression', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::SubactivityState' (role 'behavioral_elements_activity_graphs_SubactivityState', cardinality 0..*).
+'behavioral::elements::common::behavior::Link' (role 'behavioral_elements_common_behavior_Link', cardinality 0..*) is associated with 'Association' (role 'Association', cardinality 0..*).
+'Extend' (role 'Extend101', cardinality 0..*) is associated with 'behavioral::elements::use::cases::ExtensionPoint' (role 'extensionPoint100', cardinality 0..*).
+'behavioral::elements::common::behavior::Argument' (role 'actualArgument', cardinality 0..*) is associated with 'Action' (role 'Action46', cardinality 0..*).
+'SubmachineState' (role 'SubmachineState', cardinality 0..*) is associated with 'behavioral::elements::state::machines::StateMachine' (role 'submachine', cardinality 0..*).
+'State' (role 'State140', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'internalTransition', cardinality 0..*).
+'ModelElement' (role 'ModelElement248', cardinality 0..*) is associated with 'behavioral::elements::collaborations::CollaborationInstanceSet' (role 'behavioral_elements_collaborations_CollaborationInstanceSet247', cardinality 0..*).
+'ClassifierRole' (role 'ClassifierRole208', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'behavioral_elements_collaborations_Message207', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity256', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::SubactivityState' (role 'behavioral_elements_activity_graphs_SubactivityState255', cardinality 0..*).
+'LinkEnd' (role 'LinkEnd38', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Link' (role 'link', cardinality 0..*).
+'ModelElement' (role 'ModelElement', cardinality 0..*) is associated with 'behavioral::elements::state::machines::StateMachine' (role 'behavior', cardinality 0..*).
+'Signal' (role 'Signal48', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Reception' (role 'reception', cardinality 0..*).
+'behavioral::elements::state::machines::Event' (role 'behavioral_elements_state_machines_Event', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'Event' (role 'Event143', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'transition142', cardinality 0..*).
+'AssociationRole' (role 'AssociationRole', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'message214', cardinality 0..*).
+'BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Signal' (role 'raisedSignal', cardinality 0..*).
+'Message' (role 'Message210', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'successor', cardinality 0..*).
+'ActionExpression' (role 'ActionExpression', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'behavioral_elements_common_behavior_Action21', cardinality 0..*).
+'behavioral::elements::activity::graphs::ObjectFlowState' (role 'behavioral_elements_activity_graphs_ObjectFlowState265', cardinality 0..*) is associated with 'Classifier' (role 'Classifier266', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'behavioral::elements::state::machines::StateMachine' (role 'stateMachine', cardinality 0..*).
+'Instance' (role 'Instance50', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::LinkEnd' (role 'linkEnd', cardinality 0..*).
+'Transition' (role 'Transition110', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Event' (role 'trigger', cardinality 0..*).
+'StateMachine' (role 'StateMachine145', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'transitions', cardinality 0..*).
+'behavioral::elements::collaborations::Message' (role 'behavioral_elements_collaborations_Message216', cardinality 0..*) is associated with 'Action' (role 'Action217', cardinality 0..*).
+'Message' (role 'Message212', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'predecessor', cardinality 0..*).
+'behavioral::elements::common::behavior::Signal' (role 'signal14', cardinality 0..*) is associated with 'SendAction' (role 'SendAction', cardinality 0..*).
+'Argument' (role 'Argument', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'action', cardinality 0..*).
+'Classifier' (role 'Classifier268', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::ClassifierInState' (role 'behavioral_elements_activity_graphs_ClassifierInState', cardinality 0..*).
+'behavioral::elements::state::machines::StateMachine' (role 'stateMachine105', cardinality 0..*) is associated with 'Transition' (role 'Transition106', cardinality 0..*).
+'Link' (role 'Link52', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::LinkEnd' (role 'connection', cardinality 0..*).
+'CompositeState' (role 'CompositeState', cardinality 0..*) is associated with 'behavioral::elements::state::machines::StateVertex' (role 'subvertex', cardinality 0..*).
+'StateVertex' (role 'StateVertex', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'outgoing', cardinality 0..*).
+'Stimulus' (role 'Stimulus219', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Message' (role 'playedRole', cardinality 0..*).
+'behavioral::elements::collaborations::ClassifierRole' (role 'behavioral_elements_collaborations_ClassifierRole176', cardinality 0..*) is associated with 'Feature' (role 'Feature', cardinality 0..*).
+'SignalEvent' (role 'SignalEvent', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Signal' (role 'signal16', cardinality 0..*).
+'ActionSequence' (role 'ActionSequence', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'action24', cardinality 0..*).
+'Include' (role 'Include84', cardinality 0..*) is associated with 'behavioral::elements::use::cases::UseCase' (role 'base83', cardinality 0..*).
+'behavioral::elements::common::behavior::LinkEnd' (role 'behavioral_elements_common_behavior_LinkEnd', cardinality 0..*) is associated with 'AssociationEnd' (role 'AssociationEnd', cardinality 0..*).
+'Transition' (role 'Transition113', cardinality 0..*) is associated with 'behavioral::elements::state::machines::StateVertex' (role 'source', cardinality 0..*).
+'StateVertex' (role 'StateVertex148', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Transition' (role 'incoming', cardinality 0..*).
+'Message' (role 'Message221', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Interaction' (role 'interaction', cardinality 0..*).
+'ModelElement' (role 'ModelElement179', cardinality 0..*) is associated with 'behavioral::elements::collaborations::ClassifierRole' (role 'behavioral_elements_collaborations_ClassifierRole178', cardinality 0..*).
+'IterationExpression' (role 'IterationExpression', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'behavioral_elements_common_behavior_Action', cardinality 0..*).
+'behavioral::elements::common::behavior::Action' (role 'dispatchAction', cardinality 0..*) is associated with 'Stimulus' (role 'Stimulus', cardinality 0..*).
+'behavioral::elements::activity::graphs::ClassifierInState' (role 'behavioral_elements_activity_graphs_ClassifierInState270', cardinality 0..*) is associated with 'State' (role 'State271', cardinality 0..*).
+'ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*) is associated with 'behavioral::elements::use::cases::UseCase' (role 'useCase', cardinality 0..*).
+'Extend' (role 'Extend', cardinality 0..*) is associated with 'behavioral::elements::use::cases::UseCase' (role 'base', cardinality 0..*).
+'behavioral::elements::state::machines::StateVertex' (role 'target', cardinality 0..*) is associated with 'Transition' (role 'Transition115', cardinality 0..*).
+'behavioral::elements::collaborations::Collaboration' (role 'collaboration165', cardinality 0..*) is associated with 'CollaborationInstanceSet' (role 'CollaborationInstanceSet', cardinality 0..*).
+'Collaboration' (role 'Collaboration224', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Interaction' (role 'interaction223', cardinality 0..*).
+'Instance' (role 'Instance182', cardinality 0..*) is associated with 'behavioral::elements::collaborations::ClassifierRole' (role 'behavioral_elements_collaborations_ClassifierRole181', cardinality 0..*).
+'ObjectSetExpression' (role 'ObjectSetExpression', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'behavioral_elements_common_behavior_Action19', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Action' (role 'effect', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression', cardinality 0..*) is associated with 'behavioral::elements::use::cases::Extend' (role 'behavioral_elements_use_cases_Extend', cardinality 0..*).
+'Extend' (role 'Extend80', cardinality 0..*) is associated with 'behavioral::elements::use::cases::UseCase' (role 'extension', cardinality 0..*).
+'Action' (role 'Action117', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'behavioral_elements_state_machines_State', cardinality 0..*).
+'Collaboration' (role 'Collaboration', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Collaboration' (role 'behavioral_elements_collaborations_Collaboration167', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity184', cardinality 0..*) is associated with 'behavioral::elements::collaborations::AssociationRole' (role 'behavioral_elements_collaborations_AssociationRole', cardinality 0..*).
+'InteractionInstanceSet' (role 'InteractionInstanceSet227', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Interaction' (role 'interaction226', cardinality 0..*).
+'behavioral::elements::common::behavior::Instance' (role 'behavioral_elements_common_behavior_Instance', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'Classifier' (role 'Classifier28', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::CreateAction' (role 'createAction', cardinality 0..*).
+'Include' (role 'Include', cardinality 0..*) is associated with 'behavioral::elements::use::cases::UseCase' (role 'addition', cardinality 0..*).
+'UseCase' (role 'UseCase', cardinality 0..*) is associated with 'behavioral::elements::use::cases::Extend' (role 'extender', cardinality 0..*).
+'Action' (role 'Action120', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'behavioral_elements_state_machines_State119', cardinality 0..*).
+'Classifier' (role 'Classifier170', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Collaboration' (role 'collaboration169', cardinality 0..*).
+'behavioral::elements::collaborations::AssociationRole' (role 'behavioral_elements_collaborations_AssociationRole186', cardinality 0..*) is associated with 'Association' (role 'Association187', cardinality 0..*).
+'CollaborationInstanceSet' (role 'CollaborationInstanceSet229', cardinality 0..*) is associated with 'behavioral::elements::collaborations::InteractionInstanceSet' (role 'interactionInstanceSet', cardinality 0..*).
+'AttributeLink' (role 'AttributeLink', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Instance' (role 'value', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::AttributeLink' (role 'behavioral_elements_common_behavior_AttributeLink', cardinality 0..*).
+'behavioral::elements::common::behavior::Stimulus' (role 'behavioral_elements_common_behavior_Stimulus60', cardinality 0..*) is associated with 'Instance' (role 'Instance61', cardinality 0..*).
+'behavioral::elements::use::cases::Extend' (role 'extend', cardinality 0..*) is associated with 'UseCase' (role 'UseCase89', cardinality 0..*).
+'StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'top', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity', cardinality 0..*) is associated with 'behavioral::elements::collaborations::ClassifierRole' (role 'behavioral_elements_collaborations_ClassifierRole', cardinality 0..*).
+'Message' (role 'Message189', cardinality 0..*) is associated with 'behavioral::elements::collaborations::AssociationRole' (role 'communicationConnection', cardinality 0..*).
+'Interaction' (role 'Interaction232', cardinality 0..*) is associated with 'behavioral::elements::collaborations::InteractionInstanceSet' (role 'interactionInstanceSet231', cardinality 0..*).
+'LinkEnd' (role 'LinkEnd', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Instance' (role 'instance', cardinality 0..*).
+'behavioral::elements::common::behavior::AttributeLink' (role 'attributeLink', cardinality 0..*) is associated with 'Instance' (role 'Instance31', cardinality 0..*).
+'Instance' (role 'Instance64', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Stimulus' (role 'behavioral_elements_common_behavior_Stimulus63', cardinality 0..*).
+'ExtensionPoint' (role 'ExtensionPoint92', cardinality 0..*) is associated with 'behavioral::elements::use::cases::Extend' (role 'extend91', cardinality 0..*).
+'behavioral::elements::state::machines::CompositeState' (role 'container', cardinality 0..*) is associated with 'StateVertex' (role 'StateVertex150', cardinality 0..*).
+'behavioral::elements::collaborations::ClassifierRole' (role 'behavioral_elements_collaborations_ClassifierRole173', cardinality 0..*) is associated with 'Classifier' (role 'Classifier174', cardinality 0..*).
+'Link' (role 'Link192', cardinality 0..*) is associated with 'behavioral::elements::collaborations::AssociationRole' (role 'behavioral_elements_collaborations_AssociationRole191', cardinality 0..*).
+'behavioral::elements::collaborations::InteractionInstanceSet' (role 'interactionInstanceSet234', cardinality 0..*) is associated with 'Stimulus' (role 'Stimulus235', cardinality 0..*).
+'AttributeLink' (role 'AttributeLink5', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Instance' (role 'instance4', cardinality 0..*).
+'behavioral::elements::common::behavior::CallAction' (role 'callAction', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'Link' (role 'Link66', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Stimulus' (role 'stimulus', cardinality 0..*).
+'UseCase' (role 'UseCase94', cardinality 0..*) is associated with 'behavioral::elements::use::cases::Include' (role 'includer', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression152', cardinality 0..*) is associated with 'behavioral::elements::state::machines::ChangeEvent' (role 'behavioral_elements_state_machines_ChangeEvent', cardinality 0..*).
+'StateMachine' (role 'StateMachine158', cardinality 0..*) is associated with 'behavioral::elements::state::machines::SubmachineState' (role 'submachineState', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity194', cardinality 0..*) is associated with 'behavioral::elements::collaborations::AssociationEndRole' (role 'behavioral_elements_collaborations_AssociationEndRole', cardinality 0..*).
+'ArgListsExpression' (role 'ArgListsExpression258', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::ActionState' (role 'behavioral_elements_activity_graphs_ActionState', cardinality 0..*).
+'behavioral::elements::common::behavior::Instance' (role 'resident', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance', cardinality 0..*).
+'behavioral::elements::common::behavior::SendAction' (role 'sendAction', cardinality 0..*) is associated with 'Signal' (role 'Signal', cardinality 0..*).
+'Action' (role 'Action69', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Stimulus' (role 'stimulus68', cardinality 0..*).
+'UseCase' (role 'UseCase96', cardinality 0..*) is associated with 'behavioral::elements::use::cases::Include' (role 'include', cardinality 0..*).
+'BooleanExpression' (role 'BooleanExpression154', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Guard' (role 'behavioral_elements_state_machines_Guard', cardinality 0..*).
+'Interaction' (role 'Interaction', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Collaboration' (role 'context', cardinality 0..*).
+'behavioral::elements::collaborations::AssociationEndRole' (role 'behavioral_elements_collaborations_AssociationEndRole196', cardinality 0..*) is associated with 'AssociationEnd' (role 'AssociationEnd197', cardinality 0..*).
+'Multiplicity_' (role 'Multiplicity261', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::ActionState' (role 'behavioral_elements_activity_graphs_ActionState260', cardinality 0..*).
+'Instance' (role 'Instance', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Instance' (role 'behavioral_elements_common_behavior_Instance8', cardinality 0..*).
+'Stimulus' (role 'Stimulus40', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Link' (role 'communicationLink', cardinality 0..*).
+'behavioral::elements::common::behavior::Stimulus' (role 'conformingStimulus', cardinality 0..*) is associated with 'Message' (role 'Message', cardinality 0..*).
+'behavioral::elements::use::cases::ExtensionPoint' (role 'extensionPoint', cardinality 0..*) is associated with 'UseCase' (role 'UseCase98', cardinality 0..*).
+'Transition' (role 'Transition156', cardinality 0..*) is associated with 'behavioral::elements::state::machines::Guard' (role 'guard', cardinality 0..*).
+'Operation' (role 'Operation161', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Collaboration' (role 'collaboration', cardinality 0..*).
+'Attribute' (role 'Attribute199', cardinality 0..*) is associated with 'behavioral::elements::collaborations::AssociationEndRole' (role 'associationEndRole', cardinality 0..*).
+'Parameter' (role 'Parameter263', cardinality 0..*) is associated with 'behavioral::elements::activity::graphs::ObjectFlowState' (role 'behavioral_elements_activity_graphs_ObjectFlowState', cardinality 0..*).
+'behavioral::elements::common::behavior::Instance' (role 'behavioral_elements_common_behavior_Instance10', cardinality 0..*) is associated with 'Link' (role 'Link', cardinality 0..*).
+'AttributeLink' (role 'AttributeLink56', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::LinkEnd' (role 'linkEnd55', cardinality 0..*).
+'InteractionInstanceSet' (role 'InteractionInstanceSet', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Stimulus' (role 'participatingStimulus', cardinality 0..*).
+'Event' (role 'Event', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'behavioral_elements_state_machines_State123', cardinality 0..*).
+'behavioral::elements::state::machines::CallEvent' (role 'occurrence', cardinality 0..*) is associated with 'Operation' (role 'Operation131', cardinality 0..*).
+'ModelElement' (role 'ModelElement163', cardinality 0..*) is associated with 'behavioral::elements::collaborations::Collaboration' (role 'behavioral_elements_collaborations_Collaboration', cardinality 0..*).
+'InteractionInstanceSet' (role 'InteractionInstanceSet238', cardinality 0..*) is associated with 'behavioral::elements::collaborations::CollaborationInstanceSet' (role 'context237', cardinality 0..*).
+'behavioral::elements::activity::graphs::ActivityGraph' (role 'activityGraph', cardinality 0..*) is associated with 'Partition' (role 'Partition', cardinality 0..*).
+'Reception' (role 'Reception', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Signal' (role 'signal', cardinality 0..*).
+'Instance' (role 'Instance58', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::Stimulus' (role 'behavioral_elements_common_behavior_Stimulus', cardinality 0..*).
+'NodeInstance' (role 'NodeInstance', cardinality 0..*) is associated with 'behavioral::elements::common::behavior::ComponentInstance' (role 'resident73', cardinality 0..*).
+'Transition' (role 'Transition125', cardinality 0..*) is associated with 'behavioral::elements::state::machines::State' (role 'state', cardinality 0..*).

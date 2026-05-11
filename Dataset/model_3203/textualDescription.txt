@@ -1,0 +1,493 @@
+The model has 190 class(es).
+The class 'idl::Preproc::Pragma::Misc' has no attributes.
+The class 'idl::Preproc::If::Compare' has the following attributes: 'op' of type str.
+The class 'idl::ActualParameter' has no attributes.
+The class 'idl::FileName' has the following attributes: 'name' of type str.
+The class 'idl::FinderDcl' has the following attributes: 'name' of type str.
+The class 'SwitchTypeSpec' has no attributes.
+The class 'idl::AndExpr' has the following attributes: 'op' of type str.
+The class 'idl::EnumParamType' has no attributes.
+The class 'idl::ElementSpec' has no attributes.
+The class 'idl::FixedDefinition' has no attributes.
+The class 'idl::ComponentDecl' has the following attributes: 'name' of type str.
+The class 'idl::ContextExpr' has the following attributes: 'literal' of type str.
+The class 'Interface::or::Forward::Decl' has no attributes.
+The class 'idl::LongDoubleType' has no attributes.
+The class 'idl::Module' has the following attributes: 'name' of type str.
+The class 'UnsignedInt' has no attributes.
+The class 'idl::FactoryDcl' has the following attributes: 'name' of type str.
+The class 'idl::UnaryExpr' has the following attributes: 'op' of type str.
+The class 'idl::ComponentExport' has no attributes.
+The class 'idl::DoubleType' has no attributes.
+The class 'idl::ConstExp' has no attributes.
+The class 'idl::Preproc::Undef' has the following attributes: 'value' of type str.
+The class 'idl::IDLComment' has the following attributes: 'body' of type str.
+The class 'idl::WideCharType' has no attributes.
+The class 'idl::Preproc::Pragma::DDS4CCM::Impl' has the following attributes: 'value' of type str.
+The class 'idl::NativeType' has the following attributes: 'name' of type str.
+The class 'idl::ParamTypeSpec' has no attributes.
+The class 'Event' has no attributes.
+The class 'PrimaryExpr' has no attributes.
+The class 'idl::AddExpr' has the following attributes: 'op' of type str.
+The class 'idl::Interface::or::Forward::Decl' has no attributes.
+The class 'idl::TypeDecl' has no attributes.
+The class 'idl::OctetType' has no attributes.
+The class 'idl::Preproc::Pragma::Component' has the following attributes: 'value' of type str.
+The class 'ConstType' has no attributes.
+The class 'idl::ConnectorHeader' has the following attributes: 'name' of type str.
+The class 'idl::SignedInt' has no attributes.
+The class 'idl::HomeDecl' has the following attributes: 'name' of type str.
+The class 'idl::WideStringType' has no attributes.
+The class 'Definition' has no attributes.
+The class 'idl::Literal' has the following attributes: 'value' of type str.
+The class 'idl::SequenceType' has no attributes.
+The class 'idl::OpTypeDecl' has no attributes.
+The class 'idl::BooleanType' has no attributes.
+The class 'idl::Preproc::Pragma::Ciao::Ami4ccm::Interface' has the following attributes: 'value' of type str.
+The class 'ParamTypeSpec' has no attributes.
+The class 'FormalParameterType' has no attributes.
+The class 'idl::PrimaryExpr' has no attributes.
+The class 'idl::FixedModule' has the following attributes: 'name' of type str.
+The class 'ConstrTypeSpec' has no attributes.
+The class 'TypeSpec' has no attributes.
+The class 'idl::PortExport' has no attributes.
+The class 'idl::StructForwardDecl' has no attributes.
+The class 'idl::UnsignedLongInt' has no attributes.
+The class 'idl::Preproc::Endif' has no attributes.
+The class 'idl::TypenameParamType' has no attributes.
+The class 'idl::FloatingPtType' has no attributes.
+The class 'idl::StringType' has no attributes.
+The class 'idl::InterfaceParamType' has no attributes.
+The class 'idl::PositiveIntConst' has no attributes.
+The class 'BaseTypeSpec' has no attributes.
+The class 'idl::AnyType' has no attributes.
+The class 'idl::TypeSpec' has no attributes.
+The class 'idl::Member' has no attributes.
+The class 'idl::FormalParameter' has the following attributes: 'name' of type str.
+The class 'SimpleTypeSpec' has no attributes.
+The class 'idl::AttrDecl' has the following attributes: 'names' of type str.
+The class 'idl::TemplateModuleRef' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'idl::UnionType' has the following attributes: 'name' of type str.
+The class 'idl::PortDecl' has the following attributes: 'name' of type str; 'isMirror' of type bool.
+The class 'PortExport' has no attributes.
+The class 'idl::ProvidesDcl' has the following attributes: 'name' of type str.
+The class 'idl::TemplateModule' has the following attributes: 'name' of type str.
+The class 'idl::BaseTypeSpec' has no attributes.
+The class 'idl::Preproc::If' has the following attributes: 'negation' of type bool.
+The class 'idl::SwitchBody' has no attributes.
+The class 'idl::EventParamType' has no attributes.
+The class 'idl::SignedShortInt' has no attributes.
+The class 'Declarator' has no attributes.
+The class 'idl::SimpleTypeSpec' has no attributes.
+The class 'idl::ObjectType' has no attributes.
+The class 'idl::PrimaryKeySpec' has no attributes.
+The class 'ComponentExport' has no attributes.
+The class 'idl::ConstParamType' has no attributes.
+The class 'idl::Forward::decl' has the following attributes: 'name' of type str.
+The class 'HomeExport' has no attributes.
+The class 'idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle' has the following attributes: 'value' of type str.
+The class 'idl::MultExpr' has the following attributes: 'op' of type str.
+The class 'ComplexDeclarator' has no attributes.
+The class 'idl::ComponentForwardDecl' has the following attributes: 'name' of type str.
+The class 'idl::Interface::header' has the following attributes: 'isAbstract' of type bool; 'name' of type str; 'isLocal' of type bool.
+The class 'idl::FixedPtType' has no attributes.
+The class 'FixedDefinition' has no attributes.
+The class 'idl::TypeDeclarator' has no attributes.
+The class 'idl::Connector' has no attributes.
+The class 'idl::SignedLongLongInt' has no attributes.
+The class 'idl::Preproc::If::Val' has no attributes.
+The class 'idl::UnionParamType' has no attributes.
+The class 'idl::Preproc::Pragma::Ciao::Ami4ccm::Idl' has the following attributes: 'value' of type str.
+The class 'idl::Preproc' has no attributes.
+The class 'idl::Preproc::Pragma' has no attributes.
+The class 'idl::XOrExpr' has the following attributes: 'op' of type str.
+The class 'idl::Declarator' has the following attributes: 'id' of type str.
+The class 'idl::ConstType' has no attributes.
+The class 'OpTypeDecl' has no attributes.
+The class 'idl::File::Marker' has the following attributes: 'file' of type str.
+The class 'idl::Event' has the following attributes: 'name' of type str; 'isAbstract' of type bool.
+The class 'idl::StateMember' has the following attributes: 'isPublic' of type bool; 'names' of type str.
+The class 'idl::ConstrTypeSpec' has no attributes.
+The class 'idl::ParameterDecls' has no attributes.
+The class 'idl::ConnectorExport' has no attributes.
+The class 'idl::CharType' has no attributes.
+The class 'idl::ConstDecl' has the following attributes: 'name' of type str.
+The class 'idl::UnsignedInt' has no attributes.
+The class 'TypeDecl' has no attributes.
+The class 'idl::EventForwardDcl' has no attributes.
+The class 'idl::Preproc::Pragma::Ciao::Lem' has the following attributes: 'value' of type str.
+The class 'idl::Preproc::Ifndef' has the following attributes: 'value' of type str.
+The class 'TemplateTypeSpec' has no attributes.
+The class 'idl::StructParamType' has no attributes.
+The class 'idl::SimpleDeclarator' has no attributes.
+The class 'idl::Import::decl' has the following attributes: 'imported_scope' of type str.
+The class 'idl::Preproc::Define' has the following attributes: 'value' of type str.
+The class 'idl::IntegerType' has no attributes.
+The class 'idl::TemplateModuleInst' has the following attributes: 'name' of type str.
+The class 'Preproc::Pragma' has no attributes.
+The class 'idl::OrExpr' has the following attributes: 'op' of type str.
+The class 'FloatingPtType' has no attributes.
+The class 'idl::ReadOnlyAttrSpec' has no attributes.
+The class 'idl::SequenceParamType' has no attributes.
+The class 'idl::Excluded::File::Marker' has the following attributes: 'file' of type str.
+The class 'idl::FixedPtConstType' has no attributes.
+The class 'idl::UnionForwardDecl' has no attributes.
+The class 'idl::TemplateTypeSpec' has no attributes.
+The class 'idl::ExceptionParamType' has no attributes.
+The class 'ConstExp' has no attributes.
+The class 'idl::EnumType' has the following attributes: 'literal' of type str; 'name' of type str.
+The class 'idl::HomeExport' has no attributes.
+The class 'idl::PortTypeDecl' has the following attributes: 'name' of type str.
+The class 'Preproc' has no attributes.
+The class 'ConstParamType' has no attributes.
+The class 'idl::ExceptionList' has no attributes.
+The class 'idl::Preproc::Pragma::Conn::Type' has the following attributes: 'valuePort' of type str; 'valueConnType' of type str.
+The class 'idl::Export' has no attributes.
+The class 'idl::Case' has no attributes.
+The class 'idl::ComplexDeclarator' has no attributes.
+The class 'idl::SignedLongInt' has no attributes.
+The class 'idl::FloatType' has no attributes.
+The class 'ConnectorExport' has no attributes.
+The class 'idl::Preproc::Pragma::Prefix' has the following attributes: 'value' of type str.
+The class 'idl::Preproc::Pragma::Ndds' has the following attributes: 'value' of type str.
+The class 'Export' has no attributes.
+The class 'idl::ConstrForwardDecl' has the following attributes: 'name' of type str.
+The class 'SignedInt' has no attributes.
+The class 'idl::AttrRaisesExpr' has no attributes.
+The class 'idl::EventDcl' has the following attributes: 'isTruncatable' of type bool; 'isCustom' of type bool.
+The class 'idl::Preproc::Pragma::Home' has the following attributes: 'value' of type str.
+The class 'idl::ShiftExpr' has the following attributes: 'op' of type str.
+The class 'idl::Specification' has no attributes.
+The class 'idl::CaseLabel' has the following attributes: 'isCase' of type bool; 'isDefault' of type bool.
+The class 'idl::ScopedName' has the following attributes: 'name' of type str.
+The class 'idl::Interface::decl' has no attributes.
+The class 'AttrDecl' has no attributes.
+The class 'idl::InterfaceBody' has no attributes.
+The class 'idl::AttrSpec' has no attributes.
+The class 'idl::ValueBaseType' has no attributes.
+The class 'idl::Preproc::Ifdef' has the following attributes: 'value' of type str.
+The class 'idl::UsesDcl' has the following attributes: 'isMultiple' of type bool; 'name' of type str.
+The class 'idl::Preproc::Error' has the following attributes: 'value' of type str.
+The class 'idl::TemplateDefinition' has no attributes.
+The class 'idl::ParamDcl' has the following attributes: 'direction' of type str; 'name' of type str.
+The class 'idl::Preproc::Else' has no attributes.
+The class 'idl::ValuetypeParamType' has no attributes.
+The class 'idl::UnsignedShortInt' has no attributes.
+The class 'idl::ArrayDeclarator' has no attributes.
+The class 'idl::SwitchTypeSpec' has no attributes.
+The class 'IntegerType' has no attributes.
+The class 'idl::UnsignedLongLongInt' has no attributes.
+The class 'TemplateDefinition' has no attributes.
+The class 'idl::PublishesDcl' has the following attributes: 'name' of type str.
+The class 'ConstrForwardDecl' has no attributes.
+The class 'ActualParameter' has no attributes.
+The class 'idl::FormalParameterType' has no attributes.
+The class 'idl::StructType' has the following attributes: 'name' of type str.
+The class 'idl::Definition' has no attributes.
+The class 'idl::EmitDcl' has the following attributes: 'name' of type str.
+The class 'idl::ConsumesDcl' has the following attributes: 'name' of type str.
+The class 'idl::OpDecl' has the following attributes: 'name' of type str; 'isOneway' of type bool.
+The class 'idl::ExceptDecl' has the following attributes: 'name' of type str.
+The class 'idl::Preproc::Include' has the following attributes: 'strValue' of type str.
+The enumeration 'ParamDirection' has the following literals: 'In', 'InOut', 'Out'.
+'idl::Event' is a specialization of 'FixedDefinition'.
+'idl::EmitDcl' is a specialization of 'ComponentExport'.
+'idl::TypeDecl' is a specialization of 'Export'.
+'idl::PublishesDcl' is a specialization of 'ComponentExport'.
+'idl::Preproc::Else' is a specialization of 'Preproc'.
+'idl::TemplateTypeSpec' is a specialization of 'SimpleTypeSpec'.
+'idl::ObjectType' is a specialization of 'BaseTypeSpec'.
+'idl::StructForwardDecl' is a specialization of 'ConstrForwardDecl'.
+'idl::UnionType' is a specialization of 'ConstrTypeSpec'.
+'idl::StructType' is a specialization of 'TypeDecl'.
+'idl::Forward::decl' is a specialization of 'Interface::or::Forward::Decl'.
+'idl::UnsignedLongLongInt' is a specialization of 'UnsignedInt'.
+'idl::OctetType' is a specialization of 'ConstType'.
+'idl::FixedPtType' is a specialization of 'TemplateTypeSpec'.
+'idl::BaseTypeSpec' is a specialization of 'ParamTypeSpec'.
+'idl::BaseTypeSpec' is a specialization of 'SimpleTypeSpec'.
+'idl::PortTypeDecl' is a specialization of 'TemplateDefinition'.
+'idl::Preproc::Pragma::Component' is a specialization of 'Preproc::Pragma'.
+'idl::LongDoubleType' is a specialization of 'FloatingPtType'.
+'idl::EnumParamType' is a specialization of 'FormalParameterType'.
+'idl::StringType' is a specialization of 'TemplateTypeSpec'.
+'idl::InterfaceParamType' is a specialization of 'FormalParameterType'.
+'idl::ScopedName' is a specialization of 'SwitchTypeSpec'.
+'idl::Connector' is a specialization of 'FixedDefinition'.
+'idl::Preproc::Error' is a specialization of 'Preproc'.
+'idl::SignedLongInt' is a specialization of 'SignedInt'.
+'idl::ExceptionParamType' is a specialization of 'FormalParameterType'.
+'idl::TemplateModule' is a specialization of 'Definition'.
+'idl::AnyType' is a specialization of 'BaseTypeSpec'.
+'idl::PortTypeDecl' is a specialization of 'FixedDefinition'.
+'idl::WideCharType' is a specialization of 'BaseTypeSpec'.
+'idl::ArrayDeclarator' is a specialization of 'Declarator'.
+'idl::ConstParamType' is a specialization of 'FormalParameterType'.
+'idl::Export' is a specialization of 'HomeExport'.
+'idl::IDLComment' is a specialization of 'Export'.
+'idl::AttrDecl' is a specialization of 'ComponentExport'.
+'idl::ScopedName' is a specialization of 'ParamTypeSpec'.
+'idl::TypeDecl' is a specialization of 'TemplateDefinition'.
+'idl::PortDecl' is a specialization of 'ComponentExport'.
+'idl::ScopedName' is a specialization of 'PrimaryExpr'.
+'idl::CharType' is a specialization of 'SwitchTypeSpec'.
+'idl::Literal' is a specialization of 'PrimaryExpr'.
+'idl::DoubleType' is a specialization of 'FloatingPtType'.
+'idl::TypeDeclarator' is a specialization of 'TypeDecl'.
+'idl::TypeSpec' is a specialization of 'ActualParameter'.
+'idl::ScopedName' is a specialization of 'SimpleTypeSpec'.
+'idl::ComponentForwardDecl' is a specialization of 'Definition'.
+'idl::PortTypeDecl' is a specialization of 'Definition'.
+'idl::ConstrForwardDecl' is a specialization of 'TypeDecl'.
+'idl::ConstExp' is a specialization of 'PrimaryExpr'.
+'idl::IntegerType' is a specialization of 'ConstType'.
+'idl::ExceptDecl' is a specialization of 'FixedDefinition'.
+'idl::IntegerType' is a specialization of 'BaseTypeSpec'.
+'idl::FixedModule' is a specialization of 'TemplateDefinition'.
+'idl::AttrSpec' is a specialization of 'AttrDecl'.
+'idl::UsesDcl' is a specialization of 'PortExport'.
+'idl::ComponentDecl' is a specialization of 'FixedDefinition'.
+'idl::UnionType' is a specialization of 'TypeDecl'.
+'idl::UnsignedInt' is a specialization of 'IntegerType'.
+'idl::Preproc::Ifdef' is a specialization of 'Preproc'.
+'idl::Preproc' is a specialization of 'Export'.
+'idl::Interface::decl' is a specialization of 'Interface::or::Forward::Decl'.
+'idl::HomeDecl' is a specialization of 'FixedDefinition'.
+'idl::StringType' is a specialization of 'ParamTypeSpec'.
+'idl::StructType' is a specialization of 'Definition'.
+'idl::Preproc::Pragma::Misc' is a specialization of 'Preproc::Pragma'.
+'idl::StructType' is a specialization of 'ConstrTypeSpec'.
+'idl::IDLComment' is a specialization of 'Definition'.
+'idl::Interface::decl' is a specialization of 'FixedDefinition'.
+'idl::EventForwardDcl' is a specialization of 'Event'.
+'idl::NativeType' is a specialization of 'TemplateDefinition'.
+'idl::WideCharType' is a specialization of 'ConstType'.
+'idl::BooleanType' is a specialization of 'ConstType'.
+'idl::Event' is a specialization of 'Definition'.
+'idl::AttrDecl' is a specialization of 'ConnectorExport'.
+'idl::Preproc::Pragma::Ciao::Ami4ccm::Receptacle' is a specialization of 'Preproc::Pragma'.
+'idl::EventDcl' is a specialization of 'Event'.
+'idl::BooleanType' is a specialization of 'SwitchTypeSpec'.
+'idl::WideStringType' is a specialization of 'ParamTypeSpec'.
+'idl::ConsumesDcl' is a specialization of 'ComponentExport'.
+'idl::IDLComment' is a specialization of 'ConnectorExport'.
+'idl::Preproc::Ifndef' is a specialization of 'Preproc'.
+'idl::Preproc::Pragma::Ciao::Ami4ccm::Idl' is a specialization of 'Preproc::Pragma'.
+'idl::Preproc::Pragma::Ciao::Ami4ccm::Interface' is a specialization of 'Preproc::Pragma'.
+'idl::FinderDcl' is a specialization of 'HomeExport'.
+'idl::OrExpr' is a specialization of 'ConstExp'.
+'idl::SignedShortInt' is a specialization of 'SignedInt'.
+'idl::ArrayDeclarator' is a specialization of 'ComplexDeclarator'.
+'idl::Preproc::Undef' is a specialization of 'Preproc'.
+'idl::HomeDecl' is a specialization of 'Definition'.
+'idl::ValuetypeParamType' is a specialization of 'FormalParameterType'.
+'idl::SequenceType' is a specialization of 'FormalParameterType'.
+'idl::ComponentDecl' is a specialization of 'TemplateDefinition'.
+'idl::Preproc' is a specialization of 'Definition'.
+'idl::OpDecl' is a specialization of 'Export'.
+'idl::SequenceType' is a specialization of 'TemplateTypeSpec'.
+'idl::Preproc::Pragma::Home' is a specialization of 'Preproc::Pragma'.
+'idl::Preproc::Define' is a specialization of 'Preproc'.
+'idl::Connector' is a specialization of 'TemplateDefinition'.
+'idl::OctetType' is a specialization of 'BaseTypeSpec'.
+'idl::ConstDecl' is a specialization of 'Definition'.
+'idl::ProvidesDcl' is a specialization of 'PortExport'.
+'idl::ExceptDecl' is a specialization of 'Export'.
+'idl::Preproc::Pragma::Prefix' is a specialization of 'Preproc::Pragma'.
+'idl::IDLComment' is a specialization of 'FixedDefinition'.
+'idl::WideStringType' is a specialization of 'TemplateTypeSpec'.
+'idl::TypeDecl' is a specialization of 'Definition'.
+'idl::FixedPtConstType' is a specialization of 'ConstType'.
+'idl::Preproc::Endif' is a specialization of 'Preproc'.
+'idl::File::Marker' is a specialization of 'Preproc'.
+'idl::Preproc::Include' is a specialization of 'Preproc'.
+'idl::IDLComment' is a specialization of 'TemplateDefinition'.
+'idl::BooleanType' is a specialization of 'BaseTypeSpec'.
+'idl::Preproc::Pragma::Ciao::Lem' is a specialization of 'Preproc::Pragma'.
+'idl::ConstrTypeSpec' is a specialization of 'TypeSpec'.
+'idl::Event' is a specialization of 'TemplateDefinition'.
+'idl::FloatingPtType' is a specialization of 'BaseTypeSpec'.
+'idl::CharType' is a specialization of 'ConstType'.
+'idl::Preproc::If' is a specialization of 'Preproc'.
+'idl::Preproc::Pragma::DDS4CCM::Impl' is a specialization of 'Preproc::Pragma'.
+'idl::FloatingPtType' is a specialization of 'ConstType'.
+'idl::EnumType' is a specialization of 'TypeDecl'.
+'idl::Interface::or::Forward::Decl' is a specialization of 'Definition'.
+'idl::Preproc::Pragma::Conn::Type' is a specialization of 'Preproc::Pragma'.
+'idl::Preproc::Pragma' is a specialization of 'Preproc'.
+'idl::TypenameParamType' is a specialization of 'FormalParameterType'.
+'idl::SimpleTypeSpec' is a specialization of 'TypeSpec'.
+'idl::Interface::decl' is a specialization of 'TemplateDefinition'.
+'idl::TemplateModuleRef' is a specialization of 'TemplateDefinition'.
+'idl::AttrDecl' is a specialization of 'Export'.
+'idl::UnsignedShortInt' is a specialization of 'UnsignedInt'.
+'idl::ConstExp' is a specialization of 'ActualParameter'.
+'idl::StringType' is a specialization of 'ConstType'.
+'idl::Connector' is a specialization of 'Definition'.
+'idl::PortDecl' is a specialization of 'ConnectorExport'.
+'idl::TypeDecl' is a specialization of 'FixedDefinition'.
+'idl::Module' is a specialization of 'Definition'.
+'idl::IntegerType' is a specialization of 'SwitchTypeSpec'.
+'idl::ConstDecl' is a specialization of 'TemplateDefinition'.
+'idl::IDLComment' is a specialization of 'ComponentExport'.
+'idl::UnionForwardDecl' is a specialization of 'ConstrForwardDecl'.
+'idl::HomeDecl' is a specialization of 'TemplateDefinition'.
+'idl::UsesDcl' is a specialization of 'ConnectorExport'.
+'idl::ExceptDecl' is a specialization of 'Definition'.
+'idl::ProvidesDcl' is a specialization of 'ComponentExport'.
+'idl::TemplateModuleInst' is a specialization of 'Definition'.
+'idl::EnumType' is a specialization of 'ConstrTypeSpec'.
+'idl::ScopedName' is a specialization of 'ConstType'.
+'idl::Excluded::File::Marker' is a specialization of 'Preproc'.
+'idl::FactoryDcl' is a specialization of 'HomeExport'.
+'idl::StructParamType' is a specialization of 'FormalParameterType'.
+'idl::FloatType' is a specialization of 'FloatingPtType'.
+'idl::NativeType' is a specialization of 'FixedDefinition'.
+'idl::SignedLongLongInt' is a specialization of 'SignedInt'.
+'idl::ComponentDecl' is a specialization of 'Definition'.
+'idl::IDLComment' is a specialization of 'PortExport'.
+'idl::ReadOnlyAttrSpec' is a specialization of 'AttrDecl'.
+'idl::ConstDecl' is a specialization of 'Export'.
+'idl::ProvidesDcl' is a specialization of 'ConnectorExport'.
+'idl::CharType' is a specialization of 'BaseTypeSpec'.
+'idl::UnsignedLongInt' is a specialization of 'UnsignedInt'.
+'idl::ConstType' is a specialization of 'ConstParamType'.
+'idl::ConstDecl' is a specialization of 'FixedDefinition'.
+'idl::SequenceParamType' is a specialization of 'FormalParameterType'.
+'idl::UnionParamType' is a specialization of 'FormalParameterType'.
+'idl::SimpleDeclarator' is a specialization of 'Declarator'.
+'idl::Preproc' is a specialization of 'ComponentExport'.
+'idl::EventParamType' is a specialization of 'FormalParameterType'.
+'idl::EnumType' is a specialization of 'SwitchTypeSpec'.
+'idl::AttrDecl' is a specialization of 'PortExport'.
+'idl::ExceptDecl' is a specialization of 'TemplateDefinition'.
+'idl::WideStringType' is a specialization of 'ConstType'.
+'idl::NativeType' is a specialization of 'Definition'.
+'idl::Preproc::Pragma::Ndds' is a specialization of 'Preproc::Pragma'.
+'idl::FixedModule' is a specialization of 'FixedDefinition'.
+'idl::ParamTypeSpec' is a specialization of 'OpTypeDecl'.
+'idl::ValueBaseType' is a specialization of 'BaseTypeSpec'.
+'idl::SignedInt' is a specialization of 'IntegerType'.
+'idl::UsesDcl' is a specialization of 'ComponentExport'.
+'idl::PositiveIntConst' (role 'idl_PositiveIntConst122', cardinality 0..*) is associated with 'idl::FixedPtType' (role 'idl_FixedPtType', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName278', cardinality 0..*) is associated with 'idl::TemplateModuleRef' (role 'idl_TemplateModuleRef', cardinality 0..*).
+'idl::AddExpr' (role 'idl_AddExpr', cardinality 0..*) is associated with 'idl::ShiftExpr' (role 'idl_ShiftExpr151', cardinality 0..*).
+'idl::PrimaryKeySpec' (role 'idl_PrimaryKeySpec218', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName219', cardinality 0..*).
+'idl::ConsumesDcl' (role 'idl_ConsumesDcl200', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment201', cardinality 0..*).
+'idl::UsesDcl' (role 'idl_UsesDcl185', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment186', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName209', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl208', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment84', cardinality 0..*) is associated with 'idl::TypeDeclarator' (role 'idl_TypeDeclarator', cardinality 0..*).
+'idl::XOrExpr' (role 'idl_XOrExpr', cardinality 0..*) is associated with 'idl::OrExpr' (role 'idl_OrExpr', cardinality 0..*).
+'idl::ArrayDeclarator' (role 'idl_ArrayDeclarator', cardinality 0..*) is associated with 'idl::ConstExp' (role 'idl_ConstExp77', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment44', cardinality 0..*) is associated with 'idl::OpDecl' (role 'idl_OpDecl', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName212', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl211', cardinality 0..*).
+'idl::AttrSpec' (role 'idl_AttrSpec', cardinality 0..*) is associated with 'idl::AttrRaisesExpr' (role 'idl_AttrRaisesExpr', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName171', cardinality 0..*) is associated with 'idl::ComponentDecl' (role 'idl_ComponentDecl170', cardinality 0..*).
+'idl::ActualParameter' (role 'idl_ActualParameter', cardinality 0..*) is associated with 'idl::TemplateModuleInst' (role 'idl_TemplateModuleInst273', cardinality 0..*).
+'idl::UnionType' (role 'idl_UnionType', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment92', cardinality 0..*).
+'idl::XOrExpr' (role 'idl_XOrExpr144', cardinality 0..*) is associated with 'idl::XOrExpr' (role 'idl_XOrExpr142', cardinality 0..*).
+'idl::UnionType' (role 'idl_UnionType94', cardinality 0..*) is associated with 'idl::SwitchTypeSpec' (role 'idl_SwitchTypeSpec', cardinality 0..*).
+'idl::OpDecl' (role 'idl_OpDecl46', cardinality 0..*) is associated with 'idl::OpTypeDecl' (role 'idl_OpTypeDecl', cardinality 0..*).
+'idl::CaseLabel' (role 'idl_CaseLabel107', cardinality 0..*) is associated with 'idl::ConstExp' (role 'idl_ConstExp108', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment203', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl', cardinality 0..*).
+'idl::CaseLabel' (role 'idl_CaseLabel', cardinality 0..*) is associated with 'idl::Case' (role 'idl_Case103', cardinality 0..*).
+'idl::PrimaryKeySpec' (role 'idl_PrimaryKeySpec', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl214', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment191', cardinality 0..*) is associated with 'idl::PublishesDcl' (role 'idl_PublishesDcl190', cardinality 0..*).
+'idl::XOrExpr' (role 'idl_XOrExpr141', cardinality 0..*) is associated with 'idl::AndExpr' (role 'idl_AndExpr', cardinality 0..*).
+'idl::ConstDecl' (role 'idl_ConstDecl134', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment135', cardinality 0..*).
+'idl::ParamTypeSpec' (role 'idl_ParamTypeSpec', cardinality 0..*) is associated with 'idl::AttrDecl' (role 'idl_AttrDecl31', cardinality 0..*).
+'idl::ConnectorHeader' (role 'idl_ConnectorHeader262', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName263', cardinality 0..*).
+'idl::Preproc::Include' (role 'idl_Preproc_Include', cardinality 0..*) is associated with 'idl::FileName' (role 'idl_FileName', cardinality 0..*).
+'idl::StructType' (role 'idl_StructType81', cardinality 0..*) is associated with 'idl::Member' (role 'idl_Member82', cardinality 0..*).
+'idl::AddExpr' (role 'idl_AddExpr159', cardinality 0..*) is associated with 'idl::AddExpr' (role 'idl_AddExpr157', cardinality 0..*).
+'idl::ParameterDecls' (role 'idl_ParameterDecls232', cardinality 0..*) is associated with 'idl::FinderDcl' (role 'idl_FinderDcl231', cardinality 0..*).
+'idl::ConstExp' (role 'idl_ConstExp132', cardinality 0..*) is associated with 'idl::ConstDecl' (role 'idl_ConstDecl131', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName193', cardinality 0..*) is associated with 'idl::EmitDcl' (role 'idl_EmitDcl', cardinality 0..*).
+'idl::ExceptionList' (role 'idl_ExceptionList235', cardinality 0..*) is associated with 'idl::FinderDcl' (role 'idl_FinderDcl234', cardinality 0..*).
+'idl::Preproc::If::Val' (role 'idl_Preproc_If_Val11', cardinality 0..*) is associated with 'idl::ConstExp' (role 'idl_ConstExp', cardinality 0..*).
+'idl::PositiveIntConst' (role 'idl_PositiveIntConst127', cardinality 0..*) is associated with 'idl::ConstExp' (role 'idl_ConstExp128', cardinality 0..*).
+'idl::FormalParameterType' (role 'idl_FormalParameterType', cardinality 0..*) is associated with 'idl::FormalParameter' (role 'idl_FormalParameter268', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName198', cardinality 0..*) is associated with 'idl::ConsumesDcl' (role 'idl_ConsumesDcl', cardinality 0..*).
+'idl::Member' (role 'idl_Member70', cardinality 0..*) is associated with 'idl::TypeSpec' (role 'idl_TypeSpec', cardinality 0..*).
+'idl::Connector' (role 'idl_Connector', cardinality 0..*) is associated with 'idl::ConnectorHeader' (role 'idl_ConnectorHeader', cardinality 0..*).
+'idl::SimpleTypeSpec' (role 'idl_SimpleTypeSpec', cardinality 0..*) is associated with 'idl::SequenceType' (role 'idl_SequenceType', cardinality 0..*).
+'idl::ProvidesDcl' (role 'idl_ProvidesDcl180', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment181', cardinality 0..*).
+'idl::Interface::decl' (role 'idl_Interface_decl20', cardinality 0..*) is associated with 'idl::InterfaceBody' (role 'idl_InterfaceBody', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment116', cardinality 0..*) is associated with 'idl::EnumType' (role 'idl_EnumType', cardinality 0..*).
+'idl::ParameterDecls' (role 'idl_ParameterDecls', cardinality 0..*) is associated with 'idl::OpDecl' (role 'idl_OpDecl48', cardinality 0..*).
+'idl::MultExpr' (role 'idl_MultExpr161', cardinality 0..*) is associated with 'idl::UnaryExpr' (role 'idl_UnaryExpr', cardinality 0..*).
+'idl::ComponentDecl' (role 'idl_ComponentDecl173', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName174', cardinality 0..*).
+'idl::Declarator' (role 'idl_Declarator114', cardinality 0..*) is associated with 'idl::ElementSpec' (role 'idl_ElementSpec113', cardinality 0..*).
+'idl::Specification' (role 'idl_Specification2', cardinality 0..*) is associated with 'idl::Definition' (role 'idl_Definition', cardinality 0..*).
+'idl::ExceptDecl' (role 'idl_ExceptDecl', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment66', cardinality 0..*).
+'idl::PositiveIntConst' (role 'idl_PositiveIntConst125', cardinality 0..*) is associated with 'idl::FixedPtType' (role 'idl_FixedPtType124', cardinality 0..*).
+'idl::ExceptionList' (role 'idl_ExceptionList41', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName42', cardinality 0..*).
+'idl::ComponentDecl' (role 'idl_ComponentDecl176', cardinality 0..*) is associated with 'idl::ComponentExport' (role 'idl_ComponentExport', cardinality 0..*).
+'idl::StringType' (role 'idl_StringType', cardinality 0..*) is associated with 'idl::PositiveIntConst' (role 'idl_PositiveIntConst', cardinality 0..*).
+'idl::MultExpr' (role 'idl_MultExpr', cardinality 0..*) is associated with 'idl::AddExpr' (role 'idl_AddExpr156', cardinality 0..*).
+'idl::TemplateModuleInst' (role 'idl_TemplateModuleInst275', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment276', cardinality 0..*).
+'idl::Preproc::If::Compare' (role 'idl_Preproc_If_Compare8', cardinality 0..*) is associated with 'idl::Preproc::If::Val' (role 'idl_Preproc_If_Val9', cardinality 0..*).
+'idl::ParameterDecls' (role 'idl_ParameterDecls58', cardinality 0..*) is associated with 'idl::ParamDcl' (role 'idl_ParamDcl', cardinality 0..*).
+'idl::Module' (role 'idl_Module16', cardinality 0..*) is associated with 'idl::Definition' (role 'idl_Definition17', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName240', cardinality 0..*) is associated with 'idl::EventDcl' (role 'idl_EventDcl239', cardinality 0..*).
+'idl::ParamDcl' (role 'idl_ParamDcl60', cardinality 0..*) is associated with 'idl::ParamTypeSpec' (role 'idl_ParamTypeSpec61', cardinality 0..*).
+'idl::WideStringType' (role 'idl_WideStringType', cardinality 0..*) is associated with 'idl::PositiveIntConst' (role 'idl_PositiveIntConst64', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName188', cardinality 0..*) is associated with 'idl::PublishesDcl' (role 'idl_PublishesDcl', cardinality 0..*).
+'idl::PrimaryExpr' (role 'idl_PrimaryExpr', cardinality 0..*) is associated with 'idl::UnaryExpr' (role 'idl_UnaryExpr166', cardinality 0..*).
+'idl::FactoryDcl' (role 'idl_FactoryDcl226', cardinality 0..*) is associated with 'idl::ExceptionList' (role 'idl_ExceptionList227', cardinality 0..*).
+'idl::Import::decl' (role 'idl_Import_decl', cardinality 0..*) is associated with 'idl::Specification' (role 'idl_Specification', cardinality 0..*).
+'idl::Case' (role 'idl_Case105', cardinality 0..*) is associated with 'idl::ElementSpec' (role 'idl_ElementSpec', cardinality 0..*).
+'idl::TemplateModule' (role 'idl_TemplateModule', cardinality 0..*) is associated with 'idl::FormalParameter' (role 'idl_FormalParameter', cardinality 0..*).
+'idl::Connector' (role 'idl_Connector260', cardinality 0..*) is associated with 'idl::ConnectorExport' (role 'idl_ConnectorExport', cardinality 0..*).
+'idl::FactoryDcl' (role 'idl_FactoryDcl', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment221', cardinality 0..*).
+'idl::HomeExport' (role 'idl_HomeExport', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl216', cardinality 0..*).
+'idl::StateMember' (role 'idl_StateMember', cardinality 0..*) is associated with 'idl::EventDcl' (role 'idl_EventDcl245', cardinality 0..*).
+'idl::Declarator' (role 'idl_Declarator', cardinality 0..*) is associated with 'idl::Member' (role 'idl_Member72', cardinality 0..*).
+'idl::ExceptionList' (role 'idl_ExceptionList51', cardinality 0..*) is associated with 'idl::OpDecl' (role 'idl_OpDecl50', cardinality 0..*).
+'idl::SwitchBody' (role 'idl_SwitchBody', cardinality 0..*) is associated with 'idl::UnionType' (role 'idl_UnionType96', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment', cardinality 0..*) is associated with 'idl::Module' (role 'idl_Module', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment29', cardinality 0..*) is associated with 'idl::AttrDecl' (role 'idl_AttrDecl', cardinality 0..*).
+'idl::ParamTypeSpec' (role 'idl_ParamTypeSpec248', cardinality 0..*) is associated with 'idl::StateMember' (role 'idl_StateMember247', cardinality 0..*).
+'idl::FactoryDcl' (role 'idl_FactoryDcl223', cardinality 0..*) is associated with 'idl::ParameterDecls' (role 'idl_ParameterDecls224', cardinality 0..*).
+'idl::AndExpr' (role 'idl_AndExpr146', cardinality 0..*) is associated with 'idl::ShiftExpr' (role 'idl_ShiftExpr', cardinality 0..*).
+'idl::UsesDcl' (role 'idl_UsesDcl', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName183', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment79', cardinality 0..*) is associated with 'idl::StructType' (role 'idl_StructType', cardinality 0..*).
+'idl::TemplateModuleInst' (role 'idl_TemplateModuleInst', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName271', cardinality 0..*).
+'idl::ProvidesDcl' (role 'idl_ProvidesDcl', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName178', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment229', cardinality 0..*) is associated with 'idl::FinderDcl' (role 'idl_FinderDcl', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment257', cardinality 0..*) is associated with 'idl::PortDecl' (role 'idl_PortDecl256', cardinality 0..*).
+'idl::Member' (role 'idl_Member74', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment75', cardinality 0..*).
+'idl::ElementSpec' (role 'idl_ElementSpec110', cardinality 0..*) is associated with 'idl::TypeSpec' (role 'idl_TypeSpec111', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment101', cardinality 0..*) is associated with 'idl::Case' (role 'idl_Case100', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName206', cardinality 0..*) is associated with 'idl::HomeDecl' (role 'idl_HomeDecl205', cardinality 0..*).
+'idl::OpDecl' (role 'idl_OpDecl53', cardinality 0..*) is associated with 'idl::ContextExpr' (role 'idl_ContextExpr', cardinality 0..*).
+'idl::TypeSpec' (role 'idl_TypeSpec87', cardinality 0..*) is associated with 'idl::TypeDeclarator' (role 'idl_TypeDeclarator86', cardinality 0..*).
+'idl::EventDcl' (role 'idl_EventDcl242', cardinality 0..*) is associated with 'idl::Export' (role 'idl_Export243', cardinality 0..*).
+'idl::AndExpr' (role 'idl_AndExpr147', cardinality 0..*) is associated with 'idl::AndExpr' (role 'idl_AndExpr149', cardinality 0..*).
+'idl::OrExpr' (role 'idl_OrExpr137', cardinality 0..*) is associated with 'idl::OrExpr' (role 'idl_OrExpr139', cardinality 0..*).
+'idl::ConstExp' (role 'idl_ConstExp13', cardinality 0..*) is associated with 'idl::Preproc::Define' (role 'idl_Preproc_Define', cardinality 0..*).
+'idl::TypeDeclarator' (role 'idl_TypeDeclarator89', cardinality 0..*) is associated with 'idl::Declarator' (role 'idl_Declarator90', cardinality 0..*).
+'idl::ShiftExpr' (role 'idl_ShiftExpr152', cardinality 0..*) is associated with 'idl::ShiftExpr' (role 'idl_ShiftExpr154', cardinality 0..*).
+'idl::PortTypeDecl' (role 'idl_PortTypeDecl', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment250', cardinality 0..*).
+'idl::PortTypeDecl' (role 'idl_PortTypeDecl252', cardinality 0..*) is associated with 'idl::PortExport' (role 'idl_PortExport', cardinality 0..*).
+'idl::Member' (role 'idl_Member', cardinality 0..*) is associated with 'idl::ExceptDecl' (role 'idl_ExceptDecl68', cardinality 0..*).
+'idl::SwitchBody' (role 'idl_SwitchBody98', cardinality 0..*) is associated with 'idl::Case' (role 'idl_Case', cardinality 0..*).
+'idl::MultExpr' (role 'idl_MultExpr162', cardinality 0..*) is associated with 'idl::MultExpr' (role 'idl_MultExpr164', cardinality 0..*).
+'idl::FixedDefinition' (role 'idl_FixedDefinition', cardinality 0..*) is associated with 'idl::FixedModule' (role 'idl_FixedModule', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment56', cardinality 0..*) is associated with 'idl::ParameterDecls' (role 'idl_ParameterDecls55', cardinality 0..*).
+'idl::Interface::header' (role 'idl_Interface_header', cardinality 0..*) is associated with 'idl::Interface::decl' (role 'idl_Interface_decl', cardinality 0..*).
+'idl::ComponentDecl' (role 'idl_ComponentDecl', cardinality 0..*) is associated with 'idl::IDLComment' (role 'idl_IDLComment168', cardinality 0..*).
+'idl::ScopedName' (role 'idl_ScopedName', cardinality 0..*) is associated with 'idl::Interface::header' (role 'idl_Interface_header22', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment25', cardinality 0..*) is associated with 'idl::Interface::header' (role 'idl_Interface_header24', cardinality 0..*).
+'idl::IDLComment' (role 'idl_IDLComment196', cardinality 0..*) is associated with 'idl::EmitDcl' (role 'idl_EmitDcl195', cardinality 0..*).
+'idl::TemplateDefinition' (role 'idl_TemplateDefinition', cardinality 0..*) is associated with 'idl::TemplateModule' (role 'idl_TemplateModule266', cardinality 0..*).
+'idl::ReadOnlyAttrSpec' (role 'idl_ReadOnlyAttrSpec', cardinality 0..*) is associated with 'idl::AttrRaisesExpr' (role 'idl_AttrRaisesExpr37', cardinality 0..*).
+'idl::Preproc::If::Val' (role 'idl_Preproc_If_Val', cardinality 0..*) is associated with 'idl::Preproc::If::Compare' (role 'idl_Preproc_If_Compare6', cardinality 0..*).
+'idl::ExceptionList' (role 'idl_ExceptionList', cardinality 0..*) is associated with 'idl::AttrRaisesExpr' (role 'idl_AttrRaisesExpr39', cardinality 0..*).
+'idl::PortDecl' (role 'idl_PortDecl', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName254', cardinality 0..*).
+'idl::Export' (role 'idl_Export', cardinality 0..*) is associated with 'idl::InterfaceBody' (role 'idl_InterfaceBody27', cardinality 0..*).
+'idl::EventDcl' (role 'idl_EventDcl', cardinality 0..*) is associated with 'idl::ScopedName' (role 'idl_ScopedName237', cardinality 0..*).
+'idl::SequenceType' (role 'idl_SequenceType119', cardinality 0..*) is associated with 'idl::PositiveIntConst' (role 'idl_PositiveIntConst120', cardinality 0..*).
+'idl::ConstDecl' (role 'idl_ConstDecl', cardinality 0..*) is associated with 'idl::ConstType' (role 'idl_ConstType', cardinality 0..*).
+'idl::Preproc::If::Compare' (role 'idl_Preproc_If_Compare', cardinality 0..*) is associated with 'idl::Preproc::If' (role 'idl_Preproc_If', cardinality 0..*).
+'idl::AttrSpec' (role 'idl_AttrSpec34', cardinality 0..*) is associated with 'idl::AttrRaisesExpr' (role 'idl_AttrRaisesExpr35', cardinality 0..*).

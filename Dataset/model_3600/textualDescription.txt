@@ -1,0 +1,104 @@
+The model has 51 class(es).
+The class 'BinaryExpression' has no attributes.
+The class 'SMTlib2extended::NamedElement' has the following attributes: 'name' of type str.
+The class 'SMTlib2extended::EqualsExpression' has no attributes.
+The class 'SMTlib2extended::SubExpression' has no attributes.
+The class 'SMTlib2extended::Instance' has no attributes.
+The class 'SMTlib2extended::ImpliesExpression' has no attributes.
+The class 'SMTlib2extended::BvXorExpression' has no attributes.
+The class 'CardExpression' has no attributes.
+The class 'SMTlib2extended::NAryExpression' has no attributes.
+The class 'SMTlib2extended::MulExpression' has no attributes.
+The class 'ConstExpression' has no attributes.
+The class 'SMTlib2extended::Bitvector' has the following attributes: 'width' of type int.
+The class 'SMTlib2extended::CardEqExpression' has no attributes.
+The class 'NAryExpression' has no attributes.
+The class 'SMTlib2extended::LessExpression' has no attributes.
+The class 'SMTlib2extended::CardLeExpression' has no attributes.
+The class 'SMTlib2extended::IteExpression' has no attributes.
+The class 'SMTlib2extended::AddExpression' has no attributes.
+The class 'SMTlib2extended::Variable' has no attributes.
+The class 'SMTlib2extended::CardGeExpression' has no attributes.
+The class 'SMTlib2extended::BvNotExpression' has no attributes.
+The class 'SMTlib2extended::CardLtExpression' has no attributes.
+The class 'SMTlib2extended::OneHotExpression' has no attributes.
+The class 'SMTlib2extended::ConstBooleanExpression' has the following attributes: 'value' of type bool.
+The class 'SMTlib2extended::BitstringExpression' has the following attributes: 'value' of type str.
+The class 'SMTlib2extended::Predicate' has no attributes.
+The class 'Expression' has no attributes.
+The class 'SMTlib2extended::ModExpression' has no attributes.
+The class 'SMTlib2extended::NotExpression' has no attributes.
+The class 'SMTlib2extended::GreaterExpression' has no attributes.
+The class 'SMTlib2extended::BinaryExpression' has no attributes.
+The class 'SMTlib2extended::ConstExpression' has no attributes.
+The class 'SMTlib2extended::ConstIntegerExpression' has the following attributes: 'width' of type int; 'value' of type int.
+The class 'Variable' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'SMTlib2extended::VariableExpression' has no attributes.
+The class 'SMTlib2extended::OrExpression' has no attributes.
+The class 'SMTlib2extended::Expression' has no attributes.
+The class 'SMTlib2extended::BvOrExpression' has no attributes.
+The class 'SMTlib2extended::BvAndExpression' has no attributes.
+The class 'SMTlib2extended::LessEqualsExpression' has no attributes.
+The class 'SMTlib2extended::UnaryExpression' has no attributes.
+The class 'SMTlib2extended::NandExpression' has no attributes.
+The class 'SMTlib2extended::GreaterEqualsExpression' has no attributes.
+The class 'SMTlib2extended::AndExpression' has no attributes.
+The class 'SMTlib2extended::ExtractIndexExpression' has the following attributes: 'end' of type int; 'start' of type int.
+The class 'UnaryExpression' has no attributes.
+The class 'SMTlib2extended::DivExpression' has no attributes.
+The class 'SMTlib2extended::CardExpression' has the following attributes: 'k' of type int.
+The class 'SMTlib2extended::CardGtExpression' has no attributes.
+The class 'SMTlib2extended::ConcatExpression' has no attributes.
+'SMTlib2extended::CardExpression' is a specialization of 'Expression'.
+'SMTlib2extended::GreaterExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::ConstExpression' is a specialization of 'Expression'.
+'SMTlib2extended::BvXorExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::AddExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::CardGeExpression' is a specialization of 'CardExpression'.
+'SMTlib2extended::CardLtExpression' is a specialization of 'CardExpression'.
+'SMTlib2extended::MulExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::GreaterEqualsExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::OneHotExpression' is a specialization of 'UnaryExpression'.
+'SMTlib2extended::BitstringExpression' is a specialization of 'ConstExpression'.
+'SMTlib2extended::UnaryExpression' is a specialization of 'Expression'.
+'SMTlib2extended::Variable' is a specialization of 'NamedElement'.
+'SMTlib2extended::ImpliesExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::ConstIntegerExpression' is a specialization of 'ConstExpression'.
+'SMTlib2extended::DivExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::CardEqExpression' is a specialization of 'CardExpression'.
+'SMTlib2extended::IteExpression' is a specialization of 'Expression'.
+'SMTlib2extended::EqualsExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::OrExpression' is a specialization of 'NAryExpression'.
+'SMTlib2extended::Bitvector' is a specialization of 'Variable'.
+'SMTlib2extended::BvNotExpression' is a specialization of 'UnaryExpression'.
+'SMTlib2extended::Predicate' is a specialization of 'Variable'.
+'SMTlib2extended::VariableExpression' is a specialization of 'Expression'.
+'SMTlib2extended::LessEqualsExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::ExtractIndexExpression' is a specialization of 'UnaryExpression'.
+'SMTlib2extended::ConcatExpression' is a specialization of 'NAryExpression'.
+'SMTlib2extended::LessExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::NotExpression' is a specialization of 'UnaryExpression'.
+'SMTlib2extended::BvOrExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::SubExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::NandExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::AndExpression' is a specialization of 'NAryExpression'.
+'SMTlib2extended::ModExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::BvAndExpression' is a specialization of 'BinaryExpression'.
+'SMTlib2extended::CardGtExpression' is a specialization of 'CardExpression'.
+'SMTlib2extended::ConstBooleanExpression' is a specialization of 'ConstExpression'.
+'SMTlib2extended::NAryExpression' is a specialization of 'Expression'.
+'SMTlib2extended::BinaryExpression' is a specialization of 'Expression'.
+'SMTlib2extended::Expression' is a specialization of 'NamedElement'.
+'SMTlib2extended::CardLeExpression' is a specialization of 'CardExpression'.
+'SMTlib2extended::NAryExpression' (role 'SMTlib2extended_NAryExpression', cardinality 0..*) is associated with 'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression6', cardinality 0..*).
+'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression21', cardinality 0..*) is associated with 'SMTlib2extended::IteExpression' (role 'SMTlib2extended_IteExpression20', cardinality 0..*).
+'SMTlib2extended::IteExpression' (role 'SMTlib2extended_IteExpression', cardinality 0..*) is associated with 'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression15', cardinality 0..*).
+'SMTlib2extended::Instance' (role 'SMTlib2extended_Instance2', cardinality 0..*) is associated with 'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression', cardinality 0..*).
+'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression18', cardinality 0..*) is associated with 'SMTlib2extended::IteExpression' (role 'SMTlib2extended_IteExpression17', cardinality 0..*).
+'SMTlib2extended::BinaryExpression' (role 'SMTlib2extended_BinaryExpression', cardinality 0..*) is associated with 'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression8', cardinality 0..*).
+'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression23', cardinality 0..*) is associated with 'SMTlib2extended::CardExpression' (role 'SMTlib2extended_CardExpression', cardinality 0..*).
+'SMTlib2extended::Variable' (role 'SMTlib2extended_Variable4', cardinality 0..*) is associated with 'SMTlib2extended::VariableExpression' (role 'SMTlib2extended_VariableExpression', cardinality 0..*).
+'SMTlib2extended::Instance' (role 'SMTlib2extended_Instance', cardinality 0..*) is associated with 'SMTlib2extended::Variable' (role 'SMTlib2extended_Variable', cardinality 0..*).
+'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression11', cardinality 0..*) is associated with 'SMTlib2extended::BinaryExpression' (role 'SMTlib2extended_BinaryExpression10', cardinality 0..*).
+'SMTlib2extended::UnaryExpression' (role 'SMTlib2extended_UnaryExpression', cardinality 0..*) is associated with 'SMTlib2extended::Expression' (role 'SMTlib2extended_Expression13', cardinality 0..*).

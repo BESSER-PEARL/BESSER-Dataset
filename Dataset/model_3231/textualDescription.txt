@@ -1,0 +1,193 @@
+The model has 73 class(es).
+The class 'pascal::type::definition::part' has no attributes.
+The class 'pascal::constant' has the following attributes: 'string' of type str; 'boolLiteral' of type str; 'opterator' of type str; 'nil' of type str; 'name' of type str.
+The class 'pascal::variable' has the following attributes: 'name' of type str.
+The class 'pascal::with::statement' has the following attributes: 'record' of type str; 'records' of type str.
+The class 'pascal::variable::identifier::list' has the following attributes: 'names' of type str.
+The class 'pascal::value::parameter::section' has no attributes.
+The class 'pascal::label' has the following attributes: 'number' of type str.
+The class 'pascal::program::heading' has the following attributes: 'name' of type str.
+The class 'pascal::goto::statement' has no attributes.
+The class 'pascal::formal::parameter::list' has no attributes.
+The class 'pascal::expression::list' has no attributes.
+The class 'pascal::statement::sequence' has no attributes.
+The class 'pascal::parameter::type' has the following attributes: 'name' of type str.
+The class 'pascal::assignment::statement' has no attributes.
+The class 'pascal::field::list' has no attributes.
+The class 'pascal::variable::parameter::section' has no attributes.
+The class 'pascal::unpacked::conformant::array::schema' has no attributes.
+The class 'pascal::abstraction::heading' has the following attributes: 'resultType' of type str; 'name' of type str.
+The class 'pascal::EObject' has no attributes.
+The class 'pascal::simple::type' has the following attributes: 'name' of type str.
+The class 'pascal::file::type' has no attributes.
+The class 'pascal::label::declaration::part' has no attributes.
+The class 'pascal::conformant::array::schema' has no attributes.
+The class 'pascal::simple::expression' has the following attributes: 'operators' of type str; 'prefixOperator' of type str.
+The class 'pascal::tag::field' has the following attributes: 'name' of type str.
+The class 'pascal::type' has no attributes.
+The class 'pascal::fixed::part' has no attributes.
+The class 'pascal::array::type' has no attributes.
+The class 'pascal::subrange::type' has the following attributes: 'subrange' of type str.
+The class 'pascal::variable::section' has no attributes.
+The class 'pascal::variant' has no attributes.
+The class 'pascal::set::type' has no attributes.
+The class 'pascal::structured::type' has the following attributes: 'packed' of type bool.
+The class 'pascal::enumerated::type' has no attributes.
+The class 'pascal::abstraction::declaration' has the following attributes: 'forward' of type bool.
+The class 'pascal::structured::statement' has no attributes.
+The class 'pascal::record::section' has no attributes.
+The class 'pascal::any::number' has the following attributes: 'real' of type str; 'integer' of type str.
+The class 'pascal::number' has no attributes.
+The class 'pascal::variant::part' has the following attributes: 'name' of type str.
+The class 'pascal::procedure::and::function::declaration::part' has no attributes.
+The class 'pascal::expression' has the following attributes: 'operators' of type str.
+The class 'pascal::term' has the following attributes: 'operators' of type str.
+The class 'pascal::type::definition' has the following attributes: 'name' of type str.
+The class 'pascal::formal::parameter::section' has no attributes.
+The class 'pascal::constant::definition' has the following attributes: 'name' of type str.
+The class 'pascal::simple::statement' has the following attributes: 'function_noargs' of type str.
+The class 'pascal::repetitive::statement' has no attributes.
+The class 'pascal::if::statement' has no attributes.
+The class 'pascal::program' has no attributes.
+The class 'pascal::identifier::list' has the following attributes: 'ids' of type str.
+The class 'pascal::variable::declaration::part' has no attributes.
+The class 'pascal::for::statement' has the following attributes: 'initID' of type str.
+The class 'pascal::conditional::statement' has no attributes.
+The class 'pascal::factor' has the following attributes: 'string' of type str; 'nil' of type bool; 'boolean' of type str.
+The class 'pascal::record::type' has the following attributes: 'end' of type str; 'record' of type str.
+The class 'pascal::constant::definition::part' has no attributes.
+The class 'pascal::pointer::type' has no attributes.
+The class 'abstraction::declaration' has no attributes.
+The class 'pascal::while::statement' has no attributes.
+The class 'pascal::bound::specification' has the following attributes: 'fin' of type str; 'name' of type str; 'init' of type str.
+The class 'pascal::packed::conformant::array::schema' has the following attributes: 'name' of type str.
+The class 'pascal::set' has the following attributes: 'brackets' of type str.
+The class 'pascal::repeat::statement' has no attributes.
+The class 'pascal::unpacked::structured::type' has no attributes.
+The class 'pascal::function::designator' has the following attributes: 'name' of type str.
+The class 'pascal::declaration::part' has no attributes.
+The class 'pascal::block' has no attributes.
+The class 'pascal::statement' has no attributes.
+The class 'pascal::compound::statement' has no attributes.
+The class 'pascal::statement::part' has no attributes.
+The class 'pascal::case::label::list' has no attributes.
+The class 'pascal::resto' has the following attributes: 'name' of type str; 'accessor' of type bool.
+'pascal::abstraction::heading' is a specialization of 'abstraction::declaration'.
+'pascal::simple::statement' (role 'pascal_simple_statement99', cardinality 0..*) is associated with 'pascal::function::designator' (role 'pascal_function_designator', cardinality 0..*).
+'pascal::program::heading' (role 'pascal_program_heading', cardinality 0..*) is associated with 'pascal::program' (role 'pascal_program', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression143', cardinality 0..*) is associated with 'pascal::for::statement' (role 'pascal_for_statement142', cardinality 0..*).
+'pascal::statement' (role 'pascal_statement157', cardinality 0..*) is associated with 'pascal::if::statement' (role 'pascal_if_statement156', cardinality 0..*).
+'pascal::statement::sequence' (role 'pascal_statement_sequence119', cardinality 0..*) is associated with 'pascal::compound::statement' (role 'pascal_compound_statement118', cardinality 0..*).
+'pascal::type' (role 'pascal_type', cardinality 0..*) is associated with 'pascal::type::definition' (role 'pascal_type_definition28', cardinality 0..*).
+'pascal::value::parameter::section' (role 'pascal_value_parameter_section63', cardinality 0..*) is associated with 'pascal::identifier::list' (role 'pascal_identifier_list64', cardinality 0..*).
+'pascal::constant::definition::part' (role 'pascal_constant_definition_part22', cardinality 0..*) is associated with 'pascal::constant::definition' (role 'pascal_constant_definition', cardinality 0..*).
+'pascal::formal::parameter::list' (role 'pascal_formal_parameter_list51', cardinality 0..*) is associated with 'pascal::formal::parameter::section' (role 'pascal_formal_parameter_section', cardinality 0..*).
+'pascal::declaration::part' (role 'pascal_declaration_part16', cardinality 0..*) is associated with 'pascal::variable::declaration::part' (role 'pascal_variable_declaration_part', cardinality 0..*).
+'pascal::resto' (role 'pascal_resto191', cardinality 0..*) is associated with 'pascal::resto' (role 'pascal_resto189', cardinality 0..*).
+'pascal::abstraction::declaration' (role 'pascal_abstraction_declaration', cardinality 0..*) is associated with 'pascal::procedure::and::function::declaration::part' (role 'pascal_procedure_and_function_declaration_part39', cardinality 0..*).
+'pascal::conformant::array::schema' (role 'pascal_conformant_array_schema', cardinality 0..*) is associated with 'pascal::parameter::type' (role 'pascal_parameter_type74', cardinality 0..*).
+'pascal::simple::statement' (role 'pascal_simple_statement101', cardinality 0..*) is associated with 'pascal::goto::statement' (role 'pascal_goto_statement', cardinality 0..*).
+'pascal::variant::part' (role 'pascal_variant_part', cardinality 0..*) is associated with 'pascal::field::list' (role 'pascal_field_list256', cardinality 0..*).
+'pascal::pointer::type' (role 'pascal_pointer_type', cardinality 0..*) is associated with 'pascal::type' (role 'pascal_type209', cardinality 0..*).
+'pascal::variant' (role 'pascal_variant270', cardinality 0..*) is associated with 'pascal::case::label::list' (role 'pascal_case_label_list', cardinality 0..*).
+'pascal::unpacked::conformant::array::schema' (role 'pascal_unpacked_conformant_array_schema82', cardinality 0..*) is associated with 'pascal::bound::specification' (role 'pascal_bound_specification83', cardinality 0..*).
+'pascal::statement::part' (role 'pascal_statement_part', cardinality 0..*) is associated with 'pascal::block' (role 'pascal_block8', cardinality 0..*).
+'pascal::label' (role 'pascal_label91', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement90', cardinality 0..*).
+'pascal::variant::part' (role 'pascal_variant_part266', cardinality 0..*) is associated with 'pascal::tag::field' (role 'pascal_tag_field', cardinality 0..*).
+'pascal::variable::section' (role 'pascal_variable_section34', cardinality 0..*) is associated with 'pascal::type' (role 'pascal_type35', cardinality 0..*).
+'pascal::block' (role 'pascal_block6', cardinality 0..*) is associated with 'pascal::declaration::part' (role 'pascal_declaration_part', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor', cardinality 0..*) is associated with 'pascal::term' (role 'pascal_term', cardinality 0..*).
+'pascal::for::statement' (role 'pascal_for_statement145', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement146', cardinality 0..*).
+'pascal::value::parameter::section' (role 'pascal_value_parameter_section', cardinality 0..*) is associated with 'pascal::formal::parameter::section' (role 'pascal_formal_parameter_section53', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor170', cardinality 0..*) is associated with 'pascal::number' (role 'pascal_number', cardinality 0..*).
+'pascal::while::statement' (role 'pascal_while_statement130', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement131', cardinality 0..*).
+'pascal::variable::section' (role 'pascal_variable_section32', cardinality 0..*) is associated with 'pascal::variable::identifier::list' (role 'pascal_variable_identifier_list', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression137', cardinality 0..*) is associated with 'pascal::repeat::statement' (role 'pascal_repeat_statement136', cardinality 0..*).
+'pascal::constant' (role 'pascal_constant281', cardinality 0..*) is associated with 'pascal::case::label::list' (role 'pascal_case_label_list280', cardinality 0..*).
+'pascal::formal::parameter::section' (role 'pascal_formal_parameter_section55', cardinality 0..*) is associated with 'pascal::variable::parameter::section' (role 'pascal_variable_parameter_section', cardinality 0..*).
+'pascal::structured::statement' (role 'pascal_structured_statement116', cardinality 0..*) is associated with 'pascal::with::statement' (role 'pascal_with_statement', cardinality 0..*).
+'pascal::statement::part' (role 'pascal_statement_part49', cardinality 0..*) is associated with 'pascal::statement::sequence' (role 'pascal_statement_sequence', cardinality 0..*).
+'pascal::abstraction::heading' (role 'pascal_abstraction_heading41', cardinality 0..*) is associated with 'pascal::formal::parameter::list' (role 'pascal_formal_parameter_list', cardinality 0..*).
+'pascal::bound::specification' (role 'pascal_bound_specification', cardinality 0..*) is associated with 'pascal::packed::conformant::array::schema' (role 'pascal_packed_conformant_array_schema80', cardinality 0..*).
+'pascal::resto' (role 'pascal_resto192', cardinality 0..*) is associated with 'pascal::resto' (role 'pascal_resto194', cardinality 0..*).
+'pascal::array::type' (role 'pascal_array_type237', cardinality 0..*) is associated with 'pascal::simple::type' (role 'pascal_simple_type238', cardinality 0..*).
+'pascal::constant::definition::part' (role 'pascal_constant_definition_part', cardinality 0..*) is associated with 'pascal::declaration::part' (role 'pascal_declaration_part12', cardinality 0..*).
+'pascal::statement' (role 'pascal_statement93', cardinality 0..*) is associated with 'pascal::simple::statement' (role 'pascal_simple_statement', cardinality 0..*).
+'pascal::resto' (role 'pascal_resto188', cardinality 0..*) is associated with 'pascal::resto' (role 'pascal_resto186', cardinality 0..*).
+'pascal::fixed::part' (role 'pascal_fixed_part', cardinality 0..*) is associated with 'pascal::field::list' (role 'pascal_field_list254', cardinality 0..*).
+'pascal::set::type' (role 'pascal_set_type', cardinality 0..*) is associated with 'pascal::unpacked::structured::type' (role 'pascal_unpacked_structured_type233', cardinality 0..*).
+'pascal::structured::statement' (role 'pascal_structured_statement114', cardinality 0..*) is associated with 'pascal::conditional::statement' (role 'pascal_conditional_statement', cardinality 0..*).
+'pascal::record::section' (role 'pascal_record_section263', cardinality 0..*) is associated with 'pascal::type' (role 'pascal_type264', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor174', cardinality 0..*) is associated with 'pascal::function::designator' (role 'pascal_function_designator175', cardinality 0..*).
+'pascal::abstraction::declaration' (role 'pascal_abstraction_declaration43', cardinality 0..*) is associated with 'pascal::abstraction::heading' (role 'pascal_abstraction_heading44', cardinality 0..*).
+'pascal::subrange::type' (role 'pascal_subrange_type221', cardinality 0..*) is associated with 'pascal::constant' (role 'pascal_constant222', cardinality 0..*).
+'pascal::variant' (role 'pascal_variant', cardinality 0..*) is associated with 'pascal::variant::part' (role 'pascal_variant_part268', cardinality 0..*).
+'pascal::declaration::part' (role 'pascal_declaration_part18', cardinality 0..*) is associated with 'pascal::procedure::and::function::declaration::part' (role 'pascal_procedure_and_function_declaration_part', cardinality 0..*).
+'pascal::repeat::statement' (role 'pascal_repeat_statement133', cardinality 0..*) is associated with 'pascal::statement::sequence' (role 'pascal_statement_sequence134', cardinality 0..*).
+'pascal::parameter::type' (role 'pascal_parameter_type72', cardinality 0..*) is associated with 'pascal::variable::parameter::section' (role 'pascal_variable_parameter_section71', cardinality 0..*).
+'pascal::unpacked::conformant::array::schema' (role 'pascal_unpacked_conformant_array_schema85', cardinality 0..*) is associated with 'pascal::parameter::type' (role 'pascal_parameter_type86', cardinality 0..*).
+'pascal::record::section' (role 'pascal_record_section260', cardinality 0..*) is associated with 'pascal::identifier::list' (role 'pascal_identifier_list261', cardinality 0..*).
+'pascal::compound::statement' (role 'pascal_compound_statement', cardinality 0..*) is associated with 'pascal::structured::statement' (role 'pascal_structured_statement110', cardinality 0..*).
+'pascal::variant' (role 'pascal_variant272', cardinality 0..*) is associated with 'pascal::field::list' (role 'pascal_field_list273', cardinality 0..*).
+'pascal::assignment::statement' (role 'pascal_assignment_statement', cardinality 0..*) is associated with 'pascal::simple::statement' (role 'pascal_simple_statement97', cardinality 0..*).
+'pascal::packed::conformant::array::schema' (role 'pascal_packed_conformant_array_schema', cardinality 0..*) is associated with 'pascal::conformant::array::schema' (role 'pascal_conformant_array_schema76', cardinality 0..*).
+'pascal::subrange::type' (role 'pascal_subrange_type224', cardinality 0..*) is associated with 'pascal::constant' (role 'pascal_constant225', cardinality 0..*).
+'pascal::function::designator' (role 'pascal_function_designator202', cardinality 0..*) is associated with 'pascal::expression::list' (role 'pascal_expression_list203', cardinality 0..*).
+'pascal::repetitive::statement' (role 'pascal_repetitive_statement121', cardinality 0..*) is associated with 'pascal::while::statement' (role 'pascal_while_statement', cardinality 0..*).
+'pascal::type' (role 'pascal_type249', cardinality 0..*) is associated with 'pascal::file::type' (role 'pascal_file_type248', cardinality 0..*).
+'pascal::if::statement' (role 'pascal_if_statement', cardinality 0..*) is associated with 'pascal::conditional::statement' (role 'pascal_conditional_statement148', cardinality 0..*).
+'pascal::unpacked::structured::type' (role 'pascal_unpacked_structured_type', cardinality 0..*) is associated with 'pascal::structured::type' (role 'pascal_structured_type227', cardinality 0..*).
+'pascal::abstraction::heading' (role 'pascal_abstraction_heading61', cardinality 0..*) is associated with 'pascal::formal::parameter::section' (role 'pascal_formal_parameter_section60', cardinality 0..*).
+'pascal::type::definition' (role 'pascal_type_definition', cardinality 0..*) is associated with 'pascal::type::definition::part' (role 'pascal_type_definition_part26', cardinality 0..*).
+'pascal::set' (role 'pascal_set196', cardinality 0..*) is associated with 'pascal::expression::list' (role 'pascal_expression_list197', cardinality 0..*).
+'pascal::constant' (role 'pascal_constant277', cardinality 0..*) is associated with 'pascal::number' (role 'pascal_number278', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression', cardinality 0..*) is associated with 'pascal::assignment::statement' (role 'pascal_assignment_statement105', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression140', cardinality 0..*) is associated with 'pascal::for::statement' (role 'pascal_for_statement139', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor177', cardinality 0..*) is associated with 'pascal::expression' (role 'pascal_expression178', cardinality 0..*).
+'pascal::record::type' (role 'pascal_record_type', cardinality 0..*) is associated with 'pascal::unpacked::structured::type' (role 'pascal_unpacked_structured_type231', cardinality 0..*).
+'pascal::with::statement' (role 'pascal_with_statement159', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement160', cardinality 0..*).
+'pascal::type' (role 'pascal_type252', cardinality 0..*) is associated with 'pascal::pointer::type' (role 'pascal_pointer_type251', cardinality 0..*).
+'pascal::program' (role 'pascal_program2', cardinality 0..*) is associated with 'pascal::block' (role 'pascal_block', cardinality 0..*).
+'pascal::structured::statement' (role 'pascal_structured_statement112', cardinality 0..*) is associated with 'pascal::repetitive::statement' (role 'pascal_repetitive_statement', cardinality 0..*).
+'pascal::subrange::type' (role 'pascal_subrange_type', cardinality 0..*) is associated with 'pascal::simple::type' (role 'pascal_simple_type211', cardinality 0..*).
+'pascal::constant' (role 'pascal_constant', cardinality 0..*) is associated with 'pascal::constant::definition' (role 'pascal_constant_definition24', cardinality 0..*).
+'pascal::statement' (role 'pascal_statement', cardinality 0..*) is associated with 'pascal::statement::sequence' (role 'pascal_statement_sequence88', cardinality 0..*).
+'pascal::label::declaration::part' (role 'pascal_label_declaration_part', cardinality 0..*) is associated with 'pascal::declaration::part' (role 'pascal_declaration_part10', cardinality 0..*).
+'pascal::for::statement' (role 'pascal_for_statement', cardinality 0..*) is associated with 'pascal::repetitive::statement' (role 'pascal_repetitive_statement125', cardinality 0..*).
+'pascal::unpacked::conformant::array::schema' (role 'pascal_unpacked_conformant_array_schema', cardinality 0..*) is associated with 'pascal::conformant::array::schema' (role 'pascal_conformant_array_schema78', cardinality 0..*).
+'pascal::simple::type' (role 'pascal_simple_type213', cardinality 0..*) is associated with 'pascal::enumerated::type' (role 'pascal_enumerated_type', cardinality 0..*).
+'pascal::constant' (role 'pascal_constant219', cardinality 0..*) is associated with 'pascal::subrange::type' (role 'pascal_subrange_type218', cardinality 0..*).
+'pascal::type::definition::part' (role 'pascal_type_definition_part', cardinality 0..*) is associated with 'pascal::declaration::part' (role 'pascal_declaration_part14', cardinality 0..*).
+'pascal::set' (role 'pascal_set', cardinality 0..*) is associated with 'pascal::factor' (role 'pascal_factor172', cardinality 0..*).
+'pascal::program::heading' (role 'pascal_program_heading4', cardinality 0..*) is associated with 'pascal::identifier::list' (role 'pascal_identifier_list', cardinality 0..*).
+'pascal::repeat::statement' (role 'pascal_repeat_statement', cardinality 0..*) is associated with 'pascal::repetitive::statement' (role 'pascal_repetitive_statement123', cardinality 0..*).
+'pascal::procedure::and::function::declaration::part' (role 'pascal_procedure_and_function_declaration_part37', cardinality 0..*) is associated with 'pascal::abstraction::heading' (role 'pascal_abstraction_heading', cardinality 0..*).
+'pascal::unpacked::structured::type' (role 'pascal_unpacked_structured_type235', cardinality 0..*) is associated with 'pascal::file::type' (role 'pascal_file_type', cardinality 0..*).
+'pascal::label' (role 'pascal_label108', cardinality 0..*) is associated with 'pascal::goto::statement' (role 'pascal_goto_statement107', cardinality 0..*).
+'pascal::simple::type' (role 'pascal_simple_type', cardinality 0..*) is associated with 'pascal::type' (role 'pascal_type205', cardinality 0..*).
+'pascal::type' (role 'pascal_type246', cardinality 0..*) is associated with 'pascal::set::type' (role 'pascal_set_type245', cardinality 0..*).
+'pascal::array::type' (role 'pascal_array_type', cardinality 0..*) is associated with 'pascal::unpacked::structured::type' (role 'pascal_unpacked_structured_type229', cardinality 0..*).
+'pascal::enumerated::type' (role 'pascal_enumerated_type215', cardinality 0..*) is associated with 'pascal::identifier::list' (role 'pascal_identifier_list216', cardinality 0..*).
+'pascal::while::statement' (role 'pascal_while_statement127', cardinality 0..*) is associated with 'pascal::expression' (role 'pascal_expression128', cardinality 0..*).
+'pascal::expression::list' (role 'pascal_expression_list199', cardinality 0..*) is associated with 'pascal::expression' (role 'pascal_expression200', cardinality 0..*).
+'pascal::parameter::type' (role 'pascal_parameter_type', cardinality 0..*) is associated with 'pascal::value::parameter::section' (role 'pascal_value_parameter_section66', cardinality 0..*).
+'pascal::fixed::part' (role 'pascal_fixed_part258', cardinality 0..*) is associated with 'pascal::record::section' (role 'pascal_record_section', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor181', cardinality 0..*) is associated with 'pascal::factor' (role 'pascal_factor179', cardinality 0..*).
+'pascal::resto' (role 'pascal_resto185', cardinality 0..*) is associated with 'pascal::expression::list' (role 'pascal_expression_list', cardinality 0..*).
+'pascal::formal::parameter::section' (role 'pascal_formal_parameter_section57', cardinality 0..*) is associated with 'pascal::abstraction::heading' (role 'pascal_abstraction_heading58', cardinality 0..*).
+'pascal::type' (role 'pascal_type207', cardinality 0..*) is associated with 'pascal::structured::type' (role 'pascal_structured_type', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression162', cardinality 0..*) is associated with 'pascal::simple::expression' (role 'pascal_simple_expression', cardinality 0..*).
+'pascal::structured::statement' (role 'pascal_structured_statement', cardinality 0..*) is associated with 'pascal::statement' (role 'pascal_statement95', cardinality 0..*).
+'pascal::type' (role 'pascal_type241', cardinality 0..*) is associated with 'pascal::array::type' (role 'pascal_array_type240', cardinality 0..*).
+'pascal::variable::section' (role 'pascal_variable_section', cardinality 0..*) is associated with 'pascal::variable::declaration::part' (role 'pascal_variable_declaration_part30', cardinality 0..*).
+'pascal::label' (role 'pascal_label', cardinality 0..*) is associated with 'pascal::label::declaration::part' (role 'pascal_label_declaration_part20', cardinality 0..*).
+'pascal::block' (role 'pascal_block47', cardinality 0..*) is associated with 'pascal::abstraction::declaration' (role 'pascal_abstraction_declaration46', cardinality 0..*).
+'pascal::statement' (role 'pascal_statement154', cardinality 0..*) is associated with 'pascal::if::statement' (role 'pascal_if_statement153', cardinality 0..*).
+'pascal::variable' (role 'pascal_variable183', cardinality 0..*) is associated with 'pascal::resto' (role 'pascal_resto', cardinality 0..*).
+'pascal::simple::expression' (role 'pascal_simple_expression164', cardinality 0..*) is associated with 'pascal::EObject' (role 'pascal_EObject', cardinality 0..*).
+'pascal::record::type' (role 'pascal_record_type243', cardinality 0..*) is associated with 'pascal::field::list' (role 'pascal_field_list', cardinality 0..*).
+'pascal::any::number' (role 'pascal_any_number', cardinality 0..*) is associated with 'pascal::number' (role 'pascal_number275', cardinality 0..*).
+'pascal::assignment::statement' (role 'pascal_assignment_statement103', cardinality 0..*) is associated with 'pascal::variable' (role 'pascal_variable', cardinality 0..*).
+'pascal::expression' (role 'pascal_expression151', cardinality 0..*) is associated with 'pascal::if::statement' (role 'pascal_if_statement150', cardinality 0..*).
+'pascal::variable::parameter::section' (role 'pascal_variable_parameter_section68', cardinality 0..*) is associated with 'pascal::identifier::list' (role 'pascal_identifier_list69', cardinality 0..*).
+'pascal::factor' (role 'pascal_factor167', cardinality 0..*) is associated with 'pascal::variable' (role 'pascal_variable168', cardinality 0..*).

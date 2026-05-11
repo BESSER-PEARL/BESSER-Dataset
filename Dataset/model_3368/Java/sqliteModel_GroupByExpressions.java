@@ -1,0 +1,39 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class sqliteModel_GroupByExpressions  {
+
+
+
+
+
+
+    private List<sqliteModel_Expression> sqlitemodel_expressions;
+
+
+    public sqliteModel_GroupByExpressions(
+    ) {
+        this.sqlitemodel_expressions = new ArrayList<>();
+    }
+
+    public sqliteModel_GroupByExpressions(
+        ArrayList<sqliteModel_Expression> sqlitemodel_expressions    ) {
+        this.sqlitemodel_expressions = sqlitemodel_expressions;
+    }
+
+
+    public List<sqliteModel_Expression> getSqlitemodel_expressions() {
+        return sqlitemodel_expressions;
+    }
+
+    public void addSqlitemodel_expression(Sqlitemodel_expression sqlitemodel_expression) {
+        this.sqlitemodel_expressions.add(sqlitemodel_expression);
+    }
+
+}

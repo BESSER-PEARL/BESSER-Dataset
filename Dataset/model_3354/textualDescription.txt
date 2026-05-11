@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Trmodel::Operation' has no attributes.
+The class 'Trmodel::Delete' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Trmodel::Column' has the following attributes: 'Name' of type str; 'tableName' of type str.
+The class 'Trmodel::LoadModel' has the following attributes: 'url' of type str.
+The class 'Trmodel::Table' has the following attributes: 'Name' of type str.
+The class 'Trmodel::Add' has no attributes.
+The class 'Trmodel::loader' has no attributes.
+The class 'Trmodel::Update' has the following attributes: 'newName' of type str.
+'Trmodel::Delete' is a specialization of 'Operation'.
+'Trmodel::Add' is a specialization of 'Operation'.
+'Trmodel::Update' is a specialization of 'Operation'.
+'Trmodel::Operation' (role 'Trmodel_Operation6', cardinality 0..*) is associated with 'Trmodel::Column' (role 'Trmodel_Column', cardinality 0..*).
+'Trmodel::LoadModel' (role 'Trmodel_LoadModel', cardinality 0..*) is associated with 'Trmodel::loader' (role 'Trmodel_loader2', cardinality 0..*).
+'Trmodel::Operation' (role 'Trmodel_Operation4', cardinality 0..*) is associated with 'Trmodel::Table' (role 'Trmodel_Table', cardinality 0..*).
+'Trmodel::loader' (role 'Trmodel_loader', cardinality 0..*) is associated with 'Trmodel::Operation' (role 'Trmodel_Operation', cardinality 0..*).

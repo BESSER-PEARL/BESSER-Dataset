@@ -1,0 +1,78 @@
+The model has 42 class(es).
+The class 'soaml::Artifact' has no attributes.
+The class 'soaml::ServiceChannel' has no attributes.
+The class 'soaml::FreeFormDescriptor' has no attributes.
+The class 'soaml::Capability' has no attributes.
+The class 'soaml::Class' has no attributes.
+The class 'soaml::Request' has no attributes.
+The class 'soaml::DataType' has no attributes.
+The class 'soaml::Provider' has no attributes.
+The class 'soaml::Package' has no attributes.
+The class 'soaml::FreeFormValue' has no attributes.
+The class 'soaml::Property' has the following attributes: 'isID' of type str.
+The class 'soaml::Consumer' has no attributes.
+The class 'soaml::Dependency' has no attributes.
+The class 'soaml::Category' has no attributes.
+The class 'soaml::ValueSpecification' has no attributes.
+The class 'Collaboration' has no attributes.
+The class 'soaml::MessageType' has the following attributes: 'encoding' of type str.
+The class 'Participant' has no attributes.
+The class 'soaml::Signal' has no attributes.
+The class 'soaml::Participant' has no attributes.
+The class 'FreeFormValue' has no attributes.
+The class 'soaml::Realization' has no attributes.
+The class 'soaml::Agent' has no attributes.
+The class 'soaml::Attachment' has the following attributes: 'mimeType' of type str; 'encoding' of type str.
+The class 'soaml::Milestone' has the following attributes: 'progress' of type str.
+The class 'soaml::Port' has the following attributes: 'connectorRequired' of type str.
+The class 'NodeDescriptor' has no attributes.
+The class 'soaml::ServiceInterface' has no attributes.
+The class 'soaml::Interface' has no attributes.
+The class 'soaml::Expose' has no attributes.
+The class 'soaml::CategoryValue' has no attributes.
+The class 'soaml::Collaboration' has the following attributes: 'isStrict' of type str.
+The class 'soaml::Service' has no attributes.
+The class 'soaml::Categorization' has no attributes.
+The class 'soaml::ServiceArchitecture' has no attributes.
+The class 'soaml::Comment' has no attributes.
+The class 'soaml::CollaborationUse' has the following attributes: 'isStrict' of type str.
+The class 'soaml::ServiceContract' has no attributes.
+The class 'soaml::Connector' has no attributes.
+The class 'soaml::NodeDescriptor' has no attributes.
+The class 'soaml::Catalog' has no attributes.
+The class 'soaml::MotivationRealization' has no attributes.
+'soaml::ServiceArchitecture' is a specialization of 'Collaboration'.
+'soaml::Catalog' is a specialization of 'NodeDescriptor'.
+'soaml::CategoryValue' is a specialization of 'FreeFormValue'.
+'soaml::Category' is a specialization of 'NodeDescriptor'.
+'soaml::Agent' is a specialization of 'Participant'.
+'soaml::ServiceContract' is a specialization of 'Collaboration'.
+'soaml::ValueSpecification' (role 'soaml_ValueSpecification', cardinality 0..*) is associated with 'soaml::Milestone' (role 'soaml_Milestone', cardinality 0..*).
+'soaml::Expose' (role 'soaml_Expose', cardinality 0..*) is associated with 'soaml::Dependency' (role 'soaml_Dependency', cardinality 0..*).
+'soaml::Participant' (role 'soaml_Participant', cardinality 0..*) is associated with 'soaml::Class' (role 'soaml_Class19', cardinality 0..*).
+'soaml::NodeDescriptor' (role 'soaml_NodeDescriptor', cardinality 0..*) is associated with 'soaml::Artifact' (role 'soaml_Artifact', cardinality 0..*).
+'soaml::CollaborationUse' (role 'soaml_CollaborationUse', cardinality 0..*) is associated with 'soaml::CollaborationUse' (role 'soaml_CollaborationUse2', cardinality 0..*).
+'soaml::Port' (role 'soaml_Port', cardinality 0..*) is associated with 'soaml::Port' (role 'soaml_Port20', cardinality 0..*).
+'soaml::Attachment' (role 'soaml_Attachment', cardinality 0..*) is associated with 'soaml::Property' (role 'soaml_Property30', cardinality 0..*).
+'soaml::ServiceChannel' (role 'soaml_ServiceChannel', cardinality 0..*) is associated with 'soaml::Connector' (role 'soaml_Connector', cardinality 0..*).
+'soaml::Signal' (role 'soaml_Signal40', cardinality 0..*) is associated with 'soaml::Milestone' (role 'soaml_Milestone39', cardinality 0..*).
+'soaml::Milestone' (role 'soaml_Milestone42', cardinality 0..*) is associated with 'soaml::Comment' (role 'soaml_Comment', cardinality 0..*).
+'soaml::Categorization' (role 'soaml_Categorization', cardinality 0..*) is associated with 'soaml::Dependency' (role 'soaml_Dependency53', cardinality 0..*).
+'soaml::Capability' (role 'soaml_Capability', cardinality 0..*) is associated with 'soaml::Class' (role 'soaml_Class44', cardinality 0..*).
+'soaml::ServiceInterface' (role 'soaml_ServiceInterface', cardinality 0..*) is associated with 'soaml::Interface' (role 'soaml_Interface14', cardinality 0..*).
+'soaml::Class' (role 'soaml_Class17', cardinality 0..*) is associated with 'soaml::ServiceInterface' (role 'soaml_ServiceInterface16', cardinality 0..*).
+'soaml::DataType' (role 'soaml_DataType', cardinality 0..*) is associated with 'soaml::MessageType' (role 'soaml_MessageType34', cardinality 0..*).
+'soaml::Realization' (role 'soaml_Realization', cardinality 0..*) is associated with 'soaml::MotivationRealization' (role 'soaml_MotivationRealization', cardinality 0..*).
+'soaml::Port' (role 'soaml_Port23', cardinality 0..*) is associated with 'soaml::Request' (role 'soaml_Request', cardinality 0..*).
+'soaml::Service' (role 'soaml_Service', cardinality 0..*) is associated with 'soaml::Port' (role 'soaml_Port25', cardinality 0..*).
+'soaml::Interface' (role 'soaml_Interface8', cardinality 0..*) is associated with 'soaml::Provider' (role 'soaml_Provider', cardinality 0..*).
+'soaml::Collaboration' (role 'soaml_Collaboration0', cardinality 0..*) is associated with 'soaml::Collaboration' (role 'soaml_Collaboration', cardinality 0..*).
+'soaml::FreeFormDescriptor' (role 'soaml_FreeFormDescriptor', cardinality 0..*) is associated with 'soaml::Property' (role 'soaml_Property49', cardinality 0..*).
+'soaml::Interface' (role 'soaml_Interface', cardinality 0..*) is associated with 'soaml::Consumer' (role 'soaml_Consumer', cardinality 0..*).
+'soaml::Class' (role 'soaml_Class11', cardinality 0..*) is associated with 'soaml::Provider' (role 'soaml_Provider10', cardinality 0..*).
+'soaml::Catalog' (role 'soaml_Catalog', cardinality 0..*) is associated with 'soaml::Package' (role 'soaml_Package', cardinality 0..*).
+'soaml::Signal' (role 'soaml_Signal', cardinality 0..*) is associated with 'soaml::MessageType' (role 'soaml_MessageType36', cardinality 0..*).
+'soaml::Consumer' (role 'soaml_Consumer6', cardinality 0..*) is associated with 'soaml::Class' (role 'soaml_Class', cardinality 0..*).
+'soaml::Property' (role 'soaml_Property', cardinality 0..*) is associated with 'soaml::Property' (role 'soaml_Property27', cardinality 0..*).
+'soaml::MessageType' (role 'soaml_MessageType', cardinality 0..*) is associated with 'soaml::Class' (role 'soaml_Class32', cardinality 0..*).
+'soaml::ValueSpecification' (role 'soaml_ValueSpecification51', cardinality 0..*) is associated with 'soaml::FreeFormValue' (role 'soaml_FreeFormValue', cardinality 0..*).

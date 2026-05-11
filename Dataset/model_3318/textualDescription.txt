@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'traceability::Traceability' has the following attributes: 'id' of type str.
+The class 'traceability::EObject' has no attributes.
+The class 'traceability::Trace' has the following attributes: 'id' of type str; 'objects' of type str.
+'traceability::Trace' (role 'traceability_Trace4', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject5', cardinality 0..*).
+'traceability::Trace' (role 'traceability_Trace2', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject', cardinality 0..*).
+'traceability::Trace' (role 'traceability_Trace', cardinality 0..*) is associated with 'traceability::Traceability' (role 'traceability_Traceability', cardinality 0..*).

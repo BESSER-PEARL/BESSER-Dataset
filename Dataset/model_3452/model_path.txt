@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/siwiwit/api2mol/plugins/fr.inria.atlanmod.api2mol/rubytl-old/thirdparty/rmof2/test/models/School.ecore

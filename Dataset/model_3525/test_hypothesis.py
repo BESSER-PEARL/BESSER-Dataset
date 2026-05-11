@@ -1,0 +1,111 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from classes import (
+    testenums::Root,
+    Enum1,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_testenums::root_is_not_abstract():
+    assert not inspect.isabstract(testenums::Root)
+
+
+def test_testenums::root_constructor_exists():
+    assert callable(testenums::Root.__init__)
+
+
+def test_testenums::root_constructor_args():
+    sig = inspect.signature(testenums::Root.__init__)
+    params = list(sig.parameters.keys())
+    assert "enum" in params, "Missing parameter 'enum'"
+    assert "enums" in params, "Missing parameter 'enums'"
+
+def test_testenums::root_has_enum():
+    assert hasattr(testenums::Root, "enum")
+    descriptor = None
+    for klass in testenums::Root.__mro__:
+        if "enum" in klass.__dict__:
+            descriptor = klass.__dict__["enum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_testenums::root_has_enums():
+    assert hasattr(testenums::Root, "enums")
+    descriptor = None
+    for klass in testenums::Root.__mro__:
+        if "enums" in klass.__dict__:
+            descriptor = klass.__dict__["enums"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_enum1_exists():
+    # Check that the Enumeration exists
+    assert Enum1 is not None
+
+def test_enum1_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Enum1]
+    expected_literals = [
+        "LITERAL1",
+        "LITERAL0",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Enum1"
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+testenums::Root_strategy = st.builds(
+    testenums::Root,
+    enum=
+        safe_text,
+    enums=
+        safe_text
+)
+
+@given(instance=testenums::Root_strategy)
+@settings(max_examples=50)
+def test_testenums::root_instantiation(instance):
+    assert isinstance(instance, testenums::Root)
+
+@given(instance=testenums::Root_strategy)
+def test_testenums::root_enum_type(instance):
+    assert isinstance(instance.enum, str)
+
+
+@given(instance=testenums::Root_strategy)
+def test_testenums::root_enum_setter(instance):
+    original = instance.enum
+    instance.enum = original
+    assert instance.enum == original
+
+@given(instance=testenums::Root_strategy)
+def test_testenums::root_enums_type(instance):
+    assert isinstance(instance.enums, str)
+
+
+@given(instance=testenums::Root_strategy)
+def test_testenums::root_enums_setter(instance):
+    original = instance.enums
+    instance.enums = original
+    assert instance.enums == original

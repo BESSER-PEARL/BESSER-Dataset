@@ -1,0 +1,174 @@
+The model has 71 class(es).
+The class 'jsm::AbstractMInterface' has no attributes.
+The class 'jsm::MExternalTypeReference' has no attributes.
+The class 'jsm::AbstractMPackageContainer' has no attributes.
+The class 'jsm::CConditionalExpression' has no attributes.
+The class 'jsm::AbstractMResource' has the following attributes: 'derived' of type bool; 'name' of type str.
+The class 'jsm::MDeclaredMethodImplementation' has no attributes.
+The class 'jsm::MMethodImplementationParameter' has the following attributes: 'final' of type bool; 'name' of type str.
+The class 'jsm::AbstractMType' has no attributes.
+The class 'AbstractMDeclaredType' has no attributes.
+The class 'jsm::AbstractMExternalType' has the following attributes: 'fullQualifiedName' of type str.
+The class 'AbstractMFieldDeclaration' has no attributes.
+The class 'AbstractMClass' has no attributes.
+The class 'jsm::MRoot' has no attributes.
+The class 'jsm::MDeclaredClass' has no attributes.
+The class 'AbstractMType' has no attributes.
+The class 'AbstractMTypeWithNameDeclaration' has no attributes.
+The class 'AbstractMClassFieldDeclaration' has no attributes.
+The class 'jsm::MPrimitiveTypeReference' has the following attributes: 'type' of type str.
+The class 'jsm::AbstractMClass' has no attributes.
+The class 'AbstractMMethodDeclaration' has no attributes.
+The class 'jsm::CUnparsedStatement' has the following attributes: 'code' of type str.
+The class 'AbstractMTypeContainer' has no attributes.
+The class 'jsm::AbstractMTypeReference' has the following attributes: 'array' of type bool.
+The class 'jsm::AbstractMMethodDeclaration' has no attributes.
+The class 'jsm::CBlockStatement' has no attributes.
+The class 'jsm::MConstructorParameter' has the following attributes: 'final' of type bool.
+The class 'jsm::AbstractMClassFieldDeclaration' has the following attributes: 'final' of type bool; 'visibility' of type str.
+The class 'AbstractCStatement' has no attributes.
+The class 'jsm::CDeclarationStatement' has the following attributes: 'final' of type bool.
+The class 'jsm::AbstractCStatement' has no attributes.
+The class 'jsm::MImplicitMethodDeclaration' has no attributes.
+The class 'AbstractMMethodLike' has no attributes.
+The class 'jsm::MDirectMethodImplementation' has no attributes.
+The class 'AbstractMInterface' has no attributes.
+The class 'jsm::CUnparsedExpression' has the following attributes: 'code' of type str.
+The class 'jsm::AbstractMTypeWithNameDeclaration' has the following attributes: 'name' of type str.
+The class 'jsm::MExternalClass' has no attributes.
+The class 'AbstractMMethodImplementation' has no attributes.
+The class 'jsm::AbstractCExpression' has no attributes.
+The class 'jsm::MAbstractDeclaredClass' has no attributes.
+The class 'MDeclaredClass' has no attributes.
+The class 'jsm::AbstractMMethodLike' has no attributes.
+The class 'jsm::MMethodDeclarationParameter' has no attributes.
+The class 'jsm::MInterfaceMethodDeclaration' has no attributes.
+The class 'jsm::CIfStatement' has no attributes.
+The class 'jsm::AbstractMFieldDeclaration' has no attributes.
+The class 'AbstractMPackageContainer' has no attributes.
+The class 'AbstractModifiers' has no attributes.
+The class 'jsm::MAbstractClassMethodDeclaration' has the following attributes: 'visibility' of type str.
+The class 'jsm::MPackage' has the following attributes: 'name' of type str.
+The class 'jsm::MInstanceClassFieldDeclaration' has the following attributes: 'transient' of type bool.
+The class 'AbstractCExpression' has no attributes.
+The class 'AbstractMResource' has no attributes.
+The class 'jsm::MCompilationUnit' has no attributes.
+The class 'jsm::CExpressionStatement' has no attributes.
+The class 'AbstractMTypeReference' has no attributes.
+The class 'jsm::MDeclaredTypeReference' has no attributes.
+The class 'jsm::AbstractMTypeContainer' has no attributes.
+The class 'jsm::MConstructor' has no attributes.
+The class 'jsm::MExternalInterface' has no attributes.
+The class 'jsm::AbstractMImplementableMethodDeclaration' has no attributes.
+The class 'jsm::MResource' has the following attributes: 'content' of type str.
+The class 'jsm::MStaticClassFieldDeclaration' has no attributes.
+The class 'jsm::MConstantInterfaceFieldDeclaration' has no attributes.
+The class 'jsm::AbstractModifiers' has the following attributes: 'visibility' of type str; 'synchronized' of type bool; 'final' of type bool.
+The class 'jsm::AbstractMDeclaredType' has the following attributes: 'name' of type str.
+The class 'jsm::MDeclaredInterface' has no attributes.
+The class 'AbstractMImplementableMethodDeclaration' has no attributes.
+The class 'jsm::MNativeMethodDeclaration' has no attributes.
+The class 'AbstractMExternalType' has no attributes.
+The class 'jsm::AbstractMMethodImplementation' has no attributes.
+The enumeration 'MPrimitiveTypes' has the following literals: 'boolean', 'int', 'char', 'long', 'double', 'float', 'short', 'byte'.
+The enumeration 'MVisibility' has the following literals: 'DEFAULT', 'PUBLIC', 'PROTECTED', 'PRIVATE'.
+'jsm::CUnparsedExpression' is a specialization of 'AbstractCExpression'.
+'jsm::MExternalInterface' is a specialization of 'AbstractMInterface'.
+'jsm::MAbstractClassMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+'jsm::MExternalInterface' is a specialization of 'AbstractMExternalType'.
+'jsm::AbstractMMethodDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'jsm::AbstractMMethodImplementation' is a specialization of 'AbstractMMethodLike'.
+'jsm::CUnparsedStatement' is a specialization of 'AbstractCStatement'.
+'jsm::MCompilationUnit' is a specialization of 'AbstractMTypeContainer'.
+'jsm::AbstractMImplementableMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'jsm::MCompilationUnit' is a specialization of 'AbstractMResource'.
+'jsm::MConstantInterfaceFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+'jsm::MDeclaredClass' is a specialization of 'AbstractMClass'.
+'jsm::MExternalClass' is a specialization of 'AbstractMClass'.
+'jsm::MDeclaredInterface' is a specialization of 'AbstractMInterface'.
+'jsm::MRoot' is a specialization of 'AbstractMPackageContainer'.
+'jsm::MNativeMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'jsm::MInstanceClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+'jsm::MPackage' is a specialization of 'AbstractMPackageContainer'.
+'jsm::MMethodDeclarationParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'jsm::CDeclarationStatement' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'jsm::AbstractMMethodLike' is a specialization of 'AbstractModifiers'.
+'jsm::MDeclaredMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+'jsm::AbstractMFieldDeclaration' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'jsm::MPrimitiveTypeReference' is a specialization of 'AbstractMTypeReference'.
+'jsm::MResource' is a specialization of 'AbstractMResource'.
+'jsm::MDirectMethodImplementation' is a specialization of 'AbstractMMethodImplementation'.
+'jsm::MConstructor' is a specialization of 'AbstractMMethodLike'.
+'jsm::CExpressionStatement' is a specialization of 'AbstractCStatement'.
+'jsm::MDeclaredClass' is a specialization of 'AbstractMDeclaredType'.
+'jsm::MAbstractDeclaredClass' is a specialization of 'MDeclaredClass'.
+'jsm::AbstractMDeclaredType' is a specialization of 'AbstractMTypeContainer'.
+'jsm::MImplicitMethodDeclaration' is a specialization of 'AbstractMMethodDeclaration'.
+'jsm::MExternalTypeReference' is a specialization of 'AbstractMTypeReference'.
+'jsm::AbstractMClass' is a specialization of 'AbstractMType'.
+'jsm::MStaticClassFieldDeclaration' is a specialization of 'AbstractMClassFieldDeclaration'.
+'jsm::MExternalClass' is a specialization of 'AbstractMExternalType'.
+'jsm::AbstractMInterface' is a specialization of 'AbstractMType'.
+'jsm::CConditionalExpression' is a specialization of 'AbstractCExpression'.
+'jsm::CDeclarationStatement' is a specialization of 'AbstractCStatement'.
+'jsm::MInterfaceMethodDeclaration' is a specialization of 'AbstractMImplementableMethodDeclaration'.
+'jsm::CIfStatement' is a specialization of 'AbstractCStatement'.
+'jsm::AbstractMClassFieldDeclaration' is a specialization of 'AbstractMFieldDeclaration'.
+'jsm::MConstructorParameter' is a specialization of 'AbstractMTypeWithNameDeclaration'.
+'jsm::CBlockStatement' is a specialization of 'AbstractCStatement'.
+'jsm::MDeclaredInterface' is a specialization of 'AbstractMDeclaredType'.
+'jsm::MDeclaredTypeReference' is a specialization of 'AbstractMTypeReference'.
+'jsm::MDeclaredClass' (role 'MDeclaredClass43', cardinality 0..*) is associated with 'jsm::MInstanceClassFieldDeclaration' (role 'instanceFields', cardinality 0..*).
+'jsm::MDirectMethodImplementation' (role 'owner60', cardinality 0..*) is associated with 'jsm::MImplicitMethodDeclaration' (role 'MImplicitMethodDeclaration', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'MDeclaredClass', cardinality 0..*) is associated with 'jsm::MStaticClassFieldDeclaration' (role 'staticFields', cardinality 0..*).
+'jsm::MRoot' (role 'root', cardinality 0..*) is associated with 'jsm::AbstractMExternalType' (role 'AbstractMExternalType', cardinality 0..*).
+'jsm::AbstractMResource' (role 'resources', cardinality 0..*) is associated with 'jsm::MPackage' (role 'MPackage5', cardinality 0..*).
+'jsm::AbstractMInterface' (role 'jsm_AbstractMInterface', cardinality 0..*) is associated with 'jsm::MDeclaredClass' (role 'jsm_MDeclaredClass22', cardinality 0..*).
+'jsm::AbstractMDeclaredType' (role 'types', cardinality 0..*) is associated with 'jsm::AbstractMTypeContainer' (role 'AbstractMTypeContainer', cardinality 0..*).
+'jsm::AbstractMExternalType' (role 'externalTypes', cardinality 0..*) is associated with 'jsm::MRoot' (role 'MRoot', cardinality 0..*).
+'jsm::MExternalTypeReference' (role 'jsm_MExternalTypeReference', cardinality 0..*) is associated with 'jsm::AbstractMExternalType' (role 'jsm_AbstractMExternalType', cardinality 0..*).
+'jsm::AbstractMFieldDeclaration' (role 'jsm_AbstractMFieldDeclaration', cardinality 0..*) is associated with 'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression', cardinality 0..*).
+'jsm::MMethodDeclarationParameter' (role 'MMethodDeclarationParameter', cardinality 0..*) is associated with 'jsm::AbstractMMethodDeclaration' (role 'methodDeclaration', cardinality 0..*).
+'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression77', cardinality 0..*) is associated with 'jsm::CIfStatement' (role 'jsm_CIfStatement', cardinality 0..*).
+'jsm::MPackage' (role 'MPackage', cardinality 0..*) is associated with 'jsm::AbstractMPackageContainer' (role 'packageContainer', cardinality 0..*).
+'jsm::CConditionalExpression' (role 'jsm_CConditionalExpression87', cardinality 0..*) is associated with 'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression88', cardinality 0..*).
+'jsm::MMethodImplementationParameter' (role 'MMethodImplementationParameter', cardinality 0..*) is associated with 'jsm::AbstractMMethodImplementation' (role 'methodImplementation', cardinality 0..*).
+'jsm::AbstractMDeclaredType' (role 'jsm_AbstractMDeclaredType', cardinality 0..*) is associated with 'jsm::MDeclaredTypeReference' (role 'jsm_MDeclaredTypeReference', cardinality 0..*).
+'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression91', cardinality 0..*) is associated with 'jsm::CConditionalExpression' (role 'jsm_CConditionalExpression90', cardinality 0..*).
+'jsm::AbstractMMethodImplementation' (role 'AbstractMMethodImplementation63', cardinality 0..*) is associated with 'jsm::MMethodImplementationParameter' (role 'parameters62', cardinality 0..*).
+'jsm::MDeclaredInterface' (role 'MDeclaredInterface', cardinality 0..*) is associated with 'jsm::MConstantInterfaceFieldDeclaration' (role 'constants', cardinality 0..*).
+'jsm::AbstractMTypeWithNameDeclaration' (role 'jsm_AbstractMTypeWithNameDeclaration', cardinality 0..*) is associated with 'jsm::AbstractMTypeReference' (role 'jsm_AbstractMTypeReference', cardinality 0..*).
+'jsm::MAbstractClassMethodDeclaration' (role 'MAbstractClassMethodDeclaration', cardinality 0..*) is associated with 'jsm::MAbstractDeclaredClass' (role 'owner33', cardinality 0..*).
+'jsm::MDeclaredInterface' (role 'MDeclaredInterface52', cardinality 0..*) is associated with 'jsm::MInterfaceMethodDeclaration' (role 'methods', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'jsm_MDeclaredClass', cardinality 0..*) is associated with 'jsm::AbstractMClass' (role 'jsm_AbstractMClass', cardinality 0..*).
+'jsm::AbstractCStatement' (role 'jsm_AbstractCStatement71', cardinality 0..*) is associated with 'jsm::CBlockStatement' (role 'jsm_CBlockStatement', cardinality 0..*).
+'jsm::AbstractMResource' (role 'superOf', cardinality 0..*) is associated with 'jsm::AbstractMResource' (role 'AbstractMResource8', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'owner31', cardinality 0..*) is associated with 'jsm::MNativeMethodDeclaration' (role 'MNativeMethodDeclaration', cardinality 0..*).
+'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression85', cardinality 0..*) is associated with 'jsm::CConditionalExpression' (role 'jsm_CConditionalExpression', cardinality 0..*).
+'jsm::MImplicitMethodDeclaration' (role 'declaration', cardinality 0..*) is associated with 'jsm::MDirectMethodImplementation' (role 'MDirectMethodImplementation', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'owner25', cardinality 0..*) is associated with 'jsm::MInstanceClassFieldDeclaration' (role 'MInstanceClassFieldDeclaration', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'owner29', cardinality 0..*) is associated with 'jsm::AbstractMMethodImplementation' (role 'AbstractMMethodImplementation', cardinality 0..*).
+'jsm::MDeclaredMethodImplementation' (role 'MDeclaredMethodImplementation', cardinality 0..*) is associated with 'jsm::AbstractMImplementableMethodDeclaration' (role 'declaration49', cardinality 0..*).
+'jsm::AbstractCStatement' (role 'jsm_AbstractCStatement83', cardinality 0..*) is associated with 'jsm::CIfStatement' (role 'jsm_CIfStatement82', cardinality 0..*).
+'jsm::MConstructor' (role 'constructor', cardinality 0..*) is associated with 'jsm::MConstructorParameter' (role 'MConstructorParameter', cardinality 0..*).
+'jsm::AbstractMPackageContainer' (role 'AbstractMPackageContainer', cardinality 0..*) is associated with 'jsm::MPackage' (role 'packages', cardinality 0..*).
+'jsm::AbstractMMethodImplementation' (role 'implementedMethods', cardinality 0..*) is associated with 'jsm::MDeclaredClass' (role 'MDeclaredClass56', cardinality 0..*).
+'jsm::AbstractMResource' (role 'AbstractMResource11', cardinality 0..*) is associated with 'jsm::AbstractMResource' (role 'derivedFrom', cardinality 0..*).
+'jsm::MAbstractClassMethodDeclaration' (role 'abstractMethods', cardinality 0..*) is associated with 'jsm::MAbstractDeclaredClass' (role 'MAbstractDeclaredClass', cardinality 0..*).
+'jsm::AbstractMDeclaredType' (role 'AbstractMDeclaredType', cardinality 0..*) is associated with 'jsm::AbstractMTypeContainer' (role 'typeContainer', cardinality 0..*).
+'jsm::CExpressionStatement' (role 'jsm_CExpressionStatement', cardinality 0..*) is associated with 'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression75', cardinality 0..*).
+'jsm::MPackage' (role 'package', cardinality 0..*) is associated with 'jsm::AbstractMResource' (role 'AbstractMResource', cardinality 0..*).
+'jsm::MDeclaredMethodImplementation' (role 'implementations', cardinality 0..*) is associated with 'jsm::AbstractMImplementableMethodDeclaration' (role 'AbstractMImplementableMethodDeclaration', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'owner', cardinality 0..*) is associated with 'jsm::MStaticClassFieldDeclaration' (role 'MStaticClassFieldDeclaration', cardinality 0..*).
+'jsm::AbstractMMethodDeclaration' (role 'AbstractMMethodDeclaration', cardinality 0..*) is associated with 'jsm::MMethodDeclarationParameter' (role 'parameters', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'owner27', cardinality 0..*) is associated with 'jsm::MConstructor' (role 'MConstructor', cardinality 0..*).
+'jsm::MConstructorParameter' (role 'parameters68', cardinality 0..*) is associated with 'jsm::MConstructor' (role 'MConstructor69', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'MDeclaredClass54', cardinality 0..*) is associated with 'jsm::MNativeMethodDeclaration' (role 'nativeMethods', cardinality 0..*).
+'jsm::CDeclarationStatement' (role 'jsm_CDeclarationStatement', cardinality 0..*) is associated with 'jsm::AbstractCExpression' (role 'jsm_AbstractCExpression73', cardinality 0..*).
+'jsm::MCompilationUnit' (role 'jsm_MCompilationUnit', cardinality 0..*) is associated with 'jsm::AbstractMType' (role 'jsm_AbstractMType', cardinality 0..*).
+'jsm::MDeclaredInterface' (role 'jsm_MDeclaredInterface', cardinality 0..*) is associated with 'jsm::AbstractMInterface' (role 'jsm_AbstractMInterface35', cardinality 0..*).
+'jsm::AbstractCStatement' (role 'jsm_AbstractCStatement', cardinality 0..*) is associated with 'jsm::AbstractMMethodLike' (role 'jsm_AbstractMMethodLike', cardinality 0..*).
+'jsm::MDeclaredClass' (role 'MDeclaredClass65', cardinality 0..*) is associated with 'jsm::MConstructor' (role 'constructors', cardinality 0..*).
+'jsm::MInterfaceMethodDeclaration' (role 'MInterfaceMethodDeclaration', cardinality 0..*) is associated with 'jsm::MDeclaredInterface' (role 'owner39', cardinality 0..*).
+'jsm::CIfStatement' (role 'jsm_CIfStatement79', cardinality 0..*) is associated with 'jsm::AbstractCStatement' (role 'jsm_AbstractCStatement80', cardinality 0..*).
+'jsm::MDeclaredInterface' (role 'owner37', cardinality 0..*) is associated with 'jsm::MConstantInterfaceFieldDeclaration' (role 'MConstantInterfaceFieldDeclaration', cardinality 0..*).

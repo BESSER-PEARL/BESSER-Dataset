@@ -1,0 +1,299 @@
+The model has 121 class(es).
+The class 'timedAutomata::expressions::ForallExpression' has no attributes.
+The class 'TemplateInstantiation' has no attributes.
+The class 'timedAutomata::types::IdentifierType' has no attributes.
+The class 'timedAutomata::declarations::ChannelExpression' has no attributes.
+The class 'timedAutomata::declarations::ArrayTypeType' has no attributes.
+The class 'Type' has no attributes.
+The class 'timedAutomata::declarations::VariableDeclaration' has no attributes.
+The class 'timedAutomata::declarations::TAParameter' has no attributes.
+The class 'timedAutomata::expressions::Selection' has no attributes.
+The class 'Initialiser' has no attributes.
+The class 'timedAutomata::expressions::Expression' has no attributes.
+The class 'timedAutomata::core::Template' has no attributes.
+The class 'TAParameter' has no attributes.
+The class 'declarations::FieldDeclaration' has no attributes.
+The class 'timedAutomata::declarations::ArrayInitialiser' has no attributes.
+The class 'timedAutomata::core::System' has no attributes.
+The class 'timedAutomata::expressions::FixedExpression' has the following attributes: 'type' of type str.
+The class 'timedAutomata::declarations::Statement' has no attributes.
+The class 'timedAutomata::expressions::AssignmentExpression' has the following attributes: 'operator' of type str.
+The class 'core::timedAutomata::Parameter' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'ChannelExpression' has no attributes.
+The class 'SystemDefinition' has no attributes.
+The class 'timedAutomata::expressions::SimpleIfExpression' has no attributes.
+The class 'timedAutomata::bnf::Identifier' has the following attributes: 'name' of type str.
+The class 'base::Commentable' has no attributes.
+The class 'timedAutomata::base::Identifyable' has the following attributes: 'id' of type int.
+The class 'timedAutomata::expressions::IncDecExpression' has the following attributes: 'beforeExpression' of type bool; 'increment' of type bool.
+The class 'core::timedAutomata::Nail' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'timedAutomata::core::Location' has the following attributes: 'committed' of type str; 'urgent' of type str.
+The class 'timedAutomata::base::Commentable' has the following attributes: 'comment' of type str.
+The class 'declarations::ChannelPriority' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'timedAutomata::declarations::WhileLoopStatement' has no attributes.
+The class 'Synchronisation' has no attributes.
+The class 'timedAutomata::expressions::GroupingExpression' has no attributes.
+The class 'timedAutomata::expressions::VariableExpression' has no attributes.
+The class 'Guards' has no attributes.
+The class 'timedAutomata::expressions::ExistsExpression' has no attributes.
+The class 'timedAutomata::declarations::Initialiser' has no attributes.
+The class 'core::timedAutomata::Label' has no attributes.
+The class 'Position' has no attributes.
+The class 'timedAutomata::declarations::FieldDeclaration' has no attributes.
+The class 'Selections' has no attributes.
+The class 'declarations::Statement' has no attributes.
+The class 'timedAutomata::declarations::ExpressionStatement' has no attributes.
+The class 'declarations::VariableIdentifier' has no attributes.
+The class 'timedAutomata::core::TemplateInstantiation' has no attributes.
+The class 'timedAutomata::expressions::PointExpression' has no attributes.
+The class 'timedAutomata::core::Project' has the following attributes: 'id' of type str.
+The class 'timedAutomata::declarations::BlockStatement' has no attributes.
+The class 'declarations::Block' has no attributes.
+The class 'timedAutomata::types::Type' has the following attributes: 'prefix' of type str.
+The class 'timedAutomata::declarations::VariableIdentifier' has no attributes.
+The class 'ArrayDeclarationType' has no attributes.
+The class 'timedAutomata::core::TAElement' has no attributes.
+The class 'timedAutomata::declarations::ExpressionInitialiser' has no attributes.
+The class 'timedAutomata::expressions::IdentifierExpression' has no attributes.
+The class 'timedAutomata::declarations::DoWhileLoopStatement' has no attributes.
+The class 'base::Identifyable' has no attributes.
+The class 'timedAutomata::bnf::SendSynchronisation' has no attributes.
+The class 'timedAutomata::types::IntegerRange' has no attributes.
+The class 'timedAutomata::core::Selections' has no attributes.
+The class 'declarations::Initialiser' has no attributes.
+The class 'timedAutomata::core::Edge' has no attributes.
+The class 'timedAutomata::expressions::ConstantExpression' has the following attributes: 'value' of type int.
+The class 'Statement' has no attributes.
+The class 'Edge' has no attributes.
+The class 'timedAutomata::declarations::ReturnStatement' has no attributes.
+The class 'Template' has no attributes.
+The class 'Expression' has no attributes.
+The class 'timedAutomata::expressions::WithArgumentsExpression' has no attributes.
+The class 'timedAutomata::declarations::ComplexChannelPriority' has the following attributes: 'channelOperator' of type str.
+The class 'timedAutomata::types::Scalar' has no attributes.
+The class 'System' has no attributes.
+The class 'timedAutomata::declarations::Block' has no attributes.
+The class 'timedAutomata::types::Struct' has no attributes.
+The class 'timedAutomata::core::Updates' has no attributes.
+The class 'ChannelPriority' has no attributes.
+The class 'timedAutomata::base::Nameable' has the following attributes: 'name' of type str.
+The class 'Updates' has no attributes.
+The class 'declarations::TAParameter' has no attributes.
+The class 'timedAutomata::declarations::DefaultChannelPriority' has no attributes.
+The class 'Location' has no attributes.
+The class 'timedAutomata::expressions::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'timedAutomata::declarations::ForLoopStatement' has no attributes.
+The class 'timedAutomata::core::Guards' has no attributes.
+The class 'timedAutomata::declarations::Declaration' has no attributes.
+The class 'timedAutomata::bnf::ReceiveSynchronisation' has no attributes.
+The class 'timedAutomata::declarations::IterationStatement' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'expressions::Selection' has no attributes.
+The class 'timedAutomata::bnf::Synchronisation' has no attributes.
+The class 'timedAutomata::declarations::ChannelPriority' has no attributes.
+The class 'timedAutomata::declarations::CallByReferenceParameter' has no attributes.
+The class 'timedAutomata::declarations::FunctionDeclaration' has no attributes.
+The class 'timedAutomata::declarations::ChannelPriorityDeclaration' has no attributes.
+The class 'timedAutomata::declarations::CallByValueParameter' has no attributes.
+The class 'timedAutomata::declarations::ArrayDeclaration' has no attributes.
+The class 'timedAutomata::declarations::ArrayDeclarationType' has no attributes.
+The class 'declarations::Declaration' has no attributes.
+The class 'timedAutomata::core::SystemDefinition' has no attributes.
+The class 'timedAutomata::expressions::ArrayVariableExpression' has no attributes.
+The class 'timedAutomata::declarations::ExpressionChannelExpression' has no attributes.
+The class 'timedAutomata::core::SimpleSystem' has no attributes.
+The class 'timedAutomata::types::SimpleType' has the following attributes: 'type' of type str.
+The class 'timedAutomata::declarations::TypeDeclaration' has no attributes.
+The class 'base::Nameable' has no attributes.
+The class 'timedAutomata::core::ComplexSystem' has the following attributes: 'operator' of type str.
+The class 'timedAutomata::declarations::IfStatement' has no attributes.
+The class 'timedAutomata::declarations::ArrayExpressionType' has no attributes.
+The class 'timedAutomata::expressions::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'TAElement' has no attributes.
+The class 'declarations::ArrayDeclarationType' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'timedAutomata::declarations::IdentifierChannelExpression' has no attributes.
+The class 'timedAutomata::declarations::SimpleChannelPriority' has no attributes.
+The class 'core::TAElement' has no attributes.
+The class 'declarations::ArrayDeclaration' has no attributes.
+The class 'declarations::ChannelExpression' has no attributes.
+The enumeration 'BinaryOperator' has the following literals: 'ADDITION', 'GREATER_THAN', 'MULTIPLICATION', 'BITWISE_AND_ASSIGN', 'BITWISE_AND', 'BITWISE_OR_ASSIGN', 'RIGHT_BITSHIFT_ASSIGN', 'LOGICAL_NEGATION', 'BITWISE_XOR_ASIGN', 'LEFT_BITSHIFT_ASSIGN', 'MINIMUM', 'MAXIMUM', 'LOGICAL_OR', 'LESS_THAN', 'DIVISION', 'BITWISE_OR', 'NONE', 'DECREMENT', 'NOT_EQUALS', 'BITWISE_XOR', 'INCREMENT', 'LEFT_BITSHIFT', 'EQUALS', 'LOGICAL_AND', 'IMPLY', 'LESS_THAN_OR_EQUAL', 'RIGHT_BITSHIFT', 'SUBSTRACTION', 'MODULO', 'GREATER_THAN_OR_EQUAL'.
+The enumeration 'FixedExpressionType' has the following literals: 'True_', 'False_', 'Deadlock'.
+The enumeration 'PriorityOperator' has the following literals: 'LessThan', 'Seperator'.
+The enumeration 'TypeId' has the following literals: 'Boolean', 'Integer', 'Void', 'Clock', 'Channel'.
+The enumeration 'TypePrefix' has the following literals: 'CONSTANT', 'NONE', 'BROADCAST', 'META', 'URGENT'.
+The enumeration 'AssignOperator' has the following literals: 'MULT_ASSIGN', 'MOD_ASSIGN', 'DIV_ASSIGN', 'SUB_ASSIGN', 'ASSIGN', 'ADD_ASIGN'.
+The enumeration 'UnaryOperator' has the following literals: 'NOT', 'MINUS', 'PLUS'.
+'timedAutomata::expressions::BinaryExpression' is a specialization of 'Expression'.
+'timedAutomata::expressions::WithArgumentsExpression' is a specialization of 'Expression'.
+'timedAutomata::core::Template' is a specialization of 'base::Identifyable'.
+'timedAutomata::core::Guards' is a specialization of 'Position'.
+'timedAutomata::core::Edge' is a specialization of 'Position'.
+'timedAutomata::declarations::ArrayInitialiser' is a specialization of 'Initialiser'.
+'timedAutomata::declarations::VariableDeclaration' is a specialization of 'Declaration'.
+'timedAutomata::declarations::ArrayTypeType' is a specialization of 'ArrayDeclarationType'.
+'timedAutomata::declarations::DefaultChannelPriority' is a specialization of 'ChannelPriority'.
+'timedAutomata::declarations::FunctionDeclaration' is a specialization of 'Declaration'.
+'timedAutomata::bnf::SendSynchronisation' is a specialization of 'Synchronisation'.
+'timedAutomata::core::SimpleSystem' is a specialization of 'System'.
+'timedAutomata::expressions::IncDecExpression' is a specialization of 'Expression'.
+'timedAutomata::expressions::ExistsExpression' is a specialization of 'Expression'.
+'timedAutomata::types::IdentifierType' is a specialization of 'Type'.
+'timedAutomata::types::Scalar' is a specialization of 'Type'.
+'timedAutomata::declarations::TypeDeclaration' is a specialization of 'Declaration'.
+'timedAutomata::declarations::ForLoopStatement' is a specialization of 'Statement'.
+'timedAutomata::declarations::IdentifierChannelExpression' is a specialization of 'ChannelExpression'.
+'timedAutomata::core::Edge' is a specialization of 'core::TAElement'.
+'timedAutomata::core::Updates' is a specialization of 'Position'.
+'timedAutomata::expressions::ConstantExpression' is a specialization of 'Expression'.
+'timedAutomata::bnf::Synchronisation' is a specialization of 'Position'.
+'timedAutomata::declarations::ArrayExpressionType' is a specialization of 'ArrayDeclarationType'.
+'timedAutomata::declarations::ExpressionStatement' is a specialization of 'Statement'.
+'timedAutomata::core::TAElement' is a specialization of 'base::Nameable'.
+'timedAutomata::declarations::WhileLoopStatement' is a specialization of 'Statement'.
+'timedAutomata::expressions::UnaryExpression' is a specialization of 'Expression'.
+'timedAutomata::bnf::ReceiveSynchronisation' is a specialization of 'Synchronisation'.
+'timedAutomata::expressions::VariableExpression' is a specialization of 'Expression'.
+'timedAutomata::core::Location' is a specialization of 'core::TAElement'.
+'timedAutomata::declarations::DoWhileLoopStatement' is a specialization of 'Statement'.
+'timedAutomata::declarations::CallByValueParameter' is a specialization of 'TAParameter'.
+'timedAutomata::declarations::BlockStatement' is a specialization of 'declarations::Statement'.
+'timedAutomata::core::Template' is a specialization of 'core::TAElement'.
+'timedAutomata::expressions::Expression' is a specialization of 'Commentable'.
+'timedAutomata::declarations::CallByReferenceParameter' is a specialization of 'TAParameter'.
+'timedAutomata::declarations::IterationStatement' is a specialization of 'Statement'.
+'timedAutomata::declarations::SimpleChannelPriority' is a specialization of 'ChannelPriority'.
+'timedAutomata::core::Selections' is a specialization of 'Position'.
+'timedAutomata::declarations::BlockStatement' is a specialization of 'declarations::Block'.
+'timedAutomata::declarations::ChannelPriorityDeclaration' is a specialization of 'Declaration'.
+'timedAutomata::declarations::ExpressionChannelExpression' is a specialization of 'ChannelExpression'.
+'timedAutomata::core::ComplexSystem' is a specialization of 'System'.
+'timedAutomata::expressions::FixedExpression' is a specialization of 'Expression'.
+'timedAutomata::types::IntegerRange' is a specialization of 'Type'.
+'timedAutomata::expressions::ForallExpression' is a specialization of 'Expression'.
+'timedAutomata::declarations::ComplexChannelPriority' is a specialization of 'ChannelPriority'.
+'timedAutomata::expressions::ArrayVariableExpression' is a specialization of 'Expression'.
+'timedAutomata::declarations::ReturnStatement' is a specialization of 'Statement'.
+'timedAutomata::declarations::Declaration' is a specialization of 'Commentable'.
+'timedAutomata::core::Template' is a specialization of 'base::Nameable'.
+'timedAutomata::core::TAElement' is a specialization of 'base::Commentable'.
+'timedAutomata::expressions::IdentifierExpression' is a specialization of 'Expression'.
+'timedAutomata::core::Location' is a specialization of 'Position'.
+'timedAutomata::expressions::GroupingExpression' is a specialization of 'Expression'.
+'timedAutomata::expressions::PointExpression' is a specialization of 'Expression'.
+'timedAutomata::types::SimpleType' is a specialization of 'Type'.
+'timedAutomata::declarations::IfStatement' is a specialization of 'Statement'.
+'timedAutomata::expressions::AssignmentExpression' is a specialization of 'Expression'.
+'timedAutomata::declarations::ExpressionInitialiser' is a specialization of 'Initialiser'.
+'timedAutomata::expressions::SimpleIfExpression' is a specialization of 'Expression'.
+'timedAutomata::core::Project' is a specialization of 'TAElement'.
+'timedAutomata::types::Struct' is a specialization of 'Type'.
+'expressions::Expression' (role 'expressions_Expression142', cardinality 0..*) is associated with 'timedAutomata::declarations::IfStatement' (role 'timedAutomata_declarations_IfStatement', cardinality 0..*).
+'declarations::TAParameter' (role 'declarations_TAParameter', cardinality 0..*) is associated with 'timedAutomata::declarations::FunctionDeclaration' (role 'timedAutomata_declarations_FunctionDeclaration80', cardinality 0..*).
+'timedAutomata::expressions::ForallExpression' (role 'timedAutomata_expressions_ForallExpression46', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'Identifier' (role 'Identifier59', cardinality 0..*) is associated with 'timedAutomata::expressions::Selection' (role 'timedAutomata_expressions_Selection', cardinality 0..*).
+'timedAutomata::declarations::SimpleChannelPriority' (role 'timedAutomata_declarations_SimpleChannelPriority', cardinality 0..*) is associated with 'declarations::ChannelExpression' (role 'declarations_ChannelExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression233', cardinality 0..*) is associated with 'timedAutomata::core::Updates' (role 'timedAutomata_core_Updates', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression51', cardinality 0..*) is associated with 'timedAutomata::expressions::ExistsExpression' (role 'timedAutomata_expressions_ExistsExpression', cardinality 0..*).
+'timedAutomata::declarations::VariableIdentifier' (role 'timedAutomata_declarations_VariableIdentifier67', cardinality 0..*) is associated with 'declarations::ArrayDeclarationType' (role 'declarations_ArrayDeclarationType', cardinality 0..*).
+'declarations::Block' (role 'declarations_Block', cardinality 0..*) is associated with 'timedAutomata::declarations::FunctionDeclaration' (role 'timedAutomata_declarations_FunctionDeclaration82', cardinality 0..*).
+'timedAutomata::declarations::ArrayTypeType' (role 'timedAutomata_declarations_ArrayTypeType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type97', cardinality 0..*).
+'Edge' (role 'Edge', cardinality 0..*) is associated with 'timedAutomata::core::Template' (role 'timedAutomata_core_Template190', cardinality 0..*).
+'timedAutomata::declarations::VariableDeclaration' (role 'timedAutomata_declarations_VariableDeclaration', cardinality 0..*) is associated with 'types::Type' (role 'types_Type61', cardinality 0..*).
+'timedAutomata::declarations::ChannelPriorityDeclaration' (role 'timedAutomata_declarations_ChannelPriorityDeclaration', cardinality 0..*) is associated with 'declarations::ChannelPriority' (role 'declarations_ChannelPriority', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression49', cardinality 0..*) is associated with 'timedAutomata::expressions::ForallExpression' (role 'timedAutomata_expressions_ForallExpression48', cardinality 0..*).
+'timedAutomata::expressions::ArrayVariableExpression' (role 'timedAutomata_expressions_ArrayVariableExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression3', cardinality 0..*).
+'Synchronisation' (role 'Synchronisation', cardinality 0..*) is associated with 'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge199', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression22', cardinality 0..*) is associated with 'timedAutomata::expressions::UnaryExpression' (role 'timedAutomata_expressions_UnaryExpression', cardinality 0..*).
+'Updates' (role 'Updates', cardinality 0..*) is associated with 'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge203', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression235', cardinality 0..*) is associated with 'timedAutomata::core::Guards' (role 'timedAutomata_core_Guards', cardinality 0..*).
+'timedAutomata::core::Location' (role 'timedAutomata_core_Location209', cardinality 0..*) is associated with 'core::timedAutomata::Label' (role 'core_timedAutomata_Label', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression99', cardinality 0..*) is associated with 'timedAutomata::declarations::ExpressionInitialiser' (role 'timedAutomata_declarations_ExpressionInitialiser', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement148', cardinality 0..*) is associated with 'timedAutomata::declarations::IfStatement' (role 'timedAutomata_declarations_IfStatement147', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression113', cardinality 0..*) is associated with 'timedAutomata::declarations::ForLoopStatement' (role 'timedAutomata_declarations_ForLoopStatement', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'timedAutomata::bnf::Synchronisation' (role 'timedAutomata_bnf_Synchronisation', cardinality 0..*).
+'timedAutomata::declarations::FieldDeclaration' (role 'timedAutomata_declarations_FieldDeclaration87', cardinality 0..*) is associated with 'declarations::ArrayDeclaration' (role 'declarations_ArrayDeclaration88', cardinality 0..*).
+'Identifier' (role 'Identifier', cardinality 0..*) is associated with 'timedAutomata::expressions::VariableExpression' (role 'timedAutomata_expressions_VariableExpression', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement137', cardinality 0..*) is associated with 'timedAutomata::declarations::DoWhileLoopStatement' (role 'timedAutomata_declarations_DoWhileLoopStatement', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression10', cardinality 0..*) is associated with 'timedAutomata::expressions::GroupingExpression' (role 'timedAutomata_expressions_GroupingExpression', cardinality 0..*).
+'timedAutomata::types::IdentifierType' (role 'timedAutomata_types_IdentifierType', cardinality 0..*) is associated with 'Identifier' (role 'Identifier165', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression207', cardinality 0..*) is associated with 'timedAutomata::core::Location' (role 'timedAutomata_core_Location', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression172', cardinality 0..*) is associated with 'timedAutomata::types::Scalar' (role 'timedAutomata_types_Scalar', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement122', cardinality 0..*) is associated with 'timedAutomata::declarations::ForLoopStatement' (role 'timedAutomata_declarations_ForLoopStatement121', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement135', cardinality 0..*) is associated with 'timedAutomata::declarations::WhileLoopStatement' (role 'timedAutomata_declarations_WhileLoopStatement134', cardinality 0..*).
+'timedAutomata::expressions::AssignmentExpression' (role 'timedAutomata_expressions_AssignmentExpression19', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression20', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression39', cardinality 0..*) is associated with 'timedAutomata::expressions::PointExpression' (role 'timedAutomata_expressions_PointExpression', cardinality 0..*).
+'timedAutomata::expressions::PointExpression' (role 'timedAutomata_expressions_PointExpression41', cardinality 0..*) is associated with 'Identifier' (role 'Identifier42', cardinality 0..*).
+'declarations::ChannelExpression' (role 'declarations_ChannelExpression160', cardinality 0..*) is associated with 'timedAutomata::declarations::ExpressionChannelExpression' (role 'timedAutomata_declarations_ExpressionChannelExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression132', cardinality 0..*) is associated with 'timedAutomata::declarations::WhileLoopStatement' (role 'timedAutomata_declarations_WhileLoopStatement', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement145', cardinality 0..*) is associated with 'timedAutomata::declarations::IfStatement' (role 'timedAutomata_declarations_IfStatement144', cardinality 0..*).
+'timedAutomata::types::IntegerRange' (role 'timedAutomata_types_IntegerRange169', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression170', cardinality 0..*).
+'declarations::ArrayDeclarationType' (role 'declarations_ArrayDeclarationType93', cardinality 0..*) is associated with 'timedAutomata::declarations::ArrayDeclaration' (role 'timedAutomata_declarations_ArrayDeclaration92', cardinality 0..*).
+'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge205', cardinality 0..*) is associated with 'core::timedAutomata::Nail' (role 'core_timedAutomata_Nail', cardinality 0..*).
+'declarations::ArrayDeclaration' (role 'declarations_ArrayDeclaration106', cardinality 0..*) is associated with 'timedAutomata::declarations::TAParameter' (role 'timedAutomata_declarations_TAParameter105', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression17', cardinality 0..*) is associated with 'timedAutomata::expressions::AssignmentExpression' (role 'timedAutomata_expressions_AssignmentExpression', cardinality 0..*).
+'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge197', cardinality 0..*) is associated with 'Guards' (role 'Guards', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression6', cardinality 0..*) is associated with 'timedAutomata::expressions::ArrayVariableExpression' (role 'timedAutomata_expressions_ArrayVariableExpression5', cardinality 0..*).
+'timedAutomata::declarations::ForLoopStatement' (role 'timedAutomata_declarations_ForLoopStatement118', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression119', cardinality 0..*).
+'Identifier' (role 'Identifier44', cardinality 0..*) is associated with 'timedAutomata::expressions::ForallExpression' (role 'timedAutomata_expressions_ForallExpression', cardinality 0..*).
+'timedAutomata::declarations::FieldDeclaration' (role 'timedAutomata_declarations_FieldDeclaration', cardinality 0..*) is associated with 'types::Type' (role 'types_Type85', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression167', cardinality 0..*) is associated with 'timedAutomata::types::IntegerRange' (role 'timedAutomata_types_IntegerRange', cardinality 0..*).
+'timedAutomata::declarations::ComplexChannelPriority' (role 'timedAutomata_declarations_ComplexChannelPriority155', cardinality 0..*) is associated with 'declarations::ChannelPriority' (role 'declarations_ChannelPriority156', cardinality 0..*).
+'timedAutomata::core::Template' (role 'timedAutomata_core_Template', cardinality 0..*) is associated with 'declarations::Declaration' (role 'declarations_Declaration181', cardinality 0..*).
+'Template' (role 'Template', cardinality 0..*) is associated with 'timedAutomata::core::Project' (role 'timedAutomata_core_Project177', cardinality 0..*).
+'timedAutomata::declarations::ArrayDeclaration' (role 'timedAutomata_declarations_ArrayDeclaration', cardinality 0..*) is associated with 'Identifier' (role 'Identifier90', cardinality 0..*).
+'timedAutomata::declarations::ReturnStatement' (role 'timedAutomata_declarations_ReturnStatement', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression150', cardinality 0..*).
+'timedAutomata::declarations::VariableDeclaration' (role 'timedAutomata_declarations_VariableDeclaration63', cardinality 0..*) is associated with 'declarations::VariableIdentifier' (role 'declarations_VariableIdentifier', cardinality 0..*).
+'timedAutomata::declarations::ArrayInitialiser' (role 'timedAutomata_declarations_ArrayInitialiser', cardinality 0..*) is associated with 'declarations::Initialiser' (role 'declarations_Initialiser101', cardinality 0..*).
+'timedAutomata::core::TemplateInstantiation' (role 'timedAutomata_core_TemplateInstantiation226', cardinality 0..*) is associated with 'Identifier' (role 'Identifier227', cardinality 0..*).
+'declarations::Declaration' (role 'declarations_Declaration175', cardinality 0..*) is associated with 'timedAutomata::core::Project' (role 'timedAutomata_core_Project', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression163', cardinality 0..*) is associated with 'timedAutomata::declarations::ExpressionChannelExpression' (role 'timedAutomata_declarations_ExpressionChannelExpression162', cardinality 0..*).
+'timedAutomata::declarations::IterationStatement' (role 'timedAutomata_declarations_IterationStatement', cardinality 0..*) is associated with 'Identifier' (role 'Identifier124', cardinality 0..*).
+'timedAutomata::core::TemplateInstantiation' (role 'timedAutomata_core_TemplateInstantiation229', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression230', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression24', cardinality 0..*) is associated with 'timedAutomata::expressions::SimpleIfExpression' (role 'timedAutomata_expressions_SimpleIfExpression', cardinality 0..*).
+'timedAutomata::core::TemplateInstantiation' (role 'timedAutomata_core_TemplateInstantiation', cardinality 0..*) is associated with 'Identifier' (role 'Identifier221', cardinality 0..*).
+'declarations::Initialiser' (role 'declarations_Initialiser', cardinality 0..*) is associated with 'timedAutomata::declarations::VariableIdentifier' (role 'timedAutomata_declarations_VariableIdentifier69', cardinality 0..*).
+'timedAutomata::declarations::ComplexChannelPriority' (role 'timedAutomata_declarations_ComplexChannelPriority', cardinality 0..*) is associated with 'declarations::ChannelExpression' (role 'declarations_ChannelExpression153', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression34', cardinality 0..*) is associated with 'timedAutomata::expressions::WithArgumentsExpression' (role 'timedAutomata_expressions_WithArgumentsExpression', cardinality 0..*).
+'timedAutomata::core::Selections' (role 'timedAutomata_core_Selections', cardinality 0..*) is associated with 'expressions::Selection' (role 'expressions_Selection', cardinality 0..*).
+'timedAutomata::core::Template' (role 'timedAutomata_core_Template183', cardinality 0..*) is associated with 'Location' (role 'Location', cardinality 0..*).
+'timedAutomata::declarations::TypeDeclaration' (role 'timedAutomata_declarations_TypeDeclaration', cardinality 0..*) is associated with 'types::Type' (role 'types_Type71', cardinality 0..*).
+'declarations::TAParameter' (role 'declarations_TAParameter224', cardinality 0..*) is associated with 'timedAutomata::core::TemplateInstantiation' (role 'timedAutomata_core_TemplateInstantiation223', cardinality 0..*).
+'Identifier' (role 'Identifier214', cardinality 0..*) is associated with 'timedAutomata::core::SimpleSystem' (role 'timedAutomata_core_SimpleSystem', cardinality 0..*).
+'TemplateInstantiation' (role 'TemplateInstantiation', cardinality 0..*) is associated with 'timedAutomata::core::SystemDefinition' (role 'timedAutomata_core_SystemDefinition', cardinality 0..*).
+'Identifier' (role 'Identifier32', cardinality 0..*) is associated with 'timedAutomata::expressions::IdentifierExpression' (role 'timedAutomata_expressions_IdentifierExpression', cardinality 0..*).
+'Location' (role 'Location195', cardinality 0..*) is associated with 'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge194', cardinality 0..*).
+'types::Type' (role 'types_Type127', cardinality 0..*) is associated with 'timedAutomata::declarations::IterationStatement' (role 'timedAutomata_declarations_IterationStatement126', cardinality 0..*).
+'timedAutomata::declarations::IterationStatement' (role 'timedAutomata_declarations_IterationStatement129', cardinality 0..*) is associated with 'declarations::Statement' (role 'declarations_Statement130', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression30', cardinality 0..*) is associated with 'timedAutomata::expressions::SimpleIfExpression' (role 'timedAutomata_expressions_SimpleIfExpression29', cardinality 0..*).
+'declarations::FieldDeclaration' (role 'declarations_FieldDeclaration', cardinality 0..*) is associated with 'timedAutomata::types::Struct' (role 'timedAutomata_types_Struct', cardinality 0..*).
+'timedAutomata::core::SystemDefinition' (role 'timedAutomata_core_SystemDefinition212', cardinality 0..*) is associated with 'System' (role 'System', cardinality 0..*).
+'timedAutomata::core::ComplexSystem' (role 'timedAutomata_core_ComplexSystem', cardinality 0..*) is associated with 'System' (role 'System216', cardinality 0..*).
+'timedAutomata::declarations::ForLoopStatement' (role 'timedAutomata_declarations_ForLoopStatement115', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression116', cardinality 0..*).
+'SystemDefinition' (role 'SystemDefinition', cardinality 0..*) is associated with 'timedAutomata::core::Project' (role 'timedAutomata_core_Project179', cardinality 0..*).
+'timedAutomata::expressions::ExistsExpression' (role 'timedAutomata_expressions_ExistsExpression53', cardinality 0..*) is associated with 'types::Type' (role 'types_Type54', cardinality 0..*).
+'timedAutomata::core::ComplexSystem' (role 'timedAutomata_core_ComplexSystem218', cardinality 0..*) is associated with 'System' (role 'System219', cardinality 0..*).
+'Location' (role 'Location188', cardinality 0..*) is associated with 'timedAutomata::core::Template' (role 'timedAutomata_core_Template187', cardinality 0..*).
+'Selections' (role 'Selections', cardinality 0..*) is associated with 'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge201', cardinality 0..*).
+'Identifier' (role 'Identifier158', cardinality 0..*) is associated with 'timedAutomata::declarations::IdentifierChannelExpression' (role 'timedAutomata_declarations_IdentifierChannelExpression', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression12', cardinality 0..*) is associated with 'timedAutomata::expressions::BinaryExpression' (role 'timedAutomata_expressions_BinaryExpression', cardinality 0..*).
+'timedAutomata::expressions::ExistsExpression' (role 'timedAutomata_expressions_ExistsExpression56', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression57', cardinality 0..*).
+'timedAutomata::expressions::SimpleIfExpression' (role 'timedAutomata_expressions_SimpleIfExpression26', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression27', cardinality 0..*).
+'timedAutomata::expressions::WithArgumentsExpression' (role 'timedAutomata_expressions_WithArgumentsExpression36', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression37', cardinality 0..*).
+'timedAutomata::declarations::ArrayExpressionType' (role 'timedAutomata_declarations_ArrayExpressionType', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression95', cardinality 0..*).
+'types::Type' (role 'types_Type75', cardinality 0..*) is associated with 'timedAutomata::declarations::FunctionDeclaration' (role 'timedAutomata_declarations_FunctionDeclaration', cardinality 0..*).
+'timedAutomata::declarations::TAParameter' (role 'timedAutomata_declarations_TAParameter', cardinality 0..*) is associated with 'types::Type' (role 'types_Type103', cardinality 0..*).
+'Location' (role 'Location192', cardinality 0..*) is associated with 'timedAutomata::core::Edge' (role 'timedAutomata_core_Edge', cardinality 0..*).
+'timedAutomata::declarations::FunctionDeclaration' (role 'timedAutomata_declarations_FunctionDeclaration77', cardinality 0..*) is associated with 'Identifier' (role 'Identifier78', cardinality 0..*).
+'timedAutomata::core::Template' (role 'timedAutomata_core_Template185', cardinality 0..*) is associated with 'core::timedAutomata::Parameter' (role 'core_timedAutomata_Parameter', cardinality 0..*).
+'Identifier' (role 'Identifier65', cardinality 0..*) is associated with 'timedAutomata::declarations::VariableIdentifier' (role 'timedAutomata_declarations_VariableIdentifier', cardinality 0..*).
+'timedAutomata::declarations::Block' (role 'timedAutomata_declarations_Block', cardinality 0..*) is associated with 'declarations::Declaration' (role 'declarations_Declaration', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression140', cardinality 0..*) is associated with 'timedAutomata::declarations::DoWhileLoopStatement' (role 'timedAutomata_declarations_DoWhileLoopStatement139', cardinality 0..*).
+'timedAutomata::expressions::IncDecExpression' (role 'timedAutomata_expressions_IncDecExpression', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression8', cardinality 0..*).
+'timedAutomata::declarations::ExpressionStatement' (role 'timedAutomata_declarations_ExpressionStatement', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression111', cardinality 0..*).
+'declarations::ArrayDeclaration' (role 'declarations_ArrayDeclaration', cardinality 0..*) is associated with 'timedAutomata::declarations::TypeDeclaration' (role 'timedAutomata_declarations_TypeDeclaration73', cardinality 0..*).
+'declarations::Statement' (role 'declarations_Statement', cardinality 0..*) is associated with 'timedAutomata::declarations::Block' (role 'timedAutomata_declarations_Block109', cardinality 0..*).
+'timedAutomata::expressions::BinaryExpression' (role 'timedAutomata_expressions_BinaryExpression14', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression15', cardinality 0..*).

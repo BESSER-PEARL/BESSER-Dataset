@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'sm::StateMachine' has no attributes.
+The class 'sm::Variable' has no attributes.
+The class 'sm::State' has no attributes.
+'sm::State' (role 'sm_State2', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*).
+'sm::State' (role 'sm_State', cardinality 0..*) is associated with 'sm::Variable' (role 'sm_Variable', cardinality 0..*).

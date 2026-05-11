@@ -1,0 +1,44 @@
+The model has 16 class(es).
+The class 'USE::Literal' has the following attributes: 'name' of type str.
+The class 'USE::Type' has no attributes.
+The class 'USE::OCLExpression' has the following attributes: 'expr' of type str.
+The class 'USE::Model' has the following attributes: 'name' of type str.
+The class 'USE::Operation' has the following attributes: 'name' of type str.
+The class 'USE::SimpleType' has the following attributes: 'type' of type str.
+The class 'USE::Enumeration' has the following attributes: 'name' of type str.
+The class 'USE::Role' has the following attributes: 'ordered' of type bool; 'lowerBound' of type int; 'upperBound' of type int; 'name' of type str.
+The class 'USE::Association' has the following attributes: 'name' of type str; 'kind' of type str.
+The class 'USE::Parameter' has the following attributes: 'name' of type str.
+The class 'USE::Class' has the following attributes: 'name' of type str; 'abstract' of type bool.
+The class 'USE::EnumerationType' has no attributes.
+The class 'USE::ReferenceType' has no attributes.
+The class 'USE::CollectionType' has the following attributes: 'type' of type str.
+The class 'Type' has no attributes.
+The class 'USE::Attribute' has the following attributes: 'name' of type str.
+The enumeration 'AssocKind' has the following literals: 'Association', 'Aggregation', 'Composition'.
+The enumeration 'CollectionTypes' has the following literals: 'Sequence', 'Set', 'Bag'.
+The enumeration 'SimpleTypes' has the following literals: 'Boolean', 'Integer', 'String', 'Real'.
+'USE::SimpleType' is a specialization of 'Type'.
+'USE::ReferenceType' is a specialization of 'Type'.
+'USE::EnumerationType' is a specialization of 'Type'.
+'USE::CollectionType' is a specialization of 'Type'.
+'USE::OCLExpression' (role 'USE_OCLExpression29', cardinality 0..*) is associated with 'USE::Operation' (role 'USE_Operation28', cardinality 0..*).
+'USE::Class' (role 'USE_Class', cardinality 0..*) is associated with 'USE::Class' (role 'USE_Class0', cardinality 0..*).
+'USE::Type' (role 'USE_Type36', cardinality 0..*) is associated with 'USE::CollectionType' (role 'USE_CollectionType', cardinality 0..*).
+'USE::ReferenceType' (role 'USE_ReferenceType', cardinality 0..*) is associated with 'USE::Class' (role 'USE_Class38', cardinality 0..*).
+'USE::Enumeration' (role 'USE_Enumeration40', cardinality 0..*) is associated with 'USE::Literal' (role 'USE_Literal', cardinality 0..*).
+'USE::Role' (role 'USE_Role', cardinality 0..*) is associated with 'USE::Association' (role 'USE_Association42', cardinality 0..*).
+'USE::Class' (role 'USE_Class3', cardinality 0..*) is associated with 'USE::Attribute' (role 'USE_Attribute', cardinality 0..*).
+'USE::Operation' (role 'USE_Operation22', cardinality 0..*) is associated with 'USE::Type' (role 'USE_Type23', cardinality 0..*).
+'USE::Model' (role 'USE_Model', cardinality 0..*) is associated with 'USE::Class' (role 'USE_Class9', cardinality 0..*).
+'USE::Class' (role 'USE_Class45', cardinality 0..*) is associated with 'USE::Role' (role 'USE_Role44', cardinality 0..*).
+'USE::EnumerationType' (role 'USE_EnumerationType', cardinality 0..*) is associated with 'USE::Enumeration' (role 'USE_Enumeration34', cardinality 0..*).
+'USE::Model' (role 'USE_Model11', cardinality 0..*) is associated with 'USE::Enumeration' (role 'USE_Enumeration', cardinality 0..*).
+'USE::Model' (role 'USE_Model13', cardinality 0..*) is associated with 'USE::Association' (role 'USE_Association', cardinality 0..*).
+'USE::Type' (role 'USE_Type32', cardinality 0..*) is associated with 'USE::Parameter' (role 'USE_Parameter31', cardinality 0..*).
+'USE::Type' (role 'USE_Type', cardinality 0..*) is associated with 'USE::Attribute' (role 'USE_Attribute15', cardinality 0..*).
+'USE::Class' (role 'USE_Class7', cardinality 0..*) is associated with 'USE::OCLExpression' (role 'USE_OCLExpression', cardinality 0..*).
+'USE::Operation' (role 'USE_Operation', cardinality 0..*) is associated with 'USE::Class' (role 'USE_Class5', cardinality 0..*).
+'USE::Operation' (role 'USE_Operation19', cardinality 0..*) is associated with 'USE::OCLExpression' (role 'USE_OCLExpression20', cardinality 0..*).
+'USE::OCLExpression' (role 'USE_OCLExpression26', cardinality 0..*) is associated with 'USE::Operation' (role 'USE_Operation25', cardinality 0..*).
+'USE::Parameter' (role 'USE_Parameter', cardinality 0..*) is associated with 'USE::Operation' (role 'USE_Operation17', cardinality 0..*).

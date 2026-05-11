@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gelareh1985/MDE-Excercises/org.eclipse.ecore.ocl/examples/ThereMayNotBeAnOperationWithTheSameSignatureAsAnAccessorMethodForFeature/valid_example/example.ecore

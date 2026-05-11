@@ -1,0 +1,344 @@
+The model has 123 class(es).
+The class 'Expression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'vcml::Table' has no attributes.
+The class 'vcml::BOMItem' has the following attributes: 'itemnumber' of type int.
+The class 'vcml::DateCharacteristicValue' has the following attributes: 'default' of type bool; 'from_' of type str; 'to' of type str.
+The class 'vcml::PFunction' has no attributes.
+The class 'vcml::Option' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'vcml::BinaryCondition' has the following attributes: 'operator' of type str.
+The class 'vcml::FunctionOrTable' has no attributes.
+The class 'vcml::BOMItem::Class' has no attributes.
+The class 'vcml::Dependency' has no attributes.
+The class 'vcml::InCondition::C' has no attributes.
+The class 'vcml::VariantFunctionArgument' has the following attributes: 'in_' of type bool.
+The class 'vcml::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'vcml::ProcedureSource' has no attributes.
+The class 'vcml::Condition' has no attributes.
+The class 'vcml::Description' has no attributes.
+The class 'vcml::SymbolicType' has the following attributes: 'caseSensitive' of type bool.
+The class 'List' has no attributes.
+The class 'FunctionOrTable' has no attributes.
+The class 'vcml::MDataCharacteristic::C' has no attributes.
+The class 'vcml::BillOfMaterial' has no attributes.
+The class 'vcml::VariantTable' has the following attributes: 'status' of type str; 'group' of type str.
+The class 'BOMItem' has no attributes.
+The class 'vcml::IsSpecified::P' has no attributes.
+The class 'vcml::ObjectType' has the following attributes: 'type' of type str; 'classType' of type int.
+The class 'vcml::SetDefault' has no attributes.
+The class 'vcml::CountParts' has the following attributes: 'location' of type str.
+The class 'vcml::Function' has no attributes.
+The class 'vcml::Literal' has no attributes.
+The class 'vcml::Assignment' has no attributes.
+The class 'VCObject' has no attributes.
+The class 'vcml::FunctionCall' has the following attributes: 'function' of type str.
+The class 'vcml::SelectionCondition' has the following attributes: 'status' of type str; 'group' of type str.
+The class 'vcml::Row' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'vcml::SetPricingFactor' has the following attributes: 'location' of type str.
+The class 'vcml::MultipleLanguageDocumentation' has no attributes.
+The class 'vcml::TypeOf' has the following attributes: 'location' of type str.
+The class 'vcml::ConfigurationProfile' has the following attributes: 'fixing' of type str; 'status' of type str; 'bomapplication' of type str.
+The class 'vcml::IsInvisible' has no attributes.
+The class 'vcml::ConditionalStatement' has no attributes.
+The class 'vcml::NumericType' has the following attributes: 'decimalPlaces' of type int; 'intervalValuesAllowed' of type bool; 'unit' of type str; 'negativeValuesAllowed' of type bool.
+The class 'vcml::ConditionalConstraintRestriction' has no attributes.
+The class 'vcml::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'vcml::List' has no attributes.
+The class 'vcml::Statement' has no attributes.
+The class 'vcml::SimpleDocumentation' has the following attributes: 'value' of type str.
+The class 'CharacteristicType' has no attributes.
+The class 'vcml::NumericInterval' has the following attributes: 'lowerBoundOp' of type str; 'lowerBound' of type str; 'upperBoundOp' of type str; 'upperBound' of type str.
+The class 'vcml::SimpleStatement' has no attributes.
+The class 'vcml::Characteristic' has the following attributes: 'displayAllowedValues' of type bool; 'field' of type str; 'table' of type str; 'additionalValues' of type bool; 'noDisplay' of type bool; 'multiValue' of type bool; 'group' of type str; 'status' of type str; 'required' of type bool; 'notReadyForInput' of type bool; 'restrictable' of type bool.
+The class 'vcml::Material' has the following attributes: 'type' of type str.
+The class 'vcml::ValueAssignment' has no attributes.
+The class 'vcml::NumericLiteral' has the following attributes: 'value' of type str.
+The class 'vcml::ConditionSource' has no attributes.
+The class 'vcml::CharacteristicReference::P' has the following attributes: 'location' of type str.
+The class 'vcml::MDataCharacteristic::P' has no attributes.
+The class 'vcml::SymbolicLiteral' has the following attributes: 'value' of type str.
+The class 'vcml::FormattedDocumentationBlock' has the following attributes: 'value' of type str; 'format' of type str.
+The class 'vcml::BOMItem::Material' has no attributes.
+The class 'SetOrDelDefault' has no attributes.
+The class 'vcml::EObject' has no attributes.
+The class 'CharacteristicReference::C' has no attributes.
+The class 'vcml::Classification' has no attributes.
+The class 'ConstraintObject' has no attributes.
+The class 'Condition' has no attributes.
+The class 'vcml::SetOrDelDefault' has no attributes.
+The class 'vcml::ConstraintClass' has no attributes.
+The class 'vcml::SimpleDescription' has the following attributes: 'value' of type str.
+The class 'vcml::ConstraintRestrictionFalse' has no attributes.
+The class 'vcml::CharacteristicOrValueDependencies' has no attributes.
+The class 'vcml::DependencyNet' has the following attributes: 'group' of type str; 'status' of type str.
+The class 'vcml::DelDefault' has no attributes.
+The class 'vcml::VariantTableArgument' has the following attributes: 'key' of type bool.
+The class 'Description' has no attributes.
+The class 'vcml::Documentation' has no attributes.
+The class 'vcml::VcmlModel' has no attributes.
+The class 'vcml::ShortVarReference' has no attributes.
+The class 'vcml::VCObject' has the following attributes: 'name' of type str.
+The class 'vcml::MultipleLanguageDocumentation::LanguageBlock' has the following attributes: 'language' of type str.
+The class 'vcml::VariantTableContent' has no attributes.
+The class 'vcml::Expression' has no attributes.
+The class 'vcml::VariantFunction' has the following attributes: 'status' of type str; 'group' of type str.
+The class 'vcml::CompoundStatement' has no attributes.
+The class 'vcml::Class' has the following attributes: 'group' of type str; 'status' of type str.
+The class 'vcml::PartOfCondition' has no attributes.
+The class 'vcml::NumberListEntry' has no attributes.
+The class 'vcml::Constraint' has the following attributes: 'status' of type str; 'group' of type str.
+The class 'vcml::UnaryCondition' has no attributes.
+The class 'vcml::ConstraintSource' has no attributes.
+The class 'vcml::MultiLanguageDescription' has the following attributes: 'value' of type str; 'language' of type str.
+The class 'vcml::ShortVarDefinition' has the following attributes: 'name' of type str.
+The class 'NumberListEntry' has no attributes.
+The class 'vcml::ConfigurationProfileEntry' has the following attributes: 'sequence' of type int.
+The class 'vcml::MultiLanguageDescriptions' has no attributes.
+The class 'vcml::InterfaceDesign' has no attributes.
+The class 'vcml::DateType' has the following attributes: 'intervalValuesAllowed' of type bool.
+The class 'vcml::NumberList' has no attributes.
+The class 'vcml::ConstraintObject' has the following attributes: 'name' of type str.
+The class 'ConstraintRestriction' has no attributes.
+The class 'vcml::CharacteristicValue' has the following attributes: 'default' of type bool; 'name' of type str.
+The class 'vcml::ObjectCharacteristicReference' has no attributes.
+The class 'vcml::SumParts' has the following attributes: 'location' of type str.
+The class 'vcml::Comparison' has the following attributes: 'operator' of type str.
+The class 'vcml::Precondition' has the following attributes: 'group' of type str; 'status' of type str.
+The class 'vcml::ConstraintMaterial' has no attributes.
+The class 'vcml::CharacteristicReference::C' has no attributes.
+The class 'vcml::NumericCharacteristicValue' has the following attributes: 'default' of type bool.
+The class 'Documentation' has no attributes.
+The class 'vcml::IsSpecified::C' has no attributes.
+The class 'vcml::PartialKey' has the following attributes: 'key' of type str.
+The class 'vcml::NegatedConstraintRestrictionLHS' has no attributes.
+The class 'vcml::SubpartOfCondition' has no attributes.
+The class 'vcml::Import' has the following attributes: 'importURI' of type str.
+The class 'vcml::CharacteristicType' has the following attributes: 'numberOfChars' of type int.
+The class 'vcml::Procedure' has the following attributes: 'status' of type str; 'group' of type str.
+The class 'vcml::InCondition::P' has no attributes.
+The class 'vcml::SymbolList' has no attributes.
+The class 'SimpleStatement' has no attributes.
+The class 'vcml::ConstraintRestriction' has no attributes.
+The class 'Statement' has no attributes.
+The class 'vcml::CharacteristicGroup' has the following attributes: 'name' of type str.
+The enumeration 'Fixing' has the following literals: 'Entry', 'TopDown', 'None_', 'BottomUp'.
+The enumeration 'ProcedureLocation' has the following literals: 'SELF', 'ROOT', 'PARENT'.
+The enumeration 'Language' has the following literals: 'SH', 'HR', 'ZF', 'ID', 'AF', 'LT', 'FR', 'UK', 'SV', 'FI', 'PL', 'TH', 'EL', 'NO', 'JA', 'BG', 'MS', 'RU', 'ET', 'NL', 'RO', 'SL', 'HU', 'EN', 'PT', 'IT', 'DA', 'CA', 'KO', 'AR', 'ZH', 'LV', 'Z1', 'IS', 'CS', 'TR', 'SR', 'ES', 'SK', 'HE', 'DE'.
+The enumeration 'OptionType' has the following literals: 'KeyDate', 'ECM', 'UPS'.
+The enumeration 'Status' has the following literals: 'InPreparation', 'Released', 'Locked'.
+The enumeration 'FunctionName' has the following literals: 'ARCSIN', 'FRAC', 'LOG10', 'CEIL', 'ARCTAN', 'TAN', 'ABS', 'TRUNK', 'SIN', 'ARCCOS', 'FLOOR', 'EXP', 'SQRT', 'COS', 'SIGN', 'LN'.
+The enumeration 'UnaryExpressionOperator' has the following literals: 'MINUS', 'LC', 'PLUS', 'UC'.
+The enumeration 'ComparisonOperator' has the following literals: 'NE', 'EQ', 'LT', 'GT', 'GE', 'LE'.
+'vcml::MultipleLanguageDocumentation' is a specialization of 'Documentation'.
+'vcml::NumericType' is a specialization of 'CharacteristicType'.
+'vcml::BinaryCondition' is a specialization of 'Condition'.
+'vcml::ConstraintMaterial' is a specialization of 'ConstraintObject'.
+'vcml::Comparison' is a specialization of 'ConstraintRestriction'.
+'vcml::CharacteristicReference::C' is a specialization of 'Literal'.
+'vcml::DelDefault' is a specialization of 'SetOrDelDefault'.
+'vcml::Table' is a specialization of 'ConstraintRestriction'.
+'vcml::ConstraintClass' is a specialization of 'ConstraintObject'.
+'vcml::SubpartOfCondition' is a specialization of 'ConstraintRestriction'.
+'vcml::ObjectCharacteristicReference' is a specialization of 'CharacteristicReference::C'.
+'vcml::SimpleStatement' is a specialization of 'Statement'.
+'vcml::CharacteristicReference::P' is a specialization of 'Literal'.
+'vcml::ConfigurationProfile' is a specialization of 'VCObject'.
+'vcml::PFunction' is a specialization of 'Condition'.
+'vcml::Table' is a specialization of 'FunctionOrTable'.
+'vcml::InterfaceDesign' is a specialization of 'VCObject'.
+'vcml::Constraint' is a specialization of 'Dependency'.
+'vcml::PFunction' is a specialization of 'SimpleStatement'.
+'vcml::SumParts' is a specialization of 'Expression'.
+'vcml::UnaryCondition' is a specialization of 'Condition'.
+'vcml::SetOrDelDefault' is a specialization of 'SimpleStatement'.
+'vcml::VariantTableContent' is a specialization of 'VCObject'.
+'vcml::TypeOf' is a specialization of 'Condition'.
+'vcml::SymbolList' is a specialization of 'List'.
+'vcml::CountParts' is a specialization of 'Expression'.
+'vcml::ConditionalConstraintRestriction' is a specialization of 'ConstraintRestriction'.
+'vcml::SymbolicType' is a specialization of 'CharacteristicType'.
+'vcml::Function' is a specialization of 'Condition'.
+'vcml::SetDefault' is a specialization of 'SetOrDelDefault'.
+'vcml::SymbolicLiteral' is a specialization of 'Literal'.
+'vcml::SelectionCondition' is a specialization of 'Dependency'.
+'vcml::MDataCharacteristic::C' is a specialization of 'Literal'.
+'vcml::ShortVarReference' is a specialization of 'CharacteristicReference::C'.
+'vcml::IsSpecified::C' is a specialization of 'Condition'.
+'vcml::Table' is a specialization of 'Condition'.
+'vcml::NumericLiteral' is a specialization of 'Literal'.
+'vcml::Function' is a specialization of 'SimpleStatement'.
+'vcml::BOMItem::Class' is a specialization of 'BOMItem'.
+'vcml::FunctionCall' is a specialization of 'Expression'.
+'vcml::SetPricingFactor' is a specialization of 'SimpleStatement'.
+'vcml::Precondition' is a specialization of 'VCObject'.
+'vcml::InCondition::P' is a specialization of 'Condition'.
+'vcml::BinaryExpression' is a specialization of 'Expression'.
+'vcml::Constraint' is a specialization of 'VCObject'.
+'vcml::ConditionalStatement' is a specialization of 'Statement'.
+'vcml::Class' is a specialization of 'VCObject'.
+'vcml::Function' is a specialization of 'FunctionOrTable'.
+'vcml::PFunction' is a specialization of 'FunctionOrTable'.
+'vcml::DateType' is a specialization of 'CharacteristicType'.
+'vcml::UnaryExpression' is a specialization of 'Expression'.
+'vcml::PartOfCondition' is a specialization of 'Condition'.
+'vcml::Comparison' is a specialization of 'Condition'.
+'vcml::Procedure' is a specialization of 'VCObject'.
+'vcml::VariantTable' is a specialization of 'VCObject'.
+'vcml::PartOfCondition' is a specialization of 'ConstraintRestriction'.
+'vcml::NumericInterval' is a specialization of 'NumberListEntry'.
+'vcml::VariantFunction' is a specialization of 'VCObject'.
+'vcml::SimpleDescription' is a specialization of 'Description'.
+'vcml::BOMItem::Material' is a specialization of 'BOMItem'.
+'vcml::IsSpecified::P' is a specialization of 'Condition'.
+'vcml::ConstraintRestrictionFalse' is a specialization of 'ConstraintRestriction'.
+'vcml::Literal' is a specialization of 'Expression'.
+'vcml::MultiLanguageDescriptions' is a specialization of 'Description'.
+'vcml::MDataCharacteristic::P' is a specialization of 'Literal'.
+'vcml::IsSpecified::C' is a specialization of 'ConstraintRestriction'.
+'vcml::NumberList' is a specialization of 'List'.
+'vcml::BillOfMaterial' is a specialization of 'VCObject'.
+'vcml::Precondition' is a specialization of 'Dependency'.
+'vcml::SelectionCondition' is a specialization of 'VCObject'.
+'vcml::IsInvisible' is a specialization of 'SimpleStatement'.
+'vcml::Table' is a specialization of 'SimpleStatement'.
+'vcml::Procedure' is a specialization of 'Dependency'.
+'vcml::Material' is a specialization of 'VCObject'.
+'vcml::NumericLiteral' is a specialization of 'NumberListEntry'.
+'vcml::NegatedConstraintRestrictionLHS' is a specialization of 'ConstraintRestriction'.
+'vcml::Function' is a specialization of 'ConstraintRestriction'.
+'vcml::DependencyNet' is a specialization of 'VCObject'.
+'vcml::Characteristic' is a specialization of 'VCObject'.
+'vcml::SimpleDocumentation' is a specialization of 'Documentation'.
+'vcml::SubpartOfCondition' is a specialization of 'Condition'.
+'vcml::InCondition::C' is a specialization of 'Condition'.
+'vcml::Assignment' is a specialization of 'SimpleStatement'.
+'vcml::InCondition::C' is a specialization of 'ConstraintRestriction'.
+'vcml::CompoundStatement' is a specialization of 'Statement'.
+'vcml::CharacteristicType' (role 'vcml_CharacteristicType', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic20', cardinality 0..*).
+'vcml::VariantTable' (role 'vcml_VariantTable200', cardinality 0..*) is associated with 'vcml::Table' (role 'vcml_Table', cardinality 0..*).
+'vcml::ConstraintRestriction' (role 'vcml_ConstraintRestriction260', cardinality 0..*) is associated with 'vcml::ConditionalConstraintRestriction' (role 'vcml_ConditionalConstraintRestriction', cardinality 0..*).
+'vcml::ConstraintSource' (role 'vcml_ConstraintSource', cardinality 0..*) is associated with 'vcml::Constraint' (role 'vcml_Constraint90', cardinality 0..*).
+'vcml::ObjectCharacteristicReference' (role 'vcml_ObjectCharacteristicReference172', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic173', cardinality 0..*).
+'vcml::Comparison' (role 'vcml_Comparison', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression237', cardinality 0..*).
+'vcml::ObjectType' (role 'vcml_ObjectType246', cardinality 0..*) is associated with 'vcml::TypeOf' (role 'vcml_TypeOf', cardinality 0..*).
+'vcml::ObjectCharacteristicReference' (role 'vcml_ObjectCharacteristicReference', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject170', cardinality 0..*).
+'vcml::Condition' (role 'vcml_Condition268', cardinality 0..*) is associated with 'vcml::ConditionalStatement' (role 'vcml_ConditionalStatement267', cardinality 0..*).
+'vcml::VCObject' (role 'vcml_VCObject8', cardinality 0..*) is associated with 'vcml::Option' (role 'vcml_Option9', cardinality 0..*).
+'vcml::SelectionCondition' (role 'vcml_SelectionCondition', cardinality 0..*) is associated with 'vcml::BOMItem' (role 'vcml_BOMItem13', cardinality 0..*).
+'vcml::SumParts' (role 'vcml_SumParts', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic229', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic114', cardinality 0..*) is associated with 'vcml::ValueAssignment' (role 'vcml_ValueAssignment113', cardinality 0..*).
+'vcml::SetOrDelDefault' (role 'vcml_SetOrDelDefault', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic208', cardinality 0..*).
+'vcml::MultipleLanguageDocumentation::LanguageBlock' (role 'vcml_MultipleLanguageDocumentation_LanguageBlock', cardinality 0..*) is associated with 'vcml::MultipleLanguageDocumentation' (role 'vcml_MultipleLanguageDocumentation', cardinality 0..*).
+'vcml::SetPricingFactor' (role 'vcml_SetPricingFactor220', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression221', cardinality 0..*).
+'vcml::VCObject' (role 'vcml_VCObject', cardinality 0..*) is associated with 'vcml::VcmlModel' (role 'vcml_VcmlModel4', cardinality 0..*).
+'vcml::ConditionalConstraintRestriction' (role 'vcml_ConditionalConstraintRestriction262', cardinality 0..*) is associated with 'vcml::Condition' (role 'vcml_Condition263', cardinality 0..*).
+'vcml::DateType' (role 'vcml_DateType', cardinality 0..*) is associated with 'vcml::DateCharacteristicValue' (role 'vcml_DateCharacteristicValue', cardinality 0..*).
+'vcml::DependencyNet' (role 'vcml_DependencyNet82', cardinality 0..*) is associated with 'vcml::Documentation' (role 'vcml_Documentation83', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic223', cardinality 0..*) is associated with 'vcml::CharacteristicReference::P' (role 'vcml_CharacteristicReference_P', cardinality 0..*).
+'vcml::Literal' (role 'vcml_Literal198', cardinality 0..*) is associated with 'vcml::PFunction' (role 'vcml_PFunction197', cardinality 0..*).
+'vcml::Precondition' (role 'vcml_Precondition', cardinality 0..*) is associated with 'vcml::Documentation' (role 'vcml_Documentation75', cardinality 0..*).
+'vcml::Documentation' (role 'vcml_Documentation71', cardinality 0..*) is associated with 'vcml::SelectionCondition' (role 'vcml_SelectionCondition70', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic213', cardinality 0..*) is associated with 'vcml::IsInvisible' (role 'vcml_IsInvisible', cardinality 0..*).
+'vcml::Option' (role 'vcml_Option', cardinality 0..*) is associated with 'vcml::VcmlModel' (role 'vcml_VcmlModel2', cardinality 0..*).
+'vcml::Assignment' (role 'vcml_Assignment', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic180', cardinality 0..*).
+'vcml::CharacteristicReference::P' (role 'vcml_CharacteristicReference_P252', cardinality 0..*) is associated with 'vcml::InCondition::P' (role 'vcml_InCondition_P', cardinality 0..*).
+'vcml::ConstraintSource' (role 'vcml_ConstraintSource144', cardinality 0..*) is associated with 'vcml::CharacteristicReference::C' (role 'vcml_CharacteristicReference_C', cardinality 0..*).
+'vcml::VariantFunction' (role 'vcml_VariantFunction184', cardinality 0..*) is associated with 'vcml::Function' (role 'vcml_Function', cardinality 0..*).
+'vcml::VariantFunctionArgument' (role 'vcml_VariantFunctionArgument119', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic120', cardinality 0..*).
+'vcml::ValueAssignment' (role 'vcml_ValueAssignment', cardinality 0..*) is associated with 'vcml::Classification' (role 'vcml_Classification111', cardinality 0..*).
+'vcml::CharacteristicValue' (role 'vcml_CharacteristicValue27', cardinality 0..*) is associated with 'vcml::Description' (role 'vcml_Description28', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic187', cardinality 0..*) is associated with 'vcml::Function' (role 'vcml_Function186', cardinality 0..*).
+'vcml::Statement' (role 'vcml_Statement', cardinality 0..*) is associated with 'vcml::ProcedureSource' (role 'vcml_ProcedureSource177', cardinality 0..*).
+'vcml::Table' (role 'vcml_Table202', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic203', cardinality 0..*).
+'vcml::VariantTableArgument' (role 'vcml_VariantTableArgument', cardinality 0..*) is associated with 'vcml::VariantTable' (role 'vcml_VariantTable', cardinality 0..*).
+'vcml::IsSpecified::C' (role 'vcml_IsSpecified_C', cardinality 0..*) is associated with 'vcml::CharacteristicReference::C' (role 'vcml_CharacteristicReference_C242', cardinality 0..*).
+'vcml::NumberListEntry' (role 'vcml_NumberListEntry', cardinality 0..*) is associated with 'vcml::NumericCharacteristicValue' (role 'vcml_NumericCharacteristicValue36', cardinality 0..*).
+'vcml::BinaryExpression' (role 'vcml_BinaryExpression272', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression273', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic101', cardinality 0..*) is associated with 'vcml::CharacteristicGroup' (role 'vcml_CharacteristicGroup100', cardinality 0..*).
+'vcml::FunctionCall' (role 'vcml_FunctionCall', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression227', cardinality 0..*).
+'vcml::ConstraintSource' (role 'vcml_ConstraintSource142', cardinality 0..*) is associated with 'vcml::ConstraintRestriction' (role 'vcml_ConstraintRestriction', cardinality 0..*).
+'vcml::Literal' (role 'vcml_Literal190', cardinality 0..*) is associated with 'vcml::Function' (role 'vcml_Function189', cardinality 0..*).
+'vcml::Expression' (role 'vcml_Expression', cardinality 0..*) is associated with 'vcml::Assignment' (role 'vcml_Assignment182', cardinality 0..*).
+'vcml::InCondition::P' (role 'vcml_InCondition_P254', cardinality 0..*) is associated with 'vcml::List' (role 'vcml_List255', cardinality 0..*).
+'vcml::VCObject' (role 'vcml_VCObject6', cardinality 0..*) is associated with 'vcml::Description' (role 'vcml_Description', cardinality 0..*).
+'vcml::SymbolicType' (role 'vcml_SymbolicType', cardinality 0..*) is associated with 'vcml::CharacteristicValue' (role 'vcml_CharacteristicValue', cardinality 0..*).
+'vcml::FormattedDocumentationBlock' (role 'vcml_FormattedDocumentationBlock', cardinality 0..*) is associated with 'vcml::MultipleLanguageDocumentation::LanguageBlock' (role 'vcml_MultipleLanguageDocumentation_LanguageBlock135', cardinality 0..*).
+'vcml::PartOfCondition' (role 'vcml_PartOfCondition', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject159', cardinality 0..*).
+'vcml::DependencyNet' (role 'vcml_DependencyNet', cardinality 0..*) is associated with 'vcml::ConfigurationProfile' (role 'vcml_ConfigurationProfile59', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic124', cardinality 0..*) is associated with 'vcml::VariantTableArgument' (role 'vcml_VariantTableArgument123', cardinality 0..*).
+'vcml::PartialKey' (role 'vcml_PartialKey153', cardinality 0..*) is associated with 'vcml::Material' (role 'vcml_Material154', cardinality 0..*).
+'vcml::VariantTableContent' (role 'vcml_VariantTableContent', cardinality 0..*) is associated with 'vcml::VariantTable' (role 'vcml_VariantTable126', cardinality 0..*).
+'vcml::ConditionSource' (role 'vcml_ConditionSource', cardinality 0..*) is associated with 'vcml::SelectionCondition' (role 'vcml_SelectionCondition73', cardinality 0..*).
+'vcml::ConstraintSource' (role 'vcml_ConstraintSource137', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject', cardinality 0..*).
+'vcml::CharacteristicGroup' (role 'vcml_CharacteristicGroup97', cardinality 0..*) is associated with 'vcml::Description' (role 'vcml_Description98', cardinality 0..*).
+'vcml::Procedure' (role 'vcml_Procedure93', cardinality 0..*) is associated with 'vcml::ConfigurationProfileEntry' (role 'vcml_ConfigurationProfileEntry92', cardinality 0..*).
+'vcml::VariantTableContent' (role 'vcml_VariantTableContent128', cardinality 0..*) is associated with 'vcml::Row' (role 'vcml_Row', cardinality 0..*).
+'vcml::SetOrDelDefault' (role 'vcml_SetOrDelDefault210', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression211', cardinality 0..*).
+'vcml::CharacteristicOrValueDependencies' (role 'vcml_CharacteristicOrValueDependencies42', cardinality 0..*) is associated with 'vcml::NumericCharacteristicValue' (role 'vcml_NumericCharacteristicValue41', cardinality 0..*).
+'vcml::Classification' (role 'vcml_Classification', cardinality 0..*) is associated with 'vcml::Material' (role 'vcml_Material104', cardinality 0..*).
+'vcml::NumericCharacteristicValue' (role 'vcml_NumericCharacteristicValue', cardinality 0..*) is associated with 'vcml::NumericType' (role 'vcml_NumericType', cardinality 0..*).
+'vcml::BinaryCondition' (role 'vcml_BinaryCondition', cardinality 0..*) is associated with 'vcml::Condition' (role 'vcml_Condition275', cardinality 0..*).
+'vcml::UnaryExpression' (role 'vcml_UnaryExpression', cardinality 0..*) is associated with 'vcml::Expression' (role 'vcml_Expression225', cardinality 0..*).
+'vcml::Procedure' (role 'vcml_Procedure', cardinality 0..*) is associated with 'vcml::Documentation' (role 'vcml_Documentation66', cardinality 0..*).
+'vcml::NegatedConstraintRestrictionLHS' (role 'vcml_NegatedConstraintRestrictionLHS', cardinality 0..*) is associated with 'vcml::EObject' (role 'vcml_EObject', cardinality 0..*).
+'vcml::ObjectType' (role 'vcml_ObjectType151', cardinality 0..*) is associated with 'vcml::PartialKey' (role 'vcml_PartialKey', cardinality 0..*).
+'vcml::CharacteristicReference::C' (role 'vcml_CharacteristicReference_C231', cardinality 0..*) is associated with 'vcml::MDataCharacteristic::C' (role 'vcml_MDataCharacteristic_C', cardinality 0..*).
+'vcml::Table' (role 'vcml_Table205', cardinality 0..*) is associated with 'vcml::Literal' (role 'vcml_Literal206', cardinality 0..*).
+'vcml::SubpartOfCondition' (role 'vcml_SubpartOfCondition', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject164', cardinality 0..*).
+'vcml::CompoundStatement' (role 'vcml_CompoundStatement', cardinality 0..*) is associated with 'vcml::SimpleStatement' (role 'vcml_SimpleStatement', cardinality 0..*).
+'vcml::PFunction' (role 'vcml_PFunction194', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic195', cardinality 0..*).
+'vcml::UnaryCondition' (role 'vcml_UnaryCondition', cardinality 0..*) is associated with 'vcml::Condition' (role 'vcml_Condition235', cardinality 0..*).
+'vcml::SymbolList' (role 'vcml_SymbolList', cardinality 0..*) is associated with 'vcml::SymbolicLiteral' (role 'vcml_SymbolicLiteral', cardinality 0..*).
+'vcml::Condition' (role 'vcml_Condition140', cardinality 0..*) is associated with 'vcml::ConstraintSource' (role 'vcml_ConstraintSource139', cardinality 0..*).
+'vcml::PFunction' (role 'vcml_PFunction', cardinality 0..*) is associated with 'vcml::VariantFunction' (role 'vcml_VariantFunction192', cardinality 0..*).
+'vcml::Class' (role 'vcml_Class', cardinality 0..*) is associated with 'vcml::BOMItem::Class' (role 'vcml_BOMItem_Class', cardinality 0..*).
+'vcml::ValueAssignment' (role 'vcml_ValueAssignment116', cardinality 0..*) is associated with 'vcml::Literal' (role 'vcml_Literal', cardinality 0..*).
+'vcml::CharacteristicOrValueDependencies' (role 'vcml_CharacteristicOrValueDependencies', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic22', cardinality 0..*).
+'vcml::InCondition::C' (role 'vcml_InCondition_C', cardinality 0..*) is associated with 'vcml::CharacteristicReference::C' (role 'vcml_CharacteristicReference_C248', cardinality 0..*).
+'vcml::Condition' (role 'vcml_Condition', cardinality 0..*) is associated with 'vcml::ConditionSource' (role 'vcml_ConditionSource80', cardinality 0..*).
+'vcml::Import' (role 'vcml_Import', cardinality 0..*) is associated with 'vcml::VcmlModel' (role 'vcml_VcmlModel', cardinality 0..*).
+'vcml::CharacteristicValue' (role 'vcml_CharacteristicValue33', cardinality 0..*) is associated with 'vcml::CharacteristicOrValueDependencies' (role 'vcml_CharacteristicOrValueDependencies34', cardinality 0..*).
+'vcml::ObjectType' (role 'vcml_ObjectType', cardinality 0..*) is associated with 'vcml::ConstraintMaterial' (role 'vcml_ConstraintMaterial', cardinality 0..*).
+'vcml::ConstraintObject' (role 'vcml_ConstraintObject162', cardinality 0..*) is associated with 'vcml::PartOfCondition' (role 'vcml_PartOfCondition161', cardinality 0..*).
+'vcml::Documentation' (role 'vcml_Documentation39', cardinality 0..*) is associated with 'vcml::NumericCharacteristicValue' (role 'vcml_NumericCharacteristicValue38', cardinality 0..*).
+'vcml::MDataCharacteristic::P' (role 'vcml_MDataCharacteristic_P', cardinality 0..*) is associated with 'vcml::CharacteristicReference::P' (role 'vcml_CharacteristicReference_P233', cardinality 0..*).
+'vcml::Constraint' (role 'vcml_Constraint87', cardinality 0..*) is associated with 'vcml::Documentation' (role 'vcml_Documentation88', cardinality 0..*).
+'vcml::CharacteristicOrValueDependencies' (role 'vcml_CharacteristicOrValueDependencies48', cardinality 0..*) is associated with 'vcml::DateCharacteristicValue' (role 'vcml_DateCharacteristicValue47', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic', cardinality 0..*) is associated with 'vcml::Documentation' (role 'vcml_Documentation', cardinality 0..*).
+'vcml::Material' (role 'Material64', cardinality 0..*) is associated with 'vcml::ConfigurationProfile' (role 'configurationprofiles', cardinality 0..*).
+'vcml::NumberListEntry' (role 'vcml_NumberListEntry257', cardinality 0..*) is associated with 'vcml::NumberList' (role 'vcml_NumberList', cardinality 0..*).
+'vcml::BillOfMaterial' (role 'vcml_BillOfMaterial', cardinality 0..*) is associated with 'vcml::BOMItem' (role 'vcml_BOMItem', cardinality 0..*).
+'vcml::ShortVarDefinition' (role 'vcml_ShortVarDefinition156', cardinality 0..*) is associated with 'vcml::Characteristic' (role 'vcml_Characteristic157', cardinality 0..*).
+'vcml::Condition' (role 'vcml_Condition278', cardinality 0..*) is associated with 'vcml::BinaryCondition' (role 'vcml_BinaryCondition277', cardinality 0..*).
+'vcml::Class' (role 'vcml_Class54', cardinality 0..*) is associated with 'vcml::Class' (role 'vcml_Class56', cardinality 0..*).
+'vcml::InterfaceDesign' (role 'vcml_InterfaceDesign', cardinality 0..*) is associated with 'vcml::ConfigurationProfile' (role 'vcml_ConfigurationProfile', cardinality 0..*).
+'vcml::ConfigurationProfile' (role 'vcml_ConfigurationProfile61', cardinality 0..*) is associated with 'vcml::ConfigurationProfileEntry' (role 'vcml_ConfigurationProfileEntry62', cardinality 0..*).
+'vcml::ProcedureSource' (role 'vcml_ProcedureSource', cardinality 0..*) is associated with 'vcml::Procedure' (role 'vcml_Procedure68', cardinality 0..*).
+'vcml::Expression' (role 'vcml_Expression270', cardinality 0..*) is associated with 'vcml::BinaryExpression' (role 'vcml_BinaryExpression', cardinality 0..*).
+'vcml::Material' (role 'material106', cardinality 0..*) is associated with 'vcml::ConfigurationProfile' (role 'ConfigurationProfile', cardinality 0..*).
+'vcml::Precondition' (role 'vcml_Precondition77', cardinality 0..*) is associated with 'vcml::ConditionSource' (role 'vcml_ConditionSource78', cardinality 0..*).
+'vcml::Documentation' (role 'vcml_Documentation45', cardinality 0..*) is associated with 'vcml::DateCharacteristicValue' (role 'vcml_DateCharacteristicValue44', cardinality 0..*).
+'vcml::Expression' (role 'vcml_Expression218', cardinality 0..*) is associated with 'vcml::SetPricingFactor' (role 'vcml_SetPricingFactor217', cardinality 0..*).
+'vcml::ConstraintClass' (role 'vcml_ConstraintClass', cardinality 0..*) is associated with 'vcml::Class' (role 'vcml_Class148', cardinality 0..*).
+'vcml::List' (role 'vcml_List', cardinality 0..*) is associated with 'vcml::InCondition::C' (role 'vcml_InCondition_C250', cardinality 0..*).
+'vcml::BillOfMaterial' (role 'billofmaterials', cardinality 0..*) is associated with 'vcml::Material' (role 'Material', cardinality 0..*).
+'vcml::ShortVarReference' (role 'vcml_ShortVarReference', cardinality 0..*) is associated with 'vcml::ShortVarDefinition' (role 'vcml_ShortVarDefinition175', cardinality 0..*).
+'vcml::BillOfMaterial' (role 'BillOfMaterial', cardinality 0..*) is associated with 'vcml::Material' (role 'material', cardinality 0..*).
+'vcml::Expression' (role 'vcml_Expression240', cardinality 0..*) is associated with 'vcml::Comparison' (role 'vcml_Comparison239', cardinality 0..*).
+'vcml::ConditionalStatement' (role 'vcml_ConditionalStatement', cardinality 0..*) is associated with 'vcml::Statement' (role 'vcml_Statement265', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic215', cardinality 0..*) is associated with 'vcml::SetPricingFactor' (role 'vcml_SetPricingFactor', cardinality 0..*).
+'vcml::Constraint' (role 'vcml_Constraint', cardinality 0..*) is associated with 'vcml::DependencyNet' (role 'vcml_DependencyNet85', cardinality 0..*).
+'vcml::ConfigurationProfileEntry' (role 'vcml_ConfigurationProfileEntry', cardinality 0..*) is associated with 'vcml::BOMItem' (role 'vcml_BOMItem15', cardinality 0..*).
+'vcml::Row' (role 'vcml_Row130', cardinality 0..*) is associated with 'vcml::Literal' (role 'vcml_Literal131', cardinality 0..*).
+'vcml::SubpartOfCondition' (role 'vcml_SubpartOfCondition166', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject167', cardinality 0..*).
+'vcml::VariantFunctionArgument' (role 'vcml_VariantFunctionArgument', cardinality 0..*) is associated with 'vcml::VariantFunction' (role 'vcml_VariantFunction', cardinality 0..*).
+'vcml::CharacteristicOrValueDependencies' (role 'vcml_CharacteristicOrValueDependencies50', cardinality 0..*) is associated with 'vcml::Dependency' (role 'vcml_Dependency', cardinality 0..*).
+'vcml::ShortVarDefinition' (role 'vcml_ShortVarDefinition', cardinality 0..*) is associated with 'vcml::ConstraintObject' (role 'vcml_ConstraintObject146', cardinality 0..*).
+'vcml::CharacteristicReference::P' (role 'vcml_CharacteristicReference_P244', cardinality 0..*) is associated with 'vcml::IsSpecified::P' (role 'vcml_IsSpecified_P', cardinality 0..*).
+'vcml::BOMItem::Material' (role 'vcml_BOMItem_Material', cardinality 0..*) is associated with 'vcml::Material' (role 'vcml_Material', cardinality 0..*).
+'vcml::Documentation' (role 'vcml_Documentation31', cardinality 0..*) is associated with 'vcml::CharacteristicValue' (role 'vcml_CharacteristicValue30', cardinality 0..*).
+'vcml::Characteristic' (role 'vcml_Characteristic53', cardinality 0..*) is associated with 'vcml::Class' (role 'vcml_Class52', cardinality 0..*).
+'vcml::Classification' (role 'vcml_Classification108', cardinality 0..*) is associated with 'vcml::Class' (role 'vcml_Class109', cardinality 0..*).
+'vcml::CharacteristicGroup' (role 'vcml_CharacteristicGroup', cardinality 0..*) is associated with 'vcml::InterfaceDesign' (role 'vcml_InterfaceDesign95', cardinality 0..*).
+'vcml::MultiLanguageDescriptions' (role 'vcml_MultiLanguageDescriptions', cardinality 0..*) is associated with 'vcml::MultiLanguageDescription' (role 'vcml_MultiLanguageDescription', cardinality 0..*).

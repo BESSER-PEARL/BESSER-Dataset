@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'training::Trainer' has no attributes.
+The class 'training::Person' has the following attributes: 'firstname' of type str; 'lastname' of type str.
+The class 'training::Trainee' has no attributes.
+The class 'training::Session' has the following attributes: 'date' of type date; 'name' of type str.
+The class 'training::Training' has the following attributes: 'title' of type str.
+The class 'training::TrainingOrganization' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+'training::Trainee' is a specialization of 'Person'.
+'training::Trainer' is a specialization of 'Person'.
+'training::Session' (role 'training_Session', cardinality 0..*) is associated with 'training::Trainer' (role 'training_Trainer', cardinality 0..*).
+'training::Person' (role 'training_Person5', cardinality 0..*) is associated with 'training::TrainingOrganization' (role 'training_TrainingOrganization', cardinality 0..*).
+'training::Trainer' (role 'canBeProvidedBy', cardinality 0..*) is associated with 'training::Training' (role 'Training14', cardinality 0..*).
+'training::TrainingOrganization' (role 'training_TrainingOrganization10', cardinality 0..*) is associated with 'training::Training' (role 'training_Training', cardinality 0..*).
+'training::Person' (role 'training_Person', cardinality 0..*) is associated with 'training::Session' (role 'training_Session3', cardinality 0..*).
+'training::Trainer' (role 'Trainer', cardinality 0..*) is associated with 'training::Training' (role 'canProvide', cardinality 0..*).
+'training::Session' (role 'training_Session8', cardinality 0..*) is associated with 'training::TrainingOrganization' (role 'training_TrainingOrganization7', cardinality 0..*).
+'training::Session' (role 'Session', cardinality 0..*) is associated with 'training::Training' (role 'training', cardinality 0..*).
+'training::Session' (role 'session', cardinality 0..*) is associated with 'training::Training' (role 'Training', cardinality 0..*).

@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'd::D' has the following attributes: 'atts' of type str; 'name' of type str.
+'d::D' (role 'd_D', cardinality 0..*) is associated with 'd::D' (role 'd_D0', cardinality 0..*).

@@ -1,0 +1,279 @@
+The model has 107 class(es).
+The class 'Kernel::Namespace' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'Classes::Kernel::Element' has no attributes.
+The class 'Classes::Kernel::MultiplicityElement' has the following attributes: 'lower' of type int; 'isUnique' of type bool; 'isOrdered' of type bool; 'upper' of type int.
+The class 'Classes::Kernel::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'BehavioredClassifier' has no attributes.
+The class 'Classes::Kernel::Expression' has the following attributes: 'symbol' of type str.
+The class 'Relationship' has no attributes.
+The class 'Substitution' has no attributes.
+The class 'Classes::Kernel::TypedElement' has no attributes.
+The class 'Classes::AssociationClasses::AssociationClass' has no attributes.
+The class 'Classes::Interfaces::Interface' has no attributes.
+The class 'Classes::Kernel::InstanceSpecification' has no attributes.
+The class 'Comment' has no attributes.
+The class 'Classes::Kernel::DirectedRelationship' has no attributes.
+The class 'Kernel::Association' has no attributes.
+The class 'Classes::Kernel::Association' has the following attributes: 'isDerived' of type bool.
+The class 'Classes::Kernel::LiteralBoolean' has no attributes.
+The class 'Slot' has no attributes.
+The class 'Classes::Dependencies::Abstraction' has no attributes.
+The class 'Classes::Kernel::LiteralInteger' has no attributes.
+The class 'Classes::Kernel::Constraint' has no attributes.
+The class 'GeneralizationSet' has no attributes.
+The class 'DataType' has no attributes.
+The class 'Kernel::Relationship' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'Classes::Kernel::LiteralNull' has no attributes.
+The class 'Classes::PowerTypes::GeneralizationSet' has the following attributes: 'isDisjoint' of type bool; 'isCovering' of type bool.
+The class 'Kernel::PackageableElement' has no attributes.
+The class 'Classes::Kernel::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'InterfaceRealization' has no attributes.
+The class 'Kernel::Class' has no attributes.
+The class 'Kernel::Classifier' has no attributes.
+The class 'Association' has no attributes.
+The class 'Classes::Kernel::Type' has no attributes.
+The class 'Realization' has no attributes.
+The class 'Element' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'Classes::Kernel::LiteralSpecification' has no attributes.
+The class 'Type' has no attributes.
+The class 'Kernel::TypedElement' has no attributes.
+The class 'Classes::Kernel::EnumerationLiteral' has no attributes.
+The class 'PackageMerge' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'Classes::Kernel::NamedElement' has the following attributes: 'name' of type str; 'qualifiedName' of type str; 'visibility' of type str.
+The class 'Property' has no attributes.
+The class 'Classes::Kernel::Parameter' has the following attributes: 'default' of type str.
+The class 'Classes::Dependencies::Substitution' has no attributes.
+The class 'Enumeration' has no attributes.
+The class 'Classes::Kernel::Comment' has the following attributes: 'body' of type str.
+The class 'RedefinableElement' has no attributes.
+The class 'Classes::Kernel::Property' has the following attributes: 'isDerivedUnion' of type bool; 'isDerived' of type bool; 'isComposite' of type bool; 'isID' of type bool; 'aggregation' of type str; 'default' of type str.
+The class 'Namespace' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'Classes::Kernel::Operation' has the following attributes: 'lower' of type int; 'isQuery' of type bool; 'isOrdered' of type bool; 'isUnique' of type bool; 'upper' of type int.
+The class 'Feature' has no attributes.
+The class 'Classes::Kernel::Relationship' has no attributes.
+The class 'Kernel::RedefinableElement' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'Classes::Kernel::Slot' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Classes::Kernel::Feature' has the following attributes: 'isStatic' of type bool.
+The class 'BehavioralFeature' has no attributes.
+The class 'Classes::Interfaces::BehavioredClassifier' has no attributes.
+The class 'Class' has no attributes.
+The class 'Classes::Kernel::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'Classes::Kernel::Namespace' has no attributes.
+The class 'Classes::Kernel::PackageMerge' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Classes::Kernel::BehavioralFeature' has no attributes.
+The class 'Classes::Kernel::Class' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'Generalization_' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Classes::Dependencies::Dependency' has no attributes.
+The class 'Classes::Kernel::StructuralFeature' has the following attributes: 'isReadOnly' of type bool.
+The class 'TypedElement' has no attributes.
+The class 'Classes::Kernel::InstanceValue' has no attributes.
+The class 'Kernel::Type' has no attributes.
+The class 'Kernel::Feature' has no attributes.
+The class 'Classes::Kernel::Classifier' has the following attributes: 'isFinalSpecialization' of type bool; 'isAbstract' of type bool.
+The class 'Classes::Kernel::Generalization_' has the following attributes: 'isSubstitutable' of type bool.
+The class 'ElementImport' has no attributes.
+The class 'Interface' has no attributes.
+The class 'Classes::Kernel::PrimitiveType' has no attributes.
+The class 'Classes::Kernel::DataType' has no attributes.
+The class 'Classes::Kernel::ValueSpecification' has no attributes.
+The class 'Classes::Kernel::PackageableElement' has no attributes.
+The class 'PackageImport' has no attributes.
+The class 'Package' has no attributes.
+The class 'Classes::Dependencies::Realization' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'Classes::Kernel::LiteralString' has no attributes.
+The class 'Classes::Dependencies::Usage' has no attributes.
+The class 'Classes::Kernel::Package' has the following attributes: 'URI' of type str.
+The class 'Classes::Kernel::LiteralUnilimitedNatural' has no attributes.
+The class 'Classes::Kernel::LiteralReal' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Classes::Kernel::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'Classes::Kernel::Enumeration' has no attributes.
+The class 'Kernel::DirectedRelationship' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'EnumerationLiteral' has no attributes.
+The class 'Classes::Interfaces::InterfaceRealization' has no attributes.
+The class 'Kernel::MultiplicityElement' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'composite', 'shared', 'none'.
+The enumeration 'VisibilityKind' has the following literals: 'public', 'protected', 'private', 'package'.
+'Classes::Kernel::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'Classes::Kernel::Classifier' is a specialization of 'Kernel::RedefinableElement'.
+'Classes::Kernel::Package' is a specialization of 'Kernel::Namespace'.
+'Classes::Kernel::PackageMerge' is a specialization of 'DirectedRelationship'.
+'Classes::Kernel::Classifier' is a specialization of 'Kernel::Namespace'.
+'Classes::Kernel::Package' is a specialization of 'Kernel::PackageableElement'.
+'Classes::Kernel::Class' is a specialization of 'Classifier'.
+'Classes::Kernel::Classifier' is a specialization of 'Kernel::Type'.
+'Classes::Kernel::Comment' is a specialization of 'Element'.
+'Classes::Kernel::Association' is a specialization of 'Kernel::Relationship'.
+'Classes::Kernel::LiteralReal' is a specialization of 'LiteralSpecification'.
+'Classes::Kernel::Relationship' is a specialization of 'Element'.
+'Classes::Kernel::Association' is a specialization of 'Kernel::Classifier'.
+'Classes::Kernel::LiteralString' is a specialization of 'LiteralSpecification'.
+'Classes::Kernel::PackageableElement' is a specialization of 'NamedElement'.
+'Classes::Interfaces::InterfaceRealization' is a specialization of 'Realization'.
+'Classes::Kernel::LiteralUnilimitedNatural' is a specialization of 'LiteralSpecification'.
+'Classes::Kernel::ElementImport' is a specialization of 'DirectedRelationship'.
+'Classes::Interfaces::BehavioredClassifier' is a specialization of 'Classifier'.
+'Classes::Kernel::InstanceSpecification' is a specialization of 'PackageableElement'.
+'Classes::Kernel::PackageImport' is a specialization of 'DirectedRelationship'.
+'Classes::AssociationClasses::AssociationClass' is a specialization of 'Kernel::Class'.
+'Classes::Kernel::Constraint' is a specialization of 'PackageableElement'.
+'Classes::Kernel::TypedElement' is a specialization of 'NamedElement'.
+'Classes::AssociationClasses::AssociationClass' is a specialization of 'Kernel::Association'.
+'Classes::Kernel::StructuralFeature' is a specialization of 'Kernel::MultiplicityElement'.
+'Classes::Kernel::Type' is a specialization of 'PackageableElement'.
+'Classes::PowerTypes::GeneralizationSet' is a specialization of 'PackageableElement'.
+'Classes::Kernel::StructuralFeature' is a specialization of 'Kernel::TypedElement'.
+'Classes::Kernel::Expression' is a specialization of 'ValueSpecification'.
+'Classes::Dependencies::Dependency' is a specialization of 'Kernel::PackageableElement'.
+'Classes::Kernel::Property' is a specialization of 'StructuralFeature'.
+'Classes::Kernel::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'Classes::Dependencies::Dependency' is a specialization of 'Kernel::DirectedRelationship'.
+'Classes::Kernel::Feature' is a specialization of 'RedefinableElement'.
+'Classes::Kernel::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'Classes::Dependencies::Usage' is a specialization of 'Dependency'.
+'Classes::Kernel::StructuralFeature' is a specialization of 'Kernel::Feature'.
+'Classes::Kernel::LiteralNull' is a specialization of 'LiteralSpecification'.
+'Classes::Dependencies::Abstraction' is a specialization of 'Dependency'.
+'Classes::Kernel::Parameter' is a specialization of 'TypedElement'.
+'Classes::Kernel::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'Classes::Dependencies::Realization' is a specialization of 'Abstraction'.
+'Classes::Kernel::Operation' is a specialization of 'BehavioralFeature'.
+'Classes::Kernel::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'Classes::Dependencies::Substitution' is a specialization of 'Realization'.
+'Classes::Kernel::Generalization_' is a specialization of 'DirectedRelationship'.
+'Classes::Kernel::DirectedRelationship' is a specialization of 'Relationship'.
+'Classes::Interfaces::Interface' is a specialization of 'Classifier'.
+'Classes::Kernel::BehavioralFeature' is a specialization of 'Kernel::Feature'.
+'Classes::Kernel::MultiplicityElement' is a specialization of 'Element'.
+'Classes::Kernel::BehavioralFeature' is a specialization of 'Kernel::Namespace'.
+'Classes::Kernel::ValueSpecification' is a specialization of 'Kernel::TypedElement'.
+'Classes::Kernel::DataType' is a specialization of 'Classifier'.
+'Classes::Kernel::ValueSpecification' is a specialization of 'Kernel::PackageableElement'.
+'Classes::Kernel::NamedElement' is a specialization of 'Element'.
+'Classes::Kernel::PrimitiveType' is a specialization of 'DataType'.
+'Classes::Kernel::Slot' is a specialization of 'Element'.
+'Classes::Kernel::Enumeration' is a specialization of 'DataType'.
+'Classes::Kernel::RedefinableElement' is a specialization of 'NamedElement'.
+'Classes::Kernel::Namespace' is a specialization of 'NamedElement'.
+'ValueSpecification' (role 'ValueSpecification70', cardinality 0..*) is associated with 'Classes::Kernel::Constraint' (role 'owningConstraint', cardinality 0..*).
+'Classes::Kernel::Operation' (role 'Classes_Kernel_Operation', cardinality 0..*) is associated with 'Type' (role 'Type135', cardinality 0..*).
+'Operation' (role 'Operation172', cardinality 0..*) is associated with 'Classes::Kernel::DataType' (role 'dataType171', cardinality 0..*).
+'Classes::PowerTypes::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*) is associated with 'Classifier' (role 'Classifier203', cardinality 0..*).
+'NamedElement' (role 'NamedElement10', cardinality 0..*) is associated with 'Classes::Kernel::Namespace' (role 'namespace', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification43', cardinality 0..*) is associated with 'Classes::Kernel::MultiplicityElement' (role 'owningLower', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'ownedAttribute', cardinality 0..*).
+'Constraint' (role 'Constraint138', cardinality 0..*) is associated with 'Classes::Kernel::Operation' (role 'Classes_Kernel_Operation137', cardinality 0..*).
+'Classes::Kernel::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'Package' (role 'Package178', cardinality 0..*) is associated with 'Classes::Kernel::PackageMerge' (role 'Classes_Kernel_PackageMerge', cardinality 0..*).
+'Classes::Kernel::Element' (role 'owningElement', cardinality 0..*) is associated with 'Comment' (role 'Comment', cardinality 0..*).
+'Classes::Kernel::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'ElementImport' (role 'ElementImport', cardinality 0..*).
+'MultiplicityElement' (role 'MultiplicityElement', cardinality 0..*) is associated with 'Classes::Kernel::ValueSpecification' (role 'upperValue', cardinality 0..*).
+'Classes::Kernel::Property' (role 'Classes_Kernel_Property', cardinality 0..*) is associated with 'Property' (role 'Property98', cardinality 0..*).
+'Constraint' (role 'Constraint141', cardinality 0..*) is associated with 'Classes::Kernel::Operation' (role 'Classes_Kernel_Operation140', cardinality 0..*).
+'Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'Classes::Kernel::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*).
+'NamedElement' (role 'NamedElement180', cardinality 0..*) is associated with 'Classes::Dependencies::Dependency' (role 'clientDependency', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'Classes::Kernel::Element' (role 'owner', cardinality 0..*).
+'PackageImport' (role 'PackageImport', cardinality 0..*) is associated with 'Classes::Kernel::Namespace' (role 'importingNamespace13', cardinality 0..*).
+'InstanceSpecification' (role 'InstanceSpecification72', cardinality 0..*) is associated with 'Classes::Kernel::Slot' (role 'slot', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification101', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'Classes_Kernel_Property100', cardinality 0..*).
+'Classes::Kernel::Operation' (role 'Classes_Kernel_Operation143', cardinality 0..*) is associated with 'Constraint' (role 'Constraint144', cardinality 0..*).
+'Package' (role 'Package176', cardinality 0..*) is associated with 'Classes::Kernel::PackageMerge' (role 'packageMerge', cardinality 0..*).
+'Element' (role 'Element3', cardinality 0..*) is associated with 'Classes::Kernel::Element' (role 'ownedElement', cardinality 0..*).
+'NamedElement' (role 'NamedElement182', cardinality 0..*) is associated with 'Classes::Dependencies::Dependency' (role 'Classes_Dependencies_Dependency', cardinality 0..*).
+'Constraint' (role 'Constraint', cardinality 0..*) is associated with 'Classes::Kernel::Namespace' (role 'context', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification74', cardinality 0..*) is associated with 'Classes::Kernel::Slot' (role 'owningSlot', cardinality 0..*).
+'Property' (role 'Property104', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'Classes_Kernel_Property103', cardinality 0..*).
+'Class' (role 'Class146', cardinality 0..*) is associated with 'Classes::Kernel::Operation' (role 'ownedOperation', cardinality 0..*).
+'Interface' (role 'Interface152', cardinality 0..*) is associated with 'Classes::Kernel::Operation' (role 'ownedOperation151', cardinality 0..*).
+'Namespace' (role 'Namespace', cardinality 0..*) is associated with 'Classes::Kernel::NamedElement' (role 'ownedMember', cardinality 0..*).
+'OpaqueExpression' (role 'OpaqueExpression', cardinality 0..*) is associated with 'Classes::Dependencies::Abstraction' (role 'Classes_Dependencies_Abstraction', cardinality 0..*).
+'PackageableElement' (role 'PackageableElement16', cardinality 0..*) is associated with 'Classes::Kernel::ElementImport' (role 'Classes_Kernel_ElementImport', cardinality 0..*).
+'StructuralFeature' (role 'StructuralFeature', cardinality 0..*) is associated with 'Classes::Kernel::Slot' (role 'Classes_Kernel_Slot', cardinality 0..*).
+'Property' (role 'Property107', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'Classes_Kernel_Property106', cardinality 0..*).
+'DataType' (role 'DataType149', cardinality 0..*) is associated with 'Classes::Kernel::Operation' (role 'ownedOperation148', cardinality 0..*).
+'Classes::Kernel::Class' (role 'Classes_Kernel_Class', cardinality 0..*) is associated with 'Classifier' (role 'Classifier154', cardinality 0..*).
+'Classes::Kernel::NamedElement' (role 'client', cardinality 0..*) is associated with 'Dependency' (role 'Dependency', cardinality 0..*).
+'Classifier' (role 'Classifier185', cardinality 0..*) is associated with 'Classes::Dependencies::Substitution' (role 'substitution', cardinality 0..*).
+'Classes::Kernel::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'Namespace' (role 'Namespace18', cardinality 0..*).
+'Classes::Kernel::RedefinableElement' (role 'Classes_Kernel_RedefinableElement', cardinality 0..*) is associated with 'RedefinableElement' (role 'RedefinableElement', cardinality 0..*).
+'Classes::Kernel::Property' (role 'memberEnd', cardinality 0..*) is associated with 'Association' (role 'Association', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'ownedAttribute112', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'Classes::Kernel::Class' (role 'class_', cardinality 0..*).
+'PackageableElement' (role 'PackageableElement', cardinality 0..*) is associated with 'Classes::Kernel::Namespace' (role 'Classes_Kernel_Namespace', cardinality 0..*).
+'Classifier' (role 'Classifier187', cardinality 0..*) is associated with 'Classes::Dependencies::Substitution' (role 'Classes_Dependencies_Substitution', cardinality 0..*).
+'MultiplicityElement' (role 'MultiplicityElement46', cardinality 0..*) is associated with 'Classes::Kernel::ValueSpecification' (role 'lowerValue', cardinality 0..*).
+'Association' (role 'Association110', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'ownedEnd', cardinality 0..*).
+'Classes::Kernel::RedefinableElement' (role 'Classes_Kernel_RedefinableElement78', cardinality 0..*) is associated with 'Classifier' (role 'Classifier79', cardinality 0..*).
+'Classes::Kernel::Property' (role 'ownedAttribute114', cardinality 0..*) is associated with 'Interface' (role 'Interface', cardinality 0..*).
+'Class' (role 'Class158', cardinality 0..*) is associated with 'Classes::Kernel::Class' (role 'Classes_Kernel_Class157', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'Classes::Kernel::PackageImport' (role 'Classes_Kernel_PackageImport', cardinality 0..*).
+'Classes::PowerTypes::GeneralizationSet' (role 'generalizationSet', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization205', cardinality 0..*).
+'Constraint' (role 'Constraint48', cardinality 0..*) is associated with 'Classes::Kernel::ValueSpecification' (role 'specification', cardinality 0..*).
+'Classifier' (role 'Classifier87', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'Classes_Kernel_Classifier86', cardinality 0..*).
+'NamedElement' (role 'NamedElement81', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'Classes_Kernel_Classifier', cardinality 0..*).
+'Property' (role 'Property116', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'associationEnd', cardinality 0..*).
+'Property' (role 'Property161', cardinality 0..*) is associated with 'Classes::Kernel::Class' (role 'class_160', cardinality 0..*).
+'Namespace' (role 'Namespace21', cardinality 0..*) is associated with 'Classes::Kernel::PackageImport' (role 'packageImport', cardinality 0..*).
+'Slot' (role 'Slot', cardinality 0..*) is associated with 'Classes::Kernel::ValueSpecification' (role 'value', cardinality 0..*).
+'Classifier' (role 'Classifier90', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'Classes_Kernel_Classifier89', cardinality 0..*).
+'Feature' (role 'Feature', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'featuringClassifier', cardinality 0..*).
+'Property' (role 'Property118', cardinality 0..*) is associated with 'Classes::Kernel::Property' (role 'qualifier', cardinality 0..*).
+'Property' (role 'Property163', cardinality 0..*) is associated with 'Classes::Kernel::Association' (role 'Classes_Kernel_Association', cardinality 0..*).
+'Classes::Kernel::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'Package' (role 'Package23', cardinality 0..*).
+'InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'Classes::Kernel::ValueSpecification' (role 'specification51', cardinality 0..*).
+'Classes::Kernel::Classifier' (role 'specific', cardinality 0..*) is associated with 'Generalization_' (role 'Generalization_', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'Classes_Kernel_Classifier84', cardinality 0..*).
+'Classes::Kernel::Generalization_' (role 'Classes_Kernel_Generalization', cardinality 0..*) is associated with 'Classifier' (role 'Classifier120', cardinality 0..*).
+'Classifier' (role 'Classifier189', cardinality 0..*) is associated with 'Classes::Interfaces::Interface' (role 'Classes_Interfaces_Interface', cardinality 0..*).
+'Package' (role 'Package25', cardinality 0..*) is associated with 'Classes::Kernel::Package' (role 'nestedPackage', cardinality 0..*).
+'Classes::Kernel::TypedElement' (role 'Classes_Kernel_TypedElement', cardinality 0..*) is associated with 'Type' (role 'Type53', cardinality 0..*).
+'Substitution' (role 'Substitution', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'substitutingClassifier', cardinality 0..*).
+'Classes::Kernel::InstanceValue' (role 'Classes_Kernel_InstanceValue', cardinality 0..*) is associated with 'InstanceSpecification' (role 'InstanceSpecification59', cardinality 0..*).
+'Classifier' (role 'Classifier122', cardinality 0..*) is associated with 'Classes::Kernel::Generalization_' (role 'generalization', cardinality 0..*).
+'Classes::Interfaces::Interface' (role 'Classes_Interfaces_Interface191', cardinality 0..*) is associated with 'Interface' (role 'Interface192', cardinality 0..*).
+'Classes::Kernel::Package' (role 'Classes_Kernel_Package', cardinality 0..*) is associated with 'PackageableElement' (role 'PackageableElement27', cardinality 0..*).
+'Package' (role 'Package55', cardinality 0..*) is associated with 'Classes::Kernel::Type' (role 'ownedType', cardinality 0..*).
+'GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*) is associated with 'Classes::Kernel::Classifier' (role 'powertype', cardinality 0..*).
+'Slot' (role 'Slot61', cardinality 0..*) is associated with 'Classes::Kernel::InstanceSpecification' (role 'owningInstace', cardinality 0..*).
+'GeneralizationSet' (role 'GeneralizationSet125', cardinality 0..*) is associated with 'Classes::Kernel::Generalization_' (role 'generalization124', cardinality 0..*).
+'Property' (role 'Property194', cardinality 0..*) is associated with 'Classes::Interfaces::Interface' (role 'interface', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'Classes::Kernel::Package' (role 'package', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification57', cardinality 0..*) is associated with 'Classes::Kernel::Expression' (role 'Classes_Kernel_Expression', cardinality 0..*).
+'Classifier' (role 'Classifier95', cardinality 0..*) is associated with 'Classes::Kernel::Feature' (role 'feature', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification63', cardinality 0..*) is associated with 'Classes::Kernel::InstanceSpecification' (role 'owningInstanceSpec', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'Classes::Kernel::BehavioralFeature' (role 'Classes_Kernel_BehavioralFeature', cardinality 0..*).
+'Operation' (role 'Operation197', cardinality 0..*) is associated with 'Classes::Interfaces::Interface' (role 'interface196', cardinality 0..*).
+'PackageMerge' (role 'PackageMerge', cardinality 0..*) is associated with 'Classes::Kernel::Package' (role 'receivingPackage', cardinality 0..*).
+'Element' (role 'Element35', cardinality 0..*) is associated with 'Classes::Kernel::Relationship' (role 'Classes_Kernel_Relationship', cardinality 0..*).
+'Classes::Kernel::BehavioralFeature' (role 'Classes_Kernel_BehavioralFeature128', cardinality 0..*) is associated with 'Type' (role 'Type129', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'Classes::Kernel::InstanceSpecification' (role 'Classes_Kernel_InstanceSpecification', cardinality 0..*).
+'Classes::Kernel::Association' (role 'association', cardinality 0..*) is associated with 'Property' (role 'Property165', cardinality 0..*).
+'BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*) is associated with 'Classes::Interfaces::InterfaceRealization' (role 'interfaceRealization', cardinality 0..*).
+'Element' (role 'Element31', cardinality 0..*) is associated with 'Classes::Kernel::Comment' (role 'ownedComment', cardinality 0..*).
+'Classes::Kernel::DirectedRelationship' (role 'Classes_Kernel_DirectedRelationship', cardinality 0..*) is associated with 'Element' (role 'Element37', cardinality 0..*).
+'BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*) is associated with 'Classes::Kernel::Parameter' (role 'Classes_Kernel_Parameter', cardinality 0..*).
+'Classes::Kernel::Constraint' (role 'ownedRule', cardinality 0..*) is associated with 'Namespace' (role 'Namespace66', cardinality 0..*).
+'Property' (role 'Property167', cardinality 0..*) is associated with 'Classes::Kernel::Association' (role 'owningAssociation', cardinality 0..*).
+'Classes::Interfaces::InterfaceRealization' (role 'Classes_Interfaces_InterfaceRealization', cardinality 0..*) is associated with 'Interface' (role 'Interface200', cardinality 0..*).
+'Element' (role 'Element33', cardinality 0..*) is associated with 'Classes::Kernel::Comment' (role 'Classes_Kernel_Comment', cardinality 0..*).
+'Element' (role 'Element40', cardinality 0..*) is associated with 'Classes::Kernel::DirectedRelationship' (role 'Classes_Kernel_DirectedRelationship39', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification133', cardinality 0..*) is associated with 'Classes::Kernel::Parameter' (role 'Classes_Kernel_Parameter132', cardinality 0..*).
+'Element' (role 'Element68', cardinality 0..*) is associated with 'Classes::Kernel::Constraint' (role 'Classes_Kernel_Constraint', cardinality 0..*).
+'Property' (role 'Property169', cardinality 0..*) is associated with 'Classes::Kernel::DataType' (role 'dataType', cardinality 0..*).
+'InterfaceRealization' (role 'InterfaceRealization', cardinality 0..*) is associated with 'Classes::Interfaces::BehavioredClassifier' (role 'implementingClassifier', cardinality 0..*).
+'Classes::Kernel::Namespace' (role 'Classes_Kernel_Namespace8', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification', cardinality 0..*) is associated with 'Classes::Kernel::MultiplicityElement' (role 'owningUpper', cardinality 0..*).

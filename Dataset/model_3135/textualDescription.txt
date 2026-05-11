@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'classdiagram::ClassDiagram' has no attributes.
+The class 'classdiagram::Attribute' has the following attributes: 'name' of type str.
+The class 'classdiagram::Class' has the following attributes: 'name' of type str.
+'classdiagram::Attribute' (role 'classdiagram_Attribute5', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class4', cardinality 0..*).
+'classdiagram::Attribute' (role 'classdiagram_Attribute', cardinality 0..*) is associated with 'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram2', cardinality 0..*).
+'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class', cardinality 0..*).

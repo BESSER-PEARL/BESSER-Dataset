@@ -1,0 +1,35 @@
+The model has 10 class(es).
+The class 'Person' has no attributes.
+The class 'fopramodel::Person' has the following attributes: 'lastname' of type str; 'forename' of type str.
+The class 'fopramodel::ResearchGroup' has the following attributes: 'name' of type str.
+The class 'fopramodel::ExternalAdvisor' has the following attributes: 'information' of type str.
+The class 'fopramodel::FoPra' has the following attributes: 'description' of type str; 'start' of type date; 'title' of type str; 'end' of type date; 'maxNumberOfStudents' of type int; 'status' of type str.
+The class 'fopramodel::Auxiliary' has the following attributes: 'kind' of type str; 'description' of type str.
+The class 'fopramodel::Student' has the following attributes: 'course' of type str; 'matrikel' of type str.
+The class 'fopramodel::FoPraManagementSystem' has no attributes.
+The class 'fopramodel::Associate' has no attributes.
+The class 'fopramodel::Professor' has no attributes.
+The enumeration 'Course' has the following literals: 'InfoMinorSubject', 'InfoBSc', 'InfoPostGraduate', 'InfoMSc', 'InfoDiplom'.
+The enumeration 'Status' has the following literals: 'pending', 'completed', 'inprocess', 'cancelled'.
+The enumeration 'AuxiliaryKind' has the following literals: 'Tool', 'Method', 'ProgrammingLanguage'.
+'fopramodel::ExternalAdvisor' is a specialization of 'Person'.
+'fopramodel::Professor' is a specialization of 'Person'.
+'fopramodel::Associate' is a specialization of 'Person'.
+'fopramodel::Student' is a specialization of 'Person'.
+'fopramodel::Professor' (role 'Professor', cardinality 0..*) is associated with 'fopramodel::ResearchGroup' (role 'rg20', cardinality 0..*).
+'fopramodel::ResearchGroup' (role 'ResearchGroup', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'fopras2', cardinality 0..*).
+'fopramodel::FoPra' (role 'FoPra', cardinality 0..*) is associated with 'fopramodel::Student' (role 'students', cardinality 0..*).
+'fopramodel::Auxiliary' (role 'fopramodel_Auxiliary', cardinality 0..*) is associated with 'fopramodel::FoPraManagementSystem' (role 'fopramodel_FoPraManagementSystem13', cardinality 0..*).
+'fopramodel::Associate' (role 'Associate', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'fopras4', cardinality 0..*).
+'fopramodel::FoPraManagementSystem' (role 'fopramodel_FoPraManagementSystem', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'fopramodel_FoPra', cardinality 0..*).
+'fopramodel::ExternalAdvisor' (role 'ExternalAdvisor', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'fopras6', cardinality 0..*).
+'fopramodel::ResearchGroup' (role 'rg22', cardinality 0..*) is associated with 'fopramodel::Associate' (role 'Associate23', cardinality 0..*).
+'fopramodel::FoPra' (role 'fopras', cardinality 0..*) is associated with 'fopramodel::Student' (role 'Student', cardinality 0..*).
+'fopramodel::Associate' (role 'associate', cardinality 0..*) is associated with 'fopramodel::ResearchGroup' (role 'ResearchGroup25', cardinality 0..*).
+'fopramodel::Auxiliary' (role 'auxiliaries', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'FoPra31', cardinality 0..*).
+'fopramodel::FoPra' (role 'fopras8', cardinality 0..*) is associated with 'fopramodel::Auxiliary' (role 'Auxiliary', cardinality 0..*).
+'fopramodel::FoPra' (role 'FoPra18', cardinality 0..*) is associated with 'fopramodel::ResearchGroup' (role 'rg', cardinality 0..*).
+'fopramodel::ExternalAdvisor' (role 'advisor', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'FoPra29', cardinality 0..*).
+'fopramodel::Professor' (role 'professor', cardinality 0..*) is associated with 'fopramodel::ResearchGroup' (role 'ResearchGroup16', cardinality 0..*).
+'fopramodel::Associate' (role 'supervisor', cardinality 0..*) is associated with 'fopramodel::FoPra' (role 'FoPra27', cardinality 0..*).
+'fopramodel::Person' (role 'fopramodel_Person', cardinality 0..*) is associated with 'fopramodel::FoPraManagementSystem' (role 'fopramodel_FoPraManagementSystem11', cardinality 0..*).

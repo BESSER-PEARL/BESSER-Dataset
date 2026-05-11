@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'profile::Resource' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'profile::PlatformProfile' has the following attributes: 'name' of type str.
+The class 'profile::Constraint' has the following attributes: 'operation' of type str; 'bound' of type int; 'type' of type str; 'isDerivation' of type bool.
+The enumeration 'ConstraintType' has the following literals: 'Minimum', 'Average', 'Maximum'.
+The enumeration 'ResourceTypes' has the following literals: 'port', 'cpu', 'power', 'bandwidth', 'memory'.
+The enumeration 'ConstraintOperation' has the following literals: 'Greater', 'Less', 'Equal', 'LessOrEqual', 'GreaterOrEqual'.
+'profile::PlatformProfile' (role 'PlatformProfile5', cardinality 0..*) is associated with 'profile::Constraint' (role 'constraints', cardinality 0..*).
+'profile::Resource' (role 'Resource', cardinality 0..*) is associated with 'profile::PlatformProfile' (role 'platform', cardinality 0..*).
+'profile::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'profile::PlatformProfile' (role 'platform2', cardinality 0..*).
+'profile::PlatformProfile' (role 'PlatformProfile', cardinality 0..*) is associated with 'profile::Resource' (role 'resources', cardinality 0..*).
+'profile::Resource' (role 'profile_Resource', cardinality 0..*) is associated with 'profile::Constraint' (role 'profile_Constraint', cardinality 0..*).

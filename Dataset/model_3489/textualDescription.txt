@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'fc::AttributeValue' has the following attributes: 'id' of type str; 'description' of type str; 'name' of type str; 'comment' of type str.
+The class 'fc::Selection' has the following attributes: 'id' of type str; 'root' of type bool; 'description' of type str; 'name' of type str; 'present' of type bool; 'enabled' of type bool; 'comment' of type str.
+The class 'fc::Feature' has no attributes.
+The class 'fc::DoubleValue' has the following attributes: 'value' of type float.
+The class 'fc::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'fc::StringValue' has the following attributes: 'value' of type str.
+The class 'fc::IntegerValue' has the following attributes: 'value' of type int.
+The class 'fc::FeatureModel' has no attributes.
+The class 'fc::FeatureConfiguration' has the following attributes: 'version' of type str; 'comment' of type str; 'name' of type str; 'description' of type str.
+The class 'AttributeValue' has no attributes.
+The class 'fc::Attribute' has no attributes.
+'fc::StringValue' is a specialization of 'AttributeValue'.
+'fc::IntegerValue' is a specialization of 'AttributeValue'.
+'fc::BooleanValue' is a specialization of 'AttributeValue'.
+'fc::DoubleValue' is a specialization of 'AttributeValue'.
+'fc::Attribute' (role 'fc_Attribute', cardinality 0..*) is associated with 'fc::AttributeValue' (role 'fc_AttributeValue', cardinality 0..*).
+'fc::Selection' (role 'Selection', cardinality 0..*) is associated with 'fc::Selection' (role 'selections', cardinality 0..*).
+'fc::AttributeValue' (role 'values', cardinality 0..*) is associated with 'fc::Selection' (role 'Selection18', cardinality 0..*).
+'fc::FeatureConfiguration' (role 'fc_FeatureConfiguration', cardinality 0..*) is associated with 'fc::FeatureModel' (role 'fc_FeatureModel', cardinality 0..*).
+'fc::AttributeValue' (role 'AttributeValue', cardinality 0..*) is associated with 'fc::Selection' (role 'selection', cardinality 0..*).
+'fc::FeatureConfiguration' (role 'fc_FeatureConfiguration5', cardinality 0..*) is associated with 'fc::Selection' (role 'fc_Selection', cardinality 0..*).
+'fc::Selection' (role 'Selection11', cardinality 0..*) is associated with 'fc::Selection' (role 'parent', cardinality 0..*).
+'fc::Selection' (role 'fc_Selection16', cardinality 0..*) is associated with 'fc::Feature' (role 'fc_Feature', cardinality 0..*).
+'fc::Selection' (role 'fc_Selection13', cardinality 0..*) is associated with 'fc::FeatureConfiguration' (role 'fc_FeatureConfiguration14', cardinality 0..*).
+'fc::FeatureModel' (role 'fc_FeatureModel3', cardinality 0..*) is associated with 'fc::FeatureConfiguration' (role 'fc_FeatureConfiguration2', cardinality 0..*).

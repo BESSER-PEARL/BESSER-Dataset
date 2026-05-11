@@ -1,0 +1,18 @@
+The model has 4 class(es).
+The class 'sm::State' has the following attributes: 'name' of type str.
+The class 'sm::Transition' has the following attributes: 'name' of type str.
+The class 'sm::Observation' has the following attributes: 'time' of type str.
+The class 'sm::StateMachine' has the following attributes: 'name' of type str.
+'sm::Transition' (role 'sm_Transition', cardinality 0..*) is associated with 'sm::State' (role 'sm_State16', cardinality 0..*).
+'sm::StateMachine' (role 'graph', cardinality 0..*) is associated with 'sm::State' (role 'State', cardinality 0..*).
+'sm::State' (role 'node', cardinality 0..*) is associated with 'sm::Observation' (role 'Observation13', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'sm_State', cardinality 0..*).
+'sm::StateMachine' (role 'StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'nodes', cardinality 0..*).
+'sm::State' (role 'sm_State3', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine2', cardinality 0..*).
+'sm::StateMachine' (role 'graph6', cardinality 0..*) is associated with 'sm::Transition' (role 'Transition', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine11', cardinality 0..*) is associated with 'sm::State' (role 'sm_State10', cardinality 0..*).
+'sm::State' (role 'State23', cardinality 0..*) is associated with 'sm::Observation' (role 'mark', cardinality 0..*).
+'sm::Transition' (role 'sm_Transition18', cardinality 0..*) is associated with 'sm::State' (role 'sm_State19', cardinality 0..*).
+'sm::Observation' (role 'marks', cardinality 0..*) is associated with 'sm::StateMachine' (role 'StateMachine25', cardinality 0..*).
+'sm::Transition' (role 'edges', cardinality 0..*) is associated with 'sm::StateMachine' (role 'StateMachine21', cardinality 0..*).
+'sm::Observation' (role 'Observation', cardinality 0..*) is associated with 'sm::StateMachine' (role 'graph8', cardinality 0..*).

@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'FeatureModel::Constraint' has no attributes.
+The class 'FeatureModel::ConfigConstraint' has the following attributes: 'kind' of type str.
+The class 'FeatureModel::RootFeature' has no attributes.
+The class 'FeatureModel::Feature' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'FeatureModel::FeatureConstraint' has the following attributes: 'type' of type str.
+The class 'FeatureModel::And' has no attributes.
+The class 'ConfigConstraint' has no attributes.
+The class 'FeatureModel::Or' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'FeatureModel::Xor' has no attributes.
+The class 'FeatureModel::FeatureModel' has no attributes.
+The enumeration 'kind' has the following literals: 'mandatory', 'optional'.
+The enumeration 'Type' has the following literals: 'require', 'exclude'.
+'FeatureModel::Or' is a specialization of 'ConfigConstraint'.
+'FeatureModel::And' is a specialization of 'ConfigConstraint'.
+'FeatureModel::ConfigConstraint' is a specialization of 'Constraint'.
+'FeatureModel::Xor' is a specialization of 'ConfigConstraint'.
+'FeatureModel::FeatureConstraint' is a specialization of 'Constraint'.
+'FeatureModel::Feature' (role 'FeatureModel_Feature', cardinality 0..*) is associated with 'FeatureModel::FeatureConstraint' (role 'FeatureModel_FeatureConstraint6', cardinality 0..*).
+'FeatureModel::ConfigConstraint' (role 'Config', cardinality 0..*) is associated with 'FeatureModel::Feature' (role 'Feature', cardinality 0..*).
+'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel', cardinality 0..*) is associated with 'FeatureModel::RootFeature' (role 'FeatureModel_RootFeature', cardinality 0..*).
+'FeatureModel::FeatureModel' (role 'FeatureModel_FeatureModel2', cardinality 0..*) is associated with 'FeatureModel::FeatureConstraint' (role 'FeatureModel_FeatureConstraint', cardinality 0..*).
+'FeatureModel::ConfigConstraint' (role 'FeatureModel_ConfigConstraint', cardinality 0..*) is associated with 'FeatureModel::RootFeature' (role 'FeatureModel_RootFeature4', cardinality 0..*).
+'FeatureModel::Feature' (role 'ConfFeatures', cardinality 0..*) is associated with 'FeatureModel::ConfigConstraint' (role 'ConfigConstraint', cardinality 0..*).

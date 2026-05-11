@@ -1,0 +1,101 @@
+The model has 36 class(es).
+The class 'dinkiemodel::FunctionDecl' has the following attributes: 'name' of type str.
+The class 'dinkiemodel::Program' has no attributes.
+The class 'dinkiemodel::Argument' has the following attributes: 'name' of type str.
+The class 'dinkiemodel::Return' has no attributes.
+The class 'dinkiemodel::OneOperator' has the following attributes: 'operator' of type str.
+The class 'dinkiemodel::Declaration' has the following attributes: 'varName' of type str; 'global_' of type bool.
+The class 'dinkiemodel::Character' has the following attributes: 'value' of type str.
+The class 'dinkiemodel::Statement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'dinkiemodel::FilledArrayDecl' has the following attributes: 'global_' of type bool; 'varName' of type str.
+The class 'dinkiemodel::While' has no attributes.
+The class 'dinkiemodel::IfOne' has no attributes.
+The class 'dinkiemodel::Parallel' has the following attributes: 'nrOfThreads' of type int.
+The class 'dinkiemodel::ArrayType' has the following attributes: 'arrayType' of type str.
+The class 'dinkiemodel::ArrayAssign' has the following attributes: 'varName' of type str.
+The class 'dinkiemodel::VariableExpr' has the following attributes: 'name' of type str.
+The class 'dinkiemodel::BracketExpr' has no attributes.
+The class 'dinkiemodel::IfTwo' has no attributes.
+The class 'Type' has no attributes.
+The class 'dinkiemodel::Assign' has the following attributes: 'varName' of type str.
+The class 'dinkiemodel::Number' has the following attributes: 'value' of type int.
+The class 'dinkiemodel::Sync' has the following attributes: 'varName' of type str.
+The class 'dinkiemodel::Type' has no attributes.
+The class 'dinkiemodel::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dinkiemodel::BoolVal' has the following attributes: 'value' of type bool.
+The class 'dinkiemodel::ReadStatement' has the following attributes: 'varName' of type str.
+The class 'dinkiemodel::ArrayExpr' has the following attributes: 'varName' of type str.
+The class 'dinkiemodel::WriteStatement' has no attributes.
+The class 'dinkiemodel::Main' has no attributes.
+The class 'dinkiemodel::BaseType' has the following attributes: 'type' of type str.
+The class 'dinkiemodel::StringArrayDecl' has the following attributes: 'varName' of type str; 'content' of type str; 'global_' of type bool.
+The class 'dinkiemodel::ThreadID' has no attributes.
+The class 'dinkiemodel::EmptyArrayDecl' has the following attributes: 'global_' of type bool; 'varName' of type str; 'size' of type int.
+The class 'dinkiemodel::TwoOperator' has the following attributes: 'operator' of type str.
+The class 'dinkiemodel::FuncExpr' has the following attributes: 'funcName' of type str.
+The enumeration 'ETwoOperator' has the following literals: 'GT', 'LT', 'MINUS', 'LE', 'DEVIDE', 'XOR', 'TIMES', 'NOT_EQUAL', 'OR', 'PLUS', 'AND', 'EQUAL', 'GE'.
+The enumeration 'EOneOperator' has the following literals: 'MINUS', 'NOT'.
+The enumeration 'EBaseType' has the following literals: 'BOOL', 'INT', 'CHAR'.
+'dinkiemodel::FilledArrayDecl' is a specialization of 'Statement'.
+'dinkiemodel::BaseType' is a specialization of 'Type'.
+'dinkiemodel::FuncExpr' is a specialization of 'Expression'.
+'dinkiemodel::EmptyArrayDecl' is a specialization of 'Statement'.
+'dinkiemodel::FuncExpr' is a specialization of 'Statement'.
+'dinkiemodel::Assign' is a specialization of 'Statement'.
+'dinkiemodel::IfOne' is a specialization of 'Statement'.
+'dinkiemodel::TwoOperator' is a specialization of 'Expression'.
+'dinkiemodel::While' is a specialization of 'Statement'.
+'dinkiemodel::ArrayExpr' is a specialization of 'Expression'.
+'dinkiemodel::Character' is a specialization of 'Expression'.
+'dinkiemodel::VariableExpr' is a specialization of 'Expression'.
+'dinkiemodel::StringArrayDecl' is a specialization of 'Statement'.
+'dinkiemodel::OneOperator' is a specialization of 'Expression'.
+'dinkiemodel::Return' is a specialization of 'Statement'.
+'dinkiemodel::ReadStatement' is a specialization of 'Statement'.
+'dinkiemodel::ArrayAssign' is a specialization of 'Statement'.
+'dinkiemodel::Parallel' is a specialization of 'Statement'.
+'dinkiemodel::BoolVal' is a specialization of 'Expression'.
+'dinkiemodel::BracketExpr' is a specialization of 'Expression'.
+'dinkiemodel::Number' is a specialization of 'Expression'.
+'dinkiemodel::ThreadID' is a specialization of 'Expression'.
+'dinkiemodel::Sync' is a specialization of 'Statement'.
+'dinkiemodel::WriteStatement' is a specialization of 'Statement'.
+'dinkiemodel::ArrayType' is a specialization of 'Type'.
+'dinkiemodel::IfTwo' is a specialization of 'Statement'.
+'dinkiemodel::Declaration' is a specialization of 'Statement'.
+'dinkiemodel::ArrayAssign' (role 'dinkiemodel_ArrayAssign33', cardinality 0..*) is associated with 'dinkiemodel::Expression' (role 'dinkiemodel_Expression34', cardinality 0..*).
+'dinkiemodel::WriteStatement' (role 'dinkiemodel_WriteStatement', cardinality 0..*) is associated with 'dinkiemodel::Type' (role 'dinkiemodel_Type19', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression58', cardinality 0..*) is associated with 'dinkiemodel::Return' (role 'dinkiemodel_Return', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression24', cardinality 0..*) is associated with 'dinkiemodel::Assign' (role 'dinkiemodel_Assign', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression49', cardinality 0..*) is associated with 'dinkiemodel::IfTwo' (role 'dinkiemodel_IfTwo48', cardinality 0..*).
+'dinkiemodel::ArrayType' (role 'dinkiemodel_ArrayType', cardinality 0..*) is associated with 'dinkiemodel::EmptyArrayDecl' (role 'dinkiemodel_EmptyArrayDecl', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression22', cardinality 0..*) is associated with 'dinkiemodel::WriteStatement' (role 'dinkiemodel_WriteStatement21', cardinality 0..*).
+'dinkiemodel::IfOne' (role 'dinkiemodel_IfOne43', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement44', cardinality 0..*).
+'dinkiemodel::IfTwo' (role 'dinkiemodel_IfTwo', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement46', cardinality 0..*).
+'dinkiemodel::Sync' (role 'dinkiemodel_Sync', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement56', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression41', cardinality 0..*) is associated with 'dinkiemodel::IfOne' (role 'dinkiemodel_IfOne', cardinality 0..*).
+'dinkiemodel::FunctionDecl' (role 'dinkiemodel_FunctionDecl6', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement7', cardinality 0..*).
+'dinkiemodel::ArrayType' (role 'dinkiemodel_ArrayType26', cardinality 0..*) is associated with 'dinkiemodel::FilledArrayDecl' (role 'dinkiemodel_FilledArrayDecl', cardinality 0..*).
+'dinkiemodel::Type' (role 'dinkiemodel_Type74', cardinality 0..*) is associated with 'dinkiemodel::Argument' (role 'dinkiemodel_Argument73', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression67', cardinality 0..*) is associated with 'dinkiemodel::BracketExpr' (role 'dinkiemodel_BracketExpr', cardinality 0..*).
+'dinkiemodel::FunctionDecl' (role 'dinkiemodel_FunctionDecl11', cardinality 0..*) is associated with 'dinkiemodel::Type' (role 'dinkiemodel_Type', cardinality 0..*).
+'dinkiemodel::Main' (role 'dinkiemodel_Main', cardinality 0..*) is associated with 'dinkiemodel::Program' (role 'dinkiemodel_Program2', cardinality 0..*).
+'dinkiemodel::TwoOperator' (role 'dinkiemodel_TwoOperator64', cardinality 0..*) is associated with 'dinkiemodel::Expression' (role 'dinkiemodel_Expression65', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression62', cardinality 0..*) is associated with 'dinkiemodel::TwoOperator' (role 'dinkiemodel_TwoOperator', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression31', cardinality 0..*) is associated with 'dinkiemodel::ArrayAssign' (role 'dinkiemodel_ArrayAssign', cardinality 0..*).
+'dinkiemodel::FunctionDecl' (role 'dinkiemodel_FunctionDecl', cardinality 0..*) is associated with 'dinkiemodel::Program' (role 'dinkiemodel_Program', cardinality 0..*).
+'dinkiemodel::IfTwo' (role 'dinkiemodel_IfTwo51', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement52', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression36', cardinality 0..*) is associated with 'dinkiemodel::While' (role 'dinkiemodel_While', cardinality 0..*).
+'dinkiemodel::Main' (role 'dinkiemodel_Main4', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement', cardinality 0..*).
+'dinkiemodel::FilledArrayDecl' (role 'dinkiemodel_FilledArrayDecl28', cardinality 0..*) is associated with 'dinkiemodel::Expression' (role 'dinkiemodel_Expression29', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression60', cardinality 0..*) is associated with 'dinkiemodel::OneOperator' (role 'dinkiemodel_OneOperator', cardinality 0..*).
+'dinkiemodel::Parallel' (role 'dinkiemodel_Parallel', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement54', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression69', cardinality 0..*) is associated with 'dinkiemodel::ArrayExpr' (role 'dinkiemodel_ArrayExpr', cardinality 0..*).
+'dinkiemodel::Declaration' (role 'dinkiemodel_Declaration14', cardinality 0..*) is associated with 'dinkiemodel::Expression' (role 'dinkiemodel_Expression', cardinality 0..*).
+'dinkiemodel::While' (role 'dinkiemodel_While38', cardinality 0..*) is associated with 'dinkiemodel::Statement' (role 'dinkiemodel_Statement39', cardinality 0..*).
+'dinkiemodel::Argument' (role 'dinkiemodel_Argument', cardinality 0..*) is associated with 'dinkiemodel::FunctionDecl' (role 'dinkiemodel_FunctionDecl9', cardinality 0..*).
+'dinkiemodel::BaseType' (role 'dinkiemodel_BaseType', cardinality 0..*) is associated with 'dinkiemodel::Declaration' (role 'dinkiemodel_Declaration', cardinality 0..*).
+'dinkiemodel::ReadStatement' (role 'dinkiemodel_ReadStatement', cardinality 0..*) is associated with 'dinkiemodel::BaseType' (role 'dinkiemodel_BaseType17', cardinality 0..*).
+'dinkiemodel::Expression' (role 'dinkiemodel_Expression71', cardinality 0..*) is associated with 'dinkiemodel::FuncExpr' (role 'dinkiemodel_FuncExpr', cardinality 0..*).

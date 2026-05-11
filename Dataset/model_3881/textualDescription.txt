@@ -1,0 +1,37 @@
+The model has 17 class(es).
+The class 'Expression' has no attributes.
+The class 'expressions::Function' has the following attributes: 'name' of type str.
+The class 'expressions::Minus' has no attributes.
+The class 'expressions::Plus' has no attributes.
+The class 'expressions::Neg' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'expressions::BinaryOperator' has no attributes.
+The class 'expressions::Parameter' has the following attributes: 'name' of type str.
+The class 'expressions::UnaryOperator' has no attributes.
+The class 'expressions::Model' has no attributes.
+The class 'expressions::Div' has no attributes.
+The class 'expressions::FunctionCall' has no attributes.
+The class 'expressions::Mul' has no attributes.
+The class 'expressions::Number' has the following attributes: 'value' of type int.
+The class 'expressions::Expression' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'expressions::ParameterAccess' has no attributes.
+'expressions::Neg' is a specialization of 'UnaryOperator'.
+'expressions::ParameterAccess' is a specialization of 'Expression'.
+'expressions::Plus' is a specialization of 'BinaryOperator'.
+'expressions::Number' is a specialization of 'Expression'.
+'expressions::Minus' is a specialization of 'BinaryOperator'.
+'expressions::Mul' is a specialization of 'BinaryOperator'.
+'expressions::BinaryOperator' is a specialization of 'Expression'.
+'expressions::Div' is a specialization of 'BinaryOperator'.
+'expressions::FunctionCall' is a specialization of 'Expression'.
+'expressions::UnaryOperator' is a specialization of 'Expression'.
+'expressions::FunctionCall' (role 'expressions_FunctionCall15', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression16', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression6', cardinality 0..*) is associated with 'expressions::BinaryOperator' (role 'expressions_BinaryOperator', cardinality 0..*).
+'expressions::Function' (role 'expressions_Function18', cardinality 0..*) is associated with 'expressions::Model' (role 'expressions_Model', cardinality 0..*).
+'expressions::UnaryOperator' (role 'expressions_UnaryOperator', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression11', cardinality 0..*).
+'expressions::Function' (role 'expressions_Function2', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression', cardinality 0..*).
+'expressions::Parameter' (role 'expressions_Parameter', cardinality 0..*) is associated with 'expressions::Function' (role 'expressions_Function', cardinality 0..*).
+'expressions::Parameter' (role 'expressions_Parameter4', cardinality 0..*) is associated with 'expressions::ParameterAccess' (role 'expressions_ParameterAccess', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression9', cardinality 0..*) is associated with 'expressions::BinaryOperator' (role 'expressions_BinaryOperator8', cardinality 0..*).
+'expressions::Function' (role 'expressions_Function13', cardinality 0..*) is associated with 'expressions::FunctionCall' (role 'expressions_FunctionCall', cardinality 0..*).

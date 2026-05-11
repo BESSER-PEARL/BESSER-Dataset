@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'rdb::Relation' has the following attributes: 'bendpoint' of type str; 'target_kind' of type str; 'constraint_name' of type str; 'column_name' of type str; 'source_kind' of type str; 'referenced_column_name' of type str; 'comment' of type str.
+The class 'rdb::Table' has the following attributes: 'comment' of type str; 'name' of type str; 'constraints' of type str; 'logicalName' of type str.
+The class 'rdb::UserComment' has the following attributes: 'comment' of type str.
+The class 'Table' has no attributes.
+The class 'rdb::DB' has the following attributes: 'sid' of type str; 'url' of type str; 'comment' of type str; 'dbType' of type str; 'id' of type str; 'key' of type str.
+The class 'ERDInfo' has no attributes.
+The class 'rdb::Column' has the following attributes: 'field' of type str; 'extra' of type str; 'type' of type str; 'null' of type str; 'key' of type str; 'default' of type str; 'comment' of type str; 'logicalField' of type str.
+The class 'rdb::ERDInfo' has the following attributes: 'version' of type str; 'autoLayout' of type bool.
+The class 'rdb::View' has no attributes.
+The enumeration 'RelationKind' has the following literals: 'ZERO_OR_MANY', 'ONLY_ONE', 'ZERO_OR_ONE', 'ONE_OR_MANY'.
+'rdb::DB' is a specialization of 'ERDInfo'.
+'rdb::View' is a specialization of 'Table'.
+'rdb::Table' (role 'Table', cardinality 0..*) is associated with 'rdb::DB' (role 'db', cardinality 0..*).
+'rdb::Relation' (role 'Relation6', cardinality 0..*) is associated with 'rdb::Table' (role 'target', cardinality 0..*).
+'rdb::DB' (role 'DB17', cardinality 0..*) is associated with 'rdb::Relation' (role 'references', cardinality 0..*).
+'rdb::View' (role 'rdb_View', cardinality 0..*) is associated with 'rdb::Table' (role 'rdb_Table19', cardinality 0..*).
+'rdb::Relation' (role 'Relation', cardinality 0..*) is associated with 'rdb::DB' (role 'db2', cardinality 0..*).
+'rdb::Column' (role 'Column', cardinality 0..*) is associated with 'rdb::Table' (role 'table', cardinality 0..*).
+'rdb::Table' (role 'source', cardinality 0..*) is associated with 'rdb::Relation' (role 'Relation8', cardinality 0..*).
+'rdb::Relation' (role 'incomingLinks', cardinality 0..*) is associated with 'rdb::Table' (role 'Table15', cardinality 0..*).
+'rdb::Table' (role 'tables', cardinality 0..*) is associated with 'rdb::DB' (role 'DB', cardinality 0..*).
+'rdb::Relation' (role 'outgoingLinks', cardinality 0..*) is associated with 'rdb::Table' (role 'Table13', cardinality 0..*).
+'rdb::Column' (role 'columns', cardinality 0..*) is associated with 'rdb::Table' (role 'Table11', cardinality 0..*).
+'rdb::UserComment' (role 'rdb_UserComment', cardinality 0..*) is associated with 'rdb::Table' (role 'rdb_Table', cardinality 0..*).

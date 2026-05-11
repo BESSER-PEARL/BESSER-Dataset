@@ -1,0 +1,117 @@
+The model has 50 class(es).
+The class 'modelDsl::PatternType' has the following attributes: 'DATE' of type str; 'NUMBER' of type str; 'REGEX' of type str.
+The class 'modelDsl::RangeValue' has the following attributes: 'from_' of type int; 'toInf' of type bool; 'fromInf' of type bool; 'to' of type int.
+The class 'Element' has no attributes.
+The class 'modelDsl::PropertyType' has no attributes.
+The class 'modelDsl::ParentType' has no attributes.
+The class 'modelDsl::EntityGroup' has the following attributes: 'name' of type str.
+The class 'AnnoTypes' has no attributes.
+The class 'modelDsl::FormatRangeValue' has the following attributes: 'to' of type str; 'from_' of type str.
+The class 'modelDsl::AnnoTypes' has the following attributes: 'type' of type str.
+The class 'modelDsl::Value' has no attributes.
+The class 'modelDsl::ReferenceType' has no attributes.
+The class 'modelDsl::AnnotationHiddenProperty' has no attributes.
+The class 'AnnotationValue' has no attributes.
+The class 'modelDsl::Reference' has the following attributes: 'optional' of type bool.
+The class 'modelDsl::StringValue' has the following attributes: 'value' of type str.
+The class 'modelDsl::Parent' has no attributes.
+The class 'modelDsl::AnnotationProperty' has the following attributes: 'multi' of type bool; 'name' of type str; 'type' of type str.
+The class 'modelDsl::DataTypeType' has no attributes.
+The class 'modelDsl::ReferenceList' has no attributes.
+The class 'modelDsl::Property' has the following attributes: 'optional' of type bool.
+The class 'Container' has no attributes.
+The class 'modelDsl::Field' has the following attributes: 'name' of type str.
+The class 'modelDsl::Child' has no attributes.
+The class 'modelDsl::DoubleValue' has the following attributes: 'value' of type float.
+The class 'modelDsl::IntegerValue' has the following attributes: 'value' of type int.
+The class 'Value' has no attributes.
+The class 'Type' has no attributes.
+The class 'modelDsl::EntityElements' has no attributes.
+The class 'modelDsl::Entity' has no attributes.
+The class 'modelDsl::GroupType' has the following attributes: 'name' of type str.
+The class 'modelDsl::AnnotationInstance' has no attributes.
+The class 'Field' has no attributes.
+The class 'modelDsl::DataTypeField' has the following attributes: 'format' of type str.
+The class 'modelDsl::Annotated' has no attributes.
+The class 'Annotated' has no attributes.
+The class 'modelDsl::Container' has no attributes.
+The class 'modelDsl::EntityType' has no attributes.
+The class 'modelDsl::Type' has no attributes.
+The class 'modelDsl::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'modelDsl::Package' has no attributes.
+The class 'modelDsl::AnnotationGroup' has no attributes.
+The class 'modelDsl::AnnotationType' has no attributes.
+The class 'modelDsl::Model' has no attributes.
+The class 'modelDsl::Annotation' has no attributes.
+The class 'modelDsl::Element' has the following attributes: 'name' of type str.
+The class 'modelDsl::ReferenceListType' has no attributes.
+The class 'modelDsl::AnnotationValue' has no attributes.
+The class 'modelDsl::ChildType' has no attributes.
+The class 'modelDsl::PackageType' has no attributes.
+The class 'modelDsl::DataType' has no attributes.
+The enumeration 'ValueType' has the following literals: 'DOUBLE', 'STRING', 'INT_RANGE', 'INTEGER', 'FORMAT_RANGE'.
+'modelDsl::Field' is a specialization of 'Annotated'.
+'modelDsl::GroupType' is a specialization of 'AnnoTypes'.
+'modelDsl::FormatRangeValue' is a specialization of 'Value'.
+'modelDsl::DoubleValue' is a specialization of 'Value'.
+'modelDsl::Reference' is a specialization of 'Field'.
+'modelDsl::StringValue' is a specialization of 'Value'.
+'modelDsl::Value' is a specialization of 'AnnotationValue'.
+'modelDsl::AnnotationInstance' is a specialization of 'Annotated'.
+'modelDsl::Property' is a specialization of 'Field'.
+'modelDsl::ParentType' is a specialization of 'AnnoTypes'.
+'modelDsl::ReferenceListType' is a specialization of 'AnnoTypes'.
+'modelDsl::Type' is a specialization of 'Element'.
+'modelDsl::ReferenceList' is a specialization of 'Field'.
+'modelDsl::Child' is a specialization of 'Container'.
+'modelDsl::DataTypeType' is a specialization of 'AnnoTypes'.
+'modelDsl::ChildType' is a specialization of 'AnnoTypes'.
+'modelDsl::PackageType' is a specialization of 'AnnoTypes'.
+'modelDsl::Element' is a specialization of 'Annotated'.
+'modelDsl::AnnotationGroup' is a specialization of 'AnnotationValue'.
+'modelDsl::Entity' is a specialization of 'Type'.
+'modelDsl::RangeValue' is a specialization of 'Value'.
+'modelDsl::Container' is a specialization of 'Annotated'.
+'modelDsl::Package' is a specialization of 'Element'.
+'modelDsl::ReferenceType' is a specialization of 'AnnoTypes'.
+'modelDsl::EntityType' is a specialization of 'AnnoTypes'.
+'modelDsl::Annotation' is a specialization of 'Element'.
+'modelDsl::Parent' is a specialization of 'Container'.
+'modelDsl::PropertyType' is a specialization of 'AnnoTypes'.
+'modelDsl::IntegerValue' is a specialization of 'Value'.
+'modelDsl::AnnotationType' is a specialization of 'AnnoTypes'.
+'modelDsl::DataType' is a specialization of 'Type'.
+'modelDsl::EntityElements' (role 'modelDsl_EntityElements28', cardinality 0..*) is associated with 'modelDsl::Reference' (role 'modelDsl_Reference', cardinality 0..*).
+'modelDsl::EntityGroup' (role 'modelDsl_EntityGroup21', cardinality 0..*) is associated with 'modelDsl::EntityElements' (role 'modelDsl_EntityElements22', cardinality 0..*).
+'modelDsl::Type' (role 'modelDsl_Type', cardinality 0..*) is associated with 'modelDsl::AnnotationGroup' (role 'modelDsl_AnnotationGroup', cardinality 0..*).
+'modelDsl::EntityGroup' (role 'modelDsl_EntityGroup', cardinality 0..*) is associated with 'modelDsl::Entity' (role 'modelDsl_Entity19', cardinality 0..*).
+'modelDsl::EntityElements' (role 'modelDsl_EntityElements26', cardinality 0..*) is associated with 'modelDsl::Property' (role 'modelDsl_Property', cardinality 0..*).
+'modelDsl::Element' (role 'modelDsl_Element', cardinality 0..*) is associated with 'modelDsl::Model' (role 'modelDsl_Model2', cardinality 0..*).
+'modelDsl::Property' (role 'modelDsl_Property39', cardinality 0..*) is associated with 'modelDsl::Type' (role 'modelDsl_Type40', cardinality 0..*).
+'modelDsl::AnnotationInstance' (role 'modelDsl_AnnotationInstance', cardinality 0..*) is associated with 'modelDsl::Annotation' (role 'modelDsl_Annotation52', cardinality 0..*).
+'modelDsl::AnnotationValue' (role 'modelDsl_AnnotationValue', cardinality 0..*) is associated with 'modelDsl::AnnotationInstance' (role 'modelDsl_AnnotationInstance67', cardinality 0..*).
+'modelDsl::Entity' (role 'modelDsl_Entity32', cardinality 0..*) is associated with 'modelDsl::Container' (role 'modelDsl_Container', cardinality 0..*).
+'modelDsl::ReferenceList' (role 'modelDsl_ReferenceList48', cardinality 0..*) is associated with 'modelDsl::Entity' (role 'modelDsl_Entity49', cardinality 0..*).
+'modelDsl::AnnotationGroup' (role 'modelDsl_AnnotationGroup61', cardinality 0..*) is associated with 'modelDsl::AnnotationInstance' (role 'modelDsl_AnnotationInstance62', cardinality 0..*).
+'modelDsl::DataTypeField' (role 'modelDsl_DataTypeField11', cardinality 0..*) is associated with 'modelDsl::PatternType' (role 'modelDsl_PatternType', cardinality 0..*).
+'modelDsl::AnnotationValue' (role 'modelDsl_AnnotationValue75', cardinality 0..*) is associated with 'modelDsl::AnnotationHiddenProperty' (role 'modelDsl_AnnotationHiddenProperty74', cardinality 0..*).
+'modelDsl::GroupType' (role 'modelDsl_GroupType', cardinality 0..*) is associated with 'modelDsl::AnnotationProperty' (role 'modelDsl_AnnotationProperty59', cardinality 0..*).
+'modelDsl::AnnotationHiddenProperty' (role 'modelDsl_AnnotationHiddenProperty', cardinality 0..*) is associated with 'modelDsl::AnnotationInstance' (role 'modelDsl_AnnotationInstance69', cardinality 0..*).
+'modelDsl::ReferenceList' (role 'modelDsl_ReferenceList45', cardinality 0..*) is associated with 'modelDsl::Reference' (role 'modelDsl_Reference46', cardinality 0..*).
+'modelDsl::Parent' (role 'modelDsl_Parent', cardinality 0..*) is associated with 'modelDsl::Entity' (role 'modelDsl_Entity', cardinality 0..*).
+'modelDsl::Annotation' (role 'modelDsl_Annotation65', cardinality 0..*) is associated with 'modelDsl::AnnotationInstance' (role 'modelDsl_AnnotationInstance64', cardinality 0..*).
+'modelDsl::AnnotationProperty' (role 'modelDsl_AnnotationProperty57', cardinality 0..*) is associated with 'modelDsl::Annotation' (role 'modelDsl_Annotation56', cardinality 0..*).
+'modelDsl::Import' (role 'modelDsl_Import', cardinality 0..*) is associated with 'modelDsl::Model' (role 'modelDsl_Model', cardinality 0..*).
+'modelDsl::AnnotationGroup' (role 'modelDsl_AnnotationGroup35', cardinality 0..*) is associated with 'modelDsl::Container' (role 'modelDsl_Container34', cardinality 0..*).
+'modelDsl::AnnotationProperty' (role 'modelDsl_AnnotationProperty', cardinality 0..*) is associated with 'modelDsl::Annotation' (role 'modelDsl_Annotation54', cardinality 0..*).
+'modelDsl::EntityElements' (role 'modelDsl_EntityElements30', cardinality 0..*) is associated with 'modelDsl::ReferenceList' (role 'modelDsl_ReferenceList', cardinality 0..*).
+'modelDsl::AnnoTypes' (role 'modelDsl_AnnoTypes', cardinality 0..*) is associated with 'modelDsl::Annotation' (role 'modelDsl_Annotation', cardinality 0..*).
+'modelDsl::AnnotationProperty' (role 'modelDsl_AnnotationProperty72', cardinality 0..*) is associated with 'modelDsl::AnnotationHiddenProperty' (role 'modelDsl_AnnotationHiddenProperty71', cardinality 0..*).
+'modelDsl::Entity' (role 'modelDsl_Entity17', cardinality 0..*) is associated with 'modelDsl::EntityElements' (role 'modelDsl_EntityElements', cardinality 0..*).
+'modelDsl::DataType' (role 'modelDsl_DataType', cardinality 0..*) is associated with 'modelDsl::DataTypeField' (role 'modelDsl_DataTypeField', cardinality 0..*).
+'modelDsl::Field' (role 'modelDsl_Field', cardinality 0..*) is associated with 'modelDsl::AnnotationGroup' (role 'modelDsl_AnnotationGroup37', cardinality 0..*).
+'modelDsl::Entity' (role 'modelDsl_Entity43', cardinality 0..*) is associated with 'modelDsl::Reference' (role 'modelDsl_Reference42', cardinality 0..*).
+'modelDsl::DataType' (role 'modelDsl_DataType14', cardinality 0..*) is associated with 'modelDsl::DataTypeField' (role 'modelDsl_DataTypeField13', cardinality 0..*).
+'modelDsl::AnnotationGroup' (role 'modelDsl_AnnotationGroup5', cardinality 0..*) is associated with 'modelDsl::Package' (role 'modelDsl_Package', cardinality 0..*).
+'modelDsl::Element' (role 'modelDsl_Element8', cardinality 0..*) is associated with 'modelDsl::Package' (role 'modelDsl_Package7', cardinality 0..*).
+'modelDsl::Child' (role 'modelDsl_Child', cardinality 0..*) is associated with 'modelDsl::EntityElements' (role 'modelDsl_EntityElements24', cardinality 0..*).

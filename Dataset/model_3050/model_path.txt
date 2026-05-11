@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/susieagerholm/XTEXT_EXAMPLE/org.xtext.example.mydot/model/generated/MyDot.ecore

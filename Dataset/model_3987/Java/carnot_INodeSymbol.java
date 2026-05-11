@@ -1,0 +1,129 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class carnot_INodeSymbol extends IGraphicalObject {
+
+    private String height;
+    private String width;
+    private String xPos;
+    private String yPos;
+    private String shape;
+
+
+
+
+
+    private List<carnot_GenericLinkConnectionType> carnot_genericlinkconnectiontypes;
+
+
+
+
+    private List<carnot_GenericLinkConnectionType> carnot_genericlinkconnectiontypes;
+
+
+
+
+    private carnot_GenericLinkConnectionType carnot_genericlinkconnectiontype;
+
+
+
+
+    private carnot_GenericLinkConnectionType carnot_genericlinkconnectiontype;
+
+
+    public carnot_INodeSymbol(
+        String height,        String width,        String xPos,        String yPos,        String shape    ) {
+        super(
+        );
+        this.height = height;
+        this.width = width;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.shape = shape;
+        this.carnot_genericlinkconnectiontypes = new ArrayList<>();
+        this.carnot_genericlinkconnectiontypes = new ArrayList<>();
+    }
+
+    public carnot_INodeSymbol(
+        String height,        String width,        String xPos,        String yPos,        String shape        ArrayList<carnot_GenericLinkConnectionType> carnot_genericlinkconnectiontypes,        ArrayList<carnot_GenericLinkConnectionType> carnot_genericlinkconnectiontypes    ) {
+        this.height = height;
+        this.width = width;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.shape = shape;
+        this.carnot_genericlinkconnectiontypes = carnot_genericlinkconnectiontypes;
+        this.carnot_genericlinkconnectiontypes = carnot_genericlinkconnectiontypes;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+    public String getWidth() {
+        return width;
+    }
+
+    public void setWidth(String width) {
+        this.width = width;
+    }
+    public String getXpos() {
+        return xPos;
+    }
+
+    public void setXpos(String xPos) {
+        this.xPos = xPos;
+    }
+    public String getYpos() {
+        return yPos;
+    }
+
+    public void setYpos(String yPos) {
+        this.yPos = yPos;
+    }
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public List<carnot_GenericLinkConnectionType> getCarnot_genericlinkconnectiontypes() {
+        return carnot_genericlinkconnectiontypes;
+    }
+
+    public void addCarnot_genericlinkconnectiontype(Carnot_genericlinkconnectiontype carnot_genericlinkconnectiontype) {
+        this.carnot_genericlinkconnectiontypes.add(carnot_genericlinkconnectiontype);
+    }
+    public List<carnot_GenericLinkConnectionType> getCarnot_genericlinkconnectiontypes() {
+        return carnot_genericlinkconnectiontypes;
+    }
+
+    public void addCarnot_genericlinkconnectiontype(Carnot_genericlinkconnectiontype carnot_genericlinkconnectiontype) {
+        this.carnot_genericlinkconnectiontypes.add(carnot_genericlinkconnectiontype);
+    }
+    public carnot_GenericLinkConnectionType getCarnot_genericlinkconnectiontype() {
+        return carnot_genericlinkconnectiontype;
+    }
+
+    public void setCarnot_genericlinkconnectiontype(carnot_GenericLinkConnectionType carnot_genericlinkconnectiontype) {
+        this.carnot_genericlinkconnectiontype = carnot_genericlinkconnectiontype;
+    }
+    public carnot_GenericLinkConnectionType getCarnot_genericlinkconnectiontype() {
+        return carnot_genericlinkconnectiontype;
+    }
+
+    public void setCarnot_genericlinkconnectiontype(carnot_GenericLinkConnectionType carnot_genericlinkconnectiontype) {
+        this.carnot_genericlinkconnectiontype = carnot_genericlinkconnectiontype;
+    }
+
+}

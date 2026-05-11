@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'UML::Package' has the following attributes: 'name' of type str.
+The class 'UML::Class' has the following attributes: 'is_persistent' of type bool.
+The class 'UML::PrimitiveDataType' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'UML::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type bool.
+The class 'UML::Classifier' has the following attributes: 'name' of type str.
+The class 'UML::Association' has the following attributes: 'name' of type str.
+'UML::Class' is a specialization of 'Classifier'.
+'UML::PrimitiveDataType' is a specialization of 'Classifier'.
+'UML::Class' (role 'UML_Class12', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association11', cardinality 0..*).
+'UML::Package' (role 'UML_Package', cardinality 0..*) is associated with 'UML::Classifier' (role 'UML_Classifier', cardinality 0..*).
+'UML::Class' (role 'UML_Class15', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association14', cardinality 0..*).
+'UML::Class' (role 'UML_Class4', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class6', cardinality 0..*).
+'UML::Package' (role 'UML_Package2', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association', cardinality 0..*).
+'UML::Classifier' (role 'UML_Classifier9', cardinality 0..*) is associated with 'UML::Attribute' (role 'UML_Attribute8', cardinality 0..*).
+'UML::Class' (role 'UML_Class', cardinality 0..*) is associated with 'UML::Attribute' (role 'UML_Attribute', cardinality 0..*).

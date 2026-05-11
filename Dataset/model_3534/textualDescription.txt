@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'testaccessors::EAcc' has the following attributes: 'i' of type int; 'b' of type bool; 'is_' of type int; 'bs' of type bool.

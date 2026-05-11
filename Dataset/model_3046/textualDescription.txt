@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'entities::DomainModel' has no attributes.
+The class 'entities::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'entities::Entity' has the following attributes: 'name' of type str.
+'entities::Entity' (role 'entities_Entity3', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity1', cardinality 0..*).
+'entities::DomainModel' (role 'entities_DomainModel', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity8', cardinality 0..*) is associated with 'entities::Feature' (role 'entities_Feature7', cardinality 0..*).
+'entities::Feature' (role 'entities_Feature', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity5', cardinality 0..*).

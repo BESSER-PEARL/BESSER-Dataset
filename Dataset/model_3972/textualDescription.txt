@@ -1,0 +1,77 @@
+The model has 42 class(es).
+The class 'standard::Derive' has no attributes.
+The class 'standard::Responsibility' has no attributes.
+The class 'standard::Service' has no attributes.
+The class 'standard::Component' has no attributes.
+The class 'standard::Classifier' has no attributes.
+The class 'standard::Type' has no attributes.
+The class 'standard::File' has no attributes.
+The class 'standard::SystemModel' has no attributes.
+The class 'standard::Trace' has no attributes.
+The class 'standard::Instantiate' has no attributes.
+The class 'standard::Call' has no attributes.
+The class 'standard::Specification' has no attributes.
+The class 'standard::Process' has no attributes.
+The class 'standard::Subsystem' has no attributes.
+The class 'standard::Document' has no attributes.
+The class 'standard::Library' has no attributes.
+The class 'standard::Entity' has no attributes.
+The class 'standard::Usage' has no attributes.
+The class 'standard::Model' has no attributes.
+The class 'standard::Source' has no attributes.
+The class 'standard::Focus' has no attributes.
+The class 'standard::BehavioralFeature' has no attributes.
+The class 'standard::Executable' has no attributes.
+The class 'standard::Create' has no attributes.
+The class 'standard::Package' has no attributes.
+The class 'standard::Metamodel' has no attributes.
+The class 'standard::Metaclass' has no attributes.
+The class 'standard::Send' has no attributes.
+The class 'standard::ImplementationClass' has no attributes.
+The class 'standard::Utility' has no attributes.
+The class 'standard::Refine' has no attributes.
+The class 'standard::Implement' has no attributes.
+The class 'standard::Artifact' has no attributes.
+The class 'standard::BuildComponent' has no attributes.
+The class 'standard::Auxiliary' has no attributes.
+The class 'standard::Abstraction' has no attributes.
+The class 'standard::Destroy' has no attributes.
+The class 'standard::Framework' has no attributes.
+The class 'standard::ModelLibrary' has no attributes.
+The class 'standard::Script' has no attributes.
+The class 'standard::Class' has no attributes.
+The class 'standard::Realization' has no attributes.
+'standard::Instantiate' (role 'standard_Instantiate', cardinality 0..*) is associated with 'standard::Usage' (role 'standard_Usage18', cardinality 0..*).
+'standard::Create' (role 'standard_Create', cardinality 0..*) is associated with 'standard::BehavioralFeature' (role 'standard_BehavioralFeature', cardinality 0..*).
+'standard::Realization' (role 'standard_Realization', cardinality 0..*) is associated with 'standard::Classifier' (role 'standard_Classifier', cardinality 0..*).
+'standard::Class' (role 'standard_Class11', cardinality 0..*) is associated with 'standard::Focus' (role 'standard_Focus', cardinality 0..*).
+'standard::Source' (role 'standard_Source', cardinality 0..*) is associated with 'standard::Artifact' (role 'standard_Artifact52', cardinality 0..*).
+'standard::Destroy' (role 'standard_Destroy', cardinality 0..*) is associated with 'standard::BehavioralFeature' (role 'standard_BehavioralFeature9', cardinality 0..*).
+'standard::Usage' (role 'standard_Usage29', cardinality 0..*) is associated with 'standard::Send' (role 'standard_Send', cardinality 0..*).
+'standard::Model' (role 'standard_Model', cardinality 0..*) is associated with 'standard::Metamodel' (role 'standard_Metamodel', cardinality 0..*).
+'standard::Artifact' (role 'standard_Artifact37', cardinality 0..*) is associated with 'standard::Document' (role 'standard_Document', cardinality 0..*).
+'standard::Component' (role 'standard_Component56', cardinality 0..*) is associated with 'standard::Subsystem' (role 'standard_Subsystem', cardinality 0..*).
+'standard::Create' (role 'standard_Create4', cardinality 0..*) is associated with 'standard::Usage' (role 'standard_Usage', cardinality 0..*).
+'standard::Component' (role 'standard_Component14', cardinality 0..*) is associated with 'standard::Implement' (role 'standard_Implement', cardinality 0..*).
+'standard::Model' (role 'standard_Model59', cardinality 0..*) is associated with 'standard::SystemModel' (role 'standard_SystemModel', cardinality 0..*).
+'standard::File' (role 'standard_File', cardinality 0..*) is associated with 'standard::Artifact' (role 'standard_Artifact43', cardinality 0..*).
+'standard::Refine' (role 'standard_Refine', cardinality 0..*) is associated with 'standard::Abstraction' (role 'standard_Abstraction24', cardinality 0..*).
+'standard::Abstraction' (role 'standard_Abstraction31', cardinality 0..*) is associated with 'standard::Trace' (role 'standard_Trace', cardinality 0..*).
+'standard::Library' (role 'standard_Library', cardinality 0..*) is associated with 'standard::Artifact' (role 'standard_Artifact45', cardinality 0..*).
+'standard::Classifier' (role 'standard_Classifier54', cardinality 0..*) is associated with 'standard::Specification' (role 'standard_Specification', cardinality 0..*).
+'standard::Usage' (role 'standard_Usage6', cardinality 0..*) is associated with 'standard::Call' (role 'standard_Call', cardinality 0..*).
+'standard::BuildComponent' (role 'standard_BuildComponent', cardinality 0..*) is associated with 'standard::Component' (role 'standard_Component', cardinality 0..*).
+'standard::Derive' (role 'standard_Derive', cardinality 0..*) is associated with 'standard::Abstraction' (role 'standard_Abstraction', cardinality 0..*).
+'standard::Auxiliary' (role 'standard_Auxiliary', cardinality 0..*) is associated with 'standard::Class' (role 'standard_Class', cardinality 0..*).
+'standard::Component' (role 'standard_Component50', cardinality 0..*) is associated with 'standard::Service' (role 'standard_Service', cardinality 0..*).
+'standard::Type' (role 'standard_Type', cardinality 0..*) is associated with 'standard::Class' (role 'standard_Class33', cardinality 0..*).
+'standard::Artifact' (role 'standard_Artifact', cardinality 0..*) is associated with 'standard::Script' (role 'standard_Script', cardinality 0..*).
+'standard::Metaclass' (role 'standard_Metaclass', cardinality 0..*) is associated with 'standard::Class' (role 'standard_Class20', cardinality 0..*).
+'standard::Class' (role 'standard_Class16', cardinality 0..*) is associated with 'standard::ImplementationClass' (role 'standard_ImplementationClass', cardinality 0..*).
+'standard::Entity' (role 'standard_Entity', cardinality 0..*) is associated with 'standard::Component' (role 'standard_Component39', cardinality 0..*).
+'standard::Artifact' (role 'standard_Artifact41', cardinality 0..*) is associated with 'standard::Executable' (role 'standard_Executable', cardinality 0..*).
+'standard::ModelLibrary' (role 'standard_ModelLibrary', cardinality 0..*) is associated with 'standard::Package' (role 'standard_Package22', cardinality 0..*).
+'standard::Class' (role 'standard_Class35', cardinality 0..*) is associated with 'standard::Utility' (role 'standard_Utility', cardinality 0..*).
+'standard::Framework' (role 'standard_Framework', cardinality 0..*) is associated with 'standard::Package' (role 'standard_Package', cardinality 0..*).
+'standard::Usage' (role 'standard_Usage26', cardinality 0..*) is associated with 'standard::Responsibility' (role 'standard_Responsibility', cardinality 0..*).
+'standard::Process' (role 'standard_Process', cardinality 0..*) is associated with 'standard::Component' (role 'standard_Component47', cardinality 0..*).

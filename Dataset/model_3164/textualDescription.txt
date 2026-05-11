@@ -1,0 +1,170 @@
+The model has 76 class(es).
+The class 'transformation::ClassLiteral' has no attributes.
+The class 'transformation::StringLiteral' has the following attributes: 'value' of type str.
+The class 'transformation::SourceMetamodel' has no attributes.
+The class 'transformation::ArithmeticExpression' has no attributes.
+The class 'transformation::CompositeMapping' has no attributes.
+The class 'transformation::EDataType' has no attributes.
+The class 'transformation::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'transformation::MetamodelDeclaration' has no attributes.
+The class 'transformation::DataTypeMapping' has no attributes.
+The class 'AbstractMapping' has no attributes.
+The class 'transformation::WhenClause' has no attributes.
+The class 'transformation::FeatureMapping' has no attributes.
+The class 'transformation::EStructuralFeature' has no attributes.
+The class 'transformation::Negation' has no attributes.
+The class 'transformation::Map' has no attributes.
+The class 'transformation::ETypedElement' has no attributes.
+The class 'transformation::ClassMapping' has the following attributes: 'default' of type bool.
+The class 'transformation::ConditionalMapping' has no attributes.
+The class 'transformation::FeatureAccess' has the following attributes: 'spreading' of type bool; 'nullable' of type bool.
+The class 'transformation::Transformation' has the following attributes: 'name' of type str.
+The class 'transformation::Lambda' has no attributes.
+The class 'transformation::Minus' has no attributes.
+The class 'transformation::LogicalExpression' has no attributes.
+The class 'transformation::Invocation' has no attributes.
+The class 'transformation::CoalescingExpression' has no attributes.
+The class 'transformation::RealLiteral' has the following attributes: 'value' of type float.
+The class 'transformation::VariableUse' has no attributes.
+The class 'transformation::ExtentMetamodel' has the following attributes: 'generated' of type bool.
+The class 'transformation::ExplicitMetamodel' has the following attributes: 'alias' of type str.
+The class 'transformation::Division' has no attributes.
+The class 'LogicalExpression' has no attributes.
+The class 'transformation::Less' has no attributes.
+The class 'transformation::Or' has no attributes.
+The class 'transformation::Greater' has no attributes.
+The class 'transformation::VariableDefinition' has the following attributes: 'name' of type str.
+The class 'transformation::Source' has no attributes.
+The class 'transformation::Multiplication' has no attributes.
+The class 'transformation::ExtentExpression' has no attributes.
+The class 'transformation::AbstractMapping' has no attributes.
+The class 'transformation::VariableInitialization' has no attributes.
+The class 'transformation::If' has no attributes.
+The class 'CompositeMapping' has no attributes.
+The class 'transformation::Addition' has no attributes.
+The class 'transformation::EClass' has no attributes.
+The class 'ContentMapping' has no attributes.
+The class 'transformation::Equal' has no attributes.
+The class 'EqualityExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'transformation::LessOrEqual' has no attributes.
+The class 'transformation::EnumLiteral' has no attributes.
+The class 'transformation::EqualityExpression' has no attributes.
+The class 'transformation::UnaryExpression' has no attributes.
+The class 'transformation::Let' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'transformation::And' has no attributes.
+The class 'Expression' has no attributes.
+The class 'transformation::Expression' has no attributes.
+The class 'transformation::TypeOfExpression' has no attributes.
+The class 'transformation::Subtraction' has no attributes.
+The class 'ExplicitMetamodel' has no attributes.
+The class 'transformation::EPackage' has no attributes.
+The class 'transformation::ConditionalExpression' has no attributes.
+The class 'transformation::ContentMapping' has no attributes.
+The class 'RelationalExpression' has no attributes.
+The class 'transformation::ResultMapping' has no attributes.
+The class 'MetamodelDeclaration' has no attributes.
+The class 'transformation::EClassifier' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'transformation::OtherwiseClause' has no attributes.
+The class 'transformation::RelationalExpression' has no attributes.
+The class 'transformation::Different' has no attributes.
+The class 'transformation::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'transformation::TargetMetamodel' has no attributes.
+The class 'transformation::GreaterOrEqual' has no attributes.
+The class 'transformation::EEnumLiteral' has no attributes.
+The class 'transformation::BinaryExpression' has no attributes.
+'transformation::LessOrEqual' is a specialization of 'RelationalExpression'.
+'transformation::OtherwiseClause' is a specialization of 'CompositeMapping'.
+'transformation::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'transformation::Division' is a specialization of 'ArithmeticExpression'.
+'transformation::CompositeMapping' is a specialization of 'ContentMapping'.
+'transformation::BooleanLiteral' is a specialization of 'Expression'.
+'transformation::Lambda' is a specialization of 'Expression'.
+'transformation::GreaterOrEqual' is a specialization of 'RelationalExpression'.
+'transformation::ConditionalMapping' is a specialization of 'ContentMapping'.
+'transformation::ClassMapping' is a specialization of 'AbstractMapping'.
+'transformation::BinaryExpression' is a specialization of 'Expression'.
+'transformation::RealLiteral' is a specialization of 'Expression'.
+'transformation::ResultMapping' is a specialization of 'ContentMapping'.
+'transformation::ClassLiteral' is a specialization of 'Expression'.
+'transformation::ExtentExpression' is a specialization of 'Expression'.
+'transformation::SourceMetamodel' is a specialization of 'ExplicitMetamodel'.
+'transformation::FeatureMapping' is a specialization of 'ContentMapping'.
+'transformation::CoalescingExpression' is a specialization of 'BinaryExpression'.
+'transformation::Greater' is a specialization of 'RelationalExpression'.
+'transformation::Less' is a specialization of 'RelationalExpression'.
+'transformation::ExtentMetamodel' is a specialization of 'MetamodelDeclaration'.
+'transformation::Equal' is a specialization of 'EqualityExpression'.
+'transformation::And' is a specialization of 'LogicalExpression'.
+'transformation::Subtraction' is a specialization of 'ArithmeticExpression'.
+'transformation::Map' is a specialization of 'Expression'.
+'transformation::VariableUse' is a specialization of 'Expression'.
+'transformation::Multiplication' is a specialization of 'ArithmeticExpression'.
+'transformation::ExplicitMetamodel' is a specialization of 'MetamodelDeclaration'.
+'transformation::TargetMetamodel' is a specialization of 'ExplicitMetamodel'.
+'transformation::If' is a specialization of 'Expression'.
+'transformation::IntegerLiteral' is a specialization of 'Expression'.
+'transformation::TypeOfExpression' is a specialization of 'Expression'.
+'transformation::WhenClause' is a specialization of 'CompositeMapping'.
+'transformation::Addition' is a specialization of 'ArithmeticExpression'.
+'transformation::StringLiteral' is a specialization of 'Expression'.
+'transformation::EqualityExpression' is a specialization of 'BinaryExpression'.
+'transformation::ConditionalExpression' is a specialization of 'Expression'.
+'transformation::LogicalExpression' is a specialization of 'BinaryExpression'.
+'transformation::Negation' is a specialization of 'UnaryExpression'.
+'transformation::Or' is a specialization of 'LogicalExpression'.
+'transformation::RelationalExpression' is a specialization of 'BinaryExpression'.
+'transformation::Minus' is a specialization of 'UnaryExpression'.
+'transformation::Let' is a specialization of 'Expression'.
+'transformation::Source' is a specialization of 'Expression'.
+'transformation::EnumLiteral' is a specialization of 'Expression'.
+'transformation::UnaryExpression' is a specialization of 'Expression'.
+'transformation::Invocation' is a specialization of 'Expression'.
+'transformation::Different' is a specialization of 'EqualityExpression'.
+'transformation::FeatureAccess' is a specialization of 'Expression'.
+'transformation::DataTypeMapping' is a specialization of 'AbstractMapping'.
+'transformation::ConditionalMapping' (role 'transformation_ConditionalMapping23', cardinality 0..*) is associated with 'transformation::OtherwiseClause' (role 'transformation_OtherwiseClause', cardinality 0..*).
+'transformation::Map' (role 'transformation_Map85', cardinality 0..*) is associated with 'transformation::EClassifier' (role 'transformation_EClassifier', cardinality 0..*).
+'transformation::CompositeMapping' (role 'transformation_CompositeMapping', cardinality 0..*) is associated with 'transformation::ContentMapping' (role 'transformation_ContentMapping20', cardinality 0..*).
+'transformation::FeatureMapping' (role 'transformation_FeatureMapping30', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression31', cardinality 0..*).
+'transformation::Let' (role 'transformation_Let', cardinality 0..*) is associated with 'transformation::VariableInitialization' (role 'transformation_VariableInitialization45', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression58', cardinality 0..*) is associated with 'transformation::BinaryExpression' (role 'transformation_BinaryExpression', cardinality 0..*).
+'transformation::EClass' (role 'transformation_EClass15', cardinality 0..*) is associated with 'transformation::ClassMapping' (role 'transformation_ClassMapping14', cardinality 0..*).
+'transformation::ExtentMetamodel' (role 'transformation_ExtentMetamodel', cardinality 0..*) is associated with 'transformation::SourceMetamodel' (role 'transformation_SourceMetamodel', cardinality 0..*).
+'transformation::AbstractMapping' (role 'transformation_AbstractMapping', cardinality 0..*) is associated with 'transformation::Transformation' (role 'transformation_Transformation2', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression48', cardinality 0..*) is associated with 'transformation::Let' (role 'transformation_Let47', cardinality 0..*).
+'transformation::FeatureAccess' (role 'transformation_FeatureAccess67', cardinality 0..*) is associated with 'transformation::ETypedElement' (role 'transformation_ETypedElement', cardinality 0..*).
+'transformation::ContentMapping' (role 'transformation_ContentMapping', cardinality 0..*) is associated with 'transformation::DataTypeMapping' (role 'transformation_DataTypeMapping11', cardinality 0..*).
+'transformation::WhenClause' (role 'transformation_WhenClause25', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression', cardinality 0..*).
+'transformation::FeatureMapping' (role 'transformation_FeatureMapping', cardinality 0..*) is associated with 'transformation::EStructuralFeature' (role 'transformation_EStructuralFeature', cardinality 0..*).
+'transformation::Invocation' (role 'transformation_Invocation', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression73', cardinality 0..*).
+'transformation::ClassMapping' (role 'transformation_ClassMapping17', cardinality 0..*) is associated with 'transformation::ContentMapping' (role 'transformation_ContentMapping18', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression83', cardinality 0..*) is associated with 'transformation::Map' (role 'transformation_Map', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression50', cardinality 0..*) is associated with 'transformation::ConditionalExpression' (role 'transformation_ConditionalExpression', cardinality 0..*).
+'transformation::DataTypeMapping' (role 'transformation_DataTypeMapping8', cardinality 0..*) is associated with 'transformation::EDataType' (role 'transformation_EDataType9', cardinality 0..*).
+'transformation::WhenClause' (role 'transformation_WhenClause', cardinality 0..*) is associated with 'transformation::ConditionalMapping' (role 'transformation_ConditionalMapping', cardinality 0..*).
+'transformation::UnaryExpression' (role 'transformation_UnaryExpression', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression63', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression37', cardinality 0..*) is associated with 'transformation::If' (role 'transformation_If', cardinality 0..*).
+'transformation::EPackage' (role 'transformation_EPackage', cardinality 0..*) is associated with 'transformation::MetamodelDeclaration' (role 'transformation_MetamodelDeclaration4', cardinality 0..*).
+'transformation::EClass' (role 'transformation_EClass', cardinality 0..*) is associated with 'transformation::ClassMapping' (role 'transformation_ClassMapping', cardinality 0..*).
+'transformation::Lambda' (role 'transformation_Lambda80', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression81', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression69', cardinality 0..*) is associated with 'transformation::ExtentExpression' (role 'transformation_ExtentExpression', cardinality 0..*).
+'transformation::ResultMapping' (role 'transformation_ResultMapping', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression27', cardinality 0..*).
+'transformation::VariableDefinition' (role 'transformation_VariableDefinition', cardinality 0..*) is associated with 'transformation::VariableInitialization' (role 'transformation_VariableInitialization', cardinality 0..*).
+'transformation::MetamodelDeclaration' (role 'transformation_MetamodelDeclaration', cardinality 0..*) is associated with 'transformation::Transformation' (role 'transformation_Transformation', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression76', cardinality 0..*) is associated with 'transformation::Invocation' (role 'transformation_Invocation75', cardinality 0..*).
+'transformation::EClassifier' (role 'transformation_EClassifier89', cardinality 0..*) is associated with 'transformation::ClassLiteral' (role 'transformation_ClassLiteral', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression40', cardinality 0..*) is associated with 'transformation::If' (role 'transformation_If39', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression43', cardinality 0..*) is associated with 'transformation::If' (role 'transformation_If42', cardinality 0..*).
+'transformation::VariableDefinition' (role 'transformation_VariableDefinition78', cardinality 0..*) is associated with 'transformation::Lambda' (role 'transformation_Lambda', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression53', cardinality 0..*) is associated with 'transformation::ConditionalExpression' (role 'transformation_ConditionalExpression52', cardinality 0..*).
+'transformation::DataTypeMapping' (role 'transformation_DataTypeMapping', cardinality 0..*) is associated with 'transformation::EDataType' (role 'transformation_EDataType', cardinality 0..*).
+'transformation::EEnumLiteral' (role 'transformation_EEnumLiteral', cardinality 0..*) is associated with 'transformation::EnumLiteral' (role 'transformation_EnumLiteral', cardinality 0..*).
+'transformation::Expression' (role 'transformation_Expression56', cardinality 0..*) is associated with 'transformation::ConditionalExpression' (role 'transformation_ConditionalExpression55', cardinality 0..*).
+'transformation::VariableDefinition' (role 'transformation_VariableDefinition87', cardinality 0..*) is associated with 'transformation::VariableUse' (role 'transformation_VariableUse', cardinality 0..*).
+'transformation::TypeOfExpression' (role 'transformation_TypeOfExpression', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression71', cardinality 0..*).
+'transformation::BinaryExpression' (role 'transformation_BinaryExpression60', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression61', cardinality 0..*).
+'transformation::VariableInitialization' (role 'transformation_VariableInitialization34', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression35', cardinality 0..*).
+'transformation::FeatureAccess' (role 'transformation_FeatureAccess', cardinality 0..*) is associated with 'transformation::Expression' (role 'transformation_Expression65', cardinality 0..*).

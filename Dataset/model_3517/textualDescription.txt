@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'autocast::ConceptA' has no attributes.
+The class 'autocast::ConceptC' has no attributes.
+The class 'autocast::ConceptB' has the following attributes: 'name' of type str.
+The class 'ConceptA' has no attributes.
+'autocast::ConceptB' is a specialization of 'ConceptA'.
+'autocast::ConceptA' (role 'autocast_ConceptA', cardinality 0..*) is associated with 'autocast::ConceptC' (role 'autocast_ConceptC', cardinality 0..*).

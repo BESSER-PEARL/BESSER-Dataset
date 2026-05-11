@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eder-felix/javaMetaModel/JavaMetaModel/model/javaMetaModel.ecore

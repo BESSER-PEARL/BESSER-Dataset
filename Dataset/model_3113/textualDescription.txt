@@ -1,0 +1,39 @@
+The model has 16 class(es).
+The class 'Association' has no attributes.
+The class 'classdiagram::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type bool.
+The class 'classdiagram::Composition' has no attributes.
+The class 'classdiagram::Method' has the following attributes: 'name' of type str.
+The class 'classdiagram::Diagram' has no attributes.
+The class 'classdiagram::PrimitiveDataType' has the following attributes: 'name' of type str.
+The class 'classdiagram::Dependency' has no attributes.
+The class 'classdiagram::Interface' has the following attributes: 'name' of type str.
+The class 'classdiagram::Class' has the following attributes: 'is_persistent' of type bool; 'name' of type str.
+The class 'AttributeValue' has no attributes.
+The class 'classdiagram::Aggregation' has no attributes.
+The class 'classdiagram::AttributeValue' has no attributes.
+The class 'classdiagram::Generalization' has no attributes.
+The class 'classdiagram::InterfaceRealization' has no attributes.
+The class 'classdiagram::Association' has the following attributes: 'name' of type str; 'sourceMultiplicity' of type int; 'targetMultiplicity' of type int.
+The class 'classdiagram::Realization' has no attributes.
+'classdiagram::Composition' is a specialization of 'Association'.
+'classdiagram::Aggregation' is a specialization of 'Association'.
+'classdiagram::PrimitiveDataType' is a specialization of 'AttributeValue'.
+'classdiagram::Class' is a specialization of 'AttributeValue'.
+'classdiagram::Dependency' is a specialization of 'Association'.
+'classdiagram::InterfaceRealization' (role 'classdiagram_InterfaceRealization', cardinality 0..*) is associated with 'classdiagram::Interface' (role 'classdiagram_Interface29', cardinality 0..*).
+'classdiagram::Generalization' (role 'classdiagram_Generalization', cardinality 0..*) is associated with 'classdiagram::Diagram' (role 'classdiagram_Diagram6', cardinality 0..*).
+'classdiagram::Method' (role 'classdiagram_Method', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class16', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class37', cardinality 0..*) is associated with 'classdiagram::Realization' (role 'classdiagram_Realization36', cardinality 0..*).
+'classdiagram::InterfaceRealization' (role 'classdiagram_InterfaceRealization31', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class32', cardinality 0..*).
+'classdiagram::AttributeValue' (role 'classdiagram_AttributeValue', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'classdiagram_Attribute39', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class9', cardinality 0..*) is associated with 'classdiagram::Association' (role 'classdiagram_Association8', cardinality 0..*).
+'classdiagram::Diagram' (role 'classdiagram_Diagram', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class12', cardinality 0..*) is associated with 'classdiagram::Association' (role 'classdiagram_Association11', cardinality 0..*).
+'classdiagram::Diagram' (role 'classdiagram_Diagram2', cardinality 0..*) is associated with 'classdiagram::Association' (role 'classdiagram_Association', cardinality 0..*).
+'classdiagram::Realization' (role 'classdiagram_Realization', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class34', cardinality 0..*).
+'classdiagram::Interface' (role 'classdiagram_Interface', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'classdiagram_Attribute24', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class14', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'classdiagram_Attribute', cardinality 0..*).
+'classdiagram::Interface' (role 'classdiagram_Interface26', cardinality 0..*) is associated with 'classdiagram::Method' (role 'classdiagram_Method27', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class22', cardinality 0..*) is associated with 'classdiagram::Generalization' (role 'classdiagram_Generalization21', cardinality 0..*).
+'classdiagram::PrimitiveDataType' (role 'classdiagram_PrimitiveDataType', cardinality 0..*) is associated with 'classdiagram::Diagram' (role 'classdiagram_Diagram4', cardinality 0..*).
+'classdiagram::Class' (role 'classdiagram_Class19', cardinality 0..*) is associated with 'classdiagram::Generalization' (role 'classdiagram_Generalization18', cardinality 0..*).

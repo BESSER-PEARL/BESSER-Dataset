@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'metaModelSM::StateMachine' has no attributes.
+The class 'metaModelSM::NewEClass1' has no attributes.
+The class 'metaModelSM::State' has no attributes.
+The class 'metaModelSM::Transition' has no attributes.
+The class 'metaModelSM::NewEClass2' has no attributes.
+The class 'metaModelSM::Guard' has no attributes.
+The class 'metaModelSM::Signal' has no attributes.
+The class 'metaModelSM::InitialState' has no attributes.
+The class 'metaModelSM::Triggers' has no attributes.
+The class 'State' has no attributes.
+The class 'metaModelSM::FinalState' has no attributes.
+The class 'metaModelSM::Region' has no attributes.
+'metaModelSM::FinalState' is a specialization of 'State'.
+'metaModelSM::InitialState' is a specialization of 'State'.
+'metaModelSM::State' (role 'metaModelSM_State4', cardinality 0..*) is associated with 'metaModelSM::Region' (role 'metaModelSM_Region5', cardinality 0..*).
+'metaModelSM::Transition' (role 'metaModelSM_Transition9', cardinality 0..*) is associated with 'metaModelSM::Triggers' (role 'metaModelSM_Triggers10', cardinality 0..*).
+'metaModelSM::Triggers' (role 'metaModelSM_Triggers', cardinality 0..*) is associated with 'metaModelSM::State' (role 'metaModelSM_State', cardinality 0..*).
+'metaModelSM::NewEClass1' (role 'metaModelSM_NewEClass1', cardinality 0..*) is associated with 'metaModelSM::NewEClass2' (role 'metaModelSM_NewEClass2', cardinality 0..*).
+'metaModelSM::Triggers' (role 'metaModelSM_Triggers17', cardinality 0..*) is associated with 'metaModelSM::Signal' (role 'metaModelSM_Signal', cardinality 0..*).
+'metaModelSM::State' (role 'metaModelSM_State15', cardinality 0..*) is associated with 'metaModelSM::Triggers' (role 'metaModelSM_Triggers14', cardinality 0..*).
+'metaModelSM::Transition' (role 'metaModelSM_Transition', cardinality 0..*) is associated with 'metaModelSM::Region' (role 'metaModelSM_Region7', cardinality 0..*).
+'metaModelSM::Region' (role 'metaModelSM_Region', cardinality 0..*) is associated with 'metaModelSM::StateMachine' (role 'metaModelSM_StateMachine', cardinality 0..*).
+'metaModelSM::Guard' (role 'metaModelSM_Guard', cardinality 0..*) is associated with 'metaModelSM::Transition' (role 'metaModelSM_Transition12', cardinality 0..*).

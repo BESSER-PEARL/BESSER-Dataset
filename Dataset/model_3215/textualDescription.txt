@@ -1,0 +1,385 @@
+The model has 139 class(es).
+The class 'variables::Field' has no attributes.
+The class 'Field' has no attributes.
+The class 'gast::functions::GenericFunction' has no attributes.
+The class 'TypeAccess' has no attributes.
+The class 'gast::functions::Destructor' has no attributes.
+The class 'Delegate' has no attributes.
+The class 'gast::annotations::Attribute' has no attributes.
+The class 'gast::core::File' has the following attributes: 'fullQualifiedPath' of type str; 'sourceFile' of type bool; 'fileSystemPath' of type str; 'size' of type str; 'assemblyFile' of type bool; 'linesOfCode' of type int.
+The class 'functions::Function' has no attributes.
+The class 'gast::accesses::VariableAccess' has the following attributes: 'write' of type bool.
+The class 'gast::types::TypeParameterClass' has no attributes.
+The class 'GASTExpression' has no attributes.
+The class 'gast::functions::GenericMethod' has no attributes.
+The class 'gast::accesses::StaticTypeAccess' has no attributes.
+The class 'gast::accesses::SelfAccess' has the following attributes: 'super' of type bool.
+The class 'gast::core::NamedModelElement' has the following attributes: 'simpleName' of type str.
+The class 'gast::statements::GASTExpression' has no attributes.
+The class 'gast::accesses::Access' has no attributes.
+The class 'gast::core::Identifier' has the following attributes: 'id' of type str.
+The class 'gast::variables::CatchParameter' has the following attributes: 'rethrown' of type bool.
+The class 'core::GenericEntity' has no attributes.
+The class 'gast::statements::LoopStatement' has the following attributes: 'kind' of type str.
+The class 'annotations::ModelAnnotation' has no attributes.
+The class 'gast::accesses::ThrowTypeAccess' has the following attributes: 'declared' of type bool.
+The class 'functions::GlobalFunction' has no attributes.
+The class 'Property' has no attributes.
+The class 'variables::Variable' has no attributes.
+The class 'gast::core::Directory' has the following attributes: 'fileSystemPath' of type str; 'fullQualifiedPath' of type str.
+The class 'gast::accesses::CastTypeAccess' has no attributes.
+The class 'gast::core::PackageAlias' has no attributes.
+The class 'gast::statements::GASTBehaviour' has no attributes.
+The class 'gast::statements::SimpleStatement' has no attributes.
+The class 'gast::annotations::Subsystem' has no attributes.
+The class 'core::SourceEntity' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Destructor' has no attributes.
+The class 'NamedModelElement' has no attributes.
+The class 'FunctionAccess' has no attributes.
+The class 'gast::annotations::Comment' has the following attributes: 'formal' of type bool; 'texts' of type str; 'todo' of type bool; 'todoCount' of type int.
+The class 'LoopStatement' has no attributes.
+The class 'Branch' has no attributes.
+The class 'SourceEntity' has no attributes.
+The class 'ThrowTypeAccess' has no attributes.
+The class 'TypeAlias' has no attributes.
+The class 'gast::variables::Field' has the following attributes: 'propertyField' of type bool.
+The class 'types::GASTType' has no attributes.
+The class 'BasePath' has no attributes.
+The class 'gast::types::GenericClass' has no attributes.
+The class 'Member' has no attributes.
+The class 'gast::accesses::TypeAccess' has no attributes.
+The class 'CloneInstance' has no attributes.
+The class 'TypeParameterClass' has no attributes.
+The class 'gast::statements::ExceptionHandler' has no attributes.
+The class 'gast::variables::LocalVariable' has no attributes.
+The class 'gast::statements::BlockStatement' has the following attributes: 'synchronized' of type bool.
+The class 'BaseAccess' has no attributes.
+The class 'gast::types::Reference' has the following attributes: 'explicit' of type bool.
+The class 'Function' has no attributes.
+The class 'Position' has no attributes.
+The class 'functions::Method' has no attributes.
+The class 'gast::core::ModelElement' has the following attributes: 'sissyId' of type int; 'status' of type str.
+The class 'gast::accesses::RunTimeTypeAccess' has no attributes.
+The class 'gast::accesses::DelegateAccess' has no attributes.
+The class 'gast::core::GenericEntity' has no attributes.
+The class 'gast::core::Package' has the following attributes: 'linesOfComments' of type int; 'qualifiedName' of type str; 'linesOfCode' of type int.
+The class 'gast::variables::Variable' has the following attributes: 'const' of type bool.
+The class 'types::TypeDecorator' has no attributes.
+The class 'gast::statements::Statement' has the following attributes: 'numberOfNodesInCFG' of type int; 'numberOfComments' of type int; 'numberOfStatements' of type int; 'maximumNestingLevel' of type int; 'linesOfCode' of type int; 'numberOfEdgesInCFG' of type int.
+The class 'gast::core::Root' has the following attributes: 'linesOfCode' of type int; 'linesOfComments' of type int.
+The class 'gast::variables::GlobalVariable' has no attributes.
+The class 'FormalParameter' has no attributes.
+The class 'gast::annotations::Layer' has no attributes.
+The class 'CompositeAccess' has no attributes.
+The class 'gast::core::BasePath' has the following attributes: 'path' of type str.
+The class 'gast::accesses::InheritanceTypeAccess' has the following attributes: 'implementationInheritance' of type bool.
+The class 'Variable' has no attributes.
+The class 'ModelAnnotation' has no attributes.
+The class 'GlobalVariable' has no attributes.
+The class 'gast::statements::BranchStatement' has no attributes.
+The class 'gast::types::GASTStruct' has no attributes.
+The class 'gast::accesses::FunctionAccess' has no attributes.
+The class 'gast::variables::Property' has no attributes.
+The class 'TypeDecorator' has no attributes.
+The class 'Clone' has no attributes.
+The class 'gast::statements::Branch' has no attributes.
+The class 'gast::types::Member' has the following attributes: 'introspectable' of type bool; 'visibility' of type str; 'abstract' of type bool; 'virtual' of type bool; 'static' of type bool; 'extern' of type bool; 'final' of type bool; 'override' of type bool; 'internal' of type bool; 'typeParameterClassMember' of type bool.
+The class 'CatchParameter' has no attributes.
+The class 'Directory' has no attributes.
+The class 'gast::accesses::DeclarationTypeAccess' has no attributes.
+The class 'gast::variables::FormalParameter' has the following attributes: 'passedByReference' of type bool.
+The class 'gast::core::SourceEntity' has no attributes.
+The class 'gast::types::TypeAlias' has the following attributes: 'innerTypeAlias' of type bool.
+The class 'File' has no attributes.
+The class 'gast::functions::Constructor' has the following attributes: 'initializer' of type bool.
+The class 'CatchBlock' has no attributes.
+The class 'gast::statements::JumpStatement' has the following attributes: 'kind' of type str.
+The class 'VariableAccess' has no attributes.
+The class 'gast::annotations::CloneInstance' has no attributes.
+The class 'Constructor' has no attributes.
+The class 'types::Member' has no attributes.
+The class 'gast::accesses::ParameterInstantiationTypeAccess' has no attributes.
+The class 'StructuralAbstraction' has no attributes.
+The class 'gast::accesses::CompositeAccess' has no attributes.
+The class 'DeclarationTypeAccess' has no attributes.
+The class 'gast::types::TypeDecorator' has no attributes.
+The class 'InheritanceTypeAccess' has no attributes.
+The class 'gast::functions::Delegate' has the following attributes: 'innerDelegate' of type bool.
+The class 'BranchStatement' has no attributes.
+The class 'gast::core::Position' has the following attributes: 'endColumn' of type int; 'startLine' of type int; 'endLine' of type int; 'startColumn' of type int.
+The class 'Statement' has no attributes.
+The class 'gast::types::GASTType' has the following attributes: 'qualifiedName' of type str; 'referenceType' of type bool.
+The class 'gast::types::GASTEnumeration' has no attributes.
+The class 'GASTClass' has no attributes.
+The class 'GlobalFunction' has no attributes.
+The class 'BlockStatement' has no attributes.
+The class 'types::GASTClass' has no attributes.
+The class 'Package' has no attributes.
+The class 'gast::annotations::StructuralAbstraction' has no attributes.
+The class 'gast::accesses::BaseAccess' has no attributes.
+The class 'gast::functions::Function' has the following attributes: 'linesOfCode' of type int; 'numberOfNodesInCFG' of type int; 'numberOfEdgesInCFG' of type int; 'maximumNestingLevel' of type int; 'numberOfStatements' of type int; 'linesOfComments' of type int; 'operator' of type bool.
+The class 'gast::types::GASTUnion' has no attributes.
+The class 'GASTType' has no attributes.
+The class 'gast::annotations::ModelAnnotation' has no attributes.
+The class 'LocalVariable' has no attributes.
+The class 'Root' has no attributes.
+The class 'gast::types::GASTArray' has the following attributes: 'dimensions' of type int.
+The class 'core::NamedModelElement' has no attributes.
+The class 'gast::functions::GenericConstructor' has no attributes.
+The class 'gast::statements::CatchBlock' has no attributes.
+The class 'gast::functions::GlobalFunction' has the following attributes: 'kind' of type str.
+The class 'functions::Constructor' has no attributes.
+The class 'gast::types::GASTClass' has the following attributes: 'primitive' of type bool; 'inner' of type bool; 'linesOfComments' of type int; 'interface' of type bool; 'local' of type bool; 'anonymous' of type bool.
+The class 'gast::functions::Method' has the following attributes: 'propertyMethod' of type bool.
+The class 'gast::accesses::PropertyAccess' has no attributes.
+The class 'Method' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'gast::annotations::Clone' has no attributes.
+The class 'Access' has no attributes.
+The class 'core::ModelElement' has no attributes.
+The enumeration 'JumpStatementKind' has the following literals: 'RETURN', 'THROW', 'JUMP'.
+The enumeration 'GlobalFunctionKind' has the following literals: 'UNITFINALIZER', 'NORMAL', 'UNITINITIALIZER'.
+The enumeration 'Visibilities' has the following literals: 'VISIBILITYPROTECTED', 'VISIBILITYSTRICTPROTECTED', 'VISIBILITYPACKAGE', 'VISIBILITYPUBLIC', 'VISIBILITYPRIVAT'.
+The enumeration 'LoopStatementKind' has the following literals: 'WHILE', 'DOWHILE', 'FOREACH', 'FOR'.
+The enumeration 'Status' has the following literals: 'IMPLICIT', 'FAILEDDEP', 'LIBRARY', 'NORMAL'.
+'gast::functions::Delegate' is a specialization of 'functions::Function'.
+'gast::variables::Property' is a specialization of 'variables::Field'.
+'gast::annotations::CloneInstance' is a specialization of 'annotations::ModelAnnotation'.
+'gast::functions::Constructor' is a specialization of 'types::Member'.
+'gast::accesses::CompositeAccess' is a specialization of 'BaseAccess'.
+'gast::core::PackageAlias' is a specialization of 'Package'.
+'gast::core::GenericEntity' is a specialization of 'ModelElement'.
+'gast::core::File' is a specialization of 'NamedModelElement'.
+'gast::functions::GenericMethod' is a specialization of 'functions::Method'.
+'gast::annotations::Comment' is a specialization of 'annotations::ModelAnnotation'.
+'gast::functions::GenericConstructor' is a specialization of 'functions::Constructor'.
+'gast::variables::Variable' is a specialization of 'core::NamedModelElement'.
+'gast::annotations::Attribute' is a specialization of 'annotations::ModelAnnotation'.
+'gast::functions::Function' is a specialization of 'core::SourceEntity'.
+'gast::types::GASTEnumeration' is a specialization of 'GASTClass'.
+'gast::accesses::TypeAccess' is a specialization of 'Access'.
+'gast::core::Root' is a specialization of 'ModelElement'.
+'gast::types::GASTArray' is a specialization of 'TypeDecorator'.
+'gast::accesses::ThrowTypeAccess' is a specialization of 'TypeAccess'.
+'gast::variables::CatchParameter' is a specialization of 'Variable'.
+'gast::core::SourceEntity' is a specialization of 'ModelElement'.
+'gast::statements::GASTExpression' is a specialization of 'SourceEntity'.
+'gast::annotations::CloneInstance' is a specialization of 'core::ModelElement'.
+'gast::types::GASTStruct' is a specialization of 'GASTClass'.
+'gast::annotations::Comment' is a specialization of 'core::SourceEntity'.
+'gast::core::BasePath' is a specialization of 'ModelElement'.
+'gast::types::Member' is a specialization of 'SourceEntity'.
+'gast::annotations::Attribute' is a specialization of 'types::GASTClass'.
+'gast::functions::GlobalFunction' is a specialization of 'Function'.
+'gast::statements::BranchStatement' is a specialization of 'Statement'.
+'gast::types::GASTClass' is a specialization of 'types::Member'.
+'gast::accesses::SelfAccess' is a specialization of 'VariableAccess'.
+'gast::accesses::RunTimeTypeAccess' is a specialization of 'TypeAccess'.
+'gast::accesses::BaseAccess' is a specialization of 'SourceEntity'.
+'gast::statements::Statement' is a specialization of 'SourceEntity'.
+'gast::core::ModelElement' is a specialization of 'Identifier'.
+'gast::functions::Delegate' is a specialization of 'types::Member'.
+'gast::statements::LoopStatement' is a specialization of 'Statement'.
+'gast::variables::Field' is a specialization of 'types::Member'.
+'gast::functions::GenericFunction' is a specialization of 'core::GenericEntity'.
+'gast::variables::GlobalVariable' is a specialization of 'Variable'.
+'gast::functions::Method' is a specialization of 'functions::Function'.
+'gast::core::Package' is a specialization of 'NamedModelElement'.
+'gast::core::Directory' is a specialization of 'NamedModelElement'.
+'gast::accesses::StaticTypeAccess' is a specialization of 'TypeAccess'.
+'gast::variables::FormalParameter' is a specialization of 'Variable'.
+'gast::accesses::DelegateAccess' is a specialization of 'FunctionAccess'.
+'gast::functions::GenericConstructor' is a specialization of 'core::GenericEntity'.
+'gast::annotations::StructuralAbstraction' is a specialization of 'annotations::ModelAnnotation'.
+'gast::functions::Destructor' is a specialization of 'functions::Function'.
+'gast::types::TypeAlias' is a specialization of 'types::TypeDecorator'.
+'gast::functions::GenericFunction' is a specialization of 'functions::GlobalFunction'.
+'gast::annotations::Layer' is a specialization of 'StructuralAbstraction'.
+'gast::functions::Method' is a specialization of 'types::Member'.
+'gast::types::TypeAlias' is a specialization of 'types::Member'.
+'gast::accesses::VariableAccess' is a specialization of 'Access'.
+'gast::types::TypeParameterClass' is a specialization of 'GASTClass'.
+'gast::statements::SimpleStatement' is a specialization of 'Statement'.
+'gast::functions::Constructor' is a specialization of 'functions::Function'.
+'gast::types::GenericClass' is a specialization of 'core::GenericEntity'.
+'gast::functions::Function' is a specialization of 'core::NamedModelElement'.
+'gast::types::TypeDecorator' is a specialization of 'GASTType'.
+'gast::annotations::Clone' is a specialization of 'core::ModelElement'.
+'gast::annotations::Subsystem' is a specialization of 'StructuralAbstraction'.
+'gast::functions::GenericMethod' is a specialization of 'core::GenericEntity'.
+'gast::accesses::ParameterInstantiationTypeAccess' is a specialization of 'TypeAccess'.
+'gast::statements::Branch' is a specialization of 'SourceEntity'.
+'gast::types::GASTClass' is a specialization of 'types::GASTType'.
+'gast::statements::CatchBlock' is a specialization of 'BlockStatement'.
+'gast::variables::Variable' is a specialization of 'core::SourceEntity'.
+'gast::accesses::FunctionAccess' is a specialization of 'Access'.
+'gast::variables::LocalVariable' is a specialization of 'Variable'.
+'gast::accesses::PropertyAccess' is a specialization of 'VariableAccess'.
+'gast::accesses::CastTypeAccess' is a specialization of 'TypeAccess'.
+'gast::types::GenericClass' is a specialization of 'types::GASTClass'.
+'gast::accesses::DeclarationTypeAccess' is a specialization of 'TypeAccess'.
+'gast::statements::ExceptionHandler' is a specialization of 'Statement'.
+'gast::functions::Delegate' is a specialization of 'types::GASTType'.
+'gast::variables::Property' is a specialization of 'types::Member'.
+'gast::statements::JumpStatement' is a specialization of 'Statement'.
+'gast::statements::BlockStatement' is a specialization of 'Statement'.
+'gast::annotations::Clone' is a specialization of 'annotations::ModelAnnotation'.
+'gast::types::Reference' is a specialization of 'TypeDecorator'.
+'gast::accesses::InheritanceTypeAccess' is a specialization of 'TypeAccess'.
+'gast::variables::Field' is a specialization of 'variables::Variable'.
+'gast::core::NamedModelElement' is a specialization of 'ModelElement'.
+'gast::functions::Destructor' is a specialization of 'types::Member'.
+'gast::annotations::StructuralAbstraction' is a specialization of 'core::NamedModelElement'.
+'gast::types::GASTType' is a specialization of 'NamedModelElement'.
+'gast::types::GASTUnion' is a specialization of 'GASTClass'.
+'gast::accesses::Access' is a specialization of 'BaseAccess'.
+'gast::variables::Property' (role 'gast_variables_Property316', cardinality 0..*) is associated with 'Method' (role 'Method317', cardinality 0..*).
+'gast::core::File' (role 'gast_core_File133', cardinality 0..*) is associated with 'GlobalFunction' (role 'GlobalFunction134', cardinality 0..*).
+'GlobalVariable' (role 'GlobalVariable128', cardinality 0..*) is associated with 'gast::core::File' (role 'gast_core_File127', cardinality 0..*).
+'gast::types::Member' (role 'gast_types_Member', cardinality 0..*) is associated with 'Member' (role 'Member', cardinality 0..*).
+'GlobalVariable' (role 'GlobalVariable137', cardinality 0..*) is associated with 'gast::core::File' (role 'gast_core_File136', cardinality 0..*).
+'gast::types::GASTClass' (role 'surroundingClass189', cardinality 0..*) is associated with 'Destructor' (role 'Destructor', cardinality 0..*).
+'gast::functions::Function' (role 'function', cardinality 0..*) is associated with 'DeclarationTypeAccess' (role 'DeclarationTypeAccess', cardinality 0..*).
+'gast::statements::Branch' (role 'branch', cardinality 0..*) is associated with 'Statement' (role 'Statement21', cardinality 0..*).
+'Method' (role 'Method314', cardinality 0..*) is associated with 'gast::variables::Property' (role 'gast_variables_Property', cardinality 0..*).
+'gast::types::TypeDecorator' (role 'gast_types_TypeDecorator', cardinality 0..*) is associated with 'GASTType' (role 'GASTType166', cardinality 0..*).
+'gast::types::GASTClass' (role 'surroundingClass184', cardinality 0..*) is associated with 'Delegate' (role 'Delegate185', cardinality 0..*).
+'gast::types::GASTClass' (role 'surroundingClass', cardinality 0..*) is associated with 'TypeAlias' (role 'TypeAlias182', cardinality 0..*).
+'Root' (role 'Root281', cardinality 0..*) is associated with 'gast::functions::GlobalFunction' (role 'globalFunctions280', cardinality 0..*).
+'Directory' (role 'Directory112', cardinality 0..*) is associated with 'gast::core::Directory' (role 'parentDirectory', cardinality 0..*).
+'GASTClass' (role 'GASTClass270', cardinality 0..*) is associated with 'gast::functions::Delegate' (role 'innerDelegates', cardinality 0..*).
+'GASTType' (role 'GASTType306', cardinality 0..*) is associated with 'gast::variables::Variable' (role 'gast_variables_Variable', cardinality 0..*).
+'Method' (role 'Method', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'surroundingClass193', cardinality 0..*).
+'gast::statements::BranchStatement' (role 'branchstatement', cardinality 0..*) is associated with 'Branch' (role 'Branch23', cardinality 0..*).
+'Directory' (role 'Directory', cardinality 0..*) is associated with 'gast::core::BasePath' (role 'basePath', cardinality 0..*).
+'File' (role 'File143', cardinality 0..*) is associated with 'gast::core::File' (role 'gast_core_File142', cardinality 0..*).
+'gast::functions::Function' (role 'gast_functions_Function295', cardinality 0..*) is associated with 'Access' (role 'Access296', cardinality 0..*).
+'gast::types::TypeAlias' (role 'innerTypeAliases', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass175', cardinality 0..*).
+'ModelAnnotation' (role 'ModelAnnotation', cardinality 0..*) is associated with 'gast::core::ModelElement' (role 'gast_core_ModelElement', cardinality 0..*).
+'Function' (role 'Function241', cardinality 0..*) is associated with 'gast::accesses::BaseAccess' (role 'gast_accesses_BaseAccess240', cardinality 0..*).
+'gast::core::File' (role 'files', cardinality 0..*) is associated with 'Directory' (role 'Directory145', cardinality 0..*).
+'gast::variables::Field' (role 'fields', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass310', cardinality 0..*).
+'GASTClass' (role 'GASTClass89', cardinality 0..*) is associated with 'gast::core::Root' (role 'gast_core_Root88', cardinality 0..*).
+'gast::core::Package' (role 'surroundingPackage', cardinality 0..*) is associated with 'Delegate' (role 'Delegate', cardinality 0..*).
+'GASTClass' (role 'GASTClass260', cardinality 0..*) is associated with 'gast::accesses::Access' (role 'gast_accesses_Access', cardinality 0..*).
+'gast::core::File' (role 'gast_core_File130', cardinality 0..*) is associated with 'GlobalFunction' (role 'GlobalFunction131', cardinality 0..*).
+'gast::core::Package' (role 'surroundingPackage64', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass65', cardinality 0..*).
+'gast::statements::LoopStatement' (role 'loopstatement', cardinality 0..*) is associated with 'Statement' (role 'Statement33', cardinality 0..*).
+'gast::core::Root' (role 'root109', cardinality 0..*) is associated with 'GlobalFunction' (role 'GlobalFunction110', cardinality 0..*).
+'File' (role 'File150', cardinality 0..*) is associated with 'gast::core::Position' (role 'gast_core_Position149', cardinality 0..*).
+'gast::functions::GlobalFunction' (role 'globalFunctions', cardinality 0..*) is associated with 'Package' (role 'Package278', cardinality 0..*).
+'gast::core::SourceEntity' (role 'sourceentity', cardinality 0..*) is associated with 'Position' (role 'Position', cardinality 0..*).
+'gast::types::GASTClass' (role 'gast_types_GASTClass215', cardinality 0..*) is associated with 'Function' (role 'Function216', cardinality 0..*).
+'GASTExpression' (role 'GASTExpression28', cardinality 0..*) is associated with 'gast::statements::LoopStatement' (role 'gast_statements_LoopStatement27', cardinality 0..*).
+'Package' (role 'Package96', cardinality 0..*) is associated with 'gast::core::Root' (role 'root', cardinality 0..*).
+'gast::core::Position' (role 'position', cardinality 0..*) is associated with 'SourceEntity' (role 'SourceEntity', cardinality 0..*).
+'GASTClass' (role 'GASTClass50', cardinality 0..*) is associated with 'gast::core::Package' (role 'gast_core_Package49', cardinality 0..*).
+'GASTType' (role 'GASTType122', cardinality 0..*) is associated with 'gast::core::File' (role 'gast_core_File121', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'gast::statements::Statement' (role 'gast_statements_Statement', cardinality 0..*).
+'Package' (role 'Package197', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'classes', cardinality 0..*).
+'BlockStatement' (role 'BlockStatement40', cardinality 0..*) is associated with 'gast::statements::GASTBehaviour' (role 'gast_statements_GASTBehaviour', cardinality 0..*).
+'ModelElement' (role 'ModelElement263', cardinality 0..*) is associated with 'gast::accesses::Access' (role 'gast_accesses_Access262', cardinality 0..*).
+'gast::statements::LoopStatement' (role 'gast_statements_LoopStatement30', cardinality 0..*) is associated with 'GASTExpression' (role 'GASTExpression31', cardinality 0..*).
+'gast::core::BasePath' (role 'basePaths', cardinality 0..*) is associated with 'Root' (role 'Root', cardinality 0..*).
+'gast::core::Directory' (role 'directory', cardinality 0..*) is associated with 'File' (role 'File', cardinality 0..*).
+'Package' (role 'Package177', cardinality 0..*) is associated with 'gast::types::TypeAlias' (role 'typeAliases', cardinality 0..*).
+'gast::types::GASTClass' (role 'gast_types_GASTClass218', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'GASTType' (role 'GASTType', cardinality 0..*) is associated with 'gast::core::Root' (role 'gast_core_Root102', cardinality 0..*).
+'gast::accesses::BaseAccess' (role 'accesses243', cardinality 0..*) is associated with 'CompositeAccess' (role 'CompositeAccess', cardinality 0..*).
+'DeclarationTypeAccess' (role 'DeclarationTypeAccess308', cardinality 0..*) is associated with 'gast::variables::Variable' (role 'surroundingVariable', cardinality 0..*).
+'Function' (role 'Function312', cardinality 0..*) is associated with 'gast::variables::LocalVariable' (role 'localVariables', cardinality 0..*).
+'Package' (role 'Package272', cardinality 0..*) is associated with 'gast::functions::Delegate' (role 'delegates', cardinality 0..*).
+'gast::functions::Function' (role 'gast_functions_Function293', cardinality 0..*) is associated with 'ThrowTypeAccess' (role 'ThrowTypeAccess', cardinality 0..*).
+'gast::functions::Function' (role 'surroundingFunction298', cardinality 0..*) is associated with 'BlockStatement' (role 'BlockStatement299', cardinality 0..*).
+'GASTExpression' (role 'GASTExpression36', cardinality 0..*) is associated with 'gast::statements::JumpStatement' (role 'gast_statements_JumpStatement', cardinality 0..*).
+'GASTClass' (role 'GASTClass302', cardinality 0..*) is associated with 'gast::functions::Function' (role 'surroundingFunction301', cardinality 0..*).
+'GlobalVariable' (role 'GlobalVariable', cardinality 0..*) is associated with 'gast::core::Package' (role 'surroundingPackage60', cardinality 0..*).
+'gast::types::GASTClass' (role 'gast_types_GASTClass', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass199', cardinality 0..*).
+'gast::statements::Statement' (role 'body', cardinality 0..*) is associated with 'LoopStatement' (role 'LoopStatement', cardinality 0..*).
+'gast::types::GASTClass' (role 'surroundingClass191', cardinality 0..*) is associated with 'Field' (role 'Field', cardinality 0..*).
+'GASTClass' (role 'GASTClass83', cardinality 0..*) is associated with 'gast::core::Root' (role 'gast_core_Root82', cardinality 0..*).
+'gast::accesses::CompositeAccess' (role 'surroundingCompositeAccess', cardinality 0..*) is associated with 'BaseAccess' (role 'BaseAccess231', cardinality 0..*).
+'GASTType' (role 'GASTType171', cardinality 0..*) is associated with 'gast::types::GASTArray' (role 'gast_types_GASTArray', cardinality 0..*).
+'gast::types::GASTClass' (role 'surroundingClass201', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass202', cardinality 0..*).
+'GASTClass' (role 'GASTClass204', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'innerClasses', cardinality 0..*).
+'gast::functions::Method' (role 'gast_functions_Method', cardinality 0..*) is associated with 'Property' (role 'Property283', cardinality 0..*).
+'gast::statements::BlockStatement' (role 'blockstatement', cardinality 0..*) is associated with 'Statement' (role 'Statement15', cardinality 0..*).
+'BaseAccess' (role 'BaseAccess', cardinality 0..*) is associated with 'gast::statements::Statement' (role 'parentStatement', cardinality 0..*).
+'CloneInstance' (role 'CloneInstance', cardinality 0..*) is associated with 'gast::statements::Statement' (role 'statements', cardinality 0..*).
+'TypeAlias' (role 'TypeAlias', cardinality 0..*) is associated with 'gast::core::Package' (role 'surroundingPackage74', cardinality 0..*).
+'gast::core::Root' (role 'root107', cardinality 0..*) is associated with 'BasePath' (role 'BasePath', cardinality 0..*).
+'gast::core::PackageAlias' (role 'gast_core_PackageAlias', cardinality 0..*) is associated with 'Package' (role 'Package153', cardinality 0..*).
+'CloneInstance' (role 'CloneInstance156', cardinality 0..*) is associated with 'gast::annotations::Clone' (role 'clone', cardinality 0..*).
+'Function' (role 'Function256', cardinality 0..*) is associated with 'gast::accesses::FunctionAccess' (role 'gast_accesses_FunctionAccess255', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root', cardinality 0..*) is associated with 'Access' (role 'Access77', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root104', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement105', cardinality 0..*).
+'GASTType' (role 'GASTType253', cardinality 0..*) is associated with 'gast::accesses::FunctionAccess' (role 'gast_accesses_FunctionAccess', cardinality 0..*).
+'Field' (role 'Field209', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'gast_types_GASTClass208', cardinality 0..*).
+'GASTClass' (role 'GASTClass238', cardinality 0..*) is associated with 'gast::accesses::BaseAccess' (role 'gast_accesses_BaseAccess237', cardinality 0..*).
+'GASTType' (role 'GASTType180', cardinality 0..*) is associated with 'gast::types::TypeParameterClass' (role 'gast_types_TypeParameterClass', cardinality 0..*).
+'gast::core::Directory' (role 'directories', cardinality 0..*) is associated with 'BasePath' (role 'BasePath117', cardinality 0..*).
+'gast::functions::Method' (role 'methods', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass285', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root100', cardinality 0..*) is associated with 'StructuralAbstraction' (role 'StructuralAbstraction', cardinality 0..*).
+'gast::statements::SimpleStatement' (role 'gast_statements_SimpleStatement', cardinality 0..*) is associated with 'GASTExpression' (role 'GASTExpression38', cardinality 0..*).
+'gast::functions::Delegate' (role 'gast_functions_Delegate267', cardinality 0..*) is associated with 'Function' (role 'Function268', cardinality 0..*).
+'GASTType' (role 'GASTType173', cardinality 0..*) is associated with 'gast::types::TypeAlias' (role 'gast_types_TypeAlias', cardinality 0..*).
+'GASTClass' (role 'GASTClass224', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'gast_types_GASTClass223', cardinality 0..*).
+'gast::functions::Function' (role 'surroundingFunction289', cardinality 0..*) is associated with 'LocalVariable' (role 'LocalVariable', cardinality 0..*).
+'Delegate' (role 'Delegate251', cardinality 0..*) is associated with 'gast::accesses::DelegateAccess' (role 'gast_accesses_DelegateAccess250', cardinality 0..*).
+'gast::accesses::DeclarationTypeAccess' (role 'typeDeclaration', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'Package' (role 'Package319', cardinality 0..*) is associated with 'gast::variables::GlobalVariable' (role 'globalVariables', cardinality 0..*).
+'gast::core::Position' (role 'gast_core_Position', cardinality 0..*) is associated with 'File' (role 'File147', cardinality 0..*).
+'gast::statements::CatchBlock' (role 'gast_statements_CatchBlock', cardinality 0..*) is associated with 'CatchParameter' (role 'CatchParameter', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root79', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass80', cardinality 0..*).
+'TypeParameterClass' (role 'TypeParameterClass', cardinality 0..*) is associated with 'gast::core::GenericEntity' (role 'gast_core_GenericEntity', cardinality 0..*).
+'gast::types::GASTClass' (role 'gast_types_GASTClass206', cardinality 0..*) is associated with 'InheritanceTypeAccess' (role 'InheritanceTypeAccess', cardinality 0..*).
+'gast::core::File' (role 'gast_core_File139', cardinality 0..*) is associated with 'Package' (role 'Package140', cardinality 0..*).
+'gast::accesses::BaseAccess' (role 'gast_accesses_BaseAccess', cardinality 0..*) is associated with 'Statement' (role 'Statement235', cardinality 0..*).
+'gast::types::GASTClass' (role 'friendClasses', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass213', cardinality 0..*).
+'gast::core::Package' (role 'surroundingPackage58', cardinality 0..*) is associated with 'GlobalFunction' (role 'GlobalFunction', cardinality 0..*).
+'Root' (role 'Root62', cardinality 0..*) is associated with 'gast::core::Package' (role 'packages', cardinality 0..*).
+'gast::core::Package' (role 'gast_core_Package52', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass53', cardinality 0..*).
+'gast::accesses::TypeAccess' (role 'gast_accesses_TypeAccess228', cardinality 0..*) is associated with 'GASTType' (role 'GASTType229', cardinality 0..*).
+'gast::functions::Function' (role 'gast_functions_Function', cardinality 0..*) is associated with 'Statement' (role 'Statement291', cardinality 0..*).
+'gast::core::Root' (role 'root98', cardinality 0..*) is associated with 'Clone' (role 'Clone', cardinality 0..*).
+'gast::core::Package' (role 'gast_core_Package', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass', cardinality 0..*).
+'gast::statements::Branch' (role 'gast_statements_Branch', cardinality 0..*) is associated with 'GASTExpression' (role 'GASTExpression', cardinality 0..*).
+'gast::core::Package' (role 'subPackages', cardinality 0..*) is associated with 'Package' (role 'Package69', cardinality 0..*).
+'Package' (role 'Package72', cardinality 0..*) is associated with 'gast::core::Package' (role 'gast_core_Package71', cardinality 0..*).
+'gast::statements::Statement' (role 'statement', cardinality 0..*) is associated with 'Branch' (role 'Branch', cardinality 0..*).
+'GASTExpression' (role 'GASTExpression25', cardinality 0..*) is associated with 'gast::statements::LoopStatement' (role 'gast_statements_LoopStatement', cardinality 0..*).
+'gast::statements::ExceptionHandler' (role 'gast_statements_ExceptionHandler2', cardinality 0..*) is associated with 'BlockStatement' (role 'BlockStatement', cardinality 0..*).
+'gast::annotations::CloneInstance' (role 'cloneInstance', cardinality 0..*) is associated with 'Statement' (role 'Statement160', cardinality 0..*).
+'gast::types::Reference' (role 'gast_types_Reference', cardinality 0..*) is associated with 'GASTType' (role 'GASTType164', cardinality 0..*).
+'Variable' (role 'Variable258', cardinality 0..*) is associated with 'gast::accesses::VariableAccess' (role 'gast_accesses_VariableAccess', cardinality 0..*).
+'GASTClass' (role 'GASTClass86', cardinality 0..*) is associated with 'gast::core::Root' (role 'gast_core_Root85', cardinality 0..*).
+'Constructor' (role 'Constructor', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'surroundingClass187', cardinality 0..*).
+'gast::types::GASTClass' (role 'gast_types_GASTClass220', cardinality 0..*) is associated with 'Access' (role 'Access221', cardinality 0..*).
+'gast::annotations::Clone' (role 'clones', cardinality 0..*) is associated with 'Root' (role 'Root158', cardinality 0..*).
+'GASTClass' (role 'GASTClass274', cardinality 0..*) is associated with 'gast::functions::Constructor' (role 'constructors', cardinality 0..*).
+'Directory' (role 'Directory114', cardinality 0..*) is associated with 'gast::core::Directory' (role 'subDirectory', cardinality 0..*).
+'gast::functions::Function' (role 'surroundingFunction', cardinality 0..*) is associated with 'FormalParameter' (role 'FormalParameter', cardinality 0..*).
+'gast::accesses::DeclarationTypeAccess' (role 'returnTypeDeclaration', cardinality 0..*) is associated with 'Function' (role 'Function245', cardinality 0..*).
+'Function' (role 'Function248', cardinality 0..*) is associated with 'gast::accesses::DelegateAccess' (role 'gast_accesses_DelegateAccess', cardinality 0..*).
+'gast::annotations::CloneInstance' (role 'cloneInstances', cardinality 0..*) is associated with 'Clone' (role 'Clone162', cardinality 0..*).
+'gast::core::Package' (role 'gast_core_Package55', cardinality 0..*) is associated with 'Access' (role 'Access', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root91', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'gast::statements::ExceptionHandler' (role 'gast_statements_ExceptionHandler4', cardinality 0..*) is associated with 'BlockStatement' (role 'BlockStatement5', cardinality 0..*).
+'GASTClass' (role 'GASTClass47', cardinality 0..*) is associated with 'gast::core::Package' (role 'gast_core_Package46', cardinality 0..*).
+'gast::types::GASTClass' (role 'localClasses', cardinality 0..*) is associated with 'Function' (role 'Function195', cardinality 0..*).
+'GASTType' (role 'GASTType169', cardinality 0..*) is associated with 'gast::types::TypeDecorator' (role 'gast_types_TypeDecorator168', cardinality 0..*).
+'GASTType' (role 'GASTType226', cardinality 0..*) is associated with 'gast::accesses::TypeAccess' (role 'gast_accesses_TypeAccess', cardinality 0..*).
+'BranchStatement' (role 'BranchStatement', cardinality 0..*) is associated with 'gast::statements::Branch' (role 'branches', cardinality 0..*).
+'gast::core::File' (role 'gast_core_File', cardinality 0..*) is associated with 'Root' (role 'Root119', cardinality 0..*).
+'Function' (role 'Function', cardinality 0..*) is associated with 'gast::statements::BlockStatement' (role 'body17', cardinality 0..*).
+'GASTClass' (role 'GASTClass211', cardinality 0..*) is associated with 'gast::types::GASTClass' (role 'gastClass', cardinality 0..*).
+'gast::statements::Statement' (role 'statements9', cardinality 0..*) is associated with 'BlockStatement' (role 'BlockStatement10', cardinality 0..*).
+'gast::accesses::BaseAccess' (role 'accesses', cardinality 0..*) is associated with 'Statement' (role 'Statement233', cardinality 0..*).
+'gast::functions::Destructor' (role 'destructors', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass276', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'gast::core::Package' (role 'surroundingPackage67', cardinality 0..*).
+'gast::statements::ExceptionHandler' (role 'gast_statements_ExceptionHandler', cardinality 0..*) is associated with 'CatchBlock' (role 'CatchBlock', cardinality 0..*).
+'gast::core::File' (role 'gast_core_File124', cardinality 0..*) is associated with 'GASTType' (role 'GASTType125', cardinality 0..*).
+'gast::functions::Delegate' (role 'gast_functions_Delegate', cardinality 0..*) is associated with 'GASTClass' (role 'GASTClass265', cardinality 0..*).
+'gast::core::Root' (role 'gast_core_Root93', cardinality 0..*) is associated with 'GlobalVariable' (role 'GlobalVariable94', cardinality 0..*).
+'gast::variables::FormalParameter' (role 'formalParameters', cardinality 0..*) is associated with 'Function' (role 'Function304', cardinality 0..*).

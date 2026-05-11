@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class aadl2_SubprogramGroupPrototype extends SubprogramGroup, ComponentPrototype, SubprogramGroupSubcomponentType {
+
+
+
+
+    public aadl2_SubprogramGroupPrototype(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

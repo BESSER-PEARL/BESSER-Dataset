@@ -1,0 +1,49 @@
+The model has 25 class(es).
+The class 'model::Where' has no attributes.
+The class 'model::ColumnAlias' has the following attributes: 'name' of type str.
+The class 'model::Condition' has no attributes.
+The class 'BooleanOperation' has no attributes.
+The class 'model::NotEquals' has no attributes.
+The class 'model::Column' has the following attributes: 'name' of type str.
+The class 'model::Existence' has no attributes.
+The class 'model::Or' has no attributes.
+The class 'model::And' has no attributes.
+The class 'model::LessThan' has no attributes.
+The class 'model::GreaterThan' has no attributes.
+The class 'model::Equals' has no attributes.
+The class 'model::Exists' has no attributes.
+The class 'model::BooleanOperation' has no attributes.
+The class 'Condition' has no attributes.
+The class 'Existence' has no attributes.
+The class 'model::Union' has no attributes.
+The class 'model::From' has no attributes.
+The class 'model::Comparison' has the following attributes: 'lhs' of type str; 'rhs' of type str.
+The class 'model::Select' has no attributes.
+The class 'model::TableAlias' has the following attributes: 'name' of type str.
+The class 'model::NotExists' has no attributes.
+The class 'model::Table' has the following attributes: 'name' of type str.
+The class 'ComparisonOperator' has no attributes.
+The class 'model::ComparisonOperator' has no attributes.
+'model::Or' is a specialization of 'BooleanOperation'.
+'model::Comparison' is a specialization of 'Condition'.
+'model::And' is a specialization of 'BooleanOperation'.
+'model::GreaterThan' is a specialization of 'ComparisonOperator'.
+'model::NotEquals' is a specialization of 'ComparisonOperator'.
+'model::NotExists' is a specialization of 'Existence'.
+'model::Equals' is a specialization of 'ComparisonOperator'.
+'model::LessThan' is a specialization of 'ComparisonOperator'.
+'model::Existence' is a specialization of 'Condition'.
+'model::Exists' is a specialization of 'Existence'.
+'model::Column' (role 'model_Column8', cardinality 0..*) is associated with 'model::ColumnAlias' (role 'model_ColumnAlias', cardinality 0..*).
+'model::Select' (role 'model_Select2', cardinality 0..*) is associated with 'model::From' (role 'model_From', cardinality 0..*).
+'model::Select' (role 'model_Select', cardinality 0..*) is associated with 'model::Column' (role 'model_Column', cardinality 0..*).
+'model::ComparisonOperator' (role 'model_ComparisonOperator', cardinality 0..*) is associated with 'model::Comparison' (role 'model_Comparison', cardinality 0..*).
+'model::Select' (role 'model_Select19', cardinality 0..*) is associated with 'model::Union' (role 'model_Union18', cardinality 0..*).
+'model::Select' (role 'model_Select4', cardinality 0..*) is associated with 'model::Where' (role 'model_Where', cardinality 0..*).
+'model::Condition' (role 'model_Condition', cardinality 0..*) is associated with 'model::Where' (role 'model_Where14', cardinality 0..*).
+'model::Table' (role 'model_Table', cardinality 0..*) is associated with 'model::From' (role 'model_From10', cardinality 0..*).
+'model::BooleanOperation' (role 'model_BooleanOperation22', cardinality 0..*) is associated with 'model::Condition' (role 'model_Condition21', cardinality 0..*).
+'model::BooleanOperation' (role 'model_BooleanOperation', cardinality 0..*) is associated with 'model::Condition' (role 'model_Condition16', cardinality 0..*).
+'model::Union' (role 'model_Union', cardinality 0..*) is associated with 'model::Select' (role 'model_Select6', cardinality 0..*).
+'model::Select' (role 'model_Select25', cardinality 0..*) is associated with 'model::Existence' (role 'model_Existence', cardinality 0..*).
+'model::Table' (role 'model_Table12', cardinality 0..*) is associated with 'model::TableAlias' (role 'model_TableAlias', cardinality 0..*).

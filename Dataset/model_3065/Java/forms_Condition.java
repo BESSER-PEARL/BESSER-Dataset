@@ -1,0 +1,40 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class forms_Condition  {
+
+    private String conditionID;
+    private String type;
+
+
+
+    public forms_Condition(
+        String conditionID,        String type    ) {
+        this.conditionID = conditionID;
+        this.type = type;
+    }
+
+
+    public String getConditionid() {
+        return conditionID;
+    }
+
+    public void setConditionid(String conditionID) {
+        this.conditionID = conditionID;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+}

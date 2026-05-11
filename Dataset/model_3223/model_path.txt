@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leonardox/compiladores-ufcg-2015-2-compilador-c/org.xtext.example.ansic/model/generated/Ansic.ecore

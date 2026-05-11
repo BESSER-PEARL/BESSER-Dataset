@@ -1,0 +1,36 @@
+The model has 15 class(es).
+The class 'ramRoot::MTpos::::Element' has no attributes.
+The class 'ramRoot::MTpos::::Restaurant' has no attributes.
+The class 'ramRoot::MTpre::::Waitress' has the following attributes: 'MTpre__name' of type str.
+The class 'ramRoot::GenericNode' has no attributes.
+The class 'ramRoot::MTpre::::Restaurant' has no attributes.
+The class 'ramRoot::MT::::Element' has the following attributes: 'MT__isProcessed' of type bool; 'MT__label' of type str.
+The class 'MTpre::::Element' has no attributes.
+The class 'MT::::Element' has no attributes.
+The class 'MTpos::::Element' has no attributes.
+The class 'ramRoot::MTpos::::Waitress' has the following attributes: 'MTpos__name' of type str.
+The class 'ramRoot::MTpos::::Table' has the following attributes: 'MTpos__isReserved' of type str; 'MTpos__id' of type str.
+The class 'ramRoot::MTpre::::Chair' has the following attributes: 'MTpre__order' of type str.
+The class 'ramRoot::MTpre::::Element' has the following attributes: 'MT__matchSubtype' of type bool.
+The class 'ramRoot::MTpos::::Chair' has the following attributes: 'MTpos__order' of type str.
+The class 'ramRoot::MTpre::::Table' has the following attributes: 'MTpre__id' of type str; 'MTpre__isReserved' of type str.
+'ramRoot::MTpre::::Element' is a specialization of 'MT::::Element'.
+'ramRoot::MTpos::::Restaurant' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpos::::Chair' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpre::::Restaurant' is a specialization of 'MTpre::::Element'.
+'ramRoot::MTpos::::Table' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpos::::Element' is a specialization of 'MT::::Element'.
+'ramRoot::MTpre::::Chair' is a specialization of 'MTpre::::Element'.
+'ramRoot::GenericNode' is a specialization of 'MT::::Element'.
+'ramRoot::MTpre::::Waitress' is a specialization of 'MTpre::::Element'.
+'ramRoot::MTpre::::Table' is a specialization of 'MTpre::::Element'.
+'ramRoot::MTpos::::Waitress' is a specialization of 'MTpos::::Element'.
+'ramRoot::MTpos::::Waitress' (role 'ramRoot_MTpos__Waitress', cardinality 0..*) is associated with 'ramRoot::MTpos::::Table' (role 'ramRoot_MTpos__Table3', cardinality 0..*).
+'ramRoot::MTpre::::Restaurant' (role 'ramRoot_MTpre__Restaurant', cardinality 0..*) is associated with 'ramRoot::MTpre::::Table' (role 'ramRoot_MTpre__Table8', cardinality 0..*).
+'ramRoot::MTpos::::Restaurant' (role 'ramRoot_MTpos__Restaurant15', cardinality 0..*) is associated with 'ramRoot::MTpos::::Table' (role 'ramRoot_MTpos__Table16', cardinality 0..*).
+'ramRoot::MTpos::::Waitress' (role 'ramRoot_MTpos__Waitress13', cardinality 0..*) is associated with 'ramRoot::MTpos::::Restaurant' (role 'ramRoot_MTpos__Restaurant', cardinality 0..*).
+'ramRoot::MTpre::::Waitress' (role 'ramRoot_MTpre__Waitress11', cardinality 0..*) is associated with 'ramRoot::MTpre::::Restaurant' (role 'ramRoot_MTpre__Restaurant10', cardinality 0..*).
+'ramRoot::MTpos::::Table' (role 'ramRoot_MTpos__Table', cardinality 0..*) is associated with 'ramRoot::MTpos::::Chair' (role 'ramRoot_MTpos__Chair', cardinality 0..*).
+'ramRoot::MTpre::::Table' (role 'ramRoot_MTpre__Table', cardinality 0..*) is associated with 'ramRoot::MTpre::::Chair' (role 'ramRoot_MTpre__Chair', cardinality 0..*).
+'ramRoot::MTpre::::Waitress' (role 'ramRoot_MTpre__Waitress', cardinality 0..*) is associated with 'ramRoot::MTpre::::Table' (role 'ramRoot_MTpre__Table6', cardinality 0..*).
+'ramRoot::MT::::Element' (role 'ramRoot_MT__Element', cardinality 0..*) is associated with 'ramRoot::GenericNode' (role 'ramRoot_GenericNode', cardinality 0..*).

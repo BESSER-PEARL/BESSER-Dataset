@@ -1,0 +1,658 @@
+The model has 217 class(es).
+The class 'bpmnprof::OpaqueAction' has no attributes.
+The class 'bpmnprof::Lane' has no attributes.
+The class 'bpmnprof::SendTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::FlowNode' has no attributes.
+The class 'bpmnprof::SignalEventDefinition' has no attributes.
+The class 'bpmnprof::DataStore' has the following attributes: 'isUnlimited' of type str; 'capacity' of type str.
+The class 'bpmnprof::OutputSet' has no attributes.
+The class 'bpmnprof::Operation' has no attributes.
+The class 'bpmnprof::ErrorEventDefinition' has no attributes.
+The class 'bpmnprof::ScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'EventDefinition' has no attributes.
+The class 'bpmnprof::SequenceFlow' has the following attributes: 'isImmediate' of type str.
+The class 'bpmnprof::LaneSet' has no attributes.
+The class 'bpmnprof::BPMNProcess' has the following attributes: 'isExecutable' of type str; 'processType' of type str; 'isClosed' of type str.
+The class 'bpmnprof::DataOutput' has the following attributes: 'isCollection' of type str.
+The class 'bpmnprof::InformationFlow' has no attributes.
+The class 'bpmnprof::ComplexGateway' has no attributes.
+The class 'bpmnprof::GlobalUserTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::Definitions' has the following attributes: 'typeLanguage' of type str; 'targetNamespace' of type str; 'expressionLanguage' of type str; 'exporterVersion' of type str; 'exporter' of type str.
+The class 'bpmnprof::InterruptibleActivityRegion' has no attributes.
+The class 'bpmnprof::Interface' has no attributes.
+The class 'bpmnprof::Documentation' has the following attributes: 'textFormat' of type str; 'text' of type str.
+The class 'bpmnprof::StartEvent' has the following attributes: 'isInterrupting' of type str.
+The class 'bpmnprof::BPMNSignal' has no attributes.
+The class 'ResourceRole' has no attributes.
+The class 'FlowNode' has no attributes.
+The class 'bpmnprof::FinalNode' has no attributes.
+The class 'NonExclusiveGateway' has no attributes.
+The class 'bpmnprof::EventDefinition' has no attributes.
+The class 'bpmnprof::BPMNEvent' has no attributes.
+The class 'bpmnprof::ParticipantMultiplicity' has the following attributes: 'minimum' of type str; 'maximum' of type str.
+The class 'bpmnprof::ServiceTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::ParallelGateway' has no attributes.
+The class 'bpmnprof::Stereotype' has no attributes.
+The class 'bpmnprof::InteractionNode' has no attributes.
+The class 'bpmnprof::ConversationLink' has no attributes.
+The class 'bpmnprof::ResourceRole' has no attributes.
+The class 'bpmnprof::PotentialOwner' has no attributes.
+The class 'ThrowEvent' has no attributes.
+The class 'bpmnprof::Comment' has no attributes.
+The class 'bpmnprof::Category' has no attributes.
+The class 'bpmnprof::ExclusiveGateway' has no attributes.
+The class 'bpmnprof::DataOutputAssociation' has no attributes.
+The class 'SubProcess' has no attributes.
+The class 'bpmnprof::BaseElement' has the following attributes: 'id' of type str.
+The class 'FlowElement' has no attributes.
+The class 'bpmnprof::ParameterSet' has no attributes.
+The class 'bpmnprof::OpaqueExpression' has no attributes.
+The class 'bpmnprof::DataInput' has the following attributes: 'isCollection' of type str.
+The class 'bpmnprof::ImplicitThrowEvent' has no attributes.
+The class 'bpmnprof::ThrowEvent' has no attributes.
+The class 'bpmnprof::StandardLoopCharacteristics' has the following attributes: 'testBefore' of type str; 'loopMaximum' of type str.
+The class 'bpmnprof::HumanPerformer' has no attributes.
+The class 'bpmnprof::EventBasedGateway' has the following attributes: 'instantiate' of type str; 'eventGatewayType' of type str.
+The class 'bpmnprof::NonExclusiveGateway' has no attributes.
+The class 'Gateway' has no attributes.
+The class 'bpmnprof::TerminateEventDefinition' has no attributes.
+The class 'bpmnprof::GlobalScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'bpmnprof::ItemDefinition' has the following attributes: 'itemKind' of type str; 'isCollection' of type str.
+The class 'bpmnprof::Action' has no attributes.
+The class 'bpmnprof::Property' has no attributes.
+The class 'bpmnprof::CorrelationPropertyBinding' has no attributes.
+The class 'bpmnprof::BPMNRelationship' has the following attributes: 'direction' of type str; 'type' of type str.
+The class 'bpmnprof::Import' has the following attributes: 'location' of type str; 'importType' of type str; 'namespace' of type str.
+The class 'InteractionNode' has no attributes.
+The class 'BPMNCollaboration' has no attributes.
+The class 'bpmnprof::BPMNOperation' has no attributes.
+The class 'bpmnprof::CallBehaviorAction' has no attributes.
+The class 'bpmnprof::Collaboration' has no attributes.
+The class 'bpmnprof::DataStoreNode' has no attributes.
+The class 'bpmnprof::ExtensionDefinition' has no attributes.
+The class 'bpmnprof::InputSet' has no attributes.
+The class 'bpmnprof::ManualTask' has no attributes.
+The class 'bpmnprof::BPMNArtifact' has no attributes.
+The class 'bpmnprof::ControlNode' has no attributes.
+The class 'bpmnprof::Constraint' has no attributes.
+The class 'bpmnprof::BPMNExpression' has no attributes.
+The class 'bpmnprof::ExtensionAttributeDefinition' has the following attributes: 'isReference' of type str; 'type' of type str.
+The class 'bpmnprof::MessageFlow' has no attributes.
+The class 'bpmnprof::MessageEventDefinition' has no attributes.
+The class 'bpmnprof::ResourceParameter' has the following attributes: 'isRequired' of type str.
+The class 'bpmnprof::BPMNCollaboration' has the following attributes: 'isClosed' of type str.
+The class 'BPMNEvent' has no attributes.
+The class 'bpmnprof::DataAssociation' has no attributes.
+The class 'bpmnprof::ExpansionRegion' has no attributes.
+The class 'bpmnprof::InputPin' has no attributes.
+The class 'bpmnprof::Package' has no attributes.
+The class 'bpmnprof::BPMNInterface' has no attributes.
+The class 'bpmnprof::EscalationEventDefinition' has no attributes.
+The class 'ItemDefinition' has no attributes.
+The class 'bpmnprof::CategoryValue' has no attributes.
+The class 'bpmnprof::CompensateEventDefinition' has the following attributes: 'waitForCompletion' of type str.
+The class 'bpmnprof::OutputPin' has no attributes.
+The class 'bpmnprof::CancelEventDefinition' has no attributes.
+The class 'bpmnprof::CorrelationSubscription' has no attributes.
+The class 'Performer' has no attributes.
+The class 'ItemAwareElement' has no attributes.
+The class 'FlowElementsContainer' has no attributes.
+The class 'bpmnprof::Activity' has no attributes.
+The class 'bpmnprof::DataObjectReference' has no attributes.
+The class 'bpmnprof::Transaction' has the following attributes: 'method' of type str.
+The class 'bpmnprof::Monitoring' has no attributes.
+The class 'bpmnprof::Group' has no attributes.
+The class 'bpmnprof::ResourceParameterBinding' has no attributes.
+The class 'bpmnprof::BPMNExtension' has the following attributes: 'mustUnderstand' of type str.
+The class 'bpmnprof::Enumeration' has no attributes.
+The class 'bpmnprof::GlobalBusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::Error' has the following attributes: 'errorCode' of type str.
+The class 'bpmnprof::Rendering' has no attributes.
+The class 'bpmnprof::CallEvent' has no attributes.
+The class 'bpmnprof::Participant' has no attributes.
+The class 'bpmnprof::ExtensionAttributeValue' has no attributes.
+The class 'bpmnprof::StructuredActivityNode' has no attributes.
+The class 'bpmnprof::FlowFinalNode' has no attributes.
+The class 'bpmnprof::Assignment' has no attributes.
+The class 'bpmnprof::ItemAwareElement' has no attributes.
+The class 'bpmnprof::GlobalConversation' has no attributes.
+The class 'bpmnprof::ParticipantAssociation' has no attributes.
+The class 'bpmnprof::DataState' has no attributes.
+The class 'bpmnprof::CallActivity' has no attributes.
+The class 'bpmnprof::ActivityNode' has no attributes.
+The class 'BPMNActivity' has no attributes.
+The class 'bpmnprof::FlowElement' has no attributes.
+The class 'bpmnprof::PartnerEntity' has no attributes.
+The class 'bpmnprof::ChangeEvent' has no attributes.
+The class 'bpmnprof::LoopCharacteristics' has no attributes.
+The class 'bpmnprof::MultiplicityElement' has no attributes.
+The class 'bpmnprof::DataObject' has the following attributes: 'isCollection' of type str.
+The class 'bpmnprof::Performer' has no attributes.
+The class 'bpmnprof::Parameter' has no attributes.
+The class 'BPMNArtifact' has no attributes.
+The class 'CallableElement' has no attributes.
+The class 'bpmnprof::CollaborationUse' has no attributes.
+The class 'bpmnprof::State' has no attributes.
+The class 'bpmnprof::Image' has no attributes.
+The class 'bpmnprof::ObjectFlow' has no attributes.
+The class 'bpmnprof::BPMNAssociation' has the following attributes: 'associationDirection' of type str.
+The class 'bpmnprof::CorrelationProperty' has no attributes.
+The class 'bpmnprof::BoundaryEvent' has the following attributes: 'cancelActivity' of type str.
+The class 'bpmnprof::InputOutputSpecification' has no attributes.
+The class 'bpmnprof::PartnerRole' has no attributes.
+The class 'bpmnprof::SendObjectAction' has no attributes.
+The class 'bpmnprof::Behavior' has no attributes.
+The class 'bpmnprof::Auditing' has no attributes.
+The class 'CatchEvent' has no attributes.
+The class 'bpmnprof::EnumerationLiteral' has no attributes.
+The class 'bpmnprof::GlobalTask' has no attributes.
+The class 'bpmnprof::UserTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::CallableElement' has no attributes.
+The class 'bpmnprof::BPMNMessage' has no attributes.
+The class 'bpmnprof::InstanceSpecification' has no attributes.
+The class 'bpmnprof::CatchEvent' has the following attributes: 'parallelMultiple' of type str.
+The class 'bpmnprof::BPMNActivity' has the following attributes: 'startQuantity' of type str; 'isForCompensation' of type str; 'completionQuantity' of type str.
+The class 'bpmnprof::AcceptEventAction' has no attributes.
+The class 'bpmnprof::Dependency' has no attributes.
+The class 'bpmnprof::FlowElementsContainer' has no attributes.
+The class 'bpmnprof::DataStoreReference' has no attributes.
+The class 'bpmnprof::ResourceAssignmentExpression' has no attributes.
+The class 'Task' has no attributes.
+The class 'bpmnprof::TextAnnotation' has the following attributes: 'textFormat' of type str; 'text' of type str.
+The class 'bpmnprof::RootElement' has no attributes.
+The class 'bpmnprof::DecisionNode' has no attributes.
+The class 'bpmnprof::InitialNode' has no attributes.
+The class 'bpmnprof::ActivityGroup' has no attributes.
+The class 'bpmnprof::DataInputAssociation' has no attributes.
+The class 'bpmnprof::CallOperationAction' has no attributes.
+The class 'bpmnprof::IntermediateCatchEvent' has no attributes.
+The class 'bpmnprof::SubProcess' has the following attributes: 'triggeredByEvent' of type str.
+The class 'LoopCharacteristics' has no attributes.
+The class 'bpmnprof::TimerEventDefinition' has no attributes.
+The class 'bpmnprof::ForkNode' has no attributes.
+The class 'HumanPerformer' has no attributes.
+The class 'bpmnprof::IntermediateThrowEvent' has no attributes.
+The class 'bpmnprof::FormalExpression' has no attributes.
+The class 'bpmnprof::CallConversation' has no attributes.
+The class 'bpmnprof::Event' has no attributes.
+The class 'bpmnprof::SubConversation' has no attributes.
+The class 'bpmnprof::JoinNode' has no attributes.
+The class 'bpmnprof::MessageFlowAssociation' has no attributes.
+The class 'bpmnprof::Resource' has no attributes.
+The class 'bpmnprof::BPMNProperty' has no attributes.
+The class 'bpmnprof::Class' has no attributes.
+The class 'DataAssociation' has no attributes.
+The class 'bpmnprof::ConversationNode' has no attributes.
+The class 'bpmnprof::MergeNode' has no attributes.
+The class 'BPMNExpression' has no attributes.
+The class 'bpmnprof::Slot' has no attributes.
+The class 'GlobalTask' has no attributes.
+The class 'ConversationNode' has no attributes.
+The class 'bpmnprof::Escalation' has the following attributes: 'escalationCode' of type str.
+The class 'bpmnprof::Conversation' has no attributes.
+The class 'bpmnprof::ControlFlow' has no attributes.
+The class 'RootElement' has no attributes.
+The class 'bpmnprof::ReceiveTask' has the following attributes: 'instantiate' of type str; 'implementation' of type str.
+The class 'bpmnprof::PackageImport' has no attributes.
+The class 'bpmnprof::ActivityParameterNode' has no attributes.
+The class 'bpmnprof::LoopNode' has no attributes.
+The class 'bpmnprof::InputOutputBinding' has no attributes.
+The class 'bpmnprof::CorrelationKey' has no attributes.
+The class 'bpmnprof::MultiInstanceLoopCharacteristics' has the following attributes: 'behavior' of type str; 'isSequential' of type str.
+The class 'bpmnprof::InclusiveGateway' has no attributes.
+The class 'bpmnprof::LinkEventDefinition' has no attributes.
+The class 'bpmnprof::ActivityPartition' has no attributes.
+The class 'bpmnprof::TypedElement' has no attributes.
+The class 'bpmnprof::EndEvent' has no attributes.
+The class 'bpmnprof::AdHocSubProcess' has the following attributes: 'ordering' of type str; 'cancelRemainingInstances' of type str.
+The class 'bpmnprof::ConditionalEventDefinition' has no attributes.
+The class 'bpmnprof::ComplexBehaviorDefinition' has no attributes.
+The class 'bpmnprof::PackageableElement' has no attributes.
+The class 'bpmnprof::GlobalManualTask' has no attributes.
+The class 'bpmnprof::Gateway' has no attributes.
+The class 'bpmnprof::CorrelationPropertyRetrievalExpression' has no attributes.
+The class 'bpmnprof::BusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'bpmnprof::Task' has no attributes.
+The class 'bpmnprof::Element' has no attributes.
+The class 'BaseElement' has no attributes.
+The class 'bpmnprof::OpaqueBehavior' has no attributes.
+The enumeration 'ProcessType' has the following literals: 'public', 'none', 'private'.
+The enumeration 'RelationshipDirection' has the following literals: 'none', 'both', 'backward', 'forward'.
+The enumeration 'AdHocOrdering' has the following literals: 'sequential', 'parallel'.
+The enumeration 'GatewayDirection' has the following literals: 'mixed', 'converging', 'diverging', 'unspecified'.
+The enumeration 'EventBasedGatewayType' has the following literals: 'parallel', 'exclusive'.
+The enumeration 'MultiInstanceBehavior' has the following literals: 'complex', 'all', 'none', 'one'.
+The enumeration 'AssociationDirection' has the following literals: 'both', 'one', 'none'.
+The enumeration 'ItemKind' has the following literals: 'physical', 'information'.
+'bpmnprof::Assignment' is a specialization of 'BaseElement'.
+'bpmnprof::ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::DataObjectReference' is a specialization of 'FlowElement'.
+'bpmnprof::StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'bpmnprof::DataObject' is a specialization of 'FlowElement'.
+'bpmnprof::StartEvent' is a specialization of 'CatchEvent'.
+'bpmnprof::FlowNode' is a specialization of 'FlowElement'.
+'bpmnprof::BPMNExpression' is a specialization of 'BaseElement'.
+'bpmnprof::TerminateEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::Lane' is a specialization of 'BaseElement'.
+'bpmnprof::InclusiveGateway' is a specialization of 'NonExclusiveGateway'.
+'bpmnprof::DataObjectReference' is a specialization of 'ItemAwareElement'.
+'bpmnprof::Task' is a specialization of 'BPMNActivity'.
+'bpmnprof::LoopCharacteristics' is a specialization of 'BaseElement'.
+'bpmnprof::Rendering' is a specialization of 'BaseElement'.
+'bpmnprof::Conversation' is a specialization of 'ConversationNode'.
+'bpmnprof::FlowElement' is a specialization of 'BaseElement'.
+'bpmnprof::BPMNArtifact' is a specialization of 'BaseElement'.
+'bpmnprof::Performer' is a specialization of 'ResourceRole'.
+'bpmnprof::EscalationEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+'bpmnprof::DataAssociation' is a specialization of 'BaseElement'.
+'bpmnprof::IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+'bpmnprof::ParallelGateway' is a specialization of 'NonExclusiveGateway'.
+'bpmnprof::Escalation' is a specialization of 'ItemDefinition'.
+'bpmnprof::CancelEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::PotentialOwner' is a specialization of 'HumanPerformer'.
+'bpmnprof::Participant' is a specialization of 'BaseElement'.
+'bpmnprof::ParticipantAssociation' is a specialization of 'BaseElement'.
+'bpmnprof::MessageEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::GlobalTask' is a specialization of 'CallableElement'.
+'bpmnprof::Group' is a specialization of 'BPMNArtifact'.
+'bpmnprof::BPMNSignal' is a specialization of 'ItemDefinition'.
+'bpmnprof::ResourceParameterBinding' is a specialization of 'BaseElement'.
+'bpmnprof::ThrowEvent' is a specialization of 'BPMNEvent'.
+'bpmnprof::Error' is a specialization of 'ItemDefinition'.
+'bpmnprof::EventBasedGateway' is a specialization of 'Gateway'.
+'bpmnprof::SequenceFlow' is a specialization of 'FlowElement'.
+'bpmnprof::FormalExpression' is a specialization of 'BPMNExpression'.
+'bpmnprof::UserTask' is a specialization of 'Task'.
+'bpmnprof::Monitoring' is a specialization of 'BaseElement'.
+'bpmnprof::BPMNRelationship' is a specialization of 'BaseElement'.
+'bpmnprof::OutputSet' is a specialization of 'BaseElement'.
+'bpmnprof::InputOutputSpecification' is a specialization of 'BaseElement'.
+'bpmnprof::ExclusiveGateway' is a specialization of 'Gateway'.
+'bpmnprof::CategoryValue' is a specialization of 'BaseElement'.
+'bpmnprof::HumanPerformer' is a specialization of 'Performer'.
+'bpmnprof::BPMNInterface' is a specialization of 'RootElement'.
+'bpmnprof::IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+'bpmnprof::RootElement' is a specialization of 'BaseElement'.
+'bpmnprof::ErrorEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::ItemDefinition' is a specialization of 'RootElement'.
+'bpmnprof::DataObject' is a specialization of 'ItemAwareElement'.
+'bpmnprof::BPMNProcess' is a specialization of 'FlowElementsContainer'.
+'bpmnprof::ResourceRole' is a specialization of 'BaseElement'.
+'bpmnprof::ResourceParameter' is a specialization of 'BaseElement'.
+'bpmnprof::DataStore' is a specialization of 'RootElement'.
+'bpmnprof::Auditing' is a specialization of 'BaseElement'.
+'bpmnprof::DataOutput' is a specialization of 'ItemAwareElement'.
+'bpmnprof::ScriptTask' is a specialization of 'Task'.
+'bpmnprof::CorrelationSubscription' is a specialization of 'BaseElement'.
+'bpmnprof::BoundaryEvent' is a specialization of 'CatchEvent'.
+'bpmnprof::CorrelationKey' is a specialization of 'BaseElement'.
+'bpmnprof::CallConversation' is a specialization of 'ConversationNode'.
+'bpmnprof::PartnerEntity' is a specialization of 'RootElement'.
+'bpmnprof::Transaction' is a specialization of 'SubProcess'.
+'bpmnprof::BPMNAssociation' is a specialization of 'BPMNArtifact'.
+'bpmnprof::DataStoreReference' is a specialization of 'ItemAwareElement'.
+'bpmnprof::DataOutputAssociation' is a specialization of 'DataAssociation'.
+'bpmnprof::SendTask' is a specialization of 'Task'.
+'bpmnprof::CallableElement' is a specialization of 'RootElement'.
+'bpmnprof::BPMNEvent' is a specialization of 'FlowNode'.
+'bpmnprof::GlobalUserTask' is a specialization of 'GlobalTask'.
+'bpmnprof::NonExclusiveGateway' is a specialization of 'Gateway'.
+'bpmnprof::ReceiveTask' is a specialization of 'Task'.
+'bpmnprof::ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+'bpmnprof::ParticipantMultiplicity' is a specialization of 'BaseElement'.
+'bpmnprof::BPMNProperty' is a specialization of 'ItemAwareElement'.
+'bpmnprof::LinkEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::ResourceAssignmentExpression' is a specialization of 'BPMNExpression'.
+'bpmnprof::BPMNCollaboration' is a specialization of 'RootElement'.
+'bpmnprof::CompensateEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::Definitions' is a specialization of 'BaseElement'.
+'bpmnprof::GlobalScriptTask' is a specialization of 'GlobalTask'.
+'bpmnprof::TextAnnotation' is a specialization of 'BPMNArtifact'.
+'bpmnprof::InputOutputBinding' is a specialization of 'BaseElement'.
+'bpmnprof::ConversationLink' is a specialization of 'BaseElement'.
+'bpmnprof::MessageFlowAssociation' is a specialization of 'BaseElement'.
+'bpmnprof::BPMNActivity' is a specialization of 'FlowNode'.
+'bpmnprof::DataInput' is a specialization of 'ItemAwareElement'.
+'bpmnprof::TimerEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::ServiceTask' is a specialization of 'Task'.
+'bpmnprof::DataStoreReference' is a specialization of 'FlowElement'.
+'bpmnprof::Gateway' is a specialization of 'FlowNode'.
+'bpmnprof::SubProcess' is a specialization of 'BPMNActivity'.
+'bpmnprof::BPMNProcess' is a specialization of 'CallableElement'.
+'bpmnprof::SubProcess' is a specialization of 'FlowElementsContainer'.
+'bpmnprof::CatchEvent' is a specialization of 'BPMNEvent'.
+'bpmnprof::EventDefinition' is a specialization of 'RootElement'.
+'bpmnprof::GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+'bpmnprof::CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+'bpmnprof::SubConversation' is a specialization of 'ConversationNode'.
+'bpmnprof::CorrelationProperty' is a specialization of 'BaseElement'.
+'bpmnprof::CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+'bpmnprof::GlobalConversation' is a specialization of 'BPMNCollaboration'.
+'bpmnprof::AdHocSubProcess' is a specialization of 'SubProcess'.
+'bpmnprof::Category' is a specialization of 'RootElement'.
+'bpmnprof::GlobalManualTask' is a specialization of 'GlobalTask'.
+'bpmnprof::BPMNMessage' is a specialization of 'ItemDefinition'.
+'bpmnprof::PartnerRole' is a specialization of 'RootElement'.
+'bpmnprof::ComplexGateway' is a specialization of 'NonExclusiveGateway'.
+'bpmnprof::ManualTask' is a specialization of 'Task'.
+'bpmnprof::DataInputAssociation' is a specialization of 'DataAssociation'.
+'bpmnprof::BPMNOperation' is a specialization of 'BaseElement'.
+'bpmnprof::BusinessRuleTask' is a specialization of 'Task'.
+'bpmnprof::EndEvent' is a specialization of 'ThrowEvent'.
+'bpmnprof::ConversationNode' is a specialization of 'InteractionNode'.
+'bpmnprof::CallActivity' is a specialization of 'BPMNActivity'.
+'bpmnprof::Resource' is a specialization of 'ItemDefinition'.
+'bpmnprof::MessageFlow' is a specialization of 'BaseElement'.
+'bpmnprof::Documentation' is a specialization of 'BaseElement'.
+'bpmnprof::InputSet' is a specialization of 'BaseElement'.
+'bpmnprof::SignalEventDefinition' is a specialization of 'EventDefinition'.
+'bpmnprof::LaneSet' is a specialization of 'BaseElement'.
+'bpmnprof::ItemAwareElement' is a specialization of 'BaseElement'.
+'bpmnprof::FlowElementsContainer' is a specialization of 'BaseElement'.
+'bpmnprof::DataState' is a specialization of 'BaseElement'.
+'bpmnprof::MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'bpmnprof::InputPin' (role 'bpmnprof_InputPin', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'bpmnprof_DataInput169', cardinality 0..*).
+'bpmnprof::DataStore' (role 'bpmnprof_DataStore', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class580', cardinality 0..*).
+'bpmnprof::Gateway' (role 'bpmnprof_Gateway', cardinality 0..*) is associated with 'bpmnprof::ControlNode' (role 'bpmnprof_ControlNode', cardinality 0..*).
+'bpmnprof::DataOutputAssociation' (role 'bpmnprof_DataOutputAssociation470', cardinality 0..*) is associated with 'bpmnprof::CatchEvent' (role 'bpmnprof_CatchEvent469', cardinality 0..*).
+'bpmnprof::CorrelationSubscription' (role 'bpmnprof_CorrelationSubscription381', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class382', cardinality 0..*).
+'bpmnprof::CorrelationKey' (role 'bpmnprof_CorrelationKey352', cardinality 0..*) is associated with 'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode351', cardinality 0..*).
+'bpmnprof::DataInputAssociation' (role 'bpmnprof_DataInputAssociation', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity454', cardinality 0..*).
+'bpmnprof::BPMNExtension' (role 'bpmnprof_BPMNExtension', cardinality 0..*) is associated with 'bpmnprof::Definitions' (role 'bpmnprof_Definitions103', cardinality 0..*).
+'bpmnprof::ObjectFlow' (role 'bpmnprof_ObjectFlow', cardinality 0..*) is associated with 'bpmnprof::DataAssociation' (role 'bpmnprof_DataAssociation', cardinality 0..*).
+'bpmnprof::Lane' (role 'bpmnprof_Lane', cardinality 0..*) is associated with 'bpmnprof::LaneSet' (role 'bpmnprof_LaneSet56', cardinality 0..*).
+'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode354', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'bpmnprof_Participant355', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'LaneSet', cardinality 0..*) is associated with 'bpmnprof::FlowElementsContainer' (role 'flowElementsContainer', cardinality 0..*).
+'bpmnprof::ExtensionAttributeValue' (role 'bpmnprof_ExtensionAttributeValue', cardinality 0..*) is associated with 'bpmnprof::BaseElement' (role 'bpmnprof_BaseElement', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess134', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration', cardinality 0..*).
+'bpmnprof::Assignment' (role 'bpmnprof_Assignment495', cardinality 0..*) is associated with 'bpmnprof::Dependency' (role 'bpmnprof_Dependency496', cardinality 0..*).
+'bpmnprof::EventDefinition' (role 'bpmnprof_EventDefinition475', cardinality 0..*) is associated with 'bpmnprof::BPMNEvent' (role 'bpmnprof_BPMNEvent474', cardinality 0..*).
+'bpmnprof::LinkEventDefinition' (role 'bpmnprof_LinkEventDefinition', cardinality 0..*) is associated with 'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent550', cardinality 0..*).
+'bpmnprof::ActivityParameterNode' (role 'bpmnprof_ActivityParameterNode', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'bpmnprof_DataInput173', cardinality 0..*).
+'bpmnprof::LoopCharacteristics' (role 'bpmnprof_LoopCharacteristics504', cardinality 0..*) is associated with 'bpmnprof::StructuredActivityNode' (role 'bpmnprof_StructuredActivityNode505', cardinality 0..*).
+'bpmnprof::BPMNRelationship' (role 'bpmnprof_BPMNRelationship126', cardinality 0..*) is associated with 'bpmnprof::Element' (role 'bpmnprof_Element127', cardinality 0..*).
+'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow349', cardinality 0..*) is associated with 'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode348', cardinality 0..*).
+'bpmnprof::ImplicitThrowEvent' (role 'bpmnprof_ImplicitThrowEvent', cardinality 0..*) is associated with 'bpmnprof::ComplexBehaviorDefinition' (role 'bpmnprof_ComplexBehaviorDefinition623', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage', cardinality 0..*) is associated with 'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation243', cardinality 0..*).
+'bpmnprof::Rendering' (role 'bpmnprof_Rendering597', cardinality 0..*) is associated with 'bpmnprof::GlobalUserTask' (role 'bpmnprof_GlobalUserTask', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics673', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'bpmnprof_DataInput674', cardinality 0..*).
+'bpmnprof::DataInput' (role 'dataInputRefs', cardinality 0..*) is associated with 'bpmnprof::InputSet' (role 'InputSet', cardinality 0..*).
+'bpmnprof::InputSet' (role 'inputSetWithOptional', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'DataInput', cardinality 0..*).
+'bpmnprof::CorrelationProperty' (role 'bpmnprof_CorrelationProperty396', cardinality 0..*) is associated with 'bpmnprof::CorrelationPropertyBinding' (role 'bpmnprof_CorrelationPropertyBinding395', cardinality 0..*).
+'bpmnprof::CorrelationPropertyBinding' (role 'bpmnprof_CorrelationPropertyBinding392', cardinality 0..*) is associated with 'bpmnprof::FormalExpression' (role 'bpmnprof_FormalExpression393', cardinality 0..*).
+'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity443', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class444', cardinality 0..*).
+'bpmnprof::EndEvent' (role 'bpmnprof_EndEvent', cardinality 0..*) is associated with 'bpmnprof::FinalNode' (role 'bpmnprof_FinalNode', cardinality 0..*).
+'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent555', cardinality 0..*) is associated with 'bpmnprof::ErrorEventDefinition' (role 'bpmnprof_ErrorEventDefinition554', cardinality 0..*).
+'bpmnprof::Group' (role 'bpmnprof_Group570', cardinality 0..*) is associated with 'bpmnprof::CategoryValue' (role 'bpmnprof_CategoryValue571', cardinality 0..*).
+'bpmnprof::Property' (role 'bpmnprof_Property363', cardinality 0..*) is associated with 'bpmnprof::CorrelationProperty' (role 'bpmnprof_CorrelationProperty362', cardinality 0..*).
+'bpmnprof::ReceiveTask' (role 'bpmnprof_ReceiveTask', cardinality 0..*) is associated with 'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage644', cardinality 0..*).
+'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow98', cardinality 0..*) is associated with 'bpmnprof::ExclusiveGateway' (role 'bpmnprof_ExclusiveGateway97', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property403', cardinality 0..*).
+'bpmnprof::DataInputAssociation' (role 'bpmnprof_DataInputAssociation530', cardinality 0..*) is associated with 'bpmnprof::ThrowEvent' (role 'bpmnprof_ThrowEvent529', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet213', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput212', cardinality 0..*).
+'bpmnprof::ThrowEvent' (role 'bpmnprof_ThrowEvent', cardinality 0..*) is associated with 'bpmnprof::CallOperationAction' (role 'bpmnprof_CallOperationAction', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics664', cardinality 0..*) is associated with 'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement665', cardinality 0..*).
+'bpmnprof::ExtensionAttributeDefinition' (role 'bpmnprof_ExtensionAttributeDefinition38', cardinality 0..*) is associated with 'bpmnprof::ExtensionDefinition' (role 'bpmnprof_ExtensionDefinition37', cardinality 0..*).
+'bpmnprof::LoopNode' (role 'bpmnprof_LoopNode', cardinality 0..*) is associated with 'bpmnprof::StandardLoopCharacteristics' (role 'bpmnprof_StandardLoopCharacteristics', cardinality 0..*).
+'bpmnprof::Element' (role 'bpmnprof_Element124', cardinality 0..*) is associated with 'bpmnprof::BPMNRelationship' (role 'bpmnprof_BPMNRelationship123', cardinality 0..*).
+'bpmnprof::Slot' (role 'bpmnprof_Slot424', cardinality 0..*) is associated with 'bpmnprof::ResourceParameterBinding' (role 'bpmnprof_ResourceParameterBinding423', cardinality 0..*).
+'bpmnprof::ConditionalEventDefinition' (role 'bpmnprof_ConditionalEventDefinition', cardinality 0..*) is associated with 'bpmnprof::ChangeEvent' (role 'bpmnprof_ChangeEvent540', cardinality 0..*).
+'bpmnprof::LoopCharacteristics' (role 'bpmnprof_LoopCharacteristics', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity458', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics679', cardinality 0..*) is associated with 'bpmnprof::EventDefinition' (role 'bpmnprof_EventDefinition680', cardinality 0..*).
+'bpmnprof::Lane' (role 'bpmnprof_Lane66', cardinality 0..*) is associated with 'bpmnprof::FlowNode' (role 'bpmnprof_FlowNode67', cardinality 0..*).
+'bpmnprof::OutputPin' (role 'bpmnprof_OutputPin', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput203', cardinality 0..*).
+'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode601', cardinality 0..*) is associated with 'bpmnprof::SubConversation' (role 'bpmnprof_SubConversation', cardinality 0..*).
+'bpmnprof::DecisionNode' (role 'bpmnprof_DecisionNode', cardinality 0..*) is associated with 'bpmnprof::ExclusiveGateway' (role 'bpmnprof_ExclusiveGateway', cardinality 0..*).
+'bpmnprof::Participant' (role 'Participant', cardinality 0..*) is associated with 'bpmnprof::PartnerEntity' (role 'partnerEntityRef', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression511', cardinality 0..*) is associated with 'bpmnprof::TimerEventDefinition' (role 'bpmnprof_TimerEventDefinition', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'laneSets', cardinality 0..*) is associated with 'bpmnprof::FlowElementsContainer' (role 'FlowElementsContainer58', cardinality 0..*).
+'bpmnprof::ExtensionDefinition' (role 'bpmnprof_ExtensionDefinition114', cardinality 0..*) is associated with 'bpmnprof::BPMNExtension' (role 'bpmnprof_BPMNExtension113', cardinality 0..*).
+'bpmnprof::Participant' (role 'participantRef', cardinality 0..*) is associated with 'bpmnprof::PartnerEntity' (role 'PartnerEntity', cardinality 0..*).
+'bpmnprof::ResourceParameter' (role 'bpmnprof_ResourceParameter417', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property418', cardinality 0..*).
+'bpmnprof::EventBasedGateway' (role 'bpmnprof_EventBasedGateway', cardinality 0..*) is associated with 'bpmnprof::ForkNode' (role 'bpmnprof_ForkNode83', cardinality 0..*).
+'bpmnprof::Definitions' (role 'bpmnprof_Definitions130', cardinality 0..*) is associated with 'bpmnprof::BPMNRelationship' (role 'bpmnprof_BPMNRelationship129', cardinality 0..*).
+'bpmnprof::DataStore' (role 'bpmnprof_DataStore582', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition583', cardinality 0..*).
+'bpmnprof::RootElement' (role 'bpmnprof_RootElement', cardinality 0..*) is associated with 'bpmnprof::PackageableElement' (role 'bpmnprof_PackageableElement', cardinality 0..*).
+'bpmnprof::Lane' (role 'bpmnprof_Lane69', cardinality 0..*) is associated with 'bpmnprof::BaseElement' (role 'bpmnprof_BaseElement70', cardinality 0..*).
+'bpmnprof::Import' (role 'bpmnprof_Import194', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition193', cardinality 0..*).
+'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration265', cardinality 0..*) is associated with 'bpmnprof::ParticipantAssociation' (role 'bpmnprof_ParticipantAssociation', cardinality 0..*).
+'bpmnprof::BPMNSignal' (role 'bpmnprof_BPMNSignal', cardinality 0..*) is associated with 'bpmnprof::SignalEventDefinition' (role 'bpmnprof_SignalEventDefinition', cardinality 0..*).
+'bpmnprof::ActivityPartition' (role 'bpmnprof_ActivityPartition61', cardinality 0..*) is associated with 'bpmnprof::Lane' (role 'bpmnprof_Lane60', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation650', cardinality 0..*) is associated with 'bpmnprof::ReceiveTask' (role 'bpmnprof_ReceiveTask649', cardinality 0..*).
+'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow332', cardinality 0..*) is associated with 'bpmnprof::MessageFlowAssociation' (role 'bpmnprof_MessageFlowAssociation331', cardinality 0..*).
+'bpmnprof::Resource' (role 'bpmnprof_Resource415', cardinality 0..*) is associated with 'bpmnprof::ResourceParameter' (role 'bpmnprof_ResourceParameter', cardinality 0..*).
+'bpmnprof::ActivityGroup' (role 'bpmnprof_ActivityGroup', cardinality 0..*) is associated with 'bpmnprof::Gateway' (role 'bpmnprof_Gateway6', cardinality 0..*).
+'bpmnprof::Definitions' (role 'bpmnprof_Definitions119', cardinality 0..*) is associated with 'bpmnprof::Import' (role 'bpmnprof_Import118', cardinality 0..*).
+'bpmnprof::DataAssociation' (role 'bpmnprof_DataAssociation493', cardinality 0..*) is associated with 'bpmnprof::Assignment' (role 'bpmnprof_Assignment', cardinality 0..*).
+'bpmnprof::BaseElement' (role 'targetRef', cardinality 0..*) is associated with 'bpmnprof::BPMNAssociation' (role 'BPMNAssociation22', cardinality 0..*).
+'bpmnprof::EscalationEventDefinition' (role 'bpmnprof_EscalationEventDefinition508', cardinality 0..*) is associated with 'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent509', cardinality 0..*).
+'bpmnprof::FlowElement' (role 'bpmnprof_FlowElement10', cardinality 0..*) is associated with 'bpmnprof::Monitoring' (role 'bpmnprof_Monitoring', cardinality 0..*).
+'bpmnprof::InitialNode' (role 'bpmnprof_InitialNode', cardinality 0..*) is associated with 'bpmnprof::CatchEvent' (role 'bpmnprof_CatchEvent467', cardinality 0..*).
+'bpmnprof::ExtensionAttributeValue' (role 'bpmnprof_ExtensionAttributeValue24', cardinality 0..*) is associated with 'bpmnprof::Slot' (role 'bpmnprof_Slot', cardinality 0..*).
+'bpmnprof::PartnerRole' (role 'bpmnprof_PartnerRole', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class321', cardinality 0..*).
+'bpmnprof::Interface' (role 'bpmnprof_Interface', cardinality 0..*) is associated with 'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface228', cardinality 0..*).
+'bpmnprof::OpaqueExpression' (role 'bpmnprof_OpaqueExpression', cardinality 0..*) is associated with 'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression81', cardinality 0..*).
+'bpmnprof::DataObjectReference' (role 'bpmnprof_DataObjectReference', cardinality 0..*) is associated with 'bpmnprof::DataObject' (role 'bpmnprof_DataObject', cardinality 0..*).
+'bpmnprof::ConversationLink' (role 'conversationLinks', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'BPMNCollaboration', cardinality 0..*).
+'bpmnprof::DataStoreNode' (role 'bpmnprof_DataStoreNode578', cardinality 0..*) is associated with 'bpmnprof::DataObject' (role 'bpmnprof_DataObject577', cardinality 0..*).
+'bpmnprof::ComplexBehaviorDefinition' (role 'bpmnprof_ComplexBehaviorDefinition625', cardinality 0..*) is associated with 'bpmnprof::ControlFlow' (role 'bpmnprof_ControlFlow626', cardinality 0..*).
+'bpmnprof::Escalation' (role 'bpmnprof_Escalation', cardinality 0..*) is associated with 'bpmnprof::EscalationEventDefinition' (role 'bpmnprof_EscalationEventDefinition', cardinality 0..*).
+'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow336', cardinality 0..*) is associated with 'bpmnprof::InteractionNode' (role 'bpmnprof_InteractionNode337', cardinality 0..*).
+'bpmnprof::InteractionNode' (role 'bpmnprof_InteractionNode340', cardinality 0..*) is associated with 'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow339', cardinality 0..*).
+'bpmnprof::CorrelationKey' (role 'bpmnprof_CorrelationKey385', cardinality 0..*) is associated with 'bpmnprof::CorrelationSubscription' (role 'bpmnprof_CorrelationSubscription384', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation655', cardinality 0..*) is associated with 'bpmnprof::ServiceTask' (role 'bpmnprof_ServiceTask654', cardinality 0..*).
+'bpmnprof::PackageImport' (role 'bpmnprof_PackageImport', cardinality 0..*) is associated with 'bpmnprof::Import' (role 'bpmnprof_Import116', cardinality 0..*).
+'bpmnprof::BPMNProperty' (role 'bpmnprof_BPMNProperty400', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property401', cardinality 0..*).
+'bpmnprof::BPMNAssociation' (role 'BPMNAssociation', cardinality 0..*) is associated with 'bpmnprof::BaseElement' (role 'sourceRef', cardinality 0..*).
+'bpmnprof::BPMNCollaboration' (role 'collaboration', cardinality 0..*) is associated with 'bpmnprof::ConversationLink' (role 'ConversationLink', cardinality 0..*).
+'bpmnprof::ParticipantMultiplicity' (role 'bpmnprof_ParticipantMultiplicity', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'bpmnprof_Participant295', cardinality 0..*).
+'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent538', cardinality 0..*) is associated with 'bpmnprof::MessageEventDefinition' (role 'bpmnprof_MessageEventDefinition537', cardinality 0..*).
+'bpmnprof::ConversationLink' (role 'ConversationLink309', cardinality 0..*) is associated with 'bpmnprof::InteractionNode' (role 'targetRef308', cardinality 0..*).
+'bpmnprof::DataOutputAssociation' (role 'bpmnprof_DataOutputAssociation', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity456', cardinality 0..*).
+'bpmnprof::Lane' (role 'lanes', cardinality 0..*) is associated with 'bpmnprof::LaneSet' (role 'LaneSet75', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage246', cardinality 0..*) is associated with 'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation245', cardinality 0..*).
+'bpmnprof::CallOperationAction' (role 'bpmnprof_CallOperationAction635', cardinality 0..*) is associated with 'bpmnprof::SendTask' (role 'bpmnprof_SendTask634', cardinality 0..*).
+'bpmnprof::GlobalTask' (role 'bpmnprof_GlobalTask433', cardinality 0..*) is associated with 'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole434', cardinality 0..*).
+'bpmnprof::DataStore' (role 'bpmnprof_DataStore585', cardinality 0..*) is associated with 'bpmnprof::DataStoreReference' (role 'bpmnprof_DataStoreReference', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics670', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput671', cardinality 0..*).
+'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement', cardinality 0..*) is associated with 'bpmnprof::Behavior' (role 'bpmnprof_Behavior', cardinality 0..*).
+'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification163', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput', cardinality 0..*).
+'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement181', cardinality 0..*) is associated with 'bpmnprof::TypedElement' (role 'bpmnprof_TypedElement', cardinality 0..*).
+'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface235', cardinality 0..*) is associated with 'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement236', cardinality 0..*).
+'bpmnprof::ConversationLink' (role 'bpmnprof_ConversationLink', cardinality 0..*) is associated with 'bpmnprof::Dependency' (role 'bpmnprof_Dependency312', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet', cardinality 0..*) is associated with 'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification167', cardinality 0..*).
+'bpmnprof::Dependency' (role 'bpmnprof_Dependency371', cardinality 0..*) is associated with 'bpmnprof::CorrelationPropertyRetrievalExpression' (role 'bpmnprof_CorrelationPropertyRetrievalExpression370', cardinality 0..*).
+'bpmnprof::Element' (role 'bpmnprof_Element27', cardinality 0..*) is associated with 'bpmnprof::ExtensionAttributeValue' (role 'bpmnprof_ExtensionAttributeValue26', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole409', cardinality 0..*) is associated with 'bpmnprof::ResourceParameterBinding' (role 'bpmnprof_ResourceParameterBinding', cardinality 0..*).
+'bpmnprof::InputOutputBinding' (role 'bpmnprof_InputOutputBinding259', cardinality 0..*) is associated with 'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation260', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation638', cardinality 0..*) is associated with 'bpmnprof::SendTask' (role 'bpmnprof_SendTask637', cardinality 0..*).
+'bpmnprof::Definitions' (role 'bpmnprof_Definitions105', cardinality 0..*) is associated with 'bpmnprof::Import' (role 'bpmnprof_Import', cardinality 0..*).
+'bpmnprof::InformationFlow' (role 'bpmnprof_InformationFlow', cardinality 0..*) is associated with 'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow334', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation535', cardinality 0..*) is associated with 'bpmnprof::MessageEventDefinition' (role 'bpmnprof_MessageEventDefinition534', cardinality 0..*).
+'bpmnprof::BaseElement' (role 'bpmnprof_BaseElement19', cardinality 0..*) is associated with 'bpmnprof::ExtensionDefinition' (role 'bpmnprof_ExtensionDefinition', cardinality 0..*).
+'bpmnprof::ComplexGateway' (role 'bpmnprof_ComplexGateway91', cardinality 0..*) is associated with 'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression92', cardinality 0..*).
+'bpmnprof::DataStoreNode' (role 'bpmnprof_DataStoreNode588', cardinality 0..*) is associated with 'bpmnprof::DataStoreReference' (role 'bpmnprof_DataStoreReference587', cardinality 0..*).
+'bpmnprof::NonExclusiveGateway' (role 'bpmnprof_NonExclusiveGateway3', cardinality 0..*) is associated with 'bpmnprof::ForkNode' (role 'bpmnprof_ForkNode', cardinality 0..*).
+'bpmnprof::ResourceAssignmentExpression' (role 'bpmnprof_ResourceAssignmentExpression412', cardinality 0..*) is associated with 'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression413', cardinality 0..*).
+'bpmnprof::OpaqueAction' (role 'bpmnprof_OpaqueAction', cardinality 0..*) is associated with 'bpmnprof::UserTask' (role 'bpmnprof_UserTask', cardinality 0..*).
+'bpmnprof::CallConversation' (role 'bpmnprof_CallConversation607', cardinality 0..*) is associated with 'bpmnprof::ParticipantAssociation' (role 'bpmnprof_ParticipantAssociation608', cardinality 0..*).
+'bpmnprof::InputSet' (role 'bpmnprof_InputSet', cardinality 0..*) is associated with 'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification165', cardinality 0..*).
+'bpmnprof::Dependency' (role 'bpmnprof_Dependency281', cardinality 0..*) is associated with 'bpmnprof::ParticipantAssociation' (role 'bpmnprof_ParticipantAssociation280', cardinality 0..*).
+'bpmnprof::ExtensionDefinition' (role 'bpmnprof_ExtensionDefinition35', cardinality 0..*) is associated with 'bpmnprof::Stereotype' (role 'bpmnprof_Stereotype', cardinality 0..*).
+'bpmnprof::ExclusiveGateway' (role 'bpmnprof_ExclusiveGateway95', cardinality 0..*) is associated with 'bpmnprof::MergeNode' (role 'bpmnprof_MergeNode', cardinality 0..*).
+'bpmnprof::TerminateEventDefinition' (role 'bpmnprof_TerminateEventDefinition', cardinality 0..*) is associated with 'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent558', cardinality 0..*).
+'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface', cardinality 0..*) is associated with 'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement152', cardinality 0..*).
+'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity440', cardinality 0..*) is associated with 'bpmnprof::Action' (role 'bpmnprof_Action441', cardinality 0..*).
+'bpmnprof::CategoryValue' (role 'CategoryValue', cardinality 0..*) is associated with 'bpmnprof::FlowElement' (role 'categorizedFlowElements', cardinality 0..*).
+'bpmnprof::Stereotype' (role 'bpmnprof_Stereotype111', cardinality 0..*) is associated with 'bpmnprof::BPMNExtension' (role 'bpmnprof_BPMNExtension110', cardinality 0..*).
+'bpmnprof::CategoryValue' (role 'bpmnprof_CategoryValue566', cardinality 0..*) is associated with 'bpmnprof::Category' (role 'bpmnprof_Category565', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics659', cardinality 0..*) is associated with 'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression660', cardinality 0..*).
+'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement617', cardinality 0..*) is associated with 'bpmnprof::CallActivity' (role 'bpmnprof_CallActivity616', cardinality 0..*).
+'bpmnprof::EventBasedGateway' (role 'bpmnprof_EventBasedGateway87', cardinality 0..*) is associated with 'bpmnprof::InterruptibleActivityRegion' (role 'bpmnprof_InterruptibleActivityRegion', cardinality 0..*).
+'bpmnprof::ParameterSet' (role 'bpmnprof_ParameterSet', cardinality 0..*) is associated with 'bpmnprof::InputSet' (role 'bpmnprof_InputSet196', cardinality 0..*).
+'bpmnprof::InputSet' (role 'inputSetRefs', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'DataInput201', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation', cardinality 0..*) is associated with 'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface233', cardinality 0..*).
+'bpmnprof::ActivityParameterNode' (role 'bpmnprof_ActivityParameterNode209', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput208', cardinality 0..*).
+'bpmnprof::BPMNEvent' (role 'bpmnprof_BPMNEvent477', cardinality 0..*) is associated with 'bpmnprof::BPMNProperty' (role 'bpmnprof_BPMNProperty478', cardinality 0..*).
+'bpmnprof::BPMNEvent' (role 'bpmnprof_BPMNEvent480', cardinality 0..*) is associated with 'bpmnprof::EventDefinition' (role 'bpmnprof_EventDefinition481', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression502', cardinality 0..*) is associated with 'bpmnprof::Assignment' (role 'bpmnprof_Assignment501', cardinality 0..*).
+'bpmnprof::ManualTask' (role 'bpmnprof_ManualTask', cardinality 0..*) is associated with 'bpmnprof::OpaqueAction' (role 'bpmnprof_OpaqueAction599', cardinality 0..*).
+'bpmnprof::RootElement' (role 'RootElement', cardinality 0..*) is associated with 'bpmnprof::Definitions' (role 'definition', cardinality 0..*).
+'bpmnprof::InclusiveGateway' (role 'bpmnprof_InclusiveGateway', cardinality 0..*) is associated with 'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow', cardinality 0..*).
+'bpmnprof::DataInput' (role 'optionalInputRefs', cardinality 0..*) is associated with 'bpmnprof::InputSet' (role 'InputSet176', cardinality 0..*).
+'bpmnprof::InputOutputBinding' (role 'bpmnprof_InputOutputBinding253', cardinality 0..*) is associated with 'bpmnprof::InputSet' (role 'bpmnprof_InputSet254', cardinality 0..*).
+'bpmnprof::Participant' (role 'bpmnprof_Participant289', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property290', cardinality 0..*).
+'bpmnprof::DataAssociation' (role 'bpmnprof_DataAssociation490', cardinality 0..*) is associated with 'bpmnprof::FormalExpression' (role 'bpmnprof_FormalExpression491', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression517', cardinality 0..*) is associated with 'bpmnprof::TimerEventDefinition' (role 'bpmnprof_TimerEventDefinition516', cardinality 0..*).
+'bpmnprof::DataState' (role 'bpmnprof_DataState', cardinality 0..*) is associated with 'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement', cardinality 0..*).
+'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement488', cardinality 0..*) is associated with 'bpmnprof::DataAssociation' (role 'bpmnprof_DataAssociation487', cardinality 0..*).
+'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface301', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'bpmnprof_Participant300', cardinality 0..*).
+'bpmnprof::CallConversation' (role 'bpmnprof_CallConversation', cardinality 0..*) is associated with 'bpmnprof::CollaborationUse' (role 'bpmnprof_CollaborationUse', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'bpmnprof_LaneSet613', cardinality 0..*) is associated with 'bpmnprof::SubProcess' (role 'bpmnprof_SubProcess612', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression657', cardinality 0..*) is associated with 'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics', cardinality 0..*).
+'bpmnprof::OpaqueBehavior' (role 'bpmnprof_OpaqueBehavior', cardinality 0..*) is associated with 'bpmnprof::GlobalTask' (role 'bpmnprof_GlobalTask', cardinality 0..*).
+'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration605', cardinality 0..*) is associated with 'bpmnprof::CallConversation' (role 'bpmnprof_CallConversation604', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage632', cardinality 0..*) is associated with 'bpmnprof::SendTask' (role 'bpmnprof_SendTask', cardinality 0..*).
+'bpmnprof::PartnerRole' (role 'partnerRoleRef', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'Participant323', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics682', cardinality 0..*) is associated with 'bpmnprof::ComplexBehaviorDefinition' (role 'bpmnprof_ComplexBehaviorDefinition683', cardinality 0..*).
+'bpmnprof::CorrelationPropertyRetrievalExpression' (role 'bpmnprof_CorrelationPropertyRetrievalExpression376', cardinality 0..*) is associated with 'bpmnprof::FormalExpression' (role 'bpmnprof_FormalExpression', cardinality 0..*).
+'bpmnprof::CorrelationProperty' (role 'bpmnprof_CorrelationProperty365', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition366', cardinality 0..*).
+'bpmnprof::Enumeration' (role 'bpmnprof_Enumeration', cardinality 0..*) is associated with 'bpmnprof::Category' (role 'bpmnprof_Category', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression499', cardinality 0..*) is associated with 'bpmnprof::Assignment' (role 'bpmnprof_Assignment498', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole407', cardinality 0..*) is associated with 'bpmnprof::Resource' (role 'bpmnprof_Resource', cardinality 0..*).
+'bpmnprof::TimerEventDefinition' (role 'bpmnprof_TimerEventDefinition519', cardinality 0..*) is associated with 'bpmnprof::ChangeEvent' (role 'bpmnprof_ChangeEvent', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess142', cardinality 0..*) is associated with 'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess144', cardinality 0..*).
+'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition', cardinality 0..*) is associated with 'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement183', cardinality 0..*).
+'bpmnprof::DataInput' (role 'whileExecutingInputRefs', cardinality 0..*) is associated with 'bpmnprof::InputSet' (role 'InputSet178', cardinality 0..*).
+'bpmnprof::MessageFlowAssociation' (role 'bpmnprof_MessageFlowAssociation', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration268', cardinality 0..*).
+'bpmnprof::LinkEventDefinition' (role 'source', cardinality 0..*) is associated with 'bpmnprof::LinkEventDefinition' (role 'LinkEventDefinition', cardinality 0..*).
+'bpmnprof::Documentation' (role 'bpmnprof_Documentation33', cardinality 0..*) is associated with 'bpmnprof::Comment' (role 'bpmnprof_Comment', cardinality 0..*).
+'bpmnprof::CorrelationProperty' (role 'bpmnprof_CorrelationProperty368', cardinality 0..*) is associated with 'bpmnprof::CorrelationPropertyRetrievalExpression' (role 'bpmnprof_CorrelationPropertyRetrievalExpression', cardinality 0..*).
+'bpmnprof::ParticipantMultiplicity' (role 'bpmnprof_ParticipantMultiplicity317', cardinality 0..*) is associated with 'bpmnprof::MultiplicityElement' (role 'bpmnprof_MultiplicityElement', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics676', cardinality 0..*) is associated with 'bpmnprof::EventDefinition' (role 'bpmnprof_EventDefinition677', cardinality 0..*).
+'bpmnprof::ServiceTask' (role 'bpmnprof_ServiceTask', cardinality 0..*) is associated with 'bpmnprof::CallOperationAction' (role 'bpmnprof_CallOperationAction652', cardinality 0..*).
+'bpmnprof::InteractionNode' (role 'InteractionNode', cardinality 0..*) is associated with 'bpmnprof::ConversationLink' (role 'incomingConversationLinks', cardinality 0..*).
+'bpmnprof::CorrelationKey' (role 'bpmnprof_CorrelationKey357', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class358', cardinality 0..*).
+'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity449', cardinality 0..*) is associated with 'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow450', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics662', cardinality 0..*) is associated with 'bpmnprof::ExpansionRegion' (role 'bpmnprof_ExpansionRegion', cardinality 0..*).
+'bpmnprof::SignalEventDefinition' (role 'bpmnprof_SignalEventDefinition522', cardinality 0..*) is associated with 'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent523', cardinality 0..*).
+'bpmnprof::InstanceSpecification' (role 'bpmnprof_InstanceSpecification', cardinality 0..*) is associated with 'bpmnprof::PartnerEntity' (role 'bpmnprof_PartnerEntity', cardinality 0..*).
+'bpmnprof::BaseElement' (role 'bpmnprof_BaseElement15', cardinality 0..*) is associated with 'bpmnprof::Element' (role 'bpmnprof_Element', cardinality 0..*).
+'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput215', cardinality 0..*) is associated with 'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet216', cardinality 0..*).
+'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification161', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'bpmnprof_DataInput', cardinality 0..*).
+'bpmnprof::State' (role 'bpmnprof_State', cardinality 0..*) is associated with 'bpmnprof::DataState' (role 'bpmnprof_DataState185', cardinality 0..*).
+'bpmnprof::BPMNProperty' (role 'bpmnprof_BPMNProperty', cardinality 0..*) is associated with 'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess146', cardinality 0..*).
+'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow77', cardinality 0..*) is associated with 'bpmnprof::ControlFlow' (role 'bpmnprof_ControlFlow', cardinality 0..*).
+'bpmnprof::Definitions' (role 'bpmnprof_Definitions107', cardinality 0..*) is associated with 'bpmnprof::BPMNRelationship' (role 'bpmnprof_BPMNRelationship', cardinality 0..*).
+'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification', cardinality 0..*) is associated with 'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement150', cardinality 0..*).
+'bpmnprof::Error' (role 'bpmnprof_Error', cardinality 0..*) is associated with 'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation248', cardinality 0..*).
+'bpmnprof::MultiInstanceLoopCharacteristics' (role 'bpmnprof_MultiInstanceLoopCharacteristics667', cardinality 0..*) is associated with 'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement668', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet218', cardinality 0..*) is associated with 'bpmnprof::ParameterSet' (role 'bpmnprof_ParameterSet219', cardinality 0..*).
+'bpmnprof::ActivityPartition' (role 'bpmnprof_ActivityPartition568', cardinality 0..*) is associated with 'bpmnprof::Group' (role 'bpmnprof_Group', cardinality 0..*).
+'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity446', cardinality 0..*) is associated with 'bpmnprof::BPMNProperty' (role 'bpmnprof_BPMNProperty447', cardinality 0..*).
+'bpmnprof::CorrelationKey' (role 'bpmnprof_CorrelationKey', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration276', cardinality 0..*).
+'bpmnprof::StructuredActivityNode' (role 'bpmnprof_StructuredActivityNode610', cardinality 0..*) is associated with 'bpmnprof::SubProcess' (role 'bpmnprof_SubProcess', cardinality 0..*).
+'bpmnprof::CompensateEventDefinition' (role 'bpmnprof_CompensateEventDefinition437', cardinality 0..*) is associated with 'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent', cardinality 0..*).
+'bpmnprof::Task' (role 'bpmnprof_Task', cardinality 0..*) is associated with 'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification593', cardinality 0..*).
+'bpmnprof::JoinNode' (role 'bpmnprof_JoinNode', cardinality 0..*) is associated with 'bpmnprof::NonExclusiveGateway' (role 'bpmnprof_NonExclusiveGateway', cardinality 0..*).
+'bpmnprof::Participant' (role 'bpmnprof_Participant292', cardinality 0..*) is associated with 'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess293', cardinality 0..*).
+'bpmnprof::CorrelationPropertyBinding' (role 'bpmnprof_CorrelationPropertyBinding', cardinality 0..*) is associated with 'bpmnprof::CorrelationSubscription' (role 'bpmnprof_CorrelationSubscription387', cardinality 0..*).
+'bpmnprof::InteractionNode' (role 'bpmnprof_InteractionNode', cardinality 0..*) is associated with 'bpmnprof::Element' (role 'bpmnprof_Element303', cardinality 0..*).
+'bpmnprof::ConversationLink' (role 'outgoingConversationLinks', cardinality 0..*) is associated with 'bpmnprof::InteractionNode' (role 'InteractionNode315', cardinality 0..*).
+'bpmnprof::Activity' (role 'bpmnprof_Activity', cardinality 0..*) is associated with 'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess136', cardinality 0..*).
+'bpmnprof::Action' (role 'bpmnprof_Action', cardinality 0..*) is associated with 'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification159', cardinality 0..*).
+'bpmnprof::DataObjectReference' (role 'bpmnprof_DataObjectReference574', cardinality 0..*) is associated with 'bpmnprof::DataStoreNode' (role 'bpmnprof_DataStoreNode575', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'outputSetRefs', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'DataOutput', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage374', cardinality 0..*) is associated with 'bpmnprof::CorrelationPropertyRetrievalExpression' (role 'bpmnprof_CorrelationPropertyRetrievalExpression373', cardinality 0..*).
+'bpmnprof::InputSet' (role 'inputSetWithWhileExecuting', cardinality 0..*) is associated with 'bpmnprof::DataInput' (role 'DataInput199', cardinality 0..*).
+'bpmnprof::ResourceParameterBinding' (role 'bpmnprof_ResourceParameterBinding426', cardinality 0..*) is associated with 'bpmnprof::ResourceParameter' (role 'bpmnprof_ResourceParameter427', cardinality 0..*).
+'bpmnprof::BoundaryEvent' (role 'bpmnprof_BoundaryEvent', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity452', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression514', cardinality 0..*) is associated with 'bpmnprof::TimerEventDefinition' (role 'bpmnprof_TimerEventDefinition513', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage532', cardinality 0..*) is associated with 'bpmnprof::MessageEventDefinition' (role 'bpmnprof_MessageEventDefinition', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet224', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput225', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'bpmnprof_LaneSet73', cardinality 0..*) is associated with 'bpmnprof::Lane' (role 'bpmnprof_Lane72', cardinality 0..*).
+'bpmnprof::CompensateEventDefinition' (role 'bpmnprof_CompensateEventDefinition', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity', cardinality 0..*).
+'bpmnprof::EventBasedGateway' (role 'bpmnprof_EventBasedGateway85', cardinality 0..*) is associated with 'bpmnprof::StructuredActivityNode' (role 'bpmnprof_StructuredActivityNode', cardinality 0..*).
+'bpmnprof::Dependency' (role 'bpmnprof_Dependency263', cardinality 0..*) is associated with 'bpmnprof::InputOutputBinding' (role 'bpmnprof_InputOutputBinding262', cardinality 0..*).
+'bpmnprof::BPMNProperty' (role 'bpmnprof_BPMNProperty398', cardinality 0..*) is associated with 'bpmnprof::DataStoreNode' (role 'bpmnprof_DataStoreNode', cardinality 0..*).
+'bpmnprof::ResourceParameterBinding' (role 'bpmnprof_ResourceParameterBinding429', cardinality 0..*) is associated with 'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression430', cardinality 0..*).
+'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration272', cardinality 0..*) is associated with 'bpmnprof::Collaboration' (role 'bpmnprof_Collaboration', cardinality 0..*).
+'bpmnprof::DataAssociation' (role 'bpmnprof_DataAssociation484', cardinality 0..*) is associated with 'bpmnprof::ItemAwareElement' (role 'bpmnprof_ItemAwareElement485', cardinality 0..*).
+'bpmnprof::ParticipantAssociation' (role 'bpmnprof_ParticipantAssociation286', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'bpmnprof_Participant287', cardinality 0..*).
+'bpmnprof::Participant' (role 'bpmnprof_Participant284', cardinality 0..*) is associated with 'bpmnprof::ParticipantAssociation' (role 'bpmnprof_ParticipantAssociation283', cardinality 0..*).
+'bpmnprof::CorrelationPropertyBinding' (role 'bpmnprof_CorrelationPropertyBinding389', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property390', cardinality 0..*).
+'bpmnprof::FlowElement' (role 'bpmnprof_FlowElement', cardinality 0..*) is associated with 'bpmnprof::Auditing' (role 'bpmnprof_Auditing', cardinality 0..*).
+'bpmnprof::Behavior' (role 'bpmnprof_Behavior157', cardinality 0..*) is associated with 'bpmnprof::InputOutputSpecification' (role 'bpmnprof_InputOutputSpecification156', cardinality 0..*).
+'bpmnprof::BoundaryEvent' (role 'bpmnprof_BoundaryEvent463', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity464', cardinality 0..*).
+'bpmnprof::Definitions' (role 'bpmnprof_Definitions', cardinality 0..*) is associated with 'bpmnprof::Package' (role 'bpmnprof_Package', cardinality 0..*).
+'bpmnprof::FlowElementsContainer' (role 'FlowElementsContainer', cardinality 0..*) is associated with 'bpmnprof::FlowElement' (role 'flowElements', cardinality 0..*).
+'bpmnprof::TextAnnotation' (role 'bpmnprof_TextAnnotation', cardinality 0..*) is associated with 'bpmnprof::Comment' (role 'bpmnprof_Comment562', cardinality 0..*).
+'bpmnprof::BusinessRuleTask' (role 'bpmnprof_BusinessRuleTask', cardinality 0..*) is associated with 'bpmnprof::OpaqueAction' (role 'bpmnprof_OpaqueAction619', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess138', cardinality 0..*) is associated with 'bpmnprof::CorrelationSubscription' (role 'bpmnprof_CorrelationSubscription', cardinality 0..*).
+'bpmnprof::Element' (role 'bpmnprof_Element191', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition190', cardinality 0..*).
+'bpmnprof::ResourceParameter' (role 'bpmnprof_ResourceParameter420', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition421', cardinality 0..*).
+'bpmnprof::RootElement' (role 'rootElements', cardinality 0..*) is associated with 'bpmnprof::Definitions' (role 'Definitions', cardinality 0..*).
+'bpmnprof::ThrowEvent' (role 'bpmnprof_ThrowEvent527', cardinality 0..*) is associated with 'bpmnprof::FlowFinalNode' (role 'bpmnprof_FlowFinalNode', cardinality 0..*).
+'bpmnprof::LinkEventDefinition' (role '_target', cardinality 0..*) is associated with 'bpmnprof::LinkEventDefinition' (role 'LinkEventDefinition548', cardinality 0..*).
+'bpmnprof::FormalExpression' (role 'bpmnprof_FormalExpression621', cardinality 0..*) is associated with 'bpmnprof::ComplexBehaviorDefinition' (role 'bpmnprof_ComplexBehaviorDefinition', cardinality 0..*).
+'bpmnprof::InputOutputBinding' (role 'bpmnprof_InputOutputBinding', cardinality 0..*) is associated with 'bpmnprof::CallableElement' (role 'bpmnprof_CallableElement154', cardinality 0..*).
+'bpmnprof::ExtensionAttributeValue' (role 'bpmnprof_ExtensionAttributeValue29', cardinality 0..*) is associated with 'bpmnprof::ExtensionAttributeDefinition' (role 'bpmnprof_ExtensionAttributeDefinition', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess140', cardinality 0..*) is associated with 'bpmnprof::Monitoring' (role 'bpmnprof_Monitoring141', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation238', cardinality 0..*) is associated with 'bpmnprof::Operation' (role 'bpmnprof_Operation', cardinality 0..*).
+'bpmnprof::PartnerRole' (role 'PartnerRole', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'participantRef298', cardinality 0..*).
+'bpmnprof::IntermediateThrowEvent' (role 'bpmnprof_IntermediateThrowEvent', cardinality 0..*) is associated with 'bpmnprof::SendObjectAction' (role 'bpmnprof_SendObjectAction', cardinality 0..*).
+'bpmnprof::ErrorEventDefinition' (role 'bpmnprof_ErrorEventDefinition', cardinality 0..*) is associated with 'bpmnprof::Error' (role 'bpmnprof_Error552', cardinality 0..*).
+'bpmnprof::CallEvent' (role 'bpmnprof_CallEvent560', cardinality 0..*) is associated with 'bpmnprof::CancelEventDefinition' (role 'bpmnprof_CancelEventDefinition', cardinality 0..*).
+'bpmnprof::Class' (role 'bpmnprof_Class188', cardinality 0..*) is associated with 'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition187', cardinality 0..*).
+'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition379', cardinality 0..*) is associated with 'bpmnprof::FormalExpression' (role 'bpmnprof_FormalExpression378', cardinality 0..*).
+'bpmnprof::FlowNode' (role 'bpmnprof_FlowNode', cardinality 0..*) is associated with 'bpmnprof::ActivityNode' (role 'bpmnprof_ActivityNode', cardinality 0..*).
+'bpmnprof::ReceiveTask' (role 'bpmnprof_ReceiveTask646', cardinality 0..*) is associated with 'bpmnprof::AcceptEventAction' (role 'bpmnprof_AcceptEventAction647', cardinality 0..*).
+'bpmnprof::CategoryValue' (role '_categoryValueRef', cardinality 0..*) is associated with 'bpmnprof::FlowElement' (role 'FlowElement', cardinality 0..*).
+'bpmnprof::Constraint' (role 'bpmnprof_Constraint', cardinality 0..*) is associated with 'bpmnprof::BPMNRelationship' (role 'bpmnprof_BPMNRelationship121', cardinality 0..*).
+'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode345', cardinality 0..*) is associated with 'bpmnprof::InformationFlow' (role 'bpmnprof_InformationFlow346', cardinality 0..*).
+'bpmnprof::DataOutput' (role 'dataOutputRefs', cardinality 0..*) is associated with 'bpmnprof::OutputSet' (role 'OutputSet', cardinality 0..*).
+'bpmnprof::Parameter' (role 'bpmnprof_Parameter206', cardinality 0..*) is associated with 'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput205', cardinality 0..*).
+'bpmnprof::UserTask' (role 'bpmnprof_UserTask591', cardinality 0..*) is associated with 'bpmnprof::Rendering' (role 'bpmnprof_Rendering', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'laneSet', cardinality 0..*) is associated with 'bpmnprof::Lane' (role 'Lane', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole461', cardinality 0..*) is associated with 'bpmnprof::BPMNActivity' (role 'bpmnprof_BPMNActivity460', cardinality 0..*).
+'bpmnprof::ExtensionAttributeDefinition' (role 'bpmnprof_ExtensionAttributeDefinition31', cardinality 0..*) is associated with 'bpmnprof::Property' (role 'bpmnprof_Property', cardinality 0..*).
+'bpmnprof::ConversationLink' (role 'ConversationLink306', cardinality 0..*) is associated with 'bpmnprof::InteractionNode' (role 'sourceRef305', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression628', cardinality 0..*) is associated with 'bpmnprof::AdHocSubProcess' (role 'bpmnprof_AdHocSubProcess', cardinality 0..*).
+'bpmnprof::ConversationNode' (role 'bpmnprof_ConversationNode', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration274', cardinality 0..*).
+'bpmnprof::ScriptTask' (role 'bpmnprof_ScriptTask', cardinality 0..*) is associated with 'bpmnprof::OpaqueAction' (role 'bpmnprof_OpaqueAction630', cardinality 0..*).
+'bpmnprof::Dependency' (role 'bpmnprof_Dependency326', cardinality 0..*) is associated with 'bpmnprof::MessageFlowAssociation' (role 'bpmnprof_MessageFlowAssociation325', cardinality 0..*).
+'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet257', cardinality 0..*) is associated with 'bpmnprof::InputOutputBinding' (role 'bpmnprof_InputOutputBinding256', cardinality 0..*).
+'bpmnprof::BaseElement' (role 'BaseElement42', cardinality 0..*) is associated with 'bpmnprof::BPMNAssociation' (role 'outgoing', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'resources', cardinality 0..*) is associated with 'bpmnprof::BPMNProcess' (role 'BPMNProcess', cardinality 0..*).
+'bpmnprof::ComplexGateway' (role 'bpmnprof_ComplexGateway', cardinality 0..*) is associated with 'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow89', cardinality 0..*).
+'bpmnprof::Lane' (role 'bpmnprof_Lane63', cardinality 0..*) is associated with 'bpmnprof::Element' (role 'bpmnprof_Element64', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'process', cardinality 0..*) is associated with 'bpmnprof::ResourceRole' (role 'ResourceRole', cardinality 0..*).
+'bpmnprof::Auditing' (role 'bpmnprof_Auditing44', cardinality 0..*) is associated with 'bpmnprof::Class' (role 'bpmnprof_Class', cardinality 0..*).
+'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration278', cardinality 0..*) is associated with 'bpmnprof::Participant' (role 'bpmnprof_Participant', cardinality 0..*).
+'bpmnprof::ResourceRole' (role 'bpmnprof_ResourceRole405', cardinality 0..*) is associated with 'bpmnprof::ResourceAssignmentExpression' (role 'bpmnprof_ResourceAssignmentExpression', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression543', cardinality 0..*) is associated with 'bpmnprof::ConditionalEventDefinition' (role 'bpmnprof_ConditionalEventDefinition542', cardinality 0..*).
+'bpmnprof::CategoryValue' (role 'bpmnprof_CategoryValue', cardinality 0..*) is associated with 'bpmnprof::EnumerationLiteral' (role 'bpmnprof_EnumerationLiteral', cardinality 0..*).
+'bpmnprof::BPMNOperation' (role 'bpmnprof_BPMNOperation240', cardinality 0..*) is associated with 'bpmnprof::Element' (role 'bpmnprof_Element241', cardinality 0..*).
+'bpmnprof::CorrelationProperty' (role 'bpmnprof_CorrelationProperty', cardinality 0..*) is associated with 'bpmnprof::CorrelationKey' (role 'bpmnprof_CorrelationKey360', cardinality 0..*).
+'bpmnprof::CatchEvent' (role 'bpmnprof_CatchEvent', cardinality 0..*) is associated with 'bpmnprof::AcceptEventAction' (role 'bpmnprof_AcceptEventAction', cardinality 0..*).
+'bpmnprof::DataInput' (role 'bpmnprof_DataInput171', cardinality 0..*) is associated with 'bpmnprof::Parameter' (role 'bpmnprof_Parameter', cardinality 0..*).
+'bpmnprof::LaneSet' (role 'bpmnprof_LaneSet', cardinality 0..*) is associated with 'bpmnprof::ActivityPartition' (role 'bpmnprof_ActivityPartition', cardinality 0..*).
+'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow329', cardinality 0..*) is associated with 'bpmnprof::MessageFlowAssociation' (role 'bpmnprof_MessageFlowAssociation328', cardinality 0..*).
+'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage343', cardinality 0..*) is associated with 'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow342', cardinality 0..*).
+'bpmnprof::ItemDefinition' (role 'bpmnprof_ItemDefinition251', cardinality 0..*) is associated with 'bpmnprof::BPMNMessage' (role 'bpmnprof_BPMNMessage250', cardinality 0..*).
+'bpmnprof::CallActivity' (role 'bpmnprof_CallActivity', cardinality 0..*) is associated with 'bpmnprof::CallBehaviorAction' (role 'bpmnprof_CallBehaviorAction', cardinality 0..*).
+'bpmnprof::BPMNProcess' (role 'bpmnprof_BPMNProcess', cardinality 0..*) is associated with 'bpmnprof::Auditing' (role 'bpmnprof_Auditing132', cardinality 0..*).
+'bpmnprof::BPMNAssociation' (role 'incoming', cardinality 0..*) is associated with 'bpmnprof::BaseElement' (role 'BaseElement', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression', cardinality 0..*) is associated with 'bpmnprof::SequenceFlow' (role 'bpmnprof_SequenceFlow79', cardinality 0..*).
+'bpmnprof::DataOutput' (role 'bpmnprof_DataOutput222', cardinality 0..*) is associated with 'bpmnprof::OutputSet' (role 'bpmnprof_OutputSet221', cardinality 0..*).
+'bpmnprof::BPMNExpression' (role 'bpmnprof_BPMNExpression642', cardinality 0..*) is associated with 'bpmnprof::StandardLoopCharacteristics' (role 'bpmnprof_StandardLoopCharacteristics641', cardinality 0..*).
+'bpmnprof::BPMNAssociation' (role 'bpmnprof_BPMNAssociation', cardinality 0..*) is associated with 'bpmnprof::Dependency' (role 'bpmnprof_Dependency', cardinality 0..*).
+'bpmnprof::BaseElement' (role 'bpmnprof_BaseElement17', cardinality 0..*) is associated with 'bpmnprof::Documentation' (role 'bpmnprof_Documentation', cardinality 0..*).
+'bpmnprof::Class' (role 'bpmnprof_Class47', cardinality 0..*) is associated with 'bpmnprof::Monitoring' (role 'bpmnprof_Monitoring46', cardinality 0..*).
+'bpmnprof::MessageFlow' (role 'bpmnprof_MessageFlow', cardinality 0..*) is associated with 'bpmnprof::BPMNCollaboration' (role 'bpmnprof_BPMNCollaboration270', cardinality 0..*).
+'bpmnprof::EventDefinition' (role 'bpmnprof_EventDefinition', cardinality 0..*) is associated with 'bpmnprof::Event' (role 'bpmnprof_Event', cardinality 0..*).
+'bpmnprof::Element' (role 'bpmnprof_Element231', cardinality 0..*) is associated with 'bpmnprof::BPMNInterface' (role 'bpmnprof_BPMNInterface230', cardinality 0..*).
+'bpmnprof::Rendering' (role 'bpmnprof_Rendering595', cardinality 0..*) is associated with 'bpmnprof::Image' (role 'bpmnprof_Image', cardinality 0..*).
+'bpmnprof::FlowElementsContainer' (role 'container', cardinality 0..*) is associated with 'bpmnprof::FlowElement' (role 'FlowElement52', cardinality 0..*).
+'bpmnprof::Class' (role 'bpmnprof_Class472', cardinality 0..*) is associated with 'bpmnprof::BPMNEvent' (role 'bpmnprof_BPMNEvent', cardinality 0..*).

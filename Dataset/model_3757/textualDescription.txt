@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Relational::Column' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'Relational::Table' has the following attributes: 'name' of type str; 'id' of type str.
+'Relational::Table' (role 'reference', cardinality 0..*) is associated with 'Relational::Column' (role 'Column', cardinality 0..*).
+'Relational::Column' (role 'columns', cardinality 0..*) is associated with 'Relational::Table' (role 'Table', cardinality 0..*).

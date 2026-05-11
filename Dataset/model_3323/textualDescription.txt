@@ -1,0 +1,50 @@
+The model has 17 class(es).
+The class 'miniJava::Method' has the following attributes: 'name' of type str.
+The class 'miniJava::NumberValue' has the following attributes: 'value' of type int.
+The class 'miniJava::Expr' has the following attributes: 'expressionType' of type str.
+The class 'Expr' has no attributes.
+The class 'miniJava::Multiplication' has no attributes.
+The class 'miniJava::Expression' has no attributes.
+The class 'miniJava::VarDeclaration' has no attributes.
+The class 'miniJava::Point' has no attributes.
+The class 'miniJava::Variable' has the following attributes: 'name' of type str.
+The class 'miniJava::ClassDecl' has the following attributes: 'name' of type str.
+The class 'miniJava::MainMethod' has no attributes.
+The class 'miniJava::MethodCall' has no attributes.
+The class 'miniJava::Program' has no attributes.
+The class 'miniJava::Statement' has the following attributes: 'isArrayElementAssignment' of type bool; 'statementType' of type str.
+The class 'miniJava::Addition' has no attributes.
+The class 'miniJava::SquareBrackets' has no attributes.
+The class 'miniJava::Type' has the following attributes: 'typeName' of type str.
+'miniJava::Expression' is a specialization of 'Expr'.
+'miniJava::Point' is a specialization of 'Expr'.
+'miniJava::Multiplication' is a specialization of 'Expr'.
+'miniJava::Addition' is a specialization of 'Expr'.
+'miniJava::SquareBrackets' is a specialization of 'Expr'.
+'miniJava::Program' (role 'miniJava_Program', cardinality 0..*) is associated with 'miniJava::ClassDecl' (role 'miniJava_ClassDecl', cardinality 0..*).
+'miniJava::Expr' (role 'miniJava_Expr47', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr45', cardinality 0..*).
+'miniJava::Variable' (role 'miniJava_Variable17', cardinality 0..*) is associated with 'miniJava::Type' (role 'miniJava_Type18', cardinality 0..*).
+'miniJava::Expr' (role 'miniJava_Expr52', cardinality 0..*) is associated with 'miniJava::Type' (role 'miniJava_Type53', cardinality 0..*).
+'miniJava::ClassDecl' (role 'miniJava_ClassDecl3', cardinality 0..*) is associated with 'miniJava::ClassDecl' (role 'miniJava_ClassDecl5', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method20', cardinality 0..*) is associated with 'miniJava::Type' (role 'miniJava_Type21', cardinality 0..*).
+'miniJava::Variable' (role 'miniJava_Variable56', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr55', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method26', cardinality 0..*) is associated with 'miniJava::VarDeclaration' (role 'miniJava_VarDeclaration27', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method32', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr', cardinality 0..*).
+'miniJava::MethodCall' (role 'miniJava_MethodCall', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr60', cardinality 0..*).
+'miniJava::ClassDecl' (role 'miniJava_ClassDecl13', cardinality 0..*) is associated with 'miniJava::Type' (role 'miniJava_Type', cardinality 0..*).
+'miniJava::Variable' (role 'miniJava_Variable', cardinality 0..*) is associated with 'miniJava::VarDeclaration' (role 'miniJava_VarDeclaration15', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement30', cardinality 0..*) is associated with 'miniJava::Method' (role 'miniJava_Method29', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method', cardinality 0..*) is associated with 'miniJava::ClassDecl' (role 'miniJava_ClassDecl9', cardinality 0..*).
+'miniJava::ClassDecl' (role 'miniJava_ClassDecl2', cardinality 0..*) is associated with 'miniJava::MainMethod' (role 'miniJava_MainMethod', cardinality 0..*).
+'miniJava::Expr' (role 'miniJava_Expr61', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr63', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement33', cardinality 0..*) is associated with 'miniJava::Statement' (role 'miniJava_Statement35', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method66', cardinality 0..*) is associated with 'miniJava::MethodCall' (role 'miniJava_MethodCall65', cardinality 0..*).
+'miniJava::Expr' (role 'miniJava_Expr48', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr50', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement37', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr38', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement43', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr44', cardinality 0..*).
+'miniJava::Method' (role 'miniJava_Method23', cardinality 0..*) is associated with 'miniJava::Variable' (role 'miniJava_Variable24', cardinality 0..*).
+'miniJava::NumberValue' (role 'miniJava_NumberValue', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr58', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement40', cardinality 0..*) is associated with 'miniJava::Variable' (role 'miniJava_Variable41', cardinality 0..*).
+'miniJava::ClassDecl' (role 'miniJava_ClassDecl7', cardinality 0..*) is associated with 'miniJava::VarDeclaration' (role 'miniJava_VarDeclaration', cardinality 0..*).
+'miniJava::Statement' (role 'miniJava_Statement', cardinality 0..*) is associated with 'miniJava::MainMethod' (role 'miniJava_MainMethod11', cardinality 0..*).
+'miniJava::MethodCall' (role 'miniJava_MethodCall68', cardinality 0..*) is associated with 'miniJava::Expr' (role 'miniJava_Expr69', cardinality 0..*).

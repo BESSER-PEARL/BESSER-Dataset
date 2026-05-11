@@ -1,0 +1,74 @@
+The model has 33 class(es).
+The class 'reqLanguage::EObject' has no attributes.
+The class 'reqLanguage::MainFunction' has no attributes.
+The class 'reqLanguage::MainFunctions' has no attributes.
+The class 'reqLanguage::Time' has the following attributes: 'timeUnit' of type str; 'value' of type int.
+The class 'reqLanguage::TimingConstraint' has the following attributes: 'minmax' of type str; 'timingConstraint' of type str.
+The class 'reqLanguage::NoTransition' has no attributes.
+The class 'reqLanguage::Operator' has the following attributes: 'operator' of type str.
+The class 'reqLanguage::Value' has the following attributes: 'val' of type str; 'value' of type int.
+The class 'reqLanguage::PrefixRightOperand' has the following attributes: 'operator' of type str.
+The class 'reqLanguage::MainComposition' has no attributes.
+The class 'reqLanguage::Prefix' has no attributes.
+The class 'reqLanguage::OutTransition' has no attributes.
+The class 'reqLanguage::ReqID' has the following attributes: 'name' of type str; 'reqID' of type str.
+The class 'reqLanguage::PrefixEvent' has the following attributes: 'prefixFixedSyntax' of type str.
+The class 'reqLanguage::StateEvent' has no attributes.
+The class 'reqLanguage::Transition' has no attributes.
+The class 'reqLanguage::ParameterState' has no attributes.
+The class 'reqLanguage::System' has the following attributes: 'name' of type str; 'system' of type str.
+The class 'reqLanguage::Parameter' has the following attributes: 'name' of type str; 'parameter' of type str.
+The class 'reqLanguage::MainAttributes' has no attributes.
+The class 'reqLanguage::MainStateTransition' has no attributes.
+The class 'reqLanguage::ActorEvent' has the following attributes: 'action' of type str.
+The class 'reqLanguage::Action' has the following attributes: 'name' of type str; 'action' of type str.
+The class 'reqLanguage::User' has the following attributes: 'name' of type str; 'user' of type str.
+The class 'reqLanguage::ParamEvent' has the following attributes: 'action' of type str.
+The class 'reqLanguage::PrefixCondition' has the following attributes: 'prefixFixedSyntax' of type str.
+The class 'reqLanguage::Function' has the following attributes: 'function' of type str; 'type' of type str; 'name' of type str.
+The class 'reqLanguage::State' has the following attributes: 'state' of type str; 'name' of type str.
+The class 'reqLanguage::Requirement' has no attributes.
+The class 'reqLanguage::Model' has no attributes.
+The class 'reqLanguage::Actor' has the following attributes: 'actor' of type str; 'name' of type str.
+The class 'reqLanguage::PrefixState' has the following attributes: 'prefixFixedSyntax' of type str.
+The class 'reqLanguage::Attribute' has the following attributes: 'type' of type str; 'name' of type str; 'attribute' of type str.
+'reqLanguage::System' (role 'reqLanguage_System62', cardinality 0..*) is associated with 'reqLanguage::MainAttributes' (role 'reqLanguage_MainAttributes', cardinality 0..*).
+'reqLanguage::Requirement' (role 'reqLanguage_Requirement4', cardinality 0..*) is associated with 'reqLanguage::Prefix' (role 'reqLanguage_Prefix', cardinality 0..*).
+'reqLanguage::Value' (role 'reqLanguage_Value', cardinality 0..*) is associated with 'reqLanguage::PrefixCondition' (role 'reqLanguage_PrefixCondition22', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject14', cardinality 0..*) is associated with 'reqLanguage::PrefixRightOperand' (role 'reqLanguage_PrefixRightOperand13', cardinality 0..*).
+'reqLanguage::Prefix' (role 'reqLanguage_Prefix8', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject9', cardinality 0..*).
+'reqLanguage::ParamEvent' (role 'reqLanguage_ParamEvent', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject28', cardinality 0..*).
+'reqLanguage::Action' (role 'reqLanguage_Action79', cardinality 0..*) is associated with 'reqLanguage::Parameter' (role 'reqLanguage_Parameter80', cardinality 0..*).
+'reqLanguage::Action' (role 'reqLanguage_Action60', cardinality 0..*) is associated with 'reqLanguage::MainStateTransition' (role 'reqLanguage_MainStateTransition59', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject73', cardinality 0..*) is associated with 'reqLanguage::Transition' (role 'reqLanguage_Transition72', cardinality 0..*).
+'reqLanguage::Value' (role 'reqLanguage_Value31', cardinality 0..*) is associated with 'reqLanguage::ParamEvent' (role 'reqLanguage_ParamEvent30', cardinality 0..*).
+'reqLanguage::Transition' (role 'reqLanguage_Transition', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject70', cardinality 0..*).
+'reqLanguage::NoTransition' (role 'reqLanguage_NoTransition', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject77', cardinality 0..*).
+'reqLanguage::PrefixRightOperand' (role 'reqLanguage_PrefixRightOperand', cardinality 0..*) is associated with 'reqLanguage::Prefix' (role 'reqLanguage_Prefix11', cardinality 0..*).
+'reqLanguage::State' (role 'reqLanguage_State', cardinality 0..*) is associated with 'reqLanguage::StateEvent' (role 'reqLanguage_StateEvent38', cardinality 0..*).
+'reqLanguage::MainComposition' (role 'reqLanguage_MainComposition', cardinality 0..*) is associated with 'reqLanguage::System' (role 'reqLanguage_System49', cardinality 0..*).
+'reqLanguage::System' (role 'reqLanguage_System54', cardinality 0..*) is associated with 'reqLanguage::MainStateTransition' (role 'reqLanguage_MainStateTransition', cardinality 0..*).
+'reqLanguage::Requirement' (role 'reqLanguage_Requirement', cardinality 0..*) is associated with 'reqLanguage::Model' (role 'reqLanguage_Model', cardinality 0..*).
+'reqLanguage::MainFunctions' (role 'reqLanguage_MainFunctions', cardinality 0..*) is associated with 'reqLanguage::System' (role 'reqLanguage_System66', cardinality 0..*).
+'reqLanguage::MainFunctions' (role 'reqLanguage_MainFunctions68', cardinality 0..*) is associated with 'reqLanguage::Function' (role 'reqLanguage_Function', cardinality 0..*).
+'reqLanguage::PrefixCondition' (role 'reqLanguage_PrefixCondition24', cardinality 0..*) is associated with 'reqLanguage::TimingConstraint' (role 'reqLanguage_TimingConstraint', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject57', cardinality 0..*) is associated with 'reqLanguage::MainStateTransition' (role 'reqLanguage_MainStateTransition56', cardinality 0..*).
+'reqLanguage::Requirement' (role 'reqLanguage_Requirement2', cardinality 0..*) is associated with 'reqLanguage::ReqID' (role 'reqLanguage_ReqID', cardinality 0..*).
+'reqLanguage::PrefixState' (role 'reqLanguage_PrefixState', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject16', cardinality 0..*).
+'reqLanguage::System' (role 'reqLanguage_System52', cardinality 0..*) is associated with 'reqLanguage::MainComposition' (role 'reqLanguage_MainComposition51', cardinality 0..*).
+'reqLanguage::ActorEvent' (role 'reqLanguage_ActorEvent', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject33', cardinality 0..*).
+'reqLanguage::Action' (role 'reqLanguage_Action', cardinality 0..*) is associated with 'reqLanguage::MainFunction' (role 'reqLanguage_MainFunction47', cardinality 0..*).
+'reqLanguage::Action' (role 'reqLanguage_Action82', cardinality 0..*) is associated with 'reqLanguage::Value' (role 'reqLanguage_Value83', cardinality 0..*).
+'reqLanguage::Attribute' (role 'reqLanguage_Attribute', cardinality 0..*) is associated with 'reqLanguage::MainAttributes' (role 'reqLanguage_MainAttributes64', cardinality 0..*).
+'reqLanguage::Time' (role 'reqLanguage_Time', cardinality 0..*) is associated with 'reqLanguage::TimingConstraint' (role 'reqLanguage_TimingConstraint88', cardinality 0..*).
+'reqLanguage::StateEvent' (role 'reqLanguage_StateEvent', cardinality 0..*) is associated with 'reqLanguage::System' (role 'reqLanguage_System', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject18', cardinality 0..*) is associated with 'reqLanguage::PrefixCondition' (role 'reqLanguage_PrefixCondition', cardinality 0..*).
+'reqLanguage::Requirement' (role 'reqLanguage_Requirement6', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject', cardinality 0..*).
+'reqLanguage::ParameterState' (role 'reqLanguage_ParameterState42', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject43', cardinality 0..*).
+'reqLanguage::PrefixCondition' (role 'reqLanguage_PrefixCondition20', cardinality 0..*) is associated with 'reqLanguage::Operator' (role 'reqLanguage_Operator', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject26', cardinality 0..*) is associated with 'reqLanguage::PrefixEvent' (role 'reqLanguage_PrefixEvent', cardinality 0..*).
+'reqLanguage::Parameter' (role 'reqLanguage_Parameter40', cardinality 0..*) is associated with 'reqLanguage::ParameterState' (role 'reqLanguage_ParameterState', cardinality 0..*).
+'reqLanguage::MainFunction' (role 'reqLanguage_MainFunction', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject45', cardinality 0..*).
+'reqLanguage::Action' (role 'reqLanguage_Action85', cardinality 0..*) is associated with 'reqLanguage::EObject' (role 'reqLanguage_EObject86', cardinality 0..*).
+'reqLanguage::ActorEvent' (role 'reqLanguage_ActorEvent35', cardinality 0..*) is associated with 'reqLanguage::Parameter' (role 'reqLanguage_Parameter', cardinality 0..*).
+'reqLanguage::EObject' (role 'reqLanguage_EObject75', cardinality 0..*) is associated with 'reqLanguage::OutTransition' (role 'reqLanguage_OutTransition', cardinality 0..*).

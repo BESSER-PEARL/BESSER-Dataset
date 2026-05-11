@@ -1,0 +1,39 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class MARTE_HwDiagram_SRMDiagram  {
+
+
+
+
+
+
+    private List<HwGeneral_HwResource> hwgeneral_hwresources;
+
+
+    public MARTE_HwDiagram_SRMDiagram(
+    ) {
+        this.hwgeneral_hwresources = new ArrayList<>();
+    }
+
+    public MARTE_HwDiagram_SRMDiagram(
+        ArrayList<HwGeneral_HwResource> hwgeneral_hwresources    ) {
+        this.hwgeneral_hwresources = hwgeneral_hwresources;
+    }
+
+
+    public List<HwGeneral_HwResource> getHwgeneral_hwresources() {
+        return hwgeneral_hwresources;
+    }
+
+    public void addHwgeneral_hwresource(Hwgeneral_hwresource hwgeneral_hwresource) {
+        this.hwgeneral_hwresources.add(hwgeneral_hwresource);
+    }
+
+}

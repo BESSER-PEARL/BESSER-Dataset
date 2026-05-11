@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/damenac/puzzle/examples/modularization/fr.inria.diverse.examples.simpleimperative/models/simpleimperative.ecore

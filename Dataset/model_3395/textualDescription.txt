@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'tables::Table' has the following attributes: 'id' of type int; 'isReserved' of type bool.
+The class 'tables::Chair' has the following attributes: 'order' of type int.
+The class 'tables::Waitress' has the following attributes: 'name' of type str.
+The class 'tables::Restaurant' has no attributes.
+'tables::Restaurant' (role 'tables_Restaurant6', cardinality 0..*) is associated with 'tables::Table' (role 'tables_Table7', cardinality 0..*).
+'tables::Table' (role 'tables_Table2', cardinality 0..*) is associated with 'tables::Waitress' (role 'tables_Waitress', cardinality 0..*).
+'tables::Restaurant' (role 'tables_Restaurant', cardinality 0..*) is associated with 'tables::Waitress' (role 'tables_Waitress4', cardinality 0..*).
+'tables::Chair' (role 'tables_Chair', cardinality 0..*) is associated with 'tables::Table' (role 'tables_Table', cardinality 0..*).

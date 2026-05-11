@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'model::Column' has the following attributes: 'name' of type str.
+The class 'model::Diagram' has no attributes.
+The class 'model::Table' has the following attributes: 'name' of type str.
+The class 'model::Constraint' has no attributes.
+'model::Table' (role 'model_Table13', cardinality 0..*) is associated with 'model::Constraint' (role 'model_Constraint12', cardinality 0..*).
+'model::Constraint' (role 'model_Constraint5', cardinality 0..*) is associated with 'model::Table' (role 'model_Table4', cardinality 0..*).
+'model::Table' (role 'model_Table', cardinality 0..*) is associated with 'model::Column' (role 'model_Column', cardinality 0..*).
+'model::Table' (role 'model_Table10', cardinality 0..*) is associated with 'model::Constraint' (role 'model_Constraint9', cardinality 0..*).
+'model::Table' (role 'model_Table2', cardinality 0..*) is associated with 'model::Constraint' (role 'model_Constraint', cardinality 0..*).
+'model::Table' (role 'model_Table7', cardinality 0..*) is associated with 'model::Diagram' (role 'model_Diagram', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'Project::Department' has the following attributes: 'budget' of type int; 'name' of type str; 'location' of type str.
+The class 'Project::Employee' has the following attributes: 'salary' of type int; 'name' of type str.
+The class 'Project::Project' has the following attributes: 'budget' of type int; 'name' of type str.
+'Project::Employee' (role 'Employee', cardinality 0..*) is associated with 'Project::Department' (role 'WorksIn_Department', cardinality 0..*).
+'Project::Employee' (role 'WorksOn_Employee', cardinality 0..*) is associated with 'Project::Project' (role 'Project', cardinality 0..*).
+'Project::Project' (role 'Project4', cardinality 0..*) is associated with 'Project::Department' (role 'Controls_Department', cardinality 0..*).
+'Project::Project' (role 'WorksOn_Project', cardinality 0..*) is associated with 'Project::Employee' (role 'Employee6', cardinality 0..*).
+'Project::Department' (role 'Department', cardinality 0..*) is associated with 'Project::Employee' (role 'WorksIn_Employee', cardinality 0..*).
+'Project::Department' (role 'Department8', cardinality 0..*) is associated with 'Project::Project' (role 'Controls_Project', cardinality 0..*).

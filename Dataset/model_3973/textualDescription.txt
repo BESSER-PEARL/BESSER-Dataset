@@ -1,0 +1,73 @@
+The model has 40 class(es).
+The class 'l2::Realization' has no attributes.
+The class 'l2::Source' has no attributes.
+The class 'l2::BehavioralFeature' has no attributes.
+The class 'l2::Type' has no attributes.
+The class 'l2::Create' has no attributes.
+The class 'l2::Abstraction' has no attributes.
+The class 'l2::Call' has no attributes.
+The class 'l2::ModelLibrary' has no attributes.
+The class 'l2::Executable' has no attributes.
+The class 'l2::Destroy' has no attributes.
+The class 'l2::Script' has no attributes.
+The class 'l2::ValueSpecification' has no attributes.
+The class 'l2::Artifact' has no attributes.
+The class 'l2::Send' has no attributes.
+The class 'l2::Auxiliary' has no attributes.
+The class 'l2::Trace' has no attributes.
+The class 'l2::Metaclass' has no attributes.
+The class 'l2::Entity' has no attributes.
+The class 'l2::Responsibility' has no attributes.
+The class 'l2::Implement' has no attributes.
+The class 'l2::Component' has no attributes.
+The class 'l2::Package' has no attributes.
+The class 'l2::Library' has no attributes.
+The class 'l2::Focus' has no attributes.
+The class 'l2::Class' has no attributes.
+The class 'l2::Classifier' has no attributes.
+The class 'l2::Instantiate' has no attributes.
+The class 'l2::Usage' has no attributes.
+The class 'l2::Utility' has no attributes.
+The class 'l2::Refine' has no attributes.
+The class 'l2::Derive' has no attributes.
+The class 'l2::File' has no attributes.
+The class 'l2::Specification' has no attributes.
+The class 'l2::Process' has no attributes.
+The class 'l2::Service' has no attributes.
+The class 'l2::ImplementationClass' has no attributes.
+The class 'File' has no attributes.
+The class 'l2::Subsystem' has no attributes.
+The class 'l2::Document' has no attributes.
+The class 'l2::Framework' has no attributes.
+'l2::Script' is a specialization of 'File'.
+'l2::Source' is a specialization of 'File'.
+'l2::Library' is a specialization of 'File'.
+'l2::Executable' is a specialization of 'File'.
+'l2::Document' is a specialization of 'File'.
+'l2::Entity' (role 'l2_Entity', cardinality 0..*) is associated with 'l2::Component' (role 'l2_Component', cardinality 0..*).
+'l2::Utility' (role 'l2_Utility', cardinality 0..*) is associated with 'l2::Class' (role 'l2_Class46', cardinality 0..*).
+'l2::BehavioralFeature' (role 'l2_BehavioralFeature', cardinality 0..*) is associated with 'l2::Create' (role 'l2_Create', cardinality 0..*).
+'l2::Service' (role 'l2_Service', cardinality 0..*) is associated with 'l2::Component' (role 'l2_Component36', cardinality 0..*).
+'l2::Class' (role 'l2_Class44', cardinality 0..*) is associated with 'l2::Type' (role 'l2_Type', cardinality 0..*).
+'l2::Instantiate' (role 'l2_Instantiate', cardinality 0..*) is associated with 'l2::Usage' (role 'l2_Usage21', cardinality 0..*).
+'l2::Component' (role 'l2_Component40', cardinality 0..*) is associated with 'l2::Subsystem' (role 'l2_Subsystem', cardinality 0..*).
+'l2::Component' (role 'l2_Component27', cardinality 0..*) is associated with 'l2::Process' (role 'l2_Process', cardinality 0..*).
+'l2::Metaclass' (role 'l2_Metaclass', cardinality 0..*) is associated with 'l2::Class' (role 'l2_Class23', cardinality 0..*).
+'l2::Derive' (role 'l2_Derive8', cardinality 0..*) is associated with 'l2::ValueSpecification' (role 'l2_ValueSpecification', cardinality 0..*).
+'l2::File' (role 'l2_File', cardinality 0..*) is associated with 'l2::Artifact' (role 'l2_Artifact', cardinality 0..*).
+'l2::Realization' (role 'l2_Realization', cardinality 0..*) is associated with 'l2::Classifier' (role 'l2_Classifier', cardinality 0..*).
+'l2::Send' (role 'l2_Send', cardinality 0..*) is associated with 'l2::Usage' (role 'l2_Usage34', cardinality 0..*).
+'l2::Focus' (role 'l2_Focus', cardinality 0..*) is associated with 'l2::Class' (role 'l2_Class14', cardinality 0..*).
+'l2::Responsibility' (role 'l2_Responsibility', cardinality 0..*) is associated with 'l2::Usage' (role 'l2_Usage32', cardinality 0..*).
+'l2::Class' (role 'l2_Class19', cardinality 0..*) is associated with 'l2::ImplementationClass' (role 'l2_ImplementationClass', cardinality 0..*).
+'l2::Refine' (role 'l2_Refine', cardinality 0..*) is associated with 'l2::Abstraction' (role 'l2_Abstraction30', cardinality 0..*).
+'l2::Create' (role 'l2_Create4', cardinality 0..*) is associated with 'l2::Usage' (role 'l2_Usage5', cardinality 0..*).
+'l2::Derive' (role 'l2_Derive', cardinality 0..*) is associated with 'l2::Abstraction' (role 'l2_Abstraction', cardinality 0..*).
+'l2::BehavioralFeature' (role 'l2_BehavioralFeature10', cardinality 0..*) is associated with 'l2::Destroy' (role 'l2_Destroy', cardinality 0..*).
+'l2::Usage' (role 'l2_Usage', cardinality 0..*) is associated with 'l2::Call' (role 'l2_Call', cardinality 0..*).
+'l2::Component' (role 'l2_Component17', cardinality 0..*) is associated with 'l2::Implement' (role 'l2_Implement', cardinality 0..*).
+'l2::Abstraction' (role 'l2_Abstraction42', cardinality 0..*) is associated with 'l2::Trace' (role 'l2_Trace', cardinality 0..*).
+'l2::Framework' (role 'l2_Framework', cardinality 0..*) is associated with 'l2::Package' (role 'l2_Package', cardinality 0..*).
+'l2::ModelLibrary' (role 'l2_ModelLibrary', cardinality 0..*) is associated with 'l2::Package' (role 'l2_Package25', cardinality 0..*).
+'l2::Specification' (role 'l2_Specification', cardinality 0..*) is associated with 'l2::Classifier' (role 'l2_Classifier38', cardinality 0..*).
+'l2::Class' (role 'l2_Class', cardinality 0..*) is associated with 'l2::Auxiliary' (role 'l2_Auxiliary', cardinality 0..*).

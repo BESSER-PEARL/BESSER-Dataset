@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CompositeDataType  {
+
+
+
+
+
+
+    private pcm_av_repository_av_CompositeDataType pcm_av_repository_av_compositedatatype;
+
+
+    public CompositeDataType(
+    ) {
+    }
+
+
+
+    public pcm_av_repository_av_CompositeDataType getPcm_av_repository_av_compositedatatype() {
+        return pcm_av_repository_av_compositedatatype;
+    }
+
+    public void setPcm_av_repository_av_compositedatatype(pcm_av_repository_av_CompositeDataType pcm_av_repository_av_compositedatatype) {
+        this.pcm_av_repository_av_compositedatatype = pcm_av_repository_av_compositedatatype;
+    }
+
+}

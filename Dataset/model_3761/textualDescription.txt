@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'CriticsReviewType' has no attributes.
+The class 'db::MovieType' has the following attributes: 'iD' of type str; 'any' of type str; 'summary' of type str; 'title' of type str; 'criticsReviewGroup' of type str; 'director' of type str; 'actors' of type str; 'genre' of type str.
+The class 'db::CriticsReviewType' has the following attributes: 'rating' of type str; 'reviewedBy' of type str.
+The class 'db::EStringToStringMapEntry' has no attributes.
+The class 'db::CustomerReviewType' has the following attributes: 'comment' of type str.
+The class 'db::MovieDBType' has the following attributes: 'movieDBFeatureMap' of type str; 'comment' of type str.
+The class 'db::CustomerType' has no attributes.
+The class 'db::DocumentRoot' has the following attributes: 'specialFeatures' of type str; 'language' of type str; 'mixed' of type str.
+The enumeration 'GenreTypes' has the following literals: 'NewRelease', 'Documentary', 'Comedy', 'Drama', 'Horror', 'Romance', 'Action', 'Thriller', 'Classics', 'SciFi', 'Family', 'Animation'.
+'db::CustomerReviewType' is a specialization of 'CriticsReviewType'.
+'db::MovieDBType' (role 'db_MovieDBType13', cardinality 0..*) is associated with 'db::MovieType' (role 'db_MovieType', cardinality 0..*).
+'db::DocumentRoot' (role 'db_DocumentRoot2', cardinality 0..*) is associated with 'db::EStringToStringMapEntry' (role 'db_EStringToStringMapEntry3', cardinality 0..*).
+'db::DocumentRoot' (role 'db_DocumentRoot', cardinality 0..*) is associated with 'db::EStringToStringMapEntry' (role 'db_EStringToStringMapEntry', cardinality 0..*).
+'db::CustomerType' (role 'db_CustomerType', cardinality 0..*) is associated with 'db::DocumentRoot' (role 'db_DocumentRoot5', cardinality 0..*).
+'db::MovieType' (role 'db_MovieType18', cardinality 0..*) is associated with 'db::CustomerType' (role 'db_CustomerType19', cardinality 0..*).
+'db::MovieType' (role 'db_MovieType15', cardinality 0..*) is associated with 'db::CriticsReviewType' (role 'db_CriticsReviewType16', cardinality 0..*).
+'db::DocumentRoot' (role 'db_DocumentRoot9', cardinality 0..*) is associated with 'db::CustomerReviewType' (role 'db_CustomerReviewType', cardinality 0..*).
+'db::DocumentRoot' (role 'db_DocumentRoot11', cardinality 0..*) is associated with 'db::MovieDBType' (role 'db_MovieDBType', cardinality 0..*).
+'db::CriticsReviewType' (role 'db_CriticsReviewType', cardinality 0..*) is associated with 'db::DocumentRoot' (role 'db_DocumentRoot7', cardinality 0..*).

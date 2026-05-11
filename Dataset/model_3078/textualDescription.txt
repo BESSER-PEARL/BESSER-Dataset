@@ -1,0 +1,50 @@
+The model has 23 class(es).
+The class 'esm::EsmConcurrentState' has no attributes.
+The class 'esm::EsmSubStateModel' has no attributes.
+The class 'IEsmState' has no attributes.
+The class 'esm::DState' has no attributes.
+The class 'IEsmLayout' has no attributes.
+The class 'esm::EsmState' has no attributes.
+The class 'DModel' has no attributes.
+The class 'EsmState' has no attributes.
+The class 'esm::EsmEntityStateModel' has no attributes.
+The class 'esm::EsmCompositeState' has no attributes.
+The class 'esm::DExpression' has no attributes.
+The class 'esm::EsmDerivedState' has no attributes.
+The class 'INavigableMemberContainer' has no attributes.
+The class 'esm::DStateEvent' has no attributes.
+The class 'esm::EsmTransition' has no attributes.
+The class 'esm::IEsmLayout' has the following attributes: 'direction' of type str.
+The class 'esm::IEsmStateModel' has no attributes.
+The class 'esm::DEntityType' has no attributes.
+The class 'esm::DRichText' has no attributes.
+The class 'IEsmStateModel' has no attributes.
+The class 'IDiagramRoot' has no attributes.
+The class 'esm::IEsmState' has the following attributes: 'kind' of type str.
+The class 'IStaticReferenceTarget' has no attributes.
+The enumeration 'EsmStateKind' has the following literals: 'INITIAL', 'FINAL', 'NORMAL'.
+The enumeration 'EsmLayoutDirection' has the following literals: 'DEFAULT', 'UP', 'LEFT', 'RIGHT', 'DOWN'.
+'esm::EsmEntityStateModel' is a specialization of 'IEsmStateModel'.
+'esm::EsmConcurrentState' is a specialization of 'IEsmState'.
+'esm::EsmState' is a specialization of 'IEsmState'.
+'esm::EsmEntityStateModel' is a specialization of 'INavigableMemberContainer'.
+'esm::IEsmStateModel' is a specialization of 'IEsmLayout'.
+'esm::EsmEntityStateModel' is a specialization of 'IDiagramRoot'.
+'esm::EsmDerivedState' is a specialization of 'EsmState'.
+'esm::EsmCompositeState' is a specialization of 'IEsmState'.
+'esm::EsmEntityStateModel' is a specialization of 'IStaticReferenceTarget'.
+'esm::EsmTransition' is a specialization of 'IEsmLayout'.
+'esm::EsmEntityStateModel' is a specialization of 'DModel'.
+'esm::EsmSubStateModel' is a specialization of 'IEsmStateModel'.
+'esm::EsmCompositeState' is a specialization of 'IEsmStateModel'.
+'esm::EsmTransition' (role 'esm_EsmTransition19', cardinality 0..*) is associated with 'esm::DExpression' (role 'esm_DExpression20', cardinality 0..*).
+'esm::DState' (role 'esm_DState15', cardinality 0..*) is associated with 'esm::EsmTransition' (role 'esm_EsmTransition14', cardinality 0..*).
+'esm::IEsmStateModel' (role 'esm_IEsmStateModel3', cardinality 0..*) is associated with 'esm::EsmTransition' (role 'esm_EsmTransition', cardinality 0..*).
+'esm::DRichText' (role 'esm_DRichText', cardinality 0..*) is associated with 'esm::IEsmState' (role 'esm_IEsmState7', cardinality 0..*).
+'esm::DStateEvent' (role 'esm_DStateEvent', cardinality 0..*) is associated with 'esm::EsmTransition' (role 'esm_EsmTransition17', cardinality 0..*).
+'esm::EsmConcurrentState' (role 'esm_EsmConcurrentState', cardinality 0..*) is associated with 'esm::EsmSubStateModel' (role 'esm_EsmSubStateModel', cardinality 0..*).
+'esm::EsmDerivedState' (role 'esm_EsmDerivedState', cardinality 0..*) is associated with 'esm::DExpression' (role 'esm_DExpression', cardinality 0..*).
+'esm::EsmTransition' (role 'esm_EsmTransition11', cardinality 0..*) is associated with 'esm::DState' (role 'esm_DState12', cardinality 0..*).
+'esm::IEsmState' (role 'esm_IEsmState5', cardinality 0..*) is associated with 'esm::DState' (role 'esm_DState', cardinality 0..*).
+'esm::DEntityType' (role 'esm_DEntityType', cardinality 0..*) is associated with 'esm::EsmEntityStateModel' (role 'esm_EsmEntityStateModel', cardinality 0..*).
+'esm::IEsmState' (role 'esm_IEsmState', cardinality 0..*) is associated with 'esm::IEsmStateModel' (role 'esm_IEsmStateModel', cardinality 0..*).

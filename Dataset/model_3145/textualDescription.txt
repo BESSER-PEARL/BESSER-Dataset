@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'CNamedElement' has no attributes.
+The class 'classm1::Attribute' has the following attributes: 'visibility' of type str; 'isKey' of type bool.
+The class 'classm1::Class' has no attributes.
+The class 'classm1::CNamedElement' has the following attributes: 'name' of type str.
+The enumeration 'Visibility' has the following literals: 'private', 'public'.
+'classm1::Attribute' is a specialization of 'CNamedElement'.
+'classm1::Class' is a specialization of 'CNamedElement'.
+'classm1::Class' (role 'classm1_Class3', cardinality 0..*) is associated with 'classm1::Attribute' (role 'classm1_Attribute2', cardinality 0..*).
+'classm1::Attribute' (role 'classm1_Attribute', cardinality 0..*) is associated with 'classm1::Class' (role 'classm1_Class', cardinality 0..*).

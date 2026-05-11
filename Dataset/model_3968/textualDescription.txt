@@ -1,0 +1,74 @@
+The model has 42 class(es).
+The class 'Container' has no attributes.
+The class 'subsetUnionDepth::Container::Level9' has no attributes.
+The class 'subsetUnionDepth::Container::Level7' has no attributes.
+The class 'subsetUnionDepth::Container::Level8' has no attributes.
+The class 'subsetUnionDepth::Element::Level10' has no attributes.
+The class 'subsetUnionDepth::Container::Level1' has no attributes.
+The class 'subsetUnionDepth::Container::Level10' has no attributes.
+The class 'Element' has no attributes.
+The class 'Element::Level5' has no attributes.
+The class 'subsetUnionDepth::Element' has the following attributes: 'name' of type str.
+The class 'subsetUnionDepth::Container::Level6' has no attributes.
+The class 'Element::Level2' has no attributes.
+The class 'Container::Level2' has no attributes.
+The class 'subsetUnionDepth::Element::Level4' has no attributes.
+The class 'Container::Level9' has no attributes.
+The class 'Element::Level9' has no attributes.
+The class 'subsetUnionDepth::Element::Level1' has no attributes.
+The class 'Element::Level4' has no attributes.
+The class 'subsetUnionDepth::Element::Level6' has no attributes.
+The class 'Container::Level5' has no attributes.
+The class 'Container::Level4' has no attributes.
+The class 'Container::Level1' has no attributes.
+The class 'Element::Level1' has no attributes.
+The class 'subsetUnionDepth::Element::Level8' has no attributes.
+The class 'subsetUnionDepth::Element::Level9' has no attributes.
+The class 'subsetUnionDepth::Element::Level5' has no attributes.
+The class 'Element::Level6' has no attributes.
+The class 'subsetUnionDepth::Container::Level5' has no attributes.
+The class 'subsetUnionDepth::Element::Level7' has no attributes.
+The class 'Element::Level7' has no attributes.
+The class 'Container::Level6' has no attributes.
+The class 'Container::Level7' has no attributes.
+The class 'Container::Level3' has no attributes.
+The class 'Element::Level8' has no attributes.
+The class 'subsetUnionDepth::Container' has the following attributes: 'name' of type str.
+The class 'Element::Level3' has no attributes.
+The class 'subsetUnionDepth::Element::Level3' has no attributes.
+The class 'subsetUnionDepth::Container::Level3' has no attributes.
+The class 'subsetUnionDepth::Container::Level2' has no attributes.
+The class 'subsetUnionDepth::Container::Level4' has no attributes.
+The class 'Container::Level8' has no attributes.
+The class 'subsetUnionDepth::Element::Level2' has no attributes.
+'subsetUnionDepth::Container::Level3' is a specialization of 'Container::Level2'.
+'subsetUnionDepth::Element::Level4' is a specialization of 'Element::Level3'.
+'subsetUnionDepth::Element::Level9' is a specialization of 'Element::Level8'.
+'subsetUnionDepth::Element::Level8' is a specialization of 'Element::Level7'.
+'subsetUnionDepth::Container::Level8' is a specialization of 'Container::Level7'.
+'subsetUnionDepth::Container::Level10' is a specialization of 'Container::Level9'.
+'subsetUnionDepth::Element::Level5' is a specialization of 'Element::Level4'.
+'subsetUnionDepth::Element::Level7' is a specialization of 'Element::Level6'.
+'subsetUnionDepth::Container::Level7' is a specialization of 'Container::Level6'.
+'subsetUnionDepth::Container::Level5' is a specialization of 'Container::Level4'.
+'subsetUnionDepth::Container::Level2' is a specialization of 'Container::Level1'.
+'subsetUnionDepth::Element::Level2' is a specialization of 'Element::Level1'.
+'subsetUnionDepth::Container::Level4' is a specialization of 'Container::Level3'.
+'subsetUnionDepth::Element::Level3' is a specialization of 'Element::Level2'.
+'subsetUnionDepth::Container::Level1' is a specialization of 'Container'.
+'subsetUnionDepth::Element::Level10' is a specialization of 'Element::Level9'.
+'subsetUnionDepth::Element::Level6' is a specialization of 'Element::Level5'.
+'subsetUnionDepth::Container::Level6' is a specialization of 'Container::Level5'.
+'subsetUnionDepth::Element::Level1' is a specialization of 'Element'.
+'subsetUnionDepth::Container::Level9' is a specialization of 'Container::Level8'.
+'subsetUnionDepth::Element::Level10' (role 'subsetUnionDepth_Element_Level10', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level10' (role 'subsetUnionDepth_Container_Level10', cardinality 0..*).
+'subsetUnionDepth::Container::Level4' (role 'subsetUnionDepth_Container_Level4', cardinality 0..*) is associated with 'subsetUnionDepth::Element::Level4' (role 'subsetUnionDepth_Element_Level4', cardinality 0..*).
+'subsetUnionDepth::Element::Level7' (role 'subsetUnionDepth_Element_Level7', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level7' (role 'subsetUnionDepth_Container_Level7', cardinality 0..*).
+'subsetUnionDepth::Element::Level9' (role 'subsetUnionDepth_Element_Level9', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level9' (role 'subsetUnionDepth_Container_Level9', cardinality 0..*).
+'subsetUnionDepth::Container::Level3' (role 'subsetUnionDepth_Container_Level3', cardinality 0..*) is associated with 'subsetUnionDepth::Element::Level3' (role 'subsetUnionDepth_Element_Level3', cardinality 0..*).
+'subsetUnionDepth::Element::Level6' (role 'subsetUnionDepth_Element_Level6', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level6' (role 'subsetUnionDepth_Container_Level6', cardinality 0..*).
+'subsetUnionDepth::Element' (role 'subsetUnionDepth_Element', cardinality 0..*) is associated with 'subsetUnionDepth::Container' (role 'subsetUnionDepth_Container', cardinality 0..*).
+'subsetUnionDepth::Element::Level1' (role 'subsetUnionDepth_Element_Level1', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level1' (role 'subsetUnionDepth_Container_Level1', cardinality 0..*).
+'subsetUnionDepth::Element::Level2' (role 'subsetUnionDepth_Element_Level2', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level2' (role 'subsetUnionDepth_Container_Level2', cardinality 0..*).
+'subsetUnionDepth::Element::Level8' (role 'subsetUnionDepth_Element_Level8', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level8' (role 'subsetUnionDepth_Container_Level8', cardinality 0..*).
+'subsetUnionDepth::Element::Level5' (role 'subsetUnionDepth_Element_Level5', cardinality 0..*) is associated with 'subsetUnionDepth::Container::Level5' (role 'subsetUnionDepth_Container_Level5', cardinality 0..*).

@@ -1,0 +1,138 @@
+The model has 73 class(es).
+The class 'DML::DDL::BinaryFloat' has no attributes.
+The class 'Bits' has no attributes.
+The class 'DML::DDL::VarChar2' has no attributes.
+The class 'DML::DDL::Time' has no attributes.
+The class 'DML::DDL::Characters' has the following attributes: 'n' of type str.
+The class 'DML::DDL::Binaries' has no attributes.
+The class 'DML::DDL::Real' has no attributes.
+The class 'DML::DDL::DDLDefinition' has no attributes.
+The class 'DML::DDL::DoublePrecision' has no attributes.
+The class 'DML::DDL::Bit' has no attributes.
+The class 'DML::DDL::Float' has no attributes.
+The class 'DML::DDL::Exacto' has no attributes.
+The class 'DML::DDL::LongRaw' has no attributes.
+The class 'DML::DDL::Date' has no attributes.
+The class 'DML::DDL::Character' has no attributes.
+The class 'DML::DDL::Registry' has no attributes.
+The class 'DML::DDL::Integer' has no attributes.
+The class 'Characters' has no attributes.
+The class 'DML::DDL::NChar' has no attributes.
+The class 'DML::DDL::DataDefinition' has no attributes.
+The class 'DML::DDL::Fk' has the following attributes: 'nameFk' of type str; 'columnName' of type str; 'status' of type str; 'columnReference' of type str.
+The class 'DML::DDL::CommentColumn' has the following attributes: 'columnComment' of type str; 'columnName' of type str; 'tableName' of type str.
+The class 'DML::DDL::SmallInteger' has no attributes.
+The class 'DML::DDL::NationalCharacterVarying' has no attributes.
+The class 'DML::DDL::DayTime' has no attributes.
+The class 'Aproximado' has no attributes.
+The class 'DML::DDL::Clob' has no attributes.
+The class 'DML::DDL::CommentTable' has the following attributes: 'tableComment' of type str; 'tableName' of type str.
+The class 'DML::DDL::Int' has no attributes.
+The class 'DML::DDL::Blob' has no attributes.
+The class 'Statement' has no attributes.
+The class 'DML::DDL::NVarChar2' has no attributes.
+The class 'DML::DDL::NationalCharacter' has no attributes.
+The class 'DML::DDL::Bits' has the following attributes: 'n' of type str.
+The class 'Type' has no attributes.
+The class 'DML::DDL::Statement' has no attributes.
+The class 'Times' has no attributes.
+The class 'DML::DDL::CharacterVarying' has no attributes.
+The class 'DML::DDL::NCharVarying' has no attributes.
+The class 'DML::DDL::ValuesCk' has the following attributes: 'columnName' of type str; 'comparator' of type str; 'value' of type str; 'logConjuntion' of type str.
+The class 'DML::DDL::Text' has no attributes.
+The class 'DML::DDL::Type' has the following attributes: 'name' of type str.
+The class 'DML::DDL::Decimal' has no attributes.
+The class 'DML::DDL::CharVarying' has no attributes.
+The class 'Bit' has no attributes.
+The class 'DML::DDL::Char' has no attributes.
+The class 'DML::DDL::NClob' has no attributes.
+The class 'DML::DDL::Ck' has the following attributes: 'status' of type str; 'nameCk' of type str.
+The class 'DML::DDL::BitVarying' has no attributes.
+The class 'DML::DDL::Column' has the following attributes: 'columnNull' of type bool; 'scale' of type int; 'columnName' of type str; 'precision' of type int; 'commentColumn' of type str.
+The class 'DML::DDL::Pk' has the following attributes: 'namePk' of type str; 'columnName' of type str.
+The class 'DataDefinition' has no attributes.
+The class 'DML::DDL::Numeric' has no attributes.
+The class 'DML::DDL::SmallInt' has no attributes.
+The class 'DML::DDL::NationalCharVarying' has no attributes.
+The class 'Binaries' has no attributes.
+The class 'DML::DDL::VarChar' has no attributes.
+The class 'Intervals' has no attributes.
+The class 'DML::DDL::DataType' has no attributes.
+The class 'DML::DDL::Table' has the following attributes: 'tableName' of type str; 'commentTable' of type str.
+The class 'DML::DDL::Database' has the following attributes: 'databaseName' of type str.
+The class 'DML::DDL::Value' has the following attributes: 'value' of type str.
+The class 'DML::DDL::Times' has no attributes.
+The class 'DML::DDL::Intervals' has no attributes.
+The class 'DML::DDL::NationalChar' has no attributes.
+The class 'Exacto' has no attributes.
+The class 'DML::DDL::Long' has no attributes.
+The class 'DML::DDL::Timestamp' has no attributes.
+The class 'DML::DDL::BFile' has no attributes.
+The class 'DML::DDL::Number' has no attributes.
+The class 'DML::DDL::Aproximado' has no attributes.
+The class 'DML::DDL::BinaryDouble' has no attributes.
+The class 'DML::DDL::YearMonth' has no attributes.
+'DML::DDL::Intervals' is a specialization of 'Type'.
+'DML::DDL::Bits' is a specialization of 'Type'.
+'DML::DDL::NationalCharVarying' is a specialization of 'Characters'.
+'DML::DDL::NClob' is a specialization of 'Characters'.
+'DML::DDL::NChar' is a specialization of 'Characters'.
+'DML::DDL::Blob' is a specialization of 'Binaries'.
+'DML::DDL::Date' is a specialization of 'Times'.
+'DML::DDL::YearMonth' is a specialization of 'Intervals'.
+'DML::DDL::Integer' is a specialization of 'Exacto'.
+'DML::DDL::NationalChar' is a specialization of 'Characters'.
+'DML::DDL::Binaries' is a specialization of 'Type'.
+'DML::DDL::BFile' is a specialization of 'Binaries'.
+'DML::DDL::DayTime' is a specialization of 'Intervals'.
+'DML::DDL::CharVarying' is a specialization of 'Characters'.
+'DML::DDL::Long' is a specialization of 'Aproximado'.
+'DML::DDL::NationalCharacterVarying' is a specialization of 'Characters'.
+'DML::DDL::Characters' is a specialization of 'Type'.
+'DML::DDL::Real' is a specialization of 'Aproximado'.
+'DML::DDL::VarChar2' is a specialization of 'Characters'.
+'DML::DDL::CommentTable' is a specialization of 'DataDefinition'.
+'DML::DDL::Times' is a specialization of 'Type'.
+'DML::DDL::Table' is a specialization of 'DataDefinition'.
+'DML::DDL::Decimal' is a specialization of 'Exacto'.
+'DML::DDL::Int' is a specialization of 'Exacto'.
+'DML::DDL::Character' is a specialization of 'Characters'.
+'DML::DDL::Numeric' is a specialization of 'Exacto'.
+'DML::DDL::LongRaw' is a specialization of 'Aproximado'.
+'DML::DDL::Timestamp' is a specialization of 'Times'.
+'DML::DDL::CharacterVarying' is a specialization of 'Characters'.
+'DML::DDL::BitVarying' is a specialization of 'Bit'.
+'DML::DDL::SmallInteger' is a specialization of 'Exacto'.
+'DML::DDL::NCharVarying' is a specialization of 'Characters'.
+'DML::DDL::VarChar' is a specialization of 'Characters'.
+'DML::DDL::Char' is a specialization of 'Characters'.
+'DML::DDL::Float' is a specialization of 'Aproximado'.
+'DML::DDL::NVarChar2' is a specialization of 'Characters'.
+'DML::DDL::NationalCharacter' is a specialization of 'Characters'.
+'DML::DDL::CommentColumn' is a specialization of 'DataDefinition'.
+'DML::DDL::SmallInt' is a specialization of 'Exacto'.
+'DML::DDL::Clob' is a specialization of 'Characters'.
+'DML::DDL::DataDefinition' is a specialization of 'Statement'.
+'DML::DDL::Number' is a specialization of 'Exacto'.
+'DML::DDL::BinaryDouble' is a specialization of 'Binaries'.
+'DML::DDL::Exacto' is a specialization of 'Type'.
+'DML::DDL::Text' is a specialization of 'Characters'.
+'DML::DDL::BinaryFloat' is a specialization of 'Binaries'.
+'DML::DDL::Time' is a specialization of 'Times'.
+'DML::DDL::Aproximado' is a specialization of 'Type'.
+'DML::DDL::Database' is a specialization of 'DataDefinition'.
+'DML::DDL::DoublePrecision' is a specialization of 'Aproximado'.
+'DML::DDL::Bit' is a specialization of 'Bits'.
+'DML::DDL::Table' (role 'DML_DDL_Table21', cardinality 0..*) is associated with 'DML::DDL::Registry' (role 'DML_DDL_Registry', cardinality 0..*).
+'DML::DDL::Fk' (role 'DML_DDL_Fk16', cardinality 0..*) is associated with 'DML::DDL::Table' (role 'DML_DDL_Table15', cardinality 0..*).
+'DML::DDL::DDLDefinition' (role 'DML_DDL_DDLDefinition', cardinality 0..*) is associated with 'DML::DDL::Statement' (role 'DML_DDL_Statement', cardinality 0..*).
+'DML::DDL::Pk' (role 'DML_DDL_Pk', cardinality 0..*) is associated with 'DML::DDL::Table' (role 'DML_DDL_Table13', cardinality 0..*).
+'DML::DDL::Column' (role 'DML_DDL_Column26', cardinality 0..*) is associated with 'DML::DDL::Value' (role 'DML_DDL_Value25', cardinality 0..*).
+'DML::DDL::Registry' (role 'DML_DDL_Registry23', cardinality 0..*) is associated with 'DML::DDL::Value' (role 'DML_DDL_Value', cardinality 0..*).
+'DML::DDL::Type' (role 'DML_DDL_Type', cardinality 0..*) is associated with 'DML::DDL::DataType' (role 'DML_DDL_DataType', cardinality 0..*).
+'DML::DDL::DDLDefinition' (role 'DML_DDL_DDLDefinition3', cardinality 0..*) is associated with 'DML::DDL::DataType' (role 'DML_DDL_DataType4', cardinality 0..*).
+'DML::DDL::Column' (role 'DML_DDL_Column11', cardinality 0..*) is associated with 'DML::DDL::Table' (role 'DML_DDL_Table10', cardinality 0..*).
+'DML::DDL::Table' (role 'DML_DDL_Table', cardinality 0..*) is associated with 'DML::DDL::Fk' (role 'DML_DDL_Fk', cardinality 0..*).
+'DML::DDL::Ck' (role 'DML_DDL_Ck', cardinality 0..*) is associated with 'DML::DDL::ValuesCk' (role 'DML_DDL_ValuesCk', cardinality 0..*).
+'DML::DDL::Ck' (role 'DML_DDL_Ck19', cardinality 0..*) is associated with 'DML::DDL::Table' (role 'DML_DDL_Table18', cardinality 0..*).
+'DML::DDL::Type' (role 'DML_DDL_Type8', cardinality 0..*) is associated with 'DML::DDL::Column' (role 'DML_DDL_Column', cardinality 0..*).

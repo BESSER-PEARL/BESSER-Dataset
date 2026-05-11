@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'statesmodel::State' has no attributes.
+The class 'statesmodel::StatesModel' has no attributes.
+The class 'statesmodel::Transition' has no attributes.
+The class 'statesmodel::ActivityNodeExecution' has no attributes.
+The class 'statesmodel::ValueSnapshot' has no attributes.
+'statesmodel::State' (role 'statesmodel_State10', cardinality 0..*) is associated with 'statesmodel::Transition' (role 'statesmodel_Transition9', cardinality 0..*).
+'statesmodel::State' (role 'statesmodel_State', cardinality 0..*) is associated with 'statesmodel::StatesModel' (role 'statesmodel_StatesModel', cardinality 0..*).
+'statesmodel::Transition' (role 'statesmodel_Transition', cardinality 0..*) is associated with 'statesmodel::StatesModel' (role 'statesmodel_StatesModel2', cardinality 0..*).
+'statesmodel::State' (role 'statesmodel_State4', cardinality 0..*) is associated with 'statesmodel::ValueSnapshot' (role 'statesmodel_ValueSnapshot', cardinality 0..*).
+'statesmodel::Transition' (role 'statesmodel_Transition6', cardinality 0..*) is associated with 'statesmodel::State' (role 'statesmodel_State7', cardinality 0..*).
+'statesmodel::Transition' (role 'statesmodel_Transition12', cardinality 0..*) is associated with 'statesmodel::ActivityNodeExecution' (role 'statesmodel_ActivityNodeExecution', cardinality 0..*).

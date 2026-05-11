@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class functioncall_ConceptC  {
+
+
+
+
+
+
+    private functioncall_ConceptA functioncall_concepta;
+
+
+
+
+    private functioncall_ConceptB functioncall_conceptb;
+
+
+
+
+    private functioncall_ConceptA functioncall_concepta;
+
+
+    public functioncall_ConceptC(
+    ) {
+    }
+
+
+
+    public functioncall_ConceptA getFunctioncall_concepta() {
+        return functioncall_concepta;
+    }
+
+    public void setFunctioncall_concepta(functioncall_ConceptA functioncall_concepta) {
+        this.functioncall_concepta = functioncall_concepta;
+    }
+    public functioncall_ConceptB getFunctioncall_conceptb() {
+        return functioncall_conceptb;
+    }
+
+    public void setFunctioncall_conceptb(functioncall_ConceptB functioncall_conceptb) {
+        this.functioncall_conceptb = functioncall_conceptb;
+    }
+    public functioncall_ConceptA getFunctioncall_concepta() {
+        return functioncall_concepta;
+    }
+
+    public void setFunctioncall_concepta(functioncall_ConceptA functioncall_concepta) {
+        this.functioncall_concepta = functioncall_concepta;
+    }
+
+}

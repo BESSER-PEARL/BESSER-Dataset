@@ -1,0 +1,8 @@
+The model has 2 class(es).
+The class 'features::Model' has no attributes.
+The class 'features::Feature' has the following attributes: 'name' of type str; 'abstract' of type bool; 'short' of type str.
+'features::Feature' (role 'features_Feature12', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature10', cardinality 0..*).
+'features::Model' (role 'features_Model', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature', cardinality 0..*).
+'features::Feature' (role 'features_Feature4', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature6', cardinality 0..*).
+'features::Feature' (role 'features_Feature1', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature3', cardinality 0..*).
+'features::Feature' (role 'features_Feature7', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature9', cardinality 0..*).

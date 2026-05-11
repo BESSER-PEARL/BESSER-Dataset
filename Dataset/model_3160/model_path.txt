@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/osate/aadl2altarica/org.osate.altarica/model/generated/Altarica.ecore

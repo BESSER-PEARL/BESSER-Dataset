@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'office::Employee' has the following attributes: 'title' of type str.
+The class 'office::Office' has no attributes.
+The class 'office::OfficeModel' has no attributes.
+The class 'office::NamedElement' has the following attributes: 'name' of type str.
+The class 'OfficeElement' has no attributes.
+The class 'office::OfficeElement' has no attributes.
+The class 'NamedElement' has no attributes.
+'office::OfficeModel' is a specialization of 'NamedElement'.
+'office::Office' is a specialization of 'OfficeElement'.
+'office::OfficeElement' is a specialization of 'NamedElement'.
+'office::Employee' is a specialization of 'OfficeElement'.
+'office::Office' (role 'worksIn', cardinality 0..*) is associated with 'office::Employee' (role 'Employee', cardinality 0..*).
+'office::OfficeElement' (role 'office_OfficeElement', cardinality 0..*) is associated with 'office::OfficeModel' (role 'office_OfficeModel', cardinality 0..*).
+'office::Employee' (role 'office_Employee2', cardinality 0..*) is associated with 'office::Employee' (role 'office_Employee', cardinality 0..*).
+'office::Office' (role 'Office', cardinality 0..*) is associated with 'office::Employee' (role 'employees', cardinality 0..*).

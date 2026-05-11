@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'school::Student' has the following attributes: 'age' of type int; 'name' of type str; 'nickname' of type str.
+The class 'school::Classroom' has the following attributes: 'teacher' of type str; 'name' of type str; 'capacity' of type int; 'rank' of type int.
+The class 'school::School' has the following attributes: 'name' of type str; 'zipCode' of type str; 'city' of type str; 'director' of type str.
+'school::Student' (role 'school_Student5', cardinality 0..*) is associated with 'school::Student' (role 'school_Student3', cardinality 0..*).
+'school::School' (role 'school_School', cardinality 0..*) is associated with 'school::Classroom' (role 'school_Classroom2', cardinality 0..*).
+'school::Classroom' (role 'school_Classroom', cardinality 0..*) is associated with 'school::Student' (role 'school_Student', cardinality 0..*).

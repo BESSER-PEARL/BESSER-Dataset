@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class aadl2_FeatureGroupPrototype extends Prototype, FeatureType {
+
+
+
+
+
+
+    private aadl2_FeatureGroup aadl2_featuregroup;
+
+
+
+
+    private aadl2_FeatureGroupType aadl2_featuregrouptype;
+
+
+    public aadl2_FeatureGroupPrototype(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public aadl2_FeatureGroup getAadl2_featuregroup() {
+        return aadl2_featuregroup;
+    }
+
+    public void setAadl2_featuregroup(aadl2_FeatureGroup aadl2_featuregroup) {
+        this.aadl2_featuregroup = aadl2_featuregroup;
+    }
+    public aadl2_FeatureGroupType getAadl2_featuregrouptype() {
+        return aadl2_featuregrouptype;
+    }
+
+    public void setAadl2_featuregrouptype(aadl2_FeatureGroupType aadl2_featuregrouptype) {
+        this.aadl2_featuregrouptype = aadl2_featuregrouptype;
+    }
+
+}

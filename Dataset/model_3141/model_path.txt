@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hhoussem/smalluml/SmallUML/model/smalluml.ecore

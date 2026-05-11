@@ -1,0 +1,88 @@
+The model has 28 class(es).
+The class 'FCORE::ExcludesFeatureConstraint' has no attributes.
+The class 'FCORE::FeatureConstraint' has no attributes.
+The class 'FCORE::RootFeature' has no attributes.
+The class 'FCORE::InfluenceAttribute' has no attributes.
+The class 'FCORE::Attribute' has the following attributes: 'value' of type int; 'max' of type int; 'min' of type int; 'name' of type str.
+The class 'FCORE::RequiresFeatureConstraint' has no attributes.
+The class 'FCORE::GroupFeature' has no attributes.
+The class 'FCORE::GroupToFeatureConnection' has no attributes.
+The class 'FCORE::FeatureModel' has no attributes.
+The class 'FCORE::FeatureToGroupConnection' has no attributes.
+The class 'Conncection' has no attributes.
+The class 'FCORE::AttributeConstraintConnection' has no attributes.
+The class 'FCORE::AttributeConstraint' has the following attributes: 'equation' of type str.
+The class 'FCORE::CardinalityConnection' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'FCORE::SolitaryFeature' has the following attributes: 'max' of type int; 'min' of type int.
+The class 'FCORE::FeatureGroup' has the following attributes: 'max' of type int; 'min' of type int.
+The class 'FCORE::OptionalConnection' has no attributes.
+The class 'FCORE::MandatoryConnection' has no attributes.
+The class 'Feature' has no attributes.
+The class 'FCORE::Conncection' has no attributes.
+The class 'FCORE::Softgoal' has the following attributes: 'name' of type str; 'weighting' of type str.
+The class 'FCORE::Influence' has the following attributes: 'contribution' of type float.
+The class 'SingleFeatureConnection' has no attributes.
+The class 'FCORE::SingleFeatureConnection' has no attributes.
+The class 'FCORE::Feature' has the following attributes: 'name' of type str; 'selected' of type bool.
+The class 'FeatureConstraint' has no attributes.
+The class 'Influence' has no attributes.
+The class 'FCORE::InfluenceFeature' has no attributes.
+'FCORE::ExcludesFeatureConstraint' is a specialization of 'FeatureConstraint'.
+'FCORE::SolitaryFeature' is a specialization of 'Feature'.
+'FCORE::SingleFeatureConnection' is a specialization of 'Conncection'.
+'FCORE::InfluenceAttribute' is a specialization of 'Influence'.
+'FCORE::InfluenceFeature' is a specialization of 'Influence'.
+'FCORE::FeatureConstraint' is a specialization of 'Conncection'.
+'FCORE::RootFeature' is a specialization of 'Feature'.
+'FCORE::RequiresFeatureConstraint' is a specialization of 'FeatureConstraint'.
+'FCORE::GroupFeature' is a specialization of 'Feature'.
+'FCORE::CardinalityConnection' is a specialization of 'SingleFeatureConnection'.
+'FCORE::MandatoryConnection' is a specialization of 'SingleFeatureConnection'.
+'FCORE::GroupToFeatureConnection' is a specialization of 'Conncection'.
+'FCORE::OptionalConnection' is a specialization of 'SingleFeatureConnection'.
+'FCORE::AttributeConstraintConnection' is a specialization of 'Conncection'.
+'FCORE::FeatureToGroupConnection' is a specialization of 'Conncection'.
+'FCORE::Influence' is a specialization of 'Conncection'.
+'FCORE::RootFeature' (role 'FCORE_RootFeature', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel', cardinality 0..*).
+'FCORE::Feature' (role 'FCORE_Feature', cardinality 0..*) is associated with 'FCORE::Attribute' (role 'FCORE_Attribute33', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel30', cardinality 0..*) is associated with 'FCORE::AttributeConstraintConnection' (role 'FCORE_AttributeConstraintConnection', cardinality 0..*).
+'FCORE::AttributeConstraintConnection' (role 'attributeConstraints', cardinality 0..*) is associated with 'FCORE::Feature' (role 'Feature75', cardinality 0..*).
+'FCORE::GroupFeature' (role 'target45', cardinality 0..*) is associated with 'FCORE::GroupToFeatureConnection' (role 'GroupToFeatureConnection', cardinality 0..*).
+'FCORE::AttributeConstraintConnection' (role 'AttributeConstraintConnection55', cardinality 0..*) is associated with 'FCORE::AttributeConstraint' (role 'target54', cardinality 0..*).
+'FCORE::GroupToFeatureConnection' (role 'groupToFeatureConnection', cardinality 0..*) is associated with 'FCORE::GroupFeature' (role 'GroupFeature', cardinality 0..*).
+'FCORE::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'FCORE::InfluenceAttribute' (role 'influences64', cardinality 0..*).
+'FCORE::Attribute' (role 'attribute', cardinality 0..*) is associated with 'FCORE::InfluenceAttribute' (role 'InfluenceAttribute', cardinality 0..*).
+'FCORE::Feature' (role 'feature', cardinality 0..*) is associated with 'FCORE::InfluenceFeature' (role 'InfluenceFeature', cardinality 0..*).
+'FCORE::SingleFeatureConnection' (role 'outgoingSingleFeatureConnections', cardinality 0..*) is associated with 'FCORE::Feature' (role 'Feature66', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel2', cardinality 0..*) is associated with 'FCORE::GroupFeature' (role 'FCORE_GroupFeature', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel28', cardinality 0..*) is associated with 'FCORE::GroupToFeatureConnection' (role 'FCORE_GroupToFeatureConnection', cardinality 0..*).
+'FCORE::FeatureGroup' (role 'FCORE_FeatureGroup', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel6', cardinality 0..*).
+'FCORE::AttributeConstraintConnection' (role 'attributeConstraintConnection', cardinality 0..*) is associated with 'FCORE::AttributeConstraint' (role 'AttributeConstraint', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel26', cardinality 0..*) is associated with 'FCORE::FeatureToGroupConnection' (role 'FCORE_FeatureToGroupConnection', cardinality 0..*).
+'FCORE::FeatureToGroupConnection' (role 'FeatureToGroupConnection48', cardinality 0..*) is associated with 'FCORE::FeatureGroup' (role 'target47', cardinality 0..*).
+'FCORE::FeatureToGroupConnection' (role 'featureToGroupConnections', cardinality 0..*) is associated with 'FCORE::Feature' (role 'Feature69', cardinality 0..*).
+'FCORE::FeatureGroup' (role 'FeatureGroup', cardinality 0..*) is associated with 'FCORE::FeatureToGroupConnection' (role 'featureToGroupConnection', cardinality 0..*).
+'FCORE::SolitaryFeature' (role 'FCORE_SolitaryFeature', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel4', cardinality 0..*).
+'FCORE::OptionalConnection' (role 'FCORE_OptionalConnection', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel24', cardinality 0..*).
+'FCORE::Softgoal' (role 'softgoal', cardinality 0..*) is associated with 'FCORE::Influence' (role 'Influence', cardinality 0..*).
+'FCORE::Softgoal' (role 'FCORE_Softgoal', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel16', cardinality 0..*).
+'FCORE::Feature' (role 'featureStart', cardinality 0..*) is associated with 'FCORE::FeatureConstraint' (role 'FeatureConstraint', cardinality 0..*).
+'FCORE::GroupToFeatureConnection' (role 'GroupToFeatureConnection51', cardinality 0..*) is associated with 'FCORE::FeatureGroup' (role 'source50', cardinality 0..*).
+'FCORE::FeatureConstraint' (role 'FeatureConstraint36', cardinality 0..*) is associated with 'FCORE::Feature' (role 'featureEnd', cardinality 0..*).
+'FCORE::AttributeConstraintConnection' (role 'AttributeConstraintConnection', cardinality 0..*) is associated with 'FCORE::Feature' (role 'source', cardinality 0..*).
+'FCORE::Influence' (role 'influence', cardinality 0..*) is associated with 'FCORE::Softgoal' (role 'Softgoal', cardinality 0..*).
+'FCORE::Feature' (role 'Feature62', cardinality 0..*) is associated with 'FCORE::InfluenceFeature' (role 'influences', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel8', cardinality 0..*) is associated with 'FCORE::Attribute' (role 'FCORE_Attribute', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel20', cardinality 0..*) is associated with 'FCORE::InfluenceAttribute' (role 'FCORE_InfluenceAttribute', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel12', cardinality 0..*) is associated with 'FCORE::RequiresFeatureConstraint' (role 'FCORE_RequiresFeatureConstraint', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel14', cardinality 0..*) is associated with 'FCORE::ExcludesFeatureConstraint' (role 'FCORE_ExcludesFeatureConstraint', cardinality 0..*).
+'FCORE::FeatureModel' (role 'FCORE_FeatureModel22', cardinality 0..*) is associated with 'FCORE::MandatoryConnection' (role 'FCORE_MandatoryConnection', cardinality 0..*).
+'FCORE::SingleFeatureConnection' (role 'incomingSingleFeatureConnection', cardinality 0..*) is associated with 'FCORE::SolitaryFeature' (role 'SolitaryFeature', cardinality 0..*).
+'FCORE::FeatureConstraint' (role 'featureConstraintsStarts', cardinality 0..*) is associated with 'FCORE::Feature' (role 'Feature', cardinality 0..*).
+'FCORE::InfluenceFeature' (role 'FCORE_InfluenceFeature', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel18', cardinality 0..*).
+'FCORE::Feature' (role 'source41', cardinality 0..*) is associated with 'FCORE::FeatureToGroupConnection' (role 'FeatureToGroupConnection', cardinality 0..*).
+'FCORE::Feature' (role 'Feature59', cardinality 0..*) is associated with 'FCORE::FeatureConstraint' (role 'featureConstraintsEnds', cardinality 0..*).
+'FCORE::Feature' (role 'source39', cardinality 0..*) is associated with 'FCORE::SingleFeatureConnection' (role 'SingleFeatureConnection', cardinality 0..*).
+'FCORE::SolitaryFeature' (role 'target', cardinality 0..*) is associated with 'FCORE::SingleFeatureConnection' (role 'SingleFeatureConnection43', cardinality 0..*).
+'FCORE::GroupToFeatureConnection' (role 'groupToFeatureConnections', cardinality 0..*) is associated with 'FCORE::FeatureGroup' (role 'FeatureGroup72', cardinality 0..*).
+'FCORE::AttributeConstraint' (role 'FCORE_AttributeConstraint', cardinality 0..*) is associated with 'FCORE::FeatureModel' (role 'FCORE_FeatureModel10', cardinality 0..*).

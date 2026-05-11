@@ -1,0 +1,138 @@
+The model has 51 class(es).
+The class 'xs::Var' has no attributes.
+The class 'xs::ForStatement' has the following attributes: 'op' of type str.
+The class 'xs::LiteralInt' has the following attributes: 'value' of type int.
+The class 'xs::BoolType' has no attributes.
+The class 'xs::Expression' has no attributes.
+The class 'xs::FunctionDeclaration' has the following attributes: 'mutable' of type bool; 'name' of type str.
+The class 'xs::WhileStatement' has no attributes.
+The class 'xs::ContinueStatement' has no attributes.
+The class 'xs::SwitchCase' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'xs::Term' has the following attributes: 'op' of type str.
+The class 'xs::ForVarDeclaration' has no attributes.
+The class 'xs::FloatType' has no attributes.
+The class 'xs::Block' has no attributes.
+The class 'xs::Type' has no attributes.
+The class 'Expression' has no attributes.
+The class 'xs::LiteralFloat' has the following attributes: 'value' of type float.
+The class 'xs::IntType' has no attributes.
+The class 'xs::Declaration' has no attributes.
+The class 'xs::PostfixStatement' has the following attributes: 'op' of type str.
+The class 'xs::LocalVarDeclaration' has no attributes.
+The class 'xs::BreakStatement' has no attributes.
+The class 'Type' has no attributes.
+The class 'xs::IfElseStatement' has no attributes.
+The class 'xs::ParameterDeclaration' has no attributes.
+The class 'xs::RuleDeclaration' has the following attributes: 'priority' of type int; 'minInterval' of type int; 'maxInterval' of type int; 'highFrequency' of type bool; 'active' of type bool; 'name' of type str; 'group' of type str; 'runImmediately' of type bool.
+The class 'xs::LiteralBool' has the following attributes: 'value' of type bool.
+The class 'Statement' has no attributes.
+The class 'xs::Assign' has no attributes.
+The class 'xs::Call' has no attributes.
+The class 'xs::GlobalVarDeclaration' has the following attributes: 'extern' of type bool; 'const' of type bool.
+The class 'Literal' has no attributes.
+The class 'xs::VectorLiteral' has no attributes.
+The class 'VarDeclaration' has no attributes.
+The class 'xs::VectorType' has no attributes.
+The class 'xs::ComparisonExpression' has the following attributes: 'op' of type str.
+The class 'xs::Literal' has no attributes.
+The class 'xs::SwitchStatement' has no attributes.
+The class 'xs::Statement' has no attributes.
+The class 'xs::VoidType' has no attributes.
+The class 'xs::AndExpression' has the following attributes: 'op' of type str.
+The class 'xs::IncludeDeclaration' has the following attributes: 'filePath' of type str.
+The class 'xs::VarDeclaration' has the following attributes: 'name' of type str.
+The class 'xs::Program' has no attributes.
+The class 'xs::ReturnStatement' has no attributes.
+The class 'xs::Factor' has the following attributes: 'op' of type str.
+The class 'xs::SwitchDefault' has no attributes.
+The class 'xs::LiteralString' has the following attributes: 'value' of type str.
+The class 'xs::StringType' has no attributes.
+The class 'xs::OrExpression' has the following attributes: 'op' of type str.
+The class 'xs::EqualsExpression' has the following attributes: 'op' of type str.
+'xs::IntType' is a specialization of 'Type'.
+'xs::ReturnStatement' is a specialization of 'Statement'.
+'xs::StringType' is a specialization of 'Type'.
+'xs::Expression' is a specialization of 'Statement'.
+'xs::BoolType' is a specialization of 'Type'.
+'xs::VectorType' is a specialization of 'Type'.
+'xs::VectorLiteral' is a specialization of 'Literal'.
+'xs::VoidType' is a specialization of 'Type'.
+'xs::EqualsExpression' is a specialization of 'Expression'.
+'xs::Call' is a specialization of 'Expression'.
+'xs::LiteralString' is a specialization of 'Literal'.
+'xs::Factor' is a specialization of 'Expression'.
+'xs::Assign' is a specialization of 'Expression'.
+'xs::PostfixStatement' is a specialization of 'Statement'.
+'xs::LocalVarDeclaration' is a specialization of 'Statement'.
+'xs::LocalVarDeclaration' is a specialization of 'VarDeclaration'.
+'xs::Term' is a specialization of 'Expression'.
+'xs::ComparisonExpression' is a specialization of 'Expression'.
+'xs::GlobalVarDeclaration' is a specialization of 'Declaration'.
+'xs::FloatType' is a specialization of 'Type'.
+'xs::LiteralBool' is a specialization of 'Literal'.
+'xs::ForStatement' is a specialization of 'Statement'.
+'xs::RuleDeclaration' is a specialization of 'Declaration'.
+'xs::ContinueStatement' is a specialization of 'Statement'.
+'xs::AndExpression' is a specialization of 'Expression'.
+'xs::Literal' is a specialization of 'Expression'.
+'xs::OrExpression' is a specialization of 'Expression'.
+'xs::FunctionDeclaration' is a specialization of 'Declaration'.
+'xs::IfElseStatement' is a specialization of 'Statement'.
+'xs::LiteralFloat' is a specialization of 'Literal'.
+'xs::LiteralInt' is a specialization of 'Literal'.
+'xs::Block' is a specialization of 'Statement'.
+'xs::WhileStatement' is a specialization of 'Statement'.
+'xs::SwitchStatement' is a specialization of 'Statement'.
+'xs::BreakStatement' is a specialization of 'Statement'.
+'xs::ForVarDeclaration' is a specialization of 'VarDeclaration'.
+'xs::Var' is a specialization of 'Expression'.
+'xs::IncludeDeclaration' is a specialization of 'Declaration'.
+'xs::ParameterDeclaration' is a specialization of 'VarDeclaration'.
+'xs::GlobalVarDeclaration' is a specialization of 'VarDeclaration'.
+'xs::ParameterDeclaration' (role 'xs_ParameterDeclaration', cardinality 0..*) is associated with 'xs::Type' (role 'xs_Type6', cardinality 0..*).
+'xs::FunctionDeclaration' (role 'xs_FunctionDeclaration13', cardinality 0..*) is associated with 'xs::Block' (role 'xs_Block', cardinality 0..*).
+'xs::SwitchCase' (role 'xs_SwitchCase53', cardinality 0..*) is associated with 'xs::SwitchStatement' (role 'xs_SwitchStatement52', cardinality 0..*).
+'xs::GlobalVarDeclaration' (role 'xs_GlobalVarDeclaration', cardinality 0..*) is associated with 'xs::Type' (role 'xs_Type4', cardinality 0..*).
+'xs::Var' (role 'xs_Var', cardinality 0..*) is associated with 'xs::VarDeclaration' (role 'xs_VarDeclaration26', cardinality 0..*).
+'xs::LocalVarDeclaration' (role 'xs_LocalVarDeclaration', cardinality 0..*) is associated with 'xs::Type' (role 'xs_Type', cardinality 0..*).
+'xs::Block' (role 'xs_Block15', cardinality 0..*) is associated with 'xs::RuleDeclaration' (role 'xs_RuleDeclaration', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression38', cardinality 0..*) is associated with 'xs::WhileStatement' (role 'xs_WhileStatement', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression68', cardinality 0..*) is associated with 'xs::OrExpression' (role 'xs_OrExpression67', cardinality 0..*).
+'xs::ForStatement' (role 'xs_ForStatement44', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression45', cardinality 0..*).
+'xs::ComparisonExpression' (role 'xs_ComparisonExpression', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression80', cardinality 0..*).
+'xs::VectorLiteral' (role 'xs_VectorLiteral102', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression103', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression', cardinality 0..*) is associated with 'xs::VarDeclaration' (role 'xs_VarDeclaration', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression106', cardinality 0..*) is associated with 'xs::VectorLiteral' (role 'xs_VectorLiteral105', cardinality 0..*).
+'xs::Call' (role 'xs_Call', cardinality 0..*) is associated with 'xs::FunctionDeclaration' (role 'xs_FunctionDeclaration95', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression78', cardinality 0..*) is associated with 'xs::EqualsExpression' (role 'xs_EqualsExpression77', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression100', cardinality 0..*) is associated with 'xs::VectorLiteral' (role 'xs_VectorLiteral', cardinality 0..*).
+'xs::ForStatement' (role 'xs_ForStatement', cardinality 0..*) is associated with 'xs::ForVarDeclaration' (role 'xs_ForVarDeclaration', cardinality 0..*).
+'xs::Statement' (role 'xs_Statement48', cardinality 0..*) is associated with 'xs::ForStatement' (role 'xs_ForStatement47', cardinality 0..*).
+'xs::IfElseStatement' (role 'xs_IfElseStatement', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression30', cardinality 0..*).
+'xs::Type' (role 'xs_Type8', cardinality 0..*) is associated with 'xs::FunctionDeclaration' (role 'xs_FunctionDeclaration', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression65', cardinality 0..*) is associated with 'xs::OrExpression' (role 'xs_OrExpression', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression58', cardinality 0..*) is associated with 'xs::ReturnStatement' (role 'xs_ReturnStatement', cardinality 0..*).
+'xs::SwitchCase' (role 'xs_SwitchCase', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression19', cardinality 0..*).
+'xs::AndExpression' (role 'xs_AndExpression', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression70', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression73', cardinality 0..*) is associated with 'xs::AndExpression' (role 'xs_AndExpression72', cardinality 0..*).
+'xs::Declaration' (role 'xs_Declaration', cardinality 0..*) is associated with 'xs::Program' (role 'xs_Program', cardinality 0..*).
+'xs::WhileStatement' (role 'xs_WhileStatement40', cardinality 0..*) is associated with 'xs::Statement' (role 'xs_Statement41', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression90', cardinality 0..*) is associated with 'xs::Factor' (role 'xs_Factor', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression85', cardinality 0..*) is associated with 'xs::Term' (role 'xs_Term', cardinality 0..*).
+'xs::SwitchDefault' (role 'xs_SwitchDefault', cardinality 0..*) is associated with 'xs::Statement' (role 'xs_Statement24', cardinality 0..*).
+'xs::Block' (role 'xs_Block17', cardinality 0..*) is associated with 'xs::Statement' (role 'xs_Statement', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression83', cardinality 0..*) is associated with 'xs::ComparisonExpression' (role 'xs_ComparisonExpression82', cardinality 0..*).
+'xs::Var' (role 'xs_Var60', cardinality 0..*) is associated with 'xs::Assign' (role 'xs_Assign', cardinality 0..*).
+'xs::Term' (role 'xs_Term87', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression88', cardinality 0..*).
+'xs::Assign' (role 'xs_Assign62', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression63', cardinality 0..*).
+'xs::Expression' (role 'xs_Expression93', cardinality 0..*) is associated with 'xs::Factor' (role 'xs_Factor92', cardinality 0..*).
+'xs::SwitchDefault' (role 'xs_SwitchDefault56', cardinality 0..*) is associated with 'xs::SwitchStatement' (role 'xs_SwitchStatement55', cardinality 0..*).
+'xs::PostfixStatement' (role 'xs_PostfixStatement', cardinality 0..*) is associated with 'xs::VarDeclaration' (role 'xs_VarDeclaration28', cardinality 0..*).
+'xs::IfElseStatement' (role 'xs_IfElseStatement35', cardinality 0..*) is associated with 'xs::Statement' (role 'xs_Statement36', cardinality 0..*).
+'xs::Statement' (role 'xs_Statement22', cardinality 0..*) is associated with 'xs::SwitchCase' (role 'xs_SwitchCase21', cardinality 0..*).
+'xs::Statement' (role 'xs_Statement33', cardinality 0..*) is associated with 'xs::IfElseStatement' (role 'xs_IfElseStatement32', cardinality 0..*).
+'xs::Call' (role 'xs_Call97', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression98', cardinality 0..*).
+'xs::FunctionDeclaration' (role 'xs_FunctionDeclaration10', cardinality 0..*) is associated with 'xs::ParameterDeclaration' (role 'xs_ParameterDeclaration11', cardinality 0..*).
+'xs::SwitchStatement' (role 'xs_SwitchStatement', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression50', cardinality 0..*).
+'xs::EqualsExpression' (role 'xs_EqualsExpression', cardinality 0..*) is associated with 'xs::Expression' (role 'xs_Expression75', cardinality 0..*).

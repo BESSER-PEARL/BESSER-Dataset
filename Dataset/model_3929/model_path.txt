@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/akosyakov/org.xtext.example.mydsl.idea/org.xtext.example.mydsl/model/generated/MyDsl.ecore

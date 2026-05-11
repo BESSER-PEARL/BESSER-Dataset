@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'SimpleRDBMS::Table' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'SimpleRDBMS::Column' has the following attributes: 'name' of type str; 'type' of type str; 'id' of type int.
+The class 'SimpleRDBMS::FKey' has no attributes.
+'SimpleRDBMS::FKey' (role 'SimpleRDBMS_FKey', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'SimpleRDBMS_Table', cardinality 0..*).
+'SimpleRDBMS::Table' (role 'SimpleRDBMS_Table8', cardinality 0..*) is associated with 'SimpleRDBMS::FKey' (role 'SimpleRDBMS_FKey7', cardinality 0..*).
+'SimpleRDBMS::Column' (role 'SimpleRDBMS_Column5', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'SimpleRDBMS_Table4', cardinality 0..*).
+'SimpleRDBMS::Column' (role 'SimpleRDBMS_Column11', cardinality 0..*) is associated with 'SimpleRDBMS::FKey' (role 'SimpleRDBMS_FKey10', cardinality 0..*).
+'SimpleRDBMS::Table' (role 'SimpleRDBMS_Table2', cardinality 0..*) is associated with 'SimpleRDBMS::Column' (role 'SimpleRDBMS_Column', cardinality 0..*).

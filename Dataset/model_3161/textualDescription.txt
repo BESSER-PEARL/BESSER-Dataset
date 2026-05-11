@@ -1,0 +1,222 @@
+The model has 85 class(es).
+The class 'altarica::VariableRef' has no attributes.
+The class 'altarica::AbstractSpecification' has no attributes.
+The class 'altarica::ExternalSpecification' has no attributes.
+The class 'altarica::NonNavigableVariable' has no attributes.
+The class 'altarica::NotEqual' has no attributes.
+The class 'altarica::Lower' has no attributes.
+The class 'altarica::VariableAttribute' has the following attributes: 'name' of type str.
+The class 'altarica::Equal' has no attributes.
+The class 'altarica::NestedQualifiedEventRef' has no attributes.
+The class 'altarica::Literal' has no attributes.
+The class 'altarica::AssertSpecification' has no attributes.
+The class 'altarica::NodeInstanceSpecification' has no attributes.
+The class 'altarica::IfThenElse' has no attributes.
+The class 'AbstractDefinitionConstant' has no attributes.
+The class 'altarica::Vector' has no attributes.
+The class 'altarica::Constant' has no attributes.
+The class 'altarica::NestedQualifiedVariableRef' has no attributes.
+The class 'altarica::State' has no attributes.
+The class 'altarica::Range' has no attributes.
+The class 'AbstractSpecification' has no attributes.
+The class 'NavigableVariable' has no attributes.
+The class 'altarica::StrictUpper' has no attributes.
+The class 'altarica::Multiplication' has no attributes.
+The class 'altarica::DomainConstant' has no attributes.
+The class 'Expression' has no attributes.
+The class 'altarica::NodeInstanceDeclaration' has no attributes.
+The class 'altarica::Affectation' has no attributes.
+The class 'altarica::StateSpecification' has no attributes.
+The class 'altarica::InitSpecification' has no attributes.
+The class 'altarica::InitStatement' has no attributes.
+The class 'altarica::StrictLower' has no attributes.
+The class 'altarica::Or' has no attributes.
+The class 'altarica::TransitionSpecification' has no attributes.
+The class 'EventRef' has no attributes.
+The class 'altarica::System' has no attributes.
+The class 'altarica::Domain' has the following attributes: 'name' of type str.
+The class 'altarica::NavigableVariable' has the following attributes: 'name' of type str.
+The class 'altarica::AbstractDeclaration' has no attributes.
+The class 'AbstractDeclaration' has no attributes.
+The class 'altarica::EInteger' has the following attributes: 'value' of type int.
+The class 'altarica::Enumeration' has no attributes.
+The class 'altarica::AbstractDomain' has no attributes.
+The class 'altarica::AbstractDefinitionConstant' has no attributes.
+The class 'altarica::EventSpecification' has no attributes.
+The class 'AbstractBooleanExpression' has no attributes.
+The class 'altarica::Event' has no attributes.
+The class 'altarica::CaseExpression' has no attributes.
+The class 'altarica::Switch' has no attributes.
+The class 'altarica::NodeInstance' has no attributes.
+The class 'altarica::ExternalDirective' has the following attributes: 'directive' of type str.
+The class 'NonNavigableVariable' has no attributes.
+The class 'altarica::EString' has the following attributes: 'value' of type str.
+The class 'altarica::Transition' has no attributes.
+The class 'altarica::Addition' has no attributes.
+The class 'altarica::VectorParameter' has the following attributes: 'isRequired' of type bool.
+The class 'altarica::Minus' has no attributes.
+The class 'altarica::FlowSpecification' has no attributes.
+The class 'altarica::EventDeclaration' has no attributes.
+The class 'altarica::VectorSpecification' has no attributes.
+The class 'altarica::EBoolean' has the following attributes: 'value' of type str.
+The class 'AbstractTypeRef' has no attributes.
+The class 'altarica::PrimitiveType' has the following attributes: 'name' of type str.
+The class 'altarica::EObject' has no attributes.
+The class 'AbstractExpression' has no attributes.
+The class 'altarica::Flow' has no attributes.
+The class 'altarica::EventRef' has no attributes.
+The class 'altarica::AbstractExpression' has no attributes.
+The class 'altarica::And' has no attributes.
+The class 'altarica::StateDeclaration' has no attributes.
+The class 'altarica::Upper' has no attributes.
+The class 'altarica::Node' has the following attributes: 'isMain' of type bool; 'name' of type str.
+The class 'altarica::Assert' has no attributes.
+The class 'altarica::Priority' has no attributes.
+The class 'AbstractDomain' has no attributes.
+The class 'altarica::AbstractTypeRef' has no attributes.
+The class 'VariableRef' has no attributes.
+The class 'altarica::DomainRef' has no attributes.
+The class 'altarica::Expression' has no attributes.
+The class 'altarica::FlowDeclaration' has the following attributes: 'kind' of type str.
+The class 'altarica::Imply' has no attributes.
+The class 'altarica::AbstractBooleanExpression' has no attributes.
+The class 'altarica::Division' has no attributes.
+The class 'altarica::ConstantDefinition' has no attributes.
+The class 'altarica::Cardinality' has no attributes.
+The class 'altarica::ExpressionConstant' has no attributes.
+The enumeration 'PrimitiveTypeKind' has the following literals: 'INTEGER', 'BOOLEAN'.
+The enumeration 'FlowKind' has the following literals: 'OUT', 'IN', 'INOUT'.
+'altarica::NestedQualifiedVariableRef' is a specialization of 'VariableRef'.
+'altarica::InitSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::StateSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Literal' is a specialization of 'NonNavigableVariable'.
+'altarica::EBoolean' is a specialization of 'Expression'.
+'altarica::NodeInstance' is a specialization of 'NavigableVariable'.
+'altarica::ExternalSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Switch' is a specialization of 'AbstractExpression'.
+'altarica::And' is a specialization of 'Expression'.
+'altarica::DomainRef' is a specialization of 'AbstractTypeRef'.
+'altarica::Addition' is a specialization of 'Expression'.
+'altarica::Range' is a specialization of 'AbstractDomain'.
+'altarica::AbstractDomain' is a specialization of 'AbstractTypeRef'.
+'altarica::StrictLower' is a specialization of 'Expression'.
+'altarica::Multiplication' is a specialization of 'Expression'.
+'altarica::NotEqual' is a specialization of 'Expression'.
+'altarica::ExpressionConstant' is a specialization of 'AbstractDefinitionConstant'.
+'altarica::DomainConstant' is a specialization of 'AbstractDefinitionConstant'.
+'altarica::Lower' is a specialization of 'Expression'.
+'altarica::Or' is a specialization of 'Expression'.
+'altarica::Division' is a specialization of 'Expression'.
+'altarica::VariableRef' is a specialization of 'Expression'.
+'altarica::ConstantDefinition' is a specialization of 'AbstractDeclaration'.
+'altarica::Flow' is a specialization of 'NonNavigableVariable'.
+'altarica::EInteger' is a specialization of 'Expression'.
+'altarica::Upper' is a specialization of 'Expression'.
+'altarica::PrimitiveType' is a specialization of 'AbstractDomain'.
+'altarica::TransitionSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Equal' is a specialization of 'Expression'.
+'altarica::Expression' is a specialization of 'AbstractBooleanExpression'.
+'altarica::Switch' is a specialization of 'AbstractBooleanExpression'.
+'altarica::IfThenElse' is a specialization of 'AbstractBooleanExpression'.
+'altarica::NonNavigableVariable' is a specialization of 'NavigableVariable'.
+'altarica::Expression' is a specialization of 'AbstractExpression'.
+'altarica::EventSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Event' is a specialization of 'NavigableVariable'.
+'altarica::AssertSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::VectorSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Domain' is a specialization of 'AbstractDeclaration'.
+'altarica::Minus' is a specialization of 'Expression'.
+'altarica::FlowSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::Enumeration' is a specialization of 'AbstractDomain'.
+'altarica::Constant' is a specialization of 'NonNavigableVariable'.
+'altarica::Imply' is a specialization of 'Expression'.
+'altarica::NodeInstanceSpecification' is a specialization of 'AbstractSpecification'.
+'altarica::EString' is a specialization of 'Expression'.
+'altarica::Node' is a specialization of 'AbstractDeclaration'.
+'altarica::NestedQualifiedEventRef' is a specialization of 'EventRef'.
+'altarica::State' is a specialization of 'NonNavigableVariable'.
+'altarica::IfThenElse' is a specialization of 'AbstractExpression'.
+'altarica::StrictUpper' is a specialization of 'Expression'.
+'altarica::Expression' (role 'altarica_Expression141', cardinality 0..*) is associated with 'altarica::Equal' (role 'altarica_Equal140', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression89', cardinality 0..*) is associated with 'altarica::CaseExpression' (role 'altarica_CaseExpression88', cardinality 0..*).
+'altarica::VariableRef' (role 'altarica_VariableRef178', cardinality 0..*) is associated with 'altarica::NestedQualifiedVariableRef' (role 'altarica_NestedQualifiedVariableRef', cardinality 0..*).
+'altarica::AbstractExpression' (role 'altarica_AbstractExpression', cardinality 0..*) is associated with 'altarica::Priority' (role 'altarica_Priority36', cardinality 0..*).
+'altarica::Affectation' (role 'altarica_Affectation', cardinality 0..*) is associated with 'altarica::InitStatement' (role 'altarica_InitStatement18', cardinality 0..*).
+'altarica::Or' (role 'altarica_Or135', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression136', cardinality 0..*).
+'altarica::Transition' (role 'altarica_Transition', cardinality 0..*) is associated with 'altarica::TransitionSpecification' (role 'altarica_TransitionSpecification', cardinality 0..*).
+'altarica::EventDeclaration' (role 'altarica_EventDeclaration31', cardinality 0..*) is associated with 'altarica::VariableAttribute' (role 'altarica_VariableAttribute32', cardinality 0..*).
+'altarica::NestedQualifiedEventRef' (role 'altarica_NestedQualifiedEventRef', cardinality 0..*) is associated with 'altarica::EventRef' (role 'altarica_EventRef173', cardinality 0..*).
+'altarica::EventRef' (role 'altarica_EventRef', cardinality 0..*) is associated with 'altarica::VectorParameter' (role 'altarica_VectorParameter63', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression92', cardinality 0..*) is associated with 'altarica::CaseExpression' (role 'altarica_CaseExpression91', cardinality 0..*).
+'altarica::Division' (role 'altarica_Division', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression123', cardinality 0..*).
+'altarica::NodeInstanceDeclaration' (role 'altarica_NodeInstanceDeclaration52', cardinality 0..*) is associated with 'altarica::Node' (role 'altarica_Node53', cardinality 0..*).
+'altarica::EventSpecification' (role 'altarica_EventSpecification', cardinality 0..*) is associated with 'altarica::EventDeclaration' (role 'altarica_EventDeclaration', cardinality 0..*).
+'altarica::NodeInstance' (role 'altarica_NodeInstance', cardinality 0..*) is associated with 'altarica::NodeInstanceDeclaration' (role 'altarica_NodeInstanceDeclaration50', cardinality 0..*).
+'altarica::InitSpecification' (role 'altarica_InitSpecification', cardinality 0..*) is associated with 'altarica::InitStatement' (role 'altarica_InitStatement', cardinality 0..*).
+'altarica::NestedQualifiedEventRef' (role 'altarica_NestedQualifiedEventRef175', cardinality 0..*) is associated with 'altarica::NavigableVariable' (role 'altarica_NavigableVariable176', cardinality 0..*).
+'altarica::IfThenElse' (role 'altarica_IfThenElse96', cardinality 0..*) is associated with 'altarica::EObject' (role 'altarica_EObject', cardinality 0..*).
+'altarica::Vector' (role 'altarica_Vector', cardinality 0..*) is associated with 'altarica::VectorSpecification' (role 'altarica_VectorSpecification', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression121', cardinality 0..*) is associated with 'altarica::Multiplication' (role 'altarica_Multiplication120', cardinality 0..*).
+'altarica::StrictUpper' (role 'altarica_StrictUpper', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression158', cardinality 0..*).
+'altarica::Constant' (role 'altarica_Constant', cardinality 0..*) is associated with 'altarica::ConstantDefinition' (role 'altarica_ConstantDefinition', cardinality 0..*).
+'altarica::Event' (role 'altarica_Event', cardinality 0..*) is associated with 'altarica::EventDeclaration' (role 'altarica_EventDeclaration29', cardinality 0..*).
+'altarica::Division' (role 'altarica_Division125', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression126', cardinality 0..*).
+'altarica::AssertSpecification' (role 'altarica_AssertSpecification', cardinality 0..*) is associated with 'altarica::Assert' (role 'altarica_Assert', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression166', cardinality 0..*) is associated with 'altarica::Upper' (role 'altarica_Upper165', cardinality 0..*).
+'altarica::IfThenElse' (role 'altarica_IfThenElse98', cardinality 0..*) is associated with 'altarica::EObject' (role 'altarica_EObject99', cardinality 0..*).
+'altarica::ConstantDefinition' (role 'altarica_ConstantDefinition3', cardinality 0..*) is associated with 'altarica::AbstractDefinitionConstant' (role 'altarica_AbstractDefinitionConstant', cardinality 0..*).
+'altarica::DomainConstant' (role 'altarica_DomainConstant', cardinality 0..*) is associated with 'altarica::AbstractDomain' (role 'altarica_AbstractDomain', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression113', cardinality 0..*) is associated with 'altarica::Minus' (role 'altarica_Minus', cardinality 0..*).
+'altarica::Imply' (role 'altarica_Imply170', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression171', cardinality 0..*).
+'altarica::FlowDeclaration' (role 'altarica_FlowDeclaration26', cardinality 0..*) is associated with 'altarica::VariableAttribute' (role 'altarica_VariableAttribute', cardinality 0..*).
+'altarica::Switch' (role 'altarica_Switch', cardinality 0..*) is associated with 'altarica::CaseExpression' (role 'altarica_CaseExpression', cardinality 0..*).
+'altarica::StateDeclaration' (role 'altarica_StateDeclaration', cardinality 0..*) is associated with 'altarica::StateSpecification' (role 'altarica_StateSpecification', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression102', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression100', cardinality 0..*).
+'altarica::AbstractTypeRef' (role 'altarica_AbstractTypeRef', cardinality 0..*) is associated with 'altarica::FlowDeclaration' (role 'altarica_FlowDeclaration24', cardinality 0..*).
+'altarica::AbstractTypeRef' (role 'altarica_AbstractTypeRef42', cardinality 0..*) is associated with 'altarica::StateDeclaration' (role 'altarica_StateDeclaration41', cardinality 0..*).
+'altarica::System' (role 'altarica_System', cardinality 0..*) is associated with 'altarica::AbstractDeclaration' (role 'altarica_AbstractDeclaration', cardinality 0..*).
+'altarica::Affectation' (role 'altarica_Affectation81', cardinality 0..*) is associated with 'altarica::AbstractExpression' (role 'altarica_AbstractExpression82', cardinality 0..*).
+'altarica::Cardinality' (role 'altarica_Cardinality65', cardinality 0..*) is associated with 'altarica::AbstractExpression' (role 'altarica_AbstractExpression66', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression131', cardinality 0..*) is associated with 'altarica::And' (role 'altarica_And130', cardinality 0..*).
+'altarica::Priority' (role 'altarica_Priority', cardinality 0..*) is associated with 'altarica::Event' (role 'altarica_Event34', cardinality 0..*).
+'altarica::Node' (role 'altarica_Node', cardinality 0..*) is associated with 'altarica::AbstractSpecification' (role 'altarica_AbstractSpecification', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression94', cardinality 0..*) is associated with 'altarica::IfThenElse' (role 'altarica_IfThenElse', cardinality 0..*).
+'altarica::FlowSpecification' (role 'altarica_FlowSpecification', cardinality 0..*) is associated with 'altarica::FlowDeclaration' (role 'altarica_FlowDeclaration', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression153', cardinality 0..*) is associated with 'altarica::Lower' (role 'altarica_Lower', cardinality 0..*).
+'altarica::Transition' (role 'altarica_Transition75', cardinality 0..*) is associated with 'altarica::Affectation' (role 'altarica_Affectation76', cardinality 0..*).
+'altarica::NavigableVariable' (role 'altarica_NavigableVariable181', cardinality 0..*) is associated with 'altarica::NestedQualifiedVariableRef' (role 'altarica_NestedQualifiedVariableRef180', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression13', cardinality 0..*) is associated with 'altarica::Range' (role 'altarica_Range12', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression163', cardinality 0..*) is associated with 'altarica::Upper' (role 'altarica_Upper', cardinality 0..*).
+'altarica::NavigableVariable' (role 'altarica_NavigableVariable', cardinality 0..*) is associated with 'altarica::EventRef' (role 'altarica_EventRef104', cardinality 0..*).
+'altarica::Addition' (role 'altarica_Addition', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression108', cardinality 0..*).
+'altarica::Equal' (role 'altarica_Equal', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression138', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression128', cardinality 0..*) is associated with 'altarica::And' (role 'altarica_And', cardinality 0..*).
+'altarica::ExternalSpecification' (role 'altarica_ExternalSpecification', cardinality 0..*) is associated with 'altarica::ExternalDirective' (role 'altarica_ExternalDirective', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression156', cardinality 0..*) is associated with 'altarica::Lower' (role 'altarica_Lower155', cardinality 0..*).
+'altarica::Switch' (role 'altarica_Switch85', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression86', cardinality 0..*).
+'altarica::Event' (role 'altarica_Event73', cardinality 0..*) is associated with 'altarica::Transition' (role 'altarica_Transition72', cardinality 0..*).
+'altarica::Domain' (role 'altarica_Domain47', cardinality 0..*) is associated with 'altarica::DomainRef' (role 'altarica_DomainRef', cardinality 0..*).
+'altarica::AbstractDomain' (role 'altarica_AbstractDomain8', cardinality 0..*) is associated with 'altarica::Domain' (role 'altarica_Domain', cardinality 0..*).
+'altarica::VariableAttribute' (role 'altarica_VariableAttribute45', cardinality 0..*) is associated with 'altarica::StateDeclaration' (role 'altarica_StateDeclaration44', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression111', cardinality 0..*) is associated with 'altarica::Addition' (role 'altarica_Addition110', cardinality 0..*).
+'altarica::NotEqual' (role 'altarica_NotEqual145', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression146', cardinality 0..*).
+'altarica::VectorParameter' (role 'altarica_VectorParameter', cardinality 0..*) is associated with 'altarica::Vector' (role 'altarica_Vector59', cardinality 0..*).
+'altarica::StrictLower' (role 'altarica_StrictLower', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression148', cardinality 0..*).
+'altarica::Minus' (role 'altarica_Minus115', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression116', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression118', cardinality 0..*) is associated with 'altarica::Multiplication' (role 'altarica_Multiplication', cardinality 0..*).
+'altarica::Range' (role 'altarica_Range', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression10', cardinality 0..*).
+'altarica::Imply' (role 'altarica_Imply', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression168', cardinality 0..*).
+'altarica::State' (role 'altarica_State79', cardinality 0..*) is associated with 'altarica::Affectation' (role 'altarica_Affectation78', cardinality 0..*).
+'altarica::StrictLower' (role 'altarica_StrictLower150', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression151', cardinality 0..*).
+'altarica::AbstractExpression' (role 'altarica_AbstractExpression70', cardinality 0..*) is associated with 'altarica::Transition' (role 'altarica_Transition69', cardinality 0..*).
+'altarica::StrictUpper' (role 'altarica_StrictUpper160', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression161', cardinality 0..*).
+'altarica::Enumeration' (role 'altarica_Enumeration', cardinality 0..*) is associated with 'altarica::Literal' (role 'altarica_Literal', cardinality 0..*).
+'altarica::VariableRef' (role 'altarica_VariableRef', cardinality 0..*) is associated with 'altarica::NavigableVariable' (role 'altarica_NavigableVariable106', cardinality 0..*).
+'altarica::Cardinality' (role 'altarica_Cardinality', cardinality 0..*) is associated with 'altarica::Vector' (role 'altarica_Vector61', cardinality 0..*).
+'altarica::Assert' (role 'altarica_Assert56', cardinality 0..*) is associated with 'altarica::AbstractBooleanExpression' (role 'altarica_AbstractBooleanExpression', cardinality 0..*).
+'altarica::State' (role 'altarica_State', cardinality 0..*) is associated with 'altarica::StateDeclaration' (role 'altarica_StateDeclaration39', cardinality 0..*).
+'altarica::Or' (role 'altarica_Or', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression133', cardinality 0..*).
+'altarica::NotEqual' (role 'altarica_NotEqual', cardinality 0..*) is associated with 'altarica::Expression' (role 'altarica_Expression143', cardinality 0..*).
+'altarica::Expression' (role 'altarica_Expression', cardinality 0..*) is associated with 'altarica::AbstractDefinitionConstant' (role 'altarica_AbstractDefinitionConstant5', cardinality 0..*).
+'altarica::Flow' (role 'altarica_Flow', cardinality 0..*) is associated with 'altarica::FlowDeclaration' (role 'altarica_FlowDeclaration22', cardinality 0..*).
+'altarica::NodeInstanceSpecification' (role 'altarica_NodeInstanceSpecification', cardinality 0..*) is associated with 'altarica::NodeInstanceDeclaration' (role 'altarica_NodeInstanceDeclaration', cardinality 0..*).

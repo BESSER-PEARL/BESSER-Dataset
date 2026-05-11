@@ -1,0 +1,113 @@
+The model has 58 class(es).
+The class 'DDL::Bfile' has no attributes.
+The class 'DDL::NCharVarying' has no attributes.
+The class 'DDL::TimeStamp' has the following attributes: 'withTimeZone' of type bool; 'precision' of type int.
+The class 'DDL::Integer' has no attributes.
+The class 'DDL::CharacterStringType' has the following attributes: 'length' of type int.
+The class 'DDL::Type' has no attributes.
+The class 'DDL::NationalCharacterVarying' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Type' has no attributes.
+The class 'DDL::Decimal' has the following attributes: 'scale' of type int; 'precision' of type int.
+The class 'DDL::NationalCharVarying' has no attributes.
+The class 'DDL::Check' has no attributes.
+The class 'DDL::DDLDefinition' has no attributes.
+The class 'DDL::ValuesCheck' has the following attributes: 'value' of type str; 'comparator' of type str; 'logConjuntion' of type str; 'columnName' of type str.
+The class 'DDL::Fk' has the following attributes: 'columnName' of type str; 'columnReference' of type str.
+The class 'DatetimeType' has no attributes.
+The class 'CharacterStringType' has no attributes.
+The class 'DDL::Varchar' has no attributes.
+The class 'DDL::BitStringType' has the following attributes: 'length' of type int.
+The class 'DDL::Int' has no attributes.
+The class 'DDL::Date' has no attributes.
+The class 'DDL::Ck' has the following attributes: 'columnName' of type str.
+The class 'DDL::Character' has no attributes.
+The class 'DDL::Time' has the following attributes: 'precision' of type int; 'withTimeZone' of type bool.
+The class 'DDL::NationalCharacter' has no attributes.
+The class 'DDL::Blob' has no attributes.
+The class 'DDL::NamedElement' has the following attributes: 'name' of type str.
+The class 'DDL::Column' has the following attributes: 'columnNull' of type bool.
+The class 'DDL::BitVarying' has no attributes.
+The class 'DDL::NationalCharacterStringType' has the following attributes: 'length' of type int.
+The class 'DDL::DatetimeType' has no attributes.
+The class 'DDL::Float' has the following attributes: 'precision' of type int.
+The class 'DDL::NumericType' has no attributes.
+The class 'DDL::CharacterVarying' has no attributes.
+The class 'DDL::Database' has no attributes.
+The class 'DDL::Bit' has no attributes.
+The class 'DDL::Clob' has no attributes.
+The class 'NationalCharacterStringType' has no attributes.
+The class 'DDL::NationalChar' has no attributes.
+The class 'ApproximateNumericType' has no attributes.
+The class 'DDL::Dec' has the following attributes: 'scale' of type int; 'precision' of type int.
+The class 'DDL::Real' has no attributes.
+The class 'DDL::Statement' has no attributes.
+The class 'DDL::ExactNumericType' has no attributes.
+The class 'DDL::ApproximateNumericType' has no attributes.
+The class 'DDL::Pk' has the following attributes: 'columnName' of type str.
+The class 'DDL::Interval' has the following attributes: 'field1' of type str; 'precision1' of type int; 'field2' of type str; 'precision2' of type int.
+The class 'DDL::Char' has no attributes.
+The class 'DDL::Small' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'DDL::CharVarying' has no attributes.
+The class 'BitStringType' has no attributes.
+The class 'DDL::Numeric' has the following attributes: 'scale' of type int; 'precision' of type int.
+The class 'ExactNumericType' has no attributes.
+The class 'DDL::DoublePrecision' has no attributes.
+The class 'DDL::Table' has no attributes.
+The class 'DDL::NChar' has no attributes.
+The class 'NamedElement' has no attributes.
+'DDL::CharacterStringType' is a specialization of 'Type'.
+'DDL::Char' is a specialization of 'CharacterStringType'.
+'DDL::Date' is a specialization of 'DatetimeType'.
+'DDL::Int' is a specialization of 'ExactNumericType'.
+'DDL::NumericType' is a specialization of 'Type'.
+'DDL::NationalChar' is a specialization of 'NationalCharacterStringType'.
+'DDL::CharacterVarying' is a specialization of 'CharacterStringType'.
+'DDL::Blob' is a specialization of 'Type'.
+'DDL::Integer' is a specialization of 'ExactNumericType'.
+'DDL::Time' is a specialization of 'DatetimeType'.
+'DDL::Column' is a specialization of 'NamedElement'.
+'DDL::NationalCharacterVarying' is a specialization of 'NationalCharacterStringType'.
+'DDL::BitVarying' is a specialization of 'BitStringType'.
+'DDL::Pk' is a specialization of 'NamedElement'.
+'DDL::Small' is a specialization of 'ExactNumericType'.
+'DDL::Character' is a specialization of 'CharacterStringType'.
+'DDL::Bit' is a specialization of 'BitStringType'.
+'DDL::DatetimeType' is a specialization of 'Type'.
+'DDL::NChar' is a specialization of 'NationalCharacterStringType'.
+'DDL::Varchar' is a specialization of 'CharacterStringType'.
+'DDL::Real' is a specialization of 'ApproximateNumericType'.
+'DDL::NationalCharacterStringType' is a specialization of 'Type'.
+'DDL::BitStringType' is a specialization of 'Type'.
+'DDL::Bfile' is a specialization of 'Type'.
+'DDL::CharVarying' is a specialization of 'CharacterStringType'.
+'DDL::ApproximateNumericType' is a specialization of 'NumericType'.
+'DDL::ExactNumericType' is a specialization of 'NumericType'.
+'DDL::Fk' is a specialization of 'NamedElement'.
+'DDL::NationalCharacter' is a specialization of 'NationalCharacterStringType'.
+'DDL::Dec' is a specialization of 'ExactNumericType'.
+'DDL::Database' is a specialization of 'Statement'.
+'DDL::NCharVarying' is a specialization of 'NationalCharacterStringType'.
+'DDL::Decimal' is a specialization of 'ExactNumericType'.
+'DDL::NationalCharVarying' is a specialization of 'NationalCharacterStringType'.
+'DDL::Table' is a specialization of 'NamedElement'.
+'DDL::DoublePrecision' is a specialization of 'ApproximateNumericType'.
+'DDL::Check' is a specialization of 'NamedElement'.
+'DDL::Database' is a specialization of 'NamedElement'.
+'DDL::Table' is a specialization of 'Statement'.
+'DDL::Interval' is a specialization of 'Type'.
+'DDL::Float' is a specialization of 'ApproximateNumericType'.
+'DDL::Clob' is a specialization of 'CharacterStringType'.
+'DDL::Ck' is a specialization of 'NamedElement'.
+'DDL::TimeStamp' is a specialization of 'DatetimeType'.
+'DDL::Numeric' is a specialization of 'ExactNumericType'.
+'DDL::Check' (role 'DDL_Check', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table9', cardinality 0..*).
+'DDL::Table' (role 'DDL_Table', cardinality 0..*) is associated with 'DDL::Column' (role 'DDL_Column', cardinality 0..*).
+'DDL::Check' (role 'DDL_Check16', cardinality 0..*) is associated with 'DDL::ValuesCheck' (role 'DDL_ValuesCheck', cardinality 0..*).
+'DDL::Pk' (role 'DDL_Pk', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table3', cardinality 0..*).
+'DDL::Ck' (role 'DDL_Ck', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table5', cardinality 0..*).
+'DDL::Table' (role 'DDL_Table7', cardinality 0..*) is associated with 'DDL::Fk' (role 'DDL_Fk', cardinality 0..*).
+'DDL::Type' (role 'DDL_Type', cardinality 0..*) is associated with 'DDL::Column' (role 'DDL_Column11', cardinality 0..*).
+'DDL::Statement' (role 'DDL_Statement', cardinality 0..*) is associated with 'DDL::DDLDefinition' (role 'DDL_DDLDefinition', cardinality 0..*).
+'DDL::Fk' (role 'DDL_Fk13', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table14', cardinality 0..*).

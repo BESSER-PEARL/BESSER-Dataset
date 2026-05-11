@@ -1,0 +1,76 @@
+The model has 27 class(es).
+The class 'SyntaxElement' has no attributes.
+The class 'expression::SyntaxElement' has no attributes.
+The class 'expression::ListLiteral' has no attributes.
+The class 'expression::IfExpression' has no attributes.
+The class 'expression::GlobalVarExpression' has the following attributes: 'name' of type str.
+The class 'Literal' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'expression::ConstructorCallExpression' has no attributes.
+The class 'expression::NullLiteral' has the following attributes: 'val' of type str.
+The class 'expression::StringLiteral' has the following attributes: 'val' of type str.
+The class 'expression::Identifier' has the following attributes: 'cl' of type str; 'id' of type str.
+The class 'expression::TypeSelectExpression' has no attributes.
+The class 'expression::SwitchExpression' has no attributes.
+The class 'expression::Literal' has no attributes.
+The class 'expression::OperationCall' has no attributes.
+The class 'Expression' has no attributes.
+The class 'expression::Case' has no attributes.
+The class 'expression::IntegerLiteral' has the following attributes: 'val' of type int.
+The class 'expression::BooleanLiteral' has the following attributes: 'val' of type str.
+The class 'expression::CastedExpression' has no attributes.
+The class 'expression::CollectionExpression' has the following attributes: 'var' of type str.
+The class 'FeatureCall' has no attributes.
+The class 'expression::ChainExpression' has no attributes.
+The class 'expression::BooleanOperation' has the following attributes: 'operator' of type str.
+The class 'expression::LetExpression' has the following attributes: 'identifier' of type str.
+The class 'expression::FeatureCall' has the following attributes: 'name' of type str.
+The class 'expression::RealLiteral' has the following attributes: 'val' of type str.
+'expression::FeatureCall' is a specialization of 'Expression'.
+'expression::RealLiteral' is a specialization of 'Literal'.
+'expression::BooleanLiteral' is a specialization of 'Literal'.
+'expression::NullLiteral' is a specialization of 'Literal'.
+'expression::Identifier' is a specialization of 'SyntaxElement'.
+'expression::Case' is a specialization of 'SyntaxElement'.
+'expression::ConstructorCallExpression' is a specialization of 'Expression'.
+'expression::TypeSelectExpression' is a specialization of 'FeatureCall'.
+'expression::ChainExpression' is a specialization of 'Expression'.
+'expression::GlobalVarExpression' is a specialization of 'Expression'.
+'expression::OperationCall' is a specialization of 'Expression'.
+'expression::OperationCall' is a specialization of 'FeatureCall'.
+'expression::CollectionExpression' is a specialization of 'Expression'.
+'expression::StringLiteral' is a specialization of 'Literal'.
+'expression::TypeSelectExpression' is a specialization of 'Expression'.
+'expression::Literal' is a specialization of 'Expression'.
+'expression::Expression' is a specialization of 'SyntaxElement'.
+'expression::IntegerLiteral' is a specialization of 'Literal'.
+'expression::ListLiteral' is a specialization of 'Expression'.
+'expression::SwitchExpression' is a specialization of 'Expression'.
+'expression::IfExpression' is a specialization of 'Expression'.
+'expression::BooleanOperation' is a specialization of 'Expression'.
+'expression::CollectionExpression' is a specialization of 'FeatureCall'.
+'expression::CastedExpression' is a specialization of 'Expression'.
+'expression::LetExpression' is a specialization of 'Expression'.
+'expression::Expression' (role 'expression_Expression49', cardinality 0..*) is associated with 'expression::ChainExpression' (role 'expression_ChainExpression48', cardinality 0..*).
+'expression::Identifier' (role 'expression_Identifier44', cardinality 0..*) is associated with 'expression::Identifier' (role 'expression_Identifier42', cardinality 0..*).
+'expression::ConstructorCallExpression' (role 'expression_ConstructorCallExpression', cardinality 0..*) is associated with 'expression::Identifier' (role 'expression_Identifier39', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression17', cardinality 0..*) is associated with 'expression::SwitchExpression' (role 'expression_SwitchExpression', cardinality 0..*).
+'expression::LetExpression' (role 'expression_LetExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression46', cardinality 0..*) is associated with 'expression::ChainExpression' (role 'expression_ChainExpression', cardinality 0..*).
+'expression::Case' (role 'expression_Case24', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression25', cardinality 0..*).
+'expression::LetExpression' (role 'expression_LetExpression2', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression3', cardinality 0..*).
+'expression::IfExpression' (role 'expression_IfExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression9', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression12', cardinality 0..*) is associated with 'expression::IfExpression' (role 'expression_IfExpression11', cardinality 0..*).
+'expression::Identifier' (role 'expression_Identifier35', cardinality 0..*) is associated with 'expression::FeatureCall' (role 'expression_FeatureCall34', cardinality 0..*).
+'expression::CollectionExpression' (role 'expression_CollectionExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression41', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression32', cardinality 0..*) is associated with 'expression::FeatureCall' (role 'expression_FeatureCall', cardinality 0..*).
+'expression::BooleanOperation' (role 'expression_BooleanOperation53', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression54', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression15', cardinality 0..*) is associated with 'expression::IfExpression' (role 'expression_IfExpression14', cardinality 0..*).
+'expression::CastedExpression' (role 'expression_CastedExpression', cardinality 0..*) is associated with 'expression::Identifier' (role 'expression_Identifier', cardinality 0..*).
+'expression::OperationCall' (role 'expression_OperationCall', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression30', cardinality 0..*).
+'expression::Case' (role 'expression_Case27', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression28', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression7', cardinality 0..*) is associated with 'expression::CastedExpression' (role 'expression_CastedExpression6', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression37', cardinality 0..*) is associated with 'expression::ListLiteral' (role 'expression_ListLiteral', cardinality 0..*).
+'expression::SwitchExpression' (role 'expression_SwitchExpression21', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression22', cardinality 0..*).
+'expression::Case' (role 'expression_Case', cardinality 0..*) is associated with 'expression::SwitchExpression' (role 'expression_SwitchExpression19', cardinality 0..*).
+'expression::BooleanOperation' (role 'expression_BooleanOperation', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression51', cardinality 0..*).

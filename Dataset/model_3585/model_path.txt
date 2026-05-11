@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gssi/ATL-zoo-copy/ATLZoo/SideEffect/SideEffect/Metamodels/TypeA.ecore

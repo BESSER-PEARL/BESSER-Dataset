@@ -1,0 +1,280 @@
+The model has 106 class(es).
+The class 'DefaultValue' has no attributes.
+The class 'sqliteModel::MigrationBlock' has no attributes.
+The class 'sqliteModel::Case' has no attributes.
+The class 'sqliteModel::UpdateStatement' has the following attributes: 'conflictResolution' of type str.
+The class 'sqliteModel::Literal' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'DMLStatement' has no attributes.
+The class 'sqliteModel::ContentUri' has the following attributes: 'type' of type str.
+The class 'sqliteModel::SingleSourceTable' has no attributes.
+The class 'sqliteModel::ActionStatement' has no attributes.
+The class 'sqliteModel::CurrentTimeStampLiteral' has the following attributes: 'literal' of type str.
+The class 'sqliteModel::DatabaseBlock' has the following attributes: 'name' of type str.
+The class 'sqliteModel::ColumnSourceRef' has the following attributes: 'all' of type bool.
+The class 'sqliteModel::CastExpression' has the following attributes: 'type' of type str.
+The class 'sqliteModel::NestedExpression' has no attributes.
+The class 'sqliteModel::InsertStatement' has the following attributes: 'conflictResolution' of type str.
+The class 'sqliteModel::GroupByExpressions' has no attributes.
+The class 'SelectCoreExpression' has no attributes.
+The class 'sqliteModel::ExprEqual' has the following attributes: 'op' of type str.
+The class 'sqliteModel::HavingExpressions' has no attributes.
+The class 'sqliteModel::SelectSource' has the following attributes: 'name' of type str.
+The class 'sqliteModel::StringLiteral' has the following attributes: 'literal' of type str.
+The class 'sqliteModel::ExprRelate' has the following attributes: 'op' of type str.
+The class 'SelectSource' has no attributes.
+The class 'ConfigurationStatement' has no attributes.
+The class 'sqliteModel::WhereExpressions' has no attributes.
+The class 'sqliteModel::CreateTriggerStatement' has the following attributes: 'forEachRow' of type str; 'eventType' of type str; 'temporary' of type bool; 'updateColumnNames' of type str; 'name' of type str; 'when' of type str.
+The class 'ColumnConstraint' has no attributes.
+The class 'DDLStatement' has no attributes.
+The class 'sqliteModel::PrimaryKeyColumnConstraint' has the following attributes: 'autoincrement' of type bool; 'desc' of type bool; 'asc' of type bool.
+The class 'sqliteModel::DropTriggerStatement' has the following attributes: 'ifExists' of type bool.
+The class 'ContentUriSegment' has no attributes.
+The class 'sqliteModel::ExprAnd' has the following attributes: 'op' of type str.
+The class 'sqliteModel::TableDefinition' has the following attributes: 'name' of type str.
+The class 'sqliteModel::ConfigBlock' has no attributes.
+The class 'sqliteModel::OrderingTerm' has the following attributes: 'asc' of type bool; 'desc' of type bool.
+The class 'sqliteModel::DefaultConstraint' has no attributes.
+The class 'sqliteModel::UniqueConstraint' has no attributes.
+The class 'sqliteModel::SelectList' has no attributes.
+The class 'sqliteModel::CreateTableStatement' has the following attributes: 'temporary' of type bool.
+The class 'sqliteModel::NullCheckExpression' has no attributes.
+The class 'sqliteModel::CreateIndexStatement' has the following attributes: 'name' of type str; 'unique' of type bool.
+The class 'SingleSource' has no attributes.
+The class 'sqliteModel::NotNullConstraint' has no attributes.
+The class 'sqliteModel::AlterTableAddColumnStatement' has no attributes.
+The class 'sqliteModel::UpdateColumnExpression' has no attributes.
+The class 'sqliteModel::ConfigurationStatement' has the following attributes: 'name' of type str.
+The class 'sqliteModel::NotNull' has no attributes.
+The class 'sqliteModel::Function' has the following attributes: 'all' of type bool.
+The class 'Expression' has no attributes.
+The class 'sqliteModel::FunctionArgument' has no attributes.
+The class 'sqliteModel::JoinStatement' has the following attributes: 'outer' of type bool; 'cross' of type bool; 'left' of type bool; 'natural' of type bool; 'inner' of type bool.
+The class 'sqliteModel::Model' has the following attributes: 'packageName' of type str.
+The class 'sqliteModel::ExprConcat' has the following attributes: 'op' of type str.
+The class 'sqliteModel::Expression' has no attributes.
+The class 'sqliteModel::ContentUriSegment' has the following attributes: 'name' of type str.
+The class 'sqliteModel::UniqueTableConstraint' has no attributes.
+The class 'sqliteModel::ResultColumn' has no attributes.
+The class 'sqliteModel::DeleteStatement' has no attributes.
+The class 'sqliteModel::ExprBit' has the following attributes: 'op' of type str.
+The class 'sqliteModel::DDLStatement' has no attributes.
+The class 'sqliteModel::PrimaryConstraint' has no attributes.
+The class 'sqliteModel::SelectCoreExpression' has no attributes.
+The class 'sqliteModel::ColumnConstraint' has no attributes.
+The class 'sqliteModel::CreateViewStatement' has the following attributes: 'temporary' of type bool.
+The class 'sqliteModel::SelectStatement' has no attributes.
+The class 'sqliteModel::DropIndexStatement' has the following attributes: 'ifExists' of type bool.
+The class 'sqliteModel::CurrentDateLiteral' has the following attributes: 'literal' of type str.
+The class 'TableDefinition' has no attributes.
+The class 'ColumnSource' has no attributes.
+The class 'sqliteModel::LiteralDefaultValue' has no attributes.
+The class 'sqliteModel::ExpressionDefaultValue' has no attributes.
+The class 'sqliteModel::ContentUriParamSegment' has the following attributes: 'text' of type bool; 'num' of type bool.
+The class 'sqliteModel::IsNull' has no attributes.
+The class 'sqliteModel::SelectCore' has the following attributes: 'op' of type str.
+The class 'sqliteModel::ConflictClause' has the following attributes: 'resolution' of type str.
+The class 'sqliteModel::SingleSourceSelectStatement' has no attributes.
+The class 'sqliteModel::JoinSource' has no attributes.
+The class 'sqliteModel::FunctionArg' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'sqliteModel::DropViewStatement' has the following attributes: 'ifExists' of type bool.
+The class 'sqliteModel::DMLStatement' has no attributes.
+The class 'sqliteModel::DefaultValue' has no attributes.
+The class 'sqliteModel::DropTableStatement' has the following attributes: 'ifExists' of type bool.
+The class 'sqliteModel::SelectExpression' has the following attributes: 'allColumns' of type bool; 'all' of type bool; 'distinct' of type bool.
+The class 'sqliteModel::ColumnDef' has the following attributes: 'type' of type str.
+The class 'sqliteModel::CurrentTimeLiteral' has the following attributes: 'literal' of type str.
+The class 'sqliteModel::NumericLiteral' has the following attributes: 'number' of type str.
+The class 'sqliteModel::SelectStatementExpression' has the following attributes: 'not_' of type bool; 'exists' of type bool.
+The class 'sqliteModel::LiteralValue' has no attributes.
+The class 'sqliteModel::OrderingTermList' has no attributes.
+The class 'LiteralValue' has no attributes.
+The class 'sqliteModel::ExprAdd' has the following attributes: 'op' of type str.
+The class 'sqliteModel::NullLiteral' has the following attributes: 'literal' of type str.
+The class 'sqliteModel::CaseExpression' has no attributes.
+The class 'sqliteModel::CheckTableConstraint' has no attributes.
+The class 'sqliteModel::SingleSource' has no attributes.
+The class 'sqliteModel::ExprOr' has the following attributes: 'op' of type str.
+The class 'sqliteModel::TableConstraint' has the following attributes: 'name' of type str.
+The class 'sqliteModel::OldColumn' has no attributes.
+The class 'sqliteModel::IndexedColumn' has the following attributes: 'collationName' of type str; 'desc' of type bool; 'asc' of type bool.
+The class 'sqliteModel::InitBlock' has no attributes.
+The class 'sqliteModel::AlterTableRenameStatement' has no attributes.
+The class 'sqliteModel::SingleSourceJoin' has no attributes.
+The class 'sqliteModel::ColumnSource' has the following attributes: 'name' of type str.
+The class 'sqliteModel::NewColumn' has no attributes.
+The class 'sqliteModel::ExprMult' has the following attributes: 'op' of type str.
+The enumeration 'SqliteDataType' has the following literals: 'integer', 'none', 'blob', 'text', 'numeric', 'real'.
+The enumeration 'CompoundOperator' has the following literals: 'intersect', 'unionall', 'except_', 'union'.
+The enumeration 'ColumnType' has the following literals: 'integer', 'boolean', 'real', 'blob', 'text'.
+The enumeration 'ConflictResolution' has the following literals: 'rollback', 'ignore', 'fail', 'abort', 'replace'.
+'sqliteModel::CreateTableStatement' is a specialization of 'TableDefinition'.
+'sqliteModel::ExprMult' is a specialization of 'Expression'.
+'sqliteModel::Function' is a specialization of 'Expression'.
+'sqliteModel::SelectCore' is a specialization of 'SelectCoreExpression'.
+'sqliteModel::NewColumn' is a specialization of 'Expression'.
+'sqliteModel::CreateViewStatement' is a specialization of 'TableDefinition'.
+'sqliteModel::TableDefinition' is a specialization of 'DDLStatement'.
+'sqliteModel::DropTriggerStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::CheckTableConstraint' is a specialization of 'TableConstraint'.
+'sqliteModel::UniqueTableConstraint' is a specialization of 'TableConstraint'.
+'sqliteModel::ContentUriParamSegment' is a specialization of 'ContentUriSegment'.
+'sqliteModel::ExprConcat' is a specialization of 'Expression'.
+'sqliteModel::ExprBit' is a specialization of 'Expression'.
+'sqliteModel::NullCheckExpression' is a specialization of 'Expression'.
+'sqliteModel::ActionStatement' is a specialization of 'ConfigurationStatement'.
+'sqliteModel::NullLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::DefaultConstraint' is a specialization of 'ColumnConstraint'.
+'sqliteModel::SelectStatement' is a specialization of 'DMLStatement'.
+'sqliteModel::ExprRelate' is a specialization of 'Expression'.
+'sqliteModel::CaseExpression' is a specialization of 'Expression'.
+'sqliteModel::AlterTableAddColumnStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::IsNull' is a specialization of 'Expression'.
+'sqliteModel::SingleSourceSelectStatement' is a specialization of 'SelectSource'.
+'sqliteModel::ExprOr' is a specialization of 'Expression'.
+'sqliteModel::CastExpression' is a specialization of 'Expression'.
+'sqliteModel::DeleteStatement' is a specialization of 'DMLStatement'.
+'sqliteModel::FunctionArgument' is a specialization of 'Expression'.
+'sqliteModel::SingleSourceJoin' is a specialization of 'SingleSource'.
+'sqliteModel::UniqueConstraint' is a specialization of 'ColumnConstraint'.
+'sqliteModel::NestedExpression' is a specialization of 'Expression'.
+'sqliteModel::ExprAnd' is a specialization of 'Expression'.
+'sqliteModel::OldColumn' is a specialization of 'Expression'.
+'sqliteModel::ExprEqual' is a specialization of 'Expression'.
+'sqliteModel::ColumnSourceRef' is a specialization of 'Expression'.
+'sqliteModel::SelectSource' is a specialization of 'SingleSource'.
+'sqliteModel::SelectExpression' is a specialization of 'SelectCoreExpression'.
+'sqliteModel::UpdateStatement' is a specialization of 'DMLStatement'.
+'sqliteModel::CreateTriggerStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::ExprAdd' is a specialization of 'Expression'.
+'sqliteModel::Literal' is a specialization of 'Expression'.
+'sqliteModel::CurrentTimeStampLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::ExpressionDefaultValue' is a specialization of 'DefaultValue'.
+'sqliteModel::CurrentDateLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::PrimaryKeyColumnConstraint' is a specialization of 'ColumnConstraint'.
+'sqliteModel::ResultColumn' is a specialization of 'ColumnSource'.
+'sqliteModel::Function' is a specialization of 'ConfigurationStatement'.
+'sqliteModel::SelectStatementExpression' is a specialization of 'Expression'.
+'sqliteModel::StringLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::CreateIndexStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::SingleSourceTable' is a specialization of 'SelectSource'.
+'sqliteModel::AlterTableRenameStatement' is a specialization of 'TableDefinition'.
+'sqliteModel::DropViewStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::PrimaryConstraint' is a specialization of 'TableConstraint'.
+'sqliteModel::DropTableStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::NotNull' is a specialization of 'Expression'.
+'sqliteModel::ColumnDef' is a specialization of 'ColumnSource'.
+'sqliteModel::InsertStatement' is a specialization of 'DMLStatement'.
+'sqliteModel::LiteralDefaultValue' is a specialization of 'DefaultValue'.
+'sqliteModel::DropIndexStatement' is a specialization of 'DDLStatement'.
+'sqliteModel::NumericLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::CurrentTimeLiteral' is a specialization of 'LiteralValue'.
+'sqliteModel::NotNullConstraint' is a specialization of 'ColumnConstraint'.
+'sqliteModel::CreateIndexStatement' (role 'sqliteModel_CreateIndexStatement72', cardinality 0..*) is associated with 'sqliteModel::DropIndexStatement' (role 'sqliteModel_DropIndexStatement', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression114', cardinality 0..*) is associated with 'sqliteModel::UpdateColumnExpression' (role 'sqliteModel_UpdateColumnExpression113', cardinality 0..*).
+'sqliteModel::ColumnDef' (role 'sqliteModel_ColumnDef95', cardinality 0..*) is associated with 'sqliteModel::InsertStatement' (role 'sqliteModel_InsertStatement94', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition63', cardinality 0..*) is associated with 'sqliteModel::DropTableStatement' (role 'sqliteModel_DropTableStatement', cardinality 0..*).
+'sqliteModel::ExprAdd' (role 'sqliteModel_ExprAdd137', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression138', cardinality 0..*).
+'sqliteModel::CastExpression' (role 'sqliteModel_CastExpression', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression191', cardinality 0..*).
+'sqliteModel::ConfigurationStatement' (role 'sqliteModel_ConfigurationStatement', cardinality 0..*) is associated with 'sqliteModel::ConfigBlock' (role 'sqliteModel_ConfigBlock8', cardinality 0..*).
+'sqliteModel::Function' (role 'sqliteModel_Function122', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression123', cardinality 0..*).
+'sqliteModel::ActionStatement' (role 'sqliteModel_ActionStatement', cardinality 0..*) is associated with 'sqliteModel::ContentUri' (role 'sqliteModel_ContentUri116', cardinality 0..*).
+'sqliteModel::OrderingTermList' (role 'sqliteModel_OrderingTermList', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement21', cardinality 0..*).
+'sqliteModel::PrimaryConstraint' (role 'sqliteModel_PrimaryConstraint80', cardinality 0..*) is associated with 'sqliteModel::ConflictClause' (role 'sqliteModel_ConflictClause81', cardinality 0..*).
+'sqliteModel::ExprConcat' (role 'sqliteModel_ExprConcat127', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression128', cardinality 0..*).
+'sqliteModel::AlterTableAddColumnStatement' (role 'sqliteModel_AlterTableAddColumnStatement60', cardinality 0..*) is associated with 'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource61', cardinality 0..*).
+'sqliteModel::UpdateColumnExpression' (role 'sqliteModel_UpdateColumnExpression110', cardinality 0..*) is associated with 'sqliteModel::ColumnDef' (role 'sqliteModel_ColumnDef111', cardinality 0..*).
+'sqliteModel::DMLStatement' (role 'sqliteModel_DMLStatement', cardinality 0..*) is associated with 'sqliteModel::CreateTriggerStatement' (role 'sqliteModel_CreateTriggerStatement56', cardinality 0..*).
+'sqliteModel::UpdateStatement' (role 'sqliteModel_UpdateStatement107', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression108', cardinality 0..*).
+'sqliteModel::IndexedColumn' (role 'sqliteModel_IndexedColumn', cardinality 0..*) is associated with 'sqliteModel::CreateIndexStatement' (role 'sqliteModel_CreateIndexStatement70', cardinality 0..*).
+'sqliteModel::SelectExpression' (role 'sqliteModel_SelectExpression208', cardinality 0..*) is associated with 'sqliteModel::GroupByExpressions' (role 'sqliteModel_GroupByExpressions209', cardinality 0..*).
+'sqliteModel::NullCheckExpression' (role 'sqliteModel_NullCheckExpression', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression165', cardinality 0..*).
+'sqliteModel::UniqueTableConstraint' (role 'sqliteModel_UniqueTableConstraint76', cardinality 0..*) is associated with 'sqliteModel::ConflictClause' (role 'sqliteModel_ConflictClause', cardinality 0..*).
+'sqliteModel::ColumnDef' (role 'sqliteModel_ColumnDef229', cardinality 0..*) is associated with 'sqliteModel::ColumnConstraint' (role 'sqliteModel_ColumnConstraint', cardinality 0..*).
+'sqliteModel::TableConstraint' (role 'sqliteModel_TableConstraint', cardinality 0..*) is associated with 'sqliteModel::CreateTableStatement' (role 'sqliteModel_CreateTableStatement222', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression83', cardinality 0..*) is associated with 'sqliteModel::CheckTableConstraint' (role 'sqliteModel_CheckTableConstraint', cardinality 0..*).
+'sqliteModel::JoinStatement' (role 'sqliteModel_JoinStatement', cardinality 0..*) is associated with 'sqliteModel::JoinSource' (role 'sqliteModel_JoinSource42', cardinality 0..*).
+'sqliteModel::ExprEqual' (role 'sqliteModel_ExprEqual152', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression153', cardinality 0..*).
+'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource172', cardinality 0..*) is associated with 'sqliteModel::OldColumn' (role 'sqliteModel_OldColumn', cardinality 0..*).
+'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement101', cardinality 0..*) is associated with 'sqliteModel::InsertStatement' (role 'sqliteModel_InsertStatement100', cardinality 0..*).
+'sqliteModel::Function' (role 'sqliteModel_Function119', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement120', cardinality 0..*).
+'sqliteModel::CreateViewStatement' (role 'sqliteModel_CreateViewStatement', cardinality 0..*) is associated with 'sqliteModel::DropViewStatement' (role 'sqliteModel_DropViewStatement', cardinality 0..*).
+'sqliteModel::ConflictClause' (role 'sqliteModel_ConflictClause231', cardinality 0..*) is associated with 'sqliteModel::NotNullConstraint' (role 'sqliteModel_NotNullConstraint', cardinality 0..*).
+'sqliteModel::CreateTriggerStatement' (role 'sqliteModel_CreateTriggerStatement', cardinality 0..*) is associated with 'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition', cardinality 0..*).
+'sqliteModel::FunctionArg' (role 'sqliteModel_FunctionArg193', cardinality 0..*) is associated with 'sqliteModel::FunctionArgument' (role 'sqliteModel_FunctionArgument', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression145', cardinality 0..*) is associated with 'sqliteModel::ExprRelate' (role 'sqliteModel_ExprRelate', cardinality 0..*).
+'sqliteModel::ExprBit' (role 'sqliteModel_ExprBit142', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression143', cardinality 0..*).
+'sqliteModel::InsertStatement' (role 'sqliteModel_InsertStatement97', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression98', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition58', cardinality 0..*) is associated with 'sqliteModel::AlterTableAddColumnStatement' (role 'sqliteModel_AlterTableAddColumnStatement', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression36', cardinality 0..*) is associated with 'sqliteModel::HavingExpressions' (role 'sqliteModel_HavingExpressions', cardinality 0..*).
+'sqliteModel::OrderingTerm' (role 'sqliteModel_OrderingTerm', cardinality 0..*) is associated with 'sqliteModel::OrderingTermList' (role 'sqliteModel_OrderingTermList29', cardinality 0..*).
+'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement26', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression27', cardinality 0..*).
+'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource220', cardinality 0..*) is associated with 'sqliteModel::CreateTableStatement' (role 'sqliteModel_CreateTableStatement', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression125', cardinality 0..*) is associated with 'sqliteModel::ExprConcat' (role 'sqliteModel_ExprConcat', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression155', cardinality 0..*) is associated with 'sqliteModel::ExprAnd' (role 'sqliteModel_ExprAnd', cardinality 0..*).
+'sqliteModel::SelectCore' (role 'sqliteModel_SelectCore', cardinality 0..*) is associated with 'sqliteModel::SelectCoreExpression' (role 'sqliteModel_SelectCoreExpression195', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition68', cardinality 0..*) is associated with 'sqliteModel::CreateIndexStatement' (role 'sqliteModel_CreateIndexStatement', cardinality 0..*).
+'sqliteModel::UpdateColumnExpression' (role 'sqliteModel_UpdateColumnExpression', cardinality 0..*) is associated with 'sqliteModel::UpdateStatement' (role 'sqliteModel_UpdateStatement105', cardinality 0..*).
+'sqliteModel::SelectList' (role 'sqliteModel_SelectList', cardinality 0..*) is associated with 'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource', cardinality 0..*).
+'sqliteModel::IndexedColumn' (role 'sqliteModel_IndexedColumn85', cardinality 0..*) is associated with 'sqliteModel::ColumnDef' (role 'sqliteModel_ColumnDef', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression160', cardinality 0..*) is associated with 'sqliteModel::ExprOr' (role 'sqliteModel_ExprOr', cardinality 0..*).
+'sqliteModel::UpdateStatement' (role 'sqliteModel_UpdateStatement', cardinality 0..*) is associated with 'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition103', cardinality 0..*).
+'sqliteModel::JoinSource' (role 'sqliteModel_JoinSource203', cardinality 0..*) is associated with 'sqliteModel::SelectExpression' (role 'sqliteModel_SelectExpression202', cardinality 0..*).
+'sqliteModel::DropTriggerStatement' (role 'sqliteModel_DropTriggerStatement', cardinality 0..*) is associated with 'sqliteModel::CreateTriggerStatement' (role 'sqliteModel_CreateTriggerStatement65', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression148', cardinality 0..*) is associated with 'sqliteModel::ExprRelate' (role 'sqliteModel_ExprRelate147', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression140', cardinality 0..*) is associated with 'sqliteModel::ExprBit' (role 'sqliteModel_ExprBit', cardinality 0..*).
+'sqliteModel::DatabaseBlock' (role 'sqliteModel_DatabaseBlock', cardinality 0..*) is associated with 'sqliteModel::Model' (role 'sqliteModel_Model', cardinality 0..*).
+'sqliteModel::DDLStatement' (role 'sqliteModel_DDLStatement14', cardinality 0..*) is associated with 'sqliteModel::MigrationBlock' (role 'sqliteModel_MigrationBlock13', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression', cardinality 0..*) is associated with 'sqliteModel::Case' (role 'sqliteModel_Case', cardinality 0..*).
+'sqliteModel::JoinStatement' (role 'sqliteModel_JoinStatement49', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression50', cardinality 0..*).
+'sqliteModel::GroupByExpressions' (role 'sqliteModel_GroupByExpressions', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression34', cardinality 0..*).
+'sqliteModel::SelectCoreExpression' (role 'sqliteModel_SelectCoreExpression', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement', cardinality 0..*).
+'sqliteModel::IndexedColumn' (role 'sqliteModel_IndexedColumn78', cardinality 0..*) is associated with 'sqliteModel::PrimaryConstraint' (role 'sqliteModel_PrimaryConstraint', cardinality 0..*).
+'sqliteModel::ConflictClause' (role 'sqliteModel_ConflictClause233', cardinality 0..*) is associated with 'sqliteModel::UniqueConstraint' (role 'sqliteModel_UniqueConstraint', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression183', cardinality 0..*) is associated with 'sqliteModel::CaseExpression' (role 'sqliteModel_CaseExpression', cardinality 0..*).
+'sqliteModel::MigrationBlock' (role 'sqliteModel_MigrationBlock', cardinality 0..*) is associated with 'sqliteModel::DatabaseBlock' (role 'sqliteModel_DatabaseBlock6', cardinality 0..*).
+'sqliteModel::Literal' (role 'sqliteModel_Literal', cardinality 0..*) is associated with 'sqliteModel::LiteralValue' (role 'sqliteModel_LiteralValue', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression179', cardinality 0..*) is associated with 'sqliteModel::NestedExpression' (role 'sqliteModel_NestedExpression', cardinality 0..*).
+'sqliteModel::ExprOr' (role 'sqliteModel_ExprOr162', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression163', cardinality 0..*).
+'sqliteModel::LiteralDefaultValue' (role 'sqliteModel_LiteralDefaultValue', cardinality 0..*) is associated with 'sqliteModel::LiteralValue' (role 'sqliteModel_LiteralValue236', cardinality 0..*).
+'sqliteModel::SingleSource' (role 'sqliteModel_SingleSource', cardinality 0..*) is associated with 'sqliteModel::JoinSource' (role 'sqliteModel_JoinSource', cardinality 0..*).
+'sqliteModel::WhereExpressions' (role 'sqliteModel_WhereExpressions', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression32', cardinality 0..*).
+'sqliteModel::ExpressionDefaultValue' (role 'sqliteModel_ExpressionDefaultValue', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression238', cardinality 0..*).
+'sqliteModel::SelectSource' (role 'sqliteModel_SelectSource', cardinality 0..*) is associated with 'sqliteModel::ColumnSourceRef' (role 'sqliteModel_ColumnSourceRef', cardinality 0..*).
+'sqliteModel::SingleSourceJoin' (role 'sqliteModel_SingleSourceJoin', cardinality 0..*) is associated with 'sqliteModel::JoinSource' (role 'sqliteModel_JoinSource44', cardinality 0..*).
+'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement216', cardinality 0..*) is associated with 'sqliteModel::SingleSourceSelectStatement' (role 'sqliteModel_SingleSourceSelectStatement', cardinality 0..*).
+'sqliteModel::SelectExpression' (role 'sqliteModel_SelectExpression211', cardinality 0..*) is associated with 'sqliteModel::HavingExpressions' (role 'sqliteModel_HavingExpressions212', cardinality 0..*).
+'sqliteModel::DeleteStatement' (role 'sqliteModel_DeleteStatement', cardinality 0..*) is associated with 'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition87', cardinality 0..*).
+'sqliteModel::ContentUri' (role 'sqliteModel_ContentUri', cardinality 0..*) is associated with 'sqliteModel::ContentUriSegment' (role 'sqliteModel_ContentUriSegment', cardinality 0..*).
+'sqliteModel::CreateViewStatement' (role 'sqliteModel_CreateViewStatement224', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement225', cardinality 0..*).
+'sqliteModel::InitBlock' (role 'sqliteModel_InitBlock', cardinality 0..*) is associated with 'sqliteModel::DatabaseBlock' (role 'sqliteModel_DatabaseBlock4', cardinality 0..*).
+'sqliteModel::Case' (role 'sqliteModel_Case17', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression18', cardinality 0..*).
+'sqliteModel::IndexedColumn' (role 'sqliteModel_IndexedColumn74', cardinality 0..*) is associated with 'sqliteModel::UniqueTableConstraint' (role 'sqliteModel_UniqueTableConstraint', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression135', cardinality 0..*) is associated with 'sqliteModel::ExprAdd' (role 'sqliteModel_ExprAdd', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition227', cardinality 0..*) is associated with 'sqliteModel::AlterTableRenameStatement' (role 'sqliteModel_AlterTableRenameStatement', cardinality 0..*).
+'sqliteModel::ExprAnd' (role 'sqliteModel_ExprAnd157', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression158', cardinality 0..*).
+'sqliteModel::ResultColumn' (role 'sqliteModel_ResultColumn', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression218', cardinality 0..*).
+'sqliteModel::SelectExpression' (role 'sqliteModel_SelectExpression', cardinality 0..*) is associated with 'sqliteModel::SelectList' (role 'sqliteModel_SelectList200', cardinality 0..*).
+'sqliteModel::NullCheckExpression' (role 'sqliteModel_NullCheckExpression167', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression168', cardinality 0..*).
+'sqliteModel::ExprMult' (role 'sqliteModel_ExprMult', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression130', cardinality 0..*).
+'sqliteModel::SelectCore' (role 'sqliteModel_SelectCore197', cardinality 0..*) is associated with 'sqliteModel::SelectCoreExpression' (role 'sqliteModel_SelectCoreExpression198', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression54', cardinality 0..*) is associated with 'sqliteModel::CreateTriggerStatement' (role 'sqliteModel_CreateTriggerStatement53', cardinality 0..*).
+'sqliteModel::FunctionArg' (role 'sqliteModel_FunctionArg', cardinality 0..*) is associated with 'sqliteModel::Function' (role 'sqliteModel_Function', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression24', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement23', cardinality 0..*).
+'sqliteModel::ExprEqual' (role 'sqliteModel_ExprEqual', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression150', cardinality 0..*).
+'sqliteModel::CaseExpression' (role 'sqliteModel_CaseExpression185', cardinality 0..*) is associated with 'sqliteModel::Case' (role 'sqliteModel_Case186', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition92', cardinality 0..*) is associated with 'sqliteModel::InsertStatement' (role 'sqliteModel_InsertStatement', cardinality 0..*).
+'sqliteModel::TableDefinition' (role 'sqliteModel_TableDefinition214', cardinality 0..*) is associated with 'sqliteModel::SingleSourceTable' (role 'sqliteModel_SingleSourceTable', cardinality 0..*).
+'sqliteModel::ColumnSourceRef' (role 'sqliteModel_ColumnSourceRef175', cardinality 0..*) is associated with 'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource176', cardinality 0..*).
+'sqliteModel::SelectStatementExpression' (role 'sqliteModel_SelectStatementExpression', cardinality 0..*) is associated with 'sqliteModel::SelectStatement' (role 'sqliteModel_SelectStatement181', cardinality 0..*).
+'sqliteModel::CaseExpression' (role 'sqliteModel_CaseExpression188', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression189', cardinality 0..*).
+'sqliteModel::ExprMult' (role 'sqliteModel_ExprMult132', cardinality 0..*) is associated with 'sqliteModel::Expression' (role 'sqliteModel_Expression133', cardinality 0..*).
+'sqliteModel::DDLStatement' (role 'sqliteModel_DDLStatement', cardinality 0..*) is associated with 'sqliteModel::InitBlock' (role 'sqliteModel_InitBlock10', cardinality 0..*).
+'sqliteModel::DefaultConstraint' (role 'sqliteModel_DefaultConstraint', cardinality 0..*) is associated with 'sqliteModel::DefaultValue' (role 'sqliteModel_DefaultValue', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression90', cardinality 0..*) is associated with 'sqliteModel::DeleteStatement' (role 'sqliteModel_DeleteStatement89', cardinality 0..*).
+'sqliteModel::DatabaseBlock' (role 'sqliteModel_DatabaseBlock2', cardinality 0..*) is associated with 'sqliteModel::ConfigBlock' (role 'sqliteModel_ConfigBlock', cardinality 0..*).
+'sqliteModel::NewColumn' (role 'sqliteModel_NewColumn', cardinality 0..*) is associated with 'sqliteModel::ColumnSource' (role 'sqliteModel_ColumnSource170', cardinality 0..*).
+'sqliteModel::WhereExpressions' (role 'sqliteModel_WhereExpressions206', cardinality 0..*) is associated with 'sqliteModel::SelectExpression' (role 'sqliteModel_SelectExpression205', cardinality 0..*).
+'sqliteModel::JoinStatement' (role 'sqliteModel_JoinStatement46', cardinality 0..*) is associated with 'sqliteModel::SingleSource' (role 'sqliteModel_SingleSource47', cardinality 0..*).
+'sqliteModel::Expression' (role 'sqliteModel_Expression39', cardinality 0..*) is associated with 'sqliteModel::OrderingTerm' (role 'sqliteModel_OrderingTerm38', cardinality 0..*).

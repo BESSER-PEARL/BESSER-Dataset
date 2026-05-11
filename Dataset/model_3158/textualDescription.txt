@@ -1,0 +1,275 @@
+The model has 124 class(es).
+The class 'BooleanExpression' has no attributes.
+The class 'model::ComparisonExpression' has no attributes.
+The class 'model::IntegerLiteralExpression' has the following attributes: 'value' of type str.
+The class 'model::EquivalenceExpression' has no attributes.
+The class 'ValueDeclaration' has no attributes.
+The class 'model::SubtractExpression' has no attributes.
+The class 'model::AndExpression' has no attributes.
+The class 'model::TypeReference' has no attributes.
+The class 'model::EnumerationLiteralExpression' has no attributes.
+The class 'ElseExpression' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'model::FunctionTypeDefinition' has no attributes.
+The class 'model::DivideExpression' has no attributes.
+The class 'model::CompositeTypeDefinition' has no attributes.
+The class 'ArithmeticLiteralExpression' has no attributes.
+The class 'model::AccessExpression' has no attributes.
+The class 'model::GreaterExpression' has no attributes.
+The class 'model::VoidTypeDefinition' has no attributes.
+The class 'model::BasicConstraintDefinition' has no attributes.
+The class 'model::OrExpression' has no attributes.
+The class 'model::Comment' has the following attributes: 'comment' of type str.
+The class 'model::ArithmeticExpression' has no attributes.
+The class 'model::Expression' has no attributes.
+The class 'model::ImplyExpression' has no attributes.
+The class 'model::ElseExpression' has no attributes.
+The class 'model::ExistsExpression' has no attributes.
+The class 'model::ParameterDeclaration' has no attributes.
+The class 'ParametricElement' has no attributes.
+The class 'model::ReferenceExpression' has no attributes.
+The class 'model::ForallExpression' has no attributes.
+The class 'PredicateExpression' has no attributes.
+The class 'model::RecordTypeDefinition' has no attributes.
+The class 'model::LogicExpression' has no attributes.
+The class 'model::TypeDefinition' has no attributes.
+The class 'model::MultiaryExpression' has no attributes.
+The class 'model::CommentableElement' has no attributes.
+The class 'model::LambdaDeclaration' has no attributes.
+The class 'MultiaryExpression' has no attributes.
+The class 'model::ConstraintDefinition' has no attributes.
+The class 'model::ArrayLiteralExpression' has no attributes.
+The class 'model::ArrayTypeDefinition' has no attributes.
+The class 'model::TrueExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'model::BinaryExpression' has no attributes.
+The class 'model::FunctionAccessExpression' has no attributes.
+The class 'model::FunctionDeclaration' has no attributes.
+The class 'model::ArgumentedElement' has no attributes.
+The class 'model::RationalLiteralExpression' has the following attributes: 'denominator' of type str; 'numerator' of type str.
+The class 'NamedElement' has no attributes.
+The class 'model::LessEqualExpression' has no attributes.
+The class 'model::RationalTypeDefinition' has no attributes.
+The class 'model::FieldDeclaration' has no attributes.
+The class 'model::GreaterEqualExpression' has no attributes.
+The class 'Type' has no attributes.
+The class 'model::ParametricElement' has no attributes.
+The class 'model::InitializableElement' has no attributes.
+The class 'model::RecordLiteralExpression' has no attributes.
+The class 'model::BooleanLiteralExpression' has no attributes.
+The class 'model::SubrangeTypeDefinition' has no attributes.
+The class 'model::Type' has no attributes.
+The class 'model::Declaration' has no attributes.
+The class 'model::InequalityExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'BooleanLiteralExpression' has no attributes.
+The class 'model::MultiplyExpression' has no attributes.
+The class 'model::RecordAccessExpression' has the following attributes: 'field' of type str.
+The class 'LogicExpression' has no attributes.
+The class 'model::ModExpression' has no attributes.
+The class 'model::ValueDeclaration' has no attributes.
+The class 'model::NotExpression' has no attributes.
+The class 'model::EnumerationLiteralDefinition' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'NullaryExpression' has no attributes.
+The class 'model::NullaryExpression' has no attributes.
+The class 'model::ExpressionPackage' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'model::OpaqueExpression' has the following attributes: 'expression' of type str.
+The class 'EquivalenceExpression' has no attributes.
+The class 'ComparisonExpression' has no attributes.
+The class 'model::FieldAssignment' has the following attributes: 'reference' of type str.
+The class 'FunctionDeclaration' has no attributes.
+The class 'model::PredicateExpression' has no attributes.
+The class 'EnumerableTypeDefinition' has no attributes.
+The class 'ConstraintDefinition' has no attributes.
+The class 'model::UnaryExpression' has no attributes.
+The class 'AccessExpression' has no attributes.
+The class 'model::UnaryMinusExpression' has no attributes.
+The class 'model::TypeDeclaration' has no attributes.
+The class 'model::NumericalTypeDefinition' has no attributes.
+The class 'model::ConstantDeclaration' has no attributes.
+The class 'ArgumentedElement' has no attributes.
+The class 'model::UnaryPlusExpression' has no attributes.
+The class 'model::BooleanExpression' has no attributes.
+The class 'LiteralExpression' has no attributes.
+The class 'model::AddExpression' has no attributes.
+The class 'model::QuantifierExpression' has no attributes.
+The class 'model::IntegerRangeLiteralExpression' has the following attributes: 'leftInclusive' of type bool; 'rightInclusive' of type bool.
+The class 'NumericalTypeDefinition' has no attributes.
+The class 'model::DivExpression' has no attributes.
+The class 'EnumerableExpression' has no attributes.
+The class 'model::LessExpression' has no attributes.
+The class 'model::EqualityExpression' has no attributes.
+The class 'model::DecimalLiteralExpression' has the following attributes: 'value' of type str.
+The class 'model::EnumerationTypeDefinition' has no attributes.
+The class 'model::BooleanTypeDefinition' has no attributes.
+The class 'InitializableElement' has no attributes.
+The class 'model::VariableDeclaration' has no attributes.
+The class 'model::EnumerableExpression' has no attributes.
+The class 'QuantifierExpression' has no attributes.
+The class 'model::DefaultExpression' has no attributes.
+The class 'model::IntegerRangeTypeDefinition' has no attributes.
+The class 'model::LiteralExpression' has no attributes.
+The class 'CompositeTypeDefinition' has no attributes.
+The class 'model::SelectExpression' has no attributes.
+The class 'model::IfThenElseExpression' has no attributes.
+The class 'model::DecimalTypeDefinition' has no attributes.
+The class 'model::ArrayAccessExpression' has no attributes.
+The class 'model::NamedElement' has the following attributes: 'name' of type str.
+The class 'model::IntegerTypeDefinition' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'model::EnumerableTypeDefinition' has no attributes.
+The class 'model::XorExpression' has no attributes.
+The class 'model::FalseExpression' has no attributes.
+The class 'model::ArithmeticLiteralExpression' has no attributes.
+'model::NotExpression' is a specialization of 'BooleanExpression'.
+'model::XorExpression' is a specialization of 'MultiaryExpression'.
+'model::ArrayLiteralExpression' is a specialization of 'MultiaryExpression'.
+'model::ElseExpression' is a specialization of 'LogicExpression'.
+'model::ElseExpression' is a specialization of 'NullaryExpression'.
+'model::EnumerableExpression' is a specialization of 'Expression'.
+'model::ForallExpression' is a specialization of 'QuantifierExpression'.
+'model::BooleanExpression' is a specialization of 'LogicExpression'.
+'model::RecordAccessExpression' is a specialization of 'AccessExpression'.
+'model::UnaryPlusExpression' is a specialization of 'ArithmeticExpression'.
+'model::AndExpression' is a specialization of 'BooleanExpression'.
+'model::PredicateExpression' is a specialization of 'LogicExpression'.
+'model::ImplyExpression' is a specialization of 'BooleanExpression'.
+'model::ValueDeclaration' is a specialization of 'Declaration'.
+'model::ArrayAccessExpression' is a specialization of 'ArgumentedElement'.
+'model::ArrayAccessExpression' is a specialization of 'AccessExpression'.
+'model::OpaqueExpression' is a specialization of 'NullaryExpression'.
+'model::ArithmeticLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::IntegerTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+'model::DecimalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+'model::AddExpression' is a specialization of 'ArithmeticExpression'.
+'model::DivideExpression' is a specialization of 'BinaryExpression'.
+'model::VariableDeclaration' is a specialization of 'InitializableElement'.
+'model::LessExpression' is a specialization of 'ComparisonExpression'.
+'model::BinaryExpression' is a specialization of 'Expression'.
+'model::ComparisonExpression' is a specialization of 'PredicateExpression'.
+'model::NullaryExpression' is a specialization of 'Expression'.
+'model::ModExpression' is a specialization of 'ArithmeticExpression'.
+'model::IntegerRangeLiteralExpression' is a specialization of 'BinaryExpression'.
+'model::DecimalTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+'model::EnumerationLiteralDefinition' is a specialization of 'NamedElement'.
+'model::LogicExpression' is a specialization of 'Expression'.
+'model::RecordTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'model::AndExpression' is a specialization of 'MultiaryExpression'.
+'model::AccessExpression' is a specialization of 'Expression'.
+'model::FunctionDeclaration' is a specialization of 'ParametricElement'.
+'model::ArrayTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+'model::QuantifierExpression' is a specialization of 'UnaryExpression'.
+'model::SubtractExpression' is a specialization of 'BinaryExpression'.
+'model::DivExpression' is a specialization of 'BinaryExpression'.
+'model::LambdaDeclaration' is a specialization of 'FunctionDeclaration'.
+'model::VoidTypeDefinition' is a specialization of 'TypeDefinition'.
+'model::OrExpression' is a specialization of 'BooleanExpression'.
+'model::UnaryMinusExpression' is a specialization of 'ArithmeticExpression'.
+'model::MultiplyExpression' is a specialization of 'MultiaryExpression'.
+'model::QuantifierExpression' is a specialization of 'ParametricElement'.
+'model::NumericalTypeDefinition' is a specialization of 'TypeDefinition'.
+'model::ReferenceExpression' is a specialization of 'NullaryExpression'.
+'model::SubrangeTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+'model::ComparisonExpression' is a specialization of 'BinaryExpression'.
+'model::RationalTypeDefinition' is a specialization of 'NumericalTypeDefinition'.
+'model::TypeDefinition' is a specialization of 'Type'.
+'model::ArithmeticLiteralExpression' is a specialization of 'NullaryExpression'.
+'model::InequalityExpression' is a specialization of 'EquivalenceExpression'.
+'model::LambdaDeclaration' is a specialization of 'InitializableElement'.
+'model::DefaultExpression' is a specialization of 'ElseExpression'.
+'model::DivideExpression' is a specialization of 'ArithmeticExpression'.
+'model::LessEqualExpression' is a specialization of 'ComparisonExpression'.
+'model::EqualityExpression' is a specialization of 'EquivalenceExpression'.
+'model::FalseExpression' is a specialization of 'BooleanLiteralExpression'.
+'model::ArrayLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::EquivalenceExpression' is a specialization of 'PredicateExpression'.
+'model::ImplyExpression' is a specialization of 'BinaryExpression'.
+'model::AddExpression' is a specialization of 'MultiaryExpression'.
+'model::MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+'model::GreaterExpression' is a specialization of 'ComparisonExpression'.
+'model::RecordLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::QuantifierExpression' is a specialization of 'LogicExpression'.
+'model::BooleanTypeDefinition' is a specialization of 'TypeDefinition'.
+'model::IntegerLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+'model::DivExpression' is a specialization of 'ArithmeticExpression'.
+'model::EquivalenceExpression' is a specialization of 'BinaryExpression'.
+'model::FunctionDeclaration' is a specialization of 'Declaration'.
+'model::EnumerationTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+'model::XorExpression' is a specialization of 'BooleanExpression'.
+'model::ArrayLiteralExpression' is a specialization of 'EnumerableExpression'.
+'model::EnumerableTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'model::ExistsExpression' is a specialization of 'QuantifierExpression'.
+'model::ArithmeticExpression' is a specialization of 'Expression'.
+'model::InitializableElement' is a specialization of 'NamedElement'.
+'model::ArithmeticLiteralExpression' is a specialization of 'ArithmeticExpression'.
+'model::IntegerRangeTypeDefinition' is a specialization of 'EnumerableTypeDefinition'.
+'model::SelectExpression' is a specialization of 'AccessExpression'.
+'model::ConstantDeclaration' is a specialization of 'ValueDeclaration'.
+'model::NotExpression' is a specialization of 'UnaryExpression'.
+'model::TypeReference' is a specialization of 'Type'.
+'model::BooleanLiteralExpression' is a specialization of 'NullaryExpression'.
+'model::TypeDeclaration' is a specialization of 'Declaration'.
+'model::RationalLiteralExpression' is a specialization of 'ArithmeticLiteralExpression'.
+'model::OrExpression' is a specialization of 'MultiaryExpression'.
+'model::SubtractExpression' is a specialization of 'ArithmeticExpression'.
+'model::Declaration' is a specialization of 'NamedElement'.
+'model::ExpressionPackage' is a specialization of 'ParametricElement'.
+'model::UnaryPlusExpression' is a specialization of 'UnaryExpression'.
+'model::FunctionTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'model::UnaryExpression' is a specialization of 'Expression'.
+'model::FunctionAccessExpression' is a specialization of 'ArgumentedElement'.
+'model::VariableDeclaration' is a specialization of 'ValueDeclaration'.
+'model::IfThenElseExpression' is a specialization of 'Expression'.
+'model::LiteralExpression' is a specialization of 'Expression'.
+'model::FunctionAccessExpression' is a specialization of 'AccessExpression'.
+'model::ModExpression' is a specialization of 'BinaryExpression'.
+'model::ExpressionPackage' is a specialization of 'NamedElement'.
+'model::EnumerationLiteralExpression' is a specialization of 'NullaryExpression'.
+'model::SubrangeTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'model::IntegerRangeLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::BooleanLiteralExpression' is a specialization of 'BooleanExpression'.
+'model::EnumerationLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::MultiaryExpression' is a specialization of 'Expression'.
+'model::BasicConstraintDefinition' is a specialization of 'ConstraintDefinition'.
+'model::TrueExpression' is a specialization of 'BooleanLiteralExpression'.
+'model::FieldDeclaration' is a specialization of 'ValueDeclaration'.
+'model::ParameterDeclaration' is a specialization of 'ValueDeclaration'.
+'model::IntegerRangeLiteralExpression' is a specialization of 'EnumerableExpression'.
+'model::UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+'model::ConstantDeclaration' is a specialization of 'InitializableElement'.
+'model::CompositeTypeDefinition' is a specialization of 'TypeDefinition'.
+'model::BooleanLiteralExpression' is a specialization of 'LiteralExpression'.
+'model::GreaterEqualExpression' is a specialization of 'ComparisonExpression'.
+'model::FunctionDeclaration' (role 'model_FunctionDeclaration', cardinality 0..*) is associated with 'model::ExpressionPackage' (role 'model_ExpressionPackage7', cardinality 0..*).
+'model::Declaration' (role 'model_Declaration', cardinality 0..*) is associated with 'model::Type' (role 'model_Type', cardinality 0..*).
+'model::IfThenElseExpression' (role 'model_IfThenElseExpression', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression54', cardinality 0..*).
+'model::Expression' (role 'model_Expression37', cardinality 0..*) is associated with 'model::BinaryExpression' (role 'model_BinaryExpression', cardinality 0..*).
+'model::CommentableElement' (role 'model_CommentableElement', cardinality 0..*) is associated with 'model::Comment' (role 'model_Comment', cardinality 0..*).
+'model::InitializableElement' (role 'model_InitializableElement', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression11', cardinality 0..*).
+'model::IfThenElseExpression' (role 'model_IfThenElseExpression56', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression57', cardinality 0..*).
+'model::ExpressionPackage' (role 'model_ExpressionPackage5', cardinality 0..*) is associated with 'model::ConstantDeclaration' (role 'model_ConstantDeclaration', cardinality 0..*).
+'model::Expression' (role 'model_Expression60', cardinality 0..*) is associated with 'model::IfThenElseExpression' (role 'model_IfThenElseExpression59', cardinality 0..*).
+'model::ParameterDeclaration' (role 'model_ParameterDeclaration', cardinality 0..*) is associated with 'model::ParametricElement' (role 'model_ParametricElement', cardinality 0..*).
+'model::Type' (role 'model_Type27', cardinality 0..*) is associated with 'model::FunctionTypeDefinition' (role 'model_FunctionTypeDefinition', cardinality 0..*).
+'model::FunctionTypeDefinition' (role 'model_FunctionTypeDefinition29', cardinality 0..*) is associated with 'model::Type' (role 'model_Type30', cardinality 0..*).
+'model::SubrangeTypeDefinition' (role 'model_SubrangeTypeDefinition', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression16', cardinality 0..*).
+'model::BinaryExpression' (role 'model_BinaryExpression39', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression40', cardinality 0..*).
+'model::MultiaryExpression' (role 'model_MultiaryExpression', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression42', cardinality 0..*).
+'model::BasicConstraintDefinition' (role 'model_BasicConstraintDefinition', cardinality 0..*) is associated with 'model::ExpressionPackage' (role 'model_ExpressionPackage9', cardinality 0..*).
+'model::AccessExpression' (role 'model_AccessExpression', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression44', cardinality 0..*).
+'model::ArgumentedElement' (role 'model_ArgumentedElement', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression', cardinality 0..*).
+'model::Expression' (role 'model_Expression19', cardinality 0..*) is associated with 'model::SubrangeTypeDefinition' (role 'model_SubrangeTypeDefinition18', cardinality 0..*).
+'model::ExpressionPackage' (role 'model_ExpressionPackage', cardinality 0..*) is associated with 'model::TypeDeclaration' (role 'model_TypeDeclaration', cardinality 0..*).
+'model::UnaryExpression' (role 'model_UnaryExpression', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression35', cardinality 0..*).
+'model::TypeReference' (role 'model_TypeReference', cardinality 0..*) is associated with 'model::TypeDeclaration' (role 'model_TypeDeclaration14', cardinality 0..*).
+'model::FieldAssignment' (role 'model_FieldAssignment49', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression50', cardinality 0..*).
+'model::Expression' (role 'model_Expression33', cardinality 0..*) is associated with 'model::ConstraintDefinition' (role 'model_ConstraintDefinition', cardinality 0..*).
+'model::RecordLiteralExpression' (role 'model_RecordLiteralExpression', cardinality 0..*) is associated with 'model::FieldAssignment' (role 'model_FieldAssignment', cardinality 0..*).
+'model::EnumerationLiteralDefinition' (role 'model_EnumerationLiteralDefinition47', cardinality 0..*) is associated with 'model::EnumerationLiteralExpression' (role 'model_EnumerationLiteralExpression', cardinality 0..*).
+'model::Expression' (role 'model_Expression25', cardinality 0..*) is associated with 'model::ArrayTypeDefinition' (role 'model_ArrayTypeDefinition24', cardinality 0..*).
+'model::Type' (role 'model_Type22', cardinality 0..*) is associated with 'model::ArrayTypeDefinition' (role 'model_ArrayTypeDefinition', cardinality 0..*).
+'model::FieldDeclaration' (role 'model_FieldDeclaration', cardinality 0..*) is associated with 'model::RecordTypeDefinition' (role 'model_RecordTypeDefinition', cardinality 0..*).
+'model::ReferenceExpression' (role 'model_ReferenceExpression', cardinality 0..*) is associated with 'model::Declaration' (role 'model_Declaration52', cardinality 0..*).
+'model::EnumerationTypeDefinition' (role 'model_EnumerationTypeDefinition', cardinality 0..*) is associated with 'model::EnumerationLiteralDefinition' (role 'model_EnumerationLiteralDefinition', cardinality 0..*).

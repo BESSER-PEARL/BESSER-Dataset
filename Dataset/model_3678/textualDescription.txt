@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'companies::department::employees' has no attributes.
+The class 'companies::company' has the following attributes: 'name' of type str.
+The class 'companies::CSTrace' has no attributes.
+The class 'CSTrace' has no attributes.
+The class 'companies::department' has the following attributes: 'name' of type str.
+The class 'companies::employee' has the following attributes: 'salary' of type float; 'name' of type str; 'address' of type str; 'mentor' of type str.
+The class 'companies::Visitable' has no attributes.
+The class 'companies::department::manager' has no attributes.
+'companies::department::manager' is a specialization of 'CSTrace'.
+'companies::department::employees' is a specialization of 'CSTrace'.
+'companies::company' is a specialization of 'CSTrace'.
+'companies::employee' is a specialization of 'CSTrace'.
+'companies::department' is a specialization of 'CSTrace'.
+'companies::department' (role 'companies_department', cardinality 0..*) is associated with 'companies::company' (role 'companies_company', cardinality 0..*).
+'companies::Visitable' (role 'companies_Visitable', cardinality 0..*) is associated with 'companies::CSTrace' (role 'companies_CSTrace', cardinality 0..*).
+'companies::employee' (role 'companies_employee12', cardinality 0..*) is associated with 'companies::department::employees' (role 'companies_department_employees11', cardinality 0..*).
+'companies::employee' (role 'companies_employee', cardinality 0..*) is associated with 'companies::department::manager' (role 'companies_department_manager9', cardinality 0..*).
+'companies::department' (role 'companies_department2', cardinality 0..*) is associated with 'companies::department::manager' (role 'companies_department_manager', cardinality 0..*).
+'companies::department' (role 'companies_department4', cardinality 0..*) is associated with 'companies::department::employees' (role 'companies_department_employees', cardinality 0..*).
+'companies::department' (role 'companies_department5', cardinality 0..*) is associated with 'companies::department' (role 'companies_department7', cardinality 0..*).

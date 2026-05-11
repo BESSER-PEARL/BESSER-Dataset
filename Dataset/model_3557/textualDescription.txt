@@ -1,0 +1,83 @@
+The model has 35 class(es).
+The class 'Node' has no attributes.
+The class 'flowchartpck::Node' has no attributes.
+The class 'flowchartpck::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'flowchartpck::Expression' has no attributes.
+The class 'flowchartpck::RelationalConstraint' has no attributes.
+The class 'flowchartpck::Literal' has no attributes.
+The class 'flowchartpck::Start' has no attributes.
+The class 'flowchartpck::Decision' has no attributes.
+The class 'flowchartpck::NamedElement' has the following attributes: 'name' of type str.
+The class 'flowchartpck::StringLit' has the following attributes: 'value' of type str.
+The class 'flowchartpck::IntegerLit' has the following attributes: 'value' of type int.
+The class 'flowchartpck::Conditional' has no attributes.
+The class 'flowchartpck::Loop' has no attributes.
+The class 'flowchartpck::Statement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'flowchartpck::Action' has no attributes.
+The class 'flowchartpck::Wait' has the following attributes: 'miliseconds' of type str.
+The class 'Expression' has no attributes.
+The class 'flowchartpck::BoolLit' has the following attributes: 'value' of type bool.
+The class 'ConsoleOutput' has no attributes.
+The class 'flowchartpck::Arc' has no attributes.
+The class 'flowchartpck::Flowchart' has no attributes.
+The class 'flowchartpck::End' has no attributes.
+The class 'flowchartpck::ConsoleOutput' has the following attributes: 'input' of type str.
+The class 'flowchartpck::Println' has no attributes.
+The class 'flowchartpck::Program' has no attributes.
+The class 'flowchartpck::Constraint' has no attributes.
+The class 'flowchartpck::Print' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'flowchartpck::Assignation' has no attributes.
+The class 'flowchartpck::VarDecl' has the following attributes: 'key' of type str.
+The class 'flowchartpck::VarReference' has the following attributes: 'key' of type str.
+The class 'Literal' has no attributes.
+The class 'flowchartpck::RelationalExpression' has the following attributes: 'operator' of type str.
+The enumeration 'ArithmeticOperator' has the following literals: 'plus', 'div', 'minus', 'mult'.
+The enumeration 'RelationalOperator' has the following literals: 'equals', 'greaterThanOrEqualTo', 'notEqual', 'lessThanOrEqualTo', 'lessThan', 'greaterThan'.
+'flowchartpck::Flowchart' is a specialization of 'NamedElement'.
+'flowchartpck::Conditional' is a specialization of 'Statement'.
+'flowchartpck::Println' is a specialization of 'ConsoleOutput'.
+'flowchartpck::Loop' is a specialization of 'Statement'.
+'flowchartpck::IntegerLit' is a specialization of 'Literal'.
+'flowchartpck::RelationalExpression' is a specialization of 'Expression'.
+'flowchartpck::Program' is a specialization of 'Statement'.
+'flowchartpck::Node' is a specialization of 'NamedElement'.
+'flowchartpck::VarDecl' is a specialization of 'Statement'.
+'flowchartpck::End' is a specialization of 'Node'.
+'flowchartpck::RelationalConstraint' is a specialization of 'Constraint'.
+'flowchartpck::Action' is a specialization of 'Node'.
+'flowchartpck::Wait' is a specialization of 'Statement'.
+'flowchartpck::Decision' is a specialization of 'Node'.
+'flowchartpck::Assignation' is a specialization of 'Statement'.
+'flowchartpck::Start' is a specialization of 'Node'.
+'flowchartpck::Print' is a specialization of 'ConsoleOutput'.
+'flowchartpck::ArithmeticExpression' is a specialization of 'Expression'.
+'flowchartpck::Literal' is a specialization of 'Expression'.
+'flowchartpck::ConsoleOutput' is a specialization of 'Statement'.
+'flowchartpck::BoolLit' is a specialization of 'Literal'.
+'flowchartpck::StringLit' is a specialization of 'Literal'.
+'flowchartpck::VarReference' is a specialization of 'Expression'.
+'flowchartpck::Program' (role 'flowchartpck_Program25', cardinality 0..*) is associated with 'flowchartpck::Conditional' (role 'flowchartpck_Conditional', cardinality 0..*).
+'flowchartpck::Program' (role 'flowchartpck_Program28', cardinality 0..*) is associated with 'flowchartpck::Conditional' (role 'flowchartpck_Conditional27', cardinality 0..*).
+'flowchartpck::Arc' (role 'incoming', cardinality 0..*) is associated with 'flowchartpck::Node' (role 'Node8', cardinality 0..*).
+'flowchartpck::Program' (role 'flowchartpck_Program', cardinality 0..*) is associated with 'flowchartpck::Action' (role 'flowchartpck_Action', cardinality 0..*).
+'flowchartpck::Node' (role 'flowchartpck_Node', cardinality 0..*) is associated with 'flowchartpck::Flowchart' (role 'flowchartpck_Flowchart', cardinality 0..*).
+'flowchartpck::Node' (role 'source', cardinality 0..*) is associated with 'flowchartpck::Arc' (role 'Arc', cardinality 0..*).
+'flowchartpck::Program' (role 'flowchartpck_Program33', cardinality 0..*) is associated with 'flowchartpck::Loop' (role 'flowchartpck_Loop', cardinality 0..*).
+'flowchartpck::Expression' (role 'flowchartpck_Expression', cardinality 0..*) is associated with 'flowchartpck::RelationalConstraint' (role 'flowchartpck_RelationalConstraint', cardinality 0..*).
+'flowchartpck::Constraint' (role 'flowchartpck_Constraint', cardinality 0..*) is associated with 'flowchartpck::Decision' (role 'flowchartpck_Decision', cardinality 0..*).
+'flowchartpck::RelationalExpression' (role 'flowchartpck_RelationalExpression20', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression21', cardinality 0..*).
+'flowchartpck::Expression' (role 'flowchartpck_Expression36', cardinality 0..*) is associated with 'flowchartpck::Loop' (role 'flowchartpck_Loop35', cardinality 0..*).
+'flowchartpck::ArithmeticExpression' (role 'flowchartpck_ArithmeticExpression', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression13', cardinality 0..*).
+'flowchartpck::ArithmeticExpression' (role 'flowchartpck_ArithmeticExpression15', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression16', cardinality 0..*).
+'flowchartpck::VarDecl' (role 'flowchartpck_VarDecl42', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression43', cardinality 0..*).
+'flowchartpck::Conditional' (role 'flowchartpck_Conditional30', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression31', cardinality 0..*).
+'flowchartpck::Node' (role 'Node', cardinality 0..*) is associated with 'flowchartpck::Arc' (role 'outgoing', cardinality 0..*).
+'flowchartpck::Statement' (role 'flowchartpck_Statement', cardinality 0..*) is associated with 'flowchartpck::Program' (role 'flowchartpck_Program23', cardinality 0..*).
+'flowchartpck::VarDecl' (role 'flowchartpck_VarDecl', cardinality 0..*) is associated with 'flowchartpck::Assignation' (role 'flowchartpck_Assignation', cardinality 0..*).
+'flowchartpck::Node' (role 'target', cardinality 0..*) is associated with 'flowchartpck::Arc' (role 'Arc5', cardinality 0..*).
+'flowchartpck::Flowchart' (role 'flowchartpck_Flowchart2', cardinality 0..*) is associated with 'flowchartpck::Arc' (role 'flowchartpck_Arc', cardinality 0..*).
+'flowchartpck::Expression' (role 'flowchartpck_Expression40', cardinality 0..*) is associated with 'flowchartpck::Assignation' (role 'flowchartpck_Assignation39', cardinality 0..*).
+'flowchartpck::RelationalExpression' (role 'flowchartpck_RelationalExpression', cardinality 0..*) is associated with 'flowchartpck::Expression' (role 'flowchartpck_Expression18', cardinality 0..*).

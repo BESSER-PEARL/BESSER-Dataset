@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'SimpleClass::PrimitiveDataType' has no attributes.
+The class 'SimpleClass::Class' has the following attributes: 'tipo' of type str; 'is_persistent' of type str.
+The class 'Class' has no attributes.
+The class 'SimpleClass::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type str.
+The class 'SimpleClass::Association' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'SimpleClass::Classifier' has the following attributes: 'name' of type str.
+The class 'Attribute' has no attributes.
+The enumeration 'Entity' does not specify any literals.
+The enumeration 'EA' has the following literals: 'Institution', 'Author', 'Normal', 'Journal'.
+The enumeration 'Vocabulary' has the following literals: 'Language', 'Eurovocs', 'Normal', 'Decs'.
+'SimpleClass::Class' is a specialization of 'Classifier'.
+'SimpleClass::PrimitiveDataType' is a specialization of 'Classifier'.
+'Class' (role 'Class7', cardinality 0..*) is associated with 'SimpleClass::Association' (role 'SimpleClass_Association6', cardinality 0..*).
+'Attribute' (role 'Attribute', cardinality 0..*) is associated with 'SimpleClass::Class' (role 'SimpleClass_Class2', cardinality 0..*).
+'SimpleClass::Association' (role 'SimpleClass_Association', cardinality 0..*) is associated with 'Class' (role 'Class4', cardinality 0..*).
+'SimpleClass::Attribute' (role 'SimpleClass_Attribute', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'SimpleClass::Class' (role 'SimpleClass_Class', cardinality 0..*).

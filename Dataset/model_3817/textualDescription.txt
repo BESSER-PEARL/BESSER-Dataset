@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'example::Folder' has the following attributes: 'name' of type str.
+'example::Folder' (role 'example_Folder', cardinality 0..*) is associated with 'example::Folder' (role 'example_Folder0', cardinality 0..*).

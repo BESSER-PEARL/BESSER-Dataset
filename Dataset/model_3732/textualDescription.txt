@@ -1,0 +1,33 @@
+The model has 18 class(es).
+The class 'UML2::MultiplicityElement' has the following attributes: 'isUnique' of type bool.
+The class 'Pin' has no attributes.
+The class 'UML2::Pin' has no attributes.
+The class 'UML2::ValuePin' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'UML2::Port' has no attributes.
+The class 'UML2::InputPin' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'UML2::StructuralFeature' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'Property' has no attributes.
+The class 'UML2::Variable' has no attributes.
+The class 'UML2::ConnectorEnd' has no attributes.
+The class 'UML2::Operation' has no attributes.
+The class 'UML2::OutputPin' has no attributes.
+The class 'UML2::Parameter' has the following attributes: 'direction' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'UML2::Property' has no attributes.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'return_', 'out', 'inout'.
+'UML2::Pin' is a specialization of 'MultiplicityElement'.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::OutputPin' is a specialization of 'Pin'.
+'UML2::Property' is a specialization of 'StructuralFeature'.
+'UML2::Operation' is a specialization of 'MultiplicityElement'.
+'UML2::Parameter' is a specialization of 'MultiplicityElement'.
+'UML2::ValuePin' is a specialization of 'InputPin'.
+'UML2::InputPin' is a specialization of 'Pin'.
+'UML2::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'UML2::ConnectorEnd' is a specialization of 'MultiplicityElement'.
+'UML2::Variable' is a specialization of 'MultiplicityElement'.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::Parameter' (role 'UML2_Parameter', cardinality 0..*) is associated with 'UML2::Operation' (role 'UML2_Operation', cardinality 0..*).

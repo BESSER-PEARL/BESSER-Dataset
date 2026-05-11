@@ -1,0 +1,22 @@
+The model has 14 class(es).
+The class 'labels::TestLabel' has no attributes.
+The class 'DynamicEdgeLabel' has no attributes.
+The class 'labels::TestStaticEdgeLabel' has no attributes.
+The class 'LabelValue' has no attributes.
+The class 'labels::TestDynamicNodeLabel' has no attributes.
+The class 'labels::TestDynamicLabel1' has no attributes.
+The class 'labels::TestDynamicEdgeLabel' has no attributes.
+The class 'labels::TestStaticNodeLabel' has no attributes.
+The class 'Label' has no attributes.
+The class 'StaticNodeLabel' has no attributes.
+The class 'StaticEdgeLabel' has no attributes.
+The class 'labels::TestIntegerLabelValue' has the following attributes: 'i' of type int.
+The class 'DynamicLabel' has no attributes.
+The class 'DynamicNodeLabel' has no attributes.
+'labels::TestDynamicLabel1' is a specialization of 'DynamicLabel'.
+'labels::TestLabel' is a specialization of 'Label'.
+'labels::TestIntegerLabelValue' is a specialization of 'LabelValue'.
+'labels::TestStaticNodeLabel' is a specialization of 'StaticNodeLabel'.
+'labels::TestDynamicNodeLabel' is a specialization of 'DynamicNodeLabel'.
+'labels::TestStaticEdgeLabel' is a specialization of 'StaticEdgeLabel'.
+'labels::TestDynamicEdgeLabel' is a specialization of 'DynamicEdgeLabel'.

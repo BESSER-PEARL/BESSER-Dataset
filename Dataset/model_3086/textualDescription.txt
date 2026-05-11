@@ -1,0 +1,54 @@
+The model has 23 class(es).
+The class 'Pin' has no attributes.
+The class 'activity::IState' has no attributes.
+The class 'activity::ValueSpecification' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'activity::ActivityPartition' has the following attributes: 'isDimension' of type bool; 'isExternal' of type bool.
+The class 'AbstractNamedElement' has no attributes.
+The class 'activity::OutputPin' has no attributes.
+The class 'activity::ActivityNode' has no attributes.
+The class 'activity::ObjectNode' has the following attributes: 'kindOfNode' of type str; 'isControlType' of type bool; 'ordering' of type str.
+The class 'activity::AbstractAction' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'AbstractBehavior' has no attributes.
+The class 'activity::AbstractActivity' has the following attributes: 'isSingleExecution' of type bool; 'isReadOnly' of type bool.
+The class 'activity::Pin' has the following attributes: 'isControl' of type bool.
+The class 'activity::InputPin' has no attributes.
+The class 'activity::AcceptEventAction' has the following attributes: 'isUnmarshall' of type bool.
+The class 'activity::ObjectFlow' has the following attributes: 'isMultireceive' of type bool; 'isMulticast' of type bool.
+The class 'TraceableElement' has no attributes.
+The class 'activity::ActivityEdge' has the following attributes: 'kindOfRate' of type str.
+The class 'ObjectNode' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'activity::AbstractBehavior' has no attributes.
+The class 'ActivityNode' has no attributes.
+The enumeration 'ObjectNodeKind' has the following literals: 'Unspecified', 'Overwrite', 'NoBuffer'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'ordered', 'unordered', 'FIFO', 'LIFO'.
+'activity::ObjectNode' is a specialization of 'ActivityNode'.
+'activity::AbstractAction' is a specialization of 'AbstractNamedElement'.
+'activity::AcceptEventAction' is a specialization of 'AbstractAction'.
+'activity::ObjectNode' is a specialization of 'AbstractNamedElement'.
+'activity::ActivityPartition' is a specialization of 'AbstractNamedElement'.
+'activity::ActivityPartition' is a specialization of 'ModelElement'.
+'activity::Pin' is a specialization of 'ObjectNode'.
+'activity::OutputPin' is a specialization of 'Pin'.
+'activity::AbstractActivity' is a specialization of 'TraceableElement'.
+'activity::AbstractActivity' is a specialization of 'AbstractBehavior'.
+'activity::InputPin' is a specialization of 'Pin'.
+'activity::ObjectFlow' is a specialization of 'ActivityEdge'.
+'activity::AbstractAction' is a specialization of 'ActivityNode'.
+'activity::ActivityEdge' is a specialization of 'ModelElement'.
+'activity::ActivityNode' is a specialization of 'AbstractNamedElement'.
+'activity::ActivityEdge' (role 'activity_ActivityEdge13', cardinality 0..*) is associated with 'activity::ValueSpecification' (role 'activity_ValueSpecification14', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge', cardinality 0..*) is associated with 'activity::ValueSpecification' (role 'activity_ValueSpecification', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge17', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'activity_ActivityNode16', cardinality 0..*).
+'activity::ActivityNode' (role 'activity_ActivityNode', cardinality 0..*) is associated with 'activity::ActivityEdge' (role 'activity_ActivityEdge5', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge20', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'activity_ActivityNode19', cardinality 0..*).
+'activity::ObjectNode' (role 'activity_ObjectNode27', cardinality 0..*) is associated with 'activity::IState' (role 'activity_IState', cardinality 0..*).
+'activity::AbstractBehavior' (role 'activity_AbstractBehavior', cardinality 0..*) is associated with 'activity::ObjectNode' (role 'activity_ObjectNode29', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge2', cardinality 0..*) is associated with 'activity::ValueSpecification' (role 'activity_ValueSpecification3', cardinality 0..*).
+'activity::ObjectNode' (role 'activity_ObjectNode', cardinality 0..*) is associated with 'activity::ValueSpecification' (role 'activity_ValueSpecification25', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge10', cardinality 0..*) is associated with 'activity::ValueSpecification' (role 'activity_ValueSpecification11', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge7', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'activity_ActivityNode8', cardinality 0..*).
+'activity::AbstractAction' (role 'activity_AbstractAction', cardinality 0..*) is associated with 'activity::InputPin' (role 'activity_InputPin', cardinality 0..*).
+'activity::AbstractAction' (role 'activity_AbstractAction23', cardinality 0..*) is associated with 'activity::OutputPin' (role 'activity_OutputPin', cardinality 0..*).

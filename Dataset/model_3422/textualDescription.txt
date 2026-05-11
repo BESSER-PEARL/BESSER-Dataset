@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'location::Area' has the following attributes: 'comments' of type str; 'name' of type str; 'boundary' of type str.
+The class 'location::Location' has the following attributes: 'street' of type str; 'city' of type str; 'country' of type str; 'name' of type str; 'longitude' of type float; 'description' of type str; 'postalCode' of type str; 'comments' of type str; 'phoneNumber' of type str; 'state' of type str; 'latitude' of type float; 'altitude' of type float; 'altitudeMode' of type str.
+The enumeration 'AltitudeMode' has the following literals: 'relativeToGround', 'clampToGround', 'absolute'.
+'location::Area' (role 'location_Area', cardinality 0..*) is associated with 'location::Location' (role 'location_Location', cardinality 0..*).

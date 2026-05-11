@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'ctmc::CTMC' has the following attributes: 'name' of type str.
+The class 'ctmc::Label' has the following attributes: 'text' of type str.
+The class 'ctmc::State' has the following attributes: 'name' of type str; 'exitRate' of type float.
+The class 'ctmc::Transition' has the following attributes: 'duration' of type float; 'probability' of type float; 'name' of type str.
+'ctmc::Transition' (role 'out', cardinality 0..*) is associated with 'ctmc::State' (role 'State', cardinality 0..*).
+'ctmc::State' (role 'ctmc_State', cardinality 0..*) is associated with 'ctmc::CTMC' (role 'ctmc_CTMC', cardinality 0..*).
+'ctmc::State' (role 'state', cardinality 0..*) is associated with 'ctmc::Label' (role 'Label', cardinality 0..*).
+'ctmc::Label' (role 'labels', cardinality 0..*) is associated with 'ctmc::State' (role 'State9', cardinality 0..*).
+'ctmc::Transition' (role 'Transition4', cardinality 0..*) is associated with 'ctmc::State' (role 'to', cardinality 0..*).
+'ctmc::Transition' (role 'in_', cardinality 0..*) is associated with 'ctmc::State' (role 'State7', cardinality 0..*).
+'ctmc::State' (role 'from_', cardinality 0..*) is associated with 'ctmc::Transition' (role 'Transition', cardinality 0..*).

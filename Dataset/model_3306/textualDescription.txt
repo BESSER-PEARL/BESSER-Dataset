@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'generatedplugin::Plugin' has no attributes.
+The class 'generatedplugin::StemCategory' has the following attributes: 'id' of type str; 'name' of type str; 'parentId' of type str.
+The class 'generatedplugin::DublinCore' has the following attributes: 'bibliographicCitation' of type str; 'format' of type str; 'subject' of type str; 'rights' of type str; 'language' of type str; 'type' of type str; 'valid' of type str; 'coverage' of type str; 'contributor' of type str; 'creator' of type str; 'requires' of type str; 'source' of type str; 'date' of type str; 'description' of type str; 'created' of type str; 'publisher' of type str; 'identifier' of type str; 'categoryId' of type str; 'title' of type str; 'spatial' of type str; 'relation' of type str; 'license' of type str.
+The class 'generatedplugin::Extension' has the following attributes: 'point' of type str.
+'generatedplugin::Plugin' (role 'generatedplugin_Plugin', cardinality 0..*) is associated with 'generatedplugin::Extension' (role 'generatedplugin_Extension4', cardinality 0..*).
+'generatedplugin::Extension' (role 'generatedplugin_Extension2', cardinality 0..*) is associated with 'generatedplugin::DublinCore' (role 'generatedplugin_DublinCore', cardinality 0..*).
+'generatedplugin::StemCategory' (role 'generatedplugin_StemCategory', cardinality 0..*) is associated with 'generatedplugin::Extension' (role 'generatedplugin_Extension', cardinality 0..*).

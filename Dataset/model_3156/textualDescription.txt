@@ -1,0 +1,268 @@
+The model has 93 class(es).
+The class 'sADL::SadlExplicitValue' has no attributes.
+The class 'SadlPropertyRestriction' has no attributes.
+The class 'sADL::PropOfSubject' has the following attributes: 'of' of type str.
+The class 'sADL::SadlMustBeOneOf' has no attributes.
+The class 'sADL::SadlPropertyInitializer' has no attributes.
+The class 'sADL::SadlTypeAssociation' has no attributes.
+The class 'sADL::QueryStatement' has the following attributes: 'start' of type str.
+The class 'sADL::SadlIsFunctional' has the following attributes: 'inverse' of type bool.
+The class 'sADL::EObject' has no attributes.
+The class 'sADL::SadlModelElement' has no attributes.
+The class 'SadlCondition' has no attributes.
+The class 'sADL::SadlResource' has no attributes.
+The class 'sADL::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'sADL::SadlConstantLiteral' has the following attributes: 'term' of type str.
+The class 'sADL::UnaryExpression' has the following attributes: 'op' of type str.
+The class 'sADL::SadlIsInverseOf' has no attributes.
+The class 'sADL::SadlSimpleTypeReference' has the following attributes: 'list' of type bool.
+The class 'sADL::Declaration' has the following attributes: 'maxlen' of type str; 'len' of type str; 'article' of type str; 'ordinal' of type str.
+The class 'sADL::ReadStatement' has the following attributes: 'filename' of type str; 'templateFilename' of type str.
+The class 'sADL::NamedStructureAnnotation' has no attributes.
+The class 'sADL::SadlNecessaryAndSufficient' has no attributes.
+The class 'sADL::Sublist' has no attributes.
+The class 'sADL::StringLiteral' has the following attributes: 'value' of type str.
+The class 'sADL::SadlNestedInstance' has the following attributes: 'article' of type str.
+The class 'sADL::SadlClassOrPropertyDeclaration' has no attributes.
+The class 'sADL::ExpressionStatement' has the following attributes: 'evaluatesTo' of type str.
+The class 'Expression' has no attributes.
+The class 'sADL::SadlUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'sADL::SadlPrimitiveDataType' has the following attributes: 'primitiveType' of type str; 'list' of type bool.
+The class 'sADL::BinaryOperation' has the following attributes: 'op' of type str.
+The class 'sADL::OrderElement' has the following attributes: 'desc' of type bool.
+The class 'sADL::ExpressionScope' has no attributes.
+The class 'sADL::EndWriteStatement' has the following attributes: 'filename' of type str.
+The class 'sADL::ElementInList' has the following attributes: 'after' of type bool; 'before' of type bool.
+The class 'sADL::SadlUnionType' has no attributes.
+The class 'sADL::SadlNumberLiteral' has the following attributes: 'literalNumber' of type str; 'unit' of type str.
+The class 'sADL::TestStatement' has no attributes.
+The class 'sADL::AbstractSadlEquation' has the following attributes: 'unknown' of type str.
+The class 'sADL::SelectExpression' has the following attributes: 'orderby' of type str; 'distinct' of type bool.
+The class 'SadlTypeReference' has no attributes.
+The class 'sADL::SadlIsSymmetrical' has no attributes.
+The class 'sADL::SadlDifferentFrom' has the following attributes: 'complement' of type bool.
+The class 'sADL::ConstructExpression' has no attributes.
+The class 'SadlStatement' has no attributes.
+The class 'sADL::ExternalEquationStatement' has the following attributes: 'location' of type str; 'uri' of type str.
+The class 'sADL::SadlIsTransitive' has no attributes.
+The class 'sADL::SadlValueList' has no attributes.
+The class 'sADL::PrintStatement' has the following attributes: 'model' of type str; 'displayString' of type str.
+The class 'sADL::SadlStatement' has no attributes.
+The class 'sADL::SadlHasValueCondition' has no attributes.
+The class 'sADL::StartWriteStatement' has the following attributes: 'dataOnly' of type str; 'write' of type str.
+The class 'sADL::SadlStringLiteral' has the following attributes: 'literalString' of type str.
+The class 'AbstractSadlEquation' has no attributes.
+The class 'sADL::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'sADL::SadlDefaultValue' has the following attributes: 'level' of type int.
+The class 'SadlModelElement' has no attributes.
+The class 'sADL::UnitExpression' has the following attributes: 'unit' of type str.
+The class 'sADL::SadlDataTypeFacet' has the following attributes: 'minlen' of type str; 'min' of type str; 'maxInclusive' of type bool; 'len' of type str; 'minInclusive' of type bool; 'regex' of type str; 'values' of type str; 'maxlen' of type str; 'max' of type str.
+The class 'sADL::RuleStatement' has no attributes.
+The class 'sADL::SadlAnnotation' has the following attributes: 'contents' of type str; 'type' of type str.
+The class 'sADL::SadlImport' has the following attributes: 'alias' of type str.
+The class 'sADL::SadlBooleanLiteral' has the following attributes: 'truethy' of type bool.
+The class 'sADL::AskExpression' has no attributes.
+The class 'sADL::Constant' has the following attributes: 'constant' of type str.
+The class 'SadlExplicitValueLiteral' has no attributes.
+The class 'sADL::SadlModel' has the following attributes: 'alias' of type str; 'baseUri' of type str; 'version' of type str.
+The class 'sADL::SadlInstance' has no attributes.
+The class 'sADL::SadlDisjointClasses' has no attributes.
+The class 'sADL::Name' has the following attributes: 'function' of type bool.
+The class 'sADL::SadlIsAnnotation' has no attributes.
+The class 'sADL::SadlExplicitValueLiteral' has no attributes.
+The class 'sADL::SadlRangeRestriction' has the following attributes: 'singleValued' of type bool; 'typeonly' of type str.
+The class 'sADL::ExplainStatement' has no attributes.
+The class 'sADL::SadlAllValuesCondition' has no attributes.
+The class 'sADL::SadlParameterDeclaration' has the following attributes: 'ellipsis' of type str; 'unknown' of type str.
+The class 'sADL::SadlCardinalityCondition' has the following attributes: 'cardinality' of type str; 'operator' of type str.
+The class 'sADL::SadlPropertyRestriction' has no attributes.
+The class 'sADL::SadlTypeReference' has no attributes.
+The class 'sADL::ValueTable' has no attributes.
+The class 'sADL::SadlIntersectionType' has no attributes.
+The class 'sADL::SadlSameAs' has the following attributes: 'complement' of type bool.
+The class 'sADL::ValueRow' has no attributes.
+The class 'sADL::Expression' has no attributes.
+The class 'sADL::SadlProperty' has the following attributes: 'primaryDeclaration' of type bool.
+The class 'sADL::EquationStatement' has no attributes.
+The class 'sADL::SadlCanOnlyBeOneOf' has no attributes.
+The class 'SadlExplicitValue' has no attributes.
+The class 'sADL::SadlPropertyCondition' has no attributes.
+The class 'SadlResource' has no attributes.
+The class 'sADL::SubjHasProp' has the following attributes: 'comma' of type bool.
+The class 'SadlInstance' has no attributes.
+The class 'sADL::SadlCondition' has no attributes.
+The class 'ExpressionScope' has no attributes.
+The enumeration 'SadlDataType' has the following literals: 'double', 'gYearMonth', 'anySimpleType', 'gMonthDay', 'int', 'anyURI', 'negativeInteger', 'unsignedByte', 'hexBinary', 'integer', 'nonNegativeInteger', 'decimal', 'float', 'base64Binary', 'gYear', 'unsignedInt', 'dateTime', 'gDay', 'duration', 'gMonth', 'time', 'string', 'long', 'boolean', 'nonPositiveInteger', 'positiveInteger', 'byte', 'date'.
+'sADL::SadlResource' is a specialization of 'Expression'.
+'sADL::SadlConstantLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::EquationStatement' is a specialization of 'AbstractSadlEquation'.
+'sADL::NumberLiteral' is a specialization of 'Expression'.
+'sADL::SadlStatement' is a specialization of 'SadlModelElement'.
+'sADL::SadlTypeAssociation' is a specialization of 'SadlPropertyRestriction'.
+'sADL::ExplainStatement' is a specialization of 'SadlModelElement'.
+'sADL::SadlIsInverseOf' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlCardinalityCondition' is a specialization of 'SadlCondition'.
+'sADL::SadlDefaultValue' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlDisjointClasses' is a specialization of 'SadlStatement'.
+'sADL::SadlAllValuesCondition' is a specialization of 'SadlCondition'.
+'sADL::ExternalEquationStatement' is a specialization of 'AbstractSadlEquation'.
+'sADL::BinaryOperation' is a specialization of 'Expression'.
+'sADL::SadlResource' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::ConstructExpression' is a specialization of 'Expression'.
+'sADL::EquationStatement' is a specialization of 'SadlModelElement'.
+'sADL::Declaration' is a specialization of 'Expression'.
+'sADL::SadlExplicitValueLiteral' is a specialization of 'SadlExplicitValue'.
+'sADL::SadlProperty' is a specialization of 'SadlStatement'.
+'sADL::SadlPropertyCondition' is a specialization of 'SadlTypeReference'.
+'sADL::TestStatement' is a specialization of 'ExpressionScope'.
+'sADL::SadlIsTransitive' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlUnionType' is a specialization of 'SadlTypeReference'.
+'sADL::SadlCanOnlyBeOneOf' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlIsAnnotation' is a specialization of 'SadlPropertyRestriction'.
+'sADL::AskExpression' is a specialization of 'Expression'.
+'sADL::Name' is a specialization of 'SadlResource'.
+'sADL::SadlPrimitiveDataType' is a specialization of 'SadlTypeReference'.
+'sADL::SadlBooleanLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::SadlIsSymmetrical' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlClassOrPropertyDeclaration' is a specialization of 'SadlStatement'.
+'sADL::SadlMustBeOneOf' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlSimpleTypeReference' is a specialization of 'SadlTypeReference'.
+'sADL::StringLiteral' is a specialization of 'Expression'.
+'sADL::SubjHasProp' is a specialization of 'Expression'.
+'sADL::BooleanLiteral' is a specialization of 'Expression'.
+'sADL::RuleStatement' is a specialization of 'ExpressionScope'.
+'sADL::Constant' is a specialization of 'Expression'.
+'sADL::ExpressionScope' is a specialization of 'SadlModelElement'.
+'sADL::SadlIntersectionType' is a specialization of 'SadlTypeReference'.
+'sADL::ExpressionStatement' is a specialization of 'ExpressionScope'.
+'sADL::SadlValueList' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::SadlResource' is a specialization of 'SadlStatement'.
+'sADL::ReadStatement' is a specialization of 'SadlModelElement'.
+'sADL::StartWriteStatement' is a specialization of 'SadlModelElement'.
+'sADL::UnitExpression' is a specialization of 'Expression'.
+'sADL::SadlHasValueCondition' is a specialization of 'SadlCondition'.
+'sADL::SadlNumberLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::SadlUnaryExpression' is a specialization of 'SadlExplicitValue'.
+'sADL::UnaryExpression' is a specialization of 'Expression'.
+'sADL::ExternalEquationStatement' is a specialization of 'SadlModelElement'.
+'sADL::SadlInstance' is a specialization of 'SadlStatement'.
+'sADL::SadlRangeRestriction' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlCondition' is a specialization of 'SadlPropertyRestriction'.
+'sADL::SadlNecessaryAndSufficient' is a specialization of 'SadlStatement'.
+'sADL::PropOfSubject' is a specialization of 'Expression'.
+'sADL::Sublist' is a specialization of 'Expression'.
+'sADL::SadlDifferentFrom' is a specialization of 'SadlStatement'.
+'sADL::SadlSameAs' is a specialization of 'SadlStatement'.
+'sADL::ElementInList' is a specialization of 'Expression'.
+'sADL::EndWriteStatement' is a specialization of 'SadlModelElement'.
+'sADL::SelectExpression' is a specialization of 'Expression'.
+'sADL::SadlIsFunctional' is a specialization of 'SadlPropertyRestriction'.
+'sADL::QueryStatement' is a specialization of 'ExpressionScope'.
+'sADL::SadlNestedInstance' is a specialization of 'SadlInstance'.
+'sADL::SadlStringLiteral' is a specialization of 'SadlExplicitValueLiteral'.
+'sADL::ValueTable' is a specialization of 'Expression'.
+'sADL::SadlTypeReference' is a specialization of 'SadlStatement'.
+'sADL::PrintStatement' is a specialization of 'SadlModelElement'.
+'sADL::SadlResource' (role 'sADL_SadlResource172', cardinality 0..*) is associated with 'sADL::RuleStatement' (role 'sADL_RuleStatement', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression178', cardinality 0..*) is associated with 'sADL::RuleStatement' (role 'sADL_RuleStatement177', cardinality 0..*).
+'sADL::SadlCardinalityCondition' (role 'sADL_SadlCardinalityCondition', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference73', cardinality 0..*).
+'sADL::SadlCanOnlyBeOneOf' (role 'sADL_SadlCanOnlyBeOneOf', cardinality 0..*) is associated with 'sADL::SadlExplicitValue' (role 'sADL_SadlExplicitValue167', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource102', cardinality 0..*) is associated with 'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration', cardinality 0..*).
+'sADL::ValueRow' (role 'sADL_ValueRow', cardinality 0..*) is associated with 'sADL::ValueTable' (role 'sADL_ValueTable94', cardinality 0..*).
+'sADL::QueryStatement' (role 'sADL_QueryStatement', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource183', cardinality 0..*).
+'sADL::SadlAllValuesCondition' (role 'sADL_SadlAllValuesCondition', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference67', cardinality 0..*).
+'sADL::OrderElement' (role 'sADL_OrderElement', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource90', cardinality 0..*).
+'sADL::SubjHasProp' (role 'sADL_SubjHasProp', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression229', cardinality 0..*).
+'sADL::SadlInstance' (role 'sADL_SadlInstance37', cardinality 0..*) is associated with 'sADL::SadlValueList' (role 'sADL_SadlValueList', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression214', cardinality 0..*) is associated with 'sADL::Sublist' (role 'sADL_Sublist', cardinality 0..*).
+'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration104', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference105', cardinality 0..*).
+'sADL::Name' (role 'sADL_Name', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression248', cardinality 0..*).
+'sADL::ConstructExpression' (role 'sADL_ConstructExpression196', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource197', cardinality 0..*).
+'sADL::SelectExpression' (role 'sADL_SelectExpression', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource206', cardinality 0..*).
+'sADL::SadlModel' (role 'sADL_SadlModel4', cardinality 0..*) is associated with 'sADL::SadlModelElement' (role 'sADL_SadlModelElement', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource161', cardinality 0..*) is associated with 'sADL::SadlIsInverseOf' (role 'sADL_SadlIsInverseOf', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource25', cardinality 0..*) is associated with 'sADL::SadlPropertyInitializer' (role 'sADL_SadlPropertyInitializer', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference', cardinality 0..*) is associated with 'sADL::AbstractSadlEquation' (role 'sADL_AbstractSadlEquation13', cardinality 0..*).
+'sADL::ConstructExpression' (role 'sADL_ConstructExpression199', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression200', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource30', cardinality 0..*) is associated with 'sADL::SadlPropertyInitializer' (role 'sADL_SadlPropertyInitializer29', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference243', cardinality 0..*) is associated with 'sADL::Declaration' (role 'sADL_Declaration', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression241', cardinality 0..*) is associated with 'sADL::UnaryExpression' (role 'sADL_UnaryExpression', cardinality 0..*).
+'sADL::SadlValueList' (role 'sADL_SadlValueList78', cardinality 0..*) is associated with 'sADL::SadlExplicitValue' (role 'sADL_SadlExplicitValue', cardinality 0..*).
+'sADL::ValueRow' (role 'sADL_ValueRow97', cardinality 0..*) is associated with 'sADL::ValueTable' (role 'sADL_ValueTable96', cardinality 0..*).
+'sADL::SadlSameAs' (role 'sADL_SadlSameAs', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource116', cardinality 0..*).
+'sADL::SadlExplicitValue' (role 'sADL_SadlExplicitValue165', cardinality 0..*) is associated with 'sADL::SadlMustBeOneOf' (role 'sADL_SadlMustBeOneOf', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression246', cardinality 0..*) is associated with 'sADL::Declaration' (role 'sADL_Declaration245', cardinality 0..*).
+'sADL::SadlDataTypeFacet' (role 'sADL_SadlDataTypeFacet108', cardinality 0..*) is associated with 'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration107', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference145', cardinality 0..*) is associated with 'sADL::SadlUnionType' (role 'sADL_SadlUnionType144', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource65', cardinality 0..*) is associated with 'sADL::SadlProperty' (role 'sADL_SadlProperty64', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression170', cardinality 0..*) is associated with 'sADL::ExpressionStatement' (role 'sADL_ExpressionStatement', cardinality 0..*).
+'sADL::SadlPropertyInitializer' (role 'sADL_SadlPropertyInitializer40', cardinality 0..*) is associated with 'sADL::SadlInstance' (role 'sADL_SadlInstance39', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource152', cardinality 0..*) is associated with 'sADL::SadlSimpleTypeReference' (role 'sADL_SadlSimpleTypeReference', cardinality 0..*).
+'sADL::AbstractSadlEquation' (role 'sADL_AbstractSadlEquation11', cardinality 0..*) is associated with 'sADL::SadlParameterDeclaration' (role 'sADL_SadlParameterDeclaration', cardinality 0..*).
+'sADL::ValueTable' (role 'sADL_ValueTable91', cardinality 0..*) is associated with 'sADL::ValueTable' (role 'sADL_ValueTable', cardinality 0..*).
+'sADL::SadlNecessaryAndSufficient' (role 'sADL_SadlNecessaryAndSufficient', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference134', cardinality 0..*).
+'sADL::EObject' (role 'sADL_EObject71', cardinality 0..*) is associated with 'sADL::SadlHasValueCondition' (role 'sADL_SadlHasValueCondition', cardinality 0..*).
+'sADL::SadlIntersectionType' (role 'sADL_SadlIntersectionType', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference147', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource137', cardinality 0..*) is associated with 'sADL::SadlNecessaryAndSufficient' (role 'sADL_SadlNecessaryAndSufficient136', cardinality 0..*).
+'sADL::ExplainStatement' (role 'sADL_ExplainStatement87', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource88', cardinality 0..*).
+'sADL::ExplainStatement' (role 'sADL_ExplainStatement', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression85', cardinality 0..*).
+'sADL::SadlAnnotation' (role 'sADL_SadlAnnotation', cardinality 0..*) is associated with 'sADL::SadlModel' (role 'sADL_SadlModel', cardinality 0..*).
+'sADL::SadlPropertyCondition' (role 'sADL_SadlPropertyCondition140', cardinality 0..*) is associated with 'sADL::SadlNecessaryAndSufficient' (role 'sADL_SadlNecessaryAndSufficient139', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression', cardinality 0..*) is associated with 'sADL::EquationStatement' (role 'sADL_EquationStatement', cardinality 0..*).
+'sADL::SadlDifferentFrom' (role 'sADL_SadlDifferentFrom', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource121', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression204', cardinality 0..*) is associated with 'sADL::TestStatement' (role 'sADL_TestStatement', cardinality 0..*).
+'sADL::SadlModel' (role 'sADL_SadlModel2', cardinality 0..*) is associated with 'sADL::SadlImport' (role 'sADL_SadlImport', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource44', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource46', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference150', cardinality 0..*) is associated with 'sADL::SadlIntersectionType' (role 'sADL_SadlIntersectionType149', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource232', cardinality 0..*) is associated with 'sADL::SubjHasProp' (role 'sADL_SubjHasProp231', cardinality 0..*).
+'sADL::SadlPropertyCondition' (role 'sADL_SadlPropertyCondition23', cardinality 0..*) is associated with 'sADL::SadlCondition' (role 'sADL_SadlCondition', cardinality 0..*).
+'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration127', cardinality 0..*) is associated with 'sADL::SadlDifferentFrom' (role 'sADL_SadlDifferentFrom126', cardinality 0..*).
+'sADL::BinaryOperation' (role 'sADL_BinaryOperation221', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression222', cardinality 0..*).
+'sADL::AskExpression' (role 'sADL_AskExpression', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression202', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression237', cardinality 0..*) is associated with 'sADL::ElementInList' (role 'sADL_ElementInList', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource48', cardinality 0..*) is associated with 'sADL::SadlAnnotation' (role 'sADL_SadlAnnotation49', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression181', cardinality 0..*) is associated with 'sADL::RuleStatement' (role 'sADL_RuleStatement180', cardinality 0..*).
+'sADL::EObject' (role 'sADL_EObject', cardinality 0..*) is associated with 'sADL::SadlPropertyInitializer' (role 'sADL_SadlPropertyInitializer27', cardinality 0..*).
+'sADL::ValueRow' (role 'sADL_ValueRow99', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression100', cardinality 0..*).
+'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration113', cardinality 0..*) is associated with 'sADL::SadlPropertyRestriction' (role 'sADL_SadlPropertyRestriction114', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference16', cardinality 0..*) is associated with 'sADL::SadlParameterDeclaration' (role 'sADL_SadlParameterDeclaration15', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource191', cardinality 0..*) is associated with 'sADL::ConstructExpression' (role 'sADL_ConstructExpression', cardinality 0..*).
+'sADL::SelectExpression' (role 'sADL_SelectExpression208', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression209', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference154', cardinality 0..*) is associated with 'sADL::SadlTypeAssociation' (role 'sADL_SadlTypeAssociation', cardinality 0..*).
+'sADL::OrderElement' (role 'sADL_OrderElement212', cardinality 0..*) is associated with 'sADL::SelectExpression' (role 'sADL_SelectExpression211', cardinality 0..*).
+'sADL::SadlProperty' (role 'sADL_SadlProperty55', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference56', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference35', cardinality 0..*) is associated with 'sADL::SadlInstance' (role 'sADL_SadlInstance34', cardinality 0..*).
+'sADL::SadlProperty' (role 'sADL_SadlProperty61', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource62', cardinality 0..*).
+'sADL::SadlInstance' (role 'sADL_SadlInstance', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource32', cardinality 0..*).
+'sADL::SadlDataTypeFacet' (role 'sADL_SadlDataTypeFacet', cardinality 0..*) is associated with 'sADL::SadlAllValuesCondition' (role 'sADL_SadlAllValuesCondition69', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource51', cardinality 0..*) is associated with 'sADL::SadlProperty' (role 'sADL_SadlProperty', cardinality 0..*).
+'sADL::SadlProperty' (role 'sADL_SadlProperty53', cardinality 0..*) is associated with 'sADL::SadlPropertyRestriction' (role 'sADL_SadlPropertyRestriction', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression227', cardinality 0..*) is associated with 'sADL::PropOfSubject' (role 'sADL_PropOfSubject226', cardinality 0..*).
+'sADL::SadlSameAs' (role 'sADL_SadlSameAs118', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference119', cardinality 0..*).
+'sADL::QueryStatement' (role 'sADL_QueryStatement188', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression189', cardinality 0..*).
+'sADL::SadlDefaultValue' (role 'sADL_SadlDefaultValue', cardinality 0..*) is associated with 'sADL::SadlExplicitValue' (role 'sADL_SadlExplicitValue163', cardinality 0..*).
+'sADL::SadlExplicitValueLiteral' (role 'sADL_SadlExplicitValueLiteral', cardinality 0..*) is associated with 'sADL::SadlUnaryExpression' (role 'sADL_SadlUnaryExpression', cardinality 0..*).
+'sADL::SadlRangeRestriction' (role 'sADL_SadlRangeRestriction158', cardinality 0..*) is associated with 'sADL::SadlDataTypeFacet' (role 'sADL_SadlDataTypeFacet159', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference156', cardinality 0..*) is associated with 'sADL::SadlRangeRestriction' (role 'sADL_SadlRangeRestriction', cardinality 0..*).
+'sADL::ConstructExpression' (role 'sADL_ConstructExpression193', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource194', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource21', cardinality 0..*) is associated with 'sADL::SadlPropertyCondition' (role 'sADL_SadlPropertyCondition', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource80', cardinality 0..*) is associated with 'sADL::NamedStructureAnnotation' (role 'sADL_NamedStructureAnnotation', cardinality 0..*).
+'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration110', cardinality 0..*) is associated with 'sADL::SadlProperty' (role 'sADL_SadlProperty111', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression217', cardinality 0..*) is associated with 'sADL::Sublist' (role 'sADL_Sublist216', cardinality 0..*).
+'sADL::SadlClassOrPropertyDeclaration' (role 'sADL_SadlClassOrPropertyDeclaration132', cardinality 0..*) is associated with 'sADL::SadlDisjointClasses' (role 'sADL_SadlDisjointClasses131', cardinality 0..*).
+'sADL::SadlUnionType' (role 'sADL_SadlUnionType', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference142', cardinality 0..*).
+'sADL::SadlDataTypeFacet' (role 'sADL_SadlDataTypeFacet76', cardinality 0..*) is associated with 'sADL::SadlCardinalityCondition' (role 'sADL_SadlCardinalityCondition75', cardinality 0..*).
+'sADL::NamedStructureAnnotation' (role 'sADL_NamedStructureAnnotation175', cardinality 0..*) is associated with 'sADL::RuleStatement' (role 'sADL_RuleStatement174', cardinality 0..*).
+'sADL::UnitExpression' (role 'sADL_UnitExpression', cardinality 0..*) is associated with 'sADL::Expression' (role 'sADL_Expression239', cardinality 0..*).
+'sADL::SadlExplicitValue' (role 'sADL_SadlExplicitValue83', cardinality 0..*) is associated with 'sADL::NamedStructureAnnotation' (role 'sADL_NamedStructureAnnotation82', cardinality 0..*).
+'sADL::QueryStatement' (role 'sADL_QueryStatement185', cardinality 0..*) is associated with 'sADL::NamedStructureAnnotation' (role 'sADL_NamedStructureAnnotation186', cardinality 0..*).
+'sADL::SadlImport' (role 'sADL_SadlImport6', cardinality 0..*) is associated with 'sADL::SadlModel' (role 'sADL_SadlModel7', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression219', cardinality 0..*) is associated with 'sADL::BinaryOperation' (role 'sADL_BinaryOperation', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression235', cardinality 0..*) is associated with 'sADL::SubjHasProp' (role 'sADL_SubjHasProp234', cardinality 0..*).
+'sADL::Expression' (role 'sADL_Expression224', cardinality 0..*) is associated with 'sADL::PropOfSubject' (role 'sADL_PropOfSubject', cardinality 0..*).
+'sADL::AbstractSadlEquation' (role 'sADL_AbstractSadlEquation', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource43', cardinality 0..*) is associated with 'sADL::SadlInstance' (role 'sADL_SadlInstance42', cardinality 0..*).
+'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference59', cardinality 0..*) is associated with 'sADL::SadlProperty' (role 'sADL_SadlProperty58', cardinality 0..*).
+'sADL::SadlDifferentFrom' (role 'sADL_SadlDifferentFrom123', cardinality 0..*) is associated with 'sADL::SadlTypeReference' (role 'sADL_SadlTypeReference124', cardinality 0..*).
+'sADL::SadlDisjointClasses' (role 'sADL_SadlDisjointClasses', cardinality 0..*) is associated with 'sADL::SadlResource' (role 'sADL_SadlResource129', cardinality 0..*).
+'sADL::SadlResource' (role 'sADL_SadlResource19', cardinality 0..*) is associated with 'sADL::SadlParameterDeclaration' (role 'sADL_SadlParameterDeclaration18', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 12 class(es).
+The class 'fair::Class' has the following attributes: 'name' of type str; 'comments' of type str.
+The class 'fair::Premises' has no attributes.
+The class 'fair::Division' has the following attributes: 'name' of type str; 'comments' of type str.
+The class 'fair::Exhibit' has the following attributes: 'name' of type str; 'comments' of type str; 'number' of type int; 'inAuction' of type bool; 'award' of type str; 'salesOrder' of type int.
+The class 'fair::Department' has the following attributes: 'comments' of type str; 'name' of type str.
+The class 'fair::Animal' has no attributes.
+The class 'fair::YouthClub' has the following attributes: 'comments' of type str; 'name' of type str.
+The class 'fair::Person' has the following attributes: 'phone' of type str; 'state' of type str; 'comments' of type str; 'zipCode' of type str; 'pin' of type str; 'street' of type str; 'salesOrder' of type int; 'name' of type str; 'lastName' of type str; 'city' of type str; 'firstName' of type str.
+The class 'Person' has no attributes.
+The class 'fair::YoungPerson' has no attributes.
+The class 'fair::Lot' has the following attributes: 'name' of type str; 'comments' of type str.
+The class 'fair::Fair' has the following attributes: 'comments' of type str; 'name' of type str.
+The enumeration 'Award' has the following literals: 'BlueRibbon', 'RedRibbon', 'PinkRibbon', 'GrandChampion', 'ReserveChampion', 'WhiteRibbon', 'Unspecified'.
+'fair::YoungPerson' is a specialization of 'Person'.
+'fair::Animal' (role 'fair_Animal', cardinality 0..*) is associated with 'fair::Exhibit' (role 'fair_Exhibit', cardinality 0..*).
+'fair::YouthClub' (role 'fair_YouthClub', cardinality 0..*) is associated with 'fair::Fair' (role 'fair_Fair', cardinality 0..*).
+'fair::Lot' (role 'lot', cardinality 0..*) is associated with 'fair::Exhibit' (role 'Exhibit', cardinality 0..*).
+'fair::Exhibit' (role 'exhibits', cardinality 0..*) is associated with 'fair::Lot' (role 'Lot', cardinality 0..*).
+'fair::Fair' (role 'fair_Fair6', cardinality 0..*) is associated with 'fair::Person' (role 'fair_Person', cardinality 0..*).
+'fair::Class' (role 'Class28', cardinality 0..*) is associated with 'fair::Lot' (role 'lots', cardinality 0..*).
+'fair::Department' (role 'fair_Department', cardinality 0..*) is associated with 'fair::Person' (role 'fair_Person18', cardinality 0..*).
+'fair::YouthClub' (role 'fair_YouthClub33', cardinality 0..*) is associated with 'fair::YoungPerson' (role 'fair_YoungPerson32', cardinality 0..*).
+'fair::Class' (role 'Class', cardinality 0..*) is associated with 'fair::Department' (role 'department', cardinality 0..*).
+'fair::YoungPerson' (role 'fair_YoungPerson', cardinality 0..*) is associated with 'fair::Person' (role 'fair_Person30', cardinality 0..*).
+'fair::Person' (role 'fair_Person23', cardinality 0..*) is associated with 'fair::Class' (role 'fair_Class', cardinality 0..*).
+'fair::Person' (role 'fair_Person10', cardinality 0..*) is associated with 'fair::Exhibit' (role 'fair_Exhibit9', cardinality 0..*).
+'fair::Class' (role 'classes', cardinality 0..*) is associated with 'fair::Department' (role 'Department25', cardinality 0..*).
+'fair::YouthClub' (role 'fair_YouthClub13', cardinality 0..*) is associated with 'fair::Person' (role 'fair_Person14', cardinality 0..*).
+'fair::Department' (role 'Department', cardinality 0..*) is associated with 'fair::Division' (role 'division', cardinality 0..*).
+'fair::Class' (role 'class_', cardinality 0..*) is associated with 'fair::Lot' (role 'Lot21', cardinality 0..*).
+'fair::Department' (role 'departments', cardinality 0..*) is associated with 'fair::Division' (role 'Division', cardinality 0..*).
+'fair::Premises' (role 'fair_Premises', cardinality 0..*) is associated with 'fair::Fair' (role 'fair_Fair4', cardinality 0..*).
+'fair::Division' (role 'fair_Division', cardinality 0..*) is associated with 'fair::Fair' (role 'fair_Fair2', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'sample::Company' has the following attributes: 'name' of type str.
+The class 'sample::Group' has the following attributes: 'name' of type str.
+The class 'sample::Department' has the following attributes: 'name' of type str.
+The class 'sample::Person' has the following attributes: 'birthdate' of type date; 'name' of type str.
+'sample::Group' (role 'Group7', cardinality 0..*) is associated with 'sample::Person' (role 'persons', cardinality 0..*).
+'sample::Department' (role 'department', cardinality 0..*) is associated with 'sample::Group' (role 'Group', cardinality 0..*).
+'sample::Group' (role 'groups', cardinality 0..*) is associated with 'sample::Department' (role 'Department5', cardinality 0..*).
+'sample::Department' (role 'Department', cardinality 0..*) is associated with 'sample::Company' (role 'company', cardinality 0..*).
+'sample::Department' (role 'departments', cardinality 0..*) is associated with 'sample::Company' (role 'Company', cardinality 0..*).
+'sample::Group' (role 'group', cardinality 0..*) is associated with 'sample::Person' (role 'Person', cardinality 0..*).

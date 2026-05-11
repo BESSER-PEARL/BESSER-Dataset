@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'transformationtrace::ActivationTrace' has the following attributes: 'ruleName' of type str.
+The class 'transformationtrace::TransformationTrace' has no attributes.
+The class 'transformationtrace::RuleParameterTrace' has the following attributes: 'objectId' of type str; 'parameterName' of type str.
+'transformationtrace::RuleParameterTrace' (role 'transformationtrace_RuleParameterTrace', cardinality 0..*) is associated with 'transformationtrace::ActivationTrace' (role 'transformationtrace_ActivationTrace2', cardinality 0..*).
+'transformationtrace::ActivationTrace' (role 'transformationtrace_ActivationTrace', cardinality 0..*) is associated with 'transformationtrace::TransformationTrace' (role 'transformationtrace_TransformationTrace', cardinality 0..*).

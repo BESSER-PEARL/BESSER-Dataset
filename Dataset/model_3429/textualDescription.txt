@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'people::Model' has no attributes.
+The class 'people::Person' has the following attributes: 'name' of type str; 'age' of type int; 'nicknames' of type str; 'alive' of type bool; 'luckyNumbers' of type int; 'lotteryChances' of type str.
+The class 'people::Pet' has the following attributes: 'kind' of type str; 'name' of type str.
+The enumeration 'PetKind' has the following literals: 'DANGEROUS', 'INDEPENDENT', 'FRIENDLY'.
+'people::Pet' (role 'people_Pet', cardinality 0..*) is associated with 'people::Person' (role 'people_Person5', cardinality 0..*).
+'people::Person' (role 'people_Person3', cardinality 0..*) is associated with 'people::Person' (role 'people_Person1', cardinality 0..*).
+'people::Model' (role 'people_Model', cardinality 0..*) is associated with 'people::Person' (role 'people_Person', cardinality 0..*).

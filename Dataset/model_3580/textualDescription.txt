@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'TypeA::BlockA' has no attributes.
+The class 'TypeA::PortA' has the following attributes: 'name' of type str.
+'TypeA::PortA' (role 'TypeA_PortA', cardinality 0..*) is associated with 'TypeA::BlockA' (role 'TypeA_BlockA', cardinality 0..*).
+'TypeA::PortA' (role 'TypeA_PortA3', cardinality 0..*) is associated with 'TypeA::BlockA' (role 'TypeA_BlockA2', cardinality 0..*).

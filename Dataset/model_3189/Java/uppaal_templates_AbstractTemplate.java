@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class uppaal_templates_AbstractTemplate extends NamedElement {
+
+
+
+
+    public uppaal_templates_AbstractTemplate(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

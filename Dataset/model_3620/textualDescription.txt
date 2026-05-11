@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'HSM::State' has the following attributes: 'name' of type str.
+The class 'HSM::FinalState' has no attributes.
+The class 'HSM::StateMachine' has no attributes.
+The class 'HSM::CompositeState' has no attributes.
+The class 'State' has no attributes.
+The class 'HSM::InitialState' has no attributes.
+'HSM::CompositeState' is a specialization of 'State'.
+'HSM::InitialState' is a specialization of 'State'.
+'HSM::FinalState' is a specialization of 'State'.
+'HSM::State' (role 'HSM_State', cardinality 0..*) is associated with 'HSM::StateMachine' (role 'HSM_StateMachine', cardinality 0..*).

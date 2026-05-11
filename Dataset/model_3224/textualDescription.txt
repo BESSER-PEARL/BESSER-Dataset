@@ -1,0 +1,394 @@
+The model has 148 class(es).
+The class 'myDsl::struct::declaration::list::linha' has no attributes.
+The class 'myDsl::GenericAssocListLinhaAction' has no attributes.
+The class 'designator::list::linha' has no attributes.
+The class 'myDsl::InitializerListLinhaAction' has no attributes.
+The class 'myDsl::struct::declarator::list::linha' has no attributes.
+The class 'myDsl::abstract::declarator' has no attributes.
+The class 'identifier::list::linha' has no attributes.
+The class 'myDsl::type::qualifier::list' has no attributes.
+The class 'myDsl::identifier::list::linha' has no attributes.
+The class 'myDsl::PostFixEmpryParams' has no attributes.
+The class 'myDsl::ArgumentExpressionListLinhaAction' has no attributes.
+The class 'myDsl::alignment::specifier' has no attributes.
+The class 'myDsl::multiplicative::expression::linha' has no attributes.
+The class 'myDsl::TypeQualifierListLinhaAtion' has no attributes.
+The class 'myDsl::initializer::list::complement' has no attributes.
+The class 'struct::declaration::list::linha' has no attributes.
+The class 'myDsl::shift::expression' has no attributes.
+The class 'myDsl::equality::expression::complement' has the following attributes: 'menor' of type str; 'maior_igual' of type str; 'menor_igual' of type str; 'n_igual' of type str; 'igual' of type str; 'maior' of type str.
+The class 'myDsl::declarator' has no attributes.
+The class 'direct::abstract::declarator::linha' has no attributes.
+The class 'myDsl::parameter::declaration' has no attributes.
+The class 'enumerator::list::linha' has no attributes.
+The class 'myDsl::exclusive::or::expression::linha' has no attributes.
+The class 'unary::expression' has no attributes.
+The class 'myDsl::equality::expression' has no attributes.
+The class 'myDsl::labeled::statement' has the following attributes: 'identifier' of type str.
+The class 'myDsl::enum::specifier' has the following attributes: 'identifier' of type str.
+The class 'myDsl::postfix::expression::linha' has no attributes.
+The class 'myDsl::declaration' has no attributes.
+The class 'myDsl::PlusPlus' has the following attributes: 'plus' of type str.
+The class 'myDsl::block::item::list' has no attributes.
+The class 'struct::or::union::specifier::complement' has no attributes.
+The class 'myDsl::translation::unit::linha' has no attributes.
+The class 'myDsl::and::expression' has no attributes.
+The class 'myDsl::initializer::list' has no attributes.
+The class 'myDsl::direct::declarator::complemento' has no attributes.
+The class 'myDsl::multiplicative::expression::complement' has the following attributes: 'multiplica' of type str; 'divide' of type str; 'modulo' of type str.
+The class 'myDsl::argument::expression::list' has no attributes.
+The class 'myDsl::enumeration::constant' has the following attributes: 'identifier' of type str.
+The class 'myDsl::additive::expression::linha' has no attributes.
+The class 'myDsl::InitDecclaratorListLinhaAction' has no attributes.
+The class 'myDsl::init::declarator::list' has no attributes.
+The class 'myDsl::struct::or::union::specifier' has the following attributes: 'identifier' of type str; 'struct_or_union' of type str.
+The class 'myDsl::struct::declaration::list' has no attributes.
+The class 'myDsl::expression::linha' has no attributes.
+The class 'myDsl::string::dsl' has the following attributes: 'string_literal' of type str; '__func__' of type str.
+The class 'myDsl::shift::expression::linha' has no attributes.
+The class 'myDsl::conditional::expression::linha' has no attributes.
+The class 'myDsl::declaration::list::linha' has no attributes.
+The class 'myDsl::constant' has the following attributes: 'string' of type str; 'char' of type str; 'f_constant' of type str; 'i_constant' of type int; 'enumz' of type str.
+The class 'myDsl::exclusive::or::expression' has no attributes.
+The class 'myDsl::additive::expression' has no attributes.
+The class 'myDsl::multiplicative::expression' has no attributes.
+The class 'myDsl::type::qualifier' has the following attributes: 'namez' of type str.
+The class 'myDsl::logical::and::expression::linha' has no attributes.
+The class 'init::declarator::list::linha' has no attributes.
+The class 'myDsl::relational::expression' has no attributes.
+The class 'myDsl::enumerator::list::linha' has no attributes.
+The class 'myDsl::block::item' has no attributes.
+The class 'myDsl::direct::abstract::declarator::complement' has no attributes.
+The class 'myDsl::enumerator' has no attributes.
+The class 'myDsl::designator::list::linha' has no attributes.
+The class 'myDsl::designator::list' has no attributes.
+The class 'myDsl::expression' has no attributes.
+The class 'myDsl::initializer' has no attributes.
+The class 'myDsl::DeclarationListLinhaAction' has no attributes.
+The class 'myDsl::compound::statement' has no attributes.
+The class 'myDsl::struct::declaration' has no attributes.
+The class 'myDsl::logical::and::expression' has no attributes.
+The class 'myDsl::StructDeclarationListLinhaAction' has no attributes.
+The class 'postfix::expression::linha' has no attributes.
+The class 'myDsl::relational::expression::complement' has the following attributes: 'maior_igual' of type str; 'menor_igual' of type str; 'maior' of type str; 'menor' of type str.
+The class 'myDsl::type::qualifier::list::linha' has no attributes.
+The class 'myDsl::unary::expression' has the following attributes: 'unary_operator' of type str.
+The class 'myDsl::specifier::qualifier::list' has no attributes.
+The class 'myDsl::jump::statement' has the following attributes: 'return_' of type str; 'identifier' of type str; 'break_' of type str; 'return_vazio' of type str.
+The class 'myDsl::primary::expression' has the following attributes: 'identifier' of type str.
+The class 'myDsl::parameter::type::list' has no attributes.
+The class 'myDsl::TranlationUnitLinhaAction' has no attributes.
+The class 'myDsl::DesignatorListLinhaAction' has no attributes.
+The class 'myDsl::external::declaration' has no attributes.
+The class 'myDsl::direct::declarator::linha' has no attributes.
+The class 'myDsl::assignment::expression' has the following attributes: 'assignment_operator' of type str.
+The class 'declaration::list::linha' has no attributes.
+The class 'myDsl::additive::expression::complement' has the following attributes: 'menos' of type str; 'mais' of type str.
+The class 'direct::abstract::declarator::complement' has no attributes.
+The class 'myDsl::struct::or::union::specifier::complement' has no attributes.
+The class 'myDsl::expression::statement' has no attributes.
+The class 'myDsl::IdentifierListLinhaAction' has the following attributes: 'identifier' of type str.
+The class 'postfix::expression::complement' has no attributes.
+The class 'myDsl::atomic::type::specifier' has no attributes.
+The class 'myDsl::postfix::expression' has no attributes.
+The class 'myDsl::declaration::list' has no attributes.
+The class 'translation::unit::linha' has no attributes.
+The class 'myDsl::direct::abstract::declarator::linha' has no attributes.
+The class 'myDsl::iteration::statement' has no attributes.
+The class 'myDsl::inclusive::or::expression' has no attributes.
+The class 'struct::declarator::list::linha' has no attributes.
+The class 'myDsl::initializer::list::linha' has no attributes.
+The class 'myDsl::postfix::expression::complement' has the following attributes: 'identifier' of type str.
+The class 'myDsl::pointer' has no attributes.
+The class 'initializer::list::linha' has no attributes.
+The class 'myDsl::init::declarator' has no attributes.
+The class 'myDsl::static::assert::declaration' has no attributes.
+The class 'myDsl::argument::expression::list::linha' has no attributes.
+The class 'myDsl::constant::expression' has no attributes.
+The class 'myDsl::selection::statement' has no attributes.
+The class 'myDsl::init::declarator::list::linha' has no attributes.
+The class 'myDsl::designation' has no attributes.
+The class 'myDsl::DirectAbstractDeclarratorLinhaAction' has no attributes.
+The class 'myDsl::generic::assoc::list' has no attributes.
+The class 'myDsl::shift::expression::complement' has the following attributes: 'sright' of type str; 'sleft' of type str.
+The class 'myDsl::direct::declarator' has the following attributes: 'identifier' of type str.
+The class 'generic::assoc::list::linha' has no attributes.
+The class 'myDsl::conditional::expression' has no attributes.
+The class 'myDsl::direct::abstract::declarator' has no attributes.
+The class 'myDsl::generic::selection' has the following attributes: '_generic' of type str.
+The class 'myDsl::parameter::lista' has no attributes.
+The class 'myDsl::StructOrUnionSpecifierComplementAction' has no attributes.
+The class 'myDsl::declaration::specifiers' has the following attributes: 'storage_class_specifier' of type str; 'function_specifier' of type str.
+The class 'myDsl::relational::expression::linha' has no attributes.
+The class 'myDsl::logical::or::expression' has no attributes.
+The class 'type::qualifier::list::linha' has no attributes.
+The class 'argument::expression::list::linha' has no attributes.
+The class 'myDsl::block::item::list::linha' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::StructDeclaratorListLinhaAction' has no attributes.
+The class 'myDsl::function::definition' has no attributes.
+The class 'myDsl::parameter::list::linha' has no attributes.
+The class 'myDsl::equality::expression::linha' has no attributes.
+The class 'myDsl::statement' has no attributes.
+The class 'myDsl::struct::declarator::list' has no attributes.
+The class 'postfix::expression' has no attributes.
+The class 'myDsl::type::specifier' has the following attributes: 'type_name_str' of type str.
+The class 'myDsl::generic::association' has the following attributes: 'default' of type str.
+The class 'myDsl::EnumeratorListLinhaAction' has no attributes.
+The class 'myDsl::generic::assoc::list::linha' has no attributes.
+The class 'myDsl::and::expression::linha' has no attributes.
+The class 'myDsl::designator' has the following attributes: 'identifier' of type str.
+The class 'myDsl::logical::or::expression::linha' has no attributes.
+The class 'myDsl::cast::expression' has no attributes.
+The class 'myDsl::translation::unit' has no attributes.
+The class 'myDsl::enumerator::list' has no attributes.
+The class 'myDsl::PostfixExpressionLinhaAction' has no attributes.
+The class 'myDsl::identifier::list' has the following attributes: 'identifier' of type str.
+The class 'myDsl::struct::declarator' has no attributes.
+The class 'myDsl::type::name' has no attributes.
+The class 'myDsl::inclusive::or::expression::linha' has no attributes.
+'myDsl::StructDeclaratorListLinhaAction' is a specialization of 'struct::declarator::list::linha'.
+'myDsl::PlusPlus' is a specialization of 'unary::expression'.
+'myDsl::PostFixEmpryParams' is a specialization of 'postfix::expression::complement'.
+'myDsl::DeclarationListLinhaAction' is a specialization of 'declaration::list::linha'.
+'myDsl::IdentifierListLinhaAction' is a specialization of 'identifier::list::linha'.
+'myDsl::StructOrUnionSpecifierComplementAction' is a specialization of 'struct::or::union::specifier::complement'.
+'myDsl::DirectAbstractDeclarratorLinhaAction' is a specialization of 'direct::abstract::declarator::linha'.
+'myDsl::EnumeratorListLinhaAction' is a specialization of 'enumerator::list::linha'.
+'myDsl::InitializerListLinhaAction' is a specialization of 'initializer::list::linha'.
+'myDsl::PostfixExpressionLinhaAction' is a specialization of 'postfix::expression::linha'.
+'myDsl::type::name' is a specialization of 'postfix::expression'.
+'myDsl::GenericAssocListLinhaAction' is a specialization of 'generic::assoc::list::linha'.
+'myDsl::ArgumentExpressionListLinhaAction' is a specialization of 'argument::expression::list::linha'.
+'myDsl::DesignatorListLinhaAction' is a specialization of 'designator::list::linha'.
+'myDsl::TranlationUnitLinhaAction' is a specialization of 'translation::unit::linha'.
+'myDsl::type::qualifier::list' is a specialization of 'direct::abstract::declarator::complement'.
+'myDsl::InitDecclaratorListLinhaAction' is a specialization of 'init::declarator::list::linha'.
+'myDsl::TypeQualifierListLinhaAtion' is a specialization of 'type::qualifier::list::linha'.
+'myDsl::StructDeclarationListLinhaAction' is a specialization of 'struct::declaration::list::linha'.
+'myDsl::block::item::list::linha' (role 'myDsl_block_item_list_linha', cardinality 0..*) is associated with 'myDsl::block::item::list' (role 'myDsl_block_item_list362', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement332', cardinality 0..*) is associated with 'myDsl::iteration::statement' (role 'myDsl_iteration_statement331', cardinality 0..*).
+'myDsl::cast::expression' (role 'myDsl_cast_expression251', cardinality 0..*) is associated with 'myDsl::cast::expression' (role 'myDsl_cast_expression249', cardinality 0..*).
+'myDsl::conditional::expression' (role 'myDsl_conditional_expression473', cardinality 0..*) is associated with 'myDsl::constant::expression' (role 'myDsl_constant_expression472', cardinality 0..*).
+'myDsl::abstract::declarator' (role 'myDsl_abstract_declarator150', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator', cardinality 0..*).
+'myDsl::expression::statement' (role 'myDsl_expression_statement335', cardinality 0..*) is associated with 'myDsl::iteration::statement' (role 'myDsl_iteration_statement334', cardinality 0..*).
+'myDsl::struct::declarator::list::linha' (role 'myDsl_struct_declarator_list_linha501', cardinality 0..*) is associated with 'myDsl::StructDeclaratorListLinhaAction' (role 'myDsl_StructDeclaratorListLinhaAction500', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name40', cardinality 0..*) is associated with 'myDsl::atomic::type::specifier' (role 'myDsl_atomic_type_specifier39', cardinality 0..*).
+'myDsl::iteration::statement' (role 'myDsl_iteration_statement328', cardinality 0..*) is associated with 'myDsl::expression' (role 'myDsl_expression329', cardinality 0..*).
+'myDsl::labeled::statement' (role 'myDsl_labeled_statement', cardinality 0..*) is associated with 'myDsl::statement' (role 'myDsl_statement', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression326', cardinality 0..*) is associated with 'myDsl::jump::statement' (role 'myDsl_jump_statement325', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement321', cardinality 0..*) is associated with 'myDsl::iteration::statement' (role 'myDsl_iteration_statement', cardinality 0..*).
+'myDsl::multiplicative::expression' (role 'myDsl_multiplicative_expression265', cardinality 0..*) is associated with 'myDsl::additive::expression' (role 'myDsl_additive_expression', cardinality 0..*).
+'myDsl::additive::expression' (role 'myDsl_additive_expression287', cardinality 0..*) is associated with 'myDsl::shift::expression::complement' (role 'myDsl_shift_expression_complement286', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name242', cardinality 0..*) is associated with 'myDsl::unary::expression' (role 'myDsl_unary_expression241', cardinality 0..*).
+'myDsl::shift::expression::linha' (role 'myDsl_shift_expression_linha284', cardinality 0..*) is associated with 'myDsl::shift::expression::linha' (role 'myDsl_shift_expression_linha282', cardinality 0..*).
+'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator158', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression159', cardinality 0..*).
+'myDsl::and::expression' (role 'myDsl_and_expression389', cardinality 0..*) is associated with 'myDsl::exclusive::or::expression' (role 'myDsl_exclusive_or_expression', cardinality 0..*).
+'myDsl::exclusive::or::expression' (role 'myDsl_exclusive_or_expression399', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression' (role 'myDsl_inclusive_or_expression', cardinality 0..*).
+'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers9', cardinality 0..*) is associated with 'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers', cardinality 0..*).
+'myDsl::generic::selection' (role 'myDsl_generic_selection188', cardinality 0..*) is associated with 'myDsl::generic::assoc::list' (role 'myDsl_generic_assoc_list', cardinality 0..*).
+'myDsl::logical::or::expression::linha' (role 'myDsl_logical_or_expression_linha425', cardinality 0..*) is associated with 'myDsl::logical::or::expression::linha' (role 'myDsl_logical_or_expression_linha427', cardinality 0..*).
+'myDsl::designator::list' (role 'myDsl_designator_list218', cardinality 0..*) is associated with 'myDsl::designator' (role 'myDsl_designator', cardinality 0..*).
+'myDsl::relational::expression::linha' (role 'myDsl_relational_expression_linha297', cardinality 0..*) is associated with 'myDsl::relational::expression::linha' (role 'myDsl_relational_expression_linha295', cardinality 0..*).
+'myDsl::logical::and::expression::linha' (role 'myDsl_logical_and_expression_linha417', cardinality 0..*) is associated with 'myDsl::logical::and::expression::linha' (role 'myDsl_logical_and_expression_linha415', cardinality 0..*).
+'myDsl::postfix::expression::complement' (role 'myDsl_postfix_expression_complement', cardinality 0..*) is associated with 'myDsl::expression' (role 'myDsl_expression227', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement319', cardinality 0..*) is associated with 'myDsl::selection::statement' (role 'myDsl_selection_statement', cardinality 0..*).
+'myDsl::and::expression::linha' (role 'myDsl_and_expression_linha387', cardinality 0..*) is associated with 'myDsl::and::expression::linha' (role 'myDsl_and_expression_linha385', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name458', cardinality 0..*) is associated with 'myDsl::abstract::declarator' (role 'myDsl_abstract_declarator459', cardinality 0..*).
+'myDsl::inclusive::or::expression::linha' (role 'myDsl_inclusive_or_expression_linha', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression' (role 'myDsl_inclusive_or_expression401', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression464', cardinality 0..*) is associated with 'myDsl::expression::linha' (role 'myDsl_expression_linha', cardinality 0..*).
+'myDsl::struct::declarator::list::linha' (role 'myDsl_struct_declarator_list_linha', cardinality 0..*) is associated with 'myDsl::struct::declarator::list' (role 'myDsl_struct_declarator_list58', cardinality 0..*).
+'myDsl::generic::assoc::list::linha' (role 'myDsl_generic_assoc_list_linha', cardinality 0..*) is associated with 'myDsl::generic::assoc::list' (role 'myDsl_generic_assoc_list192', cardinality 0..*).
+'myDsl::block::item::list' (role 'myDsl_block_item_list', cardinality 0..*) is associated with 'myDsl::compound::statement' (role 'myDsl_compound_statement358', cardinality 0..*).
+'myDsl::IdentifierListLinhaAction' (role 'myDsl_IdentifierListLinhaAction', cardinality 0..*) is associated with 'myDsl::identifier::list::linha' (role 'myDsl_identifier_list_linha518', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression461', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression462', cardinality 0..*).
+'myDsl::postfix::expression::linha' (role 'myDsl_postfix_expression_linha', cardinality 0..*) is associated with 'myDsl::postfix::expression' (role 'myDsl_postfix_expression202', cardinality 0..*).
+'myDsl::expression::linha' (role 'myDsl_expression_linha468', cardinality 0..*) is associated with 'myDsl::expression::linha' (role 'myDsl_expression_linha470', cardinality 0..*).
+'myDsl::DirectAbstractDeclarratorLinhaAction' (role 'myDsl_DirectAbstractDeclarratorLinhaAction515', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator::linha' (role 'myDsl_direct_abstract_declarator_linha516', cardinality 0..*).
+'myDsl::primary::expression' (role 'myDsl_primary_expression', cardinality 0..*) is associated with 'myDsl::constant' (role 'myDsl_constant', cardinality 0..*).
+'myDsl::shift::expression::linha' (role 'myDsl_shift_expression_linha', cardinality 0..*) is associated with 'myDsl::shift::expression' (role 'myDsl_shift_expression279', cardinality 0..*).
+'myDsl::enumerator::list' (role 'myDsl_enumerator_list30', cardinality 0..*) is associated with 'myDsl::enumerator' (role 'myDsl_enumerator', cardinality 0..*).
+'myDsl::additive::expression' (role 'myDsl_additive_expression277', cardinality 0..*) is associated with 'myDsl::shift::expression' (role 'myDsl_shift_expression', cardinality 0..*).
+'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list456', cardinality 0..*) is associated with 'myDsl::type::name' (role 'myDsl_type_name455', cardinality 0..*).
+'myDsl::external::declaration' (role 'myDsl_external_declaration520', cardinality 0..*) is associated with 'myDsl::TranlationUnitLinhaAction' (role 'myDsl_TranlationUnitLinhaAction', cardinality 0..*).
+'myDsl::multiplicative::expression' (role 'myDsl_multiplicative_expression275', cardinality 0..*) is associated with 'myDsl::additive::expression::complement' (role 'myDsl_additive_expression_complement274', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name452', cardinality 0..*) is associated with 'myDsl::initializer::list' (role 'myDsl_initializer_list453', cardinality 0..*).
+'myDsl::function::definition' (role 'myDsl_function_definition88', cardinality 0..*) is associated with 'myDsl::declaration::list' (role 'myDsl_declaration_list', cardinality 0..*).
+'myDsl::pointer' (role 'myDsl_pointer', cardinality 0..*) is associated with 'myDsl::declarator' (role 'myDsl_declarator97', cardinality 0..*).
+'myDsl::postfix::expression' (role 'myDsl_postfix_expression234', cardinality 0..*) is associated with 'myDsl::unary::expression' (role 'myDsl_unary_expression', cardinality 0..*).
+'myDsl::selection::statement' (role 'myDsl_selection_statement346', cardinality 0..*) is associated with 'myDsl::statement' (role 'myDsl_statement347', cardinality 0..*).
+'myDsl::exclusive::or::expression' (role 'myDsl_exclusive_or_expression404', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression::linha' (role 'myDsl_inclusive_or_expression_linha403', cardinality 0..*).
+'myDsl::unary::expression' (role 'myDsl_unary_expression447', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression446', cardinality 0..*).
+'myDsl::additive::expression::linha' (role 'myDsl_additive_expression_linha270', cardinality 0..*) is associated with 'myDsl::additive::expression::linha' (role 'myDsl_additive_expression_linha272', cardinality 0..*).
+'myDsl::identifier::list' (role 'myDsl_identifier_list178', cardinality 0..*) is associated with 'myDsl::identifier::list::linha' (role 'myDsl_identifier_list_linha', cardinality 0..*).
+'myDsl::enumerator::list::linha' (role 'myDsl_enumerator_list_linha489', cardinality 0..*) is associated with 'myDsl::EnumeratorListLinhaAction' (role 'myDsl_EnumeratorListLinhaAction488', cardinality 0..*).
+'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list156', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator155', cardinality 0..*).
+'myDsl::generic::association' (role 'myDsl_generic_association', cardinality 0..*) is associated with 'myDsl::generic::assoc::list' (role 'myDsl_generic_assoc_list190', cardinality 0..*).
+'myDsl::type::specifier' (role 'myDsl_type_specifier22', cardinality 0..*) is associated with 'myDsl::atomic::type::specifier' (role 'myDsl_atomic_type_specifier', cardinality 0..*).
+'myDsl::enumeration::constant' (role 'myDsl_enumeration_constant', cardinality 0..*) is associated with 'myDsl::enumerator' (role 'myDsl_enumerator34', cardinality 0..*).
+'myDsl::function::definition' (role 'myDsl_function_definition82', cardinality 0..*) is associated with 'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers83', cardinality 0..*).
+'myDsl::initializer' (role 'myDsl_initializer207', cardinality 0..*) is associated with 'myDsl::initializer::list' (role 'myDsl_initializer_list206', cardinality 0..*).
+'myDsl::block::item' (role 'myDsl_block_item370', cardinality 0..*) is associated with 'myDsl::declaration' (role 'myDsl_declaration371', cardinality 0..*).
+'myDsl::direct::declarator::complemento' (role 'myDsl_direct_declarator_complemento126', cardinality 0..*) is associated with 'myDsl::parameter::type::list' (role 'myDsl_parameter_type_list', cardinality 0..*).
+'myDsl::selection::statement' (role 'myDsl_selection_statement349', cardinality 0..*) is associated with 'myDsl::statement' (role 'myDsl_statement350', cardinality 0..*).
+'myDsl::enumerator' (role 'myDsl_enumerator36', cardinality 0..*) is associated with 'myDsl::constant::expression' (role 'myDsl_constant_expression37', cardinality 0..*).
+'myDsl::struct::declaration::list' (role 'myDsl_struct_declaration_list48', cardinality 0..*) is associated with 'myDsl::struct::declaration::list::linha' (role 'myDsl_struct_declaration_list_linha', cardinality 0..*).
+'myDsl::shift::expression' (role 'myDsl_shift_expression289', cardinality 0..*) is associated with 'myDsl::relational::expression' (role 'myDsl_relational_expression', cardinality 0..*).
+'myDsl::relational::expression' (role 'myDsl_relational_expression301', cardinality 0..*) is associated with 'myDsl::equality::expression' (role 'myDsl_equality_expression', cardinality 0..*).
+'myDsl::init::declarator::list' (role 'myDsl_init_declarator_list477', cardinality 0..*) is associated with 'myDsl::init::declarator::list::linha' (role 'myDsl_init_declarator_list_linha478', cardinality 0..*).
+'myDsl::direct::declarator' (role 'myDsl_direct_declarator111', cardinality 0..*) is associated with 'myDsl::direct::declarator::linha' (role 'myDsl_direct_declarator_linha', cardinality 0..*).
+'myDsl::assignment::expression' (role 'myDsl_assignment_expression448', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression450', cardinality 0..*).
+'myDsl::selection::statement' (role 'myDsl_selection_statement343', cardinality 0..*) is associated with 'myDsl::expression' (role 'myDsl_expression344', cardinality 0..*).
+'myDsl::logical::or::expression::linha' (role 'myDsl_logical_or_expression_linha', cardinality 0..*) is associated with 'myDsl::logical::or::expression' (role 'myDsl_logical_or_expression421', cardinality 0..*).
+'myDsl::TypeQualifierListLinhaAtion' (role 'myDsl_TypeQualifierListLinhaAtion510', cardinality 0..*) is associated with 'myDsl::type::qualifier::list::linha' (role 'myDsl_type_qualifier_list_linha511', cardinality 0..*).
+'myDsl::additive::expression::linha' (role 'myDsl_additive_expression_linha269', cardinality 0..*) is associated with 'myDsl::additive::expression::complement' (role 'myDsl_additive_expression_complement', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression377', cardinality 0..*) is associated with 'myDsl::expression::statement' (role 'myDsl_expression_statement376', cardinality 0..*).
+'myDsl::init::declarator::list::linha' (role 'myDsl_init_declarator_list_linha538', cardinality 0..*) is associated with 'myDsl::InitializerListLinhaAction' (role 'myDsl_InitializerListLinhaAction537', cardinality 0..*).
+'myDsl::designator' (role 'myDsl_designator540', cardinality 0..*) is associated with 'myDsl::DesignatorListLinhaAction' (role 'myDsl_DesignatorListLinhaAction', cardinality 0..*).
+'myDsl::cast::expression' (role 'myDsl_cast_expression244', cardinality 0..*) is associated with 'myDsl::unary::expression' (role 'myDsl_unary_expression245', cardinality 0..*).
+'myDsl::initializer' (role 'myDsl_initializer', cardinality 0..*) is associated with 'myDsl::initializer::list' (role 'myDsl_initializer_list', cardinality 0..*).
+'myDsl::parameter::declaration' (role 'myDsl_parameter_declaration', cardinality 0..*) is associated with 'myDsl::parameter::lista' (role 'myDsl_parameter_lista132', cardinality 0..*).
+'myDsl::additive::expression' (role 'myDsl_additive_expression267', cardinality 0..*) is associated with 'myDsl::additive::expression::linha' (role 'myDsl_additive_expression_linha', cardinality 0..*).
+'myDsl::designator::list' (role 'myDsl_designator_list', cardinality 0..*) is associated with 'myDsl::designation' (role 'myDsl_designation216', cardinality 0..*).
+'myDsl::static::assert::declaration' (role 'myDsl_static_assert_declaration224', cardinality 0..*) is associated with 'myDsl::constant::expression' (role 'myDsl_constant_expression225', cardinality 0..*).
+'myDsl::direct::abstract::declarator::complement' (role 'myDsl_direct_abstract_declarator_complement', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression170', cardinality 0..*).
+'myDsl::designator::list' (role 'myDsl_designator_list220', cardinality 0..*) is associated with 'myDsl::designator::list::linha' (role 'myDsl_designator_list_linha', cardinality 0..*).
+'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator152', cardinality 0..*) is associated with 'myDsl::abstract::declarator' (role 'myDsl_abstract_declarator153', cardinality 0..*).
+'myDsl::declarator' (role 'myDsl_declarator481', cardinality 0..*) is associated with 'myDsl::init::declarator' (role 'myDsl_init_declarator480', cardinality 0..*).
+'myDsl::PostfixExpressionLinhaAction' (role 'myDsl_PostfixExpressionLinhaAction532', cardinality 0..*) is associated with 'myDsl::postfix::expression::linha' (role 'myDsl_postfix_expression_linha533', cardinality 0..*).
+'myDsl::logical::and::expression' (role 'myDsl_logical_and_expression419', cardinality 0..*) is associated with 'myDsl::logical::or::expression' (role 'myDsl_logical_or_expression', cardinality 0..*).
+'myDsl::exclusive::or::expression::linha' (role 'myDsl_exclusive_or_expression_linha397', cardinality 0..*) is associated with 'myDsl::exclusive::or::expression::linha' (role 'myDsl_exclusive_or_expression_linha395', cardinality 0..*).
+'myDsl::multiplicative::expression' (role 'myDsl_multiplicative_expression255', cardinality 0..*) is associated with 'myDsl::multiplicative::expression::linha' (role 'myDsl_multiplicative_expression_linha', cardinality 0..*).
+'myDsl::struct::declarator::list' (role 'myDsl_struct_declarator_list56', cardinality 0..*) is associated with 'myDsl::struct::declarator' (role 'myDsl_struct_declarator', cardinality 0..*).
+'myDsl::parameter::list::linha' (role 'myDsl_parameter_list_linha135', cardinality 0..*) is associated with 'myDsl::parameter::list::linha' (role 'myDsl_parameter_list_linha137', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::translation::unit' (role 'myDsl_translation_unit', cardinality 0..*).
+'myDsl::equality::expression::linha' (role 'myDsl_equality_expression_linha306', cardinality 0..*) is associated with 'myDsl::equality::expression::linha' (role 'myDsl_equality_expression_linha308', cardinality 0..*).
+'myDsl::declarator' (role 'myDsl_declarator143', cardinality 0..*) is associated with 'myDsl::parameter::declaration' (role 'myDsl_parameter_declaration142', cardinality 0..*).
+'myDsl::struct::or::union::specifier' (role 'myDsl_struct_or_union_specifier44', cardinality 0..*) is associated with 'myDsl::struct::or::union::specifier::complement' (role 'myDsl_struct_or_union_specifier_complement', cardinality 0..*).
+'myDsl::type::qualifier::list::linha' (role 'myDsl_type_qualifier_list_linha', cardinality 0..*) is associated with 'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list109', cardinality 0..*).
+'myDsl::multiplicative::expression::complement' (role 'myDsl_multiplicative_expression_complement262', cardinality 0..*) is associated with 'myDsl::cast::expression' (role 'myDsl_cast_expression263', cardinality 0..*).
+'myDsl::struct::declaration' (role 'myDsl_struct_declaration52', cardinality 0..*) is associated with 'myDsl::struct::declarator::list' (role 'myDsl_struct_declarator_list', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name195', cardinality 0..*) is associated with 'myDsl::generic::association' (role 'myDsl_generic_association194', cardinality 0..*).
+'myDsl::relational::expression::linha' (role 'myDsl_relational_expression_linha293', cardinality 0..*) is associated with 'myDsl::shift::expression::complement' (role 'myDsl_shift_expression_complement294', cardinality 0..*).
+'myDsl::direct::abstract::declarator::linha' (role 'myDsl_direct_abstract_declarator_linha', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator164', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression', cardinality 0..*) is associated with 'myDsl::primary::expression' (role 'myDsl_primary_expression181', cardinality 0..*).
+'myDsl::StructOrUnionSpecifierComplementAction' (role 'myDsl_StructOrUnionSpecifierComplementAction', cardinality 0..*) is associated with 'myDsl::struct::declaration::list' (role 'myDsl_struct_declaration_list491', cardinality 0..*).
+'myDsl::conditional::expression::linha' (role 'myDsl_conditional_expression_linha439', cardinality 0..*) is associated with 'myDsl::conditional::expression::linha' (role 'myDsl_conditional_expression_linha441', cardinality 0..*).
+'myDsl::init::declarator::list' (role 'myDsl_init_declarator_list475', cardinality 0..*) is associated with 'myDsl::init::declarator' (role 'myDsl_init_declarator', cardinality 0..*).
+'myDsl::ArgumentExpressionListLinhaAction' (role 'myDsl_ArgumentExpressionListLinhaAction547', cardinality 0..*) is associated with 'myDsl::argument::expression::list::linha' (role 'myDsl_argument_expression_list_linha', cardinality 0..*).
+'myDsl::relational::expression::linha' (role 'myDsl_relational_expression_linha', cardinality 0..*) is associated with 'myDsl::relational::expression' (role 'myDsl_relational_expression291', cardinality 0..*).
+'myDsl::multiplicative::expression::linha' (role 'myDsl_multiplicative_expression_linha260', cardinality 0..*) is associated with 'myDsl::multiplicative::expression::linha' (role 'myDsl_multiplicative_expression_linha258', cardinality 0..*).
+'myDsl::block::item::list' (role 'myDsl_block_item_list360', cardinality 0..*) is associated with 'myDsl::block::item' (role 'myDsl_block_item', cardinality 0..*).
+'myDsl::parameter::lista' (role 'myDsl_parameter_lista', cardinality 0..*) is associated with 'myDsl::parameter::type::list' (role 'myDsl_parameter_type_list130', cardinality 0..*).
+'myDsl::iteration::statement' (role 'myDsl_iteration_statement337', cardinality 0..*) is associated with 'myDsl::expression::statement' (role 'myDsl_expression_statement338', cardinality 0..*).
+'myDsl::conditional::expression' (role 'myDsl_conditional_expression444', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression443', cardinality 0..*).
+'myDsl::declaration' (role 'myDsl_declaration77', cardinality 0..*) is associated with 'myDsl::init::declarator::list' (role 'myDsl_init_declarator_list', cardinality 0..*).
+'myDsl::initializer::list::complement' (role 'myDsl_initializer_list_complement', cardinality 0..*) is associated with 'myDsl::designation' (role 'myDsl_designation211', cardinality 0..*).
+'myDsl::type::specifier' (role 'myDsl_type_specifier24', cardinality 0..*) is associated with 'myDsl::struct::or::union::specifier' (role 'myDsl_struct_or_union_specifier', cardinality 0..*).
+'myDsl::generic::selection' (role 'myDsl_generic_selection185', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression186', cardinality 0..*).
+'myDsl::translation::unit' (role 'myDsl_translation_unit2', cardinality 0..*) is associated with 'myDsl::external::declaration' (role 'myDsl_external_declaration', cardinality 0..*).
+'myDsl::struct::declarator' (role 'myDsl_struct_declarator63', cardinality 0..*) is associated with 'myDsl::declarator' (role 'myDsl_declarator', cardinality 0..*).
+'myDsl::declaration' (role 'myDsl_declaration341', cardinality 0..*) is associated with 'myDsl::iteration::statement' (role 'myDsl_iteration_statement340', cardinality 0..*).
+'myDsl::expression::linha' (role 'myDsl_expression_linha466', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression467', cardinality 0..*).
+'myDsl::conditional::expression' (role 'myDsl_conditional_expression438', cardinality 0..*) is associated with 'myDsl::conditional::expression::linha' (role 'myDsl_conditional_expression_linha437', cardinality 0..*).
+'myDsl::and::expression' (role 'myDsl_and_expression394', cardinality 0..*) is associated with 'myDsl::exclusive::or::expression::linha' (role 'myDsl_exclusive_or_expression_linha393', cardinality 0..*).
+'myDsl::block::item::list::linha' (role 'myDsl_block_item_list_linha368', cardinality 0..*) is associated with 'myDsl::block::item::list::linha' (role 'myDsl_block_item_list_linha366', cardinality 0..*).
+'myDsl::initializer' (role 'myDsl_initializer214', cardinality 0..*) is associated with 'myDsl::initializer::list::complement' (role 'myDsl_initializer_list_complement213', cardinality 0..*).
+'myDsl::PostfixExpressionLinhaAction' (role 'myDsl_PostfixExpressionLinhaAction', cardinality 0..*) is associated with 'myDsl::postfix::expression::complement' (role 'myDsl_postfix_expression_complement530', cardinality 0..*).
+'myDsl::init::declarator' (role 'myDsl_init_declarator549', cardinality 0..*) is associated with 'myDsl::InitDecclaratorListLinhaAction' (role 'myDsl_InitDecclaratorListLinhaAction', cardinality 0..*).
+'myDsl::logical::and::expression' (role 'myDsl_logical_and_expression424', cardinality 0..*) is associated with 'myDsl::logical::or::expression::linha' (role 'myDsl_logical_or_expression_linha423', cardinality 0..*).
+'myDsl::pointer' (role 'myDsl_pointer101', cardinality 0..*) is associated with 'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list', cardinality 0..*).
+'myDsl::argument::expression::list' (role 'myDsl_argument_expression_list', cardinality 0..*) is associated with 'myDsl::postfix::expression::complement' (role 'myDsl_postfix_expression_complement229', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name248', cardinality 0..*) is associated with 'myDsl::cast::expression' (role 'myDsl_cast_expression247', cardinality 0..*).
+'myDsl::parameter::list::linha' (role 'myDsl_parameter_list_linha', cardinality 0..*) is associated with 'myDsl::parameter::declaration' (role 'myDsl_parameter_declaration134', cardinality 0..*).
+'myDsl::logical::and::expression' (role 'myDsl_logical_and_expression', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression' (role 'myDsl_inclusive_or_expression409', cardinality 0..*).
+'myDsl::logical::and::expression::linha' (role 'myDsl_logical_and_expression_linha413', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression' (role 'myDsl_inclusive_or_expression414', cardinality 0..*).
+'myDsl::struct::declaration' (role 'myDsl_struct_declaration54', cardinality 0..*) is associated with 'myDsl::static::assert::declaration' (role 'myDsl_static_assert_declaration', cardinality 0..*).
+'myDsl::argument::expression::list' (role 'myDsl_argument_expression_list231', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression232', cardinality 0..*).
+'myDsl::initializer::list::complement' (role 'myDsl_initializer_list_complement535', cardinality 0..*) is associated with 'myDsl::InitializerListLinhaAction' (role 'myDsl_InitializerListLinhaAction', cardinality 0..*).
+'myDsl::compound::statement' (role 'myDsl_compound_statement', cardinality 0..*) is associated with 'myDsl::function::definition' (role 'myDsl_function_definition90', cardinality 0..*).
+'myDsl::postfix::expression' (role 'myDsl_postfix_expression', cardinality 0..*) is associated with 'myDsl::primary::expression' (role 'myDsl_primary_expression200', cardinality 0..*).
+'myDsl::declaration::list' (role 'myDsl_declaration_list95', cardinality 0..*) is associated with 'myDsl::declaration::list::linha' (role 'myDsl_declaration_list_linha', cardinality 0..*).
+'myDsl::identifier::list' (role 'myDsl_identifier_list', cardinality 0..*) is associated with 'myDsl::direct::declarator::complemento' (role 'myDsl_direct_declarator_complemento128', cardinality 0..*).
+'myDsl::StructDeclaratorListLinhaAction' (role 'myDsl_StructDeclaratorListLinhaAction', cardinality 0..*) is associated with 'myDsl::struct::declarator' (role 'myDsl_struct_declarator498', cardinality 0..*).
+'myDsl::direct::declarator::complemento' (role 'myDsl_direct_declarator_complemento', cardinality 0..*) is associated with 'myDsl::direct::declarator::linha' (role 'myDsl_direct_declarator_linha116', cardinality 0..*).
+'myDsl::expression' (role 'myDsl_expression435', cardinality 0..*) is associated with 'myDsl::conditional::expression::linha' (role 'myDsl_conditional_expression_linha434', cardinality 0..*).
+'myDsl::type::qualifier' (role 'myDsl_type_qualifier508', cardinality 0..*) is associated with 'myDsl::TypeQualifierListLinhaAtion' (role 'myDsl_TypeQualifierListLinhaAtion', cardinality 0..*).
+'myDsl::type::qualifier' (role 'myDsl_type_qualifier107', cardinality 0..*) is associated with 'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list106', cardinality 0..*).
+'myDsl::assignment::expression' (role 'myDsl_assignment_expression', cardinality 0..*) is associated with 'myDsl::direct::declarator::complemento' (role 'myDsl_direct_declarator_complemento124', cardinality 0..*).
+'myDsl::labeled::statement' (role 'myDsl_labeled_statement355', cardinality 0..*) is associated with 'myDsl::conditional::expression' (role 'myDsl_conditional_expression356', cardinality 0..*).
+'myDsl::type::qualifier' (role 'myDsl_type_qualifier', cardinality 0..*) is associated with 'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers14', cardinality 0..*).
+'myDsl::translation::unit::linha' (role 'myDsl_translation_unit_linha', cardinality 0..*) is associated with 'myDsl::translation::unit' (role 'myDsl_translation_unit4', cardinality 0..*).
+'myDsl::type::specifier' (role 'myDsl_type_specifier26', cardinality 0..*) is associated with 'myDsl::enum::specifier' (role 'myDsl_enum_specifier', cardinality 0..*).
+'myDsl::enumerator::list::linha' (role 'myDsl_enumerator_list_linha', cardinality 0..*) is associated with 'myDsl::enumerator::list' (role 'myDsl_enumerator_list32', cardinality 0..*).
+'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list67', cardinality 0..*) is associated with 'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list69', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement314', cardinality 0..*) is associated with 'myDsl::compound::statement' (role 'myDsl_compound_statement315', cardinality 0..*).
+'myDsl::block::item' (role 'myDsl_block_item365', cardinality 0..*) is associated with 'myDsl::block::item::list::linha' (role 'myDsl_block_item_list_linha364', cardinality 0..*).
+'myDsl::struct::declaration::list' (role 'myDsl_struct_declaration_list46', cardinality 0..*) is associated with 'myDsl::struct::declaration' (role 'myDsl_struct_declaration', cardinality 0..*).
+'myDsl::direct::declarator' (role 'myDsl_direct_declarator113', cardinality 0..*) is associated with 'myDsl::declarator' (role 'myDsl_declarator114', cardinality 0..*).
+'myDsl::function::definition' (role 'myDsl_function_definition', cardinality 0..*) is associated with 'myDsl::external::declaration' (role 'myDsl_external_declaration6', cardinality 0..*).
+'myDsl::StructDeclarationListLinhaAction' (role 'myDsl_StructDeclarationListLinhaAction', cardinality 0..*) is associated with 'myDsl::struct::declaration' (role 'myDsl_struct_declaration493', cardinality 0..*).
+'myDsl::inclusive::or::expression::linha' (role 'myDsl_inclusive_or_expression_linha405', cardinality 0..*) is associated with 'myDsl::inclusive::or::expression::linha' (role 'myDsl_inclusive_or_expression_linha407', cardinality 0..*).
+'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers16', cardinality 0..*) is associated with 'myDsl::alignment::specifier' (role 'myDsl_alignment_specifier', cardinality 0..*).
+'myDsl::designator' (role 'myDsl_designator222', cardinality 0..*) is associated with 'myDsl::conditional::expression' (role 'myDsl_conditional_expression', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement323', cardinality 0..*) is associated with 'myDsl::jump::statement' (role 'myDsl_jump_statement', cardinality 0..*).
+'myDsl::declaration' (role 'myDsl_declaration93', cardinality 0..*) is associated with 'myDsl::declaration::list' (role 'myDsl_declaration_list92', cardinality 0..*).
+'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list71', cardinality 0..*) is associated with 'myDsl::type::qualifier' (role 'myDsl_type_qualifier72', cardinality 0..*).
+'myDsl::struct::declaration::list::linha' (role 'myDsl_struct_declaration_list_linha496', cardinality 0..*) is associated with 'myDsl::StructDeclarationListLinhaAction' (role 'myDsl_StructDeclarationListLinhaAction495', cardinality 0..*).
+'myDsl::conditional::expression::linha' (role 'myDsl_conditional_expression_linha', cardinality 0..*) is associated with 'myDsl::conditional::expression' (role 'myDsl_conditional_expression432', cardinality 0..*).
+'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list122', cardinality 0..*) is associated with 'myDsl::direct::declarator::complemento' (role 'myDsl_direct_declarator_complemento121', cardinality 0..*).
+'myDsl::declaration' (role 'myDsl_declaration', cardinality 0..*) is associated with 'myDsl::external::declaration' (role 'myDsl_external_declaration8', cardinality 0..*).
+'myDsl::pointer' (role 'myDsl_pointer104', cardinality 0..*) is associated with 'myDsl::pointer' (role 'myDsl_pointer102', cardinality 0..*).
+'myDsl::parameter::declaration' (role 'myDsl_parameter_declaration139', cardinality 0..*) is associated with 'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers140', cardinality 0..*).
+'myDsl::alignment::specifier' (role 'myDsl_alignment_specifier20', cardinality 0..*) is associated with 'myDsl::constant::expression' (role 'myDsl_constant_expression', cardinality 0..*).
+'myDsl::multiplicative::expression' (role 'myDsl_multiplicative_expression', cardinality 0..*) is associated with 'myDsl::cast::expression' (role 'myDsl_cast_expression253', cardinality 0..*).
+'myDsl::designation' (role 'myDsl_designation', cardinality 0..*) is associated with 'myDsl::initializer::list' (role 'myDsl_initializer_list204', cardinality 0..*).
+'myDsl::unary::expression' (role 'myDsl_unary_expression235', cardinality 0..*) is associated with 'myDsl::unary::expression' (role 'myDsl_unary_expression237', cardinality 0..*).
+'myDsl::and::expression' (role 'myDsl_and_expression', cardinality 0..*) is associated with 'myDsl::equality::expression' (role 'myDsl_equality_expression379', cardinality 0..*).
+'myDsl::DesignatorListLinhaAction' (role 'myDsl_DesignatorListLinhaAction542', cardinality 0..*) is associated with 'myDsl::declaration::list::linha' (role 'myDsl_declaration_list_linha543', cardinality 0..*).
+'myDsl::abstract::declarator' (role 'myDsl_abstract_declarator', cardinality 0..*) is associated with 'myDsl::parameter::declaration' (role 'myDsl_parameter_declaration145', cardinality 0..*).
+'myDsl::struct::declaration' (role 'myDsl_struct_declaration50', cardinality 0..*) is associated with 'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list', cardinality 0..*).
+'myDsl::generic::assoc::list::linha' (role 'myDsl_generic_assoc_list_linha528', cardinality 0..*) is associated with 'myDsl::GenericAssocListLinhaAction' (role 'myDsl_GenericAssocListLinhaAction527', cardinality 0..*).
+'myDsl::type::name' (role 'myDsl_type_name', cardinality 0..*) is associated with 'myDsl::alignment::specifier' (role 'myDsl_alignment_specifier18', cardinality 0..*).
+'myDsl::direct::declarator::linha' (role 'myDsl_direct_declarator_linha117', cardinality 0..*) is associated with 'myDsl::direct::declarator::linha' (role 'myDsl_direct_declarator_linha119', cardinality 0..*).
+'myDsl::equality::expression::linha' (role 'myDsl_equality_expression_linha', cardinality 0..*) is associated with 'myDsl::equality::expression' (role 'myDsl_equality_expression303', cardinality 0..*).
+'myDsl::EnumeratorListLinhaAction' (role 'myDsl_EnumeratorListLinhaAction', cardinality 0..*) is associated with 'myDsl::enumerator' (role 'myDsl_enumerator486', cardinality 0..*).
+'myDsl::static::assert::declaration' (role 'myDsl_static_assert_declaration80', cardinality 0..*) is associated with 'myDsl::declaration' (role 'myDsl_declaration79', cardinality 0..*).
+'myDsl::direct::abstract::declarator::complement' (role 'myDsl_direct_abstract_declarator_complement172', cardinality 0..*) is associated with 'myDsl::type::qualifier::list' (role 'myDsl_type_qualifier_list173', cardinality 0..*).
+'myDsl::struct::declarator' (role 'myDsl_struct_declarator60', cardinality 0..*) is associated with 'myDsl::constant::expression' (role 'myDsl_constant_expression61', cardinality 0..*).
+'myDsl::parameter::type::list' (role 'myDsl_parameter_type_list162', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator' (role 'myDsl_direct_abstract_declarator161', cardinality 0..*).
+'myDsl::logical::or::expression' (role 'myDsl_logical_or_expression430', cardinality 0..*) is associated with 'myDsl::conditional::expression' (role 'myDsl_conditional_expression429', cardinality 0..*).
+'myDsl::relational::expression' (role 'myDsl_relational_expression311', cardinality 0..*) is associated with 'myDsl::equality::expression::complement' (role 'myDsl_equality_expression_complement310', cardinality 0..*).
+'myDsl::direct::declarator' (role 'myDsl_direct_declarator', cardinality 0..*) is associated with 'myDsl::declarator' (role 'myDsl_declarator99', cardinality 0..*).
+'myDsl::translation::unit::linha' (role 'myDsl_translation_unit_linha523', cardinality 0..*) is associated with 'myDsl::TranlationUnitLinhaAction' (role 'myDsl_TranlationUnitLinhaAction522', cardinality 0..*).
+'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers75', cardinality 0..*) is associated with 'myDsl::declaration' (role 'myDsl_declaration74', cardinality 0..*).
+'myDsl::pointer' (role 'myDsl_pointer148', cardinality 0..*) is associated with 'myDsl::abstract::declarator' (role 'myDsl_abstract_declarator147', cardinality 0..*).
+'myDsl::generic::association' (role 'myDsl_generic_association197', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression198', cardinality 0..*).
+'myDsl::logical::and::expression' (role 'myDsl_logical_and_expression411', cardinality 0..*) is associated with 'myDsl::logical::and::expression::linha' (role 'myDsl_logical_and_expression_linha', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement374', cardinality 0..*) is associated with 'myDsl::block::item' (role 'myDsl_block_item373', cardinality 0..*).
+'myDsl::initializer' (role 'myDsl_initializer484', cardinality 0..*) is associated with 'myDsl::init::declarator' (role 'myDsl_init_declarator483', cardinality 0..*).
+'myDsl::initializer' (role 'myDsl_initializer167', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression168', cardinality 0..*).
+'myDsl::unary::expression' (role 'myDsl_unary_expression239', cardinality 0..*) is associated with 'myDsl::cast::expression' (role 'myDsl_cast_expression', cardinality 0..*).
+'myDsl::DirectAbstractDeclarratorLinhaAction' (role 'myDsl_DirectAbstractDeclarratorLinhaAction', cardinality 0..*) is associated with 'myDsl::direct::abstract::declarator::complement' (role 'myDsl_direct_abstract_declarator_complement513', cardinality 0..*).
+'myDsl::declarator' (role 'myDsl_declarator86', cardinality 0..*) is associated with 'myDsl::function::definition' (role 'myDsl_function_definition85', cardinality 0..*).
+'myDsl::generic::selection' (role 'myDsl_generic_selection', cardinality 0..*) is associated with 'myDsl::primary::expression' (role 'myDsl_primary_expression183', cardinality 0..*).
+'myDsl::and::expression' (role 'myDsl_and_expression381', cardinality 0..*) is associated with 'myDsl::and::expression::linha' (role 'myDsl_and_expression_linha', cardinality 0..*).
+'myDsl::multiplicative::expression::complement' (role 'myDsl_multiplicative_expression_complement', cardinality 0..*) is associated with 'myDsl::multiplicative::expression::linha' (role 'myDsl_multiplicative_expression_linha257', cardinality 0..*).
+'myDsl::shift::expression' (role 'myDsl_shift_expression299', cardinality 0..*) is associated with 'myDsl::relational::expression::complement' (role 'myDsl_relational_expression_complement', cardinality 0..*).
+'myDsl::declaration' (role 'myDsl_declaration503', cardinality 0..*) is associated with 'myDsl::DeclarationListLinhaAction' (role 'myDsl_DeclarationListLinhaAction', cardinality 0..*).
+'myDsl::init::declarator::list::linha' (role 'myDsl_init_declarator_list_linha552', cardinality 0..*) is associated with 'myDsl::InitDecclaratorListLinhaAction' (role 'myDsl_InitDecclaratorListLinhaAction551', cardinality 0..*).
+'myDsl::enum::specifier' (role 'myDsl_enum_specifier28', cardinality 0..*) is associated with 'myDsl::enumerator::list' (role 'myDsl_enumerator_list', cardinality 0..*).
+'myDsl::ArgumentExpressionListLinhaAction' (role 'myDsl_ArgumentExpressionListLinhaAction', cardinality 0..*) is associated with 'myDsl::assignment::expression' (role 'myDsl_assignment_expression545', cardinality 0..*).
+'myDsl::GenericAssocListLinhaAction' (role 'myDsl_GenericAssocListLinhaAction', cardinality 0..*) is associated with 'myDsl::generic::association' (role 'myDsl_generic_association525', cardinality 0..*).
+'myDsl::struct::or::union::specifier' (role 'myDsl_struct_or_union_specifier42', cardinality 0..*) is associated with 'myDsl::struct::declaration::list' (role 'myDsl_struct_declaration_list', cardinality 0..*).
+'myDsl::initializer::list' (role 'myDsl_initializer_list209', cardinality 0..*) is associated with 'myDsl::init::declarator::list::linha' (role 'myDsl_init_declarator_list_linha', cardinality 0..*).
+'myDsl::exclusive::or::expression::linha' (role 'myDsl_exclusive_or_expression_linha', cardinality 0..*) is associated with 'myDsl::exclusive::or::expression' (role 'myDsl_exclusive_or_expression391', cardinality 0..*).
+'myDsl::DeclarationListLinhaAction' (role 'myDsl_DeclarationListLinhaAction505', cardinality 0..*) is associated with 'myDsl::declaration::list::linha' (role 'myDsl_declaration_list_linha506', cardinality 0..*).
+'myDsl::equality::expression::complement' (role 'myDsl_equality_expression_complement', cardinality 0..*) is associated with 'myDsl::equality::expression::linha' (role 'myDsl_equality_expression_linha305', cardinality 0..*).
+'myDsl::specifier::qualifier::list' (role 'myDsl_specifier_qualifier_list65', cardinality 0..*) is associated with 'myDsl::type::specifier' (role 'myDsl_type_specifier66', cardinality 0..*).
+'myDsl::direct::abstract::declarator::complement' (role 'myDsl_direct_abstract_declarator_complement175', cardinality 0..*) is associated with 'myDsl::parameter::type::list' (role 'myDsl_parameter_type_list176', cardinality 0..*).
+'myDsl::declaration::specifiers' (role 'myDsl_declaration_specifiers12', cardinality 0..*) is associated with 'myDsl::type::specifier' (role 'myDsl_type_specifier', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement317', cardinality 0..*) is associated with 'myDsl::expression::statement' (role 'myDsl_expression_statement', cardinality 0..*).
+'myDsl::statement' (role 'myDsl_statement353', cardinality 0..*) is associated with 'myDsl::labeled::statement' (role 'myDsl_labeled_statement352', cardinality 0..*).
+'myDsl::shift::expression::complement' (role 'myDsl_shift_expression_complement', cardinality 0..*) is associated with 'myDsl::shift::expression::linha' (role 'myDsl_shift_expression_linha281', cardinality 0..*).
+'myDsl::equality::expression' (role 'myDsl_equality_expression384', cardinality 0..*) is associated with 'myDsl::and::expression::linha' (role 'myDsl_and_expression_linha383', cardinality 0..*).

@@ -1,0 +1,67 @@
+The model has 23 class(es).
+The class 'megal::MegalLink' has the following attributes: 'to' of type str.
+The class 'megal::MegalRelationship' has no attributes.
+The class 'megal::MegalNamed' has the following attributes: 'name' of type str.
+The class 'megal::QueryStatement' has no attributes.
+The class 'MegalElement' has no attributes.
+The class 'megal::QueryPos' has the following attributes: 'value' of type int.
+The class 'megal::MegalEntityType' has no attributes.
+The class 'megal::QueryEntry' has no attributes.
+The class 'megal::QueryEntity' has no attributes.
+The class 'megal::MegalDeclaration' has no attributes.
+The class 'QueryEntry' has no attributes.
+The class 'megal::Selection' has no attributes.
+The class 'MegalDeclaration' has no attributes.
+The class 'MegalNamed' has no attributes.
+The class 'megal::QueryReference' has no attributes.
+The class 'megal::MegalPair' has no attributes.
+The class 'megal::MegalFile' has the following attributes: 'name' of type str.
+The class 'megal::MegalElement' has no attributes.
+The class 'megal::MegalRelationshipType' has the following attributes: 'leftBoth' of type bool; 'rightMany' of type bool; 'rightBoth' of type bool; 'leftMany' of type bool.
+The class 'megal::QueryParam' has the following attributes: 'name' of type str.
+The class 'megal::MegalAnnotation' has the following attributes: 'key' of type str.
+The class 'megal::QueryString' has the following attributes: 'value' of type str.
+The class 'megal::MegalEntity' has the following attributes: 'many' of type bool.
+'megal::MegalNamed' is a specialization of 'MegalDeclaration'.
+'megal::MegalRelationship' is a specialization of 'MegalDeclaration'.
+'megal::QueryEntity' is a specialization of 'QueryEntry'.
+'megal::MegalDeclaration' is a specialization of 'MegalElement'.
+'megal::QueryParam' is a specialization of 'QueryEntry'.
+'megal::MegalLink' is a specialization of 'MegalElement'.
+'megal::MegalEntityType' is a specialization of 'MegalNamed'.
+'megal::MegalRelationshipType' is a specialization of 'MegalNamed'.
+'megal::MegalEntity' is a specialization of 'MegalNamed'.
+'megal::QueryString' is a specialization of 'QueryEntry'.
+'megal::QueryPos' is a specialization of 'QueryEntry'.
+'megal::MegalPair' is a specialization of 'MegalDeclaration'.
+'megal::MegalFile' is a specialization of 'MegalElement'.
+'megal::QueryReference' is a specialization of 'QueryEntry'.
+'megal::MegalEntity' (role 'megal_MegalEntity31', cardinality 0..*) is associated with 'megal::MegalPair' (role 'megal_MegalPair30', cardinality 0..*).
+'megal::MegalLink' (role 'megal_MegalLink10', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity', cardinality 0..*).
+'megal::MegalEntityType' (role 'megal_MegalEntityType66', cardinality 0..*) is associated with 'megal::QueryParam' (role 'megal_QueryParam', cardinality 0..*).
+'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType41', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity42', cardinality 0..*).
+'megal::QueryStatement' (role 'megal_QueryStatement', cardinality 0..*) is associated with 'megal::Selection' (role 'megal_Selection55', cardinality 0..*).
+'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType61', cardinality 0..*) is associated with 'megal::QueryStatement' (role 'megal_QueryStatement60', cardinality 0..*).
+'megal::QueryEntry' (role 'megal_QueryEntry', cardinality 0..*) is associated with 'megal::Selection' (role 'megal_Selection53', cardinality 0..*).
+'megal::MegalFile' (role 'megal_MegalFile5', cardinality 0..*) is associated with 'megal::MegalLink' (role 'megal_MegalLink', cardinality 0..*).
+'megal::QueryStatement' (role 'megal_QueryStatement63', cardinality 0..*) is associated with 'megal::QueryEntry' (role 'megal_QueryEntry64', cardinality 0..*).
+'megal::QueryParam' (role 'megal_QueryParam68', cardinality 0..*) is associated with 'megal::QueryReference' (role 'megal_QueryReference', cardinality 0..*).
+'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType38', cardinality 0..*) is associated with 'megal::MegalEntityType' (role 'megal_MegalEntityType39', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity13', cardinality 0..*) is associated with 'megal::MegalLink' (role 'megal_MegalLink12', cardinality 0..*).
+'megal::MegalEntityType' (role 'megal_MegalEntityType36', cardinality 0..*) is associated with 'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType35', cardinality 0..*).
+'megal::MegalFile' (role 'megal_MegalFile6', cardinality 0..*) is associated with 'megal::MegalFile' (role 'megal_MegalFile8', cardinality 0..*).
+'megal::MegalAnnotation' (role 'megal_MegalAnnotation', cardinality 0..*) is associated with 'megal::Selection' (role 'megal_Selection', cardinality 0..*).
+'megal::MegalEntityType' (role 'megal_MegalEntityType32', cardinality 0..*) is associated with 'megal::MegalEntityType' (role 'megal_MegalEntityType', cardinality 0..*).
+'megal::QueryEntity' (role 'megal_QueryEntity', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity70', cardinality 0..*).
+'megal::MegalPair' (role 'megal_MegalPair', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity25', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity47', cardinality 0..*) is associated with 'megal::MegalEntityType' (role 'megal_MegalEntityType48', cardinality 0..*).
+'megal::QueryEntry' (role 'megal_QueryEntry58', cardinality 0..*) is associated with 'megal::QueryStatement' (role 'megal_QueryStatement57', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity49', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity51', cardinality 0..*).
+'megal::MegalRelationship' (role 'megal_MegalRelationship22', cardinality 0..*) is associated with 'megal::MegalEntity' (role 'megal_MegalEntity23', cardinality 0..*).
+'megal::MegalDeclaration' (role 'megal_MegalDeclaration', cardinality 0..*) is associated with 'megal::MegalFile' (role 'megal_MegalFile', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity16', cardinality 0..*) is associated with 'megal::MegalLink' (role 'megal_MegalLink15', cardinality 0..*).
+'megal::MegalRelationship' (role 'megal_MegalRelationship', cardinality 0..*) is associated with 'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity28', cardinality 0..*) is associated with 'megal::MegalPair' (role 'megal_MegalPair27', cardinality 0..*).
+'megal::MegalAnnotation' (role 'megal_MegalAnnotation2', cardinality 0..*) is associated with 'megal::MegalElement' (role 'megal_MegalElement', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity20', cardinality 0..*) is associated with 'megal::MegalRelationship' (role 'megal_MegalRelationship19', cardinality 0..*).
+'megal::MegalEntity' (role 'megal_MegalEntity45', cardinality 0..*) is associated with 'megal::MegalRelationshipType' (role 'megal_MegalRelationshipType44', cardinality 0..*).

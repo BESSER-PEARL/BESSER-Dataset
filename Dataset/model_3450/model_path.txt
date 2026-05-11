@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tfisher1226/ARIES/bookshop2/bookshop2-shipper/bookshop2-shipper-service/src/main/resources/model/sgiusa/infosgi.ecore

@@ -1,0 +1,44 @@
+The model has 21 class(es).
+The class 'RefMethod' has no attributes.
+The class 'RefDataType' has no attributes.
+The class 'RefClass' has no attributes.
+The class 'RefPackage' has no attributes.
+The class 'RefAssociation' has no attributes.
+The class 'class::diagramm::RefDataType' has no attributes.
+The class 'class::diagramm::Association' has the following attributes: 'maxCardinality' of type int; 'minCardinality' of type int; 'name' of type str; 'isAggregation' of type bool.
+The class 'RefParameter' has no attributes.
+The class 'class::diagramm::RefAssociation' has no attributes.
+The class 'class::diagramm::RefAttribute' has no attributes.
+The class 'class::diagramm::DataType' has the following attributes: 'name' of type str.
+The class 'class::diagramm::Class' has the following attributes: 'modifier' of type str; 'name' of type str.
+The class 'class::diagramm::Attribute' has the following attributes: 'modifier' of type str; 'name' of type str.
+The class 'class::diagramm::Method' has the following attributes: 'modifier' of type str; 'name' of type str.
+The class 'class::diagramm::RefPackage' has no attributes.
+The class 'class::diagramm::RefParameter' has no attributes.
+The class 'class::diagramm::RefMethod' has no attributes.
+The class 'class::diagramm::Parameter' has the following attributes: 'name' of type str.
+The class 'RefAttribute' has no attributes.
+The class 'class::diagramm::RefClass' has no attributes.
+The class 'class::diagramm::Package' has the following attributes: 'name' of type str.
+The enumeration 'ModifierType' has the following literals: 'abstract', 'static', 'protected', 'private', 'public', 'final'.
+'class::diagramm::DataType' is a specialization of 'RefDataType'.
+'class::diagramm::Method' is a specialization of 'RefMethod'.
+'class::diagramm::Attribute' is a specialization of 'RefAttribute'.
+'class::diagramm::Class' is a specialization of 'RefClass'.
+'class::diagramm::Package' is a specialization of 'RefPackage'.
+'class::diagramm::Parameter' is a specialization of 'RefParameter'.
+'class::diagramm::Association' is a specialization of 'RefAssociation'.
+'class::diagramm::RefClass' (role 'class_diagramm_RefClass29', cardinality 0..*) is associated with 'class::diagramm::Association' (role 'class_diagramm_Association28', cardinality 0..*).
+'class::diagramm::Package' (role 'class_diagramm_Package2', cardinality 0..*) is associated with 'class::diagramm::RefClass' (role 'class_diagramm_RefClass', cardinality 0..*).
+'class::diagramm::Class' (role 'class_diagramm_Class', cardinality 0..*) is associated with 'class::diagramm::RefClass' (role 'class_diagramm_RefClass20', cardinality 0..*).
+'class::diagramm::Association' (role 'class_diagramm_Association', cardinality 0..*) is associated with 'class::diagramm::RefClass' (role 'class_diagramm_RefClass26', cardinality 0..*).
+'class::diagramm::RefDataType' (role 'class_diagramm_RefDataType13', cardinality 0..*) is associated with 'class::diagramm::Attribute' (role 'class_diagramm_Attribute12', cardinality 0..*).
+'class::diagramm::RefAssociation' (role 'class_diagramm_RefAssociation', cardinality 0..*) is associated with 'class::diagramm::Package' (role 'class_diagramm_Package', cardinality 0..*).
+'class::diagramm::RefClass' (role 'class_diagramm_RefClass15', cardinality 0..*) is associated with 'class::diagramm::Parameter' (role 'class_diagramm_Parameter', cardinality 0..*).
+'class::diagramm::RefDataType' (role 'class_diagramm_RefDataType', cardinality 0..*) is associated with 'class::diagramm::Method' (role 'class_diagramm_Method8', cardinality 0..*).
+'class::diagramm::Class' (role 'class_diagramm_Class24', cardinality 0..*) is associated with 'class::diagramm::RefMethod' (role 'class_diagramm_RefMethod', cardinality 0..*).
+'class::diagramm::Attribute' (role 'class_diagramm_Attribute', cardinality 0..*) is associated with 'class::diagramm::RefClass' (role 'class_diagramm_RefClass10', cardinality 0..*).
+'class::diagramm::RefAttribute' (role 'class_diagramm_RefAttribute', cardinality 0..*) is associated with 'class::diagramm::Class' (role 'class_diagramm_Class22', cardinality 0..*).
+'class::diagramm::RefClass' (role 'class_diagramm_RefClass4', cardinality 0..*) is associated with 'class::diagramm::Method' (role 'class_diagramm_Method', cardinality 0..*).
+'class::diagramm::RefDataType' (role 'class_diagramm_RefDataType18', cardinality 0..*) is associated with 'class::diagramm::Parameter' (role 'class_diagramm_Parameter17', cardinality 0..*).
+'class::diagramm::Method' (role 'class_diagramm_Method6', cardinality 0..*) is associated with 'class::diagramm::RefParameter' (role 'class_diagramm_RefParameter', cardinality 0..*).

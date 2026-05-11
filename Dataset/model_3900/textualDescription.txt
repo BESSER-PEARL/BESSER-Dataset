@@ -1,0 +1,163 @@
+The model has 88 class(es).
+The class 'executablemodelingprofile::LiteralSpecification' has no attributes.
+The class 'XAssociation' has no attributes.
+The class 'executablemodelingprofile::XRegion' has no attributes.
+The class 'executablemodelingprofile::AssociationClass' has no attributes.
+The class 'executablemodelingprofile::OpaqueBehavior' has no attributes.
+The class 'executablemodelingprofile::Port' has no attributes.
+The class 'executablemodelingprofile::Connector' has no attributes.
+The class 'executablemodelingprofile::Namespace' has no attributes.
+The class 'executablemodelingprofile::XAssociationClass' has no attributes.
+The class 'executablemodelingprofile::Class' has no attributes.
+The class 'XBehavior' has no attributes.
+The class 'executablemodelingprofile::XBehavior' has no attributes.
+The class 'executablemodelingprofile::XPseudostate' has no attributes.
+The class 'executablemodelingprofile::DataType' has no attributes.
+The class 'executablemodelingprofile::XConstrainedType' has the following attributes: 'isLowerBoundExclusive' of type str; 'isUpperBoundExclusive' of type str.
+The class 'executablemodelingprofile::XActionBehavior' has no attributes.
+The class 'executablemodelingprofile::XNamespace' has no attributes.
+The class 'executablemodelingprofile::Region' has no attributes.
+The class 'executablemodelingprofile::XTrigger' has no attributes.
+The class 'executablemodelingprofile::XProtocol' has no attributes.
+The class 'XTypedElement' has no attributes.
+The class 'XDataType' has no attributes.
+The class 'executablemodelingprofile::MultiplicityElement' has no attributes.
+The class 'executablemodelingprofile::Trigger' has no attributes.
+The class 'executablemodelingprofile::XMessageSet' has the following attributes: 'messageKind' of type str.
+The class 'executablemodelingprofile::XFeature' has no attributes.
+The class 'executablemodelingprofile::XParameter' has no attributes.
+The class 'executablemodelingprofile::XOpaqueBehavior' has the following attributes: 'isExternal' of type str.
+The class 'executablemodelingprofile::Vertex' has no attributes.
+The class 'executablemodelingprofile::TypedElement' has no attributes.
+The class 'executablemodelingprofile::XConnector' has no attributes.
+The class 'executablemodelingprofile::Reception' has no attributes.
+The class 'executablemodelingprofile::NamedElement' has no attributes.
+The class 'executablemodelingprofile::Activity' has no attributes.
+The class 'executablemodelingprofile::ConnectorEnd' has no attributes.
+The class 'executablemodelingprofile::XTransition' has no attributes.
+The class 'executablemodelingprofile::XTypedElement' has no attributes.
+The class 'executablemodelingprofile::XEnumeration' has no attributes.
+The class 'executablemodelingprofile::Association' has no attributes.
+The class 'executablemodelingprofile::Feature' has no attributes.
+The class 'executablemodelingprofile::Classifier' has no attributes.
+The class 'executablemodelingprofile::Pseudostate' has no attributes.
+The class 'executablemodelingprofile::GeneralizationSet' has no attributes.
+The class 'executablemodelingprofile::Property' has no attributes.
+The class 'XVertex' has no attributes.
+The class 'XNamespace' has no attributes.
+The class 'executablemodelingprofile::XOperation' has no attributes.
+The class 'executablemodelingprofile::PrimitiveType' has no attributes.
+The class 'XMultiplicityElement' has no attributes.
+The class 'executablemodelingprofile::Signal' has no attributes.
+The class 'executablemodelingprofile::Interface' has no attributes.
+The class 'executablemodelingprofile::EncapsulatedClassifier' has no attributes.
+The class 'executablemodelingprofile::XState' has no attributes.
+The class 'XFeature' has no attributes.
+The class 'executablemodelingprofile::XConstraint' has no attributes.
+The class 'executablemodelingprofile::XGeneralization' has no attributes.
+The class 'executablemodelingprofile::Generalization' has no attributes.
+The class 'executablemodelingprofile::Enumeration' has no attributes.
+The class 'XClassifier' has no attributes.
+The class 'executablemodelingprofile::XAssociation' has no attributes.
+The class 'executablemodelingprofile::Behavior' has no attributes.
+The class 'executablemodelingprofile::XPart' has no attributes.
+The class 'executablemodelingprofile::StateMachine' has no attributes.
+The class 'executablemodelingprofile::XProperty' has no attributes.
+The class 'executablemodelingprofile::XStateMachine' has no attributes.
+The class 'executablemodelingprofile::XNamedElement' has no attributes.
+The class 'executablemodelingprofile::XGeneralizationSet' has no attributes.
+The class 'executablemodelingprofile::XVertex' has no attributes.
+The class 'XNamedElement' has no attributes.
+The class 'executablemodelingprofile::XReception' has no attributes.
+The class 'executablemodelingprofile::XDataType' has no attributes.
+The class 'executablemodelingprofile::State' has no attributes.
+The class 'executablemodelingprofile::XMultiplicityElement' has the following attributes: 'isOrderedByValue' of type str; 'isDescending' of type str.
+The class 'executablemodelingprofile::Operation' has no attributes.
+The class 'executablemodelingprofile::XEncapsulatedClassifier' has the following attributes: 'isExternal' of type str.
+The class 'executablemodelingprofile::XClassifier' has no attributes.
+The class 'executablemodelingprofile::Constraint' has no attributes.
+The class 'executablemodelingprofile::XProtocolContainer' has no attributes.
+The class 'executablemodelingprofile::XPort' has no attributes.
+The class 'executablemodelingprofile::XClass' has the following attributes: 'isExternal' of type str.
+The class 'XActionBehavior' has no attributes.
+The class 'executablemodelingprofile::XConnectorEnd' has no attributes.
+The class 'executablemodelingprofile::Parameter' has no attributes.
+The class 'executablemodelingprofile::XActivity' has no attributes.
+The class 'executablemodelingprofile::Package' has no attributes.
+The class 'executablemodelingprofile::XSignal' has no attributes.
+The class 'executablemodelingprofile::BehavioredClassifier' has no attributes.
+The class 'executablemodelingprofile::Transition' has no attributes.
+The enumeration 'XMessageKind' has the following literals: 'out', 'in_', 'inout'.
+'executablemodelingprofile::XPort' is a specialization of 'XFeature'.
+'executablemodelingprofile::XConnector' is a specialization of 'XFeature'.
+'executablemodelingprofile::XEncapsulatedClassifier' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XConstraint' is a specialization of 'XNamedElement'.
+'executablemodelingprofile::XClassifier' is a specialization of 'XNamespace'.
+'executablemodelingprofile::XConstrainedType' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XClass' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XOperation' is a specialization of 'XNamespace'.
+'executablemodelingprofile::XReception' is a specialization of 'XFeature'.
+'executablemodelingprofile::XPart' is a specialization of 'XFeature'.
+'executablemodelingprofile::XState' is a specialization of 'XVertex'.
+'executablemodelingprofile::XEnumeration' is a specialization of 'XDataType'.
+'executablemodelingprofile::XDataType' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XPart' is a specialization of 'XTypedElement'.
+'executablemodelingprofile::XStateMachine' is a specialization of 'XBehavior'.
+'executablemodelingprofile::XProperty' is a specialization of 'XFeature'.
+'executablemodelingprofile::XAssociationClass' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XAssociationClass' is a specialization of 'XAssociation'.
+'executablemodelingprofile::XOpaqueBehavior' is a specialization of 'XActionBehavior'.
+'executablemodelingprofile::XFeature' is a specialization of 'XNamedElement'.
+'executablemodelingprofile::XProtocol' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XBehavior' is a specialization of 'XNamespace'.
+'executablemodelingprofile::XPseudostate' is a specialization of 'XVertex'.
+'executablemodelingprofile::XNamespace' is a specialization of 'XNamedElement'.
+'executablemodelingprofile::XActivity' is a specialization of 'XActionBehavior'.
+'executablemodelingprofile::XProperty' is a specialization of 'XMultiplicityElement'.
+'executablemodelingprofile::XActionBehavior' is a specialization of 'XBehavior'.
+'executablemodelingprofile::XOperation' is a specialization of 'XFeature'.
+'executablemodelingprofile::XProperty' is a specialization of 'XTypedElement'.
+'executablemodelingprofile::XSignal' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XParameter' is a specialization of 'XTypedElement'.
+'executablemodelingprofile::XMessageSet' is a specialization of 'XClassifier'.
+'executablemodelingprofile::XClassifier' (role 'executablemodelingprofile_XClassifier', cardinality 0..*) is associated with 'executablemodelingprofile::Classifier' (role 'executablemodelingprofile_Classifier', cardinality 0..*).
+'executablemodelingprofile::Vertex' (role 'executablemodelingprofile_Vertex', cardinality 0..*) is associated with 'executablemodelingprofile::XVertex' (role 'executablemodelingprofile_XVertex', cardinality 0..*).
+'executablemodelingprofile::XClass' (role 'executablemodelingprofile_XClass', cardinality 0..*) is associated with 'executablemodelingprofile::Class' (role 'executablemodelingprofile_Class', cardinality 0..*).
+'executablemodelingprofile::TypedElement' (role 'executablemodelingprofile_TypedElement', cardinality 0..*) is associated with 'executablemodelingprofile::XTypedElement' (role 'executablemodelingprofile_XTypedElement', cardinality 0..*).
+'executablemodelingprofile::Property' (role 'executablemodelingprofile_Property20', cardinality 0..*) is associated with 'executablemodelingprofile::XPart' (role 'executablemodelingprofile_XPart', cardinality 0..*).
+'executablemodelingprofile::AssociationClass' (role 'executablemodelingprofile_AssociationClass', cardinality 0..*) is associated with 'executablemodelingprofile::XAssociationClass' (role 'executablemodelingprofile_XAssociationClass', cardinality 0..*).
+'executablemodelingprofile::Transition' (role 'executablemodelingprofile_Transition', cardinality 0..*) is associated with 'executablemodelingprofile::XTransition' (role 'executablemodelingprofile_XTransition', cardinality 0..*).
+'executablemodelingprofile::XConstraint' (role 'executablemodelingprofile_XConstraint', cardinality 0..*) is associated with 'executablemodelingprofile::Constraint' (role 'executablemodelingprofile_Constraint', cardinality 0..*).
+'executablemodelingprofile::XOpaqueBehavior' (role 'executablemodelingprofile_XOpaqueBehavior', cardinality 0..*) is associated with 'executablemodelingprofile::OpaqueBehavior' (role 'executablemodelingprofile_OpaqueBehavior', cardinality 0..*).
+'executablemodelingprofile::Reception' (role 'executablemodelingprofile_Reception', cardinality 0..*) is associated with 'executablemodelingprofile::XReception' (role 'executablemodelingprofile_XReception', cardinality 0..*).
+'executablemodelingprofile::Pseudostate' (role 'executablemodelingprofile_Pseudostate', cardinality 0..*) is associated with 'executablemodelingprofile::XPseudostate' (role 'executablemodelingprofile_XPseudostate', cardinality 0..*).
+'executablemodelingprofile::Activity' (role 'executablemodelingprofile_Activity', cardinality 0..*) is associated with 'executablemodelingprofile::XActivity' (role 'executablemodelingprofile_XActivity', cardinality 0..*).
+'executablemodelingprofile::Enumeration' (role 'executablemodelingprofile_Enumeration', cardinality 0..*) is associated with 'executablemodelingprofile::XEnumeration' (role 'executablemodelingprofile_XEnumeration', cardinality 0..*).
+'executablemodelingprofile::XState' (role 'executablemodelingprofile_XState', cardinality 0..*) is associated with 'executablemodelingprofile::State' (role 'executablemodelingprofile_State', cardinality 0..*).
+'executablemodelingprofile::Association' (role 'executablemodelingprofile_Association', cardinality 0..*) is associated with 'executablemodelingprofile::XAssociation' (role 'executablemodelingprofile_XAssociation', cardinality 0..*).
+'executablemodelingprofile::XConstrainedType' (role 'executablemodelingprofile_XConstrainedType', cardinality 0..*) is associated with 'executablemodelingprofile::PrimitiveType' (role 'executablemodelingprofile_PrimitiveType', cardinality 0..*).
+'executablemodelingprofile::NamedElement' (role 'executablemodelingprofile_NamedElement', cardinality 0..*) is associated with 'executablemodelingprofile::XNamedElement' (role 'executablemodelingprofile_XNamedElement', cardinality 0..*).
+'executablemodelingprofile::XDataType' (role 'executablemodelingprofile_XDataType', cardinality 0..*) is associated with 'executablemodelingprofile::DataType' (role 'executablemodelingprofile_DataType', cardinality 0..*).
+'executablemodelingprofile::EncapsulatedClassifier' (role 'executablemodelingprofile_EncapsulatedClassifier', cardinality 0..*) is associated with 'executablemodelingprofile::XEncapsulatedClassifier' (role 'executablemodelingprofile_XEncapsulatedClassifier', cardinality 0..*).
+'executablemodelingprofile::Property' (role 'executablemodelingprofile_Property17', cardinality 0..*) is associated with 'executablemodelingprofile::XMultiplicityElement' (role 'executablemodelingprofile_XMultiplicityElement16', cardinality 0..*).
+'executablemodelingprofile::XOperation' (role 'executablemodelingprofile_XOperation', cardinality 0..*) is associated with 'executablemodelingprofile::Operation' (role 'executablemodelingprofile_Operation', cardinality 0..*).
+'executablemodelingprofile::GeneralizationSet' (role 'executablemodelingprofile_GeneralizationSet', cardinality 0..*) is associated with 'executablemodelingprofile::XGeneralizationSet' (role 'executablemodelingprofile_XGeneralizationSet', cardinality 0..*).
+'executablemodelingprofile::Namespace' (role 'executablemodelingprofile_Namespace', cardinality 0..*) is associated with 'executablemodelingprofile::XNamespace' (role 'executablemodelingprofile_XNamespace', cardinality 0..*).
+'executablemodelingprofile::Parameter' (role 'executablemodelingprofile_Parameter', cardinality 0..*) is associated with 'executablemodelingprofile::XParameter' (role 'executablemodelingprofile_XParameter', cardinality 0..*).
+'executablemodelingprofile::LiteralSpecification' (role 'executablemodelingprofile_LiteralSpecification', cardinality 0..*) is associated with 'executablemodelingprofile::XConstrainedType' (role 'executablemodelingprofile_XConstrainedType39', cardinality 0..*).
+'executablemodelingprofile::MultiplicityElement' (role 'executablemodelingprofile_MultiplicityElement', cardinality 0..*) is associated with 'executablemodelingprofile::XMultiplicityElement' (role 'executablemodelingprofile_XMultiplicityElement', cardinality 0..*).
+'executablemodelingprofile::XRegion' (role 'executablemodelingprofile_XRegion', cardinality 0..*) is associated with 'executablemodelingprofile::Region' (role 'executablemodelingprofile_Region', cardinality 0..*).
+'executablemodelingprofile::XSignal' (role 'executablemodelingprofile_XSignal', cardinality 0..*) is associated with 'executablemodelingprofile::Signal' (role 'executablemodelingprofile_Signal', cardinality 0..*).
+'executablemodelingprofile::ConnectorEnd' (role 'executablemodelingprofile_ConnectorEnd', cardinality 0..*) is associated with 'executablemodelingprofile::XConnectorEnd' (role 'executablemodelingprofile_XConnectorEnd', cardinality 0..*).
+'executablemodelingprofile::XTrigger' (role 'executablemodelingprofile_XTrigger', cardinality 0..*) is associated with 'executablemodelingprofile::Trigger' (role 'executablemodelingprofile_Trigger', cardinality 0..*).
+'executablemodelingprofile::XMessageSet' (role 'executablemodelingprofile_XMessageSet', cardinality 0..*) is associated with 'executablemodelingprofile::Interface' (role 'executablemodelingprofile_Interface', cardinality 0..*).
+'executablemodelingprofile::XFeature' (role 'executablemodelingprofile_XFeature', cardinality 0..*) is associated with 'executablemodelingprofile::Feature' (role 'executablemodelingprofile_Feature', cardinality 0..*).
+'executablemodelingprofile::XGeneralization' (role 'executablemodelingprofile_XGeneralization', cardinality 0..*) is associated with 'executablemodelingprofile::Generalization' (role 'executablemodelingprofile_Generalization', cardinality 0..*).
+'executablemodelingprofile::LiteralSpecification' (role 'executablemodelingprofile_LiteralSpecification42', cardinality 0..*) is associated with 'executablemodelingprofile::XConstrainedType' (role 'executablemodelingprofile_XConstrainedType41', cardinality 0..*).
+'executablemodelingprofile::XBehavior' (role 'executablemodelingprofile_XBehavior', cardinality 0..*) is associated with 'executablemodelingprofile::Behavior' (role 'executablemodelingprofile_Behavior', cardinality 0..*).
+'executablemodelingprofile::XPort' (role 'executablemodelingprofile_XPort', cardinality 0..*) is associated with 'executablemodelingprofile::Port' (role 'executablemodelingprofile_Port', cardinality 0..*).
+'executablemodelingprofile::StateMachine' (role 'executablemodelingprofile_StateMachine', cardinality 0..*) is associated with 'executablemodelingprofile::XStateMachine' (role 'executablemodelingprofile_XStateMachine', cardinality 0..*).
+'executablemodelingprofile::Package' (role 'executablemodelingprofile_Package', cardinality 0..*) is associated with 'executablemodelingprofile::XProtocolContainer' (role 'executablemodelingprofile_XProtocolContainer', cardinality 0..*).
+'executablemodelingprofile::BehavioredClassifier' (role 'executablemodelingprofile_BehavioredClassifier', cardinality 0..*) is associated with 'executablemodelingprofile::XProtocol' (role 'executablemodelingprofile_XProtocol', cardinality 0..*).
+'executablemodelingprofile::XProperty' (role 'executablemodelingprofile_XProperty', cardinality 0..*) is associated with 'executablemodelingprofile::Property' (role 'executablemodelingprofile_Property', cardinality 0..*).
+'executablemodelingprofile::Connector' (role 'executablemodelingprofile_Connector', cardinality 0..*) is associated with 'executablemodelingprofile::XConnector' (role 'executablemodelingprofile_XConnector', cardinality 0..*).

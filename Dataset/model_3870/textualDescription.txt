@@ -1,0 +1,271 @@
+The model has 103 class(es).
+The class 'ram::MessageOccurrenceSpecification' has no attributes.
+The class 'ram::Constraint' has no attributes.
+The class 'ram::Attribute' has no attributes.
+The class 'ram::InteractionFragment' has no attributes.
+The class 'ram::ClassifierMapping' has no attributes.
+The class 'ram::RInt' has no attributes.
+The class 'ram::InteractionOperand' has no attributes.
+The class 'ram::OriginalBehaviorExecution' has no attributes.
+The class 'ram::LiteralInteger' has the following attributes: 'value' of type int.
+The class 'ram::RArray' has the following attributes: 'size' of type int.
+The class 'ram::MessageViewReference' has no attributes.
+The class 'ram::Gate' has no attributes.
+The class 'Type' has no attributes.
+The class 'ram::LayoutElement' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'ram::REnum' has no attributes.
+The class 'MessageOccurrenceSpecification' has no attributes.
+The class 'ram::NamedElement' has the following attributes: 'name' of type str.
+The class 'ram::Operation' has the following attributes: 'abstract' of type bool; 'visibility' of type str; 'partial' of type bool; 'static' of type bool.
+The class 'ram::RSet' has no attributes.
+The class 'FragmentContainer' has no attributes.
+The class 'Property' has no attributes.
+The class 'ram::Parameter' has no attributes.
+The class 'LiteralSpecification' has no attributes.
+The class 'ram::Interaction' has no attributes.
+The class 'ram::ParameterMapping' has no attributes.
+The class 'ram::StructuralFeatureValue' has no attributes.
+The class 'ram::LiteralString' has the following attributes: 'value' of type str.
+The class 'PrimitiveType' has no attributes.
+The class 'MappableElement' has no attributes.
+The class 'ram::ParameterValueMapping' has no attributes.
+The class 'ram::AssociationEnd' has the following attributes: 'navigable' of type bool.
+The class 'ram::AbstractMessageView' has no attributes.
+The class 'ram::LiteralSpecification' has no attributes.
+The class 'ram::RSequence' has no attributes.
+The class 'ram::State' has no attributes.
+The class 'ram::TypeParameter' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'ram::FragmentContainer' has no attributes.
+The class 'ram::Transition' has no attributes.
+The class 'ram::ContainerMap' has no attributes.
+The class 'ram::RString' has no attributes.
+The class 'TemporaryProperty' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'RCollection' has no attributes.
+The class 'ram::Layout' has no attributes.
+The class 'ram::Mapping' has no attributes.
+The class 'ram::Type' has no attributes.
+The class 'ram::RVoid' has no attributes.
+The class 'ram::Association' has no attributes.
+The class 'AbstractMessageView' has no attributes.
+The class 'ram::StructuralFeature' has the following attributes: 'static' of type bool.
+The class 'ram::PrimitiveType' has no attributes.
+The class 'MessageEnd' has no attributes.
+The class 'ram::RAny' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'ram::StateMachine' has no attributes.
+The class 'ram::ExecutionStatement' has no attributes.
+The class 'ram::AttributeMapping' has no attributes.
+The class 'ram::OperationMapping' has no attributes.
+The class 'ram::ElementMap' has no attributes.
+The class 'ram::AspectMessageView' has no attributes.
+The class 'ram::ObjectType' has no attributes.
+The class 'ram::MappableElement' has no attributes.
+The class 'ram::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'ImplementationClass' has no attributes.
+The class 'ram::OccurrenceSpecification' has no attributes.
+The class 'ram::Classifier' has no attributes.
+The class 'ram::RDouble' has no attributes.
+The class 'ram::MessageEnd' has no attributes.
+The class 'ram::ValueSpecification' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'ram::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'ram::RLong' has no attributes.
+The class 'ram::Property' has the following attributes: 'referenceType' of type str; 'lowerBound' of type int; 'upperBound' of type int.
+The class 'ram::ImplementationClass' has the following attributes: 'instanceClassName' of type str; 'interface' of type bool.
+The class 'ram::Instantiation' has the following attributes: 'type' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ram::DestructionOccurrenceSpecification' has no attributes.
+The class 'ram::REnumLiteral' has no attributes.
+The class 'ram::RCollection' has no attributes.
+The class 'ram::Aspect' has no attributes.
+The class 'ram::TransitionSubstitution' has no attributes.
+The class 'ram::Class' has the following attributes: 'partial' of type bool; 'abstract' of type bool.
+The class 'ram::StateView' has no attributes.
+The class 'ram::Substitution' has no attributes.
+The class 'ram::RChar' has no attributes.
+The class 'ram::StructuralView' has no attributes.
+The class 'ObjectType' has no attributes.
+The class 'ram::Lifeline' has no attributes.
+The class 'ram::Reference' has no attributes.
+The class 'Substitution' has no attributes.
+The class 'InteractionFragment' has no attributes.
+The class 'OccurrenceSpecification' has no attributes.
+The class 'ram::CombinedFragment' has the following attributes: 'interactionOperator' of type str.
+The class 'ram::MessageView' has no attributes.
+The class 'ram::RFloat' has no attributes.
+The class 'ram::RBoolean' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ram::EObject' has no attributes.
+The class 'ram::ParameterValue' has no attributes.
+The class 'ram::TypedElement' has no attributes.
+The class 'ram::Message' has the following attributes: 'selfMessage' of type bool; 'messageSort' of type str.
+The class 'ram::TemporaryProperty' has no attributes.
+The enumeration 'InstantiationType' has the following literals: 'Extends', 'Depends'.
+The enumeration 'InteractionOperatorKind' has the following literals: 'opt', 'alt', 'critical', 'loop', 'disruptable'.
+The enumeration 'MessageSort' has the following literals: 'synchCall', 'reply', 'createMessage', 'deleteMessage'.
+The enumeration 'Visibility' has the following literals: 'public', 'protected', 'package', 'private'.
+The enumeration 'ReferenceType' has the following literals: 'Aggregation', 'Regular', 'Composition'.
+'ram::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'ram::RVoid' is a specialization of 'Type'.
+'ram::InteractionOperand' is a specialization of 'FragmentContainer'.
+'ram::RCollection' is a specialization of 'ImplementationClass'.
+'ram::Gate' is a specialization of 'MessageEnd'.
+'ram::RArray' is a specialization of 'PrimitiveType'.
+'ram::PrimitiveType' is a specialization of 'ImplementationClass'.
+'ram::Classifier' is a specialization of 'ObjectType'.
+'ram::Operation' is a specialization of 'NamedElement'.
+'ram::Association' is a specialization of 'NamedElement'.
+'ram::MessageViewReference' is a specialization of 'AbstractMessageView'.
+'ram::ParameterValue' is a specialization of 'ValueSpecification'.
+'ram::MessageOccurrenceSpecification' is a specialization of 'MessageEnd'.
+'ram::AspectMessageView' is a specialization of 'AbstractMessageView'.
+'ram::State' is a specialization of 'NamedElement'.
+'ram::PrimitiveType' is a specialization of 'ObjectType'.
+'ram::MessageOccurrenceSpecification' is a specialization of 'OccurrenceSpecification'.
+'ram::Attribute' is a specialization of 'MappableElement'.
+'ram::MessageView' is a specialization of 'AbstractMessageView'.
+'ram::Operation' is a specialization of 'MappableElement'.
+'ram::StructuralFeatureValue' is a specialization of 'ValueSpecification'.
+'ram::Class' is a specialization of 'Classifier'.
+'ram::Attribute' is a specialization of 'TemporaryProperty'.
+'ram::RInt' is a specialization of 'PrimitiveType'.
+'ram::REnum' is a specialization of 'PrimitiveType'.
+'ram::OriginalBehaviorExecution' is a specialization of 'InteractionFragment'.
+'ram::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'ram::Gate' is a specialization of 'NamedElement'.
+'ram::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'ram::AssociationEnd' is a specialization of 'Property'.
+'ram::Parameter' is a specialization of 'MappableElement'.
+'ram::ObjectType' is a specialization of 'Type'.
+'ram::StructuralFeature' is a specialization of 'TypedElement'.
+'ram::Reference' is a specialization of 'TemporaryProperty'.
+'ram::ParameterMapping' is a specialization of 'Mapping'.
+'ram::Attribute' is a specialization of 'StructuralFeature'.
+'ram::OccurrenceSpecification' is a specialization of 'InteractionFragment'.
+'ram::ClassifierMapping' is a specialization of 'Mapping'.
+'ram::RSet' is a specialization of 'RCollection'.
+'ram::RSequence' is a specialization of 'RCollection'.
+'ram::CombinedFragment' is a specialization of 'InteractionFragment'.
+'ram::RFloat' is a specialization of 'PrimitiveType'.
+'ram::StateView' is a specialization of 'NamedElement'.
+'ram::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'ram::AttributeMapping' is a specialization of 'Mapping'.
+'ram::REnumLiteral' is a specialization of 'NamedElement'.
+'ram::Interaction' is a specialization of 'FragmentContainer'.
+'ram::RBoolean' is a specialization of 'PrimitiveType'.
+'ram::LiteralString' is a specialization of 'LiteralSpecification'.
+'ram::DestructionOccurrenceSpecification' is a specialization of 'MessageOccurrenceSpecification'.
+'ram::ImplementationClass' is a specialization of 'Classifier'.
+'ram::Parameter' is a specialization of 'TypedElement'.
+'ram::Property' is a specialization of 'StructuralFeature'.
+'ram::TransitionSubstitution' is a specialization of 'Substitution'.
+'ram::AspectMessageView' is a specialization of 'NamedElement'.
+'ram::RDouble' is a specialization of 'PrimitiveType'.
+'ram::ExecutionStatement' is a specialization of 'InteractionFragment'.
+'ram::RCollection' is a specialization of 'Type'.
+'ram::Transition' is a specialization of 'NamedElement'.
+'ram::TypeParameter' is a specialization of 'Type'.
+'ram::RChar' is a specialization of 'PrimitiveType'.
+'ram::Reference' is a specialization of 'Property'.
+'ram::RAny' is a specialization of 'Type'.
+'ram::MappableElement' is a specialization of 'NamedElement'.
+'ram::RString' is a specialization of 'PrimitiveType'.
+'ram::Type' is a specialization of 'NamedElement'.
+'ram::RLong' is a specialization of 'PrimitiveType'.
+'ram::OperationMapping' is a specialization of 'Mapping'.
+'ram::TypedElement' is a specialization of 'NamedElement'.
+'ram::Aspect' is a specialization of 'NamedElement'.
+'ram::ObjectType' is a specialization of 'MappableElement'.
+'ram::ValueSpecification' (role 'ram_ValueSpecification98', cardinality 0..*) is associated with 'ram::ParameterValueMapping' (role 'ram_ParameterValueMapping97', cardinality 0..*).
+'ram::Parameter' (role 'ram_Parameter154', cardinality 0..*) is associated with 'ram::ParameterMapping' (role 'ram_ParameterMapping153', cardinality 0..*).
+'ram::Reference' (role 'ram_Reference123', cardinality 0..*) is associated with 'ram::ObjectType' (role 'ram_ObjectType124', cardinality 0..*).
+'ram::ParameterValueMapping' (role 'ram_ParameterValueMapping94', cardinality 0..*) is associated with 'ram::Parameter' (role 'ram_Parameter95', cardinality 0..*).
+'ram::Type' (role 'ram_Type37', cardinality 0..*) is associated with 'ram::Parameter' (role 'ram_Parameter36', cardinality 0..*).
+'ram::Classifier' (role 'ram_Classifier116', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation117', cardinality 0..*).
+'ram::ValueSpecification' (role 'ram_ValueSpecification182', cardinality 0..*) is associated with 'ram::Constraint' (role 'ram_Constraint181', cardinality 0..*).
+'ram::InteractionFragment' (role 'coveredBy', cardinality 0..*) is associated with 'ram::Lifeline' (role 'Lifeline', cardinality 0..*).
+'ram::TransitionSubstitution' (role 'ram_TransitionSubstitution', cardinality 0..*) is associated with 'ram::Transition' (role 'ram_Transition184', cardinality 0..*).
+'ram::StructuralView' (role 'ram_StructuralView', cardinality 0..*) is associated with 'ram::Aspect' (role 'ram_Aspect', cardinality 0..*).
+'ram::Interaction' (role 'ram_Interaction54', cardinality 0..*) is associated with 'ram::Gate' (role 'ram_Gate', cardinality 0..*).
+'ram::StructuralFeature' (role 'ram_StructuralFeature92', cardinality 0..*) is associated with 'ram::StructuralFeatureValue' (role 'ram_StructuralFeatureValue', cardinality 0..*).
+'ram::Classifier' (role 'ram_Classifier134', cardinality 0..*) is associated with 'ram::ClassifierMapping' (role 'ram_ClassifierMapping133', cardinality 0..*).
+'ram::StateView' (role 'ram_StateView158', cardinality 0..*) is associated with 'ram::Classifier' (role 'ram_Classifier159', cardinality 0..*).
+'ram::MessageView' (role 'ram_MessageView45', cardinality 0..*) is associated with 'ram::Interaction' (role 'ram_Interaction', cardinality 0..*).
+'ram::InteractionFragment' (role 'InteractionFragment', cardinality 0..*) is associated with 'ram::Lifeline' (role 'covered', cardinality 0..*).
+'ram::ParameterValue' (role 'ram_ParameterValue', cardinality 0..*) is associated with 'ram::Parameter' (role 'ram_Parameter100', cardinality 0..*).
+'ram::REnumLiteral' (role 'literals', cardinality 0..*) is associated with 'ram::REnum' (role 'REnum', cardinality 0..*).
+'ram::MappableElement' (role 'ram_MappableElement', cardinality 0..*) is associated with 'ram::Aspect' (role 'ram_Aspect2', cardinality 0..*).
+'ram::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'ram::AssociationEnd' (role 'associationEnds', cardinality 0..*).
+'ram::Classifier' (role 'ram_Classifier20', cardinality 0..*) is associated with 'ram::Class' (role 'ram_Class19', cardinality 0..*).
+'ram::Attribute' (role 'ram_Attribute137', cardinality 0..*) is associated with 'ram::AttributeMapping' (role 'ram_AttributeMapping136', cardinality 0..*).
+'ram::Association' (role 'assoc', cardinality 0..*) is associated with 'ram::AssociationEnd' (role 'AssociationEnd', cardinality 0..*).
+'ram::TypeParameter' (role 'ram_TypeParameter189', cardinality 0..*) is associated with 'ram::ObjectType' (role 'ram_ObjectType190', cardinality 0..*).
+'ram::Aspect' (role 'ram_Aspect28', cardinality 0..*) is associated with 'ram::Instantiation' (role 'ram_Instantiation27', cardinality 0..*).
+'ram::InteractionOperand' (role 'ram_InteractionOperand89', cardinality 0..*) is associated with 'ram::ValueSpecification' (role 'ram_ValueSpecification90', cardinality 0..*).
+'ram::ContainerMap' (role 'ram_ContainerMap', cardinality 0..*) is associated with 'ram::Layout' (role 'ram_Layout105', cardinality 0..*).
+'ram::Constraint' (role 'ram_Constraint', cardinality 0..*) is associated with 'ram::Transition' (role 'ram_Transition176', cardinality 0..*).
+'ram::ParameterValueMapping' (role 'ram_ParameterValueMapping', cardinality 0..*) is associated with 'ram::Message' (role 'ram_Message76', cardinality 0..*).
+'ram::ClassifierMapping' (role 'ram_ClassifierMapping', cardinality 0..*) is associated with 'ram::Instantiation' (role 'ram_Instantiation25', cardinality 0..*).
+'ram::AttributeMapping' (role 'ram_AttributeMapping', cardinality 0..*) is associated with 'ram::ClassifierMapping' (role 'ram_ClassifierMapping128', cardinality 0..*).
+'ram::AbstractMessageView' (role 'ram_AbstractMessageView', cardinality 0..*) is associated with 'ram::Aspect' (role 'ram_Aspect4', cardinality 0..*).
+'ram::Attribute' (role 'ram_Attribute140', cardinality 0..*) is associated with 'ram::AttributeMapping' (role 'ram_AttributeMapping139', cardinality 0..*).
+'ram::State' (role 'endState', cardinality 0..*) is associated with 'ram::Transition' (role 'Transition', cardinality 0..*).
+'ram::ObjectType' (role 'ram_ObjectType192', cardinality 0..*) is associated with 'ram::RArray' (role 'ram_RArray', cardinality 0..*).
+'ram::PrimitiveType' (role 'ram_PrimitiveType', cardinality 0..*) is associated with 'ram::Attribute' (role 'ram_Attribute34', cardinality 0..*).
+'ram::Message' (role 'ram_Message71', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation72', cardinality 0..*).
+'ram::ExecutionStatement' (role 'ram_ExecutionStatement', cardinality 0..*) is associated with 'ram::ValueSpecification' (role 'ram_ValueSpecification87', cardinality 0..*).
+'ram::StructuralFeature' (role 'ram_StructuralFeature', cardinality 0..*) is associated with 'ram::Message' (role 'ram_Message74', cardinality 0..*).
+'ram::Transition' (role 'incomings', cardinality 0..*) is associated with 'ram::State' (role 'State', cardinality 0..*).
+'ram::Message' (role 'ram_Message68', cardinality 0..*) is associated with 'ram::MessageEnd' (role 'ram_MessageEnd69', cardinality 0..*).
+'ram::Class' (role 'ram_Class', cardinality 0..*) is associated with 'ram::Attribute' (role 'ram_Attribute', cardinality 0..*).
+'ram::ObjectType' (role 'ram_ObjectType', cardinality 0..*) is associated with 'ram::RCollection' (role 'ram_RCollection', cardinality 0..*).
+'ram::Type' (role 'ram_Type30', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation', cardinality 0..*).
+'ram::StructuralView' (role 'ram_StructuralView12', cardinality 0..*) is associated with 'ram::Classifier' (role 'ram_Classifier', cardinality 0..*).
+'ram::ParameterMapping' (role 'ram_ParameterMapping150', cardinality 0..*) is associated with 'ram::Parameter' (role 'ram_Parameter151', cardinality 0..*).
+'ram::ContainerMap' (role 'ram_ContainerMap107', cardinality 0..*) is associated with 'ram::EObject' (role 'ram_EObject', cardinality 0..*).
+'ram::Interaction' (role 'ram_Interaction60', cardinality 0..*) is associated with 'ram::AspectMessageView' (role 'ram_AspectMessageView59', cardinality 0..*).
+'ram::Transition' (role 'ram_Transition187', cardinality 0..*) is associated with 'ram::TransitionSubstitution' (role 'ram_TransitionSubstitution186', cardinality 0..*).
+'ram::OperationMapping' (role 'ram_OperationMapping144', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation145', cardinality 0..*).
+'ram::InteractionFragment' (role 'InteractionFragment102', cardinality 0..*) is associated with 'ram::FragmentContainer' (role 'container', cardinality 0..*).
+'ram::StructuralView' (role 'ram_StructuralView14', cardinality 0..*) is associated with 'ram::Association' (role 'ram_Association', cardinality 0..*).
+'ram::StateMachine' (role 'ram_StateMachine161', cardinality 0..*) is associated with 'ram::State' (role 'ram_State', cardinality 0..*).
+'ram::MessageEnd' (role 'ram_MessageEnd81', cardinality 0..*) is associated with 'ram::Message' (role 'ram_Message82', cardinality 0..*).
+'ram::AspectMessageView' (role 'ram_AspectMessageView', cardinality 0..*) is associated with 'ram::AbstractMessageView' (role 'ram_AbstractMessageView41', cardinality 0..*).
+'ram::Lifeline' (role 'ram_Lifeline64', cardinality 0..*) is associated with 'ram::TemporaryProperty' (role 'ram_TemporaryProperty', cardinality 0..*).
+'ram::Aspect' (role 'ram_Aspect10', cardinality 0..*) is associated with 'ram::StateView' (role 'ram_StateView', cardinality 0..*).
+'ram::Transition' (role 'outgoings', cardinality 0..*) is associated with 'ram::State' (role 'State171', cardinality 0..*).
+'ram::Type' (role 'ram_Type', cardinality 0..*) is associated with 'ram::StructuralView' (role 'ram_StructuralView16', cardinality 0..*).
+'ram::Parameter' (role 'ram_Parameter', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation32', cardinality 0..*).
+'ram::Interaction' (role 'interaction', cardinality 0..*) is associated with 'ram::Message' (role 'Message', cardinality 0..*).
+'ram::Message' (role 'ram_Message', cardinality 0..*) is associated with 'ram::MessageEnd' (role 'ram_MessageEnd', cardinality 0..*).
+'ram::Association' (role 'Association', cardinality 0..*) is associated with 'ram::AssociationEnd' (role 'ends', cardinality 0..*).
+'ram::Message' (role 'messages', cardinality 0..*) is associated with 'ram::Interaction' (role 'Interaction', cardinality 0..*).
+'ram::ClassifierMapping' (role 'ram_ClassifierMapping126', cardinality 0..*) is associated with 'ram::OperationMapping' (role 'ram_OperationMapping', cardinality 0..*).
+'ram::Transition' (role 'ram_Transition', cardinality 0..*) is associated with 'ram::StateMachine' (role 'ram_StateMachine166', cardinality 0..*).
+'ram::ElementMap' (role 'ram_ElementMap111', cardinality 0..*) is associated with 'ram::EObject' (role 'ram_EObject112', cardinality 0..*).
+'ram::MessageView' (role 'ram_MessageView47', cardinality 0..*) is associated with 'ram::MessageViewReference' (role 'ram_MessageViewReference', cardinality 0..*).
+'ram::Aspect' (role 'ram_Aspect6', cardinality 0..*) is associated with 'ram::Instantiation' (role 'ram_Instantiation', cardinality 0..*).
+'ram::Interaction' (role 'ram_Interaction49', cardinality 0..*) is associated with 'ram::Lifeline' (role 'ram_Lifeline', cardinality 0..*).
+'ram::OperationMapping' (role 'ram_OperationMapping142', cardinality 0..*) is associated with 'ram::ParameterMapping' (role 'ram_ParameterMapping', cardinality 0..*).
+'ram::Classifier' (role 'classifier', cardinality 0..*) is associated with 'ram::AssociationEnd' (role 'AssociationEnd119', cardinality 0..*).
+'ram::StateMachine' (role 'ram_StateMachine168', cardinality 0..*) is associated with 'ram::Substitution' (role 'ram_Substitution', cardinality 0..*).
+'ram::Operation' (role 'ram_Operation43', cardinality 0..*) is associated with 'ram::MessageView' (role 'ram_MessageView', cardinality 0..*).
+'ram::CombinedFragment' (role 'ram_CombinedFragment', cardinality 0..*) is associated with 'ram::InteractionOperand' (role 'ram_InteractionOperand', cardinality 0..*).
+'ram::StateMachine' (role 'ram_StateMachine163', cardinality 0..*) is associated with 'ram::State' (role 'ram_State164', cardinality 0..*).
+'ram::Aspect' (role 'ram_Aspect8', cardinality 0..*) is associated with 'ram::Layout' (role 'ram_Layout', cardinality 0..*).
+'ram::StateMachine' (role 'ram_StateMachine', cardinality 0..*) is associated with 'ram::StateView' (role 'ram_StateView156', cardinality 0..*).
+'ram::Reference' (role 'ram_Reference', cardinality 0..*) is associated with 'ram::Interaction' (role 'ram_Interaction52', cardinality 0..*).
+'ram::Operation' (role 'ram_Operation148', cardinality 0..*) is associated with 'ram::OperationMapping' (role 'ram_OperationMapping147', cardinality 0..*).
+'ram::ElementMap' (role 'ram_ElementMap114', cardinality 0..*) is associated with 'ram::LayoutElement' (role 'ram_LayoutElement', cardinality 0..*).
+'ram::ValueSpecification' (role 'ram_ValueSpecification', cardinality 0..*) is associated with 'ram::Message' (role 'ram_Message79', cardinality 0..*).
+'ram::FragmentContainer' (role 'FragmentContainer', cardinality 0..*) is associated with 'ram::InteractionFragment' (role 'fragments', cardinality 0..*).
+'ram::Operation' (role 'ram_Operation174', cardinality 0..*) is associated with 'ram::Transition' (role 'ram_Transition173', cardinality 0..*).
+'ram::Classifier' (role 'ram_Classifier121', cardinality 0..*) is associated with 'ram::TypeParameter' (role 'ram_TypeParameter', cardinality 0..*).
+'ram::TypedElement' (role 'ram_TypedElement', cardinality 0..*) is associated with 'ram::Lifeline' (role 'ram_Lifeline62', cardinality 0..*).
+'ram::AspectMessageView' (role 'ram_AspectMessageView56', cardinality 0..*) is associated with 'ram::Operation' (role 'ram_Operation57', cardinality 0..*).
+'ram::ClassifierMapping' (role 'ram_ClassifierMapping130', cardinality 0..*) is associated with 'ram::Classifier' (role 'ram_Classifier131', cardinality 0..*).
+'ram::Transition' (role 'Transition179', cardinality 0..*) is associated with 'ram::State' (role 'startState', cardinality 0..*).
+'ram::REnum' (role 'enum', cardinality 0..*) is associated with 'ram::REnumLiteral' (role 'REnumLiteral', cardinality 0..*).
+'ram::ElementMap' (role 'ram_ElementMap', cardinality 0..*) is associated with 'ram::ContainerMap' (role 'ram_ContainerMap109', cardinality 0..*).

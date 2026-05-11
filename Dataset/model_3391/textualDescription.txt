@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'DML::Value' has the following attributes: 'value' of type str.
+The class 'DML::Registry' has no attributes.
+The class 'DML::InsertsStatements' has no attributes.
+The class 'DML::InsertInto' has the following attributes: 'tableName' of type str.
+The class 'DML::Column' has the following attributes: 'columnName' of type str.
+'DML::Value' (role 'DML_Value', cardinality 0..*) is associated with 'DML::Registry' (role 'DML_Registry6', cardinality 0..*).
+'DML::InsertInto' (role 'DML_InsertInto4', cardinality 0..*) is associated with 'DML::Column' (role 'DML_Column', cardinality 0..*).
+'DML::Column' (role 'DML_Column9', cardinality 0..*) is associated with 'DML::Value' (role 'DML_Value8', cardinality 0..*).
+'DML::Registry' (role 'DML_Registry', cardinality 0..*) is associated with 'DML::InsertInto' (role 'DML_InsertInto2', cardinality 0..*).
+'DML::InsertInto' (role 'DML_InsertInto', cardinality 0..*) is associated with 'DML::InsertsStatements' (role 'DML_InsertsStatements', cardinality 0..*).

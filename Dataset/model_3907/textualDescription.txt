@@ -1,0 +1,403 @@
+The model has 176 class(es).
+The class 'RequiredRole' has no attributes.
+The class 'pcm::repository::Signature' has the following attributes: 'serviceName' of type str.
+The class 'Parameter' has no attributes.
+The class 'pcm::subsystem::SubSystem' has no attributes.
+The class 'entity::NamedElement' has no attributes.
+The class 'pcm::seff::BranchAction' has no attributes.
+The class 'PCMRandomVariable' has no attributes.
+The class 'pcm::seff::AbstractBranchTransition' has no attributes.
+The class 'pcm::repository::CollectionDataType' has no attributes.
+The class 'pcm::repository::Parameter' has the following attributes: 'modifier__Parameter' of type str; 'parameterName' of type str.
+The class 'pcm::repository::PassiveResource' has no attributes.
+The class 'Protocol' has no attributes.
+The class 'ResourceContainer' has no attributes.
+The class 'pcm::resourcetype::ResourceType' has no attributes.
+The class 'pcm::composition::RequiredDelegationConnector' has no attributes.
+The class 'ForkedBehaviour' has no attributes.
+The class 'Variable' has no attributes.
+The class 'pcm::usagemodel::Start' has no attributes.
+The class 'pcm::usagemodel::BranchTransition' has the following attributes: 'branchProbability' of type float.
+The class 'AbstractUserAction' has no attributes.
+The class 'pcm::entity::NamedElement' has the following attributes: 'entityName' of type str.
+The class 'pcm::composition::ResourceRequiredDelegationConnector' has no attributes.
+The class 'pcm::seff::CollectionIteratorAction' has no attributes.
+The class 'pcm::entity::InterfaceRequiringEntity' has no attributes.
+The class 'pcm::resourceenvironment::LinkingResource' has no attributes.
+The class 'pcm::repository::ResourceRequiredRole' has no attributes.
+The class 'SpecifiedOutputParameterAbstraction' has no attributes.
+The class 'pcm::repository::ImplementationComponentType' has no attributes.
+The class 'pcm::seff::LoopAction' has no attributes.
+The class 'repository::DataType' has no attributes.
+The class 'pcm::entity::Entity' has no attributes.
+The class 'AbstractInternalControlFlowAction' has no attributes.
+The class 'pcm::usagemodel::Branch' has no attributes.
+The class 'parameter::pcm::AbstractNamedReference' has no attributes.
+The class 'BranchTransition' has no attributes.
+The class 'UserData' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'pcm::seff::SynchronisationPoint' has no attributes.
+The class 'pcm::entity::ResourceInterfaceRequiringEntity' has no attributes.
+The class 'AbstractBranchTransition' has no attributes.
+The class 'ProvidesComponentType' has no attributes.
+The class 'RepositoryComponent' has no attributes.
+The class 'pcm::usagemodel::OpenWorkload' has no attributes.
+The class 'pcm::repository::RepositoryComponent' has no attributes.
+The class 'pcm::repository::ProvidedRole' has no attributes.
+The class 'InterfaceProvidingRequiringEntity' has no attributes.
+The class 'pcm::qosannotations::SpecifiedOutputParameterAbstraction' has no attributes.
+The class 'CompositeDataType' has no attributes.
+The class 'ResourceRequiredRole' has no attributes.
+The class 'pcm::usagemodel::UserData' has no attributes.
+The class 'entity::InterfaceProvidingEntity' has no attributes.
+The class 'pcm::seff::InternalAction' has the following attributes: 'failureProbability' of type float.
+The class 'pcm::qosannotations::SpecifiedQoSAnnotation' has no attributes.
+The class 'pcm::entity::InterfaceProvidingEntity' has no attributes.
+The class 'pcm::seff::ServiceEffectSpecification' has the following attributes: 'seffTypeID' of type str.
+The class 'pcm::resourcetype::ResourceRepository' has no attributes.
+The class 'pcm::entity::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'pcm::repository::RequiredRole' has no attributes.
+The class 'composition::ResourceRequiredDelegationConnector' has no attributes.
+The class 'composition::ComposedStructure' has no attributes.
+The class 'RandomVariable' has no attributes.
+The class 'SpecifiedQoSAnnotation' has no attributes.
+The class 'pcm::resourceenvironment::ProcessingResourceSpecification' has the following attributes: 'MTTF' of type float; 'MTTR' of type float; 'schedulingPolicy' of type str.
+The class 'Entity' has no attributes.
+The class 'pcm::performance::ComponentSpecifiedExecutionTime' has no attributes.
+The class 'AllocationContext' has no attributes.
+The class 'pcm::resourceenvironment::CommunicationLinkResourceSpecification' has the following attributes: 'failureProbability' of type float.
+The class 'pcm::parameter::VariableUsage' has no attributes.
+The class 'pcm::seff::AbstractAction' has no attributes.
+The class 'Interface' has no attributes.
+The class 'SynchronisationPoint' has no attributes.
+The class 'pcm::seff::ForkAction' has no attributes.
+The class 'pcm::repository::Interface' has no attributes.
+The class 'pcm::seff::AbstractLoopAction' has no attributes.
+The class 'composition::RequiredDelegationConnector' has no attributes.
+The class 'pcm::usagemodel::Workload' has no attributes.
+The class 'CommunicationLinkResourceSpecification' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'pcm::protocol::Protocol' has the following attributes: 'protocolTypeID' of type str.
+The class 'pcm::seff::ForkedBehaviour' has no attributes.
+The class 'Role' has no attributes.
+The class 'performance::ParametricResourceDemand' has no attributes.
+The class 'pcm::repository::CompositeDataType' has no attributes.
+The class 'pcm::resourcetype::CommunicationLinkResourceType' has no attributes.
+The class 'pcm::seff::ExternalCallAction' has the following attributes: 'retryCount' of type int.
+The class 'pcm::resourcetype::ProcessingResourceType' has no attributes.
+The class 'pcm::usagemodel::UsageScenario' has no attributes.
+The class 'pcm::usagemodel::UsageModel' has no attributes.
+The class 'pcm::seff::ReleaseAction' has no attributes.
+The class 'pcm::repository::DataType' has no attributes.
+The class 'entity::InterfaceRequiringEntity' has no attributes.
+The class 'pcm::usagemodel::AbstractUserAction' has no attributes.
+The class 'pcm::resourceenvironment::ResourceEnvironment' has no attributes.
+The class 'pcm::entity::ComposedProvidingRequiringEntity' has no attributes.
+The class 'pcm::composition::AssemblyConnector' has no attributes.
+The class 'pcm::allocation::Allocation' has no attributes.
+The class 'ScenarioBehaviour' has no attributes.
+The class 'ProcessingResourceSpecification' has no attributes.
+The class 'pcm::performance::SystemSpecifiedExecutionTime' has no attributes.
+The class 'pcm::allocation::AllocationContext' has no attributes.
+The class 'PassiveResource' has no attributes.
+The class 'entity::ResourceInterfaceRequiringEntity' has no attributes.
+The class 'pcm::core::PCMRandomVariable' has no attributes.
+The class 'Connector' has no attributes.
+The class 'AbstractLoopAction' has no attributes.
+The class 'pcm::parameter::VariableCharacterisation' has the following attributes: 'type' of type str.
+The class 'pcm::seff::SetVariableAction' has no attributes.
+The class 'pcm::usagemodel::ScenarioBehaviour' has no attributes.
+The class 'DelegationConnector' has no attributes.
+The class 'UnitCarryingElement' has no attributes.
+The class 'pcm::composition::ProvidedDelegationConnector' has no attributes.
+The class 'pcm::seff::GuardedBranchTransition' has no attributes.
+The class 'pcm::repository::ExceptionType' has the following attributes: 'exceptionMessage' of type str; 'exceptionName' of type str.
+The class 'ExceptionType' has no attributes.
+The class 'seff::ServiceEffectSpecification' has no attributes.
+The class 'System' has no attributes.
+The class 'composition::ProvidedDelegationConnector' has no attributes.
+The class 'composition::AssemblyContext' has no attributes.
+The class 'Workload' has no attributes.
+The class 'ResourceDemandingBehaviour' has no attributes.
+The class 'seff::ResourceDemandingBehaviour' has no attributes.
+The class 'entity::ComposedProvidingRequiringEntity' has no attributes.
+The class 'VariableCharacterisation' has no attributes.
+The class 'QoSAnnotations' has no attributes.
+The class 'ResourceEnvironment' has no attributes.
+The class 'pcm::reliability::SpecifiedFailureProbability' has the following attributes: 'failureProbability' of type float.
+The class 'pcm::parameter::CharacterisedVariable' has the following attributes: 'characterisationType' of type str.
+The class 'Identifier' has no attributes.
+The class 'pcm::repository::CompleteComponentType' has no attributes.
+The class 'pcm::composition::ComposedStructure' has no attributes.
+The class 'Signature' has no attributes.
+The class 'ImplementationComponentType' has no attributes.
+The class 'ProcessingResourceType' has no attributes.
+The class 'pcm::repository::Repository' has the following attributes: 'repositoryDescription' of type str.
+The class 'pcm::seff::ResourceDemandingSEFF' has no attributes.
+The class 'pcm::seff::StopAction' has no attributes.
+The class 'VariableUsage' has no attributes.
+The class 'LinkingResource' has no attributes.
+The class 'pcm::resourceenvironment::ResourceContainer' has no attributes.
+The class 'pcm::usagemodel::Delay' has no attributes.
+The class 'pcm::repository::CompositeComponent' has no attributes.
+The class 'composition::AssemblyConnector' has no attributes.
+The class 'pcm::repository::DelegationConnector' has no attributes.
+The class 'entity::InterfaceProvidingRequiringEntity' has no attributes.
+The class 'pcm::composition::AssemblyContext' has no attributes.
+The class 'pcm::repository::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'CompleteComponentType' has no attributes.
+The class 'pcm::qosannotations::QoSAnnotations' has no attributes.
+The class 'InnerDeclaration' has no attributes.
+The class 'pcm::usagemodel::Loop' has no attributes.
+The class 'pcm::connectors::Connector' has no attributes.
+The class 'pcm::protocol::ServiceCall' has no attributes.
+The class 'pcm::seff::AcquireAction' has no attributes.
+The class 'pcm::repository::Role' has no attributes.
+The class 'pcm::usagemodel::ClosedWorkload' has the following attributes: 'population' of type int.
+The class 'CommunicationLinkResourceType' has no attributes.
+The class 'Repository' has no attributes.
+The class 'pcm::repository::BasicComponent' has no attributes.
+The class 'ProvidedRole' has no attributes.
+The class 'repository::RepositoryComponent' has no attributes.
+The class 'DataType' has no attributes.
+The class 'ResourceType' has no attributes.
+The class 'pcm::usagemodel::EntryLevelSystemCall' has no attributes.
+The class 'pcm::repository::ProvidesComponentType' has no attributes.
+The class 'pcm::performance::ParametricResourceDemand' has no attributes.
+The class 'pcm::seff::AbstractInternalControlFlowAction' has no attributes.
+The class 'pcm::seff::ProbabilisticBranchTransition' has the following attributes: 'branchProbability' of type float.
+The class 'pcm::seff::StartAction' has no attributes.
+The class 'pcm::seff::ResourceDemandingBehaviour' has no attributes.
+The class 'entity::Entity' has no attributes.
+The class 'ServiceEffectSpecification' has no attributes.
+The class 'UsageScenario' has no attributes.
+The class 'pcm::system::System' has no attributes.
+The class 'pcm::usagemodel::Stop' has no attributes.
+The class 'pcm::repository::InnerDeclaration' has no attributes.
+The class 'repository::ImplementationComponentType' has no attributes.
+The enumeration 'VariableCharacterisationType' has the following literals: 'TYPE', 'STRUCTURE', 'NUMBER_OF_ELEMENTS', 'VALUE', 'BYTESIZE'.
+The enumeration 'SchedulingPolicy' has the following literals: 'DELAY', 'FCFS', 'PROCESSOR_SHARING'.
+The enumeration 'PrimitiveTypeEnum' has the following literals: 'BYTE', 'LONG', 'DOUBLE', 'BOOL', 'STRING', 'INT', 'CHAR'.
+The enumeration 'ParameterModifier' has the following literals: 'in_', 'out', 'none', 'inout'.
+'pcm::usagemodel::AbstractUserAction' is a specialization of 'Entity'.
+'pcm::repository::CompositeDataType' is a specialization of 'repository::DataType'.
+'pcm::entity::InterfaceProvidingEntity' is a specialization of 'Entity'.
+'pcm::seff::ResourceDemandingSEFF' is a specialization of 'Identifier'.
+'pcm::seff::StopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::entity::InterfaceRequiringEntity' is a specialization of 'Entity'.
+'pcm::seff::StartAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::subsystem::SubSystem' is a specialization of 'repository::RepositoryComponent'.
+'pcm::parameter::CharacterisedVariable' is a specialization of 'Variable'.
+'pcm::repository::ProvidedRole' is a specialization of 'Role'.
+'pcm::usagemodel::ClosedWorkload' is a specialization of 'Workload'.
+'pcm::composition::ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::subsystem::SubSystem' is a specialization of 'entity::ComposedProvidingRequiringEntity'.
+'pcm::entity::Entity' is a specialization of 'Identifier'.
+'pcm::usagemodel::Loop' is a specialization of 'AbstractUserAction'.
+'pcm::usagemodel::Delay' is a specialization of 'AbstractUserAction'.
+'pcm::usagemodel::Branch' is a specialization of 'AbstractUserAction'.
+'pcm::usagemodel::Start' is a specialization of 'AbstractUserAction'.
+'pcm::reliability::SpecifiedFailureProbability' is a specialization of 'SpecifiedQoSAnnotation'.
+'pcm::usagemodel::OpenWorkload' is a specialization of 'Workload'.
+'pcm::usagemodel::Stop' is a specialization of 'AbstractUserAction'.
+'pcm::usagemodel::UsageScenario' is a specialization of 'Entity'.
+'pcm::usagemodel::ScenarioBehaviour' is a specialization of 'Entity'.
+'pcm::performance::ComponentSpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+'pcm::composition::AssemblyConnector' is a specialization of 'Connector'.
+'pcm::qosannotations::QoSAnnotations' is a specialization of 'Entity'.
+'pcm::repository::CollectionDataType' is a specialization of 'entity::Entity'.
+'pcm::repository::BasicComponent' is a specialization of 'ImplementationComponentType'.
+'pcm::repository::InnerDeclaration' is a specialization of 'NamedElement'.
+'pcm::system::System' is a specialization of 'entity::ComposedProvidingRequiringEntity'.
+'pcm::resourcetype::ProcessingResourceType' is a specialization of 'ResourceType'.
+'pcm::system::System' is a specialization of 'entity::Entity'.
+'pcm::resourceenvironment::LinkingResource' is a specialization of 'Entity'.
+'pcm::usagemodel::EntryLevelSystemCall' is a specialization of 'AbstractUserAction'.
+'pcm::allocation::Allocation' is a specialization of 'Entity'.
+'pcm::resourceenvironment::ResourceContainer' is a specialization of 'Entity'.
+'pcm::seff::GuardedBranchTransition' is a specialization of 'AbstractBranchTransition'.
+'pcm::allocation::AllocationContext' is a specialization of 'Entity'.
+'pcm::resourcetype::ResourceType' is a specialization of 'entity::Entity'.
+'pcm::performance::SystemSpecifiedExecutionTime' is a specialization of 'SpecifiedQoSAnnotation'.
+'pcm::repository::PrimitiveDataType' is a specialization of 'DataType'.
+'pcm::resourcetype::CommunicationLinkResourceType' is a specialization of 'ProcessingResourceType'.
+'pcm::repository::CollectionDataType' is a specialization of 'repository::DataType'.
+'pcm::seff::ProbabilisticBranchTransition' is a specialization of 'AbstractBranchTransition'.
+'pcm::repository::CompositeDataType' is a specialization of 'entity::Entity'.
+'pcm::resourcetype::ResourceType' is a specialization of 'UnitCarryingElement'.
+'pcm::repository::CompositeComponent' is a specialization of 'entity::ComposedProvidingRequiringEntity'.
+'pcm::entity::Entity' is a specialization of 'entity::NamedElement'.
+'pcm::seff::SetVariableAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::entity::InterfaceProvidingRequiringEntity' is a specialization of 'entity::ResourceInterfaceRequiringEntity'.
+'pcm::repository::CompleteComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::repository::ImplementationComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::repository::DelegationConnector' is a specialization of 'Connector'.
+'pcm::repository::ResourceRequiredRole' is a specialization of 'Role'.
+'pcm::repository::RequiredRole' is a specialization of 'Role'.
+'pcm::repository::CompositeComponent' is a specialization of 'repository::ImplementationComponentType'.
+'pcm::repository::Role' is a specialization of 'Entity'.
+'pcm::seff::CollectionIteratorAction' is a specialization of 'AbstractLoopAction'.
+'pcm::seff::AcquireAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::repository::Interface' is a specialization of 'Entity'.
+'pcm::entity::InterfaceProvidingRequiringEntity' is a specialization of 'entity::InterfaceProvidingEntity'.
+'pcm::connectors::Connector' is a specialization of 'Entity'.
+'pcm::seff::InternalAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::repository::ProvidesComponentType' is a specialization of 'RepositoryComponent'.
+'pcm::entity::ComposedProvidingRequiringEntity' is a specialization of 'composition::ComposedStructure'.
+'pcm::seff::BranchAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::seff::ForkedBehaviour' is a specialization of 'ResourceDemandingBehaviour'.
+'pcm::seff::AbstractBranchTransition' is a specialization of 'NamedElement'.
+'pcm::seff::LoopAction' is a specialization of 'AbstractLoopAction'.
+'pcm::entity::ResourceInterfaceRequiringEntity' is a specialization of 'Entity'.
+'pcm::composition::AssemblyContext' is a specialization of 'Entity'.
+'pcm::repository::Repository' is a specialization of 'Entity'.
+'pcm::entity::ComposedProvidingRequiringEntity' is a specialization of 'entity::InterfaceProvidingRequiringEntity'.
+'pcm::entity::InterfaceProvidingRequiringEntity' is a specialization of 'entity::InterfaceRequiringEntity'.
+'pcm::composition::ComposedStructure' is a specialization of 'Entity'.
+'pcm::repository::RepositoryComponent' is a specialization of 'InterfaceProvidingRequiringEntity'.
+'pcm::composition::RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+'pcm::core::PCMRandomVariable' is a specialization of 'RandomVariable'.
+'pcm::seff::ForkAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::seff::ResourceDemandingSEFF' is a specialization of 'seff::ResourceDemandingBehaviour'.
+'pcm::seff::ReleaseAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::seff::ExternalCallAction' is a specialization of 'AbstractAction'.
+'pcm::repository::PassiveResource' is a specialization of 'Entity'.
+'pcm::seff::AbstractInternalControlFlowAction' is a specialization of 'AbstractAction'.
+'pcm::seff::AbstractLoopAction' is a specialization of 'AbstractInternalControlFlowAction'.
+'pcm::seff::AbstractAction' is a specialization of 'Entity'.
+'pcm::seff::ResourceDemandingSEFF' is a specialization of 'seff::ServiceEffectSpecification'.
+'pcm::composition::ResourceRequiredDelegationConnector' (role 'pcm_composition_ResourceRequiredDelegationConnector44', cardinality 0..*) is associated with 'ResourceRequiredRole' (role 'ResourceRequiredRole45', cardinality 0..*).
+'pcm::entity::InterfaceProvidingEntity' (role 'providingEntity_ProvidedRole', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole', cardinality 0..*).
+'Interface' (role 'Interface102', cardinality 0..*) is associated with 'pcm::repository::ProvidedRole' (role 'pcm_repository_ProvidedRole', cardinality 0..*).
+'pcm::resourceenvironment::LinkingResource' (role 'pcm_resourceenvironment_LinkingResource175', cardinality 0..*) is associated with 'ResourceContainer' (role 'ResourceContainer176', cardinality 0..*).
+'AbstractInternalControlFlowAction' (role 'AbstractInternalControlFlowAction', cardinality 0..*) is associated with 'pcm::performance::ParametricResourceDemand' (role 'resourceDemand_Action', cardinality 0..*).
+'pcm::repository::Signature' (role 'pcm_repository_Signature56', cardinality 0..*) is associated with 'ExceptionType' (role 'ExceptionType', cardinality 0..*).
+'pcm::composition::AssemblyConnector' (role 'pcm_composition_AssemblyConnector35', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole36', cardinality 0..*).
+'pcm::usagemodel::Delay' (role 'pcm_usagemodel_Delay', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable254', cardinality 0..*).
+'pcm::resourceenvironment::LinkingResource' (role 'pcm_resourceenvironment_LinkingResource178', cardinality 0..*) is associated with 'CommunicationLinkResourceSpecification' (role 'CommunicationLinkResourceSpecification', cardinality 0..*).
+'pcm::system::System' (role 'pcm_system_System', cardinality 0..*) is associated with 'QoSAnnotations' (role 'QoSAnnotations', cardinality 0..*).
+'DataType' (role 'DataType100', cardinality 0..*) is associated with 'pcm::repository::InnerDeclaration' (role 'pcm_repository_InnerDeclaration', cardinality 0..*).
+'pcm::composition::RequiredDelegationConnector' (role 'pcm_composition_RequiredDelegationConnector22', cardinality 0..*) is associated with 'composition::AssemblyContext' (role 'composition_AssemblyContext23', cardinality 0..*).
+'SpecifiedOutputParameterAbstraction' (role 'SpecifiedOutputParameterAbstraction', cardinality 0..*) is associated with 'pcm::qosannotations::QoSAnnotations' (role 'pcm_qosannotations_QoSAnnotations211', cardinality 0..*).
+'pcm::repository::PassiveResource' (role 'pcm_repository_PassiveResource', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable', cardinality 0..*).
+'pcm::seff::ForkAction' (role 'pcm_seff_ForkAction124', cardinality 0..*) is associated with 'SynchronisationPoint' (role 'SynchronisationPoint', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable154', cardinality 0..*) is associated with 'pcm::performance::ParametricResourceDemand' (role 'pcm_performance_ParametricResourceDemand', cardinality 0..*).
+'Role' (role 'Role205', cardinality 0..*) is associated with 'pcm::qosannotations::SpecifiedOutputParameterAbstraction' (role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction204', cardinality 0..*).
+'pcm::repository::Repository' (role 'repository_Interface', cardinality 0..*) is associated with 'Interface' (role 'Interface64', cardinality 0..*).
+'composition::ComposedStructure' (role 'ComposedStructure', cardinality 0..*) is associated with 'pcm::composition::ProvidedDelegationConnector' (role 'providedDelegationConnectors_ComposedStructure', cardinality 0..*).
+'Interface' (role 'Interface', cardinality 0..*) is associated with 'pcm::repository::Signature' (role 'signatures__Interface', cardinality 0..*).
+'PassiveResource' (role 'PassiveResource118', cardinality 0..*) is associated with 'pcm::seff::ReleaseAction' (role 'pcm_seff_ReleaseAction', cardinality 0..*).
+'Repository' (role 'Repository', cardinality 0..*) is associated with 'pcm::repository::DataType' (role 'datatypes_Repository', cardinality 0..*).
+'AbstractUserAction' (role 'AbstractUserAction221', cardinality 0..*) is associated with 'pcm::usagemodel::AbstractUserAction' (role 'successor', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage', cardinality 0..*) is associated with 'pcm::composition::AssemblyContext' (role 'pcm_composition_AssemblyContext15', cardinality 0..*).
+'composition::ComposedStructure' (role 'ComposedStructure38', cardinality 0..*) is associated with 'pcm::composition::AssemblyConnector' (role 'assemblyConnectors_ComposedStructure', cardinality 0..*).
+'pcm::repository::RequiredRole' (role 'pcm_repository_RequiredRole', cardinality 0..*) is associated with 'Interface' (role 'Interface70', cardinality 0..*).
+'pcm::repository::Interface' (role 'interface_Signature', cardinality 0..*) is associated with 'Signature' (role 'Signature80', cardinality 0..*).
+'pcm::repository::ResourceRequiredRole' (role 'resourceRequiredRoles_ResourceInterfaceRequiringEntity', cardinality 0..*) is associated with 'entity::ResourceInterfaceRequiringEntity' (role 'ResourceInterfaceRequiringEntity', cardinality 0..*).
+'ResourceType' (role 'ResourceType', cardinality 0..*) is associated with 'pcm::resourcetype::ResourceRepository' (role 'pcm_resourcetype_ResourceRepository', cardinality 0..*).
+'composition::AssemblyContext' (role 'composition_AssemblyContext162', cardinality 0..*) is associated with 'pcm::allocation::AllocationContext' (role 'pcm_allocation_AllocationContext161', cardinality 0..*).
+'Role' (role 'Role', cardinality 0..*) is associated with 'pcm::seff::ExternalCallAction' (role 'pcm_seff_ExternalCallAction139', cardinality 0..*).
+'pcm::parameter::VariableUsage' (role 'pcm_parameter_VariableUsage', cardinality 0..*) is associated with 'VariableCharacterisation' (role 'VariableCharacterisation', cardinality 0..*).
+'AbstractUserAction' (role 'AbstractUserAction219', cardinality 0..*) is associated with 'pcm::usagemodel::AbstractUserAction' (role 'predecessor', cardinality 0..*).
+'pcm::composition::RequiredDelegationConnector' (role 'pcm_composition_RequiredDelegationConnector', cardinality 0..*) is associated with 'RequiredRole' (role 'RequiredRole17', cardinality 0..*).
+'pcm::composition::ResourceRequiredDelegationConnector' (role 'resourceRequiredDelegationConnectors_ComposedStructure', cardinality 0..*) is associated with 'composition::ComposedStructure' (role 'ComposedStructure40', cardinality 0..*).
+'UsageScenario' (role 'UsageScenario', cardinality 0..*) is associated with 'pcm::usagemodel::UsageModel' (role 'pcm_usagemodel_UsageModel', cardinality 0..*).
+'pcm::usagemodel::UsageScenario' (role 'pcm_usagemodel_UsageScenario216', cardinality 0..*) is associated with 'ScenarioBehaviour' (role 'ScenarioBehaviour', cardinality 0..*).
+'pcm::resourceenvironment::CommunicationLinkResourceSpecification' (role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification181', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable182', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage129', cardinality 0..*) is associated with 'pcm::seff::SynchronisationPoint' (role 'pcm_seff_SynchronisationPoint128', cardinality 0..*).
+'LinkingResource' (role 'LinkingResource', cardinality 0..*) is associated with 'pcm::resourceenvironment::ResourceEnvironment' (role 'pcm_resourceenvironment_ResourceEnvironment', cardinality 0..*).
+'Role' (role 'Role197', cardinality 0..*) is associated with 'pcm::qosannotations::SpecifiedQoSAnnotation' (role 'pcm_qosannotations_SpecifiedQoSAnnotation196', cardinality 0..*).
+'entity::InterfaceProvidingEntity' (role 'InterfaceProvidingEntity', cardinality 0..*) is associated with 'pcm::repository::ProvidedRole' (role 'providedRoles_InterfaceProvidingEntity', cardinality 0..*).
+'pcm::repository::CompositeDataType' (role 'pcm_repository_CompositeDataType98', cardinality 0..*) is associated with 'InnerDeclaration' (role 'InnerDeclaration', cardinality 0..*).
+'pcm::composition::AssemblyConnector' (role 'pcm_composition_AssemblyConnector32', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole33', cardinality 0..*).
+'ForkedBehaviour' (role 'ForkedBehaviour126', cardinality 0..*) is associated with 'pcm::seff::SynchronisationPoint' (role 'pcm_seff_SynchronisationPoint', cardinality 0..*).
+'pcm::repository::ResourceRequiredRole' (role 'pcm_repository_ResourceRequiredRole', cardinality 0..*) is associated with 'Interface' (role 'Interface84', cardinality 0..*).
+'pcm::seff::LoopAction' (role 'pcm_seff_LoopAction', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable120', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable185', cardinality 0..*) is associated with 'pcm::resourceenvironment::CommunicationLinkResourceSpecification' (role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification184', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole', cardinality 0..*) is associated with 'pcm::entity::InterfaceRequiringEntity' (role 'requiringEntity_RequiredRole', cardinality 0..*).
+'pcm::qosannotations::SpecifiedQoSAnnotation' (role 'pcm_qosannotations_SpecifiedQoSAnnotation199', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable200', cardinality 0..*).
+'UserData' (role 'UserData', cardinality 0..*) is associated with 'pcm::usagemodel::UsageModel' (role 'pcm_usagemodel_UsageModel224', cardinality 0..*).
+'pcm::usagemodel::EntryLevelSystemCall' (role 'pcm_usagemodel_EntryLevelSystemCall', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage238', cardinality 0..*).
+'pcm::repository::Signature' (role 'pcm_repository_Signature', cardinality 0..*) is associated with 'DataType' (role 'DataType', cardinality 0..*).
+'Workload' (role 'Workload', cardinality 0..*) is associated with 'pcm::usagemodel::UsageScenario' (role 'pcm_usagemodel_UsageScenario', cardinality 0..*).
+'pcm::repository::Parameter' (role 'pcm_repository_Parameter', cardinality 0..*) is associated with 'DataType' (role 'DataType58', cardinality 0..*).
+'pcm::repository::Interface' (role 'pcm_repository_Interface', cardinality 0..*) is associated with 'Interface' (role 'Interface73', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction', cardinality 0..*) is associated with 'pcm::seff::AbstractAction' (role 'successor_AbstractAction', cardinality 0..*).
+'pcm::resourceenvironment::ProcessingResourceSpecification' (role 'pcm_resourceenvironment_ProcessingResourceSpecification', cardinality 0..*) is associated with 'ProcessingResourceType' (role 'ProcessingResourceType187', cardinality 0..*).
+'pcm::seff::AbstractBranchTransition' (role 'pcm_seff_AbstractBranchTransition', cardinality 0..*) is associated with 'ResourceDemandingBehaviour' (role 'ResourceDemandingBehaviour141', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer', cardinality 0..*) is associated with 'pcm::allocation::AllocationContext' (role 'pcm_allocation_AllocationContext', cardinality 0..*).
+'pcm::entity::ResourceInterfaceRequiringEntity' (role 'resourceRequiringEntity_ResourceRequiredRole', cardinality 0..*) is associated with 'ResourceRequiredRole' (role 'ResourceRequiredRole', cardinality 0..*).
+'Signature' (role 'Signature202', cardinality 0..*) is associated with 'pcm::qosannotations::SpecifiedOutputParameterAbstraction' (role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction', cardinality 0..*).
+'composition::ProvidedDelegationConnector' (role 'ProvidedDelegationConnector', cardinality 0..*) is associated with 'pcm::composition::ComposedStructure' (role 'parentStructure_ProvidedDelegationConnector', cardinality 0..*).
+'CompositeDataType' (role 'CompositeDataType', cardinality 0..*) is associated with 'pcm::repository::CompositeDataType' (role 'pcm_repository_CompositeDataType', cardinality 0..*).
+'Signature' (role 'Signature152', cardinality 0..*) is associated with 'pcm::seff::ServiceEffectSpecification' (role 'pcm_seff_ServiceEffectSpecification', cardinality 0..*).
+'pcm::seff::ResourceDemandingBehaviour' (role 'pcm_seff_ResourceDemandingBehaviour', cardinality 0..*) is associated with 'AbstractAction' (role 'AbstractAction116', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage226', cardinality 0..*) is associated with 'pcm::usagemodel::UserData' (role 'pcm_usagemodel_UserData', cardinality 0..*).
+'AbstractBranchTransition' (role 'AbstractBranchTransition', cardinality 0..*) is associated with 'pcm::seff::BranchAction' (role 'pcm_seff_BranchAction', cardinality 0..*).
+'Repository' (role 'Repository68', cardinality 0..*) is associated with 'pcm::repository::RepositoryComponent' (role 'components__Repository', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable190', cardinality 0..*) is associated with 'pcm::resourceenvironment::ProcessingResourceSpecification' (role 'pcm_resourceenvironment_ProcessingResourceSpecification189', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage247', cardinality 0..*) is associated with 'pcm::usagemodel::EntryLevelSystemCall' (role 'pcm_usagemodel_EntryLevelSystemCall246', cardinality 0..*).
+'Signature' (role 'Signature244', cardinality 0..*) is associated with 'pcm::usagemodel::EntryLevelSystemCall' (role 'pcm_usagemodel_EntryLevelSystemCall243', cardinality 0..*).
+'pcm::composition::RequiredDelegationConnector' (role 'requiredDelegationConnectors_ComposedStructure', cardinality 0..*) is associated with 'composition::ComposedStructure' (role 'ComposedStructure25', cardinality 0..*).
+'pcm::usagemodel::ScenarioBehaviour' (role 'pcm_usagemodel_ScenarioBehaviour', cardinality 0..*) is associated with 'AbstractUserAction' (role 'AbstractUserAction', cardinality 0..*).
+'pcm::repository::Signature' (role 'signature_Parameter', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'pcm::repository::Interface' (role 'pcm_repository_Interface78', cardinality 0..*) is associated with 'Protocol' (role 'Protocol', cardinality 0..*).
+'composition::ComposedStructure' (role 'ComposedStructure13', cardinality 0..*) is associated with 'pcm::composition::AssemblyContext' (role 'assemblyContexts_ComposedStructure', cardinality 0..*).
+'RequiredRole' (role 'RequiredRole20', cardinality 0..*) is associated with 'pcm::composition::RequiredDelegationConnector' (role 'pcm_composition_RequiredDelegationConnector19', cardinality 0..*).
+'Parameter' (role 'Parameter146', cardinality 0..*) is associated with 'pcm::seff::CollectionIteratorAction' (role 'pcm_seff_CollectionIteratorAction', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer173', cardinality 0..*) is associated with 'pcm::resourceenvironment::LinkingResource' (role 'pcm_resourceenvironment_LinkingResource', cardinality 0..*).
+'pcm::usagemodel::EntryLevelSystemCall' (role 'pcm_usagemodel_EntryLevelSystemCall240', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole241', cardinality 0..*).
+'ScenarioBehaviour' (role 'ScenarioBehaviour252', cardinality 0..*) is associated with 'pcm::usagemodel::BranchTransition' (role 'pcm_usagemodel_BranchTransition', cardinality 0..*).
+'pcm::seff::ExternalCallAction' (role 'pcm_seff_ExternalCallAction136', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage137', cardinality 0..*).
+'pcm::composition::ComposedStructure' (role 'parentStructure_AssemblyContext', cardinality 0..*) is associated with 'composition::AssemblyContext' (role 'AssemblyContext', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable236', cardinality 0..*) is associated with 'pcm::usagemodel::Loop' (role 'pcm_usagemodel_Loop235', cardinality 0..*).
+'ProvidedRole' (role 'ProvidedRole7', cardinality 0..*) is associated with 'pcm::composition::ProvidedDelegationConnector' (role 'pcm_composition_ProvidedDelegationConnector6', cardinality 0..*).
+'SpecifiedQoSAnnotation' (role 'SpecifiedQoSAnnotation', cardinality 0..*) is associated with 'pcm::qosannotations::QoSAnnotations' (role 'pcm_qosannotations_QoSAnnotations', cardinality 0..*).
+'pcm::composition::AssemblyConnector' (role 'pcm_composition_AssemblyConnector29', cardinality 0..*) is associated with 'composition::AssemblyContext' (role 'composition_AssemblyContext30', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable249', cardinality 0..*) is associated with 'pcm::usagemodel::ClosedWorkload' (role 'pcm_usagemodel_ClosedWorkload', cardinality 0..*).
+'ProcessingResourceType' (role 'ProcessingResourceType', cardinality 0..*) is associated with 'pcm::performance::ParametricResourceDemand' (role 'pcm_performance_ParametricResourceDemand156', cardinality 0..*).
+'ResourceRequiredRole' (role 'ResourceRequiredRole42', cardinality 0..*) is associated with 'pcm::composition::ResourceRequiredDelegationConnector' (role 'pcm_composition_ResourceRequiredDelegationConnector', cardinality 0..*).
+'CommunicationLinkResourceType' (role 'CommunicationLinkResourceType', cardinality 0..*) is associated with 'pcm::resourceenvironment::CommunicationLinkResourceSpecification' (role 'pcm_resourceenvironment_CommunicationLinkResourceSpecification', cardinality 0..*).
+'pcm::composition::ComposedStructure' (role 'parentStructure_ResourceRequiredDelegationConnector', cardinality 0..*) is associated with 'composition::ResourceRequiredDelegationConnector' (role 'ResourceRequiredDelegationConnector', cardinality 0..*).
+'pcm::composition::ProvidedDelegationConnector' (role 'pcm_composition_ProvidedDelegationConnector', cardinality 0..*) is associated with 'ProvidedRole' (role 'ProvidedRole4', cardinality 0..*).
+'AllocationContext' (role 'AllocationContext', cardinality 0..*) is associated with 'pcm::allocation::Allocation' (role 'pcm_allocation_Allocation', cardinality 0..*).
+'pcm::seff::AcquireAction' (role 'pcm_seff_AcquireAction', cardinality 0..*) is associated with 'PassiveResource' (role 'PassiveResource144', cardinality 0..*).
+'pcm::qosannotations::SpecifiedOutputParameterAbstraction' (role 'pcm_qosannotations_SpecifiedOutputParameterAbstraction207', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage208', cardinality 0..*).
+'ProcessingResourceSpecification' (role 'ProcessingResourceSpecification', cardinality 0..*) is associated with 'pcm::resourceenvironment::ResourceContainer' (role 'pcm_resourceenvironment_ResourceContainer', cardinality 0..*).
+'pcm::usagemodel::UserData' (role 'pcm_usagemodel_UserData228', cardinality 0..*) is associated with 'composition::AssemblyContext' (role 'composition_AssemblyContext229', cardinality 0..*).
+'composition::AssemblyContext' (role 'composition_AssemblyContext213', cardinality 0..*) is associated with 'pcm::performance::ComponentSpecifiedExecutionTime' (role 'pcm_performance_ComponentSpecifiedExecutionTime', cardinality 0..*).
+'Signature' (role 'Signature194', cardinality 0..*) is associated with 'pcm::qosannotations::SpecifiedQoSAnnotation' (role 'pcm_qosannotations_SpecifiedQoSAnnotation', cardinality 0..*).
+'ResourceContainer' (role 'ResourceContainer171', cardinality 0..*) is associated with 'pcm::resourceenvironment::ResourceEnvironment' (role 'pcm_resourceenvironment_ResourceEnvironment170', cardinality 0..*).
+'Signature' (role 'Signature105', cardinality 0..*) is associated with 'pcm::protocol::ServiceCall' (role 'pcm_protocol_ServiceCall', cardinality 0..*).
+'ProvidesComponentType' (role 'ProvidesComponentType', cardinality 0..*) is associated with 'pcm::repository::CompleteComponentType' (role 'pcm_repository_CompleteComponentType', cardinality 0..*).
+'ResourceDemandingBehaviour' (role 'ResourceDemandingBehaviour', cardinality 0..*) is associated with 'pcm::seff::AbstractLoopAction' (role 'pcm_seff_AbstractLoopAction', cardinality 0..*).
+'Signature' (role 'Signature131', cardinality 0..*) is associated with 'pcm::seff::ExternalCallAction' (role 'pcm_seff_ExternalCallAction', cardinality 0..*).
+'AbstractAction' (role 'AbstractAction114', cardinality 0..*) is associated with 'pcm::seff::AbstractAction' (role 'predecessor_AbstractAction', cardinality 0..*).
+'pcm::usagemodel::Branch' (role 'pcm_usagemodel_Branch', cardinality 0..*) is associated with 'BranchTransition' (role 'BranchTransition', cardinality 0..*).
+'pcm::repository::Repository' (role 'repository_RepositoryComponent', cardinality 0..*) is associated with 'RepositoryComponent' (role 'RepositoryComponent62', cardinality 0..*).
+'composition::AssemblyContext' (role 'composition_AssemblyContext27', cardinality 0..*) is associated with 'pcm::composition::AssemblyConnector' (role 'pcm_composition_AssemblyConnector', cardinality 0..*).
+'CompleteComponentType' (role 'CompleteComponentType', cardinality 0..*) is associated with 'pcm::repository::ImplementationComponentType' (role 'pcm_repository_ImplementationComponentType', cardinality 0..*).
+'Interface' (role 'Interface76', cardinality 0..*) is associated with 'pcm::repository::Interface' (role 'pcm_repository_Interface75', cardinality 0..*).
+'PCMRandomVariable' (role 'PCMRandomVariable148', cardinality 0..*) is associated with 'pcm::seff::GuardedBranchTransition' (role 'pcm_seff_GuardedBranchTransition', cardinality 0..*).
+'ServiceEffectSpecification' (role 'ServiceEffectSpecification', cardinality 0..*) is associated with 'pcm::repository::BasicComponent' (role 'pcm_repository_BasicComponent', cardinality 0..*).
+'composition::AssemblyConnector' (role 'AssemblyConnector', cardinality 0..*) is associated with 'pcm::composition::ComposedStructure' (role 'parentStructure_AssemblyConnector', cardinality 0..*).
+'Repository' (role 'Repository82', cardinality 0..*) is associated with 'pcm::repository::Interface' (role 'interfaces__Repository', cardinality 0..*).
+'pcm::repository::ImplementationComponentType' (role 'pcm_repository_ImplementationComponentType88', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage89', cardinality 0..*).
+'composition::AssemblyContext' (role 'composition_AssemblyContext', cardinality 0..*) is associated with 'pcm::composition::ProvidedDelegationConnector' (role 'pcm_composition_ProvidedDelegationConnector9', cardinality 0..*).
+'composition::RequiredDelegationConnector' (role 'RequiredDelegationConnector', cardinality 0..*) is associated with 'pcm::composition::ComposedStructure' (role 'parentStructure_RequiredDelegationConnector', cardinality 0..*).
+'pcm::seff::ForkAction' (role 'pcm_seff_ForkAction', cardinality 0..*) is associated with 'ForkedBehaviour' (role 'ForkedBehaviour', cardinality 0..*).
+'VariableUsage' (role 'VariableUsage134', cardinality 0..*) is associated with 'pcm::seff::ExternalCallAction' (role 'pcm_seff_ExternalCallAction133', cardinality 0..*).
+'pcm::repository::CollectionDataType' (role 'pcm_repository_CollectionDataType', cardinality 0..*) is associated with 'DataType' (role 'DataType95', cardinality 0..*).
+'pcm::usagemodel::Loop' (role 'pcm_usagemodel_Loop', cardinality 0..*) is associated with 'ScenarioBehaviour' (role 'ScenarioBehaviour233', cardinality 0..*).
+'pcm::allocation::Allocation' (role 'pcm_allocation_Allocation167', cardinality 0..*) is associated with 'System' (role 'System', cardinality 0..*).
+'pcm::parameter::VariableCharacterisation' (role 'pcm_parameter_VariableCharacterisation', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable107', cardinality 0..*).
+'Signature' (role 'Signature', cardinality 0..*) is associated with 'pcm::repository::Parameter' (role 'parameters__Signature', cardinality 0..*).
+'parameter::pcm::AbstractNamedReference' (role 'parameter_pcm_AbstractNamedReference', cardinality 0..*) is associated with 'pcm::parameter::VariableUsage' (role 'pcm_parameter_VariableUsage110', cardinality 0..*).
+'pcm::seff::SetVariableAction' (role 'pcm_seff_SetVariableAction', cardinality 0..*) is associated with 'VariableUsage' (role 'VariableUsage150', cardinality 0..*).
+'ResourceEnvironment' (role 'ResourceEnvironment', cardinality 0..*) is associated with 'pcm::allocation::Allocation' (role 'pcm_allocation_Allocation165', cardinality 0..*).
+'pcm::usagemodel::OpenWorkload' (role 'pcm_usagemodel_OpenWorkload', cardinality 0..*) is associated with 'PCMRandomVariable' (role 'PCMRandomVariable231', cardinality 0..*).
+'pcm::repository::BasicComponent' (role 'pcm_repository_BasicComponent93', cardinality 0..*) is associated with 'PassiveResource' (role 'PassiveResource', cardinality 0..*).
+'pcm::seff::AbstractInternalControlFlowAction' (role 'action_ParametricResourceDemand', cardinality 0..*) is associated with 'performance::ParametricResourceDemand' (role 'ParametricResourceDemand', cardinality 0..*).
+'entity::InterfaceRequiringEntity' (role 'InterfaceRequiringEntity', cardinality 0..*) is associated with 'pcm::repository::RequiredRole' (role 'requiredRoles_InterfaceRequiringEntity', cardinality 0..*).
+'RepositoryComponent' (role 'RepositoryComponent', cardinality 0..*) is associated with 'pcm::composition::AssemblyContext' (role 'pcm_composition_AssemblyContext', cardinality 0..*).
+'DataType' (role 'DataType66', cardinality 0..*) is associated with 'pcm::repository::Repository' (role 'repository_DataType', cardinality 0..*).

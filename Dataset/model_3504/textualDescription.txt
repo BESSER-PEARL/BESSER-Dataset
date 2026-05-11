@@ -1,0 +1,192 @@
+The model has 71 class(es).
+The class 'typeLiteral' has no attributes.
+The class 'ale::Int' has the following attributes: 'value' of type int.
+The class 'ale::rCase' has no attributes.
+The class 'Statement' has no attributes.
+The class 'ale::False' has no attributes.
+The class 'ale::ClassifierSetType' has no attributes.
+The class 'ale::RealType' has no attributes.
+The class 'ale::Apply' has the following attributes: 'varName' of type str; 'name' of type str.
+The class 'ale::Add' has no attributes.
+The class 'ale::SeqType' has no attributes.
+The class 'ale::ExtendedClass' has the following attributes: 'extends' of type str.
+The class 'ale::Remove' has no attributes.
+The class 'ale::Call' has the following attributes: 'name' of type str.
+The class 'ale::Variable' has the following attributes: 'name' of type str.
+The class 'ale::Lit' has no attributes.
+The class 'ale::True' has no attributes.
+The class 'ale::Block' has no attributes.
+The class 'ale::Feature' has the following attributes: 'feature' of type str.
+The class 'ale::typeLiteral' has no attributes.
+The class 'ale::If' has no attributes.
+The class 'ale::String' has the following attributes: 'value' of type str.
+The class 'BehavioredClass' has no attributes.
+The class 'ale::Tag' has the following attributes: 'name' of type str.
+The class 'ale::Sequence' has no attributes.
+The class 'ale::literal' has no attributes.
+The class 'ale::Insert' has no attributes.
+The class 'ale::Mult' has no attributes.
+The class 'ale::Unit' has the following attributes: 'name' of type str.
+The class 'ale::While' has no attributes.
+The class 'ale::Import' has the following attributes: 'name' of type str; 'alias' of type str.
+The class 'ale::SetType' has no attributes.
+The class 'ale::Operation' has the following attributes: 'name' of type str.
+The class 'ale::Collection' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'ale::Xor' has no attributes.
+The class 'ale::Statement' has no attributes.
+The class 'ale::Assign' has no attributes.
+The class 'ale::BoolType' has no attributes.
+The class 'ale::Attribute' has the following attributes: 'name' of type str; 'modifier' of type str; 'bounds' of type str.
+The class 'ale::StringType' has no attributes.
+The class 'ale::ExpressionStmt' has no attributes.
+The class 'ale::binding' has the following attributes: 'name' of type str.
+The class 'ale::ForEach' has the following attributes: 'iterator' of type str.
+The class 'classifierTypeRule' has no attributes.
+The class 'ale::OrderedSet' has no attributes.
+The class 'ale::Conditional' has no attributes.
+The class 'ale::Comp' has the following attributes: 'op' of type str.
+The class 'ale::classifierTypeRule' has no attributes.
+The class 'ale::ClassifierType' has the following attributes: 'packageName' of type str; 'className' of type str.
+The class 'ale::And' has no attributes.
+The class 'literal' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ale::rOpposite' has the following attributes: 'name' of type str.
+The class 'ale::Implie' has no attributes.
+The class 'ale::rType' has the following attributes: 'name' of type str.
+The class 'ale::rSwitch' has the following attributes: 'paramName' of type str.
+The class 'ale::BehavioredClass' has the following attributes: 'name' of type str.
+The class 'rType' has no attributes.
+The class 'ale::VarDecl' has the following attributes: 'name' of type str.
+The class 'ale::VarRef' has the following attributes: 'ID' of type str.
+The class 'ale::RuntimeClass' has no attributes.
+The class 'ale::IntType' has no attributes.
+The class 'ale::Not' has no attributes.
+The class 'ale::EObject' has no attributes.
+The class 'ale::Or' has no attributes.
+The class 'ale::Let' has no attributes.
+The class 'ale::Expression' has no attributes.
+The class 'ale::Null' has no attributes.
+The class 'ale::Min' has no attributes.
+The class 'ale::Service' has the following attributes: 'name' of type str.
+The class 'ale::Real' has the following attributes: 'value' of type str.
+The class 'ale::Enum' has no attributes.
+'ale::Sequence' is a specialization of 'literal'.
+'ale::Assign' is a specialization of 'Statement'.
+'ale::classifierTypeRule' is a specialization of 'typeLiteral'.
+'ale::If' is a specialization of 'Statement'.
+'ale::VarDecl' is a specialization of 'Statement'.
+'ale::Mult' is a specialization of 'Expression'.
+'ale::Call' is a specialization of 'Expression'.
+'ale::RuntimeClass' is a specialization of 'BehavioredClass'.
+'ale::ForEach' is a specialization of 'Statement'.
+'ale::While' is a specialization of 'Statement'.
+'ale::And' is a specialization of 'Expression'.
+'ale::False' is a specialization of 'literal'.
+'ale::SeqType' is a specialization of 'typeLiteral'.
+'ale::ClassifierType' is a specialization of 'classifierTypeRule'.
+'ale::Int' is a specialization of 'literal'.
+'ale::Feature' is a specialization of 'Expression'.
+'ale::Real' is a specialization of 'literal'.
+'ale::Remove' is a specialization of 'Statement'.
+'ale::String' is a specialization of 'literal'.
+'ale::StringType' is a specialization of 'typeLiteral'.
+'ale::Add' is a specialization of 'Expression'.
+'ale::VarRef' is a specialization of 'Expression'.
+'ale::Insert' is a specialization of 'Statement'.
+'ale::Not' is a specialization of 'Expression'.
+'ale::Let' is a specialization of 'Expression'.
+'ale::ClassifierSetType' is a specialization of 'typeLiteral'.
+'ale::ExpressionStmt' is a specialization of 'Statement'.
+'ale::BoolType' is a specialization of 'typeLiteral'.
+'ale::Enum' is a specialization of 'literal'.
+'ale::Or' is a specialization of 'Expression'.
+'ale::Apply' is a specialization of 'Expression'.
+'ale::RealType' is a specialization of 'typeLiteral'.
+'ale::IntType' is a specialization of 'typeLiteral'.
+'ale::typeLiteral' is a specialization of 'literal'.
+'ale::Xor' is a specialization of 'Expression'.
+'ale::SetType' is a specialization of 'typeLiteral'.
+'ale::OrderedSet' is a specialization of 'literal'.
+'ale::True' is a specialization of 'literal'.
+'ale::Implie' is a specialization of 'Expression'.
+'ale::Lit' is a specialization of 'Expression'.
+'ale::ExtendedClass' is a specialization of 'BehavioredClass'.
+'ale::Null' is a specialization of 'literal'.
+'ale::Comp' is a specialization of 'Expression'.
+'ale::Min' is a specialization of 'Expression'.
+'ale::typeLiteral' is a specialization of 'rType'.
+'ale::Conditional' is a specialization of 'Expression'.
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt31', cardinality 0..*) is associated with 'ale::VarDecl' (role 'ale_VarDecl30', cardinality 0..*).
+'ale::Service' (role 'ale_Service', cardinality 0..*) is associated with 'ale::Unit' (role 'ale_Unit2', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt40', cardinality 0..*) is associated with 'ale::Insert' (role 'ale_Insert39', cardinality 0..*).
+'ale::Block' (role 'ale_Block70', cardinality 0..*) is associated with 'ale::While' (role 'ale_While69', cardinality 0..*).
+'ale::Operation' (role 'ale_Operation16', cardinality 0..*) is associated with 'ale::Block' (role 'ale_Block', cardinality 0..*).
+'ale::Block' (role 'ale_Block59', cardinality 0..*) is associated with 'ale::If' (role 'ale_If58', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression127', cardinality 0..*) is associated with 'ale::And' (role 'ale_And', cardinality 0..*).
+'ale::BehavioredClass' (role 'ale_BehavioredClass6', cardinality 0..*) is associated with 'ale::Attribute' (role 'ale_Attribute', cardinality 0..*).
+'ale::Conditional' (role 'ale_Conditional', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression152', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt83', cardinality 0..*) is associated with 'ale::rCase' (role 'ale_rCase82', cardinality 0..*).
+'ale::If' (role 'ale_If', cardinality 0..*) is associated with 'ale::ExpressionStmt' (role 'ale_ExpressionStmt56', cardinality 0..*).
+'ale::typeLiteral' (role 'ale_typeLiteral104', cardinality 0..*) is associated with 'ale::Apply' (role 'ale_Apply103', cardinality 0..*).
+'ale::Implie' (role 'ale_Implie', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression142', cardinality 0..*).
+'ale::Or' (role 'ale_Or134', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression135', cardinality 0..*).
+'ale::Not' (role 'ale_Not', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression147', cardinality 0..*).
+'ale::Operation' (role 'ale_Operation14', cardinality 0..*) is associated with 'ale::Variable' (role 'ale_Variable', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression112', cardinality 0..*) is associated with 'ale::Mult' (role 'ale_Mult', cardinality 0..*).
+'ale::Conditional' (role 'ale_Conditional157', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression158', cardinality 0..*).
+'ale::Unit' (role 'ale_Unit4', cardinality 0..*) is associated with 'ale::BehavioredClass' (role 'ale_BehavioredClass', cardinality 0..*).
+'ale::While' (role 'ale_While', cardinality 0..*) is associated with 'ale::ExpressionStmt' (role 'ale_ExpressionStmt67', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt88', cardinality 0..*) is associated with 'ale::EObject' (role 'ale_EObject', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression', cardinality 0..*) is associated with 'ale::Assign' (role 'ale_Assign', cardinality 0..*).
+'ale::Xor' (role 'ale_Xor139', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression140', cardinality 0..*).
+'ale::Block' (role 'ale_Block54', cardinality 0..*) is associated with 'ale::Statement' (role 'ale_Statement', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt', cardinality 0..*) is associated with 'ale::Attribute' (role 'ale_Attribute26', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression94', cardinality 0..*) is associated with 'ale::Call' (role 'ale_Call', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression115', cardinality 0..*) is associated with 'ale::Mult' (role 'ale_Mult114', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression37', cardinality 0..*) is associated with 'ale::Insert' (role 'ale_Insert', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression149', cardinality 0..*) is associated with 'ale::Min' (role 'ale_Min', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt86', cardinality 0..*) is associated with 'ale::rCase' (role 'ale_rCase85', cardinality 0..*).
+'ale::BehavioredClass' (role 'ale_BehavioredClass8', cardinality 0..*) is associated with 'ale::Operation' (role 'ale_Operation', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression132', cardinality 0..*) is associated with 'ale::Or' (role 'ale_Or', cardinality 0..*).
+'ale::SeqType' (role 'ale_SeqType', cardinality 0..*) is associated with 'ale::typeLiteral' (role 'ale_typeLiteral169', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression122', cardinality 0..*) is associated with 'ale::Comp' (role 'ale_Comp', cardinality 0..*).
+'ale::Implie' (role 'ale_Implie144', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression145', cardinality 0..*).
+'ale::Attribute' (role 'ale_Attribute21', cardinality 0..*) is associated with 'ale::rOpposite' (role 'ale_rOpposite', cardinality 0..*).
+'ale::rCase' (role 'ale_rCase79', cardinality 0..*) is associated with 'ale::rType' (role 'ale_rType80', cardinality 0..*).
+'ale::ForEach' (role 'ale_ForEach', cardinality 0..*) is associated with 'ale::Collection' (role 'ale_Collection', cardinality 0..*).
+'ale::rType' (role 'ale_rType24', cardinality 0..*) is associated with 'ale::Attribute' (role 'ale_Attribute23', cardinality 0..*).
+'ale::VarDecl' (role 'ale_VarDecl', cardinality 0..*) is associated with 'ale::rType' (role 'ale_rType28', cardinality 0..*).
+'ale::Remove' (role 'ale_Remove', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression42', cardinality 0..*).
+'ale::rType' (role 'ale_rType', cardinality 0..*) is associated with 'ale::Operation' (role 'ale_Operation12', cardinality 0..*).
+'ale::Remove' (role 'ale_Remove44', cardinality 0..*) is associated with 'ale::ExpressionStmt' (role 'ale_ExpressionStmt45', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression165', cardinality 0..*) is associated with 'ale::Sequence' (role 'ale_Sequence', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt72', cardinality 0..*) is associated with 'ale::rSwitch' (role 'ale_rSwitch', cardinality 0..*).
+'ale::Apply' (role 'ale_Apply109', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression110', cardinality 0..*).
+'ale::Apply' (role 'ale_Apply106', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression107', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt52', cardinality 0..*) is associated with 'ale::Collection' (role 'ale_Collection51', cardinality 0..*).
+'ale::If' (role 'ale_If65', cardinality 0..*) is associated with 'ale::If' (role 'ale_If63', cardinality 0..*).
+'ale::Add' (role 'ale_Add', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression117', cardinality 0..*).
+'ale::ClassifierSetType' (role 'ale_ClassifierSetType', cardinality 0..*) is associated with 'ale::classifierTypeRule' (role 'ale_classifierTypeRule', cardinality 0..*).
+'ale::Let' (role 'ale_Let162', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression163', cardinality 0..*).
+'ale::SetType' (role 'ale_SetType', cardinality 0..*) is associated with 'ale::typeLiteral' (role 'ale_typeLiteral171', cardinality 0..*).
+'ale::binding' (role 'ale_binding91', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression92', cardinality 0..*).
+'ale::Operation' (role 'ale_Operation10', cardinality 0..*) is associated with 'ale::Tag' (role 'ale_Tag', cardinality 0..*).
+'ale::Add' (role 'ale_Add119', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression120', cardinality 0..*).
+'ale::Comp' (role 'ale_Comp124', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression125', cardinality 0..*).
+'ale::Let' (role 'ale_Let', cardinality 0..*) is associated with 'ale::binding' (role 'ale_binding160', cardinality 0..*).
+'ale::ExpressionStmt' (role 'ale_ExpressionStmt35', cardinality 0..*) is associated with 'ale::Assign' (role 'ale_Assign34', cardinality 0..*).
+'ale::rSwitch' (role 'ale_rSwitch76', cardinality 0..*) is associated with 'ale::ExpressionStmt' (role 'ale_ExpressionStmt77', cardinality 0..*).
+'ale::Block' (role 'ale_Block62', cardinality 0..*) is associated with 'ale::If' (role 'ale_If61', cardinality 0..*).
+'ale::Apply' (role 'ale_Apply', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression101', cardinality 0..*).
+'ale::ForEach' (role 'ale_ForEach48', cardinality 0..*) is associated with 'ale::Block' (role 'ale_Block49', cardinality 0..*).
+'ale::Call' (role 'ale_Call96', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression97', cardinality 0..*).
+'ale::Lit' (role 'ale_Lit', cardinality 0..*) is associated with 'ale::literal' (role 'ale_literal', cardinality 0..*).
+'ale::OrderedSet' (role 'ale_OrderedSet', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression167', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression130', cardinality 0..*) is associated with 'ale::And' (role 'ale_And129', cardinality 0..*).
+'ale::Feature' (role 'ale_Feature', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression99', cardinality 0..*).
+'ale::Expression' (role 'ale_Expression155', cardinality 0..*) is associated with 'ale::Conditional' (role 'ale_Conditional154', cardinality 0..*).
+'ale::rType' (role 'ale_rType19', cardinality 0..*) is associated with 'ale::Variable' (role 'ale_Variable18', cardinality 0..*).
+'ale::Import' (role 'ale_Import', cardinality 0..*) is associated with 'ale::Unit' (role 'ale_Unit', cardinality 0..*).
+'ale::Xor' (role 'ale_Xor', cardinality 0..*) is associated with 'ale::Expression' (role 'ale_Expression137', cardinality 0..*).
+'ale::rCase' (role 'ale_rCase', cardinality 0..*) is associated with 'ale::rSwitch' (role 'ale_rSwitch74', cardinality 0..*).
+'ale::typeLiteral' (role 'ale_typeLiteral', cardinality 0..*) is associated with 'ale::binding' (role 'ale_binding', cardinality 0..*).

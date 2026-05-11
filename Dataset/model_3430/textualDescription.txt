@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'school::Student' has the following attributes: 'registrationNum' of type int.
+The class 'school::SchoolModel' has no attributes.
+The class 'school::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+The class 'school::Teacher' has no attributes.
+The class 'Person' has no attributes.
+The class 'school::Person' has no attributes.
+The class 'school::School' has no attributes.
+'school::School' is a specialization of 'Named'.
+'school::Person' is a specialization of 'Named'.
+'school::Student' is a specialization of 'Person'.
+'school::Teacher' is a specialization of 'Person'.
+'school::Person' (role 'school_Person', cardinality 0..*) is associated with 'school::School' (role 'school_School2', cardinality 0..*).
+'school::School' (role 'school_School', cardinality 0..*) is associated with 'school::SchoolModel' (role 'school_SchoolModel', cardinality 0..*).
+'school::Teacher' (role 'school_Teacher', cardinality 0..*) is associated with 'school::Student' (role 'school_Student', cardinality 0..*).

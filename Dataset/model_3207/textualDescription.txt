@@ -1,0 +1,131 @@
+The model has 49 class(es).
+The class 'NQC::Expression' has no attributes.
+The class 'NQC::ConstantExpression' has no attributes.
+The class 'NQC::GlobalVariable' has no attributes.
+The class 'NQC::BooleanConstant' has the following attributes: 'Value' of type bool.
+The class 'NQC::Variable' has the following attributes: 'Type' of type str; 'Name' of type str.
+The class 'NQC::ContinueStatement' has no attributes.
+The class 'NQC::DoWhileStatement' has no attributes.
+The class 'NQC::Parameter' has no attributes.
+The class 'NQC::StopStatement' has no attributes.
+The class 'ConstantExpression' has no attributes.
+The class 'NQC::ValueExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'NQC::IntegerConstant' has the following attributes: 'Value' of type int.
+The class 'NQC::Subroutine' has the following attributes: 'Name' of type str.
+The class 'NQC::ReturnStatement' has no attributes.
+The class 'NQC::Label' has the following attributes: 'Label' of type str.
+The class 'CompoundExpression' has no attributes.
+The class 'NQC::FunctionCall' has no attributes.
+The class 'NQC::Function' has the following attributes: 'Name' of type str.
+The class 'NQC::SubroutineCall' has no attributes.
+The class 'NQC::CompoundExpression' has no attributes.
+The class 'NQC::CallStatement' has no attributes.
+The class 'NQC::Case' has the following attributes: 'IsDefault' of type bool.
+The class 'Statement' has no attributes.
+The class 'NQC::UntilStatement' has no attributes.
+The class 'NQC::GoToStatement' has no attributes.
+The class 'NQC::BinaryExpression' has the following attributes: 'Operator' of type str.
+The class 'ControlStructure' has no attributes.
+The class 'NQC::Program' has the following attributes: 'Name' of type str.
+The class 'NQC::EmptyStatement' has no attributes.
+The class 'NQC::ArrayExpression' has no attributes.
+The class 'NQC::Statement' has no attributes.
+The class 'NQC::WhileStatement' has no attributes.
+The class 'NQC::ControlStructure' has no attributes.
+The class 'NQC::VariableExpression' has no attributes.
+The class 'NQC::BlockStatement' has no attributes.
+The class 'NQC::BreakStatement' has no attributes.
+The class 'CallStatement' has no attributes.
+The class 'NQC::SwitchStatement' has no attributes.
+The class 'NQC::LocalVariable' has no attributes.
+The class 'NQC::IfStatement' has no attributes.
+The class 'NQC::Task' has the following attributes: 'Name' of type str.
+The class 'VariableExpression' has no attributes.
+The class 'NQC::AssignmentStatement' has the following attributes: 'Operator' of type str.
+The class 'NQC::ForStatement' has no attributes.
+The class 'NQC::StartStatement' has no attributes.
+The class 'Variable' has no attributes.
+The class 'NQC::RepeatStatement' has no attributes.
+The class 'ValueExpression' has no attributes.
+The enumeration 'BinaryOperatorEnum' has the following literals: 'equal', 'leq', 'greater', 'bitor', 'minus', 'plus', 'less', 'div', 'geq', 'times', 'mod', 'and_', 'or_', 'bitand', 'notequal'.
+The enumeration 'TypeEnum' has the following literals: 'Integer', 'IntegerArray'.
+The enumeration 'AssignmentStatementEnum' has the following literals: 'assign'.
+'NQC::LocalVariable' is a specialization of 'Variable'.
+'NQC::StopStatement' is a specialization of 'Statement'.
+'NQC::BooleanConstant' is a specialization of 'ConstantExpression'.
+'NQC::ControlStructure' is a specialization of 'Statement'.
+'NQC::SwitchStatement' is a specialization of 'ControlStructure'.
+'NQC::ForStatement' is a specialization of 'ControlStructure'.
+'NQC::DoWhileStatement' is a specialization of 'ControlStructure'.
+'NQC::CompoundExpression' is a specialization of 'Expression'.
+'NQC::Parameter' is a specialization of 'Variable'.
+'NQC::ReturnStatement' is a specialization of 'Statement'.
+'NQC::GlobalVariable' is a specialization of 'Variable'.
+'NQC::UntilStatement' is a specialization of 'ControlStructure'.
+'NQC::GoToStatement' is a specialization of 'ControlStructure'.
+'NQC::RepeatStatement' is a specialization of 'ControlStructure'.
+'NQC::Expression' is a specialization of 'Statement'.
+'NQC::SubroutineCall' is a specialization of 'CallStatement'.
+'NQC::ArrayExpression' is a specialization of 'VariableExpression'.
+'NQC::BlockStatement' is a specialization of 'Statement'.
+'NQC::IntegerConstant' is a specialization of 'ConstantExpression'.
+'NQC::IfStatement' is a specialization of 'ControlStructure'.
+'NQC::ConstantExpression' is a specialization of 'ValueExpression'.
+'NQC::WhileStatement' is a specialization of 'ControlStructure'.
+'NQC::StartStatement' is a specialization of 'Statement'.
+'NQC::AssignmentStatement' is a specialization of 'Statement'.
+'NQC::CallStatement' is a specialization of 'Statement'.
+'NQC::FunctionCall' is a specialization of 'CallStatement'.
+'NQC::BinaryExpression' is a specialization of 'CompoundExpression'.
+'NQC::VariableExpression' is a specialization of 'ValueExpression'.
+'NQC::ValueExpression' is a specialization of 'Expression'.
+'NQC::ContinueStatement' is a specialization of 'Statement'.
+'NQC::BreakStatement' is a specialization of 'Statement'.
+'NQC::EmptyStatement' is a specialization of 'Statement'.
+'NQC::Subroutine' (role 'NQC_Subroutine23', cardinality 0..*) is associated with 'NQC::LocalVariable' (role 'NQC_LocalVariable24', cardinality 0..*).
+'NQC::ForStatement' (role 'NQC_ForStatement50', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression51', cardinality 0..*).
+'NQC::AssignmentStatement' (role 'NQC_AssignmentStatement', cardinality 0..*) is associated with 'NQC::VariableExpression' (role 'NQC_VariableExpression', cardinality 0..*).
+'NQC::BlockStatement' (role 'NQC_BlockStatement36', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement37', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression96', cardinality 0..*) is associated with 'NQC::BinaryExpression' (role 'NQC_BinaryExpression', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression66', cardinality 0..*) is associated with 'NQC::RepeatStatement' (role 'NQC_RepeatStatement', cardinality 0..*).
+'NQC::BlockStatement' (role 'NQC_BlockStatement', cardinality 0..*) is associated with 'NQC::LocalVariable' (role 'NQC_LocalVariable34', cardinality 0..*).
+'NQC::Case' (role 'NQC_Case85', cardinality 0..*) is associated with 'NQC::ConstantExpression' (role 'NQC_ConstantExpression86', cardinality 0..*).
+'NQC::Function' (role 'NQC_Function101', cardinality 0..*) is associated with 'NQC::FunctionCall' (role 'NQC_FunctionCall', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement', cardinality 0..*) is associated with 'NQC::Task' (role 'NQC_Task8', cardinality 0..*).
+'NQC::Case' (role 'NQC_Case88', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement89', cardinality 0..*).
+'NQC::Subroutine' (role 'NQC_Subroutine106', cardinality 0..*) is associated with 'NQC::SubroutineCall' (role 'NQC_SubroutineCall', cardinality 0..*).
+'NQC::Task' (role 'NQC_Task10', cardinality 0..*) is associated with 'NQC::LocalVariable' (role 'NQC_LocalVariable', cardinality 0..*).
+'NQC::Parameter' (role 'NQC_Parameter', cardinality 0..*) is associated with 'NQC::Function' (role 'NQC_Function18', cardinality 0..*).
+'NQC::Case' (role 'NQC_Case', cardinality 0..*) is associated with 'NQC::SwitchStatement' (role 'NQC_SwitchStatement73', cardinality 0..*).
+'NQC::Variable' (role 'NQC_Variable92', cardinality 0..*) is associated with 'NQC::VariableExpression' (role 'NQC_VariableExpression91', cardinality 0..*).
+'NQC::Label' (role 'NQC_Label', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement29', cardinality 0..*).
+'NQC::AssignmentStatement' (role 'NQC_AssignmentStatement32', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression', cardinality 0..*).
+'NQC::GlobalVariable' (role 'NQC_GlobalVariable', cardinality 0..*) is associated with 'NQC::Program' (role 'NQC_Program6', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement54', cardinality 0..*) is associated with 'NQC::ForStatement' (role 'NQC_ForStatement53', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement48', cardinality 0..*) is associated with 'NQC::ForStatement' (role 'NQC_ForStatement', cardinality 0..*).
+'NQC::DoWhileStatement' (role 'NQC_DoWhileStatement45', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression46', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement43', cardinality 0..*) is associated with 'NQC::DoWhileStatement' (role 'NQC_DoWhileStatement', cardinality 0..*).
+'NQC::Task' (role 'NQC_Task39', cardinality 0..*) is associated with 'NQC::StartStatement' (role 'NQC_StartStatement', cardinality 0..*).
+'NQC::WhileStatement' (role 'NQC_WhileStatement82', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement83', cardinality 0..*).
+'NQC::IfStatement' (role 'NQC_IfStatement63', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement64', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression80', cardinality 0..*) is associated with 'NQC::WhileStatement' (role 'NQC_WhileStatement', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement69', cardinality 0..*) is associated with 'NQC::RepeatStatement' (role 'NQC_RepeatStatement68', cardinality 0..*).
+'NQC::BinaryExpression' (role 'NQC_BinaryExpression98', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression99', cardinality 0..*).
+'NQC::Variable' (role 'NQC_Variable', cardinality 0..*) is associated with 'NQC::ConstantExpression' (role 'NQC_ConstantExpression', cardinality 0..*).
+'NQC::IfStatement' (role 'NQC_IfStatement60', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement61', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression104', cardinality 0..*) is associated with 'NQC::FunctionCall' (role 'NQC_FunctionCall103', cardinality 0..*).
+'NQC::GoToStatement' (role 'NQC_GoToStatement', cardinality 0..*) is associated with 'NQC::Label' (role 'NQC_Label56', cardinality 0..*).
+'NQC::Statement' (role 'NQC_Statement13', cardinality 0..*) is associated with 'NQC::Function' (role 'NQC_Function12', cardinality 0..*).
+'NQC::UntilStatement' (role 'NQC_UntilStatement77', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement78', cardinality 0..*).
+'NQC::Subroutine' (role 'NQC_Subroutine20', cardinality 0..*) is associated with 'NQC::Statement' (role 'NQC_Statement21', cardinality 0..*).
+'NQC::IntegerConstant' (role 'NQC_IntegerConstant', cardinality 0..*) is associated with 'NQC::Variable' (role 'NQC_Variable27', cardinality 0..*).
+'NQC::Function' (role 'NQC_Function', cardinality 0..*) is associated with 'NQC::Program' (role 'NQC_Program2', cardinality 0..*).
+'NQC::StopStatement' (role 'NQC_StopStatement', cardinality 0..*) is associated with 'NQC::Task' (role 'NQC_Task41', cardinality 0..*).
+'NQC::UntilStatement' (role 'NQC_UntilStatement', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression75', cardinality 0..*).
+'NQC::Task' (role 'NQC_Task', cardinality 0..*) is associated with 'NQC::Program' (role 'NQC_Program', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression58', cardinality 0..*) is associated with 'NQC::IfStatement' (role 'NQC_IfStatement', cardinality 0..*).
+'NQC::SwitchStatement' (role 'NQC_SwitchStatement', cardinality 0..*) is associated with 'NQC::Expression' (role 'NQC_Expression71', cardinality 0..*).
+'NQC::Expression' (role 'NQC_Expression94', cardinality 0..*) is associated with 'NQC::ArrayExpression' (role 'NQC_ArrayExpression', cardinality 0..*).
+'NQC::Program' (role 'NQC_Program4', cardinality 0..*) is associated with 'NQC::Subroutine' (role 'NQC_Subroutine', cardinality 0..*).
+'NQC::Function' (role 'NQC_Function15', cardinality 0..*) is associated with 'NQC::LocalVariable' (role 'NQC_LocalVariable16', cardinality 0..*).

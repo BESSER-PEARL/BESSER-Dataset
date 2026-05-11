@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'boolExpEnv::VarRef' has the following attributes: 'name' of type str.
+The class 'boolExpEnv::Exp' has no attributes.
+The class 'boolExpEnv::And' has no attributes.
+The class 'boolExpEnv::Lit' has no attributes.
+The class 'Exp' has no attributes.
+The class 'Lit' has no attributes.
+The class 'BinExp' has no attributes.
+The class 'boolExpEnv::Tru' has no attributes.
+The class 'boolExpEnv::Or' has no attributes.
+The class 'boolExpEnv::Not' has no attributes.
+The class 'boolExpEnv::BinExp' has no attributes.
+The class 'boolExpEnv::Fals' has no attributes.
+'boolExpEnv::Fals' is a specialization of 'Lit'.
+'boolExpEnv::BinExp' is a specialization of 'Exp'.
+'boolExpEnv::Or' is a specialization of 'BinExp'.
+'boolExpEnv::Lit' is a specialization of 'Exp'.
+'boolExpEnv::Tru' is a specialization of 'Lit'.
+'boolExpEnv::And' is a specialization of 'BinExp'.
+'boolExpEnv::VarRef' is a specialization of 'Exp'.
+'boolExpEnv::Not' is a specialization of 'Exp'.
+'boolExpEnv::Exp' (role 'boolExpEnv_Exp5', cardinality 0..*) is associated with 'boolExpEnv::Not' (role 'boolExpEnv_Not', cardinality 0..*).
+'boolExpEnv::BinExp' (role 'boolExpEnv_BinExp2', cardinality 0..*) is associated with 'boolExpEnv::Exp' (role 'boolExpEnv_Exp3', cardinality 0..*).
+'boolExpEnv::Exp' (role 'boolExpEnv_Exp', cardinality 0..*) is associated with 'boolExpEnv::BinExp' (role 'boolExpEnv_BinExp', cardinality 0..*).

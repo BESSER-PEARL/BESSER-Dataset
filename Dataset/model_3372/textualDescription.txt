@@ -1,0 +1,131 @@
+The model has 70 class(es).
+The class 'DDL::VarChar' has no attributes.
+The class 'DDL::Database' has the following attributes: 'databaseName' of type str.
+The class 'DDL::Type' has the following attributes: 'name' of type str.
+The class 'DDL::Int' has no attributes.
+The class 'DDL::Bit' has no attributes.
+The class 'DDL::YearMonth' has no attributes.
+The class 'DDL::Statement' has no attributes.
+The class 'DDL::Number' has no attributes.
+The class 'DDL::LongRaw' has no attributes.
+The class 'DDL::Date' has no attributes.
+The class 'DDL::DayTime' has no attributes.
+The class 'Bits' has no attributes.
+The class 'DDL::Characters' has the following attributes: 'n' of type str.
+The class 'DataDefinition' has no attributes.
+The class 'DDL::NationalCharacterVarying' has no attributes.
+The class 'DDL::Timestamp' has no attributes.
+The class 'DDL::Aproximado' has no attributes.
+The class 'DDL::NVarChar2' has no attributes.
+The class 'DDL::Binaries' has no attributes.
+The class 'DDL::Real' has no attributes.
+The class 'DDL::Times' has no attributes.
+The class 'DDL::NCharVarying' has no attributes.
+The class 'Intervals' has no attributes.
+The class 'DDL::SmallInteger' has no attributes.
+The class 'DDL::Decimal' has no attributes.
+The class 'Bit' has no attributes.
+The class 'Binaries' has no attributes.
+The class 'DDL::Bits' has the following attributes: 'n' of type str.
+The class 'DDL::CommentTable' has the following attributes: 'tableName' of type str; 'tableComment' of type str.
+The class 'DDL::NClob' has no attributes.
+The class 'Type' has no attributes.
+The class 'DDL::CommentColumn' has the following attributes: 'columnName' of type str; 'tableName' of type str; 'columnComment' of type str.
+The class 'DDL::Intervals' has no attributes.
+The class 'DDL::Column' has the following attributes: 'columnName' of type str; 'commentColumn' of type str; 'columnNull' of type bool.
+The class 'Times' has no attributes.
+The class 'Characters' has no attributes.
+The class 'DDL::SmallInt' has no attributes.
+The class 'DDL::NationalCharacter' has no attributes.
+The class 'DDL::Clob' has no attributes.
+The class 'DDL::DoublePrecision' has no attributes.
+The class 'DDL::DDLDefinition' has no attributes.
+The class 'DDL::BinaryDouble' has no attributes.
+The class 'DDL::Fk' has the following attributes: 'status' of type str; 'nameFk' of type str; 'columnName' of type str; 'columnReference' of type str.
+The class 'DDL::Numeric' has no attributes.
+The class 'DDL::CharVarying' has no attributes.
+The class 'DDL::Integer' has no attributes.
+The class 'DDL::VarChar2' has no attributes.
+The class 'DDL::BinaryFloat' has no attributes.
+The class 'DDL::BFile' has no attributes.
+The class 'DDL::ValuesCk' has the following attributes: 'comparator' of type str; 'logConjuntion' of type str; 'columnName' of type str; 'value' of type str.
+The class 'DDL::NationalChar' has no attributes.
+The class 'DDL::Exacto' has no attributes.
+The class 'DDL::Long' has no attributes.
+The class 'DDL::Table' has the following attributes: 'commentTable' of type str; 'tableName' of type str.
+The class 'DDL::BitVarying' has no attributes.
+The class 'DDL::NChar' has no attributes.
+The class 'DDL::Pk' has the following attributes: 'columnName' of type str; 'namePk' of type str.
+The class 'Exacto' has no attributes.
+The class 'DDL::Ck' has the following attributes: 'nameCk' of type str; 'status' of type str.
+The class 'DDL::Character' has no attributes.
+The class 'DDL::Blob' has no attributes.
+The class 'DDL::Char' has no attributes.
+The class 'DDL::Time' has no attributes.
+The class 'Statement' has no attributes.
+The class 'DDL::DataType' has no attributes.
+The class 'DDL::NationalCharVarying' has no attributes.
+The class 'DDL::Float' has no attributes.
+The class 'Aproximado' has no attributes.
+The class 'DDL::CharacterVarying' has no attributes.
+The class 'DDL::DataDefinition' has no attributes.
+'DDL::CharacterVarying' is a specialization of 'Characters'.
+'DDL::VarChar2' is a specialization of 'Characters'.
+'DDL::Time' is a specialization of 'Times'.
+'DDL::CharVarying' is a specialization of 'Characters'.
+'DDL::Date' is a specialization of 'Times'.
+'DDL::Blob' is a specialization of 'Binaries'.
+'DDL::NChar' is a specialization of 'Characters'.
+'DDL::Number' is a specialization of 'Exacto'.
+'DDL::Bits' is a specialization of 'Type'.
+'DDL::Float' is a specialization of 'Aproximado'.
+'DDL::Int' is a specialization of 'Exacto'.
+'DDL::VarChar' is a specialization of 'Characters'.
+'DDL::BinaryFloat' is a specialization of 'Binaries'.
+'DDL::CommentTable' is a specialization of 'DataDefinition'.
+'DDL::NCharVarying' is a specialization of 'Characters'.
+'DDL::SmallInteger' is a specialization of 'Exacto'.
+'DDL::LongRaw' is a specialization of 'Aproximado'.
+'DDL::BitVarying' is a specialization of 'Bit'.
+'DDL::NationalCharVarying' is a specialization of 'Characters'.
+'DDL::BFile' is a specialization of 'Binaries'.
+'DDL::NationalCharacter' is a specialization of 'Characters'.
+'DDL::Real' is a specialization of 'Aproximado'.
+'DDL::DataDefinition' is a specialization of 'Statement'.
+'DDL::YearMonth' is a specialization of 'Intervals'.
+'DDL::Bit' is a specialization of 'Bits'.
+'DDL::Characters' is a specialization of 'Type'.
+'DDL::Integer' is a specialization of 'Exacto'.
+'DDL::Table' is a specialization of 'DataDefinition'.
+'DDL::NVarChar2' is a specialization of 'Characters'.
+'DDL::Timestamp' is a specialization of 'Times'.
+'DDL::SmallInt' is a specialization of 'Exacto'.
+'DDL::Binaries' is a specialization of 'Type'.
+'DDL::DayTime' is a specialization of 'Intervals'.
+'DDL::Database' is a specialization of 'DataDefinition'.
+'DDL::NationalChar' is a specialization of 'Characters'.
+'DDL::CommentColumn' is a specialization of 'DataDefinition'.
+'DDL::BinaryDouble' is a specialization of 'Binaries'.
+'DDL::Numeric' is a specialization of 'Exacto'.
+'DDL::NClob' is a specialization of 'Characters'.
+'DDL::Exacto' is a specialization of 'Type'.
+'DDL::Char' is a specialization of 'Characters'.
+'DDL::DoublePrecision' is a specialization of 'Aproximado'.
+'DDL::Clob' is a specialization of 'Characters'.
+'DDL::Character' is a specialization of 'Characters'.
+'DDL::Long' is a specialization of 'Aproximado'.
+'DDL::NationalCharacterVarying' is a specialization of 'Characters'.
+'DDL::Aproximado' is a specialization of 'Type'.
+'DDL::Times' is a specialization of 'Type'.
+'DDL::Decimal' is a specialization of 'Exacto'.
+'DDL::Intervals' is a specialization of 'Type'.
+'DDL::DDLDefinition' (role 'DDL_DDLDefinition', cardinality 0..*) is associated with 'DDL::Statement' (role 'DDL_Statement', cardinality 0..*).
+'DDL::Ck' (role 'DDL_Ck19', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table18', cardinality 0..*).
+'DDL::DataType' (role 'DDL_DataType4', cardinality 0..*) is associated with 'DDL::DDLDefinition' (role 'DDL_DDLDefinition3', cardinality 0..*).
+'DDL::ValuesCk' (role 'DDL_ValuesCk', cardinality 0..*) is associated with 'DDL::Ck' (role 'DDL_Ck', cardinality 0..*).
+'DDL::Table' (role 'DDL_Table10', cardinality 0..*) is associated with 'DDL::Column' (role 'DDL_Column11', cardinality 0..*).
+'DDL::DataType' (role 'DDL_DataType', cardinality 0..*) is associated with 'DDL::Type' (role 'DDL_Type', cardinality 0..*).
+'DDL::Table' (role 'DDL_Table', cardinality 0..*) is associated with 'DDL::Fk' (role 'DDL_Fk', cardinality 0..*).
+'DDL::Table' (role 'DDL_Table15', cardinality 0..*) is associated with 'DDL::Fk' (role 'DDL_Fk16', cardinality 0..*).
+'DDL::Pk' (role 'DDL_Pk', cardinality 0..*) is associated with 'DDL::Table' (role 'DDL_Table13', cardinality 0..*).
+'DDL::Type' (role 'DDL_Type8', cardinality 0..*) is associated with 'DDL::Column' (role 'DDL_Column', cardinality 0..*).

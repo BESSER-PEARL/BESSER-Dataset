@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'company::Department' has the following attributes: 'number' of type int.
+The class 'company::Employee' has the following attributes: 'name' of type str.
+The class 'company::Company' has the following attributes: 'name' of type str.
+'company::Employee' (role 'company_Employee', cardinality 0..*) is associated with 'company::Department' (role 'company_Department', cardinality 0..*).
+'company::Employee' (role 'company_Employee3', cardinality 0..*) is associated with 'company::Department' (role 'company_Department2', cardinality 0..*).
+'company::Department' (role 'company_Department5', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).

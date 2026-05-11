@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ferdjoukh/comodi/modelsSets1/simpleUML_MM.ecore

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'stateMachineEditRules::Transition' has the following attributes: 'input' of type str.
+The class 'stateMachineEditRules::State' has the following attributes: 'id' of type str; 'isEnd' of type bool; 'isStart' of type bool.
+The class 'stateMachineEditRules::DFA' has no attributes.
+'stateMachineEditRules::Transition' (role 'Transition5', cardinality 0..*) is associated with 'stateMachineEditRules::State' (role 'from_', cardinality 0..*).
+'stateMachineEditRules::Transition' (role 'stateMachineEditRules_Transition', cardinality 0..*) is associated with 'stateMachineEditRules::DFA' (role 'stateMachineEditRules_DFA8', cardinality 0..*).
+'stateMachineEditRules::Transition' (role 'Transition', cardinality 0..*) is associated with 'stateMachineEditRules::State' (role 'to', cardinality 0..*).
+'stateMachineEditRules::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'stateMachineEditRules::State' (role 'State2', cardinality 0..*).
+'stateMachineEditRules::DFA' (role 'stateMachineEditRules_DFA', cardinality 0..*) is associated with 'stateMachineEditRules::State' (role 'stateMachineEditRules_State', cardinality 0..*).
+'stateMachineEditRules::State' (role 'State', cardinality 0..*) is associated with 'stateMachineEditRules::Transition' (role 'incomingTransitions', cardinality 0..*).

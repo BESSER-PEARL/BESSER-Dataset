@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'StochasticSIRDiseaseModel' has no attributes.
+The class 'forcing::Gaussian2ForcingDiseaseModel' has the following attributes: 'sigma2' of type float; 'att4' of type float; 'modulationFloor' of type float; 'att2' of type float; 'att3' of type float; 'modulationPeriod' of type float; 'att1' of type float; 'modulationPhaseShift' of type float; 'sigma2_2' of type float.
+The class 'Gaussian2ForcingDiseaseModel' has no attributes.
+The class 'forcing::ForcingDiseaseModel' has the following attributes: 'modulationPeriod' of type float; 'seasonalModulationFloor' of type float; 'seasonalModulationExponent' of type float; 'modulationPhaseShift' of type float.
+The class 'forcing::Gaussian3ForcingDiseaseModel' has the following attributes: 'modulationFloor_2' of type float; 'transmissionRate2' of type float; 'sigma2_3' of type float; 'transmissionRate3' of type float.
+The class 'forcing::GaussianForcingDiseaseModel' has the following attributes: 'modulationFloor' of type float; 'modulationPhaseShift' of type float; 'sigma2' of type float; 'modulationPeriod' of type float.
+'forcing::GaussianForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+'forcing::Gaussian2ForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+'forcing::ForcingDiseaseModel' is a specialization of 'StochasticSIRDiseaseModel'.
+'forcing::Gaussian3ForcingDiseaseModel' is a specialization of 'Gaussian2ForcingDiseaseModel'.

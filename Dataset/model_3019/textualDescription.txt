@@ -1,0 +1,243 @@
+The model has 80 class(es).
+The class 'ir::Parenthesis' has no attributes.
+The class 'ir::If' has no attributes.
+The class 'ir::ItemIdValue' has no attributes.
+The class 'ir::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'ir::FunctionCall' has no attributes.
+The class 'ArgOrVar' has no attributes.
+The class 'ir::JobContainer' has no attributes.
+The class 'ir::InstructionBlock' has no attributes.
+The class 'JobContainer' has no attributes.
+The class 'IterableInstruction' has no attributes.
+The class 'ir::ReductionInstruction' has no attributes.
+The class 'ir::ConnectivityCall' has no attributes.
+The class 'ir::Loop' has the following attributes: 'multithreadable' of type bool.
+The class 'ir::Function' has the following attributes: 'provider' of type str; 'name' of type str.
+The class 'ir::TimeLoopCopyJob' has no attributes.
+The class 'ir::SimpleVariable' has no attributes.
+The class 'ir::AfterTimeLoopJob' has no attributes.
+The class 'ir::ItemIdValueCall' has no attributes.
+The class 'ir::Expression' has no attributes.
+The class 'Variable' has no attributes.
+The class 'ir::ConnectivityVariable' has no attributes.
+The class 'ir::ConnectivityType' has no attributes.
+The class 'TimeLoopCopyJob' has no attributes.
+The class 'ir::IterableInstruction' has no attributes.
+The class 'ir::BeforeTimeLoopJob' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'ir::IrAnnotable' has no attributes.
+The class 'ir::VectorConstant' has no attributes.
+The class 'ir::Arg' has no attributes.
+The class 'ir::ItemType' has the following attributes: 'name' of type str.
+The class 'ir::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'ir::Exit' has the following attributes: 'message' of type str.
+The class 'ir::IntConstant' has the following attributes: 'value' of type int.
+The class 'ir::MinConstant' has no attributes.
+The class 'ir::Interval' has no attributes.
+The class 'ir::ArgOrVar' has the following attributes: 'name' of type str.
+The class 'ir::Container' has no attributes.
+The class 'ir::ContractedIf' has no attributes.
+The class 'ir::ItemId' has the following attributes: 'itemName' of type str; 'name' of type str.
+The class 'ir::MaxConstant' has no attributes.
+The class 'ir::Return' has no attributes.
+The class 'ir::SetDefinition' has the following attributes: 'name' of type str.
+The class 'ir::EStringToStringMapEntry' has no attributes.
+The class 'ir::ItemIndex' has the following attributes: 'name' of type str; 'itemName' of type str.
+The class 'ir::TimeLoop' has the following attributes: 'name' of type str.
+The class 'ir::Variable' has the following attributes: 'persistenceName' of type str; 'const' of type bool.
+The class 'ir::ItemIdDefinition' has no attributes.
+The class 'ir::RealConstant' has the following attributes: 'value' of type float.
+The class 'ir::BaseTypeConstant' has no attributes.
+The class 'Container' has no attributes.
+The class 'ir::ItemIndexValue' has no attributes.
+The class 'ir::BaseType' has the following attributes: 'primitive' of type str.
+The class 'ir::Affectation' has no attributes.
+The class 'ir::IrAnnotation' has the following attributes: 'source' of type str.
+The class 'Expression' has no attributes.
+The class 'ir::Job' has the following attributes: 'onCycle' of type bool; 'name' of type str; 'at' of type float.
+The class 'ir::ArgOrVarRef' has no attributes.
+The class 'ItemIdValue' has no attributes.
+The class 'ir::BoolConstant' has the following attributes: 'value' of type bool.
+The class 'ir::Connectivity' has the following attributes: 'indexEqualId' of type bool; 'name' of type str; 'multiple' of type bool.
+The class 'ir::InstructionJob' has no attributes.
+The class 'ir::PostProcessingInfo' has the following attributes: 'periodValue' of type float.
+The class 'ir::IrModule' has the following attributes: 'name' of type str.
+The class 'ir::TimeLoopCopy' has no attributes.
+The class 'ir::Iterator' has no attributes.
+The class 'IterationBlock' has no attributes.
+The class 'ir::ItemIdValueIterator' has the following attributes: 'shift' of type int.
+The class 'ir::VariableDefinition' has no attributes.
+The class 'ir::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'ir::SetRef' has no attributes.
+The class 'IrAnnotable' has no attributes.
+The class 'IrType' has no attributes.
+The class 'ir::Instruction' has no attributes.
+The class 'ir::ItemIndexDefinition' has no attributes.
+The class 'ir::TimeLoopJob' has no attributes.
+The class 'ir::IrType' has no attributes.
+The class 'Job' has no attributes.
+The class 'ir::TimeLoopVariable' has the following attributes: 'name' of type str.
+The class 'ir::IterationBlock' has no attributes.
+The class 'ir::Cardinality' has no attributes.
+The enumeration 'PrimitiveType' has the following literals: 'Real', 'Int', 'Bool'.
+'ir::ArgOrVar' is a specialization of 'IrAnnotable'.
+'ir::IrType' is a specialization of 'IrAnnotable'.
+'ir::SetRef' is a specialization of 'Container'.
+'ir::RealConstant' is a specialization of 'Expression'.
+'ir::Arg' is a specialization of 'ArgOrVar'.
+'ir::TimeLoop' is a specialization of 'IrAnnotable'.
+'ir::Function' is a specialization of 'IrAnnotable'.
+'ir::TimeLoopCopy' is a specialization of 'IrAnnotable'.
+'ir::Cardinality' is a specialization of 'Expression'.
+'ir::ConnectivityType' is a specialization of 'IrType'.
+'ir::VariableDefinition' is a specialization of 'Instruction'.
+'ir::ReductionInstruction' is a specialization of 'IterableInstruction'.
+'ir::BaseTypeConstant' is a specialization of 'Expression'.
+'ir::ItemType' is a specialization of 'IrAnnotable'.
+'ir::SimpleVariable' is a specialization of 'Variable'.
+'ir::IntConstant' is a specialization of 'Expression'.
+'ir::ContractedIf' is a specialization of 'Expression'.
+'ir::BeforeTimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+'ir::If' is a specialization of 'Instruction'.
+'ir::InstructionJob' is a specialization of 'Job'.
+'ir::SetDefinition' is a specialization of 'Instruction'.
+'ir::ItemIdDefinition' is a specialization of 'Instruction'.
+'ir::Exit' is a specialization of 'Instruction'.
+'ir::TimeLoopVariable' is a specialization of 'IrAnnotable'.
+'ir::IterableInstruction' is a specialization of 'Instruction'.
+'ir::Loop' is a specialization of 'IterableInstruction'.
+'ir::ItemIdValue' is a specialization of 'IrAnnotable'.
+'ir::Instruction' is a specialization of 'IrAnnotable'.
+'ir::TimeLoopJob' is a specialization of 'JobContainer'.
+'ir::Variable' is a specialization of 'ArgOrVar'.
+'ir::Import' is a specialization of 'IrAnnotable'.
+'ir::AfterTimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+'ir::VectorConstant' is a specialization of 'Expression'.
+'ir::IrModule' is a specialization of 'JobContainer'.
+'ir::Parenthesis' is a specialization of 'Expression'.
+'ir::Container' is a specialization of 'IrAnnotable'.
+'ir::BoolConstant' is a specialization of 'Expression'.
+'ir::TimeLoopJob' is a specialization of 'TimeLoopCopyJob'.
+'ir::ConnectivityVariable' is a specialization of 'Variable'.
+'ir::IterationBlock' is a specialization of 'IrAnnotable'.
+'ir::UnaryExpression' is a specialization of 'Expression'.
+'ir::BinaryExpression' is a specialization of 'Expression'.
+'ir::Interval' is a specialization of 'IterationBlock'.
+'ir::ArgOrVarRef' is a specialization of 'Expression'.
+'ir::ItemIdValueIterator' is a specialization of 'ItemIdValue'.
+'ir::MaxConstant' is a specialization of 'Expression'.
+'ir::PostProcessingInfo' is a specialization of 'IrAnnotable'.
+'ir::ItemIndexDefinition' is a specialization of 'Instruction'.
+'ir::ConnectivityCall' is a specialization of 'Container'.
+'ir::InstructionBlock' is a specialization of 'Instruction'.
+'ir::Iterator' is a specialization of 'IterationBlock'.
+'ir::JobContainer' is a specialization of 'IrAnnotable'.
+'ir::ItemIndexValue' is a specialization of 'IrAnnotable'.
+'ir::ItemIdValueCall' is a specialization of 'ItemIdValue'.
+'ir::ItemIndex' is a specialization of 'IrAnnotable'.
+'ir::Job' is a specialization of 'IrAnnotable'.
+'ir::ItemId' is a specialization of 'IrAnnotable'.
+'ir::Affectation' is a specialization of 'Instruction'.
+'ir::Connectivity' is a specialization of 'IrAnnotable'.
+'ir::MinConstant' is a specialization of 'Expression'.
+'ir::BaseType' is a specialization of 'IrType'.
+'ir::TimeLoopCopyJob' is a specialization of 'Job'.
+'ir::FunctionCall' is a specialization of 'Expression'.
+'ir::Expression' is a specialization of 'IrAnnotable'.
+'ir::Return' is a specialization of 'Instruction'.
+'ir::Instruction' (role 'ir_Instruction', cardinality 0..*) is associated with 'ir::Function' (role 'ir_Function76', cardinality 0..*).
+'ir::TimeLoopVariable' (role 'ir_TimeLoopVariable199', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable200', cardinality 0..*).
+'ir::PostProcessingInfo' (role 'ir_PostProcessingInfo33', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable34', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression160', cardinality 0..*) is associated with 'ir::ContractedIf' (role 'ir_ContractedIf159', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable92', cardinality 0..*) is associated with 'ir::TimeLoopCopy' (role 'ir_TimeLoopCopy91', cardinality 0..*).
+'ir::Interval' (role 'ir_Interval', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable147', cardinality 0..*).
+'ir::Iterator' (role 'ir_Iterator', cardinality 0..*) is associated with 'ir::ItemIndex' (role 'ir_ItemIndex140', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression130', cardinality 0..*) is associated with 'ir::If' (role 'ir_If', cardinality 0..*).
+'ir::SimpleVariable' (role 'ir_SimpleVariable25', cardinality 0..*) is associated with 'ir::IrModule' (role 'ir_IrModule24', cardinality 0..*).
+'ir::JobContainer' (role 'JobContainer', cardinality 0..*) is associated with 'ir::Job' (role 'innerJobs', cardinality 0..*).
+'ir::TimeLoop' (role 'ir_TimeLoop49', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression', cardinality 0..*).
+'ir::ItemIndex' (role 'ir_ItemIndex185', cardinality 0..*) is associated with 'ir::ArgOrVarRef' (role 'ir_ArgOrVarRef184', cardinality 0..*).
+'ir::TimeLoopCopyJob' (role 'ir_TimeLoopCopyJob88', cardinality 0..*) is associated with 'ir::TimeLoop' (role 'ir_TimeLoop89', cardinality 0..*).
+'ir::EStringToStringMapEntry' (role 'ir_EStringToStringMapEntry', cardinality 0..*) is associated with 'ir::IrAnnotation' (role 'ir_IrAnnotation2', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule', cardinality 0..*) is associated with 'ir::Import' (role 'ir_Import', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule12', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable', cardinality 0..*).
+'ir::ConnectivityVariable' (role 'ir_ConnectivityVariable', cardinality 0..*) is associated with 'ir::IrModule' (role 'ir_IrModule16', cardinality 0..*).
+'ir::ItemId' (role 'ir_ItemId221', cardinality 0..*) is associated with 'ir::ItemIndexValue' (role 'ir_ItemIndexValue220', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression138', cardinality 0..*) is associated with 'ir::Return' (role 'ir_Return', cardinality 0..*).
+'ir::ArgOrVar' (role 'ir_ArgOrVar', cardinality 0..*) is associated with 'ir::ArgOrVarRef' (role 'ir_ArgOrVarRef182', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule29', cardinality 0..*) is associated with 'ir::TimeLoop' (role 'ir_TimeLoop', cardinality 0..*).
+'ir::Connectivity' (role 'ir_Connectivity78', cardinality 0..*) is associated with 'ir::ItemType' (role 'ir_ItemType79', cardinality 0..*).
+'ir::VectorConstant' (role 'ir_VectorConstant', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression178', cardinality 0..*).
+'ir::Instruction' (role 'ir_Instruction85', cardinality 0..*) is associated with 'ir::InstructionJob' (role 'ir_InstructionJob', cardinality 0..*).
+'ir::Container' (role 'ir_Container180', cardinality 0..*) is associated with 'ir::Cardinality' (role 'ir_Cardinality', cardinality 0..*).
+'ir::SimpleVariable' (role 'ir_SimpleVariable22', cardinality 0..*) is associated with 'ir::IrModule' (role 'ir_IrModule21', cardinality 0..*).
+'ir::BaseType' (role 'ir_BaseType58', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable57', cardinality 0..*).
+'ir::TimeLoop' (role 'ir_TimeLoop47', cardinality 0..*) is associated with 'ir::TimeLoopVariable' (role 'ir_TimeLoopVariable', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression116', cardinality 0..*) is associated with 'ir::ReductionInstruction' (role 'ir_ReductionInstruction115', cardinality 0..*).
+'ir::SimpleVariable' (role 'ir_SimpleVariable54', cardinality 0..*) is associated with 'ir::TimeLoop' (role 'ir_TimeLoop53', cardinality 0..*).
+'ir::Iterator' (role 'ir_Iterator216', cardinality 0..*) is associated with 'ir::ItemIdValueIterator' (role 'ir_ItemIdValueIterator', cardinality 0..*).
+'ir::ItemIndexDefinition' (role 'ir_ItemIndexDefinition', cardinality 0..*) is associated with 'ir::ItemIndex' (role 'ir_ItemIndex', cardinality 0..*).
+'ir::FunctionCall' (role 'ir_FunctionCall', cardinality 0..*) is associated with 'ir::Function' (role 'ir_Function171', cardinality 0..*).
+'ir::Function' (role 'ir_Function113', cardinality 0..*) is associated with 'ir::ReductionInstruction' (role 'ir_ReductionInstruction112', cardinality 0..*).
+'ir::ConnectivityCall' (role 'ir_ConnectivityCall211', cardinality 0..*) is associated with 'ir::ItemId' (role 'ir_ItemId212', cardinality 0..*).
+'ir::SimpleVariable' (role 'ir_SimpleVariable71', cardinality 0..*) is associated with 'ir::Function' (role 'ir_Function70', cardinality 0..*).
+'ir::ItemIndexValue' (role 'ir_ItemIndexValue', cardinality 0..*) is associated with 'ir::ItemIndexDefinition' (role 'ir_ItemIndexDefinition124', cardinality 0..*).
+'ir::ConnectivityCall' (role 'ir_ConnectivityCall208', cardinality 0..*) is associated with 'ir::Connectivity' (role 'ir_Connectivity209', cardinality 0..*).
+'ir::TimeLoopCopy' (role 'ir_TimeLoopCopy', cardinality 0..*) is associated with 'ir::TimeLoopCopyJob' (role 'ir_TimeLoopCopyJob', cardinality 0..*).
+'ir::PostProcessingInfo' (role 'ir_PostProcessingInfo36', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable37', cardinality 0..*).
+'ir::ConnectivityCall' (role 'ir_ConnectivityCall218', cardinality 0..*) is associated with 'ir::ItemIdValueCall' (role 'ir_ItemIdValueCall', cardinality 0..*).
+'ir::TimeLoopVariable' (role 'ir_TimeLoopVariable202', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable203', cardinality 0..*).
+'ir::TimeLoop' (role 'outerTimeLoop', cardinality 0..*) is associated with 'ir::TimeLoop' (role 'TimeLoop', cardinality 0..*).
+'ir::JobContainer' (role 'jobContainer', cardinality 0..*) is associated with 'ir::Job' (role 'Job', cardinality 0..*).
+'ir::ContractedIf' (role 'ir_ContractedIf156', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression157', cardinality 0..*).
+'ir::TimeLoopVariable' (role 'ir_TimeLoopVariable205', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable206', cardinality 0..*).
+'ir::Function' (role 'ir_Function67', cardinality 0..*) is associated with 'ir::BaseType' (role 'ir_BaseType68', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule6', cardinality 0..*) is associated with 'ir::ItemType' (role 'ir_ItemType', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable', cardinality 0..*) is associated with 'ir::IrModule' (role 'ir_IrModule14', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression174', cardinality 0..*) is associated with 'ir::FunctionCall' (role 'ir_FunctionCall173', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule31', cardinality 0..*) is associated with 'ir::PostProcessingInfo' (role 'ir_PostProcessingInfo', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule10', cardinality 0..*) is associated with 'ir::Connectivity' (role 'ir_Connectivity', cardinality 0..*).
+'ir::TimeLoop' (role 'innerTimeLoop', cardinality 0..*) is associated with 'ir::TimeLoop' (role 'TimeLoop45', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression188', cardinality 0..*) is associated with 'ir::ArgOrVarRef' (role 'ir_ArgOrVarRef187', cardinality 0..*).
+'ir::Instruction' (role 'ir_Instruction110', cardinality 0..*) is associated with 'ir::ReductionInstruction' (role 'ir_ReductionInstruction', cardinality 0..*).
+'ir::ConnectivityType' (role 'ir_ConnectivityType196', cardinality 0..*) is associated with 'ir::BaseType' (role 'ir_BaseType197', cardinality 0..*).
+'ir::ItemIdDefinition' (role 'ir_ItemIdDefinition', cardinality 0..*) is associated with 'ir::ItemId' (role 'ir_ItemId', cardinality 0..*).
+'ir::InstructionBlock' (role 'ir_InstructionBlock99', cardinality 0..*) is associated with 'ir::Instruction' (role 'ir_Instruction100', cardinality 0..*).
+'ir::Arg' (role 'ir_Arg', cardinality 0..*) is associated with 'ir::BaseType' (role 'ir_BaseType', cardinality 0..*).
+'ir::Connectivity' (role 'ir_Connectivity194', cardinality 0..*) is associated with 'ir::ConnectivityType' (role 'ir_ConnectivityType193', cardinality 0..*).
+'ir::Function' (role 'ir_Function73', cardinality 0..*) is associated with 'ir::Arg' (role 'ir_Arg74', cardinality 0..*).
+'ir::SetDefinition' (role 'ir_SetDefinition', cardinality 0..*) is associated with 'ir::ConnectivityCall' (role 'ir_ConnectivityCall', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression167', cardinality 0..*) is associated with 'ir::UnaryExpression' (role 'ir_UnaryExpression', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression169', cardinality 0..*) is associated with 'ir::Parenthesis' (role 'ir_Parenthesis', cardinality 0..*).
+'ir::IrType' (role 'ir_IrType', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression152', cardinality 0..*).
+'ir::BaseType' (role 'ir_BaseType190', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression191', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable97', cardinality 0..*) is associated with 'ir::InstructionBlock' (role 'ir_InstructionBlock', cardinality 0..*).
+'ir::ContractedIf' (role 'ir_ContractedIf', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression154', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule27', cardinality 0..*) is associated with 'ir::Job' (role 'ir_Job', cardinality 0..*).
+'ir::If' (role 'ir_If135', cardinality 0..*) is associated with 'ir::Instruction' (role 'ir_Instruction136', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule18', cardinality 0..*) is associated with 'ir::ConnectivityVariable' (role 'ir_ConnectivityVariable19', cardinality 0..*).
+'ir::Instruction' (role 'ir_Instruction133', cardinality 0..*) is associated with 'ir::If' (role 'ir_If132', cardinality 0..*).
+'ir::ItemIndexValue' (role 'ir_ItemIndexValue223', cardinality 0..*) is associated with 'ir::ConnectivityCall' (role 'ir_ConnectivityCall224', cardinality 0..*).
+'ir::SimpleVariable' (role 'ir_SimpleVariable145', cardinality 0..*) is associated with 'ir::Iterator' (role 'ir_Iterator144', cardinality 0..*).
+'ir::ItemIdValue' (role 'ir_ItemIdValue', cardinality 0..*) is associated with 'ir::ItemIdDefinition' (role 'ir_ItemIdDefinition127', cardinality 0..*).
+'ir::BinaryExpression' (role 'ir_BinaryExpression164', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression165', cardinality 0..*).
+'ir::Container' (role 'ir_Container', cardinality 0..*) is associated with 'ir::Iterator' (role 'ir_Iterator142', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression176', cardinality 0..*) is associated with 'ir::BaseTypeConstant' (role 'ir_BaseTypeConstant', cardinality 0..*).
+'ir::ConnectivityVariable' (role 'ir_ConnectivityVariable63', cardinality 0..*) is associated with 'ir::ConnectivityType' (role 'ir_ConnectivityType', cardinality 0..*).
+'ir::Connectivity' (role 'ir_Connectivity81', cardinality 0..*) is associated with 'ir::ItemType' (role 'ir_ItemType82', cardinality 0..*).
+'ir::IrModule' (role 'ir_IrModule8', cardinality 0..*) is associated with 'ir::Function' (role 'ir_Function', cardinality 0..*).
+'ir::ReductionInstruction' (role 'ir_ReductionInstruction118', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable119', cardinality 0..*).
+'ir::ArgOrVarRef' (role 'ir_ArgOrVarRef', cardinality 0..*) is associated with 'ir::ConnectivityVariable' (role 'ir_ConnectivityVariable65', cardinality 0..*).
+'ir::Loop' (role 'ir_Loop', cardinality 0..*) is associated with 'ir::Instruction' (role 'ir_Instruction121', cardinality 0..*).
+'ir::IrAnnotable' (role 'ir_IrAnnotable', cardinality 0..*) is associated with 'ir::IrAnnotation' (role 'ir_IrAnnotation', cardinality 0..*).
+'ir::PostProcessingInfo' (role 'ir_PostProcessingInfo39', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable40', cardinality 0..*).
+'ir::BinaryExpression' (role 'ir_BinaryExpression', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression162', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable102', cardinality 0..*) is associated with 'ir::VariableDefinition' (role 'ir_VariableDefinition', cardinality 0..*).
+'ir::Interval' (role 'ir_Interval149', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression150', cardinality 0..*).
+'ir::IterableInstruction' (role 'ir_IterableInstruction', cardinality 0..*) is associated with 'ir::IterationBlock' (role 'ir_IterationBlock', cardinality 0..*).
+'ir::ArgOrVarRef' (role 'ir_ArgOrVarRef104', cardinality 0..*) is associated with 'ir::Affectation' (role 'ir_Affectation', cardinality 0..*).
+'ir::SetDefinition' (role 'ir_SetDefinition214', cardinality 0..*) is associated with 'ir::SetRef' (role 'ir_SetRef', cardinality 0..*).
+'ir::TimeLoopCopy' (role 'ir_TimeLoopCopy94', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable95', cardinality 0..*).
+'ir::TimeLoop' (role 'ir_TimeLoop51', cardinality 0..*) is associated with 'ir::TimeLoopJob' (role 'ir_TimeLoopJob', cardinality 0..*).
+'ir::Affectation' (role 'ir_Affectation106', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression107', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression61', cardinality 0..*) is associated with 'ir::SimpleVariable' (role 'ir_SimpleVariable60', cardinality 0..*).

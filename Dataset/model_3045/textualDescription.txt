@@ -1,0 +1,91 @@
+The model has 29 class(es).
+The class 'df::PortToEIntegerObjectMapEntry' has the following attributes: 'value' of type str.
+The class 'df::Action' has no attributes.
+The class 'df::Procedure' has no attributes.
+The class 'Graph' has no attributes.
+The class 'df::Pattern' has no attributes.
+The class 'df::FSM' has no attributes.
+The class 'df::Var' has no attributes.
+The class 'df::Expression' has no attributes.
+The class 'df::State' has no attributes.
+The class 'df::MoC' has no attributes.
+The class 'df::VarToPortMapEntry' has no attributes.
+The class 'Edge' has no attributes.
+The class 'df::Network' has the following attributes: 'fileName' of type str; 'name' of type str.
+The class 'df::Port' has the following attributes: 'numTokensConsumed' of type int; 'name' of type str; 'numTokensProduced' of type int.
+The class 'Vertex' has no attributes.
+The class 'df::Tag' has the following attributes: 'identifiers' of type str.
+The class 'Attributable' has no attributes.
+The class 'df::PortToVarMapEntry' has no attributes.
+The class 'df::Transition' has no attributes.
+The class 'df::EObject' has no attributes.
+The class 'df::Argument' has no attributes.
+The class 'df::Actor' has the following attributes: 'name' of type str; 'lineNumber' of type int; 'native' of type bool; 'fileName' of type str.
+The class 'df::Entity' has the following attributes: 'incomingPortMap' of type str; 'name' of type str; 'outgoingPortMap' of type str.
+The class 'df::Type' has no attributes.
+The class 'df::Instance' has the following attributes: 'name' of type str.
+The class 'df::Vertex' has no attributes.
+The class 'df::Connection' has no attributes.
+The class 'Adaptable' has no attributes.
+The class 'df::Unit' has the following attributes: 'name' of type str; 'fileName' of type str; 'lineNumber' of type int.
+'df::Instance' is a specialization of 'Adaptable'.
+'df::Network' is a specialization of 'Graph'.
+'df::Unit' is a specialization of 'Attributable'.
+'df::Network' is a specialization of 'Adaptable'.
+'df::FSM' is a specialization of 'Graph'.
+'df::State' is a specialization of 'Vertex'.
+'df::Action' is a specialization of 'Attributable'.
+'df::Entity' is a specialization of 'Adaptable'.
+'df::Instance' is a specialization of 'Vertex'.
+'df::Actor' is a specialization of 'Vertex'.
+'df::Connection' is a specialization of 'Edge'.
+'df::Transition' is a specialization of 'Edge'.
+'df::Actor' is a specialization of 'Adaptable'.
+'df::Port' is a specialization of 'Vertex'.
+'df::Entity' is a specialization of 'Attributable'.
+'df::Action' (role 'df_Action68', cardinality 0..*) is associated with 'df::Pattern' (role 'df_Pattern69', cardinality 0..*).
+'df::Var' (role 'df_Var', cardinality 0..*) is associated with 'df::Unit' (role 'df_Unit', cardinality 0..*).
+'df::Actor' (role 'df_Actor30', cardinality 0..*) is associated with 'df::Port' (role 'df_Port31', cardinality 0..*).
+'df::Entity' (role 'df_Entity13', cardinality 0..*) is associated with 'df::Var' (role 'df_Var14', cardinality 0..*).
+'df::Port' (role 'df_Port44', cardinality 0..*) is associated with 'df::Network' (role 'df_Network43', cardinality 0..*).
+'df::Connection' (role 'df_Connection', cardinality 0..*) is associated with 'df::Port' (role 'df_Port58', cardinality 0..*).
+'df::Action' (role 'df_Action18', cardinality 0..*) is associated with 'df::Actor' (role 'df_Actor17', cardinality 0..*).
+'df::Network' (role 'df_Network46', cardinality 0..*) is associated with 'df::MoC' (role 'df_MoC47', cardinality 0..*).
+'df::Actor' (role 'df_Actor22', cardinality 0..*) is associated with 'df::Action' (role 'df_Action23', cardinality 0..*).
+'df::Pattern' (role 'df_Pattern72', cardinality 0..*) is associated with 'df::Action' (role 'df_Action71', cardinality 0..*).
+'df::Port' (role 'df_Port108', cardinality 0..*) is associated with 'df::VarToPortMapEntry' (role 'df_VarToPortMapEntry107', cardinality 0..*).
+'df::Instance' (role 'df_Instance6', cardinality 0..*) is associated with 'df::EObject' (role 'df_EObject', cardinality 0..*).
+'df::Port' (role 'df_Port61', cardinality 0..*) is associated with 'df::Connection' (role 'df_Connection60', cardinality 0..*).
+'df::Port' (role 'df_Port26', cardinality 0..*) is associated with 'df::Actor' (role 'df_Actor25', cardinality 0..*).
+'df::Var' (role 'df_Var102', cardinality 0..*) is associated with 'df::PortToVarMapEntry' (role 'df_PortToVarMapEntry101', cardinality 0..*).
+'df::State' (role 'df_State', cardinality 0..*) is associated with 'df::FSM' (role 'df_FSM79', cardinality 0..*).
+'df::VarToPortMapEntry' (role 'df_VarToPortMapEntry104', cardinality 0..*) is associated with 'df::Var' (role 'df_Var105', cardinality 0..*).
+'df::Action' (role 'df_Action', cardinality 0..*) is associated with 'df::Actor' (role 'df_Actor', cardinality 0..*).
+'df::Port' (role 'df_Port99', cardinality 0..*) is associated with 'df::PortToVarMapEntry' (role 'df_PortToVarMapEntry98', cardinality 0..*).
+'df::Var' (role 'df_Var34', cardinality 0..*) is associated with 'df::Actor' (role 'df_Actor33', cardinality 0..*).
+'df::Procedure' (role 'df_Procedure64', cardinality 0..*) is associated with 'df::Action' (role 'df_Action63', cardinality 0..*).
+'df::Actor' (role 'df_Actor36', cardinality 0..*) is associated with 'df::Procedure' (role 'df_Procedure37', cardinality 0..*).
+'df::Var' (role 'df_Var89', cardinality 0..*) is associated with 'df::Pattern' (role 'df_Pattern88', cardinality 0..*).
+'df::Actor' (role 'df_Actor28', cardinality 0..*) is associated with 'df::MoC' (role 'df_MoC', cardinality 0..*).
+'df::Network' (role 'df_Network52', cardinality 0..*) is associated with 'df::Var' (role 'df_Var53', cardinality 0..*).
+'df::Type' (role 'df_Type', cardinality 0..*) is associated with 'df::Port' (role 'df_Port', cardinality 0..*).
+'df::Argument' (role 'df_Argument112', cardinality 0..*) is associated with 'df::Var' (role 'df_Var113', cardinality 0..*).
+'df::Actor' (role 'df_Actor20', cardinality 0..*) is associated with 'df::FSM' (role 'df_FSM', cardinality 0..*).
+'df::Action' (role 'df_Action77', cardinality 0..*) is associated with 'df::Tag' (role 'df_Tag', cardinality 0..*).
+'df::Port' (role 'df_Port8', cardinality 0..*) is associated with 'df::Entity' (role 'df_Entity', cardinality 0..*).
+'df::Port' (role 'df_Port84', cardinality 0..*) is associated with 'df::Pattern' (role 'df_Pattern83', cardinality 0..*).
+'df::Action' (role 'df_Action93', cardinality 0..*) is associated with 'df::Transition' (role 'df_Transition', cardinality 0..*).
+'df::Pattern' (role 'df_Pattern81', cardinality 0..*) is associated with 'df::PortToEIntegerObjectMapEntry' (role 'df_PortToEIntegerObjectMapEntry', cardinality 0..*).
+'df::Argument' (role 'df_Argument110', cardinality 0..*) is associated with 'df::Expression' (role 'df_Expression', cardinality 0..*).
+'df::Unit' (role 'df_Unit2', cardinality 0..*) is associated with 'df::Procedure' (role 'df_Procedure', cardinality 0..*).
+'df::Entity' (role 'df_Entity10', cardinality 0..*) is associated with 'df::Port' (role 'df_Port11', cardinality 0..*).
+'df::Vertex' (role 'df_Vertex', cardinality 0..*) is associated with 'df::Network' (role 'df_Network', cardinality 0..*).
+'df::Procedure' (role 'df_Procedure75', cardinality 0..*) is associated with 'df::Action' (role 'df_Action74', cardinality 0..*).
+'df::PortToVarMapEntry' (role 'df_PortToVarMapEntry', cardinality 0..*) is associated with 'df::Pattern' (role 'df_Pattern86', cardinality 0..*).
+'df::Pattern' (role 'df_Pattern', cardinality 0..*) is associated with 'df::Action' (role 'df_Action66', cardinality 0..*).
+'df::Var' (role 'df_Var40', cardinality 0..*) is associated with 'df::Actor' (role 'df_Actor39', cardinality 0..*).
+'df::PortToEIntegerObjectMapEntry' (role 'df_PortToEIntegerObjectMapEntry95', cardinality 0..*) is associated with 'df::Port' (role 'df_Port96', cardinality 0..*).
+'df::Instance' (role 'df_Instance', cardinality 0..*) is associated with 'df::Argument' (role 'df_Argument', cardinality 0..*).
+'df::Pattern' (role 'df_Pattern91', cardinality 0..*) is associated with 'df::VarToPortMapEntry' (role 'df_VarToPortMapEntry', cardinality 0..*).
+'df::Network' (role 'df_Network49', cardinality 0..*) is associated with 'df::Port' (role 'df_Port50', cardinality 0..*).
+'df::Var' (role 'df_Var56', cardinality 0..*) is associated with 'df::Network' (role 'df_Network55', cardinality 0..*).

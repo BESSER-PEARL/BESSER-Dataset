@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'sm::State' has the following attributes: 'name' of type str.
+The class 'sm::StateMachine' has the following attributes: 'name' of type str.
+The class 'sm::Transition' has the following attributes: 'name' of type str.
+'sm::Transition' (role 'sm_Transition13', cardinality 0..*) is associated with 'sm::State' (role 'sm_State14', cardinality 0..*).
+'sm::State' (role 'sm_State3', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine2', cardinality 0..*).
+'sm::State' (role 'sm_State6', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine5', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'sm_State', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine8', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition', cardinality 0..*).
+'sm::State' (role 'sm_State10', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine11', cardinality 0..*).
+'sm::State' (role 'sm_State17', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition16', cardinality 0..*).

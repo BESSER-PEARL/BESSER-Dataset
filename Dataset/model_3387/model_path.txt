@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fjavier-umu/mde-data-ree/CDTI_F2_6_DataModernization/metamodels/JPA.ecore

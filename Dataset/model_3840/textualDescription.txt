@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'target::Database' has no attributes.
+The class 'target::Table' has the following attributes: 'name' of type str.
+The class 'target::FKey' has no attributes.
+The class 'target::Column' has the following attributes: 'type' of type str; 'name' of type str.
+'target::Table' (role 'target_Table2', cardinality 0..*) is associated with 'target::Column' (role 'target_Column', cardinality 0..*).
+'target::Database' (role 'target_Database', cardinality 0..*) is associated with 'target::Table' (role 'target_Table13', cardinality 0..*).
+'target::Column' (role 'target_Column8', cardinality 0..*) is associated with 'target::FKey' (role 'target_FKey7', cardinality 0..*).
+'target::Table' (role 'target_Table', cardinality 0..*) is associated with 'target::FKey' (role 'target_FKey', cardinality 0..*).
+'target::FKey' (role 'target_FKey10', cardinality 0..*) is associated with 'target::Table' (role 'target_Table11', cardinality 0..*).
+'target::Column' (role 'target_Column5', cardinality 0..*) is associated with 'target::Table' (role 'target_Table4', cardinality 0..*).

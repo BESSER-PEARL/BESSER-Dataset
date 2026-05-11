@@ -1,0 +1,61 @@
+The model has 27 class(es).
+The class 'expressions::type::AnyType' has no attributes.
+The class 'expressions::ast::VariableReference' has the following attributes: 'name' of type str.
+The class 'expressions::ast::Expression' has the following attributes: 'type' of type str; 'text' of type str.
+The class 'expressions::ast::UnaryExpression' has the following attributes: 'operation' of type str.
+The class 'Expression' has no attributes.
+The class 'expressions::type::BaseType' has no attributes.
+The class 'expressions::ast::LogicalRoot' has no attributes.
+The class 'AbstractRoot' has no attributes.
+The class 'expressions::ast::AstVisitor' has no attributes.
+The class 'BaseType' has no attributes.
+The class 'expressions::ast::TernaryExpression' has the following attributes: 'operation' of type str.
+The class 'expressions::ast::Literal' has the following attributes: 'value' of type str.
+The class 'expressions::ast::ActionRoot' has no attributes.
+The class 'expressions::type::BooleanType' has no attributes.
+The class 'VariableReference' has no attributes.
+The class 'expressions::type::Type' has no attributes.
+The class 'expressions::type::ClockType' has no attributes.
+The class 'expressions::ast::Constant' has the following attributes: 'value' of type str.
+The class 'expressions::type::ResourceType' has no attributes.
+The class 'expressions::type::FloatType' has no attributes.
+The class 'Type' has no attributes.
+The class 'expressions::type::NaturalType' has no attributes.
+The class 'expressions::type::IntegerType' has no attributes.
+The class 'ast::expressions::EObject' has no attributes.
+The class 'expressions::ast::BinaryExpression' has the following attributes: 'operation' of type str.
+The class 'expressions::ast::ResourceRoot' has no attributes.
+The class 'expressions::ast::AbstractRoot' has the following attributes: 'type' of type str.
+The enumeration 'ResolvedType' has the following literals: 'natural', 'integer', 'clock', 'resource', 'unknown', 'boolean', 'float'.
+The enumeration 'UnaryOperation' has the following literals: 'MINUS', 'PLUS', 'NOT'.
+The enumeration 'BinaryOperation' has the following literals: 'ASSIGN_MUL', 'MUL', 'MOD', 'DIV', 'ASSIGN_ADD', 'EQ', 'ASSIGN_DIV', 'OR', 'GE', 'SUB', 'ASSIGN_SUB', 'LT', 'GT', 'AND', 'ASSIGN', 'LE', 'ADD', 'ASSIGN_MOD', 'DIFF', 'NE'.
+The enumeration 'TernaryOperation' has the following literals: 'QUESTION'.
+'expressions::ast::ResourceRoot' is a specialization of 'AbstractRoot'.
+'expressions::type::BooleanType' is a specialization of 'BaseType'.
+'expressions::type::AnyType' is a specialization of 'BaseType'.
+'expressions::ast::VariableReference' is a specialization of 'Expression'.
+'expressions::ast::BinaryExpression' is a specialization of 'Expression'.
+'expressions::ast::Constant' is a specialization of 'Expression'.
+'expressions::ast::ActionRoot' is a specialization of 'AbstractRoot'.
+'expressions::type::ResourceType' is a specialization of 'BaseType'.
+'expressions::type::BaseType' is a specialization of 'Type'.
+'expressions::type::IntegerType' is a specialization of 'BaseType'.
+'expressions::type::ClockType' is a specialization of 'BaseType'.
+'expressions::type::NaturalType' is a specialization of 'BaseType'.
+'expressions::type::FloatType' is a specialization of 'BaseType'.
+'expressions::ast::LogicalRoot' is a specialization of 'AbstractRoot'.
+'expressions::ast::UnaryExpression' is a specialization of 'Expression'.
+'expressions::ast::TernaryExpression' is a specialization of 'Expression'.
+'expressions::ast::Literal' is a specialization of 'Expression'.
+'expressions::ast::TernaryExpression' (role 'expressions_ast_TernaryExpression12', cardinality 0..*) is associated with 'Expression' (role 'Expression13', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'expressions::ast::UnaryExpression' (role 'expressions_ast_UnaryExpression', cardinality 0..*).
+'expressions::ast::BinaryExpression' (role 'expressions_ast_BinaryExpression17', cardinality 0..*) is associated with 'Expression' (role 'Expression18', cardinality 0..*).
+'Expression' (role 'Expression7', cardinality 0..*) is associated with 'expressions::ast::TernaryExpression' (role 'expressions_ast_TernaryExpression', cardinality 0..*).
+'expressions::ast::BinaryExpression' (role 'expressions_ast_BinaryExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression15', cardinality 0..*).
+'expressions::ast::ActionRoot' (role 'expressions_ast_ActionRoot', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'expressions::ast::AbstractRoot' (role 'expressions_ast_AbstractRoot', cardinality 0..*) is associated with 'VariableReference' (role 'VariableReference', cardinality 0..*).
+'ast::expressions::EObject' (role 'ast_expressions_EObject', cardinality 0..*) is associated with 'expressions::ast::VariableReference' (role 'expressions_ast_VariableReference24', cardinality 0..*).
+'expressions::ast::TernaryExpression' (role 'expressions_ast_TernaryExpression9', cardinality 0..*) is associated with 'Expression' (role 'Expression10', cardinality 0..*).
+'expressions::ast::VariableReference' (role 'expressions_ast_VariableReference', cardinality 0..*) is associated with 'Expression' (role 'Expression22', cardinality 0..*).
+'Expression' (role 'Expression3', cardinality 0..*) is associated with 'expressions::ast::LogicalRoot' (role 'expressions_ast_LogicalRoot', cardinality 0..*).
+'expressions::ast::ResourceRoot' (role 'expressions_ast_ResourceRoot', cardinality 0..*) is associated with 'Expression' (role 'Expression5', cardinality 0..*).

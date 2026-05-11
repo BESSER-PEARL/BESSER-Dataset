@@ -1,0 +1,328 @@
+The model has 107 class(es).
+The class 'DataType' has no attributes.
+The class 'iso20022::MessageConstruct' has the following attributes: 'xmlTag' of type str.
+The class 'iso20022::Participant' has no attributes.
+The class 'ModelEntity' has no attributes.
+The class 'iso20022::ChoiceComponent' has no attributes.
+The class 'iso20022::BusinessProcess' has no attributes.
+The class 'iso20022::SemanticMarkup' has the following attributes: 'type' of type str.
+The class 'iso20022::MonthDay' has no attributes.
+The class 'iso20022::BusinessTransaction' has no attributes.
+The class 'iso20022::RepositoryConcept' has the following attributes: 'removalDate' of type date; 'registrationStatus' of type str; 'name' of type str; 'example' of type str; 'definition' of type str.
+The class 'iso20022::MessageTransportMode' has the following attributes: 'messageDeliveryWindow' of type str; 'messageSendingWindow' of type str; 'receiverAsynchronicity' of type str; 'boundedCommunicationDelay' of type str; 'maximumMessageSize' of type str; 'messageValidationResults' of type str; 'messageValidationOnOff' of type str; 'senderAsynchronicity' of type str; 'messageValidationLevel' of type str; 'durability' of type str; 'messageDeliveryOrder' of type str; 'deliveryAssurance' of type str; 'messageCasting' of type str; 'maximumClockVariation' of type str.
+The class 'iso20022::Doclet' has the following attributes: 'content' of type str; 'type' of type str.
+The class 'iso20022::Receive' has no attributes.
+The class 'iso20022::ModelEntity' has the following attributes: 'objectIdentifier' of type str.
+The class 'iso20022::DataType' has no attributes.
+The class 'iso20022::MessageChoreography' has no attributes.
+The class 'iso20022::BusinessConcept' has no attributes.
+The class 'iso20022::BusinessRole' has no attributes.
+The class 'iso20022::MessageInstance' has no attributes.
+The class 'iso20022::Text' has no attributes.
+The class 'iso20022::Constraint' has the following attributes: 'expressionLanguage' of type str; 'expression' of type str.
+The class 'iso20022::SyntaxMessageScheme' has no attributes.
+The class 'iso20022::Send' has no attributes.
+The class 'iso20022::Conversation' has no attributes.
+The class 'RepositoryType' has no attributes.
+The class 'IndustryMessageSet' has no attributes.
+The class 'iso20022::IndustryMessageSet' has no attributes.
+The class 'iso20022::DateTime' has no attributes.
+The class 'iso20022::BusinessArea' has the following attributes: 'code' of type str.
+The class 'iso20022::UserDefined' has the following attributes: 'processContents' of type str; 'namespaceList' of type str; 'namespace' of type str.
+The class 'iso20022::DataDictionary' has no attributes.
+The class 'AbstractDateTimeConcept' has no attributes.
+The class 'iso20022::Date' has no attributes.
+The class 'iso20022::MessageSet' has no attributes.
+The class 'iso20022::Xor' has no attributes.
+The class 'MessageElementContainer' has no attributes.
+The class 'iso20022::SemanticMarkupElement' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'iso20022::MessageTransmission' has the following attributes: 'messageTypeDescription' of type str.
+The class 'iso20022::Boolean' has the following attributes: 'pattern' of type str.
+The class 'iso20022::MessageDefinition' has the following attributes: 'rootElement' of type str; 'xmlTag' of type str; 'xmlName' of type str.
+The class 'iso20022::Month' has no attributes.
+The class 'iso20022::YearMonth' has no attributes.
+The class 'iso20022::Year' has no attributes.
+The class 'iso20022::Duration' has no attributes.
+The class 'RepositoryConcept' has no attributes.
+The class 'iso20022::AbstractDateTimeConcept' has the following attributes: 'minInclusive' of type str; 'maxInclusive' of type str; 'pattern' of type str; 'minExclusive' of type str; 'maxExclusive' of type str.
+The class 'iso20022::Time' has no attributes.
+The class 'iso20022::MessageBuildingBlock' has no attributes.
+The class 'iso20022::Day' has no attributes.
+The class 'iso20022::Repository' has no attributes.
+The class 'iso20022::TopLevelCatalogueEntry' has no attributes.
+The class 'Decimal' has no attributes.
+The class 'iso20022::EndPointCategory' has no attributes.
+The class 'iso20022::SchemaType' has the following attributes: 'kind' of type str.
+The class 'iso20022::MessageDefinitionIdentifier' has the following attributes: 'flavour' of type str; 'messageFunctionality' of type str; 'version' of type str; 'businessArea' of type str.
+The class 'iso20022::ConvergenceDocumentation' has no attributes.
+The class 'iso20022::RepositoryType' has no attributes.
+The class 'iso20022::Rate' has the following attributes: 'baseValue' of type str; 'baseUnitCode' of type str.
+The class 'iso20022::ISO15022MessageSet' has no attributes.
+The class 'Boolean' has no attributes.
+The class 'iso20022::Encoding' has no attributes.
+The class 'iso20022::Indicator' has the following attributes: 'meaningWhenTrue' of type str; 'meaningWhenFalse' of type str.
+The class 'iso20022::Syntax' has no attributes.
+The class 'BusinessConcept' has no attributes.
+The class 'iso20022::BusinessComponent' has no attributes.
+The class 'TopLevelCatalogueEntry' has no attributes.
+The class 'iso20022::MessageAssociationEnd' has the following attributes: 'isComposite' of type bool.
+The class 'LogicalType' has no attributes.
+The class 'iso20022::IdentifierSet' has the following attributes: 'identificationScheme' of type str.
+The class 'iso20022::TopLevelDictionaryEntry' has no attributes.
+The class 'String' has no attributes.
+The class 'iso20022::BusinessAttribute' has no attributes.
+The class 'iso20022::MessageAttribute' has no attributes.
+The class 'MultiplicityEntity' has no attributes.
+The class 'iso20022::MultiplicityEntity' has the following attributes: 'minOccurs' of type str; 'maxOccurs' of type str.
+The class 'MessageElement' has no attributes.
+The class 'iso20022::MessageComponent' has no attributes.
+The class 'iso20022::Construct' has no attributes.
+The class 'iso20022::BusinessProcessCatalogue' has no attributes.
+The class 'iso20022::Amount' has no attributes.
+The class 'iso20022::BusinessElementType' has no attributes.
+The class 'BusinessElement' has no attributes.
+The class 'iso20022::LogicalType' has no attributes.
+The class 'iso20022::BusinessElement' has the following attributes: 'isDerived' of type bool.
+The class 'iso20022::Binary' has the following attributes: 'pattern' of type str; 'length' of type str; 'maxLength' of type str; 'minLength' of type str.
+The class 'iso20022::MessageElement' has the following attributes: 'isDerived' of type bool; 'isTechnical' of type bool.
+The class 'MessageConstruct' has no attributes.
+The class 'Construct' has no attributes.
+The class 'MessageComponentType' has no attributes.
+The class 'iso20022::Quantity' has the following attributes: 'unitCode' of type str.
+The class 'TopLevelDictionaryEntry' has no attributes.
+The class 'iso20022::ExternalSchema' has the following attributes: 'processContent' of type str; 'namespaceList' of type str.
+The class 'iso20022::Address' has no attributes.
+The class 'iso20022::TransportMessage' has no attributes.
+The class 'iso20022::MessageConcept' has no attributes.
+The class 'iso20022::String' has the following attributes: 'maxLength' of type str; 'length' of type str; 'pattern' of type str; 'minLength' of type str.
+The class 'MessageConcept' has no attributes.
+The class 'iso20022::Decimal' has the following attributes: 'maxExclusive' of type str; 'maxInclusive' of type str; 'totalDigits' of type str; 'fractionDigits' of type str; 'pattern' of type str; 'minExclusive' of type str; 'minInclusive' of type str.
+The class 'iso20022::MessageTransportSystem' has no attributes.
+The class 'iso20022::MessageComponentType' has the following attributes: 'isTechnical' of type bool.
+The class 'iso20022::BusinessAssociationEnd' has the following attributes: 'aggregation' of type str.
+The class 'iso20022::CodeSet' has the following attributes: 'identificationScheme' of type str.
+The class 'iso20022::Code' has the following attributes: 'codeName' of type str.
+The class 'iso20022::MessagingEndpoint' has no attributes.
+The class 'BusinessElementType' has no attributes.
+The class 'iso20022::BroadcastList' has no attributes.
+The class 'iso20022::MessageElementContainer' has no attributes.
+The enumeration 'ReceiverAsynchronicity' has the following literals: 'ENDPOINT_SYNCHRONOUS', 'ASYNCHRONOUS', 'CONVERSATION_SYNCHRONOUS'.
+The enumeration 'RegistrationStatus' has the following literals: 'PROVISIONALLY_REGISTERED', 'REGISTERED', 'OBSOLETE'.
+The enumeration 'Aggregation' has the following literals: 'SHARED', 'COMPOSITE', 'NONE'.
+The enumeration 'MessageValidationLevel' has the following literals: 'NO_VALIDATION', 'COMPLETELY_VALID', 'RULE_VALID', 'BUSINESS_PROCESS_VALID', 'MESSAGE_VALID', 'SCHEMA_VALID', 'MARKET_PRACTICE_VALID', 'SYNTAX_VALID'.
+The enumeration 'MessageValidationResults' has the following literals: 'DELIVER', 'REJECT', 'REJECT_AND_DELIVER'.
+The enumeration 'SenderAsynchronicity' has the following literals: 'ASYNCHRONOUS', 'ENDPOINT_SYNCHRONOUS', 'CONVERSATION_SYNCHRONOUS'.
+The enumeration 'MessageCasting' has the following literals: 'MULTICAST', 'BROADCAST', 'ANYCAST', 'UNICAST'.
+The enumeration 'MessageDeliveryOrder' has the following literals: 'FIFO_ORDERED', 'UNORDERED', 'EXPECTED_CAUSAL_ORDER'.
+The enumeration 'Durability' has the following literals: 'TRANSIENT', 'PERSISTENT', 'DURABLE'.
+The enumeration 'ProcessContent' has the following literals: 'LAX', 'SKIP', 'STRICT'.
+The enumeration 'Namespace' has the following literals: 'any', 'list', 'other'.
+The enumeration 'DeliveryAssurance' has the following literals: 'EXACTLY_ONCE', 'AT_LEAST_ONCE', 'AT_MOST_ONCE'.
+The enumeration 'ISO20022Version' has the following literals: '_2004', '_2013'.
+The enumeration 'MessageValidationOnOff' has the following literals: 'VALIDATION_OFF', 'VALIDATION_ON'.
+The enumeration 'SchemaTypeKind' has the following literals: 'gMonthDay', 'negativeInteger', 'boolean', 'gYearMonth', 'gMonth', 'date', 'gDay', 'base64Binary', 'NMTOKEN', 'double', 'decimal', 'string', 'dateTime', 'NCName', 'nonPositiveInteger', 'Name', 'nonNegativeInteger', 'ENTITIES', 'long', 'positiveInteger', 'language', 'NMTOKENS', 'float', 'gYear', 'ID', 'duration', 'IDREF', 'byte', 'short', 'integer', 'time', 'QName', 'unsignedInt', 'int', 'unsignedLong', 'unsignedByte', 'token', 'IDREFS', 'normalizedString', 'anyURI', 'ENTITY', 'hexBinary', 'anySimpleType', 'unsignedShort'.
+'iso20022::MessagingEndpoint' is a specialization of 'ModelEntity'.
+'iso20022::MessageTransportSystem' is a specialization of 'ModelEntity'.
+'iso20022::Day' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::TransportMessage' is a specialization of 'ModelEntity'.
+'iso20022::Duration' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::Address' is a specialization of 'ModelEntity'.
+'iso20022::Month' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::RepositoryConcept' is a specialization of 'ModelEntity'.
+'iso20022::MonthDay' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::MessageInstance' is a specialization of 'ModelEntity'.
+'iso20022::Time' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::SyntaxMessageScheme' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::SchemaType' is a specialization of 'DataType'.
+'iso20022::TopLevelCatalogueEntry' is a specialization of 'RepositoryConcept'.
+'iso20022::Constraint' is a specialization of 'RepositoryConcept'.
+'iso20022::BusinessProcessCatalogue' is a specialization of 'ModelEntity'.
+'iso20022::SemanticMarkup' is a specialization of 'ModelEntity'.
+'iso20022::SemanticMarkupElement' is a specialization of 'ModelEntity'.
+'iso20022::Doclet' is a specialization of 'ModelEntity'.
+'iso20022::Repository' is a specialization of 'ModelEntity'.
+'iso20022::DataDictionary' is a specialization of 'ModelEntity'.
+'iso20022::TopLevelDictionaryEntry' is a specialization of 'RepositoryConcept'.
+'iso20022::MessageDefinition' is a specialization of 'RepositoryType'.
+'iso20022::Syntax' is a specialization of 'ModelEntity'.
+'iso20022::Encoding' is a specialization of 'ModelEntity'.
+'iso20022::BusinessArea' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::RepositoryType' is a specialization of 'RepositoryConcept'.
+'iso20022::MessageSet' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::MessageConstruct' is a specialization of 'Construct'.
+'iso20022::Xor' is a specialization of 'RepositoryConcept'.
+'iso20022::MessageElement' is a specialization of 'MessageConstruct'.
+'iso20022::MessageElement' is a specialization of 'MessageConcept'.
+'iso20022::MessageConcept' is a specialization of 'ModelEntity'.
+'iso20022::BusinessComponent' is a specialization of 'TopLevelDictionaryEntry'.
+'iso20022::BusinessComponent' is a specialization of 'BusinessElementType'.
+'iso20022::BusinessComponent' is a specialization of 'BusinessConcept'.
+'iso20022::Construct' is a specialization of 'RepositoryConcept'.
+'iso20022::Construct' is a specialization of 'MultiplicityEntity'.
+'iso20022::LogicalType' is a specialization of 'RepositoryType'.
+'iso20022::MessageComponentType' is a specialization of 'TopLevelDictionaryEntry'.
+'iso20022::MessageComponentType' is a specialization of 'LogicalType'.
+'iso20022::MessageComponentType' is a specialization of 'MessageConcept'.
+'iso20022::MessageBuildingBlock' is a specialization of 'MessageConstruct'.
+'iso20022::BusinessElementType' is a specialization of 'RepositoryType'.
+'iso20022::BusinessConcept' is a specialization of 'ModelEntity'.
+'iso20022::BusinessElement' is a specialization of 'Construct'.
+'iso20022::BusinessElement' is a specialization of 'BusinessConcept'.
+'iso20022::MessageComponent' is a specialization of 'MessageElementContainer'.
+'iso20022::DataType' is a specialization of 'TopLevelDictionaryEntry'.
+'iso20022::DataType' is a specialization of 'BusinessElementType'.
+'iso20022::DataType' is a specialization of 'LogicalType'.
+'iso20022::BusinessAssociationEnd' is a specialization of 'BusinessElement'.
+'iso20022::MessageElementContainer' is a specialization of 'MessageComponentType'.
+'iso20022::BusinessProcess' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::MessageChoreography' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::BusinessTransaction' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::Receive' is a specialization of 'ModelEntity'.
+'iso20022::MessageTransmission' is a specialization of 'RepositoryConcept'.
+'iso20022::BusinessRole' is a specialization of 'RepositoryConcept'.
+'iso20022::Participant' is a specialization of 'RepositoryConcept'.
+'iso20022::Participant' is a specialization of 'MultiplicityEntity'.
+'iso20022::Send' is a specialization of 'ModelEntity'.
+'iso20022::MessageTransportMode' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::Conversation' is a specialization of 'ModelEntity'.
+'iso20022::MessageAssociationEnd' is a specialization of 'MessageElement'.
+'iso20022::MessageAttribute' is a specialization of 'MessageElement'.
+'iso20022::BusinessAttribute' is a specialization of 'BusinessElement'.
+'iso20022::MessageDefinitionIdentifier' is a specialization of 'ModelEntity'.
+'iso20022::IdentifierSet' is a specialization of 'String'.
+'iso20022::Indicator' is a specialization of 'Boolean'.
+'iso20022::Boolean' is a specialization of 'DataType'.
+'iso20022::Rate' is a specialization of 'Decimal'.
+'iso20022::Text' is a specialization of 'String'.
+'iso20022::String' is a specialization of 'DataType'.
+'iso20022::Code' is a specialization of 'RepositoryConcept'.
+'iso20022::CodeSet' is a specialization of 'String'.
+'iso20022::Decimal' is a specialization of 'DataType'.
+'iso20022::ExternalSchema' is a specialization of 'MessageComponentType'.
+'iso20022::Quantity' is a specialization of 'Decimal'.
+'iso20022::EndPointCategory' is a specialization of 'TopLevelDictionaryEntry'.
+'iso20022::Binary' is a specialization of 'DataType'.
+'iso20022::Amount' is a specialization of 'Decimal'.
+'iso20022::ChoiceComponent' is a specialization of 'MessageElementContainer'.
+'iso20022::AbstractDateTimeConcept' is a specialization of 'DataType'.
+'iso20022::Year' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::YearMonth' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::UserDefined' is a specialization of 'MessageComponentType'.
+'iso20022::IndustryMessageSet' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::ConvergenceDocumentation' is a specialization of 'TopLevelCatalogueEntry'.
+'iso20022::ISO15022MessageSet' is a specialization of 'IndustryMessageSet'.
+'iso20022::BroadcastList' is a specialization of 'ModelEntity'.
+'iso20022::DateTime' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::Date' is a specialization of 'AbstractDateTimeConcept'.
+'iso20022::MessageChoreography' (role 'MessageChoreography', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'messageDefinition54', cardinality 0..*).
+'iso20022::Encoding' (role 'Encoding', cardinality 0..*) is associated with 'iso20022::MessageSet' (role 'messageSet', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'BusinessProcess147', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'includer', cardinality 0..*).
+'iso20022::MessageBuildingBlock' (role 'iso20022_MessageBuildingBlock109', cardinality 0..*) is associated with 'iso20022::DataType' (role 'iso20022_DataType', cardinality 0..*).
+'iso20022::MessageTransportMode' (role 'messageTransportMode', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'BusinessTransaction187', cardinality 0..*).
+'iso20022::ModelEntity' (role 'ModelEntity', cardinality 0..*) is associated with 'iso20022::ModelEntity' (role 'previousVersion', cardinality 0..*).
+'iso20022::TopLevelCatalogueEntry' (role 'TopLevelCatalogueEntry', cardinality 0..*) is associated with 'iso20022::BusinessProcessCatalogue' (role 'businessProcessCatalogue36', cardinality 0..*).
+'iso20022::ModelEntity' (role 'nextVersions', cardinality 0..*) is associated with 'iso20022::ModelEntity' (role 'ModelEntity6', cardinality 0..*).
+'iso20022::BroadcastList' (role 'BroadcastList', cardinality 0..*) is associated with 'iso20022::Address' (role 'address', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent', cardinality 0..*) is associated with 'iso20022::MessageElement' (role 'derivationElement', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'BusinessTransaction', cardinality 0..*) is associated with 'iso20022::MessageChoreography' (role 'trace121', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'messageDefinition51', cardinality 0..*) is associated with 'iso20022::Xor' (role 'Xor', cardinality 0..*).
+'iso20022::MessageComponentType' (role 'MessageComponentType111', cardinality 0..*) is associated with 'iso20022::MessageBuildingBlock' (role 'messageBuildingBlock', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'MessageDefinition176', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'trace175', cardinality 0..*).
+'iso20022::Repository' (role 'repository', cardinality 0..*) is associated with 'iso20022::DataDictionary' (role 'DataDictionary', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'MessageDefinition', cardinality 0..*) is associated with 'iso20022::SyntaxMessageScheme' (role 'derivation', cardinality 0..*).
+'iso20022::BusinessElement' (role 'BusinessElement', cardinality 0..*) is associated with 'iso20022::MessageElement' (role 'derivation85', cardinality 0..*).
+'iso20022::MessageElement' (role 'MessageElement', cardinality 0..*) is associated with 'iso20022::BusinessComponent' (role 'businessComponentTrace', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'MessageDefinition123', cardinality 0..*) is associated with 'iso20022::MessageChoreography' (role 'choreography', cardinality 0..*).
+'iso20022::Send' (role 'Send178', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'messageTransmission', cardinality 0..*).
+'iso20022::TopLevelCatalogueEntry' (role 'topLevelCatalogueEntry', cardinality 0..*) is associated with 'iso20022::BusinessProcessCatalogue' (role 'BusinessProcessCatalogue', cardinality 0..*).
+'iso20022::BusinessProcessCatalogue' (role 'BusinessProcessCatalogue40', cardinality 0..*) is associated with 'iso20022::Repository' (role 'repository39', cardinality 0..*).
+'iso20022::MessageElement' (role 'messageElement', cardinality 0..*) is associated with 'iso20022::MessageElementContainer' (role 'MessageElementContainer', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'businessProcessTrace', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'BusinessProcess', cardinality 0..*).
+'iso20022::MessageElement' (role 'MessageElement101', cardinality 0..*) is associated with 'iso20022::BusinessElement' (role 'businessElementTrace', cardinality 0..*).
+'iso20022::Receive' (role 'Receive181', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'messageTransmission180', cardinality 0..*).
+'iso20022::TransportMessage' (role 'sentMessage', cardinality 0..*) is associated with 'iso20022::MessagingEndpoint' (role 'MessagingEndpoint18', cardinality 0..*).
+'iso20022::MessagingEndpoint' (role 'endpoint13', cardinality 0..*) is associated with 'iso20022::Address' (role 'Address14', cardinality 0..*).
+'iso20022::TopLevelDictionaryEntry' (role 'TopLevelDictionaryEntry', cardinality 0..*) is associated with 'iso20022::DataDictionary' (role 'dataDictionary', cardinality 0..*).
+'iso20022::SemanticMarkup' (role 'iso20022_SemanticMarkup', cardinality 0..*) is associated with 'iso20022::RepositoryConcept' (role 'iso20022_RepositoryConcept', cardinality 0..*).
+'iso20022::MessageElement' (role 'iso20022_MessageElement', cardinality 0..*) is associated with 'iso20022::Xor' (role 'iso20022_Xor', cardinality 0..*).
+'iso20022::Participant' (role 'Participant', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'businessTransaction', cardinality 0..*).
+'iso20022::BusinessElement' (role 'iso20022_BusinessElement', cardinality 0..*) is associated with 'iso20022::BusinessElementType' (role 'iso20022_BusinessElementType', cardinality 0..*).
+'iso20022::Send' (role 'sends', cardinality 0..*) is associated with 'iso20022::Participant' (role 'Participant183', cardinality 0..*).
+'iso20022::Doclet' (role 'iso20022_Doclet', cardinality 0..*) is associated with 'iso20022::RepositoryConcept' (role 'iso20022_RepositoryConcept29', cardinality 0..*).
+'iso20022::Repository' (role 'Repository44', cardinality 0..*) is associated with 'iso20022::DataDictionary' (role 'dataDictionary43', cardinality 0..*).
+'iso20022::MessageComponent' (role 'MessageComponent', cardinality 0..*) is associated with 'iso20022::Xor' (role 'xors', cardinality 0..*).
+'iso20022::Send' (role 'Send', cardinality 0..*) is associated with 'iso20022::Participant' (role 'sender164', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent104', cardinality 0..*) is associated with 'iso20022::BusinessElement' (role 'element', cardinality 0..*).
+'iso20022::MessageTransmission' (role 'MessageTransmission185', cardinality 0..*) is associated with 'iso20022::Send' (role 'send', cardinality 0..*).
+'iso20022::Address' (role 'Address', cardinality 0..*) is associated with 'iso20022::BroadcastList' (role 'broadCastList', cardinality 0..*).
+'iso20022::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'iso20022::RepositoryConcept' (role 'owner', cardinality 0..*).
+'iso20022::MessagingEndpoint' (role 'endpoint', cardinality 0..*) is associated with 'iso20022::MessageTransportSystem' (role 'MessageTransportSystem', cardinality 0..*).
+'iso20022::TopLevelDictionaryEntry' (role 'topLevelDictionaryEntry', cardinality 0..*) is associated with 'iso20022::DataDictionary' (role 'DataDictionary46', cardinality 0..*).
+'iso20022::MessageBuildingBlock' (role 'iso20022_MessageBuildingBlock79', cardinality 0..*) is associated with 'iso20022::Xor' (role 'iso20022_Xor78', cardinality 0..*).
+'iso20022::BusinessRole' (role 'BusinessRole167', cardinality 0..*) is associated with 'iso20022::Participant' (role 'businessRoleTrace166', cardinality 0..*).
+'iso20022::MessageElement' (role 'MessageElement117', cardinality 0..*) is associated with 'iso20022::MessageElementContainer' (role 'componentContext', cardinality 0..*).
+'iso20022::MessageComponentType' (role 'iso20022_MessageComponentType', cardinality 0..*) is associated with 'iso20022::MessageAssociationEnd' (role 'iso20022_MessageAssociationEnd', cardinality 0..*).
+'iso20022::MessageSet' (role 'messageSet63', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'MessageDefinition64', cardinality 0..*).
+'iso20022::SyntaxMessageScheme' (role 'iso20022_SyntaxMessageScheme', cardinality 0..*) is associated with 'iso20022::MessageInstance' (role 'iso20022_MessageInstance', cardinality 0..*).
+'iso20022::Xor' (role 'xors81', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'MessageDefinition82', cardinality 0..*).
+'iso20022::Xor' (role 'Xor119', cardinality 0..*) is associated with 'iso20022::MessageComponent' (role 'messageComponent', cardinality 0..*).
+'iso20022::Receive' (role 'receive', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'MessageTransmission169', cardinality 0..*).
+'iso20022::DataType' (role 'iso20022_DataType190', cardinality 0..*) is associated with 'iso20022::MessageAttribute' (role 'iso20022_MessageAttribute', cardinality 0..*).
+'iso20022::Encoding' (role 'Encoding66', cardinality 0..*) is associated with 'iso20022::Syntax' (role 'syntax', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent91', cardinality 0..*) is associated with 'iso20022::BusinessComponent' (role 'superType', cardinality 0..*).
+'iso20022::Participant' (role 'Participant171', cardinality 0..*) is associated with 'iso20022::Receive' (role 'receives', cardinality 0..*).
+'iso20022::BusinessAssociationEnd' (role 'iso20022_BusinessAssociationEnd112', cardinality 0..*) is associated with 'iso20022::BusinessAssociationEnd' (role 'iso20022_BusinessAssociationEnd', cardinality 0..*).
+'iso20022::MessageAttribute' (role 'iso20022_MessageAttribute192', cardinality 0..*) is associated with 'iso20022::MessageComponentType' (role 'iso20022_MessageComponentType193', cardinality 0..*).
+'iso20022::TransportMessage' (role 'transportMessage', cardinality 0..*) is associated with 'iso20022::MessageInstance' (role 'MessageInstance', cardinality 0..*).
+'iso20022::Syntax' (role 'generatedSyntax', cardinality 0..*) is associated with 'iso20022::MessageSet' (role 'MessageSet68', cardinality 0..*).
+'iso20022::MessagingEndpoint' (role 'MessagingEndpoint21', cardinality 0..*) is associated with 'iso20022::TransportMessage' (role 'receivedMessage', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent94', cardinality 0..*) is associated with 'iso20022::BusinessComponent' (role 'subType', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'BusinessTransaction173', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'transmission', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent115', cardinality 0..*) is associated with 'iso20022::BusinessAssociationEnd' (role 'associationDomain', cardinality 0..*).
+'iso20022::DataType' (role 'iso20022_DataType195', cardinality 0..*) is associated with 'iso20022::BusinessAttribute' (role 'iso20022_BusinessAttribute', cardinality 0..*).
+'iso20022::MessageSet' (role 'MessageSet70', cardinality 0..*) is associated with 'iso20022::Encoding' (role 'validEncoding', cardinality 0..*).
+'iso20022::BusinessElement' (role 'BusinessElement96', cardinality 0..*) is associated with 'iso20022::BusinessComponent' (role 'elementContext', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'BusinessProcess150', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'included', cardinality 0..*).
+'iso20022::MessageTransmission' (role 'MessageTransmission128', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'businessTransaction127', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'iso20022_BusinessComponent', cardinality 0..*) is associated with 'iso20022::BusinessAttribute' (role 'iso20022_BusinessAttribute197', cardinality 0..*).
+'iso20022::TransportMessage' (role 'TransportMessage11', cardinality 0..*) is associated with 'iso20022::MessagingEndpoint' (role 'sender', cardinality 0..*).
+'iso20022::BusinessArea' (role 'BusinessArea', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'messageDefinition49', cardinality 0..*).
+'iso20022::Syntax' (role 'Syntax72', cardinality 0..*) is associated with 'iso20022::Encoding' (role 'possibleEncodings', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'trace', cardinality 0..*) is associated with 'iso20022::MessageComponentType' (role 'MessageComponentType', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'businessProcess', cardinality 0..*) is associated with 'iso20022::BusinessRole' (role 'BusinessRole', cardinality 0..*).
+'iso20022::MessageTransportMode' (role 'MessageTransportMode', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'businessTransaction130', cardinality 0..*).
+'iso20022::CodeSet' (role 'CodeSet', cardinality 0..*) is associated with 'iso20022::Code' (role 'code', cardinality 0..*).
+'iso20022::MessageInstance' (role 'messageInstance', cardinality 0..*) is associated with 'iso20022::TransportMessage' (role 'TransportMessage24', cardinality 0..*).
+'iso20022::TransportMessage' (role 'TransportMessage', cardinality 0..*) is associated with 'iso20022::MessagingEndpoint' (role 'receiver', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'MessageDefinition74', cardinality 0..*) is associated with 'iso20022::BusinessArea' (role 'businessArea', cardinality 0..*).
+'iso20022::BusinessAssociationEnd' (role 'BusinessAssociationEnd', cardinality 0..*) is associated with 'iso20022::BusinessComponent' (role 'type', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'BusinessTransaction154', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'businessProcessTrace153', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'parentTransaction', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'BusinessTransaction133', cardinality 0..*).
+'iso20022::CodeSet' (role 'derivation201', cardinality 0..*) is associated with 'iso20022::CodeSet' (role 'CodeSet202', cardinality 0..*).
+'iso20022::MessagingEndpoint' (role 'MessagingEndpoint', cardinality 0..*) is associated with 'iso20022::Address' (role 'location', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'messageDefinition', cardinality 0..*) is associated with 'iso20022::MessageSet' (role 'MessageSet', cardinality 0..*).
+'iso20022::MessageDefinition' (role 'derivation56', cardinality 0..*) is associated with 'iso20022::MessageTransmission' (role 'MessageTransmission', cardinality 0..*).
+'iso20022::LogicalType' (role 'iso20022_LogicalType', cardinality 0..*) is associated with 'iso20022::MessageConstruct' (role 'iso20022_MessageConstruct', cardinality 0..*).
+'iso20022::Participant' (role 'Participant156', cardinality 0..*) is associated with 'iso20022::BusinessRole' (role 'businessRoleTrace', cardinality 0..*).
+'iso20022::BusinessTransaction' (role 'BusinessTransaction136', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'subTransaction', cardinality 0..*).
+'iso20022::CodeSet' (role 'CodeSet206', cardinality 0..*) is associated with 'iso20022::CodeSet' (role 'trace205', cardinality 0..*).
+'iso20022::MessageBuildingBlock' (role 'iso20022_MessageBuildingBlock', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'iso20022_MessageDefinition', cardinality 0..*).
+'iso20022::MessageDefinitionIdentifier' (role 'iso20022_MessageDefinitionIdentifier', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'iso20022_MessageDefinition58', cardinality 0..*).
+'iso20022::RepositoryType' (role 'iso20022_RepositoryType', cardinality 0..*) is associated with 'iso20022::Construct' (role 'iso20022_Construct', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'BusinessProcess158', cardinality 0..*) is associated with 'iso20022::BusinessRole' (role 'businessRole', cardinality 0..*).
+'iso20022::MessageChoreography' (role 'MessageChoreography138', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'businessTransactionTrace', cardinality 0..*).
+'iso20022::Code' (role 'Code', cardinality 0..*) is associated with 'iso20022::CodeSet' (role 'owner208', cardinality 0..*).
+'iso20022::MessageTransportSystem' (role 'transportSystem', cardinality 0..*) is associated with 'iso20022::MessagingEndpoint' (role 'MessagingEndpoint16', cardinality 0..*).
+'iso20022::SemanticMarkup' (role 'iso20022_SemanticMarkup32', cardinality 0..*) is associated with 'iso20022::SemanticMarkupElement' (role 'iso20022_SemanticMarkupElement', cardinality 0..*).
+'iso20022::MessageComponentType' (role 'complexType', cardinality 0..*) is associated with 'iso20022::MessageBuildingBlock' (role 'MessageBuildingBlock', cardinality 0..*).
+'iso20022::Participant' (role 'participant', cardinality 0..*) is associated with 'iso20022::BusinessTransaction' (role 'BusinessTransaction160', cardinality 0..*).
+'iso20022::SyntaxMessageScheme' (role 'SyntaxMessageScheme', cardinality 0..*) is associated with 'iso20022::MessageDefinition' (role 'messageDefinitionTrace', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'BusinessProcess141', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'extended', cardinality 0..*).
+'iso20022::MessageElementContainer' (role 'iso20022_MessageElementContainer', cardinality 0..*) is associated with 'iso20022::EndPointCategory' (role 'iso20022_EndPointCategory', cardinality 0..*).
+'iso20022::RepositoryConcept' (role 'RepositoryConcept', cardinality 0..*) is associated with 'iso20022::Constraint' (role 'constraint', cardinality 0..*).
+'iso20022::BusinessProcessCatalogue' (role 'businessProcessCatalogue', cardinality 0..*) is associated with 'iso20022::Repository' (role 'Repository', cardinality 0..*).
+'iso20022::BusinessComponent' (role 'BusinessComponent107', cardinality 0..*) is associated with 'iso20022::MessageComponentType' (role 'derivationComponent', cardinality 0..*).
+'iso20022::MessageSet' (role 'generatedFor', cardinality 0..*) is associated with 'iso20022::Syntax' (role 'Syntax', cardinality 0..*).
+'iso20022::BusinessProcess' (role 'extender', cardinality 0..*) is associated with 'iso20022::BusinessProcess' (role 'BusinessProcess144', cardinality 0..*).
+'iso20022::Receive' (role 'Receive', cardinality 0..*) is associated with 'iso20022::Participant' (role 'receiver162', cardinality 0..*).
+'iso20022::Amount' (role 'iso20022_Amount', cardinality 0..*) is associated with 'iso20022::DataType' (role 'iso20022_DataType210', cardinality 0..*).

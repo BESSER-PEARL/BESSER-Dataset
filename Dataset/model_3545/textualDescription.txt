@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'A' has no attributes.
+The class 'B' has no attributes.
+The class 'diamond::C' has no attributes.
+The class 'diamond::B' has no attributes.
+The class 'diamond::D' has no attributes.
+The class 'C' has no attributes.
+The class 'diamond::A' has no attributes.
+'diamond::C' is a specialization of 'A'.
+'diamond::D' is a specialization of 'B'.
+'diamond::B' is a specialization of 'A'.
+'diamond::D' is a specialization of 'C'.

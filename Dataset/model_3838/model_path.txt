@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/janjve/Itu.Shared/Source/7 Domain Specific Languages/Week 3 - Meta models/Sql/model/SqlQueries.ecore

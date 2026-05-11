@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'entities::SimpleType' has no attributes.
+The class 'entities::Entity' has no attributes.
+The class 'entities::Reference' has no attributes.
+The class 'Type' has no attributes.
+The class 'entities::Import' has the following attributes: 'importURI' of type str.
+The class 'entities::SimpleProperty' has no attributes.
+The class 'entities::Model' has no attributes.
+The class 'entities::Property' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'Property' has no attributes.
+The class 'entities::Type' has the following attributes: 'name' of type str.
+'entities::SimpleType' is a specialization of 'Type'.
+'entities::Entity' is a specialization of 'Type'.
+'entities::SimpleProperty' is a specialization of 'Property'.
+'entities::Reference' is a specialization of 'Property'.
+'entities::Property' (role 'entities_Property', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity6', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity3', cardinality 0..*).
+'entities::Import' (role 'entities_Import', cardinality 0..*) is associated with 'entities::Model' (role 'entities_Model', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity9', cardinality 0..*) is associated with 'entities::Reference' (role 'entities_Reference', cardinality 0..*).
+'entities::SimpleProperty' (role 'entities_SimpleProperty', cardinality 0..*) is associated with 'entities::SimpleType' (role 'entities_SimpleType', cardinality 0..*).
+'entities::Type' (role 'entities_Type', cardinality 0..*) is associated with 'entities::Model' (role 'entities_Model2', cardinality 0..*).

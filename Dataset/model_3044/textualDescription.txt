@@ -1,0 +1,269 @@
+The model has 129 class(es).
+The class 'behavioral::status::and::action::old::SAMStatusVariable' has the following attributes: 'name' of type str; 'isAgentVariable' of type bool.
+The class 'behavioral::transactions::Dummy' has no attributes.
+The class 'behavioral::actions::WhileLoop' has no attributes.
+The class 'behavioral::status::and::action::old::SAMAction' has the following attributes: 'name' of type str; 'isAgentAction' of type bool.
+The class 'behavioral::design::StatusValue' has no attributes.
+The class 'Iterator' has no attributes.
+The class 'actions::Statement' has no attributes.
+The class 'behavioral::design::AbstractStatusVariable' has the following attributes: 'isStateGuarded' of type bool; 'isAgent' of type bool.
+The class 'StatementWithNestedBlocks' has no attributes.
+The class 'behavioral::status::and::action::old::SAMSchemaDerivator' has no attributes.
+The class 'behavioral::actions::Foreach' has the following attributes: 'parallel' of type bool.
+The class 'behavioral::design::StatusVariable' has no attributes.
+The class 'SapClass' has no attributes.
+The class 'behavioral::status::and::action::old::SAMSchemaVariable' has the following attributes: 'hasStateGuard' of type bool.
+The class 'EventFilter' has no attributes.
+The class 'FromClause' has no attributes.
+The class 'design::AbstractStatusValue' has no attributes.
+The class 'SAMStatusVariable' has no attributes.
+The class 'behavioral::assembly::NeutralStrategy' has no attributes.
+The class 'behavioral::actions::NamedValueDeclaration' has no attributes.
+The class 'actions::StatementWithNestedBlocks' has no attributes.
+The class 'SAMSchemaAction' has no attributes.
+The class 'behavioral::design::AbstractStatusValue' has the following attributes: 'isStateGuarded' of type bool; 'isInitial' of type bool; 'isInhibiting' of type bool.
+The class 'behavioral::events::EventProducer' has no attributes.
+The class 'behavioral::actions::QueryInvocation' has no attributes.
+The class 'Connector' has no attributes.
+The class 'behavioral::assembly::OrOperator' has no attributes.
+The class 'behavioral::design::AbstractAction' has the following attributes: 'isPreconditionFixed' of type bool; 'isAgent' of type bool.
+The class 'NamedValue' has no attributes.
+The class 'behavioral::actions::NamedValueWithOptionalInitExpression' has no attributes.
+The class 'SAMSchemaValue' has no attributes.
+The class 'behavioral::assembly::Operator' has no attributes.
+The class 'design::BusinessObjectNode' has no attributes.
+The class 'behavioral::assembly::SchemaElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'assembly::Strategy' has no attributes.
+The class 'Expression' has no attributes.
+The class 'behavioral::rules::Dummy' has no attributes.
+The class 'SchemaElement' has no attributes.
+The class 'behavioral::assembly::ConnectableElement' has no attributes.
+The class 'InScope' has no attributes.
+The class 'behavioral::assembly::Transition' has no attributes.
+The class 'behavioral::status::and::action::old::SAMStatusSchema' has the following attributes: 'name' of type str.
+The class 'behavioral::actions::Variable' has no attributes.
+The class 'behavioral::actions::StatementWithNestedBlocks' has no attributes.
+The class 'behavioral::assembly::AndOperator' has no attributes.
+The class 'behavioral::status::and::action::old::SAMOperator' has the following attributes: 'kind' of type str.
+The class 'behavioral::assembly::StatusVariableProxy' has no attributes.
+The class 'actions::SingleBlockStatement' has no attributes.
+The class 'behavioral::assembly::Synchroniser' has no attributes.
+The class 'behavioral::actions::Sort' has no attributes.
+The class 'assembly::SchemaElement' has no attributes.
+The class 'NamedValueWithOptionalInitExpression' has no attributes.
+The class 'behavioral::bpdm::Dummy' has no attributes.
+The class 'behavioral::design::Action' has no attributes.
+The class 'SAMAction' has no attributes.
+The class 'actions::ConditionalStatement' has no attributes.
+The class 'AbstractStatusVariable' has no attributes.
+The class 'LinkManipulationStatement' has no attributes.
+The class 'behavioral::actions::Statement' has no attributes.
+The class 'behavioral::actions::Iterator' has no attributes.
+The class 'Strategy' has no attributes.
+The class 'behavioral::actions::ExpressionStatement' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'behavioral::actions::LinkManipulationStatement' has the following attributes: 'at' of type int.
+The class 'Block' has no attributes.
+The class 'assembly::ConnectableElement' has no attributes.
+The class 'behavioral::actions::ConditionalStatement' has no attributes.
+The class 'behavioral::actions::Constant' has no attributes.
+The class 'DimensionDefinition' has no attributes.
+The class 'SingleBlockStatement' has no attributes.
+The class 'Association' has no attributes.
+The class 'behavioral::assembly::EnablingStrategy' has no attributes.
+The class 'MethodSignature' has no attributes.
+The class 'behavioral::actions::IfElse' has no attributes.
+The class 'SAMStatusSchema' has no attributes.
+The class 'Signature' has no attributes.
+The class 'behavioral::actions::Block' has no attributes.
+The class 'expressions::Conditional' has no attributes.
+The class 'SAMSchemaDerivator' has no attributes.
+The class 'design::StatusValue' has no attributes.
+The class 'Selection' has no attributes.
+The class 'AbstractStatusValue' has no attributes.
+The class 'Subscription' has no attributes.
+The class 'behavioral::status::and::action::old::SAMStatusValue' has the following attributes: 'name' of type str.
+The class 'behavioral::actions::StatementWithArgument' has no attributes.
+The class 'behavioral::actions::RemoveLink' has no attributes.
+The class 'AbstractAction' has no attributes.
+The class 'behavioral::actions::SingleBlockStatement' has no attributes.
+The class 'behavioral::status::and::action::old::SAMSchemaAction' has no attributes.
+The class 'behavioral::design::BusinessObject' has no attributes.
+The class 'behavioral::assembly::Strategy' has no attributes.
+The class 'behavioral::events::Subscription' has no attributes.
+The class 'SAMStatusValue' has no attributes.
+The class 'behavioral::assembly::RequiredStrategy' has no attributes.
+The class 'behavioral::status::and::action::old::SAMDerivator' has the following attributes: 'kind' of type str.
+The class 'behavioral::actions::Assignment' has no attributes.
+The class 'Operator' has no attributes.
+The class 'behavioral::actions::Return' has no attributes.
+The class 'behavioral::assembly::Connector' has no attributes.
+The class 'GroupBy' has no attributes.
+The class 'behavioral::design::BusinessObjectNode' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'classes::InScope' has no attributes.
+The class 'design::StatusVariable' has no attributes.
+The class 'Statement' has no attributes.
+The class 'collectionexpressions::Iterate' has no attributes.
+The class 'Variable' has no attributes.
+The class 'expressions::WithArgument' has no attributes.
+The class 'NamedValueDeclaration' has no attributes.
+The class 'behavioral::events::EventFilter' has no attributes.
+The class 'behavioral::assembly::Precondition' has no attributes.
+The class 'behavioral::status::and::action::old::SAMSchemaValue' has the following attributes: 'isInhibiting' of type bool; 'isInitial' of type bool.
+The class 'design::AbstractAction' has no attributes.
+The class 'classes::FunctionSignatureImplementation' has no attributes.
+The class 'SAMDerivator' has no attributes.
+The class 'EventProducer' has no attributes.
+The class 'behavioral::actions::AddLink' has no attributes.
+The class 'behavioral::businesstasks::TaskAgent' has no attributes.
+The class 'StatementWithArgument' has no attributes.
+The class 'behavioral::assembly::ActionProxy' has no attributes.
+The class 'behavioral::assembly::StatusSchema' has no attributes.
+The class 'Foreach' has no attributes.
+The class 'design::AbstractStatusVariable' has no attributes.
+The class 'design::Action' has no attributes.
+The class 'SAMSchemaVariable' has no attributes.
+The class 'behavioral::assembly::StatusValueProxy' has no attributes.
+The class 'SAMOperator' has no attributes.
+The class 'behavioral::assembly::InhibitingStrategy' has no attributes.
+The enumeration 'SAMOperatorKindEnum' has the following literals: 'OR', 'AND'.
+The enumeration 'SAMDerivatorKindEnum' has the following literals: 'POPULATION', 'OVERALL', 'AGGREGATION'.
+The enumeration 'PreconditionKindEnum' has the following literals: 'NEUTEAL', 'INHIBIT', 'ENABLE', 'REQUIRED'.
+'behavioral::assembly::Operator' is a specialization of 'ConnectableElement'.
+'behavioral::assembly::StatusVariableProxy' is a specialization of 'design::AbstractStatusVariable'.
+'behavioral::design::StatusValue' is a specialization of 'AbstractStatusValue'.
+'behavioral::design::AbstractAction' is a specialization of 'NamedElement'.
+'behavioral::assembly::EnablingStrategy' is a specialization of 'Strategy'.
+'behavioral::actions::ExpressionStatement' is a specialization of 'Statement'.
+'behavioral::assembly::StatusVariableProxy' is a specialization of 'assembly::ConnectableElement'.
+'behavioral::assembly::SchemaElement' is a specialization of 'NamedElement'.
+'behavioral::actions::WhileLoop' is a specialization of 'actions::SingleBlockStatement'.
+'behavioral::actions::NamedValueWithOptionalInitExpression' is a specialization of 'NamedValue'.
+'behavioral::actions::AddLink' is a specialization of 'LinkManipulationStatement'.
+'behavioral::design::BusinessObjectNode' is a specialization of 'NamedElement'.
+'behavioral::assembly::StatusValueProxy' is a specialization of 'design::StatusValue'.
+'behavioral::actions::WhileLoop' is a specialization of 'actions::ConditionalStatement'.
+'behavioral::actions::IfElse' is a specialization of 'actions::StatementWithNestedBlocks'.
+'behavioral::design::AbstractStatusVariable' is a specialization of 'NamedElement'.
+'behavioral::assembly::StatusSchema' is a specialization of 'NamedElement'.
+'behavioral::assembly::StatusValueProxy' is a specialization of 'design::AbstractStatusValue'.
+'behavioral::assembly::Synchroniser' is a specialization of 'Connector'.
+'behavioral::actions::Block' is a specialization of 'classes::FunctionSignatureImplementation'.
+'behavioral::actions::StatementWithArgument' is a specialization of 'expressions::WithArgument'.
+'behavioral::assembly::ActionProxy' is a specialization of 'design::AbstractAction'.
+'behavioral::assembly::Precondition' is a specialization of 'Connector'.
+'behavioral::actions::RemoveLink' is a specialization of 'LinkManipulationStatement'.
+'behavioral::design::Action' is a specialization of 'AbstractAction'.
+'behavioral::actions::Statement' is a specialization of 'InScope'.
+'behavioral::events::Subscription' is a specialization of 'NamedElement'.
+'behavioral::assembly::NeutralStrategy' is a specialization of 'Strategy'.
+'behavioral::assembly::StatusValueProxy' is a specialization of 'assembly::ConnectableElement'.
+'behavioral::actions::StatementWithArgument' is a specialization of 'actions::Statement'.
+'behavioral::actions::Return' is a specialization of 'StatementWithArgument'.
+'behavioral::assembly::AndOperator' is a specialization of 'Operator'.
+'behavioral::assembly::RequiredStrategy' is a specialization of 'Strategy'.
+'behavioral::assembly::ConnectableElement' is a specialization of 'SchemaElement'.
+'behavioral::actions::NamedValueDeclaration' is a specialization of 'Statement'.
+'behavioral::assembly::InhibitingStrategy' is a specialization of 'Strategy'.
+'behavioral::actions::Foreach' is a specialization of 'SingleBlockStatement'.
+'behavioral::actions::IfElse' is a specialization of 'actions::ConditionalStatement'.
+'behavioral::actions::ConditionalStatement' is a specialization of 'expressions::Conditional'.
+'behavioral::actions::Variable' is a specialization of 'NamedValueWithOptionalInitExpression'.
+'behavioral::design::StatusVariable' is a specialization of 'AbstractStatusVariable'.
+'behavioral::actions::Assignment' is a specialization of 'StatementWithArgument'.
+'behavioral::assembly::StatusVariableProxy' is a specialization of 'design::StatusVariable'.
+'behavioral::actions::LinkManipulationStatement' is a specialization of 'Statement'.
+'behavioral::assembly::Connector' is a specialization of 'SchemaElement'.
+'behavioral::assembly::Transition' is a specialization of 'Connector'.
+'behavioral::actions::Constant' is a specialization of 'NamedValueWithOptionalInitExpression'.
+'behavioral::actions::ConditionalStatement' is a specialization of 'actions::Statement'.
+'behavioral::actions::Block' is a specialization of 'classes::InScope'.
+'behavioral::actions::StatementWithNestedBlocks' is a specialization of 'Statement'.
+'behavioral::design::AbstractStatusValue' is a specialization of 'NamedElement'.
+'behavioral::assembly::ActionProxy' is a specialization of 'design::Action'.
+'behavioral::assembly::ActionProxy' is a specialization of 'assembly::ConnectableElement'.
+'behavioral::assembly::OrOperator' is a specialization of 'Operator'.
+'behavioral::actions::SingleBlockStatement' is a specialization of 'StatementWithNestedBlocks'.
+'behavioral::actions::Iterator' is a specialization of 'NamedValue'.
+'behavioral::status::and::action::old::SAMSchemaDerivator' (role 'samSourceSchemaDerivators', cardinality 0..*) is associated with 'SAMSchemaVariable' (role 'SAMSchemaVariable120', cardinality 0..*).
+'behavioral::actions::LinkManipulationStatement' (role 'behavioral_actions_LinkManipulationStatement', cardinality 0..*) is associated with 'Association' (role 'Association', cardinality 0..*).
+'behavioral::status::and::action::old::SAMDerivator' (role 'samDerivators', cardinality 0..*) is associated with 'SapClass' (role 'SapClass50', cardinality 0..*).
+'EventProducer' (role 'EventProducer', cardinality 0..*) is associated with 'behavioral::events::Subscription' (role 'subscriptions', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaAction' (role 'samSchemaActions104', cardinality 0..*) is associated with 'SAMAction' (role 'SAMAction', cardinality 0..*).
+'Expression' (role 'Expression12', cardinality 0..*) is associated with 'behavioral::actions::ExpressionStatement' (role 'expressionStatement', cardinality 0..*).
+'SAMOperator' (role 'SAMOperator112', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaAction' (role 'samSchemaActions111', cardinality 0..*).
+'SAMStatusSchema' (role 'SAMStatusSchema', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMOperator' (role 'samOperators', cardinality 0..*).
+'behavioral::actions::Foreach' (role 'behavioral_actions_Foreach', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'Assignment' (role 'Assignment', cardinality 0..*) is associated with 'behavioral::actions::Variable' (role 'assignTo', cardinality 0..*).
+'behavioral::status::and::action::old::SAMOperator' (role 'samSchemaOperators', cardinality 0..*) is associated with 'SAMSchemaAction' (role 'SAMSchemaAction74', cardinality 0..*).
+'SAMStatusValue' (role 'SAMStatusValue', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMStatusVariable' (role 'samStatusVariable', cardinality 0..*).
+'SAMSchemaDerivator' (role 'SAMSchemaDerivator', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMDerivator' (role 'samDerivator', cardinality 0..*).
+'SAMOperator' (role 'SAMOperator70', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMOperator' (role 'samTargetOperators', cardinality 0..*).
+'behavioral::actions::Block' (role 'block', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'behavioral::status::and::action::old::SAMStatusVariable' (role 'samStatusVariables', cardinality 0..*) is associated with 'SapClass' (role 'SapClass46', cardinality 0..*).
+'SAMStatusSchema' (role 'SAMStatusSchema116', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaDerivator' (role 'samSchemaDerivators115', cardinality 0..*).
+'behavioral::actions::NamedValueWithOptionalInitExpression' (role 'initExpressionFor', cardinality 0..*) is associated with 'Expression' (role 'Expression29', cardinality 0..*).
+'behavioral::assembly::Connector' (role 'behavioral_assembly_Connector', cardinality 0..*) is associated with 'assembly::ConnectableElement' (role 'assembly_ConnectableElement', cardinality 0..*).
+'SAMOperator' (role 'SAMOperator97', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaValue' (role 'samSchemaValues96', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaAction' (role 'samSchemaActions', cardinality 0..*) is associated with 'SAMStatusSchema' (role 'SAMStatusSchema102', cardinality 0..*).
+'behavioral::actions::Iterator' (role 'iterator', cardinality 0..*) is associated with 'Selection' (role 'Selection', cardinality 0..*).
+'behavioral::actions::Constant' (role 'accumulator', cardinality 0..*) is associated with 'collectionexpressions::Iterate' (role 'Iterate', cardinality 0..*).
+'behavioral::assembly::StatusVariableProxy' (role 'behavioral_assembly_StatusVariableProxy', cardinality 0..*) is associated with 'design::StatusVariable' (role 'design_StatusVariable137', cardinality 0..*).
+'Foreach' (role 'Foreach', cardinality 0..*) is associated with 'behavioral::actions::Iterator' (role 'forVariable', cardinality 0..*).
+'behavioral::events::EventFilter' (role 'filters', cardinality 0..*) is associated with 'Subscription' (role 'Subscription39', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaAction' (role 'samSchemaActions108', cardinality 0..*) is associated with 'SAMSchemaValue' (role 'SAMSchemaValue109', cardinality 0..*).
+'behavioral::design::BusinessObjectNode' (role 'behavioral_design_BusinessObjectNode', cardinality 0..*) is associated with 'design::StatusVariable' (role 'design_StatusVariable', cardinality 0..*).
+'behavioral::status::and::action::old::SAMStatusSchema' (role 'samStatusSchema61', cardinality 0..*) is associated with 'SAMSchemaAction' (role 'SAMSchemaAction62', cardinality 0..*).
+'assembly::SchemaElement' (role 'assembly_SchemaElement', cardinality 0..*) is associated with 'behavioral::assembly::StatusSchema' (role 'behavioral_assembly_StatusSchema', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaVariable' (role 'samSourceSchemaVariables', cardinality 0..*) is associated with 'SAMSchemaDerivator' (role 'SAMSchemaDerivator83', cardinality 0..*).
+'design::Action' (role 'design_Action', cardinality 0..*) is associated with 'behavioral::design::BusinessObjectNode' (role 'behavioral_design_BusinessObjectNode124', cardinality 0..*).
+'assembly::Strategy' (role 'assembly_Strategy', cardinality 0..*) is associated with 'behavioral::assembly::Precondition' (role 'behavioral_assembly_Precondition', cardinality 0..*).
+'SAMStatusVariable' (role 'SAMStatusVariable', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMStatusValue' (role 'samStatusValues', cardinality 0..*).
+'design::AbstractStatusValue' (role 'design_AbstractStatusValue', cardinality 0..*) is associated with 'behavioral::design::AbstractStatusVariable' (role 'behavioral_design_AbstractStatusVariable', cardinality 0..*).
+'collectionexpressions::Iterate' (role 'Iterate17', cardinality 0..*) is associated with 'behavioral::actions::Iterator' (role 'iterators', cardinality 0..*).
+'behavioral::status::and::action::old::SAMStatusVariable' (role 'samSchemaValue', cardinality 0..*) is associated with 'SAMSchemaVariable' (role 'SAMSchemaVariable', cardinality 0..*).
+'behavioral::status::and::action::old::SAMAction' (role 'samActions', cardinality 0..*) is associated with 'SapClass' (role 'SapClass43', cardinality 0..*).
+'behavioral::assembly::StatusSchema' (role 'behaviouralModel', cardinality 0..*) is associated with 'SapClass' (role 'SapClass127', cardinality 0..*).
+'Expression' (role 'Expression10', cardinality 0..*) is associated with 'behavioral::actions::LinkManipulationStatement' (role 'behavioral_actions_LinkManipulationStatement9', cardinality 0..*).
+'SAMSchemaDerivator' (role 'SAMSchemaDerivator65', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMStatusSchema' (role 'samStatusSchema64', cardinality 0..*).
+'behavioral::actions::Block' (role 'nestedBlocks', cardinality 0..*) is associated with 'StatementWithNestedBlocks' (role 'StatementWithNestedBlocks', cardinality 0..*).
+'SAMStatusVariable' (role 'SAMStatusVariable81', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaVariable' (role 'samSchemaVariables80', cardinality 0..*).
+'MethodSignature' (role 'MethodSignature', cardinality 0..*) is associated with 'behavioral::events::EventProducer' (role 'producer37', cardinality 0..*).
+'Block' (role 'Block41', cardinality 0..*) is associated with 'behavioral::events::EventFilter' (role 'behavioral_events_EventFilter', cardinality 0..*).
+'behavioral::status::and::action::old::SAMStatusSchema' (role 'samStatusSchema', cardinality 0..*) is associated with 'SapClass' (role 'SapClass54', cardinality 0..*).
+'behavioral::actions::Iterator' (role 'fact', cardinality 0..*) is associated with 'GroupBy' (role 'GroupBy', cardinality 0..*).
+'SAMSchemaDerivator' (role 'SAMSchemaDerivator85', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaVariable' (role 'samTargetSchemaVariable', cardinality 0..*).
+'SAMSchemaVariable' (role 'SAMSchemaVariable118', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaDerivator' (role 'samTargetSchemaDerivators', cardinality 0..*).
+'GroupBy' (role 'GroupBy24', cardinality 0..*) is associated with 'behavioral::actions::Iterator' (role 'groupedFacts', cardinality 0..*).
+'SapClass' (role 'SapClass', cardinality 0..*) is associated with 'behavioral::events::Subscription' (role 'subscription34', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaValue' (role 'samTargetSchemaValues', cardinality 0..*) is associated with 'SAMSchemaAction' (role 'SAMSchemaAction89', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaVariable' (role 'samSchemaVariable', cardinality 0..*) is associated with 'SAMSchemaValue' (role 'SAMSchemaValue78', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaAction' (role 'samSourceSchemaActions', cardinality 0..*) is associated with 'SAMSchemaValue' (role 'SAMSchemaValue106', cardinality 0..*).
+'Block' (role 'Block27', cardinality 0..*) is associated with 'behavioral::actions::StatementWithNestedBlocks' (role 'owningStatement', cardinality 0..*).
+'SAMDerivator' (role 'SAMDerivator', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaDerivator' (role 'samSchemaDerivators', cardinality 0..*).
+'NamedValueDeclaration' (role 'NamedValueDeclaration', cardinality 0..*) is associated with 'behavioral::actions::NamedValueWithOptionalInitExpression' (role 'namedValue', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaVariable' (role 'samSchemaVariables', cardinality 0..*) is associated with 'SAMStatusSchema' (role 'SAMStatusSchema76', cardinality 0..*).
+'SAMSchemaVariable' (role 'SAMSchemaVariable59', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMStatusSchema' (role 'samStatusSchema58', cardinality 0..*).
+'behavioral::assembly::ActionProxy' (role 'behavioral_assembly_ActionProxy', cardinality 0..*) is associated with 'Signature' (role 'Signature', cardinality 0..*).
+'SAMSchemaAction' (role 'SAMSchemaAction', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMAction' (role 'samAction', cardinality 0..*).
+'behavioral::actions::Iterator' (role 'alias', cardinality 0..*) is associated with 'FromClause' (role 'FromClause', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaValue' (role 'samTargetSchemaValues91', cardinality 0..*) is associated with 'SAMSchemaValue' (role 'SAMSchemaValue92', cardinality 0..*).
+'SAMSchemaValue' (role 'SAMSchemaValue94', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaValue' (role 'samSourceSchemaValues', cardinality 0..*).
+'NamedValueWithOptionalInitExpression' (role 'NamedValueWithOptionalInitExpression', cardinality 0..*) is associated with 'behavioral::actions::NamedValueDeclaration' (role 'namedValueDeclaration', cardinality 0..*).
+'behavioral::design::BusinessObject' (role 'behavioral_design_BusinessObject', cardinality 0..*) is associated with 'design::BusinessObjectNode' (role 'design_BusinessObjectNode', cardinality 0..*).
+'behavioral::status::and::action::old::SAMSchemaValue' (role 'samSchemaValues99', cardinality 0..*) is associated with 'SAMSchemaAction' (role 'SAMSchemaAction100', cardinality 0..*).
+'behavioral::assembly::Connector' (role 'behavioral_assembly_Connector131', cardinality 0..*) is associated with 'assembly::ConnectableElement' (role 'assembly_ConnectableElement132', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'behavioral::actions::Assignment' (role 'assignments', cardinality 0..*).
+'EventFilter' (role 'EventFilter', cardinality 0..*) is associated with 'behavioral::events::Subscription' (role 'subscription', cardinality 0..*).
+'behavioral::actions::Statement' (role 'statements', cardinality 0..*) is associated with 'Block' (role 'Block', cardinality 0..*).
+'SAMOperator' (role 'SAMOperator', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMStatusSchema' (role 'samStatusSchema56', cardinality 0..*).
+'NamedValue' (role 'NamedValue', cardinality 0..*) is associated with 'behavioral::actions::Block' (role 'owner', cardinality 0..*).
+'behavioral::actions::Iterator' (role 'iterator22', cardinality 0..*) is associated with 'DimensionDefinition' (role 'DimensionDefinition', cardinality 0..*).
+'Subscription' (role 'Subscription', cardinality 0..*) is associated with 'behavioral::events::EventProducer' (role 'producer', cardinality 0..*).
+'SAMSchemaValue' (role 'SAMSchemaValue', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMOperator' (role 'samOperators68', cardinality 0..*).
+'SAMOperator' (role 'SAMOperator72', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMOperator' (role 'samSourceOperators', cardinality 0..*).
+'behavioral::actions::Foreach' (role 'boundToFor', cardinality 0..*) is associated with 'Iterator' (role 'Iterator', cardinality 0..*).
+'SAMSchemaVariable' (role 'SAMSchemaVariable87', cardinality 0..*) is associated with 'behavioral::status::and::action::old::SAMSchemaValue' (role 'samSchemaValues', cardinality 0..*).
+'behavioral::assembly::StatusValueProxy' (role 'behavioral_assembly_StatusValueProxy', cardinality 0..*) is associated with 'design::StatusValue' (role 'design_StatusValue', cardinality 0..*).

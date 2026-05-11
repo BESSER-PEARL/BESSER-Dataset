@@ -1,0 +1,154 @@
+The model has 58 class(es).
+The class 'SecCon::Project' has no attributes.
+The class 'Event' has no attributes.
+The class 'SecCon::StateMachineScenario' has the following attributes: 'author' of type str; 'version' of type str.
+The class 'SecCon::Element' has no attributes.
+The class 'SecCon::RecoverUseCase' has no attributes.
+The class 'SecCon::UseCase' has the following attributes: 'preCondition' of type str; 'description' of type str.
+The class 'SecCon::Action' has the following attributes: 'name' of type str; 'parameter' of type str.
+The class 'SecCon::State' has no attributes.
+The class 'SecCon::Comment' has the following attributes: 'body' of type str.
+The class 'SecCon::ThreatUseCase' has no attributes.
+The class 'SecCon::UseCaseScenario' has the following attributes: 'version' of type str; 'author' of type str.
+The class 'SecCon::CountermeasureEvent' has no attributes.
+The class 'SecCon::Attribute' has the following attributes: 'isDerived' of type bool; 'isReadOnly' of type bool; 'default' of type str; 'isComposite' of type bool; 'isID' of type bool.
+The class 'MultiplicityElement' has no attributes.
+The class 'SecCon::ContextScenario' has the following attributes: 'name' of type str.
+The class 'SecCon::Enumeration' has no attributes.
+The class 'SecCon::Actor' has no attributes.
+The class 'SecCon::AttackedState' has no attributes.
+The class 'DataType' has no attributes.
+The class 'SecCon::AttackEvent' has no attributes.
+The class 'SecCon::Condition' has the following attributes: 'value' of type str; 'logicValue' of type bool; 'condition' of type str.
+The class 'SecCon::ProtectedState' has no attributes.
+The class 'SecCon::Extend' has the following attributes: 'condition' of type str; 'name' of type str.
+The class 'SecCon::CountermeasureUseCase' has no attributes.
+The class 'SecCon::TypedElement' has no attributes.
+The class 'UseCase' has no attributes.
+The class 'SecCon::MultiplicityElement' has the following attributes: 'lower' of type int; 'isUnique' of type bool; 'isOrdered' of type bool; 'upper' of type str.
+The class 'SecCon::InitialState' has no attributes.
+The class 'SecCon::Package' has no attributes.
+The class 'SecCon::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'SecCon::Rule' has the following attributes: 'name' of type str; 'operator' of type str; 'logicValue' of type bool.
+The class 'SecCon::Include' has the following attributes: 'name' of type str.
+The class 'TypedElement' has no attributes.
+The class 'SecCon::NamedElement' has the following attributes: 'name' of type str.
+The class 'SecCon::ThreatEvent' has no attributes.
+The class 'Type' has no attributes.
+The class 'Element' has no attributes.
+The class 'SecCon::Transition' has no attributes.
+The class 'SecCon::AttackUseCase' has no attributes.
+The class 'SecCon::Type' has no attributes.
+The class 'SecCon::Operation' has the following attributes: 'body' of type str.
+The class 'SecCon::ContextInformation' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'SecCon::PrevenctionUseCase' has no attributes.
+The class 'SecCon::PrimitiveType' has no attributes.
+The class 'SecCon::ThreatenedState' has no attributes.
+The class 'SecCon::Parameter' has the following attributes: 'direction' of type str; 'default' of type str.
+The class 'NamedElement' has no attributes.
+The class 'SecCon::FinalState' has no attributes.
+The class 'SecCon::DataType' has no attributes.
+The class 'SecCon::EnumerationLiteral' has no attributes.
+The class 'SecCon::DetectionUseCase' has no attributes.
+The class 'SecCon::Event' has no attributes.
+The class 'SecCon::VulnerableState' has no attributes.
+The class 'SecCon::VulnerabilityUseCase' has no attributes.
+The class 'SecCon::StateVertex' has no attributes.
+The class 'StateVertex' has no attributes.
+The class 'State' has no attributes.
+The class 'SecCon::StateOperation' has no attributes.
+The enumeration 'PseudostateKind' has the following literals: 'shallowHistory', 'initial', 'join', 'fork', 'choice', 'junction', 'deepHistory'.
+The enumeration 'TypeOfContext' has the following literals: 'AIRPLANE_MODE', 'BATTERY_LEVEL', 'GPS_STATUS', 'NETWORK_STATUS', 'CPU_LOAD', 'WIFI_STATUS', 'BLUETOOTH_STATUS', 'MEMORY_LOAD'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'inout', 'return_', 'in_', 'out'.
+The enumeration 'TypeOfCondition' has the following literals: 'IS_EQUAL', 'WHEN_HIGHER', 'WHILE_LOWER', 'WHILE_EQUALS', 'IS_ON', 'WHILE_HIGHER', 'WHEN_LOWER', 'WHEN_EQUALS', 'IS_OFF', 'IS_DIFFERENT'.
+The enumeration 'Operator' has the following literals: 'AND', 'OR'.
+'SecCon::AttackEvent' is a specialization of 'Event'.
+'SecCon::State' is a specialization of 'StateVertex'.
+'SecCon::MultiplicityElement' is a specialization of 'Element'.
+'SecCon::NamedElement' is a specialization of 'Element'.
+'SecCon::Type' is a specialization of 'NamedElement'.
+'SecCon::Event' is a specialization of 'NamedElement'.
+'SecCon::TypedElement' is a specialization of 'NamedElement'.
+'SecCon::Enumeration' is a specialization of 'DataType'.
+'SecCon::EnumerationLiteral' is a specialization of 'NamedElement'.
+'SecCon::AttackedState' is a specialization of 'State'.
+'SecCon::Parameter' is a specialization of 'TypedElement'.
+'SecCon::Package' is a specialization of 'NamedElement'.
+'SecCon::Project' is a specialization of 'NamedElement'.
+'SecCon::PrimitiveType' is a specialization of 'DataType'.
+'SecCon::StateVertex' is a specialization of 'NamedElement'.
+'SecCon::Attribute' is a specialization of 'MultiplicityElement'.
+'SecCon::CountermeasureUseCase' is a specialization of 'UseCase'.
+'SecCon::StateOperation' is a specialization of 'NamedElement'.
+'SecCon::FinalState' is a specialization of 'StateVertex'.
+'SecCon::ProtectedState' is a specialization of 'State'.
+'SecCon::Operation' is a specialization of 'TypedElement'.
+'SecCon::ThreatUseCase' is a specialization of 'UseCase'.
+'SecCon::Attribute' is a specialization of 'TypedElement'.
+'SecCon::Operation' is a specialization of 'MultiplicityElement'.
+'SecCon::DetectionUseCase' is a specialization of 'UseCase'.
+'SecCon::Parameter' is a specialization of 'MultiplicityElement'.
+'SecCon::PrevenctionUseCase' is a specialization of 'UseCase'.
+'SecCon::Transition' is a specialization of 'NamedElement'.
+'SecCon::RecoverUseCase' is a specialization of 'UseCase'.
+'SecCon::Class' is a specialization of 'Type'.
+'SecCon::DataType' is a specialization of 'Type'.
+'SecCon::VulnerabilityUseCase' is a specialization of 'UseCase'.
+'SecCon::UseCaseScenario' is a specialization of 'NamedElement'.
+'SecCon::CountermeasureEvent' is a specialization of 'Event'.
+'SecCon::Actor' is a specialization of 'NamedElement'.
+'SecCon::ThreatenedState' is a specialization of 'State'.
+'SecCon::StateMachineScenario' is a specialization of 'NamedElement'.
+'SecCon::AttackUseCase' is a specialization of 'UseCase'.
+'SecCon::VulnerableState' is a specialization of 'State'.
+'SecCon::InitialState' is a specialization of 'StateVertex'.
+'SecCon::ThreatEvent' is a specialization of 'Event'.
+'SecCon::UseCase' is a specialization of 'NamedElement'.
+'SecCon::UseCase' (role 'SecCon_UseCase', cardinality 0..*) is associated with 'SecCon::Actor' (role 'SecCon_Actor', cardinality 0..*).
+'SecCon::Package' (role 'SecCon_Package', cardinality 0..*) is associated with 'SecCon::Type' (role 'SecCon_Type12', cardinality 0..*).
+'SecCon::Extend' (role 'Extend38', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'base37', cardinality 0..*).
+'SecCon::Class' (role 'SecCon_Class', cardinality 0..*) is associated with 'SecCon::Operation' (role 'SecCon_Operation14', cardinality 0..*).
+'SecCon::Package' (role 'SecCon_Package24', cardinality 0..*) is associated with 'SecCon::Type' (role 'SecCon_Type25', cardinality 0..*).
+'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario56', cardinality 0..*) is associated with 'SecCon::Extend' (role 'SecCon_Extend57', cardinality 0..*).
+'SecCon::Attribute' (role 'SecCon_Attribute', cardinality 0..*) is associated with 'SecCon::Attribute' (role 'SecCon_Attribute5', cardinality 0..*).
+'SecCon::Package' (role 'Package30', cardinality 0..*) is associated with 'SecCon::Package' (role 'nestedPackage', cardinality 0..*).
+'SecCon::Transition' (role 'SecCon_Transition80', cardinality 0..*) is associated with 'SecCon::Event' (role 'SecCon_Event81', cardinality 0..*).
+'SecCon::Extend' (role 'extends', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'UseCase49', cardinality 0..*).
+'SecCon::Project' (role 'SecCon_Project91', cardinality 0..*) is associated with 'SecCon::ContextScenario' (role 'SecCon_ContextScenario', cardinality 0..*).
+'SecCon::ContextInformation' (role 'SecCon_ContextInformation102', cardinality 0..*) is associated with 'SecCon::Condition' (role 'SecCon_Condition101', cardinality 0..*).
+'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario62', cardinality 0..*) is associated with 'SecCon::Actor' (role 'SecCon_Actor63', cardinality 0..*).
+'SecCon::Condition' (role 'SecCon_Condition', cardinality 0..*) is associated with 'SecCon::Rule' (role 'SecCon_Rule97', cardinality 0..*).
+'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'SecCon_UseCase40', cardinality 0..*).
+'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario53', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'SecCon_UseCase54', cardinality 0..*).
+'SecCon::Rule' (role 'SecCon_Rule', cardinality 0..*) is associated with 'SecCon::ContextScenario' (role 'SecCon_ContextScenario93', cardinality 0..*).
+'SecCon::Transition' (role 'SecCon_Transition74', cardinality 0..*) is associated with 'SecCon::StateVertex' (role 'SecCon_StateVertex73', cardinality 0..*).
+'SecCon::Include' (role 'includes', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'UseCase', cardinality 0..*).
+'SecCon::Class' (role 'SecCon_Class15', cardinality 0..*) is associated with 'SecCon::Class' (role 'SecCon_Class17', cardinality 0..*).
+'SecCon::UseCase' (role 'UseCase47', cardinality 0..*) is associated with 'SecCon::Extend' (role 'extend', cardinality 0..*).
+'SecCon::Include' (role 'SecCon_Include', cardinality 0..*) is associated with 'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario45', cardinality 0..*).
+'SecCon::Attribute' (role 'SecCon_Attribute20', cardinality 0..*) is associated with 'SecCon::Class' (role 'SecCon_Class19', cardinality 0..*).
+'SecCon::Type' (role 'SecCon_Type8', cardinality 0..*) is associated with 'SecCon::Operation' (role 'SecCon_Operation', cardinality 0..*).
+'SecCon::Extend' (role 'SecCon_Extend', cardinality 0..*) is associated with 'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario51', cardinality 0..*).
+'SecCon::ContextScenario' (role 'SecCon_ContextScenario95', cardinality 0..*) is associated with 'SecCon::ContextInformation' (role 'SecCon_ContextInformation', cardinality 0..*).
+'SecCon::Project' (role 'SecCon_Project85', cardinality 0..*) is associated with 'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario86', cardinality 0..*).
+'SecCon::Extend' (role 'Extend', cardinality 0..*) is associated with 'SecCon::UseCase' (role 'extension', cardinality 0..*).
+'SecCon::StateVertex' (role 'SecCon_StateVertex', cardinality 0..*) is associated with 'SecCon::StateMachineScenario' (role 'SecCon_StateMachineScenario', cardinality 0..*).
+'SecCon::State' (role 'SecCon_State', cardinality 0..*) is associated with 'SecCon::StateOperation' (role 'SecCon_StateOperation', cardinality 0..*).
+'SecCon::UseCase' (role 'UseCase43', cardinality 0..*) is associated with 'SecCon::Include' (role 'include', cardinality 0..*).
+'SecCon::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'SecCon::Enumeration' (role 'Enumeration', cardinality 0..*).
+'SecCon::Comment' (role 'SecCon_Comment', cardinality 0..*) is associated with 'SecCon::Element' (role 'SecCon_Element', cardinality 0..*).
+'SecCon::TypedElement' (role 'SecCon_TypedElement', cardinality 0..*) is associated with 'SecCon::Type' (role 'SecCon_Type', cardinality 0..*).
+'SecCon::UseCase' (role 'base', cardinality 0..*) is associated with 'SecCon::Include' (role 'Include34', cardinality 0..*).
+'SecCon::Project' (role 'SecCon_Project', cardinality 0..*) is associated with 'SecCon::Package' (role 'SecCon_Package83', cardinality 0..*).
+'SecCon::StateMachineScenario' (role 'SecCon_StateMachineScenario89', cardinality 0..*) is associated with 'SecCon::Project' (role 'SecCon_Project88', cardinality 0..*).
+'SecCon::UseCase' (role 'addition', cardinality 0..*) is associated with 'SecCon::Include' (role 'Include', cardinality 0..*).
+'SecCon::Transition' (role 'SecCon_Transition71', cardinality 0..*) is associated with 'SecCon::StateVertex' (role 'SecCon_StateVertex70', cardinality 0..*).
+'SecCon::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'SecCon::Enumeration' (role 'enumeration', cardinality 0..*).
+'SecCon::StateMachineScenario' (role 'SecCon_StateMachineScenario68', cardinality 0..*) is associated with 'SecCon::Transition' (role 'SecCon_Transition', cardinality 0..*).
+'SecCon::Include' (role 'SecCon_Include60', cardinality 0..*) is associated with 'SecCon::UseCaseScenario' (role 'SecCon_UseCaseScenario59', cardinality 0..*).
+'SecCon::Element' (role 'SecCon_Element4', cardinality 0..*) is associated with 'SecCon::Comment' (role 'SecCon_Comment3', cardinality 0..*).
+'SecCon::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'SecCon::Package' (role 'Package', cardinality 0..*).
+'SecCon::Event' (role 'SecCon_Event78', cardinality 0..*) is associated with 'SecCon::State' (role 'SecCon_State77', cardinality 0..*).
+'SecCon::Event' (role 'SecCon_Event', cardinality 0..*) is associated with 'SecCon::StateMachineScenario' (role 'SecCon_StateMachineScenario66', cardinality 0..*).
+'SecCon::Operation' (role 'SecCon_Operation10', cardinality 0..*) is associated with 'SecCon::Parameter' (role 'SecCon_Parameter', cardinality 0..*).
+'SecCon::Action' (role 'SecCon_Action', cardinality 0..*) is associated with 'SecCon::Rule' (role 'SecCon_Rule99', cardinality 0..*).

@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'testtypesystem::Expression' has no attributes.
+The class 'testtypesystem::Assignment' has no attributes.
+The class 'testtypesystem::Value' has no attributes.
+The class 'testtypesystem::State' has no attributes.
+'testtypesystem::Expression' (role 'testtypesystem_Expression', cardinality 0..*) is associated with 'testtypesystem::Assignment' (role 'testtypesystem_Assignment', cardinality 0..*).

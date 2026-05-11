@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'ecore::EClass' has no attributes.
+The class 'ecore::EPackage' has no attributes.
+'ecore::EPackage' (role 'EPackage', cardinality 0..*) is associated with 'ecore::EClass' (role 'myClasses', cardinality 0..*).
+'ecore::EPackage' (role 'conflictingOpposite', cardinality 0..*) is associated with 'ecore::EClass' (role 'EClass', cardinality 0..*).

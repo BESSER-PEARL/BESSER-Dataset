@@ -1,0 +1,92 @@
+The model has 35 class(es).
+The class 'EFM::ResourceVerification' has no attributes.
+The class 'EFM::Colocated' has no attributes.
+The class 'EFM::FMConstraint' has no attributes.
+The class 'EFM::IntValue' has no attributes.
+The class 'EFM::Value' has no attributes.
+The class 'Operation' has no attributes.
+The class 'EFM::Excludes' has no attributes.
+The class 'EFM::Operation' has no attributes.
+The class 'EFM::FMElement' has no attributes.
+The class 'EFM::Comparison' has the following attributes: 'type' of type str.
+The class 'NodeFeatureElement' has no attributes.
+The class 'EFM::Functional' has the following attributes: 'value' of type int; 'type' of type str.
+The class 'EFM::RangeOperation' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'EFM::FeatureModel' has no attributes.
+The class 'BooleanConstraint' has no attributes.
+The class 'EFM::Attribute' has the following attributes: 'name' of type str.
+The class 'EFM::NotHostedBy' has no attributes.
+The class 'EFM::NodeFeatureElement' has no attributes.
+The class 'EFM::ValueOperation' has no attributes.
+The class 'EFM::NodeFeature' has the following attributes: 'name' of type str.
+The class 'EFM::HostedBy' has no attributes.
+The class 'EFM::Feature' has the following attributes: 'name' of type str.
+The class 'EFM::Exclusive' has no attributes.
+The class 'Alternative' has no attributes.
+The class 'EFM::Separated' has no attributes.
+The class 'EFM::FeatCardinality' has no attributes.
+The class 'EFM::Alternative' has no attributes.
+The class 'EFM::BooleanConstraint' has no attributes.
+The class 'Feature' has no attributes.
+The class 'EFM::Cardinality' has the following attributes: 'cardinalityMax' of type int; 'cardinalityMin' of type int; 'configValue' of type int.
+The class 'Cardinality' has no attributes.
+The class 'EFM::Implies' has no attributes.
+The class 'FMConstraint' has no attributes.
+The class 'FMElement' has no attributes.
+The class 'EFM::Requires' has the following attributes: 'operator' of type str.
+The enumeration 'Operator' has the following literals: 'remove', 'divide', 'multiply', 'add', 'select'.
+The enumeration 'LogicalOperator' has the following literals: 'or_', 'and_', 'void'.
+The enumeration 'ComparisonOperator' has the following literals: 'lt', 'equal', 'gt', 'leq', 'geq'.
+'EFM::FeatCardinality' is a specialization of 'Cardinality'.
+'EFM::Comparison' is a specialization of 'FMConstraint'.
+'EFM::NotHostedBy' is a specialization of 'FMConstraint'.
+'EFM::Requires' is a specialization of 'FMConstraint'.
+'EFM::ResourceVerification' is a specialization of 'FMConstraint'.
+'EFM::Attribute' is a specialization of 'FMElement'.
+'EFM::BooleanConstraint' is a specialization of 'FMConstraint'.
+'EFM::HostedBy' is a specialization of 'FMConstraint'.
+'EFM::ValueOperation' is a specialization of 'Operation'.
+'EFM::Feature' is a specialization of 'FMElement'.
+'EFM::Functional' is a specialization of 'FMConstraint'.
+'EFM::NodeFeature' is a specialization of 'NodeFeatureElement'.
+'EFM::Excludes' is a specialization of 'BooleanConstraint'.
+'EFM::Exclusive' is a specialization of 'Alternative'.
+'EFM::Separated' is a specialization of 'FMConstraint'.
+'EFM::Alternative' is a specialization of 'Feature'.
+'EFM::Implies' is a specialization of 'BooleanConstraint'.
+'EFM::Colocated' is a specialization of 'FMConstraint'.
+'EFM::RangeOperation' is a specialization of 'Operation'.
+'EFM::Feature' (role 'EFM_Feature4', cardinality 0..*) is associated with 'EFM::Attribute' (role 'EFM_Attribute', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature5', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature7', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature29', cardinality 0..*) is associated with 'EFM::Functional' (role 'EFM_Functional28', cardinality 0..*).
+'EFM::Operation' (role 'EFM_Operation35', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature36', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature', cardinality 0..*) is associated with 'EFM::FeatureModel' (role 'EFM_FeatureModel2', cardinality 0..*).
+'EFM::NotHostedBy' (role 'EFM_NotHostedBy78', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature79', cardinality 0..*).
+'EFM::HostedBy' (role 'EFM_HostedBy', cardinality 0..*) is associated with 'EFM::NodeFeature' (role 'EFM_NodeFeature55', cardinality 0..*).
+'EFM::Attribute' (role 'EFM_Attribute38', cardinality 0..*) is associated with 'EFM::RangeOperation' (role 'EFM_RangeOperation', cardinality 0..*).
+'EFM::Attribute' (role 'EFM_Attribute50', cardinality 0..*) is associated with 'EFM::NodeFeature' (role 'EFM_NodeFeature49', cardinality 0..*).
+'EFM::FMElement' (role 'EFM_FMElement33', cardinality 0..*) is associated with 'EFM::Comparison' (role 'EFM_Comparison32', cardinality 0..*).
+'EFM::ValueOperation' (role 'EFM_ValueOperation', cardinality 0..*) is associated with 'EFM::Attribute' (role 'EFM_Attribute40', cardinality 0..*).
+'EFM::Separated' (role 'EFM_Separated', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature65', cardinality 0..*).
+'EFM::HostedBy' (role 'EFM_HostedBy59', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature60', cardinality 0..*).
+'EFM::Comparison' (role 'EFM_Comparison', cardinality 0..*) is associated with 'EFM::FMElement' (role 'EFM_FMElement', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature9', cardinality 0..*) is associated with 'EFM::FeatCardinality' (role 'EFM_FeatCardinality', cardinality 0..*).
+'EFM::Colocated' (role 'EFM_Colocated', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature44', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature13', cardinality 0..*) is associated with 'EFM::Alternative' (role 'EFM_Alternative', cardinality 0..*).
+'EFM::ValueOperation' (role 'EFM_ValueOperation42', cardinality 0..*) is associated with 'EFM::IntValue' (role 'EFM_IntValue', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature20', cardinality 0..*) is associated with 'EFM::BooleanConstraint' (role 'EFM_BooleanConstraint19', cardinality 0..*).
+'EFM::Requires' (role 'EFM_Requires', cardinality 0..*) is associated with 'EFM::Operation' (role 'EFM_Operation', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature47', cardinality 0..*) is associated with 'EFM::Colocated' (role 'EFM_Colocated46', cardinality 0..*).
+'EFM::NodeFeature' (role 'EFM_NodeFeature52', cardinality 0..*) is associated with 'EFM::FeatCardinality' (role 'EFM_FeatCardinality53', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature68', cardinality 0..*) is associated with 'EFM::Separated' (role 'EFM_Separated67', cardinality 0..*).
+'EFM::ResourceVerification' (role 'EFM_ResourceVerification72', cardinality 0..*) is associated with 'EFM::Attribute' (role 'EFM_Attribute73', cardinality 0..*).
+'EFM::NodeFeature' (role 'EFM_NodeFeature57', cardinality 0..*) is associated with 'EFM::NotHostedBy' (role 'EFM_NotHostedBy', cardinality 0..*).
+'EFM::NodeFeature' (role 'EFM_NodeFeature76', cardinality 0..*) is associated with 'EFM::NotHostedBy' (role 'EFM_NotHostedBy75', cardinality 0..*).
+'EFM::Attribute' (role 'EFM_Attribute15', cardinality 0..*) is associated with 'EFM::Value' (role 'EFM_Value', cardinality 0..*).
+'EFM::FMConstraint' (role 'EFM_FMConstraint', cardinality 0..*) is associated with 'EFM::FeatureModel' (role 'EFM_FeatureModel', cardinality 0..*).
+'EFM::Feature' (role 'EFM_Feature17', cardinality 0..*) is associated with 'EFM::BooleanConstraint' (role 'EFM_BooleanConstraint', cardinality 0..*).
+'EFM::HostedBy' (role 'EFM_HostedBy62', cardinality 0..*) is associated with 'EFM::NodeFeature' (role 'EFM_NodeFeature63', cardinality 0..*).
+'EFM::ResourceVerification' (role 'EFM_ResourceVerification', cardinality 0..*) is associated with 'EFM::Attribute' (role 'EFM_Attribute70', cardinality 0..*).
+'EFM::NodeFeature' (role 'EFM_NodeFeature', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature11', cardinality 0..*).
+'EFM::Functional' (role 'EFM_Functional', cardinality 0..*) is associated with 'EFM::Feature' (role 'EFM_Feature26', cardinality 0..*).
+'EFM::Requires' (role 'EFM_Requires23', cardinality 0..*) is associated with 'EFM::Operation' (role 'EFM_Operation24', cardinality 0..*).

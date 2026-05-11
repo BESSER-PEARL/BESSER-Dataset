@@ -1,0 +1,127 @@
+The model has 52 class(es).
+The class 'applauseDsl::ReferrableElement' has the following attributes: 'name' of type str.
+The class 'applauseDsl::ScreenSection' has the following attributes: 'title' of type str.
+The class 'applauseDsl::ListItemCellDeclaration' has no attributes.
+The class 'applauseDsl::UIAction' has the following attributes: 'order' of type int; 'title' of type str; 'icon' of type str; 'gesture' of type str.
+The class 'applauseDsl::Type' has no attributes.
+The class 'applauseDsl::UIComponentDeclaration' has no attributes.
+The class 'applauseDsl::UIComponentOrDataType' has no attributes.
+The class 'applauseDsl::AbsoluteRESTURL' has the following attributes: 'port' of type int.
+The class 'applauseDsl::StringLiteral' has the following attributes: 'value' of type str.
+The class 'applauseDsl::RelativeRESTURL' has no attributes.
+The class 'applauseDsl::Entity' has the following attributes: 'abstract' of type bool.
+The class 'applauseDsl::UIActionSpecification' has no attributes.
+The class 'UIActionSpecification' has no attributes.
+The class 'applauseDsl::ScreenSectionItems' has no attributes.
+The class 'applauseDsl::LoopVariable' has no attributes.
+The class 'applauseDsl::Platform' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'applauseDsl::UrlFragment' has no attributes.
+The class 'PlatformMapping' has no attributes.
+The class 'applauseDsl::EntityMemberCall' has no attributes.
+The class 'applauseDsl::DataSourceCall' has the following attributes: 'name' of type str.
+The class 'UIComponentOrDataType' has no attributes.
+The class 'UrlFragment' has no attributes.
+The class 'applauseDsl::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'applauseDsl::Attribute' has the following attributes: 'name' of type str; 'many' of type bool.
+The class 'applauseDsl::DataSource' has no attributes.
+The class 'applauseDsl::UIComponentMemberCall' has no attributes.
+The class 'applauseDsl::DataType' has no attributes.
+The class 'Type' has no attributes.
+The class 'applauseDsl::RESTURL' has no attributes.
+The class 'applauseDsl::UIActionDeleteAction' has no attributes.
+The class 'applauseDsl::TypeMapping' has the following attributes: 'simpleName' of type str.
+The class 'applauseDsl::UIComponentMemberConfiguration' has no attributes.
+The class 'applauseDsl::AttributeReference' has no attributes.
+The class 'applauseDsl::Model' has no attributes.
+The class 'applauseDsl::DataSourceBodySpecification' has no attributes.
+The class 'applauseDsl::UIComponentMemberDeclaration' has the following attributes: 'name' of type str.
+The class 'RESTURL' has no attributes.
+The class 'applauseDsl::Parameter' has no attributes.
+The class 'ReferrableElement' has no attributes.
+The class 'applauseDsl::UIActionNavigateAction' has the following attributes: 'actionVerb' of type str.
+The class 'applauseDsl::UrlPathFragment' has the following attributes: 'name' of type str.
+The class 'applauseDsl::NamedElement' has the following attributes: 'name' of type str.
+The class 'applauseDsl::PlatformMapping' has no attributes.
+The class 'applauseDsl::Variable' has no attributes.
+The class 'applauseDsl::DataSourceAccessMethod' has the following attributes: 'returnsMany' of type bool; 'name' of type str.
+The class 'applauseDsl::RESTSpecification' has the following attributes: 'verb' of type str.
+The class 'applauseDsl::RESTMethodCall' has no attributes.
+The class 'applauseDsl::EntityMemberCallTail' has no attributes.
+The class 'applauseDsl::Screen' has the following attributes: 'kind' of type str; 'title' of type str.
+The class 'applauseDsl::ScreenListItemCell' has no attributes.
+The enumeration 'UIActionKind' has the following literals: 'performaction', 'delete', 'navigate'.
+The enumeration 'RESTVerb' has the following literals: 'GET', 'DELETE', 'POST', 'PUT'.
+The enumeration 'ActionVerb' has the following literals: 'edit', 'add', 'display'.
+The enumeration 'ScreenKind' has the following literals: 'DefaultDetails', 'DefaultList'.
+The enumeration 'GestureKind' has the following literals: 'longpress', 'swipe', 'tap'.
+'applauseDsl::UIActionDeleteAction' is a specialization of 'UIActionSpecification'.
+'applauseDsl::DataType' is a specialization of 'UIComponentOrDataType'.
+'applauseDsl::Parameter' is a specialization of 'ReferrableElement'.
+'applauseDsl::TypeMapping' is a specialization of 'PlatformMapping'.
+'applauseDsl::Screen' is a specialization of 'NamedElement'.
+'applauseDsl::StringLiteral' is a specialization of 'Expression'.
+'applauseDsl::ListItemCellDeclaration' is a specialization of 'NamedElement'.
+'applauseDsl::Entity' is a specialization of 'Type'.
+'applauseDsl::DataSource' is a specialization of 'NamedElement'.
+'applauseDsl::LoopVariable' is a specialization of 'ReferrableElement'.
+'applauseDsl::DataType' is a specialization of 'Type'.
+'applauseDsl::RelativeRESTURL' is a specialization of 'RESTURL'.
+'applauseDsl::EntityMemberCall' is a specialization of 'Expression'.
+'applauseDsl::Type' is a specialization of 'NamedElement'.
+'applauseDsl::UIComponentDeclaration' is a specialization of 'UIComponentOrDataType'.
+'applauseDsl::AbsoluteRESTURL' is a specialization of 'RESTURL'.
+'applauseDsl::UIActionNavigateAction' is a specialization of 'UIActionSpecification'.
+'applauseDsl::UIComponentDeclaration' is a specialization of 'NamedElement'.
+'applauseDsl::Platform' is a specialization of 'NamedElement'.
+'applauseDsl::UrlPathFragment' is a specialization of 'UrlFragment'.
+'applauseDsl::Variable' is a specialization of 'UrlFragment'.
+'applauseDsl::LoopVariable' (role 'applauseDsl_LoopVariable', cardinality 0..*) is associated with 'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell56', cardinality 0..*).
+'applauseDsl::EntityMemberCall' (role 'applauseDsl_EntityMemberCall96', cardinality 0..*) is associated with 'applauseDsl::EntityMemberCallTail' (role 'applauseDsl_EntityMemberCallTail', cardinality 0..*).
+'applauseDsl::UrlFragment' (role 'applauseDsl_UrlFragment', cardinality 0..*) is associated with 'applauseDsl::RESTURL' (role 'applauseDsl_RESTURL30', cardinality 0..*).
+'applauseDsl::Screen' (role 'applauseDsl_Screen', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter37', cardinality 0..*).
+'applauseDsl::AbsoluteRESTURL' (role 'applauseDsl_AbsoluteRESTURL32', cardinality 0..*) is associated with 'applauseDsl::UrlFragment' (role 'applauseDsl_UrlFragment33', cardinality 0..*).
+'applauseDsl::DataSourceCall' (role 'applauseDsl_DataSourceCall81', cardinality 0..*) is associated with 'applauseDsl::DataSource' (role 'applauseDsl_DataSource82', cardinality 0..*).
+'applauseDsl::Model' (role 'applauseDsl_Model', cardinality 0..*) is associated with 'applauseDsl::NamedElement' (role 'applauseDsl_NamedElement', cardinality 0..*).
+'applauseDsl::RESTMethodCall' (role 'applauseDsl_RESTMethodCall75', cardinality 0..*) is associated with 'applauseDsl::DataSourceCall' (role 'applauseDsl_DataSourceCall76', cardinality 0..*).
+'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell60', cardinality 0..*) is associated with 'applauseDsl::UIAction' (role 'applauseDsl_UIAction61', cardinality 0..*).
+'applauseDsl::Screen' (role 'applauseDsl_Screen65', cardinality 0..*) is associated with 'applauseDsl::UIActionNavigateAction' (role 'applauseDsl_UIActionNavigateAction', cardinality 0..*).
+'applauseDsl::Attribute' (role 'applauseDsl_Attribute', cardinality 0..*) is associated with 'applauseDsl::Entity' (role 'applauseDsl_Entity4', cardinality 0..*).
+'applauseDsl::DataSourceCall' (role 'applauseDsl_DataSourceCall46', cardinality 0..*) is associated with 'applauseDsl::ScreenSection' (role 'applauseDsl_ScreenSection45', cardinality 0..*).
+'applauseDsl::UIComponentMemberConfiguration' (role 'applauseDsl_UIComponentMemberConfiguration', cardinality 0..*) is associated with 'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell58', cardinality 0..*).
+'applauseDsl::Parameter' (role 'applauseDsl_Parameter35', cardinality 0..*) is associated with 'applauseDsl::Variable' (role 'applauseDsl_Variable', cardinality 0..*).
+'applauseDsl::DataSourceAccessMethod' (role 'applauseDsl_DataSourceAccessMethod', cardinality 0..*) is associated with 'applauseDsl::DataSource' (role 'applauseDsl_DataSource14', cardinality 0..*).
+'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell', cardinality 0..*) is associated with 'applauseDsl::ScreenSectionItems' (role 'applauseDsl_ScreenSectionItems50', cardinality 0..*).
+'applauseDsl::Expression' (role 'applauseDsl_Expression', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberConfiguration' (role 'applauseDsl_UIComponentMemberConfiguration86', cardinality 0..*).
+'applauseDsl::Attribute' (role 'applauseDsl_Attribute6', cardinality 0..*) is associated with 'applauseDsl::Type' (role 'applauseDsl_Type', cardinality 0..*).
+'applauseDsl::RESTSpecification' (role 'applauseDsl_RESTSpecification20', cardinality 0..*) is associated with 'applauseDsl::RESTURL' (role 'applauseDsl_RESTURL', cardinality 0..*).
+'applauseDsl::UIComponentOrDataType' (role 'applauseDsl_UIComponentOrDataType', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberDeclaration' (role 'applauseDsl_UIComponentMemberDeclaration73', cardinality 0..*).
+'applauseDsl::UIComponentMemberDeclaration' (role 'applauseDsl_UIComponentMemberDeclaration92', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberCall' (role 'applauseDsl_UIComponentMemberCall91', cardinality 0..*).
+'applauseDsl::DataSourceBodySpecification' (role 'applauseDsl_DataSourceBodySpecification24', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter25', cardinality 0..*).
+'applauseDsl::DataSourceAccessMethod' (role 'applauseDsl_DataSourceAccessMethod79', cardinality 0..*) is associated with 'applauseDsl::RESTMethodCall' (role 'applauseDsl_RESTMethodCall78', cardinality 0..*).
+'applauseDsl::UIComponentMemberCall' (role 'applauseDsl_UIComponentMemberCall88', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberDeclaration' (role 'applauseDsl_UIComponentMemberDeclaration89', cardinality 0..*).
+'applauseDsl::Attribute' (role 'applauseDsl_Attribute99', cardinality 0..*) is associated with 'applauseDsl::EntityMemberCallTail' (role 'applauseDsl_EntityMemberCallTail98', cardinality 0..*).
+'applauseDsl::Platform' (role 'applauseDsl_Platform', cardinality 0..*) is associated with 'applauseDsl::PlatformMapping' (role 'applauseDsl_PlatformMapping', cardinality 0..*).
+'applauseDsl::EntityMemberCall' (role 'applauseDsl_EntityMemberCall', cardinality 0..*) is associated with 'applauseDsl::Attribute' (role 'applauseDsl_Attribute94', cardinality 0..*).
+'applauseDsl::Type' (role 'applauseDsl_Type28', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter27', cardinality 0..*).
+'applauseDsl::DataSourceAccessMethod' (role 'applauseDsl_DataSourceAccessMethod16', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter', cardinality 0..*).
+'applauseDsl::AttributeReference' (role 'applauseDsl_AttributeReference', cardinality 0..*) is associated with 'applauseDsl::Attribute' (role 'applauseDsl_Attribute104', cardinality 0..*).
+'applauseDsl::Screen' (role 'applauseDsl_Screen43', cardinality 0..*) is associated with 'applauseDsl::UIAction' (role 'applauseDsl_UIAction', cardinality 0..*).
+'applauseDsl::EntityMemberCallTail' (role 'applauseDsl_EntityMemberCallTail100', cardinality 0..*) is associated with 'applauseDsl::EntityMemberCallTail' (role 'applauseDsl_EntityMemberCallTail102', cardinality 0..*).
+'applauseDsl::RESTMethodCall' (role 'applauseDsl_RESTMethodCall', cardinality 0..*) is associated with 'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell54', cardinality 0..*).
+'applauseDsl::ListItemCellDeclaration' (role 'applauseDsl_ListItemCellDeclaration', cardinality 0..*) is associated with 'applauseDsl::ScreenListItemCell' (role 'applauseDsl_ScreenListItemCell52', cardinality 0..*).
+'applauseDsl::ScreenSectionItems' (role 'applauseDsl_ScreenSectionItems', cardinality 0..*) is associated with 'applauseDsl::ScreenSection' (role 'applauseDsl_ScreenSection48', cardinality 0..*).
+'applauseDsl::UIComponentMemberCall' (role 'applauseDsl_UIComponentMemberCall', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberConfiguration' (role 'applauseDsl_UIComponentMemberConfiguration84', cardinality 0..*).
+'applauseDsl::UIAction' (role 'applauseDsl_UIAction63', cardinality 0..*) is associated with 'applauseDsl::UIActionSpecification' (role 'applauseDsl_UIActionSpecification', cardinality 0..*).
+'applauseDsl::DataType' (role 'applauseDsl_DataType', cardinality 0..*) is associated with 'applauseDsl::TypeMapping' (role 'applauseDsl_TypeMapping', cardinality 0..*).
+'applauseDsl::Screen' (role 'applauseDsl_Screen39', cardinality 0..*) is associated with 'applauseDsl::DataSourceCall' (role 'applauseDsl_DataSourceCall', cardinality 0..*).
+'applauseDsl::ListItemCellDeclaration' (role 'applauseDsl_ListItemCellDeclaration69', cardinality 0..*) is associated with 'applauseDsl::UIComponentMemberDeclaration' (role 'applauseDsl_UIComponentMemberDeclaration', cardinality 0..*).
+'applauseDsl::AbsoluteRESTURL' (role 'applauseDsl_AbsoluteRESTURL', cardinality 0..*) is associated with 'applauseDsl::DataSource' (role 'applauseDsl_DataSource', cardinality 0..*).
+'applauseDsl::Entity' (role 'applauseDsl_Entity', cardinality 0..*) is associated with 'applauseDsl::Entity' (role 'applauseDsl_Entity1', cardinality 0..*).
+'applauseDsl::UIActionNavigateAction' (role 'applauseDsl_UIActionNavigateAction67', cardinality 0..*) is associated with 'applauseDsl::ReferrableElement' (role 'applauseDsl_ReferrableElement', cardinality 0..*).
+'applauseDsl::DataSourceAccessMethod' (role 'applauseDsl_DataSourceAccessMethod18', cardinality 0..*) is associated with 'applauseDsl::RESTSpecification' (role 'applauseDsl_RESTSpecification', cardinality 0..*).
+'applauseDsl::Screen' (role 'applauseDsl_Screen41', cardinality 0..*) is associated with 'applauseDsl::ScreenSection' (role 'applauseDsl_ScreenSection', cardinality 0..*).
+'applauseDsl::DataSourceBodySpecification' (role 'applauseDsl_DataSourceBodySpecification', cardinality 0..*) is associated with 'applauseDsl::RESTSpecification' (role 'applauseDsl_RESTSpecification22', cardinality 0..*).
+'applauseDsl::Entity' (role 'applauseDsl_Entity12', cardinality 0..*) is associated with 'applauseDsl::DataSource' (role 'applauseDsl_DataSource11', cardinality 0..*).
+'applauseDsl::UIComponentMemberDeclaration' (role 'applauseDsl_UIComponentMemberDeclaration71', cardinality 0..*) is associated with 'applauseDsl::UIComponentDeclaration' (role 'applauseDsl_UIComponentDeclaration', cardinality 0..*).

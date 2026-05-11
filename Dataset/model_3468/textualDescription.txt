@@ -1,0 +1,72 @@
+The model has 23 class(es).
+The class 'coCoMM::HardLimitCC' has no attributes.
+The class 'coCoMM::HardLimitCCExpression' has the following attributes: 'value' of type str; 'op' of type str.
+The class 'coCoMM::TreeConstraint' has the following attributes: 'type' of type str.
+The class 'coCoMM::CoCo' has the following attributes: 'id' of type str; 'name' of type str; 'configScenario' of type str.
+The class 'coCoMM::CMConstraintExpression' has the following attributes: 'op' of type str.
+The class 'coCoMM::ConfigurationConstraint' has the following attributes: 'id' of type str; 'type' of type str; 'name' of type str.
+The class 'coCoMM::CrossTreeConstraint' has no attributes.
+The class 'coCoMM::FeatureModel' has the following attributes: 'id' of type str; 'name' of type str; 'isDomain' of type bool.
+The class 'coCoMM::SelectionStateCC' has the following attributes: 'state' of type str.
+The class 'coCoMM::CTConstraintExpression' has the following attributes: 'op' of type str.
+The class 'coCoMM::SolutionConstraint' has the following attributes: 'type' of type str.
+The class 'ConfigurationConstraint' has no attributes.
+The class 'coCoMM::FeatureAttribute' has the following attributes: 'minValue' of type str; 'defaultValue' of type str; 'maxValue' of type str.
+The class 'coCoMM::AggregationFunction' has the following attributes: 'operation' of type str.
+The class 'coCoMM::Stakeholder' has the following attributes: 'job' of type str; 'name' of type str.
+The class 'coCoMM::Feature' has the following attributes: 'abstract' of type bool; 'mandatory' of type bool; 'id' of type str; 'name' of type str.
+The class 'SolutionConstraint' has no attributes.
+The class 'coCoMM::AttributeType' has the following attributes: 'dataType' of type str; 'id' of type str; 'name' of type str.
+The class 'coCoMM::Config' has the following attributes: 'selected' of type bool; 'type' of type str.
+The class 'coCoMM::OptimizationCC' has the following attributes: 'funct' of type str.
+The class 'coCoMM::Project' has the following attributes: 'date' of type date; 'name' of type str; 'target' of type bool.
+The class 'coCoMM::OptimizationSC' has the following attributes: 'funct' of type str.
+The class 'coCoMM::CrossModelConstraint' has no attributes.
+The enumeration 'CCOptimizationOp' has the following literals: 'minimize', 'maximize'.
+The enumeration 'CCType' has the following literals: 'optimization', 'selectionState', 'hardLimit'.
+The enumeration 'TreeConstraintType' has the following literals: 'Or', 'Alternative', 'And'.
+The enumeration 'OptimizationSCFunct' has the following literals: 'minimize', 'maximize'.
+The enumeration 'CCSelectionStateType' has the following literals: 'forbidden', 'mandatory', 'preferred'.
+The enumeration 'SCType' has the following literals: 'hardLimit', 'finiteDomain', 'selectionState', 'optimization'.
+The enumeration 'CTConstraintType' has the following literals: 'not_', 'and_', 'implies', 'or_'.
+The enumeration 'CCHardLimitOp' has the following literals: 'geq', 'gt', 'lt', 'leq', 'eq'.
+The enumeration 'DataType' has the following literals: 'boolean', 'int', 'double', 'String'.
+The enumeration 'ConfigType' has the following literals: 'output', 'input'.
+The enumeration 'AggregationOp' has the following literals: 'max', 'add', 'multiply', 'min'.
+The enumeration 'CMConstraintType' has the following literals: 'implies', 'or_', 'not_', 'and_'.
+'coCoMM::SelectionStateCC' is a specialization of 'ConfigurationConstraint'.
+'coCoMM::HardLimitCC' is a specialization of 'ConfigurationConstraint'.
+'coCoMM::OptimizationCC' is a specialization of 'ConfigurationConstraint'.
+'coCoMM::OptimizationSC' is a specialization of 'SolutionConstraint'.
+'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression59', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature60', cardinality 0..*).
+'coCoMM::AggregationFunction' (role 'coCoMM_AggregationFunction43', cardinality 0..*) is associated with 'coCoMM::OptimizationCC' (role 'coCoMM_OptimizationCC', cardinality 0..*).
+'coCoMM::CoCo' (role 'coCoMM_CoCo29', cardinality 0..*) is associated with 'coCoMM::Project' (role 'coCoMM_Project', cardinality 0..*).
+'coCoMM::Stakeholder' (role 'coCoMM_Stakeholder', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo31', cardinality 0..*).
+'coCoMM::Config' (role 'coCoMM_Config', cardinality 0..*) is associated with 'coCoMM::Project' (role 'coCoMM_Project51', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel35', cardinality 0..*) is associated with 'coCoMM::SelectionStateCC' (role 'coCoMM_SelectionStateCC', cardinality 0..*).
+'coCoMM::CrossTreeConstraint' (role 'coCoMM_CrossTreeConstraint', cardinality 0..*) is associated with 'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel2', cardinality 0..*).
+'coCoMM::Stakeholder' (role 'coCoMM_Stakeholder54', cardinality 0..*) is associated with 'coCoMM::Config' (role 'coCoMM_Config53', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature66', cardinality 0..*) is associated with 'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression65', cardinality 0..*).
+'coCoMM::HardLimitCC' (role 'coCoMM_HardLimitCC', cardinality 0..*) is associated with 'coCoMM::HardLimitCCExpression' (role 'coCoMM_HardLimitCCExpression', cardinality 0..*).
+'coCoMM::TreeConstraint' (role 'coCoMM_TreeConstraint11', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature12', cardinality 0..*).
+'coCoMM::AggregationFunction' (role 'coCoMM_AggregationFunction71', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType72', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel7', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature6', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature9', cardinality 0..*) is associated with 'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute', cardinality 0..*).
+'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression63', cardinality 0..*) is associated with 'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression61', cardinality 0..*).
+'coCoMM::ConfigurationConstraint' (role 'coCoMM_ConfigurationConstraint46', cardinality 0..*) is associated with 'coCoMM::Project' (role 'coCoMM_Project45', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature57', cardinality 0..*) is associated with 'coCoMM::Config' (role 'coCoMM_Config56', cardinality 0..*).
+'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression67', cardinality 0..*) is associated with 'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression69', cardinality 0..*).
+'coCoMM::AggregationFunction' (role 'coCoMM_AggregationFunction', cardinality 0..*) is associated with 'coCoMM::HardLimitCC' (role 'coCoMM_HardLimitCC41', cardinality 0..*).
+'coCoMM::CoCo' (role 'coCoMM_CoCo22', cardinality 0..*) is associated with 'coCoMM::SolutionConstraint' (role 'coCoMM_SolutionConstraint', cardinality 0..*).
+'coCoMM::Project' (role 'coCoMM_Project48', cardinality 0..*) is associated with 'coCoMM::SolutionConstraint' (role 'coCoMM_SolutionConstraint49', cardinality 0..*).
+'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression', cardinality 0..*) is associated with 'coCoMM::CrossModelConstraint' (role 'coCoMM_CrossModelConstraint33', cardinality 0..*).
+'coCoMM::TreeConstraint' (role 'coCoMM_TreeConstraint', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature4', cardinality 0..*).
+'coCoMM::ConfigurationConstraint' (role 'coCoMM_ConfigurationConstraint', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo24', cardinality 0..*).
+'coCoMM::AttributeType' (role 'coCoMM_AttributeType', cardinality 0..*) is associated with 'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute14', cardinality 0..*).
+'coCoMM::SelectionStateCC' (role 'coCoMM_SelectionStateCC37', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature38', cardinality 0..*).
+'coCoMM::OptimizationSC' (role 'coCoMM_OptimizationSC', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType74', cardinality 0..*).
+'coCoMM::CrossModelConstraint' (role 'coCoMM_CrossModelConstraint', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo20', cardinality 0..*).
+'coCoMM::CrossTreeConstraint' (role 'coCoMM_CrossTreeConstraint16', cardinality 0..*) is associated with 'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature', cardinality 0..*) is associated with 'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel18', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo', cardinality 0..*).
+'coCoMM::CoCo' (role 'coCoMM_CoCo26', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType27', cardinality 0..*).

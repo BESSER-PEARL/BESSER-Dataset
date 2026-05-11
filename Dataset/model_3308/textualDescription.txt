@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'experimental::PerculationDiseaseModel' has no attributes.
+The class 'StochasticSEIRDiseaseModel' has no attributes.
+'experimental::PerculationDiseaseModel' is a specialization of 'StochasticSEIRDiseaseModel'.

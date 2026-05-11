@@ -1,0 +1,298 @@
+The model has 98 class(es).
+The class 'ecdarText::ETSpecificationInstantiation' has no attributes.
+The class 'ecdarText::ETNumberLiteral' has the following attributes: 'value' of type int.
+The class 'ecdarText::ETIntegerType' has no attributes.
+The class 'ecdarText::ETInputType' has no attributes.
+The class 'ecdarText::ETIO' has the following attributes: 'type' of type str.
+The class 'ecdarText::ETSpecificationCompositionExpression' has no attributes.
+The class 'ecdarText::ETPreDecrementExpression' has no attributes.
+The class 'ecdarText::ETBitAndAssignmentExpression' has no attributes.
+The class 'ecdarText::ETVariableID' has the following attributes: 'name' of type str; 'ioType' of type str.
+The class 'ETInitialiser' has no attributes.
+The class 'ecdarText::ETTypeIdentifier' has no attributes.
+The class 'ecdarText::ETMinusExpression' has no attributes.
+The class 'ecdarText::ETLogicOrExpression' has no attributes.
+The class 'ecdarText::ETModuloAssignmentExpression' has no attributes.
+The class 'ecdarText::ETAddExpression' has no attributes.
+The class 'ETSpecificationExpression' has no attributes.
+The class 'ecdarText::ETClockType' has no attributes.
+The class 'ecdarText::ETStructType' has no attributes.
+The class 'ecdarText::ETModuloExpression' has no attributes.
+The class 'ecdarText::ETMultiInitialiser' has no attributes.
+The class 'ecdarText::ETMultiplyExpression' has no attributes.
+The class 'ecdarText::ETSelect' has the following attributes: 'name' of type str.
+The class 'ecdarText::ETArrayDeclaration' has no attributes.
+The class 'ecdarText::ETBitAndExpression' has no attributes.
+The class 'ecdarText::ETSubtractExpression' has no attributes.
+The class 'ecdarText::ETBitRightExpression' has no attributes.
+The class 'ecdarText::ETLessEqualExpression' has no attributes.
+The class 'ecdarText::ETEqualExpression' has no attributes.
+The class 'ecdarText::ETLessExpression' has no attributes.
+The class 'ecdarText::ETDivideExpression' has no attributes.
+The class 'ecdarText::ETMinExpression' has no attributes.
+The class 'ecdarText::ETType' has no attributes.
+The class 'ecdarText::ETInitialiser' has no attributes.
+The class 'ecdarText::ETSpecificationConjunctionExpression' has no attributes.
+The class 'ecdarText::ETGreaterExpression' has no attributes.
+The class 'ecdarText::ETFile' has no attributes.
+The class 'ecdarText::ETStructExpression' has the following attributes: 'right' of type str.
+The class 'ecdarText::ETArrayExpression' has no attributes.
+The class 'ETDeclaration' has no attributes.
+The class 'ecdarText::ETTypeID' has the following attributes: 'name' of type str.
+The class 'ecdarText::ETSpecification' has the following attributes: 'name' of type str.
+The class 'ecdarText::ETSpecificationBinding' has no attributes.
+The class 'ecdarText::ETUnequalExpression' has no attributes.
+The class 'ecdarText::ETBitOrExpression' has no attributes.
+The class 'ecdarText::ETForallExpression' has the following attributes: 'name' of type str.
+The class 'ecdarText::ETTypeDeclaration' has no attributes.
+The class 'ecdarText::ETAdditionAssignmentExpression' has no attributes.
+The class 'ETSpecification' has no attributes.
+The class 'ecdarText::ETExistsExpression' has the following attributes: 'name' of type str.
+The class 'ecdarText::ETDivisionAssignmentExpression' has no attributes.
+The class 'ecdarText::ETBitXORAssignmentExpression' has no attributes.
+The class 'ecdarText::ETOutputType' has no attributes.
+The class 'ecdarText::ETPostDecrementExpression' has no attributes.
+The class 'ecdarText::ETFieldDeclaration' has no attributes.
+The class 'ecdarText::ETSpecificationBody' has no attributes.
+The class 'ecdarText::ETSpecificationTemplate' has no attributes.
+The class 'ecdarText::ETBitRightAssignmentExpression' has no attributes.
+The class 'ecdarText::ETScalarType' has no attributes.
+The class 'ecdarText::ETSpecificationReference' has no attributes.
+The class 'ecdarText::ETBitLeftAssignmentExpression' has no attributes.
+The class 'ecdarText::ETBooleanType' has no attributes.
+The class 'ecdarText::ETTypeModifiers' has the following attributes: 'meta' of type bool; 'const' of type bool; 'urgent' of type bool.
+The class 'ecdarText::ETDeclaration' has no attributes.
+The class 'ecdarText::ETBitLeftExpression' has no attributes.
+The class 'ETExpression' has no attributes.
+The class 'ETTypeIdentifier' has no attributes.
+The class 'ecdarText::ETBitOrAssignmentExpression' has no attributes.
+The class 'ecdarText::ETLogicNotExpression' has no attributes.
+The class 'ecdarText::ETSpecificationDisjunctionExpression' has no attributes.
+The class 'ecdarText::EObject' has no attributes.
+The class 'ecdarText::ETAssignmentExpression' has no attributes.
+The class 'ecdarText::ETBooleanLiteral' has the following attributes: 'value' of type str.
+The class 'ecdarText::ETImplyExpression' has no attributes.
+The class 'ecdarText::ETBitXORExpression' has no attributes.
+The class 'ecdarText::ETMaxExpression' has no attributes.
+The class 'ecdarText::ETPostIncrementExpression' has no attributes.
+The class 'ecdarText::ETTypeReference' has no attributes.
+The class 'ecdarText::ETDeclarations' has no attributes.
+The class 'ecdarText::ETSpecificationDefinition' has no attributes.
+The class 'ETSpecificationDefinition' has no attributes.
+The class 'ecdarText::ETLogicAndExpression' has no attributes.
+The class 'ecdarText::ETPreIncrementExpression' has no attributes.
+The class 'ecdarText::ETImport' has the following attributes: 'importedNamespace' of type str.
+The class 'ecdarText::ETVariableDeclaration' has no attributes.
+The class 'ecdarText::ETActionType' has no attributes.
+The class 'ecdarText::ETEdge' has the following attributes: 'controllable' of type bool.
+The class 'ecdarText::ETMultiplicationAssignmentExpression' has no attributes.
+The class 'ETActionType' has no attributes.
+The class 'ecdarText::ETReference' has no attributes.
+The class 'ecdarText::ETExpression' has no attributes.
+The class 'ecdarText::ETGreaterEqualExpression' has no attributes.
+The class 'ecdarText::ETConditionalExpression' has no attributes.
+The class 'ecdarText::ETSpecificationExpression' has no attributes.
+The class 'ecdarText::ETLocation' has the following attributes: 'universal' of type bool; 'urgent' of type bool; 'name' of type str.
+The class 'ecdarText::ETFieldID' has the following attributes: 'name' of type str; 'ioType' of type str.
+The class 'ecdarText::ETSingleInitialiser' has no attributes.
+The class 'ecdarText::ETSubtractionAssignmentExpression' has no attributes.
+The class 'ecdarText::ETParameter' has the following attributes: 'ioType' of type str; 'name' of type str.
+The enumeration 'ETIOType' has the following literals: 'INPUT', 'OUTPUT'.
+'ecdarText::ETDivisionAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETPostDecrementExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETStructExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETPreDecrementExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETTypeReference' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETMinusExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitOrAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETExistsExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETMultiInitialiser' is a specialization of 'ETInitialiser'.
+'ecdarText::ETAdditionAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETUnequalExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitRightAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSpecificationBinding' is a specialization of 'ETSpecification'.
+'ecdarText::ETLessExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETActionType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETReference' is a specialization of 'ETExpression'.
+'ecdarText::ETEqualExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETLessEqualExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETModuloExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBooleanType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETMaxExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitOrExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETInputType' is a specialization of 'ETActionType'.
+'ecdarText::ETBitAndAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETGreaterEqualExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitAndExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETForallExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETMinExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSubtractExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSpecificationInstantiation' is a specialization of 'ETSpecificationExpression'.
+'ecdarText::ETBitXORAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETNumberLiteral' is a specialization of 'ETExpression'.
+'ecdarText::ETDivideExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBooleanLiteral' is a specialization of 'ETExpression'.
+'ecdarText::ETClockType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETConditionalExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETGreaterExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitRightExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSingleInitialiser' is a specialization of 'ETInitialiser'.
+'ecdarText::ETIntegerType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETPreIncrementExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETLogicNotExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSpecificationConjunctionExpression' is a specialization of 'ETSpecificationExpression'.
+'ecdarText::ETLogicAndExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETMultiplicationAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSubtractionAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitLeftExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSpecificationReference' is a specialization of 'ETSpecificationExpression'.
+'ecdarText::ETStructType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETMultiplyExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETImplyExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETScalarType' is a specialization of 'ETTypeIdentifier'.
+'ecdarText::ETModuloAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETSpecificationDefinition' is a specialization of 'ETSpecification'.
+'ecdarText::ETSpecificationTemplate' is a specialization of 'ETSpecificationDefinition'.
+'ecdarText::ETAddExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitXORExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETArrayExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitLeftAssignmentExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETOutputType' is a specialization of 'ETActionType'.
+'ecdarText::ETVariableDeclaration' is a specialization of 'ETDeclaration'.
+'ecdarText::ETSpecificationDisjunctionExpression' is a specialization of 'ETSpecificationExpression'.
+'ecdarText::ETLogicOrExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETTypeDeclaration' is a specialization of 'ETDeclaration'.
+'ecdarText::ETSpecificationCompositionExpression' is a specialization of 'ETSpecificationExpression'.
+'ecdarText::ETPostIncrementExpression' is a specialization of 'ETExpression'.
+'ecdarText::ETBitLeftExpression' (role 'ecdarText_ETBitLeftExpression258', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression259', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType', cardinality 0..*) is associated with 'ecdarText::ETTypeModifiers' (role 'ecdarText_ETTypeModifiers', cardinality 0..*).
+'ecdarText::ETVariableID' (role 'ecdarText_ETVariableID', cardinality 0..*) is associated with 'ecdarText::ETVariableDeclaration' (role 'ecdarText_ETVariableDeclaration14', cardinality 0..*).
+'ecdarText::ETForallExpression' (role 'ecdarText_ETForallExpression115', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression116', cardinality 0..*).
+'ecdarText::ETUnequalExpression' (role 'ecdarText_ETUnequalExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression221', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression188', cardinality 0..*) is associated with 'ecdarText::ETBitRightAssignmentExpression' (role 'ecdarText_ETBitRightAssignmentExpression', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression151', cardinality 0..*) is associated with 'ecdarText::ETSubtractionAssignmentExpression' (role 'ecdarText_ETSubtractionAssignmentExpression150', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression244', cardinality 0..*) is associated with 'ecdarText::ETGreaterExpression' (role 'ecdarText_ETGreaterExpression243', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression178', cardinality 0..*) is associated with 'ecdarText::ETBitXORAssignmentExpression' (role 'ecdarText_ETBitXORAssignmentExpression', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression131', cardinality 0..*) is associated with 'ecdarText::ETLogicOrExpression' (role 'ecdarText_ETLogicOrExpression130', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression236', cardinality 0..*) is associated with 'ecdarText::ETGreaterEqualExpression' (role 'ecdarText_ETGreaterEqualExpression', cardinality 0..*).
+'ecdarText::ETEqualExpression' (role 'ecdarText_ETEqualExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression216', cardinality 0..*).
+'ecdarText::ETVariableID' (role 'ecdarText_ETVariableID16', cardinality 0..*) is associated with 'ecdarText::ETArrayDeclaration' (role 'ecdarText_ETArrayDeclaration17', cardinality 0..*).
+'ecdarText::ETMultiplicationAssignmentExpression' (role 'ecdarText_ETMultiplicationAssignmentExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression153', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression199', cardinality 0..*) is associated with 'ecdarText::ETConditionalExpression' (role 'ecdarText_ETConditionalExpression198', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression146', cardinality 0..*) is associated with 'ecdarText::ETAdditionAssignmentExpression' (role 'ecdarText_ETAdditionAssignmentExpression145', cardinality 0..*).
+'ecdarText::ETMultiInitialiser' (role 'ecdarText_ETMultiInitialiser', cardinality 0..*) is associated with 'ecdarText::ETInitialiser' (role 'ecdarText_ETInitialiser23', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression286', cardinality 0..*) is associated with 'ecdarText::ETModuloExpression' (role 'ecdarText_ETModuloExpression', cardinality 0..*).
+'ecdarText::ETMinusExpression' (role 'ecdarText_ETMinusExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression297', cardinality 0..*).
+'ecdarText::ETBitOrExpression' (role 'ecdarText_ETBitOrExpression203', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression204', cardinality 0..*).
+'ecdarText::ETParameter' (role 'ecdarText_ETParameter59', cardinality 0..*) is associated with 'ecdarText::ETType' (role 'ecdarText_ETType60', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression121', cardinality 0..*) is associated with 'ecdarText::ETExistsExpression' (role 'ecdarText_ETExistsExpression120', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression66', cardinality 0..*) is associated with 'ecdarText::ETLocation' (role 'ecdarText_ETLocation65', cardinality 0..*).
+'ecdarText::ETVariableID' (role 'ecdarText_ETVariableID19', cardinality 0..*) is associated with 'ecdarText::ETInitialiser' (role 'ecdarText_ETInitialiser', cardinality 0..*).
+'ecdarText::ETDivideExpression' (role 'ecdarText_ETDivideExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression281', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression136', cardinality 0..*) is associated with 'ecdarText::ETLogicAndExpression' (role 'ecdarText_ETLogicAndExpression135', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression293', cardinality 0..*) is associated with 'ecdarText::ETPreDecrementExpression' (role 'ecdarText_ETPreDecrementExpression', cardinality 0..*).
+'ecdarText::ETBitOrAssignmentExpression' (role 'ecdarText_ETBitOrAssignmentExpression170', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression171', cardinality 0..*).
+'ecdarText::ETArrayExpression' (role 'ecdarText_ETArrayExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression305', cardinality 0..*).
+'ecdarText::ETDeclarations' (role 'ecdarText_ETDeclarations52', cardinality 0..*) is associated with 'ecdarText::ETSpecificationBody' (role 'ecdarText_ETSpecificationBody51', cardinality 0..*).
+'ecdarText::ETMaxExpression' (role 'ecdarText_ETMaxExpression253', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression254', cardinality 0..*).
+'ecdarText::ETFieldID' (role 'ecdarText_ETFieldID', cardinality 0..*) is associated with 'ecdarText::ETFieldDeclaration' (role 'ecdarText_ETFieldDeclaration43', cardinality 0..*).
+'ecdarText::ETEdge' (role 'ecdarText_ETEdge70', cardinality 0..*) is associated with 'ecdarText::ETSelect' (role 'ecdarText_ETSelect', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression148', cardinality 0..*) is associated with 'ecdarText::ETSubtractionAssignmentExpression' (role 'ecdarText_ETSubtractionAssignmentExpression', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression193', cardinality 0..*) is associated with 'ecdarText::ETConditionalExpression' (role 'ecdarText_ETConditionalExpression', cardinality 0..*).
+'ecdarText::ETMinExpression' (role 'ecdarText_ETMinExpression248', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression249', cardinality 0..*).
+'ecdarText::ETMultiplicationAssignmentExpression' (role 'ecdarText_ETMultiplicationAssignmentExpression155', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression156', cardinality 0..*).
+'ecdarText::ETStructExpression' (role 'ecdarText_ETStructExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression303', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression219', cardinality 0..*) is associated with 'ecdarText::ETEqualExpression' (role 'ecdarText_ETEqualExpression218', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression274', cardinality 0..*) is associated with 'ecdarText::ETSubtractExpression' (role 'ecdarText_ETSubtractExpression273', cardinality 0..*).
+'ecdarText::ETLessExpression' (role 'ecdarText_ETLessExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression226', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression37', cardinality 0..*) is associated with 'ecdarText::ETScalarType' (role 'ecdarText_ETScalarType', cardinality 0..*).
+'ecdarText::ETSpecificationDisjunctionExpression' (role 'ecdarText_ETSpecificationDisjunctionExpression', cardinality 0..*) is associated with 'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression91', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression291', cardinality 0..*) is associated with 'ecdarText::ETPreIncrementExpression' (role 'ecdarText_ETPreIncrementExpression', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression111', cardinality 0..*) is associated with 'ecdarText::ETSpecificationInstantiation' (role 'ecdarText_ETSpecificationInstantiation110', cardinality 0..*).
+'ecdarText::ETDeclarations' (role 'ecdarText_ETDeclarations', cardinality 0..*) is associated with 'ecdarText::ETFile' (role 'ecdarText_ETFile2', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression126', cardinality 0..*) is associated with 'ecdarText::ETImplyExpression' (role 'ecdarText_ETImplyExpression125', cardinality 0..*).
+'ecdarText::ETDivisionAssignmentExpression' (role 'ecdarText_ETDivisionAssignmentExpression160', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression161', cardinality 0..*).
+'ecdarText::ETFieldDeclaration' (role 'ecdarText_ETFieldDeclaration', cardinality 0..*) is associated with 'ecdarText::ETStructType' (role 'ecdarText_ETStructType', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression168', cardinality 0..*) is associated with 'ecdarText::ETBitOrAssignmentExpression' (role 'ecdarText_ETBitOrAssignmentExpression', cardinality 0..*).
+'ecdarText::ETDeclaration' (role 'ecdarText_ETDeclaration', cardinality 0..*) is associated with 'ecdarText::ETDeclarations' (role 'ecdarText_ETDeclarations7', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression251', cardinality 0..*) is associated with 'ecdarText::ETMaxExpression' (role 'ecdarText_ETMaxExpression', cardinality 0..*).
+'ecdarText::ETArrayDeclaration' (role 'ecdarText_ETArrayDeclaration63', cardinality 0..*) is associated with 'ecdarText::ETParameter' (role 'ecdarText_ETParameter62', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression239', cardinality 0..*) is associated with 'ecdarText::ETGreaterEqualExpression' (role 'ecdarText_ETGreaterEqualExpression238', cardinality 0..*).
+'ecdarText::ETAssignmentExpression' (role 'ecdarText_ETAssignmentExpression140', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression141', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression264', cardinality 0..*) is associated with 'ecdarText::ETBitRightExpression' (role 'ecdarText_ETBitRightExpression263', cardinality 0..*).
+'ecdarText::ETBitAndExpression' (role 'ecdarText_ETBitAndExpression213', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression214', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression289', cardinality 0..*) is associated with 'ecdarText::ETModuloExpression' (role 'ecdarText_ETModuloExpression288', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression308', cardinality 0..*) is associated with 'ecdarText::ETArrayExpression' (role 'ecdarText_ETArrayExpression307', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression183', cardinality 0..*) is associated with 'ecdarText::ETBitLeftAssignmentExpression' (role 'ecdarText_ETBitLeftAssignmentExpression', cardinality 0..*).
+'ecdarText::ETSpecificationConjunctionExpression' (role 'ecdarText_ETSpecificationConjunctionExpression', cardinality 0..*) is associated with 'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression96', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression299', cardinality 0..*) is associated with 'ecdarText::ETPostIncrementExpression' (role 'ecdarText_ETPostIncrementExpression', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression224', cardinality 0..*) is associated with 'ecdarText::ETUnequalExpression' (role 'ecdarText_ETUnequalExpression223', cardinality 0..*).
+'ecdarText::ETAddExpression' (role 'ecdarText_ETAddExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression266', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType113', cardinality 0..*) is associated with 'ecdarText::ETForallExpression' (role 'ecdarText_ETForallExpression', cardinality 0..*).
+'ecdarText::ETExistsExpression' (role 'ecdarText_ETExistsExpression', cardinality 0..*) is associated with 'ecdarText::ETType' (role 'ecdarText_ETType118', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType10', cardinality 0..*) is associated with 'ecdarText::ETTypeIdentifier' (role 'ecdarText_ETTypeIdentifier', cardinality 0..*).
+'ecdarText::ETMultiplyExpression' (role 'ecdarText_ETMultiplyExpression278', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression279', cardinality 0..*).
+'ecdarText::ETBitRightExpression' (role 'ecdarText_ETBitRightExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression261', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression81', cardinality 0..*) is associated with 'ecdarText::ETEdge' (role 'ecdarText_ETEdge80', cardinality 0..*).
+'ecdarText::ETReference' (role 'ecdarText_ETReference', cardinality 0..*) is associated with 'ecdarText::EObject' (role 'ecdarText_EObject', cardinality 0..*).
+'ecdarText::ETArrayDeclaration' (role 'ecdarText_ETArrayDeclaration30', cardinality 0..*) is associated with 'ecdarText::ETTypeID' (role 'ecdarText_ETTypeID29', cardinality 0..*).
+'ecdarText::ETModuloAssignmentExpression' (role 'ecdarText_ETModuloAssignmentExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression163', cardinality 0..*).
+'ecdarText::ETSpecificationBody' (role 'ecdarText_ETSpecificationBody56', cardinality 0..*) is associated with 'ecdarText::ETLocation' (role 'ecdarText_ETLocation57', cardinality 0..*).
+'ecdarText::ETPostDecrementExpression' (role 'ecdarText_ETPostDecrementExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression301', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression191', cardinality 0..*) is associated with 'ecdarText::ETBitRightAssignmentExpression' (role 'ecdarText_ETBitRightAssignmentExpression190', cardinality 0..*).
+'ecdarText::ETSpecification' (role 'ecdarText_ETSpecification', cardinality 0..*) is associated with 'ecdarText::ETFile' (role 'ecdarText_ETFile4', cardinality 0..*).
+'ecdarText::ETSpecificationCompositionExpression' (role 'ecdarText_ETSpecificationCompositionExpression103', cardinality 0..*) is associated with 'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression104', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression166', cardinality 0..*) is associated with 'ecdarText::ETModuloAssignmentExpression' (role 'ecdarText_ETModuloAssignmentExpression165', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression284', cardinality 0..*) is associated with 'ecdarText::ETDivideExpression' (role 'ecdarText_ETDivideExpression283', cardinality 0..*).
+'ecdarText::ETBitAndAssignmentExpression' (role 'ecdarText_ETBitAndAssignmentExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression173', cardinality 0..*).
+'ecdarText::ETIO' (role 'ecdarText_ETIO', cardinality 0..*) is associated with 'ecdarText::ETEdge' (role 'ecdarText_ETEdge72', cardinality 0..*).
+'ecdarText::ETBitLeftExpression' (role 'ecdarText_ETBitLeftExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression256', cardinality 0..*).
+'ecdarText::ETFile' (role 'ecdarText_ETFile', cardinality 0..*) is associated with 'ecdarText::ETImport' (role 'ecdarText_ETImport', cardinality 0..*).
+'ecdarText::ETTypeID' (role 'ecdarText_ETTypeID', cardinality 0..*) is associated with 'ecdarText::ETTypeDeclaration' (role 'ecdarText_ETTypeDeclaration27', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression186', cardinality 0..*) is associated with 'ecdarText::ETBitLeftAssignmentExpression' (role 'ecdarText_ETBitLeftAssignmentExpression185', cardinality 0..*).
+'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression', cardinality 0..*) is associated with 'ecdarText::ETSpecificationBinding' (role 'ecdarText_ETSpecificationBinding', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression35', cardinality 0..*) is associated with 'ecdarText::ETIntegerType' (role 'ecdarText_ETIntegerType34', cardinality 0..*).
+'ecdarText::ETSpecificationTemplate' (role 'ecdarText_ETSpecificationTemplate108', cardinality 0..*) is associated with 'ecdarText::ETSpecificationInstantiation' (role 'ecdarText_ETSpecificationInstantiation', cardinality 0..*).
+'ecdarText::ETAssignmentExpression' (role 'ecdarText_ETAssignmentExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression138', cardinality 0..*).
+'ecdarText::ETImplyExpression' (role 'ecdarText_ETImplyExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression123', cardinality 0..*).
+'ecdarText::ETSpecificationReference' (role 'ecdarText_ETSpecificationReference', cardinality 0..*) is associated with 'ecdarText::ETSpecification' (role 'ecdarText_ETSpecification106', cardinality 0..*).
+'ecdarText::ETSubtractExpression' (role 'ecdarText_ETSubtractExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression271', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression84', cardinality 0..*) is associated with 'ecdarText::ETIO' (role 'ecdarText_ETIO83', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression128', cardinality 0..*) is associated with 'ecdarText::ETLogicOrExpression' (role 'ecdarText_ETLogicOrExpression', cardinality 0..*).
+'ecdarText::ETAddExpression' (role 'ecdarText_ETAddExpression268', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression269', cardinality 0..*).
+'ecdarText::ETSpecificationCompositionExpression' (role 'ecdarText_ETSpecificationCompositionExpression', cardinality 0..*) is associated with 'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression101', cardinality 0..*).
+'ecdarText::ETTypeID' (role 'ecdarText_ETTypeID89', cardinality 0..*) is associated with 'ecdarText::ETTypeReference' (role 'ecdarText_ETTypeReference', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression201', cardinality 0..*) is associated with 'ecdarText::ETBitOrExpression' (role 'ecdarText_ETBitOrExpression', cardinality 0..*).
+'ecdarText::ETGreaterExpression' (role 'ecdarText_ETGreaterExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression241', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType12', cardinality 0..*) is associated with 'ecdarText::ETVariableDeclaration' (role 'ecdarText_ETVariableDeclaration', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression143', cardinality 0..*) is associated with 'ecdarText::ETAdditionAssignmentExpression' (role 'ecdarText_ETAdditionAssignmentExpression', cardinality 0..*).
+'ecdarText::ETBitXORExpression' (role 'ecdarText_ETBitXORExpression208', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression209', cardinality 0..*).
+'ecdarText::ETArrayDeclaration' (role 'ecdarText_ETArrayDeclaration46', cardinality 0..*) is associated with 'ecdarText::ETFieldID' (role 'ecdarText_ETFieldID45', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression234', cardinality 0..*) is associated with 'ecdarText::ETLessEqualExpression' (role 'ecdarText_ETLessEqualExpression233', cardinality 0..*).
+'ecdarText::ETBitXORAssignmentExpression' (role 'ecdarText_ETBitXORAssignmentExpression180', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression181', cardinality 0..*).
+'ecdarText::ETSpecificationTemplate' (role 'ecdarText_ETSpecificationTemplate', cardinality 0..*) is associated with 'ecdarText::ETParameter' (role 'ecdarText_ETParameter', cardinality 0..*).
+'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression94', cardinality 0..*) is associated with 'ecdarText::ETSpecificationDisjunctionExpression' (role 'ecdarText_ETSpecificationDisjunctionExpression93', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType87', cardinality 0..*) is associated with 'ecdarText::ETSelect' (role 'ecdarText_ETSelect86', cardinality 0..*).
+'ecdarText::ETType' (role 'ecdarText_ETType41', cardinality 0..*) is associated with 'ecdarText::ETFieldDeclaration' (role 'ecdarText_ETFieldDeclaration40', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression246', cardinality 0..*) is associated with 'ecdarText::ETMinExpression' (role 'ecdarText_ETMinExpression', cardinality 0..*).
+'ecdarText::ETSpecificationBody' (role 'ecdarText_ETSpecificationBody54', cardinality 0..*) is associated with 'ecdarText::ETLocation' (role 'ecdarText_ETLocation', cardinality 0..*).
+'ecdarText::ETSpecificationBody' (role 'ecdarText_ETSpecificationBody', cardinality 0..*) is associated with 'ecdarText::ETSpecificationDefinition' (role 'ecdarText_ETSpecificationDefinition', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression196', cardinality 0..*) is associated with 'ecdarText::ETConditionalExpression' (role 'ecdarText_ETConditionalExpression195', cardinality 0..*).
+'ecdarText::ETIntegerType' (role 'ecdarText_ETIntegerType', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression32', cardinality 0..*).
+'ecdarText::ETLogicAndExpression' (role 'ecdarText_ETLogicAndExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression133', cardinality 0..*).
+'ecdarText::ETMultiplyExpression' (role 'ecdarText_ETMultiplyExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression276', cardinality 0..*).
+'ecdarText::ETSpecificationConjunctionExpression' (role 'ecdarText_ETSpecificationConjunctionExpression98', cardinality 0..*) is associated with 'ecdarText::ETSpecificationExpression' (role 'ecdarText_ETSpecificationExpression99', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression211', cardinality 0..*) is associated with 'ecdarText::ETBitAndExpression' (role 'ecdarText_ETBitAndExpression', cardinality 0..*).
+'ecdarText::ETEdge' (role 'ecdarText_ETEdge', cardinality 0..*) is associated with 'ecdarText::ETLocation' (role 'ecdarText_ETLocation68', cardinality 0..*).
+'ecdarText::ETLocation' (role 'ecdarText_ETLocation78', cardinality 0..*) is associated with 'ecdarText::ETEdge' (role 'ecdarText_ETEdge77', cardinality 0..*).
+'ecdarText::ETLessEqualExpression' (role 'ecdarText_ETLessEqualExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression231', cardinality 0..*).
+'ecdarText::ETLessExpression' (role 'ecdarText_ETLessExpression228', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression229', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression', cardinality 0..*) is associated with 'ecdarText::ETArrayDeclaration' (role 'ecdarText_ETArrayDeclaration', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression21', cardinality 0..*) is associated with 'ecdarText::ETSingleInitialiser' (role 'ecdarText_ETSingleInitialiser', cardinality 0..*).
+'ecdarText::ETTypeDeclaration' (role 'ecdarText_ETTypeDeclaration', cardinality 0..*) is associated with 'ecdarText::ETType' (role 'ecdarText_ETType25', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression75', cardinality 0..*) is associated with 'ecdarText::ETEdge' (role 'ecdarText_ETEdge74', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression295', cardinality 0..*) is associated with 'ecdarText::ETLogicNotExpression' (role 'ecdarText_ETLogicNotExpression', cardinality 0..*).
+'ecdarText::ETBitAndAssignmentExpression' (role 'ecdarText_ETBitAndAssignmentExpression175', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression176', cardinality 0..*).
+'ecdarText::ETBitXORExpression' (role 'ecdarText_ETBitXORExpression', cardinality 0..*) is associated with 'ecdarText::ETExpression' (role 'ecdarText_ETExpression206', cardinality 0..*).
+'ecdarText::ETExpression' (role 'ecdarText_ETExpression158', cardinality 0..*) is associated with 'ecdarText::ETDivisionAssignmentExpression' (role 'ecdarText_ETDivisionAssignmentExpression', cardinality 0..*).

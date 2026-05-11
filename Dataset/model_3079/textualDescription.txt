@@ -1,0 +1,96 @@
+The model has 37 class(es).
+The class 'smartadapters4MODERATES::adaptations::SetActionBlock' has no attributes.
+The class 'smartadapters4MODERATES::CreateAdaptation' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::Transition' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::SetState' has no attributes.
+The class 'smartadapters4MODERATES::Aspect' has the following attributes: 'name' of type str.
+The class 'SetAdaptation' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::ActionBlock' has no attributes.
+The class 'smartadapters4MODERATES::UnsetAdaptation' has no attributes.
+The class 'smartadapters4MODERATES::GlobalInstantiation' has no attributes.
+The class 'smartadapters4MODERATES::PerRoleMatch' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::Event' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::CompositeState' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::UnsetTransition' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::UnsetState' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::SetCompositeState' has no attributes.
+The class 'smartadapters4MODERATES::AspectModelElement' has no attributes.
+The class 'smartadapters4MODERATES::InstantiationStrategy' has no attributes.
+The class 'smartadapters4MODERATES::SetAdaptation' has no attributes.
+The class 'UnsetAdaptation' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::SetTransition' has no attributes.
+The class 'smartadapters4MODERATES::ScopedInstantiation' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::UnsetCompositeState' has no attributes.
+The class 'ScopedInstantiation' has no attributes.
+The class 'InstantiationStrategy' has no attributes.
+The class 'smartadapters4MODERATES::PerElementMatch' has no attributes.
+The class 'smartadapters4MODERATES::AdviceModel' has no attributes.
+The class 'Adaptation' has no attributes.
+The class 'smartadapters4MODERATES::Adaptation' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::Property' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::AnnotatedElement' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::PlatformAnnotation' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::Expression' has no attributes.
+The class 'smartadapters4MODERATES::adaptations::SetAnnotatedElement' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::State' has no attributes.
+The class 'smartadapters4MODERATES::CloneAdaptation' has no attributes.
+The class 'adaptations::smartadapters4MODERATES::Action' has no attributes.
+The class 'smartadapters4MODERATES::PointcutModel' has no attributes.
+'smartadapters4MODERATES::GlobalInstantiation' is a specialization of 'InstantiationStrategy'.
+'smartadapters4MODERATES::adaptations::UnsetTransition' is a specialization of 'UnsetAdaptation'.
+'smartadapters4MODERATES::PerElementMatch' is a specialization of 'ScopedInstantiation'.
+'smartadapters4MODERATES::adaptations::UnsetCompositeState' is a specialization of 'UnsetAdaptation'.
+'smartadapters4MODERATES::CreateAdaptation' is a specialization of 'Adaptation'.
+'smartadapters4MODERATES::ScopedInstantiation' is a specialization of 'InstantiationStrategy'.
+'smartadapters4MODERATES::adaptations::SetCompositeState' is a specialization of 'SetAdaptation'.
+'smartadapters4MODERATES::PerRoleMatch' is a specialization of 'ScopedInstantiation'.
+'smartadapters4MODERATES::adaptations::SetState' is a specialization of 'SetAdaptation'.
+'smartadapters4MODERATES::adaptations::SetTransition' is a specialization of 'SetAdaptation'.
+'smartadapters4MODERATES::adaptations::UnsetState' is a specialization of 'UnsetAdaptation'.
+'smartadapters4MODERATES::UnsetAdaptation' is a specialization of 'Adaptation'.
+'smartadapters4MODERATES::adaptations::SetActionBlock' is a specialization of 'SetAdaptation'.
+'smartadapters4MODERATES::CloneAdaptation' is a specialization of 'Adaptation'.
+'smartadapters4MODERATES::SetAdaptation' is a specialization of 'Adaptation'.
+'smartadapters4MODERATES::adaptations::SetAnnotatedElement' is a specialization of 'SetAdaptation'.
+'smartadapters4MODERATES::Aspect' (role 'smartadapters4MODERATES_Aspect2', cardinality 0..*) is associated with 'smartadapters4MODERATES::AdviceModel' (role 'smartadapters4MODERATES_AdviceModel', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action58', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState57', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetCompositeState' (role 'smartadapters4MODERATES_adaptations_UnsetCompositeState29', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State30', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::AnnotatedElement' (role 'adaptations_smartadapters4MODERATES_AnnotatedElement', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetAnnotatedElement' (role 'smartadapters4MODERATES_adaptations_SetAnnotatedElement', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Event' (role 'adaptations_smartadapters4MODERATES_Event81', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition80', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState41', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action42', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition75', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State76', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetAnnotatedElement' (role 'smartadapters4MODERATES_adaptations_SetAnnotatedElement96', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::PlatformAnnotation' (role 'adaptations_smartadapters4MODERATES_PlatformAnnotation', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition67', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Expression' (role 'adaptations_smartadapters4MODERATES_Expression', cardinality 0..*).
+'smartadapters4MODERATES::InstantiationStrategy' (role 'smartadapters4MODERATES_InstantiationStrategy13', cardinality 0..*) is associated with 'smartadapters4MODERATES::AspectModelElement' (role 'smartadapters4MODERATES_AspectModelElement14', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State22', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetCompositeState' (role 'smartadapters4MODERATES_adaptations_SetCompositeState21', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState34', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition78', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action87', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition86', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition69', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action70', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition89', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State90', cardinality 0..*).
+'smartadapters4MODERATES::AdviceModel' (role 'smartadapters4MODERATES_AdviceModel8', cardinality 0..*) is associated with 'smartadapters4MODERATES::AspectModelElement' (role 'smartadapters4MODERATES_AspectModelElement', cardinality 0..*).
+'smartadapters4MODERATES::InstantiationStrategy' (role 'smartadapters4MODERATES_InstantiationStrategy', cardinality 0..*) is associated with 'smartadapters4MODERATES::Aspect' (role 'smartadapters4MODERATES_Aspect4', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition63', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState39', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetCompositeState' (role 'smartadapters4MODERATES_adaptations_SetCompositeState19', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Expression' (role 'adaptations_smartadapters4MODERATES_Expression84', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition83', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State93', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetTransition' (role 'smartadapters4MODERATES_adaptations_UnsetTransition92', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState48', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition49', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Event' (role 'adaptations_smartadapters4MODERATES_Event', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition65', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState51', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition52', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State27', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetCompositeState' (role 'smartadapters4MODERATES_adaptations_UnsetCompositeState26', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action55', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState54', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetActionBlock' (role 'smartadapters4MODERATES_adaptations_SetActionBlock', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::ActionBlock' (role 'adaptations_smartadapters4MODERATES_ActionBlock', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::UnsetCompositeState' (role 'smartadapters4MODERATES_adaptations_UnsetCompositeState', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::CompositeState' (role 'adaptations_smartadapters4MODERATES_CompositeState24', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetTransition' (role 'smartadapters4MODERATES_adaptations_SetTransition72', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State73', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State46', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState', cardinality 0..*).
+'smartadapters4MODERATES::ScopedInstantiation' (role 'smartadapters4MODERATES_ScopedInstantiation', cardinality 0..*) is associated with 'smartadapters4MODERATES::AspectModelElement' (role 'smartadapters4MODERATES_AspectModelElement16', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::State' (role 'adaptations_smartadapters4MODERATES_State32', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetActionBlock' (role 'smartadapters4MODERATES_adaptations_SetActionBlock99', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Action' (role 'adaptations_smartadapters4MODERATES_Action100', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::CompositeState' (role 'adaptations_smartadapters4MODERATES_CompositeState', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::SetCompositeState' (role 'smartadapters4MODERATES_adaptations_SetCompositeState', cardinality 0..*).
+'smartadapters4MODERATES::Aspect' (role 'smartadapters4MODERATES_Aspect6', cardinality 0..*) is associated with 'smartadapters4MODERATES::Adaptation' (role 'smartadapters4MODERATES_Adaptation', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState36', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Transition' (role 'adaptations_smartadapters4MODERATES_Transition37', cardinality 0..*).
+'smartadapters4MODERATES::PointcutModel' (role 'smartadapters4MODERATES_PointcutModel', cardinality 0..*) is associated with 'smartadapters4MODERATES::Aspect' (role 'smartadapters4MODERATES_Aspect', cardinality 0..*).
+'adaptations::smartadapters4MODERATES::Property' (role 'adaptations_smartadapters4MODERATES_Property61', cardinality 0..*) is associated with 'smartadapters4MODERATES::adaptations::UnsetState' (role 'smartadapters4MODERATES_adaptations_UnsetState60', cardinality 0..*).
+'smartadapters4MODERATES::PointcutModel' (role 'smartadapters4MODERATES_PointcutModel10', cardinality 0..*) is associated with 'smartadapters4MODERATES::AspectModelElement' (role 'smartadapters4MODERATES_AspectModelElement11', cardinality 0..*).
+'smartadapters4MODERATES::adaptations::SetState' (role 'smartadapters4MODERATES_adaptations_SetState44', cardinality 0..*) is associated with 'adaptations::smartadapters4MODERATES::Property' (role 'adaptations_smartadapters4MODERATES_Property', cardinality 0..*).

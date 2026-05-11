@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'grammar::Node' has no attributes.
+The class 'grammar::LHS' has no attributes.
+The class 'grammar::RHS' has no attributes.
+The class 'grammar::ConnexionInstruction' has the following attributes: 'm' of type str.
+The class 'grammar::Graph' has no attributes.
+The class 'grammar::Rule' has the following attributes: 'priority' of type int; 'name' of type str.
+The class 'grammar::Embedding' has no attributes.
+The class 'Named' has no attributes.
+The class 'grammar::Grammar' has no attributes.
+'grammar::Grammar' is a specialization of 'Named'.
+'grammar::ConnexionInstruction' (role 'grammar_ConnexionInstruction', cardinality 0..*) is associated with 'grammar::Node' (role 'grammar_Node18', cardinality 0..*).
+'grammar::RHS' (role 'rhs', cardinality 0..*) is associated with 'grammar::Rule' (role 'Rule10', cardinality 0..*).
+'grammar::Embedding' (role 'Embedding', cardinality 0..*) is associated with 'grammar::Rule' (role 'ParentRule', cardinality 0..*).
+'grammar::RHS' (role 'RHS', cardinality 0..*) is associated with 'grammar::Rule' (role 'parentRule4', cardinality 0..*).
+'grammar::Rule' (role 'parentRule', cardinality 0..*) is associated with 'grammar::LHS' (role 'LHS', cardinality 0..*).
+'grammar::Embedding' (role 'EmbeddingMechanism', cardinality 0..*) is associated with 'grammar::Rule' (role 'Rule13', cardinality 0..*).
+'grammar::Rule' (role 'rules', cardinality 0..*) is associated with 'grammar::Grammar' (role 'Grammar', cardinality 0..*).
+'grammar::Embedding' (role 'parentEmbedding', cardinality 0..*) is associated with 'grammar::ConnexionInstruction' (role 'ConnexionInstruction', cardinality 0..*).
+'grammar::RHS' (role 'grammar_RHS', cardinality 0..*) is associated with 'grammar::Graph' (role 'grammar_Graph', cardinality 0..*).
+'grammar::Rule' (role 'Rule7', cardinality 0..*) is associated with 'grammar::LHS' (role 'lhs', cardinality 0..*).
+'grammar::LHS' (role 'grammar_LHS', cardinality 0..*) is associated with 'grammar::Node' (role 'grammar_Node', cardinality 0..*).
+'grammar::Rule' (role 'Rule', cardinality 0..*) is associated with 'grammar::Grammar' (role 'parentGrammar', cardinality 0..*).
+'grammar::Embedding' (role 'Embedding16', cardinality 0..*) is associated with 'grammar::ConnexionInstruction' (role 'instructions', cardinality 0..*).

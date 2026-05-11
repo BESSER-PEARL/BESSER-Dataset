@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Association' has no attributes.
+The class 'UML2::Extension' has no attributes.
+The class 'UML2::Port' has no attributes.
+The class 'UML2::Association' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'UML2::CommunicationPath' has no attributes.
+The class 'UML2::Property' has no attributes.
+The class 'UML2::AssociationClass' has no attributes.
+The class 'Property' has no attributes.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::CommunicationPath' is a specialization of 'Association'.
+'UML2::Extension' is a specialization of 'Association'.
+'UML2::ExtensionEnd' is a specialization of 'Property'.
+'UML2::AssociationClass' is a specialization of 'Association'.
+'UML2::Association' (role 'UML2_Association2', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property3', cardinality 0..*).
+'UML2::Association' (role 'UML2_Association', cardinality 0..*) is associated with 'UML2::Property' (role 'UML2_Property', cardinality 0..*).

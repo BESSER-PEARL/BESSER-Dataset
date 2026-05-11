@@ -1,0 +1,184 @@
+The model has 60 class(es).
+The class 'uml2CD::NamedElement' has the following attributes: 'name' of type str.
+The class 'uml2CD::Element' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Feature' has no attributes.
+The class 'uml2CD::Namespace' has no attributes.
+The class 'Typpee' has no attributes.
+The class 'uml2CD::Comment' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'uml2CD::Realization' has no attributes.
+The class 'uml2CD::Constraint' has no attributes.
+The class 'uml2CD::AssociationClass' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'Abstraction' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'uml2CD::GeneralizationSet' has the following attributes: 'isCovering' of type bool; 'isDisjoint' of type bool.
+The class 'uml2CD::Property' has no attributes.
+The class 'Element' has no attributes.
+The class 'uml2CD::Generalization' has the following attributes: 'isSubstitutable' of type bool.
+The class 'uml2CD::MultiplicityElement' has no attributes.
+The class 'Association' has no attributes.
+The class 'uml2CD::Typpee' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'uml2CD::ElementImport' has the following attributes: 'visibility' of type str.
+The class 'PackageableElement' has no attributes.
+The class 'uml2CD::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'DirectRelationship' has no attributes.
+The class 'uml2CD::PackageMerge' has no attributes.
+The class 'uml2CD::Dependency' has no attributes.
+The class 'uml2CD::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'uml2CD::Substitution' has no attributes.
+The class 'uml2CD::TypedElement' has no attributes.
+The class 'uml2CD::DirectRelationship' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'uml2CD::PackageableElement' has no attributes.
+The class 'DataType' has no attributes.
+The class 'uml2CD::Class' has no attributes.
+The class 'Realization' has no attributes.
+The class 'uml2CD::PrimitiveType' has no attributes.
+The class 'uml2CD::Parameter' has the following attributes: 'direction' of type str.
+The class 'uml2CD::Package' has no attributes.
+The class 'uml2CD::Feature' has no attributes.
+The class 'uml2CD::Classifier' has the following attributes: 'isAbstract' of type bool.
+The class 'uml2CD::BehavioralFeature' has no attributes.
+The class 'uml2CD::Interface' has no attributes.
+The class 'uml2CD::EnumerationLiteral' has no attributes.
+The class 'uml2CD::StructuralFeature' has no attributes.
+The class 'uml2CD::Operation' has the following attributes: 'isQuery' of type bool.
+The class 'uml2CD::ValueSpecification' has no attributes.
+The class 'uml2CD::Abstraction' has no attributes.
+The class 'uml2CD::Relationship' has no attributes.
+The class 'uml2CD::InterfaceRealization' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'uml2CD::Association' has the following attributes: 'isDerived' of type bool.
+The class 'uml2CD::Enumeration' has no attributes.
+The class 'Class' has no attributes.
+The class 'uml2CD::DataType' has no attributes.
+The class 'uml2CD::Usage' has no attributes.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'out', 'inout', 'return_'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'none', 'composite'.
+The enumeration 'VisibilityKind' has the following literals: 'package', 'private', 'protected', 'public'.
+'uml2CD::Package' is a specialization of 'PackageableElement'.
+'uml2CD::TypedElement' is a specialization of 'NamedElement'.
+'uml2CD::AssociationClass' is a specialization of 'Class'.
+'uml2CD::AssociationClass' is a specialization of 'Association'.
+'uml2CD::Enumeration' is a specialization of 'DataType'.
+'uml2CD::Association' is a specialization of 'Classifier'.
+'uml2CD::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'uml2CD::StructuralFeature' is a specialization of 'Feature'.
+'uml2CD::ValueSpecification' is a specialization of 'TypedElement'.
+'uml2CD::Classifier' is a specialization of 'Namespace'.
+'uml2CD::Dependency' is a specialization of 'PackageableElement'.
+'uml2CD::RedefinableElement' is a specialization of 'Element'.
+'uml2CD::Class' is a specialization of 'Classifier'.
+'uml2CD::PackageableElement' is a specialization of 'NamedElement'.
+'uml2CD::PackageImport' is a specialization of 'DirectRelationship'.
+'uml2CD::Constraint' is a specialization of 'PackageableElement'.
+'uml2CD::DirectRelationship' is a specialization of 'Relationship'.
+'uml2CD::BehavioralFeature' is a specialization of 'Namespace'.
+'uml2CD::NamedElement' is a specialization of 'Element'.
+'uml2CD::Substitution' is a specialization of 'Realization'.
+'uml2CD::Classifier' is a specialization of 'Typpee'.
+'uml2CD::DataType' is a specialization of 'Classifier'.
+'uml2CD::Operation' is a specialization of 'BehavioralFeature'.
+'uml2CD::EnumerationLiteral' is a specialization of 'ValueSpecification'.
+'uml2CD::PackageMerge' is a specialization of 'DirectRelationship'.
+'uml2CD::Parameter' is a specialization of 'TypedElement'.
+'uml2CD::Parameter' is a specialization of 'MultiplicityElement'.
+'uml2CD::Dependency' is a specialization of 'DirectRelationship'.
+'uml2CD::ElementImport' is a specialization of 'DirectRelationship'.
+'uml2CD::Package' is a specialization of 'Namespace'.
+'uml2CD::PrimitiveType' is a specialization of 'DataType'.
+'uml2CD::Interface' is a specialization of 'Classifier'.
+'uml2CD::Property' is a specialization of 'StructuralFeature'.
+'uml2CD::StructuralFeature' is a specialization of 'TypedElement'.
+'uml2CD::Association' is a specialization of 'Relationship'.
+'uml2CD::Generalization' is a specialization of 'DirectRelationship'.
+'uml2CD::ValueSpecification' is a specialization of 'PackageableElement'.
+'uml2CD::Typpee' is a specialization of 'PackageableElement'.
+'uml2CD::Relationship' is a specialization of 'Element'.
+'uml2CD::BehavioralFeature' is a specialization of 'Feature'.
+'uml2CD::Abstraction' is a specialization of 'Dependency'.
+'uml2CD::InterfaceRealization' is a specialization of 'Realization'.
+'uml2CD::Realization' is a specialization of 'Abstraction'.
+'uml2CD::Usage' is a specialization of 'Dependency'.
+'uml2CD::Namespace' is a specialization of 'NamedElement'.
+'uml2CD::MultiplicityElement' is a specialization of 'Element'.
+'uml2CD::GeneralizationSet' (role 'GeneralizationSet65', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'powertype', cardinality 0..*).
+'uml2CD::Element' (role 'uml2CD_Element', cardinality 0..*) is associated with 'uml2CD::Relationship' (role 'uml2CD_Relationship', cardinality 0..*).
+'uml2CD::Package' (role 'nestingPackage', cardinality 0..*) is associated with 'uml2CD::Package' (role 'Package36', cardinality 0..*).
+'uml2CD::Generalization' (role 'generalization', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'Classifier', cardinality 0..*).
+'uml2CD::Classifier' (role 'substitutingClassifier', cardinality 0..*) is associated with 'uml2CD::Substitution' (role 'Substitution', cardinality 0..*).
+'uml2CD::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'uml2CD::Namespace' (role 'Namespace', cardinality 0..*).
+'uml2CD::Parameter' (role 'ownedParameter', cardinality 0..*) is associated with 'uml2CD::BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'uml2CD::RedefinableElement' (role 'uml2CD_RedefinableElement', cardinality 0..*) is associated with 'uml2CD::RedefinableElement' (role 'uml2CD_RedefinableElement128', cardinality 0..*).
+'uml2CD::Class' (role 'Class93', cardinality 0..*) is associated with 'uml2CD::Property' (role 'ownedAttribute', cardinality 0..*).
+'uml2CD::Parameter' (role 'owningParameter', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'ValueSpecification75', cardinality 0..*).
+'uml2CD::DirectRelationship' (role 'uml2CD_DirectRelationship', cardinality 0..*) is associated with 'uml2CD::Element' (role 'uml2CD_Element10', cardinality 0..*).
+'uml2CD::Typpee' (role 'uml2CD_Typpee', cardinality 0..*) is associated with 'uml2CD::TypedElement' (role 'uml2CD_TypedElement', cardinality 0..*).
+'uml2CD::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'uml2CD::Class' (role 'Class79', cardinality 0..*).
+'uml2CD::Namespace' (role 'Namespace56', cardinality 0..*) is associated with 'uml2CD::Constraint' (role 'ownedRule', cardinality 0..*).
+'uml2CD::Package' (role 'nestedPackage', cardinality 0..*) is associated with 'uml2CD::Package' (role 'Package33', cardinality 0..*).
+'uml2CD::Package' (role 'owningPackage', cardinality 0..*) is associated with 'uml2CD::PackageableElement' (role 'PackageableElement', cardinality 0..*).
+'uml2CD::Interface' (role 'uml2CD_Interface123', cardinality 0..*) is associated with 'uml2CD::InterfaceRealization' (role 'uml2CD_InterfaceRealization', cardinality 0..*).
+'uml2CD::Property' (role 'Property104', cardinality 0..*) is associated with 'uml2CD::Association' (role 'association', cardinality 0..*).
+'uml2CD::Package' (role 'receivingPackage', cardinality 0..*) is associated with 'uml2CD::PackageMerge' (role 'PackageMerge', cardinality 0..*).
+'uml2CD::Property' (role 'associationEnd', cardinality 0..*) is associated with 'uml2CD::Property' (role 'Property99', cardinality 0..*).
+'uml2CD::PackageImport' (role 'PackageImport', cardinality 0..*) is associated with 'uml2CD::Namespace' (role 'importingNamespace', cardinality 0..*).
+'uml2CD::Property' (role 'owningProperty', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'ValueSpecification91', cardinality 0..*).
+'uml2CD::Interface' (role 'uml2CD_Interface', cardinality 0..*) is associated with 'uml2CD::Interface' (role 'uml2CD_Interface120', cardinality 0..*).
+'uml2CD::GeneralizationSet' (role 'generalizationSet', cardinality 0..*) is associated with 'uml2CD::Generalization' (role 'Generalization125', cardinality 0..*).
+'uml2CD::Namespace' (role 'uml2CD_Namespace20', cardinality 0..*) is associated with 'uml2CD::PackageableElement' (role 'uml2CD_PackageableElement', cardinality 0..*).
+'uml2CD::MultiplicityElement' (role 'MultiplicityElement44', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'upperValue', cardinality 0..*).
+'uml2CD::MultiplicityElement' (role 'owningLower', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'ValueSpecification', cardinality 0..*).
+'uml2CD::NamedElement' (role 'NamedElement115', cardinality 0..*) is associated with 'uml2CD::Dependency' (role 'clientDependency', cardinality 0..*).
+'uml2CD::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'uml2CD::Namespace' (role 'context', cardinality 0..*).
+'uml2CD::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'uml2CD::Feature' (role 'Feature', cardinality 0..*).
+'uml2CD::ValueSpecification' (role 'specification', cardinality 0..*) is associated with 'uml2CD::Constraint' (role 'Constraint46', cardinality 0..*).
+'uml2CD::Generalization' (role 'generalization60', cardinality 0..*) is associated with 'uml2CD::GeneralizationSet' (role 'GeneralizationSet', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package112', cardinality 0..*) is associated with 'uml2CD::PackageMerge' (role 'uml2CD_PackageMerge', cardinality 0..*).
+'uml2CD::BehavioralFeature' (role 'uml2CD_BehavioralFeature', cardinality 0..*) is associated with 'uml2CD::Typpee' (role 'uml2CD_Typpee72', cardinality 0..*).
+'uml2CD::Dependency' (role 'Dependency', cardinality 0..*) is associated with 'uml2CD::NamedElement' (role 'supplier', cardinality 0..*).
+'uml2CD::ValueSpecification' (role 'ValueSpecification41', cardinality 0..*) is associated with 'uml2CD::MultiplicityElement' (role 'owningUpper', cardinality 0..*).
+'uml2CD::Operation' (role 'uml2CD_Operation', cardinality 0..*) is associated with 'uml2CD::Operation' (role 'uml2CD_Operation76', cardinality 0..*).
+'uml2CD::Constraint' (role 'owningConstraint', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'ValueSpecification54', cardinality 0..*).
+'uml2CD::Class' (role 'Class88', cardinality 0..*) is associated with 'uml2CD::Property' (role 'Property89', cardinality 0..*).
+'uml2CD::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'specific', cardinality 0..*).
+'uml2CD::Element' (role 'uml2CD_Element13', cardinality 0..*) is associated with 'uml2CD::DirectRelationship' (role 'uml2CD_DirectRelationship12', cardinality 0..*).
+'uml2CD::Element' (role 'owningElement', cardinality 0..*) is associated with 'uml2CD::Comment' (role 'Comment', cardinality 0..*).
+'uml2CD::ElementImport' (role 'ElementImport', cardinality 0..*) is associated with 'uml2CD::Namespace' (role 'importingNamespace23', cardinality 0..*).
+'uml2CD::Dependency' (role 'supplierDependency', cardinality 0..*) is associated with 'uml2CD::NamedElement' (role 'NamedElement', cardinality 0..*).
+'uml2CD::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'uml2CD::Enumeration' (role 'Enumeration', cardinality 0..*).
+'uml2CD::MultiplicityElement' (role 'MultiplicityElement', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'lowerValue', cardinality 0..*).
+'uml2CD::Operation' (role 'Operation', cardinality 0..*) is associated with 'uml2CD::Class' (role 'Class86', cardinality 0..*).
+'uml2CD::Substitution' (role 'uml2CD_Substitution', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'uml2CD_Classifier117', cardinality 0..*).
+'uml2CD::PackageableElement' (role 'packagedElement', cardinality 0..*) is associated with 'uml2CD::Package' (role 'Package', cardinality 0..*).
+'uml2CD::Namespace' (role 'uml2CD_Namespace', cardinality 0..*) is associated with 'uml2CD::NamedElement' (role 'uml2CD_NamedElement', cardinality 0..*).
+'uml2CD::Property' (role 'Property', cardinality 0..*) is associated with 'uml2CD::ValueSpecification' (role 'defaultValue49', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package', cardinality 0..*) is associated with 'uml2CD::PackageImport' (role 'uml2CD_PackageImport', cardinality 0..*).
+'uml2CD::Constraint' (role 'uml2CD_Constraint', cardinality 0..*) is associated with 'uml2CD::Element' (role 'uml2CD_Element52', cardinality 0..*).
+'uml2CD::Classifier' (role 'nestedClassifier', cardinality 0..*) is associated with 'uml2CD::Class' (role 'Class', cardinality 0..*).
+'uml2CD::Property' (role 'memberEnd', cardinality 0..*) is associated with 'uml2CD::Association' (role 'Association', cardinality 0..*).
+'uml2CD::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'uml2CD::Association' (role 'Association96', cardinality 0..*).
+'uml2CD::Comment' (role 'ownedComment', cardinality 0..*) is associated with 'uml2CD::Element' (role 'Element7', cardinality 0..*).
+'uml2CD::NamedElement' (role 'client', cardinality 0..*) is associated with 'uml2CD::Dependency' (role 'Dependency17', cardinality 0..*).
+'uml2CD::ElementImport' (role 'uml2CD_ElementImport', cardinality 0..*) is associated with 'uml2CD::PackageableElement' (role 'uml2CD_PackageableElement26', cardinality 0..*).
+'uml2CD::PackageImport' (role 'packageImport', cardinality 0..*) is associated with 'uml2CD::Namespace' (role 'Namespace30', cardinality 0..*).
+'uml2CD::Feature' (role 'feature', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'Classifier68', cardinality 0..*).
+'uml2CD::Class' (role 'uml2CD_Class', cardinality 0..*) is associated with 'uml2CD::Class' (role 'uml2CD_Class80', cardinality 0..*).
+'uml2CD::Property' (role 'Property102', cardinality 0..*) is associated with 'uml2CD::Property' (role 'qualifier', cardinality 0..*).
+'uml2CD::PackageMerge' (role 'packageMerge', cardinality 0..*) is associated with 'uml2CD::Package' (role 'Package110', cardinality 0..*).
+'uml2CD::GeneralizationSet' (role 'powertypeExtent', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'Classifier127', cardinality 0..*).
+'uml2CD::Generalization' (role 'uml2CD_Generalization', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'uml2CD_Classifier', cardinality 0..*).
+'uml2CD::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'uml2CD::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'uml2CD::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'uml2CD::Property' (role 'Property106', cardinality 0..*).
+'uml2CD::Class' (role 'Class83', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'Classifier84', cardinality 0..*).
+'uml2CD::Substitution' (role 'substitution', cardinality 0..*) is associated with 'uml2CD::Classifier' (role 'Classifier119', cardinality 0..*).
+'uml2CD::Parameter' (role 'Parameter70', cardinality 0..*) is associated with 'uml2CD::BehavioralFeature' (role 'ownerFormalParam', cardinality 0..*).
+'uml2CD::Element' (role 'Element', cardinality 0..*) is associated with 'uml2CD::Element' (role 'ownedElement', cardinality 0..*).
+'uml2CD::Element' (role 'Element5', cardinality 0..*) is associated with 'uml2CD::Element' (role 'owner', cardinality 0..*).
+'uml2CD::ValueSpecification' (role 'defaultValue', cardinality 0..*) is associated with 'uml2CD::Parameter' (role 'Parameter', cardinality 0..*).

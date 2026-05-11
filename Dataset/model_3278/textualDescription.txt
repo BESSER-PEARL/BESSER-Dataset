@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'data::Variable' has the following attributes: 'id' of type str.
+The class 'data::Variables' has no attributes.
+'data::Variable' (role 'data_Variable', cardinality 0..*) is associated with 'data::Variables' (role 'data_Variables', cardinality 0..*).

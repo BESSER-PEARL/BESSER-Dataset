@@ -1,0 +1,173 @@
+The model has 64 class(es).
+The class 'ORDB4ORA::DerivedTable' has the following attributes: 'query_expression' of type str.
+The class 'ORDB4ORA::Trigger' has the following attributes: 'Event' of type str; 'Action' of type str; 'Body' of type str; 'Name' of type str.
+The class 'ORDB4ORA::NumberFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ORDB4ORA::LOBType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::Model' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::ForeignKey' has the following attributes: 'OnDelete' of type str; 'Name' of type str.
+The class 'ORDB4ORA::Table' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::Operation' has the following attributes: 'Name' of type str; 'Body' of type str.
+The class 'ORDB4ORA::StructuralComponent' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::Package' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::BasicDataType' has no attributes.
+The class 'Operation' has no attributes.
+The class 'ORDB4ORA::OperationParameter' has the following attributes: 'Mode' of type str.
+The class 'ORDB4ORA::ReferenceType' has the following attributes: 'Name' of type str.
+The class 'Datatype' has no attributes.
+The class 'ORDB4ORA::RawFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'Table' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'ORDB4ORA::Attribute' has the following attributes: 'Default' of type str.
+The class 'ORDB4ORA::MediaType' has the following attributes: 'Descriptor' of type str.
+The class 'BasicDataType' has no attributes.
+The class 'ORDB4ORA::Datatype' has no attributes.
+The class 'ORDB4ORA::Restriction' has no attributes.
+The class 'ORDB4ORA::SuppliedType' has no attributes.
+The class 'ORDB4ORA::StoredNestedTable' has the following attributes: 'Name' of type str.
+The class 'Restriction' has no attributes.
+The class 'ORDB4ORA::CharacterFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'ORDB4ORA::Parameter' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::Method' has the following attributes: 'Name' of type str; 'Body' of type str.
+The class 'ORDB4ORA::Function' has no attributes.
+The class 'ORDB4ORA::RowFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'Feature' has no attributes.
+The class 'ORDB4ORA::AnyType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::Varray' has the following attributes: 'Name' of type str; 'NumElements' of type int.
+The class 'BuiltInType' has no attributes.
+The class 'ORDB4ORA::Feature' has no attributes.
+The class 'ANSIType' has no attributes.
+The class 'ORDB4ORA::DatetimeFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ORDB4ORA::LongAndRawType' has the following attributes: 'Size_Min' of type int; 'Size_Max' of type int; 'Descriptor' of type str.
+The class 'StructuralComponent' has no attributes.
+The class 'ORDB4ORA::NotNull' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::ANSICharacterType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::NestedTableType' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::PrimaryKey' has the following attributes: 'Name' of type str.
+The class 'ORDB4ORA::ANSINumberType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::BuiltInCharacterType' has the following attributes: 'Size_Def' of type int; 'Size_Min' of type int; 'Descriptor' of type str; 'Semantic' of type str; 'Size_Max' of type int.
+The class 'ORDB4ORA::IntervalFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ORDB4ORA::Procedure' has no attributes.
+The class 'ORDB4ORA::ROWIDType' has the following attributes: 'Descriptor' of type str; 'Size_Max' of type int; 'Size_Min' of type int.
+The class 'ORDB4ORA::DatetimeType' has the following attributes: 'DayPrecision_Max' of type int; 'SecondPrecision_Max' of type int; 'DayPrecision_Min' of type int; 'YearPrecision_Min' of type int; 'Descriptor' of type str; 'YearPrecision_Def' of type int; 'DayPrecision_Def' of type int; 'YearPrecision_Max' of type int; 'SecondPrecision_Def' of type int; 'SecondPrecision_Min' of type int.
+The class 'SuppliedType' has no attributes.
+The class 'ORDB4ORA::TypedTable' has no attributes.
+The class 'DerivedTable' has no attributes.
+The class 'ORDB4ORA::SpacialType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::Column' has no attributes.
+The class 'ORDB4ORA::View' has no attributes.
+The class 'ORDB4ORA::ANSIType' has no attributes.
+The class 'ORDB4ORA::XMLType' has the following attributes: 'Descriptor' of type str.
+The class 'ORDB4ORA::StructuredType' has the following attributes: 'is_instantiable' of type bool; 'Name' of type str; 'is_final' of type bool.
+The class 'ORDB4ORA::BuiltInType' has no attributes.
+The class 'ORDB4ORA::MethodParameter' has no attributes.
+The class 'ORDB4ORA::BuiltInNumberType' has the following attributes: 'Descriptor' of type str; 'Scale_Max' of type int; 'Precision_Max' of type int; 'Scale_Min' of type int; 'Precision_Mn' of type int.
+The class 'ORDB4ORA::Check' has the following attributes: 'Condition' of type str; 'Name' of type str.
+The class 'ORDB4ORA::Unique' has the following attributes: 'Name' of type str.
+The enumeration 'DatetimeFeatures' has the following literals: 'precision'.
+The enumeration 'BuiltInCharacterTypes' has the following literals: 'NCHAR', 'NVARCHAR2', 'CHAR', 'VARCHAR2'.
+The enumeration 'BuiltInLOBType' has the following literals: 'CLOB', 'BFILE', 'BLOB', 'NLOB'.
+The enumeration 'SuppliedSpacialTypes' has the following literals: 'SDO_GEOMETRY', 'SDO_TOPO_GEOMETRY', 'SDO_RASTER'.
+The enumeration 'SuppliedAnyTypes' has the following literals: 'SYSANYDATA', 'SYSANYTYPE', 'SYSANYDATASET'.
+The enumeration 'BuiltInLongAndRawTypes' has the following literals: 'LONG', 'LONGRAW', 'RAW'.
+The enumeration 'TriggerActionTime' has the following literals: 'BEFORE', 'AFTER', 'INSTEADOF'.
+The enumeration 'RawFeatures' has the following literals: 'size'.
+The enumeration 'ONDELETEActions' has the following literals: 'CASCADE', 'SETNULL'.
+The enumeration 'BuiltInCharacterSemantics' has the following literals: 'BYTE', 'CHAR'.
+The enumeration 'SuppliedXMLTypes' has the following literals: 'URITYPE', 'XMLTYPE'.
+The enumeration 'SuppliedMediaTypes' has the following literals: 'SI_AVERAGECOLOR', 'ORDVideo', 'SI_STILLIMAGE', 'SI_COLOR', 'SI_COLORHISTOGRAM', 'SI_POSITIONALCOLOR', 'ORDAudio', 'SI_FEATURELIST', 'ORDImageSignature', 'ORDDoc', 'SI_TEXTURE', 'ORDImage'.
+The enumeration 'CharacterFeatures' has the following literals: 'semantic', 'size'.
+The enumeration 'BuiltInROWIDType' has the following literals: 'ROWID', 'UROWID'.
+The enumeration 'ANSINumberTypes' has the following literals: 'FLOAT', 'DEC', 'DOUBLEPRECISION', 'NUMERIC', 'SMALLINT', 'DECIMAL', 'INT', 'INTEGER', 'REAL'.
+The enumeration 'BuiltInDatetimeTypes' has the following literals: 'TIMESTAMP', 'INTERVALDAYTOSECOND', 'TIMESTAMPWITHLOCALTIMEZONE', 'INTERVALYEARTOMONTH', 'TIMESTAMPWITHTIMEZONE', 'DATE'.
+The enumeration 'BuiltNumberTypes' has the following literals: 'BINARY_DOUBLE', 'NUMBER', 'BINARY_FLOAT'.
+The enumeration 'TriggerEvent' has the following literals: 'INSERT', 'UPDATE', 'DELETE'.
+The enumeration 'NumberFeatures' has the following literals: 'precision', 'size', 'scale'.
+The enumeration 'ANSICharacterTypes' has the following literals: 'NATIONALCHARACTER', 'CHARVARYING', 'VARCHAR', 'CHARACTERVARYING', 'CHARACTER', 'NATIONALCHAR', 'NATIONALCHARACTERVARYING', 'NATIONALCHARVARYING', 'NCHARVARYING'.
+The enumeration 'IntervalFeatures' has the following literals: 'second_precision', 'day_precision', 'year_precision'.
+The enumeration 'RowFeatures' has the following literals: 'size'.
+The enumeration 'ParameterMode' has the following literals: 'INOUT', 'IN', 'OUT'.
+'ORDB4ORA::ANSICharacterType' is a specialization of 'ANSIType'.
+'ORDB4ORA::ReferenceType' is a specialization of 'Datatype'.
+'ORDB4ORA::StructuredType' is a specialization of 'Datatype'.
+'ORDB4ORA::XMLType' is a specialization of 'SuppliedType'.
+'ORDB4ORA::Function' is a specialization of 'Operation'.
+'ORDB4ORA::BasicDataType' is a specialization of 'Datatype'.
+'ORDB4ORA::DerivedTable' is a specialization of 'Table'.
+'ORDB4ORA::DatetimeType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::MethodParameter' is a specialization of 'Parameter'.
+'ORDB4ORA::OperationParameter' is a specialization of 'Parameter'.
+'ORDB4ORA::NotNull' is a specialization of 'Restriction'.
+'ORDB4ORA::LOBType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::View' is a specialization of 'DerivedTable'.
+'ORDB4ORA::RawFeature' is a specialization of 'Feature'.
+'ORDB4ORA::Attribute' is a specialization of 'StructuralComponent'.
+'ORDB4ORA::LongAndRawType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::ANSINumberType' is a specialization of 'ANSIType'.
+'ORDB4ORA::Procedure' is a specialization of 'Operation'.
+'ORDB4ORA::Column' is a specialization of 'StructuralComponent'.
+'ORDB4ORA::Check' is a specialization of 'Restriction'.
+'ORDB4ORA::RowFeature' is a specialization of 'Feature'.
+'ORDB4ORA::SuppliedType' is a specialization of 'BasicDataType'.
+'ORDB4ORA::PrimaryKey' is a specialization of 'Restriction'.
+'ORDB4ORA::IntervalFeature' is a specialization of 'Feature'.
+'ORDB4ORA::AnyType' is a specialization of 'SuppliedType'.
+'ORDB4ORA::ForeignKey' is a specialization of 'Restriction'.
+'ORDB4ORA::BuiltInNumberType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::BuiltInCharacterType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::CharacterFeature' is a specialization of 'Feature'.
+'ORDB4ORA::MediaType' is a specialization of 'SuppliedType'.
+'ORDB4ORA::NumberFeature' is a specialization of 'Feature'.
+'ORDB4ORA::ROWIDType' is a specialization of 'BuiltInType'.
+'ORDB4ORA::Varray' is a specialization of 'Datatype'.
+'ORDB4ORA::SpacialType' is a specialization of 'SuppliedType'.
+'ORDB4ORA::ANSIType' is a specialization of 'BasicDataType'.
+'ORDB4ORA::Unique' is a specialization of 'Restriction'.
+'ORDB4ORA::NestedTableType' is a specialization of 'Datatype'.
+'ORDB4ORA::BuiltInType' is a specialization of 'BasicDataType'.
+'ORDB4ORA::TypedTable' is a specialization of 'Table'.
+'ORDB4ORA::DatetimeFeature' is a specialization of 'Feature'.
+'ORDB4ORA::Method' (role 'method', cardinality 0..*) is associated with 'ORDB4ORA::StructuredType' (role 'StructuredType8', cardinality 0..*).
+'ORDB4ORA::Restriction' (role 'Restriction61', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'table', cardinality 0..*).
+'ORDB4ORA::Varray' (role 'ORDB4ORA_Varray', cardinality 0..*) is associated with 'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype78', cardinality 0..*).
+'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype39', cardinality 0..*) is associated with 'ORDB4ORA::Parameter' (role 'ORDB4ORA_Parameter', cardinality 0..*).
+'ORDB4ORA::StructuralComponent' (role 'attributes', cardinality 0..*) is associated with 'ORDB4ORA::Restriction' (role 'Restriction', cardinality 0..*).
+'ORDB4ORA::Datatype' (role 'Datatype', cardinality 0..*) is associated with 'ORDB4ORA::Model' (role 'model', cardinality 0..*).
+'ORDB4ORA::Package' (role 'package', cardinality 0..*) is associated with 'ORDB4ORA::Operation' (role 'Operation34', cardinality 0..*).
+'ORDB4ORA::OperationParameter' (role 'OperationParameter', cardinality 0..*) is associated with 'ORDB4ORA::Operation' (role 'operation', cardinality 0..*).
+'ORDB4ORA::Restriction' (role 'restrictions', cardinality 0..*) is associated with 'ORDB4ORA::StructuralComponent' (role 'StructuralComponent', cardinality 0..*).
+'ORDB4ORA::StructuredType' (role 'structured53', cardinality 0..*) is associated with 'ORDB4ORA::Method' (role 'Method54', cardinality 0..*).
+'ORDB4ORA::StructuralComponent' (role 'ORDB4ORA_StructuralComponent70', cardinality 0..*) is associated with 'ORDB4ORA::Trigger' (role 'ORDB4ORA_Trigger', cardinality 0..*).
+'ORDB4ORA::Trigger' (role 'triggers', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'Table72', cardinality 0..*).
+'ORDB4ORA::StructuralComponent' (role 'ORDB4ORA_StructuralComponent49', cardinality 0..*) is associated with 'ORDB4ORA::Feature' (role 'ORDB4ORA_Feature', cardinality 0..*).
+'ORDB4ORA::StructuredType' (role 'ORDB4ORA_StructuredType59', cardinality 0..*) is associated with 'ORDB4ORA::StructuredType' (role 'ORDB4ORA_StructuredType57', cardinality 0..*).
+'ORDB4ORA::Model' (role 'Model', cardinality 0..*) is associated with 'ORDB4ORA::Datatype' (role 'datatype', cardinality 0..*).
+'ORDB4ORA::Model' (role 'model17', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'Table18', cardinality 0..*).
+'ORDB4ORA::View' (role 'ORDB4ORA_View', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'ORDB4ORA_Table80', cardinality 0..*).
+'ORDB4ORA::Method' (role 'method10', cardinality 0..*) is associated with 'ORDB4ORA::MethodParameter' (role 'MethodParameter', cardinality 0..*).
+'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype47', cardinality 0..*) is associated with 'ORDB4ORA::StructuralComponent' (role 'ORDB4ORA_StructuralComponent', cardinality 0..*).
+'ORDB4ORA::Method' (role 'Method', cardinality 0..*) is associated with 'ORDB4ORA::MethodParameter' (role 'parameters', cardinality 0..*).
+'ORDB4ORA::Trigger' (role 'Trigger', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'table68', cardinality 0..*).
+'ORDB4ORA::TypedTable' (role 'TypedTable', cardinality 0..*) is associated with 'ORDB4ORA::StoredNestedTable' (role 'storedNested', cardinality 0..*).
+'ORDB4ORA::TypedTable' (role 'typed75', cardinality 0..*) is associated with 'ORDB4ORA::StructuredType' (role 'StructuredType76', cardinality 0..*).
+'ORDB4ORA::Operation' (role 'Operation32', cardinality 0..*) is associated with 'ORDB4ORA::OperationParameter' (role 'operationParameters', cardinality 0..*).
+'ORDB4ORA::StructuredType' (role 'structured', cardinality 0..*) is associated with 'ORDB4ORA::Attribute' (role 'Attribute', cardinality 0..*).
+'ORDB4ORA::StructuralComponent' (role 'ORDB4ORA_StructuralComponent83', cardinality 0..*) is associated with 'ORDB4ORA::View' (role 'ORDB4ORA_View82', cardinality 0..*).
+'ORDB4ORA::Operation' (role 'operations', cardinality 0..*) is associated with 'ORDB4ORA::Package' (role 'Package30', cardinality 0..*).
+'ORDB4ORA::StructuredType' (role 'structuredType', cardinality 0..*) is associated with 'ORDB4ORA::TypedTable' (role 'TypedTable56', cardinality 0..*).
+'ORDB4ORA::Table' (role 'Table', cardinality 0..*) is associated with 'ORDB4ORA::Column' (role 'columns', cardinality 0..*).
+'ORDB4ORA::StructuredType' (role 'ORDB4ORA_StructuredType', cardinality 0..*) is associated with 'ORDB4ORA::ReferenceType' (role 'ORDB4ORA_ReferenceType', cardinality 0..*).
+'ORDB4ORA::Method' (role 'ORDB4ORA_Method12', cardinality 0..*) is associated with 'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype13', cardinality 0..*).
+'ORDB4ORA::Method' (role 'ORDB4ORA_Method5', cardinality 0..*) is associated with 'ORDB4ORA::Method' (role 'ORDB4ORA_Method', cardinality 0..*).
+'ORDB4ORA::Model' (role 'model22', cardinality 0..*) is associated with 'ORDB4ORA::Package' (role 'Package', cardinality 0..*).
+'ORDB4ORA::Attribute' (role 'ORDB4ORA_Attribute', cardinality 0..*) is associated with 'ORDB4ORA::StoredNestedTable' (role 'ORDB4ORA_StoredNestedTable', cardinality 0..*).
+'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype24', cardinality 0..*) is associated with 'ORDB4ORA::NestedTableType' (role 'ORDB4ORA_NestedTableType', cardinality 0..*).
+'ORDB4ORA::StoredNestedTable' (role 'StoredNestedTable', cardinality 0..*) is associated with 'ORDB4ORA::TypedTable' (role 'typed', cardinality 0..*).
+'ORDB4ORA::Package' (role 'package36', cardinality 0..*) is associated with 'ORDB4ORA::Model' (role 'Model37', cardinality 0..*).
+'ORDB4ORA::Function' (role 'ORDB4ORA_Function', cardinality 0..*) is associated with 'ORDB4ORA::Datatype' (role 'ORDB4ORA_Datatype', cardinality 0..*).
+'ORDB4ORA::Column' (role 'Column', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'table63', cardinality 0..*).
+'ORDB4ORA::Model' (role 'Model28', cardinality 0..*) is associated with 'ORDB4ORA::Operation' (role 'operation27', cardinality 0..*).
+'ORDB4ORA::Attribute' (role 'attribute', cardinality 0..*) is associated with 'ORDB4ORA::StructuredType' (role 'StructuredType', cardinality 0..*).
+'ORDB4ORA::Model' (role 'Model66', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'table65', cardinality 0..*).
+'ORDB4ORA::ForeignKey' (role 'ORDB4ORA_ForeignKey', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'ORDB4ORA_Table', cardinality 0..*).
+'ORDB4ORA::Operation' (role 'Operation', cardinality 0..*) is associated with 'ORDB4ORA::Model' (role 'model20', cardinality 0..*).
+'ORDB4ORA::Restriction' (role 'restriction', cardinality 0..*) is associated with 'ORDB4ORA::Table' (role 'Table43', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'ClassM::PrimitiveType' has no attributes.
+The class 'ClassM::Class' has no attributes.
+The class 'ClassM::Attribute' has the following attributes: 'is_primary' of type bool; 'name' of type str.
+The class 'ClassM::Classifier' has the following attributes: 'name' of type str.
+The class 'ClassM::Model' has no attributes.
+The class 'Classifier' has no attributes.
+'ClassM::Class' is a specialization of 'Classifier'.
+'ClassM::PrimitiveType' is a specialization of 'Classifier'.
+'ClassM::Class' (role 'owner', cardinality 0..*) is associated with 'ClassM::Attribute' (role 'Attribute', cardinality 0..*).
+'ClassM::Class' (role 'Class', cardinality 0..*) is associated with 'ClassM::Attribute' (role 'attrs', cardinality 0..*).
+'ClassM::Classifier' (role 'ClassM_Classifier4', cardinality 0..*) is associated with 'ClassM::Model' (role 'ClassM_Model', cardinality 0..*).
+'ClassM::Attribute' (role 'ClassM_Attribute', cardinality 0..*) is associated with 'ClassM::Classifier' (role 'ClassM_Classifier', cardinality 0..*).

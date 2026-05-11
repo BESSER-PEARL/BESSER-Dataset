@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ekkart/ECNO/examples/workflowengine/dk.dtu.imm.se.ecno.workflow.engine/model/Workflow.ecore

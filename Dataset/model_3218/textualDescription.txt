@@ -1,0 +1,78 @@
+The model has 28 class(es).
+The class 'Core::IType' has the following attributes: 'fullyQualifiedParametrizedName' of type str; 'fullyQualifiedName' of type str.
+The class 'Core::IImportDeclaration' has the following attributes: 'isStatic' of type str; 'isOnDemand' of type str.
+The class 'Core::IClassFile' has the following attributes: 'isClass' of type str; 'isInterface' of type str.
+The class 'Core::IMember' has no attributes.
+The class 'Core::SourcePackageFragmentRoot' has no attributes.
+The class 'ISourceReference' has no attributes.
+The class 'Core::ITypeParameter' has the following attributes: 'bounds' of type str.
+The class 'Core::ICompilationUnit' has no attributes.
+The class 'IPackageFragmentRoot' has no attributes.
+The class 'Core::IPackageFragmentRoot' has no attributes.
+The class 'Core::IJavaProject' has no attributes.
+The class 'PhysicalElement' has no attributes.
+The class 'ITypeRoot' has no attributes.
+The class 'Core::IJavaElement' has the following attributes: 'elementName' of type str.
+The class 'Core::BinaryPackageFragmentRoot' has no attributes.
+The class 'Core::IPackageFragment' has the following attributes: 'isDefaultPackage' of type str.
+The class 'Core::IMethod' has the following attributes: 'isConstructor' of type str; 'returnType' of type str; 'exceptionTypes' of type str; 'isMainMethod' of type str.
+The class 'Core::IJavaModel' has no attributes.
+The class 'Core::ITypeRoot' has no attributes.
+The class 'IMember' has no attributes.
+The class 'IJavaElement' has no attributes.
+The class 'Core::PhysicalElement' has the following attributes: 'path' of type str; 'isReadOnly' of type str.
+The class 'Core::IInitializer' has no attributes.
+The class 'Core::ISourceReference' has the following attributes: 'source' of type str.
+The class 'Core::Parameter' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'Core::IField' has the following attributes: 'typeSignature' of type str; 'isTransient' of type str; 'constant' of type str; 'isEnumConstant' of type str; 'isVolatile' of type str.
+The class 'Core::CompilationUnit' has no attributes.
+The class 'Core::ISourceRange' has the following attributes: 'length' of type str; 'offset' of type str.
+The enumeration 'Modifiers' has the following literals: 'strictfp', 'volatile', 'super', 'enum', 'annotation', 'protected', 'synthetic', 'deprecated', 'default', 'static', 'interface', 'final', 'public', 'abstract', 'native', 'varargs', 'private', 'bridge', 'transient', 'synchronized'.
+'Core::IType' is a specialization of 'IMember'.
+'Core::BinaryPackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'Core::SourcePackageFragmentRoot' is a specialization of 'IPackageFragmentRoot'.
+'Core::IMember' is a specialization of 'ISourceReference'.
+'Core::IPackageFragment' is a specialization of 'IJavaElement'.
+'Core::ITypeRoot' is a specialization of 'ISourceReference'.
+'Core::IJavaProject' is a specialization of 'IJavaElement'.
+'Core::ITypeParameter' is a specialization of 'ISourceReference'.
+'Core::IPackageFragmentRoot' is a specialization of 'PhysicalElement'.
+'Core::ITypeRoot' is a specialization of 'PhysicalElement'.
+'Core::IImportDeclaration' is a specialization of 'ISourceReference'.
+'Core::IJavaProject' is a specialization of 'PhysicalElement'.
+'Core::IMethod' is a specialization of 'IMember'.
+'Core::IJavaModel' is a specialization of 'PhysicalElement'.
+'Core::ITypeParameter' is a specialization of 'IJavaElement'.
+'Core::IInitializer' is a specialization of 'IMember'.
+'Core::ITypeRoot' is a specialization of 'IJavaElement'.
+'Core::IField' is a specialization of 'IMember'.
+'Core::IMember' is a specialization of 'IJavaElement'.
+'Core::IPackageFragmentRoot' is a specialization of 'IJavaElement'.
+'Core::ICompilationUnit' is a specialization of 'ITypeRoot'.
+'Core::IImportDeclaration' is a specialization of 'IJavaElement'.
+'Core::IPackageFragment' is a specialization of 'PhysicalElement'.
+'Core::IClassFile' is a specialization of 'ITypeRoot'.
+'Core::ICompilationUnit' (role 'Core_ICompilationUnit18', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType', cardinality 0..*).
+'Core::ISourceRange' (role 'Core_ISourceRange34', cardinality 0..*) is associated with 'Core::IMember' (role 'Core_IMember', cardinality 0..*).
+'Core::IPackageFragment' (role 'IPackageFragment', cardinality 0..*) is associated with 'Core::IPackageFragmentRoot' (role 'packageFragmentRoot', cardinality 0..*).
+'Core::IMember' (role 'Core_IMember36', cardinality 0..*) is associated with 'Core::ISourceRange' (role 'Core_ISourceRange37', cardinality 0..*).
+'Core::IType' (role 'Core_IType44', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType46', cardinality 0..*).
+'Core::IType' (role 'Core_IType23', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit22', cardinality 0..*).
+'Core::IType' (role 'Core_IType41', cardinality 0..*) is associated with 'Core::IField' (role 'Core_IField', cardinality 0..*).
+'Core::ITypeParameter' (role 'Core_ITypeParameter', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType48', cardinality 0..*).
+'Core::IImportDeclaration' (role 'Core_IImportDeclaration', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit20', cardinality 0..*).
+'Core::IPackageFragmentRoot' (role 'Core_IPackageFragmentRoot', cardinality 0..*) is associated with 'Core::IJavaModel' (role 'Core_IJavaModel2', cardinality 0..*).
+'Core::IType' (role 'Core_IType31', cardinality 0..*) is associated with 'Core::IClassFile' (role 'Core_IClassFile30', cardinality 0..*).
+'Core::IJavaProject' (role 'Core_IJavaProject11', cardinality 0..*) is associated with 'Core::IJavaProject' (role 'Core_IJavaProject9', cardinality 0..*).
+'Core::ISourceReference' (role 'Core_ISourceReference', cardinality 0..*) is associated with 'Core::ISourceRange' (role 'Core_ISourceRange', cardinality 0..*).
+'Core::IPackageFragment' (role 'Core_IPackageFragment', cardinality 0..*) is associated with 'Core::IClassFile' (role 'Core_IClassFile', cardinality 0..*).
+'Core::IPackageFragmentRoot' (role 'IPackageFragmentRoot', cardinality 0..*) is associated with 'Core::IPackageFragment' (role 'packageFragments', cardinality 0..*).
+'Core::ICompilationUnit' (role 'Core_ICompilationUnit24', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit26', cardinality 0..*).
+'Core::IPackageFragmentRoot' (role 'Core_IPackageFragmentRoot8', cardinality 0..*) is associated with 'Core::IJavaProject' (role 'Core_IJavaProject7', cardinality 0..*).
+'Core::IInitializer' (role 'Core_IInitializer', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType39', cardinality 0..*).
+'Core::CompilationUnit' (role 'Core_CompilationUnit', cardinality 0..*) is associated with 'Core::ICompilationUnit' (role 'Core_ICompilationUnit28', cardinality 0..*).
+'Core::ICompilationUnit' (role 'Core_ICompilationUnit', cardinality 0..*) is associated with 'Core::IPackageFragment' (role 'Core_IPackageFragment16', cardinality 0..*).
+'Core::IMethod' (role 'Core_IMethod50', cardinality 0..*) is associated with 'Core::Parameter' (role 'Core_Parameter', cardinality 0..*).
+'Core::IJavaProject' (role 'Core_IJavaProject', cardinality 0..*) is associated with 'Core::IJavaModel' (role 'Core_IJavaModel', cardinality 0..*).
+'Core::IJavaProject' (role 'Core_IJavaProject4', cardinality 0..*) is associated with 'Core::IPackageFragmentRoot' (role 'Core_IPackageFragmentRoot5', cardinality 0..*).
+'Core::IMethod' (role 'Core_IMethod', cardinality 0..*) is associated with 'Core::IType' (role 'Core_IType43', cardinality 0..*).

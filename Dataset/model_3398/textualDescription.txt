@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'StateMachine::PNTransition' has no attributes.
+The class 'StateMachine::Arc' has the following attributes: 'weight' of type int; 'toPlace' of type bool.
+The class 'StateMachine::Place' has the following attributes: 'tokens' of type int; 'name' of type str.
+'StateMachine::Place' (role 'StateMachine_Place', cardinality 0..*) is associated with 'StateMachine::Arc' (role 'StateMachine_Arc2', cardinality 0..*).
+'StateMachine::PNTransition' (role 'StateMachine_PNTransition', cardinality 0..*) is associated with 'StateMachine::Arc' (role 'StateMachine_Arc', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'simpleClass::Class' has the following attributes: 'persistent' of type bool.
+The class 'simpleClass::Association' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'simpleClass::ClassModel' has no attributes.
+The class 'simpleClass::Attribute' has the following attributes: 'name' of type str; 'id' of type bool.
+The class 'simpleClass::Classifier' has the following attributes: 'name' of type str.
+The class 'simpleClass::PrimitiveDataType' has no attributes.
+'simpleClass::PrimitiveDataType' is a specialization of 'Classifier'.
+'simpleClass::Class' is a specialization of 'Classifier'.
+'simpleClass::Attribute' (role 'simpleClass_Attribute14', cardinality 0..*) is associated with 'simpleClass::Classifier' (role 'simpleClass_Classifier15', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class7', cardinality 0..*) is associated with 'simpleClass::Association' (role 'simpleClass_Association6', cardinality 0..*).
+'simpleClass::Association' (role 'simpleClass_Association', cardinality 0..*) is associated with 'simpleClass::ClassModel' (role 'simpleClass_ClassModel2', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class12', cardinality 0..*) is associated with 'simpleClass::Attribute' (role 'simpleClass_Attribute', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class10', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class8', cardinality 0..*).
+'simpleClass::Classifier' (role 'simpleClass_Classifier', cardinality 0..*) is associated with 'simpleClass::ClassModel' (role 'simpleClass_ClassModel', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class', cardinality 0..*) is associated with 'simpleClass::Association' (role 'simpleClass_Association4', cardinality 0..*).

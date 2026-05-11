@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'fsm::Transition' has the following attributes: 'b' of type str; 'c' of type str; 'a' of type str.
+The enumeration 'C' has the following literals: 'Y', 'Z', 'X'.

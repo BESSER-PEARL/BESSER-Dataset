@@ -1,0 +1,43 @@
+The model has 15 class(es).
+The class 'fsmgen::ModelComponent' has no attributes.
+The class 'fsmgen::StateGraphNode' has no attributes.
+The class 'FSMGenElement' has no attributes.
+The class 'fsmgen::StateGraph' has no attributes.
+The class 'fsmgen::Link' has the following attributes: 'ifitemTriggered' of type bool.
+The class 'fsmgen::EObject' has no attributes.
+The class 'fsmgen::Graph' has no attributes.
+The class 'fsmgen::GraphItem' has the following attributes: 'inherited' of type bool.
+The class 'fsmgen::GraphContainer' has the following attributes: 'initializedChainHeads' of type bool; 'initializedTriggersInStates' of type bool; 'initializedCommonData' of type bool.
+The class 'GraphItem' has no attributes.
+The class 'fsmgen::TransitionBase' has no attributes.
+The class 'fsmgen::Node' has the following attributes: 'inheritanceLevel' of type int.
+The class 'fsmgen::CommonTrigger' has the following attributes: 'hasGuard' of type bool; 'trigger' of type str.
+The class 'fsmgen::AbstractInterfaceItem' has no attributes.
+The class 'fsmgen::FSMGenElement' has no attributes.
+'fsmgen::Link' is a specialization of 'GraphItem'.
+'fsmgen::Graph' is a specialization of 'FSMGenElement'.
+'fsmgen::GraphItem' is a specialization of 'FSMGenElement'.
+'fsmgen::GraphContainer' is a specialization of 'FSMGenElement'.
+'fsmgen::Node' is a specialization of 'GraphItem'.
+'fsmgen::CommonTrigger' is a specialization of 'FSMGenElement'.
+'fsmgen::Node' (role 'source', cardinality 0..*) is associated with 'fsmgen::Link' (role 'Link14', cardinality 0..*).
+'fsmgen::StateGraphNode' (role 'fsmgen_StateGraphNode', cardinality 0..*) is associated with 'fsmgen::Node' (role 'fsmgen_Node', cardinality 0..*).
+'fsmgen::CommonTrigger' (role 'fsmgen_CommonTrigger33', cardinality 0..*) is associated with 'fsmgen::EObject' (role 'fsmgen_EObject34', cardinality 0..*).
+'fsmgen::Link' (role 'fsmgen_Link29', cardinality 0..*) is associated with 'fsmgen::EObject' (role 'fsmgen_EObject', cardinality 0..*).
+'fsmgen::Link' (role 'links', cardinality 0..*) is associated with 'fsmgen::Graph' (role 'Graph21', cardinality 0..*).
+'fsmgen::Link' (role 'Link', cardinality 0..*) is associated with 'fsmgen::Graph' (role 'graph5', cardinality 0..*).
+'fsmgen::Link' (role 'fsmgen_Link39', cardinality 0..*) is associated with 'fsmgen::CommonTrigger' (role 'fsmgen_CommonTrigger38', cardinality 0..*).
+'fsmgen::Graph' (role 'Graph', cardinality 0..*) is associated with 'fsmgen::Node' (role 'nodes', cardinality 0..*).
+'fsmgen::Link' (role 'fsmgen_Link26', cardinality 0..*) is associated with 'fsmgen::Link' (role 'fsmgen_Link', cardinality 0..*).
+'fsmgen::TransitionBase' (role 'fsmgen_TransitionBase', cardinality 0..*) is associated with 'fsmgen::Link' (role 'fsmgen_Link31', cardinality 0..*).
+'fsmgen::ModelComponent' (role 'fsmgen_ModelComponent', cardinality 0..*) is associated with 'fsmgen::GraphContainer' (role 'fsmgen_GraphContainer2', cardinality 0..*).
+'fsmgen::Graph' (role 'graph', cardinality 0..*) is associated with 'fsmgen::Node' (role 'Node', cardinality 0..*).
+'fsmgen::Node' (role 'target', cardinality 0..*) is associated with 'fsmgen::Link' (role 'Link16', cardinality 0..*).
+'fsmgen::Node' (role 'Node9', cardinality 0..*) is associated with 'fsmgen::Graph' (role 'subgraph', cardinality 0..*).
+'fsmgen::Node' (role 'Node23', cardinality 0..*) is associated with 'fsmgen::Link' (role 'outgoing', cardinality 0..*).
+'fsmgen::Node' (role 'Node25', cardinality 0..*) is associated with 'fsmgen::Link' (role 'incoming', cardinality 0..*).
+'fsmgen::Graph' (role 'fsmgen_Graph', cardinality 0..*) is associated with 'fsmgen::GraphContainer' (role 'fsmgen_GraphContainer', cardinality 0..*).
+'fsmgen::CommonTrigger' (role 'fsmgen_CommonTrigger36', cardinality 0..*) is associated with 'fsmgen::AbstractInterfaceItem' (role 'fsmgen_AbstractInterfaceItem', cardinality 0..*).
+'fsmgen::Graph' (role 'Graph12', cardinality 0..*) is associated with 'fsmgen::Node' (role 'node', cardinality 0..*).
+'fsmgen::Graph' (role 'fsmgen_Graph7', cardinality 0..*) is associated with 'fsmgen::StateGraph' (role 'fsmgen_StateGraph', cardinality 0..*).
+'fsmgen::CommonTrigger' (role 'fsmgen_CommonTrigger', cardinality 0..*) is associated with 'fsmgen::Node' (role 'fsmgen_Node19', cardinality 0..*).

@@ -1,0 +1,81 @@
+The model has 17 class(es).
+The class 'entityrelationship::Connection::EntityRelationship' has the following attributes: 'role' of type str; 'maximum_cardinality' of type str; 'minimum_cardinality' of type str.
+The class 'entityrelationship::Connection::Entity2Relationship' has no attributes.
+The class 'entityrelationship::Attribute::Composite' has the following attributes: 'identifier_at_composite' of type str; 'name_at_composite' of type str.
+The class 'Connection::EntityRelationship' has no attributes.
+The class 'entityrelationship::Attribute' has the following attributes: 'identifier' of type str; 'name_attribute' of type str.
+The class 'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' has no attributes.
+The class 'entityrelationship::Relationships::Restriction' has the following attributes: 'type_restriction' of type str.
+The class 'entityrelationship::Connection::E::R::Restriction' has the following attributes: 'type_restriction' of type str.
+The class 'entityrelationship::Elements::with::Attributes' has no attributes.
+The class 'entityrelationship::Connection::With::Attribute' has the following attributes: 'type_attribute' of type str.
+The class 'entityrelationship::Connection::Generalization::Entity' has the following attributes: 'maximum_cardinality' of type str; 'minimum_cardinality' of type str.
+The class 'entityrelationship::Entity' has the following attributes: 'type_entity' of type str; 'name_entity' of type str.
+The class 'entityrelationship::Relationship' has the following attributes: 'type_relationship' of type str; 'cardinality' of type str; 'name_relationship' of type str; 'order' of type int.
+The class 'entityrelationship::Connection::Relationship2Entity' has no attributes.
+The class 'Elements::with::Attributes' has no attributes.
+The class 'entityrelationship::Entity::Relationship::Model' has the following attributes: 'name' of type str.
+The class 'entityrelationship::Generalization' has the following attributes: 'restriction_inheritance_2' of type str; 'restriction_inheritance_1' of type str.
+The enumeration 'TypeAttribute' has the following literals: 'Optional', 'Composite', 'Dependence_in_identification', 'Multivalued', 'Derived', 'Normal'.
+The enumeration 'TypeRestriction' has the following literals: 'Inclusion', 'Exclusion'.
+The enumeration 'TypeRestriction2' has the following literals: 'Exclusiveness', 'Inclusiveness'.
+The enumeration 'TypeRelationship' has the following literals: 'Regular', 'Weak_dependence_in_existence', 'Weak_dependence_in_identification'.
+The enumeration 'TypeRestrictionInheritance1' has the following literals: 'Total', 'Partial'.
+The enumeration 'TypeIdentifier' has the following literals: 'AlternativeIdentifier', 'NoIdentifier', 'PrimaryIdentifier'.
+The enumeration 'TypeRestrictionInheritance2' has the following literals: 'Overlapped', 'Exclusive'.
+The enumeration 'TypeEntity' has the following literals: 'Regular', 'Weak'.
+'entityrelationship::Entity' is a specialization of 'Elements::with::Attributes'.
+'entityrelationship::Relationship' is a specialization of 'Elements::with::Attributes'.
+'entityrelationship::Connection::Entity2Relationship' is a specialization of 'Connection::EntityRelationship'.
+'entityrelationship::Connection::Relationship2Entity' is a specialization of 'Connection::EntityRelationship'.
+'entityrelationship::Relationships::Restriction' (role 'ERM_Has_Rt', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model58', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel', cardinality 0..*) is associated with 'entityrelationship::Elements::with::Attributes' (role 'Elements_with_Attributes', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model99', cardinality 0..*) is associated with 'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' (role 'ERM_HasConnectionEntityRelationship2Attribute', cardinality 0..*).
+'entityrelationship::Attribute::Composite' (role 'attributes_composites', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'Attribute52', cardinality 0..*).
+'entityrelationship::Relationships::Restriction' (role 'target_restrictions', cardinality 0..*) is associated with 'entityrelationship::Relationship' (role 'Relationship', cardinality 0..*).
+'entityrelationship::Connection::E::R::Restriction' (role 'entityrelationship_Connection_E_R_Restriction', cardinality 0..*) is associated with 'entityrelationship::Connection::EntityRelationship' (role 'entityrelationship_Connection_EntityRelationship', cardinality 0..*).
+'entityrelationship::Connection::Entity2Relationship' (role 'Connection_Entity2Relationship32', cardinality 0..*) is associated with 'entityrelationship::Relationship' (role 'target_relationship31', cardinality 0..*).
+'entityrelationship::Generalization' (role 'subclass_generalizations', cardinality 0..*) is associated with 'entityrelationship::Entity' (role 'Entity', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model64', cardinality 0..*) is associated with 'entityrelationship::Connection::E::R::Restriction' (role 'ERM_Has_Rt2', cardinality 0..*).
+'entityrelationship::Connection::Entity2Relationship' (role 'relationship_connected_to_entity2relationship', cardinality 0..*) is associated with 'entityrelationship::Relationship' (role 'Relationship85', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model87', cardinality 0..*) is associated with 'entityrelationship::Connection::Entity2Relationship' (role 'ERM_Has_ConnectionEntity2Relationship', cardinality 0..*).
+'entityrelationship::Connection::Relationship2Entity' (role 'entity_connected_to_relationship2entity', cardinality 0..*) is associated with 'entityrelationship::Entity' (role 'Entity91', cardinality 0..*).
+'entityrelationship::Elements::with::Attributes' (role 'Elements_with_Attributes72', cardinality 0..*) is associated with 'entityrelationship::Connection::With::Attribute' (role 'connected_with_attribute', cardinality 0..*).
+'entityrelationship::Entity' (role 'target_entity', cardinality 0..*) is associated with 'entityrelationship::Connection::Relationship2Entity' (role 'Connection_Relationship2Entity24', cardinality 0..*).
+'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' (role 'Connection_ConnectionEntityRelationship2Attribute48', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'target_attribute', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model74', cardinality 0..*) is associated with 'entityrelationship::Connection::With::Attribute' (role 'ERM_Has_CEA', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel10', cardinality 0..*) is associated with 'entityrelationship::Connection::Generalization::Entity' (role 'Connection_Generalization_Entity', cardinality 0..*).
+'entityrelationship::Entity' (role 'entityrelationship_Entity', cardinality 0..*) is associated with 'entityrelationship::Generalization' (role 'entityrelationship_Generalization', cardinality 0..*).
+'entityrelationship::Connection::E::R::Restriction' (role 'entityrelationship_Connection_E_R_Restriction61', cardinality 0..*) is associated with 'entityrelationship::Connection::EntityRelationship' (role 'entityrelationship_Connection_EntityRelationship62', cardinality 0..*).
+'entityrelationship::Attribute' (role 'inAttribute', cardinality 0..*) is associated with 'entityrelationship::Attribute::Composite' (role 'Attribute_Composite', cardinality 0..*).
+'entityrelationship::Attribute' (role 'Attribute43', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'attributes_identification', cardinality 0..*).
+'entityrelationship::Elements::with::Attributes' (role 'ERM_Has_E', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model81', cardinality 0..*) is associated with 'entityrelationship::Connection::Generalization::Entity' (role 'ERM_Has_Gen', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel12', cardinality 0..*) is associated with 'entityrelationship::Connection::E::R::Restriction' (role 'Connection_E_R_Restriction', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel2', cardinality 0..*) is associated with 'entityrelationship::Relationships::Restriction' (role 'Relationships_Restriction', cardinality 0..*).
+'entityrelationship::Attribute' (role 'inAttribute38', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'Attribute', cardinality 0..*).
+'entityrelationship::Connection::Generalization::Entity' (role 'entityrelationship_Connection_Generalization_Entity', cardinality 0..*) is associated with 'entityrelationship::Generalization' (role 'entityrelationship_Generalization76', cardinality 0..*).
+'entityrelationship::Generalization' (role 'Generalization26', cardinality 0..*) is associated with 'entityrelationship::Entity' (role 'subclasses', cardinality 0..*).
+'entityrelationship::Relationship' (role 'Relationship89', cardinality 0..*) is associated with 'entityrelationship::Connection::Relationship2Entity' (role 'relationship_connected_to_relationship2entity', cardinality 0..*).
+'entityrelationship::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel17', cardinality 0..*).
+'entityrelationship::Elements::with::Attributes' (role 'element', cardinality 0..*) is associated with 'entityrelationship::Connection::With::Attribute' (role 'Connection_With_Attribute19', cardinality 0..*).
+'entityrelationship::Connection::With::Attribute' (role 'connected', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'Attribute70', cardinality 0..*).
+'entityrelationship::Entity' (role 'Entity83', cardinality 0..*) is associated with 'entityrelationship::Connection::Entity2Relationship' (role 'entity_connected_to_entity2relationship', cardinality 0..*).
+'entityrelationship::Relationships::Restriction' (role 'entityrelationship_Relationships_Restriction54', cardinality 0..*) is associated with 'entityrelationship::Relationship' (role 'entityrelationship_Relationship55', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel14', cardinality 0..*) is associated with 'entityrelationship::Connection::With::Attribute' (role 'Connection_With_Attribute', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'entityrelationship_Entity_Relationship_Model', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'entityrelationship_Attribute', cardinality 0..*).
+'entityrelationship::Connection::Relationship2Entity' (role 'ERM_Has_ConnectionRelationship2Entity', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model93', cardinality 0..*).
+'entityrelationship::Entity' (role 'entityrelationship_Entity79', cardinality 0..*) is associated with 'entityrelationship::Connection::Generalization::Entity' (role 'entityrelationship_Connection_Generalization_Entity78', cardinality 0..*).
+'entityrelationship::Connection::Relationship2Entity' (role 'Connection_Relationship2Entity', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel6', cardinality 0..*).
+'entityrelationship::Relationship' (role 'target_relationship', cardinality 0..*) is associated with 'entityrelationship::Relationships::Restriction' (role 'Relationships_Restriction29', cardinality 0..*).
+'entityrelationship::Generalization' (role 'ERM_Has_G', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'Entity_Relationship_Model68', cardinality 0..*).
+'entityrelationship::Attribute' (role 'Attribute97', cardinality 0..*) is associated with 'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' (role 'attribute_connected_to_conection_entityrelationship_to_attribute', cardinality 0..*).
+'entityrelationship::Attribute' (role 'entityrelationship_Attribute50', cardinality 0..*) is associated with 'entityrelationship::Attribute::Composite' (role 'entityrelationship_Attribute_Composite', cardinality 0..*).
+'entityrelationship::Connection::With::Attribute' (role 'Connection_With_Attribute40', cardinality 0..*) is associated with 'entityrelationship::Attribute' (role 'connection_attribute', cardinality 0..*).
+'entityrelationship::Connection::EntityRelationship' (role 'entityrelationship_Connection_EntityRelationship95', cardinality 0..*) is associated with 'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' (role 'entityrelationship_Connection_ConnectionEntityRelationship2Attribute', cardinality 0..*).
+'entityrelationship::Relationships::Restriction' (role 'entityrelationship_Relationships_Restriction', cardinality 0..*) is associated with 'entityrelationship::Relationship' (role 'entityrelationship_Relationship', cardinality 0..*).
+'entityrelationship::Connection::Entity2Relationship' (role 'Connection_Entity2Relationship', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel4', cardinality 0..*).
+'entityrelationship::Entity::Relationship::Model' (role 'inEntityRelationshipModel8', cardinality 0..*) is associated with 'entityrelationship::Connection::ConnectionEntityRelationship2Attribute' (role 'Connection_ConnectionEntityRelationship2Attribute', cardinality 0..*).
+'entityrelationship::Relationship' (role 'source_relationship', cardinality 0..*) is associated with 'entityrelationship::Connection::Relationship2Entity' (role 'Connection_Relationship2Entity34', cardinality 0..*).
+'entityrelationship::Attribute' (role 'entityrelationship_Attribute45', cardinality 0..*) is associated with 'entityrelationship::Entity::Relationship::Model' (role 'entityrelationship_Entity_Relationship_Model46', cardinality 0..*).
+'entityrelationship::Connection::Entity2Relationship' (role 'Connection_Entity2Relationship22', cardinality 0..*) is associated with 'entityrelationship::Entity' (role 'source_entity', cardinality 0..*).

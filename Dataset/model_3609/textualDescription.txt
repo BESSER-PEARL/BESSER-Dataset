@@ -1,0 +1,206 @@
+The model has 92 class(es).
+The class 'pp2::SingleQuotedString' has the following attributes: 'text' of type str.
+The class 'StringExpression' has no attributes.
+The class 'pp2::HostClassDefinition' has no attributes.
+The class 'pp2::RubyLambda' has no attributes.
+The class 'IfExpression' has no attributes.
+The class 'pp2::CollectExpression' has no attributes.
+The class 'pp2::ExpressionTE' has no attributes.
+The class 'pp2::DefinitionArgumentList' has no attributes.
+The class 'pp2::BinaryExpression' has no attributes.
+The class 'pp2::ShiftExpression' has no attributes.
+The class 'pp2::ResourceExpression' has no attributes.
+The class 'pp2::AttributeOperation' has the following attributes: 'key' of type str; 'op' of type str.
+The class 'TextExpression' has no attributes.
+The class 'pp2::LiteralName' has the following attributes: 'value' of type str.
+The class 'pp2::NodeDefinition' has no attributes.
+The class 'pp2::WithLambdaExpression' has no attributes.
+The class 'pp2::OrExpression' has no attributes.
+The class 'pp2::IQuotedString' has no attributes.
+The class 'pp2::ParameterizedExpression' has no attributes.
+The class 'pp2::VirtualCollectQuery' has no attributes.
+The class 'pp2::SeparatorExpression' has no attributes.
+The class 'pp2::ElseExpression' has no attributes.
+The class 'pp2::CaseExpression' has no attributes.
+The class 'pp2::LiteralClass' has no attributes.
+The class 'pp2::MethodCall' has the following attributes: 'parenthesized' of type bool.
+The class 'ExpressionBlock' has no attributes.
+The class 'ICollectQuery' has no attributes.
+The class 'pp2::ParenthesisedExpression' has no attributes.
+The class 'pp2::PuppetManifest' has no attributes.
+The class 'pp2::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'pp2::AppendExpression' has no attributes.
+The class 'pp2::BinaryOpExpression' has the following attributes: 'opName' of type str.
+The class 'pp2::RelationshipExpression' has no attributes.
+The class 'pp2::ImportExpression' has no attributes.
+The class 'pp2::LiteralDefault' has no attributes.
+The class 'pp2::VariableTE' has the following attributes: 'varName' of type str.
+The class 'pp2::VerbatimTE' has the following attributes: 'text' of type str.
+The class 'pp2::AtExpression' has no attributes.
+The class 'pp2::ExportedCollectQuery' has no attributes.
+The class 'BinaryOpExpression' has no attributes.
+The class 'pp2::DefinitionArgument' has the following attributes: 'argName' of type str; 'op' of type str.
+The class 'pp2::Expression' has no attributes.
+The class 'pp2::LiteralList' has no attributes.
+The class 'pp2::EqualityExpression' has no attributes.
+The class 'pp2::HashEntry' has no attributes.
+The class 'pp2::VirtualNameOrReference' has the following attributes: 'value' of type str; 'exported' of type bool.
+The class 'pp2::ElseIfExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'pp2::RelationalExpression' has no attributes.
+The class 'pp2::SelectorExpression' has no attributes.
+The class 'LiteralExpression' has no attributes.
+The class 'pp2::AttributeOperations' has no attributes.
+The class 'ParameterizedExpression' has no attributes.
+The class 'pp2::TextExpression' has no attributes.
+The class 'pp2::Definition' has the following attributes: 'className' of type str.
+The class 'pp2::UnlessExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'pp2::FunctionCall' has no attributes.
+The class 'pp2::NamedAccessExpression' has no attributes.
+The class 'pp2::LiteralNameOrReference' has the following attributes: 'value' of type str.
+The class 'pp2::Lambda' has no attributes.
+The class 'pp2::ExpressionBlock' has no attributes.
+The class 'IQuotedString' has no attributes.
+The class 'pp2::ICollectQuery' has no attributes.
+The class 'pp2::MultiplicativeExpression' has no attributes.
+The class 'pp2::ResourceBody' has no attributes.
+The class 'pp2::VariableExpression' has the following attributes: 'varName' of type str.
+The class 'pp2::UnaryNotExpression' has no attributes.
+The class 'pp2::SelectorEntry' has no attributes.
+The class 'pp2::MatchingExpression' has no attributes.
+The class 'pp2::AssignmentExpression' has no attributes.
+The class 'pp2::LiteralHash' has no attributes.
+The class 'pp2::Case' has no attributes.
+The class 'pp2::LiteralUndef' has no attributes.
+The class 'pp2::ExprList' has no attributes.
+The class 'pp2::JavaLambda' has the following attributes: 'farrow' of type bool.
+The class 'pp2::UnaryExpression' has no attributes.
+The class 'Definition' has no attributes.
+The class 'Lambda' has no attributes.
+The class 'pp2::InterpolatedVariable' has the following attributes: 'varName' of type str.
+The class 'pp2::UnaryMinusExpression' has no attributes.
+The class 'pp2::StringExpression' has no attributes.
+The class 'pp2::DoubleQuotedString' has no attributes.
+The class 'WithLambdaExpression' has no attributes.
+The class 'pp2::IfExpression' has no attributes.
+The class 'pp2::LiteralRegex' has the following attributes: 'value' of type str.
+The class 'pp2::UnquotedString' has no attributes.
+The class 'pp2::AndExpression' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'pp2::AdditiveExpression' has no attributes.
+The class 'pp2::LiteralExpression' has no attributes.
+The class 'pp2::InExpression' has no attributes.
+'pp2::RubyLambda' is a specialization of 'Lambda'.
+'pp2::UnaryNotExpression' is a specialization of 'UnaryExpression'.
+'pp2::VirtualNameOrReference' is a specialization of 'LiteralExpression'.
+'pp2::LiteralClass' is a specialization of 'LiteralExpression'.
+'pp2::UnaryExpression' is a specialization of 'Expression'.
+'pp2::ParameterizedExpression' is a specialization of 'Expression'.
+'pp2::UnlessExpression' is a specialization of 'ExpressionBlock'.
+'pp2::BinaryExpression' is a specialization of 'Expression'.
+'pp2::Lambda' is a specialization of 'ExpressionBlock'.
+'pp2::VerbatimTE' is a specialization of 'TextExpression'.
+'pp2::UnquotedString' is a specialization of 'StringExpression'.
+'pp2::ElseIfExpression' is a specialization of 'IfExpression'.
+'pp2::StringExpression' is a specialization of 'Expression'.
+'pp2::MultiplicativeExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::AdditiveExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::LiteralDefault' is a specialization of 'LiteralExpression'.
+'pp2::LiteralBoolean' is a specialization of 'LiteralExpression'.
+'pp2::RelationalExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::EqualityExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+'pp2::MethodCall' is a specialization of 'WithLambdaExpression'.
+'pp2::InExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::ExpressionTE' is a specialization of 'TextExpression'.
+'pp2::LiteralName' is a specialization of 'LiteralExpression'.
+'pp2::ExportedCollectQuery' is a specialization of 'UnaryExpression'.
+'pp2::LiteralList' is a specialization of 'LiteralExpression'.
+'pp2::RelationshipExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::ParenthesisedExpression' is a specialization of 'Expression'.
+'pp2::OrExpression' is a specialization of 'BinaryExpression'.
+'pp2::AppendExpression' is a specialization of 'BinaryExpression'.
+'pp2::SeparatorExpression' is a specialization of 'Expression'.
+'pp2::PuppetManifest' is a specialization of 'ExpressionBlock'.
+'pp2::LiteralRegex' is a specialization of 'LiteralExpression'.
+'pp2::Definition' is a specialization of 'ExpressionBlock'.
+'pp2::AndExpression' is a specialization of 'BinaryExpression'.
+'pp2::IfExpression' is a specialization of 'ExpressionBlock'.
+'pp2::CollectExpression' is a specialization of 'Expression'.
+'pp2::SingleQuotedString' is a specialization of 'IQuotedString'.
+'pp2::SingleQuotedString' is a specialization of 'StringExpression'.
+'pp2::MatchingExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::BinaryOpExpression' is a specialization of 'BinaryExpression'.
+'pp2::CaseExpression' is a specialization of 'Expression'.
+'pp2::AssignmentExpression' is a specialization of 'BinaryExpression'.
+'pp2::Case' is a specialization of 'ExpressionBlock'.
+'pp2::DoubleQuotedString' is a specialization of 'IQuotedString'.
+'pp2::VirtualCollectQuery' is a specialization of 'ICollectQuery'.
+'pp2::AtExpression' is a specialization of 'ParameterizedExpression'.
+'pp2::ExpressionBlock' is a specialization of 'Expression'.
+'pp2::ExprList' is a specialization of 'Expression'.
+'pp2::ElseExpression' is a specialization of 'ExpressionBlock'.
+'pp2::VariableTE' is a specialization of 'TextExpression'.
+'pp2::NamedAccessExpression' is a specialization of 'BinaryExpression'.
+'pp2::HostClassDefinition' is a specialization of 'Definition'.
+'pp2::JavaLambda' is a specialization of 'Lambda'.
+'pp2::VariableExpression' is a specialization of 'Expression'.
+'pp2::ImportExpression' is a specialization of 'Expression'.
+'pp2::SelectorEntry' is a specialization of 'BinaryExpression'.
+'pp2::FunctionCall' is a specialization of 'WithLambdaExpression'.
+'pp2::VirtualCollectQuery' is a specialization of 'UnaryExpression'.
+'pp2::ShiftExpression' is a specialization of 'BinaryOpExpression'.
+'pp2::WithLambdaExpression' is a specialization of 'ParameterizedExpression'.
+'pp2::ExportedCollectQuery' is a specialization of 'ICollectQuery'.
+'pp2::InterpolatedVariable' is a specialization of 'Expression'.
+'pp2::NodeDefinition' is a specialization of 'ExpressionBlock'.
+'pp2::LiteralHash' is a specialization of 'LiteralExpression'.
+'pp2::SelectorExpression' is a specialization of 'ParameterizedExpression'.
+'pp2::LiteralNameOrReference' is a specialization of 'LiteralExpression'.
+'pp2::LiteralUndef' is a specialization of 'LiteralExpression'.
+'pp2::LiteralExpression' is a specialization of 'Expression'.
+'pp2::ResourceExpression' is a specialization of 'Expression'.
+'pp2::DoubleQuotedString' is a specialization of 'StringExpression'.
+'pp2::UnlessExpression' (role 'pp2_UnlessExpression83', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression84', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression88', cardinality 0..*) is associated with 'pp2::MethodCall' (role 'pp2_MethodCall', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression', cardinality 0..*) is associated with 'pp2::ResourceBody' (role 'pp2_ResourceBody2', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression74', cardinality 0..*) is associated with 'pp2::ExprList' (role 'pp2_ExprList', cardinality 0..*).
+'pp2::ResourceBody' (role 'pp2_ResourceBody34', cardinality 0..*) is associated with 'pp2::ResourceExpression' (role 'pp2_ResourceExpression33', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression58', cardinality 0..*) is associated with 'pp2::ParameterizedExpression' (role 'pp2_ParameterizedExpression', cardinality 0..*).
+'pp2::DefinitionArgument' (role 'pp2_DefinitionArgument16', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression17', cardinality 0..*).
+'pp2::DefinitionArgumentList' (role 'pp2_DefinitionArgumentList', cardinality 0..*) is associated with 'pp2::Definition' (role 'pp2_Definition', cardinality 0..*).
+'pp2::DefinitionArgument' (role 'pp2_DefinitionArgument13', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression14', cardinality 0..*).
+'pp2::ResourceBody' (role 'pp2_ResourceBody', cardinality 0..*) is associated with 'pp2::AttributeOperations' (role 'pp2_AttributeOperations', cardinality 0..*).
+'pp2::ParameterizedExpression' (role 'pp2_ParameterizedExpression60', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression61', cardinality 0..*).
+'pp2::ParenthesisedExpression' (role 'pp2_ParenthesisedExpression', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression72', cardinality 0..*).
+'pp2::Lambda' (role 'pp2_Lambda', cardinality 0..*) is associated with 'pp2::DefinitionArgumentList' (role 'pp2_DefinitionArgumentList86', cardinality 0..*).
+'pp2::Case' (role 'pp2_Case23', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression24', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression81', cardinality 0..*) is associated with 'pp2::UnlessExpression' (role 'pp2_UnlessExpression', cardinality 0..*).
+'pp2::UnaryExpression' (role 'pp2_UnaryExpression', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression68', cardinality 0..*).
+'pp2::NodeDefinition' (role 'pp2_NodeDefinition65', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression66', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression31', cardinality 0..*) is associated with 'pp2::ResourceExpression' (role 'pp2_ResourceExpression', cardinality 0..*).
+'pp2::HashEntry' (role 'pp2_HashEntry', cardinality 0..*) is associated with 'pp2::LiteralHash' (role 'pp2_LiteralHash', cardinality 0..*).
+'pp2::IQuotedString' (role 'pp2_IQuotedString', cardinality 0..*) is associated with 'pp2::ImportExpression' (role 'pp2_ImportExpression', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression29', cardinality 0..*) is associated with 'pp2::IfExpression' (role 'pp2_IfExpression28', cardinality 0..*).
+'pp2::DoubleQuotedString' (role 'pp2_DoubleQuotedString', cardinality 0..*) is associated with 'pp2::TextExpression' (role 'pp2_TextExpression', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression4', cardinality 0..*) is associated with 'pp2::AttributeOperation' (role 'pp2_AttributeOperation', cardinality 0..*).
+'pp2::HashEntry' (role 'pp2_HashEntry43', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression44', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression63', cardinality 0..*) is associated with 'pp2::NodeDefinition' (role 'pp2_NodeDefinition', cardinality 0..*).
+'pp2::LiteralExpression' (role 'pp2_LiteralExpression', cardinality 0..*) is associated with 'pp2::HostClassDefinition' (role 'pp2_HostClassDefinition', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression79', cardinality 0..*) is associated with 'pp2::ExpressionTE' (role 'pp2_ExpressionTE', cardinality 0..*).
+'pp2::CollectExpression' (role 'pp2_CollectExpression', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression46', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression26', cardinality 0..*) is associated with 'pp2::IfExpression' (role 'pp2_IfExpression', cardinality 0..*).
+'pp2::LiteralList' (role 'pp2_LiteralList', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression37', cardinality 0..*).
+'pp2::AttributeOperation' (role 'pp2_AttributeOperation7', cardinality 0..*) is associated with 'pp2::AttributeOperations' (role 'pp2_AttributeOperations6', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression77', cardinality 0..*) is associated with 'pp2::UnquotedString' (role 'pp2_UnquotedString', cardinality 0..*).
+'pp2::DefinitionArgumentList' (role 'pp2_DefinitionArgumentList11', cardinality 0..*) is associated with 'pp2::DefinitionArgument' (role 'pp2_DefinitionArgument', cardinality 0..*).
+'pp2::BinaryExpression' (role 'pp2_BinaryExpression55', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression56', cardinality 0..*).
+'pp2::ExpressionBlock' (role 'pp2_ExpressionBlock', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression70', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression53', cardinality 0..*) is associated with 'pp2::BinaryExpression' (role 'pp2_BinaryExpression', cardinality 0..*).
+'pp2::WithLambdaExpression' (role 'pp2_WithLambdaExpression', cardinality 0..*) is associated with 'pp2::Lambda' (role 'pp2_Lambda90', cardinality 0..*).
+'pp2::Expression' (role 'pp2_Expression41', cardinality 0..*) is associated with 'pp2::HashEntry' (role 'pp2_HashEntry40', cardinality 0..*).
+'pp2::CollectExpression' (role 'pp2_CollectExpression48', cardinality 0..*) is associated with 'pp2::ICollectQuery' (role 'pp2_ICollectQuery', cardinality 0..*).
+'pp2::Case' (role 'pp2_Case', cardinality 0..*) is associated with 'pp2::CaseExpression' (role 'pp2_CaseExpression21', cardinality 0..*).
+'pp2::CollectExpression' (role 'pp2_CollectExpression50', cardinality 0..*) is associated with 'pp2::AttributeOperations' (role 'pp2_AttributeOperations51', cardinality 0..*).
+'pp2::CaseExpression' (role 'pp2_CaseExpression', cardinality 0..*) is associated with 'pp2::Expression' (role 'pp2_Expression19', cardinality 0..*).

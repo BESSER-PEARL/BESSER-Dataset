@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'RDBMSMM::FKey' has no attributes.
+The class 'RDBMSMM::Table' has the following attributes: 'name' of type str.
+The class 'RDBMSMM::RDBMSModel' has no attributes.
+The class 'RDBMSMM::Column' has the following attributes: 'type' of type str; 'name' of type str.
+'RDBMSMM::Table' (role 'RDBMSMM_Table8', cardinality 0..*) is associated with 'RDBMSMM::FKey' (role 'RDBMSMM_FKey7', cardinality 0..*).
+'RDBMSMM::Column' (role 'RDBMSMM_Column11', cardinality 0..*) is associated with 'RDBMSMM::FKey' (role 'RDBMSMM_FKey10', cardinality 0..*).
+'RDBMSMM::Table' (role 'RDBMSMM_Table2', cardinality 0..*) is associated with 'RDBMSMM::Column' (role 'RDBMSMM_Column3', cardinality 0..*).
+'RDBMSMM::Table' (role 'RDBMSMM_Table13', cardinality 0..*) is associated with 'RDBMSMM::RDBMSModel' (role 'RDBMSMM_RDBMSModel', cardinality 0..*).
+'RDBMSMM::FKey' (role 'RDBMSMM_FKey', cardinality 0..*) is associated with 'RDBMSMM::Table' (role 'RDBMSMM_Table5', cardinality 0..*).
+'RDBMSMM::Table' (role 'RDBMSMM_Table', cardinality 0..*) is associated with 'RDBMSMM::Column' (role 'RDBMSMM_Column', cardinality 0..*).

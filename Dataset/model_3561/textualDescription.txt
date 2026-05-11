@@ -1,0 +1,59 @@
+The model has 24 class(es).
+The class 'wh::ExprOr' has no attributes.
+The class 'wh::Output' has the following attributes: 'r_values' of type str.
+The class 'wh::Vars' has the following attributes: 'variables' of type str.
+The class 'wh::Nop' has the following attributes: 'nop' of type str.
+The class 'wh::Foreach' has no attributes.
+The class 'wh::Definition' has no attributes.
+The class 'wh::Assign' has no attributes.
+The class 'wh::Exprs' has no attributes.
+The class 'wh::LExpr' has no attributes.
+The class 'wh::Model' has no attributes.
+The class 'wh::ExprNot' has the following attributes: 'hasNot' of type str.
+The class 'wh::Input' has the following attributes: 'params' of type str.
+The class 'wh::Program' has no attributes.
+The class 'wh::If' has no attributes.
+The class 'wh::Expr' has no attributes.
+The class 'wh::Function' has the following attributes: 'fname' of type str.
+The class 'wh::ExprSimple' has the following attributes: 'nil' of type str; 'variable' of type str; 'sym' of type str.
+The class 'wh::Commands' has no attributes.
+The class 'wh::ExprAnd' has no attributes.
+The class 'wh::While' has no attributes.
+The class 'wh::EObject' has no attributes.
+The class 'wh::Command' has no attributes.
+The class 'wh::For' has no attributes.
+The class 'wh::ExprEq' has the following attributes: 'sym' of type str.
+'wh::ExprSimple' (role 'wh_ExprSimple50', cardinality 0..*) is associated with 'wh::LExpr' (role 'wh_LExpr51', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr36', cardinality 0..*) is associated with 'wh::Foreach' (role 'wh_Foreach', cardinality 0..*).
+'wh::Exprs' (role 'wh_Exprs44', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr45', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands21', cardinality 0..*) is associated with 'wh::While' (role 'wh_While20', cardinality 0..*).
+'wh::Assign' (role 'wh_Assign', cardinality 0..*) is associated with 'wh::Vars' (role 'wh_Vars', cardinality 0..*).
+'wh::EObject' (role 'wh_EObject', cardinality 0..*) is associated with 'wh::Command' (role 'wh_Command14', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands12', cardinality 0..*) is associated with 'wh::Command' (role 'wh_Command', cardinality 0..*).
+'wh::Output' (role 'wh_Output', cardinality 0..*) is associated with 'wh::Definition' (role 'wh_Definition10', cardinality 0..*).
+'wh::Program' (role 'wh_Program2', cardinality 0..*) is associated with 'wh::Function' (role 'wh_Function', cardinality 0..*).
+'wh::Assign' (role 'wh_Assign17', cardinality 0..*) is associated with 'wh::Exprs' (role 'wh_Exprs', cardinality 0..*).
+'wh::Program' (role 'wh_Program', cardinality 0..*) is associated with 'wh::Model' (role 'wh_Model', cardinality 0..*).
+'wh::ExprOr' (role 'wh_ExprOr', cardinality 0..*) is associated with 'wh::ExprAnd' (role 'wh_ExprAnd59', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr', cardinality 0..*) is associated with 'wh::While' (role 'wh_While', cardinality 0..*).
+'wh::ExprSimple' (role 'wh_ExprSimple53', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr54', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr47', cardinality 0..*) is associated with 'wh::ExprAnd' (role 'wh_ExprAnd', cardinality 0..*).
+'wh::ExprEq' (role 'wh_ExprEq71', cardinality 0..*) is associated with 'wh::LExpr' (role 'wh_LExpr72', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands34', cardinality 0..*) is associated with 'wh::If' (role 'wh_If33', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands26', cardinality 0..*) is associated with 'wh::For' (role 'wh_For25', cardinality 0..*).
+'wh::LExpr' (role 'wh_LExpr77', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr78', cardinality 0..*).
+'wh::ExprNot' (role 'wh_ExprNot', cardinality 0..*) is associated with 'wh::ExprOr' (role 'wh_ExprOr61', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition8', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr23', cardinality 0..*) is associated with 'wh::For' (role 'wh_For', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands31', cardinality 0..*) is associated with 'wh::If' (role 'wh_If30', cardinality 0..*).
+'wh::If' (role 'wh_If', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr28', cardinality 0..*).
+'wh::ExprEq' (role 'wh_ExprEq68', cardinality 0..*) is associated with 'wh::ExprSimple' (role 'wh_ExprSimple69', cardinality 0..*).
+'wh::Foreach' (role 'wh_Foreach38', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr39', cardinality 0..*).
+'wh::Function' (role 'wh_Function4', cardinality 0..*) is associated with 'wh::Definition' (role 'wh_Definition', cardinality 0..*).
+'wh::ExprNot' (role 'wh_ExprNot63', cardinality 0..*) is associated with 'wh::ExprEq' (role 'wh_ExprEq', cardinality 0..*).
+'wh::ExprEq' (role 'wh_ExprEq65', cardinality 0..*) is associated with 'wh::ExprSimple' (role 'wh_ExprSimple66', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr75', cardinality 0..*) is associated with 'wh::ExprEq' (role 'wh_ExprEq74', cardinality 0..*).
+'wh::LExpr' (role 'wh_LExpr', cardinality 0..*) is associated with 'wh::ExprSimple' (role 'wh_ExprSimple', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition6', cardinality 0..*) is associated with 'wh::Input' (role 'wh_Input', cardinality 0..*).
+'wh::Expr' (role 'wh_Expr57', cardinality 0..*) is associated with 'wh::ExprSimple' (role 'wh_ExprSimple56', cardinality 0..*).
+'wh::Foreach' (role 'wh_Foreach41', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands42', cardinality 0..*).

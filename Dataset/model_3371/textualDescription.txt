@@ -1,0 +1,25 @@
+The model has 13 class(es).
+The class 'DDL::CreatePk' has the following attributes: 'columnName' of type str; 'namePk' of type str.
+The class 'DDL::CreateFk' has the following attributes: 'columnReference' of type str; 'nameFk' of type str; 'columnName' of type str.
+The class 'DDL::CreateTable' has the following attributes: 'tableName' of type str; 'commentTable' of type str.
+The class 'DDL::CreateCk' has the following attributes: 'nameCk' of type str; 'valuesCk' of type str; 'columnName' of type str.
+The class 'DDL::CreateCommentTable' has the following attributes: 'tableName' of type str; 'tableComment' of type str.
+The class 'DDL::CreateDatabase' has the following attributes: 'databaseName' of type str.
+The class 'DDL::Statement' has no attributes.
+The class 'DDL::DDLDefinition' has no attributes.
+The class 'DDL::CreateCommentColumn' has the following attributes: 'columnComment' of type str; 'columnName' of type str; 'tableName' of type str.
+The class 'Statement' has no attributes.
+The class 'DDL::DataDefinition' has no attributes.
+The class 'DDL::CreateColumn' has the following attributes: 'columnName' of type str; 'columnType' of type str; 'commentColumn' of type str; 'columnNull' of type bool.
+The class 'DataDefinition' has no attributes.
+'DDL::CreateCommentTable' is a specialization of 'DataDefinition'.
+'DDL::DataDefinition' is a specialization of 'Statement'.
+'DDL::CreateDatabase' is a specialization of 'DataDefinition'.
+'DDL::CreateCommentColumn' is a specialization of 'DataDefinition'.
+'DDL::CreateTable' is a specialization of 'DataDefinition'.
+'DDL::CreateFk' (role 'DDL_CreateFk7', cardinality 0..*) is associated with 'DDL::CreateTable' (role 'DDL_CreateTable6', cardinality 0..*).
+'DDL::CreateFk' (role 'DDL_CreateFk', cardinality 0..*) is associated with 'DDL::CreateTable' (role 'DDL_CreateTable', cardinality 0..*).
+'DDL::CreateTable' (role 'DDL_CreateTable4', cardinality 0..*) is associated with 'DDL::CreatePk' (role 'DDL_CreatePk', cardinality 0..*).
+'DDL::Statement' (role 'DDL_Statement', cardinality 0..*) is associated with 'DDL::DDLDefinition' (role 'DDL_DDLDefinition', cardinality 0..*).
+'DDL::CreateTable' (role 'DDL_CreateTable2', cardinality 0..*) is associated with 'DDL::CreateColumn' (role 'DDL_CreateColumn', cardinality 0..*).
+'DDL::CreateCk' (role 'DDL_CreateCk', cardinality 0..*) is associated with 'DDL::CreateTable' (role 'DDL_CreateTable9', cardinality 0..*).

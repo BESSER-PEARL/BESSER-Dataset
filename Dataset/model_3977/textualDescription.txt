@@ -1,0 +1,18 @@
+The model has 5 class(es).
+The class 'dtmc::Label' has the following attributes: 'name' of type str.
+The class 'IDBase' has no attributes.
+The class 'dtmc::DTMC' has the following attributes: 'name' of type str.
+The class 'dtmc::Transition' has the following attributes: 'prob' of type float.
+The class 'dtmc::State' has the following attributes: 'name' of type str.
+'dtmc::State' is a specialization of 'IDBase'.
+'dtmc::DTMC' is a specialization of 'IDBase'.
+'dtmc::Label' is a specialization of 'IDBase'.
+'dtmc::Transition' is a specialization of 'IDBase'.
+'dtmc::Label' (role 'labels', cardinality 0..*) is associated with 'dtmc::State' (role 'State12', cardinality 0..*).
+'dtmc::Transition' (role 'outgoing', cardinality 0..*) is associated with 'dtmc::State' (role 'State', cardinality 0..*).
+'dtmc::State' (role 'from_', cardinality 0..*) is associated with 'dtmc::Transition' (role 'Transition6', cardinality 0..*).
+'dtmc::DTMC' (role 'dtmc_DTMC', cardinality 0..*) is associated with 'dtmc::State' (role 'dtmc_State', cardinality 0..*).
+'dtmc::Transition' (role 'incoming', cardinality 0..*) is associated with 'dtmc::State' (role 'State10', cardinality 0..*).
+'dtmc::State' (role 'dtmc_State3', cardinality 0..*) is associated with 'dtmc::DTMC' (role 'dtmc_DTMC2', cardinality 0..*).
+'dtmc::Label' (role 'Label', cardinality 0..*) is associated with 'dtmc::State' (role 'state', cardinality 0..*).
+'dtmc::State' (role 'to', cardinality 0..*) is associated with 'dtmc::Transition' (role 'Transition', cardinality 0..*).

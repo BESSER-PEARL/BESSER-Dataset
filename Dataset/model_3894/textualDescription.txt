@@ -1,0 +1,222 @@
+The model has 92 class(es).
+The class 'workflow::EnumField' has the following attributes: 'name' of type str.
+The class 'workflow::ModelRegistry' has no attributes.
+The class 'workflow::DefaultDocument' has the following attributes: 'placeholder' of type bool.
+The class 'ModelAspect' has no attributes.
+The class 'workflow::Transition' has no attributes.
+The class 'workflow::ActivityC' has no attributes.
+The class 'workflow::ProcessAspect' has no attributes.
+The class 'workflow::InformationRuntimeAspect' has no attributes.
+The class 'workflow::RuntimeModelAspect' has no attributes.
+The class 'workflow::InformationAspect' has no attributes.
+The class 'workflow::EnumFieldValue' has no attributes.
+The class 'workflow::RuntimeInformation' has the following attributes: 'caseIdCount' of type str.
+The class 'workflow::Task' has the following attributes: 'name' of type str.
+The class 'ProcessAspect' has no attributes.
+The class 'workflow::DefaultDocumentDescriptor' has no attributes.
+The class 'Atom' has no attributes.
+The class 'workflow::DocumentContainer' has the following attributes: 'name' of type str.
+The class 'DocumentType' has no attributes.
+The class 'workflow::ConstantAtom' has the following attributes: 'value' of type str.
+The class 'workflow::RuntimeGlobalAspect' has no attributes.
+The class 'workflow::State' has no attributes.
+The class 'workflow::Information' has no attributes.
+The class 'CaseAspect' has no attributes.
+The class 'workflow::OrganisationAspect' has no attributes.
+The class 'ActivityAspect' has no attributes.
+The class 'RuntimeModelAspect' has no attributes.
+The class 'workflow::Arc' has the following attributes: 'name' of type str.
+The class 'workflow::Operator' has no attributes.
+The class 'workflow::AgentContainer' has the following attributes: 'name' of type str.
+The class 'TaskC' has no attributes.
+The class 'workflow::Activity' has the following attributes: 'started' of type bool; 'finished' of type bool.
+The class 'workflow::DocumentType' has the following attributes: 'name' of type str.
+The class 'workflow::FieldAtom' has no attributes.
+The class 'workflow::Expression' has no attributes.
+The class 'Document' has no attributes.
+The class 'workflow::ModelAspect' has no attributes.
+The class 'State' has no attributes.
+The class 'workflow::GreaterThanOperator' has no attributes.
+The class 'workflow::Marking' has no attributes.
+The class 'workflow::ActivityI' has no attributes.
+The class 'workflow::TaskO' has the following attributes: 'name' of type str.
+The class 'workflow::DocumentTypeContainer' has the following attributes: 'name' of type str.
+The class 'workflow::Control' has no attributes.
+The class 'workflow::EnumLiteralAtom' has no attributes.
+The class 'workflow::WorkflowEngine' has no attributes.
+The class 'workflow::EnumLiteral' has the following attributes: 'name' of type str.
+The class 'workflow::Token' has no attributes.
+The class 'workflow::ActivityO' has no attributes.
+The class 'DocumentCondition' has no attributes.
+The class 'workflow::PetriNet' has no attributes.
+The class 'workflow::FieldValue' has the following attributes: 'value' of type str.
+The class 'workflow::Place' has the following attributes: 'name' of type str.
+The class 'TaskAspect' has no attributes.
+The class 'workflow::Agent' has the following attributes: 'username' of type str; 'password' of type str; 'name' of type str.
+The class 'workflow::Process' has the following attributes: 'name' of type str.
+The class 'workflow::Atom' has no attributes.
+The class 'workflow::Document' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'workflow::ProcessDocument' has the following attributes: 'name' of type str.
+The class 'workflow::CoreModel' has the following attributes: 'name' of type str.
+The class 'workflow::CaseC' has no attributes.
+The class 'GlobalAspect' has no attributes.
+The class 'DocumentDescriptor' has no attributes.
+The class 'workflow::DefaultDocumentType' has no attributes.
+The class 'workflow::ActivityAspect' has no attributes.
+The class 'workflow::LessThanOperator' has no attributes.
+The class 'Expression' has no attributes.
+The class 'workflow::DefaultDocumentCondition' has no attributes.
+The class 'workflow::ProcessO' has no attributes.
+The class 'workflow::EnumFieldAtom' has no attributes.
+The class 'Operator' has no attributes.
+The class 'workflow::EqualToOperator' has no attributes.
+The class 'workflow::GlobalAspect' has no attributes.
+The class 'workflow::DocumentDescrAtom' has no attributes.
+The class 'workflow::TaskI' has no attributes.
+The class 'workflow::TaskAspect' has no attributes.
+The class 'workflow::TaskC' has the following attributes: 'name' of type str.
+The class 'workflow::CaseI' has no attributes.
+The class 'workflow::Organisation' has the following attributes: 'name' of type str.
+The class 'workflow::DocumentDescriptor' has the following attributes: 'name' of type str.
+The class 'workflow::UnequalToOperator' has no attributes.
+The class 'workflow::ControlAspect' has no attributes.
+The class 'RuntimeGlobalAspect' has no attributes.
+The class 'workflow::DotOperator' has no attributes.
+The class 'workflow::DocumentCondition' has the following attributes: 'name' of type str.
+The class 'workflow::Field' has the following attributes: 'name' of type str.
+The class 'Control' has no attributes.
+The class 'workflow::CaseO' has no attributes.
+The class 'workflow::CaseAspect' has no attributes.
+The class 'workflow::RuntimeCoreModel' has no attributes.
+The class 'workflow::String2DocumentMap' has the following attributes: 'key' of type str.
+The class 'workflow::Role' has the following attributes: 'name' of type str.
+The class 'workflow::Case' has the following attributes: 'started' of type bool; 'client' of type str; 'finished' of type bool; 'id' of type str.
+'workflow::Information' is a specialization of 'ProcessAspect'.
+'workflow::Control' is a specialization of 'ProcessAspect'.
+'workflow::Marking' is a specialization of 'State'.
+'workflow::CaseI' is a specialization of 'CaseAspect'.
+'workflow::DocumentDescrAtom' is a specialization of 'Atom'.
+'workflow::GreaterThanOperator' is a specialization of 'Operator'.
+'workflow::ActivityC' is a specialization of 'ActivityAspect'.
+'workflow::TaskC' is a specialization of 'TaskAspect'.
+'workflow::EqualToOperator' is a specialization of 'Operator'.
+'workflow::DefaultDocumentType' is a specialization of 'DocumentType'.
+'workflow::ActivityO' is a specialization of 'ActivityAspect'.
+'workflow::DefaultDocument' is a specialization of 'Document'.
+'workflow::CaseO' is a specialization of 'CaseAspect'.
+'workflow::InformationAspect' is a specialization of 'ModelAspect'.
+'workflow::EnumFieldAtom' is a specialization of 'Atom'.
+'workflow::DotOperator' is a specialization of 'Operator'.
+'workflow::TaskI' is a specialization of 'TaskAspect'.
+'workflow::DocumentTypeContainer' is a specialization of 'GlobalAspect'.
+'workflow::LessThanOperator' is a specialization of 'Operator'.
+'workflow::DefaultDocumentDescriptor' is a specialization of 'DocumentDescriptor'.
+'workflow::TaskO' is a specialization of 'TaskAspect'.
+'workflow::FieldAtom' is a specialization of 'Atom'.
+'workflow::DocumentContainer' is a specialization of 'RuntimeGlobalAspect'.
+'workflow::ActivityI' is a specialization of 'ActivityAspect'.
+'workflow::Transition' is a specialization of 'TaskC'.
+'workflow::EnumLiteralAtom' is a specialization of 'Atom'.
+'workflow::Operator' is a specialization of 'Expression'.
+'workflow::ControlAspect' is a specialization of 'ModelAspect'.
+'workflow::ProcessO' is a specialization of 'ProcessAspect'.
+'workflow::ConstantAtom' is a specialization of 'Atom'.
+'workflow::AgentContainer' is a specialization of 'RuntimeGlobalAspect'.
+'workflow::CaseC' is a specialization of 'CaseAspect'.
+'workflow::UnequalToOperator' is a specialization of 'Operator'.
+'workflow::DefaultDocumentCondition' is a specialization of 'DocumentCondition'.
+'workflow::OrganisationAspect' is a specialization of 'ModelAspect'.
+'workflow::PetriNet' is a specialization of 'Control'.
+'workflow::InformationRuntimeAspect' is a specialization of 'RuntimeModelAspect'.
+'workflow::Organisation' is a specialization of 'GlobalAspect'.
+'workflow::Atom' is a specialization of 'Expression'.
+'workflow::Place' (role 'Place39', cardinality 0..*) is associated with 'workflow::Arc' (role 'in_', cardinality 0..*).
+'workflow::Role' (role 'workflow_Role21', cardinality 0..*) is associated with 'workflow::Agent' (role 'workflow_Agent20', cardinality 0..*).
+'workflow::Token' (role 'workflow_Token54', cardinality 0..*) is associated with 'workflow::Place' (role 'workflow_Place55', cardinality 0..*).
+'workflow::DocumentTypeContainer' (role 'workflow_DocumentTypeContainer', cardinality 0..*) is associated with 'workflow::DocumentType' (role 'workflow_DocumentType175', cardinality 0..*).
+'workflow::String2DocumentMap' (role 'workflow_String2DocumentMap142', cardinality 0..*) is associated with 'workflow::Document' (role 'workflow_Document143', cardinality 0..*).
+'workflow::TaskO' (role 'workflow_TaskO1', cardinality 0..*) is associated with 'workflow::TaskO' (role 'workflow_TaskO3', cardinality 0..*).
+'workflow::Token' (role 'workflow_Token', cardinality 0..*) is associated with 'workflow::Marking' (role 'workflow_Marking', cardinality 0..*).
+'workflow::Task' (role 'Task', cardinality 0..*) is associated with 'workflow::TaskAspect' (role 'aspects89', cardinality 0..*).
+'workflow::Field' (role 'workflow_Field135', cardinality 0..*) is associated with 'workflow::FieldValue' (role 'workflow_FieldValue134', cardinality 0..*).
+'workflow::Arc' (role 'Arc', cardinality 0..*) is associated with 'workflow::Transition' (role 'sourceTransition', cardinality 0..*).
+'workflow::EnumField' (role 'workflow_EnumField158', cardinality 0..*) is associated with 'workflow::EnumFieldValue' (role 'workflow_EnumFieldValue157', cardinality 0..*).
+'workflow::EnumLiteralAtom' (role 'workflow_EnumLiteralAtom', cardinality 0..*) is associated with 'workflow::EnumLiteral' (role 'workflow_EnumLiteral165', cardinality 0..*).
+'workflow::ProcessO' (role 'workflow_ProcessO', cardinality 0..*) is associated with 'workflow::Role' (role 'workflow_Role126', cardinality 0..*).
+'workflow::Agent' (role 'Agent', cardinality 0..*) is associated with 'workflow::ActivityO' (role 'active', cardinality 0..*).
+'workflow::DocumentType' (role 'workflow_DocumentType', cardinality 0..*) is associated with 'workflow::DocumentDescriptor' (role 'workflow_DocumentDescriptor72', cardinality 0..*).
+'workflow::ActivityAspect' (role 'ActivityAspect', cardinality 0..*) is associated with 'workflow::Activity' (role 'core11', cardinality 0..*).
+'workflow::Agent' (role 'workflow_Agent137', cardinality 0..*) is associated with 'workflow::CaseO' (role 'workflow_CaseO', cardinality 0..*).
+'workflow::Marking' (role 'workflow_Marking51', cardinality 0..*) is associated with 'workflow::PetriNet' (role 'workflow_PetriNet52', cardinality 0..*).
+'workflow::PetriNet' (role 'workflow_PetriNet29', cardinality 0..*) is associated with 'workflow::Place' (role 'workflow_Place30', cardinality 0..*).
+'workflow::Document' (role 'workflow_Document81', cardinality 0..*) is associated with 'workflow::DocumentType' (role 'workflow_DocumentType82', cardinality 0..*).
+'workflow::WorkflowEngine' (role 'WorkflowEngine', cardinality 0..*) is associated with 'workflow::ModelRegistry' (role 'modelRegistry', cardinality 0..*).
+'workflow::ModelRegistry' (role 'modelRegistry60', cardinality 0..*) is associated with 'workflow::GlobalAspect' (role 'GlobalAspect', cardinality 0..*).
+'workflow::WorkflowEngine' (role 'WorkflowEngine173', cardinality 0..*) is associated with 'workflow::RuntimeGlobalAspect' (role 'runtimeGlobalAspects', cardinality 0..*).
+'workflow::EnumLiteral' (role 'workflow_EnumLiteral155', cardinality 0..*) is associated with 'workflow::EnumField' (role 'workflow_EnumField154', cardinality 0..*).
+'workflow::Place' (role 'workflow_Place33', cardinality 0..*) is associated with 'workflow::PetriNet' (role 'workflow_PetriNet32', cardinality 0..*).
+'workflow::DefaultDocumentType' (role 'workflow_DefaultDocumentType', cardinality 0..*) is associated with 'workflow::Field' (role 'workflow_Field', cardinality 0..*).
+'workflow::PetriNet' (role 'workflow_PetriNet', cardinality 0..*) is associated with 'workflow::Arc' (role 'workflow_Arc', cardinality 0..*).
+'workflow::RuntimeModelAspect' (role 'workflow_RuntimeModelAspect', cardinality 0..*) is associated with 'workflow::RuntimeCoreModel' (role 'workflow_RuntimeCoreModel', cardinality 0..*).
+'workflow::EnumLiteral' (role 'workflow_EnumLiteral', cardinality 0..*) is associated with 'workflow::EnumField' (role 'workflow_EnumField152', cardinality 0..*).
+'workflow::ModelAspect' (role 'workflow_ModelAspect', cardinality 0..*) is associated with 'workflow::ProcessAspect' (role 'workflow_ProcessAspect', cardinality 0..*).
+'workflow::Process' (role 'workflow_Process', cardinality 0..*) is associated with 'workflow::Case' (role 'workflow_Case8', cardinality 0..*).
+'workflow::DocumentType' (role 'workflow_DocumentType140', cardinality 0..*) is associated with 'workflow::ProcessDocument' (role 'workflow_ProcessDocument139', cardinality 0..*).
+'workflow::Activity' (role 'workflow_Activity13', cardinality 0..*) is associated with 'workflow::Task' (role 'workflow_Task', cardinality 0..*).
+'workflow::CaseAspect' (role 'CaseAspect', cardinality 0..*) is associated with 'workflow::Case' (role 'core', cardinality 0..*).
+'workflow::Arc' (role 'Arc46', cardinality 0..*) is associated with 'workflow::Place' (role 'targetPlace', cardinality 0..*).
+'workflow::WorkflowEngine' (role 'engine', cardinality 0..*) is associated with 'workflow::ModelRegistry' (role 'ModelRegistry120', cardinality 0..*).
+'workflow::Transition' (role 'Transition44', cardinality 0..*) is associated with 'workflow::Arc' (role 'in_43', cardinality 0..*).
+'workflow::TaskAspect' (role 'TaskAspect', cardinality 0..*) is associated with 'workflow::Task' (role 'core112', cardinality 0..*).
+'workflow::CaseC' (role 'workflow_CaseC', cardinality 0..*) is associated with 'workflow::ActivityC' (role 'workflow_ActivityC', cardinality 0..*).
+'workflow::Activity' (role 'workflow_Activity15', cardinality 0..*) is associated with 'workflow::ActivityAspect' (role 'workflow_ActivityAspect', cardinality 0..*).
+'workflow::Document' (role 'workflow_Document177', cardinality 0..*) is associated with 'workflow::DocumentContainer' (role 'workflow_DocumentContainer', cardinality 0..*).
+'workflow::State' (role 'workflow_State', cardinality 0..*) is associated with 'workflow::CaseC' (role 'workflow_CaseC24', cardinality 0..*).
+'workflow::TaskI' (role 'workflow_TaskI69', cardinality 0..*) is associated with 'workflow::DocumentCondition' (role 'workflow_DocumentCondition70', cardinality 0..*).
+'workflow::RuntimeCoreModel' (role 'workflow_RuntimeCoreModel122', cardinality 0..*) is associated with 'workflow::WorkflowEngine' (role 'workflow_WorkflowEngine', cardinality 0..*).
+'workflow::GlobalAspect' (role 'globalAspects', cardinality 0..*) is associated with 'workflow::ModelRegistry' (role 'ModelRegistry171', cardinality 0..*).
+'workflow::ActivityI' (role 'workflow_ActivityI78', cardinality 0..*) is associated with 'workflow::Document' (role 'workflow_Document79', cardinality 0..*).
+'workflow::Transition' (role 'targetTransition', cardinality 0..*) is associated with 'workflow::Arc' (role 'Arc36', cardinality 0..*).
+'workflow::ActivityI' (role 'workflow_ActivityI', cardinality 0..*) is associated with 'workflow::Document' (role 'workflow_Document', cardinality 0..*).
+'workflow::Task' (role 'workflow_Task106', cardinality 0..*) is associated with 'workflow::Process' (role 'workflow_Process105', cardinality 0..*).
+'workflow::DefaultDocument' (role 'workflow_DefaultDocument132', cardinality 0..*) is associated with 'workflow::EnumFieldValue' (role 'workflow_EnumFieldValue', cardinality 0..*).
+'workflow::FieldAtom' (role 'workflow_FieldAtom', cardinality 0..*) is associated with 'workflow::Field' (role 'workflow_Field148', cardinality 0..*).
+'workflow::TaskAspect' (role 'workflow_TaskAspect', cardinality 0..*) is associated with 'workflow::ProcessAspect' (role 'workflow_ProcessAspect86', cardinality 0..*).
+'workflow::Case' (role 'workflow_Case', cardinality 0..*) is associated with 'workflow::Activity' (role 'workflow_Activity', cardinality 0..*).
+'workflow::RuntimeGlobalAspect' (role 'RuntimeGlobalAspect', cardinality 0..*) is associated with 'workflow::WorkflowEngine' (role 'engine124', cardinality 0..*).
+'workflow::ProcessDocument' (role 'workflow_ProcessDocument', cardinality 0..*) is associated with 'workflow::Information' (role 'workflow_Information', cardinality 0..*).
+'workflow::DocumentDescriptor' (role 'workflow_DocumentDescriptor74', cardinality 0..*) is associated with 'workflow::ProcessDocument' (role 'workflow_ProcessDocument75', cardinality 0..*).
+'workflow::TaskI' (role 'workflow_TaskI64', cardinality 0..*) is associated with 'workflow::DocumentDescriptor' (role 'workflow_DocumentDescriptor65', cardinality 0..*).
+'workflow::ModelRegistry' (role 'modelRegistry58', cardinality 0..*) is associated with 'workflow::CoreModel' (role 'CoreModel', cardinality 0..*).
+'workflow::ProcessAspect' (role 'ProcessAspect', cardinality 0..*) is associated with 'workflow::Process' (role 'core110', cardinality 0..*).
+'workflow::Case' (role 'cases', cardinality 0..*) is associated with 'workflow::RuntimeCoreModel' (role 'RuntimeCoreModel', cardinality 0..*).
+'workflow::ProcessAspect' (role 'workflow_ProcessAspect91', cardinality 0..*) is associated with 'workflow::CaseAspect' (role 'workflow_CaseAspect', cardinality 0..*).
+'workflow::Role' (role 'workflow_Role169', cardinality 0..*) is associated with 'workflow::Organisation' (role 'workflow_Organisation', cardinality 0..*).
+'workflow::RuntimeCoreModel' (role 'workflow_RuntimeCoreModel117', cardinality 0..*) is associated with 'workflow::CoreModel' (role 'workflow_CoreModel118', cardinality 0..*).
+'workflow::Activity' (role 'Activity', cardinality 0..*) is associated with 'workflow::ActivityAspect' (role 'aspects98', cardinality 0..*).
+'workflow::EnumFieldValue' (role 'workflow_EnumFieldValue160', cardinality 0..*) is associated with 'workflow::EnumLiteral' (role 'workflow_EnumLiteral161', cardinality 0..*).
+'workflow::DefaultDocumentCondition' (role 'workflow_DefaultDocumentCondition', cardinality 0..*) is associated with 'workflow::Expression' (role 'workflow_Expression150', cardinality 0..*).
+'workflow::RuntimeCoreModel' (role 'runtimeCoreModel', cardinality 0..*) is associated with 'workflow::Case' (role 'Case115', cardinality 0..*).
+'workflow::Expression' (role 'workflow_Expression', cardinality 0..*) is associated with 'workflow::Operator' (role 'workflow_Operator', cardinality 0..*).
+'workflow::Process' (role 'Process102', cardinality 0..*) is associated with 'workflow::CoreModel' (role 'coreModel', cardinality 0..*).
+'workflow::CaseAspect' (role 'aspects93', cardinality 0..*) is associated with 'workflow::Case' (role 'Case', cardinality 0..*).
+'workflow::DocumentDescriptor' (role 'workflow_DocumentDescriptor146', cardinality 0..*) is associated with 'workflow::DocumentDescrAtom' (role 'workflow_DocumentDescrAtom', cardinality 0..*).
+'workflow::Agent' (role 'assignedTo', cardinality 0..*) is associated with 'workflow::ActivityO' (role 'ActivityO', cardinality 0..*).
+'workflow::Place' (role 'Place', cardinality 0..*) is associated with 'workflow::Arc' (role 'out', cardinality 0..*).
+'workflow::Agent' (role 'workflow_Agent167', cardinality 0..*) is associated with 'workflow::AgentContainer' (role 'workflow_AgentContainer', cardinality 0..*).
+'workflow::EnumField' (role 'workflow_EnumField', cardinality 0..*) is associated with 'workflow::DefaultDocumentType' (role 'workflow_DefaultDocumentType129', cardinality 0..*).
+'workflow::Role' (role 'workflow_Role', cardinality 0..*) is associated with 'workflow::TaskO' (role 'workflow_TaskO', cardinality 0..*).
+'workflow::CoreModel' (role 'CoreModel108', cardinality 0..*) is associated with 'workflow::Process' (role 'process', cardinality 0..*).
+'workflow::CoreModel' (role 'coreModels', cardinality 0..*) is associated with 'workflow::ModelRegistry' (role 'ModelRegistry', cardinality 0..*).
+'workflow::Arc' (role 'out41', cardinality 0..*) is associated with 'workflow::Transition' (role 'Transition', cardinality 0..*).
+'workflow::TaskI' (role 'workflow_TaskI', cardinality 0..*) is associated with 'workflow::DocumentDescriptor' (role 'workflow_DocumentDescriptor', cardinality 0..*).
+'workflow::String2DocumentMap' (role 'workflow_String2DocumentMap', cardinality 0..*) is associated with 'workflow::CaseI' (role 'workflow_CaseI', cardinality 0..*).
+'workflow::Process' (role 'Process', cardinality 0..*) is associated with 'workflow::ProcessAspect' (role 'aspects', cardinality 0..*).
+'workflow::EnumField' (role 'workflow_EnumField163', cardinality 0..*) is associated with 'workflow::EnumFieldAtom' (role 'workflow_EnumFieldAtom', cardinality 0..*).
+'workflow::ActivityAspect' (role 'workflow_ActivityAspect95', cardinality 0..*) is associated with 'workflow::TaskAspect' (role 'workflow_TaskAspect96', cardinality 0..*).
+'workflow::Agent' (role 'workflow_Agent', cardinality 0..*) is associated with 'workflow::Role' (role 'workflow_Role17', cardinality 0..*).
+'workflow::ModelAspect' (role 'workflow_ModelAspect100', cardinality 0..*) is associated with 'workflow::CoreModel' (role 'workflow_CoreModel', cardinality 0..*).
+'workflow::FieldValue' (role 'workflow_FieldValue', cardinality 0..*) is associated with 'workflow::DefaultDocument' (role 'workflow_DefaultDocument', cardinality 0..*).
+'workflow::PetriNet' (role 'workflow_PetriNet27', cardinality 0..*) is associated with 'workflow::Place' (role 'workflow_Place', cardinality 0..*).
+'workflow::TaskI' (role 'workflow_TaskI67', cardinality 0..*) is associated with 'workflow::DocumentCondition' (role 'workflow_DocumentCondition', cardinality 0..*).
+'workflow::Arc' (role 'Arc48', cardinality 0..*) is associated with 'workflow::Place' (role 'sourcePlace', cardinality 0..*).

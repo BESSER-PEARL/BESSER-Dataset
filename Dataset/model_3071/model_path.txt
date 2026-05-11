@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/michelalbonico/Giraffe-Project/old-dsl/fr.mines_nantes.atlanmod.dsl.GiraffeDSL/model/generated/GiraffeDSL.ecore

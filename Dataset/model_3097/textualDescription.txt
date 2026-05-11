@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'SimpleClass::PrimitiveDataType' has no attributes.
+The class 'SimpleClass::Class' has the following attributes: 'is_persistent' of type str.
+The class 'SimpleClass::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type str.
+The class 'SimpleClass::Schema' has no attributes.
+The class 'SimpleClass::Classifier' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'Class' has no attributes.
+The class 'SimpleClass::Association' has the following attributes: 'name' of type str.
+The class 'Attribute' has no attributes.
+The class 'Association' has no attributes.
+The class 'PrimitiveDataType' has no attributes.
+The enumeration 'EA' has the following literals: 'Author', 'Institution', 'Journal'.
+The enumeration 'Vocabulary' has the following literals: 'Language', 'Eurovocs', 'Normal', 'Decs'.
+The enumeration 'Entity' does not specify any literals.
+'SimpleClass::PrimitiveDataType' is a specialization of 'Classifier'.
+'SimpleClass::Schema' is a specialization of 'Classifier'.
+'SimpleClass::Class' is a specialization of 'Classifier'.
+'SimpleClass::Class' (role 'SimpleClass_Class2', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'SimpleClass::Schema' (role 'SimpleClass_Schema', cardinality 0..*) is associated with 'Class' (role 'Class10', cardinality 0..*).
+'SimpleClass::Schema' (role 'SimpleClass_Schema14', cardinality 0..*) is associated with 'PrimitiveDataType' (role 'PrimitiveDataType', cardinality 0..*).
+'Class' (role 'Class4', cardinality 0..*) is associated with 'SimpleClass::Association' (role 'SimpleClass_Association', cardinality 0..*).
+'SimpleClass::Class' (role 'SimpleClass_Class', cardinality 0..*) is associated with 'Class' (role 'Class', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'SimpleClass::Attribute' (role 'SimpleClass_Attribute', cardinality 0..*).
+'Association' (role 'Association', cardinality 0..*) is associated with 'SimpleClass::Schema' (role 'SimpleClass_Schema12', cardinality 0..*).
+'SimpleClass::Association' (role 'SimpleClass_Association6', cardinality 0..*) is associated with 'Class' (role 'Class7', cardinality 0..*).

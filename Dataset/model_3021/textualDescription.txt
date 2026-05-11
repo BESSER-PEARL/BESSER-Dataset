@@ -1,0 +1,115 @@
+The model has 35 class(es).
+The class 'javali::Break' has no attributes.
+The class 'javali::Literal' has the following attributes: 'value' of type str.
+The class 'javali::Block' has no attributes.
+The class 'javali::Multiplication' has the following attributes: 'operator' of type str.
+The class 'javali::Record' has no attributes.
+The class 'javali::Xor' has no attributes.
+The class 'javali::Module' has no attributes.
+The class 'javali::NewArray' has no attributes.
+The class 'javali::IfElse' has no attributes.
+The class 'javali::Or' has no attributes.
+The class 'javali::Continue' has no attributes.
+The class 'javali::And' has no attributes.
+The class 'javali::For' has no attributes.
+The class 'javali::Type' has the following attributes: 'arrayDims' of type str.
+The class 'javali::ProcCall' has no attributes.
+The class 'javali::Increment' has no attributes.
+The class 'javali::Addition' has the following attributes: 'operator' of type str.
+The class 'Expression' has no attributes.
+The class 'javali::VarAssign' has no attributes.
+The class 'javali::DoWhile' has no attributes.
+The class 'javali::VarDeclaration' has no attributes.
+The class 'Statement' has no attributes.
+The class 'javali::Return' has no attributes.
+The class 'javali::While' has no attributes.
+The class 'javali::Procedure' has the following attributes: 'void' of type bool; 'comment' of type str; 'static' of type bool.
+The class 'javali::Expression' has no attributes.
+The class 'javali::Relation' has the following attributes: 'operator' of type str.
+The class 'javali::Decrement' has no attributes.
+The class 'javali::NewObject' has no attributes.
+The class 'javali::VarExpression' has no attributes.
+The class 'javali::Equality' has the following attributes: 'operator' of type str.
+The class 'javali::Constant' has the following attributes: 'static' of type bool.
+The class 'javali::Null' has no attributes.
+The class 'javali::Identifier' has the following attributes: 'id' of type str.
+The class 'javali::Statement' has no attributes.
+'javali::For' is a specialization of 'Statement'.
+'javali::Return' is a specialization of 'Statement'.
+'javali::VarExpression' is a specialization of 'Expression'.
+'javali::Equality' is a specialization of 'Expression'.
+'javali::VarAssign' is a specialization of 'Statement'.
+'javali::Addition' is a specialization of 'Expression'.
+'javali::Decrement' is a specialization of 'Statement'.
+'javali::ProcCall' is a specialization of 'Expression'.
+'javali::Continue' is a specialization of 'Statement'.
+'javali::While' is a specialization of 'Statement'.
+'javali::Xor' is a specialization of 'Expression'.
+'javali::And' is a specialization of 'Expression'.
+'javali::NewObject' is a specialization of 'Expression'.
+'javali::DoWhile' is a specialization of 'Statement'.
+'javali::NewArray' is a specialization of 'Expression'.
+'javali::Literal' is a specialization of 'Expression'.
+'javali::Null' is a specialization of 'Expression'.
+'javali::Increment' is a specialization of 'Statement'.
+'javali::Multiplication' is a specialization of 'Expression'.
+'javali::VarDeclaration' is a specialization of 'Statement'.
+'javali::Break' is a specialization of 'Statement'.
+'javali::Or' is a specialization of 'Expression'.
+'javali::IfElse' is a specialization of 'Statement'.
+'javali::ProcCall' is a specialization of 'Statement'.
+'javali::Relation' is a specialization of 'Expression'.
+'javali::Statement' (role 'javali_Statement', cardinality 0..*) is associated with 'javali::Block' (role 'javali_Block28', cardinality 0..*).
+'javali::Module' (role 'javali_Module2', cardinality 0..*) is associated with 'javali::Record' (role 'javali_Record', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression94', cardinality 0..*) is associated with 'javali::NewArray' (role 'javali_NewArray93', cardinality 0..*).
+'javali::Procedure' (role 'javali_Procedure17', cardinality 0..*) is associated with 'javali::Type' (role 'javali_Type18', cardinality 0..*).
+'javali::Identifier' (role 'javali_Identifier96', cardinality 0..*) is associated with 'javali::NewObject' (role 'javali_NewObject', cardinality 0..*).
+'javali::Procedure' (role 'javali_Procedure', cardinality 0..*) is associated with 'javali::Module' (role 'javali_Module4', cardinality 0..*).
+'javali::DoWhile' (role 'javali_DoWhile70', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression71', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression103', cardinality 0..*) is associated with 'javali::Xor' (role 'javali_Xor', cardinality 0..*).
+'javali::Addition' (role 'javali_Addition', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression123', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression', cardinality 0..*) is associated with 'javali::Return' (role 'javali_Return', cardinality 0..*).
+'javali::ProcCall' (role 'javali_ProcCall', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier83', cardinality 0..*).
+'javali::Procedure' (role 'javali_Procedure20', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier21', cardinality 0..*).
+'javali::Constant' (role 'javali_Constant10', cardinality 0..*) is associated with 'javali::Literal' (role 'javali_Literal', cardinality 0..*).
+'javali::VarAssign' (role 'javali_VarAssign', cardinality 0..*) is associated with 'javali::VarExpression' (role 'javali_VarExpression', cardinality 0..*).
+'javali::For' (role 'javali_For59', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression60', cardinality 0..*).
+'javali::While' (role 'javali_While54', cardinality 0..*) is associated with 'javali::Block' (role 'javali_Block55', cardinality 0..*).
+'javali::Identifier' (role 'javali_Identifier91', cardinality 0..*) is associated with 'javali::NewArray' (role 'javali_NewArray', cardinality 0..*).
+'javali::Addition' (role 'javali_Addition125', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression126', cardinality 0..*).
+'javali::For' (role 'javali_For', cardinality 0..*) is associated with 'javali::Statement' (role 'javali_Statement57', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression44', cardinality 0..*) is associated with 'javali::IfElse' (role 'javali_IfElse', cardinality 0..*).
+'javali::Decrement' (role 'javali_Decrement', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier75', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression121', cardinality 0..*) is associated with 'javali::Relation' (role 'javali_Relation120', cardinality 0..*).
+'javali::IfElse' (role 'javali_IfElse49', cardinality 0..*) is associated with 'javali::Block' (role 'javali_Block50', cardinality 0..*).
+'javali::Procedure' (role 'javali_Procedure23', cardinality 0..*) is associated with 'javali::VarDeclaration' (role 'javali_VarDeclaration24', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression108', cardinality 0..*) is associated with 'javali::And' (role 'javali_And', cardinality 0..*).
+'javali::Equality' (role 'javali_Equality', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression113', cardinality 0..*).
+'javali::Record' (role 'javali_Record15', cardinality 0..*) is associated with 'javali::VarDeclaration' (role 'javali_VarDeclaration', cardinality 0..*).
+'javali::Identifier' (role 'javali_Identifier35', cardinality 0..*) is associated with 'javali::VarDeclaration' (role 'javali_VarDeclaration34', cardinality 0..*).
+'javali::VarDeclaration' (role 'javali_VarDeclaration37', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression38', cardinality 0..*).
+'javali::Block' (role 'javali_Block', cardinality 0..*) is associated with 'javali::Procedure' (role 'javali_Procedure26', cardinality 0..*).
+'javali::For' (role 'javali_For65', cardinality 0..*) is associated with 'javali::Block' (role 'javali_Block66', cardinality 0..*).
+'javali::Statement' (role 'javali_Statement63', cardinality 0..*) is associated with 'javali::For' (role 'javali_For62', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression81', cardinality 0..*) is associated with 'javali::VarExpression' (role 'javali_VarExpression80', cardinality 0..*).
+'javali::Xor' (role 'javali_Xor105', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression106', cardinality 0..*).
+'javali::Type' (role 'javali_Type88', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier89', cardinality 0..*).
+'javali::Multiplication' (role 'javali_Multiplication130', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression131', cardinality 0..*).
+'javali::Or' (role 'javali_Or', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression98', cardinality 0..*).
+'javali::Record' (role 'javali_Record12', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier13', cardinality 0..*).
+'javali::Identifier' (role 'javali_Identifier', cardinality 0..*) is associated with 'javali::Constant' (role 'javali_Constant8', cardinality 0..*).
+'javali::Constant' (role 'javali_Constant6', cardinality 0..*) is associated with 'javali::Type' (role 'javali_Type', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression128', cardinality 0..*) is associated with 'javali::Multiplication' (role 'javali_Multiplication', cardinality 0..*).
+'javali::Relation' (role 'javali_Relation', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression118', cardinality 0..*).
+'javali::Equality' (role 'javali_Equality115', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression116', cardinality 0..*).
+'javali::VarExpression' (role 'javali_VarExpression77', cardinality 0..*) is associated with 'javali::Identifier' (role 'javali_Identifier78', cardinality 0..*).
+'javali::Expression' (role 'javali_Expression101', cardinality 0..*) is associated with 'javali::Or' (role 'javali_Or100', cardinality 0..*).
+'javali::ProcCall' (role 'javali_ProcCall85', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression86', cardinality 0..*).
+'javali::Block' (role 'javali_Block68', cardinality 0..*) is associated with 'javali::DoWhile' (role 'javali_DoWhile', cardinality 0..*).
+'javali::Type' (role 'javali_Type32', cardinality 0..*) is associated with 'javali::VarDeclaration' (role 'javali_VarDeclaration31', cardinality 0..*).
+'javali::VarAssign' (role 'javali_VarAssign41', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression42', cardinality 0..*).
+'javali::IfElse' (role 'javali_IfElse46', cardinality 0..*) is associated with 'javali::Block' (role 'javali_Block47', cardinality 0..*).
+'javali::And' (role 'javali_And110', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression111', cardinality 0..*).
+'javali::Identifier' (role 'javali_Identifier73', cardinality 0..*) is associated with 'javali::Increment' (role 'javali_Increment', cardinality 0..*).
+'javali::While' (role 'javali_While', cardinality 0..*) is associated with 'javali::Expression' (role 'javali_Expression52', cardinality 0..*).
+'javali::Module' (role 'javali_Module', cardinality 0..*) is associated with 'javali::Constant' (role 'javali_Constant', cardinality 0..*).

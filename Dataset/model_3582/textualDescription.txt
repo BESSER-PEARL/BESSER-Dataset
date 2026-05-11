@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'typeA::ElementA' has the following attributes: 'name' of type str.
+The class 'typeA::RootA' has the following attributes: 'name' of type str.
+'typeA::RootA' (role 'typeA_RootA', cardinality 0..*) is associated with 'typeA::ElementA' (role 'typeA_ElementA', cardinality 0..*).

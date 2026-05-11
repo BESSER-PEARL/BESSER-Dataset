@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'd::Z' has the following attributes: 'b' of type int.
+The class 'd::Y' has the following attributes: 'a' of type str.
+The class 'Y' has no attributes.
+The class 'd::B' has no attributes.
+The class 'd::A' has no attributes.
+The class 'd::X' has no attributes.
+The class 'A' has no attributes.
+'d::X' is a specialization of 'A'.
+'d::B' is a specialization of 'Y'.
+'d::B' (role 'd_B2', cardinality 0..*) is associated with 'd::Z' (role 'd_Z', cardinality 0..*).
+'d::B' (role 'd_B', cardinality 0..*) is associated with 'd::A' (role 'd_A', cardinality 0..*).

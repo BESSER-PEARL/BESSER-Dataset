@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'skol::Diagram' has no attributes.
+The class 'skol::Student' has the following attributes: 'name' of type str.
+The class 'skol::School' has the following attributes: 'name' of type str.
+The class 'skol::Classroom' has the following attributes: 'name' of type str.
+'skol::Classroom' (role 'skol_Classroom', cardinality 0..*) is associated with 'skol::Student' (role 'skol_Student', cardinality 0..*).
+'skol::Classroom' (role 'skol_Classroom4', cardinality 0..*) is associated with 'skol::School' (role 'skol_School3', cardinality 0..*).
+'skol::Diagram' (role 'skol_Diagram', cardinality 0..*) is associated with 'skol::School' (role 'skol_School', cardinality 0..*).
+'skol::Student' (role 'skol_Student7', cardinality 0..*) is associated with 'skol::Student' (role 'skol_Student5', cardinality 0..*).

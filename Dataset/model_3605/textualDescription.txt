@@ -1,0 +1,197 @@
+The model has 59 class(es).
+The class 'noop::AsmStatement' has the following attributes: 'codes' of type str.
+The class 'noop::IncExpression' has no attributes.
+The class 'noop::NotExpression' has no attributes.
+The class 'noop::MemberSelect' has the following attributes: 'hasArgs' of type bool.
+The class 'noop::ForeverStatement' has the following attributes: 'name' of type str.
+The class 'noop::SubExpression' has no attributes.
+The class 'noop::RShiftExpression' has no attributes.
+The class 'noop::ModExpression' has no attributes.
+The class 'noop::CastExpression' has no attributes.
+The class 'noop::ArrayLiteral' has no attributes.
+The class 'noop::Super' has no attributes.
+The class 'noop::GtExpression' has no attributes.
+The class 'noop::Variable' has no attributes.
+The class 'noop::MulExpression' has no attributes.
+The class 'noop::BOrExpression' has no attributes.
+The class 'noop::EqualsExpression' has no attributes.
+The class 'noop::Block' has no attributes.
+The class 'noop::LtExpression' has no attributes.
+The class 'noop::LeExpression' has no attributes.
+The class 'noop::InstanceOfExpression' has no attributes.
+The class 'noop::ConstructorField' has no attributes.
+The class 'noop::AndExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'noop::AddExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'noop::Index' has no attributes.
+The class 'noop::SigNegExpression' has no attributes.
+The class 'noop::ByteLiteral' has the following attributes: 'value' of type str.
+The class 'Member' has no attributes.
+The class 'noop::BXorExpression' has no attributes.
+The class 'noop::AssignmentExpression' has the following attributes: 'assignment' of type str.
+The class 'noop::MemberRef' has the following attributes: 'hasArgs' of type bool.
+The class 'noop::DifferExpression' has no attributes.
+The class 'noop::NewInstance' has no attributes.
+The class 'noop::NoopClass' has the following attributes: 'name' of type str.
+The class 'noop::DivExpression' has no attributes.
+The class 'noop::Expression' has no attributes.
+The class 'noop::Member' has the following attributes: 'name' of type str.
+The class 'noop::Storage' has the following attributes: 'type' of type str.
+The class 'noop::StringLiteral' has the following attributes: 'value' of type str.
+The class 'noop::This' has no attributes.
+The class 'noop::ContinueStatement' has the following attributes: 'name' of type str.
+The class 'noop::ReturnStatement' has the following attributes: 'name' of type str.
+The class 'noop::Method' has no attributes.
+The class 'noop::Length' has no attributes.
+The class 'noop::ElseStatement' has the following attributes: 'name' of type str.
+The class 'noop::BAndExpression' has no attributes.
+The class 'noop::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'noop::ForStatement' has the following attributes: 'name' of type str.
+The class 'noop::Statement' has no attributes.
+The class 'noop::BreakStatement' has the following attributes: 'name' of type str.
+The class 'noop::GeExpression' has no attributes.
+The class 'noop::ComplementExpression' has no attributes.
+The class 'noop::SigPosExpression' has no attributes.
+The class 'noop::OrExpression' has no attributes.
+The class 'noop::IfStatement' has the following attributes: 'name' of type str.
+The class 'noop::LShiftExpression' has no attributes.
+The class 'noop::DecExpression' has no attributes.
+The class 'noop::Constructor' has no attributes.
+The enumeration 'StorageType' has the following literals: 'INLINE', 'INESCHR', 'INESMIR', 'NMI', 'INESPRG', 'RESET', 'IRQ', 'PRGROM', 'ZP', 'MMC3CFG', 'CHRROM', 'INESMAPPER'.
+The enumeration 'AssignmentType' has the following literals: 'BAN_ASSIGN', 'ASSIGN', 'SUB_ASSIGN', 'MOD_ASSIGN', 'BRS_ASSIGN', 'BOR_ASSIGN', 'MUL_ASSIGN', 'DIV_ASSIGN', 'BLS_ASSIGN', 'ADD_ASSIGN', 'XOR_ASSIGN'.
+'noop::NewInstance' is a specialization of 'Expression'.
+'noop::BOrExpression' is a specialization of 'Expression'.
+'noop::InstanceOfExpression' is a specialization of 'Expression'.
+'noop::DecExpression' is a specialization of 'Expression'.
+'noop::DivExpression' is a specialization of 'Expression'.
+'noop::AddExpression' is a specialization of 'Expression'.
+'noop::SigPosExpression' is a specialization of 'Expression'.
+'noop::Super' is a specialization of 'Expression'.
+'noop::OrExpression' is a specialization of 'Expression'.
+'noop::LtExpression' is a specialization of 'Expression'.
+'noop::BXorExpression' is a specialization of 'Expression'.
+'noop::AssignmentExpression' is a specialization of 'Expression'.
+'noop::BAndExpression' is a specialization of 'Expression'.
+'noop::ReturnStatement' is a specialization of 'Statement'.
+'noop::IfStatement' is a specialization of 'Statement'.
+'noop::BreakStatement' is a specialization of 'Statement'.
+'noop::This' is a specialization of 'Expression'.
+'noop::SubExpression' is a specialization of 'Expression'.
+'noop::Variable' is a specialization of 'Member'.
+'noop::MemberSelect' is a specialization of 'Expression'.
+'noop::EqualsExpression' is a specialization of 'Expression'.
+'noop::BoolLiteral' is a specialization of 'Expression'.
+'noop::SigNegExpression' is a specialization of 'Expression'.
+'noop::IncExpression' is a specialization of 'Expression'.
+'noop::LeExpression' is a specialization of 'Expression'.
+'noop::RShiftExpression' is a specialization of 'Expression'.
+'noop::ByteLiteral' is a specialization of 'Expression'.
+'noop::ContinueStatement' is a specialization of 'Statement'.
+'noop::AndExpression' is a specialization of 'Expression'.
+'noop::DifferExpression' is a specialization of 'Expression'.
+'noop::LShiftExpression' is a specialization of 'Expression'.
+'noop::NotExpression' is a specialization of 'Expression'.
+'noop::MemberRef' is a specialization of 'Expression'.
+'noop::StringLiteral' is a specialization of 'Expression'.
+'noop::GeExpression' is a specialization of 'Expression'.
+'noop::AsmStatement' is a specialization of 'Statement'.
+'noop::CastExpression' is a specialization of 'Expression'.
+'noop::Method' is a specialization of 'Member'.
+'noop::Expression' is a specialization of 'Statement'.
+'noop::ComplementExpression' is a specialization of 'Expression'.
+'noop::Variable' is a specialization of 'Statement'.
+'noop::ArrayLiteral' is a specialization of 'Expression'.
+'noop::ModExpression' is a specialization of 'Expression'.
+'noop::GtExpression' is a specialization of 'Expression'.
+'noop::MulExpression' is a specialization of 'Expression'.
+'noop::ForStatement' is a specialization of 'Statement'.
+'noop::ForeverStatement' is a specialization of 'Statement'.
+'noop::Member' (role 'noop_Member208', cardinality 0..*) is associated with 'noop::MemberRef' (role 'noop_MemberRef', cardinality 0..*).
+'noop::Method' (role 'noop_Method', cardinality 0..*) is associated with 'noop::Variable' (role 'noop_Variable16', cardinality 0..*).
+'noop::BOrExpression' (role 'noop_BOrExpression84', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression85', cardinality 0..*).
+'noop::MemberSelect' (role 'noop_MemberSelect192', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression193', cardinality 0..*).
+'noop::NoopClass' (role 'noop_NoopClass12', cardinality 0..*) is associated with 'noop::Variable' (role 'noop_Variable11', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression142', cardinality 0..*) is associated with 'noop::AddExpression' (role 'noop_AddExpression', cardinality 0..*).
+'noop::NoopClass' (role 'noop_NoopClass3', cardinality 0..*) is associated with 'noop::Member' (role 'noop_Member', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression175', cardinality 0..*) is associated with 'noop::ComplementExpression' (role 'noop_ComplementExpression', cardinality 0..*).
+'noop::DifferExpression' (role 'noop_DifferExpression104', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression105', cardinality 0..*).
+'noop::ForStatement' (role 'noop_ForStatement42', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression43', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression60', cardinality 0..*) is associated with 'noop::ConstructorField' (role 'noop_ConstructorField59', cardinality 0..*).
+'noop::Member' (role 'noop_Member5', cardinality 0..*) is associated with 'noop::Storage' (role 'noop_Storage', cardinality 0..*).
+'noop::EqualsExpression' (role 'noop_EqualsExpression99', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression100', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression53', cardinality 0..*) is associated with 'noop::AsmStatement' (role 'noop_AsmStatement', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression177', cardinality 0..*) is associated with 'noop::NotExpression' (role 'noop_NotExpression', cardinality 0..*).
+'noop::RShiftExpression' (role 'noop_RShiftExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression137', cardinality 0..*).
+'noop::NoopClass' (role 'noop_NoopClass200', cardinality 0..*) is associated with 'noop::NewInstance' (role 'noop_NewInstance', cardinality 0..*).
+'noop::ArrayLiteral' (role 'noop_ArrayLiteral', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression198', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression70', cardinality 0..*) is associated with 'noop::AssignmentExpression' (role 'noop_AssignmentExpression69', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression112', cardinality 0..*) is associated with 'noop::GeExpression' (role 'noop_GeExpression', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression72', cardinality 0..*) is associated with 'noop::OrExpression' (role 'noop_OrExpression', cardinality 0..*).
+'noop::Variable' (role 'noop_Variable37', cardinality 0..*) is associated with 'noop::ForStatement' (role 'noop_ForStatement', cardinality 0..*).
+'noop::LtExpression' (role 'noop_LtExpression119', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression120', cardinality 0..*).
+'noop::Index' (role 'noop_Index196', cardinality 0..*) is associated with 'noop::MemberSelect' (role 'noop_MemberSelect195', cardinality 0..*).
+'noop::IfStatement' (role 'noop_IfStatement29', cardinality 0..*) is associated with 'noop::ElseStatement' (role 'noop_ElseStatement', cardinality 0..*).
+'noop::Index' (role 'noop_Index173', cardinality 0..*) is associated with 'noop::CastExpression' (role 'noop_CastExpression172', cardinality 0..*).
+'noop::BAndExpression' (role 'noop_BAndExpression94', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression95', cardinality 0..*).
+'noop::ModExpression' (role 'noop_ModExpression164', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression165', cardinality 0..*).
+'noop::IncExpression' (role 'noop_IncExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression185', cardinality 0..*).
+'noop::SubExpression' (role 'noop_SubExpression149', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression150', cardinality 0..*).
+'noop::BOrExpression' (role 'noop_BOrExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression82', cardinality 0..*).
+'noop::DifferExpression' (role 'noop_DifferExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression102', cardinality 0..*).
+'noop::MemberSelect' (role 'noop_MemberSelect', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression187', cardinality 0..*).
+'noop::Index' (role 'noop_Index206', cardinality 0..*) is associated with 'noop::NewInstance' (role 'noop_NewInstance205', cardinality 0..*).
+'noop::IfStatement' (role 'noop_IfStatement', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression24', cardinality 0..*).
+'noop::Length' (role 'noop_Length64', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression65', cardinality 0..*).
+'noop::Index' (role 'noop_Index', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression62', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression75', cardinality 0..*) is associated with 'noop::OrExpression' (role 'noop_OrExpression74', cardinality 0..*).
+'noop::CastExpression' (role 'noop_CastExpression169', cardinality 0..*) is associated with 'noop::NoopClass' (role 'noop_NoopClass170', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression9', cardinality 0..*) is associated with 'noop::Variable' (role 'noop_Variable', cardinality 0..*).
+'noop::ConstructorField' (role 'noop_ConstructorField56', cardinality 0..*) is associated with 'noop::Variable' (role 'noop_Variable57', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression122', cardinality 0..*) is associated with 'noop::LeExpression' (role 'noop_LeExpression', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression147', cardinality 0..*) is associated with 'noop::SubExpression' (role 'noop_SubExpression', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression90', cardinality 0..*) is associated with 'noop::BXorExpression' (role 'noop_BXorExpression89', cardinality 0..*).
+'noop::Block' (role 'noop_Block51', cardinality 0..*) is associated with 'noop::ForeverStatement' (role 'noop_ForeverStatement', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression157', cardinality 0..*) is associated with 'noop::DivExpression' (role 'noop_DivExpression', cardinality 0..*).
+'noop::SigNegExpression' (role 'noop_SigNegExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression179', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression211', cardinality 0..*) is associated with 'noop::MemberRef' (role 'noop_MemberRef210', cardinality 0..*).
+'noop::Block' (role 'noop_Block32', cardinality 0..*) is associated with 'noop::ElseStatement' (role 'noop_ElseStatement31', cardinality 0..*).
+'noop::NoopClass' (role 'noop_NoopClass130', cardinality 0..*) is associated with 'noop::InstanceOfExpression' (role 'noop_InstanceOfExpression129', cardinality 0..*).
+'noop::Member' (role 'noop_Member190', cardinality 0..*) is associated with 'noop::MemberSelect' (role 'noop_MemberSelect189', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression110', cardinality 0..*) is associated with 'noop::GtExpression' (role 'noop_GtExpression109', cardinality 0..*).
+'noop::IfStatement' (role 'noop_IfStatement35', cardinality 0..*) is associated with 'noop::ElseStatement' (role 'noop_ElseStatement34', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression127', cardinality 0..*) is associated with 'noop::InstanceOfExpression' (role 'noop_InstanceOfExpression', cardinality 0..*).
+'noop::LeExpression' (role 'noop_LeExpression124', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression125', cardinality 0..*).
+'noop::CastExpression' (role 'noop_CastExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression167', cardinality 0..*).
+'noop::AndExpression' (role 'noop_AndExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression77', cardinality 0..*).
+'noop::AddExpression' (role 'noop_AddExpression144', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression145', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression80', cardinality 0..*) is associated with 'noop::AndExpression' (role 'noop_AndExpression79', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression117', cardinality 0..*) is associated with 'noop::LtExpression' (role 'noop_LtExpression', cardinality 0..*).
+'noop::MulExpression' (role 'noop_MulExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression152', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression40', cardinality 0..*) is associated with 'noop::ForStatement' (role 'noop_ForStatement39', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression22', cardinality 0..*) is associated with 'noop::ReturnStatement' (role 'noop_ReturnStatement', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression183', cardinality 0..*) is associated with 'noop::DecExpression' (role 'noop_DecExpression', cardinality 0..*).
+'noop::ModExpression' (role 'noop_ModExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression162', cardinality 0..*).
+'noop::AssignmentExpression' (role 'noop_AssignmentExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression67', cardinality 0..*).
+'noop::Block' (role 'noop_Block49', cardinality 0..*) is associated with 'noop::ForStatement' (role 'noop_ForStatement48', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression46', cardinality 0..*) is associated with 'noop::ForStatement' (role 'noop_ForStatement45', cardinality 0..*).
+'noop::GtExpression' (role 'noop_GtExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression107', cardinality 0..*).
+'noop::NoopClass' (role 'noop_NoopClass', cardinality 0..*) is associated with 'noop::NoopClass' (role 'noop_NoopClass0', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression87', cardinality 0..*) is associated with 'noop::BXorExpression' (role 'noop_BXorExpression', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression181', cardinality 0..*) is associated with 'noop::SigPosExpression' (role 'noop_SigPosExpression', cardinality 0..*).
+'noop::Variable' (role 'noop_Variable14', cardinality 0..*) is associated with 'noop::Length' (role 'noop_Length', cardinality 0..*).
+'noop::LShiftExpression' (role 'noop_LShiftExpression134', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression135', cardinality 0..*).
+'noop::DivExpression' (role 'noop_DivExpression159', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression160', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression115', cardinality 0..*) is associated with 'noop::GeExpression' (role 'noop_GeExpression114', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression92', cardinality 0..*) is associated with 'noop::BAndExpression' (role 'noop_BAndExpression', cardinality 0..*).
+'noop::Statement' (role 'noop_Statement', cardinality 0..*) is associated with 'noop::Block' (role 'noop_Block20', cardinality 0..*).
+'noop::IfStatement' (role 'noop_IfStatement26', cardinality 0..*) is associated with 'noop::Block' (role 'noop_Block27', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression155', cardinality 0..*) is associated with 'noop::MulExpression' (role 'noop_MulExpression154', cardinality 0..*).
+'noop::ConstructorField' (role 'noop_ConstructorField', cardinality 0..*) is associated with 'noop::Constructor' (role 'noop_Constructor', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression140', cardinality 0..*) is associated with 'noop::RShiftExpression' (role 'noop_RShiftExpression139', cardinality 0..*).
+'noop::NewInstance' (role 'noop_NewInstance202', cardinality 0..*) is associated with 'noop::Constructor' (role 'noop_Constructor203', cardinality 0..*).
+'noop::Method' (role 'noop_Method18', cardinality 0..*) is associated with 'noop::Block' (role 'noop_Block', cardinality 0..*).
+'noop::Index' (role 'noop_Index214', cardinality 0..*) is associated with 'noop::MemberRef' (role 'noop_MemberRef213', cardinality 0..*).
+'noop::LShiftExpression' (role 'noop_LShiftExpression', cardinality 0..*) is associated with 'noop::Expression' (role 'noop_Expression132', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression', cardinality 0..*) is associated with 'noop::Storage' (role 'noop_Storage7', cardinality 0..*).
+'noop::Expression' (role 'noop_Expression97', cardinality 0..*) is associated with 'noop::EqualsExpression' (role 'noop_EqualsExpression', cardinality 0..*).

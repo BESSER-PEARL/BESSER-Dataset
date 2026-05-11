@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'source::PrimitiveDataType' has the following attributes: 'name' of type str.
+The class 'source::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type bool.
+The class 'source::ClassDiagram' has no attributes.
+The class 'source::Class' has the following attributes: 'name' of type str.
+The class 'source::Association' has the following attributes: 'name' of type str.
+'source::Class' (role 'source_Class0', cardinality 0..*) is associated with 'source::Class' (role 'source_Class', cardinality 0..*).
+'source::Association' (role 'source_Association', cardinality 0..*) is associated with 'source::Class' (role 'source_Class5', cardinality 0..*).
+'source::Association' (role 'source_Association18', cardinality 0..*) is associated with 'source::ClassDiagram' (role 'source_ClassDiagram17', cardinality 0..*).
+'source::Attribute' (role 'source_Attribute13', cardinality 0..*) is associated with 'source::PrimitiveDataType' (role 'source_PrimitiveDataType', cardinality 0..*).
+'source::ClassDiagram' (role 'source_ClassDiagram20', cardinality 0..*) is associated with 'source::PrimitiveDataType' (role 'source_PrimitiveDataType21', cardinality 0..*).
+'source::Class' (role 'source_Class3', cardinality 0..*) is associated with 'source::Attribute' (role 'source_Attribute', cardinality 0..*).
+'source::ClassDiagram' (role 'source_ClassDiagram', cardinality 0..*) is associated with 'source::Class' (role 'source_Class15', cardinality 0..*).
+'source::Attribute' (role 'source_Attribute10', cardinality 0..*) is associated with 'source::Class' (role 'source_Class11', cardinality 0..*).
+'source::Association' (role 'source_Association7', cardinality 0..*) is associated with 'source::Class' (role 'source_Class8', cardinality 0..*).

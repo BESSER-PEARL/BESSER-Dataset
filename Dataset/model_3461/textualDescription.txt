@@ -1,0 +1,42 @@
+The model has 20 class(es).
+The class 'fm::BooleanConstraints' has no attributes.
+The class 'fm::OrOperator' has no attributes.
+The class 'fm::Cardinality' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'fm::OrFeature' has no attributes.
+The class 'fm::FeatureCardinality' has no attributes.
+The class 'fm::FeatureModel' has no attributes.
+The class 'fm::Feature' has the following attributes: 'name' of type str.
+The class 'fm::CardExConstraint' has no attributes.
+The class 'fm::XorFeature' has no attributes.
+The class 'fm::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'fm::Operation' has the following attributes: 'value' of type int.
+The class 'Operator' has no attributes.
+The class 'Feature' has no attributes.
+The class 'fm::Constraints' has no attributes.
+The class 'fm::GroupCardinality' has no attributes.
+The class 'OrFeature' has no attributes.
+The class 'fm::Operator' has no attributes.
+The class 'fm::AndOperator' has no attributes.
+The class 'Constraints' has no attributes.
+The class 'Cardinality' has no attributes.
+'fm::GroupCardinality' is a specialization of 'Cardinality'.
+'fm::AndOperator' is a specialization of 'Operator'.
+'fm::OrOperator' is a specialization of 'Operator'.
+'fm::FeatureCardinality' is a specialization of 'Cardinality'.
+'fm::OrFeature' is a specialization of 'Feature'.
+'fm::BooleanConstraints' is a specialization of 'Constraints'.
+'fm::CardExConstraint' is a specialization of 'Constraints'.
+'fm::XorFeature' is a specialization of 'OrFeature'.
+'fm::BooleanConstraints' (role 'fm_BooleanConstraints', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature24', cardinality 0..*).
+'fm::BooleanConstraints' (role 'fm_BooleanConstraints26', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature27', cardinality 0..*).
+'fm::OrFeature' (role 'fm_OrFeature13', cardinality 0..*) is associated with 'fm::GroupCardinality' (role 'fm_GroupCardinality', cardinality 0..*).
+'fm::OrFeature' (role 'fm_OrFeature', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature11', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature5', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature3', cardinality 0..*).
+'fm::CardExConstraint' (role 'fm_CardExConstraint', cardinality 0..*) is associated with 'fm::Operation' (role 'fm_Operation', cardinality 0..*).
+'fm::CardExConstraint' (role 'fm_CardExConstraint19', cardinality 0..*) is associated with 'fm::Operator' (role 'fm_Operator', cardinality 0..*).
+'fm::Operation' (role 'fm_Operation21', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature22', cardinality 0..*).
+'fm::FeatureCardinality' (role 'fm_FeatureCardinality', cardinality 0..*) is associated with 'fm::Feature' (role 'fm_Feature7', cardinality 0..*).
+'fm::Constraints' (role 'fm_Constraints', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel2', cardinality 0..*).
+'fm::Operation' (role 'fm_Operation17', cardinality 0..*) is associated with 'fm::CardExConstraint' (role 'fm_CardExConstraint16', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature9', cardinality 0..*) is associated with 'fm::Attribute' (role 'fm_Attribute', cardinality 0..*).

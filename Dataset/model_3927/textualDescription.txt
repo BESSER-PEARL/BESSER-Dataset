@@ -1,0 +1,145 @@
+The model has 56 class(es).
+The class 'ViewContentElement' has no attributes.
+The class 'applauseDsl::Tab' has no attributes.
+The class 'applauseDsl::CollectionIterator' has no attributes.
+The class 'applauseDsl::StringReplace' has no attributes.
+The class 'applauseDsl::Application' has the following attributes: 'name' of type str.
+The class 'applauseDsl::Parameter' has no attributes.
+The class 'ScalarExpression' has no attributes.
+The class 'StringFunction' has no attributes.
+The class 'applauseDsl::Entity' has the following attributes: 'runtimeType' of type bool.
+The class 'applauseDsl::Section' has no attributes.
+The class 'applauseDsl::CollectionFunction' has no attributes.
+The class 'applauseDsl::ViewAction' has no attributes.
+The class 'applauseDsl::Property' has the following attributes: 'derived' of type bool.
+The class 'applauseDsl::ExternalOpen' has no attributes.
+The class 'applauseDsl::CollectionExpression' has no attributes.
+The class 'ViewAction' has no attributes.
+The class 'applauseDsl::ProviderConstruction' has no attributes.
+The class 'applauseDsl::CollectionLiteral' has no attributes.
+The class 'PropertyPathPart' has no attributes.
+The class 'applauseDsl::StringLiteral' has the following attributes: 'value' of type str.
+The class 'CollectionFunction' has no attributes.
+The class 'View' has no attributes.
+The class 'applauseDsl::StringConcat' has no attributes.
+The class 'applauseDsl::ProjectClass' has the following attributes: 'name' of type str.
+The class 'applauseDsl::PropertyPathPart' has the following attributes: 'name' of type str.
+The class 'applauseDsl::View' has no attributes.
+The class 'applauseDsl::ContentProviderImplementation' has no attributes.
+The class 'applauseDsl::Selector' has the following attributes: 'name' of type str.
+The class 'applauseDsl::ContentProvider' has the following attributes: 'storing' of type bool; 'many' of type bool.
+The class 'applauseDsl::SimpleProviderConstruction' has no attributes.
+The class 'applauseDsl::CustomContentProviderImplementation' has no attributes.
+The class 'applauseDsl::StringSplit' has no attributes.
+The class 'applauseDsl::TabView' has no attributes.
+The class 'applauseDsl::Model' has no attributes.
+The class 'applauseDsl::TableView' has the following attributes: 'style' of type str.
+The class 'ModelElement' has no attributes.
+The class 'applauseDsl::SimpleType' has the following attributes: 'platformType' of type str.
+The class 'applauseDsl::ObjectReference' has no attributes.
+The class 'applauseDsl::Type' has no attributes.
+The class 'applauseDsl::StringUrlConform' has no attributes.
+The class 'ProviderConstruction' has no attributes.
+The class 'applauseDsl::ViewCall' has no attributes.
+The class 'applauseDsl::Cell' has the following attributes: 'type' of type str; 'accessory' of type str.
+The class 'ContentProviderImplementation' has no attributes.
+The class 'applauseDsl::ViewContentElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'applauseDsl::TypeDescription' has the following attributes: 'many' of type bool.
+The class 'Expression' has no attributes.
+The class 'applauseDsl::CustomView' has the following attributes: 'className' of type str.
+The class 'applauseDsl::StringFunction' has no attributes.
+The class 'CollectionExpression' has no attributes.
+The class 'applauseDsl::ComplexProviderConstruction' has no attributes.
+The class 'applauseDsl::ModelElement' has the following attributes: 'name' of type str.
+The class 'applauseDsl::Expression' has no attributes.
+The class 'applauseDsl::ScalarExpression' has no attributes.
+The class 'applauseDsl::FetchingContentProviderImplementation' has the following attributes: 'format' of type str.
+The enumeration 'CellType' has the following literals: 'default', 'subtitle', 'value1', 'value2'.
+The enumeration 'SerializationFormat' has the following literals: 'XML', 'JSON'.
+The enumeration 'TableViewStyle' has the following literals: 'Grouped', 'Plain'.
+The enumeration 'CellAccessory' has the following literals: 'Check', 'Link', 'Detail', 'None_'.
+'applauseDsl::SimpleProviderConstruction' is a specialization of 'ProviderConstruction'.
+'applauseDsl::CustomView' is a specialization of 'View'.
+'applauseDsl::ObjectReference' is a specialization of 'ScalarExpression'.
+'applauseDsl::View' is a specialization of 'ModelElement'.
+'applauseDsl::CollectionIterator' is a specialization of 'PropertyPathPart'.
+'applauseDsl::StringUrlConform' is a specialization of 'StringFunction'.
+'applauseDsl::Cell' is a specialization of 'ViewContentElement'.
+'applauseDsl::FetchingContentProviderImplementation' is a specialization of 'ContentProviderImplementation'.
+'applauseDsl::StringReplace' is a specialization of 'StringFunction'.
+'applauseDsl::CustomContentProviderImplementation' is a specialization of 'ContentProviderImplementation'.
+'applauseDsl::CollectionFunction' is a specialization of 'Expression'.
+'applauseDsl::CollectionLiteral' is a specialization of 'Expression'.
+'applauseDsl::Section' is a specialization of 'ViewContentElement'.
+'applauseDsl::CollectionLiteral' is a specialization of 'CollectionExpression'.
+'applauseDsl::Entity' is a specialization of 'Type'.
+'applauseDsl::StringSplit' is a specialization of 'CollectionFunction'.
+'applauseDsl::Property' is a specialization of 'PropertyPathPart'.
+'applauseDsl::StringConcat' is a specialization of 'StringFunction'.
+'applauseDsl::TableView' is a specialization of 'View'.
+'applauseDsl::ContentProvider' is a specialization of 'ModelElement'.
+'applauseDsl::ObjectReference' is a specialization of 'CollectionExpression'.
+'applauseDsl::StringLiteral' is a specialization of 'Expression'.
+'applauseDsl::Selector' is a specialization of 'ViewAction'.
+'applauseDsl::StringLiteral' is a specialization of 'ScalarExpression'.
+'applauseDsl::TabView' is a specialization of 'View'.
+'applauseDsl::ComplexProviderConstruction' is a specialization of 'ProviderConstruction'.
+'applauseDsl::StringFunction' is a specialization of 'Expression'.
+'applauseDsl::ExternalOpen' is a specialization of 'ViewAction'.
+'applauseDsl::ViewCall' is a specialization of 'ViewAction'.
+'applauseDsl::StringFunction' is a specialization of 'ScalarExpression'.
+'applauseDsl::ObjectReference' is a specialization of 'Expression'.
+'applauseDsl::Type' is a specialization of 'ModelElement'.
+'applauseDsl::Parameter' is a specialization of 'PropertyPathPart'.
+'applauseDsl::SimpleType' is a specialization of 'Type'.
+'applauseDsl::CollectionFunction' is a specialization of 'CollectionExpression'.
+'applauseDsl::Parameter' (role 'applauseDsl_Parameter7', cardinality 0..*) is associated with 'applauseDsl::ProviderConstruction' (role 'applauseDsl_ProviderConstruction', cardinality 0..*).
+'applauseDsl::ContentProvider' (role 'applauseDsl_ContentProvider31', cardinality 0..*) is associated with 'applauseDsl::ContentProviderImplementation' (role 'applauseDsl_ContentProviderImplementation', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression80', cardinality 0..*) is associated with 'applauseDsl::ExternalOpen' (role 'applauseDsl_ExternalOpen', cardinality 0..*).
+'applauseDsl::Tab' (role 'applauseDsl_Tab42', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression43', cardinality 0..*).
+'applauseDsl::StringSplit' (role 'applauseDsl_StringSplit', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression100', cardinality 0..*).
+'applauseDsl::ObjectReference' (role 'applauseDsl_ObjectReference', cardinality 0..*) is associated with 'applauseDsl::PropertyPathPart' (role 'applauseDsl_PropertyPathPart', cardinality 0..*).
+'applauseDsl::Expression' (role 'applauseDsl_Expression', cardinality 0..*) is associated with 'applauseDsl::ComplexProviderConstruction' (role 'applauseDsl_ComplexProviderConstruction107', cardinality 0..*).
+'applauseDsl::Cell' (role 'applauseDsl_Cell73', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression74', cardinality 0..*).
+'applauseDsl::TabView' (role 'applauseDsl_TabView', cardinality 0..*) is associated with 'applauseDsl::Tab' (role 'applauseDsl_Tab', cardinality 0..*).
+'applauseDsl::FetchingContentProviderImplementation' (role 'applauseDsl_FetchingContentProviderImplementation35', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression36', cardinality 0..*).
+'applauseDsl::CollectionLiteral' (role 'applauseDsl_CollectionLiteral', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression', cardinality 0..*).
+'applauseDsl::Property' (role 'applauseDsl_Property', cardinality 0..*) is associated with 'applauseDsl::Entity' (role 'applauseDsl_Entity21', cardinality 0..*).
+'applauseDsl::Property' (role 'applauseDsl_Property23', cardinality 0..*) is associated with 'applauseDsl::TypeDescription' (role 'applauseDsl_TypeDescription24', cardinality 0..*).
+'applauseDsl::ViewCall' (role 'applauseDsl_ViewCall82', cardinality 0..*) is associated with 'applauseDsl::View' (role 'applauseDsl_View83', cardinality 0..*).
+'applauseDsl::Cell' (role 'applauseDsl_Cell', cardinality 0..*) is associated with 'applauseDsl::Section' (role 'applauseDsl_Section65', cardinality 0..*).
+'applauseDsl::StringConcat' (role 'applauseDsl_StringConcat', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression88', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression15', cardinality 0..*) is associated with 'applauseDsl::Application' (role 'applauseDsl_Application14', cardinality 0..*).
+'applauseDsl::ContentProvider' (role 'applauseDsl_ContentProvider28', cardinality 0..*) is associated with 'applauseDsl::Type' (role 'applauseDsl_Type29', cardinality 0..*).
+'applauseDsl::TableView' (role 'applauseDsl_TableView56', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression57', cardinality 0..*).
+'applauseDsl::Section' (role 'applauseDsl_Section62', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression63', cardinality 0..*).
+'applauseDsl::View' (role 'applauseDsl_View', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter39', cardinality 0..*).
+'applauseDsl::Tab' (role 'applauseDsl_Tab45', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression46', cardinality 0..*).
+'applauseDsl::Cell' (role 'applauseDsl_Cell76', cardinality 0..*) is associated with 'applauseDsl::ViewAction' (role 'applauseDsl_ViewAction', cardinality 0..*).
+'applauseDsl::Expression' (role 'applauseDsl_Expression109', cardinality 0..*) is associated with 'applauseDsl::SimpleProviderConstruction' (role 'applauseDsl_SimpleProviderConstruction', cardinality 0..*).
+'applauseDsl::Application' (role 'applauseDsl_Application17', cardinality 0..*) is associated with 'applauseDsl::ViewCall' (role 'applauseDsl_ViewCall', cardinality 0..*).
+'applauseDsl::ContentProvider' (role 'applauseDsl_ContentProvider105', cardinality 0..*) is associated with 'applauseDsl::ComplexProviderConstruction' (role 'applauseDsl_ComplexProviderConstruction', cardinality 0..*).
+'applauseDsl::ViewContentElement' (role 'applauseDsl_ViewContentElement', cardinality 0..*) is associated with 'applauseDsl::CollectionIterator' (role 'applauseDsl_CollectionIterator', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression71', cardinality 0..*) is associated with 'applauseDsl::Cell' (role 'applauseDsl_Cell70', cardinality 0..*).
+'applauseDsl::StringReplace' (role 'applauseDsl_StringReplace', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression90', cardinality 0..*).
+'applauseDsl::Parameter' (role 'applauseDsl_Parameter', cardinality 0..*) is associated with 'applauseDsl::TypeDescription' (role 'applauseDsl_TypeDescription5', cardinality 0..*).
+'applauseDsl::Model' (role 'applauseDsl_Model2', cardinality 0..*) is associated with 'applauseDsl::ModelElement' (role 'applauseDsl_ModelElement', cardinality 0..*).
+'applauseDsl::Cell' (role 'applauseDsl_Cell67', cardinality 0..*) is associated with 'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression68', cardinality 0..*).
+'applauseDsl::ContentProvider' (role 'applauseDsl_ContentProvider', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter26', cardinality 0..*).
+'applauseDsl::CustomContentProviderImplementation' (role 'applauseDsl_CustomContentProviderImplementation', cardinality 0..*) is associated with 'applauseDsl::ProjectClass' (role 'applauseDsl_ProjectClass', cardinality 0..*).
+'applauseDsl::ObjectReference' (role 'applauseDsl_ObjectReference11', cardinality 0..*) is associated with 'applauseDsl::ObjectReference' (role 'applauseDsl_ObjectReference9', cardinality 0..*).
+'applauseDsl::TableView' (role 'applauseDsl_TableView', cardinality 0..*) is associated with 'applauseDsl::Parameter' (role 'applauseDsl_Parameter51', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression98', cardinality 0..*) is associated with 'applauseDsl::StringUrlConform' (role 'applauseDsl_StringUrlConform', cardinality 0..*).
+'applauseDsl::ViewCall' (role 'applauseDsl_ViewCall49', cardinality 0..*) is associated with 'applauseDsl::Tab' (role 'applauseDsl_Tab48', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression103', cardinality 0..*) is associated with 'applauseDsl::StringSplit' (role 'applauseDsl_StringSplit102', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression54', cardinality 0..*) is associated with 'applauseDsl::TableView' (role 'applauseDsl_TableView53', cardinality 0..*).
+'applauseDsl::Model' (role 'applauseDsl_Model', cardinality 0..*) is associated with 'applauseDsl::Application' (role 'applauseDsl_Application', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression96', cardinality 0..*) is associated with 'applauseDsl::StringReplace' (role 'applauseDsl_StringReplace95', cardinality 0..*).
+'applauseDsl::CollectionExpression' (role 'applauseDsl_CollectionExpression', cardinality 0..*) is associated with 'applauseDsl::CollectionIterator' (role 'applauseDsl_CollectionIterator78', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression93', cardinality 0..*) is associated with 'applauseDsl::StringReplace' (role 'applauseDsl_StringReplace92', cardinality 0..*).
+'applauseDsl::ScalarExpression' (role 'applauseDsl_ScalarExpression33', cardinality 0..*) is associated with 'applauseDsl::FetchingContentProviderImplementation' (role 'applauseDsl_FetchingContentProviderImplementation', cardinality 0..*).
+'applauseDsl::Section' (role 'applauseDsl_Section', cardinality 0..*) is associated with 'applauseDsl::TableView' (role 'applauseDsl_TableView59', cardinality 0..*).
+'applauseDsl::ViewCall' (role 'applauseDsl_ViewCall85', cardinality 0..*) is associated with 'applauseDsl::ProviderConstruction' (role 'applauseDsl_ProviderConstruction86', cardinality 0..*).
+'applauseDsl::Entity' (role 'applauseDsl_Entity18', cardinality 0..*) is associated with 'applauseDsl::Entity' (role 'applauseDsl_Entity', cardinality 0..*).
+'applauseDsl::Type' (role 'applauseDsl_Type', cardinality 0..*) is associated with 'applauseDsl::TypeDescription' (role 'applauseDsl_TypeDescription', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Type' has no attributes.
+The class 'entities::Entity' has no attributes.
+The class 'entities::Type' has no attributes.
+The class 'entities::SimpleType' has no attributes.
+The class 'PackagedType' has no attributes.
+The class 'entities::JAVAID' has the following attributes: 'name' of type str.
+The class 'entities::PackagedType' has the following attributes: 'name' of type str.
+The class 'entities::Package' has no attributes.
+The class 'entities::Model' has no attributes.
+The class 'entities::TypeDef' has the following attributes: 'name' of type str.
+The class 'entities::Property' has the following attributes: 'name' of type str; 'many' of type bool.
+'entities::Package' is a specialization of 'PackagedType'.
+'entities::Entity' is a specialization of 'Type'.
+'entities::SimpleType' is a specialization of 'Type'.
+'entities::Type' is a specialization of 'PackagedType'.
+'entities::TypeDef' (role 'entities_TypeDef', cardinality 0..*) is associated with 'entities::JAVAID' (role 'entities_JAVAID', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity11', cardinality 0..*) is associated with 'entities::Package' (role 'entities_Package12', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity5', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity', cardinality 0..*).
+'entities::Model' (role 'entities_Model', cardinality 0..*) is associated with 'entities::Package' (role 'entities_Package', cardinality 0..*).
+'entities::PackagedType' (role 'entities_PackagedType', cardinality 0..*) is associated with 'entities::Package' (role 'entities_Package3', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity8', cardinality 0..*) is associated with 'entities::Property' (role 'entities_Property9', cardinality 0..*).
+'entities::Property' (role 'entities_Property', cardinality 0..*) is associated with 'entities::Type' (role 'entities_Type', cardinality 0..*).

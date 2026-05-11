@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'sPLOT2CoCo::OptionalTreeConstraint' has no attributes.
+The class 'TreeConstraint' has no attributes.
+The class 'sPLOT2CoCo::FeatureAttribute' has the following attributes: 'attributeType' of type str; 'maxValue' of type int; 'nullValue' of type int; 'minValue' of type int; 'defaultValue' of type int.
+The class 'sPLOT2CoCo::TreeConstraint' has no attributes.
+The class 'sPLOT2CoCo::Feature' has the following attributes: 'name' of type str.
+The class 'sPLOT2CoCo::ParentChildConstraint' has no attributes.
+The class 'sPLOT2CoCo::FM' has no attributes.
+The class 'sPLOT2CoCo::CrossTreeConstraint' has the following attributes: 'type' of type str.
+The class 'sPLOT2CoCo::MandatoryTreeConstraint' has no attributes.
+The class 'sPLOT2CoCo::OrAlternativeTreeConstraint' has the following attributes: 'max' of type int; 'min' of type int.
+'sPLOT2CoCo::OptionalTreeConstraint' is a specialization of 'TreeConstraint'.
+'sPLOT2CoCo::MandatoryTreeConstraint' is a specialization of 'TreeConstraint'.
+'sPLOT2CoCo::OrAlternativeTreeConstraint' is a specialization of 'TreeConstraint'.
+'sPLOT2CoCo::FeatureAttribute' (role 'sPLOT2CoCo_FeatureAttribute25', cardinality 0..*) is associated with 'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature26', cardinality 0..*).
+'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature23', cardinality 0..*) is associated with 'sPLOT2CoCo::CrossTreeConstraint' (role 'sPLOT2CoCo_CrossTreeConstraint22', cardinality 0..*).
+'sPLOT2CoCo::FM' (role 'sPLOT2CoCo_FM6', cardinality 0..*) is associated with 'sPLOT2CoCo::CrossTreeConstraint' (role 'sPLOT2CoCo_CrossTreeConstraint', cardinality 0..*).
+'sPLOT2CoCo::FM' (role 'sPLOT2CoCo_FM', cardinality 0..*) is associated with 'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature', cardinality 0..*).
+'sPLOT2CoCo::TreeConstraint' (role 'sPLOT2CoCo_TreeConstraint', cardinality 0..*) is associated with 'sPLOT2CoCo::ParentChildConstraint' (role 'sPLOT2CoCo_ParentChildConstraint11', cardinality 0..*).
+'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature15', cardinality 0..*) is associated with 'sPLOT2CoCo::OptionalTreeConstraint' (role 'sPLOT2CoCo_OptionalTreeConstraint', cardinality 0..*).
+'sPLOT2CoCo::FM' (role 'sPLOT2CoCo_FM4', cardinality 0..*) is associated with 'sPLOT2CoCo::FeatureAttribute' (role 'sPLOT2CoCo_FeatureAttribute', cardinality 0..*).
+'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature20', cardinality 0..*) is associated with 'sPLOT2CoCo::CrossTreeConstraint' (role 'sPLOT2CoCo_CrossTreeConstraint19', cardinality 0..*).
+'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature17', cardinality 0..*) is associated with 'sPLOT2CoCo::OrAlternativeTreeConstraint' (role 'sPLOT2CoCo_OrAlternativeTreeConstraint', cardinality 0..*).
+'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature13', cardinality 0..*) is associated with 'sPLOT2CoCo::MandatoryTreeConstraint' (role 'sPLOT2CoCo_MandatoryTreeConstraint', cardinality 0..*).
+'sPLOT2CoCo::ParentChildConstraint' (role 'sPLOT2CoCo_ParentChildConstraint8', cardinality 0..*) is associated with 'sPLOT2CoCo::Feature' (role 'sPLOT2CoCo_Feature9', cardinality 0..*).
+'sPLOT2CoCo::FM' (role 'sPLOT2CoCo_FM2', cardinality 0..*) is associated with 'sPLOT2CoCo::ParentChildConstraint' (role 'sPLOT2CoCo_ParentChildConstraint', cardinality 0..*).

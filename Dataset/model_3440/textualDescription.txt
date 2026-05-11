@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'SourceModel::Student' has no attributes.
+The class 'SourceModel::MasterStudent' has no attributes.
+The class 'SourceModel::Container' has no attributes.
+The class 'SourceModel::Person' has the following attributes: 'age' of type str.
+The class 'Student' has no attributes.
+The class 'Person' has no attributes.
+The class 'SourceModel::Professor' has no attributes.
+The class 'SourceModel::BachelorStudent' has no attributes.
+'SourceModel::Student' is a specialization of 'Person'.
+'SourceModel::MasterStudent' is a specialization of 'Student'.
+'SourceModel::Professor' is a specialization of 'Person'.
+'SourceModel::BachelorStudent' is a specialization of 'Student'.
+'SourceModel::Person' (role 'SourceModel_Person1', cardinality 0..*) is associated with 'SourceModel::Person' (role 'SourceModel_Person3', cardinality 0..*).
+'SourceModel::Container' (role 'SourceModel_Container', cardinality 0..*) is associated with 'SourceModel::Person' (role 'SourceModel_Person', cardinality 0..*).
+'SourceModel::Student' (role 'Student', cardinality 0..*) is associated with 'SourceModel::Professor' (role 'teacher', cardinality 0..*).
+'SourceModel::Professor' (role 'Professor', cardinality 0..*) is associated with 'SourceModel::Student' (role 'learner', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'functioncall::ConceptB' has no attributes.
+The class 'functioncall::ConceptA' has no attributes.
+The class 'ConceptA' has no attributes.
+The class 'functioncall::ConceptC' has no attributes.
+'functioncall::ConceptB' is a specialization of 'ConceptA'.
+'functioncall::ConceptC' (role 'functioncall_ConceptC', cardinality 0..*) is associated with 'functioncall::ConceptA' (role 'functioncall_ConceptA', cardinality 0..*).
+'functioncall::ConceptA' (role 'functioncall_ConceptA3', cardinality 0..*) is associated with 'functioncall::ConceptC' (role 'functioncall_ConceptC2', cardinality 0..*).
+'functioncall::ConceptB' (role 'functioncall_ConceptB', cardinality 0..*) is associated with 'functioncall::ConceptC' (role 'functioncall_ConceptC5', cardinality 0..*).

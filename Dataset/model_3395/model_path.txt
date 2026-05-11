@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/geodes-sms/j-t-core/res/tables/tables.ecore

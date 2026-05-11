@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'myDsl::Role' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::Attribute' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'myDsl::Association' has no attributes.
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::DataType' has no attributes.
+The class 'Type' has no attributes.
+The class 'myDsl::Domainmodel' has no attributes.
+'myDsl::Association' is a specialization of 'Type'.
+'myDsl::Entity' is a specialization of 'Type'.
+'myDsl::DataType' is a specialization of 'Type'.
+'myDsl::Type' (role 'myDsl_Type14', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute13', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type17', cardinality 0..*) is associated with 'myDsl::Role' (role 'myDsl_Role16', cardinality 0..*).
+'myDsl::Role' (role 'myDsl_Role11', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity10', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity4', cardinality 0..*).
+'myDsl::Association' (role 'myDsl_Association3', cardinality 0..*) is associated with 'myDsl::Role' (role 'myDsl_Role', cardinality 0..*).
+'myDsl::Domainmodel' (role 'myDsl_Domainmodel', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute', cardinality 0..*) is associated with 'myDsl::Association' (role 'myDsl_Association', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity7', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute8', cardinality 0..*).

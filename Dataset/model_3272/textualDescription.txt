@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'StateMachine' has no attributes.
+The class 'Transition' has no attributes.
+The class 'sm::State' has the following attributes: 'name' of type str.
+The class 'sm::sm::StateMachine' has no attributes.
+The class 'State' has no attributes.
+The class 'sm::StateMachine' has the following attributes: 'name' of type str.
+The class 'sm::sm::State' has no attributes.
+The class 'sm::sm::Transition' has no attributes.
+The class 'sm::Transition' has the following attributes: 'name' of type str.
+The class 'sm::Event' has the following attributes: 'name' of type str.
+'sm::sm::State' is a specialization of 'State'.
+'sm::sm::StateMachine' is a specialization of 'StateMachine'.
+'sm::sm::Transition' is a specialization of 'Transition'.
+'sm::State' (role 'sm_State4', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine3', cardinality 0..*).
+'sm::sm::Transition' (role 'sm_sm_Transition', cardinality 0..*) is associated with 'sm::Event' (role 'sm_Event', cardinality 0..*).
+'sm::Transition' (role 'sm_Transition14', cardinality 0..*) is associated with 'sm::State' (role 'sm_State15', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine6', cardinality 0..*) is associated with 'sm::State' (role 'sm_State7', cardinality 0..*).
+'sm::State' (role 'sm_State11', cardinality 0..*) is associated with 'sm::StateMachine' (role 'sm_StateMachine12', cardinality 0..*).
+'sm::State' (role 'sm_State18', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition17', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine', cardinality 0..*) is associated with 'sm::State' (role 'sm_State', cardinality 0..*).
+'sm::StateMachine' (role 'sm_StateMachine9', cardinality 0..*) is associated with 'sm::Transition' (role 'sm_Transition', cardinality 0..*).

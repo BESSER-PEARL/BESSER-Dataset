@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'NamedElement' has no attributes.
+The class 'sql::Column' has no attributes.
+The class 'sql::NamedElement' has the following attributes: 'name' of type str.
+The class 'sql::Model' has no attributes.
+The class 'sql::Table' has no attributes.
+The class 'sql::SelectQuery' has no attributes.
+'sql::Column' is a specialization of 'NamedElement'.
+'sql::Table' is a specialization of 'NamedElement'.
+'sql::Model' (role 'sql_Model2', cardinality 0..*) is associated with 'sql::Table' (role 'sql_Table', cardinality 0..*).
+'sql::Table' (role 'sql_Table7', cardinality 0..*) is associated with 'sql::SelectQuery' (role 'sql_SelectQuery6', cardinality 0..*).
+'sql::Table' (role 'sql_Table4', cardinality 0..*) is associated with 'sql::Column' (role 'sql_Column', cardinality 0..*).
+'sql::Model' (role 'sql_Model', cardinality 0..*) is associated with 'sql::SelectQuery' (role 'sql_SelectQuery', cardinality 0..*).
+'sql::SelectQuery' (role 'sql_SelectQuery9', cardinality 0..*) is associated with 'sql::Column' (role 'sql_Column10', cardinality 0..*).

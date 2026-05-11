@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/melange/tests/samples/fr.inria.diverse.melange.tests.attributes.model/model/model2.ecore

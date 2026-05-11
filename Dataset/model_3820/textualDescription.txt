@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'State' has no attributes.
+The class 'ioAutomaton::Return' has no attributes.
+The class 'ioAutomaton::SystemActor' has no attributes.
+The class 'ioAutomaton::Automaton' has no attributes.
+The class 'ioAutomaton::OutMessage' has no attributes.
+The class 'ioAutomaton::Actor' has no attributes.
+The class 'ioAutomaton::AutomatonCollection' has no attributes.
+The class 'ioAutomaton::Operation' has no attributes.
+The class 'ioAutomaton::State' has no attributes.
+The class 'ioAutomaton::Transition' has no attributes.
+'ioAutomaton::State' is a specialization of 'State'.
+'ioAutomaton::Automaton' (role 'automaton4', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'Transition', cardinality 0..*).
+'ioAutomaton::SystemActor' (role 'ioAutomaton_SystemActor', cardinality 0..*) is associated with 'ioAutomaton::Automaton' (role 'ioAutomaton_Automaton', cardinality 0..*).
+'ioAutomaton::State' (role 'preState', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'Transition12', cardinality 0..*).
+'ioAutomaton::Automaton' (role 'automaton', cardinality 0..*) is associated with 'ioAutomaton::State' (role 'State', cardinality 0..*).
+'ioAutomaton::Operation' (role 'ioAutomaton_Operation', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'ioAutomaton_Transition', cardinality 0..*).
+'ioAutomaton::State' (role 'State25', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'incomingTransition', cardinality 0..*).
+'ioAutomaton::State' (role 'State18', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'outgoingTransition', cardinality 0..*).
+'ioAutomaton::Actor' (role 'ioAutomaton_Actor', cardinality 0..*) is associated with 'ioAutomaton::OutMessage' (role 'ioAutomaton_OutMessage30', cardinality 0..*).
+'ioAutomaton::Transition' (role 'ioAutomaton_Transition21', cardinality 0..*) is associated with 'ioAutomaton::OutMessage' (role 'ioAutomaton_OutMessage', cardinality 0..*).
+'ioAutomaton::OutMessage' (role 'ioAutomaton_OutMessage32', cardinality 0..*) is associated with 'ioAutomaton::Return' (role 'ioAutomaton_Return33', cardinality 0..*).
+'ioAutomaton::Return' (role 'ioAutomaton_Return', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'ioAutomaton_Transition23', cardinality 0..*).
+'ioAutomaton::State' (role 'state', cardinality 0..*) is associated with 'ioAutomaton::Automaton' (role 'Automaton10', cardinality 0..*).
+'ioAutomaton::OutMessage' (role 'ioAutomaton_OutMessage27', cardinality 0..*) is associated with 'ioAutomaton::Operation' (role 'ioAutomaton_Operation28', cardinality 0..*).
+'ioAutomaton::State' (role 'postState', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'Transition14', cardinality 0..*).
+'ioAutomaton::Automaton' (role 'automaton6', cardinality 0..*) is associated with 'ioAutomaton::AutomatonCollection' (role 'AutomatonCollection', cardinality 0..*).
+'ioAutomaton::State' (role 'ioAutomaton_State', cardinality 0..*) is associated with 'ioAutomaton::Automaton' (role 'ioAutomaton_Automaton8', cardinality 0..*).
+'ioAutomaton::AutomatonCollection' (role 'collection', cardinality 0..*) is associated with 'ioAutomaton::Automaton' (role 'Automaton', cardinality 0..*).
+'ioAutomaton::Automaton' (role 'Automaton16', cardinality 0..*) is associated with 'ioAutomaton::Transition' (role 'transition', cardinality 0..*).

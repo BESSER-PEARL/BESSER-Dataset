@@ -1,0 +1,100 @@
+The model has 48 class(es).
+The class 'netModel::BooleanType' has no attributes.
+The class 'netModel::BodyBlock' has no attributes.
+The class 'netModel::Type' has no attributes.
+The class 'netModel::BlockType' has no attributes.
+The class 'netModel::SkipMember' has no attributes.
+The class 'netModel::ComplexTypeDeclaration' has no attributes.
+The class 'netModel::StringType' has no attributes.
+The class 'netModel::SimpleMemberAssignment' has no attributes.
+The class 'netModel::Literal' has no attributes.
+The class 'HttpMethodBlock' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'netModel::ClientBlock' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'netModel::Client' has the following attributes: 'baseUrl' of type str.
+The class 'Type' has no attributes.
+The class 'netModel::DoubleType' has no attributes.
+The class 'netModel::ResponseBlock' has no attributes.
+The class 'netModel::SimpleMember' has the following attributes: 'name' of type str.
+The class 'netModel::EnumMember' has the following attributes: 'assignment' of type bool; 'value' of type int; 'name' of type str.
+The class 'netModel::HeaderBlock' has no attributes.
+The class 'BlockType' has no attributes.
+The class 'IntrinsicType' has no attributes.
+The class 'netModel::Model' has the following attributes: 'packageName' of type str.
+The class 'netModel::GenericListType' has the following attributes: 'id' of type str.
+The class 'netModel::ComplexTypeLiteral' has no attributes.
+The class 'netModel::Declaration' has the following attributes: 'name' of type str.
+The class 'netModel::HttpMethod' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'netModel::HttpMethodBlock' has no attributes.
+The class 'UserTypeDeclaration' has no attributes.
+The class 'netModel::IntrinsicType' has the following attributes: 'id' of type str.
+The class 'netModel::Member' has the following attributes: 'name' of type str.
+The class 'netModel::NumericType' has no attributes.
+The class 'netModel::UserType' has no attributes.
+The class 'netModel::Path' has the following attributes: 'arb' of type str.
+The class 'netModel::Header' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'netModel::ParamsBlock' has no attributes.
+The class 'netModel::LongType' has no attributes.
+The class 'netModel::EnumTypeDeclaration' has no attributes.
+The class 'ClientBlock' has no attributes.
+The class 'netModel::TypedMember' has no attributes.
+The class 'netModel::NumericLiteral' has the following attributes: 'literal' of type str.
+The class 'Member' has no attributes.
+The class 'netModel::IntegerType' has no attributes.
+The class 'netModel::StringLiteral' has the following attributes: 'literal' of type str.
+The class 'Literal' has no attributes.
+The class 'netModel::BooleanLiteral' has the following attributes: 'literal' of type str.
+The class 'netModel::UserTypeDeclaration' has the following attributes: 'keyword' of type str; 'nogen' of type bool.
+The class 'netModel::EnumTypeLiteral' has no attributes.
+The enumeration 'HttpMethodType' has the following literals: 'delete', 'get', 'patch', 'put', 'post'.
+The enumeration 'BooleanValue' has the following literals: 'true', 'false'.
+'netModel::BodyBlock' is a specialization of 'HttpMethodBlock'.
+'netModel::ParamsBlock' is a specialization of 'HttpMethodBlock'.
+'netModel::UserType' is a specialization of 'Type'.
+'netModel::BooleanLiteral' is a specialization of 'Literal'.
+'netModel::LongType' is a specialization of 'NumericType'.
+'netModel::ComplexTypeDeclaration' is a specialization of 'UserTypeDeclaration'.
+'netModel::Type' is a specialization of 'BlockType'.
+'netModel::HttpMethod' is a specialization of 'ClientBlock'.
+'netModel::NumericLiteral' is a specialization of 'Literal'.
+'netModel::StringType' is a specialization of 'IntrinsicType'.
+'netModel::ParamsBlock' is a specialization of 'ClientBlock'.
+'netModel::GenericListType' is a specialization of 'Type'.
+'netModel::UserTypeDeclaration' is a specialization of 'Declaration'.
+'netModel::Client' is a specialization of 'Declaration'.
+'netModel::EnumTypeDeclaration' is a specialization of 'UserTypeDeclaration'.
+'netModel::NumericType' is a specialization of 'IntrinsicType'.
+'netModel::HeaderBlock' is a specialization of 'HttpMethodBlock'.
+'netModel::StringLiteral' is a specialization of 'Literal'.
+'netModel::ComplexTypeLiteral' is a specialization of 'BlockType'.
+'netModel::HeaderBlock' is a specialization of 'ClientBlock'.
+'netModel::IntegerType' is a specialization of 'NumericType'.
+'netModel::BooleanType' is a specialization of 'IntrinsicType'.
+'netModel::ResponseBlock' is a specialization of 'HttpMethodBlock'.
+'netModel::DoubleType' is a specialization of 'NumericType'.
+'netModel::SkipMember' is a specialization of 'Member'.
+'netModel::IntrinsicType' is a specialization of 'Type'.
+'netModel::TypedMember' is a specialization of 'Member'.
+'netModel::ComplexTypeLiteral' (role 'netModel_ComplexTypeLiteral28', cardinality 0..*) is associated with 'netModel::ComplexTypeDeclaration' (role 'netModel_ComplexTypeDeclaration27', cardinality 0..*).
+'netModel::BodyBlock' (role 'netModel_BodyBlock', cardinality 0..*) is associated with 'netModel::BlockType' (role 'netModel_BlockType', cardinality 0..*).
+'netModel::SimpleMemberAssignment' (role 'netModel_SimpleMemberAssignment13', cardinality 0..*) is associated with 'netModel::Literal' (role 'netModel_Literal', cardinality 0..*).
+'netModel::Declaration' (role 'netModel_Declaration', cardinality 0..*) is associated with 'netModel::Model' (role 'netModel_Model', cardinality 0..*).
+'netModel::EnumTypeDeclaration' (role 'netModel_EnumTypeDeclaration', cardinality 0..*) is associated with 'netModel::IntegerType' (role 'netModel_IntegerType', cardinality 0..*).
+'netModel::Path' (role 'netModel_Path', cardinality 0..*) is associated with 'netModel::HttpMethod' (role 'netModel_HttpMethod', cardinality 0..*).
+'netModel::BlockType' (role 'netModel_BlockType18', cardinality 0..*) is associated with 'netModel::ResponseBlock' (role 'netModel_ResponseBlock17', cardinality 0..*).
+'netModel::Type' (role 'netModel_Type24', cardinality 0..*) is associated with 'netModel::GenericListType' (role 'netModel_GenericListType', cardinality 0..*).
+'netModel::UserType' (role 'netModel_UserType', cardinality 0..*) is associated with 'netModel::UserTypeDeclaration' (role 'netModel_UserTypeDeclaration', cardinality 0..*).
+'netModel::EnumTypeDeclaration' (role 'netModel_EnumTypeDeclaration31', cardinality 0..*) is associated with 'netModel::EnumTypeLiteral' (role 'netModel_EnumTypeLiteral', cardinality 0..*).
+'netModel::ComplexTypeDeclaration' (role 'netModel_ComplexTypeDeclaration', cardinality 0..*) is associated with 'netModel::ResponseBlock' (role 'netModel_ResponseBlock', cardinality 0..*).
+'netModel::SimpleMemberAssignment' (role 'netModel_SimpleMemberAssignment', cardinality 0..*) is associated with 'netModel::Path' (role 'netModel_Path7', cardinality 0..*).
+'netModel::SimpleMember' (role 'netModel_SimpleMember22', cardinality 0..*) is associated with 'netModel::IntrinsicType' (role 'netModel_IntrinsicType', cardinality 0..*).
+'netModel::ComplexTypeLiteral' (role 'netModel_ComplexTypeLiteral35', cardinality 0..*) is associated with 'netModel::Member' (role 'netModel_Member', cardinality 0..*).
+'netModel::SimpleMemberAssignment' (role 'netModel_SimpleMemberAssignment11', cardinality 0..*) is associated with 'netModel::SimpleMember' (role 'netModel_SimpleMember', cardinality 0..*).
+'netModel::ParamsBlock' (role 'netModel_ParamsBlock', cardinality 0..*) is associated with 'netModel::SimpleMemberAssignment' (role 'netModel_SimpleMemberAssignment9', cardinality 0..*).
+'netModel::Client' (role 'netModel_Client', cardinality 0..*) is associated with 'netModel::ClientBlock' (role 'netModel_ClientBlock', cardinality 0..*).
+'netModel::EnumTypeLiteral' (role 'netModel_EnumTypeLiteral33', cardinality 0..*) is associated with 'netModel::EnumMember' (role 'netModel_EnumMember', cardinality 0..*).
+'netModel::Type' (role 'netModel_Type', cardinality 0..*) is associated with 'netModel::TypedMember' (role 'netModel_TypedMember', cardinality 0..*).
+'netModel::SkipMember' (role 'netModel_SkipMember', cardinality 0..*) is associated with 'netModel::ComplexTypeLiteral' (role 'netModel_ComplexTypeLiteral', cardinality 0..*).
+'netModel::HeaderBlock' (role 'netModel_HeaderBlock', cardinality 0..*) is associated with 'netModel::Header' (role 'netModel_Header', cardinality 0..*).
+'netModel::HttpMethodBlock' (role 'netModel_HttpMethodBlock', cardinality 0..*) is associated with 'netModel::HttpMethod' (role 'netModel_HttpMethod5', cardinality 0..*).

@@ -1,0 +1,509 @@
+The model has 170 class(es).
+The class 'delphi::repeatStmt' has no attributes.
+The class 'delphi::classMethodList' has no attributes.
+The class 'delphi::designator' has no attributes.
+The class 'structStmt' has no attributes.
+The class 'delphi::fieldDecl' has the following attributes: 'port' of type str.
+The class 'delphi::classHeritage' has no attributes.
+The class 'delphi::recordFieldConstant' has no attributes.
+The class 'addOp' has no attributes.
+The class 'delphi::requiresClause' has no attributes.
+The class 'delphi::labelDeclSection' has the following attributes: 'id' of type str.
+The class 'delphi::interfaceHeritage' has no attributes.
+The class 'ordinalType' has no attributes.
+The class 'delphi::RecordConstExp' has no attributes.
+The class 'delphi::objectType' has no attributes.
+The class 'delphi::functionHeading' has no attributes.
+The class 'delphi::setConstructor' has no attributes.
+The class 'delphi::restrictedType' has no attributes.
+The class 'delphi::parameterList' has no attributes.
+The class 'delphi::MineID' has the following attributes: 'second' of type str; 'first' of type str.
+The class 'delphi::typeDecl' has the following attributes: 'port' of type str.
+The class 'delphi::MultipleConstExp' has no attributes.
+The class 'delphi::compoundStmt' has no attributes.
+The class 'delphi::classField' has the following attributes: 'visibility' of type str.
+The class 'delphi::factor' has the following attributes: 'string' of type str; 'number' of type str.
+The class 'delphi::tryStmt' has no attributes.
+The class 'delphi::procedureHeading' has no attributes.
+The class 'delphi::parameter' has no attributes.
+The class 'delphi::ifStmt' has no attributes.
+The class 'delphi::gotoStmnt' has the following attributes: 'label' of type str.
+The class 'delphi::classRefType' has no attributes.
+The class 'type' has no attributes.
+The class 'delphi::varSection' has no attributes.
+The class 'delphi::arrayType' has no attributes.
+The class 'delphi::propertyInterface' has no attributes.
+The class 'delphi::loopStmt' has no attributes.
+The class 'delphi::file' has no attributes.
+The class 'delphi::mainRule' has no attributes.
+The class 'procedureDeclSection' has no attributes.
+The class 'delphi::qualId' has no attributes.
+The class 'delphi::withStmt' has no attributes.
+The class 'loopStmt' has no attributes.
+The class 'delphi::relOp' has the following attributes: 'op' of type str.
+The class 'delphi::formalParameters' has no attributes.
+The class 'declSection' has no attributes.
+The class 'interfaceDecl' has no attributes.
+The class 'conditionalStmt' has no attributes.
+The class 'delphi::destructorHeading' has no attributes.
+The class 'term' has no attributes.
+The class 'simpleStatement' has no attributes.
+The class 'delphi::constExpr' has no attributes.
+The class 'delphi::relExp' has no attributes.
+The class 'delphi::recordConstant' has no attributes.
+The class 'delphi::callStmnt' has no attributes.
+The class 'parameter' has no attributes.
+The class 'delphi::term' has no attributes.
+The class 'delphi::functionDecl' has no attributes.
+The class 'delphi::classProperty' has the following attributes: 'visibility' of type str.
+The class 'delphi::constSection' has no attributes.
+The class 'delphi::ordIdent' has no attributes.
+The class 'delphi::ordinalType' has no attributes.
+The class 'delphi::fieldList' has no attributes.
+The class 'delphi::classMethod' has the following attributes: 'visibility' of type str.
+The class 'CSTrace' has no attributes.
+The class 'delphi::CSTrace' has no attributes.
+The class 'delphi::objFieldList' has no attributes.
+The class 'delphi::mulOp' has the following attributes: 'op' of type str.
+The class 'delphi::variantSection' has no attributes.
+The class 'delphi::library' has no attributes.
+The class 'delphi::containsClause' has no attributes.
+The class 'delphi::assemblerStmt' has no attributes.
+The class 'delphi::programBlock' has no attributes.
+The class 'delphi::reservedWord' has the following attributes: 'id' of type str.
+The class 'delphi::simpleType' has no attributes.
+The class 'delphi::varDecl' has no attributes.
+The class 'methodHeading' has no attributes.
+The class 'delphi::program' has no attributes.
+The class 'delphi::recType' has no attributes.
+The class 'unlabelledStatement' has no attributes.
+The class 'delphi::classFieldList' has no attributes.
+The class 'delphi::raiseStmt' has the following attributes: 'at' of type str; 'raise_' of type str.
+The class 'delphi::addExp' has no attributes.
+The class 'delphi::enumeratedType' has no attributes.
+The class 'constExpr' has no attributes.
+The class 'delphi::interfaceSection' has no attributes.
+The class 'delphi::constantDecl' has the following attributes: 'port' of type str.
+The class 'restrictedType' has no attributes.
+The class 'delphi::Visitable' has no attributes.
+The class 'delphi::inheritedStamnt' has no attributes.
+The class 'delphi::interfaceDecl' has no attributes.
+The class 'delphi::strucType' has the following attributes: 'port' of type str.
+The class 'delphi::arrayConstant' has no attributes.
+The class 'delphi::simpleFactor' has no attributes.
+The class 'delphi::realType' has no attributes.
+The class 'delphi::pointerType' has no attributes.
+The class 'delphi::subrangeType' has no attributes.
+The class 'delphi::declSection' has no attributes.
+The class 'delphi::conditionalStmt' has no attributes.
+The class 'delphi::caseLabel' has no attributes.
+The class 'delphi::packageDecl' has no attributes.
+The class 'expression' has no attributes.
+The class 'delphi::unitId' has the following attributes: 'id' of type str.
+The class 'delphi::formalParm' has no attributes.
+The class 'delphi::designatorSubPart' has no attributes.
+The class 'classHeritage' has no attributes.
+The class 'delphi::procedureType' has no attributes.
+The class 'delphi::propertyParameterList' has no attributes.
+The class 'delphi::MultipleId' has the following attributes: 'id' of type str.
+The class 'delphi::interfaceType' has no attributes.
+The class 'delphi::propertySpecifiers' has no attributes.
+The class 'delphi::unit' has the following attributes: 'port' of type str.
+The class 'delphi::methodHeading' has no attributes.
+The class 'delphi::ident' has no attributes.
+The class 'delphi::fileType' has no attributes.
+The class 'delphi::exportsItem' has no attributes.
+The class 'delphi::directive' has the following attributes: 'dir' of type str.
+The class 'delphi::simpleExpression' has no attributes.
+The class 'delphi::methodList' has no attributes.
+The class 'delphi::implementationSection' has no attributes.
+The class 'delphi::objHeritage' has no attributes.
+The class 'delphi::simpleStatement' has no attributes.
+The class 'delphi::addOp' has no attributes.
+The class 'delphi::multExp' has no attributes.
+The class 'file' has no attributes.
+The class 'delphi::typeSection' has no attributes.
+The class 'delphi::expression' has no attributes.
+The class 'delphi::exprList' has no attributes.
+The class 'delphi::ConstExp' has no attributes.
+The class 'factor' has no attributes.
+The class 'delphi::parameterSimple' has no attributes.
+The class 'delphi::classPropertyList' has no attributes.
+The class 'ident' has no attributes.
+The class 'delphi::statement' has the following attributes: 'labelId' of type str.
+The class 'delphi::propertyList' has the following attributes: 'port' of type str.
+The class 'delphi::classType' has the following attributes: 'visibility' of type str.
+The class 'delphi::forStmt' has no attributes.
+The class 'delphi::recordConstExpr' has no attributes.
+The class 'simpleExpression' has no attributes.
+The class 'delphi::stmtList' has no attributes.
+The class 'delphi::setType' has no attributes.
+The class 'delphi::setElement' has no attributes.
+The class 'delphi::ReservedId' has no attributes.
+The class 'delphi::exportedHeading' has no attributes.
+The class 'delphi::typedConstant' has no attributes.
+The class 'delphi::structStmt' has no attributes.
+The class 'delphi::usesClause' has no attributes.
+The class 'pointerType' has no attributes.
+The class 'delphi::designatorPart' has the following attributes: 'id' of type str; 'id2' of type str.
+The class 'delphi::procedureDeclSection' has the following attributes: 'port' of type str.
+The class 'delphi::recVariant' has no attributes.
+The class 'delphi::block' has no attributes.
+The class 'simpleType' has no attributes.
+The class 'delphi::caseStmt' has no attributes.
+The class 'delphi::typeId' has no attributes.
+The class 'delphi::constructorHeading' has no attributes.
+The class 'strucType' has no attributes.
+The class 'delphi::variantType' has no attributes.
+The class 'delphi::stringType' has no attributes.
+The class 'objFieldList' has no attributes.
+The class 'delphi::type' has no attributes.
+The class 'delphi::exceptionBlock' has no attributes.
+The class 'delphi::identList' has no attributes.
+The class 'delphi::exportsStmt' has no attributes.
+The class 'delphi::assignmentStmnt' has the following attributes: 'operator' of type str.
+The class 'delphi::whileStmt' has no attributes.
+The class 'delphi::enumeratedTypeElement' has no attributes.
+The class 'delphi::adOp' has the following attributes: 'op' of type str.
+The class 'delphi::initSection' has no attributes.
+The class 'delphi::procedureDecl' has no attributes.
+The class 'delphi::caseSelector' has no attributes.
+The class 'delphi::unlabelledStatement' has no attributes.
+'delphi::procedureHeading' is a specialization of 'methodHeading'.
+'delphi::classType' is a specialization of 'restrictedType'.
+'delphi::pointerType' is a specialization of 'type'.
+'delphi::setConstructor' is a specialization of 'CSTrace'.
+'delphi::ConstExp' is a specialization of 'constExpr'.
+'delphi::typeDecl' is a specialization of 'CSTrace'.
+'delphi::parameterList' is a specialization of 'parameter'.
+'delphi::enumeratedTypeElement' is a specialization of 'CSTrace'.
+'delphi::factor' is a specialization of 'term'.
+'delphi::identList' is a specialization of 'objFieldList'.
+'delphi::classHeritage' is a specialization of 'CSTrace'.
+'delphi::arrayConstant' is a specialization of 'CSTrace'.
+'delphi::varDecl' is a specialization of 'CSTrace'.
+'delphi::library' is a specialization of 'file'.
+'delphi::programBlock' is a specialization of 'CSTrace'.
+'delphi::classProperty' is a specialization of 'CSTrace'.
+'delphi::block' is a specialization of 'CSTrace'.
+'delphi::directive' is a specialization of 'CSTrace'.
+'delphi::formalParm' is a specialization of 'CSTrace'.
+'delphi::mainRule' is a specialization of 'CSTrace'.
+'delphi::destructorHeading' is a specialization of 'methodHeading'.
+'delphi::variantType' is a specialization of 'type'.
+'delphi::classFieldList' is a specialization of 'CSTrace'.
+'delphi::recordFieldConstant' is a specialization of 'CSTrace'.
+'delphi::caseLabel' is a specialization of 'CSTrace'.
+'delphi::relExp' is a specialization of 'expression'.
+'delphi::subrangeType' is a specialization of 'ordinalType'.
+'delphi::formalParameters' is a specialization of 'CSTrace'.
+'delphi::assemblerStmt' is a specialization of 'structStmt'.
+'delphi::interfaceSection' is a specialization of 'CSTrace'.
+'delphi::conditionalStmt' is a specialization of 'structStmt'.
+'delphi::objectType' is a specialization of 'restrictedType'.
+'delphi::type' is a specialization of 'CSTrace'.
+'delphi::structStmt' is a specialization of 'unlabelledStatement'.
+'delphi::simpleStatement' is a specialization of 'unlabelledStatement'.
+'delphi::mulOp' is a specialization of 'CSTrace'.
+'delphi::propertyInterface' is a specialization of 'CSTrace'.
+'delphi::objFieldList' is a specialization of 'CSTrace'.
+'delphi::propertyParameterList' is a specialization of 'CSTrace'.
+'delphi::unit' is a specialization of 'file'.
+'delphi::methodList' is a specialization of 'CSTrace'.
+'delphi::callStmnt' is a specialization of 'simpleStatement'.
+'delphi::simpleExpression' is a specialization of 'expression'.
+'delphi::classField' is a specialization of 'CSTrace'.
+'delphi::procedureDecl' is a specialization of 'procedureDeclSection'.
+'delphi::recType' is a specialization of 'strucType'.
+'delphi::initSection' is a specialization of 'CSTrace'.
+'delphi::constSection' is a specialization of 'interfaceDecl'.
+'delphi::classPropertyList' is a specialization of 'CSTrace'.
+'delphi::arrayType' is a specialization of 'strucType'.
+'delphi::loopStmt' is a specialization of 'structStmt'.
+'delphi::typeId' is a specialization of 'pointerType'.
+'delphi::varSection' is a specialization of 'interfaceDecl'.
+'delphi::fieldDecl' is a specialization of 'CSTrace'.
+'delphi::withStmt' is a specialization of 'structStmt'.
+'delphi::exceptionBlock' is a specialization of 'CSTrace'.
+'delphi::packageDecl' is a specialization of 'file'.
+'delphi::designatorSubPart' is a specialization of 'CSTrace'.
+'delphi::propertyList' is a specialization of 'CSTrace'.
+'delphi::labelDeclSection' is a specialization of 'declSection'.
+'delphi::identList' is a specialization of 'classHeritage'.
+'delphi::file' is a specialization of 'CSTrace'.
+'delphi::unlabelledStatement' is a specialization of 'CSTrace'.
+'delphi::designatorPart' is a specialization of 'CSTrace'.
+'delphi::functionHeading' is a specialization of 'methodHeading'.
+'delphi::constantDecl' is a specialization of 'CSTrace'.
+'delphi::interfaceHeritage' is a specialization of 'CSTrace'.
+'delphi::compoundStmt' is a specialization of 'structStmt'.
+'delphi::constExpr' is a specialization of 'CSTrace'.
+'delphi::assignmentStmnt' is a specialization of 'simpleStatement'.
+'delphi::relOp' is a specialization of 'CSTrace'.
+'delphi::setElement' is a specialization of 'CSTrace'.
+'delphi::parameterSimple' is a specialization of 'parameter'.
+'delphi::addExp' is a specialization of 'simpleExpression'.
+'delphi::unitId' is a specialization of 'CSTrace'.
+'delphi::varSection' is a specialization of 'declSection'.
+'delphi::typeSection' is a specialization of 'interfaceDecl'.
+'delphi::recVariant' is a specialization of 'CSTrace'.
+'delphi::ident' is a specialization of 'CSTrace'.
+'delphi::ifStmt' is a specialization of 'conditionalStmt'.
+'delphi::qualId' is a specialization of 'CSTrace'.
+'delphi::whileStmt' is a specialization of 'loopStmt'.
+'delphi::MineID' is a specialization of 'ident'.
+'delphi::MultipleId' is a specialization of 'ident'.
+'delphi::MultipleConstExp' is a specialization of 'constExpr'.
+'delphi::parameter' is a specialization of 'CSTrace'.
+'delphi::typeId' is a specialization of 'type'.
+'delphi::exportsStmt' is a specialization of 'CSTrace'.
+'delphi::propertySpecifiers' is a specialization of 'CSTrace'.
+'delphi::variantSection' is a specialization of 'CSTrace'.
+'delphi::procedureDeclSection' is a specialization of 'declSection'.
+'delphi::setType' is a specialization of 'strucType'.
+'delphi::recordConstExpr' is a specialization of 'CSTrace'.
+'delphi::enumeratedType' is a specialization of 'ordinalType'.
+'delphi::stringType' is a specialization of 'type'.
+'delphi::methodHeading' is a specialization of 'CSTrace'.
+'delphi::caseStmt' is a specialization of 'conditionalStmt'.
+'delphi::raiseStmt' is a specialization of 'structStmt'.
+'delphi::interfaceType' is a specialization of 'restrictedType'.
+'delphi::functionDecl' is a specialization of 'procedureDeclSection'.
+'delphi::reservedWord' is a specialization of 'CSTrace'.
+'delphi::declSection' is a specialization of 'CSTrace'.
+'delphi::simpleType' is a specialization of 'type'.
+'delphi::expression' is a specialization of 'CSTrace'.
+'delphi::repeatStmt' is a specialization of 'loopStmt'.
+'delphi::ReservedId' is a specialization of 'ident'.
+'delphi::designator' is a specialization of 'CSTrace'.
+'delphi::addOp' is a specialization of 'CSTrace'.
+'delphi::fileType' is a specialization of 'strucType'.
+'delphi::recordConstant' is a specialization of 'CSTrace'.
+'delphi::containsClause' is a specialization of 'CSTrace'.
+'delphi::statement' is a specialization of 'CSTrace'.
+'delphi::constSection' is a specialization of 'declSection'.
+'delphi::procedureType' is a specialization of 'type'.
+'delphi::implementationSection' is a specialization of 'CSTrace'.
+'delphi::exportedHeading' is a specialization of 'interfaceDecl'.
+'delphi::classMethodList' is a specialization of 'CSTrace'.
+'delphi::objHeritage' is a specialization of 'CSTrace'.
+'delphi::ordinalType' is a specialization of 'simpleType'.
+'delphi::exportsItem' is a specialization of 'CSTrace'.
+'delphi::multExp' is a specialization of 'term'.
+'delphi::classRefType' is a specialization of 'type'.
+'delphi::ordIdent' is a specialization of 'ordinalType'.
+'delphi::requiresClause' is a specialization of 'CSTrace'.
+'delphi::classMethod' is a specialization of 'CSTrace'.
+'delphi::forStmt' is a specialization of 'loopStmt'.
+'delphi::caseSelector' is a specialization of 'CSTrace'.
+'delphi::RecordConstExp' is a specialization of 'constExpr'.
+'delphi::usesClause' is a specialization of 'CSTrace'.
+'delphi::simpleFactor' is a specialization of 'factor'.
+'delphi::typeSection' is a specialization of 'declSection'.
+'delphi::inheritedStamnt' is a specialization of 'simpleStatement'.
+'delphi::fieldList' is a specialization of 'CSTrace'.
+'delphi::constructorHeading' is a specialization of 'methodHeading'.
+'delphi::strucType' is a specialization of 'type'.
+'delphi::interfaceDecl' is a specialization of 'CSTrace'.
+'delphi::program' is a specialization of 'file'.
+'delphi::stmtList' is a specialization of 'CSTrace'.
+'delphi::adOp' is a specialization of 'addOp'.
+'delphi::tryStmt' is a specialization of 'structStmt'.
+'delphi::realType' is a specialization of 'simpleType'.
+'delphi::typedConstant' is a specialization of 'CSTrace'.
+'delphi::term' is a specialization of 'simpleExpression'.
+'delphi::gotoStmnt' is a specialization of 'simpleStatement'.
+'delphi::restrictedType' is a specialization of 'CSTrace'.
+'delphi::exprList' is a specialization of 'CSTrace'.
+'delphi::arrayConstant' (role 'delphi_arrayConstant', cardinality 0..*) is associated with 'delphi::typedConstant' (role 'delphi_typedConstant78', cardinality 0..*).
+'delphi::subrangeType' (role 'delphi_subrangeType97', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr98', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression216', cardinality 0..*) is associated with 'delphi::caseStmt' (role 'delphi_caseStmt', cardinality 0..*).
+'delphi::implementationSection' (role 'delphi_implementationSection39', cardinality 0..*) is associated with 'delphi::exportsStmt' (role 'delphi_exportsStmt', cardinality 0..*).
+'delphi::requiresClause' (role 'delphi_requiresClause383', cardinality 0..*) is associated with 'delphi::identList' (role 'delphi_identList384', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression449', cardinality 0..*) is associated with 'delphi::ConstExp' (role 'delphi_ConstExp', cardinality 0..*).
+'delphi::restrictedType' (role 'delphi_restrictedType', cardinality 0..*) is associated with 'delphi::typeDecl' (role 'delphi_typeDecl73', cardinality 0..*).
+'delphi::addExp' (role 'delphi_addExp421', cardinality 0..*) is associated with 'delphi::term' (role 'delphi_term', cardinality 0..*).
+'delphi::setElement' (role 'delphi_setElement', cardinality 0..*) is associated with 'delphi::setConstructor' (role 'delphi_setConstructor191', cardinality 0..*).
+'delphi::factor' (role 'delphi_factor176', cardinality 0..*) is associated with 'delphi::typeId' (role 'delphi_typeId177', cardinality 0..*).
+'delphi::objHeritage' (role 'delphi_objHeritage', cardinality 0..*) is associated with 'delphi::objectType' (role 'delphi_objectType', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident69', cardinality 0..*) is associated with 'delphi::typeDecl' (role 'delphi_typeDecl68', cardinality 0..*).
+'delphi::classField' (role 'delphi_classField322', cardinality 0..*) is associated with 'delphi::objFieldList' (role 'delphi_objFieldList323', cardinality 0..*).
+'delphi::propertyParameterList' (role 'delphi_propertyParameterList', cardinality 0..*) is associated with 'delphi::propertyInterface' (role 'delphi_propertyInterface341', cardinality 0..*).
+'delphi::interfaceType' (role 'delphi_interfaceType374', cardinality 0..*) is associated with 'delphi::classMethodList' (role 'delphi_classMethodList375', cardinality 0..*).
+'delphi::factor' (role 'delphi_factor169', cardinality 0..*) is associated with 'delphi::expression' (role 'delphi_expression', cardinality 0..*).
+'delphi::type' (role 'delphi_type259', cardinality 0..*) is associated with 'delphi::exceptionBlock' (role 'delphi_exceptionBlock258', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression208', cardinality 0..*) is associated with 'delphi::ifStmt' (role 'delphi_ifStmt', cardinality 0..*).
+'delphi::stmtList' (role 'delphi_stmtList308', cardinality 0..*) is associated with 'delphi::initSection' (role 'delphi_initSection307', cardinality 0..*).
+'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers352', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr353', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList389', cardinality 0..*) is associated with 'delphi::type' (role 'delphi_type390', cardinality 0..*).
+'delphi::implementationSection' (role 'delphi_implementationSection34', cardinality 0..*) is associated with 'delphi::usesClause' (role 'delphi_usesClause35', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr136', cardinality 0..*) is associated with 'delphi::recVariant' (role 'delphi_recVariant135', cardinality 0..*).
+'delphi::simpleExpression' (role 'delphi_simpleExpression417', cardinality 0..*) is associated with 'delphi::addExp' (role 'delphi_addExp', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression411', cardinality 0..*) is associated with 'delphi::relExp' (role 'delphi_relExp', cardinality 0..*).
+'delphi::functionHeading' (role 'delphi_functionHeading', cardinality 0..*) is associated with 'delphi::exportedHeading' (role 'delphi_exportedHeading32', cardinality 0..*).
+'delphi::file' (role 'delphi_file2', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident', cardinality 0..*).
+'delphi::packageDecl' (role 'delphi_packageDecl', cardinality 0..*) is associated with 'delphi::requiresClause' (role 'delphi_requiresClause', cardinality 0..*).
+'delphi::mulOp' (role 'delphi_mulOp', cardinality 0..*) is associated with 'delphi::multExp' (role 'delphi_multExp425', cardinality 0..*).
+'delphi::block' (role 'delphi_block270', cardinality 0..*) is associated with 'delphi::procedureDeclSection' (role 'delphi_procedureDeclSection269', cardinality 0..*).
+'delphi::caseSelector' (role 'delphi_caseSelector225', cardinality 0..*) is associated with 'delphi::statement' (role 'delphi_statement226', cardinality 0..*).
+'delphi::withStmt' (role 'delphi_withStmt', cardinality 0..*) is associated with 'delphi::identList' (role 'delphi_identList243', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList22', cardinality 0..*) is associated with 'delphi::usesClause' (role 'delphi_usesClause21', cardinality 0..*).
+'delphi::functionDecl' (role 'delphi_functionDecl', cardinality 0..*) is associated with 'delphi::functionHeading' (role 'delphi_functionHeading274', cardinality 0..*).
+'delphi::unitId' (role 'delphi_unitId401', cardinality 0..*) is associated with 'delphi::typeId' (role 'delphi_typeId400', cardinality 0..*).
+'delphi::classPropertyList' (role 'delphi_classPropertyList330', cardinality 0..*) is associated with 'delphi::classProperty' (role 'delphi_classProperty', cardinality 0..*).
+'delphi::exportsItem' (role 'delphi_exportsItem54', cardinality 0..*) is associated with 'delphi::exportsStmt' (role 'delphi_exportsStmt53', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression237', cardinality 0..*) is associated with 'delphi::loopStmt' (role 'delphi_loopStmt236', cardinality 0..*).
+'delphi::ifStmt' (role 'delphi_ifStmt210', cardinality 0..*) is associated with 'delphi::statement' (role 'delphi_statement211', cardinality 0..*).
+'delphi::interfaceType' (role 'delphi_interfaceType377', cardinality 0..*) is associated with 'delphi::classPropertyList' (role 'delphi_classPropertyList378', cardinality 0..*).
+'delphi::tryStmt' (role 'delphi_tryStmt250', cardinality 0..*) is associated with 'delphi::exceptionBlock' (role 'delphi_exceptionBlock', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList', cardinality 0..*) is associated with 'delphi::program' (role 'delphi_program', cardinality 0..*).
+'delphi::varDecl' (role 'delphi_varDecl160', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr161', cardinality 0..*).
+'delphi::classFieldList' (role 'delphi_classFieldList', cardinality 0..*) is associated with 'delphi::classType' (role 'delphi_classType314', cardinality 0..*).
+'delphi::statement' (role 'delphi_statement246', cardinality 0..*) is associated with 'delphi::withStmt' (role 'delphi_withStmt245', cardinality 0..*).
+'delphi::library' (role 'delphi_library', cardinality 0..*) is associated with 'delphi::programBlock' (role 'delphi_programBlock15', cardinality 0..*).
+'delphi::typedConstant' (role 'delphi_typedConstant83', cardinality 0..*) is associated with 'delphi::arrayConstant' (role 'delphi_arrayConstant82', cardinality 0..*).
+'delphi::designator' (role 'delphi_designator', cardinality 0..*) is associated with 'delphi::factor' (role 'delphi_factor', cardinality 0..*).
+'delphi::unlabelledStatement' (role 'delphi_unlabelledStatement', cardinality 0..*) is associated with 'delphi::statement' (role 'delphi_statement203', cardinality 0..*).
+'delphi::tryStmt' (role 'delphi_tryStmt', cardinality 0..*) is associated with 'delphi::stmtList' (role 'delphi_stmtList248', cardinality 0..*).
+'delphi::type' (role 'delphi_type155', cardinality 0..*) is associated with 'delphi::varDecl' (role 'delphi_varDecl154', cardinality 0..*).
+'delphi::statement' (role 'delphi_statement214', cardinality 0..*) is associated with 'delphi::ifStmt' (role 'delphi_ifStmt213', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression172', cardinality 0..*) is associated with 'delphi::factor' (role 'delphi_factor171', cardinality 0..*).
+'delphi::varDecl' (role 'delphi_varDecl151', cardinality 0..*) is associated with 'delphi::identList' (role 'delphi_identList152', cardinality 0..*).
+'delphi::declSection' (role 'delphi_declSection', cardinality 0..*) is associated with 'delphi::implementationSection' (role 'delphi_implementationSection37', cardinality 0..*).
+'delphi::methodHeading' (role 'delphi_methodHeading', cardinality 0..*) is associated with 'delphi::methodList' (role 'delphi_methodList296', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident344', cardinality 0..*) is associated with 'delphi::propertyInterface' (role 'delphi_propertyInterface343', cardinality 0..*).
+'delphi::designatorSubPart' (role 'delphi_designatorSubPart', cardinality 0..*) is associated with 'delphi::designator' (role 'delphi_designator179', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr286', cardinality 0..*) is associated with 'delphi::directive' (role 'delphi_directive285', cardinality 0..*).
+'delphi::typeId' (role 'delphi_typeId371', cardinality 0..*) is associated with 'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers370', cardinality 0..*).
+'delphi::stmtList' (role 'delphi_stmtList221', cardinality 0..*) is associated with 'delphi::caseStmt' (role 'delphi_caseStmt220', cardinality 0..*).
+'delphi::usesClause' (role 'delphi_usesClause', cardinality 0..*) is associated with 'delphi::programBlock' (role 'delphi_programBlock17', cardinality 0..*).
+'delphi::propertyList' (role 'delphi_propertyList', cardinality 0..*) is associated with 'delphi::classProperty' (role 'delphi_classProperty332', cardinality 0..*).
+'delphi::functionHeading' (role 'delphi_functionHeading148', cardinality 0..*) is associated with 'delphi::procedureType' (role 'delphi_procedureType147', cardinality 0..*).
+'delphi::caseLabel' (role 'delphi_caseLabel231', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr232', cardinality 0..*).
+'delphi::relExp' (role 'delphi_relExp415', cardinality 0..*) is associated with 'delphi::simpleExpression' (role 'delphi_simpleExpression', cardinality 0..*).
+'delphi::parameterSimple' (role 'delphi_parameterSimple444', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr445', cardinality 0..*).
+'delphi::procedureDecl' (role 'delphi_procedureDecl', cardinality 0..*) is associated with 'delphi::procedureHeading' (role 'delphi_procedureHeading272', cardinality 0..*).
+'delphi::typedConstant' (role 'delphi_typedConstant75', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr76', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident359', cardinality 0..*) is associated with 'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers358', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList440', cardinality 0..*) is associated with 'delphi::parameterList' (role 'delphi_parameterList', cardinality 0..*).
+'delphi::qualId' (role 'delphi_qualId294', cardinality 0..*) is associated with 'delphi::objHeritage' (role 'delphi_objHeritage293', cardinality 0..*).
+'delphi::compoundStmt' (role 'delphi_compoundStmt', cardinality 0..*) is associated with 'delphi::block' (role 'delphi_block47', cardinality 0..*).
+'delphi::recordConstExpr' (role 'delphi_recordConstExpr453', cardinality 0..*) is associated with 'delphi::RecordConstExp' (role 'delphi_RecordConstExp', cardinality 0..*).
+'delphi::factor' (role 'delphi_factor167', cardinality 0..*) is associated with 'delphi::exprList' (role 'delphi_exprList', cardinality 0..*).
+'delphi::expression' (role 'delphi_expression241', cardinality 0..*) is associated with 'delphi::forStmt' (role 'delphi_forStmt240', cardinality 0..*).
+'delphi::enumeratedTypeElement' (role 'delphi_enumeratedTypeElement', cardinality 0..*) is associated with 'delphi::enumeratedType' (role 'delphi_enumeratedType', cardinality 0..*).
+'delphi::setType' (role 'delphi_setType', cardinality 0..*) is associated with 'delphi::ordinalType' (role 'delphi_ordinalType141', cardinality 0..*).
+'delphi::recordFieldConstant' (role 'delphi_recordFieldConstant87', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident88', cardinality 0..*).
+'delphi::variantSection' (role 'delphi_variantSection130', cardinality 0..*) is associated with 'delphi::typeId' (role 'delphi_typeId131', cardinality 0..*).
+'delphi::stmtList' (role 'delphi_stmtList265', cardinality 0..*) is associated with 'delphi::exceptionBlock' (role 'delphi_exceptionBlock264', cardinality 0..*).
+'delphi::type' (role 'delphi_type283', cardinality 0..*) is associated with 'delphi::parameter' (role 'delphi_parameter282', cardinality 0..*).
+'delphi::classPropertyList' (role 'delphi_classPropertyList', cardinality 0..*) is associated with 'delphi::classType' (role 'delphi_classType318', cardinality 0..*).
+'delphi::recType' (role 'delphi_recType', cardinality 0..*) is associated with 'delphi::fieldList' (role 'delphi_fieldList', cardinality 0..*).
+'delphi::parameterSimple' (role 'delphi_parameterSimple', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident442', cardinality 0..*).
+'delphi::packageDecl' (role 'delphi_packageDecl13', cardinality 0..*) is associated with 'delphi::containsClause' (role 'delphi_containsClause', cardinality 0..*).
+'delphi::propertyList' (role 'delphi_propertyList334', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident335', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList381', cardinality 0..*) is associated with 'delphi::interfaceHeritage' (role 'delphi_interfaceHeritage380', cardinality 0..*).
+'delphi::block' (role 'delphi_block', cardinality 0..*) is associated with 'delphi::programBlock' (role 'delphi_programBlock19', cardinality 0..*).
+'delphi::interfaceSection' (role 'delphi_interfaceSection', cardinality 0..*) is associated with 'delphi::unit' (role 'delphi_unit', cardinality 0..*).
+'delphi::typeId' (role 'delphi_typeId403', cardinality 0..*) is associated with 'delphi::qualId' (role 'delphi_qualId404', cardinality 0..*).
+'delphi::varDecl' (role 'delphi_varDecl163', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr164', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident128', cardinality 0..*) is associated with 'delphi::variantSection' (role 'delphi_variantSection127', cardinality 0..*).
+'delphi::MultipleConstExp' (role 'delphi_MultipleConstExp', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr451', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident398', cardinality 0..*) is associated with 'delphi::qualId' (role 'delphi_qualId397', cardinality 0..*).
+'delphi::exprList' (role 'delphi_exprList187', cardinality 0..*) is associated with 'delphi::designatorSubPart' (role 'delphi_designatorSubPart186', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr107', cardinality 0..*) is associated with 'delphi::stringType' (role 'delphi_stringType', cardinality 0..*).
+'delphi::objFieldList' (role 'delphi_objFieldList', cardinality 0..*) is associated with 'delphi::objectType' (role 'delphi_objectType289', cardinality 0..*).
+'delphi::forStmt' (role 'delphi_forStmt', cardinality 0..*) is associated with 'delphi::qualId' (role 'delphi_qualId', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr', cardinality 0..*) is associated with 'delphi::exportsItem' (role 'delphi_exportsItem51', cardinality 0..*).
+'delphi::multExp' (role 'delphi_multExp427', cardinality 0..*) is associated with 'delphi::factor' (role 'delphi_factor428', cardinality 0..*).
+'delphi::constantDecl' (role 'delphi_constantDecl', cardinality 0..*) is associated with 'delphi::constSection' (role 'delphi_constSection', cardinality 0..*).
+'delphi::ReservedId' (role 'delphi_ReservedId', cardinality 0..*) is associated with 'delphi::reservedWord' (role 'delphi_reservedWord447', cardinality 0..*).
+'delphi::containsClause' (role 'delphi_containsClause386', cardinality 0..*) is associated with 'delphi::identList' (role 'delphi_identList387', cardinality 0..*).
+'delphi::caseSelector' (role 'delphi_caseSelector223', cardinality 0..*) is associated with 'delphi::caseLabel' (role 'delphi_caseLabel', cardinality 0..*).
+'delphi::recordConstExpr' (role 'delphi_recordConstExpr', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident406', cardinality 0..*).
+'delphi::exportedHeading' (role 'delphi_exportedHeading30', cardinality 0..*) is associated with 'delphi::directive' (role 'delphi_directive', cardinality 0..*).
+'delphi::subrangeType' (role 'delphi_subrangeType', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr95', cardinality 0..*).
+'delphi::tryStmt' (role 'delphi_tryStmt252', cardinality 0..*) is associated with 'delphi::stmtList' (role 'delphi_stmtList253', cardinality 0..*).
+'delphi::classHeritage' (role 'delphi_classHeritage', cardinality 0..*) is associated with 'delphi::classType' (role 'delphi_classType', cardinality 0..*).
+'delphi::recordConstant' (role 'delphi_recordConstant', cardinality 0..*) is associated with 'delphi::typedConstant' (role 'delphi_typedConstant80', cardinality 0..*).
+'delphi::relOp' (role 'delphi_relOp', cardinality 0..*) is associated with 'delphi::relExp' (role 'delphi_relExp413', cardinality 0..*).
+'delphi::designator' (role 'delphi_designator182', cardinality 0..*) is associated with 'delphi::designator' (role 'delphi_designator180', cardinality 0..*).
+'delphi::propertyInterface' (role 'delphi_propertyInterface', cardinality 0..*) is associated with 'delphi::propertyList' (role 'delphi_propertyList337', cardinality 0..*).
+'delphi::callStmnt' (role 'delphi_callStmnt437', cardinality 0..*) is associated with 'delphi::exprList' (role 'delphi_exprList438', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident362', cardinality 0..*) is associated with 'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers361', cardinality 0..*).
+'delphi::designatorSubPart' (role 'delphi_designatorSubPart184', cardinality 0..*) is associated with 'delphi::designatorPart' (role 'delphi_designatorPart', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident158', cardinality 0..*) is associated with 'delphi::varDecl' (role 'delphi_varDecl157', cardinality 0..*).
+'delphi::implementationSection' (role 'delphi_implementationSection', cardinality 0..*) is associated with 'delphi::unit' (role 'delphi_unit8', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident102', cardinality 0..*) is associated with 'delphi::enumeratedTypeElement' (role 'delphi_enumeratedTypeElement101', cardinality 0..*).
+'delphi::setConstructor' (role 'delphi_setConstructor', cardinality 0..*) is associated with 'delphi::factor' (role 'delphi_factor174', cardinality 0..*).
+'delphi::loopStmt' (role 'delphi_loopStmt', cardinality 0..*) is associated with 'delphi::statement' (role 'delphi_statement234', cardinality 0..*).
+'delphi::file' (role 'delphi_file', cardinality 0..*) is associated with 'delphi::mainRule' (role 'delphi_mainRule', cardinality 0..*).
+'delphi::formalParameters' (role 'delphi_formalParameters305', cardinality 0..*) is associated with 'delphi::methodHeading' (role 'delphi_methodHeading304', cardinality 0..*).
+'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers', cardinality 0..*) is associated with 'delphi::propertyList' (role 'delphi_propertyList339', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr365', cardinality 0..*) is associated with 'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers364', cardinality 0..*).
+'delphi::classField' (role 'delphi_classField', cardinality 0..*) is associated with 'delphi::classFieldList' (role 'delphi_classFieldList320', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr409', cardinality 0..*) is associated with 'delphi::recordConstExpr' (role 'delphi_recordConstExpr408', cardinality 0..*).
+'delphi::unitId' (role 'delphi_unitId', cardinality 0..*) is associated with 'delphi::qualId' (role 'delphi_qualId395', cardinality 0..*).
+'delphi::varDecl' (role 'delphi_varDecl', cardinality 0..*) is associated with 'delphi::varSection' (role 'delphi_varSection', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList392', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident393', cardinality 0..*).
+'delphi::exprList' (role 'delphi_exprList199', cardinality 0..*) is associated with 'delphi::expression' (role 'delphi_expression200', cardinality 0..*).
+'delphi::addExp' (role 'delphi_addExp419', cardinality 0..*) is associated with 'delphi::addOp' (role 'delphi_addOp', cardinality 0..*).
+'delphi::typeId' (role 'delphi_typeId350', cardinality 0..*) is associated with 'delphi::propertyParameterList' (role 'delphi_propertyParameterList349', cardinality 0..*).
+'delphi::statement' (role 'delphi_statement262', cardinality 0..*) is associated with 'delphi::exceptionBlock' (role 'delphi_exceptionBlock261', cardinality 0..*).
+'delphi::callStmnt' (role 'delphi_callStmnt', cardinality 0..*) is associated with 'delphi::designator' (role 'delphi_designator435', cardinality 0..*).
+'delphi::declSection' (role 'delphi_declSection42', cardinality 0..*) is associated with 'delphi::block' (role 'delphi_block41', cardinality 0..*).
+'delphi::typeId' (role 'delphi_typeId', cardinality 0..*) is associated with 'delphi::constantDecl' (role 'delphi_constantDecl63', cardinality 0..*).
+'delphi::exceptionBlock' (role 'delphi_exceptionBlock255', cardinality 0..*) is associated with 'delphi::ident' (role 'delphi_ident256', cardinality 0..*).
+'delphi::fieldList' (role 'delphi_fieldList119', cardinality 0..*) is associated with 'delphi::variantSection' (role 'delphi_variantSection', cardinality 0..*).
+'delphi::recVariant' (role 'delphi_recVariant138', cardinality 0..*) is associated with 'delphi::fieldList' (role 'delphi_fieldList139', cardinality 0..*).
+'delphi::recordFieldConstant' (role 'delphi_recordFieldConstant', cardinality 0..*) is associated with 'delphi::recordConstant' (role 'delphi_recordConstant85', cardinality 0..*).
+'delphi::setElement' (role 'delphi_setElement196', cardinality 0..*) is associated with 'delphi::expression' (role 'delphi_expression197', cardinality 0..*).
+'delphi::typeDecl' (role 'delphi_typeDecl71', cardinality 0..*) is associated with 'delphi::type' (role 'delphi_type', cardinality 0..*).
+'delphi::designator' (role 'delphi_designator430', cardinality 0..*) is associated with 'delphi::assignmentStmnt' (role 'delphi_assignmentStmnt', cardinality 0..*).
+'delphi::designatorPart' (role 'delphi_designatorPart189', cardinality 0..*) is associated with 'delphi::reservedWord' (role 'delphi_reservedWord', cardinality 0..*).
+'delphi::typeDecl' (role 'delphi_typeDecl', cardinality 0..*) is associated with 'delphi::typeSection' (role 'delphi_typeSection', cardinality 0..*).
+'delphi::arrayType' (role 'delphi_arrayType110', cardinality 0..*) is associated with 'delphi::ordinalType' (role 'delphi_ordinalType111', cardinality 0..*).
+'delphi::assignmentStmnt' (role 'delphi_assignmentStmnt432', cardinality 0..*) is associated with 'delphi::expression' (role 'delphi_expression433', cardinality 0..*).
+'delphi::type' (role 'delphi_type125', cardinality 0..*) is associated with 'delphi::fieldDecl' (role 'delphi_fieldDecl124', cardinality 0..*).
+'delphi::directive' (role 'delphi_directive267', cardinality 0..*) is associated with 'delphi::procedureDeclSection' (role 'delphi_procedureDeclSection', cardinality 0..*).
+'delphi::multExp' (role 'delphi_multExp', cardinality 0..*) is associated with 'delphi::term' (role 'delphi_term423', cardinality 0..*).
+'delphi::caseStmt' (role 'delphi_caseStmt218', cardinality 0..*) is associated with 'delphi::caseSelector' (role 'delphi_caseSelector', cardinality 0..*).
+'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers367', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr368', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr105', cardinality 0..*) is associated with 'delphi::enumeratedTypeElement' (role 'delphi_enumeratedTypeElement104', cardinality 0..*).
+'delphi::stmtList' (role 'delphi_stmtList311', cardinality 0..*) is associated with 'delphi::initSection' (role 'delphi_initSection310', cardinality 0..*).
+'delphi::parameter' (role 'delphi_parameter', cardinality 0..*) is associated with 'delphi::formalParm' (role 'delphi_formalParm280', cardinality 0..*).
+'delphi::setElement' (role 'delphi_setElement193', cardinality 0..*) is associated with 'delphi::expression' (role 'delphi_expression194', cardinality 0..*).
+'delphi::interfaceDecl' (role 'delphi_interfaceDecl', cardinality 0..*) is associated with 'delphi::interfaceSection' (role 'delphi_interfaceSection27', cardinality 0..*).
+'delphi::type' (role 'delphi_type114', cardinality 0..*) is associated with 'delphi::arrayType' (role 'delphi_arrayType113', cardinality 0..*).
+'delphi::CSTrace' (role 'delphi_CSTrace', cardinality 0..*) is associated with 'delphi::Visitable' (role 'delphi_Visitable', cardinality 0..*).
+'delphi::classMethodList' (role 'delphi_classMethodList', cardinality 0..*) is associated with 'delphi::classType' (role 'delphi_classType316', cardinality 0..*).
+'delphi::programBlock' (role 'delphi_programBlock', cardinality 0..*) is associated with 'delphi::program' (role 'delphi_program5', cardinality 0..*).
+'delphi::interfaceHeritage' (role 'delphi_interfaceHeritage', cardinality 0..*) is associated with 'delphi::interfaceType' (role 'delphi_interfaceType', cardinality 0..*).
+'delphi::typedConstant' (role 'delphi_typedConstant91', cardinality 0..*) is associated with 'delphi::recordFieldConstant' (role 'delphi_recordFieldConstant90', cardinality 0..*).
+'delphi::methodList' (role 'delphi_methodList298', cardinality 0..*) is associated with 'delphi::directive' (role 'delphi_directive299', cardinality 0..*).
+'delphi::constExpr' (role 'delphi_constExpr229', cardinality 0..*) is associated with 'delphi::caseLabel' (role 'delphi_caseLabel228', cardinality 0..*).
+'delphi::exportsStmt' (role 'delphi_exportsStmt45', cardinality 0..*) is associated with 'delphi::block' (role 'delphi_block44', cardinality 0..*).
+'delphi::constantDecl' (role 'delphi_constantDecl60', cardinality 0..*) is associated with 'delphi::constExpr' (role 'delphi_constExpr61', cardinality 0..*).
+'delphi::fieldList' (role 'delphi_fieldList117', cardinality 0..*) is associated with 'delphi::fieldDecl' (role 'delphi_fieldDecl', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList122', cardinality 0..*) is associated with 'delphi::fieldDecl' (role 'delphi_fieldDecl121', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident356', cardinality 0..*) is associated with 'delphi::propertySpecifiers' (role 'delphi_propertySpecifiers355', cardinality 0..*).
+'delphi::constantDecl' (role 'delphi_constantDecl65', cardinality 0..*) is associated with 'delphi::typedConstant' (role 'delphi_typedConstant', cardinality 0..*).
+'delphi::identList' (role 'delphi_identList347', cardinality 0..*) is associated with 'delphi::propertyParameterList' (role 'delphi_propertyParameterList346', cardinality 0..*).
+'delphi::variantSection' (role 'delphi_variantSection133', cardinality 0..*) is associated with 'delphi::recVariant' (role 'delphi_recVariant', cardinality 0..*).
+'delphi::classMethodList' (role 'delphi_classMethodList325', cardinality 0..*) is associated with 'delphi::classMethod' (role 'delphi_classMethod', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident49', cardinality 0..*) is associated with 'delphi::exportsItem' (role 'delphi_exportsItem', cardinality 0..*).
+'delphi::formalParameters' (role 'delphi_formalParameters', cardinality 0..*) is associated with 'delphi::formalParm' (role 'delphi_formalParm', cardinality 0..*).
+'delphi::unit' (role 'delphi_unit10', cardinality 0..*) is associated with 'delphi::initSection' (role 'delphi_initSection', cardinality 0..*).
+'delphi::usesClause' (role 'delphi_usesClause25', cardinality 0..*) is associated with 'delphi::interfaceSection' (role 'delphi_interfaceSection24', cardinality 0..*).
+'delphi::classRefType' (role 'delphi_classRefType', cardinality 0..*) is associated with 'delphi::typeId' (role 'delphi_typeId93', cardinality 0..*).
+'delphi::stmtList' (role 'delphi_stmtList206', cardinality 0..*) is associated with 'delphi::compoundStmt' (role 'delphi_compoundStmt205', cardinality 0..*).
+'delphi::functionHeading' (role 'delphi_functionHeading276', cardinality 0..*) is associated with 'delphi::type' (role 'delphi_type277', cardinality 0..*).
+'delphi::objectType' (role 'delphi_objectType291', cardinality 0..*) is associated with 'delphi::methodList' (role 'delphi_methodList', cardinality 0..*).
+'delphi::methodList' (role 'delphi_methodList328', cardinality 0..*) is associated with 'delphi::classMethod' (role 'delphi_classMethod327', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident58', cardinality 0..*) is associated with 'delphi::constantDecl' (role 'delphi_constantDecl57', cardinality 0..*).
+'delphi::procedureType' (role 'delphi_procedureType', cardinality 0..*) is associated with 'delphi::procedureHeading' (role 'delphi_procedureHeading145', cardinality 0..*).
+'delphi::statement' (role 'delphi_statement', cardinality 0..*) is associated with 'delphi::stmtList' (role 'delphi_stmtList', cardinality 0..*).
+'delphi::arrayType' (role 'delphi_arrayType', cardinality 0..*) is associated with 'delphi::ordinalType' (role 'delphi_ordinalType', cardinality 0..*).
+'delphi::ident' (role 'delphi_ident302', cardinality 0..*) is associated with 'delphi::methodHeading' (role 'delphi_methodHeading301', cardinality 0..*).
+'delphi::procedureHeading' (role 'delphi_procedureHeading', cardinality 0..*) is associated with 'delphi::exportedHeading' (role 'delphi_exportedHeading', cardinality 0..*).
+'delphi::fileType' (role 'delphi_fileType', cardinality 0..*) is associated with 'delphi::typeId' (role 'delphi_typeId143', cardinality 0..*).

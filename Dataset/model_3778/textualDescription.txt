@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'features::Feature' has the following attributes: 'mandatory' of type bool; 'nome' of type str.
+The class 'features::Root' has no attributes.
+'features::Feature' (role 'features_Feature', cardinality 0..*) is associated with 'features::Root' (role 'features_Root', cardinality 0..*).
+'features::Feature' (role 'features_Feature1', cardinality 0..*) is associated with 'features::Feature' (role 'features_Feature3', cardinality 0..*).

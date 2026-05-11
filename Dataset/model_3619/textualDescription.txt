@@ -1,0 +1,103 @@
+The model has 37 class(es).
+The class 'r2::IVLQTY' has the following attributes: 'lowClosed' of type str; 'highClosed' of type str.
+The class 'r2::TS' has the following attributes: 'value' of type str.
+The class 'r2::PQ' has the following attributes: 'unit' of type str; 'value' of type str.
+The class 'r2::ADXP' has the following attributes: 'type' of type str.
+The class 'r2::CD' has the following attributes: 'codeSystemName' of type str; 'codeSystemVersion' of type str; 'code' of type str; 'codeSystem' of type str; 'valueSet' of type str; 'valueSetVersion' of type str.
+The class 'r2::ED' has the following attributes: 'integrityCheckAlgorithm' of type str; 'integrityCheck' of type str; 'compression' of type str; 'language' of type str; 'mediaType' of type str; 'charset' of type str; 'value' of type str; 'data' of type str.
+The class 'XP' has no attributes.
+The class 'r2::ENXP' has the following attributes: 'qualifier' of type str; 'type' of type str.
+The class 'r2::EN' has the following attributes: 'use' of type str.
+The class 'r2::IVLTS' has the following attributes: 'highClosed' of type str; 'lowClosed' of type str.
+The class 'r2::CS' has the following attributes: 'code' of type str.
+The class 'r2::ANY' has no attributes.
+The class 'r2::IVL' has no attributes.
+The class 'r2::IVLINT' has the following attributes: 'highClosed' of type str; 'lowClosed' of type str.
+The class 'r2::EObject' has no attributes.
+The class 'r2::INT' has the following attributes: 'value' of type str.
+The class 'r2::XP' has the following attributes: 'value' of type str.
+The class 'r2::QTY' has no attributes.
+The class 'r2::PIVLTS' has the following attributes: 'isFlexible' of type str; 'alignment' of type str.
+The class 'ANY' has no attributes.
+The class 'r2::ST' has the following attributes: 'value' of type str.
+The class 'IVL' has no attributes.
+The class 'r2::IVLREAL' has the following attributes: 'lowClosed' of type str; 'highClosed' of type str.
+The class 'r2::QSET' has no attributes.
+The class 'r2::REAL' has the following attributes: 'value' of type str.
+The class 'r2::TEL' has the following attributes: 'capabilities' of type str; 'use' of type str; 'value' of type str.
+The class 'r2::BL' has the following attributes: 'value' of type str.
+The class 'QTY' has no attributes.
+The class 'r2::IVLPQ' has the following attributes: 'lowClosed' of type str; 'highClosed' of type str.
+The class 'HXIT' has no attributes.
+The class 'r2::II' has the following attributes: 'identifierName' of type str; 'extension' of type str; 'root' of type str.
+The class 'r2::RTO' has no attributes.
+The class 'r2::AD' has the following attributes: 'use' of type str.
+The class 'QSET' has no attributes.
+The class 'r2::CO' has the following attributes: 'value' of type str.
+The class 'r2::IVLCO' has the following attributes: 'lowClosed' of type str; 'highClosed' of type str.
+The class 'r2::HXIT' has no attributes.
+The enumeration 'AddressPartType' has the following literals: 'BNN', 'SAL', 'DAL', 'STR', 'CPA', 'DINSTA', 'DPID', 'ZIP', 'BNR', 'DINST', 'STA', 'DMOD', 'PRE', 'BNS', 'AL', 'UNID', 'POB', 'STTYP', 'CNT', 'ADL', 'CTY', 'INT', 'DIR', 'CEN', 'DMODID', 'STB', 'DINSTQ', 'CAR', 'UNIT', 'DEL'.
+The enumeration 'PostalAddressUse' has the following literals: 'SYL', 'SNDX', 'HV', 'HP', 'H', 'PST', 'IDE', 'TMP', 'DIR', 'PUB', 'BAD', 'PHON', 'ABC', 'PHYS', 'SRCH', 'WP'.
+The enumeration 'Compression' has the following literals: 'BZ', 'ZL', 'Z', 'DF', 'Z7', 'GZ'.
+The enumeration 'EntityNameUse' has the following literals: 'DN', 'SRCH', 'ANON', 'R', 'OLD', 'T', 'I', 'PHON', 'M', 'OR', 'IDE', 'P', 'SYL', 'A', 'C', 'ABC'.
+The enumeration 'IntegrityCheckAlgorithm' has the following literals: 'SHA256', 'SHA1'.
+The enumeration 'EntityNamePartType' has the following literals: 'FAM', 'TITLE', 'GIV', 'DEL'.
+The enumeration 'TelecommunicationCapability' has the following literals: 'tty', 'sms', 'fax', 'voice', 'data'.
+The enumeration 'EntityNamePartQualifier' has the following literals: 'IN', 'LS', 'MID', 'CL', 'AD', 'AC', 'NB', 'SFX', 'BR', 'PR', 'SP', 'HON', 'PFX'.
+The enumeration 'TelecommunicationAddressUse' has the following literals: 'WP', 'EC', 'PG', 'HP', 'DIR', 'H', 'HV', 'BAD', 'MC', 'TMP', 'AS', 'PUB'.
+The enumeration 'CalendarCycle' has the following literals: 'CW', 'SN', 'CD', 'WM', 'NH', 'WY', 'DM', 'CM', 'CH', 'DY', 'HD', 'MY', 'CS', 'CY', 'DW', 'CN'.
+'r2::IVLCO' is a specialization of 'IVL'.
+'r2::IVLREAL' is a specialization of 'IVL'.
+'r2::RTO' is a specialization of 'QTY'.
+'r2::IVLPQ' is a specialization of 'IVL'.
+'r2::ENXP' is a specialization of 'XP'.
+'r2::INT' is a specialization of 'QTY'.
+'r2::QTY' is a specialization of 'ANY'.
+'r2::CO' is a specialization of 'QTY'.
+'r2::CD' is a specialization of 'ANY'.
+'r2::CS' is a specialization of 'ANY'.
+'r2::BL' is a specialization of 'ANY'.
+'r2::IVL' is a specialization of 'QSET'.
+'r2::II' is a specialization of 'ANY'.
+'r2::TS' is a specialization of 'QTY'.
+'r2::IVLINT' is a specialization of 'IVL'.
+'r2::PIVLTS' is a specialization of 'QTY'.
+'r2::IVLQTY' is a specialization of 'IVL'.
+'r2::QSET' is a specialization of 'ANY'.
+'r2::ADXP' is a specialization of 'XP'.
+'r2::ANY' is a specialization of 'HXIT'.
+'r2::REAL' is a specialization of 'QTY'.
+'r2::AD' is a specialization of 'ANY'.
+'r2::PQ' is a specialization of 'QTY'.
+'r2::ST' is a specialization of 'ANY'.
+'r2::IVLTS' is a specialization of 'IVL'.
+'r2::EN' is a specialization of 'ANY'.
+'r2::TEL' is a specialization of 'ANY'.
+'r2::ED' is a specialization of 'ANY'.
+'r2::IVLINT' (role 'r2_IVLINT', cardinality 0..*) is associated with 'r2::INT' (role 'r2_INT', cardinality 0..*).
+'r2::PIVLTS' (role 'r2_PIVLTS', cardinality 0..*) is associated with 'r2::IVLTS' (role 'r2_IVLTS43', cardinality 0..*).
+'r2::CD' (role 'r2_CD3', cardinality 0..*) is associated with 'r2::ST' (role 'r2_ST4', cardinality 0..*).
+'r2::CD' (role 'r2_CD9', cardinality 0..*) is associated with 'r2::CO' (role 'r2_CO', cardinality 0..*).
+'r2::IVLQTY' (role 'r2_IVLQTY32', cardinality 0..*) is associated with 'r2::QTY' (role 'r2_QTY33', cardinality 0..*).
+'r2::PIVLTS' (role 'r2_PIVLTS48', cardinality 0..*) is associated with 'r2::RTO' (role 'r2_RTO', cardinality 0..*).
+'r2::IVLPQ' (role 'r2_IVLPQ28', cardinality 0..*) is associated with 'r2::PQ' (role 'r2_PQ29', cardinality 0..*).
+'r2::ED' (role 'r2_ED12', cardinality 0..*) is associated with 'r2::TEL' (role 'r2_TEL', cardinality 0..*).
+'r2::IVLTS' (role 'r2_IVLTS', cardinality 0..*) is associated with 'r2::TS' (role 'r2_TS', cardinality 0..*).
+'r2::ENXP' (role 'r2_ENXP', cardinality 0..*) is associated with 'r2::EN' (role 'r2_EN', cardinality 0..*).
+'r2::QTY' (role 'r2_QTY54', cardinality 0..*) is associated with 'r2::RTO' (role 'r2_RTO53', cardinality 0..*).
+'r2::PIVLTS' (role 'r2_PIVLTS50', cardinality 0..*) is associated with 'r2::INT' (role 'r2_INT51', cardinality 0..*).
+'r2::CO' (role 'r2_CO21', cardinality 0..*) is associated with 'r2::IVLCO' (role 'r2_IVLCO20', cardinality 0..*).
+'r2::CO' (role 'r2_CO18', cardinality 0..*) is associated with 'r2::IVLCO' (role 'r2_IVLCO', cardinality 0..*).
+'r2::IVLPQ' (role 'r2_IVLPQ', cardinality 0..*) is associated with 'r2::PQ' (role 'r2_PQ', cardinality 0..*).
+'r2::REAL' (role 'r2_REAL', cardinality 0..*) is associated with 'r2::IVLREAL' (role 'r2_IVLREAL', cardinality 0..*).
+'r2::CD' (role 'r2_CD7', cardinality 0..*) is associated with 'r2::CD' (role 'r2_CD5', cardinality 0..*).
+'r2::PQ' (role 'r2_PQ46', cardinality 0..*) is associated with 'r2::PIVLTS' (role 'r2_PIVLTS45', cardinality 0..*).
+'r2::ED' (role 'r2_ED14', cardinality 0..*) is associated with 'r2::ST' (role 'r2_ST15', cardinality 0..*).
+'r2::TS' (role 'r2_TS41', cardinality 0..*) is associated with 'r2::IVLTS' (role 'r2_IVLTS40', cardinality 0..*).
+'r2::ST' (role 'r2_ST', cardinality 0..*) is associated with 'r2::CD' (role 'r2_CD', cardinality 0..*).
+'r2::RTO' (role 'r2_RTO56', cardinality 0..*) is associated with 'r2::QTY' (role 'r2_QTY57', cardinality 0..*).
+'r2::AD' (role 'r2_AD', cardinality 0..*) is associated with 'r2::ADXP' (role 'r2_ADXP', cardinality 0..*).
+'r2::EObject' (role 'r2_EObject', cardinality 0..*) is associated with 'r2::ED' (role 'r2_ED', cardinality 0..*).
+'r2::INT' (role 'r2_INT25', cardinality 0..*) is associated with 'r2::IVLINT' (role 'r2_IVLINT24', cardinality 0..*).
+'r2::IVLQTY' (role 'r2_IVLQTY', cardinality 0..*) is associated with 'r2::QTY' (role 'r2_QTY', cardinality 0..*).
+'r2::IVLREAL' (role 'r2_IVLREAL36', cardinality 0..*) is associated with 'r2::REAL' (role 'r2_REAL37', cardinality 0..*).

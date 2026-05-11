@@ -1,0 +1,74 @@
+The model has 31 class(es).
+The class 'smallJava::SJSuper' has no attributes.
+The class 'SJMember' has no attributes.
+The class 'smallJava::SJExpression' has no attributes.
+The class 'smallJava::SJImport' has the following attributes: 'importedNamespace' of type str.
+The class 'SJBlock' has no attributes.
+The class 'smallJava::SJStringConstant' has the following attributes: 'value' of type str.
+The class 'smallJava::SJSymbolRef' has no attributes.
+The class 'smallJava::SJIfStatement' has no attributes.
+The class 'smallJava::SJBlock' has no attributes.
+The class 'SJStatement' has no attributes.
+The class 'smallJava::SJThis' has no attributes.
+The class 'smallJava::SJMember' has the following attributes: 'access' of type str; 'name' of type str.
+The class 'smallJava::SJSymbol' has the following attributes: 'name' of type str.
+The class 'smallJava::SJStatement' has no attributes.
+The class 'smallJava::SJMemberSelection' has the following attributes: 'methodinvocation' of type bool.
+The class 'smallJava::SJIfBlock' has no attributes.
+The class 'SJSymbol' has no attributes.
+The class 'smallJava::SJMethodBody' has no attributes.
+The class 'SJExpression' has no attributes.
+The class 'smallJava::SJBoolConstant' has the following attributes: 'value' of type str.
+The class 'smallJava::SJNull' has no attributes.
+The class 'smallJava::SJField' has no attributes.
+The class 'smallJava::SJProgram' has the following attributes: 'name' of type str.
+The class 'smallJava::SJNew' has no attributes.
+The class 'smallJava::SJIntConstant' has the following attributes: 'value' of type int.
+The class 'smallJava::SJClass' has the following attributes: 'name' of type str.
+The class 'smallJava::SJMethod' has no attributes.
+The class 'smallJava::SJAssignment' has no attributes.
+The class 'smallJava::SJReturn' has no attributes.
+The class 'smallJava::SJParameter' has no attributes.
+The class 'smallJava::SJVariableDeclaration' has no attributes.
+The enumeration 'SJAccessLevel' has the following literals: 'PRIVATE', 'PUBLIC', 'PROTECTED'.
+'smallJava::SJNew' is a specialization of 'SJExpression'.
+'smallJava::SJMemberSelection' is a specialization of 'SJExpression'.
+'smallJava::SJIfBlock' is a specialization of 'SJBlock'.
+'smallJava::SJParameter' is a specialization of 'SJSymbol'.
+'smallJava::SJSymbolRef' is a specialization of 'SJExpression'.
+'smallJava::SJAssignment' is a specialization of 'SJExpression'.
+'smallJava::SJIntConstant' is a specialization of 'SJExpression'.
+'smallJava::SJMethodBody' is a specialization of 'SJBlock'.
+'smallJava::SJSuper' is a specialization of 'SJExpression'.
+'smallJava::SJNull' is a specialization of 'SJExpression'.
+'smallJava::SJThis' is a specialization of 'SJExpression'.
+'smallJava::SJField' is a specialization of 'SJMember'.
+'smallJava::SJBoolConstant' is a specialization of 'SJExpression'.
+'smallJava::SJVariableDeclaration' is a specialization of 'SJStatement'.
+'smallJava::SJIfStatement' is a specialization of 'SJStatement'.
+'smallJava::SJReturn' is a specialization of 'SJStatement'.
+'smallJava::SJExpression' is a specialization of 'SJStatement'.
+'smallJava::SJStringConstant' is a specialization of 'SJExpression'.
+'smallJava::SJMethod' is a specialization of 'SJMember'.
+'smallJava::SJVariableDeclaration' is a specialization of 'SJSymbol'.
+'smallJava::SJClass' (role 'smallJava_SJClass7', cardinality 0..*) is associated with 'smallJava::SJMember' (role 'smallJava_SJMember', cardinality 0..*).
+'smallJava::SJVariableDeclaration' (role 'smallJava_SJVariableDeclaration', cardinality 0..*) is associated with 'smallJava::SJExpression' (role 'smallJava_SJExpression16', cardinality 0..*).
+'smallJava::SJMember' (role 'smallJava_SJMember9', cardinality 0..*) is associated with 'smallJava::SJClass' (role 'smallJava_SJClass10', cardinality 0..*).
+'smallJava::SJSymbolRef' (role 'smallJava_SJSymbolRef', cardinality 0..*) is associated with 'smallJava::SJSymbol' (role 'smallJava_SJSymbol41', cardinality 0..*).
+'smallJava::SJClass' (role 'smallJava_SJClass', cardinality 0..*) is associated with 'smallJava::SJProgram' (role 'smallJava_SJProgram2', cardinality 0..*).
+'smallJava::SJIfStatement' (role 'smallJava_SJIfStatement20', cardinality 0..*) is associated with 'smallJava::SJIfBlock' (role 'smallJava_SJIfBlock', cardinality 0..*).
+'smallJava::SJAssignment' (role 'smallJava_SJAssignment30', cardinality 0..*) is associated with 'smallJava::SJExpression' (role 'smallJava_SJExpression31', cardinality 0..*).
+'smallJava::SJIfBlock' (role 'smallJava_SJIfBlock23', cardinality 0..*) is associated with 'smallJava::SJIfStatement' (role 'smallJava_SJIfStatement22', cardinality 0..*).
+'smallJava::SJMember' (role 'smallJava_SJMember36', cardinality 0..*) is associated with 'smallJava::SJMemberSelection' (role 'smallJava_SJMemberSelection35', cardinality 0..*).
+'smallJava::SJMemberSelection' (role 'smallJava_SJMemberSelection', cardinality 0..*) is associated with 'smallJava::SJExpression' (role 'smallJava_SJExpression33', cardinality 0..*).
+'smallJava::SJMemberSelection' (role 'smallJava_SJMemberSelection38', cardinality 0..*) is associated with 'smallJava::SJExpression' (role 'smallJava_SJExpression39', cardinality 0..*).
+'smallJava::SJExpression' (role 'smallJava_SJExpression18', cardinality 0..*) is associated with 'smallJava::SJIfStatement' (role 'smallJava_SJIfStatement', cardinality 0..*).
+'smallJava::SJMethod' (role 'smallJava_SJMethod13', cardinality 0..*) is associated with 'smallJava::SJMethodBody' (role 'smallJava_SJMethodBody', cardinality 0..*).
+'smallJava::SJAssignment' (role 'smallJava_SJAssignment', cardinality 0..*) is associated with 'smallJava::SJExpression' (role 'smallJava_SJExpression28', cardinality 0..*).
+'smallJava::SJExpression' (role 'smallJava_SJExpression', cardinality 0..*) is associated with 'smallJava::SJReturn' (role 'smallJava_SJReturn', cardinality 0..*).
+'smallJava::SJProgram' (role 'smallJava_SJProgram', cardinality 0..*) is associated with 'smallJava::SJImport' (role 'smallJava_SJImport', cardinality 0..*).
+'smallJava::SJClass' (role 'smallJava_SJClass26', cardinality 0..*) is associated with 'smallJava::SJSymbol' (role 'smallJava_SJSymbol', cardinality 0..*).
+'smallJava::SJClass' (role 'smallJava_SJClass3', cardinality 0..*) is associated with 'smallJava::SJClass' (role 'smallJava_SJClass5', cardinality 0..*).
+'smallJava::SJNew' (role 'smallJava_SJNew', cardinality 0..*) is associated with 'smallJava::SJClass' (role 'smallJava_SJClass43', cardinality 0..*).
+'smallJava::SJMethod' (role 'smallJava_SJMethod', cardinality 0..*) is associated with 'smallJava::SJParameter' (role 'smallJava_SJParameter', cardinality 0..*).
+'smallJava::SJBlock' (role 'smallJava_SJBlock', cardinality 0..*) is associated with 'smallJava::SJStatement' (role 'smallJava_SJStatement', cardinality 0..*).

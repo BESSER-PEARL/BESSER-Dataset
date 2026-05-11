@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class gaml_Point extends Expression {
+
+
+
+
+
+
+    private gaml_Expression gaml_expression;
+
+
+    public gaml_Point(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public gaml_Expression getGaml_expression() {
+        return gaml_expression;
+    }
+
+    public void setGaml_expression(gaml_Expression gaml_expression) {
+        this.gaml_expression = gaml_expression;
+    }
+
+}

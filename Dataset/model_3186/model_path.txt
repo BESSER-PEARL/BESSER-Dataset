@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diogenes-lang/diogenes/it.unica.co2/model/generated/CO2.ecore

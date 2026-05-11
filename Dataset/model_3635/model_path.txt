@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/vnu-dse/inferOCL/plugins/fr.inria.atlanmod.genmodel/Cartier/demo/MDD4DRES/UMLActivity/input/metamodel/UMLKNES.ecore

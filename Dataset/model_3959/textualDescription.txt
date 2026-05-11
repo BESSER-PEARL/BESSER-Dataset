@@ -1,0 +1,156 @@
+The model has 54 class(es).
+The class 'classes::InstanceValue' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'classes::ValueSpecification' has no attributes.
+The class 'classes::LiteralNull' has no attributes.
+The class 'InstanceSpecification' has no attributes.
+The class 'classes::Comment' has the following attributes: 'body' of type str.
+The class 'Classifier' has no attributes.
+The class 'classes::Package' has no attributes.
+The class 'classes::Feature' has the following attributes: 'static' of type bool.
+The class 'classes::LiteralInteger' has the following attributes: 'value' of type int.
+The class 'classes::Slot' has no attributes.
+The class 'Type' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'classes::Class' has the following attributes: 'active' of type bool.
+The class 'classes::Generalization' has the following attributes: 'substitutable' of type bool.
+The class 'classes::Classifier' has the following attributes: 'finalSpecialization' of type bool; 'abstract' of type bool.
+The class 'RedefinableElement' has no attributes.
+The class 'classes::Association' has the following attributes: 'derived' of type bool.
+The class 'classes::InstanceSpecification' has no attributes.
+The class 'classes::Element' has no attributes.
+The class 'classes::PackageableElement' has no attributes.
+The class 'DataType' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'classes::LiteralString' has the following attributes: 'value' of type str.
+The class 'classes::NamedElement' has the following attributes: 'visibility' of type str; 'name' of type str; 'qualifiedName' of type str.
+The class 'classes::Parameter' has the following attributes: 'direction' of type str.
+The class 'Package' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'Element' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'Feature' has no attributes.
+The class 'classes::Operation' has the following attributes: 'ordered' of type bool; 'lower' of type str; 'unique' of type bool; 'upper' of type str; 'query' of type bool.
+The class 'LiteralSpecification' has no attributes.
+The class 'classes::LiteralUnlimitedNatural' has the following attributes: 'value' of type int.
+The class 'classes::BehavioralFeature' has the following attributes: 'abstract' of type bool.
+The class 'classes::TypedElement' has no attributes.
+The class 'classes::EnumerationLiteral' has no attributes.
+The class 'classes::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'classes::Type' has no attributes.
+The class 'classes::RedefinableElement' has the following attributes: 'leaf' of type bool.
+The class 'classes::PrimitiveType' has no attributes.
+The class 'classes::Model' has no attributes.
+The class 'classes::Namespace' has no attributes.
+The class 'classes::Property' has the following attributes: 'composite' of type bool; 'derived' of type bool; 'derivedUnion' of type bool; 'aggregation' of type str.
+The class 'classes::Enumeration' has no attributes.
+The class 'classes::StructuralFeature' has the following attributes: 'readOnly' of type bool.
+The class 'classes::LiteralSpecification' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'classes::DataType' has no attributes.
+The class 'classes::ElementImport' has the following attributes: 'visibility' of type str; 'alias' of type str.
+The class 'classes::PackageImport' has the following attributes: 'visibility' of type str.
+The class 'classes::MultiplicityElement' has the following attributes: 'unique' of type bool; 'lower' of type int; 'upper' of type int; 'ordered' of type bool.
+The enumeration 'VisibilityKind' has the following literals: 'protected', 'package', 'private', 'public'.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'inout', 'return_', 'out'.
+The enumeration 'AggregationKind' has the following literals: 'none', 'shared', 'composite'.
+'classes::BehavioralFeature' is a specialization of 'Feature'.
+'classes::Association' is a specialization of 'Classifier'.
+'classes::Slot' is a specialization of 'Element'.
+'classes::TypedElement' is a specialization of 'NamedElement'.
+'classes::Feature' is a specialization of 'RedefinableElement'.
+'classes::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'classes::Type' is a specialization of 'PackageableElement'.
+'classes::DataType' is a specialization of 'Classifier'.
+'classes::Class' is a specialization of 'Classifier'.
+'classes::Model' is a specialization of 'Package'.
+'classes::Package' is a specialization of 'Namespace'.
+'classes::PackageImport' is a specialization of 'Element'.
+'classes::Property' is a specialization of 'StructuralFeature'.
+'classes::MultiplicityElement' is a specialization of 'Element'.
+'classes::RedefinableElement' is a specialization of 'NamedElement'.
+'classes::NamedElement' is a specialization of 'Element'.
+'classes::LiteralBoolean' is a specialization of 'LiteralSpecification'.
+'classes::PrimitiveType' is a specialization of 'DataType'.
+'classes::Generalization' is a specialization of 'Element'.
+'classes::Parameter' is a specialization of 'MultiplicityElement'.
+'classes::Enumeration' is a specialization of 'DataType'.
+'classes::ValueSpecification' is a specialization of 'TypedElement'.
+'classes::LiteralNull' is a specialization of 'LiteralSpecification'.
+'classes::Namespace' is a specialization of 'NamedElement'.
+'classes::LiteralUnlimitedNatural' is a specialization of 'LiteralSpecification'.
+'classes::LiteralString' is a specialization of 'LiteralSpecification'.
+'classes::InstanceSpecification' is a specialization of 'NamedElement'.
+'classes::Operation' is a specialization of 'BehavioralFeature'.
+'classes::PackageableElement' is a specialization of 'NamedElement'.
+'classes::StructuralFeature' is a specialization of 'TypedElement'.
+'classes::Classifier' is a specialization of 'Type'.
+'classes::LiteralSpecification' is a specialization of 'ValueSpecification'.
+'classes::InstanceValue' is a specialization of 'ValueSpecification'.
+'classes::ElementImport' is a specialization of 'Element'.
+'classes::StructuralFeature' is a specialization of 'Feature'.
+'classes::Parameter' is a specialization of 'TypedElement'.
+'classes::Classifier' is a specialization of 'Namespace'.
+'classes::LiteralInteger' is a specialization of 'LiteralSpecification'.
+'classes::Package' is a specialization of 'PackageableElement'.
+'classes::EnumerationLiteral' is a specialization of 'InstanceSpecification'.
+'classes::Namespace' (role 'Namespace24', cardinality 0..*) is associated with 'classes::PackageImport' (role 'packageImport', cardinality 0..*).
+'classes::Package' (role 'nestedPackage', cardinality 0..*) is associated with 'classes::Package' (role 'Package33', cardinality 0..*).
+'classes::Property' (role 'ownedAttribute60', cardinality 0..*) is associated with 'classes::Class' (role 'Class', cardinality 0..*).
+'classes::Association' (role 'association', cardinality 0..*) is associated with 'classes::Property' (role 'Property', cardinality 0..*).
+'classes::NamedElement' (role 'ownedMember', cardinality 0..*) is associated with 'classes::Namespace' (role 'Namespace', cardinality 0..*).
+'classes::MultiplicityElement' (role 'classes_MultiplicityElement76', cardinality 0..*) is associated with 'classes::ValueSpecification' (role 'classes_ValueSpecification77', cardinality 0..*).
+'classes::Association' (role 'owningAssociation', cardinality 0..*) is associated with 'classes::Property' (role 'Property71', cardinality 0..*).
+'classes::Operation' (role 'classes_Operation81', cardinality 0..*) is associated with 'classes::Operation' (role 'classes_Operation', cardinality 0..*).
+'classes::Type' (role 'classes_Type85', cardinality 0..*) is associated with 'classes::Operation' (role 'classes_Operation84', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier106', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class105', cardinality 0..*).
+'classes::Comment' (role 'classes_Comment', cardinality 0..*) is associated with 'classes::Element' (role 'classes_Element', cardinality 0..*).
+'classes::ValueSpecification' (role 'classes_ValueSpecification', cardinality 0..*) is associated with 'classes::MultiplicityElement' (role 'classes_MultiplicityElement', cardinality 0..*).
+'classes::Type' (role 'classes_Type65', cardinality 0..*) is associated with 'classes::Association' (role 'classes_Association', cardinality 0..*).
+'classes::ValueSpecification' (role 'classes_ValueSpecification92', cardinality 0..*) is associated with 'classes::Slot' (role 'classes_Slot91', cardinality 0..*).
+'classes::Feature' (role 'feature', cardinality 0..*) is associated with 'classes::Classifier' (role 'Classifier', cardinality 0..*).
+'classes::Property' (role 'Property73', cardinality 0..*) is associated with 'classes::DataType' (role 'datatype', cardinality 0..*).
+'classes::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'classes::Enumeration' (role 'enumeration', cardinality 0..*).
+'classes::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'classes::Classifier' (role 'specific', cardinality 0..*).
+'classes::Property' (role 'ownedAttribute', cardinality 0..*) is associated with 'classes::DataType' (role 'DataType', cardinality 0..*).
+'classes::Slot' (role 'Slot', cardinality 0..*) is associated with 'classes::InstanceSpecification' (role 'owningInstance', cardinality 0..*).
+'classes::Type' (role 'ownedType', cardinality 0..*) is associated with 'classes::Package' (role 'Package35', cardinality 0..*).
+'classes::Operation' (role 'ownedOperation', cardinality 0..*) is associated with 'classes::Class' (role 'Class80', cardinality 0..*).
+'classes::PackageableElement' (role 'classes_PackageableElement19', cardinality 0..*) is associated with 'classes::ElementImport' (role 'classes_ElementImport', cardinality 0..*).
+'classes::ElementImport' (role 'elementImport', cardinality 0..*) is associated with 'classes::Namespace' (role 'Namespace21', cardinality 0..*).
+'classes::InstanceSpecification' (role 'InstanceSpecification', cardinality 0..*) is associated with 'classes::Slot' (role 'slot', cardinality 0..*).
+'classes::RedefinableElement' (role 'classes_RedefinableElement37', cardinality 0..*) is associated with 'classes::RedefinableElement' (role 'classes_RedefinableElement', cardinality 0..*).
+'classes::EnumerationLiteral' (role 'ownedLiteral', cardinality 0..*) is associated with 'classes::Enumeration' (role 'Enumeration', cardinality 0..*).
+'classes::Package' (role 'Package', cardinality 0..*) is associated with 'classes::Package' (role 'nestingPackage', cardinality 0..*).
+'classes::Classifier' (role 'featuringClassifier', cardinality 0..*) is associated with 'classes::Feature' (role 'Feature', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier', cardinality 0..*) is associated with 'classes::RedefinableElement' (role 'classes_RedefinableElement40', cardinality 0..*).
+'classes::Property' (role 'ownedEnd', cardinality 0..*) is associated with 'classes::Association' (role 'Association', cardinality 0..*).
+'classes::Package' (role 'classes_Package26', cardinality 0..*) is associated with 'classes::PackageableElement' (role 'classes_PackageableElement27', cardinality 0..*).
+'classes::Parameter' (role 'classes_Parameter', cardinality 0..*) is associated with 'classes::BehavioralFeature' (role 'classes_BehavioralFeature', cardinality 0..*).
+'classes::NamedElement' (role 'NamedElement', cardinality 0..*) is associated with 'classes::Namespace' (role 'namespace', cardinality 0..*).
+'classes::Property' (role 'classes_Property63', cardinality 0..*) is associated with 'classes::Property' (role 'classes_Property61', cardinality 0..*).
+'classes::Association' (role 'Association57', cardinality 0..*) is associated with 'classes::Property' (role 'memberEnd', cardinality 0..*).
+'classes::InstanceValue' (role 'classes_InstanceValue', cardinality 0..*) is associated with 'classes::InstanceSpecification' (role 'classes_InstanceSpecification95', cardinality 0..*).
+'classes::Element' (role 'ownedElement', cardinality 0..*) is associated with 'classes::Element' (role 'Element6', cardinality 0..*).
+'classes::Property' (role 'Property99', cardinality 0..*) is associated with 'classes::Class' (role 'class_', cardinality 0..*).
+'classes::Element' (role 'Element', cardinality 0..*) is associated with 'classes::Element' (role 'owner', cardinality 0..*).
+'classes::NamedElement' (role 'classes_NamedElement45', cardinality 0..*) is associated with 'classes::Classifier' (role 'classes_Classifier44', cardinality 0..*).
+'classes::StructuralFeature' (role 'classes_StructuralFeature', cardinality 0..*) is associated with 'classes::Slot' (role 'classes_Slot', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier50', cardinality 0..*) is associated with 'classes::Classifier' (role 'classes_Classifier48', cardinality 0..*).
+'classes::Namespace' (role 'classes_Namespace', cardinality 0..*) is associated with 'classes::NamedElement' (role 'classes_NamedElement', cardinality 0..*).
+'classes::Class' (role 'class_101', cardinality 0..*) is associated with 'classes::Operation' (role 'Operation', cardinality 0..*).
+'classes::Property' (role 'classes_Property69', cardinality 0..*) is associated with 'classes::Association' (role 'classes_Association68', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier47', cardinality 0..*) is associated with 'classes::Property' (role 'classes_Property', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier52', cardinality 0..*) is associated with 'classes::Generalization' (role 'classes_Generalization', cardinality 0..*).
+'classes::Namespace' (role 'classes_Namespace16', cardinality 0..*) is associated with 'classes::PackageableElement' (role 'classes_PackageableElement', cardinality 0..*).
+'classes::Classifier' (role 'classes_Classifier87', cardinality 0..*) is associated with 'classes::InstanceSpecification' (role 'classes_InstanceSpecification', cardinality 0..*).
+'classes::Class' (role 'classes_Class', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class102', cardinality 0..*).
+'classes::Namespace' (role 'importingNamespace', cardinality 0..*) is associated with 'classes::ElementImport' (role 'ElementImport', cardinality 0..*).
+'classes::PackageImport' (role 'classes_PackageImport', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package', cardinality 0..*).
+'classes::TypedElement' (role 'classes_TypedElement', cardinality 0..*) is associated with 'classes::Type' (role 'classes_Type', cardinality 0..*).
+'classes::Element' (role 'classes_Element10', cardinality 0..*) is associated with 'classes::Comment' (role 'classes_Comment9', cardinality 0..*).
+'classes::PackageImport' (role 'PackageImport', cardinality 0..*) is associated with 'classes::Namespace' (role 'importingNamespace14', cardinality 0..*).
+'classes::Classifier' (role 'Classifier54', cardinality 0..*) is associated with 'classes::Generalization' (role 'generalization', cardinality 0..*).
+'classes::Package' (role 'package', cardinality 0..*) is associated with 'classes::Type' (role 'Type', cardinality 0..*).

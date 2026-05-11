@@ -1,0 +1,54 @@
+The model has 23 class(es).
+The class 'workflow::SubProcess' has no attributes.
+The class 'Named' has no attributes.
+The class 'workflow::Join' has no attributes.
+The class 'workflow::Workflow' has no attributes.
+The class 'workflow::Fork' has no attributes.
+The class 'EObject' has no attributes.
+The class 'workflow::FromState' has no attributes.
+The class 'workflow::Processing' has no attributes.
+The class 'workflow::End' has no attributes.
+The class 'workflow::Decision' has no attributes.
+The class 'workflow::StateTransition' has no attributes.
+The class 'workflow::AbstractState' has the following attributes: 'associatedClass' of type str.
+The class 'workflow::ToState' has no attributes.
+The class 'workflow::Start' has no attributes.
+The class 'workflow::Named' has the following attributes: 'name' of type str.
+The class 'ToState' has no attributes.
+The class 'workflow::Task' has no attributes.
+The class 'workflow::IntermediateState' has no attributes.
+The class 'IntermediateState' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'workflow::StateContainer' has no attributes.
+The class 'FromState' has no attributes.
+The class 'StateContainer' has no attributes.
+'workflow::IntermediateState' is a specialization of 'ToState'.
+'workflow::IntermediateState' is a specialization of 'FromState'.
+'workflow::StateTransition' is a specialization of 'Named'.
+'workflow::IntermediateState' is a specialization of 'AbstractState'.
+'workflow::Start' is a specialization of 'AbstractState'.
+'workflow::Named' is a specialization of 'EObject'.
+'workflow::SubProcess' is a specialization of 'IntermediateState'.
+'workflow::Task' is a specialization of 'IntermediateState'.
+'workflow::Join' is a specialization of 'IntermediateState'.
+'workflow::AbstractState' is a specialization of 'Named'.
+'workflow::Decision' is a specialization of 'IntermediateState'.
+'workflow::End' is a specialization of 'ToState'.
+'workflow::Start' is a specialization of 'FromState'.
+'workflow::Workflow' is a specialization of 'StateContainer'.
+'workflow::Workflow' is a specialization of 'Named'.
+'workflow::SubProcess' is a specialization of 'StateContainer'.
+'workflow::Fork' is a specialization of 'IntermediateState'.
+'workflow::Processing' is a specialization of 'IntermediateState'.
+'workflow::End' is a specialization of 'AbstractState'.
+'workflow::StateContainer' (role 'StateContainer15', cardinality 0..*) is associated with 'workflow::End' (role 'endState', cardinality 0..*).
+'workflow::FromState' (role 'from_', cardinality 0..*) is associated with 'workflow::StateTransition' (role 'StateTransition', cardinality 0..*).
+'workflow::IntermediateState' (role 'states', cardinality 0..*) is associated with 'workflow::StateContainer' (role 'StateContainer', cardinality 0..*).
+'workflow::Workflow' (role 'workflow_Workflow', cardinality 0..*) is associated with 'workflow::StateTransition' (role 'workflow_StateTransition', cardinality 0..*).
+'workflow::StateContainer' (role 'stateContainer8', cardinality 0..*) is associated with 'workflow::End' (role 'End', cardinality 0..*).
+'workflow::StateTransition' (role 'inboundTransitions', cardinality 0..*) is associated with 'workflow::ToState' (role 'ToState', cardinality 0..*).
+'workflow::StateContainer' (role 'StateContainer13', cardinality 0..*) is associated with 'workflow::Start' (role 'startState', cardinality 0..*).
+'workflow::StateTransition' (role 'outboundTransitions', cardinality 0..*) is associated with 'workflow::FromState' (role 'FromState', cardinality 0..*).
+'workflow::Start' (role 'Start', cardinality 0..*) is associated with 'workflow::StateContainer' (role 'stateContainer', cardinality 0..*).
+'workflow::StateTransition' (role 'StateTransition3', cardinality 0..*) is associated with 'workflow::ToState' (role 'to', cardinality 0..*).
+'workflow::IntermediateState' (role 'IntermediateState', cardinality 0..*) is associated with 'workflow::StateContainer' (role 'stateContainer6', cardinality 0..*).

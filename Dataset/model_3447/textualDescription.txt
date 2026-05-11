@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'classmate::Student' has the following attributes: 'name' of type str.
+The class 'classmate::ClassmateSystem' has no attributes.
+The class 'classmate::Classroom' has the following attributes: 'name' of type str.
+The class 'classmate::Friend' has the following attributes: 'fromDate' of type str; 'toDate' of type str.
+The class 'classmate::School' has the following attributes: 'name' of type str.
+'classmate::Student' (role 'classmate_Student12', cardinality 0..*) is associated with 'classmate::Friend' (role 'classmate_Friend11', cardinality 0..*).
+'classmate::School' (role 'classmate_School', cardinality 0..*) is associated with 'classmate::ClassmateSystem' (role 'classmate_ClassmateSystem', cardinality 0..*).
+'classmate::Classroom' (role 'classmate_Classroom', cardinality 0..*) is associated with 'classmate::Student' (role 'classmate_Student', cardinality 0..*).
+'classmate::Friend' (role 'classmate_Friend', cardinality 0..*) is associated with 'classmate::ClassmateSystem' (role 'classmate_ClassmateSystem3', cardinality 0..*).
+'classmate::School' (role 'classmate_School5', cardinality 0..*) is associated with 'classmate::Classroom' (role 'classmate_Classroom6', cardinality 0..*).
+'classmate::Student' (role 'classmate_Student9', cardinality 0..*) is associated with 'classmate::Friend' (role 'classmate_Friend8', cardinality 0..*).

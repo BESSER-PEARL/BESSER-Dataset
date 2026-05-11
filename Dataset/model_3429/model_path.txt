@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/efinder/tests/efinder.core.tests/resources/metamodels/people.ecore

@@ -1,0 +1,177 @@
+The model has 60 class(es).
+The class 'blorqueScript::BSForLoop' has no attributes.
+The class 'blorqueScript::BSParentLiteral' has no attributes.
+The class 'blorqueScript::BSMethodBody' has no attributes.
+The class 'blorqueScript::BSParentheticalExpression' has no attributes.
+The class 'blorqueScript::BSBitwiseXorExpression' has no attributes.
+The class 'blorqueScript::BSStringConstant' has the following attributes: 'value' of type str.
+The class 'blorqueScript::BSNumberConstant' has the following attributes: 'value' of type int.
+The class 'blorqueScript::BSSwitchStatement' has the following attributes: 'stringSwitch' of type bool.
+The class 'blorqueScript::BSPostfixArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'blorqueScript::BSClass' has the following attributes: 'name' of type str.
+The class 'blorqueScript::BSHexadecimalConstant' has the following attributes: 'value' of type str.
+The class 'blorqueScript::BSAssignmentExpression' has the following attributes: 'assignmentOperator' of type str.
+The class 'BSMember' has no attributes.
+The class 'blorqueScript::BSBooleanAndExpression' has no attributes.
+The class 'blorqueScript::BSCase' has no attributes.
+The class 'blorqueScript::BSEqualityExpression' has the following attributes: 'operator' of type str.
+The class 'blorqueScript::BSMethodInvokationExpression' has no attributes.
+The class 'BSSymbol' has no attributes.
+The class 'blorqueScript::BSBooleanConstant' has the following attributes: 'value' of type str.
+The class 'blorqueScript::BSCastExpression' has the following attributes: 'isArray' of type bool; 'pType' of type str.
+The class 'blorqueScript::BSClientLiteral' has no attributes.
+The class 'blorqueScript::BSSymbolRef' has no attributes.
+The class 'blorqueScript::BSImport' has the following attributes: 'importedNamespace' of type str.
+The class 'blorqueScript::BSBooleanOrExpression' has no attributes.
+The class 'blorqueScript::BSIfStatement' has no attributes.
+The class 'blorqueScript::BSNullLiteral' has no attributes.
+The class 'blorqueScript::BSWhileLoop' has no attributes.
+The class 'blorqueScript::BSSymbol' has the following attributes: 'name' of type str; 'pType' of type str.
+The class 'blorqueScript::BSBitwiseOrExpression' has no attributes.
+The class 'blorqueScript::BSNewExpression' has the following attributes: 'isArray' of type bool.
+The class 'blorqueScript::BSRealConstant' has the following attributes: 'right' of type int.
+The class 'blorqueScript::BSBitwiseAndExpression' has no attributes.
+The class 'blorqueScript::BSMemberSelectionExpression' has no attributes.
+The class 'blorqueScript::BSMember' has the following attributes: 'isArray' of type bool.
+The class 'blorqueScript::BSLoopBlock' has no attributes.
+The class 'blorqueScript::BSExpression' has no attributes.
+The class 'BSExpression' has no attributes.
+The class 'blorqueScript::BSOrderedRelationExpression' has the following attributes: 'operator' of type str.
+The class 'BSBlock' has no attributes.
+The class 'blorqueScript::BSFile' has the following attributes: 'name' of type str.
+The class 'blorqueScript::BSCaseBlock' has no attributes.
+The class 'blorqueScript::BSBreak' has no attributes.
+The class 'blorqueScript::BSContinue' has no attributes.
+The class 'blorqueScript::BSField' has no attributes.
+The class 'blorqueScript::BSBlock' has no attributes.
+The class 'blorqueScript::BSThisLiteral' has no attributes.
+The class 'blorqueScript::BSBitwiseShiftExpression' has the following attributes: 'operator' of type str.
+The class 'blorqueScript::BSPlusMinusOrStringConcatExpression' has the following attributes: 'operator' of type str.
+The class 'BSStatement' has no attributes.
+The class 'blorqueScript::BSArrayAccessExpression' has no attributes.
+The class 'blorqueScript::BSIfBlock' has no attributes.
+The class 'blorqueScript::BSParameter' has the following attributes: 'isArray' of type bool.
+The class 'blorqueScript::BSTernaryExpression' has no attributes.
+The class 'blorqueScript::BSSwitchBlock' has no attributes.
+The class 'blorqueScript::BSVariableDeclaration' has no attributes.
+The class 'blorqueScript::BSMethod' has no attributes.
+The class 'blorqueScript::BSUnaryModifierExpression' has the following attributes: 'operator' of type str.
+The class 'blorqueScript::BSReturn' has no attributes.
+The class 'blorqueScript::BSMulDivOrModExpression' has the following attributes: 'operator' of type str.
+The class 'blorqueScript::BSStatement' has no attributes.
+The enumeration 'BSPrimitiveType' has the following literals: 'VOID', 'OBJECT', 'STRING', 'TAGGED_STRING', 'NONE', 'NUMBER'.
+'blorqueScript::BSBooleanAndExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSBooleanOrExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSMulDivOrModExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSBooleanConstant' is a specialization of 'BSExpression'.
+'blorqueScript::BSMember' is a specialization of 'BSSymbol'.
+'blorqueScript::BSSwitchStatement' is a specialization of 'BSStatement'.
+'blorqueScript::BSField' is a specialization of 'BSMember'.
+'blorqueScript::BSMethodInvokationExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSBitwiseAndExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSStringConstant' is a specialization of 'BSExpression'.
+'blorqueScript::BSReturn' is a specialization of 'BSStatement'.
+'blorqueScript::BSEqualityExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSPostfixArithmeticExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSForLoop' is a specialization of 'BSStatement'.
+'blorqueScript::BSIfBlock' is a specialization of 'BSBlock'.
+'blorqueScript::BSHexadecimalConstant' is a specialization of 'BSExpression'.
+'blorqueScript::BSRealConstant' is a specialization of 'BSExpression'.
+'blorqueScript::BSCaseBlock' is a specialization of 'BSBlock'.
+'blorqueScript::BSBitwiseOrExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSPlusMinusOrStringConcatExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSIfStatement' is a specialization of 'BSStatement'.
+'blorqueScript::BSMethod' is a specialization of 'BSMember'.
+'blorqueScript::BSOrderedRelationExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSUnaryModifierExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSSwitchBlock' is a specialization of 'BSBlock'.
+'blorqueScript::BSBreak' is a specialization of 'BSStatement'.
+'blorqueScript::BSTernaryExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSLoopBlock' is a specialization of 'BSBlock'.
+'blorqueScript::BSBitwiseShiftExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSParameter' is a specialization of 'BSSymbol'.
+'blorqueScript::BSAssignmentExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSThisLiteral' is a specialization of 'BSExpression'.
+'blorqueScript::BSNewExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSSymbolRef' is a specialization of 'BSExpression'.
+'blorqueScript::BSWhileLoop' is a specialization of 'BSStatement'.
+'blorqueScript::BSParentheticalExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSContinue' is a specialization of 'BSStatement'.
+'blorqueScript::BSVariableDeclaration' is a specialization of 'BSSymbol'.
+'blorqueScript::BSNullLiteral' is a specialization of 'BSExpression'.
+'blorqueScript::BSClientLiteral' is a specialization of 'BSExpression'.
+'blorqueScript::BSMemberSelectionExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSVariableDeclaration' is a specialization of 'BSStatement'.
+'blorqueScript::BSBitwiseXorExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSMethodBody' is a specialization of 'BSBlock'.
+'blorqueScript::BSCastExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSParentLiteral' is a specialization of 'BSExpression'.
+'blorqueScript::BSExpression' is a specialization of 'BSStatement'.
+'blorqueScript::BSArrayAccessExpression' is a specialization of 'BSExpression'.
+'blorqueScript::BSNumberConstant' is a specialization of 'BSExpression'.
+'blorqueScript::BSBooleanOrExpression' (role 'blorqueScript_BSBooleanOrExpression76', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression77', cardinality 0..*).
+'blorqueScript::BSCastExpression' (role 'blorqueScript_BSCastExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression124', cardinality 0..*).
+'blorqueScript::BSIfStatement' (role 'blorqueScript_BSIfStatement21', cardinality 0..*) is associated with 'blorqueScript::BSIfBlock' (role 'blorqueScript_BSIfBlock22', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression89', cardinality 0..*) is associated with 'blorqueScript::BSBitwiseXorExpression' (role 'blorqueScript_BSBitwiseXorExpression', cardinality 0..*).
+'blorqueScript::BSBitwiseAndExpression' (role 'blorqueScript_BSBitwiseAndExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression94', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression52', cardinality 0..*) is associated with 'blorqueScript::BSCase' (role 'blorqueScript_BSCase51', cardinality 0..*).
+'blorqueScript::BSStatement' (role 'blorqueScript_BSStatement47', cardinality 0..*) is associated with 'blorqueScript::BSLoopBlock' (role 'blorqueScript_BSLoopBlock46', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression66', cardinality 0..*) is associated with 'blorqueScript::BSTernaryExpression' (role 'blorqueScript_BSTernaryExpression', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression143', cardinality 0..*) is associated with 'blorqueScript::BSArrayAccessExpression' (role 'blorqueScript_BSArrayAccessExpression', cardinality 0..*).
+'blorqueScript::BSStatement' (role 'blorqueScript_BSStatement', cardinality 0..*) is associated with 'blorqueScript::BSMethodBody' (role 'blorqueScript_BSMethodBody12', cardinality 0..*).
+'blorqueScript::BSIfStatement' (role 'blorqueScript_BSIfStatement19', cardinality 0..*) is associated with 'blorqueScript::BSIfBlock' (role 'blorqueScript_BSIfBlock', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression117', cardinality 0..*) is associated with 'blorqueScript::BSPlusMinusOrStringConcatExpression' (role 'blorqueScript_BSPlusMinusOrStringConcatExpression116', cardinality 0..*).
+'blorqueScript::BSClass' (role 'blorqueScript_BSClass', cardinality 0..*) is associated with 'blorqueScript::BSFile' (role 'blorqueScript_BSFile2', cardinality 0..*).
+'blorqueScript::BSLoopBlock' (role 'blorqueScript_BSLoopBlock', cardinality 0..*) is associated with 'blorqueScript::BSWhileLoop' (role 'blorqueScript_BSWhileLoop26', cardinality 0..*).
+'blorqueScript::BSClass' (role 'blorqueScript_BSClass126', cardinality 0..*) is associated with 'blorqueScript::BSNewExpression' (role 'blorqueScript_BSNewExpression', cardinality 0..*).
+'blorqueScript::BSVariableDeclaration' (role 'blorqueScript_BSVariableDeclaration', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression15', cardinality 0..*).
+'blorqueScript::BSNumberConstant' (role 'blorqueScript_BSNumberConstant', cardinality 0..*) is associated with 'blorqueScript::BSRealConstant' (role 'blorqueScript_BSRealConstant', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression104', cardinality 0..*) is associated with 'blorqueScript::BSOrderedRelationExpression' (role 'blorqueScript_BSOrderedRelationExpression', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression69', cardinality 0..*) is associated with 'blorqueScript::BSTernaryExpression' (role 'blorqueScript_BSTernaryExpression68', cardinality 0..*).
+'blorqueScript::BSArrayAccessExpression' (role 'blorqueScript_BSArrayAccessExpression145', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression146', cardinality 0..*).
+'blorqueScript::BSMethodBody' (role 'blorqueScript_BSMethodBody', cardinality 0..*) is associated with 'blorqueScript::BSMethod' (role 'blorqueScript_BSMethod10', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression112', cardinality 0..*) is associated with 'blorqueScript::BSBitwiseShiftExpression' (role 'blorqueScript_BSBitwiseShiftExpression111', cardinality 0..*).
+'blorqueScript::BSMethodInvokationExpression' (role 'blorqueScript_BSMethodInvokationExpression140', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression141', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression17', cardinality 0..*) is associated with 'blorqueScript::BSIfStatement' (role 'blorqueScript_BSIfStatement', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression64', cardinality 0..*) is associated with 'blorqueScript::BSAssignmentExpression' (role 'blorqueScript_BSAssignmentExpression63', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression', cardinality 0..*) is associated with 'blorqueScript::BSReturn' (role 'blorqueScript_BSReturn', cardinality 0..*).
+'blorqueScript::BSSwitchStatement' (role 'blorqueScript_BSSwitchStatement41', cardinality 0..*) is associated with 'blorqueScript::BSSwitchBlock' (role 'blorqueScript_BSSwitchBlock', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression102', cardinality 0..*) is associated with 'blorqueScript::BSEqualityExpression' (role 'blorqueScript_BSEqualityExpression101', cardinality 0..*).
+'blorqueScript::BSWhileLoop' (role 'blorqueScript_BSWhileLoop', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression24', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression72', cardinality 0..*) is associated with 'blorqueScript::BSTernaryExpression' (role 'blorqueScript_BSTernaryExpression71', cardinality 0..*).
+'blorqueScript::BSStatement' (role 'blorqueScript_BSStatement57', cardinality 0..*) is associated with 'blorqueScript::BSCaseBlock' (role 'blorqueScript_BSCaseBlock56', cardinality 0..*).
+'blorqueScript::BSMemberSelectionExpression' (role 'blorqueScript_BSMemberSelectionExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression133', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression122', cardinality 0..*) is associated with 'blorqueScript::BSMulDivOrModExpression' (role 'blorqueScript_BSMulDivOrModExpression121', cardinality 0..*).
+'blorqueScript::BSSwitchStatement' (role 'blorqueScript_BSSwitchStatement', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression39', cardinality 0..*).
+'blorqueScript::BSSwitchBlock' (role 'blorqueScript_BSSwitchBlock49', cardinality 0..*) is associated with 'blorqueScript::BSCase' (role 'blorqueScript_BSCase', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression148', cardinality 0..*) is associated with 'blorqueScript::BSPostfixArithmeticExpression' (role 'blorqueScript_BSPostfixArithmeticExpression', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression87', cardinality 0..*) is associated with 'blorqueScript::BSBitwiseOrExpression' (role 'blorqueScript_BSBitwiseOrExpression86', cardinality 0..*).
+'blorqueScript::BSForLoop' (role 'blorqueScript_BSForLoop33', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression34', cardinality 0..*).
+'blorqueScript::BSFile' (role 'blorqueScript_BSFile', cardinality 0..*) is associated with 'blorqueScript::BSImport' (role 'blorqueScript_BSImport', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression99', cardinality 0..*) is associated with 'blorqueScript::BSEqualityExpression' (role 'blorqueScript_BSEqualityExpression', cardinality 0..*).
+'blorqueScript::BSBitwiseAndExpression' (role 'blorqueScript_BSBitwiseAndExpression96', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression97', cardinality 0..*).
+'blorqueScript::BSBooleanAndExpression' (role 'blorqueScript_BSBooleanAndExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression79', cardinality 0..*).
+'blorqueScript::BSParameter' (role 'blorqueScript_BSParameter', cardinality 0..*) is associated with 'blorqueScript::BSMethod' (role 'blorqueScript_BSMethod', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression107', cardinality 0..*) is associated with 'blorqueScript::BSOrderedRelationExpression' (role 'blorqueScript_BSOrderedRelationExpression106', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression153', cardinality 0..*) is associated with 'blorqueScript::BSParentheticalExpression' (role 'blorqueScript_BSParentheticalExpression', cardinality 0..*).
+'blorqueScript::BSForLoop' (role 'blorqueScript_BSForLoop30', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression31', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression136', cardinality 0..*) is associated with 'blorqueScript::BSMemberSelectionExpression' (role 'blorqueScript_BSMemberSelectionExpression135', cardinality 0..*).
+'blorqueScript::BSMulDivOrModExpression' (role 'blorqueScript_BSMulDivOrModExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression119', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression28', cardinality 0..*) is associated with 'blorqueScript::BSForLoop' (role 'blorqueScript_BSForLoop', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression61', cardinality 0..*) is associated with 'blorqueScript::BSAssignmentExpression' (role 'blorqueScript_BSAssignmentExpression', cardinality 0..*).
+'blorqueScript::BSClass' (role 'blorqueScript_BSClass59', cardinality 0..*) is associated with 'blorqueScript::BSSymbol' (role 'blorqueScript_BSSymbol', cardinality 0..*).
+'blorqueScript::BSBooleanAndExpression' (role 'blorqueScript_BSBooleanAndExpression81', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression82', cardinality 0..*).
+'blorqueScript::BSUnaryModifierExpression' (role 'blorqueScript_BSUnaryModifierExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression131', cardinality 0..*).
+'blorqueScript::BSBitwiseXorExpression' (role 'blorqueScript_BSBitwiseXorExpression91', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression92', cardinality 0..*).
+'blorqueScript::BSBitwiseShiftExpression' (role 'blorqueScript_BSBitwiseShiftExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression109', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression84', cardinality 0..*) is associated with 'blorqueScript::BSBitwiseOrExpression' (role 'blorqueScript_BSBitwiseOrExpression', cardinality 0..*).
+'blorqueScript::BSClass' (role 'blorqueScript_BSClass5', cardinality 0..*) is associated with 'blorqueScript::BSClass' (role 'blorqueScript_BSClass3', cardinality 0..*).
+'blorqueScript::BSMethodInvokationExpression' (role 'blorqueScript_BSMethodInvokationExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression138', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression114', cardinality 0..*) is associated with 'blorqueScript::BSPlusMinusOrStringConcatExpression' (role 'blorqueScript_BSPlusMinusOrStringConcatExpression', cardinality 0..*).
+'blorqueScript::BSLoopBlock' (role 'blorqueScript_BSLoopBlock37', cardinality 0..*) is associated with 'blorqueScript::BSForLoop' (role 'blorqueScript_BSForLoop36', cardinality 0..*).
+'blorqueScript::BSCaseBlock' (role 'blorqueScript_BSCaseBlock', cardinality 0..*) is associated with 'blorqueScript::BSCase' (role 'blorqueScript_BSCase54', cardinality 0..*).
+'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression129', cardinality 0..*) is associated with 'blorqueScript::BSNewExpression' (role 'blorqueScript_BSNewExpression128', cardinality 0..*).
+'blorqueScript::BSMember' (role 'blorqueScript_BSMember', cardinality 0..*) is associated with 'blorqueScript::BSClass' (role 'blorqueScript_BSClass7', cardinality 0..*).
+'blorqueScript::BSBooleanOrExpression' (role 'blorqueScript_BSBooleanOrExpression', cardinality 0..*) is associated with 'blorqueScript::BSExpression' (role 'blorqueScript_BSExpression74', cardinality 0..*).
+'blorqueScript::BSSymbolRef' (role 'blorqueScript_BSSymbolRef', cardinality 0..*) is associated with 'blorqueScript::BSSymbol' (role 'blorqueScript_BSSymbol151', cardinality 0..*).
+'blorqueScript::BSIfBlock' (role 'blorqueScript_BSIfBlock43', cardinality 0..*) is associated with 'blorqueScript::BSStatement' (role 'blorqueScript_BSStatement44', cardinality 0..*).

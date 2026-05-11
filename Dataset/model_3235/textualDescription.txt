@@ -1,0 +1,45 @@
+The model has 15 class(es).
+The class 'uppaal::NameType' has the following attributes: 'y' of type str; 'x' of type str; 'mixed' of type str.
+The class 'uppaal::LabelType' has the following attributes: 'x' of type str; 'mixed' of type str; 'y' of type str; 'kind' of type str.
+The class 'uppaal::ParameterType' has the following attributes: 'y' of type str; 'x' of type str; 'mixed' of type str.
+The class 'uppaal::NailType' has the following attributes: 'x' of type str; 'y' of type str.
+The class 'uppaal::CommittedType' has no attributes.
+The class 'uppaal::DocumentRoot' has the following attributes: 'system' of type str; 'instantiation' of type str; 'mixed' of type str; 'declaration' of type str; 'imports' of type str.
+The class 'uppaal::LocationType' has the following attributes: 'y' of type str; 'id' of type str; 'color' of type str; 'x' of type str.
+The class 'uppaal::TemplateType' has the following attributes: 'declaration' of type str.
+The class 'uppaal::SourceType' has the following attributes: 'ref' of type str.
+The class 'uppaal::TransitionType' has the following attributes: 'id' of type str; 'y' of type str; 'x' of type str; 'color' of type str.
+The class 'uppaal::UrgentType' has no attributes.
+The class 'uppaal::TargetType' has the following attributes: 'ref' of type str.
+The class 'uppaal::InitType' has the following attributes: 'ref' of type str.
+The class 'uppaal::EStringToStringMapEntry' has no attributes.
+The class 'uppaal::NtaType' has the following attributes: 'system' of type str; 'instantiation' of type str; 'declaration' of type str; 'imports' of type str.
+'uppaal::NailType' (role 'uppaal_NailType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot13', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot9', cardinality 0..*) is associated with 'uppaal::LabelType' (role 'uppaal_LabelType', cardinality 0..*).
+'uppaal::TransitionType' (role 'uppaal_TransitionType70', cardinality 0..*) is associated with 'uppaal::NailType' (role 'uppaal_NailType71', cardinality 0..*).
+'uppaal::TemplateType' (role 'uppaal_TemplateType49', cardinality 0..*) is associated with 'uppaal::ParameterType' (role 'uppaal_ParameterType50', cardinality 0..*).
+'uppaal::TargetType' (role 'uppaal_TargetType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot23', cardinality 0..*).
+'uppaal::TransitionType' (role 'uppaal_TransitionType67', cardinality 0..*) is associated with 'uppaal::LabelType' (role 'uppaal_LabelType68', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot27', cardinality 0..*) is associated with 'uppaal::TransitionType' (role 'uppaal_TransitionType', cardinality 0..*).
+'uppaal::TransitionType' (role 'uppaal_TransitionType64', cardinality 0..*) is associated with 'uppaal::TargetType' (role 'uppaal_TargetType65', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot2', cardinality 0..*) is associated with 'uppaal::EStringToStringMapEntry' (role 'uppaal_EStringToStringMapEntry3', cardinality 0..*).
+'uppaal::LocationType' (role 'uppaal_LocationType40', cardinality 0..*) is associated with 'uppaal::CommittedType' (role 'uppaal_CommittedType41', cardinality 0..*).
+'uppaal::CommittedType' (role 'uppaal_CommittedType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot5', cardinality 0..*).
+'uppaal::SourceType' (role 'uppaal_SourceType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot21', cardinality 0..*).
+'uppaal::EStringToStringMapEntry' (role 'uppaal_EStringToStringMapEntry', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot11', cardinality 0..*) is associated with 'uppaal::LocationType' (role 'uppaal_LocationType', cardinality 0..*).
+'uppaal::TransitionType' (role 'uppaal_TransitionType59', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType58', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot15', cardinality 0..*) is associated with 'uppaal::NameType' (role 'uppaal_NameType', cardinality 0..*).
+'uppaal::NameType' (role 'uppaal_NameType32', cardinality 0..*) is associated with 'uppaal::LocationType' (role 'uppaal_LocationType31', cardinality 0..*).
+'uppaal::UrgentType' (role 'uppaal_UrgentType38', cardinality 0..*) is associated with 'uppaal::LocationType' (role 'uppaal_LocationType37', cardinality 0..*).
+'uppaal::NameType' (role 'uppaal_NameType47', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType46', cardinality 0..*).
+'uppaal::LocationType' (role 'uppaal_LocationType53', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType52', cardinality 0..*).
+'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot25', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType', cardinality 0..*).
+'uppaal::LocationType' (role 'uppaal_LocationType34', cardinality 0..*) is associated with 'uppaal::LabelType' (role 'uppaal_LabelType35', cardinality 0..*).
+'uppaal::InitType' (role 'uppaal_InitType56', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType55', cardinality 0..*).
+'uppaal::ParameterType' (role 'uppaal_ParameterType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot19', cardinality 0..*).
+'uppaal::InitType' (role 'uppaal_InitType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot7', cardinality 0..*).
+'uppaal::NtaType' (role 'uppaal_NtaType43', cardinality 0..*) is associated with 'uppaal::TemplateType' (role 'uppaal_TemplateType44', cardinality 0..*).
+'uppaal::UrgentType' (role 'uppaal_UrgentType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot29', cardinality 0..*).
+'uppaal::NtaType' (role 'uppaal_NtaType', cardinality 0..*) is associated with 'uppaal::DocumentRoot' (role 'uppaal_DocumentRoot17', cardinality 0..*).
+'uppaal::SourceType' (role 'uppaal_SourceType62', cardinality 0..*) is associated with 'uppaal::TransitionType' (role 'uppaal_TransitionType61', cardinality 0..*).

@@ -1,0 +1,58 @@
+The model has 26 class(es).
+The class 'Nsetter' has no attributes.
+The class 'workflow::Connection' has no attributes.
+The class 'workflow::LibraryTask' has no attributes.
+The class 'workflow::NamedElement' has the following attributes: 'name' of type str.
+The class 'workflow::IsInitSetter' has no attributes.
+The class 'workflow::Nsetter' has no attributes.
+The class 'workflow::AbstractTask' has the following attributes: 'status' of type str.
+The class 'workflow::LibraryFunction' has the following attributes: 'function' of type str.
+The class 'TaskInput' has no attributes.
+The class 'workflow::TaskOutput' has no attributes.
+The class 'SimpleTask' has no attributes.
+The class 'workflow::IsNotInitSetter' has no attributes.
+The class 'workflow::BaseTask' has no attributes.
+The class 'workflow::SimpleTask' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'workflow::Workflow' has the following attributes: 'language' of type str.
+The class 'workflow::Input' has no attributes.
+The class 'workflow::CustomTask' has the following attributes: 'runner' of type str.
+The class 'workflow::Output' has no attributes.
+The class 'workflow::TaskInput' has no attributes.
+The class 'IsInitSetter' has no attributes.
+The class 'workflow::TypedElement' has the following attributes: 'valueAsString' of type str; 'typeAsString' of type str.
+The class 'AbstractTask' has no attributes.
+The class 'workflow::Setter' has no attributes.
+The class 'Setter' has no attributes.
+The class 'TypedElement' has no attributes.
+The enumeration 'Language' has the following literals: 'Java', 'Python'.
+The enumeration 'TaskStatus' has the following literals: 'FINISHED', 'PROCESSING', 'NOT_PREPARED', 'PREPARED'.
+'workflow::AbstractTask' is a specialization of 'NamedElement'.
+'workflow::TaskOutput' is a specialization of 'NamedElement'.
+'workflow::Input' is a specialization of 'TypedElement'.
+'workflow::LibraryFunction' is a specialization of 'NamedElement'.
+'workflow::LibraryTask' is a specialization of 'SimpleTask'.
+'workflow::CustomTask' is a specialization of 'SimpleTask'.
+'workflow::Output' is a specialization of 'NamedElement'.
+'workflow::IsInitSetter' is a specialization of 'Nsetter'.
+'workflow::Setter' is a specialization of 'TaskInput'.
+'workflow::Nsetter' is a specialization of 'Setter'.
+'workflow::TaskOutput' is a specialization of 'TypedElement'.
+'workflow::Workflow' is a specialization of 'NamedElement'.
+'workflow::Output' is a specialization of 'TypedElement'.
+'workflow::Input' is a specialization of 'NamedElement'.
+'workflow::Connection' is a specialization of 'TaskInput'.
+'workflow::SimpleTask' is a specialization of 'AbstractTask'.
+'workflow::BaseTask' is a specialization of 'AbstractTask'.
+'workflow::TaskInput' is a specialization of 'NamedElement'.
+'workflow::Setter' is a specialization of 'TypedElement'.
+'workflow::IsNotInitSetter' is a specialization of 'IsInitSetter'.
+'workflow::AbstractTask' (role 'workflow_AbstractTask', cardinality 0..*) is associated with 'workflow::TaskInput' (role 'workflow_TaskInput', cardinality 0..*).
+'workflow::AbstractTask' (role 'workflow_AbstractTask4', cardinality 0..*) is associated with 'workflow::BaseTask' (role 'workflow_BaseTask', cardinality 0..*).
+'workflow::Connection' (role 'workflow_Connection', cardinality 0..*) is associated with 'workflow::TaskOutput' (role 'workflow_TaskOutput16', cardinality 0..*).
+'workflow::LibraryFunction' (role 'workflow_LibraryFunction7', cardinality 0..*) is associated with 'workflow::Input' (role 'workflow_Input', cardinality 0..*).
+'workflow::LibraryFunction' (role 'workflow_LibraryFunction9', cardinality 0..*) is associated with 'workflow::LibraryTask' (role 'workflow_LibraryTask', cardinality 0..*).
+'workflow::LibraryFunction' (role 'workflow_LibraryFunction', cardinality 0..*) is associated with 'workflow::Output' (role 'workflow_Output', cardinality 0..*).
+'workflow::BaseTask' (role 'workflow_BaseTask11', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow_Workflow', cardinality 0..*).
+'workflow::LibraryFunction' (role 'workflow_LibraryFunction14', cardinality 0..*) is associated with 'workflow::Workflow' (role 'workflow_Workflow13', cardinality 0..*).
+'workflow::AbstractTask' (role 'workflow_AbstractTask2', cardinality 0..*) is associated with 'workflow::TaskOutput' (role 'workflow_TaskOutput', cardinality 0..*).

@@ -1,0 +1,126 @@
+The model has 38 class(es).
+The class 'myDsl::Import::statement' has the following attributes: 'pacName' of type str; 'className' of type str.
+The class 'myDsl::Float::Literal' has the following attributes: 'floatTypeSufix' of type str; 'exp' of type str; 'decimalDigits2' of type int; 'decimalDigits1' of type int.
+The class 'myDsl::Field::declaration' has the following attributes: 'comment' of type str.
+The class 'myDsl::Ampersand::Rule' has the following attributes: 'a2' of type str; 'a1' of type str.
+The class 'myDsl::Static::initializer' has the following attributes: 'static' of type str.
+The class 'myDsl::Expression::aux' has the following attributes: 'name' of type str; 'sgin' of type str; 'bitSign' of type str; 'logicalSign' of type str; 'stringSign' of type str; 'logicOp' of type str; 'testingSign' of type str; 'numericSign' of type str.
+The class 'myDsl::Package::statement' has the following attributes: 'pacName' of type str.
+The class 'myDsl::Logical::Expression::NR' has the following attributes: 'false' of type str; 'true' of type str; 'exclamation' of type str.
+The class 'myDsl::Arg::List' has no attributes.
+The class 'myDsl::Do::Statement' has the following attributes: 'lparent' of type str; 'rparent' of type str.
+The class 'myDsl::Cast::Expression' has no attributes.
+The class 'myDsl::Numeric::Expression::NR' has the following attributes: 'sinal_numeric' of type str.
+The class 'myDsl::Statement' has the following attributes: 'g' of type str; 'name' of type str; 'rparent' of type str; 'nameStatement' of type str; 'ret' of type str.
+The class 'myDsl::For::Statement' has no attributes.
+The class 'myDsl::Constructor::declaration' has the following attributes: 'rparent' of type str; 'lParen' of type str; 'nameConstructor' of type str; 'modifiersConstructor' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Try::statement' has the following attributes: 'lParen' of type str; 'rparent' of type str.
+The class 'myDsl::Method::declaration' has the following attributes: 'rparent' of type str; 'modifiersMethod' of type str; 'debug' of type str; 'nameMethod' of type str; 'lParen' of type str.
+The class 'myDsl::Type::declaration' has the following attributes: 'comment' of type str.
+The class 'myDsl::Type' has the following attributes: 'typeVector' of type str.
+The class 'myDsl::Creating::Expression' has the following attributes: 'className' of type str.
+The class 'myDsl::Switch::statement' has the following attributes: 'lParen' of type str; 'rparent' of type str.
+The class 'myDsl::Array::initializer' has no attributes.
+The class 'myDsl::While::Statement' has the following attributes: 'rparent' of type str.
+The class 'myDsl::If::statement' has the following attributes: 'rparent' of type str; 'lparen' of type str.
+The class 'myDsl::Type::specifier' has the following attributes: 'primitiveType' of type str; 'className' of type str.
+The class 'myDsl::Parameter::list' has no attributes.
+The class 'myDsl::Parameter' has the following attributes: 'parameterName' of type str.
+The class 'myDsl::Interface::declaration' has the following attributes: 'interfaceHerdada' of type str; 'interfaceName' of type str; 'modifiers' of type str; 'interfacesHerdadas' of type str.
+The class 'myDsl::Compilation::unit' has no attributes.
+The class 'myDsl::Class::declaration' has the following attributes: 'interfaceImplementada' of type str; 'interfacesImplementadas' of type str; 'className' of type str; 'modifiers' of type str; 'classHerdada' of type str.
+The class 'myDsl::Bit::Expression::NR' has no attributes.
+The class 'myDsl::Expression' has the following attributes: 'null' of type str; 'name' of type str; 'this' of type str; 'super' of type str.
+The class 'myDsl::Literal::Expression' has the following attributes: 'string' of type str; 'charLit' of type str; 'exp1' of type int; 'exp' of type str.
+The class 'myDsl::Variable::declarator' has the following attributes: 'nameVariable' of type str; 'lenVector' of type str.
+The class 'myDsl::Variable::initializer' has no attributes.
+The class 'myDsl::Statement::block' has the following attributes: 'lCurly' of type str; 'rCurly' of type str.
+The class 'myDsl::Variable::declaration' has the following attributes: 'modifiersVariable' of type str.
+'myDsl::Expression' (role 'myDsl_Expression103', cardinality 0..*) is associated with 'myDsl::For::Statement' (role 'myDsl_For_Statement102', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement198', cardinality 0..*) is associated with 'myDsl::While::Statement' (role 'myDsl_While_Statement197', cardinality 0..*).
+'myDsl::Field::declaration' (role 'myDsl_Field_declaration21', cardinality 0..*) is associated with 'myDsl::Method::declaration' (role 'myDsl_Method_declaration', cardinality 0..*).
+'myDsl::Statement::block' (role 'myDsl_Statement_block67', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression134', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux133', cardinality 0..*).
+'myDsl::If::statement' (role 'myDsl_If_statement', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement75', cardinality 0..*).
+'myDsl::Field::declaration' (role 'myDsl_Field_declaration23', cardinality 0..*) is associated with 'myDsl::Static::initializer' (role 'myDsl_Static_initializer', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement201', cardinality 0..*) is associated with 'myDsl::Do::Statement' (role 'myDsl_Do_Statement200', cardinality 0..*).
+'myDsl::Logical::Expression::NR' (role 'myDsl_Logical_Expression_NR', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression118', cardinality 0..*).
+'myDsl::Creating::Expression' (role 'myDsl_Creating_Expression161', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression162', cardinality 0..*).
+'myDsl::For::Statement' (role 'myDsl_For_Statement99', cardinality 0..*) is associated with 'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration100', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type62', cardinality 0..*) is associated with 'myDsl::Type::specifier' (role 'myDsl_Type_specifier', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement79', cardinality 0..*) is associated with 'myDsl::While::Statement' (role 'myDsl_While_Statement', cardinality 0..*).
+'myDsl::Field::declaration' (role 'myDsl_Field_declaration17', cardinality 0..*) is associated with 'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration', cardinality 0..*).
+'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration70', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement69', cardinality 0..*).
+'myDsl::Method::declaration' (role 'myDsl_Method_declaration29', cardinality 0..*) is associated with 'myDsl::Statement::block' (role 'myDsl_Statement_block', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement97', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement95', cardinality 0..*).
+'myDsl::Arg::List' (role 'myDsl_Arg_List156', cardinality 0..*) is associated with 'myDsl::Creating::Expression' (role 'myDsl_Creating_Expression155', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression73', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement72', cardinality 0..*).
+'myDsl::Type::specifier' (role 'myDsl_Type_specifier159', cardinality 0..*) is associated with 'myDsl::Creating::Expression' (role 'myDsl_Creating_Expression158', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression168', cardinality 0..*) is associated with 'myDsl::Cast::Expression' (role 'myDsl_Cast_Expression167', cardinality 0..*).
+'myDsl::If::statement' (role 'myDsl_If_statement206', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement207', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression143', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux142', cardinality 0..*).
+'myDsl::Field::declaration' (role 'myDsl_Field_declaration15', cardinality 0..*) is associated with 'myDsl::Class::declaration' (role 'myDsl_Class_declaration14', cardinality 0..*).
+'myDsl::Field::declaration' (role 'myDsl_Field_declaration', cardinality 0..*) is associated with 'myDsl::Interface::declaration' (role 'myDsl_Interface_declaration12', cardinality 0..*).
+'myDsl::Expression::aux' (role 'myDsl_Expression_aux145', cardinality 0..*) is associated with 'myDsl::Ampersand::Rule' (role 'myDsl_Ampersand_Rule', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement210', cardinality 0..*) is associated with 'myDsl::If::statement' (role 'myDsl_If_statement209', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression189', cardinality 0..*) is associated with 'myDsl::Switch::statement' (role 'myDsl_Switch_statement188', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression106', cardinality 0..*) is associated with 'myDsl::For::Statement' (role 'myDsl_For_Statement105', cardinality 0..*).
+'myDsl::Cast::Expression' (role 'myDsl_Cast_Expression164', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type165', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression120', cardinality 0..*) is associated with 'myDsl::Bit::Expression::NR' (role 'myDsl_Bit_Expression_NR', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement213', cardinality 0..*) is associated with 'myDsl::Try::statement' (role 'myDsl_Try_statement212', cardinality 0..*).
+'myDsl::Cast::Expression' (role 'myDsl_Cast_Expression', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression122', cardinality 0..*).
+'myDsl::Constructor::declaration' (role 'myDsl_Constructor_declaration', cardinality 0..*) is associated with 'myDsl::Field::declaration' (role 'myDsl_Field_declaration19', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression171', cardinality 0..*) is associated with 'myDsl::Bit::Expression::NR' (role 'myDsl_Bit_Expression_NR170', cardinality 0..*).
+'myDsl::Parameter' (role 'myDsl_Parameter216', cardinality 0..*) is associated with 'myDsl::Try::statement' (role 'myDsl_Try_statement215', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression174', cardinality 0..*) is associated with 'myDsl::Logical::Expression::NR' (role 'myDsl_Logical_Expression_NR173', cardinality 0..*).
+'myDsl::Statement::block' (role 'myDsl_Statement_block65', cardinality 0..*) is associated with 'myDsl::Static::initializer' (role 'myDsl_Static_initializer64', cardinality 0..*).
+'myDsl::Try::statement' (role 'myDsl_Try_statement218', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement219', cardinality 0..*).
+'myDsl::Variable::initializer' (role 'myDsl_Variable_initializer', cardinality 0..*) is associated with 'myDsl::Variable::declarator' (role 'myDsl_Variable_declarator53', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression116', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression126', cardinality 0..*) is associated with 'myDsl::Literal::Expression' (role 'myDsl_Literal_Expression', cardinality 0..*).
+'myDsl::Float::Literal' (role 'myDsl_Float_Literal', cardinality 0..*) is associated with 'myDsl::Literal::Expression' (role 'myDsl_Literal_Expression153', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement94', cardinality 0..*) is associated with 'myDsl::Try::statement' (role 'myDsl_Try_statement', cardinality 0..*).
+'myDsl::Compilation::unit' (role 'myDsl_Compilation_unit', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement222', cardinality 0..*) is associated with 'myDsl::Try::statement' (role 'myDsl_Try_statement221', cardinality 0..*).
+'myDsl::Compilation::unit' (role 'myDsl_Compilation_unit2', cardinality 0..*) is associated with 'myDsl::Package::statement' (role 'myDsl_Package_statement', cardinality 0..*).
+'myDsl::Do::Statement' (role 'myDsl_Do_Statement', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement77', cardinality 0..*).
+'myDsl::Constructor::declaration' (role 'myDsl_Constructor_declaration31', cardinality 0..*) is associated with 'myDsl::Parameter::list' (role 'myDsl_Parameter_list32', cardinality 0..*).
+'myDsl::Import::statement' (role 'myDsl_Import_statement', cardinality 0..*) is associated with 'myDsl::Compilation::unit' (role 'myDsl_Compilation_unit4', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression204', cardinality 0..*) is associated with 'myDsl::If::statement' (role 'myDsl_If_statement203', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression177', cardinality 0..*) is associated with 'myDsl::Arg::List' (role 'myDsl_Arg_List176', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression140', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux139', cardinality 0..*).
+'myDsl::Arg::List' (role 'myDsl_Arg_List179', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression180', cardinality 0..*).
+'myDsl::Expression::aux' (role 'myDsl_Expression_aux147', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression148', cardinality 0..*).
+'myDsl::Variable::initializer' (role 'myDsl_Variable_initializer60', cardinality 0..*) is associated with 'myDsl::Array::initializer' (role 'myDsl_Array_initializer59', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression151', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux150', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression183', cardinality 0..*) is associated with 'myDsl::Numeric::Expression::NR' (role 'myDsl_Numeric_Expression_NR182', cardinality 0..*).
+'myDsl::Statement::block' (role 'myDsl_Statement_block35', cardinality 0..*) is associated with 'myDsl::Constructor::declaration' (role 'myDsl_Constructor_declaration34', cardinality 0..*).
+'myDsl::Method::declaration' (role 'myDsl_Method_declaration27', cardinality 0..*) is associated with 'myDsl::Parameter::list' (role 'myDsl_Parameter_list', cardinality 0..*).
+'myDsl::Variable::declarator' (role 'myDsl_Variable_declarator51', cardinality 0..*) is associated with 'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration50', cardinality 0..*).
+'myDsl::For::Statement' (role 'myDsl_For_Statement108', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression109', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement83', cardinality 0..*) is associated with 'myDsl::Switch::statement' (role 'myDsl_Switch_statement', cardinality 0..*).
+'myDsl::Parameter::list' (role 'myDsl_Parameter_list37', cardinality 0..*) is associated with 'myDsl::Parameter' (role 'myDsl_Parameter', cardinality 0..*).
+'myDsl::Switch::statement' (role 'myDsl_Switch_statement185', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression186', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*) is associated with 'myDsl::Variable::initializer' (role 'myDsl_Variable_initializer57', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression86', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement85', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement81', cardinality 0..*) is associated with 'myDsl::For::Statement' (role 'myDsl_For_Statement', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type', cardinality 0..*) is associated with 'myDsl::Method::declaration' (role 'myDsl_Method_declaration25', cardinality 0..*).
+'myDsl::Compilation::unit' (role 'myDsl_Compilation_unit6', cardinality 0..*) is associated with 'myDsl::Type::declaration' (role 'myDsl_Type_declaration', cardinality 0..*).
+'myDsl::Creating::Expression' (role 'myDsl_Creating_Expression', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression124', cardinality 0..*).
+'myDsl::Variable::declarator' (role 'myDsl_Variable_declarator', cardinality 0..*) is associated with 'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration48', cardinality 0..*).
+'myDsl::Parameter::list' (role 'myDsl_Parameter_list39', cardinality 0..*) is associated with 'myDsl::Parameter' (role 'myDsl_Parameter40', cardinality 0..*).
+'myDsl::Numeric::Expression::NR' (role 'myDsl_Numeric_Expression_NR', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression114', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement192', cardinality 0..*) is associated with 'myDsl::Switch::statement' (role 'myDsl_Switch_statement191', cardinality 0..*).
+'myDsl::Type::declaration' (role 'myDsl_Type_declaration8', cardinality 0..*) is associated with 'myDsl::Class::declaration' (role 'myDsl_Class_declaration', cardinality 0..*).
+'myDsl::For::Statement' (role 'myDsl_For_Statement111', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement112', cardinality 0..*).
+'myDsl::Interface::declaration' (role 'myDsl_Interface_declaration', cardinality 0..*) is associated with 'myDsl::Type::declaration' (role 'myDsl_Type_declaration10', cardinality 0..*).
+'myDsl::Variable::declaration' (role 'myDsl_Variable_declaration45', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type46', cardinality 0..*).
+'myDsl::Expression::aux' (role 'myDsl_Expression_aux129', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux131', cardinality 0..*).
+'myDsl::Arg::List' (role 'myDsl_Arg_List', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux128', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement89', cardinality 0..*) is associated with 'myDsl::Statement' (role 'myDsl_Statement87', cardinality 0..*).
+'myDsl::Statement' (role 'myDsl_Statement91', cardinality 0..*) is associated with 'myDsl::Statement::block' (role 'myDsl_Statement_block92', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type43', cardinality 0..*) is associated with 'myDsl::Parameter' (role 'myDsl_Parameter42', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression137', cardinality 0..*) is associated with 'myDsl::Expression::aux' (role 'myDsl_Expression_aux136', cardinality 0..*).
+'myDsl::While::Statement' (role 'myDsl_While_Statement194', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression195', cardinality 0..*).
+'myDsl::Variable::initializer' (role 'myDsl_Variable_initializer55', cardinality 0..*) is associated with 'myDsl::Array::initializer' (role 'myDsl_Array_initializer', cardinality 0..*).

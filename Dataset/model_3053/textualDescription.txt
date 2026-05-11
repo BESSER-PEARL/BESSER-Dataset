@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'NamedElement' has no attributes.
+The class 'hermes::Module' has no attributes.
+The class 'hermes::NamedElement' has the following attributes: 'name' of type str.
+The class 'hermes::Feature' has the following attributes: 'annotations' of type str; 'many' of type bool.
+The class 'hermes::DataType' has the following attributes: 'type' of type str.
+The class 'hermes::Reference' has no attributes.
+The class 'hermes::Entity' has the following attributes: 'annotations' of type str.
+The class 'hermes::Package' has no attributes.
+The class 'Feature' has no attributes.
+The enumeration 'FetureAnnotation' has the following literals: 'Ignore', 'Id', 'Index', 'Load'.
+The enumeration 'EntityAnnotation' has the following literals: 'Cache'.
+The enumeration 'DataTypes' has the following literals: 'Boolean', 'Long', 'Integer', 'Double', 'Object', 'String'.
+'hermes::Module' is a specialization of 'NamedElement'.
+'hermes::Reference' is a specialization of 'Feature'.
+'hermes::DataType' is a specialization of 'Feature'.
+'hermes::Entity' is a specialization of 'NamedElement'.
+'hermes::Package' is a specialization of 'NamedElement'.
+'hermes::Feature' is a specialization of 'NamedElement'.
+'hermes::Entity' (role 'hermes_Entity7', cardinality 0..*) is associated with 'hermes::Entity' (role 'hermes_Entity5', cardinality 0..*).
+'hermes::Package' (role 'hermes_Package2', cardinality 0..*) is associated with 'hermes::Entity' (role 'hermes_Entity', cardinality 0..*).
+'hermes::Entity' (role 'hermes_Entity4', cardinality 0..*) is associated with 'hermes::Feature' (role 'hermes_Feature', cardinality 0..*).
+'hermes::Entity' (role 'hermes_Entity9', cardinality 0..*) is associated with 'hermes::Reference' (role 'hermes_Reference', cardinality 0..*).
+'hermes::Package' (role 'hermes_Package', cardinality 0..*) is associated with 'hermes::Module' (role 'hermes_Module', cardinality 0..*).

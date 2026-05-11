@@ -1,0 +1,58 @@
+The model has 27 class(es).
+The class 'umlknes::ValueSpecification' has no attributes.
+The class 'umlknes::DecisionNode' has no attributes.
+The class 'umlknes::NamedElement' has the following attributes: 'visibility' of type str.
+The class 'umlknes::Activity' has the following attributes: 'isSingleExecution' of type bool; 'isReadOnly' of type bool.
+The class 'umlknes::Action' has no attributes.
+The class 'umlknes::ExecutionEvent' has no attributes.
+The class 'umlknes::ActivityEdge' has no attributes.
+The class 'umlknes::ControlNode' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'umlknes::OpaqueExpression' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'umlknes::ActivityNode' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'umlknes::InitialNode' has no attributes.
+The class 'umlknes::DestructionEvent' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'umlknes::RedefinableElement' has the following attributes: 'isLeaf' of type bool.
+The class 'Action' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'umlknes::Trigger' has no attributes.
+The class 'umlknes::ControlFlow' has no attributes.
+The class 'umlknes::Event' has no attributes.
+The class 'Event' has no attributes.
+The class 'umlknes::AcceptEventAction' has the following attributes: 'isUnMarshall' of type bool.
+The class 'umlknes::CreationEvent' has no attributes.
+The class 'umlknes::ActivityFinalNode' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'package', 'protected', 'public'.
+'umlknes::InitialNode' is a specialization of 'ControlNode'.
+'umlknes::Trigger' is a specialization of 'NamedElement'.
+'umlknes::RedefinableElement' is a specialization of 'NamedElement'.
+'umlknes::CreationEvent' is a specialization of 'Event'.
+'umlknes::ActivityEdge' is a specialization of 'RedefinableElement'.
+'umlknes::ValueSpecification' is a specialization of 'NamedElement'.
+'umlknes::ControlNode' is a specialization of 'ActivityNode'.
+'umlknes::DecisionNode' is a specialization of 'ControlNode'.
+'umlknes::ActivityFinalNode' is a specialization of 'ControlNode'.
+'umlknes::DestructionEvent' is a specialization of 'Event'.
+'umlknes::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'umlknes::ExecutionEvent' is a specialization of 'Event'.
+'umlknes::ControlFlow' is a specialization of 'ActivityEdge'.
+'umlknes::Action' is a specialization of 'ActivityNode'.
+'umlknes::AcceptEventAction' is a specialization of 'Action'.
+'umlknes::ActivityNode' is a specialization of 'RedefinableElement'.
+'umlknes::ActivityNode' (role 'source', cardinality 0..*) is associated with 'umlknes::ActivityEdge' (role 'ActivityEdge7', cardinality 0..*).
+'umlknes::Activity' (role 'activity2', cardinality 0..*) is associated with 'umlknes::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'umlknes::ActivityNode' (role 'node', cardinality 0..*) is associated with 'umlknes::Activity' (role 'Activity', cardinality 0..*).
+'umlknes::ActivityEdge' (role 'umlknes_ActivityEdge18', cardinality 0..*) is associated with 'umlknes::ValueSpecification' (role 'umlknes_ValueSpecification19', cardinality 0..*).
+'umlknes::Activity' (role 'activity', cardinality 0..*) is associated with 'umlknes::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'umlknes::Event' (role 'umlknes_Event', cardinality 0..*) is associated with 'umlknes::Trigger' (role 'umlknes_Trigger22', cardinality 0..*).
+'umlknes::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'umlknes::ActivityNode' (role 'ActivityNode11', cardinality 0..*).
+'umlknes::AcceptEventAction' (role 'umlknes_AcceptEventAction', cardinality 0..*) is associated with 'umlknes::Trigger' (role 'umlknes_Trigger', cardinality 0..*).
+'umlknes::ActivityNode' (role 'target', cardinality 0..*) is associated with 'umlknes::ActivityEdge' (role 'ActivityEdge5', cardinality 0..*).
+'umlknes::Activity' (role 'Activity15', cardinality 0..*) is associated with 'umlknes::ActivityEdge' (role 'edge', cardinality 0..*).
+'umlknes::ActivityNode' (role 'ActivityNode13', cardinality 0..*) is associated with 'umlknes::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'umlknes::ActivityEdge' (role 'umlknes_ActivityEdge', cardinality 0..*) is associated with 'umlknes::ValueSpecification' (role 'umlknes_ValueSpecification', cardinality 0..*).
+'umlknes::ActivityNode' (role 'umlknes_ActivityNode8', cardinality 0..*) is associated with 'umlknes::ActivityNode' (role 'umlknes_ActivityNode', cardinality 0..*).

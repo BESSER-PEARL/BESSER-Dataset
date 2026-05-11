@@ -1,0 +1,22 @@
+The model has 6 class(es).
+The class 'fm::FeatureModel' has the following attributes: 'description' of type str; 'version' of type str; 'comment' of type str; 'name' of type str.
+The class 'fm::Attribute' has the following attributes: 'value' of type str; 'comment' of type str; 'description' of type str; 'id' of type str; 'name' of type str; 'type' of type str.
+The class 'fm::Feature' has the following attributes: 'id' of type str; 'upper' of type int; 'description' of type str; 'root' of type bool; 'mandatory' of type bool; 'cloneable' of type bool; 'orphan' of type bool; 'lower' of type int; 'name' of type str; 'comment' of type str; 'optional' of type bool.
+The class 'fm::Constraint' has the following attributes: 'description' of type str; 'language' of type str; 'comment' of type str; 'value' of type str.
+The class 'fm::EObject' has no attributes.
+The class 'fm::Group' has the following attributes: 'description' of type str; 'or_' of type bool; 'lower' of type int; 'comment' of type str; 'xor' of type bool; 'upper' of type int.
+The enumeration 'AttributeType' has the following literals: 'INTEGER', 'DOUBLE', 'BOOLEAN', 'STRING'.
+'fm::Feature' (role 'fm_Feature3', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel2', cardinality 0..*).
+'fm::Group' (role 'groups', cardinality 0..*) is associated with 'fm::Feature' (role 'Feature22', cardinality 0..*).
+'fm::Group' (role 'Group17', cardinality 0..*) is associated with 'fm::Feature' (role 'parent', cardinality 0..*).
+'fm::Group' (role 'parentGroup', cardinality 0..*) is associated with 'fm::Feature' (role 'Feature24', cardinality 0..*).
+'fm::Group' (role 'Group', cardinality 0..*) is associated with 'fm::Feature' (role 'features11', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel', cardinality 0..*).
+'fm::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'fm::Feature' (role 'feature', cardinality 0..*).
+'fm::Attribute' (role 'attributes', cardinality 0..*) is associated with 'fm::Feature' (role 'Feature26', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature7', cardinality 0..*) is associated with 'fm::EObject' (role 'fm_EObject', cardinality 0..*).
+'fm::Feature' (role 'Feature15', cardinality 0..*) is associated with 'fm::Feature' (role 'parentFeature', cardinality 0..*).
+'fm::Feature' (role 'fm_Feature19', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel20', cardinality 0..*).
+'fm::Constraint' (role 'fm_Constraint', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel5', cardinality 0..*).
+'fm::Feature' (role 'Feature', cardinality 0..*) is associated with 'fm::Feature' (role 'features', cardinality 0..*).
+'fm::Constraint' (role 'fm_Constraint28', cardinality 0..*) is associated with 'fm::FeatureModel' (role 'fm_FeatureModel29', cardinality 0..*).

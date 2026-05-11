@@ -1,0 +1,23 @@
+The model has 14 class(es).
+The class 'toppkg::subpkg3::Subpkg3Class2' has no attributes.
+The class 'subpkg3::Subpkg3Class1' has no attributes.
+The class 'toppkg::subpkg2::Subpkg2Class2' has no attributes.
+The class 'toppkg::subpkg1::Subpkg1Class2' has no attributes.
+The class 'subpkg3::Subpkg3Class2' has no attributes.
+The class 'toppkg::TopClass1' has no attributes.
+The class 'Subpkg2Class2' has no attributes.
+The class 'Subpkg2Class1' has no attributes.
+The class 'toppkg::subpkg2::Subpkg2Class1' has no attributes.
+The class 'toppkg::TopClass2' has no attributes.
+The class 'Subpkg1Class2' has no attributes.
+The class 'Subpkg1Class1' has no attributes.
+The class 'toppkg::subpkg1::Subpkg1Class1' has no attributes.
+The class 'toppkg::subpkg3::Subpkg3Class1' has no attributes.
+'toppkg::subpkg2::Subpkg2Class2' (role 'toppkg_subpkg2_Subpkg2Class2', cardinality 0..*) is associated with 'subpkg3::Subpkg3Class1' (role 'subpkg3_Subpkg3Class1', cardinality 0..*).
+'Subpkg2Class1' (role 'Subpkg2Class1', cardinality 0..*) is associated with 'toppkg::TopClass1' (role 'toppkg_TopClass13', cardinality 0..*).
+'Subpkg1Class1' (role 'Subpkg1Class1', cardinality 0..*) is associated with 'toppkg::TopClass1' (role 'toppkg_TopClass1', cardinality 0..*).
+'toppkg::subpkg1::Subpkg1Class1' (role 'toppkg_subpkg1_Subpkg1Class1', cardinality 0..*) is associated with 'Subpkg1Class2' (role 'Subpkg1Class2', cardinality 0..*).
+'toppkg::TopClass2' (role 'myTopClass2', cardinality 0..*) is associated with 'toppkg::TopClass1' (role 'TopClass1', cardinality 0..*).
+'toppkg::TopClass2' (role 'TopClass2', cardinality 0..*) is associated with 'toppkg::TopClass1' (role 'myTopClass1', cardinality 0..*).
+'Subpkg2Class2' (role 'Subpkg2Class2', cardinality 0..*) is associated with 'toppkg::subpkg2::Subpkg2Class1' (role 'toppkg_subpkg2_Subpkg2Class1', cardinality 0..*).
+'toppkg::subpkg3::Subpkg3Class1' (role 'toppkg_subpkg3_Subpkg3Class1', cardinality 0..*) is associated with 'subpkg3::Subpkg3Class2' (role 'subpkg3_Subpkg3Class2', cardinality 0..*).

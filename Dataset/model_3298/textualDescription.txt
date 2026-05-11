@@ -1,0 +1,143 @@
+The model has 72 class(es).
+The class 'standard::StandardDiseaseModelLabel' has no attributes.
+The class 'standard::SIInfector' has the following attributes: 'infectiousCount' of type float.
+The class 'standard::SIRLabelValue' has the following attributes: 'r' of type float.
+The class 'LabelValue' has no attributes.
+The class 'DiseaseModelState' has no attributes.
+The class 'standard::IntegrationLabelValue' has no attributes.
+The class 'standard::StandardDiseaseModelLabelValue' has the following attributes: 's' of type float.
+The class 'SanityChecker' has no attributes.
+The class 'standard::AggregatingSIDiseaseModel' has no attributes.
+The class 'standard::InfectorInoculatorCollection' has the following attributes: 'importFolder' of type str.
+The class 'DiseaseModel' has no attributes.
+The class 'SILabelValue' has no attributes.
+The class 'SIRLabelValue' has no attributes.
+The class 'standard::DeterministicSEIRDiseaseModel' has no attributes.
+The class 'standard::DiseaseModelLabel' has no attributes.
+The class 'standard::AggregatingSIRDiseaseModel' has no attributes.
+The class 'AggregatingSIRDiseaseModel' has no attributes.
+The class 'standard::StandardStochasticDiseaseModel' has the following attributes: 'gain' of type float.
+The class 'standard::SEIRLabelValue' has the following attributes: 'e' of type float.
+The class 'standard::SIRLabel' has no attributes.
+The class 'standard::DiseaseModelLabelValue' has the following attributes: 'populationCount' of type float; 'diseaseDeaths' of type float; 'incidence' of type float.
+The class 'standard::SI' has the following attributes: 'physicallyAdjacentInfectiousProportion' of type float; 'roadNetworkInfectiousProportion' of type float; 'infectiousMortality' of type float; 'nonLinearityCoefficient' of type float; 'transmissionRate' of type float; 'recoveryRate' of type float; 'characteristicMixingDistance' of type float; 'infectiousMortalityRate' of type float.
+The class 'StandardDiseaseModel' has no attributes.
+The class 'standard::SILabelValue' has the following attributes: 'i' of type float.
+The class 'IntegrationDecorator' has no attributes.
+The class 'DiseaseModelLabel' has no attributes.
+The class 'standard::StandardDiseaseModel' has the following attributes: 'referencePopulationDensity' of type float; 'totalPopulationCountReciprocal' of type float; 'totalPopulationCount' of type float; 'totalArea' of type float.
+The class 'standard::SILabel' has no attributes.
+The class 'standard::DiseaseModel' has the following attributes: 'timePeriod' of type str; 'finiteDifference' of type bool; 'backgroundBirthRate' of type float; 'populationIdentifier' of type str; 'relativeTolerance' of type float; 'frequencyDependent' of type bool; 'backgroundMortalityRate' of type float; 'diseaseName' of type str.
+The class 'standard::AggregatingDiseaseModelState' has no attributes.
+The class 'standard::StandardInfector' has no attributes.
+The class 'standard::DeterministicSIDiseaseModel' has no attributes.
+The class 'SEIR' has no attributes.
+The class 'standard::IntegrationDecorator' has no attributes.
+The class 'standard::StochasticSIRDiseaseModel' has no attributes.
+The class 'standard::SIRInoculator' has the following attributes: 'inoculatedPercentage' of type float; 'inoculatePercentage' of type bool.
+The class 'StandardDiseaseModelState' has no attributes.
+The class 'standard::DeterministicSIRDiseaseModel' has no attributes.
+The class 'standard::SEIRLabel' has no attributes.
+The class 'standard::StochasticPoissonSIRDiseaseModel' has no attributes.
+The class 'StochasticDiseaseModel' has no attributes.
+The class 'SI' has no attributes.
+The class 'standard::IntegrationLabel' has no attributes.
+The class 'standard::AggregatingSEIRDiseaseModel' has no attributes.
+The class 'Modifiable' has no attributes.
+The class 'standard::SanityChecker' has no attributes.
+The class 'StandardInfector' has no attributes.
+The class 'NodeDecorator' has no attributes.
+The class 'standard::SIR' has the following attributes: 'immunityLossRate' of type float.
+The class 'standard::StochasticPoissonSEIRDiseaseModel' has no attributes.
+The class 'standard::StochasticSEIRDiseaseModel' has no attributes.
+The class 'StandardDiseaseModelLabel' has no attributes.
+The class 'standard::StochasticSIDiseaseModel' has no attributes.
+The class 'DynamicNodeLabel' has no attributes.
+The class 'StandardDiseaseModelLabelValue' has no attributes.
+The class 'standard::DiseaseModelState' has no attributes.
+The class 'standard::StochasticPoissonSIDiseaseModel' has no attributes.
+The class 'standard::SEIR' has the following attributes: 'incubationRate' of type float.
+The class 'SIR' has no attributes.
+The class 'standard::PopulationModelLabel' has no attributes.
+The class 'standard::StochasticDiseaseModel' has the following attributes: 'seed' of type str; 'randomGenerator' of type str.
+The class 'IntegrationLabel' has no attributes.
+The class 'standard::StandardDiseaseModelState' has the following attributes: 'areaRatio' of type float.
+The class 'standard::Infector' has the following attributes: 'populationIdentifier' of type str; 'diseaseName' of type str; 'targetURI' of type str; 'infectPercentage' of type bool; 'targetISOKey' of type str.
+The class 'AggregatingSIDiseaseModel' has no attributes.
+The class 'SIInfector' has no attributes.
+The class 'standard::PopulationLabel' has no attributes.
+The class 'StandardStochasticDiseaseModel' has no attributes.
+The class 'standard::SIDiseaseModelState' has no attributes.
+The class 'DiseaseModelLabelValue' has no attributes.
+The class 'Infector' has no attributes.
+The class 'IntegrationLabelValue' has no attributes.
+'standard::InfectorInoculatorCollection' is a specialization of 'Modifiable'.
+'standard::Infector' is a specialization of 'NodeDecorator'.
+'standard::AggregatingSEIRDiseaseModel' is a specialization of 'AggregatingSIRDiseaseModel'.
+'standard::StandardDiseaseModelLabelValue' is a specialization of 'DiseaseModelLabelValue'.
+'standard::StandardStochasticDiseaseModel' is a specialization of 'StochasticDiseaseModel'.
+'standard::StandardDiseaseModelLabel' is a specialization of 'IntegrationLabel'.
+'standard::SEIR' is a specialization of 'SIR'.
+'standard::AggregatingDiseaseModelState' is a specialization of 'DiseaseModelState'.
+'standard::DeterministicSIDiseaseModel' is a specialization of 'SI'.
+'standard::SILabel' is a specialization of 'StandardDiseaseModelLabel'.
+'standard::SIDiseaseModelState' is a specialization of 'StandardDiseaseModelState'.
+'standard::SIRLabelValue' is a specialization of 'SILabelValue'.
+'standard::StandardDiseaseModel' is a specialization of 'IntegrationDecorator'.
+'standard::StochasticPoissonSIRDiseaseModel' is a specialization of 'SIR'.
+'standard::StochasticSIRDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+'standard::StandardDiseaseModel' is a specialization of 'DiseaseModel'.
+'standard::DiseaseModel' is a specialization of 'NodeDecorator'.
+'standard::Infector' is a specialization of 'Modifiable'.
+'standard::StandardInfector' is a specialization of 'Infector'.
+'standard::SIRLabel' is a specialization of 'StandardDiseaseModelLabel'.
+'standard::StochasticSIDiseaseModel' is a specialization of 'SI'.
+'standard::StandardDiseaseModelState' is a specialization of 'DiseaseModelState'.
+'standard::DeterministicSIRDiseaseModel' is a specialization of 'SIR'.
+'standard::SIR' is a specialization of 'SI'.
+'standard::SI' is a specialization of 'StandardDiseaseModel'.
+'standard::StochasticDiseaseModel' is a specialization of 'DiseaseModel'.
+'standard::DiseaseModel' is a specialization of 'Modifiable'.
+'standard::DiseaseModelLabelValue' is a specialization of 'LabelValue'.
+'standard::StochasticPoissonSEIRDiseaseModel' is a specialization of 'SEIR'.
+'standard::StochasticSEIRDiseaseModel' is a specialization of 'SEIR'.
+'standard::DiseaseModel' is a specialization of 'SanityChecker'.
+'standard::AggregatingSIDiseaseModel' is a specialization of 'SI'.
+'standard::InfectorInoculatorCollection' is a specialization of 'NodeDecorator'.
+'standard::DiseaseModelLabelValue' is a specialization of 'IntegrationLabelValue'.
+'standard::StandardDiseaseModelLabel' is a specialization of 'DiseaseModelLabel'.
+'standard::SIInfector' is a specialization of 'StandardInfector'.
+'standard::StochasticSIRDiseaseModel' is a specialization of 'SIR'.
+'standard::StochasticSEIRDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+'standard::StochasticPoissonSIDiseaseModel' is a specialization of 'SI'.
+'standard::SIRInoculator' is a specialization of 'SIInfector'.
+'standard::SEIRLabel' is a specialization of 'StandardDiseaseModelLabel'.
+'standard::DiseaseModelLabel' is a specialization of 'DynamicNodeLabel'.
+'standard::AggregatingSIRDiseaseModel' is a specialization of 'AggregatingSIDiseaseModel'.
+'standard::DeterministicSEIRDiseaseModel' is a specialization of 'SEIR'.
+'standard::SEIRLabelValue' is a specialization of 'SIRLabelValue'.
+'standard::SILabelValue' is a specialization of 'StandardDiseaseModelLabelValue'.
+'standard::StochasticSIDiseaseModel' is a specialization of 'StandardStochasticDiseaseModel'.
+'standard::Infector' (role 'standard_Infector7', cardinality 0..*) is associated with 'standard::DiseaseModelLabel' (role 'standard_DiseaseModelLabel8', cardinality 0..*).
+'standard::SIRLabel' (role 'standard_SIRLabel46', cardinality 0..*) is associated with 'standard::SIRLabelValue' (role 'standard_SIRLabelValue47', cardinality 0..*).
+'standard::SILabel' (role 'standard_SILabel30', cardinality 0..*) is associated with 'standard::SILabelValue' (role 'standard_SILabelValue31', cardinality 0..*).
+'standard::SEIRLabelValue' (role 'standard_SEIRLabelValue18', cardinality 0..*) is associated with 'standard::SEIRLabel' (role 'standard_SEIRLabel17', cardinality 0..*).
+'standard::SIRLabel' (role 'standard_SIRLabel40', cardinality 0..*) is associated with 'standard::SIRLabelValue' (role 'standard_SIRLabelValue41', cardinality 0..*).
+'standard::SEIRLabelValue' (role 'standard_SEIRLabelValue12', cardinality 0..*) is associated with 'standard::SEIRLabel' (role 'standard_SEIRLabel11', cardinality 0..*).
+'standard::SEIRLabel' (role 'standard_SEIRLabel20', cardinality 0..*) is associated with 'standard::SEIRLabelValue' (role 'standard_SEIRLabelValue21', cardinality 0..*).
+'standard::SEIRLabelValue' (role 'standard_SEIRLabelValue', cardinality 0..*) is associated with 'standard::SEIRLabel' (role 'standard_SEIRLabel', cardinality 0..*).
+'standard::SILabelValue' (role 'standard_SILabelValue', cardinality 0..*) is associated with 'standard::SILabel' (role 'standard_SILabel', cardinality 0..*).
+'standard::DiseaseModelLabel' (role 'standard_DiseaseModelLabel3', cardinality 0..*) is associated with 'standard::PopulationModelLabel' (role 'standard_PopulationModelLabel', cardinality 0..*).
+'standard::SILabel' (role 'standard_SILabel27', cardinality 0..*) is associated with 'standard::SILabelValue' (role 'standard_SILabelValue28', cardinality 0..*).
+'standard::SIRLabelValue' (role 'standard_SIRLabelValue38', cardinality 0..*) is associated with 'standard::SIRLabel' (role 'standard_SIRLabel37', cardinality 0..*).
+'standard::SIRLabelValue' (role 'standard_SIRLabelValue', cardinality 0..*) is associated with 'standard::SIRLabel' (role 'standard_SIRLabel', cardinality 0..*).
+'standard::SILabelValue' (role 'standard_SILabelValue34', cardinality 0..*) is associated with 'standard::SILabel' (role 'standard_SILabel33', cardinality 0..*).
+'standard::StandardDiseaseModel' (role 'standard_StandardDiseaseModel', cardinality 0..*) is associated with 'standard::Infector' (role 'standard_Infector', cardinality 0..*).
+'standard::DiseaseModelLabel' (role 'standard_DiseaseModelLabel', cardinality 0..*) is associated with 'standard::PopulationLabel' (role 'standard_PopulationLabel', cardinality 0..*).
+'standard::SILabel' (role 'standard_SILabel49', cardinality 0..*) is associated with 'standard::AggregatingDiseaseModelState' (role 'standard_AggregatingDiseaseModelState', cardinality 0..*).
+'standard::SEIRLabelValue' (role 'standard_SEIRLabelValue15', cardinality 0..*) is associated with 'standard::SEIRLabel' (role 'standard_SEIRLabel14', cardinality 0..*).
+'standard::Infector' (role 'standard_Infector51', cardinality 0..*) is associated with 'standard::InfectorInoculatorCollection' (role 'standard_InfectorInoculatorCollection', cardinality 0..*).
+'standard::SIRLabelValue' (role 'standard_SIRLabelValue44', cardinality 0..*) is associated with 'standard::SIRLabel' (role 'standard_SIRLabel43', cardinality 0..*).
+'standard::SILabel' (role 'standard_SILabel24', cardinality 0..*) is associated with 'standard::SILabelValue' (role 'standard_SILabelValue25', cardinality 0..*).
+'standard::DiseaseModelLabel' (role 'label', cardinality 0..*) is associated with 'standard::DiseaseModelState' (role 'DiseaseModelState', cardinality 0..*).
+'standard::DiseaseModelState' (role 'diseaseModelState', cardinality 0..*) is associated with 'standard::DiseaseModelLabel' (role 'DiseaseModelLabel', cardinality 0..*).

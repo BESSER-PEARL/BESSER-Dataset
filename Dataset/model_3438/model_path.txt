@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/movespace/gmfsamples/School/branches/emf2gv-quicktour/School/model/school.ecore

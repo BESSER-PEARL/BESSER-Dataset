@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'CriticsReview' has no attributes.
+The class 'movies::Copy' has the following attributes: 'id' of type str.
+The class 'movies::Movie' has the following attributes: 'genre' of type str; 'actors' of type str; 'summary' of type str; 'title' of type str; 'director' of type str.
+The class 'movies::Place' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'movies::CriticsReview' has the following attributes: 'reviewedBy' of type str; 'rating' of type str.
+The class 'movies::MoviesDB' has the following attributes: 'comment' of type str.
+The class 'movies::CustomerReview' has the following attributes: 'comment' of type str.
+The enumeration 'GenreTypes' has the following literals: 'Documentary', 'Action', 'Romance', 'Family', 'NewRelease', 'Horror', 'Comedy', 'Classics', 'Animation', 'Thriller', 'SciFi', 'Drama'.
+'movies::CustomerReview' is a specialization of 'CriticsReview'.
+'movies::Movie' (role 'movies_Movie4', cardinality 0..*) is associated with 'movies::MoviesDB' (role 'movies_MoviesDB', cardinality 0..*).
+'movies::CriticsReview' (role 'movies_CriticsReview', cardinality 0..*) is associated with 'movies::Movie' (role 'movies_Movie2', cardinality 0..*).
+'movies::Copy' (role 'movies_Copy', cardinality 0..*) is associated with 'movies::Movie' (role 'movies_Movie', cardinality 0..*).
+'movies::MoviesDB' (role 'movies_MoviesDB6', cardinality 0..*) is associated with 'movies::Place' (role 'movies_Place', cardinality 0..*).
+'movies::Place' (role 'movies_Place9', cardinality 0..*) is associated with 'movies::Copy' (role 'movies_Copy8', cardinality 0..*).

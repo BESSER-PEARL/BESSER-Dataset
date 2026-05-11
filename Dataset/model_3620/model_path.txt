@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rominaeramo/triple-pattern-frontend/HSM2SM/metamodels/_hsm.ecore

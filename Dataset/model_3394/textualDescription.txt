@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Person' has no attributes.
+The class 'Friends::Classroom' has the following attributes: 'id' of type int.
+The class 'Friends::Man' has no attributes.
+The class 'Friends::Woman' has no attributes.
+The class 'Friends::Person' has the following attributes: 'name' of type str.
+'Friends::Woman' is a specialization of 'Person'.
+'Friends::Man' is a specialization of 'Person'.
+'Friends::Person' (role 'Friends_Person6', cardinality 0..*) is associated with 'Friends::Classroom' (role 'Friends_Classroom5', cardinality 0..*).
+'Friends::Classroom' (role 'Friends_Classroom', cardinality 0..*) is associated with 'Friends::Person' (role 'Friends_Person3', cardinality 0..*).
+'Friends::Person' (role 'Friends_Person0', cardinality 0..*) is associated with 'Friends::Person' (role 'Friends_Person', cardinality 0..*).

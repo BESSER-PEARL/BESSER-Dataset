@@ -1,0 +1,55 @@
+The model has 28 class(es).
+The class 'Field' has no attributes.
+The class 'Java::VoidType' has no attributes.
+The class 'Java::MethodCall' has the following attributes: 'methodName' of type str; 'variableName' of type str.
+The class 'Java::Type' has the following attributes: 'name' of type str.
+The class 'Annotation' has no attributes.
+The class 'Java::Package' has the following attributes: 'name' of type str.
+The class 'Java::Class' has the following attributes: 'isPublic' of type bool; 'isStatic' of type bool.
+The class 'Java::Assignment' has the following attributes: 'fieldName' of type str; 'objectId' of type str; 'variableExpr' of type str.
+The class 'Package' has no attributes.
+The class 'Java::Field' has the following attributes: 'isPrivate' of type bool; 'name' of type str; 'isStatic' of type bool; 'isProtected' of type bool; 'isPublic' of type bool.
+The class 'Java::Return' has the following attributes: 'objectId' of type str; 'fieldName' of type str.
+The class 'Statement' has no attributes.
+The class 'Java::MethodSignature' has the following attributes: 'isStatic' of type bool; 'isProtected' of type bool; 'isPublic' of type bool; 'isPrivate' of type bool; 'name' of type str.
+The class 'Java::VariableDeclaration' has the following attributes: 'variableName' of type str.
+The class 'Java::Statement' has no attributes.
+The class 'Type' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Class' has no attributes.
+The class 'Java::Interface' has no attributes.
+The class 'Java::Annotation' has the following attributes: 'sentenceText' of type str; 'type' of type str.
+The class 'MethodSignature' has no attributes.
+The class 'Interface' has no attributes.
+The class 'ObjectType' has no attributes.
+The class 'Java::Parameter' has the following attributes: 'name' of type str; 'defaultValue' of type str.
+The class 'Java::Method' has no attributes.
+The class 'Method' has no attributes.
+The class 'Java::ObjectType' has no attributes.
+The class 'Java::PrimitiveType' has no attributes.
+'Java::VariableDeclaration' is a specialization of 'Statement'.
+'Java::Method' is a specialization of 'MethodSignature'.
+'Java::Interface' is a specialization of 'ObjectType'.
+'Java::PrimitiveType' is a specialization of 'Type'.
+'Java::Return' is a specialization of 'Statement'.
+'Java::VoidType' is a specialization of 'Type'.
+'Java::Class' is a specialization of 'ObjectType'.
+'Java::Assignment' is a specialization of 'Statement'.
+'Java::MethodCall' is a specialization of 'Statement'.
+'Java::ObjectType' is a specialization of 'Type'.
+'Annotation' (role 'Annotation', cardinality 0..*) is associated with 'Java::Method' (role 'Java_Method18', cardinality 0..*).
+'Java::Method' (role 'Java_Method', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'Class' (role 'Class24', cardinality 0..*) is associated with 'Java::Field' (role 'field', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'Java::MethodSignature' (role 'Java_MethodSignature', cardinality 0..*).
+'Type' (role 'Type26', cardinality 0..*) is associated with 'Java::VariableDeclaration' (role 'Java_VariableDeclaration', cardinality 0..*).
+'Java::Package' (role 'owner', cardinality 0..*) is associated with 'ObjectType' (role 'ObjectType', cardinality 0..*).
+'Java::ObjectType' (role 'content', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).
+'Java::Class' (role 'Java_Class8', cardinality 0..*) is associated with 'Method' (role 'Method', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'Java::Class' (role 'Java_Class4', cardinality 0..*).
+'MethodSignature' (role 'MethodSignature', cardinality 0..*) is associated with 'Java::Interface' (role 'Java_Interface12', cardinality 0..*).
+'Type' (role 'Type20', cardinality 0..*) is associated with 'Java::Parameter' (role 'Java_Parameter', cardinality 0..*).
+'Java::Class' (role 'owner6', cardinality 0..*) is associated with 'Field' (role 'Field', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'Java::MethodSignature' (role 'Java_MethodSignature15', cardinality 0..*).
+'Java::Class' (role 'Java_Class', cardinality 0..*) is associated with 'Interface' (role 'Interface', cardinality 0..*).
+'Java::Interface' (role 'Java_Interface', cardinality 0..*) is associated with 'Interface' (role 'Interface10', cardinality 0..*).
+'Type' (role 'Type22', cardinality 0..*) is associated with 'Java::Field' (role 'Java_Field', cardinality 0..*).

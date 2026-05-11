@@ -1,0 +1,664 @@
+The model has 217 class(es).
+The class 'BPMNProfile::DataObjectReference' has no attributes.
+The class 'BPMNProfile::RootElement' has no attributes.
+The class 'BPMNEvent' has no attributes.
+The class 'BPMNProfile::MessageFlowAssociation' has no attributes.
+The class 'BPMNProfile::LoopNode' has no attributes.
+The class 'BPMNProfile::PartnerEntity' has no attributes.
+The class 'BPMNProfile::CallBehaviorAction' has no attributes.
+The class 'BPMNProfile::SubConversation' has no attributes.
+The class 'BPMNProfile::InstanceSpecification' has no attributes.
+The class 'BPMNProfile::CallEvent' has no attributes.
+The class 'BPMNProfile::Property' has no attributes.
+The class 'BPMNProfile::Enumeration' has no attributes.
+The class 'BPMNProfile::ItemDefinition' has the following attributes: 'itemKind' of type str; 'isCollection' of type str.
+The class 'BPMNProfile::BaseElement' has the following attributes: 'id' of type str.
+The class 'BPMNProfile::Comment' has no attributes.
+The class 'BPMNProfile::ActivityPartition' has no attributes.
+The class 'BPMNProfile::Definitions' has the following attributes: 'exporter' of type str; 'expressionLanguage' of type str; 'targetNamespace' of type str; 'typeLanguage' of type str; 'exporterVersion' of type str.
+The class 'BPMNProfile::TypedElement' has no attributes.
+The class 'CallableElement' has no attributes.
+The class 'BPMNProfile::ScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'BPMNProfile::ActivityParameterNode' has no attributes.
+The class 'BPMNProfile::BPMNAssociation' has the following attributes: 'associationDirection' of type str.
+The class 'BPMNProfile::Conversation' has no attributes.
+The class 'FlowNode' has no attributes.
+The class 'BPMNProfile::ImplicitThrowEvent' has no attributes.
+The class 'BPMNProfile::StandardLoopCharacteristics' has the following attributes: 'testBefore' of type str; 'loopMaximum' of type str.
+The class 'BPMNProfile::MultiInstanceLoopCharacteristics' has the following attributes: 'isSequential' of type str; 'behavior' of type str.
+The class 'BPMNProfile::EventBasedGateway' has the following attributes: 'instantiate' of type str; 'eventGatewayType' of type str.
+The class 'BPMNProfile::CallableElement' has no attributes.
+The class 'BPMNProfile::CancelEventDefinition' has no attributes.
+The class 'BPMNProfile::Performer' has no attributes.
+The class 'BPMNProfile::DataObject' has the following attributes: 'isCollection' of type str.
+The class 'BPMNProfile::Resource' has no attributes.
+The class 'BPMNProfile::FlowElementsContainer' has no attributes.
+The class 'BPMNProfile::FinalNode' has no attributes.
+The class 'BPMNProfile::CallOperationAction' has no attributes.
+The class 'BPMNProfile::UserTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::CorrelationKey' has no attributes.
+The class 'BPMNProfile::InputPin' has no attributes.
+The class 'ThrowEvent' has no attributes.
+The class 'BPMNProfile::Import' has the following attributes: 'namespace' of type str; 'location' of type str; 'importType' of type str.
+The class 'LoopCharacteristics' has no attributes.
+The class 'BPMNProfile::ForkNode' has no attributes.
+The class 'BPMNProfile::Operation' has no attributes.
+The class 'ResourceRole' has no attributes.
+The class 'BPMNProfile::GlobalManualTask' has no attributes.
+The class 'BPMNProfile::DataOutputAssociation' has no attributes.
+The class 'BPMNProfile::PackageableElement' has no attributes.
+The class 'BPMNProfile::BusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::ExpansionRegion' has no attributes.
+The class 'BPMNProfile::ParameterSet' has no attributes.
+The class 'BPMNProfile::Collaboration' has no attributes.
+The class 'BPMNProfile::AcceptEventAction' has no attributes.
+The class 'BPMNProfile::Parameter' has no attributes.
+The class 'BPMNProfile::OpaqueExpression' has no attributes.
+The class 'BPMNProfile::ConversationLink' has no attributes.
+The class 'RootElement' has no attributes.
+The class 'BPMNProfile::IntermediateCatchEvent' has no attributes.
+The class 'ItemDefinition' has no attributes.
+The class 'BPMNProfile::ManualTask' has no attributes.
+The class 'BPMNProfile::BPMNMessage' has no attributes.
+The class 'HumanPerformer' has no attributes.
+The class 'BPMNProfile::State' has no attributes.
+The class 'BPMNProfile::LinkEventDefinition' has no attributes.
+The class 'BPMNProfile::Dependency' has no attributes.
+The class 'BPMNProfile::Category' has no attributes.
+The class 'BPMNProfile::MessageFlow' has no attributes.
+The class 'BPMNProfile::ActivityNode' has no attributes.
+The class 'BPMNProfile::EventDefinition' has no attributes.
+The class 'NonExclusiveGateway' has no attributes.
+The class 'BPMNProfile::InformationFlow' has no attributes.
+The class 'BPMNProfile::ItemAwareElement' has no attributes.
+The class 'BPMNProfile::BPMNSignal' has no attributes.
+The class 'BPMNProfile::Rendering' has no attributes.
+The class 'ConversationNode' has no attributes.
+The class 'BPMNProfile::ExclusiveGateway' has no attributes.
+The class 'Task' has no attributes.
+The class 'BPMNProfile::BPMNOperation' has no attributes.
+The class 'BPMNProfile::DataInput' has the following attributes: 'isCollection' of type str.
+The class 'InteractionNode' has no attributes.
+The class 'BPMNProfile::CorrelationPropertyBinding' has no attributes.
+The class 'BPMNProfile::ResourceParameter' has the following attributes: 'isRequired' of type str.
+The class 'BPMNProfile::Slot' has no attributes.
+The class 'BPMNProfile::ComplexGateway' has no attributes.
+The class 'BPMNProfile::DataStoreReference' has no attributes.
+The class 'BPMNProfile::MessageEventDefinition' has no attributes.
+The class 'BPMNProfile::CorrelationPropertyRetrievalExpression' has no attributes.
+The class 'FlowElementsContainer' has no attributes.
+The class 'BaseElement' has no attributes.
+The class 'BPMNProfile::GlobalTask' has no attributes.
+The class 'BPMNProfile::OpaqueBehavior' has no attributes.
+The class 'BPMNProfile::MergeNode' has no attributes.
+The class 'BPMNProfile::PotentialOwner' has no attributes.
+The class 'BPMNArtifact' has no attributes.
+The class 'BPMNProfile::SequenceFlow' has the following attributes: 'isImmediate' of type str.
+The class 'BPMNProfile::BPMNExtension' has the following attributes: 'mustUnderstand' of type str.
+The class 'BPMNProfile::StructuredActivityNode' has no attributes.
+The class 'BPMNProfile::ParallelGateway' has no attributes.
+The class 'BPMNProfile::DataInputAssociation' has no attributes.
+The class 'BPMNProfile::ErrorEventDefinition' has no attributes.
+The class 'BPMNProfile::ConversationNode' has no attributes.
+The class 'BPMNProfile::ResourceParameterBinding' has no attributes.
+The class 'GlobalTask' has no attributes.
+The class 'BPMNProfile::Package' has no attributes.
+The class 'BPMNProfile::ConditionalEventDefinition' has no attributes.
+The class 'BPMNProfile::SubProcess' has the following attributes: 'triggeredByEvent' of type str.
+The class 'BPMNProfile::ReceiveTask' has the following attributes: 'implementation' of type str; 'instantiate' of type str.
+The class 'BPMNProfile::LoopCharacteristics' has no attributes.
+The class 'BPMNProfile::Task' has no attributes.
+The class 'BPMNProfile::Documentation' has the following attributes: 'text' of type str; 'textFormat' of type str.
+The class 'BPMNProfile::JoinNode' has no attributes.
+The class 'BPMNProfile::Assignment' has no attributes.
+The class 'Performer' has no attributes.
+The class 'BPMNProfile::BPMNCollaboration' has the following attributes: 'isClosed' of type str.
+The class 'BPMNProfile::TimerEventDefinition' has no attributes.
+The class 'BPMNProfile::Event' has no attributes.
+The class 'ItemAwareElement' has no attributes.
+The class 'BPMNProfile::DataStoreNode' has no attributes.
+The class 'BPMNProfile::BPMNProcess' has the following attributes: 'isExecutable' of type str; 'isClosed' of type str; 'processType' of type str.
+The class 'BPMNProfile::CorrelationProperty' has no attributes.
+The class 'BPMNProfile::BPMNEvent' has no attributes.
+The class 'BPMNProfile::TerminateEventDefinition' has no attributes.
+The class 'BPMNProfile::Group' has no attributes.
+The class 'BPMNProfile::ControlNode' has no attributes.
+The class 'BPMNProfile::MultiplicityElement' has no attributes.
+The class 'BPMNProfile::GlobalConversation' has no attributes.
+The class 'BPMNProfile::FlowElement' has no attributes.
+The class 'BPMNProfile::BPMNRelationship' has the following attributes: 'direction' of type str; 'type' of type str.
+The class 'BPMNProfile::Action' has no attributes.
+The class 'BPMNProfile::FormalExpression' has no attributes.
+The class 'BPMNProfile::ServiceTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::FlowNode' has no attributes.
+The class 'BPMNProfile::InputSet' has no attributes.
+The class 'BPMNProfile::BPMNProperty' has no attributes.
+The class 'BPMNProfile::SignalEventDefinition' has no attributes.
+The class 'BPMNProfile::ThrowEvent' has no attributes.
+The class 'BPMNProfile::CallConversation' has no attributes.
+The class 'BPMNProfile::CompensateEventDefinition' has the following attributes: 'waitForCompletion' of type str.
+The class 'BPMNCollaboration' has no attributes.
+The class 'BPMNProfile::OpaqueAction' has no attributes.
+The class 'BPMNProfile::CollaborationUse' has no attributes.
+The class 'DataAssociation' has no attributes.
+The class 'BPMNProfile::Lane' has no attributes.
+The class 'CatchEvent' has no attributes.
+The class 'BPMNProfile::Gateway' has no attributes.
+The class 'BPMNProfile::ParticipantAssociation' has no attributes.
+The class 'EventDefinition' has no attributes.
+The class 'BPMNProfile::CatchEvent' has the following attributes: 'parallelMultiple' of type str.
+The class 'BPMNProfile::BPMNInterface' has no attributes.
+The class 'BPMNProfile::StartEvent' has the following attributes: 'isInterrupting' of type str.
+The class 'BPMNProfile::Constraint' has no attributes.
+The class 'BPMNProfile::InteractionNode' has no attributes.
+The class 'BPMNProfile::InclusiveGateway' has no attributes.
+The class 'BPMNProfile::ActivityGroup' has no attributes.
+The class 'BPMNProfile::DataOutput' has the following attributes: 'isCollection' of type str.
+The class 'BPMNProfile::InputOutputBinding' has no attributes.
+The class 'BPMNProfile::AdHocSubProcess' has the following attributes: 'ordering' of type str; 'cancelRemainingInstances' of type str.
+The class 'BPMNProfile::DataAssociation' has no attributes.
+The class 'BPMNProfile::BPMNExpression' has no attributes.
+The class 'BPMNProfile::InitialNode' has no attributes.
+The class 'BPMNProfile::Element' has no attributes.
+The class 'BPMNProfile::FlowFinalNode' has no attributes.
+The class 'BPMNProfile::ObjectFlow' has no attributes.
+The class 'BPMNProfile::NonExclusiveGateway' has no attributes.
+The class 'BPMNProfile::ParticipantMultiplicity' has the following attributes: 'maximum' of type str; 'minimum' of type str.
+The class 'BPMNProfile::Image' has no attributes.
+The class 'BPMNProfile::HumanPerformer' has no attributes.
+The class 'BPMNProfile::PartnerRole' has no attributes.
+The class 'BPMNProfile::Class' has no attributes.
+The class 'BPMNProfile::GlobalScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'BPMNProfile::OutputSet' has no attributes.
+The class 'BPMNProfile::CategoryValue' has no attributes.
+The class 'BPMNProfile::DataState' has no attributes.
+The class 'BPMNProfile::EnumerationLiteral' has no attributes.
+The class 'BPMNProfile::Activity' has no attributes.
+The class 'BPMNProfile::Escalation' has the following attributes: 'escalationCode' of type str.
+The class 'BPMNProfile::EndEvent' has no attributes.
+The class 'BPMNActivity' has no attributes.
+The class 'BPMNProfile::OutputPin' has no attributes.
+The class 'BPMNProfile::IntermediateThrowEvent' has no attributes.
+The class 'BPMNProfile::SendTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::ResourceAssignmentExpression' has no attributes.
+The class 'Gateway' has no attributes.
+The class 'BPMNProfile::InterruptibleActivityRegion' has no attributes.
+The class 'BPMNProfile::DataStore' has the following attributes: 'capacity' of type str; 'isUnlimited' of type str.
+The class 'BPMNProfile::Auditing' has no attributes.
+The class 'BPMNProfile::ExtensionDefinition' has no attributes.
+The class 'BPMNProfile::DecisionNode' has no attributes.
+The class 'BPMNProfile::Behavior' has no attributes.
+The class 'BPMNProfile::Participant' has no attributes.
+The class 'BPMNProfile::BPMNActivity' has the following attributes: 'isForCompensation' of type str; 'completionQuantity' of type str; 'startQuantity' of type str.
+The class 'BPMNProfile::GlobalUserTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::CorrelationSubscription' has no attributes.
+The class 'BPMNProfile::Transaction' has the following attributes: 'method' of type str.
+The class 'BPMNProfile::ComplexBehaviorDefinition' has no attributes.
+The class 'BPMNProfile::ResourceRole' has no attributes.
+The class 'BPMNProfile::GlobalBusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'BPMNProfile::ControlFlow' has no attributes.
+The class 'BPMNProfile::BPMNArtifact' has no attributes.
+The class 'BPMNProfile::SendObjectAction' has no attributes.
+The class 'BPMNProfile::TextAnnotation' has the following attributes: 'text' of type str; 'textFormat' of type str.
+The class 'BPMNProfile::ExtensionAttributeDefinition' has the following attributes: 'type' of type str; 'isReference' of type str.
+The class 'BPMNExpression' has no attributes.
+The class 'BPMNProfile::BoundaryEvent' has the following attributes: 'cancelActivity' of type str.
+The class 'BPMNProfile::PackageImport' has no attributes.
+The class 'BPMNProfile::InputOutputSpecification' has no attributes.
+The class 'FlowElement' has no attributes.
+The class 'BPMNProfile::ChangeEvent' has no attributes.
+The class 'BPMNProfile::ExtensionAttributeValue' has no attributes.
+The class 'BPMNProfile::Monitoring' has no attributes.
+The class 'BPMNProfile::Interface' has no attributes.
+The class 'SubProcess' has no attributes.
+The class 'BPMNProfile::LaneSet' has no attributes.
+The class 'BPMNProfile::CallActivity' has no attributes.
+The class 'BPMNProfile::Stereotype' has no attributes.
+The class 'BPMNProfile::EscalationEventDefinition' has no attributes.
+The class 'BPMNProfile::Error' has the following attributes: 'errorCode' of type str.
+The enumeration 'ProcessType' has the following literals: 'private', 'none', 'public'.
+The enumeration 'EventBasedGatewayType' has the following literals: 'parallel', 'exclusive'.
+The enumeration 'MultiInstanceBehavior' has the following literals: 'all', 'one', 'none', 'complex'.
+The enumeration 'ItemKind' has the following literals: 'physical', 'information'.
+The enumeration 'RelationshipDirection' has the following literals: 'backward', 'forward', 'none', 'both'.
+The enumeration 'GatewayDirection' has the following literals: 'converging', 'diverging', 'unspecified', 'mixed'.
+The enumeration 'AssociationDirection' has the following literals: 'both', 'one', 'none'.
+The enumeration 'AdHocOrdering' has the following literals: 'sequential', 'parallel'.
+'BPMNProfile::Conversation' is a specialization of 'ConversationNode'.
+'BPMNProfile::SubConversation' is a specialization of 'ConversationNode'.
+'BPMNProfile::PotentialOwner' is a specialization of 'HumanPerformer'.
+'BPMNProfile::Monitoring' is a specialization of 'BaseElement'.
+'BPMNProfile::BPMNOperation' is a specialization of 'BaseElement'.
+'BPMNProfile::GlobalConversation' is a specialization of 'BPMNCollaboration'.
+'BPMNProfile::BPMNActivity' is a specialization of 'FlowNode'.
+'BPMNProfile::Auditing' is a specialization of 'BaseElement'.
+'BPMNProfile::GlobalManualTask' is a specialization of 'GlobalTask'.
+'BPMNProfile::DataOutputAssociation' is a specialization of 'DataAssociation'.
+'BPMNProfile::OutputSet' is a specialization of 'BaseElement'.
+'BPMNProfile::LoopCharacteristics' is a specialization of 'BaseElement'.
+'BPMNProfile::InputSet' is a specialization of 'BaseElement'.
+'BPMNProfile::EventDefinition' is a specialization of 'RootElement'.
+'BPMNProfile::DataState' is a specialization of 'BaseElement'.
+'BPMNProfile::Gateway' is a specialization of 'FlowNode'.
+'BPMNProfile::BPMNInterface' is a specialization of 'RootElement'.
+'BPMNProfile::ParticipantAssociation' is a specialization of 'BaseElement'.
+'BPMNProfile::FlowNode' is a specialization of 'FlowElement'.
+'BPMNProfile::DataOutput' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::BPMNAssociation' is a specialization of 'BPMNArtifact'.
+'BPMNProfile::Error' is a specialization of 'ItemDefinition'.
+'BPMNProfile::BPMNEvent' is a specialization of 'FlowNode'.
+'BPMNProfile::Documentation' is a specialization of 'BaseElement'.
+'BPMNProfile::PartnerEntity' is a specialization of 'RootElement'.
+'BPMNProfile::BPMNCollaboration' is a specialization of 'RootElement'.
+'BPMNProfile::CatchEvent' is a specialization of 'BPMNEvent'.
+'BPMNProfile::InputOutputBinding' is a specialization of 'BaseElement'.
+'BPMNProfile::BPMNEvent' is a specialization of 'InteractionNode'.
+'BPMNProfile::Participant' is a specialization of 'InteractionNode'.
+'BPMNProfile::BPMNMessage' is a specialization of 'ItemDefinition'.
+'BPMNProfile::CompensateEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::ParticipantMultiplicity' is a specialization of 'BaseElement'.
+'BPMNProfile::DataAssociation' is a specialization of 'BaseElement'.
+'BPMNProfile::ConversationNode' is a specialization of 'InteractionNode'.
+'BPMNProfile::BoundaryEvent' is a specialization of 'CatchEvent'.
+'BPMNProfile::Participant' is a specialization of 'BaseElement'.
+'BPMNProfile::FlowElement' is a specialization of 'BaseElement'.
+'BPMNProfile::ConversationLink' is a specialization of 'BaseElement'.
+'BPMNProfile::ConversationNode' is a specialization of 'BaseElement'.
+'BPMNProfile::BPMNSignal' is a specialization of 'ItemDefinition'.
+'BPMNProfile::BPMNArtifact' is a specialization of 'BaseElement'.
+'BPMNProfile::CorrelationSubscription' is a specialization of 'BaseElement'.
+'BPMNProfile::Assignment' is a specialization of 'BaseElement'.
+'BPMNProfile::PartnerRole' is a specialization of 'RootElement'.
+'BPMNProfile::DataInputAssociation' is a specialization of 'DataAssociation'.
+'BPMNProfile::EscalationEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::MessageFlow' is a specialization of 'BaseElement'.
+'BPMNProfile::CorrelationProperty' is a specialization of 'BaseElement'.
+'BPMNProfile::ComplexGateway' is a specialization of 'NonExclusiveGateway'.
+'BPMNProfile::MessageEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::MessageFlowAssociation' is a specialization of 'BaseElement'.
+'BPMNProfile::TimerEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::GlobalUserTask' is a specialization of 'GlobalTask'.
+'BPMNProfile::LaneSet' is a specialization of 'BaseElement'.
+'BPMNProfile::CallActivity' is a specialization of 'BPMNActivity'.
+'BPMNProfile::HumanPerformer' is a specialization of 'Performer'.
+'BPMNProfile::FlowElementsContainer' is a specialization of 'BaseElement'.
+'BPMNProfile::ResourceAssignmentExpression' is a specialization of 'BPMNExpression'.
+'BPMNProfile::SubProcess' is a specialization of 'FlowElementsContainer'.
+'BPMNProfile::CategoryValue' is a specialization of 'BaseElement'.
+'BPMNProfile::SequenceFlow' is a specialization of 'FlowElement'.
+'BPMNProfile::FormalExpression' is a specialization of 'BPMNExpression'.
+'BPMNProfile::ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::Resource' is a specialization of 'ItemDefinition'.
+'BPMNProfile::CorrelationKey' is a specialization of 'BaseElement'.
+'BPMNProfile::Escalation' is a specialization of 'ItemDefinition'.
+'BPMNProfile::CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+'BPMNProfile::BPMNProperty' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::TerminateEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::ResourceRole' is a specialization of 'BaseElement'.
+'BPMNProfile::EndEvent' is a specialization of 'ThrowEvent'.
+'BPMNProfile::GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+'BPMNProfile::ThrowEvent' is a specialization of 'BPMNEvent'.
+'BPMNProfile::SignalEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+'BPMNProfile::GlobalTask' is a specialization of 'CallableElement'.
+'BPMNProfile::StartEvent' is a specialization of 'CatchEvent'.
+'BPMNProfile::ResourceParameterBinding' is a specialization of 'BaseElement'.
+'BPMNProfile::TextAnnotation' is a specialization of 'BPMNArtifact'.
+'BPMNProfile::BPMNActivity' is a specialization of 'InteractionNode'.
+'BPMNProfile::GlobalScriptTask' is a specialization of 'GlobalTask'.
+'BPMNProfile::ExclusiveGateway' is a specialization of 'Gateway'.
+'BPMNProfile::ResourceParameter' is a specialization of 'BaseElement'.
+'BPMNProfile::LinkEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::CallConversation' is a specialization of 'ConversationNode'.
+'BPMNProfile::ErrorEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::Lane' is a specialization of 'BaseElement'.
+'BPMNProfile::SubProcess' is a specialization of 'BPMNActivity'.
+'BPMNProfile::IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+'BPMNProfile::BusinessRuleTask' is a specialization of 'Task'.
+'BPMNProfile::ScriptTask' is a specialization of 'Task'.
+'BPMNProfile::ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+'BPMNProfile::IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+'BPMNProfile::ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+'BPMNProfile::DataObject' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::Transaction' is a specialization of 'SubProcess'.
+'BPMNProfile::Group' is a specialization of 'BPMNArtifact'.
+'BPMNProfile::MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'BPMNProfile::ParallelGateway' is a specialization of 'NonExclusiveGateway'.
+'BPMNProfile::BPMNExpression' is a specialization of 'BaseElement'.
+'BPMNProfile::BPMNRelationship' is a specialization of 'BaseElement'.
+'BPMNProfile::SendTask' is a specialization of 'Task'.
+'BPMNProfile::AdHocSubProcess' is a specialization of 'SubProcess'.
+'BPMNProfile::StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'BPMNProfile::EventBasedGateway' is a specialization of 'Gateway'.
+'BPMNProfile::ServiceTask' is a specialization of 'Task'.
+'BPMNProfile::UserTask' is a specialization of 'Task'.
+'BPMNProfile::Category' is a specialization of 'RootElement'.
+'BPMNProfile::DataObject' is a specialization of 'FlowElement'.
+'BPMNProfile::DataObjectReference' is a specialization of 'FlowElement'.
+'BPMNProfile::ReceiveTask' is a specialization of 'Task'.
+'BPMNProfile::CancelEventDefinition' is a specialization of 'EventDefinition'.
+'BPMNProfile::ItemDefinition' is a specialization of 'RootElement'.
+'BPMNProfile::Definitions' is a specialization of 'BaseElement'.
+'BPMNProfile::InputOutputSpecification' is a specialization of 'BaseElement'.
+'BPMNProfile::DataInput' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::NonExclusiveGateway' is a specialization of 'Gateway'.
+'BPMNProfile::BPMNProcess' is a specialization of 'FlowElementsContainer'.
+'BPMNProfile::InclusiveGateway' is a specialization of 'NonExclusiveGateway'.
+'BPMNProfile::BPMNProcess' is a specialization of 'CallableElement'.
+'BPMNProfile::ItemAwareElement' is a specialization of 'BaseElement'.
+'BPMNProfile::RootElement' is a specialization of 'BaseElement'.
+'BPMNProfile::CallableElement' is a specialization of 'RootElement'.
+'BPMNProfile::DataObjectReference' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::DataStoreReference' is a specialization of 'FlowElement'.
+'BPMNProfile::ManualTask' is a specialization of 'Task'.
+'BPMNProfile::DataStore' is a specialization of 'RootElement'.
+'BPMNProfile::Performer' is a specialization of 'ResourceRole'.
+'BPMNProfile::Task' is a specialization of 'BPMNActivity'.
+'BPMNProfile::DataStoreReference' is a specialization of 'ItemAwareElement'.
+'BPMNProfile::Rendering' is a specialization of 'BaseElement'.
+'BPMNProfile::CorrelationPropertyBinding' (role 'BPMNProfile_CorrelationPropertyBinding', cardinality 0..*) is associated with 'BPMNProfile::CorrelationSubscription' (role 'BPMNProfile_CorrelationSubscription393', cardinality 0..*).
+'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow355', cardinality 0..*) is associated with 'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode354', cardinality 0..*).
+'BPMNProfile::SendTask' (role 'BPMNProfile_SendTask', cardinality 0..*) is associated with 'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage638', cardinality 0..*).
+'BPMNProfile::BaseElement' (role 'BPMNProfile_BaseElement', cardinality 0..*) is associated with 'BPMNProfile::ExtensionAttributeValue' (role 'BPMNProfile_ExtensionAttributeValue', cardinality 0..*).
+'BPMNProfile::MessageFlowAssociation' (role 'BPMNProfile_MessageFlowAssociation334', cardinality 0..*) is associated with 'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow335', cardinality 0..*).
+'BPMNProfile::CatchEvent' (role 'BPMNProfile_CatchEvent', cardinality 0..*) is associated with 'BPMNProfile::AcceptEventAction' (role 'BPMNProfile_AcceptEventAction', cardinality 0..*).
+'BPMNProfile::DataStoreReference' (role 'BPMNProfile_DataStoreReference', cardinality 0..*) is associated with 'BPMNProfile::DataStore' (role 'BPMNProfile_DataStore591', cardinality 0..*).
+'BPMNProfile::InteractionNode' (role 'targetRef314', cardinality 0..*) is associated with 'BPMNProfile::ConversationLink' (role 'ConversationLink315', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess140', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration', cardinality 0..*).
+'BPMNProfile::CorrelationPropertyBinding' (role 'BPMNProfile_CorrelationPropertyBinding401', cardinality 0..*) is associated with 'BPMNProfile::CorrelationProperty' (role 'BPMNProfile_CorrelationProperty402', cardinality 0..*).
+'BPMNProfile::SignalEventDefinition' (role 'BPMNProfile_SignalEventDefinition528', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent529', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics682', cardinality 0..*) is associated with 'BPMNProfile::EventDefinition' (role 'BPMNProfile_EventDefinition683', cardinality 0..*).
+'BPMNProfile::Interface' (role 'BPMNProfile_Interface', cardinality 0..*) is associated with 'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface234', cardinality 0..*).
+'BPMNProfile::ErrorEventDefinition' (role 'BPMNProfile_ErrorEventDefinition', cardinality 0..*) is associated with 'BPMNProfile::Error' (role 'BPMNProfile_Error558', cardinality 0..*).
+'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement187', cardinality 0..*) is associated with 'BPMNProfile::TypedElement' (role 'BPMNProfile_TypedElement', cardinality 0..*).
+'BPMNProfile::LinkEventDefinition' (role 'BPMNProfile_LinkEventDefinition', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent556', cardinality 0..*).
+'BPMNProfile::CallConversation' (role 'BPMNProfile_CallConversation610', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration611', cardinality 0..*).
+'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition', cardinality 0..*) is associated with 'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement189', cardinality 0..*).
+'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration276', cardinality 0..*).
+'BPMNProfile::TextAnnotation' (role 'BPMNProfile_TextAnnotation', cardinality 0..*) is associated with 'BPMNProfile::Comment' (role 'BPMNProfile_Comment568', cardinality 0..*).
+'BPMNProfile::PartnerEntity' (role 'PartnerEntity', cardinality 0..*) is associated with 'BPMNProfile::Participant' (role 'participantRef', cardinality 0..*).
+'BPMNProfile::CategoryValue' (role 'BPMNProfile_CategoryValue', cardinality 0..*) is associated with 'BPMNProfile::EnumerationLiteral' (role 'BPMNProfile_EnumerationLiteral', cardinality 0..*).
+'BPMNProfile::Escalation' (role 'BPMNProfile_Escalation', cardinality 0..*) is associated with 'BPMNProfile::EscalationEventDefinition' (role 'BPMNProfile_EscalationEventDefinition', cardinality 0..*).
+'BPMNProfile::ControlFlow' (role 'BPMNProfile_ControlFlow', cardinality 0..*) is associated with 'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow77', cardinality 0..*).
+'BPMNProfile::DataObjectReference' (role 'BPMNProfile_DataObjectReference580', cardinality 0..*) is associated with 'BPMNProfile::DataStoreNode' (role 'BPMNProfile_DataStoreNode581', cardinality 0..*).
+'BPMNProfile::Error' (role 'BPMNProfile_Error', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation254', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element130', cardinality 0..*) is associated with 'BPMNProfile::BPMNRelationship' (role 'BPMNProfile_BPMNRelationship129', cardinality 0..*).
+'BPMNProfile::DataStoreNode' (role 'BPMNProfile_DataStoreNode', cardinality 0..*) is associated with 'BPMNProfile::BPMNProperty' (role 'BPMNProfile_BPMNProperty404', cardinality 0..*).
+'BPMNProfile::ResourceParameterBinding' (role 'BPMNProfile_ResourceParameterBinding', cardinality 0..*) is associated with 'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole415', cardinality 0..*).
+'BPMNProfile::EventDefinition' (role 'BPMNProfile_EventDefinition487', cardinality 0..*) is associated with 'BPMNProfile::BPMNEvent' (role 'BPMNProfile_BPMNEvent486', cardinality 0..*).
+'BPMNProfile::ResourceParameter' (role 'BPMNProfile_ResourceParameter433', cardinality 0..*) is associated with 'BPMNProfile::ResourceParameterBinding' (role 'BPMNProfile_ResourceParameterBinding432', cardinality 0..*).
+'BPMNProfile::Enumeration' (role 'BPMNProfile_Enumeration', cardinality 0..*) is associated with 'BPMNProfile::Category' (role 'BPMNProfile_Category', cardinality 0..*).
+'BPMNProfile::CollaborationUse' (role 'BPMNProfile_CollaborationUse', cardinality 0..*) is associated with 'BPMNProfile::CallConversation' (role 'BPMNProfile_CallConversation', cardinality 0..*).
+'BPMNProfile::MergeNode' (role 'BPMNProfile_MergeNode', cardinality 0..*) is associated with 'BPMNProfile::ExclusiveGateway' (role 'BPMNProfile_ExclusiveGateway101', cardinality 0..*).
+'BPMNProfile::FlowElement' (role 'FlowElement52', cardinality 0..*) is associated with 'BPMNProfile::FlowElementsContainer' (role 'container', cardinality 0..*).
+'BPMNProfile::BPMNAssociation' (role 'BPMNAssociation22', cardinality 0..*) is associated with 'BPMNProfile::BaseElement' (role 'targetRef', cardinality 0..*).
+'BPMNProfile::ConversationLink' (role 'conversationLinks', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'BPMNCollaboration', cardinality 0..*).
+'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement', cardinality 0..*) is associated with 'BPMNProfile::DataState' (role 'BPMNProfile_DataState', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity470', cardinality 0..*) is associated with 'BPMNProfile::BoundaryEvent' (role 'BPMNProfile_BoundaryEvent469', cardinality 0..*).
+'BPMNProfile::ExtensionDefinition' (role 'BPMNProfile_ExtensionDefinition120', cardinality 0..*) is associated with 'BPMNProfile::BPMNExtension' (role 'BPMNProfile_BPMNExtension119', cardinality 0..*).
+'BPMNProfile::DataInput' (role 'whileExecutingInputRefs', cardinality 0..*) is associated with 'BPMNProfile::InputSet' (role 'InputSet184', cardinality 0..*).
+'BPMNProfile::BaseElement' (role 'BPMNProfile_BaseElement15', cardinality 0..*) is associated with 'BPMNProfile::Element' (role 'BPMNProfile_Element', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'DataOutput', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'outputSetRefs', cardinality 0..*).
+'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow95', cardinality 0..*) is associated with 'BPMNProfile::ComplexGateway' (role 'BPMNProfile_ComplexGateway', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity449', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class450', cardinality 0..*).
+'BPMNProfile::FinalNode' (role 'BPMNProfile_FinalNode', cardinality 0..*) is associated with 'BPMNProfile::EndEvent' (role 'BPMNProfile_EndEvent', cardinality 0..*).
+'BPMNProfile::CallOperationAction' (role 'BPMNProfile_CallOperationAction641', cardinality 0..*) is associated with 'BPMNProfile::SendTask' (role 'BPMNProfile_SendTask640', cardinality 0..*).
+'BPMNProfile::BPMNAssociation' (role 'incoming', cardinality 0..*) is associated with 'BPMNProfile::BaseElement' (role 'BaseElement', cardinality 0..*).
+'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration274', cardinality 0..*) is associated with 'BPMNProfile::MessageFlowAssociation' (role 'BPMNProfile_MessageFlowAssociation', cardinality 0..*).
+'BPMNProfile::BaseElement' (role 'BPMNProfile_BaseElement19', cardinality 0..*) is associated with 'BPMNProfile::ExtensionDefinition' (role 'BPMNProfile_ExtensionDefinition', cardinality 0..*).
+'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement160', cardinality 0..*) is associated with 'BPMNProfile::InputOutputBinding' (role 'BPMNProfile_InputOutputBinding', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'BPMNProfile_InputSet260', cardinality 0..*) is associated with 'BPMNProfile::InputOutputBinding' (role 'BPMNProfile_InputOutputBinding259', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity446', cardinality 0..*) is associated with 'BPMNProfile::Action' (role 'BPMNProfile_Action447', cardinality 0..*).
+'BPMNProfile::StructuredActivityNode' (role 'BPMNProfile_StructuredActivityNode511', cardinality 0..*) is associated with 'BPMNProfile::LoopCharacteristics' (role 'BPMNProfile_LoopCharacteristics510', cardinality 0..*).
+'BPMNProfile::FormalExpression' (role 'BPMNProfile_FormalExpression399', cardinality 0..*) is associated with 'BPMNProfile::CorrelationPropertyBinding' (role 'BPMNProfile_CorrelationPropertyBinding398', cardinality 0..*).
+'BPMNProfile::ExclusiveGateway' (role 'BPMNProfile_ExclusiveGateway', cardinality 0..*) is associated with 'BPMNProfile::DecisionNode' (role 'BPMNProfile_DecisionNode', cardinality 0..*).
+'BPMNProfile::Assignment' (role 'BPMNProfile_Assignment504', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression505', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression663', cardinality 0..*) is associated with 'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics', cardinality 0..*).
+'BPMNProfile::InteractionNode' (role 'BPMNProfile_InteractionNode343', cardinality 0..*) is associated with 'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow342', cardinality 0..*).
+'BPMNProfile::BPMNEvent' (role 'BPMNProfile_BPMNEvent483', cardinality 0..*) is associated with 'BPMNProfile::BPMNProperty' (role 'BPMNProfile_BPMNProperty484', cardinality 0..*).
+'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement158', cardinality 0..*) is associated with 'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface', cardinality 0..*).
+'BPMNProfile::Property' (role 'BPMNProfile_Property424', cardinality 0..*) is associated with 'BPMNProfile::ResourceParameter' (role 'BPMNProfile_ResourceParameter423', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression549', cardinality 0..*) is associated with 'BPMNProfile::ConditionalEventDefinition' (role 'BPMNProfile_ConditionalEventDefinition548', cardinality 0..*).
+'BPMNProfile::BPMNRelationship' (role 'BPMNProfile_BPMNRelationship', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions113', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity462', cardinality 0..*) is associated with 'BPMNProfile::DataOutputAssociation' (role 'BPMNProfile_DataOutputAssociation', cardinality 0..*).
+'BPMNProfile::DataObjectReference' (role 'BPMNProfile_DataObjectReference', cardinality 0..*) is associated with 'BPMNProfile::DataObject' (role 'BPMNProfile_DataObject', cardinality 0..*).
+'BPMNProfile::ExtensionAttributeValue' (role 'BPMNProfile_ExtensionAttributeValue24', cardinality 0..*) is associated with 'BPMNProfile::Slot' (role 'BPMNProfile_Slot', cardinality 0..*).
+'BPMNProfile::State' (role 'BPMNProfile_State', cardinality 0..*) is associated with 'BPMNProfile::DataState' (role 'BPMNProfile_DataState191', cardinality 0..*).
+'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification599', cardinality 0..*) is associated with 'BPMNProfile::Task' (role 'BPMNProfile_Task', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess142', cardinality 0..*) is associated with 'BPMNProfile::Activity' (role 'BPMNProfile_Activity', cardinality 0..*).
+'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration271', cardinality 0..*) is associated with 'BPMNProfile::ParticipantAssociation' (role 'BPMNProfile_ParticipantAssociation', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics685', cardinality 0..*) is associated with 'BPMNProfile::EventDefinition' (role 'BPMNProfile_EventDefinition686', cardinality 0..*).
+'BPMNProfile::FlowNode' (role 'BPMNProfile_FlowNode67', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'BPMNProfile_Lane66', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput231', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet230', cardinality 0..*).
+'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface307', cardinality 0..*) is associated with 'BPMNProfile::Participant' (role 'BPMNProfile_Participant306', cardinality 0..*).
+'BPMNProfile::ResourceParameter' (role 'BPMNProfile_ResourceParameter426', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition427', cardinality 0..*).
+'BPMNProfile::ResourceAssignmentExpression' (role 'BPMNProfile_ResourceAssignmentExpression418', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression419', cardinality 0..*).
+'BPMNProfile::Documentation' (role 'BPMNProfile_Documentation33', cardinality 0..*) is associated with 'BPMNProfile::Comment' (role 'BPMNProfile_Comment', cardinality 0..*).
+'BPMNProfile::ComplexBehaviorDefinition' (role 'BPMNProfile_ComplexBehaviorDefinition689', cardinality 0..*) is associated with 'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics688', cardinality 0..*).
+'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage538', cardinality 0..*) is associated with 'BPMNProfile::MessageEventDefinition' (role 'BPMNProfile_MessageEventDefinition', cardinality 0..*).
+'BPMNProfile::RootElement' (role 'rootElements', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'Definitions', cardinality 0..*).
+'BPMNProfile::JoinNode' (role 'BPMNProfile_JoinNode', cardinality 0..*) is associated with 'BPMNProfile::NonExclusiveGateway' (role 'BPMNProfile_NonExclusiveGateway', cardinality 0..*).
+'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow79', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput228', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet227', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity460', cardinality 0..*) is associated with 'BPMNProfile::DataInputAssociation' (role 'BPMNProfile_DataInputAssociation', cardinality 0..*).
+'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions109', cardinality 0..*) is associated with 'BPMNProfile::BPMNExtension' (role 'BPMNProfile_BPMNExtension', cardinality 0..*).
+'BPMNProfile::Rendering' (role 'BPMNProfile_Rendering', cardinality 0..*) is associated with 'BPMNProfile::UserTask' (role 'BPMNProfile_UserTask597', cardinality 0..*).
+'BPMNProfile::ConversationLink' (role 'BPMNProfile_ConversationLink', cardinality 0..*) is associated with 'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency318', cardinality 0..*).
+'BPMNProfile::OpaqueAction' (role 'BPMNProfile_OpaqueAction636', cardinality 0..*) is associated with 'BPMNProfile::ScriptTask' (role 'BPMNProfile_ScriptTask', cardinality 0..*).
+'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification173', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet', cardinality 0..*).
+'BPMNProfile::DataInput' (role 'DataInput', cardinality 0..*) is associated with 'BPMNProfile::InputSet' (role 'inputSetWithOptional', cardinality 0..*).
+'BPMNProfile::ParticipantMultiplicity' (role 'BPMNProfile_ParticipantMultiplicity', cardinality 0..*) is associated with 'BPMNProfile::Participant' (role 'BPMNProfile_Participant301', cardinality 0..*).
+'BPMNProfile::FlowFinalNode' (role 'BPMNProfile_FlowFinalNode', cardinality 0..*) is associated with 'BPMNProfile::ThrowEvent' (role 'BPMNProfile_ThrowEvent533', cardinality 0..*).
+'BPMNProfile::LinkEventDefinition' (role '_target', cardinality 0..*) is associated with 'BPMNProfile::LinkEventDefinition' (role 'LinkEventDefinition554', cardinality 0..*).
+'BPMNProfile::ExtensionAttributeDefinition' (role 'BPMNProfile_ExtensionAttributeDefinition31', cardinality 0..*) is associated with 'BPMNProfile::Property' (role 'BPMNProfile_Property', cardinality 0..*).
+'BPMNProfile::CallConversation' (role 'BPMNProfile_CallConversation613', cardinality 0..*) is associated with 'BPMNProfile::ParticipantAssociation' (role 'BPMNProfile_ParticipantAssociation614', cardinality 0..*).
+'BPMNProfile::InformationFlow' (role 'BPMNProfile_InformationFlow', cardinality 0..*) is associated with 'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow340', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput', cardinality 0..*) is associated with 'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification169', cardinality 0..*).
+'BPMNProfile::Action' (role 'BPMNProfile_Action', cardinality 0..*) is associated with 'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification165', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element309', cardinality 0..*) is associated with 'BPMNProfile::InteractionNode' (role 'BPMNProfile_InteractionNode', cardinality 0..*).
+'BPMNProfile::EventBasedGateway' (role 'BPMNProfile_EventBasedGateway', cardinality 0..*) is associated with 'BPMNProfile::ForkNode' (role 'BPMNProfile_ForkNode89', cardinality 0..*).
+'BPMNProfile::LinkEventDefinition' (role 'LinkEventDefinition', cardinality 0..*) is associated with 'BPMNProfile::LinkEventDefinition' (role 'source', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression666', cardinality 0..*) is associated with 'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics665', cardinality 0..*).
+'BPMNProfile::MessageFlowAssociation' (role 'BPMNProfile_MessageFlowAssociation331', cardinality 0..*) is associated with 'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency332', cardinality 0..*).
+'BPMNProfile::Participant' (role 'participantRef304', cardinality 0..*) is associated with 'BPMNProfile::PartnerRole' (role 'PartnerRole', cardinality 0..*).
+'BPMNProfile::LaneSet' (role 'laneSets', cardinality 0..*) is associated with 'BPMNProfile::FlowElementsContainer' (role 'FlowElementsContainer58', cardinality 0..*).
+'BPMNProfile::ChangeEvent' (role 'BPMNProfile_ChangeEvent', cardinality 0..*) is associated with 'BPMNProfile::TimerEventDefinition' (role 'BPMNProfile_TimerEventDefinition525', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression648', cardinality 0..*) is associated with 'BPMNProfile::StandardLoopCharacteristics' (role 'BPMNProfile_StandardLoopCharacteristics647', cardinality 0..*).
+'BPMNProfile::Participant' (role 'BPMNProfile_Participant293', cardinality 0..*) is associated with 'BPMNProfile::ParticipantAssociation' (role 'BPMNProfile_ParticipantAssociation292', cardinality 0..*).
+'BPMNProfile::BoundaryEvent' (role 'BPMNProfile_BoundaryEvent', cardinality 0..*) is associated with 'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity458', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression523', cardinality 0..*) is associated with 'BPMNProfile::TimerEventDefinition' (role 'BPMNProfile_TimerEventDefinition522', cardinality 0..*).
+'BPMNProfile::CorrelationKey' (role 'BPMNProfile_CorrelationKey366', cardinality 0..*) is associated with 'BPMNProfile::CorrelationProperty' (role 'BPMNProfile_CorrelationProperty', cardinality 0..*).
+'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement', cardinality 0..*) is associated with 'BPMNProfile::Behavior' (role 'BPMNProfile_Behavior', cardinality 0..*).
+'BPMNProfile::Participant' (role 'BPMNProfile_Participant298', cardinality 0..*) is associated with 'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess299', cardinality 0..*).
+'BPMNProfile::EventDefinition' (role 'BPMNProfile_EventDefinition481', cardinality 0..*) is associated with 'BPMNProfile::BPMNEvent' (role 'BPMNProfile_BPMNEvent480', cardinality 0..*).
+'BPMNProfile::InclusiveGateway' (role 'BPMNProfile_InclusiveGateway', cardinality 0..*) is associated with 'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow', cardinality 0..*).
+'BPMNProfile::ActivityPartition' (role 'BPMNProfile_ActivityPartition61', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'BPMNProfile_Lane60', cardinality 0..*).
+'BPMNProfile::RootElement' (role 'RootElement', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'definition', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression87', cardinality 0..*) is associated with 'BPMNProfile::OpaqueExpression' (role 'BPMNProfile_OpaqueExpression', cardinality 0..*).
+'BPMNProfile::InstanceSpecification' (role 'BPMNProfile_InstanceSpecification', cardinality 0..*) is associated with 'BPMNProfile::PartnerEntity' (role 'BPMNProfile_PartnerEntity', cardinality 0..*).
+'BPMNProfile::LaneSet' (role 'BPMNProfile_LaneSet', cardinality 0..*) is associated with 'BPMNProfile::ActivityPartition' (role 'BPMNProfile_ActivityPartition', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess150', cardinality 0..*) is associated with 'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess148', cardinality 0..*).
+'BPMNProfile::ComplexBehaviorDefinition' (role 'BPMNProfile_ComplexBehaviorDefinition631', cardinality 0..*) is associated with 'BPMNProfile::ControlFlow' (role 'BPMNProfile_ControlFlow632', cardinality 0..*).
+'BPMNProfile::Stereotype' (role 'BPMNProfile_Stereotype', cardinality 0..*) is associated with 'BPMNProfile::ExtensionDefinition' (role 'BPMNProfile_ExtensionDefinition35', cardinality 0..*).
+'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration284', cardinality 0..*) is associated with 'BPMNProfile::Participant' (role 'BPMNProfile_Participant', cardinality 0..*).
+'BPMNProfile::CorrelationProperty' (role 'BPMNProfile_CorrelationProperty374', cardinality 0..*) is associated with 'BPMNProfile::CorrelationPropertyRetrievalExpression' (role 'BPMNProfile_CorrelationPropertyRetrievalExpression', cardinality 0..*).
+'BPMNProfile::Auditing' (role 'BPMNProfile_Auditing44', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class', cardinality 0..*).
+'BPMNProfile::BPMNProperty' (role 'BPMNProfile_BPMNProperty406', cardinality 0..*) is associated with 'BPMNProfile::Property' (role 'BPMNProfile_Property407', cardinality 0..*).
+'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage252', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation251', cardinality 0..*).
+'BPMNProfile::Class' (role 'BPMNProfile_Class478', cardinality 0..*) is associated with 'BPMNProfile::BPMNEvent' (role 'BPMNProfile_BPMNEvent', cardinality 0..*).
+'BPMNProfile::DataObject' (role 'BPMNProfile_DataObject583', cardinality 0..*) is associated with 'BPMNProfile::DataStoreNode' (role 'BPMNProfile_DataStoreNode584', cardinality 0..*).
+'BPMNProfile::FlowElement' (role 'categorizedFlowElements', cardinality 0..*) is associated with 'BPMNProfile::CategoryValue' (role 'CategoryValue', cardinality 0..*).
+'BPMNProfile::ParameterSet' (role 'BPMNProfile_ParameterSet225', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet224', cardinality 0..*).
+'BPMNProfile::StandardLoopCharacteristics' (role 'BPMNProfile_StandardLoopCharacteristics', cardinality 0..*) is associated with 'BPMNProfile::LoopNode' (role 'BPMNProfile_LoopNode', cardinality 0..*).
+'BPMNProfile::Event' (role 'BPMNProfile_Event', cardinality 0..*) is associated with 'BPMNProfile::EventDefinition' (role 'BPMNProfile_EventDefinition', cardinality 0..*).
+'BPMNProfile::CategoryValue' (role '_categoryValueRef', cardinality 0..*) is associated with 'BPMNProfile::FlowElement' (role 'FlowElement', cardinality 0..*).
+'BPMNProfile::CorrelationPropertyRetrievalExpression' (role 'BPMNProfile_CorrelationPropertyRetrievalExpression382', cardinality 0..*) is associated with 'BPMNProfile::FormalExpression' (role 'BPMNProfile_FormalExpression', cardinality 0..*).
+'BPMNProfile::OpaqueBehavior' (role 'BPMNProfile_OpaqueBehavior', cardinality 0..*) is associated with 'BPMNProfile::GlobalTask' (role 'BPMNProfile_GlobalTask', cardinality 0..*).
+'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation266', cardinality 0..*) is associated with 'BPMNProfile::InputOutputBinding' (role 'BPMNProfile_InputOutputBinding265', cardinality 0..*).
+'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole413', cardinality 0..*) is associated with 'BPMNProfile::Resource' (role 'BPMNProfile_Resource', cardinality 0..*).
+'BPMNProfile::Group' (role 'BPMNProfile_Group', cardinality 0..*) is associated with 'BPMNProfile::ActivityPartition' (role 'BPMNProfile_ActivityPartition574', cardinality 0..*).
+'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification', cardinality 0..*) is associated with 'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement156', cardinality 0..*).
+'BPMNProfile::InputOutputBinding' (role 'BPMNProfile_InputOutputBinding262', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet263', cardinality 0..*).
+'BPMNProfile::CatchEvent' (role 'BPMNProfile_CatchEvent475', cardinality 0..*) is associated with 'BPMNProfile::DataOutputAssociation' (role 'BPMNProfile_DataOutputAssociation476', cardinality 0..*).
+'BPMNProfile::InputPin' (role 'BPMNProfile_InputPin', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'BPMNProfile_DataInput175', cardinality 0..*).
+'BPMNProfile::Import' (role 'BPMNProfile_Import200', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition199', cardinality 0..*).
+'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition372', cardinality 0..*) is associated with 'BPMNProfile::CorrelationProperty' (role 'BPMNProfile_CorrelationProperty371', cardinality 0..*).
+'BPMNProfile::PackageImport' (role 'BPMNProfile_PackageImport', cardinality 0..*) is associated with 'BPMNProfile::Import' (role 'BPMNProfile_Import122', cardinality 0..*).
+'BPMNProfile::PackageableElement' (role 'BPMNProfile_PackageableElement', cardinality 0..*) is associated with 'BPMNProfile::RootElement' (role 'BPMNProfile_RootElement', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'dataOutputRefs', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'OutputSet', cardinality 0..*).
+'BPMNProfile::BaseElement' (role 'BPMNProfile_BaseElement70', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'BPMNProfile_Lane69', cardinality 0..*).
+'BPMNProfile::ServiceTask' (role 'BPMNProfile_ServiceTask660', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation661', cardinality 0..*).
+'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation644', cardinality 0..*) is associated with 'BPMNProfile::SendTask' (role 'BPMNProfile_SendTask643', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element197', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition196', cardinality 0..*).
+'BPMNProfile::Participant' (role 'Participant329', cardinality 0..*) is associated with 'BPMNProfile::PartnerRole' (role 'partnerRoleRef', cardinality 0..*).
+'BPMNProfile::Import' (role 'BPMNProfile_Import124', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions125', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression517', cardinality 0..*) is associated with 'BPMNProfile::TimerEventDefinition' (role 'BPMNProfile_TimerEventDefinition', cardinality 0..*).
+'BPMNProfile::BPMNAssociation' (role 'outgoing', cardinality 0..*) is associated with 'BPMNProfile::BaseElement' (role 'BaseElement42', cardinality 0..*).
+'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration282', cardinality 0..*) is associated with 'BPMNProfile::CorrelationKey' (role 'BPMNProfile_CorrelationKey', cardinality 0..*).
+'BPMNProfile::Rendering' (role 'BPMNProfile_Rendering603', cardinality 0..*) is associated with 'BPMNProfile::GlobalUserTask' (role 'BPMNProfile_GlobalUserTask', cardinality 0..*).
+'BPMNProfile::ActivityGroup' (role 'BPMNProfile_ActivityGroup', cardinality 0..*) is associated with 'BPMNProfile::Gateway' (role 'BPMNProfile_Gateway6', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput214', cardinality 0..*) is associated with 'BPMNProfile::ActivityParameterNode' (role 'BPMNProfile_ActivityParameterNode215', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity455', cardinality 0..*) is associated with 'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow456', cardinality 0..*).
+'BPMNProfile::DataInputAssociation' (role 'BPMNProfile_DataInputAssociation536', cardinality 0..*) is associated with 'BPMNProfile::ThrowEvent' (role 'BPMNProfile_ThrowEvent535', cardinality 0..*).
+'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency', cardinality 0..*) is associated with 'BPMNProfile::BPMNAssociation' (role 'BPMNProfile_BPMNAssociation', cardinality 0..*).
+'BPMNProfile::ForkNode' (role 'BPMNProfile_ForkNode', cardinality 0..*) is associated with 'BPMNProfile::NonExclusiveGateway' (role 'BPMNProfile_NonExclusiveGateway3', cardinality 0..*).
+'BPMNProfile::PartnerEntity' (role 'partnerEntityRef', cardinality 0..*) is associated with 'BPMNProfile::Participant' (role 'Participant', cardinality 0..*).
+'BPMNProfile::CatchEvent' (role 'BPMNProfile_CatchEvent473', cardinality 0..*) is associated with 'BPMNProfile::InitialNode' (role 'BPMNProfile_InitialNode', cardinality 0..*).
+'BPMNProfile::StructuredActivityNode' (role 'BPMNProfile_StructuredActivityNode616', cardinality 0..*) is associated with 'BPMNProfile::SubProcess' (role 'BPMNProfile_SubProcess', cardinality 0..*).
+'BPMNProfile::BPMNAssociation' (role 'BPMNAssociation', cardinality 0..*) is associated with 'BPMNProfile::BaseElement' (role 'sourceRef', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'BPMNProfile_InputSet', cardinality 0..*) is associated with 'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification171', cardinality 0..*).
+'BPMNProfile::Parameter' (role 'BPMNProfile_Parameter212', cardinality 0..*) is associated with 'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput211', cardinality 0..*).
+'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation249', cardinality 0..*).
+'BPMNProfile::Participant' (role 'BPMNProfile_Participant295', cardinality 0..*) is associated with 'BPMNProfile::Property' (role 'BPMNProfile_Property296', cardinality 0..*).
+'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode607', cardinality 0..*) is associated with 'BPMNProfile::SubConversation' (role 'BPMNProfile_SubConversation', cardinality 0..*).
+'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent564', cardinality 0..*) is associated with 'BPMNProfile::TerminateEventDefinition' (role 'BPMNProfile_TerminateEventDefinition', cardinality 0..*).
+'BPMNProfile::Class' (role 'BPMNProfile_Class364', cardinality 0..*) is associated with 'BPMNProfile::CorrelationKey' (role 'BPMNProfile_CorrelationKey363', cardinality 0..*).
+'BPMNProfile::Property' (role 'BPMNProfile_Property369', cardinality 0..*) is associated with 'BPMNProfile::CorrelationProperty' (role 'BPMNProfile_CorrelationProperty368', cardinality 0..*).
+'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement491', cardinality 0..*) is associated with 'BPMNProfile::DataAssociation' (role 'BPMNProfile_DataAssociation490', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element247', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation246', cardinality 0..*).
+'BPMNProfile::BPMNRelationship' (role 'BPMNProfile_BPMNRelationship127', cardinality 0..*) is associated with 'BPMNProfile::Constraint' (role 'BPMNProfile_Constraint', cardinality 0..*).
+'BPMNProfile::Participant' (role 'BPMNProfile_Participant290', cardinality 0..*) is associated with 'BPMNProfile::ParticipantAssociation' (role 'BPMNProfile_ParticipantAssociation289', cardinality 0..*).
+'BPMNProfile::AdHocSubProcess' (role 'BPMNProfile_AdHocSubProcess', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression634', cardinality 0..*).
+'BPMNProfile::Rendering' (role 'BPMNProfile_Rendering601', cardinality 0..*) is associated with 'BPMNProfile::Image' (role 'BPMNProfile_Image', cardinality 0..*).
+'BPMNProfile::OutputPin' (role 'BPMNProfile_OutputPin', cardinality 0..*) is associated with 'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput209', cardinality 0..*).
+'BPMNProfile::ObjectFlow' (role 'BPMNProfile_ObjectFlow', cardinality 0..*) is associated with 'BPMNProfile::DataAssociation' (role 'BPMNProfile_DataAssociation', cardinality 0..*).
+'BPMNProfile::ManualTask' (role 'BPMNProfile_ManualTask', cardinality 0..*) is associated with 'BPMNProfile::OpaqueAction' (role 'BPMNProfile_OpaqueAction605', cardinality 0..*).
+'BPMNProfile::SendObjectAction' (role 'BPMNProfile_SendObjectAction', cardinality 0..*) is associated with 'BPMNProfile::IntermediateThrowEvent' (role 'BPMNProfile_IntermediateThrowEvent', cardinality 0..*).
+'BPMNProfile::Documentation' (role 'BPMNProfile_Documentation', cardinality 0..*) is associated with 'BPMNProfile::BaseElement' (role 'BPMNProfile_BaseElement17', cardinality 0..*).
+'BPMNProfile::CallActivity' (role 'BPMNProfile_CallActivity', cardinality 0..*) is associated with 'BPMNProfile::CallBehaviorAction' (role 'BPMNProfile_CallBehaviorAction', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity452', cardinality 0..*) is associated with 'BPMNProfile::BPMNProperty' (role 'BPMNProfile_BPMNProperty453', cardinality 0..*).
+'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration278', cardinality 0..*) is associated with 'BPMNProfile::Collaboration' (role 'BPMNProfile_Collaboration', cardinality 0..*).
+'BPMNProfile::CorrelationKey' (role 'BPMNProfile_CorrelationKey391', cardinality 0..*) is associated with 'BPMNProfile::CorrelationSubscription' (role 'BPMNProfile_CorrelationSubscription390', cardinality 0..*).
+'BPMNProfile::EscalationEventDefinition' (role 'BPMNProfile_EscalationEventDefinition514', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent515', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess152', cardinality 0..*) is associated with 'BPMNProfile::BPMNProperty' (role 'BPMNProfile_BPMNProperty', cardinality 0..*).
+'BPMNProfile::DataStore' (role 'BPMNProfile_DataStore588', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition589', cardinality 0..*).
+'BPMNProfile::InformationFlow' (role 'BPMNProfile_InformationFlow352', cardinality 0..*) is associated with 'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode351', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity', cardinality 0..*) is associated with 'BPMNProfile::CompensateEventDefinition' (role 'BPMNProfile_CompensateEventDefinition', cardinality 0..*).
+'BPMNProfile::LaneSet' (role 'LaneSet75', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'lanes', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element237', cardinality 0..*) is associated with 'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface236', cardinality 0..*).
+'BPMNProfile::Property' (role 'BPMNProfile_Property396', cardinality 0..*) is associated with 'BPMNProfile::CorrelationPropertyBinding' (role 'BPMNProfile_CorrelationPropertyBinding395', cardinality 0..*).
+'BPMNProfile::ActivityParameterNode' (role 'BPMNProfile_ActivityParameterNode', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'BPMNProfile_DataInput179', cardinality 0..*).
+'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow345', cardinality 0..*) is associated with 'BPMNProfile::InteractionNode' (role 'BPMNProfile_InteractionNode346', cardinality 0..*).
+'BPMNProfile::OpaqueAction' (role 'BPMNProfile_OpaqueAction625', cardinality 0..*) is associated with 'BPMNProfile::BusinessRuleTask' (role 'BPMNProfile_BusinessRuleTask', cardinality 0..*).
+'BPMNProfile::ExtensionAttributeValue' (role 'BPMNProfile_ExtensionAttributeValue29', cardinality 0..*) is associated with 'BPMNProfile::ExtensionAttributeDefinition' (role 'BPMNProfile_ExtensionAttributeDefinition', cardinality 0..*).
+'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency269', cardinality 0..*) is associated with 'BPMNProfile::InputOutputBinding' (role 'BPMNProfile_InputOutputBinding268', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity466', cardinality 0..*) is associated with 'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole467', cardinality 0..*).
+'BPMNProfile::ErrorEventDefinition' (role 'BPMNProfile_ErrorEventDefinition560', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent561', cardinality 0..*).
+'BPMNProfile::ActivityNode' (role 'BPMNProfile_ActivityNode', cardinality 0..*) is associated with 'BPMNProfile::FlowNode' (role 'BPMNProfile_FlowNode', cardinality 0..*).
+'BPMNProfile::ParticipantAssociation' (role 'BPMNProfile_ParticipantAssociation286', cardinality 0..*) is associated with 'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency287', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics673', cardinality 0..*) is associated with 'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement674', cardinality 0..*).
+'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation244', cardinality 0..*) is associated with 'BPMNProfile::Operation' (role 'BPMNProfile_Operation', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'process', cardinality 0..*) is associated with 'BPMNProfile::ResourceRole' (role 'ResourceRole', cardinality 0..*).
+'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface241', cardinality 0..*) is associated with 'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement242', cardinality 0..*).
+'BPMNProfile::MessageFlowAssociation' (role 'BPMNProfile_MessageFlowAssociation337', cardinality 0..*) is associated with 'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow338', cardinality 0..*).
+'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'BPMNProfile_BPMNCollaboration280', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess', cardinality 0..*) is associated with 'BPMNProfile::Auditing' (role 'BPMNProfile_Auditing138', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression508', cardinality 0..*) is associated with 'BPMNProfile::Assignment' (role 'BPMNProfile_Assignment507', cardinality 0..*).
+'BPMNProfile::InteractionNode' (role 'InteractionNode321', cardinality 0..*) is associated with 'BPMNProfile::ConversationLink' (role 'outgoingConversationLinks', cardinality 0..*).
+'BPMNProfile::Parameter' (role 'BPMNProfile_Parameter', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'BPMNProfile_DataInput177', cardinality 0..*).
+'BPMNProfile::Lane' (role 'BPMNProfile_Lane', cardinality 0..*) is associated with 'BPMNProfile::LaneSet' (role 'BPMNProfile_LaneSet56', cardinality 0..*).
+'BPMNProfile::FlowElement' (role 'flowElements', cardinality 0..*) is associated with 'BPMNProfile::FlowElementsContainer' (role 'FlowElementsContainer', cardinality 0..*).
+'BPMNProfile::MultiplicityElement' (role 'BPMNProfile_MultiplicityElement', cardinality 0..*) is associated with 'BPMNProfile::ParticipantMultiplicity' (role 'BPMNProfile_ParticipantMultiplicity323', cardinality 0..*).
+'BPMNProfile::Element' (role 'BPMNProfile_Element64', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'BPMNProfile_Lane63', cardinality 0..*).
+'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole411', cardinality 0..*) is associated with 'BPMNProfile::ResourceAssignmentExpression' (role 'BPMNProfile_ResourceAssignmentExpression', cardinality 0..*).
+'BPMNProfile::TimerEventDefinition' (role 'BPMNProfile_TimerEventDefinition519', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression520', cardinality 0..*).
+'BPMNProfile::Group' (role 'BPMNProfile_Group576', cardinality 0..*) is associated with 'BPMNProfile::CategoryValue' (role 'BPMNProfile_CategoryValue577', cardinality 0..*).
+'BPMNProfile::BPMNRelationship' (role 'BPMNProfile_BPMNRelationship132', cardinality 0..*) is associated with 'BPMNProfile::Element' (role 'BPMNProfile_Element133', cardinality 0..*).
+'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation656', cardinality 0..*) is associated with 'BPMNProfile::ReceiveTask' (role 'BPMNProfile_ReceiveTask655', cardinality 0..*).
+'BPMNProfile::Stereotype' (role 'BPMNProfile_Stereotype117', cardinality 0..*) is associated with 'BPMNProfile::BPMNExtension' (role 'BPMNProfile_BPMNExtension116', cardinality 0..*).
+'BPMNProfile::ChangeEvent' (role 'BPMNProfile_ChangeEvent546', cardinality 0..*) is associated with 'BPMNProfile::ConditionalEventDefinition' (role 'BPMNProfile_ConditionalEventDefinition', cardinality 0..*).
+'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions', cardinality 0..*) is associated with 'BPMNProfile::Package' (role 'BPMNProfile_Package', cardinality 0..*).
+'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode357', cardinality 0..*) is associated with 'BPMNProfile::CorrelationKey' (role 'BPMNProfile_CorrelationKey358', cardinality 0..*).
+'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation', cardinality 0..*) is associated with 'BPMNProfile::BPMNInterface' (role 'BPMNProfile_BPMNInterface239', cardinality 0..*).
+'BPMNProfile::DataInput' (role 'DataInput207', cardinality 0..*) is associated with 'BPMNProfile::InputSet' (role 'inputSetRefs', cardinality 0..*).
+'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow81', cardinality 0..*) is associated with 'BPMNProfile::FlowNode' (role 'BPMNProfile_FlowNode82', cardinality 0..*).
+'BPMNProfile::ExtensionDefinition' (role 'BPMNProfile_ExtensionDefinition37', cardinality 0..*) is associated with 'BPMNProfile::ExtensionAttributeDefinition' (role 'BPMNProfile_ExtensionAttributeDefinition38', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProcess', cardinality 0..*) is associated with 'BPMNProfile::ResourceRole' (role 'resources', cardinality 0..*).
+'BPMNProfile::FlowElementsContainer' (role 'flowElementsContainer', cardinality 0..*) is associated with 'BPMNProfile::LaneSet' (role 'LaneSet', cardinality 0..*).
+'BPMNProfile::SignalEventDefinition' (role 'BPMNProfile_SignalEventDefinition', cardinality 0..*) is associated with 'BPMNProfile::BPMNSignal' (role 'BPMNProfile_BPMNSignal', cardinality 0..*).
+'BPMNProfile::CancelEventDefinition' (role 'BPMNProfile_CancelEventDefinition', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent566', cardinality 0..*).
+'BPMNProfile::CallOperationAction' (role 'BPMNProfile_CallOperationAction658', cardinality 0..*) is associated with 'BPMNProfile::ServiceTask' (role 'BPMNProfile_ServiceTask', cardinality 0..*).
+'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow84', cardinality 0..*) is associated with 'BPMNProfile::FlowNode' (role 'BPMNProfile_FlowNode85', cardinality 0..*).
+'BPMNProfile::CorrelationPropertyRetrievalExpression' (role 'BPMNProfile_CorrelationPropertyRetrievalExpression379', cardinality 0..*) is associated with 'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage380', cardinality 0..*).
+'BPMNProfile::ThrowEvent' (role 'BPMNProfile_ThrowEvent', cardinality 0..*) is associated with 'BPMNProfile::CallOperationAction' (role 'BPMNProfile_CallOperationAction', cardinality 0..*).
+'BPMNProfile::ReceiveTask' (role 'BPMNProfile_ReceiveTask652', cardinality 0..*) is associated with 'BPMNProfile::AcceptEventAction' (role 'BPMNProfile_AcceptEventAction653', cardinality 0..*).
+'BPMNProfile::PartnerRole' (role 'BPMNProfile_PartnerRole', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class327', cardinality 0..*).
+'BPMNProfile::ReceiveTask' (role 'BPMNProfile_ReceiveTask', cardinality 0..*) is associated with 'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage650', cardinality 0..*).
+'BPMNProfile::ConversationLink' (role 'incomingConversationLinks', cardinality 0..*) is associated with 'BPMNProfile::InteractionNode' (role 'InteractionNode', cardinality 0..*).
+'BPMNProfile::ImplicitThrowEvent' (role 'BPMNProfile_ImplicitThrowEvent', cardinality 0..*) is associated with 'BPMNProfile::ComplexBehaviorDefinition' (role 'BPMNProfile_ComplexBehaviorDefinition629', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics668', cardinality 0..*) is associated with 'BPMNProfile::ExpansionRegion' (role 'BPMNProfile_ExpansionRegion', cardinality 0..*).
+'BPMNProfile::DataStore' (role 'BPMNProfile_DataStore', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class586', cardinality 0..*).
+'BPMNProfile::StructuredActivityNode' (role 'BPMNProfile_StructuredActivityNode', cardinality 0..*) is associated with 'BPMNProfile::EventBasedGateway' (role 'BPMNProfile_EventBasedGateway91', cardinality 0..*).
+'BPMNProfile::BPMNRelationship' (role 'BPMNProfile_BPMNRelationship135', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions136', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'InputSet182', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'optionalInputRefs', cardinality 0..*).
+'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput221', cardinality 0..*) is associated with 'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet222', cardinality 0..*).
+'BPMNProfile::ConversationLink' (role 'ConversationLink', cardinality 0..*) is associated with 'BPMNProfile::BPMNCollaboration' (role 'collaboration', cardinality 0..*).
+'BPMNProfile::CorrelationPropertyRetrievalExpression' (role 'BPMNProfile_CorrelationPropertyRetrievalExpression376', cardinality 0..*) is associated with 'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency377', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'BPMNProfile_InputSet202', cardinality 0..*) is associated with 'BPMNProfile::ParameterSet' (role 'BPMNProfile_ParameterSet', cardinality 0..*).
+'BPMNProfile::ControlNode' (role 'BPMNProfile_ControlNode', cardinality 0..*) is associated with 'BPMNProfile::Gateway' (role 'BPMNProfile_Gateway', cardinality 0..*).
+'BPMNProfile::ComplexBehaviorDefinition' (role 'BPMNProfile_ComplexBehaviorDefinition', cardinality 0..*) is associated with 'BPMNProfile::FormalExpression' (role 'BPMNProfile_FormalExpression627', cardinality 0..*).
+'BPMNProfile::CategoryValue' (role 'BPMNProfile_CategoryValue572', cardinality 0..*) is associated with 'BPMNProfile::Category' (role 'BPMNProfile_Category571', cardinality 0..*).
+'BPMNProfile::DataAssociation' (role 'BPMNProfile_DataAssociation496', cardinality 0..*) is associated with 'BPMNProfile::FormalExpression' (role 'BPMNProfile_FormalExpression497', cardinality 0..*).
+'BPMNProfile::ResourceParameterBinding' (role 'BPMNProfile_ResourceParameterBinding429', cardinality 0..*) is associated with 'BPMNProfile::Slot' (role 'BPMNProfile_Slot430', cardinality 0..*).
+'BPMNProfile::Assignment' (role 'BPMNProfile_Assignment501', cardinality 0..*) is associated with 'BPMNProfile::Dependency' (role 'BPMNProfile_Dependency502', cardinality 0..*).
+'BPMNProfile::FlowElement' (role 'BPMNProfile_FlowElement10', cardinality 0..*) is associated with 'BPMNProfile::Monitoring' (role 'BPMNProfile_Monitoring', cardinality 0..*).
+'BPMNProfile::DataInput' (role 'BPMNProfile_DataInput', cardinality 0..*) is associated with 'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification167', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'inputSetWithWhileExecuting', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'DataInput205', cardinality 0..*).
+'BPMNProfile::ExtensionAttributeValue' (role 'BPMNProfile_ExtensionAttributeValue26', cardinality 0..*) is associated with 'BPMNProfile::Element' (role 'BPMNProfile_Element27', cardinality 0..*).
+'BPMNProfile::Monitoring' (role 'BPMNProfile_Monitoring46', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class47', cardinality 0..*).
+'BPMNProfile::Property' (role 'BPMNProfile_Property409', cardinality 0..*) is associated with 'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole', cardinality 0..*).
+'BPMNProfile::Monitoring' (role 'BPMNProfile_Monitoring147', cardinality 0..*) is associated with 'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess146', cardinality 0..*).
+'BPMNProfile::BPMNActivity' (role 'BPMNProfile_BPMNActivity464', cardinality 0..*) is associated with 'BPMNProfile::LoopCharacteristics' (role 'BPMNProfile_LoopCharacteristics', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics676', cardinality 0..*) is associated with 'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput677', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics670', cardinality 0..*) is associated with 'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement671', cardinality 0..*).
+'BPMNProfile::Import' (role 'BPMNProfile_Import', cardinality 0..*) is associated with 'BPMNProfile::Definitions' (role 'BPMNProfile_Definitions111', cardinality 0..*).
+'BPMNProfile::UserTask' (role 'BPMNProfile_UserTask', cardinality 0..*) is associated with 'BPMNProfile::OpaqueAction' (role 'BPMNProfile_OpaqueAction', cardinality 0..*).
+'BPMNProfile::Auditing' (role 'BPMNProfile_Auditing', cardinality 0..*) is associated with 'BPMNProfile::FlowElement' (role 'BPMNProfile_FlowElement', cardinality 0..*).
+'BPMNProfile::Resource' (role 'BPMNProfile_Resource421', cardinality 0..*) is associated with 'BPMNProfile::ResourceParameter' (role 'BPMNProfile_ResourceParameter', cardinality 0..*).
+'BPMNProfile::MessageEventDefinition' (role 'BPMNProfile_MessageEventDefinition543', cardinality 0..*) is associated with 'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent544', cardinality 0..*).
+'BPMNProfile::InputSet' (role 'InputSet', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'dataInputRefs', cardinality 0..*).
+'BPMNProfile::CorrelationSubscription' (role 'BPMNProfile_CorrelationSubscription387', cardinality 0..*) is associated with 'BPMNProfile::Class' (role 'BPMNProfile_Class388', cardinality 0..*).
+'BPMNProfile::Lane' (role 'BPMNProfile_Lane72', cardinality 0..*) is associated with 'BPMNProfile::LaneSet' (role 'BPMNProfile_LaneSet73', cardinality 0..*).
+'BPMNProfile::LaneSet' (role 'laneSet', cardinality 0..*) is associated with 'BPMNProfile::Lane' (role 'Lane', cardinality 0..*).
+'BPMNProfile::Participant' (role 'BPMNProfile_Participant361', cardinality 0..*) is associated with 'BPMNProfile::ConversationNode' (role 'BPMNProfile_ConversationNode360', cardinality 0..*).
+'BPMNProfile::DataAssociation' (role 'BPMNProfile_DataAssociation499', cardinality 0..*) is associated with 'BPMNProfile::Assignment' (role 'BPMNProfile_Assignment', cardinality 0..*).
+'BPMNProfile::SubProcess' (role 'BPMNProfile_SubProcess618', cardinality 0..*) is associated with 'BPMNProfile::LaneSet' (role 'BPMNProfile_LaneSet619', cardinality 0..*).
+'BPMNProfile::CallEvent' (role 'BPMNProfile_CallEvent', cardinality 0..*) is associated with 'BPMNProfile::CompensateEventDefinition' (role 'BPMNProfile_CompensateEventDefinition443', cardinality 0..*).
+'BPMNProfile::ResourceRole' (role 'BPMNProfile_ResourceRole440', cardinality 0..*) is associated with 'BPMNProfile::GlobalTask' (role 'BPMNProfile_GlobalTask439', cardinality 0..*).
+'BPMNProfile::MultiInstanceLoopCharacteristics' (role 'BPMNProfile_MultiInstanceLoopCharacteristics679', cardinality 0..*) is associated with 'BPMNProfile::DataInput' (role 'BPMNProfile_DataInput680', cardinality 0..*).
+'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage349', cardinality 0..*) is associated with 'BPMNProfile::MessageFlow' (role 'BPMNProfile_MessageFlow348', cardinality 0..*).
+'BPMNProfile::Class' (role 'BPMNProfile_Class194', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition193', cardinality 0..*).
+'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression98', cardinality 0..*) is associated with 'BPMNProfile::ComplexGateway' (role 'BPMNProfile_ComplexGateway97', cardinality 0..*).
+'BPMNProfile::BPMNMessage' (role 'BPMNProfile_BPMNMessage256', cardinality 0..*) is associated with 'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition257', cardinality 0..*).
+'BPMNProfile::InputOutputSpecification' (role 'BPMNProfile_InputOutputSpecification162', cardinality 0..*) is associated with 'BPMNProfile::Behavior' (role 'BPMNProfile_Behavior163', cardinality 0..*).
+'BPMNProfile::DataStoreReference' (role 'BPMNProfile_DataStoreReference593', cardinality 0..*) is associated with 'BPMNProfile::DataStoreNode' (role 'BPMNProfile_DataStoreNode594', cardinality 0..*).
+'BPMNProfile::CallActivity' (role 'BPMNProfile_CallActivity622', cardinality 0..*) is associated with 'BPMNProfile::CallableElement' (role 'BPMNProfile_CallableElement623', cardinality 0..*).
+'BPMNProfile::BPMNProcess' (role 'BPMNProfile_BPMNProcess144', cardinality 0..*) is associated with 'BPMNProfile::CorrelationSubscription' (role 'BPMNProfile_CorrelationSubscription', cardinality 0..*).
+'BPMNProfile::InteractionNode' (role 'sourceRef311', cardinality 0..*) is associated with 'BPMNProfile::ConversationLink' (role 'ConversationLink312', cardinality 0..*).
+'BPMNProfile::ExclusiveGateway' (role 'BPMNProfile_ExclusiveGateway103', cardinality 0..*) is associated with 'BPMNProfile::SequenceFlow' (role 'BPMNProfile_SequenceFlow104', cardinality 0..*).
+'BPMNProfile::OutputSet' (role 'BPMNProfile_OutputSet219', cardinality 0..*) is associated with 'BPMNProfile::DataOutput' (role 'BPMNProfile_DataOutput218', cardinality 0..*).
+'BPMNProfile::ResourceParameterBinding' (role 'BPMNProfile_ResourceParameterBinding435', cardinality 0..*) is associated with 'BPMNProfile::BPMNExpression' (role 'BPMNProfile_BPMNExpression436', cardinality 0..*).
+'BPMNProfile::InterruptibleActivityRegion' (role 'BPMNProfile_InterruptibleActivityRegion', cardinality 0..*) is associated with 'BPMNProfile::EventBasedGateway' (role 'BPMNProfile_EventBasedGateway93', cardinality 0..*).
+'BPMNProfile::MessageEventDefinition' (role 'BPMNProfile_MessageEventDefinition540', cardinality 0..*) is associated with 'BPMNProfile::BPMNOperation' (role 'BPMNProfile_BPMNOperation541', cardinality 0..*).
+'BPMNProfile::ItemDefinition' (role 'BPMNProfile_ItemDefinition385', cardinality 0..*) is associated with 'BPMNProfile::FormalExpression' (role 'BPMNProfile_FormalExpression384', cardinality 0..*).
+'BPMNProfile::ItemAwareElement' (role 'BPMNProfile_ItemAwareElement494', cardinality 0..*) is associated with 'BPMNProfile::DataAssociation' (role 'BPMNProfile_DataAssociation493', cardinality 0..*).

@@ -1,0 +1,53 @@
+The model has 24 class(es).
+The class 'GuiGraphNode' has no attributes.
+The class 'guigraph::TimerTransition' has the following attributes: 'duration' of type int.
+The class 'guigraph::Form' has no attributes.
+The class 'Widget' has no attributes.
+The class 'guigraph::GuiGraph' has the following attributes: 'invariantText' of type str.
+The class 'AbstractModelElement' has no attributes.
+The class 'guigraph::NoWidgetNode' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'guigraph::PreGenerationSequence' has no attributes.
+The class 'guigraph::Arc' has no attributes.
+The class 'guigraph::Place' has the following attributes: 'provideAsInterface' of type bool; 'initialTokens' of type int.
+The class 'guigraph::ConditionActionTransition' has the following attributes: 'actionsText' of type str; 'applicationConditionText' of type str.
+The class 'guigraph::Widget' has the following attributes: 'image' of type str.
+The class 'guigraph::InhibitorArc' has no attributes.
+The class 'guigraph::Transition' has the following attributes: 'timingType' of type str; 'timeMax' of type str; 'timeMin' of type str; 'risk' of type float; 'terminates' of type bool.
+The class 'Arc' has no attributes.
+The class 'rules::IRealTimeConsumer' has no attributes.
+The class 'guigraph::PageTransition' has no attributes.
+The class 'guigraph::StandardArc' has the following attributes: 'weight' of type int.
+The class 'guigraph::GuiGraphNode' has no attributes.
+The class 'ITimeConsumer' has no attributes.
+The class 'guigraph::PageMappingArc' has no attributes.
+The class 'Place' has no attributes.
+The class 'Transition' has no attributes.
+The enumeration 'TimingType' has the following literals: 'Interval', 'DelayUntilStart'.
+'guigraph::PageTransition' is a specialization of 'GuiGraphNode'.
+'guigraph::Transition' is a specialization of 'rules::IRealTimeConsumer'.
+'guigraph::Widget' is a specialization of 'AbstractModelElement'.
+'guigraph::Form' is a specialization of 'Place'.
+'guigraph::NoWidgetNode' is a specialization of 'Place'.
+'guigraph::Place' is a specialization of 'GuiGraphNode'.
+'guigraph::PageMappingArc' is a specialization of 'Arc'.
+'guigraph::StandardArc' is a specialization of 'Arc'.
+'guigraph::InhibitorArc' is a specialization of 'Arc'.
+'guigraph::ConditionActionTransition' is a specialization of 'Transition'.
+'guigraph::Form' is a specialization of 'Widget'.
+'guigraph::Arc' is a specialization of 'AbstractModelElement'.
+'guigraph::GuiGraph' is a specialization of 'AbstractModelElement'.
+'guigraph::TimerTransition' is a specialization of 'Transition'.
+'guigraph::Transition' is a specialization of 'GuiGraphNode'.
+'guigraph::GuiGraphNode' is a specialization of 'AbstractModelElement'.
+'guigraph::Arc' (role 'guigraph_Arc', cardinality 0..*) is associated with 'guigraph::GuiGraph' (role 'guigraph_GuiGraph', cardinality 0..*).
+'guigraph::Arc' (role 'guigraph_Arc16', cardinality 0..*) is associated with 'guigraph::GuiGraphNode' (role 'guigraph_GuiGraphNode17', cardinality 0..*).
+'guigraph::GuiGraph' (role 'guigraph_GuiGraph2', cardinality 0..*) is associated with 'guigraph::GuiGraphNode' (role 'guigraph_GuiGraphNode', cardinality 0..*).
+'guigraph::PreGenerationSequence' (role 'guigraph_PreGenerationSequence', cardinality 0..*) is associated with 'guigraph::ConditionActionTransition' (role 'guigraph_ConditionActionTransition10', cardinality 0..*).
+'guigraph::GuiGraph' (role 'guigraph_GuiGraph4', cardinality 0..*) is associated with 'Predicate' (role 'Predicate', cardinality 0..*).
+'guigraph::Widget' (role 'guigraph_Widget5', cardinality 0..*) is associated with 'guigraph::Widget' (role 'guigraph_Widget', cardinality 0..*).
+'guigraph::GuiGraphNode' (role 'guigraph_GuiGraphNode14', cardinality 0..*) is associated with 'guigraph::Arc' (role 'guigraph_Arc13', cardinality 0..*).
+'guigraph::PageMappingArc' (role 'guigraph_PageMappingArc', cardinality 0..*) is associated with 'guigraph::Place' (role 'guigraph_Place', cardinality 0..*).
+'guigraph::ConditionActionTransition' (role 'guigraph_ConditionActionTransition', cardinality 0..*) is associated with 'Predicate' (role 'Predicate8', cardinality 0..*).
+'guigraph::GuiGraph' (role 'guigraph_GuiGraph19', cardinality 0..*) is associated with 'guigraph::PageTransition' (role 'guigraph_PageTransition', cardinality 0..*).
+'ITimeConsumer' (role 'ITimeConsumer', cardinality 0..*) is associated with 'guigraph::TimerTransition' (role 'guigraph_TimerTransition', cardinality 0..*).

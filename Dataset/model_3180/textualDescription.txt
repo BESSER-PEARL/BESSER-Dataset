@@ -1,0 +1,93 @@
+The model has 34 class(es).
+The class 'Expression' has no attributes.
+The class 'rell::Minus' has no attributes.
+The class 'rell::Conditions' has no attributes.
+The class 'rell::VariableRef' has no attributes.
+The class 'rell::StringConstant' has the following attributes: 'value' of type str.
+The class 'rell::RelAttrubutesList' has no attributes.
+The class 'rell::Update' has no attributes.
+The class 'rell::Comparison' has the following attributes: 'op' of type str.
+The class 'rell::Attribute' has the following attributes: 'modificator' of type str.
+The class 'rell::Model' has no attributes.
+The class 'rell::Statement' has no attributes.
+The class 'rell::Operation' has the following attributes: 'name' of type str.
+The class 'rell::BoolConstant' has the following attributes: 'value' of type str.
+The class 'rell::PrimitiveType' has the following attributes: 'primitiveType' of type str.
+The class 'rell::Create' has no attributes.
+The class 'rell::ClassDefinition' has the following attributes: 'name' of type str.
+The class 'rell::Or' has no attributes.
+The class 'rell::IntConstant' has the following attributes: 'value' of type int.
+The class 'rell::Plus' has no attributes.
+The class 'rell::Expression' has no attributes.
+The class 'rell::Delete' has no attributes.
+The class 'rell::Variable' has no attributes.
+The class 'rell::ConditionElement' has the following attributes: 'compareName' of type str.
+The class 'rell::ClassType' has no attributes.
+The class 'rell::And' has no attributes.
+The class 'rell::VariableInit' has no attributes.
+The class 'Relational' has no attributes.
+The class 'Statement' has no attributes.
+The class 'rell::Not' has no attributes.
+The class 'rell::Relational' has the following attributes: 'entity' of type str.
+The class 'rell::TypeReference' has no attributes.
+The class 'rell::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'rell::Equality' has the following attributes: 'op' of type str.
+The class 'rell::VariableDeclaration' has the following attributes: 'name' of type str.
+'rell::MulOrDiv' is a specialization of 'Expression'.
+'rell::Variable' is a specialization of 'Statement'.
+'rell::VariableRef' is a specialization of 'Expression'.
+'rell::Create' is a specialization of 'Relational'.
+'rell::Relational' is a specialization of 'Statement'.
+'rell::Update' is a specialization of 'Relational'.
+'rell::Equality' is a specialization of 'Expression'.
+'rell::Plus' is a specialization of 'Expression'.
+'rell::Comparison' is a specialization of 'Expression'.
+'rell::Delete' is a specialization of 'Relational'.
+'rell::Not' is a specialization of 'Expression'.
+'rell::VariableInit' is a specialization of 'Statement'.
+'rell::BoolConstant' is a specialization of 'Expression'.
+'rell::And' is a specialization of 'Expression'.
+'rell::Minus' is a specialization of 'Expression'.
+'rell::IntConstant' is a specialization of 'Expression'.
+'rell::Or' is a specialization of 'Expression'.
+'rell::StringConstant' is a specialization of 'Expression'.
+'rell::Variable' (role 'rell_Variable17', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression', cardinality 0..*).
+'rell::ClassDefinition' (role 'rell_ClassDefinition54', cardinality 0..*) is associated with 'rell::ClassType' (role 'rell_ClassType53', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression84', cardinality 0..*) is associated with 'rell::Minus' (role 'rell_Minus83', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression66', cardinality 0..*) is associated with 'rell::Equality' (role 'rell_Equality', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression91', cardinality 0..*) is associated with 'rell::MulOrDiv' (role 'rell_MulOrDiv90', cardinality 0..*).
+'rell::RelAttrubutesList' (role 'rell_RelAttrubutesList', cardinality 0..*) is associated with 'rell::Operation' (role 'rell_Operation9', cardinality 0..*).
+'rell::Conditions' (role 'rell_Conditions', cardinality 0..*) is associated with 'rell::Relational' (role 'rell_Relational21', cardinality 0..*).
+'rell::VariableInit' (role 'rell_VariableInit32', cardinality 0..*) is associated with 'rell::VariableDeclaration' (role 'rell_VariableDeclaration33', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression79', cardinality 0..*) is associated with 'rell::Plus' (role 'rell_Plus78', cardinality 0..*).
+'rell::Relational' (role 'rell_Relational', cardinality 0..*) is associated with 'rell::Relational' (role 'rell_Relational18', cardinality 0..*).
+'rell::ClassType' (role 'rell_ClassType', cardinality 0..*) is associated with 'rell::TypeReference' (role 'rell_TypeReference51', cardinality 0..*).
+'rell::VariableRef' (role 'rell_VariableRef', cardinality 0..*) is associated with 'rell::VariableDeclaration' (role 'rell_VariableDeclaration86', cardinality 0..*).
+'rell::Minus' (role 'rell_Minus', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression81', cardinality 0..*).
+'rell::TypeReference' (role 'rell_TypeReference', cardinality 0..*) is associated with 'rell::VariableDeclaration' (role 'rell_VariableDeclaration47', cardinality 0..*).
+'rell::Model' (role 'rell_Model2', cardinality 0..*) is associated with 'rell::Operation' (role 'rell_Operation', cardinality 0..*).
+'rell::VariableInit' (role 'rell_VariableInit28', cardinality 0..*) is associated with 'rell::VariableInit' (role 'rell_VariableInit30', cardinality 0..*).
+'rell::VariableDeclaration' (role 'rell_VariableDeclaration', cardinality 0..*) is associated with 'rell::Variable' (role 'rell_Variable15', cardinality 0..*).
+'rell::PrimitiveType' (role 'rell_PrimitiveType', cardinality 0..*) is associated with 'rell::TypeReference' (role 'rell_TypeReference49', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression39', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression37', cardinality 0..*).
+'rell::VariableInit' (role 'rell_VariableInit35', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression36', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression93', cardinality 0..*) is associated with 'rell::Not' (role 'rell_Not', cardinality 0..*).
+'rell::Operation' (role 'rell_Operation11', cardinality 0..*) is associated with 'rell::Statement' (role 'rell_Statement', cardinality 0..*).
+'rell::Or' (role 'rell_Or58', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression59', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression56', cardinality 0..*) is associated with 'rell::Or' (role 'rell_Or', cardinality 0..*).
+'rell::Conditions' (role 'rell_Conditions24', cardinality 0..*) is associated with 'rell::ConditionElement' (role 'rell_ConditionElement', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression88', cardinality 0..*) is associated with 'rell::MulOrDiv' (role 'rell_MulOrDiv', cardinality 0..*).
+'rell::ClassDefinition' (role 'rell_ClassDefinition5', cardinality 0..*) is associated with 'rell::ClassDefinition' (role 'rell_ClassDefinition3', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression76', cardinality 0..*) is associated with 'rell::Plus' (role 'rell_Plus', cardinality 0..*).
+'rell::Variable' (role 'rell_Variable', cardinality 0..*) is associated with 'rell::Variable' (role 'rell_Variable12', cardinality 0..*).
+'rell::Attribute' (role 'rell_Attribute44', cardinality 0..*) is associated with 'rell::VariableDeclaration' (role 'rell_VariableDeclaration45', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression64', cardinality 0..*) is associated with 'rell::And' (role 'rell_And63', cardinality 0..*).
+'rell::Attribute' (role 'rell_Attribute', cardinality 0..*) is associated with 'rell::ClassDefinition' (role 'rell_ClassDefinition7', cardinality 0..*).
+'rell::VariableInit' (role 'rell_VariableInit', cardinality 0..*) is associated with 'rell::Update' (role 'rell_Update', cardinality 0..*).
+'rell::Equality' (role 'rell_Equality68', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression69', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression61', cardinality 0..*) is associated with 'rell::And' (role 'rell_And', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression27', cardinality 0..*) is associated with 'rell::ConditionElement' (role 'rell_ConditionElement26', cardinality 0..*).
+'rell::VariableDeclaration' (role 'rell_VariableDeclaration42', cardinality 0..*) is associated with 'rell::RelAttrubutesList' (role 'rell_RelAttrubutesList41', cardinality 0..*).
+'rell::Expression' (role 'rell_Expression74', cardinality 0..*) is associated with 'rell::Comparison' (role 'rell_Comparison73', cardinality 0..*).
+'rell::Model' (role 'rell_Model', cardinality 0..*) is associated with 'rell::ClassDefinition' (role 'rell_ClassDefinition', cardinality 0..*).
+'rell::Comparison' (role 'rell_Comparison', cardinality 0..*) is associated with 'rell::Expression' (role 'rell_Expression71', cardinality 0..*).

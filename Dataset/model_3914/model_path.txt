@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/qvt/xtend2m/CM2CGnv/metamodels/cm.ecore

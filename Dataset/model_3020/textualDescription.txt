@@ -1,0 +1,230 @@
+The model has 82 class(es).
+The class 'nabla::ContractedIf' has no attributes.
+The class 'ArgOrVar' has no attributes.
+The class 'nabla::TimeIterator' has no attributes.
+The class 'nabla::Affectation' has no attributes.
+The class 'nabla::BoolConstant' has the following attributes: 'value' of type bool.
+The class 'nabla::UnaryMinus' has no attributes.
+The class 'nabla::VarGroupDeclaration' has no attributes.
+The class 'nabla::ConnectivityVar' has no attributes.
+The class 'Iterable' has no attributes.
+The class 'nabla::Expression' has no attributes.
+The class 'nabla::SetDefinition' has the following attributes: 'name' of type str.
+The class 'nabla::Instruction' has no attributes.
+The class 'nabla::Reduction' has no attributes.
+The class 'nabla::Loop' has no attributes.
+The class 'nabla::Comparison' has the following attributes: 'op' of type str.
+The class 'nabla::VectorConstant' has no attributes.
+The class 'Container' has no attributes.
+The class 'nabla::And' has the following attributes: 'op' of type str.
+The class 'nabla::MinConstant' has the following attributes: 'type' of type str.
+The class 'nabla::Modulo' has the following attributes: 'op' of type str.
+The class 'nabla::CurrentTimeIteratorRef' has no attributes.
+The class 'nabla::InitTimeIteratorRef' has the following attributes: 'value' of type int.
+The class 'nabla::FunctionCall' has no attributes.
+The class 'nabla::If' has no attributes.
+The class 'nabla::FunctionOrReduction' has the following attributes: 'name' of type str.
+The class 'nabla::NablaModule' has the following attributes: 'name' of type str.
+The class 'Instruction' has no attributes.
+The class 'nabla::Equality' has the following attributes: 'op' of type str.
+The class 'nabla::Parenthesis' has no attributes.
+The class 'nabla::Iterable' has no attributes.
+The class 'nabla::Function' has the following attributes: 'external' of type bool.
+The class 'nabla::ReductionCall' has no attributes.
+The class 'nabla::ItemDefinition' has no attributes.
+The class 'nabla::TimeIteratorDefinition' has no attributes.
+The class 'ConnectivityCall' has no attributes.
+The class 'nabla::MultipleConnectivityCall' has no attributes.
+The class 'nabla::SingleConnectivity' has no attributes.
+The class 'nabla::Item' has the following attributes: 'name' of type str.
+The class 'nabla::Interval' has the following attributes: 'from_' of type int.
+The class 'Connectivity' has no attributes.
+The class 'nabla::Or' has the following attributes: 'op' of type str.
+The class 'FunctionOrReduction' has no attributes.
+The class 'Var' has no attributes.
+The class 'nabla::ItemType' has the following attributes: 'name' of type str.
+The class 'nabla::RealConstant' has the following attributes: 'value' of type float.
+The class 'nabla::ArgOrVar' has the following attributes: 'name' of type str.
+The class 'nabla::Div' has the following attributes: 'op' of type str.
+The class 'nabla::Container' has no attributes.
+The class 'nabla::IntConstant' has the following attributes: 'value' of type int.
+The class 'nabla::Plus' has the following attributes: 'op' of type str.
+The class 'nabla::Job' has the following attributes: 'name' of type str.
+The class 'nabla::Mul' has the following attributes: 'op' of type str.
+The class 'nabla::TimeIteratorRef' has no attributes.
+The class 'nabla::MultipleConnectivity' has no attributes.
+The class 'IterationBlock' has no attributes.
+The class 'nabla::BaseType' has the following attributes: 'primitive' of type str.
+The class 'nabla::IterationBlock' has no attributes.
+The class 'nabla::SingletonDefinition' has no attributes.
+The class 'nabla::Exit' has the following attributes: 'message' of type str.
+The class 'nabla::Arg' has no attributes.
+The class 'nabla::Not' has no attributes.
+The class 'nabla::SimpleVarDefinition' has no attributes.
+The class 'nabla::Cardinality' has no attributes.
+The class 'nabla::InstructionBlock' has no attributes.
+The class 'nabla::ItemRef' has the following attributes: 'dec' of type int; 'inc' of type int.
+The class 'nabla::Return' has no attributes.
+The class 'nabla::OptDefinition' has no attributes.
+The class 'nabla::SetRef' has no attributes.
+The class 'TimeIteratorRef' has no attributes.
+The class 'nabla::ConnectivityCall' has no attributes.
+The class 'nabla::BaseTypeConstant' has no attributes.
+The class 'nabla::Var' has no attributes.
+The class 'nabla::Connectivity' has the following attributes: 'name' of type str.
+The class 'nabla::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'Expression' has no attributes.
+The class 'nabla::ArgOrVarRef' has no attributes.
+The class 'nabla::Minus' has the following attributes: 'op' of type str.
+The class 'nabla::SpaceIterator' has no attributes.
+The class 'nabla::MaxConstant' has the following attributes: 'type' of type str.
+The class 'nabla::SimpleVar' has no attributes.
+The class 'nabla::SingleConnectivityCall' has no attributes.
+The class 'nabla::NextTimeIteratorRef' has the following attributes: 'value' of type int.
+The enumeration 'PrimitiveType' has the following literals: 'Bool', 'Int', 'Real'.
+'nabla::Minus' is a specialization of 'Expression'.
+'nabla::BaseTypeConstant' is a specialization of 'Expression'.
+'nabla::ReductionCall' is a specialization of 'Iterable'.
+'nabla::Loop' is a specialization of 'Instruction'.
+'nabla::Comparison' is a specialization of 'Expression'.
+'nabla::Function' is a specialization of 'FunctionOrReduction'.
+'nabla::Equality' is a specialization of 'Expression'.
+'nabla::RealConstant' is a specialization of 'Expression'.
+'nabla::VarGroupDeclaration' is a specialization of 'Instruction'.
+'nabla::BoolConstant' is a specialization of 'Expression'.
+'nabla::NextTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+'nabla::SimpleVar' is a specialization of 'Var'.
+'nabla::SingleConnectivity' is a specialization of 'Connectivity'.
+'nabla::If' is a specialization of 'Instruction'.
+'nabla::Plus' is a specialization of 'Expression'.
+'nabla::Affectation' is a specialization of 'Instruction'.
+'nabla::MultipleConnectivity' is a specialization of 'Connectivity'.
+'nabla::Mul' is a specialization of 'Expression'.
+'nabla::FunctionCall' is a specialization of 'Expression'.
+'nabla::Reduction' is a specialization of 'FunctionOrReduction'.
+'nabla::VectorConstant' is a specialization of 'Expression'.
+'nabla::UnaryMinus' is a specialization of 'Expression'.
+'nabla::SimpleVarDefinition' is a specialization of 'Instruction'.
+'nabla::SetRef' is a specialization of 'Container'.
+'nabla::Not' is a specialization of 'Expression'.
+'nabla::InitTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+'nabla::ArgOrVarRef' is a specialization of 'Expression'.
+'nabla::CurrentTimeIteratorRef' is a specialization of 'TimeIteratorRef'.
+'nabla::Interval' is a specialization of 'IterationBlock'.
+'nabla::ItemDefinition' is a specialization of 'Instruction'.
+'nabla::MinConstant' is a specialization of 'Expression'.
+'nabla::Modulo' is a specialization of 'Expression'.
+'nabla::Exit' is a specialization of 'Instruction'.
+'nabla::SpaceIterator' is a specialization of 'IterationBlock'.
+'nabla::SingleConnectivityCall' is a specialization of 'ConnectivityCall'.
+'nabla::Div' is a specialization of 'Expression'.
+'nabla::ReductionCall' is a specialization of 'Expression'.
+'nabla::SetDefinition' is a specialization of 'Instruction'.
+'nabla::Arg' is a specialization of 'ArgOrVar'.
+'nabla::Return' is a specialization of 'Instruction'.
+'nabla::MaxConstant' is a specialization of 'Expression'.
+'nabla::Cardinality' is a specialization of 'Expression'.
+'nabla::Or' is a specialization of 'Expression'.
+'nabla::Parenthesis' is a specialization of 'Expression'.
+'nabla::Var' is a specialization of 'ArgOrVar'.
+'nabla::IntConstant' is a specialization of 'Expression'.
+'nabla::MultipleConnectivityCall' is a specialization of 'Container'.
+'nabla::And' is a specialization of 'Expression'.
+'nabla::ContractedIf' is a specialization of 'Expression'.
+'nabla::MultipleConnectivityCall' is a specialization of 'ConnectivityCall'.
+'nabla::InstructionBlock' is a specialization of 'Instruction'.
+'nabla::Loop' is a specialization of 'Iterable'.
+'nabla::TimeIterator' is a specialization of 'ArgOrVar'.
+'nabla::ConnectivityVar' is a specialization of 'Var'.
+'nabla::Reduction' (role 'nabla_Reduction', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule6', cardinality 0..*).
+'nabla::Instruction' (role 'nabla_Instruction109', cardinality 0..*) is associated with 'nabla::FunctionOrReduction' (role 'nabla_FunctionOrReduction108', cardinality 0..*).
+'nabla::OptDefinition' (role 'nabla_OptDefinition22', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression', cardinality 0..*).
+'nabla::MultipleConnectivity' (role 'nabla_MultipleConnectivity102', cardinality 0..*) is associated with 'nabla::ConnectivityVar' (role 'nabla_ConnectivityVar', cardinality 0..*).
+'nabla::VarGroupDeclaration' (role 'nabla_VarGroupDeclaration41', cardinality 0..*) is associated with 'nabla::Var' (role 'nabla_Var', cardinality 0..*).
+'nabla::Function' (role 'nabla_Function111', cardinality 0..*) is associated with 'nabla::BaseType' (role 'nabla_BaseType112', cardinality 0..*).
+'nabla::Parenthesis' (role 'nabla_Parenthesis', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression195', cardinality 0..*).
+'nabla::SingletonDefinition' (role 'nabla_SingletonDefinition76', cardinality 0..*) is associated with 'nabla::Item' (role 'nabla_Item77', cardinality 0..*).
+'nabla::NablaModule' (role 'nabla_NablaModule4', cardinality 0..*) is associated with 'nabla::Connectivity' (role 'nabla_Connectivity', cardinality 0..*).
+'nabla::ItemDefinition' (role 'nabla_ItemDefinition60', cardinality 0..*) is associated with 'nabla::SingleConnectivityCall' (role 'nabla_SingleConnectivityCall', cardinality 0..*).
+'nabla::Instruction' (role 'nabla_Instruction57', cardinality 0..*) is associated with 'nabla::If' (role 'nabla_If56', cardinality 0..*).
+'nabla::Job' (role 'nabla_Job30', cardinality 0..*) is associated with 'nabla::Instruction' (role 'nabla_Instruction', cardinality 0..*).
+'nabla::Affectation' (role 'nabla_Affectation48', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression49', cardinality 0..*).
+'nabla::NablaModule' (role 'nabla_NablaModule14', cardinality 0..*) is associated with 'nabla::VarGroupDeclaration' (role 'nabla_VarGroupDeclaration', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression98', cardinality 0..*) is associated with 'nabla::TimeIterator' (role 'nabla_TimeIterator97', cardinality 0..*).
+'nabla::OptDefinition' (role 'nabla_OptDefinition', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule10', cardinality 0..*).
+'nabla::ArgOrVar' (role 'nabla_ArgOrVar', cardinality 0..*) is associated with 'nabla::ArgOrVarRef' (role 'nabla_ArgOrVarRef128', cardinality 0..*).
+'nabla::ItemRef' (role 'nabla_ItemRef', cardinality 0..*) is associated with 'nabla::ConnectivityCall' (role 'nabla_ConnectivityCall', cardinality 0..*).
+'nabla::SingleConnectivityCall' (role 'nabla_SingleConnectivityCall80', cardinality 0..*) is associated with 'nabla::SingletonDefinition' (role 'nabla_SingletonDefinition79', cardinality 0..*).
+'nabla::IterationBlock' (role 'nabla_IterationBlock', cardinality 0..*) is associated with 'nabla::Iterable' (role 'nabla_Iterable', cardinality 0..*).
+'nabla::Div' (role 'nabla_Div', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression185', cardinality 0..*).
+'nabla::SingleConnectivityCall' (role 'nabla_SingleConnectivityCall90', cardinality 0..*) is associated with 'nabla::SingleConnectivity' (role 'nabla_SingleConnectivity', cardinality 0..*).
+'nabla::SpaceIterator' (role 'nabla_SpaceIterator74', cardinality 0..*) is associated with 'nabla::SingletonDefinition' (role 'nabla_SingletonDefinition', cardinality 0..*).
+'nabla::Or' (role 'nabla_Or152', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression153', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression85', cardinality 0..*) is associated with 'nabla::Interval' (role 'nabla_Interval84', cardinality 0..*).
+'nabla::ContractedIf' (role 'nabla_ContractedIf147', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression148', cardinality 0..*).
+'nabla::Modulo' (role 'nabla_Modulo', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression190', cardinality 0..*).
+'nabla::Comparison' (role 'nabla_Comparison', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression165', cardinality 0..*).
+'nabla::Item' (role 'nabla_Item93', cardinality 0..*) is associated with 'nabla::ItemRef' (role 'nabla_ItemRef92', cardinality 0..*).
+'nabla::Instruction' (role 'nabla_Instruction54', cardinality 0..*) is associated with 'nabla::If' (role 'nabla_If53', cardinality 0..*).
+'nabla::Mul' (role 'nabla_Mul', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression180', cardinality 0..*).
+'nabla::ItemType' (role 'nabla_ItemType28', cardinality 0..*) is associated with 'nabla::Connectivity' (role 'nabla_Connectivity27', cardinality 0..*).
+'nabla::Modulo' (role 'nabla_Modulo192', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression193', cardinality 0..*).
+'nabla::SimpleVarDefinition' (role 'nabla_SimpleVarDefinition36', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression37', cardinality 0..*).
+'nabla::ReductionCall' (role 'nabla_ReductionCall125', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression126', cardinality 0..*).
+'nabla::TimeIterator' (role 'nabla_TimeIterator100', cardinality 0..*) is associated with 'nabla::TimeIteratorRef' (role 'nabla_TimeIteratorRef', cardinality 0..*).
+'nabla::SimpleVarDefinition' (role 'nabla_SimpleVarDefinition33', cardinality 0..*) is associated with 'nabla::SimpleVar' (role 'nabla_SimpleVar34', cardinality 0..*).
+'nabla::Function' (role 'nabla_Function201', cardinality 0..*) is associated with 'nabla::FunctionCall' (role 'nabla_FunctionCall', cardinality 0..*).
+'nabla::TimeIteratorRef' (role 'nabla_TimeIteratorRef131', cardinality 0..*) is associated with 'nabla::ArgOrVarRef' (role 'nabla_ArgOrVarRef130', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression160', cardinality 0..*) is associated with 'nabla::Equality' (role 'nabla_Equality', cardinality 0..*).
+'nabla::Instruction' (role 'nabla_Instruction43', cardinality 0..*) is associated with 'nabla::InstructionBlock' (role 'nabla_InstructionBlock', cardinality 0..*).
+'nabla::FunctionOrReduction' (role 'nabla_FunctionOrReduction106', cardinality 0..*) is associated with 'nabla::Arg' (role 'nabla_Arg', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression150', cardinality 0..*) is associated with 'nabla::Or' (role 'nabla_Or', cardinality 0..*).
+'nabla::ArgOrVarRef' (role 'nabla_ArgOrVarRef', cardinality 0..*) is associated with 'nabla::Affectation' (role 'nabla_Affectation', cardinality 0..*).
+'nabla::Cardinality' (role 'nabla_Cardinality', cardinality 0..*) is associated with 'nabla::Container' (role 'nabla_Container213', cardinality 0..*).
+'nabla::Item' (role 'nabla_Item', cardinality 0..*) is associated with 'nabla::ItemDefinition' (role 'nabla_ItemDefinition', cardinality 0..*).
+'nabla::TimeIterator' (role 'nabla_TimeIterator', cardinality 0..*) is associated with 'nabla::TimeIteratorDefinition' (role 'nabla_TimeIteratorDefinition95', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression142', cardinality 0..*) is associated with 'nabla::ContractedIf' (role 'nabla_ContractedIf', cardinality 0..*).
+'nabla::Connectivity' (role 'nabla_Connectivity24', cardinality 0..*) is associated with 'nabla::ItemType' (role 'nabla_ItemType25', cardinality 0..*).
+'nabla::FunctionCall' (role 'nabla_FunctionCall203', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression204', cardinality 0..*).
+'nabla::Mul' (role 'nabla_Mul182', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression183', cardinality 0..*).
+'nabla::MultipleConnectivityCall' (role 'nabla_MultipleConnectivityCall', cardinality 0..*) is associated with 'nabla::SetDefinition' (role 'nabla_SetDefinition', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression188', cardinality 0..*) is associated with 'nabla::Div' (role 'nabla_Div187', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression197', cardinality 0..*) is associated with 'nabla::UnaryMinus' (role 'nabla_UnaryMinus', cardinality 0..*).
+'nabla::ItemType' (role 'nabla_ItemType', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule2', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression173', cardinality 0..*) is associated with 'nabla::Plus' (role 'nabla_Plus172', cardinality 0..*).
+'nabla::BaseTypeConstant' (role 'nabla_BaseTypeConstant', cardinality 0..*) is associated with 'nabla::BaseType' (role 'nabla_BaseType206', cardinality 0..*).
+'nabla::SimpleVar' (role 'nabla_SimpleVar104', cardinality 0..*) is associated with 'nabla::FunctionOrReduction' (role 'nabla_FunctionOrReduction', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression199', cardinality 0..*) is associated with 'nabla::Not' (role 'nabla_Not', cardinality 0..*).
+'nabla::ReductionCall' (role 'nabla_ReductionCall', cardinality 0..*) is associated with 'nabla::Reduction' (role 'nabla_Reduction123', cardinality 0..*).
+'nabla::BaseTypeConstant' (role 'nabla_BaseTypeConstant208', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression209', cardinality 0..*).
+'nabla::ItemRef' (role 'nabla_ItemRef134', cardinality 0..*) is associated with 'nabla::ArgOrVarRef' (role 'nabla_ArgOrVarRef133', cardinality 0..*).
+'nabla::BaseType' (role 'nabla_BaseType121', cardinality 0..*) is associated with 'nabla::Reduction' (role 'nabla_Reduction120', cardinality 0..*).
+'nabla::Loop' (role 'nabla_Loop', cardinality 0..*) is associated with 'nabla::Instruction' (role 'nabla_Instruction45', cardinality 0..*).
+'nabla::SpaceIterator' (role 'nabla_SpaceIterator', cardinality 0..*) is associated with 'nabla::Item' (role 'nabla_Item67', cardinality 0..*).
+'nabla::NablaModule' (role 'nabla_NablaModule12', cardinality 0..*) is associated with 'nabla::SimpleVarDefinition' (role 'nabla_SimpleVarDefinition', cardinality 0..*).
+'nabla::NablaModule' (role 'nabla_NablaModule18', cardinality 0..*) is associated with 'nabla::Job' (role 'nabla_Job', cardinality 0..*).
+'nabla::MultipleConnectivity' (role 'nabla_MultipleConnectivity', cardinality 0..*) is associated with 'nabla::MultipleConnectivityCall' (role 'nabla_MultipleConnectivityCall88', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression178', cardinality 0..*) is associated with 'nabla::Minus' (role 'nabla_Minus177', cardinality 0..*).
+'nabla::TimeIteratorDefinition' (role 'nabla_TimeIteratorDefinition', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule16', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression51', cardinality 0..*) is associated with 'nabla::If' (role 'nabla_If', cardinality 0..*).
+'nabla::SimpleVar' (role 'nabla_SimpleVar70', cardinality 0..*) is associated with 'nabla::SpaceIterator' (role 'nabla_SpaceIterator69', cardinality 0..*).
+'nabla::Import' (role 'nabla_Import', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression137', cardinality 0..*) is associated with 'nabla::ArgOrVarRef' (role 'nabla_ArgOrVarRef136', cardinality 0..*).
+'nabla::SetDefinition' (role 'nabla_SetDefinition65', cardinality 0..*) is associated with 'nabla::SetRef' (role 'nabla_SetRef', cardinality 0..*).
+'nabla::Comparison' (role 'nabla_Comparison167', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression168', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression155', cardinality 0..*) is associated with 'nabla::And' (role 'nabla_And', cardinality 0..*).
+'nabla::VectorConstant' (role 'nabla_VectorConstant', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression211', cardinality 0..*).
+'nabla::BaseType' (role 'nabla_BaseType139', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression140', cardinality 0..*).
+'nabla::Function' (role 'nabla_Function', cardinality 0..*) is associated with 'nabla::NablaModule' (role 'nabla_NablaModule8', cardinality 0..*).
+'nabla::BaseType' (role 'nabla_BaseType115', cardinality 0..*) is associated with 'nabla::Function' (role 'nabla_Function114', cardinality 0..*).
+'nabla::Container' (role 'nabla_Container', cardinality 0..*) is associated with 'nabla::SpaceIterator' (role 'nabla_SpaceIterator72', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression145', cardinality 0..*) is associated with 'nabla::ContractedIf' (role 'nabla_ContractedIf144', cardinality 0..*).
+'nabla::And' (role 'nabla_And157', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression158', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression170', cardinality 0..*) is associated with 'nabla::Plus' (role 'nabla_Plus', cardinality 0..*).
+'nabla::VarGroupDeclaration' (role 'nabla_VarGroupDeclaration39', cardinality 0..*) is associated with 'nabla::BaseType' (role 'nabla_BaseType', cardinality 0..*).
+'nabla::Interval' (role 'nabla_Interval', cardinality 0..*) is associated with 'nabla::SimpleVar' (role 'nabla_SimpleVar82', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression63', cardinality 0..*) is associated with 'nabla::Return' (role 'nabla_Return', cardinality 0..*).
+'nabla::SimpleVar' (role 'nabla_SimpleVar', cardinality 0..*) is associated with 'nabla::OptDefinition' (role 'nabla_OptDefinition20', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression175', cardinality 0..*) is associated with 'nabla::Minus' (role 'nabla_Minus', cardinality 0..*).
+'nabla::Expression' (role 'nabla_Expression118', cardinality 0..*) is associated with 'nabla::Reduction' (role 'nabla_Reduction117', cardinality 0..*).
+'nabla::Equality' (role 'nabla_Equality162', cardinality 0..*) is associated with 'nabla::Expression' (role 'nabla_Expression163', cardinality 0..*).

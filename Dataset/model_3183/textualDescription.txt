@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'architecture::Model' has no attributes.
+The class 'architecture::Binding' has no attributes.
+The class 'architecture::AbstractModel' has no attributes.
+The class 'architecture::Operation' has the following attributes: 'name' of type str.
+The class 'architecture::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'architecture::DomainDeclaration' has the following attributes: 'name' of type str.
+The class 'architecture::Architecture' has no attributes.
+The class 'architecture::Component' has the following attributes: 'name' of type str.
+The class 'architecture::AtomicType' has the following attributes: 'atomType' of type str.
+The class 'architecture::Variable' has the following attributes: 'name' of type str.
+The enumeration 'Type' has the following literals: 'Double', 'Void', 'INT', 'STRING', 'Boolean'.
+'architecture::Operation' (role 'architecture_Operation39', cardinality 0..*) is associated with 'architecture::AtomicType' (role 'architecture_AtomicType40', cardinality 0..*).
+'architecture::Operation' (role 'architecture_Operation26', cardinality 0..*) is associated with 'architecture::Binding' (role 'architecture_Binding25', cardinality 0..*).
+'architecture::Operation' (role 'architecture_Operation32', cardinality 0..*) is associated with 'architecture::Binding' (role 'architecture_Binding31', cardinality 0..*).
+'architecture::Component' (role 'architecture_Component10', cardinality 0..*) is associated with 'architecture::Operation' (role 'architecture_Operation', cardinality 0..*).
+'architecture::Architecture' (role 'architecture_Architecture', cardinality 0..*) is associated with 'architecture::AbstractModel' (role 'architecture_AbstractModel8', cardinality 0..*).
+'architecture::Architecture' (role 'architecture_Architecture20', cardinality 0..*) is associated with 'architecture::Binding' (role 'architecture_Binding', cardinality 0..*).
+'architecture::AbstractModel' (role 'architecture_AbstractModel', cardinality 0..*) is associated with 'architecture::DomainDeclaration' (role 'architecture_DomainDeclaration2', cardinality 0..*).
+'architecture::Variable' (role 'architecture_Variable23', cardinality 0..*) is associated with 'architecture::Binding' (role 'architecture_Binding22', cardinality 0..*).
+'architecture::AbstractModel' (role 'architecture_AbstractModel4', cardinality 0..*) is associated with 'architecture::Import' (role 'architecture_Import', cardinality 0..*).
+'architecture::Operation' (role 'architecture_Operation13', cardinality 0..*) is associated with 'architecture::Component' (role 'architecture_Component12', cardinality 0..*).
+'architecture::AbstractModel' (role 'architecture_AbstractModel6', cardinality 0..*) is associated with 'architecture::Component' (role 'architecture_Component', cardinality 0..*).
+'architecture::Variable' (role 'architecture_Variable37', cardinality 0..*) is associated with 'architecture::Operation' (role 'architecture_Operation36', cardinality 0..*).
+'architecture::AtomicType' (role 'architecture_AtomicType42', cardinality 0..*) is associated with 'architecture::Component' (role 'architecture_Component43', cardinality 0..*).
+'architecture::AtomicType' (role 'architecture_AtomicType', cardinality 0..*) is associated with 'architecture::Variable' (role 'architecture_Variable34', cardinality 0..*).
+'architecture::Variable' (role 'architecture_Variable29', cardinality 0..*) is associated with 'architecture::Binding' (role 'architecture_Binding28', cardinality 0..*).
+'architecture::Variable' (role 'architecture_Variable', cardinality 0..*) is associated with 'architecture::Architecture' (role 'architecture_Architecture18', cardinality 0..*).
+'architecture::DomainDeclaration' (role 'architecture_DomainDeclaration', cardinality 0..*) is associated with 'architecture::Model' (role 'architecture_Model', cardinality 0..*).
+'architecture::Component' (role 'architecture_Component15', cardinality 0..*) is associated with 'architecture::Operation' (role 'architecture_Operation16', cardinality 0..*).

@@ -1,0 +1,48 @@
+The model has 24 class(es).
+The class 'Nameable' has no attributes.
+The class 'oclstdlibcs::PrecedenceCS' has the following attributes: 'isRightAssociative' of type bool.
+The class 'oclstdlibcs::LibPackageCS' has no attributes.
+The class 'oclstdlibcs::JavaClassCS' has no attributes.
+The class 'oclstdlibcs::MetaclassNameCS' has the following attributes: 'name' of type str.
+The class 'PackageCS' has no attributes.
+The class 'JavaImplementationCS' has no attributes.
+The class 'oclstdlibcs::LibPropertyCS' has the following attributes: 'isStatic' of type str.
+The class 'ElementCS' has no attributes.
+The class 'oclstdlibcs::LibIterationCS' has the following attributes: 'isValidating' of type str; 'isInvalidating' of type str.
+The class 'OperationCS' has no attributes.
+The class 'RootPackageCS' has no attributes.
+The class 'oclstdlibcs::LibCoercionCS' has no attributes.
+The class 'oclstdlibcs::JavaImplementationCS' has no attributes.
+The class 'oclstdlibcs::ParameterCS' has no attributes.
+The class 'oclstdlibcs::LibRootPackageCS' has no attributes.
+The class 'StructuredClassCS' has no attributes.
+The class 'oclstdlibcs::LibConstraintCS' has no attributes.
+The class 'AttributeCS' has no attributes.
+The class 'oclstdlibcs::LibOperationCS' has the following attributes: 'isInvalidating' of type str; 'isStatic' of type str; 'isValidating' of type str.
+The class 'NamedElementCS' has no attributes.
+The class 'ConstraintCS' has no attributes.
+The class 'oclstdlibcs::Precedence' has no attributes.
+The class 'oclstdlibcs::LibClassCS' has no attributes.
+'oclstdlibcs::LibOperationCS' is a specialization of 'JavaImplementationCS'.
+'oclstdlibcs::MetaclassNameCS' is a specialization of 'ElementCS'.
+'oclstdlibcs::LibIterationCS' is a specialization of 'JavaImplementationCS'.
+'oclstdlibcs::LibClassCS' is a specialization of 'StructuredClassCS'.
+'oclstdlibcs::LibPackageCS' is a specialization of 'PackageCS'.
+'oclstdlibcs::LibConstraintCS' is a specialization of 'ConstraintCS'.
+'oclstdlibcs::LibRootPackageCS' is a specialization of 'RootPackageCS'.
+'oclstdlibcs::LibCoercionCS' is a specialization of 'OperationCS'.
+'oclstdlibcs::LibIterationCS' is a specialization of 'OperationCS'.
+'oclstdlibcs::LibPropertyCS' is a specialization of 'JavaImplementationCS'.
+'oclstdlibcs::PrecedenceCS' is a specialization of 'NamedElementCS'.
+'oclstdlibcs::JavaClassCS' is a specialization of 'NamedElementCS'.
+'oclstdlibcs::MetaclassNameCS' is a specialization of 'Nameable'.
+'oclstdlibcs::LibOperationCS' is a specialization of 'OperationCS'.
+'oclstdlibcs::LibPropertyCS' is a specialization of 'AttributeCS'.
+'oclstdlibcs::LibCoercionCS' is a specialization of 'JavaImplementationCS'.
+'oclstdlibcs::JavaImplementationCS' is a specialization of 'ElementCS'.
+'oclstdlibcs::Precedence' (role 'oclstdlibcs_Precedence', cardinality 0..*) is associated with 'oclstdlibcs::LibOperationCS' (role 'oclstdlibcs_LibOperationCS', cardinality 0..*).
+'oclstdlibcs::ParameterCS' (role 'oclstdlibcs_ParameterCS5', cardinality 0..*) is associated with 'oclstdlibcs::LibIterationCS' (role 'oclstdlibcs_LibIterationCS4', cardinality 0..*).
+'oclstdlibcs::MetaclassNameCS' (role 'oclstdlibcs_MetaclassNameCS', cardinality 0..*) is associated with 'oclstdlibcs::LibClassCS' (role 'oclstdlibcs_LibClassCS', cardinality 0..*).
+'oclstdlibcs::PrecedenceCS' (role 'oclstdlibcs_PrecedenceCS', cardinality 0..*) is associated with 'oclstdlibcs::LibPackageCS' (role 'oclstdlibcs_LibPackageCS', cardinality 0..*).
+'oclstdlibcs::LibIterationCS' (role 'oclstdlibcs_LibIterationCS', cardinality 0..*) is associated with 'oclstdlibcs::ParameterCS' (role 'oclstdlibcs_ParameterCS', cardinality 0..*).
+'oclstdlibcs::JavaClassCS' (role 'oclstdlibcs_JavaClassCS', cardinality 0..*) is associated with 'oclstdlibcs::JavaImplementationCS' (role 'oclstdlibcs_JavaImplementationCS', cardinality 0..*).

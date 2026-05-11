@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class pascal_variable_parameter_section  {
+
+
+
+
+
+
+    private pascal_identifier_list pascal_identifier_list;
+
+
+    public pascal_variable_parameter_section(
+    ) {
+    }
+
+
+
+    public pascal_identifier_list getPascal_identifier_list() {
+        return pascal_identifier_list;
+    }
+
+    public void setPascal_identifier_list(pascal_identifier_list pascal_identifier_list) {
+        this.pascal_identifier_list = pascal_identifier_list;
+    }
+
+}

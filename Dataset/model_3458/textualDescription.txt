@@ -1,0 +1,45 @@
+The model has 20 class(es).
+The class 'featureModel::AdaptationRule' has no attributes.
+The class 'featureModel::Action' has the following attributes: 'type' of type str.
+The class 'featureModel::Exclusive' has no attributes.
+The class 'Feature' has no attributes.
+The class 'featureModel::Feature' has the following attributes: 'unselected' of type bool; 'mandatory' of type bool; 'name' of type str; 'selected' of type bool.
+The class 'featureModel::Alternative' has no attributes.
+The class 'Alternative' has no attributes.
+The class 'BooleanConstraint' has no attributes.
+The class 'featureModel::BooleanConstraint' has no attributes.
+The class 'featureModel::VariabilityElement' has no attributes.
+The class 'featureModel::FMConstraint' has no attributes.
+The class 'FMConstraint' has no attributes.
+The class 'featureModel::Excludes' has no attributes.
+The class 'featureModel::Condition' has the following attributes: 'type' of type str.
+The class 'featureModel::FeatureModel' has no attributes.
+The class 'featureModel::Value' has no attributes.
+The class 'featureModel::IntValue' has no attributes.
+The class 'featureModel::Attribute' has the following attributes: 'runtime' of type bool; 'name' of type str.
+The class 'featureModel::Implies' has no attributes.
+The class 'VariabilityElement' has no attributes.
+The enumeration 'ComparisonOperator' has the following literals: 'leq', 'lt', 'geq', 'equal', 'gt'.
+The enumeration 'SelectionOperator' has the following literals: 'select', 'deselect'.
+'featureModel::Feature' is a specialization of 'VariabilityElement'.
+'featureModel::AdaptationRule' is a specialization of 'FMConstraint'.
+'featureModel::Attribute' is a specialization of 'VariabilityElement'.
+'featureModel::Implies' is a specialization of 'BooleanConstraint'.
+'featureModel::BooleanConstraint' is a specialization of 'FMConstraint'.
+'featureModel::Excludes' is a specialization of 'BooleanConstraint'.
+'featureModel::Exclusive' is a specialization of 'Alternative'.
+'featureModel::Alternative' is a specialization of 'Feature'.
+'featureModel::Attribute' (role 'featureModel_Attribute22', cardinality 0..*) is associated with 'featureModel::Condition' (role 'featureModel_Condition21', cardinality 0..*).
+'featureModel::Attribute' (role 'featureModel_Attribute', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature4', cardinality 0..*).
+'featureModel::BooleanConstraint' (role 'featureModel_BooleanConstraint', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature13', cardinality 0..*).
+'featureModel::Condition' (role 'featureModel_Condition', cardinality 0..*) is associated with 'featureModel::AdaptationRule' (role 'featureModel_AdaptationRule', cardinality 0..*).
+'featureModel::Action' (role 'featureModel_Action', cardinality 0..*) is associated with 'featureModel::AdaptationRule' (role 'featureModel_AdaptationRule19', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature5', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature7', cardinality 0..*).
+'featureModel::Action' (role 'featureModel_Action29', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature30', cardinality 0..*).
+'featureModel::FeatureModel' (role 'featureModel_FeatureModel2', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature', cardinality 0..*).
+'featureModel::IntValue' (role 'featureModel_IntValue', cardinality 0..*) is associated with 'featureModel::Condition' (role 'featureModel_Condition24', cardinality 0..*).
+'featureModel::FMConstraint' (role 'featureModel_FMConstraint', cardinality 0..*) is associated with 'featureModel::FeatureModel' (role 'featureModel_FeatureModel', cardinality 0..*).
+'featureModel::Alternative' (role 'featureModel_Alternative', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature9', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature27', cardinality 0..*) is associated with 'featureModel::Condition' (role 'featureModel_Condition26', cardinality 0..*).
+'featureModel::BooleanConstraint' (role 'featureModel_BooleanConstraint15', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature16', cardinality 0..*).
+'featureModel::Value' (role 'featureModel_Value', cardinality 0..*) is associated with 'featureModel::Attribute' (role 'featureModel_Attribute11', cardinality 0..*).

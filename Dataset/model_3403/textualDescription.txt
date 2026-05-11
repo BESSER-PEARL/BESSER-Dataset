@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'Person' has no attributes.
+The class 'training::Training' has the following attributes: 'title' of type str.
+The class 'training::Person' has the following attributes: 'lastname' of type str; 'firstname' of type str.
+The class 'training::Trainee' has no attributes.
+The class 'training::Session' has the following attributes: 'date' of type date.
+The class 'training::Trainer' has no attributes.
+The class 'training::TrainingOrganization' has the following attributes: 'name' of type str.
+'training::Trainer' is a specialization of 'Person'.
+'training::Trainee' is a specialization of 'Person'.
+'training::TrainingOrganization' (role 'training_TrainingOrganization8', cardinality 0..*) is associated with 'training::Session' (role 'training_Session9', cardinality 0..*).
+'training::Training' (role 'canProvide', cardinality 0..*) is associated with 'training::Trainer' (role 'Trainer', cardinality 0..*).
+'training::Trainer' (role 'canBeProvidedBy', cardinality 0..*) is associated with 'training::Training' (role 'Training', cardinality 0..*).
+'training::Session' (role 'training_Session4', cardinality 0..*) is associated with 'training::Person' (role 'training_Person', cardinality 0..*).
+'training::Training' (role 'training_Training12', cardinality 0..*) is associated with 'training::TrainingOrganization' (role 'training_TrainingOrganization11', cardinality 0..*).
+'training::Session' (role 'training_Session', cardinality 0..*) is associated with 'training::Training' (role 'training_Training', cardinality 0..*).
+'training::TrainingOrganization' (role 'training_TrainingOrganization', cardinality 0..*) is associated with 'training::Person' (role 'training_Person6', cardinality 0..*).
+'training::Trainer' (role 'training_Trainer', cardinality 0..*) is associated with 'training::Session' (role 'training_Session2', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'RDBMS::Table' has the following attributes: 'is_local' of type bool; 'name' of type str.
+The class 'RDBMS::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'RDBMS::ForeignKey' has no attributes.
+The class 'RDBMS::Schema' has the following attributes: 'name' of type str.
+'RDBMS::Table' (role 'RDBMS_Table', cardinality 0..*) is associated with 'RDBMS::Schema' (role 'RDBMS_Schema', cardinality 0..*).
+'RDBMS::Table' (role 'RDBMS_Table4', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'RDBMS_ForeignKey', cardinality 0..*).
+'RDBMS::Table' (role 'RDBMS_Table6', cardinality 0..*) is associated with 'RDBMS::Column' (role 'RDBMS_Column7', cardinality 0..*).
+'RDBMS::Table' (role 'RDBMS_Table2', cardinality 0..*) is associated with 'RDBMS::Column' (role 'RDBMS_Column', cardinality 0..*).
+'RDBMS::Column' (role 'RDBMS_Column10', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'RDBMS_ForeignKey9', cardinality 0..*).
+'RDBMS::Table' (role 'RDBMS_Table13', cardinality 0..*) is associated with 'RDBMS::ForeignKey' (role 'RDBMS_ForeignKey12', cardinality 0..*).

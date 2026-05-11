@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'example::MP3' has no attributes.
+The class 'example::Player' has no attributes.
+'example::MP3' (role 'example_MP33', cardinality 0..*) is associated with 'example::Player' (role 'example_Player2', cardinality 0..*).
+'example::Player' (role 'example_Player6', cardinality 0..*) is associated with 'example::MP3' (role 'example_MP35', cardinality 0..*).
+'example::MP3' (role 'example_MP3', cardinality 0..*) is associated with 'example::Player' (role 'example_Player', cardinality 0..*).

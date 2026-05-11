@@ -1,0 +1,63 @@
+The model has 29 class(es).
+The class 'tracker::TagAllocated' has no attributes.
+The class 'tracker::BovineBeef' has the following attributes: 'beefBreed' of type str.
+The class 'tracker::Bovine' has no attributes.
+The class 'tracker::Premises' has the following attributes: 'premisesId' of type str; 'emailContact' of type str.
+The class 'tracker::ReplacedTag' has the following attributes: 'oldAin' of type str.
+The class 'tracker::AnimalMissing' has no attributes.
+The class 'tracker::ICVI' has no attributes.
+The class 'tracker::LostTag' has no attributes.
+The class 'tracker::TagRetired' has no attributes.
+The class 'Animal' has no attributes.
+The class 'tracker::Event' has the following attributes: 'correction' of type bool; 'dateTime' of type str; 'electronicallyRead' of type bool; 'comments' of type str; 'idNumber' of type str; 'eventCode' of type int.
+The class 'tracker::TagApplied' has no attributes.
+The class 'Bovine' has no attributes.
+The class 'tracker::Sighting' has no attributes.
+The class 'tracker::FairRegistration' has the following attributes: 'club' of type str; 'address' of type str; 'parent' of type str; 'phone' of type str; 'participant' of type str.
+The class 'Event' has no attributes.
+The class 'tracker::Swine' has the following attributes: 'swineBreed' of type str.
+The class 'tracker::MovedOut' has the following attributes: 'destinationPin' of type str.
+The class 'tracker::Exported' has no attributes.
+The class 'tracker::WeighIn' has the following attributes: 'weight' of type int.
+The class 'tracker::Ovine' has the following attributes: 'sheepBreed' of type str.
+The class 'tracker::Animal' has the following attributes: 'sexCode' of type str; 'age' of type str; 'idNumber' of type str; 'birthDate' of type str; 'speciesCode' of type str; 'sex' of type str; 'breed' of type str; 'species' of type str.
+The class 'tracker::BovineBison' has the following attributes: 'buffaloBreed' of type str.
+The class 'tracker::Died' has no attributes.
+The class 'tracker::Imported' has no attributes.
+The class 'tracker::Tag' has the following attributes: 'idNumber' of type str; 'usainNumberUsed' of type bool.
+The class 'tracker::MovedIn' has the following attributes: 'sourcePin' of type str.
+The class 'tracker::BovineDairy' has the following attributes: 'dairyBreed' of type str.
+The class 'tracker::Slaughtered' has no attributes.
+The enumeration 'Sex' has the following literals: 'F', 'C', 'S', 'Unspecified', 'M'.
+The enumeration 'BisonBreed' has the following literals: 'WO', 'PB', 'Unspecified'.
+The enumeration 'BeefBreed' has the following literals: 'CU', 'SI', 'RR', 'DB', 'CG', 'RN', 'BU', 'FP', 'DN', 'SH', 'GR', 'XX', 'RP', 'MH', 'MO', 'GS', 'MU', 'BN', 'SA', 'CB', 'CH', 'TG', 'MR', 'SW', 'BA', 'IS', 'BM', 'SG', 'DJ', 'NM', 'BW', 'HY', 'BH', 'LR', 'PA', 'PR', 'ME', 'BO', 'HB', 'SS', 'AK', 'Unspecified', 'CA', 'ER', 'SE', 'LM', 'AW', 'RA', 'BR', 'FR', 'DR', 'CN', 'MC', 'BB', 'WF', 'SX', 'WP', 'WB', 'CP', 'BE', 'TN', 'FL', 'KY', 'TL', 'PI', 'SL', 'AL', 'SB', 'DF', 'FC', 'NE', 'RW', 'AU', 'XT', 'RS', 'AB', 'MA', 'BG', 'GY', 'RB', 'NS', 'AM', 'LU', 'TI', 'FB', 'HC', 'PZ', 'TP', 'BF', 'SM', 'TA', 'BD', 'GV', 'MG', 'GE', 'BI', 'ML', 'GZ', 'FA', 'YA', 'MI', 'BL', 'DS', 'AR', 'BQ', 'LO', 'RD', 'CM', 'SV', 'DL', 'HH', 'RO', 'AE', 'NR', 'IB', 'GA', 'SP', 'GI', 'AF', 'HP', 'DE', 'KB', 'AN'.
+The enumeration 'SheepBreed' has the following literals: 'CF', 'RM', 'TA', 'Unspecified', 'HY', 'MT', 'CL', 'ER', 'HL', 'ST', 'IL', 'BL', 'SL', 'KA', 'NC', 'CR', 'RG', 'BO', 'TU', 'PO', 'BC', 'RY', 'HS', 'NL', 'OU', 'BW', 'XL', 'PE', 'FB', 'KK', 'SU', 'CP', 'SC', 'TX', 'LE', 'XM', 'SR', 'KH', 'DP', 'ZS', 'DL', 'SX', 'BF', 'RV', 'MM', 'FN', 'CD', 'CO', 'LY', 'MP', 'OX', 'RI', 'LI', 'DH'.
+The enumeration 'DairyBreed' has the following literals: 'Unspecified', 'AY', 'WW', 'MS', 'LD', 'FM', 'HO', 'GD', 'GU', 'JE', 'BS'.
+The enumeration 'SwineBreed' has the following literals: 'LB', 'RW', 'HA', 'CW', 'PE', 'WS', 'SO', 'YO', 'Unspecified', 'DU', 'BK', 'LC', 'PC', 'LA', 'TM', 'LW'.
+'tracker::BovineBeef' is a specialization of 'Bovine'.
+'tracker::Imported' is a specialization of 'Event'.
+'tracker::MovedOut' is a specialization of 'Event'.
+'tracker::ReplacedTag' is a specialization of 'Event'.
+'tracker::BovineBison' is a specialization of 'Bovine'.
+'tracker::FairRegistration' is a specialization of 'Event'.
+'tracker::WeighIn' is a specialization of 'Event'.
+'tracker::TagRetired' is a specialization of 'Event'.
+'tracker::Sighting' is a specialization of 'Event'.
+'tracker::BovineDairy' is a specialization of 'Bovine'.
+'tracker::TagApplied' is a specialization of 'Event'.
+'tracker::LostTag' is a specialization of 'Event'.
+'tracker::Died' is a specialization of 'Event'.
+'tracker::Slaughtered' is a specialization of 'Event'.
+'tracker::ICVI' is a specialization of 'Event'.
+'tracker::Exported' is a specialization of 'Event'.
+'tracker::Swine' is a specialization of 'Animal'.
+'tracker::TagAllocated' is a specialization of 'Event'.
+'tracker::Ovine' is a specialization of 'Animal'.
+'tracker::Bovine' is a specialization of 'Animal'.
+'tracker::AnimalMissing' is a specialization of 'Event'.
+'tracker::MovedIn' is a specialization of 'Event'.
+'tracker::Animal' (role 'tracker_Animal', cardinality 0..*) is associated with 'tracker::Tag' (role 'tracker_Tag', cardinality 0..*).
+'tracker::Premises' (role 'tracker_Premises', cardinality 0..*) is associated with 'tracker::Animal' (role 'tracker_Animal4', cardinality 0..*).
+'tracker::Tag' (role 'Tag', cardinality 0..*) is associated with 'tracker::Event' (role 'events', cardinality 0..*).
+'tracker::Tag' (role 'tag', cardinality 0..*) is associated with 'tracker::Event' (role 'Event', cardinality 0..*).
+'tracker::Tag' (role 'tracker_Tag7', cardinality 0..*) is associated with 'tracker::Premises' (role 'tracker_Premises6', cardinality 0..*).

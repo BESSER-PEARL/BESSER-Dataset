@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'myfsm::State' has the following attributes: 'name' of type str.
+The class 'myfsm::Trans' has the following attributes: 'event' of type str.
+The class 'myfsm::Machine' has the following attributes: 'name' of type str.
+'myfsm::Machine' (role 'myfsm_Machine', cardinality 0..*) is associated with 'myfsm::State' (role 'myfsm_State', cardinality 0..*).
+'myfsm::Machine' (role 'myfsm_Machine2', cardinality 0..*) is associated with 'myfsm::State' (role 'myfsm_State3', cardinality 0..*).
+'myfsm::State' (role 'myfsm_State8', cardinality 0..*) is associated with 'myfsm::Trans' (role 'myfsm_Trans7', cardinality 0..*).
+'myfsm::State' (role 'myfsm_State5', cardinality 0..*) is associated with 'myfsm::Trans' (role 'myfsm_Trans', cardinality 0..*).

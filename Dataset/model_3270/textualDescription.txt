@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'State' has no attributes.
+The class 'SM::StateMachine' has no attributes.
+The class 'SM::State' has the following attributes: 'name' of type str.
+The class 'SM::FinalState' has no attributes.
+The class 'SM::InitialState' has no attributes.
+'SM::InitialState' is a specialization of 'State'.
+'SM::FinalState' is a specialization of 'State'.
+'SM::State' (role 'SM_State', cardinality 0..*) is associated with 'SM::StateMachine' (role 'SM_StateMachine', cardinality 0..*).

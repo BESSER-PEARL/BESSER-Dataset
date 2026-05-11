@@ -1,0 +1,61 @@
+The model has 21 class(es).
+The class 'ecvi::Ecvi' has the following attributes: 'speciesCode' of type str; 'group' of type str; 'shipmentDate' of type str; 'entryPermitNumber' of type str; 'group1' of type str; 'expirationDate' of type str; 'issueDate' of type str; 'cviNumber' of type str.
+The class 'ecvi::Laboratory' has the following attributes: 'accessionNumber' of type str; 'labName' of type str; 'accessionDate' of type str; 'premId' of type str.
+The class 'ecvi::Premises' has the following attributes: 'premId' of type str; 'premName' of type str.
+The class 'ecvi::EStringToStringMapEntry' has no attributes.
+The class 'ecvi::Attachement' has the following attributes: 'docType' of type str; 'payload' of type str; 'filename' of type str; 'mimeType' of type str; 'comment' of type str.
+The class 'ecvi::AnimalTag' has the following attributes: 'brandImage' of type str; 'type' of type str; 'number' of type str.
+The class 'ecvi::Test' has the following attributes: 'testCode' of type str; 'idref' of type str.
+The class 'ecvi::Accessions' has no attributes.
+The class 'ecvi::Contact' has the following attributes: 'premName' of type str; 'premId' of type str.
+The class 'ecvi::Person' has the following attributes: 'name' of type str.
+The class 'ecvi::ProgramStatus' has the following attributes: 'name' of type str; 'valueOther' of type str; 'value' of type str.
+The class 'ecvi::Veterinarian' has the following attributes: 'licenseIssueState' of type str; 'licenseNumber' of type str; 'nationalAccreditationNumber' of type str.
+The class 'ecvi::ResultValue' has the following attributes: 'resultFloat' of type str; 'resultName' of type str; 'resultString' of type str; 'resultInteger' of type str.
+The class 'ecvi::Animal' has the following attributes: 'age' of type str; 'breed' of type str; 'sexDetail' of type str; 'inspectionDate' of type str; 'sex' of type str.
+The class 'ecvi::Address' has the following attributes: 'state' of type str; 'line2' of type str; 'country' of type str; 'county' of type str; 'town' of type str; 'line1' of type str; 'zIP' of type str.
+The class 'ecvi::Accession' has the following attributes: 'id' of type str; 'infieldTest' of type str.
+The class 'ecvi::PhoneNum' has the following attributes: 'comment' of type str; 'type' of type str; 'number' of type str.
+The class 'ecvi::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'ecvi::GroupLot' has the following attributes: 'quantity' of type str; 'breed' of type str; 'unit' of type str; 'description' of type str; 'age' of type str; 'sex' of type str; 'species' of type str; 'sexDetail' of type str.
+The class 'ecvi::GeoPoint' has the following attributes: 'lng' of type str; 'lat' of type str.
+The class 'ecvi::MovementPurposes' has the following attributes: 'movementPurpose' of type str.
+The enumeration 'UsState' has the following literals: 'AL', 'PW', 'ND', 'MP', 'OR', 'CO', 'AE', 'OH', 'AP', 'IL', 'NC', 'NJ', 'PA', 'PR', 'ME', 'AK', 'GU', 'NV', 'AR', 'MO', 'MH', 'IA', 'DC', 'RI', 'LA', 'ID', 'TN', 'IN', 'FM', 'HI', 'MI', 'MN', 'OK', 'WY', 'WA', 'MT', 'AA', 'NM', 'AS', 'KS', 'NY', 'MS', 'WI', 'KY', 'AZ', 'SD', 'VA', 'DE', 'NE', 'MD', 'SC', 'WV', 'VI', 'UT', 'VT', 'CT', 'MA', 'FL', 'GA', 'TX', 'CA', 'NH'.
+The enumeration 'ProgramStatusValue' has the following literals: 'Other', 'Free', 'ModifiedAdvancedAccredited', 'ModifiedAccredited'.
+The enumeration 'ProgramStatusName' has the following literals: 'BrucellosisHerd', 'BrucellosisState', 'BovineTuberculosis'.
+The enumeration 'ISO3166Country' has the following literals: 'USA'.
+The enumeration 'Sex' has the following literals: 'SpayedFemale', 'NeuteredMale', 'Male', 'TrueHermaphrodite', 'Other', 'Female', 'GenderUnknown'.
+The enumeration 'SpeciesCode' has the following literals: 'BOV', 'UNK', 'EQU', 'POR', 'CER', 'OVI', 'CAP'.
+The enumeration 'PhoneDevice' has the following literals: 'Cellphone', 'Fax', 'Landline', 'Unknown'.
+The enumeration 'DocType' has the following literals: 'ScannedPaperCVI', 'PDFCVI', 'PDFTestChart', 'Other', 'ScannedTestChart'.
+The enumeration 'MovementPurpose' has the following literals: 'pet', 'feeding', 'grazing', 'training', 'slaughter', 'other', 'medicalTreatment', 'sale', 'breeding', 'show', 'race', 'rodeo'.
+The enumeration 'TagType' has the following literals: 'NUES9', 'SGFLID', 'BRAND', 'NUES8', 'MGT', 'BRANDIMAGE', 'OFORID', 'N840RFID', 'AMID', 'NPIN', 'TAT', 'BT', 'OTH', 'UN', 'IMP', 'NAME', 'AIN'.
+The enumeration 'ResultName' has the following literals: 'COMMENT', 'RESULT'.
+'ecvi::Ecvi' (role 'ecvi_Ecvi30', cardinality 0..*) is associated with 'ecvi::Contact' (role 'ecvi_Contact31', cardinality 0..*).
+'ecvi::Veterinarian' (role 'ecvi_Veterinarian58', cardinality 0..*) is associated with 'ecvi::Person' (role 'ecvi_Person59', cardinality 0..*).
+'ecvi::MovementPurposes' (role 'ecvi_MovementPurposes', cardinality 0..*) is associated with 'ecvi::Ecvi' (role 'ecvi_Ecvi20', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi36', cardinality 0..*) is associated with 'ecvi::Animal' (role 'ecvi_Animal37', cardinality 0..*).
+'ecvi::GeoPoint' (role 'ecvi_GeoPoint', cardinality 0..*) is associated with 'ecvi::Address' (role 'ecvi_Address', cardinality 0..*).
+'ecvi::DocumentRoot' (role 'ecvi_DocumentRoot', cardinality 0..*) is associated with 'ecvi::EStringToStringMapEntry' (role 'ecvi_EStringToStringMapEntry', cardinality 0..*).
+'ecvi::Laboratory' (role 'ecvi_Laboratory43', cardinality 0..*) is associated with 'ecvi::Address' (role 'ecvi_Address44', cardinality 0..*).
+'ecvi::Veterinarian' (role 'ecvi_Veterinarian', cardinality 0..*) is associated with 'ecvi::Ecvi' (role 'ecvi_Ecvi18', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi27', cardinality 0..*) is associated with 'ecvi::Contact' (role 'ecvi_Contact28', cardinality 0..*).
+'ecvi::Animal' (role 'ecvi_Animal', cardinality 0..*) is associated with 'ecvi::AnimalTag' (role 'ecvi_AnimalTag', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi24', cardinality 0..*) is associated with 'ecvi::Premises' (role 'ecvi_Premises25', cardinality 0..*).
+'ecvi::Accession' (role 'ecvi_Accession2', cardinality 0..*) is associated with 'ecvi::Accessions' (role 'ecvi_Accessions', cardinality 0..*).
+'ecvi::EStringToStringMapEntry' (role 'ecvi_EStringToStringMapEntry14', cardinality 0..*) is associated with 'ecvi::DocumentRoot' (role 'ecvi_DocumentRoot13', cardinality 0..*).
+'ecvi::Address' (role 'ecvi_Address62', cardinality 0..*) is associated with 'ecvi::Veterinarian' (role 'ecvi_Veterinarian61', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi', cardinality 0..*) is associated with 'ecvi::DocumentRoot' (role 'ecvi_DocumentRoot16', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi33', cardinality 0..*) is associated with 'ecvi::Accessions' (role 'ecvi_Accessions34', cardinality 0..*).
+'ecvi::Ecvi' (role 'ecvi_Ecvi22', cardinality 0..*) is associated with 'ecvi::Premises' (role 'ecvi_Premises', cardinality 0..*).
+'ecvi::Test' (role 'ecvi_Test56', cardinality 0..*) is associated with 'ecvi::ResultValue' (role 'ecvi_ResultValue', cardinality 0..*).
+'ecvi::Address' (role 'ecvi_Address49', cardinality 0..*) is associated with 'ecvi::Premises' (role 'ecvi_Premises48', cardinality 0..*).
+'ecvi::GroupLot' (role 'ecvi_GroupLot', cardinality 0..*) is associated with 'ecvi::Ecvi' (role 'ecvi_Ecvi39', cardinality 0..*).
+'ecvi::Attachement' (role 'ecvi_Attachement', cardinality 0..*) is associated with 'ecvi::Ecvi' (role 'ecvi_Ecvi41', cardinality 0..*).
+'ecvi::Person' (role 'ecvi_Person46', cardinality 0..*) is associated with 'ecvi::PhoneNum' (role 'ecvi_PhoneNum', cardinality 0..*).
+'ecvi::Premises' (role 'ecvi_Premises51', cardinality 0..*) is associated with 'ecvi::ProgramStatus' (role 'ecvi_ProgramStatus', cardinality 0..*).
+'ecvi::Animal' (role 'ecvi_Animal6', cardinality 0..*) is associated with 'ecvi::Test' (role 'ecvi_Test', cardinality 0..*).
+'ecvi::Accession' (role 'ecvi_Accession', cardinality 0..*) is associated with 'ecvi::Laboratory' (role 'ecvi_Laboratory', cardinality 0..*).
+'ecvi::Contact' (role 'ecvi_Contact', cardinality 0..*) is associated with 'ecvi::Address' (role 'ecvi_Address8', cardinality 0..*).
+'ecvi::Contact' (role 'ecvi_Contact10', cardinality 0..*) is associated with 'ecvi::Person' (role 'ecvi_Person', cardinality 0..*).
+'ecvi::Premises' (role 'ecvi_Premises53', cardinality 0..*) is associated with 'ecvi::Person' (role 'ecvi_Person54', cardinality 0..*).

@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'featureModel::ExcludeConstraint' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'featureModel::Group' has no attributes.
+The class 'featureModel::Constraints' has no attributes.
+The class 'featureModel::Feature' has the following attributes: 'name' of type str.
+The class 'featureModel::Proposition' has the following attributes: 'nameA' of type str; 'nameRest' of type str.
+The class 'featureModel::FeatureModel' has no attributes.
+The class 'featureModel::ImplyConstraint' has no attributes.
+The class 'featureModel::PropFormula' has no attributes.
+The class 'Group' has no attributes.
+The class 'featureModel::Constraint' has the following attributes: 'nameA' of type str; 'nameB' of type str.
+'featureModel::Feature' is a specialization of 'Group'.
+'featureModel::ExcludeConstraint' is a specialization of 'Constraint'.
+'featureModel::ImplyConstraint' is a specialization of 'Constraint'.
+'featureModel::PropFormula' (role 'featureModel_PropFormula10', cardinality 0..*) is associated with 'featureModel::Proposition' (role 'featureModel_Proposition', cardinality 0..*).
+'featureModel::FeatureModel' (role 'featureModel_FeatureModel4', cardinality 0..*) is associated with 'featureModel::PropFormula' (role 'featureModel_PropFormula', cardinality 0..*).
+'featureModel::Group' (role 'featureModel_Group', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature6', cardinality 0..*).
+'featureModel::Constraints' (role 'featureModel_Constraints', cardinality 0..*) is associated with 'featureModel::FeatureModel' (role 'featureModel_FeatureModel2', cardinality 0..*).
+'featureModel::Constraints' (role 'featureModel_Constraints8', cardinality 0..*) is associated with 'featureModel::Constraint' (role 'featureModel_Constraint', cardinality 0..*).
+'featureModel::Proposition' (role 'featureModel_Proposition13', cardinality 0..*) is associated with 'featureModel::PropFormula' (role 'featureModel_PropFormula12', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature', cardinality 0..*) is associated with 'featureModel::FeatureModel' (role 'featureModel_FeatureModel', cardinality 0..*).

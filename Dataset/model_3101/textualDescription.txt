@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'rcd::Attribute' has the following attributes: 'lower' of type str; 'upper' of type str; 'is_primary' of type bool; 'name' of type str.
+The class 'rcd::Association' has the following attributes: 'lower' of type str; 'name' of type str; 'upper' of type str.
+The class 'rcd::ClassModel' has the following attributes: 'name' of type str.
+The class 'rcd::Class' has the following attributes: 'is_persistent' of type bool.
+The class 'rcd::PrimitiveDataType' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'rcd::Classifier' has the following attributes: 'name' of type str.
+'rcd::PrimitiveDataType' is a specialization of 'Classifier'.
+'rcd::Class' is a specialization of 'Classifier'.
+'rcd::Attribute' (role 'rcd_Attribute', cardinality 0..*) is associated with 'rcd::Classifier' (role 'rcd_Classifier', cardinality 0..*).
+'rcd::Association' (role 'rcd_Association15', cardinality 0..*) is associated with 'rcd::ClassModel' (role 'rcd_ClassModel14', cardinality 0..*).
+'rcd::Class' (role 'rcd_Class8', cardinality 0..*) is associated with 'rcd::Class' (role 'rcd_Class10', cardinality 0..*).
+'rcd::Class' (role 'rcd_Class6', cardinality 0..*) is associated with 'rcd::Attribute' (role 'rcd_Attribute7', cardinality 0..*).
+'rcd::Association' (role 'rcd_Association', cardinality 0..*) is associated with 'rcd::Class' (role 'rcd_Class', cardinality 0..*).
+'rcd::Class' (role 'rcd_Class3', cardinality 0..*) is associated with 'rcd::Association' (role 'rcd_Association2', cardinality 0..*).
+'rcd::ClassModel' (role 'rcd_ClassModel', cardinality 0..*) is associated with 'rcd::Classifier' (role 'rcd_Classifier12', cardinality 0..*).

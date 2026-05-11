@@ -1,0 +1,21 @@
+The model has 13 class(es).
+The class 'ComparisonProblem' has no attributes.
+The class 'TestProblem' has no attributes.
+The class 'JUnitProblem' has no attributes.
+The class 'junitmodel::JUnitTraceStackframe' has no attributes.
+The class 'TestRoot' has no attributes.
+The class 'TraceStackframe' has no attributes.
+The class 'junitmodel::JUnitProblem' has the following attributes: 'lastTraceWasFiltered' of type bool.
+The class 'TestContainer' has no attributes.
+The class 'junitmodel::JUnitTestSuite' has no attributes.
+The class 'junitmodel::JUnitComparisonProblem' has no attributes.
+The class 'junitmodel::JUnitTestCase' has no attributes.
+The class 'TestCaseElement' has no attributes.
+The class 'junitmodel::JUnitRoot' has no attributes.
+'junitmodel::JUnitRoot' is a specialization of 'TestRoot'.
+'junitmodel::JUnitComparisonProblem' is a specialization of 'JUnitProblem'.
+'junitmodel::JUnitComparisonProblem' is a specialization of 'ComparisonProblem'.
+'junitmodel::JUnitTraceStackframe' is a specialization of 'TraceStackframe'.
+'junitmodel::JUnitTestSuite' is a specialization of 'TestContainer'.
+'junitmodel::JUnitTestCase' is a specialization of 'TestCaseElement'.
+'junitmodel::JUnitProblem' is a specialization of 'TestProblem'.

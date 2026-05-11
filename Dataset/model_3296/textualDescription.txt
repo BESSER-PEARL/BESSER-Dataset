@@ -1,0 +1,17 @@
+The model has 10 class(es).
+The class 'common::DoubleValue' has the following attributes: 'value' of type float; 'identifier' of type str.
+The class 'common::Identifiable' has the following attributes: 'uRI' of type str; 'typeURI' of type str.
+The class 'common::Comparable' has no attributes.
+The class 'common::StringValue' has the following attributes: 'value' of type str.
+The class 'common::IdentifiableFilter' has no attributes.
+The class 'common::DublinCore' has the following attributes: 'relation' of type str; 'date' of type str; 'license' of type str; 'source' of type str; 'coverage' of type str; 'creator' of type str; 'rights' of type str; 'subject' of type str; 'created' of type str; 'valid' of type str; 'identifier' of type str; 'contributor' of type str; 'description' of type str; 'format' of type str; 'required' of type str; 'type' of type str; 'spatial' of type str; 'publisher' of type str; 'bibliographicCitation' of type str; 'title' of type str; 'language' of type str.
+The class 'common::DoubleValueMatrix' has no attributes.
+The class 'common::StringValueList' has no attributes.
+The class 'common::DoubleValueList' has the following attributes: 'identifier' of type str.
+The class 'Modifiable' has no attributes.
+'common::StringValue' is a specialization of 'Modifiable'.
+'common::DoubleValue' is a specialization of 'Modifiable'.
+'common::DoubleValueList' (role 'common_DoubleValueList', cardinality 0..*) is associated with 'common::DoubleValue' (role 'common_DoubleValue', cardinality 0..*).
+'common::DoubleValueList' (role 'common_DoubleValueList3', cardinality 0..*) is associated with 'common::DoubleValueMatrix' (role 'common_DoubleValueMatrix', cardinality 0..*).
+'common::Identifiable' (role 'common_Identifiable', cardinality 0..*) is associated with 'common::DublinCore' (role 'common_DublinCore', cardinality 0..*).
+'common::StringValue' (role 'common_StringValue', cardinality 0..*) is associated with 'common::StringValueList' (role 'common_StringValueList', cardinality 0..*).

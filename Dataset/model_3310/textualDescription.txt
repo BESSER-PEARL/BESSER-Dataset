@@ -1,0 +1,17 @@
+The model has 11 class(es).
+The class 'decorators::STEMTime' has no attributes.
+The class 'decorators::TestGraphDecorator1' has no attributes.
+The class 'decorators::GraphDecorator' has no attributes.
+The class 'NodeDecorator' has no attributes.
+The class 'decorators::TestScenarioGraphDecorator1' has the following attributes: 'booleanValue' of type bool; 'intValue' of type int; 'stringValue' of type str; 'doubleValue' of type float.
+The class 'GraphDecorator' has no attributes.
+The class 'EdgeDecorator' has no attributes.
+The class 'decorators::TestEdgeDecorator1' has the following attributes: 'nodeBURI' of type str; 'edgeURI' of type str; 'nodeAURI' of type str.
+The class 'decorators::TestNodeDecorator1' has no attributes.
+The class 'decorators::EdgeDecorator' has no attributes.
+The class 'decorators::NodeDecorator' has no attributes.
+'decorators::TestGraphDecorator1' is a specialization of 'GraphDecorator'.
+'decorators::TestEdgeDecorator1' is a specialization of 'EdgeDecorator'.
+'decorators::TestScenarioGraphDecorator1' is a specialization of 'GraphDecorator'.
+'decorators::TestNodeDecorator1' is a specialization of 'NodeDecorator'.
+'decorators::TestScenarioGraphDecorator1' (role 'decorators_TestScenarioGraphDecorator1', cardinality 0..*) is associated with 'decorators::STEMTime' (role 'decorators_STEMTime', cardinality 0..*).

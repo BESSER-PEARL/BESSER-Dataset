@@ -1,0 +1,63 @@
+The model has 30 class(es).
+The class 'testmaprelations::CA3' has no attributes.
+The class 'testmaprelations::MapCA8ToCB8MapEntry' has no attributes.
+The class 'testmaprelations::CA1' has no attributes.
+The class 'testmaprelations::CA9' has no attributes.
+The class 'testmaprelations::CB3' has no attributes.
+The class 'testmaprelations::CA8' has no attributes.
+The class 'testmaprelations::CB4' has no attributes.
+The class 'testmaprelations::CB0' has no attributes.
+The class 'testmaprelations::CA5' has no attributes.
+The class 'testmaprelations::MapCA6ToCB6MapEntry' has no attributes.
+The class 'testmaprelations::CB6' has no attributes.
+The class 'testmaprelations::MapCA9ToCB9MapEntry' has no attributes.
+The class 'testmaprelations::CA2' has no attributes.
+The class 'testmaprelations::CB1' has no attributes.
+The class 'testmaprelations::MapCA7ToCB7MapEntry' has no attributes.
+The class 'testmaprelations::CB8' has no attributes.
+The class 'testmaprelations::MapCA0ToCB0MapEntry' has no attributes.
+The class 'testmaprelations::MapCA1ToCB1MapEntry' has no attributes.
+The class 'testmaprelations::CA4' has no attributes.
+The class 'testmaprelations::MapCA4ToCB4MapEntry' has no attributes.
+The class 'testmaprelations::CB7' has no attributes.
+The class 'testmaprelations::MapCA2ToCB2MapEntry' has no attributes.
+The class 'testmaprelations::MapCA3ToCB3MapEntry' has no attributes.
+The class 'testmaprelations::CB5' has no attributes.
+The class 'testmaprelations::MapCA5ToCB5MapEntry' has no attributes.
+The class 'testmaprelations::CA0' has no attributes.
+The class 'testmaprelations::CA6' has no attributes.
+The class 'testmaprelations::CB2' has no attributes.
+The class 'testmaprelations::CA7' has no attributes.
+The class 'testmaprelations::CB9' has no attributes.
+'testmaprelations::MapCA1ToCB1MapEntry' (role 'MapCA1ToCB1MapEntry14', cardinality 0..*) is associated with 'testmaprelations::CA1' (role 'key13', cardinality 0..*).
+'testmaprelations::CB3' (role 'value25', cardinality 0..*) is associated with 'testmaprelations::MapCA3ToCB3MapEntry' (role 'MapCA3ToCB3MapEntry', cardinality 0..*).
+'testmaprelations::MapCA4ToCB4MapEntry' (role 'mapca0tocb0mapentry36', cardinality 0..*) is associated with 'testmaprelations::CA4' (role 'CA4', cardinality 0..*).
+'testmaprelations::CB6' (role 'testmaprelations_CB6', cardinality 0..*) is associated with 'testmaprelations::MapCA6ToCB6MapEntry' (role 'testmaprelations_MapCA6ToCB6MapEntry53', cardinality 0..*).
+'testmaprelations::MapCA7ToCB7MapEntry' (role 'testmaprelations_MapCA7ToCB7MapEntry56', cardinality 0..*) is associated with 'testmaprelations::CB7' (role 'testmaprelations_CB7', cardinality 0..*).
+'testmaprelations::CB4' (role 'value40', cardinality 0..*) is associated with 'testmaprelations::MapCA4ToCB4MapEntry' (role 'MapCA4ToCB4MapEntry41', cardinality 0..*).
+'testmaprelations::CA5' (role 'key43', cardinality 0..*) is associated with 'testmaprelations::MapCA5ToCB5MapEntry' (role 'MapCA5ToCB5MapEntry', cardinality 0..*).
+'testmaprelations::MapCA2ToCB2MapEntry' (role 'MapCA2ToCB2MapEntry19', cardinality 0..*) is associated with 'testmaprelations::CB2' (role 'value18', cardinality 0..*).
+'testmaprelations::CA5' (role 'CA5', cardinality 0..*) is associated with 'testmaprelations::MapCA5ToCB5MapEntry' (role 'mapca0tocb0mapentry48', cardinality 0..*).
+'testmaprelations::CA3' (role 'CA3', cardinality 0..*) is associated with 'testmaprelations::MapCA3ToCB3MapEntry' (role 'mapca0tocb0mapentry30', cardinality 0..*).
+'testmaprelations::CB0' (role 'value', cardinality 0..*) is associated with 'testmaprelations::MapCA0ToCB0MapEntry' (role 'MapCA0ToCB0MapEntry5', cardinality 0..*).
+'testmaprelations::CA2' (role 'CA2', cardinality 0..*) is associated with 'testmaprelations::MapCA2ToCB2MapEntry' (role 'mapca0tocb0mapentry21', cardinality 0..*).
+'testmaprelations::CA2' (role 'key16', cardinality 0..*) is associated with 'testmaprelations::MapCA2ToCB2MapEntry' (role 'MapCA2ToCB2MapEntry', cardinality 0..*).
+'testmaprelations::CB8' (role 'testmaprelations_CB8', cardinality 0..*) is associated with 'testmaprelations::MapCA8ToCB8MapEntry' (role 'testmaprelations_MapCA8ToCB8MapEntry59', cardinality 0..*).
+'testmaprelations::MapCA0ToCB0MapEntry' (role 'mapca0tocb0mapentry2', cardinality 0..*) is associated with 'testmaprelations::CB0' (role 'CB0', cardinality 0..*).
+'testmaprelations::CA0' (role 'key', cardinality 0..*) is associated with 'testmaprelations::MapCA0ToCB0MapEntry' (role 'MapCA0ToCB0MapEntry', cardinality 0..*).
+'testmaprelations::CA8' (role 'testmaprelations_CA8', cardinality 0..*) is associated with 'testmaprelations::MapCA8ToCB8MapEntry' (role 'testmaprelations_MapCA8ToCB8MapEntry', cardinality 0..*).
+'testmaprelations::MapCA5ToCB5MapEntry' (role 'mapca0tocb0mapentry50', cardinality 0..*) is associated with 'testmaprelations::CB5' (role 'CB5', cardinality 0..*).
+'testmaprelations::MapCA0ToCB0MapEntry' (role 'mapca0tocb0mapentry', cardinality 0..*) is associated with 'testmaprelations::CA0' (role 'CA0', cardinality 0..*).
+'testmaprelations::MapCA9ToCB9MapEntry' (role 'testmaprelations_MapCA9ToCB9MapEntry', cardinality 0..*) is associated with 'testmaprelations::CA9' (role 'testmaprelations_CA9', cardinality 0..*).
+'testmaprelations::CB3' (role 'CB3', cardinality 0..*) is associated with 'testmaprelations::MapCA3ToCB3MapEntry' (role 'mapca0tocb0mapentry32', cardinality 0..*).
+'testmaprelations::MapCA1ToCB1MapEntry' (role 'MapCA1ToCB1MapEntry', cardinality 0..*) is associated with 'testmaprelations::CB1' (role 'value11', cardinality 0..*).
+'testmaprelations::CA4' (role 'key34', cardinality 0..*) is associated with 'testmaprelations::MapCA4ToCB4MapEntry' (role 'MapCA4ToCB4MapEntry', cardinality 0..*).
+'testmaprelations::CB2' (role 'CB2', cardinality 0..*) is associated with 'testmaprelations::MapCA2ToCB2MapEntry' (role 'mapca0tocb0mapentry23', cardinality 0..*).
+'testmaprelations::CA1' (role 'CA1', cardinality 0..*) is associated with 'testmaprelations::MapCA1ToCB1MapEntry' (role 'mapca0tocb0mapentry7', cardinality 0..*).
+'testmaprelations::MapCA9ToCB9MapEntry' (role 'testmaprelations_MapCA9ToCB9MapEntry62', cardinality 0..*) is associated with 'testmaprelations::CB9' (role 'testmaprelations_CB9', cardinality 0..*).
+'testmaprelations::MapCA6ToCB6MapEntry' (role 'testmaprelations_MapCA6ToCB6MapEntry', cardinality 0..*) is associated with 'testmaprelations::CA6' (role 'testmaprelations_CA6', cardinality 0..*).
+'testmaprelations::MapCA5ToCB5MapEntry' (role 'MapCA5ToCB5MapEntry46', cardinality 0..*) is associated with 'testmaprelations::CB5' (role 'value45', cardinality 0..*).
+'testmaprelations::MapCA1ToCB1MapEntry' (role 'mapca0tocb0mapentry9', cardinality 0..*) is associated with 'testmaprelations::CB1' (role 'CB1', cardinality 0..*).
+'testmaprelations::MapCA3ToCB3MapEntry' (role 'MapCA3ToCB3MapEntry28', cardinality 0..*) is associated with 'testmaprelations::CA3' (role 'key27', cardinality 0..*).
+'testmaprelations::MapCA4ToCB4MapEntry' (role 'mapca0tocb0mapentry38', cardinality 0..*) is associated with 'testmaprelations::CB4' (role 'CB4', cardinality 0..*).
+'testmaprelations::CA7' (role 'testmaprelations_CA7', cardinality 0..*) is associated with 'testmaprelations::MapCA7ToCB7MapEntry' (role 'testmaprelations_MapCA7ToCB7MapEntry', cardinality 0..*).

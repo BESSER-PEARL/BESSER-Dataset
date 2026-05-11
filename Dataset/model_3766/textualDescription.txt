@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'merge::Clazz' has the following attributes: 'attribute' of type float.
+The class 'merge::EObject' has no attributes.
+'merge::EObject' (role 'merge_EObject', cardinality 0..*) is associated with 'merge::Clazz' (role 'merge_Clazz', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'boolexp::Fals' has no attributes.
+The class 'boolexp::Not' has no attributes.
+The class 'boolexp::Exp' has no attributes.
+The class 'boolexp::And' has no attributes.
+The class 'Lit' has no attributes.
+The class 'BinExp' has no attributes.
+The class 'boolexp::BinExp' has no attributes.
+The class 'Exp' has no attributes.
+The class 'boolexp::Tru' has no attributes.
+The class 'boolexp::Or' has no attributes.
+The class 'boolexp::VarRef' has the following attributes: 'name' of type str.
+The class 'boolexp::Lit' has no attributes.
+'boolexp::BinExp' is a specialization of 'Exp'.
+'boolexp::VarRef' is a specialization of 'Exp'.
+'boolexp::Lit' is a specialization of 'Exp'.
+'boolexp::Not' is a specialization of 'Exp'.
+'boolexp::Or' is a specialization of 'BinExp'.
+'boolexp::And' is a specialization of 'BinExp'.
+'boolexp::Tru' is a specialization of 'Lit'.
+'boolexp::Fals' is a specialization of 'Lit'.
+'boolexp::Exp' (role 'boolexp_Exp5', cardinality 0..*) is associated with 'boolexp::Not' (role 'boolexp_Not', cardinality 0..*).
+'boolexp::BinExp' (role 'boolexp_BinExp', cardinality 0..*) is associated with 'boolexp::Exp' (role 'boolexp_Exp', cardinality 0..*).
+'boolexp::BinExp' (role 'boolexp_BinExp2', cardinality 0..*) is associated with 'boolexp::Exp' (role 'boolexp_Exp3', cardinality 0..*).

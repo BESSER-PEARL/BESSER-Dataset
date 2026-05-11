@@ -1,0 +1,30 @@
+The model has 9 class(es).
+The class 'toe::Project' has the following attributes: 'name' of type str; 'departmentWide' of type bool.
+The class 'toe::Manager' has no attributes.
+The class 'AllBase' has no attributes.
+The class 'toe::Contribution' has the following attributes: 'description' of type str.
+The class 'toe::AllHolder' has no attributes.
+The class 'toe::Employee' has the following attributes: 'salary' of type int; 'name' of type str.
+The class 'toe::AllBase' has no attributes.
+The class 'toe::Department' has the following attributes: 'name' of type str.
+The class 'Employee' has no attributes.
+'toe::Employee' is a specialization of 'AllBase'.
+'toe::Department' is a specialization of 'AllBase'.
+'toe::Manager' is a specialization of 'Employee'.
+'toe::Contribution' is a specialization of 'AllBase'.
+'toe::Project' is a specialization of 'AllBase'.
+'toe::Employee' (role 'projectTeam', cardinality 0..*) is associated with 'toe::Project' (role 'Project', cardinality 0..*).
+'toe::Department' (role 'department', cardinality 0..*) is associated with 'toe::Employee' (role 'Employee16', cardinality 0..*).
+'toe::Manager' (role 'lead', cardinality 0..*) is associated with 'toe::Project' (role 'Project5', cardinality 0..*).
+'toe::Department' (role 'parentDepartment', cardinality 0..*) is associated with 'toe::Department' (role 'Department14', cardinality 0..*).
+'toe::AllHolder' (role 'toe_AllHolder', cardinality 0..*) is associated with 'toe::AllBase' (role 'toe_AllBase', cardinality 0..*).
+'toe::Department' (role 'Department7', cardinality 0..*) is associated with 'toe::Manager' (role 'manager', cardinality 0..*).
+'toe::Department' (role 'Department', cardinality 0..*) is associated with 'toe::Employee' (role 'employees', cardinality 0..*).
+'toe::Employee' (role 'employee', cardinality 0..*) is associated with 'toe::Contribution' (role 'Contribution', cardinality 0..*).
+'toe::Manager' (role 'Manager', cardinality 0..*) is associated with 'toe::Department' (role 'managedDepartment', cardinality 0..*).
+'toe::Employee' (role 'Employee22', cardinality 0..*) is associated with 'toe::Project' (role 'projects', cardinality 0..*).
+'toe::Manager' (role 'Manager24', cardinality 0..*) is associated with 'toe::Project' (role 'leads', cardinality 0..*).
+'toe::Department' (role 'Department19', cardinality 0..*) is associated with 'toe::Department' (role 'subDepartments', cardinality 0..*).
+'toe::Employee' (role 'Employee', cardinality 0..*) is associated with 'toe::Contribution' (role 'contributions', cardinality 0..*).
+'toe::Project' (role 'project', cardinality 0..*) is associated with 'toe::Contribution' (role 'Contribution26', cardinality 0..*).
+'toe::Project' (role 'Project11', cardinality 0..*) is associated with 'toe::Contribution' (role 'contributions10', cardinality 0..*).

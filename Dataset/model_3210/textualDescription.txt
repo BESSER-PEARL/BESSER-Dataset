@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'rm::Device' has the following attributes: 'cacheSize' of type int.
+The class 'rm::MemoryCellReference' has the following attributes: 'endCellIndex' of type int; 'startCellIndex' of type int.
+The class 'rm::VariableReference' has the following attributes: 'memoryCellIndex' of type int; 'variable' of type str.
+The class 'rm::ResourceModel' has no attributes.
+The class 'rm::Memory' has the following attributes: 'size' of type int.
+'rm::Memory' (role 'rm_Memory6', cardinality 0..*) is associated with 'rm::VariableReference' (role 'rm_VariableReference', cardinality 0..*).
+'rm::Device' (role 'rm_Device4', cardinality 0..*) is associated with 'rm::MemoryCellReference' (role 'rm_MemoryCellReference', cardinality 0..*).
+'rm::Memory' (role 'rm_Memory', cardinality 0..*) is associated with 'rm::ResourceModel' (role 'rm_ResourceModel2', cardinality 0..*).
+'rm::ResourceModel' (role 'rm_ResourceModel', cardinality 0..*) is associated with 'rm::Device' (role 'rm_Device', cardinality 0..*).

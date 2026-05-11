@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'scholar::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+The class 'scholar::Teacher' has no attributes.
+The class 'scholar::Lecture' has no attributes.
+The class 'scholar::Student' has the following attributes: 'forname' of type str.
+The class 'scholar::Discipline' has no attributes.
+The class 'scholar::ScholarManagement' has no attributes.
+The class 'scholar::Exam' has the following attributes: 'score' of type float.
+'scholar::Teacher' is a specialization of 'Named'.
+'scholar::Discipline' is a specialization of 'Named'.
+'scholar::Exam' is a specialization of 'Named'.
+'scholar::Student' is a specialization of 'Named'.
+'scholar::Lecture' is a specialization of 'Named'.
+'scholar::ScholarManagement' (role 'scholar_ScholarManagement16', cardinality 0..*) is associated with 'scholar::Teacher' (role 'scholar_Teacher17', cardinality 0..*).
+'scholar::ScholarManagement' (role 'scholar_ScholarManagement', cardinality 0..*) is associated with 'scholar::Student' (role 'scholar_Student8', cardinality 0..*).
+'scholar::ScholarManagement' (role 'scholar_ScholarManagement13', cardinality 0..*) is associated with 'scholar::Lecture' (role 'scholar_Lecture14', cardinality 0..*).
+'scholar::Exam' (role 'scholar_Exam5', cardinality 0..*) is associated with 'scholar::Lecture' (role 'scholar_Lecture6', cardinality 0..*).
+'scholar::Exam' (role 'scholar_Exam', cardinality 0..*) is associated with 'scholar::Student' (role 'scholar_Student', cardinality 0..*).
+'scholar::Discipline' (role 'scholar_Discipline', cardinality 0..*) is associated with 'scholar::Lecture' (role 'scholar_Lecture3', cardinality 0..*).
+'scholar::Discipline' (role 'scholar_Discipline11', cardinality 0..*) is associated with 'scholar::ScholarManagement' (role 'scholar_ScholarManagement10', cardinality 0..*).
+'scholar::Teacher' (role 'scholar_Teacher', cardinality 0..*) is associated with 'scholar::Lecture' (role 'scholar_Lecture', cardinality 0..*).

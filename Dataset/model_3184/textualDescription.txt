@@ -1,0 +1,164 @@
+The model has 58 class(es).
+The class 'smc::VariableRef' has no attributes.
+The class 'smc::TimeLiteral' has the following attributes: 'value' of type str.
+The class 'smc::ParamDecl' has the following attributes: 'stype' of type str; 'parName' of type str; 'name' of type str; 'btype' of type str.
+The class 'smc::CreateTable' has no attributes.
+The class 'smc::Block' has no attributes.
+The class 'smc::MainSMC' has no attributes.
+The class 'smc::Smc' has no attributes.
+The class 'smc::Return' has no attributes.
+The class 'smc::List' has no attributes.
+The class 'smc::Computation' has no attributes.
+The class 'smc::Covered' has no attributes.
+The class 'smc::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'smc::Comparison' has the following attributes: 'op' of type str.
+The class 'Expression' has no attributes.
+The class 'smc::Or' has no attributes.
+The class 'Functions' has no attributes.
+The class 'smc::And' has no attributes.
+The class 'smc::BlockSMC' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'smc::Average' has no attributes.
+The class 'AccessControl' has no attributes.
+The class 'smc::PlusOrMinus' has the following attributes: 'op' of type str.
+The class 'smc::Not' has no attributes.
+The class 'smc::IfThenElse' has no attributes.
+The class 'smc::Command' has no attributes.
+The class 'Computation' has no attributes.
+The class 'Command' has no attributes.
+The class 'smc::Median' has no attributes.
+The class 'smc::Tuple' has no attributes.
+The class 'smc::Count' has no attributes.
+The class 'smc::CheckTable' has no attributes.
+The class 'smc::Client' has the following attributes: 'arg' of type str.
+The class 'smc::AccessControl' has no attributes.
+The class 'smc::Database' has the following attributes: 'clm' of type str.
+The class 'smc::Equality' has the following attributes: 'op' of type str.
+The class 'smc::DateLiteral' has the following attributes: 'value' of type str.
+The class 'smc::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'smc::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'smc::While' has no attributes.
+The class 'smc::Search' has the following attributes: 'column' of type str.
+The class 'smc::Invocation' has no attributes.
+The class 'smc::StringLiteral' has the following attributes: 'value' of type str.
+The class 'smc::InvocationVoid' has no attributes.
+The class 'smc::Functions' has no attributes.
+The class 'smc::AbstractAssignment' has no attributes.
+The class 'Download' has no attributes.
+The class 'smc::AddValues' has no attributes.
+The class 'smc::Expression' has no attributes.
+The class 'smc::BellLapadula' has the following attributes: 'mode' of type str.
+The class 'smc::IntLiteral' has the following attributes: 'value' of type int.
+The class 'smc::Print' has no attributes.
+The class 'smc::Download' has no attributes.
+The class 'smc::WeightedAvg' has no attributes.
+The class 'smc::Multiplication' has no attributes.
+The class 'smc::BloomFilter' has no attributes.
+The class 'AbstractAssignment' has no attributes.
+The class 'smc::VariableDecl' has the following attributes: 'type' of type str; 'length' of type int; 'name' of type str; 'visibility' of type str; 'array' of type bool.
+The class 'smc::VariableAssignment' has no attributes.
+The class 'smc::Dict' has no attributes.
+The enumeration 'SecType' has the following literals: 'PRIVATE', 'PUBLIC'.
+The enumeration 'BlockType' has the following literals: 'COMP', 'ANONYMIZATION', 'INSERT', 'ACCESS', 'PERMISSION', 'SEARCH'.
+The enumeration 'BasicType' has the following literals: 'STRING', 'BOOLEAN', 'ENCRYPTED', 'DOUBLE', 'INT'.
+'smc::Invocation' is a specialization of 'Expression'.
+'smc::Search' is a specialization of 'Functions'.
+'smc::Count' is a specialization of 'Computation'.
+'smc::CreateTable' is a specialization of 'Functions'.
+'smc::Equality' is a specialization of 'Expression'.
+'smc::Return' is a specialization of 'Command'.
+'smc::BooleanLiteral' is a specialization of 'Expression'.
+'smc::DoubleLiteral' is a specialization of 'Expression'.
+'smc::Database' is a specialization of 'Download'.
+'smc::BellLapadula' is a specialization of 'AccessControl'.
+'smc::CheckTable' is a specialization of 'Functions'.
+'smc::ParamDecl' is a specialization of 'Command'.
+'smc::VariableRef' is a specialization of 'Expression'.
+'smc::InvocationVoid' is a specialization of 'Command'.
+'smc::Download' is a specialization of 'AbstractAssignment'.
+'smc::Tuple' is a specialization of 'Expression'.
+'smc::IntLiteral' is a specialization of 'Expression'.
+'smc::Block' is a specialization of 'Command'.
+'smc::AccessControl' is a specialization of 'Functions'.
+'smc::Expression' is a specialization of 'AbstractAssignment'.
+'smc::VariableDecl' is a specialization of 'Command'.
+'smc::WeightedAvg' is a specialization of 'Computation'.
+'smc::Print' is a specialization of 'Command'.
+'smc::StringLiteral' is a specialization of 'Expression'.
+'smc::Average' is a specialization of 'Computation'.
+'smc::IfThenElse' is a specialization of 'Command'.
+'smc::While' is a specialization of 'Command'.
+'smc::DateLiteral' is a specialization of 'Expression'.
+'smc::MulOrDiv' is a specialization of 'Expression'.
+'smc::Covered' is a specialization of 'AccessControl'.
+'smc::List' is a specialization of 'Expression'.
+'smc::Median' is a specialization of 'Computation'.
+'smc::AddValues' is a specialization of 'Functions'.
+'smc::TimeLiteral' is a specialization of 'Expression'.
+'smc::Comparison' is a specialization of 'Expression'.
+'smc::Computation' is a specialization of 'Functions'.
+'smc::And' is a specialization of 'Expression'.
+'smc::Dict' is a specialization of 'Expression'.
+'smc::Multiplication' is a specialization of 'Computation'.
+'smc::Client' is a specialization of 'Download'.
+'smc::VariableAssignment' is a specialization of 'Command'.
+'smc::Not' is a specialization of 'Expression'.
+'smc::Or' is a specialization of 'Expression'.
+'smc::BloomFilter' is a specialization of 'Functions'.
+'smc::PlusOrMinus' is a specialization of 'Expression'.
+'smc::Expression' (role 'smc_Expression32', cardinality 0..*) is associated with 'smc::Tuple' (role 'smc_Tuple31', cardinality 0..*).
+'smc::Search' (role 'smc_Search76', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl77', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression117', cardinality 0..*) is associated with 'smc::PlusOrMinus' (role 'smc_PlusOrMinus', cardinality 0..*).
+'smc::Covered' (role 'smc_Covered', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl69', cardinality 0..*).
+'smc::Equality' (role 'smc_Equality', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression107', cardinality 0..*).
+'smc::Command' (role 'smc_Command', cardinality 0..*) is associated with 'smc::MainSMC' (role 'smc_MainSMC4', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl82', cardinality 0..*) is associated with 'smc::BloomFilter' (role 'smc_BloomFilter81', cardinality 0..*).
+'smc::Not' (role 'smc_Not', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression127', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression29', cardinality 0..*) is associated with 'smc::Tuple' (role 'smc_Tuple', cardinality 0..*).
+'smc::AbstractAssignment' (role 'smc_AbstractAssignment25', cardinality 0..*) is associated with 'smc::VariableAssignment' (role 'smc_VariableAssignment24', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression13', cardinality 0..*) is associated with 'smc::IfThenElse' (role 'smc_IfThenElse', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl', cardinality 0..*) is associated with 'smc::AbstractAssignment' (role 'smc_AbstractAssignment', cardinality 0..*).
+'smc::Invocation' (role 'smc_Invocation', cardinality 0..*) is associated with 'smc::InvocationVoid' (role 'smc_InvocationVoid', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl46', cardinality 0..*) is associated with 'smc::Multiplication' (role 'smc_Multiplication', cardinality 0..*).
+'smc::WeightedAvg' (role 'smc_WeightedAvg55', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl56', cardinality 0..*).
+'smc::AddValues' (role 'smc_AddValues88', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl89', cardinality 0..*).
+'smc::MulOrDiv' (role 'smc_MulOrDiv124', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression125', cardinality 0..*).
+'smc::PlusOrMinus' (role 'smc_PlusOrMinus119', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression120', cardinality 0..*).
+'smc::List' (role 'smc_List39', cardinality 0..*) is associated with 'smc::Dict' (role 'smc_Dict38', cardinality 0..*).
+'smc::Equality' (role 'smc_Equality109', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression110', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression27', cardinality 0..*) is associated with 'smc::Database' (role 'smc_Database', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl129', cardinality 0..*) is associated with 'smc::VariableRef' (role 'smc_VariableRef', cardinality 0..*).
+'smc::Comparison' (role 'smc_Comparison', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression112', cardinality 0..*).
+'smc::Or' (role 'smc_Or99', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression100', cardinality 0..*).
+'smc::Count' (role 'smc_Count', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl60', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl62', cardinality 0..*) is associated with 'smc::AccessControl' (role 'smc_AccessControl', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl79', cardinality 0..*) is associated with 'smc::BloomFilter' (role 'smc_BloomFilter', cardinality 0..*).
+'smc::ParamDecl' (role 'smc_ParamDecl', cardinality 0..*) is associated with 'smc::CreateTable' (role 'smc_CreateTable93', cardinality 0..*).
+'smc::Command' (role 'smc_Command95', cardinality 0..*) is associated with 'smc::Block' (role 'smc_Block', cardinality 0..*).
+'smc::Smc' (role 'smc_Smc', cardinality 0..*) is associated with 'smc::BlockSMC' (role 'smc_BlockSMC', cardinality 0..*).
+'smc::BellLapadula' (role 'smc_BellLapadula', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl67', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression34', cardinality 0..*) is associated with 'smc::List' (role 'smc_List', cardinality 0..*).
+'smc::Covered' (role 'smc_Covered71', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl72', cardinality 0..*).
+'smc::Smc' (role 'smc_Smc2', cardinality 0..*) is associated with 'smc::MainSMC' (role 'smc_MainSMC', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression102', cardinality 0..*) is associated with 'smc::And' (role 'smc_And', cardinality 0..*).
+'smc::BlockSMC' (role 'smc_BlockSMC42', cardinality 0..*) is associated with 'smc::Invocation' (role 'smc_Invocation41', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl58', cardinality 0..*) is associated with 'smc::Average' (role 'smc_Average', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression115', cardinality 0..*) is associated with 'smc::Comparison' (role 'smc_Comparison114', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl74', cardinality 0..*) is associated with 'smc::Search' (role 'smc_Search', cardinality 0..*).
+'smc::MulOrDiv' (role 'smc_MulOrDiv', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression122', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression97', cardinality 0..*) is associated with 'smc::Or' (role 'smc_Or', cardinality 0..*).
+'smc::WeightedAvg' (role 'smc_WeightedAvg', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl53', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl91', cardinality 0..*) is associated with 'smc::CreateTable' (role 'smc_CreateTable', cardinality 0..*).
+'smc::VariableAssignment' (role 'smc_VariableAssignment', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl22', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression36', cardinality 0..*) is associated with 'smc::Dict' (role 'smc_Dict', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl51', cardinality 0..*) is associated with 'smc::Median' (role 'smc_Median', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl86', cardinality 0..*) is associated with 'smc::AddValues' (role 'smc_AddValues', cardinality 0..*).
+'smc::Print' (role 'smc_Print', cardinality 0..*) is associated with 'smc::Expression' (role 'smc_Expression', cardinality 0..*).
+'smc::Command' (role 'smc_Command11', cardinality 0..*) is associated with 'smc::While' (role 'smc_While10', cardinality 0..*).
+'smc::Command' (role 'smc_Command16', cardinality 0..*) is associated with 'smc::IfThenElse' (role 'smc_IfThenElse15', cardinality 0..*).
+'smc::AccessControl' (role 'smc_AccessControl64', cardinality 0..*) is associated with 'smc::VariableDecl' (role 'smc_VariableDecl65', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl49', cardinality 0..*) is associated with 'smc::Multiplication' (role 'smc_Multiplication48', cardinality 0..*).
+'smc::Command' (role 'smc_Command19', cardinality 0..*) is associated with 'smc::IfThenElse' (role 'smc_IfThenElse18', cardinality 0..*).
+'smc::VariableDecl' (role 'smc_VariableDecl84', cardinality 0..*) is associated with 'smc::CheckTable' (role 'smc_CheckTable', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression105', cardinality 0..*) is associated with 'smc::And' (role 'smc_And104', cardinality 0..*).
+'smc::Expression' (role 'smc_Expression8', cardinality 0..*) is associated with 'smc::While' (role 'smc_While', cardinality 0..*).
+'smc::Invocation' (role 'smc_Invocation44', cardinality 0..*) is associated with 'smc::Functions' (role 'smc_Functions', cardinality 0..*).

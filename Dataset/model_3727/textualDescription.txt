@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'Property' has no attributes.
+The class 'UML2::ExtensionEnd' has no attributes.
+The class 'UML2::Property' has the following attributes: 'isDerived' of type bool; 'isDerivedUnion' of type bool.
+The class 'UML2::Port' has no attributes.
+'UML2::Port' is a specialization of 'Property'.
+'UML2::ExtensionEnd' is a specialization of 'Property'.

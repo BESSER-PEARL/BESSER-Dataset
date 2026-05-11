@@ -1,0 +1,141 @@
+The model has 54 class(es).
+The class 'game::Type' has the following attributes: 'namespace' of type str; 'valueType' of type bool; 'name' of type str.
+The class 'game::Game' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'game::Comparison' has the following attributes: 'kind' of type str.
+The class 'Index' has no attributes.
+The class 'Comparable' has no attributes.
+The class 'game::Multipliable' has no attributes.
+The class 'game::Collection' has no attributes.
+The class 'game::End' has no attributes.
+The class 'game::Index' has no attributes.
+The class 'Atom' has no attributes.
+The class 'game::Addable' has no attributes.
+The class 'Multipliable' has no attributes.
+The class 'game::Access' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'game::Andable' has no attributes.
+The class 'Setable' has no attributes.
+The class 'Collection' has no attributes.
+The class 'game::Or' has no attributes.
+The class 'game::System' has the following attributes: 'name' of type str.
+The class 'game::Brackets' has no attributes.
+The class 'Statement' has no attributes.
+The class 'game::Equatable' has no attributes.
+The class 'game::Subprocess' has no attributes.
+The class 'Equatable' has no attributes.
+The class 'game::Statement' has no attributes.
+The class 'game::Comparable' has no attributes.
+The class 'game::Expression' has no attributes.
+The class 'game::Join' has no attributes.
+The class 'game::Addition' has the following attributes: 'kind' of type str.
+The class 'game::Selection' has no attributes.
+The class 'game::Equality' has the following attributes: 'kind' of type str.
+The class 'game::Multiplication' has the following attributes: 'kind' of type str.
+The class 'game::Atom' has no attributes.
+The class 'game::Function' has the following attributes: 'name' of type str.
+The class 'game::Cell' has no attributes.
+The class 'Expression' has no attributes.
+The class 'game::Call' has the following attributes: 'name' of type str.
+The class 'game::Orable' has no attributes.
+The class 'game::ComponentData' has the following attributes: 'name' of type str.
+The class 'game::SetExpression' has no attributes.
+The class 'game::Iteration' has no attributes.
+The class 'game::Forall' has no attributes.
+The class 'game::Query' has the following attributes: 'name' of type str.
+The class 'game::LogicalNot' has no attributes.
+The class 'game::ImplicitSet' has no attributes.
+The class 'game::Setable' has no attributes.
+The class 'Orable' has no attributes.
+The class 'game::Variable' has the following attributes: 'name' of type str.
+The class 'Primary' has no attributes.
+The class 'game::Primary' has no attributes.
+The class 'game::And' has no attributes.
+The class 'Andable' has no attributes.
+The class 'game::Cardinal' has no attributes.
+The class 'Addable' has no attributes.
+The class 'game::Assignment' has no attributes.
+The enumeration 'AdditiveKind' has the following literals: 'add', 'subtract'.
+The enumeration 'AccessKind' has the following literals: 'write', 'exist', 'read'.
+The enumeration 'EqualityKind' has the following literals: 'equal', 'notEqual'.
+The enumeration 'ComparisonKind' has the following literals: 'greaterOrEqual', 'greater', 'lower', 'lowerOrEqual'.
+The enumeration 'MultiplicativeKind' has the following literals: 'divide', 'multiply', 'remainder'.
+'game::Orable' is a specialization of 'Expression'.
+'game::Iteration' is a specialization of 'Statement'.
+'game::Andable' is a specialization of 'Orable'.
+'game::Primary' is a specialization of 'Setable'.
+'game::Comparison' is a specialization of 'Comparable'.
+'game::Addition' is a specialization of 'Addable'.
+'game::Join' is a specialization of 'Collection'.
+'game::Assignment' is a specialization of 'Statement'.
+'game::Collection' is a specialization of 'Primary'.
+'game::LogicalNot' is a specialization of 'Primary'.
+'game::Multipliable' is a specialization of 'Addable'.
+'game::Subprocess' is a specialization of 'Statement'.
+'game::And' is a specialization of 'Andable'.
+'game::Addable' is a specialization of 'Comparable'.
+'game::SetExpression' is a specialization of 'Setable'.
+'game::Index' is a specialization of 'Primary'.
+'game::Cardinal' is a specialization of 'Primary'.
+'game::Atom' is a specialization of 'Index'.
+'game::Call' is a specialization of 'Primary'.
+'game::Or' is a specialization of 'Orable'.
+'game::Cell' is a specialization of 'Atom'.
+'game::Multiplication' is a specialization of 'Multipliable'.
+'game::Comparable' is a specialization of 'Equatable'.
+'game::Brackets' is a specialization of 'Collection'.
+'game::Forall' is a specialization of 'Statement'.
+'game::ImplicitSet' is a specialization of 'Collection'.
+'game::Variable' is a specialization of 'Atom'.
+'game::Setable' is a specialization of 'Multipliable'.
+'game::Equality' is a specialization of 'Equatable'.
+'game::Equatable' is a specialization of 'Andable'.
+'game::Selection' is a specialization of 'Statement'.
+'game::Brackets' (role 'game_Brackets', cardinality 0..*) is associated with 'game::Expression' (role 'game_Expression87', cardinality 0..*).
+'game::Statement' (role 'game_Statement30', cardinality 0..*) is associated with 'game::Selection' (role 'game_Selection29', cardinality 0..*).
+'game::Function' (role 'game_Function13', cardinality 0..*) is associated with 'game::Statement' (role 'game_Statement', cardinality 0..*).
+'game::Expression' (role 'game_Expression37', cardinality 0..*) is associated with 'game::Forall' (role 'game_Forall', cardinality 0..*).
+'game::Addable' (role 'game_Addable', cardinality 0..*) is associated with 'game::Comparison' (role 'game_Comparison66', cardinality 0..*).
+'game::Query' (role 'game_Query', cardinality 0..*) is associated with 'game::System' (role 'game_System21', cardinality 0..*).
+'game::Game' (role 'game_Game2', cardinality 0..*) is associated with 'game::System' (role 'game_System', cardinality 0..*).
+'game::Andable' (role 'game_Andable56', cardinality 0..*) is associated with 'game::And' (role 'game_And', cardinality 0..*).
+'game::Function' (role 'game_Function10', cardinality 0..*) is associated with 'game::Type' (role 'game_Type11', cardinality 0..*).
+'game::Forall' (role 'game_Forall39', cardinality 0..*) is associated with 'game::Statement' (role 'game_Statement40', cardinality 0..*).
+'game::Variable' (role 'game_Variable106', cardinality 0..*) is associated with 'game::Cell' (role 'game_Cell105', cardinality 0..*).
+'game::Selection' (role 'game_Selection26', cardinality 0..*) is associated with 'game::Statement' (role 'game_Statement27', cardinality 0..*).
+'game::Or' (role 'game_Or', cardinality 0..*) is associated with 'game::Orable' (role 'game_Orable', cardinality 0..*).
+'game::Call' (role 'game_Call', cardinality 0..*) is associated with 'game::Subprocess' (role 'game_Subprocess', cardinality 0..*).
+'game::Index' (role 'game_Index100', cardinality 0..*) is associated with 'game::Expression' (role 'game_Expression101', cardinality 0..*).
+'game::ComponentData' (role 'game_ComponentData15', cardinality 0..*) is associated with 'game::Type' (role 'game_Type16', cardinality 0..*).
+'game::Expression' (role 'game_Expression47', cardinality 0..*) is associated with 'game::Assignment' (role 'game_Assignment46', cardinality 0..*).
+'game::Setable' (role 'game_Setable', cardinality 0..*) is associated with 'game::Multiplication' (role 'game_Multiplication74', cardinality 0..*).
+'game::Query' (role 'game_Query23', cardinality 0..*) is associated with 'game::Access' (role 'game_Access', cardinality 0..*).
+'game::Primary' (role 'game_Primary', cardinality 0..*) is associated with 'game::SetExpression' (role 'game_SetExpression78', cardinality 0..*).
+'game::Addable' (role 'game_Addable68', cardinality 0..*) is associated with 'game::Addition' (role 'game_Addition', cardinality 0..*).
+'game::Expression' (role 'game_Expression', cardinality 0..*) is associated with 'game::Selection' (role 'game_Selection', cardinality 0..*).
+'game::System' (role 'game_System18', cardinality 0..*) is associated with 'game::Statement' (role 'game_Statement19', cardinality 0..*).
+'game::Primary' (role 'game_Primary83', cardinality 0..*) is associated with 'game::LogicalNot' (role 'game_LogicalNot', cardinality 0..*).
+'game::Type' (role 'game_Type51', cardinality 0..*) is associated with 'game::Expression' (role 'game_Expression50', cardinality 0..*).
+'game::SetExpression' (role 'game_SetExpression', cardinality 0..*) is associated with 'game::Setable' (role 'game_Setable76', cardinality 0..*).
+'game::Expression' (role 'game_Expression32', cardinality 0..*) is associated with 'game::Iteration' (role 'game_Iteration', cardinality 0..*).
+'game::Variable' (role 'game_Variable94', cardinality 0..*) is associated with 'game::ImplicitSet' (role 'game_ImplicitSet93', cardinality 0..*).
+'game::Type' (role 'game_Type', cardinality 0..*) is associated with 'game::Game' (role 'game_Game', cardinality 0..*).
+'game::Multiplication' (role 'game_Multiplication', cardinality 0..*) is associated with 'game::Multipliable' (role 'game_Multipliable72', cardinality 0..*).
+'game::Index' (role 'game_Index', cardinality 0..*) is associated with 'game::Atom' (role 'game_Atom98', cardinality 0..*).
+'game::Comparable' (role 'game_Comparable', cardinality 0..*) is associated with 'game::Equality' (role 'game_Equality62', cardinality 0..*).
+'game::Expression' (role 'game_Expression96', cardinality 0..*) is associated with 'game::Atom' (role 'game_Atom', cardinality 0..*).
+'game::Game' (role 'game_Game6', cardinality 0..*) is associated with 'game::End' (role 'game_End', cardinality 0..*).
+'game::Equality' (role 'game_Equality', cardinality 0..*) is associated with 'game::Equatable' (role 'game_Equatable60', cardinality 0..*).
+'game::Forall' (role 'game_Forall42', cardinality 0..*) is associated with 'game::Variable' (role 'game_Variable', cardinality 0..*).
+'game::Call' (role 'game_Call80', cardinality 0..*) is associated with 'game::Expression' (role 'game_Expression81', cardinality 0..*).
+'game::Cardinal' (role 'game_Cardinal', cardinality 0..*) is associated with 'game::Primary' (role 'game_Primary85', cardinality 0..*).
+'game::Andable' (role 'game_Andable', cardinality 0..*) is associated with 'game::Or' (role 'game_Or54', cardinality 0..*).
+'game::Multipliable' (role 'game_Multipliable', cardinality 0..*) is associated with 'game::Addition' (role 'game_Addition70', cardinality 0..*).
+'game::Game' (role 'game_Game8', cardinality 0..*) is associated with 'game::Function' (role 'game_Function', cardinality 0..*).
+'game::Comparison' (role 'game_Comparison', cardinality 0..*) is associated with 'game::Comparable' (role 'game_Comparable64', cardinality 0..*).
+'game::Game' (role 'game_Game4', cardinality 0..*) is associated with 'game::ComponentData' (role 'game_ComponentData', cardinality 0..*).
+'game::Expression' (role 'game_Expression44', cardinality 0..*) is associated with 'game::Assignment' (role 'game_Assignment', cardinality 0..*).
+'game::Equatable' (role 'game_Equatable', cardinality 0..*) is associated with 'game::And' (role 'game_And58', cardinality 0..*).
+'game::Join' (role 'game_Join', cardinality 0..*) is associated with 'game::Expression' (role 'game_Expression89', cardinality 0..*).
+'game::Iteration' (role 'game_Iteration34', cardinality 0..*) is associated with 'game::Statement' (role 'game_Statement35', cardinality 0..*).
+'game::Expression' (role 'game_Expression91', cardinality 0..*) is associated with 'game::ImplicitSet' (role 'game_ImplicitSet', cardinality 0..*).
+'game::Type' (role 'game_Type107', cardinality 0..*) is associated with 'game::Type' (role 'game_Type109', cardinality 0..*).
+'game::Variable' (role 'game_Variable103', cardinality 0..*) is associated with 'game::Cell' (role 'game_Cell', cardinality 0..*).

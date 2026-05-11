@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'viewmodeltrace::Variable' has no attributes.
+The class 'viewmodeltrace::EObject' has no attributes.
+The class 'viewmodeltrace::StringVariablePair' has the following attributes: 'key' of type str.
+The class 'viewmodeltrace::EObjectMatchArgument' has no attributes.
+The class 'viewmodeltrace::ViewModelTrace' has the following attributes: 'traceModelId' of type str.
+The class 'viewmodeltrace::VariableInstantiationTrace' has no attributes.
+The class 'viewmodeltrace::MatchArgumentTuple' has no attributes.
+The class 'viewmodeltrace::LogicModel' has no attributes.
+The class 'viewmodeltrace::JavaObjectMatchArgument' has the following attributes: 'value' of type str.
+The class 'MatchArgument' has no attributes.
+The class 'viewmodeltrace::Constraint' has no attributes.
+The class 'viewmodeltrace::ConstraintTrace' has no attributes.
+The class 'viewmodeltrace::MatchArgument' has the following attributes: 'parameterName' of type str.
+The class 'viewmodeltrace::Trace' has the following attributes: 'traceName' of type str; 'state' of type str.
+The class 'Trace' has no attributes.
+The enumeration 'TraceState' has the following literals: 'USED', 'UNUSED'.
+'viewmodeltrace::EObjectMatchArgument' is a specialization of 'MatchArgument'.
+'viewmodeltrace::VariableInstantiationTrace' is a specialization of 'Trace'.
+'viewmodeltrace::JavaObjectMatchArgument' is a specialization of 'MatchArgument'.
+'viewmodeltrace::ConstraintTrace' is a specialization of 'Trace'.
+'viewmodeltrace::Trace' (role 'viewmodeltrace_Trace', cardinality 0..*) is associated with 'viewmodeltrace::ViewModelTrace' (role 'viewmodeltrace_ViewModelTrace2', cardinality 0..*).
+'viewmodeltrace::MatchArgumentTuple' (role 'viewmodeltrace_MatchArgumentTuple', cardinality 0..*) is associated with 'viewmodeltrace::MatchArgument' (role 'viewmodeltrace_MatchArgument', cardinality 0..*).
+'viewmodeltrace::VariableInstantiationTrace' (role 'viewmodeltrace_VariableInstantiationTrace', cardinality 0..*) is associated with 'viewmodeltrace::StringVariablePair' (role 'viewmodeltrace_StringVariablePair', cardinality 0..*).
+'viewmodeltrace::MatchArgumentTuple' (role 'viewmodeltrace_MatchArgumentTuple7', cardinality 0..*) is associated with 'viewmodeltrace::Trace' (role 'viewmodeltrace_Trace6', cardinality 0..*).
+'viewmodeltrace::LogicModel' (role 'viewmodeltrace_LogicModel', cardinality 0..*) is associated with 'viewmodeltrace::ViewModelTrace' (role 'viewmodeltrace_ViewModelTrace', cardinality 0..*).
+'viewmodeltrace::ConstraintTrace' (role 'viewmodeltrace_ConstraintTrace14', cardinality 0..*) is associated with 'viewmodeltrace::Constraint' (role 'viewmodeltrace_Constraint', cardinality 0..*).
+'viewmodeltrace::ConstraintTrace' (role 'viewmodeltrace_ConstraintTrace', cardinality 0..*) is associated with 'viewmodeltrace::Variable' (role 'viewmodeltrace_Variable12', cardinality 0..*).
+'viewmodeltrace::EObject' (role 'viewmodeltrace_EObject', cardinality 0..*) is associated with 'viewmodeltrace::EObjectMatchArgument' (role 'viewmodeltrace_EObjectMatchArgument', cardinality 0..*).
+'viewmodeltrace::Variable' (role 'viewmodeltrace_Variable', cardinality 0..*) is associated with 'viewmodeltrace::StringVariablePair' (role 'viewmodeltrace_StringVariablePair10', cardinality 0..*).

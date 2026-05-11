@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/governit/Entrega_Alvaro/CoCoStandalone/metamodels/SPLOT2CoCo.ecore

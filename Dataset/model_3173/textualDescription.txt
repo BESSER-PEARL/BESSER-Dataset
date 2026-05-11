@@ -1,0 +1,52 @@
+The model has 19 class(es).
+The class 'expressions::EvalExpression' has no attributes.
+The class 'expressions::VariableRef' has no attributes.
+The class 'expressions::And' has no attributes.
+The class 'expressions::Equality' has the following attributes: 'op' of type str.
+The class 'expressions::BoolConstant' has the following attributes: 'value' of type str.
+The class 'expressions::IntConstant' has the following attributes: 'value' of type int.
+The class 'expressions::Not' has no attributes.
+The class 'expressions::Variable' has the following attributes: 'name' of type str.
+The class 'expressions::Plus' has no attributes.
+The class 'Expression' has no attributes.
+The class 'expressions::AbstractElement' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'expressions::StringConstant' has the following attributes: 'value' of type str.
+The class 'expressions::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'expressions::Minus' has no attributes.
+The class 'expressions::Comparison' has the following attributes: 'op' of type str.
+The class 'expressions::ExpressionsModel' has no attributes.
+The class 'expressions::Or' has no attributes.
+'expressions::EvalExpression' is a specialization of 'AbstractElement'.
+'expressions::And' is a specialization of 'Expression'.
+'expressions::Equality' is a specialization of 'Expression'.
+'expressions::StringConstant' is a specialization of 'Expression'.
+'expressions::Comparison' is a specialization of 'Expression'.
+'expressions::Variable' is a specialization of 'AbstractElement'.
+'expressions::Not' is a specialization of 'Expression'.
+'expressions::VariableRef' is a specialization of 'Expression'.
+'expressions::MulOrDiv' is a specialization of 'Expression'.
+'expressions::Or' is a specialization of 'Expression'.
+'expressions::Minus' is a specialization of 'Expression'.
+'expressions::Plus' is a specialization of 'Expression'.
+'expressions::BoolConstant' is a specialization of 'Expression'.
+'expressions::IntConstant' is a specialization of 'Expression'.
+'expressions::Expression' (role 'expressions_Expression37', cardinality 0..*) is associated with 'expressions::MulOrDiv' (role 'expressions_MulOrDiv36', cardinality 0..*).
+'expressions::VariableRef' (role 'expressions_VariableRef', cardinality 0..*) is associated with 'expressions::Variable' (role 'expressions_Variable', cardinality 0..*).
+'expressions::Equality' (role 'expressions_Equality16', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression17', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression19', cardinality 0..*) is associated with 'expressions::Comparison' (role 'expressions_Comparison', cardinality 0..*).
+'expressions::Or' (role 'expressions_Or6', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression7', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression24', cardinality 0..*) is associated with 'expressions::Plus' (role 'expressions_Plus', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression4', cardinality 0..*) is associated with 'expressions::Or' (role 'expressions_Or', cardinality 0..*).
+'expressions::And' (role 'expressions_And11', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression12', cardinality 0..*).
+'expressions::Minus' (role 'expressions_Minus31', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression32', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression39', cardinality 0..*) is associated with 'expressions::Not' (role 'expressions_Not', cardinality 0..*).
+'expressions::Minus' (role 'expressions_Minus', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression29', cardinality 0..*).
+'expressions::And' (role 'expressions_And', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression9', cardinality 0..*).
+'expressions::ExpressionsModel' (role 'expressions_ExpressionsModel', cardinality 0..*) is associated with 'expressions::AbstractElement' (role 'expressions_AbstractElement', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression34', cardinality 0..*) is associated with 'expressions::MulOrDiv' (role 'expressions_MulOrDiv', cardinality 0..*).
+'expressions::AbstractElement' (role 'expressions_AbstractElement2', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression', cardinality 0..*).
+'expressions::Equality' (role 'expressions_Equality', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression14', cardinality 0..*).
+'expressions::Plus' (role 'expressions_Plus26', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression27', cardinality 0..*).
+'expressions::Comparison' (role 'expressions_Comparison21', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression22', cardinality 0..*).

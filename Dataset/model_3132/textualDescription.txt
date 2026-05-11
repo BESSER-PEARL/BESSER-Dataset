@@ -1,0 +1,28 @@
+The model has 12 class(es).
+The class 'ClassM::Parameter' has the following attributes: 'name' of type str.
+The class 'ClassM::PrimitiveType' has no attributes.
+The class 'ClassM::Class' has no attributes.
+The class 'ClassM::Model' has no attributes.
+The class 'ClassM::Classifier' has the following attributes: 'name' of type str.
+The class 'Classifier' has no attributes.
+The class 'ClassM::TypedElement' has no attributes.
+The class 'ClassM::Attribute' has the following attributes: 'multivalued' of type bool.
+The class 'StructuralFeature' has no attributes.
+The class 'ClassM::Operation' has no attributes.
+The class 'ClassM::StructuralFeature' has the following attributes: 'visibility' of type str; 'name' of type str.
+The class 'TypedElement' has no attributes.
+'ClassM::StructuralFeature' is a specialization of 'TypedElement'.
+'ClassM::PrimitiveType' is a specialization of 'Classifier'.
+'ClassM::Attribute' is a specialization of 'StructuralFeature'.
+'ClassM::Parameter' is a specialization of 'TypedElement'.
+'ClassM::Class' is a specialization of 'Classifier'.
+'ClassM::Operation' is a specialization of 'StructuralFeature'.
+'ClassM::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'ClassM::TypedElement' (role 'typeOf', cardinality 0..*).
+'ClassM::Parameter' (role 'params', cardinality 0..*) is associated with 'ClassM::Operation' (role 'Operation', cardinality 0..*).
+'ClassM::Class' (role 'ClassM_Class1', cardinality 0..*) is associated with 'ClassM::Class' (role 'ClassM_Class', cardinality 0..*).
+'ClassM::StructuralFeature' (role 'StructuralFeature', cardinality 0..*) is associated with 'ClassM::Class' (role 'owner', cardinality 0..*).
+'ClassM::Classifier' (role 'type', cardinality 0..*) is associated with 'ClassM::TypedElement' (role 'TypedElement', cardinality 0..*).
+'ClassM::Class' (role 'ClassM_Class5', cardinality 0..*) is associated with 'ClassM::Class' (role 'ClassM_Class3', cardinality 0..*).
+'ClassM::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'ClassM::Operation' (role 'paramOf', cardinality 0..*).
+'ClassM::Classifier' (role 'ClassM_Classifier', cardinality 0..*) is associated with 'ClassM::Model' (role 'ClassM_Model', cardinality 0..*).
+'ClassM::StructuralFeature' (role 'features', cardinality 0..*) is associated with 'ClassM::Class' (role 'Class', cardinality 0..*).

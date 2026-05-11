@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'Expression' has no attributes.
+The class 'model::PrimaryExpression' has the following attributes: 'featureId' of type str.
+The class 'model::ForAllContextualExpression' has the following attributes: 'contextId' of type str.
+The class 'model::ExistsContextualExpression' has the following attributes: 'contextId' of type str.
+The class 'model::Equation' has no attributes.
+The class 'model::Implication' has no attributes.
+The class 'model::Conjunction' has no attributes.
+The class 'model::Expression' has no attributes.
+The class 'model::Disjunction' has no attributes.
+The class 'model::Negation' has no attributes.
+'model::Implication' is a specialization of 'Expression'.
+'model::PrimaryExpression' is a specialization of 'Expression'.
+'model::Negation' is a specialization of 'Expression'.
+'model::Conjunction' is a specialization of 'Expression'.
+'model::Disjunction' is a specialization of 'Expression'.
+'model::ForAllContextualExpression' is a specialization of 'Expression'.
+'model::ExistsContextualExpression' is a specialization of 'Expression'.
+'model::Equation' is a specialization of 'Expression'.
+'model::ExistsContextualExpression' (role 'model_ExistsContextualExpression', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression2', cardinality 0..*).
+'model::Expression' (role 'model_Expression17', cardinality 0..*) is associated with 'model::Disjunction' (role 'model_Disjunction16', cardinality 0..*).
+'model::Expression' (role 'model_Expression9', cardinality 0..*) is associated with 'model::Implication' (role 'model_Implication', cardinality 0..*).
+'model::Expression' (role 'model_Expression14', cardinality 0..*) is associated with 'model::Disjunction' (role 'model_Disjunction', cardinality 0..*).
+'model::Expression' (role 'model_Expression', cardinality 0..*) is associated with 'model::ForAllContextualExpression' (role 'model_ForAllContextualExpression', cardinality 0..*).
+'model::Expression' (role 'model_Expression24', cardinality 0..*) is associated with 'model::Negation' (role 'model_Negation', cardinality 0..*).
+'model::Expression' (role 'model_Expression19', cardinality 0..*) is associated with 'model::Conjunction' (role 'model_Conjunction', cardinality 0..*).
+'model::Equation' (role 'model_Equation', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression4', cardinality 0..*).
+'model::Expression' (role 'model_Expression7', cardinality 0..*) is associated with 'model::Equation' (role 'model_Equation6', cardinality 0..*).
+'model::Conjunction' (role 'model_Conjunction21', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression22', cardinality 0..*).
+'model::Implication' (role 'model_Implication11', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression12', cardinality 0..*).

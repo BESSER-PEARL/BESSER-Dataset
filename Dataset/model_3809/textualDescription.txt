@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'example::Audio' has no attributes.
+The class 'example::MP3' has no attributes.

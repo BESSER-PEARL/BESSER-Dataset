@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'mindmap::SubTopic' has no attributes.
+The class 'mindmap::MindMap' has the following attributes: 'title' of type str.
+The class 'mindmap::Topic' has the following attributes: 'marker' of type int; 'name' of type str.
+The class 'mindmap::CentralTopic' has no attributes.
+The class 'mindmap::MainTopic' has no attributes.
+The class 'Topic' has no attributes.
+'mindmap::CentralTopic' is a specialization of 'Topic'.
+'mindmap::SubTopic' is a specialization of 'Topic'.
+'mindmap::MainTopic' is a specialization of 'Topic'.
+'mindmap::SubTopic' (role 'mindmap_SubTopic5', cardinality 0..*) is associated with 'mindmap::SubTopic' (role 'mindmap_SubTopic7', cardinality 0..*).
+'mindmap::CentralTopic' (role 'mindmap_CentralTopic', cardinality 0..*) is associated with 'mindmap::MindMap' (role 'mindmap_MindMap', cardinality 0..*).
+'mindmap::CentralTopic' (role 'mindmap_CentralTopic2', cardinality 0..*) is associated with 'mindmap::MainTopic' (role 'mindmap_MainTopic', cardinality 0..*).
+'mindmap::SubTopic' (role 'mindmap_SubTopic', cardinality 0..*) is associated with 'mindmap::MainTopic' (role 'mindmap_MainTopic4', cardinality 0..*).

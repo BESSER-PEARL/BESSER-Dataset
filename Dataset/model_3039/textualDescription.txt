@@ -1,0 +1,50 @@
+The model has 14 class(es).
+The class 'dataflownet::StateMachine' has no attributes.
+The class 'dataflownet::StateMachineState' has no attributes.
+The class 'dataflownet::Process' has the following attributes: 'host' of type str.
+The class 'dataflownet::Node' has no attributes.
+The class 'dataflownet::NamedElement' has the following attributes: 'name' of type str.
+The class 'dataflownet::Type' has no attributes.
+The class 'dataflownet::StateMachineTransition' has the following attributes: 'priority' of type int.
+The class 'dataflownet::Channel' has no attributes.
+The class 'dataflownet::FiringRule' has the following attributes: 'compType' of type str.
+The class 'Node' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'dataflownet::DataflowSystem' has the following attributes: 'protocol' of type str.
+The class 'dataflownet::Token' has the following attributes: 'value' of type str.
+The class 'dataflownet::DataflowNet' has no attributes.
+The enumeration 'Comparation' has the following literals: 'Equal', 'Less', 'NotEqual', 'Greater'.
+The enumeration 'Protocol' has the following literals: 'Akka', 'Paho'.
+'dataflownet::DataflowSystem' is a specialization of 'NamedElement'.
+'dataflownet::StateMachine' is a specialization of 'Node'.
+'dataflownet::StateMachineTransition' is a specialization of 'NamedElement'.
+'dataflownet::Process' is a specialization of 'NamedElement'.
+'dataflownet::FiringRule' is a specialization of 'NamedElement'.
+'dataflownet::Channel' is a specialization of 'NamedElement'.
+'dataflownet::StateMachineState' is a specialization of 'NamedElement'.
+'dataflownet::DataflowNet' is a specialization of 'Node'.
+'dataflownet::Node' is a specialization of 'NamedElement'.
+'dataflownet::DataflowNet' (role 'dataflownet_DataflowNet15', cardinality 0..*) is associated with 'dataflownet::Process' (role 'dataflownet_Process', cardinality 0..*).
+'dataflownet::FiringRule' (role 'dataflownet_FiringRule33', cardinality 0..*) is associated with 'dataflownet::Channel' (role 'dataflownet_Channel34', cardinality 0..*).
+'dataflownet::Node' (role 'nodes', cardinality 0..*) is associated with 'dataflownet::DataflowNet' (role 'DataflowNet', cardinality 0..*).
+'dataflownet::DataflowSystem' (role 'dataflownet_DataflowSystem46', cardinality 0..*) is associated with 'dataflownet::Channel' (role 'dataflownet_Channel47', cardinality 0..*).
+'dataflownet::Channel' (role 'dataflownet_Channel', cardinality 0..*) is associated with 'dataflownet::DataflowNet' (role 'dataflownet_DataflowNet', cardinality 0..*).
+'dataflownet::StateMachine' (role 'dataflownet_StateMachine4', cardinality 0..*) is associated with 'dataflownet::FiringRule' (role 'dataflownet_FiringRule', cardinality 0..*).
+'dataflownet::FiringRule' (role 'dataflownet_FiringRule26', cardinality 0..*) is associated with 'dataflownet::StateMachineTransition' (role 'dataflownet_StateMachineTransition', cardinality 0..*).
+'dataflownet::Type' (role 'dataflownet_Type', cardinality 0..*) is associated with 'dataflownet::Channel' (role 'dataflownet_Channel31', cardinality 0..*).
+'dataflownet::StateMachineState' (role 'nodes20', cardinality 0..*) is associated with 'dataflownet::StateMachine' (role 'StateMachine', cardinality 0..*).
+'dataflownet::DataflowNet' (role 'dataflownet_DataflowNet44', cardinality 0..*) is associated with 'dataflownet::DataflowSystem' (role 'dataflownet_DataflowSystem43', cardinality 0..*).
+'dataflownet::Type' (role 'dataflownet_Type41', cardinality 0..*) is associated with 'dataflownet::DataflowSystem' (role 'dataflownet_DataflowSystem', cardinality 0..*).
+'dataflownet::StateMachineTransition' (role 'outputTransitions', cardinality 0..*) is associated with 'dataflownet::StateMachineState' (role 'StateMachineState22', cardinality 0..*).
+'dataflownet::StateMachineState' (role 'StateMachineState', cardinality 0..*) is associated with 'dataflownet::StateMachine' (role 'parent', cardinality 0..*).
+'dataflownet::StateMachineTransition' (role 'dataflownet_StateMachineTransition28', cardinality 0..*) is associated with 'dataflownet::FiringRule' (role 'dataflownet_FiringRule29', cardinality 0..*).
+'dataflownet::StateMachineTransition' (role 'StateMachineTransition', cardinality 0..*) is associated with 'dataflownet::StateMachineState' (role 'fromState', cardinality 0..*).
+'dataflownet::Token' (role 'dataflownet_Token38', cardinality 0..*) is associated with 'dataflownet::Type' (role 'dataflownet_Type39', cardinality 0..*).
+'dataflownet::DataflowSystem' (role 'dataflownet_DataflowSystem49', cardinality 0..*) is associated with 'dataflownet::Process' (role 'dataflownet_Process50', cardinality 0..*).
+'dataflownet::DataflowNet' (role 'dataflownet_DataflowNet7', cardinality 0..*) is associated with 'dataflownet::Channel' (role 'dataflownet_Channel8', cardinality 0..*).
+'dataflownet::StateMachineState' (role 'toState', cardinality 0..*) is associated with 'dataflownet::StateMachineTransition' (role 'StateMachineTransition18', cardinality 0..*).
+'dataflownet::Node' (role 'Node', cardinality 0..*) is associated with 'dataflownet::DataflowNet' (role 'parent10', cardinality 0..*).
+'dataflownet::Token' (role 'dataflownet_Token', cardinality 0..*) is associated with 'dataflownet::FiringRule' (role 'dataflownet_FiringRule36', cardinality 0..*).
+'dataflownet::StateMachineState' (role 'dataflownet_StateMachineState', cardinality 0..*) is associated with 'dataflownet::StateMachine' (role 'dataflownet_StateMachine', cardinality 0..*).
+'dataflownet::StateMachineTransition' (role 'inputTransitions', cardinality 0..*) is associated with 'dataflownet::StateMachineState' (role 'StateMachineState24', cardinality 0..*).
+'dataflownet::DataflowNet' (role 'dataflownet_DataflowNet12', cardinality 0..*) is associated with 'dataflownet::Channel' (role 'dataflownet_Channel13', cardinality 0..*).

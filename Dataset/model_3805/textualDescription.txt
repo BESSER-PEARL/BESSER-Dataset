@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'A::A2' has the following attributes: 'f' of type str.
+The class 'A::A3' has no attributes.
+The class 'A::A1' has no attributes.
+'A::A1' (role 'A_A1', cardinality 0..*) is associated with 'A::A2' (role 'A_A2', cardinality 0..*).

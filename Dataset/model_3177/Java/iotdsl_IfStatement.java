@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class iotdsl_IfStatement extends Expression {
+
+
+
+
+
+
+    private iotdsl_Expression iotdsl_expression;
+
+
+    public iotdsl_IfStatement(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public iotdsl_Expression getIotdsl_expression() {
+        return iotdsl_expression;
+    }
+
+    public void setIotdsl_expression(iotdsl_Expression iotdsl_expression) {
+        this.iotdsl_expression = iotdsl_expression;
+    }
+
+}

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Person' has no attributes.
+The class 'education::Course' has the following attributes: 'name' of type str.
+The class 'education::Student' has no attributes.
+The class 'education::Person' has the following attributes: 'firstname' of type str; 'lastname' of type str.
+The class 'education::Teacher' has no attributes.
+'education::Student' is a specialization of 'Person'.
+'education::Teacher' is a specialization of 'Person'.
+'education::Teacher' (role 'education_Teacher', cardinality 0..*) is associated with 'education::Course' (role 'education_Course2', cardinality 0..*).
+'education::Student' (role 'education_Student', cardinality 0..*) is associated with 'education::Course' (role 'education_Course', cardinality 0..*).

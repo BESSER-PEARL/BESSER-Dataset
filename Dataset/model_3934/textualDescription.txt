@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'document::FullEntry' has no attributes.
+The class 'Entry' has no attributes.
+The class 'document::Section' has no attributes.
+The class 'document::Entry' has the following attributes: 'text' of type str; 'isBold' of type bool; 'isItalic' of type bool.
+The class 'document::Table' has no attributes.
+The class 'document::BasicEntry' has no attributes.
+The class 'document::Chapter' has no attributes.
+'document::BasicEntry' is a specialization of 'Entry'.
+'document::FullEntry' is a specialization of 'Entry'.
+'document::Table' (role 'document_Table4', cardinality 0..*) is associated with 'document::Entry' (role 'document_Entry', cardinality 0..*).
+'document::Table' (role 'document_Table', cardinality 0..*) is associated with 'document::Section' (role 'document_Section2', cardinality 0..*).
+'document::Section' (role 'document_Section', cardinality 0..*) is associated with 'document::Chapter' (role 'document_Chapter', cardinality 0..*).

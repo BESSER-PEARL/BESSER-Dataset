@@ -1,0 +1,51 @@
+The model has 24 class(es).
+The class 'OO::Feature' has the following attributes: 'visibility' of type str.
+The class 'OO::Operation' has no attributes.
+The class 'Feature' has no attributes.
+The class 'OO::Classifier' has no attributes.
+The class 'OO::PackageableElement' has no attributes.
+The class 'OO::Package' has no attributes.
+The class 'OO::Datatype' has no attributes.
+The class 'OO::Annotation' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'AnnotatedElement' has no attributes.
+The class 'OO::ExternalClass' has no attributes.
+The class 'OO::Attribute' has no attributes.
+The class 'Class' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'OO::AnnotatedElement' has no attributes.
+The class 'OO::Parameter' has no attributes.
+The class 'OO::Reference' has no attributes.
+The class 'OO::Class' has the following attributes: 'isAbstract' of type str.
+The class 'OO::NamedElement' has the following attributes: 'name' of type str.
+The class 'StructuralFeature' has no attributes.
+The class 'OO::StructuralFeature' has the following attributes: 'isMany' of type str.
+The class 'Classifier' has no attributes.
+The class 'OO::Model' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Package' has no attributes.
+The enumeration 'VisibilityEnum' has the following literals: 'public', 'private'.
+'OO::Model' is a specialization of 'Package'.
+'OO::Classifier' is a specialization of 'PackageableElement'.
+'OO::StructuralFeature' is a specialization of 'Feature'.
+'OO::NamedElement' is a specialization of 'AnnotatedElement'.
+'OO::Package' is a specialization of 'PackageableElement'.
+'OO::Reference' is a specialization of 'StructuralFeature'.
+'OO::Attribute' is a specialization of 'StructuralFeature'.
+'OO::PackageableElement' is a specialization of 'NamedElement'.
+'OO::Feature' is a specialization of 'NamedElement'.
+'OO::ExternalClass' is a specialization of 'Class'.
+'OO::Parameter' is a specialization of 'NamedElement'.
+'OO::Datatype' is a specialization of 'Classifier'.
+'OO::Class' is a specialization of 'Classifier'.
+'OO::Operation' is a specialization of 'Feature'.
+'OO::Class' (role 'extendedBy', cardinality 0..*) is associated with 'OO::Class' (role 'Class', cardinality 0..*).
+'OO::Operation' (role 'owner13', cardinality 0..*) is associated with 'OO::Parameter' (role 'Parameter', cardinality 0..*).
+'OO::Class' (role 'Class7', cardinality 0..*) is associated with 'OO::Class' (role 'extends', cardinality 0..*).
+'OO::PackageableElement' (role 'contents', cardinality 0..*) is associated with 'OO::Package' (role 'Package', cardinality 0..*).
+'OO::Class' (role 'Class10', cardinality 0..*) is associated with 'OO::Feature' (role 'features', cardinality 0..*).
+'OO::Parameter' (role 'OO_Parameter', cardinality 0..*) is associated with 'OO::Classifier' (role 'OO_Classifier15', cardinality 0..*).
+'OO::Feature' (role 'OO_Feature', cardinality 0..*) is associated with 'OO::Classifier' (role 'OO_Classifier', cardinality 0..*).
+'OO::Annotation' (role 'OO_Annotation', cardinality 0..*) is associated with 'OO::AnnotatedElement' (role 'OO_AnnotatedElement', cardinality 0..*).
+'OO::Class' (role 'owner', cardinality 0..*) is associated with 'OO::Feature' (role 'Feature', cardinality 0..*).
+'OO::Operation' (role 'Operation', cardinality 0..*) is associated with 'OO::Parameter' (role 'parameters', cardinality 0..*).
+'OO::PackageableElement' (role 'PackageableElement', cardinality 0..*) is associated with 'OO::Package' (role 'package', cardinality 0..*).

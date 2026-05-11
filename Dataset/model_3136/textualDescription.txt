@@ -1,0 +1,30 @@
+The model has 13 class(es).
+The class 'ClassDiagram::Relationship' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ClassDiagram::Property' has the following attributes: 'upper' of type str; 'name' of type str; 'lower' of type int; 'aggregation' of type str.
+The class 'ClassDiagram::Class' has no attributes.
+The class 'ClassDiagram::Classifier' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::Association' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::Realization' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'ClassDiagram::DataType' has no attributes.
+The class 'ClassDiagram::Interface' has no attributes.
+The class 'ClassDiagram::Dependency' has no attributes.
+The class 'Dependency' has no attributes.
+The class 'ClassDiagram::Generalization' has no attributes.
+The enumeration 'AggregationKind' has the following literals: 'composite', 'none', 'shared'.
+'ClassDiagram::Interface' is a specialization of 'Classifier'.
+'ClassDiagram::Dependency' is a specialization of 'Relationship'.
+'ClassDiagram::Association' is a specialization of 'Relationship'.
+'ClassDiagram::Realization' is a specialization of 'Dependency'.
+'ClassDiagram::DataType' is a specialization of 'Classifier'.
+'ClassDiagram::Generalization' is a specialization of 'Relationship'.
+'ClassDiagram::Class' is a specialization of 'Classifier'.
+'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier16', cardinality 0..*) is associated with 'ClassDiagram::Dependency' (role 'ClassDiagram_Dependency15', cardinality 0..*).
+'ClassDiagram::Property' (role 'ClassDiagram_Property4', cardinality 0..*) is associated with 'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier', cardinality 0..*).
+'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier11', cardinality 0..*) is associated with 'ClassDiagram::Generalization' (role 'ClassDiagram_Generalization10', cardinality 0..*).
+'ClassDiagram::Class' (role 'ClassDiagram_Class', cardinality 0..*) is associated with 'ClassDiagram::Property' (role 'ClassDiagram_Property', cardinality 0..*).
+'ClassDiagram::Dependency' (role 'ClassDiagram_Dependency', cardinality 0..*) is associated with 'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier13', cardinality 0..*).
+'ClassDiagram::Classifier' (role 'ClassDiagram_Classifier8', cardinality 0..*) is associated with 'ClassDiagram::Generalization' (role 'ClassDiagram_Generalization', cardinality 0..*).
+'ClassDiagram::Property' (role 'ClassDiagram_Property6', cardinality 0..*) is associated with 'ClassDiagram::Association' (role 'ClassDiagram_Association', cardinality 0..*).
+'ClassDiagram::Interface' (role 'ClassDiagram_Interface', cardinality 0..*) is associated with 'ClassDiagram::Property' (role 'ClassDiagram_Property2', cardinality 0..*).

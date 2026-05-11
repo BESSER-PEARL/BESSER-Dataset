@@ -1,0 +1,27 @@
+The model has 9 class(es).
+The class 'dtmc::Module' has the following attributes: 'isAutonomous' of type bool.
+The class 'dtmc::Transition' has the following attributes: 'probability' of type str.
+The class 'dtmc::Node' has the following attributes: 'isFail' of type bool; 'isEnd' of type bool; 'isStart' of type bool.
+The class 'dtmc::Dtmc' has no attributes.
+The class 'Transition' has no attributes.
+The class 'dtmc::CallTransition' has no attributes.
+The class 'dtmc::StandardTransition' has no attributes.
+The class 'dtmc::SynchronizedTransition' has no attributes.
+The class 'dtmc::InvokedTransition' has no attributes.
+'dtmc::CallTransition' is a specialization of 'Transition'.
+'dtmc::StandardTransition' is a specialization of 'Transition'.
+'dtmc::SynchronizedTransition' is a specialization of 'Transition'.
+'dtmc::InvokedTransition' is a specialization of 'Transition'.
+'dtmc::Module' (role 'Module9', cardinality 0..*) is associated with 'dtmc::Transition' (role 'transitions', cardinality 0..*).
+'dtmc::SynchronizedTransition' (role 'synchedWith', cardinality 0..*) is associated with 'dtmc::SynchronizedTransition' (role 'SynchronizedTransition', cardinality 0..*).
+'dtmc::Module' (role 'Module', cardinality 0..*) is associated with 'dtmc::Node' (role 'nodes', cardinality 0..*).
+'dtmc::Module' (role 'dtmc_Module', cardinality 0..*) is associated with 'dtmc::Dtmc' (role 'dtmc_Dtmc', cardinality 0..*).
+'dtmc::Node' (role 'Node', cardinality 0..*) is associated with 'dtmc::Transition' (role 'outTransitions', cardinality 0..*).
+'dtmc::Node' (role '_from', cardinality 0..*) is associated with 'dtmc::Transition' (role 'Transition', cardinality 0..*).
+'dtmc::Node' (role 'Node7', cardinality 0..*) is associated with 'dtmc::Transition' (role 'inTransitions', cardinality 0..*).
+'dtmc::Node' (role '_to', cardinality 0..*) is associated with 'dtmc::Transition' (role 'Transition4', cardinality 0..*).
+'dtmc::Module' (role 'module', cardinality 0..*) is associated with 'dtmc::Node' (role 'Node16', cardinality 0..*).
+'dtmc::Transition' (role 'Transition19', cardinality 0..*) is associated with 'dtmc::Module' (role 'module18', cardinality 0..*).
+'dtmc::InvokedTransition' (role 'invokedTransition', cardinality 0..*) is associated with 'dtmc::CallTransition' (role 'CallTransition', cardinality 0..*).
+'dtmc::SynchronizedTransition' (role 'SynchronizedTransition14', cardinality 0..*) is associated with 'dtmc::SynchronizedTransition' (role 'syncWith', cardinality 0..*).
+'dtmc::CallTransition' (role 'callTransition', cardinality 0..*) is associated with 'dtmc::InvokedTransition' (role 'InvokedTransition', cardinality 0..*).

@@ -1,0 +1,50 @@
+The model has 20 class(es).
+The class 'featureDiagram::FeatureElement' has no attributes.
+The class 'FeatureElement' has no attributes.
+The class 'Operator' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'featureDiagram::Operator' has the following attributes: 'name' of type str.
+The class 'featureDiagram::ConstraintEdge' has no attributes.
+The class 'featureDiagram::Constraint' has no attributes.
+The class 'Feature' has no attributes.
+The class 'featureDiagram::Feature' has the following attributes: 'name' of type str; 'selected' of type bool.
+The class 'featureDiagram::PrimitiveFeature' has no attributes.
+The class 'featureDiagram::EObject' has no attributes.
+The class 'featureDiagram::Require' has no attributes.
+The class 'featureDiagram::Alternative' has no attributes.
+The class 'featureDiagram::Attribute' has the following attributes: 'value' of type str; 'type' of type str; 'name' of type str.
+The class 'featureDiagram::Card' has the following attributes: 'max' of type int; 'min' of type int.
+The class 'featureDiagram::Mutex' has no attributes.
+The class 'featureDiagram::FeatureDiagram' has the following attributes: 'graphTypeTree' of type bool.
+The class 'featureDiagram::Opt' has no attributes.
+The class 'featureDiagram::Mandatory' has no attributes.
+The class 'featureDiagram::Or' has no attributes.
+'featureDiagram::Feature' is a specialization of 'FeatureElement'.
+'featureDiagram::Mutex' is a specialization of 'Constraint'.
+'featureDiagram::Alternative' is a specialization of 'Operator'.
+'featureDiagram::Attribute' is a specialization of 'FeatureElement'.
+'featureDiagram::Card' is a specialization of 'Operator'.
+'featureDiagram::Operator' is a specialization of 'FeatureElement'.
+'featureDiagram::Opt' is a specialization of 'Operator'.
+'featureDiagram::Require' is a specialization of 'Constraint'.
+'featureDiagram::Or' is a specialization of 'Operator'.
+'featureDiagram::ConstraintEdge' is a specialization of 'FeatureElement'.
+'featureDiagram::FeatureDiagram' is a specialization of 'FeatureElement'.
+'featureDiagram::PrimitiveFeature' is a specialization of 'Feature'.
+'featureDiagram::Mandatory' is a specialization of 'Operator'.
+'featureDiagram::Constraint' is a specialization of 'FeatureElement'.
+'featureDiagram::ConstraintEdge' (role 'featureDiagram_ConstraintEdge18', cardinality 0..*) is associated with 'featureDiagram::Feature' (role 'featureDiagram_Feature19', cardinality 0..*).
+'featureDiagram::FeatureDiagram' (role 'owningFeatureDiagram', cardinality 0..*) is associated with 'featureDiagram::Feature' (role 'Feature', cardinality 0..*).
+'featureDiagram::Feature' (role 'featureDiagram_Feature15', cardinality 0..*) is associated with 'featureDiagram::ConstraintEdge' (role 'featureDiagram_ConstraintEdge14', cardinality 0..*).
+'featureDiagram::Feature' (role 'Feature23', cardinality 0..*) is associated with 'featureDiagram::Operator' (role 'owningOperator', cardinality 0..*).
+'featureDiagram::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'featureDiagram::ConstraintEdge' (role 'owningCE', cardinality 0..*).
+'featureDiagram::ConstraintEdge' (role 'featureDiagram_ConstraintEdge', cardinality 0..*) is associated with 'featureDiagram::FeatureDiagram' (role 'featureDiagram_FeatureDiagram3', cardinality 0..*).
+'featureDiagram::Feature' (role 'owningFeature7', cardinality 0..*) is associated with 'featureDiagram::Attribute' (role 'Attribute', cardinality 0..*).
+'featureDiagram::Feature' (role 'featureDiagram_Feature12', cardinality 0..*) is associated with 'featureDiagram::EObject' (role 'featureDiagram_EObject', cardinality 0..*).
+'featureDiagram::Feature' (role 'Feature21', cardinality 0..*) is associated with 'featureDiagram::Operator' (role 'operator', cardinality 0..*).
+'featureDiagram::Operator' (role 'Operator10', cardinality 0..*) is associated with 'featureDiagram::Feature' (role 'features9', cardinality 0..*).
+'featureDiagram::Feature' (role 'Feature26', cardinality 0..*) is associated with 'featureDiagram::Attribute' (role 'attributes', cardinality 0..*).
+'featureDiagram::Feature' (role 'featureDiagram_Feature', cardinality 0..*) is associated with 'featureDiagram::FeatureDiagram' (role 'featureDiagram_FeatureDiagram', cardinality 0..*).
+'featureDiagram::Constraint' (role 'constraint', cardinality 0..*) is associated with 'featureDiagram::ConstraintEdge' (role 'ConstraintEdge', cardinality 0..*).
+'featureDiagram::Feature' (role 'owningFeature', cardinality 0..*) is associated with 'featureDiagram::Operator' (role 'Operator', cardinality 0..*).
+'featureDiagram::FeatureDiagram' (role 'FeatureDiagram', cardinality 0..*) is associated with 'featureDiagram::Feature' (role 'features', cardinality 0..*).

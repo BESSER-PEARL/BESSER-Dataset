@@ -1,0 +1,66 @@
+The model has 21 class(es).
+The class 'coCoMM::AttributeTypeElement' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'coCoMM::DecisionRule' has the following attributes: 'type' of type str.
+The class 'coCoMM::FeatureAttribute' has the following attributes: 'name' of type str.
+The class 'coCoMM::FeatureModel' has the following attributes: 'name' of type str; 'isDomain' of type bool.
+The class 'coCoMM::CrossTreeConstraint' has no attributes.
+The class 'DecisionRule' has no attributes.
+The class 'coCoMM::FeatureAttributeElement' has the following attributes: 'value' of type str.
+The class 'coCoMM::CoCo' has no attributes.
+The class 'coCoMM::Feature' has the following attributes: 'id' of type str; 'abstract' of type bool; 'name' of type str.
+The class 'coCoMM::AttributeType' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'coCoMM::Project' has the following attributes: 'date' of type date; 'name' of type str; 'target' of type bool.
+The class 'coCoMM::HardLimitDR' has no attributes.
+The class 'coCoMM::CMConstraintExpression' has the following attributes: 'op' of type str.
+The class 'coCoMM::CrossModelConstraint' has no attributes.
+The class 'coCoMM::SelectionStateDR' has the following attributes: 'state' of type str.
+The class 'coCoMM::Config' has the following attributes: 'selected' of type bool; 'type' of type str.
+The class 'coCoMM::TreeConstraint' has the following attributes: 'type' of type str.
+The class 'coCoMM::HardLimitDRExpression' has the following attributes: 'value' of type str; 'op' of type str.
+The class 'coCoMM::Stakeholder' has the following attributes: 'name' of type str; 'job' of type str.
+The class 'coCoMM::OptimizationDR' has the following attributes: 'funct' of type str.
+The class 'coCoMM::CTConstraintExpression' has the following attributes: 'op' of type str.
+The enumeration 'CMConstraintType' has the following literals: 'or_', 'and_', 'implies', 'not_'.
+The enumeration 'ConfigType' has the following literals: 'output', 'input'.
+The enumeration 'DRHardLimitOp' has the following literals: 'geq', 'lt', 'leq', 'eq', 'gt'.
+The enumeration 'TreeConstraintType' has the following literals: 'Optional', 'Mandatory', 'Or', 'Alternative'.
+The enumeration 'DataType' has the following literals: 'boolean', 'double', 'String', 'int'.
+The enumeration 'DRType' has the following literals: 'selectionState', 'hardLimit'.
+The enumeration 'DROptimizationOp' has the following literals: 'maximize', 'minimize'.
+The enumeration 'CTConstraintType' has the following literals: 'not_', 'and_', 'implies', 'or_'.
+The enumeration 'DRSelectionStateType' has the following literals: 'forbidden', 'preferred', 'mandatory'.
+'coCoMM::OptimizationDR' is a specialization of 'DecisionRule'.
+'coCoMM::HardLimitDR' is a specialization of 'DecisionRule'.
+'coCoMM::SelectionStateDR' is a specialization of 'DecisionRule'.
+'coCoMM::Feature' (role 'coCoMM_Feature', cardinality 0..*) is associated with 'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel', cardinality 0..*).
+'coCoMM::Project' (role 'coCoMM_Project', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo37', cardinality 0..*).
+'coCoMM::OptimizationDR' (role 'coCoMM_OptimizationDR', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType52', cardinality 0..*).
+'coCoMM::CrossTreeConstraint' (role 'coCoMM_CrossTreeConstraint26', cardinality 0..*) is associated with 'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression', cardinality 0..*).
+'coCoMM::Config' (role 'coCoMM_Config59', cardinality 0..*) is associated with 'coCoMM::Stakeholder' (role 'coCoMM_Stakeholder60', cardinality 0..*).
+'coCoMM::TreeConstraint' (role 'coCoMM_TreeConstraint11', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature12', cardinality 0..*).
+'coCoMM::CrossModelConstraint' (role 'coCoMM_CrossModelConstraint41', cardinality 0..*) is associated with 'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel43', cardinality 0..*) is associated with 'coCoMM::SelectionStateDR' (role 'coCoMM_SelectionStateDR', cardinality 0..*).
+'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression67', cardinality 0..*) is associated with 'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression69', cardinality 0..*).
+'coCoMM::AttributeType' (role 'coCoMM_AttributeType', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType13', cardinality 0..*).
+'coCoMM::SelectionStateDR' (role 'coCoMM_SelectionStateDR45', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature46', cardinality 0..*).
+'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression71', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature72', cardinality 0..*).
+'coCoMM::CoCo' (role 'coCoMM_CoCo32', cardinality 0..*) is associated with 'coCoMM::DecisionRule' (role 'coCoMM_DecisionRule', cardinality 0..*).
+'coCoMM::CoCo' (role 'coCoMM_CoCo34', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType35', cardinality 0..*).
+'coCoMM::Stakeholder' (role 'coCoMM_Stakeholder', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo39', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature66', cardinality 0..*) is associated with 'coCoMM::CTConstraintExpression' (role 'coCoMM_CTConstraintExpression65', cardinality 0..*).
+'coCoMM::HardLimitDR' (role 'coCoMM_HardLimitDR49', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType50', cardinality 0..*).
+'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute24', cardinality 0..*) is associated with 'coCoMM::FeatureAttributeElement' (role 'coCoMM_FeatureAttributeElement', cardinality 0..*).
+'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression73', cardinality 0..*) is associated with 'coCoMM::CMConstraintExpression' (role 'coCoMM_CMConstraintExpression75', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature63', cardinality 0..*) is associated with 'coCoMM::Config' (role 'coCoMM_Config62', cardinality 0..*).
+'coCoMM::Config' (role 'coCoMM_Config', cardinality 0..*) is associated with 'coCoMM::Project' (role 'coCoMM_Project57', cardinality 0..*).
+'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute19', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType18', cardinality 0..*).
+'coCoMM::DecisionRule' (role 'coCoMM_DecisionRule55', cardinality 0..*) is associated with 'coCoMM::Project' (role 'coCoMM_Project54', cardinality 0..*).
+'coCoMM::TreeConstraint' (role 'coCoMM_TreeConstraint', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature4', cardinality 0..*).
+'coCoMM::AttributeTypeElement' (role 'coCoMM_AttributeTypeElement', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType16', cardinality 0..*).
+'coCoMM::Feature' (role 'coCoMM_Feature9', cardinality 0..*) is associated with 'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute', cardinality 0..*).
+'coCoMM::CrossModelConstraint' (role 'coCoMM_CrossModelConstraint', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo30', cardinality 0..*).
+'coCoMM::HardLimitDR' (role 'coCoMM_HardLimitDR', cardinality 0..*) is associated with 'coCoMM::HardLimitDRExpression' (role 'coCoMM_HardLimitDRExpression', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel28', cardinality 0..*) is associated with 'coCoMM::CoCo' (role 'coCoMM_CoCo', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel2', cardinality 0..*) is associated with 'coCoMM::CrossTreeConstraint' (role 'coCoMM_CrossTreeConstraint', cardinality 0..*).
+'coCoMM::FeatureAttribute' (role 'coCoMM_FeatureAttribute21', cardinality 0..*) is associated with 'coCoMM::AttributeType' (role 'coCoMM_AttributeType22', cardinality 0..*).
+'coCoMM::FeatureModel' (role 'coCoMM_FeatureModel7', cardinality 0..*) is associated with 'coCoMM::Feature' (role 'coCoMM_Feature6', cardinality 0..*).

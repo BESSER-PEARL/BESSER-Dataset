@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Gwandalff/Self-Adaptable_Virtual_Machine/selfadaptable-minijava/selfadaptable-minijava.lang.visitor/visitor-comp/miniJava.ecore

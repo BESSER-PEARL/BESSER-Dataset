@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'sql::Database' has the following attributes: 'TypeDB' of type str; 'name' of type str.
+The class 'sql::Column' has the following attributes: 'PrimaryKey' of type bool; 'name' of type str; 'type' of type str.
+The class 'sql::Table' has the following attributes: 'name' of type str.
+'sql::Column' (role 'sql_Column', cardinality 0..*) is associated with 'sql::Table' (role 'sql_Table2', cardinality 0..*).
+'sql::Table' (role 'sql_Table', cardinality 0..*) is associated with 'sql::Database' (role 'sql_Database', cardinality 0..*).

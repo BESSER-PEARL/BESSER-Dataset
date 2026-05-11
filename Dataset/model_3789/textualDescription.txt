@@ -1,0 +1,25 @@
+The model has 7 class(es).
+The class 'testmodel::TestElementToTestElementMap' has no attributes.
+The class 'testmodel::StringToTestElementMap' has the following attributes: 'key' of type str.
+The class 'testmodel::TestElement' has the following attributes: 'description' of type str; 'name' of type str; 'strings' of type str.
+The class 'EObject' has no attributes.
+The class 'testmodel::TestElementContainer' has no attributes.
+The class 'testmodel::StringToStringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'testmodel::TestElementToStringMap' has the following attributes: 'value' of type str.
+'testmodel::TestElement' is a specialization of 'EObject'.
+'testmodel::TestElement' (role 'testmodel_TestElement19', cardinality 0..*) is associated with 'testmodel::TestElementToTestElementMap' (role 'testmodel_TestElementToTestElementMap', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement23', cardinality 0..*) is associated with 'testmodel::TestElementToStringMap' (role 'testmodel_TestElementToStringMap', cardinality 0..*).
+'testmodel::TestElementContainer' (role 'container', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'TestElement', cardinality 0..*).
+'testmodel::TestElementToTestElementMap' (role 'testmodel_TestElementToTestElementMap34', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement35', cardinality 0..*).
+'testmodel::TestElementToStringMap' (role 'testmodel_TestElementToStringMap28', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement29', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement0', cardinality 0..*).
+'testmodel::TestElementContainer' (role 'TestElementContainer', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'elements', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement32', cardinality 0..*) is associated with 'testmodel::TestElementToTestElementMap' (role 'testmodel_TestElementToTestElementMap31', cardinality 0..*).
+'testmodel::StringToTestElementMap' (role 'testmodel_StringToTestElementMap37', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement38', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement10', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement8', cardinality 0..*).
+'testmodel::StringToStringMap' (role 'testmodel_StringToStringMap', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement21', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement5', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement7', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement13', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement11', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement25', cardinality 0..*) is associated with 'testmodel::StringToTestElementMap' (role 'testmodel_StringToTestElementMap', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement4', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement2', cardinality 0..*).
+'testmodel::TestElement' (role 'testmodel_TestElement14', cardinality 0..*) is associated with 'testmodel::TestElement' (role 'testmodel_TestElement16', cardinality 0..*).

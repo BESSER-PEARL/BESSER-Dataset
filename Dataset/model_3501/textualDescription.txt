@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'sourcecode::Assignment' has no attributes.
+The class 'Statement' has no attributes.
+The class 'sourcecode::Statement' has the following attributes: 'id' of type str.
+The class 'sourcecode::While' has no attributes.
+The class 'sourcecode::Decision' has no attributes.
+The class 'sourcecode::Program' has no attributes.
+'sourcecode::While' is a specialization of 'Statement'.
+'sourcecode::Assignment' is a specialization of 'Statement'.
+'sourcecode::Decision' is a specialization of 'Statement'.
+'sourcecode::While' (role 'sourcecode_While', cardinality 0..*) is associated with 'sourcecode::Statement' (role 'sourcecode_Statement8', cardinality 0..*).
+'sourcecode::Statement' (role 'sourcecode_Statement0', cardinality 0..*) is associated with 'sourcecode::Statement' (role 'sourcecode_Statement', cardinality 0..*).
+'sourcecode::While' (role 'sourcecode_While10', cardinality 0..*) is associated with 'sourcecode::Statement' (role 'sourcecode_Statement11', cardinality 0..*).
+'sourcecode::Program' (role 'sourcecode_Program', cardinality 0..*) is associated with 'sourcecode::Statement' (role 'sourcecode_Statement13', cardinality 0..*).
+'sourcecode::Decision' (role 'sourcecode_Decision', cardinality 0..*) is associated with 'sourcecode::Statement' (role 'sourcecode_Statement3', cardinality 0..*).
+'sourcecode::Statement' (role 'sourcecode_Statement6', cardinality 0..*) is associated with 'sourcecode::Decision' (role 'sourcecode_Decision5', cardinality 0..*).

@@ -1,0 +1,84 @@
+The model has 42 class(es).
+The class 'giraffeDSL::IntFeature' has the following attributes: 'name' of type str.
+The class 'giraffeDSL::Type' has the following attributes: 'name' of type str.
+The class 'giraffeDSL::Action' has no attributes.
+The class 'giraffeDSL::CloudUserType' has no attributes.
+The class 'giraffeDSL::CloudProviderType' has the following attributes: 'many' of type str; 'name' of type str.
+The class 'giraffeDSL::DeployAppSlaveMethodType' has the following attributes: 'many' of type str; 'type' of type str; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'giraffeDSL::ScriptType' has no attributes.
+The class 'giraffeDSL::CloudCredentialType' has the following attributes: 'many' of type str; 'name' of type str; 'type' of type str.
+The class 'giraffeDSL::StressClassType' has the following attributes: 'many' of type str; 'type' of type str; 'name' of type str.
+The class 'giraffeDSL::DeployAppClassType' has the following attributes: 'type' of type str; 'name' of type str; 'many' of type str.
+The class 'giraffeDSL::DeployApp' has no attributes.
+The class 'giraffeDSL::StressRangeType' has the following attributes: 'name' of type str; 'many' of type str; 'type' of type str.
+The class 'giraffeDSL::ActionMethodType' has the following attributes: 'type' of type str; 'many' of type str; 'name' of type str.
+The class 'giraffeDSL::Stress' has no attributes.
+The class 'giraffeDSL::ActionClassType' has the following attributes: 'name' of type str; 'type' of type str; 'many' of type str.
+The class 'giraffeDSL::Features' has the following attributes: 'name' of type str.
+The class 'giraffeDSL::VirtualMachine' has no attributes.
+The class 'giraffeDSL::Create' has no attributes.
+The class 'giraffeDSL::CloudPasswordType' has no attributes.
+The class 'giraffeDSL::InitIncrementFeature' has the following attributes: 'many' of type str; 'name' of type str; 'type' of type int.
+The class 'giraffeDSL::DeployType' has no attributes.
+The class 'giraffeDSL::InitMachinesFeature' has the following attributes: 'many' of type str; 'type' of type int; 'name' of type str.
+The class 'giraffeDSL::DeployAppMasterMethodType' has the following attributes: 'many' of type str; 'name' of type str; 'type' of type str.
+The class 'giraffeDSL::ActionRangeType' has the following attributes: 'type' of type str; 'name' of type str; 'many' of type str.
+The class 'giraffeDSL::StressMethodType' has the following attributes: 'name' of type str; 'type' of type str; 'many' of type str.
+The class 'giraffeDSL::CloudType' has the following attributes: 'type' of type str; 'many' of type str; 'name' of type str.
+The class 'giraffeDSL::MonitorRangeType' has the following attributes: 'type' of type str; 'name' of type str; 'many' of type str.
+The class 'giraffeDSL::VirtualMachineFeature' has the following attributes: 'name' of type str; 'many' of type str.
+The class 'giraffeDSL::CloudOptionalTypes' has the following attributes: 'type' of type str; 'name' of type str; 'many' of type str.
+The class 'giraffeDSL::Deploy' has no attributes.
+The class 'giraffeDSL::DeployAppFeature' has the following attributes: 'name' of type str; 'many' of type str.
+The class 'CloudOptionalTypes' has no attributes.
+The class 'giraffeDSL::VirtualMachineTypeFeature' has the following attributes: 'many' of type str; 'name' of type str; 'type' of type str.
+The class 'giraffeDSL::DeployRangeType' has the following attributes: 'many' of type str; 'type' of type str; 'name' of type str.
+The class 'giraffeDSL::DeployTypeFeature' has the following attributes: 'many' of type str; 'name' of type str.
+The class 'giraffeDSL::GeoZoneType' has no attributes.
+The class 'giraffeDSL::MgmAddressType' has the following attributes: 'name' of type str; 'many' of type str; 'type' of type str.
+The class 'giraffeDSL::Monitor' has no attributes.
+The class 'giraffeDSL::DomainModel' has no attributes.
+The class 'giraffeDSL::CloudProvider' has no attributes.
+The class 'giraffeDSL::MonitoringType' has the following attributes: 'name' of type str; 'many' of type str; 'type' of type str.
+'giraffeDSL::VirtualMachine' is a specialization of 'Type'.
+'giraffeDSL::Action' is a specialization of 'Type'.
+'giraffeDSL::Deploy' is a specialization of 'Type'.
+'giraffeDSL::CloudPasswordType' is a specialization of 'CloudOptionalTypes'.
+'giraffeDSL::CloudUserType' is a specialization of 'CloudOptionalTypes'.
+'giraffeDSL::CloudProvider' is a specialization of 'Type'.
+'giraffeDSL::GeoZoneType' is a specialization of 'CloudOptionalTypes'.
+'giraffeDSL::ScriptType' is a specialization of 'CloudOptionalTypes'.
+'giraffeDSL::Monitor' is a specialization of 'Type'.
+'giraffeDSL::DeployApp' is a specialization of 'Type'.
+'giraffeDSL::DeployType' is a specialization of 'Type'.
+'giraffeDSL::Stress' is a specialization of 'Type'.
+'giraffeDSL::Create' is a specialization of 'Type'.
+'giraffeDSL::MgmAddressType' (role 'giraffeDSL_MgmAddressType', cardinality 0..*) is associated with 'giraffeDSL::CloudProvider' (role 'giraffeDSL_CloudProvider17', cardinality 0..*).
+'giraffeDSL::ActionRangeType' (role 'giraffeDSL_ActionRangeType', cardinality 0..*) is associated with 'giraffeDSL::Action' (role 'giraffeDSL_Action', cardinality 0..*).
+'giraffeDSL::Deploy' (role 'giraffeDSL_Deploy24', cardinality 0..*) is associated with 'giraffeDSL::DeployTypeFeature' (role 'giraffeDSL_DeployTypeFeature', cardinality 0..*).
+'giraffeDSL::VirtualMachineFeature' (role 'giraffeDSL_VirtualMachineFeature7', cardinality 0..*) is associated with 'giraffeDSL::VirtualMachine' (role 'giraffeDSL_VirtualMachine', cardinality 0..*).
+'giraffeDSL::ActionClassType' (role 'giraffeDSL_ActionClassType', cardinality 0..*) is associated with 'giraffeDSL::Action' (role 'giraffeDSL_Action47', cardinality 0..*).
+'giraffeDSL::DeployApp' (role 'giraffeDSL_DeployApp36', cardinality 0..*) is associated with 'giraffeDSL::DeployAppSlaveMethodType' (role 'giraffeDSL_DeployAppSlaveMethodType', cardinality 0..*).
+'giraffeDSL::MonitorRangeType' (role 'giraffeDSL_MonitorRangeType', cardinality 0..*) is associated with 'giraffeDSL::Monitor' (role 'giraffeDSL_Monitor', cardinality 0..*).
+'giraffeDSL::VirtualMachine' (role 'giraffeDSL_VirtualMachine11', cardinality 0..*) is associated with 'giraffeDSL::CloudProviderType' (role 'giraffeDSL_CloudProviderType', cardinality 0..*).
+'giraffeDSL::StressClassType' (role 'giraffeDSL_StressClassType', cardinality 0..*) is associated with 'giraffeDSL::Stress' (role 'giraffeDSL_Stress42', cardinality 0..*).
+'giraffeDSL::Action' (role 'giraffeDSL_Action49', cardinality 0..*) is associated with 'giraffeDSL::ActionMethodType' (role 'giraffeDSL_ActionMethodType', cardinality 0..*).
+'giraffeDSL::CloudProvider' (role 'giraffeDSL_CloudProvider', cardinality 0..*) is associated with 'giraffeDSL::CloudProviderType' (role 'giraffeDSL_CloudProviderType13', cardinality 0..*).
+'giraffeDSL::MonitoringType' (role 'giraffeDSL_MonitoringType', cardinality 0..*) is associated with 'giraffeDSL::Monitor' (role 'giraffeDSL_Monitor39', cardinality 0..*).
+'giraffeDSL::DomainModel' (role 'giraffeDSL_DomainModel', cardinality 0..*) is associated with 'giraffeDSL::Type' (role 'giraffeDSL_Type', cardinality 0..*).
+'giraffeDSL::Create' (role 'giraffeDSL_Create3', cardinality 0..*) is associated with 'giraffeDSL::InitMachinesFeature' (role 'giraffeDSL_InitMachinesFeature', cardinality 0..*).
+'giraffeDSL::CloudCredentialType' (role 'giraffeDSL_CloudCredentialType', cardinality 0..*) is associated with 'giraffeDSL::CloudProvider' (role 'giraffeDSL_CloudProvider19', cardinality 0..*).
+'giraffeDSL::Stress' (role 'giraffeDSL_Stress', cardinality 0..*) is associated with 'giraffeDSL::StressRangeType' (role 'giraffeDSL_StressRangeType', cardinality 0..*).
+'giraffeDSL::VirtualMachine' (role 'giraffeDSL_VirtualMachine9', cardinality 0..*) is associated with 'giraffeDSL::VirtualMachineTypeFeature' (role 'giraffeDSL_VirtualMachineTypeFeature', cardinality 0..*).
+'giraffeDSL::Create' (role 'giraffeDSL_Create', cardinality 0..*) is associated with 'giraffeDSL::VirtualMachineFeature' (role 'giraffeDSL_VirtualMachineFeature', cardinality 0..*).
+'giraffeDSL::DeployApp' (role 'giraffeDSL_DeployApp', cardinality 0..*) is associated with 'giraffeDSL::DeployAppFeature' (role 'giraffeDSL_DeployAppFeature26', cardinality 0..*).
+'giraffeDSL::InitIncrementFeature' (role 'giraffeDSL_InitIncrementFeature', cardinality 0..*) is associated with 'giraffeDSL::Create' (role 'giraffeDSL_Create5', cardinality 0..*).
+'giraffeDSL::CloudOptionalTypes' (role 'giraffeDSL_CloudOptionalTypes', cardinality 0..*) is associated with 'giraffeDSL::CloudProvider' (role 'giraffeDSL_CloudProvider21', cardinality 0..*).
+'giraffeDSL::CloudType' (role 'giraffeDSL_CloudType', cardinality 0..*) is associated with 'giraffeDSL::CloudProvider' (role 'giraffeDSL_CloudProvider15', cardinality 0..*).
+'giraffeDSL::DeployAppClassType' (role 'giraffeDSL_DeployAppClassType', cardinality 0..*) is associated with 'giraffeDSL::DeployApp' (role 'giraffeDSL_DeployApp32', cardinality 0..*).
+'giraffeDSL::DeployAppFeature' (role 'giraffeDSL_DeployAppFeature', cardinality 0..*) is associated with 'giraffeDSL::Deploy' (role 'giraffeDSL_Deploy', cardinality 0..*).
+'giraffeDSL::DeployTypeFeature' (role 'giraffeDSL_DeployTypeFeature28', cardinality 0..*) is associated with 'giraffeDSL::DeployType' (role 'giraffeDSL_DeployType', cardinality 0..*).
+'giraffeDSL::Stress' (role 'giraffeDSL_Stress44', cardinality 0..*) is associated with 'giraffeDSL::StressMethodType' (role 'giraffeDSL_StressMethodType', cardinality 0..*).
+'giraffeDSL::DeployType' (role 'giraffeDSL_DeployType30', cardinality 0..*) is associated with 'giraffeDSL::DeployRangeType' (role 'giraffeDSL_DeployRangeType', cardinality 0..*).
+'giraffeDSL::DeployApp' (role 'giraffeDSL_DeployApp34', cardinality 0..*) is associated with 'giraffeDSL::DeployAppMasterMethodType' (role 'giraffeDSL_DeployAppMasterMethodType', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Parent' has no attributes.
+The class 'testoperationbody::Main' has the following attributes: 'listint' of type int; 'singlebool' of type bool.
+The class 'testoperationbody::ConceptA' has no attributes.
+The class 'testoperationbody::Parent' has no attributes.
+The class 'testoperationbody::ChildA' has the following attributes: 'value' of type str.
+The class 'testoperationbody::ChildB' has no attributes.
+The enumeration 'EnumA' has the following literals: 'CASE1', 'CASE2'.
+'testoperationbody::ChildB' is a specialization of 'Parent'.
+'testoperationbody::ChildA' is a specialization of 'Parent'.
+'testoperationbody::Main' (role 'testoperationbody_Main5', cardinality 0..*) is associated with 'testoperationbody::Parent' (role 'testoperationbody_Parent', cardinality 0..*).
+'testoperationbody::ConceptA' (role 'testoperationbody_ConceptA3', cardinality 0..*) is associated with 'testoperationbody::Main' (role 'testoperationbody_Main2', cardinality 0..*).
+'testoperationbody::Main' (role 'testoperationbody_Main', cardinality 0..*) is associated with 'testoperationbody::ConceptA' (role 'testoperationbody_ConceptA', cardinality 0..*).

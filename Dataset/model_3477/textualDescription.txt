@@ -1,0 +1,22 @@
+The model has 6 class(es).
+The class 'feature::Annotation' has no attributes.
+The class 'feature::FeatureModel' has the following attributes: 'name' of type str.
+The class 'feature::Attribute' has the following attributes: 'name' of type str; 'value' of type str; 'type' of type str.
+The class 'feature::Group' has the following attributes: 'minCardinality' of type int; 'maxCardinality' of type int.
+The class 'feature::Feature' has the following attributes: 'minCardinality' of type int; 'maxCardinality' of type int; 'name' of type str.
+The class 'feature::Constraint' has the following attributes: 'language' of type str; 'expression' of type str.
+'feature::Feature' (role 'feature16', cardinality 0..*) is associated with 'feature::Annotation' (role 'Annotation', cardinality 0..*).
+'feature::Feature' (role 'Feature26', cardinality 0..*) is associated with 'feature::Annotation' (role 'annotations', cardinality 0..*).
+'feature::FeatureModel' (role 'FeatureModel7', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'children', cardinality 0..*).
+'feature::Feature' (role 'Feature20', cardinality 0..*) is associated with 'feature::Group' (role 'parentGroup', cardinality 0..*).
+'feature::Feature' (role 'Feature24', cardinality 0..*) is associated with 'feature::Attribute' (role 'attributes', cardinality 0..*).
+'feature::Feature' (role 'childFeatures', cardinality 0..*) is associated with 'feature::Group' (role 'Group14', cardinality 0..*).
+'feature::Feature' (role 'feature_Feature', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'feature_FeatureModel2', cardinality 0..*).
+'feature::Feature' (role 'Feature22', cardinality 0..*) is associated with 'feature::Constraint' (role 'constraints', cardinality 0..*).
+'feature::Feature' (role 'parentFeature', cardinality 0..*) is associated with 'feature::Group' (role 'Group', cardinality 0..*).
+'feature::Feature' (role 'Feature', cardinality 0..*) is associated with 'feature::Group' (role 'groups', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel10', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'feature_FeatureModel8', cardinality 0..*).
+'feature::FeatureModel' (role 'feature_FeatureModel', cardinality 0..*) is associated with 'feature::Constraint' (role 'feature_Constraint', cardinality 0..*).
+'feature::Constraint' (role 'Constraint', cardinality 0..*) is associated with 'feature::Feature' (role 'constrainedFeatures', cardinality 0..*).
+'feature::FeatureModel' (role 'parent', cardinality 0..*) is associated with 'feature::FeatureModel' (role 'FeatureModel', cardinality 0..*).
+'feature::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'feature::Feature' (role 'feature', cardinality 0..*).

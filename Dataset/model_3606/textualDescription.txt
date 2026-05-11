@@ -1,0 +1,186 @@
+The model has 81 class(es).
+The class 'gremlin::VariableDeclaration' has the following attributes: 'name' of type str; 'final' of type bool.
+The class 'gremlin::TransformStep' has no attributes.
+The class 'gremlin::ContainsCall' has no attributes.
+The class 'Expression' has no attributes.
+The class 'gremlin::CustomMethodCall' has the following attributes: 'name' of type str.
+The class 'gremlin::Expression' has no attributes.
+The class 'gremlin::IndexCall' has the following attributes: 'indexProperty' of type str; 'indexQuery' of type str; 'indexName' of type str.
+The class 'gremlin::AffectationExpression' has no attributes.
+The class 'gremlin::GatherStep' has no attributes.
+The class 'gremlin::FillStep' has no attributes.
+The class 'gremlin::GreaterExpression' has no attributes.
+The class 'gremlin::NotExpression' has no attributes.
+The class 'gremlin::Closure' has no attributes.
+The class 'gremlin::GreaterOrEqualExpression' has no attributes.
+The class 'gremlin::ExceptStep' has no attributes.
+The class 'gremlin::NextCall' has no attributes.
+The class 'gremlin::InEStep' has the following attributes: 'relationshipName' of type str.
+The class 'gremlin::Instruction' has no attributes.
+The class 'gremlin::NullLiteral' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'TraversalElement' has no attributes.
+The class 'gremlin::OutEStep' has the following attributes: 'relationshipName' of type str.
+The class 'gremlin::CountCall' has no attributes.
+The class 'VariableAccess' has no attributes.
+The class 'MethodCall' has no attributes.
+The class 'gremlin::OutVStep' has no attributes.
+The class 'Step' has no attributes.
+The class 'gremlin::ReturnStatement' has the following attributes: 'value' of type str.
+The class 'gremlin::Step' has no attributes.
+The class 'gremlin::OrExpression' has no attributes.
+The class 'gremlin::ClosureIt' has no attributes.
+The class 'gremlin::AndExpression' has no attributes.
+The class 'gremlin::ListDeclaration' has no attributes.
+The class 'gremlin::ToListCall' has no attributes.
+The class 'gremlin::IdentityStep' has the following attributes: 'needed' of type bool.
+The class 'gremlin::PropertyStep' has the following attributes: 'name' of type str.
+The class 'UnaryExpression' has no attributes.
+The class 'gremlin::RetainAllCall' has no attributes.
+The class 'gremlin::LessOrEqualExpression' has no attributes.
+The class 'gremlin::StartStep' has no attributes.
+The class 'gremlin::InVStep' has no attributes.
+The class 'gremlin::EqualityExpression' has no attributes.
+The class 'gremlin::CollectionDefinition' has no attributes.
+The class 'gremlin::FilterStep' has no attributes.
+The class 'gremlin::StringLiteral' has the following attributes: 'value' of type str.
+The class 'gremlin::RetainStep' has no attributes.
+The class 'gremlin::CustomStep' has the following attributes: 'name' of type str.
+The class 'gremlin::AddAllCall' has no attributes.
+The class 'gremlin::EObject' has no attributes.
+The class 'gremlin::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'gremlin::InExpression' has no attributes.
+The class 'gremlin::DifferenceExpression' has no attributes.
+The class 'gremlin::EdgesStep' has the following attributes: 'relationshipName' of type str.
+The class 'gremlin::SetDeclaration' has no attributes.
+The class 'gremlin::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'gremlin::UnionCall' has no attributes.
+The class 'gremlin::TraversalElement' has no attributes.
+The class 'gremlin::TernaryOperator' has no attributes.
+The class 'gremlin::UnaryExpression' has no attributes.
+The class 'gremlin::GremlinScript' has the following attributes: 'name' of type str.
+The class 'gremlin::ToIntegerCall' has no attributes.
+The class 'gremlin::HasNextCall' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'gremlin::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'gremlin::ScatterStep' has no attributes.
+The class 'gremlin::VariableAccess' has the following attributes: 'name' of type str.
+The class 'gremlin::IsEmptyCall' has no attributes.
+The class 'gremlin::SortedSetDeclaration' has no attributes.
+The class 'gremlin::FirstCall' has no attributes.
+The class 'gremlin::VerticesStep' has the following attributes: 'vertexId' of type str.
+The class 'TypeDeclaration' has no attributes.
+The class 'gremlin::MethodCall' has no attributes.
+The class 'gremlin::SizeCall' has no attributes.
+The class 'gremlin::LeftShiftExpression' has no attributes.
+The class 'gremlin::TypeDeclaration' has no attributes.
+The class 'gremlin::ContainsAllCall' has no attributes.
+The class 'gremlin::BinaryExpression' has no attributes.
+The class 'gremlin::PlusExpression' has no attributes.
+The class 'gremlin::LessExpression' has no attributes.
+The class 'gremlin::IntersectionCall' has no attributes.
+The class 'gremlin::MethodDeclaration' has the following attributes: 'parameters' of type str; 'name' of type str.
+'gremlin::UnionCall' is a specialization of 'MethodCall'.
+'gremlin::Closure' is a specialization of 'Instruction'.
+'gremlin::SizeCall' is a specialization of 'MethodCall'.
+'gremlin::ClosureIt' is a specialization of 'VariableAccess'.
+'gremlin::EqualityExpression' is a specialization of 'BinaryExpression'.
+'gremlin::RetainAllCall' is a specialization of 'MethodCall'.
+'gremlin::NextCall' is a specialization of 'MethodCall'.
+'gremlin::StringLiteral' is a specialization of 'Expression'.
+'gremlin::BinaryExpression' is a specialization of 'Expression'.
+'gremlin::ListDeclaration' is a specialization of 'TypeDeclaration'.
+'gremlin::MethodCall' is a specialization of 'TraversalElement'.
+'gremlin::InVStep' is a specialization of 'Step'.
+'gremlin::IndexCall' is a specialization of 'MethodCall'.
+'gremlin::DoubleLiteral' is a specialization of 'Expression'.
+'gremlin::OutVStep' is a specialization of 'Step'.
+'gremlin::GatherStep' is a specialization of 'Step'.
+'gremlin::ToIntegerCall' is a specialization of 'MethodCall'.
+'gremlin::VariableDeclaration' is a specialization of 'Instruction'.
+'gremlin::MethodDeclaration' is a specialization of 'Instruction'.
+'gremlin::VariableAccess' is a specialization of 'TraversalElement'.
+'gremlin::UnaryExpression' is a specialization of 'Expression'.
+'gremlin::BooleanLiteral' is a specialization of 'Expression'.
+'gremlin::ReturnStatement' is a specialization of 'Instruction'.
+'gremlin::ToListCall' is a specialization of 'MethodCall'.
+'gremlin::SortedSetDeclaration' is a specialization of 'TypeDeclaration'.
+'gremlin::StartStep' is a specialization of 'Step'.
+'gremlin::TransformStep' is a specialization of 'Step'.
+'gremlin::ScatterStep' is a specialization of 'Step'.
+'gremlin::AndExpression' is a specialization of 'BinaryExpression'.
+'gremlin::Step' is a specialization of 'TraversalElement'.
+'gremlin::RetainStep' is a specialization of 'Step'.
+'gremlin::GreaterOrEqualExpression' is a specialization of 'BinaryExpression'.
+'gremlin::EdgesStep' is a specialization of 'Step'.
+'gremlin::InExpression' is a specialization of 'BinaryExpression'.
+'gremlin::AffectationExpression' is a specialization of 'BinaryExpression'.
+'gremlin::LessExpression' is a specialization of 'BinaryExpression'.
+'gremlin::CountCall' is a specialization of 'MethodCall'.
+'gremlin::IntersectionCall' is a specialization of 'MethodCall'.
+'gremlin::InEStep' is a specialization of 'Step'.
+'gremlin::PlusExpression' is a specialization of 'BinaryExpression'.
+'gremlin::TernaryOperator' is a specialization of 'Expression'.
+'gremlin::OrExpression' is a specialization of 'BinaryExpression'.
+'gremlin::CustomStep' is a specialization of 'Step'.
+'gremlin::GreaterExpression' is a specialization of 'BinaryExpression'.
+'gremlin::LessOrEqualExpression' is a specialization of 'BinaryExpression'.
+'gremlin::ContainsAllCall' is a specialization of 'MethodCall'.
+'gremlin::ContainsCall' is a specialization of 'MethodCall'.
+'gremlin::FirstCall' is a specialization of 'MethodCall'.
+'gremlin::VerticesStep' is a specialization of 'Step'.
+'gremlin::Expression' is a specialization of 'Instruction'.
+'gremlin::AddAllCall' is a specialization of 'MethodCall'.
+'gremlin::NotExpression' is a specialization of 'UnaryExpression'.
+'gremlin::PropertyStep' is a specialization of 'Step'.
+'gremlin::OutEStep' is a specialization of 'Step'.
+'gremlin::FilterStep' is a specialization of 'Step'.
+'gremlin::IsEmptyCall' is a specialization of 'MethodCall'.
+'gremlin::TraversalElement' is a specialization of 'Instruction'.
+'gremlin::NullLiteral' is a specialization of 'Expression'.
+'gremlin::LeftShiftExpression' is a specialization of 'BinaryExpression'.
+'gremlin::FillStep' is a specialization of 'Step'.
+'gremlin::IntegerLiteral' is a specialization of 'Expression'.
+'gremlin::DifferenceExpression' is a specialization of 'BinaryExpression'.
+'gremlin::IdentityStep' is a specialization of 'Step'.
+'gremlin::SetDeclaration' is a specialization of 'TypeDeclaration'.
+'gremlin::HasNextCall' is a specialization of 'MethodCall'.
+'gremlin::TypeDeclaration' is a specialization of 'Instruction'.
+'gremlin::ExceptStep' is a specialization of 'Step'.
+'gremlin::CustomMethodCall' is a specialization of 'MethodCall'.
+'gremlin::CollectionDefinition' is a specialization of 'TraversalElement'.
+'gremlin::TransformStep' (role 'gremlin_TransformStep', cardinality 0..*) is associated with 'gremlin::Closure' (role 'gremlin_Closure32', cardinality 0..*).
+'gremlin::VariableDeclaration' (role 'gremlin_VariableDeclaration6', cardinality 0..*) is associated with 'gremlin::TypeDeclaration' (role 'gremlin_TypeDeclaration', cardinality 0..*).
+'gremlin::TernaryOperator' (role 'gremlin_TernaryOperator', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction68', cardinality 0..*).
+'gremlin::CustomStep' (role 'gremlin_CustomStep', cardinality 0..*) is associated with 'gremlin::EObject' (role 'gremlin_EObject76', cardinality 0..*).
+'gremlin::IntersectionCall' (role 'gremlin_IntersectionCall55', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction56', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction24', cardinality 0..*) is associated with 'gremlin::PropertyStep' (role 'gremlin_PropertyStep', cardinality 0..*).
+'gremlin::TraversalElement' (role 'previousElement', cardinality 0..*) is associated with 'gremlin::TraversalElement' (role 'TraversalElement', cardinality 0..*).
+'gremlin::IntersectionCall' (role 'gremlin_IntersectionCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction53', cardinality 0..*).
+'gremlin::AddAllCall' (role 'gremlin_AddAllCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction41', cardinality 0..*).
+'gremlin::FillStep' (role 'gremlin_FillStep', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction22', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction61', cardinality 0..*) is associated with 'gremlin::UnaryExpression' (role 'gremlin_UnaryExpression', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction18', cardinality 0..*) is associated with 'gremlin::Closure' (role 'gremlin_Closure', cardinality 0..*).
+'gremlin::CollectionDefinition' (role 'gremlin_CollectionDefinition30', cardinality 0..*) is associated with 'gremlin::ExceptStep' (role 'gremlin_ExceptStep', cardinality 0..*).
+'gremlin::Closure' (role 'gremlin_Closure34', cardinality 0..*) is associated with 'gremlin::GatherStep' (role 'gremlin_GatherStep', cardinality 0..*).
+'gremlin::GremlinScript' (role 'gremlin_GremlinScript', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction', cardinality 0..*).
+'gremlin::TraversalElement' (role 'TraversalElement11', cardinality 0..*) is associated with 'gremlin::TraversalElement' (role 'nextElement', cardinality 0..*).
+'gremlin::VariableDeclaration' (role 'gremlin_VariableDeclaration', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction4', cardinality 0..*).
+'gremlin::TypeDeclaration' (role 'gremlin_TypeDeclaration51', cardinality 0..*) is associated with 'gremlin::UnionCall' (role 'gremlin_UnionCall50', cardinality 0..*).
+'gremlin::BinaryExpression' (role 'gremlin_BinaryExpression65', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction66', cardinality 0..*).
+'gremlin::TypeDeclaration' (role 'gremlin_TypeDeclaration59', cardinality 0..*) is associated with 'gremlin::IntersectionCall' (role 'gremlin_IntersectionCall58', cardinality 0..*).
+'gremlin::ContainsAllCall' (role 'gremlin_ContainsAllCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction39', cardinality 0..*).
+'gremlin::RetainAllCall' (role 'gremlin_RetainAllCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction43', cardinality 0..*).
+'gremlin::TypeDeclaration' (role 'gremlin_TypeDeclaration20', cardinality 0..*) is associated with 'gremlin::VariableAccess' (role 'gremlin_VariableAccess', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction2', cardinality 0..*) is associated with 'gremlin::MethodDeclaration' (role 'gremlin_MethodDeclaration', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction71', cardinality 0..*) is associated with 'gremlin::TernaryOperator' (role 'gremlin_TernaryOperator70', cardinality 0..*).
+'gremlin::TernaryOperator' (role 'gremlin_TernaryOperator73', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction74', cardinality 0..*).
+'gremlin::UnionCall' (role 'gremlin_UnionCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction45', cardinality 0..*).
+'gremlin::UnionCall' (role 'gremlin_UnionCall47', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction48', cardinality 0..*).
+'gremlin::TypeDeclaration' (role 'gremlin_TypeDeclaration16', cardinality 0..*) is associated with 'gremlin::CollectionDefinition' (role 'gremlin_CollectionDefinition15', cardinality 0..*).
+'gremlin::ContainsCall' (role 'gremlin_ContainsCall', cardinality 0..*) is associated with 'gremlin::Instruction' (role 'gremlin_Instruction37', cardinality 0..*).
+'gremlin::Closure' (role 'gremlin_Closure26', cardinality 0..*) is associated with 'gremlin::FilterStep' (role 'gremlin_FilterStep', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction63', cardinality 0..*) is associated with 'gremlin::BinaryExpression' (role 'gremlin_BinaryExpression', cardinality 0..*).
+'gremlin::EObject' (role 'gremlin_EObject', cardinality 0..*) is associated with 'gremlin::CustomMethodCall' (role 'gremlin_CustomMethodCall', cardinality 0..*).
+'gremlin::CollectionDefinition' (role 'gremlin_CollectionDefinition28', cardinality 0..*) is associated with 'gremlin::RetainStep' (role 'gremlin_RetainStep', cardinality 0..*).
+'gremlin::Instruction' (role 'gremlin_Instruction13', cardinality 0..*) is associated with 'gremlin::CollectionDefinition' (role 'gremlin_CollectionDefinition', cardinality 0..*).

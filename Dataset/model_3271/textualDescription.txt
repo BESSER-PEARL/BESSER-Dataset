@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'smDsl::State' has the following attributes: 'initial' of type bool; 'name' of type str.
+The class 'smDsl::Model' has the following attributes: 'name' of type str.
+The class 'smDsl::CommandsSection' has no attributes.
+The class 'smDsl::Command' has the following attributes: 'name' of type str.
+The class 'smDsl::EventHandlingDescription' has no attributes.
+The class 'smDsl::Event' has the following attributes: 'name' of type str.
+The class 'smDsl::EventsSection' has no attributes.
+'smDsl::EventsSection' (role 'smDsl_EventsSection6', cardinality 0..*) is associated with 'smDsl::Event' (role 'smDsl_Event', cardinality 0..*).
+'smDsl::Event' (role 'smDsl_Event19', cardinality 0..*) is associated with 'smDsl::EventHandlingDescription' (role 'smDsl_EventHandlingDescription18', cardinality 0..*).
+'smDsl::State' (role 'smDsl_State10', cardinality 0..*) is associated with 'smDsl::Command' (role 'smDsl_Command11', cardinality 0..*).
+'smDsl::State' (role 'smDsl_State', cardinality 0..*) is associated with 'smDsl::Model' (role 'smDsl_Model4', cardinality 0..*).
+'smDsl::Command' (role 'smDsl_Command22', cardinality 0..*) is associated with 'smDsl::EventHandlingDescription' (role 'smDsl_EventHandlingDescription21', cardinality 0..*).
+'smDsl::EventsSection' (role 'smDsl_EventsSection', cardinality 0..*) is associated with 'smDsl::Model' (role 'smDsl_Model', cardinality 0..*).
+'smDsl::Model' (role 'smDsl_Model2', cardinality 0..*) is associated with 'smDsl::CommandsSection' (role 'smDsl_CommandsSection', cardinality 0..*).
+'smDsl::State' (role 'smDsl_State25', cardinality 0..*) is associated with 'smDsl::EventHandlingDescription' (role 'smDsl_EventHandlingDescription24', cardinality 0..*).
+'smDsl::State' (role 'smDsl_State15', cardinality 0..*) is associated with 'smDsl::Command' (role 'smDsl_Command16', cardinality 0..*).
+'smDsl::State' (role 'smDsl_State13', cardinality 0..*) is associated with 'smDsl::EventHandlingDescription' (role 'smDsl_EventHandlingDescription', cardinality 0..*).
+'smDsl::Command' (role 'smDsl_Command', cardinality 0..*) is associated with 'smDsl::CommandsSection' (role 'smDsl_CommandsSection8', cardinality 0..*).

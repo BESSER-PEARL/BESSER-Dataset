@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'Error' has no attributes.
+The class 'errors::Errores' has no attributes.
+The class 'errors::ValueCk' has the following attributes: 'value' of type str.
+The class 'errors::ColumnFk' has the following attributes: 'nameColumn' of type str.
+The class 'errors::ForeignError' has the following attributes: 'porcent' of type str; 'nameFk' of type str.
+The class 'errors::Table' has the following attributes: 'nameTable' of type str.
+The class 'errors::ColumnCk' has the following attributes: 'columnName' of type str.
+The class 'errors::CheckError' has the following attributes: 'porcent' of type str; 'nameTable' of type str; 'nameCk' of type str.
+The class 'errors::Error' has no attributes.
+'errors::ForeignError' is a specialization of 'Error'.
+'errors::CheckError' is a specialization of 'Error'.
+'errors::ForeignError' (role 'errors_ForeignError3', cardinality 0..*) is associated with 'errors::Table' (role 'errors_Table4', cardinality 0..*).
+'errors::ColumnFk' (role 'errors_ColumnFk', cardinality 0..*) is associated with 'errors::Table' (role 'errors_Table6', cardinality 0..*).
+'errors::CheckError' (role 'errors_CheckError', cardinality 0..*) is associated with 'errors::ColumnCk' (role 'errors_ColumnCk', cardinality 0..*).
+'errors::ColumnCk' (role 'errors_ColumnCk9', cardinality 0..*) is associated with 'errors::ValueCk' (role 'errors_ValueCk', cardinality 0..*).
+'errors::Errores' (role 'errors_Errores', cardinality 0..*) is associated with 'errors::Error' (role 'errors_Error', cardinality 0..*).
+'errors::Table' (role 'errors_Table', cardinality 0..*) is associated with 'errors::ForeignError' (role 'errors_ForeignError', cardinality 0..*).

@@ -1,0 +1,212 @@
+The model has 81 class(es).
+The class 'co2::IntAction' has no attributes.
+The class 'Prefix' has no attributes.
+The class 'co2::TimeoutProcess' has no attributes.
+The class 'Contract' has no attributes.
+The class 'Action' has no attributes.
+The class 'co2::BooleanNegation' has no attributes.
+The class 'co2::Type' has the following attributes: 'value' of type str.
+The class 'co2::Tau' has no attributes.
+The class 'co2::IfThenElse' has no attributes.
+The class 'co2::Comparison' has the following attributes: 'op' of type str.
+The class 'co2::PackageDeclaration' has the following attributes: 'single' of type bool; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'co2::ReceiveGroup' has no attributes.
+The class 'ActionType' has no attributes.
+The class 'co2::BoolPlaceholder' has no attributes.
+The class 'co2::UnitActionType' has no attributes.
+The class 'co2::Process' has no attributes.
+The class 'co2::Send' has no attributes.
+The class 'co2::ProcessCall' has no attributes.
+The class 'co2::Tell' has no attributes.
+The class 'ReceiveGroup' has no attributes.
+The class 'co2::SendGroup' has no attributes.
+The class 'co2::HonestyDeclaration' has no attributes.
+The class 'co2::IntType' has no attributes.
+The class 'co2::IntSum' has no attributes.
+The class 'co2::ArithmeticSigned' has no attributes.
+The class 'Placeholder' has no attributes.
+The class 'co2::ProcessDefinition' has the following attributes: 'name' of type str; 'withoutRestrictions' of type bool.
+The class 'co2::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'co2::Action' has the following attributes: 'name' of type str.
+The class 'co2::ActionType' has the following attributes: 'value' of type str.
+The class 'co2::OrExpression' has no attributes.
+The class 'co2::Variable' has no attributes.
+The class 'co2::ExtSum' has no attributes.
+The class 'SendGroup' has no attributes.
+The class 'co2::EmptyProcess' has the following attributes: 'value' of type str.
+The class 'co2::Plus' has no attributes.
+The class 'co2::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'co2::IntActionType' has no attributes.
+The class 'co2::EmptyContract' has the following attributes: 'value' of type str.
+The class 'co2::BooleanType' has no attributes.
+The class 'co2::DoOutput' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Process' has no attributes.
+The class 'co2::Contract' has no attributes.
+The class 'co2::CO2System' has no attributes.
+The class 'co2::TellAndReturn' has no attributes.
+The class 'co2::RetractedProcess' has no attributes.
+The class 'co2::Retract' has no attributes.
+The class 'co2::Prefix' has no attributes.
+The class 'co2::IntPlaceholder' has no attributes.
+The class 'co2::Session' has no attributes.
+The class 'co2::StringType' has no attributes.
+The class 'co2::StringLiteral' has the following attributes: 'value' of type str.
+The class 'co2::TellAndWait' has the following attributes: 'timeout' of type bool.
+The class 'co2::Minus' has no attributes.
+The class 'co2::DelimitedProcess' has no attributes.
+The class 'co2::ExtAction' has no attributes.
+The class 'co2::Sum' has no attributes.
+The class 'co2::SwitchCase' has the following attributes: 'default' of type bool.
+The class 'co2::DoInput' has no attributes.
+The class 'co2::ParallelProcesses' has no attributes.
+The class 'co2::Placeholder' has no attributes.
+The class 'co2::SessionType' has no attributes.
+The class 'co2::MultiOrDiv' has the following attributes: 'op' of type str.
+The class 'co2::ContractReference' has no attributes.
+The class 'co2::Equals' has the following attributes: 'op' of type str.
+The class 'co2::ContractDefinition' has the following attributes: 'name' of type str.
+The class 'co2::VariableReference' has no attributes.
+The class 'co2::ContractsAndProcessesDeclaration' has no attributes.
+The class 'co2::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'co2::AndExpression' has no attributes.
+The class 'co2::Input' has no attributes.
+The class 'co2::Case' has no attributes.
+The class 'co2::Ask' has the following attributes: 'formula' of type str.
+The class 'co2::Receive' has the following attributes: 'timeout' of type bool.
+The class 'co2::Expression' has no attributes.
+The class 'co2::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'VariableDeclaration' has no attributes.
+The class 'co2::StringActionType' has no attributes.
+The class 'co2::StringPlaceholder' has no attributes.
+'co2::EmptyContract' is a specialization of 'Contract'.
+'co2::IntAction' is a specialization of 'Action'.
+'co2::VariableReference' is a specialization of 'Expression'.
+'co2::Session' is a specialization of 'VariableDeclaration'.
+'co2::UnitActionType' is a specialization of 'ActionType'.
+'co2::ProcessCall' is a specialization of 'Process'.
+'co2::Minus' is a specialization of 'Expression'.
+'co2::Variable' is a specialization of 'VariableDeclaration'.
+'co2::AndExpression' is a specialization of 'Expression'.
+'co2::NumberLiteral' is a specialization of 'Expression'.
+'co2::TellAndWait' is a specialization of 'Process'.
+'co2::Comparison' is a specialization of 'Expression'.
+'co2::Receive' is a specialization of 'ReceiveGroup'.
+'co2::RetractedProcess' is a specialization of 'Process'.
+'co2::Sum' is a specialization of 'Process'.
+'co2::Tau' is a specialization of 'Prefix'.
+'co2::Tell' is a specialization of 'Prefix'.
+'co2::DoInput' is a specialization of 'Prefix'.
+'co2::StringLiteral' is a specialization of 'Expression'.
+'co2::DoOutput' is a specialization of 'Prefix'.
+'co2::Placeholder' is a specialization of 'Expression'.
+'co2::IntSum' is a specialization of 'Contract'.
+'co2::Send' is a specialization of 'SendGroup'.
+'co2::SwitchCase' is a specialization of 'Process'.
+'co2::SendGroup' is a specialization of 'Process'.
+'co2::Equals' is a specialization of 'Expression'.
+'co2::BooleanNegation' is a specialization of 'Expression'.
+'co2::ArithmeticSigned' is a specialization of 'Expression'.
+'co2::StringActionType' is a specialization of 'ActionType'.
+'co2::IntActionType' is a specialization of 'ActionType'.
+'co2::IntPlaceholder' is a specialization of 'Placeholder'.
+'co2::ParallelProcesses' is a specialization of 'Process'.
+'co2::OrExpression' is a specialization of 'Expression'.
+'co2::IntType' is a specialization of 'Type'.
+'co2::Ask' is a specialization of 'Prefix'.
+'co2::BoolPlaceholder' is a specialization of 'Placeholder'.
+'co2::MultiOrDiv' is a specialization of 'Expression'.
+'co2::ReceiveGroup' is a specialization of 'Process'.
+'co2::Retract' is a specialization of 'Prefix'.
+'co2::ExtSum' is a specialization of 'Contract'.
+'co2::ContractReference' is a specialization of 'Contract'.
+'co2::SessionType' is a specialization of 'Type'.
+'co2::BooleanType' is a specialization of 'Type'.
+'co2::StringType' is a specialization of 'Type'.
+'co2::EmptyProcess' is a specialization of 'Process'.
+'co2::IfThenElse' is a specialization of 'Process'.
+'co2::TellAndReturn' is a specialization of 'Process'.
+'co2::BooleanLiteral' is a specialization of 'Expression'.
+'co2::StringPlaceholder' is a specialization of 'Placeholder'.
+'co2::ExtAction' is a specialization of 'Action'.
+'co2::Plus' is a specialization of 'Expression'.
+'co2::SwitchCase' (role 'co2_SwitchCase', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression108', cardinality 0..*).
+'co2::IntAction' (role 'co2_IntAction84', cardinality 0..*) is associated with 'co2::Send' (role 'co2_Send83', cardinality 0..*).
+'co2::TellAndReturn' (role 'co2_TellAndReturn65', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process66', cardinality 0..*).
+'co2::TimeoutProcess' (role 'co2_TimeoutProcess94', cardinality 0..*) is associated with 'co2::Receive' (role 'co2_Receive93', cardinality 0..*).
+'co2::Equals' (role 'co2_Equals', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression159', cardinality 0..*).
+'co2::DelimitedProcess' (role 'co2_DelimitedProcess19', cardinality 0..*) is associated with 'co2::Variable' (role 'co2_Variable20', cardinality 0..*).
+'co2::ContractReference' (role 'co2_ContractReference', cardinality 0..*) is associated with 'co2::ContractDefinition' (role 'co2_ContractDefinition185', cardinality 0..*).
+'co2::VariableDeclaration' (role 'co2_VariableDeclaration', cardinality 0..*) is associated with 'co2::Tell' (role 'co2_Tell', cardinality 0..*).
+'co2::VariableDeclaration' (role 'co2_VariableDeclaration183', cardinality 0..*) is associated with 'co2::VariableReference' (role 'co2_VariableReference', cardinality 0..*).
+'co2::Variable' (role 'co2_Variable122', cardinality 0..*) is associated with 'co2::Type' (role 'co2_Type123', cardinality 0..*).
+'co2::Input' (role 'co2_Input102', cardinality 0..*) is associated with 'co2::Variable' (role 'co2_Variable103', cardinality 0..*).
+'co2::ParallelProcesses' (role 'co2_ParallelProcesses17', cardinality 0..*) is associated with 'co2::DelimitedProcess' (role 'co2_DelimitedProcess', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression157', cardinality 0..*) is associated with 'co2::Comparison' (role 'co2_Comparison156', cardinality 0..*).
+'co2::ProcessDefinition' (role 'co2_ProcessDefinition', cardinality 0..*) is associated with 'co2::HonestyDeclaration' (role 'co2_HonestyDeclaration6', cardinality 0..*).
+'co2::VariableDeclaration' (role 'co2_VariableDeclaration46', cardinality 0..*) is associated with 'co2::Retract' (role 'co2_Retract', cardinality 0..*).
+'co2::Input' (role 'co2_Input105', cardinality 0..*) is associated with 'co2::VariableDeclaration' (role 'co2_VariableDeclaration106', cardinality 0..*).
+'co2::DelimitedProcess' (role 'co2_DelimitedProcess22', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process', cardinality 0..*).
+'co2::Input' (role 'co2_Input99', cardinality 0..*) is associated with 'co2::ExtAction' (role 'co2_ExtAction100', cardinality 0..*).
+'co2::Variable' (role 'co2_Variable60', cardinality 0..*) is associated with 'co2::DoInput' (role 'co2_DoInput59', cardinality 0..*).
+'co2::Process' (role 'co2_Process79', cardinality 0..*) is associated with 'co2::TimeoutProcess' (role 'co2_TimeoutProcess78', cardinality 0..*).
+'co2::HonestyDeclaration' (role 'co2_HonestyDeclaration', cardinality 0..*) is associated with 'co2::CO2System' (role 'co2_CO2System2', cardinality 0..*).
+'co2::IntAction' (role 'co2_IntAction', cardinality 0..*) is associated with 'co2::DoOutput' (role 'co2_DoOutput50', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression152', cardinality 0..*) is associated with 'co2::AndExpression' (role 'co2_AndExpression151', cardinality 0..*).
+'co2::Send' (role 'co2_Send', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process81', cardinality 0..*).
+'co2::ArithmeticSigned' (role 'co2_ArithmeticSigned', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression181', cardinality 0..*).
+'co2::VariableDeclaration' (role 'co2_VariableDeclaration62', cardinality 0..*) is associated with 'co2::Ask' (role 'co2_Ask', cardinality 0..*).
+'co2::ContractsAndProcessesDeclaration' (role 'co2_ContractsAndProcessesDeclaration8', cardinality 0..*) is associated with 'co2::ContractDefinition' (role 'co2_ContractDefinition', cardinality 0..*).
+'co2::ContractDefinition' (role 'co2_ContractDefinition44', cardinality 0..*) is associated with 'co2::Tell' (role 'co2_Tell43', cardinality 0..*).
+'co2::SwitchCase' (role 'co2_SwitchCase110', cardinality 0..*) is associated with 'co2::Case' (role 'co2_Case', cardinality 0..*).
+'co2::IfThenElse' (role 'co2_IfThenElse29', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process30', cardinality 0..*).
+'co2::Sum' (role 'co2_Sum', cardinality 0..*) is associated with 'co2::Prefix' (role 'co2_Prefix', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression35', cardinality 0..*) is associated with 'co2::ProcessCall' (role 'co2_ProcessCall34', cardinality 0..*).
+'co2::Case' (role 'co2_Case118', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process119', cardinality 0..*).
+'co2::ExtAction' (role 'co2_ExtAction136', cardinality 0..*) is associated with 'co2::ExtSum' (role 'co2_ExtSum', cardinality 0..*).
+'co2::MultiOrDiv' (role 'co2_MultiOrDiv176', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression177', cardinality 0..*).
+'co2::Session' (role 'co2_Session68', cardinality 0..*) is associated with 'co2::TellAndWait' (role 'co2_TellAndWait', cardinality 0..*).
+'co2::ContractDefinition' (role 'co2_ContractDefinition129', cardinality 0..*) is associated with 'co2::Session' (role 'co2_Session128', cardinality 0..*).
+'co2::IfThenElse' (role 'co2_IfThenElse26', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process27', cardinality 0..*).
+'co2::TellAndWait' (role 'co2_TellAndWait73', cardinality 0..*) is associated with 'co2::TimeoutProcess' (role 'co2_TimeoutProcess', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression167', cardinality 0..*) is associated with 'co2::Plus' (role 'co2_Plus166', cardinality 0..*).
+'co2::OrExpression' (role 'co2_OrExpression146', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression147', cardinality 0..*).
+'co2::Equals' (role 'co2_Equals161', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression162', cardinality 0..*).
+'co2::Type' (role 'co2_Type', cardinality 0..*) is associated with 'co2::Placeholder' (role 'co2_Placeholder', cardinality 0..*).
+'co2::Contract' (role 'co2_Contract140', cardinality 0..*) is associated with 'co2::Action' (role 'co2_Action139', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression149', cardinality 0..*) is associated with 'co2::AndExpression' (role 'co2_AndExpression', cardinality 0..*).
+'co2::IntSum' (role 'co2_IntSum', cardinality 0..*) is associated with 'co2::IntAction' (role 'co2_IntAction134', cardinality 0..*).
+'co2::MultiOrDiv' (role 'co2_MultiOrDiv', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression174', cardinality 0..*).
+'co2::ProcessDefinition' (role 'co2_ProcessDefinition15', cardinality 0..*) is associated with 'co2::ParallelProcesses' (role 'co2_ParallelProcesses', cardinality 0..*).
+'co2::Send' (role 'co2_Send89', cardinality 0..*) is associated with 'co2::VariableDeclaration' (role 'co2_VariableDeclaration90', cardinality 0..*).
+'co2::RetractedProcess' (role 'co2_RetractedProcess', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process142', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression154', cardinality 0..*) is associated with 'co2::Comparison' (role 'co2_Comparison', cardinality 0..*).
+'co2::Minus' (role 'co2_Minus171', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression172', cardinality 0..*).
+'co2::Receive' (role 'co2_Receive', cardinality 0..*) is associated with 'co2::Input' (role 'co2_Input', cardinality 0..*).
+'co2::ProcessCall' (role 'co2_ProcessCall', cardinality 0..*) is associated with 'co2::ProcessDefinition' (role 'co2_ProcessDefinition32', cardinality 0..*).
+'co2::Contract' (role 'co2_Contract126', cardinality 0..*) is associated with 'co2::Session' (role 'co2_Session125', cardinality 0..*).
+'co2::Plus' (role 'co2_Plus', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression164', cardinality 0..*).
+'co2::ContractDefinition' (role 'co2_ContractDefinition131', cardinality 0..*) is associated with 'co2::Contract' (role 'co2_Contract132', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression116', cardinality 0..*) is associated with 'co2::Case' (role 'co2_Case115', cardinality 0..*).
+'co2::Contract' (role 'co2_Contract', cardinality 0..*) is associated with 'co2::Tell' (role 'co2_Tell41', cardinality 0..*).
+'co2::Process' (role 'co2_Process71', cardinality 0..*) is associated with 'co2::TellAndWait' (role 'co2_TellAndWait70', cardinality 0..*).
+'co2::Input' (role 'co2_Input96', cardinality 0..*) is associated with 'co2::Process' (role 'co2_Process97', cardinality 0..*).
+'co2::OrExpression' (role 'co2_OrExpression', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression144', cardinality 0..*).
+'co2::ContractsAndProcessesDeclaration' (role 'co2_ContractsAndProcessesDeclaration', cardinality 0..*) is associated with 'co2::CO2System' (role 'co2_CO2System4', cardinality 0..*).
+'co2::Minus' (role 'co2_Minus', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression169', cardinality 0..*).
+'co2::TellAndReturn' (role 'co2_TellAndReturn', cardinality 0..*) is associated with 'co2::Session' (role 'co2_Session', cardinality 0..*).
+'co2::ProcessDefinition' (role 'co2_ProcessDefinition13', cardinality 0..*) is associated with 'co2::Variable' (role 'co2_Variable', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression87', cardinality 0..*) is associated with 'co2::Send' (role 'co2_Send86', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression', cardinality 0..*) is associated with 'co2::IfThenElse' (role 'co2_IfThenElse', cardinality 0..*).
+'co2::PackageDeclaration' (role 'co2_PackageDeclaration', cardinality 0..*) is associated with 'co2::CO2System' (role 'co2_CO2System', cardinality 0..*).
+'co2::VariableDeclaration' (role 'co2_VariableDeclaration48', cardinality 0..*) is associated with 'co2::DoOutput' (role 'co2_DoOutput', cardinality 0..*).
+'co2::Process' (role 'co2_Process113', cardinality 0..*) is associated with 'co2::SwitchCase' (role 'co2_SwitchCase112', cardinality 0..*).
+'co2::Action' (role 'co2_Action', cardinality 0..*) is associated with 'co2::ActionType' (role 'co2_ActionType', cardinality 0..*).
+'co2::DoInput' (role 'co2_DoInput', cardinality 0..*) is associated with 'co2::VariableDeclaration' (role 'co2_VariableDeclaration55', cardinality 0..*).
+'co2::ExtAction' (role 'co2_ExtAction', cardinality 0..*) is associated with 'co2::DoInput' (role 'co2_DoInput57', cardinality 0..*).
+'co2::TimeoutProcess' (role 'co2_TimeoutProcess75', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression76', cardinality 0..*).
+'co2::Expression' (role 'co2_Expression179', cardinality 0..*) is associated with 'co2::BooleanNegation' (role 'co2_BooleanNegation', cardinality 0..*).
+'co2::ProcessDefinition' (role 'co2_ProcessDefinition11', cardinality 0..*) is associated with 'co2::ContractsAndProcessesDeclaration' (role 'co2_ContractsAndProcessesDeclaration10', cardinality 0..*).
+'co2::Process' (role 'co2_Process38', cardinality 0..*) is associated with 'co2::Prefix' (role 'co2_Prefix37', cardinality 0..*).
+'co2::DoOutput' (role 'co2_DoOutput52', cardinality 0..*) is associated with 'co2::Expression' (role 'co2_Expression53', cardinality 0..*).

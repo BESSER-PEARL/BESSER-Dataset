@@ -1,0 +1,35 @@
+The model has 13 class(es).
+The class 'statespace::EqualityHelper' has the following attributes: 'checkLinkOrder' of type bool.
+The class 'statespace::Transition' has the following attributes: 'parameterKeys' of type str; 'match' of type int; 'parameterCount' of type int.
+The class 'statespace::State' has the following attributes: 'open' of type bool; 'objectKeys' of type str; 'hashCode' of type int; 'objectCount' of type int; 'goal' of type bool; 'pruned' of type bool; 'index' of type int; 'derivedFrom' of type int; 'location' of type str.
+The class 'statespace::StateSpace' has the following attributes: 'layoutHideIndizes' of type bool; 'stateCount' of type int; 'transitionCount' of type int; 'layoutStateRepulsion' of type int; 'maxStateDistance' of type int; 'allParameterKeys' of type str; 'layoutHideLabels' of type bool; 'layoutZoomLevel' of type int; 'layoutTransitionAttraction' of type int.
+The class 'Storage' has no attributes.
+The class 'statespace::EObject' has no attributes.
+The class 'statespace::EClass' has no attributes.
+The class 'statespace::EStringToStringMapEntry' has no attributes.
+The class 'statespace::EObjectIntegerMapEntry' has the following attributes: 'value' of type str.
+The class 'statespace::Rule' has no attributes.
+The class 'statespace::Storage' has the following attributes: 'data' of type str.
+The class 'statespace::Model' has the following attributes: 'objectKeys' of type str; 'resource' of type str; 'objectCount' of type int; 'eGraph' of type str.
+The class 'statespace::EAttribute' has no attributes.
+'statespace::State' is a specialization of 'Storage'.
+'statespace::Transition' is a specialization of 'Storage'.
+'statespace::StateSpace' is a specialization of 'Storage'.
+'statespace::Model' (role 'statespace_Model18', cardinality 0..*) is associated with 'statespace::EObjectIntegerMapEntry' (role 'statespace_EObjectIntegerMapEntry', cardinality 0..*).
+'statespace::State' (role 'statespace_State', cardinality 0..*) is associated with 'statespace::StateSpace' (role 'statespace_StateSpace3', cardinality 0..*).
+'statespace::StateSpace' (role 'StateSpace', cardinality 0..*) is associated with 'statespace::State' (role 'states', cardinality 0..*).
+'statespace::EObjectIntegerMapEntry' (role 'statespace_EObjectIntegerMapEntry21', cardinality 0..*) is associated with 'statespace::Model' (role 'statespace_Model20', cardinality 0..*).
+'statespace::EAttribute' (role 'statespace_EAttribute', cardinality 0..*) is associated with 'statespace::EqualityHelper' (role 'statespace_EqualityHelper29', cardinality 0..*).
+'statespace::State' (role 'statespace_State16', cardinality 0..*) is associated with 'statespace::Model' (role 'statespace_Model', cardinality 0..*).
+'statespace::State' (role 'statespace_State6', cardinality 0..*) is associated with 'statespace::StateSpace' (role 'statespace_StateSpace5', cardinality 0..*).
+'statespace::EqualityHelper' (role 'statespace_EqualityHelper31', cardinality 0..*) is associated with 'statespace::EClass' (role 'statespace_EClass', cardinality 0..*).
+'statespace::StateSpace' (role 'statespace_StateSpace10', cardinality 0..*) is associated with 'statespace::EStringToStringMapEntry' (role 'statespace_EStringToStringMapEntry', cardinality 0..*).
+'statespace::State' (role 'target', cardinality 0..*) is associated with 'statespace::Transition' (role 'Transition', cardinality 0..*).
+'statespace::State' (role 'State25', cardinality 0..*) is associated with 'statespace::Transition' (role 'incoming', cardinality 0..*).
+'statespace::State' (role 'State', cardinality 0..*) is associated with 'statespace::StateSpace' (role 'stateSpace', cardinality 0..*).
+'statespace::Transition' (role 'Transition13', cardinality 0..*) is associated with 'statespace::State' (role 'source', cardinality 0..*).
+'statespace::StateSpace' (role 'statespace_StateSpace8', cardinality 0..*) is associated with 'statespace::EqualityHelper' (role 'statespace_EqualityHelper', cardinality 0..*).
+'statespace::EObjectIntegerMapEntry' (role 'statespace_EObjectIntegerMapEntry33', cardinality 0..*) is associated with 'statespace::EObject' (role 'statespace_EObject', cardinality 0..*).
+'statespace::Transition' (role 'outgoing', cardinality 0..*) is associated with 'statespace::State' (role 'State23', cardinality 0..*).
+'statespace::StateSpace' (role 'statespace_StateSpace', cardinality 0..*) is associated with 'statespace::Rule' (role 'statespace_Rule', cardinality 0..*).
+'statespace::Rule' (role 'statespace_Rule27', cardinality 0..*) is associated with 'statespace::Transition' (role 'statespace_Transition', cardinality 0..*).

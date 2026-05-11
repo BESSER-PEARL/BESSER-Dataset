@@ -1,0 +1,83 @@
+The model has 29 class(es).
+The class 'Point' has no attributes.
+The class 'remes::InitEdge' has the following attributes: 'initialization' of type str.
+The class 'Referable' has no attributes.
+The class 'remes::Constant' has the following attributes: 'type' of type str; 'value' of type str; 'global_' of type bool.
+The class 'EntryPoint' has no attributes.
+The class 'remes::ExitPoint' has no attributes.
+The class 'Mode' has no attributes.
+The class 'remes::ConditionalConnector' has no attributes.
+The class 'remes::EntryPoint' has no attributes.
+The class 'ExitPoint' has no attributes.
+The class 'remes::WriteEdge' has no attributes.
+The class 'remes::ControlPath' has the following attributes: 'name' of type str.
+The class 'remes::Mode' has the following attributes: 'initialization' of type str.
+The class 'remes::Variable' has the following attributes: 'writable' of type bool; 'type' of type str; 'readable' of type bool; 'global_' of type bool; 'value' of type str; 'vectorSize' of type int.
+The class 'remes::Edge' has the following attributes: 'actionGuard' of type str; 'actionBody' of type str.
+The class 'remes::CompositeExitPoint' has no attributes.
+The class 'ResourceRoot' has no attributes.
+The class 'remes::Resource' has the following attributes: 'expression' of type str; 'type' of type str.
+The class 'remes::CompositeMode' has no attributes.
+The class 'ActionRoot' has no attributes.
+The class 'remes::RemesDiagram' has no attributes.
+The class 'remes::WritePoint' has no attributes.
+The class 'remes::Point' has no attributes.
+The class 'remes::InitPoint' has no attributes.
+The class 'LogicalRoot' has no attributes.
+The class 'ControlPath' has no attributes.
+The class 'remes::SubMode' has the following attributes: 'invariant' of type str; 'isUrgent' of type bool.
+The class 'remes::CompositeEntryPoint' has no attributes.
+The class 'remes::Referable' has the following attributes: 'name' of type str.
+The enumeration 'PrimitiveTypes' has the following literals: 'natural', 'integer', 'boolean', 'clock', 'float'.
+The enumeration 'ResourceTypes' has the following literals: 'port', 'power', 'memory', 'bandwidth', 'cpu'.
+'remes::Mode' is a specialization of 'ControlPath'.
+'remes::CompositeEntryPoint' is a specialization of 'ExitPoint'.
+'remes::ConditionalConnector' is a specialization of 'ControlPath'.
+'remes::CompositeMode' is a specialization of 'Mode'.
+'remes::SubMode' is a specialization of 'Mode'.
+'remes::Variable' is a specialization of 'Referable'.
+'remes::WritePoint' is a specialization of 'Point'.
+'remes::CompositeExitPoint' is a specialization of 'EntryPoint'.
+'remes::Resource' is a specialization of 'Referable'.
+'remes::InitPoint' is a specialization of 'Point'.
+'remes::Constant' is a specialization of 'Referable'.
+'remes::ExitPoint' is a specialization of 'Point'.
+'remes::EntryPoint' is a specialization of 'Point'.
+'remes::Mode' (role 'scope8', cardinality 0..*) is associated with 'remes::Constant' (role 'Constant', cardinality 0..*).
+'remes::ExitPoint' (role 'exitPoint', cardinality 0..*) is associated with 'remes::ControlPath' (role 'ControlPath32', cardinality 0..*).
+'remes::ConditionalConnector' (role 'ConditionalConnector', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'parent11', cardinality 0..*).
+'remes::Variable' (role 'variables', cardinality 0..*) is associated with 'remes::Mode' (role 'Mode', cardinality 0..*).
+'remes::CompositeExitPoint' (role 'CompositeExitPoint', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'composite16', cardinality 0..*).
+'remes::ConditionalConnector' (role 'conditionalConnectors', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'CompositeMode22', cardinality 0..*).
+'remes::InitPoint' (role 'InitPoint46', cardinality 0..*) is associated with 'remes::InitEdge' (role 'initEdge', cardinality 0..*).
+'remes::ExitPoint' (role 'connectFrom29', cardinality 0..*) is associated with 'remes::Edge' (role 'Edge30', cardinality 0..*).
+'remes::Mode' (role 'scope6', cardinality 0..*) is associated with 'remes::Resource' (role 'Resource', cardinality 0..*).
+'remes::InitPoint' (role 'InitPoint', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'container13', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode', cardinality 0..*) is associated with 'remes::SubMode' (role 'subModes', cardinality 0..*).
+'remes::Edge' (role 'exitEdges', cardinality 0..*) is associated with 'remes::ExitPoint' (role 'ExitPoint40', cardinality 0..*).
+'remes::ControlPath' (role 'container3', cardinality 0..*) is associated with 'remes::ExitPoint' (role 'ExitPoint', cardinality 0..*).
+'remes::InitEdge' (role 'remes_InitEdge', cardinality 0..*) is associated with 'remes::EntryPoint' (role 'remes_EntryPoint', cardinality 0..*).
+'remes::ControlPath' (role 'ControlPath', cardinality 0..*) is associated with 'remes::EntryPoint' (role 'entryPoint', cardinality 0..*).
+'remes::EntryPoint' (role 'EntryPoint42', cardinality 0..*) is associated with 'remes::Edge' (role 'entryEdges', cardinality 0..*).
+'remes::EntryPoint' (role 'connectTo', cardinality 0..*) is associated with 'remes::Edge' (role 'Edge', cardinality 0..*).
+'remes::Resource' (role 'remes_Resource', cardinality 0..*) is associated with 'ResourceRoot' (role 'ResourceRoot', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode34', cardinality 0..*) is associated with 'remes::CompositeEntryPoint' (role 'compositeEntryPoint', cardinality 0..*).
+'remes::EntryPoint' (role 'EntryPoint', cardinality 0..*) is associated with 'remes::ControlPath' (role 'container', cardinality 0..*).
+'remes::Constant' (role 'constants', cardinality 0..*) is associated with 'remes::Mode' (role 'Mode56', cardinality 0..*).
+'remes::ExitPoint' (role 'remes_ExitPoint', cardinality 0..*) is associated with 'remes::WriteEdge' (role 'remes_WriteEdge', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode61', cardinality 0..*) is associated with 'remes::WritePoint' (role 'writePoint', cardinality 0..*).
+'ActionRoot' (role 'ActionRoot50', cardinality 0..*) is associated with 'remes::InitEdge' (role 'remes_InitEdge49', cardinality 0..*).
+'ActionRoot' (role 'ActionRoot', cardinality 0..*) is associated with 'remes::Edge' (role 'remes_Edge44', cardinality 0..*).
+'remes::WritePoint' (role 'WritePoint', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'container18', cardinality 0..*).
+'remes::Edge' (role 'remes_Edge', cardinality 0..*) is associated with 'LogicalRoot' (role 'LogicalRoot38', cardinality 0..*).
+'remes::WriteEdge' (role 'WriteEdge', cardinality 0..*) is associated with 'remes::WritePoint' (role 'connectTo63', cardinality 0..*).
+'remes::SubMode' (role 'SubMode', cardinality 0..*) is associated with 'remes::CompositeMode' (role 'parent', cardinality 0..*).
+'remes::Mode' (role 'remes_Mode', cardinality 0..*) is associated with 'remes::RemesDiagram' (role 'remes_RemesDiagram', cardinality 0..*).
+'remes::Mode' (role 'Mode53', cardinality 0..*) is associated with 'remes::Resource' (role 'resources', cardinality 0..*).
+'remes::WritePoint' (role 'WritePoint58', cardinality 0..*) is associated with 'remes::WriteEdge' (role 'writeEdges', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode36', cardinality 0..*) is associated with 'remes::CompositeExitPoint' (role 'compositeExitPoint', cardinality 0..*).
+'remes::Mode' (role 'scope', cardinality 0..*) is associated with 'remes::Variable' (role 'Variable', cardinality 0..*).
+'remes::CompositeMode' (role 'CompositeMode25', cardinality 0..*) is associated with 'remes::InitPoint' (role 'initPoint', cardinality 0..*).
+'remes::CompositeMode' (role 'composite', cardinality 0..*) is associated with 'remes::CompositeEntryPoint' (role 'CompositeEntryPoint', cardinality 0..*).
+'remes::InitEdge' (role 'InitEdge', cardinality 0..*) is associated with 'remes::InitPoint' (role 'connectFrom', cardinality 0..*).
+'remes::SubMode' (role 'remes_SubMode', cardinality 0..*) is associated with 'LogicalRoot' (role 'LogicalRoot', cardinality 0..*).

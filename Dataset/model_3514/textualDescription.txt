@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'declarationorder::S' has no attributes.
+The class 'S' has no attributes.
+The class 'declarationorder::Child' has no attributes.
+'declarationorder::Child' is a specialization of 'S'.

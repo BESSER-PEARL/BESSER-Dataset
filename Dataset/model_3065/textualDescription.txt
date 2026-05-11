@@ -1,0 +1,59 @@
+The model has 26 class(es).
+The class 'forms::Entity' has the following attributes: 'name' of type str.
+The class 'forms::Relationship' has the following attributes: 'upperBound' of type int; 'name' of type str; 'lowerBound' of type int.
+The class 'forms::Attribute' has the following attributes: 'name' of type str; 'type' of type str; 'mandatory' of type bool.
+The class 'forms::AttributePageElement' has no attributes.
+The class 'forms::TimeSelectionField' has no attributes.
+The class 'RelationshipPageElement' has no attributes.
+The class 'forms::Table' has no attributes.
+The class 'forms::PageElement' has the following attributes: 'label' of type str; 'elementID' of type str.
+The class 'forms::Enumeration' has the following attributes: 'name' of type str.
+The class 'forms::TextField' has the following attributes: 'format' of type str.
+The class 'forms::Column' has no attributes.
+The class 'forms::TextArea' has no attributes.
+The class 'PageElement' has no attributes.
+The class 'forms::Literal' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'forms::List' has no attributes.
+The class 'forms::SelectionField' has no attributes.
+The class 'forms::CompositeCondition' has the following attributes: 'operator' of type str.
+The class 'AttributePageElement' has no attributes.
+The class 'forms::RelationshipPageElement' has no attributes.
+The class 'forms::EFML' has no attributes.
+The class 'Condition' has no attributes.
+The class 'forms::AttributeValueCondition' has the following attributes: 'value' of type str.
+The class 'forms::Form' has the following attributes: 'title' of type str; 'description' of type str; 'name' of type str; 'mainForm' of type bool.
+The class 'forms::DateSelectionField' has no attributes.
+The class 'forms::Page' has the following attributes: 'title' of type str.
+The class 'forms::Condition' has the following attributes: 'conditionID' of type str; 'type' of type str.
+The enumeration 'Operators' has the following literals: 'AND', 'OR'.
+The enumeration 'ConditionType' has the following literals: 'Enable', 'Disable', 'Hide', 'Show'.
+The enumeration 'AttributeType' has the following literals: 'None_', 'Email', 'Text', 'Time', 'String', 'Boolean', 'Year', 'Date', 'Integer'.
+'forms::TimeSelectionField' is a specialization of 'AttributePageElement'.
+'forms::SelectionField' is a specialization of 'AttributePageElement'.
+'forms::RelationshipPageElement' is a specialization of 'PageElement'.
+'forms::TextField' is a specialization of 'AttributePageElement'.
+'forms::Table' is a specialization of 'RelationshipPageElement'.
+'forms::List' is a specialization of 'RelationshipPageElement'.
+'forms::CompositeCondition' is a specialization of 'Condition'.
+'forms::AttributeValueCondition' is a specialization of 'Condition'.
+'forms::DateSelectionField' is a specialization of 'AttributePageElement'.
+'forms::AttributePageElement' is a specialization of 'PageElement'.
+'forms::TextArea' is a specialization of 'AttributePageElement'.
+'forms::Form' (role 'forms_Form33', cardinality 0..*) is associated with 'forms::RelationshipPageElement' (role 'forms_RelationshipPageElement', cardinality 0..*).
+'forms::Attribute' (role 'forms_Attribute7', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity6', cardinality 0..*).
+'forms::Page' (role 'forms_Page', cardinality 0..*) is associated with 'forms::Form' (role 'forms_Form27', cardinality 0..*).
+'forms::Form' (role 'forms_Form', cardinality 0..*) is associated with 'forms::EFML' (role 'forms_EFML2', cardinality 0..*).
+'forms::Entity' (role 'forms_Entity12', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity10', cardinality 0..*).
+'forms::CompositeCondition' (role 'forms_CompositeCondition', cardinality 0..*) is associated with 'forms::Condition' (role 'forms_Condition', cardinality 0..*).
+'forms::EFML' (role 'forms_EFML', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity', cardinality 0..*).
+'forms::PageElement' (role 'forms_PageElement', cardinality 0..*) is associated with 'forms::Page' (role 'forms_Page29', cardinality 0..*).
+'forms::Attribute' (role 'forms_Attribute', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity4', cardinality 0..*).
+'forms::Relationship' (role 'forms_Relationship19', cardinality 0..*) is associated with 'forms::Relationship' (role 'forms_Relationship17', cardinality 0..*).
+'forms::Table' (role 'forms_Table', cardinality 0..*) is associated with 'forms::Column' (role 'forms_Column', cardinality 0..*).
+'forms::Enumeration' (role 'forms_Enumeration16', cardinality 0..*) is associated with 'forms::Literal' (role 'forms_Literal', cardinality 0..*).
+'forms::Attribute' (role 'forms_Attribute31', cardinality 0..*) is associated with 'forms::AttributePageElement' (role 'forms_AttributePageElement', cardinality 0..*).
+'forms::Enumeration' (role 'forms_Enumeration', cardinality 0..*) is associated with 'forms::Attribute' (role 'forms_Attribute14', cardinality 0..*).
+'forms::Column' (role 'forms_Column36', cardinality 0..*) is associated with 'forms::Attribute' (role 'forms_Attribute37', cardinality 0..*).
+'forms::Entity' (role 'forms_Entity25', cardinality 0..*) is associated with 'forms::Form' (role 'forms_Form24', cardinality 0..*).
+'forms::Relationship' (role 'forms_Relationship21', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity22', cardinality 0..*).
+'forms::Relationship' (role 'forms_Relationship', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity9', cardinality 0..*).

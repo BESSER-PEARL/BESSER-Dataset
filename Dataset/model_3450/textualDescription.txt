@@ -1,0 +1,209 @@
+The model has 80 class(es).
+The class 'org::sgiusa::model::MemberSearchCriteria' has the following attributes: 'divisions' of type str; 'activityGroups' of type str; 'subDivisions' of type str.
+The class 'org::aries::common::EmailAccount' has the following attributes: 'id' of type str; 'firstName' of type str; 'userId' of type str; 'enabled' of type str; 'password' of type str; 'lastName' of type str.
+The class 'org::sgiusa::model::GohonzonInfo' has the following attributes: 'returnDate' of type str; 'gohonzonType' of type str; 'receiveDate' of type str; 'returned' of type str; 'lastUpdate' of type str; 'id' of type str.
+The class 'Person' has no attributes.
+The class 'org::aries::common::MapEntry' has no attributes.
+The class 'org::sgiusa::model::SchoolInfo' has the following attributes: 'id' of type str; 'fieldOfStudy' of type str; 'endDate' of type str; 'lastUpdate' of type str; 'startDate' of type str; 'schoolName' of type str; 'schoolType' of type str.
+The class 'org::aries::common::EObject' has no attributes.
+The class 'EmailAccount' has no attributes.
+The class 'Organization' has no attributes.
+The class 'LeadershipRole' has no attributes.
+The class 'org::sgiusa::model::Members' has no attributes.
+The class 'org::sgiusa::model::View' has the following attributes: 'viewType' of type str; 'userId' of type str; 'id' of type str.
+The class 'Note' has no attributes.
+The class 'org::aries::common::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'org::sgiusa::model::LeadershipInfo' has the following attributes: 'manualSigned' of type str; 'id' of type str; 'examPassedDate' of type str; 'examPassed' of type str; 'lastUpdate' of type str; 'manualSignedDate' of type str.
+The class 'Attachment' has no attributes.
+The class 'StreetAddress' has no attributes.
+The class 'org::aries::common::User' has the following attributes: 'id' of type str; 'enabled' of type str; 'lastName' of type str; 'password' of type str; 'firstName' of type str; 'userId' of type str.
+The class 'PersonName' has no attributes.
+The class 'View' has no attributes.
+The class 'GohonzonInfo' has no attributes.
+The class 'org::sgiusa::model::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'org::aries::common::Properties' has no attributes.
+The class 'org::sgiusa::model::Note' has the following attributes: 'id' of type str; 'lastUpdate' of type str; 'text' of type str; 'creationDate' of type str.
+The class 'StudyDeptInfo' has no attributes.
+The class 'EmailList' has no attributes.
+The class 'org::sgiusa::model::EStringToStringMapEntry' has no attributes.
+The class 'org::aries::common::Map' has no attributes.
+The class 'User' has no attributes.
+The class 'FamilyMember' has no attributes.
+The class 'org::aries::common::PhoneNumber' has the following attributes: 'value' of type str; 'number' of type str; 'type' of type str; 'id' of type str; 'area' of type str; 'extension' of type str; 'country' of type str.
+The class 'org::sgiusa::model::MembershipInfo' has the following attributes: 'friendOfSgi' of type str; 'notLocatable' of type str; 'receivedCertificate' of type str; 'notActivated' of type str; 'id' of type str; 'lastUpdate' of type str.
+The class 'org::aries::common::EmailAddress' has the following attributes: 'creationDate' of type str; 'id' of type str; 'enabled' of type str; 'organization' of type str; 'lastUpdate' of type str; 'userId' of type str; 'url' of type str; 'firstName' of type str; 'lastName' of type str.
+The class 'MemberSearchCriteria' has no attributes.
+The class 'ZipCode' has no attributes.
+The class 'org::sgiusa::model::StudyDeptExam' has the following attributes: 'examLanguage' of type str; 'lastUpdate' of type str; 'examLevel' of type str; 'current' of type str; 'examDate' of type str; 'id' of type str; 'examLocation' of type str.
+The class 'org::sgiusa::model::EmailList' has the following attributes: 'divisions' of type str; 'subDivisions' of type str; 'activityGroups' of type str; 'id' of type str; 'enabled' of type str.
+The class 'Property' has no attributes.
+The class 'EmailAddress' has no attributes.
+The class 'org::aries::common::Person' has the following attributes: 'userId' of type str; 'id' of type str.
+The class 'LeadershipInfo' has no attributes.
+The class 'org::sgiusa::model::LeadershipRole' has the following attributes: 'level' of type str; 'lastUpdate' of type str; 'position' of type str; 'subDivision' of type str; 'active' of type str; 'division' of type str; 'activityGroup' of type str; 'startDate' of type str; 'endDate' of type str; 'id' of type str.
+The class 'PhoneNumber' has no attributes.
+The class 'org::sgiusa::model::FamilyMember' has the following attributes: 'lastUpdate' of type str; 'sgiMember' of type str; 'personName' of type str; 'familyRelation' of type str; 'id' of type str.
+The class 'org::sgiusa::model::Member' has the following attributes: 'archived' of type str; 'firstName' of type str; 'visible' of type str; 'birthDate' of type str; 'extraField1' of type str; 'occupation' of type str; 'lastName' of type str; 'middleInitial' of type str; 'interests' of type str; 'extraField2' of type str; 'joinDate' of type str; 'employer' of type str; 'statusProfile' of type str; 'id' of type str; 'locatable' of type str; 'activityGroups' of type str; 'languages' of type str; 'subDivision' of type str; 'division' of type str.
+The class 'MapEntry' has no attributes.
+The class 'EmailAddressList' has no attributes.
+The class 'org::aries::common::ZipCode' has the following attributes: 'extension' of type str; 'number' of type str; 'country' of type str.
+The class 'MembershipInfo' has no attributes.
+The class 'org::sgiusa::model::Event' has the following attributes: 'id' of type str; 'status' of type str; 'divisions' of type str; 'subDivisions' of type str; 'userId' of type str.
+The class 'org::aries::common::Attachment' has the following attributes: 'id' of type str; 'name' of type str; 'fileName' of type str; 'contentType' of type str; 'size' of type str; 'fileData' of type str.
+The class 'org::aries::common::EStringToStringMapEntry' has no attributes.
+The class 'Preferences' has no attributes.
+The class 'org::sgiusa::model::Organization' has the following attributes: 'level' of type str; 'permissionId' of type str; 'abbrv' of type str; 'lastUpdate' of type str; 'id' of type str; 'organizationId' of type str; 'creationDate' of type str; 'zipCodes' of type str; 'type' of type str; 'label' of type str; 'name' of type str.
+The class 'SchoolInfo' has no attributes.
+The class 'Users' has no attributes.
+The class 'org::aries::common::PersonName' has the following attributes: 'firstName' of type str; 'middleInitial' of type str; 'lastName' of type str.
+The class 'org::aries::common::Property' has the following attributes: 'id' of type str; 'mixed' of type str; 'value' of type str; 'name' of type str.
+The class 'org::sgiusa::model::StudyDeptInfo' has the following attributes: 'lastUpdate' of type str; 'id' of type str.
+The class 'Event' has no attributes.
+The class 'EmailMessage' has no attributes.
+The class 'org::aries::common::Event' has the following attributes: 'id' of type str.
+The class 'Registration' has no attributes.
+The class 'Member' has no attributes.
+The class 'org::sgiusa::model::Preferences' has the following attributes: 'id' of type str; 'themeId' of type str; 'enableTooltips' of type str; 'selectedView' of type str; 'openNodes' of type str; 'userId' of type str; 'openViews' of type str; 'selectedNode' of type str.
+The class 'org::aries::common::StreetAddress' has the following attributes: 'street' of type str; 'longitude' of type str; 'country' of type str; 'state' of type str; 'id' of type str; 'latitude' of type str; 'city' of type str.
+The class 'EmailBox' has no attributes.
+The class 'Members' has no attributes.
+The class 'org::sgiusa::model::Registration' has the following attributes: 'cancelled' of type str; 'aborted' of type str; 'date' of type str; 'id' of type str.
+The class 'org::sgiusa::model::Users' has no attributes.
+The class 'org::sgiusa::model::Permission' has the following attributes: 'subDivisions' of type str; 'id' of type str; 'enabled' of type str; 'capabilities' of type str; 'activityGroups' of type str; 'userId' of type str; 'divisions' of type str.
+The class 'org::aries::common::EmailAddressList' has the following attributes: 'emailAddress' of type str; 'name' of type str.
+The class 'org::sgiusa::model::User' has the following attributes: 'userId' of type str; 'lastName' of type str; 'id' of type str; 'enabled' of type str; 'role' of type str; 'password' of type str; 'firstName' of type str.
+The class 'org::aries::common::EmailMessage' has the following attributes: 'sourceId' of type str; 'smtpHost' of type str; 'content' of type str; 'sendAsHtml' of type str; 'smtpPort' of type str; 'timestamp' of type str; 'id' of type str; 'subject' of type str.
+The class 'org::aries::common::EmailBox' has the following attributes: 'creationDate' of type str; 'name' of type str; 'lastUpdate' of type str; 'id' of type str; 'type' of type str.
+The class 'StudyDeptExam' has no attributes.
+The class 'Permission' has no attributes.
+The class 'Properties' has no attributes.
+The class 'Map' has no attributes.
+The class 'org::aries::common::Note' has the following attributes: 'lastUpdate' of type str; 'id' of type str; 'creationDate' of type str; 'text' of type str.
+The enumeration 'Role' has the following literals: 'USER', 'HOST', 'MANAGER'.
+The enumeration 'Position' has the following literals: 'VICEGENERALDIRECTOR', 'SENIORVICEGENERALDIRECTOR', 'ADVISOR', 'MEMBERCAREADVISOR', 'GENERALDIRECTOR', 'SOKASPIRITCOORDINATOR', 'PUBLICATIONSREPRESENTATIVE', 'MEMBERSHIPDATABASEADMINISTRATOR', 'LEADER', 'CULTUREDEPTCOORDINATOR', 'VICELEADER', 'MEMBERSHIPSTATISTICSADMINISTRATOR', 'GUIDANCE', 'SENIORVICELEADER'.
+The enumeration 'SchoolType' has the following literals: 'ELEMENTARY', 'OTHER', 'COLLEGE', 'GRAMMER', 'JRHIGHSCHOOL', 'GRADUATE', 'HIGHSCHOOL'.
+The enumeration 'ViewType' has the following literals: 'USERLIST', 'ORGANIZATIONNODE', 'MEMBERLIST'.
+The enumeration 'DivisionName' has the following literals: 'WomanSDivision', 'YoungWomenSDivision', 'none', 'YouthDivision', 'AllDivisions', 'MenSDivision', 'YoungMenSDivision'.
+The enumeration 'ActivityGroupName' has the following literals: 'CentralExecutiveCommittee', 'GoldenStageCrew', 'Secretariet', 'YouthPeaceGroup', 'PhoneToban', 'BookstoreToban', 'none', 'FifeAndDrumCorp', 'Byakuren', 'YouthMusicCorp', 'StudyGroup', 'YouthSupportGroup', 'BuildingCommittee', 'SokaGroup', 'CultureDept', 'Gajokai', 'SokaSpiritGroup', 'WelcomingCommittee', 'ChorusGroup', 'CleanupCommittee'.
+The enumeration 'Country' has the following literals: 'USA', 'PR', 'CAN', 'MEX'.
+The enumeration 'State' has the following literals: 'OR', 'NH', 'RI', 'CO', 'UT', 'DE', 'ID', 'SC', 'ME', 'AL', 'OK', 'IN', 'MO', 'OH', 'WV', 'WY', 'NV', 'NM', 'VT', 'SD', 'NC', 'TN', 'VA', 'MN', 'NY', 'KY', 'CT', 'WI', 'LA', 'MT', 'HI', 'MI', 'NJ', 'MA', 'PA', 'AZ', 'WA', 'FL', 'TX', 'NE', 'AR', 'AK', 'ND', 'GA', 'IA', 'IL', 'MS', 'CA', 'KS', 'MD'.
+The enumeration 'Status' has the following literals: 'ERROR', 'PROMPT', 'WARNING', 'INFO'.
+The enumeration 'RoleType' has the following literals: 'MANAGER', 'HOST', 'USER'.
+The enumeration 'GohonzonType' has the following literals: 'FAMILY', 'SMALL', 'OMOMORI', 'REGULAR', 'OKATAGI', 'LARGE'.
+The enumeration 'ActivityGroup' has the following literals: 'YOUTHPEACEGROUP', 'CHORUSGROUP', 'BYAKUREN', 'WELCOMINGCOMMITTEE', 'YOUTHMUSICCORP', 'PHONETOBAN', 'STUDYGROUP', 'FIFEANDDRUMCORP', 'BOOKSTORETOBAN', 'SECRETARIET', 'BUILDINGCOMMITTEE', 'NONE', 'YOUTHSUPPORTGROUP', 'SOKAGROUP', 'SOKASPIRITGROUP', 'GOLDENSTAGECREW', 'CLEANUPCOMMITTEE', 'CENTRALEXECUTIVECOMMITTEE', 'GAJOKAI', 'CULTUREDEPT'.
+The enumeration 'Division' has the following literals: 'WD', 'MD', 'NONE', 'YMD', 'ALL', 'YD', 'YWD'.
+The enumeration 'SubDivision' has the following literals: 'HIGHSCHOOL', 'ELEMENTARYSCHOOL', 'JRHIGHSCHOOL', 'ALL', 'CHILDREN', 'STUDENT'.
+The enumeration 'OrganizationLevel' has the following literals: 'SGIUSA', 'TEAM', 'CHAPTER', 'ZONE', 'AREA', 'DISTRICT', 'REGION', 'GROUP', 'UNIT'.
+The enumeration 'PhoneNumberType' has the following literals: 'WORK', 'CELL', 'HOME', 'OTHER', 'FAX'.
+The enumeration 'FamilyRelation' has the following literals: 'SISTER', 'BROTHER', 'GRANDSON', 'OTHER', 'FATHERINLAW', 'STEPBROTHER', 'EXWIFE', 'SON', 'EXHUSBAND', 'NEPHEW', 'GRANDDAUGHTER', 'COUSIN', 'FATHER', 'WIFE', 'AUNT', 'UNCLE', 'DAUGHTERINLAW', 'MOTHER', 'HUSBAND', 'SONINLAW', 'GRANDMOTHER', 'MOTHERINLAW', 'DAUGHTER', 'STEPSISTER', 'NIECE', 'GRANDFATHER'.
+The enumeration 'Capability' has the following literals: 'EXPORT', 'DELETE', 'ALL', 'PRINT', 'CREATE', 'EMAIL', 'UPDATE', 'NONE', 'READ'.
+The enumeration 'Language' has the following literals: 'SPANISH', 'ITALIAN', 'FRENCH', 'THAI', 'VIETNAMESE', 'CHINESE', 'JAPANESE', 'OTHER', 'GERMAN', 'KOREAN', 'ENGLISH', 'PORTUGUESE'.
+The enumeration 'EventStatus' has the following literals: 'HOST', 'MANAGER', 'USER'.
+The enumeration 'SubDivisionName' has the following literals: 'StudentDivision', 'ALLSubDivisions', 'HighSchoolDivision', 'ElementarySchoolDivision', 'ChildrenSDivision', 'JrHighSchoolDivision'.
+The enumeration 'StudyDeptExamLevel' has the following literals: 'ENTRANCE', 'POSTGRADUATE', 'OTHER', 'GRADUATE', 'INTERMEDIATE', 'ADVANCED', 'ELEMENTARY'.
+The enumeration 'StudyDeptLanguage' has the following literals: 'FRENCH', 'KOREAN', 'OTHER', 'ENGLISH', 'CHINESE', 'PORTUGUESE', 'JAPANESE', 'SPANISH', 'THAI', 'GERMAN', 'VIETNAMESE', 'ITALIAN'.
+The enumeration 'PositionName' has the following literals: 'MemberCareAdvisor', 'Leader', 'SokaSpiritCoordinator', 'SeniorViceGeneralDirector', 'Guidance', 'GeneralDirector', 'ViceGeneralDirector', 'Advisor', 'MembershipStatisticsAdministrator', 'MembershipDatabaseAdministrator', 'PublicationsRepresentative', 'CultureDeptCoordinator', 'SeniorViceLeader', 'ViceLeader'.
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot2', cardinality 0..*) is associated with 'org::aries::common::EStringToStringMapEntry' (role 'org_aries_common_EStringToStringMapEntry3', cardinality 0..*).
+'User' (role 'User210', cardinality 0..*) is associated with 'org::sgiusa::model::Organization' (role 'org_sgiusa_model_Organization209', cardinality 0..*).
+'Organization' (role 'Organization195', cardinality 0..*) is associated with 'org::sgiusa::model::MemberSearchCriteria' (role 'org_sgiusa_model_MemberSearchCriteria', cardinality 0..*).
+'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage55', cardinality 0..*) is associated with 'EmailAddressList' (role 'EmailAddressList56', cardinality 0..*).
+'org::aries::common::Event' (role 'org_aries_common_Event', cardinality 0..*) is associated with 'User' (role 'User73', cardinality 0..*).
+'Organization' (role 'Organization204', cardinality 0..*) is associated with 'org::sgiusa::model::Organization' (role 'org_sgiusa_model_Organization203', cardinality 0..*).
+'Organization' (role 'Organization179', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member178', cardinality 0..*).
+'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage58', cardinality 0..*) is associated with 'EmailAddressList' (role 'EmailAddressList59', cardinality 0..*).
+'GohonzonInfo' (role 'GohonzonInfo197', cardinality 0..*) is associated with 'org::sgiusa::model::MembershipInfo' (role 'org_sgiusa_model_MembershipInfo', cardinality 0..*).
+'org::aries::common::EmailBox' (role 'org_aries_common_EmailBox47', cardinality 0..*) is associated with 'EmailBox' (role 'EmailBox48', cardinality 0..*).
+'FamilyMember' (role 'FamilyMember', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot112', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot33', cardinality 0..*).
+'EmailAddress' (role 'EmailAddress', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot9', cardinality 0..*).
+'Users' (role 'Users', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot148', cardinality 0..*).
+'PhoneNumber' (role 'PhoneNumber167', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member166', cardinality 0..*).
+'Registration' (role 'Registration', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot137', cardinality 0..*).
+'EmailAddressList' (role 'EmailAddressList62', cardinality 0..*) is associated with 'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage61', cardinality 0..*).
+'EmailAddress' (role 'EmailAddress89', cardinality 0..*) is associated with 'org::aries::common::Person' (role 'org_aries_common_Person88', cardinality 0..*).
+'ZipCode' (role 'ZipCode', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot39', cardinality 0..*).
+'MapEntry' (role 'MapEntry', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot21', cardinality 0..*).
+'LeadershipInfo' (role 'LeadershipInfo182', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member181', cardinality 0..*).
+'PhoneNumber' (role 'PhoneNumber173', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member172', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot131', cardinality 0..*) is associated with 'Organization' (role 'Organization', cardinality 0..*).
+'org::sgiusa::model::Organization' (role 'org_sgiusa_model_Organization212', cardinality 0..*) is associated with 'User' (role 'User213', cardinality 0..*).
+'org::aries::common::EmailBox' (role 'org_aries_common_EmailBox', cardinality 0..*) is associated with 'EmailAccount' (role 'EmailAccount45', cardinality 0..*).
+'StudyDeptExam' (role 'StudyDeptExam', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot141', cardinality 0..*).
+'org::aries::common::User' (role 'org_aries_common_User', cardinality 0..*) is associated with 'PhoneNumber' (role 'PhoneNumber98', cardinality 0..*).
+'org::sgiusa::model::Members' (role 'org_sgiusa_model_Members', cardinality 0..*) is associated with 'Member' (role 'Member193', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot29', cardinality 0..*) is associated with 'PhoneNumber' (role 'PhoneNumber', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot17', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot31', cardinality 0..*) is associated with 'Properties' (role 'Properties', cardinality 0..*).
+'org::aries::common::Note' (role 'org_aries_common_Note', cardinality 0..*) is associated with 'User' (role 'User81', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot35', cardinality 0..*) is associated with 'StreetAddress' (role 'StreetAddress', cardinality 0..*).
+'EmailBox' (role 'EmailBox41', cardinality 0..*) is associated with 'org::aries::common::EmailAccount' (role 'org_aries_common_EmailAccount', cardinality 0..*).
+'org::sgiusa::model::Organization' (role 'org_sgiusa_model_Organization', cardinality 0..*) is associated with 'Organization' (role 'Organization201', cardinality 0..*).
+'org::sgiusa::model::StudyDeptInfo' (role 'org_sgiusa_model_StudyDeptInfo', cardinality 0..*) is associated with 'StudyDeptExam' (role 'StudyDeptExam219', cardinality 0..*).
+'org::aries::common::Map' (role 'org_aries_common_Map', cardinality 0..*) is associated with 'MapEntry' (role 'MapEntry75', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot114', cardinality 0..*) is associated with 'GohonzonInfo' (role 'GohonzonInfo', cardinality 0..*).
+'Preferences' (role 'Preferences', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot135', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot133', cardinality 0..*) is associated with 'Permission' (role 'Permission', cardinality 0..*).
+'EmailBox' (role 'EmailBox', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot13', cardinality 0..*).
+'org::sgiusa::model::EmailList' (role 'org_sgiusa_model_EmailList', cardinality 0..*) is associated with 'Organization' (role 'Organization152', cardinality 0..*).
+'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member190', cardinality 0..*) is associated with 'FamilyMember' (role 'FamilyMember191', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot120', cardinality 0..*) is associated with 'Member' (role 'Member', cardinality 0..*).
+'Attachment' (role 'Attachment', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot5', cardinality 0..*).
+'User' (role 'User155', cardinality 0..*) is associated with 'org::sgiusa::model::EmailList' (role 'org_sgiusa_model_EmailList154', cardinality 0..*).
+'org::aries::common::Person' (role 'org_aries_common_Person', cardinality 0..*) is associated with 'PersonName' (role 'PersonName83', cardinality 0..*).
+'Property' (role 'Property94', cardinality 0..*) is associated with 'org::aries::common::Properties' (role 'org_aries_common_Properties', cardinality 0..*).
+'org::sgiusa::model::User' (role 'org_sgiusa_model_User223', cardinality 0..*) is associated with 'EmailAddress' (role 'EmailAddress224', cardinality 0..*).
+'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage67', cardinality 0..*) is associated with 'EmailAddressList' (role 'EmailAddressList68', cardinality 0..*).
+'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage', cardinality 0..*) is associated with 'EmailAddress' (role 'EmailAddress53', cardinality 0..*).
+'SchoolInfo' (role 'SchoolInfo', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot139', cardinality 0..*).
+'org::aries::common::EStringToStringMapEntry' (role 'org_aries_common_EStringToStringMapEntry', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot', cardinality 0..*).
+'MembershipInfo' (role 'MembershipInfo', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot126', cardinality 0..*).
+'org::sgiusa::model::User' (role 'org_sgiusa_model_User238', cardinality 0..*) is associated with 'Preferences' (role 'Preferences239', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot23', cardinality 0..*) is associated with 'Note' (role 'Note', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot122', cardinality 0..*) is associated with 'Members' (role 'Members', cardinality 0..*).
+'org::aries::common::MapEntry' (role 'org_aries_common_MapEntry78', cardinality 0..*) is associated with 'org::aries::common::EObject' (role 'org_aries_common_EObject79', cardinality 0..*).
+'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member163', cardinality 0..*) is associated with 'StreetAddress' (role 'StreetAddress164', cardinality 0..*).
+'org::aries::common::MapEntry' (role 'org_aries_common_MapEntry', cardinality 0..*) is associated with 'org::aries::common::EObject' (role 'org_aries_common_EObject', cardinality 0..*).
+'User' (role 'User', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot37', cardinality 0..*).
+'Map' (role 'Map', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot19', cardinality 0..*).
+'PersonName' (role 'PersonName', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot27', cardinality 0..*).
+'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member184', cardinality 0..*) is associated with 'StudyDeptInfo' (role 'StudyDeptInfo185', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot15', cardinality 0..*) is associated with 'EmailMessage' (role 'EmailMessage', cardinality 0..*).
+'Attachment' (role 'Attachment71', cardinality 0..*) is associated with 'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage70', cardinality 0..*).
+'Note' (role 'Note188', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member187', cardinality 0..*).
+'org::aries::common::EmailAddress' (role 'org_aries_common_EmailAddress', cardinality 0..*) is associated with 'PhoneNumber' (role 'PhoneNumber43', cardinality 0..*).
+'org::aries::common::EmailBox' (role 'org_aries_common_EmailBox50', cardinality 0..*) is associated with 'EmailMessage' (role 'EmailMessage51', cardinality 0..*).
+'org::sgiusa::model::User' (role 'org_sgiusa_model_User', cardinality 0..*) is associated with 'EmailAccount' (role 'EmailAccount221', cardinality 0..*).
+'User' (role 'User207', cardinality 0..*) is associated with 'org::sgiusa::model::Organization' (role 'org_sgiusa_model_Organization206', cardinality 0..*).
+'Permission' (role 'Permission236', cardinality 0..*) is associated with 'org::sgiusa::model::User' (role 'org_sgiusa_model_User235', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot118', cardinality 0..*) is associated with 'LeadershipRole' (role 'LeadershipRole', cardinality 0..*).
+'EmailAccount' (role 'EmailAccount', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot7', cardinality 0..*).
+'org::aries::common::StreetAddress' (role 'org_aries_common_StreetAddress', cardinality 0..*) is associated with 'ZipCode' (role 'ZipCode96', cardinality 0..*).
+'org::sgiusa::model::Registration' (role 'org_sgiusa_model_Registration', cardinality 0..*) is associated with 'User' (role 'User217', cardinality 0..*).
+'EmailList' (role 'EmailList', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot107', cardinality 0..*).
+'User' (role 'User241', cardinality 0..*) is associated with 'org::sgiusa::model::Users' (role 'org_sgiusa_model_Users', cardinality 0..*).
+'LeadershipRole' (role 'LeadershipRole159', cardinality 0..*) is associated with 'org::sgiusa::model::LeadershipInfo' (role 'org_sgiusa_model_LeadershipInfo', cardinality 0..*).
+'org::aries::common::User' (role 'org_aries_common_User100', cardinality 0..*) is associated with 'EmailAddress' (role 'EmailAddress101', cardinality 0..*).
+'Event' (role 'Event110', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot109', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot128', cardinality 0..*) is associated with 'Note' (role 'Note129', cardinality 0..*).
+'PhoneNumber' (role 'PhoneNumber176', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member175', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot143', cardinality 0..*) is associated with 'StudyDeptInfo' (role 'StudyDeptInfo', cardinality 0..*).
+'EmailAddressList' (role 'EmailAddressList', cardinality 0..*) is associated with 'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot11', cardinality 0..*).
+'PhoneNumber' (role 'PhoneNumber233', cardinality 0..*) is associated with 'org::sgiusa::model::User' (role 'org_sgiusa_model_User232', cardinality 0..*).
+'org::aries::common::Person' (role 'org_aries_common_Person91', cardinality 0..*) is associated with 'StreetAddress' (role 'StreetAddress92', cardinality 0..*).
+'EmailAddress' (role 'EmailAddress161', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member', cardinality 0..*).
+'org::sgiusa::model::View' (role 'org_sgiusa_model_View', cardinality 0..*) is associated with 'Organization' (role 'Organization243', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot104', cardinality 0..*) is associated with 'org::sgiusa::model::EStringToStringMapEntry' (role 'org_sgiusa_model_EStringToStringMapEntry105', cardinality 0..*).
+'org::aries::common::DocumentRoot' (role 'org_aries_common_DocumentRoot25', cardinality 0..*) is associated with 'Person' (role 'Person', cardinality 0..*).
+'PhoneNumber' (role 'PhoneNumber170', cardinality 0..*) is associated with 'org::sgiusa::model::Member' (role 'org_sgiusa_model_Member169', cardinality 0..*).
+'LeadershipInfo' (role 'LeadershipInfo', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot116', cardinality 0..*).
+'org::sgiusa::model::User' (role 'org_sgiusa_model_User226', cardinality 0..*) is associated with 'StreetAddress' (role 'StreetAddress227', cardinality 0..*).
+'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot150', cardinality 0..*) is associated with 'View' (role 'View', cardinality 0..*).
+'org::sgiusa::model::EStringToStringMapEntry' (role 'org_sgiusa_model_EStringToStringMapEntry', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot', cardinality 0..*).
+'org::sgiusa::model::Permission' (role 'org_sgiusa_model_Permission', cardinality 0..*) is associated with 'Organization' (role 'Organization215', cardinality 0..*).
+'org::sgiusa::model::Note' (role 'org_sgiusa_model_Note', cardinality 0..*) is associated with 'User' (role 'User199', cardinality 0..*).
+'org::sgiusa::model::User' (role 'org_sgiusa_model_User229', cardinality 0..*) is associated with 'PhoneNumber' (role 'PhoneNumber230', cardinality 0..*).
+'EmailAddressList' (role 'EmailAddressList65', cardinality 0..*) is associated with 'org::aries::common::EmailMessage' (role 'org_aries_common_EmailMessage64', cardinality 0..*).
+'User' (role 'User146', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot145', cardinality 0..*).
+'org::sgiusa::model::Event' (role 'org_sgiusa_model_Event', cardinality 0..*) is associated with 'Organization' (role 'Organization157', cardinality 0..*).
+'org::aries::common::Person' (role 'org_aries_common_Person85', cardinality 0..*) is associated with 'PhoneNumber' (role 'PhoneNumber86', cardinality 0..*).
+'MemberSearchCriteria' (role 'MemberSearchCriteria', cardinality 0..*) is associated with 'org::sgiusa::model::DocumentRoot' (role 'org_sgiusa_model_DocumentRoot124', cardinality 0..*).

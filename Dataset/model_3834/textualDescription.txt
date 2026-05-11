@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'Expression' has no attributes.
+The class 'realop::AndExp' has no attributes.
+The class 'realop::Realop' has no attributes.
+The class 'realop::IsRealised' has the following attributes: 'featureName' of type str.
+The class 'realop::Expression' has no attributes.
+The class 'realop::OrExp' has no attributes.
+The class 'realop::IsNegative' has the following attributes: 'featureName' of type str.
+The class 'realop::IsPositive' has the following attributes: 'featureName' of type str.
+The class 'realop::Operator' has the following attributes: 'name' of type str.
+The class 'realop::XorExp' has no attributes.
+The class 'realop::NotExp' has no attributes.
+'realop::AndExp' is a specialization of 'Expression'.
+'realop::OrExp' is a specialization of 'Expression'.
+'realop::IsRealised' is a specialization of 'Expression'.
+'realop::IsPositive' is a specialization of 'Expression'.
+'realop::IsNegative' is a specialization of 'Expression'.
+'realop::NotExp' is a specialization of 'Expression'.
+'realop::XorExp' is a specialization of 'Expression'.
+'realop::OrExp' (role 'realop_OrExp9', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression10', cardinality 0..*).
+'realop::NotExp' (role 'realop_NotExp', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression22', cardinality 0..*).
+'realop::AndExp' (role 'realop_AndExp', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression12', cardinality 0..*).
+'realop::Operator' (role 'realop_Operator', cardinality 0..*) is associated with 'realop::Realop' (role 'realop_Realop', cardinality 0..*).
+'realop::AndExp' (role 'realop_AndExp14', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression15', cardinality 0..*).
+'realop::Expression' (role 'realop_Expression17', cardinality 0..*) is associated with 'realop::XorExp' (role 'realop_XorExp', cardinality 0..*).
+'realop::Operator' (role 'realop_Operator4', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression5', cardinality 0..*).
+'realop::Expression' (role 'realop_Expression', cardinality 0..*) is associated with 'realop::Operator' (role 'realop_Operator2', cardinality 0..*).
+'realop::OrExp' (role 'realop_OrExp', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression7', cardinality 0..*).
+'realop::XorExp' (role 'realop_XorExp19', cardinality 0..*) is associated with 'realop::Expression' (role 'realop_Expression20', cardinality 0..*).

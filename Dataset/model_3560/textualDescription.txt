@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'simpleimperative::Program' has no attributes.
+The class 'simpleimperative::Wait' has the following attributes: 'miliseconds' of type str.
+The class 'simpleimperative::Expression' has no attributes.
+The class 'simpleimperative::Statement' has no attributes.
+The class 'simpleimperative::Loop' has no attributes.
+The class 'ConsoleOutput' has no attributes.
+The class 'simpleimperative::Println' has no attributes.
+The class 'Expression' has no attributes.
+The class 'simpleimperative::Assignation' has no attributes.
+The class 'simpleimperative::VarRef' has the following attributes: 'varRef' of type str.
+The class 'Statement' has no attributes.
+The class 'simpleimperative::VarDecl' has the following attributes: 'name' of type str.
+The class 'simpleimperative::ConsoleOutput' has the following attributes: 'input' of type str.
+The class 'simpleimperative::Print' has no attributes.
+The class 'simpleimperative::Conditional' has no attributes.
+'simpleimperative::Loop' is a specialization of 'Statement'.
+'simpleimperative::Print' is a specialization of 'ConsoleOutput'.
+'simpleimperative::Wait' is a specialization of 'Statement'.
+'simpleimperative::Println' is a specialization of 'ConsoleOutput'.
+'simpleimperative::VarRef' is a specialization of 'Expression'.
+'simpleimperative::Conditional' is a specialization of 'Statement'.
+'simpleimperative::VarDecl' is a specialization of 'Statement'.
+'simpleimperative::ConsoleOutput' is a specialization of 'Statement'.
+'simpleimperative::Assignation' is a specialization of 'Statement'.
+'simpleimperative::VarDecl' (role 'simpleimperative_VarDecl', cardinality 0..*) is associated with 'simpleimperative::Expression' (role 'simpleimperative_Expression11', cardinality 0..*).
+'simpleimperative::Conditional' (role 'simpleimperative_Conditional', cardinality 0..*) is associated with 'simpleimperative::Expression' (role 'simpleimperative_Expression', cardinality 0..*).
+'simpleimperative::Expression' (role 'simpleimperative_Expression16', cardinality 0..*) is associated with 'simpleimperative::Assignation' (role 'simpleimperative_Assignation15', cardinality 0..*).
+'simpleimperative::Expression' (role 'simpleimperative_Expression6', cardinality 0..*) is associated with 'simpleimperative::Loop' (role 'simpleimperative_Loop', cardinality 0..*).
+'simpleimperative::Conditional' (role 'simpleimperative_Conditional3', cardinality 0..*) is associated with 'simpleimperative::Statement' (role 'simpleimperative_Statement4', cardinality 0..*).
+'simpleimperative::Statement' (role 'simpleimperative_Statement9', cardinality 0..*) is associated with 'simpleimperative::Loop' (role 'simpleimperative_Loop8', cardinality 0..*).
+'simpleimperative::Program' (role 'simpleimperative_Program', cardinality 0..*) is associated with 'simpleimperative::Statement' (role 'simpleimperative_Statement', cardinality 0..*).
+'simpleimperative::Assignation' (role 'simpleimperative_Assignation', cardinality 0..*) is associated with 'simpleimperative::VarDecl' (role 'simpleimperative_VarDecl13', cardinality 0..*).

@@ -1,0 +1,52 @@
+The model has 20 class(es).
+The class 'LocatedElement' has no attributes.
+The class 'KM3::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'KM3::Attribute' has no attributes.
+The class 'KM3::DataType' has no attributes.
+The class 'KM3::StructuralFeature' has no attributes.
+The class 'KM3::TypedElement' has the following attributes: 'isOrdered' of type bool; 'isUnique' of type bool; 'upper' of type int; 'lower' of type int.
+The class 'StructuralFeature' has no attributes.
+The class 'KM3::Operation' has no attributes.
+The class 'KM3::Parameter' has no attributes.
+The class 'KM3::Enumeration' has no attributes.
+The class 'KM3::LocatedElement' has the following attributes: 'commentsBefore' of type str; 'location' of type str; 'commentsAfter' of type str.
+The class 'KM3::EnumLiteral' has no attributes.
+The class 'KM3::Package' has no attributes.
+The class 'KM3::ModelElement' has the following attributes: 'name' of type str.
+The class 'KM3::Classifier' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'KM3::Metamodel' has no attributes.
+The class 'KM3::Reference' has the following attributes: 'isContainer' of type bool.
+The class 'TypedElement' has no attributes.
+The class 'Classifier' has no attributes.
+'KM3::Attribute' is a specialization of 'StructuralFeature'.
+'KM3::Operation' is a specialization of 'TypedElement'.
+'KM3::Classifier' is a specialization of 'ModelElement'.
+'KM3::DataType' is a specialization of 'Classifier'.
+'KM3::EnumLiteral' is a specialization of 'ModelElement'.
+'KM3::TypedElement' is a specialization of 'ModelElement'.
+'KM3::StructuralFeature' is a specialization of 'TypedElement'.
+'KM3::Reference' is a specialization of 'StructuralFeature'.
+'KM3::ModelElement' is a specialization of 'LocatedElement'.
+'KM3::Class' is a specialization of 'Classifier'.
+'KM3::Enumeration' is a specialization of 'Classifier'.
+'KM3::Metamodel' is a specialization of 'LocatedElement'.
+'KM3::Package' is a specialization of 'ModelElement'.
+'KM3::Parameter' is a specialization of 'TypedElement'.
+'KM3::Reference' (role 'KM3_Reference16', cardinality 0..*) is associated with 'KM3::Reference' (role 'KM3_Reference', cardinality 0..*).
+'KM3::StructuralFeature' (role 'StructuralFeature12', cardinality 0..*) is associated with 'KM3::StructuralFeature' (role 'derivedFrom', cardinality 0..*).
+'KM3::StructuralFeature' (role 'subsetOf', cardinality 0..*) is associated with 'KM3::StructuralFeature' (role 'StructuralFeature15', cardinality 0..*).
+'KM3::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'KM3::Operation' (role 'owner21', cardinality 0..*).
+'KM3::StructuralFeature' (role 'StructuralFeature', cardinality 0..*) is associated with 'KM3::Class' (role 'owner', cardinality 0..*).
+'KM3::EnumLiteral' (role 'literals', cardinality 0..*) is associated with 'KM3::Enumeration' (role 'Enumeration', cardinality 0..*).
+'KM3::Metamodel' (role 'metamodel', cardinality 0..*) is associated with 'KM3::Package' (role 'Package', cardinality 0..*).
+'KM3::Package' (role 'contents', cardinality 0..*) is associated with 'KM3::Metamodel' (role 'Metamodel', cardinality 0..*).
+'KM3::Class' (role 'Class', cardinality 0..*) is associated with 'KM3::StructuralFeature' (role 'structuralFeatures', cardinality 0..*).
+'KM3::Operation' (role 'Operation23', cardinality 0..*) is associated with 'KM3::Parameter' (role 'parameters', cardinality 0..*).
+'KM3::Operation' (role 'operations', cardinality 0..*) is associated with 'KM3::Class' (role 'Class19', cardinality 0..*).
+'KM3::Class' (role 'owner7', cardinality 0..*) is associated with 'KM3::Operation' (role 'Operation', cardinality 0..*).
+'KM3::Class' (role 'KM3_Class3', cardinality 0..*) is associated with 'KM3::Class' (role 'KM3_Class', cardinality 0..*).
+'KM3::TypedElement' (role 'KM3_TypedElement', cardinality 0..*) is associated with 'KM3::Classifier' (role 'KM3_Classifier', cardinality 0..*).
+'KM3::Package' (role 'KM3_Package', cardinality 0..*) is associated with 'KM3::ModelElement' (role 'KM3_ModelElement', cardinality 0..*).
+'KM3::EnumLiteral' (role 'EnumLiteral', cardinality 0..*) is associated with 'KM3::Enumeration' (role 'enum', cardinality 0..*).
+'KM3::Package' (role 'KM3_Package25', cardinality 0..*) is associated with 'KM3::ModelElement' (role 'KM3_ModelElement26', cardinality 0..*).

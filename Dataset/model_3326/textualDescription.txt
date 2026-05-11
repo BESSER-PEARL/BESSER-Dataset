@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'sample::Given' has no attributes.
+The class 'sample::Story' has the following attributes: 'Benefit' of type str; 'Role' of type str; 'Feature' of type str.
+The class 'sample::Sentence' has the following attributes: 'Text' of type str.
+The class 'sample::Then' has no attributes.
+The class 'sample::When' has no attributes.
+The class 'sample::Scenario' has the following attributes: 'Title' of type str.
+'sample::Story' (role 'sample_Story', cardinality 0..*) is associated with 'sample::Scenario' (role 'sample_Scenario', cardinality 0..*).
+'sample::Sentence' (role 'sample_Sentence', cardinality 0..*) is associated with 'sample::When' (role 'sample_When8', cardinality 0..*).
+'sample::Sentence' (role 'sample_Sentence11', cardinality 0..*) is associated with 'sample::Given' (role 'sample_Given10', cardinality 0..*).
+'sample::Scenario' (role 'sample_Scenario4', cardinality 0..*) is associated with 'sample::Given' (role 'sample_Given', cardinality 0..*).
+'sample::Then' (role 'sample_Then13', cardinality 0..*) is associated with 'sample::Sentence' (role 'sample_Sentence14', cardinality 0..*).
+'sample::Scenario' (role 'sample_Scenario2', cardinality 0..*) is associated with 'sample::When' (role 'sample_When', cardinality 0..*).
+'sample::Scenario' (role 'sample_Scenario6', cardinality 0..*) is associated with 'sample::Then' (role 'sample_Then', cardinality 0..*).

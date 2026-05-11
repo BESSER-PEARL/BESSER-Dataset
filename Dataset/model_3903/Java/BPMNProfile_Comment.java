@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class BPMNProfile_Comment  {
+
+
+
+
+
+
+    private BPMNProfile_TextAnnotation bpmnprofile_textannotation;
+
+
+
+
+    private BPMNProfile_Documentation bpmnprofile_documentation;
+
+
+    public BPMNProfile_Comment(
+    ) {
+    }
+
+
+
+    public BPMNProfile_TextAnnotation getBpmnprofile_textannotation() {
+        return bpmnprofile_textannotation;
+    }
+
+    public void setBpmnprofile_textannotation(BPMNProfile_TextAnnotation bpmnprofile_textannotation) {
+        this.bpmnprofile_textannotation = bpmnprofile_textannotation;
+    }
+    public BPMNProfile_Documentation getBpmnprofile_documentation() {
+        return bpmnprofile_documentation;
+    }
+
+    public void setBpmnprofile_documentation(BPMNProfile_Documentation bpmnprofile_documentation) {
+        this.bpmnprofile_documentation = bpmnprofile_documentation;
+    }
+
+}

@@ -1,0 +1,71 @@
+The model has 27 class(es).
+The class 'db::config::Role' has no attributes.
+The class 'db::SafiDriverManager' has no attributes.
+The class 'db::SafiResultSet' has the following attributes: 'useCache' of type bool; 'readOnly' of type bool; 'scrollable' of type bool; 'scrollMode' of type str; 'holdabilityMode' of type str.
+The class 'db::config::ServerResource' has the following attributes: 'lastUpdated' of type date; 'id' of type int; 'name' of type str; 'description' of type str; 'lastModified' of type date.
+The class 'config::Saflet' has no attributes.
+The class 'db::QueryParameter' has the following attributes: 'dataType' of type str.
+The class 'db::config::TelephonySubsystem' has the following attributes: 'managerPassword' of type str; 'versionId' of type str; 'managerName' of type str; 'running' of type bool; 'private' of type bool; 'hostname' of type str; 'promptDirectory' of type str; 'enabled' of type bool; 'managerPort' of type int; 'platformId' of type str; 'visibleSafiServerIP' of type str.
+The class 'db::config::SafiServer' has the following attributes: 'bindIP' of type str; 'managementPort' of type int; 'debug' of type bool; 'running' of type bool; 'dbPort' of type int.
+The class 'db::Variable' has the following attributes: 'name' of type str; 'scope' of type str; 'type' of type str; 'defaultValue' of type str.
+The class 'db::config::Saflet' has the following attributes: 'subsystemId' of type str; 'code' of type str.
+The class 'db::config::User' has the following attributes: 'lastname' of type str; 'password' of type str; 'firstname' of type str.
+The class 'db::config::Prompt' has the following attributes: 'extension' of type str; 'system' of type bool.
+The class 'db::config::Entitlement' has no attributes.
+The class 'db::DBConnection' has the following attributes: 'password' of type str; 'loginTimeout' of type int; 'maxPoolSize' of type int; 'minPoolSize' of type int; 'user' of type str; 'transactionMode' of type str; 'maxIdleTime' of type int; 'url' of type str; 'properties' of type str; 'acquireIncrement' of type int.
+The class 'config::User' has no attributes.
+The class 'db::config::SafletProject' has the following attributes: 'enabled' of type bool.
+The class 'db::config::SFTPInfo' has the following attributes: 'sftpPort' of type int; 'sftpUser' of type str; 'sftpPassword' of type str.
+The class 'db::DBResource' has the following attributes: 'name' of type str; 'lastUpdated' of type date; 'id' of type int; 'lastModified' of type date.
+The class 'db::Query' has the following attributes: 'querySql' of type str; 'queryType' of type str; 'catalog' of type str.
+The class 'config::Role' has no attributes.
+The class 'config::Prompt' has no attributes.
+The class 'ServerResource' has no attributes.
+The class 'config::SafletProject' has no attributes.
+The class 'config::SafiServer' has no attributes.
+The class 'DBResource' has no attributes.
+The class 'db::DBDriver' has the following attributes: 'default' of type bool; 'guideUrl' of type str; 'defaultPort' of type int; 'driverClassName' of type str; 'exampleUrl' of type str; 'pooling' of type bool; 'urlRegexPattern' of type str; 'websiteUrl' of type str; 'jars' of type str.
+The class 'config::Entitlement' has no attributes.
+The enumeration 'RSHoldabilityMode' has the following literals: 'HoldCursorsOverCommit', 'CloseCursorsOverCommit'.
+The enumeration 'RSScrollMode' has the following literals: 'ForwardOnly', 'ScrollInsensitive', 'ScrollSensitive'.
+The enumeration 'QueryType' has the following literals: 'Update', 'SPUpdate', 'SPSelect', 'Select'.
+The enumeration 'VariableType' has the following literals: 'Decimal', 'Boolean', 'Object', 'Array', 'Datetime', 'Text', 'Integer', 'Date', 'Time'.
+The enumeration 'TransactionMode' has the following literals: 'ReadCommitted', 'RepeatableRead', 'ReadUncommitted', 'None_', 'Serializable'.
+The enumeration 'SynchMode' has the following literals: 'Synch', 'ReadOnly'.
+The enumeration 'VariableScope' has the following literals: 'Local', 'Runtime', 'Global'.
+The enumeration 'SQLDataType' has the following literals: 'Object', 'Double', 'Boolean', 'Integer', 'Clob', 'Text', 'Date', 'Long', 'DateTime', 'Array', 'Time', 'Blob'.
+'db::config::Entitlement' is a specialization of 'ServerResource'.
+'db::DBDriver' is a specialization of 'DBResource'.
+'db::SafiResultSet' is a specialization of 'DBResource'.
+'db::config::Prompt' is a specialization of 'ServerResource'.
+'db::config::User' is a specialization of 'ServerResource'.
+'db::Query' is a specialization of 'DBResource'.
+'db::config::SafiServer' is a specialization of 'ServerResource'.
+'db::config::Role' is a specialization of 'ServerResource'.
+'db::config::SafletProject' is a specialization of 'ServerResource'.
+'db::QueryParameter' is a specialization of 'DBResource'.
+'db::config::TelephonySubsystem' is a specialization of 'ServerResource'.
+'db::SafiDriverManager' is a specialization of 'DBResource'.
+'db::config::Saflet' is a specialization of 'ServerResource'.
+'db::DBConnection' is a specialization of 'DBResource'.
+'db::DBConnection' (role 'connection', cardinality 0..*) is associated with 'db::Query' (role 'Query', cardinality 0..*).
+'db::config::Role' (role 'db_config_Role', cardinality 0..*) is associated with 'config::Entitlement' (role 'config_Entitlement', cardinality 0..*).
+'db::Query' (role 'query', cardinality 0..*) is associated with 'db::QueryParameter' (role 'QueryParameter', cardinality 0..*).
+'db::config::User' (role 'db_config_User', cardinality 0..*) is associated with 'config::Role' (role 'config_Role', cardinality 0..*).
+'db::Query' (role 'Query10', cardinality 0..*) is associated with 'db::QueryParameter' (role 'parameters', cardinality 0..*).
+'db::config::ServerResource' (role 'db_config_ServerResource', cardinality 0..*) is associated with 'config::User' (role 'config_User', cardinality 0..*).
+'config::User' (role 'config_User20', cardinality 0..*) is associated with 'db::config::SafiServer' (role 'db_config_SafiServer', cardinality 0..*).
+'db::DBDriver' (role 'DBDriver', cardinality 0..*) is associated with 'db::DBConnection' (role 'connections', cardinality 0..*).
+'config::User' (role 'config_User23', cardinality 0..*) is associated with 'db::config::SafiServer' (role 'db_config_SafiServer22', cardinality 0..*).
+'db::SafiResultSet' (role 'SafiResultSet', cardinality 0..*) is associated with 'db::Query' (role 'query8', cardinality 0..*).
+'config::SafiServer' (role 'config_SafiServer', cardinality 0..*) is associated with 'db::config::TelephonySubsystem' (role 'db_config_TelephonySubsystem', cardinality 0..*).
+'db::config::SafletProject' (role 'project', cardinality 0..*) is associated with 'config::Saflet' (role 'Saflet', cardinality 0..*).
+'config::User' (role 'config_User18', cardinality 0..*) is associated with 'db::config::ServerResource' (role 'db_config_ServerResource17', cardinality 0..*).
+'config::Prompt' (role 'Prompt', cardinality 0..*) is associated with 'db::config::SafletProject' (role 'project29', cardinality 0..*).
+'db::SafiResultSet' (role 'resultSets', cardinality 0..*) is associated with 'db::Query' (role 'Query14', cardinality 0..*).
+'db::Query' (role 'queries', cardinality 0..*) is associated with 'db::DBConnection' (role 'DBConnection6', cardinality 0..*).
+'db::DBDriver' (role 'driver', cardinality 0..*) is associated with 'db::DBConnection' (role 'DBConnection', cardinality 0..*).
+'db::config::Saflet' (role 'saflets', cardinality 0..*) is associated with 'config::SafletProject' (role 'SafletProject', cardinality 0..*).
+'db::DBDriver' (role 'DBDriver12', cardinality 0..*) is associated with 'db::SafiDriverManager' (role 'driverManager', cardinality 0..*).
+'db::config::Prompt' (role 'prompts', cardinality 0..*) is associated with 'config::SafletProject' (role 'SafletProject31', cardinality 0..*).
+'db::SafiDriverManager' (role 'SafiDriverManager', cardinality 0..*) is associated with 'db::DBDriver' (role 'drivers', cardinality 0..*).

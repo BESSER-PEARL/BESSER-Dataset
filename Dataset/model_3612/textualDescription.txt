@@ -1,0 +1,209 @@
+The model has 92 class(es).
+The class 'pp1::FunctionCall' has no attributes.
+The class 'pp1::DefinitionArgument' has the following attributes: 'op' of type str; 'argName' of type str.
+The class 'pp1::LiteralClass' has no attributes.
+The class 'pp1::ICollectQuery' has no attributes.
+The class 'pp1::Lambda' has no attributes.
+The class 'pp1::WithLambdaExpression' has no attributes.
+The class 'pp1::Expression' has no attributes.
+The class 'pp1::CaseExpression' has no attributes.
+The class 'pp1::RubyLambda' has no attributes.
+The class 'pp1::UnquotedString' has no attributes.
+The class 'TextExpression' has no attributes.
+The class 'pp1::RelationalExpression' has no attributes.
+The class 'Definition' has no attributes.
+The class 'pp1::TextExpression' has no attributes.
+The class 'pp1::NamedAccessExpression' has no attributes.
+The class 'pp1::AttributeOperation' has the following attributes: 'key' of type str; 'op' of type str.
+The class 'pp1::LiteralUndef' has no attributes.
+The class 'pp1::LiteralName' has the following attributes: 'value' of type str.
+The class 'pp1::RelationshipExpression' has no attributes.
+The class 'ExpressionBlock' has no attributes.
+The class 'pp1::LiteralRegex' has the following attributes: 'value' of type str.
+The class 'pp1::InExpression' has no attributes.
+The class 'pp1::EqualityExpression' has no attributes.
+The class 'pp1::ExportedCollectQuery' has no attributes.
+The class 'Expression' has no attributes.
+The class 'pp1::AppendExpression' has no attributes.
+The class 'pp1::AttributeOperations' has no attributes.
+The class 'Lambda' has no attributes.
+The class 'pp1::ResourceExpression' has no attributes.
+The class 'pp1::SingleQuotedString' has the following attributes: 'text' of type str.
+The class 'pp1::IQuotedString' has no attributes.
+The class 'pp1::BinaryExpression' has no attributes.
+The class 'IfExpression' has no attributes.
+The class 'pp1::LiteralDefault' has no attributes.
+The class 'pp1::VariableTE' has the following attributes: 'varName' of type str.
+The class 'pp1::UnaryMinusExpression' has no attributes.
+The class 'pp1::ExpressionTE' has no attributes.
+The class 'pp1::AssignmentExpression' has no attributes.
+The class 'pp1::ResourceBody' has no attributes.
+The class 'pp1::ElseExpression' has no attributes.
+The class 'pp1::SelectorExpression' has no attributes.
+The class 'pp1::CollectExpression' has no attributes.
+The class 'pp1::LiteralBoolean' has the following attributes: 'value' of type bool.
+The class 'pp1::SelectorEntry' has no attributes.
+The class 'pp1::Definition' has the following attributes: 'className' of type str.
+The class 'pp1::HostClassDefinition' has no attributes.
+The class 'StringExpression' has no attributes.
+The class 'pp1::LiteralList' has no attributes.
+The class 'pp1::OrExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'pp1::BinaryOpExpression' has the following attributes: 'opName' of type str.
+The class 'pp1::StringExpression' has no attributes.
+The class 'pp1::LiteralNameOrReference' has the following attributes: 'value' of type str.
+The class 'pp1::IfExpression' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'pp1::DefinitionArgumentList' has no attributes.
+The class 'pp1::VirtualCollectQuery' has no attributes.
+The class 'pp1::UnaryExpression' has no attributes.
+The class 'pp1::VerbatimTE' has the following attributes: 'text' of type str.
+The class 'WithLambdaExpression' has no attributes.
+The class 'pp1::LiteralHash' has no attributes.
+The class 'pp1::ShiftExpression' has no attributes.
+The class 'pp1::ImportExpression' has no attributes.
+The class 'pp1::ElseIfExpression' has no attributes.
+The class 'pp1::LiteralExpression' has no attributes.
+The class 'pp1::MethodCall' has the following attributes: 'parenthesized' of type bool.
+The class 'LiteralExpression' has no attributes.
+The class 'ICollectQuery' has no attributes.
+The class 'IQuotedString' has no attributes.
+The class 'pp1::PuppetManifest' has no attributes.
+The class 'pp1::InterpolatedVariable' has the following attributes: 'varName' of type str.
+The class 'ParameterizedExpression' has no attributes.
+The class 'pp1::NodeDefinition' has no attributes.
+The class 'pp1::VirtualNameOrReference' has the following attributes: 'value' of type str; 'exported' of type bool.
+The class 'pp1::JavaLambda' has the following attributes: 'farrow' of type bool.
+The class 'pp1::AndExpression' has no attributes.
+The class 'BinaryOpExpression' has no attributes.
+The class 'pp1::ParenthesisedExpression' has no attributes.
+The class 'pp1::SeparatorExpression' has no attributes.
+The class 'pp1::HashEntry' has no attributes.
+The class 'pp1::AdditiveExpression' has no attributes.
+The class 'pp1::ParameterizedExpression' has no attributes.
+The class 'pp1::UnlessExpression' has no attributes.
+The class 'pp1::AtExpression' has no attributes.
+The class 'pp1::Case' has no attributes.
+The class 'pp1::UnaryNotExpression' has no attributes.
+The class 'pp1::MultiplicativeExpression' has no attributes.
+The class 'pp1::ExprList' has no attributes.
+The class 'pp1::MatchingExpression' has no attributes.
+The class 'pp1::ExpressionBlock' has no attributes.
+The class 'pp1::VariableExpression' has the following attributes: 'varName' of type str.
+The class 'pp1::DoubleQuotedString' has no attributes.
+'pp1::BinaryExpression' is a specialization of 'Expression'.
+'pp1::DoubleQuotedString' is a specialization of 'IQuotedString'.
+'pp1::PuppetManifest' is a specialization of 'ExpressionBlock'.
+'pp1::ParenthesisedExpression' is a specialization of 'Expression'.
+'pp1::VariableTE' is a specialization of 'TextExpression'.
+'pp1::OrExpression' is a specialization of 'BinaryExpression'.
+'pp1::ElseIfExpression' is a specialization of 'IfExpression'.
+'pp1::ElseExpression' is a specialization of 'ExpressionBlock'.
+'pp1::SeparatorExpression' is a specialization of 'Expression'.
+'pp1::CaseExpression' is a specialization of 'Expression'.
+'pp1::SelectorEntry' is a specialization of 'BinaryExpression'.
+'pp1::Lambda' is a specialization of 'ExpressionBlock'.
+'pp1::WithLambdaExpression' is a specialization of 'ParameterizedExpression'.
+'pp1::ExportedCollectQuery' is a specialization of 'UnaryExpression'.
+'pp1::ExportedCollectQuery' is a specialization of 'ICollectQuery'.
+'pp1::VirtualNameOrReference' is a specialization of 'LiteralExpression'.
+'pp1::EqualityExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::UnaryNotExpression' is a specialization of 'UnaryExpression'.
+'pp1::SelectorExpression' is a specialization of 'ParameterizedExpression'.
+'pp1::SingleQuotedString' is a specialization of 'StringExpression'.
+'pp1::AppendExpression' is a specialization of 'BinaryExpression'.
+'pp1::LiteralName' is a specialization of 'LiteralExpression'.
+'pp1::StringExpression' is a specialization of 'Expression'.
+'pp1::ExpressionTE' is a specialization of 'TextExpression'.
+'pp1::BinaryOpExpression' is a specialization of 'BinaryExpression'.
+'pp1::AssignmentExpression' is a specialization of 'BinaryExpression'.
+'pp1::InterpolatedVariable' is a specialization of 'Expression'.
+'pp1::MultiplicativeExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::VirtualCollectQuery' is a specialization of 'ICollectQuery'.
+'pp1::FunctionCall' is a specialization of 'WithLambdaExpression'.
+'pp1::VariableExpression' is a specialization of 'Expression'.
+'pp1::VerbatimTE' is a specialization of 'TextExpression'.
+'pp1::DoubleQuotedString' is a specialization of 'StringExpression'.
+'pp1::RubyLambda' is a specialization of 'Lambda'.
+'pp1::InExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::UnquotedString' is a specialization of 'StringExpression'.
+'pp1::LiteralNameOrReference' is a specialization of 'LiteralExpression'.
+'pp1::LiteralBoolean' is a specialization of 'LiteralExpression'.
+'pp1::AndExpression' is a specialization of 'BinaryExpression'.
+'pp1::ParameterizedExpression' is a specialization of 'Expression'.
+'pp1::AtExpression' is a specialization of 'ParameterizedExpression'.
+'pp1::LiteralExpression' is a specialization of 'Expression'.
+'pp1::LiteralHash' is a specialization of 'LiteralExpression'.
+'pp1::ImportExpression' is a specialization of 'Expression'.
+'pp1::LiteralUndef' is a specialization of 'LiteralExpression'.
+'pp1::UnlessExpression' is a specialization of 'Expression'.
+'pp1::VirtualCollectQuery' is a specialization of 'UnaryExpression'.
+'pp1::LiteralClass' is a specialization of 'LiteralExpression'.
+'pp1::ResourceExpression' is a specialization of 'Expression'.
+'pp1::Definition' is a specialization of 'Expression'.
+'pp1::MatchingExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::MethodCall' is a specialization of 'WithLambdaExpression'.
+'pp1::HostClassDefinition' is a specialization of 'Definition'.
+'pp1::IfExpression' is a specialization of 'Expression'.
+'pp1::LiteralRegex' is a specialization of 'LiteralExpression'.
+'pp1::ExprList' is a specialization of 'Expression'.
+'pp1::AdditiveExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::RelationalExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::JavaLambda' is a specialization of 'Lambda'.
+'pp1::LiteralDefault' is a specialization of 'LiteralExpression'.
+'pp1::RelationshipExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::SingleQuotedString' is a specialization of 'IQuotedString'.
+'pp1::NamedAccessExpression' is a specialization of 'BinaryExpression'.
+'pp1::UnaryExpression' is a specialization of 'Expression'.
+'pp1::ExpressionBlock' is a specialization of 'Expression'.
+'pp1::CollectExpression' is a specialization of 'Expression'.
+'pp1::LiteralList' is a specialization of 'LiteralExpression'.
+'pp1::ShiftExpression' is a specialization of 'BinaryOpExpression'.
+'pp1::UnaryMinusExpression' is a specialization of 'UnaryExpression'.
+'pp1::NodeDefinition' is a specialization of 'Expression'.
+'pp1::Case' (role 'pp1_Case', cardinality 0..*) is associated with 'pp1::CaseExpression' (role 'pp1_CaseExpression21', cardinality 0..*).
+'pp1::IfExpression' (role 'pp1_IfExpression34', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression35', cardinality 0..*).
+'pp1::UnlessExpression' (role 'pp1_UnlessExpression', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression90', cardinality 0..*).
+'pp1::AttributeOperations' (role 'pp1_AttributeOperations', cardinality 0..*) is associated with 'pp1::ResourceBody' (role 'pp1_ResourceBody', cardinality 0..*).
+'pp1::MethodCall' (role 'pp1_MethodCall', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression100', cardinality 0..*).
+'pp1::IfExpression' (role 'pp1_IfExpression', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression29', cardinality 0..*).
+'pp1::ResourceExpression' (role 'pp1_ResourceExpression', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression37', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression67', cardinality 0..*) is associated with 'pp1::ParameterizedExpression' (role 'pp1_ParameterizedExpression66', cardinality 0..*).
+'pp1::TextExpression' (role 'pp1_TextExpression', cardinality 0..*) is associated with 'pp1::DoubleQuotedString' (role 'pp1_DoubleQuotedString', cardinality 0..*).
+'pp1::LiteralExpression' (role 'pp1_LiteralExpression', cardinality 0..*) is associated with 'pp1::HostClassDefinition' (role 'pp1_HostClassDefinition', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression79', cardinality 0..*) is associated with 'pp1::ExpressionBlock' (role 'pp1_ExpressionBlock', cardinality 0..*).
+'pp1::UnquotedString' (role 'pp1_UnquotedString', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression86', cardinality 0..*).
+'pp1::AttributeOperations' (role 'pp1_AttributeOperations57', cardinality 0..*) is associated with 'pp1::CollectExpression' (role 'pp1_CollectExpression56', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression69', cardinality 0..*) is associated with 'pp1::NodeDefinition' (role 'pp1_NodeDefinition', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression96', cardinality 0..*) is associated with 'pp1::UnlessExpression' (role 'pp1_UnlessExpression95', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression32', cardinality 0..*) is associated with 'pp1::IfExpression' (role 'pp1_IfExpression31', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression83', cardinality 0..*) is associated with 'pp1::ExprList' (role 'pp1_ExprList', cardinality 0..*).
+'pp1::ParenthesisedExpression' (role 'pp1_ParenthesisedExpression', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression81', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression12', cardinality 0..*) is associated with 'pp1::Definition' (role 'pp1_Definition11', cardinality 0..*).
+'pp1::DefinitionArgument' (role 'pp1_DefinitionArgument16', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression17', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression27', cardinality 0..*) is associated with 'pp1::Case' (role 'pp1_Case26', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression43', cardinality 0..*) is associated with 'pp1::LiteralList' (role 'pp1_LiteralList', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression75', cardinality 0..*) is associated with 'pp1::NodeDefinition' (role 'pp1_NodeDefinition74', cardinality 0..*).
+'pp1::AttributeOperation' (role 'pp1_AttributeOperation', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression4', cardinality 0..*).
+'pp1::CollectExpression' (role 'pp1_CollectExpression54', cardinality 0..*) is associated with 'pp1::ICollectQuery' (role 'pp1_ICollectQuery', cardinality 0..*).
+'pp1::DefinitionArgumentList' (role 'pp1_DefinitionArgumentList', cardinality 0..*) is associated with 'pp1::Definition' (role 'pp1_Definition', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression19', cardinality 0..*) is associated with 'pp1::CaseExpression' (role 'pp1_CaseExpression', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression47', cardinality 0..*) is associated with 'pp1::HashEntry' (role 'pp1_HashEntry46', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression', cardinality 0..*) is associated with 'pp1::ResourceBody' (role 'pp1_ResourceBody2', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression59', cardinality 0..*) is associated with 'pp1::BinaryExpression' (role 'pp1_BinaryExpression', cardinality 0..*).
+'pp1::WithLambdaExpression' (role 'pp1_WithLambdaExpression', cardinality 0..*) is associated with 'pp1::Lambda' (role 'pp1_Lambda102', cardinality 0..*).
+'pp1::AttributeOperation' (role 'pp1_AttributeOperation7', cardinality 0..*) is associated with 'pp1::AttributeOperations' (role 'pp1_AttributeOperations6', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression64', cardinality 0..*) is associated with 'pp1::ParameterizedExpression' (role 'pp1_ParameterizedExpression', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression52', cardinality 0..*) is associated with 'pp1::CollectExpression' (role 'pp1_CollectExpression', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression50', cardinality 0..*) is associated with 'pp1::HashEntry' (role 'pp1_HashEntry49', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression24', cardinality 0..*) is associated with 'pp1::Case' (role 'pp1_Case23', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression62', cardinality 0..*) is associated with 'pp1::BinaryExpression' (role 'pp1_BinaryExpression61', cardinality 0..*).
+'pp1::ResourceExpression' (role 'pp1_ResourceExpression39', cardinality 0..*) is associated with 'pp1::ResourceBody' (role 'pp1_ResourceBody40', cardinality 0..*).
+'pp1::NodeDefinition' (role 'pp1_NodeDefinition71', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression72', cardinality 0..*).
+'pp1::ExpressionTE' (role 'pp1_ExpressionTE', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression88', cardinality 0..*).
+'pp1::IQuotedString' (role 'pp1_IQuotedString', cardinality 0..*) is associated with 'pp1::ImportExpression' (role 'pp1_ImportExpression', cardinality 0..*).
+'pp1::DefinitionArgumentList' (role 'pp1_DefinitionArgumentList14', cardinality 0..*) is associated with 'pp1::DefinitionArgument' (role 'pp1_DefinitionArgument', cardinality 0..*).
+'pp1::Lambda' (role 'pp1_Lambda', cardinality 0..*) is associated with 'pp1::DefinitionArgumentList' (role 'pp1_DefinitionArgumentList98', cardinality 0..*).
+'pp1::LiteralHash' (role 'pp1_LiteralHash', cardinality 0..*) is associated with 'pp1::HashEntry' (role 'pp1_HashEntry', cardinality 0..*).
+'pp1::UnaryExpression' (role 'pp1_UnaryExpression', cardinality 0..*) is associated with 'pp1::Expression' (role 'pp1_Expression77', cardinality 0..*).
+'pp1::Expression' (role 'pp1_Expression93', cardinality 0..*) is associated with 'pp1::UnlessExpression' (role 'pp1_UnlessExpression92', cardinality 0..*).

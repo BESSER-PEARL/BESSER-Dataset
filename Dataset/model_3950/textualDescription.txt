@@ -1,0 +1,37 @@
+The model has 14 class(es).
+The class 'fuzzyAutomaton::Transition' has no attributes.
+The class 'Action' has no attributes.
+The class 'fuzzyAutomaton::FuzzyConstraint' has the following attributes: 'tNorm' of type str; 'name' of type str.
+The class 'fuzzyAutomaton::Variable' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'fuzzyAutomaton::VarUpdate' has the following attributes: 'expression' of type str.
+The class 'fuzzyAutomaton::FuzzyAutomaton' has the following attributes: 'tNorm' of type str; 'name' of type str.
+The class 'fuzzyAutomaton::TransitionFeature' has the following attributes: 'name' of type str.
+The class 'fuzzyAutomaton::VarTransformation' has the following attributes: 'name' of type str.
+The class 'fuzzyAutomaton::Input' has no attributes.
+The class 'fuzzyAutomaton::State' has the following attributes: 'isInitial' of type str.
+The class 'fuzzyAutomaton::FuzzyRelation' has the following attributes: 'expression3' of type str; 'delta' of type str; 'tFRelation' of type str; 'expression2' of type str; 'expression1' of type str.
+The class 'fuzzyAutomaton::Output' has the following attributes: 'expression' of type str.
+The class 'fuzzyAutomaton::VariableSet' has the following attributes: 'name' of type str.
+The class 'fuzzyAutomaton::Action' has the following attributes: 'name' of type str.
+The enumeration 'FuzzyRelationType' has the following literals: 'GTE', 'TERN', 'EQ', 'LTE'.
+The enumeration 'TNormType' has the following literals: 'HAMACHER', 'GODEL'.
+'fuzzyAutomaton::Input' is a specialization of 'Action'.
+'fuzzyAutomaton::Output' is a specialization of 'Action'.
+'fuzzyAutomaton::VariableSet' (role 'fuzzyAutomaton_VariableSet15', cardinality 0..*) is associated with 'fuzzyAutomaton::Variable' (role 'fuzzyAutomaton_Variable', cardinality 0..*).
+'fuzzyAutomaton::Transition' (role 'fuzzyAutomaton_Transition', cardinality 0..*) is associated with 'fuzzyAutomaton::FuzzyAutomaton' (role 'fuzzyAutomaton_FuzzyAutomaton2', cardinality 0..*).
+'fuzzyAutomaton::State' (role 'fuzzyAutomaton_State', cardinality 0..*) is associated with 'fuzzyAutomaton::FuzzyAutomaton' (role 'fuzzyAutomaton_FuzzyAutomaton', cardinality 0..*).
+'fuzzyAutomaton::FuzzyRelation' (role 'fuzzyAutomaton_FuzzyRelation', cardinality 0..*) is associated with 'fuzzyAutomaton::FuzzyConstraint' (role 'fuzzyAutomaton_FuzzyConstraint27', cardinality 0..*).
+'fuzzyAutomaton::TransitionFeature' (role 'feature', cardinality 0..*) is associated with 'fuzzyAutomaton::Transition' (role 'Transition17', cardinality 0..*).
+'fuzzyAutomaton::VarUpdate' (role 'fuzzyAutomaton_VarUpdate31', cardinality 0..*) is associated with 'fuzzyAutomaton::Variable' (role 'fuzzyAutomaton_Variable32', cardinality 0..*).
+'fuzzyAutomaton::State' (role 'State', cardinality 0..*) is associated with 'fuzzyAutomaton::Transition' (role 'outgoing', cardinality 0..*).
+'fuzzyAutomaton::TransitionFeature' (role 'fuzzyAutomaton_TransitionFeature23', cardinality 0..*) is associated with 'fuzzyAutomaton::VarTransformation' (role 'fuzzyAutomaton_VarTransformation', cardinality 0..*).
+'fuzzyAutomaton::State' (role 'target', cardinality 0..*) is associated with 'fuzzyAutomaton::Transition' (role 'Transition', cardinality 0..*).
+'fuzzyAutomaton::VarUpdate' (role 'fuzzyAutomaton_VarUpdate', cardinality 0..*) is associated with 'fuzzyAutomaton::VarTransformation' (role 'fuzzyAutomaton_VarTransformation29', cardinality 0..*).
+'fuzzyAutomaton::State' (role 'source', cardinality 0..*) is associated with 'fuzzyAutomaton::Transition' (role 'Transition9', cardinality 0..*).
+'fuzzyAutomaton::TransitionFeature' (role 'TransitionFeature', cardinality 0..*) is associated with 'fuzzyAutomaton::Transition' (role 'featureToTransition', cardinality 0..*).
+'fuzzyAutomaton::FuzzyConstraint' (role 'fuzzyAutomaton_FuzzyConstraint', cardinality 0..*) is associated with 'fuzzyAutomaton::TransitionFeature' (role 'fuzzyAutomaton_TransitionFeature21', cardinality 0..*).
+'fuzzyAutomaton::FuzzyAutomaton' (role 'fuzzyAutomaton_FuzzyAutomaton6', cardinality 0..*) is associated with 'fuzzyAutomaton::TransitionFeature' (role 'fuzzyAutomaton_TransitionFeature', cardinality 0..*).
+'fuzzyAutomaton::Action' (role 'fuzzyAutomaton_Action', cardinality 0..*) is associated with 'fuzzyAutomaton::TransitionFeature' (role 'fuzzyAutomaton_TransitionFeature19', cardinality 0..*).
+'fuzzyAutomaton::Input' (role 'fuzzyAutomaton_Input', cardinality 0..*) is associated with 'fuzzyAutomaton::Variable' (role 'fuzzyAutomaton_Variable25', cardinality 0..*).
+'fuzzyAutomaton::FuzzyAutomaton' (role 'fuzzyAutomaton_FuzzyAutomaton4', cardinality 0..*) is associated with 'fuzzyAutomaton::VariableSet' (role 'fuzzyAutomaton_VariableSet', cardinality 0..*).
+'fuzzyAutomaton::Transition' (role 'incoming', cardinality 0..*) is associated with 'fuzzyAutomaton::State' (role 'State12', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'SimpleClass::Classifier' has the following attributes: 'name' of type str.
+The class 'SimpleClass::Attribute' has the following attributes: 'name' of type str; 'is_primary' of type bool.
+The class 'SimpleClass::Association' has the following attributes: 'name' of type str.
+The class 'SimpleClass::Class' has the following attributes: 'is_persistent' of type bool.
+The class 'SimpleClass::PrimitiveDataType' has no attributes.
+The class 'Classifier' has no attributes.
+'SimpleClass::Class' is a specialization of 'Classifier'.
+'SimpleClass::PrimitiveDataType' is a specialization of 'Classifier'.
+'SimpleClass::Class' (role 'SimpleClass_Class10', cardinality 0..*) is associated with 'SimpleClass::Association' (role 'SimpleClass_Association9', cardinality 0..*).
+'SimpleClass::Attribute' (role 'SimpleClass_Attribute', cardinality 0..*) is associated with 'SimpleClass::Class' (role 'SimpleClass_Class3', cardinality 0..*).
+'SimpleClass::Classifier' (role 'SimpleClass_Classifier', cardinality 0..*) is associated with 'SimpleClass::Attribute' (role 'SimpleClass_Attribute5', cardinality 0..*).
+'SimpleClass::Class' (role 'SimpleClass_Class', cardinality 0..*) is associated with 'SimpleClass::Class' (role 'SimpleClass_Class0', cardinality 0..*).
+'SimpleClass::Class' (role 'SimpleClass_Class7', cardinality 0..*) is associated with 'SimpleClass::Association' (role 'SimpleClass_Association', cardinality 0..*).

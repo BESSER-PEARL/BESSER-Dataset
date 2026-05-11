@@ -1,0 +1,78 @@
+The model has 36 class(es).
+The class 'selflet::Input' has no attributes.
+The class 'selflet::ComplexBehavior' has no attributes.
+The class 'selflet::IntermediateState' has no attributes.
+The class 'selflet::State' has the following attributes: 'name' of type str.
+The class 'selflet::Method' has the following attributes: 'paramType' of type str; 'name' of type str.
+The class 'selflet::Active' has the following attributes: 'mainService' of type str.
+The class 'Behavior' has no attributes.
+The class 'selflet::OfferMode' has the following attributes: 'mode' of type str.
+The class 'State' has no attributes.
+The class 'selflet::TypeKnowledge' has no attributes.
+The class 'selflet::SelfletProperties' has the following attributes: 'enableOptimizationPolicy' of type str; 'author' of type str; 'description' of type str; 'limePort' of type str; 'enableCloudOptimizationPolicy' of type str.
+The class 'selflet::Parameter' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'selflet::ElementaryBehavior' has no attributes.
+The class 'selflet::Actions' has no attributes.
+The class 'selflet::Rules' has no attributes.
+The class 'selflet::CPUUtilization' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'selflet::FinalState' has no attributes.
+The class 'selflet::Methods' has no attributes.
+The class 'selflet::Output' has no attributes.
+The class 'selflet::Services' has no attributes.
+The class 'selflet::GeneralKnowledge' has no attributes.
+The class 'selflet::Ability' has the following attributes: 'file' of type str; 'service' of type str.
+The class 'selflet::Selflet' has the following attributes: 'name' of type str.
+The class 'selflet::Empty' has no attributes.
+The class 'selflet::SelfletResources' has no attributes.
+The class 'selflet::Reds' has the following attributes: 'ipAddress' of type str; 'port' of type str.
+The class 'selflet::Rule' has the following attributes: 'file' of type str.
+The class 'selflet::Conditions' has no attributes.
+The class 'selflet::Service' has the following attributes: 'name' of type str; 'revenue' of type str; 'maxResponseTime' of type str; 'active' of type str.
+The class 'selflet::Abilities' has no attributes.
+The class 'selflet::InitialState' has no attributes.
+The class 'selflet::Action' has the following attributes: 'file' of type str.
+The class 'selflet::Behavior' has the following attributes: 'name' of type str; 'elementaryBehaviorCPUTime' of type str; 'fileName' of type str; 'elementaryBehaviorCost' of type str; 'isDefaultBehavior' of type str.
+The class 'selflet::AbilityState' has no attributes.
+The class 'selflet::Condition' has the following attributes: 'file' of type str.
+The class 'selflet::SelfLetProperty' has the following attributes: 'value' of type str; 'type' of type str; 'name' of type str.
+The enumeration 'Type' has the following literals: 'string', 'String1', 'Integer1', 'Boolean1', 'ServiceAskMode', 'double', 'Double1', 'integer', 'boolean', 'ServiceOfferMode'.
+The enumeration 'Mode' has the following literals: 'KnowsWhoCanTeach', 'KnowsWhoCanBoth', 'None_', 'CanDo', 'CanTeach', 'KnowsWhoCanDo', 'Both'.
+'selflet::FinalState' is a specialization of 'State'.
+'selflet::ComplexBehavior' is a specialization of 'Behavior'.
+'selflet::InitialState' is a specialization of 'State'.
+'selflet::AbilityState' is a specialization of 'State'.
+'selflet::ElementaryBehavior' is a specialization of 'Behavior'.
+'selflet::IntermediateState' is a specialization of 'State'.
+'selflet::Output' (role 'selflet_Output49', cardinality 0..*) is associated with 'selflet::Service' (role 'selflet_Service48', cardinality 0..*).
+'selflet::Reds' (role 'selflet_Reds', cardinality 0..*) is associated with 'selflet::SelfletProperties' (role 'selflet_SelfletProperties21', cardinality 0..*).
+'selflet::SelfletProperties' (role 'selflet_SelfletProperties23', cardinality 0..*) is associated with 'selflet::GeneralKnowledge' (role 'selflet_GeneralKnowledge24', cardinality 0..*).
+'selflet::Conditions' (role 'selflet_Conditions35', cardinality 0..*) is associated with 'selflet::SelfletResources' (role 'selflet_SelfletResources34', cardinality 0..*).
+'selflet::Actions' (role 'selflet_Actions', cardinality 0..*) is associated with 'selflet::Action' (role 'selflet_Action', cardinality 0..*).
+'selflet::GeneralKnowledge' (role 'selflet_GeneralKnowledge', cardinality 0..*) is associated with 'selflet::SelfLetProperty' (role 'selflet_SelfLetProperty', cardinality 0..*).
+'selflet::State' (role 'selflet_State61', cardinality 0..*) is associated with 'selflet::State' (role 'selflet_State63', cardinality 0..*).
+'selflet::TypeKnowledge' (role 'selflet_TypeKnowledge', cardinality 0..*) is associated with 'selflet::SelfletProperties' (role 'selflet_SelfletProperties26', cardinality 0..*).
+'selflet::Service' (role 'selflet_Service53', cardinality 0..*) is associated with 'selflet::Behavior' (role 'selflet_Behavior54', cardinality 0..*).
+'selflet::Input' (role 'selflet_Input', cardinality 0..*) is associated with 'selflet::Parameter' (role 'selflet_Parameter', cardinality 0..*).
+'selflet::AbilityState' (role 'selflet_AbilityState', cardinality 0..*) is associated with 'selflet::Action' (role 'selflet_Action65', cardinality 0..*).
+'selflet::Rule' (role 'selflet_Rule', cardinality 0..*) is associated with 'selflet::Rules' (role 'selflet_Rules', cardinality 0..*).
+'selflet::Parameter' (role 'selflet_Parameter11', cardinality 0..*) is associated with 'selflet::Output' (role 'selflet_Output', cardinality 0..*).
+'selflet::Abilities' (role 'selflet_Abilities29', cardinality 0..*) is associated with 'selflet::SelfletResources' (role 'selflet_SelfletResources28', cardinality 0..*).
+'selflet::Service' (role 'selflet_Service43', cardinality 0..*) is associated with 'selflet::Services' (role 'selflet_Services42', cardinality 0..*).
+'selflet::IntermediateState' (role 'selflet_IntermediateState', cardinality 0..*) is associated with 'selflet::Service' (role 'selflet_Service67', cardinality 0..*).
+'selflet::SelfLetProperty' (role 'selflet_SelfLetProperty57', cardinality 0..*) is associated with 'selflet::TypeKnowledge' (role 'selflet_TypeKnowledge56', cardinality 0..*).
+'selflet::Methods' (role 'selflet_Methods9', cardinality 0..*) is associated with 'selflet::Method' (role 'selflet_Method', cardinality 0..*).
+'selflet::Ability' (role 'selflet_Ability2', cardinality 0..*) is associated with 'selflet::Methods' (role 'selflet_Methods', cardinality 0..*).
+'selflet::Service' (role 'selflet_Service', cardinality 0..*) is associated with 'selflet::Behavior' (role 'selflet_Behavior', cardinality 0..*).
+'selflet::ElementaryBehavior' (role 'selflet_ElementaryBehavior', cardinality 0..*) is associated with 'selflet::State' (role 'selflet_State', cardinality 0..*).
+'selflet::Input' (role 'selflet_Input46', cardinality 0..*) is associated with 'selflet::Service' (role 'selflet_Service45', cardinality 0..*).
+'selflet::Selflet' (role 'selflet_Selflet', cardinality 0..*) is associated with 'selflet::SelfletProperties' (role 'selflet_SelfletProperties', cardinality 0..*).
+'selflet::Empty' (role 'selflet_Empty', cardinality 0..*) is associated with 'selflet::SelfletProperties' (role 'selflet_SelfletProperties17', cardinality 0..*).
+'selflet::Active' (role 'selflet_Active', cardinality 0..*) is associated with 'selflet::SelfletProperties' (role 'selflet_SelfletProperties19', cardinality 0..*).
+'selflet::Services' (role 'selflet_Services', cardinality 0..*) is associated with 'selflet::SelfletResources' (role 'selflet_SelfletResources37', cardinality 0..*).
+'selflet::Actions' (role 'selflet_Actions32', cardinality 0..*) is associated with 'selflet::SelfletResources' (role 'selflet_SelfletResources31', cardinality 0..*).
+'selflet::Selflet' (role 'selflet_Selflet15', cardinality 0..*) is associated with 'selflet::SelfletResources' (role 'selflet_SelfletResources', cardinality 0..*).
+'selflet::SelfletResources' (role 'selflet_SelfletResources39', cardinality 0..*) is associated with 'selflet::Rules' (role 'selflet_Rules40', cardinality 0..*).
+'selflet::Service' (role 'selflet_Service51', cardinality 0..*) is associated with 'selflet::OfferMode' (role 'selflet_OfferMode', cardinality 0..*).
+'selflet::ComplexBehavior' (role 'selflet_ComplexBehavior', cardinality 0..*) is associated with 'selflet::State' (role 'selflet_State60', cardinality 0..*).
+'selflet::Conditions' (role 'selflet_Conditions', cardinality 0..*) is associated with 'selflet::Condition' (role 'selflet_Condition', cardinality 0..*).
+'selflet::Abilities' (role 'selflet_Abilities', cardinality 0..*) is associated with 'selflet::Ability' (role 'selflet_Ability', cardinality 0..*).

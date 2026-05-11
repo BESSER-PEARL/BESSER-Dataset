@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'company::Company' has the following attributes: 'size' of type str; 'name' of type str.
+The class 'company::Employee' has the following attributes: 'name' of type str; 'hasNameAsAttribute' of type bool.
+The class 'company::Bug418716' has the following attributes: 'AttributeWithoutInitital' of type int; 'AttributeWithInitital' of type int.
+The enumeration 'CompanySizeKind' has the following literals: 'large', 'medium', 'small'.
+'company::Employee' (role 'company_Employee', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee1', cardinality 0..*).
+'company::Employee' (role 'employees', cardinality 0..*) is associated with 'company::Company' (role 'Company', cardinality 0..*).
+'company::Employee' (role 'Employee', cardinality 0..*) is associated with 'company::Company' (role 'company', cardinality 0..*).
+'company::Employee' (role 'company_Employee9', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee7', cardinality 0..*).
+'company::Employee' (role 'company_Employee6', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee4', cardinality 0..*).
+'company::Employee' (role 'company_Employee12', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee10', cardinality 0..*).

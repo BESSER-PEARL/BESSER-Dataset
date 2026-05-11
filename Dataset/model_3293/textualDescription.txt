@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'EdgeLabel' has no attributes.
+The class 'edges::MixingEdgeLabelValue' has the following attributes: 'mixingRate' of type float.
+The class 'edges::MigrationEdge' has no attributes.
+The class 'edges::PopulationEdge' has the following attributes: 'populationIdentifier' of type str.
+The class 'edges::MixingEdgeLabel' has no attributes.
+The class 'edges::MigrationEdgeLabelValue' has the following attributes: 'migrationRate' of type float.
+The class 'edges::MigrationEdgeLabel' has no attributes.
+The class 'PopulationEdge' has no attributes.
+The class 'Edge' has no attributes.
+The class 'LabelValue' has no attributes.
+The class 'edges::MixingEdge' has no attributes.
+'edges::MixingEdgeLabel' is a specialization of 'EdgeLabel'.
+'edges::MigrationEdgeLabel' is a specialization of 'EdgeLabel'.
+'edges::MigrationEdgeLabelValue' is a specialization of 'LabelValue'.
+'edges::MixingEdge' is a specialization of 'PopulationEdge'.
+'edges::MixingEdgeLabelValue' is a specialization of 'LabelValue'.
+'edges::MigrationEdge' is a specialization of 'PopulationEdge'.
+'edges::PopulationEdge' is a specialization of 'Edge'.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/incquery-examples-cps/domains/org.eclipse.viatra.examples.cps.traceability/model/traceability.ecore

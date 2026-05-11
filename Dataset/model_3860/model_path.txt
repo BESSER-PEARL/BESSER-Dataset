@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lesleytong/ATL/Class2Relational/Relational.ecore

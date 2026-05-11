@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'Transition' has no attributes.
+The class 'State' has no attributes.
+The class 'PathExp::State' has no attributes.
+The class 'PathExp::Transition' has no attributes.
+The class 'Element' has no attributes.
+The class 'PathExp::Element' has the following attributes: 'name' of type str.
+The class 'PathExp::Internal' has the following attributes: 'attr' of type int.
+The class 'PathExp::PathExp' has no attributes.
+The class 'PathExp::Initial' has no attributes.
+The class 'PathExp' has no attributes.
+The class 'PathExp::Final' has no attributes.
+'PathExp::Final' is a specialization of 'State'.
+'PathExp::Internal' is a specialization of 'State'.
+'PathExp::Transition' is a specialization of 'Element'.
+'PathExp::PathExp' is a specialization of 'Element'.
+'PathExp::Initial' is a specialization of 'State'.
+'PathExp::Transition' (role 'incoming', cardinality 0..*) is associated with 'State' (role 'State10', cardinality 0..*).
+'PathExp::State' (role 'states', cardinality 0..*) is associated with 'PathExp' (role 'PathExp', cardinality 0..*).
+'PathExp::State' (role 'source', cardinality 0..*) is associated with 'Transition' (role 'Transition5', cardinality 0..*).
+'State' (role 'State8', cardinality 0..*) is associated with 'PathExp::Transition' (role 'outgoing', cardinality 0..*).
+'Transition' (role 'Transition3', cardinality 0..*) is associated with 'PathExp::State' (role 'target', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'PathExp::PathExp' (role 'owner', cardinality 0..*).
+'PathExp::PathExp' (role 'PathExp_PathExp', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).

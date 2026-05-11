@@ -1,0 +1,33 @@
+The model has 18 class(es).
+The class 'base::RealLiteral' has the following attributes: 'value' of type float.
+The class 'base::IntLiteral' has the following attributes: 'value' of type str.
+The class 'base::LiteralArray' has no attributes.
+The class 'base::Documentation' has the following attributes: 'lines' of type str.
+The class 'base::StringLiteral' has the following attributes: 'value' of type str.
+The class 'base::BooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'base::Annotation' has no attributes.
+The class 'AnnotationAttribute' has no attributes.
+The class 'base::EnumAnnotationAttribute' has the following attributes: 'values' of type str.
+The class 'base::SimpleAnnotationAttribute' has the following attributes: 'type' of type str.
+The class 'base::Literal' has no attributes.
+The class 'base::Import' has the following attributes: 'importedNamespace' of type str; 'importURI' of type str.
+The class 'base::KeyValue' has the following attributes: 'key' of type str.
+The class 'NumberLiteral' has no attributes.
+The class 'base::AnnotationType' has the following attributes: 'targets' of type str; 'name' of type str.
+The class 'base::AnnotationAttribute' has the following attributes: 'optional' of type bool; 'name' of type str.
+The class 'base::NumberLiteral' has no attributes.
+The class 'Literal' has no attributes.
+The enumeration 'LiteralType' has the following literals: 'INT', 'REAL', 'CHAR', 'BOOL'.
+'base::StringLiteral' is a specialization of 'Literal'.
+'base::IntLiteral' is a specialization of 'NumberLiteral'.
+'base::SimpleAnnotationAttribute' is a specialization of 'AnnotationAttribute'.
+'base::NumberLiteral' is a specialization of 'Literal'.
+'base::BooleanLiteral' is a specialization of 'Literal'.
+'base::EnumAnnotationAttribute' is a specialization of 'AnnotationAttribute'.
+'base::RealLiteral' is a specialization of 'NumberLiteral'.
+'base::AnnotationType' (role 'base_AnnotationType8', cardinality 0..*) is associated with 'base::AnnotationAttribute' (role 'base_AnnotationAttribute', cardinality 0..*).
+'base::Documentation' (role 'base_Documentation', cardinality 0..*) is associated with 'base::AnnotationType' (role 'base_AnnotationType6', cardinality 0..*).
+'base::LiteralArray' (role 'base_LiteralArray', cardinality 0..*) is associated with 'base::Literal' (role 'base_Literal10', cardinality 0..*).
+'base::KeyValue' (role 'base_KeyValue4', cardinality 0..*) is associated with 'base::Literal' (role 'base_Literal', cardinality 0..*).
+'base::Annotation' (role 'base_Annotation2', cardinality 0..*) is associated with 'base::KeyValue' (role 'base_KeyValue', cardinality 0..*).
+'base::AnnotationType' (role 'base_AnnotationType', cardinality 0..*) is associated with 'base::Annotation' (role 'base_Annotation', cardinality 0..*).

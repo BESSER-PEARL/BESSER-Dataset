@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'ClassDiagram::System' has no attributes.
+The class 'Package' has no attributes.
+The class 'ClassDiagram::Class' has the following attributes: 'isAbstract' of type str.
+The class 'ClassDiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ClassDiagram::Package' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'ClassDiagram::Attribute' has the following attributes: 'multiValued' of type str.
+The class 'ClassDiagram::Classifier' has no attributes.
+The class 'ClassDiagram::DataType' has no attributes.
+The class 'Class' has no attributes.
+'ClassDiagram::Classifier' is a specialization of 'NamedElement'.
+'ClassDiagram::Class' is a specialization of 'Classifier'.
+'ClassDiagram::Attribute' is a specialization of 'NamedElement'.
+'ClassDiagram::Package' is a specialization of 'NamedElement'.
+'ClassDiagram::DataType' is a specialization of 'Classifier'.
+'ClassDiagram::System' is a specialization of 'NamedElement'.
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'ClassDiagram::Attribute' (role 'ClassDiagram_Attribute', cardinality 0..*).
+'ClassDiagram::Class' (role 'ownedElements', cardinality 0..*) is associated with 'Package' (role 'Package', cardinality 0..*).
+'ClassDiagram::System' (role 'ClassDiagram_System', cardinality 0..*) is associated with 'Package' (role 'Package10', cardinality 0..*).
+'ClassDiagram::Class' (role 'ClassDiagram_Class', cardinality 0..*) is associated with 'Class' (role 'Class2', cardinality 0..*).
+'Class' (role 'Class8', cardinality 0..*) is associated with 'ClassDiagram::Attribute' (role 'attr', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'ClassDiagram::Package' (role 'owner', cardinality 0..*).
+'ClassDiagram::Class' (role 'owner4', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).

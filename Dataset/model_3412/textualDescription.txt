@@ -1,0 +1,7 @@
+The model has 2 class(es).
+The class 'people::Universe' has no attributes.
+The class 'people::Person' has the following attributes: 'gender' of type str; 'name' of type str.
+The enumeration 'Gender' has the following literals: 'MALE', 'FEMALE'.
+'people::Person' (role 'Person4', cardinality 0..*) is associated with 'people::Person' (role 'children', cardinality 0..*).
+'people::Universe' (role 'people_Universe', cardinality 0..*) is associated with 'people::Person' (role 'people_Person', cardinality 0..*).
+'people::Person' (role 'Person', cardinality 0..*) is associated with 'people::Person' (role 'parents', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/tef-svn/tags/2008-09-18_release_1.0.7/hub.sam.tef.ui/templates/text-editor/resources/expressions.ecore

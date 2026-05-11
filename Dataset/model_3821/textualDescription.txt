@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'expression::IntegerExpression' has the following attributes: 'value' of type float.
+The class 'expression::Expression' has the following attributes: 'calculatedValue' of type float.
+The class 'Expression' has no attributes.
+The class 'expression::UnaryExpression' has no attributes.
+The class 'expression::BinaryExpression' has no attributes.
+The class 'expression::ExpressionStatement' has no attributes.
+'expression::IntegerExpression' is a specialization of 'Expression'.
+'expression::UnaryExpression' is a specialization of 'Expression'.
+'expression::BinaryExpression' is a specialization of 'Expression'.
+'expression::Expression' (role 'expression_Expression3', cardinality 0..*) is associated with 'expression::BinaryExpression' (role 'expression_BinaryExpression2', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression5', cardinality 0..*) is associated with 'expression::UnaryExpression' (role 'expression_UnaryExpression', cardinality 0..*).
+'expression::BinaryExpression' (role 'expression_BinaryExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression', cardinality 0..*).
+'expression::ExpressionStatement' (role 'expression_ExpressionStatement', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression7', cardinality 0..*).

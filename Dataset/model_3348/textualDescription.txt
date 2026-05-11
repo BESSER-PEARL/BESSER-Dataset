@@ -1,0 +1,208 @@
+The model has 86 class(es).
+The class 'swrtj::BooleanOperator' has the following attributes: 'operator' of type str.
+The class 'swrtj::ReturnStatement' has no attributes.
+The class 'swrtj::SimpleComparation' has no attributes.
+The class 'swrtj::CompareOperator' has the following attributes: 'operator' of type str.
+The class 'swrtj::Cast' has no attributes.
+The class 'swrtj::AnonimousTrait' has no attributes.
+The class 'swrtj::ParameterReference' has no attributes.
+The class 'swrtj::FieldName' has the following attributes: 'name' of type str.
+The class 'swrtj::AtomicBooleanExpression' has the following attributes: 'negated' of type bool.
+The class 'swrtj::TraitExpression' has no attributes.
+The class 'swrtj::Class' has no attributes.
+The class 'swrtj::ConstructorInvocation' has no attributes.
+The class 'swrtj::TraitFieldRename' has no attributes.
+The class 'swrtj::NestedBooleanExpression' has no attributes.
+The class 'swrtj::ParameterAssignment' has no attributes.
+The class 'swrtj::Constructor' has the following attributes: 'name' of type str.
+The class 'swrtj::TraitElement' has no attributes.
+The class 'swrtj::This' has the following attributes: 'this' of type bool.
+The class 'swrtj::Import' has the following attributes: 'importURI' of type str.
+The class 'swrtj::Args' has the following attributes: 'args' of type bool.
+The class 'swrtj::TraitName' has no attributes.
+The class 'swrtj::FormalParameter' has no attributes.
+The class 'swrtj::GenericExpression' has no attributes.
+The class 'AtomicBooleanExpression' has no attributes.
+The class 'swrtj::WhileStatement' has no attributes.
+The class 'swrtj::NestedRecordExpression' has no attributes.
+The class 'swrtj::RecordRename' has no attributes.
+The class 'swrtj::RecordExpression' has no attributes.
+The class 'swrtj::Start' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'swrtj::Parameter' has the following attributes: 'name' of type str.
+The class 'swrtj::Number' has the following attributes: 'value' of type int.
+The class 'swrtj::BooleanExpression' has no attributes.
+The class 'swrtj::LocalParameter' has no attributes.
+The class 'swrtj::Output' has the following attributes: 'output' of type bool.
+The class 'swrtj::RequiredField' has no attributes.
+The class 'swrtj::Trait' has no attributes.
+The class 'swrtj::Expression' has the following attributes: 'sign' of type str; 'operatorList' of type str.
+The class 'Statement' has no attributes.
+The class 'swrtj::MethodInvocation' has no attributes.
+The class 'Message' has no attributes.
+The class 'swrtj::TraitMethodRename' has no attributes.
+The class 'swrtj::Field' has no attributes.
+The class 'swrtj::Block' has no attributes.
+The class 'swrtj::Method' has no attributes.
+The class 'swrtj::Null' has the following attributes: 'null' of type bool.
+The class 'BaseTrait' has no attributes.
+The class 'swrtj::RequiredMethod' has no attributes.
+The class 'swrtj::Record' has no attributes.
+The class 'swrtj::NestedExpression' has no attributes.
+The class 'swrtj::Type' has the following attributes: 'primitiveType' of type str.
+The class 'swrtj::NestedTraitExpression' has no attributes.
+The class 'swrtj::ProvidedMethod' has the following attributes: 'isSynchronized' of type bool.
+The class 'Element' has no attributes.
+The class 'swrtj::Element' has the following attributes: 'name' of type str; 'construct' of type str.
+The class 'swrtj::AnonimousRecord' has no attributes.
+The class 'swrtj::Program' has no attributes.
+The class 'swrtj::Statement' has no attributes.
+The class 'swrtj::TraitAlias' has no attributes.
+The class 'swrtj::MethodName' has the following attributes: 'name' of type str.
+The class 'GenericExpression' has no attributes.
+The class 'swrtj::BaseTrait' has no attributes.
+The class 'swrtj::BaseRecord' has no attributes.
+The class 'swrtj::RecordExclude' has no attributes.
+The class 'TraitElement' has no attributes.
+The class 'swrtj::File' has no attributes.
+The class 'swrtj::Message' has no attributes.
+The class 'swrtj::FieldAccess' has no attributes.
+The class 'swrtj::StringConstant' has the following attributes: 'value' of type str.
+The class 'swrtj::ExpressionStatement' has no attributes.
+The class 'swrtj::Interface' has no attributes.
+The class 'swrtj::FieldDeclaration' has the following attributes: 'modifier' of type str.
+The class 'Start' has no attributes.
+The class 'swrtj::BooleanConstant' has the following attributes: 'value' of type str.
+The class 'swrtj::DottedExpression' has no attributes.
+The class 'swrtj::Input' has the following attributes: 'input' of type bool.
+The class 'swrtj::TraitExclude' has no attributes.
+The class 'swrtj::IfThenElseStatement' has no attributes.
+The class 'Method' has no attributes.
+The class 'BaseRecord' has no attributes.
+The class 'swrtj::RecordName' has no attributes.
+The class 'RecordOperation' has no attributes.
+The class 'swrtj::TraitOperation' has no attributes.
+The class 'Field' has no attributes.
+The class 'swrtj::RecordOperation' has no attributes.
+The class 'TraitOperation' has no attributes.
+'swrtj::WhileStatement' is a specialization of 'Statement'.
+'swrtj::AnonimousTrait' is a specialization of 'BaseTrait'.
+'swrtj::Input' is a specialization of 'Start'.
+'swrtj::SimpleComparation' is a specialization of 'AtomicBooleanExpression'.
+'swrtj::Expression' is a specialization of 'GenericExpression'.
+'swrtj::This' is a specialization of 'Start'.
+'swrtj::BooleanConstant' is a specialization of 'Start'.
+'swrtj::BooleanExpression' is a specialization of 'GenericExpression'.
+'swrtj::AnonimousRecord' is a specialization of 'BaseRecord'.
+'swrtj::ProvidedMethod' is a specialization of 'Method'.
+'swrtj::RequiredMethod' is a specialization of 'Method'.
+'swrtj::StringConstant' is a specialization of 'Start'.
+'swrtj::NestedBooleanExpression' is a specialization of 'AtomicBooleanExpression'.
+'swrtj::ConstructorInvocation' is a specialization of 'Start'.
+'swrtj::TraitMethodRename' is a specialization of 'TraitOperation'.
+'swrtj::NestedExpression' is a specialization of 'Start'.
+'swrtj::IfThenElseStatement' is a specialization of 'Statement'.
+'swrtj::FieldAccess' is a specialization of 'Message'.
+'swrtj::NestedTraitExpression' is a specialization of 'BaseTrait'.
+'swrtj::ParameterAssignment' is a specialization of 'Start'.
+'swrtj::MethodInvocation' is a specialization of 'Message'.
+'swrtj::Program' is a specialization of 'Element'.
+'swrtj::Method' is a specialization of 'TraitElement'.
+'swrtj::ExpressionStatement' is a specialization of 'Statement'.
+'swrtj::LocalParameter' is a specialization of 'Parameter'.
+'swrtj::TraitFieldRename' is a specialization of 'TraitOperation'.
+'swrtj::Trait' is a specialization of 'Element'.
+'swrtj::FieldDeclaration' is a specialization of 'Field'.
+'swrtj::RecordRename' is a specialization of 'RecordOperation'.
+'swrtj::Output' is a specialization of 'Start'.
+'swrtj::TraitExclude' is a specialization of 'TraitOperation'.
+'swrtj::Null' is a specialization of 'Start'.
+'swrtj::Record' is a specialization of 'Element'.
+'swrtj::RecordName' is a specialization of 'BaseRecord'.
+'swrtj::TraitAlias' is a specialization of 'TraitOperation'.
+'swrtj::ParameterReference' is a specialization of 'Start'.
+'swrtj::Cast' is a specialization of 'Start'.
+'swrtj::RequiredField' is a specialization of 'Field'.
+'swrtj::Field' is a specialization of 'TraitElement'.
+'swrtj::FormalParameter' is a specialization of 'Parameter'.
+'swrtj::NestedRecordExpression' is a specialization of 'BaseRecord'.
+'swrtj::Args' is a specialization of 'Start'.
+'swrtj::Number' is a specialization of 'Start'.
+'swrtj::Class' is a specialization of 'Element'.
+'swrtj::Interface' is a specialization of 'Element'.
+'swrtj::RecordExclude' is a specialization of 'RecordOperation'.
+'swrtj::TraitName' is a specialization of 'BaseTrait'.
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression90', cardinality 0..*) is associated with 'swrtj::NestedBooleanExpression' (role 'swrtj_NestedBooleanExpression', cardinality 0..*).
+'swrtj::MethodInvocation' (role 'swrtj_MethodInvocation', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName115', cardinality 0..*).
+'swrtj::RecordRename' (role 'swrtj_RecordRename', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName129', cardinality 0..*).
+'swrtj::IfThenElseStatement' (role 'swrtj_IfThenElseStatement75', cardinality 0..*) is associated with 'swrtj::Block' (role 'swrtj_Block76', cardinality 0..*).
+'swrtj::Trait' (role 'swrtj_Trait', cardinality 0..*) is associated with 'swrtj::TraitExpression' (role 'swrtj_TraitExpression', cardinality 0..*).
+'swrtj::RecordExclude' (role 'swrtj_RecordExclude', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName127', cardinality 0..*).
+'swrtj::Class' (role 'swrtj_Class18', cardinality 0..*) is associated with 'swrtj::Constructor' (role 'swrtj_Constructor', cardinality 0..*).
+'swrtj::ReturnStatement' (role 'swrtj_ReturnStatement', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression', cardinality 0..*).
+'swrtj::TraitExclude' (role 'swrtj_TraitExclude', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName134', cardinality 0..*).
+'swrtj::TraitFieldRename' (role 'swrtj_TraitFieldRename', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName146', cardinality 0..*).
+'swrtj::TraitFieldRename' (role 'swrtj_TraitFieldRename148', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName149', cardinality 0..*).
+'swrtj::IfThenElseStatement' (role 'swrtj_IfThenElseStatement72', cardinality 0..*) is associated with 'swrtj::Block' (role 'swrtj_Block73', cardinality 0..*).
+'swrtj::RecordOperation' (role 'swrtj_RecordOperation', cardinality 0..*) is associated with 'swrtj::BaseRecord' (role 'swrtj_BaseRecord23', cardinality 0..*).
+'swrtj::TraitExpression' (role 'swrtj_TraitExpression30', cardinality 0..*) is associated with 'swrtj::BaseTrait' (role 'swrtj_BaseTrait', cardinality 0..*).
+'swrtj::Block' (role 'swrtj_Block81', cardinality 0..*) is associated with 'swrtj::WhileStatement' (role 'swrtj_WhileStatement80', cardinality 0..*).
+'swrtj::Interface' (role 'swrtj_Interface10', cardinality 0..*) is associated with 'swrtj::Class' (role 'swrtj_Class', cardinality 0..*).
+'swrtj::ProvidedMethod' (role 'swrtj_ProvidedMethod', cardinality 0..*) is associated with 'swrtj::Block' (role 'swrtj_Block151', cardinality 0..*).
+'swrtj::Type' (role 'swrtj_Type108', cardinality 0..*) is associated with 'swrtj::Cast' (role 'swrtj_Cast', cardinality 0..*).
+'swrtj::Method' (role 'swrtj_Method48', cardinality 0..*) is associated with 'swrtj::Parameter' (role 'swrtj_Parameter', cardinality 0..*).
+'swrtj::BooleanOperator' (role 'swrtj_BooleanOperator', cardinality 0..*) is associated with 'swrtj::BooleanExpression' (role 'swrtj_BooleanExpression157', cardinality 0..*).
+'swrtj::Trait' (role 'swrtj_Trait35', cardinality 0..*) is associated with 'swrtj::TraitName' (role 'swrtj_TraitName', cardinality 0..*).
+'swrtj::SimpleComparation' (role 'swrtj_SimpleComparation85', cardinality 0..*) is associated with 'swrtj::CompareOperator' (role 'swrtj_CompareOperator', cardinality 0..*).
+'swrtj::Interface' (role 'swrtj_Interface3', cardinality 0..*) is associated with 'swrtj::Interface' (role 'swrtj_Interface', cardinality 0..*).
+'swrtj::Parameter' (role 'swrtj_Parameter51', cardinality 0..*) is associated with 'swrtj::Constructor' (role 'swrtj_Constructor50', cardinality 0..*).
+'swrtj::TraitAlias' (role 'swrtj_TraitAlias', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName136', cardinality 0..*).
+'swrtj::MethodInvocation' (role 'swrtj_MethodInvocation117', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression118', cardinality 0..*).
+'swrtj::RecordName' (role 'swrtj_RecordName', cardinality 0..*) is associated with 'swrtj::Record' (role 'swrtj_Record26', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression159', cardinality 0..*) is associated with 'swrtj::LocalParameter' (role 'swrtj_LocalParameter', cardinality 0..*).
+'swrtj::Parameter' (role 'swrtj_Parameter57', cardinality 0..*) is associated with 'swrtj::Type' (role 'swrtj_Type58', cardinality 0..*).
+'swrtj::ParameterAssignment' (role 'swrtj_ParameterAssignment', cardinality 0..*) is associated with 'swrtj::Parameter' (role 'swrtj_Parameter122', cardinality 0..*).
+'swrtj::Import' (role 'swrtj_Import', cardinality 0..*) is associated with 'swrtj::File' (role 'swrtj_File', cardinality 0..*).
+'swrtj::Block' (role 'swrtj_Block54', cardinality 0..*) is associated with 'swrtj::Constructor' (role 'swrtj_Constructor53', cardinality 0..*).
+'swrtj::FieldName' (role 'swrtj_FieldName120', cardinality 0..*) is associated with 'swrtj::FieldAccess' (role 'swrtj_FieldAccess', cardinality 0..*).
+'swrtj::Block' (role 'swrtj_Block66', cardinality 0..*) is associated with 'swrtj::Statement' (role 'swrtj_Statement', cardinality 0..*).
+'swrtj::Type' (role 'swrtj_Type60', cardinality 0..*) is associated with 'swrtj::Interface' (role 'swrtj_Interface61', cardinality 0..*).
+'swrtj::File' (role 'swrtj_File2', cardinality 0..*) is associated with 'swrtj::Element' (role 'swrtj_Element', cardinality 0..*).
+'swrtj::MethodName' (role 'swrtj_MethodName139', cardinality 0..*) is associated with 'swrtj::TraitAlias' (role 'swrtj_TraitAlias138', cardinality 0..*).
+'swrtj::TraitOperation' (role 'swrtj_TraitOperation', cardinality 0..*) is associated with 'swrtj::BaseTrait' (role 'swrtj_BaseTrait32', cardinality 0..*).
+'swrtj::TraitMethodRename' (role 'swrtj_TraitMethodRename', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName141', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression88', cardinality 0..*) is associated with 'swrtj::SimpleComparation' (role 'swrtj_SimpleComparation87', cardinality 0..*).
+'swrtj::ParameterAssignment' (role 'swrtj_ParameterAssignment124', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression125', cardinality 0..*).
+'swrtj::Class' (role 'swrtj_Class15', cardinality 0..*) is associated with 'swrtj::TraitExpression' (role 'swrtj_TraitExpression16', cardinality 0..*).
+'swrtj::Class' (role 'swrtj_Class12', cardinality 0..*) is associated with 'swrtj::RecordExpression' (role 'swrtj_RecordExpression13', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression99', cardinality 0..*) is associated with 'swrtj::DottedExpression' (role 'swrtj_DottedExpression98', cardinality 0..*).
+'swrtj::ConstructorInvocation' (role 'swrtj_ConstructorInvocation', cardinality 0..*) is associated with 'swrtj::Class' (role 'swrtj_Class103', cardinality 0..*).
+'swrtj::TraitMethodRename' (role 'swrtj_TraitMethodRename143', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName144', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression113', cardinality 0..*) is associated with 'swrtj::NestedExpression' (role 'swrtj_NestedExpression', cardinality 0..*).
+'swrtj::TraitElement' (role 'swrtj_TraitElement', cardinality 0..*) is associated with 'swrtj::AnonimousTrait' (role 'swrtj_AnonimousTrait', cardinality 0..*).
+'swrtj::Field' (role 'swrtj_Field41', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName', cardinality 0..*).
+'swrtj::Method' (role 'swrtj_Method46', cardinality 0..*) is associated with 'swrtj::MethodName' (role 'swrtj_MethodName', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression70', cardinality 0..*) is associated with 'swrtj::IfThenElseStatement' (role 'swrtj_IfThenElseStatement', cardinality 0..*).
+'swrtj::DottedExpression' (role 'swrtj_DottedExpression94', cardinality 0..*) is associated with 'swrtj::DottedExpression' (role 'swrtj_DottedExpression92', cardinality 0..*).
+'swrtj::ReturnStatement' (role 'swrtj_ReturnStatement154', cardinality 0..*) is associated with 'swrtj::ProvidedMethod' (role 'swrtj_ProvidedMethod153', cardinality 0..*).
+'swrtj::DottedExpression' (role 'swrtj_DottedExpression161', cardinality 0..*) is associated with 'swrtj::Expression' (role 'swrtj_Expression', cardinality 0..*).
+'swrtj::Method' (role 'swrtj_Method', cardinality 0..*) is associated with 'swrtj::Interface' (role 'swrtj_Interface6', cardinality 0..*).
+'swrtj::SimpleComparation' (role 'swrtj_SimpleComparation', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression83', cardinality 0..*).
+'swrtj::Method' (role 'swrtj_Method43', cardinality 0..*) is associated with 'swrtj::Type' (role 'swrtj_Type44', cardinality 0..*).
+'swrtj::BaseRecord' (role 'swrtj_BaseRecord', cardinality 0..*) is associated with 'swrtj::RecordExpression' (role 'swrtj_RecordExpression21', cardinality 0..*).
+'swrtj::BooleanExpression' (role 'swrtj_BooleanExpression', cardinality 0..*) is associated with 'swrtj::AtomicBooleanExpression' (role 'swrtj_AtomicBooleanExpression', cardinality 0..*).
+'swrtj::ExpressionStatement' (role 'swrtj_ExpressionStatement', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression68', cardinality 0..*).
+'swrtj::NestedRecordExpression' (role 'swrtj_NestedRecordExpression', cardinality 0..*) is associated with 'swrtj::RecordExpression' (role 'swrtj_RecordExpression28', cardinality 0..*).
+'swrtj::AnonimousRecord' (role 'swrtj_AnonimousRecord', cardinality 0..*) is associated with 'swrtj::Field' (role 'swrtj_Field', cardinality 0..*).
+'swrtj::Block' (role 'swrtj_Block63', cardinality 0..*) is associated with 'swrtj::Parameter' (role 'swrtj_Parameter64', cardinality 0..*).
+'swrtj::Field' (role 'swrtj_Field39', cardinality 0..*) is associated with 'swrtj::Type' (role 'swrtj_Type', cardinality 0..*).
+'swrtj::RecordExpression' (role 'swrtj_RecordExpression', cardinality 0..*) is associated with 'swrtj::Record' (role 'swrtj_Record', cardinality 0..*).
+'swrtj::RecordRename' (role 'swrtj_RecordRename131', cardinality 0..*) is associated with 'swrtj::FieldName' (role 'swrtj_FieldName132', cardinality 0..*).
+'swrtj::DottedExpression' (role 'swrtj_DottedExpression', cardinality 0..*) is associated with 'swrtj::Start' (role 'swrtj_Start', cardinality 0..*).
+'swrtj::Parameter' (role 'swrtj_Parameter101', cardinality 0..*) is associated with 'swrtj::ParameterReference' (role 'swrtj_ParameterReference', cardinality 0..*).
+'swrtj::NestedTraitExpression' (role 'swrtj_NestedTraitExpression', cardinality 0..*) is associated with 'swrtj::TraitExpression' (role 'swrtj_TraitExpression37', cardinality 0..*).
+'swrtj::GenericExpression' (role 'swrtj_GenericExpression106', cardinality 0..*) is associated with 'swrtj::ConstructorInvocation' (role 'swrtj_ConstructorInvocation105', cardinality 0..*).
+'swrtj::Program' (role 'swrtj_Program', cardinality 0..*) is associated with 'swrtj::Block' (role 'swrtj_Block', cardinality 0..*).
+'swrtj::Cast' (role 'swrtj_Cast110', cardinality 0..*) is associated with 'swrtj::Start' (role 'swrtj_Start111', cardinality 0..*).
+'swrtj::WhileStatement' (role 'swrtj_WhileStatement', cardinality 0..*) is associated with 'swrtj::GenericExpression' (role 'swrtj_GenericExpression78', cardinality 0..*).
+'swrtj::Message' (role 'swrtj_Message', cardinality 0..*) is associated with 'swrtj::DottedExpression' (role 'swrtj_DottedExpression96', cardinality 0..*).
