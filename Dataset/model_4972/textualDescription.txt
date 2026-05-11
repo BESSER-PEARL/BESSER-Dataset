@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity' has no attributes.
+The class 'orgreliablesourcecuttlefishcoremodel::IEntity' has no attributes.
+The class 'orgreliablesourcecuttlefishcoremodel::IEntityFactory' has no attributes.

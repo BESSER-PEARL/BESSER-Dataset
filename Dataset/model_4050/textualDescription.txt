@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'necsis14::classdiagram::::QColumn' has no attributes.
+The class 'necsis14::classdiagram::::QTable' has no attributes.
+The class 'necsis14::classdiagram::Attribute' has no attributes.
+The class 'necsis14::classdiagram::ClassDiagram' has no attributes.
+The class 'necsis14::classdiagram::Class' has no attributes.
+The class 'necsis14::classdiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'necsis14::classdiagram::Association' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+'necsis14::classdiagram::::QTable' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::::QColumn' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Attribute' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Class' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Association' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association11', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class12', cardinality 0..*).
+'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association', cardinality 0..*) is associated with 'necsis14::classdiagram::ClassDiagram' (role 'necsis14_classdiagram_ClassDiagram2', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class15', cardinality 0..*) is associated with 'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association14', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class5', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class7', cardinality 0..*).
+'necsis14::classdiagram::::QColumn' (role 'necsis14_classdiagram__QColumn20', cardinality 0..*) is associated with 'necsis14::classdiagram::::QTable' (role 'necsis14_classdiagram__QTable19', cardinality 0..*).
+'necsis14::classdiagram::::QTable' (role 'necsis14_classdiagram__QTable', cardinality 0..*) is associated with 'necsis14::classdiagram::ClassDiagram' (role 'necsis14_classdiagram_ClassDiagram4', cardinality 0..*).
+'necsis14::classdiagram::Attribute' (role 'necsis14_classdiagram_Attribute', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class9', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class', cardinality 0..*) is associated with 'necsis14::classdiagram::ClassDiagram' (role 'necsis14_classdiagram_ClassDiagram', cardinality 0..*).
+'necsis14::classdiagram::::QColumn' (role 'necsis14_classdiagram__QColumn', cardinality 0..*) is associated with 'necsis14::classdiagram::::QTable' (role 'necsis14_classdiagram__QTable17', cardinality 0..*).

@@ -1,0 +1,67 @@
+The model has 27 class(es).
+The class 'myDsl::Fonction' has the following attributes: 'nom' of type str.
+The class 'myDsl::ElemSimple' has the following attributes: 'symb' of type str.
+The class 'myDsl::Nill' has the following attributes: 'nil' of type str.
+The class 'myDsl::Not' has the following attributes: 'not_' of type str.
+The class 'myDsl::ExprSimple' has the following attributes: 'symb' of type str.
+The class 'myDsl::OpAccSucc' has the following attributes: 'op' of type str.
+The class 'Condition' has no attributes.
+The class 'myDsl::Lexpr' has no attributes.
+The class 'myDsl::OpConstructeur' has the following attributes: 'op' of type str.
+The class 'myDsl::Nop' has the following attributes: 'nop' of type str.
+The class 'myDsl::Commandes' has no attributes.
+The class 'myDsl::Expression' has no attributes.
+The class 'myDsl::Commande' has no attributes.
+The class 'myDsl::While' has no attributes.
+The class 'myDsl::Affectation' has no attributes.
+The class 'myDsl::If' has no attributes.
+The class 'myDsl::Program' has no attributes.
+The class 'myDsl::Variable' has the following attributes: 'variable' of type str.
+The class 'myDsl::Condition' has no attributes.
+The class 'myDsl::EObject' has no attributes.
+The class 'myDsl::For' has no attributes.
+The class 'myDsl::Input' has the following attributes: 'in_' of type str.
+The class 'myDsl::ABin' has no attributes.
+The class 'myDsl::ForEach' has no attributes.
+The class 'myDsl::COMPARATEUR' has the following attributes: 'comparateur' of type str.
+The class 'myDsl::AccSucc' has no attributes.
+The class 'myDsl::Output' has the following attributes: 'out' of type str.
+'myDsl::Not' is a specialization of 'Condition'.
+'myDsl::Commande' (role 'myDsl_Commande11', cardinality 0..*) is associated with 'myDsl::Commandes' (role 'myDsl_Commandes10', cardinality 0..*).
+'myDsl::Commandes' (role 'myDsl_Commandes34', cardinality 0..*) is associated with 'myDsl::For' (role 'myDsl_For33', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple59', cardinality 0..*) is associated with 'myDsl::Lexpr' (role 'myDsl_Lexpr', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression78', cardinality 0..*) is associated with 'myDsl::ABin' (role 'myDsl_ABin77', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression31', cardinality 0..*) is associated with 'myDsl::For' (role 'myDsl_For', cardinality 0..*).
+'myDsl::Commandes' (role 'myDsl_Commandes', cardinality 0..*) is associated with 'myDsl::Fonction' (role 'myDsl_Fonction4', cardinality 0..*).
+'myDsl::ElemSimple' (role 'myDsl_ElemSimple64', cardinality 0..*) is associated with 'myDsl::Lexpr' (role 'myDsl_Lexpr65', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*) is associated with 'myDsl::Affectation' (role 'myDsl_Affectation16', cardinality 0..*).
+'myDsl::Program' (role 'myDsl_Program', cardinality 0..*) is associated with 'myDsl::Fonction' (role 'myDsl_Fonction', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression73', cardinality 0..*) is associated with 'myDsl::Condition' (role 'myDsl_Condition72', cardinality 0..*).
+'myDsl::Commandes' (role 'myDsl_Commandes29', cardinality 0..*) is associated with 'myDsl::While' (role 'myDsl_While28', cardinality 0..*).
+'myDsl::Condition' (role 'myDsl_Condition', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression44', cardinality 0..*).
+'myDsl::Fonction' (role 'myDsl_Fonction6', cardinality 0..*) is associated with 'myDsl::Output' (role 'myDsl_Output', cardinality 0..*).
+'myDsl::Commandes' (role 'myDsl_Commandes8', cardinality 0..*) is associated with 'myDsl::Commande' (role 'myDsl_Commande', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple68', cardinality 0..*) is associated with 'myDsl::Condition' (role 'myDsl_Condition67', cardinality 0..*).
+'myDsl::AccSucc' (role 'myDsl_AccSucc', cardinality 0..*) is associated with 'myDsl::ExprSimple' (role 'myDsl_ExprSimple55', cardinality 0..*).
+'myDsl::OpAccSucc' (role 'myDsl_OpAccSucc', cardinality 0..*) is associated with 'myDsl::AccSucc' (role 'myDsl_AccSucc83', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression46', cardinality 0..*) is associated with 'myDsl::ExprSimple' (role 'myDsl_ExprSimple', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression26', cardinality 0..*) is associated with 'myDsl::While' (role 'myDsl_While', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject', cardinality 0..*) is associated with 'myDsl::Commande' (role 'myDsl_Commande13', cardinality 0..*).
+'myDsl::OpConstructeur' (role 'myDsl_OpConstructeur', cardinality 0..*) is associated with 'myDsl::ABin' (role 'myDsl_ABin75', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression39', cardinality 0..*) is associated with 'myDsl::ForEach' (role 'myDsl_ForEach38', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple48', cardinality 0..*) is associated with 'myDsl::Nill' (role 'myDsl_Nill', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple53', cardinality 0..*) is associated with 'myDsl::ABin' (role 'myDsl_ABin', cardinality 0..*).
+'myDsl::Not' (role 'myDsl_Not', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression88', cardinality 0..*).
+'myDsl::Condition' (role 'myDsl_Condition70', cardinality 0..*) is associated with 'myDsl::COMPARATEUR' (role 'myDsl_COMPARATEUR', cardinality 0..*).
+'myDsl::Fonction' (role 'myDsl_Fonction2', cardinality 0..*) is associated with 'myDsl::Input' (role 'myDsl_Input', cardinality 0..*).
+'myDsl::ABin' (role 'myDsl_ABin80', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression81', cardinality 0..*).
+'myDsl::Variable' (role 'myDsl_Variable51', cardinality 0..*) is associated with 'myDsl::ExprSimple' (role 'myDsl_ExprSimple50', cardinality 0..*).
+'myDsl::Variable' (role 'myDsl_Variable', cardinality 0..*) is associated with 'myDsl::Affectation' (role 'myDsl_Affectation', cardinality 0..*).
+'myDsl::If' (role 'myDsl_If23', cardinality 0..*) is associated with 'myDsl::Commandes' (role 'myDsl_Commandes24', cardinality 0..*).
+'myDsl::Commandes' (role 'myDsl_Commandes21', cardinality 0..*) is associated with 'myDsl::If' (role 'myDsl_If20', cardinality 0..*).
+'myDsl::ForEach' (role 'myDsl_ForEach41', cardinality 0..*) is associated with 'myDsl::Commandes' (role 'myDsl_Commandes42', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression36', cardinality 0..*) is associated with 'myDsl::ForEach' (role 'myDsl_ForEach', cardinality 0..*).
+'myDsl::Lexpr' (role 'myDsl_Lexpr60', cardinality 0..*) is associated with 'myDsl::Lexpr' (role 'myDsl_Lexpr62', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple86', cardinality 0..*) is associated with 'myDsl::AccSucc' (role 'myDsl_AccSucc85', cardinality 0..*).
+'myDsl::If' (role 'myDsl_If', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression18', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple57', cardinality 0..*) is associated with 'myDsl::ElemSimple' (role 'myDsl_ElemSimple', cardinality 0..*).

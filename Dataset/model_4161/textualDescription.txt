@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'scheme::Greeting' has the following attributes: 'name' of type str.
+The class 'scheme::Model' has no attributes.
+'scheme::Model' (role 'scheme_Model', cardinality 0..*) is associated with 'scheme::Greeting' (role 'scheme_Greeting', cardinality 0..*).

@@ -1,0 +1,70 @@
+The model has 31 class(es).
+The class 'arduino::Block' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'OutputModule' has no attributes.
+The class 'arduino::Control' has no attributes.
+The class 'ModuleSet' has no attributes.
+The class 'arduino::Delay' has the following attributes: 'value' of type int.
+The class 'arduino::Constant' has the following attributes: 'value' of type int.
+The class 'arduino::InputModule' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'arduino::Led' has no attributes.
+The class 'arduino::While' has no attributes.
+The class 'arduino::Instruction' has no attributes.
+The class 'arduino::WaitFor' has no attributes.
+The class 'Control' has no attributes.
+The class 'arduino::Project' has no attributes.
+The class 'Expression' has no attributes.
+The class 'arduino::PushButton' has no attributes.
+The class 'arduino::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduino::Board' has no attributes.
+The class 'InputModule' has no attributes.
+The class 'arduino::SetLed' has no attributes.
+The class 'arduino::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::OutputModule' has no attributes.
+The class 'arduino::Sketch' has no attributes.
+The class 'arduino::Expression' has no attributes.
+The class 'arduino::ModuleGet' has no attributes.
+The class 'arduino::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::Module' has no attributes.
+The class 'arduino::If' has no attributes.
+The class 'Module' has no attributes.
+The class 'arduino::ModuleSet' has no attributes.
+The enumeration 'BinaryOperatorKind' has the following literals: 'div', 'min', 'mul', 'mod', 'eq', 'ge', 'le', 'lt', 'gt', 'sub', 'max', 'neq', 'add'.
+The enumeration 'UnaryOperatorKind' has the following literals: 'minus', 'neg'.
+'arduino::PushButton' is a specialization of 'InputModule'.
+'arduino::Project' is a specialization of 'NamedElement'.
+'arduino::BinaryExpression' is a specialization of 'Expression'.
+'arduino::SetLed' is a specialization of 'ModuleSet'.
+'arduino::Control' is a specialization of 'Instruction'.
+'arduino::If' is a specialization of 'Control'.
+'arduino::Sketch' is a specialization of 'NamedElement'.
+'arduino::While' is a specialization of 'Control'.
+'arduino::OutputModule' is a specialization of 'Module'.
+'arduino::UnaryExpression' is a specialization of 'Expression'.
+'arduino::Delay' is a specialization of 'Instruction'.
+'arduino::ModuleGet' is a specialization of 'Expression'.
+'arduino::Module' is a specialization of 'NamedElement'.
+'arduino::Led' is a specialization of 'OutputModule'.
+'arduino::Board' is a specialization of 'NamedElement'.
+'arduino::Constant' is a specialization of 'Expression'.
+'arduino::InputModule' is a specialization of 'Module'.
+'arduino::ModuleSet' is a specialization of 'Instruction'.
+'arduino::WaitFor' is a specialization of 'Instruction'.
+'arduino::Block' (role 'arduino_Block10', cardinality 0..*) is associated with 'arduino::Control' (role 'arduino_Control', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project', cardinality 0..*) is associated with 'arduino::Board' (role 'arduino_Board', cardinality 0..*).
+'arduino::Led' (role 'arduino_Led', cardinality 0..*) is associated with 'arduino::SetLed' (role 'arduino_SetLed', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression18', cardinality 0..*) is associated with 'arduino::ModuleSet' (role 'arduino_ModuleSet', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction', cardinality 0..*) is associated with 'arduino::Block' (role 'arduino_Block8', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch6', cardinality 0..*) is associated with 'arduino::Block' (role 'arduino_Block', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*) is associated with 'arduino::Project' (role 'arduino_Project2', cardinality 0..*).
+'arduino::If' (role 'arduino_If', cardinality 0..*) is associated with 'arduino::Expression' (role 'arduino_Expression', cardinality 0..*).
+'arduino::WaitFor' (role 'arduino_WaitFor23', cardinality 0..*) is associated with 'arduino::Constant' (role 'arduino_Constant', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression30', cardinality 0..*) is associated with 'arduino::BinaryExpression' (role 'arduino_BinaryExpression29', cardinality 0..*).
+'arduino::Board' (role 'arduino_Board4', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression16', cardinality 0..*) is associated with 'arduino::While' (role 'arduino_While', cardinality 0..*).
+'arduino::ModuleGet' (role 'arduino_ModuleGet', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module32', cardinality 0..*).
+'arduino::UnaryExpression' (role 'arduino_UnaryExpression', cardinality 0..*) is associated with 'arduino::Expression' (role 'arduino_Expression25', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression27', cardinality 0..*) is associated with 'arduino::BinaryExpression' (role 'arduino_BinaryExpression', cardinality 0..*).
+'arduino::Module' (role 'arduino_Module21', cardinality 0..*) is associated with 'arduino::WaitFor' (role 'arduino_WaitFor', cardinality 0..*).
+'arduino::If' (role 'arduino_If13', cardinality 0..*) is associated with 'arduino::Block' (role 'arduino_Block14', cardinality 0..*).

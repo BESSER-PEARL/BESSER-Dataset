@@ -1,0 +1,34 @@
+The model has 13 class(es).
+The class 'rankPL::Div' has no attributes.
+The class 'rankPL::Definition' has no attributes.
+The class 'rankPL::Model' has no attributes.
+The class 'Expression' has no attributes.
+The class 'rankPL::FunctionCall' has no attributes.
+The class 'rankPL::Multi' has no attributes.
+The class 'rankPL::AbstractDefinition' has the following attributes: 'name' of type str.
+The class 'rankPL::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'rankPL::Minus' has no attributes.
+The class 'AbstractDefinition' has no attributes.
+The class 'rankPL::DeclaredParameter' has no attributes.
+The class 'rankPL::Plus' has no attributes.
+The class 'rankPL::Expression' has no attributes.
+'rankPL::Div' is a specialization of 'Expression'.
+'rankPL::Multi' is a specialization of 'Expression'.
+'rankPL::NumberLiteral' is a specialization of 'Expression'.
+'rankPL::FunctionCall' is a specialization of 'Expression'.
+'rankPL::Minus' is a specialization of 'Expression'.
+'rankPL::Plus' is a specialization of 'Expression'.
+'rankPL::Definition' is a specialization of 'AbstractDefinition'.
+'rankPL::DeclaredParameter' is a specialization of 'AbstractDefinition'.
+'rankPL::Multi' (role 'rankPL_Multi15', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression16', cardinality 0..*).
+'rankPL::Div' (role 'rankPL_Div20', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression21', cardinality 0..*).
+'rankPL::Expression' (role 'rankPL_Expression18', cardinality 0..*) is associated with 'rankPL::Div' (role 'rankPL_Div', cardinality 0..*).
+'rankPL::FunctionCall' (role 'rankPL_FunctionCall', cardinality 0..*) is associated with 'rankPL::AbstractDefinition' (role 'rankPL_AbstractDefinition23', cardinality 0..*).
+'rankPL::AbstractDefinition' (role 'rankPL_AbstractDefinition', cardinality 0..*) is associated with 'rankPL::Model' (role 'rankPL_Model', cardinality 0..*).
+'rankPL::Expression' (role 'rankPL_Expression6', cardinality 0..*) is associated with 'rankPL::Plus' (role 'rankPL_Plus5', cardinality 0..*).
+'rankPL::Definition' (role 'rankPL_Definition', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression', cardinality 0..*).
+'rankPL::Minus' (role 'rankPL_Minus10', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression11', cardinality 0..*).
+'rankPL::Expression' (role 'rankPL_Expression26', cardinality 0..*) is associated with 'rankPL::FunctionCall' (role 'rankPL_FunctionCall25', cardinality 0..*).
+'rankPL::Plus' (role 'rankPL_Plus', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression3', cardinality 0..*).
+'rankPL::Expression' (role 'rankPL_Expression8', cardinality 0..*) is associated with 'rankPL::Minus' (role 'rankPL_Minus', cardinality 0..*).
+'rankPL::Multi' (role 'rankPL_Multi', cardinality 0..*) is associated with 'rankPL::Expression' (role 'rankPL_Expression13', cardinality 0..*).

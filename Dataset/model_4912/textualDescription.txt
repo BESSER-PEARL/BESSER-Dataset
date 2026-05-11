@@ -1,0 +1,78 @@
+The model has 29 class(es).
+The class 'services::CFSService' has the following attributes: 'provider' of type str; 'scenario' of type str.
+The class 'services::NetXResource' has no attributes.
+The class 'services::Service' has the following attributes: 'serviceCategory' of type str; 'serviceName' of type str; 'serviceClass' of type str; 'serviceDescription' of type str.
+The class 'services::DistributionEntry' has the following attributes: 'resourceOrigin' of type str.
+The class 'services::ReferenceRelationship' has no attributes.
+The class 'services::CIID' has the following attributes: 'commonCIID' of type str; 'localCIID' of type str.
+The class 'Service' has no attributes.
+The class 'services::Tolerance' has no attributes.
+The class 'services::DateTimeRange' has no attributes.
+The class 'services::RFSService' has the following attributes: 'functionalCategory' of type str.
+The class 'services::ServiceMonitor' has the following attributes: 'name' of type str; 'revision' of type str.
+The class 'services::ServiceUser' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'services::Protocol' has no attributes.
+The class 'services::ServiceForecastUsers' has no attributes.
+The class 'services::ServiceProfile' has the following attributes: 'name' of type str.
+The class 'services::Expression' has no attributes.
+The class 'services::ServiceDistribution' has no attributes.
+The class 'services::ResourceMonitor' has no attributes.
+The class 'services::ServiceFlowRelationship' has the following attributes: 'direction' of type str.
+The class 'BaseResource' has no attributes.
+The class 'services::Value' has no attributes.
+The class 'services::Message' has no attributes.
+The class 'Base' has no attributes.
+The class 'services::DerivedResource' has no attributes.
+The class 'services::Lifecycle' has no attributes.
+The class 'services::ServiceForecast' has the following attributes: 'name' of type str; 'revision' of type str.
+The class 'services::ResourceForecast' has no attributes.
+The class 'services::ServiceFlow' has the following attributes: 'name' of type str.
+The class 'services::Node' has no attributes.
+The enumeration 'ResourceOriginType' has the following literals: 'InBound', 'OutBound', 'Internal'.
+The enumeration 'ServiceFlowDirection' has the following literals: 'LEFTTORIGHT', 'RIGHTTOLEFT'.
+The enumeration 'ServiceClassType' has the following literals: 'Gold', 'Bronze', 'Silver'.
+'services::CIID' is a specialization of 'Base'.
+'services::ServiceForecast' is a specialization of 'Base'.
+'services::ServiceFlowRelationship' is a specialization of 'Base'.
+'services::CFSService' is a specialization of 'Service'.
+'services::ServiceDistribution' is a specialization of 'Base'.
+'services::ServiceFlow' is a specialization of 'Base'.
+'services::DistributionEntry' is a specialization of 'Base'.
+'services::ServiceForecastUsers' is a specialization of 'Base'.
+'services::Service' is a specialization of 'Base'.
+'services::ServiceProfile' is a specialization of 'Base'.
+'services::DerivedResource' is a specialization of 'BaseResource'.
+'services::ServiceMonitor' is a specialization of 'Base'.
+'services::ServiceUser' is a specialization of 'Base'.
+'services::RFSService' is a specialization of 'Service'.
+'services::DistributionEntry' (role 'services_DistributionEntry30', cardinality 0..*) is associated with 'services::ServiceDistribution' (role 'services_ServiceDistribution29', cardinality 0..*).
+'services::ServiceFlow' (role 'services_ServiceFlow38', cardinality 0..*) is associated with 'services::ServiceFlowRelationship' (role 'services_ServiceFlowRelationship37', cardinality 0..*).
+'services::Value' (role 'services_Value51', cardinality 0..*) is associated with 'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers50', cardinality 0..*).
+'services::Value' (role 'services_Value', cardinality 0..*) is associated with 'services::DerivedResource' (role 'services_DerivedResource', cardinality 0..*).
+'services::Service' (role 'services_Service21', cardinality 0..*) is associated with 'services::ServiceForecast' (role 'services_ServiceForecast', cardinality 0..*).
+'services::ServiceForecast' (role 'services_ServiceForecast44', cardinality 0..*) is associated with 'services::DateTimeRange' (role 'services_DateTimeRange', cardinality 0..*).
+'services::ServiceFlowRelationship' (role 'services_ServiceFlowRelationship35', cardinality 0..*) is associated with 'services::ReferenceRelationship' (role 'services_ReferenceRelationship', cardinality 0..*).
+'services::ServiceForecast' (role 'services_ServiceForecast48', cardinality 0..*) is associated with 'services::ResourceForecast' (role 'services_ResourceForecast', cardinality 0..*).
+'services::DateTimeRange' (role 'services_DateTimeRange57', cardinality 0..*) is associated with 'services::ServiceMonitor' (role 'services_ServiceMonitor56', cardinality 0..*).
+'services::DistributionEntry' (role 'services_DistributionEntry9', cardinality 0..*) is associated with 'services::DerivedResource' (role 'services_DerivedResource10', cardinality 0..*).
+'services::Service' (role 'services_Service27', cardinality 0..*) is associated with 'services::ServiceDistribution' (role 'services_ServiceDistribution', cardinality 0..*).
+'services::Service' (role 'services_Service23', cardinality 0..*) is associated with 'services::ServiceMonitor' (role 'services_ServiceMonitor', cardinality 0..*).
+'services::Service' (role 'services_Service19', cardinality 0..*) is associated with 'services::Service' (role 'services_Service17', cardinality 0..*).
+'services::ServiceFlow' (role 'services_ServiceFlow', cardinality 0..*) is associated with 'services::ServiceFlowRelationship' (role 'services_ServiceFlowRelationship', cardinality 0..*).
+'services::NetXResource' (role 'services_NetXResource', cardinality 0..*) is associated with 'services::DistributionEntry' (role 'services_DistributionEntry', cardinality 0..*).
+'services::DerivedResource' (role 'services_DerivedResource2', cardinality 0..*) is associated with 'services::Value' (role 'services_Value3', cardinality 0..*).
+'services::Expression' (role 'services_Expression', cardinality 0..*) is associated with 'services::ServiceDistribution' (role 'services_ServiceDistribution32', cardinality 0..*).
+'services::ServiceMonitor' (role 'services_ServiceMonitor59', cardinality 0..*) is associated with 'services::ResourceMonitor' (role 'services_ResourceMonitor', cardinality 0..*).
+'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers53', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser54', cardinality 0..*).
+'services::Service' (role 'services_Service25', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser', cardinality 0..*).
+'services::RFSService' (role 'services_RFSService', cardinality 0..*) is associated with 'services::Node' (role 'services_Node', cardinality 0..*).
+'services::DerivedResource' (role 'services_DerivedResource61', cardinality 0..*) is associated with 'services::ServiceProfile' (role 'services_ServiceProfile', cardinality 0..*).
+'services::Service' (role 'services_Service16', cardinality 0..*) is associated with 'services::Lifecycle' (role 'services_Lifecycle', cardinality 0..*).
+'services::Protocol' (role 'services_Protocol', cardinality 0..*) is associated with 'services::ServiceFlowRelationship' (role 'services_ServiceFlowRelationship40', cardinality 0..*).
+'services::Message' (role 'services_Message', cardinality 0..*) is associated with 'services::ServiceFlowRelationship' (role 'services_ServiceFlowRelationship42', cardinality 0..*).
+'services::Expression' (role 'services_Expression67', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser66', cardinality 0..*).
+'services::CIID' (role 'services_CIID', cardinality 0..*) is associated with 'services::Service' (role 'services_Service', cardinality 0..*).
+'services::Value' (role 'services_Value6', cardinality 0..*) is associated with 'services::DerivedResource' (role 'services_DerivedResource5', cardinality 0..*).
+'services::RFSService' (role 'services_RFSService13', cardinality 0..*) is associated with 'services::Tolerance' (role 'services_Tolerance', cardinality 0..*).
+'services::ServiceProfile' (role 'services_ServiceProfile64', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser63', cardinality 0..*).
+'services::ServiceForecast' (role 'services_ServiceForecast46', cardinality 0..*) is associated with 'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers', cardinality 0..*).

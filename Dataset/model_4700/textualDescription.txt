@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'genealogy::Person' has the following attributes: 'alive' of type bool; 'age' of type int; 'name' of type str.
+The class 'genealogy::Genealogy' has no attributes.
+'genealogy::Person' (role 'Person5', cardinality 0..*) is associated with 'genealogy::Person' (role 'parents', cardinality 0..*).
+'genealogy::Person' (role 'Person', cardinality 0..*) is associated with 'genealogy::Person' (role 'children', cardinality 0..*).
+'genealogy::Genealogy' (role 'genealogy_Genealogy', cardinality 0..*) is associated with 'genealogy::Person' (role 'genealogy_Person', cardinality 0..*).

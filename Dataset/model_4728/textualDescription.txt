@@ -1,0 +1,43 @@
+The model has 17 class(es).
+The class 'mprologTermReference::Body' has no attributes.
+The class 'mprologTermReference::Parenthesis' has no attributes.
+The class 'mprologTermReference::Clause' has no attributes.
+The class 'mprologTermReference::FunctorReference' has no attributes.
+The class 'mprologTermReference::Head' has no attributes.
+The class 'TermReference' has no attributes.
+The class 'mprologTermReference::TermReference' has no attributes.
+The class 'mprologTermReference::VariableReference' has no attributes.
+The class 'Term' has no attributes.
+The class 'mprologTermReference::Variable' has the following attributes: 'name' of type str.
+The class 'mprologTermReference::List' has no attributes.
+The class 'mprologTermReference::Term' has no attributes.
+The class 'mprologTermReference::QuotedAtom' has the following attributes: 'text' of type str.
+The class 'mprologTermReference::Operator' has the following attributes: 'symbol' of type str.
+The class 'mprologTermReference::Model' has the following attributes: 'name' of type str.
+The class 'mprologTermReference::InfixExpression' has no attributes.
+The class 'mprologTermReference::Functor' has the following attributes: 'text' of type str.
+'mprologTermReference::Functor' is a specialization of 'Term'.
+'mprologTermReference::QuotedAtom' is a specialization of 'Term'.
+'mprologTermReference::Variable' is a specialization of 'Term'.
+'mprologTermReference::VariableReference' is a specialization of 'TermReference'.
+'mprologTermReference::Parenthesis' is a specialization of 'Term'.
+'mprologTermReference::InfixExpression' is a specialization of 'Term'.
+'mprologTermReference::List' is a specialization of 'Term'.
+'mprologTermReference::FunctorReference' is a specialization of 'TermReference'.
+'mprologTermReference::TermReference' is a specialization of 'Term'.
+'mprologTermReference::Term' (role 'mprologTermReference_Term24', cardinality 0..*) is associated with 'mprologTermReference::InfixExpression' (role 'mprologTermReference_InfixExpression23', cardinality 0..*).
+'mprologTermReference::Functor' (role 'mprologTermReference_Functor13', cardinality 0..*) is associated with 'mprologTermReference::Term' (role 'mprologTermReference_Term14', cardinality 0..*).
+'mprologTermReference::Clause' (role 'mprologTermReference_Clause', cardinality 0..*) is associated with 'mprologTermReference::Model' (role 'mprologTermReference_Model', cardinality 0..*).
+'mprologTermReference::List' (role 'mprologTermReference_List', cardinality 0..*) is associated with 'mprologTermReference::Term' (role 'mprologTermReference_Term16', cardinality 0..*).
+'mprologTermReference::Term' (role 'mprologTermReference_Term19', cardinality 0..*) is associated with 'mprologTermReference::List' (role 'mprologTermReference_List18', cardinality 0..*).
+'mprologTermReference::InfixExpression' (role 'mprologTermReference_InfixExpression26', cardinality 0..*) is associated with 'mprologTermReference::Operator' (role 'mprologTermReference_Operator', cardinality 0..*).
+'mprologTermReference::Functor' (role 'mprologTermReference_Functor28', cardinality 0..*) is associated with 'mprologTermReference::FunctorReference' (role 'mprologTermReference_FunctorReference', cardinality 0..*).
+'mprologTermReference::Body' (role 'mprologTermReference_Body', cardinality 0..*) is associated with 'mprologTermReference::Clause' (role 'mprologTermReference_Clause4', cardinality 0..*).
+'mprologTermReference::Term' (role 'mprologTermReference_Term7', cardinality 0..*) is associated with 'mprologTermReference::Term' (role 'mprologTermReference_Term', cardinality 0..*).
+'mprologTermReference::VariableReference' (role 'mprologTermReference_VariableReference', cardinality 0..*) is associated with 'mprologTermReference::Variable' (role 'mprologTermReference_Variable', cardinality 0..*).
+'mprologTermReference::Head' (role 'mprologTermReference_Head6', cardinality 0..*) is associated with 'mprologTermReference::Functor' (role 'mprologTermReference_Functor', cardinality 0..*).
+'mprologTermReference::Term' (role 'mprologTermReference_Term11', cardinality 0..*) is associated with 'mprologTermReference::Body' (role 'mprologTermReference_Body10', cardinality 0..*).
+'mprologTermReference::Parenthesis' (role 'mprologTermReference_Parenthesis', cardinality 0..*) is associated with 'mprologTermReference::Term' (role 'mprologTermReference_Term34', cardinality 0..*).
+'mprologTermReference::Term' (role 'mprologTermReference_Term21', cardinality 0..*) is associated with 'mprologTermReference::InfixExpression' (role 'mprologTermReference_InfixExpression', cardinality 0..*).
+'mprologTermReference::Clause' (role 'mprologTermReference_Clause2', cardinality 0..*) is associated with 'mprologTermReference::Head' (role 'mprologTermReference_Head', cardinality 0..*).
+'mprologTermReference::FunctorReference' (role 'mprologTermReference_FunctorReference30', cardinality 0..*) is associated with 'mprologTermReference::Term' (role 'mprologTermReference_Term31', cardinality 0..*).

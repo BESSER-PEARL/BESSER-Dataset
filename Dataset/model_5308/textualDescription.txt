@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'typeB::RootB' has no attributes.
+The class 'typeB::ElementB' has no attributes.
+The class 'typeB::DefinitionB' has the following attributes: 'name' of type str.
+'typeB::DefinitionB' (role 'typeB_DefinitionB5', cardinality 0..*) is associated with 'typeB::ElementB' (role 'typeB_ElementB4', cardinality 0..*).
+'typeB::RootB' (role 'typeB_RootB', cardinality 0..*) is associated with 'typeB::ElementB' (role 'typeB_ElementB', cardinality 0..*).
+'typeB::RootB' (role 'typeB_RootB2', cardinality 0..*) is associated with 'typeB::DefinitionB' (role 'typeB_DefinitionB', cardinality 0..*).

@@ -1,0 +1,58 @@
+The model has 26 class(es).
+The class 'RobotProjectModel::DetectedObjectIs' has the following attributes: 'rightOperand' of type str.
+The class 'RobotProjectModel::Wait' has no attributes.
+The class 'RobotProjectModel::SensorActivation' has no attributes.
+The class 'RobotProjectModel::Distance' has the following attributes: 'distanceUnit' of type str.
+The class 'RobotProjectModel::Instruction' has no attributes.
+The class 'Condition' has no attributes.
+The class 'RobotProjectModel::Robot' has no attributes.
+The class 'RobotProjectModel::MoveStraight' has no attributes.
+The class 'RobotProjectModel::Call' has no attributes.
+The class 'RobotProjectModel::Amount' has the following attributes: 'value' of type int.
+The class 'RobotProjectModel::Condition' has no attributes.
+The class 'RobotProjectModel::Print' has the following attributes: 'string' of type str.
+The class 'RobotProjectModel::Grab' has no attributes.
+The class 'TimedInstruction' has no attributes.
+The class 'RobotProjectModel::Turn' has no attributes.
+The class 'RobotProjectModel::Function' has the following attributes: 'name' of type str.
+The class 'RobotProjectModel::Angle' has the following attributes: 'angleUnit' of type str.
+The class 'RobotProjectModel::HomeDirection' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'RobotProjectModel::InstructionBlock' has no attributes.
+The class 'Angle' has no attributes.
+The class 'Amount' has no attributes.
+The class 'RobotProjectModel::Duration' has the following attributes: 'timeUnit' of type str.
+The class 'RobotProjectModel::TimedInstruction' has no attributes.
+The class 'RobotProjectModel::If' has no attributes.
+The class 'RobotProjectModel::Release' has no attributes.
+The enumeration 'AngleUnit' has the following literals: 'DEGREES'.
+The enumeration 'TimeUnit' has the following literals: 'SECONDS', 'MILLISECONDS'.
+The enumeration 'DistanceUnit' has the following literals: 'CENTIMETERS'.
+The enumeration 'DetectedType' has the following literals: 'NULL', 'BALL', 'WALL'.
+'RobotProjectModel::MoveStraight' is a specialization of 'TimedInstruction'.
+'RobotProjectModel::Distance' is a specialization of 'Amount'.
+'RobotProjectModel::HomeDirection' is a specialization of 'Angle'.
+'RobotProjectModel::TimedInstruction' is a specialization of 'Instruction'.
+'RobotProjectModel::Angle' is a specialization of 'Amount'.
+'RobotProjectModel::InstructionBlock' is a specialization of 'Instruction'.
+'RobotProjectModel::Function' is a specialization of 'Instruction'.
+'RobotProjectModel::SensorActivation' is a specialization of 'Condition'.
+'RobotProjectModel::Call' is a specialization of 'Instruction'.
+'RobotProjectModel::Grab' is a specialization of 'Instruction'.
+'RobotProjectModel::DetectedObjectIs' is a specialization of 'Condition'.
+'RobotProjectModel::Turn' is a specialization of 'TimedInstruction'.
+'RobotProjectModel::Wait' is a specialization of 'TimedInstruction'.
+'RobotProjectModel::If' is a specialization of 'Instruction'.
+'RobotProjectModel::Release' is a specialization of 'Instruction'.
+'RobotProjectModel::Duration' is a specialization of 'Amount'.
+'RobotProjectModel::Print' is a specialization of 'Instruction'.
+'RobotProjectModel::Angle' (role 'RobotProjectModel_Angle', cardinality 0..*) is associated with 'RobotProjectModel::Turn' (role 'RobotProjectModel_Turn', cardinality 0..*).
+'RobotProjectModel::InstructionBlock' (role 'RobotProjectModel_InstructionBlock15', cardinality 0..*) is associated with 'RobotProjectModel::Instruction' (role 'RobotProjectModel_Instruction16', cardinality 0..*).
+'RobotProjectModel::InstructionBlock' (role 'RobotProjectModel_InstructionBlock', cardinality 0..*) is associated with 'RobotProjectModel::Function' (role 'RobotProjectModel_Function', cardinality 0..*).
+'RobotProjectModel::If' (role 'RobotProjectModel_If9', cardinality 0..*) is associated with 'RobotProjectModel::InstructionBlock' (role 'RobotProjectModel_InstructionBlock10', cardinality 0..*).
+'RobotProjectModel::Condition' (role 'RobotProjectModel_Condition', cardinality 0..*) is associated with 'RobotProjectModel::If' (role 'RobotProjectModel_If', cardinality 0..*).
+'RobotProjectModel::MoveStraight' (role 'RobotProjectModel_MoveStraight', cardinality 0..*) is associated with 'RobotProjectModel::Distance' (role 'RobotProjectModel_Distance', cardinality 0..*).
+'RobotProjectModel::Duration' (role 'RobotProjectModel_Duration', cardinality 0..*) is associated with 'RobotProjectModel::TimedInstruction' (role 'RobotProjectModel_TimedInstruction', cardinality 0..*).
+'RobotProjectModel::Instruction' (role 'RobotProjectModel_Instruction', cardinality 0..*) is associated with 'RobotProjectModel::Robot' (role 'RobotProjectModel_Robot', cardinality 0..*).
+'RobotProjectModel::Call' (role 'RobotProjectModel_Call', cardinality 0..*) is associated with 'RobotProjectModel::Function' (role 'RobotProjectModel_Function6', cardinality 0..*).
+'RobotProjectModel::If' (role 'RobotProjectModel_If12', cardinality 0..*) is associated with 'RobotProjectModel::InstructionBlock' (role 'RobotProjectModel_InstructionBlock13', cardinality 0..*).

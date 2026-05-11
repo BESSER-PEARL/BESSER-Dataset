@@ -1,0 +1,156 @@
+The model has 69 class(es).
+The class 'types::JvmIntAnnotationValue' has the following attributes: 'values' of type int.
+The class 'types::JvmEnumerationType' has no attributes.
+The class 'JvmMember' has no attributes.
+The class 'types::JvmDeclaredType' has the following attributes: 'final' of type bool; 'packageName' of type str; 'abstract' of type bool; 'static' of type bool.
+The class 'types::JvmBooleanAnnotationValue' has the following attributes: 'values' of type bool.
+The class 'JvmFeature' has no attributes.
+The class 'types::JvmDelegateTypeReference' has no attributes.
+The class 'types::JvmConstructor' has no attributes.
+The class 'JvmAnnotationTarget' has no attributes.
+The class 'types::JvmSpecializedTypeReference' has no attributes.
+The class 'types::JvmParameterizedTypeReference' has no attributes.
+The class 'types::JvmCustomAnnotationValue' has no attributes.
+The class 'types::JvmTypeAnnotationValue' has no attributes.
+The class 'types::JvmLowerBound' has no attributes.
+The class 'types::JvmCharAnnotationValue' has the following attributes: 'values' of type str.
+The class 'types::JvmFormalParameter' has the following attributes: 'name' of type str.
+The class 'JvmField' has no attributes.
+The class 'JvmTypeConstraint' has no attributes.
+The class 'types::JvmPrimitiveType' has the following attributes: 'simpleName' of type str.
+The class 'types::JvmUnknownTypeReference' has the following attributes: 'qualifiedName' of type str.
+The class 'JvmIdentifiableElement' has no attributes.
+The class 'types::JvmFeature' has no attributes.
+The class 'types::JvmGenericType' has the following attributes: 'strictFloatingPoint' of type bool; 'interface' of type bool; 'anonymous' of type bool.
+The class 'types::JvmTypeConstraint' has no attributes.
+The class 'JvmTypeParameterDeclarator' has no attributes.
+The class 'JvmCompoundTypeReference' has no attributes.
+The class 'types::JvmLongAnnotationValue' has the following attributes: 'values' of type str.
+The class 'JvmAnnotationValue' has no attributes.
+The class 'types::JvmVoid' has no attributes.
+The class 'types::JvmMultiTypeReference' has no attributes.
+The class 'types::JvmStringAnnotationValue' has the following attributes: 'values' of type str.
+The class 'types::JvmAnnotationType' has no attributes.
+The class 'types::JvmAnnotationReference' has no attributes.
+The class 'types::JvmIdentifiableElement' has no attributes.
+The class 'JvmTypeReference' has no attributes.
+The class 'types::JvmMember' has the following attributes: 'deprecated' of type bool; 'simpleName' of type str; 'visibility' of type str; 'identifier' of type str.
+The class 'types::JvmDoubleAnnotationValue' has the following attributes: 'values' of type float.
+The class 'types::JvmInnerTypeReference' has no attributes.
+The class 'types::JvmAnyTypeReference' has no attributes.
+The class 'types::JvmType' has no attributes.
+The class 'types::JvmArrayType' has no attributes.
+The class 'types::JvmTypeReference' has no attributes.
+The class 'JvmConstraintOwner' has no attributes.
+The class 'types::JvmWildcardTypeReference' has no attributes.
+The class 'JvmType' has no attributes.
+The class 'JvmComponentType' has no attributes.
+The class 'JvmDeclaredType' has no attributes.
+The class 'types::JvmTypeParameter' has the following attributes: 'name' of type str.
+The class 'types::JvmFloatAnnotationValue' has the following attributes: 'values' of type float.
+The class 'types::JvmUpperBound' has no attributes.
+The class 'types::JvmShortAnnotationValue' has the following attributes: 'values' of type str.
+The class 'JvmExecutable' has no attributes.
+The class 'types::JvmConstraintOwner' has no attributes.
+The class 'types::JvmTypeParameterDeclarator' has no attributes.
+The class 'types::JvmOperation' has the following attributes: 'strictFloatingPoint' of type bool; 'default' of type bool; 'abstract' of type bool; 'synchronized' of type bool; 'static' of type bool; 'native' of type bool; 'final' of type bool.
+The class 'types::JvmExecutable' has the following attributes: 'varArgs' of type bool.
+The class 'types::JvmAnnotationTarget' has no attributes.
+The class 'types::JvmSynonymTypeReference' has no attributes.
+The class 'types::JvmEnumAnnotationValue' has no attributes.
+The class 'types::JvmComponentType' has no attributes.
+The class 'JvmParameterizedTypeReference' has no attributes.
+The class 'types::JvmAnnotationValue' has no attributes.
+The class 'types::JvmAnnotationAnnotationValue' has no attributes.
+The class 'types::EObject' has no attributes.
+The class 'types::JvmGenericArrayTypeReference' has no attributes.
+The class 'types::JvmField' has the following attributes: 'transient' of type bool; 'volatile' of type bool; 'static' of type bool; 'constant' of type bool; 'constantValue' of type str; 'final' of type bool.
+The class 'types::JvmCompoundTypeReference' has no attributes.
+The class 'types::JvmByteAnnotationValue' has the following attributes: 'values' of type str.
+The class 'types::JvmEnumerationLiteral' has no attributes.
+The enumeration 'JvmVisibility' has the following literals: 'PROTECTED', 'PUBLIC', 'DEFAULT', 'PRIVATE'.
+'types::JvmAnnotationType' is a specialization of 'JvmDeclaredType'.
+'types::JvmEnumAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmLowerBound' is a specialization of 'JvmTypeConstraint'.
+'types::JvmWildcardTypeReference' is a specialization of 'JvmConstraintOwner'.
+'types::JvmAnyTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmShortAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmDeclaredType' is a specialization of 'JvmComponentType'.
+'types::JvmOperation' is a specialization of 'JvmExecutable'.
+'types::JvmWildcardTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmGenericArrayTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmExecutable' is a specialization of 'JvmFeature'.
+'types::JvmByteAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmCustomAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmAnnotationTarget' is a specialization of 'JvmIdentifiableElement'.
+'types::JvmStringAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmMultiTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'types::JvmArrayType' is a specialization of 'JvmComponentType'.
+'types::JvmUnknownTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmTypeParameter' is a specialization of 'JvmComponentType'.
+'types::JvmCharAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmEnumerationLiteral' is a specialization of 'JvmField'.
+'types::JvmParameterizedTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmCompoundTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmFormalParameter' is a specialization of 'JvmAnnotationTarget'.
+'types::JvmMember' is a specialization of 'JvmAnnotationTarget'.
+'types::JvmField' is a specialization of 'JvmFeature'.
+'types::JvmBooleanAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmDoubleAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmType' is a specialization of 'JvmIdentifiableElement'.
+'types::JvmGenericType' is a specialization of 'JvmDeclaredType'.
+'types::JvmExecutable' is a specialization of 'JvmTypeParameterDeclarator'.
+'types::JvmPrimitiveType' is a specialization of 'JvmComponentType'.
+'types::JvmComponentType' is a specialization of 'JvmType'.
+'types::JvmDeclaredType' is a specialization of 'JvmMember'.
+'types::JvmTypeAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmTypeParameter' is a specialization of 'JvmConstraintOwner'.
+'types::JvmConstructor' is a specialization of 'JvmExecutable'.
+'types::JvmLongAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmIntAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmVoid' is a specialization of 'JvmType'.
+'types::JvmInnerTypeReference' is a specialization of 'JvmParameterizedTypeReference'.
+'types::JvmEnumerationType' is a specialization of 'JvmDeclaredType'.
+'types::JvmDelegateTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmFloatAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'types::JvmSynonymTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'types::JvmGenericType' is a specialization of 'JvmTypeParameterDeclarator'.
+'types::JvmUpperBound' is a specialization of 'JvmTypeConstraint'.
+'types::JvmFeature' is a specialization of 'JvmMember'.
+'types::JvmSpecializedTypeReference' is a specialization of 'JvmTypeReference'.
+'types::JvmTypeReference' (role 'types_JvmTypeReference28', cardinality 0..*) is associated with 'types::JvmOperation' (role 'types_JvmOperation', cardinality 0..*).
+'types::JvmType' (role 'types_JvmType54', cardinality 0..*) is associated with 'types::JvmCompoundTypeReference' (role 'types_JvmCompoundTypeReference', cardinality 0..*).
+'types::JvmSpecializedTypeReference' (role 'types_JvmSpecializedTypeReference', cardinality 0..*) is associated with 'types::JvmTypeReference' (role 'types_JvmTypeReference52', cardinality 0..*).
+'types::JvmEnumAnnotationValue' (role 'types_JvmEnumAnnotationValue', cardinality 0..*) is associated with 'types::JvmEnumerationLiteral' (role 'types_JvmEnumerationLiteral48', cardinality 0..*).
+'types::JvmDeclaredType' (role 'types_JvmDeclaredType', cardinality 0..*) is associated with 'types::JvmTypeReference' (role 'types_JvmTypeReference', cardinality 0..*).
+'types::JvmAnnotationTarget' (role 'types_JvmAnnotationTarget', cardinality 0..*) is associated with 'types::JvmAnnotationReference' (role 'types_JvmAnnotationReference', cardinality 0..*).
+'types::JvmOperation' (role 'types_JvmOperation30', cardinality 0..*) is associated with 'types::JvmAnnotationValue' (role 'types_JvmAnnotationValue', cardinality 0..*).
+'types::JvmComponentType' (role 'JvmComponentType', cardinality 0..*) is associated with 'types::JvmArrayType' (role 'arrayType', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference44', cardinality 0..*) is associated with 'types::JvmTypeAnnotationValue' (role 'types_JvmTypeAnnotationValue', cardinality 0..*).
+'types::JvmAnnotationReference' (role 'types_JvmAnnotationReference46', cardinality 0..*) is associated with 'types::JvmAnnotationAnnotationValue' (role 'types_JvmAnnotationAnnotationValue', cardinality 0..*).
+'types::JvmEnumerationLiteral' (role 'types_JvmEnumerationLiteral', cardinality 0..*) is associated with 'types::JvmEnumerationType' (role 'types_JvmEnumerationType', cardinality 0..*).
+'types::JvmType' (role 'types_JvmType18', cardinality 0..*) is associated with 'types::JvmAnyTypeReference' (role 'types_JvmAnyTypeReference', cardinality 0..*).
+'types::JvmAnnotationValue' (role 'types_JvmAnnotationValue39', cardinality 0..*) is associated with 'types::JvmAnnotationReference' (role 'types_JvmAnnotationReference38', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference12', cardinality 0..*) is associated with 'types::JvmParameterizedTypeReference' (role 'types_JvmParameterizedTypeReference', cardinality 0..*).
+'types::JvmConstraintOwner' (role 'owner', cardinality 0..*) is associated with 'types::JvmTypeConstraint' (role 'JvmTypeConstraint', cardinality 0..*).
+'types::JvmParameterizedTypeReference' (role 'types_JvmParameterizedTypeReference14', cardinality 0..*) is associated with 'types::JvmType' (role 'types_JvmType', cardinality 0..*).
+'types::JvmComponentType' (role 'componentType', cardinality 0..*) is associated with 'types::JvmArrayType' (role 'JvmArrayType', cardinality 0..*).
+'types::JvmCustomAnnotationValue' (role 'types_JvmCustomAnnotationValue', cardinality 0..*) is associated with 'types::EObject' (role 'types_EObject', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference22', cardinality 0..*) is associated with 'types::JvmField' (role 'types_JvmField', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference26', cardinality 0..*) is associated with 'types::JvmExecutable' (role 'types_JvmExecutable25', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference16', cardinality 0..*) is associated with 'types::JvmGenericArrayTypeReference' (role 'types_JvmGenericArrayTypeReference', cardinality 0..*).
+'types::JvmMember' (role 'JvmMember', cardinality 0..*) is associated with 'types::JvmDeclaredType' (role 'declaringType', cardinality 0..*).
+'types::JvmAnnotationType' (role 'types_JvmAnnotationType', cardinality 0..*) is associated with 'types::JvmAnnotationReference' (role 'types_JvmAnnotationReference36', cardinality 0..*).
+'types::JvmOperation' (role 'types_JvmOperation42', cardinality 0..*) is associated with 'types::JvmAnnotationValue' (role 'types_JvmAnnotationValue41', cardinality 0..*).
+'types::JvmInnerTypeReference' (role 'types_JvmInnerTypeReference', cardinality 0..*) is associated with 'types::JvmParameterizedTypeReference' (role 'types_JvmParameterizedTypeReference60', cardinality 0..*).
+'types::JvmTypeConstraint' (role 'constraints', cardinality 0..*) is associated with 'types::JvmConstraintOwner' (role 'JvmConstraintOwner', cardinality 0..*).
+'types::JvmTypeParameterDeclarator' (role 'JvmTypeParameterDeclarator', cardinality 0..*) is associated with 'types::JvmTypeParameter' (role 'typeParameters', cardinality 0..*).
+'types::JvmMember' (role 'members', cardinality 0..*) is associated with 'types::JvmDeclaredType' (role 'JvmDeclaredType', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference33', cardinality 0..*) is associated with 'types::JvmFormalParameter' (role 'types_JvmFormalParameter32', cardinality 0..*).
+'types::JvmExecutable' (role 'types_JvmExecutable', cardinality 0..*) is associated with 'types::JvmFormalParameter' (role 'types_JvmFormalParameter', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference50', cardinality 0..*) is associated with 'types::JvmDelegateTypeReference' (role 'types_JvmDelegateTypeReference', cardinality 0..*).
+'types::JvmTypeReference' (role 'types_JvmTypeReference57', cardinality 0..*) is associated with 'types::JvmCompoundTypeReference' (role 'types_JvmCompoundTypeReference56', cardinality 0..*).
+'types::JvmTypeParameter' (role 'JvmTypeParameter', cardinality 0..*) is associated with 'types::JvmTypeParameterDeclarator' (role 'declarator', cardinality 0..*).
+'types::JvmFeature' (role 'types_JvmFeature', cardinality 0..*) is associated with 'types::JvmGenericType' (role 'types_JvmGenericType', cardinality 0..*).
+'types::JvmTypeConstraint' (role 'types_JvmTypeConstraint', cardinality 0..*) is associated with 'types::JvmTypeReference' (role 'types_JvmTypeReference8', cardinality 0..*).

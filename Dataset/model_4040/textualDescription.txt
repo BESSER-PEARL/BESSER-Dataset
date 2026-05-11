@@ -1,0 +1,51 @@
+The model has 17 class(es).
+The class 'smalluml::Methode' has the following attributes: 'methodeAbstraite' of type bool.
+The class 'smalluml::Diagramme' has no attributes.
+The class 'ElementNomme' has no attributes.
+The class 'Type' has no attributes.
+The class 'smalluml::Chaine' has no attributes.
+The class 'smalluml::ElementDiagramme' has no attributes.
+The class 'smalluml::Cardinalite' has the following attributes: 'multipliciteSup' of type str; 'multipliciteInf' of type str.
+The class 'smalluml::Enumeration' has the following attributes: 'elements' of type str.
+The class 'ElementDiagramme' has no attributes.
+The class 'smalluml::Attribut' has no attributes.
+The class 'smalluml::Association' has no attributes.
+The class 'smalluml::Booleen' has no attributes.
+The class 'smalluml::Classe' has the following attributes: 'classeAbstraite' of type bool; 'abstrait' of type bool.
+The class 'smalluml::TypeDonnee' has no attributes.
+The class 'smalluml::Type' has no attributes.
+The class 'smalluml::Entier' has no attributes.
+The class 'smalluml::ElementNomme' has the following attributes: 'nom' of type str.
+'smalluml::Association' is a specialization of 'ElementDiagramme'.
+'smalluml::Classe' is a specialization of 'ElementNomme'.
+'smalluml::TypeDonnee' is a specialization of 'ElementNomme'.
+'smalluml::Classe' is a specialization of 'ElementDiagramme'.
+'smalluml::Enumeration' is a specialization of 'ElementNomme'.
+'smalluml::Enumeration' is a specialization of 'Type'.
+'smalluml::Entier' is a specialization of 'Type'.
+'smalluml::Attribut' is a specialization of 'ElementNomme'.
+'smalluml::Methode' is a specialization of 'ElementNomme'.
+'smalluml::Chaine' is a specialization of 'Type'.
+'smalluml::TypeDonnee' is a specialization of 'ElementDiagramme'.
+'smalluml::Diagramme' is a specialization of 'ElementDiagramme'.
+'smalluml::Cardinalite' is a specialization of 'ElementNomme'.
+'smalluml::Booleen' is a specialization of 'Type'.
+'smalluml::TypeDonnee' is a specialization of 'Type'.
+'smalluml::Diagramme' is a specialization of 'ElementNomme'.
+'smalluml::Enumeration' is a specialization of 'ElementDiagramme'.
+'smalluml::Association' is a specialization of 'ElementNomme'.
+'smalluml::TypeDonnee' (role 'smalluml_TypeDonnee', cardinality 0..*) is associated with 'smalluml::Attribut' (role 'smalluml_Attribut18', cardinality 0..*).
+'smalluml::ElementDiagramme' (role 'smalluml_ElementDiagramme25', cardinality 0..*) is associated with 'smalluml::Classe' (role 'smalluml_Classe26', cardinality 0..*).
+'smalluml::Classe' (role 'smalluml_Classe6', cardinality 0..*) is associated with 'smalluml::Classe' (role 'smalluml_Classe8', cardinality 0..*).
+'smalluml::Methode' (role 'smalluml_Methode15', cardinality 0..*) is associated with 'smalluml::Attribut' (role 'smalluml_Attribut16', cardinality 0..*).
+'smalluml::Association' (role 'smalluml_Association29', cardinality 0..*) is associated with 'smalluml::ElementDiagramme' (role 'smalluml_ElementDiagramme28', cardinality 0..*).
+'smalluml::Methode' (role 'smalluml_Methode', cardinality 0..*) is associated with 'smalluml::Classe' (role 'smalluml_Classe2', cardinality 0..*).
+'smalluml::Cardinalite' (role 'smalluml_Cardinalite', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association', cardinality 0..*).
+'smalluml::Classe' (role 'smalluml_Classe', cardinality 0..*) is associated with 'smalluml::Attribut' (role 'smalluml_Attribut', cardinality 0..*).
+'smalluml::ElementDiagramme' (role 'smalluml_ElementDiagramme31', cardinality 0..*) is associated with 'smalluml::Enumeration' (role 'smalluml_Enumeration', cardinality 0..*).
+'smalluml::Attribut' (role 'smalluml_Attribut10', cardinality 0..*) is associated with 'smalluml::Type' (role 'smalluml_Type', cardinality 0..*).
+'smalluml::Classe' (role 'smalluml_Classe22', cardinality 0..*) is associated with 'smalluml::Cardinalite' (role 'smalluml_Cardinalite21', cardinality 0..*).
+'smalluml::Methode' (role 'smalluml_Methode12', cardinality 0..*) is associated with 'smalluml::Type' (role 'smalluml_Type13', cardinality 0..*).
+'smalluml::ElementDiagramme' (role 'smalluml_ElementDiagramme', cardinality 0..*) is associated with 'smalluml::Diagramme' (role 'smalluml_Diagramme', cardinality 0..*).
+'smalluml::TypeDonnee' (role 'smalluml_TypeDonnee34', cardinality 0..*) is associated with 'smalluml::ElementDiagramme' (role 'smalluml_ElementDiagramme33', cardinality 0..*).
+'smalluml::Classe' (role 'smalluml_Classe5', cardinality 0..*) is associated with 'smalluml::Classe' (role 'smalluml_Classe3', cardinality 0..*).

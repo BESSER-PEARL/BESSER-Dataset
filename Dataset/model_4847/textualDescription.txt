@@ -1,0 +1,143 @@
+The model has 33 class(es).
+The class 'sipme::Objective' has the following attributes: 'objectiveType' of type str; 'objectiveNature' of type str.
+The class 'Stakeholder' has no attributes.
+The class 'sipme::Requirement' has the following attributes: 'requirementPriority' of type int; 'requirementStatement' of type str; 'requirementOrigin' of type str; 'requirementMaturity' of type int; 'requirementDate' of type date; 'requirementVersion' of type str; 'requirementNature' of type str; 'requirementStatus' of type str.
+The class 'sipme::Device::Machine' has the following attributes: 'machineMaintainer' of type str; 'manufacturer' of type str.
+The class 'SIPME::object' has no attributes.
+The class 'sipme::Application' has the following attributes: 'applicationMaintainer' of type str; 'applicationEditor' of type str.
+The class 'sipme::Capability' has the following attributes: 'capabilityType' of type str.
+The class 'sipme::EnterpriseProcessor' has the following attributes: 'processorOrigin' of type str.
+The class 'sipme::Workstation' has the following attributes: 'ProfileDeescription' of type str.
+The class 'sipme::ObjectView' has the following attributes: 'viewPoint' of type str.
+The class 'sipme::SIPME::object' has the following attributes: 'UUID' of type str; 'description' of type str; 'name' of type str.
+The class 'OrganisationCell' has no attributes.
+The class 'sipme::BusinessProcess' has the following attributes: 'ProcessPriority' of type int.
+The class 'EnterpriseProcessor' has no attributes.
+The class 'sipme::Task' has the following attributes: 'taskDuration' of type int.
+The class 'sipme::Stakeholder' has the following attributes: 'stakeholderType' of type str; 'stakeholderOrganism' of type str.
+The class 'sipme::Domain' has the following attributes: 'domainCharacterization' of type str; 'performanceIndicators' of type float.
+The class 'sipme::EnterpriseObject' has the following attributes: 'properties' of type str; 'reference' of type str.
+The class 'sipme::OrganisationCell' has the following attributes: 'organisationLevel' of type int.
+The class 'sipme::Activity' has the following attributes: 'ActivityDuration' of type int; 'endingStatus' of type str.
+The class 'EnterpriseResource' has no attributes.
+The class 'sipme::CompanyMember' has the following attributes: 'socialSecurityNumber' of type int; 'fullName' of type str; 'address' of type str.
+The class 'sipme::Capacity' has the following attributes: 'unit' of type str; 'value' of type float.
+The class 'sipme::ObjectsFileView' has the following attributes: 'filePriority' of type int; 'fileState' of type str.
+The class 'sipme::Event' has the following attributes: 'source' of type str; 'frequency' of type str; 'occurenceProbability' of type str; 'timeStamp' of type date.
+The class 'sipme::BusinessRules' has no attributes.
+The class 'sipme::Role::Function' has the following attributes: 'roleType' of type str.
+The class 'sipme::EnterpriseProduct' has the following attributes: 'productNarure' of type str; 'productState' of type str.
+The class 'ObjectView' has no attributes.
+The class 'sipme::EnterpriseService' has the following attributes: 'serviceState' of type str.
+The class 'sipme::EnterpriseResource' has the following attributes: 'resourceOrigin' of type str.
+The class 'EnterpriseObject' has no attributes.
+The class 'sipme::Enterprise' has the following attributes: 'status' of type str; 'acronym' of type str.
+The enumeration 'Origin' has the following literals: 'Internal_provider', 'None_', 'External_provider'.
+The enumeration 'CapabilityType' has the following literals: 'Performance', 'Operational', 'Functional', 'ObjectRelated'.
+The enumeration 'RequirementOrigin' has the following literals: 'Expectation', 'Stackeholder_requirement', 'System_requirement', 'None_'.
+The enumeration 'StakeholderType' has the following literals: 'EEnumLiteral0'.
+The enumeration 'RoleType' has the following literals: 'Decision', 'Transformation', 'Composite', 'Controle'.
+The enumeration 'EnterpriseObjectiveType' has the following literals: 'None_', 'Tactic', 'Strategic', 'Operational'.
+The enumeration 'ObjectiveNature' has the following literals: 'Other', 'Human', 'Performance', 'Economical', 'None_', 'Delay', 'Environmental', 'Quality', 'Legacy', 'Cost'.
+The enumeration 'ServiceState' has the following literals: 'For_external_customer', 'For_internal_usage'.
+The enumeration 'ProductNature' has the following literals: 'None_', 'Information', 'Physical'.
+The enumeration 'RequirementNature' has the following literals: 'None_', 'Constraint', 'Verification_and_Validation', 'Functional', 'Non_functional'.
+The enumeration 'ProductState' has the following literals: 'None_', 'Ready_for_customer', 'Intermediary'.
+'sipme::Role::Function' is a specialization of 'EnterpriseProcessor'.
+'sipme::Stakeholder' is a specialization of 'SIPME::object'.
+'sipme::OrganisationCell' is a specialization of 'EnterpriseProcessor'.
+'sipme::Capacity' is a specialization of 'EnterpriseObject'.
+'sipme::EnterpriseProduct' is a specialization of 'EnterpriseObject'.
+'sipme::BusinessRules' is a specialization of 'EnterpriseObject'.
+'sipme::Objective' is a specialization of 'EnterpriseObject'.
+'sipme::EnterpriseResource' is a specialization of 'EnterpriseObject'.
+'sipme::Enterprise' is a specialization of 'EnterpriseProcessor'.
+'sipme::EnterpriseService' is a specialization of 'EnterpriseObject'.
+'sipme::Domain' is a specialization of 'OrganisationCell'.
+'sipme::Domain' is a specialization of 'EnterpriseProcessor'.
+'sipme::Domain' is a specialization of 'SIPME::object'.
+'sipme::Application' is a specialization of 'EnterpriseResource'.
+'sipme::CompanyMember' is a specialization of 'EnterpriseResource'.
+'sipme::EnterpriseObject' is a specialization of 'SIPME::object'.
+'sipme::EnterpriseProcessor' is a specialization of 'EnterpriseObject'.
+'sipme::Device::Machine' is a specialization of 'EnterpriseResource'.
+'sipme::Requirement' is a specialization of 'SIPME::object'.
+'sipme::Capability' is a specialization of 'EnterpriseObject'.
+'sipme::CompanyMember' is a specialization of 'Stakeholder'.
+'sipme::Workstation' is a specialization of 'EnterpriseProcessor'.
+'sipme::Task' is a specialization of 'EnterpriseProcessor'.
+'sipme::ObjectView' is a specialization of 'SIPME::object'.
+'sipme::Event' is a specialization of 'SIPME::object'.
+'sipme::BusinessProcess' is a specialization of 'EnterpriseProcessor'.
+'sipme::Activity' is a specialization of 'EnterpriseProcessor'.
+'sipme::ObjectsFileView' is a specialization of 'ObjectView'.
+'sipme::Task' (role 'sipme_Task131', cardinality 0..*) is associated with 'sipme::Task' (role 'sipme_Task133', cardinality 0..*).
+'sipme::Domain' (role 'Domain', cardinality 0..*) is associated with 'sipme::OrganisationCell' (role 'coveredBy', cardinality 0..*).
+'sipme::BusinessRules' (role 'sipme_BusinessRules122', cardinality 0..*) is associated with 'sipme::Role::Function' (role 'sipme_Role_Function121', cardinality 0..*).
+'sipme::CompanyMember' (role 'cellResponsible', cardinality 0..*) is associated with 'sipme::OrganisationCell' (role 'OrganisationCell', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor110', cardinality 0..*) is associated with 'sipme::Requirement' (role 'sipme_Requirement109', cardinality 0..*).
+'sipme::Domain' (role 'sipme_Domain20', cardinality 0..*) is associated with 'sipme::BusinessRules' (role 'sipme_BusinessRules21', cardinality 0..*).
+'sipme::ObjectView' (role 'sipme_ObjectView52', cardinality 0..*) is associated with 'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor51', cardinality 0..*).
+'sipme::BusinessProcess' (role 'sipme_BusinessProcess', cardinality 0..*) is associated with 'sipme::Domain' (role 'sipme_Domain', cardinality 0..*).
+'sipme::EnterpriseService' (role 'sipme_EnterpriseService', cardinality 0..*) is associated with 'sipme::Enterprise' (role 'sipme_Enterprise30', cardinality 0..*).
+'sipme::EnterpriseObject' (role 'decomposedIn', cardinality 0..*) is associated with 'sipme::EnterpriseObject' (role 'EnterpriseObject', cardinality 0..*).
+'sipme::OrganisationCell' (role 'sipme_OrganisationCell', cardinality 0..*) is associated with 'sipme::Enterprise' (role 'sipme_Enterprise36', cardinality 0..*).
+'sipme::Role::Function' (role 'Role_Function62', cardinality 0..*) is associated with 'sipme::EnterpriseResource' (role 'playedBy', cardinality 0..*).
+'sipme::Capability' (role 'sipme_Capability59', cardinality 0..*) is associated with 'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor58', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'implementedBy', cardinality 0..*) is associated with 'sipme::Role::Function' (role 'Role_Function', cardinality 0..*).
+'sipme::EnterpriseObject' (role 'sipme_EnterpriseObject28', cardinality 0..*) is associated with 'sipme::Enterprise' (role 'sipme_Enterprise27', cardinality 0..*).
+'sipme::OrganisationCell' (role 'responsibleOfCell', cardinality 0..*) is associated with 'sipme::CompanyMember' (role 'CompanyMember', cardinality 0..*).
+'sipme::EnterpriseObject' (role 'sipme_EnterpriseObject7', cardinality 0..*) is associated with 'sipme::BusinessRules' (role 'sipme_BusinessRules6', cardinality 0..*).
+'sipme::EnterpriseResource' (role 'sipme_EnterpriseResource107', cardinality 0..*) is associated with 'sipme::Requirement' (role 'sipme_Requirement106', cardinality 0..*).
+'sipme::Objective' (role 'associatedObjective', cardinality 0..*) is associated with 'sipme::Requirement' (role 'Requirement', cardinality 0..*).
+'sipme::ObjectView' (role 'sipme_ObjectView47', cardinality 0..*) is associated with 'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor46', cardinality 0..*).
+'sipme::OrganisationCell' (role 'OrganisationCell135', cardinality 0..*) is associated with 'sipme::Workstation' (role 'workstations', cardinality 0..*).
+'sipme::OrganisationCell' (role 'sipme_OrganisationCell89', cardinality 0..*) is associated with 'sipme::OrganisationCell' (role 'sipme_OrganisationCell91', cardinality 0..*).
+'sipme::OrganisationCell' (role 'OrganisationCell18', cardinality 0..*) is associated with 'sipme::Domain' (role 'covers', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'initiates', cardinality 0..*) is associated with 'sipme::Event' (role 'Event49', cardinality 0..*).
+'sipme::Workstation' (role 'Workstation86', cardinality 0..*) is associated with 'sipme::OrganisationCell' (role 'organisationCell', cardinality 0..*).
+'sipme::CompanyMember' (role 'CompanyMember98', cardinality 0..*) is associated with 'sipme::ObjectsFileView' (role 'responsibleOfFile', cardinality 0..*).
+'sipme::Enterprise' (role 'sipme_Enterprise34', cardinality 0..*) is associated with 'sipme::CompanyMember' (role 'sipme_CompanyMember', cardinality 0..*).
+'sipme::Requirement' (role 'sipme_Requirement', cardinality 0..*) is associated with 'sipme::Stakeholder' (role 'sipme_Stakeholder', cardinality 0..*).
+'sipme::Enterprise' (role 'sipme_Enterprise', cardinality 0..*) is associated with 'sipme::Objective' (role 'sipme_Objective', cardinality 0..*).
+'sipme::ObjectsFileView' (role 'sipme_ObjectsFileView96', cardinality 0..*) is associated with 'sipme::ObjectsFileView' (role 'sipme_ObjectsFileView94', cardinality 0..*).
+'sipme::Event' (role 'Event', cardinality 0..*) is associated with 'sipme::EnterpriseProcessor' (role 'generatedBy', cardinality 0..*).
+'sipme::ObjectsFileView' (role 'sipme_ObjectsFileView', cardinality 0..*) is associated with 'sipme::ObjectView' (role 'sipme_ObjectView93', cardinality 0..*).
+'sipme::Workstation' (role 'inChargeOf', cardinality 0..*) is associated with 'sipme::CompanyMember' (role 'CompanyMember139', cardinality 0..*).
+'sipme::BusinessRules' (role 'sipme_BusinessRules', cardinality 0..*) is associated with 'sipme::EnterpriseObject' (role 'sipme_EnterpriseObject', cardinality 0..*).
+'sipme::Domain' (role 'sipme_Domain25', cardinality 0..*) is associated with 'sipme::Enterprise' (role 'sipme_Enterprise24', cardinality 0..*).
+'sipme::EnterpriseObject' (role 'EnterpriseObject42', cardinality 0..*) is associated with 'sipme::EnterpriseObject' (role 'partOf', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'EnterpriseProcessor', cardinality 0..*) is associated with 'sipme::Event' (role 'generates', cardinality 0..*).
+'sipme::Requirement' (role 'sipme_Requirement102', cardinality 0..*) is associated with 'sipme::Requirement' (role 'sipme_Requirement104', cardinality 0..*).
+'sipme::Activity' (role 'Activity', cardinality 0..*) is associated with 'sipme::BusinessProcess' (role 'activityOf', cardinality 0..*).
+'sipme::Event' (role 'sipme_Event71', cardinality 0..*) is associated with 'sipme::Event' (role 'sipme_Event', cardinality 0..*).
+'sipme::Requirement' (role 'takenIntoAccountBy', cardinality 0..*) is associated with 'sipme::Objective' (role 'Objective100', cardinality 0..*).
+'sipme::Objective' (role 'Objective', cardinality 0..*) is associated with 'sipme::Objective' (role 'refines', cardinality 0..*).
+'sipme::CompanyMember' (role 'owners', cardinality 0..*) is associated with 'sipme::Workstation' (role 'Workstation', cardinality 0..*).
+'sipme::Requirement' (role 'sipme_Requirement125', cardinality 0..*) is associated with 'sipme::Stakeholder' (role 'sipme_Stakeholder124', cardinality 0..*).
+'sipme::Role::Function' (role 'plays', cardinality 0..*) is associated with 'sipme::EnterpriseResource' (role 'EnterpriseResource', cardinality 0..*).
+'sipme::ObjectView' (role 'representedBy', cardinality 0..*) is associated with 'sipme::EnterpriseObject' (role 'EnterpriseObject82', cardinality 0..*).
+'sipme::ObjectView' (role 'ObjectView', cardinality 0..*) is associated with 'sipme::EnterpriseObject' (role 'represents', cardinality 0..*).
+'sipme::ObjectsFileView' (role 'ObjectsFileView', cardinality 0..*) is associated with 'sipme::CompanyMember' (role 'fileResponsible', cardinality 0..*).
+'sipme::Domain' (role 'sipme_Domain15', cardinality 0..*) is associated with 'sipme::BusinessProcess' (role 'sipme_BusinessProcess16', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'EnterpriseProcessor70', cardinality 0..*) is associated with 'sipme::Event' (role 'initiatedBy', cardinality 0..*).
+'sipme::BusinessRules' (role 'sipme_BusinessRules128', cardinality 0..*) is associated with 'sipme::Task' (role 'sipme_Task127', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor55', cardinality 0..*) is associated with 'sipme::Capacity' (role 'sipme_Capacity56', cardinality 0..*).
+'sipme::Capacity' (role 'sipme_Capacity', cardinality 0..*) is associated with 'sipme::Capability' (role 'sipme_Capability', cardinality 0..*).
+'sipme::EnterpriseResource' (role 'EnterpriseResource117', cardinality 0..*) is associated with 'sipme::Role::Function' (role 'isAbleToPlay', cardinality 0..*).
+'sipme::Capability' (role 'sipme_Capability67', cardinality 0..*) is associated with 'sipme::EnterpriseResource' (role 'sipme_EnterpriseResource66', cardinality 0..*).
+'sipme::EnterpriseProcessor' (role 'sipme_EnterpriseProcessor', cardinality 0..*) is associated with 'sipme::ObjectView' (role 'sipme_ObjectView', cardinality 0..*).
+'sipme::Activity' (role 'activities', cardinality 0..*) is associated with 'sipme::BusinessProcess' (role 'BusinessProcess', cardinality 0..*).
+'sipme::Task' (role 'tasks', cardinality 0..*) is associated with 'sipme::Activity' (role 'Activity130', cardinality 0..*).
+'sipme::Objective' (role 'Objective79', cardinality 0..*) is associated with 'sipme::Objective' (role 'subObjectives', cardinality 0..*).
+'sipme::Activity' (role 'sipme_Activity', cardinality 0..*) is associated with 'sipme::Requirement' (role 'sipme_Requirement112', cardinality 0..*).
+'sipme::Activity' (role 'taskOf', cardinality 0..*) is associated with 'sipme::Task' (role 'Task', cardinality 0..*).
+'sipme::Event' (role 'events', cardinality 0..*) is associated with 'sipme::ObjectView' (role 'ObjectView74', cardinality 0..*).
+'sipme::EnterpriseProduct' (role 'sipme_EnterpriseProduct', cardinality 0..*) is associated with 'sipme::Enterprise' (role 'sipme_Enterprise32', cardinality 0..*).
+'sipme::ObjectView' (role 'hasAssociatedEvents', cardinality 0..*) is associated with 'sipme::Event' (role 'Event84', cardinality 0..*).
+'sipme::CompanyMember' (role 'CompanyMember137', cardinality 0..*) is associated with 'sipme::Workstation' (role 'responsibleOf', cardinality 0..*).
+'sipme::Task' (role 'sipme_Task', cardinality 0..*) is associated with 'sipme::EnterpriseResource' (role 'sipme_EnterpriseResource', cardinality 0..*).
+'sipme::EnterpriseResource' (role 'canBePlayedBy', cardinality 0..*) is associated with 'sipme::Role::Function' (role 'Role_Function64', cardinality 0..*).
+'sipme::CompanyMember' (role 'responsible', cardinality 0..*) is associated with 'sipme::Workstation' (role 'Workstation11', cardinality 0..*).
+'sipme::Role::Function' (role 'implements', cardinality 0..*) is associated with 'sipme::EnterpriseProcessor' (role 'EnterpriseProcessor119', cardinality 0..*).
+'sipme::Task' (role 'sipme_Task114', cardinality 0..*) is associated with 'sipme::Role::Function' (role 'sipme_Role_Function', cardinality 0..*).

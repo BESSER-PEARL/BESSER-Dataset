@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'iot2::Sensor' has no attributes.
+The class 'iot2::HWComponent' has the following attributes: 'name' of type str.
+The class 'HWComponent' has no attributes.
+The class 'iot2::OperationDef' has no attributes.
+The class 'iot2::Activity' has no attributes.
+The class 'iot2::System' has the following attributes: 'name' of type str.
+The class 'iot2::Board' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'iot2::Actuator' has no attributes.
+The class 'iot2::Sketch' has no attributes.
+The enumeration 'BoardType' has the following literals: 'Arduino', 'BeagleBoard', 'RaspberryPi'.
+'iot2::Actuator' is a specialization of 'HWComponent'.
+'iot2::Sensor' is a specialization of 'HWComponent'.
+'iot2::Sketch' (role 'iot2_Sketch', cardinality 0..*) is associated with 'iot2::System' (role 'iot2_System4', cardinality 0..*).
+'iot2::System' (role 'iot2_System2', cardinality 0..*) is associated with 'iot2::Board' (role 'iot2_Board', cardinality 0..*).
+'iot2::Sketch' (role 'iot2_Sketch9', cardinality 0..*) is associated with 'iot2::Activity' (role 'iot2_Activity', cardinality 0..*).
+'iot2::HWComponent' (role 'iot2_HWComponent', cardinality 0..*) is associated with 'iot2::System' (role 'iot2_System', cardinality 0..*).
+'iot2::Board' (role 'iot2_Board6', cardinality 0..*) is associated with 'iot2::HWComponent' (role 'iot2_HWComponent7', cardinality 0..*).
+'iot2::OperationDef' (role 'iot2_OperationDef', cardinality 0..*) is associated with 'iot2::HWComponent' (role 'iot2_HWComponent11', cardinality 0..*).

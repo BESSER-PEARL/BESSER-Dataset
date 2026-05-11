@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'ProbableElement' has no attributes.
+The class 'surveillance::MovingObject' has the following attributes: 'angle' of type float; 'width' of type float; 'speed' of type float.
+The class 'surveillance::UnidentifiedObject' has no attributes.
+The class 'surveillance::Clock' has the following attributes: 'now' of type int.
+The class 'surveillance::Coordinate' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'surveillance::ProbableElement' has the following attributes: 'confidence' of type float.
+The class 'surveillance::Drone' has no attributes.
+The class 'MovingObject' has no attributes.
+The class 'surveillance::GunShot' has the following attributes: 'hitsTarget' of type bool; 'angle' of type float.
+'surveillance::GunShot' is a specialization of 'ProbableElement'.
+'surveillance::UnidentifiedObject' is a specialization of 'ProbableElement'.
+'surveillance::Drone' is a specialization of 'MovingObject'.
+'surveillance::UnidentifiedObject' is a specialization of 'MovingObject'.
+'surveillance::Drone' (role 'drone', cardinality 0..*) is associated with 'surveillance::GunShot' (role 'GunShot4', cardinality 0..*).
+'surveillance::MovingObject' (role 'object', cardinality 0..*) is associated with 'surveillance::Coordinate' (role 'Coordinate', cardinality 0..*).
+'surveillance::Coordinate' (role 'currentPosition', cardinality 0..*) is associated with 'surveillance::MovingObject' (role 'MovingObject', cardinality 0..*).
+'surveillance::GunShot' (role 'shot10', cardinality 0..*) is associated with 'surveillance::Drone' (role 'Drone', cardinality 0..*).
+'surveillance::Coordinate' (role 'Coordinate8', cardinality 0..*) is associated with 'surveillance::GunShot' (role 'shot', cardinality 0..*).
+'surveillance::GunShot' (role 'GunShot6', cardinality 0..*) is associated with 'surveillance::UnidentifiedObject' (role 'target', cardinality 0..*).
+'surveillance::GunShot' (role 'shot12', cardinality 0..*) is associated with 'surveillance::UnidentifiedObject' (role 'UnidentifiedObject', cardinality 0..*).
+'surveillance::GunShot' (role 'GunShot', cardinality 0..*) is associated with 'surveillance::Coordinate' (role 'shootingPosition', cardinality 0..*).

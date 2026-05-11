@@ -1,0 +1,172 @@
+The model has 60 class(es).
+The class 'caracteristica::RaizDeContexto' has no attributes.
+The class 'caracteristica::RegraDeComposicao' has no attributes.
+The class 'caracteristica::Produto' has no attributes.
+The class 'caracteristica::Evento' has no attributes.
+The class 'caracteristica::Simulacao' has the following attributes: 'nome' of type str.
+The class 'PontoDeVariacao' has no attributes.
+The class 'caracteristica::VariacaoDoisProduto' has the following attributes: 'cardinalidadeMinimaOr' of type str; 'cardinalidadeMaxima' of type str; 'cardinalidadeMaximaOr' of type str.
+The class 'ElementoDeProduto' has no attributes.
+The class 'caracteristica::CaracteristicaOpcionalProduto' has no attributes.
+The class 'caracteristica::AcaoLogico' has the following attributes: 'operadorAcaoLogico' of type str.
+The class 'caracteristica::Caracteristica' has no attributes.
+The class 'caracteristica::EntidadeDeContexto' has no attributes.
+The class 'caracteristica::AtributoProduto' has the following attributes: 'valor' of type str; 'tipoValor' of type str.
+The class 'CaracteristicaProduto' has no attributes.
+The class 'caracteristica::CaracteristicaProduto' has no attributes.
+The class 'Elemento' has no attributes.
+The class 'Evento' has no attributes.
+The class 'caracteristica::Acao' has no attributes.
+The class 'caracteristica::InformacaoDeContexto' has the following attributes: 'validade' of type str; 'valor' of type str; 'tipoValor' of type str; 'origem' of type str; 'qualidade' of type str.
+The class 'caracteristica::CaracteristicaRaiz' has no attributes.
+The class 'caracteristica::Transicao' has the following attributes: 'etiqueta' of type str; 'safe' of type bool.
+The class 'caracteristica::PontoDeVariacao' has no attributes.
+The class 'caracteristica::LPS' has the following attributes: 'erro' of type str; 'nome' of type str; 'valoresContextuais' of type str.
+The class 'caracteristica::CasoDeUso' has no attributes.
+The class 'caracteristica::CaracteristicaMandatoriaProduto' has no attributes.
+The class 'caracteristica::Atributo' has the following attributes: 'tipoValor' of type str.
+The class 'caracteristica::Variante' has no attributes.
+The class 'caracteristica::VariacaoProduto' has the following attributes: 'cardinalidadeMaxima' of type str; 'cardinalidadeMinima' of type str.
+The class 'caracteristica::RegraDeContexto' has no attributes.
+The class 'caracteristica::LiteralAcao' has the following attributes: 'presenca' of type str.
+The class 'caracteristica::CaracteristicaOpcional' has no attributes.
+The class 'caracteristica::Elemento' has the following attributes: 'nome' of type str.
+The class 'Antecedente' has no attributes.
+The class 'caracteristica::LiteralComposicao' has the following attributes: 'presenca' of type str.
+The class 'Regra' has no attributes.
+The class 'caracteristica::ExpressaoLogica' has the following attributes: 'operadorLogico' of type str.
+The class 'caracteristica::CaracteristicaAgrupada' has no attributes.
+The class 'caracteristica::InconsistenciaRegraAdaptacao' has no attributes.
+The class 'caracteristica::CasoDeTeste' has no attributes.
+The class 'Expressao' has no attributes.
+The class 'caracteristica::Designar' has the following attributes: 'valor' of type str; 'tipoValor' of type str.
+The class 'caracteristica::Antecedente' has no attributes.
+The class 'ElementoExterno' has no attributes.
+The class 'caracteristica::CaracteristicaAgrupadaProduto' has no attributes.
+The class 'caracteristica::ElementoCaracteristico' has no attributes.
+The class 'Caracteristica' has no attributes.
+The class 'caracteristica::CaracteristicaMandatoria' has no attributes.
+The class 'Acao' has no attributes.
+The class 'caracteristica::Regra' has the following attributes: 'conteudo' of type str; 'nome' of type str.
+The class 'ElementoCaracteristico' has no attributes.
+The class 'caracteristica::ElementoDeProduto' has the following attributes: 'nome' of type str.
+The class 'caracteristica::ElementoExterno' has the following attributes: 'nome' of type str.
+The class 'caracteristica::EventoLogico' has the following attributes: 'operadorLogico' of type str.
+The class 'caracteristica::VariacaoDois' has the following attributes: 'cardinalidadeMaximaOr' of type str; 'cardinalidadeMinimaOr' of type str; 'cardinalidadeMaxima' of type str.
+The class 'caracteristica::VarianteProduto' has the following attributes: 'selecionado' of type str.
+The class 'caracteristica::ExpressaoRelacional' has the following attributes: 'operadorRelacional' of type str; 'valor' of type str.
+The class 'caracteristica::Variacao' has the following attributes: 'cardinalidadeMaxima' of type str; 'cardinalidadeMinima' of type str.
+The class 'caracteristica::Estado' has the following attributes: 'nome' of type str; 'safe' of type bool.
+The class 'caracteristica::EventoRelacional' has the following attributes: 'operadorRelacional' of type str; 'valor' of type str.
+The class 'caracteristica::Expressao' has the following attributes: 'nome' of type str.
+The enumeration 'OperadorAcaoLogico' has the following literals: 'AND'.
+The enumeration 'Validade' has the following literals: 'Raramente', 'Volatil', 'Frequente', 'Permanente'.
+The enumeration 'OperadorLogico' has the following literals: 'OR', 'AND'.
+The enumeration 'OperadorRelacional' has the following literals: 'MAIOR', 'MAIORIGUAL', 'MENOR', 'DIFERENTE', 'MENORIGUAL', 'IGUAL'.
+The enumeration 'Presenca' has the following literals: 'PRESENTE', 'AUSENTE'.
+The enumeration 'Origem' has the following literals: 'Usuario', 'Sentida', 'Perfil', 'Derivada'.
+The enumeration 'Qualidade' has the following literals: 'Alto', 'Baixo'.
+The enumeration 'TipoValor' has the following literals: 'TString', 'TFloat', 'TInteger', 'TBoolean'.
+The enumeration 'CardinalidadeMaxima' has the following literals: 'OR', 'XOR'.
+'caracteristica::CaracteristicaAgrupadaProduto' is a specialization of 'CaracteristicaProduto'.
+'caracteristica::CaracteristicaOpcional' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::AtributoProduto' is a specialization of 'ElementoDeProduto'.
+'caracteristica::ExpressaoLogica' is a specialization of 'Antecedente'.
+'caracteristica::Acao' is a specialization of 'Expressao'.
+'caracteristica::EventoRelacional' is a specialization of 'Evento'.
+'caracteristica::RegraDeComposicao' is a specialization of 'Regra'.
+'caracteristica::InformacaoDeContexto' is a specialization of 'Elemento'.
+'caracteristica::RegraDeContexto' is a specialization of 'Regra'.
+'caracteristica::Caracteristica' is a specialization of 'Elemento'.
+'caracteristica::VariacaoDois' is a specialization of 'Caracteristica'.
+'caracteristica::Variacao' is a specialization of 'PontoDeVariacao'.
+'caracteristica::CaracteristicaMandatoria' is a specialization of 'Caracteristica'.
+'caracteristica::CasoDeUso' is a specialization of 'ElementoExterno'.
+'caracteristica::Designar' is a specialization of 'Acao'.
+'caracteristica::CaracteristicaRaiz' is a specialization of 'Caracteristica'.
+'caracteristica::Atributo' is a specialization of 'Elemento'.
+'caracteristica::RaizDeContexto' is a specialization of 'Elemento'.
+'caracteristica::Antecedente' is a specialization of 'Expressao'.
+'caracteristica::EventoLogico' is a specialization of 'Evento'.
+'caracteristica::LiteralComposicao' is a specialization of 'Antecedente'.
+'caracteristica::Evento' is a specialization of 'Expressao'.
+'caracteristica::CaracteristicaProduto' is a specialization of 'ElementoDeProduto'.
+'caracteristica::CaracteristicaAgrupada' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::VariacaoDoisProduto' is a specialization of 'CaracteristicaProduto'.
+'caracteristica::VarianteProduto' is a specialization of 'ElementoDeProduto'.
+'caracteristica::EntidadeDeContexto' is a specialization of 'Elemento'.
+'caracteristica::ElementoCaracteristico' is a specialization of 'Elemento'.
+'caracteristica::Variante' is a specialization of 'PontoDeVariacao'.
+'caracteristica::CaracteristicaAgrupada' is a specialization of 'Caracteristica'.
+'caracteristica::Produto' is a specialization of 'CaracteristicaProduto'.
+'caracteristica::Variacao' is a specialization of 'Elemento'.
+'caracteristica::VariacaoProduto' is a specialization of 'ElementoDeProduto'.
+'caracteristica::LiteralAcao' is a specialization of 'Acao'.
+'caracteristica::ExpressaoRelacional' is a specialization of 'Antecedente'.
+'caracteristica::Variante' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::CaracteristicaMandatoriaProduto' is a specialization of 'CaracteristicaProduto'.
+'caracteristica::Variante' is a specialization of 'Caracteristica'.
+'caracteristica::CasoDeTeste' is a specialization of 'ElementoExterno'.
+'caracteristica::CaracteristicaOpcional' is a specialization of 'Caracteristica'.
+'caracteristica::AcaoLogico' is a specialization of 'Acao'.
+'caracteristica::CaracteristicaOpcionalProduto' is a specialization of 'CaracteristicaProduto'.
+'caracteristica::VariacaoDois' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::Transicao' (role 'caracteristica_Transicao96', cardinality 0..*) is associated with 'caracteristica::Estado' (role 'caracteristica_Estado97', cardinality 0..*).
+'caracteristica::LPS' (role 'LPS', cardinality 0..*) is associated with 'caracteristica::CaracteristicaRaiz' (role 'sistema', cardinality 0..*).
+'caracteristica::Antecedente' (role 'caracteristica_Antecedente86', cardinality 0..*) is associated with 'caracteristica::ExpressaoLogica' (role 'caracteristica_ExpressaoLogica85', cardinality 0..*).
+'caracteristica::EntidadeDeContexto' (role 'elementoPai', cardinality 0..*) is associated with 'caracteristica::InformacaoDeContexto' (role 'InformacaoDeContexto', cardinality 0..*).
+'caracteristica::LiteralAcao' (role 'caracteristica_LiteralAcao', cardinality 0..*) is associated with 'caracteristica::ElementoCaracteristico' (role 'caracteristica_ElementoCaracteristico', cardinality 0..*).
+'caracteristica::Transicao' (role 'caracteristica_Transicao105', cardinality 0..*) is associated with 'caracteristica::Acao' (role 'caracteristica_Acao106', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'Caracteristica36', cardinality 0..*) is associated with 'caracteristica::Variacao' (role 'variacoes', cardinality 0..*).
+'caracteristica::Regra' (role 'caracteristica_Regra', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS6', cardinality 0..*).
+'caracteristica::Evento' (role 'caracteristica_Evento72', cardinality 0..*) is associated with 'caracteristica::EventoLogico' (role 'caracteristica_EventoLogico71', cardinality 0..*).
+'caracteristica::LPS' (role 'caracteristica_LPS19', cardinality 0..*) is associated with 'caracteristica::InconsistenciaRegraAdaptacao' (role 'caracteristica_InconsistenciaRegraAdaptacao', cardinality 0..*).
+'caracteristica::CaracteristicaProduto' (role 'caracteristicaProdutoPai', cardinality 0..*) is associated with 'caracteristica::CaracteristicaProduto' (role 'CaracteristicaProduto51', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristicaPai30', cardinality 0..*) is associated with 'caracteristica::Variacao' (role 'Variacao', cardinality 0..*).
+'caracteristica::EntidadeDeContexto' (role 'EntidadeDeContexto', cardinality 0..*) is associated with 'caracteristica::RaizDeContexto' (role 'raiz', cardinality 0..*).
+'caracteristica::ElementoExterno' (role 'caracteristica_ElementoExterno', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS4', cardinality 0..*).
+'caracteristica::Variante' (role 'variantes', cardinality 0..*) is associated with 'caracteristica::Variacao' (role 'Variacao38', cardinality 0..*).
+'caracteristica::RegraDeComposicao' (role 'caracteristica_RegraDeComposicao103', cardinality 0..*) is associated with 'caracteristica::Transicao' (role 'caracteristica_Transicao102', cardinality 0..*).
+'caracteristica::CaracteristicaRaiz' (role 'CaracteristicaRaiz', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'LpsDoSistema', cardinality 0..*).
+'caracteristica::RegraDeContexto' (role 'caracteristica_RegraDeContexto112', cardinality 0..*) is associated with 'caracteristica::InconsistenciaRegraAdaptacao' (role 'caracteristica_InconsistenciaRegraAdaptacao111', cardinality 0..*).
+'caracteristica::LPS' (role 'caracteristica_LPS10', cardinality 0..*) is associated with 'caracteristica::Expressao' (role 'caracteristica_Expressao', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristicaFilha', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'Caracteristica25', cardinality 0..*).
+'caracteristica::Simulacao' (role 'caracteristica_Simulacao94', cardinality 0..*) is associated with 'caracteristica::Estado' (role 'caracteristica_Estado', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristica_Caracteristica', cardinality 0..*) is associated with 'caracteristica::ElementoExterno' (role 'caracteristica_ElementoExterno22', cardinality 0..*).
+'caracteristica::Variante' (role 'Variante', cardinality 0..*) is associated with 'caracteristica::Variacao' (role 'variacaoPai', cardinality 0..*).
+'caracteristica::AtributoProduto' (role 'atributoProduto', cardinality 0..*) is associated with 'caracteristica::CaracteristicaProduto' (role 'CaracteristicaProduto55', cardinality 0..*).
+'caracteristica::Produto' (role 'caracteristica_Produto', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS8', cardinality 0..*).
+'caracteristica::VarianteProduto' (role 'variantesProduto', cardinality 0..*) is associated with 'caracteristica::VariacaoProduto' (role 'VariacaoProduto', cardinality 0..*).
+'caracteristica::Estado' (role 'caracteristica_Estado100', cardinality 0..*) is associated with 'caracteristica::Transicao' (role 'caracteristica_Transicao99', cardinality 0..*).
+'caracteristica::Elemento' (role 'caracteristica_Elemento46', cardinality 0..*) is associated with 'caracteristica::ElementoDeProduto' (role 'caracteristica_ElementoDeProduto45', cardinality 0..*).
+'caracteristica::CaracteristicaRaiz' (role 'caracteristica_CaracteristicaRaiz', cardinality 0..*) is associated with 'caracteristica::Produto' (role 'caracteristica_Produto60', cardinality 0..*).
+'caracteristica::EventoLogico' (role 'caracteristica_EventoLogico', cardinality 0..*) is associated with 'caracteristica::Evento' (role 'caracteristica_Evento69', cardinality 0..*).
+'caracteristica::CaracteristicaProduto' (role 'caracteristica_CaracteristicaProduto109', cardinality 0..*) is associated with 'caracteristica::Estado' (role 'caracteristica_Estado108', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristicaPai', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'Caracteristica28', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristicaPai32', cardinality 0..*) is associated with 'caracteristica::Atributo' (role 'Atributo', cardinality 0..*).
+'caracteristica::Antecedente' (role 'caracteristica_Antecedente', cardinality 0..*) is associated with 'caracteristica::RegraDeComposicao' (role 'caracteristica_RegraDeComposicao', cardinality 0..*).
+'caracteristica::Transicao' (role 'caracteristica_Transicao', cardinality 0..*) is associated with 'caracteristica::Simulacao' (role 'caracteristica_Simulacao92', cardinality 0..*).
+'caracteristica::InformacaoDeContexto' (role 'caracteristica_InformacaoDeContexto', cardinality 0..*) is associated with 'caracteristica::EventoRelacional' (role 'caracteristica_EventoRelacional', cardinality 0..*).
+'caracteristica::RegraDeComposicao' (role 'caracteristica_RegraDeComposicao63', cardinality 0..*) is associated with 'caracteristica::Antecedente' (role 'caracteristica_Antecedente64', cardinality 0..*).
+'caracteristica::Designar' (role 'caracteristica_Designar', cardinality 0..*) is associated with 'caracteristica::Atributo' (role 'caracteristica_Atributo81', cardinality 0..*).
+'caracteristica::Elemento' (role 'caracteristica_Elemento', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS2', cardinality 0..*).
+'caracteristica::LPS' (role 'caracteristica_LPS17', cardinality 0..*) is associated with 'caracteristica::Simulacao' (role 'caracteristica_Simulacao', cardinality 0..*).
+'caracteristica::Atributo' (role 'caracteristica_Atributo88', cardinality 0..*) is associated with 'caracteristica::ExpressaoRelacional' (role 'caracteristica_ExpressaoRelacional', cardinality 0..*).
+'caracteristica::AcaoLogico' (role 'caracteristica_AcaoLogico77', cardinality 0..*) is associated with 'caracteristica::Acao' (role 'caracteristica_Acao78', cardinality 0..*).
+'caracteristica::Evento' (role 'caracteristica_Evento', cardinality 0..*) is associated with 'caracteristica::RegraDeContexto' (role 'caracteristica_RegraDeContexto', cardinality 0..*).
+'caracteristica::CaracteristicaProduto' (role 'CaracteristicaProduto', cardinality 0..*) is associated with 'caracteristica::CaracteristicaProduto' (role 'caracteristicaProdutoFilha', cardinality 0..*).
+'caracteristica::InconsistenciaRegraAdaptacao' (role 'caracteristica_InconsistenciaRegraAdaptacao114', cardinality 0..*) is associated with 'caracteristica::LiteralAcao' (role 'caracteristica_LiteralAcao115', cardinality 0..*).
+'caracteristica::VarianteProduto' (role 'VarianteProduto', cardinality 0..*) is associated with 'caracteristica::VariacaoProduto' (role 'variacaoProdutoPai', cardinality 0..*).
+'caracteristica::InconsistenciaRegraAdaptacao' (role 'caracteristica_InconsistenciaRegraAdaptacao117', cardinality 0..*) is associated with 'caracteristica::Designar' (role 'caracteristica_Designar118', cardinality 0..*).
+'caracteristica::AcaoLogico' (role 'caracteristica_AcaoLogico', cardinality 0..*) is associated with 'caracteristica::Acao' (role 'caracteristica_Acao75', cardinality 0..*).
+'caracteristica::VariacaoProduto' (role 'caracteristica_VariacaoProduto', cardinality 0..*) is associated with 'caracteristica::CaracteristicaProduto' (role 'caracteristica_CaracteristicaProduto', cardinality 0..*).
+'caracteristica::AtributoProduto' (role 'AtributoProduto', cardinality 0..*) is associated with 'caracteristica::CaracteristicaProduto' (role 'caracteristicaProdutoPai53', cardinality 0..*).
+'caracteristica::Antecedente' (role 'caracteristica_Antecedente83', cardinality 0..*) is associated with 'caracteristica::ExpressaoLogica' (role 'caracteristica_ExpressaoLogica', cardinality 0..*).
+'caracteristica::RegraDeContexto' (role 'caracteristica_RegraDeContexto67', cardinality 0..*) is associated with 'caracteristica::Acao' (role 'caracteristica_Acao', cardinality 0..*).
+'caracteristica::EntidadeDeContexto' (role 'entidadesDeContexto', cardinality 0..*) is associated with 'caracteristica::RaizDeContexto' (role 'RaizDeContexto', cardinality 0..*).
+'caracteristica::PontoDeVariacao' (role 'caracteristica_PontoDeVariacao', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS', cardinality 0..*).
+'caracteristica::LPS' (role 'caracteristica_LPS12', cardinality 0..*) is associated with 'caracteristica::ElementoDeProduto' (role 'caracteristica_ElementoDeProduto', cardinality 0..*).
+'caracteristica::Atributo' (role 'atributo', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'Caracteristica', cardinality 0..*).
+'caracteristica::Atributo' (role 'caracteristica_Atributo', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS15', cardinality 0..*).
+'caracteristica::InformacaoDeContexto' (role 'informacoesDeContexto', cardinality 0..*) is associated with 'caracteristica::EntidadeDeContexto' (role 'EntidadeDeContexto43', cardinality 0..*).
+'caracteristica::ElementoCaracteristico' (role 'caracteristica_ElementoCaracteristico90', cardinality 0..*) is associated with 'caracteristica::LiteralComposicao' (role 'caracteristica_LiteralComposicao', cardinality 0..*).

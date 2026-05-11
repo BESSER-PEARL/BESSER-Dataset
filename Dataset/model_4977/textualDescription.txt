@@ -1,0 +1,49 @@
+The model has 17 class(es).
+The class 'component::diagram::PortType' has the following attributes: 'name' of type str.
+The class 'component::diagram::ComponentType' has the following attributes: 'name' of type str.
+The class 'component::diagram::MechanicalDevice' has no attributes.
+The class 'HardwareComponent' has no attributes.
+The class 'component::diagram::ComponentInstance' has the following attributes: 'version' of type int; 'name' of type str.
+The class 'IDBase' has no attributes.
+The class 'component::diagram::HardwareComponent' has the following attributes: 'powerSupply' of type str.
+The class 'MechanicalDevice' has no attributes.
+The class 'ElectronicDevice' has no attributes.
+The class 'component::diagram::SoftwareComponent' has no attributes.
+The class 'component::diagram::ElectronicDevice' has no attributes.
+The class 'component::diagram::Architecture' has no attributes.
+The class 'component::diagram::Sensor' has the following attributes: 'type' of type str.
+The class 'component::diagram::Actuator' has no attributes.
+The class 'component::diagram::PortInstance' has the following attributes: 'name' of type str.
+The class 'component::diagram::Connector' has the following attributes: 'name' of type str.
+The class 'ComponentType' has no attributes.
+'component::diagram::HardwareComponent' is a specialization of 'ComponentType'.
+'component::diagram::Sensor' is a specialization of 'ElectronicDevice'.
+'component::diagram::ElectronicDevice' is a specialization of 'HardwareComponent'.
+'component::diagram::Connector' is a specialization of 'IDBase'.
+'component::diagram::PortType' is a specialization of 'IDBase'.
+'component::diagram::Actuator' is a specialization of 'MechanicalDevice'.
+'component::diagram::PortInstance' is a specialization of 'IDBase'.
+'component::diagram::MechanicalDevice' is a specialization of 'HardwareComponent'.
+'component::diagram::SoftwareComponent' is a specialization of 'ComponentType'.
+'component::diagram::ComponentInstance' is a specialization of 'IDBase'.
+'component::diagram::Architecture' is a specialization of 'IDBase'.
+'component::diagram::ComponentType' is a specialization of 'IDBase'.
+'component::diagram::PortType' (role 'component_diagram_PortType', cardinality 0..*) is associated with 'component::diagram::Architecture' (role 'component_diagram_Architecture18', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'instance', cardinality 0..*) is associated with 'component::diagram::ComponentType' (role 'ComponentType', cardinality 0..*).
+'component::diagram::ComponentType' (role 'component_diagram_ComponentType', cardinality 0..*) is associated with 'component::diagram::Architecture' (role 'component_diagram_Architecture', cardinality 0..*).
+'component::diagram::PortInstance' (role 'PortInstance34', cardinality 0..*) is associated with 'component::diagram::PortType' (role 'type33', cardinality 0..*).
+'component::diagram::PortType' (role 'PortType', cardinality 0..*) is associated with 'component::diagram::ComponentType' (role 'component_type', cardinality 0..*).
+'component::diagram::Connector' (role 'connect', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'PortInstance', cardinality 0..*).
+'component::diagram::Architecture' (role 'component_diagram_Architecture12', cardinality 0..*) is associated with 'component::diagram::Connector' (role 'component_diagram_Connector', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'ComponentInstance21', cardinality 0..*) is associated with 'component::diagram::ComponentInstance' (role 'parentcomponent', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'ComponentInstance7', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'inPorts', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'ComponentInstance', cardinality 0..*) is associated with 'component::diagram::ComponentType' (role 'type', cardinality 0..*).
+'component::diagram::Connector' (role 'Connector', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'port', cardinality 0..*).
+'component::diagram::PortInstance' (role 'PortInstance28', cardinality 0..*) is associated with 'component::diagram::ComponentInstance' (role 'outComponent', cardinality 0..*).
+'component::diagram::Architecture' (role 'component_diagram_Architecture14', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'component_diagram_PortInstance', cardinality 0..*).
+'component::diagram::PortType' (role 'port_types', cardinality 0..*) is associated with 'component::diagram::ComponentType' (role 'ComponentType31', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'ComponentInstance5', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'outPorts', cardinality 0..*).
+'component::diagram::PortType' (role 'PortType9', cardinality 0..*) is associated with 'component::diagram::PortInstance' (role 'port_instance', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'subcomponent', cardinality 0..*) is associated with 'component::diagram::ComponentInstance' (role 'ComponentInstance24', cardinality 0..*).
+'component::diagram::ComponentInstance' (role 'component_diagram_ComponentInstance', cardinality 0..*) is associated with 'component::diagram::Architecture' (role 'component_diagram_Architecture16', cardinality 0..*).
+'component::diagram::PortInstance' (role 'PortInstance26', cardinality 0..*) is associated with 'component::diagram::ComponentInstance' (role 'inComponent', cardinality 0..*).

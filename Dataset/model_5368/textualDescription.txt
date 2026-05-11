@@ -1,0 +1,32 @@
+The model has 16 class(es).
+The class 'wxyz::Z' has the following attributes: 'propOfZ' of type str.
+The class 'wxyz::Z3' has no attributes.
+The class 'wxyz::W' has the following attributes: 'propOfW' of type str.
+The class 'NamedElt' has no attributes.
+The class 'wxyz::Y' has the following attributes: 'propOfY' of type str.
+The class 'wxyz::Y2' has no attributes.
+The class 'W' has no attributes.
+The class 'wxyz::Other' has no attributes.
+The class 'wxyz::Z2' has no attributes.
+The class 'wxyz::Z1' has no attributes.
+The class 'wxyz::NamedElt' has the following attributes: 'name' of type str.
+The class 'wxyz::Y1' has no attributes.
+The class 'Y' has no attributes.
+The class 'wxyz::X' has the following attributes: 'propOfX' of type str.
+The class 'wxyz::Model' has no attributes.
+The class 'X' has no attributes.
+'wxyz::Z1' is a specialization of 'Y'.
+'wxyz::Z2' is a specialization of 'Y'.
+'wxyz::X' is a specialization of 'W'.
+'wxyz::Other' is a specialization of 'NamedElt'.
+'wxyz::Y' is a specialization of 'X'.
+'wxyz::Z3' is a specialization of 'Y'.
+'wxyz::Z' is a specialization of 'Y'.
+'wxyz::W' is a specialization of 'NamedElt'.
+'wxyz::Y2' is a specialization of 'X'.
+'wxyz::Model' is a specialization of 'NamedElt'.
+'wxyz::Y1' is a specialization of 'X'.
+'wxyz::Model' (role 'wxyz_Model2', cardinality 0..*) is associated with 'wxyz::Other' (role 'wxyz_Other', cardinality 0..*).
+'wxyz::X' (role 'wxyz_X', cardinality 0..*) is associated with 'wxyz::Model' (role 'wxyz_Model4', cardinality 0..*).
+'wxyz::W' (role 'wxyz_W', cardinality 0..*) is associated with 'wxyz::Model' (role 'wxyz_Model', cardinality 0..*).
+'wxyz::W' (role 'wxyz_W5', cardinality 0..*) is associated with 'wxyz::W' (role 'wxyz_W7', cardinality 0..*).

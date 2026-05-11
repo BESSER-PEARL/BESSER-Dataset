@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'test::Container' has no attributes.
+The class 'test::Foo' has the following attributes: 'fooA' of type str.
+The class 'test::Bar' has the following attributes: 'barA' of type str.
+'test::Container' (role 'test_Container', cardinality 0..*) is associated with 'test::Foo' (role 'test_Foo', cardinality 0..*).
+'test::Bar' (role 'test_Bar', cardinality 0..*) is associated with 'test::Container' (role 'test_Container2', cardinality 0..*).
+'test::Bar' (role 'test_Bar4', cardinality 0..*) is associated with 'test::Foo' (role 'test_Foo5', cardinality 0..*).

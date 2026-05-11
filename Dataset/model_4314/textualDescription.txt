@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'MetricModel::Metric' has the following attributes: 'name' of type str; 'id' of type str; 'unit' of type str; 'description' of type str; 'form' of type str; 'type' of type str.
+The class 'Metric' has no attributes.
+The class 'MetricModel::TaskMetric' has the following attributes: 'tasksBase' of type str.
+The class 'MetricModel::MetricPlanModel' has the following attributes: 'name' of type str.
+The class 'MetricModel::ActivityMetric' has the following attributes: 'activityEnd' of type str; 'activityBegin' of type str.
+The enumeration 'MetricType' has the following literals: 'normalizedData', 'softData', 'hardData'.
+The enumeration 'MetricUnit' has the following literals: 'uc', 'minutes'.
+The enumeration 'ColectType' has the following literals: 'continuous', 'intercalated'.
+The enumeration 'BaseElement' has the following literals: 'Activity', 'Task'.
+'MetricModel::TaskMetric' is a specialization of 'Metric'.
+'MetricModel::ActivityMetric' is a specialization of 'Metric'.
+'MetricModel::Metric' (role 'MetricModel_Metric', cardinality 0..*) is associated with 'MetricModel::MetricPlanModel' (role 'MetricModel_MetricPlanModel', cardinality 0..*).

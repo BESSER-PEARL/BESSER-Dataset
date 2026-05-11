@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'myMath::Mult' has no attributes.
+The class 'myMath::Num' has the following attributes: 'value' of type int.
+The class 'myMath::MathExp' has no attributes.
+The class 'Expression' has no attributes.
+The class 'myMath::Expression' has no attributes.
+The class 'myMath::Div' has no attributes.
+The class 'myMath::Sub' has no attributes.
+The class 'myMath::Add' has no attributes.
+'myMath::Div' is a specialization of 'Expression'.
+'myMath::Num' is a specialization of 'Expression'.
+'myMath::Mult' is a specialization of 'Expression'.
+'myMath::Sub' is a specialization of 'Expression'.
+'myMath::Add' is a specialization of 'Expression'.
+'myMath::Add' (role 'myMath_Add4', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression5', cardinality 0..*).
+'myMath::MathExp' (role 'myMath_MathExp', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression', cardinality 0..*).
+'myMath::Expression' (role 'myMath_Expression17', cardinality 0..*) is associated with 'myMath::Div' (role 'myMath_Div', cardinality 0..*).
+'myMath::Expression' (role 'myMath_Expression10', cardinality 0..*) is associated with 'myMath::Sub' (role 'myMath_Sub9', cardinality 0..*).
+'myMath::Sub' (role 'myMath_Sub', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression7', cardinality 0..*).
+'myMath::Add' (role 'myMath_Add', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression2', cardinality 0..*).
+'myMath::Mult' (role 'myMath_Mult14', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression15', cardinality 0..*).
+'myMath::Mult' (role 'myMath_Mult', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression12', cardinality 0..*).
+'myMath::Div' (role 'myMath_Div19', cardinality 0..*) is associated with 'myMath::Expression' (role 'myMath_Expression20', cardinality 0..*).

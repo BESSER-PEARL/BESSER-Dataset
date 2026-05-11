@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'forms::Form' has the following attributes: 'caption' of type str.
+The class 'forms::Group' has the following attributes: 'name' of type str.
+The class 'forms::Option' has the following attributes: 'id' of type str; 'text' of type str.
+The class 'forms::Decision' has no attributes.
+The class 'forms::Choice' has the following attributes: 'multiple' of type bool.
+The class 'forms::ItemType' has no attributes.
+The class 'forms::FreeText' has no attributes.
+The class 'forms::Date' has no attributes.
+The class 'ItemType' has no attributes.
+The class 'forms::Item' has the following attributes: 'text' of type str; 'explanation' of type str.
+The class 'forms::Number' has no attributes.
+'forms::Date' is a specialization of 'ItemType'.
+'forms::Decision' is a specialization of 'ItemType'.
+'forms::Number' is a specialization of 'ItemType'.
+'forms::FreeText' is a specialization of 'ItemType'.
+'forms::Choice' is a specialization of 'ItemType'.
+'forms::Decision' (role 'forms_Decision', cardinality 0..*) is associated with 'forms::Option' (role 'forms_Option10', cardinality 0..*).
+'forms::ItemType' (role 'forms_ItemType', cardinality 0..*) is associated with 'forms::Item' (role 'forms_Item', cardinality 0..*).
+'forms::Group' (role 'forms_Group7', cardinality 0..*) is associated with 'forms::Item' (role 'forms_Item8', cardinality 0..*).
+'forms::Choice' (role 'forms_Choice', cardinality 0..*) is associated with 'forms::Option' (role 'forms_Option5', cardinality 0..*).
+'forms::Form' (role 'forms_Form', cardinality 0..*) is associated with 'forms::Group' (role 'forms_Group', cardinality 0..*).
+'forms::Item' (role 'forms_Item3', cardinality 0..*) is associated with 'forms::Option' (role 'forms_Option', cardinality 0..*).

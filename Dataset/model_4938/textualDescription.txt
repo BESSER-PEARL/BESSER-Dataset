@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'fml::ListItem' has the following attributes: 'Text' of type str.
+The class 'fml::TextInput' has the following attributes: 'Content' of type str; 'Label' of type str; 'Type' of type str.
+The class 'fml::Form' has no attributes.
+The class 'fml::PageElement' has the following attributes: 'ID' of type str.
+The class 'fml::Page' has the following attributes: 'Title' of type str; 'isWelcome' of type bool.
+The class 'fml::SelectField' has the following attributes: 'Type' of type str; 'Label' of type str.
+The class 'fml::DisplayElement' has no attributes.
+The class 'InputElement' has no attributes.
+The class 'DisplayElement' has no attributes.
+The class 'fml::List' has the following attributes: 'isOrdered' of type bool.
+The class 'PageElement' has no attributes.
+The class 'fml::TextParagraph' has the following attributes: 'Text' of type str.
+The class 'fml::InputElement' has the following attributes: 'isMandatory' of type bool.
+The class 'fml::SelectionItem' has the following attributes: 'preselected' of type bool; 'selected' of type bool; 'Text' of type str.
+The class 'fml::Heading' has the following attributes: 'Text' of type str; 'Level' of type str.
+The enumeration 'SelectionType' has the following literals: 'RADIO', 'CHECKBOX', 'COMBOBOX'.
+The enumeration 'TextInputType' has the following literals: 'TEXTAREA', 'TEXTFIELD', 'ENCRYPTED_TEXTFIELD'.
+'fml::InputElement' is a specialization of 'PageElement'.
+'fml::List' is a specialization of 'DisplayElement'.
+'fml::SelectField' is a specialization of 'InputElement'.
+'fml::TextInput' is a specialization of 'InputElement'.
+'fml::Heading' is a specialization of 'DisplayElement'.
+'fml::DisplayElement' is a specialization of 'PageElement'.
+'fml::TextParagraph' is a specialization of 'DisplayElement'.
+'fml::SelectField' (role 'contained9', cardinality 0..*) is associated with 'fml::SelectionItem' (role 'SelectionItem10', cardinality 0..*).
+'fml::SelectionItem' (role 'consists12', cardinality 0..*) is associated with 'fml::SelectField' (role 'SelectField', cardinality 0..*).
+'fml::SelectionItem' (role 'SelectionItem', cardinality 0..*) is associated with 'fml::PageElement' (role 'displayElementVisible', cardinality 0..*).
+'fml::List' (role 'fml_List', cardinality 0..*) is associated with 'fml::ListItem' (role 'fml_ListItem', cardinality 0..*).
+'fml::Page' (role 'fml_Page', cardinality 0..*) is associated with 'fml::Form' (role 'fml_Form', cardinality 0..*).
+'fml::Page' (role 'fml_Page1', cardinality 0..*) is associated with 'fml::Page' (role 'fml_Page3', cardinality 0..*).
+'fml::PageElement' (role 'consists', cardinality 0..*) is associated with 'fml::Page' (role 'Page', cardinality 0..*).
+'fml::PageElement' (role 'PageElement', cardinality 0..*) is associated with 'fml::Page' (role 'contained', cardinality 0..*).
+'fml::SelectionItem' (role 'visibleIfSelected', cardinality 0..*) is associated with 'fml::PageElement' (role 'PageElement14', cardinality 0..*).

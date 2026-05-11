@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'arithmetics::Div' has no attributes.
+The class 'Expression' has no attributes.
+The class 'arithmetics::Evaluation' has no attributes.
+The class 'arithmetics::Minus' has no attributes.
+The class 'arithmetics::Multi' has no attributes.
+The class 'arithmetics::Plus' has no attributes.
+The class 'arithmetics::Expression' has no attributes.
+The class 'arithmetics::NumberLiteral' has the following attributes: 'value' of type str.
+'arithmetics::Minus' is a specialization of 'Expression'.
+'arithmetics::Div' is a specialization of 'Expression'.
+'arithmetics::NumberLiteral' is a specialization of 'Expression'.
+'arithmetics::Multi' is a specialization of 'Expression'.
+'arithmetics::Plus' is a specialization of 'Expression'.
+'arithmetics::Multi' (role 'arithmetics_Multi14', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression15', cardinality 0..*).
+'arithmetics::Minus' (role 'arithmetics_Minus9', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression10', cardinality 0..*).
+'arithmetics::Expression' (role 'arithmetics_Expression2', cardinality 0..*) is associated with 'arithmetics::Plus' (role 'arithmetics_Plus', cardinality 0..*).
+'arithmetics::Expression' (role 'arithmetics_Expression7', cardinality 0..*) is associated with 'arithmetics::Minus' (role 'arithmetics_Minus', cardinality 0..*).
+'arithmetics::Expression' (role 'arithmetics_Expression', cardinality 0..*) is associated with 'arithmetics::Evaluation' (role 'arithmetics_Evaluation', cardinality 0..*).
+'arithmetics::Plus' (role 'arithmetics_Plus4', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression5', cardinality 0..*).
+'arithmetics::Div' (role 'arithmetics_Div19', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression20', cardinality 0..*).
+'arithmetics::Multi' (role 'arithmetics_Multi', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression12', cardinality 0..*).
+'arithmetics::Div' (role 'arithmetics_Div', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression17', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'FirstClass' has no attributes.
+The class 'testPackage::SecondSubClass' has no attributes.
+The class 'testPackage::FirstSubClass' has no attributes.
+The class 'SecondClass' has no attributes.
+The class 'testPackage::FirstClass' has no attributes.
+The class 'testPackage::SecondClass' has no attributes.
+'testPackage::SecondSubClass' is a specialization of 'SecondClass'.
+'testPackage::FirstSubClass' is a specialization of 'FirstClass'.
+'testPackage::FirstSubClass' (role 'testPackage_FirstSubClass', cardinality 0..*) is associated with 'testPackage::SecondSubClass' (role 'testPackage_SecondSubClass', cardinality 0..*).
+'testPackage::FirstClass' (role 'testPackage_FirstClass', cardinality 0..*) is associated with 'testPackage::SecondClass' (role 'testPackage_SecondClass', cardinality 0..*).

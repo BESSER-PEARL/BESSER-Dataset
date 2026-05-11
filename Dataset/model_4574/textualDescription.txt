@@ -1,0 +1,353 @@
+The model has 125 class(es).
+The class 'activityecorelua::ActivityNode' has the following attributes: 'running' of type bool.
+The class 'activityecorelua::Field::AddEntryToTable' has the following attributes: 'key' of type str.
+The class 'activityecorelua::InputValue' has no attributes.
+The class 'activityecorelua::Expression::Exponentiation' has no attributes.
+The class 'activityecorelua::InitialNode' has no attributes.
+The class 'activityecorelua::ExecutableNode' has no attributes.
+The class 'activityecorelua::NamedElement' has the following attributes: 'name' of type str.
+The class 'activityecorelua::Expression::True' has no attributes.
+The class 'activityecorelua::Expression::False' has no attributes.
+The class 'activityecorelua::Expression::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'activityecorelua::Variable' has the following attributes: 'name' of type str.
+The class 'activityecorelua::Statement::CallFunction' has no attributes.
+The class 'activityecorelua::Statement::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'Field' has no attributes.
+The class 'activityecorelua::ActivityEdge' has no attributes.
+The class 'EStructuralFeature' has no attributes.
+The class 'activityecorelua::FinalNode' has no attributes.
+The class 'activityecorelua::Expression::Function' has no attributes.
+The class 'activityecorelua::ActivityFinalNode' has no attributes.
+The class 'activityecorelua::Expression::Number' has the following attributes: 'value' of type float.
+The class 'activityecorelua::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'FinalNode' has no attributes.
+The class 'activityecorelua::LastStatement' has no attributes.
+The class 'activityecorelua::Expression::Negate' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'activityecorelua::Expression::Modulo' has no attributes.
+The class 'activityecorelua::Expression::Length' has no attributes.
+The class 'activityecorelua::BooleanVariable' has no attributes.
+The class 'Value' has no attributes.
+The class 'activityecorelua::EClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+The class 'ActivityEdge' has no attributes.
+The class 'EClassifier' has no attributes.
+The class 'activityecorelua::Expression::AccessMember' has the following attributes: 'memberName' of type str.
+The class 'activityecorelua::ControlFlow' has no attributes.
+The class 'activityecorelua::EStructuralFeature' has the following attributes: 'defaultValueLiteral' of type str; 'defaultValue' of type str; 'changeable' of type bool; 'volatile' of type bool; 'transient' of type bool; 'unsettable' of type bool; 'derived' of type bool.
+The class 'activityecorelua::Expression::Division' has no attributes.
+The class 'activityecorelua::EObject' has no attributes.
+The class 'activityecorelua::Expression::CallFunction' has no attributes.
+The class 'activityecorelua::ForkNode' has no attributes.
+The class 'activityecorelua::Expression::AccessArray' has no attributes.
+The class 'activityecorelua::Functioncall::Arguments' has no attributes.
+The class 'activityecorelua::EParameter' has no attributes.
+The class 'activityecorelua::EModelElement' has no attributes.
+The class 'activityecorelua::LastStatement::Return' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'activityecorelua::EOperation' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'activityecorelua::Activity' has no attributes.
+The class 'activityecorelua::ControlNode' has no attributes.
+The class 'activityecorelua::Field::AppendEntryToTable' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'activityecorelua::Action' has no attributes.
+The class 'activityecorelua::EStringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'activityecorelua::Expression' has no attributes.
+The class 'activityecorelua::ETypedElement' has the following attributes: 'ordered' of type bool; 'many' of type bool; 'upperBound' of type int; 'required' of type bool; 'lowerBound' of type int; 'unique' of type bool.
+The class 'activityecorelua::Statement' has no attributes.
+The class 'activityecorelua::LastStatement::ReturnWithValue' has no attributes.
+The class 'activityecorelua::EGenericType' has no attributes.
+The class 'activityecorelua::LastStatement::Break' has no attributes.
+The class 'activityecorelua::Statement::For::Generic' has the following attributes: 'names' of type str.
+The class 'activityecorelua::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'Action' has no attributes.
+The class 'activityecorelua::OpaqueAction' has no attributes.
+The class 'activityecorelua::Statement::FunctioncallOrAssignment' has no attributes.
+The class 'activityecorelua::EAnnotation' has the following attributes: 'source' of type str.
+The class 'ExecutableNode' has no attributes.
+The class 'LastStatement::Return' has no attributes.
+The class 'Statement' has no attributes.
+The class 'activityecorelua::Expression::String' has the following attributes: 'value' of type str.
+The class 'activityecorelua::Expression::VariableName' has the following attributes: 'variable' of type str.
+The class 'activityecorelua::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'activityecorelua::EFactory' has no attributes.
+The class 'activityecorelua::Expression::And' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'activityecorelua::Statement::GlobalFunction::Declaration' has the following attributes: 'functionName' of type str; 'prefix' of type str.
+The class 'activityecorelua::IntegerValue' has the following attributes: 'value' of type int.
+The class 'activityecorelua::JoinNode' has no attributes.
+The class 'activityecorelua::ETypeParameter' has no attributes.
+The class 'activityecorelua::Expression::Larger::Equal' has no attributes.
+The class 'activityecorelua::ENamedElement' has the following attributes: 'name' of type str.
+The class 'activityecorelua::Expression::Equal' has no attributes.
+The class 'activityecorelua::Statement::If::Then::Else::ElseIfPart' has no attributes.
+The class 'activityecorelua::EPackage' has the following attributes: 'nsPrefix' of type str; 'nsURI' of type str.
+The class 'activityecorelua::Statement::For::Numeric' has the following attributes: 'iteratorName' of type str.
+The class 'activityecorelua::Chunk' has no attributes.
+The class 'activityecorelua::Statement::LocalFunction::Declaration' has the following attributes: 'functionName' of type str.
+The class 'activityecorelua::Expression::Or' has no attributes.
+The class 'activityecorelua::Expression::Nil' has no attributes.
+The class 'activityecorelua::Block' has no attributes.
+The class 'activityecorelua::Expression::Multiplication' has no attributes.
+The class 'activityecorelua::Input' has no attributes.
+The class 'activityecorelua::EEnumLiteral' has the following attributes: 'literal' of type str; 'value' of type int; 'instance' of type str.
+The class 'activityecorelua::Statement::If::Then::Else' has no attributes.
+The class 'Statement::FunctioncallOrAssignment' has no attributes.
+The class 'activityecorelua::Expression::Smaller' has no attributes.
+The class 'activityecorelua::Expression::TableConstructor' has no attributes.
+The class 'LastStatement' has no attributes.
+The class 'activityecorelua::Expression::Smaller::Equal' has no attributes.
+The class 'activityecorelua::EClassifier' has the following attributes: 'instanceClassName' of type str; 'defaultValue' of type str; 'instanceTypeName' of type str; 'instanceClass' of type str.
+The class 'activityecorelua::Statement::Local::Variable::Declaration' has the following attributes: 'variableNames' of type str.
+The class 'activityecorelua::Statement::Repeat' has no attributes.
+The class 'activityecorelua::EReference' has the following attributes: 'containment' of type bool; 'resolveProxies' of type bool; 'container' of type bool.
+The class 'activityecorelua::Statement::Assignment' has no attributes.
+The class 'activityecorelua::Expression::Larger' has no attributes.
+The class 'EDataType' has no attributes.
+The class 'Chunk' has no attributes.
+The class 'activityecorelua::MergeNode' has no attributes.
+The class 'activityecorelua::Expression::Concatenation' has no attributes.
+The class 'Expression' has no attributes.
+The class 'activityecorelua::IntegerVariable' has no attributes.
+The class 'activityecorelua::Expression::Not::Equal' has no attributes.
+The class 'activityecorelua::EEnum' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'activityecorelua::Value' has no attributes.
+The class 'activityecorelua::Function' has the following attributes: 'varArgs' of type bool; 'parameters' of type str.
+The class 'activityecorelua::DecisionNode' has no attributes.
+The class 'activityecorelua::Field' has no attributes.
+The class 'activityecorelua::Expression::Invert' has no attributes.
+The class 'activityecorelua::Statement::Block' has no attributes.
+The class 'activityecorelua::Expression::Plus' has no attributes.
+The class 'activityecorelua::Expression::Minus' has no attributes.
+The class 'activityecorelua::Statement::While' has no attributes.
+The class 'activityecorelua::Expression::VarArgs' has no attributes.
+The class 'Variable' has no attributes.
+The class 'activityecorelua::Field::AddEntryToTable::Brackets' has no attributes.
+'activityecorelua::ActivityEdge' is a specialization of 'NamedElement'.
+'activityecorelua::EAttribute' is a specialization of 'EStructuralFeature'.
+'activityecorelua::EReference' is a specialization of 'EStructuralFeature'.
+'activityecorelua::Expression::Larger::Equal' is a specialization of 'Expression'.
+'activityecorelua::ETypedElement' is a specialization of 'ENamedElement'.
+'activityecorelua::LastStatement::ReturnWithValue' is a specialization of 'LastStatement::Return'.
+'activityecorelua::Expression::VariableName' is a specialization of 'Expression'.
+'activityecorelua::Expression::Smaller' is a specialization of 'Expression'.
+'activityecorelua::FinalNode' is a specialization of 'ControlNode'.
+'activityecorelua::Expression::And' is a specialization of 'Expression'.
+'activityecorelua::Expression::Invert' is a specialization of 'Expression'.
+'activityecorelua::Expression::Number' is a specialization of 'Expression'.
+'activityecorelua::Expression::CallMemberFunction' is a specialization of 'Expression'.
+'activityecorelua::Expression' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'activityecorelua::Block' is a specialization of 'Chunk'.
+'activityecorelua::Expression::Minus' is a specialization of 'Expression'.
+'activityecorelua::Expression::TableConstructor' is a specialization of 'Expression'.
+'activityecorelua::OpaqueAction' is a specialization of 'Action'.
+'activityecorelua::IntegerVariable' is a specialization of 'Variable'.
+'activityecorelua::Expression::String' is a specialization of 'Expression'.
+'activityecorelua::Statement::Block' is a specialization of 'Statement'.
+'activityecorelua::Statement::CallMemberFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'activityecorelua::Expression::False' is a specialization of 'Expression'.
+'activityecorelua::ForkNode' is a specialization of 'ControlNode'.
+'activityecorelua::LastStatement::Return' is a specialization of 'LastStatement'.
+'activityecorelua::Statement::Repeat' is a specialization of 'Statement'.
+'activityecorelua::Expression::AccessArray' is a specialization of 'Expression'.
+'activityecorelua::Expression::Nil' is a specialization of 'Expression'.
+'activityecorelua::ExecutableNode' is a specialization of 'ActivityNode'.
+'activityecorelua::Expression::AccessMember' is a specialization of 'Expression'.
+'activityecorelua::Statement::CallFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'activityecorelua::DecisionNode' is a specialization of 'ControlNode'.
+'activityecorelua::EFactory' is a specialization of 'EModelElement'.
+'activityecorelua::LastStatement::Break' is a specialization of 'LastStatement'.
+'activityecorelua::EStructuralFeature' is a specialization of 'ETypedElement'.
+'activityecorelua::ETypeParameter' is a specialization of 'ENamedElement'.
+'activityecorelua::Expression::Negate' is a specialization of 'Expression'.
+'activityecorelua::Statement::FunctioncallOrAssignment' is a specialization of 'Statement'.
+'activityecorelua::EPackage' is a specialization of 'ENamedElement'.
+'activityecorelua::MergeNode' is a specialization of 'ControlNode'.
+'activityecorelua::JoinNode' is a specialization of 'ControlNode'.
+'activityecorelua::Expression::Concatenation' is a specialization of 'Expression'.
+'activityecorelua::BooleanVariable' is a specialization of 'Variable'.
+'activityecorelua::ControlNode' is a specialization of 'ActivityNode'.
+'activityecorelua::Statement::Local::Variable::Declaration' is a specialization of 'Statement'.
+'activityecorelua::Statement::For::Generic' is a specialization of 'Statement'.
+'activityecorelua::EClassifier' is a specialization of 'ENamedElement'.
+'activityecorelua::Statement::Assignment' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'activityecorelua::Field::AddEntryToTable' is a specialization of 'Field'.
+'activityecorelua::ActivityFinalNode' is a specialization of 'FinalNode'.
+'activityecorelua::InitialNode' is a specialization of 'ControlNode'.
+'activityecorelua::Field::AddEntryToTable::Brackets' is a specialization of 'Field'.
+'activityecorelua::EOperation' is a specialization of 'ETypedElement'.
+'activityecorelua::EParameter' is a specialization of 'ETypedElement'.
+'activityecorelua::Expression::Plus' is a specialization of 'Expression'.
+'activityecorelua::Expression::Or' is a specialization of 'Expression'.
+'activityecorelua::Expression::Not::Equal' is a specialization of 'Expression'.
+'activityecorelua::Statement::For::Numeric' is a specialization of 'Statement'.
+'activityecorelua::Expression::Multiplication' is a specialization of 'Expression'.
+'activityecorelua::EEnumLiteral' is a specialization of 'ENamedElement'.
+'activityecorelua::Statement::If::Then::Else' is a specialization of 'Statement'.
+'activityecorelua::Expression::True' is a specialization of 'Expression'.
+'activityecorelua::Expression::Division' is a specialization of 'Expression'.
+'activityecorelua::ENamedElement' is a specialization of 'EModelElement'.
+'activityecorelua::IntegerValue' is a specialization of 'Value'.
+'activityecorelua::Activity' is a specialization of 'NamedElement'.
+'activityecorelua::Expression::Exponentiation' is a specialization of 'Expression'.
+'activityecorelua::BooleanValue' is a specialization of 'Value'.
+'activityecorelua::Action' is a specialization of 'ExecutableNode'.
+'activityecorelua::EEnum' is a specialization of 'EDataType'.
+'activityecorelua::ControlFlow' is a specialization of 'ActivityEdge'.
+'activityecorelua::EAnnotation' is a specialization of 'EModelElement'.
+'activityecorelua::EClass' is a specialization of 'EClassifier'.
+'activityecorelua::Expression::Length' is a specialization of 'Expression'.
+'activityecorelua::Expression::Smaller::Equal' is a specialization of 'Expression'.
+'activityecorelua::Expression::Modulo' is a specialization of 'Expression'.
+'activityecorelua::EDataType' is a specialization of 'EClassifier'.
+'activityecorelua::Statement::GlobalFunction::Declaration' is a specialization of 'Statement'.
+'activityecorelua::Statement::While' is a specialization of 'Statement'.
+'activityecorelua::Expression::Larger' is a specialization of 'Expression'.
+'activityecorelua::Statement::LocalFunction::Declaration' is a specialization of 'Statement'.
+'activityecorelua::ActivityNode' is a specialization of 'NamedElement'.
+'activityecorelua::Expression::Function' is a specialization of 'Expression'.
+'activityecorelua::Expression::CallFunction' is a specialization of 'Expression'.
+'activityecorelua::Expression::Equal' is a specialization of 'Expression'.
+'activityecorelua::Expression::VarArgs' is a specialization of 'Expression'.
+'activityecorelua::Field::AppendEntryToTable' is a specialization of 'Field'.
+'activityecorelua::EReference' (role 'activityecorelua_EReference18', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass17', cardinality 0..*).
+'activityecorelua::ETypedElement' (role 'activityecorelua_ETypedElement', cardinality 0..*) is associated with 'activityecorelua::EClassifier' (role 'activityecorelua_EClassifier85', cardinality 0..*).
+'activityecorelua::Expression::And' (role 'activityecorelua_Expression_And', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression228', cardinality 0..*).
+'activityecorelua::Expression::And' (role 'activityecorelua_Expression_And230', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression231', cardinality 0..*).
+'activityecorelua::Expression::Larger::Equal' (role 'activityecorelua_Expression_Larger_Equal240', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression241', cardinality 0..*).
+'activityecorelua::Statement::While' (role 'activityecorelua_Statement_While', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression146', cardinality 0..*).
+'activityecorelua::EClass' (role 'activityecorelua_EClass31', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass29', cardinality 0..*).
+'activityecorelua::EAttribute' (role 'activityecorelua_EAttribute21', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass20', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression251', cardinality 0..*) is associated with 'activityecorelua::Expression::Smaller::Equal' (role 'activityecorelua_Expression_Smaller_Equal250', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression218', cardinality 0..*) is associated with 'activityecorelua::Statement::CallFunction' (role 'activityecorelua_Statement_CallFunction', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block186', cardinality 0..*) is associated with 'activityecorelua::Statement::For::Generic' (role 'activityecorelua_Statement_For_Generic185', cardinality 0..*).
+'activityecorelua::EReference' (role 'activityecorelua_EReference73', cardinality 0..*) is associated with 'activityecorelua::EReference' (role 'activityecorelua_EReference75', cardinality 0..*).
+'activityecorelua::Expression::TableConstructor' (role 'activityecorelua_Expression_TableConstructor', cardinality 0..*) is associated with 'activityecorelua::Field' (role 'activityecorelua_Field', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block181', cardinality 0..*) is associated with 'activityecorelua::Statement::For::Numeric' (role 'activityecorelua_Statement_For_Numeric180', cardinality 0..*).
+'activityecorelua::Statement::While' (role 'activityecorelua_Statement_While148', cardinality 0..*) is associated with 'activityecorelua::Block' (role 'activityecorelua_Block149', cardinality 0..*).
+'activityecorelua::Activity' (role 'Activity', cardinality 0..*) is associated with 'activityecorelua::ActivityNode' (role 'nodes', cardinality 0..*).
+'activityecorelua::Expression::Division' (role 'activityecorelua_Expression_Division285', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression286', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType41', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass40', cardinality 0..*).
+'activityecorelua::EEnum' (role 'eEnum', cardinality 0..*) is associated with 'activityecorelua::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType96', cardinality 0..*) is associated with 'activityecorelua::EClassifier' (role 'activityecorelua_EClassifier97', cardinality 0..*).
+'activityecorelua::EClass' (role 'EClass', cardinality 0..*) is associated with 'activityecorelua::EOperation' (role 'eOperations', cardinality 0..*).
+'activityecorelua::ActivityNode' (role 'source', cardinality 0..*) is associated with 'activityecorelua::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'activityecorelua::OpaqueAction' (role 'activityecorelua_OpaqueAction', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression', cardinality 0..*).
+'activityecorelua::EPackage' (role 'eSuperPackage', cardinality 0..*) is associated with 'activityecorelua::EPackage' (role 'EPackage67', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression278', cardinality 0..*) is associated with 'activityecorelua::Expression::Multiplication' (role 'activityecorelua_Expression_Multiplication', cardinality 0..*).
+'activityecorelua::Activity' (role 'activityecorelua_Activity', cardinality 0..*) is associated with 'activityecorelua::EOperation' (role 'activityecorelua_EOperation55', cardinality 0..*).
+'activityecorelua::Expression::Equal' (role 'activityecorelua_Expression_Equal255', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression256', cardinality 0..*).
+'activityecorelua::EPackage' (role 'ePackage', cardinality 0..*) is associated with 'activityecorelua::EFactory' (role 'EFactory', cardinality 0..*).
+'activityecorelua::Functioncall::Arguments' (role 'activityecorelua_Functioncall_Arguments', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression199', cardinality 0..*).
+'activityecorelua::Expression::CallMemberFunction' (role 'activityecorelua_Expression_CallMemberFunction306', cardinality 0..*) is associated with 'activityecorelua::Functioncall::Arguments' (role 'activityecorelua_Functioncall_Arguments307', cardinality 0..*).
+'activityecorelua::EAnnotation' (role 'activityecorelua_EAnnotation6', cardinality 0..*) is associated with 'activityecorelua::EObject' (role 'activityecorelua_EObject7', cardinality 0..*).
+'activityecorelua::Statement::For::Generic' (role 'activityecorelua_Statement_For_Generic', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression183', cardinality 0..*).
+'activityecorelua::EClassifier' (role 'activityecorelua_EClassifier', cardinality 0..*) is associated with 'activityecorelua::ETypeParameter' (role 'activityecorelua_ETypeParameter', cardinality 0..*).
+'activityecorelua::Expression::Smaller' (role 'activityecorelua_Expression_Smaller', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression243', cardinality 0..*).
+'activityecorelua::Expression::Larger' (role 'activityecorelua_Expression_Larger235', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression236', cardinality 0..*).
+'activityecorelua::EClassifier' (role 'activityecorelua_EClassifier58', cardinality 0..*) is associated with 'activityecorelua::EOperation' (role 'activityecorelua_EOperation57', cardinality 0..*).
+'activityecorelua::Input' (role 'activityecorelua_Input', cardinality 0..*) is associated with 'activityecorelua::InputValue' (role 'activityecorelua_InputValue139', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression175', cardinality 0..*) is associated with 'activityecorelua::Statement::For::Numeric' (role 'activityecorelua_Statement_For_Numeric174', cardinality 0..*).
+'activityecorelua::Field' (role 'activityecorelua_Field201', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression202', cardinality 0..*).
+'activityecorelua::ActivityEdge' (role 'activityecorelua_ActivityEdge', cardinality 0..*) is associated with 'activityecorelua::Activity' (role 'activityecorelua_Activity112', cardinality 0..*).
+'activityecorelua::Function' (role 'activityecorelua_Function193', cardinality 0..*) is associated with 'activityecorelua::Expression::Function' (role 'activityecorelua_Expression_Function', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression233', cardinality 0..*) is associated with 'activityecorelua::Expression::Larger' (role 'activityecorelua_Expression_Larger', cardinality 0..*).
+'activityecorelua::Expression::Exponentiation' (role 'activityecorelua_Expression_Exponentiation', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression299', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression268', cardinality 0..*) is associated with 'activityecorelua::Expression::Plus' (role 'activityecorelua_Expression_Plus', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType92', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType94', cardinality 0..*).
+'activityecorelua::Expression::Equal' (role 'activityecorelua_Expression_Equal', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression253', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression208', cardinality 0..*) is associated with 'activityecorelua::Statement::Assignment' (role 'activityecorelua_Statement_Assignment', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block151', cardinality 0..*) is associated with 'activityecorelua::Statement::Repeat' (role 'activityecorelua_Statement_Repeat', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block144', cardinality 0..*) is associated with 'activityecorelua::Statement::Block' (role 'activityecorelua_Statement_Block', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block170', cardinality 0..*) is associated with 'activityecorelua::Statement::If::Then::Else::ElseIfPart' (role 'activityecorelua_Statement_If_Then_Else_ElseIfPart169', cardinality 0..*).
+'activityecorelua::Activity' (role 'activity', cardinality 0..*) is associated with 'activityecorelua::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'activityecorelua::EClass' (role 'activityecorelua_EClass33', cardinality 0..*) is associated with 'activityecorelua::EAttribute' (role 'activityecorelua_EAttribute34', cardinality 0..*).
+'activityecorelua::BooleanVariable' (role 'activityecorelua_BooleanVariable', cardinality 0..*) is associated with 'activityecorelua::ControlFlow' (role 'activityecorelua_ControlFlow', cardinality 0..*).
+'activityecorelua::ETypeParameter' (role 'activityecorelua_ETypeParameter108', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType109', cardinality 0..*).
+'activityecorelua::Functioncall::Arguments' (role 'activityecorelua_Functioncall_Arguments221', cardinality 0..*) is associated with 'activityecorelua::Statement::CallFunction' (role 'activityecorelua_Statement_CallFunction220', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression154', cardinality 0..*) is associated with 'activityecorelua::Statement::Repeat' (role 'activityecorelua_Statement_Repeat153', cardinality 0..*).
+'activityecorelua::Expression::Division' (role 'activityecorelua_Expression_Division', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression283', cardinality 0..*).
+'activityecorelua::Expression::AccessMember' (role 'activityecorelua_Expression_AccessMember', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression319', cardinality 0..*).
+'activityecorelua::EPackage' (role 'EPackage47', cardinality 0..*) is associated with 'activityecorelua::EFactory' (role 'eFactoryInstance', cardinality 0..*).
+'activityecorelua::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'activityecorelua::EPackage' (role 'EPackage', cardinality 0..*).
+'activityecorelua::Variable' (role 'activityecorelua_Variable129', cardinality 0..*) is associated with 'activityecorelua::Value' (role 'activityecorelua_Value', cardinality 0..*).
+'activityecorelua::Variable' (role 'activityecorelua_Variable131', cardinality 0..*) is associated with 'activityecorelua::Value' (role 'activityecorelua_Value132', cardinality 0..*).
+'activityecorelua::EStructuralFeature' (role 'activityecorelua_EStructuralFeature', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass28', cardinality 0..*).
+'activityecorelua::Expression::Exponentiation' (role 'activityecorelua_Expression_Exponentiation301', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression302', cardinality 0..*).
+'activityecorelua::Statement::If::Then::Else' (role 'activityecorelua_Statement_If_Then_Else161', cardinality 0..*) is associated with 'activityecorelua::Statement::If::Then::Else::ElseIfPart' (role 'activityecorelua_Statement_If_Then_Else_ElseIfPart', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType100', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType98', cardinality 0..*).
+'activityecorelua::Expression::Negate' (role 'activityecorelua_Expression_Negate', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression293', cardinality 0..*).
+'activityecorelua::EClass' (role 'activityecorelua_EClass', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass8', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType88', cardinality 0..*) is associated with 'activityecorelua::ETypedElement' (role 'activityecorelua_ETypedElement87', cardinality 0..*).
+'activityecorelua::Statement::CallMemberFunction' (role 'activityecorelua_Statement_CallMemberFunction215', cardinality 0..*) is associated with 'activityecorelua::Functioncall::Arguments' (role 'activityecorelua_Functioncall_Arguments216', cardinality 0..*).
+'activityecorelua::Expression::Concatenation' (role 'activityecorelua_Expression_Concatenation265', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression266', cardinality 0..*).
+'activityecorelua::LastStatement::ReturnWithValue' (role 'activityecorelua_LastStatement_ReturnWithValue', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression206', cardinality 0..*).
+'activityecorelua::Expression::Not::Equal' (role 'activityecorelua_Expression_Not_Equal260', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression261', cardinality 0..*).
+'activityecorelua::EAttribute' (role 'activityecorelua_EAttribute', cardinality 0..*) is associated with 'activityecorelua::EDataType' (role 'activityecorelua_EDataType', cardinality 0..*).
+'activityecorelua::Variable' (role 'activityecorelua_Variable117', cardinality 0..*) is associated with 'activityecorelua::Activity' (role 'activityecorelua_Activity116', cardinality 0..*).
+'activityecorelua::Expression::Modulo' (role 'activityecorelua_Expression_Modulo', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression288', cardinality 0..*).
+'activityecorelua::EReference' (role 'activityecorelua_EReference24', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass23', cardinality 0..*).
+'activityecorelua::Expression::Plus' (role 'activityecorelua_Expression_Plus270', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression271', cardinality 0..*).
+'activityecorelua::EAnnotation' (role 'activityecorelua_EAnnotation', cardinality 0..*) is associated with 'activityecorelua::EStringToStringMapEntry' (role 'activityecorelua_EStringToStringMapEntry', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression178', cardinality 0..*) is associated with 'activityecorelua::Statement::For::Numeric' (role 'activityecorelua_Statement_For_Numeric177', cardinality 0..*).
+'activityecorelua::EOperation' (role 'activityecorelua_EOperation60', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType61', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression276', cardinality 0..*) is associated with 'activityecorelua::Expression::Minus' (role 'activityecorelua_Expression_Minus275', cardinality 0..*).
+'activityecorelua::EAttribute' (role 'activityecorelua_EAttribute13', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass12', cardinality 0..*).
+'activityecorelua::Value' (role 'activityecorelua_Value134', cardinality 0..*) is associated with 'activityecorelua::InputValue' (role 'activityecorelua_InputValue', cardinality 0..*).
+'activityecorelua::Statement::Local::Variable::Declaration' (role 'activityecorelua_Statement_Local_Variable_Declaration', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression191', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression213', cardinality 0..*) is associated with 'activityecorelua::Statement::CallMemberFunction' (role 'activityecorelua_Statement_CallMemberFunction', cardinality 0..*).
+'activityecorelua::Expression::Smaller::Equal' (role 'activityecorelua_Expression_Smaller_Equal', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression248', cardinality 0..*).
+'activityecorelua::Expression::CallFunction' (role 'activityecorelua_Expression_CallFunction', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression309', cardinality 0..*).
+'activityecorelua::EReference' (role 'activityecorelua_EReference80', cardinality 0..*) is associated with 'activityecorelua::EAttribute' (role 'activityecorelua_EAttribute81', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass38', cardinality 0..*).
+'activityecorelua::EAnnotation' (role 'eAnnotations', cardinality 0..*) is associated with 'activityecorelua::EModelElement' (role 'EModelElement', cardinality 0..*).
+'activityecorelua::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'EClass83', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block142', cardinality 0..*) is associated with 'activityecorelua::LastStatement' (role 'activityecorelua_LastStatement', cardinality 0..*).
+'activityecorelua::Expression::AccessArray' (role 'activityecorelua_Expression_AccessArray', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression314', cardinality 0..*).
+'activityecorelua::Functioncall::Arguments' (role 'activityecorelua_Functioncall_Arguments312', cardinality 0..*) is associated with 'activityecorelua::Expression::CallFunction' (role 'activityecorelua_Expression_CallFunction311', cardinality 0..*).
+'activityecorelua::Activity' (role 'activityecorelua_Activity114', cardinality 0..*) is associated with 'activityecorelua::Variable' (role 'activityecorelua_Variable', cardinality 0..*).
+'activityecorelua::EOperation' (role 'eOperation', cardinality 0..*) is associated with 'activityecorelua::EParameter' (role 'EParameter', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression295', cardinality 0..*) is associated with 'activityecorelua::Expression::Length' (role 'activityecorelua_Expression_Length', cardinality 0..*).
+'activityecorelua::EOperation' (role 'activityecorelua_EOperation', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass26', cardinality 0..*).
+'activityecorelua::ActivityNode' (role 'target', cardinality 0..*) is associated with 'activityecorelua::ActivityEdge' (role 'ActivityEdge120', cardinality 0..*).
+'activityecorelua::Block' (role 'activityecorelua_Block164', cardinality 0..*) is associated with 'activityecorelua::Statement::If::Then::Else' (role 'activityecorelua_Statement_If_Then_Else163', cardinality 0..*).
+'activityecorelua::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'activityecorelua::ActivityNode' (role 'ActivityNode125', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression246', cardinality 0..*) is associated with 'activityecorelua::Expression::Smaller' (role 'activityecorelua_Expression_Smaller245', cardinality 0..*).
+'activityecorelua::Expression::AccessArray' (role 'activityecorelua_Expression_AccessArray316', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression317', cardinality 0..*).
+'activityecorelua::EObject' (role 'activityecorelua_EObject', cardinality 0..*) is associated with 'activityecorelua::EAnnotation' (role 'activityecorelua_EAnnotation4', cardinality 0..*).
+'activityecorelua::Expression::Invert' (role 'activityecorelua_Expression_Invert', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression297', cardinality 0..*).
+'activityecorelua::ETypeParameter' (role 'activityecorelua_ETypeParameter103', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType102', cardinality 0..*).
+'activityecorelua::EReference' (role 'activityecorelua_EReference77', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'activityecorelua_EClass78', cardinality 0..*).
+'activityecorelua::Function' (role 'activityecorelua_Function', cardinality 0..*) is associated with 'activityecorelua::Statement::GlobalFunction::Declaration' (role 'activityecorelua_Statement_GlobalFunction_Declaration', cardinality 0..*).
+'activityecorelua::Statement::Assignment' (role 'activityecorelua_Statement_Assignment210', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression211', cardinality 0..*).
+'activityecorelua::Expression::Concatenation' (role 'activityecorelua_Expression_Concatenation', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression263', cardinality 0..*).
+'activityecorelua::Statement::If::Then::Else::ElseIfPart' (role 'activityecorelua_Statement_If_Then_Else_ElseIfPart166', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression167', cardinality 0..*).
+'activityecorelua::Function' (role 'activityecorelua_Function189', cardinality 0..*) is associated with 'activityecorelua::Statement::LocalFunction::Declaration' (role 'activityecorelua_Statement_LocalFunction_Declaration', cardinality 0..*).
+'activityecorelua::Expression::Modulo' (role 'activityecorelua_Expression_Modulo290', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression291', cardinality 0..*).
+'activityecorelua::Variable' (role 'activityecorelua_Variable137', cardinality 0..*) is associated with 'activityecorelua::InputValue' (role 'activityecorelua_InputValue136', cardinality 0..*).
+'activityecorelua::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'eContainingClass36', cardinality 0..*).
+'activityecorelua::Expression::Or' (role 'activityecorelua_Expression_Or225', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression226', cardinality 0..*).
+'activityecorelua::EOperation' (role 'EOperation72', cardinality 0..*) is associated with 'activityecorelua::EParameter' (role 'eParameters', cardinality 0..*).
+'activityecorelua::Function' (role 'activityecorelua_Function196', cardinality 0..*) is associated with 'activityecorelua::Block' (role 'activityecorelua_Block197', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression204', cardinality 0..*) is associated with 'activityecorelua::Field::AddEntryToTable::Brackets' (role 'activityecorelua_Field_AddEntryToTable_Brackets', cardinality 0..*).
+'activityecorelua::EClass' (role 'activityecorelua_EClass15', cardinality 0..*) is associated with 'activityecorelua::EReference' (role 'activityecorelua_EReference', cardinality 0..*).
+'activityecorelua::EPackage' (role 'EPackage70', cardinality 0..*) is associated with 'activityecorelua::EPackage' (role 'eSubpackages', cardinality 0..*).
+'activityecorelua::EEnum' (role 'EEnum', cardinality 0..*) is associated with 'activityecorelua::EEnumLiteral' (role 'eLiterals', cardinality 0..*).
+'activityecorelua::ActivityEdge' (role 'outgoing', cardinality 0..*) is associated with 'activityecorelua::ActivityNode' (role 'ActivityNode123', cardinality 0..*).
+'activityecorelua::Statement::If::Then::Else' (role 'activityecorelua_Statement_If_Then_Else158', cardinality 0..*) is associated with 'activityecorelua::Block' (role 'activityecorelua_Block159', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType105', cardinality 0..*) is associated with 'activityecorelua::EClassifier' (role 'activityecorelua_EClassifier106', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression172', cardinality 0..*) is associated with 'activityecorelua::Statement::For::Numeric' (role 'activityecorelua_Statement_For_Numeric', cardinality 0..*).
+'activityecorelua::EClassifier' (role 'EClassifier', cardinality 0..*) is associated with 'activityecorelua::EPackage' (role 'ePackage64', cardinality 0..*).
+'activityecorelua::Expression::Larger::Equal' (role 'activityecorelua_Expression_Larger_Equal', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression238', cardinality 0..*).
+'activityecorelua::EOperation' (role 'EOperation', cardinality 0..*) is associated with 'activityecorelua::EClass' (role 'eContainingClass', cardinality 0..*).
+'activityecorelua::Statement' (role 'activityecorelua_Statement', cardinality 0..*) is associated with 'activityecorelua::Block' (role 'activityecorelua_Block', cardinality 0..*).
+'activityecorelua::Expression::Multiplication' (role 'activityecorelua_Expression_Multiplication280', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression281', cardinality 0..*).
+'activityecorelua::Expression' (role 'activityecorelua_Expression258', cardinality 0..*) is associated with 'activityecorelua::Expression::Not::Equal' (role 'activityecorelua_Expression_Not_Equal', cardinality 0..*).
+'activityecorelua::EModelElement' (role 'eModelElement', cardinality 0..*) is associated with 'activityecorelua::EAnnotation' (role 'EAnnotation', cardinality 0..*).
+'activityecorelua::Expression::Minus' (role 'activityecorelua_Expression_Minus', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression273', cardinality 0..*).
+'activityecorelua::EOperation' (role 'activityecorelua_EOperation51', cardinality 0..*) is associated with 'activityecorelua::ETypeParameter' (role 'activityecorelua_ETypeParameter52', cardinality 0..*).
+'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType89', cardinality 0..*) is associated with 'activityecorelua::EGenericType' (role 'activityecorelua_EGenericType91', cardinality 0..*).
+'activityecorelua::Expression::CallMemberFunction' (role 'activityecorelua_Expression_CallMemberFunction', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression304', cardinality 0..*).
+'activityecorelua::Expression::Or' (role 'activityecorelua_Expression_Or', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression223', cardinality 0..*).
+'activityecorelua::Statement::If::Then::Else' (role 'activityecorelua_Statement_If_Then_Else', cardinality 0..*) is associated with 'activityecorelua::Expression' (role 'activityecorelua_Expression156', cardinality 0..*).

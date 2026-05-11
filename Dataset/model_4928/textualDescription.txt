@@ -1,0 +1,37 @@
+The model has 17 class(es).
+The class 'bootstrap::TextArea' has no attributes.
+The class 'FormWidget' has no attributes.
+The class 'bootstrap::Spinner' has the following attributes: 'values' of type str.
+The class 'bootstrap::Site' has the following attributes: 'title' of type str.
+The class 'Widget' has no attributes.
+The class 'bootstrap::Page' has the following attributes: 'name' of type str; 'description' of type str; 'title' of type str.
+The class 'bootstrap::CheckBox' has the following attributes: 'description' of type str.
+The class 'bootstrap::FormWidget' has the following attributes: 'label' of type str.
+The class 'bootstrap::Text' has the following attributes: 'columnNumber' of type int.
+The class 'bootstrap::Gallery' has the following attributes: 'imagesPath' of type str.
+The class 'bootstrap::Video' has the following attributes: 'path' of type str.
+The class 'bootstrap::Table' has the following attributes: 'columnNames' of type str; 'rowNames' of type str; 'bordered' of type bool; 'striped' of type bool.
+The class 'bootstrap::Section' has the following attributes: 'description' of type str; 'title' of type str.
+The class 'bootstrap::ImagesBlock' has the following attributes: 'imagesPath' of type str.
+The class 'bootstrap::Form' has no attributes.
+The class 'bootstrap::MainPage' has the following attributes: 'title' of type str; 'description' of type str.
+The class 'bootstrap::Widget' has the following attributes: 'title' of type str.
+'bootstrap::Text' is a specialization of 'Widget'.
+'bootstrap::ImagesBlock' is a specialization of 'Widget'.
+'bootstrap::Spinner' is a specialization of 'FormWidget'.
+'bootstrap::TextArea' is a specialization of 'FormWidget'.
+'bootstrap::Gallery' is a specialization of 'Widget'.
+'bootstrap::Form' is a specialization of 'Widget'.
+'bootstrap::Video' is a specialization of 'Widget'.
+'bootstrap::Table' is a specialization of 'Widget'.
+'bootstrap::CheckBox' is a specialization of 'FormWidget'.
+'bootstrap::Section' (role 'Section11', cardinality 0..*) is associated with 'bootstrap::Widget' (role 'widgets', cardinality 0..*).
+'bootstrap::FormWidget' (role 'formWidgets', cardinality 0..*) is associated with 'bootstrap::Form' (role 'Form', cardinality 0..*).
+'bootstrap::MainPage' (role 'MainPage', cardinality 0..*) is associated with 'bootstrap::Site' (role 'site2', cardinality 0..*).
+'bootstrap::Section' (role 'Section', cardinality 0..*) is associated with 'bootstrap::Page' (role 'page', cardinality 0..*).
+'bootstrap::Site' (role 'Site', cardinality 0..*) is associated with 'bootstrap::Page' (role 'pages', cardinality 0..*).
+'bootstrap::Section' (role 'section', cardinality 0..*) is associated with 'bootstrap::Widget' (role 'Widget', cardinality 0..*).
+'bootstrap::Site' (role 'site', cardinality 0..*) is associated with 'bootstrap::Page' (role 'Page', cardinality 0..*).
+'bootstrap::MainPage' (role 'mainPage', cardinality 0..*) is associated with 'bootstrap::Site' (role 'Site6', cardinality 0..*).
+'bootstrap::Page' (role 'Page9', cardinality 0..*) is associated with 'bootstrap::Section' (role 'sections', cardinality 0..*).
+'bootstrap::Form' (role 'form', cardinality 0..*) is associated with 'bootstrap::FormWidget' (role 'FormWidget', cardinality 0..*).

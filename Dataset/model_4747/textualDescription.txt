@@ -1,0 +1,29 @@
+The model has 14 class(es).
+The class 'wappm::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'wappm::Reference' has the following attributes: 'lowBound' of type int; 'upBound' of type int; 'name' of type str.
+The class 'wappm::DetailPage' has no attributes.
+The class 'wappm::StaticPage' has no attributes.
+The class 'wappm::ContentLayer' has the following attributes: 'contentName' of type str.
+The class 'wappm::DynamicPage' has no attributes.
+The class 'DynamicPage' has no attributes.
+The class 'wappm::Link' has no attributes.
+The class 'wappm::WebModel' has the following attributes: 'name' of type str.
+The class 'Page' has no attributes.
+The class 'wappm::HypertextLayer' has the following attributes: 'hyperName' of type str.
+The class 'wappm::Page' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'wappm::WebClass' has the following attributes: 'name' of type str.
+The class 'wappm::IndexPage' has the following attributes: 'size' of type int.
+The enumeration 'AppTypes' has the following literals: 'String', 'Double', 'Integer', 'Float', 'Boolean'.
+'wappm::StaticPage' is a specialization of 'Page'.
+'wappm::DetailPage' is a specialization of 'DynamicPage'.
+'wappm::DynamicPage' is a specialization of 'Page'.
+'wappm::IndexPage' is a specialization of 'DynamicPage'.
+'wappm::Page' (role 'wappm_Page6', cardinality 0..*) is associated with 'wappm::Link' (role 'wappm_Link', cardinality 0..*).
+'wappm::WebClass' (role 'wappm_WebClass17', cardinality 0..*) is associated with 'wappm::Reference' (role 'wappm_Reference', cardinality 0..*).
+'wappm::Attribute' (role 'wappm_Attribute', cardinality 0..*) is associated with 'wappm::WebClass' (role 'wappm_WebClass15', cardinality 0..*).
+'wappm::HypertextLayer' (role 'wappm_HypertextLayer', cardinality 0..*) is associated with 'wappm::WebModel' (role 'wappm_WebModel', cardinality 0..*).
+'wappm::ContentLayer' (role 'wappm_ContentLayer', cardinality 0..*) is associated with 'wappm::WebModel' (role 'wappm_WebModel2', cardinality 0..*).
+'wappm::Page' (role 'wappm_Page10', cardinality 0..*) is associated with 'wappm::Link' (role 'wappm_Link9', cardinality 0..*).
+'wappm::WebClass' (role 'wappm_WebClass13', cardinality 0..*) is associated with 'wappm::ContentLayer' (role 'wappm_ContentLayer12', cardinality 0..*).
+'wappm::HypertextLayer' (role 'wappm_HypertextLayer4', cardinality 0..*) is associated with 'wappm::Page' (role 'wappm_Page', cardinality 0..*).
+'wappm::DynamicPage' (role 'wappm_DynamicPage', cardinality 0..*) is associated with 'wappm::WebClass' (role 'wappm_WebClass', cardinality 0..*).

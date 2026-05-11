@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'CoachBusWithEDataType::Coach' has the following attributes: 'noOfSeats' of type int.

@@ -1,0 +1,40 @@
+The model has 17 class(es).
+The class 'inherlink::Named' has the following attributes: 'name' of type str.
+The class 'inherlink::Y' has no attributes.
+The class 'Named' has no attributes.
+The class 'inherlink::K' has no attributes.
+The class 'inherlink::T' has no attributes.
+The class 'inherlink::L' has no attributes.
+The class 'inherlink::R' has no attributes.
+The class 'inherlink::W' has no attributes.
+The class 'inherlink::C' has no attributes.
+The class 'R' has no attributes.
+The class 'inherlink::X' has no attributes.
+The class 'L' has no attributes.
+The class 'inherlink::A' has no attributes.
+The class 'inherlink::M' has no attributes.
+The class 'inherlink::N' has no attributes.
+The class 'inherlink::P' has no attributes.
+The class 'inherlink::G' has no attributes.
+'inherlink::R' is a specialization of 'Named'.
+'inherlink::Y' is a specialization of 'R'.
+'inherlink::L' is a specialization of 'Named'.
+'inherlink::K' is a specialization of 'R'.
+'inherlink::W' is a specialization of 'L'.
+'inherlink::X' is a specialization of 'L'.
+'inherlink::N' is a specialization of 'R'.
+'inherlink::M' is a specialization of 'L'.
+'inherlink::P' (role 'inherlink_P', cardinality 0..*) is associated with 'inherlink::Y' (role 'inherlink_Y', cardinality 0..*).
+'inherlink::L' (role 'inherlink_L22', cardinality 0..*) is associated with 'inherlink::A' (role 'inherlink_A21', cardinality 0..*).
+'inherlink::Y' (role 'inherlink_Y9', cardinality 0..*) is associated with 'inherlink::G' (role 'inherlink_G', cardinality 0..*).
+'inherlink::R' (role 'inherlink_R', cardinality 0..*) is associated with 'inherlink::A' (role 'inherlink_A19', cardinality 0..*).
+'inherlink::P' (role 'inherlink_P27', cardinality 0..*) is associated with 'inherlink::T' (role 'inherlink_T28', cardinality 0..*).
+'inherlink::C' (role 'inherlink_C2', cardinality 0..*) is associated with 'inherlink::M' (role 'inherlink_M', cardinality 0..*).
+'inherlink::C' (role 'inherlink_C6', cardinality 0..*) is associated with 'inherlink::N' (role 'inherlink_N', cardinality 0..*).
+'inherlink::C' (role 'inherlink_C', cardinality 0..*) is associated with 'inherlink::K' (role 'inherlink_K', cardinality 0..*).
+'inherlink::K' (role 'inherlink_K15', cardinality 0..*) is associated with 'inherlink::Y' (role 'inherlink_Y16', cardinality 0..*).
+'inherlink::C' (role 'inherlink_C4', cardinality 0..*) is associated with 'inherlink::X' (role 'inherlink_X', cardinality 0..*).
+'inherlink::G' (role 'inherlink_G25', cardinality 0..*) is associated with 'inherlink::P' (role 'inherlink_P24', cardinality 0..*).
+'inherlink::K' (role 'inherlink_K13', cardinality 0..*) is associated with 'inherlink::W' (role 'inherlink_W', cardinality 0..*).
+'inherlink::A' (role 'inherlink_A', cardinality 0..*) is associated with 'inherlink::L' (role 'inherlink_L', cardinality 0..*).
+'inherlink::T' (role 'inherlink_T', cardinality 0..*) is associated with 'inherlink::Y' (role 'inherlink_Y11', cardinality 0..*).

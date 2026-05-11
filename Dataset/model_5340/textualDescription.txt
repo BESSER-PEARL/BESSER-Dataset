@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'B::B1' has the following attributes: 'name' of type str.
+The class 'B::B2' has the following attributes: 'name' of type str.
+'B::B1' (role 'B_B1', cardinality 0..*) is associated with 'B::B2' (role 'B_B2', cardinality 0..*).

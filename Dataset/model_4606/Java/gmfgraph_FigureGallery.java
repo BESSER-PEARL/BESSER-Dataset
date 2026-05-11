@@ -1,0 +1,45 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class gmfgraph_FigureGallery extends Identity {
+
+    private String implementationBundle;
+
+
+
+
+
+    private gmfgraph_Canvas gmfgraph_canvas;
+
+
+    public gmfgraph_FigureGallery(
+        String implementationBundle    ) {
+        super(
+        );
+        this.implementationBundle = implementationBundle;
+    }
+
+
+    public String getImplementationbundle() {
+        return implementationBundle;
+    }
+
+    public void setImplementationbundle(String implementationBundle) {
+        this.implementationBundle = implementationBundle;
+    }
+
+    public gmfgraph_Canvas getGmfgraph_canvas() {
+        return gmfgraph_canvas;
+    }
+
+    public void setGmfgraph_canvas(gmfgraph_Canvas gmfgraph_canvas) {
+        this.gmfgraph_canvas = gmfgraph_canvas;
+    }
+
+}

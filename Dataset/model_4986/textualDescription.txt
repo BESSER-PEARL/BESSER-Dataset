@@ -1,0 +1,36 @@
+The model has 16 class(es).
+The class 'dslComponent::DocumElt' has the following attributes: 'desc' of type str; 'name' of type str.
+The class 'Port' has no attributes.
+The class 'DocumElt' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'dslComponent::OutPort' has no attributes.
+The class 'dslComponent::Edge' has no attributes.
+The class 'dslComponent::SimpleState' has no attributes.
+The class 'dslComponent::InitialState' has no attributes.
+The class 'dslComponent::ControlSubsystem' has the following attributes: 'name' of type str.
+The class 'dslComponent::WTComponents' has the following attributes: 'id' of type str; 'author' of type str.
+The class 'dslComponent::Port' has the following attributes: 'name' of type str.
+The class 'dslComponent::StateMachine' has the following attributes: 'name' of type str.
+The class 'dslComponent::Subsystem' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'dslComponent::Vertex' has no attributes.
+The class 'dslComponent::InPort' has no attributes.
+The class 'dslComponent::Component' has the following attributes: 'id' of type str; 'name' of type str.
+'dslComponent::InPort' is a specialization of 'Port'.
+'dslComponent::Vertex' is a specialization of 'DocumElt'.
+'dslComponent::Edge' is a specialization of 'DocumElt'.
+'dslComponent::SimpleState' is a specialization of 'Vertex'.
+'dslComponent::InitialState' is a specialization of 'Vertex'.
+'dslComponent::OutPort' is a specialization of 'Port'.
+'dslComponent::Edge' (role 'incoming', cardinality 0..*) is associated with 'dslComponent::Vertex' (role 'Vertex21', cardinality 0..*).
+'dslComponent::StateMachine' (role 'dslComponent_StateMachine', cardinality 0..*) is associated with 'dslComponent::Component' (role 'dslComponent_Component11', cardinality 0..*).
+'dslComponent::Edge' (role 'Edge18', cardinality 0..*) is associated with 'dslComponent::Vertex' (role 'target', cardinality 0..*).
+'dslComponent::Vertex' (role 'source', cardinality 0..*) is associated with 'dslComponent::Edge' (role 'Edge', cardinality 0..*).
+'dslComponent::Subsystem' (role 'dslComponent_Subsystem5', cardinality 0..*) is associated with 'dslComponent::Subsystem' (role 'dslComponent_Subsystem7', cardinality 0..*).
+'dslComponent::Port' (role 'dslComponent_Port', cardinality 0..*) is associated with 'dslComponent::Component' (role 'dslComponent_Component9', cardinality 0..*).
+'dslComponent::Subsystem' (role 'dslComponent_Subsystem4', cardinality 0..*) is associated with 'dslComponent::Component' (role 'dslComponent_Component', cardinality 0..*).
+'dslComponent::StateMachine' (role 'dslComponent_StateMachine24', cardinality 0..*) is associated with 'dslComponent::ControlSubsystem' (role 'dslComponent_ControlSubsystem23', cardinality 0..*).
+'dslComponent::Subsystem' (role 'dslComponent_Subsystem2', cardinality 0..*) is associated with 'dslComponent::ControlSubsystem' (role 'dslComponent_ControlSubsystem', cardinality 0..*).
+'dslComponent::Edge' (role 'dslComponent_Edge', cardinality 0..*) is associated with 'dslComponent::StateMachine' (role 'dslComponent_StateMachine15', cardinality 0..*).
+'dslComponent::WTComponents' (role 'dslComponent_WTComponents', cardinality 0..*) is associated with 'dslComponent::Subsystem' (role 'dslComponent_Subsystem', cardinality 0..*).
+'dslComponent::Edge' (role 'outgoing', cardinality 0..*) is associated with 'dslComponent::Vertex' (role 'Vertex', cardinality 0..*).
+'dslComponent::StateMachine' (role 'dslComponent_StateMachine13', cardinality 0..*) is associated with 'dslComponent::Vertex' (role 'dslComponent_Vertex', cardinality 0..*).

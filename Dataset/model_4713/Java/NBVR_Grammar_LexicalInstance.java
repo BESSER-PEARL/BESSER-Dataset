@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class NBVR_Grammar_LexicalInstance extends Instance {
+
+
+
+
+    public NBVR_Grammar_LexicalInstance(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

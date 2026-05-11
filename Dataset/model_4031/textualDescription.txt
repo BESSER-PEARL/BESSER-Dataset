@@ -1,0 +1,115 @@
+The model has 55 class(es).
+The class 'uml::Feature' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'uml::Relationship' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'uml::Classifier' has the following attributes: 'isAbstract' of type str.
+The class 'StructuredClassifier' has no attributes.
+The class 'uml::ConnectableElement' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'uml::BehavioredClassifier' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'Package' has no attributes.
+The class 'uml::Type' has no attributes.
+The class 'uml::Property' has no attributes.
+The class 'DirectedRelationship' has no attributes.
+The class 'uml::EncapsulatedClassifier' has no attributes.
+The class 'uml::NamedElement' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'DeploymentTarget' has no attributes.
+The class 'Class' has no attributes.
+The class 'uml::TemplateableElement' has no attributes.
+The class 'uml::BehavioralFeature' has no attributes.
+The class 'uml::PackageableElement' has no attributes.
+The class 'ParameterableElement' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'uml::Generalization' has no attributes.
+The class 'uml::Element' has no attributes.
+The class 'uml::DirectedRelationship' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'uml::Dependency' has no attributes.
+The class 'uml::StructuralFeature' has no attributes.
+The class 'uml::ParameterableElement' has no attributes.
+The class 'Feature' has no attributes.
+The class 'uml::DeploymentTarget' has no attributes.
+The class 'uml::TypedElement' has no attributes.
+The class 'uml::Package' has no attributes.
+The class 'Type' has no attributes.
+The class 'uml::Operation' has no attributes.
+The class 'MultiplicityElement' has no attributes.
+The class 'uml::Parameter' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'uml::MultiplicityElement' has no attributes.
+The class 'uml::Namespace' has no attributes.
+The class 'uml::StructuredClassifier' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Element' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'TemplateableElement' has no attributes.
+The class 'uml::Behavior' has no attributes.
+The class 'EncapsulatedClassifier' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'uml::EModelElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uml::RedefinableElement' has no attributes.
+The class 'uml::Model' has no attributes.
+The class 'uml::Class' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'protected', 'public', 'package'.
+'uml::Property' is a specialization of 'StructuralFeature'.
+'uml::DeploymentTarget' is a specialization of 'NamedElement'.
+'uml::Class' is a specialization of 'EncapsulatedClassifier'.
+'uml::Package' is a specialization of 'PackageableElement'.
+'uml::Relationship' is a specialization of 'Element'.
+'uml::BehavioralFeature' is a specialization of 'Namespace'.
+'uml::TemplateableElement' is a specialization of 'Element'.
+'uml::ConnectableElement' is a specialization of 'TypedElement'.
+'uml::NamedElement' is a specialization of 'Element'.
+'uml::Classifier' is a specialization of 'TemplateableElement'.
+'uml::MultiplicityElement' is a specialization of 'Element'.
+'uml::Property' is a specialization of 'ConnectableElement'.
+'uml::EncapsulatedClassifier' is a specialization of 'StructuredClassifier'.
+'uml::StructuralFeature' is a specialization of 'TypedElement'.
+'uml::RedefinableElement' is a specialization of 'NamedElement'.
+'uml::BehavioredClassifier' is a specialization of 'Classifier'.
+'uml::DirectedRelationship' is a specialization of 'Relationship'.
+'uml::Type' is a specialization of 'PackageableElement'.
+'uml::TypedElement' is a specialization of 'NamedElement'.
+'uml::Parameter' is a specialization of 'ConnectableElement'.
+'uml::Classifier' is a specialization of 'RedefinableElement'.
+'uml::Dependency' is a specialization of 'PackageableElement'.
+'uml::Operation' is a specialization of 'TemplateableElement'.
+'uml::Classifier' is a specialization of 'Type'.
+'uml::Package' is a specialization of 'Namespace'.
+'uml::Model' is a specialization of 'Package'.
+'uml::Behavior' is a specialization of 'Class'.
+'uml::Feature' is a specialization of 'RedefinableElement'.
+'uml::Classifier' is a specialization of 'Namespace'.
+'uml::Parameter' is a specialization of 'MultiplicityElement'.
+'uml::BehavioralFeature' is a specialization of 'Feature'.
+'uml::StructuredClassifier' is a specialization of 'Classifier'.
+'uml::Element' is a specialization of 'EModelElement'.
+'uml::Dependency' is a specialization of 'DirectedRelationship'.
+'uml::StructuralFeature' is a specialization of 'MultiplicityElement'.
+'uml::PackageableElement' is a specialization of 'NamedElement'.
+'uml::Operation' is a specialization of 'BehavioralFeature'.
+'uml::StructuralFeature' is a specialization of 'Feature'.
+'uml::ConnectableElement' is a specialization of 'ParameterableElement'.
+'uml::Property' is a specialization of 'DeploymentTarget'.
+'uml::Generalization' is a specialization of 'DirectedRelationship'.
+'uml::ParameterableElement' is a specialization of 'Element'.
+'uml::Operation' is a specialization of 'ParameterableElement'.
+'uml::Class' is a specialization of 'BehavioredClassifier'.
+'uml::PackageableElement' is a specialization of 'ParameterableElement'.
+'uml::Package' is a specialization of 'TemplateableElement'.
+'uml::Namespace' is a specialization of 'NamedElement'.
+'uml::NamedElement' (role 'uml_NamedElement', cardinality 0..*) is associated with 'uml::Dependency' (role 'uml_Dependency', cardinality 0..*).
+'uml::Behavior' (role 'uml_Behavior', cardinality 0..*) is associated with 'uml::BehavioralFeature' (role 'uml_BehavioralFeature', cardinality 0..*).
+'uml::Type' (role 'uml_Type', cardinality 0..*) is associated with 'uml::TypedElement' (role 'uml_TypedElement', cardinality 0..*).
+'uml::Parameter' (role 'uml_Parameter', cardinality 0..*) is associated with 'uml::BehavioralFeature' (role 'uml_BehavioralFeature11', cardinality 0..*).
+'uml::Package' (role 'uml_Package', cardinality 0..*) is associated with 'uml::PackageableElement' (role 'uml_PackageableElement', cardinality 0..*).
+'uml::Class' (role 'uml_Class', cardinality 0..*) is associated with 'uml::Operation' (role 'uml_Operation', cardinality 0..*).
+'uml::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'uml::Classifier' (role 'specific', cardinality 0..*).
+'uml::Generalization' (role 'uml_Generalization', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier', cardinality 0..*).
+'uml::Property' (role 'uml_Property', cardinality 0..*) is associated with 'uml::StructuredClassifier' (role 'uml_StructuredClassifier', cardinality 0..*).
+'uml::Generalization' (role 'generalization', cardinality 0..*) is associated with 'uml::Classifier' (role 'Classifier', cardinality 0..*).
+'uml::Class' (role 'uml_Class5', cardinality 0..*) is associated with 'uml::Classifier' (role 'uml_Classifier6', cardinality 0..*).

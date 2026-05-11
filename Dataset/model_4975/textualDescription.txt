@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'ComponentLanguageDeep::OutPortInstance' has no attributes.
+The class 'ComponentLanguageDeep::PortInstance' has no attributes.
+The class 'ComponentLanguageDeep::OutPort' has no attributes.
+The class 'ComponentLanguageDeep::Component' has no attributes.
+The class 'ComponentLanguageDeep::InPort' has no attributes.
+The class 'PortInstance' has no attributes.
+The class 'ComponentLanguageDeep::Port' has no attributes.
+The class 'ComponentLanguageDeep::InPortInstance' has no attributes.
+The class 'ComponentLanguageDeep::Connector' has no attributes.
+The class 'Port' has no attributes.
+The class 'ComponentLanguageDeep::ComponentInstance' has no attributes.
+The class 'ComponentLanguageDeep::ConnectorInstance' has no attributes.
+'ComponentLanguageDeep::OutPortInstance' is a specialization of 'PortInstance'.
+'ComponentLanguageDeep::OutPort' is a specialization of 'Port'.
+'ComponentLanguageDeep::InPort' is a specialization of 'Port'.
+'ComponentLanguageDeep::InPortInstance' is a specialization of 'PortInstance'.
+'ComponentLanguageDeep::OutPortInstance' (role 'ComponentLanguageDeep_OutPortInstance', cardinality 0..*) is associated with 'ComponentLanguageDeep::OutPort' (role 'ComponentLanguageDeep_OutPort', cardinality 0..*).
+'ComponentLanguageDeep::PortInstance' (role 'ComponentLanguageDeep_PortInstance13', cardinality 0..*) is associated with 'ComponentLanguageDeep::ConnectorInstance' (role 'ComponentLanguageDeep_ConnectorInstance', cardinality 0..*).
+'ComponentLanguageDeep::Port' (role 'ComponentLanguageDeep_Port5', cardinality 0..*) is associated with 'ComponentLanguageDeep::Connector' (role 'ComponentLanguageDeep_Connector4', cardinality 0..*).
+'ComponentLanguageDeep::ComponentInstance' (role 'ComponentLanguageDeep_ComponentInstance10', cardinality 0..*) is associated with 'ComponentLanguageDeep::Component' (role 'ComponentLanguageDeep_Component11', cardinality 0..*).
+'ComponentLanguageDeep::ComponentInstance' (role 'ComponentLanguageDeep_ComponentInstance', cardinality 0..*) is associated with 'ComponentLanguageDeep::PortInstance' (role 'ComponentLanguageDeep_PortInstance', cardinality 0..*).
+'ComponentLanguageDeep::Connector' (role 'ComponentLanguageDeep_Connector19', cardinality 0..*) is associated with 'ComponentLanguageDeep::ConnectorInstance' (role 'ComponentLanguageDeep_ConnectorInstance18', cardinality 0..*).
+'ComponentLanguageDeep::InPort' (role 'ComponentLanguageDeep_InPort', cardinality 0..*) is associated with 'ComponentLanguageDeep::InPortInstance' (role 'ComponentLanguageDeep_InPortInstance', cardinality 0..*).
+'ComponentLanguageDeep::PortInstance' (role 'ComponentLanguageDeep_PortInstance16', cardinality 0..*) is associated with 'ComponentLanguageDeep::ConnectorInstance' (role 'ComponentLanguageDeep_ConnectorInstance15', cardinality 0..*).
+'ComponentLanguageDeep::Port' (role 'ComponentLanguageDeep_Port', cardinality 0..*) is associated with 'ComponentLanguageDeep::Component' (role 'ComponentLanguageDeep_Component', cardinality 0..*).
+'ComponentLanguageDeep::Port' (role 'ComponentLanguageDeep_Port2', cardinality 0..*) is associated with 'ComponentLanguageDeep::Connector' (role 'ComponentLanguageDeep_Connector', cardinality 0..*).

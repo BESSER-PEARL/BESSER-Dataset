@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'turtlebotmission::Area' has the following attributes: 'ymax' of type int; 'xmax' of type int.
+The class 'turtlebotmission::ReturnToStartTask' has no attributes.
+The class 'turtlebotmission::WaypointType' has no attributes.
+The class 'turtlebotmission::ShortestPathTask' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'turtlebotmission::WayPoint' has the following attributes: 'coord_x' of type int; 'coord_y' of type int.
+The class 'Task' has no attributes.
+The class 'turtlebotmission::TurtleBot' has no attributes.
+The class 'turtlebotmission::NamedElement' has the following attributes: 'name' of type str.
+The class 'turtlebotmission::LineTask' has no attributes.
+The class 'turtlebotmission::Mission' has no attributes.
+The class 'turtlebotmission::Task' has no attributes.
+'turtlebotmission::WayPoint' is a specialization of 'NamedElement'.
+'turtlebotmission::ShortestPathTask' is a specialization of 'Task'.
+'turtlebotmission::ReturnToStartTask' is a specialization of 'Task'.
+'turtlebotmission::LineTask' is a specialization of 'Task'.
+'turtlebotmission::WaypointType' is a specialization of 'NamedElement'.
+'turtlebotmission::TurtleBot' is a specialization of 'NamedElement'.
+'turtlebotmission::Mission' is a specialization of 'NamedElement'.
+'turtlebotmission::LineTask' (role 'turtlebotmission_LineTask', cardinality 0..*) is associated with 'turtlebotmission::WayPoint' (role 'turtlebotmission_WayPoint16', cardinality 0..*).
+'turtlebotmission::Mission' (role 'turtlebotmission_Mission', cardinality 0..*) is associated with 'turtlebotmission::TurtleBot' (role 'turtlebotmission_TurtleBot9', cardinality 0..*).
+'turtlebotmission::Area' (role 'turtlebotmission_Area', cardinality 0..*) is associated with 'turtlebotmission::TurtleBot' (role 'turtlebotmission_TurtleBot', cardinality 0..*).
+'turtlebotmission::Task' (role 'turtlebotmission_Task', cardinality 0..*) is associated with 'turtlebotmission::Mission' (role 'turtlebotmission_Mission14', cardinality 0..*).
+'turtlebotmission::TurtleBot' (role 'turtlebotmission_TurtleBot2', cardinality 0..*) is associated with 'turtlebotmission::WaypointType' (role 'turtlebotmission_WaypointType', cardinality 0..*).
+'turtlebotmission::ShortestPathTask' (role 'turtlebotmission_ShortestPathTask', cardinality 0..*) is associated with 'turtlebotmission::WayPoint' (role 'turtlebotmission_WayPoint18', cardinality 0..*).
+'turtlebotmission::WayPoint' (role 'turtlebotmission_WayPoint11', cardinality 0..*) is associated with 'turtlebotmission::WaypointType' (role 'turtlebotmission_WaypointType12', cardinality 0..*).
+'turtlebotmission::TurtleBot' (role 'turtlebotmission_TurtleBot6', cardinality 0..*) is associated with 'turtlebotmission::WayPoint' (role 'turtlebotmission_WayPoint7', cardinality 0..*).
+'turtlebotmission::WayPoint' (role 'turtlebotmission_WayPoint', cardinality 0..*) is associated with 'turtlebotmission::TurtleBot' (role 'turtlebotmission_TurtleBot4', cardinality 0..*).

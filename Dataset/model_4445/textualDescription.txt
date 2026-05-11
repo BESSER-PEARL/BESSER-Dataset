@@ -1,0 +1,44 @@
+The model has 15 class(es).
+The class 'arduinoML::Brick' has the following attributes: 'pin' of type int.
+The class 'arduinoML::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduinoML::Transition' has the following attributes: 'd_values' of type str; 'time' of type int; 'comp' of type str; 'a_values' of type int; 'unit' of type str.
+The class 'Brick' has no attributes.
+The class 'arduinoML::Actuator' has no attributes.
+The class 'arduinoML::TransitionState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'arduinoML::App' has the following attributes: 'monitoring' of type bool.
+The class 'arduinoML::TransitionMode' has no attributes.
+The class 'arduinoML::Analog' has the following attributes: 'debug' of type bool.
+The class 'arduinoML::Digital' has no attributes.
+The class 'arduinoML::Mode' has no attributes.
+The class 'arduinoML::State' has no attributes.
+The class 'arduinoML::Action' has the following attributes: 'value' of type str.
+The enumeration 'Compare' has the following literals: 'sup', 'equal', 'inf', 'esup', 'einf'.
+The enumeration 'Time_unit' has the following literals: 's', 'ms', 'min'.
+The enumeration 'Signal' has the following literals: 'HIGH', 'LOW'.
+'arduinoML::Digital' is a specialization of 'Brick'.
+'arduinoML::Analog' is a specialization of 'Brick'.
+'arduinoML::Brick' is a specialization of 'NamedElement'.
+'arduinoML::App' is a specialization of 'NamedElement'.
+'arduinoML::TransitionMode' is a specialization of 'Transition'.
+'arduinoML::State' is a specialization of 'NamedElement'.
+'arduinoML::Actuator' is a specialization of 'Brick'.
+'arduinoML::TransitionState' is a specialization of 'Transition'.
+'arduinoML::Mode' is a specialization of 'NamedElement'.
+'arduinoML::Mode' (role 'Mode', cardinality 0..*) is associated with 'arduinoML::TransitionMode' (role 'transitions_mode', cardinality 0..*).
+'arduinoML::Mode' (role 'arduinoML_Mode3', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App2', cardinality 0..*).
+'arduinoML::Mode' (role 'arduinoML_Mode28', cardinality 0..*) is associated with 'arduinoML::TransitionMode' (role 'arduinoML_TransitionMode', cardinality 0..*).
+'arduinoML::Mode' (role 'arduinoML_Mode20', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State21', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State24', cardinality 0..*) is associated with 'arduinoML::TransitionState' (role 'arduinoML_TransitionState', cardinality 0..*).
+'arduinoML::Action' (role 'arduinoML_Action', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State', cardinality 0..*).
+'arduinoML::State' (role 'state', cardinality 0..*) is associated with 'arduinoML::TransitionState' (role 'TransitionState', cardinality 0..*).
+'arduinoML::Action' (role 'arduinoML_Action9', cardinality 0..*) is associated with 'arduinoML::Actuator' (role 'arduinoML_Actuator', cardinality 0..*).
+'arduinoML::Digital' (role 'arduinoML_Digital', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition', cardinality 0..*).
+'arduinoML::Analog' (role 'arduinoML_Analog', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition12', cardinality 0..*).
+'arduinoML::Mode' (role 'arduinoML_Mode14', cardinality 0..*) is associated with 'arduinoML::Brick' (role 'arduinoML_Brick15', cardinality 0..*).
+'arduinoML::Mode' (role 'arduinoML_Mode17', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State18', cardinality 0..*).
+'arduinoML::TransitionState' (role 'transitions_state', cardinality 0..*) is associated with 'arduinoML::State' (role 'State', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App5', cardinality 0..*) is associated with 'arduinoML::Brick' (role 'arduinoML_Brick', cardinality 0..*).
+'arduinoML::Mode' (role 'mode', cardinality 0..*) is associated with 'arduinoML::TransitionMode' (role 'TransitionMode', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App', cardinality 0..*) is associated with 'arduinoML::Mode' (role 'arduinoML_Mode', cardinality 0..*).

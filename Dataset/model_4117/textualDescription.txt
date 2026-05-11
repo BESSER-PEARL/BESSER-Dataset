@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'wh::Input' has the following attributes: 'variable' of type str.
+The class 'wh::Output' has the following attributes: 'variable' of type str.
+The class 'wh::Program' has no attributes.
+The class 'wh::Commands' has the following attributes: 'command' of type str.
+The class 'wh::Definition' has no attributes.
+The class 'wh::Function' has the following attributes: 'name' of type str.
+The class 'wh::Model' has no attributes.
+'wh::Function' (role 'wh_Function', cardinality 0..*) is associated with 'wh::Program' (role 'wh_Program2', cardinality 0..*).
+'wh::Output' (role 'wh_Output', cardinality 0..*) is associated with 'wh::Definition' (role 'wh_Definition13', cardinality 0..*).
+'wh::Program' (role 'wh_Program5', cardinality 0..*) is associated with 'wh::Program' (role 'wh_Program3', cardinality 0..*).
+'wh::Program' (role 'wh_Program', cardinality 0..*) is associated with 'wh::Model' (role 'wh_Model', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands20', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands22', cardinality 0..*).
+'wh::Output' (role 'wh_Output19', cardinality 0..*) is associated with 'wh::Output' (role 'wh_Output17', cardinality 0..*).
+'wh::Input' (role 'wh_Input', cardinality 0..*) is associated with 'wh::Definition' (role 'wh_Definition9', cardinality 0..*).
+'wh::Input' (role 'wh_Input14', cardinality 0..*) is associated with 'wh::Input' (role 'wh_Input16', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition', cardinality 0..*) is associated with 'wh::Function' (role 'wh_Function7', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition11', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'lexertrace::Model' has no attributes.
+The class 'lexertrace::Greeting' has the following attributes: 'name' of type str.
+'lexertrace::Greeting' (role 'lexertrace_Greeting', cardinality 0..*) is associated with 'lexertrace::Model' (role 'lexertrace_Model', cardinality 0..*).

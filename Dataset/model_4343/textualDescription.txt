@@ -1,0 +1,45 @@
+The model has 17 class(es).
+The class 'migration::EPackage' has no attributes.
+The class 'migration::AbstractResource' has the following attributes: 'uri' of type str; 'encoding' of type str.
+The class 'migration::Repository' has no attributes.
+The class 'migration::ReferenceSlot' has no attributes.
+The class 'Slot' has no attributes.
+The class 'migration::Instance' has the following attributes: 'uri' of type str; 'uuid' of type str.
+The class 'migration::MetamodelResource' has no attributes.
+The class 'AbstractResource' has no attributes.
+The class 'migration::Metamodel' has no attributes.
+The class 'migration::Model' has the following attributes: 'reflection' of type bool.
+The class 'migration::EClass' has no attributes.
+The class 'migration::Slot' has no attributes.
+The class 'migration::AttributeSlot' has the following attributes: 'values' of type str.
+The class 'migration::EReference' has no attributes.
+The class 'migration::EAttribute' has no attributes.
+The class 'migration::Type' has no attributes.
+The class 'migration::ModelResource' has no attributes.
+'migration::ModelResource' is a specialization of 'AbstractResource'.
+'migration::ReferenceSlot' is a specialization of 'Slot'.
+'migration::MetamodelResource' is a specialization of 'AbstractResource'.
+'migration::AttributeSlot' is a specialization of 'Slot'.
+'migration::Metamodel' (role 'Metamodel', cardinality 0..*) is associated with 'migration::Repository' (role 'repository2', cardinality 0..*).
+'migration::MetamodelResource' (role 'MetamodelResource', cardinality 0..*) is associated with 'migration::Metamodel' (role 'metamodel', cardinality 0..*).
+'migration::EPackage' (role 'migration_EPackage', cardinality 0..*) is associated with 'migration::Metamodel' (role 'migration_Metamodel31', cardinality 0..*).
+'migration::EReference' (role 'migration_EReference', cardinality 0..*) is associated with 'migration::ReferenceSlot' (role 'migration_ReferenceSlot', cardinality 0..*).
+'migration::Instance' (role 'Instance', cardinality 0..*) is associated with 'migration::Type' (role 'type', cardinality 0..*).
+'migration::Metamodel' (role 'migration_Metamodel', cardinality 0..*) is associated with 'migration::Model' (role 'migration_Model', cardinality 0..*).
+'migration::Instance' (role 'instance', cardinality 0..*) is associated with 'migration::Slot' (role 'Slot', cardinality 0..*).
+'migration::ModelResource' (role 'resources', cardinality 0..*) is associated with 'migration::Model' (role 'Model11', cardinality 0..*).
+'migration::Type' (role 'migration_Type', cardinality 0..*) is associated with 'migration::EClass' (role 'migration_EClass', cardinality 0..*).
+'migration::EAttribute' (role 'migration_EAttribute', cardinality 0..*) is associated with 'migration::AttributeSlot' (role 'migration_AttributeSlot', cardinality 0..*).
+'migration::Instance' (role 'values', cardinality 0..*) is associated with 'migration::ReferenceSlot' (role 'ReferenceSlot', cardinality 0..*).
+'migration::Type' (role 'types', cardinality 0..*) is associated with 'migration::Model' (role 'Model15', cardinality 0..*).
+'migration::Instance' (role 'instances', cardinality 0..*) is associated with 'migration::Type' (role 'Type18', cardinality 0..*).
+'migration::Type' (role 'Type', cardinality 0..*) is associated with 'migration::Model' (role 'model', cardinality 0..*).
+'migration::ReferenceSlot' (role 'references', cardinality 0..*) is associated with 'migration::Instance' (role 'Instance25', cardinality 0..*).
+'migration::Metamodel' (role 'metamodel28', cardinality 0..*) is associated with 'migration::Repository' (role 'Repository29', cardinality 0..*).
+'migration::Metamodel' (role 'Metamodel36', cardinality 0..*) is associated with 'migration::MetamodelResource' (role 'resources35', cardinality 0..*).
+'migration::Repository' (role 'repository', cardinality 0..*) is associated with 'migration::Model' (role 'Model', cardinality 0..*).
+'migration::Instance' (role 'Instance21', cardinality 0..*) is associated with 'migration::Slot' (role 'slots', cardinality 0..*).
+'migration::Model' (role 'model6', cardinality 0..*) is associated with 'migration::ModelResource' (role 'ModelResource', cardinality 0..*).
+'migration::Repository' (role 'Repository', cardinality 0..*) is associated with 'migration::Model' (role 'model8', cardinality 0..*).
+'migration::EPackage' (role 'migration_EPackage33', cardinality 0..*) is associated with 'migration::MetamodelResource' (role 'migration_MetamodelResource', cardinality 0..*).
+'migration::Instance' (role 'migration_Instance', cardinality 0..*) is associated with 'migration::ModelResource' (role 'migration_ModelResource', cardinality 0..*).

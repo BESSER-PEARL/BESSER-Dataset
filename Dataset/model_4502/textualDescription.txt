@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'roverDSL::Robot' has the following attributes: 'defaultSpeed' of type int; 'slowSpeed' of type int; 'minAngle' of type int; 'maxAngle' of type int.
+The class 'roverDSL::DetectBottle' has the following attributes: 'maxDistance' of type int.
+The class 'roverDSL::Colors' has the following attributes: 'color' of type str.
+The class 'roverDSL::Mission' has the following attributes: 'id' of type str.
+The enumeration 'Color' has the following literals: 'blue', 'yellow', 'red'.
+'roverDSL::Mission' (role 'roverDSL_Mission4', cardinality 0..*) is associated with 'roverDSL::DetectBottle' (role 'roverDSL_DetectBottle', cardinality 0..*).
+'roverDSL::Mission' (role 'roverDSL_Mission6', cardinality 0..*) is associated with 'roverDSL::Colors' (role 'roverDSL_Colors7', cardinality 0..*).
+'roverDSL::Colors' (role 'roverDSL_Colors', cardinality 0..*) is associated with 'roverDSL::Mission' (role 'roverDSL_Mission2', cardinality 0..*).
+'roverDSL::Robot' (role 'roverDSL_Robot', cardinality 0..*) is associated with 'roverDSL::Mission' (role 'roverDSL_Mission', cardinality 0..*).

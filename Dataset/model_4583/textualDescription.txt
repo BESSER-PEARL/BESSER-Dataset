@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'device::Action' has no attributes.
+The class 'device::EJavaObject' has no attributes.
+The class 'device::Device' has the following attributes: 'name' of type str.
+The class 'EJavaObject' has no attributes.
+The class 'device::Object' has no attributes.
+The class 'device::Capture' has no attributes.
+The class 'device::Fonctionnalite' has the following attributes: 'name' of type str.
+The class 'device::Parametre' has the following attributes: 'name' of type str.
+The class 'device::Types' has no attributes.
+The class 'Fonctionnalite' has no attributes.
+'device::Action' is a specialization of 'Fonctionnalite'.
+'device::Object' is a specialization of 'EJavaObject'.
+'device::Capture' is a specialization of 'Fonctionnalite'.
+'device::Parametre' (role 'device_Parametre', cardinality 0..*) is associated with 'device::Fonctionnalite' (role 'device_Fonctionnalite4', cardinality 0..*).
+'device::Parametre' (role 'device_Parametre6', cardinality 0..*) is associated with 'device::EJavaObject' (role 'device_EJavaObject', cardinality 0..*).
+'device::EJavaObject' (role 'device_EJavaObject8', cardinality 0..*) is associated with 'device::Action' (role 'device_Action', cardinality 0..*).
+'device::Device' (role 'device_Device', cardinality 0..*) is associated with 'device::Types' (role 'device_Types', cardinality 0..*).
+'device::Fonctionnalite' (role 'device_Fonctionnalite', cardinality 0..*) is associated with 'device::Device' (role 'device_Device2', cardinality 0..*).

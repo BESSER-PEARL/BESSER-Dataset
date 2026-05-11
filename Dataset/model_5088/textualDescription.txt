@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'adl101::Component' has the following attributes: 'name' of type str.
+The class 'adl101::Binding' has no attributes.
+The class 'adl101::Required' has no attributes.
+The class 'adl101::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+The class 'Interface' has no attributes.
+The class 'adl101::Provided' has no attributes.
+The class 'adl101::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+'adl101::Provided' is a specialization of 'Interface'.
+'adl101::Required' is a specialization of 'Interface'.
+'adl101::Binding' (role 'adl101_Binding', cardinality 0..*) is associated with 'adl101::Interface' (role 'adl101_Interface', cardinality 0..*).
+'adl101::Binding' (role 'adl101_Binding5', cardinality 0..*) is associated with 'adl101::Interface' (role 'adl101_Interface6', cardinality 0..*).
+'adl101::Binding' (role 'adl101_Binding2', cardinality 0..*) is associated with 'adl101::Interface' (role 'adl101_Interface3', cardinality 0..*).
+'adl101::Component' (role 'adl101_Component11', cardinality 0..*) is associated with 'adl101::Required' (role 'adl101_Required', cardinality 0..*).
+'adl101::Component' (role 'adl101_Component8', cardinality 0..*) is associated with 'adl101::Component' (role 'adl101_Component', cardinality 0..*).
+'adl101::Content' (role 'content', cardinality 0..*) is associated with 'adl101::Component' (role 'Component', cardinality 0..*).
+'adl101::Component' (role 'contentParent', cardinality 0..*) is associated with 'adl101::Content' (role 'Content', cardinality 0..*).
+'adl101::Provided' (role 'adl101_Provided', cardinality 0..*) is associated with 'adl101::Component' (role 'adl101_Component13', cardinality 0..*).

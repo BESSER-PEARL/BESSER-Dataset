@@ -1,0 +1,51 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class defaultname_AREA extends BODYElement {
+
+    private String ahref;
+    private String coords;
+    private String shape;
+
+
+
+    public defaultname_AREA(
+        String ahref,        String coords,        String shape    ) {
+        super(
+        );
+        this.ahref = ahref;
+        this.coords = coords;
+        this.shape = shape;
+    }
+
+
+    public String getAhref() {
+        return ahref;
+    }
+
+    public void setAhref(String ahref) {
+        this.ahref = ahref;
+    }
+    public String getCoords() {
+        return coords;
+    }
+
+    public void setCoords(String coords) {
+        this.coords = coords;
+    }
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+
+}

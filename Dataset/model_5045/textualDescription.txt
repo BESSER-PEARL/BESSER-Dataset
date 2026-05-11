@@ -1,0 +1,75 @@
+The model has 16 class(es).
+The class 'RandL::Burning' has no attributes.
+The class 'RandL::LoyaltyProgram' has the following attributes: 'name' of type str.
+The class 'RandL::Earning' has no attributes.
+The class 'RandL::Membership' has no attributes.
+The class 'RandL::TransactionReport' has the following attributes: 'totalBurned' of type str; 'totalEarned' of type str; 'number' of type str; 'name' of type str; 'balance' of type str.
+The class 'RandL::LoyaltyAccount' has the following attributes: 'number' of type str; 'totalPointsEarned' of type str; 'points' of type str.
+The class 'RandL::ServiceLevel' has the following attributes: 'name' of type str.
+The class 'RandL::TransactionReportLine' has the following attributes: 'amount' of type str; 'points' of type str; 'serviceDesc' of type str; 'partnerName' of type str.
+The class 'RandL::Date' has the following attributes: 'day' of type str; 'year' of type str; 'month' of type str.
+The class 'RandL::ProgramPartner' has the following attributes: 'numberOfCustomers' of type str; 'name' of type str.
+The class 'Transaction' has no attributes.
+The class 'RandL::Transaction' has the following attributes: 'points' of type str; 'amount' of type str.
+The class 'RandL::Service' has the following attributes: 'description' of type str; 'serviceNr' of type str; 'pointsEarned' of type str; 'pointsBurned' of type str; 'condition' of type str.
+The class 'RandL::Customer' has the following attributes: 'title' of type str; 'name' of type str; 'age' of type str; 'isMale' of type str; 'gender' of type str.
+The class 'RandL::Container::RandL' has no attributes.
+The class 'RandL::CustomerCard' has the following attributes: 'color' of type str; 'printedName' of type str; 'valid' of type str.
+The enumeration 'RandLColor' has the following literals: 'gold', 'silver'.
+The enumeration 'Gender' has the following literals: 'female', 'male'.
+'RandL::Earning' is a specialization of 'Transaction'.
+'RandL::Burning' is a specialization of 'Transaction'.
+'RandL::ServiceLevel' (role 'RandL_ServiceLevel76', cardinality 0..*) is associated with 'RandL::Container::RandL' (role 'RandL_Container_RandL75', cardinality 0..*).
+'RandL::Service' (role 'RandL_Service65', cardinality 0..*) is associated with 'RandL::Container::RandL' (role 'RandL_Container_RandL64', cardinality 0..*).
+'RandL::CustomerCard' (role 'card', cardinality 0..*) is associated with 'RandL::Membership' (role 'Membership37', cardinality 0..*).
+'RandL::Burning' (role 'RandL_Burning', cardinality 0..*) is associated with 'RandL::Container::RandL' (role 'RandL_Container_RandL83', cardinality 0..*).
+'RandL::Service' (role 'availableServices', cardinality 0..*) is associated with 'RandL::ServiceLevel' (role 'ServiceLevel90', cardinality 0..*).
+'RandL::ServiceLevel' (role 'ServiceLevel111', cardinality 0..*) is associated with 'RandL::LoyaltyProgram' (role 'program', cardinality 0..*).
+'RandL::Date' (role 'RandL_Date56', cardinality 0..*) is associated with 'RandL::Container::RandL' (role 'RandL_Container_RandL55', cardinality 0..*).
+'RandL::Service' (role 'deliveredServices', cardinality 0..*) is associated with 'RandL::ProgramPartner' (role 'ProgramPartner', cardinality 0..*).
+'RandL::Membership' (role 'RandL_Membership117', cardinality 0..*) is associated with 'RandL::LoyaltyProgram' (role 'RandL_LoyaltyProgram116', cardinality 0..*).
+'RandL::TransactionReport' (role 'RandL_TransactionReport22', cardinality 0..*) is associated with 'RandL::Date' (role 'RandL_Date23', cardinality 0..*).
+'RandL::Transaction' (role 'Transaction88', cardinality 0..*) is associated with 'RandL::Service' (role 'generatedBy', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL', cardinality 0..*) is associated with 'RandL::Customer' (role 'RandL_Customer53', cardinality 0..*).
+'RandL::Transaction' (role 'transactions', cardinality 0..*) is associated with 'RandL::LoyaltyAccount' (role 'LoyaltyAccount', cardinality 0..*).
+'RandL::CustomerCard' (role 'RandL_CustomerCard31', cardinality 0..*) is associated with 'RandL::Date' (role 'RandL_Date32', cardinality 0..*).
+'RandL::CustomerCard' (role 'CustomerCard97', cardinality 0..*) is associated with 'RandL::Customer' (role 'owner', cardinality 0..*).
+'RandL::Membership' (role 'RandL_Membership51', cardinality 0..*) is associated with 'RandL::Customer' (role 'RandL_Customer', cardinality 0..*).
+'RandL::Transaction' (role 'Transaction', cardinality 0..*) is associated with 'RandL::LoyaltyAccount' (role 'account14', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL70', cardinality 0..*) is associated with 'RandL::Earning' (role 'RandL_Earning', cardinality 0..*).
+'RandL::LoyaltyProgram' (role 'programs', cardinality 0..*) is associated with 'RandL::ProgramPartner' (role 'ProgramPartner109', cardinality 0..*).
+'RandL::LoyaltyAccount' (role 'RandL_LoyaltyAccount', cardinality 0..*) is associated with 'RandL::Service' (role 'RandL_Service', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL72', cardinality 0..*) is associated with 'RandL::LoyaltyAccount' (role 'RandL_LoyaltyAccount73', cardinality 0..*).
+'RandL::LoyaltyAccount' (role 'account', cardinality 0..*) is associated with 'RandL::Membership' (role 'Membership12', cardinality 0..*).
+'RandL::LoyaltyProgram' (role 'programs113', cardinality 0..*) is associated with 'RandL::Customer' (role 'Customer114', cardinality 0..*).
+'RandL::LoyaltyProgram' (role 'LoyaltyProgram18', cardinality 0..*) is associated with 'RandL::ProgramPartner' (role 'partners', cardinality 0..*).
+'RandL::LoyaltyProgram' (role 'LoyaltyProgram95', cardinality 0..*) is associated with 'RandL::Customer' (role 'participants', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL78', cardinality 0..*) is associated with 'RandL::TransactionReport' (role 'RandL_TransactionReport79', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL67', cardinality 0..*) is associated with 'RandL::LoyaltyProgram' (role 'RandL_LoyaltyProgram68', cardinality 0..*).
+'RandL::Transaction' (role 'transactions9', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'CustomerCard', cardinality 0..*).
+'RandL::Transaction' (role 'Transaction40', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'card39', cardinality 0..*).
+'RandL::Membership' (role 'RandL_Membership', cardinality 0..*) is associated with 'RandL::LoyaltyProgram' (role 'RandL_LoyaltyProgram', cardinality 0..*).
+'RandL::ProgramPartner' (role 'partner', cardinality 0..*) is associated with 'RandL::Service' (role 'Service16', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL81', cardinality 0..*) is associated with 'RandL::ProgramPartner' (role 'RandL_ProgramPartner', cardinality 0..*).
+'RandL::CustomerCard' (role 'RandL_CustomerCard59', cardinality 0..*) is associated with 'RandL::Container::RandL' (role 'RandL_Container_RandL58', cardinality 0..*).
+'RandL::TransactionReport' (role 'TransactionReport', cardinality 0..*) is associated with 'RandL::TransactionReportLine' (role 'lines', cardinality 0..*).
+'RandL::Membership' (role 'Membership44', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'CustomerCard45', cardinality 0..*).
+'RandL::Date' (role 'RandL_Date103', cardinality 0..*) is associated with 'RandL::TransactionReportLine' (role 'RandL_TransactionReportLine102', cardinality 0..*).
+'RandL::Transaction' (role 'transactions6', cardinality 0..*) is associated with 'RandL::Service' (role 'Service7', cardinality 0..*).
+'RandL::TransactionReportLine' (role 'RandL_TransactionReportLine105', cardinality 0..*) is associated with 'RandL::Transaction' (role 'RandL_Transaction106', cardinality 0..*).
+'RandL::Customer' (role 'Customer', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'cards', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL85', cardinality 0..*) is associated with 'RandL::TransactionReportLine' (role 'RandL_TransactionReportLine', cardinality 0..*).
+'RandL::TransactionReport' (role 'RandL_TransactionReport', cardinality 0..*) is associated with 'RandL::Date' (role 'RandL_Date20', cardinality 0..*).
+'RandL::CustomerCard' (role 'RandL_CustomerCard', cardinality 0..*) is associated with 'RandL::TransactionReport' (role 'RandL_TransactionReport26', cardinality 0..*).
+'RandL::Service' (role 'Service', cardinality 0..*) is associated with 'RandL::ServiceLevel' (role 'level', cardinality 0..*).
+'RandL::Date' (role 'RandL_Date29', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'RandL_CustomerCard28', cardinality 0..*).
+'RandL::ServiceLevel' (role 'RandL_ServiceLevel', cardinality 0..*) is associated with 'RandL::CustomerCard' (role 'RandL_CustomerCard34', cardinality 0..*).
+'RandL::ServiceLevel' (role 'ServiceLevel', cardinality 0..*) is associated with 'RandL::Membership' (role 'Membership42', cardinality 0..*).
+'RandL::TransactionReportLine' (role 'TransactionReportLine', cardinality 0..*) is associated with 'RandL::TransactionReport' (role 'report', cardinality 0..*).
+'RandL::Date' (role 'RandL_Date', cardinality 0..*) is associated with 'RandL::Transaction' (role 'RandL_Transaction', cardinality 0..*).
+'RandL::Customer' (role 'RandL_Customer92', cardinality 0..*) is associated with 'RandL::Date' (role 'RandL_Date93', cardinality 0..*).
+'RandL::LoyaltyProgram' (role 'LoyaltyProgram', cardinality 0..*) is associated with 'RandL::ServiceLevel' (role 'levels', cardinality 0..*).
+'RandL::ServiceLevel' (role 'currentLevel', cardinality 0..*) is associated with 'RandL::Membership' (role 'Membership', cardinality 0..*).
+'RandL::Membership' (role 'Membership47', cardinality 0..*) is associated with 'RandL::LoyaltyAccount' (role 'LoyaltyAccount48', cardinality 0..*).
+'RandL::Membership' (role 'RandL_Membership100', cardinality 0..*) is associated with 'RandL::Customer' (role 'RandL_Customer99', cardinality 0..*).
+'RandL::Container::RandL' (role 'RandL_Container_RandL61', cardinality 0..*) is associated with 'RandL::Membership' (role 'RandL_Membership62', cardinality 0..*).

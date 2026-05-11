@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'adlold::Component' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'adlold::Interface' has the following attributes: 'name' of type str; 'signature' of type str.
+The class 'adlold::Binding' has no attributes.
+The class 'Interface' has no attributes.
+The class 'adlold::Required' has no attributes.
+The class 'adlold::Provided' has no attributes.
+The class 'adlold::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'adlold::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+'adlold::Component' is a specialization of 'AbstractComponent'.
+'adlold::Required' is a specialization of 'Interface'.
+'adlold::Provided' is a specialization of 'Interface'.
+'adlold::Binding' (role 'adlold_Binding', cardinality 0..*) is associated with 'adlold::Interface' (role 'adlold_Interface', cardinality 0..*).
+'adlold::Provided' (role 'adlold_Provided', cardinality 0..*) is associated with 'adlold::AbstractComponent' (role 'adlold_AbstractComponent4', cardinality 0..*).
+'adlold::Component' (role 'adlold_Component15', cardinality 0..*) is associated with 'adlold::Component' (role 'adlold_Component', cardinality 0..*).
+'adlold::Interface' (role 'adlold_Interface11', cardinality 0..*) is associated with 'adlold::Binding' (role 'adlold_Binding10', cardinality 0..*).
+'adlold::Interface' (role 'adlold_Interface8', cardinality 0..*) is associated with 'adlold::Binding' (role 'adlold_Binding7', cardinality 0..*).
+'adlold::AbstractComponent' (role 'adlold_AbstractComponent14', cardinality 0..*) is associated with 'adlold::Content' (role 'adlold_Content13', cardinality 0..*).
+'adlold::Content' (role 'adlold_Content', cardinality 0..*) is associated with 'adlold::AbstractComponent' (role 'adlold_AbstractComponent', cardinality 0..*).
+'adlold::Required' (role 'adlold_Required', cardinality 0..*) is associated with 'adlold::AbstractComponent' (role 'adlold_AbstractComponent2', cardinality 0..*).

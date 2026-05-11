@@ -1,0 +1,34 @@
+The model has 12 class(es).
+The class 'company::Category' has the following attributes: 'name' of type str.
+The class 'company::Addressable' has the following attributes: 'city' of type str; 'street' of type str; 'name' of type str.
+The class 'company::Product' has the following attributes: 'name' of type str; 'description' of type str; 'price' of type float; 'vat' of type str.
+The class 'company::SalesOrder' has the following attributes: 'id' of type int.
+The class 'company::Customer' has no attributes.
+The class 'company::PurchaseOrder' has the following attributes: 'date' of type date.
+The class 'company::OrderDetail' has the following attributes: 'price' of type float.
+The class 'Order' has no attributes.
+The class 'company::Supplier' has the following attributes: 'preferred' of type bool.
+The class 'company::Company' has no attributes.
+The class 'company::Order' has no attributes.
+The class 'Addressable' has no attributes.
+The enumeration 'VAT' has the following literals: 'vat0', 'vat15', 'vat7'.
+'company::Company' is a specialization of 'Addressable'.
+'company::Customer' is a specialization of 'Addressable'.
+'company::PurchaseOrder' is a specialization of 'Order'.
+'company::SalesOrder' is a specialization of 'Order'.
+'company::Supplier' is a specialization of 'Addressable'.
+'company::Company' (role 'company_Company8', cardinality 0..*) is associated with 'company::SalesOrder' (role 'company_SalesOrder', cardinality 0..*).
+'company::Order' (role 'Order', cardinality 0..*) is associated with 'company::OrderDetail' (role 'orderDetails', cardinality 0..*).
+'company::Order' (role 'order', cardinality 0..*) is associated with 'company::OrderDetail' (role 'OrderDetail', cardinality 0..*).
+'company::SalesOrder' (role 'salesOrders', cardinality 0..*) is associated with 'company::Customer' (role 'Customer', cardinality 0..*).
+'company::Company' (role 'company_Company2', cardinality 0..*) is associated with 'company::Supplier' (role 'company_Supplier', cardinality 0..*).
+'company::SalesOrder' (role 'SalesOrder', cardinality 0..*) is associated with 'company::Customer' (role 'customer', cardinality 0..*).
+'company::Category' (role 'company_Category19', cardinality 0..*) is associated with 'company::Category' (role 'company_Category17', cardinality 0..*).
+'company::Category' (role 'company_Category', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).
+'company::Product' (role 'product', cardinality 0..*) is associated with 'company::OrderDetail' (role 'OrderDetail23', cardinality 0..*).
+'company::Customer' (role 'company_Customer', cardinality 0..*) is associated with 'company::Company' (role 'company_Company4', cardinality 0..*).
+'company::Category' (role 'company_Category21', cardinality 0..*) is associated with 'company::Product' (role 'company_Product', cardinality 0..*).
+'company::Supplier' (role 'Supplier', cardinality 0..*) is associated with 'company::PurchaseOrder' (role 'purchaseOrders', cardinality 0..*).
+'company::Company' (role 'company_Company6', cardinality 0..*) is associated with 'company::PurchaseOrder' (role 'company_PurchaseOrder', cardinality 0..*).
+'company::Product' (role 'Product', cardinality 0..*) is associated with 'company::OrderDetail' (role 'orderDetails14', cardinality 0..*).
+'company::PurchaseOrder' (role 'PurchaseOrder', cardinality 0..*) is associated with 'company::Supplier' (role 'supplier', cardinality 0..*).

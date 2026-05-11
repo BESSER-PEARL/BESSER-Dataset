@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'testall::Component' has no attributes.
+The class 'testall::Binding' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'testall::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'testall::Provided' has no attributes.
+The class 'testall::Interface' has the following attributes: 'name' of type str; 'signature' of type str.
+The class 'Interface' has no attributes.
+The class 'testall::Required' has no attributes.
+The class 'testall::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+'testall::Required' is a specialization of 'Interface'.
+'testall::Component' is a specialization of 'AbstractComponent'.
+'testall::Provided' is a specialization of 'Interface'.
+'testall::Content' (role 'testall_Content', cardinality 0..*) is associated with 'testall::AbstractComponent' (role 'testall_AbstractComponent', cardinality 0..*).
+'testall::AbstractComponent' (role 'testall_AbstractComponent2', cardinality 0..*) is associated with 'testall::Required' (role 'testall_Required', cardinality 0..*).
+'testall::Provided' (role 'testall_Provided', cardinality 0..*) is associated with 'testall::AbstractComponent' (role 'testall_AbstractComponent4', cardinality 0..*).
+'testall::Interface' (role 'testall_Interface8', cardinality 0..*) is associated with 'testall::Binding' (role 'testall_Binding7', cardinality 0..*).
+'testall::Interface' (role 'testall_Interface', cardinality 0..*) is associated with 'testall::Binding' (role 'testall_Binding', cardinality 0..*).
+'testall::Binding' (role 'testall_Binding10', cardinality 0..*) is associated with 'testall::Interface' (role 'testall_Interface11', cardinality 0..*).
+'testall::Content' (role 'testall_Content13', cardinality 0..*) is associated with 'testall::AbstractComponent' (role 'testall_AbstractComponent14', cardinality 0..*).
+'testall::Component' (role 'testall_Component15', cardinality 0..*) is associated with 'testall::Component' (role 'testall_Component', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/veriatl/Compiler.Asm2boogie/fr.emn.atlanmod.ASM2Boogie.compiler/bin/metamodels/B.ecore

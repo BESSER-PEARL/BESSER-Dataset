@@ -1,0 +1,129 @@
+The model has 60 class(es).
+The class 'GenericEndpoint' has no attributes.
+The class 'mid::editor::Diagram' has no attributes.
+The class 'mid::ExtendibleElement' has the following attributes: 'level' of type str; 'metatypeUri' of type str; 'dynamic' of type bool; 'name' of type str; 'uri' of type str.
+The class 'mid::relationship::ModelEndpointReference' has no attributes.
+The class 'mid::operator::OperatorInput' has no attributes.
+The class 'ModelElementEndpointReference' has no attributes.
+The class 'mid::relationship::BinaryModelRel' has no attributes.
+The class 'mid::MID' has the following attributes: 'level' of type str.
+The class 'mid::operator::Operator' has the following attributes: 'updateMID' of type bool; 'inputSubdir' of type str; 'executionTime' of type str; 'commutative' of type bool.
+The class 'mid::relationship::ModelRel' has no attributes.
+The class 'mid::relationship::ModelElementEndpoint' has no attributes.
+The class 'mid::operator::WorkflowOperator' has the following attributes: 'midUri' of type str.
+The class 'mid::relationship::ExtendibleElementReference' has the following attributes: 'modifiable' of type bool.
+The class 'mid::EStringToExtendibleElementMap' has the following attributes: 'key' of type str.
+The class 'ExtendibleElement' has no attributes.
+The class 'mid::operator::OperatorConstraintParameter' has the following attributes: 'endpointIndex' of type int.
+The class 'Model' has no attributes.
+The class 'mid::relationship::ExtendibleElementEndpointReference' has no attributes.
+The class 'operator::mid::GenericElement' has no attributes.
+The class 'Editor' has no attributes.
+The class 'mid::relationship::BinaryMapping' has no attributes.
+The class 'ModelElementReference' has no attributes.
+The class 'mid::editor::Editor' has the following attributes: 'wizardId' of type str; 'id' of type str; 'wizardDialogClass' of type str; 'modelUri' of type str; 'fileExtensions' of type str.
+The class 'ModelEndpointReference' has no attributes.
+The class 'ModelElementEndpoint' has no attributes.
+The class 'ExtendibleElementConstraint' has no attributes.
+The class 'mid::relationship::ModelElementReference' has no attributes.
+The class 'mid::ExtendibleElementConstraint' has the following attributes: 'implementation' of type str; 'language' of type str.
+The class 'GenericElement' has no attributes.
+The class 'mid::operator::OperatorConstraint' has no attributes.
+The class 'mid::relationship::MappingReference' has no attributes.
+The class 'ExtendibleElementReference' has no attributes.
+The class 'operator::mid::ModelEndpoint' has no attributes.
+The class 'mid::operator::OperatorConstraintRule' has no attributes.
+The class 'OperatorConstraintRule' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'mid::GenericElement' has the following attributes: 'abstract' of type bool.
+The class 'mid::ExtendibleElementEndpoint' has the following attributes: 'upperBound' of type int; 'lowerBound' of type int.
+The class 'mid::Model' has the following attributes: 'origin' of type str; 'fileExtension' of type str.
+The class 'mid::relationship::BinaryMappingReference' has no attributes.
+The class 'OperatorConstraintParameter' has no attributes.
+The class 'operator::mid::Model' has no attributes.
+The class 'mid::EMFInfo' has the following attributes: 'featureName' of type str; 'className' of type str; 'relatedClassName' of type str; 'attribute' of type bool.
+The class 'ExtendibleElementEndpoint' has no attributes.
+The class 'relationship::mid::ExtendibleElement' has no attributes.
+The class 'mid::ModelEndpoint' has no attributes.
+The class 'mid::operator::OperatorGeneric' has no attributes.
+The class 'Operator' has no attributes.
+The class 'mid::relationship::Mapping' has no attributes.
+The class 'mid::operator::GenericEndpoint' has the following attributes: 'metatargetUri' of type str.
+The class 'ExtendibleElementEndpointReference' has no attributes.
+The class 'relationship::mid::ModelEndpoint' has no attributes.
+The class 'MappingReference' has no attributes.
+The class 'ModelRel' has no attributes.
+The class 'mid::operator::ConversionOperator' has no attributes.
+The class 'mid::operator::RandomOperator' has the following attributes: 'state' of type str.
+The class 'mid::ModelElement' has no attributes.
+The class 'relationship::mid::Model' has no attributes.
+The class 'ConversionOperator' has no attributes.
+The class 'mid::relationship::ModelElementEndpointReference' has no attributes.
+The enumeration 'ModelOrigin' has the following literals: 'IMPORTED', 'CREATED'.
+The enumeration 'MIDLevel' has the following literals: 'WORKFLOWS', 'TYPES', 'INSTANCES'.
+'mid::operator::RandomOperator' is a specialization of 'Operator'.
+'mid::relationship::ModelRel' is a specialization of 'Model'.
+'mid::relationship::ModelElementEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+'mid::GenericElement' is a specialization of 'ExtendibleElement'.
+'mid::ModelElement' is a specialization of 'ExtendibleElement'.
+'mid::relationship::ExtendibleElementEndpointReference' is a specialization of 'ExtendibleElementReference'.
+'mid::operator::ConversionOperator' is a specialization of 'Operator'.
+'mid::ExtendibleElementEndpoint' is a specialization of 'ExtendibleElement'.
+'mid::operator::GenericEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+'mid::relationship::Mapping' is a specialization of 'ExtendibleElement'.
+'mid::Model' is a specialization of 'GenericElement'.
+'mid::operator::WorkflowOperator' is a specialization of 'Operator'.
+'mid::operator::OperatorConstraint' is a specialization of 'ExtendibleElementConstraint'.
+'mid::editor::Editor' is a specialization of 'ExtendibleElement'.
+'mid::relationship::ModelElementReference' is a specialization of 'ExtendibleElementReference'.
+'mid::relationship::BinaryMapping' is a specialization of 'Mapping'.
+'mid::ModelEndpoint' is a specialization of 'ExtendibleElementEndpoint'.
+'mid::relationship::ModelEndpointReference' is a specialization of 'ExtendibleElementEndpointReference'.
+'mid::operator::Operator' is a specialization of 'GenericElement'.
+'mid::editor::Diagram' is a specialization of 'Editor'.
+'mid::relationship::BinaryModelRel' is a specialization of 'ModelRel'.
+'mid::relationship::MappingReference' is a specialization of 'ExtendibleElementReference'.
+'mid::relationship::ModelElementEndpointReference' is a specialization of 'ExtendibleElementEndpointReference'.
+'mid::relationship::BinaryMappingReference' is a specialization of 'MappingReference'.
+'mid::ExtendibleElement' (role 'mid_ExtendibleElement9', cardinality 0..*) is associated with 'mid::ExtendibleElement' (role 'mid_ExtendibleElement11', cardinality 0..*).
+'mid::operator::OperatorGeneric' (role 'mid_operator_OperatorGeneric', cardinality 0..*) is associated with 'operator::mid::GenericElement' (role 'operator_mid_GenericElement', cardinality 0..*).
+'mid::operator::Operator' (role 'mid_operator_Operator64', cardinality 0..*) is associated with 'Operator' (role 'Operator65', cardinality 0..*).
+'mid::relationship::ModelElementReference' (role 'modelElemRef', cardinality 0..*) is associated with 'ModelElementEndpointReference' (role 'ModelElementEndpointReference', cardinality 0..*).
+'mid::operator::Operator' (role 'mid_operator_Operator', cardinality 0..*) is associated with 'operator::mid::ModelEndpoint' (role 'operator_mid_ModelEndpoint', cardinality 0..*).
+'mid::operator::OperatorInput' (role 'mid_operator_OperatorInput', cardinality 0..*) is associated with 'operator::mid::Model' (role 'operator_mid_Model', cardinality 0..*).
+'mid::operator::OperatorInput' (role 'mid_operator_OperatorInput68', cardinality 0..*) is associated with 'ConversionOperator' (role 'ConversionOperator69', cardinality 0..*).
+'mid::MID' (role 'mid_MID6', cardinality 0..*) is associated with 'mid::EStringToExtendibleElementMap' (role 'mid_EStringToExtendibleElementMap', cardinality 0..*).
+'ModelElementReference' (role 'ModelElementReference54', cardinality 0..*) is associated with 'mid::relationship::BinaryMappingReference' (role 'mid_relationship_BinaryMappingReference53', cardinality 0..*).
+'mid::operator::OperatorConstraint' (role 'mid_operator_OperatorConstraint', cardinality 0..*) is associated with 'OperatorConstraintRule' (role 'OperatorConstraintRule', cardinality 0..*).
+'operator::mid::ModelEndpoint' (role 'operator_mid_ModelEndpoint60', cardinality 0..*) is associated with 'mid::operator::Operator' (role 'mid_operator_Operator59', cardinality 0..*).
+'mid::operator::OperatorConstraintRule' (role 'mid_operator_OperatorConstraintRule80', cardinality 0..*) is associated with 'OperatorConstraintParameter' (role 'OperatorConstraintParameter81', cardinality 0..*).
+'mid::relationship::ModelRel' (role 'mid_relationship_ModelRel29', cardinality 0..*) is associated with 'ModelEndpointReference' (role 'ModelEndpointReference', cardinality 0..*).
+'mid::relationship::ModelRel' (role 'mid_relationship_ModelRel', cardinality 0..*) is associated with 'relationship::mid::ModelEndpoint' (role 'relationship_mid_ModelEndpoint', cardinality 0..*).
+'ExtendibleElementReference' (role 'ExtendibleElementReference', cardinality 0..*) is associated with 'mid::relationship::ExtendibleElementReference' (role 'mid_relationship_ExtendibleElementReference41', cardinality 0..*).
+'mid::ExtendibleElement' (role 'mid_ExtendibleElement15', cardinality 0..*) is associated with 'mid::ExtendibleElementEndpoint' (role 'mid_ExtendibleElementEndpoint', cardinality 0..*).
+'mid::ExtendibleElement' (role 'mid_ExtendibleElement13', cardinality 0..*) is associated with 'mid::ExtendibleElementConstraint' (role 'mid_ExtendibleElementConstraint', cardinality 0..*).
+'mid::ModelElement' (role 'mid_ModelElement24', cardinality 0..*) is associated with 'mid::EMFInfo' (role 'mid_EMFInfo', cardinality 0..*).
+'relationship::mid::Model' (role 'relationship_mid_Model35', cardinality 0..*) is associated with 'mid::relationship::BinaryModelRel' (role 'mid_relationship_BinaryModelRel34', cardinality 0..*).
+'ModelElementEndpointReference' (role 'ModelElementEndpointReference47', cardinality 0..*) is associated with 'mid::relationship::Mapping' (role 'mid_relationship_Mapping46', cardinality 0..*).
+'mid::relationship::BinaryMappingReference' (role 'mid_relationship_BinaryMappingReference', cardinality 0..*) is associated with 'ModelElementReference' (role 'ModelElementReference51', cardinality 0..*).
+'ModelElementEndpointReference' (role 'ModelElementEndpointReference49', cardinality 0..*) is associated with 'mid::relationship::MappingReference' (role 'mid_relationship_MappingReference', cardinality 0..*).
+'GenericEndpoint' (role 'GenericEndpoint', cardinality 0..*) is associated with 'mid::operator::Operator' (role 'mid_operator_Operator62', cardinality 0..*).
+'mid::relationship::ModelElementEndpointReference' (role 'modelElemEndpointRefs', cardinality 0..*) is associated with 'ModelElementReference' (role 'ModelElementReference56', cardinality 0..*).
+'mid::operator::OperatorConstraintParameter' (role 'mid_operator_OperatorConstraintParameter', cardinality 0..*) is associated with 'ModelEndpointReference' (role 'ModelEndpointReference83', cardinality 0..*).
+'mid::MID' (role 'mid_MID', cardinality 0..*) is associated with 'mid::Model' (role 'mid_Model', cardinality 0..*).
+'mid::relationship::ExtendibleElementReference' (role 'mid_relationship_ExtendibleElementReference', cardinality 0..*) is associated with 'relationship::mid::ExtendibleElement' (role 'relationship_mid_ExtendibleElement', cardinality 0..*).
+'mid::operator::OperatorInput' (role 'mid_operator_OperatorInput71', cardinality 0..*) is associated with 'operator::mid::ModelEndpoint' (role 'operator_mid_ModelEndpoint72', cardinality 0..*).
+'mid::relationship::Mapping' (role 'mid_relationship_Mapping', cardinality 0..*) is associated with 'ModelElementEndpoint' (role 'ModelElementEndpoint', cardinality 0..*).
+'mid::EStringToExtendibleElementMap' (role 'mid_EStringToExtendibleElementMap8', cardinality 0..*) is associated with 'mid::ExtendibleElement' (role 'mid_ExtendibleElement', cardinality 0..*).
+'mid::Model' (role 'mid_Model17', cardinality 0..*) is associated with 'Editor' (role 'Editor18', cardinality 0..*).
+'mid::MID' (role 'mid_MID2', cardinality 0..*) is associated with 'Editor' (role 'Editor', cardinality 0..*).
+'mid::Model' (role 'mid_Model20', cardinality 0..*) is associated with 'mid::ModelElement' (role 'mid_ModelElement', cardinality 0..*).
+'mid::relationship::ModelRel' (role 'mid_relationship_ModelRel31', cardinality 0..*) is associated with 'MappingReference' (role 'MappingReference', cardinality 0..*).
+'mid::relationship::ModelEndpointReference' (role 'mid_relationship_ModelEndpointReference', cardinality 0..*) is associated with 'ModelElementReference' (role 'ModelElementReference', cardinality 0..*).
+'Mapping' (role 'Mapping', cardinality 0..*) is associated with 'mid::relationship::ModelRel' (role 'mid_relationship_ModelRel27', cardinality 0..*).
+'relationship::mid::ExtendibleElement' (role 'relationship_mid_ExtendibleElement39', cardinality 0..*) is associated with 'mid::relationship::ExtendibleElementReference' (role 'mid_relationship_ExtendibleElementReference38', cardinality 0..*).
+'Operator' (role 'Operator', cardinality 0..*) is associated with 'mid::MID' (role 'mid_MID4', cardinality 0..*).
+'mid::relationship::BinaryModelRel' (role 'mid_relationship_BinaryModelRel', cardinality 0..*) is associated with 'relationship::mid::Model' (role 'relationship_mid_Model', cardinality 0..*).
+'mid::Model' (role 'mid_Model22', cardinality 0..*) is associated with 'ConversionOperator' (role 'ConversionOperator', cardinality 0..*).
+'mid::operator::OperatorGeneric' (role 'mid_operator_OperatorGeneric75', cardinality 0..*) is associated with 'GenericEndpoint' (role 'GenericEndpoint76', cardinality 0..*).
+'OperatorConstraintParameter' (role 'OperatorConstraintParameter', cardinality 0..*) is associated with 'mid::operator::OperatorConstraintRule' (role 'mid_operator_OperatorConstraintRule', cardinality 0..*).

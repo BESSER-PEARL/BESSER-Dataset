@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'Expression' has no attributes.
+The class 'Operand' has no attributes.
+The class 'ast::Variable' has the following attributes: 'name' of type str.
+The class 'ast::Operator' has the following attributes: 'op' of type str.
+The class 'ast::Operand' has no attributes.
+The class 'ast::Model' has no attributes.
+The class 'ast::Expression' has the following attributes: 'incrementalID' of type str.
+The class 'ast::Number' has the following attributes: 'value' of type int.
+The enumeration 'ArithmeticOperator' has the following literals: 'Multiply', 'Subtract', 'Add', 'Divide'.
+'ast::Variable' is a specialization of 'Operand'.
+'ast::Operator' is a specialization of 'Expression'.
+'ast::Number' is a specialization of 'Operand'.
+'ast::Operand' is a specialization of 'Expression'.
+'ast::Expression' (role 'left', cardinality 0..*) is associated with 'ast::Operator' (role 'Operator', cardinality 0..*).
+'ast::Operator' (role 'rightInverse', cardinality 0..*) is associated with 'ast::Expression' (role 'Expression8', cardinality 0..*).
+'ast::Model' (role 'model', cardinality 0..*) is associated with 'ast::Expression' (role 'Expression', cardinality 0..*).
+'ast::Expression' (role 'expr', cardinality 0..*) is associated with 'ast::Model' (role 'Model', cardinality 0..*).
+'ast::Operator' (role 'leftInverse', cardinality 0..*) is associated with 'ast::Expression' (role 'Expression6', cardinality 0..*).
+'ast::Operator' (role 'Operator4', cardinality 0..*) is associated with 'ast::Expression' (role 'right', cardinality 0..*).

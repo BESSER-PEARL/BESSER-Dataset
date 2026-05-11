@@ -1,0 +1,45 @@
+The model has 16 class(es).
+The class 'adfg::Actor' has the following attributes: 'priority' of type int; 'nbPorts' of type int; 'sourceCode' of type str; 'procNumber' of type int; 'name' of type str.
+The class 'adfg::Application' has the following attributes: 'dynamicChecking' of type bool; 'name' of type str; 'schedulingAlgorithm' of type str; 'sourceCode' of type str; 'nbProcessors' of type int; 'nbGraphs' of type int.
+The class 'Port' has no attributes.
+The class 'adfg::PeriodicActor' has the following attributes: 'periodLowerBound' of type str; 'periodUpperBound' of type str; 'period' of type str; 'phase' of type str; 'deadline' of type str; 'wcet' of type str.
+The class 'adfg::InputPort' has no attributes.
+The class 'adfg::GraphConnection' has no attributes.
+The class 'adfg::OutputPort' has no attributes.
+The class 'adfg::AperiodicActor' has the following attributes: 'capacity' of type str; 'replenishmentPeriod' of type str.
+The class 'Connection' has no attributes.
+The class 'adfg::LossyChannel' has no attributes.
+The class 'adfg::Graph' has the following attributes: 'bufferingRequirements' of type int; 'sourceCode' of type str; 'nbBuffers' of type int; 'nbActors' of type int; 'name' of type str; 'processorUtilization' of type float; 'id' of type int.
+The class 'adfg::Port' has the following attributes: 'name' of type str; 'type' of type str; 'sequence' of type str.
+The class 'Actor' has no attributes.
+The class 'adfg::Connection' has the following attributes: 'size' of type int; 'id' of type int.
+The class 'adfg::AffineRelation' has the following attributes: 'd' of type int; 'n' of type int; 'phi' of type int.
+The class 'adfg::Channel' has the following attributes: 'initial' of type int.
+'adfg::OutputPort' is a specialization of 'Port'.
+'adfg::Channel' is a specialization of 'Connection'.
+'adfg::InputPort' is a specialization of 'Port'.
+'adfg::AperiodicActor' is a specialization of 'Actor'.
+'adfg::LossyChannel' is a specialization of 'Connection'.
+'adfg::PeriodicActor' is a specialization of 'Actor'.
+'adfg::PeriodicActor' (role 'PeriodicActor22', cardinality 0..*) is associated with 'adfg::AffineRelation' (role 'affineRelationTarget', cardinality 0..*).
+'adfg::Connection' (role 'Connection33', cardinality 0..*) is associated with 'adfg::InputPort' (role 'target', cardinality 0..*).
+'adfg::GraphConnection' (role 'GraphConnections', cardinality 0..*) is associated with 'adfg::Application' (role 'Application15', cardinality 0..*).
+'adfg::OutputPort' (role 'OutputPort', cardinality 0..*) is associated with 'adfg::Connection' (role 'connection', cardinality 0..*).
+'adfg::OutputPort' (role 'source', cardinality 0..*) is associated with 'adfg::Connection' (role 'Connection35', cardinality 0..*).
+'adfg::GraphConnection' (role 'adfg_GraphConnection12', cardinality 0..*) is associated with 'adfg::Graph' (role 'adfg_Graph13', cardinality 0..*).
+'adfg::AffineRelation' (role 'affineRelationSource', cardinality 0..*) is associated with 'adfg::PeriodicActor' (role 'PeriodicActor', cardinality 0..*).
+'adfg::Graph' (role 'Graph29', cardinality 0..*) is associated with 'adfg::Connection' (role 'connections', cardinality 0..*).
+'adfg::Actor' (role 'Actor31', cardinality 0..*) is associated with 'adfg::Port' (role 'ports', cardinality 0..*).
+'adfg::Application' (role 'owner2', cardinality 0..*) is associated with 'adfg::GraphConnection' (role 'GraphConnection', cardinality 0..*).
+'adfg::Actor' (role 'nodes', cardinality 0..*) is associated with 'adfg::Graph' (role 'Graph17', cardinality 0..*).
+'adfg::AffineRelation' (role 'AffineRelation38', cardinality 0..*) is associated with 'adfg::PeriodicActor' (role 'source37', cardinality 0..*).
+'adfg::Port' (role 'Port', cardinality 0..*) is associated with 'adfg::Actor' (role 'owner19', cardinality 0..*).
+'adfg::Connection' (role 'Connection', cardinality 0..*) is associated with 'adfg::Graph' (role 'owner9', cardinality 0..*).
+'adfg::Application' (role 'Application', cardinality 0..*) is associated with 'adfg::Graph' (role 'graphs', cardinality 0..*).
+'adfg::AffineRelation' (role 'affineRelations', cardinality 0..*) is associated with 'adfg::Graph' (role 'Graph24', cardinality 0..*).
+'adfg::Graph' (role 'Graph', cardinality 0..*) is associated with 'adfg::Application' (role 'owner', cardinality 0..*).
+'adfg::Graph' (role 'adfg_Graph', cardinality 0..*) is associated with 'adfg::GraphConnection' (role 'adfg_GraphConnection', cardinality 0..*).
+'adfg::Graph' (role 'owner5', cardinality 0..*) is associated with 'adfg::Actor' (role 'Actor', cardinality 0..*).
+'adfg::Graph' (role 'owner7', cardinality 0..*) is associated with 'adfg::AffineRelation' (role 'AffineRelation', cardinality 0..*).
+'adfg::PeriodicActor' (role 'target40', cardinality 0..*) is associated with 'adfg::AffineRelation' (role 'AffineRelation41', cardinality 0..*).
+'adfg::Connection' (role 'connection27', cardinality 0..*) is associated with 'adfg::InputPort' (role 'InputPort', cardinality 0..*).

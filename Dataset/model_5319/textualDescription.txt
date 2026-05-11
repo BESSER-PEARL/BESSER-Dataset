@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'root::B' has no attributes.
+The class 'root::A' has no attributes.
+The class 'B' has no attributes.
+The class 'root::A2' has no attributes.
+'root::A2' is a specialization of 'B'.
+'root::A' is a specialization of 'B'.

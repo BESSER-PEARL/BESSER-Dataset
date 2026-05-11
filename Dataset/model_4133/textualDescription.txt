@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'myDsl::Mult' has no attributes.
+The class 'myDsl::Parameter' has the following attributes: 'name' of type str.
+The class 'myDsl::Var' has the following attributes: 'id' of type str.
+The class 'myDsl::Method' has the following attributes: 'name' of type str.
+The class 'myDsl::Classs' has no attributes.
+The class 'myDsl::Expression' has no attributes.
+The class 'myDsl::Minus' has no attributes.
+The class 'myDsl::Num' has the following attributes: 'value' of type int.
+The class 'myDsl::MathExp' has the following attributes: 'text' of type str.
+The class 'myDsl::Plus' has no attributes.
+The class 'myDsl::Div' has no attributes.
+The class 'myDsl::Let' has the following attributes: 'id' of type str.
+The class 'myDsl::Instance' has no attributes.
+The class 'Instance' has no attributes.
+The class 'Expression' has no attributes.
+'myDsl::Var' is a specialization of 'Expression'.
+'myDsl::Mult' is a specialization of 'Expression'.
+'myDsl::Num' is a specialization of 'Expression'.
+'myDsl::MathExp' is a specialization of 'Instance'.
+'myDsl::Minus' is a specialization of 'Expression'.
+'myDsl::Plus' is a specialization of 'Expression'.
+'myDsl::Div' is a specialization of 'Expression'.
+'myDsl::Let' is a specialization of 'Expression'.
+'myDsl::Method' is a specialization of 'Instance'.
+'myDsl::Instance' (role 'myDsl_Instance', cardinality 0..*) is associated with 'myDsl::Classs' (role 'myDsl_Classs', cardinality 0..*).
+'myDsl::Div' (role 'myDsl_Div', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression19', cardinality 0..*).
+'myDsl::Minus' (role 'myDsl_Minus11', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression12', cardinality 0..*).
+'myDsl::Minus' (role 'myDsl_Minus', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression9', cardinality 0..*).
+'myDsl::Let' (role 'myDsl_Let26', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression27', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression4', cardinality 0..*) is associated with 'myDsl::Plus' (role 'myDsl_Plus', cardinality 0..*).
+'myDsl::MathExp' (role 'myDsl_MathExp', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression14', cardinality 0..*) is associated with 'myDsl::Mult' (role 'myDsl_Mult', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression22', cardinality 0..*) is associated with 'myDsl::Div' (role 'myDsl_Div21', cardinality 0..*).
+'myDsl::Mult' (role 'myDsl_Mult16', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression17', cardinality 0..*).
+'myDsl::Plus' (role 'myDsl_Plus6', cardinality 0..*) is associated with 'myDsl::Expression' (role 'myDsl_Expression7', cardinality 0..*).
+'myDsl::Expression' (role 'myDsl_Expression24', cardinality 0..*) is associated with 'myDsl::Let' (role 'myDsl_Let', cardinality 0..*).
+'myDsl::Method' (role 'myDsl_Method', cardinality 0..*) is associated with 'myDsl::Parameter' (role 'myDsl_Parameter', cardinality 0..*).

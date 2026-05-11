@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'QualityMetamodel::AggregatedValue' has no attributes.
+The class 'QualityMetamodel::AggregatedValueMetric' has the following attributes: 'average' of type str; 'maximum' of type str; 'minimum' of type str; 'median' of type str; 'standardDeviation' of type str.
+The class 'QualityMetamodel::RangeValueType' has the following attributes: 'min' of type str; 'max' of type str.
+The class 'ValueType' has no attributes.
+The class 'QualityMetamodel::MetricProvider' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type str.
+The class 'QualityMetamodel::QualityAttribute' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::EnumerationMetric' has no attributes.
+The class 'QualityMetamodel::QualityModel' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::ValueType' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::Operation' has the following attributes: 'name' of type str; 'body' of type str.
+The class 'QualityMetamodel::EnumerationItem' has the following attributes: 'name' of type str.
+The class 'QualityMetamodel::BooleanValueType' has the following attributes: 'value' of type str.
+The class 'QualityMetamodel::Value' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'QualityMetamodel::RealValueType' has the following attributes: 'value' of type str.
+The class 'QualityMetamodel::TextValueType' has the following attributes: 'value' of type str.
+The class 'QualityMetamodel::IntegerValueType' has the following attributes: 'value' of type str.
+The class 'QualityMetamodel::SingleValue' has no attributes.
+The class 'Value' has no attributes.
+'QualityMetamodel::AggregatedValue' is a specialization of 'Value'.
+'QualityMetamodel::RangeValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::IntegerValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::RealValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::EnumerationMetric' is a specialization of 'ValueType'.
+'QualityMetamodel::BooleanValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::AggregatedValueMetric' is a specialization of 'ValueType'.
+'QualityMetamodel::SingleValue' is a specialization of 'Value'.
+'QualityMetamodel::TextValueType' is a specialization of 'ValueType'.
+'QualityMetamodel::AggregatedValue' (role 'QualityMetamodel_AggregatedValue', cardinality 0..*) is associated with 'QualityMetamodel::Operation' (role 'QualityMetamodel_Operation', cardinality 0..*).
+'QualityMetamodel::EnumerationMetric' (role 'QualityMetamodel_EnumerationMetric23', cardinality 0..*) is associated with 'QualityMetamodel::EnumerationItem' (role 'QualityMetamodel_EnumerationItem24', cardinality 0..*).
+'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute', cardinality 0..*) is associated with 'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel4', cardinality 0..*).
+'QualityMetamodel::Value' (role 'QualityMetamodel_Value', cardinality 0..*) is associated with 'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel6', cardinality 0..*).
+'QualityMetamodel::ValueType' (role 'QualityMetamodel_ValueType', cardinality 0..*) is associated with 'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel2', cardinality 0..*).
+'QualityMetamodel::Value' (role 'val', cardinality 0..*) is associated with 'QualityMetamodel::ValueType' (role 'ValueType', cardinality 0..*).
+'QualityMetamodel::Value' (role 'QualityMetamodel_Value9', cardinality 0..*) is associated with 'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute8', cardinality 0..*).
+'QualityMetamodel::ValueType' (role 'type', cardinality 0..*) is associated with 'QualityMetamodel::Value' (role 'Value', cardinality 0..*).
+'QualityMetamodel::Value' (role 'QualityMetamodel_Value20', cardinality 0..*) is associated with 'QualityMetamodel::Operation' (role 'QualityMetamodel_Operation19', cardinality 0..*).
+'QualityMetamodel::MetricProvider' (role 'QualityMetamodel_MetricProvider', cardinality 0..*) is associated with 'QualityMetamodel::QualityModel' (role 'QualityMetamodel_QualityModel', cardinality 0..*).
+'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute12', cardinality 0..*) is associated with 'QualityMetamodel::QualityAttribute' (role 'QualityMetamodel_QualityAttribute10', cardinality 0..*).
+'QualityMetamodel::MetricProvider' (role 'QualityMetamodel_MetricProvider16', cardinality 0..*) is associated with 'QualityMetamodel::SingleValue' (role 'QualityMetamodel_SingleValue', cardinality 0..*).
+'QualityMetamodel::EnumerationMetric' (role 'QualityMetamodel_EnumerationMetric', cardinality 0..*) is associated with 'QualityMetamodel::EnumerationItem' (role 'QualityMetamodel_EnumerationItem', cardinality 0..*).

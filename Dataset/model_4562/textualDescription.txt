@@ -1,0 +1,39 @@
+The model has 17 class(es).
+The class 'drones::ImmovableObject' has no attributes.
+The class 'drones::FieldObject' has no attributes.
+The class 'drones::Parameter' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'drones::TemporalContainmentProxy' has no attributes.
+The class 'drones::SizedElement' has the following attributes: 'y' of type float; 'z' of type float; 'length' of type float; 'x' of type float; 'height' of type float; 'width' of type float.
+The class 'FieldObject' has no attributes.
+The class 'TemporalContainmentProxy' has no attributes.
+The class 'ImmovableObject' has no attributes.
+The class 'drones::Mission' has no attributes.
+The class 'drones::NamedElement' has the following attributes: 'name' of type str.
+The class 'SizedElement' has no attributes.
+The class 'drones::Drone' has the following attributes: 'cpuFrequency' of type int; 'maxSpeed' of type float; 'memory' of type int; 'minSpeed' of type float; 'maxPayload' of type float; 'communicationRange' of type float.
+The class 'drones::ChargeStation' has no attributes.
+The class 'drones::Battery' has the following attributes: 'lifeTime' of type float; 'remainingLifeTime' of type float; 'rechargeRate' of type float; 'charge' of type float.
+The class 'NamedElement' has no attributes.
+The class 'drones::Action' has the following attributes: 'operation' of type str; 'range' of type float; 'value' of type str; 'key' of type str.
+The class 'drones::MovableObject' has the following attributes: 'weight' of type float.
+The enumeration 'ActionKind' has the following literals: 'ADD', 'SET', 'SUBTRACT'.
+'drones::Drone' is a specialization of 'SizedElement'.
+'drones::Mission' is a specialization of 'NamedElement'.
+'drones::FieldObject' is a specialization of 'NamedElement'.
+'drones::ImmovableObject' is a specialization of 'FieldObject'.
+'drones::Parameter' is a specialization of 'TemporalContainmentProxy'.
+'drones::ChargeStation' is a specialization of 'ImmovableObject'.
+'drones::FieldObject' is a specialization of 'SizedElement'.
+'drones::Drone' is a specialization of 'NamedElement'.
+'drones::Battery' is a specialization of 'TemporalContainmentProxy'.
+'drones::Action' is a specialization of 'TemporalContainmentProxy'.
+'drones::Action' is a specialization of 'NamedElement'.
+'drones::MovableObject' is a specialization of 'FieldObject'.
+'drones::Action' (role 'drones_Action', cardinality 0..*) is associated with 'drones::Drone' (role 'drones_Drone5', cardinality 0..*).
+'drones::Parameter' (role 'drones_Parameter', cardinality 0..*) is associated with 'drones::FieldObject' (role 'drones_FieldObject', cardinality 0..*).
+'drones::Drone' (role 'drones_Drone3', cardinality 0..*) is associated with 'drones::ChargeStation' (role 'drones_ChargeStation', cardinality 0..*).
+'drones::Drone' (role 'drones_Drone', cardinality 0..*) is associated with 'drones::Battery' (role 'drones_Battery', cardinality 0..*).
+'drones::Mission' (role 'drones_Mission14', cardinality 0..*) is associated with 'drones::Action' (role 'drones_Action15', cardinality 0..*).
+'drones::TemporalContainmentProxy' (role 'drones_TemporalContainmentProxy', cardinality 0..*) is associated with 'drones::Mission' (role 'drones_Mission12', cardinality 0..*).
+'drones::Mission' (role 'drones_Mission9', cardinality 0..*) is associated with 'drones::Drone' (role 'drones_Drone10', cardinality 0..*).
+'drones::FieldObject' (role 'drones_FieldObject7', cardinality 0..*) is associated with 'drones::Mission' (role 'drones_Mission', cardinality 0..*).

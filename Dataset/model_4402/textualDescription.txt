@@ -1,0 +1,90 @@
+The model has 42 class(es).
+The class 'mt::core::Metamodel' has the following attributes: 'packageClass' of type str.
+The class 'Script' has no attributes.
+The class 'Statement' has no attributes.
+The class 'mt::expressions::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'mt::ResourceSet' has no attributes.
+The class 'core::mt::Resource' has no attributes.
+The class 'mt::expressions::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'mt::expressions::NullLiteral' has no attributes.
+The class 'mt::statements::Feature' has no attributes.
+The class 'mt::expressions::Call' has the following attributes: 'prefix' of type str; 'name' of type str.
+The class 'mt::expressions::Expression' has no attributes.
+The class 'If' has no attributes.
+The class 'mt::expressions::CallSet' has no attributes.
+The class 'mt::Resource' has the following attributes: 'name' of type str.
+The class 'mt::expressions::Operator' has the following attributes: 'operator' of type str.
+The class 'mt::statements::If' has no attributes.
+The class 'mt::expressions::Not' has no attributes.
+The class 'mt::expressions::Parenthesis' has no attributes.
+The class 'mt::core::Method' has the following attributes: 'return_' of type str; 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'mt::expressions::Literal' has no attributes.
+The class 'Literal' has no attributes.
+The class 'mt::core::ASTNode' has the following attributes: 'begin' of type int; 'end' of type int.
+The class 'Parameter' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'mt::core::ScriptDescriptor' has the following attributes: 'type' of type str; 'name' of type str; 'description' of type str.
+The class 'mt::statements::Text' has the following attributes: 'value' of type str.
+The class 'mt::statements::Comment' has the following attributes: 'value' of type str.
+The class 'mt::expressions::StringLiteral' has the following attributes: 'value' of type str.
+The class 'mt::core::Parameter' has the following attributes: 'type' of type str.
+The class 'mt::core::Service' has no attributes.
+The class 'Resource' has no attributes.
+The class 'Method' has no attributes.
+The class 'mt::core::FilePath' has no attributes.
+The class 'FilePath' has no attributes.
+The class 'mt::core::Template' has the following attributes: 'beginTag' of type str; 'endTag' of type str.
+The class 'mt::expressions::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'ScriptDescriptor' has no attributes.
+The class 'mt::statements::Statement' has no attributes.
+The class 'Call' has no attributes.
+The class 'mt::statements::For' has no attributes.
+The class 'mt::core::Script' has no attributes.
+'mt::statements::If' is a specialization of 'Statement'.
+'mt::expressions::Not' is a specialization of 'Expression'.
+'mt::statements::Comment' is a specialization of 'Statement'.
+'mt::expressions::Literal' is a specialization of 'Expression'.
+'mt::expressions::NullLiteral' is a specialization of 'Literal'.
+'mt::expressions::CallSet' is a specialization of 'Expression'.
+'mt::core::ScriptDescriptor' is a specialization of 'ASTNode'.
+'mt::core::Template' is a specialization of 'Resource'.
+'mt::expressions::BooleanLiteral' is a specialization of 'Literal'.
+'mt::statements::For' is a specialization of 'Statement'.
+'mt::expressions::Operator' is a specialization of 'Expression'.
+'mt::expressions::IntegerLiteral' is a specialization of 'Literal'.
+'mt::statements::Text' is a specialization of 'Statement'.
+'mt::expressions::Expression' is a specialization of 'ASTNode'.
+'mt::core::Script' is a specialization of 'ASTNode'.
+'mt::expressions::Call' is a specialization of 'ASTNode'.
+'mt::statements::Statement' is a specialization of 'ASTNode'.
+'mt::core::FilePath' is a specialization of 'ASTNode'.
+'mt::statements::Feature' is a specialization of 'Statement'.
+'mt::core::Metamodel' is a specialization of 'Resource'.
+'mt::expressions::StringLiteral' is a specialization of 'Literal'.
+'mt::core::Service' is a specialization of 'Resource'.
+'mt::expressions::DoubleLiteral' is a specialization of 'Literal'.
+'mt::expressions::Parenthesis' is a specialization of 'Expression'.
+'mt::statements::If' (role 'mt_statements_If32', cardinality 0..*) is associated with 'Statement' (role 'Statement33', cardinality 0..*).
+'mt::core::Service' (role 'mt_core_Service', cardinality 0..*) is associated with 'Method' (role 'Method', cardinality 0..*).
+'Script' (role 'Script', cardinality 0..*) is associated with 'mt::core::Template' (role 'mt_core_Template3', cardinality 0..*).
+'mt::core::Method' (role 'mt_core_Method', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'core::mt::Resource' (role 'core_mt_Resource', cardinality 0..*) is associated with 'mt::core::Template' (role 'mt_core_Template', cardinality 0..*).
+'Call' (role 'Call', cardinality 0..*) is associated with 'mt::expressions::CallSet' (role 'mt_expressions_CallSet', cardinality 0..*).
+'If' (role 'If', cardinality 0..*) is associated with 'mt::statements::If' (role 'mt_statements_If35', cardinality 0..*).
+'Expression' (role 'Expression16', cardinality 0..*) is associated with 'mt::expressions::Call' (role 'mt_expressions_Call', cardinality 0..*).
+'Expression' (role 'Expression21', cardinality 0..*) is associated with 'mt::expressions::Not' (role 'mt_expressions_Not', cardinality 0..*).
+'Expression' (role 'Expression42', cardinality 0..*) is associated with 'mt::statements::Feature' (role 'mt_statements_Feature', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'mt::core::ScriptDescriptor' (role 'mt_core_ScriptDescriptor9', cardinality 0..*).
+'Statement' (role 'Statement11', cardinality 0..*) is associated with 'mt::core::FilePath' (role 'mt_core_FilePath', cardinality 0..*).
+'mt::Resource' (role 'mt_Resource', cardinality 0..*) is associated with 'mt::ResourceSet' (role 'mt_ResourceSet', cardinality 0..*).
+'mt::expressions::Parenthesis' (role 'mt_expressions_Parenthesis', cardinality 0..*) is associated with 'Expression' (role 'Expression25', cardinality 0..*).
+'mt::statements::If' (role 'mt_statements_If', cardinality 0..*) is associated with 'Expression' (role 'Expression27', cardinality 0..*).
+'mt::core::Script' (role 'mt_core_Script', cardinality 0..*) is associated with 'ScriptDescriptor' (role 'ScriptDescriptor', cardinality 0..*).
+'mt::core::ScriptDescriptor' (role 'mt_core_ScriptDescriptor', cardinality 0..*) is associated with 'FilePath' (role 'FilePath', cardinality 0..*).
+'mt::core::Script' (role 'mt_core_Script6', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'Expression' (role 'Expression37', cardinality 0..*) is associated with 'mt::statements::For' (role 'mt_statements_For', cardinality 0..*).
+'mt::expressions::Call' (role 'mt_expressions_Call18', cardinality 0..*) is associated with 'Expression' (role 'Expression19', cardinality 0..*).
+'Statement' (role 'Statement30', cardinality 0..*) is associated with 'mt::statements::If' (role 'mt_statements_If29', cardinality 0..*).
+'mt::statements::For' (role 'mt_statements_For39', cardinality 0..*) is associated with 'Statement' (role 'Statement40', cardinality 0..*).
+'Expression' (role 'Expression23', cardinality 0..*) is associated with 'mt::expressions::Operator' (role 'mt_expressions_Operator', cardinality 0..*).

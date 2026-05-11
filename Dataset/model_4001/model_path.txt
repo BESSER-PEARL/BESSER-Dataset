@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Hassane14/sma/metamodel/classes.ecore

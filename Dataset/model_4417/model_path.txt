@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ObeoNetwork/Robots-Designer-Tutorial/Step0-Initial/fr.obeo.dsl.tuto.mindstorms/model/mindstorms.ecore

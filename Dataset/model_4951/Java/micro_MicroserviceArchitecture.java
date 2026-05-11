@@ -1,0 +1,55 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class micro_MicroserviceArchitecture extends NamedElement {
+
+
+
+
+
+
+    private List<micro_Service> micro_services;
+
+
+
+
+    private List<micro_Model> micro_models;
+
+
+    public micro_MicroserviceArchitecture(
+    ) {
+        super(
+        );
+        this.micro_services = new ArrayList<>();
+        this.micro_models = new ArrayList<>();
+    }
+
+    public micro_MicroserviceArchitecture(
+        ArrayList<micro_Service> micro_services,        ArrayList<micro_Model> micro_models    ) {
+        this.micro_services = micro_services;
+        this.micro_models = micro_models;
+    }
+
+
+    public List<micro_Service> getMicro_services() {
+        return micro_services;
+    }
+
+    public void addMicro_service(Micro_service micro_service) {
+        this.micro_services.add(micro_service);
+    }
+    public List<micro_Model> getMicro_models() {
+        return micro_models;
+    }
+
+    public void addMicro_model(Micro_model micro_model) {
+        this.micro_models.add(micro_model);
+    }
+
+}

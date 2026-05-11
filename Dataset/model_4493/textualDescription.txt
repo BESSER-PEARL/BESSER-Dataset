@@ -1,0 +1,49 @@
+The model has 17 class(es).
+The class 'robotDSL::Missions' has the following attributes: 'name' of type str.
+The class 'robotDSL::Speed' has the following attributes: 'speed' of type str.
+The class 'robotDSL::Time' has the following attributes: 'sec' of type int.
+The class 'robotDSL::Sound' has the following attributes: 'soundName' of type str.
+The class 'robotDSL::Goal' has no attributes.
+The class 'robotDSL::Flag' has the following attributes: 'name' of type str.
+The class 'robotDSL::Color' has the following attributes: 'colorName' of type str.
+The class 'robotDSL::Mission' has the following attributes: 'name' of type str.
+The class 'robotDSL::Trigger' has the following attributes: 'degrees' of type int; 'touching' of type str.
+The class 'robotDSL::Distance' has the following attributes: 'distance' of type int.
+The class 'robotDSL::Action' has the following attributes: 'duration' of type int; 'degr' of type int; 'cent' of type str.
+The class 'robotDSL::Negation' has the following attributes: 'NOT' of type str.
+The class 'robotDSL::Task' has the following attributes: 'name' of type str; 'prio' of type int.
+The class 'robotDSL::Sensor' has the following attributes: 'sensorType' of type str.
+The class 'robotDSL::Bool' has the following attributes: 'boolType' of type str.
+The class 'robotDSL::ArmOp' has the following attributes: 'opType' of type str.
+The class 'robotDSL::Direction' has the following attributes: 'dir' of type str.
+The enumeration 'SpeedVal' has the following literals: 'MED', 'HIGH', 'LOW'.
+The enumeration 'ArmOpType' has the following literals: 'UP', 'DOWN'.
+The enumeration 'SensorType' has the following literals: 'FRONTUS', 'RIGHTTOUCH', 'RIGHTLIGHT', 'LEFTLIGHT', 'BACKUS', 'LEFTTOUCH', 'COLOR', 'GYRO'.
+The enumeration 'SoundName' has the following literals: 'BUZZ', 'FANFARE'.
+The enumeration 'DirectionVal' has the following literals: 'FORWARD', 'BACKWARD', 'LEFT', 'RIGHT'.
+The enumeration 'BoolType' has the following literals: 'TRUE', 'FALSE', 'L', 'G', 'OR', 'AND'.
+The enumeration 'ColorName' has the following literals: 'BLACK', 'BLUE', 'RED', 'WHITE', 'GREEN'.
+'robotDSL::Sound' (role 'robotDSL_Sound', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action32', cardinality 0..*).
+'robotDSL::Speed' (role 'robotDSL_Speed', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action22', cardinality 0..*).
+'robotDSL::Trigger' (role 'robotDSL_Trigger49', cardinality 0..*) is associated with 'robotDSL::Color' (role 'robotDSL_Color', cardinality 0..*).
+'robotDSL::Task' (role 'robotDSL_Task14', cardinality 0..*) is associated with 'robotDSL::Trigger' (role 'robotDSL_Trigger15', cardinality 0..*).
+'robotDSL::Flag' (role 'robotDSL_Flag45', cardinality 0..*) is associated with 'robotDSL::Trigger' (role 'robotDSL_Trigger44', cardinality 0..*).
+'robotDSL::Bool' (role 'robotDSL_Bool', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action37', cardinality 0..*).
+'robotDSL::Direction' (role 'robotDSL_Direction', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action20', cardinality 0..*).
+'robotDSL::Action' (role 'robotDSL_Action30', cardinality 0..*) is associated with 'robotDSL::ArmOp' (role 'robotDSL_ArmOp', cardinality 0..*).
+'robotDSL::Time' (role 'robotDSL_Time', cardinality 0..*) is associated with 'robotDSL::Goal' (role 'robotDSL_Goal10', cardinality 0..*).
+'robotDSL::Negation' (role 'robotDSL_Negation', cardinality 0..*) is associated with 'robotDSL::Trigger' (role 'robotDSL_Trigger42', cardinality 0..*).
+'robotDSL::Bool' (role 'robotDSL_Bool40', cardinality 0..*) is associated with 'robotDSL::Trigger' (role 'robotDSL_Trigger39', cardinality 0..*).
+'robotDSL::Goal' (role 'robotDSL_Goal12', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action', cardinality 0..*).
+'robotDSL::Sensor' (role 'robotDSL_Sensor', cardinality 0..*) is associated with 'robotDSL::Trigger' (role 'robotDSL_Trigger47', cardinality 0..*).
+'robotDSL::Trigger' (role 'robotDSL_Trigger28', cardinality 0..*) is associated with 'robotDSL::Action' (role 'robotDSL_Action27', cardinality 0..*).
+'robotDSL::Mission' (role 'robotDSL_Mission', cardinality 0..*) is associated with 'robotDSL::Missions' (role 'robotDSL_Missions', cardinality 0..*).
+'robotDSL::Trigger' (role 'robotDSL_Trigger51', cardinality 0..*) is associated with 'robotDSL::Distance' (role 'robotDSL_Distance', cardinality 0..*).
+'robotDSL::Goal' (role 'robotDSL_Goal', cardinality 0..*) is associated with 'robotDSL::Mission' (role 'robotDSL_Mission6', cardinality 0..*).
+'robotDSL::Action' (role 'robotDSL_Action24', cardinality 0..*) is associated with 'robotDSL::Direction' (role 'robotDSL_Direction25', cardinality 0..*).
+'robotDSL::Action' (role 'robotDSL_Action34', cardinality 0..*) is associated with 'robotDSL::Flag' (role 'robotDSL_Flag35', cardinality 0..*).
+'robotDSL::Flag' (role 'robotDSL_Flag', cardinality 0..*) is associated with 'robotDSL::Mission' (role 'robotDSL_Mission2', cardinality 0..*).
+'robotDSL::Mission' (role 'robotDSL_Mission4', cardinality 0..*) is associated with 'robotDSL::Task' (role 'robotDSL_Task', cardinality 0..*).
+'robotDSL::Trigger' (role 'robotDSL_Trigger', cardinality 0..*) is associated with 'robotDSL::Goal' (role 'robotDSL_Goal8', cardinality 0..*).
+'robotDSL::Distance' (role 'robotDSL_Distance53', cardinality 0..*) is associated with 'robotDSL::Bool' (role 'robotDSL_Bool54', cardinality 0..*).
+'robotDSL::Action' (role 'robotDSL_Action18', cardinality 0..*) is associated with 'robotDSL::Task' (role 'robotDSL_Task17', cardinality 0..*).

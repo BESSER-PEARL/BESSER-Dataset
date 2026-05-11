@@ -1,0 +1,22 @@
+The model has 5 class(es).
+The class 'organizationchart::Location' has the following attributes: 'name' of type str.
+The class 'organizationchart::Organization' has the following attributes: 'name' of type str.
+The class 'organizationchart::Function' has the following attributes: 'name' of type str.
+The class 'organizationchart::OrganizationalStructure' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'organizationchart::Employee' has the following attributes: 'trigraph' of type str; 'firstname' of type str; 'lastname' of type str; 'title' of type str.
+The enumeration 'StructureType' has the following literals: 'department', 'businessUnit', 'division', 'team', 'service'.
+'organizationchart::Employee' (role 'Employee', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'manager', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'organizationchart_OrganizationalStructure23', cardinality 0..*) is associated with 'organizationchart::Function' (role 'organizationchart_Function', cardinality 0..*).
+'organizationchart::Employee' (role 'Employee27', cardinality 0..*) is associated with 'organizationchart::Location' (role 'location', cardinality 0..*).
+'organizationchart::Employee' (role 'Employee18', cardinality 0..*) is associated with 'organizationchart::OrganizationalStructure' (role 'belongsTo', cardinality 0..*).
+'organizationchart::Employee' (role 'employees4', cardinality 0..*) is associated with 'organizationchart::Location' (role 'Location', cardinality 0..*).
+'organizationchart::Function' (role 'performs', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'Employee29', cardinality 0..*).
+'organizationchart::Organization' (role 'organizationchart_Organization16', cardinality 0..*) is associated with 'organizationchart::Location' (role 'organizationchart_Location', cardinality 0..*).
+'organizationchart::Employee' (role 'manages', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'Employee7', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'leads', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'Employee25', cardinality 0..*).
+'organizationchart::Function' (role 'Function', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'isPerformedBy', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'organizationchart_OrganizationalStructure21', cardinality 0..*) is associated with 'organizationchart::OrganizationalStructure' (role 'organizationchart_OrganizationalStructure19', cardinality 0..*).
+'organizationchart::Organization' (role 'organizationchart_Organization', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'organizationchart_Employee', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'organizationchart_OrganizationalStructure', cardinality 0..*) is associated with 'organizationchart::Organization' (role 'organizationchart_Organization14', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'OrganizationalStructure', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'employees', cardinality 0..*).
+'organizationchart::OrganizationalStructure' (role 'OrganizationalStructure11', cardinality 0..*) is associated with 'organizationchart::Employee' (role 'manager10', cardinality 0..*).

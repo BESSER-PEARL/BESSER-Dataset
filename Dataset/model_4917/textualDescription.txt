@@ -1,0 +1,61 @@
+The model has 23 class(es).
+The class 'service::Constant' has no attributes.
+The class 'NamedDisplayElement' has no attributes.
+The class 'service::Services' has no attributes.
+The class 'service::EntityOrView' has no attributes.
+The class 'service::ConstantReference' has the following attributes: 'name' of type str.
+The class 'service::Variable' has no attributes.
+The class 'Order' has no attributes.
+The class 'service::Association' has no attributes.
+The class 'service::Filter' has the following attributes: 'methodName' of type str.
+The class 'service::BusinessOperation' has the following attributes: 'resultMimeType' of type str; 'resultType' of type str.
+The class 'Variable' has no attributes.
+The class 'service::ServiceFeatureReference' has the following attributes: 'name' of type str.
+The class 'service::Expression' has no attributes.
+The class 'service::Selection' has the following attributes: 'limit' of type int; 'methodName' of type str; 'distinct' of type bool.
+The class 'NamedElement' has no attributes.
+The class 'service::Service' has no attributes.
+The class 'service::Order' has no attributes.
+The class 'service::Desc' has no attributes.
+The class 'service::Feature' has no attributes.
+The class 'service::EntityAssociation' has no attributes.
+The class 'FormalParameterList' has no attributes.
+The class 'service::Asc' has no attributes.
+The class 'service::Predicate' has no attributes.
+The enumeration 'OperationResultTypes' has the following literals: 'None_', 'File'.
+'service::Constant' is a specialization of 'NamedElement'.
+'service::BusinessOperation' is a specialization of 'NamedElement'.
+'service::BusinessOperation' is a specialization of 'FormalParameterList'.
+'service::ConstantReference' is a specialization of 'Variable'.
+'service::Service' is a specialization of 'NamedElement'.
+'service::Desc' is a specialization of 'Order'.
+'service::Filter' is a specialization of 'NamedDisplayElement'.
+'service::Selection' is a specialization of 'FormalParameterList'.
+'service::Selection' is a specialization of 'NamedElement'.
+'service::Filter' is a specialization of 'FormalParameterList'.
+'service::ServiceFeatureReference' is a specialization of 'Variable'.
+'service::Asc' is a specialization of 'Order'.
+'service::Order' (role 'service_Order31', cardinality 0..*) is associated with 'service::Variable' (role 'service_Variable', cardinality 0..*).
+'service::Selection' (role 'Selection41', cardinality 0..*) is associated with 'service::Filter' (role 'filters', cardinality 0..*).
+'service::Service' (role 'service_Service39', cardinality 0..*) is associated with 'service::BusinessOperation' (role 'service_BusinessOperation', cardinality 0..*).
+'service::ServiceFeatureReference' (role 'service_ServiceFeatureReference', cardinality 0..*) is associated with 'service::Feature' (role 'service_Feature35', cardinality 0..*).
+'service::Selection' (role 'Selection', cardinality 0..*) is associated with 'service::Service' (role 'usedBy', cardinality 0..*).
+'service::Constant' (role 'Constant', cardinality 0..*) is associated with 'service::Service' (role 'definedBy', cardinality 0..*).
+'service::Filter' (role 'service_Filter', cardinality 0..*) is associated with 'service::Predicate' (role 'service_Predicate43', cardinality 0..*).
+'service::Service' (role 'service_Service14', cardinality 0..*) is associated with 'service::Service' (role 'service_Service12', cardinality 0..*).
+'service::Constant' (role 'service_Constant', cardinality 0..*) is associated with 'service::Expression' (role 'service_Expression', cardinality 0..*).
+'service::Selection' (role 'service_Selection24', cardinality 0..*) is associated with 'service::Predicate' (role 'service_Predicate', cardinality 0..*).
+'service::Selection' (role 'service_Selection27', cardinality 0..*) is associated with 'service::Order' (role 'service_Order', cardinality 0..*).
+'service::Selection' (role 'service_Selection', cardinality 0..*) is associated with 'service::Service' (role 'service_Service6', cardinality 0..*).
+'service::Selection' (role 'service_Selection9', cardinality 0..*) is associated with 'service::Service' (role 'service_Service8', cardinality 0..*).
+'service::Selection' (role 'service_Selection20', cardinality 0..*) is associated with 'service::Feature' (role 'service_Feature', cardinality 0..*).
+'service::ConstantReference' (role 'service_ConstantReference', cardinality 0..*) is associated with 'service::Constant' (role 'service_Constant33', cardinality 0..*).
+'service::Services' (role 'service_Services', cardinality 0..*) is associated with 'service::Service' (role 'service_Service', cardinality 0..*).
+'service::BusinessOperation' (role 'BusinessOperation', cardinality 0..*) is associated with 'service::Service' (role 'definedBy11', cardinality 0..*).
+'service::EntityAssociation' (role 'service_EntityAssociation', cardinality 0..*) is associated with 'service::Selection' (role 'service_Selection29', cardinality 0..*).
+'service::Constant' (role 'constants', cardinality 0..*) is associated with 'service::Service' (role 'Service', cardinality 0..*).
+'service::EntityOrView' (role 'service_EntityOrView', cardinality 0..*) is associated with 'service::Service' (role 'service_Service3', cardinality 0..*).
+'service::BusinessOperation' (role 'operations', cardinality 0..*) is associated with 'service::Service' (role 'Service37', cardinality 0..*).
+'service::Filter' (role 'Filter', cardinality 0..*) is associated with 'service::Selection' (role 'selection', cardinality 0..*).
+'service::Association' (role 'service_Association', cardinality 0..*) is associated with 'service::Selection' (role 'service_Selection22', cardinality 0..*).
+'service::Selection' (role 'selections', cardinality 0..*) is associated with 'service::Service' (role 'Service18', cardinality 0..*).

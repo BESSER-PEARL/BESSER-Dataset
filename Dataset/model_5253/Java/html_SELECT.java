@@ -1,0 +1,49 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class html_SELECT  {
+
+    private String name;
+    private String multiple;
+    private String size;
+
+
+
+    public html_SELECT(
+        String name,        String multiple,        String size    ) {
+        this.name = name;
+        this.multiple = multiple;
+        this.size = size;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getMultiple() {
+        return multiple;
+    }
+
+    public void setMultiple(String multiple) {
+        this.multiple = multiple;
+    }
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+
+}

@@ -1,0 +1,279 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from classes import (
+    Error,
+    Message,
+    BaseElement,
+    services::services::Operation,
+    services::services::EObject,
+    Operation,
+    RootElement,
+    services::services::Interface,
+    services::services::EndPoint,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_error_is_not_abstract():
+    assert not inspect.isabstract(Error)
+
+
+def test_error_constructor_exists():
+    assert callable(Error.__init__)
+
+
+def test_error_constructor_args():
+    sig = inspect.signature(Error.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_message_is_not_abstract():
+    assert not inspect.isabstract(Message)
+
+
+def test_message_constructor_exists():
+    assert callable(Message.__init__)
+
+
+def test_message_constructor_args():
+    sig = inspect.signature(Message.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_baseelement_is_not_abstract():
+    assert not inspect.isabstract(BaseElement)
+
+
+def test_baseelement_constructor_exists():
+    assert callable(BaseElement.__init__)
+
+
+def test_baseelement_constructor_args():
+    sig = inspect.signature(BaseElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_services::services::operation_is_not_abstract():
+    assert not inspect.isabstract(services::services::Operation)
+
+
+def test_services::services::operation_constructor_exists():
+    assert callable(services::services::Operation.__init__)
+
+
+def test_services::services::operation_constructor_args():
+    sig = inspect.signature(services::services::Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_services::services::operation_has_name():
+    assert hasattr(services::services::Operation, "name")
+    descriptor = None
+    for klass in services::services::Operation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_services::services::eobject_is_not_abstract():
+    assert not inspect.isabstract(services::services::EObject)
+
+
+def test_services::services::eobject_constructor_exists():
+    assert callable(services::services::EObject.__init__)
+
+
+def test_services::services::eobject_constructor_args():
+    sig = inspect.signature(services::services::EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operation_is_not_abstract():
+    assert not inspect.isabstract(Operation)
+
+
+def test_operation_constructor_exists():
+    assert callable(Operation.__init__)
+
+
+def test_operation_constructor_args():
+    sig = inspect.signature(Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rootelement_is_not_abstract():
+    assert not inspect.isabstract(RootElement)
+
+
+def test_rootelement_constructor_exists():
+    assert callable(RootElement.__init__)
+
+
+def test_rootelement_constructor_args():
+    sig = inspect.signature(RootElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_services::services::interface_is_not_abstract():
+    assert not inspect.isabstract(services::services::Interface)
+
+
+def test_services::services::interface_constructor_exists():
+    assert callable(services::services::Interface.__init__)
+
+
+def test_services::services::interface_constructor_args():
+    sig = inspect.signature(services::services::Interface.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_services::services::interface_has_name():
+    assert hasattr(services::services::Interface, "name")
+    descriptor = None
+    for klass in services::services::Interface.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_services::services::endpoint_is_not_abstract():
+    assert not inspect.isabstract(services::services::EndPoint)
+
+
+def test_services::services::endpoint_constructor_exists():
+    assert callable(services::services::EndPoint.__init__)
+
+
+def test_services::services::endpoint_constructor_args():
+    sig = inspect.signature(services::services::EndPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+Error_strategy = st.builds(
+    Error,
+)
+Message_strategy = st.builds(
+    Message,
+)
+BaseElement_strategy = st.builds(
+    BaseElement,
+)
+services::services::Operation_strategy = st.builds(
+    services::services::Operation,
+    name=
+        safe_text
+)
+services::services::EObject_strategy = st.builds(
+    services::services::EObject,
+)
+Operation_strategy = st.builds(
+    Operation,
+)
+RootElement_strategy = st.builds(
+    RootElement,
+)
+services::services::Interface_strategy = st.builds(
+    services::services::Interface,
+    name=
+        safe_text
+)
+services::services::EndPoint_strategy = st.builds(
+    services::services::EndPoint,
+)
+
+@given(instance=Error_strategy)
+@settings(max_examples=50)
+def test_error_instantiation(instance):
+    assert isinstance(instance, Error)
+
+@given(instance=Message_strategy)
+@settings(max_examples=50)
+def test_message_instantiation(instance):
+    assert isinstance(instance, Message)
+
+@given(instance=BaseElement_strategy)
+@settings(max_examples=50)
+def test_baseelement_instantiation(instance):
+    assert isinstance(instance, BaseElement)
+
+@given(instance=services::services::Operation_strategy)
+@settings(max_examples=50)
+def test_services::services::operation_instantiation(instance):
+    assert isinstance(instance, services::services::Operation)
+
+@given(instance=services::services::Operation_strategy)
+def test_services::services::operation_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=services::services::Operation_strategy)
+def test_services::services::operation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=services::services::EObject_strategy)
+@settings(max_examples=50)
+def test_services::services::eobject_instantiation(instance):
+    assert isinstance(instance, services::services::EObject)
+
+@given(instance=Operation_strategy)
+@settings(max_examples=50)
+def test_operation_instantiation(instance):
+    assert isinstance(instance, Operation)
+
+@given(instance=RootElement_strategy)
+@settings(max_examples=50)
+def test_rootelement_instantiation(instance):
+    assert isinstance(instance, RootElement)
+
+@given(instance=services::services::Interface_strategy)
+@settings(max_examples=50)
+def test_services::services::interface_instantiation(instance):
+    assert isinstance(instance, services::services::Interface)
+
+@given(instance=services::services::Interface_strategy)
+def test_services::services::interface_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=services::services::Interface_strategy)
+def test_services::services::interface_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=services::services::EndPoint_strategy)
+@settings(max_examples=50)
+def test_services::services::endpoint_instantiation(instance):
+    assert isinstance(instance, services::services::EndPoint)

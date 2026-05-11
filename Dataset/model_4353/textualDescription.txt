@@ -1,0 +1,204 @@
+The model has 77 class(es).
+The class 'TrgCondition' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgEquation' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcENamedElement' has the following attributes: 'name' of type str.
+The class 'jointPackage::Ecore2Maude::TrgSort' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgCompModExp' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEStringToStringMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'jointPackage::Ecore2Maude::TrgRenMapping' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgOpMapping' has the following attributes: 'to' of type str.
+The class 'jointPackage::Ecore2Maude::SrcEClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+The class 'jointPackage::Ecore2Maude::TrgFModule' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgOpTypedMapping' has the following attributes: 'to' of type str; 'atts' of type str.
+The class 'jointPackage::Ecore2Maude::TrgSubsortRel' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgEqualCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgTheoryIdModExp' has no attributes.
+The class 'SrcEStructuralFeature' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgKind' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgParameter' has the following attributes: 'label' of type str.
+The class 'TrgEquationalCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgSModule' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgFTheory' has no attributes.
+The class 'TrgMaudeTopEl' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgModuleIdModExp' has no attributes.
+The class 'TrgStatement' has no attributes.
+The class 'TrgModExpression' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgBooleanCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgMembershipCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEEnum' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEPackage' has the following attributes: 'nsPrefix' of type str; 'nsURI' of type str.
+The class 'jointPackage::Ecore2Maude::TrgModExpression' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgRule' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEParameter' has no attributes.
+The class 'jointPackage::Ecore2Maude::JointMM' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgTerm' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgOperation' has the following attributes: 'atts' of type str; 'name' of type str.
+The class 'jointPackage::Ecore2Maude::TrgModule' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgModElement' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEClassifier' has the following attributes: 'instanceTypeName' of type str; 'instanceClassName' of type str.
+The class 'TrgRenMapping' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcETypedElement' has the following attributes: 'many' of type bool; 'ordered' of type bool; 'unique' of type bool; 'lowerBound' of type int; 'upperBound' of type int; 'required' of type bool.
+The class 'jointPackage::Ecore2Maude::SrcEReference' has the following attributes: 'container' of type bool; 'containment' of type bool; 'resolveProxies' of type bool.
+The class 'jointPackage::Ecore2Maude::TrgCondition' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEAttribute' has the following attributes: 'iD' of type bool.
+The class 'jointPackage::Ecore2Maude::TrgRenModExp' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgViewMapping' has no attributes.
+The class 'TrgModElement' has no attributes.
+The class 'SrcEClassifier' has no attributes.
+The class 'SrcETypedElement' has no attributes.
+The class 'TrgTheory' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgConstant' has the following attributes: 'op' of type str.
+The class 'jointPackage::Ecore2Maude::TrgSTheory' has no attributes.
+The class 'SrcENamedElement' has no attributes.
+The class 'TrgType' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEEnumLiteral' has the following attributes: 'literal' of type str; 'value' of type int.
+The class 'jointPackage::Ecore2Maude::TrgStatement' has the following attributes: 'label' of type str; 'atts' of type str.
+The class 'jointPackage::Ecore2Maude::TrgEquationalCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgType' has the following attributes: 'name' of type str.
+The class 'jointPackage::Ecore2Maude::TrgMaudeSpec' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEOperation' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgView' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgRewriteCond' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgLabelMapping' has the following attributes: 'to' of type str; 'from_' of type str.
+The class 'TrgViewMapping' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgSortMapping' has the following attributes: 'to' of type str.
+The class 'jointPackage::Ecore2Maude::SrcEDataType' has the following attributes: 'serializable' of type bool.
+The class 'TrgModule' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgVariable' has the following attributes: 'name' of type str.
+The class 'jointPackage::Ecore2Maude::TrgInstModExp' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgTheory' has no attributes.
+The class 'jointPackage::Ecore2Maude::SrcEStructuralFeature' has the following attributes: 'derived' of type bool; 'defaultValueLiteral' of type str; 'volatile' of type bool; 'unsettable' of type bool; 'transient' of type bool; 'changeable' of type bool.
+The class 'jointPackage::Ecore2Maude::TrgMembership' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgTermMapping' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgRecTerm' has the following attributes: 'op' of type str.
+The class 'TrgTerm' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgModImportation' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgMatchingCond' has no attributes.
+The class 'SrcEDataType' has no attributes.
+The class 'jointPackage::Ecore2Maude::TrgMaudeTopEl' has the following attributes: 'name' of type str.
+'jointPackage::Ecore2Maude::TrgTermMapping' is a specialization of 'TrgViewMapping'.
+'jointPackage::Ecore2Maude::TrgRenMapping' is a specialization of 'TrgViewMapping'.
+'jointPackage::Ecore2Maude::SrcEClassifier' is a specialization of 'SrcENamedElement'.
+'jointPackage::Ecore2Maude::TrgParameter' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::SrcEParameter' is a specialization of 'SrcETypedElement'.
+'jointPackage::Ecore2Maude::SrcEEnum' is a specialization of 'SrcEDataType'.
+'jointPackage::Ecore2Maude::TrgStatement' is a specialization of 'TrgModElement'.
+'jointPackage::Ecore2Maude::TrgSortMapping' is a specialization of 'TrgRenMapping'.
+'jointPackage::Ecore2Maude::TrgRecTerm' is a specialization of 'TrgTerm'.
+'jointPackage::Ecore2Maude::TrgMatchingCond' is a specialization of 'TrgEquationalCond'.
+'jointPackage::Ecore2Maude::TrgFModule' is a specialization of 'TrgModule'.
+'jointPackage::Ecore2Maude::TrgTheory' is a specialization of 'TrgMaudeTopEl'.
+'jointPackage::Ecore2Maude::SrcEClass' is a specialization of 'SrcEClassifier'.
+'jointPackage::Ecore2Maude::TrgSort' is a specialization of 'TrgType'.
+'jointPackage::Ecore2Maude::TrgInstModExp' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::SrcEAttribute' is a specialization of 'SrcEStructuralFeature'.
+'jointPackage::Ecore2Maude::TrgRewriteCond' is a specialization of 'TrgCondition'.
+'jointPackage::Ecore2Maude::TrgVariable' is a specialization of 'TrgTerm'.
+'jointPackage::Ecore2Maude::TrgView' is a specialization of 'TrgMaudeTopEl'.
+'jointPackage::Ecore2Maude::SrcETypedElement' is a specialization of 'SrcENamedElement'.
+'jointPackage::Ecore2Maude::SrcEOperation' is a specialization of 'SrcETypedElement'.
+'jointPackage::Ecore2Maude::TrgOpMapping' is a specialization of 'TrgRenMapping'.
+'jointPackage::Ecore2Maude::TrgMembership' is a specialization of 'TrgStatement'.
+'jointPackage::Ecore2Maude::TrgEqualCond' is a specialization of 'TrgEquationalCond'.
+'jointPackage::Ecore2Maude::TrgModImportation' is a specialization of 'TrgModElement'.
+'jointPackage::Ecore2Maude::TrgOperation' is a specialization of 'TrgModElement'.
+'jointPackage::Ecore2Maude::TrgKind' is a specialization of 'TrgType'.
+'jointPackage::Ecore2Maude::TrgModuleIdModExp' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::TrgRule' is a specialization of 'TrgStatement'.
+'jointPackage::Ecore2Maude::TrgConstant' is a specialization of 'TrgTerm'.
+'jointPackage::Ecore2Maude::TrgOpTypedMapping' is a specialization of 'TrgRenMapping'.
+'jointPackage::Ecore2Maude::TrgMembershipCond' is a specialization of 'TrgEquationalCond'.
+'jointPackage::Ecore2Maude::TrgEquationalCond' is a specialization of 'TrgCondition'.
+'jointPackage::Ecore2Maude::TrgRenModExp' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::TrgSort' is a specialization of 'TrgModElement'.
+'jointPackage::Ecore2Maude::TrgSTheory' is a specialization of 'TrgTheory'.
+'jointPackage::Ecore2Maude::SrcEPackage' is a specialization of 'SrcENamedElement'.
+'jointPackage::Ecore2Maude::TrgSModule' is a specialization of 'TrgModule'.
+'jointPackage::Ecore2Maude::TrgTheoryIdModExp' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::TrgEquation' is a specialization of 'TrgStatement'.
+'jointPackage::Ecore2Maude::TrgBooleanCond' is a specialization of 'TrgEquationalCond'.
+'jointPackage::Ecore2Maude::TrgCompModExp' is a specialization of 'TrgModExpression'.
+'jointPackage::Ecore2Maude::TrgFTheory' is a specialization of 'TrgTheory'.
+'jointPackage::Ecore2Maude::SrcEReference' is a specialization of 'SrcEStructuralFeature'.
+'jointPackage::Ecore2Maude::TrgModule' is a specialization of 'TrgMaudeTopEl'.
+'jointPackage::Ecore2Maude::SrcEDataType' is a specialization of 'SrcEClassifier'.
+'jointPackage::Ecore2Maude::SrcEEnumLiteral' is a specialization of 'SrcENamedElement'.
+'jointPackage::Ecore2Maude::SrcEStructuralFeature' is a specialization of 'SrcETypedElement'.
+'jointPackage::Ecore2Maude::TrgLabelMapping' is a specialization of 'TrgRenMapping'.
+'jointPackage::Ecore2Maude::TrgSubsortRel' is a specialization of 'TrgModElement'.
+'jointPackage::Ecore2Maude::SrcEPackage' (role 'SrcEPackage43', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEPackage' (role 'eSuperPackage', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTheoryIdModExp' (role 'jointPackage_Ecore2Maude_TrgTheoryIdModExp', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTheory' (role 'jointPackage_Ecore2Maude_TrgTheory', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgEqualCond' (role 'jointPackage_Ecore2Maude_TrgEqualCond84', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm85', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass11', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression90', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgRenModExp' (role 'jointPackage_Ecore2Maude_TrgRenModExp', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm146', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTermMapping' (role 'jointPackage_Ecore2Maude_TrgTermMapping145', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgInstModExp' (role 'jointPackage_Ecore2Maude_TrgInstModExp88', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgView' (role 'jointPackage_Ecore2Maude_TrgView', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference14', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass13', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgType' (role 'jointPackage_Ecore2Maude_TrgType131', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm130', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModImportation' (role 'jointPackage_Ecore2Maude_TrgModImportation', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression109', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgMaudeTopEl' (role 'jointPackage_Ecore2Maude_TrgMaudeTopEl', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgMaudeSpec' (role 'jointPackage_Ecore2Maude_TrgMaudeSpec', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEAttribute' (role 'jointPackage_Ecore2Maude_SrcEAttribute57', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference56', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgKind' (role 'TrgKind', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'sorts', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgRule' (role 'jointPackage_Ecore2Maude_TrgRule77', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm78', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgSortMapping' (role 'jointPackage_Ecore2Maude_TrgSortMapping', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'jointPackage_Ecore2Maude_TrgSort148', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression139', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgView' (role 'jointPackage_Ecore2Maude_TrgView138', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass22', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEOperation' (role 'jointPackage_Ecore2Maude_SrcEOperation', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEOperation' (role 'jointPackage_Ecore2Maude_SrcEOperation39', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClassifier' (role 'jointPackage_Ecore2Maude_SrcEClassifier', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgOpMapping' (role 'jointPackage_Ecore2Maude_TrgOpMapping', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgOperation' (role 'jointPackage_Ecore2Maude_TrgOperation152', cardinality 0..*).
+'jointPackage::Ecore2Maude::JointMM' (role 'jointPackage_Ecore2Maude_JointMM', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEStringToStringMapEntry' (role 'jointPackage_Ecore2Maude_SrcEStringToStringMapEntry', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgSubsortRel' (role 'subsortRels', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'TrgSort118', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgMembership' (role 'jointPackage_Ecore2Maude_TrgMembership68', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'jointPackage_Ecore2Maude_TrgSort', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgOpTypedMapping' (role 'jointPackage_Ecore2Maude_TrgOpTypedMapping', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgOperation' (role 'jointPackage_Ecore2Maude_TrgOperation150', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass27', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass25', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEOperation' (role 'SrcEOperation48', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEParameter' (role 'eParameters', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression136', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgView' (role 'jointPackage_Ecore2Maude_TrgView135', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgEquation' (role 'jointPackage_Ecore2Maude_TrgEquation72', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm73', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgMembership' (role 'jointPackage_Ecore2Maude_TrgMembership', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression98', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgParameter' (role 'jointPackage_Ecore2Maude_TrgParameter', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEOperation' (role 'eOperation', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEParameter' (role 'SrcEParameter', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgCondition' (role 'jointPackage_Ecore2Maude_TrgCondition125', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm126', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEOperation' (role 'SrcEOperation', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'eContainingClass', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass54', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference53', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEAttribute' (role 'jointPackage_Ecore2Maude_SrcEAttribute30', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass29', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm143', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTermMapping' (role 'jointPackage_Ecore2Maude_TrgTermMapping', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgSort' (role 'TrgSort116', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSubsortRel' (role 'supersortRels', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgMaudeTopEl' (role 'jointPackage_Ecore2Maude_TrgMaudeTopEl65', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgMaudeSpec' (role 'jointPackage_Ecore2Maude_TrgMaudeSpec64', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgCompModExp' (role 'jointPackage_Ecore2Maude_TrgCompModExp', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression94', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModule' (role 'jointPackage_Ecore2Maude_TrgModule103', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgParameter' (role 'jointPackage_Ecore2Maude_TrgParameter104', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEPackage' (role 'SrcEPackage46', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEPackage' (role 'eSubpackages', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm82', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgMatchingCond' (role 'jointPackage_Ecore2Maude_TrgMatchingCond', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgType' (role 'jointPackage_Ecore2Maude_TrgType', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgOperation' (role 'jointPackage_Ecore2Maude_TrgOperation', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgInstModExp' (role 'jointPackage_Ecore2Maude_TrgInstModExp', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModExpression' (role 'jointPackage_Ecore2Maude_TrgModExpression', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEEnumLiteral' (role 'eLiterals', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEEnum' (role 'SrcEEnum', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'SrcEClass59', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgRewriteCond' (role 'jointPackage_Ecore2Maude_TrgRewriteCond', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm128', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgMembershipCond' (role 'jointPackage_Ecore2Maude_TrgMembershipCond', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'jointPackage_Ecore2Maude_TrgSort80', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEPackage' (role 'ePackage', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClassifier' (role 'SrcEClassifier', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModElement' (role 'TrgModElement101', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModule' (role 'module', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'SrcEClass', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEOperation' (role 'eOperations', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass16', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEAttribute' (role 'jointPackage_Ecore2Maude_SrcEAttribute17', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEAttribute' (role 'jointPackage_Ecore2Maude_SrcEAttribute9', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass8', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModule' (role 'jointPackage_Ecore2Maude_TrgModule', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModuleIdModExp' (role 'jointPackage_Ecore2Maude_TrgModuleIdModExp', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEStructuralFeature' (role 'jointPackage_Ecore2Maude_SrcEStructuralFeature', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass24', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModElement' (role 'els', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModule' (role 'TrgModule', cardinality 0..*).
+'jointPackage::Ecore2Maude::JointMM' (role 'jointPackage_Ecore2Maude_JointMM2', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgEqualCond' (role 'jointPackage_Ecore2Maude_TrgEqualCond', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgCondition' (role 'jointPackage_Ecore2Maude_TrgCondition', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgStatement' (role 'jointPackage_Ecore2Maude_TrgStatement', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEDataType' (role 'jointPackage_Ecore2Maude_SrcEDataType', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEAttribute' (role 'jointPackage_Ecore2Maude_SrcEAttribute', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgSort' (role 'supersorts', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSubsortRel' (role 'TrgSubsortRel', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgKind' (role 'kind', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSort' (role 'TrgSort', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass19', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference20', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgType' (role 'jointPackage_Ecore2Maude_TrgType122', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgOperation' (role 'jointPackage_Ecore2Maude_TrgOperation121', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTheory' (role 'theory', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgModElement' (role 'TrgModElement', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm70', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgEquation' (role 'jointPackage_Ecore2Maude_TrgEquation', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgRenModExp' (role 'jointPackage_Ecore2Maude_TrgRenModExp92', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgRenMapping' (role 'jointPackage_Ecore2Maude_TrgRenMapping', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgView' (role 'jointPackage_Ecore2Maude_TrgView141', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgViewMapping' (role 'jointPackage_Ecore2Maude_TrgViewMapping', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEPackage' (role 'SrcEPackage', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm133', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgRecTerm' (role 'jointPackage_Ecore2Maude_TrgRecTerm', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgModElement' (role 'els107', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgTheory' (role 'TrgTheory', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEEnum' (role 'eEnum', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEEnumLiteral' (role 'SrcEEnumLiteral', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEClass' (role 'jointPackage_Ecore2Maude_SrcEClass4', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgTerm' (role 'jointPackage_Ecore2Maude_TrgTerm75', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgRule' (role 'jointPackage_Ecore2Maude_TrgRule', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference49', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEReference' (role 'jointPackage_Ecore2Maude_SrcEReference51', cardinality 0..*).
+'jointPackage::Ecore2Maude::TrgSort' (role 'subsorts', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::TrgSubsortRel' (role 'TrgSubsortRel112', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClassifier' (role 'jointPackage_Ecore2Maude_SrcEClassifier61', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcETypedElement' (role 'jointPackage_Ecore2Maude_SrcETypedElement', cardinality 0..*).
+'jointPackage::Ecore2Maude::SrcEClass' (role 'eContainingClass32', cardinality 0..*) is associated with 'jointPackage::Ecore2Maude::SrcEStructuralFeature' (role 'SrcEStructuralFeature', cardinality 0..*).

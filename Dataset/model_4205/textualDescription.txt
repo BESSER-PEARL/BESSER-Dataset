@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'myDsl::Greeting' has the following attributes: 'question' of type str.
+The class 'myDsl::ReponseT' has no attributes.
+The class 'myDsl::ReponseF' has no attributes.
+The class 'Reponse' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Reponse' has the following attributes: 'name' of type str.
+'myDsl::ReponseF' is a specialization of 'Reponse'.
+'myDsl::ReponseT' is a specialization of 'Reponse'.
+'myDsl::Greeting' (role 'myDsl_Greeting2', cardinality 0..*) is associated with 'myDsl::Reponse' (role 'myDsl_Reponse', cardinality 0..*).
+'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).

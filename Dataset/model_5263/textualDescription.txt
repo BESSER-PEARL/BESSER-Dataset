@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'lazyBuilder::A' has no attributes.
+The class 'lazyBuilder::B' has no attributes.
+'lazyBuilder::A' (role 'lazyBuilder_A', cardinality 0..*) is associated with 'lazyBuilder::B' (role 'lazyBuilder_B', cardinality 0..*).

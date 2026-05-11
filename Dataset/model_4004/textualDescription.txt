@@ -1,0 +1,53 @@
+The model has 19 class(es).
+The class 'UML::14::Attribute' has the following attributes: 'visibility' of type str; 'initialValue' of type str.
+The class 'UML::14::EnumerationLiteral' has the following attributes: 'value' of type str.
+The class 'UML::14::DataType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'UML::14::Model' has no attributes.
+The class 'UML::14::NamedElement' has the following attributes: 'name' of type str.
+The class 'UML::14::Method' has the following attributes: 'body' of type str; 'visibility' of type str.
+The class 'UML::14::AssociationEnd' has the following attributes: 'visibility' of type str; 'isNavigable' of type str.
+The class 'UML::14::Generalization' has the following attributes: 'discriminator' of type str.
+The class 'UML::14::Parameter' has the following attributes: 'defaultValue' of type str; 'kind' of type str.
+The class 'UML::14::Constraint' has the following attributes: 'body' of type str.
+The class 'UML::14::Primitive' has no attributes.
+The class 'UML::14::Association' has no attributes.
+The class 'DataType' has no attributes.
+The class 'UML::14::Enumeration' has no attributes.
+The class 'UML::14::Class' has the following attributes: 'isActive' of type str.
+The class 'UML::14::Comment' has the following attributes: 'body' of type str.
+The class 'UML::14::MultiplicityRange' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'UML::14::Package' has no attributes.
+'UML::14::DataType' is a specialization of 'NamedElement'.
+'UML::14::Class' is a specialization of 'NamedElement'.
+'UML::14::Parameter' is a specialization of 'NamedElement'.
+'UML::14::Attribute' is a specialization of 'NamedElement'.
+'UML::14::AssociationEnd' is a specialization of 'NamedElement'.
+'UML::14::Primitive' is a specialization of 'DataType'.
+'UML::14::Association' is a specialization of 'NamedElement'.
+'UML::14::Enumeration' is a specialization of 'DataType'.
+'UML::14::Method' is a specialization of 'NamedElement'.
+'UML::14::Package' is a specialization of 'NamedElement'.
+'UML::14::Association' (role 'association', cardinality 0..*) is associated with 'UML::14::AssociationEnd' (role 'AssociationEnd', cardinality 0..*).
+'UML::14::Package' (role 'UML_14_Package33', cardinality 0..*) is associated with 'UML::14::Package' (role 'UML_14_Package35', cardinality 0..*).
+'UML::14::Generalization' (role 'UML_14_Generalization', cardinality 0..*) is associated with 'UML::14::Class' (role 'UML_14_Class', cardinality 0..*).
+'UML::14::Class' (role 'UML_14_Class22', cardinality 0..*) is associated with 'UML::14::Attribute' (role 'UML_14_Attribute23', cardinality 0..*).
+'UML::14::Class' (role 'UML_14_Class25', cardinality 0..*) is associated with 'UML::14::Method' (role 'UML_14_Method26', cardinality 0..*).
+'UML::14::DataType' (role 'UML_14_DataType6', cardinality 0..*) is associated with 'UML::14::Attribute' (role 'UML_14_Attribute5', cardinality 0..*).
+'UML::14::AssociationEnd' (role 'UML_14_AssociationEnd', cardinality 0..*) is associated with 'UML::14::Class' (role 'UML_14_Class14', cardinality 0..*).
+'UML::14::Enumeration' (role 'enumeration', cardinality 0..*) is associated with 'UML::14::EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*).
+'UML::14::Generalization' (role 'UML_14_Generalization41', cardinality 0..*) is associated with 'UML::14::Package' (role 'UML_14_Package40', cardinality 0..*).
+'UML::14::Association' (role 'Association', cardinality 0..*) is associated with 'UML::14::AssociationEnd' (role 'connection', cardinality 0..*).
+'UML::14::Constraint' (role 'UML_14_Constraint', cardinality 0..*) is associated with 'UML::14::NamedElement' (role 'UML_14_NamedElement46', cardinality 0..*).
+'UML::14::Parameter' (role 'UML_14_Parameter2', cardinality 0..*) is associated with 'UML::14::Method' (role 'UML_14_Method', cardinality 0..*).
+'UML::14::MultiplicityRange' (role 'UML_14_MultiplicityRange17', cardinality 0..*) is associated with 'UML::14::AssociationEnd' (role 'UML_14_AssociationEnd16', cardinality 0..*).
+'UML::14::Parameter' (role 'UML_14_Parameter', cardinality 0..*) is associated with 'UML::14::DataType' (role 'UML_14_DataType', cardinality 0..*).
+'UML::14::Comment' (role 'UML_14_Comment', cardinality 0..*) is associated with 'UML::14::NamedElement' (role 'UML_14_NamedElement', cardinality 0..*).
+'UML::14::DataType' (role 'UML_14_DataType38', cardinality 0..*) is associated with 'UML::14::Package' (role 'UML_14_Package37', cardinality 0..*).
+'UML::14::Generalization' (role 'UML_14_Generalization9', cardinality 0..*) is associated with 'UML::14::Class' (role 'UML_14_Class10', cardinality 0..*).
+'UML::14::Model' (role 'UML_14_Model', cardinality 0..*) is associated with 'UML::14::Package' (role 'UML_14_Package', cardinality 0..*).
+'UML::14::AssociationEnd' (role 'UML_14_AssociationEnd19', cardinality 0..*) is associated with 'UML::14::Attribute' (role 'UML_14_Attribute20', cardinality 0..*).
+'UML::14::MultiplicityRange' (role 'UML_14_MultiplicityRange', cardinality 0..*) is associated with 'UML::14::Attribute' (role 'UML_14_Attribute', cardinality 0..*).
+'UML::14::Package' (role 'UML_14_Package43', cardinality 0..*) is associated with 'UML::14::Association' (role 'UML_14_Association', cardinality 0..*).
+'UML::14::Package' (role 'UML_14_Package31', cardinality 0..*) is associated with 'UML::14::Class' (role 'UML_14_Class32', cardinality 0..*).
+'UML::14::Enumeration' (role 'Enumeration', cardinality 0..*) is associated with 'UML::14::EnumerationLiteral' (role 'literal', cardinality 0..*).

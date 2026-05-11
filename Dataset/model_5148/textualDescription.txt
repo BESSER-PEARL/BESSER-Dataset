@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'A' has no attributes.
+The class 'TestMerge::A' has the following attributes: 'someNewAttribute' of type str.
+The class 'TestMerge::C' has no attributes.
+'TestMerge::C' is a specialization of 'A'.

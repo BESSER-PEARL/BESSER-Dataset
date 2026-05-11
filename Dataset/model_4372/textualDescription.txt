@@ -1,0 +1,62 @@
+The model has 31 class(es).
+The class 'QuantifyOperator' has no attributes.
+The class 'expressions::All' has no attributes.
+The class 'expressions::Number' has the following attributes: 'value' of type int.
+The class 'BinaryOperator' has no attributes.
+The class 'expressions::QuantifyOperator' has no attributes.
+The class 'expressions::BinaryOperator' has no attributes.
+The class 'expressions::E' has no attributes.
+The class 'expressions::Model' has no attributes.
+The class 'expressions::D' has no attributes.
+The class 'ComparisonOperator' has no attributes.
+The class 'Expression' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'expressions::Count' has no attributes.
+The class 'expressions::Implies' has no attributes.
+The class 'Function' has no attributes.
+The class 'expressions::L' has no attributes.
+The class 'expressions::ComparisonOperand' has no attributes.
+The class 'expressions::Or' has no attributes.
+The class 'expressions::UnaryOperator' has no attributes.
+The class 'ComparisonOperand' has no attributes.
+The class 'expressions::GE' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'expressions::Quantity' has the following attributes: 'value' of type int.
+The class 'expressions::Feature' has the following attributes: 'name' of type str.
+The class 'expressions::Any' has no attributes.
+The class 'expressions::Function' has no attributes.
+The class 'expressions::LE' has no attributes.
+The class 'expressions::And' has no attributes.
+The class 'expressions::Neg' has no attributes.
+The class 'expressions::ComparisonOperator' has no attributes.
+The class 'expressions::G' has no attributes.
+'expressions::Function' is a specialization of 'ComparisonOperand'.
+'expressions::UnaryOperator' is a specialization of 'Expression'.
+'expressions::L' is a specialization of 'ComparisonOperator'.
+'expressions::Any' is a specialization of 'QuantifyOperator'.
+'expressions::G' is a specialization of 'ComparisonOperator'.
+'expressions::LE' is a specialization of 'ComparisonOperator'.
+'expressions::And' is a specialization of 'BinaryOperator'.
+'expressions::E' is a specialization of 'ComparisonOperator'.
+'expressions::GE' is a specialization of 'ComparisonOperator'.
+'expressions::Neg' is a specialization of 'UnaryOperator'.
+'expressions::Or' is a specialization of 'BinaryOperator'.
+'expressions::Number' is a specialization of 'QuantifyOperator'.
+'expressions::Implies' is a specialization of 'BinaryOperator'.
+'expressions::Quantity' is a specialization of 'ComparisonOperand'.
+'expressions::ComparisonOperator' is a specialization of 'Expression'.
+'expressions::D' is a specialization of 'ComparisonOperator'.
+'expressions::BinaryOperator' is a specialization of 'Expression'.
+'expressions::All' is a specialization of 'QuantifyOperator'.
+'expressions::Feature' is a specialization of 'Expression'.
+'expressions::ComparisonOperand' is a specialization of 'Expression'.
+'expressions::QuantifyOperator' is a specialization of 'Expression'.
+'expressions::Count' is a specialization of 'Function'.
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'expressions::BinaryOperator' (role 'expressions_BinaryOperator', cardinality 0..*).
+'expressions::ComparisonOperand' (role 'expressions_ComparisonOperand11', cardinality 0..*) is associated with 'expressions::ComparisonOperator' (role 'expressions_ComparisonOperator10', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression7', cardinality 0..*) is associated with 'expressions::Model' (role 'expressions_Model', cardinality 0..*).
+'expressions::Feature' (role 'expressions_Feature', cardinality 0..*) is associated with 'expressions::Function' (role 'expressions_Function', cardinality 0..*).
+'expressions::BinaryOperator' (role 'expressions_BinaryOperator2', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression3', cardinality 0..*).
+'expressions::ComparisonOperator' (role 'expressions_ComparisonOperator', cardinality 0..*) is associated with 'expressions::ComparisonOperand' (role 'expressions_ComparisonOperand', cardinality 0..*).
+'expressions::QuantifyOperator' (role 'expressions_QuantifyOperator', cardinality 0..*) is associated with 'expressions::Feature' (role 'expressions_Feature14', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression5', cardinality 0..*) is associated with 'expressions::UnaryOperator' (role 'expressions_UnaryOperator', cardinality 0..*).

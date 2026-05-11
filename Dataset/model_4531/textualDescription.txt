@@ -1,0 +1,34 @@
+The model has 13 class(es).
+The class 'drone::Memory' has the following attributes: 'subType' of type str; 'size' of type int; 'type' of type str.
+The class 'drone::Processor' has the following attributes: 'architecture' of type str; 'frequency' of type int.
+The class 'drone::FlightPerformance' has the following attributes: 'minOperatingTemperature' of type float; 'maxOperatingTemperature' of type float; 'maxFlightTime' of type int; 'maxFlightTimeWithMaxPayload' of type int; 'maxSpeed' of type int; 'maxPayload' of type int; 'maxAcceleration' of type int; 'positionHold' of type float; 'launchType' of type str; 'maxAltitude' of type int; 'minAcceleration' of type int; 'maxDescendRate' of type float; 'minTurnRate' of type float; 'maxClimbRate' of type float; 'minSpeed' of type int; 'maxTurnRate' of type float.
+The class 'drone::Device' has no attributes.
+The class 'drone::Action' has no attributes.
+The class 'drone::Size' has the following attributes: 'width' of type float; 'propellers' of type int; 'propellerSize' of type float; 'weight' of type float; 'height' of type float; 'length' of type float.
+The class 'NamedElement' has no attributes.
+The class 'drone::Drone' has the following attributes: 'radioFrequency' of type int; 'communicationRange' of type float; 'minVoltage' of type float; 'dataRate' of type int; 'onBoardObstacleAvoidance' of type bool; 'maxVoltage' of type float; 'magnetometer' of type bool; 'giro' of type bool; 'maxPowerConsumption' of type float; 'accelerometer' of type bool; 'barometer' of type bool; 'gps' of type bool.
+The class 'drone::ROSDriver' has the following attributes: 'url' of type str; 'version' of type str.
+The class 'drone::Parameter' has the following attributes: 'description' of type str; 'key' of type str.
+The class 'drone::NamedElement' has the following attributes: 'name' of type str.
+The class 'drone::Battery' has the following attributes: 'voltage' of type float; 'capacity' of type int; 'rechargeTime' of type int; 'cellType' of type str.
+The class 'drone::Property' has the following attributes: 'value' of type str.
+The enumeration 'MemoryType' has the following literals: 'VOLATILE', 'STORAGE'.
+The enumeration 'LaunchType' has the following literals: 'VTOL', 'OTHER', 'HTOL'.
+'drone::Processor' is a specialization of 'NamedElement'.
+'drone::Battery' is a specialization of 'NamedElement'.
+'drone::Action' is a specialization of 'NamedElement'.
+'drone::ROSDriver' is a specialization of 'NamedElement'.
+'drone::Memory' is a specialization of 'NamedElement'.
+'drone::Device' is a specialization of 'NamedElement'.
+'drone::Property' is a specialization of 'NamedElement'.
+'drone::Drone' is a specialization of 'NamedElement'.
+'drone::Drone' (role 'drone_Drone6', cardinality 0..*) is associated with 'drone::Processor' (role 'drone_Processor', cardinality 0..*).
+'drone::Device' (role 'drone_Device', cardinality 0..*) is associated with 'drone::Drone' (role 'drone_Drone10', cardinality 0..*).
+'drone::Drone' (role 'drone_Drone2', cardinality 0..*) is associated with 'drone::FlightPerformance' (role 'drone_FlightPerformance', cardinality 0..*).
+'drone::Drone' (role 'drone_Drone12', cardinality 0..*) is associated with 'drone::ROSDriver' (role 'drone_ROSDriver', cardinality 0..*).
+'drone::Property' (role 'drone_Property', cardinality 0..*) is associated with 'drone::Device' (role 'drone_Device16', cardinality 0..*).
+'drone::Size' (role 'drone_Size', cardinality 0..*) is associated with 'drone::Drone' (role 'drone_Drone', cardinality 0..*).
+'drone::Action' (role 'drone_Action18', cardinality 0..*) is associated with 'drone::Parameter' (role 'drone_Parameter', cardinality 0..*).
+'drone::Battery' (role 'drone_Battery', cardinality 0..*) is associated with 'drone::Drone' (role 'drone_Drone4', cardinality 0..*).
+'drone::Action' (role 'drone_Action', cardinality 0..*) is associated with 'drone::Device' (role 'drone_Device14', cardinality 0..*).
+'drone::Memory' (role 'drone_Memory', cardinality 0..*) is associated with 'drone::Drone' (role 'drone_Drone8', cardinality 0..*).

@@ -1,0 +1,63 @@
+The model has 30 class(es).
+The class 'ca::rule::NeighborsExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'ca::rule::IntegerExpression' has no attributes.
+The class 'ca::rule::Greater' has no attributes.
+The class 'ca::rule::Not' has no attributes.
+The class 'ca::rule::Equal' has no attributes.
+The class 'ca::rule::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'UnaryExpression' has no attributes.
+The class 'ca::rule::PopulationRange' has the following attributes: 'upperRange' of type int; 'lowerRange' of type int.
+The class 'ca::rule::UnaryExpression' has no attributes.
+The class 'ca::rule::And' has no attributes.
+The class 'ca::rule::Mult' has no attributes.
+The class 'ca::rule::Lower' has no attributes.
+The class 'IntegerExpression' has no attributes.
+The class 'ca::rule::Max' has no attributes.
+The class 'ca::rule::BinaryExpression' has no attributes.
+The class 'ca::rule::CellularAutomata' has no attributes.
+The class 'ca::rule::Size' has no attributes.
+The class 'ca::rule::Div' has no attributes.
+The class 'ca::rule::Conditional' has no attributes.
+The class 'ca::rule::Minus' has no attributes.
+The class 'ca::rule::Or' has no attributes.
+The class 'ca::rule::CurrentCellPopulation' has no attributes.
+The class 'ca::rule::UMinus' has no attributes.
+The class 'ca::rule::Sum' has no attributes.
+The class 'ca::rule::Min' has no attributes.
+The class 'ca::rule::Rule' has no attributes.
+The class 'ca::rule::Mod' has no attributes.
+The class 'ca::rule::Add' has no attributes.
+The class 'NeighborsExpression' has no attributes.
+'ca::rule::Mod' is a specialization of 'BinaryExpression'.
+'ca::rule::BinaryExpression' is a specialization of 'IntegerExpression'.
+'ca::rule::UnaryExpression' is a specialization of 'IntegerExpression'.
+'ca::rule::Greater' is a specialization of 'BinaryExpression'.
+'ca::rule::UMinus' is a specialization of 'UnaryExpression'.
+'ca::rule::Not' is a specialization of 'UnaryExpression'.
+'ca::rule::NeighborsExpression' is a specialization of 'IntegerExpression'.
+'ca::rule::Sum' is a specialization of 'NeighborsExpression'.
+'ca::rule::Equal' is a specialization of 'BinaryExpression'.
+'ca::rule::Max' is a specialization of 'NeighborsExpression'.
+'ca::rule::Min' is a specialization of 'NeighborsExpression'.
+'ca::rule::Div' is a specialization of 'BinaryExpression'.
+'ca::rule::Or' is a specialization of 'BinaryExpression'.
+'ca::rule::And' is a specialization of 'BinaryExpression'.
+'ca::rule::Add' is a specialization of 'BinaryExpression'.
+'ca::rule::IntegerLiteral' is a specialization of 'IntegerExpression'.
+'ca::rule::Minus' is a specialization of 'BinaryExpression'.
+'ca::rule::CurrentCellPopulation' is a specialization of 'IntegerExpression'.
+'ca::rule::Size' is a specialization of 'NeighborsExpression'.
+'ca::rule::Conditional' is a specialization of 'IntegerExpression'.
+'ca::rule::Lower' is a specialization of 'BinaryExpression'.
+'ca::rule::Mult' is a specialization of 'BinaryExpression'.
+'ca::rule::Conditional' (role 'ca_rule_Conditional11', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression12', cardinality 0..*).
+'ca::rule::BinaryExpression' (role 'ca_rule_BinaryExpression18', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression19', cardinality 0..*).
+'ca::rule::UnaryExpression' (role 'ca_rule_UnaryExpression', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression4', cardinality 0..*).
+'ca::rule::Conditional' (role 'ca_rule_Conditional', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression6', cardinality 0..*).
+'ca::rule::Conditional' (role 'ca_rule_Conditional8', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression9', cardinality 0..*).
+'ca::rule::Rule' (role 'ca_rule_Rule', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression', cardinality 0..*).
+'ca::rule::PopulationRange' (role 'ca_rule_PopulationRange', cardinality 0..*) is associated with 'ca::rule::Rule' (role 'ca_rule_Rule2', cardinality 0..*).
+'ca::rule::PopulationRange' (role 'ca_rule_PopulationRange14', cardinality 0..*) is associated with 'ca::rule::NeighborsExpression' (role 'ca_rule_NeighborsExpression', cardinality 0..*).
+'ca::rule::BinaryExpression' (role 'ca_rule_BinaryExpression', cardinality 0..*) is associated with 'ca::rule::IntegerExpression' (role 'ca_rule_IntegerExpression16', cardinality 0..*).
+'ca::rule::CellularAutomata' (role 'ca_rule_CellularAutomata', cardinality 0..*) is associated with 'ca::rule::Rule' (role 'ca_rule_Rule21', cardinality 0..*).

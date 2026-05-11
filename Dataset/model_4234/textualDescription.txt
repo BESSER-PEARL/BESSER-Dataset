@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'cde::Company' has the following attributes: 'name' of type str.
+The class 'cde::Department' has the following attributes: 'name' of type str.
+The class 'cde::Employee' has the following attributes: 'name' of type str; 'address' of type str.
+'cde::Department' (role 'cde_Department2', cardinality 0..*) is associated with 'cde::Employee' (role 'cde_Employee', cardinality 0..*).
+'cde::Company' (role 'cde_Company', cardinality 0..*) is associated with 'cde::Department' (role 'cde_Department', cardinality 0..*).

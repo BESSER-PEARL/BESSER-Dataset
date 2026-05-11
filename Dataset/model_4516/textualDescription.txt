@@ -1,0 +1,46 @@
+The model has 19 class(es).
+The class 'smarthome::Person' has no attributes.
+The class 'Predicate' has no attributes.
+The class 'smarthome::Room' has no attributes.
+The class 'smarthome::Pattern' has no attributes.
+The class 'smarthome::NamedEntity' has the following attributes: 'name' of type str.
+The class 'smarthome::Mode' has no attributes.
+The class 'smarthome::Duration' has the following attributes: 'time' of type int; 'precision' of type str.
+The class 'smarthome::PersonPredicate' has the following attributes: 'activity' of type str.
+The class 'smarthome::SensorPredicate' has the following attributes: 'operator' of type str; 'value' of type float.
+The class 'NamedEntity' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'smarthome::AnalogSensor' has no attributes.
+The class 'smarthome::CSVSensor' has the following attributes: 'file' of type str.
+The class 'smarthome::Rule' has no attributes.
+The class 'smarthome::DigitalSensor' has no attributes.
+The class 'smarthome::Tag' has no attributes.
+The class 'smarthome::Predicate' has no attributes.
+The class 'smarthome::Home' has the following attributes: 'fileEvents' of type str.
+The class 'smarthome::Sensor' has no attributes.
+The enumeration 'Activity' has the following literals: 'sitting', 'laying', 'standing'.
+The enumeration 'Operator' has the following literals: 'inferior', 'equal', 'superior'.
+The enumeration 'Precision' has the following literals: 'ms', 's', 'm'.
+'smarthome::AnalogSensor' is a specialization of 'Sensor'.
+'smarthome::SensorPredicate' is a specialization of 'Predicate'.
+'smarthome::DigitalSensor' is a specialization of 'Sensor'.
+'smarthome::Person' is a specialization of 'NamedEntity'.
+'smarthome::PersonPredicate' is a specialization of 'Predicate'.
+'smarthome::Sensor' is a specialization of 'NamedEntity'.
+'smarthome::Tag' is a specialization of 'NamedEntity'.
+'smarthome::Room' is a specialization of 'NamedEntity'.
+'smarthome::Pattern' is a specialization of 'NamedEntity'.
+'smarthome::Room' (role 'smarthome_Room8', cardinality 0..*) is associated with 'smarthome::Sensor' (role 'smarthome_Sensor', cardinality 0..*).
+'smarthome::Person' (role 'smarthome_Person24', cardinality 0..*) is associated with 'smarthome::Tag' (role 'smarthome_Tag25', cardinality 0..*).
+'smarthome::Rule' (role 'smarthome_Rule14', cardinality 0..*) is associated with 'smarthome::Duration' (role 'smarthome_Duration', cardinality 0..*).
+'smarthome::Pattern' (role 'smarthome_Pattern', cardinality 0..*) is associated with 'smarthome::Home' (role 'smarthome_Home4', cardinality 0..*).
+'smarthome::Pattern' (role 'smarthome_Pattern10', cardinality 0..*) is associated with 'smarthome::Rule' (role 'smarthome_Rule', cardinality 0..*).
+'smarthome::Person' (role 'smarthome_Person21', cardinality 0..*) is associated with 'smarthome::Tag' (role 'smarthome_Tag22', cardinality 0..*).
+'smarthome::Rule' (role 'smarthome_Rule12', cardinality 0..*) is associated with 'smarthome::Predicate' (role 'smarthome_Predicate', cardinality 0..*).
+'smarthome::PersonPredicate' (role 'smarthome_PersonPredicate', cardinality 0..*) is associated with 'smarthome::Person' (role 'smarthome_Person29', cardinality 0..*).
+'smarthome::SensorPredicate' (role 'smarthome_SensorPredicate', cardinality 0..*) is associated with 'smarthome::Sensor' (role 'smarthome_Sensor27', cardinality 0..*).
+'smarthome::Person' (role 'smarthome_Person16', cardinality 0..*) is associated with 'smarthome::Tag' (role 'smarthome_Tag', cardinality 0..*).
+'smarthome::Home' (role 'smarthome_Home', cardinality 0..*) is associated with 'smarthome::Room' (role 'smarthome_Room', cardinality 0..*).
+'smarthome::Home' (role 'smarthome_Home6', cardinality 0..*) is associated with 'smarthome::NamedEntity' (role 'smarthome_NamedEntity', cardinality 0..*).
+'smarthome::Person' (role 'smarthome_Person18', cardinality 0..*) is associated with 'smarthome::Tag' (role 'smarthome_Tag19', cardinality 0..*).
+'smarthome::Home' (role 'smarthome_Home2', cardinality 0..*) is associated with 'smarthome::Person' (role 'smarthome_Person', cardinality 0..*).

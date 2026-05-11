@@ -1,0 +1,224 @@
+The model has 94 class(es).
+The class 'ObjectNode' has no attributes.
+The class 'ExceptionHandler' has no attributes.
+The class 'Activities::IntermediateActivities::Feature' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'FundamentalActivities::ActivityGroup' has no attributes.
+The class 'Activities::BasicActivities::Parameter' has the following attributes: 'isException' of type bool; 'effect' of type str; 'isStream' of type bool.
+The class 'Activity' has no attributes.
+The class 'IntermediateActivities::Feature' has no attributes.
+The class 'Activities::IntermediateActivities::Class' has no attributes.
+The class 'Variable' has no attributes.
+The class 'FundamentalActivities::Action' has no attributes.
+The class 'Activities::IntermediateActivities::BehavioralFeature' has no attributes.
+The class 'Activities::BasicActivities::ObjectFlow' has the following attributes: 'isMultireceive' of type bool; 'ordering' of type str; 'isMulticast' of type bool; 'isControlType' of type bool.
+The class 'Activities::StructuredActivities::Clause' has no attributes.
+The class 'StructuredActivities::MultiplicityElement' has no attributes.
+The class 'Activities::CompleteStructuredActivities::InputPin' has no attributes.
+The class 'Activities::StructuredActivities::OutputPin' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'Activities::StructuredActivities::SequenceNode' has no attributes.
+The class 'Clause' has no attributes.
+The class 'BasicActivities::ControlNode' has no attributes.
+The class 'Activities::IntermediateActivities::InterruptibleActivityRegion' has no attributes.
+The class 'InterruptibleActivityRegion' has no attributes.
+The class 'Activities::BasicActivities::ControlFlow' has no attributes.
+The class 'Class' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Activities::IntermediateActivities::Element' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'BasicActivities::RedefinableElement' has no attributes.
+The class 'Activities::BasicActivities::ActivityFinalNode' has no attributes.
+The class 'State' has no attributes.
+The class 'Activities::BasicActivities::ActivityEdge' has no attributes.
+The class 'Activities::ExtraStructuredActivities::ExpansionRegion' has the following attributes: 'mode' of type str.
+The class 'Activities::IntermediateActivities::ActivityPartition' has no attributes.
+The class 'CentralBufferNode' has no attributes.
+The class 'Activities::FundamentalActivities::NamedElement' has no attributes.
+The class 'Activities::IntermediateActivities::CentralBufferNode' has no attributes.
+The class 'Activities::IntermediateActivities::MergeNode' has no attributes.
+The class 'ParameterSet' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'ExpansionNode' has no attributes.
+The class 'Activities::ExtraStructuredActivities::Classifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'ActivityPartition' has no attributes.
+The class 'Activities::IntermediateActivities::DecisionNode' has no attributes.
+The class 'Activities::FundamentalActivities::Namespace' has no attributes.
+The class 'Activities::FundamentalActivities::Activity' has the following attributes: 'isSingleExecution' of type bool; 'isReadOnly' of type bool.
+The class 'Activities::StructuredActivities::ExecutableNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'Activities::BasicActivities::ObjectNode' has no attributes.
+The class 'Activities::IntermediateActivities::DataStoreNode' has no attributes.
+The class 'Activities::BasicActivities::TypedElement' has no attributes.
+The class 'Activities::BasicActivities::InitialNode' has no attributes.
+The class 'StructuredActivities::ExecutableNode' has no attributes.
+The class 'Activities::IntermediateActivities::ParameterSet' has no attributes.
+The class 'Activities::StructuredActivities::MultiplicityElement' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'Activities::ExtraStructuredActivities::ExceptionHandler' has no attributes.
+The class 'Activities::StructuredActivities::ConditionalNode' has the following attributes: 'isDeterminate' of type bool; 'isAssumed' of type bool.
+The class 'BasicActivities::TypedElement' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'OutputPin' has no attributes.
+The class 'Activities::ExtraStructuredActivities::ExpansionNode' has no attributes.
+The class 'Activities::IntermediateActivities::JoinNode' has the following attributes: 'isCombineDuplicate' of type bool.
+The class 'Parameter' has no attributes.
+The class 'Activities::IntermediateActivities::State' has no attributes.
+The class 'Activities::BasicActivities::ControlNode' has no attributes.
+The class 'Activities::IntermediateActivities::ValueSpecification' has no attributes.
+The class 'FundamentalActivities::Namespace' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'FundamentalActivities::ActivityNode' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'Activities::BasicActivities::Pin' has the following attributes: 'isControl' of type bool.
+The class 'Activities::IntermediateActivities::Constraint' has no attributes.
+The class 'Activities::StructuredActivities::StructuredActivityNode' has the following attributes: 'mustIsolate' of type bool.
+The class 'Activities::StructuredActivities::LoopNode' has the following attributes: 'isTestedFirst' of type bool.
+The class 'ControlNode' has no attributes.
+The class 'IntermediateActivities::FinalNode' has no attributes.
+The class 'Activities::IntermediateActivities::FlowFinalNode' has no attributes.
+The class 'Activities::FundamentalActivities::Behavior' has no attributes.
+The class 'Activities::StructuredActivities::Variable' has no attributes.
+The class 'Activities::FundamentalActivities::ActivityNode' has no attributes.
+The class 'FundamentalActivities::NamedElement' has no attributes.
+The class 'Activities::BasicActivities::RedefinableElement' has no attributes.
+The class 'Activities::IntermediateActivities::FinalNode' has no attributes.
+The class 'Activities::IntermediateActivities::ForkNode' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'ExpansionRegion' has no attributes.
+The class 'Activities::FundamentalActivities::Action' has the following attributes: 'isLocallyReentrant' of type bool.
+The class 'Activities::BasicActivities::ActivityParameterNode' has no attributes.
+The class 'Activities::FundamentalActivities::ActivityGroup' has no attributes.
+The class 'Element' has no attributes.
+The class 'ObjectFlow' has no attributes.
+The enumeration 'ParameterEffectKind' has the following literals: 'create', 'delete', 'read', 'update'.
+The enumeration 'ExpansionKind' has the following literals: 'parallel', 'stream', 'iterative'.
+The enumeration 'ObjectNodeOrderingKind' has the following literals: 'ordered', 'FIFO', 'unordered', 'LIFO'.
+'Activities::StructuredActivities::Clause' is a specialization of 'Element'.
+'Activities::FundamentalActivities::ActivityGroup' is a specialization of 'NamedElement'.
+'Activities::BasicActivities::Pin' is a specialization of 'ObjectNode'.
+'Activities::StructuredActivities::SequenceNode' is a specialization of 'StructuredActivityNode'.
+'Activities::BasicActivities::ObjectNode' is a specialization of 'BasicActivities::TypedElement'.
+'Activities::StructuredActivities::StructuredActivityNode' is a specialization of 'FundamentalActivities::Namespace'.
+'Activities::BasicActivities::ActivityFinalNode' is a specialization of 'IntermediateActivities::FinalNode'.
+'Activities::BasicActivities::ControlNode' is a specialization of 'ActivityNode'.
+'Activities::FundamentalActivities::Action' is a specialization of 'ActivityNode'.
+'Activities::IntermediateActivities::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'Activities::BasicActivities::ActivityEdge' is a specialization of 'RedefinableElement'.
+'Activities::IntermediateActivities::CentralBufferNode' is a specialization of 'ObjectNode'.
+'Activities::FundamentalActivities::Activity' is a specialization of 'Behavior'.
+'Activities::BasicActivities::ObjectNode' is a specialization of 'FundamentalActivities::ActivityNode'.
+'Activities::IntermediateActivities::FlowFinalNode' is a specialization of 'FinalNode'.
+'Activities::IntermediateActivities::FinalNode' is a specialization of 'ControlNode'.
+'Activities::IntermediateActivities::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'Activities::ExtraStructuredActivities::ExceptionHandler' is a specialization of 'Element'.
+'Activities::FundamentalActivities::ActivityNode' is a specialization of 'FundamentalActivities::NamedElement'.
+'Activities::StructuredActivities::Variable' is a specialization of 'StructuredActivities::MultiplicityElement'.
+'Activities::IntermediateActivities::ParameterSet' is a specialization of 'NamedElement'.
+'Activities::IntermediateActivities::MergeNode' is a specialization of 'ControlNode'.
+'Activities::StructuredActivities::ExecutableNode' is a specialization of 'ActivityNode'.
+'Activities::BasicActivities::InitialNode' is a specialization of 'ControlNode'.
+'Activities::StructuredActivities::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'Activities::BasicActivities::ObjectFlow' is a specialization of 'ActivityEdge'.
+'Activities::StructuredActivities::LoopNode' is a specialization of 'StructuredActivityNode'.
+'Activities::FundamentalActivities::Behavior' is a specialization of 'Class'.
+'Activities::StructuredActivities::StructuredActivityNode' is a specialization of 'FundamentalActivities::ActivityGroup'.
+'Activities::ExtraStructuredActivities::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'Activities::IntermediateActivities::DecisionNode' is a specialization of 'ControlNode'.
+'Activities::BasicActivities::ActivityFinalNode' is a specialization of 'BasicActivities::ControlNode'.
+'Activities::IntermediateActivities::BehavioralFeature' is a specialization of 'FundamentalActivities::Namespace'.
+'Activities::IntermediateActivities::ActivityPartition' is a specialization of 'ActivityGroup'.
+'Activities::IntermediateActivities::JoinNode' is a specialization of 'ControlNode'.
+'Activities::BasicActivities::ControlFlow' is a specialization of 'ActivityEdge'.
+'Activities::StructuredActivities::StructuredActivityNode' is a specialization of 'FundamentalActivities::Action'.
+'Activities::IntermediateActivities::BehavioralFeature' is a specialization of 'IntermediateActivities::Feature'.
+'Activities::FundamentalActivities::ActivityNode' is a specialization of 'BasicActivities::RedefinableElement'.
+'Activities::ExtraStructuredActivities::ExpansionNode' is a specialization of 'ObjectNode'.
+'Activities::StructuredActivities::Variable' is a specialization of 'BasicActivities::TypedElement'.
+'Activities::BasicActivities::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'Activities::StructuredActivities::StructuredActivityNode' is a specialization of 'StructuredActivities::ExecutableNode'.
+'Activities::IntermediateActivities::ForkNode' is a specialization of 'ControlNode'.
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'Activities::FundamentalActivities::Activity' (role 'Activities_FundamentalActivities_Activity8', cardinality 0..*).
+'Activities::IntermediateActivities::BehavioralFeature' (role 'Activities_IntermediateActivities_BehavioralFeature', cardinality 0..*) is associated with 'ParameterSet' (role 'ParameterSet94', cardinality 0..*).
+'Activities::ExtraStructuredActivities::ExceptionHandler' (role 'Activities_ExtraStructuredActivities_ExceptionHandler160', cardinality 0..*) is associated with 'ObjectNode' (role 'ObjectNode', cardinality 0..*).
+'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode135', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin136', cardinality 0..*).
+'ActivityPartition' (role 'ActivityPartition19', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityNode' (role 'node', cardinality 0..*).
+'Activities::FundamentalActivities::Activity' (role 'activity', cardinality 0..*) is associated with 'StructuredActivityNode' (role 'StructuredActivityNode', cardinality 0..*).
+'Activities::StructuredActivities::ConditionalNode' (role 'Activities_StructuredActivities_ConditionalNode142', cardinality 0..*) is associated with 'ExecutableNode' (role 'ExecutableNode143', cardinality 0..*).
+'Activities::FundamentalActivities::Activity' (role 'Activities_FundamentalActivities_Activity5', cardinality 0..*) is associated with 'ActivityPartition' (role 'ActivityPartition', cardinality 0..*).
+'ExecutableNode' (role 'ExecutableNode158', cardinality 0..*) is associated with 'Activities::ExtraStructuredActivities::ExceptionHandler' (role 'handler', cardinality 0..*).
+'Activities::StructuredActivities::ConditionalNode' (role 'Activities_StructuredActivities_ConditionalNode139', cardinality 0..*) is associated with 'ExecutableNode' (role 'ExecutableNode140', cardinality 0..*).
+'ActivityNode' (role 'ActivityNode104', cardinality 0..*) is associated with 'Activities::StructuredActivities::StructuredActivityNode' (role 'inStructuredNode', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityGroup' (role 'subgroup', cardinality 0..*) is associated with 'ActivityGroup' (role 'ActivityGroup36', cardinality 0..*).
+'Behavior' (role 'Behavior70', cardinality 0..*) is associated with 'Activities::BasicActivities::ObjectFlow' (role 'Activities_BasicActivities_ObjectFlow69', cardinality 0..*).
+'Activities::StructuredActivities::Clause' (role 'predecessorClause', cardinality 0..*) is associated with 'Clause' (role 'Clause150', cardinality 0..*).
+'ExpansionRegion' (role 'ExpansionRegion168', cardinality 0..*) is associated with 'Activities::ExtraStructuredActivities::ExpansionNode' (role 'outputElement', cardinality 0..*).
+'Activities::FundamentalActivities::Behavior' (role 'Activities_FundamentalActivities_Behavior', cardinality 0..*) is associated with 'ParameterSet' (role 'ParameterSet', cardinality 0..*).
+'Activities::FundamentalActivities::Action' (role 'Activities_FundamentalActivities_Action', cardinality 0..*) is associated with 'Constraint' (role 'Constraint', cardinality 0..*).
+'Activities::ExtraStructuredActivities::ExpansionRegion' (role 'regionAsInput', cardinality 0..*) is associated with 'ExpansionNode' (role 'ExpansionNode', cardinality 0..*).
+'ActivityPartition' (role 'ActivityPartition82', cardinality 0..*) is associated with 'Activities::IntermediateActivities::ActivityPartition' (role 'superPartition', cardinality 0..*).
+'Clause' (role 'Clause148', cardinality 0..*) is associated with 'Activities::StructuredActivities::Clause' (role 'sucessorClause', cardinality 0..*).
+'Activities::StructuredActivities::ConditionalNode' (role 'Activities_StructuredActivities_ConditionalNode', cardinality 0..*) is associated with 'Clause' (role 'Clause', cardinality 0..*).
+'ActivityEdge' (role 'ActivityEdge80', cardinality 0..*) is associated with 'Activities::IntermediateActivities::ActivityPartition' (role 'inPartition', cardinality 0..*).
+'ExecutableNode' (role 'ExecutableNode156', cardinality 0..*) is associated with 'Activities::ExtraStructuredActivities::ExceptionHandler' (role 'Activities_ExtraStructuredActivities_ExceptionHandler', cardinality 0..*).
+'OutputPin' (role 'OutputPin', cardinality 0..*) is associated with 'Activities::FundamentalActivities::Action' (role 'Activities_FundamentalActivities_Action32', cardinality 0..*).
+'StructuredActivityNode' (role 'StructuredActivityNode24', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityNode' (role 'node23', cardinality 0..*).
+'Behavior' (role 'Behavior', cardinality 0..*) is associated with 'Activities::BasicActivities::ObjectFlow' (role 'Activities_BasicActivities_ObjectFlow', cardinality 0..*).
+'Activities::IntermediateActivities::ActivityPartition' (role 'inPartition87', cardinality 0..*) is associated with 'ActivityNode' (role 'ActivityNode88', cardinality 0..*).
+'Activities::BasicActivities::Parameter' (role 'parameter', cardinality 0..*) is associated with 'ParameterSet' (role 'ParameterSet46', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'Activities::IntermediateActivities::ActivityPartition' (role 'Activities_IntermediateActivities_ActivityPartition', cardinality 0..*).
+'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode123', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin124', cardinality 0..*).
+'Activities::ExtraStructuredActivities::ExpansionRegion' (role 'regionAsOutput', cardinality 0..*) is associated with 'ExpansionNode' (role 'ExpansionNode165', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityNode' (role 'target', cardinality 0..*) is associated with 'ActivityEdge' (role 'ActivityEdge15', cardinality 0..*).
+'InputPin' (role 'InputPin', cardinality 0..*) is associated with 'Activities::FundamentalActivities::Action' (role 'Activities_FundamentalActivities_Action30', cardinality 0..*).
+'InputPin' (role 'InputPin127', cardinality 0..*) is associated with 'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode126', cardinality 0..*).
+'Activities::FundamentalActivities::Activity' (role 'inActivity', cardinality 0..*) is associated with 'ActivityGroup' (role 'ActivityGroup', cardinality 0..*).
+'OutputPin' (role 'OutputPin113', cardinality 0..*) is associated with 'Activities::StructuredActivities::StructuredActivityNode' (role 'Activities_StructuredActivities_StructuredActivityNode112', cardinality 0..*).
+'ActivityGroup' (role 'ActivityGroup54', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'containedEdge', cardinality 0..*).
+'ActivityEdge' (role 'ActivityEdge110', cardinality 0..*) is associated with 'Activities::StructuredActivities::StructuredActivityNode' (role 'inStructuredNode109', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityNode' (role 'source', cardinality 0..*) is associated with 'ActivityEdge' (role 'ActivityEdge17', cardinality 0..*).
+'ActivityPartition' (role 'ActivityPartition58', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'edge', cardinality 0..*).
+'ActivityPartition' (role 'ActivityPartition84', cardinality 0..*) is associated with 'Activities::IntermediateActivities::ActivityPartition' (role 'subpartition', cardinality 0..*).
+'OutputPin' (role 'OutputPin152', cardinality 0..*) is associated with 'Activities::StructuredActivities::Clause' (role 'Activities_StructuredActivities_Clause', cardinality 0..*).
+'ActivityNode' (role 'ActivityNode50', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'Activities::FundamentalActivities::Activity' (role 'Activities_FundamentalActivities_Activity', cardinality 0..*) is associated with 'ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityNode' (role 'Activities_FundamentalActivities_ActivityNode', cardinality 0..*) is associated with 'ActivityNode' (role 'ActivityNode13', cardinality 0..*).
+'ActivityEdge' (role 'ActivityEdge52', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'Activities_BasicActivities_ActivityEdge', cardinality 0..*).
+'Activities::BasicActivities::RedefinableElement' (role 'Activities_BasicActivities_RedefinableElement', cardinality 0..*) is associated with 'RedefinableElement' (role 'RedefinableElement', cardinality 0..*).
+'Activities::IntermediateActivities::ParameterSet' (role 'Activities_IntermediateActivities_ParameterSet', cardinality 0..*) is associated with 'Constraint' (role 'Constraint92', cardinality 0..*).
+'ActivityNode' (role 'ActivityNode39', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityGroup' (role 'inGroup', cardinality 0..*).
+'Activities::FundamentalActivities::Action' (role 'Activities_FundamentalActivities_Action27', cardinality 0..*) is associated with 'Constraint' (role 'Constraint28', cardinality 0..*).
+'Activities::StructuredActivities::StructuredActivityNode' (role 'structuredNode', cardinality 0..*) is associated with 'Activity' (role 'Activity100', cardinality 0..*).
+'ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'Activities::FundamentalActivities::Activity' (role 'Activities_FundamentalActivities_Activity3', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification74', cardinality 0..*) is associated with 'Activities::IntermediateActivities::JoinNode' (role 'Activities_IntermediateActivities_JoinNode', cardinality 0..*).
+'InterruptibleActivityRegion' (role 'InterruptibleActivityRegion', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityNode' (role 'node21', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityGroup' (role 'inGroup41', cardinality 0..*) is associated with 'ActivityEdge' (role 'ActivityEdge42', cardinality 0..*).
+'Variable' (role 'Variable102', cardinality 0..*) is associated with 'Activities::StructuredActivities::StructuredActivityNode' (role 'Activities_StructuredActivities_StructuredActivityNode', cardinality 0..*).
+'Activities::StructuredActivities::SequenceNode' (role 'Activities_StructuredActivities_SequenceNode', cardinality 0..*) is associated with 'ExecutableNode' (role 'ExecutableNode154', cardinality 0..*).
+'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode', cardinality 0..*) is associated with 'ExecutableNode' (role 'ExecutableNode', cardinality 0..*).
+'Activities::StructuredActivities::ConditionalNode' (role 'Activities_StructuredActivities_ConditionalNode145', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin146', cardinality 0..*).
+'OutputPin' (role 'OutputPin133', cardinality 0..*) is associated with 'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode132', cardinality 0..*).
+'Activities::IntermediateActivities::InterruptibleActivityRegion' (role 'interrupts', cardinality 0..*) is associated with 'ActivityEdge' (role 'ActivityEdge96', cardinality 0..*).
+'ExecutableNode' (role 'ExecutableNode118', cardinality 0..*) is associated with 'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode117', cardinality 0..*).
+'OutputPin' (role 'OutputPin130', cardinality 0..*) is associated with 'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode129', cardinality 0..*).
+'Activity' (role 'Activity', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityGroup' (role 'group', cardinality 0..*).
+'Activities::ExtraStructuredActivities::ExpansionNode' (role 'inputElement', cardinality 0..*) is associated with 'ExpansionRegion' (role 'ExpansionRegion', cardinality 0..*).
+'Behavior' (role 'Behavior78', cardinality 0..*) is associated with 'Activities::IntermediateActivities::DecisionNode' (role 'Activities_IntermediateActivities_DecisionNode77', cardinality 0..*).
+'Parameter' (role 'Parameter90', cardinality 0..*) is associated with 'Activities::IntermediateActivities::ParameterSet' (role 'parameterSet', cardinality 0..*).
+'Activities::BasicActivities::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'ActivityNode' (role 'ActivityNode48', cardinality 0..*).
+'InterruptibleActivityRegion' (role 'InterruptibleActivityRegion63', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'interruptingEdge', cardinality 0..*).
+'Activities::BasicActivities::ActivityEdge' (role 'Activities_BasicActivities_ActivityEdge56', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification', cardinality 0..*).
+'Activities::StructuredActivities::ExecutableNode' (role 'protectedNode', cardinality 0..*) is associated with 'ExceptionHandler' (role 'ExceptionHandler', cardinality 0..*).
+'Activities::ExtraStructuredActivities::ExceptionHandler' (role 'Activities_ExtraStructuredActivities_ExceptionHandler162', cardinality 0..*) is associated with 'Classifier' (role 'Classifier', cardinality 0..*).
+'ActivityGroup' (role 'ActivityGroup11', cardinality 0..*) is associated with 'Activities::FundamentalActivities::ActivityNode' (role 'containedNode', cardinality 0..*).
+'Activities::BasicActivities::ActivityEdge' (role 'Activities_BasicActivities_ActivityEdge60', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification61', cardinality 0..*).
+'ExecutableNode' (role 'ExecutableNode121', cardinality 0..*) is associated with 'Activities::StructuredActivities::LoopNode' (role 'Activities_StructuredActivities_LoopNode120', cardinality 0..*).
+'Activities::FundamentalActivities::ActivityGroup' (role 'superGroup', cardinality 0..*) is associated with 'ActivityGroup' (role 'ActivityGroup34', cardinality 0..*).
+'Activities::IntermediateActivities::InterruptibleActivityRegion' (role 'inInterruptibleRegion', cardinality 0..*) is associated with 'ActivityNode' (role 'ActivityNode98', cardinality 0..*).
+'StructuredActivityNode' (role 'StructuredActivityNode66', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityEdge' (role 'edge65', cardinality 0..*).
+'InputPin' (role 'InputPin107', cardinality 0..*) is associated with 'Activities::StructuredActivities::StructuredActivityNode' (role 'Activities_StructuredActivities_StructuredActivityNode106', cardinality 0..*).
+'ObjectFlow' (role 'ObjectFlow', cardinality 0..*) is associated with 'Activities::IntermediateActivities::DecisionNode' (role 'Activities_IntermediateActivities_DecisionNode', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'Activities::BasicActivities::ObjectFlow' (role 'Activities_BasicActivities_ObjectFlow72', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'Activities::BasicActivities::ActivityParameterNode' (role 'Activities_BasicActivities_ActivityParameterNode', cardinality 0..*).

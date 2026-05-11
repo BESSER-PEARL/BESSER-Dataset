@@ -1,0 +1,156 @@
+The model has 64 class(es).
+The class 'IntraRelationshipConstraint' has no attributes.
+The class 'RelationshipConstraint' has no attributes.
+The class 'crom::l1::composed::Relation' has no attributes.
+The class 'crom::l1::composed::RoleGroup' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'Constraint' has no attributes.
+The class 'crom::l1::composed::Total' has no attributes.
+The class 'crom::l1::composed::TypedElement' has no attributes.
+The class 'crom::l1::composed::Constraint' has no attributes.
+The class 'crom::l1::composed::DataInheritance' has no attributes.
+The class 'crom::l1::composed::RelationshipExclusion' has no attributes.
+The class 'crom::l1::composed::Parameter' has no attributes.
+The class 'Inheritance' has no attributes.
+The class 'crom::l1::composed::ModelElement' has no attributes.
+The class 'crom::l1::composed::CompartmentInheritance' has no attributes.
+The class 'crom::l1::composed::ComplexConstraint' has the following attributes: 'expression' of type str.
+The class 'crom::l1::composed::RoleConstraint' has no attributes.
+The class 'crom::l1::composed::NamedElement' has the following attributes: 'name' of type str.
+The class 'InterRelationshipConstraint' has no attributes.
+The class 'crom::l1::composed::DataType' has the following attributes: 'serializable' of type bool.
+The class 'crom::l1::composed::AbstractRole' has no attributes.
+The class 'crom::l1::composed::Place' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'crom::l1::composed::RoleGroupElement' has no attributes.
+The class 'crom::l1::composed::RoleType' has no attributes.
+The class 'RoleConstraint' has no attributes.
+The class 'crom::l1::composed::AbstractRoleRef' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'crom::l1::composed::RoleProhibition' has no attributes.
+The class 'crom::l1::composed::InterRelationshipConstraint' has no attributes.
+The class 'crom::l1::composed::RoleInheritance' has no attributes.
+The class 'crom::l1::composed::Fulfillment' has no attributes.
+The class 'crom::l1::composed::Group' has no attributes.
+The class 'crom::l1::composed::Model' has no attributes.
+The class 'crom::l1::composed::ParthoodConstraint' has the following attributes: 'kind' of type str.
+The class 'crom::l1::composed::Type' has no attributes.
+The class 'crom::l1::composed::Attribute' has no attributes.
+The class 'crom::l1::composed::Cyclic' has no attributes.
+The class 'crom::l1::composed::RelationTarget' has no attributes.
+The class 'crom::l1::composed::RelationshipConstraint' has no attributes.
+The class 'crom::l1::composed::RoleEquivalence' has no attributes.
+The class 'crom::l1::composed::Irreflexive' has no attributes.
+The class 'RigidType' has no attributes.
+The class 'crom::l1::composed::NaturalInheritance' has no attributes.
+The class 'crom::l1::composed::Inheritance' has no attributes.
+The class 'crom::l1::composed::Operation' has the following attributes: 'operation' of type str.
+The class 'crom::l1::composed::CompartmentType' has no attributes.
+The class 'crom::l1::composed::Part' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'crom::l1::composed::AntiRigidType' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'crom::l1::composed::Reflexive' has no attributes.
+The class 'crom::l1::composed::RoleImplication' has no attributes.
+The class 'Relation' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'crom::l1::composed::IntraRelationshipConstraint' has no attributes.
+The class 'Type' has no attributes.
+The class 'crom::l1::composed::RigidType' has no attributes.
+The class 'RoleGroupElement' has no attributes.
+The class 'crom::l1::composed::Relationship' has the following attributes: 'direction' of type str.
+The class 'AbstractRole' has no attributes.
+The class 'crom::l1::composed::NaturalType' has no attributes.
+The class 'Model' has no attributes.
+The class 'crom::l1::composed::RelationshipImplication' has no attributes.
+The class 'crom::l1::composed::Acyclic' has no attributes.
+The class 'AntiRigidType' has no attributes.
+The class 'RelationTarget' has no attributes.
+The enumeration 'Parthood' has the following literals: 'Unconstrained', 'ExclusivePart', 'MandatoryPart', 'SharablePart', 'InseparablePart', 'EssentialPart'.
+The enumeration 'Direction' has the following literals: 'FirstToSecond', 'SecondToFirst', 'Undirected'.
+'crom::l1::composed::Attribute' is a specialization of 'TypedElement'.
+'crom::l1::composed::Operation' is a specialization of 'TypedElement'.
+'crom::l1::composed::RelationshipImplication' is a specialization of 'InterRelationshipConstraint'.
+'crom::l1::composed::Total' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::Group' is a specialization of 'Model'.
+'crom::l1::composed::RigidType' is a specialization of 'ModelElement'.
+'crom::l1::composed::RelationshipExclusion' is a specialization of 'InterRelationshipConstraint'.
+'crom::l1::composed::CompartmentInheritance' is a specialization of 'Inheritance'.
+'crom::l1::composed::AbstractRoleRef' is a specialization of 'RoleGroupElement'.
+'crom::l1::composed::RelationTarget' is a specialization of 'NamedElement'.
+'crom::l1::composed::ModelElement' is a specialization of 'NamedElement'.
+'crom::l1::composed::AbstractRole' is a specialization of 'RoleGroupElement'.
+'crom::l1::composed::RigidType' is a specialization of 'Type'.
+'crom::l1::composed::Irreflexive' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::RoleType' is a specialization of 'AbstractRole'.
+'crom::l1::composed::RoleType' is a specialization of 'AntiRigidType'.
+'crom::l1::composed::RoleEquivalence' is a specialization of 'RoleConstraint'.
+'crom::l1::composed::RelationshipConstraint' is a specialization of 'Constraint'.
+'crom::l1::composed::TypedElement' is a specialization of 'NamedElement'.
+'crom::l1::composed::RoleGroup' is a specialization of 'AbstractRole'.
+'crom::l1::composed::Cyclic' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::Inheritance' is a specialization of 'Relation'.
+'crom::l1::composed::Group' is a specialization of 'ModelElement'.
+'crom::l1::composed::RoleInheritance' is a specialization of 'Inheritance'.
+'crom::l1::composed::RoleImplication' is a specialization of 'RoleConstraint'.
+'crom::l1::composed::NaturalType' is a specialization of 'RigidType'.
+'crom::l1::composed::DataInheritance' is a specialization of 'Inheritance'.
+'crom::l1::composed::AntiRigidType' is a specialization of 'Type'.
+'crom::l1::composed::Fulfillment' is a specialization of 'Relation'.
+'crom::l1::composed::Reflexive' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::Constraint' is a specialization of 'Relation'.
+'crom::l1::composed::RoleConstraint' is a specialization of 'Constraint'.
+'crom::l1::composed::RoleGroup' is a specialization of 'RelationTarget'.
+'crom::l1::composed::InterRelationshipConstraint' is a specialization of 'RelationshipConstraint'.
+'crom::l1::composed::DataType' is a specialization of 'RigidType'.
+'crom::l1::composed::Parameter' is a specialization of 'TypedElement'.
+'crom::l1::composed::Relationship' is a specialization of 'NamedElement'.
+'crom::l1::composed::ComplexConstraint' is a specialization of 'Constraint'.
+'crom::l1::composed::ParthoodConstraint' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::CompartmentType' is a specialization of 'RigidType'.
+'crom::l1::composed::IntraRelationshipConstraint' is a specialization of 'RelationshipConstraint'.
+'crom::l1::composed::Acyclic' is a specialization of 'IntraRelationshipConstraint'.
+'crom::l1::composed::Type' is a specialization of 'RelationTarget'.
+'crom::l1::composed::Relationship' is a specialization of 'Relation'.
+'crom::l1::composed::RoleProhibition' is a specialization of 'RoleConstraint'.
+'crom::l1::composed::NaturalInheritance' is a specialization of 'Inheritance'.
+'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType', cardinality 0..*).
+'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship29', cardinality 0..*) is associated with 'crom::l1::composed::Place' (role 'crom_l1_composed_Place', cardinality 0..*).
+'crom::l1::composed::NaturalType' (role 'crom_l1_composed_NaturalType60', cardinality 0..*) is associated with 'crom::l1::composed::NaturalInheritance' (role 'crom_l1_composed_NaturalInheritance', cardinality 0..*).
+'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole40', cardinality 0..*) is associated with 'crom::l1::composed::RoleConstraint' (role 'crom_l1_composed_RoleConstraint', cardinality 0..*).
+'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole43', cardinality 0..*) is associated with 'crom::l1::composed::RoleConstraint' (role 'crom_l1_composed_RoleConstraint42', cardinality 0..*).
+'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType21', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType23', cardinality 0..*).
+'crom::l1::composed::Operation' (role 'Operation', cardinality 0..*) is associated with 'crom::l1::composed::Type' (role 'owner9', cardinality 0..*).
+'crom::l1::composed::Relation' (role 'crom_l1_composed_Relation', cardinality 0..*) is associated with 'crom::l1::composed::Model' (role 'crom_l1_composed_Model2', cardinality 0..*).
+'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType68', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentInheritance' (role 'crom_l1_composed_CompartmentInheritance67', cardinality 0..*).
+'crom::l1::composed::DataType' (role 'crom_l1_composed_DataType58', cardinality 0..*) is associated with 'crom::l1::composed::DataInheritance' (role 'crom_l1_composed_DataInheritance57', cardinality 0..*).
+'crom::l1::composed::RoleType' (role 'crom_l1_composed_RoleType26', cardinality 0..*) is associated with 'crom::l1::composed::RoleType' (role 'crom_l1_composed_RoleType', cardinality 0..*).
+'crom::l1::composed::CompartmentType' (role 'CompartmentType', cardinality 0..*) is associated with 'crom::l1::composed::Part' (role 'parts', cardinality 0..*).
+'crom::l1::composed::InterRelationshipConstraint' (role 'crom_l1_composed_InterRelationshipConstraint', cardinality 0..*) is associated with 'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship48', cardinality 0..*).
+'crom::l1::composed::DataType' (role 'crom_l1_composed_DataType10', cardinality 0..*) is associated with 'crom::l1::composed::DataType' (role 'crom_l1_composed_DataType', cardinality 0..*).
+'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship51', cardinality 0..*) is associated with 'crom::l1::composed::InterRelationshipConstraint' (role 'crom_l1_composed_InterRelationshipConstraint50', cardinality 0..*).
+'crom::l1::composed::Fulfillment' (role 'crom_l1_composed_Fulfillment', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType25', cardinality 0..*).
+'crom::l1::composed::NaturalType' (role 'crom_l1_composed_NaturalType', cardinality 0..*) is associated with 'crom::l1::composed::NaturalType' (role 'crom_l1_composed_NaturalType12', cardinality 0..*).
+'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole85', cardinality 0..*) is associated with 'crom::l1::composed::Part' (role 'crom_l1_composed_Part', cardinality 0..*).
+'crom::l1::composed::Place' (role 'crom_l1_composed_Place32', cardinality 0..*) is associated with 'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship31', cardinality 0..*).
+'crom::l1::composed::RoleGroup' (role 'crom_l1_composed_RoleGroup', cardinality 0..*) is associated with 'crom::l1::composed::RoleGroupElement' (role 'crom_l1_composed_RoleGroupElement', cardinality 0..*).
+'crom::l1::composed::RigidType' (role 'crom_l1_composed_RigidType', cardinality 0..*) is associated with 'crom::l1::composed::TypedElement' (role 'crom_l1_composed_TypedElement', cardinality 0..*).
+'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType20', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType18', cardinality 0..*).
+'crom::l1::composed::Operation' (role 'crom_l1_composed_Operation', cardinality 0..*) is associated with 'crom::l1::composed::Parameter' (role 'crom_l1_composed_Parameter', cardinality 0..*).
+'crom::l1::composed::CompartmentInheritance' (role 'crom_l1_composed_CompartmentInheritance', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType65', cardinality 0..*).
+'crom::l1::composed::AbstractRoleRef' (role 'crom_l1_composed_AbstractRoleRef', cardinality 0..*) is associated with 'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole88', cardinality 0..*).
+'crom::l1::composed::Constraint' (role 'crom_l1_composed_Constraint', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'crom_l1_composed_CompartmentType17', cardinality 0..*).
+'crom::l1::composed::NaturalInheritance' (role 'crom_l1_composed_NaturalInheritance62', cardinality 0..*) is associated with 'crom::l1::composed::NaturalType' (role 'crom_l1_composed_NaturalType63', cardinality 0..*).
+'crom::l1::composed::Relation' (role 'crom_l1_composed_Relation78', cardinality 0..*) is associated with 'crom::l1::composed::RelationTarget' (role 'crom_l1_composed_RelationTarget', cardinality 0..*).
+'crom::l1::composed::Type' (role 'owner', cardinality 0..*) is associated with 'crom::l1::composed::Attribute' (role 'Attribute', cardinality 0..*).
+'crom::l1::composed::Place' (role 'crom_l1_composed_Place75', cardinality 0..*) is associated with 'crom::l1::composed::RoleType' (role 'crom_l1_composed_RoleType76', cardinality 0..*).
+'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole', cardinality 0..*) is associated with 'crom::l1::composed::Fulfillment' (role 'crom_l1_composed_Fulfillment36', cardinality 0..*).
+'crom::l1::composed::IntraRelationshipConstraint' (role 'crom_l1_composed_IntraRelationshipConstraint45', cardinality 0..*) is associated with 'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship46', cardinality 0..*).
+'crom::l1::composed::RoleType' (role 'crom_l1_composed_RoleType70', cardinality 0..*) is associated with 'crom::l1::composed::RoleInheritance' (role 'crom_l1_composed_RoleInheritance', cardinality 0..*).
+'crom::l1::composed::Part' (role 'Part', cardinality 0..*) is associated with 'crom::l1::composed::CompartmentType' (role 'whole', cardinality 0..*).
+'crom::l1::composed::DataInheritance' (role 'crom_l1_composed_DataInheritance', cardinality 0..*) is associated with 'crom::l1::composed::DataType' (role 'crom_l1_composed_DataType55', cardinality 0..*).
+'crom::l1::composed::Attribute' (role 'attributes', cardinality 0..*) is associated with 'crom::l1::composed::Type' (role 'Type6', cardinality 0..*).
+'crom::l1::composed::Relationship' (role 'crom_l1_composed_Relationship34', cardinality 0..*) is associated with 'crom::l1::composed::IntraRelationshipConstraint' (role 'crom_l1_composed_IntraRelationshipConstraint', cardinality 0..*).
+'crom::l1::composed::Type' (role 'crom_l1_composed_Type', cardinality 0..*) is associated with 'crom::l1::composed::Fulfillment' (role 'crom_l1_composed_Fulfillment38', cardinality 0..*).
+'crom::l1::composed::Model' (role 'crom_l1_composed_Model', cardinality 0..*) is associated with 'crom::l1::composed::ModelElement' (role 'crom_l1_composed_ModelElement', cardinality 0..*).
+'crom::l1::composed::ComplexConstraint' (role 'crom_l1_composed_ComplexConstraint', cardinality 0..*) is associated with 'crom::l1::composed::AbstractRole' (role 'crom_l1_composed_AbstractRole53', cardinality 0..*).
+'crom::l1::composed::RelationTarget' (role 'crom_l1_composed_RelationTarget80', cardinality 0..*) is associated with 'crom::l1::composed::Relation' (role 'crom_l1_composed_Relation81', cardinality 0..*).
+'crom::l1::composed::RoleType' (role 'crom_l1_composed_RoleType73', cardinality 0..*) is associated with 'crom::l1::composed::RoleInheritance' (role 'crom_l1_composed_RoleInheritance72', cardinality 0..*).
+'crom::l1::composed::Type' (role 'Type', cardinality 0..*) is associated with 'crom::l1::composed::Operation' (role 'operations', cardinality 0..*).

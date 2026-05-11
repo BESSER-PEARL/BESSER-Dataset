@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class myDsl_ElemSimple  {
+
+    private String symb;
+
+
+
+
+
+    private myDsl_ExprSimple mydsl_exprsimple;
+
+
+    public myDsl_ElemSimple(
+        String symb    ) {
+        this.symb = symb;
+    }
+
+
+    public String getSymb() {
+        return symb;
+    }
+
+    public void setSymb(String symb) {
+        this.symb = symb;
+    }
+
+    public myDsl_ExprSimple getMydsl_exprsimple() {
+        return mydsl_exprsimple;
+    }
+
+    public void setMydsl_exprsimple(myDsl_ExprSimple mydsl_exprsimple) {
+        this.mydsl_exprsimple = mydsl_exprsimple;
+    }
+
+}

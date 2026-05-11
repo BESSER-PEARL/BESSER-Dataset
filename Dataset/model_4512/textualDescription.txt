@@ -1,0 +1,68 @@
+The model has 31 class(es).
+The class 'ardlers::Library' has no attributes.
+The class 'ardlers::And' has no attributes.
+The class 'ardlers::Delta' has no attributes.
+The class 'ardlers::Map' has no attributes.
+The class 'ardlers::Factor' has no attributes.
+The class 'Parenthesis' has no attributes.
+The class 'ardlers::Smoothing' has the following attributes: 'value' of type float.
+The class 'Expression' has no attributes.
+The class 'ardlers::Exp' has no attributes.
+The class 'ardlers::Expression' has no attributes.
+The class 'ardlers::Rate' has the following attributes: 'value' of type int.
+The class 'ardlers::Comparison' has no attributes.
+The class 'ardlers::Range' has the following attributes: 'low' of type float; 'high' of type float.
+The class 'ardlers::Attribute' has no attributes.
+The class 'ardlers::ComponentBody' has the following attributes: 'pin' of type int; 'pinned' of type str; 'type' of type str; 'io' of type str.
+The class 'ardlers::Value' has no attributes.
+The class 'Or' has no attributes.
+The class 'ardlers::NumberLiteral' has the following attributes: 'int' of type int; 'float' of type str.
+The class 'ardlers::Node' has the following attributes: 'name' of type str.
+The class 'ardlers::BoardDefinition' has the following attributes: 'name' of type str; 'do' of type int; 'di' of type int; 'aout' of type int; 'ain' of type int.
+The class 'ardlers::Or' has the following attributes: 'operator' of type str.
+The class 'ardlers::RuleBody' has no attributes.
+The class 'ardlers::Rule' has the following attributes: 'type' of type str.
+The class 'ardlers::Component' has the following attributes: 'name' of type str.
+The class 'ardlers::SensorImport' has the following attributes: 'name' of type str.
+The class 'Value' has no attributes.
+The class 'ardlers::Parenthesis' has no attributes.
+The class 'ardlers::State' has the following attributes: 'value' of type str.
+The class 'ardlers::EObject' has no attributes.
+The class 'ardlers::Assignment' has no attributes.
+The class 'ardlers::Program' has no attributes.
+The enumeration 'TYPE' has the following literals: 'ANALOG', 'DIGITAL'.
+The enumeration 'IO' has the following literals: 'INPUT', 'OUTPUT'.
+'ardlers::And' is a specialization of 'Expression'.
+'ardlers::Expression' is a specialization of 'Or'.
+'ardlers::Exp' is a specialization of 'Expression'.
+'ardlers::Attribute' is a specialization of 'Value'.
+'ardlers::Delta' is a specialization of 'Value'.
+'ardlers::Value' is a specialization of 'Parenthesis'.
+'ardlers::Comparison' is a specialization of 'Expression'.
+'ardlers::Parenthesis' is a specialization of 'Expression'.
+'ardlers::Factor' is a specialization of 'Expression'.
+'ardlers::NumberLiteral' is a specialization of 'Value'.
+'ardlers::BoardDefinition' (role 'ardlers_BoardDefinition', cardinality 0..*) is associated with 'ardlers::Program' (role 'ardlers_Program6', cardinality 0..*).
+'ardlers::Program' (role 'ardlers_Program4', cardinality 0..*) is associated with 'ardlers::EObject' (role 'ardlers_EObject', cardinality 0..*).
+'ardlers::Expression' (role 'ardlers_Expression', cardinality 0..*) is associated with 'ardlers::Or' (role 'ardlers_Or17', cardinality 0..*).
+'ardlers::SensorImport' (role 'ardlers_SensorImport', cardinality 0..*) is associated with 'ardlers::Program' (role 'ardlers_Program2', cardinality 0..*).
+'ardlers::ComponentBody' (role 'ardlers_ComponentBody47', cardinality 0..*) is associated with 'ardlers::Map' (role 'ardlers_Map', cardinality 0..*).
+'ardlers::Map' (role 'ardlers_Map49', cardinality 0..*) is associated with 'ardlers::Range' (role 'ardlers_Range', cardinality 0..*).
+'ardlers::Range' (role 'ardlers_Range52', cardinality 0..*) is associated with 'ardlers::Map' (role 'ardlers_Map51', cardinality 0..*).
+'ardlers::Rule' (role 'ardlers_Rule12', cardinality 0..*) is associated with 'ardlers::RuleBody' (role 'ardlers_RuleBody', cardinality 0..*).
+'ardlers::Or' (role 'ardlers_Or19', cardinality 0..*) is associated with 'ardlers::Parenthesis' (role 'ardlers_Parenthesis', cardinality 0..*).
+'ardlers::BoardDefinition' (role 'ardlers_BoardDefinition9', cardinality 0..*) is associated with 'ardlers::Library' (role 'ardlers_Library8', cardinality 0..*).
+'ardlers::ComponentBody' (role 'ardlers_ComponentBody45', cardinality 0..*) is associated with 'ardlers::Rate' (role 'ardlers_Rate', cardinality 0..*).
+'ardlers::ComponentBody' (role 'ardlers_ComponentBody', cardinality 0..*) is associated with 'ardlers::Component' (role 'ardlers_Component43', cardinality 0..*).
+'ardlers::Or' (role 'ardlers_Or13', cardinality 0..*) is associated with 'ardlers::Or' (role 'ardlers_Or15', cardinality 0..*).
+'ardlers::Component' (role 'ardlers_Component38', cardinality 0..*) is associated with 'ardlers::Node' (role 'ardlers_Node37', cardinality 0..*).
+'ardlers::Or' (role 'ardlers_Or', cardinality 0..*) is associated with 'ardlers::Rule' (role 'ardlers_Rule', cardinality 0..*).
+'ardlers::Assignment' (role 'ardlers_Assignment', cardinality 0..*) is associated with 'ardlers::RuleBody' (role 'ardlers_RuleBody26', cardinality 0..*).
+'ardlers::EObject' (role 'ardlers_EObject32', cardinality 0..*) is associated with 'ardlers::Assignment' (role 'ardlers_Assignment31', cardinality 0..*).
+'ardlers::Attribute' (role 'ardlers_Attribute22', cardinality 0..*) is associated with 'ardlers::Component' (role 'ardlers_Component', cardinality 0..*).
+'ardlers::Library' (role 'ardlers_Library', cardinality 0..*) is associated with 'ardlers::Program' (role 'ardlers_Program', cardinality 0..*).
+'ardlers::Component' (role 'ardlers_Component40', cardinality 0..*) is associated with 'ardlers::SensorImport' (role 'ardlers_SensorImport41', cardinality 0..*).
+'ardlers::Delta' (role 'ardlers_Delta', cardinality 0..*) is associated with 'ardlers::Attribute' (role 'ardlers_Attribute24', cardinality 0..*).
+'ardlers::Node' (role 'ardlers_Node34', cardinality 0..*) is associated with 'ardlers::BoardDefinition' (role 'ardlers_BoardDefinition35', cardinality 0..*).
+'ardlers::Node' (role 'ardlers_Node', cardinality 0..*) is associated with 'ardlers::Attribute' (role 'ardlers_Attribute', cardinality 0..*).
+'ardlers::Attribute' (role 'ardlers_Attribute29', cardinality 0..*) is associated with 'ardlers::Assignment' (role 'ardlers_Assignment28', cardinality 0..*).

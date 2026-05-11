@@ -1,0 +1,28 @@
+The model has 12 class(es).
+The class 'ItemsCollection' has no attributes.
+The class 'collection::Person' has no attributes.
+The class 'collection::Category' has no attributes.
+The class 'collection::Tag' has no attributes.
+The class 'collection::ItemsCollection' has no attributes.
+The class 'collection::RemoteCollection' has the following attributes: 'remoteURL' of type str.
+The class 'collection::SmartInformationObjectCollection' has the following attributes: 'includePersons' of type str; 'includeContents' of type str; 'minimumAge' of type date; 'includeOrganisations' of type str.
+The class 'collection::MetaTag' has no attributes.
+The class 'collection::Organisation' has no attributes.
+The class 'collection::DataSet' has no attributes.
+The class 'collection::Item' has no attributes.
+The class 'collection::ManualCollection' has no attributes.
+'collection::ManualCollection' is a specialization of 'ItemsCollection'.
+'collection::RemoteCollection' is a specialization of 'ItemsCollection'.
+'collection::SmartInformationObjectCollection' is a specialization of 'ItemsCollection'.
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection10', cardinality 0..*) is associated with 'collection::Category' (role 'collection_Category', cardinality 0..*).
+'collection::DataSet' (role 'collection_DataSet', cardinality 0..*) is associated with 'collection::ItemsCollection' (role 'collection_ItemsCollection2', cardinality 0..*).
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection5', cardinality 0..*) is associated with 'collection::Tag' (role 'collection_Tag6', cardinality 0..*).
+'collection::MetaTag' (role 'collection_MetaTag15', cardinality 0..*) is associated with 'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection14', cardinality 0..*).
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection20', cardinality 0..*) is associated with 'collection::Person' (role 'collection_Person21', cardinality 0..*).
+'collection::Tag' (role 'collection_Tag', cardinality 0..*) is associated with 'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection', cardinality 0..*).
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection23', cardinality 0..*) is associated with 'collection::Organisation' (role 'collection_Organisation', cardinality 0..*).
+'collection::MetaTag' (role 'collection_MetaTag', cardinality 0..*) is associated with 'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection8', cardinality 0..*).
+'collection::Item' (role 'collection_Item', cardinality 0..*) is associated with 'collection::ItemsCollection' (role 'collection_ItemsCollection', cardinality 0..*).
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection25', cardinality 0..*) is associated with 'collection::Organisation' (role 'collection_Organisation26', cardinality 0..*).
+'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection17', cardinality 0..*) is associated with 'collection::Category' (role 'collection_Category18', cardinality 0..*).
+'collection::Person' (role 'collection_Person', cardinality 0..*) is associated with 'collection::SmartInformationObjectCollection' (role 'collection_SmartInformationObjectCollection12', cardinality 0..*).

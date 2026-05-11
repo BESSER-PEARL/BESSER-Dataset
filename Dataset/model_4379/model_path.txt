@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/vrchlpet/earl-grey/cz.cvut.earlgrey.classmodel/src-gen/cz/cvut/earlgrey/classmodel/Classmodel.ecore

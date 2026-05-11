@@ -1,0 +1,69 @@
+The model has 22 class(es).
+The class 'ActiveStructureElement' has no attributes.
+The class 'archimate::ArchimateDiagram' has no attributes.
+The class 'archimate::Resource' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'archimate::Outcome' has no attributes.
+The class 'BusinessElement' has no attributes.
+The class 'archimate::Stakeholder' has no attributes.
+The class 'StrategyElement' has no attributes.
+The class 'archimate::Driver' has no attributes.
+The class 'archimate::ActiveStructureElement' has the following attributes: 'name' of type str.
+The class 'archimate::Assessment' has no attributes.
+The class 'archimate::BusinessProcess' has no attributes.
+The class 'archimate::Value' has no attributes.
+The class 'archimate::Requirement' has no attributes.
+The class 'archimate::BusinessElement' has the following attributes: 'refinementType' of type str; 'relationType' of type str; 'name' of type str.
+The class 'archimate::Constraint' has no attributes.
+The class 'archimate::StrategyElement' has the following attributes: 'refinementType' of type str; 'relationType' of type str; 'name' of type str.
+The class 'archimate::Meaning' has no attributes.
+The class 'archimate::MotivationElement' has the following attributes: 'name' of type str; 'refinementType' of type str; 'relationType' of type str.
+The class 'archimate::Goal' has no attributes.
+The class 'MotivationElement' has no attributes.
+The class 'archimate::Principle' has no attributes.
+The enumeration 'relationType' has the following literals: 'composition', 'trigger', 'realization', 'association', 'influences'.
+The enumeration 'refinement' has the following literals: 'OR', 'AND'.
+'archimate::Principle' is a specialization of 'MotivationElement'.
+'archimate::Requirement' is a specialization of 'MotivationElement'.
+'archimate::Meaning' is a specialization of 'MotivationElement'.
+'archimate::BusinessProcess' is a specialization of 'BusinessElement'.
+'archimate::Assessment' is a specialization of 'MotivationElement'.
+'archimate::Value' is a specialization of 'MotivationElement'.
+'archimate::Resource' is a specialization of 'StrategyElement'.
+'archimate::Outcome' is a specialization of 'MotivationElement'.
+'archimate::Driver' is a specialization of 'MotivationElement'.
+'archimate::Goal' is a specialization of 'MotivationElement'.
+'archimate::Stakeholder' is a specialization of 'ActiveStructureElement'.
+'archimate::Constraint' is a specialization of 'Requirement'.
+'archimate::BusinessElement' (role 'archimate_BusinessElement71', cardinality 0..*) is associated with 'archimate::MotivationElement' (role 'archimate_MotivationElement72', cardinality 0..*).
+'archimate::BusinessElement' (role 'archimate_BusinessElement', cardinality 0..*) is associated with 'archimate::ArchimateDiagram' (role 'archimate_ArchimateDiagram4', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement', cardinality 0..*) is associated with 'archimate::ArchimateDiagram' (role 'archimate_ArchimateDiagram2', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement12', cardinality 0..*) is associated with 'archimate::ActiveStructureElement' (role 'archimate_ActiveStructureElement11', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement19', cardinality 0..*) is associated with 'archimate::MotivationElement' (role 'archimate_MotivationElement21', cardinality 0..*).
+'archimate::ActiveStructureElement' (role 'archimate_ActiveStructureElement9', cardinality 0..*) is associated with 'archimate::ActiveStructureElement' (role 'archimate_ActiveStructureElement7', cardinality 0..*).
+'archimate::BusinessElement' (role 'archimate_BusinessElement69', cardinality 0..*) is associated with 'archimate::BusinessElement' (role 'archimate_BusinessElement67', cardinality 0..*).
+'archimate::Principle' (role 'archimate_Principle', cardinality 0..*) is associated with 'archimate::Outcome' (role 'archimate_Outcome46', cardinality 0..*).
+'archimate::Driver' (role 'Driver38', cardinality 0..*) is associated with 'archimate::Goal' (role 'goal', cardinality 0..*).
+'archimate::Meaning' (role 'Meaning', cardinality 0..*) is associated with 'archimate::Stakeholder' (role 'stakeholder', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement63', cardinality 0..*) is associated with 'archimate::BusinessElement' (role 'archimate_BusinessElement62', cardinality 0..*).
+'archimate::Outcome' (role 'outcome', cardinality 0..*) is associated with 'archimate::Value' (role 'Value44', cardinality 0..*).
+'archimate::ActiveStructureElement' (role 'archimate_ActiveStructureElement', cardinality 0..*) is associated with 'archimate::ArchimateDiagram' (role 'archimate_ArchimateDiagram', cardinality 0..*).
+'archimate::Goal' (role 'archimate_Goal51', cardinality 0..*) is associated with 'archimate::Requirement' (role 'archimate_Requirement50', cardinality 0..*).
+'archimate::StrategyElement' (role 'archimate_StrategyElement54', cardinality 0..*) is associated with 'archimate::StrategyElement' (role 'archimate_StrategyElement52', cardinality 0..*).
+'archimate::Outcome' (role 'Outcome', cardinality 0..*) is associated with 'archimate::Value' (role 'value29', cardinality 0..*).
+'archimate::Outcome' (role 'archimate_Outcome', cardinality 0..*) is associated with 'archimate::Goal' (role 'archimate_Goal', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement22', cardinality 0..*) is associated with 'archimate::MotivationElement' (role 'archimate_MotivationElement24', cardinality 0..*).
+'archimate::Stakeholder' (role 'stakeholder15', cardinality 0..*) is associated with 'archimate::Value' (role 'Value', cardinality 0..*).
+'archimate::Stakeholder' (role 'Stakeholder', cardinality 0..*) is associated with 'archimate::Meaning' (role 'meaning', cardinality 0..*).
+'archimate::BusinessElement' (role 'archimate_BusinessElement58', cardinality 0..*) is associated with 'archimate::BusinessElement' (role 'archimate_BusinessElement60', cardinality 0..*).
+'archimate::Stakeholder' (role 'Stakeholder27', cardinality 0..*) is associated with 'archimate::Value' (role 'value', cardinality 0..*).
+'archimate::Assessment' (role 'Assessment41', cardinality 0..*) is associated with 'archimate::Goal' (role 'goal40', cardinality 0..*).
+'archimate::ArchimateDiagram' (role 'archimate_ArchimateDiagram6', cardinality 0..*) is associated with 'archimate::StrategyElement' (role 'archimate_StrategyElement', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement66', cardinality 0..*) is associated with 'archimate::BusinessElement' (role 'archimate_BusinessElement65', cardinality 0..*).
+'archimate::Driver' (role 'driver', cardinality 0..*) is associated with 'archimate::Goal' (role 'Goal', cardinality 0..*).
+'archimate::Goal' (role 'Goal34', cardinality 0..*) is associated with 'archimate::Assessment' (role 'assessment', cardinality 0..*).
+'archimate::StrategyElement' (role 'archimate_StrategyElement56', cardinality 0..*) is associated with 'archimate::MotivationElement' (role 'archimate_MotivationElement57', cardinality 0..*).
+'archimate::Assessment' (role 'Assessment', cardinality 0..*) is associated with 'archimate::Driver' (role 'driver32', cardinality 0..*).
+'archimate::MotivationElement' (role 'archimate_MotivationElement16', cardinality 0..*) is associated with 'archimate::MotivationElement' (role 'archimate_MotivationElement18', cardinality 0..*).
+'archimate::Requirement' (role 'archimate_Requirement', cardinality 0..*) is associated with 'archimate::Outcome' (role 'archimate_Outcome48', cardinality 0..*).
+'archimate::Assessment' (role 'assessment36', cardinality 0..*) is associated with 'archimate::Driver' (role 'Driver', cardinality 0..*).

@@ -1,0 +1,62 @@
+The model has 26 class(es).
+The class 'kmLogo::Block' has no attributes.
+The class 'kmLogo::While' has no attributes.
+The class 'ControlStructure' has no attributes.
+The class 'kmLogo::Parameter' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'kmLogo::ControlStructure' has no attributes.
+The class 'kmLogo::BinaryExp' has no attributes.
+The class 'kmLogo::Main' has no attributes.
+The class 'kmLogo::Div' has no attributes.
+The class 'kmLogo::Greater' has no attributes.
+The class 'kmLogo::If' has no attributes.
+The class 'kmLogo::For' has no attributes.
+The class 'kmLogo::Lower' has no attributes.
+The class 'kmLogo::Minus' has no attributes.
+The class 'kmLogo::MethodeCall' has no attributes.
+The class 'kmLogo::Equals' has no attributes.
+The class 'kmLogo::MethodeDeclaration' has the following attributes: 'name' of type str.
+The class 'kmLogo::Instruction' has no attributes.
+The class 'kmLogo::Plus' has no attributes.
+The class 'kmLogo::JavaProgram' has the following attributes: 'name' of type str.
+The class 'BinaryExp' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'kmLogo::Expression' has no attributes.
+The class 'kmLogo::Constant' has the following attributes: 'integerValue' of type str.
+The class 'kmLogo::Mult' has no attributes.
+The class 'kmLogo::ParameterCall' has no attributes.
+'kmLogo::MethodeCall' is a specialization of 'Expression'.
+'kmLogo::Div' is a specialization of 'BinaryExp'.
+'kmLogo::Plus' is a specialization of 'BinaryExp'.
+'kmLogo::Block' is a specialization of 'Instruction'.
+'kmLogo::Constant' is a specialization of 'Expression'.
+'kmLogo::If' is a specialization of 'ControlStructure'.
+'kmLogo::ControlStructure' is a specialization of 'Instruction'.
+'kmLogo::For' is a specialization of 'ControlStructure'.
+'kmLogo::Expression' is a specialization of 'Instruction'.
+'kmLogo::Lower' is a specialization of 'BinaryExp'.
+'kmLogo::ParameterCall' is a specialization of 'Expression'.
+'kmLogo::Equals' is a specialization of 'BinaryExp'.
+'kmLogo::Minus' is a specialization of 'BinaryExp'.
+'kmLogo::BinaryExp' is a specialization of 'Expression'.
+'kmLogo::While' is a specialization of 'ControlStructure'.
+'kmLogo::Mult' is a specialization of 'BinaryExp'.
+'kmLogo::MethodeDeclaration' is a specialization of 'Instruction'.
+'kmLogo::Greater' is a specialization of 'BinaryExp'.
+'kmLogo::Expression' (role 'kmLogo_Expression3', cardinality 0..*) is associated with 'kmLogo::BinaryExp' (role 'kmLogo_BinaryExp', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression6', cardinality 0..*) is associated with 'kmLogo::BinaryExp' (role 'kmLogo_BinaryExp5', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block18', cardinality 0..*) is associated with 'kmLogo::While' (role 'kmLogo_While', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block16', cardinality 0..*) is associated with 'kmLogo::For' (role 'kmLogo_For', cardinality 0..*).
+'kmLogo::Parameter' (role 'kmLogo_Parameter31', cardinality 0..*) is associated with 'kmLogo::MethodeDeclaration' (role 'kmLogo_MethodeDeclaration30', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression', cardinality 0..*) is associated with 'kmLogo::MethodeCall' (role 'kmLogo_MethodeCall', cardinality 0..*).
+'kmLogo::If' (role 'kmLogo_If', cardinality 0..*) is associated with 'kmLogo::Block' (role 'kmLogo_Block9', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block', cardinality 0..*) is associated with 'kmLogo::Instruction' (role 'kmLogo_Instruction', cardinality 0..*).
+'kmLogo::JavaProgram' (role 'kmLogo_JavaProgram', cardinality 0..*) is associated with 'kmLogo::Main' (role 'kmLogo_Main', cardinality 0..*).
+'kmLogo::MethodeCall' (role 'methodecall', cardinality 0..*) is associated with 'kmLogo::MethodeDeclaration' (role 'MethodeDeclaration', cardinality 0..*).
+'kmLogo::ControlStructure' (role 'kmLogo_ControlStructure', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression14', cardinality 0..*).
+'kmLogo::Parameter' (role 'kmLogo_Parameter', cardinality 0..*) is associated with 'kmLogo::ParameterCall' (role 'kmLogo_ParameterCall', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block12', cardinality 0..*) is associated with 'kmLogo::If' (role 'kmLogo_If11', cardinality 0..*).
+'kmLogo::MethodeDeclaration' (role 'kmLogo_MethodeDeclaration27', cardinality 0..*) is associated with 'kmLogo::Instruction' (role 'kmLogo_Instruction28', cardinality 0..*).
+'kmLogo::Instruction' (role 'kmLogo_Instruction25', cardinality 0..*) is associated with 'kmLogo::Main' (role 'kmLogo_Main24', cardinality 0..*).
+'kmLogo::MethodeCall' (role 'MethodeCall', cardinality 0..*) is associated with 'kmLogo::MethodeDeclaration' (role 'methodedeclaration', cardinality 0..*).
+'kmLogo::MethodeDeclaration' (role 'kmLogo_MethodeDeclaration', cardinality 0..*) is associated with 'kmLogo::JavaProgram' (role 'kmLogo_JavaProgram22', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 6 class(es).
+The class 'TestTypeClass1' has no attributes.
+The class 'package1::TestOperationAndParameterClass' has no attributes.
+The class 'package1::TestTypeClass1' has the following attributes: 'property1' of type bool.
+The class 'package1::TestPropertyClass' has the following attributes: 'identifierProperty' of type str; 'nonidentifierProperty' of type str.
+The class 'package1::TestPrimitiveTypeClass' has the following attributes: 'aStringEChar' of type str; 'aRealFloat' of type str; 'aBooleanBooleanObject' of type str; 'anIntegerEBigDecimal' of type str; 'aRealDouble' of type str; 'anIntegerELongObject' of type str; 'aRealDoubleObject' of type str; 'aBooleanBoolean' of type str; 'anIntegerEShortObject' of type str; 'anIntegerEByteObject' of type str; 'anIntegerELong' of type str; 'anIntegerInt' of type str; 'anIntegerIntegerObject' of type str; 'anIntegerBigInteger' of type str; 'aRealEDouble' of type float; 'anIntegerByte' of type str; 'aStringCharacterObject' of type str; 'aStringChar' of type str; 'anIntegerShortObject' of type str; 'anIntegerLongObject' of type str; 'anIntegerEShort' of type str; 'aStringECharacterObject' of type str; 'anIntegerEByte' of type str; 'anIntegerEIntegerObject' of type str; 'anIntegerLong' of type str; 'anIntegerByteObject' of type str; 'aStringString' of type str; 'aRealEFloatObject' of type str; 'aRealFloatObject' of type str; 'anIntegerShort' of type str; 'aRealEDoubleObject' of type str; 'aRealEFloat' of type float; 'anIntegerBigDecimal' of type str; 'anIntegerEInt' of type int; 'aBooleanEBoolean' of type bool; 'aStringEString' of type str; 'aBooleanEBooleanObject' of type str; 'anIntegerEBigInteger' of type str.
+The class 'package1::TestTypeClass2' has the following attributes: 'property2' of type bool.
+The enumeration 'TestEnumeration' has the following literals: 'TestLiteral1', 'TestLiteral2'.
+'package1::TestTypeClass2' is a specialization of 'TestTypeClass1'.
+'package1::TestPropertyClass' (role 'package1_TestPropertyClass', cardinality 0..*) is associated with 'package1::TestTypeClass1' (role 'package1_TestTypeClass1', cardinality 0..*).
+'package1::TestPropertyClass' (role 'package1_TestPropertyClass14', cardinality 0..*) is associated with 'package1::TestTypeClass1' (role 'package1_TestTypeClass115', cardinality 0..*).
+'package1::TestTypeClass1' (role 'package1_TestTypeClass118', cardinality 0..*) is associated with 'package1::TestPropertyClass' (role 'package1_TestPropertyClass17', cardinality 0..*).
+'package1::TestTypeClass1' (role 'package1_TestTypeClass121', cardinality 0..*) is associated with 'package1::TestPropertyClass' (role 'package1_TestPropertyClass20', cardinality 0..*).
+'package1::TestTypeClass1' (role 'package1_TestTypeClass13', cardinality 0..*) is associated with 'package1::TestPropertyClass' (role 'package1_TestPropertyClass2', cardinality 0..*).
+'package1::TestPropertyClass' (role 'package1_TestPropertyClass23', cardinality 0..*) is associated with 'package1::TestTypeClass1' (role 'package1_TestTypeClass124', cardinality 0..*).
+'package1::TestPropertyClass' (role 'package1_TestPropertyClass11', cardinality 0..*) is associated with 'package1::TestTypeClass1' (role 'package1_TestTypeClass112', cardinality 0..*).
+'package1::TestTypeClass1' (role 'package1_TestTypeClass127', cardinality 0..*) is associated with 'package1::TestPropertyClass' (role 'package1_TestPropertyClass26', cardinality 0..*).
+'package1::TestTypeClass1' (role 'package1_TestTypeClass19', cardinality 0..*) is associated with 'package1::TestPropertyClass' (role 'package1_TestPropertyClass8', cardinality 0..*).
+'package1::TestPropertyClass' (role 'package1_TestPropertyClass5', cardinality 0..*) is associated with 'package1::TestTypeClass1' (role 'package1_TestTypeClass16', cardinality 0..*).

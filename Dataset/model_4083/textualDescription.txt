@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'simpleUML::UMLAttribute' has the following attributes: 'umlName' of type str.
+The class 'simpleUML::UMLClass' has the following attributes: 'umlName' of type str.
+The class 'simpleUML::Model' has no attributes.
+The class 'simpleUML::Generalization' has no attributes.
+'simpleUML::UMLClass' (role 'simpleUML_UMLClass1', cardinality 0..*) is associated with 'simpleUML::UMLClass' (role 'simpleUML_UMLClass3', cardinality 0..*).
+'simpleUML::UMLClass' (role 'simpleUML_UMLClass7', cardinality 0..*) is associated with 'simpleUML::UMLAttribute' (role 'simpleUML_UMLAttribute', cardinality 0..*).
+'simpleUML::UMLClass' (role 'simpleUML_UMLClass', cardinality 0..*) is associated with 'simpleUML::Model' (role 'simpleUML_Model', cardinality 0..*).
+'simpleUML::UMLClass' (role 'simpleUML_UMLClass5', cardinality 0..*) is associated with 'simpleUML::Generalization' (role 'simpleUML_Generalization', cardinality 0..*).
+'simpleUML::Generalization' (role 'simpleUML_Generalization9', cardinality 0..*) is associated with 'simpleUML::UMLClass' (role 'simpleUML_UMLClass10', cardinality 0..*).

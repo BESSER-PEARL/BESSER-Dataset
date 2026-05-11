@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'essai::B' has no attributes.
+The class 'Kind' has no attributes.
+The class 'essai::A' has no attributes.
+The class 'Action' has no attributes.
+'essai::B' is a specialization of 'Action'.
+'essai::A' is a specialization of 'Kind'.

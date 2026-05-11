@@ -1,0 +1,53 @@
+The model has 18 class(es).
+The class 'NamedElement' has no attributes.
+The class 'Interval' has no attributes.
+The class 'company106::Room' has no attributes.
+The class 'company106::Employee' has the following attributes: 'address' of type int; 'socialSecurityNumber' of type str; 'fullName' of type str.
+The class 'company106::Company' has no attributes.
+The class 'company106::Flow' has no attributes.
+The class 'company106::Interval' has the following attributes: 'dateTo' of type str; 'dateFrom' of type str.
+The class 'company106::Workstation' has the following attributes: 'profileDescription' of type str.
+The class 'company106::ObjectiveReach' has the following attributes: 'statement' of type str; 'value' of type float.
+The class 'company106::Function' has no attributes.
+The class 'company106::Agency' has the following attributes: 'status' of type str; 'acronym' of type str.
+The class 'company106::HierarchyLink' has the following attributes: 'hierarchy' of type str.
+The class 'company106::Department' has no attributes.
+The class 'company106::Action' has the following attributes: 'statement' of type str.
+The class 'company106::NamedElement' has the following attributes: 'name' of type str.
+The class 'company106::Goal' has the following attributes: 'statement' of type str.
+The class 'Function' has no attributes.
+The class 'company106::Objective' has the following attributes: 'type' of type str; 'nature' of type str; 'value' of type float.
+The enumeration 'RoleType' has the following literals: 'Composite', 'Transformation', 'Control', 'Decision'.
+The enumeration 'ObjectiveType' has the following literals: 'Tactic', 'Operational', 'None_', 'Strategic'.
+The enumeration 'Hierarchy' has the following literals: 'Subordinate', 'Supervisor'.
+The enumeration 'ObjectiveNature' has the following literals: 'Economical', 'Human', 'Environmental', 'Quality', 'None_', 'Delay', 'Legal', 'Cost'.
+'company106::Room' is a specialization of 'Function'.
+'company106::Agency' is a specialization of 'Function'.
+'company106::Workstation' is a specialization of 'NamedElement'.
+'company106::Function' is a specialization of 'NamedElement'.
+'company106::Action' is a specialization of 'NamedElement'.
+'company106::Department' is a specialization of 'Function'.
+'company106::Flow' is a specialization of 'NamedElement'.
+'company106::Goal' is a specialization of 'Interval'.
+'company106::Room' (role 'company106_Room23', cardinality 0..*) is associated with 'company106::Workstation' (role 'company106_Workstation', cardinality 0..*).
+'company106::Department' (role 'company106_Department29', cardinality 0..*) is associated with 'company106::Agency' (role 'company106_Agency28', cardinality 0..*).
+'company106::Workstation' (role 'inChargeOf', cardinality 0..*) is associated with 'company106::Employee' (role 'Employee', cardinality 0..*).
+'company106::Flow' (role 'company106_Flow6', cardinality 0..*) is associated with 'company106::Function' (role 'company106_Function7', cardinality 0..*).
+'company106::ObjectiveReach' (role 'company106_ObjectiveReach36', cardinality 0..*) is associated with 'company106::Objective' (role 'company106_Objective37', cardinality 0..*).
+'company106::Workstation' (role 'Workstation', cardinality 0..*) is associated with 'company106::Employee' (role 'owners', cardinality 0..*).
+'company106::ObjectiveReach' (role 'company106_ObjectiveReach42', cardinality 0..*) is associated with 'company106::Action' (role 'company106_Action', cardinality 0..*).
+'company106::Goal' (role 'company106_Goal', cardinality 0..*) is associated with 'company106::Company' (role 'company106_Company2', cardinality 0..*).
+'company106::Objective' (role 'company106_Objective', cardinality 0..*) is associated with 'company106::Goal' (role 'company106_Goal26', cardinality 0..*).
+'company106::ObjectiveReach' (role 'company106_ObjectiveReach39', cardinality 0..*) is associated with 'company106::Agency' (role 'company106_Agency40', cardinality 0..*).
+'company106::Department' (role 'company106_Department', cardinality 0..*) is associated with 'company106::Room' (role 'company106_Room', cardinality 0..*).
+'company106::Agency' (role 'company106_Agency34', cardinality 0..*) is associated with 'company106::ObjectiveReach' (role 'company106_ObjectiveReach', cardinality 0..*).
+'company106::Room' (role 'company106_Room19', cardinality 0..*) is associated with 'company106::Room' (role 'company106_Room21', cardinality 0..*).
+'company106::Room' (role 'company106_Room11', cardinality 0..*) is associated with 'company106::Employee' (role 'company106_Employee10', cardinality 0..*).
+'company106::Action' (role 'company106_Action47', cardinality 0..*) is associated with 'company106::Flow' (role 'company106_Flow48', cardinality 0..*).
+'company106::Flow' (role 'company106_Flow45', cardinality 0..*) is associated with 'company106::Function' (role 'company106_Function44', cardinality 0..*).
+'company106::Flow' (role 'company106_Flow', cardinality 0..*) is associated with 'company106::Function' (role 'company106_Function', cardinality 0..*).
+'company106::Employee' (role 'company106_Employee15', cardinality 0..*) is associated with 'company106::HierarchyLink' (role 'company106_HierarchyLink14', cardinality 0..*).
+'company106::Agency' (role 'company106_Agency', cardinality 0..*) is associated with 'company106::Company' (role 'company106_Company', cardinality 0..*).
+'company106::HierarchyLink' (role 'company106_HierarchyLink17', cardinality 0..*) is associated with 'company106::Employee' (role 'company106_Employee18', cardinality 0..*).
+'company106::Employee' (role 'company106_Employee32', cardinality 0..*) is associated with 'company106::Agency' (role 'company106_Agency31', cardinality 0..*).
+'company106::Employee' (role 'company106_Employee', cardinality 0..*) is associated with 'company106::HierarchyLink' (role 'company106_HierarchyLink', cardinality 0..*).

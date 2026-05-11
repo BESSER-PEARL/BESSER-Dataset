@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'ic::sub2::B1' has no attributes.
+The class 'ic::TopLevelClass' has no attributes.
+The class 'ic::sub1::A3' has no attributes.
+The class 'ic::sub2::B2' has no attributes.
+The class 'ic::sub1::A2' has no attributes.
+The class 'ic::sub2::B3' has no attributes.
+The class 'ic::sub1::A1' has no attributes.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ESIR2Compilation/Langage-WHILE/org.xtext.langage_while/model/generated/Langage_while.ecore

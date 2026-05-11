@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'pickupnet::GeoLocation' has the following attributes: 'lat' of type float; 'lon' of type float.
+The class 'pickupnet::Driver' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'pickupnet::Shipment' has the following attributes: 'status' of type str; 'id' of type str.
+The class 'pickupnet::Address' has the following attributes: 'text' of type str.
+The class 'pickupnet::Customer' has the following attributes: 'name' of type str; 'twitterUserName' of type str; 'id' of type str.
+The class 'pickupnet::Station' has no attributes.
+The enumeration 'ShipmentStatus' has the following literals: 'UNDERWAY', 'NEW', 'DELIVERED', 'ASSIGNED'.
+'pickupnet::Customer' (role 'Customer', cardinality 0..*) is associated with 'pickupnet::Shipment' (role 'orders', cardinality 0..*).
+'pickupnet::Address' (role 'pickupnet_Address16', cardinality 0..*) is associated with 'pickupnet::GeoLocation' (role 'pickupnet_GeoLocation', cardinality 0..*).
+'pickupnet::Customer' (role 'orderer', cardinality 0..*) is associated with 'pickupnet::Shipment' (role 'Shipment7', cardinality 0..*).
+'pickupnet::Shipment' (role 'pickupnet_Shipment13', cardinality 0..*) is associated with 'pickupnet::Address' (role 'pickupnet_Address14', cardinality 0..*).
+'pickupnet::Shipment' (role 'assignments', cardinality 0..*) is associated with 'pickupnet::Driver' (role 'Driver', cardinality 0..*).
+'pickupnet::Station' (role 'pickupnet_Station', cardinality 0..*) is associated with 'pickupnet::Customer' (role 'pickupnet_Customer', cardinality 0..*).
+'pickupnet::Station' (role 'pickupnet_Station2', cardinality 0..*) is associated with 'pickupnet::Driver' (role 'pickupnet_Driver', cardinality 0..*).
+'pickupnet::Driver' (role 'driver', cardinality 0..*) is associated with 'pickupnet::Shipment' (role 'Shipment', cardinality 0..*).
+'pickupnet::Address' (role 'pickupnet_Address', cardinality 0..*) is associated with 'pickupnet::Shipment' (role 'pickupnet_Shipment11', cardinality 0..*).
+'pickupnet::Station' (role 'pickupnet_Station4', cardinality 0..*) is associated with 'pickupnet::Shipment' (role 'pickupnet_Shipment', cardinality 0..*).

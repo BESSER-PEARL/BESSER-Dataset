@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'RobotWork::Chrography' has the following attributes: 'name' of type str.
+The class 'RobotWork::Action' has no attributes.
+The class 'RobotWork::Grab' has no attributes.
+The class 'RobotWork::Rotate' has the following attributes: 'degrees' of type int; 'random' of type bool.
+The class 'Action' has no attributes.
+The class 'RobotWork::GoForward' has the following attributes: 'cm' of type int.
+The class 'Instruction' has no attributes.
+The class 'RobotWork::Instruction' has no attributes.
+The class 'RobotWork::Release' has no attributes.
+'RobotWork::Rotate' is a specialization of 'Action'.
+'RobotWork::Action' is a specialization of 'Instruction'.
+'RobotWork::Grab' is a specialization of 'Action'.
+'RobotWork::Chrography' is a specialization of 'Instruction'.
+'RobotWork::Release' is a specialization of 'Action'.
+'RobotWork::GoForward' is a specialization of 'Action'.
+'RobotWork::Chrography' (role 'RobotWork_Chrography', cardinality 0..*) is associated with 'RobotWork::Instruction' (role 'RobotWork_Instruction', cardinality 0..*).

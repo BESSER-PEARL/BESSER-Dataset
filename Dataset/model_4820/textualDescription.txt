@@ -1,0 +1,187 @@
+The model has 62 class(es).
+The class 'Cube' has no attributes.
+The class 'model::analytical::AnalyticalModel' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'model::olap::Dimension' has no attributes.
+The class 'PhysicalTable' has no attributes.
+The class 'model::ModelObject' has the following attributes: 'description' of type str; 'name' of type str; 'id' of type str; 'uniqueName' of type str.
+The class 'model::olap::Hierarchy' has no attributes.
+The class 'model::ModelPropertyMapEntry' has the following attributes: 'key' of type str.
+The class 'model::olap::CalculatedMember' has no attributes.
+The class 'model::business::BusinessDomain' has no attributes.
+The class 'BusinessDomain' has no attributes.
+The class 'PhysicalPrimaryKey' has no attributes.
+The class 'physical::model::Model' has no attributes.
+The class 'model::business::BusinessModel' has no attributes.
+The class 'model::olap::VirtualCubeMeasure' has no attributes.
+The class 'model::olap::OlapModel' has no attributes.
+The class 'model::business::CalculatedBusinessColumn' has no attributes.
+The class 'ModelObject' has no attributes.
+The class 'BusinessColumnSet' has no attributes.
+The class 'BusinessViewInnerJoinRelationship' has no attributes.
+The class 'model::olap::Measure' has no attributes.
+The class 'model::physical::PhysicalModel' has the following attributes: 'databaseName' of type str; 'schema' of type str; 'catalog' of type str; 'databaseVersion' of type str.
+The class 'model::olap::Level' has no attributes.
+The class 'OlapModel' has no attributes.
+The class 'model::ModelPropertyType' has the following attributes: 'id' of type str; 'description' of type str; 'defaultValue' of type str; 'name' of type str; 'admissibleValues' of type str.
+The class 'model::business::BusinessRelationship' has no attributes.
+The class 'model::behavioural::BehaviouralModel' has no attributes.
+The class 'model::business::BusinessViewInnerJoinRelationship' has no attributes.
+The class 'model::business::BusinessIdentifier' has no attributes.
+The class 'VirtualCube' has no attributes.
+The class 'model::physical::PhysicalPrimaryKey' has no attributes.
+The class 'BusinessRelationship' has no attributes.
+The class 'NamedSet' has no attributes.
+The class 'PhysicalColumn' has no attributes.
+The class 'BusinessColumn' has no attributes.
+The class 'model::business::SimpleBusinessColumn' has no attributes.
+The class 'model::olap::NamedSet' has no attributes.
+The class 'olap::model::Model' has no attributes.
+The class 'model::business::BusinessTable' has no attributes.
+The class 'BusinessIdentifier' has no attributes.
+The class 'BusinessModel' has no attributes.
+The class 'model::business::BusinessView' has no attributes.
+The class 'Measure' has no attributes.
+The class 'CalculatedMember' has no attributes.
+The class 'VirtualCubeDimension' has no attributes.
+The class 'model::business::BusinessColumnSet' has no attributes.
+The class 'model::olap::Cube' has no attributes.
+The class 'model::ModelPropertyCategory' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'PhysicalForeignKey' has no attributes.
+The class 'model::physical::PhysicalColumn' has the following attributes: 'position' of type int; 'decimalDigits' of type int; 'size' of type int; 'octectLength' of type int; 'nullable' of type bool; 'typeName' of type str; 'comment' of type str; 'defaultValue' of type str; 'radix' of type int; 'dataType' of type str.
+The class 'model::physical::PhysicalForeignKey' has the following attributes: 'destinationName' of type str; 'sourceName' of type str.
+The class 'model::business::BusinessColumn' has no attributes.
+The class 'VirtualCubeMeasure' has no attributes.
+The class 'model::ModelProperty' has the following attributes: 'value' of type str.
+The class 'Level' has no attributes.
+The class 'PhysicalModel' has no attributes.
+The class 'model::Model' has no attributes.
+The class 'model::olap::VirtualCube' has no attributes.
+The class 'model::olap::VirtualCubeDimension' has no attributes.
+The class 'Hierarchy' has no attributes.
+The class 'business::model::Model' has no attributes.
+The class 'model::physical::PhysicalTable' has the following attributes: 'comment' of type str; 'type' of type str.
+'model::physical::PhysicalModel' is a specialization of 'ModelObject'.
+'model::physical::PhysicalTable' is a specialization of 'ModelObject'.
+'model::business::BusinessColumn' is a specialization of 'ModelObject'.
+'model::business::BusinessTable' is a specialization of 'BusinessColumnSet'.
+'model::olap::CalculatedMember' is a specialization of 'ModelObject'.
+'model::physical::PhysicalColumn' is a specialization of 'ModelObject'.
+'model::business::BusinessModel' is a specialization of 'ModelObject'.
+'model::business::BusinessViewInnerJoinRelationship' is a specialization of 'ModelObject'.
+'model::business::BusinessDomain' is a specialization of 'ModelObject'.
+'model::business::BusinessRelationship' is a specialization of 'ModelObject'.
+'model::Model' is a specialization of 'ModelObject'.
+'model::physical::PhysicalForeignKey' is a specialization of 'ModelObject'.
+'model::business::BusinessColumnSet' is a specialization of 'ModelObject'.
+'model::olap::VirtualCube' is a specialization of 'ModelObject'.
+'model::olap::VirtualCubeMeasure' is a specialization of 'ModelObject'.
+'model::olap::OlapModel' is a specialization of 'ModelObject'.
+'model::olap::VirtualCubeDimension' is a specialization of 'ModelObject'.
+'model::physical::PhysicalPrimaryKey' is a specialization of 'ModelObject'.
+'model::olap::NamedSet' is a specialization of 'ModelObject'.
+'model::olap::Cube' is a specialization of 'ModelObject'.
+'model::business::CalculatedBusinessColumn' is a specialization of 'BusinessColumn'.
+'model::olap::Measure' is a specialization of 'ModelObject'.
+'model::olap::Level' is a specialization of 'ModelObject'.
+'model::business::BusinessIdentifier' is a specialization of 'ModelObject'.
+'model::olap::Hierarchy' is a specialization of 'ModelObject'.
+'model::business::BusinessView' is a specialization of 'BusinessColumnSet'.
+'model::business::SimpleBusinessColumn' is a specialization of 'BusinessColumn'.
+'model::olap::Dimension' is a specialization of 'ModelObject'.
+'BusinessColumn' (role 'BusinessColumn169', cardinality 0..*) is associated with 'model::olap::Level' (role 'model_olap_Level168', cardinality 0..*).
+'model::olap::Cube' (role 'cube146', cardinality 0..*) is associated with 'NamedSet' (role 'NamedSet', cardinality 0..*).
+'model::business::BusinessRelationship' (role 'model_business_BusinessRelationship90', cardinality 0..*) is associated with 'BusinessColumn' (role 'BusinessColumn91', cardinality 0..*).
+'model::olap::VirtualCubeMeasure' (role 'model_olap_VirtualCubeMeasure', cardinality 0..*) is associated with 'Cube' (role 'Cube205', cardinality 0..*).
+'PhysicalPrimaryKey' (role 'PhysicalPrimaryKey', cardinality 0..*) is associated with 'model::physical::PhysicalModel' (role 'model25', cardinality 0..*).
+'model::Model' (role 'model_Model', cardinality 0..*) is associated with 'model::ModelPropertyType' (role 'model_ModelPropertyType18', cardinality 0..*).
+'BusinessColumn' (role 'BusinessColumn', cardinality 0..*) is associated with 'model::business::BusinessColumnSet' (role 'table74', cardinality 0..*).
+'PhysicalColumn' (role 'PhysicalColumn126', cardinality 0..*) is associated with 'model::business::SimpleBusinessColumn' (role 'model_business_SimpleBusinessColumn', cardinality 0..*).
+'model::olap::OlapModel' (role 'model134', cardinality 0..*) is associated with 'Dimension' (role 'Dimension', cardinality 0..*).
+'model::Model' (role 'parentModel14', cardinality 0..*) is associated with 'BusinessModel' (role 'BusinessModel', cardinality 0..*).
+'model::olap::Level' (role 'model_olap_Level', cardinality 0..*) is associated with 'BusinessColumn' (role 'BusinessColumn160', cardinality 0..*).
+'model::olap::Level' (role 'model_olap_Level162', cardinality 0..*) is associated with 'BusinessColumn' (role 'BusinessColumn163', cardinality 0..*).
+'PhysicalForeignKey' (role 'PhysicalForeignKey', cardinality 0..*) is associated with 'model::physical::PhysicalModel' (role 'model27', cardinality 0..*).
+'model::business::BusinessColumn' (role 'columns68', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet69', cardinality 0..*).
+'model::olap::Dimension' (role 'dimensions', cardinality 0..*) is associated with 'OlapModel' (role 'OlapModel151', cardinality 0..*).
+'OlapModel' (role 'OlapModel136', cardinality 0..*) is associated with 'model::olap::Cube' (role 'cubes', cardinality 0..*).
+'Hierarchy' (role 'Hierarchy158', cardinality 0..*) is associated with 'model::olap::Level' (role 'levels', cardinality 0..*).
+'model::business::BusinessModel' (role 'model58', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet', cardinality 0..*).
+'physical::model::Model' (role 'Model', cardinality 0..*) is associated with 'model::physical::PhysicalModel' (role 'physicalModels', cardinality 0..*).
+'BusinessColumnSet' (role 'BusinessColumnSet105', cardinality 0..*) is associated with 'model::business::BusinessIdentifier' (role 'model_business_BusinessIdentifier', cardinality 0..*).
+'BusinessColumnSet' (role 'BusinessColumnSet153', cardinality 0..*) is associated with 'model::olap::Hierarchy' (role 'model_olap_Hierarchy', cardinality 0..*).
+'BusinessViewInnerJoinRelationship' (role 'BusinessViewInnerJoinRelationship78', cardinality 0..*) is associated with 'model::business::BusinessView' (role 'model_business_BusinessView', cardinality 0..*).
+'OlapModel' (role 'OlapModel', cardinality 0..*) is associated with 'model::Model' (role 'parentModel16', cardinality 0..*).
+'model::ModelProperty' (role 'model_ModelProperty', cardinality 0..*) is associated with 'model::ModelPropertyType' (role 'model_ModelPropertyType', cardinality 0..*).
+'model::olap::Cube' (role 'cube144', cardinality 0..*) is associated with 'CalculatedMember' (role 'CalculatedMember', cardinality 0..*).
+'BusinessRelationship' (role 'BusinessRelationship', cardinality 0..*) is associated with 'model::business::BusinessModel' (role 'model60', cardinality 0..*).
+'Cube' (role 'Cube184', cardinality 0..*) is associated with 'model::olap::VirtualCube' (role 'model_olap_VirtualCube', cardinality 0..*).
+'BusinessColumn' (role 'BusinessColumn88', cardinality 0..*) is associated with 'model::business::BusinessRelationship' (role 'model_business_BusinessRelationship87', cardinality 0..*).
+'PhysicalColumn' (role 'PhysicalColumn124', cardinality 0..*) is associated with 'model::business::BusinessViewInnerJoinRelationship' (role 'model_business_BusinessViewInnerJoinRelationship123', cardinality 0..*).
+'PhysicalTable' (role 'PhysicalTable36', cardinality 0..*) is associated with 'model::physical::PhysicalPrimaryKey' (role 'model_physical_PhysicalPrimaryKey', cardinality 0..*).
+'Cube' (role 'Cube197', cardinality 0..*) is associated with 'model::olap::VirtualCubeDimension' (role 'model_olap_VirtualCubeDimension', cardinality 0..*).
+'BusinessViewInnerJoinRelationship' (role 'BusinessViewInnerJoinRelationship', cardinality 0..*) is associated with 'model::business::BusinessModel' (role 'model66', cardinality 0..*).
+'PhysicalColumn' (role 'PhysicalColumn121', cardinality 0..*) is associated with 'model::business::BusinessViewInnerJoinRelationship' (role 'model_business_BusinessViewInnerJoinRelationship120', cardinality 0..*).
+'model::olap::VirtualCube' (role 'model_olap_VirtualCube189', cardinality 0..*) is associated with 'CalculatedMember' (role 'CalculatedMember190', cardinality 0..*).
+'model::ModelPropertyCategory' (role 'model_ModelPropertyCategory', cardinality 0..*) is associated with 'model::ModelPropertyCategory' (role 'model_ModelPropertyCategory0', cardinality 0..*).
+'model::olap::VirtualCubeMeasure' (role 'measures202', cardinality 0..*) is associated with 'VirtualCube' (role 'VirtualCube203', cardinality 0..*).
+'model::business::BusinessDomain' (role 'model_business_BusinessDomain', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet98', cardinality 0..*).
+'Hierarchy' (role 'Hierarchy180', cardinality 0..*) is associated with 'model::olap::CalculatedMember' (role 'model_olap_CalculatedMember', cardinality 0..*).
+'model::business::BusinessIdentifier' (role 'identifiers', cardinality 0..*) is associated with 'BusinessModel' (role 'BusinessModel103', cardinality 0..*).
+'Dimension' (role 'Dimension155', cardinality 0..*) is associated with 'model::olap::Hierarchy' (role 'hierarchies', cardinality 0..*).
+'model::business::BusinessDomain' (role 'model_business_BusinessDomain100', cardinality 0..*) is associated with 'BusinessRelationship' (role 'BusinessRelationship101', cardinality 0..*).
+'Cube' (role 'Cube', cardinality 0..*) is associated with 'model::olap::OlapModel' (role 'model130', cardinality 0..*).
+'model::Model' (role 'model_Model20', cardinality 0..*) is associated with 'model::ModelPropertyCategory' (role 'model_ModelPropertyCategory21', cardinality 0..*).
+'VirtualCubeDimension' (role 'VirtualCubeDimension', cardinality 0..*) is associated with 'model::olap::VirtualCube' (role 'virtualCube', cardinality 0..*).
+'model::physical::PhysicalForeignKey' (role 'foreignKeys', cardinality 0..*) is associated with 'PhysicalModel' (role 'PhysicalModel52', cardinality 0..*).
+'PhysicalModel' (role 'PhysicalModel34', cardinality 0..*) is associated with 'model::physical::PhysicalPrimaryKey' (role 'primaryKeys', cardinality 0..*).
+'model::business::BusinessViewInnerJoinRelationship' (role 'joinRelationships', cardinality 0..*) is associated with 'BusinessModel' (role 'BusinessModel113', cardinality 0..*).
+'business::model::Model' (role 'Model54', cardinality 0..*) is associated with 'model::business::BusinessModel' (role 'businessModels', cardinality 0..*).
+'BusinessDomain' (role 'BusinessDomain', cardinality 0..*) is associated with 'model::business::BusinessModel' (role 'model64', cardinality 0..*).
+'model::business::BusinessViewInnerJoinRelationship' (role 'model_business_BusinessViewInnerJoinRelationship117', cardinality 0..*) is associated with 'PhysicalTable' (role 'PhysicalTable118', cardinality 0..*).
+'model::ModelPropertyCategory' (role 'model_ModelPropertyCategory2', cardinality 0..*) is associated with 'model::ModelPropertyCategory' (role 'model_ModelPropertyCategory4', cardinality 0..*).
+'BusinessColumn' (role 'BusinessColumn166', cardinality 0..*) is associated with 'model::olap::Level' (role 'model_olap_Level165', cardinality 0..*).
+'BusinessColumn' (role 'BusinessColumn108', cardinality 0..*) is associated with 'model::business::BusinessIdentifier' (role 'model_business_BusinessIdentifier107', cardinality 0..*).
+'Level' (role 'Level', cardinality 0..*) is associated with 'model::olap::Hierarchy' (role 'hierarchy', cardinality 0..*).
+'PhysicalColumn' (role 'PhysicalColumn50', cardinality 0..*) is associated with 'model::physical::PhysicalForeignKey' (role 'model_physical_PhysicalForeignKey49', cardinality 0..*).
+'PhysicalTable' (role 'PhysicalTable76', cardinality 0..*) is associated with 'model::business::BusinessTable' (role 'model_business_BusinessTable', cardinality 0..*).
+'model::olap::Cube' (role 'cube', cardinality 0..*) is associated with 'Measure' (role 'Measure', cardinality 0..*).
+'PhysicalColumn' (role 'PhysicalColumn44', cardinality 0..*) is associated with 'model::physical::PhysicalForeignKey' (role 'model_physical_PhysicalForeignKey43', cardinality 0..*).
+'Measure' (role 'Measure208', cardinality 0..*) is associated with 'model::olap::VirtualCubeMeasure' (role 'model_olap_VirtualCubeMeasure207', cardinality 0..*).
+'BusinessColumnSet' (role 'BusinessColumnSet82', cardinality 0..*) is associated with 'model::business::BusinessRelationship' (role 'model_business_BusinessRelationship', cardinality 0..*).
+'model::olap::Cube' (role 'model_olap_Cube', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet138', cardinality 0..*).
+'model::olap::VirtualCubeDimension' (role 'dimensions194', cardinality 0..*) is associated with 'VirtualCube' (role 'VirtualCube195', cardinality 0..*).
+'model::business::BusinessModel' (role 'model62', cardinality 0..*) is associated with 'BusinessIdentifier' (role 'BusinessIdentifier', cardinality 0..*).
+'model::ModelPropertyMapEntry' (role 'model_ModelPropertyMapEntry11', cardinality 0..*) is associated with 'model::ModelObject' (role 'model_ModelObject', cardinality 0..*).
+'PhysicalTable' (role 'PhysicalTable115', cardinality 0..*) is associated with 'model::business::BusinessViewInnerJoinRelationship' (role 'model_business_BusinessViewInnerJoinRelationship', cardinality 0..*).
+'model::business::BusinessRelationship' (role 'model_business_BusinessRelationship93', cardinality 0..*) is associated with 'PhysicalForeignKey' (role 'PhysicalForeignKey94', cardinality 0..*).
+'model::physical::PhysicalModel' (role 'model', cardinality 0..*) is associated with 'PhysicalTable' (role 'PhysicalTable', cardinality 0..*).
+'model::olap::VirtualCube' (role 'virtualCubes', cardinality 0..*) is associated with 'OlapModel' (role 'OlapModel192', cardinality 0..*).
+'model::business::BusinessIdentifier' (role 'model_business_BusinessIdentifier110', cardinality 0..*) is associated with 'PhysicalPrimaryKey' (role 'PhysicalPrimaryKey111', cardinality 0..*).
+'model::olap::Dimension' (role 'model_olap_Dimension', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet148', cardinality 0..*).
+'model::business::BusinessRelationship' (role 'relationships', cardinality 0..*) is associated with 'BusinessModel' (role 'BusinessModel80', cardinality 0..*).
+'model::olap::OlapModel' (role 'olapModels', cardinality 0..*) is associated with 'olap::model::Model' (role 'Model128', cardinality 0..*).
+'Cube' (role 'Cube178', cardinality 0..*) is associated with 'model::olap::CalculatedMember' (role 'calculatedMembers', cardinality 0..*).
+'model::olap::Measure' (role 'measures', cardinality 0..*) is associated with 'Cube' (role 'Cube174', cardinality 0..*).
+'model::physical::PhysicalTable' (role 'table', cardinality 0..*) is associated with 'PhysicalColumn' (role 'PhysicalColumn', cardinality 0..*).
+'model::olap::Dimension' (role 'dimension', cardinality 0..*) is associated with 'Hierarchy' (role 'Hierarchy', cardinality 0..*).
+'model::physical::PhysicalForeignKey' (role 'model_physical_PhysicalForeignKey', cardinality 0..*) is associated with 'PhysicalTable' (role 'PhysicalTable41', cardinality 0..*).
+'model::olap::VirtualCubeDimension' (role 'model_olap_VirtualCubeDimension199', cardinality 0..*) is associated with 'Dimension' (role 'Dimension200', cardinality 0..*).
+'model::physical::PhysicalPrimaryKey' (role 'model_physical_PhysicalPrimaryKey38', cardinality 0..*) is associated with 'PhysicalColumn' (role 'PhysicalColumn39', cardinality 0..*).
+'BusinessModel' (role 'BusinessModel72', cardinality 0..*) is associated with 'model::business::BusinessColumnSet' (role 'tables71', cardinality 0..*).
+'VirtualCubeMeasure' (role 'VirtualCubeMeasure', cardinality 0..*) is associated with 'model::olap::VirtualCube' (role 'virtualCube187', cardinality 0..*).
+'model::business::BusinessRelationship' (role 'model_business_BusinessRelationship84', cardinality 0..*) is associated with 'BusinessColumnSet' (role 'BusinessColumnSet85', cardinality 0..*).
+'model::olap::NamedSet' (role 'namedSets', cardinality 0..*) is associated with 'Cube' (role 'Cube182', cardinality 0..*).
+'model::ModelPropertyCategory' (role 'ModelPropertyCategory', cardinality 0..*) is associated with 'model::ModelPropertyType' (role 'propertyTypes', cardinality 0..*).
+'model::physical::PhysicalForeignKey' (role 'model_physical_PhysicalForeignKey46', cardinality 0..*) is associated with 'PhysicalTable' (role 'PhysicalTable47', cardinality 0..*).
+'model::ModelPropertyMapEntry' (role 'model_ModelPropertyMapEntry', cardinality 0..*) is associated with 'model::ModelProperty' (role 'model_ModelProperty9', cardinality 0..*).
+'VirtualCube' (role 'VirtualCube', cardinality 0..*) is associated with 'model::olap::OlapModel' (role 'model132', cardinality 0..*).
+'model::olap::Level' (role 'model_olap_Level171', cardinality 0..*) is associated with 'BusinessColumn' (role 'BusinessColumn172', cardinality 0..*).
+'PhysicalTable' (role 'PhysicalTable32', cardinality 0..*) is associated with 'model::physical::PhysicalColumn' (role 'columns', cardinality 0..*).
+'Dimension' (role 'Dimension141', cardinality 0..*) is associated with 'model::olap::Cube' (role 'model_olap_Cube140', cardinality 0..*).
+'PhysicalModel' (role 'PhysicalModel56', cardinality 0..*) is associated with 'model::business::BusinessModel' (role 'model_business_BusinessModel', cardinality 0..*).
+'model::Model' (role 'parentModel', cardinality 0..*) is associated with 'PhysicalModel' (role 'PhysicalModel', cardinality 0..*).
+'BusinessModel' (role 'BusinessModel96', cardinality 0..*) is associated with 'model::business::BusinessDomain' (role 'domains', cardinality 0..*).
+'model::olap::Measure' (role 'model_olap_Measure', cardinality 0..*) is associated with 'BusinessColumn' (role 'BusinessColumn176', cardinality 0..*).
+'model::ModelPropertyCategory' (role 'category', cardinality 0..*) is associated with 'model::ModelPropertyType' (role 'ModelPropertyType', cardinality 0..*).
+'PhysicalModel' (role 'PhysicalModel29', cardinality 0..*) is associated with 'model::physical::PhysicalTable' (role 'tables', cardinality 0..*).

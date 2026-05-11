@@ -1,0 +1,26 @@
+The model has 14 class(es).
+The class 'Object' has no attributes.
+The class 'hutn::ReferenceSlot' has no attributes.
+The class 'hutn::ModelElement' has the following attributes: 'col' of type int; 'line' of type int.
+The class 'hutn::AttributeSlot' has no attributes.
+The class 'hutn::EPackage' has no attributes.
+The class 'hutn::ContainmentSlot' has no attributes.
+The class 'hutn::NsUri' has the following attributes: 'value' of type str.
+The class 'hutn::ClassObjectSlot' has no attributes.
+The class 'hutn::Spec' has the following attributes: 'modelFile' of type str; 'sourceFile' of type str.
+The class 'ModelElement' has no attributes.
+The class 'hutn::PackageObject' has no attributes.
+The class 'hutn::Object' has the following attributes: 'type' of type str; 'identifier' of type str.
+The class 'hutn::ClassObject' has no attributes.
+The class 'hutn::Slot' has the following attributes: 'values' of type str; 'feature' of type str.
+'hutn::Slot' is a specialization of 'ModelElement'.
+'hutn::ClassObject' is a specialization of 'Object'.
+'hutn::NsUri' is a specialization of 'ModelElement'.
+'hutn::PackageObject' is a specialization of 'Object'.
+'hutn::Object' is a specialization of 'ModelElement'.
+'hutn::Slot' (role 'slots', cardinality 0..*) is associated with 'hutn::ClassObject' (role 'ClassObject', cardinality 0..*).
+'hutn::PackageObject' (role 'hutn_PackageObject', cardinality 0..*) is associated with 'hutn::Spec' (role 'hutn_Spec2', cardinality 0..*).
+'hutn::ClassObject' (role 'hutn_ClassObject9', cardinality 0..*) is associated with 'hutn::ContainmentSlot' (role 'hutn_ContainmentSlot', cardinality 0..*).
+'hutn::ClassObject' (role 'hutn_ClassObject', cardinality 0..*) is associated with 'hutn::PackageObject' (role 'hutn_PackageObject6', cardinality 0..*).
+'hutn::EPackage' (role 'hutn_EPackage', cardinality 0..*) is associated with 'hutn::PackageObject' (role 'hutn_PackageObject4', cardinality 0..*).
+'hutn::Spec' (role 'hutn_Spec', cardinality 0..*) is associated with 'hutn::NsUri' (role 'hutn_NsUri', cardinality 0..*).

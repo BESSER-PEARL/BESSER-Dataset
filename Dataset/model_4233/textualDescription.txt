@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'NamedEntity' has no attributes.
+The class 'employee::Company' has no attributes.
+The class 'employee::Employee' has the following attributes: 'wage' of type int.
+The class 'Department' has no attributes.
+The class 'employee::RichDepartment' has no attributes.
+The class 'employee::NamedEntity' has the following attributes: 'name' of type str; 'wrongFeature' of type int.
+The class 'employee::PoorDepartment' has no attributes.
+The class 'employee::Department' has no attributes.
+'employee::Department' is a specialization of 'NamedEntity'.
+'employee::Employee' is a specialization of 'NamedEntity'.
+'employee::PoorDepartment' is a specialization of 'Department'.
+'employee::Company' is a specialization of 'NamedEntity'.
+'employee::RichDepartment' is a specialization of 'Department'.
+'employee::Employee' (role 'employee_Employee', cardinality 0..*) is associated with 'employee::Department' (role 'employee_Department2', cardinality 0..*).
+'employee::Company' (role 'employee_Company', cardinality 0..*) is associated with 'employee::Department' (role 'employee_Department', cardinality 0..*).

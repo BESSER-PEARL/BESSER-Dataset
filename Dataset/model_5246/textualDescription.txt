@@ -1,0 +1,329 @@
+The model has 65 class(es).
+The class 'xhtml::IType' has the following attributes: 'dir' of type str; 'class_' of type str; 'lang' of type str; 'style' of type str; 'lang1' of type str; 'title' of type str; 'id' of type str.
+The class 'xhtml::EmType' has the following attributes: 'title' of type str; 'lang1' of type str; 'style' of type str; 'id' of type str; 'lang' of type str; 'class_' of type str; 'dir' of type str.
+The class 'xhtml::ColType' has the following attributes: 'title' of type str; 'valign' of type str; 'dir' of type str; 'id' of type str; 'lang1' of type str; 'width' of type str; 'charoff' of type str; 'style' of type str; 'span' of type str; 'char' of type str; 'class_' of type str; 'align' of type str; 'lang' of type str.
+The class 'xhtml::BType' has the following attributes: 'title' of type str; 'id' of type str; 'style' of type str; 'lang1' of type str; 'dir' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'xhtml::Block' has the following attributes: 'block' of type str.
+The class 'xhtml::SampType' has the following attributes: 'title' of type str; 'lang' of type str; 'class_' of type str; 'dir' of type str; 'style' of type str; 'lang1' of type str; 'id' of type str.
+The class 'xhtml::EStringToStringMapEntry' has no attributes.
+The class 'xhtml::OlType' has the following attributes: 'lang1' of type str; 'class_' of type str; 'style' of type str; 'dir' of type str; 'lang' of type str; 'id' of type str; 'title' of type str.
+The class 'xhtml::ImgType' has the following attributes: 'usemap' of type str; 'class_' of type str; 'id' of type str; 'width' of type str; 'lang' of type str; 'src' of type str; 'height' of type str; 'dir' of type str; 'style' of type str; 'longdesc' of type str; 'ismap' of type str; 'title' of type str; 'alt' of type str; 'lang1' of type str.
+The class 'xhtml::TtType' has the following attributes: 'class_' of type str; 'id' of type str; 'title' of type str; 'dir' of type str; 'style' of type str; 'lang1' of type str; 'lang' of type str.
+The class 'xhtml::CiteType' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str; 'lang1' of type str; 'dir' of type str; 'title' of type str; 'id' of type str.
+The class 'xhtml::HrType' has the following attributes: 'dir' of type str; 'lang1' of type str; 'title' of type str; 'class_' of type str; 'lang' of type str; 'style' of type str; 'id' of type str.
+The class 'xhtml::PreContent' has the following attributes: 'mixed' of type str; 'group' of type str.
+The class 'xhtml::LiType' has the following attributes: 'class_' of type str; 'lang1' of type str; 'dir' of type str; 'style' of type str; 'id' of type str; 'title' of type str; 'lang' of type str.
+The class 'xhtml::PreType' has the following attributes: 'lang1' of type str; 'class_' of type str; 'style' of type str; 'title' of type str; 'dir' of type str; 'lang' of type str; 'id' of type str; 'space' of type str.
+The class 'Flow' has no attributes.
+The class 'xhtml::DivType' has the following attributes: 'lang1' of type str; 'dir' of type str; 'style' of type str; 'class_' of type str; 'id' of type str; 'title' of type str; 'lang' of type str.
+The class 'xhtml::Flow' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'xhtml::TrType' has the following attributes: 'lang' of type str; 'char' of type str; 'dir' of type str; 'style' of type str; 'class_' of type str; 'group' of type str; 'charoff' of type str; 'align' of type str; 'valign' of type str; 'title' of type str; 'lang1' of type str; 'id' of type str.
+The class 'xhtml::BlockquoteType' has the following attributes: 'style' of type str; 'class_' of type str; 'cite' of type str; 'id' of type str; 'lang1' of type str; 'lang' of type str; 'dir' of type str; 'title' of type str.
+The class 'xhtml::H1Type' has the following attributes: 'lang1' of type str; 'style' of type str; 'class_' of type str; 'dir' of type str; 'title' of type str; 'id' of type str; 'lang' of type str.
+The class 'xhtml::SpanType' has the following attributes: 'class_' of type str; 'lang1' of type str; 'style' of type str; 'id' of type str; 'dir' of type str; 'lang' of type str; 'title' of type str.
+The class 'xhtml::BigType' has the following attributes: 'dir' of type str; 'class_' of type str; 'title' of type str; 'lang1' of type str; 'lang' of type str; 'style' of type str; 'id' of type str.
+The class 'xhtml::DfnType' has the following attributes: 'class_' of type str; 'id' of type str; 'lang' of type str; 'title' of type str; 'lang1' of type str; 'style' of type str; 'dir' of type str.
+The class 'xhtml::PType' has the following attributes: 'lang' of type str; 'id' of type str; 'class_' of type str; 'title' of type str; 'style' of type str; 'lang1' of type str; 'dir' of type str.
+The class 'xhtml::DdType' has the following attributes: 'id' of type str; 'style' of type str; 'dir' of type str; 'class_' of type str; 'lang' of type str; 'title' of type str; 'lang1' of type str.
+The class 'Inline' has no attributes.
+The class 'Block' has no attributes.
+The class 'xhtml::H4Type' has the following attributes: 'lang' of type str; 'class_' of type str; 'style' of type str; 'title' of type str; 'dir' of type str; 'id' of type str; 'lang1' of type str.
+The class 'xhtml::ThType' has the following attributes: 'colspan' of type str; 'lang' of type str; 'title' of type str; 'rowspan' of type str; 'axis' of type str; 'char' of type str; 'id' of type str; 'dir' of type str; 'lang1' of type str; 'abbr1' of type str; 'valign' of type str; 'headers' of type str; 'style' of type str; 'scope' of type str; 'align' of type str; 'class_' of type str; 'charoff' of type str.
+The class 'xhtml::SmallType' has the following attributes: 'style' of type str; 'dir' of type str; 'lang1' of type str; 'id' of type str; 'class_' of type str; 'title' of type str; 'lang' of type str.
+The class 'xhtml::TableType' has the following attributes: 'summary' of type str; 'class_' of type str; 'width' of type str; 'lang1' of type str; 'cellpadding' of type str; 'frame' of type str; 'dir' of type str; 'title' of type str; 'cellspacing' of type str; 'style' of type str; 'id' of type str; 'border' of type str; 'lang' of type str; 'rules' of type str.
+The class 'xhtml::VarType' has the following attributes: 'class_' of type str; 'dir' of type str; 'style' of type str; 'title' of type str; 'id' of type str; 'lang1' of type str; 'lang' of type str.
+The class 'xhtml::H5Type' has the following attributes: 'class_' of type str; 'lang1' of type str; 'lang' of type str; 'title' of type str; 'dir' of type str; 'style' of type str; 'id' of type str.
+The class 'AContent' has no attributes.
+The class 'xhtml::StrongType' has the following attributes: 'lang1' of type str; 'title' of type str; 'class_' of type str; 'style' of type str; 'dir' of type str; 'lang' of type str; 'id' of type str.
+The class 'xhtml::ColgroupType' has the following attributes: 'style' of type str; 'lang1' of type str; 'dir' of type str; 'class_' of type str; 'charoff' of type str; 'id' of type str; 'align' of type str; 'width' of type str; 'char' of type str; 'title' of type str; 'lang' of type str; 'span' of type str; 'valign' of type str.
+The class 'xhtml::SubType' has the following attributes: 'style' of type str; 'lang1' of type str; 'title' of type str; 'lang' of type str; 'dir' of type str; 'id' of type str; 'class_' of type str.
+The class 'xhtml::TfootType' has the following attributes: 'valign' of type str; 'style' of type str; 'align' of type str; 'id' of type str; 'dir' of type str; 'char' of type str; 'title' of type str; 'class_' of type str; 'charoff' of type str; 'lang' of type str; 'lang1' of type str.
+The class 'xhtml::UlType' has the following attributes: 'dir' of type str; 'lang1' of type str; 'class_' of type str; 'style' of type str; 'lang' of type str; 'title' of type str; 'id' of type str.
+The class 'xhtml::TdType' has the following attributes: 'align' of type str; 'valign' of type str; 'title' of type str; 'id' of type str; 'colspan' of type str; 'style' of type str; 'char' of type str; 'abbr1' of type str; 'lang1' of type str; 'scope' of type str; 'axis' of type str; 'dir' of type str; 'rowspan' of type str; 'charoff' of type str; 'lang' of type str; 'headers' of type str; 'class_' of type str.
+The class 'xhtml::Inline' has the following attributes: 'mixed' of type str; 'inline' of type str.
+The class 'xhtml::TbodyType' has the following attributes: 'id' of type str; 'char' of type str; 'dir' of type str; 'title' of type str; 'lang1' of type str; 'style' of type str; 'class_' of type str; 'lang' of type str; 'charoff' of type str; 'align' of type str; 'valign' of type str.
+The class 'xhtml::AcronymType' has the following attributes: 'id' of type str; 'dir' of type str; 'title' of type str; 'lang1' of type str; 'class_' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::KbdType' has the following attributes: 'title' of type str; 'class_' of type str; 'id' of type str; 'style' of type str; 'lang' of type str; 'dir' of type str; 'lang1' of type str.
+The class 'xhtml::CaptionType' has the following attributes: 'class_' of type str; 'dir' of type str; 'title' of type str; 'style' of type str; 'lang' of type str; 'id' of type str; 'lang1' of type str.
+The class 'xhtml::QType' has the following attributes: 'cite1' of type str; 'lang' of type str; 'class_' of type str; 'lang1' of type str; 'id' of type str; 'title' of type str; 'style' of type str; 'dir' of type str.
+The class 'PreContent' has no attributes.
+The class 'xhtml::MapType' has the following attributes: 'title' of type str; 'block' of type str; 'dir' of type str; 'lang1' of type str; 'name' of type str; 'style' of type str; 'class_' of type str; 'lang' of type str; 'id' of type str.
+The class 'xhtml::AreaType' has the following attributes: 'dir' of type str; 'nohref' of type str; 'shape' of type str; 'href' of type str; 'alt' of type str; 'id' of type str; 'lang1' of type str; 'coords' of type str; 'title' of type str; 'style' of type str; 'accesskey' of type str; 'lang' of type str; 'tabindex' of type str; 'class_' of type str.
+The class 'xhtml::BrType' has the following attributes: 'style' of type str; 'title' of type str; 'id' of type str; 'class_' of type str.
+The class 'xhtml::AContent' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'xhtml::H2Type' has the following attributes: 'id' of type str; 'lang1' of type str; 'dir' of type str; 'style' of type str; 'title' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::CodeType' has the following attributes: 'lang' of type str; 'dir' of type str; 'class_' of type str; 'id' of type str; 'title' of type str; 'lang1' of type str; 'style' of type str.
+The class 'xhtml::H6Type' has the following attributes: 'dir' of type str; 'lang' of type str; 'id' of type str; 'class_' of type str; 'title' of type str; 'style' of type str; 'lang1' of type str.
+The class 'xhtml::SupType' has the following attributes: 'id' of type str; 'dir' of type str; 'lang' of type str; 'lang1' of type str; 'title' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::BdoType' has the following attributes: 'id' of type str; 'class_' of type str; 'lang' of type str; 'title' of type str; 'style' of type str; 'dir' of type str; 'lang1' of type str.
+The class 'xhtml::DlType' has the following attributes: 'style' of type str; 'lang1' of type str; 'dir' of type str; 'title' of type str; 'id' of type str; 'lang' of type str; 'class_' of type str; 'group' of type str.
+The class 'xhtml::H3Type' has the following attributes: 'dir' of type str; 'title' of type str; 'lang1' of type str; 'lang' of type str; 'id' of type str; 'class_' of type str; 'style' of type str.
+The class 'xhtml::DtType' has the following attributes: 'title' of type str; 'dir' of type str; 'style' of type str; 'lang' of type str; 'class_' of type str; 'lang1' of type str; 'id' of type str.
+The class 'xhtml::AddressType' has the following attributes: 'id' of type str; 'class_' of type str; 'style' of type str; 'lang' of type str; 'title' of type str; 'lang1' of type str; 'dir' of type str.
+The class 'xhtml::AbbrType' has the following attributes: 'title' of type str; 'lang' of type str; 'class_' of type str; 'style' of type str; 'dir' of type str; 'lang1' of type str; 'id' of type str.
+The class 'xhtml::AType' has the following attributes: 'charset' of type str; 'class_' of type str; 'shape' of type str; 'accesskey' of type str; 'type' of type str; 'name' of type str; 'href' of type str; 'hreflang' of type str; 'tabindex' of type str; 'rel' of type str; 'lang1' of type str; 'lang' of type str; 'coords' of type str; 'id' of type str; 'rev' of type str; 'style' of type str; 'title' of type str; 'dir' of type str.
+The class 'xhtml::TheadType' has the following attributes: 'lang' of type str; 'char' of type str; 'title' of type str; 'id' of type str; 'align' of type str; 'charoff' of type str; 'lang1' of type str; 'valign' of type str; 'style' of type str; 'dir' of type str; 'class_' of type str.
+The enumeration 'TFrame' has the following literals: 'border', 'box', 'hsides', 'above', 'below', 'vsides', 'rhs', 'void', 'lhs'.
+The enumeration 'AlignType' has the following literals: 'char', 'left', 'center', 'right', 'justify'.
+The enumeration 'NohrefType' has the following literals: 'nohref'.
+The enumeration 'Scope' has the following literals: 'col', 'row', 'rowgroup', 'colgroup'.
+The enumeration 'DirType1' has the following literals: 'rtl', 'ltr'.
+The enumeration 'TRules' has the following literals: 'all', 'groups', 'none', 'rows', 'cols'.
+The enumeration 'DirType' has the following literals: 'ltr', 'rtl'.
+The enumeration 'ValignType' has the following literals: 'bottom', 'middle', 'top', 'baseline'.
+The enumeration 'IsmapType' has the following literals: 'ismap'.
+The enumeration 'Shape' has the following literals: 'default', 'rect', 'poly', 'circle'.
+'xhtml::TdType' is a specialization of 'Flow'.
+'xhtml::PType' is a specialization of 'Inline'.
+'xhtml::VarType' is a specialization of 'Inline'.
+'xhtml::SpanType' is a specialization of 'Inline'.
+'xhtml::H1Type' is a specialization of 'Inline'.
+'xhtml::BdoType' is a specialization of 'Inline'.
+'xhtml::H3Type' is a specialization of 'Inline'.
+'xhtml::CiteType' is a specialization of 'Inline'.
+'xhtml::LiType' is a specialization of 'Flow'.
+'xhtml::DivType' is a specialization of 'Flow'.
+'xhtml::TtType' is a specialization of 'Inline'.
+'xhtml::H5Type' is a specialization of 'Inline'.
+'xhtml::SampType' is a specialization of 'Inline'.
+'xhtml::CodeType' is a specialization of 'Inline'.
+'xhtml::SubType' is a specialization of 'Inline'.
+'xhtml::ThType' is a specialization of 'Flow'.
+'xhtml::SmallType' is a specialization of 'Inline'.
+'xhtml::BType' is a specialization of 'Inline'.
+'xhtml::AcronymType' is a specialization of 'Inline'.
+'xhtml::StrongType' is a specialization of 'Inline'.
+'xhtml::DdType' is a specialization of 'Flow'.
+'xhtml::CaptionType' is a specialization of 'Inline'.
+'xhtml::SupType' is a specialization of 'Inline'.
+'xhtml::BlockquoteType' is a specialization of 'Block'.
+'xhtml::DtType' is a specialization of 'Inline'.
+'xhtml::IType' is a specialization of 'Inline'.
+'xhtml::AddressType' is a specialization of 'Inline'.
+'xhtml::DfnType' is a specialization of 'Inline'.
+'xhtml::QType' is a specialization of 'Inline'.
+'xhtml::BigType' is a specialization of 'Inline'.
+'xhtml::EmType' is a specialization of 'Inline'.
+'xhtml::AbbrType' is a specialization of 'Inline'.
+'xhtml::PreType' is a specialization of 'PreContent'.
+'xhtml::H4Type' is a specialization of 'Inline'.
+'xhtml::H6Type' is a specialization of 'Inline'.
+'xhtml::KbdType' is a specialization of 'Inline'.
+'xhtml::AType' is a specialization of 'AContent'.
+'xhtml::H2Type' is a specialization of 'Inline'.
+'xhtml::BdoType' (role 'xhtml_BdoType292', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow291', cardinality 0..*).
+'xhtml::TbodyType' (role 'xhtml_TbodyType563', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType562', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot134', cardinality 0..*) is associated with 'xhtml::DivType' (role 'xhtml_DivType135', cardinality 0..*).
+'xhtml::EmType' (role 'xhtml_EmType316', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow315', cardinality 0..*).
+'xhtml::TableType' (role 'xhtml_TableType559', cardinality 0..*) is associated with 'xhtml::TfootType' (role 'xhtml_TfootType560', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block73', cardinality 0..*) is associated with 'xhtml::AddressType' (role 'xhtml_AddressType', cardinality 0..*).
+'xhtml::VarType' (role 'xhtml_VarType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent34', cardinality 0..*).
+'xhtml::AbbrType' (role 'xhtml_AbbrType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent38', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot178', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType179', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot218', cardinality 0..*) is associated with 'xhtml::TfootType' (role 'xhtml_TfootType', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline413', cardinality 0..*) is associated with 'xhtml::AbbrType' (role 'xhtml_AbbrType414', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent517', cardinality 0..*) is associated with 'xhtml::VarType' (role 'xhtml_VarType518', cardinality 0..*).
+'xhtml::SupType' (role 'xhtml_SupType423', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline422', cardinality 0..*).
+'xhtml::DtType' (role 'xhtml_DtType141', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot140', cardinality 0..*).
+'xhtml::SupType' (role 'xhtml_SupType533', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent532', cardinality 0..*).
+'xhtml::CodeType' (role 'xhtml_CodeType120', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot119', cardinality 0..*).
+'xhtml::TheadType' (role 'xhtml_TheadType557', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType556', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow273', cardinality 0..*) is associated with 'xhtml::BlockquoteType' (role 'xhtml_BlockquoteType274', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent', cardinality 0..*) is associated with 'xhtml::AType' (role 'xhtml_AType479', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot83', cardinality 0..*) is associated with 'xhtml::EStringToStringMapEntry' (role 'xhtml_EStringToStringMapEntry84', cardinality 0..*).
+'xhtml::SpanType' (role 'xhtml_SpanType539', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent538', cardinality 0..*).
+'xhtml::AddressType' (role 'xhtml_AddressType95', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot94', cardinality 0..*).
+'xhtml::HrType' (role 'xhtml_HrType165', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot164', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow267', cardinality 0..*) is associated with 'xhtml::PreType' (role 'xhtml_PreType268', cardinality 0..*).
+'xhtml::BdoType' (role 'xhtml_BdoType542', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent541', cardinality 0..*).
+'xhtml::HrType' (role 'xhtml_HrType462', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType461', cardinality 0..*).
+'xhtml::TrType' (role 'xhtml_TrType580', cardinality 0..*) is associated with 'xhtml::TdType' (role 'xhtml_TdType581', cardinality 0..*).
+'xhtml::DtType' (role 'xhtml_DtType', cardinality 0..*) is associated with 'xhtml::DlType' (role 'xhtml_DlType78', cardinality 0..*).
+'xhtml::IType' (role 'xhtml_IType168', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot167', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent526', cardinality 0..*) is associated with 'xhtml::AcronymType' (role 'xhtml_AcronymType527', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline380', cardinality 0..*) is associated with 'xhtml::BigType' (role 'xhtml_BigType381', cardinality 0..*).
+'xhtml::SpanType' (role 'xhtml_SpanType289', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow288', cardinality 0..*).
+'xhtml::CiteType' (role 'xhtml_CiteType521', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent520', cardinality 0..*).
+'xhtml::BigType' (role 'xhtml_BigType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent16', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline407', cardinality 0..*) is associated with 'xhtml::VarType' (role 'xhtml_VarType408', cardinality 0..*).
+'xhtml::TheadType' (role 'xhtml_TheadType574', cardinality 0..*) is associated with 'xhtml::TrType' (role 'xhtml_TrType575', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot161', cardinality 0..*) is associated with 'xhtml::H6Type' (role 'xhtml_H6Type162', cardinality 0..*).
+'xhtml::ThType' (role 'xhtml_ThType578', cardinality 0..*) is associated with 'xhtml::TrType' (role 'xhtml_TrType577', cardinality 0..*).
+'xhtml::H6Type' (role 'xhtml_H6Type', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block57', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline356', cardinality 0..*) is associated with 'xhtml::BrType' (role 'xhtml_BrType357', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot232', cardinality 0..*) is associated with 'xhtml::VarType' (role 'xhtml_VarType233', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType366', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline365', cardinality 0..*).
+'xhtml::SmallType' (role 'xhtml_SmallType384', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline383', cardinality 0..*).
+'xhtml::DlType' (role 'xhtml_DlType265', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow264', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType545', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent544', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow249', cardinality 0..*) is associated with 'xhtml::H5Type' (role 'xhtml_H5Type250', cardinality 0..*).
+'xhtml::CaptionType' (role 'xhtml_CaptionType548', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType547', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot152', cardinality 0..*) is associated with 'xhtml::H3Type' (role 'xhtml_H3Type153', cardinality 0..*).
+'xhtml::SampType' (role 'xhtml_SampType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent30', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block69', cardinality 0..*) is associated with 'xhtml::HrType' (role 'xhtml_HrType', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType458', cardinality 0..*) is associated with 'xhtml::PreType' (role 'xhtml_PreType459', cardinality 0..*).
+'xhtml::ImgType' (role 'xhtml_ImgType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent8', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block55', cardinality 0..*) is associated with 'xhtml::H5Type' (role 'xhtml_H5Type', cardinality 0..*).
+'xhtml::DivType' (role 'xhtml_DivType', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block59', cardinality 0..*).
+'xhtml::H2Type' (role 'xhtml_H2Type241', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow240', cardinality 0..*).
+'xhtml::BType' (role 'xhtml_BType100', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot99', cardinality 0..*).
+'xhtml::BdoType' (role 'xhtml_BdoType103', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot102', cardinality 0..*).
+'xhtml::KbdType' (role 'xhtml_KbdType334', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow333', cardinality 0..*).
+'xhtml::CodeType' (role 'xhtml_CodeType396', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline395', cardinality 0..*).
+'xhtml::SubType' (role 'xhtml_SubType530', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent529', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block67', cardinality 0..*) is associated with 'xhtml::PreType' (role 'xhtml_PreType', cardinality 0..*).
+'xhtml::UlType' (role 'xhtml_UlType', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block61', cardinality 0..*).
+'xhtml::BType' (role 'xhtml_BType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent14', cardinality 0..*).
+'xhtml::OlType' (role 'xhtml_OlType262', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow261', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent32', cardinality 0..*) is associated with 'xhtml::KbdType' (role 'xhtml_KbdType', cardinality 0..*).
+'xhtml::ImgType' (role 'xhtml_ImgType369', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline368', cardinality 0..*).
+'xhtml::DlType' (role 'xhtml_DlType456', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType455', cardinality 0..*).
+'xhtml::BrType' (role 'xhtml_BrType112', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot111', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow345', cardinality 0..*) is associated with 'xhtml::AcronymType' (role 'xhtml_AcronymType346', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType425', cardinality 0..*) is associated with 'xhtml::PType' (role 'xhtml_PType426', cardinality 0..*).
+'xhtml::H4Type' (role 'xhtml_H4Type', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block53', cardinality 0..*).
+'xhtml::H3Type' (role 'xhtml_H3Type435', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType434', cardinality 0..*).
+'xhtml::OlType' (role 'xhtml_OlType476', cardinality 0..*) is associated with 'xhtml::LiType' (role 'xhtml_LiType477', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent499', cardinality 0..*) is associated with 'xhtml::StrongType' (role 'xhtml_StrongType500', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot173', cardinality 0..*) is associated with 'xhtml::KbdType' (role 'xhtml_KbdType174', cardinality 0..*).
+'xhtml::KbdType' (role 'xhtml_KbdType515', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent514', cardinality 0..*).
+'xhtml::H1Type' (role 'xhtml_H1Type', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block47', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType431', cardinality 0..*) is associated with 'xhtml::H2Type' (role 'xhtml_H2Type432', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot187', cardinality 0..*) is associated with 'xhtml::PreType' (role 'xhtml_PreType188', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow252', cardinality 0..*) is associated with 'xhtml::H6Type' (role 'xhtml_H6Type253', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline', cardinality 0..*) is associated with 'xhtml::AType' (role 'xhtml_AType354', cardinality 0..*).
+'xhtml::DlType' (role 'xhtml_DlType80', cardinality 0..*) is associated with 'xhtml::DdType' (role 'xhtml_DdType', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow279', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType280', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow300', cardinality 0..*) is associated with 'xhtml::TtType' (role 'xhtml_TtType301', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent44', cardinality 0..*) is associated with 'xhtml::SupType' (role 'xhtml_SupType', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot190', cardinality 0..*) is associated with 'xhtml::QType' (role 'xhtml_QType191', cardinality 0..*).
+'xhtml::CaptionType' (role 'xhtml_CaptionType', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot114', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline374', cardinality 0..*) is associated with 'xhtml::IType' (role 'xhtml_IType375', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent490', cardinality 0..*) is associated with 'xhtml::BigType' (role 'xhtml_BigType491', cardinality 0..*).
+'xhtml::StrongType' (role 'xhtml_StrongType203', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot202', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType440', cardinality 0..*) is associated with 'xhtml::H5Type' (role 'xhtml_H5Type441', cardinality 0..*).
+'xhtml::SubType' (role 'xhtml_SubType206', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot205', cardinality 0..*).
+'xhtml::HrType' (role 'xhtml_HrType271', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow270', cardinality 0..*).
+'xhtml::BdoType' (role 'xhtml_BdoType363', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline362', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot170', cardinality 0..*) is associated with 'xhtml::ImgType' (role 'xhtml_ImgType171', cardinality 0..*).
+'xhtml::CiteType' (role 'xhtml_CiteType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent36', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow', cardinality 0..*) is associated with 'xhtml::PType' (role 'xhtml_PType235', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent28', cardinality 0..*) is associated with 'xhtml::QType' (role 'xhtml_QType', cardinality 0..*).
+'xhtml::TableType' (role 'xhtml_TableType212', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot211', cardinality 0..*).
+'xhtml::TtType' (role 'xhtml_TtType227', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot226', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent496', cardinality 0..*) is associated with 'xhtml::EmType' (role 'xhtml_EmType497', cardinality 0..*).
+'xhtml::BigType' (role 'xhtml_BigType310', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow309', cardinality 0..*).
+'xhtml::SubType' (role 'xhtml_SubType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent42', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot222', cardinality 0..*) is associated with 'xhtml::TheadType' (role 'xhtml_TheadType', cardinality 0..*).
+'xhtml::EmType' (role 'xhtml_EmType144', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot143', cardinality 0..*).
+'xhtml::H2Type' (role 'xhtml_H2Type', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block49', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow255', cardinality 0..*) is associated with 'xhtml::DivType' (role 'xhtml_DivType256', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot196', cardinality 0..*) is associated with 'xhtml::SmallType' (role 'xhtml_SmallType197', cardinality 0..*).
+'xhtml::PType' (role 'xhtml_PType', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block', cardinality 0..*).
+'xhtml::DfnType' (role 'xhtml_DfnType503', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent502', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent535', cardinality 0..*) is associated with 'xhtml::BrType' (role 'xhtml_BrType536', cardinality 0..*).
+'xhtml::BrType' (role 'xhtml_BrType286', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow285', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot181', cardinality 0..*) is associated with 'xhtml::OlType' (role 'xhtml_OlType182', cardinality 0..*).
+'xhtml::AbbrType' (role 'xhtml_AbbrType343', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow342', cardinality 0..*).
+'xhtml::ColgroupType' (role 'xhtml_ColgroupType126', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot125', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent22', cardinality 0..*) is associated with 'xhtml::StrongType' (role 'xhtml_StrongType', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot158', cardinality 0..*) is associated with 'xhtml::H5Type' (role 'xhtml_H5Type159', cardinality 0..*).
+'xhtml::ImgType' (role 'xhtml_ImgType298', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow297', cardinality 0..*).
+'xhtml::EStringToStringMapEntry' (role 'xhtml_EStringToStringMapEntry', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot', cardinality 0..*).
+'xhtml::EmType' (role 'xhtml_EmType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent20', cardinality 0..*).
+'xhtml::DfnType' (role 'xhtml_DfnType322', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow321', cardinality 0..*).
+'xhtml::QType' (role 'xhtml_QType509', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent508', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline359', cardinality 0..*) is associated with 'xhtml::SpanType' (role 'xhtml_SpanType360', cardinality 0..*).
+'xhtml::TbodyType' (role 'xhtml_TbodyType568', cardinality 0..*) is associated with 'xhtml::TrType' (role 'xhtml_TrType569', cardinality 0..*).
+'xhtml::DfnType' (role 'xhtml_DfnType393', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline392', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block65', cardinality 0..*) is associated with 'xhtml::DlType' (role 'xhtml_DlType', cardinality 0..*).
+'xhtml::DlType' (role 'xhtml_DlType138', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot137', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot155', cardinality 0..*) is associated with 'xhtml::H4Type' (role 'xhtml_H4Type156', cardinality 0..*).
+'xhtml::BlockquoteType' (role 'xhtml_BlockquoteType109', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot108', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow258', cardinality 0..*) is associated with 'xhtml::UlType' (role 'xhtml_UlType259', cardinality 0..*).
+'xhtml::OlType' (role 'xhtml_OlType453', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType452', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow351', cardinality 0..*) is associated with 'xhtml::SupType' (role 'xhtml_SupType352', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType428', cardinality 0..*) is associated with 'xhtml::H1Type' (role 'xhtml_H1Type429', cardinality 0..*).
+'xhtml::CodeType' (role 'xhtml_CodeType506', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent505', cardinality 0..*).
+'xhtml::AType' (role 'xhtml_AType283', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow282', cardinality 0..*).
+'xhtml::TfootType' (role 'xhtml_TfootType571', cardinality 0..*) is associated with 'xhtml::TrType' (role 'xhtml_TrType572', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot86', cardinality 0..*) is associated with 'xhtml::AType' (role 'xhtml_AType', cardinality 0..*).
+'xhtml::H3Type' (role 'xhtml_H3Type244', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow243', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline419', cardinality 0..*) is associated with 'xhtml::SubType' (role 'xhtml_SubType420', cardinality 0..*).
+'xhtml::SpanType' (role 'xhtml_SpanType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent2', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent10', cardinality 0..*) is associated with 'xhtml::TtType' (role 'xhtml_TtType', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot97', cardinality 0..*) is associated with 'xhtml::AreaType' (role 'xhtml_AreaType', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow324', cardinality 0..*) is associated with 'xhtml::CodeType' (role 'xhtml_CodeType325', cardinality 0..*).
+'xhtml::IType' (role 'xhtml_IType485', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent484', cardinality 0..*).
+'xhtml::ThType' (role 'xhtml_ThType', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot220', cardinality 0..*).
+'xhtml::BrType' (role 'xhtml_BrType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent', cardinality 0..*).
+'xhtml::H4Type' (role 'xhtml_H4Type247', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow246', cardinality 0..*).
+'xhtml::AddressType' (role 'xhtml_AddressType277', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow276', cardinality 0..*).
+'xhtml::TableType' (role 'xhtml_TableType553', cardinality 0..*) is associated with 'xhtml::ColgroupType' (role 'xhtml_ColgroupType554', cardinality 0..*).
+'xhtml::AbbrType' (role 'xhtml_AbbrType89', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot88', cardinality 0..*).
+'xhtml::UlType' (role 'xhtml_UlType450', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType449', cardinality 0..*).
+'xhtml::StrongType' (role 'xhtml_StrongType390', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline389', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent40', cardinality 0..*) is associated with 'xhtml::AcronymType' (role 'xhtml_AcronymType', cardinality 0..*).
+'xhtml::TdType' (role 'xhtml_TdType', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot216', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline371', cardinality 0..*) is associated with 'xhtml::TtType' (role 'xhtml_TtType372', cardinality 0..*).
+'xhtml::AddressType' (role 'xhtml_AddressType468', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType467', cardinality 0..*).
+'xhtml::ColType' (role 'xhtml_ColType551', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType550', cardinality 0..*).
+'xhtml::BlockquoteType' (role 'xhtml_BlockquoteType465', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType464', cardinality 0..*).
+'xhtml::SpanType' (role 'xhtml_SpanType200', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot199', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block71', cardinality 0..*) is associated with 'xhtml::BlockquoteType' (role 'xhtml_BlockquoteType', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType295', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow294', cardinality 0..*).
+'xhtml::H1Type' (role 'xhtml_H1Type147', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot146', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot229', cardinality 0..*) is associated with 'xhtml::UlType' (role 'xhtml_UlType230', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot116', cardinality 0..*) is associated with 'xhtml::CiteType' (role 'xhtml_CiteType117', cardinality 0..*).
+'xhtml::KbdType' (role 'xhtml_KbdType405', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline404', cardinality 0..*).
+'xhtml::TrType' (role 'xhtml_TrType566', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType565', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType473', cardinality 0..*) is associated with 'xhtml::AreaType' (role 'xhtml_AreaType474', cardinality 0..*).
+'xhtml::SupType' (role 'xhtml_SupType209', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot208', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot176', cardinality 0..*) is associated with 'xhtml::LiType' (role 'xhtml_LiType', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow330', cardinality 0..*) is associated with 'xhtml::SampType' (role 'xhtml_SampType331', cardinality 0..*).
+'xhtml::QType' (role 'xhtml_QType399', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline398', cardinality 0..*).
+'xhtml::SmallType' (role 'xhtml_SmallType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent18', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent26', cardinality 0..*) is associated with 'xhtml::CodeType' (role 'xhtml_CodeType', cardinality 0..*).
+'xhtml::StrongType' (role 'xhtml_StrongType319', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow318', cardinality 0..*).
+'xhtml::VarType' (role 'xhtml_VarType337', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow336', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent511', cardinality 0..*) is associated with 'xhtml::SampType' (role 'xhtml_SampType512', cardinality 0..*).
+'xhtml::H3Type' (role 'xhtml_H3Type', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block51', cardinality 0..*).
+'xhtml::H1Type' (role 'xhtml_H1Type238', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow237', cardinality 0..*).
+'xhtml::DdType' (role 'xhtml_DdType129', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot128', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block75', cardinality 0..*) is associated with 'xhtml::TableType' (role 'xhtml_TableType', cardinality 0..*).
+'xhtml::OlType' (role 'xhtml_OlType', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block63', cardinality 0..*).
+'xhtml::TrType' (role 'xhtml_TrType', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot224', cardinality 0..*).
+'xhtml::IType' (role 'xhtml_IType304', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow303', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent493', cardinality 0..*) is associated with 'xhtml::SmallType' (role 'xhtml_SmallType494', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline410', cardinality 0..*) is associated with 'xhtml::CiteType' (role 'xhtml_CiteType411', cardinality 0..*).
+'xhtml::H6Type' (role 'xhtml_H6Type444', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType443', cardinality 0..*).
+'xhtml::SampType' (role 'xhtml_SampType402', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline401', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline377', cardinality 0..*) is associated with 'xhtml::BType' (role 'xhtml_BType378', cardinality 0..*).
+'xhtml::DfnType' (role 'xhtml_DfnType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent24', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent12', cardinality 0..*) is associated with 'xhtml::IType' (role 'xhtml_IType', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline386', cardinality 0..*) is associated with 'xhtml::EmType' (role 'xhtml_EmType387', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot131', cardinality 0..*) is associated with 'xhtml::DfnType' (role 'xhtml_DfnType132', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent4', cardinality 0..*) is associated with 'xhtml::BdoType' (role 'xhtml_BdoType', cardinality 0..*).
+'xhtml::SubType' (role 'xhtml_SubType349', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow348', cardinality 0..*).
+'xhtml::AcronymType' (role 'xhtml_AcronymType92', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot91', cardinality 0..*).
+'xhtml::TbodyType' (role 'xhtml_TbodyType', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot214', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot193', cardinality 0..*) is associated with 'xhtml::SampType' (role 'xhtml_SampType194', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow327', cardinality 0..*) is associated with 'xhtml::QType' (role 'xhtml_QType328', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot184', cardinality 0..*) is associated with 'xhtml::PType' (role 'xhtml_PType185', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot122', cardinality 0..*) is associated with 'xhtml::ColType' (role 'xhtml_ColType123', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent487', cardinality 0..*) is associated with 'xhtml::BType' (role 'xhtml_BType488', cardinality 0..*).
+'xhtml::BigType' (role 'xhtml_BigType106', cardinality 0..*) is associated with 'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot105', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline416', cardinality 0..*) is associated with 'xhtml::AcronymType' (role 'xhtml_AcronymType417', cardinality 0..*).
+'xhtml::DocumentRoot' (role 'xhtml_DocumentRoot149', cardinality 0..*) is associated with 'xhtml::H2Type' (role 'xhtml_H2Type150', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow306', cardinality 0..*) is associated with 'xhtml::BType' (role 'xhtml_BType307', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType446', cardinality 0..*) is associated with 'xhtml::DivType' (role 'xhtml_DivType447', cardinality 0..*).
+'xhtml::UlType' (role 'xhtml_UlType583', cardinality 0..*) is associated with 'xhtml::LiType' (role 'xhtml_LiType584', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent481', cardinality 0..*) is associated with 'xhtml::TtType' (role 'xhtml_TtType482', cardinality 0..*).
+'xhtml::TableType' (role 'xhtml_TableType471', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType470', cardinality 0..*).
+'xhtml::AbbrType' (role 'xhtml_AbbrType524', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent523', cardinality 0..*).
+'xhtml::ColgroupType' (role 'xhtml_ColgroupType', cardinality 0..*) is associated with 'xhtml::ColType' (role 'xhtml_ColType', cardinality 0..*).
+'xhtml::MapType' (role 'xhtml_MapType', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent6', cardinality 0..*).
+'xhtml::SmallType' (role 'xhtml_SmallType313', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow312', cardinality 0..*).
+'xhtml::H4Type' (role 'xhtml_H4Type438', cardinality 0..*) is associated with 'xhtml::MapType' (role 'xhtml_MapType437', cardinality 0..*).
+'xhtml::CiteType' (role 'xhtml_CiteType340', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow339', cardinality 0..*).

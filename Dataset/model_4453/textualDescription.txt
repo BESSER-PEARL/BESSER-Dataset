@@ -1,0 +1,105 @@
+The model has 40 class(es).
+The class 'Command' has no attributes.
+The class 'rover::Time' has the following attributes: 'timeUnit' of type str.
+The class 'rover::Length' has the following attributes: 'lengthUnit' of type str.
+The class 'rover::Light' has the following attributes: 'color' of type str.
+The class 'rover::Terminate' has no attributes.
+The class 'rover::TriggeredTransition' has the following attributes: 'Operator' of type str.
+The class 'rover::System' has no attributes.
+The class 'rover::Position' has no attributes.
+The class 'rover::NormalTransition' has no attributes.
+The class 'rover::Repeat' has the following attributes: 'count' of type int.
+The class 'rover::GPS' has no attributes.
+The class 'rover::CompassTrigger' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'rover::Sensor' has no attributes.
+The class 'rover::Distance' has no attributes.
+The class 'rover::Motor' has no attributes.
+The class 'SingleQuantity' has no attributes.
+The class 'Component' has no attributes.
+The class 'rover::DistanceSensorTrigger' has no attributes.
+The class 'rover::Program' has the following attributes: 'name' of type str.
+The class 'rover::Rotate' has no attributes.
+The class 'rover::Move' has no attributes.
+The class 'rover::Actuator' has no attributes.
+The class 'Actuator' has no attributes.
+The class 'rover::Velocity' has the following attributes: 'velocityUnit' of type str.
+The class 'rover::Rover' has the following attributes: 'name' of type str.
+The class 'rover::Transition' has no attributes.
+The class 'rover::Angle' has the following attributes: 'angleUnit' of type str.
+The class 'rover::Compass' has no attributes.
+The class 'TriggeredTransition' has no attributes.
+The class 'Quantity' has no attributes.
+The class 'rover::Quantity' has no attributes.
+The class 'rover::Wait' has no attributes.
+The class 'rover::SingleQuantity' has the following attributes: 'value' of type float.
+The class 'Transition' has no attributes.
+The class 'rover::Block' has no attributes.
+The class 'rover::Command' has no attributes.
+The class 'rover::GPSTrigger' has no attributes.
+The class 'rover::SetLightColor' has the following attributes: 'lightColor' of type str.
+The class 'rover::Component' has the following attributes: 'name' of type str.
+The enumeration 'TimeUnit' has the following literals: 'minutes', 'milliseconds', 'hours', 'nanoseconds', 'seconds'.
+The enumeration 'Operator' has the following literals: 'greater', 'equal', 'smaller', 'unequal'.
+The enumeration 'AngleUnit' has the following literals: 'radians', 'degrees'.
+The enumeration 'LengthUnit' has the following literals: 'millimeters', 'meters', 'centimeters'.
+The enumeration 'VelocityUnit' has the following literals: 'centimeters_per_second', 'millimeters_per_second'.
+The enumeration 'ColorKind' has the following literals: 'Red', 'None_', 'Blue', 'Yellow', 'Green'.
+'rover::Rotate' is a specialization of 'Command'.
+'rover::Sensor' is a specialization of 'Component'.
+'rover::Position' is a specialization of 'Quantity'.
+'rover::TriggeredTransition' is a specialization of 'Transition'.
+'rover::CompassTrigger' is a specialization of 'TriggeredTransition'.
+'rover::DistanceSensorTrigger' is a specialization of 'TriggeredTransition'.
+'rover::Terminate' is a specialization of 'Command'.
+'rover::Wait' is a specialization of 'Command'.
+'rover::SetLightColor' is a specialization of 'Command'.
+'rover::Motor' is a specialization of 'Actuator'.
+'rover::Angle' is a specialization of 'SingleQuantity'.
+'rover::GPS' is a specialization of 'Sensor'.
+'rover::Time' is a specialization of 'SingleQuantity'.
+'rover::Distance' is a specialization of 'Sensor'.
+'rover::Length' is a specialization of 'SingleQuantity'.
+'rover::Light' is a specialization of 'Actuator'.
+'rover::NormalTransition' is a specialization of 'Transition'.
+'rover::Actuator' is a specialization of 'Component'.
+'rover::Velocity' is a specialization of 'SingleQuantity'.
+'rover::Move' is a specialization of 'Command'.
+'rover::SingleQuantity' is a specialization of 'Quantity'.
+'rover::Compass' is a specialization of 'Sensor'.
+'rover::Repeat' is a specialization of 'Command'.
+'rover::GPSTrigger' is a specialization of 'TriggeredTransition'.
+'rover::DistanceSensorTrigger' (role 'rover_DistanceSensorTrigger52', cardinality 0..*) is associated with 'rover::Length' (role 'rover_Length53', cardinality 0..*).
+'rover::Distance' (role 'rover_Distance', cardinality 0..*) is associated with 'rover::Length' (role 'rover_Length', cardinality 0..*).
+'rover::Repeat' (role 'rover_Repeat', cardinality 0..*) is associated with 'rover::Block' (role 'rover_Block20', cardinality 0..*).
+'rover::Light' (role 'rover_Light', cardinality 0..*) is associated with 'rover::SetLightColor' (role 'rover_SetLightColor', cardinality 0..*).
+'rover::Move' (role 'rover_Move34', cardinality 0..*) is associated with 'rover::Velocity' (role 'rover_Velocity', cardinality 0..*).
+'rover::Angle' (role 'rover_Angle58', cardinality 0..*) is associated with 'rover::CompassTrigger' (role 'rover_CompassTrigger57', cardinality 0..*).
+'rover::Transition' (role 'rover_Transition', cardinality 0..*) is associated with 'rover::Block' (role 'rover_Block18', cardinality 0..*).
+'rover::Transition' (role 'incomingTransition', cardinality 0..*) is associated with 'rover::Command' (role 'Command26', cardinality 0..*).
+'rover::Program' (role 'rover_Program', cardinality 0..*) is associated with 'rover::System' (role 'rover_System2', cardinality 0..*).
+'rover::Length' (role 'rover_Length66', cardinality 0..*) is associated with 'rover::Position' (role 'rover_Position65', cardinality 0..*).
+'rover::Repeat' (role 'rover_Repeat44', cardinality 0..*) is associated with 'rover::Move' (role 'rover_Move45', cardinality 0..*).
+'rover::Wait' (role 'rover_Wait42', cardinality 0..*) is associated with 'rover::Repeat' (role 'rover_Repeat41', cardinality 0..*).
+'rover::Program' (role 'rover_Program11', cardinality 0..*) is associated with 'rover::Quantity' (role 'rover_Quantity', cardinality 0..*).
+'rover::Block' (role 'rover_Block', cardinality 0..*) is associated with 'rover::Program' (role 'rover_Program9', cardinality 0..*).
+'rover::GPS' (role 'rover_GPS60', cardinality 0..*) is associated with 'rover::GPSTrigger' (role 'rover_GPSTrigger', cardinality 0..*).
+'rover::Angle' (role 'rover_Angle', cardinality 0..*) is associated with 'rover::Compass' (role 'rover_Compass', cardinality 0..*).
+'rover::Move' (role 'rover_Move', cardinality 0..*) is associated with 'rover::Motor' (role 'rover_Motor', cardinality 0..*).
+'rover::Position' (role 'rover_Position68', cardinality 0..*) is associated with 'rover::Length' (role 'rover_Length69', cardinality 0..*).
+'rover::Command' (role 'rover_Command', cardinality 0..*) is associated with 'rover::Block' (role 'rover_Block16', cardinality 0..*).
+'rover::Position' (role 'rover_Position63', cardinality 0..*) is associated with 'rover::GPSTrigger' (role 'rover_GPSTrigger62', cardinality 0..*).
+'rover::Rotate' (role 'rover_Rotate48', cardinality 0..*) is associated with 'rover::Repeat' (role 'rover_Repeat47', cardinality 0..*).
+'rover::Time' (role 'rover_Time', cardinality 0..*) is associated with 'rover::Wait' (role 'rover_Wait', cardinality 0..*).
+'rover::Distance' (role 'rover_Distance50', cardinality 0..*) is associated with 'rover::DistanceSensorTrigger' (role 'rover_DistanceSensorTrigger', cardinality 0..*).
+'rover::Command' (role 'Command', cardinality 0..*) is associated with 'rover::Transition' (role 'outgoingTransition', cardinality 0..*).
+'rover::Rover' (role 'rover_Rover7', cardinality 0..*) is associated with 'rover::Program' (role 'rover_Program6', cardinality 0..*).
+'rover::Angle' (role 'rover_Angle36', cardinality 0..*) is associated with 'rover::Rotate' (role 'rover_Rotate', cardinality 0..*).
+'rover::Component' (role 'rover_Component', cardinality 0..*) is associated with 'rover::Rover' (role 'rover_Rover4', cardinality 0..*).
+'rover::Repeat' (role 'rover_Repeat38', cardinality 0..*) is associated with 'rover::SetLightColor' (role 'rover_SetLightColor39', cardinality 0..*).
+'rover::Move' (role 'rover_Move31', cardinality 0..*) is associated with 'rover::Length' (role 'rover_Length32', cardinality 0..*).
+'rover::GPS' (role 'rover_GPS', cardinality 0..*) is associated with 'rover::Position' (role 'rover_Position', cardinality 0..*).
+'rover::Transition' (role 'Transition23', cardinality 0..*) is associated with 'rover::Command' (role 'target', cardinality 0..*).
+'rover::Transition' (role 'Transition', cardinality 0..*) is associated with 'rover::Command' (role 'source', cardinality 0..*).
+'rover::Rover' (role 'rover_Rover', cardinality 0..*) is associated with 'rover::System' (role 'rover_System', cardinality 0..*).
+'rover::CompassTrigger' (role 'rover_CompassTrigger', cardinality 0..*) is associated with 'rover::Compass' (role 'rover_Compass55', cardinality 0..*).

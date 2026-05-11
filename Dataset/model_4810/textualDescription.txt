@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'model::App' has no attributes.
+The class 'model::Service' has the following attributes: 'name' of type str; 'methodName' of type str; 'acceptedParams' of type str.
+The class 'model::Param' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'model::User' has the following attributes: 'password' of type str; 'name' of type str.
+'model::App' (role 'model_App', cardinality 0..*) is associated with 'model::User' (role 'model_User2', cardinality 0..*).
+'model::App' (role 'model_App4', cardinality 0..*) is associated with 'model::Service' (role 'model_Service5', cardinality 0..*).
+'model::User' (role 'model_User', cardinality 0..*) is associated with 'model::Service' (role 'model_Service', cardinality 0..*).

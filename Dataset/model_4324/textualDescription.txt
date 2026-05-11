@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'ModelElement' has no attributes.
+The class 'metrics::Observation' has no attributes.
+The class 'metrics::LinkMeasurement' has no attributes.
+The class 'metrics::Measurement' has the following attributes: 'tag' of type str; 'name' of type str; 'error' of type str.
+The class 'metrics::ValueMeasurement' has the following attributes: 'value' of type str.
+The class 'metrics::ComplexMeasurement' has no attributes.
+The class 'Measurement' has no attributes.
+'metrics::ComplexMeasurement' is a specialization of 'Measurement'.
+'metrics::ValueMeasurement' is a specialization of 'Measurement'.
+'metrics::LinkMeasurement' is a specialization of 'Measurement'.
+'metrics::Observation' (role 'metrics_Observation', cardinality 0..*) is associated with 'metrics::Measurement' (role 'metrics_Measurement3', cardinality 0..*).
+'metrics::LinkMeasurement' (role 'metrics_LinkMeasurement', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement', cardinality 0..*).
+'metrics::ComplexMeasurement' (role 'metrics_ComplexMeasurement', cardinality 0..*) is associated with 'metrics::Measurement' (role 'metrics_Measurement', cardinality 0..*).

@@ -1,0 +1,83 @@
+The model has 33 class(es).
+The class 'iOTConnector::Sensor' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'iOTConnector::FilterAction' has the following attributes: 'number' of type int.
+The class 'iOTConnector::Send' has no attributes.
+The class 'iOTConnector::Output' has no attributes.
+The class 'iOTConnector::Mult' has no attributes.
+The class 'iOTConnector::Webserver' has the following attributes: 'port' of type int; 'url' of type str.
+The class 'iOTConnector::Div' has no attributes.
+The class 'iOTConnector::Wifi' has the following attributes: 'ssid' of type str; 'password' of type str.
+The class 'iOTConnector::ReadingName' has the following attributes: 'name' of type str.
+The class 'iOTConnector::BitwiseOperator' has the following attributes: 'value' of type str.
+The class 'iOTConnector::FilterExp' has the following attributes: 'number' of type int.
+The class 'Expression' has no attributes.
+The class 'iOTConnector::Num' has the following attributes: 'value' of type int.
+The class 'iOTConnector::Expression' has no attributes.
+The class 'iOTConnector::Minus' has no attributes.
+The class 'iOTConnector::Config' has the following attributes: 'name' of type str.
+The class 'iOTConnector::Program' has no attributes.
+The class 'iOTConnector::FilterType' has the following attributes: 'value' of type str.
+The class 'iOTConnector::SampleAction' has the following attributes: 'amountOfTime' of type int; 'number' of type int.
+The class 'iOTConnector::ReadingNameWithConfigScope' has no attributes.
+The class 'iOTConnector::Board' has the following attributes: 'name' of type str.
+The class 'iOTConnector::ProcessAction' has no attributes.
+The class 'iOTConnector::SensorConfig' has the following attributes: 'name' of type str; 'pinOut' of type str; 'pinIn' of type str.
+The class 'iOTConnector::SendAction' has the following attributes: 'number' of type int.
+The class 'iOTConnector::TimeUnit' has the following attributes: 'value' of type str.
+The class 'iOTConnector::Function' has no attributes.
+The class 'Function' has no attributes.
+The class 'iOTConnector::RelationalOperator' has the following attributes: 'value' of type str.
+The class 'iOTConnector::Process' has no attributes.
+The class 'iOTConnector::Filter' has no attributes.
+The class 'iOTConnector::Plus' has no attributes.
+The class 'iOTConnector::Sample' has no attributes.
+The class 'iOTConnector::Var' has no attributes.
+'iOTConnector::Plus' is a specialization of 'Expression'.
+'iOTConnector::Filter' is a specialization of 'Function'.
+'iOTConnector::Sample' is a specialization of 'Function'.
+'iOTConnector::Minus' is a specialization of 'Expression'.
+'iOTConnector::Mult' is a specialization of 'Expression'.
+'iOTConnector::Num' is a specialization of 'Expression'.
+'iOTConnector::Process' is a specialization of 'Function'.
+'iOTConnector::Var' is a specialization of 'Expression'.
+'iOTConnector::Div' is a specialization of 'Expression'.
+'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName61', cardinality 0..*) is associated with 'iOTConnector::SendAction' (role 'iOTConnector_SendAction60', cardinality 0..*).
+'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp41', cardinality 0..*) is associated with 'iOTConnector::ReadingNameWithConfigScope' (role 'iOTConnector_ReadingNameWithConfigScope42', cardinality 0..*).
+'iOTConnector::Expression' (role 'iOTConnector_Expression87', cardinality 0..*) is associated with 'iOTConnector::Div' (role 'iOTConnector_Div86', cardinality 0..*).
+'iOTConnector::Expression' (role 'iOTConnector_Expression74', cardinality 0..*) is associated with 'iOTConnector::Minus' (role 'iOTConnector_Minus', cardinality 0..*).
+'iOTConnector::Sensor' (role 'iOTConnector_Sensor', cardinality 0..*) is associated with 'iOTConnector::Config' (role 'iOTConnector_Config8', cardinality 0..*).
+'iOTConnector::Process' (role 'iOTConnector_Process', cardinality 0..*) is associated with 'iOTConnector::ProcessAction' (role 'iOTConnector_ProcessAction', cardinality 0..*).
+'iOTConnector::FilterAction' (role 'iOTConnector_FilterAction34', cardinality 0..*) is associated with 'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName35', cardinality 0..*).
+'iOTConnector::BitwiseOperator' (role 'iOTConnector_BitwiseOperator', cardinality 0..*) is associated with 'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp47', cardinality 0..*).
+'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName25', cardinality 0..*) is associated with 'iOTConnector::SampleAction' (role 'iOTConnector_SampleAction24', cardinality 0..*).
+'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp50', cardinality 0..*) is associated with 'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp48', cardinality 0..*).
+'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp44', cardinality 0..*) is associated with 'iOTConnector::RelationalOperator' (role 'iOTConnector_RelationalOperator45', cardinality 0..*).
+'iOTConnector::Filter' (role 'iOTConnector_Filter', cardinality 0..*) is associated with 'iOTConnector::FilterAction' (role 'iOTConnector_FilterAction', cardinality 0..*).
+'iOTConnector::Program' (role 'iOTConnector_Program2', cardinality 0..*) is associated with 'iOTConnector::Wifi' (role 'iOTConnector_Wifi', cardinality 0..*).
+'iOTConnector::Plus' (role 'iOTConnector_Plus71', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression72', cardinality 0..*).
+'iOTConnector::Program' (role 'iOTConnector_Program6', cardinality 0..*) is associated with 'iOTConnector::Board' (role 'iOTConnector_Board', cardinality 0..*).
+'iOTConnector::Var' (role 'iOTConnector_Var', cardinality 0..*) is associated with 'iOTConnector::ReadingNameWithConfigScope' (role 'iOTConnector_ReadingNameWithConfigScope89', cardinality 0..*).
+'iOTConnector::Webserver' (role 'iOTConnector_Webserver', cardinality 0..*) is associated with 'iOTConnector::Program' (role 'iOTConnector_Program', cardinality 0..*).
+'iOTConnector::Expression' (role 'iOTConnector_Expression84', cardinality 0..*) is associated with 'iOTConnector::Div' (role 'iOTConnector_Div', cardinality 0..*).
+'iOTConnector::Program' (role 'iOTConnector_Program4', cardinality 0..*) is associated with 'iOTConnector::Config' (role 'iOTConnector_Config', cardinality 0..*).
+'iOTConnector::Mult' (role 'iOTConnector_Mult81', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression82', cardinality 0..*).
+'iOTConnector::Sample' (role 'iOTConnector_Sample', cardinality 0..*) is associated with 'iOTConnector::SampleAction' (role 'iOTConnector_SampleAction', cardinality 0..*).
+'iOTConnector::Board' (role 'iOTConnector_Board10', cardinality 0..*) is associated with 'iOTConnector::SensorConfig' (role 'iOTConnector_SensorConfig', cardinality 0..*).
+'iOTConnector::ProcessAction' (role 'iOTConnector_ProcessAction56', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression', cardinality 0..*).
+'iOTConnector::Sensor' (role 'iOTConnector_Sensor17', cardinality 0..*) is associated with 'iOTConnector::Function' (role 'iOTConnector_Function', cardinality 0..*).
+'iOTConnector::FilterType' (role 'iOTConnector_FilterType', cardinality 0..*) is associated with 'iOTConnector::FilterAction' (role 'iOTConnector_FilterAction37', cardinality 0..*).
+'iOTConnector::Sensor' (role 'iOTConnector_Sensor19', cardinality 0..*) is associated with 'iOTConnector::Send' (role 'iOTConnector_Send', cardinality 0..*).
+'iOTConnector::TimeUnit' (role 'iOTConnector_TimeUnit', cardinality 0..*) is associated with 'iOTConnector::SampleAction' (role 'iOTConnector_SampleAction31', cardinality 0..*).
+'iOTConnector::Output' (role 'iOTConnector_Output', cardinality 0..*) is associated with 'iOTConnector::Sensor' (role 'iOTConnector_Sensor15', cardinality 0..*).
+'iOTConnector::FilterExp' (role 'iOTConnector_FilterExp', cardinality 0..*) is associated with 'iOTConnector::FilterAction' (role 'iOTConnector_FilterAction39', cardinality 0..*).
+'iOTConnector::Plus' (role 'iOTConnector_Plus', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression69', cardinality 0..*).
+'iOTConnector::SampleAction' (role 'iOTConnector_SampleAction27', cardinality 0..*) is associated with 'iOTConnector::ReadingNameWithConfigScope' (role 'iOTConnector_ReadingNameWithConfigScope', cardinality 0..*).
+'iOTConnector::Minus' (role 'iOTConnector_Minus76', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression77', cardinality 0..*).
+'iOTConnector::Mult' (role 'iOTConnector_Mult', cardinality 0..*) is associated with 'iOTConnector::Expression' (role 'iOTConnector_Expression79', cardinality 0..*).
+'iOTConnector::RelationalOperator' (role 'iOTConnector_RelationalOperator64', cardinality 0..*) is associated with 'iOTConnector::SendAction' (role 'iOTConnector_SendAction63', cardinality 0..*).
+'iOTConnector::ReadingNameWithConfigScope' (role 'iOTConnector_ReadingNameWithConfigScope66', cardinality 0..*) is associated with 'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName67', cardinality 0..*).
+'iOTConnector::SampleAction' (role 'iOTConnector_SampleAction29', cardinality 0..*) is associated with 'iOTConnector::RelationalOperator' (role 'iOTConnector_RelationalOperator', cardinality 0..*).
+'iOTConnector::ProcessAction' (role 'iOTConnector_ProcessAction53', cardinality 0..*) is associated with 'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName54', cardinality 0..*).
+'iOTConnector::SendAction' (role 'iOTConnector_SendAction', cardinality 0..*) is associated with 'iOTConnector::Send' (role 'iOTConnector_Send58', cardinality 0..*).
+'iOTConnector::Config' (role 'iOTConnector_Config13', cardinality 0..*) is associated with 'iOTConnector::Board' (role 'iOTConnector_Board12', cardinality 0..*).
+'iOTConnector::ReadingName' (role 'iOTConnector_ReadingName', cardinality 0..*) is associated with 'iOTConnector::Output' (role 'iOTConnector_Output21', cardinality 0..*).

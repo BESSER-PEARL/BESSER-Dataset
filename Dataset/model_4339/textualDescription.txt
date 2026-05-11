@@ -1,0 +1,130 @@
+The model has 48 class(es).
+The class 'expression::SelfAssignmentStatement' has no attributes.
+The class 'expression::QualifierExpression' has the following attributes: 'op' of type str.
+The class 'expression::Model' has no attributes.
+The class 'expression::DashExpression' has the following attributes: 'op' of type str.
+The class 'expression::ForallIn' has no attributes.
+The class 'expression::StatementList' has no attributes.
+The class 'AssignmentStatement' has no attributes.
+The class 'expression::IntegerValue' has the following attributes: 'value' of type int.
+The class 'expression::ExpressionList' has no attributes.
+The class 'expression::StringValue' has the following attributes: 'value' of type str.
+The class 'expression::FunctionCall' has no attributes.
+The class 'expression::AndExpression' has the following attributes: 'op' of type str.
+The class 'expression::VariableAssignmentStatement' has no attributes.
+The class 'expression::Count' has no attributes.
+The class 'expression::FirstIn' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'expression::StructureExpression' has no attributes.
+The class 'expression::Statement' has no attributes.
+The class 'expression::Procedure' has no attributes.
+The class 'expression::Reduce' has no attributes.
+The class 'Term' has no attributes.
+The class 'expression::Sum' has no attributes.
+The class 'expression::List' has no attributes.
+The class 'KeyValuePairRest' has no attributes.
+The class 'expression::LastIn' has no attributes.
+The class 'expression::DoubleValue' has the following attributes: 'value' of type float.
+The class 'expression::OrExpression' has the following attributes: 'op' of type str.
+The class 'Phrase' has no attributes.
+The class 'ExpressionRest' has no attributes.
+The class 'expression::KeyValuePair' has the following attributes: 'key' of type str.
+The class 'Function' has no attributes.
+The class 'expression::Map' has no attributes.
+The class 'Expression' has no attributes.
+The class 'expression::KeyValuePairRest' has no attributes.
+The class 'expression::AssignmentStatement' has no attributes.
+The class 'expression::Apply' has no attributes.
+The class 'expression::Term' has no attributes.
+The class 'expression::PowExpression' has the following attributes: 'op' of type str.
+The class 'expression::PointExpression' has the following attributes: 'op' of type str.
+The class 'Statement' has no attributes.
+The class 'expression::UnaryExpression' has no attributes.
+The class 'expression::EObject' has no attributes.
+The class 'expression::ThereIsIn' has no attributes.
+The class 'expression::EqualityExpression' has the following attributes: 'op' of type str.
+The class 'expression::Phrase' has no attributes.
+The class 'expression::ExpressionRest' has no attributes.
+The class 'expression::Designator' has no attributes.
+The class 'expression::ProcedureCall' has no attributes.
+'expression::UnaryExpression' is a specialization of 'Expression'.
+'expression::KeyValuePair' is a specialization of 'KeyValuePairRest'.
+'expression::FirstIn' is a specialization of 'Expression'.
+'expression::DoubleValue' is a specialization of 'Term'.
+'expression::AssignmentStatement' is a specialization of 'Statement'.
+'expression::QualifierExpression' is a specialization of 'Expression'.
+'expression::Expression' is a specialization of 'ExpressionRest'.
+'expression::OrExpression' is a specialization of 'Expression'.
+'expression::LastIn' is a specialization of 'Expression'.
+'expression::Expression' is a specialization of 'Phrase'.
+'expression::FunctionCall' is a specialization of 'Expression'.
+'expression::Term' is a specialization of 'Expression'.
+'expression::StringValue' is a specialization of 'Term'.
+'expression::Sum' is a specialization of 'Expression'.
+'expression::ThereIsIn' is a specialization of 'Expression'.
+'expression::PowExpression' is a specialization of 'Expression'.
+'expression::Designator' is a specialization of 'Term'.
+'expression::Apply' is a specialization of 'Expression'.
+'expression::EqualityExpression' is a specialization of 'Expression'.
+'expression::StructureExpression' is a specialization of 'Expression'.
+'expression::SelfAssignmentStatement' is a specialization of 'AssignmentStatement'.
+'expression::Count' is a specialization of 'Expression'.
+'expression::Reduce' is a specialization of 'Expression'.
+'expression::DashExpression' is a specialization of 'Expression'.
+'expression::PointExpression' is a specialization of 'Expression'.
+'expression::ForallIn' is a specialization of 'Expression'.
+'expression::List' is a specialization of 'Term'.
+'expression::VariableAssignmentStatement' is a specialization of 'AssignmentStatement'.
+'expression::IntegerValue' is a specialization of 'Term'.
+'expression::AndExpression' is a specialization of 'Expression'.
+'expression::Map' is a specialization of 'Expression'.
+'expression::StatementList' is a specialization of 'Phrase'.
+'expression::Sum' (role 'expression_Sum', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression86', cardinality 0..*).
+'expression::ExpressionRest' (role 'expression_ExpressionRest', cardinality 0..*) is associated with 'expression::ExpressionList' (role 'expression_ExpressionList21', cardinality 0..*).
+'expression::Map' (role 'expression_Map93', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression94', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression76', cardinality 0..*) is associated with 'expression::Count' (role 'expression_Count', cardinality 0..*).
+'expression::AndExpression' (role 'expression_AndExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression38', cardinality 0..*).
+'expression::ProcedureCall' (role 'expression_ProcedureCall', cardinality 0..*) is associated with 'expression::Procedure' (role 'expression_Procedure', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression104', cardinality 0..*) is associated with 'expression::UnaryExpression' (role 'expression_UnaryExpression103', cardinality 0..*).
+'expression::QualifierExpression' (role 'expression_QualifierExpression65', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression66', cardinality 0..*).
+'expression::LastIn' (role 'expression_LastIn', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression74', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression70', cardinality 0..*) is associated with 'expression::ForallIn' (role 'expression_ForallIn', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression36', cardinality 0..*) is associated with 'expression::OrExpression' (role 'expression_OrExpression35', cardinality 0..*).
+'expression::FunctionCall' (role 'expression_FunctionCall12', cardinality 0..*) is associated with 'expression::ExpressionList' (role 'expression_ExpressionList', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression91', cardinality 0..*) is associated with 'expression::Map' (role 'expression_Map', cardinality 0..*).
+'expression::PointExpression' (role 'expression_PointExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression53', cardinality 0..*).
+'expression::StatementList' (role 'expression_StatementList', cardinality 0..*) is associated with 'expression::Statement' (role 'expression_Statement', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression51', cardinality 0..*) is associated with 'expression::DashExpression' (role 'expression_DashExpression50', cardinality 0..*).
+'expression::Apply' (role 'expression_Apply', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression96', cardinality 0..*).
+'expression::Term' (role 'expression_Term', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression27', cardinality 0..*).
+'expression::StructureExpression' (role 'expression_StructureExpression108', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression109', cardinality 0..*).
+'expression::Reduce' (role 'expression_Reduce83', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression84', cardinality 0..*).
+'expression::PointExpression' (role 'expression_PointExpression55', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression56', cardinality 0..*).
+'expression::PowExpression' (role 'expression_PowExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression58', cardinality 0..*).
+'expression::OrExpression' (role 'expression_OrExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression33', cardinality 0..*).
+'expression::StructureExpression' (role 'expression_StructureExpression', cardinality 0..*) is associated with 'expression::KeyValuePair' (role 'expression_KeyValuePair106', cardinality 0..*).
+'expression::EObject' (role 'expression_EObject', cardinality 0..*) is associated with 'expression::Designator' (role 'expression_Designator31', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression99', cardinality 0..*) is associated with 'expression::Apply' (role 'expression_Apply98', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression41', cardinality 0..*) is associated with 'expression::AndExpression' (role 'expression_AndExpression40', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression7', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression9', cardinality 0..*).
+'expression::Sum' (role 'expression_Sum88', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression89', cardinality 0..*).
+'expression::DashExpression' (role 'expression_DashExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression48', cardinality 0..*).
+'expression::ExpressionList' (role 'expression_ExpressionList16', cardinality 0..*) is associated with 'expression::ProcedureCall' (role 'expression_ProcedureCall15', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression78', cardinality 0..*) is associated with 'expression::Reduce' (role 'expression_Reduce', cardinality 0..*).
+'expression::Phrase' (role 'expression_Phrase', cardinality 0..*) is associated with 'expression::Model' (role 'expression_Model', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression23', cardinality 0..*) is associated with 'expression::KeyValuePair' (role 'expression_KeyValuePair', cardinality 0..*).
+'expression::UnaryExpression' (role 'expression_UnaryExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression101', cardinality 0..*).
+'expression::PowExpression' (role 'expression_PowExpression60', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression61', cardinality 0..*).
+'expression::Term' (role 'expression_Term29', cardinality 0..*) is associated with 'expression::List' (role 'expression_List', cardinality 0..*).
+'expression::ExpressionList' (role 'expression_ExpressionList18', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression19', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression43', cardinality 0..*) is associated with 'expression::EqualityExpression' (role 'expression_EqualityExpression', cardinality 0..*).
+'expression::QualifierExpression' (role 'expression_QualifierExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression63', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression46', cardinality 0..*) is associated with 'expression::EqualityExpression' (role 'expression_EqualityExpression45', cardinality 0..*).
+'expression::AssignmentStatement' (role 'expression_AssignmentStatement', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression', cardinality 0..*).
+'expression::KeyValuePair' (role 'expression_KeyValuePair25', cardinality 0..*) is associated with 'expression::KeyValuePairRest' (role 'expression_KeyValuePairRest', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression68', cardinality 0..*) is associated with 'expression::ThereIsIn' (role 'expression_ThereIsIn', cardinality 0..*).
+'expression::Reduce' (role 'expression_Reduce80', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression81', cardinality 0..*).
+'expression::FunctionCall' (role 'expression_FunctionCall', cardinality 0..*) is associated with 'Function' (role 'Function', cardinality 0..*).
+'expression::StatementList' (role 'expression_StatementList2', cardinality 0..*) is associated with 'expression::StatementList' (role 'expression_StatementList4', cardinality 0..*).
+'expression::VariableAssignmentStatement' (role 'expression_VariableAssignmentStatement', cardinality 0..*) is associated with 'expression::Designator' (role 'expression_Designator', cardinality 0..*).
+'expression::FirstIn' (role 'expression_FirstIn', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression72', cardinality 0..*).

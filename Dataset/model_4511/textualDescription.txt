@@ -1,0 +1,52 @@
+The model has 23 class(es).
+The class 'arduinoml::DigitalSensor' has no attributes.
+The class 'arduinoml::Brick' has the following attributes: 'pin' of type int.
+The class 'arduinoml::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduinoml::Condition' has no attributes.
+The class 'arduinoml::DigitalCondition' has the following attributes: 'dState' of type str.
+The class 'arduinoml::AnalogActuator' has no attributes.
+The class 'arduinoml::Action' has no attributes.
+The class 'arduinoml::AMLMachine' has the following attributes: 'frequency' of type int.
+The class 'NamedElement' has no attributes.
+The class 'arduinoml::AnalogCondition' has the following attributes: 'value' of type int; 'aComp' of type str.
+The class 'Brick' has no attributes.
+The class 'arduinoml::TimeCondition' has the following attributes: 'tComp' of type str; 'time' of type int.
+The class 'arduinoml::AMLState' has no attributes.
+The class 'arduinoml::AnalogActionSensor' has no attributes.
+The class 'Condition' has no attributes.
+The class 'Action' has no attributes.
+The class 'arduinoml::DigitalActuator' has no attributes.
+The class 'AnalogAction' has no attributes.
+The class 'arduinoml::DigitalAction' has the following attributes: 'dState' of type str.
+The class 'arduinoml::AnalogAction' has no attributes.
+The class 'arduinoml::AnalogActionValue' has the following attributes: 'value' of type int.
+The class 'arduinoml::AnalogSensor' has no attributes.
+The class 'arduinoml::Transition' has no attributes.
+The enumeration 'TimeComparison' has the following literals: 'AFTER', 'BEFORE'.
+The enumeration 'AnalogComparison' has the following literals: 'EQUAL', 'GREATEREQ', 'LOWEREQ', 'GREATER', 'LOWER'.
+The enumeration 'DigitalState' has the following literals: 'OFF', 'ON'.
+'arduinoml::DigitalSensor' is a specialization of 'Brick'.
+'arduinoml::AnalogCondition' is a specialization of 'Condition'.
+'arduinoml::DigitalCondition' is a specialization of 'Condition'.
+'arduinoml::AMLState' is a specialization of 'NamedElement'.
+'arduinoml::AnalogSensor' is a specialization of 'Brick'.
+'arduinoml::DigitalAction' is a specialization of 'Action'.
+'arduinoml::AnalogActionValue' is a specialization of 'AnalogAction'.
+'arduinoml::Brick' is a specialization of 'NamedElement'.
+'arduinoml::TimeCondition' is a specialization of 'Condition'.
+'arduinoml::AnalogAction' is a specialization of 'Action'.
+'arduinoml::DigitalActuator' is a specialization of 'Brick'.
+'arduinoml::AnalogActionSensor' is a specialization of 'AnalogAction'.
+'arduinoml::AnalogActuator' is a specialization of 'Brick'.
+'arduinoml::AMLState' (role 'arduinoml_AMLState7', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition', cardinality 0..*).
+'arduinoml::AMLMachine' (role 'arduinoml_AMLMachine2', cardinality 0..*) is associated with 'arduinoml::AMLState' (role 'arduinoml_AMLState', cardinality 0..*).
+'arduinoml::AnalogActionSensor' (role 'arduinoml_AnalogActionSensor', cardinality 0..*) is associated with 'arduinoml::AnalogSensor' (role 'arduinoml_AnalogSensor20', cardinality 0..*).
+'arduinoml::AMLState' (role 'arduinoml_AMLState5', cardinality 0..*) is associated with 'arduinoml::AMLMachine' (role 'arduinoml_AMLMachine4', cardinality 0..*).
+'arduinoml::Transition' (role 'arduinoml_Transition14', cardinality 0..*) is associated with 'arduinoml::Condition' (role 'arduinoml_Condition', cardinality 0..*).
+'arduinoml::Action' (role 'arduinoml_Action', cardinality 0..*) is associated with 'arduinoml::AMLState' (role 'arduinoml_AMLState9', cardinality 0..*).
+'arduinoml::AnalogActuator' (role 'arduinoml_AnalogActuator', cardinality 0..*) is associated with 'arduinoml::AnalogAction' (role 'arduinoml_AnalogAction', cardinality 0..*).
+'arduinoml::DigitalActuator' (role 'arduinoml_DigitalActuator', cardinality 0..*) is associated with 'arduinoml::DigitalAction' (role 'arduinoml_DigitalAction', cardinality 0..*).
+'arduinoml::Brick' (role 'arduinoml_Brick', cardinality 0..*) is associated with 'arduinoml::AMLMachine' (role 'arduinoml_AMLMachine', cardinality 0..*).
+'arduinoml::AnalogCondition' (role 'arduinoml_AnalogCondition', cardinality 0..*) is associated with 'arduinoml::AnalogSensor' (role 'arduinoml_AnalogSensor', cardinality 0..*).
+'arduinoml::DigitalCondition' (role 'arduinoml_DigitalCondition', cardinality 0..*) is associated with 'arduinoml::DigitalSensor' (role 'arduinoml_DigitalSensor', cardinality 0..*).
+'arduinoml::AMLState' (role 'arduinoml_AMLState12', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition11', cardinality 0..*).

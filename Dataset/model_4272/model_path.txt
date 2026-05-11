@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/realmethods-public/CLI/samples/models/bowling.sprint.2.ecore

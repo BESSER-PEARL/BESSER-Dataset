@@ -1,0 +1,38 @@
+The model has 9 class(es).
+The class 'architectureTool::Port' has the following attributes: 'provided' of type str; 'type' of type str; 'simple' of type str; 'name' of type str; 'required' of type str.
+The class 'architectureTool::Class' has no attributes.
+The class 'architectureTool::classMember' has the following attributes: 'name' of type str.
+The class 'architectureTool::Attribute' has the following attributes: 'type' of type str; 'name' of type str; 'Visable' of type str.
+The class 'architectureTool::Method' has the following attributes: 'visable' of type str; 'returnType' of type str; 'parameter' of type str; 'name' of type str.
+The class 'architectureTool::Interface' has no attributes.
+The class 'architectureTool::System' has the following attributes: 'name' of type str.
+The class 'classMember' has no attributes.
+The class 'architectureTool::Component' has the following attributes: 'name' of type str.
+'architectureTool::Interface' is a specialization of 'classMember'.
+'architectureTool::Class' is a specialization of 'classMember'.
+'architectureTool::Interface' (role 'architectureTool_Interface58', cardinality 0..*) is associated with 'architectureTool::Interface' (role 'architectureTool_Interface60', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class', cardinality 0..*) is associated with 'architectureTool::Component' (role 'architectureTool_Component5', cardinality 0..*).
+'architectureTool::Interface' (role 'architectureTool_Interface17', cardinality 0..*) is associated with 'architectureTool::Class' (role 'architectureTool_Class16', cardinality 0..*).
+'architectureTool::System' (role 'architectureTool_System30', cardinality 0..*) is associated with 'architectureTool::Component' (role 'architectureTool_Component31', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class26', cardinality 0..*) is associated with 'architectureTool::Class' (role 'architectureTool_Class24', cardinality 0..*).
+'architectureTool::System' (role 'System', cardinality 0..*) is associated with 'architectureTool::Component' (role 'ComponentDependence', cardinality 0..*).
+'architectureTool::System' (role 'ComponentDependence42', cardinality 0..*) is associated with 'architectureTool::Component' (role 'Component', cardinality 0..*).
+'architectureTool::Interface' (role 'architectureTool_Interface40', cardinality 0..*) is associated with 'architectureTool::System' (role 'architectureTool_System39', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class14', cardinality 0..*) is associated with 'architectureTool::Class' (role 'architectureTool_Class12', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class20', cardinality 0..*) is associated with 'architectureTool::Class' (role 'architectureTool_Class18', cardinality 0..*).
+'architectureTool::Method' (role 'architectureTool_Method', cardinality 0..*) is associated with 'architectureTool::classMember' (role 'architectureTool_classMember66', cardinality 0..*).
+'architectureTool::Component' (role 'architectureTool_Component8', cardinality 0..*) is associated with 'architectureTool::Component' (role 'architectureTool_Component6', cardinality 0..*).
+'architectureTool::Interface' (role 'architectureTool_Interface62', cardinality 0..*) is associated with 'architectureTool::Port' (role 'architectureTool_Port63', cardinality 0..*).
+'architectureTool::Port' (role 'architectureTool_Port50', cardinality 0..*) is associated with 'architectureTool::Interface' (role 'architectureTool_Interface51', cardinality 0..*).
+'architectureTool::Port' (role 'architectureTool_Port', cardinality 0..*) is associated with 'architectureTool::Component' (role 'architectureTool_Component', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class57', cardinality 0..*) is associated with 'architectureTool::Interface' (role 'architectureTool_Interface56', cardinality 0..*).
+'architectureTool::Port' (role 'architectureTool_Port46', cardinality 0..*) is associated with 'architectureTool::Port' (role 'architectureTool_Port48', cardinality 0..*).
+'architectureTool::Component' (role 'architectureTool_Component3', cardinality 0..*) is associated with 'architectureTool::Component' (role 'architectureTool_Component1', cardinality 0..*).
+'architectureTool::System' (role 'architectureTool_System37', cardinality 0..*) is associated with 'architectureTool::System' (role 'architectureTool_System35', cardinality 0..*).
+'architectureTool::Interface' (role 'architectureTool_Interface45', cardinality 0..*) is associated with 'architectureTool::Port' (role 'architectureTool_Port44', cardinality 0..*).
+'architectureTool::classMember' (role 'architectureTool_classMember', cardinality 0..*) is associated with 'architectureTool::Attribute' (role 'architectureTool_Attribute', cardinality 0..*).
+'architectureTool::Port' (role 'architectureTool_Port54', cardinality 0..*) is associated with 'architectureTool::Interface' (role 'architectureTool_Interface53', cardinality 0..*).
+'architectureTool::Component' (role 'architectureTool_Component10', cardinality 0..*) is associated with 'architectureTool::Interface' (role 'architectureTool_Interface', cardinality 0..*).
+'architectureTool::System' (role 'architectureTool_System33', cardinality 0..*) is associated with 'architectureTool::Port' (role 'architectureTool_Port34', cardinality 0..*).
+'architectureTool::System' (role 'architectureTool_System27', cardinality 0..*) is associated with 'architectureTool::System' (role 'architectureTool_System', cardinality 0..*).
+'architectureTool::Class' (role 'architectureTool_Class21', cardinality 0..*) is associated with 'architectureTool::Class' (role 'architectureTool_Class23', cardinality 0..*).

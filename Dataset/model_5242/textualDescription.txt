@@ -1,0 +1,11 @@
+The model has 7 class(es).
+The class 'genericsGoCrazy::MySubClass' has no attributes.
+The class 'genericsGoCrazy::Car' has the following attributes: 'color' of type str; 'name' of type str; 'doors' of type str; 'fullName' of type str.
+The class 'genericsGoCrazy::Comp' has no attributes.
+The class 'Car' has no attributes.
+The class 'genericsGoCrazy::OtherClass' has no attributes.
+The class 'genericsGoCrazy::MyClass' has the following attributes: 'theEObject' of type str; 'a2' of type str; 'aMap' of type str; 'a3' of type str; 'a1' of type str.
+The class 'genericsGoCrazy::SubCar' has no attributes.
+The enumeration 'Color' has the following literals: 'BLUE', 'RED'.
+'genericsGoCrazy::SubCar' is a specialization of 'Car'.
+'genericsGoCrazy::Car' (role 'genericsGoCrazy_Car', cardinality 0..*) is associated with 'genericsGoCrazy::Car' (role 'genericsGoCrazy_Car0', cardinality 0..*).

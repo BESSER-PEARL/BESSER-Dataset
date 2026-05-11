@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eliericha/atlanalyser/fr.tpt.atlanalyser.examples/examples/CMG/InputMM/systemmodel.ecore

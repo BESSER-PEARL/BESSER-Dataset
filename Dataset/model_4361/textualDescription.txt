@@ -1,0 +1,116 @@
+The model has 50 class(es).
+The class 'mpl::InputExpression' has no attributes.
+The class 'Operation' has no attributes.
+The class 'FunctionalUnit' has no attributes.
+The class 'mpl::MPLModel' has no attributes.
+The class 'mpl::Return' has no attributes.
+The class 'mpl::AddExpression' has no attributes.
+The class 'mpl::FunctionalUnit' has the following attributes: 'name' of type str.
+The class 'mpl::ArithmeticExpression' has no attributes.
+The class 'mpl::Operation' has no attributes.
+The class 'mpl::NE' has no attributes.
+The class 'mpl::VariableDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mpl::LiteralValue' has the following attributes: 'rawValue' of type int.
+The class 'mpl::Program' has no attributes.
+The class 'mpl::Statement' has no attributes.
+The class 'mpl::If' has no attributes.
+The class 'mpl::DivisionExpression' has no attributes.
+The class 'mpl::Assignment' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'ComparisonOperator' has no attributes.
+The class 'mpl::Function' has no attributes.
+The class 'mpl::NegateExpression' has no attributes.
+The class 'mpl::Variable' has the following attributes: 'name' of type str.
+The class 'mpl::ParenExpression' has no attributes.
+The class 'mpl::ComparisonOperator' has no attributes.
+The class 'mpl::MultiplyExpression' has no attributes.
+The class 'mpl::TraceCall' has no attributes.
+The class 'mpl::GE' has no attributes.
+The class 'Form' has no attributes.
+The class 'mpl::Block' has no attributes.
+The class 'mpl::OperationExpression' has no attributes.
+The class 'mpl::UnaryExpression' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'mpl::LT' has no attributes.
+The class 'mpl::For' has the following attributes: 'downwards' of type str.
+The class 'mpl::EQ' has no attributes.
+The class 'Loop' has no attributes.
+The class 'mpl::GT' has no attributes.
+The class 'mpl::ExpressionStatement' has no attributes.
+The class 'mpl::Procedure' has no attributes.
+The class 'AtomicExpression' has no attributes.
+The class 'mpl::Comparison' has no attributes.
+The class 'mpl::Loop' has no attributes.
+The class 'mpl::VariableReference' has no attributes.
+The class 'mpl::SubtractExpression' has no attributes.
+The class 'mpl::LE' has no attributes.
+The class 'mpl::Expression' has no attributes.
+The class 'mpl::While' has no attributes.
+The class 'mpl::Form' has no attributes.
+The class 'mpl::AtomicExpression' has no attributes.
+'mpl::AtomicExpression' is a specialization of 'Expression'.
+'mpl::Loop' is a specialization of 'Form'.
+'mpl::Program' is a specialization of 'FunctionalUnit'.
+'mpl::Function' is a specialization of 'Operation'.
+'mpl::LT' is a specialization of 'ComparisonOperator'.
+'mpl::NE' is a specialization of 'ComparisonOperator'.
+'mpl::If' is a specialization of 'Form'.
+'mpl::GE' is a specialization of 'ComparisonOperator'.
+'mpl::MultiplyExpression' is a specialization of 'ArithmeticExpression'.
+'mpl::EQ' is a specialization of 'ComparisonOperator'.
+'mpl::Operation' is a specialization of 'FunctionalUnit'.
+'mpl::ExpressionStatement' is a specialization of 'Form'.
+'mpl::ArithmeticExpression' is a specialization of 'Expression'.
+'mpl::Return' is a specialization of 'Form'.
+'mpl::SubtractExpression' is a specialization of 'ArithmeticExpression'.
+'mpl::TraceCall' is a specialization of 'Form'.
+'mpl::Procedure' is a specialization of 'Operation'.
+'mpl::DivisionExpression' is a specialization of 'ArithmeticExpression'.
+'mpl::While' is a specialization of 'Loop'.
+'mpl::ParenExpression' is a specialization of 'UnaryExpression'.
+'mpl::For' is a specialization of 'Loop'.
+'mpl::AddExpression' is a specialization of 'ArithmeticExpression'.
+'mpl::Assignment' is a specialization of 'Form'.
+'mpl::UnaryExpression' is a specialization of 'Expression'.
+'mpl::LE' is a specialization of 'ComparisonOperator'.
+'mpl::VariableReference' is a specialization of 'AtomicExpression'.
+'mpl::OperationExpression' is a specialization of 'Expression'.
+'mpl::GT' is a specialization of 'ComparisonOperator'.
+'mpl::LiteralValue' is a specialization of 'AtomicExpression'.
+'mpl::NegateExpression' is a specialization of 'UnaryExpression'.
+'mpl::InputExpression' is a specialization of 'Expression'.
+'mpl::If' (role 'mpl_If', cardinality 0..*) is associated with 'mpl::Comparison' (role 'mpl_Comparison42', cardinality 0..*).
+'mpl::Operation' (role 'mpl_Operation62', cardinality 0..*) is associated with 'mpl::Comparison' (role 'mpl_Comparison63', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression', cardinality 0..*) is associated with 'mpl::VariableDeclaration' (role 'mpl_VariableDeclaration9', cardinality 0..*).
+'mpl::If' (role 'mpl_If47', cardinality 0..*) is associated with 'mpl::Block' (role 'mpl_Block48', cardinality 0..*).
+'mpl::Block' (role 'mpl_Block11', cardinality 0..*) is associated with 'mpl::Statement' (role 'mpl_Statement', cardinality 0..*).
+'mpl::Block' (role 'mpl_Block45', cardinality 0..*) is associated with 'mpl::If' (role 'mpl_If44', cardinality 0..*).
+'mpl::Variable' (role 'mpl_Variable22', cardinality 0..*) is associated with 'mpl::VariableReference' (role 'mpl_VariableReference21', cardinality 0..*).
+'mpl::Comparison' (role 'mpl_Comparison39', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression40', cardinality 0..*).
+'mpl::Assignment' (role 'mpl_Assignment16', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression17', cardinality 0..*).
+'mpl::Operation' (role 'mpl_Operation65', cardinality 0..*) is associated with 'mpl::Comparison' (role 'mpl_Comparison66', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression27', cardinality 0..*) is associated with 'mpl::ArithmeticExpression' (role 'mpl_ArithmeticExpression26', cardinality 0..*).
+'mpl::Block' (role 'mpl_Block50', cardinality 0..*) is associated with 'mpl::Loop' (role 'mpl_Loop', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression68', cardinality 0..*) is associated with 'mpl::Return' (role 'mpl_Return', cardinality 0..*).
+'mpl::While' (role 'mpl_While', cardinality 0..*) is associated with 'mpl::Comparison' (role 'mpl_Comparison52', cardinality 0..*).
+'mpl::Operation' (role 'mpl_Operation', cardinality 0..*) is associated with 'mpl::MPLModel' (role 'mpl_MPLModel2', cardinality 0..*).
+'mpl::Comparison' (role 'mpl_Comparison37', cardinality 0..*) is associated with 'mpl::ComparisonOperator' (role 'mpl_ComparisonOperator', cardinality 0..*).
+'mpl::Block' (role 'mpl_Block', cardinality 0..*) is associated with 'mpl::FunctionalUnit' (role 'mpl_FunctionalUnit5', cardinality 0..*).
+'mpl::Operation' (role 'mpl_Operation59', cardinality 0..*) is associated with 'mpl::Variable' (role 'mpl_Variable60', cardinality 0..*).
+'mpl::InputExpression' (role 'mpl_InputExpression', cardinality 0..*) is associated with 'mpl::LiteralValue' (role 'mpl_LiteralValue', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression73', cardinality 0..*) is associated with 'mpl::OperationExpression' (role 'mpl_OperationExpression72', cardinality 0..*).
+'mpl::Statement' (role 'mpl_Statement13', cardinality 0..*) is associated with 'mpl::Form' (role 'mpl_Form', cardinality 0..*).
+'mpl::ExpressionStatement' (role 'mpl_ExpressionStatement', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression19', cardinality 0..*).
+'mpl::LiteralValue' (role 'mpl_LiteralValue33', cardinality 0..*) is associated with 'mpl::InputExpression' (role 'mpl_InputExpression32', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression35', cardinality 0..*) is associated with 'mpl::Comparison' (role 'mpl_Comparison', cardinality 0..*).
+'mpl::MPLModel' (role 'mpl_MPLModel', cardinality 0..*) is associated with 'mpl::Program' (role 'mpl_Program', cardinality 0..*).
+'mpl::VariableReference' (role 'mpl_VariableReference', cardinality 0..*) is associated with 'mpl::Assignment' (role 'mpl_Assignment', cardinality 0..*).
+'mpl::For' (role 'mpl_For', cardinality 0..*) is associated with 'mpl::Assignment' (role 'mpl_Assignment54', cardinality 0..*).
+'mpl::VariableDeclaration' (role 'mpl_VariableDeclaration7', cardinality 0..*) is associated with 'mpl::Variable' (role 'mpl_Variable', cardinality 0..*).
+'mpl::UnaryExpression' (role 'mpl_UnaryExpression', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression29', cardinality 0..*).
+'mpl::OperationExpression' (role 'mpl_OperationExpression', cardinality 0..*) is associated with 'mpl::Operation' (role 'mpl_Operation70', cardinality 0..*).
+'mpl::ArithmeticExpression' (role 'mpl_ArithmeticExpression', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression24', cardinality 0..*).
+'mpl::FunctionalUnit' (role 'mpl_FunctionalUnit', cardinality 0..*) is associated with 'mpl::VariableDeclaration' (role 'mpl_VariableDeclaration', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression57', cardinality 0..*) is associated with 'mpl::For' (role 'mpl_For56', cardinality 0..*).
+'mpl::TraceCall' (role 'mpl_TraceCall', cardinality 0..*) is associated with 'mpl::VariableReference' (role 'mpl_VariableReference75', cardinality 0..*).

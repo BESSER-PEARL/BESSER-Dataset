@@ -1,0 +1,27 @@
+The model has 10 class(es).
+The class 'classDiagram::ModelingConcept' has the following attributes: 'name' of type str.
+The class 'classDiagram::Package' has no attributes.
+The class 'ModelingConcept' has no attributes.
+The class 'classDiagram::Classifier' has no attributes.
+The class 'classDiagram::Function' has the following attributes: 'isStatic' of type bool; 'body' of type str; 'accessModifier' of type str; 'isAbstract' of type bool.
+The class 'classDiagram::Type' has no attributes.
+The class 'classDiagram::ClassModel' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'classDiagram::Class' has the following attributes: 'isStatic' of type bool; 'isAbstract' of type bool; 'accessModifier' of type str.
+The class 'classDiagram::Attribute' has the following attributes: 'accessModifier' of type str; 'isStatic' of type bool.
+The enumeration 'AccessModifier' has the following literals: 'protected', 'private', 'default', 'public'.
+'classDiagram::Class' is a specialization of 'Classifier'.
+'classDiagram::Type' is a specialization of 'Classifier'.
+'classDiagram::Function' is a specialization of 'ModelingConcept'.
+'classDiagram::Classifier' is a specialization of 'ModelingConcept'.
+'classDiagram::Attribute' is a specialization of 'ModelingConcept'.
+'classDiagram::Package' is a specialization of 'ModelingConcept'.
+'classDiagram::Function' (role 'classDiagram_Function14', cardinality 0..*) is associated with 'classDiagram::Classifier' (role 'classDiagram_Classifier15', cardinality 0..*).
+'classDiagram::Class' (role 'subtypes', cardinality 0..*) is associated with 'classDiagram::Class' (role 'Class', cardinality 0..*).
+'classDiagram::Attribute' (role 'classDiagram_Attribute12', cardinality 0..*) is associated with 'classDiagram::Classifier' (role 'classDiagram_Classifier', cardinality 0..*).
+'classDiagram::Function' (role 'classDiagram_Function', cardinality 0..*) is associated with 'classDiagram::Class' (role 'classDiagram_Class10', cardinality 0..*).
+'classDiagram::Class' (role 'supertypes', cardinality 0..*) is associated with 'classDiagram::Class' (role 'Class8', cardinality 0..*).
+'classDiagram::ModelingConcept' (role 'classDiagram_ModelingConcept', cardinality 0..*) is associated with 'classDiagram::Package' (role 'classDiagram_Package2', cardinality 0..*).
+'classDiagram::Package' (role 'classDiagram_Package', cardinality 0..*) is associated with 'classDiagram::ClassModel' (role 'classDiagram_ClassModel', cardinality 0..*).
+'classDiagram::Function' (role 'classDiagram_Function17', cardinality 0..*) is associated with 'classDiagram::Attribute' (role 'classDiagram_Attribute18', cardinality 0..*).
+'classDiagram::Class' (role 'classDiagram_Class', cardinality 0..*) is associated with 'classDiagram::Attribute' (role 'classDiagram_Attribute', cardinality 0..*).

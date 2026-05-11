@@ -1,0 +1,27 @@
+The model has 11 class(es).
+The class 'ilp::VariableExpression' has no attributes.
+The class 'ilp::IntegerLinearProgram' has no attributes.
+The class 'ilp::LiteralExpression' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'ilp::ConstraintExpression' has no attributes.
+The class 'ilp::Expression' has the following attributes: 'comment' of type str.
+The class 'ilp::Variable' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'ilp::ArithmeticExpression' has no attributes.
+The class 'ilp::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'ilp::ObjectiveFunctionExpression' has the following attributes: 'goal' of type str.
+The enumeration 'ObjectiveGoal' has the following literals: 'MIN', 'MAX'.
+The enumeration 'Operator' has the following literals: 'LESS_THAN_OR_EQUAL_TO', 'PLUS', 'GREATER_THAN_OR_EQUAL_TO', 'MINUS', 'EQUAL_TO', 'TIMES'.
+The enumeration 'ILPDataType' has the following literals: 'REAL', 'BINARY', 'INTEGER'.
+'ilp::VariableExpression' is a specialization of 'Expression'.
+'ilp::ConstraintExpression' is a specialization of 'BinaryExpression'.
+'ilp::LiteralExpression' is a specialization of 'Expression'.
+'ilp::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'ilp::BinaryExpression' is a specialization of 'Expression'.
+'ilp::IntegerLinearProgram' (role 'ilp_IntegerLinearProgram2', cardinality 0..*) is associated with 'ilp::ConstraintExpression' (role 'ilp_ConstraintExpression', cardinality 0..*).
+'ilp::Expression' (role 'ilp_Expression13', cardinality 0..*) is associated with 'ilp::ObjectiveFunctionExpression' (role 'ilp_ObjectiveFunctionExpression12', cardinality 0..*).
+'ilp::Variable' (role 'ilp_Variable', cardinality 0..*) is associated with 'ilp::IntegerLinearProgram' (role 'ilp_IntegerLinearProgram', cardinality 0..*).
+'ilp::Expression' (role 'ilp_Expression', cardinality 0..*) is associated with 'ilp::BinaryExpression' (role 'ilp_BinaryExpression', cardinality 0..*).
+'ilp::BinaryExpression' (role 'ilp_BinaryExpression7', cardinality 0..*) is associated with 'ilp::Expression' (role 'ilp_Expression8', cardinality 0..*).
+'ilp::VariableExpression' (role 'ilp_VariableExpression', cardinality 0..*) is associated with 'ilp::Variable' (role 'ilp_Variable10', cardinality 0..*).
+'ilp::ObjectiveFunctionExpression' (role 'ilp_ObjectiveFunctionExpression', cardinality 0..*) is associated with 'ilp::IntegerLinearProgram' (role 'ilp_IntegerLinearProgram4', cardinality 0..*).

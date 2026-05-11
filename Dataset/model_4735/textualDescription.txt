@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'swml::Link' has the following attributes: 'href' of type str.
+The class 'swml::DynamicPage' has no attributes.
+The class 'swml::EntityPage' has no attributes.
+The class 'swml::Entity' has the following attributes: 'name' of type str.
+The class 'swml::WebPage' has the following attributes: 'relativeUrl' of type str; 'title' of type str.
+The class 'swml::Attribute' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'swml::Relationship' has the following attributes: 'upperBound' of type int; 'role' of type str; 'lowerBound' of type int.
+The class 'swml::IndexPage' has no attributes.
+The class 'swml::Icon' has the following attributes: 'image' of type str.
+The class 'DynamicPage' has no attributes.
+The class 'swml::StaticPage' has no attributes.
+The class 'WebPage' has no attributes.
+The class 'swml::WebApplication' has the following attributes: 'name' of type str.
+The enumeration 'DataType' has the following literals: 'Boolean', 'Integer', 'String', 'Float'.
+'swml::IndexPage' is a specialization of 'DynamicPage'.
+'swml::StaticPage' is a specialization of 'WebPage'.
+'swml::EntityPage' is a specialization of 'DynamicPage'.
+'swml::DynamicPage' is a specialization of 'WebPage'.
+'swml::Entity' (role 'swml_Entity4', cardinality 0..*) is associated with 'swml::Attribute' (role 'swml_Attribute', cardinality 0..*).
+'swml::Entity' (role 'swml_Entity9', cardinality 0..*) is associated with 'swml::Relationship' (role 'swml_Relationship', cardinality 0..*).
+'swml::Entity' (role 'swml_Entity18', cardinality 0..*) is associated with 'swml::DynamicPage' (role 'swml_DynamicPage17', cardinality 0..*).
+'swml::StaticPage' (role 'swml_StaticPage14', cardinality 0..*) is associated with 'swml::Link' (role 'swml_Link', cardinality 0..*).
+'swml::Entity' (role 'swml_Entity6', cardinality 0..*) is associated with 'swml::Attribute' (role 'swml_Attribute7', cardinality 0..*).
+'swml::Entity' (role 'swml_Entity12', cardinality 0..*) is associated with 'swml::Relationship' (role 'swml_Relationship11', cardinality 0..*).
+'swml::WebApplication' (role 'swml_WebApplication', cardinality 0..*) is associated with 'swml::Entity' (role 'swml_Entity', cardinality 0..*).
+'swml::DynamicPage' (role 'swml_DynamicPage', cardinality 0..*) is associated with 'swml::Icon' (role 'swml_Icon', cardinality 0..*).
+'swml::StaticPage' (role 'swml_StaticPage', cardinality 0..*) is associated with 'swml::WebApplication' (role 'swml_WebApplication2', cardinality 0..*).

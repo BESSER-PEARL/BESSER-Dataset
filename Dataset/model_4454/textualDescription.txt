@@ -1,0 +1,136 @@
+The model has 56 class(es).
+The class 'arduinoDSL::Value' has no attributes.
+The class 'Value' has no attributes.
+The class 'arduinoDSL::Component' has the following attributes: 'name' of type str.
+The class 'arduinoDSL::Div' has no attributes.
+The class 'arduinoDSL::Node' has the following attributes: 'name' of type str.
+The class 'arduinoDSL::Minus' has no attributes.
+The class 'arduinoDSL::Board' has the following attributes: 'b' of type str.
+The class 'arduinoDSL::Rule' has the following attributes: 'type' of type str.
+The class 'NumberExpression' has no attributes.
+The class 'arduinoDSL::NumberLiteral' has the following attributes: 'intVal' of type int; 'floatVal' of type str.
+The class 'arduinoDSL::Rate' has the following attributes: 'value' of type int.
+The class 'arduinoDSL::CompareOperator' has no attributes.
+The class 'arduinoDSL::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'arduinoDSL::EObject' has no attributes.
+The class 'arduinoDSL::NodeDefinition' has no attributes.
+The class 'arduinoDSL::BooleanExpressionBlock' has no attributes.
+The class 'arduinoDSL::Attribute' has no attributes.
+The class 'arduinoDSL::Range' has the following attributes: 'low' of type float; 'high' of type float.
+The class 'arduinoDSL::AndOr' has no attributes.
+The class 'arduinoDSL::GreaterThanEquals' has no attributes.
+The class 'arduinoDSL::Smaller' has no attributes.
+The class 'arduinoDSL::IfStatement' has no attributes.
+The class 'BooleanOperator' has no attributes.
+The class 'arduinoDSL::Cast' has the following attributes: 'castType' of type str.
+The class 'arduinoDSL::VariableReference' has no attributes.
+The class 'arduinoDSL::NumberExpression' has no attributes.
+The class 'arduinoDSL::NotEquals' has no attributes.
+The class 'arduinoDSL::BooleanOperator' has no attributes.
+The class 'arduinoDSL::Plus' has no attributes.
+The class 'arduinoDSL::Mod' has no attributes.
+The class 'arduinoDSL::Smoothing' has the following attributes: 'value' of type float.
+The class 'arduinoDSL::State' has the following attributes: 'value' of type str.
+The class 'VariableReference' has no attributes.
+The class 'arduinoDSL::RuleBody' has no attributes.
+The class 'arduinoDSL::VariableDeclaration' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'arduinoDSL::SimpleStatement' has no attributes.
+The class 'arduinoDSL::Equals' has no attributes.
+The class 'arduinoDSL::Greater' has no attributes.
+The class 'CompareOperator' has no attributes.
+The class 'SimpleStatement' has no attributes.
+The class 'arduinoDSL::ComponentBody' has the following attributes: 'io' of type str; 'type' of type str; 'pin' of type int.
+The class 'BooleanExpression' has no attributes.
+The class 'arduinoDSL::ElseStatement' has no attributes.
+The class 'arduinoDSL::And' has no attributes.
+The class 'arduinoDSL::Or' has no attributes.
+The class 'arduinoDSL::ElseIfStatement' has no attributes.
+The class 'arduinoDSL::Comparison' has no attributes.
+The class 'arduinoDSL::Program' has no attributes.
+The class 'arduinoDSL::Mult' has no attributes.
+The class 'arduinoDSL::Delta' has no attributes.
+The class 'arduinoDSL::SmallerThanEquals' has no attributes.
+The class 'arduinoDSL::NumberExpressionBlock' has no attributes.
+The class 'arduinoDSL::VarRef' has no attributes.
+The class 'arduinoDSL::Assignment' has no attributes.
+The class 'arduinoDSL::BooleanExpression' has no attributes.
+The class 'arduinoDSL::Map' has no attributes.
+'arduinoDSL::BooleanExpressionBlock' is a specialization of 'BooleanExpression'.
+'arduinoDSL::VariableReference' is a specialization of 'Value'.
+'arduinoDSL::Value' is a specialization of 'NumberExpression'.
+'arduinoDSL::ElseStatement' is a specialization of 'SimpleStatement'.
+'arduinoDSL::Attribute' is a specialization of 'Value'.
+'arduinoDSL::ElseIfStatement' is a specialization of 'SimpleStatement'.
+'arduinoDSL::NumberExpressionBlock' is a specialization of 'NumberExpression'.
+'arduinoDSL::Mod' is a specialization of 'NumberExpression'.
+'arduinoDSL::Mult' is a specialization of 'NumberExpression'.
+'arduinoDSL::VariableReference' is a specialization of 'SimpleStatement'.
+'arduinoDSL::Minus' is a specialization of 'NumberExpression'.
+'arduinoDSL::Greater' is a specialization of 'CompareOperator'.
+'arduinoDSL::Assignment' is a specialization of 'SimpleStatement'.
+'arduinoDSL::Plus' is a specialization of 'NumberExpression'.
+'arduinoDSL::Div' is a specialization of 'NumberExpression'.
+'arduinoDSL::Smaller' is a specialization of 'CompareOperator'.
+'arduinoDSL::Equals' is a specialization of 'CompareOperator'.
+'arduinoDSL::VarRef' is a specialization of 'VariableReference'.
+'arduinoDSL::VariableDeclaration' is a specialization of 'SimpleStatement'.
+'arduinoDSL::NumberLiteral' is a specialization of 'Value'.
+'arduinoDSL::IfStatement' is a specialization of 'SimpleStatement'.
+'arduinoDSL::Or' is a specialization of 'BooleanOperator'.
+'arduinoDSL::And' is a specialization of 'BooleanOperator'.
+'arduinoDSL::NotEquals' is a specialization of 'CompareOperator'.
+'arduinoDSL::Delta' is a specialization of 'Value'.
+'arduinoDSL::SmallerThanEquals' is a specialization of 'CompareOperator'.
+'arduinoDSL::AndOr' is a specialization of 'BooleanExpression'.
+'arduinoDSL::GreaterThanEquals' is a specialization of 'CompareOperator'.
+'arduinoDSL::Comparison' is a specialization of 'BooleanExpression'.
+'arduinoDSL::Assignment' (role 'arduinoDSL_Assignment17', cardinality 0..*) is associated with 'arduinoDSL::EObject' (role 'arduinoDSL_EObject18', cardinality 0..*).
+'arduinoDSL::EObject' (role 'arduinoDSL_EObject', cardinality 0..*) is associated with 'arduinoDSL::Program' (role 'arduinoDSL_Program', cardinality 0..*).
+'arduinoDSL::VariableDeclaration' (role 'arduinoDSL_VariableDeclaration21', cardinality 0..*) is associated with 'arduinoDSL::EObject' (role 'arduinoDSL_EObject22', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression81', cardinality 0..*) is associated with 'arduinoDSL::Mod' (role 'arduinoDSL_Mod80', cardinality 0..*).
+'arduinoDSL::Delta' (role 'arduinoDSL_Delta', cardinality 0..*) is associated with 'arduinoDSL::Attribute' (role 'arduinoDSL_Attribute11', cardinality 0..*).
+'arduinoDSL::AndOr' (role 'arduinoDSL_AndOr', cardinality 0..*) is associated with 'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression44', cardinality 0..*).
+'arduinoDSL::Cast' (role 'arduinoDSL_Cast', cardinality 0..*) is associated with 'arduinoDSL::VariableDeclaration' (role 'arduinoDSL_VariableDeclaration', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression51', cardinality 0..*) is associated with 'arduinoDSL::Comparison' (role 'arduinoDSL_Comparison', cardinality 0..*).
+'arduinoDSL::AndOr' (role 'arduinoDSL_AndOr46', cardinality 0..*) is associated with 'arduinoDSL::BooleanOperator' (role 'arduinoDSL_BooleanOperator', cardinality 0..*).
+'arduinoDSL::Map' (role 'arduinoDSL_Map39', cardinality 0..*) is associated with 'arduinoDSL::Range' (role 'arduinoDSL_Range', cardinality 0..*).
+'arduinoDSL::IfStatement' (role 'arduinoDSL_IfStatement88', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement89', cardinality 0..*).
+'arduinoDSL::BooleanExpressionBlock' (role 'arduinoDSL_BooleanExpressionBlock', cardinality 0..*) is associated with 'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression5', cardinality 0..*).
+'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement86', cardinality 0..*) is associated with 'arduinoDSL::IfStatement' (role 'arduinoDSL_IfStatement85', cardinality 0..*).
+'arduinoDSL::Minus' (role 'arduinoDSL_Minus65', cardinality 0..*) is associated with 'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression66', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression73', cardinality 0..*) is associated with 'arduinoDSL::Div' (role 'arduinoDSL_Div', cardinality 0..*).
+'arduinoDSL::NodeDefinition' (role 'arduinoDSL_NodeDefinition', cardinality 0..*) is associated with 'arduinoDSL::Board' (role 'arduinoDSL_Board', cardinality 0..*).
+'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression94', cardinality 0..*) is associated with 'arduinoDSL::ElseIfStatement' (role 'arduinoDSL_ElseIfStatement', cardinality 0..*).
+'arduinoDSL::IfStatement' (role 'arduinoDSL_IfStatement91', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement92', cardinality 0..*).
+'arduinoDSL::Div' (role 'arduinoDSL_Div75', cardinality 0..*) is associated with 'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression76', cardinality 0..*).
+'arduinoDSL::Node' (role 'arduinoDSL_Node26', cardinality 0..*) is associated with 'arduinoDSL::NodeDefinition' (role 'arduinoDSL_NodeDefinition25', cardinality 0..*).
+'arduinoDSL::Rate' (role 'arduinoDSL_Rate', cardinality 0..*) is associated with 'arduinoDSL::ComponentBody' (role 'arduinoDSL_ComponentBody33', cardinality 0..*).
+'arduinoDSL::Map' (role 'arduinoDSL_Map41', cardinality 0..*) is associated with 'arduinoDSL::Range' (role 'arduinoDSL_Range42', cardinality 0..*).
+'arduinoDSL::ElseIfStatement' (role 'arduinoDSL_ElseIfStatement102', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement103', cardinality 0..*).
+'arduinoDSL::Rule' (role 'arduinoDSL_Rule', cardinality 0..*) is associated with 'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression', cardinality 0..*).
+'arduinoDSL::ElseIfStatement' (role 'arduinoDSL_ElseIfStatement99', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement100', cardinality 0..*).
+'arduinoDSL::Plus' (role 'arduinoDSL_Plus', cardinality 0..*) is associated with 'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression58', cardinality 0..*).
+'arduinoDSL::Smoothing' (role 'arduinoDSL_Smoothing', cardinality 0..*) is associated with 'arduinoDSL::ComponentBody' (role 'arduinoDSL_ComponentBody37', cardinality 0..*).
+'arduinoDSL::Component' (role 'arduinoDSL_Component29', cardinality 0..*) is associated with 'arduinoDSL::Node' (role 'arduinoDSL_Node28', cardinality 0..*).
+'arduinoDSL::ComponentBody' (role 'arduinoDSL_ComponentBody35', cardinality 0..*) is associated with 'arduinoDSL::Map' (role 'arduinoDSL_Map', cardinality 0..*).
+'arduinoDSL::CompareOperator' (role 'arduinoDSL_CompareOperator', cardinality 0..*) is associated with 'arduinoDSL::Comparison' (role 'arduinoDSL_Comparison53', cardinality 0..*).
+'arduinoDSL::Attribute' (role 'arduinoDSL_Attribute9', cardinality 0..*) is associated with 'arduinoDSL::Component' (role 'arduinoDSL_Component', cardinality 0..*).
+'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement', cardinality 0..*) is associated with 'arduinoDSL::RuleBody' (role 'arduinoDSL_RuleBody13', cardinality 0..*).
+'arduinoDSL::IfStatement' (role 'arduinoDSL_IfStatement', cardinality 0..*) is associated with 'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression83', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression', cardinality 0..*) is associated with 'arduinoDSL::NumberExpressionBlock' (role 'arduinoDSL_NumberExpressionBlock', cardinality 0..*).
+'arduinoDSL::Mult' (role 'arduinoDSL_Mult', cardinality 0..*) is associated with 'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression68', cardinality 0..*).
+'arduinoDSL::Cast' (role 'arduinoDSL_Cast110', cardinality 0..*) is associated with 'arduinoDSL::VarRef' (role 'arduinoDSL_VarRef109', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression63', cardinality 0..*) is associated with 'arduinoDSL::Minus' (role 'arduinoDSL_Minus', cardinality 0..*).
+'arduinoDSL::BooleanExpression' (role 'arduinoDSL_BooleanExpression49', cardinality 0..*) is associated with 'arduinoDSL::AndOr' (role 'arduinoDSL_AndOr48', cardinality 0..*).
+'arduinoDSL::Plus' (role 'arduinoDSL_Plus60', cardinality 0..*) is associated with 'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression61', cardinality 0..*).
+'arduinoDSL::Component' (role 'arduinoDSL_Component31', cardinality 0..*) is associated with 'arduinoDSL::ComponentBody' (role 'arduinoDSL_ComponentBody', cardinality 0..*).
+'arduinoDSL::Attribute' (role 'arduinoDSL_Attribute', cardinality 0..*) is associated with 'arduinoDSL::Node' (role 'arduinoDSL_Node', cardinality 0..*).
+'arduinoDSL::Assignment' (role 'arduinoDSL_Assignment', cardinality 0..*) is associated with 'arduinoDSL::Attribute' (role 'arduinoDSL_Attribute15', cardinality 0..*).
+'arduinoDSL::Rule' (role 'arduinoDSL_Rule3', cardinality 0..*) is associated with 'arduinoDSL::RuleBody' (role 'arduinoDSL_RuleBody', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression71', cardinality 0..*) is associated with 'arduinoDSL::Mult' (role 'arduinoDSL_Mult70', cardinality 0..*).
+'arduinoDSL::EObject' (role 'arduinoDSL_EObject113', cardinality 0..*) is associated with 'arduinoDSL::VarRef' (role 'arduinoDSL_VarRef112', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression56', cardinality 0..*) is associated with 'arduinoDSL::Comparison' (role 'arduinoDSL_Comparison55', cardinality 0..*).
+'arduinoDSL::VariableDeclaration' (role 'arduinoDSL_VariableDeclaration107', cardinality 0..*) is associated with 'arduinoDSL::VarRef' (role 'arduinoDSL_VarRef', cardinality 0..*).
+'arduinoDSL::ElseIfStatement' (role 'arduinoDSL_ElseIfStatement96', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement97', cardinality 0..*).
+'arduinoDSL::ElseStatement' (role 'arduinoDSL_ElseStatement', cardinality 0..*) is associated with 'arduinoDSL::SimpleStatement' (role 'arduinoDSL_SimpleStatement105', cardinality 0..*).
+'arduinoDSL::NumberExpression' (role 'arduinoDSL_NumberExpression78', cardinality 0..*) is associated with 'arduinoDSL::Mod' (role 'arduinoDSL_Mod', cardinality 0..*).

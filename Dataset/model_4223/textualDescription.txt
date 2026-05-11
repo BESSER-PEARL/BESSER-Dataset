@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'organization::Department' has the following attributes: 'number' of type int.
+The class 'organization::core::Cass' has no attributes.
+The class 'organization::Company' has the following attributes: 'name' of type str.
+The class 'organization::ABase' has the following attributes: 'id' of type str.
+The class 'ABase' has no attributes.
+The class 'organization::Employee' has the following attributes: 'name' of type str.
+'organization::Employee' is a specialization of 'ABase'.
+'organization::Department' is a specialization of 'ABase'.
+'organization::Company' is a specialization of 'ABase'.
+'organization::Employee' (role 'organization_Employee', cardinality 0..*) is associated with 'organization::Department' (role 'organization_Department2', cardinality 0..*).
+'organization::Department' (role 'organization_Department', cardinality 0..*) is associated with 'organization::Company' (role 'organization_Company', cardinality 0..*).

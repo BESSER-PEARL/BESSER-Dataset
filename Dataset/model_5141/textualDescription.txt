@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'mytest::A' has no attributes.
+The class 'mytest::MyRoot' has no attributes.
+The class 'mytest::B' has no attributes.

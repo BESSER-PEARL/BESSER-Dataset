@@ -1,0 +1,30 @@
+The model has 13 class(es).
+The class 'EvoCompany::ServiceLine' has no attributes.
+The class 'EvoCompany::CompanyModel' has no attributes.
+The class 'Division' has no attributes.
+The class 'EvoCompany::Organisation' has the following attributes: 'name' of type str; 'city' of type str; 'completeAddress' of type str.
+The class 'EvoCompany::Project' has the following attributes: 'budget' of type int; 'name' of type str.
+The class 'EvoCompany::Employee' has no attributes.
+The class 'EvoCompany::Category' has the following attributes: 'name' of type str.
+The class 'EvoCompany::Unit' has no attributes.
+The class 'EvoCompany::Division' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+The class 'EvoCompany::Client' has no attributes.
+The class 'EvoCompany::Person' has the following attributes: 'fullName' of type str.
+The class 'EvoCompany::Topic' has the following attributes: 'id' of type str.
+'EvoCompany::Client' is a specialization of 'Person'.
+'EvoCompany::ServiceLine' is a specialization of 'Division'.
+'EvoCompany::Unit' is a specialization of 'Division'.
+'EvoCompany::Employee' is a specialization of 'Person'.
+'EvoCompany::Person' (role 'EvoCompany_Person4', cardinality 0..*) is associated with 'EvoCompany::Organisation' (role 'EvoCompany_Organisation', cardinality 0..*).
+'EvoCompany::Topic' (role 'Topic', cardinality 0..*) is associated with 'EvoCompany::Category' (role 'category', cardinality 0..*).
+'EvoCompany::Category' (role 'EvoCompany_Category', cardinality 0..*) is associated with 'EvoCompany::CompanyModel' (role 'EvoCompany_CompanyModel17', cardinality 0..*).
+'EvoCompany::Project' (role 'EvoCompany_Project', cardinality 0..*) is associated with 'EvoCompany::Person' (role 'EvoCompany_Person', cardinality 0..*).
+'EvoCompany::Division' (role 'EvoCompany_Division23', cardinality 0..*) is associated with 'EvoCompany::CompanyModel' (role 'EvoCompany_CompanyModel22', cardinality 0..*).
+'EvoCompany::Organisation' (role 'EvoCompany_Organisation9', cardinality 0..*) is associated with 'EvoCompany::Division' (role 'EvoCompany_Division', cardinality 0..*).
+'EvoCompany::Organisation' (role 'EvoCompany_Organisation6', cardinality 0..*) is associated with 'EvoCompany::Project' (role 'EvoCompany_Project7', cardinality 0..*).
+'EvoCompany::Category' (role 'Category', cardinality 0..*) is associated with 'EvoCompany::Topic' (role 'topics', cardinality 0..*).
+'EvoCompany::Person' (role 'EvoCompany_Person2', cardinality 0..*) is associated with 'EvoCompany::Unit' (role 'EvoCompany_Unit', cardinality 0..*).
+'EvoCompany::Topic' (role 'EvoCompany_Topic', cardinality 0..*) is associated with 'EvoCompany::Project' (role 'EvoCompany_Project11', cardinality 0..*).
+'EvoCompany::CompanyModel' (role 'EvoCompany_CompanyModel', cardinality 0..*) is associated with 'EvoCompany::Organisation' (role 'EvoCompany_Organisation15', cardinality 0..*).
+'EvoCompany::CompanyModel' (role 'EvoCompany_CompanyModel19', cardinality 0..*) is associated with 'EvoCompany::Topic' (role 'EvoCompany_Topic20', cardinality 0..*).

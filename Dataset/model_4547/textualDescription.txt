@@ -1,0 +1,80 @@
+The model has 26 class(es).
+The class 'behaviour::BroadcastCommunication' has no attributes.
+The class 'behaviour::CommunicationAction' has no attributes.
+The class 'behaviour::TaskExecution' has the following attributes: 'status' of type str.
+The class 'behaviour::MeasureValue' has no attributes.
+The class 'behaviour::CapabilityProperties' has no attributes.
+The class 'behaviour::MessageRepository' has no attributes.
+The class 'behaviour::DetectedObject' has the following attributes: 'obstacle' of type bool.
+The class 'behaviour::Property' has no attributes.
+The class 'CommunicationAction' has no attributes.
+The class 'behaviour::AreaObject' has no attributes.
+The class 'behaviour::RobotCollaboration' has no attributes.
+The class 'behaviour::Robot' has no attributes.
+The class 'PropertyKeyContainer' has no attributes.
+The class 'behaviour::BehaviourContainer' has no attributes.
+The class 'behaviour::MulticastCommunication' has no attributes.
+The class 'Action' has no attributes.
+The class 'behaviour::TaskRequirement' has the following attributes: 'participants' of type int.
+The class 'NamedElement' has no attributes.
+The class 'behaviour::UnicastCommunication' has no attributes.
+The class 'behaviour::BehaviouralPropertyKeyContainer' has no attributes.
+The class 'behaviour::DynamicRobot' has the following attributes: 'status' of type str.
+The class 'behaviour::Action' has no attributes.
+The class 'behaviour::Message' has the following attributes: 'timestamp' of type date; 'needResponse' of type bool.
+The class 'behaviour::Task' has no attributes.
+The class 'behaviour::Capability' has no attributes.
+The class 'behaviour::TaskDescriptor' has no attributes.
+The enumeration 'TaskExecutionStatus' has the following literals: 'Finished', 'InProgress', 'Suspended', 'Waiting', 'Ready'.
+The enumeration 'RobotStatus' has the following literals: 'Waiting', 'Ready', 'Executing', 'TurnedOff'.
+'behaviour::Message' is a specialization of 'NamedElement'.
+'behaviour::MulticastCommunication' is a specialization of 'CommunicationAction'.
+'behaviour::UnicastCommunication' is a specialization of 'CommunicationAction'.
+'behaviour::Action' is a specialization of 'NamedElement'.
+'behaviour::CommunicationAction' is a specialization of 'Action'.
+'behaviour::TaskRequirement' is a specialization of 'NamedElement'.
+'behaviour::TaskExecution' is a specialization of 'NamedElement'.
+'behaviour::DynamicRobot' is a specialization of 'NamedElement'.
+'behaviour::MessageRepository' is a specialization of 'NamedElement'.
+'behaviour::BroadcastCommunication' is a specialization of 'CommunicationAction'.
+'behaviour::BehaviouralPropertyKeyContainer' is a specialization of 'PropertyKeyContainer'.
+'behaviour::Message' (role 'behaviour_Message28', cardinality 0..*) is associated with 'behaviour::MessageRepository' (role 'behaviour_MessageRepository', cardinality 0..*).
+'behaviour::Robot' (role 'behaviour_Robot', cardinality 0..*) is associated with 'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot60', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot23', cardinality 0..*) is associated with 'behaviour::MulticastCommunication' (role 'behaviour_MulticastCommunication', cardinality 0..*).
+'behaviour::AreaObject' (role 'behaviour_AreaObject', cardinality 0..*) is associated with 'behaviour::Message' (role 'behaviour_Message12', cardinality 0..*).
+'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement84', cardinality 0..*) is associated with 'behaviour::CapabilityProperties' (role 'behaviour_CapabilityProperties', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message17', cardinality 0..*) is associated with 'behaviour::Message' (role 'behaviour_Message15', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message19', cardinality 0..*) is associated with 'behaviour::CommunicationAction' (role 'behaviour_CommunicationAction', cardinality 0..*).
+'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement76', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution77', cardinality 0..*).
+'behaviour::TaskExecution' (role 'taskExecution', cardinality 0..*) is associated with 'behaviour::TaskRequirement' (role 'TaskRequirement', cardinality 0..*).
+'behaviour::Property' (role 'behaviour_Property56', cardinality 0..*) is associated with 'behaviour::RobotCollaboration' (role 'behaviour_RobotCollaboration55', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message10', cardinality 0..*) is associated with 'behaviour::Property' (role 'behaviour_Property', cardinality 0..*).
+'behaviour::BehaviourContainer' (role 'behaviour_BehaviourContainer2', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot69', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action70', cardinality 0..*).
+'behaviour::BehaviourContainer' (role 'behaviour_BehaviourContainer', cardinality 0..*) is associated with 'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message14', cardinality 0..*) is associated with 'behaviour::MeasureValue' (role 'behaviour_MeasureValue', cardinality 0..*).
+'behaviour::MessageRepository' (role 'MessageRepository', cardinality 0..*) is associated with 'behaviour::DynamicRobot' (role 'robot', cardinality 0..*).
+'behaviour::Property' (role 'behaviour_Property33', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action', cardinality 0..*).
+'behaviour::RobotCollaboration' (role 'behaviour_RobotCollaboration52', cardinality 0..*) is associated with 'behaviour::MeasureValue' (role 'behaviour_MeasureValue53', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot41', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution40', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot65', cardinality 0..*) is associated with 'behaviour::RobotCollaboration' (role 'behaviour_RobotCollaboration66', cardinality 0..*).
+'behaviour::TaskExecution' (role 'TaskExecution', cardinality 0..*) is associated with 'behaviour::TaskRequirement' (role 'requirement', cardinality 0..*).
+'behaviour::BehaviourContainer' (role 'behaviour_BehaviourContainer4', cardinality 0..*) is associated with 'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution8', cardinality 0..*).
+'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement79', cardinality 0..*) is associated with 'behaviour::Property' (role 'behaviour_Property80', cardinality 0..*).
+'behaviour::RobotCollaboration' (role 'behaviour_RobotCollaboration', cardinality 0..*) is associated with 'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot50', cardinality 0..*).
+'behaviour::BehaviouralPropertyKeyContainer' (role 'behaviour_BehaviouralPropertyKeyContainer', cardinality 0..*) is associated with 'behaviour::BehaviourContainer' (role 'behaviour_BehaviourContainer6', cardinality 0..*).
+'behaviour::AreaObject' (role 'behaviour_AreaObject58', cardinality 0..*) is associated with 'behaviour::DetectedObject' (role 'behaviour_DetectedObject', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot72', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution73', cardinality 0..*).
+'behaviour::TaskDescriptor' (role 'behaviour_TaskDescriptor', cardinality 0..*) is associated with 'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement86', cardinality 0..*).
+'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement88', cardinality 0..*) is associated with 'behaviour::Task' (role 'behaviour_Task89', cardinality 0..*).
+'behaviour::Message' (role 'behaviour_Message31', cardinality 0..*) is associated with 'behaviour::MessageRepository' (role 'behaviour_MessageRepository30', cardinality 0..*).
+'behaviour::TaskRequirement' (role 'behaviour_TaskRequirement82', cardinality 0..*) is associated with 'behaviour::Capability' (role 'behaviour_Capability', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot25', cardinality 0..*) is associated with 'behaviour::BroadcastCommunication' (role 'behaviour_BroadcastCommunication', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot62', cardinality 0..*) is associated with 'behaviour::DetectedObject' (role 'behaviour_DetectedObject63', cardinality 0..*).
+'behaviour::DynamicRobot' (role 'behaviour_DynamicRobot21', cardinality 0..*) is associated with 'behaviour::UnicastCommunication' (role 'behaviour_UnicastCommunication', cardinality 0..*).
+'behaviour::MessageRepository' (role 'messageRepository', cardinality 0..*) is associated with 'behaviour::DynamicRobot' (role 'DynamicRobot', cardinality 0..*).
+'behaviour::TaskExecution' (role 'behaviour_TaskExecution43', cardinality 0..*) is associated with 'behaviour::MeasureValue' (role 'behaviour_MeasureValue44', cardinality 0..*).
+'behaviour::TaskExecution' (role 'behaviour_TaskExecution36', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action35', cardinality 0..*).
+'behaviour::Task' (role 'behaviour_Task47', cardinality 0..*) is associated with 'behaviour::TaskExecution' (role 'behaviour_TaskExecution46', cardinality 0..*).
+'behaviour::Task' (role 'behaviour_Task', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action38', cardinality 0..*).

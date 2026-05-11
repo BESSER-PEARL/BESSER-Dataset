@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/djordjije1996/domij-seminarski/workspace/org.eclipse.dsl.basicfamily/model/basicfamily.ecore

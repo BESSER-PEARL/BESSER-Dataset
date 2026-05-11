@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'mdc::State' has the following attributes: 'name' of type str; 'input' of type str; 'messages' of type str.
+The class 'mdc::TransactionalStateImpl' has no attributes.
+The class 'mdc::Chatbot' has the following attributes: 'token' of type str; 'name' of type str.
+The class 'mdc::TransactionalState' has no attributes.
+The class 'mdc::StationaryState' has no attributes.
+The class 'StationaryState' has no attributes.
+The class 'State' has no attributes.
+The class 'TransactionalState' has no attributes.
+The class 'mdc::StationaryStateImpl' has no attributes.
+'mdc::TransactionalState' is a specialization of 'State'.
+'mdc::StationaryState' is a specialization of 'State'.
+'mdc::StationaryStateImpl' is a specialization of 'StationaryState'.
+'mdc::TransactionalStateImpl' is a specialization of 'TransactionalState'.
+'mdc::StationaryState' (role 'mdc_StationaryState7', cardinality 0..*) is associated with 'mdc::TransactionalState' (role 'mdc_TransactionalState', cardinality 0..*).
+'mdc::StationaryState' (role 'mdc_StationaryState4', cardinality 0..*) is associated with 'mdc::State' (role 'mdc_State5', cardinality 0..*).
+'mdc::Chatbot' (role 'mdc_Chatbot2', cardinality 0..*) is associated with 'mdc::StationaryState' (role 'mdc_StationaryState', cardinality 0..*).
+'mdc::State' (role 'mdc_State', cardinality 0..*) is associated with 'mdc::Chatbot' (role 'mdc_Chatbot', cardinality 0..*).

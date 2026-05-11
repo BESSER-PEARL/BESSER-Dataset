@@ -1,0 +1,54 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class aggregator_MetadataRepositoryReference extends StatusProvider, EnabledStatusProvider, InfosProvider {
+
+    private String nature;
+    private String location;
+
+
+
+
+
+    private aggregator_ValidationSet aggregator_validationset;
+
+
+    public aggregator_MetadataRepositoryReference(
+        String nature,        String location    ) {
+        super(
+        );
+        this.nature = nature;
+        this.location = location;
+    }
+
+
+    public String getNature() {
+        return nature;
+    }
+
+    public void setNature(String nature) {
+        this.nature = nature;
+    }
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public aggregator_ValidationSet getAggregator_validationset() {
+        return aggregator_validationset;
+    }
+
+    public void setAggregator_validationset(aggregator_ValidationSet aggregator_validationset) {
+        this.aggregator_validationset = aggregator_validationset;
+    }
+
+}

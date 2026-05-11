@@ -1,0 +1,57 @@
+The model has 19 class(es).
+The class 'pokerleague::DescribedEntity' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'pokerleague::InvitationEvent' has the following attributes: 'sent' of type bool; 'eventTime' of type str; 'eventType' of type str.
+The class 'pokerleague::Invitation' has the following attributes: 'ordinal' of type int; 'uuid' of type str; 'reply' of type str.
+The class 'pokerleague::Serializable' has no attributes.
+The class 'pokerleague::PrizeMoneyFormula' has the following attributes: 'relativePrizeMoney' of type int; 'rank' of type int.
+The class 'pokerleague::Player' has the following attributes: 'active' of type bool; 'firstName' of type str; 'nick' of type str; 'lastName' of type str; 'emailAddress' of type str.
+The class 'DescribedEntity' has no attributes.
+The class 'pokerleague::PlayerInGame' has the following attributes: 'rank' of type int.
+The class 'pokerleague::Settings' has the following attributes: 'adminPassword' of type str; 'defaultTimeZone' of type str; 'id' of type int.
+The class 'pokerleague::DataVersion' has the following attributes: 'id' of type int; 'currentVersion' of type str.
+The class 'pokerleague::Competition' has the following attributes: 'defaultBuyIn' of type int; 'defaultTournamentAnnouncementLead' of type int; 'minimalAttendance' of type int; 'startDate' of type date; 'endDate' of type date; 'defaultMaxPlayers' of type int; 'defaultMinPlayers' of type int.
+The class 'pokerleague::IdentifiableEntity' has the following attributes: 'proxy' of type bool; 'obsolete' of type bool; 'id' of type int.
+The class 'pokerleague::PrizeMoneyRule' has the following attributes: 'numberOfPlayers' of type int.
+The class 'pokerleague::PrizeMoneyRuleSet' has no attributes.
+The class 'pokerleague::Tournament' has the following attributes: 'minPlayers' of type int; 'tournamentStart' of type str; 'tournamentAnnouncementLead' of type int; 'maxPlayers' of type int; 'tournamentEnd' of type str; 'defaultBuyIn' of type int.
+The class 'pokerleague::Game' has the following attributes: 'buyIn' of type int; 'ordinal' of type int.
+The class 'pokerleague::DataStructureVersion' has the following attributes: 'currentVersion' of type str; 'id' of type int.
+The class 'Serializable' has no attributes.
+The class 'IdentifiableEntity' has no attributes.
+The enumeration 'InvitationEventType' has the following literals: 'CHANGED', 'GENERATED'.
+The enumeration 'InvitationReply' has the following literals: 'REJECTED', 'NO_REPLY', 'ACCEPTED'.
+'pokerleague::InvitationEvent' is a specialization of 'IdentifiableEntity'.
+'pokerleague::PrizeMoneyRuleSet' is a specialization of 'DescribedEntity'.
+'pokerleague::PrizeMoneyFormula' is a specialization of 'IdentifiableEntity'.
+'pokerleague::Settings' is a specialization of 'Serializable'.
+'pokerleague::Player' is a specialization of 'IdentifiableEntity'.
+'pokerleague::DataStructureVersion' is a specialization of 'Serializable'.
+'pokerleague::PrizeMoneyRule' is a specialization of 'IdentifiableEntity'.
+'pokerleague::DataVersion' is a specialization of 'Serializable'.
+'pokerleague::Competition' is a specialization of 'DescribedEntity'.
+'pokerleague::Tournament' is a specialization of 'DescribedEntity'.
+'pokerleague::Game' is a specialization of 'IdentifiableEntity'.
+'pokerleague::DescribedEntity' is a specialization of 'IdentifiableEntity'.
+'pokerleague::Invitation' is a specialization of 'IdentifiableEntity'.
+'pokerleague::PlayerInGame' is a specialization of 'IdentifiableEntity'.
+'pokerleague::IdentifiableEntity' is a specialization of 'Serializable'.
+'pokerleague::PrizeMoneyRule' (role 'PrizeMoneyRule', cardinality 0..*) is associated with 'pokerleague::PrizeMoneyRuleSet' (role 'prizeMoneyRuleSet', cardinality 0..*).
+'pokerleague::Tournament' (role 'Tournament16', cardinality 0..*) is associated with 'pokerleague::Invitation' (role 'invitations', cardinality 0..*).
+'pokerleague::Player' (role 'pokerleague_Player18', cardinality 0..*) is associated with 'pokerleague::Invitation' (role 'pokerleague_Invitation', cardinality 0..*).
+'pokerleague::Tournament' (role 'tournament14', cardinality 0..*) is associated with 'pokerleague::Game' (role 'Game', cardinality 0..*).
+'pokerleague::Competition' (role 'Competition', cardinality 0..*) is associated with 'pokerleague::Tournament' (role 'tournaments', cardinality 0..*).
+'pokerleague::PrizeMoneyRuleSet' (role 'pokerleague_PrizeMoneyRuleSet', cardinality 0..*) is associated with 'pokerleague::Competition' (role 'pokerleague_Competition', cardinality 0..*).
+'pokerleague::Player' (role 'pokerleague_Player28', cardinality 0..*) is associated with 'pokerleague::PlayerInGame' (role 'pokerleague_PlayerInGame', cardinality 0..*).
+'pokerleague::Player' (role 'pokerleague_Player', cardinality 0..*) is associated with 'pokerleague::Competition' (role 'pokerleague_Competition8', cardinality 0..*).
+'pokerleague::PrizeMoneyRule' (role 'PrizeMoneyRule4', cardinality 0..*) is associated with 'pokerleague::PrizeMoneyFormula' (role 'prizeMoneyFormulas', cardinality 0..*).
+'pokerleague::Game' (role 'game', cardinality 0..*) is associated with 'pokerleague::PlayerInGame' (role 'PlayerInGame', cardinality 0..*).
+'pokerleague::PrizeMoneyRule' (role 'prizeMoneyRule', cardinality 0..*) is associated with 'pokerleague::PrizeMoneyFormula' (role 'PrizeMoneyFormula', cardinality 0..*).
+'pokerleague::Tournament' (role 'Tournament23', cardinality 0..*) is associated with 'pokerleague::Game' (role 'games', cardinality 0..*).
+'pokerleague::PrizeMoneyRuleSet' (role 'pokerleague_PrizeMoneyRuleSet10', cardinality 0..*) is associated with 'pokerleague::Tournament' (role 'pokerleague_Tournament', cardinality 0..*).
+'pokerleague::PrizeMoneyRule' (role 'prizeMoneyRules', cardinality 0..*) is associated with 'pokerleague::PrizeMoneyRuleSet' (role 'PrizeMoneyRuleSet', cardinality 0..*).
+'pokerleague::InvitationEvent' (role 'InvitationEvent', cardinality 0..*) is associated with 'pokerleague::Invitation' (role 'invitation', cardinality 0..*).
+'pokerleague::Competition' (role 'competition', cardinality 0..*) is associated with 'pokerleague::Tournament' (role 'Tournament', cardinality 0..*).
+'pokerleague::PrizeMoneyRuleSet' (role 'pokerleague_PrizeMoneyRuleSet25', cardinality 0..*) is associated with 'pokerleague::Game' (role 'pokerleague_Game', cardinality 0..*).
+'pokerleague::PlayerInGame' (role 'playersInGame', cardinality 0..*) is associated with 'pokerleague::Game' (role 'Game30', cardinality 0..*).
+'pokerleague::Invitation' (role 'Invitation21', cardinality 0..*) is associated with 'pokerleague::InvitationEvent' (role 'events', cardinality 0..*).
+'pokerleague::Invitation' (role 'Invitation', cardinality 0..*) is associated with 'pokerleague::Tournament' (role 'tournament', cardinality 0..*).

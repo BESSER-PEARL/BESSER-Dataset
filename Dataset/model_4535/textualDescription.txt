@@ -1,0 +1,40 @@
+The model has 16 class(es).
+The class 'mission::LineTask' has no attributes.
+The class 'mission::TaskDependency' has no attributes.
+The class 'mission::NamedElement' has the following attributes: 'name' of type str.
+The class 'mission::Mission' has the following attributes: 'crs' of type str.
+The class 'mission::Join' has no attributes.
+The class 'mission::Coordinate' has the following attributes: 'latitude' of type float; 'longitude' of type float; 'altitude' of type float.
+The class 'mission::Swarm' has no attributes.
+The class 'mission::Drone' has the following attributes: 'returnHome' of type bool; 'type' of type str.
+The class 'mission::PointTask' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'mission::PolygonTask' has no attributes.
+The class 'mission::ControlTask' has no attributes.
+The class 'mission::Fork' has no attributes.
+The class 'Task' has no attributes.
+The class 'mission::Task' has no attributes.
+The class 'ControlTask' has no attributes.
+'mission::Mission' is a specialization of 'NamedElement'.
+'mission::Join' is a specialization of 'ControlTask'.
+'mission::Fork' is a specialization of 'ControlTask'.
+'mission::PointTask' is a specialization of 'Task'.
+'mission::TaskDependency' is a specialization of 'NamedElement'.
+'mission::PolygonTask' is a specialization of 'Task'.
+'mission::Drone' is a specialization of 'NamedElement'.
+'mission::LineTask' is a specialization of 'Task'.
+'mission::Task' is a specialization of 'NamedElement'.
+'mission::ControlTask' is a specialization of 'Task'.
+'mission::Swarm' (role 'mission_Swarm6', cardinality 0..*) is associated with 'mission::Drone' (role 'mission_Drone', cardinality 0..*).
+'mission::Mission' (role 'mission_Mission4', cardinality 0..*) is associated with 'mission::Swarm' (role 'mission_Swarm', cardinality 0..*).
+'mission::Task' (role 'mission_Task13', cardinality 0..*) is associated with 'mission::TaskDependency' (role 'mission_TaskDependency12', cardinality 0..*).
+'mission::Coordinate' (role 'mission_Coordinate25', cardinality 0..*) is associated with 'mission::LineTask' (role 'mission_LineTask', cardinality 0..*).
+'mission::Drone' (role 'mission_Drone8', cardinality 0..*) is associated with 'mission::Coordinate' (role 'mission_Coordinate', cardinality 0..*).
+'mission::TaskDependency' (role 'mission_TaskDependency', cardinality 0..*) is associated with 'mission::Mission' (role 'mission_Mission2', cardinality 0..*).
+'mission::PolygonTask' (role 'mission_PolygonTask', cardinality 0..*) is associated with 'mission::Coordinate' (role 'mission_Coordinate18', cardinality 0..*).
+'mission::PointTask' (role 'mission_PointTask', cardinality 0..*) is associated with 'mission::Coordinate' (role 'mission_Coordinate23', cardinality 0..*).
+'mission::Task' (role 'mission_Task16', cardinality 0..*) is associated with 'mission::TaskDependency' (role 'mission_TaskDependency15', cardinality 0..*).
+'mission::Coordinate' (role 'mission_Coordinate21', cardinality 0..*) is associated with 'mission::PolygonTask' (role 'mission_PolygonTask20', cardinality 0..*).
+'mission::Mission' (role 'mission_Mission', cardinality 0..*) is associated with 'mission::Task' (role 'mission_Task', cardinality 0..*).
+'mission::ControlTask' (role 'mission_ControlTask', cardinality 0..*) is associated with 'mission::Coordinate' (role 'mission_Coordinate10', cardinality 0..*).
+'mission::Coordinate' (role 'mission_Coordinate28', cardinality 0..*) is associated with 'mission::LineTask' (role 'mission_LineTask27', cardinality 0..*).

@@ -1,0 +1,149 @@
+The model has 67 class(es).
+The class 'DVE::model::Synchronous' has no attributes.
+The class 'Reference' has no attributes.
+The class 'SystemProperties' has no attributes.
+The class 'DVE::model::Type' has no attributes.
+The class 'DVE::model::NamedDeclaration' has the following attributes: 'name' of type str.
+The class 'DVE::model::Element' has no attributes.
+The class 'DVE::model::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'DVE::model::SystemProperties' has no attributes.
+The class 'DVE::model::Assignment' has no attributes.
+The class 'DVE::model::CompositeDeclaration' has no attributes.
+The class 'DVE::model::ProcessStateReference' has no attributes.
+The class 'ChannelDeclaration' has no attributes.
+The class 'System' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Type' has no attributes.
+The class 'NamedDeclaration' has no attributes.
+The class 'DVE::model::Declaration' has no attributes.
+The class 'SystemType' has no attributes.
+The class 'DVE::model::SystemType' has no attributes.
+The class 'DVE::model::Asynchronous' has no attributes.
+The class 'DVE::model::ProcessReference' has no attributes.
+The class 'DVE::model::IntegerType' has no attributes.
+The class 'DVE::model::Expression' has no attributes.
+The class 'DVE::model::System' has no attributes.
+The class 'Synchronization' has no attributes.
+The class 'DVE::model::ProcessVariableReference' has no attributes.
+The class 'Element' has no attributes.
+The class 'DVE::model::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'DVE::model::State' has no attributes.
+The class 'model::StateReference' has no attributes.
+The class 'DVE::model::PrefixedReference' has no attributes.
+The class 'DVE::model::ChannelDeclaration' has no attributes.
+The class 'DVE::model::StateReference' has no attributes.
+The class 'DVE::model::ByteType' has no attributes.
+The class 'DVE::model::TypedChannelDeclaration' has no attributes.
+The class 'DVE::model::ConstantDeclaration' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'Transition' has no attributes.
+The class 'BooleanLiteral' has no attributes.
+The class 'DVE::model::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'DVE::model::Synchronization' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'DVE::model::InputSynchronization' has no attributes.
+The class 'DVE::model::BooleanLiteral' has no attributes.
+The class 'State' has no attributes.
+The class 'StateReference' has no attributes.
+The class 'DVE::model::IndexedExpression' has no attributes.
+The class 'ProcessReference' has no attributes.
+The class 'DVE::model::TrueLiteral' has no attributes.
+The class 'model::VariableReference' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'DVE::model::Transition' has no attributes.
+The class 'DVE::model::ArrayType' has no attributes.
+The class 'DVE::model::ArrayLiteral' has no attributes.
+The class 'CompositeDeclaration' has no attributes.
+The class 'model::PrefixedReference' has no attributes.
+The class 'Literal' has no attributes.
+The class 'ChannelReference' has no attributes.
+The class 'DVE::model::Literal' has no attributes.
+The class 'DVE::model::Process' has no attributes.
+The class 'DVE::model::OutputSynchronization' has no attributes.
+The class 'Process' has no attributes.
+The class 'DVE::model::Reference' has the following attributes: 'refName' of type str.
+The class 'DVE::model::VariableDeclaration' has no attributes.
+The class 'DVE::model::ChannelReference' has no attributes.
+The class 'DVE::model::FalseLiteral' has no attributes.
+The class 'DVE::model::VariableReference' has no attributes.
+The enumeration 'UnaryOperator' has the following literals: 'NOT', 'BNOT', 'MINUS'.
+The enumeration 'BinaryOperator' has the following literals: 'MINUS', 'SHR', 'OR', 'BOR', 'BXOR', 'AND', 'NEQ', 'GT', 'SHL', 'IMPLY', 'BAND', 'MOD', 'EQ', 'PLUS', 'GEQ', 'DIV', 'LEQ', 'LT', 'MULT'.
+'DVE::model::TypedChannelDeclaration' is a specialization of 'ChannelDeclaration'.
+'DVE::model::OutputSynchronization' is a specialization of 'Synchronization'.
+'DVE::model::Type' is a specialization of 'Element'.
+'DVE::model::Synchronous' is a specialization of 'SystemType'.
+'DVE::model::Declaration' is a specialization of 'Element'.
+'DVE::model::UnaryExpression' is a specialization of 'Expression'.
+'DVE::model::Transition' is a specialization of 'Declaration'.
+'DVE::model::Literal' is a specialization of 'Expression'.
+'DVE::model::ChannelDeclaration' is a specialization of 'NamedDeclaration'.
+'DVE::model::ChannelReference' is a specialization of 'Reference'.
+'DVE::model::ProcessVariableReference' is a specialization of 'model::PrefixedReference'.
+'DVE::model::StateReference' is a specialization of 'Reference'.
+'DVE::model::ByteType' is a specialization of 'Type'.
+'DVE::model::ProcessVariableReference' is a specialization of 'model::VariableReference'.
+'DVE::model::PrefixedReference' is a specialization of 'Expression'.
+'DVE::model::SystemType' is a specialization of 'Element'.
+'DVE::model::FalseLiteral' is a specialization of 'BooleanLiteral'.
+'DVE::model::Reference' is a specialization of 'Expression'.
+'DVE::model::ConstantDeclaration' is a specialization of 'VariableDeclaration'.
+'DVE::model::Expression' is a specialization of 'Element'.
+'DVE::model::ArrayLiteral' is a specialization of 'Literal'.
+'DVE::model::VariableReference' is a specialization of 'Reference'.
+'DVE::model::State' is a specialization of 'NamedDeclaration'.
+'DVE::model::Asynchronous' is a specialization of 'SystemType'.
+'DVE::model::IndexedExpression' is a specialization of 'Expression'.
+'DVE::model::VariableDeclaration' is a specialization of 'NamedDeclaration'.
+'DVE::model::NamedDeclaration' is a specialization of 'Declaration'.
+'DVE::model::CompositeDeclaration' is a specialization of 'NamedDeclaration'.
+'DVE::model::TrueLiteral' is a specialization of 'BooleanLiteral'.
+'DVE::model::System' is a specialization of 'CompositeDeclaration'.
+'DVE::model::ProcessStateReference' is a specialization of 'model::StateReference'.
+'DVE::model::ArrayType' is a specialization of 'Type'.
+'DVE::model::InputSynchronization' is a specialization of 'Synchronization'.
+'DVE::model::ProcessStateReference' is a specialization of 'model::PrefixedReference'.
+'DVE::model::Assignment' is a specialization of 'Element'.
+'DVE::model::Process' is a specialization of 'CompositeDeclaration'.
+'DVE::model::BinaryExpression' is a specialization of 'Expression'.
+'DVE::model::BooleanLiteral' is a specialization of 'Literal'.
+'DVE::model::Synchronization' is a specialization of 'Element'.
+'DVE::model::ProcessReference' is a specialization of 'Reference'.
+'DVE::model::NumberLiteral' is a specialization of 'Literal'.
+'DVE::model::SystemProperties' is a specialization of 'Element'.
+'DVE::model::IntegerType' is a specialization of 'Type'.
+'Type' (role 'Type12', cardinality 0..*) is associated with 'DVE::model::TypedChannelDeclaration' (role 'DVE_model_TypedChannelDeclaration', cardinality 0..*).
+'DVE::model::IndexedExpression' (role 'DVE_model_IndexedExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression65', cardinality 0..*).
+'DVE::model::Transition' (role 'DVE_model_Transition39', cardinality 0..*) is associated with 'Assignment' (role 'Assignment', cardinality 0..*).
+'SystemProperties' (role 'SystemProperties', cardinality 0..*) is associated with 'DVE::model::System' (role 'DVE_model_System', cardinality 0..*).
+'DVE::model::VariableDeclaration' (role 'DVE_model_VariableDeclaration', cardinality 0..*) is associated with 'Type' (role 'Type7', cardinality 0..*).
+'DVE::model::VariableDeclaration' (role 'DVE_model_VariableDeclaration9', cardinality 0..*) is associated with 'Expression' (role 'Expression10', cardinality 0..*).
+'Process' (role 'Process59', cardinality 0..*) is associated with 'DVE::model::ProcessReference' (role 'DVE_model_ProcessReference', cardinality 0..*).
+'ProcessReference' (role 'ProcessReference63', cardinality 0..*) is associated with 'DVE::model::PrefixedReference' (role 'DVE_model_PrefixedReference', cardinality 0..*).
+'System' (role 'System', cardinality 0..*) is associated with 'DVE::model::Process' (role 'processes', cardinality 0..*).
+'DVE::model::ArrayLiteral' (role 'DVE_model_ArrayLiteral', cardinality 0..*) is associated with 'Expression' (role 'Expression70', cardinality 0..*).
+'DVE::model::Process' (role 'DVE_model_Process19', cardinality 0..*) is associated with 'StateReference' (role 'StateReference', cardinality 0..*).
+'Expression' (role 'Expression43', cardinality 0..*) is associated with 'DVE::model::Synchronization' (role 'DVE_model_Synchronization42', cardinality 0..*).
+'DVE::model::Process' (role 'DVE_model_Process27', cardinality 0..*) is associated with 'Transition' (role 'Transition', cardinality 0..*).
+'DVE::model::Process' (role 'DVE_model_Process24', cardinality 0..*) is associated with 'StateReference' (role 'StateReference25', cardinality 0..*).
+'VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'DVE::model::VariableReference' (role 'DVE_model_VariableReference', cardinality 0..*).
+'ChannelDeclaration' (role 'ChannelDeclaration', cardinality 0..*) is associated with 'DVE::model::ChannelReference' (role 'DVE_model_ChannelReference', cardinality 0..*).
+'DVE::model::Assignment' (role 'DVE_model_Assignment', cardinality 0..*) is associated with 'Expression' (role 'Expression48', cardinality 0..*).
+'DVE::model::Transition' (role 'DVE_model_Transition31', cardinality 0..*) is associated with 'StateReference' (role 'StateReference32', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'DVE::model::ArrayType' (role 'DVE_model_ArrayType', cardinality 0..*).
+'DVE::model::Transition' (role 'DVE_model_Transition34', cardinality 0..*) is associated with 'Expression' (role 'Expression35', cardinality 0..*).
+'DVE::model::Process' (role 'DVE_model_Process21', cardinality 0..*) is associated with 'StateReference' (role 'StateReference22', cardinality 0..*).
+'Expression' (role 'Expression55', cardinality 0..*) is associated with 'DVE::model::BinaryExpression' (role 'DVE_model_BinaryExpression', cardinality 0..*).
+'DVE::model::System' (role 'system', cardinality 0..*) is associated with 'Process' (role 'Process', cardinality 0..*).
+'DVE::model::CompositeDeclaration' (role 'DVE_model_CompositeDeclaration', cardinality 0..*) is associated with 'NamedDeclaration' (role 'NamedDeclaration', cardinality 0..*).
+'DVE::model::Transition' (role 'DVE_model_Transition37', cardinality 0..*) is associated with 'Synchronization' (role 'Synchronization', cardinality 0..*).
+'SystemType' (role 'SystemType', cardinality 0..*) is associated with 'DVE::model::SystemProperties' (role 'DVE_model_SystemProperties', cardinality 0..*).
+'DVE::model::SystemProperties' (role 'DVE_model_SystemProperties46', cardinality 0..*) is associated with 'ProcessReference' (role 'ProcessReference', cardinality 0..*).
+'Expression' (role 'Expression15', cardinality 0..*) is associated with 'DVE::model::TypedChannelDeclaration' (role 'DVE_model_TypedChannelDeclaration14', cardinality 0..*).
+'ChannelReference' (role 'ChannelReference', cardinality 0..*) is associated with 'DVE::model::Synchronization' (role 'DVE_model_Synchronization', cardinality 0..*).
+'DVE::model::StateReference' (role 'DVE_model_StateReference', cardinality 0..*) is associated with 'State' (role 'State61', cardinality 0..*).
+'Expression' (role 'Expression68', cardinality 0..*) is associated with 'DVE::model::IndexedExpression' (role 'DVE_model_IndexedExpression67', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'DVE::model::Process' (role 'DVE_model_Process', cardinality 0..*).
+'StateReference' (role 'StateReference29', cardinality 0..*) is associated with 'DVE::model::Transition' (role 'DVE_model_Transition', cardinality 0..*).
+'DVE::model::ArrayType' (role 'DVE_model_ArrayType5', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'DVE::model::Assignment' (role 'DVE_model_Assignment50', cardinality 0..*) is associated with 'Expression' (role 'Expression51', cardinality 0..*).
+'Expression' (role 'Expression53', cardinality 0..*) is associated with 'DVE::model::UnaryExpression' (role 'DVE_model_UnaryExpression', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'emfta::Gate' has the following attributes: 'nbOccurrences' of type int; 'description' of type str; 'type' of type str.
+The class 'emfta::FTAModel' has the following attributes: 'name' of type str; 'comments' of type str; 'description' of type str.
+The class 'emfta::Event' has the following attributes: 'type' of type str; 'description' of type str; 'probability' of type float; 'relatedObject' of type str; 'name' of type str; 'referenceCount' of type int.
+The enumeration 'EventType' has the following literals: 'Undevelopped', 'Intermediate', 'Conditioning', 'External', 'Basic'.
+The enumeration 'GateType' has the following literals: 'PRIORITY_AND', 'PRIORITY_OR', 'INTERMEDIATE', 'XOR', 'AND', 'ORMORE', 'INHIBIT', 'OR', 'ORLESS'.
+'emfta::Gate' (role 'emfta_Gate', cardinality 0..*) is associated with 'emfta::Event' (role 'emfta_Event', cardinality 0..*).
+'emfta::FTAModel' (role 'emfta_FTAModel', cardinality 0..*) is associated with 'emfta::Event' (role 'emfta_Event5', cardinality 0..*).
+'emfta::Event' (role 'emfta_Event8', cardinality 0..*) is associated with 'emfta::FTAModel' (role 'emfta_FTAModel7', cardinality 0..*).
+'emfta::Gate' (role 'emfta_Gate2', cardinality 0..*) is associated with 'emfta::Event' (role 'emfta_Event3', cardinality 0..*).

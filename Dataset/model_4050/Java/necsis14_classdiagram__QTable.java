@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class necsis14_classdiagram__QTable extends NamedElement {
+
+
+
+
+
+
+    private necsis14_classdiagram_ClassDiagram necsis14_classdiagram_classdiagram;
+
+
+    public necsis14_classdiagram__QTable(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public necsis14_classdiagram_ClassDiagram getNecsis14_classdiagram_classdiagram() {
+        return necsis14_classdiagram_classdiagram;
+    }
+
+    public void setNecsis14_classdiagram_classdiagram(necsis14_classdiagram_ClassDiagram necsis14_classdiagram_classdiagram) {
+        this.necsis14_classdiagram_classdiagram = necsis14_classdiagram_classdiagram;
+    }
+
+}

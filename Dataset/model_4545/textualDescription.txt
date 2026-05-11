@@ -1,0 +1,95 @@
+The model has 38 class(es).
+The class 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Complex' has no attributes.
+The class 'Prefix' has no attributes.
+The class 'Real' has no attributes.
+The class 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Number' has the following attributes: 'name' of type bool.
+The class 'SystemOfQuantities' has no attributes.
+The class 'QuantityKindFactor' has no attributes.
+The class 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::DerivedUnit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::QuantityKind' has the following attributes: 'isQuantityOfDimensionOne' of type bool; 'isNumberOfEntities' of type bool.
+The class 'UnitFactor' has no attributes.
+The class 'Number' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' has the following attributes: 'description' of type str; 'definitionURI' of type str; 'symbol' of type str; 'name' of type str.
+The class 'Integer' has no attributes.
+The class 'QuantityKind' has no attributes.
+The class 'SysML::ValueTypes::QUDV::UnitAndQuantityKind::QuantityKind' has the following attributes: 'description' of type str; 'definitionURI' of type str; 'name' of type str; 'symbol' of type str.
+The class 'SysML::ValueTypes::QUDV::QUDV::UnitFactor' has the following attributes: 'name' of type str.
+The class 'SysML::ValueTypes::QUDV::QUDV::SimpleUnit' has no attributes.
+The class 'SystemOfUnits' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::DerivedQuantityKind' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::ConversionBasedUnit' has the following attributes: 'isInvertible' of type bool.
+The class 'Unit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::Unit' has the following attributes: 'isUnitCountOfEntities' of type bool; 'isUnitForQuantityOfDimensionOne' of type bool.
+The class 'SysML::ValueTypes::QUDV::QUDV::AffineConversionUnit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::QuantityKindFactor' has the following attributes: 'name' of type str.
+The class 'SysML::ValueTypes::QUDV::QUDV::LinearConversionUnit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::PrefixedUnit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::SimpleQuantityKind' has no attributes.
+The class 'Rational' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::Prefix' has the following attributes: 'name' of type str; 'symbol' of type str.
+The class 'SysML::ValueTypes::QUDV::QUDV::GeneralConversionUnit' has the following attributes: 'expression' of type str; 'expressionLanguageURI' of type str.
+The class 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Real' has no attributes.
+The class 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Rational' has no attributes.
+The class 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Integer' has no attributes.
+The class 'SysML::ValueTypes::QUDV::QUDV::Dimension' has the following attributes: 'name' of type str.
+The class 'SysML::ValueTypes::QUDV::QUDV::SystemOfQuantities' has the following attributes: 'name' of type bool; 'description' of type str; 'definitionURI' of type str; 'symbol' of type str.
+The class 'ConversionBasedUnit' has no attributes.
+The class 'SysML::ValueTypes::QUDV::UnitAndQuantityKind::Unit' has the following attributes: 'definitionURI' of type str; 'description' of type str; 'symbol' of type str; 'name' of type str.
+'SysML::ValueTypes::QUDV::QUDV::PrefixedUnit' is a specialization of 'ConversionBasedUnit'.
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Complex' is a specialization of 'Number'.
+'SysML::ValueTypes::QUDV::QUDV::QuantityKind' is a specialization of 'QuantityKind'.
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Integer' is a specialization of 'Number'.
+'SysML::ValueTypes::QUDV::QUDV::LinearConversionUnit' is a specialization of 'ConversionBasedUnit'.
+'SysML::ValueTypes::QUDV::QUDV::ConversionBasedUnit' is a specialization of 'Unit'.
+'SysML::ValueTypes::QUDV::QUDV::AffineConversionUnit' is a specialization of 'ConversionBasedUnit'.
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Real' is a specialization of 'Number'.
+'SysML::ValueTypes::QUDV::QUDV::DerivedQuantityKind' is a specialization of 'QuantityKind'.
+'SysML::ValueTypes::QUDV::QUDV::SimpleUnit' is a specialization of 'Unit'.
+'SysML::ValueTypes::QUDV::QUDV::DerivedUnit' is a specialization of 'Unit'.
+'SysML::ValueTypes::QUDV::QUDV::SimpleQuantityKind' is a specialization of 'QuantityKind'.
+'SysML::ValueTypes::QUDV::QUDV::Unit' is a specialization of 'Unit'.
+'SysML::ValueTypes::QUDV::QUDV::GeneralConversionUnit' is a specialization of 'ConversionBasedUnit'.
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Rational' is a specialization of 'Number'.
+'QuantityKind' (role 'QuantityKind62', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfQuantities' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities61', cardinality 0..*).
+'SysML::ValueTypes::QUDV::UnitAndQuantityKind::Unit' (role 'SysML_ValueTypes_QUDV_UnitAndQuantityKind_Unit', cardinality 0..*) is associated with 'QuantityKind' (role 'QuantityKind26', cardinality 0..*).
+'SystemOfQuantities' (role 'SystemOfQuantities59', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfQuantities' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities58', cardinality 0..*).
+'SystemOfUnits' (role 'SystemOfUnits82', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits81', cardinality 0..*).
+'Dimension' (role 'Dimension', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER6', cardinality 0..*).
+'SystemOfQuantities' (role 'SystemOfQuantities76', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits75', cardinality 0..*).
+'QuantityKindFactor' (role 'QuantityKindFactor39', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::Dimension' (role 'SysML_ValueTypes_QUDV_QUDV_Dimension', cardinality 0..*).
+'Rational' (role 'Rational89', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::UnitFactor' (role 'SysML_ValueTypes_QUDV_QUDV_UnitFactor', cardinality 0..*).
+'Unit' (role 'Unit', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER4', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::QuantityKind' (role 'SysML_ValueTypes_QUDV_QUDV_QuantityKind48', cardinality 0..*) is associated with 'QuantityKind' (role 'QuantityKind49', cardinality 0..*).
+'QuantityKind' (role 'QuantityKind54', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::QuantityKindFactor' (role 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor53', cardinality 0..*).
+'Unit' (role 'Unit67', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits', cardinality 0..*).
+'UnitFactor' (role 'UnitFactor37', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::DerivedUnit' (role 'SysML_ValueTypes_QUDV_QUDV_DerivedUnit', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::Prefix' (role 'SysML_ValueTypes_QUDV_QUDV_Prefix', cardinality 0..*) is associated with 'Rational' (role 'Rational', cardinality 0..*).
+'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER8', cardinality 0..*) is associated with 'Prefix' (role 'Prefix', cardinality 0..*).
+'Unit' (role 'Unit33', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::ConversionBasedUnit' (role 'SysML_ValueTypes_QUDV_QUDV_ConversionBasedUnit', cardinality 0..*).
+'Number' (role 'Number', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER', cardinality 0..*).
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Rational' (role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational23', cardinality 0..*) is associated with 'Integer' (role 'Integer24', cardinality 0..*).
+'UnitFactor' (role 'UnitFactor', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER16', cardinality 0..*).
+'Real' (role 'Real20', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Complex' (role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex19', cardinality 0..*).
+'Unit' (role 'Unit84', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::Unit' (role 'SysML_ValueTypes_QUDV_QUDV_Unit', cardinality 0..*).
+'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER14', cardinality 0..*) is associated with 'SystemOfUnits' (role 'SystemOfUnits', cardinality 0..*).
+'SystemOfQuantities' (role 'SystemOfQuantities65', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfQuantities' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities64', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits72', cardinality 0..*) is associated with 'Prefix' (role 'Prefix73', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::AffineConversionUnit' (role 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit30', cardinality 0..*) is associated with 'Number' (role 'Number31', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::UnitFactor' (role 'SysML_ValueTypes_QUDV_QUDV_UnitFactor91', cardinality 0..*) is associated with 'Unit' (role 'Unit92', cardinality 0..*).
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Complex' (role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Complex', cardinality 0..*) is associated with 'Real' (role 'Real', cardinality 0..*).
+'SystemOfQuantities' (role 'SystemOfQuantities', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER12', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::SystemOfQuantities' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfQuantities', cardinality 0..*) is associated with 'QuantityKind' (role 'QuantityKind56', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::DerivedQuantityKind' (role 'SysML_ValueTypes_QUDV_QUDV_DerivedQuantityKind', cardinality 0..*) is associated with 'QuantityKindFactor' (role 'QuantityKindFactor35', cardinality 0..*).
+'SysML::ValueTypes::QUDV::PrimitiveValueTypes::Rational' (role 'SysML_ValueTypes_QUDV_PrimitiveValueTypes_Rational', cardinality 0..*) is associated with 'Integer' (role 'Integer', cardinality 0..*).
+'Rational' (role 'Rational51', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::QuantityKindFactor' (role 'SysML_ValueTypes_QUDV_QUDV_QuantityKindFactor', cardinality 0..*).
+'QuantityKind' (role 'QuantityKind', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER2', cardinality 0..*).
+'QuantityKind' (role 'QuantityKind46', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::QuantityKind' (role 'SysML_ValueTypes_QUDV_QUDV_QuantityKind', cardinality 0..*).
+'Prefix' (role 'Prefix44', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::PrefixedUnit' (role 'SysML_ValueTypes_QUDV_QUDV_PrefixedUnit', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::LinearConversionUnit' (role 'SysML_ValueTypes_QUDV_QUDV_LinearConversionUnit', cardinality 0..*) is associated with 'Number' (role 'Number41', cardinality 0..*).
+'Unit' (role 'Unit87', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::Unit' (role 'SysML_ValueTypes_QUDV_QUDV_Unit86', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::AffineConversionUnit' (role 'SysML_ValueTypes_QUDV_QUDV_AffineConversionUnit', cardinality 0..*) is associated with 'Number' (role 'Number28', cardinality 0..*).
+'SysML::ValueTypes::QUDV::ROOT::RESOURCE::SHAPE::CONTAINER' (role 'SysML_ValueTypes_QUDV_ROOT_RESOURCE_SHAPE_CONTAINER10', cardinality 0..*) is associated with 'QuantityKindFactor' (role 'QuantityKindFactor', cardinality 0..*).
+'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits78', cardinality 0..*) is associated with 'Unit' (role 'Unit79', cardinality 0..*).
+'SystemOfUnits' (role 'SystemOfUnits70', cardinality 0..*) is associated with 'SysML::ValueTypes::QUDV::QUDV::SystemOfUnits' (role 'SysML_ValueTypes_QUDV_QUDV_SystemOfUnits69', cardinality 0..*).

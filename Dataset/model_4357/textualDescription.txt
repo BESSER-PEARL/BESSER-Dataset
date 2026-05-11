@@ -1,0 +1,71 @@
+The model has 37 class(es).
+The class 'mil::GreaterEqualsComparison' has no attributes.
+The class 'Value' has no attributes.
+The class 'mil::Instruction' has no attributes.
+The class 'Comparison' has no attributes.
+The class 'mil::LoadInstruction' has no attributes.
+The class 'Jumper' has no attributes.
+The class 'mil::LowerEqualsComparison' has no attributes.
+The class 'mil::DivInstruction' has no attributes.
+The class 'mil::NegateInstruction' has no attributes.
+The class 'mil::ConstantInteger' has the following attributes: 'rawValue' of type int.
+The class 'mil::NotEqualsComparison' has no attributes.
+The class 'mil::ReturnInstruction' has no attributes.
+The class 'mil::BinaryOperation' has no attributes.
+The class 'mil::GreaterThanComparison' has no attributes.
+The class 'mil::RegisterReference' has the following attributes: 'address' of type str.
+The class 'mil::EqualsComparison' has no attributes.
+The class 'mil::UnaryOperation' has no attributes.
+The class 'BinaryOperation' has no attributes.
+The class 'mil::MultInstruction' has no attributes.
+The class 'mil::Statement' has no attributes.
+The class 'mil::CallInstruction' has no attributes.
+The class 'mil::LowerThanComparison' has no attributes.
+The class 'mil::MILModel' has no attributes.
+The class 'mil::AddInstruction' has no attributes.
+The class 'mil::StoreInstruction' has no attributes.
+The class 'mil::ConditionalJumpInstruction' has no attributes.
+The class 'mil::JumpMarker' has the following attributes: 'name' of type str.
+The class 'mil::SubInstruction' has no attributes.
+The class 'Statement' has no attributes.
+The class 'mil::Jumper' has no attributes.
+The class 'mil::Value' has no attributes.
+The class 'mil::YieldInstruction' has no attributes.
+The class 'UnaryOperation' has no attributes.
+The class 'mil::Comparison' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'mil::JumpInstruction' has no attributes.
+The class 'mil::PrintInstruction' has the following attributes: 'text' of type str.
+'mil::ConstantInteger' is a specialization of 'Value'.
+'mil::CallInstruction' is a specialization of 'Instruction'.
+'mil::BinaryOperation' is a specialization of 'Instruction'.
+'mil::UnaryOperation' is a specialization of 'Instruction'.
+'mil::StoreInstruction' is a specialization of 'UnaryOperation'.
+'mil::LowerThanComparison' is a specialization of 'Comparison'.
+'mil::EqualsComparison' is a specialization of 'Comparison'.
+'mil::DivInstruction' is a specialization of 'BinaryOperation'.
+'mil::ReturnInstruction' is a specialization of 'Instruction'.
+'mil::PrintInstruction' is a specialization of 'Instruction'.
+'mil::Comparison' is a specialization of 'BinaryOperation'.
+'mil::GreaterThanComparison' is a specialization of 'Comparison'.
+'mil::RegisterReference' is a specialization of 'Value'.
+'mil::ConditionalJumpInstruction' is a specialization of 'UnaryOperation'.
+'mil::CallInstruction' is a specialization of 'Jumper'.
+'mil::NegateInstruction' is a specialization of 'UnaryOperation'.
+'mil::JumpMarker' is a specialization of 'Statement'.
+'mil::JumpInstruction' is a specialization of 'Jumper'.
+'mil::Instruction' is a specialization of 'Statement'.
+'mil::YieldInstruction' is a specialization of 'UnaryOperation'.
+'mil::AddInstruction' is a specialization of 'BinaryOperation'.
+'mil::LowerEqualsComparison' is a specialization of 'Comparison'.
+'mil::JumpInstruction' is a specialization of 'Instruction'.
+'mil::MultInstruction' is a specialization of 'BinaryOperation'.
+'mil::SubInstruction' is a specialization of 'BinaryOperation'.
+'mil::GreaterEqualsComparison' is a specialization of 'Comparison'.
+'mil::LoadInstruction' is a specialization of 'Instruction'.
+'mil::ConditionalJumpInstruction' is a specialization of 'Jumper'.
+'mil::NotEqualsComparison' is a specialization of 'Comparison'.
+'mil::Value' (role 'mil_Value', cardinality 0..*) is associated with 'mil::LoadInstruction' (role 'mil_LoadInstruction', cardinality 0..*).
+'mil::StoreInstruction' (role 'mil_StoreInstruction', cardinality 0..*) is associated with 'mil::RegisterReference' (role 'mil_RegisterReference', cardinality 0..*).
+'mil::MILModel' (role 'mil_MILModel', cardinality 0..*) is associated with 'mil::Statement' (role 'mil_Statement', cardinality 0..*).
+'mil::JumpMarker' (role 'mil_JumpMarker', cardinality 0..*) is associated with 'mil::Jumper' (role 'mil_Jumper', cardinality 0..*).

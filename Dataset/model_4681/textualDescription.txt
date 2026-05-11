@@ -1,0 +1,45 @@
+The model has 19 class(es).
+The class 'imp::Expr' has no attributes.
+The class 'Expr' has no attributes.
+The class 'imp::Block' has no attributes.
+The class 'imp::Unary' has the following attributes: 'op' of type str.
+The class 'imp::Assign' has the following attributes: 'name' of type str.
+The class 'imp::Skip' has no attributes.
+The class 'imp::While' has no attributes.
+The class 'imp::IntValue' has the following attributes: 'value' of type int.
+The class 'imp::Binary' has the following attributes: 'op' of type str.
+The class 'imp::Var' has the following attributes: 'name' of type str.
+The class 'imp::If' has no attributes.
+The class 'imp::BoolValue' has the following attributes: 'value' of type bool.
+The class 'imp::StringToValueMap' has the following attributes: 'key' of type str.
+The class 'Value' has no attributes.
+The class 'imp::Store' has no attributes.
+The class 'imp::Stmt' has no attributes.
+The class 'Stmt' has no attributes.
+The class 'imp::IntConst' has the following attributes: 'value' of type int.
+The class 'imp::Value' has no attributes.
+The enumeration 'BinaryOp' has the following literals: 'OR', 'EQ', 'AND', 'LT', 'GEQ', 'SUB', 'LEQ', 'GT', 'MUL', 'ADD'.
+The enumeration 'UnaryOp' has the following literals: 'NOT', 'NEGATE'.
+'imp::IntConst' is a specialization of 'Expr'.
+'imp::If' is a specialization of 'Stmt'.
+'imp::While' is a specialization of 'Stmt'.
+'imp::Assign' is a specialization of 'Stmt'.
+'imp::IntValue' is a specialization of 'Value'.
+'imp::Var' is a specialization of 'Expr'.
+'imp::Unary' is a specialization of 'Expr'.
+'imp::Block' is a specialization of 'Stmt'.
+'imp::Binary' is a specialization of 'Expr'.
+'imp::Skip' is a specialization of 'Stmt'.
+'imp::BoolValue' is a specialization of 'Value'.
+'imp::Stmt' (role 'imp_Stmt', cardinality 0..*) is associated with 'imp::Block' (role 'imp_Block', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr3', cardinality 0..*) is associated with 'imp::If' (role 'imp_If', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr16', cardinality 0..*) is associated with 'imp::Unary' (role 'imp_Unary', cardinality 0..*).
+'imp::Stmt' (role 'imp_Stmt14', cardinality 0..*) is associated with 'imp::While' (role 'imp_While13', cardinality 0..*).
+'imp::Stmt' (role 'imp_Stmt6', cardinality 0..*) is associated with 'imp::If' (role 'imp_If5', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr18', cardinality 0..*) is associated with 'imp::Binary' (role 'imp_Binary', cardinality 0..*).
+'imp::Value' (role 'imp_Value', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap24', cardinality 0..*).
+'imp::Binary' (role 'imp_Binary20', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr21', cardinality 0..*).
+'imp::Store' (role 'imp_Store', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr11', cardinality 0..*) is associated with 'imp::While' (role 'imp_While', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr', cardinality 0..*) is associated with 'imp::Assign' (role 'imp_Assign', cardinality 0..*).
+'imp::If' (role 'imp_If8', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt9', cardinality 0..*).

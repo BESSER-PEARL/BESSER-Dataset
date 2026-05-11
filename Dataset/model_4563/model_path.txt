@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/conicole/TP_4INFO/IDM/LegoIsAwesome/metamodel/My.ecore

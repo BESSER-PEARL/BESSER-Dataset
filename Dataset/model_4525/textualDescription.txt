@@ -1,0 +1,53 @@
+The model has 26 class(es).
+The class 'model::StartOver' has no attributes.
+The class 'ContinuosAction' has no attributes.
+The class 'model::RotorAction' has no attributes.
+The class 'Event' has no attributes.
+The class 'model::Move' has the following attributes: 'direction' of type str.
+The class 'model::Ending' has no attributes.
+The class 'model::Turn' has the following attributes: 'direction' of type str; 'degrees' of type float.
+The class 'model::ContinuosAction' has the following attributes: 'duration' of type float.
+The class 'model::Tapped' has no attributes.
+The class 'Action' has no attributes.
+The class 'RandomAction' has no attributes.
+The class 'model::EventListener' has no attributes.
+The class 'model::RoboProse' has no attributes.
+The class 'model::Root' has no attributes.
+The class 'model::Repeat' has no attributes.
+The class 'model::Event' has no attributes.
+The class 'RotorAction' has no attributes.
+The class 'model::Action' has no attributes.
+The class 'Ending' has no attributes.
+The class 'model::Obstacle' has no attributes.
+The class 'model::Wait' has no attributes.
+The class 'model::Main' has no attributes.
+The class 'ActionsList' has no attributes.
+The class 'model::Stop' has no attributes.
+The class 'model::RandomAction' has the following attributes: 'isRandom' of type bool.
+The class 'model::ActionsList' has no attributes.
+The enumeration 'MOVE_DIRECTION' has the following literals: 'FORWARDS', 'BACKWARDS'.
+The enumeration 'TURN_DIRECTION' has the following literals: 'LEFT', 'RIGHT'.
+'model::RandomAction' is a specialization of 'Action'.
+'model::Move' is a specialization of 'ContinuosAction'.
+'model::Repeat' is a specialization of 'Ending'.
+'model::Turn' is a specialization of 'RandomAction'.
+'model::Stop' is a specialization of 'ContinuosAction'.
+'model::StartOver' is a specialization of 'Ending'.
+'model::Obstacle' is a specialization of 'Event'.
+'model::Move' is a specialization of 'RotorAction'.
+'model::RotorAction' is a specialization of 'Action'.
+'model::Turn' is a specialization of 'RotorAction'.
+'model::Main' is a specialization of 'ActionsList'.
+'model::EventListener' is a specialization of 'ActionsList'.
+'model::ContinuosAction' is a specialization of 'Action'.
+'model::Turn' is a specialization of 'ContinuosAction'.
+'model::Tapped' is a specialization of 'Event'.
+'model::Wait' is a specialization of 'Ending'.
+'model::Move' is a specialization of 'RandomAction'.
+'model::Event' (role 'model_Event', cardinality 0..*) is associated with 'model::EventListener' (role 'model_EventListener9', cardinality 0..*).
+'model::RoboProse' (role 'model_RoboProse4', cardinality 0..*) is associated with 'model::EventListener' (role 'model_EventListener', cardinality 0..*).
+'model::RoboProse' (role 'model_RoboProse2', cardinality 0..*) is associated with 'model::Main' (role 'model_Main', cardinality 0..*).
+'model::Root' (role 'model_Root', cardinality 0..*) is associated with 'model::RoboProse' (role 'model_RoboProse', cardinality 0..*).
+'model::ActionsList' (role 'model_ActionsList12', cardinality 0..*) is associated with 'model::Ending' (role 'model_Ending', cardinality 0..*).
+'model::Action' (role 'model_Action', cardinality 0..*) is associated with 'model::ActionsList' (role 'model_ActionsList', cardinality 0..*).
+'model::EventListener' (role 'model_EventListener5', cardinality 0..*) is associated with 'model::EventListener' (role 'model_EventListener7', cardinality 0..*).

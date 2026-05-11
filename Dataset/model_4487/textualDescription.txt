@@ -1,0 +1,37 @@
+The model has 13 class(es).
+The class 'model::Wait' has the following attributes: 'time' of type int.
+The class 'Command' has no attributes.
+The class 'model::Rotate' has the following attributes: 'direction' of type str; 'velocity' of type str; 'angle' of type float.
+The class 'model::Light' has the following attributes: 'color' of type str.
+The class 'model::Ozobot' has no attributes.
+The class 'model::OzobotProgram' has no attributes.
+The class 'model::Move' has the following attributes: 'velocity' of type str; 'distance' of type int.
+The class 'NamedElement' has no attributes.
+The class 'model::NamedElement' has the following attributes: 'name' of type str.
+The class 'model::Block' has no attributes.
+The class 'model::Command' has no attributes.
+The class 'model::Transition' has no attributes.
+The class 'model::Repeat' has the following attributes: 'count' of type int.
+The enumeration 'Direction' has the following literals: 'right', 'left'.
+The enumeration 'Color' has the following literals: 'red', 'none', 'green', 'yellow', 'blue'.
+The enumeration 'Velocity' has the following literals: 'very_slow', 'fast', 'very_fast', 'slow', 'medium'.
+'model::Ozobot' is a specialization of 'NamedElement'.
+'model::Repeat' is a specialization of 'Command'.
+'model::OzobotProgram' is a specialization of 'NamedElement'.
+'model::Transition' is a specialization of 'NamedElement'.
+'model::Wait' is a specialization of 'Command'.
+'model::Rotate' is a specialization of 'Command'.
+'model::Light' is a specialization of 'Command'.
+'model::Command' is a specialization of 'NamedElement'.
+'model::Move' is a specialization of 'Command'.
+'model::Block' is a specialization of 'NamedElement'.
+'model::Transition' (role 'outgoing', cardinality 0..*) is associated with 'model::Command' (role 'Command', cardinality 0..*).
+'model::Command' (role 'source', cardinality 0..*) is associated with 'model::Transition' (role 'Transition', cardinality 0..*).
+'model::OzobotProgram' (role 'model_OzobotProgram', cardinality 0..*) is associated with 'model::Block' (role 'model_Block', cardinality 0..*).
+'model::Command' (role 'target', cardinality 0..*) is associated with 'model::Transition' (role 'Transition5', cardinality 0..*).
+'model::Command' (role 'Command17', cardinality 0..*) is associated with 'model::Transition' (role 'incoming', cardinality 0..*).
+'model::Block' (role 'model_Block11', cardinality 0..*) is associated with 'model::Command' (role 'model_Command12', cardinality 0..*).
+'model::Repeat' (role 'model_Repeat', cardinality 0..*) is associated with 'model::Block' (role 'model_Block7', cardinality 0..*).
+'model::Ozobot' (role 'model_Ozobot', cardinality 0..*) is associated with 'model::OzobotProgram' (role 'model_OzobotProgram9', cardinality 0..*).
+'model::Block' (role 'model_Block14', cardinality 0..*) is associated with 'model::Transition' (role 'model_Transition', cardinality 0..*).
+'model::OzobotProgram' (role 'model_OzobotProgram2', cardinality 0..*) is associated with 'model::Command' (role 'model_Command', cardinality 0..*).

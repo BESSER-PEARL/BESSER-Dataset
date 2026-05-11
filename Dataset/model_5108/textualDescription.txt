@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'testPackage::SubClass' has no attributes.
+The class 'testPackage::SuperClass' has no attributes.

@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'adl401::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+The class 'Interface' has no attributes.
+The class 'adl401::Interface' has the following attributes: 'name' of type str; 'signature' of type str.
+The class 'adl401::Component' has the following attributes: 'name' of type str.
+The class 'adl401::EClass0' has the following attributes: 'EAttribute0' of type str.
+The class 'adl401::Binding' has no attributes.
+The class 'adl401::Required' has no attributes.
+The class 'adl401::Provided' has no attributes.
+'adl401::Provided' is a specialization of 'Interface'.
+'adl401::Required' is a specialization of 'Interface'.
+'adl401::Component' (role 'Component', cardinality 0..*) is associated with 'adl401::Content' (role 'content', cardinality 0..*).
+'adl401::Component' (role 'adl401_Component9', cardinality 0..*) is associated with 'adl401::Component' (role 'adl401_Component', cardinality 0..*).
+'adl401::Interface' (role 'adl401_Interface6', cardinality 0..*) is associated with 'adl401::Binding' (role 'adl401_Binding5', cardinality 0..*).
+'adl401::Component' (role 'adl401_Component14', cardinality 0..*) is associated with 'adl401::Provided' (role 'adl401_Provided', cardinality 0..*).
+'adl401::Content' (role 'Content', cardinality 0..*) is associated with 'adl401::Component' (role 'contentParent', cardinality 0..*).
+'adl401::EClass0' (role 'adl401_EClass018', cardinality 0..*) is associated with 'adl401::EClass0' (role 'adl401_EClass016', cardinality 0..*).
+'adl401::Required' (role 'adl401_Required', cardinality 0..*) is associated with 'adl401::Component' (role 'adl401_Component12', cardinality 0..*).
+'adl401::Binding' (role 'adl401_Binding2', cardinality 0..*) is associated with 'adl401::Interface' (role 'adl401_Interface3', cardinality 0..*).
+'adl401::Content' (role 'adl401_Content', cardinality 0..*) is associated with 'adl401::EClass0' (role 'adl401_EClass0', cardinality 0..*).
+'adl401::Binding' (role 'adl401_Binding', cardinality 0..*) is associated with 'adl401::Interface' (role 'adl401_Interface', cardinality 0..*).

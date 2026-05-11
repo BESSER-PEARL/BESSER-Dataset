@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'mnoq::Q' has the following attributes: 'x' of type int.
+The class 'mnoq::Foo' has no attributes.
+The class 'mnoq::O' has the following attributes: 'x' of type int.
+The class 'mnoq::M' has the following attributes: 'x' of type int.
+The class 'mnoq::N' has the following attributes: 'x' of type int.
+'mnoq::Q' (role 'qs', cardinality 0..*) is associated with 'mnoq::N' (role 'N', cardinality 0..*).
+'mnoq::M' (role 'mnoq_M', cardinality 0..*) is associated with 'mnoq::O' (role 'mnoq_O', cardinality 0..*).
+'mnoq::N' (role 'ns', cardinality 0..*) is associated with 'mnoq::Q' (role 'Q', cardinality 0..*).
+'mnoq::M' (role 'M', cardinality 0..*) is associated with 'mnoq::N' (role 'nns', cardinality 0..*).
+'mnoq::M' (role 'mms', cardinality 0..*) is associated with 'mnoq::N' (role 'N5', cardinality 0..*).
+'mnoq::Foo' (role 'mnoq_Foo', cardinality 0..*) is associated with 'mnoq::N' (role 'mnoq_N', cardinality 0..*).

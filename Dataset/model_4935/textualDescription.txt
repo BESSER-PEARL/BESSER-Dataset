@@ -1,0 +1,40 @@
+The model has 12 class(es).
+The class 'backbone::Operation' has no attributes.
+The class 'backbone::NamedElement' has the following attributes: 'name' of type str.
+The class 'backbone::Router' has no attributes.
+The class 'backbone::Reference' has the following attributes: 'cardinality' of type str.
+The class 'backbone::Model' has no attributes.
+The class 'backbone::Application' has no attributes.
+The class 'backbone::Attribute' has the following attributes: 'defaultValue' of type str; 'cardinality' of type str.
+The class 'backbone::View' has no attributes.
+The class 'backbone::RouterMapping' has the following attributes: 'path' of type str.
+The class 'NamedElement' has no attributes.
+The class 'backbone::Collection' has no attributes.
+The class 'backbone::Parameter' has no attributes.
+The enumeration 'CardinalityKind' has the following literals: 'ONE', 'MANY'.
+'backbone::Parameter' is a specialization of 'NamedElement'.
+'backbone::Operation' is a specialization of 'NamedElement'.
+'backbone::Reference' is a specialization of 'NamedElement'.
+'backbone::Router' is a specialization of 'NamedElement'.
+'backbone::Application' is a specialization of 'NamedElement'.
+'backbone::View' is a specialization of 'NamedElement'.
+'backbone::Collection' is a specialization of 'NamedElement'.
+'backbone::Model' is a specialization of 'NamedElement'.
+'backbone::Attribute' is a specialization of 'NamedElement'.
+'backbone::Router' (role 'Router', cardinality 0..*) is associated with 'backbone::Application' (role 'application4', cardinality 0..*).
+'backbone::RouterMapping' (role 'backbone_RouterMapping26', cardinality 0..*) is associated with 'backbone::View' (role 'backbone_View', cardinality 0..*).
+'backbone::Operation' (role 'backbone_Operation29', cardinality 0..*) is associated with 'backbone::View' (role 'backbone_View28', cardinality 0..*).
+'backbone::Model' (role 'backbone_Model15', cardinality 0..*) is associated with 'backbone::Reference' (role 'backbone_Reference14', cardinality 0..*).
+'backbone::Operation' (role 'backbone_Operation17', cardinality 0..*) is associated with 'backbone::Parameter' (role 'backbone_Parameter', cardinality 0..*).
+'backbone::Model' (role 'backbone_Model9', cardinality 0..*) is associated with 'backbone::Reference' (role 'backbone_Reference', cardinality 0..*).
+'backbone::Application' (role 'application2', cardinality 0..*) is associated with 'backbone::Collection' (role 'Collection', cardinality 0..*).
+'backbone::Application' (role 'Application', cardinality 0..*) is associated with 'backbone::Model' (role 'models', cardinality 0..*).
+'backbone::Collection' (role 'backbone_Collection', cardinality 0..*) is associated with 'backbone::Model' (role 'backbone_Model19', cardinality 0..*).
+'backbone::Model' (role 'Model', cardinality 0..*) is associated with 'backbone::Application' (role 'application', cardinality 0..*).
+'backbone::RouterMapping' (role 'backbone_RouterMapping', cardinality 0..*) is associated with 'backbone::Router' (role 'backbone_Router', cardinality 0..*).
+'backbone::View' (role 'View', cardinality 0..*) is associated with 'backbone::Application' (role 'application6', cardinality 0..*).
+'backbone::Application' (role 'Application24', cardinality 0..*) is associated with 'backbone::Router' (role 'router', cardinality 0..*).
+'backbone::View' (role 'views', cardinality 0..*) is associated with 'backbone::Application' (role 'Application31', cardinality 0..*).
+'backbone::Model' (role 'backbone_Model', cardinality 0..*) is associated with 'backbone::Attribute' (role 'backbone_Attribute', cardinality 0..*).
+'backbone::Application' (role 'Application21', cardinality 0..*) is associated with 'backbone::Collection' (role 'collections', cardinality 0..*).
+'backbone::Model' (role 'backbone_Model11', cardinality 0..*) is associated with 'backbone::Operation' (role 'backbone_Operation', cardinality 0..*).

@@ -1,0 +1,40 @@
+The model has 16 class(es).
+The class 'whileLanguage::While' has no attributes.
+The class 'whileLanguage::Command' has no attributes.
+The class 'whileLanguage::Lexpr' has no attributes.
+The class 'whileLanguage::Affectation' has the following attributes: 'affectations' of type str.
+The class 'whileLanguage::If' has no attributes.
+The class 'whileLanguage::Foreach' has no attributes.
+The class 'whileLanguage::Read' has the following attributes: 'variable' of type str.
+The class 'whileLanguage::Expr' has the following attributes: 'ope' of type str; 'valeur' of type str.
+The class 'whileLanguage::Commands' has no attributes.
+The class 'whileLanguage::EObject' has no attributes.
+The class 'whileLanguage::Write' has the following attributes: 'variable' of type str.
+The class 'whileLanguage::For' has no attributes.
+The class 'whileLanguage::Function' has the following attributes: 'name' of type str.
+The class 'whileLanguage::Program' has no attributes.
+The class 'whileLanguage::Nop' has the following attributes: 'nop' of type str.
+The class 'whileLanguage::Definition' has no attributes.
+'whileLanguage::Commands' (role 'whileLanguage_Commands29', cardinality 0..*) is associated with 'whileLanguage::If' (role 'whileLanguage_If28', cardinality 0..*).
+'whileLanguage::Function' (role 'whileLanguage_Function', cardinality 0..*) is associated with 'whileLanguage::Program' (role 'whileLanguage_Program', cardinality 0..*).
+'whileLanguage::Definition' (role 'whileLanguage_Definition', cardinality 0..*) is associated with 'whileLanguage::Function' (role 'whileLanguage_Function2', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr36', cardinality 0..*) is associated with 'whileLanguage::While' (role 'whileLanguage_While', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr42', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr44', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr50', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr48', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr53', cardinality 0..*) is associated with 'whileLanguage::Lexpr' (role 'whileLanguage_Lexpr52', cardinality 0..*).
+'whileLanguage::Affectation' (role 'whileLanguage_Affectation', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr', cardinality 0..*).
+'whileLanguage::Definition' (role 'whileLanguage_Definition8', cardinality 0..*) is associated with 'whileLanguage::Write' (role 'whileLanguage_Write', cardinality 0..*).
+'whileLanguage::Definition' (role 'whileLanguage_Definition4', cardinality 0..*) is associated with 'whileLanguage::Read' (role 'whileLanguage_Read', cardinality 0..*).
+'whileLanguage::Foreach' (role 'whileLanguage_Foreach', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr15', cardinality 0..*).
+'whileLanguage::If' (role 'whileLanguage_If', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr23', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr41', cardinality 0..*) is associated with 'whileLanguage::Lexpr' (role 'whileLanguage_Lexpr', cardinality 0..*).
+'whileLanguage::Command' (role 'whileLanguage_Command13', cardinality 0..*) is associated with 'whileLanguage::EObject' (role 'whileLanguage_EObject', cardinality 0..*).
+'whileLanguage::Definition' (role 'whileLanguage_Definition6', cardinality 0..*) is associated with 'whileLanguage::Commands' (role 'whileLanguage_Commands', cardinality 0..*).
+'whileLanguage::Commands' (role 'whileLanguage_Commands34', cardinality 0..*) is associated with 'whileLanguage::For' (role 'whileLanguage_For33', cardinality 0..*).
+'whileLanguage::Command' (role 'whileLanguage_Command', cardinality 0..*) is associated with 'whileLanguage::Commands' (role 'whileLanguage_Commands11', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr31', cardinality 0..*) is associated with 'whileLanguage::For' (role 'whileLanguage_For', cardinality 0..*).
+'whileLanguage::Commands' (role 'whileLanguage_Commands39', cardinality 0..*) is associated with 'whileLanguage::While' (role 'whileLanguage_While38', cardinality 0..*).
+'whileLanguage::Foreach' (role 'whileLanguage_Foreach20', cardinality 0..*) is associated with 'whileLanguage::Commands' (role 'whileLanguage_Commands21', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr45', cardinality 0..*) is associated with 'whileLanguage::Expr' (role 'whileLanguage_Expr47', cardinality 0..*).
+'whileLanguage::Expr' (role 'whileLanguage_Expr18', cardinality 0..*) is associated with 'whileLanguage::Foreach' (role 'whileLanguage_Foreach17', cardinality 0..*).
+'whileLanguage::If' (role 'whileLanguage_If25', cardinality 0..*) is associated with 'whileLanguage::Commands' (role 'whileLanguage_Commands26', cardinality 0..*).

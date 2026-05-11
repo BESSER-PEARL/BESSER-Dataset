@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'minimalB::B' has the following attributes: 'b' of type int.

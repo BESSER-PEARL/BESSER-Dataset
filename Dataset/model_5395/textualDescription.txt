@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'Identified' has no attributes.
+The class 'multicontainment::b::RootB' has no attributes.
+The class 'multicontainment::b::ChildB2' has the following attributes: 'name' of type str.
+The class 'multicontainment::b::ChildB1' has the following attributes: 'name' of type str.
+The class 'multicontainment::b::Identified' has the following attributes: 'id' of type str.
+'multicontainment::b::ChildB2' is a specialization of 'Identified'.
+'multicontainment::b::RootB' is a specialization of 'Identified'.
+'multicontainment::b::ChildB1' is a specialization of 'Identified'.
+'multicontainment::b::RootB' (role 'multicontainment_b_RootB', cardinality 0..*) is associated with 'multicontainment::b::ChildB1' (role 'multicontainment_b_ChildB1', cardinality 0..*).
+'multicontainment::b::ChildB1' (role 'multicontainment_b_ChildB13', cardinality 0..*) is associated with 'multicontainment::b::RootB' (role 'multicontainment_b_RootB2', cardinality 0..*).
+'multicontainment::b::ChildB2' (role 'multicontainment_b_ChildB2', cardinality 0..*) is associated with 'multicontainment::b::RootB' (role 'multicontainment_b_RootB5', cardinality 0..*).

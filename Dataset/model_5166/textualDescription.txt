@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'in::A' has the following attributes: 'name' of type str.
+The class 'RootIn' has no attributes.
+The class 'in::RootContainer' has no attributes.
+The class 'in::B' has the following attributes: 'name' of type str.
+The class 'in::RootIn' has no attributes.
+'in::B' is a specialization of 'RootIn'.
+'in::RootContainer' is a specialization of 'RootIn'.
+'in::A' is a specialization of 'RootIn'.
+'in::A' (role 'in_A', cardinality 0..*) is associated with 'in::B' (role 'in_B', cardinality 0..*).
+'in::A' (role 'in_A3', cardinality 0..*) is associated with 'in::B' (role 'in_B2', cardinality 0..*).
+'in::RootIn' (role 'in_RootIn', cardinality 0..*) is associated with 'in::RootContainer' (role 'in_RootContainer', cardinality 0..*).

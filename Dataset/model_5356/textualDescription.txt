@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'p2::License' has no attributes.
+The class 'p2::Vendor' has no attributes.
+The class 'p2::Description' has no attributes.
+The class 'p2::DiscoverySite' has no attributes.
+The class 'p2::Copyright' has no attributes.
+The class 'Bundle' has no attributes.
+The class 'p2::FeatureMetadata' has the following attributes: 'text' of type str; 'name' of type str.
+The class 'Tool' has no attributes.
+The class 'FeatureMetadata' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'p2::Plugin' has no attributes.
+The class 'p2::Feature' has the following attributes: 'application' of type str.
+'p2::Copyright' is a specialization of 'FeatureMetadata'.
+'p2::License' is a specialization of 'FeatureMetadata'.
+'p2::Plugin' is a specialization of 'Bundle'.
+'p2::Description' is a specialization of 'FeatureMetadata'.
+'p2::Feature' is a specialization of 'Tool'.
+'p2::DiscoverySite' is a specialization of 'FeatureMetadata'.
+'p2::FeatureMetadata' is a specialization of 'LocatedElement'.
+'p2::Feature' (role 'p2_Feature10', cardinality 0..*) is associated with 'p2::Plugin' (role 'p2_Plugin', cardinality 0..*).
+'p2::DiscoverySite' (role 'p2_DiscoverySite', cardinality 0..*) is associated with 'p2::Feature' (role 'p2_Feature4', cardinality 0..*).
+'p2::Feature' (role 'p2_Feature2', cardinality 0..*) is associated with 'p2::Description' (role 'p2_Description', cardinality 0..*).
+'p2::License' (role 'p2_License', cardinality 0..*) is associated with 'p2::Feature' (role 'p2_Feature6', cardinality 0..*).
+'p2::Feature' (role 'p2_Feature8', cardinality 0..*) is associated with 'p2::Vendor' (role 'p2_Vendor', cardinality 0..*).
+'p2::Copyright' (role 'p2_Copyright', cardinality 0..*) is associated with 'p2::Feature' (role 'p2_Feature', cardinality 0..*).

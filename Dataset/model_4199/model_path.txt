@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/vorburger/xtext-sandbox/SerializerCrossRefNewResEObjHowTo/org.xtext.example.mydsl/model/generated/MyDsl.ecore

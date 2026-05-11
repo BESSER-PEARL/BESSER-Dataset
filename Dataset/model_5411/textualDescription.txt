@@ -1,0 +1,41 @@
+The model has 17 class(es).
+The class 'dynamicFaultTree::OR' has no attributes.
+The class 'Element' has no attributes.
+The class 'dynamicFaultTree::Gate' has no attributes.
+The class 'dynamicFaultTree::DFT' has the following attributes: 'name' of type str.
+The class 'dynamicFaultTree::AND' has no attributes.
+The class 'dynamicFaultTree::XOR' has no attributes.
+The class 'dynamicFaultTree::Spare' has no attributes.
+The class 'dynamicFaultTree::TopLevelEvent' has no attributes.
+The class 'Gate' has no attributes.
+The class 'dynamicFaultTree::Event' has no attributes.
+The class 'dynamicFaultTree::FunctionalDependency' has no attributes.
+The class 'dynamicFaultTree::Sequence' has no attributes.
+The class 'dynamicFaultTree::Dependency' has no attributes.
+The class 'dynamicFaultTree::Element' has the following attributes: 'probability' of type float; 'sequencePosition' of type int; 'elementID' of type int; 'name' of type str.
+The class 'dynamicFaultTree::PAND' has no attributes.
+The class 'dynamicFaultTree::POR' has no attributes.
+The class 'Dependency' has no attributes.
+'dynamicFaultTree::FunctionalDependency' is a specialization of 'Dependency'.
+'dynamicFaultTree::Gate' is a specialization of 'Element'.
+'dynamicFaultTree::AND' is a specialization of 'Gate'.
+'dynamicFaultTree::Event' is a specialization of 'Element'.
+'dynamicFaultTree::XOR' is a specialization of 'Gate'.
+'dynamicFaultTree::Sequence' is a specialization of 'Dependency'.
+'dynamicFaultTree::TopLevelEvent' is a specialization of 'Element'.
+'dynamicFaultTree::POR' is a specialization of 'Gate'.
+'dynamicFaultTree::PAND' is a specialization of 'Gate'.
+'dynamicFaultTree::Spare' is a specialization of 'Gate'.
+'dynamicFaultTree::Dependency' is a specialization of 'Element'.
+'dynamicFaultTree::OR' is a specialization of 'Gate'.
+'dynamicFaultTree::Event' (role 'Event', cardinality 0..*) is associated with 'dynamicFaultTree::Gate' (role 'parentGate12', cardinality 0..*).
+'dynamicFaultTree::Event' (role 'Event17', cardinality 0..*) is associated with 'dynamicFaultTree::Dependency' (role 'dependency', cardinality 0..*).
+'dynamicFaultTree::Dependency' (role 'dynamicFaultTree_Dependency', cardinality 0..*) is associated with 'dynamicFaultTree::DFT' (role 'dynamicFaultTree_DFT2', cardinality 0..*).
+'dynamicFaultTree::TopLevelEvent' (role 'dynamicFaultTree_TopLevelEvent', cardinality 0..*) is associated with 'dynamicFaultTree::DFT' (role 'dynamicFaultTree_DFT', cardinality 0..*).
+'dynamicFaultTree::Gate' (role 'Gate7', cardinality 0..*) is associated with 'dynamicFaultTree::Gate' (role 'parentGate', cardinality 0..*).
+'dynamicFaultTree::Event' (role 'dynamicFaultTree_Event', cardinality 0..*) is associated with 'dynamicFaultTree::Spare' (role 'dynamicFaultTree_Spare', cardinality 0..*).
+'dynamicFaultTree::Gate' (role 'gate', cardinality 0..*) is associated with 'dynamicFaultTree::TopLevelEvent' (role 'TopLevelEvent', cardinality 0..*).
+'dynamicFaultTree::Gate' (role 'Gate', cardinality 0..*) is associated with 'dynamicFaultTree::TopLevelEvent' (role 'toplevelevent', cardinality 0..*).
+'dynamicFaultTree::Gate' (role 'Gate14', cardinality 0..*) is associated with 'dynamicFaultTree::Event' (role 'childEvent', cardinality 0..*).
+'dynamicFaultTree::Event' (role 'events', cardinality 0..*) is associated with 'dynamicFaultTree::Dependency' (role 'Dependency', cardinality 0..*).
+'dynamicFaultTree::Gate' (role 'Gate10', cardinality 0..*) is associated with 'dynamicFaultTree::Gate' (role 'childGate', cardinality 0..*).

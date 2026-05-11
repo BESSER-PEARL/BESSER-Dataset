@@ -1,0 +1,125 @@
+The model has 55 class(es).
+The class 'ADT' has no attributes.
+The class 'SortDeclaration' has no attributes.
+The class 'SOS::Transition' has no attributes.
+The class 'SOS::adtmm::VariableRef' has no attributes.
+The class 'AbstractEquation' has no attributes.
+The class 'SOS::set::ExistsIn' has no attributes.
+The class 'SOS::adtmm::AtomicSort' has no attributes.
+The class 'VariableRef' has no attributes.
+The class 'SOS::adtmm::AbstractOperation' has the following attributes: 'name' of type str.
+The class 'Sort' has no attributes.
+The class 'SOS::set::SetTerm' has no attributes.
+The class 'SOS::adtmm::CondEquation' has no attributes.
+The class 'Condition' has no attributes.
+The class 'SOS::set::SetMembership' has no attributes.
+The class 'SOS::set::Union' has no attributes.
+The class 'SOS::set::SetOperator' has no attributes.
+The class 'SetMembership' has no attributes.
+The class 'SOS::set::Excluding' has no attributes.
+The class 'SOS::Condition' has no attributes.
+The class 'SOS::Rule' has no attributes.
+The class 'SOS::set::Intersection' has no attributes.
+The class 'SOS::set::ModelRelation' has the following attributes: 'referenceName' of type str.
+The class 'SOS::adtmm::Equation' has no attributes.
+The class 'SOS::AlgebraicCondition' has no attributes.
+The class 'SOS::adtmm::ADT' has the following attributes: 'name' of type str.
+The class 'SetOperator' has no attributes.
+The class 'CondEquation' has no attributes.
+The class 'SOS::adtmm::AbstractEquation' has no attributes.
+The class 'Variable' has no attributes.
+The class 'SOS::set::ModelSort' has the following attributes: 'packageName' of type str; 'className' of type str.
+The class 'Term' has no attributes.
+The class 'Equation' has no attributes.
+The class 'SOS::set::SetConstructor' has no attributes.
+The class 'SOS::adtmm::Variable' has the following attributes: 'name' of type str.
+The class 'set::SOS::AlgebraicConditionList' has no attributes.
+The class 'SOS::Conclusion' has no attributes.
+The class 'SOS::adtmm::CTerm' has the following attributes: 'iter' of type int.
+The class 'SOS::set::ModelClassAttribute' has the following attributes: 'attributeName' of type str.
+The class 'SOS::adtmm::AbstractGenericOp' has no attributes.
+The class 'SOS::adtmm::Term' has no attributes.
+The class 'SOS::PremisseList' has no attributes.
+The class 'SetTerm' has no attributes.
+The class 'SOS::set::Set' has no attributes.
+The class 'SOS::Semantics' has no attributes.
+The class 'SOS::adtmm::Inequation' has no attributes.
+The class 'SOS::AlgebraicConditionList' has no attributes.
+The class 'SOS::TypeJudment' has no attributes.
+The class 'Operation' has no attributes.
+The class 'SOS::adtmm::Operation' has no attributes.
+The class 'SOS::set::ForAllIn' has no attributes.
+The class 'SOS::adtmm::SortDeclaration' has the following attributes: 'name' of type str.
+The class 'AbstractOperation' has no attributes.
+The class 'SOS::adtmm::Sort' has no attributes.
+The class 'SOS::adtmm::AbstractSort' has no attributes.
+The class 'SOS::set::ModelSet' has no attributes.
+'SOS::adtmm::AbstractGenericOp' is a specialization of 'AbstractOperation'.
+'SOS::set::ForAllIn' is a specialization of 'SetMembership'.
+'SOS::adtmm::Operation' is a specialization of 'AbstractOperation'.
+'SOS::set::SetOperator' is a specialization of 'SetTerm'.
+'SOS::set::ModelSort' is a specialization of 'Sort'.
+'SOS::set::ModelSet' is a specialization of 'SetTerm'.
+'SOS::adtmm::VariableRef' is a specialization of 'Term'.
+'SOS::set::Union' is a specialization of 'SetOperator'.
+'SOS::adtmm::CTerm' is a specialization of 'Term'.
+'SOS::set::ModelClassAttribute' is a specialization of 'Term'.
+'SOS::adtmm::Inequation' is a specialization of 'AbstractEquation'.
+'SOS::TypeJudment' is a specialization of 'Condition'.
+'SOS::set::ModelRelation' is a specialization of 'Term'.
+'SOS::set::ExistsIn' is a specialization of 'SetMembership'.
+'SOS::adtmm::AtomicSort' is a specialization of 'Sort'.
+'SOS::AlgebraicCondition' is a specialization of 'Condition'.
+'SOS::set::Intersection' is a specialization of 'SetOperator'.
+'SOS::set::SetConstructor' is a specialization of 'SetTerm'.
+'SOS::set::SetTerm' is a specialization of 'Term'.
+'SOS::set::Excluding' is a specialization of 'SetOperator'.
+'SOS::set::Set' is a specialization of 'Sort'.
+'SOS::set::SetMembership' is a specialization of 'SetTerm'.
+'SOS::Transition' is a specialization of 'Condition'.
+'SOS::adtmm::Equation' is a specialization of 'AbstractEquation'.
+'SOS::Transition' (role 'SOS_Transition19', cardinality 0..*) is associated with 'Term' (role 'Term20', cardinality 0..*).
+'SOS::adtmm::Variable' (role 'SOS_adtmm_Variable', cardinality 0..*) is associated with 'Sort' (role 'Sort57', cardinality 0..*).
+'SOS::PremisseList' (role 'SOS_PremisseList', cardinality 0..*) is associated with 'SOS::Rule' (role 'SOS_Rule4', cardinality 0..*).
+'Term' (role 'Term88', cardinality 0..*) is associated with 'SOS::set::SetOperator' (role 'SOS_set_SetOperator87', cardinality 0..*).
+'Term' (role 'Term23', cardinality 0..*) is associated with 'SOS::Transition' (role 'SOS_Transition22', cardinality 0..*).
+'Variable' (role 'Variable63', cardinality 0..*) is associated with 'SOS::adtmm::VariableRef' (role 'SOS_adtmm_VariableRef', cardinality 0..*).
+'SOS::PremisseList' (role 'SOS_PremisseList13', cardinality 0..*) is associated with 'SOS::PremisseList' (role 'SOS_PremisseList11', cardinality 0..*).
+'SOS::AlgebraicConditionList' (role 'SOS_AlgebraicConditionList40', cardinality 0..*) is associated with 'SOS::AlgebraicConditionList' (role 'SOS_AlgebraicConditionList38', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'SOS::Rule' (role 'SOS_Rule8', cardinality 0..*).
+'SOS::set::SetConstructor' (role 'SOS_set_SetConstructor91', cardinality 0..*) is associated with 'Term' (role 'Term92', cardinality 0..*).
+'Term' (role 'Term34', cardinality 0..*) is associated with 'SOS::TypeJudment' (role 'SOS_TypeJudment33', cardinality 0..*).
+'SOS::adtmm::CTerm' (role 'SOS_adtmm_CTerm67', cardinality 0..*) is associated with 'Operation' (role 'Operation68', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'SOS::adtmm::ADT' (role 'SOS_adtmm_ADT43', cardinality 0..*).
+'SortDeclaration' (role 'SortDeclaration', cardinality 0..*) is associated with 'SOS::adtmm::ADT' (role 'SOS_adtmm_ADT', cardinality 0..*).
+'Term' (role 'Term26', cardinality 0..*) is associated with 'SOS::Transition' (role 'SOS_Transition25', cardinality 0..*).
+'SOS::adtmm::CondEquation' (role 'SOS_adtmm_CondEquation61', cardinality 0..*) is associated with 'Equation' (role 'Equation', cardinality 0..*).
+'VariableRef' (role 'VariableRef98', cardinality 0..*) is associated with 'SOS::set::ModelClassAttribute' (role 'SOS_set_ModelClassAttribute', cardinality 0..*).
+'SOS::adtmm::CTerm' (role 'SOS_adtmm_CTerm', cardinality 0..*) is associated with 'Term' (role 'Term65', cardinality 0..*).
+'AbstractEquation' (role 'AbstractEquation59', cardinality 0..*) is associated with 'SOS::adtmm::CondEquation' (role 'SOS_adtmm_CondEquation', cardinality 0..*).
+'SOS::set::SetMembership' (role 'SOS_set_SetMembership', cardinality 0..*) is associated with 'Term' (role 'Term80', cardinality 0..*).
+'Sort' (role 'Sort', cardinality 0..*) is associated with 'SOS::adtmm::Operation' (role 'SOS_adtmm_Operation', cardinality 0..*).
+'SOS::adtmm::CTerm' (role 'SOS_adtmm_CTerm70', cardinality 0..*) is associated with 'Term' (role 'Term71', cardinality 0..*).
+'SOS::Semantics' (role 'SOS_Semantics2', cardinality 0..*) is associated with 'ADT' (role 'ADT', cardinality 0..*).
+'Term' (role 'Term76', cardinality 0..*) is associated with 'SOS::adtmm::AbstractEquation' (role 'SOS_adtmm_AbstractEquation75', cardinality 0..*).
+'SOS::adtmm::AtomicSort' (role 'SOS_adtmm_AtomicSort', cardinality 0..*) is associated with 'SortDeclaration' (role 'SortDeclaration78', cardinality 0..*).
+'SOS::set::SetMembership' (role 'SOS_set_SetMembership82', cardinality 0..*) is associated with 'Term' (role 'Term83', cardinality 0..*).
+'SOS::Transition' (role 'SOS_Transition', cardinality 0..*) is associated with 'Term' (role 'Term', cardinality 0..*).
+'SOS::PremisseList' (role 'SOS_PremisseList10', cardinality 0..*) is associated with 'SOS::Condition' (role 'SOS_Condition', cardinality 0..*).
+'SOS::AlgebraicCondition' (role 'SOS_AlgebraicCondition37', cardinality 0..*) is associated with 'SOS::AlgebraicConditionList' (role 'SOS_AlgebraicConditionList', cardinality 0..*).
+'SOS::Conclusion' (role 'SOS_Conclusion15', cardinality 0..*) is associated with 'SOS::Condition' (role 'SOS_Condition16', cardinality 0..*).
+'SOS::adtmm::AbstractEquation' (role 'SOS_adtmm_AbstractEquation', cardinality 0..*) is associated with 'Term' (role 'Term73', cardinality 0..*).
+'SOS::set::Set' (role 'SOS_set_Set', cardinality 0..*) is associated with 'Sort' (role 'Sort100', cardinality 0..*).
+'CondEquation' (role 'CondEquation', cardinality 0..*) is associated with 'SOS::adtmm::ADT' (role 'SOS_adtmm_ADT51', cardinality 0..*).
+'Variable' (role 'Variable49', cardinality 0..*) is associated with 'SOS::adtmm::ADT' (role 'SOS_adtmm_ADT48', cardinality 0..*).
+'SOS::Rule' (role 'SOS_Rule', cardinality 0..*) is associated with 'SOS::Semantics' (role 'SOS_Semantics', cardinality 0..*).
+'SOS::TypeJudment' (role 'SOS_TypeJudment', cardinality 0..*) is associated with 'Term' (role 'Term28', cardinality 0..*).
+'Term' (role 'Term31', cardinality 0..*) is associated with 'SOS::TypeJudment' (role 'SOS_TypeJudment30', cardinality 0..*).
+'Sort' (role 'Sort55', cardinality 0..*) is associated with 'SOS::adtmm::Operation' (role 'SOS_adtmm_Operation54', cardinality 0..*).
+'SOS::Conclusion' (role 'SOS_Conclusion', cardinality 0..*) is associated with 'SOS::Rule' (role 'SOS_Rule6', cardinality 0..*).
+'SOS::set::ModelRelation' (role 'SOS_set_ModelRelation95', cardinality 0..*) is associated with 'VariableRef' (role 'VariableRef96', cardinality 0..*).
+'SOS::AlgebraicCondition' (role 'SOS_AlgebraicCondition', cardinality 0..*) is associated with 'AbstractEquation' (role 'AbstractEquation', cardinality 0..*).
+'SOS::set::SetConstructor' (role 'SOS_set_SetConstructor', cardinality 0..*) is associated with 'set::SOS::AlgebraicConditionList' (role 'set_SOS_AlgebraicConditionList', cardinality 0..*).
+'VariableRef' (role 'VariableRef', cardinality 0..*) is associated with 'SOS::set::ModelRelation' (role 'SOS_set_ModelRelation', cardinality 0..*).
+'Term' (role 'Term85', cardinality 0..*) is associated with 'SOS::set::SetOperator' (role 'SOS_set_SetOperator', cardinality 0..*).
+'Operation' (role 'Operation46', cardinality 0..*) is associated with 'SOS::adtmm::ADT' (role 'SOS_adtmm_ADT45', cardinality 0..*).

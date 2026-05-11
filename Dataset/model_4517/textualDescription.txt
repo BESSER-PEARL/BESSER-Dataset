@@ -1,0 +1,84 @@
+The model has 28 class(es).
+The class 'logo::LogoProgram' has no attributes.
+The class 'Expression' has no attributes.
+The class 'logo::Repeat' has no attributes.
+The class 'logo::Parameter' has the following attributes: 'name' of type str.
+The class 'logo::Forward' has no attributes.
+The class 'logo::Left' has no attributes.
+The class 'logo::Expression' has no attributes.
+The class 'logo::Div' has no attributes.
+The class 'logo::Equals' has no attributes.
+The class 'logo::Lower' has no attributes.
+The class 'logo::ParameterCall' has no attributes.
+The class 'logo::Right' has no attributes.
+The class 'logo::ProcCall' has no attributes.
+The class 'logo::ProcDeclaration' has the following attributes: 'name' of type str.
+The class 'Instruction' has no attributes.
+The class 'logo::Minus' has no attributes.
+The class 'logo::PenUp' has no attributes.
+The class 'logo::Clear' has no attributes.
+The class 'logo::While' has no attributes.
+The class 'logo::Plus' has no attributes.
+The class 'logo::Instruction' has no attributes.
+The class 'logo::If' has no attributes.
+The class 'logo::PenDown' has no attributes.
+The class 'logo::Greater' has no attributes.
+The class 'logo::Backward' has no attributes.
+The class 'logo::Block' has no attributes.
+The class 'logo::Constant' has the following attributes: 'integerValue' of type int.
+The class 'logo::Mult' has no attributes.
+'logo::While' is a specialization of 'Instruction'.
+'logo::Block' is a specialization of 'Instruction'.
+'logo::ParameterCall' is a specialization of 'Expression'.
+'logo::Repeat' is a specialization of 'Instruction'.
+'logo::Constant' is a specialization of 'Expression'.
+'logo::PenDown' is a specialization of 'Instruction'.
+'logo::Div' is a specialization of 'Expression'.
+'logo::ParameterCall' is a specialization of 'Instruction'.
+'logo::Equals' is a specialization of 'Expression'.
+'logo::Clear' is a specialization of 'Instruction'.
+'logo::PenUp' is a specialization of 'Instruction'.
+'logo::Lower' is a specialization of 'Expression'.
+'logo::Right' is a specialization of 'Instruction'.
+'logo::Left' is a specialization of 'Instruction'.
+'logo::ProcCall' is a specialization of 'Instruction'.
+'logo::Greater' is a specialization of 'Expression'.
+'logo::If' is a specialization of 'Instruction'.
+'logo::Backward' is a specialization of 'Instruction'.
+'logo::Mult' is a specialization of 'Expression'.
+'logo::Forward' is a specialization of 'Instruction'.
+'logo::ProcDeclaration' is a specialization of 'Instruction'.
+'logo::Plus' is a specialization of 'Expression'.
+'logo::Minus' is a specialization of 'Expression'.
+'logo::LogoProgram' (role 'logo_LogoProgram', cardinality 0..*) is associated with 'logo::Instruction' (role 'logo_Instruction', cardinality 0..*).
+'logo::If' (role 'logo_If22', cardinality 0..*) is associated with 'logo::Block' (role 'logo_Block23', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression5', cardinality 0..*) is associated with 'logo::Left' (role 'logo_Left', cardinality 0..*).
+'logo::Plus' (role 'logo_Plus', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression55', cardinality 0..*).
+'logo::Block' (role 'logo_Block26', cardinality 0..*) is associated with 'logo::If' (role 'logo_If25', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression73', cardinality 0..*) is associated with 'logo::Div' (role 'logo_Div72', cardinality 0..*).
+'logo::Instruction' (role 'logo_Instruction18', cardinality 0..*) is associated with 'logo::Block' (role 'logo_Block', cardinality 0..*).
+'logo::While' (role 'logo_While35', cardinality 0..*) is associated with 'logo::Block' (role 'logo_Block36', cardinality 0..*).
+'logo::Minus' (role 'logo_Minus', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression60', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression53', cardinality 0..*) is associated with 'logo::Lower' (role 'logo_Lower52', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression40', cardinality 0..*) is associated with 'logo::Equals' (role 'logo_Equals', cardinality 0..*).
+'logo::If' (role 'logo_If', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression20', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression7', cardinality 0..*) is associated with 'logo::Right' (role 'logo_Right', cardinality 0..*).
+'logo::Div' (role 'logo_Div', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression70', cardinality 0..*).
+'logo::Block' (role 'logo_Block31', cardinality 0..*) is associated with 'logo::Repeat' (role 'logo_Repeat30', cardinality 0..*).
+'logo::Minus' (role 'logo_Minus62', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression63', cardinality 0..*).
+'logo::ProcDeclaration' (role 'logo_ProcDeclaration', cardinality 0..*) is associated with 'logo::ProcCall' (role 'logo_ProcCall', cardinality 0..*).
+'logo::Plus' (role 'logo_Plus57', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression58', cardinality 0..*).
+'logo::Greater' (role 'logo_Greater', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression45', cardinality 0..*).
+'logo::While' (role 'logo_While', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression33', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression43', cardinality 0..*) is associated with 'logo::Equals' (role 'logo_Equals42', cardinality 0..*).
+'logo::Forward' (role 'logo_Forward', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression3', cardinality 0..*).
+'logo::Greater' (role 'logo_Greater47', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression48', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression68', cardinality 0..*) is associated with 'logo::Mult' (role 'logo_Mult67', cardinality 0..*).
+'logo::Backward' (role 'logo_Backward', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression28', cardinality 0..*) is associated with 'logo::Repeat' (role 'logo_Repeat', cardinality 0..*).
+'logo::Parameter' (role 'logo_Parameter38', cardinality 0..*) is associated with 'logo::ParameterCall' (role 'logo_ParameterCall', cardinality 0..*).
+'logo::Mult' (role 'logo_Mult', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression65', cardinality 0..*).
+'logo::Expression' (role 'logo_Expression11', cardinality 0..*) is associated with 'logo::ProcCall' (role 'logo_ProcCall10', cardinality 0..*).
+'logo::Parameter' (role 'logo_Parameter', cardinality 0..*) is associated with 'logo::ProcDeclaration' (role 'logo_ProcDeclaration13', cardinality 0..*).
+'logo::Lower' (role 'logo_Lower', cardinality 0..*) is associated with 'logo::Expression' (role 'logo_Expression50', cardinality 0..*).
+'logo::ProcDeclaration' (role 'logo_ProcDeclaration15', cardinality 0..*) is associated with 'logo::Instruction' (role 'logo_Instruction16', cardinality 0..*).

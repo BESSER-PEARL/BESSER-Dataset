@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'amazoninformational::Package' has the following attributes: 'location' of type str.
+The class 'amazoninformational::Customer' has the following attributes: 'isVIP' of type bool; 'creditLimit' of type float; 'inGoodStanding' of type bool; 'consummedCredit' of type float; 'address' of type str.
+The class 'amazoninformational::Order' has the following attributes: 'totalAmount' of type float; 'status' of type str.
+The class 'amazoninformational::Product' has the following attributes: 'onHand' of type int.
+The class 'amazoninformational::Shipment' has no attributes.
+The class 'amazoninformational::Payment' has no attributes.
+The class 'amazoninformational::Invoice' has no attributes.
+'amazoninformational::Order' (role 'order5', cardinality 0..*) is associated with 'amazoninformational::Package' (role 'Package', cardinality 0..*).
+'amazoninformational::Order' (role 'order3', cardinality 0..*) is associated with 'amazoninformational::Invoice' (role 'Invoice', cardinality 0..*).
+'amazoninformational::Order' (role 'Order14', cardinality 0..*) is associated with 'amazoninformational::Shipment' (role 'shipment', cardinality 0..*).
+'amazoninformational::Product' (role 'amazoninformational_Product9', cardinality 0..*) is associated with 'amazoninformational::Package' (role 'amazoninformational_Package', cardinality 0..*).
+'amazoninformational::Order' (role 'order', cardinality 0..*) is associated with 'amazoninformational::Shipment' (role 'Shipment', cardinality 0..*).
+'amazoninformational::Package' (role 'packages', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'Order', cardinality 0..*).
+'amazoninformational::Order' (role 'amazoninformational_Order7', cardinality 0..*) is associated with 'amazoninformational::Customer' (role 'amazoninformational_Customer', cardinality 0..*).
+'amazoninformational::Invoice' (role 'invoice', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'Order16', cardinality 0..*).
+'amazoninformational::Invoice' (role 'amazoninformational_Invoice', cardinality 0..*) is associated with 'amazoninformational::Payment' (role 'amazoninformational_Payment', cardinality 0..*).
+'amazoninformational::Order' (role 'amazoninformational_Order', cardinality 0..*) is associated with 'amazoninformational::Product' (role 'amazoninformational_Product', cardinality 0..*).
+'amazoninformational::Package' (role 'amazoninformational_Package12', cardinality 0..*) is associated with 'amazoninformational::Shipment' (role 'amazoninformational_Shipment', cardinality 0..*).

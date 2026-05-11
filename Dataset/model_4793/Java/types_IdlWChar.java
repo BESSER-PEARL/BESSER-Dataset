@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class types_IdlWChar extends PrimitiveType {
+
+
+
+
+    public types_IdlWChar(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

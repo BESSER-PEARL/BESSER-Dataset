@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Organization::Skill' has the following attributes: 'Name' of type str.
+The class 'Organization::Employee' has the following attributes: 'Name' of type str; 'Address' of type str; 'EmpID' of type str.
+'Organization::Skill' (role 'Organization_Skill', cardinality 0..*) is associated with 'Organization::Employee' (role 'Organization_Employee', cardinality 0..*).

@@ -1,0 +1,98 @@
+The model has 49 class(es).
+The class 'hydraconstraints::Neg' has no attributes.
+The class 'hydraconstraints::Minus' has no attributes.
+The class 'hydraconstraints::More' has no attributes.
+The class 'hydraconstraints::BoolPriorityOperand2' has no attributes.
+The class 'hydraconstraints::And' has no attributes.
+The class 'hydraconstraints::NumPriorityOperand1' has no attributes.
+The class 'NumOperandChoices' has no attributes.
+The class 'Operand' has no attributes.
+The class 'hydraconstraints::BinaryOp' has no attributes.
+The class 'hydraconstraints::NumOperand' has no attributes.
+The class 'hydraconstraints::Model' has the following attributes: 'featureList' of type str.
+The class 'hydraconstraints::LogicalOperator' has no attributes.
+The class 'UnaryOp' has no attributes.
+The class 'hydraconstraints::Or' has no attributes.
+The class 'hydraconstraints::NotEqual' has no attributes.
+The class 'hydraconstraints::NumPriorityOperand2' has no attributes.
+The class 'BinaryOp' has no attributes.
+The class 'hydraconstraints::Comparison' has no attributes.
+The class 'hydraconstraints::Context' has no attributes.
+The class 'hydraconstraints::Equal' has no attributes.
+The class 'hydraconstraints::NumOperator' has no attributes.
+The class 'hydraconstraints::Mul' has no attributes.
+The class 'hydraconstraints::Constraint' has no attributes.
+The class 'BoolOperand' has no attributes.
+The class 'Selection' has no attributes.
+The class 'hydraconstraints::MultipleFeature' has the following attributes: 'featureName' of type str.
+The class 'hydraconstraints::Xor' has no attributes.
+The class 'hydraconstraints::Implies' has no attributes.
+The class 'hydraconstraints::SimpleFeature' has the following attributes: 'featureName' of type str.
+The class 'Comparison' has no attributes.
+The class 'hydraconstraints::BoolPriorityOperand1' has no attributes.
+The class 'hydraconstraints::Div' has no attributes.
+The class 'hydraconstraints::NumOperandChoices' has no attributes.
+The class 'hydraconstraints::MoreOrEqual' has no attributes.
+The class 'hydraconstraints::Number' has the following attributes: 'numValue' of type int.
+The class 'hydraconstraints::Less' has no attributes.
+The class 'hydraconstraints::BoolOperand' has no attributes.
+The class 'NumOperator' has no attributes.
+The class 'hydraconstraints::Selection' has no attributes.
+The class 'hydraconstraints::Any' has no attributes.
+The class 'hydraconstraints::All' has no attributes.
+The class 'BoolOperandChoices' has no attributes.
+The class 'hydraconstraints::LessOrEqual' has no attributes.
+The class 'hydraconstraints::UnaryOp' has no attributes.
+The class 'NumOperand' has no attributes.
+The class 'hydraconstraints::Plus' has no attributes.
+The class 'hydraconstraints::BoolOperandChoices' has no attributes.
+The class 'LogicalOperator' has no attributes.
+The class 'hydraconstraints::Operand' has no attributes.
+'hydraconstraints::Context' is a specialization of 'NumOperandChoices'.
+'hydraconstraints::All' is a specialization of 'Selection'.
+'hydraconstraints::SimpleFeature' is a specialization of 'BoolOperandChoices'.
+'hydraconstraints::NumOperand' is a specialization of 'Operand'.
+'hydraconstraints::NotEqual' is a specialization of 'Comparison'.
+'hydraconstraints::Or' is a specialization of 'BinaryOp'.
+'hydraconstraints::Minus' is a specialization of 'NumOperator'.
+'hydraconstraints::Context' is a specialization of 'BoolOperandChoices'.
+'hydraconstraints::Div' is a specialization of 'NumOperator'.
+'hydraconstraints::Neg' is a specialization of 'UnaryOp'.
+'hydraconstraints::Any' is a specialization of 'Selection'.
+'hydraconstraints::NumOperandChoices' is a specialization of 'NumOperand'.
+'hydraconstraints::Number' is a specialization of 'NumOperandChoices'.
+'hydraconstraints::LessOrEqual' is a specialization of 'Comparison'.
+'hydraconstraints::BinaryOp' is a specialization of 'LogicalOperator'.
+'hydraconstraints::NumOperator' is a specialization of 'NumOperand'.
+'hydraconstraints::Comparison' is a specialization of 'LogicalOperator'.
+'hydraconstraints::Mul' is a specialization of 'NumOperator'.
+'hydraconstraints::Implies' is a specialization of 'BinaryOp'.
+'hydraconstraints::Less' is a specialization of 'Comparison'.
+'hydraconstraints::More' is a specialization of 'Comparison'.
+'hydraconstraints::UnaryOp' is a specialization of 'LogicalOperator'.
+'hydraconstraints::Xor' is a specialization of 'BinaryOp'.
+'hydraconstraints::MultipleFeature' is a specialization of 'NumOperandChoices'.
+'hydraconstraints::Selection' is a specialization of 'BoolOperandChoices'.
+'hydraconstraints::BoolOperandChoices' is a specialization of 'BoolOperand'.
+'hydraconstraints::BoolOperand' is a specialization of 'Operand'.
+'hydraconstraints::And' is a specialization of 'BinaryOp'.
+'hydraconstraints::MoreOrEqual' is a specialization of 'Comparison'.
+'hydraconstraints::Equal' is a specialization of 'Comparison'.
+'hydraconstraints::LogicalOperator' is a specialization of 'BoolOperand'.
+'hydraconstraints::Plus' is a specialization of 'NumOperator'.
+'hydraconstraints::BoolPriorityOperand1' (role 'hydraconstraints_BoolPriorityOperand1', cardinality 0..*) is associated with 'hydraconstraints::BoolOperand' (role 'hydraconstraints_BoolOperand4', cardinality 0..*).
+'hydraconstraints::NumOperand' (role 'hydraconstraints_NumOperand21', cardinality 0..*) is associated with 'hydraconstraints::NumPriorityOperand1' (role 'hydraconstraints_NumPriorityOperand1', cardinality 0..*).
+'hydraconstraints::Context' (role 'hydraconstraints_Context30', cardinality 0..*) is associated with 'hydraconstraints::MultipleFeature' (role 'hydraconstraints_MultipleFeature', cardinality 0..*).
+'hydraconstraints::NumPriorityOperand2' (role 'hydraconstraints_NumPriorityOperand217', cardinality 0..*) is associated with 'hydraconstraints::Comparison' (role 'hydraconstraints_Comparison16', cardinality 0..*).
+'hydraconstraints::BinaryOp' (role 'hydraconstraints_BinaryOp', cardinality 0..*) is associated with 'hydraconstraints::BoolPriorityOperand1' (role 'hydraconstraints_BoolPriorityOperand110', cardinality 0..*).
+'hydraconstraints::NumOperand' (role 'hydraconstraints_NumOperand', cardinality 0..*) is associated with 'hydraconstraints::NumPriorityOperand2' (role 'hydraconstraints_NumPriorityOperand219', cardinality 0..*).
+'hydraconstraints::Constraint' (role 'hydraconstraints_Constraint', cardinality 0..*) is associated with 'hydraconstraints::Model' (role 'hydraconstraints_Model', cardinality 0..*).
+'hydraconstraints::NumPriorityOperand2' (role 'hydraconstraints_NumPriorityOperand2', cardinality 0..*) is associated with 'hydraconstraints::Comparison' (role 'hydraconstraints_Comparison', cardinality 0..*).
+'hydraconstraints::NumOperator' (role 'hydraconstraints_NumOperator', cardinality 0..*) is associated with 'hydraconstraints::NumPriorityOperand1' (role 'hydraconstraints_NumPriorityOperand123', cardinality 0..*).
+'hydraconstraints::UnaryOp' (role 'hydraconstraints_UnaryOp', cardinality 0..*) is associated with 'hydraconstraints::BoolPriorityOperand2' (role 'hydraconstraints_BoolPriorityOperand28', cardinality 0..*).
+'hydraconstraints::Context' (role 'hydraconstraints_Context32', cardinality 0..*) is associated with 'hydraconstraints::Selection' (role 'hydraconstraints_Selection', cardinality 0..*).
+'hydraconstraints::Context' (role 'hydraconstraints_Context', cardinality 0..*) is associated with 'hydraconstraints::Constraint' (role 'hydraconstraints_Constraint28', cardinality 0..*).
+'hydraconstraints::Constraint' (role 'hydraconstraints_Constraint2', cardinality 0..*) is associated with 'hydraconstraints::BoolOperand' (role 'hydraconstraints_BoolOperand', cardinality 0..*).
+'hydraconstraints::NumOperator' (role 'hydraconstraints_NumOperator25', cardinality 0..*) is associated with 'hydraconstraints::NumPriorityOperand2' (role 'hydraconstraints_NumPriorityOperand226', cardinality 0..*).
+'hydraconstraints::BinaryOp' (role 'hydraconstraints_BinaryOp12', cardinality 0..*) is associated with 'hydraconstraints::BoolPriorityOperand2' (role 'hydraconstraints_BoolPriorityOperand213', cardinality 0..*).
+'hydraconstraints::BoolPriorityOperand2' (role 'hydraconstraints_BoolPriorityOperand2', cardinality 0..*) is associated with 'hydraconstraints::BoolOperand' (role 'hydraconstraints_BoolOperand6', cardinality 0..*).

@@ -1,0 +1,70 @@
+The model has 21 class(es).
+The class 'micro::Model' has no attributes.
+The class 'micro::Operation' has the following attributes: 'operationType' of type str; 'isMethodController' of type bool.
+The class 'micro::Command' has the following attributes: 'isReplyInfoMany' of type bool; 'commandType' of type str.
+The class 'micro::PrimitiveTypeAttribute' has the following attributes: 'type' of type str.
+The class 'micro::Info' has no attributes.
+The class 'micro::ViewService' has no attributes.
+The class 'micro::NamedElement' has the following attributes: 'name' of type str.
+The class 'Service' has no attributes.
+The class 'micro::ModelEvent' has no attributes.
+The class 'micro::Step' has no attributes.
+The class 'micro::Event' has no attributes.
+The class 'micro::Saga' has no attributes.
+The class 'micro::API' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'micro::ReferenceAttribute' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'micro::Service' has the following attributes: 'shortname' of type str; 'description' of type str; 'port' of type int; 'fullname' of type str.
+The class 'micro::AggregateService' has no attributes.
+The class 'micro::Attribute' has the following attributes: 'name' of type str; 'isGenerated' of type bool; 'isId' of type bool; 'isMany' of type bool.
+The class 'micro::MicroserviceArchitecture' has no attributes.
+The class 'micro::Data' has no attributes.
+The enumeration 'CommandType' has the following literals: 'reply', 'compensate', 'invoke'.
+The enumeration 'AttributePrimitiveValue' has the following literals: 'float', 'char', 'int', 'long', 'boolean', 'String', 'short'.
+The enumeration 'CRUDOperation' has the following literals: 'update', 'delete', 'retrieve', 'create'.
+'micro::Service' is a specialization of 'NamedElement'.
+'micro::AggregateService' is a specialization of 'Service'.
+'micro::ReferenceAttribute' is a specialization of 'Attribute'.
+'micro::ViewService' is a specialization of 'Service'.
+'micro::Operation' is a specialization of 'NamedElement'.
+'micro::Info' is a specialization of 'NamedElement'.
+'micro::Step' is a specialization of 'NamedElement'.
+'micro::Command' is a specialization of 'NamedElement'.
+'micro::Data' is a specialization of 'NamedElement'.
+'micro::PrimitiveTypeAttribute' is a specialization of 'Attribute'.
+'micro::Event' is a specialization of 'NamedElement'.
+'micro::MicroserviceArchitecture' is a specialization of 'NamedElement'.
+'micro::ModelEvent' is a specialization of 'NamedElement'.
+'micro::API' is a specialization of 'NamedElement'.
+'micro::Saga' is a specialization of 'NamedElement'.
+'micro::Model' is a specialization of 'NamedElement'.
+'micro::Command' (role 'micro_Command42', cardinality 0..*) is associated with 'micro::Step' (role 'micro_Step', cardinality 0..*).
+'micro::Model' (role 'Model', cardinality 0..*) is associated with 'micro::Attribute' (role 'attributes', cardinality 0..*).
+'micro::Operation' (role 'micro_Operation', cardinality 0..*) is associated with 'micro::Event' (role 'micro_Event', cardinality 0..*).
+'micro::API' (role 'api', cardinality 0..*) is associated with 'micro::Event' (role 'Event', cardinality 0..*).
+'micro::Command' (role 'Command', cardinality 0..*) is associated with 'micro::API' (role 'api29', cardinality 0..*).
+'micro::Info' (role 'Info', cardinality 0..*) is associated with 'micro::API' (role 'api31', cardinality 0..*).
+'micro::AggregateService' (role 'micro_AggregateService15', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model16', cardinality 0..*).
+'micro::Model' (role 'micro_Model38', cardinality 0..*) is associated with 'micro::Info' (role 'micro_Info37', cardinality 0..*).
+'micro::Command' (role 'micro_Command', cardinality 0..*) is associated with 'micro::Info' (role 'micro_Info', cardinality 0..*).
+'micro::API' (role 'API', cardinality 0..*) is associated with 'micro::Command' (role 'commands', cardinality 0..*).
+'micro::Saga' (role 'micro_Saga47', cardinality 0..*) is associated with 'micro::Data' (role 'micro_Data', cardinality 0..*).
+'micro::Event' (role 'events', cardinality 0..*) is associated with 'micro::API' (role 'API35', cardinality 0..*).
+'micro::MicroserviceArchitecture' (role 'micro_MicroserviceArchitecture', cardinality 0..*) is associated with 'micro::Service' (role 'micro_Service', cardinality 0..*).
+'micro::Operation' (role 'micro_Operation23', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model24', cardinality 0..*).
+'micro::AggregateService' (role 'micro_AggregateService', cardinality 0..*) is associated with 'micro::API' (role 'micro_API', cardinality 0..*).
+'micro::AggregateService' (role 'micro_AggregateService12', cardinality 0..*) is associated with 'micro::ModelEvent' (role 'micro_ModelEvent13', cardinality 0..*).
+'micro::ReferenceAttribute' (role 'micro_ReferenceAttribute', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model50', cardinality 0..*).
+'micro::AggregateService' (role 'micro_AggregateService18', cardinality 0..*) is associated with 'micro::ViewService' (role 'micro_ViewService', cardinality 0..*).
+'micro::Saga' (role 'micro_Saga44', cardinality 0..*) is associated with 'micro::Step' (role 'micro_Step45', cardinality 0..*).
+'micro::Operation' (role 'Operation', cardinality 0..*) is associated with 'micro::AggregateService' (role 'aggregateService9', cardinality 0..*).
+'micro::AggregateService' (role 'AggregateService', cardinality 0..*) is associated with 'micro::ModelEvent' (role 'modelEvents', cardinality 0..*).
+'micro::ModelEvent' (role 'micro_ModelEvent', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model5', cardinality 0..*).
+'micro::Operation' (role 'operation', cardinality 0..*) is associated with 'micro::AggregateService' (role 'AggregateService26', cardinality 0..*).
+'micro::Model' (role 'model', cardinality 0..*) is associated with 'micro::Attribute' (role 'Attribute', cardinality 0..*).
+'micro::ModelEvent' (role 'ModelEvent', cardinality 0..*) is associated with 'micro::AggregateService' (role 'aggregateService', cardinality 0..*).
+'micro::MicroserviceArchitecture' (role 'micro_MicroserviceArchitecture2', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model', cardinality 0..*).
+'micro::API' (role 'API40', cardinality 0..*) is associated with 'micro::Info' (role 'infos', cardinality 0..*).
+'micro::Saga' (role 'micro_Saga', cardinality 0..*) is associated with 'micro::Operation' (role 'micro_Operation21', cardinality 0..*).
+'micro::PrimitiveTypeAttribute' (role 'micro_PrimitiveTypeAttribute', cardinality 0..*) is associated with 'micro::Model' (role 'micro_Model52', cardinality 0..*).

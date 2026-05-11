@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'amazoninformational::Order' has no attributes.
+The class 'amazoninformational::Product' has the following attributes: 'onHand' of type int.
+The class 'amazoninformational::Package' has no attributes.
+The class 'amazoninformational::Shipment' has no attributes.
+The class 'amazoninformational::Payment' has no attributes.
+The class 'amazoninformational::Invoice' has no attributes.
+'amazoninformational::Order' (role 'Order14', cardinality 0..*) is associated with 'amazoninformational::Invoice' (role 'invoice', cardinality 0..*).
+'amazoninformational::Invoice' (role 'amazoninformational_Invoice', cardinality 0..*) is associated with 'amazoninformational::Payment' (role 'amazoninformational_Payment', cardinality 0..*).
+'amazoninformational::Shipment' (role 'Shipment', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'order', cardinality 0..*).
+'amazoninformational::Order' (role 'order3', cardinality 0..*) is associated with 'amazoninformational::Invoice' (role 'Invoice', cardinality 0..*).
+'amazoninformational::Package' (role 'packages', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'Order', cardinality 0..*).
+'amazoninformational::Shipment' (role 'shipment', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'Order12', cardinality 0..*).
+'amazoninformational::Shipment' (role 'amazoninformational_Shipment', cardinality 0..*) is associated with 'amazoninformational::Package' (role 'amazoninformational_Package10', cardinality 0..*).
+'amazoninformational::Package' (role 'Package', cardinality 0..*) is associated with 'amazoninformational::Order' (role 'order5', cardinality 0..*).
+'amazoninformational::Order' (role 'amazoninformational_Order', cardinality 0..*) is associated with 'amazoninformational::Product' (role 'amazoninformational_Product', cardinality 0..*).
+'amazoninformational::Package' (role 'amazoninformational_Package', cardinality 0..*) is associated with 'amazoninformational::Product' (role 'amazoninformational_Product7', cardinality 0..*).

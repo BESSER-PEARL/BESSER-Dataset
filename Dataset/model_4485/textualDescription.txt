@@ -1,0 +1,53 @@
+The model has 23 class(es).
+The class 'kmLogo::VarDecl' has the following attributes: 'key' of type str.
+The class 'kmLogo::Instruction' has no attributes.
+The class 'Expression' has no attributes.
+The class 'kmLogo::IntegerLit' has the following attributes: 'value' of type int.
+The class 'kmLogo::PenDown' has no attributes.
+The class 'kmLogo::Left' has no attributes.
+The class 'kmLogo::Back' has no attributes.
+The class 'kmLogo::StringLit' has the following attributes: 'value' of type str.
+The class 'kmLogo::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'kmLogo::PenUp' has no attributes.
+The class 'kmLogo::Literal' has no attributes.
+The class 'kmLogo::LogoProgram' has no attributes.
+The class 'kmLogo::Primitive' has no attributes.
+The class 'kmLogo::Forward' has no attributes.
+The class 'kmLogo::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'kmLogo::Expression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'kmLogo::Right' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'kmLogo::Clear' has no attributes.
+The class 'kmLogo::VarReference' has the following attributes: 'key' of type str.
+The class 'kmLogo::BoolLit' has the following attributes: 'value' of type bool.
+The class 'Primitive' has no attributes.
+The enumeration 'ArithmeticOperator' has the following literals: 'div', 'plus', 'minus', 'mult'.
+The enumeration 'RelationalOperator' has the following literals: 'notEqual', 'greaterThan', 'lessThan', 'equals', 'lessThanOrEqualTo', 'greaterThanOrEqualTo'.
+'kmLogo::Right' is a specialization of 'Primitive'.
+'kmLogo::PenDown' is a specialization of 'Primitive'.
+'kmLogo::Clear' is a specialization of 'Primitive'.
+'kmLogo::RelationalExpression' is a specialization of 'Expression'.
+'kmLogo::Forward' is a specialization of 'Primitive'.
+'kmLogo::BoolLit' is a specialization of 'Literal'.
+'kmLogo::ArithmeticExpression' is a specialization of 'Expression'.
+'kmLogo::VarDecl' is a specialization of 'Instruction'.
+'kmLogo::Primitive' is a specialization of 'Instruction'.
+'kmLogo::Literal' is a specialization of 'Expression'.
+'kmLogo::PenUp' is a specialization of 'Primitive'.
+'kmLogo::Left' is a specialization of 'Primitive'.
+'kmLogo::IntegerLit' is a specialization of 'Literal'.
+'kmLogo::StringLit' is a specialization of 'Literal'.
+'kmLogo::Back' is a specialization of 'Primitive'.
+'kmLogo::VarReference' is a specialization of 'Expression'.
+'kmLogo::Expression' (role 'kmLogo_Expression22', cardinality 0..*) is associated with 'kmLogo::VarDecl' (role 'kmLogo_VarDecl21', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression5', cardinality 0..*) is associated with 'kmLogo::Forward' (role 'kmLogo_Forward', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression9', cardinality 0..*) is associated with 'kmLogo::Right' (role 'kmLogo_Right', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression7', cardinality 0..*) is associated with 'kmLogo::Left' (role 'kmLogo_Left', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression11', cardinality 0..*) is associated with 'kmLogo::ArithmeticExpression' (role 'kmLogo_ArithmeticExpression', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression19', cardinality 0..*) is associated with 'kmLogo::RelationalExpression' (role 'kmLogo_RelationalExpression18', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression16', cardinality 0..*) is associated with 'kmLogo::RelationalExpression' (role 'kmLogo_RelationalExpression', cardinality 0..*).
+'kmLogo::Back' (role 'kmLogo_Back', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression14', cardinality 0..*) is associated with 'kmLogo::ArithmeticExpression' (role 'kmLogo_ArithmeticExpression13', cardinality 0..*).
+'kmLogo::Instruction' (role 'kmLogo_Instruction', cardinality 0..*) is associated with 'kmLogo::LogoProgram' (role 'kmLogo_LogoProgram2', cardinality 0..*).
+'kmLogo::VarDecl' (role 'kmLogo_VarDecl', cardinality 0..*) is associated with 'kmLogo::LogoProgram' (role 'kmLogo_LogoProgram', cardinality 0..*).

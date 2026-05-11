@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'java::Greeting' has the following attributes: 'name' of type str.
+The class 'java::Model' has no attributes.
+'java::Greeting' (role 'java_Greeting', cardinality 0..*) is associated with 'java::Model' (role 'java_Model', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'Etunit::TestcaseType' has the following attributes: 'name' of type str; 'time' of type str; 'classname' of type str.
+The class 'Etunit::EStringToStringMapEntry' has no attributes.
+The class 'Etunit::ErrorType' has the following attributes: 'mixed' of type str; 'actual' of type str; 'expected' of type str.
+The class 'Etunit::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'Etunit::FailureType' has the following attributes: 'actual' of type str; 'mixed' of type str; 'expected' of type str.
+The class 'Testsuite' has no attributes.
+The class 'Etunit::TestsuitesType' has no attributes.
+The class 'Etunit::Testsuite' has the following attributes: 'time' of type str; 'timestamp' of type str; 'skipped' of type str; 'tests' of type str; 'errors' of type str; 'failures' of type str; 'name' of type str.
+The class 'Etunit::TestsuiteType' has no attributes.
+'Etunit::TestsuiteType' is a specialization of 'Testsuite'.
+'Etunit::TestsuiteType' (role 'Etunit_TestsuiteType', cardinality 0..*) is associated with 'Etunit::TestsuitesType' (role 'Etunit_TestsuitesType15', cardinality 0..*).
+'Etunit::DocumentRoot' (role 'Etunit_DocumentRoot2', cardinality 0..*) is associated with 'Etunit::EStringToStringMapEntry' (role 'Etunit_EStringToStringMapEntry3', cardinality 0..*).
+'Etunit::TestcaseType' (role 'Etunit_TestcaseType10', cardinality 0..*) is associated with 'Etunit::FailureType' (role 'Etunit_FailureType', cardinality 0..*).
+'Etunit::DocumentRoot' (role 'Etunit_DocumentRoot', cardinality 0..*) is associated with 'Etunit::EStringToStringMapEntry' (role 'Etunit_EStringToStringMapEntry', cardinality 0..*).
+'Etunit::TestcaseType' (role 'Etunit_TestcaseType13', cardinality 0..*) is associated with 'Etunit::Testsuite' (role 'Etunit_Testsuite12', cardinality 0..*).
+'Etunit::DocumentRoot' (role 'Etunit_DocumentRoot5', cardinality 0..*) is associated with 'Etunit::Testsuite' (role 'Etunit_Testsuite', cardinality 0..*).
+'Etunit::ErrorType' (role 'Etunit_ErrorType', cardinality 0..*) is associated with 'Etunit::TestcaseType' (role 'Etunit_TestcaseType', cardinality 0..*).
+'Etunit::DocumentRoot' (role 'Etunit_DocumentRoot7', cardinality 0..*) is associated with 'Etunit::TestsuitesType' (role 'Etunit_TestsuitesType', cardinality 0..*).

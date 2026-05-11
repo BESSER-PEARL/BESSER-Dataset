@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'smarthome::ContactItem' has no attributes.
+The class 'smarthome::EvaluatingNode' has no attributes.
+The class 'smarthome::NumberItem' has no attributes.
+The class 'Item' has no attributes.
+The class 'smarthome::FilterConnection' has no attributes.
+The class 'smarthome::Item' has the following attributes: 'name' of type str.
+The class 'smarthome::SwitchItem' has no attributes.
+The class 'smarthome::CommandConnection' has no attributes.
+The class 'smarthome::DimmerItem' has no attributes.
+The class 'smarthome::State' has the following attributes: 'state' of type str.
+The class 'smarthome::SmartHome' has the following attributes: 'name' of type str.
+The class 'smarthome::StateChangeConnection' has no attributes.
+The class 'smarthome::Command' has the following attributes: 'command' of type str.
+'smarthome::SwitchItem' is a specialization of 'Item'.
+'smarthome::ContactItem' is a specialization of 'Item'.
+'smarthome::NumberItem' is a specialization of 'Item'.
+'smarthome::DimmerItem' is a specialization of 'Item'.
+'smarthome::Command' (role 'smarthome_Command18', cardinality 0..*) is associated with 'smarthome::CommandConnection' (role 'smarthome_CommandConnection17', cardinality 0..*).
+'smarthome::State' (role 'smarthome_State27', cardinality 0..*) is associated with 'smarthome::FilterConnection' (role 'smarthome_FilterConnection26', cardinality 0..*).
+'smarthome::Item' (role 'smarthome_Item15', cardinality 0..*) is associated with 'smarthome::CommandConnection' (role 'smarthome_CommandConnection14', cardinality 0..*).
+'smarthome::FilterConnection' (role 'smarthome_FilterConnection', cardinality 0..*) is associated with 'smarthome::EvaluatingNode' (role 'smarthome_EvaluatingNode12', cardinality 0..*).
+'smarthome::EvaluatingNode' (role 'smarthome_EvaluatingNode10', cardinality 0..*) is associated with 'smarthome::CommandConnection' (role 'smarthome_CommandConnection', cardinality 0..*).
+'smarthome::Item' (role 'smarthome_Item', cardinality 0..*) is associated with 'smarthome::SmartHome' (role 'smarthome_SmartHome', cardinality 0..*).
+'smarthome::SmartHome' (role 'smarthome_SmartHome2', cardinality 0..*) is associated with 'smarthome::EvaluatingNode' (role 'smarthome_EvaluatingNode', cardinality 0..*).
+'smarthome::StateChangeConnection' (role 'smarthome_StateChangeConnection', cardinality 0..*) is associated with 'smarthome::EvaluatingNode' (role 'smarthome_EvaluatingNode8', cardinality 0..*).
+'smarthome::StateChangeConnection' (role 'smarthome_StateChangeConnection20', cardinality 0..*) is associated with 'smarthome::State' (role 'smarthome_State21', cardinality 0..*).
+'smarthome::Item' (role 'smarthome_Item24', cardinality 0..*) is associated with 'smarthome::StateChangeConnection' (role 'smarthome_StateChangeConnection23', cardinality 0..*).
+'smarthome::FilterConnection' (role 'smarthome_FilterConnection29', cardinality 0..*) is associated with 'smarthome::Item' (role 'smarthome_Item30', cardinality 0..*).
+'smarthome::Item' (role 'smarthome_Item4', cardinality 0..*) is associated with 'smarthome::State' (role 'smarthome_State', cardinality 0..*).
+'smarthome::Item' (role 'smarthome_Item6', cardinality 0..*) is associated with 'smarthome::Command' (role 'smarthome_Command', cardinality 0..*).

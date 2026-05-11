@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'myPackage::subPackage::Foo' has no attributes.
+The class 'myPackage::MyOtherClass' has the following attributes: 'otherAttribute' of type str.
+The class 'subsub::Bar' has no attributes.
+The class 'MyClass' has no attributes.
+The class 'myPackage::subsub::Baz' has no attributes.
+The class 'subPackage::Foo' has no attributes.
+The class 'myPackage::AThirdClass' has the following attributes: 'thirdAttribute' of type str.
+The class 'myPackage::MyClass' has the following attributes: 'myAttribute' of type str.
+The class 'myPackage::subsub::Bar' has the following attributes: 's' of type str.
+'myPackage::AThirdClass' is a specialization of 'MyClass'.
+'myPackage::subsub::Baz' is a specialization of 'subsub::Bar'.
+'myPackage::subPackage::Foo' is a specialization of 'MyClass'.
+'myPackage::subsub::Baz' is a specialization of 'subPackage::Foo'.
+'myPackage::MyOtherClass' (role 'myPackage_MyOtherClass', cardinality 0..*) is associated with 'myPackage::MyClass' (role 'myPackage_MyClass', cardinality 0..*).

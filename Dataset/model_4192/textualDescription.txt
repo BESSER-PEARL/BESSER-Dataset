@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'testLanguage::Model' has no attributes.
+The class 'testLanguage::Greeting' has the following attributes: 'name' of type str.
+'testLanguage::Model' (role 'testLanguage_Model', cardinality 0..*) is associated with 'testLanguage::Greeting' (role 'testLanguage_Greeting', cardinality 0..*).

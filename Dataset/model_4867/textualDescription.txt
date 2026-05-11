@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'simpleExpressions::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'simpleExpressions::Comparison' has the following attributes: 'operator' of type str.
+The class 'simpleExpressions::AndExpression' has no attributes.
+The class 'simpleExpressions::MethodCall' has the following attributes: 'value' of type str.
+The class 'simpleExpressions::OrExpression' has no attributes.
+The class 'simpleExpressions::NotExpression' has no attributes.
+The class 'simpleExpressions::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'simpleExpressions::IfCondition' has the following attributes: 'elseif' of type bool.
+'simpleExpressions::NumberLiteral' is a specialization of 'Expression'.
+'simpleExpressions::NotExpression' is a specialization of 'Expression'.
+'simpleExpressions::OrExpression' is a specialization of 'Expression'.
+'simpleExpressions::MethodCall' is a specialization of 'Expression'.
+'simpleExpressions::Comparison' is a specialization of 'Expression'.
+'simpleExpressions::AndExpression' is a specialization of 'Expression'.
+'simpleExpressions::IfCondition' (role 'simpleExpressions_IfCondition', cardinality 0..*) is associated with 'simpleExpressions::Expression' (role 'simpleExpressions_Expression', cardinality 0..*).
+'simpleExpressions::Expression' (role 'simpleExpressions_Expression12', cardinality 0..*) is associated with 'simpleExpressions::Comparison' (role 'simpleExpressions_Comparison', cardinality 0..*).
+'simpleExpressions::AndExpression' (role 'simpleExpressions_AndExpression9', cardinality 0..*) is associated with 'simpleExpressions::Expression' (role 'simpleExpressions_Expression10', cardinality 0..*).
+'simpleExpressions::Expression' (role 'simpleExpressions_Expression15', cardinality 0..*) is associated with 'simpleExpressions::Comparison' (role 'simpleExpressions_Comparison14', cardinality 0..*).
+'simpleExpressions::Expression' (role 'simpleExpressions_Expression7', cardinality 0..*) is associated with 'simpleExpressions::AndExpression' (role 'simpleExpressions_AndExpression', cardinality 0..*).
+'simpleExpressions::OrExpression' (role 'simpleExpressions_OrExpression', cardinality 0..*) is associated with 'simpleExpressions::Expression' (role 'simpleExpressions_Expression2', cardinality 0..*).
+'simpleExpressions::NotExpression' (role 'simpleExpressions_NotExpression', cardinality 0..*) is associated with 'simpleExpressions::Expression' (role 'simpleExpressions_Expression17', cardinality 0..*).
+'simpleExpressions::OrExpression' (role 'simpleExpressions_OrExpression4', cardinality 0..*) is associated with 'simpleExpressions::Expression' (role 'simpleExpressions_Expression5', cardinality 0..*).

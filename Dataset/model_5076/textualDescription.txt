@@ -1,0 +1,40 @@
+The model has 11 class(es).
+The class 'CarRental2::Employee' has the following attributes: 'salary' of type int.
+The class 'Person' has no attributes.
+The class 'CarRental2::Check' has the following attributes: 'description' of type int.
+The class 'CarRental2::Customer' has the following attributes: 'address' of type int.
+The class 'CarRental2::Person' has the following attributes: 'isMarried' of type bool; 'firstname' of type int; 'lastname' of type int; 'age' of type int.
+The class 'CarRental2::Rental' has the following attributes: 'fromDate' of type int; 'untilDate' of type int.
+The class 'CarRental2::CarGroup' has the following attributes: 'kind' of type int.
+The class 'CarRental2::ServiceDepot' has the following attributes: 'location' of type int.
+The class 'CarRental2::TernaryRelationMaintenance' has no attributes.
+The class 'CarRental2::Car' has the following attributes: 'id' of type int.
+The class 'CarRental2::Branch' has the following attributes: 'location' of type int.
+'CarRental2::Customer' is a specialization of 'Person'.
+'CarRental2::Employee' is a specialization of 'Person'.
+'CarRental2::TernaryRelationMaintenance' (role 'toMaintenance45', cardinality 0..*) is associated with 'CarRental2::Car' (role 'Car46', cardinality 0..*).
+'CarRental2::Branch' (role 'Branch3', cardinality 0..*) is associated with 'CarRental2::Employee' (role 'Employment_Employee_role_employee', cardinality 0..*).
+'CarRental2::Rental' (role 'Rental23', cardinality 0..*) is associated with 'CarRental2::CarGroup' (role 'Reservation_CarGroup', cardinality 0..*).
+'CarRental2::Branch' (role 'Branch13', cardinality 0..*) is associated with 'CarRental2::Rental' (role 'Provider_Rental', cardinality 0..*).
+'CarRental2::ServiceDepot' (role 'toServiceDepot', cardinality 0..*) is associated with 'CarRental2::TernaryRelationMaintenance' (role 'TernaryRelationMaintenance38', cardinality 0..*).
+'CarRental2::Branch' (role 'Fleet_Branch', cardinality 0..*) is associated with 'CarRental2::Car' (role 'Car', cardinality 0..*).
+'CarRental2::Rental' (role 'Reservation_Rental', cardinality 0..*) is associated with 'CarRental2::CarGroup' (role 'CarGroup15', cardinality 0..*).
+'CarRental2::CarGroup' (role 'CarGroup29', cardinality 0..*) is associated with 'CarRental2::CarGroup' (role 'Quality_CarGroup_role_lower', cardinality 0..*).
+'CarRental2::Employee' (role 'Employee6', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Employment_Branch_role_employer', cardinality 0..*).
+'CarRental2::CarGroup' (role 'CarGroup26', cardinality 0..*) is associated with 'CarRental2::CarGroup' (role 'Quality_CarGroup_role_higher', cardinality 0..*).
+'CarRental2::Rental' (role 'Rental10', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Provider_Branch', cardinality 0..*).
+'CarRental2::Customer' (role 'Booking_Customer', cardinality 0..*) is associated with 'CarRental2::Rental' (role 'Rental', cardinality 0..*).
+'CarRental2::CarGroup' (role 'CarGroup33', cardinality 0..*) is associated with 'CarRental2::Car' (role 'Classification_Car', cardinality 0..*).
+'CarRental2::CarGroup' (role 'Offers_CarGroup', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Branch19', cardinality 0..*).
+'CarRental2::Car' (role 'Fleet_Car', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Branch31', cardinality 0..*).
+'CarRental2::CarGroup' (role 'CarGroup', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Offers_Branch', cardinality 0..*).
+'CarRental2::Customer' (role 'Customer', cardinality 0..*) is associated with 'CarRental2::Rental' (role 'Booking_Rental', cardinality 0..*).
+'CarRental2::TernaryRelationMaintenance' (role 'TernaryRelationMaintenance40', cardinality 0..*) is associated with 'CarRental2::Check' (role 'toCheck', cardinality 0..*).
+'CarRental2::Branch' (role 'Branch', cardinality 0..*) is associated with 'CarRental2::Employee' (role 'Management_Employee_role_manager', cardinality 0..*).
+'CarRental2::TernaryRelationMaintenance' (role 'TernaryRelationMaintenance', cardinality 0..*) is associated with 'CarRental2::Car' (role 'toCar', cardinality 0..*).
+'CarRental2::Employee' (role 'Employee', cardinality 0..*) is associated with 'CarRental2::Branch' (role 'Management_Branch_role_managedBranch', cardinality 0..*).
+'CarRental2::Car' (role 'Assignment_Car', cardinality 0..*) is associated with 'CarRental2::Rental' (role 'Rental35', cardinality 0..*).
+'CarRental2::ServiceDepot' (role 'ServiceDepot', cardinality 0..*) is associated with 'CarRental2::TernaryRelationMaintenance' (role 'toMaintenance', cardinality 0..*).
+'CarRental2::Car' (role 'Car21', cardinality 0..*) is associated with 'CarRental2::CarGroup' (role 'Classification_CarGroup', cardinality 0..*).
+'CarRental2::TernaryRelationMaintenance' (role 'toMaintenance43', cardinality 0..*) is associated with 'CarRental2::Check' (role 'Check', cardinality 0..*).
+'CarRental2::Rental' (role 'Assignment_Rental', cardinality 0..*) is associated with 'CarRental2::Car' (role 'Car17', cardinality 0..*).

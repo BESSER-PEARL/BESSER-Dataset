@@ -1,0 +1,26 @@
+The model has 13 class(es).
+The class 'units::pc::av::EObject' has no attributes.
+The class 'units::pc::av::BaseUnit' has the following attributes: 'name' of type str.
+The class 'units::pc::av::UnitRepository' has no attributes.
+The class 'units::pc::av::PerJoinPointScope' has no attributes.
+The class 'units::pc::av::UnitLiteral' has no attributes.
+The class 'units::pc::av::GlobalScope' has no attributes.
+The class 'units::pc::av::Unit' has no attributes.
+The class 'units::pc::av::UnitPower' has the following attributes: 'exponent' of type int.
+The class 'units::pc::av::Advice' has no attributes.
+The class 'units::pc::av::Pointcut' has no attributes.
+The class 'units::pc::av::UnitMultiplication' has no attributes.
+The class 'units::pc::av::UnitCarryingElement' has the following attributes: 'unitSpecification' of type str.
+The class 'Unit' has no attributes.
+'units::pc::av::UnitPower' is a specialization of 'Unit'.
+'units::pc::av::UnitMultiplication' is a specialization of 'Unit'.
+'units::pc::av::UnitLiteral' is a specialization of 'Unit'.
+'units::pc::av::UnitCarryingElement' (role 'units_pc_av_UnitCarryingElement', cardinality 0..*) is associated with 'units::pc::av::Unit' (role 'units_pc_av_Unit', cardinality 0..*).
+'units::pc::av::UnitRepository' (role 'units_pc_av_UnitRepository', cardinality 0..*) is associated with 'units::pc::av::BaseUnit' (role 'units_pc_av_BaseUnit', cardinality 0..*).
+'units::pc::av::Advice' (role 'units_pc_av_Advice', cardinality 0..*) is associated with 'units::pc::av::EObject' (role 'units_pc_av_EObject10', cardinality 0..*).
+'units::pc::av::UnitMultiplication' (role 'units_pc_av_UnitMultiplication', cardinality 0..*) is associated with 'units::pc::av::Unit' (role 'units_pc_av_Unit3', cardinality 0..*).
+'units::pc::av::GlobalScope' (role 'units_pc_av_GlobalScope', cardinality 0..*) is associated with 'units::pc::av::EObject' (role 'units_pc_av_EObject12', cardinality 0..*).
+'units::pc::av::PerJoinPointScope' (role 'units_pc_av_PerJoinPointScope', cardinality 0..*) is associated with 'units::pc::av::EObject' (role 'units_pc_av_EObject14', cardinality 0..*).
+'units::pc::av::UnitPower' (role 'units_pc_av_UnitPower', cardinality 0..*) is associated with 'units::pc::av::Unit' (role 'units_pc_av_Unit5', cardinality 0..*).
+'units::pc::av::EObject' (role 'units_pc_av_EObject', cardinality 0..*) is associated with 'units::pc::av::Pointcut' (role 'units_pc_av_Pointcut', cardinality 0..*).
+'units::pc::av::UnitLiteral' (role 'units_pc_av_UnitLiteral', cardinality 0..*) is associated with 'units::pc::av::BaseUnit' (role 'units_pc_av_BaseUnit7', cardinality 0..*).

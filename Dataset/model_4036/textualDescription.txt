@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'NamedElement' has no attributes.
+The class 'simpleClass::Attribute' has no attributes.
+The class 'simpleClass::Package' has no attributes.
+The class 'simpleClass::Association' has no attributes.
+The class 'simpleClass::NamedElement' has the following attributes: 'name' of type str.
+The class 'simpleClass::Class' has the following attributes: 'persistent' of type bool.
+The class 'simpleClass::ClassModel' has no attributes.
+'simpleClass::Association' is a specialization of 'NamedElement'.
+'simpleClass::Package' is a specialization of 'NamedElement'.
+'simpleClass::Class' is a specialization of 'NamedElement'.
+'simpleClass::Attribute' is a specialization of 'NamedElement'.
+'simpleClass::Association' (role 'simpleClass_Association', cardinality 0..*) is associated with 'simpleClass::Package' (role 'simpleClass_Package7', cardinality 0..*).
+'simpleClass::Package' (role 'simpleClass_Package3', cardinality 0..*) is associated with 'simpleClass::Package' (role 'simpleClass_Package1', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class12', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class10', cardinality 0..*).
+'simpleClass::Package' (role 'simpleClass_Package5', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class', cardinality 0..*).
+'simpleClass::Attribute' (role 'simpleClass_Attribute', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class9', cardinality 0..*).
+'simpleClass::Association' (role 'simpleClass_Association17', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class18', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class15', cardinality 0..*) is associated with 'simpleClass::Association' (role 'simpleClass_Association14', cardinality 0..*).
+'simpleClass::Package' (role 'simpleClass_Package', cardinality 0..*) is associated with 'simpleClass::ClassModel' (role 'simpleClass_ClassModel', cardinality 0..*).

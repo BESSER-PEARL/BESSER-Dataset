@@ -1,0 +1,83 @@
+The model has 38 class(es).
+The class 'Expression' has no attributes.
+The class 'klangexpr::BinaryOperator' has no attributes.
+The class 'klangexpr::Or' has no attributes.
+The class 'klangexpr::LessThanOrEqual' has no attributes.
+The class 'klangexpr::SendMessage' has the following attributes: 'name' of type str.
+The class 'BinaryOperator' has no attributes.
+The class 'klangexpr::ForeverLoop' has no attributes.
+The class 'klangexpr::Yield' has no attributes.
+The class 'Operator' has no attributes.
+The class 'klangexpr::FunctionCall' has the following attributes: 'name' of type str.
+The class 'klangexpr::Not' has no attributes.
+The class 'klangexpr::Operator' has no attributes.
+The class 'klangexpr::StringLiteral' has the following attributes: 'value' of type str.
+The class 'klangexpr::Statement' has no attributes.
+The class 'klangexpr::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'klangexpr::Divide' has no attributes.
+The class 'klangexpr::GreaterThan' has no attributes.
+The class 'klangexpr::If' has no attributes.
+The class 'klangexpr::LessThan' has no attributes.
+The class 'klangexpr::Plus' has no attributes.
+The class 'klangexpr::UnaryMinus' has no attributes.
+The class 'klangexpr::VariableAssignment' has the following attributes: 'variableName' of type str.
+The class 'klangexpr::WhileLoop' has no attributes.
+The class 'klangexpr::Multiply' has no attributes.
+The class 'Statement' has no attributes.
+The class 'klangexpr::Equal' has no attributes.
+The class 'klangexpr::GreaterThanOrEqual' has no attributes.
+The class 'klangexpr::ToDouble' has no attributes.
+The class 'klangexpr::Sleep' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'klangexpr::VariableReference' has the following attributes: 'variableName' of type str.
+The class 'klangexpr::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'klangexpr::Minus' has no attributes.
+The class 'klangexpr::Expression' has no attributes.
+The class 'klangexpr::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'klangexpr::UnaryOperator' has no attributes.
+The class 'klangexpr::And' has no attributes.
+The class 'klangexpr::ToInt' has no attributes.
+'klangexpr::And' is a specialization of 'BinaryOperator'.
+'klangexpr::ToInt' is a specialization of 'UnaryOperator'.
+'klangexpr::GreaterThan' is a specialization of 'BinaryOperator'.
+'klangexpr::ForeverLoop' is a specialization of 'Statement'.
+'klangexpr::StringLiteral' is a specialization of 'Expression'.
+'klangexpr::IntegerLiteral' is a specialization of 'Expression'.
+'klangexpr::Minus' is a specialization of 'BinaryOperator'.
+'klangexpr::Multiply' is a specialization of 'BinaryOperator'.
+'klangexpr::If' is a specialization of 'Statement'.
+'klangexpr::DoubleLiteral' is a specialization of 'Expression'.
+'klangexpr::Not' is a specialization of 'UnaryOperator'.
+'klangexpr::Or' is a specialization of 'BinaryOperator'.
+'klangexpr::VariableReference' is a specialization of 'Expression'.
+'klangexpr::LessThan' is a specialization of 'BinaryOperator'.
+'klangexpr::FunctionCall' is a specialization of 'Expression'.
+'klangexpr::Yield' is a specialization of 'Statement'.
+'klangexpr::LessThanOrEqual' is a specialization of 'BinaryOperator'.
+'klangexpr::SendMessage' is a specialization of 'Statement'.
+'klangexpr::Operator' is a specialization of 'Expression'.
+'klangexpr::UnaryMinus' is a specialization of 'UnaryOperator'.
+'klangexpr::BinaryOperator' is a specialization of 'Operator'.
+'klangexpr::Equal' is a specialization of 'BinaryOperator'.
+'klangexpr::GreaterThanOrEqual' is a specialization of 'BinaryOperator'.
+'klangexpr::WhileLoop' is a specialization of 'Statement'.
+'klangexpr::ToDouble' is a specialization of 'UnaryOperator'.
+'klangexpr::VariableAssignment' is a specialization of 'Statement'.
+'klangexpr::BooleanLiteral' is a specialization of 'Expression'.
+'klangexpr::Divide' is a specialization of 'BinaryOperator'.
+'klangexpr::Sleep' is a specialization of 'Statement'.
+'klangexpr::UnaryOperator' is a specialization of 'Operator'.
+'klangexpr::FunctionCall' is a specialization of 'Statement'.
+'klangexpr::Plus' is a specialization of 'BinaryOperator'.
+'klangexpr::Expression' (role 'klangexpr_Expression', cardinality 0..*) is associated with 'klangexpr::WhileLoop' (role 'klangexpr_WhileLoop', cardinality 0..*).
+'klangexpr::Sleep' (role 'klangexpr_Sleep', cardinality 0..*) is associated with 'klangexpr::Expression' (role 'klangexpr_Expression25', cardinality 0..*).
+'klangexpr::UnaryOperator' (role 'klangexpr_UnaryOperator', cardinality 0..*) is associated with 'klangexpr::Expression' (role 'klangexpr_Expression16', cardinality 0..*).
+'klangexpr::ForeverLoop' (role 'klangexpr_ForeverLoop', cardinality 0..*) is associated with 'klangexpr::Statement' (role 'klangexpr_Statement12', cardinality 0..*).
+'klangexpr::Expression' (role 'klangexpr_Expression4', cardinality 0..*) is associated with 'klangexpr::If' (role 'klangexpr_If', cardinality 0..*).
+'klangexpr::VariableAssignment' (role 'klangexpr_VariableAssignment', cardinality 0..*) is associated with 'klangexpr::Expression' (role 'klangexpr_Expression14', cardinality 0..*).
+'klangexpr::Statement' (role 'klangexpr_Statement10', cardinality 0..*) is associated with 'klangexpr::If' (role 'klangexpr_If9', cardinality 0..*).
+'klangexpr::BinaryOperator' (role 'klangexpr_BinaryOperator20', cardinality 0..*) is associated with 'klangexpr::Expression' (role 'klangexpr_Expression21', cardinality 0..*).
+'klangexpr::Statement' (role 'klangexpr_Statement7', cardinality 0..*) is associated with 'klangexpr::If' (role 'klangexpr_If6', cardinality 0..*).
+'klangexpr::Expression' (role 'klangexpr_Expression23', cardinality 0..*) is associated with 'klangexpr::FunctionCall' (role 'klangexpr_FunctionCall', cardinality 0..*).
+'klangexpr::BinaryOperator' (role 'klangexpr_BinaryOperator', cardinality 0..*) is associated with 'klangexpr::Expression' (role 'klangexpr_Expression18', cardinality 0..*).
+'klangexpr::Statement' (role 'klangexpr_Statement', cardinality 0..*) is associated with 'klangexpr::WhileLoop' (role 'klangexpr_WhileLoop2', cardinality 0..*).

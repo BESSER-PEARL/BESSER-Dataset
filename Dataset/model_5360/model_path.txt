@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Johnstedt/Message/hws_stubs/output/production/Message/restlet-jse-2.3.12/restlet-jse-2.3.12/src/org.restlet.test/org/restlet/test/ext/emf/Test.ecore

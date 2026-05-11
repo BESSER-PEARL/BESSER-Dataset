@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'myDsl::Greeting' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Import' has the following attributes: 'Import_type' of type str; 'import_num' of type int.
+'myDsl::Import' (role 'myDsl_Import', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model2', cardinality 0..*).
+'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).

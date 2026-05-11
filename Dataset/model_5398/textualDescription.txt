@@ -1,0 +1,117 @@
+The model has 48 class(es).
+The class 'SecondeExp' has no attributes.
+The class 'droneDSLLib::Parallele3' has no attributes.
+The class 'droneDSLLib::RefSecondeVar' has no attributes.
+The class 'droneDSLLib::Monter' has no attributes.
+The class 'Mouvement' has no attributes.
+The class 'droneDSLLib::Avancer' has no attributes.
+The class 'RGRD' has no attributes.
+The class 'droneDSLLib::SecondeDecl' has no attributes.
+The class 'droneDSLLib::Gauche' has no attributes.
+The class 'DecollerAtterrir' has no attributes.
+The class 'droneDSLLib::GDr' has no attributes.
+The class 'droneDSLLib::FonctionDecl' has the following attributes: 'name' of type str.
+The class 'droneDSLLib::RGRD' has no attributes.
+The class 'droneDSLLib::SecondeExp' has no attributes.
+The class 'droneDSLLib::Parallele4' has no attributes.
+The class 'droneDSLLib::Pause' has no attributes.
+The class 'droneDSLLib::CommandeBasique' has no attributes.
+The class 'droneDSLLib::DecollerAtterrir' has the following attributes: 'str' of type str.
+The class 'droneDSLLib::PourcentDecl' has no attributes.
+The class 'CommandeBasique' has no attributes.
+The class 'droneDSLLib::RefPourcentVar' has no attributes.
+The class 'droneDSLLib::RotationDroite' has no attributes.
+The class 'droneDSLLib::PourcentConst' has the following attributes: 'val' of type str.
+The class 'droneDSLLib::EObject' has no attributes.
+The class 'droneDSLLib::Reculer' has no attributes.
+The class 'droneDSLLib::Atterrir' has no attributes.
+The class 'droneDSLLib::SecondeConst' has the following attributes: 'val' of type str.
+The class 'droneDSLLib::Decoller' has no attributes.
+The class 'droneDSLLib::Parallele2' has no attributes.
+The class 'droneDSLLib::VarDecl' has the following attributes: 'name' of type str.
+The class 'FonctionCall' has no attributes.
+The class 'droneDSLLib::RotationGauche' has no attributes.
+The class 'droneDSLLib::Droite' has no attributes.
+The class 'VarDecl' has no attributes.
+The class 'GDr' has no attributes.
+The class 'droneDSLLib::Descendre' has no attributes.
+The class 'droneDSLLib::AR' has no attributes.
+The class 'Parallele' has no attributes.
+The class 'droneDSLLib::PourcentExp' has no attributes.
+The class 'droneDSLLib::FonctionCall' has no attributes.
+The class 'droneDSLLib::FonctionCallInterne' has no attributes.
+The class 'droneDSLLib::Parallele' has no attributes.
+The class 'AR' has no attributes.
+The class 'droneDSLLib::MD' has no attributes.
+The class 'droneDSLLib::Mouvement' has no attributes.
+The class 'PourcentExp' has no attributes.
+The class 'droneDSLLib::Model' has no attributes.
+The class 'MD' has no attributes.
+'droneDSLLib::FonctionCallInterne' is a specialization of 'FonctionCall'.
+'droneDSLLib::Descendre' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Avancer' is a specialization of 'Mouvement'.
+'droneDSLLib::Parallele2' is a specialization of 'Parallele'.
+'droneDSLLib::Atterrir' is a specialization of 'DecollerAtterrir'.
+'droneDSLLib::Avancer' is a specialization of 'AR'.
+'droneDSLLib::Monter' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Droite' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Parallele4' is a specialization of 'Parallele'.
+'droneDSLLib::Pause' is a specialization of 'CommandeBasique'.
+'droneDSLLib::RotationDroite' is a specialization of 'RGRD'.
+'droneDSLLib::SecondeDecl' is a specialization of 'VarDecl'.
+'droneDSLLib::PourcentDecl' is a specialization of 'VarDecl'.
+'droneDSLLib::Monter' is a specialization of 'MD'.
+'droneDSLLib::Gauche' is a specialization of 'Mouvement'.
+'droneDSLLib::Reculer' is a specialization of 'Mouvement'.
+'droneDSLLib::Avancer' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Parallele' is a specialization of 'Mouvement'.
+'droneDSLLib::Monter' is a specialization of 'Mouvement'.
+'droneDSLLib::RotationGauche' is a specialization of 'RGRD'.
+'droneDSLLib::Gauche' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Descendre' is a specialization of 'Mouvement'.
+'droneDSLLib::RotationDroite' is a specialization of 'CommandeBasique'.
+'droneDSLLib::Reculer' is a specialization of 'CommandeBasique'.
+'droneDSLLib::RefPourcentVar' is a specialization of 'PourcentExp'.
+'droneDSLLib::RotationDroite' is a specialization of 'Mouvement'.
+'droneDSLLib::RotationGauche' is a specialization of 'Mouvement'.
+'droneDSLLib::Descendre' is a specialization of 'MD'.
+'droneDSLLib::RefSecondeVar' is a specialization of 'SecondeExp'.
+'droneDSLLib::Gauche' is a specialization of 'GDr'.
+'droneDSLLib::RotationGauche' is a specialization of 'CommandeBasique'.
+'droneDSLLib::SecondeConst' is a specialization of 'SecondeExp'.
+'droneDSLLib::Reculer' is a specialization of 'AR'.
+'droneDSLLib::Droite' is a specialization of 'GDr'.
+'droneDSLLib::PourcentConst' is a specialization of 'PourcentExp'.
+'droneDSLLib::Droite' is a specialization of 'Mouvement'.
+'droneDSLLib::Parallele3' is a specialization of 'Parallele'.
+'droneDSLLib::Decoller' is a specialization of 'DecollerAtterrir'.
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp19', cardinality 0..*) is associated with 'droneDSLLib::Avancer' (role 'droneDSLLib_Avancer18', cardinality 0..*).
+'droneDSLLib::Monter' (role 'droneDSLLib_Monter', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp', cardinality 0..*).
+'droneDSLLib::Droite' (role 'droneDSLLib_Droite', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp31', cardinality 0..*).
+'droneDSLLib::Parallele2' (role 'droneDSLLib_Parallele2', cardinality 0..*) is associated with 'droneDSLLib::EObject' (role 'droneDSLLib_EObject57', cardinality 0..*).
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp', cardinality 0..*) is associated with 'droneDSLLib::Monter' (role 'droneDSLLib_Monter9', cardinality 0..*).
+'droneDSLLib::SecondeDecl' (role 'droneDSLLib_SecondeDecl', cardinality 0..*) is associated with 'droneDSLLib::SecondeConst' (role 'droneDSLLib_SecondeConst', cardinality 0..*).
+'droneDSLLib::PourcentConst' (role 'droneDSLLib_PourcentConst', cardinality 0..*) is associated with 'droneDSLLib::PourcentDecl' (role 'droneDSLLib_PourcentDecl', cardinality 0..*).
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp44', cardinality 0..*) is associated with 'droneDSLLib::RotationDroite' (role 'droneDSLLib_RotationDroite43', cardinality 0..*).
+'droneDSLLib::EObject' (role 'droneDSLLib_EObject64', cardinality 0..*) is associated with 'droneDSLLib::Parallele4' (role 'droneDSLLib_Parallele463', cardinality 0..*).
+'droneDSLLib::Parallele' (role 'droneDSLLib_Parallele', cardinality 0..*) is associated with 'droneDSLLib::EObject' (role 'droneDSLLib_EObject52', cardinality 0..*).
+'droneDSLLib::PourcentDecl' (role 'droneDSLLib_PourcentDecl6', cardinality 0..*) is associated with 'droneDSLLib::RefPourcentVar' (role 'droneDSLLib_RefPourcentVar', cardinality 0..*).
+'droneDSLLib::RefSecondeVar' (role 'droneDSLLib_RefSecondeVar', cardinality 0..*) is associated with 'droneDSLLib::SecondeDecl' (role 'droneDSLLib_SecondeDecl4', cardinality 0..*).
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp34', cardinality 0..*) is associated with 'droneDSLLib::Droite' (role 'droneDSLLib_Droite33', cardinality 0..*).
+'droneDSLLib::RotationGauche' (role 'droneDSLLib_RotationGauche38', cardinality 0..*) is associated with 'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp39', cardinality 0..*).
+'droneDSLLib::RotationDroite' (role 'droneDSLLib_RotationDroite', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp41', cardinality 0..*).
+'droneDSLLib::EObject' (role 'droneDSLLib_EObject55', cardinality 0..*) is associated with 'droneDSLLib::Parallele' (role 'droneDSLLib_Parallele54', cardinality 0..*).
+'droneDSLLib::Parallele4' (role 'droneDSLLib_Parallele4', cardinality 0..*) is associated with 'droneDSLLib::EObject' (role 'droneDSLLib_EObject61', cardinality 0..*).
+'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp16', cardinality 0..*) is associated with 'droneDSLLib::Avancer' (role 'droneDSLLib_Avancer', cardinality 0..*).
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp24', cardinality 0..*) is associated with 'droneDSLLib::Reculer' (role 'droneDSLLib_Reculer23', cardinality 0..*).
+'droneDSLLib::RotationGauche' (role 'droneDSLLib_RotationGauche', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp36', cardinality 0..*).
+'droneDSLLib::FonctionDecl' (role 'droneDSLLib_FonctionDecl', cardinality 0..*) is associated with 'droneDSLLib::Model' (role 'droneDSLLib_Model', cardinality 0..*).
+'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp14', cardinality 0..*) is associated with 'droneDSLLib::Descendre' (role 'droneDSLLib_Descendre13', cardinality 0..*).
+'droneDSLLib::Gauche' (role 'droneDSLLib_Gauche', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp26', cardinality 0..*).
+'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp46', cardinality 0..*) is associated with 'droneDSLLib::Pause' (role 'droneDSLLib_Pause', cardinality 0..*).
+'droneDSLLib::Gauche' (role 'droneDSLLib_Gauche28', cardinality 0..*) is associated with 'droneDSLLib::PourcentExp' (role 'droneDSLLib_PourcentExp29', cardinality 0..*).
+'droneDSLLib::FonctionDecl' (role 'droneDSLLib_FonctionDecl50', cardinality 0..*) is associated with 'droneDSLLib::FonctionCallInterne' (role 'droneDSLLib_FonctionCallInterne', cardinality 0..*).
+'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp11', cardinality 0..*) is associated with 'droneDSLLib::Descendre' (role 'droneDSLLib_Descendre', cardinality 0..*).
+'droneDSLLib::EObject' (role 'droneDSLLib_EObject59', cardinality 0..*) is associated with 'droneDSLLib::Parallele3' (role 'droneDSLLib_Parallele3', cardinality 0..*).
+'droneDSLLib::Reculer' (role 'droneDSLLib_Reculer', cardinality 0..*) is associated with 'droneDSLLib::SecondeExp' (role 'droneDSLLib_SecondeExp21', cardinality 0..*).
+'droneDSLLib::FonctionDecl' (role 'droneDSLLib_FonctionDecl48', cardinality 0..*) is associated with 'droneDSLLib::EObject' (role 'droneDSLLib_EObject', cardinality 0..*).

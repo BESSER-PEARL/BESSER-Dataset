@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'TypeD::B' has the following attributes: 'name' of type str.
+The class 'TypeD::BElementName' has the following attributes: 'name' of type str.
+The class 'TypeD::AElementName' has the following attributes: 'name' of type str.
+The class 'TypeD::C' has the following attributes: 'name' of type str.
+The class 'TypeD::A' has the following attributes: 'name' of type str.
+'TypeD::B' (role 'TypeD_B', cardinality 0..*) is associated with 'TypeD::A' (role 'TypeD_A', cardinality 0..*).
+'TypeD::A' (role 'TypeD_A3', cardinality 0..*) is associated with 'TypeD::B' (role 'TypeD_B2', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'kobold::Greeting' has the following attributes: 'name' of type str.
+The class 'kobold::Model' has no attributes.
+'kobold::Greeting' (role 'kobold_Greeting', cardinality 0..*) is associated with 'kobold::Model' (role 'kobold_Model', cardinality 0..*).

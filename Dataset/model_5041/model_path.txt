@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Nasdanika/bank/org.nasdanika.bank/model/bank.ecore

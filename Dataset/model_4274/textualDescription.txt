@@ -1,0 +1,32 @@
+The model has 11 class(es).
+The class 'bowling::Tournament' has the following attributes: 'receivesTrophy' of type bool; 'matchDays' of type date; 'type' of type str; 'priceMoney' of type float.
+The class 'bowling::Merchandise' has the following attributes: 'serialNumber' of type str; 'name' of type str; 'price' of type str.
+The class 'bowling::Area' has no attributes.
+The class 'bowling::RefereeToGamesMap' has no attributes.
+The class 'bowling::Referee' has the following attributes: 'dateOfBirth' of type str.
+The class 'bowling::Player' has the following attributes: 'playedTournamentTypes' of type str; 'gender' of type str; 'eMails' of type str; 'name' of type str; 'numberOfVictories' of type int; 'dateOfBirth' of type date; 'winLossRatio' of type str; 'isProfessional' of type bool; 'height' of type float.
+The class 'bowling::Fan' has the following attributes: 'moneySpentOnTickets' of type float; 'name' of type str; 'eMails' of type str; 'numberOfTournamentsVisited' of type int; 'dateOfBirth' of type date; 'hasSeasonTicket' of type bool; 'gender' of type str.
+The class 'bowling::Game' has the following attributes: 'frames' of type int.
+The class 'bowling::League' has the following attributes: 'name' of type str.
+The class 'bowling::PlayerToPointsMap' has the following attributes: 'value' of type str.
+The class 'bowling::Matchup' has the following attributes: 'nrSpectators' of type str.
+The enumeration 'TournamentType' has the following literals: 'Amateur', 'Pro'.
+The enumeration 'Gender' has the following literals: 'Male', 'Female'.
+'bowling::Player' (role 'bowling_Player15', cardinality 0..*) is associated with 'bowling::PlayerToPointsMap' (role 'bowling_PlayerToPointsMap14', cardinality 0..*).
+'bowling::Referee' (role 'bowling_Referee', cardinality 0..*) is associated with 'bowling::League' (role 'bowling_League17', cardinality 0..*).
+'bowling::Game' (role 'games', cardinality 0..*) is associated with 'bowling::Matchup' (role 'Matchup', cardinality 0..*).
+'bowling::Area' (role 'bowling_Area27', cardinality 0..*) is associated with 'bowling::Tournament' (role 'bowling_Tournament28', cardinality 0..*).
+'bowling::Tournament' (role 'bowling_Tournament', cardinality 0..*) is associated with 'bowling::Matchup' (role 'bowling_Matchup', cardinality 0..*).
+'bowling::Player' (role 'bowling_Player30', cardinality 0..*) is associated with 'bowling::Fan' (role 'bowling_Fan', cardinality 0..*).
+'bowling::Area' (role 'bowling_Area', cardinality 0..*) is associated with 'bowling::Area' (role 'bowling_Area24', cardinality 0..*).
+'bowling::Player' (role 'bowling_Player6', cardinality 0..*) is associated with 'bowling::Tournament' (role 'bowling_Tournament5', cardinality 0..*).
+'bowling::Referee' (role 'bowling_Referee20', cardinality 0..*) is associated with 'bowling::RefereeToGamesMap' (role 'bowling_RefereeToGamesMap19', cardinality 0..*).
+'bowling::Matchup' (role 'matchup', cardinality 0..*) is associated with 'bowling::Game' (role 'Game', cardinality 0..*).
+'bowling::RefereeToGamesMap' (role 'bowling_RefereeToGamesMap', cardinality 0..*) is associated with 'bowling::Tournament' (role 'bowling_Tournament8', cardinality 0..*).
+'bowling::Game' (role 'bowling_Game', cardinality 0..*) is associated with 'bowling::Player' (role 'bowling_Player12', cardinality 0..*).
+'bowling::League' (role 'bowling_League', cardinality 0..*) is associated with 'bowling::Player' (role 'bowling_Player', cardinality 0..*).
+'bowling::RefereeToGamesMap' (role 'bowling_RefereeToGamesMap22', cardinality 0..*) is associated with 'bowling::Game' (role 'bowling_Game23', cardinality 0..*).
+'bowling::PlayerToPointsMap' (role 'bowling_PlayerToPointsMap', cardinality 0..*) is associated with 'bowling::Tournament' (role 'bowling_Tournament3', cardinality 0..*).
+'bowling::Tournament' (role 'bowling_Tournament38', cardinality 0..*) is associated with 'bowling::Fan' (role 'bowling_Fan37', cardinality 0..*).
+'bowling::Merchandise' (role 'bowling_Merchandise35', cardinality 0..*) is associated with 'bowling::Fan' (role 'bowling_Fan34', cardinality 0..*).
+'bowling::Fan' (role 'bowling_Fan32', cardinality 0..*) is associated with 'bowling::Merchandise' (role 'bowling_Merchandise', cardinality 0..*).

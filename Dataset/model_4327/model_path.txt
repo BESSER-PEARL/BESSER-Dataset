@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDEGroup/QMM-COMLAN-data/quality-models/qualityMetamodel.ecore

@@ -1,0 +1,13 @@
+The model has 12 class(es).
+The class 'custostorage::D' has no attributes.
+The class 'custostorage::B' has no attributes.
+The class 'custostorage::DAbstract' has no attributes.
+The class 'custostorage::A' has no attributes.
+The class 'custostorage::FAbstract' has no attributes.
+The class 'custostorage::C' has no attributes.
+The class 'custostorage::EAbstract' has no attributes.
+The class 'custostorage::F' has no attributes.
+The class 'custostorage::CAbstract' has no attributes.
+The class 'custostorage::AAbstract' has no attributes.
+The class 'custostorage::BAbstract' has no attributes.
+The class 'custostorage::E' has no attributes.

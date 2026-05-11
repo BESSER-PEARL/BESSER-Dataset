@@ -1,0 +1,46 @@
+The model has 18 class(es).
+The class 'uml2CD::PrimitiveType' has no attributes.
+The class 'uml2CD::Enumeration' has no attributes.
+The class 'uml2CD::DataType' has no attributes.
+The class 'uml2CD::Generalization' has the following attributes: 'isSubstitutable' of type str.
+The class 'uml2CD::Package' has no attributes.
+The class 'uml2CD::NamedElement' has the following attributes: 'name' of type str.
+The class 'uml2CD::Class' has the following attributes: 'active' of type str.
+The class 'uml2CD::Property' has the following attributes: 'aggregation' of type str; 'lower' of type str; 'isDerived' of type str; 'upper' of type str.
+The class 'uml2CD::Constraint' has the following attributes: 'specification' of type str.
+The class 'uml2CD::EnumerationLiteral' has no attributes.
+The class 'uml2CD::Association' has the following attributes: 'isDerived' of type str.
+The class 'uml2CD::Parameter' has the following attributes: 'kind' of type str; 'defaultValue' of type str.
+The class 'uml2CD::Comment' has the following attributes: 'value' of type str.
+The class 'uml2CD::GeneralizationSet' has the following attributes: 'isDisjoint' of type str; 'isCovering' of type str.
+The class 'uml2CD::Operation' has the following attributes: 'visibility' of type str; 'body' of type str; 'isQuery' of type str.
+The class 'DataType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'uml2CD::UMLModel' has no attributes.
+'uml2CD::Association' is a specialization of 'NamedElement'.
+'uml2CD::PrimitiveType' is a specialization of 'DataType'.
+'uml2CD::Package' is a specialization of 'NamedElement'.
+'uml2CD::Property' is a specialization of 'NamedElement'.
+'uml2CD::Operation' is a specialization of 'NamedElement'.
+'uml2CD::Enumeration' is a specialization of 'DataType'.
+'uml2CD::EnumerationLiteral' is a specialization of 'NamedElement'.
+'uml2CD::Class' is a specialization of 'NamedElement'.
+'uml2CD::DataType' is a specialization of 'NamedElement'.
+'uml2CD::Package' (role 'uml2CD_Package10', cardinality 0..*) is associated with 'uml2CD::Association' (role 'uml2CD_Association', cardinality 0..*).
+'uml2CD::Property' (role 'uml2CD_Property32', cardinality 0..*) is associated with 'uml2CD::Association' (role 'uml2CD_Association31', cardinality 0..*).
+'uml2CD::DataType' (role 'uml2CD_DataType22', cardinality 0..*) is associated with 'uml2CD::Parameter' (role 'uml2CD_Parameter', cardinality 0..*).
+'uml2CD::Class' (role 'uml2CD_Class26', cardinality 0..*) is associated with 'uml2CD::Operation' (role 'uml2CD_Operation27', cardinality 0..*).
+'uml2CD::Generalization' (role 'uml2CD_Generalization', cardinality 0..*) is associated with 'uml2CD::Package' (role 'uml2CD_Package12', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package', cardinality 0..*) is associated with 'uml2CD::Package' (role 'uml2CD_Package3', cardinality 0..*).
+'uml2CD::NamedElement' (role 'uml2CD_NamedElement', cardinality 0..*) is associated with 'uml2CD::Comment' (role 'uml2CD_Comment', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package8', cardinality 0..*) is associated with 'uml2CD::DataType' (role 'uml2CD_DataType', cardinality 0..*).
+'uml2CD::Enumeration' (role 'uml2CD_Enumeration', cardinality 0..*) is associated with 'uml2CD::EnumerationLiteral' (role 'uml2CD_EnumerationLiteral', cardinality 0..*).
+'uml2CD::Class' (role 'uml2CD_Class29', cardinality 0..*) is associated with 'uml2CD::Property' (role 'uml2CD_Property', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package38', cardinality 0..*) is associated with 'uml2CD::UMLModel' (role 'uml2CD_UMLModel', cardinality 0..*).
+'uml2CD::Package' (role 'uml2CD_Package6', cardinality 0..*) is associated with 'uml2CD::Class' (role 'uml2CD_Class', cardinality 0..*).
+'uml2CD::Association' (role 'uml2CD_Association34', cardinality 0..*) is associated with 'uml2CD::Property' (role 'uml2CD_Property35', cardinality 0..*).
+'uml2CD::Operation' (role 'uml2CD_Operation', cardinality 0..*) is associated with 'uml2CD::Operation' (role 'uml2CD_Operation23', cardinality 0..*).
+'uml2CD::Generalization' (role 'uml2CD_Generalization14', cardinality 0..*) is associated with 'uml2CD::Class' (role 'uml2CD_Class15', cardinality 0..*).
+'uml2CD::Generalization' (role 'uml2CD_Generalization17', cardinality 0..*) is associated with 'uml2CD::Class' (role 'uml2CD_Class18', cardinality 0..*).
+'uml2CD::Constraint' (role 'uml2CD_Constraint', cardinality 0..*) is associated with 'uml2CD::NamedElement' (role 'uml2CD_NamedElement2', cardinality 0..*).
+'uml2CD::GeneralizationSet' (role 'uml2CD_GeneralizationSet', cardinality 0..*) is associated with 'uml2CD::Generalization' (role 'uml2CD_Generalization20', cardinality 0..*).

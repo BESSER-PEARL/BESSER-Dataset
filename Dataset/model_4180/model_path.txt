@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/LolloCorte/bpel-xtext/org.xtext.example.mydsl/src-gen/org/xtext/example/mydsl/MyDsl.ecore

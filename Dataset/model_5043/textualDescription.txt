@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'nocollectionowner::Transaction' has the following attributes: 'endDate' of type date; 'price' of type float; 'paidDate' of type date; 'startDate' of type date; 'number' of type str.
+The class 'nocollectionowner::ProductCategory' has the following attributes: 'name' of type str.
+The class 'nocollectionowner::Product' has the following attributes: 'name' of type str; 'description' of type str; 'number' of type str.
+The class 'nocollectionowner::Customer' has the following attributes: 'address' of type str; 'comments' of type str; 'hotel' of type str; 'surname' of type str; 'familyName' of type str; 'telephoneNr' of type str.
+The class 'nocollectionowner::PriceCategory' has the following attributes: 'prices' of type float; 'name' of type str.
+The class 'nocollectionowner::Order' has the following attributes: 'comments' of type str; 'number' of type str.
+'nocollectionowner::Product' (role 'nocollectionowner_Product13', cardinality 0..*) is associated with 'nocollectionowner::Transaction' (role 'nocollectionowner_Transaction', cardinality 0..*).
+'nocollectionowner::PriceCategory' (role 'nocollectionowner_PriceCategory', cardinality 0..*) is associated with 'nocollectionowner::Product' (role 'nocollectionowner_Product', cardinality 0..*).
+'nocollectionowner::Order' (role 'order', cardinality 0..*) is associated with 'nocollectionowner::Transaction' (role 'Transaction', cardinality 0..*).
+'nocollectionowner::Order' (role 'nocollectionowner_Order', cardinality 0..*) is associated with 'nocollectionowner::Customer' (role 'nocollectionowner_Customer', cardinality 0..*).
+'nocollectionowner::ProductCategory' (role 'parent', cardinality 0..*) is associated with 'nocollectionowner::ProductCategory' (role 'ProductCategory5', cardinality 0..*).
+'nocollectionowner::ProductCategory' (role 'ProductCategory', cardinality 0..*) is associated with 'nocollectionowner::Product' (role 'products', cardinality 0..*).
+'nocollectionowner::Transaction' (role 'transactions', cardinality 0..*) is associated with 'nocollectionowner::Order' (role 'Order', cardinality 0..*).
+'nocollectionowner::ProductCategory' (role 'subCategorys', cardinality 0..*) is associated with 'nocollectionowner::ProductCategory' (role 'ProductCategory8', cardinality 0..*).
+'nocollectionowner::ProductCategory' (role 'productCategory', cardinality 0..*) is associated with 'nocollectionowner::Product' (role 'Product', cardinality 0..*).

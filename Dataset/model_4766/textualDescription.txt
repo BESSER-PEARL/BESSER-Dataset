@@ -1,0 +1,30 @@
+The model has 12 class(es).
+The class 'syswbeff106prepa::System' has the following attributes: 'id' of type str.
+The class 'syswbeff106prepa::Port' has the following attributes: 'name' of type str.
+The class 'syswbeff106prepa::Workbench' has no attributes.
+The class 'syswbeff106prepa::InputPort' has no attributes.
+The class 'Port' has no attributes.
+The class 'syswbeff106prepa::AbstractFunction' has the following attributes: 'name' of type str.
+The class 'syswbeff106prepa::Flow' has no attributes.
+The class 'syswbeff106prepa::Pattern' has no attributes.
+The class 'syswbeff106prepa::PatternCatalog' has the following attributes: 'id' of type str.
+The class 'syswbeff106prepa::OutputPort' has no attributes.
+The class 'AbstractFunction' has no attributes.
+The class 'syswbeff106prepa::Function' has no attributes.
+'syswbeff106prepa::OutputPort' is a specialization of 'Port'.
+'syswbeff106prepa::Pattern' is a specialization of 'AbstractFunction'.
+'syswbeff106prepa::InputPort' is a specialization of 'Port'.
+'syswbeff106prepa::Function' is a specialization of 'AbstractFunction'.
+'syswbeff106prepa::Pattern' (role 'syswbeff106prepa_Pattern17', cardinality 0..*) is associated with 'syswbeff106prepa::Pattern' (role 'syswbeff106prepa_Pattern15', cardinality 0..*).
+'syswbeff106prepa::PatternCatalog' (role 'syswbeff106prepa_PatternCatalog', cardinality 0..*) is associated with 'syswbeff106prepa::Pattern' (role 'syswbeff106prepa_Pattern', cardinality 0..*).
+'syswbeff106prepa::OutputPort' (role 'syswbeff106prepa_OutputPort26', cardinality 0..*) is associated with 'syswbeff106prepa::Flow' (role 'syswbeff106prepa_Flow25', cardinality 0..*).
+'syswbeff106prepa::InputPort' (role 'syswbeff106prepa_InputPort29', cardinality 0..*) is associated with 'syswbeff106prepa::Flow' (role 'syswbeff106prepa_Flow28', cardinality 0..*).
+'syswbeff106prepa::Pattern' (role 'syswbeff106prepa_Pattern20', cardinality 0..*) is associated with 'syswbeff106prepa::Pattern' (role 'syswbeff106prepa_Pattern18', cardinality 0..*).
+'syswbeff106prepa::AbstractFunction' (role 'syswbeff106prepa_AbstractFunction3', cardinality 0..*) is associated with 'syswbeff106prepa::InputPort' (role 'syswbeff106prepa_InputPort', cardinality 0..*).
+'syswbeff106prepa::OutputPort' (role 'syswbeff106prepa_OutputPort', cardinality 0..*) is associated with 'syswbeff106prepa::AbstractFunction' (role 'syswbeff106prepa_AbstractFunction5', cardinality 0..*).
+'syswbeff106prepa::System' (role 'syswbeff106prepa_System', cardinality 0..*) is associated with 'syswbeff106prepa::Function' (role 'syswbeff106prepa_Function', cardinality 0..*).
+'syswbeff106prepa::Flow' (role 'syswbeff106prepa_Flow', cardinality 0..*) is associated with 'syswbeff106prepa::AbstractFunction' (role 'syswbeff106prepa_AbstractFunction7', cardinality 0..*).
+'syswbeff106prepa::Workbench' (role 'syswbeff106prepa_Workbench13', cardinality 0..*) is associated with 'syswbeff106prepa::PatternCatalog' (role 'syswbeff106prepa_PatternCatalog14', cardinality 0..*).
+'syswbeff106prepa::AbstractFunction' (role 'syswbeff106prepa_AbstractFunction', cardinality 0..*) is associated with 'syswbeff106prepa::AbstractFunction' (role 'syswbeff106prepa_AbstractFunction0', cardinality 0..*).
+'syswbeff106prepa::System' (role 'syswbeff106prepa_System11', cardinality 0..*) is associated with 'syswbeff106prepa::Workbench' (role 'syswbeff106prepa_Workbench', cardinality 0..*).
+'syswbeff106prepa::Function' (role 'syswbeff106prepa_Function23', cardinality 0..*) is associated with 'syswbeff106prepa::Function' (role 'syswbeff106prepa_Function21', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'necsis14::classdiagram::Class' has no attributes.
+The class 'necsis14::classdiagram::Attribute' has no attributes.
+The class 'necsis14::classdiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'necsis14::classdiagram::Association' has the following attributes: 'upperBound' of type int; 'lowerBound' of type int.
+The class 'NamedElement' has no attributes.
+The class 'necsis14::classdiagram::ClassDiagram' has no attributes.
+'necsis14::classdiagram::Attribute' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Class' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Association' is a specialization of 'NamedElement'.
+'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association12', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class13', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class3', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class5', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class7', cardinality 0..*) is associated with 'necsis14::classdiagram::Attribute' (role 'necsis14_classdiagram_Attribute', cardinality 0..*).
+'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association9', cardinality 0..*) is associated with 'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class10', cardinality 0..*).
+'necsis14::classdiagram::Class' (role 'necsis14_classdiagram_Class', cardinality 0..*) is associated with 'necsis14::classdiagram::ClassDiagram' (role 'necsis14_classdiagram_ClassDiagram', cardinality 0..*).
+'necsis14::classdiagram::ClassDiagram' (role 'necsis14_classdiagram_ClassDiagram2', cardinality 0..*) is associated with 'necsis14::classdiagram::Association' (role 'necsis14_classdiagram_Association', cardinality 0..*).

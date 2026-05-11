@@ -1,0 +1,48 @@
+The model has 18 class(es).
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Input' has the following attributes: 'v' of type str; 'v2' of type str.
+The class 'myDsl::Eq' has no attributes.
+The class 'myDsl::Expr' has no attributes.
+The class 'myDsl::Exprs' has no attributes.
+The class 'myDsl::Vars' has the following attributes: 'v2' of type str; 'v1' of type str.
+The class 'myDsl::Commands' has no attributes.
+The class 'myDsl::ExprTerm' has the following attributes: 'termSym' of type str; 'termVar' of type str.
+The class 'myDsl::ExprSimple' has the following attributes: 'mot' of type str.
+The class 'myDsl::EObject' has no attributes.
+The class 'myDsl::Lexpr' has no attributes.
+The class 'myDsl::Output' has the following attributes: 'v' of type str; 'v2' of type str.
+The class 'myDsl::And' has no attributes.
+The class 'myDsl::Or' has no attributes.
+The class 'myDsl::Function' has the following attributes: 'funName' of type str.
+The class 'myDsl::Not' has the following attributes: 'non' of type str.
+The class 'myDsl::Definiton' has no attributes.
+The class 'myDsl::Command' has the following attributes: 'nom' of type str.
+'myDsl::Exprs' (role 'myDsl_Exprs19', cardinality 0..*) is associated with 'myDsl::Command' (role 'myDsl_Command18', cardinality 0..*).
+'myDsl::And' (role 'myDsl_And44', cardinality 0..*) is associated with 'myDsl::Or' (role 'myDsl_Or45', cardinality 0..*).
+'myDsl::Not' (role 'myDsl_Not', cardinality 0..*) is associated with 'myDsl::Or' (role 'myDsl_Or47', cardinality 0..*).
+'myDsl::Command' (role 'myDsl_Command24', cardinality 0..*) is associated with 'myDsl::Commands' (role 'myDsl_Commands25', cardinality 0..*).
+'myDsl::Eq' (role 'myDsl_Eq56', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject57', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr68', cardinality 0..*) is associated with 'myDsl::Lexpr' (role 'myDsl_Lexpr67', cardinality 0..*).
+'myDsl::Or' (role 'myDsl_Or', cardinality 0..*) is associated with 'myDsl::And' (role 'myDsl_And42', cardinality 0..*).
+'myDsl::Not' (role 'myDsl_Not50', cardinality 0..*) is associated with 'myDsl::Or' (role 'myDsl_Or49', cardinality 0..*).
+'myDsl::Input' (role 'myDsl_Input', cardinality 0..*) is associated with 'myDsl::Definiton' (role 'myDsl_Definiton4', cardinality 0..*).
+'myDsl::Command' (role 'myDsl_Command27', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr28', cardinality 0..*).
+'myDsl::ExprTerm' (role 'myDsl_ExprTerm', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr40', cardinality 0..*).
+'myDsl::Eq' (role 'myDsl_Eq', cardinality 0..*) is associated with 'myDsl::Not' (role 'myDsl_Not52', cardinality 0..*).
+'myDsl::Commands' (role 'myDsl_Commands10', cardinality 0..*) is associated with 'myDsl::Command' (role 'myDsl_Command', cardinality 0..*).
+'myDsl::Exprs' (role 'myDsl_Exprs', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr', cardinality 0..*).
+'myDsl::Command' (role 'myDsl_Command33', cardinality 0..*) is associated with 'myDsl::Commands' (role 'myDsl_Commands34', cardinality 0..*).
+'myDsl::Vars' (role 'myDsl_Vars', cardinality 0..*) is associated with 'myDsl::Command' (role 'myDsl_Command16', cardinality 0..*).
+'myDsl::Commands' (role 'myDsl_Commands', cardinality 0..*) is associated with 'myDsl::Definiton' (role 'myDsl_Definiton6', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr38', cardinality 0..*) is associated with 'myDsl::And' (role 'myDsl_And', cardinality 0..*).
+'myDsl::EObject' (role 'myDsl_EObject', cardinality 0..*) is associated with 'myDsl::Eq' (role 'myDsl_Eq54', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr65', cardinality 0..*) is associated with 'myDsl::ExprSimple' (role 'myDsl_ExprSimple64', cardinality 0..*).
+'myDsl::ExprSimple' (role 'myDsl_ExprSimple', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr36', cardinality 0..*).
+'myDsl::Command' (role 'myDsl_Command21', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr22', cardinality 0..*).
+'myDsl::Eq' (role 'myDsl_Eq59', cardinality 0..*) is associated with 'myDsl::EObject' (role 'myDsl_EObject60', cardinality 0..*).
+'myDsl::Lexpr' (role 'myDsl_Lexpr', cardinality 0..*) is associated with 'myDsl::ExprSimple' (role 'myDsl_ExprSimple62', cardinality 0..*).
+'myDsl::Definiton' (role 'myDsl_Definiton8', cardinality 0..*) is associated with 'myDsl::Output' (role 'myDsl_Output', cardinality 0..*).
+'myDsl::Exprs' (role 'myDsl_Exprs13', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr14', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Function' (role 'myDsl_Function', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr31', cardinality 0..*) is associated with 'myDsl::Command' (role 'myDsl_Command30', cardinality 0..*).
+'myDsl::Definiton' (role 'myDsl_Definiton', cardinality 0..*) is associated with 'myDsl::Function' (role 'myDsl_Function2', cardinality 0..*).

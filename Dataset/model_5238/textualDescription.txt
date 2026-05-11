@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'f::Y' has the following attributes: 'a' of type str.
+The class 'f::X' has no attributes.
+'f::Y' (role 'f_Y', cardinality 0..*) is associated with 'f::X' (role 'f_X', cardinality 0..*).

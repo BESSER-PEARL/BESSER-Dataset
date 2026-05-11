@@ -1,0 +1,81 @@
+The model has 22 class(es).
+The class 'dataflow::Actor' has the following attributes: 'name' of type str.
+The class 'dataflow::TypeBoolean' has the following attributes: 'size' of type int.
+The class 'dataflow::ActorClass' has the following attributes: 'nameSpace' of type str; 'sourceFile' of type str; 'name' of type str; 'sourceCode' of type str.
+The class 'dataflow::Port' has the following attributes: 'name' of type str.
+The class 'dataflow::TypeDouble' has the following attributes: 'size' of type int.
+The class 'dataflow::Type' has the following attributes: 'bits' of type int; 'etype' of type str.
+The class 'dataflow::TypeUndefined' has the following attributes: 'size' of type int.
+The class 'Type' has no attributes.
+The class 'dataflow::SharedVariable' has the following attributes: 'tag' of type str.
+The class 'dataflow::Procedure' has the following attributes: 'name' of type str.
+The class 'dataflow::TypeList' has the following attributes: 'elements' of type int.
+The class 'dataflow::Variable' has the following attributes: 'name' of type str; 'shared' of type bool.
+The class 'dataflow::Network' has the following attributes: 'project' of type str; 'name' of type str; 'sourceFile' of type str.
+The class 'dataflow::Buffer' has no attributes.
+The class 'dataflow::Guard' has the following attributes: 'tag' of type str.
+The class 'Attributable' has no attributes.
+The class 'dataflow::TypeInt' has the following attributes: 'size' of type int.
+The class 'dataflow::Version' has no attributes.
+The class 'dataflow::TypeString' has the following attributes: 'size' of type int.
+The class 'dataflow::Action' has the following attributes: 'name' of type str.
+The class 'Variable' has no attributes.
+The class 'dataflow::TypeUint' has the following attributes: 'size' of type int.
+'dataflow::TypeUint' is a specialization of 'Type'.
+'dataflow::Buffer' is a specialization of 'Attributable'.
+'dataflow::TypeString' is a specialization of 'Type'.
+'dataflow::Actor' is a specialization of 'Attributable'.
+'dataflow::ActorClass' is a specialization of 'Attributable'.
+'dataflow::TypeDouble' is a specialization of 'Type'.
+'dataflow::Guard' is a specialization of 'Attributable'.
+'dataflow::Action' is a specialization of 'Attributable'.
+'dataflow::TypeBoolean' is a specialization of 'Type'.
+'dataflow::Procedure' is a specialization of 'Attributable'.
+'dataflow::TypeInt' is a specialization of 'Type'.
+'dataflow::Port' is a specialization of 'Attributable'.
+'dataflow::SharedVariable' is a specialization of 'Variable'.
+'dataflow::TypeList' is a specialization of 'Type'.
+'dataflow::Network' is a specialization of 'Attributable'.
+'dataflow::TypeUndefined' is a specialization of 'Type'.
+'dataflow::Variable' is a specialization of 'Attributable'.
+'dataflow::Buffer' (role 'Buffer76', cardinality 0..*) is associated with 'dataflow::Port' (role 'source', cardinality 0..*).
+'dataflow::Action' (role 'Action73', cardinality 0..*) is associated with 'dataflow::Port' (role 'inputPorts', cardinality 0..*).
+'dataflow::Port' (role 'Port83', cardinality 0..*) is associated with 'dataflow::Buffer' (role 'input', cardinality 0..*).
+'dataflow::Port' (role 'dataflow_Port78', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor79', cardinality 0..*).
+'dataflow::Buffer' (role 'dataflow_Buffer', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network4', cardinality 0..*).
+'dataflow::Network' (role 'dataflow_Network11', cardinality 0..*) is associated with 'dataflow::SharedVariable' (role 'dataflow_SharedVariable', cardinality 0..*).
+'dataflow::Buffer' (role 'dataflow_Buffer88', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network89', cardinality 0..*).
+'dataflow::Action' (role 'dataflow_Action', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor31', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor44', cardinality 0..*) is associated with 'dataflow::Buffer' (role 'dataflow_Buffer45', cardinality 0..*).
+'dataflow::Network' (role 'dataflow_Network', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor', cardinality 0..*).
+'dataflow::ActorClass' (role 'dataflow_ActorClass16', cardinality 0..*) is associated with 'dataflow::Version' (role 'dataflow_Version17', cardinality 0..*).
+'dataflow::Network' (role 'dataflow_Network20', cardinality 0..*) is associated with 'dataflow::ActorClass' (role 'dataflow_ActorClass19', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor41', cardinality 0..*) is associated with 'dataflow::Buffer' (role 'dataflow_Buffer42', cardinality 0..*).
+'dataflow::Action' (role 'dataflow_Action58', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor59', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor22', cardinality 0..*) is associated with 'dataflow::Port' (role 'dataflow_Port23', cardinality 0..*).
+'dataflow::ActorClass' (role 'ActorClass', cardinality 0..*) is associated with 'dataflow::Actor' (role 'actors', cardinality 0..*).
+'dataflow::Buffer' (role 'dataflow_Buffer39', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor38', cardinality 0..*).
+'dataflow::Buffer' (role 'outputs', cardinality 0..*) is associated with 'dataflow::Port' (role 'Port81', cardinality 0..*).
+'dataflow::ActorClass' (role 'dataflow_ActorClass', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network2', cardinality 0..*).
+'dataflow::Variable' (role 'dataflow_Variable69', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor70', cardinality 0..*).
+'dataflow::Variable' (role 'dataflow_Variable67', cardinality 0..*) is associated with 'dataflow::Type' (role 'dataflow_Type', cardinality 0..*).
+'dataflow::Version' (role 'dataflow_Version', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network13', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor33', cardinality 0..*) is associated with 'dataflow::Procedure' (role 'dataflow_Procedure', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor51', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor49', cardinality 0..*).
+'dataflow::Action' (role 'dataflow_Action92', cardinality 0..*) is associated with 'dataflow::Guard' (role 'dataflow_Guard91', cardinality 0..*).
+'dataflow::Port' (role 'dataflow_Port', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network6', cardinality 0..*).
+'dataflow::Action' (role 'readers', cardinality 0..*) is associated with 'dataflow::Port' (role 'Port', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor35', cardinality 0..*) is associated with 'dataflow::Network' (role 'dataflow_Network36', cardinality 0..*).
+'dataflow::Buffer' (role 'dataflow_Buffer85', cardinality 0..*) is associated with 'dataflow::Type' (role 'dataflow_Type86', cardinality 0..*).
+'dataflow::Network' (role 'dataflow_Network8', cardinality 0..*) is associated with 'dataflow::Port' (role 'dataflow_Port9', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor46', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor48', cardinality 0..*).
+'dataflow::Guard' (role 'dataflow_Guard', cardinality 0..*) is associated with 'dataflow::Action' (role 'dataflow_Action56', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor28', cardinality 0..*) is associated with 'dataflow::Variable' (role 'dataflow_Variable', cardinality 0..*).
+'dataflow::Procedure' (role 'dataflow_Procedure61', cardinality 0..*) is associated with 'dataflow::Variable' (role 'dataflow_Variable62', cardinality 0..*).
+'dataflow::Buffer' (role 'Buffer', cardinality 0..*) is associated with 'dataflow::Port' (role 'target', cardinality 0..*).
+'dataflow::Port' (role 'Port54', cardinality 0..*) is associated with 'dataflow::Action' (role 'writers', cardinality 0..*).
+'dataflow::Type' (role 'dataflow_Type94', cardinality 0..*) is associated with 'dataflow::TypeList' (role 'dataflow_TypeList', cardinality 0..*).
+'dataflow::Port' (role 'outputPorts', cardinality 0..*) is associated with 'dataflow::Action' (role 'Action', cardinality 0..*).
+'dataflow::Actor' (role 'Actor', cardinality 0..*) is associated with 'dataflow::ActorClass' (role 'actorClass', cardinality 0..*).
+'dataflow::Actor' (role 'dataflow_Actor25', cardinality 0..*) is associated with 'dataflow::Port' (role 'dataflow_Port26', cardinality 0..*).
+'dataflow::Procedure' (role 'dataflow_Procedure64', cardinality 0..*) is associated with 'dataflow::Actor' (role 'dataflow_Actor65', cardinality 0..*).

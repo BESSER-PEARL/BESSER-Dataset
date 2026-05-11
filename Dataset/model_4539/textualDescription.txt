@@ -1,0 +1,48 @@
+The model has 21 class(es).
+The class 'NamedElement' has no attributes.
+The class 'SmartHome::Rule' has no attributes.
+The class 'SmartHome::Room' has no attributes.
+The class 'SmartHome::Value' has no attributes.
+The class 'Activator' has no attributes.
+The class 'SmartHome::IotComponent' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'SmartHome::NamedElement' has the following attributes: 'name' of type str.
+The class 'SmartHome::RuleComposant' has the following attributes: 'operator' of type str.
+The class 'SmartHome::Home' has the following attributes: 'speed' of type float; 'startDay' of type float.
+The class 'SmartHome::PhysicalContext' has the following attributes: 'lightIn' of type float; 'lightOut' of type float.
+The class 'SmartHome::Shutter' has the following attributes: 'stateInit' of type bool.
+The class 'SmartHome::Light' has the following attributes: 'stateInit' of type bool; 'intensity' of type float.
+The class 'SmartHome::AnalValue' has the following attributes: 'value' of type bool.
+The class 'IotComponent' has no attributes.
+The class 'SmartHome::Clock' has no attributes.
+The class 'SmartHome::LightSensor' has no attributes.
+The class 'Value' has no attributes.
+The class 'SmartHome::Sensor' has no attributes.
+The class 'SmartHome::Activator' has no attributes.
+The class 'SmartHome::DigitValue' has the following attributes: 'value' of type float.
+The enumeration 'Operator' has the following literals: 'superior', 'different', 'inferior', 'equal'.
+'SmartHome::PhysicalContext' is a specialization of 'NamedElement'.
+'SmartHome::Rule' is a specialization of 'NamedElement'.
+'SmartHome::DigitValue' is a specialization of 'Value'.
+'SmartHome::AnalValue' is a specialization of 'Value'.
+'SmartHome::Clock' is a specialization of 'Sensor'.
+'SmartHome::Shutter' is a specialization of 'Activator'.
+'SmartHome::Room' is a specialization of 'NamedElement'.
+'SmartHome::Activator' is a specialization of 'IotComponent'.
+'SmartHome::LightSensor' is a specialization of 'Sensor'.
+'SmartHome::Sensor' is a specialization of 'IotComponent'.
+'SmartHome::IotComponent' is a specialization of 'NamedElement'.
+'SmartHome::Home' is a specialization of 'NamedElement'.
+'SmartHome::Light' is a specialization of 'Activator'.
+'SmartHome::PhysicalContext' (role 'SmartHome_PhysicalContext', cardinality 0..*) is associated with 'SmartHome::Room' (role 'SmartHome_Room4', cardinality 0..*).
+'SmartHome::Rule' (role 'SmartHome_Rule17', cardinality 0..*) is associated with 'SmartHome::RuleComposant' (role 'SmartHome_RuleComposant', cardinality 0..*).
+'SmartHome::Home' (role 'SmartHome_Home', cardinality 0..*) is associated with 'SmartHome::Room' (role 'SmartHome_Room12', cardinality 0..*).
+'SmartHome::Clock' (role 'SmartHome_Clock', cardinality 0..*) is associated with 'SmartHome::Room' (role 'SmartHome_Room10', cardinality 0..*).
+'SmartHome::IotComponent' (role 'SmartHome_IotComponent', cardinality 0..*) is associated with 'SmartHome::RuleComposant' (role 'SmartHome_RuleComposant24', cardinality 0..*).
+'SmartHome::Room' (role 'SmartHome_Room8', cardinality 0..*) is associated with 'SmartHome::Rule' (role 'SmartHome_Rule', cardinality 0..*).
+'SmartHome::Room' (role 'SmartHome_Room2', cardinality 0..*) is associated with 'SmartHome::Light' (role 'SmartHome_Light', cardinality 0..*).
+'SmartHome::Rule' (role 'SmartHome_Rule15', cardinality 0..*) is associated with 'SmartHome::Home' (role 'SmartHome_Home14', cardinality 0..*).
+'SmartHome::Rule' (role 'SmartHome_Rule19', cardinality 0..*) is associated with 'SmartHome::RuleComposant' (role 'SmartHome_RuleComposant20', cardinality 0..*).
+'SmartHome::Value' (role 'SmartHome_Value', cardinality 0..*) is associated with 'SmartHome::RuleComposant' (role 'SmartHome_RuleComposant22', cardinality 0..*).
+'SmartHome::LightSensor' (role 'SmartHome_LightSensor', cardinality 0..*) is associated with 'SmartHome::Room' (role 'SmartHome_Room', cardinality 0..*).
+'SmartHome::Room' (role 'SmartHome_Room6', cardinality 0..*) is associated with 'SmartHome::Shutter' (role 'SmartHome_Shutter', cardinality 0..*).

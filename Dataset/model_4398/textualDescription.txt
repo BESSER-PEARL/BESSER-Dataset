@@ -1,0 +1,253 @@
+The model has 110 class(es).
+The class 'raspirover::LengthUnit' has no attributes.
+The class 'raspirover::QuantityHomogenousOperation' has no attributes.
+The class 'raspirover::Sketch' has no attributes.
+The class 'raspirover::Statement' has no attributes.
+The class 'Unit' has no attributes.
+The class 'Statement' has no attributes.
+The class 'raspirover::Radian' has no attributes.
+The class 'Query' has no attributes.
+The class 'raspirover::Turn' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Action' has no attributes.
+The class 'raspirover::BooleanValue' has the following attributes: 'bValue' of type bool.
+The class 'raspirover::Inch' has no attributes.
+The class 'raspirover::AngleScalarDivide' has no attributes.
+The class 'raspirover::AngleSmaller' has no attributes.
+The class 'raspirover::RasPiBoard' has no attributes.
+The class 'QuantityScalarOperation' has no attributes.
+The class 'raspirover::Conditional' has no attributes.
+The class 'raspirover::SendAction' has the following attributes: 'message' of type str.
+The class 'ArduinoModule' has no attributes.
+The class 'AngleUnit' has no attributes.
+The class 'raspirover::StringExpression' has the following attributes: 'op' of type bool.
+The class 'raspirover::TemperatureQuery' has no attributes.
+The class 'raspirover::QuantityArithmeticOperation' has no attributes.
+The class 'raspirover::LengthScalarDivide' has no attributes.
+The class 'raspirover::RoverExpression' has no attributes.
+The class 'raspirover::BackwardMinAction' has no attributes.
+The class 'raspirover::Centimeter' has no attributes.
+The class 'raspirover::RclBlock' has no attributes.
+The class 'raspirover::Board' has no attributes.
+The class 'raspirover::Length' has no attributes.
+The class 'raspirover::Loop' has no attributes.
+The class 'raspirover::ArduinoDigitalModule' has no attributes.
+The class 'raspirover::AngleOperation' has no attributes.
+The class 'Pin' has no attributes.
+The class 'raspirover::LengthEquals' has no attributes.
+The class 'raspirover::AngleDistinct' has no attributes.
+The class 'raspirover::QuantityOperation' has no attributes.
+The class 'raspirover::Meter' has no attributes.
+The class 'raspirover::ObstacleQuery' has the following attributes: 'front' of type bool.
+The class 'raspirover::Gradian' has no attributes.
+The class 'raspirover::AngleGreater' has no attributes.
+The class 'raspirover::TurnAction' has no attributes.
+The class 'raspirover::LengthGreater' has no attributes.
+The class 'raspirover::AngleSubtract' has no attributes.
+The class 'raspirover::Param' has the following attributes: 'name' of type str.
+The class 'QuantityHomogenousOperation' has no attributes.
+The class 'raspirover::LengthOperation' has no attributes.
+The class 'raspirover::Foot' has no attributes.
+The class 'NumberValue' has no attributes.
+The class 'raspirover::LengthScalarMultiply' has no attributes.
+The class 'raspirover::ArduinoAnalogModule' has no attributes.
+The class 'raspirover::QuantityScalarOperation' has the following attributes: 'rhs' of type float.
+The class 'raspirover::DigitalPin' has no attributes.
+The class 'raspirover::AngleScalarMultiply' has no attributes.
+The class 'Quantity' has no attributes.
+The class 'raspirover::LengthAdd' has no attributes.
+The class 'raspirover::TurnDegAction' has no attributes.
+The class 'raspirover::ImperialSystemUnit' has no attributes.
+The class 'raspirover::AngleUnit' has no attributes.
+The class 'raspirover::NumericExpression' has the following attributes: 'op' of type bool.
+The class 'Module' has no attributes.
+The class 'raspirover::Angle' has no attributes.
+The class 'raspirover::Millimeter' has no attributes.
+The class 'raspirover::AngleAdd' has no attributes.
+The class 'raspirover::Instruction' has no attributes.
+The class 'raspirover::HumidityQuery' has no attributes.
+The class 'Board' has no attributes.
+The class 'raspirover::AngleEquals' has no attributes.
+The class 'raspirover::Action' has no attributes.
+The class 'LengthUnit' has no attributes.
+The class 'raspirover::BooleanExpression' has the following attributes: 'op' of type str.
+The class 'raspirover::MessageQuery' has no attributes.
+The class 'raspirover::LengthSmaller' has no attributes.
+The class 'raspirover::LengthSubtract' has no attributes.
+The class 'raspirover::Pin' has the following attributes: 'level' of type int.
+The class 'raspirover::VarRef' has the following attributes: 'name' of type float.
+The class 'raspirover::Block' has no attributes.
+The class 'raspirover::StopAction' has no attributes.
+The class 'raspirover::RoverProgram' has the following attributes: 'name' of type str.
+The class 'RoverExpression' has no attributes.
+The class 'raspirover::Module' has no attributes.
+The class 'raspirover::NumberValue' has the following attributes: 'nValue' of type str.
+The class 'StringValue' has no attributes.
+The class 'raspirover::Degree' has no attributes.
+The class 'raspirover::QuantityComparisonOperation' has no attributes.
+The class 'LengthOperation' has no attributes.
+The class 'raspirover::ForwardAction' has no attributes.
+The class 'raspirover::LengthDistinct' has no attributes.
+The class 'raspirover::ForwardMinAction' has no attributes.
+The class 'MetricSystemUnit' has no attributes.
+The class 'raspirover::RoverValue' has no attributes.
+The class 'raspirover::BackwardAction' has no attributes.
+The class 'ImperialSystemUnit' has no attributes.
+The class 'AngleOperation' has no attributes.
+The class 'raspirover::NamedElement' has the following attributes: 'name' of type str.
+The class 'raspirover::Yard' has no attributes.
+The class 'raspirover::Unit' has no attributes.
+The class 'raspirover::ArduinoModule' has no attributes.
+The class 'raspirover::StringValue' has the following attributes: 'sValue' of type bool.
+The class 'QuantityOperation' has no attributes.
+The class 'BooleanValue' has no attributes.
+The class 'raspirover::MetricSystemUnit' has no attributes.
+The class 'raspirover::LogAction' has the following attributes: 'message' of type str.
+The class 'RoverValue' has no attributes.
+The class 'raspirover::Quantity' has the following attributes: 'value' of type str.
+The class 'raspirover::Project' has no attributes.
+The class 'raspirover::VarAssignment' has the following attributes: 'name' of type bool.
+The class 'raspirover::AnalogPin' has no attributes.
+The class 'raspirover::Query' has no attributes.
+The enumeration 'BooleanOperator' has the following literals: 'eq', 'neq'.
+The enumeration 'NumericOperator' has the following literals: 'geq', 'eq', 'leq', 'lt', 'neq', 'gt'.
+The enumeration 'StringOperator' has the following literals: 'eq', 'neq'.
+'raspirover::AngleOperation' is a specialization of 'QuantityOperation'.
+'raspirover::ArduinoDigitalModule' is a specialization of 'ArduinoModule'.
+'raspirover::Conditional' is a specialization of 'Statement'.
+'raspirover::Board' is a specialization of 'NamedElement'.
+'raspirover::Foot' is a specialization of 'LengthUnit'.
+'raspirover::ImperialSystemUnit' is a specialization of 'Unit'.
+'raspirover::QuantityHomogenousOperation' is a specialization of 'QuantityOperation'.
+'raspirover::LengthUnit' is a specialization of 'Unit'.
+'raspirover::NumberValue' is a specialization of 'RoverValue'.
+'raspirover::QuantityScalarOperation' is a specialization of 'QuantityOperation'.
+'raspirover::RasPiBoard' is a specialization of 'Board'.
+'raspirover::ArduinoModule' is a specialization of 'Module'.
+'raspirover::LengthAdd' is a specialization of 'LengthOperation'.
+'raspirover::LengthSmaller' is a specialization of 'LengthOperation'.
+'raspirover::Angle' is a specialization of 'Quantity'.
+'raspirover::VarRef' is a specialization of 'BooleanValue'.
+'raspirover::AngleGreater' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::LengthDistinct' is a specialization of 'LengthOperation'.
+'raspirover::SendAction' is a specialization of 'Action'.
+'raspirover::Sketch' is a specialization of 'NamedElement'.
+'raspirover::Meter' is a specialization of 'LengthUnit'.
+'raspirover::Millimeter' is a specialization of 'MetricSystemUnit'.
+'raspirover::LengthScalarDivide' is a specialization of 'LengthOperation'.
+'raspirover::QuantityArithmeticOperation' is a specialization of 'QuantityOperation'.
+'raspirover::Module' is a specialization of 'NamedElement'.
+'raspirover::BooleanExpression' is a specialization of 'RoverExpression'.
+'raspirover::AngleSmaller' is a specialization of 'AngleOperation'.
+'raspirover::AngleScalarDivide' is a specialization of 'QuantityScalarOperation'.
+'raspirover::Loop' is a specialization of 'Statement'.
+'raspirover::LengthScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+'raspirover::MetricSystemUnit' is a specialization of 'Unit'.
+'raspirover::VarRef' is a specialization of 'StringValue'.
+'raspirover::NumericExpression' is a specialization of 'RoverExpression'.
+'raspirover::ForwardMinAction' is a specialization of 'Action'.
+'raspirover::AngleDistinct' is a specialization of 'AngleOperation'.
+'raspirover::HumidityQuery' is a specialization of 'Query'.
+'raspirover::LengthScalarDivide' is a specialization of 'QuantityScalarOperation'.
+'raspirover::AngleUnit' is a specialization of 'Unit'.
+'raspirover::Degree' is a specialization of 'AngleUnit'.
+'raspirover::AngleScalarMultiply' is a specialization of 'QuantityScalarOperation'.
+'raspirover::VarRef' is a specialization of 'NumberValue'.
+'raspirover::Centimeter' is a specialization of 'LengthUnit'.
+'raspirover::LengthEquals' is a specialization of 'LengthOperation'.
+'raspirover::BackwardMinAction' is a specialization of 'Action'.
+'raspirover::Foot' is a specialization of 'ImperialSystemUnit'.
+'raspirover::QuantityComparisonOperation' is a specialization of 'QuantityOperation'.
+'raspirover::LengthSubtract' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::LogAction' is a specialization of 'Action'.
+'raspirover::LengthDistinct' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::Radian' is a specialization of 'AngleUnit'.
+'raspirover::LengthGreater' is a specialization of 'LengthOperation'.
+'raspirover::AngleScalarDivide' is a specialization of 'AngleOperation'.
+'raspirover::AngleSubtract' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::StringExpression' is a specialization of 'RoverExpression'.
+'raspirover::StopAction' is a specialization of 'Action'.
+'raspirover::LengthOperation' is a specialization of 'QuantityOperation'.
+'raspirover::Length' is a specialization of 'Quantity'.
+'raspirover::TurnDegAction' is a specialization of 'Action'.
+'raspirover::BooleanValue' is a specialization of 'RoverValue'.
+'raspirover::AngleSubtract' is a specialization of 'AngleOperation'.
+'raspirover::TemperatureQuery' is a specialization of 'NumberValue'.
+'raspirover::Millimeter' is a specialization of 'LengthUnit'.
+'raspirover::ForwardAction' is a specialization of 'Action'.
+'raspirover::AngleDistinct' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::RclBlock' is a specialization of 'Statement'.
+'raspirover::LengthScalarMultiply' is a specialization of 'LengthOperation'.
+'raspirover::HumidityQuery' is a specialization of 'NumberValue'.
+'raspirover::TemperatureQuery' is a specialization of 'Query'.
+'raspirover::Action' is a specialization of 'Statement'.
+'raspirover::LengthAdd' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::LengthSubtract' is a specialization of 'LengthOperation'.
+'raspirover::MessageQuery' is a specialization of 'StringValue'.
+'raspirover::Gradian' is a specialization of 'AngleUnit'.
+'raspirover::Inch' is a specialization of 'ImperialSystemUnit'.
+'raspirover::AnalogPin' is a specialization of 'Pin'.
+'raspirover::AngleEquals' is a specialization of 'AngleOperation'.
+'raspirover::VarRef' is a specialization of 'Statement'.
+'raspirover::LengthGreater' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::Meter' is a specialization of 'MetricSystemUnit'.
+'raspirover::VarAssignment' is a specialization of 'Statement'.
+'raspirover::Turn' is a specialization of 'AngleUnit'.
+'raspirover::BackwardAction' is a specialization of 'Action'.
+'raspirover::Centimeter' is a specialization of 'MetricSystemUnit'.
+'raspirover::Yard' is a specialization of 'LengthUnit'.
+'raspirover::StringValue' is a specialization of 'RoverValue'.
+'raspirover::Inch' is a specialization of 'LengthUnit'.
+'raspirover::LengthSmaller' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::AngleEquals' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::LengthEquals' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::ObstacleQuery' is a specialization of 'BooleanValue'.
+'raspirover::AngleAdd' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::Yard' is a specialization of 'ImperialSystemUnit'.
+'raspirover::MessageQuery' is a specialization of 'Query'.
+'raspirover::ArduinoAnalogModule' is a specialization of 'ArduinoModule'.
+'raspirover::AngleAdd' is a specialization of 'AngleOperation'.
+'raspirover::TurnAction' is a specialization of 'Action'.
+'raspirover::AngleGreater' is a specialization of 'AngleOperation'.
+'raspirover::AngleScalarMultiply' is a specialization of 'AngleOperation'.
+'raspirover::AngleSmaller' is a specialization of 'QuantityHomogenousOperation'.
+'raspirover::DigitalPin' is a specialization of 'Pin'.
+'raspirover::ObstacleQuery' is a specialization of 'Query'.
+'raspirover::Pin' is a specialization of 'NamedElement'.
+'raspirover::NumberValue' (role 'raspirover_NumberValue', cardinality 0..*) is associated with 'raspirover::NumericExpression' (role 'raspirover_NumericExpression', cardinality 0..*).
+'raspirover::Unit' (role 'raspirover_Unit', cardinality 0..*) is associated with 'raspirover::Quantity' (role 'raspirover_Quantity60', cardinality 0..*).
+'raspirover::Quantity' (role 'raspirover_Quantity65', cardinality 0..*) is associated with 'raspirover::QuantityHomogenousOperation' (role 'raspirover_QuantityHomogenousOperation64', cardinality 0..*).
+'raspirover::AnalogPin' (role 'raspirover_AnalogPin', cardinality 0..*) is associated with 'raspirover::RasPiBoard' (role 'raspirover_RasPiBoard2', cardinality 0..*).
+'raspirover::BooleanExpression' (role 'raspirover_BooleanExpression48', cardinality 0..*) is associated with 'raspirover::BooleanValue' (role 'raspirover_BooleanValue49', cardinality 0..*).
+'raspirover::StringValue' (role 'raspirover_StringValue45', cardinality 0..*) is associated with 'raspirover::StringExpression' (role 'raspirover_StringExpression44', cardinality 0..*).
+'raspirover::Statement' (role 'Statement', cardinality 0..*) is associated with 'raspirover::RclBlock' (role 'enclosing', cardinality 0..*).
+'raspirover::BooleanValue' (role 'raspirover_BooleanValue', cardinality 0..*) is associated with 'raspirover::BooleanExpression' (role 'raspirover_BooleanExpression', cardinality 0..*).
+'raspirover::TurnDegAction' (role 'raspirover_TurnDegAction', cardinality 0..*) is associated with 'raspirover::NumberValue' (role 'raspirover_NumberValue58', cardinality 0..*).
+'raspirover::Board' (role 'boards', cardinality 0..*) is associated with 'raspirover::Project' (role 'Project', cardinality 0..*).
+'raspirover::RclBlock' (role 'raspirover_RclBlock31', cardinality 0..*) is associated with 'raspirover::Conditional' (role 'raspirover_Conditional30', cardinality 0..*).
+'raspirover::Conditional' (role 'raspirover_Conditional27', cardinality 0..*) is associated with 'raspirover::RclBlock' (role 'raspirover_RclBlock28', cardinality 0..*).
+'raspirover::Statement' (role 'stmts', cardinality 0..*) is associated with 'raspirover::RclBlock' (role 'RclBlock', cardinality 0..*).
+'raspirover::NumberValue' (role 'raspirover_NumberValue51', cardinality 0..*) is associated with 'raspirover::Quantity' (role 'raspirover_Quantity', cardinality 0..*).
+'raspirover::RasPiBoard' (role 'raspirover_RasPiBoard', cardinality 0..*) is associated with 'raspirover::DigitalPin' (role 'raspirover_DigitalPin', cardinality 0..*).
+'raspirover::Project' (role 'Project9', cardinality 0..*) is associated with 'raspirover::Sketch' (role 'sketches', cardinality 0..*).
+'raspirover::Quantity' (role 'raspirover_Quantity62', cardinality 0..*) is associated with 'raspirover::QuantityHomogenousOperation' (role 'raspirover_QuantityHomogenousOperation', cardinality 0..*).
+'raspirover::Project' (role 'project', cardinality 0..*) is associated with 'raspirover::Board' (role 'Board', cardinality 0..*).
+'raspirover::RoverValue' (role 'raspirover_RoverValue', cardinality 0..*) is associated with 'raspirover::VarAssignment' (role 'raspirover_VarAssignment', cardinality 0..*).
+'raspirover::NumberValue' (role 'raspirover_NumberValue54', cardinality 0..*) is associated with 'raspirover::ForwardMinAction' (role 'raspirover_ForwardMinAction', cardinality 0..*).
+'raspirover::Project' (role 'raspirover_Project', cardinality 0..*) is associated with 'raspirover::RoverProgram' (role 'raspirover_RoverProgram', cardinality 0..*).
+'raspirover::RoverProgram' (role 'raspirover_RoverProgram22', cardinality 0..*) is associated with 'raspirover::RclBlock' (role 'raspirover_RclBlock', cardinality 0..*).
+'raspirover::RoverProgram' (role 'raspirover_RoverProgram20', cardinality 0..*) is associated with 'raspirover::Param' (role 'raspirover_Param', cardinality 0..*).
+'raspirover::AnalogPin' (role 'raspirover_AnalogPin18', cardinality 0..*) is associated with 'raspirover::ArduinoAnalogModule' (role 'raspirover_ArduinoAnalogModule', cardinality 0..*).
+'raspirover::RoverExpression' (role 'raspirover_RoverExpression', cardinality 0..*) is associated with 'raspirover::Conditional' (role 'raspirover_Conditional', cardinality 0..*).
+'raspirover::ArduinoDigitalModule' (role 'raspirover_ArduinoDigitalModule', cardinality 0..*) is associated with 'raspirover::DigitalPin' (role 'raspirover_DigitalPin16', cardinality 0..*).
+'raspirover::NumberValue' (role 'raspirover_NumberValue41', cardinality 0..*) is associated with 'raspirover::NumericExpression' (role 'raspirover_NumericExpression40', cardinality 0..*).
+'raspirover::RoverExpression' (role 'raspirover_RoverExpression33', cardinality 0..*) is associated with 'raspirover::Loop' (role 'raspirover_Loop', cardinality 0..*).
+'raspirover::Sketch' (role 'raspirover_Sketch', cardinality 0..*) is associated with 'raspirover::Block' (role 'raspirover_Block', cardinality 0..*).
+'raspirover::Sketch' (role 'Sketch', cardinality 0..*) is associated with 'raspirover::Project' (role 'project6', cardinality 0..*).
+'raspirover::Action' (role 'raspirover_Action', cardinality 0..*) is associated with 'raspirover::Pin' (role 'raspirover_Pin', cardinality 0..*).
+'raspirover::BackwardMinAction' (role 'raspirover_BackwardMinAction', cardinality 0..*) is associated with 'raspirover::NumberValue' (role 'raspirover_NumberValue56', cardinality 0..*).
+'raspirover::Sketch' (role 'raspirover_Sketch12', cardinality 0..*) is associated with 'raspirover::Board' (role 'raspirover_Board', cardinality 0..*).
+'raspirover::Quantity' (role 'raspirover_Quantity67', cardinality 0..*) is associated with 'raspirover::QuantityScalarOperation' (role 'raspirover_QuantityScalarOperation', cardinality 0..*).
+'raspirover::Loop' (role 'raspirover_Loop35', cardinality 0..*) is associated with 'raspirover::RclBlock' (role 'raspirover_RclBlock36', cardinality 0..*).
+'raspirover::Instruction' (role 'raspirover_Instruction', cardinality 0..*) is associated with 'raspirover::Block' (role 'raspirover_Block14', cardinality 0..*).
+'raspirover::StringValue' (role 'raspirover_StringValue', cardinality 0..*) is associated with 'raspirover::StringExpression' (role 'raspirover_StringExpression', cardinality 0..*).

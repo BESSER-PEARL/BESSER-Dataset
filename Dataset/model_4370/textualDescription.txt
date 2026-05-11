@@ -1,0 +1,39 @@
+The model has 20 class(es).
+The class 'klang::AbstractActor' has the following attributes: 'subject' of type str; 'name' of type str; 'subjectType' of type str.
+The class 'klang::ClickEvent' has no attributes.
+The class 'ActorEvent' has no attributes.
+The class 'klang::SpriteActor' has no attributes.
+The class 'GlobalEvent' has no attributes.
+The class 'klang::Expression' has no attributes.
+The class 'klang::GlobalEvent' has no attributes.
+The class 'klang::Program' has no attributes.
+The class 'Event' has no attributes.
+The class 'klang::SceneActor' has no attributes.
+The class 'klang::KeyPressEvent' has the following attributes: 'key' of type str.
+The class 'klang::EventHandler' has no attributes.
+The class 'klang::Event' has no attributes.
+The class 'klang::Statement' has no attributes.
+The class 'klang::CollisionEvent' has no attributes.
+The class 'klang::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'klang::ActorEvent' has no attributes.
+The class 'klang::TreeNode' has no attributes.
+The class 'klang::MessageReceivedEvent' has the following attributes: 'name' of type str.
+The class 'klang::GameStartEvent' has no attributes.
+The enumeration 'Keys' has the following literals: 'C', 'W', 'N', 'F', 'SPACE', 'J', 'K', 'D', 'DOWN', 'S', 'T', 'Z', 'Y', 'R', 'P', 'U', 'M', 'X', 'L', 'O', 'I', 'E', 'B', 'H', 'LEFT', 'ENTER', 'Q', 'A', 'V', 'RIGHT', 'G', 'UP'.
+'klang::MessageReceivedEvent' is a specialization of 'GlobalEvent'.
+'klang::ClickEvent' is a specialization of 'ActorEvent'.
+'klang::ActorEvent' is a specialization of 'Event'.
+'klang::GameStartEvent' is a specialization of 'GlobalEvent'.
+'klang::KeyPressEvent' is a specialization of 'GlobalEvent'.
+'klang::GlobalEvent' is a specialization of 'Event'.
+'klang::CollisionEvent' is a specialization of 'ActorEvent'.
+'klang::Statement' (role 'klang_Statement', cardinality 0..*) is associated with 'klang::EventHandler' (role 'klang_EventHandler', cardinality 0..*).
+'klang::SpriteActor' (role 'SpriteActor', cardinality 0..*) is associated with 'klang::Program' (role 'program13', cardinality 0..*).
+'klang::Expression' (role 'klang_Expression', cardinality 0..*) is associated with 'klang::VariableDeclaration' (role 'klang_VariableDeclaration', cardinality 0..*).
+'klang::VariableDeclaration' (role 'VariableDeclaration', cardinality 0..*) is associated with 'klang::AbstractActor' (role 'actor9', cardinality 0..*).
+'klang::SceneActor' (role 'sceneActor', cardinality 0..*) is associated with 'klang::Program' (role 'Program', cardinality 0..*).
+'klang::CollisionEvent' (role 'klang_CollisionEvent', cardinality 0..*) is associated with 'klang::SpriteActor' (role 'klang_SpriteActor', cardinality 0..*).
+'klang::AbstractActor' (role 'actor', cardinality 0..*) is associated with 'klang::EventHandler' (role 'EventHandler', cardinality 0..*).
+'klang::Program' (role 'program', cardinality 0..*) is associated with 'klang::SceneActor' (role 'SceneActor', cardinality 0..*).
+'klang::Program' (role 'Program2', cardinality 0..*) is associated with 'klang::SpriteActor' (role 'spriteActors', cardinality 0..*).
+'klang::EventHandler' (role 'klang_EventHandler5', cardinality 0..*) is associated with 'klang::Event' (role 'klang_Event', cardinality 0..*).

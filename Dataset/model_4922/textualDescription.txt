@@ -1,0 +1,94 @@
+The model has 52 class(es).
+The class 'dsml::web::RegexValidator' has the following attributes: 'regex' of type str.
+The class 'dsml::web::Website' has the following attributes: 'name' of type str.
+The class 'dsml::web::Validator' has no attributes.
+The class 'dsml::web::BetweenValidator' has the following attributes: 'valueG' of type int; 'valueL' of type int.
+The class 'dsml::web::DateValidator' has no attributes.
+The class 'dsml::web::SubmitButton' has no attributes.
+The class 'dsml::web::RadioButton' has no attributes.
+The class 'dsml::web::FormElement' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'dsml::visitor::Visitor' has the following attributes: 'tag' of type str.
+The class 'dsml::web::ListField' has no attributes.
+The class 'dsml::web::Required' has no attributes.
+The class 'dsml::web::TimeValidator' has no attributes.
+The class 'Visitor' has no attributes.
+The class 'dsml::web::Select' has the following attributes: 'size' of type int.
+The class 'dsml::visitor::POJOVisitor' has no attributes.
+The class 'dsml::web::Form' has the following attributes: 'action' of type str.
+The class 'Button' has no attributes.
+The class 'Form' has no attributes.
+The class 'ListField' has no attributes.
+The class 'dsml::web::TextField' has the following attributes: 'size' of type int; 'maxlength' of type int.
+The class 'dsml::web::Success' has no attributes.
+The class 'Text' has no attributes.
+The class 'dsml::web::Text' has the following attributes: 'value' of type str.
+The class 'dsml::visitor::ResourceVisitor' has no attributes.
+The class 'dsml::web::EmailValidator' has no attributes.
+The class 'dsml::web::CheckBox' has no attributes.
+The class 'dsml::web::Page' has the following attributes: 'title' of type str; 'name' of type str.
+The class 'dsml::web::URLValidator' has no attributes.
+The class 'dsml::visitor::JSPVisitor' has no attributes.
+The class 'dsml::web::Error' has no attributes.
+The class 'FormElement' has no attributes.
+The class 'Page' has no attributes.
+The class 'dsml::web::Item' has the following attributes: 'value' of type str.
+The class 'dsml::web::Hidden' has no attributes.
+The class 'Item' has no attributes.
+The class 'dsml::web::TypeValidator' has the following attributes: 'type' of type str.
+The class 'dsml::web::LessThanValidator' has the following attributes: 'value' of type int.
+The class 'dsml::web::CancelButton' has no attributes.
+The class 'dsml::web::GreaterThanValidator' has the following attributes: 'value' of type int.
+The class 'dsml::web::Link' has the following attributes: 'value' of type str.
+The class 'Validator' has no attributes.
+The class 'Success' has no attributes.
+The class 'dsml::web::Label' has no attributes.
+The class 'Link' has no attributes.
+The class 'dsml::web::ResetButton' has no attributes.
+The class 'dsml::web::Field' has no attributes.
+The class 'dsml::web::Button' has no attributes.
+The class 'Error' has no attributes.
+The class 'dsml::web::StringLengthValidator' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'dsml::web::PasswordField' has the following attributes: 'maxlength' of type int; 'size' of type int.
+The class 'dsml::web::TextArea' has the following attributes: 'rows' of type int; 'cols' of type int.
+The class 'Field' has no attributes.
+The enumeration 'Type' has the following literals: 'int', 'float'.
+'dsml::web::TimeValidator' is a specialization of 'Validator'.
+'dsml::web::TextArea' is a specialization of 'Field'.
+'dsml::web::GreaterThanValidator' is a specialization of 'Validator'.
+'dsml::web::Field' is a specialization of 'FormElement'.
+'dsml::web::PasswordField' is a specialization of 'Field'.
+'dsml::web::ResetButton' is a specialization of 'Button'.
+'dsml::web::RegexValidator' is a specialization of 'Validator'.
+'dsml::web::Label' is a specialization of 'FormElement'.
+'dsml::visitor::POJOVisitor' is a specialization of 'Visitor'.
+'dsml::web::TextField' is a specialization of 'Field'.
+'dsml::web::Required' is a specialization of 'Validator'.
+'dsml::web::ListField' is a specialization of 'FormElement'.
+'dsml::web::CancelButton' is a specialization of 'Button'.
+'dsml::web::Hidden' is a specialization of 'FormElement'.
+'dsml::web::URLValidator' is a specialization of 'Validator'.
+'dsml::web::DateValidator' is a specialization of 'Validator'.
+'dsml::visitor::JSPVisitor' is a specialization of 'Visitor'.
+'dsml::web::Button' is a specialization of 'FormElement'.
+'dsml::web::SubmitButton' is a specialization of 'Button'.
+'dsml::visitor::ResourceVisitor' is a specialization of 'Visitor'.
+'dsml::web::BetweenValidator' is a specialization of 'Validator'.
+'dsml::web::EmailValidator' is a specialization of 'Validator'.
+'dsml::web::CheckBox' is a specialization of 'FormElement'.
+'dsml::web::RadioButton' is a specialization of 'ListField'.
+'dsml::web::TypeValidator' is a specialization of 'Validator'.
+'dsml::web::StringLengthValidator' is a specialization of 'Validator'.
+'dsml::web::LessThanValidator' is a specialization of 'Validator'.
+'dsml::web::Select' is a specialization of 'ListField'.
+'Success' (role 'Success', cardinality 0..*) is associated with 'dsml::web::Form' (role 'dsml_web_Form12', cardinality 0..*).
+'dsml::web::Form' (role 'dsml_web_Form14', cardinality 0..*) is associated with 'Error' (role 'Error', cardinality 0..*).
+'Text' (role 'Text', cardinality 0..*) is associated with 'dsml::web::Page' (role 'dsml_web_Page3', cardinality 0..*).
+'Validator' (role 'Validator', cardinality 0..*) is associated with 'dsml::web::Field' (role 'dsml_web_Field', cardinality 0..*).
+'Item' (role 'Item', cardinality 0..*) is associated with 'dsml::web::ListField' (role 'dsml_web_ListField', cardinality 0..*).
+'dsml::web::Link' (role 'dsml_web_Link', cardinality 0..*) is associated with 'Page' (role 'Page9', cardinality 0..*).
+'Page' (role 'Page16', cardinality 0..*) is associated with 'dsml::web::Success' (role 'dsml_web_Success', cardinality 0..*).
+'dsml::web::Page' (role 'dsml_web_Page', cardinality 0..*) is associated with 'Form' (role 'Form', cardinality 0..*).
+'dsml::web::Page' (role 'dsml_web_Page5', cardinality 0..*) is associated with 'Link' (role 'Link', cardinality 0..*).
+'Page' (role 'Page18', cardinality 0..*) is associated with 'dsml::web::Error' (role 'dsml_web_Error', cardinality 0..*).
+'Page' (role 'Page', cardinality 0..*) is associated with 'dsml::web::Website' (role 'dsml_web_Website', cardinality 0..*).
+'FormElement' (role 'FormElement', cardinality 0..*) is associated with 'dsml::web::Form' (role 'dsml_web_Form', cardinality 0..*).

@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class sequence_template_TBasicMessageMapping extends TSourceTargetMessageMapping {
+
+
+
+
+    public sequence_template_TBasicMessageMapping(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

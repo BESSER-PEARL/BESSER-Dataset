@@ -1,0 +1,80 @@
+The model has 37 class(es).
+The class 'minilang::Minus' has no attributes.
+The class 'minilang::IntOperation' has no attributes.
+The class 'minilang::While' has no attributes.
+The class 'minilang::Integer' has the following attributes: 'value' of type int.
+The class 'minilang::Not' has no attributes.
+The class 'minilang::IntAssignment' has no attributes.
+The class 'minilang::BooleanAssignment' has no attributes.
+The class 'minilang::If' has no attributes.
+The class 'minilang::BooleanOperation' has no attributes.
+The class 'minilang::And' has no attributes.
+The class 'minilang::PrintStr' has the following attributes: 'value' of type str.
+The class 'minilang::Divide' has no attributes.
+The class 'IntComparison' has no attributes.
+The class 'minilang::Statement' has no attributes.
+The class 'minilang::Multiply' has no attributes.
+The class 'minilang::Greater' has no attributes.
+The class 'IntOperation' has no attributes.
+The class 'minilang::Boolean' has the following attributes: 'value' of type bool.
+The class 'minilang::LessOrEqual' has no attributes.
+The class 'VariableRef' has no attributes.
+The class 'minilang::IntVariableRef' has no attributes.
+The class 'minilang::BooleanExpression' has no attributes.
+The class 'minilang::BooleanVariableRef' has no attributes.
+The class 'IntExpression' has no attributes.
+The class 'minilang::VariableRef' has the following attributes: 'name' of type str.
+The class 'minilang::PrintVar' has the following attributes: 'value' of type str.
+The class 'minilang::IntExpression' has no attributes.
+The class 'minilang::Or' has no attributes.
+The class 'minilang::IntComparison' has no attributes.
+The class 'minilang::Block' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'BooleanOperation' has no attributes.
+The class 'Statement' has no attributes.
+The class 'minilang::Plus' has no attributes.
+The class 'minilang::Equal' has no attributes.
+The class 'minilang::Less' has no attributes.
+The class 'minilang::GreaterOrEqual' has no attributes.
+'minilang::IntVariableRef' is a specialization of 'VariableRef'.
+'minilang::IntComparison' is a specialization of 'BooleanExpression'.
+'minilang::BooleanVariableRef' is a specialization of 'VariableRef'.
+'minilang::BooleanVariableRef' is a specialization of 'BooleanExpression'.
+'minilang::BooleanOperation' is a specialization of 'BooleanExpression'.
+'minilang::Divide' is a specialization of 'IntOperation'.
+'minilang::IntVariableRef' is a specialization of 'IntExpression'.
+'minilang::Less' is a specialization of 'IntComparison'.
+'minilang::Plus' is a specialization of 'IntOperation'.
+'minilang::Integer' is a specialization of 'IntExpression'.
+'minilang::Multiply' is a specialization of 'IntOperation'.
+'minilang::Not' is a specialization of 'BooleanExpression'.
+'minilang::Equal' is a specialization of 'IntComparison'.
+'minilang::IntOperation' is a specialization of 'IntExpression'.
+'minilang::LessOrEqual' is a specialization of 'IntComparison'.
+'minilang::Greater' is a specialization of 'IntComparison'.
+'minilang::PrintStr' is a specialization of 'Statement'.
+'minilang::Or' is a specialization of 'BooleanOperation'.
+'minilang::And' is a specialization of 'BooleanOperation'.
+'minilang::IntAssignment' is a specialization of 'Statement'.
+'minilang::GreaterOrEqual' is a specialization of 'IntComparison'.
+'minilang::BooleanAssignment' is a specialization of 'Statement'.
+'minilang::PrintVar' is a specialization of 'Statement'.
+'minilang::Boolean' is a specialization of 'BooleanExpression'.
+'minilang::Minus' is a specialization of 'IntOperation'.
+'minilang::BooleanExpression' (role 'minilang_BooleanExpression25', cardinality 0..*) is associated with 'minilang::If' (role 'minilang_If', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block36', cardinality 0..*) is associated with 'minilang::While' (role 'minilang_While35', cardinality 0..*).
+'minilang::BooleanExpression' (role 'minilang_BooleanExpression', cardinality 0..*) is associated with 'minilang::Not' (role 'minilang_Not', cardinality 0..*).
+'minilang::BooleanExpression' (role 'minilang_BooleanExpression18', cardinality 0..*) is associated with 'minilang::BooleanAssignment' (role 'minilang_BooleanAssignment17', cardinality 0..*).
+'minilang::IntComparison' (role 'minilang_IntComparison', cardinality 0..*) is associated with 'minilang::IntExpression' (role 'minilang_IntExpression6', cardinality 0..*).
+'minilang::IntAssignment' (role 'minilang_IntAssignment21', cardinality 0..*) is associated with 'minilang::IntExpression' (role 'minilang_IntExpression22', cardinality 0..*).
+'minilang::BooleanExpression' (role 'minilang_BooleanExpression14', cardinality 0..*) is associated with 'minilang::BooleanOperation' (role 'minilang_BooleanOperation13', cardinality 0..*).
+'minilang::IntOperation' (role 'minilang_IntOperation2', cardinality 0..*) is associated with 'minilang::IntExpression' (role 'minilang_IntExpression3', cardinality 0..*).
+'minilang::IntExpression' (role 'minilang_IntExpression9', cardinality 0..*) is associated with 'minilang::IntComparison' (role 'minilang_IntComparison8', cardinality 0..*).
+'minilang::IntExpression' (role 'minilang_IntExpression', cardinality 0..*) is associated with 'minilang::IntOperation' (role 'minilang_IntOperation', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block', cardinality 0..*) is associated with 'minilang::Statement' (role 'minilang_Statement', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block28', cardinality 0..*) is associated with 'minilang::If' (role 'minilang_If27', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block31', cardinality 0..*) is associated with 'minilang::If' (role 'minilang_If30', cardinality 0..*).
+'minilang::BooleanVariableRef' (role 'minilang_BooleanVariableRef', cardinality 0..*) is associated with 'minilang::BooleanAssignment' (role 'minilang_BooleanAssignment', cardinality 0..*).
+'minilang::IntAssignment' (role 'minilang_IntAssignment', cardinality 0..*) is associated with 'minilang::IntVariableRef' (role 'minilang_IntVariableRef', cardinality 0..*).
+'minilang::BooleanOperation' (role 'minilang_BooleanOperation', cardinality 0..*) is associated with 'minilang::BooleanExpression' (role 'minilang_BooleanExpression11', cardinality 0..*).
+'minilang::BooleanExpression' (role 'minilang_BooleanExpression33', cardinality 0..*) is associated with 'minilang::While' (role 'minilang_While', cardinality 0..*).

@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'b::B1' has no attributes.
+The class 'b::B2' has no attributes.

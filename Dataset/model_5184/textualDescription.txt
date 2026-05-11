@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'MultipleInheritance::D' has no attributes.
+The class 'A' has no attributes.
+The class 'Object' has no attributes.
+The class 'MultipleInheritance::C' has no attributes.
+The class 'MultipleInheritance::Object' has no attributes.
+The class 'B' has no attributes.
+The class 'MultipleInheritance::Model' has no attributes.
+The class 'MultipleInheritance::B' has no attributes.
+The class 'MultipleInheritance::A' has no attributes.
+'MultipleInheritance::A' is a specialization of 'Object'.
+'MultipleInheritance::C' is a specialization of 'A'.
+'MultipleInheritance::C' is a specialization of 'B'.
+'MultipleInheritance::B' is a specialization of 'Object'.
+'MultipleInheritance::D' is a specialization of 'Object'.
+'MultipleInheritance::Object' (role 'MultipleInheritance_Object', cardinality 0..*) is associated with 'MultipleInheritance::Model' (role 'MultipleInheritance_Model', cardinality 0..*).
+'MultipleInheritance::A' (role 'MultipleInheritance_A', cardinality 0..*) is associated with 'MultipleInheritance::D' (role 'MultipleInheritance_D', cardinality 0..*).
+'MultipleInheritance::D' (role 'MultipleInheritance_D3', cardinality 0..*) is associated with 'MultipleInheritance::B' (role 'MultipleInheritance_B', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 7 class(es).
+The class 'automaton::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'automaton::Output' has no attributes.
+The class 'automaton::Automaton' has no attributes.
+The class 'automaton::Transition' has no attributes.
+The class 'automaton::Input' has no attributes.
+The class 'automaton::State' has no attributes.
+'automaton::Output' is a specialization of 'NamedElement'.
+'automaton::Automaton' is a specialization of 'NamedElement'.
+'automaton::Transition' is a specialization of 'NamedElement'.
+'automaton::State' is a specialization of 'NamedElement'.
+'automaton::Input' is a specialization of 'NamedElement'.
+'automaton::Input' (role 'automaton_Input18', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton17', cardinality 0..*).
+'automaton::Transition' (role 'automaton_Transition', cardinality 0..*) is associated with 'automaton::Input' (role 'automaton_Input', cardinality 0..*).
+'automaton::Transition' (role 'automaton_Transition12', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton11', cardinality 0..*).
+'automaton::State' (role 'automaton_State9', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton', cardinality 0..*).
+'automaton::State' (role 'automaton_State', cardinality 0..*) is associated with 'automaton::Transition' (role 'automaton_Transition4', cardinality 0..*).
+'automaton::Transition' (role 'automaton_Transition6', cardinality 0..*) is associated with 'automaton::State' (role 'automaton_State7', cardinality 0..*).
+'automaton::Transition' (role 'automaton_Transition2', cardinality 0..*) is associated with 'automaton::Output' (role 'automaton_Output', cardinality 0..*).
+'automaton::Output' (role 'automaton_Output15', cardinality 0..*) is associated with 'automaton::Automaton' (role 'automaton_Automaton14', cardinality 0..*).

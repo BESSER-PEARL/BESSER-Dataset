@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'overloads::SubClass' has no attributes.
+The class 'overloads::SuperClass' has no attributes.
+The class 'SuperClass' has no attributes.
+'overloads::SubClass' is a specialization of 'SuperClass'.

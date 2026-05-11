@@ -1,0 +1,154 @@
+The model has 62 class(es).
+The class 'arduino::Delay' has the following attributes: 'value' of type int; 'unit' of type str.
+The class 'Assignment' has no attributes.
+The class 'arduino::Control' has no attributes.
+The class 'Utilities' has no attributes.
+The class 'arduino::UnaryExpression' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Control' has no attributes.
+The class 'arduino::Sketch' has no attributes.
+The class 'arduino::Hardware' has no attributes.
+The class 'arduino::VariableRef' has no attributes.
+The class 'arduino::VariableDeclaration' has no attributes.
+The class 'Constant' has no attributes.
+The class 'arduino::BinaryBooleanExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::DigitalPin' has no attributes.
+The class 'arduino::Connector' has no attributes.
+The class 'ModuleInstruction' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'arduino::ModuleAssignment' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'ModuleGet' has no attributes.
+The class 'arduino::Utilities' has no attributes.
+The class 'arduino::Module' has the following attributes: 'level' of type bool; 'library' of type str; 'image' of type str; 'kind' of type str.
+The class 'arduino::UnaryIntegerExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::Repeat' has the following attributes: 'iteration' of type int.
+The class 'Pin' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'arduino::Synchro' has no attributes.
+The class 'arduino::Platform' has the following attributes: 'image' of type str.
+The class 'arduino::Expression' has no attributes.
+The class 'arduino::Sensor' has no attributes.
+The class 'arduino::ModuleInstruction' has no attributes.
+The class 'arduino::While' has no attributes.
+The class 'arduino::Variable' has no attributes.
+The class 'arduino::Pin' has the following attributes: 'id' of type int; 'level' of type int.
+The class 'arduino::Project' has no attributes.
+The class 'arduino::If' has no attributes.
+The class 'arduino::BinaryExpression' has no attributes.
+The class 'arduino::AnalogPin' has no attributes.
+The class 'arduino::BooleanExpression' has no attributes.
+The class 'arduino::Assignment' has no attributes.
+The class 'arduino::ModuleGet' has no attributes.
+The class 'arduino::UnaryBooleanExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::BooleanModuleGet' has no attributes.
+The class 'arduino::IntegerConstant' has the following attributes: 'value' of type int.
+The class 'InstantaneousInstruction' has no attributes.
+The class 'arduino::InstantaneousInstruction' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'Variable' has no attributes.
+The class 'arduino::Constant' has no attributes.
+The class 'arduino::Actuator' has no attributes.
+The class 'Module' has no attributes.
+The class 'arduino::BooleanConstant' has the following attributes: 'value' of type bool.
+The class 'arduino::BooleanVariable' has the following attributes: 'initialValue' of type bool.
+The class 'arduino::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduino::IntegerExpression' has no attributes.
+The class 'arduino::IntegerVariable' has the following attributes: 'initialValue' of type int.
+The class 'Expression' has no attributes.
+The class 'arduino::VariableAssignment' has no attributes.
+The class 'arduino::BinaryIntegerExpression' has the following attributes: 'operator' of type str.
+The class 'arduino::IntegerModuleGet' has no attributes.
+The class 'IntegerExpression' has no attributes.
+The class 'arduino::Instruction' has no attributes.
+The enumeration 'ModuleKind' has the following literals: 'analog', 'digital'.
+The enumeration 'Time' has the following literals: 'MilliSecond', 'MicroSecond'.
+The enumeration 'UnaryBooleanOperatorKind' has the following literals: 'not_'.
+The enumeration 'BinaryBooleanOperatorKind' has the following literals: 'infOrEqual', 'equal', 'sup', 'and_', 'inf', 'Different', 'supOrEqual', 'or_'.
+The enumeration 'UnaryIntegerOperatorKind' has the following literals: 'squareRoot', 'minus'.
+The enumeration 'BinaryIntegerOperatorKind' has the following literals: 'plus', 'max', 'min', 'minus', 'mul', 'pourcent', 'div'.
+The enumeration 'Library' has the following literals: 'none', 'servo', 'music'.
+'arduino::Platform' is a specialization of 'NamedElement'.
+'arduino::ModuleInstruction' is a specialization of 'Instruction'.
+'arduino::While' is a specialization of 'Control'.
+'arduino::Constant' is a specialization of 'Expression'.
+'arduino::ModuleAssignment' is a specialization of 'ModuleInstruction'.
+'arduino::BinaryExpression' is a specialization of 'Expression'.
+'arduino::InstantaneousInstruction' is a specialization of 'Instruction'.
+'arduino::Instruction' is a specialization of 'NamedElement'.
+'arduino::Utilities' is a specialization of 'Instruction'.
+'arduino::IntegerModuleGet' is a specialization of 'IntegerExpression'.
+'arduino::Variable' is a specialization of 'NamedElement'.
+'arduino::UnaryExpression' is a specialization of 'Expression'.
+'arduino::ModuleAssignment' is a specialization of 'Assignment'.
+'arduino::If' is a specialization of 'Control'.
+'arduino::Module' is a specialization of 'NamedElement'.
+'arduino::VariableAssignment' is a specialization of 'Assignment'.
+'arduino::BinaryBooleanExpression' is a specialization of 'BinaryExpression'.
+'arduino::ModuleGet' is a specialization of 'Expression'.
+'arduino::IntegerModuleGet' is a specialization of 'ModuleGet'.
+'arduino::Sketch' is a specialization of 'Instruction'.
+'arduino::VariableRef' is a specialization of 'Expression'.
+'arduino::Synchro' is a specialization of 'InstantaneousInstruction'.
+'arduino::BooleanModuleGet' is a specialization of 'ModuleGet'.
+'arduino::Actuator' is a specialization of 'Module'.
+'arduino::UnaryIntegerExpression' is a specialization of 'UnaryExpression'.
+'arduino::BooleanConstant' is a specialization of 'BooleanExpression'.
+'arduino::BinaryIntegerExpression' is a specialization of 'BinaryExpression'.
+'arduino::Repeat' is a specialization of 'Control'.
+'arduino::BooleanConstant' is a specialization of 'Constant'.
+'arduino::BooleanExpression' is a specialization of 'Expression'.
+'arduino::IntegerVariable' is a specialization of 'Variable'.
+'arduino::Assignment' is a specialization of 'Instruction'.
+'arduino::Sketch' is a specialization of 'NamedElement'.
+'arduino::Delay' is a specialization of 'Utilities'.
+'arduino::VariableAssignment' is a specialization of 'Instruction'.
+'arduino::DigitalPin' is a specialization of 'Pin'.
+'arduino::Control' is a specialization of 'Instruction'.
+'arduino::AnalogPin' is a specialization of 'Pin'.
+'arduino::BinaryBooleanExpression' is a specialization of 'BooleanExpression'.
+'arduino::VariableDeclaration' is a specialization of 'Instruction'.
+'arduino::IntegerExpression' is a specialization of 'Expression'.
+'arduino::Hardware' is a specialization of 'NamedElement'.
+'arduino::BooleanVariable' is a specialization of 'Variable'.
+'arduino::UnaryBooleanExpression' is a specialization of 'UnaryExpression'.
+'arduino::BinaryIntegerExpression' is a specialization of 'IntegerExpression'.
+'arduino::IntegerConstant' is a specialization of 'IntegerExpression'.
+'arduino::BooleanVariable' is a specialization of 'BooleanExpression'.
+'arduino::UnaryIntegerExpression' is a specialization of 'IntegerExpression'.
+'arduino::BooleanModuleGet' is a specialization of 'BooleanExpression'.
+'arduino::UnaryBooleanExpression' is a specialization of 'BooleanExpression'.
+'arduino::IntegerConstant' is a specialization of 'Constant'.
+'arduino::IntegerVariable' is a specialization of 'IntegerExpression'.
+'arduino::Sensor' is a specialization of 'Module'.
+'arduino::Variable' is a specialization of 'Expression'.
+'arduino::Hardware' (role 'arduino_Hardware2', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module', cardinality 0..*).
+'arduino::Synchro' (role 'synchroeOpposite', cardinality 0..*) is associated with 'arduino::Synchro' (role 'Synchro', cardinality 0..*).
+'arduino::Platform' (role 'arduino_Platform6', cardinality 0..*) is associated with 'arduino::DigitalPin' (role 'arduino_DigitalPin', cardinality 0..*).
+'arduino::Connector' (role 'arduino_Connector', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware4', cardinality 0..*).
+'arduino::VariableAssignment' (role 'arduino_VariableAssignment', cardinality 0..*) is associated with 'arduino::Variable' (role 'arduino_Variable', cardinality 0..*).
+'arduino::AnalogPin' (role 'arduino_AnalogPin', cardinality 0..*) is associated with 'arduino::Platform' (role 'arduino_Platform8', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware14', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch12', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction', cardinality 0..*).
+'arduino::VariableRef' (role 'arduino_VariableRef', cardinality 0..*) is associated with 'arduino::Variable' (role 'arduino_Variable60', cardinality 0..*).
+'arduino::Pin' (role 'arduino_Pin', cardinality 0..*) is associated with 'arduino::Connector' (role 'arduino_Connector38', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction30', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction32', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project22', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch23', cardinality 0..*).
+'arduino::Hardware' (role 'arduino_Hardware', cardinality 0..*) is associated with 'arduino::Platform' (role 'arduino_Platform', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction29', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction27', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression52', cardinality 0..*) is associated with 'arduino::If' (role 'arduino_If', cardinality 0..*).
+'arduino::BinaryExpression' (role 'arduino_BinaryExpression', cardinality 0..*) is associated with 'arduino::Expression' (role 'arduino_Expression46', cardinality 0..*).
+'arduino::Synchro' (role 'synchro', cardinality 0..*) is associated with 'arduino::Synchro' (role 'Synchro65', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction36', cardinality 0..*) is associated with 'arduino::Control' (role 'arduino_Control', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression56', cardinality 0..*) is associated with 'arduino::UnaryExpression' (role 'arduino_UnaryExpression', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction26', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction24', cardinality 0..*).
+'arduino::Module' (role 'arduino_Module43', cardinality 0..*) is associated with 'arduino::ModuleGet' (role 'arduino_ModuleGet', cardinality 0..*).
+'arduino::BinaryExpression' (role 'arduino_BinaryExpression48', cardinality 0..*) is associated with 'arduino::Expression' (role 'arduino_Expression49', cardinality 0..*).
+'arduino::Connector' (role 'arduino_Connector40', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module41', cardinality 0..*).
+'arduino::ModuleInstruction' (role 'arduino_ModuleInstruction', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module34', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project16', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module17', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware10', cardinality 0..*).
+'arduino::Platform' (role 'arduino_Platform20', cardinality 0..*) is associated with 'arduino::Project' (role 'arduino_Project19', cardinality 0..*).
+'arduino::Variable' (role 'arduino_Variable58', cardinality 0..*) is associated with 'arduino::VariableDeclaration' (role 'arduino_VariableDeclaration', cardinality 0..*).
+'arduino::Expression' (role 'arduino_Expression', cardinality 0..*) is associated with 'arduino::While' (role 'arduino_While', cardinality 0..*).
+'arduino::Assignment' (role 'arduino_Assignment', cardinality 0..*) is associated with 'arduino::Expression' (role 'arduino_Expression54', cardinality 0..*).

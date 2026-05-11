@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'B2' has no attributes.
+The class 'a::A2' has no attributes.
+The class 'a::A1' has no attributes.
+The class 'B1' has no attributes.
+'a::A1' is a specialization of 'B1'.
+'a::A1' is a specialization of 'B2'.
+'a::A2' (role 'a_A2', cardinality 0..*) is associated with 'a::A1' (role 'a_A1', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dresden-ocl/dresdenocl/tests/org.dresdenocl.metamodels.ecore.test/model/testModel.ecore

@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'helloWorld::Greeting' has the following attributes: 'name' of type str.
+The class 'helloWorld::Model' has no attributes.
+The class 'helloWorld::KeywordsExample' has the following attributes: 'option' of type str.
+'helloWorld::Greeting' (role 'helloWorld_Greeting', cardinality 0..*) is associated with 'helloWorld::Model' (role 'helloWorld_Model', cardinality 0..*).
+'helloWorld::Model' (role 'helloWorld_Model2', cardinality 0..*) is associated with 'helloWorld::KeywordsExample' (role 'helloWorld_KeywordsExample', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/pyecore/pyecore/tests/xmi/xmi-tests/My2.ecore

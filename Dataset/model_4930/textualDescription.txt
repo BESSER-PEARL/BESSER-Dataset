@@ -1,0 +1,74 @@
+The model has 29 class(es).
+The class 'Widget' has no attributes.
+The class 'webapp::CheckBox' has the following attributes: 'description' of type str.
+The class 'webapp::Table' has the following attributes: 'rowNames' of type str; 'bordered' of type bool; 'columnNames' of type str; 'striped' of type bool.
+The class 'webapp::Video' has the following attributes: 'path' of type str.
+The class 'webapp::Reference' has no attributes.
+The class 'webapp::ModelView' has no attributes.
+The class 'webapp::Text' has the following attributes: 'columnNumber' of type int.
+The class 'webapp::TextArea' has no attributes.
+The class 'webapp::Parameter' has no attributes.
+The class 'FormWidget' has no attributes.
+The class 'webapp::FormWidget' has the following attributes: 'label' of type str.
+The class 'webapp::RouterMapping' has the following attributes: 'path' of type str.
+The class 'webapp::Widget' has the following attributes: 'title' of type str.
+The class 'webapp::Operation' has no attributes.
+The class 'AbstractView' has no attributes.
+The class 'webapp::Form' has no attributes.
+The class 'webapp::NamedElement' has the following attributes: 'name' of type str.
+The class 'webapp::Gallery' has the following attributes: 'imagesPath' of type str.
+The class 'webapp::Collection' has no attributes.
+The class 'webapp::Router' has no attributes.
+The class 'webapp::Application' has no attributes.
+The class 'webapp::StaticView' has no attributes.
+The class 'webapp::ImagesBlock' has the following attributes: 'imagesPath' of type str.
+The class 'webapp::Model' has no attributes.
+The class 'webapp::AbstractView' has the following attributes: 'description' of type str.
+The class 'webapp::Spinner' has the following attributes: 'values' of type str.
+The class 'NamedElement' has no attributes.
+The class 'webapp::Section' has the following attributes: 'description' of type str; 'title' of type str.
+The class 'webapp::Attribute' has the following attributes: 'defaultValue' of type str.
+'webapp::Spinner' is a specialization of 'FormWidget'.
+'webapp::StaticView' is a specialization of 'AbstractView'.
+'webapp::Model' is a specialization of 'NamedElement'.
+'webapp::Table' is a specialization of 'Widget'.
+'webapp::Application' is a specialization of 'NamedElement'.
+'webapp::AbstractView' is a specialization of 'NamedElement'.
+'webapp::Parameter' is a specialization of 'NamedElement'.
+'webapp::Video' is a specialization of 'Widget'.
+'webapp::ModelView' is a specialization of 'AbstractView'.
+'webapp::Text' is a specialization of 'Widget'.
+'webapp::ImagesBlock' is a specialization of 'Widget'.
+'webapp::TextArea' is a specialization of 'FormWidget'.
+'webapp::Form' is a specialization of 'Widget'.
+'webapp::Collection' is a specialization of 'NamedElement'.
+'webapp::Router' is a specialization of 'NamedElement'.
+'webapp::Operation' is a specialization of 'NamedElement'.
+'webapp::Reference' is a specialization of 'NamedElement'.
+'webapp::CheckBox' is a specialization of 'FormWidget'.
+'webapp::Attribute' is a specialization of 'NamedElement'.
+'webapp::Gallery' is a specialization of 'Widget'.
+'webapp::Model' (role 'webapp_Model15', cardinality 0..*) is associated with 'webapp::Reference' (role 'webapp_Reference14', cardinality 0..*).
+'webapp::ModelView' (role 'webapp_ModelView', cardinality 0..*) is associated with 'webapp::Collection' (role 'webapp_Collection33', cardinality 0..*).
+'webapp::RouterMapping' (role 'webapp_RouterMapping26', cardinality 0..*) is associated with 'webapp::AbstractView' (role 'webapp_AbstractView', cardinality 0..*).
+'webapp::Router' (role 'router', cardinality 0..*) is associated with 'webapp::Application' (role 'Application24', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model', cardinality 0..*) is associated with 'webapp::Attribute' (role 'webapp_Attribute', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model11', cardinality 0..*) is associated with 'webapp::Operation' (role 'webapp_Operation', cardinality 0..*).
+'webapp::Model' (role 'models', cardinality 0..*) is associated with 'webapp::Application' (role 'Application', cardinality 0..*).
+'webapp::Application' (role 'application2', cardinality 0..*) is associated with 'webapp::Collection' (role 'Collection', cardinality 0..*).
+'webapp::AbstractView' (role 'views', cardinality 0..*) is associated with 'webapp::Application' (role 'Application31', cardinality 0..*).
+'webapp::Application' (role 'Application21', cardinality 0..*) is associated with 'webapp::Collection' (role 'collections', cardinality 0..*).
+'webapp::Reference' (role 'webapp_Reference', cardinality 0..*) is associated with 'webapp::Model' (role 'webapp_Model9', cardinality 0..*).
+'webapp::Section' (role 'sections', cardinality 0..*) is associated with 'webapp::StaticView' (role 'StaticView', cardinality 0..*).
+'webapp::Model' (role 'Model', cardinality 0..*) is associated with 'webapp::Application' (role 'application6', cardinality 0..*).
+'webapp::AbstractView' (role 'AbstractView', cardinality 0..*) is associated with 'webapp::Application' (role 'application4', cardinality 0..*).
+'webapp::RouterMapping' (role 'webapp_RouterMapping', cardinality 0..*) is associated with 'webapp::Router' (role 'webapp_Router', cardinality 0..*).
+'webapp::FormWidget' (role 'FormWidget', cardinality 0..*) is associated with 'webapp::Form' (role 'form', cardinality 0..*).
+'webapp::Application' (role 'application', cardinality 0..*) is associated with 'webapp::Router' (role 'Router', cardinality 0..*).
+'webapp::Operation' (role 'webapp_Operation17', cardinality 0..*) is associated with 'webapp::Parameter' (role 'webapp_Parameter', cardinality 0..*).
+'webapp::Model' (role 'webapp_Model19', cardinality 0..*) is associated with 'webapp::Collection' (role 'webapp_Collection', cardinality 0..*).
+'webapp::FormWidget' (role 'formWidgets', cardinality 0..*) is associated with 'webapp::Form' (role 'Form', cardinality 0..*).
+'webapp::Widget' (role 'widgets', cardinality 0..*) is associated with 'webapp::Section' (role 'Section38', cardinality 0..*).
+'webapp::Section' (role 'section', cardinality 0..*) is associated with 'webapp::Widget' (role 'Widget', cardinality 0..*).
+'webapp::Section' (role 'Section', cardinality 0..*) is associated with 'webapp::StaticView' (role 'view', cardinality 0..*).
+'webapp::Operation' (role 'webapp_Operation29', cardinality 0..*) is associated with 'webapp::AbstractView' (role 'webapp_AbstractView28', cardinality 0..*).

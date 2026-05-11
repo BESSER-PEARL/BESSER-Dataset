@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang/examples/logo.model/model/ASMLogo.ecore

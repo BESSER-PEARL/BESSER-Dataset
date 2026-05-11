@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'service::Services' has no attributes.
+The class 'service::Selection' has the following attributes: 'limit' of type int; 'distinct' of type bool; 'selected' of type bool.
+The class 'service::Order' has no attributes.
+The class 'service::EntityOrView' has no attributes.
+The class 'Variable' has no attributes.
+The class 'service::Asc' has no attributes.
+The class 'service::Variable' has no attributes.
+The class 'service::Desc' has no attributes.
+The class 'service::Service' has no attributes.
+The class 'service::Association' has no attributes.
+The class 'service::ServiceFeatureReference' has the following attributes: 'name' of type str.
+The class 'Order' has no attributes.
+The class 'service::Feature' has no attributes.
+The class 'service::Predicate' has no attributes.
+The class 'FormalParameterList' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'service::BusinessOperation' has the following attributes: 'resultMimeType' of type str; 'resultType' of type str.
+The enumeration 'OperationResultTypes' has the following literals: 'None_', 'File'.
+'service::Service' is a specialization of 'NamedElement'.
+'service::ServiceFeatureReference' is a specialization of 'Variable'.
+'service::Asc' is a specialization of 'Order'.
+'service::Selection' is a specialization of 'NamedElement'.
+'service::Desc' is a specialization of 'Order'.
+'service::Selection' is a specialization of 'FormalParameterList'.
+'service::BusinessOperation' is a specialization of 'NamedElement'.
+'service::Service' (role 'Service', cardinality 0..*) is associated with 'service::Selection' (role 'selections', cardinality 0..*).
+'service::BusinessOperation' (role 'service_BusinessOperation19', cardinality 0..*) is associated with 'service::Service' (role 'service_Service20', cardinality 0..*).
+'service::Selection' (role 'service_Selection13', cardinality 0..*) is associated with 'service::Order' (role 'service_Order', cardinality 0..*).
+'service::Feature' (role 'service_Feature', cardinality 0..*) is associated with 'service::Selection' (role 'service_Selection', cardinality 0..*).
+'service::BusinessOperation' (role 'service_BusinessOperation', cardinality 0..*) is associated with 'service::Service' (role 'service_Service5', cardinality 0..*).
+'service::EntityOrView' (role 'service_EntityOrView', cardinality 0..*) is associated with 'service::Service' (role 'service_Service2', cardinality 0..*).
+'service::Order' (role 'service_Order15', cardinality 0..*) is associated with 'service::Variable' (role 'service_Variable', cardinality 0..*).
+'service::Service' (role 'usedBy', cardinality 0..*) is associated with 'service::Selection' (role 'Selection', cardinality 0..*).
+'service::ServiceFeatureReference' (role 'service_ServiceFeatureReference', cardinality 0..*) is associated with 'service::Feature' (role 'service_Feature17', cardinality 0..*).
+'service::Services' (role 'service_Services', cardinality 0..*) is associated with 'service::Service' (role 'service_Service', cardinality 0..*).
+'service::Association' (role 'service_Association', cardinality 0..*) is associated with 'service::Selection' (role 'service_Selection9', cardinality 0..*).
+'service::Predicate' (role 'service_Predicate', cardinality 0..*) is associated with 'service::Selection' (role 'service_Selection11', cardinality 0..*).

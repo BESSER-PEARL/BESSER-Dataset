@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'smartHome::Condition' has the following attributes: 'operand' of type int; 'operator' of type str.
+The class 'smartHome::SensorValue' has no attributes.
+The class 'smartHome::Sensor' has the following attributes: 'name' of type str; 'dataFile' of type str; 'value' of type int.
+The class 'smartHome::Duration' has the following attributes: 'value' of type int; 'unit' of type str.
+The class 'smartHome::Rule' has no attributes.
+The class 'smartHome::Location' has the following attributes: 'name' of type str.
+The class 'smartHome::Event' has the following attributes: 'description' of type str.
+The class 'smartHome::SmartHome' has no attributes.
+The class 'smartHome::SensorType' has the following attributes: 'name' of type str.
+The enumeration 'DurationUnit' has the following literals: 'SECOND', 'MINUTE'.
+The enumeration 'Operator' has the following literals: 'INFERIOR', 'EQUALS', 'SUPERIOR'.
+'smartHome::Rule' (role 'smartHome_Rule11', cardinality 0..*) is associated with 'smartHome::Condition' (role 'smartHome_Condition', cardinality 0..*).
+'smartHome::SmartHome' (role 'smartHome_SmartHome', cardinality 0..*) is associated with 'smartHome::Location' (role 'smartHome_Location4', cardinality 0..*).
+'smartHome::Duration' (role 'smartHome_Duration', cardinality 0..*) is associated with 'smartHome::Rule' (role 'smartHome_Rule15', cardinality 0..*).
+'smartHome::SmartHome' (role 'smartHome_SmartHome6', cardinality 0..*) is associated with 'smartHome::SensorType' (role 'smartHome_SensorType7', cardinality 0..*).
+'smartHome::Location' (role 'smartHome_Location', cardinality 0..*) is associated with 'smartHome::Sensor' (role 'smartHome_Sensor2', cardinality 0..*).
+'smartHome::Event' (role 'smartHome_Event', cardinality 0..*) is associated with 'smartHome::Rule' (role 'smartHome_Rule13', cardinality 0..*).
+'smartHome::Condition' (role 'smartHome_Condition17', cardinality 0..*) is associated with 'smartHome::Sensor' (role 'smartHome_Sensor18', cardinality 0..*).
+'smartHome::Sensor' (role 'smartHome_Sensor', cardinality 0..*) is associated with 'smartHome::SensorType' (role 'smartHome_SensorType', cardinality 0..*).
+'smartHome::Rule' (role 'smartHome_Rule', cardinality 0..*) is associated with 'smartHome::SmartHome' (role 'smartHome_SmartHome9', cardinality 0..*).

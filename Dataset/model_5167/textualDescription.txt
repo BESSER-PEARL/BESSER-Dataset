@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'astrans::B' has no attributes.
+'astrans::B' (role 'astrans_B', cardinality 0..*) is associated with 'astrans::B' (role 'astrans_B0', cardinality 0..*).

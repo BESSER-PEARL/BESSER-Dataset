@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'minimalref::A' has no attributes.
+The class 'minimalref::B' has no attributes.
+'minimalref::A' (role 'A', cardinality 0..*) is associated with 'minimalref::B' (role 'manyB', cardinality 0..*).
+'minimalref::B' (role 'B', cardinality 0..*) is associated with 'minimalref::A' (role 'parentA', cardinality 0..*).

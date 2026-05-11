@@ -1,0 +1,233 @@
+The model has 108 class(es).
+The class 'sequence::description::OperandMapping' has no attributes.
+The class 'style::NodeStyleDescription' has no attributes.
+The class 'ColorDescription' has no attributes.
+The class 'sequence::description::ReturnMessageMapping' has the following attributes: 'invocationMessageFinderExpression' of type str.
+The class 'sequence::template::TLifelineStyle' has the following attributes: 'lifelineWidthComputationExpression' of type str.
+The class 'TConditionalExecutionStyle' has no attributes.
+The class 'tool::InitialOperation' has no attributes.
+The class 'sequence::ordering::EventEnd' has no attributes.
+The class 'sequence::template::TDestructionMessageMapping' has no attributes.
+The class 'sequence::tool::InteractionUseCreationTool' has no attributes.
+The class 'sequence::template::TCreationMessageMapping' has no attributes.
+The class 'tool::EdgeCreationDescription' has no attributes.
+The class 'sequence::template::TMessageMapping' has the following attributes: 'sendingEndFinderExpression' of type str; 'receivingEndFinderExpression' of type str.
+The class 'EventEndsOrdering' has no attributes.
+The class 'template::TMessageExtremity' has no attributes.
+The class 'description::RepresentationTemplate' has no attributes.
+The class 'sequence::tool::MessageCreationTool' has no attributes.
+The class 'sequence::description::BasicMessageMapping' has no attributes.
+The class 'sequence::description::ObservationPointMapping' has no attributes.
+The class 'sequence::template::TConditionalLifelineStyle' has the following attributes: 'predicateExpression' of type str.
+The class 'sequence::template::TAbstractMapping' has the following attributes: 'domainClass' of type str; 'semanticCandidatesExpression' of type str; 'name' of type str.
+The class 'tool::CoveringElementCreationTool' has no attributes.
+The class 'tool::AbstractToolDescription' has no attributes.
+The class 'sequence::template::TExecutionMapping' has the following attributes: 'recursive' of type bool; 'startingEndFinderExpression' of type str; 'finishingEndFinderExpression' of type str.
+The class 'sequence::SequenceDDiagram' has no attributes.
+The class 'TLifelineMapping' has no attributes.
+The class 'TMessageExtremity' has no attributes.
+The class 'sequence::description::CombinedFragmentMapping' has no attributes.
+The class 'sequence::tool::InstanceRoleReorderTool' has no attributes.
+The class 'tool::ElementVariable' has no attributes.
+The class 'sequence::tool::ObservationPointCreationTool' has no attributes.
+The class 'sequence::description::FrameMapping' has the following attributes: 'centerLabelExpression' of type str; 'coveredLifelinesExpression' of type str.
+The class 'tool::SequenceDiagramToolDescription' has no attributes.
+The class 'sequence::template::TConditionalExecutionStyle' has the following attributes: 'predicateExpression' of type str.
+The class 'description::EventMapping' has no attributes.
+The class 'sequence::template::TReturnMessageMapping' has the following attributes: 'invocationMessageFinderExpression' of type str.
+The class 'sequence::description::EndOfLifeMapping' has no attributes.
+The class 'sequence::template::TSourceTargetMessageMapping' has the following attributes: 'targetFinderExpression' of type str; 'useDomainElement' of type bool; 'sourceFinderExpression' of type str.
+The class 'sequence::description::InstanceRoleMapping' has no attributes.
+The class 'sequence::description::MessageEndVariable' has no attributes.
+The class 'TLifelineStyle' has no attributes.
+The class 'TTransformer' has no attributes.
+The class 'description::NodeMapping' has no attributes.
+The class 'description::EdgeMapping' has no attributes.
+The class 'NodeMapping' has no attributes.
+The class 'template::TTransformer' has no attributes.
+The class 'ordering::sequence::EObject' has no attributes.
+The class 'sequence::tool::OrderedElementCreationTool' has no attributes.
+The class 'sequence::tool::LifelineCreationTool' has no attributes.
+The class 'sequence::tool::StateCreationTool' has no attributes.
+The class 'TMessageMapping' has no attributes.
+The class 'EventMapping' has no attributes.
+The class 'sequence::description::InteractionUseMapping' has no attributes.
+The class 'description::ContainerMapping' has no attributes.
+The class 'EventEnd' has no attributes.
+The class 'AbstractVariable' has no attributes.
+The class 'sequence::tool::SequenceDiagramToolDescription' has no attributes.
+The class 'tool::NodeCreationDescription' has no attributes.
+The class 'sequence::tool::ReorderTool' has no attributes.
+The class 'sequence::description::DelimitedEventMapping' has the following attributes: 'finishingEndFinderExpression' of type str; 'startingEndFinderExpression' of type str.
+The class 'description::DelimitedEventMapping' has no attributes.
+The class 'sequence::template::TLifelineMapping' has the following attributes: 'eolVisibleExpression' of type str.
+The class 'sequence::description::ExecutionMapping' has no attributes.
+The class 'sequence::template::TMessageStyle' has the following attributes: 'labelExpression' of type str; 'lineStyle' of type str; 'sourceArrow' of type str; 'targetArrow' of type str.
+The class 'sequence::tool::CoveringElementCreationTool' has no attributes.
+The class 'sequence::description::CoveredLifelinesVariable' has no attributes.
+The class 'TMessageStyle' has no attributes.
+The class 'template::TAbstractMapping' has no attributes.
+The class 'MessageEndVariable' has no attributes.
+The class 'sequence::tool::CombinedFragmentCreationTool' has no attributes.
+The class 'sequence::template::TSequenceDiagram' has the following attributes: 'endsOrdering' of type str; 'domainClass' of type str.
+The class 'sequence::tool::OperandCreationTool' has no attributes.
+The class 'sequence::ordering::CompoundEventEnd' has no attributes.
+The class 'template::sequence::EObject' has no attributes.
+The class 'sequence::template::TTransformer' has no attributes.
+The class 'sequence::template::TExecutionStyle' has the following attributes: 'borderSizeComputationExpression' of type str.
+The class 'TExecutionStyle' has no attributes.
+The class 'TConditionalMessageStyle' has no attributes.
+The class 'sequence::description::StateMapping' has no attributes.
+The class 'DSemanticDiagram' has no attributes.
+The class 'DiagramDescription' has no attributes.
+The class 'sequence::description::DestructionMessageMapping' has no attributes.
+The class 'sequence::tool::InstanceRoleCreationTool' has no attributes.
+The class 'tool::ContainerCreationDescription' has no attributes.
+The class 'TSourceTargetMessageMapping' has no attributes.
+The class 'sequence::description::CreationMessageMapping' has no attributes.
+The class 'SingleEventEnd' has no attributes.
+The class 'CoveredLifelinesVariable' has no attributes.
+The class 'InstanceRoleMapping' has no attributes.
+The class 'sequence::description::EventMapping' has no attributes.
+The class 'FrameMapping' has no attributes.
+The class 'sequence::ordering::InstanceRolesOrdering' has no attributes.
+The class 'TAbstractMapping' has no attributes.
+The class 'InstanceRolesOrdering' has no attributes.
+The class 'ordering::sequence::SequenceDDiagram' has no attributes.
+The class 'TBasicMessageMapping' has no attributes.
+The class 'sequence::template::TConditionalMessageStyle' has the following attributes: 'predicateExpression' of type str.
+The class 'sequence::template::TMessageExtremity' has no attributes.
+The class 'sequence::ordering::SingleEventEnd' has the following attributes: 'start' of type bool.
+The class 'TConditionalLifelineStyle' has no attributes.
+The class 'MessageMapping' has no attributes.
+The class 'sequence::tool::ExecutionCreationTool' has no attributes.
+The class 'tool::OrderedElementCreationTool' has no attributes.
+The class 'sequence::description::SequenceDiagramDescription' has the following attributes: 'instanceRolesOrdering' of type str; 'endsOrdering' of type str.
+The class 'TExecutionMapping' has no attributes.
+The class 'sequence::template::TBasicMessageMapping' has no attributes.
+The class 'sequence::ordering::EventEndsOrdering' has no attributes.
+The class 'sequence::description::MessageMapping' has the following attributes: 'sendingEndFinderExpression' of type str; 'receivingEndFinderExpression' of type str.
+'sequence::tool::MessageCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::template::TLifelineMapping' is a specialization of 'template::TAbstractMapping'.
+'sequence::template::TMessageMapping' is a specialization of 'TAbstractMapping'.
+'sequence::tool::MessageCreationTool' is a specialization of 'tool::EdgeCreationDescription'.
+'sequence::description::BasicMessageMapping' is a specialization of 'MessageMapping'.
+'sequence::template::TExecutionMapping' is a specialization of 'template::TAbstractMapping'.
+'sequence::tool::CombinedFragmentCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::ordering::SingleEventEnd' is a specialization of 'EventEnd'.
+'sequence::template::TDestructionMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+'sequence::tool::ReorderTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::InstanceRoleReorderTool' is a specialization of 'tool::AbstractToolDescription'.
+'sequence::ordering::CompoundEventEnd' is a specialization of 'EventEnd'.
+'sequence::description::InstanceRoleMapping' is a specialization of 'NodeMapping'.
+'sequence::description::ExecutionMapping' is a specialization of 'description::NodeMapping'.
+'sequence::tool::StateCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::description::MessageEndVariable' is a specialization of 'AbstractVariable'.
+'sequence::template::TMessageStyle' is a specialization of 'TTransformer'.
+'sequence::tool::ExecutionCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::template::TConditionalExecutionStyle' is a specialization of 'TTransformer'.
+'sequence::template::TExecutionStyle' is a specialization of 'TTransformer'.
+'sequence::description::FrameMapping' is a specialization of 'description::ContainerMapping'.
+'sequence::tool::ObservationPointCreationTool' is a specialization of 'tool::NodeCreationDescription'.
+'sequence::template::TConditionalLifelineStyle' is a specialization of 'TTransformer'.
+'sequence::description::MessageMapping' is a specialization of 'description::EventMapping'.
+'sequence::description::ObservationPointMapping' is a specialization of 'NodeMapping'.
+'sequence::tool::InstanceRoleReorderTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::description::CreationMessageMapping' is a specialization of 'MessageMapping'.
+'sequence::description::EndOfLifeMapping' is a specialization of 'NodeMapping'.
+'sequence::tool::StateCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::template::TSequenceDiagram' is a specialization of 'description::RepresentationTemplate'.
+'sequence::template::TCreationMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+'sequence::template::TSequenceDiagram' is a specialization of 'template::TTransformer'.
+'sequence::description::StateMapping' is a specialization of 'description::NodeMapping'.
+'sequence::template::TExecutionMapping' is a specialization of 'template::TMessageExtremity'.
+'sequence::description::ReturnMessageMapping' is a specialization of 'MessageMapping'.
+'sequence::tool::CombinedFragmentCreationTool' is a specialization of 'tool::CoveringElementCreationTool'.
+'sequence::tool::ObservationPointCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::description::DelimitedEventMapping' is a specialization of 'EventMapping'.
+'sequence::template::TLifelineStyle' is a specialization of 'TTransformer'.
+'sequence::template::TSourceTargetMessageMapping' is a specialization of 'TMessageMapping'.
+'sequence::description::SequenceDiagramDescription' is a specialization of 'DiagramDescription'.
+'sequence::tool::InstanceRoleCreationTool' is a specialization of 'tool::NodeCreationDescription'.
+'sequence::description::ExecutionMapping' is a specialization of 'description::DelimitedEventMapping'.
+'sequence::tool::MessageCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::tool::OperandCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::SequenceDDiagram' is a specialization of 'DSemanticDiagram'.
+'sequence::description::StateMapping' is a specialization of 'description::DelimitedEventMapping'.
+'sequence::description::OperandMapping' is a specialization of 'description::DelimitedEventMapping'.
+'sequence::tool::OperandCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::tool::StateCreationTool' is a specialization of 'tool::NodeCreationDescription'.
+'sequence::template::TLifelineMapping' is a specialization of 'template::TMessageExtremity'.
+'sequence::template::TConditionalMessageStyle' is a specialization of 'TTransformer'.
+'sequence::tool::CombinedFragmentCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::InteractionUseCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::ObservationPointCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::ReorderTool' is a specialization of 'tool::AbstractToolDescription'.
+'sequence::template::TAbstractMapping' is a specialization of 'TTransformer'.
+'sequence::template::TReturnMessageMapping' is a specialization of 'TMessageMapping'.
+'sequence::template::TBasicMessageMapping' is a specialization of 'TSourceTargetMessageMapping'.
+'sequence::description::FrameMapping' is a specialization of 'description::DelimitedEventMapping'.
+'sequence::description::MessageMapping' is a specialization of 'description::EdgeMapping'.
+'sequence::tool::ExecutionCreationTool' is a specialization of 'tool::NodeCreationDescription'.
+'sequence::description::CombinedFragmentMapping' is a specialization of 'FrameMapping'.
+'sequence::tool::InstanceRoleCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::OperandCreationTool' is a specialization of 'tool::ContainerCreationDescription'.
+'sequence::tool::InteractionUseCreationTool' is a specialization of 'tool::CoveringElementCreationTool'.
+'sequence::tool::ExecutionCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'sequence::description::InteractionUseMapping' is a specialization of 'FrameMapping'.
+'sequence::description::DestructionMessageMapping' is a specialization of 'MessageMapping'.
+'sequence::tool::LifelineCreationTool' is a specialization of 'tool::ContainerCreationDescription'.
+'sequence::tool::LifelineCreationTool' is a specialization of 'tool::SequenceDiagramToolDescription'.
+'sequence::tool::CombinedFragmentCreationTool' is a specialization of 'tool::ContainerCreationDescription'.
+'sequence::description::CoveredLifelinesVariable' is a specialization of 'AbstractVariable'.
+'sequence::description::OperandMapping' is a specialization of 'description::ContainerMapping'.
+'sequence::tool::InteractionUseCreationTool' is a specialization of 'tool::ContainerCreationDescription'.
+'sequence::tool::InteractionUseCreationTool' is a specialization of 'tool::OrderedElementCreationTool'.
+'ColorDescription' (role 'ColorDescription73', cardinality 0..*) is associated with 'sequence::template::TExecutionStyle' (role 'sequence_template_TExecutionStyle72', cardinality 0..*).
+'sequence::ordering::CompoundEventEnd' (role 'sequence_ordering_CompoundEventEnd', cardinality 0..*) is associated with 'SingleEventEnd' (role 'SingleEventEnd', cardinality 0..*).
+'MessageEndVariable' (role 'MessageEndVariable', cardinality 0..*) is associated with 'sequence::tool::OrderedElementCreationTool' (role 'sequence_tool_OrderedElementCreationTool', cardinality 0..*).
+'MessageEndVariable' (role 'MessageEndVariable18', cardinality 0..*) is associated with 'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool17', cardinality 0..*).
+'TBasicMessageMapping' (role 'TBasicMessageMapping', cardinality 0..*) is associated with 'sequence::template::TReturnMessageMapping' (role 'sequence_template_TReturnMessageMapping', cardinality 0..*).
+'MessageEndVariable' (role 'MessageEndVariable24', cardinality 0..*) is associated with 'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool23', cardinality 0..*).
+'sequence::template::TDestructionMessageMapping' (role 'sequence_template_TDestructionMessageMapping', cardinality 0..*) is associated with 'TLifelineMapping' (role 'TLifelineMapping90', cardinality 0..*).
+'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool', cardinality 0..*) is associated with 'EventMapping' (role 'EventMapping', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation', cardinality 0..*) is associated with 'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool26', cardinality 0..*).
+'sequence::template::TLifelineMapping' (role 'sequence_template_TLifelineMapping54', cardinality 0..*) is associated with 'TLifelineStyle' (role 'TLifelineStyle', cardinality 0..*).
+'TConditionalExecutionStyle' (role 'TConditionalExecutionStyle', cardinality 0..*) is associated with 'sequence::template::TExecutionMapping' (role 'sequence_template_TExecutionMapping68', cardinality 0..*).
+'TLifelineMapping' (role 'TLifelineMapping', cardinality 0..*) is associated with 'sequence::template::TSequenceDiagram' (role 'sequence_template_TSequenceDiagram', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation36', cardinality 0..*) is associated with 'sequence::tool::InstanceRoleReorderTool' (role 'sequence_tool_InstanceRoleReorderTool35', cardinality 0..*).
+'sequence::template::TLifelineMapping' (role 'sequence_template_TLifelineMapping59', cardinality 0..*) is associated with 'TConditionalLifelineStyle' (role 'TConditionalLifelineStyle', cardinality 0..*).
+'MessageEndVariable' (role 'MessageEndVariable15', cardinality 0..*) is associated with 'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool14', cardinality 0..*).
+'sequence::tool::InstanceRoleReorderTool' (role 'sequence_tool_InstanceRoleReorderTool29', cardinality 0..*) is associated with 'tool::ElementVariable' (role 'tool_ElementVariable30', cardinality 0..*).
+'sequence::template::TLifelineMapping' (role 'sequence_template_TLifelineMapping52', cardinality 0..*) is associated with 'style::NodeStyleDescription' (role 'style_NodeStyleDescription', cardinality 0..*).
+'TMessageExtremity' (role 'TMessageExtremity85', cardinality 0..*) is associated with 'sequence::template::TSourceTargetMessageMapping' (role 'sequence_template_TSourceTargetMessageMapping', cardinality 0..*).
+'MessageEndVariable' (role 'MessageEndVariable9', cardinality 0..*) is associated with 'sequence::tool::OrderedElementCreationTool' (role 'sequence_tool_OrderedElementCreationTool8', cardinality 0..*).
+'sequence::template::TSequenceDiagram' (role 'sequence_template_TSequenceDiagram49', cardinality 0..*) is associated with 'TMessageMapping' (role 'TMessageMapping', cardinality 0..*).
+'TLifelineMapping' (role 'TLifelineMapping88', cardinality 0..*) is associated with 'sequence::template::TCreationMessageMapping' (role 'sequence_template_TCreationMessageMapping', cardinality 0..*).
+'EventEndsOrdering' (role 'EventEndsOrdering3', cardinality 0..*) is associated with 'sequence::SequenceDDiagram' (role 'sequence_SequenceDDiagram2', cardinality 0..*).
+'sequence::ordering::EventEndsOrdering' (role 'sequence_ordering_EventEndsOrdering39', cardinality 0..*) is associated with 'EventEnd' (role 'EventEnd', cardinality 0..*).
+'sequence::SequenceDDiagram' (role 'sequence_SequenceDDiagram5', cardinality 0..*) is associated with 'InstanceRolesOrdering' (role 'InstanceRolesOrdering', cardinality 0..*).
+'style::NodeStyleDescription' (role 'style_NodeStyleDescription57', cardinality 0..*) is associated with 'sequence::template::TLifelineMapping' (role 'sequence_template_TLifelineMapping56', cardinality 0..*).
+'CoveredLifelinesVariable' (role 'CoveredLifelinesVariable', cardinality 0..*) is associated with 'sequence::tool::CoveringElementCreationTool' (role 'sequence_tool_CoveringElementCreationTool', cardinality 0..*).
+'sequence::tool::ReorderTool' (role 'sequence_tool_ReorderTool20', cardinality 0..*) is associated with 'MessageEndVariable' (role 'MessageEndVariable21', cardinality 0..*).
+'sequence::template::TTransformer' (role 'sequence_template_TTransformer', cardinality 0..*) is associated with 'template::sequence::EObject' (role 'template_sequence_EObject', cardinality 0..*).
+'sequence::tool::InstanceRoleReorderTool' (role 'sequence_tool_InstanceRoleReorderTool', cardinality 0..*) is associated with 'InstanceRoleMapping' (role 'InstanceRoleMapping', cardinality 0..*).
+'sequence::template::TLifelineMapping' (role 'sequence_template_TLifelineMapping', cardinality 0..*) is associated with 'TExecutionMapping' (role 'TExecutionMapping', cardinality 0..*).
+'TConditionalMessageStyle' (role 'TConditionalMessageStyle', cardinality 0..*) is associated with 'sequence::template::TMessageMapping' (role 'sequence_template_TMessageMapping78', cardinality 0..*).
+'sequence::template::TExecutionMapping' (role 'sequence_template_TExecutionMapping66', cardinality 0..*) is associated with 'TExecutionStyle' (role 'TExecutionStyle', cardinality 0..*).
+'tool::ElementVariable' (role 'tool_ElementVariable', cardinality 0..*) is associated with 'sequence::tool::InstanceRoleCreationTool' (role 'sequence_tool_InstanceRoleCreationTool', cardinality 0..*).
+'ordering::sequence::EObject' (role 'ordering_sequence_EObject42', cardinality 0..*) is associated with 'sequence::ordering::SingleEventEnd' (role 'sequence_ordering_SingleEventEnd', cardinality 0..*).
+'sequence::template::TMessageStyle' (role 'sequence_template_TMessageStyle', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription80', cardinality 0..*).
+'sequence::template::TMessageMapping' (role 'sequence_template_TMessageMapping', cardinality 0..*) is associated with 'TMessageStyle' (role 'TMessageStyle', cardinality 0..*).
+'sequence::template::TConditionalMessageStyle' (role 'sequence_template_TConditionalMessageStyle', cardinality 0..*) is associated with 'TMessageStyle' (role 'TMessageStyle82', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription', cardinality 0..*) is associated with 'sequence::template::TLifelineStyle' (role 'sequence_template_TLifelineStyle', cardinality 0..*).
+'EventEndsOrdering' (role 'EventEndsOrdering', cardinality 0..*) is associated with 'sequence::SequenceDDiagram' (role 'sequence_SequenceDDiagram', cardinality 0..*).
+'sequence::template::TBasicMessageMapping' (role 'sequence_template_TBasicMessageMapping', cardinality 0..*) is associated with 'TMessageExtremity' (role 'TMessageExtremity', cardinality 0..*).
+'sequence::ordering::EventEnd' (role 'sequence_ordering_EventEnd', cardinality 0..*) is associated with 'ordering::sequence::EObject' (role 'ordering_sequence_EObject', cardinality 0..*).
+'sequence::template::TConditionalLifelineStyle' (role 'sequence_template_TConditionalLifelineStyle', cardinality 0..*) is associated with 'TLifelineStyle' (role 'TLifelineStyle62', cardinality 0..*).
+'sequence::template::TExecutionStyle' (role 'sequence_template_TExecutionStyle', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription70', cardinality 0..*).
+'ordering::sequence::SequenceDDiagram' (role 'ordering_sequence_SequenceDDiagram', cardinality 0..*) is associated with 'sequence::ordering::EventEndsOrdering' (role 'sequence_ordering_EventEndsOrdering', cardinality 0..*).
+'tool::ElementVariable' (role 'tool_ElementVariable33', cardinality 0..*) is associated with 'sequence::tool::InstanceRoleReorderTool' (role 'sequence_tool_InstanceRoleReorderTool32', cardinality 0..*).
+'sequence::ordering::InstanceRolesOrdering' (role 'sequence_ordering_InstanceRolesOrdering', cardinality 0..*) is associated with 'ordering::sequence::EObject' (role 'ordering_sequence_EObject45', cardinality 0..*).
+'TExecutionMapping' (role 'TExecutionMapping64', cardinality 0..*) is associated with 'sequence::template::TExecutionMapping' (role 'sequence_template_TExecutionMapping', cardinality 0..*).
+'sequence::template::TConditionalExecutionStyle' (role 'sequence_template_TConditionalExecutionStyle', cardinality 0..*) is associated with 'TExecutionStyle' (role 'TExecutionStyle75', cardinality 0..*).

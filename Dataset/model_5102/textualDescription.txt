@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'testPackage::FirstClass' has no attributes.
+The class 'testPackage::SecondClass' has no attributes.
+'testPackage::FirstClass' (role 'ObligatoryContainerRelation.ecoreFirstClass', cardinality 0..*) is associated with 'testPackage::SecondClass' (role 'testReference', cardinality 0..*).
+'testPackage::FirstClass' (role 'referencingReference', cardinality 0..*) is associated with 'testPackage::SecondClass' (role 'ObligatoryContainerRelation.ecoreSecondClass', cardinality 0..*).

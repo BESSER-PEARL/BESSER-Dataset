@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fcoulon/fluffy-umbrella/org.eclipse.ecoretools.ale.test/model/ABC.ecore

@@ -1,0 +1,142 @@
+The model has 57 class(es).
+The class 'Maude::RenMapping' has no attributes.
+The class 'Maude::Module' has no attributes.
+The class 'Maude::SubsortRel' has no attributes.
+The class 'Maude::EqualCond' has no attributes.
+The class 'Maude::Statement' has the following attributes: 'label' of type str; 'atts' of type str.
+The class 'Term' has no attributes.
+The class 'Maude::ModExpression' has no attributes.
+The class 'Maude::Type' has the following attributes: 'name' of type str.
+The class 'Maude::TermMapping' has no attributes.
+The class 'Maude::View' has no attributes.
+The class 'Type' has no attributes.
+The class 'Maude::MembershipCond' has no attributes.
+The class 'Maude::Constant' has the following attributes: 'op' of type str.
+The class 'Maude::LabelMapping' has the following attributes: 'to' of type str; 'from_' of type str.
+The class 'Maude::Operation' has the following attributes: 'atts' of type str; 'name' of type str.
+The class 'Statement' has no attributes.
+The class 'Maude::Condition' has no attributes.
+The class 'ModExpression' has no attributes.
+The class 'RenMapping' has no attributes.
+The class 'Maude::Theory' has no attributes.
+The class 'Maude::CompModExp' has no attributes.
+The class 'Maude::MaudeTopEl' has the following attributes: 'name' of type str.
+The class 'Maude::ModuleIdModExp' has no attributes.
+The class 'ModElement' has no attributes.
+The class 'Maude::Membership' has no attributes.
+The class 'Maude::EquationalCond' has no attributes.
+The class 'EquationalCond' has no attributes.
+The class 'Maude::ViewMapping' has no attributes.
+The class 'Maude::Kind' has no attributes.
+The class 'Maude::Sort' has no attributes.
+The class 'Maude::MatchingCond' has no attributes.
+The class 'Maude::Parameter' has the following attributes: 'label' of type str.
+The class 'Maude::STheory' has no attributes.
+The class 'Maude::RenModExp' has no attributes.
+The class 'Maude::FTheory' has no attributes.
+The class 'Maude::Equation' has no attributes.
+The class 'Maude::OpTypedMapping' has the following attributes: 'to' of type str; 'atts' of type str.
+The class 'Maude::ModImportation' has no attributes.
+The class 'Maude::OpMapping' has the following attributes: 'to' of type str.
+The class 'Maude::FModule' has no attributes.
+The class 'MaudeTopEl' has no attributes.
+The class 'Condition' has no attributes.
+The class 'Maude::SModule' has no attributes.
+The class 'Maude::RewriteCond' has no attributes.
+The class 'Maude::RecTerm' has the following attributes: 'op' of type str.
+The class 'Maude::ModElement' has no attributes.
+The class 'Maude::InstModExp' has no attributes.
+The class 'Maude::Rule' has no attributes.
+The class 'ViewMapping' has no attributes.
+The class 'Module' has no attributes.
+The class 'Maude::SortMapping' has the following attributes: 'to' of type str.
+The class 'Maude::MaudeSpec' has no attributes.
+The class 'Maude::Variable' has the following attributes: 'name' of type str.
+The class 'Maude::TheoryIdModExp' has no attributes.
+The class 'Maude::Term' has no attributes.
+The class 'Maude::BooleanCond' has no attributes.
+The class 'Theory' has no attributes.
+'Maude::Operation' is a specialization of 'ModElement'.
+'Maude::MembershipCond' is a specialization of 'EquationalCond'.
+'Maude::Membership' is a specialization of 'Statement'.
+'Maude::Statement' is a specialization of 'ModElement'.
+'Maude::RenMapping' is a specialization of 'ViewMapping'.
+'Maude::ModImportation' is a specialization of 'ModElement'.
+'Maude::Variable' is a specialization of 'Term'.
+'Maude::Theory' is a specialization of 'MaudeTopEl'.
+'Maude::Sort' is a specialization of 'ModElement'.
+'Maude::RenModExp' is a specialization of 'ModExpression'.
+'Maude::OpTypedMapping' is a specialization of 'RenMapping'.
+'Maude::InstModExp' is a specialization of 'ModExpression'.
+'Maude::Rule' is a specialization of 'Statement'.
+'Maude::OpMapping' is a specialization of 'RenMapping'.
+'Maude::BooleanCond' is a specialization of 'EquationalCond'.
+'Maude::SortMapping' is a specialization of 'RenMapping'.
+'Maude::Module' is a specialization of 'MaudeTopEl'.
+'Maude::TheoryIdModExp' is a specialization of 'ModExpression'.
+'Maude::FModule' is a specialization of 'Module'.
+'Maude::Equation' is a specialization of 'Statement'.
+'Maude::CompModExp' is a specialization of 'ModExpression'.
+'Maude::TermMapping' is a specialization of 'ViewMapping'.
+'Maude::Sort' is a specialization of 'Type'.
+'Maude::EqualCond' is a specialization of 'EquationalCond'.
+'Maude::STheory' is a specialization of 'Theory'.
+'Maude::FTheory' is a specialization of 'Theory'.
+'Maude::SModule' is a specialization of 'Module'.
+'Maude::Parameter' is a specialization of 'ModExpression'.
+'Maude::MatchingCond' is a specialization of 'EquationalCond'.
+'Maude::View' is a specialization of 'MaudeTopEl'.
+'Maude::ModuleIdModExp' is a specialization of 'ModExpression'.
+'Maude::Constant' is a specialization of 'Term'.
+'Maude::SubsortRel' is a specialization of 'ModElement'.
+'Maude::LabelMapping' is a specialization of 'RenMapping'.
+'Maude::Kind' is a specialization of 'Type'.
+'Maude::RecTerm' is a specialization of 'Term'.
+'Maude::EquationalCond' is a specialization of 'Condition'.
+'Maude::RewriteCond' is a specialization of 'Condition'.
+'Maude::Module' (role 'module', cardinality 0..*) is associated with 'Maude::ModElement' (role 'ModElement19', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term54', cardinality 0..*) is associated with 'Maude::Rule' (role 'Maude_Rule53', cardinality 0..*).
+'Maude::MaudeTopEl' (role 'Maude_MaudeTopEl', cardinality 0..*) is associated with 'Maude::MaudeSpec' (role 'Maude_MaudeSpec', cardinality 0..*).
+'Maude::EqualCond' (role 'Maude_EqualCond', cardinality 0..*) is associated with 'Maude::Term' (role 'Maude_Term65', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term80', cardinality 0..*) is associated with 'Maude::TermMapping' (role 'Maude_TermMapping', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression', cardinality 0..*) is associated with 'Maude::InstModExp' (role 'Maude_InstModExp', cardinality 0..*).
+'Maude::Equation' (role 'Maude_Equation48', cardinality 0..*) is associated with 'Maude::Term' (role 'Maude_Term49', cardinality 0..*).
+'Maude::TheoryIdModExp' (role 'Maude_TheoryIdModExp', cardinality 0..*) is associated with 'Maude::Theory' (role 'Maude_Theory', cardinality 0..*).
+'Maude::Sort' (role 'Sort', cardinality 0..*) is associated with 'Maude::Kind' (role 'kind', cardinality 0..*).
+'Maude::ModElement' (role 'els25', cardinality 0..*) is associated with 'Maude::Theory' (role 'Theory', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term70', cardinality 0..*) is associated with 'Maude::RecTerm' (role 'Maude_RecTerm', cardinality 0..*).
+'Maude::Kind' (role 'Kind', cardinality 0..*) is associated with 'Maude::Sort' (role 'sorts', cardinality 0..*).
+'Maude::Module' (role 'Maude_Module21', cardinality 0..*) is associated with 'Maude::Parameter' (role 'Maude_Parameter22', cardinality 0..*).
+'Maude::Statement' (role 'Maude_Statement', cardinality 0..*) is associated with 'Maude::Condition' (role 'Maude_Condition', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression12', cardinality 0..*) is associated with 'Maude::CompModExp' (role 'Maude_CompModExp', cardinality 0..*).
+'Maude::ModImportation' (role 'Maude_ModImportation', cardinality 0..*) is associated with 'Maude::ModExpression' (role 'Maude_ModExpression27', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression8', cardinality 0..*) is associated with 'Maude::RenModExp' (role 'Maude_RenModExp', cardinality 0..*).
+'Maude::Module' (role 'Module', cardinality 0..*) is associated with 'Maude::ModElement' (role 'els', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression16', cardinality 0..*) is associated with 'Maude::Parameter' (role 'Maude_Parameter', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term51', cardinality 0..*) is associated with 'Maude::Rule' (role 'Maude_Rule', cardinality 0..*).
+'Maude::MaudeSpec' (role 'Maude_MaudeSpec2', cardinality 0..*) is associated with 'Maude::MaudeTopEl' (role 'Maude_MaudeTopEl3', cardinality 0..*).
+'Maude::OpTypedMapping' (role 'Maude_OpTypedMapping', cardinality 0..*) is associated with 'Maude::Operation' (role 'Maude_Operation87', cardinality 0..*).
+'Maude::SortMapping' (role 'Maude_SortMapping', cardinality 0..*) is associated with 'Maude::Sort' (role 'Maude_Sort85', cardinality 0..*).
+'Maude::RenModExp' (role 'Maude_RenModExp10', cardinality 0..*) is associated with 'Maude::RenMapping' (role 'Maude_RenMapping', cardinality 0..*).
+'Maude::Condition' (role 'Maude_Condition56', cardinality 0..*) is associated with 'Maude::Term' (role 'Maude_Term57', cardinality 0..*).
+'Maude::Equation' (role 'Maude_Equation', cardinality 0..*) is associated with 'Maude::Term' (role 'Maude_Term46', cardinality 0..*).
+'Maude::Type' (role 'Maude_Type40', cardinality 0..*) is associated with 'Maude::Operation' (role 'Maude_Operation39', cardinality 0..*).
+'Maude::ViewMapping' (role 'Maude_ViewMapping', cardinality 0..*) is associated with 'Maude::View' (role 'Maude_View78', cardinality 0..*).
+'Maude::SubsortRel' (role 'supersortRels', cardinality 0..*) is associated with 'Maude::Sort' (role 'Sort34', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term59', cardinality 0..*) is associated with 'Maude::RewriteCond' (role 'Maude_RewriteCond', cardinality 0..*).
+'Maude::ModElement' (role 'ModElement', cardinality 0..*) is associated with 'Maude::Theory' (role 'theory', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression76', cardinality 0..*) is associated with 'Maude::View' (role 'Maude_View75', cardinality 0..*).
+'Maude::Operation' (role 'Maude_Operation89', cardinality 0..*) is associated with 'Maude::OpMapping' (role 'Maude_OpMapping', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term67', cardinality 0..*) is associated with 'Maude::Type' (role 'Maude_Type68', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term', cardinality 0..*) is associated with 'Maude::Membership' (role 'Maude_Membership', cardinality 0..*).
+'Maude::Module' (role 'Maude_Module', cardinality 0..*) is associated with 'Maude::ModuleIdModExp' (role 'Maude_ModuleIdModExp', cardinality 0..*).
+'Maude::Sort' (role 'supersorts', cardinality 0..*) is associated with 'Maude::SubsortRel' (role 'SubsortRel', cardinality 0..*).
+'Maude::SubsortRel' (role 'SubsortRel30', cardinality 0..*) is associated with 'Maude::Sort' (role 'subsorts', cardinality 0..*).
+'Maude::Operation' (role 'Maude_Operation', cardinality 0..*) is associated with 'Maude::Type' (role 'Maude_Type', cardinality 0..*).
+'Maude::Membership' (role 'Maude_Membership44', cardinality 0..*) is associated with 'Maude::Sort' (role 'Maude_Sort', cardinality 0..*).
+'Maude::Sort' (role 'Sort36', cardinality 0..*) is associated with 'Maude::SubsortRel' (role 'subsortRels', cardinality 0..*).
+'Maude::InstModExp' (role 'Maude_InstModExp6', cardinality 0..*) is associated with 'Maude::View' (role 'Maude_View', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term83', cardinality 0..*) is associated with 'Maude::TermMapping' (role 'Maude_TermMapping82', cardinality 0..*).
+'Maude::Term' (role 'Maude_Term63', cardinality 0..*) is associated with 'Maude::MatchingCond' (role 'Maude_MatchingCond', cardinality 0..*).
+'Maude::Sort' (role 'Maude_Sort61', cardinality 0..*) is associated with 'Maude::MembershipCond' (role 'Maude_MembershipCond', cardinality 0..*).
+'Maude::ModExpression' (role 'Maude_ModExpression73', cardinality 0..*) is associated with 'Maude::View' (role 'Maude_View72', cardinality 0..*).

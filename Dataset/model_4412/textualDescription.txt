@@ -1,0 +1,122 @@
+The model has 47 class(es).
+The class 'arduino::Sketch' has no attributes.
+The class 'arduino::BooleanOperator' has no attributes.
+The class 'ModuleInstruction' has no attributes.
+The class 'arduino::Delay' has the following attributes: 'value' of type int; 'unit' of type str.
+The class 'arduino::IO' has no attributes.
+The class 'BooleanOperator' has no attributes.
+The class 'arduino::OutputModule' has no attributes.
+The class 'arduino::While' has no attributes.
+The class 'arduino::Pin' has the following attributes: 'id' of type int.
+The class 'arduino::Repeat' has the following attributes: 'iteration' of type int.
+The class 'Utilities' has no attributes.
+The class 'arduino::NamedElement' has the following attributes: 'name' of type str.
+The class 'Module' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'arduino::Set' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'arduino::NumericalOperator' has no attributes.
+The class 'arduino::If' has no attributes.
+The class 'arduino::InputModule' has no attributes.
+The class 'arduino::Hardware' has no attributes.
+The class 'arduino::Sensor' has no attributes.
+The class 'arduino::Project' has no attributes.
+The class 'arduino::Status' has the following attributes: 'status' of type bool.
+The class 'arduino::MathOperator' has the following attributes: 'operator' of type str.
+The class 'arduino::ParameterDefinition' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'arduino::ModuleInstruction' has no attributes.
+The class 'arduino::FunctionCall' has no attributes.
+The class 'arduino::ParameterCall' has no attributes.
+The class 'arduino::Platform' has the following attributes: 'image' of type str.
+The class 'arduino::Instruction' has no attributes.
+The class 'Value' has no attributes.
+The class 'arduino::Module' has the following attributes: 'level' of type bool; 'kind' of type str; 'image' of type str; 'library' of type str.
+The class 'arduino::Level' has no attributes.
+The class 'arduino::Utilities' has no attributes.
+The class 'arduino::AnalogPin' has no attributes.
+The class 'arduino::Parameter' has no attributes.
+The class 'Control' has no attributes.
+The class 'arduino::DigitalPin' has no attributes.
+The class 'arduino::Value' has the following attributes: 'value' of type str.
+The class 'arduino::Function' has the following attributes: 'name' of type str.
+The class 'arduino::Control' has no attributes.
+The class 'MathOperator' has no attributes.
+The class 'arduino::Connector' has no attributes.
+The class 'Pin' has no attributes.
+The class 'arduino::Variable' has the following attributes: 'name' of type str.
+The class 'arduino::Constant' has no attributes.
+The class 'NamedElement' has no attributes.
+The enumeration 'Library' has the following literals: 'music', 'servo', 'none'.
+The enumeration 'ParameterType' has the following literals: 'Constant', 'Delay', 'Sensor', 'Status', 'Level'.
+The enumeration 'Time' has the following literals: 'MilliSecond', 'MicroSecond'.
+The enumeration 'OperatorKind' has the following literals: 'equal', 'diff', 'plus', 'minus', 'min', 'pourcent', 'max', 'lowerOrEqual', 'upperOrEqual', 'mul', 'lower', 'div', 'not_', 'upper', 'and_', 'or_'.
+The enumeration 'ModuleKind' has the following literals: 'analog', 'digital'.
+'arduino::Variable' is a specialization of 'Instruction'.
+'arduino::DigitalPin' is a specialization of 'Pin'.
+'arduino::Hardware' is a specialization of 'NamedElement'.
+'arduino::AnalogPin' is a specialization of 'Pin'.
+'arduino::ModuleInstruction' is a specialization of 'Parameter'.
+'arduino::Status' is a specialization of 'Value'.
+'arduino::IO' is a specialization of 'Instruction'.
+'arduino::Platform' is a specialization of 'NamedElement'.
+'arduino::Utilities' is a specialization of 'Parameter'.
+'arduino::FunctionCall' is a specialization of 'Instruction'.
+'arduino::Value' is a specialization of 'Instruction'.
+'arduino::Repeat' is a specialization of 'Control'.
+'arduino::Control' is a specialization of 'Instruction'.
+'arduino::Delay' is a specialization of 'Utilities'.
+'arduino::Utilities' is a specialization of 'Instruction'.
+'arduino::InputModule' is a specialization of 'Module'.
+'arduino::Sensor' is a specialization of 'BooleanOperator'.
+'arduino::If' is a specialization of 'Control'.
+'arduino::NumericalOperator' is a specialization of 'MathOperator'.
+'arduino::Value' is a specialization of 'Parameter'.
+'arduino::Sensor' is a specialization of 'ModuleInstruction'.
+'arduino::OutputModule' is a specialization of 'Module'.
+'arduino::ParameterCall' is a specialization of 'Instruction'.
+'arduino::Module' is a specialization of 'NamedElement'.
+'arduino::Level' is a specialization of 'ModuleInstruction'.
+'arduino::Constant' is a specialization of 'Value'.
+'arduino::Variable' is a specialization of 'Value'.
+'arduino::While' is a specialization of 'Control'.
+'arduino::Set' is a specialization of 'Instruction'.
+'arduino::BooleanOperator' is a specialization of 'MathOperator'.
+'arduino::Sketch' is a specialization of 'NamedElement'.
+'arduino::MathOperator' is a specialization of 'Value'.
+'arduino::Status' is a specialization of 'ModuleInstruction'.
+'arduino::MathOperator' is a specialization of 'Instruction'.
+'arduino::Sketch' is a specialization of 'Instruction'.
+'arduino::ModuleInstruction' is a specialization of 'Instruction'.
+'arduino::BooleanOperator' (role 'arduino_BooleanOperator', cardinality 0..*) is associated with 'arduino::While' (role 'arduino_While', cardinality 0..*).
+'arduino::ParameterDefinition' (role 'arduino_ParameterDefinition69', cardinality 0..*) is associated with 'arduino::ParameterCall' (role 'arduino_ParameterCall', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction60', cardinality 0..*) is associated with 'arduino::Function' (role 'arduino_Function59', cardinality 0..*).
+'arduino::AnalogPin' (role 'arduino_AnalogPin', cardinality 0..*) is associated with 'arduino::Platform' (role 'arduino_Platform8', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware10', cardinality 0..*).
+'arduino::Function' (role 'arduino_Function64', cardinality 0..*) is associated with 'arduino::FunctionCall' (role 'arduino_FunctionCall', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch12', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction', cardinality 0..*).
+'arduino::Platform' (role 'arduino_Platform25', cardinality 0..*) is associated with 'arduino::Project' (role 'arduino_Project24', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project21', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module22', cardinality 0..*).
+'arduino::Sensor' (role 'Sensor', cardinality 0..*) is associated with 'arduino::Status' (role 'status', cardinality 0..*).
+'arduino::Platform' (role 'arduino_Platform', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware', cardinality 0..*).
+'arduino::ParameterDefinition' (role 'arduino_ParameterDefinition', cardinality 0..*) is associated with 'arduino::Function' (role 'arduino_Function57', cardinality 0..*).
+'arduino::Function' (role 'arduino_Function', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch14', cardinality 0..*).
+'arduino::FunctionCall' (role 'arduino_FunctionCall66', cardinality 0..*) is associated with 'arduino::Parameter' (role 'arduino_Parameter67', cardinality 0..*).
+'arduino::Value' (role 'arduino_Value53', cardinality 0..*) is associated with 'arduino::Set' (role 'arduino_Set52', cardinality 0..*).
+'arduino::Control' (role 'arduino_Control', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction37', cardinality 0..*).
+'arduino::Hardware' (role 'arduino_Hardware16', cardinality 0..*) is associated with 'arduino::Project' (role 'arduino_Project', cardinality 0..*).
+'arduino::Module' (role 'arduino_Module35', cardinality 0..*) is associated with 'arduino::ModuleInstruction' (role 'arduino_ModuleInstruction', cardinality 0..*).
+'arduino::Project' (role 'arduino_Project18', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch19', cardinality 0..*).
+'arduino::Connector' (role 'arduino_Connector', cardinality 0..*) is associated with 'arduino::Hardware' (role 'arduino_Hardware4', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction29', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction31', cardinality 0..*).
+'arduino::Connector' (role 'arduino_Connector39', cardinality 0..*) is associated with 'arduino::Pin' (role 'arduino_Pin', cardinality 0..*).
+'arduino::BooleanOperator' (role 'arduino_BooleanOperator55', cardinality 0..*) is associated with 'arduino::If' (role 'arduino_If', cardinality 0..*).
+'arduino::Value' (role 'arduino_Value', cardinality 0..*) is associated with 'arduino::Level' (role 'arduino_Level', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction26', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction28', cardinality 0..*).
+'arduino::DigitalPin' (role 'arduino_DigitalPin', cardinality 0..*) is associated with 'arduino::Platform' (role 'arduino_Platform6', cardinality 0..*).
+'arduino::Value' (role 'arduino_Value49', cardinality 0..*) is associated with 'arduino::MathOperator' (role 'arduino_MathOperator48', cardinality 0..*).
+'arduino::ParameterDefinition' (role 'arduino_ParameterDefinition62', cardinality 0..*) is associated with 'arduino::Parameter' (role 'arduino_Parameter', cardinality 0..*).
+'arduino::Set' (role 'arduino_Set', cardinality 0..*) is associated with 'arduino::Variable' (role 'arduino_Variable', cardinality 0..*).
+'arduino::Sensor' (role 'sensor', cardinality 0..*) is associated with 'arduino::Status' (role 'Status', cardinality 0..*).
+'arduino::Hardware' (role 'arduino_Hardware2', cardinality 0..*) is associated with 'arduino::Module' (role 'arduino_Module', cardinality 0..*).
+'arduino::Module' (role 'arduino_Module42', cardinality 0..*) is associated with 'arduino::Connector' (role 'arduino_Connector41', cardinality 0..*).
+'arduino::Value' (role 'arduino_Value46', cardinality 0..*) is associated with 'arduino::MathOperator' (role 'arduino_MathOperator', cardinality 0..*).

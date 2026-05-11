@@ -1,0 +1,45 @@
+The model has 23 class(es).
+The class 'Relationship' has no attributes.
+The class 'ArchimateApplication::Composition' has no attributes.
+The class 'ArchimateApplication::ApplicationFunction' has no attributes.
+The class 'ArchimateApplication::Flow' has no attributes.
+The class 'ArchimateApplication::ApplicationInteraction' has no attributes.
+The class 'ArchimateApplication::Aggregation' has no attributes.
+The class 'ArchimateApplication::Relationship' has no attributes.
+The class 'ArchimateApplication::NodeElement' has no attributes.
+The class 'ArchimateApplication::Specialization' has no attributes.
+The class 'ArchimateApplication::UsedBy' has no attributes.
+The class 'ArchimateApplication::ApplicationInterface' has no attributes.
+The class 'ArchimateApplication::Access' has no attributes.
+The class 'ArchimateApplication::Realization' has no attributes.
+The class 'ArchimateApplication::Grouping' has no attributes.
+The class 'ArchimateApplication::Assignment' has no attributes.
+The class 'ArchimateApplication::ApplicationService' has no attributes.
+The class 'ArchimateApplication::ApplicationCollaboration' has no attributes.
+The class 'ArchimateApplication::DataObject' has no attributes.
+The class 'ArchimateApplication::Association' has no attributes.
+The class 'ArchimateApplication::Junction' has no attributes.
+The class 'ArchimateApplication::ApplicationComponent' has no attributes.
+The class 'NodeElement' has no attributes.
+The class 'ArchimateApplication::Triggering' has no attributes.
+'ArchimateApplication::Association' is a specialization of 'Relationship'.
+'ArchimateApplication::ApplicationService' is a specialization of 'NodeElement'.
+'ArchimateApplication::Grouping' is a specialization of 'NodeElement'.
+'ArchimateApplication::Aggregation' is a specialization of 'Relationship'.
+'ArchimateApplication::Specialization' is a specialization of 'Relationship'.
+'ArchimateApplication::Assignment' is a specialization of 'Relationship'.
+'ArchimateApplication::ApplicationFunction' is a specialization of 'NodeElement'.
+'ArchimateApplication::Access' is a specialization of 'Relationship'.
+'ArchimateApplication::Composition' is a specialization of 'Relationship'.
+'ArchimateApplication::Flow' is a specialization of 'Relationship'.
+'ArchimateApplication::ApplicationInteraction' is a specialization of 'NodeElement'.
+'ArchimateApplication::DataObject' is a specialization of 'NodeElement'.
+'ArchimateApplication::Junction' is a specialization of 'NodeElement'.
+'ArchimateApplication::Triggering' is a specialization of 'Relationship'.
+'ArchimateApplication::UsedBy' is a specialization of 'Relationship'.
+'ArchimateApplication::ApplicationInterface' is a specialization of 'NodeElement'.
+'ArchimateApplication::Realization' is a specialization of 'Relationship'.
+'ArchimateApplication::ApplicationCollaboration' is a specialization of 'NodeElement'.
+'ArchimateApplication::ApplicationComponent' is a specialization of 'NodeElement'.
+'ArchimateApplication::Relationship' (role 'ArchimateApplication_Relationship', cardinality 0..*) is associated with 'ArchimateApplication::NodeElement' (role 'ArchimateApplication_NodeElement', cardinality 0..*).
+'ArchimateApplication::NodeElement' (role 'ArchimateApplication_NodeElement3', cardinality 0..*) is associated with 'ArchimateApplication::Relationship' (role 'ArchimateApplication_Relationship2', cardinality 0..*).

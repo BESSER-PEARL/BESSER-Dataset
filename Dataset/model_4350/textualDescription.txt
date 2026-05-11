@@ -1,0 +1,314 @@
+The model has 113 class(es).
+The class 'ecoreDiff::ChangedETypedElement' has no attributes.
+The class 'ecoreDiff::DeletedEModelElement' has no attributes.
+The class 'ecoreDiff::AddedETypeParameter' has no attributes.
+The class 'ecoreDiff::DeletedEOperation' has no attributes.
+The class 'ecoreDiff::ChangedEParameter' has no attributes.
+The class 'ecoreDiff::ChangedEAttribute' has no attributes.
+The class 'ecoreDiff::EClassifier::Wildcard' has no attributes.
+The class 'ecoreDiff::DeletedEAttribute' has no attributes.
+The class 'ecoreDiff::DeletedEClassifier' has no attributes.
+The class 'ecoreDiff::DeletedEStructuralFeature' has no attributes.
+The class 'ecoreDiff::EGenericType' has no attributes.
+The class 'ecoreDiff::EObject' has no attributes.
+The class 'ecoreDiff::AddedEDataType' has no attributes.
+The class 'ecoreDiff::DeletedEEnum' has no attributes.
+The class 'ecoreDiff::ETypedElement' has the following attributes: 'required' of type bool; 'ordered' of type bool; 'lowerBound' of type int; 'many' of type bool; 'unique' of type bool; 'upperBound' of type int.
+The class 'ecoreDiff::AddedEReference' has no attributes.
+The class 'ecoreDiff::DeletedEPackage' has no attributes.
+The class 'ecoreDiff::ChangedEReference' has no attributes.
+The class 'ecoreDiff::ChangedEAnnotation' has no attributes.
+The class 'ecoreDiff::ChangedEClass' has no attributes.
+The class 'ecoreDiff::ChangedEClassifier' has no attributes.
+The class 'ecoreDiff::EEnum' has no attributes.
+The class 'ecoreDiff::ChangedEStructuralFeature::Wildcard' has no attributes.
+The class 'ecoreDiff::ChangedEObject' has no attributes.
+The class 'ecoreDiff::ChangedEFactory' has no attributes.
+The class 'ecoreDiff::AddedEEnum' has no attributes.
+The class 'ecoreDiff::AddedEObject' has no attributes.
+The class 'ecoreDiff::ChangedEEnum' has no attributes.
+The class 'ecoreDiff::ChangedENamedElement' has no attributes.
+The class 'ecoreDiff::AddedEStringToStringMapEntry' has no attributes.
+The class 'ecoreDiff::DifferenceElement' has no attributes.
+The class 'EParameter' has no attributes.
+The class 'ecoreDiff::ChangedEClassifier::Wildcard' has no attributes.
+The class 'ecoreDiff::DeletedEEnumLiteral' has no attributes.
+The class 'ecoreDiff::AddedEPackage' has no attributes.
+The class 'ecoreDiff::ChangedETypeParameter' has no attributes.
+The class 'ecoreDiff::EAttribute' has the following attributes: 'iD' of type bool.
+The class 'ecoreDiff::DeletedEParameter' has no attributes.
+The class 'ecoreDiff::DeletedEDataType' has no attributes.
+The class 'EObject' has no attributes.
+The class 'EClassifier::Wildcard' has no attributes.
+The class 'ecoreDiff::ChangedEStringToStringMapEntry' has no attributes.
+The class 'ecoreDiff::DeletedEGenericType' has no attributes.
+The class 'ecoreDiff::DeletedENamedElement' has no attributes.
+The class 'EGenericType' has no attributes.
+The class 'ecoreDiff::AddedEEnumLiteral' has no attributes.
+The class 'ecoreDiff::EParameter' has no attributes.
+The class 'EEnum' has no attributes.
+The class 'ecoreDiff::DifferenceModel' has no attributes.
+The class 'ecoreDiff::AddedEClassifier::Wildcard' has no attributes.
+The class 'ecoreDiff::EClassifier' has the following attributes: 'instanceClass' of type str; 'instanceClassName' of type str; 'instanceTypeName' of type str; 'defaultValue' of type str.
+The class 'ecoreDiff::AddedETypedElement' has no attributes.
+The class 'ecoreDiff::AddedEFactory' has no attributes.
+The class 'ecoreDiff::EStructuralFeature' has the following attributes: 'transient' of type bool; 'defaultValueLiteral' of type str; 'derived' of type bool; 'volatile' of type bool; 'unsettable' of type bool; 'changeable' of type bool; 'defaultValue' of type str.
+The class 'EStructuralFeature' has no attributes.
+The class 'ecoreDiff::DeletedEReference' has no attributes.
+The class 'ecoreDiff::ChangedEEnumLiteral' has no attributes.
+The class 'EAttribute' has no attributes.
+The class 'EEnumLiteral' has no attributes.
+The class 'ecoreDiff::ETypeParameter' has no attributes.
+The class 'ecoreDiff::DeletedEAnnotation' has no attributes.
+The class 'ETypeParameter' has no attributes.
+The class 'ecoreDiff::AddedEOperation' has no attributes.
+The class 'ecoreDiff::EOperation' has no attributes.
+The class 'EAnnotation' has no attributes.
+The class 'ecoreDiff::DeletedETypeParameter' has no attributes.
+The class 'EDataType' has no attributes.
+The class 'ecoreDiff::AddedENamedElement' has no attributes.
+The class 'ecoreDiff::DeletedEStringToStringMapEntry' has no attributes.
+The class 'ecoreDiff::AddedEGenericType' has no attributes.
+The class 'ecoreDiff::DeletedEObject' has no attributes.
+The class 'EClassifier' has no attributes.
+The class 'ecoreDiff::EModelElement' has no attributes.
+The class 'ecoreDiff::ChangedEDataType' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'ecoreDiff::DeletedEClassifier::Wildcard' has no attributes.
+The class 'EClass' has no attributes.
+The class 'ecoreDiff::AddedEClass' has no attributes.
+The class 'ecoreDiff::EStringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'ecoreDiff::AddedEStructuralFeature' has no attributes.
+The class 'ecoreDiff::EEnumLiteral' has the following attributes: 'literal' of type str; 'instance' of type str; 'value' of type int.
+The class 'DifferenceElement' has no attributes.
+The class 'ecoreDiff::AddedEStructuralFeature::Wildcard' has no attributes.
+The class 'ecoreDiff::EClass' has the following attributes: 'abstract' of type bool; 'interface' of type bool.
+The class 'EPackage' has no attributes.
+The class 'ecoreDiff::ChangedEStructuralFeature' has no attributes.
+The class 'ecoreDiff::EReference' has the following attributes: 'resolveProxies' of type bool; 'container' of type bool; 'containment' of type bool.
+The class 'ecoreDiff::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'ecoreDiff::AddedEClassifier' has no attributes.
+The class 'ecoreDiff::ENamedElement' has the following attributes: 'name' of type str.
+The class 'ecoreDiff::AddedEAttribute' has no attributes.
+The class 'ecoreDiff::EFactory' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'ecoreDiff::AddedEModelElement' has no attributes.
+The class 'EReference' has no attributes.
+The class 'ecoreDiff::ChangedEOperation' has no attributes.
+The class 'EStructuralFeature::Wildcard' has no attributes.
+The class 'ecoreDiff::EAnnotation' has the following attributes: 'source' of type str.
+The class 'EOperation' has no attributes.
+The class 'EFactory' has no attributes.
+The class 'ETypedElement' has no attributes.
+The class 'ecoreDiff::DeletedEFactory' has no attributes.
+The class 'ecoreDiff::AddedEParameter' has no attributes.
+The class 'ecoreDiff::DeletedEClass' has no attributes.
+The class 'ecoreDiff::EStructuralFeature::Wildcard' has no attributes.
+The class 'ecoreDiff::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'ecoreDiff::DeletedEStructuralFeature::Wildcard' has no attributes.
+The class 'ecoreDiff::DeletedETypedElement' has no attributes.
+The class 'EStringToStringMapEntry' has no attributes.
+The class 'ecoreDiff::ChangedEModelElement' has no attributes.
+The class 'ecoreDiff::AddedEAnnotation' has no attributes.
+The class 'ecoreDiff::ChangedEGenericType' has no attributes.
+The class 'ecoreDiff::ChangedEPackage' has no attributes.
+'ecoreDiff::AddedEParameter' is a specialization of 'EParameter'.
+'ecoreDiff::DeletedEClassifier' is a specialization of 'EClassifier'.
+'ecoreDiff::AddedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+'ecoreDiff::EStructuralFeature' is a specialization of 'ETypedElement'.
+'ecoreDiff::ChangedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+'ecoreDiff::ENamedElement' is a specialization of 'EModelElement'.
+'ecoreDiff::AddedEReference' is a specialization of 'EReference'.
+'ecoreDiff::EEnumLiteral' is a specialization of 'ENamedElement'.
+'ecoreDiff::EPackage' is a specialization of 'ENamedElement'.
+'ecoreDiff::AddedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+'ecoreDiff::DeletedEAnnotation' is a specialization of 'EAnnotation'.
+'ecoreDiff::EAttribute' is a specialization of 'EStructuralFeature'.
+'ecoreDiff::AddedEGenericType' is a specialization of 'EGenericType'.
+'ecoreDiff::DeletedENamedElement' is a specialization of 'ENamedElement'.
+'ecoreDiff::ETypedElement' is a specialization of 'ENamedElement'.
+'ecoreDiff::EOperation' is a specialization of 'ETypedElement'.
+'ecoreDiff::EDataType' is a specialization of 'EClassifier'.
+'ecoreDiff::ChangedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+'ecoreDiff::DeletedEClassifier::Wildcard' is a specialization of 'EClassifier::Wildcard'.
+'ecoreDiff::AddedEAnnotation' is a specialization of 'EAnnotation'.
+'ecoreDiff::AddedEStructuralFeature::Wildcard' is a specialization of 'EStructuralFeature::Wildcard'.
+'ecoreDiff::AddedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+'ecoreDiff::AddedEClassifier::Wildcard' is a specialization of 'EClassifier::Wildcard'.
+'ecoreDiff::ChangedEModelElement' is a specialization of 'EModelElement'.
+'ecoreDiff::AddedEFactory' is a specialization of 'EFactory'.
+'ecoreDiff::DeletedEPackage' is a specialization of 'EPackage'.
+'ecoreDiff::EFactory' is a specialization of 'EModelElement'.
+'ecoreDiff::AddedETypeParameter' is a specialization of 'ETypeParameter'.
+'ecoreDiff::DeletedEDataType' is a specialization of 'EDataType'.
+'ecoreDiff::ChangedETypeParameter' is a specialization of 'ETypeParameter'.
+'ecoreDiff::DeletedEStructuralFeature' is a specialization of 'EStructuralFeature'.
+'ecoreDiff::ChangedENamedElement' is a specialization of 'ENamedElement'.
+'ecoreDiff::ChangedEReference' is a specialization of 'EReference'.
+'ecoreDiff::ChangedEClass' is a specialization of 'EClass'.
+'ecoreDiff::DeletedEEnumLiteral' is a specialization of 'EEnumLiteral'.
+'ecoreDiff::EEnum' is a specialization of 'EDataType'.
+'ecoreDiff::DeletedEEnum' is a specialization of 'EEnum'.
+'ecoreDiff::DeletedEReference' is a specialization of 'EReference'.
+'ecoreDiff::AddedEOperation' is a specialization of 'EOperation'.
+'ecoreDiff::EAnnotation' is a specialization of 'EModelElement'.
+'ecoreDiff::AddedEModelElement' is a specialization of 'EModelElement'.
+'ecoreDiff::EClassifier' is a specialization of 'ENamedElement'.
+'ecoreDiff::DeletedEOperation' is a specialization of 'EOperation'.
+'ecoreDiff::AddedEDataType' is a specialization of 'EDataType'.
+'ecoreDiff::ChangedEAttribute' is a specialization of 'EAttribute'.
+'ecoreDiff::DeletedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+'ecoreDiff::DeletedEGenericType' is a specialization of 'EGenericType'.
+'ecoreDiff::EModelElement' is a specialization of 'EObject'.
+'ecoreDiff::AddedETypedElement' is a specialization of 'ETypedElement'.
+'ecoreDiff::DeletedEModelElement' is a specialization of 'EModelElement'.
+'ecoreDiff::ChangedEEnum' is a specialization of 'EEnum'.
+'ecoreDiff::ChangedEDataType' is a specialization of 'EDataType'.
+'ecoreDiff::DeletedEFactory' is a specialization of 'EFactory'.
+'ecoreDiff::ChangedEParameter' is a specialization of 'EParameter'.
+'ecoreDiff::DeletedETypeParameter' is a specialization of 'ETypeParameter'.
+'ecoreDiff::AddedEEnum' is a specialization of 'EEnum'.
+'ecoreDiff::DeletedEClass' is a specialization of 'EClass'.
+'ecoreDiff::EReference' is a specialization of 'EStructuralFeature'.
+'ecoreDiff::AddedEClassifier' is a specialization of 'EClassifier'.
+'ecoreDiff::ChangedEStringToStringMapEntry' is a specialization of 'EStringToStringMapEntry'.
+'ecoreDiff::AddedENamedElement' is a specialization of 'ENamedElement'.
+'ecoreDiff::ChangedEAnnotation' is a specialization of 'EAnnotation'.
+'ecoreDiff::ETypeParameter' is a specialization of 'ENamedElement'.
+'ecoreDiff::EModelElement' is a specialization of 'DifferenceElement'.
+'ecoreDiff::AddedEAttribute' is a specialization of 'EAttribute'.
+'ecoreDiff::ChangedEClassifier' is a specialization of 'EClassifier'.
+'ecoreDiff::EParameter' is a specialization of 'ETypedElement'.
+'ecoreDiff::DeletedETypedElement' is a specialization of 'ETypedElement'.
+'ecoreDiff::EGenericType' is a specialization of 'EObject'.
+'ecoreDiff::ChangedEGenericType' is a specialization of 'EGenericType'.
+'ecoreDiff::DeletedEObject' is a specialization of 'EObject'.
+'ecoreDiff::DeletedEParameter' is a specialization of 'EParameter'.
+'ecoreDiff::ChangedEStructuralFeature::Wildcard' is a specialization of 'EStructuralFeature::Wildcard'.
+'ecoreDiff::ChangedETypedElement' is a specialization of 'ETypedElement'.
+'ecoreDiff::ChangedEClassifier::Wildcard' is a specialization of 'EClassifier::Wildcard'.
+'ecoreDiff::DeletedEAttribute' is a specialization of 'EAttribute'.
+'ecoreDiff::ChangedEObject' is a specialization of 'EObject'.
+'ecoreDiff::AddedEPackage' is a specialization of 'EPackage'.
+'ecoreDiff::ChangedEPackage' is a specialization of 'EPackage'.
+'ecoreDiff::AddedEClass' is a specialization of 'EClass'.
+'ecoreDiff::ChangedEFactory' is a specialization of 'EFactory'.
+'ecoreDiff::AddedEObject' is a specialization of 'EObject'.
+'ecoreDiff::DeletedEStructuralFeature::Wildcard' is a specialization of 'EStructuralFeature::Wildcard'.
+'ecoreDiff::EClass' is a specialization of 'EClassifier'.
+'ecoreDiff::ChangedEOperation' is a specialization of 'EOperation'.
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject136', cardinality 0..*) is associated with 'ecoreDiff::ChangedEClass' (role 'ecoreDiff_ChangedEClass135', cardinality 0..*).
+'ecoreDiff::EClassifier' (role 'ecoreDiff_EClassifier73', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType72', cardinality 0..*).
+'ecoreDiff::ChangedETypedElement' (role 'ecoreDiff_ChangedETypedElement201', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject202', cardinality 0..*).
+'ecoreDiff::EReference' (role 'ecoreDiff_EReference24', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass23', cardinality 0..*).
+'ecoreDiff::EReference' (role 'ecoreDiff_EReference98', cardinality 0..*) is associated with 'ecoreDiff::EReference' (role 'ecoreDiff_EReference96', cardinality 0..*).
+'ecoreDiff::ChangedEEnum' (role 'ecoreDiff_ChangedEEnum', cardinality 0..*) is associated with 'ecoreDiff::EEnum' (role 'ecoreDiff_EEnum', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject126', cardinality 0..*) is associated with 'ecoreDiff::ChangedEObject' (role 'ecoreDiff_ChangedEObject', cardinality 0..*).
+'ecoreDiff::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'EClass95', cardinality 0..*).
+'ecoreDiff::ChangedEFactory' (role 'ecoreDiff_ChangedEFactory160', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject161', cardinality 0..*).
+'ecoreDiff::ChangedETypedElement' (role 'ecoreDiff_ChangedETypedElement', cardinality 0..*) is associated with 'ecoreDiff::ETypedElement' (role 'ecoreDiff_ETypedElement199', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType63', cardinality 0..*) is associated with 'ecoreDiff::EClassifier' (role 'ecoreDiff_EClassifier64', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass29', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass31', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType179', cardinality 0..*) is associated with 'ecoreDiff::ChangedEGenericType' (role 'ecoreDiff_ChangedEGenericType', cardinality 0..*).
+'ecoreDiff::ChangedEDataType' (role 'ecoreDiff_ChangedEDataType', cardinality 0..*) is associated with 'ecoreDiff::EDataType' (role 'ecoreDiff_EDataType165', cardinality 0..*).
+'ecoreDiff::EClass' (role 'eContainingClass', cardinality 0..*) is associated with 'ecoreDiff::EOperation' (role 'EOperation', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject190', cardinality 0..*) is associated with 'ecoreDiff::DeletedEOperation' (role 'ecoreDiff_DeletedEOperation', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass7', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass', cardinality 0..*).
+'ecoreDiff::ChangedEObject' (role 'ecoreDiff_ChangedEObject128', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject129', cardinality 0..*).
+'ecoreDiff::DeletedEAttribute' (role 'ecoreDiff_DeletedEAttribute', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject210', cardinality 0..*).
+'ecoreDiff::ChangedEModelElement' (role 'ecoreDiff_ChangedEModelElement252', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject253', cardinality 0..*).
+'ecoreDiff::DeletedENamedElement' (role 'ecoreDiff_DeletedENamedElement', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject145', cardinality 0..*).
+'ecoreDiff::EParameter' (role 'ecoreDiff_EParameter', cardinality 0..*) is associated with 'ecoreDiff::ChangedEParameter' (role 'ecoreDiff_ChangedEParameter', cardinality 0..*).
+'ecoreDiff::ChangedEAttribute' (role 'ecoreDiff_ChangedEAttribute', cardinality 0..*) is associated with 'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute212', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject249', cardinality 0..*) is associated with 'ecoreDiff::DeletedEModelElement' (role 'ecoreDiff_DeletedEModelElement', cardinality 0..*).
+'ecoreDiff::EParameter' (role 'eParameters', cardinality 0..*) is associated with 'ecoreDiff::EOperation' (role 'EOperation91', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject151', cardinality 0..*) is associated with 'ecoreDiff::DeletedEPackage' (role 'ecoreDiff_DeletedEPackage', cardinality 0..*).
+'ecoreDiff::DeletedEParameter' (role 'ecoreDiff_DeletedEParameter', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject204', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType65', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType67', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject124', cardinality 0..*) is associated with 'ecoreDiff::DeletedEObject' (role 'ecoreDiff_DeletedEObject', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject177', cardinality 0..*) is associated with 'ecoreDiff::DeletedEGenericType' (role 'ecoreDiff_DeletedEGenericType', cardinality 0..*).
+'ecoreDiff::ChangedETypeParameter' (role 'ecoreDiff_ChangedETypeParameter174', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject175', cardinality 0..*).
+'ecoreDiff::EAnnotation' (role 'ecoreDiff_EAnnotation5', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject6', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject131', cardinality 0..*) is associated with 'ecoreDiff::DeletedEClass' (role 'ecoreDiff_DeletedEClass', cardinality 0..*).
+'ecoreDiff::EClassifier::Wildcard' (role 'ecoreDiff_EClassifier_Wildcard', cardinality 0..*) is associated with 'ecoreDiff::ChangedEClassifier::Wildcard' (role 'ecoreDiff_ChangedEClassifier_Wildcard', cardinality 0..*).
+'ecoreDiff::ChangedEStructuralFeature::Wildcard' (role 'ecoreDiff_ChangedEStructuralFeature_Wildcard', cardinality 0..*) is associated with 'ecoreDiff::EStructuralFeature::Wildcard' (role 'ecoreDiff_EStructuralFeature_Wildcard', cardinality 0..*).
+'ecoreDiff::EOperation' (role 'eOperation', cardinality 0..*) is associated with 'ecoreDiff::EParameter' (role 'EParameter', cardinality 0..*).
+'ecoreDiff::EFactory' (role 'eFactoryInstance', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'EPackage52', cardinality 0..*).
+'ecoreDiff::ChangedEAttribute' (role 'ecoreDiff_ChangedEAttribute214', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject215', cardinality 0..*).
+'ecoreDiff::EClassifier' (role 'ecoreDiff_EClassifier', cardinality 0..*) is associated with 'ecoreDiff::ETypeParameter' (role 'ecoreDiff_ETypeParameter', cardinality 0..*).
+'ecoreDiff::ChangedEStructuralFeature::Wildcard' (role 'ecoreDiff_ChangedEStructuralFeature_Wildcard227', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject228', cardinality 0..*).
+'ecoreDiff::EClassifier' (role 'EClassifier', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'ePackage50', cardinality 0..*).
+'ecoreDiff::ChangedEParameter' (role 'ecoreDiff_ChangedEParameter207', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject208', cardinality 0..*).
+'ecoreDiff::EPackage' (role 'ecoreDiff_EPackage', cardinality 0..*) is associated with 'ecoreDiff::ChangedEPackage' (role 'ecoreDiff_ChangedEPackage', cardinality 0..*).
+'ecoreDiff::DeletedETypeParameter' (role 'ecoreDiff_DeletedETypeParameter', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject170', cardinality 0..*).
+'ecoreDiff::ETypeParameter' (role 'ecoreDiff_ETypeParameter70', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType69', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject117', cardinality 0..*) is associated with 'ecoreDiff::DeletedEStringToStringMapEntry' (role 'ecoreDiff_DeletedEStringToStringMapEntry', cardinality 0..*).
+'ecoreDiff::EReference' (role 'ecoreDiff_EReference232', cardinality 0..*) is associated with 'ecoreDiff::ChangedEReference' (role 'ecoreDiff_ChangedEReference', cardinality 0..*).
+'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute93', cardinality 0..*) is associated with 'ecoreDiff::EDataType' (role 'ecoreDiff_EDataType', cardinality 0..*).
+'ecoreDiff::ChangedEGenericType' (role 'ecoreDiff_ChangedEGenericType181', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject182', cardinality 0..*).
+'ecoreDiff::EStringToStringMapEntry' (role 'ecoreDiff_EStringToStringMapEntry119', cardinality 0..*) is associated with 'ecoreDiff::ChangedEStringToStringMapEntry' (role 'ecoreDiff_ChangedEStringToStringMapEntry', cardinality 0..*).
+'ecoreDiff::EStructuralFeature' (role 'ecoreDiff_EStructuralFeature', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass28', cardinality 0..*).
+'ecoreDiff::ChangedEEnum' (role 'ecoreDiff_ChangedEEnum240', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject241', cardinality 0..*).
+'ecoreDiff::EPackage' (role 'EPackage48', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'eSubpackages', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject235', cardinality 0..*) is associated with 'ecoreDiff::ChangedEReference' (role 'ecoreDiff_ChangedEReference234', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject224', cardinality 0..*) is associated with 'ecoreDiff::DeletedEStructuralFeature::Wildcard' (role 'ecoreDiff_DeletedEStructuralFeature_Wildcard', cardinality 0..*).
+'ecoreDiff::DeletedEFactory' (role 'ecoreDiff_DeletedEFactory', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject157', cardinality 0..*).
+'ecoreDiff::EClass' (role 'EClass', cardinality 0..*) is associated with 'ecoreDiff::EOperation' (role 'eOperations', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject168', cardinality 0..*) is associated with 'ecoreDiff::ChangedEDataType' (role 'ecoreDiff_ChangedEDataType167', cardinality 0..*).
+'ecoreDiff::EEnumLiteral' (role 'ecoreDiff_EEnumLiteral', cardinality 0..*) is associated with 'ecoreDiff::ChangedEEnumLiteral' (role 'ecoreDiff_ChangedEEnumLiteral', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass17', cardinality 0..*) is associated with 'ecoreDiff::EReference' (role 'ecoreDiff_EReference18', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass133', cardinality 0..*) is associated with 'ecoreDiff::ChangedEClass' (role 'ecoreDiff_ChangedEClass', cardinality 0..*).
+'ecoreDiff::ChangedEFactory' (role 'ecoreDiff_ChangedEFactory', cardinality 0..*) is associated with 'ecoreDiff::EFactory' (role 'ecoreDiff_EFactory', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType58', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType56', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject155', cardinality 0..*) is associated with 'ecoreDiff::ChangedEPackage' (role 'ecoreDiff_ChangedEPackage154', cardinality 0..*).
+'ecoreDiff::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'eContainingClass13', cardinality 0..*).
+'ecoreDiff::DeletedEClassifier::Wildcard' (role 'ecoreDiff_DeletedEClassifier_Wildcard', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject184', cardinality 0..*).
+'ecoreDiff::ETypedElement' (role 'ecoreDiff_ETypedElement', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject86', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass15', cardinality 0..*) is associated with 'ecoreDiff::EReference' (role 'ecoreDiff_EReference', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject188', cardinality 0..*) is associated with 'ecoreDiff::ChangedEClassifier::Wildcard' (role 'ecoreDiff_ChangedEClassifier_Wildcard187', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject197', cardinality 0..*) is associated with 'ecoreDiff::DeletedETypedElement' (role 'ecoreDiff_DeletedETypedElement', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject149', cardinality 0..*) is associated with 'ecoreDiff::ChangedENamedElement' (role 'ecoreDiff_ChangedENamedElement148', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject', cardinality 0..*) is associated with 'ecoreDiff::EAnnotation' (role 'ecoreDiff_EAnnotation3', cardinality 0..*).
+'ecoreDiff::EReference' (role 'ecoreDiff_EReference103', cardinality 0..*) is associated with 'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute104', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType89', cardinality 0..*) is associated with 'ecoreDiff::ETypedElement' (role 'ecoreDiff_ETypedElement88', cardinality 0..*).
+'ecoreDiff::DeletedEEnumLiteral' (role 'ecoreDiff_DeletedEEnumLiteral', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject243', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType59', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType61', cardinality 0..*).
+'ecoreDiff::ChangedEOperation' (role 'ecoreDiff_ChangedEOperation', cardinality 0..*) is associated with 'ecoreDiff::EOperation' (role 'ecoreDiff_EOperation192', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject115', cardinality 0..*) is associated with 'ecoreDiff::ChangedEAnnotation' (role 'ecoreDiff_ChangedEAnnotation114', cardinality 0..*).
+'ecoreDiff::ChangedEOperation' (role 'ecoreDiff_ChangedEOperation194', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject195', cardinality 0..*).
+'ecoreDiff::ChangedEModelElement' (role 'ecoreDiff_ChangedEModelElement', cardinality 0..*) is associated with 'ecoreDiff::EModelElement' (role 'ecoreDiff_EModelElement', cardinality 0..*).
+'ecoreDiff::EEnumLiteral' (role 'eLiterals', cardinality 0..*) is associated with 'ecoreDiff::EEnum' (role 'EEnum', cardinality 0..*).
+'ecoreDiff::EOperation' (role 'ecoreDiff_EOperation82', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType83', cardinality 0..*).
+'ecoreDiff::EAnnotation' (role 'EAnnotation', cardinality 0..*) is associated with 'ecoreDiff::EModelElement' (role 'eModelElement', cardinality 0..*).
+'ecoreDiff::EPackage' (role 'EPackage45', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'eSuperPackage', cardinality 0..*).
+'ecoreDiff::ChangedEStringToStringMapEntry' (role 'ecoreDiff_ChangedEStringToStringMapEntry121', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject122', cardinality 0..*).
+'ecoreDiff::EEnum' (role 'eEnum', cardinality 0..*) is associated with 'ecoreDiff::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*).
+'ecoreDiff::DeletedEEnum' (role 'ecoreDiff_DeletedEEnum', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject237', cardinality 0..*).
+'ecoreDiff::EAnnotation' (role 'ecoreDiff_EAnnotation112', cardinality 0..*) is associated with 'ecoreDiff::ChangedEAnnotation' (role 'ecoreDiff_ChangedEAnnotation', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject222', cardinality 0..*) is associated with 'ecoreDiff::ChangedEStructuralFeature' (role 'ecoreDiff_ChangedEStructuralFeature221', cardinality 0..*).
+'ecoreDiff::EClassifier' (role 'ecoreDiff_EClassifier140', cardinality 0..*) is associated with 'ecoreDiff::ChangedEClassifier' (role 'ecoreDiff_ChangedEClassifier', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject230', cardinality 0..*) is associated with 'ecoreDiff::DeletedEReference' (role 'ecoreDiff_DeletedEReference', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject247', cardinality 0..*) is associated with 'ecoreDiff::ChangedEEnumLiteral' (role 'ecoreDiff_ChangedEEnumLiteral246', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass20', cardinality 0..*) is associated with 'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute21', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass11', cardinality 0..*) is associated with 'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute', cardinality 0..*).
+'ecoreDiff::ChangedETypeParameter' (role 'ecoreDiff_ChangedETypeParameter', cardinality 0..*) is associated with 'ecoreDiff::ETypeParameter' (role 'ecoreDiff_ETypeParameter172', cardinality 0..*).
+'ecoreDiff::EOperation' (role 'ecoreDiff_EOperation75', cardinality 0..*) is associated with 'ecoreDiff::ETypeParameter' (role 'ecoreDiff_ETypeParameter76', cardinality 0..*).
+'ecoreDiff::EStructuralFeature' (role 'ecoreDiff_EStructuralFeature219', cardinality 0..*) is associated with 'ecoreDiff::ChangedEStructuralFeature' (role 'ecoreDiff_ChangedEStructuralFeature', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType55', cardinality 0..*) is associated with 'ecoreDiff::ETypeParameter' (role 'ecoreDiff_ETypeParameter54', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject110', cardinality 0..*) is associated with 'ecoreDiff::DeletedEAnnotation' (role 'ecoreDiff_DeletedEAnnotation', cardinality 0..*).
+'ecoreDiff::EFactory' (role 'EFactory', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'ePackage', cardinality 0..*).
+'ecoreDiff::EStringToStringMapEntry' (role 'ecoreDiff_EStringToStringMapEntry', cardinality 0..*) is associated with 'ecoreDiff::EAnnotation' (role 'ecoreDiff_EAnnotation', cardinality 0..*).
+'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass36', cardinality 0..*).
+'ecoreDiff::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'ecoreDiff::EPackage' (role 'EPackage', cardinality 0..*).
+'ecoreDiff::DifferenceElement' (role 'ecoreDiff_DifferenceElement', cardinality 0..*) is associated with 'ecoreDiff::DifferenceModel' (role 'ecoreDiff_DifferenceModel', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass26', cardinality 0..*) is associated with 'ecoreDiff::EOperation' (role 'ecoreDiff_EOperation', cardinality 0..*).
+'ecoreDiff::ChangedENamedElement' (role 'ecoreDiff_ChangedENamedElement', cardinality 0..*) is associated with 'ecoreDiff::ENamedElement' (role 'ecoreDiff_ENamedElement', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject163', cardinality 0..*) is associated with 'ecoreDiff::DeletedEDataType' (role 'ecoreDiff_DeletedEDataType', cardinality 0..*).
+'ecoreDiff::ChangedEClassifier' (role 'ecoreDiff_ChangedEClassifier142', cardinality 0..*) is associated with 'ecoreDiff::EObject' (role 'ecoreDiff_EObject143', cardinality 0..*).
+'ecoreDiff::EOperation' (role 'ecoreDiff_EOperation79', cardinality 0..*) is associated with 'ecoreDiff::EClassifier' (role 'ecoreDiff_EClassifier80', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject217', cardinality 0..*) is associated with 'ecoreDiff::DeletedEStructuralFeature' (role 'ecoreDiff_DeletedEStructuralFeature', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass101', cardinality 0..*) is associated with 'ecoreDiff::EReference' (role 'ecoreDiff_EReference100', cardinality 0..*).
+'ecoreDiff::EAttribute' (role 'ecoreDiff_EAttribute34', cardinality 0..*) is associated with 'ecoreDiff::EClass' (role 'ecoreDiff_EClass33', cardinality 0..*).
+'ecoreDiff::EObject' (role 'ecoreDiff_EObject138', cardinality 0..*) is associated with 'ecoreDiff::DeletedEClassifier' (role 'ecoreDiff_DeletedEClassifier', cardinality 0..*).
+'ecoreDiff::EAnnotation' (role 'eAnnotations', cardinality 0..*) is associated with 'ecoreDiff::EModelElement' (role 'EModelElement', cardinality 0..*).
+'ecoreDiff::EClass' (role 'ecoreDiff_EClass38', cardinality 0..*) is associated with 'ecoreDiff::EGenericType' (role 'ecoreDiff_EGenericType39', cardinality 0..*).

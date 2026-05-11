@@ -1,0 +1,56 @@
+The model has 27 class(es).
+The class 'ConditionalFlow' has no attributes.
+The class 'mindstorms::GoForward' has the following attributes: 'cm' of type int; 'infinite' of type bool.
+The class 'mindstorms::GoTo' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'mindstorms::Instruction' has no attributes.
+The class 'mindstorms::Grab' has no attributes.
+The class 'mindstorms::If' has no attributes.
+The class 'mindstorms::Flow' has no attributes.
+The class 'mindstorms::Sensor' has no attributes.
+The class 'mindstorms::UltrasonicSensor' has the following attributes: 'operator' of type str; 'value' of type float.
+The class 'Condition' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'mindstorms::Rotate' has the following attributes: 'random' of type bool; 'degrees' of type int.
+The class 'mindstorms::Condition' has no attributes.
+The class 'mindstorms::ColorSensor' has the following attributes: 'color' of type str.
+The class 'Sensor' has no attributes.
+The class 'mindstorms::TouchSensor' has the following attributes: 'isPressed' of type bool.
+The class 'mindstorms::Delay' has the following attributes: 'ms' of type int.
+The class 'mindstorms::Release' has no attributes.
+The class 'mindstorms::Action' has no attributes.
+The class 'mindstorms::GoBackward' has the following attributes: 'cm' of type int; 'infinite' of type bool.
+The class 'Action' has no attributes.
+The class 'mindstorms::ConditionalFlow' has no attributes.
+The class 'Flow' has no attributes.
+The class 'mindstorms::ReturnToBase' has no attributes.
+The class 'mindstorms::Choregraphy' has the following attributes: 'name' of type str.
+The class 'mindstorms::Reuse' has no attributes.
+The class 'mindstorms::While' has no attributes.
+The enumeration 'Color' has the following literals: 'GREEN', 'GRAY', 'YELLOW', 'BLACK', 'BROWN', 'NONE', 'DARK_GRAY', 'BLUE', 'RED', 'LIGHT_GRAY', 'PINK', 'WHITE', 'CYAN', 'ORANGE', 'MAGENTA'.
+The enumeration 'OperatorKind' has the following literals: 'notEqual', 'lowerOrEqual', 'upperOrEqual', 'equal'.
+'mindstorms::If' is a specialization of 'ConditionalFlow'.
+'mindstorms::While' is a specialization of 'ConditionalFlow'.
+'mindstorms::Rotate' is a specialization of 'Action'.
+'mindstorms::Grab' is a specialization of 'Action'.
+'mindstorms::TouchSensor' is a specialization of 'Sensor'.
+'mindstorms::GoTo' is a specialization of 'Action'.
+'mindstorms::ColorSensor' is a specialization of 'Sensor'.
+'mindstorms::GoForward' is a specialization of 'Action'.
+'mindstorms::Reuse' is a specialization of 'Instruction'.
+'mindstorms::ConditionalFlow' is a specialization of 'Flow'.
+'mindstorms::Flow' is a specialization of 'Instruction'.
+'mindstorms::Delay' is a specialization of 'Action'.
+'mindstorms::Release' is a specialization of 'Action'.
+'mindstorms::ReturnToBase' is a specialization of 'Action'.
+'mindstorms::Action' is a specialization of 'Instruction'.
+'mindstorms::UltrasonicSensor' is a specialization of 'Sensor'.
+'mindstorms::Sensor' is a specialization of 'Condition'.
+'mindstorms::GoBackward' is a specialization of 'Action'.
+'mindstorms::Choregraphy' is a specialization of 'Flow'.
+'mindstorms::If' (role 'mindstorms_If', cardinality 0..*) is associated with 'mindstorms::If' (role 'mindstorms_If11', cardinality 0..*).
+'mindstorms::Flow' (role 'mindstorms_Flow7', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction8', cardinality 0..*).
+'mindstorms::Instruction' (role 'previous', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'Instruction', cardinality 0..*).
+'mindstorms::Choregraphy' (role 'mindstorms_Choregraphy', cardinality 0..*) is associated with 'mindstorms::Reuse' (role 'mindstorms_Reuse', cardinality 0..*).
+'mindstorms::Instruction' (role 'next', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'Instruction4', cardinality 0..*).
+'mindstorms::ConditionalFlow' (role 'mindstorms_ConditionalFlow', cardinality 0..*) is associated with 'mindstorms::Condition' (role 'mindstorms_Condition', cardinality 0..*).
+'mindstorms::Flow' (role 'mindstorms_Flow', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction', cardinality 0..*).

@@ -1,0 +1,46 @@
+The model has 21 class(es).
+The class 'simpleuml::PrimitiveType' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'DataType' has no attributes.
+The class 'simpleuml::Package' has no attributes.
+The class 'simpleuml::EnumerationLiteral' has the following attributes: 'name' of type str.
+The class 'simpleuml::Type' has no attributes.
+The class 'simpleuml::TaggedValue' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'simpleuml::Property' has no attributes.
+The class 'simpleuml::Model' has no attributes.
+The class 'Packageable' has no attributes.
+The class 'Type' has no attributes.
+The class 'simpleuml::Packageable' has no attributes.
+The class 'simpleuml::Class' has the following attributes: 'abstract' of type bool.
+The class 'simpleuml::Enumeration' has no attributes.
+The class 'simpleuml::Generalization' has the following attributes: 'isSubstitutable' of type bool.
+The class 'Package' has no attributes.
+The class 'simpleuml::Classifier' has no attributes.
+The class 'simpleuml::DataType' has no attributes.
+The class 'simpleuml::Association' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'simpleuml::ModelElement' has the following attributes: 'stereotype' of type str; 'name' of type str.
+'simpleuml::Association' is a specialization of 'ModelElement'.
+'simpleuml::PrimitiveType' is a specialization of 'Type'.
+'simpleuml::Package' is a specialization of 'Classifier'.
+'simpleuml::Model' is a specialization of 'Package'.
+'simpleuml::Classifier' is a specialization of 'ModelElement'.
+'simpleuml::Type' is a specialization of 'Packageable'.
+'simpleuml::Class' is a specialization of 'DataType'.
+'simpleuml::Property' is a specialization of 'ModelElement'.
+'simpleuml::DataType' is a specialization of 'Type'.
+'simpleuml::Enumeration' is a specialization of 'Type'.
+'simpleuml::Association' is a specialization of 'Packageable'.
+'simpleuml::Package' is a specialization of 'Packageable'.
+'simpleuml::Type' is a specialization of 'Classifier'.
+'simpleuml::Packageable' (role 'Packageable', cardinality 0..*) is associated with 'simpleuml::Package' (role 'owner', cardinality 0..*).
+'simpleuml::Generalization' (role 'simpleuml_Generalization', cardinality 0..*) is associated with 'simpleuml::Class' (role 'simpleuml_Class', cardinality 0..*).
+'simpleuml::Class' (role 'simpleuml_Class5', cardinality 0..*) is associated with 'simpleuml::Association' (role 'simpleuml_Association', cardinality 0..*).
+'simpleuml::Class' (role 'simpleuml_Class8', cardinality 0..*) is associated with 'simpleuml::Association' (role 'simpleuml_Association7', cardinality 0..*).
+'simpleuml::DataType' (role 'DataType', cardinality 0..*) is associated with 'simpleuml::Property' (role 'attributes', cardinality 0..*).
+'simpleuml::Property' (role 'Property', cardinality 0..*) is associated with 'simpleuml::DataType' (role 'owner10', cardinality 0..*).
+'simpleuml::ModelElement' (role 'simpleuml_ModelElement', cardinality 0..*) is associated with 'simpleuml::TaggedValue' (role 'simpleuml_TaggedValue', cardinality 0..*).
+'simpleuml::EnumerationLiteral' (role 'simpleuml_EnumerationLiteral', cardinality 0..*) is associated with 'simpleuml::Enumeration' (role 'simpleuml_Enumeration', cardinality 0..*).
+'simpleuml::Class' (role 'simpleuml_Class15', cardinality 0..*) is associated with 'simpleuml::Generalization' (role 'simpleuml_Generalization14', cardinality 0..*).
+'simpleuml::Packageable' (role 'ownedElements', cardinality 0..*) is associated with 'simpleuml::Package' (role 'Package', cardinality 0..*).
+'simpleuml::Property' (role 'simpleuml_Property', cardinality 0..*) is associated with 'simpleuml::Type' (role 'simpleuml_Type', cardinality 0..*).

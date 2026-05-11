@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/lesleytong/XMU-from-hexiao/edu.ustb.sei.mde.bxcore.dsl/test/Bag2Bag/SimpleClass.ecore

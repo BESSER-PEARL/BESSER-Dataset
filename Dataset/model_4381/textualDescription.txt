@@ -1,0 +1,206 @@
+The model has 72 class(es).
+The class 'leek::TrueLiteral' has no attributes.
+The class 'leek::While' has no attributes.
+The class 'leek::ForInitializer' has no attributes.
+The class 'leek::Or' has no attributes.
+The class 'leek::AffectationStatement' has no attributes.
+The class 'leek::GlobalDeclaration' has no attributes.
+The class 'leek::Iteration' has no attributes.
+The class 'leek::RealLiteral' has the following attributes: 'value' of type float.
+The class 'leek::Include' has the following attributes: 'importURI' of type str.
+The class 'leek::Minus' has no attributes.
+The class 'leek::PrefixDecrement' has no attributes.
+The class 'leek::Div' has no attributes.
+The class 'leek::PrefixIncrement' has no attributes.
+The class 'AffectationStatement' has no attributes.
+The class 'leek::Postfix' has no attributes.
+The class 'leek::Not' has no attributes.
+The class 'leek::ReturnStatement' has no attributes.
+The class 'leek::TypedDifferent' has no attributes.
+The class 'leek::Less' has no attributes.
+The class 'leek::ContinueStatement' has no attributes.
+The class 'leek::PostfixDecrement' has no attributes.
+The class 'leek::AffectationPrefixStatement' has no attributes.
+The class 'leek::FalseLiteral' has no attributes.
+The class 'Statement' has no attributes.
+The class 'leek::UnitaryMinus' has no attributes.
+The class 'leek::PostfixIncrement' has no attributes.
+The class 'leek::IntLiteral' has the following attributes: 'value' of type int.
+The class 'leek::VariableDeclaration' has the following attributes: 'name' of type str; 'byAdress' of type bool.
+The class 'ForInVariableReference' has no attributes.
+The class 'leek::For' has no attributes.
+The class 'AffectationPostfixStatement' has no attributes.
+The class 'leek::AffectationDecrement' has no attributes.
+The class 'leek::BreakStatement' has no attributes.
+The class 'leek::LocalDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'leek::Different' has no attributes.
+The class 'leek::Prefix' has no attributes.
+The class 'leek::Statement' has no attributes.
+The class 'leek::AffectationIncrement' has no attributes.
+The class 'leek::More' has no attributes.
+The class 'Prefix' has no attributes.
+The class 'leek::IfCondition' has no attributes.
+The class 'ForInitializer' has no attributes.
+The class 'leek::ForInVariableReference' has no attributes.
+The class 'leek::And' has no attributes.
+The class 'leek::TernaryIf' has no attributes.
+The class 'leek::Plus' has no attributes.
+The class 'leek::If' has no attributes.
+The class 'leek::Expression' has no attributes.
+The class 'leek::Comparison' has no attributes.
+The class 'leek::FunctionCall' has no attributes.
+The class 'leek::Equals' has no attributes.
+The class 'leek::ArrayLiteral' has no attributes.
+The class 'leek::StatementBlock' has no attributes.
+The class 'leek::AffectationPostfixStatement' has no attributes.
+The class 'leek::VariableReference' has no attributes.
+The class 'Postfix' has no attributes.
+The class 'leek::Affectation' has no attributes.
+The class 'leek::StringLiteral' has the following attributes: 'value' of type str.
+The class 'leek::NullLiteral' has no attributes.
+The class 'IfCondition' has no attributes.
+The class 'Iteration' has no attributes.
+The class 'leek::MoreOrEquals' has no attributes.
+The class 'leek::Multi' has no attributes.
+The class 'leek::EmptyStatement' has no attributes.
+The class 'leek::ForAffectation' has no attributes.
+The class 'leek::FunctionDeclaration' has the following attributes: 'name' of type str.
+The class 'ForAffectation' has no attributes.
+The class 'AffectationPrefixStatement' has no attributes.
+The class 'leek::Script' has no attributes.
+The class 'leek::LessOrEquals' has no attributes.
+The class 'leek::ForIn' has no attributes.
+'leek::MoreOrEquals' is a specialization of 'Expression'.
+'leek::PostfixDecrement' is a specialization of 'AffectationPostfixStatement'.
+'leek::AffectationPrefixStatement' is a specialization of 'AffectationStatement'.
+'leek::More' is a specialization of 'Expression'.
+'leek::GlobalDeclaration' is a specialization of 'Statement'.
+'leek::Not' is a specialization of 'Expression'.
+'leek::FunctionCall' is a specialization of 'Statement'.
+'leek::Comparison' is a specialization of 'Expression'.
+'leek::LessOrEquals' is a specialization of 'Expression'.
+'leek::PrefixDecrement' is a specialization of 'AffectationPrefixStatement'.
+'leek::BreakStatement' is a specialization of 'Statement'.
+'leek::TrueLiteral' is a specialization of 'Expression'.
+'leek::Include' is a specialization of 'Statement'.
+'leek::AffectationPostfixStatement' is a specialization of 'AffectationStatement'.
+'leek::TernaryIf' is a specialization of 'Expression'.
+'leek::Affectation' is a specialization of 'AffectationStatement'.
+'leek::Expression' is a specialization of 'IfCondition'.
+'leek::ForIn' is a specialization of 'Iteration'.
+'leek::PrefixIncrement' is a specialization of 'Prefix'.
+'leek::ContinueStatement' is a specialization of 'Statement'.
+'leek::RealLiteral' is a specialization of 'Expression'.
+'leek::PostfixIncrement' is a specialization of 'Postfix'.
+'leek::PrefixIncrement' is a specialization of 'AffectationPrefixStatement'.
+'leek::FalseLiteral' is a specialization of 'Expression'.
+'leek::Less' is a specialization of 'Expression'.
+'leek::PrefixDecrement' is a specialization of 'Prefix'.
+'leek::Affectation' is a specialization of 'ForAffectation'.
+'leek::Affectation' is a specialization of 'ForInitializer'.
+'leek::Prefix' is a specialization of 'Expression'.
+'leek::If' is a specialization of 'Statement'.
+'leek::Iteration' is a specialization of 'Statement'.
+'leek::For' is a specialization of 'Iteration'.
+'leek::AffectationIncrement' is a specialization of 'AffectationStatement'.
+'leek::Different' is a specialization of 'Expression'.
+'leek::ReturnStatement' is a specialization of 'Statement'.
+'leek::VariableDeclaration' is a specialization of 'ForInitializer'.
+'leek::Or' is a specialization of 'Expression'.
+'leek::FunctionCall' is a specialization of 'Expression'.
+'leek::AffectationStatement' is a specialization of 'Statement'.
+'leek::Div' is a specialization of 'Expression'.
+'leek::AffectationDecrement' is a specialization of 'AffectationStatement'.
+'leek::ArrayLiteral' is a specialization of 'Expression'.
+'leek::Expression' is a specialization of 'ForAffectation'.
+'leek::UnitaryMinus' is a specialization of 'Expression'.
+'leek::IntLiteral' is a specialization of 'Expression'.
+'leek::NullLiteral' is a specialization of 'Expression'.
+'leek::Multi' is a specialization of 'Expression'.
+'leek::StringLiteral' is a specialization of 'Expression'.
+'leek::TypedDifferent' is a specialization of 'Expression'.
+'leek::Postfix' is a specialization of 'Expression'.
+'leek::StatementBlock' is a specialization of 'Statement'.
+'leek::PostfixDecrement' is a specialization of 'Postfix'.
+'leek::Minus' is a specialization of 'Expression'.
+'leek::While' is a specialization of 'Iteration'.
+'leek::EmptyStatement' is a specialization of 'Statement'.
+'leek::And' is a specialization of 'Expression'.
+'leek::FunctionDeclaration' is a specialization of 'Statement'.
+'leek::VariableReference' is a specialization of 'AffectationPostfixStatement'.
+'leek::PostfixIncrement' is a specialization of 'AffectationPostfixStatement'.
+'leek::FunctionDeclaration' is a specialization of 'Expression'.
+'leek::Affectation' is a specialization of 'IfCondition'.
+'leek::VariableReference' is a specialization of 'Postfix'.
+'leek::Plus' is a specialization of 'Expression'.
+'leek::Equals' is a specialization of 'Expression'.
+'leek::LocalDeclaration' is a specialization of 'Statement'.
+'leek::VariableDeclaration' is a specialization of 'ForInVariableReference'.
+'leek::VariableReference' is a specialization of 'ForInVariableReference'.
+'leek::TypedDifferent' (role 'leek_TypedDifferent84', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression85', cardinality 0..*).
+'leek::ForIn' (role 'leek_ForIn35', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression36', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference68', cardinality 0..*) is associated with 'leek::PrefixDecrement' (role 'leek_PrefixDecrement', cardinality 0..*).
+'leek::If' (role 'leek_If18', cardinality 0..*) is associated with 'leek::Statement' (role 'leek_Statement19', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression72', cardinality 0..*) is associated with 'leek::Comparison' (role 'leek_Comparison', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression23', cardinality 0..*) is associated with 'leek::While' (role 'leek_While', cardinality 0..*).
+'leek::For' (role 'leek_For29', cardinality 0..*) is associated with 'leek::ForAffectation' (role 'leek_ForAffectation', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression150', cardinality 0..*) is associated with 'leek::UnitaryMinus' (role 'leek_UnitaryMinus', cardinality 0..*).
+'leek::Equals' (role 'leek_Equals79', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression80', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression77', cardinality 0..*) is associated with 'leek::Equals' (role 'leek_Equals', cardinality 0..*).
+'leek::FunctionCall' (role 'leek_FunctionCall59', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression60', cardinality 0..*).
+'leek::ForInVariableReference' (role 'leek_ForInVariableReference33', cardinality 0..*) is associated with 'leek::ForIn' (role 'leek_ForIn32', cardinality 0..*).
+'leek::Div' (role 'leek_Div139', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression140', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression117', cardinality 0..*) is associated with 'leek::And' (role 'leek_And', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression112', cardinality 0..*) is associated with 'leek::Or' (role 'leek_Or', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression87', cardinality 0..*) is associated with 'leek::Different' (role 'leek_Different', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference66', cardinality 0..*) is associated with 'leek::PostfixIncrement' (role 'leek_PostfixIncrement', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression107', cardinality 0..*) is associated with 'leek::More' (role 'leek_More', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression49', cardinality 0..*) is associated with 'leek::ArrayLiteral' (role 'leek_ArrayLiteral', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference64', cardinality 0..*) is associated with 'leek::PostfixDecrement' (role 'leek_PostfixDecrement', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression132', cardinality 0..*) is associated with 'leek::Multi' (role 'leek_Multi', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference9', cardinality 0..*) is associated with 'leek::AffectationIncrement' (role 'leek_AffectationIncrement', cardinality 0..*).
+'leek::Statement' (role 'leek_Statement16', cardinality 0..*) is associated with 'leek::If' (role 'leek_If15', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression12', cardinality 0..*) is associated with 'leek::AffectationIncrement' (role 'leek_AffectationIncrement11', cardinality 0..*).
+'leek::For' (role 'leek_For', cardinality 0..*) is associated with 'leek::ForInitializer' (role 'leek_ForInitializer', cardinality 0..*).
+'leek::ForInVariableReference' (role 'leek_ForInVariableReference', cardinality 0..*) is associated with 'leek::ForIn' (role 'leek_ForIn', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression', cardinality 0..*) is associated with 'leek::AffectationDecrement' (role 'leek_AffectationDecrement7', cardinality 0..*).
+'leek::FunctionDeclaration' (role 'leek_FunctionDeclaration57', cardinality 0..*) is associated with 'leek::FunctionCall' (role 'leek_FunctionCall', cardinality 0..*).
+'leek::Or' (role 'leek_Or114', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression115', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression137', cardinality 0..*) is associated with 'leek::Div' (role 'leek_Div', cardinality 0..*).
+'leek::Different' (role 'leek_Different89', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression90', cardinality 0..*).
+'leek::GlobalDeclaration' (role 'leek_GlobalDeclaration', cardinality 0..*) is associated with 'leek::VariableDeclaration' (role 'leek_VariableDeclaration47', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression97', cardinality 0..*) is associated with 'leek::Less' (role 'leek_Less', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression75', cardinality 0..*) is associated with 'leek::Comparison' (role 'leek_Comparison74', cardinality 0..*).
+'leek::TernaryIf' (role 'leek_TernaryIf147', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression148', cardinality 0..*).
+'leek::For' (role 'leek_For26', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression27', cardinality 0..*).
+'leek::Iteration' (role 'leek_Iteration', cardinality 0..*) is associated with 'leek::Statement' (role 'leek_Statement21', cardinality 0..*).
+'leek::LocalDeclaration' (role 'leek_LocalDeclaration', cardinality 0..*) is associated with 'leek::VariableDeclaration' (role 'leek_VariableDeclaration45', cardinality 0..*).
+'leek::Minus' (role 'leek_Minus', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression127', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression55', cardinality 0..*) is associated with 'leek::VariableReference' (role 'leek_VariableReference54', cardinality 0..*).
+'leek::Less' (role 'leek_Less99', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression100', cardinality 0..*).
+'leek::PrefixIncrement' (role 'leek_PrefixIncrement', cardinality 0..*) is associated with 'leek::VariableReference' (role 'leek_VariableReference70', cardinality 0..*).
+'leek::Statement' (role 'leek_Statement2', cardinality 0..*) is associated with 'leek::StatementBlock' (role 'leek_StatementBlock', cardinality 0..*).
+'leek::TernaryIf' (role 'leek_TernaryIf', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression142', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference5', cardinality 0..*) is associated with 'leek::AffectationDecrement' (role 'leek_AffectationDecrement', cardinality 0..*).
+'leek::TypedDifferent' (role 'leek_TypedDifferent', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression82', cardinality 0..*).
+'leek::Plus' (role 'leek_Plus', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression122', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression105', cardinality 0..*) is associated with 'leek::MoreOrEquals' (role 'leek_MoreOrEquals104', cardinality 0..*).
+'leek::TernaryIf' (role 'leek_TernaryIf144', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression145', cardinality 0..*).
+'leek::ReturnStatement' (role 'leek_ReturnStatement', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression62', cardinality 0..*).
+'leek::Not' (role 'leek_Not', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression152', cardinality 0..*).
+'leek::StatementBlock' (role 'leek_StatementBlock43', cardinality 0..*) is associated with 'leek::FunctionDeclaration' (role 'leek_FunctionDeclaration42', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression95', cardinality 0..*) is associated with 'leek::LessOrEquals' (role 'leek_LessOrEquals94', cardinality 0..*).
+'leek::IfCondition' (role 'leek_IfCondition', cardinality 0..*) is associated with 'leek::If' (role 'leek_If', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression120', cardinality 0..*) is associated with 'leek::And' (role 'leek_And119', cardinality 0..*).
+'leek::VariableReference' (role 'leek_VariableReference', cardinality 0..*) is associated with 'leek::Affectation' (role 'leek_Affectation', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression102', cardinality 0..*) is associated with 'leek::MoreOrEquals' (role 'leek_MoreOrEquals', cardinality 0..*).
+'leek::More' (role 'leek_More109', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression110', cardinality 0..*).
+'leek::FunctionDeclaration' (role 'leek_FunctionDeclaration', cardinality 0..*) is associated with 'leek::VariableDeclaration' (role 'leek_VariableDeclaration', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression135', cardinality 0..*) is associated with 'leek::Multi' (role 'leek_Multi134', cardinality 0..*).
+'leek::VariableDeclaration' (role 'leek_VariableDeclaration52', cardinality 0..*) is associated with 'leek::VariableReference' (role 'leek_VariableReference51', cardinality 0..*).
+'leek::Expression' (role 'leek_Expression92', cardinality 0..*) is associated with 'leek::LessOrEquals' (role 'leek_LessOrEquals', cardinality 0..*).
+'leek::Minus' (role 'leek_Minus129', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression130', cardinality 0..*).
+'leek::Script' (role 'leek_Script', cardinality 0..*) is associated with 'leek::Statement' (role 'leek_Statement', cardinality 0..*).
+'leek::ForInitializer' (role 'leek_ForInitializer38', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression39', cardinality 0..*).
+'leek::Plus' (role 'leek_Plus124', cardinality 0..*) is associated with 'leek::Expression' (role 'leek_Expression125', cardinality 0..*).

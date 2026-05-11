@@ -1,0 +1,7 @@
+The model has 2 class(es).
+The class 'TypeB::A' has the following attributes: 'name' of type str; 'isNameABC' of type bool.
+The class 'TypeB::B' has the following attributes: 'name' of type str.
+'TypeB::A' (role 'TypeB_A9', cardinality 0..*) is associated with 'TypeB::B' (role 'TypeB_B8', cardinality 0..*).
+'TypeB::B' (role 'TypeB_B5', cardinality 0..*) is associated with 'TypeB::A' (role 'TypeB_A6', cardinality 0..*).
+'TypeB::B' (role 'TypeB_B', cardinality 0..*) is associated with 'TypeB::A' (role 'TypeB_A', cardinality 0..*).
+'TypeB::A' (role 'TypeB_A3', cardinality 0..*) is associated with 'TypeB::B' (role 'TypeB_B2', cardinality 0..*).

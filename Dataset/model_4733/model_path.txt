@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/FH-SE-Master/Model-Driven-Engineering/Übung 2/at.fh-hagenberg.swml.solution/model/solution_ohne_ocl.ecore

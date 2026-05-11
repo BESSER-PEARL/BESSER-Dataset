@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fmdkdd/monoge/emftuto/org.eclipse.example.bowlingmodel/model/bowling.ecore

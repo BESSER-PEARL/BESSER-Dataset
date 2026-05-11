@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'a::C2' has no attributes.
+The class 'a::C' has the following attributes: 'a' of type str.
+The class 'a::Zug' has no attributes.
+The enumeration 'E' does not specify any literals.

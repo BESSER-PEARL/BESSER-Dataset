@@ -1,0 +1,32 @@
+The model has 9 class(es).
+The class 'platoon::JoiningVehicle' has no attributes.
+The class 'platoon::FrontGap' has the following attributes: 'actualGapSize' of type int.
+The class 'Vehicle' has no attributes.
+The class 'platoon::Vehicle' has the following attributes: 'id' of type int.
+The class 'platoon::PlatoonVehicle' has the following attributes: 'position' of type int.
+The class 'platoon::JoinPlatoonCoord' has no attributes.
+The class 'platoon::PlatooningSystem' has no attributes.
+The class 'platoon::Platoon' has the following attributes: 'length' of type int; 'desiredGapSize' of type int.
+The class 'platoon::JoiningPosition' has no attributes.
+'platoon::PlatoonVehicle' is a specialization of 'Vehicle'.
+'platoon::JoiningVehicle' is a specialization of 'Vehicle'.
+'platoon::Vehicle' (role 'platoon_Vehicle10', cardinality 0..*) is associated with 'platoon::Vehicle' (role 'platoon_Vehicle', cardinality 0..*).
+'platoon::Platoon' (role 'platoon_Platoon', cardinality 0..*) is associated with 'platoon::PlatoonVehicle' (role 'platoon_PlatoonVehicle', cardinality 0..*).
+'platoon::Vehicle' (role 'platoon_Vehicle41', cardinality 0..*) is associated with 'platoon::PlatooningSystem' (role 'platoon_PlatooningSystem', cardinality 0..*).
+'platoon::FrontGap' (role 'platoon_FrontGap34', cardinality 0..*) is associated with 'platoon::PlatoonVehicle' (role 'platoon_PlatoonVehicle33', cardinality 0..*).
+'platoon::Platoon' (role 'platoon_Platoon8', cardinality 0..*) is associated with 'platoon::JoinPlatoonCoord' (role 'platoon_JoinPlatoonCoord', cardinality 0..*).
+'platoon::PlatoonVehicle' (role 'members', cardinality 0..*) is associated with 'platoon::Platoon' (role 'Platoon', cardinality 0..*).
+'platoon::FrontGap' (role 'platoon_FrontGap', cardinality 0..*) is associated with 'platoon::JoiningVehicle' (role 'platoon_JoiningVehicle', cardinality 0..*).
+'platoon::PlatoonVehicle' (role 'wantsToJoin', cardinality 0..*) is associated with 'platoon::JoiningVehicle' (role 'JoiningVehicle', cardinality 0..*).
+'platoon::JoinPlatoonCoord' (role 'platoon_JoinPlatoonCoord25', cardinality 0..*) is associated with 'platoon::Vehicle' (role 'platoon_Vehicle26', cardinality 0..*).
+'platoon::Vehicle' (role 'platoon_Vehicle16', cardinality 0..*) is associated with 'platoon::JoinPlatoonCoord' (role 'platoon_JoinPlatoonCoord17', cardinality 0..*).
+'platoon::Vehicle' (role 'platoon_Vehicle20', cardinality 0..*) is associated with 'platoon::JoinPlatoonCoord' (role 'platoon_JoinPlatoonCoord19', cardinality 0..*).
+'platoon::PlatooningSystem' (role 'platoon_PlatooningSystem43', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon44', cardinality 0..*).
+'platoon::JoiningVehicle' (role 'platoon_JoiningVehicle31', cardinality 0..*) is associated with 'platoon::JoiningPosition' (role 'platoon_JoiningPosition', cardinality 0..*).
+'platoon::Platoon' (role 'platoon_Platoon6', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon4', cardinality 0..*).
+'platoon::PlatoonVehicle' (role 'platoon_PlatoonVehicle36', cardinality 0..*) is associated with 'platoon::JoiningPosition' (role 'platoon_JoiningPosition37', cardinality 0..*).
+'platoon::JoinPlatoonCoord' (role 'platoon_JoinPlatoonCoord22', cardinality 0..*) is associated with 'platoon::Vehicle' (role 'platoon_Vehicle23', cardinality 0..*).
+'platoon::JoiningVehicle' (role 'joiningRequest', cardinality 0..*) is associated with 'platoon::PlatoonVehicle' (role 'PlatoonVehicle29', cardinality 0..*).
+'platoon::Vehicle' (role 'platoon_Vehicle14', cardinality 0..*) is associated with 'platoon::Vehicle' (role 'platoon_Vehicle12', cardinality 0..*).
+'platoon::Platoon' (role 'platoon', cardinality 0..*) is associated with 'platoon::PlatoonVehicle' (role 'PlatoonVehicle', cardinality 0..*).
+'platoon::PlatoonVehicle' (role 'platoon_PlatoonVehicle3', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon2', cardinality 0..*).

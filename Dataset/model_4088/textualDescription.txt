@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'simpleuml::Class' has the following attributes: 'name' of type str.
+The class 'simpleuml::Classifier' has no attributes.
+The class 'Classifier' has no attributes.
+'simpleuml::Class' is a specialization of 'Classifier'.
+'simpleuml::Class' (role 'simpleuml_Class', cardinality 0..*) is associated with 'simpleuml::Classifier' (role 'simpleuml_Classifier', cardinality 0..*).

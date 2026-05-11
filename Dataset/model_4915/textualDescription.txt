@@ -1,0 +1,40 @@
+The model has 16 class(es).
+The class 'services::Service' has the following attributes: 'serviceCharacterCommon' of type str; 'serviceKind' of type str; 'serviceSupport1' of type str; 'mostTopService' of type str; 'ssDomain' of type str; 'serviceClass' of type str; 'serviceCategory' of type str.
+The class 'services::ServiceDescription' has the following attributes: 'serviceDescriptionCommon' of type str; 'serviceDescriptionNational' of type str.
+The class 'services::ServiceContract' has the following attributes: 'oLA' of type str; 'wLA' of type str; 'uC' of type str; 'sLA' of type str.
+The class 'Service' has no attributes.
+The class 'services::RFSService' has the following attributes: 'location' of type str; 'functionalCategory' of type str.
+The class 'services::CIID' has the following attributes: 'commonCIID' of type str; 'localCIID' of type str.
+The class 'services::EObject' has no attributes.
+The class 'services::ServiceAdditional' has the following attributes: 'report' of type str; 'costCenter' of type str; 'usageState' of type str; 'history' of type str; 'link' of type str; 'kpi' of type str; 'lifeCycleState' of type str.
+The class 'services::ServiceName' has the following attributes: 'name' of type str; 'identifier' of type str; 'index' of type str; 'alias' of type str.
+The class 'services::CFSService' has the following attributes: 'provider' of type str; 'scenario' of type str.
+The class 'services::Parameter' has no attributes.
+The class 'services::ServiceSecurityMgt' has the following attributes: 'drPlanRepository' of type str; 'securityRating' of type str; 'drPlanContact' of type str; 'drRecoveryPlan' of type str.
+The class 'services::ServiceInterrest' has the following attributes: 'contactUnit' of type str; 'interrestKind' of type str.
+The class 'services::ServiceProfile' has the following attributes: 'name' of type str.
+The class 'services::ServiceIncidentMgt' has the following attributes: 'maintenance' of type str; 'businessImpact' of type str; 'maintenanceWindow' of type str; 'monitoring' of type str.
+The class 'services::ServiceSupport' has the following attributes: 'supportDays' of type str; 'supportHours' of type str.
+The enumeration 'LifeCycleStateType' has the following literals: 'Planned', 'Active', 'Removed'.
+The enumeration 'SecurityRatingType' has the following literals: 'Low', 'High', 'Medium'.
+The enumeration 'MaintenanceType' has the following literals: '_2ndLineMaintenance', '_1stLineMaintenance'.
+The enumeration 'InterrestKindType' has the following literals: 'ServiceManagement', 'FinancialManagement', 'ProductManagement', 'Reporting', 'Escallation', 'SalesManagement'.
+The enumeration 'ServiceKindType' has the following literals: 'CFS', 'RFS'.
+The enumeration 'ServiceClassType' has the following literals: 'Silver', 'Bronze', 'Sold'.
+The enumeration 'UsageStateType' has the following literals: 'Assigned', 'Reserved', 'Free', 'Disabled'.
+'services::CFSService' is a specialization of 'Service'.
+'services::RFSService' is a specialization of 'Service'.
+'services::CIID' (role 'services_CIID', cardinality 0..*) is associated with 'services::Service' (role 'services_Service13', cardinality 0..*).
+'services::RFSService' (role 'services_RFSService', cardinality 0..*) is associated with 'services::EObject' (role 'services_EObject2', cardinality 0..*).
+'services::ServiceProfile' (role 'services_ServiceProfile', cardinality 0..*) is associated with 'services::RFSService' (role 'services_RFSService4', cardinality 0..*).
+'services::ServiceIncidentMgt' (role 'services_ServiceIncidentMgt', cardinality 0..*) is associated with 'services::Service' (role 'services_Service11', cardinality 0..*).
+'services::ServiceContract' (role 'services_ServiceContract', cardinality 0..*) is associated with 'services::Service' (role 'services_Service17', cardinality 0..*).
+'services::Service' (role 'services_Service15', cardinality 0..*) is associated with 'services::ServiceInterrest' (role 'services_ServiceInterrest', cardinality 0..*).
+'services::Service' (role 'services_Service19', cardinality 0..*) is associated with 'services::ServiceSupport' (role 'services_ServiceSupport', cardinality 0..*).
+'services::Service' (role 'services_Service24', cardinality 0..*) is associated with 'services::Service' (role 'services_Service22', cardinality 0..*).
+'services::Service' (role 'services_Service21', cardinality 0..*) is associated with 'services::ServiceAdditional' (role 'services_ServiceAdditional', cardinality 0..*).
+'services::ServiceDescription' (role 'services_ServiceDescription', cardinality 0..*) is associated with 'services::Service' (role 'services_Service7', cardinality 0..*).
+'services::Service' (role 'services_Service', cardinality 0..*) is associated with 'services::ServiceName' (role 'services_ServiceName', cardinality 0..*).
+'services::Service' (role 'services_Service9', cardinality 0..*) is associated with 'services::ServiceSecurityMgt' (role 'services_ServiceSecurityMgt', cardinality 0..*).
+'services::CFSService' (role 'services_CFSService', cardinality 0..*) is associated with 'services::EObject' (role 'services_EObject', cardinality 0..*).
+'services::Parameter' (role 'services_Parameter', cardinality 0..*) is associated with 'services::ServiceProfile' (role 'services_ServiceProfile26', cardinality 0..*).

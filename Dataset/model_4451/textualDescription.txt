@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'iot::Event' has no attributes.
+The class 'iot::BrokerSpec' has the following attributes: 'brokerHost' of type str; 'brokerPort' of type int.
+The class 'iot::Message' has the following attributes: 'name' of type str; 'msg' of type str.
+The class 'iot::IotSystem' has no attributes.
+The class 'Message' has no attributes.
+The class 'iot::IotSystemSpec' has the following attributes: 'name' of type str.
+The class 'iot::Dispatch' has no attributes.
+'iot::Event' is a specialization of 'Message'.
+'iot::Dispatch' is a specialization of 'Message'.
+'iot::IotSystemSpec' (role 'iot_IotSystemSpec2', cardinality 0..*) is associated with 'iot::BrokerSpec' (role 'iot_BrokerSpec', cardinality 0..*).
+'iot::IotSystemSpec' (role 'iot_IotSystemSpec4', cardinality 0..*) is associated with 'iot::Message' (role 'iot_Message', cardinality 0..*).
+'iot::IotSystemSpec' (role 'iot_IotSystemSpec', cardinality 0..*) is associated with 'iot::IotSystem' (role 'iot_IotSystem', cardinality 0..*).

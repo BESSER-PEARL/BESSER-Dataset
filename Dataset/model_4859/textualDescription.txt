@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'units::av::av::GlobalScopeGlobalScope' has no attributes.
+The class 'units::av::av::UnitPower' has the following attributes: 'exponent' of type int.
+The class 'units::av::av::BaseUnit' has the following attributes: 'name' of type str.
+The class 'units::av::av::UnitMultiplication' has no attributes.
+The class 'units::av::av::AdviceAdvice' has no attributes.
+The class 'units::av::av::UnitCarryingElement' has the following attributes: 'unitSpecification' of type str.
+The class 'units::av::av::Advice' has no attributes.
+The class 'units::av::av::EObject' has no attributes.
+The class 'units::av::av::PerJoinPointScopePerJoinPointScope' has no attributes.
+The class 'Unit' has no attributes.
+The class 'units::av::av::UnitLiteral' has no attributes.
+The class 'units::av::av::UnitRepository' has no attributes.
+The class 'units::av::av::Unit' has no attributes.
+The class 'units::av::av::GlobalScope' has no attributes.
+The class 'units::av::av::PerJoinPointScope' has no attributes.
+'units::av::av::UnitLiteral' is a specialization of 'Unit'.
+'units::av::av::UnitPower' is a specialization of 'Unit'.
+'units::av::av::UnitMultiplication' is a specialization of 'Unit'.
+'units::av::av::UnitMultiplication' (role 'units_av_av_UnitMultiplication', cardinality 0..*) is associated with 'units::av::av::Unit' (role 'units_av_av_Unit3', cardinality 0..*).
+'units::av::av::UnitCarryingElement' (role 'units_av_av_UnitCarryingElement', cardinality 0..*) is associated with 'units::av::av::Unit' (role 'units_av_av_Unit', cardinality 0..*).
+'units::av::av::Unit' (role 'units_av_av_Unit5', cardinality 0..*) is associated with 'units::av::av::UnitPower' (role 'units_av_av_UnitPower', cardinality 0..*).
+'units::av::av::EObject' (role 'units_av_av_EObject18', cardinality 0..*) is associated with 'units::av::av::PerJoinPointScope' (role 'units_av_av_PerJoinPointScope', cardinality 0..*).
+'units::av::av::Advice' (role 'units_av_av_Advice', cardinality 0..*) is associated with 'units::av::av::EObject' (role 'units_av_av_EObject14', cardinality 0..*).
+'units::av::av::EObject' (role 'units_av_av_EObject10', cardinality 0..*) is associated with 'units::av::av::GlobalScopeGlobalScope' (role 'units_av_av_GlobalScopeGlobalScope', cardinality 0..*).
+'units::av::av::BaseUnit' (role 'units_av_av_BaseUnit', cardinality 0..*) is associated with 'units::av::av::UnitRepository' (role 'units_av_av_UnitRepository', cardinality 0..*).
+'units::av::av::AdviceAdvice' (role 'units_av_av_AdviceAdvice', cardinality 0..*) is associated with 'units::av::av::EObject' (role 'units_av_av_EObject', cardinality 0..*).
+'units::av::av::BaseUnit' (role 'units_av_av_BaseUnit7', cardinality 0..*) is associated with 'units::av::av::UnitLiteral' (role 'units_av_av_UnitLiteral', cardinality 0..*).
+'units::av::av::PerJoinPointScopePerJoinPointScope' (role 'units_av_av_PerJoinPointScopePerJoinPointScope', cardinality 0..*) is associated with 'units::av::av::EObject' (role 'units_av_av_EObject12', cardinality 0..*).
+'units::av::av::EObject' (role 'units_av_av_EObject16', cardinality 0..*) is associated with 'units::av::av::GlobalScope' (role 'units_av_av_GlobalScope', cardinality 0..*).

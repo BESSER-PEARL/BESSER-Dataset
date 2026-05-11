@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'basesyntax1::B1' has the following attributes: 'name' of type str.

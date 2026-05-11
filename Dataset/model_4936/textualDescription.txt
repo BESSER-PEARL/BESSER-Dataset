@@ -1,0 +1,43 @@
+The model has 14 class(es).
+The class 'webapp::UIElement' has the following attributes: 'type' of type str.
+The class 'webapp::Table' has no attributes.
+The class 'webapp::WebApp' has no attributes.
+The class 'webapp::ClientPage' has no attributes.
+The class 'webapp::Form' has no attributes.
+The class 'webapp::Attribute' has the following attributes: 'type' of type str.
+The class 'webapp::ServerPage' has no attributes.
+The class 'webapp::DataSourceManager' has no attributes.
+The class 'webapp::DataStructure' has no attributes.
+The class 'UIElement' has no attributes.
+The class 'Named' has no attributes.
+The class 'webapp::ImageViewer' has no attributes.
+The class 'webapp::Named' has the following attributes: 'name' of type str.
+The class 'webapp::TextArea' has no attributes.
+The enumeration 'UIElementType' has the following literals: 'output', 'input'.
+'webapp::Attribute' is a specialization of 'Named'.
+'webapp::WebApp' is a specialization of 'Named'.
+'webapp::ServerPage' is a specialization of 'Named'.
+'webapp::DataStructure' is a specialization of 'Named'.
+'webapp::TextArea' is a specialization of 'UIElement'.
+'webapp::Form' is a specialization of 'UIElement'.
+'webapp::ImageViewer' is a specialization of 'UIElement'.
+'webapp::Table' is a specialization of 'UIElement'.
+'webapp::DataSourceManager' is a specialization of 'Named'.
+'webapp::ClientPage' is a specialization of 'Named'.
+'webapp::UIElement' is a specialization of 'Named'.
+'webapp::WebApp' (role 'webapp_WebApp', cardinality 0..*) is associated with 'webapp::ClientPage' (role 'webapp_ClientPage', cardinality 0..*).
+'webapp::DataStructure' (role 'attributeOf', cardinality 0..*) is associated with 'webapp::Attribute' (role 'Attribute', cardinality 0..*).
+'webapp::ServerPage' (role 'providesContent', cardinality 0..*) is associated with 'webapp::DataSourceManager' (role 'DataSourceManager', cardinality 0..*).
+'webapp::DataStructure' (role 'DataStructure17', cardinality 0..*) is associated with 'webapp::Attribute' (role 'parentOf', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp2', cardinality 0..*) is associated with 'webapp::ServerPage' (role 'webapp_ServerPage', cardinality 0..*).
+'webapp::UIElement' (role 'webapp_UIElement25', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'webapp_DataStructure26', cardinality 0..*).
+'webapp::ServerPage' (role 'connectsTo', cardinality 0..*) is associated with 'webapp::ClientPage' (role 'ClientPage', cardinality 0..*).
+'webapp::Attribute' (role 'linkedTo', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'DataStructure19', cardinality 0..*).
+'webapp::ServerPage' (role 'ServerPage23', cardinality 0..*) is associated with 'webapp::ClientPage' (role 'generates', cardinality 0..*).
+'webapp::ServerPage' (role 'ServerPage', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'manages', cardinality 0..*).
+'webapp::ServerPage' (role 'managedBy', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'DataStructure', cardinality 0..*).
+'webapp::DataSourceManager' (role 'webapp_DataSourceManager', cardinality 0..*) is associated with 'webapp::WebApp' (role 'webapp_WebApp6', cardinality 0..*).
+'webapp::WebApp' (role 'webapp_WebApp4', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'webapp_DataStructure', cardinality 0..*).
+'webapp::ClientPage' (role 'webapp_ClientPage21', cardinality 0..*) is associated with 'webapp::UIElement' (role 'webapp_UIElement', cardinality 0..*).
+'webapp::ServerPage' (role 'ServerPage15', cardinality 0..*) is associated with 'webapp::DataSourceManager' (role 'getContents', cardinality 0..*).
+'webapp::Attribute' (role 'Attribute13', cardinality 0..*) is associated with 'webapp::DataStructure' (role 'linkedBy', cardinality 0..*).

@@ -1,0 +1,43 @@
+The model has 15 class(es).
+The class 'Order' has no attributes.
+The class 'model1::Category' has the following attributes: 'name' of type str.
+The class 'model1::Customer' has no attributes.
+The class 'model1::SalesOrder' has the following attributes: 'id' of type int.
+The class 'model1::OrderAddress' has the following attributes: 'testAttribute' of type bool.
+The class 'model1::Address' has the following attributes: 'name' of type str; 'street' of type str; 'city' of type str.
+The class 'model1::Company' has no attributes.
+The class 'model1::ProductToOrder' has no attributes.
+The class 'model1::OrderDetail' has the following attributes: 'price' of type float.
+The class 'Address' has no attributes.
+The class 'model1::Supplier' has the following attributes: 'preferred' of type bool.
+The class 'model1::Order' has no attributes.
+The class 'OrderDetail' has no attributes.
+The class 'model1::PurchaseOrder' has the following attributes: 'date' of type date.
+The class 'model1::Product1' has the following attributes: 'name' of type str; 'vat' of type str; 'description' of type str.
+The enumeration 'VAT' has the following literals: 'vat0', 'vat15', 'vat7'.
+'model1::SalesOrder' is a specialization of 'Order'.
+'model1::OrderAddress' is a specialization of 'Address'.
+'model1::OrderAddress' is a specialization of 'OrderDetail'.
+'model1::Company' is a specialization of 'Address'.
+'model1::Customer' is a specialization of 'Address'.
+'model1::PurchaseOrder' is a specialization of 'Order'.
+'model1::Supplier' is a specialization of 'Address'.
+'model1::OrderAddress' is a specialization of 'Order'.
+'model1::Product1' (role 'model1_Product128', cardinality 0..*) is associated with 'model1::ProductToOrder' (role 'model1_ProductToOrder27', cardinality 0..*).
+'model1::SalesOrder' (role 'salesOrders', cardinality 0..*) is associated with 'model1::Customer' (role 'Customer', cardinality 0..*).
+'model1::Product1' (role 'Product1', cardinality 0..*) is associated with 'model1::OrderDetail' (role 'orderDetails16', cardinality 0..*).
+'model1::Order' (role 'order', cardinality 0..*) is associated with 'model1::OrderDetail' (role 'OrderDetail', cardinality 0..*).
+'model1::SalesOrder' (role 'model1_SalesOrder31', cardinality 0..*) is associated with 'model1::ProductToOrder' (role 'model1_ProductToOrder30', cardinality 0..*).
+'model1::Customer' (role 'model1_Customer12', cardinality 0..*) is associated with 'model1::ProductToOrder' (role 'model1_ProductToOrder', cardinality 0..*).
+'model1::Category' (role 'model1_Category', cardinality 0..*) is associated with 'model1::Company' (role 'model1_Company', cardinality 0..*).
+'model1::SalesOrder' (role 'SalesOrder', cardinality 0..*) is associated with 'model1::Customer' (role 'customer', cardinality 0..*).
+'model1::Company' (role 'model1_Company8', cardinality 0..*) is associated with 'model1::SalesOrder' (role 'model1_SalesOrder', cardinality 0..*).
+'model1::Company' (role 'model1_Company2', cardinality 0..*) is associated with 'model1::Supplier' (role 'model1_Supplier', cardinality 0..*).
+'model1::Category' (role 'model1_Category21', cardinality 0..*) is associated with 'model1::Category' (role 'model1_Category19', cardinality 0..*).
+'model1::Company' (role 'model1_Company6', cardinality 0..*) is associated with 'model1::PurchaseOrder' (role 'model1_PurchaseOrder', cardinality 0..*).
+'model1::Product1' (role 'product', cardinality 0..*) is associated with 'model1::OrderDetail' (role 'OrderDetail25', cardinality 0..*).
+'model1::PurchaseOrder' (role 'purchaseOrders', cardinality 0..*) is associated with 'model1::Supplier' (role 'Supplier', cardinality 0..*).
+'model1::Supplier' (role 'supplier', cardinality 0..*) is associated with 'model1::PurchaseOrder' (role 'PurchaseOrder', cardinality 0..*).
+'model1::Customer' (role 'model1_Customer', cardinality 0..*) is associated with 'model1::Company' (role 'model1_Company4', cardinality 0..*).
+'model1::Product1' (role 'model1_Product1', cardinality 0..*) is associated with 'model1::Category' (role 'model1_Category23', cardinality 0..*).
+'model1::OrderDetail' (role 'orderDetails', cardinality 0..*) is associated with 'model1::Order' (role 'Order', cardinality 0..*).

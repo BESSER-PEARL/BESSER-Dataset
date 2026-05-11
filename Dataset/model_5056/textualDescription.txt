@@ -1,0 +1,63 @@
+The model has 22 class(es).
+The class 'FlowNode' has no attributes.
+The class 'Event' has no attributes.
+The class 'EObject' has no attributes.
+The class 'cbpmn::Activity' has the following attributes: 'type' of type str.
+The class 'cbpmn::SplitGateway' has no attributes.
+The class 'cbpmn::ParallelGateway' has no attributes.
+The class 'cbpmn::DataObject' has no attributes.
+The class 'cbpmn::DataObjectReference' has the following attributes: 'higherBound' of type int; 'lowerBound' of type int; 'name' of type str.
+The class 'cbpmn::StartEvent' has no attributes.
+The class 'cbpmn::Event' has no attributes.
+The class 'cbpmn::EClass' has no attributes.
+The class 'cbpmn::EObject' has no attributes.
+The class 'cbpmn::OCLConstraint' has the following attributes: 'constraintStr' of type str; 'constraintName' of type str.
+The class 'cbpmn::ProcessModel' has the following attributes: 'name' of type str.
+The class 'cbpmn::EndEvent' has no attributes.
+The class 'cbpmn::IntermediateEvent' has no attributes.
+The class 'cbpmn::FlowNode' has the following attributes: 'name' of type str.
+The class 'cbpmn::DecisionGateway' has the following attributes: 'type' of type str.
+The class 'cbpmn::FlowNodeInstance' has the following attributes: 'status' of type str.
+The class 'cbpmn::Branch' has the following attributes: 'default' of type bool.
+The class 'SplitGateway' has no attributes.
+The class 'cbpmn::ProcessInstance' has the following attributes: 'id' of type str.
+The enumeration 'DecisionType' has the following literals: 'EXCLUSIVE', 'INCLUSIVE'.
+The enumeration 'ActivityType' has the following literals: 'SERVICE', 'SEND', 'BUSINESSRULE', 'MANUAL', 'USER', 'RECEIVE'.
+The enumeration 'DataObjectType' has the following literals: 'INFORMATIONAL', 'PHYSICAL'.
+The enumeration 'FlowNodeInstanceStatus' has the following literals: 'STARTED', 'FAILED', 'SUCCESS', 'INTERRUPTED', 'INIT'.
+The enumeration 'GatewayType' has the following literals: 'SPLIT', 'JOIN'.
+The enumeration 'EventType' has the following literals: 'EEnumLiteral0'.
+'cbpmn::DecisionGateway' is a specialization of 'SplitGateway'.
+'cbpmn::IntermediateEvent' is a specialization of 'Event'.
+'cbpmn::Activity' is a specialization of 'FlowNode'.
+'cbpmn::StartEvent' is a specialization of 'Event'.
+'cbpmn::SplitGateway' is a specialization of 'FlowNode'.
+'cbpmn::EndEvent' is a specialization of 'Event'.
+'cbpmn::ParallelGateway' is a specialization of 'SplitGateway'.
+'cbpmn::DataObject' is a specialization of 'EObject'.
+'cbpmn::Event' is a specialization of 'FlowNode'.
+'cbpmn::OCLConstraint' (role 'cbpmn_OCLConstraint29', cardinality 0..*) is associated with 'cbpmn::Event' (role 'cbpmn_Event', cardinality 0..*).
+'cbpmn::DataObjectReference' (role 'cbpmn_DataObjectReference', cardinality 0..*) is associated with 'cbpmn::Activity' (role 'cbpmn_Activity9', cardinality 0..*).
+'cbpmn::ProcessModel' (role 'cbpmn_ProcessModel35', cardinality 0..*) is associated with 'cbpmn::ProcessInstance' (role 'cbpmn_ProcessInstance', cardinality 0..*).
+'cbpmn::FlowNodeInstance' (role 'executedNodes', cardinality 0..*) is associated with 'cbpmn::ProcessInstance' (role 'ProcessInstance', cardinality 0..*).
+'cbpmn::FlowNodeInstance' (role 'cbpmn_FlowNodeInstance', cardinality 0..*) is associated with 'cbpmn::FlowNode' (role 'cbpmn_FlowNode40', cardinality 0..*).
+'cbpmn::EObject' (role 'cbpmn_EObject', cardinality 0..*) is associated with 'cbpmn::ProcessInstance' (role 'cbpmn_ProcessInstance38', cardinality 0..*).
+'cbpmn::Branch' (role 'branch', cardinality 0..*) is associated with 'cbpmn::FlowNode' (role 'FlowNode', cardinality 0..*).
+'cbpmn::FlowNode' (role 'nodes', cardinality 0..*) is associated with 'cbpmn::Branch' (role 'Branch', cardinality 0..*).
+'cbpmn::SplitGateway' (role 'gateway', cardinality 0..*) is associated with 'cbpmn::Branch' (role 'Branch31', cardinality 0..*).
+'cbpmn::Branch' (role 'Branch27', cardinality 0..*) is associated with 'cbpmn::OCLConstraint' (role 'entryConditions', cardinality 0..*).
+'cbpmn::Activity' (role 'cbpmn_Activity', cardinality 0..*) is associated with 'cbpmn::OCLConstraint' (role 'cbpmn_OCLConstraint4', cardinality 0..*).
+'cbpmn::ProcessModel' (role 'cbpmn_ProcessModel2', cardinality 0..*) is associated with 'cbpmn::OCLConstraint' (role 'cbpmn_OCLConstraint', cardinality 0..*).
+'cbpmn::Branch' (role 'cbpmn_Branch', cardinality 0..*) is associated with 'cbpmn::ProcessModel' (role 'cbpmn_ProcessModel', cardinality 0..*).
+'cbpmn::FlowNodeInstance' (role 'FlowNodeInstance', cardinality 0..*) is associated with 'cbpmn::ProcessInstance' (role 'processInstance', cardinality 0..*).
+'cbpmn::Activity' (role 'cbpmn_Activity6', cardinality 0..*) is associated with 'cbpmn::OCLConstraint' (role 'cbpmn_OCLConstraint7', cardinality 0..*).
+'cbpmn::FlowNodeInstance' (role 'cbpmn_FlowNodeInstance45', cardinality 0..*) is associated with 'cbpmn::EObject' (role 'cbpmn_EObject46', cardinality 0..*).
+'cbpmn::FlowNode' (role 'previous', cardinality 0..*) is associated with 'cbpmn::FlowNode' (role 'FlowNode20', cardinality 0..*).
+'cbpmn::DataObjectReference' (role 'cbpmn_DataObjectReference33', cardinality 0..*) is associated with 'cbpmn::EClass' (role 'cbpmn_EClass', cardinality 0..*).
+'cbpmn::FlowNode' (role 'next', cardinality 0..*) is associated with 'cbpmn::FlowNode' (role 'FlowNode23', cardinality 0..*).
+'cbpmn::OCLConstraint' (role 'cbpmn_OCLConstraint12', cardinality 0..*) is associated with 'cbpmn::Activity' (role 'cbpmn_Activity11', cardinality 0..*).
+'cbpmn::Branch' (role 'branches', cardinality 0..*) is associated with 'cbpmn::SplitGateway' (role 'SplitGateway', cardinality 0..*).
+'cbpmn::Branch' (role 'branch15', cardinality 0..*) is associated with 'cbpmn::OCLConstraint' (role 'OCLConstraint', cardinality 0..*).
+'cbpmn::FlowNode' (role 'cbpmn_FlowNode', cardinality 0..*) is associated with 'cbpmn::DataObjectReference' (role 'cbpmn_DataObjectReference25', cardinality 0..*).
+'cbpmn::FlowNodeInstance' (role 'cbpmn_FlowNodeInstance42', cardinality 0..*) is associated with 'cbpmn::EObject' (role 'cbpmn_EObject43', cardinality 0..*).
+'cbpmn::DataObject' (role 'cbpmn_DataObject', cardinality 0..*) is associated with 'cbpmn::EClass' (role 'cbpmn_EClass49', cardinality 0..*).

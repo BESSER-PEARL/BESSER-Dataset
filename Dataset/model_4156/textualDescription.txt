@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'datavault::Model' has no attributes.
+The class 'datavault::Greeting' has the following attributes: 'name' of type str.
+'datavault::Model' (role 'datavault_Model', cardinality 0..*) is associated with 'datavault::Greeting' (role 'datavault_Greeting', cardinality 0..*).

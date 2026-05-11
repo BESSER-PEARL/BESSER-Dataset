@@ -1,0 +1,67 @@
+The model has 29 class(es).
+The class 'behaviouralProgramMM::Assignment' has the following attributes: 'VariableName' of type str.
+The class 'BinaryOperator' has no attributes.
+The class 'behaviouralProgramMM::FunctionCall' has the following attributes: 'FuncName' of type str.
+The class 'behaviouralProgramMM::Instantiation' has the following attributes: 'VarType' of type str; 'VarName' of type str.
+The class 'behaviouralProgramMM::ReadLineStatement' has no attributes.
+The class 'ArithmeticInfixOperator' has no attributes.
+The class 'behaviouralProgramMM::ArithmeticInfixOperator' has no attributes.
+The class 'behaviouralProgramMM::Loop' has no attributes.
+The class 'Expression' has no attributes.
+The class 'behaviouralProgramMM::Statement' has no attributes.
+The class 'behaviouralProgramMM::Function' has the following attributes: 'Name' of type str.
+The class 'behaviouralProgramMM::Expression' has no attributes.
+The class 'behaviouralProgramMM::Literal' has the following attributes: 'Value' of type str.
+The class 'behaviouralProgramMM::WriteLineStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'behaviouralProgramMM::TryCatch' has no attributes.
+The class 'behaviouralProgramMM::FunctionCallStatement' has the following attributes: 'FuncName' of type str.
+The class 'behaviouralProgramMM::Variable' has the following attributes: 'VarName' of type str.
+The class 'behaviouralProgramMM::RaiseException' has no attributes.
+The class 'ComparsionOperator' has no attributes.
+The class 'behaviouralProgramMM::Return' has no attributes.
+The class 'behaviouralProgramMM::BinaryOperator' has no attributes.
+The class 'behaviouralProgramMM::ConditionalBranch' has no attributes.
+The class 'behaviouralProgramMM::ReadLine' has no attributes.
+The class 'FunctionCallStatement' has no attributes.
+The class 'behaviouralProgramMM::Plus' has no attributes.
+The class 'behaviouralProgramMM::ComparsionOperator' has no attributes.
+The class 'behaviouralProgramMM::Behaviour' has no attributes.
+The class 'behaviouralProgramMM::Equals' has no attributes.
+'behaviouralProgramMM::ArithmeticInfixOperator' is a specialization of 'BinaryOperator'.
+'behaviouralProgramMM::WriteLineStatement' is a specialization of 'FunctionCallStatement'.
+'behaviouralProgramMM::Plus' is a specialization of 'ArithmeticInfixOperator'.
+'behaviouralProgramMM::Assignment' is a specialization of 'Statement'.
+'behaviouralProgramMM::Equals' is a specialization of 'ComparsionOperator'.
+'behaviouralProgramMM::Variable' is a specialization of 'Expression'.
+'behaviouralProgramMM::Instantiation' is a specialization of 'Statement'.
+'behaviouralProgramMM::ComparsionOperator' is a specialization of 'BinaryOperator'.
+'behaviouralProgramMM::Literal' is a specialization of 'Expression'.
+'behaviouralProgramMM::TryCatch' is a specialization of 'Statement'.
+'behaviouralProgramMM::ConditionalBranch' is a specialization of 'Statement'.
+'behaviouralProgramMM::ReadLine' is a specialization of 'Expression'.
+'behaviouralProgramMM::BinaryOperator' is a specialization of 'Expression'.
+'behaviouralProgramMM::Loop' is a specialization of 'Statement'.
+'behaviouralProgramMM::Return' is a specialization of 'Statement'.
+'behaviouralProgramMM::FunctionCall' is a specialization of 'Expression'.
+'behaviouralProgramMM::FunctionCallStatement' is a specialization of 'Statement'.
+'behaviouralProgramMM::ReadLineStatement' is a specialization of 'FunctionCallStatement'.
+'behaviouralProgramMM::RaiseException' is a specialization of 'Statement'.
+'behaviouralProgramMM::Loop' (role 'behaviouralProgramMM_Loop18', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression19', cardinality 0..*).
+'behaviouralProgramMM::Function' (role 'behaviouralProgramMM_Function3', cardinality 0..*) is associated with 'behaviouralProgramMM::Behaviour' (role 'behaviouralProgramMM_Behaviour2', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement30', cardinality 0..*) is associated with 'behaviouralProgramMM::TryCatch' (role 'behaviouralProgramMM_TryCatch29', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement11', cardinality 0..*) is associated with 'behaviouralProgramMM::ConditionalBranch' (role 'behaviouralProgramMM_ConditionalBranch10', cardinality 0..*).
+'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression32', cardinality 0..*) is associated with 'behaviouralProgramMM::RaiseException' (role 'behaviouralProgramMM_RaiseException', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement8', cardinality 0..*) is associated with 'behaviouralProgramMM::ConditionalBranch' (role 'behaviouralProgramMM_ConditionalBranch', cardinality 0..*).
+'behaviouralProgramMM::Instantiation' (role 'behaviouralProgramMM_Instantiation', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression23', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement27', cardinality 0..*) is associated with 'behaviouralProgramMM::TryCatch' (role 'behaviouralProgramMM_TryCatch', cardinality 0..*).
+'behaviouralProgramMM::FunctionCallStatement' (role 'behaviouralProgramMM_FunctionCallStatement', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression34', cardinality 0..*).
+'behaviouralProgramMM::ConditionalBranch' (role 'behaviouralProgramMM_ConditionalBranch13', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression14', cardinality 0..*).
+'behaviouralProgramMM::Assignment' (role 'behaviouralProgramMM_Assignment', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement', cardinality 0..*) is associated with 'behaviouralProgramMM::Function' (role 'behaviouralProgramMM_Function5', cardinality 0..*).
+'behaviouralProgramMM::Behaviour' (role 'behaviouralProgramMM_Behaviour', cardinality 0..*) is associated with 'behaviouralProgramMM::Function' (role 'behaviouralProgramMM_Function', cardinality 0..*).
+'behaviouralProgramMM::FunctionCall' (role 'behaviouralProgramMM_FunctionCall', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression21', cardinality 0..*).
+'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression39', cardinality 0..*) is associated with 'behaviouralProgramMM::BinaryOperator' (role 'behaviouralProgramMM_BinaryOperator38', cardinality 0..*).
+'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression36', cardinality 0..*) is associated with 'behaviouralProgramMM::BinaryOperator' (role 'behaviouralProgramMM_BinaryOperator', cardinality 0..*).
+'behaviouralProgramMM::Statement' (role 'behaviouralProgramMM_Statement16', cardinality 0..*) is associated with 'behaviouralProgramMM::Loop' (role 'behaviouralProgramMM_Loop', cardinality 0..*).
+'behaviouralProgramMM::Return' (role 'behaviouralProgramMM_Return', cardinality 0..*) is associated with 'behaviouralProgramMM::Expression' (role 'behaviouralProgramMM_Expression25', cardinality 0..*).

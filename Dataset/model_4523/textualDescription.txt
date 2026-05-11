@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'vmlogo::Turtle' has the following attributes: 'heading' of type float; 'penUp' of type bool.
+The class 'vmlogo::Context' has no attributes.
+The class 'vmlogo::Segment' has no attributes.
+The class 'vmlogo::CallStack' has no attributes.
+The class 'vmlogo::Point' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'vmlogo::StackFrame' has the following attributes: 'variables' of type str.
+'vmlogo::StackFrame' (role 'vmlogo_StackFrame', cardinality 0..*) is associated with 'vmlogo::CallStack' (role 'vmlogo_CallStack14', cardinality 0..*).
+'vmlogo::Segment' (role 'vmlogo_Segment', cardinality 0..*) is associated with 'vmlogo::Turtle' (role 'vmlogo_Turtle6', cardinality 0..*).
+'vmlogo::Point' (role 'vmlogo_Point', cardinality 0..*) is associated with 'vmlogo::Turtle' (role 'vmlogo_Turtle4', cardinality 0..*).
+'vmlogo::Context' (role 'vmlogo_Context2', cardinality 0..*) is associated with 'vmlogo::CallStack' (role 'vmlogo_CallStack', cardinality 0..*).
+'vmlogo::Segment' (role 'vmlogo_Segment11', cardinality 0..*) is associated with 'vmlogo::Point' (role 'vmlogo_Point12', cardinality 0..*).
+'vmlogo::Segment' (role 'vmlogo_Segment8', cardinality 0..*) is associated with 'vmlogo::Point' (role 'vmlogo_Point9', cardinality 0..*).
+'vmlogo::Turtle' (role 'vmlogo_Turtle', cardinality 0..*) is associated with 'vmlogo::Context' (role 'vmlogo_Context', cardinality 0..*).

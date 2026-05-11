@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'attroverridesecondarytable::Address' has the following attributes: 'street' of type str; 'name' of type str; 'city' of type str.
+The class 'attroverridesecondarytable::Person' has the following attributes: 'name' of type str; 'age' of type int.
+The class 'Person' has no attributes.
+The class 'attroverridesecondarytable::NonEmployee' has no attributes.
+The class 'attroverridesecondarytable::Country' has the following attributes: 'name' of type str.
+The class 'attroverridesecondarytable::Employee' has the following attributes: 'employeeNumber' of type str.
+'attroverridesecondarytable::Employee' is a specialization of 'Person'.
+'attroverridesecondarytable::NonEmployee' is a specialization of 'Person'.
+'attroverridesecondarytable::Address' (role 'attroverridesecondarytable_Address4', cardinality 0..*) is associated with 'attroverridesecondarytable::NonEmployee' (role 'attroverridesecondarytable_NonEmployee', cardinality 0..*).
+'attroverridesecondarytable::Employee' (role 'attroverridesecondarytable_Employee', cardinality 0..*) is associated with 'attroverridesecondarytable::Address' (role 'attroverridesecondarytable_Address2', cardinality 0..*).
+'attroverridesecondarytable::Address' (role 'attroverridesecondarytable_Address', cardinality 0..*) is associated with 'attroverridesecondarytable::Country' (role 'attroverridesecondarytable_Country', cardinality 0..*).

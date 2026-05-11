@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/firegold4/RCP_Training/com.sii.gametournament/model/gametournament.ecore

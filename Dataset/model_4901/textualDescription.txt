@@ -1,0 +1,245 @@
+The model has 94 class(es).
+The class 'SPL::ServerErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'SPL::CompoundStat' has no attributes.
+The class 'SPL::ErrorResponse' has no attributes.
+The class 'SPL::HeadedMessageField' has the following attributes: 'headerId' of type str.
+The class 'SPL::OperatorExp' has the following attributes: 'opName' of type str.
+The class 'SPL::Program' has no attributes.
+The class 'SPL::StringConstant' has the following attributes: 'value' of type str.
+The class 'SPL::MessageField' has no attributes.
+The class 'SPL::URIConstant' has the following attributes: 'uri' of type str.
+The class 'SPL::SelectDefault' has no attributes.
+The class 'SPL::TypeExpression' has no attributes.
+The class 'SPL::FunctionCallStat' has no attributes.
+The class 'SPL::ContinueStat' has no attributes.
+The class 'SPL::Statement' has no attributes.
+The class 'SPL::ConstantExp' has no attributes.
+The class 'FunctionDeclaration' has no attributes.
+The class 'SPL::FunctionDeclaration' has no attributes.
+The class 'Place' has no attributes.
+The class 'Constant' has no attributes.
+The class 'SPL::WithExp' has no attributes.
+The class 'SPL::DefinedType' has the following attributes: 'typeName' of type str.
+The class 'SPL::BlockExp' has no attributes.
+The class 'SPL::Branch' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'SPL::FunctionCallExp' has no attributes.
+The class 'SPL::ControlMethodName' has the following attributes: 'name' of type str.
+The class 'SPL::ForwardExp' has the following attributes: 'isParallel' of type bool.
+The class 'SPL::SIPHeaderPlace' has the following attributes: 'header' of type str.
+The class 'SPL::RemoteFunctionDeclaration' has the following attributes: 'functionLocation' of type str.
+The class 'SPL::DeclarationStat' has no attributes.
+The class 'SPL::WhenHeader' has the following attributes: 'headerId' of type str.
+The class 'SPL::WhenStat' has no attributes.
+The class 'SPL::ReasonMessageField' has no attributes.
+The class 'SPL::StructureProperty' has the following attributes: 'name' of type str.
+The class 'SPL::ResponseConstant' has no attributes.
+The class 'Branch' has no attributes.
+The class 'SPL::Constant' has no attributes.
+The class 'SPL::Argument' has no attributes.
+The class 'SPL::LocatedElement' has the following attributes: 'commentsBefore' of type str; 'commentsAfter' of type str; 'location' of type str.
+The class 'SPL::Service' has the following attributes: 'name' of type str.
+The class 'SPL::ClientErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'MethodName' has no attributes.
+The class 'SPL::LocalFunctionDeclaration' has no attributes.
+The class 'SPL::SuccessResponse' has the following attributes: 'successKind' of type str.
+The class 'SPL::MethodName' has no attributes.
+The class 'VariablePlace' has no attributes.
+The class 'SPL::PushStat' has no attributes.
+The class 'SPL::Event' has the following attributes: 'eventId' of type str.
+The class 'SPL::Response' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'SPL::SequenceType' has the following attributes: 'type' of type str; 'modifier' of type str; 'size' of type int.
+The class 'SPL::RequestURIExp' has no attributes.
+The class 'ErrorResponse' has no attributes.
+The class 'VariableDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'SPL::NamedBranch' has the following attributes: 'name' of type str.
+The class 'SPL::RedirectionErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'SPL::ReturnStat' has no attributes.
+The class 'SPL::SetStat' has no attributes.
+The class 'SPL::IfStat' has no attributes.
+The class 'SPL::Registration' has no attributes.
+The class 'SPL::VariablePlace' has no attributes.
+The class 'SPL::PopExp' has no attributes.
+The class 'SPL::BooleanConstant' has the following attributes: 'value' of type bool.
+The class 'Response' has no attributes.
+The class 'SPL::SelectCase' has no attributes.
+The class 'SelectMember' has no attributes.
+The class 'MessageField' has no attributes.
+The class 'SPL::PropertyCallPlace' has the following attributes: 'propName' of type str.
+The class 'SPL::FunctionCall' has no attributes.
+The class 'SPL::Session' has no attributes.
+The class 'SPL::SIPMethodName' has the following attributes: 'name' of type str.
+The class 'SPL::Dialog' has no attributes.
+The class 'SPL::ForeachStat' has the following attributes: 'iteratorName' of type str.
+The class 'SPL::Method' has the following attributes: 'direction' of type str.
+The class 'SPL::Place' has no attributes.
+The class 'SPL::Declaration' has the following attributes: 'name' of type str.
+The class 'SPL::VariableDeclaration' has no attributes.
+The class 'SPL::IntegerConstant' has the following attributes: 'value' of type int.
+The class 'SPL::BreakStat' has no attributes.
+The class 'SPL::StructureDeclaration' has no attributes.
+The class 'SPL::Variable' has no attributes.
+The class 'Session' has no attributes.
+The class 'SPL::ReasonExp' has no attributes.
+The class 'SPL::SelectStat' has no attributes.
+The class 'SPL::Expression' has no attributes.
+The class 'SPL::SimpleType' has the following attributes: 'type' of type str.
+The class 'SPL::GlobalErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'TypeExpression' has no attributes.
+The class 'SPL::SequenceConstant' has no attributes.
+The class 'SPL::BODYExp' has no attributes.
+The class 'SPL::SelectMember' has no attributes.
+The class 'Statement' has no attributes.
+The class 'SPL::DefaultBranch' has no attributes.
+The enumeration 'RedirectionErrorKind' has the following literals: 'MOVED_PERMANENTLY', 'MOVED_TEMPORARILY', 'USE_PROXY', 'MULTIPLE_CHOICES', 'ALTERNATIVE_SERVICE'.
+The enumeration 'ControlMethod' has the following literals: 'deploy', 'undeploy', 'unregister', 'unsubscribe', 'uninvite'.
+The enumeration 'GlobalErrorKind' has the following literals: 'DOES_NOT_EXIST_ANYWHERE', 'BUSY_EVERYWHERE', 'DECLINE', 'NOT_ACCEPTABLE'.
+The enumeration 'ServerErrorKind' has the following literals: 'BAD_GATEWAY', 'SERVER_INTERNAL_ERROR', 'VERSION_NOT_SUPPORTED', 'SERVER_TIMEOUT', 'NOT_IMPLEMENTED', 'SERVICE_UNAVAILABLE', 'MESSAGE_TOO_LARGE'.
+The enumeration 'SIPMethod' has the following literals: 'BYE', 'OPTIONS', 'INVITE', 'REINVITE', 'NOTIFY', 'CANCEL', 'REACK', 'RESUBSCRIBE', 'REREGISTER', 'ACK', 'SUBSCRIBE', 'REGISTER'.
+The enumeration 'SuccessKind' has the following literals: 'OK', 'ACCEPTED'.
+The enumeration 'SIPHeader' has the following literals: 'FROM', 'SUBSCRIPTION_STATE', 'TO', 'VIA', 'CONTACT', 'CSEQ', 'EVENT', 'CALL_ID', 'MAX_FORWARDS'.
+The enumeration 'Direction' has the following literals: 'inout', 'in_', 'out'.
+The enumeration 'ClientErrorKind' has the following literals: 'REQUEST_TIMEOUT', 'BAD_EXTENSION', 'PROXY_AUTHENTICATION_REQUIRED', 'FORBIDDEN', 'INTERVAL_TOO_BRIEF', 'EXTENSION_REQUIRED', 'CALL_OR_TRANSACTION_DOES_NOT_EXIST', 'REQUEST_PENDING', 'AMBIGUOUS', 'BAD_REQUEST', 'NOT_ACCEPTABLE', 'UNSUPPORTED_URI_SCHEME', 'TOO_MANY_HOPS', 'LOOP_DETECTED', 'UNDECIPHERABLE', 'NOT_FOUND', 'NOT_ACCEPTABLE_HERE', 'REQUEST_TERMINATED', 'PAYMENT_REQUIRED', 'TEMPORARILY_UNAVAILABLE', 'REQUESTURI_TOO_LONG', 'BUSY_HERE', 'ADDRESS_INCOMPLETE', 'GONE', 'UNAUTHORIZED', 'METHOD_NOT_ALLOWED', 'UNSUPPORTED_MEDIA_TYPE', 'REQUEST_ENTITY_TOO_LARGE'.
+The enumeration 'FunctionLocation' has the following literals: 'remote', 'local'.
+The enumeration 'PrimitiveType' has the following literals: 'bool', 'string', 'time', 'void', 'response', 'int', 'uri', 'request'.
+The enumeration 'Modifier' has the following literals: 'LIFO', 'FIFO'.
+'SPL::Response' is a specialization of 'LocatedElement'.
+'SPL::Registration' is a specialization of 'Session'.
+'SPL::PopExp' is a specialization of 'Expression'.
+'SPL::Argument' is a specialization of 'VariableDeclaration'.
+'SPL::RedirectionErrorResponse' is a specialization of 'ErrorResponse'.
+'SPL::Statement' is a specialization of 'LocatedElement'.
+'SPL::Service' is a specialization of 'LocatedElement'.
+'SPL::StructureProperty' is a specialization of 'LocatedElement'.
+'SPL::SequenceConstant' is a specialization of 'Constant'.
+'SPL::SelectStat' is a specialization of 'Statement'.
+'SPL::IfStat' is a specialization of 'Statement'.
+'SPL::StructureDeclaration' is a specialization of 'Declaration'.
+'SPL::WithExp' is a specialization of 'Expression'.
+'SPL::OperatorExp' is a specialization of 'Expression'.
+'SPL::SIPMethodName' is a specialization of 'MethodName'.
+'SPL::SIPHeaderPlace' is a specialization of 'Place'.
+'SPL::HeadedMessageField' is a specialization of 'MessageField'.
+'SPL::FunctionCallExp' is a specialization of 'Expression'.
+'SPL::NamedBranch' is a specialization of 'Branch'.
+'SPL::ForwardExp' is a specialization of 'Expression'.
+'SPL::CompoundStat' is a specialization of 'Statement'.
+'SPL::MethodName' is a specialization of 'LocatedElement'.
+'SPL::DeclarationStat' is a specialization of 'Statement'.
+'SPL::WhenHeader' is a specialization of 'VariableDeclaration'.
+'SPL::FunctionDeclaration' is a specialization of 'Declaration'.
+'SPL::VariableDeclaration' is a specialization of 'Declaration'.
+'SPL::BlockExp' is a specialization of 'Expression'.
+'SPL::RequestURIExp' is a specialization of 'Expression'.
+'SPL::Program' is a specialization of 'LocatedElement'.
+'SPL::Expression' is a specialization of 'LocatedElement'.
+'SPL::VariablePlace' is a specialization of 'Place'.
+'SPL::ClientErrorResponse' is a specialization of 'ErrorResponse'.
+'SPL::SetStat' is a specialization of 'Statement'.
+'SPL::Place' is a specialization of 'Expression'.
+'SPL::Dialog' is a specialization of 'Session'.
+'SPL::Declaration' is a specialization of 'LocatedElement'.
+'SPL::StringConstant' is a specialization of 'Constant'.
+'SPL::Session' is a specialization of 'LocatedElement'.
+'SPL::RemoteFunctionDeclaration' is a specialization of 'FunctionDeclaration'.
+'SPL::PushStat' is a specialization of 'Statement'.
+'SPL::SelectMember' is a specialization of 'LocatedElement'.
+'SPL::Method' is a specialization of 'Session'.
+'SPL::SequenceType' is a specialization of 'TypeExpression'.
+'SPL::SelectCase' is a specialization of 'SelectMember'.
+'SPL::DefinedType' is a specialization of 'TypeExpression'.
+'SPL::LocalFunctionDeclaration' is a specialization of 'FunctionDeclaration'.
+'SPL::IntegerConstant' is a specialization of 'Constant'.
+'SPL::PropertyCallPlace' is a specialization of 'VariablePlace'.
+'SPL::ControlMethodName' is a specialization of 'MethodName'.
+'SPL::MessageField' is a specialization of 'LocatedElement'.
+'SPL::GlobalErrorResponse' is a specialization of 'ErrorResponse'.
+'SPL::BODYExp' is a specialization of 'Expression'.
+'SPL::ReturnStat' is a specialization of 'Statement'.
+'SPL::WhenStat' is a specialization of 'Statement'.
+'SPL::ResponseConstant' is a specialization of 'Constant'.
+'SPL::ErrorResponse' is a specialization of 'Response'.
+'SPL::ConstantExp' is a specialization of 'Expression'.
+'SPL::DefaultBranch' is a specialization of 'Branch'.
+'SPL::SimpleType' is a specialization of 'TypeExpression'.
+'SPL::Branch' is a specialization of 'LocatedElement'.
+'SPL::BooleanConstant' is a specialization of 'Constant'.
+'SPL::URIConstant' is a specialization of 'Constant'.
+'SPL::Variable' is a specialization of 'VariablePlace'.
+'SPL::SuccessResponse' is a specialization of 'Response'.
+'SPL::SelectDefault' is a specialization of 'SelectMember'.
+'SPL::ServerErrorResponse' is a specialization of 'ErrorResponse'.
+'SPL::Event' is a specialization of 'Session'.
+'SPL::ForeachStat' is a specialization of 'Statement'.
+'SPL::ReasonMessageField' is a specialization of 'MessageField'.
+'SPL::Constant' is a specialization of 'LocatedElement'.
+'SPL::FunctionCallStat' is a specialization of 'Statement'.
+'SPL::ReasonExp' is a specialization of 'Expression'.
+'SPL::ContinueStat' is a specialization of 'Statement'.
+'SPL::FunctionCall' is a specialization of 'LocatedElement'.
+'SPL::BreakStat' is a specialization of 'Statement'.
+'SPL::TypeExpression' is a specialization of 'LocatedElement'.
+'SPL::Statement' (role 'SPL_Statement102', cardinality 0..*) is associated with 'SPL::SelectMember' (role 'SPL_SelectMember', cardinality 0..*).
+'SPL::WhenStat' (role 'SPL_WhenStat79', cardinality 0..*) is associated with 'SPL::Statement' (role 'SPL_Statement80', cardinality 0..*).
+'SPL::Program' (role 'SPL_Program', cardinality 0..*) is associated with 'SPL::Service' (role 'SPL_Service', cardinality 0..*).
+'SPL::Constant' (role 'SPL_Constant', cardinality 0..*) is associated with 'SPL::WhenHeader' (role 'SPL_WhenHeader100', cardinality 0..*).
+'SPL::ConstantExp' (role 'SPL_ConstantExp', cardinality 0..*) is associated with 'SPL::Constant' (role 'SPL_Constant107', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement85', cardinality 0..*) is associated with 'SPL::ForeachStat' (role 'SPL_ForeachStat84', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement71', cardinality 0..*) is associated with 'SPL::IfStat' (role 'SPL_IfStat70', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression82', cardinality 0..*) is associated with 'SPL::ForeachStat' (role 'SPL_ForeachStat', cardinality 0..*).
+'SPL::TypeExpression' (role 'SPL_TypeExpression', cardinality 0..*) is associated with 'SPL::Method' (role 'SPL_Method20', cardinality 0..*).
+'SPL::PopExp' (role 'SPL_PopExp', cardinality 0..*) is associated with 'SPL::Place' (role 'SPL_Place122', cardinality 0..*).
+'SPL::WhenStat' (role 'SPL_WhenStat', cardinality 0..*) is associated with 'SPL::Variable' (role 'SPL_Variable', cardinality 0..*).
+'SPL::MethodName' (role 'SPL_MethodName', cardinality 0..*) is associated with 'SPL::Method' (role 'SPL_Method22', cardinality 0..*).
+'SPL::SelectCase' (role 'SPL_SelectCase', cardinality 0..*) is associated with 'SPL::SelectStat' (role 'SPL_SelectStat89', cardinality 0..*).
+'SPL::SelectStat' (role 'SPL_SelectStat', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression87', cardinality 0..*).
+'SPL::ReturnStat' (role 'SPL_ReturnStat', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression61', cardinality 0..*).
+'SPL::Registration' (role 'SPL_Registration8', cardinality 0..*) is associated with 'SPL::Session' (role 'SPL_Session9', cardinality 0..*).
+'SPL::WhenHeader' (role 'SPL_WhenHeader', cardinality 0..*) is associated with 'SPL::WhenStat' (role 'SPL_WhenStat74', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression112', cardinality 0..*) is associated with 'SPL::OperatorExp' (role 'SPL_OperatorExp111', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement68', cardinality 0..*) is associated with 'SPL::IfStat' (role 'SPL_IfStat67', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression120', cardinality 0..*) is associated with 'SPL::BlockExp' (role 'SPL_BlockExp', cardinality 0..*).
+'SPL::Method' (role 'SPL_Method', cardinality 0..*) is associated with 'SPL::Dialog' (role 'SPL_Dialog13', cardinality 0..*).
+'SPL::Branch' (role 'SPL_Branch', cardinality 0..*) is associated with 'SPL::Method' (role 'SPL_Method28', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression109', cardinality 0..*) is associated with 'SPL::OperatorExp' (role 'SPL_OperatorExp', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement77', cardinality 0..*) is associated with 'SPL::WhenStat' (role 'SPL_WhenStat76', cardinality 0..*).
+'SPL::StructureProperty' (role 'SPL_StructureProperty', cardinality 0..*) is associated with 'SPL::TypeExpression' (role 'SPL_TypeExpression46', cardinality 0..*).
+'SPL::FunctionCall' (role 'SPL_FunctionCall', cardinality 0..*) is associated with 'SPL::FunctionDeclaration' (role 'SPL_FunctionDeclaration48', cardinality 0..*).
+'SPL::FunctionCall' (role 'SPL_FunctionCall50', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression51', cardinality 0..*).
+'SPL::FunctionDeclaration' (role 'SPL_FunctionDeclaration', cardinality 0..*) is associated with 'SPL::TypeExpression' (role 'SPL_TypeExpression37', cardinality 0..*).
+'SPL::Variable' (role 'SPL_Variable127', cardinality 0..*) is associated with 'SPL::Declaration' (role 'SPL_Declaration128', cardinality 0..*).
+'SPL::Declaration' (role 'SPL_Declaration11', cardinality 0..*) is associated with 'SPL::Dialog' (role 'SPL_Dialog', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression65', cardinality 0..*) is associated with 'SPL::IfStat' (role 'SPL_IfStat', cardinality 0..*).
+'SPL::FunctionDeclaration' (role 'SPL_FunctionDeclaration39', cardinality 0..*) is associated with 'SPL::Argument' (role 'SPL_Argument40', cardinality 0..*).
+'SPL::WithExp' (role 'SPL_WithExp', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression116', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression114', cardinality 0..*) is associated with 'SPL::ForwardExp' (role 'SPL_ForwardExp', cardinality 0..*).
+'SPL::WithExp' (role 'SPL_WithExp118', cardinality 0..*) is associated with 'SPL::MessageField' (role 'SPL_MessageField', cardinality 0..*).
+'SPL::PropertyCallPlace' (role 'SPL_PropertyCallPlace', cardinality 0..*) is associated with 'SPL::VariablePlace' (role 'SPL_VariablePlace', cardinality 0..*).
+'SPL::Place' (role 'SPL_Place95', cardinality 0..*) is associated with 'SPL::PushStat' (role 'SPL_PushStat', cardinality 0..*).
+'SPL::Declaration' (role 'SPL_Declaration15', cardinality 0..*) is associated with 'SPL::Event' (role 'SPL_Event', cardinality 0..*).
+'SPL::MessageField' (role 'SPL_MessageField130', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression131', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement', cardinality 0..*) is associated with 'SPL::Method' (role 'SPL_Method26', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement42', cardinality 0..*) is associated with 'SPL::LocalFunctionDeclaration' (role 'SPL_LocalFunctionDeclaration', cardinality 0..*).
+'SPL::FunctionCall' (role 'SPL_FunctionCall93', cardinality 0..*) is associated with 'SPL::FunctionCallStat' (role 'SPL_FunctionCallStat', cardinality 0..*).
+'SPL::PushStat' (role 'SPL_PushStat97', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression98', cardinality 0..*).
+'SPL::Declaration' (role 'SPL_Declaration59', cardinality 0..*) is associated with 'SPL::DeclarationStat' (role 'SPL_DeclarationStat', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement53', cardinality 0..*) is associated with 'SPL::CompoundStat' (role 'SPL_CompoundStat', cardinality 0..*).
+'SPL::Service' (role 'SPL_Service2', cardinality 0..*) is associated with 'SPL::Declaration' (role 'SPL_Declaration', cardinality 0..*).
+'SPL::SelectStat' (role 'SPL_SelectStat91', cardinality 0..*) is associated with 'SPL::SelectDefault' (role 'SPL_SelectDefault', cardinality 0..*).
+'SPL::ResponseConstant' (role 'SPL_ResponseConstant', cardinality 0..*) is associated with 'SPL::Response' (role 'SPL_Response', cardinality 0..*).
+'SPL::Method' (role 'SPL_Method18', cardinality 0..*) is associated with 'SPL::Event' (role 'SPL_Event17', cardinality 0..*).
+'SPL::Place' (role 'SPL_Place', cardinality 0..*) is associated with 'SPL::SetStat' (role 'SPL_SetStat', cardinality 0..*).
+'SPL::Statement' (role 'SPL_Statement31', cardinality 0..*) is associated with 'SPL::Branch' (role 'SPL_Branch30', cardinality 0..*).
+'SPL::TypeExpression' (role 'SPL_TypeExpression33', cardinality 0..*) is associated with 'SPL::VariableDeclaration' (role 'SPL_VariableDeclaration', cardinality 0..*).
+'SPL::VariableDeclaration' (role 'SPL_VariableDeclaration35', cardinality 0..*) is associated with 'SPL::Expression' (role 'SPL_Expression', cardinality 0..*).
+'SPL::Constant' (role 'SPL_Constant105', cardinality 0..*) is associated with 'SPL::SelectCase' (role 'SPL_SelectCase104', cardinality 0..*).
+'SPL::Constant' (role 'SPL_Constant133', cardinality 0..*) is associated with 'SPL::SequenceConstant' (role 'SPL_SequenceConstant', cardinality 0..*).
+'SPL::NamedBranch' (role 'SPL_NamedBranch', cardinality 0..*) is associated with 'SPL::ReturnStat' (role 'SPL_ReturnStat63', cardinality 0..*).
+'SPL::Registration' (role 'SPL_Registration', cardinality 0..*) is associated with 'SPL::Declaration' (role 'SPL_Declaration6', cardinality 0..*).
+'SPL::Argument' (role 'SPL_Argument44', cardinality 0..*) is associated with 'SPL::StructureDeclaration' (role 'SPL_StructureDeclaration', cardinality 0..*).
+'SPL::Method' (role 'SPL_Method24', cardinality 0..*) is associated with 'SPL::Argument' (role 'SPL_Argument', cardinality 0..*).
+'SPL::FunctionCall' (role 'SPL_FunctionCall124', cardinality 0..*) is associated with 'SPL::FunctionCallExp' (role 'SPL_FunctionCallExp', cardinality 0..*).
+'SPL::Service' (role 'SPL_Service4', cardinality 0..*) is associated with 'SPL::Session' (role 'SPL_Session', cardinality 0..*).
+'SPL::Expression' (role 'SPL_Expression57', cardinality 0..*) is associated with 'SPL::SetStat' (role 'SPL_SetStat56', cardinality 0..*).

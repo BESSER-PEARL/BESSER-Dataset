@@ -1,0 +1,86 @@
+The model has 36 class(es).
+The class 'NamedElement' has no attributes.
+The class 'types::Operation' has the following attributes: 'variadic' of type bool.
+The class 'GenericElement' has no attributes.
+The class 'types::Package' has no attributes.
+The class 'types::Expression' has no attributes.
+The class 'types::AnnotatableElement' has no attributes.
+The class 'ComplexType' has no attributes.
+The class 'types::Domain' has the following attributes: 'domainID' of type str.
+The class 'types::TypeSpecifier' has no attributes.
+The class 'DomainElement' has no attributes.
+The class 'types::AnnotationType' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'types::Declaration' has the following attributes: 'id' of type str; 'static' of type bool.
+The class 'types::Property' has the following attributes: 'readonly' of type bool; 'const' of type bool.
+The class 'types::GenericElement' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'types::TypeAlias' has no attributes.
+The class 'MetaComposite' has no attributes.
+The class 'types::Type' has the following attributes: 'visible' of type bool; 'abstract' of type bool.
+The class 'types::EObject' has no attributes.
+The class 'types::MetaComposite' has no attributes.
+The class 'types::Enumerator' has the following attributes: 'literalValue' of type int.
+The class 'AnnotatableElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'TypedDeclaration' has no attributes.
+The class 'types::EnumerationType' has no attributes.
+The class 'types::Annotation' has no attributes.
+The class 'TypeSpecifier' has no attributes.
+The class 'types::ArrayTypeSpecifier' has the following attributes: 'size' of type int.
+The class 'types::ComplexType' has no attributes.
+The class 'types::Parameter' has the following attributes: 'varArgs' of type bool; 'optional' of type bool.
+The class 'types::PrimitiveType' has no attributes.
+The class 'types::TypedElement' has no attributes.
+The class 'types::TypedDeclaration' has no attributes.
+The class 'types::TypeParameter' has no attributes.
+The class 'types::Event' has the following attributes: 'direction' of type str.
+The enumeration 'Direction' has the following literals: 'OUT', 'IN', 'LOCAL'.
+'types::PrimitiveType' is a specialization of 'Type'.
+'types::Event' is a specialization of 'TypedDeclaration'.
+'types::Operation' is a specialization of 'TypedDeclaration'.
+'types::ComplexType' is a specialization of 'GenericElement'.
+'types::ComplexType' is a specialization of 'Type'.
+'types::Declaration' is a specialization of 'MetaComposite'.
+'types::EnumerationType' is a specialization of 'ComplexType'.
+'types::Declaration' is a specialization of 'NamedElement'.
+'types::Parameter' is a specialization of 'TypedElement'.
+'types::Type' is a specialization of 'Declaration'.
+'types::Parameter' is a specialization of 'AnnotatableElement'.
+'types::GenericElement' is a specialization of 'NamedElement'.
+'types::Parameter' is a specialization of 'NamedElement'.
+'types::Property' is a specialization of 'TypedDeclaration'.
+'types::TypeAlias' is a specialization of 'TypedDeclaration'.
+'types::TypedDeclaration' is a specialization of 'TypedElement'.
+'types::ArrayTypeSpecifier' is a specialization of 'TypeSpecifier'.
+'types::AnnotationType' is a specialization of 'Type'.
+'types::Operation' is a specialization of 'GenericElement'.
+'types::TypedDeclaration' is a specialization of 'Declaration'.
+'types::Package' is a specialization of 'DomainElement'.
+'types::Enumerator' is a specialization of 'TypedDeclaration'.
+'types::Package' is a specialization of 'Declaration'.
+'types::TypeAlias' is a specialization of 'Type'.
+'types::Declaration' is a specialization of 'AnnotatableElement'.
+'types::TypeParameter' is a specialization of 'Type'.
+'types::Type' (role 'types_Type15', cardinality 0..*) is associated with 'types::TypeSpecifier' (role 'types_TypeSpecifier14', cardinality 0..*).
+'types::AnnotationType' (role 'types_AnnotationType37', cardinality 0..*) is associated with 'types::Property' (role 'types_Property38', cardinality 0..*).
+'types::Parameter' (role 'parameters', cardinality 0..*) is associated with 'types::Operation' (role 'Operation', cardinality 0..*).
+'types::Expression' (role 'types_Expression', cardinality 0..*) is associated with 'types::Property' (role 'types_Property', cardinality 0..*).
+'types::TypedElement' (role 'types_TypedElement11', cardinality 0..*) is associated with 'types::TypeSpecifier' (role 'types_TypeSpecifier12', cardinality 0..*).
+'types::TypedElement' (role 'types_TypedElement', cardinality 0..*) is associated with 'types::Type' (role 'types_Type9', cardinality 0..*).
+'types::TypeSpecifier' (role 'types_TypeSpecifier16', cardinality 0..*) is associated with 'types::TypeSpecifier' (role 'types_TypeSpecifier18', cardinality 0..*).
+'types::EnumerationType' (role 'owningEnumeration', cardinality 0..*) is associated with 'types::Enumerator' (role 'Enumerator', cardinality 0..*).
+'types::TypeParameter' (role 'types_TypeParameter26', cardinality 0..*) is associated with 'types::GenericElement' (role 'types_GenericElement', cardinality 0..*).
+'types::Type' (role 'types_Type24', cardinality 0..*) is associated with 'types::TypeParameter' (role 'types_TypeParameter', cardinality 0..*).
+'types::Annotation' (role 'types_Annotation32', cardinality 0..*) is associated with 'types::AnnotatableElement' (role 'types_AnnotatableElement', cardinality 0..*).
+'types::Expression' (role 'types_Expression30', cardinality 0..*) is associated with 'types::Annotation' (role 'types_Annotation29', cardinality 0..*).
+'types::Package' (role 'types_Package1', cardinality 0..*) is associated with 'types::Package' (role 'types_Package3', cardinality 0..*).
+'types::Declaration' (role 'types_Declaration42', cardinality 0..*) is associated with 'types::MetaComposite' (role 'types_MetaComposite', cardinality 0..*).
+'types::AnnotationType' (role 'types_AnnotationType', cardinality 0..*) is associated with 'types::Annotation' (role 'types_Annotation', cardinality 0..*).
+'types::EObject' (role 'types_EObject', cardinality 0..*) is associated with 'types::AnnotationType' (role 'types_AnnotationType40', cardinality 0..*).
+'types::Declaration' (role 'types_Declaration21', cardinality 0..*) is associated with 'types::ComplexType' (role 'types_ComplexType', cardinality 0..*).
+'types::Type' (role 'types_Type', cardinality 0..*) is associated with 'types::TypeSpecifier' (role 'types_TypeSpecifier', cardinality 0..*).
+'types::EnumerationType' (role 'EnumerationType', cardinality 0..*) is associated with 'types::Enumerator' (role 'enumerator', cardinality 0..*).
+'types::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'types::Operation' (role 'owningOperation', cardinality 0..*).
+'types::AnnotatableElement' (role 'types_AnnotatableElement33', cardinality 0..*) is associated with 'types::AnnotatableElement' (role 'types_AnnotatableElement35', cardinality 0..*).
+'types::Declaration' (role 'types_Declaration', cardinality 0..*) is associated with 'types::Package' (role 'types_Package', cardinality 0..*).

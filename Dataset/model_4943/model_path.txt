@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/raihle/Webshop-Builder-3k/Webshop_Builder_3k_Model.ecore

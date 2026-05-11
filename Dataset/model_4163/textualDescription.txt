@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'resource::Model' has no attributes.
+The class 'resource::Greeting' has the following attributes: 'name' of type str.
+'resource::Greeting' (role 'resource_Greeting', cardinality 0..*) is associated with 'resource::Model' (role 'resource_Model', cardinality 0..*).

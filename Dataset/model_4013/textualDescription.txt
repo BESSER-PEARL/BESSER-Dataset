@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'Data::Class' has the following attributes: 'Name' of type str.
+The class 'Data::Attribut' has the following attributes: 'Type' of type str; 'Visibility' of type str; 'Static' of type bool; 'Name' of type str.
+The class 'Data::Model' has the following attributes: 'Name' of type str.
+'Data::Class' (role 'Data_Class2', cardinality 0..*) is associated with 'Data::Model' (role 'Data_Model', cardinality 0..*).
+'Data::Attribut' (role 'Data_Attribut', cardinality 0..*) is associated with 'Data::Class' (role 'Data_Class', cardinality 0..*).

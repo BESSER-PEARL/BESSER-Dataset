@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Service::Tool' has the following attributes: 'name' of type str.
+The class 'Service::JavaService' has the following attributes: 'option' of type str; 'name' of type str.
+'Service::JavaService' (role 'Service_JavaService', cardinality 0..*) is associated with 'Service::Tool' (role 'Service_Tool', cardinality 0..*).

@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'arduino::Setup' has the following attributes: 'name' of type str.
+The class 'Instruction' has no attributes.
+The class 'arduino::Project' has the following attributes: 'name' of type str.
+The class 'arduino::Loop' has the following attributes: 'name' of type str.
+The class 'arduino::Pin' has the following attributes: 'Direction' of type str; 'name' of type str.
+The class 'arduino::Read' has the following attributes: 'returnValue' of type str; 'name' of type str.
+The class 'arduino::Sketch' has the following attributes: 'name' of type str.
+The class 'arduino::Instruction' has no attributes.
+The class 'Function' has no attributes.
+The class 'arduino::Write' has the following attributes: 'name' of type str.
+The class 'Pin' has no attributes.
+The class 'arduino::Function' has no attributes.
+The class 'arduino::DigitalPin' has the following attributes: 'number' of type str.
+The enumeration 'Direction' has the following literals: 'OUTPUT', 'INPUT'.
+The enumeration 'DigitalPinNumber' has the following literals: 'D2', 'D0', 'D1', 'D4', 'D5'.
+'arduino::Write' is a specialization of 'Function'.
+'arduino::DigitalPin' is a specialization of 'Pin'.
+'arduino::Function' is a specialization of 'Instruction'.
+'arduino::Read' is a specialization of 'Function'.
+'arduino::Instruction' (role 'arduino_Instruction9', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction7', cardinality 0..*).
+'arduino::Instruction' (role 'arduino_Instruction', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch6', cardinality 0..*).
+'arduino::DigitalPin' (role 'arduino_DigitalPin15', cardinality 0..*) is associated with 'arduino::Setup' (role 'arduino_Setup14', cardinality 0..*).
+'arduino::Loop' (role 'arduino_Loop17', cardinality 0..*) is associated with 'arduino::Instruction' (role 'arduino_Instruction18', cardinality 0..*).
+'arduino::Setup' (role 'arduino_Setup', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch2', cardinality 0..*).
+'arduino::Loop' (role 'arduino_Loop', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch4', cardinality 0..*).
+'arduino::DigitalPin' (role 'arduino_DigitalPin', cardinality 0..*) is associated with 'arduino::Write' (role 'arduino_Write', cardinality 0..*).
+'arduino::Read' (role 'arduino_Read', cardinality 0..*) is associated with 'arduino::DigitalPin' (role 'arduino_DigitalPin12', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*) is associated with 'arduino::Project' (role 'arduino_Project', cardinality 0..*).

@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'adl200::Required' has no attributes.
+The class 'adl200::Provided' has no attributes.
+The class 'adl200::Component' has the following attributes: 'name' of type str.
+The class 'adl200::Interface' has the following attributes: 'name' of type str; 'signature' of type str.
+The class 'adl200::Content' has the following attributes: 'expression' of type str; 'language' of type str.
+The class 'Interface' has no attributes.
+'adl200::Required' is a specialization of 'Interface'.
+'adl200::Provided' is a specialization of 'Interface'.
+'adl200::Content' (role 'adl200_Content9', cardinality 0..*) is associated with 'adl200::Component' (role 'adl200_Component10', cardinality 0..*).
+'adl200::Component' (role 'adl200_Component2', cardinality 0..*) is associated with 'adl200::Required' (role 'adl200_Required', cardinality 0..*).
+'adl200::Component' (role 'adl200_Component', cardinality 0..*) is associated with 'adl200::Content' (role 'adl200_Content', cardinality 0..*).
+'adl200::Provided' (role 'adl200_Provided', cardinality 0..*) is associated with 'adl200::Component' (role 'adl200_Component4', cardinality 0..*).
+'adl200::Required' (role 'adl200_Required13', cardinality 0..*) is associated with 'adl200::Provided' (role 'adl200_Provided12', cardinality 0..*).
+'adl200::Component' (role 'adl200_Component5', cardinality 0..*) is associated with 'adl200::Component' (role 'adl200_Component7', cardinality 0..*).

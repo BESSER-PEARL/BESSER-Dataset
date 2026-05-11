@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'a::A' has the following attributes: 'names' of type str; 'tob' of type str.
+The class 'a::B' has the following attributes: 'name' of type str.
+The class 'a::Root' has the following attributes: 'visible' of type bool.
+'a::Root' (role 'a_Root5', cardinality 0..*) is associated with 'a::B' (role 'a_B', cardinality 0..*).
+'a::Root' (role 'a_Root', cardinality 0..*) is associated with 'a::A' (role 'a_A', cardinality 0..*).
+'a::A' (role 'a_A3', cardinality 0..*) is associated with 'a::Root' (role 'a_Root2', cardinality 0..*).

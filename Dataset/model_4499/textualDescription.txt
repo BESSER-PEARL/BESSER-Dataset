@@ -1,0 +1,145 @@
+The model has 53 class(es).
+The class 'PolicyEngine::Floor' has no attributes.
+The class 'PolicyEngine::NamedElement' has the following attributes: 'name' of type str.
+The class 'Sensor' has no attributes.
+The class 'PolicyEngine::TemperatureSensor' has no attributes.
+The class 'PolicyEngine::BinaryOps' has the following attributes: 'operator' of type str.
+The class 'PolicyEngine::InfraredLightSensor' has no attributes.
+The class 'PolicyEngine::HasIntegerValue' has the following attributes: 'valueState' of type int.
+The class 'PolicyEngine::LightSensor' has no attributes.
+The class 'PolicyEngine::LightSwitchActuator' has no attributes.
+The class 'PolicyEngine::UnaryOp' has the following attributes: 'operator' of type str.
+The class 'PolicyEngine::ActuatorComponent' has no attributes.
+The class 'PolicyEngine::Constant' has no attributes.
+The class 'Actuator' has no attributes.
+The class 'PolicyEngine::RoomUsage' has no attributes.
+The class 'PolicyEngine::AccessControl' has no attributes.
+The class 'Expression' has no attributes.
+The class 'PolicyEngine::Expression' has no attributes.
+The class 'PolicyEngine::TimeExpression' has the following attributes: 'TimeBound' of type int.
+The class 'PolicyEngine::MotionSensor' has no attributes.
+The class 'PolicyEngine::WindowActuator' has no attributes.
+The class 'HasActuators' has no attributes.
+The class 'PolicyEngine::SmokeSensor' has no attributes.
+The class 'PolicyEngine::PressureSensor' has no attributes.
+The class 'PolicyEngine::MeetingScheduleSystem' has no attributes.
+The class 'PolicyEngine::Model' has no attributes.
+The class 'PolicyEngine::Building' has no attributes.
+The class 'PolicyEngine::RoomActuators' has no attributes.
+The class 'PolicyEngine::Schedule' has the following attributes: 'weekdays' of type str.
+The class 'PolicyEngine::HumiditySensor' has no attributes.
+The class 'PolicyEngine::CO2Sensor' has no attributes.
+The class 'PolicyEngine::If' has no attributes.
+The class 'PolicyEngine::Policy' has no attributes.
+The class 'PolicyEngine::ResetExpression' has no attributes.
+The class 'PolicyEngine::TouchSensor' has no attributes.
+The class 'PolicyEngine::Sensor' has no attributes.
+The class 'PolicyEngine::DoorActuator' has no attributes.
+The class 'HasSensors' has no attributes.
+The class 'PolicyEngine::HumidifierActuator' has no attributes.
+The class 'PolicyEngine::Room' has no attributes.
+The class 'PolicyEngine::SensorComponent' has no attributes.
+The class 'PolicyEngine::AudioAlarmActuator' has no attributes.
+The class 'PolicyEngine::CTS' has no attributes.
+The class 'PolicyEngine::Timer' has no attributes.
+The class 'PolicyEngine::CalendarSystem' has no attributes.
+The class 'PolicyEngine::RadiatorActuator' has no attributes.
+The class 'PolicyEngine::Time' has the following attributes: 'minutes' of type str; 'hours' of type str.
+The class 'PolicyEngine::State' has the following attributes: 'valueState' of type bool.
+The class 'PolicyEngine::HasSensors' has no attributes.
+The class 'PolicyEngine::Actuator' has no attributes.
+The class 'HasIntegerValue' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'PolicyEngine::HasActuators' has no attributes.
+The class 'PolicyEngine::Id' has no attributes.
+The enumeration 'Weekdays' has the following literals: 'MONDAY', 'WEDNESDAY', 'SATURDAY', 'TUESDAY', 'THURSDAY', 'FRIDAY', 'SUNDAY'.
+The enumeration 'CompOps' has the following literals: 'LESSOREQUAL', 'LESS', 'GREATER', 'NOTEQUAL', 'EQUAL', 'GREATEROREQUAL'.
+'PolicyEngine::PressureSensor' is a specialization of 'Sensor'.
+'PolicyEngine::TouchSensor' is a specialization of 'Sensor'.
+'PolicyEngine::TemperatureSensor' is a specialization of 'Sensor'.
+'PolicyEngine::DoorActuator' is a specialization of 'Actuator'.
+'PolicyEngine::Id' is a specialization of 'NamedElement'.
+'PolicyEngine::LightSwitchActuator' is a specialization of 'Actuator'.
+'PolicyEngine::Actuator' is a specialization of 'HasIntegerValue'.
+'PolicyEngine::Floor' is a specialization of 'NamedElement'.
+'PolicyEngine::UnaryOp' is a specialization of 'Expression'.
+'PolicyEngine::Building' is a specialization of 'NamedElement'.
+'PolicyEngine::InfraredLightSensor' is a specialization of 'Sensor'.
+'PolicyEngine::AudioAlarmActuator' is a specialization of 'Actuator'.
+'PolicyEngine::Schedule' is a specialization of 'NamedElement'.
+'PolicyEngine::Timer' is a specialization of 'NamedElement'.
+'PolicyEngine::WindowActuator' is a specialization of 'Actuator'.
+'PolicyEngine::Room' is a specialization of 'NamedElement'.
+'PolicyEngine::RadiatorActuator' is a specialization of 'Actuator'.
+'PolicyEngine::SensorComponent' is a specialization of 'HasSensors'.
+'PolicyEngine::SmokeSensor' is a specialization of 'Sensor'.
+'PolicyEngine::Sensor' is a specialization of 'HasIntegerValue'.
+'PolicyEngine::CO2Sensor' is a specialization of 'Sensor'.
+'PolicyEngine::SensorComponent' is a specialization of 'NamedElement'.
+'PolicyEngine::Model' is a specialization of 'NamedElement'.
+'PolicyEngine::RoomActuators' is a specialization of 'Expression'.
+'PolicyEngine::ResetExpression' is a specialization of 'Expression'.
+'PolicyEngine::HumidifierActuator' is a specialization of 'Actuator'.
+'PolicyEngine::Constant' is a specialization of 'Expression'.
+'PolicyEngine::RoomUsage' is a specialization of 'Expression'.
+'PolicyEngine::ActuatorComponent' is a specialization of 'HasActuators'.
+'PolicyEngine::BinaryOps' is a specialization of 'Expression'.
+'PolicyEngine::HumiditySensor' is a specialization of 'Sensor'.
+'PolicyEngine::LightSensor' is a specialization of 'Sensor'.
+'PolicyEngine::State' is a specialization of 'NamedElement'.
+'PolicyEngine::TimeExpression' is a specialization of 'Expression'.
+'PolicyEngine::Id' is a specialization of 'Expression'.
+'PolicyEngine::Policy' is a specialization of 'NamedElement'.
+'PolicyEngine::ActuatorComponent' is a specialization of 'NamedElement'.
+'PolicyEngine::MotionSensor' is a specialization of 'Sensor'.
+'PolicyEngine::Time' (role 'PolicyEngine_Time89', cardinality 0..*) is associated with 'PolicyEngine::Schedule' (role 'PolicyEngine_Schedule88', cardinality 0..*).
+'PolicyEngine::Expression' (role 'PolicyEngine_Expression92', cardinality 0..*) is associated with 'PolicyEngine::If' (role 'PolicyEngine_If91', cardinality 0..*).
+'PolicyEngine::Building' (role 'PolicyEngine_Building10', cardinality 0..*) is associated with 'PolicyEngine::Timer' (role 'PolicyEngine_Timer', cardinality 0..*).
+'PolicyEngine::Actuator' (role 'PolicyEngine_Actuator37', cardinality 0..*) is associated with 'PolicyEngine::HasActuators' (role 'PolicyEngine_HasActuators', cardinality 0..*).
+'PolicyEngine::Schedule' (role 'PolicyEngine_Schedule', cardinality 0..*) is associated with 'PolicyEngine::Model' (role 'PolicyEngine_Model23', cardinality 0..*).
+'PolicyEngine::Expression' (role 'PolicyEngine_Expression115', cardinality 0..*) is associated with 'PolicyEngine::BinaryOps' (role 'PolicyEngine_BinaryOps', cardinality 0..*).
+'PolicyEngine::If' (role 'PolicyEngine_If96', cardinality 0..*) is associated with 'PolicyEngine::If' (role 'PolicyEngine_If98', cardinality 0..*).
+'PolicyEngine::AccessControl' (role 'PolicyEngine_AccessControl29', cardinality 0..*) is associated with 'PolicyEngine::Sensor' (role 'PolicyEngine_Sensor30', cardinality 0..*).
+'PolicyEngine::Timer' (role 'PolicyEngine_Timer21', cardinality 0..*) is associated with 'PolicyEngine::Model' (role 'PolicyEngine_Model20', cardinality 0..*).
+'PolicyEngine::Actuator' (role 'PolicyEngine_Actuator', cardinality 0..*) is associated with 'PolicyEngine::CTS' (role 'PolicyEngine_CTS27', cardinality 0..*).
+'PolicyEngine::Actuator' (role 'PolicyEngine_Actuator110', cardinality 0..*) is associated with 'PolicyEngine::RoomUsage' (role 'PolicyEngine_RoomUsage109', cardinality 0..*).
+'PolicyEngine::Expression' (role 'PolicyEngine_Expression101', cardinality 0..*) is associated with 'PolicyEngine::If' (role 'PolicyEngine_If100', cardinality 0..*).
+'PolicyEngine::SensorComponent' (role 'PolicyEngine_SensorComponent', cardinality 0..*) is associated with 'PolicyEngine::Room' (role 'PolicyEngine_Room39', cardinality 0..*).
+'PolicyEngine::HasSensors' (role 'PolicyEngine_HasSensors', cardinality 0..*) is associated with 'PolicyEngine::Sensor' (role 'PolicyEngine_Sensor35', cardinality 0..*).
+'PolicyEngine::Timer' (role 'PolicyEngine_Timer105', cardinality 0..*) is associated with 'PolicyEngine::ResetExpression' (role 'PolicyEngine_ResetExpression', cardinality 0..*).
+'PolicyEngine::Sensor' (role 'PolicyEngine_Sensor107', cardinality 0..*) is associated with 'PolicyEngine::RoomUsage' (role 'PolicyEngine_RoomUsage', cardinality 0..*).
+'PolicyEngine::CTS' (role 'PolicyEngine_CTS25', cardinality 0..*) is associated with 'PolicyEngine::Sensor' (role 'PolicyEngine_Sensor', cardinality 0..*).
+'PolicyEngine::If' (role 'PolicyEngine_If', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy67', cardinality 0..*).
+'PolicyEngine::If' (role 'PolicyEngine_If94', cardinality 0..*) is associated with 'PolicyEngine::Expression' (role 'PolicyEngine_Expression95', cardinality 0..*).
+'PolicyEngine::Timer' (role 'PolicyEngine_Timer103', cardinality 0..*) is associated with 'PolicyEngine::TimeExpression' (role 'PolicyEngine_TimeExpression', cardinality 0..*).
+'PolicyEngine::Floor' (role 'PolicyEngine_Floor58', cardinality 0..*) is associated with 'PolicyEngine::Timer' (role 'PolicyEngine_Timer59', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room41', cardinality 0..*) is associated with 'PolicyEngine::ActuatorComponent' (role 'PolicyEngine_ActuatorComponent', cardinality 0..*).
+'PolicyEngine::Policy' (role 'PolicyEngine_Policy64', cardinality 0..*) is associated with 'PolicyEngine::Sensor' (role 'PolicyEngine_Sensor65', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room56', cardinality 0..*) is associated with 'PolicyEngine::Floor' (role 'PolicyEngine_Floor55', cardinality 0..*).
+'PolicyEngine::Schedule' (role 'PolicyEngine_Schedule76', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy75', cardinality 0..*).
+'PolicyEngine::Expression' (role 'PolicyEngine_Expression', cardinality 0..*) is associated with 'PolicyEngine::State' (role 'PolicyEngine_State84', cardinality 0..*).
+'PolicyEngine::RoomActuators' (role 'PolicyEngine_RoomActuators124', cardinality 0..*) is associated with 'PolicyEngine::ActuatorComponent' (role 'PolicyEngine_ActuatorComponent125', cardinality 0..*).
+'PolicyEngine::Policy' (role 'PolicyEngine_Policy61', cardinality 0..*) is associated with 'PolicyEngine::Actuator' (role 'PolicyEngine_Actuator62', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room42', cardinality 0..*) is associated with 'PolicyEngine::Room' (role 'PolicyEngine_Room44', cardinality 0..*).
+'PolicyEngine::Policy' (role 'PolicyEngine_Policy69', cardinality 0..*) is associated with 'PolicyEngine::Timer' (role 'PolicyEngine_Timer70', cardinality 0..*).
+'PolicyEngine::RoomUsage' (role 'PolicyEngine_RoomUsage112', cardinality 0..*) is associated with 'PolicyEngine::State' (role 'PolicyEngine_State113', cardinality 0..*).
+'PolicyEngine::Floor' (role 'PolicyEngine_Floor', cardinality 0..*) is associated with 'PolicyEngine::Building' (role 'PolicyEngine_Building8', cardinality 0..*).
+'PolicyEngine::Schedule' (role 'PolicyEngine_Schedule53', cardinality 0..*) is associated with 'PolicyEngine::Room' (role 'PolicyEngine_Room52', cardinality 0..*).
+'PolicyEngine::State' (role 'PolicyEngine_State82', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy81', cardinality 0..*).
+'PolicyEngine::AccessControl' (role 'PolicyEngine_AccessControl32', cardinality 0..*) is associated with 'PolicyEngine::Actuator' (role 'PolicyEngine_Actuator33', cardinality 0..*).
+'PolicyEngine::Building' (role 'PolicyEngine_Building6', cardinality 0..*) is associated with 'PolicyEngine::MeetingScheduleSystem' (role 'PolicyEngine_MeetingScheduleSystem', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room49', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy50', cardinality 0..*).
+'PolicyEngine::Time' (role 'PolicyEngine_Time', cardinality 0..*) is associated with 'PolicyEngine::Schedule' (role 'PolicyEngine_Schedule86', cardinality 0..*).
+'PolicyEngine::UnaryOp' (role 'PolicyEngine_UnaryOp', cardinality 0..*) is associated with 'PolicyEngine::Expression' (role 'PolicyEngine_Expression120', cardinality 0..*).
+'PolicyEngine::Model' (role 'PolicyEngine_Model16', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy', cardinality 0..*).
+'PolicyEngine::Timer' (role 'PolicyEngine_Timer47', cardinality 0..*) is associated with 'PolicyEngine::Room' (role 'PolicyEngine_Room46', cardinality 0..*).
+'PolicyEngine::Policy' (role 'PolicyEngine_Policy72', cardinality 0..*) is associated with 'PolicyEngine::State' (role 'PolicyEngine_State73', cardinality 0..*).
+'PolicyEngine::Building' (role 'PolicyEngine_Building4', cardinality 0..*) is associated with 'PolicyEngine::CalendarSystem' (role 'PolicyEngine_CalendarSystem', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room79', cardinality 0..*) is associated with 'PolicyEngine::Policy' (role 'PolicyEngine_Policy78', cardinality 0..*).
+'PolicyEngine::RoomActuators' (role 'PolicyEngine_RoomActuators', cardinality 0..*) is associated with 'PolicyEngine::Room' (role 'PolicyEngine_Room122', cardinality 0..*).
+'PolicyEngine::AccessControl' (role 'PolicyEngine_AccessControl', cardinality 0..*) is associated with 'PolicyEngine::Building' (role 'PolicyEngine_Building2', cardinality 0..*).
+'PolicyEngine::Room' (role 'PolicyEngine_Room', cardinality 0..*) is associated with 'PolicyEngine::Model' (role 'PolicyEngine_Model14', cardinality 0..*).
+'PolicyEngine::Model' (role 'PolicyEngine_Model18', cardinality 0..*) is associated with 'PolicyEngine::State' (role 'PolicyEngine_State', cardinality 0..*).
+'PolicyEngine::Building' (role 'PolicyEngine_Building12', cardinality 0..*) is associated with 'PolicyEngine::Model' (role 'PolicyEngine_Model', cardinality 0..*).
+'PolicyEngine::Expression' (role 'PolicyEngine_Expression118', cardinality 0..*) is associated with 'PolicyEngine::BinaryOps' (role 'PolicyEngine_BinaryOps117', cardinality 0..*).
+'PolicyEngine::Building' (role 'PolicyEngine_Building', cardinality 0..*) is associated with 'PolicyEngine::CTS' (role 'PolicyEngine_CTS', cardinality 0..*).

@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'Original::Metamodel::A' has no attributes.
+The class 'Original::Metamodel::B' has the following attributes: 'propertyB' of type str.
+The class 'Original::Metamodel::C' has the following attributes: 'propertyC' of type str.
+The class 'Original::Metamodel::D' has no attributes.
+'Original::Metamodel::B' (role 'Original_Metamodel_B', cardinality 0..*) is associated with 'Original::Metamodel::A' (role 'Original_Metamodel_A', cardinality 0..*).

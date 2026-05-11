@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'g::C' has the following attributes: 'z' of type str.
+The class 'g::Y' has the following attributes: 'a' of type str.
+The class 'g::B' has the following attributes: 'y' of type bool.
+The class 'A' has no attributes.
+The class 'g::X' has no attributes.
+The class 'g::A' has the following attributes: 'x' of type str.
+'g::C' is a specialization of 'A'.
+'g::A' (role 'g_A', cardinality 0..*) is associated with 'g::B' (role 'g_B', cardinality 0..*).
+'g::Y' (role 'g_Y', cardinality 0..*) is associated with 'g::X' (role 'g_X', cardinality 0..*).
+'g::B' (role 'g_B1', cardinality 0..*) is associated with 'g::B' (role 'g_B3', cardinality 0..*).

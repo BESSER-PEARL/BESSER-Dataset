@@ -1,0 +1,129 @@
+The model has 52 class(es).
+The class 'drn::DepXZ' has the following attributes: 'name' of type str; 'tempsCST' of type str; 'distanceCST' of type str.
+The class 'drn::LEFT' has no attributes.
+The class 'DepZ::Impl' has no attributes.
+The class 'drn::Expression' has the following attributes: 'repeatCST' of type str.
+The class 'DepXZ::IMPL' has no attributes.
+The class 'drn::Rotate' has the following attributes: 'tempsCST' of type str; 'name' of type str; 'angleCST' of type str.
+The class 'drn::BACKWARD' has no attributes.
+The class 'Option' has no attributes.
+The class 'drn::DOWN' has no attributes.
+The class 'drn::Context' has no attributes.
+The class 'DepY::Impl' has no attributes.
+The class 'drn::Hmax' has no attributes.
+The class 'drn::DepXYZ' has the following attributes: 'tempsCST' of type str; 'distanceCST' of type str.
+The class 'drn::Option' has the following attributes: 'name' of type str.
+The class 'drn::DepZ::Impl' has the following attributes: 'name' of type str; 'tempsCST' of type str; 'distanceCST' of type str.
+The class 'drn::And' has the following attributes: 'name' of type str.
+The class 'DepXYZ::IMPL' has no attributes.
+The class 'drn::LedBlink' has the following attributes: 'color' of type str; 'blink_per_secCST' of type str.
+The class 'drn::CERCLEYZ' has the following attributes: 'rayonCST' of type str.
+The class 'drn::DepYZ::IMPL' has the following attributes: 'tempsCST' of type str; 'name' of type str.
+The class 'drn::RIGHT' has no attributes.
+The class 'drn::CARREYZ' has the following attributes: 'coteCST' of type str.
+The class 'drn::Parametre' has the following attributes: 'name' of type str.
+The class 'DepX::Impl' has no attributes.
+The class 'drn::Flip' has no attributes.
+The class 'drn::DepXZ::IMPL' has no attributes.
+The class 'DepYZ::IMPL' has no attributes.
+The class 'drn::DepY::Impl' has the following attributes: 'name' of type str; 'distanceCST' of type str; 'tempsCST' of type str.
+The class 'drn::Model' has no attributes.
+The class 'drn::Assignement' has the following attributes: 'name' of type str.
+The class 'drn::CERCLEXY' has the following attributes: 'rayonCST' of type str.
+The class 'drn::DepYZ' has the following attributes: 'distanceCST' of type str.
+The class 'drn::CameraFront' has the following attributes: 'mode' of type str.
+The class 'drn::CARREXY' has the following attributes: 'coteCST' of type str.
+The class 'drn::DepXYZ::IMPL' has the following attributes: 'name' of type str.
+The class 'drn::DepXY::IMPL' has the following attributes: 'tempsCST' of type str; 'name' of type str.
+The class 'drn::FORWARD' has no attributes.
+The class 'drn::CameraBottom' has the following attributes: 'mode' of type str.
+The class 'drn::TakeOff' has the following attributes: 'name' of type str.
+The class 'drn::Limit' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'drn::Vmax' has no attributes.
+The class 'drn::DepX::Impl' has the following attributes: 'name' of type str; 'tempsCST' of type str; 'distanceCST' of type str.
+The class 'drn::With' has the following attributes: 'name' of type str.
+The class 'Limit' has no attributes.
+The class 'drn::Wait' has the following attributes: 'name' of type str; 'tempsCST' of type str.
+The class 'drn::DepXY' has the following attributes: 'distanceCST' of type str.
+The class 'drn::RefPart' has the following attributes: 'params' of type str.
+The class 'DepXY::IMPL' has no attributes.
+The class 'drn::UP' has no attributes.
+The class 'drn::Land' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'drn::Led::Impl' has the following attributes: 'color' of type str.
+The enumeration 'ColorLed' has the following literals: 'RED', 'GREEN', 'WHITE', 'YELLOW', 'BLUE'.
+The enumeration 'Mode' has the following literals: 'OFF', 'ON'.
+The enumeration 'EBool' has the following literals: 'FALSE', 'TRUE'.
+'drn::Rotate' is a specialization of 'Expression'.
+'drn::UP' is a specialization of 'DepZ::Impl'.
+'drn::DOWN' is a specialization of 'DepZ::Impl'.
+'drn::DepYZ' is a specialization of 'DepYZ::IMPL'.
+'drn::CameraFront' is a specialization of 'Option'.
+'drn::Land' is a specialization of 'Expression'.
+'drn::LedBlink' is a specialization of 'Option'.
+'drn::And' is a specialization of 'Expression'.
+'drn::DepYZ::IMPL' is a specialization of 'Expression'.
+'drn::CameraBottom' is a specialization of 'Option'.
+'drn::DepZ::Impl' is a specialization of 'Expression'.
+'drn::DepY::Impl' is a specialization of 'Expression'.
+'drn::Hmax' is a specialization of 'Limit'.
+'drn::Wait' is a specialization of 'Expression'.
+'drn::CARREYZ' is a specialization of 'DepYZ::IMPL'.
+'drn::CERCLEXY' is a specialization of 'DepXY::IMPL'.
+'drn::CERCLEYZ' is a specialization of 'DepYZ::IMPL'.
+'drn::BACKWARD' is a specialization of 'DepY::Impl'.
+'drn::DepXYZ' is a specialization of 'DepXYZ::IMPL'.
+'drn::TakeOff' is a specialization of 'Expression'.
+'drn::RefPart' is a specialization of 'Expression'.
+'drn::DepXY::IMPL' is a specialization of 'Expression'.
+'drn::DepXY' is a specialization of 'DepXY::IMPL'.
+'drn::Led::Impl' is a specialization of 'Option'.
+'drn::FORWARD' is a specialization of 'DepY::Impl'.
+'drn::Flip' is a specialization of 'DepXYZ::IMPL'.
+'drn::DepXYZ::IMPL' is a specialization of 'Expression'.
+'drn::LEFT' is a specialization of 'DepX::Impl'.
+'drn::Vmax' is a specialization of 'Limit'.
+'drn::CARREXY' is a specialization of 'DepXY::IMPL'.
+'drn::DepXZ' is a specialization of 'DepXZ::IMPL'.
+'drn::DepX::Impl' is a specialization of 'Expression'.
+'drn::RIGHT' is a specialization of 'DepX::Impl'.
+'drn::DepXZ::IMPL' is a specialization of 'Expression'.
+'drn::DepXZ' (role 'drn_DepXZ', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre69', cardinality 0..*).
+'drn::Expression' (role 'drn_Expression18', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression16', cardinality 0..*).
+'drn::And' (role 'drn_And32', cardinality 0..*) is associated with 'drn::DepZ::Impl' (role 'drn_DepZ_Impl', cardinality 0..*).
+'drn::DepXY::IMPL' (role 'drn_DepXY_IMPL', cardinality 0..*) is associated with 'drn::And' (role 'drn_And30', cardinality 0..*).
+'drn::With' (role 'drn_With', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression15', cardinality 0..*).
+'drn::CARREXY' (role 'drn_CARREXY', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre59', cardinality 0..*).
+'drn::Rotate' (role 'drn_Rotate79', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre80', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre85', cardinality 0..*) is associated with 'drn::Wait' (role 'drn_Wait', cardinality 0..*).
+'drn::DepXY' (role 'drn_DepXY', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre55', cardinality 0..*).
+'drn::CERCLEXY' (role 'drn_CERCLEXY', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre57', cardinality 0..*).
+'drn::DepZ::Impl' (role 'drn_DepZ_Impl49', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre50', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement8', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre77', cardinality 0..*) is associated with 'drn::DepXYZ' (role 'drn_DepXYZ76', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre53', cardinality 0..*) is associated with 'drn::DepXY::IMPL' (role 'drn_DepXY_IMPL52', cardinality 0..*).
+'drn::DepYZ::IMPL' (role 'drn_DepYZ_IMPL', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre61', cardinality 0..*).
+'drn::With' (role 'drn_With87', cardinality 0..*) is associated with 'drn::Option' (role 'drn_Option', cardinality 0..*).
+'drn::DepY::Impl' (role 'drn_DepY_Impl37', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre38', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre35', cardinality 0..*) is associated with 'drn::DepY::Impl' (role 'drn_DepY_Impl34', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre72', cardinality 0..*) is associated with 'drn::DepXZ' (role 'drn_DepXZ71', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre89', cardinality 0..*) is associated with 'drn::LedBlink' (role 'drn_LedBlink', cardinality 0..*).
+'drn::And' (role 'drn_And', cardinality 0..*) is associated with 'drn::Rotate' (role 'drn_Rotate', cardinality 0..*).
+'drn::DepX::Impl' (role 'drn_DepX_Impl40', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre41', cardinality 0..*).
+'drn::CARREYZ' (role 'drn_CARREYZ', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre67', cardinality 0..*).
+'drn::Assignement' (role 'drn_Assignement', cardinality 0..*) is associated with 'drn::Model' (role 'drn_Model2', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre44', cardinality 0..*) is associated with 'drn::DepX::Impl' (role 'drn_DepX_Impl43', cardinality 0..*).
+'drn::And' (role 'drn_And24', cardinality 0..*) is associated with 'drn::DepX::Impl' (role 'drn_DepX_Impl', cardinality 0..*).
+'drn::And' (role 'drn_And26', cardinality 0..*) is associated with 'drn::DepY::Impl' (role 'drn_DepY_Impl', cardinality 0..*).
+'drn::Limit' (role 'drn_Limit', cardinality 0..*) is associated with 'drn::Context' (role 'drn_Context6', cardinality 0..*).
+'drn::RefPart' (role 'drn_RefPart', cardinality 0..*) is associated with 'drn::Model' (role 'drn_Model4', cardinality 0..*).
+'drn::CERCLEYZ' (role 'drn_CERCLEYZ', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre65', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre83', cardinality 0..*) is associated with 'drn::Rotate' (role 'drn_Rotate82', cardinality 0..*).
+'drn::DepXYZ' (role 'drn_DepXYZ', cardinality 0..*) is associated with 'drn::Parametre' (role 'drn_Parametre74', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre13', cardinality 0..*) is associated with 'drn::Expression' (role 'drn_Expression12', cardinality 0..*).
+'drn::DepXZ::IMPL' (role 'drn_DepXZ_IMPL', cardinality 0..*) is associated with 'drn::And' (role 'drn_And28', cardinality 0..*).
+'drn::Model' (role 'drn_Model', cardinality 0..*) is associated with 'drn::Context' (role 'drn_Context', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre47', cardinality 0..*) is associated with 'drn::DepZ::Impl' (role 'drn_DepZ_Impl46', cardinality 0..*).
+'drn::Parametre' (role 'drn_Parametre63', cardinality 0..*) is associated with 'drn::DepYZ' (role 'drn_DepYZ', cardinality 0..*).
+'drn::Assignement' (role 'drn_Assignement21', cardinality 0..*) is associated with 'drn::RefPart' (role 'drn_RefPart20', cardinality 0..*).
+'drn::Expression' (role 'drn_Expression', cardinality 0..*) is associated with 'drn::Assignement' (role 'drn_Assignement10', cardinality 0..*).

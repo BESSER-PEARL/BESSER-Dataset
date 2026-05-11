@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'cbpmni::EObject' has no attributes.
+The class 'cbpmni::ProcessInst' has no attributes.
+The class 'cbpmni::FlowNode' has no attributes.
+The class 'cbpmni::ConstraintInst' has no attributes.
+The class 'cbpmni::OCLConstraint' has no attributes.
+The class 'cbpmni::ActivityInst' has no attributes.
+The class 'cbpmni::EventInst' has no attributes.
+The class 'cbpmni::BranchInst' has no attributes.
+The class 'cbpmni::FlowNodeInst' has the following attributes: 'status' of type str.
+The class 'cbpmni::ProcessModel' has no attributes.
+The class 'cbpmni::Branch' has no attributes.
+The class 'cbpmni::SplitInst' has no attributes.
+The class 'FlowNodeInst' has no attributes.
+The enumeration 'FlowNodeStatusType' has the following literals: 'INACTIVE', 'READY', 'COMPLETED', 'RUNNING', 'ABORTED'.
+'cbpmni::SplitInst' is a specialization of 'FlowNodeInst'.
+'cbpmni::ActivityInst' is a specialization of 'FlowNodeInst'.
+'cbpmni::EventInst' is a specialization of 'FlowNodeInst'.
+'cbpmni::FlowNodeInst' (role 'cbpmni_FlowNodeInst', cardinality 0..*) is associated with 'cbpmni::ProcessInst' (role 'cbpmni_ProcessInst2', cardinality 0..*).
+'cbpmni::ProcessModel' (role 'cbpmni_ProcessModel', cardinality 0..*) is associated with 'cbpmni::ProcessInst' (role 'cbpmni_ProcessInst', cardinality 0..*).
+'cbpmni::FlowNodeInst' (role 'cbpmni_FlowNodeInst8', cardinality 0..*) is associated with 'cbpmni::FlowNodeInst' (role 'cbpmni_FlowNodeInst10', cardinality 0..*).
+'cbpmni::ConstraintInst' (role 'cbpmni_ConstraintInst', cardinality 0..*) is associated with 'cbpmni::ActivityInst' (role 'cbpmni_ActivityInst', cardinality 0..*).
+'cbpmni::FlowNode' (role 'cbpmni_FlowNode', cardinality 0..*) is associated with 'cbpmni::FlowNodeInst' (role 'cbpmni_FlowNodeInst7', cardinality 0..*).
+'cbpmni::BranchInst' (role 'cbpmni_BranchInst', cardinality 0..*) is associated with 'cbpmni::SplitInst' (role 'cbpmni_SplitInst', cardinality 0..*).
+'cbpmni::EObject' (role 'cbpmni_EObject', cardinality 0..*) is associated with 'cbpmni::ActivityInst' (role 'cbpmni_ActivityInst16', cardinality 0..*).
+'cbpmni::EObject' (role 'cbpmni_EObject19', cardinality 0..*) is associated with 'cbpmni::ActivityInst' (role 'cbpmni_ActivityInst18', cardinality 0..*).
+'cbpmni::ConstraintInst' (role 'cbpmni_ConstraintInst24', cardinality 0..*) is associated with 'cbpmni::EObject' (role 'cbpmni_EObject25', cardinality 0..*).
+'cbpmni::ConstraintInst' (role 'cbpmni_ConstraintInst27', cardinality 0..*) is associated with 'cbpmni::OCLConstraint' (role 'cbpmni_OCLConstraint', cardinality 0..*).
+'cbpmni::FlowNodeInst' (role 'cbpmni_FlowNodeInst5', cardinality 0..*) is associated with 'cbpmni::ProcessInst' (role 'cbpmni_ProcessInst4', cardinality 0..*).
+'cbpmni::ActivityInst' (role 'cbpmni_ActivityInst13', cardinality 0..*) is associated with 'cbpmni::ConstraintInst' (role 'cbpmni_ConstraintInst14', cardinality 0..*).
+'cbpmni::BranchInst' (role 'cbpmni_BranchInst22', cardinality 0..*) is associated with 'cbpmni::Branch' (role 'cbpmni_Branch', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/emfjson/emfjson-gwt/src/test/resources/model/model.ecore

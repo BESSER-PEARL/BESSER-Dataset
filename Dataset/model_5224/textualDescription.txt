@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'linkinher::K' has no attributes.
+The class 'Named' has no attributes.
+The class 'linkinher::L' has no attributes.
+The class 'C' has no attributes.
+The class 'linkinher::Named' has the following attributes: 'name' of type str.
+The class 'T' has no attributes.
+The class 'linkinher::T' has no attributes.
+The class 'linkinher::S' has no attributes.
+The class 'linkinher::N' has no attributes.
+The class 'linkinher::X' has no attributes.
+The class 'S' has no attributes.
+The class 'linkinher::M' has no attributes.
+The class 'E' has no attributes.
+The class 'linkinher::E' has no attributes.
+The class 'linkinher::C' has no attributes.
+'linkinher::E' is a specialization of 'Named'.
+'linkinher::N' is a specialization of 'S'.
+'linkinher::L' is a specialization of 'C'.
+'linkinher::C' is a specialization of 'E'.
+'linkinher::L' is a specialization of 'T'.
+'linkinher::S' is a specialization of 'Named'.
+'linkinher::C' is a specialization of 'S'.
+'linkinher::M' is a specialization of 'E'.
+'linkinher::N' is a specialization of 'T'.
+'linkinher::K' is a specialization of 'C'.
+'linkinher::N' is a specialization of 'Named'.
+'linkinher::X' (role 'linkinher_X', cardinality 0..*) is associated with 'linkinher::Named' (role 'linkinher_Named', cardinality 0..*).
+'linkinher::N' (role 'linkinher_N', cardinality 0..*) is associated with 'linkinher::E' (role 'linkinher_E', cardinality 0..*).
+'linkinher::N' (role 'linkinher_N5', cardinality 0..*) is associated with 'linkinher::E' (role 'linkinher_E6', cardinality 0..*).
+'linkinher::S' (role 'linkinher_S', cardinality 0..*) is associated with 'linkinher::N' (role 'linkinher_N12', cardinality 0..*).
+'linkinher::E' (role 'linkinher_E2', cardinality 0..*) is associated with 'linkinher::N' (role 'linkinher_N3', cardinality 0..*).
+'linkinher::N' (role 'linkinher_N10', cardinality 0..*) is associated with 'linkinher::X' (role 'linkinher_X9', cardinality 0..*).

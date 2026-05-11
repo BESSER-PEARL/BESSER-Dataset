@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'form::option' has the following attributes: 'content' of type str; 'value' of type str.
+The class 'form::Label' has the following attributes: 'content' of type str; 'for_' of type str.
+The class 'form::SelectionList' has the following attributes: 'multiple' of type bool.
+The class 'Element' has no attributes.
+The class 'form::textArea' has the following attributes: 'content' of type str.
+The class 'form::Orden' has no attributes.
+The class 'form::Element' has no attributes.
+The class 'form::Formulario' has no attributes.
+The class 'Editable' has no attributes.
+The class 'form::Input' has the following attributes: 'type' of type str; 'value' of type str; 'checked' of type bool.
+The class 'form::Editable' has the following attributes: 'name' of type str; 'disabled' of type bool.
+'form::textArea' is a specialization of 'Editable'.
+'form::SelectionList' is a specialization of 'Editable'.
+'form::Label' is a specialization of 'Element'.
+'form::Input' is a specialization of 'Editable'.
+'form::Editable' is a specialization of 'Element'.
+'form::Formulario' (role 'form_Formulario2', cardinality 0..*) is associated with 'form::Orden' (role 'form_Orden', cardinality 0..*).
+'form::Orden' (role 'entrantes', cardinality 0..*) is associated with 'form::Element' (role 'Element7', cardinality 0..*).
+'form::Element' (role 'form_Element', cardinality 0..*) is associated with 'form::Formulario' (role 'form_Formulario', cardinality 0..*).
+'form::Orden' (role 'Orden10', cardinality 0..*) is associated with 'form::Element' (role 'destino', cardinality 0..*).
+'form::Label' (role 'form_Label', cardinality 0..*) is associated with 'form::Editable' (role 'form_Editable', cardinality 0..*).
+'form::Orden' (role 'salientes', cardinality 0..*) is associated with 'form::Element' (role 'Element', cardinality 0..*).
+'form::option' (role 'form_option', cardinality 0..*) is associated with 'form::SelectionList' (role 'form_SelectionList', cardinality 0..*).
+'form::Element' (role 'origen', cardinality 0..*) is associated with 'form::Orden' (role 'Orden', cardinality 0..*).

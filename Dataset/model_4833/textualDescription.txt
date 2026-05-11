@@ -1,0 +1,167 @@
+The model has 64 class(es).
+The class 'archimate::InfrastructureInterface' has no attributes.
+The class 'archimate::Principle' has no attributes.
+The class 'TechnologyConcept' has no attributes.
+The class 'Node' has no attributes.
+The class 'archimate::TechnologyConcept' has no attributes.
+The class 'archimate::Contract' has no attributes.
+The class 'archimate::Active' has no attributes.
+The class 'archimate::Artifact' has no attributes.
+The class 'archimate::Value' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'archimate::Deliverable' has no attributes.
+The class 'archimate::Gap' has no attributes.
+The class 'archimate::BusinessInteraction' has no attributes.
+The class 'archimate::Location' has no attributes.
+The class 'archimate::SystemSoftware' has no attributes.
+The class 'archimate::Requirement' has no attributes.
+The class 'archimate::InfrastructureService' has no attributes.
+The class 'MotivationConcept' has no attributes.
+The class 'archimate::BusinessRole' has no attributes.
+The class 'ApplicationConcept' has no attributes.
+The class 'archimate::Device' has no attributes.
+The class 'archimate::BusinessConcept' has no attributes.
+The class 'Active' has no attributes.
+The class 'archimate::BusinessProcess' has no attributes.
+The class 'archimate::DataObject' has no attributes.
+The class 'archimate::Product' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'archimate::Stakeholder' has no attributes.
+The class 'BusinessObject' has no attributes.
+The class 'archimate::MotivationConcept' has no attributes.
+The class 'archimate::Meaning' has no attributes.
+The class 'archimate::ApplicationInteraction' has no attributes.
+The class 'archimate::Constraint' has no attributes.
+The class 'archimate::Assessment' has no attributes.
+The class 'archimate::BusinessFunction' has no attributes.
+The class 'archimate::ApplicationFunction' has no attributes.
+The class 'archimate::ApplicationConcept' has no attributes.
+The class 'archimate::Driver' has no attributes.
+The class 'archimate::Concept' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'archimate::InfrastructureFunction' has no attributes.
+The class 'archimate::WorkPackage' has no attributes.
+The class 'archimate::Network' has no attributes.
+The class 'Concept' has no attributes.
+The class 'BusinessConcept' has no attributes.
+The class 'archimate::Node' has no attributes.
+The class 'archimate::BusinessCollaboration' has no attributes.
+The class 'archimate::Plateau' has no attributes.
+The class 'archimate::Passive' has no attributes.
+The class 'archimate::BusinessActor' has no attributes.
+The class 'archimate::ImplementationAndMigrationConcept' has no attributes.
+The class 'archimate::BusinessService' has no attributes.
+The class 'archimate::CommunicationPath' has no attributes.
+The class 'archimate::BusinessEvent' has no attributes.
+The class 'archimate::Representation' has no attributes.
+The class 'archimate::BusinessObject' has no attributes.
+The class 'ImplementationAndMigrationConcept' has no attributes.
+The class 'archimate::ApplicationComponent' has no attributes.
+The class 'archimate::ApplicationCollaboration' has no attributes.
+The class 'archimate::ApplicationInterface' has no attributes.
+The class 'archimate::ApplicationService' has no attributes.
+The class 'archimate::BusinessInterface' has no attributes.
+The class 'Passive' has no attributes.
+The class 'archimate::Behavior' has no attributes.
+The class 'archimate::Goal' has no attributes.
+'archimate::ApplicationComponent' is a specialization of 'ApplicationConcept'.
+'archimate::WorkPackage' is a specialization of 'ImplementationAndMigrationConcept'.
+'archimate::Representation' is a specialization of 'Passive'.
+'archimate::InfrastructureService' is a specialization of 'TechnologyConcept'.
+'archimate::ApplicationInterface' is a specialization of 'Active'.
+'archimate::Meaning' is a specialization of 'Passive'.
+'archimate::DataObject' is a specialization of 'ApplicationConcept'.
+'archimate::Value' is a specialization of 'Passive'.
+'archimate::ApplicationService' is a specialization of 'ApplicationConcept'.
+'archimate::BusinessConcept' is a specialization of 'Concept'.
+'archimate::Device' is a specialization of 'Node'.
+'archimate::Stakeholder' is a specialization of 'MotivationConcept'.
+'archimate::BusinessRole' is a specialization of 'Active'.
+'archimate::Location' is a specialization of 'Active'.
+'archimate::Constraint' is a specialization of 'Requirement'.
+'archimate::DataObject' is a specialization of 'Passive'.
+'archimate::Goal' is a specialization of 'MotivationConcept'.
+'archimate::Plateau' is a specialization of 'ImplementationAndMigrationConcept'.
+'archimate::InfrastructureFunction' is a specialization of 'TechnologyConcept'.
+'archimate::BusinessActor' is a specialization of 'BusinessConcept'.
+'archimate::ApplicationFunction' is a specialization of 'Behavior'.
+'archimate::BusinessActor' is a specialization of 'Active'.
+'archimate::ApplicationInteraction' is a specialization of 'Behavior'.
+'archimate::BusinessService' is a specialization of 'BusinessConcept'.
+'archimate::BusinessProcess' is a specialization of 'BusinessConcept'.
+'archimate::BusinessFunction' is a specialization of 'BusinessConcept'.
+'archimate::MotivationConcept' is a specialization of 'Concept'.
+'archimate::InfrastructureInterface' is a specialization of 'Active'.
+'archimate::BusinessInterface' is a specialization of 'BusinessConcept'.
+'archimate::CommunicationPath' is a specialization of 'Active'.
+'archimate::SystemSoftware' is a specialization of 'Node'.
+'archimate::ApplicationComponent' is a specialization of 'Active'.
+'archimate::ApplicationService' is a specialization of 'Behavior'.
+'archimate::BusinessInteraction' is a specialization of 'Behavior'.
+'archimate::BusinessObject' is a specialization of 'BusinessConcept'.
+'archimate::BusinessRole' is a specialization of 'BusinessConcept'.
+'archimate::BusinessInterface' is a specialization of 'Active'.
+'archimate::BusinessEvent' is a specialization of 'BusinessConcept'.
+'archimate::Artifact' is a specialization of 'ApplicationConcept'.
+'archimate::Artifact' is a specialization of 'Passive'.
+'archimate::Location' is a specialization of 'BusinessConcept'.
+'archimate::ApplicationInterface' is a specialization of 'ApplicationConcept'.
+'archimate::BusinessObject' is a specialization of 'Passive'.
+'archimate::BusinessService' is a specialization of 'Behavior'.
+'archimate::Product' is a specialization of 'BusinessConcept'.
+'archimate::Network' is a specialization of 'Active'.
+'archimate::Driver' is a specialization of 'MotivationConcept'.
+'archimate::Gap' is a specialization of 'ImplementationAndMigrationConcept'.
+'archimate::BusinessProcess' is a specialization of 'Behavior'.
+'archimate::BusinessEvent' is a specialization of 'Behavior'.
+'archimate::ApplicationConcept' is a specialization of 'Concept'.
+'archimate::ImplementationAndMigrationConcept' is a specialization of 'Concept'.
+'archimate::Deliverable' is a specialization of 'ImplementationAndMigrationConcept'.
+'archimate::Representation' is a specialization of 'BusinessConcept'.
+'archimate::Value' is a specialization of 'BusinessConcept'.
+'archimate::Product' is a specialization of 'Passive'.
+'archimate::TechnologyConcept' is a specialization of 'Concept'.
+'archimate::Node' is a specialization of 'Active'.
+'archimate::InfrastructureFunction' is a specialization of 'Behavior'.
+'archimate::BusinessFunction' is a specialization of 'Behavior'.
+'archimate::InfrastructureService' is a specialization of 'Behavior'.
+'archimate::Network' is a specialization of 'TechnologyConcept'.
+'archimate::Principle' is a specialization of 'MotivationConcept'.
+'archimate::CommunicationPath' is a specialization of 'TechnologyConcept'.
+'archimate::Contract' is a specialization of 'BusinessObject'.
+'archimate::BusinessCollaboration' is a specialization of 'BusinessConcept'.
+'archimate::InfrastructureInterface' is a specialization of 'TechnologyConcept'.
+'archimate::BusinessInteraction' is a specialization of 'BusinessConcept'.
+'archimate::Meaning' is a specialization of 'BusinessConcept'.
+'archimate::Node' is a specialization of 'TechnologyConcept'.
+'archimate::Requirement' is a specialization of 'MotivationConcept'.
+'archimate::ApplicationCollaboration' is a specialization of 'ApplicationConcept'.
+'archimate::ApplicationFunction' is a specialization of 'ApplicationConcept'.
+'archimate::Assessment' is a specialization of 'MotivationConcept'.
+'archimate::ApplicationInteraction' is a specialization of 'ApplicationConcept'.
+'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept18', cardinality 0..*) is associated with 'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept20', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior41', cardinality 0..*) is associated with 'archimate::Behavior' (role 'archimate_Behavior39', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active60', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active62', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior46', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active47', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior44', cardinality 0..*) is associated with 'archimate::Behavior' (role 'archimate_Behavior42', cardinality 0..*).
+'archimate::MotivationConcept' (role 'archimate_MotivationConcept9', cardinality 0..*) is associated with 'archimate::MotivationConcept' (role 'archimate_MotivationConcept7', cardinality 0..*).
+'archimate::Concept' (role 'archimate_Concept', cardinality 0..*) is associated with 'archimate::Concept' (role 'archimate_Concept0', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior33', cardinality 0..*) is associated with 'archimate::Behavior' (role 'archimate_Behavior35', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior36', cardinality 0..*) is associated with 'archimate::Behavior' (role 'archimate_Behavior38', cardinality 0..*).
+'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept17', cardinality 0..*) is associated with 'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept15', cardinality 0..*).
+'archimate::Passive' (role 'archimate_Passive21', cardinality 0..*) is associated with 'archimate::Passive' (role 'archimate_Passive', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active66', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active68', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active63', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active65', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active69', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active71', cardinality 0..*).
+'archimate::Passive' (role 'archimate_Passive28', cardinality 0..*) is associated with 'archimate::Passive' (role 'archimate_Passive26', cardinality 0..*).
+'archimate::MotivationConcept' (role 'archimate_MotivationConcept4', cardinality 0..*) is associated with 'archimate::MotivationConcept' (role 'archimate_MotivationConcept6', cardinality 0..*).
+'archimate::MotivationConcept' (role 'archimate_MotivationConcept2', cardinality 0..*) is associated with 'archimate::MotivationConcept' (role 'archimate_MotivationConcept', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior52', cardinality 0..*) is associated with 'archimate::Passive' (role 'archimate_Passive53', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active56', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active54', cardinality 0..*).
+'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept14', cardinality 0..*) is associated with 'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept12', cardinality 0..*).
+'archimate::Passive' (role 'archimate_Passive25', cardinality 0..*) is associated with 'archimate::Passive' (role 'archimate_Passive23', cardinality 0..*).
+'archimate::Behavior' (role 'archimate_Behavior49', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active50', cardinality 0..*).
+'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept', cardinality 0..*) is associated with 'archimate::ImplementationAndMigrationConcept' (role 'archimate_ImplementationAndMigrationConcept10', cardinality 0..*).
+'archimate::Passive' (role 'archimate_Passive32', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active73', cardinality 0..*) is associated with 'archimate::Passive' (role 'archimate_Passive74', cardinality 0..*).
+'archimate::Passive' (role 'archimate_Passive30', cardinality 0..*) is associated with 'archimate::Behavior' (role 'archimate_Behavior', cardinality 0..*).
+'archimate::Active' (role 'archimate_Active59', cardinality 0..*) is associated with 'archimate::Active' (role 'archimate_Active57', cardinality 0..*).

@@ -1,0 +1,51 @@
+The model has 23 class(es).
+The class 'farrusco::Behavior' has no attributes.
+The class 'farrusco::Prioridade' has the following attributes: 'Nome' of type str.
+The class 'farrusco::Bumpers' has the following attributes: 'Bumper_Esquerdo_ou_Direito' of type str; 'Nome' of type str.
+The class 'farrusco::LED' has the following attributes: 'Nome' of type str; 'Ligado_ou_Desligado' of type str.
+The class 'farrusco::Espera' has the following attributes: 'Tempo' of type int; 'Nome' of type str.
+The class 'farrusco::Node' has no attributes.
+The class 'Condition' has no attributes.
+The class 'farrusco::Action' has no attributes.
+The class 'Node' has no attributes.
+The class 'Action' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'Actuate' has no attributes.
+The class 'farrusco::Filho' has no attributes.
+The class 'farrusco::Condition' has no attributes.
+The class 'farrusco::Irmao' has no attributes.
+The class 'farrusco::Actuate' has no attributes.
+The class 'farrusco::AlterarEstado' has the following attributes: 'Alterar_Falha' of type str; 'Alterar_Decorrer' of type str; 'Nome' of type str; 'Alterar_Sucesso' of type str.
+The class 'farrusco::Motor' has the following attributes: 'Motor_Esquerdo' of type int; 'Motor_Direito' of type int; 'Nome' of type str.
+The class 'farrusco::Sequencial' has the following attributes: 'Nome' of type str.
+The class 'farrusco::Servo' has the following attributes: 'Passo_a_Passo' of type int; 'Posicao_Maxima' of type int; 'Posicao_Minima' of type int; 'Nome' of type str.
+The class 'farrusco::Distancia' has the following attributes: 'Nome' of type str; 'Menor_Maior' of type str; 'distancia' of type int.
+The class 'farrusco::Paralelo' has the following attributes: 'Nome' of type str.
+The class 'farrusco::Robot' has the following attributes: 'Nome' of type str.
+The enumeration 'EstadoFalha' has the following literals: 'Decorrer', 'Sucesso', 'Falha'.
+The enumeration 'EscolhaBumper' has the following literals: 'Direito', 'Esquerdo'.
+The enumeration 'EstadoDecorrer' has the following literals: 'Sucesso', 'Decorrer', 'Falha'.
+The enumeration 'EstadoSucesso' has the following literals: 'Falha', 'Decorrer', 'Sucesso'.
+The enumeration 'EstadoDaLuz' has the following literals: 'Desligado', 'Ligado'.
+The enumeration 'TipoDistancia' has the following literals: 'Menor', 'Maior'.
+'farrusco::Action' is a specialization of 'Node'.
+'farrusco::Prioridade' is a specialization of 'Behavior'.
+'farrusco::Distancia' is a specialization of 'Condition'.
+'farrusco::Condition' is a specialization of 'Action'.
+'farrusco::Behavior' is a specialization of 'Node'.
+'farrusco::Actuate' is a specialization of 'Action'.
+'farrusco::Servo' is a specialization of 'Actuate'.
+'farrusco::Paralelo' is a specialization of 'Behavior'.
+'farrusco::Bumpers' is a specialization of 'Condition'.
+'farrusco::Espera' is a specialization of 'Condition'.
+'farrusco::AlterarEstado' is a specialization of 'Behavior'.
+'farrusco::Motor' is a specialization of 'Actuate'.
+'farrusco::Sequencial' is a specialization of 'Behavior'.
+'farrusco::LED' is a specialization of 'Actuate'.
+'farrusco::Filho' (role 'farrusco_Filho', cardinality 0..*) is associated with 'farrusco::Robot' (role 'farrusco_Robot2', cardinality 0..*).
+'farrusco::Filho' (role 'farrusco_Filho8', cardinality 0..*) is associated with 'farrusco::Node' (role 'farrusco_Node9', cardinality 0..*).
+'farrusco::Node' (role 'farrusco_Node', cardinality 0..*) is associated with 'farrusco::Robot' (role 'farrusco_Robot', cardinality 0..*).
+'farrusco::Irmao' (role 'farrusco_Irmao14', cardinality 0..*) is associated with 'farrusco::Node' (role 'farrusco_Node15', cardinality 0..*).
+'farrusco::Node' (role 'farrusco_Node12', cardinality 0..*) is associated with 'farrusco::Irmao' (role 'farrusco_Irmao11', cardinality 0..*).
+'farrusco::Behavior' (role 'farrusco_Behavior', cardinality 0..*) is associated with 'farrusco::Filho' (role 'farrusco_Filho6', cardinality 0..*).
+'farrusco::Irmao' (role 'farrusco_Irmao', cardinality 0..*) is associated with 'farrusco::Robot' (role 'farrusco_Robot4', cardinality 0..*).

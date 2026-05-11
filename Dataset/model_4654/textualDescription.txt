@@ -1,0 +1,44 @@
+The model has 19 class(es).
+The class 'di::Label' has no attributes.
+The class 'Node' has no attributes.
+The class 'di::LabeledShape' has no attributes.
+The class 'di::Node' has no attributes.
+The class 'di::ExtensionType' has the following attributes: 'any' of type str.
+The class 'di::LabeledEdge' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'di::EStringToStringMapEntry' has no attributes.
+The class 'di::DiagramElement' has the following attributes: 'id' of type str; 'anyAttribute' of type str.
+The class 'Shape' has no attributes.
+The class 'di::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'di::Plane' has the following attributes: 'diagramElementGroup' of type str.
+The class 'di::Point' has no attributes.
+The class 'di::Style' has the following attributes: 'id' of type str.
+The class 'Edge' has no attributes.
+The class 'di::Diagram' has the following attributes: 'id' of type str; 'resolution' of type str; 'documentation' of type str; 'name' of type str.
+The class 'di::Edge' has no attributes.
+The class 'di::Bounds' has no attributes.
+The class 'di::Shape' has no attributes.
+'di::Plane' is a specialization of 'Node'.
+'di::Label' is a specialization of 'Node'.
+'di::LabeledEdge' is a specialization of 'Edge'.
+'di::Shape' is a specialization of 'Node'.
+'di::Node' is a specialization of 'DiagramElement'.
+'di::LabeledShape' is a specialization of 'Shape'.
+'di::Edge' is a specialization of 'DiagramElement'.
+'di::Edge' (role 'di_Edge18', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot17', cardinality 0..*).
+'di::Plane' (role 'di_Plane', cardinality 0..*) is associated with 'di::DiagramElement' (role 'di_DiagramElement4', cardinality 0..*).
+'di::DiagramElement' (role 'di_DiagramElement13', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot12', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot15', cardinality 0..*) is associated with 'di::Diagram' (role 'di_Diagram', cardinality 0..*).
+'di::Shape' (role 'di_Shape33', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot32', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot23', cardinality 0..*) is associated with 'di::LabeledEdge' (role 'di_LabeledEdge', cardinality 0..*).
+'di::LabeledShape' (role 'di_LabeledShape', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot25', cardinality 0..*).
+'di::ExtensionType' (role 'di_ExtensionType', cardinality 0..*) is associated with 'di::DiagramElement' (role 'di_DiagramElement', cardinality 0..*).
+'di::Shape' (role 'di_Shape', cardinality 0..*) is associated with 'di::Bounds' (role 'di_Bounds6', cardinality 0..*).
+'di::Plane' (role 'di_Plane30', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot29', cardinality 0..*).
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot', cardinality 0..*).
+'di::Style' (role 'di_Style', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot35', cardinality 0..*).
+'di::Edge' (role 'di_Edge', cardinality 0..*) is associated with 'di::Point' (role 'di_Point', cardinality 0..*).
+'di::Label' (role 'di_Label', cardinality 0..*) is associated with 'di::Bounds' (role 'di_Bounds', cardinality 0..*).
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry10', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot9', cardinality 0..*).
+'di::Node' (role 'di_Node', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot27', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot20', cardinality 0..*) is associated with 'di::Label' (role 'di_Label21', cardinality 0..*).

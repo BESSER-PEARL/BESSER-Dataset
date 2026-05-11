@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ftsrg-mdsd/ztz-MDSD-2016/hu.bme.mdsd.ztz.model/model/behaviour.ecore

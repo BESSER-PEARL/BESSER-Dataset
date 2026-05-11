@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'mathDSL::Math' has no attributes.
+The class 'mathDSL::Expression' has no attributes.
+The class 'mathDSL::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'mathDSL::Plus' has no attributes.
+The class 'mathDSL::Div' has no attributes.
+The class 'mathDSL::Minus' has no attributes.
+The class 'mathDSL::Multi' has no attributes.
+The class 'Expression' has no attributes.
+'mathDSL::NumberLiteral' is a specialization of 'Expression'.
+'mathDSL::Plus' is a specialization of 'Expression'.
+'mathDSL::Div' is a specialization of 'Expression'.
+'mathDSL::Multi' is a specialization of 'Expression'.
+'mathDSL::Minus' is a specialization of 'Expression'.
+'mathDSL::Div' (role 'mathDSL_Div', cardinality 0..*) is associated with 'mathDSL::Expression' (role 'mathDSL_Expression17', cardinality 0..*).
+'mathDSL::Expression' (role 'mathDSL_Expression20', cardinality 0..*) is associated with 'mathDSL::Div' (role 'mathDSL_Div19', cardinality 0..*).
+'mathDSL::Math' (role 'mathDSL_Math', cardinality 0..*) is associated with 'mathDSL::Expression' (role 'mathDSL_Expression', cardinality 0..*).
+'mathDSL::Multi' (role 'mathDSL_Multi14', cardinality 0..*) is associated with 'mathDSL::Expression' (role 'mathDSL_Expression15', cardinality 0..*).
+'mathDSL::Plus' (role 'mathDSL_Plus', cardinality 0..*) is associated with 'mathDSL::Expression' (role 'mathDSL_Expression2', cardinality 0..*).
+'mathDSL::Expression' (role 'mathDSL_Expression7', cardinality 0..*) is associated with 'mathDSL::Minus' (role 'mathDSL_Minus', cardinality 0..*).
+'mathDSL::Expression' (role 'mathDSL_Expression12', cardinality 0..*) is associated with 'mathDSL::Multi' (role 'mathDSL_Multi', cardinality 0..*).
+'mathDSL::Minus' (role 'mathDSL_Minus9', cardinality 0..*) is associated with 'mathDSL::Expression' (role 'mathDSL_Expression10', cardinality 0..*).
+'mathDSL::Expression' (role 'mathDSL_Expression5', cardinality 0..*) is associated with 'mathDSL::Plus' (role 'mathDSL_Plus4', cardinality 0..*).

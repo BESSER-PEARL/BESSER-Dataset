@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'edd::TreeElement' has the following attributes: 'index' of type str; 'name' of type str.
+The class 'edd::Diagram' has no attributes.
+The class 'edd::Model' has the following attributes: 'name' of type str.
+The class 'edd::Block' has the following attributes: 'name' of type str.
+'edd::Model' (role 'edd_Model2', cardinality 0..*) is associated with 'edd::Block' (role 'edd_Block', cardinality 0..*).
+'edd::TreeElement' (role 'edd_TreeElement', cardinality 0..*) is associated with 'edd::TreeElement' (role 'edd_TreeElement3', cardinality 0..*).
+'edd::TreeElement' (role 'edd_TreeElement7', cardinality 0..*) is associated with 'edd::Block' (role 'edd_Block6', cardinality 0..*).
+'edd::Model' (role 'edd_Model', cardinality 0..*) is associated with 'edd::Diagram' (role 'edd_Diagram', cardinality 0..*).

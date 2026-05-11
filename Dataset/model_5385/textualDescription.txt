@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'p::Class1' has no attributes.
+The class 'p::Class3' has no attributes.
+The class 'p::Class4' has no attributes.
+The class 'p::Exception1' has no attributes.
+The class 'p::Class2' has no attributes.
+The class 'p::Exception2' has no attributes.

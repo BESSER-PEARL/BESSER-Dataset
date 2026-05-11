@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'introduction::Y' has the following attributes: 'test' of type int; 'id' of type str.
+The class 'introduction::B' has no attributes.
+The class 'introduction::con' has no attributes.
+The class 'introduction::X' has the following attributes: 'id' of type str.
+The class 'introduction::A' has the following attributes: 'id' of type str.
+The class 'A' has no attributes.
+'introduction::B' is a specialization of 'A'.
+'introduction::Y' (role 'introduction_Y7', cardinality 0..*) is associated with 'introduction::con' (role 'introduction_con6', cardinality 0..*).
+'introduction::X' (role 'introduction_X', cardinality 0..*) is associated with 'introduction::A' (role 'introduction_A', cardinality 0..*).
+'introduction::A' (role 'introduction_A4', cardinality 0..*) is associated with 'introduction::con' (role 'introduction_con', cardinality 0..*).
+'introduction::A' (role 'introduction_A2', cardinality 0..*) is associated with 'introduction::Y' (role 'introduction_Y', cardinality 0..*).

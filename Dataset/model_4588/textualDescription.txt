@@ -1,0 +1,81 @@
+The model has 32 class(es).
+The class 'PiServiceComposition::Variable' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'PiServiceComposition::Action' has the following attributes: 'type' of type str.
+The class 'PiServiceComposition::BussinessCollaborator' has no attributes.
+The class 'PiServiceComposition::FinalNode' has no attributes.
+The class 'PiServiceComposition::Rule' has the following attributes: 'name' of type str; 'action' of type str; 'event' of type str; 'condition' of type str.
+The class 'PiServiceComposition::JoinNode' has no attributes.
+The class 'PiServiceComposition::DecisionNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'ActivityPartition' has no attributes.
+The class 'PiServiceComposition::ObjectNode' has no attributes.
+The class 'PiServiceComposition::Activity' has no attributes.
+The class 'PiServiceComposition::ObjectFlow' has no attributes.
+The class 'PiServiceComposition::ExecutableNode' has no attributes.
+The class 'PiServiceComposition::ActivityEdge' has no attributes.
+The class 'PiServiceComposition::CompositionServiceModel' has no attributes.
+The class 'PiServiceComposition::NamedElement' has the following attributes: 'name' of type str.
+The class 'FinalNode' has no attributes.
+The class 'PiServiceComposition::ForkNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'Activity' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'PiServiceComposition::MergeNode' has no attributes.
+The class 'PiServiceComposition::ServiceActivity' has no attributes.
+The class 'PiServiceComposition::ControlFlow' has no attributes.
+The class 'PiServiceComposition::ActivityFinalNode' has no attributes.
+The class 'PiServiceComposition::ActivityPartition' has the following attributes: 'isDimension' of type bool; 'isExternal' of type bool.
+The class 'PiServiceComposition::ControlNode' has no attributes.
+The class 'PiServiceComposition::ActivityNode' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'PiServiceComposition::Policy' has the following attributes: 'name' of type str.
+The class 'ExecutableNode' has no attributes.
+The class 'PiServiceComposition::InitialNode' has no attributes.
+The enumeration 'EventType' has the following literals: 'TIME', 'PRE', 'POST'.
+The enumeration 'ActionType' has the following literals: 'WS', 'AOP'.
+'PiServiceComposition::InitialNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::ControlFlow' is a specialization of 'ActivityEdge'.
+'PiServiceComposition::ForkNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::ObjectNode' is a specialization of 'ActivityNode'.
+'PiServiceComposition::Action' is a specialization of 'ExecutableNode'.
+'PiServiceComposition::MergeNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::JoinNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::Activity' is a specialization of 'NamedElement'.
+'PiServiceComposition::DecisionNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::ActivityFinalNode' is a specialization of 'FinalNode'.
+'PiServiceComposition::ControlNode' is a specialization of 'ActivityNode'.
+'PiServiceComposition::ServiceActivity' is a specialization of 'Activity'.
+'PiServiceComposition::BussinessCollaborator' is a specialization of 'ActivityPartition'.
+'PiServiceComposition::ObjectFlow' is a specialization of 'ActivityEdge'.
+'PiServiceComposition::FinalNode' is a specialization of 'ControlNode'.
+'PiServiceComposition::ActivityPartition' is a specialization of 'NamedElement'.
+'PiServiceComposition::ActivityEdge' is a specialization of 'NamedElement'.
+'PiServiceComposition::ExecutableNode' is a specialization of 'ActivityNode'.
+'PiServiceComposition::ActivityNode' is a specialization of 'NamedElement'.
+'PiServiceComposition::Action' (role 'action', cardinality 0..*) is associated with 'PiServiceComposition::Policy' (role 'Policy', cardinality 0..*).
+'PiServiceComposition::ActivityPartition' (role 'PiServiceComposition_ActivityPartition11', cardinality 0..*) is associated with 'PiServiceComposition::ActivityPartition' (role 'PiServiceComposition_ActivityPartition13', cardinality 0..*).
+'PiServiceComposition::Activity' (role 'PiServiceComposition_Activity27', cardinality 0..*) is associated with 'PiServiceComposition::ActivityNode' (role 'PiServiceComposition_ActivityNode26', cardinality 0..*).
+'PiServiceComposition::Rule' (role 'contains', cardinality 0..*) is associated with 'PiServiceComposition::Policy' (role 'Policy45', cardinality 0..*).
+'PiServiceComposition::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'PiServiceComposition::ActivityPartition' (role 'partition', cardinality 0..*).
+'PiServiceComposition::ActivityNode' (role 'PiServiceComposition_ActivityNode', cardinality 0..*) is associated with 'PiServiceComposition::Activity' (role 'PiServiceComposition_Activity10', cardinality 0..*).
+'PiServiceComposition::ActivityNode' (role 'ActivityNode20', cardinality 0..*) is associated with 'PiServiceComposition::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'PiServiceComposition::CompositionServiceModel' (role 'PiServiceComposition_CompositionServiceModel8', cardinality 0..*) is associated with 'PiServiceComposition::Variable' (role 'PiServiceComposition_Variable', cardinality 0..*).
+'PiServiceComposition::Policy' (role 'PiServiceComposition_Policy', cardinality 0..*) is associated with 'PiServiceComposition::CompositionServiceModel' (role 'PiServiceComposition_CompositionServiceModel6', cardinality 0..*).
+'PiServiceComposition::Policy' (role 'PiServiceComposition_Policy40', cardinality 0..*) is associated with 'PiServiceComposition::ServiceActivity' (role 'PiServiceComposition_ServiceActivity39', cardinality 0..*).
+'PiServiceComposition::ActivityEdge' (role 'PiServiceComposition_ActivityEdge21', cardinality 0..*) is associated with 'PiServiceComposition::ActivityEdge' (role 'PiServiceComposition_ActivityEdge23', cardinality 0..*).
+'PiServiceComposition::Action' (role 'Action', cardinality 0..*) is associated with 'PiServiceComposition::Policy' (role 'definePolices', cardinality 0..*).
+'PiServiceComposition::ServiceActivity' (role 'PiServiceComposition_ServiceActivity', cardinality 0..*) is associated with 'PiServiceComposition::Action' (role 'PiServiceComposition_Action', cardinality 0..*).
+'PiServiceComposition::Rule' (role 'Rule', cardinality 0..*) is associated with 'PiServiceComposition::Policy' (role 'policy', cardinality 0..*).
+'PiServiceComposition::Policy' (role 'hasPolices', cardinality 0..*) is associated with 'PiServiceComposition::BussinessCollaborator' (role 'BussinessCollaborator', cardinality 0..*).
+'PiServiceComposition::BussinessCollaborator' (role 'typeOperation', cardinality 0..*) is associated with 'PiServiceComposition::Policy' (role 'Policy43', cardinality 0..*).
+'PiServiceComposition::ActivityPartition' (role 'ActivityPartition36', cardinality 0..*) is associated with 'PiServiceComposition::ActivityNode' (role 'nodes', cardinality 0..*).
+'PiServiceComposition::ActivityNode' (role 'ActivityNode18', cardinality 0..*) is associated with 'PiServiceComposition::ActivityEdge' (role 'incoming', cardinality 0..*).
+'PiServiceComposition::CompositionServiceModel' (role 'PiServiceComposition_CompositionServiceModel', cardinality 0..*) is associated with 'PiServiceComposition::ActivityPartition' (role 'PiServiceComposition_ActivityPartition', cardinality 0..*).
+'PiServiceComposition::ActivityEdge' (role 'PiServiceComposition_ActivityEdge', cardinality 0..*) is associated with 'PiServiceComposition::CompositionServiceModel' (role 'PiServiceComposition_CompositionServiceModel4', cardinality 0..*).
+'PiServiceComposition::Policy' (role 'PiServiceComposition_Policy48', cardinality 0..*) is associated with 'PiServiceComposition::Variable' (role 'PiServiceComposition_Variable49', cardinality 0..*).
+'PiServiceComposition::ActivityPartition' (role 'ActivityPartition', cardinality 0..*) is associated with 'PiServiceComposition::ActivityEdge' (role 'edges', cardinality 0..*).
+'PiServiceComposition::ActivityNode' (role 'source', cardinality 0..*) is associated with 'PiServiceComposition::ActivityEdge' (role 'ActivityEdge31', cardinality 0..*).
+'PiServiceComposition::ActivityEdge' (role 'ActivityEdge29', cardinality 0..*) is associated with 'PiServiceComposition::ActivityNode' (role 'target', cardinality 0..*).
+'PiServiceComposition::ActivityPartition' (role 'partition16', cardinality 0..*) is associated with 'PiServiceComposition::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'PiServiceComposition::ActivityNode' (role 'PiServiceComposition_ActivityNode32', cardinality 0..*) is associated with 'PiServiceComposition::ActivityNode' (role 'PiServiceComposition_ActivityNode34', cardinality 0..*).
+'PiServiceComposition::Activity' (role 'PiServiceComposition_Activity', cardinality 0..*) is associated with 'PiServiceComposition::CompositionServiceModel' (role 'PiServiceComposition_CompositionServiceModel2', cardinality 0..*).

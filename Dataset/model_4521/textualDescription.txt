@@ -1,0 +1,121 @@
+The model has 57 class(es).
+The class 'tortugaDSL::FONT::STYLE' has no attributes.
+The class 'tortugaDSL::OPERATION' has no attributes.
+The class 'COLOREABLE' has no attributes.
+The class 'tortugaDSL::COLOREABLE' has the following attributes: 'color' of type str.
+The class 'tortugaDSL::VARIABLE::REF' has no attributes.
+The class 'MOVE' has no attributes.
+The class 'DRAWING::SENTENCE' has no attributes.
+The class 'tortugaDSL::SET::Y' has no attributes.
+The class 'tortugaDSL::REFERENCIABLE' has the following attributes: 'name' of type str.
+The class 'tortugaDSL::MULTIPLY' has no attributes.
+The class 'CONTROL::SENTENCES' has no attributes.
+The class 'tortugaDSL::MAKE' has no attributes.
+The class 'tortugaDSL::BOLD' has no attributes.
+The class 'tortugaDSL::TO' has the following attributes: 'name' of type str.
+The class 'tortugaDSL::CONTROL::SENTENCES' has no attributes.
+The class 'tortugaDSL::VALUE' has the following attributes: 'val' of type float.
+The class 'FontStyleValues' has no attributes.
+The class 'tortugaDSL::MOVE' has no attributes.
+The class 'tortugaDSL::LEFT' has no attributes.
+The class 'tortugaDSL::PENCOLOR' has no attributes.
+The class 'tortugaDSL::CONTENT' has no attributes.
+The class 'tortugaDSL::EXPRESSION' has no attributes.
+The class 'tortugaDSL::FONT::SIZE' has no attributes.
+The class 'tortugaDSL::DIVIDE' has no attributes.
+The class 'SENTENCE' has no attributes.
+The class 'REFERENCIABLE' has no attributes.
+The class 'tortugaDSL::PARAM' has no attributes.
+The class 'tortugaDSL::IF' has no attributes.
+The class 'tortugaDSL::CANVAS::COLOR' has no attributes.
+The class 'OPERATION' has no attributes.
+The class 'tortugaDSL::TortugaProgram' has no attributes.
+The class 'tortugaDSL::FontStyleValues' has no attributes.
+The class 'tortugaDSL::REPEAT' has no attributes.
+The class 'tortugaDSL::ITALIC' has no attributes.
+The class 'tortugaDSL::GREATER::THAN' has no attributes.
+The class 'tortugaDSL::SUBTRACT' has no attributes.
+The class 'tortugaDSL::RIGHT' has no attributes.
+The class 'FONT::SPEC' has no attributes.
+The class 'tortugaDSL::PLAIN' has no attributes.
+The class 'tortugaDSL::COLOR::SPEC' has no attributes.
+The class 'tortugaDSL::FORWARD' has no attributes.
+The class 'tortugaDSL::EQUALS' has no attributes.
+The class 'tortugaDSL::PENDOWN' has no attributes.
+The class 'EXPRESSION' has no attributes.
+The class 'tortugaDSL::SENTENCE' has no attributes.
+The class 'tortugaDSL::SET::X' has no attributes.
+The class 'tortugaDSL::CLEAR' has no attributes.
+The class 'tortugaDSL::BOOLEAN::EXPRESSION' has no attributes.
+The class 'tortugaDSL::DRAWING::SENTENCE' has no attributes.
+The class 'tortugaDSL::PENUP' has no attributes.
+The class 'tortugaDSL::HOME' has no attributes.
+The class 'tortugaDSL::PROCEDURE::CALL' has no attributes.
+The class 'tortugaDSL::SUM' has no attributes.
+The class 'tortugaDSL::FONT::SPEC' has no attributes.
+The class 'tortugaDSL::DRAW::STRING' has the following attributes: 'text' of type str.
+The class 'BOOLEAN::EXPRESSION' has no attributes.
+The class 'tortugaDSL::LESSER::THAN' has no attributes.
+'tortugaDSL::SET::Y' is a specialization of 'MOVE'.
+'tortugaDSL::COLOREABLE' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::HOME' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::TO' is a specialization of 'CONTROL::SENTENCES'.
+'tortugaDSL::REPEAT' is a specialization of 'CONTROL::SENTENCES'.
+'tortugaDSL::BOLD' is a specialization of 'FontStyleValues'.
+'tortugaDSL::MAKE' is a specialization of 'SENTENCE'.
+'tortugaDSL::CANVAS::COLOR' is a specialization of 'COLOREABLE'.
+'tortugaDSL::SUBTRACT' is a specialization of 'OPERATION'.
+'tortugaDSL::FONT::SPEC' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::PENUP' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::PENDOWN' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::MULTIPLY' is a specialization of 'OPERATION'.
+'tortugaDSL::ITALIC' is a specialization of 'FontStyleValues'.
+'tortugaDSL::CONTENT' is a specialization of 'SENTENCE'.
+'tortugaDSL::IF' is a specialization of 'CONTROL::SENTENCES'.
+'tortugaDSL::SUM' is a specialization of 'OPERATION'.
+'tortugaDSL::VALUE' is a specialization of 'EXPRESSION'.
+'tortugaDSL::PARAM' is a specialization of 'REFERENCIABLE'.
+'tortugaDSL::OPERATION' is a specialization of 'SENTENCE'.
+'tortugaDSL::RIGHT' is a specialization of 'MOVE'.
+'tortugaDSL::PROCEDURE::CALL' is a specialization of 'SENTENCE'.
+'tortugaDSL::DRAWING::SENTENCE' is a specialization of 'SENTENCE'.
+'tortugaDSL::CONTROL::SENTENCES' is a specialization of 'SENTENCE'.
+'tortugaDSL::PENCOLOR' is a specialization of 'COLOREABLE'.
+'tortugaDSL::CLEAR' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::DIVIDE' is a specialization of 'OPERATION'.
+'tortugaDSL::EQUALS' is a specialization of 'BOOLEAN::EXPRESSION'.
+'tortugaDSL::FONT::STYLE' is a specialization of 'FONT::SPEC'.
+'tortugaDSL::DRAW::STRING' is a specialization of 'DRAWING::SENTENCE'.
+'tortugaDSL::FORWARD' is a specialization of 'MOVE'.
+'tortugaDSL::PLAIN' is a specialization of 'FontStyleValues'.
+'tortugaDSL::LESSER::THAN' is a specialization of 'BOOLEAN::EXPRESSION'.
+'tortugaDSL::MAKE' is a specialization of 'REFERENCIABLE'.
+'tortugaDSL::FONT::SIZE' is a specialization of 'FONT::SPEC'.
+'tortugaDSL::MOVE' is a specialization of 'SENTENCE'.
+'tortugaDSL::LEFT' is a specialization of 'MOVE'.
+'tortugaDSL::SET::X' is a specialization of 'MOVE'.
+'tortugaDSL::GREATER::THAN' is a specialization of 'BOOLEAN::EXPRESSION'.
+'tortugaDSL::VARIABLE::REF' is a specialization of 'EXPRESSION'.
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION34', cardinality 0..*) is associated with 'tortugaDSL::REPEAT' (role 'tortugaDSL_REPEAT', cardinality 0..*).
+'tortugaDSL::OPERATION' (role 'tortugaDSL_OPERATION', cardinality 0..*) is associated with 'tortugaDSL::MAKE' (role 'tortugaDSL_MAKE24', cardinality 0..*).
+'tortugaDSL::SENTENCE' (role 'tortugaDSL_SENTENCE32', cardinality 0..*) is associated with 'tortugaDSL::CONTROL::SENTENCES' (role 'tortugaDSL_CONTROL_SENTENCES', cardinality 0..*).
+'tortugaDSL::TO' (role 'tortugaDSL_TO', cardinality 0..*) is associated with 'tortugaDSL::PARAM' (role 'tortugaDSL_PARAM', cardinality 0..*).
+'tortugaDSL::OPERATION' (role 'tortugaDSL_OPERATION26', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION27', cardinality 0..*).
+'tortugaDSL::MAKE' (role 'tortugaDSL_MAKE22', cardinality 0..*) is associated with 'tortugaDSL::CONTENT' (role 'tortugaDSL_CONTENT', cardinality 0..*).
+'tortugaDSL::SENTENCE' (role 'tortugaDSL_SENTENCE', cardinality 0..*) is associated with 'tortugaDSL::TortugaProgram' (role 'tortugaDSL_TortugaProgram', cardinality 0..*).
+'tortugaDSL::TO' (role 'tortugaDSL_TO37', cardinality 0..*) is associated with 'tortugaDSL::PROCEDURE::CALL' (role 'tortugaDSL_PROCEDURE_CALL', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION', cardinality 0..*) is associated with 'tortugaDSL::MOVE' (role 'tortugaDSL_MOVE', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION16', cardinality 0..*) is associated with 'tortugaDSL::FONT::SIZE' (role 'tortugaDSL_FONT_SIZE', cardinality 0..*).
+'tortugaDSL::COLOR::SPEC' (role 'tortugaDSL_COLOR_SPEC13', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION14', cardinality 0..*).
+'tortugaDSL::BOOLEAN::EXPRESSION' (role 'tortugaDSL_BOOLEAN_EXPRESSION', cardinality 0..*) is associated with 'tortugaDSL::IF' (role 'tortugaDSL_IF', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION30', cardinality 0..*) is associated with 'tortugaDSL::OPERATION' (role 'tortugaDSL_OPERATION29', cardinality 0..*).
+'tortugaDSL::COLOR::SPEC' (role 'tortugaDSL_COLOR_SPEC7', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION8', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION5', cardinality 0..*) is associated with 'tortugaDSL::COLOR::SPEC' (role 'tortugaDSL_COLOR_SPEC4', cardinality 0..*).
+'tortugaDSL::FONT::STYLE' (role 'tortugaDSL_FONT_STYLE', cardinality 0..*) is associated with 'tortugaDSL::FontStyleValues' (role 'tortugaDSL_FontStyleValues', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION44', cardinality 0..*) is associated with 'tortugaDSL::BOOLEAN::EXPRESSION' (role 'tortugaDSL_BOOLEAN_EXPRESSION43', cardinality 0..*).
+'tortugaDSL::COLOREABLE' (role 'tortugaDSL_COLOREABLE', cardinality 0..*) is associated with 'tortugaDSL::COLOR::SPEC' (role 'tortugaDSL_COLOR_SPEC', cardinality 0..*).
+'tortugaDSL::COLOR::SPEC' (role 'tortugaDSL_COLOR_SPEC10', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION11', cardinality 0..*).
+'tortugaDSL::REFERENCIABLE' (role 'tortugaDSL_REFERENCIABLE', cardinality 0..*) is associated with 'tortugaDSL::VARIABLE::REF' (role 'tortugaDSL_VARIABLE_REF', cardinality 0..*).
+'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION19', cardinality 0..*) is associated with 'tortugaDSL::MAKE' (role 'tortugaDSL_MAKE', cardinality 0..*).
+'tortugaDSL::BOOLEAN::EXPRESSION' (role 'tortugaDSL_BOOLEAN_EXPRESSION46', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION47', cardinality 0..*).
+'tortugaDSL::PROCEDURE::CALL' (role 'tortugaDSL_PROCEDURE_CALL39', cardinality 0..*) is associated with 'tortugaDSL::EXPRESSION' (role 'tortugaDSL_EXPRESSION40', cardinality 0..*).

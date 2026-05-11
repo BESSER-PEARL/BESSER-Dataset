@@ -1,0 +1,42 @@
+The model has 18 class(es).
+The class 'services::ServiceForecast' has the following attributes: 'revision' of type str; 'name' of type str.
+The class 'services::Value' has no attributes.
+The class 'services::ServiceUser' has the following attributes: 'name' of type str.
+The class 'services::ServiceForecastUsers' has no attributes.
+The class 'services::CIID' has the following attributes: 'commonCIID' of type str; 'localCIID' of type str.
+The class 'services::ResourceForecast' has no attributes.
+The class 'services::Expression' has no attributes.
+The class 'services::ResourceMonitor' has no attributes.
+The class 'services::CFSService' has the following attributes: 'scenario' of type str; 'provider' of type str.
+The class 'services::RFSService' has the following attributes: 'functionalCategory' of type str.
+The class 'services::Service' has the following attributes: 'serviceClass' of type str; 'serviceDescription' of type str; 'serviceName' of type str; 'serviceCategory' of type str.
+The class 'services::ServiceMonitor' has the following attributes: 'revision' of type str; 'name' of type str.
+The class 'Service' has no attributes.
+The class 'services::DateTimeRange' has no attributes.
+The class 'services::ServiceProfile' has the following attributes: 'name' of type str.
+The class 'services::EObject' has no attributes.
+The class 'services::ServiceDistribution' has no attributes.
+The class 'services::NetXResource' has no attributes.
+The enumeration 'ServiceClassType' has the following literals: 'Gold', 'Bronze', 'Silver'.
+'services::RFSService' is a specialization of 'Service'.
+'services::CFSService' is a specialization of 'Service'.
+'services::ServiceForecast' (role 'services_ServiceForecast25', cardinality 0..*) is associated with 'services::ResourceForecast' (role 'services_ResourceForecast', cardinality 0..*).
+'services::Service' (role 'services_Service9', cardinality 0..*) is associated with 'services::ServiceForecast' (role 'services_ServiceForecast', cardinality 0..*).
+'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers29', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser30', cardinality 0..*).
+'services::Service' (role 'services_Service11', cardinality 0..*) is associated with 'services::ServiceMonitor' (role 'services_ServiceMonitor', cardinality 0..*).
+'services::Service' (role 'services_Service13', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser', cardinality 0..*).
+'services::ServiceProfile' (role 'services_ServiceProfile40', cardinality 0..*) is associated with 'services::ServiceUser' (role 'services_ServiceUser39', cardinality 0..*).
+'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers27', cardinality 0..*) is associated with 'services::Value' (role 'services_Value', cardinality 0..*).
+'services::ServiceForecast' (role 'services_ServiceForecast21', cardinality 0..*) is associated with 'services::DateTimeRange' (role 'services_DateTimeRange', cardinality 0..*).
+'services::ServiceMonitor' (role 'services_ServiceMonitor35', cardinality 0..*) is associated with 'services::ResourceMonitor' (role 'services_ResourceMonitor', cardinality 0..*).
+'services::ServiceProfile' (role 'services_ServiceProfile', cardinality 0..*) is associated with 'services::NetXResource' (role 'services_NetXResource37', cardinality 0..*).
+'services::Service' (role 'services_Service5', cardinality 0..*) is associated with 'services::Service' (role 'services_Service7', cardinality 0..*).
+'services::EObject' (role 'services_EObject3', cardinality 0..*) is associated with 'services::RFSService' (role 'services_RFSService2', cardinality 0..*).
+'services::ServiceDistribution' (role 'services_ServiceDistribution17', cardinality 0..*) is associated with 'services::NetXResource' (role 'services_NetXResource', cardinality 0..*).
+'services::CIID' (role 'services_CIID', cardinality 0..*) is associated with 'services::Service' (role 'services_Service', cardinality 0..*).
+'services::ServiceMonitor' (role 'services_ServiceMonitor32', cardinality 0..*) is associated with 'services::DateTimeRange' (role 'services_DateTimeRange33', cardinality 0..*).
+'services::RFSService' (role 'services_RFSService', cardinality 0..*) is associated with 'services::EObject' (role 'services_EObject', cardinality 0..*).
+'services::Service' (role 'services_Service15', cardinality 0..*) is associated with 'services::ServiceDistribution' (role 'services_ServiceDistribution', cardinality 0..*).
+'services::ServiceForecast' (role 'services_ServiceForecast23', cardinality 0..*) is associated with 'services::ServiceForecastUsers' (role 'services_ServiceForecastUsers', cardinality 0..*).
+'services::ServiceUser' (role 'services_ServiceUser42', cardinality 0..*) is associated with 'services::Expression' (role 'services_Expression43', cardinality 0..*).
+'services::Expression' (role 'services_Expression', cardinality 0..*) is associated with 'services::ServiceDistribution' (role 'services_ServiceDistribution19', cardinality 0..*).

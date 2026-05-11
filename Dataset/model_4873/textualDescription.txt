@@ -1,0 +1,63 @@
+The model has 28 class(es).
+The class 'application::ConfigurableElement' has the following attributes: 'name' of type str; 'configurationImage' of type str; 'description' of type str; 'changeable' of type str; 'hidden' of type str; 'ident' of type str.
+The class 'ConfigurableElement' has no attributes.
+The class 'application::Persistency' has no attributes.
+The class 'Interface' has no attributes.
+The class 'application::Property' has the following attributes: 'possibleValues' of type str; 'propertyType' of type str; 'helpText' of type str; 'hidden' of type str; 'Value' of type str; 'Key' of type str; 'changeable' of type str; 'required' of type str.
+The class 'Security' has no attributes.
+The class 'application::OAuthClientScope' has the following attributes: 'positivePerson' of type str; 'allowPersons' of type str; 'allowContents' of type str; 'negativeCategory' of type str; 'positiveCategory' of type str; 'allowOrganisations' of type str; 'positiveMetaTag' of type str; 'identSpecification' of type str; 'negativeTag' of type str; 'negativeOrganisation' of type str; 'positiveTag' of type str; 'positiveOrganisation' of type str; 'negativeMetaTag' of type str; 'maximumAge' of type str; 'negativePerson' of type str.
+The class 'application::ApplicationKeyConfig' has the following attributes: 'applicationKeys' of type str.
+The class 'application::MashupAdmin' has the following attributes: 'email' of type str; 'name' of type str; 'localIdent' of type str; 'id' of type str; 'profileImage' of type str; 'isConfigurationAdmin' of type str; 'provider' of type str.
+The class 'application::DataSet' has no attributes.
+The class 'application::MappingRule' has no attributes.
+The class 'application::OAuthAdmin' has the following attributes: 'username' of type str; 'passwordHash' of type str.
+The class 'Source' has no attributes.
+The class 'application::RESTInterface' has the following attributes: 'type' of type str.
+The class 'application::Security' has no attributes.
+The class 'application::OAuthConfig' has the following attributes: 'useScopeInterfaceOnRedirect' of type str.
+The class 'application::Source' has the following attributes: 'bundleId' of type str; 'logLevel' of type str; 'removeDataOnStop' of type str; 'state' of type str; 'updateRound' of type str; 'activeState' of type str.
+The class 'Persistency' has no attributes.
+The class 'application::XMLFile' has no attributes.
+The class 'application::MashupContainer' has the following attributes: 'createAccountsAtLoginTry' of type str; 'backupIntervall' of type str; 'identCounter' of type str; 'backupConfiguration' of type str; 'immediateSave' of type str.
+The class 'application::Configuration' has no attributes.
+The class 'application::Interface' has the following attributes: 'urlSuffix' of type str; 'frontEndCaching' of type str.
+The class 'application::OAuthClientConfig' has the following attributes: 'grantType' of type str; 'name' of type str; 'redirectionURL' of type str; 'refreshToken' of type str; 'forbiddenMetaTags' of type str; 'accessTokenExpirationDate' of type date; 'clientID' of type str; 'allowedMetaTags' of type str; 'code' of type str; 'description' of type str; 'accessTokenCreationDate' of type date; 'accessToken' of type str; 'clientSecret' of type str; 'oAuthScopeLevel' of type str; 'type' of type str.
+The class 'application::Mashup' has the following attributes: 'cacheDataSet' of type str; 'keepDeletedItemsList' of type str; 'cacheDelay' of type str; 'backupIntervall' of type str; 'backupDataSet' of type str; 'workingDirectory' of type str; 'sourceIdentCounter' of type str; 'cacheAttachments' of type str.
+The class 'application::FEEDInterface' has the following attributes: 'language' of type str; 'feedTitle' of type str; 'feedType' of type str; 'allowMetaTagFiltering' of type str; 'allowCategoryFiltering' of type str; 'allowTagFiltering' of type str; 'allowOrganisationFiltering' of type str; 'allowTypeFiltering' of type str; 'allowPersonFiltering' of type str.
+The class 'application::OCLRestrictedProperty' has the following attributes: 'OCLRestriction' of type str.
+The class 'application::Database' has no attributes.
+The class 'Property' has no attributes.
+The enumeration 'SourceActiveStates' has the following literals: 'WaitingForUpdate', 'Filling', 'Filled', 'Initialized', 'Initializing', 'Enriching', 'Unknown', 'Updating'.
+The enumeration 'PropertyTypes' has the following literals: 'String', 'Integer', 'Float', 'UploadZipFile', 'Date', 'Boolean', 'Authorization', 'UploadFile'.
+The enumeration 'SourceState' has the following literals: 'Error', 'Paused', 'Active', 'Stoped'.
+'application::Interface' is a specialization of 'ConfigurableElement'.
+'application::OAuthConfig' is a specialization of 'Security'.
+'application::ApplicationKeyConfig' is a specialization of 'Security'.
+'application::OCLRestrictedProperty' is a specialization of 'Property'.
+'application::XMLFile' is a specialization of 'Persistency'.
+'application::Mashup' is a specialization of 'Source'.
+'application::FEEDInterface' is a specialization of 'Interface'.
+'application::Source' is a specialization of 'ConfigurableElement'.
+'application::RESTInterface' is a specialization of 'Interface'.
+'application::Database' is a specialization of 'Persistency'.
+'application::OAuthClientScope' (role 'application_OAuthClientScope', cardinality 0..*) is associated with 'application::OAuthClientConfig' (role 'application_OAuthClientConfig31', cardinality 0..*).
+'application::Configuration' (role 'application_Configuration', cardinality 0..*) is associated with 'application::Property' (role 'application_Property', cardinality 0..*).
+'application::OAuthConfig' (role 'application_OAuthConfig', cardinality 0..*) is associated with 'application::OAuthClientConfig' (role 'application_OAuthClientConfig', cardinality 0..*).
+'application::Mashup' (role 'Mashup33', cardinality 0..*) is associated with 'application::MashupAdmin' (role 'mashupAdmins', cardinality 0..*).
+'application::Source' (role 'application_Source', cardinality 0..*) is associated with 'application::Persistency' (role 'application_Persistency', cardinality 0..*).
+'application::Mashup' (role 'mashup', cardinality 0..*) is associated with 'application::Source' (role 'Source', cardinality 0..*).
+'application::MashupAdmin' (role 'MashupAdmin', cardinality 0..*) is associated with 'application::Mashup' (role 'configurableMashups', cardinality 0..*).
+'application::MashupContainer' (role 'application_MashupContainer', cardinality 0..*) is associated with 'application::Mashup' (role 'application_Mashup11', cardinality 0..*).
+'application::ConfigurableElement' (role 'application_ConfigurableElement', cardinality 0..*) is associated with 'application::Configuration' (role 'application_Configuration35', cardinality 0..*).
+'application::Mashup' (role 'application_Mashup', cardinality 0..*) is associated with 'application::MappingRule' (role 'application_MappingRule', cardinality 0..*).
+'application::Mashup' (role 'Mashup24', cardinality 0..*) is associated with 'application::Interface' (role 'interfaces', cardinality 0..*).
+'application::Interface' (role 'interface', cardinality 0..*) is associated with 'application::Security' (role 'Security', cardinality 0..*).
+'application::Interface' (role 'Interface', cardinality 0..*) is associated with 'application::Mashup' (role 'mashup7', cardinality 0..*).
+'application::MashupAdmin' (role 'application_MashupAdmin', cardinality 0..*) is associated with 'application::MashupContainer' (role 'application_MashupContainer13', cardinality 0..*).
+'application::Source' (role 'sources', cardinality 0..*) is associated with 'application::Mashup' (role 'Mashup', cardinality 0..*).
+'application::OAuthAdmin' (role 'application_OAuthAdmin', cardinality 0..*) is associated with 'application::OAuthConfig' (role 'application_OAuthConfig29', cardinality 0..*).
+'application::Interface' (role 'application_Interface', cardinality 0..*) is associated with 'application::MashupContainer' (role 'application_MashupContainer21', cardinality 0..*).
+'application::MashupContainer' (role 'application_MashupContainer18', cardinality 0..*) is associated with 'application::Mashup' (role 'application_Mashup19', cardinality 0..*).
+'application::Interface' (role 'Interface26', cardinality 0..*) is associated with 'application::Security' (role 'security', cardinality 0..*).
+'application::Mashup' (role 'application_Mashup16', cardinality 0..*) is associated with 'application::MashupContainer' (role 'application_MashupContainer15', cardinality 0..*).
+'application::Source' (role 'application_Source2', cardinality 0..*) is associated with 'application::DataSet' (role 'application_DataSet', cardinality 0..*).

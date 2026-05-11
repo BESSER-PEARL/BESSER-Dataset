@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'bug404318::A' has no attributes.
+The class 'bug404318::B' has no attributes.
+'bug404318::A' (role 'bug404318_A', cardinality 0..*) is associated with 'bug404318::B' (role 'bug404318_B', cardinality 0..*).

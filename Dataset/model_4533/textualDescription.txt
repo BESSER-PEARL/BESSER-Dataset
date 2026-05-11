@@ -1,0 +1,56 @@
+The model has 27 class(es).
+The class 'robotG::flow::OpUnaire' has no attributes.
+The class 'robotG::robot::HasTurned' has the following attributes: 'angle' of type int.
+The class 'robotG::flow::Expr' has no attributes.
+The class 'flow::ExprBool' has no attributes.
+The class 'robotG::flow::While' has no attributes.
+The class 'robotG::flow::Or' has no attributes.
+The class 'robotG::robot::Display' has the following attributes: 'duration' of type int; 'line' of type int; 'col' of type int; 'msg' of type str.
+The class 'robotG::flow::StopProgram' has no attributes.
+The class 'robotG::robot::Bip' has the following attributes: 'power' of type int; 'repeat' of type bool; 'duration' of type int.
+The class 'robotG::flow::Programme' has no attributes.
+The class 'robot::CommandeRobot' has no attributes.
+The class 'robotG::robot::Move' has the following attributes: 'power' of type int.
+The class 'OpBinaire' has no attributes.
+The class 'robotG::robot::Turn' has the following attributes: 'power' of type int; 'angle' of type int.
+The class 'robotG::flow::ExprBool' has no attributes.
+The class 'robotG::robot::CommandeRobot' has no attributes.
+The class 'ExprBool' has no attributes.
+The class 'robotG::robot::SetTurnAngle' has the following attributes: 'angle' of type int.
+The class 'robotG::robot::Obstacle' has the following attributes: 'distance' of type int.
+The class 'robotG::flow::And' has no attributes.
+The class 'robotG::flow::If' has no attributes.
+The class 'OpUnaire' has no attributes.
+The class 'robotG::flow::OpBinaire' has no attributes.
+The class 'Expr' has no attributes.
+The class 'robotG::flow::Not' has no attributes.
+The class 'robotG::robot::StopEngine' has no attributes.
+The class 'CommandeRobot' has no attributes.
+'robotG::robot::Obstacle' is a specialization of 'flow::ExprBool'.
+'robotG::flow::StopProgram' is a specialization of 'Expr'.
+'robotG::robot::Move' is a specialization of 'CommandeRobot'.
+'robotG::robot::CommandeRobot' is a specialization of 'Expr'.
+'robotG::robot::HasTurned' is a specialization of 'flow::ExprBool'.
+'robotG::robot::Bip' is a specialization of 'CommandeRobot'.
+'robotG::robot::StopEngine' is a specialization of 'CommandeRobot'.
+'robotG::flow::OpBinaire' is a specialization of 'ExprBool'.
+'robotG::robot::Turn' is a specialization of 'CommandeRobot'.
+'robotG::flow::ExprBool' is a specialization of 'Expr'.
+'robotG::flow::OpUnaire' is a specialization of 'ExprBool'.
+'robotG::flow::And' is a specialization of 'OpBinaire'.
+'robotG::flow::Or' is a specialization of 'OpBinaire'.
+'robotG::robot::SetTurnAngle' is a specialization of 'CommandeRobot'.
+'robotG::flow::If' is a specialization of 'Expr'.
+'robotG::robot::Obstacle' is a specialization of 'robot::CommandeRobot'.
+'robotG::robot::HasTurned' is a specialization of 'robot::CommandeRobot'.
+'robotG::flow::While' is a specialization of 'Expr'.
+'robotG::robot::Display' is a specialization of 'CommandeRobot'.
+'robotG::flow::Not' is a specialization of 'OpUnaire'.
+'ExprBool' (role 'ExprBool4', cardinality 0..*) is associated with 'robotG::flow::If' (role 'robotG_flow_If', cardinality 0..*).
+'robotG::flow::Programme' (role 'robotG_flow_Programme', cardinality 0..*) is associated with 'Expr' (role 'Expr16', cardinality 0..*).
+'robotG::flow::While' (role 'robotG_flow_While', cardinality 0..*) is associated with 'ExprBool' (role 'ExprBool', cardinality 0..*).
+'Expr' (role 'Expr', cardinality 0..*) is associated with 'robotG::flow::While' (role 'robotG_flow_While2', cardinality 0..*).
+'ExprBool' (role 'ExprBool14', cardinality 0..*) is associated with 'robotG::flow::OpBinaire' (role 'robotG_flow_OpBinaire13', cardinality 0..*).
+'Expr' (role 'Expr7', cardinality 0..*) is associated with 'robotG::flow::If' (role 'robotG_flow_If6', cardinality 0..*).
+'robotG::flow::OpUnaire' (role 'robotG_flow_OpUnaire', cardinality 0..*) is associated with 'ExprBool' (role 'ExprBool9', cardinality 0..*).
+'robotG::flow::OpBinaire' (role 'robotG_flow_OpBinaire', cardinality 0..*) is associated with 'ExprBool' (role 'ExprBool11', cardinality 0..*).

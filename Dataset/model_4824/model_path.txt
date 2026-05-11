@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ot-ryan-riggs/archi/com.archimatetool.model/model/archimate.ecore

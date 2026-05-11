@@ -1,0 +1,58 @@
+The model has 27 class(es).
+The class 'Type' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'OO::concept::Package' has no attributes.
+The class 'Class' has no attributes.
+The class 'OO::concept::BehavioralFeature' has no attributes.
+The class 'OO::concept::Feature' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'OO::concept::NamedElement' has the following attributes: 'visibility' of type str; 'isAbstract' of type bool; 'name' of type str.
+The class 'OO::concept::Generalization' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'OO::concept::Property' has no attributes.
+The class 'OO::concept::Class' has no attributes.
+The class 'OO::concept::Dependency' has no attributes.
+The class 'OO::concept::PackageableElement' has no attributes.
+The class 'OO::concept::Type' has no attributes.
+The class 'Package' has no attributes.
+The class 'OO::concept::Behavior' has no attributes.
+The class 'OO::concept::TypedElement' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'OO::concept::Classifier' has no attributes.
+The class 'OO::concept::Operation' has no attributes.
+The class 'OO::concept::Parameter' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'OO::concept::Model' has no attributes.
+The class 'OO::concept::StructuralFeature' has no attributes.
+The class 'Feature' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'public', 'private', 'protected', 'package'.
+'OO::concept::Property' is a specialization of 'StructuralFeature'.
+'OO::concept::Parameter' is a specialization of 'TypedElement'.
+'OO::concept::Package' is a specialization of 'NamedElement'.
+'OO::concept::Class' is a specialization of 'Classifier'.
+'OO::concept::BehavioralFeature' is a specialization of 'Feature'.
+'OO::concept::Type' is a specialization of 'NamedElement'.
+'OO::concept::Operation' is a specialization of 'BehavioralFeature'.
+'OO::concept::Model' is a specialization of 'Package'.
+'OO::concept::TypedElement' is a specialization of 'NamedElement'.
+'OO::concept::StructuralFeature' is a specialization of 'Feature'.
+'OO::concept::Operation' is a specialization of 'TypedElement'.
+'OO::concept::Property' is a specialization of 'TypedElement'.
+'OO::concept::Package' is a specialization of 'PackageableElement'.
+'OO::concept::Class' is a specialization of 'Type'.
+'OO::concept::Behavior' is a specialization of 'Class'.
+'OO::concept::Class' is a specialization of 'PackageableElement'.
+'OO::concept::Feature' is a specialization of 'NamedElement'.
+'OO::concept::Dependency' (role 'OO_concept_Dependency', cardinality 0..*) is associated with 'OO::concept::NamedElement' (role 'OO_concept_NamedElement', cardinality 0..*).
+'OO::concept::Package' (role 'OO_concept_Package', cardinality 0..*) is associated with 'OO::concept::PackageableElement' (role 'OO_concept_PackageableElement', cardinality 0..*).
+'OO::concept::Behavior' (role 'OO_concept_Behavior', cardinality 0..*) is associated with 'OO::concept::BehavioralFeature' (role 'OO_concept_BehavioralFeature', cardinality 0..*).
+'OO::concept::Generalization' (role 'generalization', cardinality 0..*) is associated with 'OO::concept::Classifier' (role 'Classifier', cardinality 0..*).
+'OO::concept::Operation' (role 'OO_concept_Operation7', cardinality 0..*) is associated with 'OO::concept::Parameter' (role 'OO_concept_Parameter', cardinality 0..*).
+'OO::concept::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'OO::concept::Classifier' (role 'specific', cardinality 0..*).
+'OO::concept::Class' (role 'OO_concept_Class3', cardinality 0..*) is associated with 'OO::concept::Property' (role 'OO_concept_Property', cardinality 0..*).
+'OO::concept::Type' (role 'OO_concept_Type', cardinality 0..*) is associated with 'OO::concept::TypedElement' (role 'OO_concept_TypedElement', cardinality 0..*).
+'OO::concept::Class' (role 'OO_concept_Class5', cardinality 0..*) is associated with 'OO::concept::Classifier' (role 'OO_concept_Classifier', cardinality 0..*).
+'OO::concept::Class' (role 'OO_concept_Class', cardinality 0..*) is associated with 'OO::concept::Operation' (role 'OO_concept_Operation', cardinality 0..*).
+'OO::concept::Dependency' (role 'OO_concept_Dependency13', cardinality 0..*) is associated with 'OO::concept::NamedElement' (role 'OO_concept_NamedElement14', cardinality 0..*).
+'OO::concept::Classifier' (role 'OO_concept_Classifier9', cardinality 0..*) is associated with 'OO::concept::Generalization' (role 'OO_concept_Generalization', cardinality 0..*).

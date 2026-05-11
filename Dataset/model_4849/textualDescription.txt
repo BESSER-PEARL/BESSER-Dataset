@@ -1,0 +1,171 @@
+The model has 41 class(es).
+The class 'aml::CollectionItem' has the following attributes: 'idRef' of type str; 'ordinal' of type str; 'objectType' of type str.
+The class 'aml::Value' has the following attributes: 'mixed' of type str; 'group' of type str; 'unit' of type str; 'type' of type str.
+The class 'aml::Publisher' has the following attributes: 'description' of type str; 'idRef' of type str; 'objectType' of type str.
+The class 'aml::DiscoveryMethod' has the following attributes: 'id' of type str; 'autoTrigger' of type str; 'type' of type str; 'label' of type str; 'description' of type str; 'url' of type str; 'importType' of type str.
+The class 'aml::Collection' has the following attributes: 'label' of type str; 'group' of type str; 'label1' of type str; 'id' of type str; 'objectType' of type str.
+The class 'aml::End' has the following attributes: 'scheme' of type str; 'value' of type str.
+The class 'aml::Witness' has the following attributes: 'timestamp' of type str; 'description' of type str; 'idRef' of type str.
+The class 'aml::NationState' has the following attributes: 'region' of type str; 'perspective' of type str; 'group' of type str; 'event' of type str; 'actor' of type str.
+The class 'aml::CreatingTool' has the following attributes: 'version' of type str; 'label' of type str; 'toolType' of type str.
+The class 'aml::Dependent' has the following attributes: 'ordinal' of type str; 'idRef' of type str.
+The class 'aml::Belief' has the following attributes: 'label' of type str; 'description' of type str; 'ordinal' of type str; 'symbol' of type str.
+The class 'aml::Reliability' has the following attributes: 'description' of type str; 'ordinal' of type str; 'symbol' of type str; 'label' of type str.
+The class 'aml::Question' has the following attributes: 'description' of type str; 'amplification' of type str; 'group' of type str; 'id' of type str; 'label' of type str.
+The class 'aml::Creator' has the following attributes: 'description' of type str; 'idRef' of type str; 'objectType' of type str.
+The class 'aml::Annotation' has the following attributes: 'id' of type str; 'mixed' of type str; 'group' of type str.
+The class 'aml::Flag' has the following attributes: 'description' of type str; 'label' of type str; 'flagType' of type str.
+The class 'aml::List' has the following attributes: 'group' of type str.
+The class 'aml::Memo' has the following attributes: 'type' of type str; 'body' of type str; 'id' of type str; 'subject' of type str.
+The class 'aml::EObject' has no attributes.
+The class 'aml::Coverage' has the following attributes: 'group' of type str; 'mixed' of type str.
+The class 'aml::Interval' has the following attributes: 'min' of type str; 'max' of type str.
+The class 'aml::Argument' has the following attributes: 'id' of type str.
+The class 'aml::Exhibit' has the following attributes: 'id' of type str.
+The class 'aml::MetaData' has the following attributes: 'title' of type str; 'date' of type str; 'description' of type str; 'subject' of type str; 'securityMarking' of type str; 'group' of type str.
+The class 'aml::Period' has the following attributes: 'group' of type str; 'label' of type str.
+The class 'aml::EvidenceExhibit' has the following attributes: 'value' of type str; 'questionId' of type str; 'idRef' of type str.
+The class 'aml::QuestionRelationships' has no attributes.
+The class 'aml::Evidence' has the following attributes: 'id' of type str; 'ordinal' of type str; 'label' of type str.
+The class 'aml::Parameter' has the following attributes: 'symbol' of type str.
+The class 'aml::Choice' has the following attributes: 'ordinal' of type str; 'symbol' of type str; 'description' of type str; 'label' of type str.
+The class 'aml::Answer' has the following attributes: 'group' of type str; 'questionId' of type str; 'rationale' of type str.
+The class 'aml::AggregationRule' has no attributes.
+The class 'aml::Person' has the following attributes: 'id' of type str; 'description' of type str; 'nickName' of type str; 'firstName' of type str; 'middleName' of type str; 'department' of type str; 'lastName' of type str; 'organization' of type str; 'email' of type str.
+The class 'aml::ArgumentTemplate' has the following attributes: 'value' of type str; 'idRef' of type str.
+The class 'aml::EStringToStringMapEntry' has no attributes.
+The class 'aml::Template' has the following attributes: 'id' of type str.
+The class 'aml::Start' has the following attributes: 'value' of type str; 'scheme' of type str.
+The class 'aml::DocumentRoot' has the following attributes: 'title' of type str; 'body' of type str; 'email' of type str; 'id' of type str; 'lastName' of type str; 'region' of type str; 'description1' of type str; 'perspective' of type str; 'label1' of type str; 'firstName' of type str; 'organization' of type str; 'date' of type str; 'symbol' of type str; 'actor' of type str; 'event' of type str; 'securityMarking' of type str; 'description' of type str; 'middleName' of type str; 'nickName' of type str; 'label' of type str; 'department' of type str; 'mixed' of type str; 'url' of type str; 'idRef' of type str; 'subject' of type str; 'rationale' of type str.
+The class 'aml::Reader' has the following attributes: 'description' of type str; 'objectType' of type str; 'idRef' of type str.
+The class 'aml::Relevance' has the following attributes: 'label' of type str; 'symbol' of type str; 'description' of type str; 'ordinal' of type str.
+The class 'aml::AmlDocument' has the following attributes: 'group' of type str; 'version' of type str.
+The enumeration 'Type' has the following literals: 'Urldir', 'Template', 'Url'.
+The enumeration 'ObjectType3' has the following literals: 'group', 'person', 'memo', 'collection', 'exhibit', 'discoveryMethod', 'argument', 'template'.
+The enumeration 'ObjectType1' has the following literals: 'group', 'argument', 'discoveryMethod', 'memo', 'collection', 'template', 'person', 'exhibit'.
+The enumeration 'ObjectType' has the following literals: 'collection', 'template', 'exhibit', 'group', 'argument', 'person', 'discoveryMethod', 'memo'.
+The enumeration 'ObjectType2' has the following literals: 'SEQUENTIAL', 'VERSIONING', 'MISC', 'template', 'argument', 'group'.
+'aml::DocumentRoot' (role 'aml_DocumentRoot154', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData155', cardinality 0..*).
+'aml::Answer' (role 'aml_Answer84', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot83', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot103', cardinality 0..*) is associated with 'aml::CollectionItem' (role 'aml_CollectionItem104', cardinality 0..*).
+'aml::Period' (role 'aml_Period', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot166', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData263', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject264', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot77', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument78', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot74', cardinality 0..*) is associated with 'aml::AggregationRule' (role 'aml_AggregationRule75', cardinality 0..*).
+'aml::CreatingTool' (role 'aml_CreatingTool113', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot112', cardinality 0..*).
+'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument15', cardinality 0..*).
+'aml::AmlDocument' (role 'aml_AmlDocument13', cardinality 0..*) is associated with 'aml::Memo' (role 'aml_Memo', cardinality 0..*).
+'aml::Exhibit' (role 'aml_Exhibit', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument7', cardinality 0..*).
+'aml::EvidenceExhibit' (role 'aml_EvidenceExhibit207', cardinality 0..*) is associated with 'aml::Evidence' (role 'aml_Evidence206', cardinality 0..*).
+'aml::Choice' (role 'aml_Choice300', cardinality 0..*) is associated with 'aml::Question' (role 'aml_Question299', cardinality 0..*).
+'aml::Argument' (role 'aml_Argument', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument5', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData245', cardinality 0..*) is associated with 'aml::Reader' (role 'aml_Reader246', cardinality 0..*).
+'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod67', cardinality 0..*) is associated with 'aml::Annotation' (role 'aml_Annotation68', cardinality 0..*).
+'aml::ArgumentTemplate' (role 'aml_ArgumentTemplate65', cardinality 0..*) is associated with 'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod64', cardinality 0..*).
+'aml::ArgumentTemplate' (role 'aml_ArgumentTemplate93', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot92', cardinality 0..*).
+'aml::Memo' (role 'aml_Memo17', cardinality 0..*) is associated with 'aml::Annotation' (role 'aml_Annotation', cardinality 0..*).
+'aml::Relevance' (role 'aml_Relevance210', cardinality 0..*) is associated with 'aml::Evidence' (role 'aml_Evidence209', cardinality 0..*).
+'aml::ArgumentTemplate' (role 'aml_ArgumentTemplate', cardinality 0..*) is associated with 'aml::Argument' (role 'aml_Argument42', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot193', cardinality 0..*) is associated with 'aml::Start' (role 'aml_Start', cardinality 0..*).
+'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod120', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot119', cardinality 0..*).
+'aml::Dependent' (role 'aml_Dependent294', cardinality 0..*) is associated with 'aml::QuestionRelationships' (role 'aml_QuestionRelationships293', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation19', cardinality 0..*) is associated with 'aml::Flag' (role 'aml_Flag', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot149', cardinality 0..*) is associated with 'aml::List' (role 'aml_List', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation40', cardinality 0..*) is associated with 'aml::Argument' (role 'aml_Argument39', cardinality 0..*).
+'aml::Collection' (role 'aml_Collection47', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData48', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject107', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot106', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot127', cardinality 0..*) is associated with 'aml::EvidenceExhibit' (role 'aml_EvidenceExhibit', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation321', cardinality 0..*) is associated with 'aml::Template' (role 'aml_Template320', cardinality 0..*).
+'aml::Memo' (role 'aml_Memo152', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot151', cardinality 0..*).
+'aml::QuestionRelationships' (role 'aml_QuestionRelationships', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot176', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot198', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject199', cardinality 0..*).
+'aml::NationState' (role 'aml_NationState', cardinality 0..*) is associated with 'aml::Coverage' (role 'aml_Coverage', cardinality 0..*).
+'aml::Period' (role 'aml_Period282', cardinality 0..*) is associated with 'aml::NationState' (role 'aml_NationState281', cardinality 0..*).
+'aml::AggregationRule' (role 'aml_AggregationRule306', cardinality 0..*) is associated with 'aml::Question' (role 'aml_Question305', cardinality 0..*).
+'aml::Person' (role 'aml_Person', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument11', cardinality 0..*).
+'aml::Parameter' (role 'aml_Parameter284', cardinality 0..*) is associated with 'aml::Value' (role 'aml_Value285', cardinality 0..*).
+'aml::Answer' (role 'aml_Answer27', cardinality 0..*) is associated with 'aml::AggregationRule' (role 'aml_AggregationRule28', cardinality 0..*).
+'aml::Creator' (role 'aml_Creator243', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData242', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation312', cardinality 0..*) is associated with 'aml::Question' (role 'aml_Question311', cardinality 0..*).
+'aml::Evidence' (role 'aml_Evidence215', cardinality 0..*) is associated with 'aml::Witness' (role 'aml_Witness216', cardinality 0..*).
+'aml::Evidence' (role 'aml_Evidence212', cardinality 0..*) is associated with 'aml::Reliability' (role 'aml_Reliability213', cardinality 0..*).
+'aml::Value' (role 'aml_Value329', cardinality 0..*) is associated with 'aml::List' (role 'aml_List330', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData278', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject279', cardinality 0..*).
+'aml::Creator' (role 'aml_Creator', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot115', cardinality 0..*).
+'aml::Memo' (role 'aml_Memo239', cardinality 0..*) is associated with 'aml::Reader' (role 'aml_Reader240', cardinality 0..*).
+'aml::CreatingTool' (role 'aml_CreatingTool', cardinality 0..*) is associated with 'aml::Argument' (role 'aml_Argument37', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot178', cardinality 0..*) is associated with 'aml::Reader' (role 'aml_Reader', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation25', cardinality 0..*) is associated with 'aml::Answer' (role 'aml_Answer24', cardinality 0..*).
+'aml::Interval' (role 'aml_Interval327', cardinality 0..*) is associated with 'aml::Value' (role 'aml_Value326', cardinality 0..*).
+'aml::Dependent' (role 'aml_Dependent', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot117', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot157', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject158', cardinality 0..*).
+'aml::Template' (role 'aml_Template196', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot195', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot160', cardinality 0..*) is associated with 'aml::NationState' (role 'aml_NationState161', cardinality 0..*).
+'aml::Exhibit' (role 'aml_Exhibit130', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot129', cardinality 0..*).
+'aml::Question' (role 'aml_Question324', cardinality 0..*) is associated with 'aml::Template' (role 'aml_Template323', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation81', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot80', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot180', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject181', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData', cardinality 0..*) is associated with 'aml::Argument' (role 'aml_Argument35', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData275', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject276', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot124', cardinality 0..*) is associated with 'aml::Evidence' (role 'aml_Evidence125', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData254', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject255', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject267', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData266', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot100', cardinality 0..*) is associated with 'aml::Collection' (role 'aml_Collection101', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject258', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData257', cardinality 0..*).
+'aml::Question' (role 'aml_Question302', cardinality 0..*) is associated with 'aml::QuestionRelationships' (role 'aml_QuestionRelationships303', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot135', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject136', cardinality 0..*).
+'aml::EStringToStringMapEntry' (role 'aml_EStringToStringMapEntry', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot', cardinality 0..*).
+'aml::Period' (role 'aml_Period287', cardinality 0..*) is associated with 'aml::Start' (role 'aml_Start288', cardinality 0..*).
+'aml::Witness' (role 'aml_Witness204', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot203', cardinality 0..*).
+'aml::List' (role 'aml_List233', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject234', cardinality 0..*).
+'aml::Collection' (role 'aml_Collection61', cardinality 0..*) is associated with 'aml::CollectionItem' (role 'aml_CollectionItem', cardinality 0..*).
+'aml::Belief' (role 'aml_Belief', cardinality 0..*) is associated with 'aml::Answer' (role 'aml_Answer', cardinality 0..*).
+'aml::Flag' (role 'aml_Flag133', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot132', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData251', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject252', cardinality 0..*).
+'aml::Parameter' (role 'aml_Parameter', cardinality 0..*) is associated with 'aml::AggregationRule' (role 'aml_AggregationRule2', cardinality 0..*).
+'aml::Choice' (role 'aml_Choice', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot98', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot141', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject142', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData269', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject270', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject', cardinality 0..*) is associated with 'aml::AggregationRule' (role 'aml_AggregationRule', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation228', cardinality 0..*) is associated with 'aml::Exhibit' (role 'aml_Exhibit227', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot171', cardinality 0..*) is associated with 'aml::Publisher' (role 'aml_Publisher', cardinality 0..*).
+'aml::Coverage' (role 'aml_Coverage273', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData272', cardinality 0..*).
+'aml::Creator' (role 'aml_Creator237', cardinality 0..*) is associated with 'aml::Memo' (role 'aml_Memo236', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot95', cardinality 0..*) is associated with 'aml::Belief' (role 'aml_Belief96', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject87', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot86', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData260', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject261', cardinality 0..*).
+'aml::Template' (role 'aml_Template314', cardinality 0..*) is associated with 'aml::MetaData' (role 'aml_MetaData315', cardinality 0..*).
+'aml::EStringToStringMapEntry' (role 'aml_EStringToStringMapEntry72', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot71', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot201', cardinality 0..*) is associated with 'aml::Value' (role 'aml_Value', cardinality 0..*).
+'aml::Collection' (role 'aml_Collection50', cardinality 0..*) is associated with 'aml::CreatingTool' (role 'aml_CreatingTool51', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot109', cardinality 0..*) is associated with 'aml::Coverage' (role 'aml_Coverage110', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData225', cardinality 0..*) is associated with 'aml::Exhibit' (role 'aml_Exhibit224', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject222', cardinality 0..*) is associated with 'aml::Exhibit' (role 'aml_Exhibit221', cardinality 0..*).
+'aml::Argument' (role 'aml_Argument44', cardinality 0..*) is associated with 'aml::Answer' (role 'aml_Answer45', cardinality 0..*).
+'aml::Collection' (role 'aml_Collection', cardinality 0..*) is associated with 'aml::AmlDocument' (role 'aml_AmlDocument9', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot138', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject139', cardinality 0..*).
+'aml::Annotation' (role 'aml_Annotation219', cardinality 0..*) is associated with 'aml::Evidence' (role 'aml_Evidence218', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot183', cardinality 0..*) is associated with 'aml::Relevance' (role 'aml_Relevance', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject147', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot146', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot168', cardinality 0..*) is associated with 'aml::Person' (role 'aml_Person169', cardinality 0..*).
+'aml::Collection' (role 'aml_Collection53', cardinality 0..*) is associated with 'aml::Annotation' (role 'aml_Annotation54', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot185', cardinality 0..*) is associated with 'aml::Reliability' (role 'aml_Reliability', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot173', cardinality 0..*) is associated with 'aml::Question' (role 'aml_Question174', cardinality 0..*).
+'aml::Flag' (role 'aml_Flag230', cardinality 0..*) is associated with 'aml::Witness' (role 'aml_Witness231', cardinality 0..*).
+'aml::MetaData' (role 'aml_MetaData248', cardinality 0..*) is associated with 'aml::Publisher' (role 'aml_Publisher249', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot190', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject191', cardinality 0..*).
+'aml::Period' (role 'aml_Period290', cardinality 0..*) is associated with 'aml::End' (role 'aml_End291', cardinality 0..*).
+'aml::Question' (role 'aml_Question296', cardinality 0..*) is associated with 'aml::EObject' (role 'aml_EObject297', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot163', cardinality 0..*) is associated with 'aml::Parameter' (role 'aml_Parameter164', cardinality 0..*).
+'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod33', cardinality 0..*) is associated with 'aml::Answer' (role 'aml_Answer32', cardinality 0..*).
+'aml::CreatingTool' (role 'aml_CreatingTool318', cardinality 0..*) is associated with 'aml::Template' (role 'aml_Template317', cardinality 0..*).
+'aml::ArgumentTemplate' (role 'aml_ArgumentTemplate59', cardinality 0..*) is associated with 'aml::Collection' (role 'aml_Collection58', cardinality 0..*).
+'aml::Argument' (role 'aml_Argument90', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot89', cardinality 0..*).
+'aml::DocumentRoot' (role 'aml_DocumentRoot122', cardinality 0..*) is associated with 'aml::End' (role 'aml_End', cardinality 0..*).
+'aml::EObject' (role 'aml_EObject188', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot187', cardinality 0..*).
+'aml::Question' (role 'aml_Question', cardinality 0..*) is associated with 'aml::Collection' (role 'aml_Collection56', cardinality 0..*).
+'aml::Question' (role 'aml_Question308', cardinality 0..*) is associated with 'aml::DiscoveryMethod' (role 'aml_DiscoveryMethod309', cardinality 0..*).
+'aml::Evidence' (role 'aml_Evidence', cardinality 0..*) is associated with 'aml::Answer' (role 'aml_Answer30', cardinality 0..*).
+'aml::Interval' (role 'aml_Interval', cardinality 0..*) is associated with 'aml::DocumentRoot' (role 'aml_DocumentRoot144', cardinality 0..*).
+'aml::AmlDocument' (role 'aml_AmlDocument', cardinality 0..*) is associated with 'aml::Template' (role 'aml_Template', cardinality 0..*).
+'aml::Answer' (role 'aml_Answer22', cardinality 0..*) is associated with 'aml::Witness' (role 'aml_Witness', cardinality 0..*).

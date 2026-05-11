@@ -1,0 +1,87 @@
+The model has 41 class(es).
+The class 'EffbdNode' has no attributes.
+The class 'effbd2::DataPort' has the following attributes: 'id' of type str.
+The class 'effbd2::IterationEnd' has no attributes.
+The class 'effbd2::Transformed' has no attributes.
+The class 'effbd2::EffbdElement' has the following attributes: 'name' of type str.
+The class 'effbd2::DataFlowEdge' has no attributes.
+The class 'effbd2::IterationStart' has no attributes.
+The class 'effbd2::Control' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'effbd2::DataFlowOutputEdge' has no attributes.
+The class 'effbd2::Final' has no attributes.
+The class 'effbd2::FunctionDefinition' has the following attributes: 'transformationDefinition' of type str.
+The class 'DataFlowEdge' has no attributes.
+The class 'effbd2::ItemContent' has the following attributes: 'id' of type str.
+The class 'effbd2::In' has no attributes.
+The class 'effbd2::Function' has no attributes.
+The class 'effbd2::Transformer' has no attributes.
+The class 'effbd2::Decision' has no attributes.
+The class 'DataPort' has no attributes.
+The class 'effbd2::Out' has no attributes.
+The class 'effbd2::LoopEnd' has no attributes.
+The class 'effbd2::SequenceNode' has no attributes.
+The class 'effbd2::FunctionSpecification' has the following attributes: 'domain' of type str; 'minDuration' of type int; 'maxDuration' of type int.
+The class 'EffbdElement' has no attributes.
+The class 'effbd2::Start' has no attributes.
+The class 'effbd2::EffbdNode' has no attributes.
+The class 'effbd2::ContinuousFlowItem' has no attributes.
+The class 'effbd2::ControlFlowEdge' has no attributes.
+The class 'effbd2::LoopStart' has no attributes.
+The class 'effbd2::LoopExit' has no attributes.
+The class 'Transformed' has no attributes.
+The class 'FunctionSpecification' has no attributes.
+The class 'effbd2::Fork' has no attributes.
+The class 'Transformer' has no attributes.
+The class 'effbd2::TriggerItem' has no attributes.
+The class 'effbd2::Merge' has no attributes.
+The class 'effbd2::Join' has no attributes.
+The class 'effbd2::DataFlowInputEdge' has no attributes.
+The class 'effbd2::Input' has no attributes.
+The class 'effbd2::Resource' has no attributes.
+The class 'In' has no attributes.
+The enumeration 'FunctionDomain' has the following literals: 'space', 'form', 'time'.
+'effbd2::DataFlowEdge' is a specialization of 'EffbdElement'.
+'effbd2::LoopExit' is a specialization of 'SequenceNode'.
+'effbd2::IterationStart' is a specialization of 'SequenceNode'.
+'effbd2::Decision' is a specialization of 'SequenceNode'.
+'effbd2::Final' is a specialization of 'SequenceNode'.
+'effbd2::TriggerItem' is a specialization of 'Transformed'.
+'effbd2::Fork' is a specialization of 'SequenceNode'.
+'effbd2::SequenceNode' is a specialization of 'Transformer'.
+'effbd2::ContinuousFlowItem' is a specialization of 'Transformed'.
+'effbd2::In' is a specialization of 'DataPort'.
+'effbd2::IterationEnd' is a specialization of 'SequenceNode'.
+'effbd2::Transformer' is a specialization of 'EffbdNode'.
+'effbd2::DataFlowOutputEdge' is a specialization of 'DataFlowEdge'.
+'effbd2::Start' is a specialization of 'SequenceNode'.
+'effbd2::LoopStart' is a specialization of 'SequenceNode'.
+'effbd2::Join' is a specialization of 'SequenceNode'.
+'effbd2::ControlFlowEdge' is a specialization of 'EffbdElement'.
+'effbd2::Control' is a specialization of 'In'.
+'effbd2::Input' is a specialization of 'In'.
+'effbd2::LoopEnd' is a specialization of 'SequenceNode'.
+'effbd2::Out' is a specialization of 'DataPort'.
+'effbd2::EffbdNode' is a specialization of 'EffbdElement'.
+'effbd2::DataFlowInputEdge' is a specialization of 'DataFlowEdge'.
+'effbd2::Function' is a specialization of 'FunctionSpecification'.
+'effbd2::Transformed' is a specialization of 'EffbdNode'.
+'effbd2::FunctionSpecification' is a specialization of 'Transformer'.
+'effbd2::Resource' is a specialization of 'In'.
+'effbd2::Merge' is a specialization of 'SequenceNode'.
+'effbd2::Transformed' (role 'effbd2_Transformed', cardinality 0..*) is associated with 'effbd2::ItemContent' (role 'effbd2_ItemContent', cardinality 0..*).
+'effbd2::Transformed' (role 'effbd2_Transformed24', cardinality 0..*) is associated with 'effbd2::DataFlowInputEdge' (role 'effbd2_DataFlowInputEdge', cardinality 0..*).
+'effbd2::DataFlowEdge' (role 'effbd2_DataFlowEdge', cardinality 0..*) is associated with 'effbd2::Function' (role 'effbd2_Function', cardinality 0..*).
+'effbd2::FunctionSpecification' (role 'effbd2_FunctionSpecification', cardinality 0..*) is associated with 'effbd2::Input' (role 'effbd2_Input', cardinality 0..*).
+'effbd2::Control' (role 'effbd2_Control', cardinality 0..*) is associated with 'effbd2::FunctionSpecification' (role 'effbd2_FunctionSpecification10', cardinality 0..*).
+'effbd2::DataFlowOutputEdge' (role 'effbd2_DataFlowOutputEdge', cardinality 0..*) is associated with 'effbd2::Out' (role 'effbd2_Out28', cardinality 0..*).
+'effbd2::DataFlowOutputEdge' (role 'effbd2_DataFlowOutputEdge30', cardinality 0..*) is associated with 'effbd2::Transformed' (role 'effbd2_Transformed31', cardinality 0..*).
+'effbd2::ControlFlowEdge' (role 'effbd2_ControlFlowEdge21', cardinality 0..*) is associated with 'effbd2::Transformer' (role 'effbd2_Transformer22', cardinality 0..*).
+'effbd2::Transformer' (role 'effbd2_Transformer', cardinality 0..*) is associated with 'effbd2::ControlFlowEdge' (role 'effbd2_ControlFlowEdge19', cardinality 0..*).
+'effbd2::FunctionSpecification' (role 'effbd2_FunctionSpecification14', cardinality 0..*) is associated with 'effbd2::Out' (role 'effbd2_Out', cardinality 0..*).
+'effbd2::FunctionDefinition' (role 'effbd2_FunctionDefinition', cardinality 0..*) is associated with 'effbd2::FunctionSpecification' (role 'effbd2_FunctionSpecification16', cardinality 0..*).
+'effbd2::In' (role 'effbd2_In', cardinality 0..*) is associated with 'effbd2::DataFlowInputEdge' (role 'effbd2_DataFlowInputEdge26', cardinality 0..*).
+'effbd2::Resource' (role 'effbd2_Resource', cardinality 0..*) is associated with 'effbd2::FunctionSpecification' (role 'effbd2_FunctionSpecification12', cardinality 0..*).
+'effbd2::Function' (role 'effbd2_Function4', cardinality 0..*) is associated with 'effbd2::ControlFlowEdge' (role 'effbd2_ControlFlowEdge', cardinality 0..*).
+'effbd2::EffbdNode' (role 'effbd2_EffbdNode', cardinality 0..*) is associated with 'effbd2::Function' (role 'effbd2_Function2', cardinality 0..*).
+'effbd2::Function' (role 'effbd2_Function5', cardinality 0..*) is associated with 'effbd2::Function' (role 'effbd2_Function7', cardinality 0..*).

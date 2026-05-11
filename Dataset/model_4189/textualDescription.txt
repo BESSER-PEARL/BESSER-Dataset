@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'helloBuck::Greeting' has the following attributes: 'name' of type str.
+The class 'helloBuck::Model' has no attributes.
+'helloBuck::Greeting' (role 'helloBuck_Greeting', cardinality 0..*) is associated with 'helloBuck::Model' (role 'helloBuck_Model', cardinality 0..*).

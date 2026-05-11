@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'simpleUML::Class' has no attributes.
+The class 'simpleUML::Association' has no attributes.
+The class 'simpleUML::NamedElement' has the following attributes: 'name' of type str.
+The class 'simpleUML::Attribute' has no attributes.
+The class 'simpleUML::Classifier' has no attributes.
+The class 'simpleUML::DataType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simpleUML::Package' has no attributes.
+'simpleUML::Association' is a specialization of 'Classifier'.
+'simpleUML::Package' is a specialization of 'Classifier'.
+'simpleUML::Class' is a specialization of 'Classifier'.
+'simpleUML::Classifier' is a specialization of 'NamedElement'.
+'simpleUML::DataType' is a specialization of 'Classifier'.
+'simpleUML::Attribute' is a specialization of 'NamedElement'.
+'simpleUML::Attribute' (role 'simpleUML_Attribute', cardinality 0..*) is associated with 'simpleUML::Class' (role 'simpleUML_Class3', cardinality 0..*).
+'simpleUML::Class' (role 'simpleUML_Class17', cardinality 0..*) is associated with 'simpleUML::Association' (role 'simpleUML_Association16', cardinality 0..*).
+'simpleUML::Classifier' (role 'Classifier13', cardinality 0..*) is associated with 'simpleUML::Classifier' (role 'ownedElements', cardinality 0..*).
+'simpleUML::Class' (role 'simpleUML_Class', cardinality 0..*) is associated with 'simpleUML::Class' (role 'simpleUML_Class0', cardinality 0..*).
+'simpleUML::Class' (role 'Class', cardinality 0..*) is associated with 'simpleUML::Association' (role 'sourceAssociations', cardinality 0..*).
+'simpleUML::Classifier' (role 'owner', cardinality 0..*) is associated with 'simpleUML::Classifier' (role 'Classifier', cardinality 0..*).
+'simpleUML::Class' (role 'simpleUML_Class6', cardinality 0..*) is associated with 'simpleUML::Association' (role 'simpleUML_Association', cardinality 0..*).
+'simpleUML::Classifier' (role 'simpleUML_Classifier', cardinality 0..*) is associated with 'simpleUML::Attribute' (role 'simpleUML_Attribute8', cardinality 0..*).
+'simpleUML::Class' (role 'source', cardinality 0..*) is associated with 'simpleUML::Association' (role 'Association', cardinality 0..*).

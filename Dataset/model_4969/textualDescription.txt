@@ -1,0 +1,61 @@
+The model has 25 class(es).
+The class 'dcmddandroid::Class' has no attributes.
+The class 'dcmddandroid::EVisibility' has the following attributes: 'visibility' of type str.
+The class 'EVisibility' has no attributes.
+The class 'dcmddandroid::AbstractClass' has the following attributes: 'isAbstract' of type bool.
+The class 'dcmddandroid::Interface' has no attributes.
+The class 'dcmddandroid::ModelElement' has no attributes.
+The class 'dcmddandroid::Agregation' has no attributes.
+The class 'AbstractClass' has no attributes.
+The class 'dcmddandroid::Composition' has no attributes.
+The class 'dcmddandroid::Parameter' has the following attributes: 'type' of type str.
+The class 'dcmddandroid::EnumValue' has the following attributes: 'intValue' of type int.
+The class 'ClassElement' has no attributes.
+The class 'dcmddandroid::Enum' has no attributes.
+The class 'Association' has no attributes.
+The class 'dcmddandroid::PersistentClass' has no attributes.
+The class 'dcmddandroid::NamedElement' has the following attributes: 'name' of type str.
+The class 'dcmddandroid::Diagram' has no attributes.
+The class 'dcmddandroid::Method' has the following attributes: 'returns' of type str; 'isAbstract' of type bool.
+The class 'dcmddandroid::CycleClass' has no attributes.
+The class 'dcmddandroid::Association' has the following attributes: 'minMultiplicitySource' of type int; 'minMultiplicityTarget' of type int; 'maxMultiplicitySource' of type int; 'rolSource' of type str; 'maxMultiplicityTarget' of type int; 'rolTarget' of type str.
+The class 'dcmddandroid::Attribute' has the following attributes: 'defaultValue' of type str; 'secured' of type str; 'type' of type str.
+The class 'NamedElement' has no attributes.
+The class 'dcmddandroid::Implements' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'dcmddandroid::ClassElement' has the following attributes: 'static' of type bool; 'final' of type bool.
+The enumeration 'Visibility' has the following literals: 'public', 'private', 'protected'.
+'dcmddandroid::ModelElement' is a specialization of 'NamedElement'.
+'dcmddandroid::CycleClass' is a specialization of 'AbstractClass'.
+'dcmddandroid::Implements' is a specialization of 'ModelElement'.
+'dcmddandroid::Interface' is a specialization of 'ModelElement'.
+'dcmddandroid::Attribute' is a specialization of 'ClassElement'.
+'dcmddandroid::AbstractClass' is a specialization of 'EVisibility'.
+'dcmddandroid::Method' is a specialization of 'ClassElement'.
+'dcmddandroid::Association' is a specialization of 'ModelElement'.
+'dcmddandroid::ClassElement' is a specialization of 'EVisibility'.
+'dcmddandroid::EnumValue' is a specialization of 'NamedElement'.
+'dcmddandroid::Class' is a specialization of 'AbstractClass'.
+'dcmddandroid::Enum' is a specialization of 'ModelElement'.
+'dcmddandroid::ClassElement' is a specialization of 'NamedElement'.
+'dcmddandroid::Interface' is a specialization of 'EVisibility'.
+'dcmddandroid::Parameter' is a specialization of 'NamedElement'.
+'dcmddandroid::PersistentClass' is a specialization of 'AbstractClass'.
+'dcmddandroid::Diagram' is a specialization of 'NamedElement'.
+'dcmddandroid::Composition' is a specialization of 'Association'.
+'dcmddandroid::AbstractClass' is a specialization of 'ModelElement'.
+'dcmddandroid::Agregation' is a specialization of 'Association'.
+'dcmddandroid::Parameter' (role 'dcmddandroid_Parameter', cardinality 0..*) is associated with 'dcmddandroid::Method' (role 'dcmddandroid_Method13', cardinality 0..*).
+'dcmddandroid::Interface' (role 'dcmddandroid_Interface20', cardinality 0..*) is associated with 'dcmddandroid::Implements' (role 'dcmddandroid_Implements', cardinality 0..*).
+'dcmddandroid::AbstractClass' (role 'dcmddandroid_AbstractClass3', cardinality 0..*) is associated with 'dcmddandroid::Method' (role 'dcmddandroid_Method', cardinality 0..*).
+'dcmddandroid::Implements' (role 'Implements', cardinality 0..*) is associated with 'dcmddandroid::AbstractClass' (role 'implements', cardinality 0..*).
+'dcmddandroid::Implements' (role 'implements22', cardinality 0..*) is associated with 'dcmddandroid::AbstractClass' (role 'AbstractClass23', cardinality 0..*).
+'dcmddandroid::Enum' (role 'dcmddandroid_Enum', cardinality 0..*) is associated with 'dcmddandroid::EnumValue' (role 'dcmddandroid_EnumValue', cardinality 0..*).
+'dcmddandroid::AbstractClass' (role 'AbstractClass18', cardinality 0..*) is associated with 'dcmddandroid::Association' (role 'associationAsTarget', cardinality 0..*).
+'dcmddandroid::Association' (role 'associationAsSource', cardinality 0..*) is associated with 'dcmddandroid::AbstractClass' (role 'AbstractClass', cardinality 0..*).
+'dcmddandroid::Diagram' (role 'dcmddandroid_Diagram', cardinality 0..*) is associated with 'dcmddandroid::ModelElement' (role 'dcmddandroid_ModelElement', cardinality 0..*).
+'dcmddandroid::Attribute' (role 'dcmddandroid_Attribute', cardinality 0..*) is associated with 'dcmddandroid::AbstractClass' (role 'dcmddandroid_AbstractClass', cardinality 0..*).
+'dcmddandroid::AbstractClass' (role 'source', cardinality 0..*) is associated with 'dcmddandroid::Association' (role 'Association', cardinality 0..*).
+'dcmddandroid::Interface' (role 'dcmddandroid_Interface10', cardinality 0..*) is associated with 'dcmddandroid::Method' (role 'dcmddandroid_Method11', cardinality 0..*).
+'dcmddandroid::Association' (role 'Association6', cardinality 0..*) is associated with 'dcmddandroid::AbstractClass' (role 'target', cardinality 0..*).
+'dcmddandroid::Interface' (role 'dcmddandroid_Interface7', cardinality 0..*) is associated with 'dcmddandroid::Interface' (role 'dcmddandroid_Interface', cardinality 0..*).

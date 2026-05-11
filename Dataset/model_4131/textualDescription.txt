@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'mdsdassignment2::Div' has no attributes.
+The class 'mdsdassignment2::ExpOp' has no attributes.
+The class 'mdsdassignment2::MathExp' has no attributes.
+The class 'ExpOp' has no attributes.
+The class 'mdsdassignment2::Exp' has no attributes.
+The class 'mdsdassignment2::Mult' has no attributes.
+The class 'mdsdassignment2::Parenthesis' has no attributes.
+The class 'mdsdassignment2::Sub' has no attributes.
+The class 'mdsdassignment2::Add' has no attributes.
+The class 'mdsdassignment2::Num' has the following attributes: 'value' of type int.
+'mdsdassignment2::Num' is a specialization of 'ExpOp'.
+'mdsdassignment2::Mult' is a specialization of 'ExpOp'.
+'mdsdassignment2::Parenthesis' is a specialization of 'ExpOp'.
+'mdsdassignment2::Add' is a specialization of 'ExpOp'.
+'mdsdassignment2::Sub' is a specialization of 'ExpOp'.
+'mdsdassignment2::Div' is a specialization of 'ExpOp'.
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp25', cardinality 0..*) is associated with 'mdsdassignment2::Mult' (role 'mdsdassignment2_Mult24', cardinality 0..*).
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp30', cardinality 0..*) is associated with 'mdsdassignment2::Div' (role 'mdsdassignment2_Div29', cardinality 0..*).
+'mdsdassignment2::Add' (role 'mdsdassignment2_Add', cardinality 0..*) is associated with 'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp12', cardinality 0..*).
+'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp', cardinality 0..*) is associated with 'mdsdassignment2::MathExp' (role 'mdsdassignment2_MathExp', cardinality 0..*).
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp27', cardinality 0..*) is associated with 'mdsdassignment2::Div' (role 'mdsdassignment2_Div', cardinality 0..*).
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp', cardinality 0..*) is associated with 'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp2', cardinality 0..*).
+'mdsdassignment2::Sub' (role 'mdsdassignment2_Sub', cardinality 0..*) is associated with 'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp17', cardinality 0..*).
+'mdsdassignment2::Mult' (role 'mdsdassignment2_Mult', cardinality 0..*) is associated with 'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp22', cardinality 0..*).
+'mdsdassignment2::Sub' (role 'mdsdassignment2_Sub19', cardinality 0..*) is associated with 'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp20', cardinality 0..*).
+'mdsdassignment2::Parenthesis' (role 'mdsdassignment2_Parenthesis', cardinality 0..*) is associated with 'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp10', cardinality 0..*).
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp15', cardinality 0..*) is associated with 'mdsdassignment2::Add' (role 'mdsdassignment2_Add14', cardinality 0..*).
+'mdsdassignment2::ExpOp' (role 'mdsdassignment2_ExpOp5', cardinality 0..*) is associated with 'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp4', cardinality 0..*).
+'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp8', cardinality 0..*) is associated with 'mdsdassignment2::Exp' (role 'mdsdassignment2_Exp6', cardinality 0..*).

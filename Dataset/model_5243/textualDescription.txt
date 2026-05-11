@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'sbase::SRoot' has no attributes.
+The class 'sbase::Z' has no attributes.
+The class 'SElement' has no attributes.
+The class 'sbase::SElement' has no attributes.
+The class 'sbase::X' has the following attributes: 'name' of type str.
+The class 'sbase::Y' has the following attributes: 'name' of type str.
+The class 'sbase::EObject' has no attributes.
+'sbase::SRoot' is a specialization of 'SElement'.
+'sbase::Z' is a specialization of 'SElement'.
+'sbase::Y' is a specialization of 'SElement'.
+'sbase::X' is a specialization of 'SElement'.
+'sbase::X' (role 'sbase_X', cardinality 0..*) is associated with 'sbase::SRoot' (role 'sbase_SRoot', cardinality 0..*).
+'sbase::EObject' (role 'sbase_EObject', cardinality 0..*) is associated with 'sbase::SElement' (role 'sbase_SElement', cardinality 0..*).
+'sbase::Y' (role 'Y4', cardinality 0..*) is associated with 'sbase::Z' (role 'ownsZ', cardinality 0..*).
+'sbase::Y' (role 'ownsY', cardinality 0..*) is associated with 'sbase::X' (role 'X', cardinality 0..*).
+'sbase::Z' (role 'Z', cardinality 0..*) is associated with 'sbase::Y' (role 'toY', cardinality 0..*).
+'sbase::X' (role 'toX', cardinality 0..*) is associated with 'sbase::Y' (role 'Y', cardinality 0..*).

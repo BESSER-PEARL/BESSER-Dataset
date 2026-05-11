@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'mathInterpreter::Div' has the following attributes: 'op' of type str.
+The class 'mathInterpreter::Mult' has the following attributes: 'op' of type str.
+The class 'mathInterpreter::MathExp' has no attributes.
+The class 'mathInterpreter::Plus' has no attributes.
+The class 'mathInterpreter::Minus' has no attributes.
+The class 'mathInterpreter::Exp' has the following attributes: 'value' of type int.
+The class 'Exp' has no attributes.
+'mathInterpreter::Plus' is a specialization of 'Exp'.
+'mathInterpreter::Div' is a specialization of 'Exp'.
+'mathInterpreter::Minus' is a specialization of 'Exp'.
+'mathInterpreter::Mult' is a specialization of 'Exp'.
+'mathInterpreter::Exp' (role 'mathInterpreter_Exp4', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp6', cardinality 0..*).
+'mathInterpreter::MathExp' (role 'mathInterpreter_MathExp', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp', cardinality 0..*).
+'mathInterpreter::Exp' (role 'mathInterpreter_Exp1', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp3', cardinality 0..*).
+'mathInterpreter::Exp' (role 'mathInterpreter_Exp9', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp7', cardinality 0..*).

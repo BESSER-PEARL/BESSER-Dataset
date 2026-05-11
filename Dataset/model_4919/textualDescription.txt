@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'Operation' has no attributes.
+The class 'RootElement' has no attributes.
+The class 'Error' has no attributes.
+The class 'services::services::Interface' has the following attributes: 'name' of type str.
+The class 'BaseElement' has no attributes.
+The class 'services::services::EndPoint' has no attributes.
+The class 'services::services::EObject' has no attributes.
+The class 'Message' has no attributes.
+The class 'services::services::Operation' has the following attributes: 'name' of type str.
+'services::services::EndPoint' is a specialization of 'RootElement'.
+'services::services::Operation' is a specialization of 'BaseElement'.
+'services::services::Interface' is a specialization of 'RootElement'.
+'services::services::EObject' (role 'services_services_EObject', cardinality 0..*) is associated with 'services::services::Interface' (role 'services_services_Interface2', cardinality 0..*).
+'services::services::Operation' (role 'services_services_Operation5', cardinality 0..*) is associated with 'Message' (role 'Message6', cardinality 0..*).
+'services::services::Operation' (role 'services_services_Operation', cardinality 0..*) is associated with 'Message' (role 'Message', cardinality 0..*).
+'services::services::EObject' (role 'services_services_EObject11', cardinality 0..*) is associated with 'services::services::Operation' (role 'services_services_Operation10', cardinality 0..*).
+'Error' (role 'Error', cardinality 0..*) is associated with 'services::services::Operation' (role 'services_services_Operation8', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'services::services::Interface' (role 'services_services_Interface', cardinality 0..*).

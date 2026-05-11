@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'units::pc::UnitRepository' has no attributes.
+The class 'units::pc::Pointcut' has no attributes.
+The class 'units::pc::BaseUnit' has the following attributes: 'name' of type str.
+The class 'units::pc::EObject' has no attributes.
+The class 'units::pc::UnitPower' has the following attributes: 'exponent' of type int.
+The class 'units::pc::UnitLiteral' has no attributes.
+The class 'Unit' has no attributes.
+The class 'units::pc::UnitMultiplication' has no attributes.
+The class 'units::pc::Unit' has no attributes.
+The class 'units::pc::UnitCarryingElement' has the following attributes: 'unitSpecification' of type str.
+'units::pc::UnitLiteral' is a specialization of 'Unit'.
+'units::pc::UnitMultiplication' is a specialization of 'Unit'.
+'units::pc::UnitPower' is a specialization of 'Unit'.
+'units::pc::Unit' (role 'units_pc_Unit5', cardinality 0..*) is associated with 'units::pc::UnitPower' (role 'units_pc_UnitPower', cardinality 0..*).
+'units::pc::UnitMultiplication' (role 'units_pc_UnitMultiplication', cardinality 0..*) is associated with 'units::pc::Unit' (role 'units_pc_Unit3', cardinality 0..*).
+'units::pc::UnitRepository' (role 'units_pc_UnitRepository', cardinality 0..*) is associated with 'units::pc::BaseUnit' (role 'units_pc_BaseUnit', cardinality 0..*).
+'units::pc::BaseUnit' (role 'units_pc_BaseUnit7', cardinality 0..*) is associated with 'units::pc::UnitLiteral' (role 'units_pc_UnitLiteral', cardinality 0..*).
+'units::pc::UnitCarryingElement' (role 'units_pc_UnitCarryingElement', cardinality 0..*) is associated with 'units::pc::Unit' (role 'units_pc_Unit', cardinality 0..*).
+'units::pc::EObject' (role 'units_pc_EObject', cardinality 0..*) is associated with 'units::pc::Pointcut' (role 'units_pc_Pointcut', cardinality 0..*).

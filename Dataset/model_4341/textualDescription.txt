@@ -1,0 +1,195 @@
+The model has 81 class(es).
+The class 'edu::Annotation' has no attributes.
+The class 'edu::TernaryExpression' has no attributes.
+The class 'edu::BooleanType' has no attributes.
+The class 'edu::Conjunction' has no attributes.
+The class 'edu::ArrayLiteral' has no attributes.
+The class 'edu::ArrayType' has no attributes.
+The class 'edu::Statement' has no attributes.
+The class 'edu::Precondition' has no attributes.
+The class 'edu::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'UnaryExpression' has no attributes.
+The class 'edu::ExpressionEvaluation' has no attributes.
+The class 'edu::Invariant' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'edu::Subtraction' has no attributes.
+The class 'edu::FunctionCall' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'ASTNode' has no attributes.
+The class 'edu::VariableReference' has no attributes.
+The class 'Sign' has no attributes.
+The class 'edu::Equivalence' has no attributes.
+The class 'edu::Implication' has no attributes.
+The class 'edu::BinaryExpression' has no attributes.
+The class 'edu::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'edu::Type' has no attributes.
+The class 'GuardAssertion' has no attributes.
+The class 'edu::ArrayFunction' has no attributes.
+The class 'edu::Less' has no attributes.
+The class 'edu::IntegerType' has no attributes.
+The class 'edu::LetExpression' has no attributes.
+The class 'Type' has no attributes.
+The class 'edu::ExistsQuantifier' has no attributes.
+The class 'SymbolReference' has no attributes.
+The class 'edu::Expression' has no attributes.
+The class 'edu::Addition' has no attributes.
+The class 'edu::FunctionCallPreconditionAssertion' has no attributes.
+The class 'edu::ArrayAccess' has no attributes.
+The class 'Assertion' has no attributes.
+The class 'edu::ExpressionToExpressionMap' has no attributes.
+The class 'edu::Assignment' has no attributes.
+The class 'edu::Axiom' has no attributes.
+The class 'edu::ReturnStatement' has no attributes.
+The class 'edu::UnaryExpression' has no attributes.
+The class 'edu::Plus' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'edu::ForAllQuantifier' has no attributes.
+The class 'Literal' has no attributes.
+The class 'edu::Conditional' has no attributes.
+The class 'edu::Modulus' has no attributes.
+The class 'Statement' has no attributes.
+The class 'QuantifiedExpression' has no attributes.
+The class 'edu::Negation' has no attributes.
+The class 'edu::Division' has no attributes.
+The class 'edu::Sign' has no attributes.
+The class 'edu::Greater' has no attributes.
+The class 'edu::FunctionDeclaration' has the following attributes: 'name' of type str.
+The class 'edu::Program' has no attributes.
+The class 'edu::Assumption' has no attributes.
+The class 'edu::Disjunction' has no attributes.
+The class 'edu::ReturnValueReference' has no attributes.
+The class 'edu::ASTNode' has no attributes.
+The class 'edu::PrimitiveType' has no attributes.
+The class 'edu::Minus' has no attributes.
+The class 'edu::SymbolReference' has no attributes.
+The class 'edu::Loop' has no attributes.
+The class 'edu::GuardAssertion' has no attributes.
+The class 'edu::QuantifiedExpression' has no attributes.
+The class 'edu::LessOrEqual' has no attributes.
+The class 'edu::FunctionAnnotation' has no attributes.
+The class 'edu::Block' has no attributes.
+The class 'edu::Multiplication' has no attributes.
+The class 'edu::Unequal' has no attributes.
+The class 'edu::DivisorNotZeroAssertion' has no attributes.
+The class 'edu::Assertion' has no attributes.
+The class 'Expression' has no attributes.
+The class 'edu::Literal' has no attributes.
+The class 'FunctionAnnotation' has no attributes.
+The class 'edu::visitor::IASTNodeVisitor' has no attributes.
+The class 'edu::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'edu::Equal' has no attributes.
+The class 'edu::GreaterOrEqual' has no attributes.
+The class 'edu::Postcondition' has no attributes.
+'edu::FunctionCallPreconditionAssertion' is a specialization of 'GuardAssertion'.
+'edu::QuantifiedExpression' is a specialization of 'Expression'.
+'edu::Postcondition' is a specialization of 'FunctionAnnotation'.
+'edu::IntegerLiteral' is a specialization of 'Literal'.
+'edu::Assertion' is a specialization of 'Annotation'.
+'edu::ArrayFunction' is a specialization of 'Literal'.
+'edu::ReturnStatement' is a specialization of 'Statement'.
+'edu::VariableDeclaration' is a specialization of 'Statement'.
+'edu::Loop' is a specialization of 'Statement'.
+'edu::SymbolReference' is a specialization of 'Expression'.
+'edu::Unequal' is a specialization of 'BinaryExpression'.
+'edu::Negation' is a specialization of 'UnaryExpression'.
+'edu::IntegerType' is a specialization of 'PrimitiveType'.
+'edu::Conditional' is a specialization of 'Statement'.
+'edu::Sign' is a specialization of 'UnaryExpression'.
+'edu::Multiplication' is a specialization of 'BinaryExpression'.
+'edu::Type' is a specialization of 'ASTNode'.
+'edu::Addition' is a specialization of 'BinaryExpression'.
+'edu::BooleanType' is a specialization of 'PrimitiveType'.
+'edu::Precondition' is a specialization of 'FunctionAnnotation'.
+'edu::Equal' is a specialization of 'BinaryExpression'.
+'edu::UnaryExpression' is a specialization of 'Expression'.
+'edu::BooleanLiteral' is a specialization of 'Literal'.
+'edu::Expression' is a specialization of 'ASTNode'.
+'edu::Assumption' is a specialization of 'Annotation'.
+'edu::BinaryExpression' is a specialization of 'Expression'.
+'edu::LessOrEqual' is a specialization of 'BinaryExpression'.
+'edu::Axiom' is a specialization of 'Annotation'.
+'edu::Plus' is a specialization of 'Sign'.
+'edu::TernaryExpression' is a specialization of 'Expression'.
+'edu::GuardAssertion' is a specialization of 'Assertion'.
+'edu::ArrayLiteral' is a specialization of 'Literal'.
+'edu::ExpressionEvaluation' is a specialization of 'ASTNode'.
+'edu::PrimitiveType' is a specialization of 'Type'.
+'edu::Literal' is a specialization of 'Expression'.
+'edu::Program' is a specialization of 'ASTNode'.
+'edu::VariableReference' is a specialization of 'SymbolReference'.
+'edu::Conjunction' is a specialization of 'BinaryExpression'.
+'edu::FunctionAnnotation' is a specialization of 'Annotation'.
+'edu::Less' is a specialization of 'BinaryExpression'.
+'edu::Statement' is a specialization of 'ASTNode'.
+'edu::ExistsQuantifier' is a specialization of 'QuantifiedExpression'.
+'edu::ArrayAccess' is a specialization of 'Expression'.
+'edu::LetExpression' is a specialization of 'Expression'.
+'edu::Annotation' is a specialization of 'Statement'.
+'edu::Disjunction' is a specialization of 'BinaryExpression'.
+'edu::Subtraction' is a specialization of 'BinaryExpression'.
+'edu::Implication' is a specialization of 'BinaryExpression'.
+'edu::Assignment' is a specialization of 'Statement'.
+'edu::Minus' is a specialization of 'Sign'.
+'edu::Division' is a specialization of 'BinaryExpression'.
+'edu::Greater' is a specialization of 'BinaryExpression'.
+'edu::Block' is a specialization of 'Statement'.
+'edu::ArrayType' is a specialization of 'Type'.
+'edu::Modulus' is a specialization of 'BinaryExpression'.
+'edu::ReturnValueReference' is a specialization of 'SymbolReference'.
+'edu::Invariant' is a specialization of 'Annotation'.
+'edu::Equivalence' is a specialization of 'BinaryExpression'.
+'edu::FunctionCall' is a specialization of 'Expression'.
+'edu::GreaterOrEqual' is a specialization of 'BinaryExpression'.
+'edu::ForAllQuantifier' is a specialization of 'QuantifiedExpression'.
+'edu::DivisorNotZeroAssertion' is a specialization of 'GuardAssertion'.
+'edu::FunctionDeclaration' is a specialization of 'ASTNode'.
+'edu::Expression' (role 'edu_Expression94', cardinality 0..*) is associated with 'edu::ArrayAccess' (role 'edu_ArrayAccess', cardinality 0..*).
+'edu::DivisorNotZeroAssertion' (role 'edu_DivisorNotZeroAssertion', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression16', cardinality 0..*).
+'edu::Conditional' (role 'edu_Conditional', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression30', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression20', cardinality 0..*) is associated with 'edu::Assignment' (role 'edu_Assignment', cardinality 0..*).
+'edu::Assignment' (role 'edu_Assignment22', cardinality 0..*) is associated with 'edu::VariableReference' (role 'edu_VariableReference', cardinality 0..*).
+'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration54', cardinality 0..*) is associated with 'edu::Postcondition' (role 'edu_Postcondition', cardinality 0..*).
+'edu::Loop' (role 'edu_Loop70', cardinality 0..*) is associated with 'edu::Invariant' (role 'edu_Invariant', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression102', cardinality 0..*) is associated with 'edu::ExpressionToExpressionMap' (role 'edu_ExpressionToExpressionMap101', cardinality 0..*).
+'edu::ArrayType' (role 'edu_ArrayType', cardinality 0..*) is associated with 'edu::PrimitiveType' (role 'edu_PrimitiveType', cardinality 0..*).
+'edu::Block' (role 'edu_Block', cardinality 0..*) is associated with 'edu::Program' (role 'edu_Program2', cardinality 0..*).
+'edu::BinaryExpression' (role 'edu_BinaryExpression7', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression8', cardinality 0..*).
+'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration75', cardinality 0..*) is associated with 'edu::ReturnStatement' (role 'edu_ReturnStatement74', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression26', cardinality 0..*) is associated with 'edu::VariableDeclaration' (role 'edu_VariableDeclaration25', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression44', cardinality 0..*) is associated with 'edu::QuantifiedExpression' (role 'edu_QuantifiedExpression43', cardinality 0..*).
+'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration56', cardinality 0..*) is associated with 'edu::VariableDeclaration' (role 'edu_VariableDeclaration57', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression104', cardinality 0..*) is associated with 'edu::TernaryExpression' (role 'edu_TernaryExpression', cardinality 0..*).
+'edu::Block' (role 'edu_Block60', cardinality 0..*) is associated with 'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration59', cardinality 0..*).
+'edu::FunctionCall' (role 'edu_FunctionCall', cardinality 0..*) is associated with 'edu::FunctionCallPreconditionAssertion' (role 'edu_FunctionCallPreconditionAssertion', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression97', cardinality 0..*) is associated with 'edu::ArrayAccess' (role 'edu_ArrayAccess96', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression89', cardinality 0..*) is associated with 'edu::ArrayFunction' (role 'edu_ArrayFunction88', cardinality 0..*).
+'edu::ReturnValueReference' (role 'edu_ReturnValueReference', cardinality 0..*) is associated with 'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration80', cardinality 0..*).
+'edu::Conditional' (role 'edu_Conditional35', cardinality 0..*) is associated with 'edu::Block' (role 'edu_Block36', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression65', cardinality 0..*) is associated with 'edu::Loop' (role 'edu_Loop', cardinality 0..*).
+'edu::SymbolReference' (role 'edu_SymbolReference', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression82', cardinality 0..*).
+'edu::ArrayFunction' (role 'edu_ArrayFunction91', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression92', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression107', cardinality 0..*) is associated with 'edu::TernaryExpression' (role 'edu_TernaryExpression106', cardinality 0..*).
+'edu::VariableReference' (role 'edu_VariableReference77', cardinality 0..*) is associated with 'edu::VariableDeclaration' (role 'edu_VariableDeclaration78', cardinality 0..*).
+'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration50', cardinality 0..*) is associated with 'edu::FunctionCall' (role 'edu_FunctionCall49', cardinality 0..*).
+'edu::LetExpression' (role 'edu_LetExpression114', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression115', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression41', cardinality 0..*) is associated with 'edu::QuantifiedExpression' (role 'edu_QuantifiedExpression40', cardinality 0..*).
+'edu::Precondition' (role 'edu_Precondition', cardinality 0..*) is associated with 'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration52', cardinality 0..*).
+'edu::UnaryExpression' (role 'edu_UnaryExpression', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression10', cardinality 0..*).
+'edu::Program' (role 'edu_Program', cardinality 0..*) is associated with 'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration', cardinality 0..*).
+'edu::Block' (role 'edu_Block33', cardinality 0..*) is associated with 'edu::Conditional' (role 'edu_Conditional32', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression12', cardinality 0..*) is associated with 'edu::ArrayLiteral' (role 'edu_ArrayLiteral', cardinality 0..*).
+'edu::BinaryExpression' (role 'edu_BinaryExpression', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression47', cardinality 0..*) is associated with 'edu::FunctionCall' (role 'edu_FunctionCall46', cardinality 0..*).
+'edu::ExpressionEvaluation' (role 'edu_ExpressionEvaluation', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression84', cardinality 0..*).
+'edu::VariableDeclaration' (role 'edu_VariableDeclaration38', cardinality 0..*) is associated with 'edu::QuantifiedExpression' (role 'edu_QuantifiedExpression', cardinality 0..*).
+'edu::Annotation' (role 'edu_Annotation', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression18', cardinality 0..*).
+'edu::Statement' (role 'edu_Statement', cardinality 0..*) is associated with 'edu::Block' (role 'edu_Block28', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression99', cardinality 0..*) is associated with 'edu::ExpressionToExpressionMap' (role 'edu_ExpressionToExpressionMap', cardinality 0..*).
+'edu::VariableDeclaration' (role 'edu_VariableDeclaration112', cardinality 0..*) is associated with 'edu::LetExpression' (role 'edu_LetExpression', cardinality 0..*).
+'edu::Type' (role 'edu_Type63', cardinality 0..*) is associated with 'edu::FunctionDeclaration' (role 'edu_FunctionDeclaration62', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression86', cardinality 0..*) is associated with 'edu::ArrayFunction' (role 'edu_ArrayFunction', cardinality 0..*).
+'edu::TernaryExpression' (role 'edu_TernaryExpression109', cardinality 0..*) is associated with 'edu::Expression' (role 'edu_Expression110', cardinality 0..*).
+'edu::VariableDeclaration' (role 'edu_VariableDeclaration', cardinality 0..*) is associated with 'edu::Type' (role 'edu_Type', cardinality 0..*).
+'edu::Block' (role 'edu_Block68', cardinality 0..*) is associated with 'edu::Loop' (role 'edu_Loop67', cardinality 0..*).
+'edu::Axiom' (role 'edu_Axiom', cardinality 0..*) is associated with 'edu::Program' (role 'edu_Program4', cardinality 0..*).
+'edu::Expression' (role 'edu_Expression72', cardinality 0..*) is associated with 'edu::ReturnStatement' (role 'edu_ReturnStatement', cardinality 0..*).

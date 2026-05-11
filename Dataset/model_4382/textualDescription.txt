@@ -1,0 +1,242 @@
+The model has 124 class(es).
+The class 'Execute' has no attributes.
+The class 'jcl::operators::Negate' has no attributes.
+The class 'jcl::parameters::Password' has the following attributes: 'old' of type str; 'new' of type str.
+The class 'expressions::PrimaryExpression' has no attributes.
+The class 'jcl::expressions::UnaryExpression' has no attributes.
+The class 'EndControl' has no attributes.
+The class 'conditions::ReturnCode' has no attributes.
+The class 'jcl::operators::And' has no attributes.
+The class 'jcl::commons::ProcedureStepElement' has the following attributes: 'procStepName' of type str.
+The class 'commons::NamedElement' has no attributes.
+The class 'parameters::Parameter' has no attributes.
+The class 'jcl::statements::Execute' has no attributes.
+The class 'jcl::operators::LessThan' has no attributes.
+The class 'jcl::parameters::AddressSpace' has the following attributes: 'value' of type str.
+The class 'jcl::statements::Include' has no attributes.
+The class 'jcl::statements::ExecuteProcedure' has the following attributes: 'procedureName' of type str.
+The class 'jcl::conditions::Even' has no attributes.
+The class 'jcl::parameters::MessageLevel' has the following attributes: 'statements' of type int; 'messages' of type int.
+The class 'ConditionalExpression' has no attributes.
+The class 'jcl::expressions::ConditionalAndExpressionChild' has no attributes.
+The class 'conditions::PrimaryCondition' has no attributes.
+The class 'jcl::operators::Operator' has no attributes.
+The class 'ReturnCode' has no attributes.
+The class 'jcl::parameters::Other' has the following attributes: 'value' of type str.
+The class 'IdentifierReference' has no attributes.
+The class 'references::ElementReference' has no attributes.
+The class 'Expression' has no attributes.
+The class 'jcl::expressions::ConditionalOrExpressionChild' has no attributes.
+The class 'jcl::operators::RelationOperator' has no attributes.
+The class 'jcl::members::Member' has no attributes.
+The class 'ConditionalOrExpressionChild' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'jcl::parameters::Bytes' has the following attributes: 'value' of type int.
+The class 'jcl::procedures::Procedure' has the following attributes: 'endName' of type str.
+The class 'PrimaryCondition' has no attributes.
+The class 'jcl::operators::NotEqual' has no attributes.
+The class 'jcl::operators::LogicOperator' has no attributes.
+The class 'Or' has no attributes.
+The class 'jcl::expressions::ConditionalOrExpression' has no attributes.
+The class 'ConditionalAndExpressionChild' has no attributes.
+The class 'jcl::conditions::ReturnCode' has no attributes.
+The class 'ExecuteProgram' has no attributes.
+The class 'commons::IncompleteElement' has no attributes.
+The class 'jcl::statements::Input' has no attributes.
+The class 'literals::Literal' has no attributes.
+The class 'jcl::literals::StringLiteral' has the following attributes: 'value' of type str.
+The class 'jcl::expressions::RelationalExpressionChild' has no attributes.
+The class 'jcl::operators::GreaterEqual' has no attributes.
+The class 'jcl::containers::JobUnit' has no attributes.
+The class 'Condition' has no attributes.
+The class 'UnaryExpressionChild' has no attributes.
+The class 'jcl::operators::Equal' has no attributes.
+The class 'Operator' has no attributes.
+The class 'jcl::statements::Output' has no attributes.
+The class 'jcl::conditions::Only' has no attributes.
+The class 'jcl::parameters::MessageClass' has the following attributes: 'value' of type str.
+The class 'Member' has no attributes.
+The class 'jcl::operators::Or' has no attributes.
+The class 'jcl::statements::Command' has the following attributes: 'value' of type str.
+The class 'jcl::parameters::Display' has the following attributes: 'value' of type str.
+The class 'jcl::containers::JCLRoot' has no attributes.
+The class 'jcl::expressions::Abend' has no attributes.
+The class 'jcl::parameters::DatasetName' has the following attributes: 'value' of type str.
+The class 'jcl::statements::ExecuteProgram' has the following attributes: 'programName' of type str.
+The class 'jcl::conditions::PrimaryCondition' has no attributes.
+The class 'members::Member' has no attributes.
+The class 'jcl::parameters::TypeRun' has the following attributes: 'value' of type str.
+The class 'RelationalExpressionChild' has no attributes.
+The class 'jcl::expressions::UnaryExpressionChild' has no attributes.
+The class 'jcl::references::IdentifierReference' has no attributes.
+The class 'LogicOperator' has no attributes.
+The class 'jcl::expressions::PrimaryExpression' has no attributes.
+The class 'jcl::literals::Literal' has no attributes.
+The class 'Literal' has no attributes.
+The class 'jcl::commons::IncompleteElement' has no attributes.
+The class 'jcl::conditions::Condition' has no attributes.
+The class 'jcl::literals::SpecialLiteral' has the following attributes: 'value' of type str.
+The class 'Water' has no attributes.
+The class 'jcl::operators::UnaryOperator' has no attributes.
+The class 'jcl::commons::PhraseableElement' has the following attributes: 'isPhrase' of type bool.
+The class 'jcl::references::ElementReference' has no attributes.
+The class 'ReferenceableElement' has no attributes.
+The class 'commons::ProcedureStepElement' has no attributes.
+The class 'Reference' has no attributes.
+The class 'jcl::parameters::Parameter' has no attributes.
+The class 'jcl::expressions::Expression' has no attributes.
+The class 'jcl::commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'jcl::operators::LessEqual' has no attributes.
+The class 'jcl::commons::CommentableElement' has the following attributes: 'comment' of type str.
+The class 'jcl::expressions::Run' has no attributes.
+The class 'And' has no attributes.
+The class 'containers::JCLRoot' has no attributes.
+The class 'jcl::parameters::AccountInfo' has no attributes.
+The class 'jcl::conditions::NestedCondition' has no attributes.
+The class 'jcl::operators::GreaterThan' has no attributes.
+The class 'jcl::references::Reference' has no attributes.
+The class 'jcl::parameters::UserID' has the following attributes: 'value' of type str.
+The class 'jcl::references::ReferenceableElement' has no attributes.
+The class 'jcl::statements::Statement' has no attributes.
+The class 'jcl::statements::DataDefinition' has no attributes.
+The class 'jcl::literals::IntegerLiteral' has the following attributes: 'value' of type int.
+The class 'jcl::statements::Set' has no attributes.
+The class 'jcl::statements::EndControl' has no attributes.
+The class 'jcl::conditions::RelationalCondition' has no attributes.
+The class 'jcl::expressions::RelationalExpression' has no attributes.
+The class 'jcl::waters::Water' has the following attributes: 'value' of type str.
+The class 'jcl::parameters::Priority' has the following attributes: 'value' of type int.
+The class 'jcl::expressions::NestedExpression' has no attributes.
+The class 'jcl::statements::Condition' has the following attributes: 'elseName' of type str; 'endName' of type str.
+The class 'jcl::expressions::ConditionalAndExpression' has no attributes.
+The class 'jcl::parameters::Condition' has no attributes.
+The class 'statements::StatementContainer' has no attributes.
+The class 'jcl::statements::StatementContainer' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Statement' has no attributes.
+The class 'jcl::statements::Control' has the following attributes: 'endName' of type str.
+The class 'PhraseableElement' has no attributes.
+The class 'RelationOperator' has no attributes.
+The class 'jcl::expressions::ConditionalExpression' has no attributes.
+The class 'jcl::parameters::Argument' has the following attributes: 'value' of type str.
+The class 'jcl::statements::JCLLibrary' has no attributes.
+The class 'jcl::parameters::JobClass' has the following attributes: 'value' of type int.
+The class 'PrimaryExpression' has no attributes.
+The enumeration 'AdressSpaceEnum' has the following literals: 'real', 'virtual'.
+The enumeration 'TypeRunEnum' has the following literals: 'hold', 'scan', 'jclhold', 'copy'.
+'jcl::statements::DataDefinition' is a specialization of 'statements::Statement'.
+'jcl::operators::RelationOperator' is a specialization of 'Operator'.
+'jcl::containers::JobUnit' is a specialization of 'commons::NamedElement'.
+'jcl::parameters::Condition' is a specialization of 'parameters::Parameter'.
+'jcl::expressions::Abend' is a specialization of 'expressions::PrimaryExpression'.
+'jcl::parameters::Argument' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::conditions::RelationalCondition' is a specialization of 'conditions::PrimaryCondition'.
+'jcl::operators::Equal' is a specialization of 'RelationOperator'.
+'jcl::statements::Output' is a specialization of 'Statement'.
+'jcl::containers::JobUnit' is a specialization of 'commons::IncompleteElement'.
+'jcl::expressions::NestedExpression' is a specialization of 'PrimaryExpression'.
+'jcl::operators::Negate' is a specialization of 'UnaryOperator'.
+'jcl::operators::GreaterEqual' is a specialization of 'RelationOperator'.
+'jcl::parameters::Argument' is a specialization of 'parameters::Parameter'.
+'jcl::operators::LogicOperator' is a specialization of 'Operator'.
+'jcl::expressions::UnaryExpressionChild' is a specialization of 'RelationalExpressionChild'.
+'jcl::parameters::Display' is a specialization of 'Parameter'.
+'jcl::procedures::Procedure' is a specialization of 'members::Member'.
+'jcl::operators::UnaryOperator' is a specialization of 'Operator'.
+'jcl::parameters::Priority' is a specialization of 'Parameter'.
+'jcl::references::IdentifierReference' is a specialization of 'references::ElementReference'.
+'jcl::statements::Input' is a specialization of 'Statement'.
+'jcl::statements::EndControl' is a specialization of 'Statement'.
+'jcl::statements::Control' is a specialization of 'Statement'.
+'jcl::parameters::JobClass' is a specialization of 'Parameter'.
+'jcl::conditions::Even' is a specialization of 'PrimaryCondition'.
+'jcl::parameters::Password' is a specialization of 'Parameter'.
+'jcl::expressions::Run' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::parameters::Bytes' is a specialization of 'Parameter'.
+'jcl::parameters::AccountInfo' is a specialization of 'parameters::Parameter'.
+'jcl::expressions::RelationalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'jcl::expressions::ConditionalExpression' is a specialization of 'Expression'.
+'jcl::parameters::Other' is a specialization of 'parameters::Parameter'.
+'jcl::conditions::Only' is a specialization of 'PrimaryCondition'.
+'jcl::parameters::AddressSpace' is a specialization of 'parameters::Parameter'.
+'jcl::statements::ExecuteProcedure' is a specialization of 'Execute'.
+'jcl::procedures::Procedure' is a specialization of 'commons::NamedElement'.
+'jcl::statements::Condition' is a specialization of 'statements::Statement'.
+'jcl::conditions::NestedCondition' is a specialization of 'PrimaryCondition'.
+'jcl::expressions::Abend' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::statements::DataDefinition' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::expressions::UnaryExpression' is a specialization of 'RelationalExpressionChild'.
+'jcl::parameters::UserID' is a specialization of 'Parameter'.
+'jcl::references::ElementReference' is a specialization of 'Reference'.
+'jcl::parameters::DatasetName' is a specialization of 'Parameter'.
+'jcl::operators::And' is a specialization of 'LogicOperator'.
+'jcl::statements::ExecuteProgram' is a specialization of 'Execute'.
+'jcl::statements::Include' is a specialization of 'Statement'.
+'jcl::statements::Statement' is a specialization of 'commons::NamedElement'.
+'jcl::conditions::RelationalCondition' is a specialization of 'references::ElementReference'.
+'jcl::operators::LessThan' is a specialization of 'RelationOperator'.
+'jcl::literals::IntegerLiteral' is a specialization of 'expressions::PrimaryExpression'.
+'jcl::operators::LessEqual' is a specialization of 'RelationOperator'.
+'jcl::statements::JCLLibrary' is a specialization of 'Statement'.
+'jcl::operators::NotEqual' is a specialization of 'RelationOperator'.
+'jcl::parameters::TypeRun' is a specialization of 'Parameter'.
+'jcl::containers::JobUnit' is a specialization of 'containers::JCLRoot'.
+'jcl::expressions::ConditionalOrExpression' is a specialization of 'ConditionalExpression'.
+'jcl::expressions::PrimaryExpression' is a specialization of 'UnaryExpressionChild'.
+'jcl::literals::IntegerLiteral' is a specialization of 'conditions::ReturnCode'.
+'jcl::parameters::AddressSpace' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::statements::Statement' is a specialization of 'members::Member'.
+'jcl::operators::Operator' is a specialization of 'PhraseableElement'.
+'jcl::literals::SpecialLiteral' is a specialization of 'Literal'.
+'jcl::parameters::Other' is a specialization of 'commons::NamedElement'.
+'jcl::parameters::AccountInfo' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::statements::Command' is a specialization of 'Statement'.
+'jcl::expressions::Run' is a specialization of 'expressions::PrimaryExpression'.
+'jcl::expressions::ConditionalOrExpressionChild' is a specialization of 'ConditionalExpression'.
+'jcl::parameters::MessageClass' is a specialization of 'Parameter'.
+'jcl::literals::IntegerLiteral' is a specialization of 'literals::Literal'.
+'jcl::operators::Or' is a specialization of 'LogicOperator'.
+'jcl::conditions::PrimaryCondition' is a specialization of 'Condition'.
+'jcl::operators::GreaterThan' is a specialization of 'RelationOperator'.
+'jcl::statements::Condition' is a specialization of 'statements::StatementContainer'.
+'jcl::parameters::Other' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::statements::Set' is a specialization of 'Statement'.
+'jcl::references::IdentifierReference' is a specialization of 'conditions::ReturnCode'.
+'jcl::literals::StringLiteral' is a specialization of 'Literal'.
+'jcl::parameters::MessageLevel' is a specialization of 'Parameter'.
+'jcl::expressions::RelationalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'jcl::references::IdentifierReference' is a specialization of 'expressions::PrimaryExpression'.
+'jcl::procedures::Procedure' is a specialization of 'containers::JCLRoot'.
+'jcl::parameters::Condition' is a specialization of 'commons::ProcedureStepElement'.
+'jcl::expressions::ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+'jcl::statements::Execute' is a specialization of 'Statement'.
+'jcl::expressions::ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+'jcl::containers::JCLRoot' (role 'jcl_containers_JCLRoot', cardinality 0..*) is associated with 'Member' (role 'Member', cardinality 0..*).
+'jcl::statements::Condition' (role 'jcl_statements_Condition', cardinality 0..*) is associated with 'Statement' (role 'Statement6', cardinality 0..*).
+'jcl::expressions::Abend' (role 'jcl_expressions_Abend', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference', cardinality 0..*).
+'RelationalExpressionChild' (role 'RelationalExpressionChild', cardinality 0..*) is associated with 'jcl::expressions::RelationalExpression' (role 'jcl_expressions_RelationalExpression', cardinality 0..*).
+'RelationOperator' (role 'RelationOperator', cardinality 0..*) is associated with 'jcl::expressions::RelationalExpression' (role 'jcl_expressions_RelationalExpression20', cardinality 0..*).
+'EndControl' (role 'EndControl', cardinality 0..*) is associated with 'jcl::statements::Control' (role 'jcl_statements_Control', cardinality 0..*).
+'jcl::expressions::Run' (role 'jcl_expressions_Run', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference34', cardinality 0..*).
+'jcl::expressions::NestedExpression' (role 'jcl_expressions_NestedExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression31', cardinality 0..*).
+'UnaryOperator' (role 'UnaryOperator', cardinality 0..*) is associated with 'jcl::expressions::UnaryExpression' (role 'jcl_expressions_UnaryExpression29', cardinality 0..*).
+'jcl::conditions::NestedCondition' (role 'jcl_conditions_NestedCondition', cardinality 0..*) is associated with 'Condition' (role 'Condition38', cardinality 0..*).
+'Literal' (role 'Literal', cardinality 0..*) is associated with 'jcl::parameters::AccountInfo' (role 'jcl_parameters_AccountInfo', cardinality 0..*).
+'jcl::expressions::ConditionalAndExpression' (role 'jcl_expressions_ConditionalAndExpression', cardinality 0..*) is associated with 'ConditionalAndExpressionChild' (role 'ConditionalAndExpressionChild', cardinality 0..*).
+'RelationOperator' (role 'RelationOperator40', cardinality 0..*) is associated with 'jcl::conditions::RelationalCondition' (role 'jcl_conditions_RelationalCondition', cardinality 0..*).
+'jcl::containers::JobUnit' (role 'jcl_containers_JobUnit17', cardinality 0..*) is associated with 'ExecuteProgram' (role 'ExecuteProgram', cardinality 0..*).
+'jcl::commons::IncompleteElement' (role 'jcl_commons_IncompleteElement', cardinality 0..*) is associated with 'Water' (role 'Water', cardinality 0..*).
+'jcl::references::Reference' (role 'jcl_references_Reference', cardinality 0..*) is associated with 'Reference' (role 'Reference', cardinality 0..*).
+'jcl::containers::JobUnit' (role 'jcl_containers_JobUnit14', cardinality 0..*) is associated with 'Literal' (role 'Literal15', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'jcl::statements::Statement' (role 'jcl_statements_Statement', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'jcl::parameters::Condition' (role 'jcl_parameters_Condition', cardinality 0..*).
+'Or' (role 'Or', cardinality 0..*) is associated with 'jcl::expressions::ConditionalOrExpression' (role 'jcl_expressions_ConditionalOrExpression23', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'jcl::statements::Condition' (role 'jcl_statements_Condition8', cardinality 0..*).
+'jcl::conditions::RelationalCondition' (role 'jcl_conditions_RelationalCondition42', cardinality 0..*) is associated with 'ReturnCode' (role 'ReturnCode', cardinality 0..*).
+'UnaryExpressionChild' (role 'UnaryExpressionChild', cardinality 0..*) is associated with 'jcl::expressions::UnaryExpression' (role 'jcl_expressions_UnaryExpression', cardinality 0..*).
+'jcl::references::ElementReference' (role 'jcl_references_ElementReference', cardinality 0..*) is associated with 'ReferenceableElement' (role 'ReferenceableElement', cardinality 0..*).
+'jcl::expressions::ConditionalAndExpression' (role 'jcl_expressions_ConditionalAndExpression26', cardinality 0..*) is associated with 'And' (role 'And', cardinality 0..*).
+'jcl::expressions::ConditionalOrExpression' (role 'jcl_expressions_ConditionalOrExpression', cardinality 0..*) is associated with 'ConditionalOrExpressionChild' (role 'ConditionalOrExpressionChild', cardinality 0..*).
+'jcl::statements::StatementContainer' (role 'jcl_statements_StatementContainer', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'Parameter' (role 'Parameter12', cardinality 0..*) is associated with 'jcl::containers::JobUnit' (role 'jcl_containers_JobUnit', cardinality 0..*).

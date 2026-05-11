@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'ale2::RB' has no attributes.
+The class 'ale2::B' has no attributes.
+'ale2::RB' (role 'ale2_RB', cardinality 0..*) is associated with 'ale2::B' (role 'ale2_B', cardinality 0..*).

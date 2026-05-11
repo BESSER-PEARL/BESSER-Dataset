@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'simpleClass::Class' has the following attributes: 'name' of type str.
+The class 'simpleClass::Model' has no attributes.
+The class 'simpleClass::Attribute' has the following attributes: 'name' of type str; 'isPublic' of type bool.
+'simpleClass::Attribute' (role 'simpleClass_Attribute7', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class8', cardinality 0..*).
+'simpleClass::Model' (role 'simpleClass_Model', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class', cardinality 0..*).
+'simpleClass::Class' (role 'simpleClass_Class3', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class1', cardinality 0..*).
+'simpleClass::Attribute' (role 'simpleClass_Attribute', cardinality 0..*) is associated with 'simpleClass::Class' (role 'simpleClass_Class5', cardinality 0..*).

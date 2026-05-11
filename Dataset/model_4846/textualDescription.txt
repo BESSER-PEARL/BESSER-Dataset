@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'merge::Clazz' has the following attributes: 'attribute' of type str.
+'merge::Clazz' (role 'merge_Clazz', cardinality 0..*) is associated with 'merge::Clazz' (role 'merge_Clazz0', cardinality 0..*).

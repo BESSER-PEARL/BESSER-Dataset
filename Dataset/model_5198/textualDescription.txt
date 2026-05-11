@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'A' has no attributes.
+The class 'dispatchroot::C' has no attributes.
+The class 'dispatchroot::A' has no attributes.
+The class 'dispatchroot::B' has no attributes.
+'dispatchroot::B' is a specialization of 'A'.

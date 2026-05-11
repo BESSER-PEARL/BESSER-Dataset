@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'testModel::referenziertesElement' has the following attributes: 'Integer' of type str; 'Float' of type str; 'short' of type str; 'ShortObj' of type str; 'LongObj' of type str; 'name' of type str; 'long' of type str; 'notChangeable' of type str; 'int' of type int.
+The class 'testModel::multiRefElement' has the following attributes: 'name' of type str.
+The class 'Element' has no attributes.
+The class 'testModel::Kategorie' has the following attributes: 'bigdeci' of type str; 'bigint' of type str; 'name' of type str; 'Boolean' of type str; 'bool' of type bool; 'byte' of type str.
+The class 'testModel::Element' has no attributes.
+The class 'testModel::upperBound' has the following attributes: 'name' of type str.
+The class 'testModel::ContainedElement' has the following attributes: 'Character' of type str; 'double' of type float; 'name' of type str; 'float' of type float; 'elementType' of type str; 'date' of type date; 'char' of type str; 'byteArray' of type str; 'DiagnosticChain' of type str; 'byteObject' of type str; 'DoubleObj' of type str.
+The enumeration 'ElementType' has the following literals: 'Type2', 'Type1'.
+'testModel::upperBound' is a specialization of 'Element'.
+'testModel::multiRefElement' is a specialization of 'Element'.
+'testModel::referenziertesElement' is a specialization of 'Element'.
+'testModel::multiRefElement' (role 'testModel_multiRefElement', cardinality 0..*) is associated with 'testModel::referenziertesElement' (role 'testModel_referenziertesElement9', cardinality 0..*).
+'testModel::ContainedElement' (role 'testModel_ContainedElement', cardinality 0..*) is associated with 'testModel::Kategorie' (role 'testModel_Kategorie3', cardinality 0..*).
+'testModel::referenziertesElement' (role 'testModel_referenziertesElement', cardinality 0..*) is associated with 'testModel::ContainedElement' (role 'testModel_ContainedElement5', cardinality 0..*).
+'testModel::Kategorie' (role 'testModel_Kategorie', cardinality 0..*) is associated with 'testModel::Kategorie' (role 'testModel_Kategorie0', cardinality 0..*).
+'testModel::upperBound' (role 'testModel_upperBound', cardinality 0..*) is associated with 'testModel::ContainedElement' (role 'testModel_ContainedElement7', cardinality 0..*).

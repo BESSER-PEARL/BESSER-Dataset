@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'myumlclassdiagram::Package' has no attributes.
+The class 'myumlclassdiagram::NamedElement' has the following attributes: 'Name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'myumlclassdiagram::Method' has the following attributes: 'Visibility' of type str; 'Returns' of type str.
+The class 'myumlclassdiagram::Attribute' has the following attributes: 'Type' of type str; 'Visibility' of type str.
+The class 'myumlclassdiagram::Parameter' has the following attributes: 'Type' of type str.
+The class 'myumlclassdiagram::Class' has the following attributes: 'Visibility' of type str.
+The enumeration 'EType' has the following literals: 'string', 'integer'.
+The enumeration 'EReturnType' has the following literals: 'string', 'void', 'integer'.
+The enumeration 'EVisibility' has the following literals: 'protected', 'private', 'public'.
+'myumlclassdiagram::Package' is a specialization of 'NamedElement'.
+'myumlclassdiagram::Class' is a specialization of 'NamedElement'.
+'myumlclassdiagram::Parameter' is a specialization of 'NamedElement'.
+'myumlclassdiagram::Method' is a specialization of 'NamedElement'.
+'myumlclassdiagram::Attribute' is a specialization of 'NamedElement'.
+'myumlclassdiagram::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'myumlclassdiagram::Method' (role 'Owner6', cardinality 0..*).
+'myumlclassdiagram::Class' (role 'myumlclassdiagram_Class', cardinality 0..*) is associated with 'myumlclassdiagram::Package' (role 'myumlclassdiagram_Package', cardinality 0..*).
+'myumlclassdiagram::Method' (role 'Methods', cardinality 0..*) is associated with 'myumlclassdiagram::Class' (role 'Class8', cardinality 0..*).
+'myumlclassdiagram::Class' (role 'Owner3', cardinality 0..*) is associated with 'myumlclassdiagram::Method' (role 'Method', cardinality 0..*).
+'myumlclassdiagram::Parameter' (role 'Parameters', cardinality 0..*) is associated with 'myumlclassdiagram::Method' (role 'Method10', cardinality 0..*).
+'myumlclassdiagram::Attribute' (role 'Attributes', cardinality 0..*) is associated with 'myumlclassdiagram::Class' (role 'Class', cardinality 0..*).
+'myumlclassdiagram::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'myumlclassdiagram::Class' (role 'Owner', cardinality 0..*).

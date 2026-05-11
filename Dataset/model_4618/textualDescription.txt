@@ -1,0 +1,49 @@
+The model has 12 class(es).
+The class 'IdentifiedElement' has no attributes.
+The class 'Elements::IdentifiedElement' has the following attributes: 'id' of type str.
+The class 'Elements::ReferencingNode' has no attributes.
+The class 'Elements::Edge' has no attributes.
+The class 'Element' has no attributes.
+The class 'Node' has no attributes.
+The class 'Elements::StrictElement' has the following attributes: 'sValues' of type int; 'sValue' of type int.
+The class 'Elements::Root' has the following attributes: 'name' of type str.
+The class 'Elements::Node' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Elements::Element' has the following attributes: 'value' of type int; 'values' of type int.
+The class 'Elements::NamedElement' has the following attributes: 'name' of type str.
+'Elements::NamedElement' is a specialization of 'IdentifiedElement'.
+'Elements::Node' is a specialization of 'NamedElement'.
+'Elements::ReferencingNode' is a specialization of 'Node'.
+'Elements::StrictElement' is a specialization of 'Element'.
+'Elements::Root' is a specialization of 'IdentifiedElement'.
+'Elements::Edge' is a specialization of 'NamedElement'.
+'Elements::Element' is a specialization of 'NamedElement'.
+'Elements::StrictElement' (role 'StrictElement62', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'sManyFromManyRef1', cardinality 0..*).
+'Elements::Edge' (role 'incoming', cardinality 0..*) is associated with 'Elements::Node' (role 'Node', cardinality 0..*).
+'Elements::Element' (role 'manyFromSingleRef', cardinality 0..*) is associated with 'Elements::Element' (role 'Element34', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element19', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element17', cardinality 0..*).
+'Elements::NamedElement' (role 'Elements_NamedElement', cardinality 0..*) is associated with 'Elements::Root' (role 'Elements_Root', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element42', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'Elements_StrictElement', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element45', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'Elements_StrictElement44', cardinality 0..*).
+'Elements::Node' (role 'Node70', cardinality 0..*) is associated with 'Elements::Edge' (role 'outgoing', cardinality 0..*).
+'Elements::StrictElement' (role 'Elements_StrictElement50', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element51', cardinality 0..*).
+'Elements::Element' (role 'Element37', cardinality 0..*) is associated with 'Elements::Element' (role 'manyFromManyRef2', cardinality 0..*).
+'Elements::NamedElement' (role 'Elements_NamedElement67', cardinality 0..*) is associated with 'Elements::Node' (role 'Elements_Node', cardinality 0..*).
+'Elements::StrictElement' (role 'Elements_StrictElement47', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element48', cardinality 0..*).
+'Elements::ReferencingNode' (role 'Elements_ReferencingNode', cardinality 0..*) is associated with 'Elements::Node' (role 'Elements_Node72', cardinality 0..*).
+'Elements::Element' (role 'Element31', cardinality 0..*) is associated with 'Elements::Element' (role 'singleFromManyRef', cardinality 0..*).
+'Elements::Element' (role 'upFromManyContent', cardinality 0..*) is associated with 'Elements::Element' (role 'Element', cardinality 0..*).
+'Elements::Element' (role 'Element25', cardinality 0..*) is associated with 'Elements::Element' (role 'singleFromSingleRef2', cardinality 0..*).
+'Elements::Edge' (role 'Edge', cardinality 0..*) is associated with 'Elements::Node' (role 'target', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element20', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element22', cardinality 0..*).
+'Elements::Node' (role 'source', cardinality 0..*) is associated with 'Elements::Edge' (role 'Edge65', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element1', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element', cardinality 0..*).
+'Elements::StrictElement' (role 'sManyFromSingleRef', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'StrictElement56', cardinality 0..*).
+'Elements::Element' (role 'Element10', cardinality 0..*) is associated with 'Elements::Element' (role 'manyContentWithUp', cardinality 0..*).
+'Elements::StrictElement' (role 'sSingleFromManyRef', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'StrictElement', cardinality 0..*).
+'Elements::StrictElement' (role 'StrictElement59', cardinality 0..*) is associated with 'Elements::StrictElement' (role 'sManyFromManyRef2', cardinality 0..*).
+'Elements::Element' (role 'Element40', cardinality 0..*) is associated with 'Elements::Element' (role 'manyFromManyRef1', cardinality 0..*).
+'Elements::Element' (role 'Element28', cardinality 0..*) is associated with 'Elements::Element' (role 'singleFromSingleRef1', cardinality 0..*).
+'Elements::Element' (role 'Element13', cardinality 0..*) is associated with 'Elements::Element' (role 'upFromSingleContent', cardinality 0..*).
+'Elements::Element' (role 'singleContentWithUp', cardinality 0..*) is associated with 'Elements::Element' (role 'Element16', cardinality 0..*).
+'Elements::Element' (role 'Elements_Element5', cardinality 0..*) is associated with 'Elements::Element' (role 'Elements_Element3', cardinality 0..*).

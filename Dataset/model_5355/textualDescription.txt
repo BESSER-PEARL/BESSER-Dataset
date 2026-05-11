@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'p2::RepositoryType' has the following attributes: 'location' of type str.
+The class 'p2::IMetadataRepositoryManager' has no attributes.
+The class 'p2::LocationType' has the following attributes: 'includeAllPlatforms' of type str; 'includeSource' of type str; 'type' of type str; 'includeConfigurePhase' of type str; 'includeMode' of type str.
+The class 'p2::IMetadataRepository' has no attributes.
+The class 'p2::LocationsType' has no attributes.
+The class 'p2::EStringToStringMapEntry' has no attributes.
+The class 'p2::TargetType' has the following attributes: 'sequenceNumber' of type str; 'name' of type str.
+The class 'p2::IArtifactRepository' has no attributes.
+The class 'p2::UnitType' has the following attributes: 'id' of type str; 'state' of type str; 'version' of type str.
+The class 'p2::IArtifactRepositoryManager' has no attributes.
+The class 'p2::DocumentRoot' has the following attributes: 'mixed' of type str.
+The enumeration 'UnitVerificationState' has the following literals: 'VERIFIED', 'UNKNOWN', 'UPGRADED'.
+'p2::UnitType' (role 'p2_UnitType', cardinality 0..*) is associated with 'p2::LocationType' (role 'p2_LocationType8', cardinality 0..*).
+'p2::LocationsType' (role 'p2_LocationsType', cardinality 0..*) is associated with 'p2::LocationType' (role 'p2_LocationType', cardinality 0..*).
+'p2::TargetType' (role 'p2_TargetType12', cardinality 0..*) is associated with 'p2::LocationsType' (role 'p2_LocationsType13', cardinality 0..*).
+'p2::RepositoryType' (role 'p2_RepositoryType', cardinality 0..*) is associated with 'p2::LocationType' (role 'p2_LocationType10', cardinality 0..*).
+'p2::DocumentRoot' (role 'p2_DocumentRoot', cardinality 0..*) is associated with 'p2::EStringToStringMapEntry' (role 'p2_EStringToStringMapEntry', cardinality 0..*).
+'p2::DocumentRoot' (role 'p2_DocumentRoot5', cardinality 0..*) is associated with 'p2::TargetType' (role 'p2_TargetType', cardinality 0..*).
+'p2::DocumentRoot' (role 'p2_DocumentRoot2', cardinality 0..*) is associated with 'p2::EStringToStringMapEntry' (role 'p2_EStringToStringMapEntry3', cardinality 0..*).

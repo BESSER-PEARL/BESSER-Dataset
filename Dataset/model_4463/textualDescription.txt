@@ -1,0 +1,42 @@
+The model has 19 class(es).
+The class 'arduinoML::State' has no attributes.
+The class 'arduinoML::LCDScreenActuator' has no attributes.
+The class 'arduinoML::Condition' has the following attributes: 'operator' of type str.
+The class 'arduinoML::Action' has no attributes.
+The class 'arduinoML::App' has the following attributes: 'name' of type str.
+The class 'arduinoML::Signal' has no attributes.
+The class 'arduinoML::Transition' has no attributes.
+The class 'arduinoML::NamedElement' has the following attributes: 'name' of type str.
+The class 'Actuator' has no attributes.
+The class 'Signal' has no attributes.
+The class 'arduinoML::StringSignal' has the following attributes: 'value' of type str.
+The class 'arduinoML::Sensor' has no attributes.
+The class 'arduinoML::Actuator' has no attributes.
+The class 'arduinoML::Brick' has the following attributes: 'pins' of type int.
+The class 'arduinoML::DigitalSignal' has the following attributes: 'value' of type str.
+The class 'arduinoML::KeyboardSensor' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Brick' has no attributes.
+The class 'Sensor' has no attributes.
+The enumeration 'DigitalSignalEnum' has the following literals: 'LOW', 'HIGH'.
+The enumeration 'Operator' has the following literals: 'AND', 'NONE', 'OR'.
+'arduinoML::State' is a specialization of 'NamedElement'.
+'arduinoML::Sensor' is a specialization of 'Brick'.
+'arduinoML::Condition' is a specialization of 'NamedElement'.
+'arduinoML::KeyboardSensor' is a specialization of 'Sensor'.
+'arduinoML::Actuator' is a specialization of 'Brick'.
+'arduinoML::Brick' is a specialization of 'NamedElement'.
+'arduinoML::LCDScreenActuator' is a specialization of 'Actuator'.
+'arduinoML::StringSignal' is a specialization of 'Signal'.
+'arduinoML::DigitalSignal' is a specialization of 'Signal'.
+'arduinoML::Sensor' (role 'arduinoML_Sensor', cardinality 0..*) is associated with 'arduinoML::Condition' (role 'arduinoML_Condition20', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App2', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State', cardinality 0..*).
+'arduinoML::Transition' (role 'arduinoML_Transition15', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State16', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State9', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition', cardinality 0..*).
+'arduinoML::Condition' (role 'arduinoML_Condition', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition18', cardinality 0..*).
+'arduinoML::Signal' (role 'arduinoML_Signal', cardinality 0..*) is associated with 'arduinoML::Action' (role 'arduinoML_Action13', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State7', cardinality 0..*) is associated with 'arduinoML::Action' (role 'arduinoML_Action', cardinality 0..*).
+'arduinoML::Signal' (role 'arduinoML_Signal23', cardinality 0..*) is associated with 'arduinoML::Condition' (role 'arduinoML_Condition22', cardinality 0..*).
+'arduinoML::Brick' (role 'arduinoML_Brick', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App', cardinality 0..*).
+'arduinoML::Action' (role 'arduinoML_Action11', cardinality 0..*) is associated with 'arduinoML::Actuator' (role 'arduinoML_Actuator', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App4', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State5', cardinality 0..*).

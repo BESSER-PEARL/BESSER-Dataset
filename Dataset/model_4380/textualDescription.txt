@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'euml::Realization' has no attributes.
+The class 'euml::Dependecy' has no attributes.
+The class 'euml::NamedElement' has the following attributes: 'name' of type str.
+The class 'euml::Relations' has no attributes.
+The class 'euml::Package' has no attributes.
+The class 'euml::Operation' has no attributes.
+The class 'euml::Attribute' has no attributes.
+The class 'Relations' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'euml::Generalization' has no attributes.
+The class 'euml::Class' has no attributes.
+'euml::Generalization' is a specialization of 'Relations'.
+'euml::Package' is a specialization of 'NamedElement'.
+'euml::Operation' is a specialization of 'NamedElement'.
+'euml::Dependecy' is a specialization of 'Relations'.
+'euml::Attribute' is a specialization of 'NamedElement'.
+'euml::Class' is a specialization of 'NamedElement'.
+'euml::Realization' is a specialization of 'Relations'.
+'euml::Package' (role 'euml_Package', cardinality 0..*) is associated with 'euml::Class' (role 'euml_Class', cardinality 0..*).
+'euml::Class' (role 'euml_Class9', cardinality 0..*) is associated with 'euml::Operation' (role 'euml_Operation', cardinality 0..*).
+'euml::NamedElement' (role 'euml_NamedElement', cardinality 0..*) is associated with 'euml::Relations' (role 'euml_Relations', cardinality 0..*).
+'euml::Operation' (role 'euml_Operation18', cardinality 0..*) is associated with 'euml::Class' (role 'euml_Class19', cardinality 0..*).
+'euml::Generalization' (role 'euml_Generalization', cardinality 0..*) is associated with 'euml::Class' (role 'euml_Class13', cardinality 0..*).
+'euml::Dependecy' (role 'euml_Dependecy', cardinality 0..*) is associated with 'euml::Class' (role 'euml_Class5', cardinality 0..*).
+'euml::Class' (role 'euml_Class7', cardinality 0..*) is associated with 'euml::Attribute' (role 'euml_Attribute', cardinality 0..*).
+'euml::Attribute' (role 'euml_Attribute15', cardinality 0..*) is associated with 'euml::Class' (role 'euml_Class16', cardinality 0..*).
+'euml::Class' (role 'euml_Class11', cardinality 0..*) is associated with 'euml::Realization' (role 'euml_Realization', cardinality 0..*).
+'euml::Package' (role 'euml_Package3', cardinality 0..*) is associated with 'euml::Package' (role 'euml_Package1', cardinality 0..*).

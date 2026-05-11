@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'font::Greeting' has the following attributes: 'name' of type str.
+The class 'font::Model' has no attributes.
+'font::Model' (role 'font_Model', cardinality 0..*) is associated with 'font::Greeting' (role 'font_Greeting', cardinality 0..*).

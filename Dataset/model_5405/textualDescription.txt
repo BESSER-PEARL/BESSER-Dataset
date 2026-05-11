@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'UML2WithID::Parameter' has the following attributes: 'direction' of type str.
+The class 'UML2WithID::Operation' has no attributes.
+The class 'Element' has no attributes.
+The class 'UML2WithID::Element' has the following attributes: 'ID' of type str.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'return_', 'inout', 'out'.
+'UML2WithID::Parameter' is a specialization of 'Element'.
+'UML2WithID::Operation' is a specialization of 'Element'.
+'UML2WithID::Operation' (role 'UML2WithID_Operation', cardinality 0..*) is associated with 'UML2WithID::Parameter' (role 'UML2WithID_Parameter', cardinality 0..*).

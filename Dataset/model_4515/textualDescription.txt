@@ -1,0 +1,141 @@
+The model has 60 class(es).
+The class 'FloatActor' has no attributes.
+The class 'majordomo::FloatActor' has no attributes.
+The class 'majordomo::ClockSensor' has no attributes.
+The class 'majordomo::RollerActor' has no attributes.
+The class 'majordomo::FloatSensor' has no attributes.
+The class 'majordomo::NumberSensor' has no attributes.
+The class 'majordomo::SensorValue' has no attributes.
+The class 'majordomo::SwitchSensor' has no attributes.
+The class 'majordomo::Rule' has no attributes.
+The class 'majordomo::BinaryOrOperation' has no attributes.
+The class 'majordomo::House' has no attributes.
+The class 'majordomo::BooleanActor' has no attributes.
+The class 'majordomo::BoilerActor' has no attributes.
+The class 'Actor' has no attributes.
+The class 'ValueExpression' has no attributes.
+The class 'BooleanActor' has no attributes.
+The class 'majordomo::PreparedStatement' has the following attributes: 'name' of type str.
+The class 'majordomo::CoffeeActor' has no attributes.
+The class 'majordomo::TemperatureSensor' has no attributes.
+The class 'Extendable' has no attributes.
+The class 'majordomo::RoofWindowActor' has no attributes.
+The class 'majordomo::RadiatorActor' has no attributes.
+The class 'majordomo::BinaryAndOperation' has no attributes.
+The class 'majordomo::RoomMountable' has no attributes.
+The class 'HouseMountable' has no attributes.
+The class 'majordomo::FloatAction' has the following attributes: 'value' of type float.
+The class 'majordomo::ActionSetReference' has no attributes.
+The class 'majordomo::BooleanAction' has the following attributes: 'value' of type bool.
+The class 'majordomo::ConstantValue' has the following attributes: 'value' of type float.
+The class 'Statement' has no attributes.
+The class 'majordomo::Extension' has the following attributes: 'name' of type str.
+The class 'majordomo::CompareOperation' has the following attributes: 'comparator' of type str.
+The class 'majordomo::BooleanSensor' has no attributes.
+The class 'majordomo::ValueExpression' has no attributes.
+The class 'majordomo::NotOperation' has no attributes.
+The class 'RoomMountable' has no attributes.
+The class 'Extension' has no attributes.
+The class 'majordomo::BinaryOperation' has no attributes.
+The class 'BooleanSensor' has no attributes.
+The class 'majordomo::PreparedActionSet' has the following attributes: 'name' of type str.
+The class 'majordomo::Room' has the following attributes: 'name' of type str.
+The class 'majordomo::Extendable' has no attributes.
+The class 'FloatSensor' has no attributes.
+The class 'majordomo::LampActor' has no attributes.
+The class 'majordomo::ValueReference' has no attributes.
+The class 'Action' has no attributes.
+The class 'majordomo::Sensor' has no attributes.
+The class 'majordomo::StatementReference' has no attributes.
+The class 'majordomo::LightSensor' has no attributes.
+The class 'majordomo::Statement' has no attributes.
+The class 'majordomo::HouseMountable' has no attributes.
+The class 'BinaryOperation' has no attributes.
+The class 'majordomo::Actor' has no attributes.
+The class 'majordomo::PreparedValue' has the following attributes: 'name' of type str.
+The class 'majordomo::RainSensor' has no attributes.
+The class 'majordomo::Majordomo' has the following attributes: 'name' of type str.
+The class 'majordomo::Program' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'majordomo::BooleanSensorStatement' has no attributes.
+The class 'majordomo::Action' has no attributes.
+The enumeration 'Comparator' has the following literals: 'GE', 'LE', 'GT', 'LT'.
+'majordomo::ValueReference' is a specialization of 'ValueExpression'.
+'majordomo::FloatAction' is a specialization of 'Action'.
+'majordomo::LampActor' is a specialization of 'FloatActor'.
+'majordomo::BooleanAction' is a specialization of 'Action'.
+'majordomo::SwitchSensor' is a specialization of 'BooleanSensor'.
+'majordomo::TemperatureSensor' is a specialization of 'FloatSensor'.
+'majordomo::FloatActor' is a specialization of 'Actor'.
+'majordomo::LightSensor' is a specialization of 'RoomMountable'.
+'majordomo::TemperatureSensor' is a specialization of 'HouseMountable'.
+'majordomo::BinaryOperation' is a specialization of 'Statement'.
+'majordomo::LampActor' is a specialization of 'HouseMountable'.
+'majordomo::FloatSensor' is a specialization of 'Sensor'.
+'majordomo::LightSensor' is a specialization of 'HouseMountable'.
+'majordomo::RainSensor' is a specialization of 'HouseMountable'.
+'majordomo::ConstantValue' is a specialization of 'ValueExpression'.
+'majordomo::RainSensor' is a specialization of 'BooleanSensor'.
+'majordomo::RollerActor' is a specialization of 'BooleanActor'.
+'majordomo::BinaryOrOperation' is a specialization of 'BinaryOperation'.
+'majordomo::BoilerActor' is a specialization of 'BooleanActor'.
+'majordomo::SensorValue' is a specialization of 'ValueExpression'.
+'majordomo::LampActor' is a specialization of 'RoomMountable'.
+'majordomo::BooleanActor' is a specialization of 'Actor'.
+'majordomo::Actor' is a specialization of 'Extension'.
+'majordomo::NotOperation' is a specialization of 'Statement'.
+'majordomo::BoilerActor' is a specialization of 'HouseMountable'.
+'majordomo::ClockSensor' is a specialization of 'FloatSensor'.
+'majordomo::StatementReference' is a specialization of 'Statement'.
+'majordomo::NumberSensor' is a specialization of 'RoomMountable'.
+'majordomo::RollerActor' is a specialization of 'RoomMountable'.
+'majordomo::Room' is a specialization of 'Extendable'.
+'majordomo::CompareOperation' is a specialization of 'Statement'.
+'majordomo::RoofWindowActor' is a specialization of 'RoomMountable'.
+'majordomo::RadiatorActor' is a specialization of 'BooleanActor'.
+'majordomo::BooleanSensor' is a specialization of 'Sensor'.
+'majordomo::ClockSensor' is a specialization of 'HouseMountable'.
+'majordomo::BooleanSensorStatement' is a specialization of 'Statement'.
+'majordomo::ActionSetReference' is a specialization of 'Action'.
+'majordomo::SwitchSensor' is a specialization of 'RoomMountable'.
+'majordomo::NumberSensor' is a specialization of 'FloatSensor'.
+'majordomo::BinaryAndOperation' is a specialization of 'BinaryOperation'.
+'majordomo::Sensor' is a specialization of 'Extension'.
+'majordomo::RadiatorActor' is a specialization of 'RoomMountable'.
+'majordomo::LightSensor' is a specialization of 'FloatSensor'.
+'majordomo::CoffeeActor' is a specialization of 'BooleanActor'.
+'majordomo::CoffeeActor' is a specialization of 'RoomMountable'.
+'majordomo::House' is a specialization of 'Extendable'.
+'majordomo::TemperatureSensor' is a specialization of 'RoomMountable'.
+'majordomo::RoofWindowActor' is a specialization of 'BooleanActor'.
+'majordomo::ValueExpression' (role 'majordomo_ValueExpression52', cardinality 0..*) is associated with 'majordomo::PreparedValue' (role 'majordomo_PreparedValue', cardinality 0..*).
+'majordomo::Rule' (role 'majordomo_Rule13', cardinality 0..*) is associated with 'majordomo::Action' (role 'majordomo_Action', cardinality 0..*).
+'majordomo::PreparedActionSet' (role 'PreparedActionSet', cardinality 0..*) is associated with 'majordomo::Program' (role 'ctx35', cardinality 0..*).
+'majordomo::BooleanSensorStatement' (role 'majordomo_BooleanSensorStatement', cardinality 0..*) is associated with 'majordomo::BooleanSensor' (role 'majordomo_BooleanSensor', cardinality 0..*).
+'majordomo::Program' (role 'Program', cardinality 0..*) is associated with 'majordomo::PreparedStatement' (role 'preparedStatements', cardinality 0..*).
+'majordomo::StatementReference' (role 'majordomo_StatementReference', cardinality 0..*) is associated with 'majordomo::PreparedStatement' (role 'majordomo_PreparedStatement', cardinality 0..*).
+'majordomo::Sensor' (role 'sensors', cardinality 0..*) is associated with 'majordomo::Extendable' (role 'Extendable', cardinality 0..*).
+'majordomo::PreparedStatement' (role 'majordomo_PreparedStatement41', cardinality 0..*) is associated with 'majordomo::Statement' (role 'majordomo_Statement42', cardinality 0..*).
+'majordomo::PreparedActionSet' (role 'preparedActionSets', cardinality 0..*) is associated with 'majordomo::Program' (role 'Program44', cardinality 0..*).
+'majordomo::Program' (role 'majordomo_Program', cardinality 0..*) is associated with 'majordomo::Majordomo' (role 'majordomo_Majordomo4', cardinality 0..*).
+'majordomo::House' (role 'majordomo_House', cardinality 0..*) is associated with 'majordomo::Majordomo' (role 'majordomo_Majordomo', cardinality 0..*).
+'majordomo::ValueExpression' (role 'majordomo_ValueExpression26', cardinality 0..*) is associated with 'majordomo::CompareOperation' (role 'majordomo_CompareOperation25', cardinality 0..*).
+'majordomo::SensorValue' (role 'majordomo_SensorValue', cardinality 0..*) is associated with 'majordomo::FloatSensor' (role 'majordomo_FloatSensor', cardinality 0..*).
+'majordomo::Statement' (role 'majordomo_Statement20', cardinality 0..*) is associated with 'majordomo::BinaryOperation' (role 'majordomo_BinaryOperation19', cardinality 0..*).
+'majordomo::Statement' (role 'majordomo_Statement17', cardinality 0..*) is associated with 'majordomo::BinaryOperation' (role 'majordomo_BinaryOperation', cardinality 0..*).
+'majordomo::PreparedValue' (role 'majordomo_PreparedValue54', cardinality 0..*) is associated with 'majordomo::ValueReference' (role 'majordomo_ValueReference', cardinality 0..*).
+'majordomo::Program' (role 'ctx33', cardinality 0..*) is associated with 'majordomo::PreparedStatement' (role 'PreparedStatement', cardinality 0..*).
+'majordomo::PreparedValue' (role 'PreparedValue', cardinality 0..*) is associated with 'majordomo::Program' (role 'ctx31', cardinality 0..*).
+'majordomo::Extendable' (role 'Extendable10', cardinality 0..*) is associated with 'majordomo::Actor' (role 'actors', cardinality 0..*).
+'majordomo::PreparedValue' (role 'constants', cardinality 0..*) is associated with 'majordomo::Program' (role 'Program50', cardinality 0..*).
+'majordomo::BooleanActor' (role 'majordomo_BooleanActor', cardinality 0..*) is associated with 'majordomo::BooleanAction' (role 'majordomo_BooleanAction', cardinality 0..*).
+'majordomo::PreparedActionSet' (role 'majordomo_PreparedActionSet48', cardinality 0..*) is associated with 'majordomo::ActionSetReference' (role 'majordomo_ActionSetReference', cardinality 0..*).
+'majordomo::Program' (role 'majordomo_Program37', cardinality 0..*) is associated with 'majordomo::Rule' (role 'majordomo_Rule38', cardinality 0..*).
+'majordomo::Room' (role 'majordomo_Room', cardinality 0..*) is associated with 'majordomo::Majordomo' (role 'majordomo_Majordomo2', cardinality 0..*).
+'majordomo::Statement' (role 'majordomo_Statement', cardinality 0..*) is associated with 'majordomo::Rule' (role 'majordomo_Rule', cardinality 0..*).
+'majordomo::Statement' (role 'majordomo_Statement22', cardinality 0..*) is associated with 'majordomo::NotOperation' (role 'majordomo_NotOperation', cardinality 0..*).
+'majordomo::FloatActor' (role 'majordomo_FloatActor', cardinality 0..*) is associated with 'majordomo::FloatAction' (role 'majordomo_FloatAction', cardinality 0..*).
+'majordomo::Actor' (role 'Actor', cardinality 0..*) is associated with 'majordomo::Extendable' (role 'ctx7', cardinality 0..*).
+'majordomo::CompareOperation' (role 'majordomo_CompareOperation', cardinality 0..*) is associated with 'majordomo::ValueExpression' (role 'majordomo_ValueExpression', cardinality 0..*).
+'majordomo::PreparedActionSet' (role 'majordomo_PreparedActionSet', cardinality 0..*) is associated with 'majordomo::Action' (role 'majordomo_Action46', cardinality 0..*).
+'majordomo::Sensor' (role 'Sensor', cardinality 0..*) is associated with 'majordomo::Extendable' (role 'ctx', cardinality 0..*).

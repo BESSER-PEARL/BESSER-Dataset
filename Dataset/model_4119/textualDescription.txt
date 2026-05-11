@@ -1,0 +1,51 @@
+The model has 23 class(es).
+The class 'whileComp::Definition' has no attributes.
+The class 'whileComp::Nil2' has the following attributes: 'nil' of type str.
+The class 'whileComp::Commands' has no attributes.
+The class 'whileComp::Hd' has the following attributes: 'hd' of type str.
+The class 'whileComp::While' has no attributes.
+The class 'whileComp::EObject' has no attributes.
+The class 'whileComp::Tl' has the following attributes: 'tl' of type str.
+The class 'whileComp::Expr' has no attributes.
+The class 'whileComp::Function' has the following attributes: 'function' of type str.
+The class 'whileComp::Program' has no attributes.
+The class 'whileComp::List' has the following attributes: 'list' of type str.
+The class 'whileComp::Foreach' has no attributes.
+The class 'whileComp::Not' has the following attributes: 'not_' of type str.
+The class 'whileComp::Nop' has the following attributes: 'nop' of type str.
+The class 'whileComp::Read' has the following attributes: 'variable' of type str.
+The class 'whileComp::ExprSimple' has the following attributes: 'valeur' of type str; 'ope' of type str; 'call' of type str.
+The class 'whileComp::Lexpr' has no attributes.
+The class 'whileComp::Affectation' has the following attributes: 'affectations' of type str.
+The class 'whileComp::Cons' has the following attributes: 'cons' of type str.
+The class 'whileComp::For' has no attributes.
+The class 'whileComp::If' has no attributes.
+The class 'whileComp::Command' has no attributes.
+The class 'whileComp::Write' has the following attributes: 'variable' of type str.
+'whileComp::ExprSimple' (role 'whileComp_ExprSimple', cardinality 0..*) is associated with 'whileComp::Expr' (role 'whileComp_Expr44', cardinality 0..*).
+'whileComp::Definition' (role 'whileComp_Definition4', cardinality 0..*) is associated with 'whileComp::Read' (role 'whileComp_Read', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr39', cardinality 0..*) is associated with 'whileComp::While' (role 'whileComp_While', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr', cardinality 0..*) is associated with 'whileComp::Affectation' (role 'whileComp_Affectation', cardinality 0..*).
+'whileComp::Definition' (role 'whileComp_Definition8', cardinality 0..*) is associated with 'whileComp::Write' (role 'whileComp_Write', cardinality 0..*).
+'whileComp::Commands' (role 'whileComp_Commands', cardinality 0..*) is associated with 'whileComp::Definition' (role 'whileComp_Definition6', cardinality 0..*).
+'whileComp::ExprSimple' (role 'whileComp_ExprSimple48', cardinality 0..*) is associated with 'whileComp::Expr' (role 'whileComp_Expr49', cardinality 0..*).
+'whileComp::Lexpr' (role 'whileComp_Lexpr59', cardinality 0..*) is associated with 'whileComp::Expr' (role 'whileComp_Expr60', cardinality 0..*).
+'whileComp::Function' (role 'whileComp_Function2', cardinality 0..*) is associated with 'whileComp::Definition' (role 'whileComp_Definition', cardinality 0..*).
+'whileComp::ExprSimple' (role 'whileComp_ExprSimple46', cardinality 0..*) is associated with 'whileComp::Lexpr' (role 'whileComp_Lexpr', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr57', cardinality 0..*) is associated with 'whileComp::ExprSimple' (role 'whileComp_ExprSimple56', cardinality 0..*).
+'whileComp::ExprSimple' (role 'whileComp_ExprSimple51', cardinality 0..*) is associated with 'whileComp::Not' (role 'whileComp_Not', cardinality 0..*).
+'whileComp::Commands' (role 'whileComp_Commands29', cardinality 0..*) is associated with 'whileComp::If' (role 'whileComp_If28', cardinality 0..*).
+'whileComp::Foreach' (role 'whileComp_Foreach23', cardinality 0..*) is associated with 'whileComp::Commands' (role 'whileComp_Commands24', cardinality 0..*).
+'whileComp::While' (role 'whileComp_While41', cardinality 0..*) is associated with 'whileComp::Commands' (role 'whileComp_Commands42', cardinality 0..*).
+'whileComp::Command' (role 'whileComp_Command14', cardinality 0..*) is associated with 'whileComp::Commands' (role 'whileComp_Commands13', cardinality 0..*).
+'whileComp::Lexpr' (role 'whileComp_Lexpr63', cardinality 0..*) is associated with 'whileComp::Lexpr' (role 'whileComp_Lexpr61', cardinality 0..*).
+'whileComp::Commands' (role 'whileComp_Commands11', cardinality 0..*) is associated with 'whileComp::Command' (role 'whileComp_Command', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr18', cardinality 0..*) is associated with 'whileComp::Foreach' (role 'whileComp_Foreach', cardinality 0..*).
+'whileComp::Program' (role 'whileComp_Program', cardinality 0..*) is associated with 'whileComp::Function' (role 'whileComp_Function', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr21', cardinality 0..*) is associated with 'whileComp::Foreach' (role 'whileComp_Foreach20', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr54', cardinality 0..*) is associated with 'whileComp::ExprSimple' (role 'whileComp_ExprSimple53', cardinality 0..*).
+'whileComp::Commands' (role 'whileComp_Commands37', cardinality 0..*) is associated with 'whileComp::For' (role 'whileComp_For36', cardinality 0..*).
+'whileComp::Command' (role 'whileComp_Command16', cardinality 0..*) is associated with 'whileComp::EObject' (role 'whileComp_EObject', cardinality 0..*).
+'whileComp::Expr' (role 'whileComp_Expr26', cardinality 0..*) is associated with 'whileComp::If' (role 'whileComp_If', cardinality 0..*).
+'whileComp::For' (role 'whileComp_For', cardinality 0..*) is associated with 'whileComp::Expr' (role 'whileComp_Expr34', cardinality 0..*).
+'whileComp::Commands' (role 'whileComp_Commands32', cardinality 0..*) is associated with 'whileComp::If' (role 'whileComp_If31', cardinality 0..*).

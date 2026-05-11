@@ -1,0 +1,35 @@
+The model has 12 class(es).
+The class 'hockeyleague::Player' has the following attributes: 'weightMesurement' of type str; 'birthplace' of type str; 'shot' of type str; 'heightMesurement' of type str; 'number' of type int; 'birthdate' of type str; 'heightValue' of type int; 'weightValue' of type int.
+The class 'hockeyleague::Forward' has the following attributes: 'position' of type str.
+The class 'HockeyleagueObject' has no attributes.
+The class 'Player' has no attributes.
+The class 'hockeyleague::Arena' has the following attributes: 'capacity' of type int; 'address' of type str.
+The class 'hockeyleague::Goalie' has no attributes.
+The class 'hockeyleague::League' has the following attributes: 'headoffice' of type str.
+The class 'hockeyleague::HockeyleagueObject' has the following attributes: 'name' of type str.
+The class 'hockeyleague::Team' has no attributes.
+The class 'hockeyleague::GoalieStats' has the following attributes: 'minutesPlayedIn' of type int; 'ties' of type int; 'penaltyMinutes' of type int; 'emptyNetGoals' of type int; 'wins' of type int; 'goalsAgainstAverage' of type float; 'goals' of type int; 'points' of type int; 'assists' of type int; 'shutouts' of type int; 'losses' of type int; 'goalsAgainst' of type int; 'year' of type str; 'gamesPlayedIn' of type int; 'saves' of type int.
+The class 'hockeyleague::Defence' has the following attributes: 'position' of type str.
+The class 'hockeyleague::PlayerStats' has the following attributes: 'plusMinus' of type int; 'assists' of type int; 'shots' of type int; 'gamesPlayedIn' of type int; 'powerPlayGoals' of type int; 'points' of type int; 'shotPercentage' of type float; 'penaltyMinutes' of type int; 'goals' of type int; 'shortHandedGoals' of type int; 'gameWinningGoals' of type int; 'year' of type str.
+The enumeration 'ShotKind' has the following literals: 'left', 'right'.
+The enumeration 'HeightKind' has the following literals: 'centimeters', 'inches'.
+The enumeration 'DefencePositionKind' has the following literals: 'right_defence', 'left_defence'.
+The enumeration 'ForwardPositionKind' has the following literals: 'left_wing', 'center', 'right_wing'.
+The enumeration 'WeightKind' has the following literals: 'pounds', 'kilograms'.
+'hockeyleague::Defence' is a specialization of 'Player'.
+'hockeyleague::Team' is a specialization of 'HockeyleagueObject'.
+'hockeyleague::Goalie' is a specialization of 'Player'.
+'hockeyleague::Arena' is a specialization of 'HockeyleagueObject'.
+'hockeyleague::League' is a specialization of 'HockeyleagueObject'.
+'hockeyleague::Forward' is a specialization of 'Player'.
+'hockeyleague::Player' is a specialization of 'HockeyleagueObject'.
+'hockeyleague::PlayerStats' (role 'hockeyleague_PlayerStats', cardinality 0..*) is associated with 'hockeyleague::Defence' (role 'hockeyleague_Defence', cardinality 0..*).
+'hockeyleague::Team' (role 'hockeyleague_Team10', cardinality 0..*) is associated with 'hockeyleague::PlayerStats' (role 'hockeyleague_PlayerStats9', cardinality 0..*).
+'hockeyleague::Team' (role 'hockeyleague_Team12', cardinality 0..*) is associated with 'hockeyleague::Forward' (role 'hockeyleague_Forward13', cardinality 0..*).
+'hockeyleague::Defence' (role 'hockeyleague_Defence16', cardinality 0..*) is associated with 'hockeyleague::Team' (role 'hockeyleague_Team15', cardinality 0..*).
+'hockeyleague::Team' (role 'hockeyleague_Team18', cardinality 0..*) is associated with 'hockeyleague::Goalie' (role 'hockeyleague_Goalie19', cardinality 0..*).
+'hockeyleague::Arena' (role 'hockeyleague_Arena', cardinality 0..*) is associated with 'hockeyleague::Team' (role 'hockeyleague_Team21', cardinality 0..*).
+'hockeyleague::Goalie' (role 'hockeyleague_Goalie', cardinality 0..*) is associated with 'hockeyleague::GoalieStats' (role 'hockeyleague_GoalieStats', cardinality 0..*).
+'hockeyleague::PlayerStats' (role 'hockeyleague_PlayerStats2', cardinality 0..*) is associated with 'hockeyleague::Forward' (role 'hockeyleague_Forward', cardinality 0..*).
+'hockeyleague::GoalieStats' (role 'hockeyleague_GoalieStats5', cardinality 0..*) is associated with 'hockeyleague::Team' (role 'hockeyleague_Team', cardinality 0..*).
+'hockeyleague::Team' (role 'hockeyleague_Team7', cardinality 0..*) is associated with 'hockeyleague::League' (role 'hockeyleague_League', cardinality 0..*).

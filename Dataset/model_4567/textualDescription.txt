@@ -1,0 +1,43 @@
+The model has 22 class(es).
+The class 'RobyOneKenoby::NewEClass15' has no attributes.
+The class 'RobyOneKenoby::HasTurned' has no attributes.
+The class 'Order' has no attributes.
+The class 'Condition' has no attributes.
+The class 'RobyOneKenoby::RobyLanguage' has no attributes.
+The class 'LanguageElmt' has no attributes.
+The class 'RobyOneKenoby::Not' has no attributes.
+The class 'RobyOneKenoby::NewEClass14' has no attributes.
+The class 'Test' has no attributes.
+The class 'RobyOneKenoby::NewEClass12' has no attributes.
+The class 'RobyOneKenoby::If' has no attributes.
+The class 'RobyOneKenoby::NewEClass17' has no attributes.
+The class 'RobyOneKenoby::Obstacle' has no attributes.
+The class 'RobyOneKenoby::While' has no attributes.
+The class 'RobyOneKenoby::LanguageElmt' has no attributes.
+The class 'RobyOneKenoby::Condition' has no attributes.
+The class 'RobyOneKenoby::Order' has no attributes.
+The class 'RobyOneKenoby::And' has no attributes.
+The class 'RobyOneKenoby::NewEClass13' has no attributes.
+The class 'RobyOneKenoby::Test' has no attributes.
+The class 'RobyOneKenoby::NewEClass16' has no attributes.
+The class 'RobyOneKenoby::NewEClass18' has no attributes.
+'RobyOneKenoby::And' is a specialization of 'Test'.
+'RobyOneKenoby::NewEClass13' is a specialization of 'Order'.
+'RobyOneKenoby::Not' is a specialization of 'Test'.
+'RobyOneKenoby::If' is a specialization of 'Condition'.
+'RobyOneKenoby::NewEClass12' is a specialization of 'Order'.
+'RobyOneKenoby::NewEClass18' is a specialization of 'Order'.
+'RobyOneKenoby::Order' is a specialization of 'LanguageElmt'.
+'RobyOneKenoby::NewEClass14' is a specialization of 'Order'.
+'RobyOneKenoby::While' is a specialization of 'Condition'.
+'RobyOneKenoby::NewEClass16' is a specialization of 'Order'.
+'RobyOneKenoby::Obstacle' is a specialization of 'Test'.
+'RobyOneKenoby::Condition' is a specialization of 'LanguageElmt'.
+'RobyOneKenoby::NewEClass17' is a specialization of 'Order'.
+'RobyOneKenoby::HasTurned' is a specialization of 'Test'.
+'RobyOneKenoby::NewEClass15' is a specialization of 'Order'.
+'RobyOneKenoby::Test' is a specialization of 'LanguageElmt'.
+'RobyOneKenoby::LanguageElmt' (role 'RobyOneKenoby_LanguageElmt', cardinality 0..*) is associated with 'RobyOneKenoby::RobyLanguage' (role 'RobyOneKenoby_RobyLanguage', cardinality 0..*).
+'RobyOneKenoby::Test' (role 'RobyOneKenoby_Test', cardinality 0..*) is associated with 'RobyOneKenoby::Condition' (role 'RobyOneKenoby_Condition', cardinality 0..*).
+'RobyOneKenoby::Test' (role 'RobyOneKenoby_Test5', cardinality 0..*) is associated with 'RobyOneKenoby::And' (role 'RobyOneKenoby_And', cardinality 0..*).
+'RobyOneKenoby::Test' (role 'RobyOneKenoby_Test3', cardinality 0..*) is associated with 'RobyOneKenoby::Not' (role 'RobyOneKenoby_Not', cardinality 0..*).

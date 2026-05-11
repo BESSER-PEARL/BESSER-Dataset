@@ -1,0 +1,32 @@
+The model has 10 class(es).
+The class 'specializationModel::Node' has no attributes.
+The class 'specializationModel::Relation' has no attributes.
+The class 'specializationModel::Project' has the following attributes: 'numberOfProducts' of type int; 'infiniteDomain' of type bool; 'featureModelURI' of type str; 'nameConstraintsFile' of type str; 'nameConfigFile' of type str; 'userConstraintsState' of type bool.
+The class 'specializationModel::RelationFeature' has the following attributes: 'upperBound' of type int; 'lowerBound' of type int; 'type' of type str.
+The class 'specializationModel::TypedValue' has the following attributes: 'integerValue' of type str; 'stringValue' of type str; 'floatValue' of type str.
+The class 'Node' has no attributes.
+The class 'Relation' has no attributes.
+The class 'specializationModel::RelationFG' has no attributes.
+The class 'specializationModel::FeatureGroup' has the following attributes: 'lowerBound' of type int; 'type' of type str; 'upperBound' of type int.
+The class 'specializationModel::Feature' has the following attributes: 'realName' of type str; 'state' of type str; 'name' of type str; 'valueType' of type str.
+The enumeration 'FeatureType' has the following literals: 'MANDATORY', 'OPTIONAL', 'SIMPLE'.
+The enumeration 'ConfigState' has the following literals: 'UNDECIDED', 'USER_ELIMINATED', 'USER_SELECTED'.
+The enumeration 'FeatureGroupType' has the following literals: 'SIMPLEGROUP', 'ORGROUP', 'XORGROUP'.
+The enumeration 'ValueType' has the following literals: 'FLOAT', 'STRING', 'FEATURE', 'INTEGER', 'NONE'.
+'specializationModel::Feature' is a specialization of 'Node'.
+'specializationModel::RelationFeature' is a specialization of 'Relation'.
+'specializationModel::FeatureGroup' is a specialization of 'Node'.
+'specializationModel::RelationFG' is a specialization of 'Relation'.
+'specializationModel::TypedValue' (role 'specializationModel_TypedValue10', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature11', cardinality 0..*).
+'specializationModel::Feature' (role 'specializationModel_Feature6', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature8', cardinality 0..*).
+'specializationModel::Node' (role 'specializationModel_Node18', cardinality 0..*) is associated with 'specializationModel::Node' (role 'specializationModel_Node20', cardinality 0..*).
+'specializationModel::Node' (role 'specializationModel_Node22', cardinality 0..*) is associated with 'specializationModel::RelationFG' (role 'specializationModel_RelationFG', cardinality 0..*).
+'specializationModel::Feature' (role 'specializationModel_Feature27', cardinality 0..*) is associated with 'specializationModel::RelationFeature' (role 'specializationModel_RelationFeature', cardinality 0..*).
+'specializationModel::Feature' (role 'specializationModel_Feature5', cardinality 0..*) is associated with 'specializationModel::Node' (role 'specializationModel_Node', cardinality 0..*).
+'specializationModel::FeatureGroup' (role 'specializationModel_FeatureGroup', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature17', cardinality 0..*).
+'specializationModel::TypedValue' (role 'specializationModel_TypedValue', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature', cardinality 0..*).
+'specializationModel::Project' (role 'specializationModel_Project15', cardinality 0..*) is associated with 'specializationModel::Relation' (role 'specializationModel_Relation', cardinality 0..*).
+'specializationModel::Node' (role 'specializationModel_Node25', cardinality 0..*) is associated with 'specializationModel::RelationFG' (role 'specializationModel_RelationFG24', cardinality 0..*).
+'specializationModel::Feature' (role 'specializationModel_Feature1', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature3', cardinality 0..*).
+'specializationModel::RelationFeature' (role 'specializationModel_RelationFeature29', cardinality 0..*) is associated with 'specializationModel::Feature' (role 'specializationModel_Feature30', cardinality 0..*).
+'specializationModel::Node' (role 'specializationModel_Node13', cardinality 0..*) is associated with 'specializationModel::Project' (role 'specializationModel_Project', cardinality 0..*).

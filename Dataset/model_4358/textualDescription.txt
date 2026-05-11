@@ -1,0 +1,38 @@
+The model has 16 class(es).
+The class 'mini::lang::Expression' has no attributes.
+The class 'mini::lang::NotEqualsExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mini::lang::ExpressionStatement' has no attributes.
+The class 'mini::lang::NameExpression' has the following attributes: 'name' of type str.
+The class 'mini::lang::ComparisonExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'mini::lang::Block' has no attributes.
+The class 'mini::lang::FOLCallExpression' has the following attributes: 'method' of type str; 'iterator' of type str.
+The class 'mini::lang::Statement' has no attributes.
+The class 'mini::lang::AssignmentStatement' has no attributes.
+The class 'ComparisonExpression' has no attributes.
+The class 'mini::lang::MiniLang' has no attributes.
+The class 'mini::lang::EqualsExpression' has no attributes.
+The class 'mini::lang::ReturnStatement' has no attributes.
+The class 'mini::lang::IfStatement' has no attributes.
+'mini::lang::ReturnStatement' is a specialization of 'Statement'.
+'mini::lang::ComparisonExpression' is a specialization of 'Expression'.
+'mini::lang::AssignmentStatement' is a specialization of 'Statement'.
+'mini::lang::ExpressionStatement' is a specialization of 'Statement'.
+'mini::lang::FOLCallExpression' is a specialization of 'Expression'.
+'mini::lang::NameExpression' is a specialization of 'Expression'.
+'mini::lang::EqualsExpression' is a specialization of 'ComparisonExpression'.
+'mini::lang::NotEqualsExpression' is a specialization of 'ComparisonExpression'.
+'mini::lang::IfStatement' is a specialization of 'Statement'.
+'mini::lang::FOLCallExpression' (role 'mini_lang_FOLCallExpression24', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression25', cardinality 0..*).
+'mini::lang::AssignmentStatement' (role 'mini_lang_AssignmentStatement', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression8', cardinality 0..*).
+'mini::lang::ExpressionStatement' (role 'mini_lang_ExpressionStatement', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression13', cardinality 0..*).
+'mini::lang::IfStatement' (role 'mini_lang_IfStatement', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression', cardinality 0..*).
+'mini::lang::ReturnStatement' (role 'mini_lang_ReturnStatement', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression15', cardinality 0..*).
+'mini::lang::Block' (role 'mini_lang_Block', cardinality 0..*) is associated with 'mini::lang::MiniLang' (role 'mini_lang_MiniLang', cardinality 0..*).
+'mini::lang::Statement' (role 'mini_lang_Statement', cardinality 0..*) is associated with 'mini::lang::Block' (role 'mini_lang_Block2', cardinality 0..*).
+'mini::lang::ComparisonExpression' (role 'mini_lang_ComparisonExpression', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression17', cardinality 0..*).
+'mini::lang::FOLCallExpression' (role 'mini_lang_FOLCallExpression', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression22', cardinality 0..*).
+'mini::lang::ComparisonExpression' (role 'mini_lang_ComparisonExpression19', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression20', cardinality 0..*).
+'mini::lang::AssignmentStatement' (role 'mini_lang_AssignmentStatement10', cardinality 0..*) is associated with 'mini::lang::Expression' (role 'mini_lang_Expression11', cardinality 0..*).
+'mini::lang::IfStatement' (role 'mini_lang_IfStatement5', cardinality 0..*) is associated with 'mini::lang::Block' (role 'mini_lang_Block6', cardinality 0..*).

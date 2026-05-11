@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/mickaelistria/org.eclipse.cbi.p2repo.aggregator/org.eclipse.cbi.p2repo.aggregator.legacy/models/aggregator_0.9.0.ecore

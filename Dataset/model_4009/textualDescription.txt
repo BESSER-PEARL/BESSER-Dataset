@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Data::Class' has the following attributes: 'name' of type str.
+The class 'Data::Type' has the following attributes: 'isCollection' of type bool; 'fullName' of type str; 'doesReferenceModelClass' of type bool; 'name' of type str.
+The class 'Data::Attribute' has the following attributes: 'name' of type str.
+The class 'Data::Model' has no attributes.
+'Data::Attribute' (role 'Data_Attribute4', cardinality 0..*) is associated with 'Data::Type' (role 'Data_Type', cardinality 0..*).
+'Data::Attribute' (role 'Data_Attribute', cardinality 0..*) is associated with 'Data::Class' (role 'Data_Class2', cardinality 0..*).
+'Data::Model' (role 'Data_Model', cardinality 0..*) is associated with 'Data::Class' (role 'Data_Class', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/takarabt/BPMN-Cmof2Ecore/fr.obeo.bpmn.cmof/model/BPMN20.ecore

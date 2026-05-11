@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/bento/examples/evaluation/bento.benchmarks/tests/remove_multiple_inheritance/metamodels/SimpleUML.ecore

@@ -1,0 +1,22 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class classDiagram_ClassModel  {
+
+
+
+
+    public classDiagram_ClassModel(
+    ) {
+    }
+
+
+
+
+}

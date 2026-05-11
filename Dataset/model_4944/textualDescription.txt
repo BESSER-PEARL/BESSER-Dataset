@@ -1,0 +1,68 @@
+The model has 31 class(es).
+The class 'User::input::field' has no attributes.
+The class 'webshop::builder::3k::model::Result::list' has the following attributes: 'number_of_items_per_page' of type int; 'distance_between_items' of type int.
+The class 'webshop::builder::3k::model::User::input::field' has the following attributes: 'label' of type str.
+The class 'webshop::builder::3k::model::Reuses::component::link' has no attributes.
+The class 'webshop::builder::3k::model::Picture' has the following attributes: 'title' of type str; 'alternative_text' of type str; 'source' of type str.
+The class 'webshop::builder::3k::model::Login::widget' has no attributes.
+The class 'webshop::builder::3k::model::Page' has the following attributes: 'title' of type str; 'height' of type int; 'canvas_color' of type str; 'width' of type int.
+The class 'webshop::builder::3k::model::Item' has no attributes.
+The class 'webshop::builder::3k::model::Reuse::component' has the following attributes: 'yposition' of type int; 'xposition' of type int.
+The class 'webshop::builder::3k::model::Webshop::builder::3k' has the following attributes: 'company_name' of type str.
+The class 'webshop::builder::3k::model::Search::widget' has no attributes.
+The class 'webshop::builder::3k::model::Branding' has no attributes.
+The class 'webshop::builder::3k::model::Source::code' has no attributes.
+The class 'webshop::builder::3k::model::Navigation::to::Page::link' has no attributes.
+The class 'webshop::builder::3k::model::Checkbox' has no attributes.
+The class 'webshop::builder::3k::model::Newsletter::subscription::widget' has no attributes.
+The class 'webshop::builder::3k::model::Component' has the following attributes: 'name' of type str; 'yposition' of type int; 'alignment' of type str; 'width' of type int; 'xposition' of type int; 'height' of type int.
+The class 'webshop::builder::3k::model::Style' has the following attributes: 'background_color' of type str.
+The class 'Component' has no attributes.
+The class 'webshop::builder::3k::model::Shopping::cart::button' has no attributes.
+The class 'webshop::builder::3k::model::Text::field' has the following attributes: 'text' of type str; 'header_level' of type int.
+The class 'webshop::builder::3k::model::Navigation::button' has no attributes.
+The class 'webshop::builder::3k::model::Text::input::field' has no attributes.
+The class 'webshop::builder::3k::model::Slideshow' has no attributes.
+The class 'webshop::builder::3k::model::Radio::button' has no attributes.
+The class 'webshop::builder::3k::model::Social::button' has no attributes.
+The class 'webshop::builder::3k::model::Menu' has no attributes.
+The class 'webshop::builder::3k::model::Item::to::KB::link' has no attributes.
+The class 'webshop::builder::3k::model::Knowledge::base' has the following attributes: 'xml_file_uri' of type str.
+The class 'webshop::builder::3k::model::Component::group' has no attributes.
+The class 'webshop::builder::3k::model::Border' has the following attributes: 'thickness' of type int; 'color' of type str.
+The enumeration 'Alignment' has the following literals: 'left', 'right'.
+'webshop::builder::3k::model::Text::field' is a specialization of 'Component'.
+'webshop::builder::3k::model::Text::input::field' is a specialization of 'User::input::field'.
+'webshop::builder::3k::model::Item' is a specialization of 'Component'.
+'webshop::builder::3k::model::Checkbox' is a specialization of 'User::input::field'.
+'webshop::builder::3k::model::Picture' is a specialization of 'Component'.
+'webshop::builder::3k::model::Result::list' is a specialization of 'Component'.
+'webshop::builder::3k::model::Branding' is a specialization of 'Component'.
+'webshop::builder::3k::model::Navigation::button' is a specialization of 'Component'.
+'webshop::builder::3k::model::Radio::button' is a specialization of 'User::input::field'.
+'webshop::builder::3k::model::Component' (role 'webshop_builder_3k_model_Component16', cardinality 0..*) is associated with 'webshop::builder::3k::model::Reuses::component::link' (role 'webshop_builder_3k_model_Reuses_component_link', cardinality 0..*).
+'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page2', cardinality 0..*) is associated with 'webshop::builder::3k::model::Reuse::component' (role 'webshop_builder_3k_model_Reuse_component', cardinality 0..*).
+'webshop::builder::3k::model::Style' (role 'webshop_builder_3k_model_Style50', cardinality 0..*) is associated with 'webshop::builder::3k::model::Border' (role 'webshop_builder_3k_model_Border', cardinality 0..*).
+'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page27', cardinality 0..*) is associated with 'webshop::builder::3k::model::Webshop::builder::3k' (role 'webshop_builder_3k_model_Webshop_builder_3k26', cardinality 0..*).
+'webshop::builder::3k::model::Item' (role 'item', cardinality 0..*) is associated with 'webshop::builder::3k::model::Item::to::KB::link' (role 'Item_to_KB_link', cardinality 0..*).
+'webshop::builder::3k::model::Item' (role 'webshop_builder_3k_model_Item34', cardinality 0..*) is associated with 'webshop::builder::3k::model::Text::field' (role 'webshop_builder_3k_model_Text_field35', cardinality 0..*).
+'webshop::builder::3k::model::Picture' (role 'webshop_builder_3k_model_Picture', cardinality 0..*) is associated with 'webshop::builder::3k::model::Branding' (role 'webshop_builder_3k_model_Branding13', cardinality 0..*).
+'webshop::builder::3k::model::Webshop::builder::3k' (role 'webshop_builder_3k_model_Webshop_builder_3k29', cardinality 0..*) is associated with 'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page30', cardinality 0..*).
+'webshop::builder::3k::model::Style' (role 'webshop_builder_3k_model_Style8', cardinality 0..*) is associated with 'webshop::builder::3k::model::Component' (role 'webshop_builder_3k_model_Component7', cardinality 0..*).
+'webshop::builder::3k::model::Reuse::component' (role 'Reuse_component', cardinality 0..*) is associated with 'webshop::builder::3k::model::Reuses::component::link' (role 'link', cardinality 0..*).
+'webshop::builder::3k::model::Webshop::builder::3k' (role 'webshop_builder_3k_model_Webshop_builder_3k', cardinality 0..*) is associated with 'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page18', cardinality 0..*).
+'webshop::builder::3k::model::Item' (role 'webshop_builder_3k_model_Item', cardinality 0..*) is associated with 'webshop::builder::3k::model::Picture' (role 'webshop_builder_3k_model_Picture32', cardinality 0..*).
+'webshop::builder::3k::model::Navigation::button' (role 'Source', cardinality 0..*) is associated with 'webshop::builder::3k::model::Navigation::to::Page::link' (role 'Navigation_to_Page_link', cardinality 0..*).
+'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page', cardinality 0..*) is associated with 'webshop::builder::3k::model::Component' (role 'webshop_builder_3k_model_Component', cardinality 0..*).
+'webshop::builder::3k::model::Item::to::KB::link' (role 'webshop_builder_3k_model_Item_to_KB_link', cardinality 0..*) is associated with 'webshop::builder::3k::model::Knowledge::base' (role 'webshop_builder_3k_model_Knowledge_base', cardinality 0..*).
+'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page4', cardinality 0..*) is associated with 'webshop::builder::3k::model::Style' (role 'webshop_builder_3k_model_Style', cardinality 0..*).
+'webshop::builder::3k::model::Navigation::button' (role 'webshop_builder_3k_model_Navigation_button43', cardinality 0..*) is associated with 'webshop::builder::3k::model::Text::field' (role 'webshop_builder_3k_model_Text_field44', cardinality 0..*).
+'webshop::builder::3k::model::Navigation::to::Page::link' (role 'link46', cardinality 0..*) is associated with 'webshop::builder::3k::model::Navigation::button' (role 'Navigation_button', cardinality 0..*).
+'webshop::builder::3k::model::Result::list' (role 'webshop_builder_3k_model_Result_list', cardinality 0..*) is associated with 'webshop::builder::3k::model::Item' (role 'webshop_builder_3k_model_Item38', cardinality 0..*).
+'webshop::builder::3k::model::Reuse::component' (role 'source', cardinality 0..*) is associated with 'webshop::builder::3k::model::Reuses::component::link' (role 'Reuses_component_link', cardinality 0..*).
+'webshop::builder::3k::model::Knowledge::base' (role 'webshop_builder_3k_model_Knowledge_base24', cardinality 0..*) is associated with 'webshop::builder::3k::model::Webshop::builder::3k' (role 'webshop_builder_3k_model_Webshop_builder_3k23', cardinality 0..*).
+'webshop::builder::3k::model::Webshop::builder::3k' (role 'webshop_builder_3k_model_Webshop_builder_3k20', cardinality 0..*) is associated with 'webshop::builder::3k::model::Component' (role 'webshop_builder_3k_model_Component21', cardinality 0..*).
+'webshop::builder::3k::model::Navigation::button' (role 'webshop_builder_3k_model_Navigation_button', cardinality 0..*) is associated with 'webshop::builder::3k::model::Picture' (role 'webshop_builder_3k_model_Picture41', cardinality 0..*).
+'webshop::builder::3k::model::Page' (role 'webshop_builder_3k_model_Page48', cardinality 0..*) is associated with 'webshop::builder::3k::model::Navigation::to::Page::link' (role 'webshop_builder_3k_model_Navigation_to_Page_link', cardinality 0..*).
+'webshop::builder::3k::model::Branding' (role 'webshop_builder_3k_model_Branding', cardinality 0..*) is associated with 'webshop::builder::3k::model::Text::field' (role 'webshop_builder_3k_model_Text_field', cardinality 0..*).
+'webshop::builder::3k::model::Item::to::KB::link' (role 'kb_link', cardinality 0..*) is associated with 'webshop::builder::3k::model::Item' (role 'Item', cardinality 0..*).

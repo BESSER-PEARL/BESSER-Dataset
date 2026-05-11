@@ -1,0 +1,128 @@
+The model has 43 class(es).
+The class 'effbdpattern::Domain' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'effbdpattern::Item' has the following attributes: 'name' of type str.
+The class 'effbdpattern::Final' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'effbdpattern::Force' has the following attributes: 'scale' of type int; 'value' of type int; 'description' of type str.
+The class 'effbdpattern::Model' has no attributes.
+The class 'effbdpattern::Allocation' has the following attributes: 'id' of type str; 'redundant' of type bool.
+The class 'effbdpattern::PatternCatalog' has the following attributes: 'id' of type str.
+The class 'effbdpattern::Feature' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'effbdpattern::Start' has no attributes.
+The class 'effbdpattern::Or' has no attributes.
+The class 'effbdpattern::Function' has the following attributes: 'domain' of type str.
+The class 'effbdpattern::Indexable' has no attributes.
+The class 'effbdpattern::Description' has the following attributes: 'content' of type str.
+The class 'effbdpattern::Workbench' has no attributes.
+The class 'effbdpattern::Flow' has the following attributes: 'flowName' of type str.
+The class 'effbdpattern::InputPort' has no attributes.
+The class 'Indexable' has no attributes.
+The class 'effbdpattern::PatternModel' has no attributes.
+The class 'effbdpattern::Context' has the following attributes: 'description' of type str.
+The class 'effbdpattern::Loop' has no attributes.
+The class 'effbdpattern::LoopExit' has no attributes.
+The class 'effbdpattern::And' has no attributes.
+The class 'effbdpattern::Keyword' has the following attributes: 'value' of type str.
+The class 'effbdpattern::AbstractModel' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'AbstractModel' has no attributes.
+The class 'effbdpattern::ModelElement' has the following attributes: 'modelName' of type str; 'modelId' of type int.
+The class 'effbdpattern::SystemPattern' has the following attributes: 'alias' of type str; 'name' of type str; 'creationDate' of type date; 'challeng' of type str; 'patternId' of type int; 'knownApplications' of type str; 'description' of type str.
+The class 'effbdpattern::Iteration' has no attributes.
+The class 'effbdpattern::FunctionProperty' has the following attributes: 'description' of type str.
+The class 'effbdpattern::Token' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'effbdpattern::OutputPort' has no attributes.
+The class 'effbdpattern::Port' has the following attributes: 'id' of type str.
+The class 'SequenceNode' has no attributes.
+The class 'Port' has no attributes.
+The class 'effbdpattern::Sequence' has no attributes.
+The class 'effbdpattern::SequenceNode' has the following attributes: 'name' of type str; 'tMax' of type int; 'tMin' of type int.
+The class 'effbdpattern::Parameter' has the following attributes: 'name' of type str.
+The class 'effbdpattern::Problem' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'effbdpattern::Component' has no attributes.
+The class 'effbdpattern::Impact' has the following attributes: 'scale' of type int; 'value' of type int.
+The class 'effbdpattern::Condition' has the following attributes: 'name' of type str.
+The enumeration 'FunctionDomain' has the following literals: 'space', 'form', 'time'.
+'effbdpattern::Loop' is a specialization of 'Sequence'.
+'effbdpattern::ModelElement' is a specialization of 'Indexable'.
+'effbdpattern::Sequence' is a specialization of 'SequenceNode'.
+'effbdpattern::Function' is a specialization of 'ModelElement'.
+'effbdpattern::Problem' is a specialization of 'Indexable'.
+'effbdpattern::Iteration' is a specialization of 'Sequence'.
+'effbdpattern::Context' is a specialization of 'Indexable'.
+'effbdpattern::Or' is a specialization of 'Sequence'.
+'effbdpattern::Function' is a specialization of 'SequenceNode'.
+'effbdpattern::OutputPort' is a specialization of 'Port'.
+'effbdpattern::SystemPattern' is a specialization of 'Indexable'.
+'effbdpattern::Start' is a specialization of 'Sequence'.
+'effbdpattern::And' is a specialization of 'Sequence'.
+'effbdpattern::PatternModel' is a specialization of 'AbstractModel'.
+'effbdpattern::Model' is a specialization of 'AbstractModel'.
+'effbdpattern::Domain' is a specialization of 'Indexable'.
+'effbdpattern::InputPort' is a specialization of 'Port'.
+'effbdpattern::AbstractModel' is a specialization of 'Indexable'.
+'effbdpattern::Final' is a specialization of 'Sequence'.
+'effbdpattern::Component' is a specialization of 'ModelElement'.
+'effbdpattern::LoopExit' is a specialization of 'Sequence'.
+'effbdpattern::Component' (role 'effbdpattern_Component', cardinality 0..*) is associated with 'effbdpattern::PatternModel' (role 'effbdpattern_PatternModel71', cardinality 0..*).
+'effbdpattern::OutputPort' (role 'effbdpattern_OutputPort', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function6', cardinality 0..*).
+'effbdpattern::Model' (role 'effbdpattern_Model131', cardinality 0..*) is associated with 'effbdpattern::Model' (role 'effbdpattern_Model133', cardinality 0..*).
+'effbdpattern::FunctionProperty' (role 'effbdpattern_FunctionProperty', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function14', cardinality 0..*).
+'effbdpattern::Force' (role 'forces', cardinality 0..*) is associated with 'effbdpattern::Problem' (role 'Problem', cardinality 0..*).
+'effbdpattern::Problem' (role 'effbdpattern_Problem109', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern108', cardinality 0..*).
+'effbdpattern::Workbench' (role 'effbdpattern_Workbench48', cardinality 0..*) is associated with 'effbdpattern::Condition' (role 'effbdpattern_Condition', cardinality 0..*).
+'effbdpattern::Workbench' (role 'effbdpattern_Workbench', cardinality 0..*) is associated with 'effbdpattern::FunctionProperty' (role 'effbdpattern_FunctionProperty38', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern', cardinality 0..*) is associated with 'effbdpattern::PatternCatalog' (role 'effbdpattern_PatternCatalog36', cardinality 0..*).
+'effbdpattern::Flow' (role 'effbdpattern_Flow', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function4', cardinality 0..*).
+'effbdpattern::FunctionProperty' (role 'effbdpattern_FunctionProperty30', cardinality 0..*) is associated with 'effbdpattern::FunctionProperty' (role 'effbdpattern_FunctionProperty32', cardinality 0..*).
+'effbdpattern::Allocation' (role 'effbdpattern_Allocation', cardinality 0..*) is associated with 'effbdpattern::Workbench' (role 'effbdpattern_Workbench57', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern105', cardinality 0..*) is associated with 'effbdpattern::Context' (role 'effbdpattern_Context106', cardinality 0..*).
+'effbdpattern::ModelElement' (role 'modelElement', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'SystemPattern', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern115', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern113', cardinality 0..*).
+'effbdpattern::Function' (role 'effbdpattern_Function136', cardinality 0..*) is associated with 'effbdpattern::Model' (role 'effbdpattern_Model135', cardinality 0..*).
+'effbdpattern::InputPort' (role 'effbdpattern_InputPort', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function8', cardinality 0..*).
+'effbdpattern::Function' (role 'decompositions', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'Function17', cardinality 0..*).
+'effbdpattern::Workbench' (role 'effbdpattern_Workbench44', cardinality 0..*) is associated with 'effbdpattern::Keyword' (role 'effbdpattern_Keyword', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern102', cardinality 0..*) is associated with 'effbdpattern::Parameter' (role 'effbdpattern_Parameter103', cardinality 0..*).
+'effbdpattern::Model' (role 'effbdpattern_Model138', cardinality 0..*) is associated with 'effbdpattern::Component' (role 'effbdpattern_Component139', cardinality 0..*).
+'effbdpattern::Workbench' (role 'effbdpattern_Workbench50', cardinality 0..*) is associated with 'effbdpattern::Context' (role 'effbdpattern_Context', cardinality 0..*).
+'effbdpattern::ModelElement' (role 'effbdpattern_ModelElement64', cardinality 0..*) is associated with 'effbdpattern::Parameter' (role 'effbdpattern_Parameter63', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern111', cardinality 0..*) is associated with 'effbdpattern::Domain' (role 'effbdpattern_Domain112', cardinality 0..*).
+'effbdpattern::Impact' (role 'impacts', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'SystemPattern100', cardinality 0..*).
+'effbdpattern::Workbench' (role 'effbdpattern_Workbench42', cardinality 0..*) is associated with 'effbdpattern::Domain' (role 'effbdpattern_Domain', cardinality 0..*).
+'effbdpattern::PatternModel' (role 'effbdpattern_PatternModel', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function69', cardinality 0..*).
+'effbdpattern::PatternCatalog' (role 'effbdpattern_PatternCatalog55', cardinality 0..*) is associated with 'effbdpattern::Workbench' (role 'effbdpattern_Workbench54', cardinality 0..*).
+'effbdpattern::Allocation' (role 'effbdpattern_Allocation141', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function142', cardinality 0..*).
+'effbdpattern::Function' (role 'effbdpattern_Function34', cardinality 0..*) is associated with 'effbdpattern::PatternCatalog' (role 'effbdpattern_PatternCatalog', cardinality 0..*).
+'effbdpattern::Component' (role 'effbdpattern_Component145', cardinality 0..*) is associated with 'effbdpattern::Allocation' (role 'effbdpattern_Allocation144', cardinality 0..*).
+'effbdpattern::Impact' (role 'Impact', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'pattern', cardinality 0..*).
+'effbdpattern::Problem' (role 'effbdpattern_Problem94', cardinality 0..*) is associated with 'effbdpattern::Feature' (role 'effbdpattern_Feature95', cardinality 0..*).
+'effbdpattern::Description' (role 'effbdpattern_Description', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function10', cardinality 0..*).
+'effbdpattern::PatternModel' (role 'effbdpattern_PatternModel92', cardinality 0..*) is associated with 'effbdpattern::Problem' (role 'effbdpattern_Problem91', cardinality 0..*).
+'effbdpattern::AbstractModel' (role 'effbdpattern_AbstractModel', cardinality 0..*) is associated with 'effbdpattern::Domain' (role 'effbdpattern_Domain80', cardinality 0..*).
+'effbdpattern::ModelElement' (role 'ModelElement', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'pattern130', cardinality 0..*).
+'effbdpattern::Component' (role 'Component', cardinality 0..*) is associated with 'effbdpattern::Component' (role 'parent74', cardinality 0..*).
+'effbdpattern::Function' (role 'effbdpattern_Function12', cardinality 0..*) is associated with 'effbdpattern::Token' (role 'effbdpattern_Token', cardinality 0..*).
+'effbdpattern::Problem' (role 'problem', cardinality 0..*) is associated with 'effbdpattern::Force' (role 'Force', cardinality 0..*).
+'effbdpattern::Model' (role 'effbdpattern_Model', cardinality 0..*) is associated with 'effbdpattern::Workbench' (role 'effbdpattern_Workbench52', cardinality 0..*).
+'effbdpattern::ModelElement' (role 'effbdpattern_ModelElement', cardinality 0..*) is associated with 'effbdpattern::Parameter' (role 'effbdpattern_Parameter', cardinality 0..*).
+'effbdpattern::SequenceNode' (role 'effbdpattern_SequenceNode', cardinality 0..*) is associated with 'effbdpattern::SequenceNode' (role 'effbdpattern_SequenceNode18', cardinality 0..*).
+'effbdpattern::Feature' (role 'effbdpattern_Feature', cardinality 0..*) is associated with 'effbdpattern::Workbench' (role 'effbdpattern_Workbench46', cardinality 0..*).
+'effbdpattern::Port' (role 'effbdpattern_Port20', cardinality 0..*) is associated with 'effbdpattern::Port' (role 'effbdpattern_Port', cardinality 0..*).
+'effbdpattern::Condition' (role 'effbdpattern_Condition67', cardinality 0..*) is associated with 'effbdpattern::Context' (role 'effbdpattern_Context66', cardinality 0..*).
+'effbdpattern::Indexable' (role 'effbdpattern_Indexable', cardinality 0..*) is associated with 'effbdpattern::Keyword' (role 'effbdpattern_Keyword60', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern126', cardinality 0..*) is associated with 'effbdpattern::PatternModel' (role 'effbdpattern_PatternModel127', cardinality 0..*).
+'effbdpattern::AbstractModel' (role 'AbstractModel86', cardinality 0..*) is associated with 'effbdpattern::AbstractModel' (role 'parent85', cardinality 0..*).
+'effbdpattern::Problem' (role 'effbdpattern_Problem', cardinality 0..*) is associated with 'effbdpattern::Workbench' (role 'effbdpattern_Workbench40', cardinality 0..*).
+'effbdpattern::Flow' (role 'effbdpattern_Flow23', cardinality 0..*) is associated with 'effbdpattern::InputPort' (role 'effbdpattern_InputPort24', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern124', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern122', cardinality 0..*).
+'effbdpattern::Sequence' (role 'effbdpattern_Sequence', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'effbdpattern_Function', cardinality 0..*).
+'effbdpattern::Item' (role 'effbdpattern_Item', cardinality 0..*) is associated with 'effbdpattern::Flow' (role 'effbdpattern_Flow26', cardinality 0..*).
+'effbdpattern::Component' (role 'decompositions77', cardinality 0..*) is associated with 'effbdpattern::Component' (role 'Component78', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern116', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern118', cardinality 0..*).
+'effbdpattern::AbstractModel' (role 'AbstractModel', cardinality 0..*) is associated with 'effbdpattern::AbstractModel' (role 'fragments', cardinality 0..*).
+'effbdpattern::Function' (role 'Function', cardinality 0..*) is associated with 'effbdpattern::Function' (role 'parent', cardinality 0..*).
+'effbdpattern::OutputPort' (role 'effbdpattern_OutputPort28', cardinality 0..*) is associated with 'effbdpattern::Flow' (role 'effbdpattern_Flow29', cardinality 0..*).
+'effbdpattern::Force' (role 'effbdpattern_Force', cardinality 0..*) is associated with 'effbdpattern::Condition' (role 'effbdpattern_Condition89', cardinality 0..*).
+'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern119', cardinality 0..*) is associated with 'effbdpattern::SystemPattern' (role 'effbdpattern_SystemPattern121', cardinality 0..*).
+'effbdpattern::Impact' (role 'effbdpattern_Impact', cardinality 0..*) is associated with 'effbdpattern::Feature' (role 'effbdpattern_Feature98', cardinality 0..*).

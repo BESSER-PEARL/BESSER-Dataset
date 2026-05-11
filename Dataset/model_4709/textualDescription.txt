@@ -1,0 +1,36 @@
+The model has 13 class(es).
+The class 'adt::ATerm' has the following attributes: 'symbol' of type str.
+The class 'adt::Variable' has no attributes.
+The class 'adt::Sort' has no attributes.
+The class 'adt::Equation' has no attributes.
+The class 'adt::Term' has no attributes.
+The class 'adt::ASort' has the following attributes: 'name' of type str.
+The class 'adt::SubSort' has no attributes.
+The class 'adt::VariableDeclaration' has the following attributes: 'name' of type str.
+The class 'adt::Signature' has the following attributes: 'ops' of type str.
+The class 'adt::ADT' has the following attributes: 'name' of type str.
+The class 'adt::Operation' has the following attributes: 'name' of type str.
+The class 'ASort' has no attributes.
+The class 'ATerm' has no attributes.
+'adt::SubSort' is a specialization of 'ASort'.
+'adt::Variable' is a specialization of 'ATerm'.
+'adt::Term' is a specialization of 'ATerm'.
+'adt::Sort' is a specialization of 'ASort'.
+'adt::ASort' (role 'adt_ASort22', cardinality 0..*) is associated with 'adt::Operation' (role 'adt_Operation21', cardinality 0..*).
+'adt::Equation' (role 'adt_Equation42', cardinality 0..*) is associated with 'adt::ATerm' (role 'adt_ATerm43', cardinality 0..*).
+'adt::ATerm' (role 'adt_ATerm40', cardinality 0..*) is associated with 'adt::Equation' (role 'adt_Equation39', cardinality 0..*).
+'adt::SubSort' (role 'adt_SubSort', cardinality 0..*) is associated with 'adt::ASort' (role 'adt_ASort', cardinality 0..*).
+'adt::VariableDeclaration' (role 'adt_VariableDeclaration18', cardinality 0..*) is associated with 'adt::ASort' (role 'adt_ASort19', cardinality 0..*).
+'adt::VariableDeclaration' (role 'adt_VariableDeclaration', cardinality 0..*) is associated with 'adt::ADT' (role 'adt_ADT2', cardinality 0..*).
+'adt::Signature' (role 'adt_Signature9', cardinality 0..*) is associated with 'adt::ASort' (role 'adt_ASort10', cardinality 0..*).
+'adt::VariableDeclaration' (role 'adt_VariableDeclaration37', cardinality 0..*) is associated with 'adt::Variable' (role 'adt_Variable', cardinality 0..*).
+'adt::Term' (role 'adt_Term34', cardinality 0..*) is associated with 'adt::ATerm' (role 'adt_ATerm35', cardinality 0..*).
+'adt::ADT' (role 'adt_ADT', cardinality 0..*) is associated with 'adt::Signature' (role 'adt_Signature', cardinality 0..*).
+'adt::ADT' (role 'adt_ADT4', cardinality 0..*) is associated with 'adt::Equation' (role 'adt_Equation', cardinality 0..*).
+'adt::Operation' (role 'adt_Operation16', cardinality 0..*) is associated with 'adt::Signature' (role 'adt_Signature15', cardinality 0..*).
+'adt::ATerm' (role 'adt_ATerm29', cardinality 0..*) is associated with 'adt::ASort' (role 'adt_ASort30', cardinality 0..*).
+'adt::Signature' (role 'adt_Signature12', cardinality 0..*) is associated with 'adt::Operation' (role 'adt_Operation13', cardinality 0..*).
+'adt::ATerm' (role 'adt_ATerm', cardinality 0..*) is associated with 'adt::ADT' (role 'adt_ADT27', cardinality 0..*).
+'adt::Signature' (role 'adt_Signature7', cardinality 0..*) is associated with 'adt::Operation' (role 'adt_Operation', cardinality 0..*).
+'adt::Term' (role 'adt_Term', cardinality 0..*) is associated with 'adt::Operation' (role 'adt_Operation32', cardinality 0..*).
+'adt::Operation' (role 'adt_Operation24', cardinality 0..*) is associated with 'adt::ASort' (role 'adt_ASort25', cardinality 0..*).

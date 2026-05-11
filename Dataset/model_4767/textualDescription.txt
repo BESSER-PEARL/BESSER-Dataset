@@ -1,0 +1,41 @@
+The model has 20 class(es).
+The class 'types::RealType' has no attributes.
+The class 'types::ObjectType' has no attributes.
+The class 'FunctionType' has no attributes.
+The class 'types::StringType' has no attributes.
+The class 'types::FunctionType' has the following attributes: 'optionalParameterCount' of type int.
+The class 'types::CollectionType' has no attributes.
+The class 'Type' has no attributes.
+The class 'types::Type' has the following attributes: 'inExtentDomain' of type bool.
+The class 'DataType' has no attributes.
+The class 'types::EEnum' has no attributes.
+The class 'RealType' has no attributes.
+The class 'NumberType' has no attributes.
+The class 'types::NumberType' has no attributes.
+The class 'types::BooleanType' has no attributes.
+The class 'types::MethodType' has no attributes.
+The class 'types::EnumType' has no attributes.
+The class 'types::DataType' has no attributes.
+The class 'types::EClass' has no attributes.
+The class 'types::MapType' has no attributes.
+The class 'types::IntegerType' has no attributes.
+'types::RealType' is a specialization of 'NumberType'.
+'types::EnumType' is a specialization of 'Type'.
+'types::IntegerType' is a specialization of 'RealType'.
+'types::BooleanType' is a specialization of 'DataType'.
+'types::MapType' is a specialization of 'Type'.
+'types::MethodType' is a specialization of 'FunctionType'.
+'types::NumberType' is a specialization of 'DataType'.
+'types::DataType' is a specialization of 'Type'.
+'types::ObjectType' is a specialization of 'Type'.
+'types::FunctionType' is a specialization of 'Type'.
+'types::CollectionType' is a specialization of 'Type'.
+'types::StringType' is a specialization of 'DataType'.
+'types::ObjectType' (role 'types_ObjectType', cardinality 0..*) is associated with 'types::EClass' (role 'types_EClass', cardinality 0..*).
+'types::CollectionType' (role 'types_CollectionType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'types::Type' (role 'types_Type6', cardinality 0..*) is associated with 'types::MapType' (role 'types_MapType5', cardinality 0..*).
+'types::FunctionType' (role 'types_FunctionType10', cardinality 0..*) is associated with 'types::Type' (role 'types_Type11', cardinality 0..*).
+'types::MethodType' (role 'types_MethodType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type13', cardinality 0..*).
+'types::MapType' (role 'types_MapType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type3', cardinality 0..*).
+'types::EEnum' (role 'types_EEnum', cardinality 0..*) is associated with 'types::EnumType' (role 'types_EnumType', cardinality 0..*).
+'types::FunctionType' (role 'types_FunctionType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type8', cardinality 0..*).

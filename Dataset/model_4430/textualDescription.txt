@@ -1,0 +1,108 @@
+The model has 53 class(es).
+The class 'metamodel::Positive' has no attributes.
+The class 'metamodel::Sensor' has the following attributes: 'sensorName' of type str; 'name' of type str.
+The class 'metamodel::BinaryCond' has no attributes.
+The class 'metamodel::DifferentialWheel' has the following attributes: 'speed' of type int; 'isLeft' of type bool.
+The class 'metamodel::IntVal' has the following attributes: 'value' of type int.
+The class 'UnaryOperator' has no attributes.
+The class 'metamodel::Sub' has no attributes.
+The class 'metamodel::Group' has no attributes.
+The class 'metamodel::LightSensor' has no attributes.
+The class 'Action' has no attributes.
+The class 'metamodel::StateMachine' has the following attributes: 'name' of type str.
+The class 'metamodel::Condition' has no attributes.
+The class 'metamodel::TurnRight' has no attributes.
+The class 'metamodel::Stopping' has no attributes.
+The class 'BinaryOperator' has no attributes.
+The class 'metamodel::Value' has the following attributes: 'name' of type str.
+The class 'metamodel::More' has no attributes.
+The class 'metamodel::Add' has no attributes.
+The class 'metamodel::Actuator' has the following attributes: 'name' of type str.
+The class 'Sensor' has no attributes.
+The class 'metamodel::And' has no attributes.
+The class 'metamodel::DistanceSensor' has no attributes.
+The class 'metamodel::BoolVal' has the following attributes: 'value' of type bool.
+The class 'metamodel::Backward' has no attributes.
+The class 'metamodel::Forward' has no attributes.
+The class 'BinaryCond' has no attributes.
+The class 'metamodel::ActionWheel' has the following attributes: 'speed' of type int.
+The class 'metamodel::BinaryOperator' has no attributes.
+The class 'metamodel::Negative' has no attributes.
+The class 'metamodel::Type' has no attributes.
+The class 'metamodel::Negation' has no attributes.
+The class 'Type' has no attributes.
+The class 'metamodel::TurnLeft' has no attributes.
+The class 'metamodel::UnaryOperator' has no attributes.
+The class 'ActionWheel' has no attributes.
+The class 'metamodel::LessOrEqual' has no attributes.
+The class 'metamodel::Behaviour' has the following attributes: 'priority' of type int; 'name' of type str.
+The class 'Actuator' has no attributes.
+The class 'metamodel::Robot' has the following attributes: 'name' of type str.
+The class 'metamodel::UnaryCond' has no attributes.
+The class 'metamodel::Transition' has the following attributes: 'nameIn' of type str.
+The class 'UnaryCond' has no attributes.
+The class 'metamodel::Different' has no attributes.
+The class 'metamodel::Less' has no attributes.
+The class 'metamodel::MoreOrEqual' has no attributes.
+The class 'Condition' has no attributes.
+The class 'metamodel::Or' has no attributes.
+The class 'metamodel::Action' has no attributes.
+The class 'metamodel::State' has the following attributes: 'name' of type str; 'uid' of type int; 'isInitial' of type bool.
+The class 'Operator' has no attributes.
+The class 'metamodel::FloatVal' has the following attributes: 'value' of type float.
+The class 'metamodel::Equal' has no attributes.
+The class 'metamodel::Operator' has no attributes.
+'metamodel::DifferentialWheel' is a specialization of 'Actuator'.
+'metamodel::More' is a specialization of 'BinaryOperator'.
+'metamodel::DistanceSensor' is a specialization of 'Sensor'.
+'metamodel::BoolVal' is a specialization of 'Type'.
+'metamodel::UnaryCond' is a specialization of 'Condition'.
+'metamodel::FloatVal' is a specialization of 'Type'.
+'metamodel::Operator' is a specialization of 'Condition'.
+'metamodel::MoreOrEqual' is a specialization of 'BinaryOperator'.
+'metamodel::BinaryOperator' is a specialization of 'Operator'.
+'metamodel::Less' is a specialization of 'BinaryOperator'.
+'metamodel::LessOrEqual' is a specialization of 'BinaryOperator'.
+'metamodel::Negative' is a specialization of 'UnaryOperator'.
+'metamodel::Equal' is a specialization of 'BinaryOperator'.
+'metamodel::Or' is a specialization of 'BinaryCond'.
+'metamodel::Positive' is a specialization of 'UnaryOperator'.
+'metamodel::Forward' is a specialization of 'ActionWheel'.
+'metamodel::Add' is a specialization of 'BinaryOperator'.
+'metamodel::TurnLeft' is a specialization of 'ActionWheel'.
+'metamodel::LightSensor' is a specialization of 'Sensor'.
+'metamodel::Sub' is a specialization of 'BinaryOperator'.
+'metamodel::ActionWheel' is a specialization of 'Action'.
+'metamodel::BinaryCond' is a specialization of 'Condition'.
+'metamodel::Group' is a specialization of 'Actuator'.
+'metamodel::And' is a specialization of 'BinaryCond'.
+'metamodel::Different' is a specialization of 'BinaryOperator'.
+'metamodel::TurnRight' is a specialization of 'ActionWheel'.
+'metamodel::UnaryOperator' is a specialization of 'Operator'.
+'metamodel::Stopping' is a specialization of 'ActionWheel'.
+'metamodel::Negation' is a specialization of 'UnaryCond'.
+'metamodel::Backward' is a specialization of 'ActionWheel'.
+'metamodel::IntVal' is a specialization of 'Type'.
+'metamodel::Actuator' (role 'metamodel_Actuator', cardinality 0..*) is associated with 'metamodel::Robot' (role 'metamodel_Robot4', cardinality 0..*).
+'metamodel::Value' (role 'metamodel_Value38', cardinality 0..*) is associated with 'metamodel::UnaryOperator' (role 'metamodel_UnaryOperator', cardinality 0..*).
+'metamodel::Transition' (role 'metamodel_Transition36', cardinality 0..*) is associated with 'metamodel::Condition' (role 'metamodel_Condition', cardinality 0..*).
+'metamodel::Operator' (role 'metamodel_Operator', cardinality 0..*) is associated with 'metamodel::BinaryOperator' (role 'metamodel_BinaryOperator', cardinality 0..*).
+'metamodel::Action' (role 'metamodel_Action28', cardinality 0..*) is associated with 'metamodel::State' (role 'metamodel_State27', cardinality 0..*).
+'metamodel::DifferentialWheel' (role 'metamodel_DifferentialWheel', cardinality 0..*) is associated with 'metamodel::Group' (role 'metamodel_Group', cardinality 0..*).
+'metamodel::Action' (role 'metamodel_Action25', cardinality 0..*) is associated with 'metamodel::State' (role 'metamodel_State24', cardinality 0..*).
+'metamodel::Robot' (role 'metamodel_Robot2', cardinality 0..*) is associated with 'metamodel::Sensor' (role 'metamodel_Sensor', cardinality 0..*).
+'metamodel::Transition' (role 'metamodel_Transition33', cardinality 0..*) is associated with 'metamodel::State' (role 'metamodel_State34', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type', cardinality 0..*) is associated with 'metamodel::Value' (role 'metamodel_Value13', cardinality 0..*).
+'metamodel::Behaviour' (role 'metamodel_Behaviour', cardinality 0..*) is associated with 'metamodel::Robot' (role 'metamodel_Robot', cardinality 0..*).
+'metamodel::Value' (role 'metamodel_Value20', cardinality 0..*) is associated with 'metamodel::StateMachine' (role 'metamodel_StateMachine19', cardinality 0..*).
+'metamodel::BinaryCond' (role 'metamodel_BinaryCond46', cardinality 0..*) is associated with 'metamodel::Condition' (role 'metamodel_Condition47', cardinality 0..*).
+'metamodel::State' (role 'metamodel_State22', cardinality 0..*) is associated with 'metamodel::Transition' (role 'metamodel_Transition', cardinality 0..*).
+'metamodel::Condition' (role 'metamodel_Condition44', cardinality 0..*) is associated with 'metamodel::BinaryCond' (role 'metamodel_BinaryCond', cardinality 0..*).
+'metamodel::ActionWheel' (role 'metamodel_ActionWheel', cardinality 0..*) is associated with 'metamodel::Group' (role 'metamodel_Group9', cardinality 0..*).
+'metamodel::StateMachine' (role 'metamodel_StateMachine17', cardinality 0..*) is associated with 'metamodel::State' (role 'metamodel_State', cardinality 0..*).
+'metamodel::StateMachine' (role 'metamodel_StateMachine', cardinality 0..*) is associated with 'metamodel::Behaviour' (role 'metamodel_Behaviour15', cardinality 0..*).
+'metamodel::Sensor' (role 'metamodel_Sensor11', cardinality 0..*) is associated with 'metamodel::Value' (role 'metamodel_Value', cardinality 0..*).
+'metamodel::State' (role 'metamodel_State30', cardinality 0..*) is associated with 'metamodel::Action' (role 'metamodel_Action31', cardinality 0..*).
+'metamodel::Operator' (role 'metamodel_Operator42', cardinality 0..*) is associated with 'metamodel::BinaryOperator' (role 'metamodel_BinaryOperator41', cardinality 0..*).
+'metamodel::UnaryCond' (role 'metamodel_UnaryCond', cardinality 0..*) is associated with 'metamodel::Condition' (role 'metamodel_Condition49', cardinality 0..*).
+'metamodel::Robot' (role 'metamodel_Robot6', cardinality 0..*) is associated with 'metamodel::Action' (role 'metamodel_Action', cardinality 0..*).

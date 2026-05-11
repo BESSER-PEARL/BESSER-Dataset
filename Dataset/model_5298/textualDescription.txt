@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'tderived::B2' has the following attributes: 'anotherName' of type str.
+The class 'tderived::A2' has no attributes.
+The class 'B' has no attributes.
+The class 'tderived::D' has no attributes.
+The class 'A' has no attributes.
+'tderived::A2' is a specialization of 'A'.
+'tderived::B2' is a specialization of 'B'.
+'tderived::A2' (role 'tderived_A2', cardinality 0..*) is associated with 'tderived::D' (role 'tderived_D', cardinality 0..*).

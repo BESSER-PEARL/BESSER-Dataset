@@ -1,0 +1,148 @@
+The model has 65 class(es).
+The class 'cloudml::core::ProvidedExecutionPlatform' has no attributes.
+The class 'cloudml::core::Resource' has the following attributes: 'installCommand' of type str; 'configureCommand' of type str; 'downloadCommand' of type str; 'uploadCommand' of type str; 'startCommand' of type str; 'executeLocally' of type bool; 'stopCommand' of type str; 'requireCredentials' of type bool.
+The class 'cloudml::core::RequiredExecutionPlatformInstance' has no attributes.
+The class 'PortInstance' has no attributes.
+The class 'cloudml::core::Port' has the following attributes: 'isLocal' of type bool; 'portNumber' of type int.
+The class 'ExecutionPlatformInstance' has no attributes.
+The class 'ExecutionPlatform' has no attributes.
+The class 'cloudml::core::VM' has the following attributes: 'privateKey' of type str; 'minStorage' of type int; 'groupName' of type str; 'os' of type str; 'providerSpecificTypeName' of type str; 'minRam' of type int; 'maxRam' of type int; 'securityGroup' of type str; 'minCores' of type int; 'sshKey' of type str; 'is64os' of type bool; 'imageId' of type str; 'maxCores' of type int; 'maxStorage' of type int.
+The class 'cloudml::core::Provider' has the following attributes: 'credentials' of type str.
+The class 'cloudml::core::ExternalComponent' has the following attributes: 'location' of type str; 'Region' of type str; 'passwd' of type str; 'endPoint' of type str; 'login' of type str; 'serviceType' of type str.
+The class 'cloudml::core::ProvidedPortInstance' has no attributes.
+The class 'Cloud' has no attributes.
+The class 'cloudml::core::VMInstance' has the following attributes: 'publicAddress' of type str; 'id' of type str.
+The class 'PuppetResource' has no attributes.
+The class 'RequiredPortInstance' has no attributes.
+The class 'cloudml::core::ExecutionPlatform' has no attributes.
+The class 'ProvidedPort' has no attributes.
+The class 'cloudml::core::InternalComponent' has no attributes.
+The class 'RequiredExecutionPlatformInstance' has no attributes.
+The class 'Provider' has no attributes.
+The class 'Port' has no attributes.
+The class 'cloudml::core::ProvidedExecutionPlatformInstance' has no attributes.
+The class 'cloudml::core::ComponentInstance' has no attributes.
+The class 'cloudml::core::Component' has no attributes.
+The class 'cloudml::core::PortInstance' has no attributes.
+The class 'RequiredExecutionPlatform' has no attributes.
+The class 'ExternalComponent' has no attributes.
+The class 'cloudml::core::CloudMLElementWithProperties' has no attributes.
+The class 'ProvidedPortInstance' has no attributes.
+The class 'RequiredPort' has no attributes.
+The class 'VMPortInstance' has no attributes.
+The class 'cloudml::core::CloudMLModel' has no attributes.
+The class 'Resource' has no attributes.
+The class 'ProvidedExecutionPlatformInstance' has no attributes.
+The class 'cloudml::core::Cloud' has no attributes.
+The class 'Property' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'VMPort' has no attributes.
+The class 'cloudml::core::RelationshipInstance' has no attributes.
+The class 'cloudml::core::ProvidedPort' has no attributes.
+The class 'cloudml::core::ExecutionPlatformInstance' has no attributes.
+The class 'InternalComponent' has no attributes.
+The class 'cloudml::core::PuppetResource' has the following attributes: 'configurationFile' of type str; 'manifestEntry' of type str; 'configureHostnameCommand' of type str; 'masterEndpoint' of type str; 'repositoryEndpoint' of type str; 'repositoryKey' of type str; 'username' of type str.
+The class 'cloudml::core::ExecuteInstance' has no attributes.
+The class 'cloudml::core::RequiredPort' has the following attributes: 'isMandatory' of type bool.
+The class 'cloudml::core::RequiredPortInstance' has no attributes.
+The class 'RelationshipInstance' has no attributes.
+The class 'cloudml::core::ExternalComponentInstance' has the following attributes: 'ips' of type str.
+The class 'ComponentInstance' has no attributes.
+The class 'cloudml::core::CloudMLElement' has the following attributes: 'name' of type str.
+The class 'VMInstance' has no attributes.
+The class 'ExternalComponentInstance' has no attributes.
+The class 'cloudml::core::VMPortInstance' has no attributes.
+The class 'cloudml::core::InternalComponentInstance' has no attributes.
+The class 'ExecuteInstance' has no attributes.
+The class 'cloudml::core::Property' has the following attributes: 'value' of type str.
+The class 'CloudMLElementWithProperties' has no attributes.
+The class 'cloudml::core::Relationship' has no attributes.
+The class 'ProvidedExecutionPlatform' has no attributes.
+The class 'cloudml::core::VMPort' has no attributes.
+The class 'InternalComponentInstance' has no attributes.
+The class 'cloudml::core::RequiredExecutionPlatform' has no attributes.
+The class 'VM' has no attributes.
+The class 'Component' has no attributes.
+The class 'CloudMLElement' has no attributes.
+'cloudml::core::CloudMLElementWithProperties' is a specialization of 'CloudMLElement'.
+'cloudml::core::Property' is a specialization of 'CloudMLElement'.
+'cloudml::core::RequiredExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'cloudml::core::Provider' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::CloudMLModel' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ExecutionPlatform' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::Port' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ExecuteInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ProvidedExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'cloudml::core::PortInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ExternalComponent' is a specialization of 'Component'.
+'cloudml::core::RelationshipInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::InternalComponent' is a specialization of 'Component'.
+'cloudml::core::ExternalComponentInstance' is a specialization of 'ComponentInstance'.
+'cloudml::core::Relationship' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::VMInstance' is a specialization of 'ExternalComponentInstance'.
+'cloudml::core::ProvidedExecutionPlatformInstance' is a specialization of 'ExecutionPlatformInstance'.
+'cloudml::core::ComponentInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::Component' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::Resource' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::RequiredExecutionPlatformInstance' is a specialization of 'ExecutionPlatformInstance'.
+'cloudml::core::VMPortInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ExecutionPlatformInstance' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ProvidedPort' is a specialization of 'Port'.
+'cloudml::core::RequiredPort' is a specialization of 'Port'.
+'cloudml::core::Cloud' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::RequiredPortInstance' is a specialization of 'PortInstance'.
+'cloudml::core::PuppetResource' is a specialization of 'Resource'.
+'cloudml::core::VM' is a specialization of 'ExternalComponent'.
+'cloudml::core::InternalComponentInstance' is a specialization of 'ComponentInstance'.
+'cloudml::core::ProvidedPortInstance' is a specialization of 'PortInstance'.
+'cloudml::core::VMPort' is a specialization of 'CloudMLElementWithProperties'.
+'cloudml::core::ExecuteInstance' (role 'cloudml_core_ExecuteInstance99', cardinality 0..*) is associated with 'RequiredExecutionPlatformInstance' (role 'RequiredExecutionPlatformInstance100', cardinality 0..*).
+'cloudml::core::CloudMLElementWithProperties' (role 'cloudml_core_CloudMLElementWithProperties4', cardinality 0..*) is associated with 'PuppetResource' (role 'PuppetResource', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel13', cardinality 0..*) is associated with 'InternalComponent' (role 'InternalComponent', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance70', cardinality 0..*) is associated with 'cloudml::core::PortInstance' (role 'cloudml_core_PortInstance69', cardinality 0..*).
+'InternalComponentInstance' (role 'InternalComponentInstance', cardinality 0..*) is associated with 'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel17', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel21', cardinality 0..*) is associated with 'VM' (role 'VM', cardinality 0..*).
+'cloudml::core::Cloud' (role 'cloudml_core_Cloud', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance54', cardinality 0..*).
+'RequiredPort' (role 'RequiredPort', cardinality 0..*) is associated with 'cloudml::core::InternalComponent' (role 'cloudml_core_InternalComponent', cardinality 0..*).
+'cloudml::core::ExecuteInstance' (role 'cloudml_core_ExecuteInstance', cardinality 0..*) is associated with 'ProvidedExecutionPlatformInstance' (role 'ProvidedExecutionPlatformInstance97', cardinality 0..*).
+'cloudml::core::Port' (role 'cloudml_core_Port', cardinality 0..*) is associated with 'Component' (role 'Component41', cardinality 0..*).
+'cloudml::core::InternalComponent' (role 'cloudml_core_InternalComponent39', cardinality 0..*) is associated with 'RequiredExecutionPlatform' (role 'RequiredExecutionPlatform', cardinality 0..*).
+'cloudml::core::Relationship' (role 'cloudml_core_Relationship45', cardinality 0..*) is associated with 'ProvidedPort' (role 'ProvidedPort46', cardinality 0..*).
+'cloudml::core::ComponentInstance' (role 'cloudml_core_ComponentInstance', cardinality 0..*) is associated with 'ProvidedPortInstance' (role 'ProvidedPortInstance', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel15', cardinality 0..*) is associated with 'ExternalComponent' (role 'ExternalComponent', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel9', cardinality 0..*) is associated with 'Cloud' (role 'Cloud', cardinality 0..*).
+'Property' (role 'Property95', cardinality 0..*) is associated with 'cloudml::core::RequiredExecutionPlatform' (role 'cloudml_core_RequiredExecutionPlatform', cardinality 0..*).
+'cloudml::core::PortInstance' (role 'cloudml_core_PortInstance', cardinality 0..*) is associated with 'Port' (role 'Port', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance89', cardinality 0..*) is associated with 'cloudml::core::ExecutionPlatformInstance' (role 'cloudml_core_ExecutionPlatformInstance', cardinality 0..*).
+'Resource' (role 'Resource', cardinality 0..*) is associated with 'cloudml::core::CloudMLElementWithProperties' (role 'cloudml_core_CloudMLElementWithProperties2', cardinality 0..*).
+'Resource' (role 'Resource49', cardinality 0..*) is associated with 'cloudml::core::Relationship' (role 'cloudml_core_Relationship48', cardinality 0..*).
+'VMPortInstance' (role 'VMPortInstance', cardinality 0..*) is associated with 'cloudml::core::VMInstance' (role 'cloudml_core_VMInstance', cardinality 0..*).
+'Component' (role 'Component', cardinality 0..*) is associated with 'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel7', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel23', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance', cardinality 0..*).
+'cloudml::core::InternalComponent' (role 'cloudml_core_InternalComponent36', cardinality 0..*) is associated with 'InternalComponent' (role 'InternalComponent37', cardinality 0..*).
+'VMPort' (role 'VMPort83', cardinality 0..*) is associated with 'cloudml::core::ExternalComponent' (role 'cloudml_core_ExternalComponent82', cardinality 0..*).
+'cloudml::core::RelationshipInstance' (role 'cloudml_core_RelationshipInstance', cardinality 0..*) is associated with 'Relationship' (role 'Relationship72', cardinality 0..*).
+'cloudml::core::Component' (role 'cloudml_core_Component', cardinality 0..*) is associated with 'ProvidedPort' (role 'ProvidedPort', cardinality 0..*).
+'VMPortInstance' (role 'VMPortInstance85', cardinality 0..*) is associated with 'cloudml::core::ExternalComponentInstance' (role 'cloudml_core_ExternalComponentInstance', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel27', cardinality 0..*) is associated with 'RelationshipInstance' (role 'RelationshipInstance', cardinality 0..*).
+'VMPort' (role 'VMPort57', cardinality 0..*) is associated with 'cloudml::core::VMPortInstance' (role 'cloudml_core_VMPortInstance', cardinality 0..*).
+'Property' (role 'Property93', cardinality 0..*) is associated with 'cloudml::core::ProvidedExecutionPlatform' (role 'cloudml_core_ProvidedExecutionPlatform', cardinality 0..*).
+'cloudml::core::ComponentInstance' (role 'cloudml_core_ComponentInstance60', cardinality 0..*) is associated with 'Component' (role 'Component61', cardinality 0..*).
+'ProvidedExecutionPlatform' (role 'ProvidedExecutionPlatform', cardinality 0..*) is associated with 'cloudml::core::Component' (role 'cloudml_core_Component33', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'cloudml::core::CloudMLElementWithProperties' (role 'cloudml_core_CloudMLElementWithProperties', cardinality 0..*).
+'cloudml::core::ExecutionPlatform' (role 'cloudml_core_ExecutionPlatform', cardinality 0..*) is associated with 'Component' (role 'Component87', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel', cardinality 0..*) is associated with 'Provider' (role 'Provider', cardinality 0..*).
+'cloudml::core::Relationship' (role 'cloudml_core_Relationship', cardinality 0..*) is associated with 'RequiredPort' (role 'RequiredPort43', cardinality 0..*).
+'Provider' (role 'Provider80', cardinality 0..*) is associated with 'cloudml::core::ExternalComponent' (role 'cloudml_core_ExternalComponent', cardinality 0..*).
+'cloudml::core::InternalComponentInstance' (role 'cloudml_core_InternalComponentInstance', cardinality 0..*) is associated with 'RequiredPortInstance' (role 'RequiredPortInstance', cardinality 0..*).
+'cloudml::core::Relationship' (role 'cloudml_core_Relationship51', cardinality 0..*) is associated with 'Resource' (role 'Resource52', cardinality 0..*).
+'ProvidedExecutionPlatformInstance' (role 'ProvidedExecutionPlatformInstance', cardinality 0..*) is associated with 'cloudml::core::ComponentInstance' (role 'cloudml_core_ComponentInstance63', cardinality 0..*).
+'cloudml::core::RelationshipInstance' (role 'cloudml_core_RelationshipInstance74', cardinality 0..*) is associated with 'RequiredPortInstance' (role 'RequiredPortInstance75', cardinality 0..*).
+'cloudml::core::VM' (role 'cloudml_core_VM', cardinality 0..*) is associated with 'VMPort' (role 'VMPort', cardinality 0..*).
+'ProvidedPortInstance' (role 'ProvidedPortInstance78', cardinality 0..*) is associated with 'cloudml::core::RelationshipInstance' (role 'cloudml_core_RelationshipInstance77', cardinality 0..*).
+'cloudml::core::ExecutionPlatformInstance' (role 'cloudml_core_ExecutionPlatformInstance91', cardinality 0..*) is associated with 'ExecutionPlatform' (role 'ExecutionPlatform', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel19', cardinality 0..*) is associated with 'ExternalComponentInstance' (role 'ExternalComponentInstance', cardinality 0..*).
+'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel25', cardinality 0..*) is associated with 'Relationship' (role 'Relationship', cardinality 0..*).
+'ComponentInstance' (role 'ComponentInstance', cardinality 0..*) is associated with 'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel11', cardinality 0..*).
+'cloudml::core::InternalComponentInstance' (role 'cloudml_core_InternalComponentInstance66', cardinality 0..*) is associated with 'RequiredExecutionPlatformInstance' (role 'RequiredExecutionPlatformInstance', cardinality 0..*).
+'ExecuteInstance' (role 'ExecuteInstance', cardinality 0..*) is associated with 'cloudml::core::CloudMLModel' (role 'cloudml_core_CloudMLModel29', cardinality 0..*).

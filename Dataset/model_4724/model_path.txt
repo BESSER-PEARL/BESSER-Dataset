@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Echtzeitsysteme/hulk-ase-2016/src/org.gravity.typegraph.basic/model/Basic.ecore

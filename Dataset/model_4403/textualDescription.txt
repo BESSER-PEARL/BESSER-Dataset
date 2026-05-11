@@ -1,0 +1,31 @@
+The model has 10 class(es).
+The class 'featureModel::Feature' has the following attributes: 'valueType' of type str; 'name' of type str.
+The class 'featureModel::FeatureGroup' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int; 'type' of type str.
+The class 'featureModel::Project' has the following attributes: 'nameConfigFile' of type str; 'validatedTEF' of type bool; 'validatedOCL' of type bool; 'nameConstraintsFile' of type str; 'numberOfProducts' of type int.
+The class 'featureModel::RelationFG' has no attributes.
+The class 'Relation' has no attributes.
+The class 'Node' has no attributes.
+The class 'featureModel::Relation' has no attributes.
+The class 'featureModel::TypedValue' has the following attributes: 'integerValue' of type str; 'floatValue' of type str; 'stringValue' of type str.
+The class 'featureModel::RelationFeature' has the following attributes: 'lowerBound' of type int; 'type' of type str; 'upperBound' of type int.
+The class 'featureModel::Node' has no attributes.
+The enumeration 'ValueType' has the following literals: 'FLOAT', 'INTEGER', 'NONE', 'STRING', 'FEATURE'.
+The enumeration 'FeatureType' has the following literals: 'OPTIONAL', 'MANDATORY', 'SIMPLE'.
+The enumeration 'FeatureGroupType' has the following literals: 'SIMPLEGROUP', 'ORGROUP', 'XORGROUP'.
+'featureModel::RelationFG' is a specialization of 'Relation'.
+'featureModel::RelationFeature' is a specialization of 'Relation'.
+'featureModel::FeatureGroup' is a specialization of 'Node'.
+'featureModel::Feature' is a specialization of 'Node'.
+'featureModel::RelationFeature' (role 'featureModel_RelationFeature', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature27', cardinality 0..*).
+'featureModel::Node' (role 'featureModel_Node25', cardinality 0..*) is associated with 'featureModel::RelationFG' (role 'featureModel_RelationFG24', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature3', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature5', cardinality 0..*).
+'featureModel::Node' (role 'featureModel_Node', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature2', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature6', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature8', cardinality 0..*).
+'featureModel::TypedValue' (role 'featureModel_TypedValue10', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature11', cardinality 0..*).
+'featureModel::Node' (role 'featureModel_Node22', cardinality 0..*) is associated with 'featureModel::RelationFG' (role 'featureModel_RelationFG', cardinality 0..*).
+'featureModel::FeatureGroup' (role 'featureModel_FeatureGroup', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature17', cardinality 0..*).
+'featureModel::Feature' (role 'featureModel_Feature30', cardinality 0..*) is associated with 'featureModel::RelationFeature' (role 'featureModel_RelationFeature29', cardinality 0..*).
+'featureModel::Project' (role 'featureModel_Project15', cardinality 0..*) is associated with 'featureModel::Relation' (role 'featureModel_Relation', cardinality 0..*).
+'featureModel::Node' (role 'featureModel_Node13', cardinality 0..*) is associated with 'featureModel::Project' (role 'featureModel_Project', cardinality 0..*).
+'featureModel::Node' (role 'featureModel_Node18', cardinality 0..*) is associated with 'featureModel::Node' (role 'featureModel_Node20', cardinality 0..*).
+'featureModel::TypedValue' (role 'featureModel_TypedValue', cardinality 0..*) is associated with 'featureModel::Feature' (role 'featureModel_Feature', cardinality 0..*).

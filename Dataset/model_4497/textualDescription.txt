@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'arduinoML::Action' has the following attributes: 'value' of type str.
+The class 'arduinoML::NamedElement' has the following attributes: 'name' of type str.
+The class 'Brick' has no attributes.
+The class 'arduinoML::State' has no attributes.
+The class 'arduinoML::App' has no attributes.
+The class 'arduinoML::Actuator' has no attributes.
+The class 'arduinoML::Brick' has the following attributes: 'pin' of type int.
+The class 'arduinoML::Sensor' has no attributes.
+The class 'arduinoML::Transition' has the following attributes: 'value' of type str.
+The class 'NamedElement' has no attributes.
+The enumeration 'Signal' has the following literals: 'HIGH', 'LOW'.
+'arduinoML::Sensor' is a specialization of 'Brick'.
+'arduinoML::Actuator' is a specialization of 'Brick'.
+'arduinoML::State' is a specialization of 'NamedElement'.
+'arduinoML::Brick' is a specialization of 'NamedElement'.
+'arduinoML::App' is a specialization of 'NamedElement'.
+'arduinoML::Brick' (role 'arduinoML_Brick', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State12', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition', cardinality 0..*).
+'arduinoML::Action' (role 'arduinoML_Action10', cardinality 0..*) is associated with 'arduinoML::Actuator' (role 'arduinoML_Actuator', cardinality 0..*).
+'arduinoML::Transition' (role 'transition', cardinality 0..*) is associated with 'arduinoML::State' (role 'State', cardinality 0..*).
+'arduinoML::Transition' (role 'arduinoML_Transition14', cardinality 0..*) is associated with 'arduinoML::Sensor' (role 'arduinoML_Sensor', cardinality 0..*).
+'arduinoML::State' (role 'state', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'Transition', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App4', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State5', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State7', cardinality 0..*) is associated with 'arduinoML::Action' (role 'arduinoML_Action', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App2', cardinality 0..*).

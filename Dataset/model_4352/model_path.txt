@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDEGroup/EMFMigrate/emftext-based/emig2epsilon-test/useCase/ant/EcoreDiff.ecore

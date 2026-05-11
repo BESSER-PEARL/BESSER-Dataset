@@ -1,0 +1,72 @@
+The model has 27 class(es).
+The class 'railDsl::Vertex' has the following attributes: 'kind' of type str.
+The class 'NamedElement' has no attributes.
+The class 'railDsl::TrainRouteSegment' has no attributes.
+The class 'railDsl::NamedElement' has the following attributes: 'name' of type str.
+The class 'railDsl::LevelCrossing' has the following attributes: 'length' of type float; 'closed' of type bool.
+The class 'railDsl::Point' has the following attributes: 'selectedInput' of type int; 'selectedOutput' of type int; 'locked' of type bool; 'kind' of type str.
+The class 'TrainRouteObject' has no attributes.
+The class 'RouteObject' has no attributes.
+The class 'railDsl::TrainSegment' has the following attributes: 'length' of type float.
+The class 'TrackObject' has no attributes.
+The class 'railDsl::TrackObject' has the following attributes: 'length' of type float.
+The class 'SegmentObject' has no attributes.
+The class 'railDsl::Station' has no attributes.
+The class 'railDsl::TrainRoutePoint' has the following attributes: 'selectedInput' of type int; 'selectedOutput' of type int.
+The class 'railDsl::Segment' has no attributes.
+The class 'railDsl::Signal' has the following attributes: 'shunting' of type bool; 'main' of type bool.
+The class 'railDsl::RouteObject' has the following attributes: 'speedLimit' of type str; 'error' of type bool.
+The class 'railDsl::Derailer' has the following attributes: 'active' of type bool.
+The class 'railDsl::SegmentPosition' has the following attributes: 'side' of type str; 'atStart' of type bool; 'position' of type float; 'atEnd' of type bool; 'orientation' of type str.
+The class 'railDsl::Platform' has the following attributes: 'length' of type float.
+The class 'railDsl::Track' has no attributes.
+The class 'railDsl::TrainRouteObject' has the following attributes: 'speedLimit' of type str.
+The class 'railDsl::Train' has the following attributes: 'acceleration' of type float; 'length' of type float; 'speed' of type float.
+The class 'railDsl::Declaration' has no attributes.
+The class 'railDsl::SegmentObject' has no attributes.
+The class 'railDsl::TrainRoute' has the following attributes: 'kind' of type str; 'locked' of type bool.
+The class 'Declaration' has no attributes.
+The enumeration 'TrainRouteKind' has the following literals: 'Shunting', 'Main'.
+The enumeration 'VertexKind' has the following literals: 'StationBorder', 'InnerVertex', 'TrackEnd'.
+The enumeration 'SpeedLimit' has the following literals: 'Stop', 'Speed80', 'Max', 'Speed120', 'Speed40'.
+The enumeration 'Side' has the following literals: 'Left', 'Right', 'Both'.
+The enumeration 'PointKind' has the following literals: 'FixedCrossing', 'DoublePoint', 'DoubleSlipPoint', 'SimplePoint', 'SingleSlipPoint'.
+The enumeration 'Orientation' has the following literals: 'Backwards', 'Forwards'.
+'railDsl::SegmentObject' is a specialization of 'NamedElement'.
+'railDsl::Vertex' is a specialization of 'Declaration'.
+'railDsl::Track' is a specialization of 'Declaration'.
+'railDsl::TrainRouteSegment' is a specialization of 'TrainRouteObject'.
+'railDsl::Segment' is a specialization of 'TrackObject'.
+'railDsl::TrackObject' is a specialization of 'RouteObject'.
+'railDsl::SegmentObject' is a specialization of 'RouteObject'.
+'railDsl::Train' is a specialization of 'Declaration'.
+'railDsl::Platform' is a specialization of 'SegmentObject'.
+'railDsl::Derailer' is a specialization of 'SegmentObject'.
+'railDsl::LevelCrossing' is a specialization of 'SegmentObject'.
+'railDsl::Point' is a specialization of 'TrackObject'.
+'railDsl::Signal' is a specialization of 'SegmentObject'.
+'railDsl::TrainRoute' is a specialization of 'Declaration'.
+'railDsl::Station' is a specialization of 'NamedElement'.
+'railDsl::Declaration' is a specialization of 'NamedElement'.
+'railDsl::TrackObject' is a specialization of 'Declaration'.
+'railDsl::TrainRoutePoint' is a specialization of 'TrainRouteObject'.
+'railDsl::TrainRoute' (role 'railDsl_TrainRoute29', cardinality 0..*) is associated with 'railDsl::Signal' (role 'railDsl_Signal30', cardinality 0..*).
+'railDsl::TrainRoute' (role 'railDsl_TrainRoute32', cardinality 0..*) is associated with 'railDsl::Signal' (role 'railDsl_Signal33', cardinality 0..*).
+'railDsl::Track' (role 'railDsl_Track', cardinality 0..*) is associated with 'railDsl::TrackObject' (role 'railDsl_TrackObject', cardinality 0..*).
+'railDsl::TrainSegment' (role 'railDsl_TrainSegment', cardinality 0..*) is associated with 'railDsl::Train' (role 'railDsl_Train', cardinality 0..*).
+'railDsl::Segment' (role 'railDsl_Segment43', cardinality 0..*) is associated with 'railDsl::TrainRouteSegment' (role 'railDsl_TrainRouteSegment', cardinality 0..*).
+'railDsl::TrainSegment' (role 'railDsl_TrainSegment25', cardinality 0..*) is associated with 'railDsl::SegmentPosition' (role 'railDsl_SegmentPosition26', cardinality 0..*).
+'railDsl::Signal' (role 'railDsl_Signal9', cardinality 0..*) is associated with 'railDsl::Signal' (role 'railDsl_Signal', cardinality 0..*).
+'railDsl::SegmentPosition' (role 'railDsl_SegmentPosition', cardinality 0..*) is associated with 'railDsl::SegmentObject' (role 'railDsl_SegmentObject8', cardinality 0..*).
+'railDsl::TrainRoute' (role 'railDsl_TrainRoute37', cardinality 0..*) is associated with 'railDsl::TrainRoute' (role 'railDsl_TrainRoute39', cardinality 0..*).
+'railDsl::Declaration' (role 'railDsl_Declaration', cardinality 0..*) is associated with 'railDsl::Station' (role 'railDsl_Station', cardinality 0..*).
+'railDsl::TrainRouteObject' (role 'railDsl_TrainRouteObject', cardinality 0..*) is associated with 'railDsl::TrainRoute' (role 'railDsl_TrainRoute', cardinality 0..*).
+'railDsl::Point' (role 'railDsl_Point41', cardinality 0..*) is associated with 'railDsl::TrainRoutePoint' (role 'railDsl_TrainRoutePoint', cardinality 0..*).
+'railDsl::Vertex' (role 'railDsl_Vertex4', cardinality 0..*) is associated with 'railDsl::Segment' (role 'railDsl_Segment3', cardinality 0..*).
+'railDsl::TrainRoute' (role 'railDsl_TrainRoute35', cardinality 0..*) is associated with 'railDsl::TrainRouteObject' (role 'railDsl_TrainRouteObject36', cardinality 0..*).
+'railDsl::Vertex' (role 'railDsl_Vertex18', cardinality 0..*) is associated with 'railDsl::Point' (role 'railDsl_Point17', cardinality 0..*).
+'railDsl::Segment' (role 'railDsl_Segment6', cardinality 0..*) is associated with 'railDsl::SegmentObject' (role 'railDsl_SegmentObject', cardinality 0..*).
+'railDsl::Vertex' (role 'railDsl_Vertex15', cardinality 0..*) is associated with 'railDsl::Point' (role 'railDsl_Point', cardinality 0..*).
+'railDsl::SegmentPosition' (role 'railDsl_SegmentPosition12', cardinality 0..*) is associated with 'railDsl::Segment' (role 'railDsl_Segment13', cardinality 0..*).
+'railDsl::Train' (role 'railDsl_Train22', cardinality 0..*) is associated with 'railDsl::SegmentPosition' (role 'railDsl_SegmentPosition23', cardinality 0..*).
+'railDsl::Vertex' (role 'railDsl_Vertex', cardinality 0..*) is associated with 'railDsl::Segment' (role 'railDsl_Segment', cardinality 0..*).

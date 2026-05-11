@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'ABC::C' has no attributes.
+The class 'ABC::A' has no attributes.
+The class 'B' has no attributes.
+The class 'A' has no attributes.
+The class 'ABC::B' has no attributes.
+'ABC::C' is a specialization of 'B'.
+'ABC::B' is a specialization of 'A'.

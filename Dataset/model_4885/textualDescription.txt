@@ -1,0 +1,311 @@
+The model has 124 class(es).
+The class 'build::Builder' has no attributes.
+The class 'build::IFunction' has no attributes.
+The class 'build::DelegatingUnitProvider' has no attributes.
+The class 'build::IEffectiveFacade' has no attributes.
+The class 'BuildConcernContext' has no attributes.
+The class 'IProvidedCapabilityContainer' has no attributes.
+The class 'build::BeeHive' has the following attributes: 'resolutions' of type str.
+The class 'BuilderInputDecorator' has no attributes.
+The class 'build::IBuilder' has the following attributes: 'unitType' of type str.
+The class 'build::OutputPredicate' has no attributes.
+The class 'build::BuildUnitRepository' has no attributes.
+The class 'build::BuilderWrapper' has the following attributes: 'sourceAdvised' of type bool; 'providesAdvised' of type bool; 'outputAdvised' of type bool; 'unitTypeAdvised' of type bool; 'defaultPropertiesAdvised' of type bool; 'inputAdvised' of type bool.
+The class 'build::BuildConcernContext' has the following attributes: 'defaultPropertiesRemovals' of type str.
+The class 'B3Function' has no attributes.
+The class 'build::VersionedCapability' has the following attributes: 'version' of type str.
+The class 'build::ProvidesPredicate' has no attributes.
+The class 'build::BuildResultContext' has no attributes.
+The class 'CompoundUnitProvider' has no attributes.
+The class 'build::ImplementsPredicate' has no attributes.
+The class 'IBuilder' has no attributes.
+The class 'build::BuilderInputNameDecorator' has no attributes.
+The class 'BuildCallMultiple' has no attributes.
+The class 'build::PathVector' has the following attributes: 'basePath' of type str; 'paths' of type str.
+The class 'build::BeeModel' has no attributes.
+The class 'build::FragmentHost' has no attributes.
+The class 'IRequiredCapabilityContainer' has no attributes.
+The class 'BInnerContext' has no attributes.
+The class 'INamedValue' has no attributes.
+The class 'BJavaFunction' has no attributes.
+The class 'BuildUnitRepository' has no attributes.
+The class 'build::EffectiveBuilderCallFacade' has no attributes.
+The class 'build::UnitRepositoryDescription' has the following attributes: 'evaluatedOptions' of type str.
+The class 'build::IType' has no attributes.
+The class 'build::PathGroup' has no attributes.
+The class 'build::BuildCallOnDeclaredRequirement' has no attributes.
+The class 'build::UnitConcernContext' has the following attributes: 'outputLocation' of type str; 'sourceLocation' of type str.
+The class 'build::FirstFoundUnitProvider' has no attributes.
+The class 'VersionedCapability' has no attributes.
+The class 'build::ResolutionInfo' has the following attributes: 'status' of type str.
+The class 'build::BuilderQuery' has no attributes.
+The class 'build::BuilderInputGroup' has no attributes.
+The class 'RequiredCapability' has no attributes.
+The class 'build::RequiresPredicate' has the following attributes: 'meta' of type bool.
+The class 'build::BPropertySet' has no attributes.
+The class 'build::Capability' has the following attributes: 'nameSpace' of type str.
+The class 'build::EffectiveFacade' has no attributes.
+The class 'IVarName' has no attributes.
+The class 'CapabilityPredicate' has no attributes.
+The class 'build::BWithExpression' has no attributes.
+The class 'build::SwitchUnitProvider' has no attributes.
+The class 'build::PathGroupPredicate' has no attributes.
+The class 'build::BSwitchExpression' has no attributes.
+The class 'build::BuilderInput' has no attributes.
+The class 'build::BuilderJava' has no attributes.
+The class 'build::InputPredicate' has no attributes.
+The class 'ResolutionInfo' has no attributes.
+The class 'EffectiveFacade' has no attributes.
+The class 'build::ExecutionStackRepository' has no attributes.
+The class 'build::RequiredCapability' has the following attributes: 'versionRange' of type str; 'greedy' of type bool; 'min' of type int; 'max' of type int.
+The class 'build::UnitProvider' has the following attributes: 'documentation' of type str.
+The class 'build::EffectiveCapabilityFacade' has no attributes.
+The class 'build::Branch' has the following attributes: 'replace' of type str; 'mergeStrategy' of type str; 'documentation' of type str; 'checkout' of type str; 'acceptDirty' of type str; 'name' of type str; 'update' of type str; 'branchPointType' of type str.
+The class 'build::BuildCallSingle' has no attributes.
+The class 'build::EffectiveUnitFacade' has no attributes.
+The class 'build::RepoOption' has the following attributes: 'name' of type str.
+The class 'build::BuilderInputContextDecorator' has no attributes.
+The class 'build::NameSpacePredicate' has the following attributes: 'nameSpace' of type str.
+The class 'build::BuildCallOnReferencedRequirement' has no attributes.
+The class 'BuilderInput' has no attributes.
+The class 'build::UnitResolutionInfo' has no attributes.
+The class 'build::BuilderInputDecorator' has no attributes.
+The class 'build::BuilderNamePredicate' has no attributes.
+The class 'build::BuilderConcernContext' has the following attributes: 'matchParameters' of type bool; 'removePreCondition' of type bool; 'removePostInputCondition' of type bool; 'removePostCondition' of type bool; 'varArgs' of type bool; 'sourceAnnotationsRemovals' of type str; 'outputAnnotationsRemovals' of type str.
+The class 'build::CompoundBuildUnitRepository' has no attributes.
+The class 'BuilderCall' has no attributes.
+The class 'UnitProvider' has no attributes.
+The class 'build::BuilderCall' has the following attributes: 'builderName' of type str.
+The class 'build::BNamePredicate' has no attributes.
+The class 'IBuildUnitContainer' has no attributes.
+The class 'build::BuildSet' has the following attributes: 'pathIterator' of type str; 'valueMap' of type str.
+The class 'build::BeeModelRepository' has no attributes.
+The class 'build::EffectiveRequirementFacade' has no attributes.
+The class 'BuilderCallFacade' has no attributes.
+The class 'build::BuildCallMultiple' has no attributes.
+The class 'build::Synchronization' has no attributes.
+The class 'build::BuilderCallFacade' has the following attributes: 'aliases' of type str.
+The class 'build::IRequiredCapabilityContainer' has no attributes.
+The class 'build::Repository' has the following attributes: 'documentation' of type str; 'name' of type str; 'handlerType' of type str.
+The class 'PathGroupPredicate' has no attributes.
+The class 'build::AliasedRequiredCapability' has the following attributes: 'alias' of type str.
+The class 'build::BExpression' has no attributes.
+The class 'IFunction' has no attributes.
+The class 'build::BParameterList' has no attributes.
+The class 'build::CapabilityPredicate' has the following attributes: 'versionRange' of type str.
+The class 'build::UnitNamePredicate' has no attributes.
+The class 'BuildCallSingle' has no attributes.
+The class 'BFunctionContainer' has no attributes.
+The class 'build::IBuildUnitContainer' has no attributes.
+The class 'build::IProvidedCapabilityContainer' has no attributes.
+The class 'BExpression' has no attributes.
+The class 'build::SourcePredicate' has no attributes.
+The class 'Capability' has no attributes.
+The class 'build::BuildUnit' has the following attributes: 'sourceLocation' of type str; 'outputLocation' of type str; 'documentation' of type str; 'platformFilter' of type str; 'executionMode' of type str.
+The class 'build::UnitParameterDeclaration' has no attributes.
+The class 'build::ContainerConfiguration' has the following attributes: 'name' of type str; 'documentation' of type str.
+The class 'CompoundBuildUnitRepository' has no attributes.
+The class 'build::CompoundUnitProvider' has no attributes.
+The class 'BConcernContext' has no attributes.
+The class 'BParameterDeclaration' has no attributes.
+The class 'build::BConcern' has no attributes.
+The class 'build::BuildCallOnSelectedRequirements' has no attributes.
+The class 'build::CompoundFirstFoundRepository' has no attributes.
+The class 'ITypedValueContainer' has no attributes.
+The class 'BFunctionWrapper' has no attributes.
+The class 'IEffectiveFacade' has no attributes.
+The class 'build::BuilderInputCondition' has no attributes.
+The class 'build::IBuildUnitRepository' has no attributes.
+The class 'IBuildUnitRepository' has no attributes.
+The class 'build::BExecutionContext' has no attributes.
+The class 'build::BParameterPredicate' has no attributes.
+The class 'build::RepositoryUnitProvider' has no attributes.
+The class 'build::BestFoundUnitProvider' has no attributes.
+The class 'build::ConditionalPathVector' has no attributes.
+The class 'BChainedExpression' has no attributes.
+The enumeration 'TriState' has the following literals: 'False_', 'Default', 'True_'.
+The enumeration 'MergeConflictStrategy' has the following literals: 'Fail', 'UseWorkspace', 'Default', 'UseSCM'.
+The enumeration 'BranchPointType' has the following literals: 'Revision', 'Timestamp', 'Tag', 'Latest'.
+'build::RepositoryUnitProvider' is a specialization of 'UnitProvider'.
+'build::BuildConcernContext' is a specialization of 'IProvidedCapabilityContainer'.
+'build::IBuilder' is a specialization of 'IFunction'.
+'build::SourcePredicate' is a specialization of 'PathGroupPredicate'.
+'build::CapabilityPredicate' is a specialization of 'BExpression'.
+'build::AliasedRequiredCapability' is a specialization of 'RequiredCapability'.
+'build::CompoundFirstFoundRepository' is a specialization of 'CompoundBuildUnitRepository'.
+'build::ExecutionStackRepository' is a specialization of 'BuildUnitRepository'.
+'build::BuildCallOnSelectedRequirements' is a specialization of 'BuildCallMultiple'.
+'build::BuilderConcernContext' is a specialization of 'BuildConcernContext'.
+'build::UnitParameterDeclaration' is a specialization of 'BParameterDeclaration'.
+'build::BuildUnitRepository' is a specialization of 'IBuildUnitRepository'.
+'build::UnitConcernContext' is a specialization of 'BuildConcernContext'.
+'build::OutputPredicate' is a specialization of 'PathGroupPredicate'.
+'build::UnitProvider' is a specialization of 'BExpression'.
+'build::UnitConcernContext' is a specialization of 'IRequiredCapabilityContainer'.
+'build::BuildCallOnDeclaredRequirement' is a specialization of 'BuildCallSingle'.
+'build::IBuilder' is a specialization of 'IProvidedCapabilityContainer'.
+'build::BuildUnit' is a specialization of 'VersionedCapability'.
+'build::EffectiveUnitFacade' is a specialization of 'EffectiveFacade'.
+'build::BuilderInputContextDecorator' is a specialization of 'BuilderInputDecorator'.
+'build::InputPredicate' is a specialization of 'BExpression'.
+'build::EffectiveCapabilityFacade' is a specialization of 'EffectiveFacade'.
+'build::BuildCallSingle' is a specialization of 'BuilderCall'.
+'build::PathGroupPredicate' is a specialization of 'BExpression'.
+'build::EffectiveBuilderCallFacade' is a specialization of 'BuilderCallFacade'.
+'build::FirstFoundUnitProvider' is a specialization of 'CompoundUnitProvider'.
+'build::RequiresPredicate' is a specialization of 'BExpression'.
+'build::BeeModel' is a specialization of 'BChainedExpression'.
+'build::SwitchUnitProvider' is a specialization of 'UnitProvider'.
+'build::BeeModel' is a specialization of 'IBuildUnitContainer'.
+'build::VersionedCapability' is a specialization of 'Capability'.
+'build::BuildUnit' is a specialization of 'IRequiredCapabilityContainer'.
+'build::EffectiveBuilderCallFacade' is a specialization of 'IEffectiveFacade'.
+'build::CompoundBuildUnitRepository' is a specialization of 'BuildUnitRepository'.
+'build::DelegatingUnitProvider' is a specialization of 'UnitProvider'.
+'build::BuilderInputDecorator' is a specialization of 'BuilderInput'.
+'build::UnitResolutionInfo' is a specialization of 'ResolutionInfo'.
+'build::BuilderJava' is a specialization of 'BJavaFunction'.
+'build::ProvidesPredicate' is a specialization of 'BExpression'.
+'build::RequiredCapability' is a specialization of 'Capability'.
+'build::BuilderInputNameDecorator' is a specialization of 'INamedValue'.
+'build::BuildUnit' is a specialization of 'IProvidedCapabilityContainer'.
+'build::ImplementsPredicate' is a specialization of 'BExpression'.
+'build::BuildSet' is a specialization of 'ITypedValueContainer'.
+'build::BuildResultContext' is a specialization of 'BInnerContext'.
+'build::BuilderCall' is a specialization of 'BuilderInput'.
+'build::UnitNamePredicate' is a specialization of 'CapabilityPredicate'.
+'build::BestFoundUnitProvider' is a specialization of 'CompoundUnitProvider'.
+'build::Repository' is a specialization of 'BExpression'.
+'build::UnitRepositoryDescription' is a specialization of 'BuildUnitRepository'.
+'build::BuildCallOnReferencedRequirement' is a specialization of 'BuildCallSingle'.
+'build::EffectiveRequirementFacade' is a specialization of 'EffectiveFacade'.
+'build::BuilderInputNameDecorator' is a specialization of 'BuilderInputDecorator'.
+'build::BuilderNamePredicate' is a specialization of 'BExpression'.
+'build::Builder' is a specialization of 'B3Function'.
+'build::BuilderWrapper' is a specialization of 'BFunctionWrapper'.
+'build::EffectiveFacade' is a specialization of 'IEffectiveFacade'.
+'build::BeeModelRepository' is a specialization of 'BuildUnitRepository'.
+'build::BuildCallMultiple' is a specialization of 'BuilderCall'.
+'build::BuilderWrapper' is a specialization of 'IBuilder'.
+'build::Capability' is a specialization of 'INamedValue'.
+'build::BuildConcernContext' is a specialization of 'BConcernContext'.
+'build::BuildUnit' is a specialization of 'BFunctionContainer'.
+'build::BuildUnit' is a specialization of 'IVarName'.
+'build::CompoundUnitProvider' is a specialization of 'UnitProvider'.
+'build::Builder' is a specialization of 'IBuilder'.
+'build::BuilderInputCondition' is a specialization of 'BuilderInputDecorator'.
+'build::BuilderInputGroup' is a specialization of 'BuilderInputDecorator'.
+'build::BuilderJava' is a specialization of 'IBuilder'.
+'build::Branch' (role 'build_Branch239', cardinality 0..*) is associated with 'build::BNamePredicate' (role 'build_BNamePredicate240', cardinality 0..*).
+'build::RepositoryUnitProvider' (role 'build_RepositoryUnitProvider', cardinality 0..*) is associated with 'build::Repository' (role 'build_Repository62', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet139', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext138', cardinality 0..*).
+'build::BeeModel' (role 'build_BeeModel218', cardinality 0..*) is associated with 'build::BeeModelRepository' (role 'build_BeeModelRepository', cardinality 0..*).
+'build::EffectiveUnitFacade' (role 'build_EffectiveUnitFacade193', cardinality 0..*) is associated with 'build::EffectiveCapabilityFacade' (role 'build_EffectiveCapabilityFacade', cardinality 0..*).
+'build::PathGroup' (role 'build_PathGroup45', cardinality 0..*) is associated with 'build::BPropertySet' (role 'build_BPropertySet46', cardinality 0..*).
+'build::Branch' (role 'build_Branch236', cardinality 0..*) is associated with 'build::BNamePredicate' (role 'build_BNamePredicate237', cardinality 0..*).
+'build::ContainerConfiguration' (role 'build_ContainerConfiguration', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit14', cardinality 0..*).
+'build::BuildCallOnReferencedRequirement' (role 'build_BuildCallOnReferencedRequirement', cardinality 0..*) is associated with 'build::RequiredCapability' (role 'build_RequiredCapability261', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext132', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression133', cardinality 0..*).
+'build::BuildCallOnSelectedRequirements' (role 'build_BuildCallOnSelectedRequirements', cardinality 0..*) is associated with 'build::CapabilityPredicate' (role 'build_CapabilityPredicate252', cardinality 0..*).
+'build::BParameterPredicate' (role 'build_BParameterPredicate', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext124', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit21', cardinality 0..*) is associated with 'build::IBuildUnitContainer' (role 'build_IBuildUnitContainer', cardinality 0..*).
+'build::Repository' (role 'build_Repository233', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression234', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet75', cardinality 0..*) is associated with 'build::BuildConcernContext' (role 'build_BuildConcernContext', cardinality 0..*).
+'build::BNamePredicate' (role 'build_BNamePredicate81', cardinality 0..*) is associated with 'build::CapabilityPredicate' (role 'build_CapabilityPredicate80', cardinality 0..*).
+'build::Capability' (role 'build_Capability207', cardinality 0..*) is associated with 'build::EffectiveCapabilityFacade' (role 'build_EffectiveCapabilityFacade206', cardinality 0..*).
+'build::Branch' (role 'build_Branch242', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression243', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit10', cardinality 0..*) is associated with 'build::Synchronization' (role 'build_Synchronization', cardinality 0..*).
+'build::BuilderQuery' (role 'build_BuilderQuery', cardinality 0..*) is associated with 'build::Synchronization' (role 'build_Synchronization60', cardinality 0..*).
+'build::FirstFoundUnitProvider' (role 'build_FirstFoundUnitProvider181', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel180', cardinality 0..*).
+'build::RepositoryUnitProvider' (role 'build_RepositoryUnitProvider64', cardinality 0..*) is associated with 'build::RepoOption' (role 'build_RepoOption', cardinality 0..*).
+'build::IBuildUnitContainer' (role 'build_IBuildUnitContainer265', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit266', cardinality 0..*).
+'build::SourcePredicate' (role 'build_SourcePredicate', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext141', cardinality 0..*).
+'build::PathGroup' (role 'build_PathGroup43', cardinality 0..*) is associated with 'build::IBuilder' (role 'build_IBuilder42', cardinality 0..*).
+'build::RequiredCapability' (role 'build_RequiredCapability269', cardinality 0..*) is associated with 'build::FragmentHost' (role 'build_FragmentHost268', cardinality 0..*).
+'build::ConditionalPathVector' (role 'build_ConditionalPathVector', cardinality 0..*) is associated with 'build::PathGroup' (role 'build_PathGroup48', cardinality 0..*).
+'build::OutputPredicate' (role 'build_OutputPredicate', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext119', cardinality 0..*).
+'build::BeeHive' (role 'build_BeeHive189', cardinality 0..*) is associated with 'build::BeeHive' (role 'build_BeeHive187', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder40', cardinality 0..*) is associated with 'build::UnitParameterDeclaration' (role 'build_UnitParameterDeclaration', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit2', cardinality 0..*) is associated with 'build::RequiredCapability' (role 'build_RequiredCapability', cardinality 0..*).
+'build::ProvidesPredicate' (role 'build_ProvidesPredicate136', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext135', cardinality 0..*).
+'build::ContainerConfiguration' (role 'build_ContainerConfiguration72', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression73', cardinality 0..*).
+'build::BeeModel' (role 'build_BeeModel174', cardinality 0..*) is associated with 'build::BPropertySet' (role 'build_BPropertySet175', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet184', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel183', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit8', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression122', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext121', cardinality 0..*).
+'build::PathGroupPredicate' (role 'build_PathGroupPredicate151', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression152', cardinality 0..*).
+'build::RequiredCapability' (role 'build_RequiredCapability257', cardinality 0..*) is associated with 'build::BuildCallSingle' (role 'build_BuildCallSingle', cardinality 0..*).
+'build::BuilderQuery' (role 'build_BuilderQuery164', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression165', cardinality 0..*).
+'build::IType' (role 'build_IType83', cardinality 0..*) is associated with 'build::ImplementsPredicate' (role 'build_ImplementsPredicate', cardinality 0..*).
+'build::BeeHive' (role 'build_BeeHive', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel186', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder37', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression38', cardinality 0..*).
+'build::DelegatingUnitProvider' (role 'build_DelegatingUnitProvider', cardinality 0..*) is associated with 'build::UnitProvider' (role 'build_UnitProvider245', cardinality 0..*).
+'build::PathVector' (role 'build_PathVector149', cardinality 0..*) is associated with 'build::PathGroupPredicate' (role 'build_PathGroupPredicate', cardinality 0..*).
+'build::EffectiveRequirementFacade' (role 'build_EffectiveRequirementFacade203', cardinality 0..*) is associated with 'build::RequiredCapability' (role 'build_RequiredCapability204', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression248', cardinality 0..*) is associated with 'build::RepoOption' (role 'build_RepoOption247', cardinality 0..*).
+'build::CapabilityPredicate' (role 'build_CapabilityPredicate157', cardinality 0..*) is associated with 'build::IRequiredCapabilityContainer' (role 'build_IRequiredCapabilityContainer156', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext143', cardinality 0..*) is associated with 'build::ConditionalPathVector' (role 'build_ConditionalPathVector144', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit23', cardinality 0..*) is associated with 'build::FragmentHost' (role 'build_FragmentHost', cardinality 0..*).
+'build::BuildSet' (role 'build_BuildSet', cardinality 0..*) is associated with 'build::PathVector' (role 'build_PathVector214', cardinality 0..*).
+'build::EffectiveRequirementFacade' (role 'build_EffectiveRequirementFacade198', cardinality 0..*) is associated with 'build::EffectiveUnitFacade' (role 'build_EffectiveUnitFacade197', cardinality 0..*).
+'build::RequiredCapability' (role 'build_RequiredCapability154', cardinality 0..*) is associated with 'build::IRequiredCapabilityContainer' (role 'build_IRequiredCapabilityContainer', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit220', cardinality 0..*) is associated with 'build::UnitResolutionInfo' (role 'build_UnitResolutionInfo', cardinality 0..*).
+'build::BeeModel' (role 'build_BeeModel177', cardinality 0..*) is associated with 'build::Repository' (role 'build_Repository178', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext110', cardinality 0..*) is associated with 'build::BuilderInput' (role 'build_BuilderInput111', cardinality 0..*).
+'build::FirstFoundUnitProvider' (role 'build_FirstFoundUnitProvider', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit19', cardinality 0..*).
+'build::PathVector' (role 'build_PathVector', cardinality 0..*) is associated with 'build::ConditionalPathVector' (role 'build_ConditionalPathVector58', cardinality 0..*).
+'build::IType' (role 'build_IType167', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel', cardinality 0..*).
+'build::IFunction' (role 'build_IFunction', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel169', cardinality 0..*).
+'build::BConcern' (role 'build_BConcern172', cardinality 0..*) is associated with 'build::BeeModel' (role 'build_BeeModel171', cardinality 0..*).
+'build::UnitConcernContext' (role 'build_UnitConcernContext101', cardinality 0..*) is associated with 'build::ProvidesPredicate' (role 'build_ProvidesPredicate102', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder27', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression28', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression53', cardinality 0..*) is associated with 'build::Capability' (role 'build_Capability', cardinality 0..*).
+'build::EffectiveUnitFacade' (role 'build_EffectiveUnitFacade', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit191', cardinality 0..*).
+'build::Branch' (role 'build_Branch', cardinality 0..*) is associated with 'build::Repository' (role 'build_Repository225', cardinality 0..*).
+'build::BuilderCallFacade' (role 'build_BuilderCallFacade211', cardinality 0..*) is associated with 'build::RequiredCapability' (role 'build_RequiredCapability212', cardinality 0..*).
+'build::Repository' (role 'build_Repository250', cardinality 0..*) is associated with 'build::UnitRepositoryDescription' (role 'build_UnitRepositoryDescription', cardinality 0..*).
+'build::CapabilityPredicate' (role 'build_CapabilityPredicate', cardinality 0..*) is associated with 'build::RequiresPredicate' (role 'build_RequiresPredicate', cardinality 0..*).
+'build::IBuildUnitRepository' (role 'build_IBuildUnitRepository', cardinality 0..*) is associated with 'build::RepositoryUnitProvider' (role 'build_RepositoryUnitProvider66', cardinality 0..*).
+'build::InputPredicate' (role 'build_InputPredicate114', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext113', cardinality 0..*).
+'build::BExecutionContext' (role 'build_BExecutionContext263', cardinality 0..*) is associated with 'build::IEffectiveFacade' (role 'build_IEffectiveFacade', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression108', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext107', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet17', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit16', cardinality 0..*).
+'build::IType' (role 'build_IType70', cardinality 0..*) is associated with 'build::ContainerConfiguration' (role 'build_ContainerConfiguration69', cardinality 0..*).
+'build::UnitConcernContext' (role 'build_UnitConcernContext104', cardinality 0..*) is associated with 'build::CapabilityPredicate' (role 'build_CapabilityPredicate105', cardinality 0..*).
+'build::IBuildUnitRepository' (role 'build_IBuildUnitRepository216', cardinality 0..*) is associated with 'build::CompoundBuildUnitRepository' (role 'build_CompoundBuildUnitRepository', cardinality 0..*).
+'build::ProvidesPredicate' (role 'build_ProvidesPredicate', cardinality 0..*) is associated with 'build::CapabilityPredicate' (role 'build_CapabilityPredicate85', cardinality 0..*).
+'build::Capability' (role 'build_Capability159', cardinality 0..*) is associated with 'build::IProvidedCapabilityContainer' (role 'build_IProvidedCapabilityContainer', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit', cardinality 0..*) is associated with 'build::IBuilder' (role 'build_IBuilder', cardinality 0..*).
+'build::BuilderInputCondition' (role 'build_BuilderInputCondition', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression255', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression56', cardinality 0..*) is associated with 'build::ConditionalPathVector' (role 'build_ConditionalPathVector55', cardinality 0..*).
+'build::EffectiveUnitFacade' (role 'build_EffectiveUnitFacade200', cardinality 0..*) is associated with 'build::EffectiveRequirementFacade' (role 'build_EffectiveRequirementFacade201', cardinality 0..*).
+'build::Repository' (role 'build_Repository', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit12', cardinality 0..*).
+'build::BuilderCall' (role 'build_BuilderCall209', cardinality 0..*) is associated with 'build::BuilderCallFacade' (role 'build_BuilderCallFacade', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext', cardinality 0..*) is associated with 'build::UnitConcernContext' (role 'build_UnitConcernContext', cardinality 0..*).
+'build::RequiredCapability' (role 'build_RequiredCapability259', cardinality 0..*) is associated with 'build::BuildCallOnDeclaredRequirement' (role 'build_BuildCallOnDeclaredRequirement', cardinality 0..*).
+'build::BuilderCall' (role 'build_BuilderCall', cardinality 0..*) is associated with 'build::BParameterList' (role 'build_BParameterList', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder34', cardinality 0..*) is associated with 'build::BPropertySet' (role 'build_BPropertySet35', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext126', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression127', cardinality 0..*).
+'build::BuilderInput' (role 'build_BuilderInput50', cardinality 0..*) is associated with 'build::BuilderInputDecorator' (role 'build_BuilderInputDecorator', cardinality 0..*).
+'build::EffectiveUnitFacade' (role 'build_EffectiveUnitFacade195', cardinality 0..*) is associated with 'build::EffectiveRequirementFacade' (role 'build_EffectiveRequirementFacade', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder30', cardinality 0..*) is associated with 'build::BuilderInput' (role 'build_BuilderInput', cardinality 0..*).
+'build::BPropertySet' (role 'build_BPropertySet147', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext146', cardinality 0..*).
+'build::Repository' (role 'build_Repository230', cardinality 0..*) is associated with 'build::IBuildUnitRepository' (role 'build_IBuildUnitRepository231', cardinality 0..*).
+'build::BNamePredicate' (role 'build_BNamePredicate92', cardinality 0..*) is associated with 'build::InputPredicate' (role 'build_InputPredicate91', cardinality 0..*).
+'build::IType' (role 'build_IType', cardinality 0..*) is associated with 'build::BuildUnit' (role 'build_BuildUnit4', cardinality 0..*).
+'build::UnitConcernContext' (role 'build_UnitConcernContext98', cardinality 0..*) is associated with 'build::RequiresPredicate' (role 'build_RequiresPredicate99', cardinality 0..*).
+'build::SwitchUnitProvider' (role 'build_SwitchUnitProvider', cardinality 0..*) is associated with 'build::BSwitchExpression' (role 'build_BSwitchExpression', cardinality 0..*).
+'build::BuilderQuery' (role 'build_BuilderQuery161', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression162', cardinality 0..*).
+'build::BuildUnit' (role 'build_BuildUnit6', cardinality 0..*) is associated with 'build::BConcern' (role 'build_BConcern', cardinality 0..*).
+'build::PathGroup' (role 'build_PathGroup', cardinality 0..*) is associated with 'build::IBuilder' (role 'build_IBuilder32', cardinality 0..*).
+'build::BuilderConcernContext' (role 'build_BuilderConcernContext116', cardinality 0..*) is associated with 'build::ConditionalPathVector' (role 'build_ConditionalPathVector117', cardinality 0..*).
+'build::IBuilder' (role 'build_IBuilder25', cardinality 0..*) is associated with 'build::BExpression' (role 'build_BExpression', cardinality 0..*).
+'build::UnitProvider' (role 'build_UnitProvider', cardinality 0..*) is associated with 'build::CompoundUnitProvider' (role 'build_CompoundUnitProvider', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression130', cardinality 0..*) is associated with 'build::BuilderConcernContext' (role 'build_BuilderConcernContext129', cardinality 0..*).
+'build::BExpression' (role 'build_BExpression96', cardinality 0..*) is associated with 'build::UnitConcernContext' (role 'build_UnitConcernContext95', cardinality 0..*).
+'build::Repository' (role 'build_Repository227', cardinality 0..*) is associated with 'build::RepoOption' (role 'build_RepoOption228', cardinality 0..*).
+'build::CapabilityPredicate' (role 'build_CapabilityPredicate78', cardinality 0..*) is associated with 'build::BNamePredicate' (role 'build_BNamePredicate', cardinality 0..*).
+'build::BExecutionContext' (role 'build_BExecutionContext', cardinality 0..*) is associated with 'build::UnitResolutionInfo' (role 'build_UnitResolutionInfo222', cardinality 0..*).
+'build::BuilderNamePredicate' (role 'build_BuilderNamePredicate', cardinality 0..*) is associated with 'build::BNamePredicate' (role 'build_BNamePredicate87', cardinality 0..*).
+'build::CapabilityPredicate' (role 'build_CapabilityPredicate89', cardinality 0..*) is associated with 'build::InputPredicate' (role 'build_InputPredicate', cardinality 0..*).
+'build::BWithExpression' (role 'build_BWithExpression', cardinality 0..*) is associated with 'build::BuilderInputContextDecorator' (role 'build_BuilderInputContextDecorator', cardinality 0..*).

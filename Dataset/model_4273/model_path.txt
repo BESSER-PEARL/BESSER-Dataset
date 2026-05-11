@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/emf.emfstore.core/bundles/org.eclipse.emf.emfstore.examplemodel/model/bowling.ecore

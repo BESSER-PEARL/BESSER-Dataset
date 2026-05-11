@@ -1,0 +1,41 @@
+The model has 19 class(es).
+The class 'HTML::S' has no attributes.
+The class 'HTML::TABLE' has the following attributes: 'cellpadding' of type str; 'cellspacing' of type str; 'border' of type int; 'bgcolor' of type str; 'width' of type str; 'align' of type str.
+The class 'HTML::IMG' has the following attributes: 'width' of type str; 'src' of type str; 'height' of type str; 'border' of type str.
+The class 'HTML::TR' has the following attributes: 'height' of type str; 'bgcolor' of type str; 'align' of type str; 'valign' of type str.
+The class 'HTML::TD' has the following attributes: 'height' of type str; 'width' of type str; 'colspan' of type str; 'valign' of type str; 'align' of type str; 'rowspan' of type str; 'bgcolor' of type str.
+The class 'HTML::B' has no attributes.
+The class 'HTMLElement' has no attributes.
+The class 'HTML::HR' has the following attributes: 'color' of type str.
+The class 'HTML::DIV' has the following attributes: 'align' of type str.
+The class 'HTML::SPAN' has no attributes.
+The class 'HTML::Style' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'HTML::A' has the following attributes: 'ref' of type str.
+The class 'HTML::P' has the following attributes: 'align' of type str.
+The class 'HTML::BR' has no attributes.
+The class 'HTML::FONT' has the following attributes: 'color' of type str; 'face' of type str; 'size' of type str; 'value' of type str.
+The class 'HTML::HTMLElement' has no attributes.
+The class 'HTML::I' has no attributes.
+The class 'HTML::HTML' has no attributes.
+The class 'HTML::U' has no attributes.
+The enumeration 'StyleKey' has the following literals: 'textAlign', 'color', 'display', 'backgroundColor', 'textDecoration', 'padding', 'lineHeight', 'width'.
+'HTML::BR' is a specialization of 'HTMLElement'.
+'HTML::DIV' is a specialization of 'HTMLElement'.
+'HTML::S' is a specialization of 'HTMLElement'.
+'HTML::P' is a specialization of 'HTMLElement'.
+'HTML::A' is a specialization of 'HTMLElement'.
+'HTML::B' is a specialization of 'HTMLElement'.
+'HTML::TABLE' is a specialization of 'HTMLElement'.
+'HTML::SPAN' is a specialization of 'HTMLElement'.
+'HTML::FONT' is a specialization of 'HTMLElement'.
+'HTML::TD' is a specialization of 'HTMLElement'.
+'HTML::U' is a specialization of 'HTMLElement'.
+'HTML::I' is a specialization of 'HTMLElement'.
+'HTML::TR' is a specialization of 'HTMLElement'.
+'HTML::HR' is a specialization of 'HTMLElement'.
+'HTML::IMG' is a specialization of 'HTMLElement'.
+'HTML::TR' (role 'HTML_TR', cardinality 0..*) is associated with 'HTML::TABLE' (role 'HTML_TABLE', cardinality 0..*).
+'HTML::HTMLElement' (role 'HTML_HTMLElement', cardinality 0..*) is associated with 'HTML::HTML' (role 'HTML_HTML', cardinality 0..*).
+'HTML::TR' (role 'HTML_TR8', cardinality 0..*) is associated with 'HTML::TD' (role 'HTML_TD', cardinality 0..*).
+'HTML::HTMLElement' (role 'HTML_HTMLElement5', cardinality 0..*) is associated with 'HTML::Style' (role 'HTML_Style', cardinality 0..*).
+'HTML::HTMLElement' (role 'HTML_HTMLElement3', cardinality 0..*) is associated with 'HTML::HTMLElement' (role 'HTML_HTMLElement1', cardinality 0..*).

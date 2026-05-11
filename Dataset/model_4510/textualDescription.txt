@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'PyDslRep::MoveCollection' has the following attributes: 'concurrent' of type bool; 'name' of type str.
+The class 'AbstractDataMove' has no attributes.
+The class 'PyDslRep::Robot' has the following attributes: 'port' of type int; 'name' of type str.
+The class 'PyDslRep::TypeSensor' has the following attributes: 'typeName' of type str.
+The class 'PyDslRep::AbstractDataMove' has no attributes.
+The class 'PyDslRep::Environment' has the following attributes: 'name' of type str.
+The class 'Entity' has no attributes.
+The class 'PyDslRep::Sensor' has the following attributes: 'name' of type str.
+The class 'PyDslRep::Wheel' has the following attributes: 'name' of type str; 'radius' of type str.
+The class 'PyDslRep::DataMove' has the following attributes: 'name' of type bool; 'velocity' of type str; 'type' of type str.
+The class 'PyDslRep::Turn' has no attributes.
+The class 'PyDslRep::Entity' has no attributes.
+The class 'DataMove' has no attributes.
+The class 'PyDslRep::AbstractMove' has no attributes.
+The class 'PyDslRep::AbstractCrossMove' has no attributes.
+The class 'PyDslRep::IP' has the following attributes: 'name' of type str; 'ip' of type str.
+The class 'PyDslRep::Model' has no attributes.
+The class 'PyDslRep::Move' has the following attributes: 'distance' of type str.
+'PyDslRep::MoveCollection' is a specialization of 'Entity'.
+'PyDslRep::Turn' is a specialization of 'DataMove'.
+'PyDslRep::TypeSensor' is a specialization of 'Entity'.
+'PyDslRep::IP' is a specialization of 'Entity'.
+'PyDslRep::Environment' is a specialization of 'Entity'.
+'PyDslRep::Move' is a specialization of 'DataMove'.
+'PyDslRep::AbstractMove' is a specialization of 'AbstractDataMove'.
+'PyDslRep::AbstractCrossMove' is a specialization of 'AbstractDataMove'.
+'PyDslRep::Sensor' is a specialization of 'Entity'.
+'PyDslRep::DataMove' is a specialization of 'Entity'.
+'PyDslRep::Robot' is a specialization of 'Entity'.
+'PyDslRep::Wheel' is a specialization of 'Entity'.
+'PyDslRep::AbstractMove' (role 'PyDslRep_AbstractMove', cardinality 0..*) is associated with 'PyDslRep::DataMove' (role 'PyDslRep_DataMove', cardinality 0..*).
+'PyDslRep::MoveCollection' (role 'PyDslRep_MoveCollection12', cardinality 0..*) is associated with 'PyDslRep::AbstractDataMove' (role 'PyDslRep_AbstractDataMove', cardinality 0..*).
+'PyDslRep::AbstractCrossMove' (role 'PyDslRep_AbstractCrossMove', cardinality 0..*) is associated with 'PyDslRep::DataMove' (role 'PyDslRep_DataMove15', cardinality 0..*).
+'PyDslRep::Environment' (role 'PyDslRep_Environment3', cardinality 0..*) is associated with 'PyDslRep::Robot' (role 'PyDslRep_Robot', cardinality 0..*).
+'PyDslRep::Wheel' (role 'PyDslRep_Wheel', cardinality 0..*) is associated with 'PyDslRep::Robot' (role 'PyDslRep_Robot7', cardinality 0..*).
+'PyDslRep::MoveCollection' (role 'PyDslRep_MoveCollection', cardinality 0..*) is associated with 'PyDslRep::Environment' (role 'PyDslRep_Environment5', cardinality 0..*).
+'PyDslRep::Robot' (role 'PyDslRep_Robot10', cardinality 0..*) is associated with 'PyDslRep::MoveCollection' (role 'PyDslRep_MoveCollection9', cardinality 0..*).
+'PyDslRep::TypeSensor' (role 'PyDslRep_TypeSensor', cardinality 0..*) is associated with 'PyDslRep::Sensor' (role 'PyDslRep_Sensor', cardinality 0..*).
+'PyDslRep::Entity' (role 'PyDslRep_Entity', cardinality 0..*) is associated with 'PyDslRep::Model' (role 'PyDslRep_Model', cardinality 0..*).
+'PyDslRep::IP' (role 'PyDslRep_IP', cardinality 0..*) is associated with 'PyDslRep::Environment' (role 'PyDslRep_Environment', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'basicfamily::Woman' has no attributes.
+The class 'basicfamily::Man' has no attributes.
+The class 'basicfamily::Relation' has the following attributes: 'description' of type str.
+The class 'basicfamily::Person' has the following attributes: 'name' of type str; 'birthDate' of type date.
+The class 'Person' has no attributes.
+The class 'basicfamily::Family' has the following attributes: 'name' of type str.
+'basicfamily::Woman' is a specialization of 'Person'.
+'basicfamily::Man' is a specialization of 'Person'.
+'basicfamily::Person' (role 'basicfamily_Person20', cardinality 0..*) is associated with 'basicfamily::Relation' (role 'basicfamily_Relation19', cardinality 0..*).
+'basicfamily::Family' (role 'basicfamily_Family2', cardinality 0..*) is associated with 'basicfamily::Relation' (role 'basicfamily_Relation', cardinality 0..*).
+'basicfamily::Family' (role 'basicfamily_Family', cardinality 0..*) is associated with 'basicfamily::Person' (role 'basicfamily_Person', cardinality 0..*).
+'basicfamily::Relation' (role 'basicfamily_Relation16', cardinality 0..*) is associated with 'basicfamily::Person' (role 'basicfamily_Person17', cardinality 0..*).
+'basicfamily::Person' (role 'basicfamily_Person9', cardinality 0..*) is associated with 'basicfamily::Woman' (role 'basicfamily_Woman', cardinality 0..*).
+'basicfamily::Person' (role 'parents', cardinality 0..*) is associated with 'basicfamily::Person' (role 'Person7', cardinality 0..*).
+'basicfamily::Relation' (role 'basicfamily_Relation14', cardinality 0..*) is associated with 'basicfamily::Person' (role 'basicfamily_Person13', cardinality 0..*).
+'basicfamily::Man' (role 'basicfamily_Man', cardinality 0..*) is associated with 'basicfamily::Person' (role 'basicfamily_Person11', cardinality 0..*).
+'basicfamily::Person' (role 'Person', cardinality 0..*) is associated with 'basicfamily::Person' (role 'children', cardinality 0..*).

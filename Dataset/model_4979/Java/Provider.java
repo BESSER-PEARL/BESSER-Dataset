@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Provider  {
+
+
+
+
+
+
+    private cloudml_core_CloudMLModel cloudml_core_cloudmlmodel;
+
+
+
+
+    private cloudml_core_ExternalComponent cloudml_core_externalcomponent;
+
+
+    public Provider(
+    ) {
+    }
+
+
+
+    public cloudml_core_CloudMLModel getCloudml_core_cloudmlmodel() {
+        return cloudml_core_cloudmlmodel;
+    }
+
+    public void setCloudml_core_cloudmlmodel(cloudml_core_CloudMLModel cloudml_core_cloudmlmodel) {
+        this.cloudml_core_cloudmlmodel = cloudml_core_cloudmlmodel;
+    }
+    public cloudml_core_ExternalComponent getCloudml_core_externalcomponent() {
+        return cloudml_core_externalcomponent;
+    }
+
+    public void setCloudml_core_externalcomponent(cloudml_core_ExternalComponent cloudml_core_externalcomponent) {
+        this.cloudml_core_externalcomponent = cloudml_core_externalcomponent;
+    }
+
+}

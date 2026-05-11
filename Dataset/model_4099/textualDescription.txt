@@ -1,0 +1,34 @@
+The model has 11 class(es).
+The class 'railway::Switch' has the following attributes: 'currentPosition' of type str.
+The class 'RailwayElement' has no attributes.
+The class 'railway::SwitchPosition' has the following attributes: 'position' of type str.
+The class 'railway::Route' has no attributes.
+The class 'TrackElement' has no attributes.
+The class 'railway::Semaphore' has the following attributes: 'signal' of type str.
+The class 'railway::Sensor' has no attributes.
+The class 'railway::Segment' has the following attributes: 'length' of type int.
+The class 'railway::RailwayElement' has the following attributes: 'id' of type int.
+The class 'railway::TrackElement' has no attributes.
+The class 'railway::RailwayContainer' has no attributes.
+The enumeration 'Position' has the following literals: 'STRAIGHT', 'FAILURE', 'RIGHT', 'LEFT'.
+The enumeration 'Signal' has the following literals: 'STOP', 'GO', 'FAILURE'.
+'railway::Segment' is a specialization of 'TrackElement'.
+'railway::SwitchPosition' is a specialization of 'RailwayElement'.
+'railway::Semaphore' is a specialization of 'RailwayElement'.
+'railway::TrackElement' is a specialization of 'RailwayElement'.
+'railway::Route' is a specialization of 'RailwayElement'.
+'railway::Switch' is a specialization of 'TrackElement'.
+'railway::Sensor' is a specialization of 'RailwayElement'.
+'railway::RailwayContainer' (role 'railway_RailwayContainer17', cardinality 0..*) is associated with 'railway::Semaphore' (role 'railway_Semaphore18', cardinality 0..*).
+'railway::Sensor' (role 'Sensor', cardinality 0..*) is associated with 'railway::TrackElement' (role 'elements', cardinality 0..*).
+'railway::Route' (role 'route', cardinality 0..*) is associated with 'railway::SwitchPosition' (role 'SwitchPosition6', cardinality 0..*).
+'railway::SwitchPosition' (role 'follows', cardinality 0..*) is associated with 'railway::Route' (role 'Route', cardinality 0..*).
+'railway::RailwayContainer' (role 'railway_RailwayContainer', cardinality 0..*) is associated with 'railway::RailwayElement' (role 'railway_RailwayElement', cardinality 0..*).
+'railway::Switch' (role 'Switch', cardinality 0..*) is associated with 'railway::SwitchPosition' (role 'positions', cardinality 0..*).
+'railway::Route' (role 'railway_Route21', cardinality 0..*) is associated with 'railway::RailwayContainer' (role 'railway_RailwayContainer20', cardinality 0..*).
+'railway::Sensor' (role 'sensor', cardinality 0..*) is associated with 'railway::TrackElement' (role 'TrackElement', cardinality 0..*).
+'railway::Semaphore' (role 'railway_Semaphore9', cardinality 0..*) is associated with 'railway::Route' (role 'railway_Route8', cardinality 0..*).
+'railway::Sensor' (role 'railway_Sensor', cardinality 0..*) is associated with 'railway::Route' (role 'railway_Route11', cardinality 0..*).
+'railway::TrackElement' (role 'railway_TrackElement1', cardinality 0..*) is associated with 'railway::TrackElement' (role 'railway_TrackElement', cardinality 0..*).
+'railway::Route' (role 'railway_Route', cardinality 0..*) is associated with 'railway::Semaphore' (role 'railway_Semaphore', cardinality 0..*).
+'railway::Switch' (role 'switch', cardinality 0..*) is associated with 'railway::SwitchPosition' (role 'SwitchPosition', cardinality 0..*).

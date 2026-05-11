@@ -1,0 +1,44 @@
+The model has 19 class(es).
+The class 'mtm::di::LabeledEdge' has no attributes.
+The class 'Shape' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'mtm::di::Edge' has no attributes.
+The class 'mtm::di::DiagramElement' has the following attributes: 'anyAttribute' of type str; 'id' of type str.
+The class 'mtm::di::Plane' has the following attributes: 'diagramElementGroup' of type str.
+The class 'mtm::di::Shape' has no attributes.
+The class 'mtm::di::Bounds' has no attributes.
+The class 'mtm::di::LabeledShape' has no attributes.
+The class 'mtm::di::EStringToStringMapEntry' has no attributes.
+The class 'mtm::di::ExtensionType' has the following attributes: 'any' of type str.
+The class 'Edge' has no attributes.
+The class 'mtm::di::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'mtm::di::Diagram' has the following attributes: 'id' of type str; 'resolution' of type str; 'documentation' of type str; 'name' of type str.
+The class 'mtm::di::Label' has no attributes.
+The class 'mtm::di::Point' has no attributes.
+The class 'mtm::di::Style' has the following attributes: 'id' of type str.
+The class 'mtm::di::Node' has no attributes.
+The class 'Node' has no attributes.
+'mtm::di::LabeledEdge' is a specialization of 'Edge'.
+'mtm::di::Edge' is a specialization of 'DiagramElement'.
+'mtm::di::Node' is a specialization of 'DiagramElement'.
+'mtm::di::Plane' is a specialization of 'Node'.
+'mtm::di::LabeledShape' is a specialization of 'Shape'.
+'mtm::di::Shape' is a specialization of 'Node'.
+'mtm::di::Label' is a specialization of 'Node'.
+'mtm::di::Edge' (role 'mtm_di_Edge', cardinality 0..*) is associated with 'mtm::di::Point' (role 'mtm_di_Point', cardinality 0..*).
+'mtm::di::EStringToStringMapEntry' (role 'mtm_di_EStringToStringMapEntry10', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot9', cardinality 0..*).
+'mtm::di::DiagramElement' (role 'mtm_di_DiagramElement', cardinality 0..*) is associated with 'mtm::di::ExtensionType' (role 'mtm_di_ExtensionType', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot17', cardinality 0..*) is associated with 'mtm::di::Edge' (role 'mtm_di_Edge18', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot', cardinality 0..*) is associated with 'mtm::di::EStringToStringMapEntry' (role 'mtm_di_EStringToStringMapEntry', cardinality 0..*).
+'mtm::di::LabeledShape' (role 'mtm_di_LabeledShape', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot25', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot32', cardinality 0..*) is associated with 'mtm::di::Shape' (role 'mtm_di_Shape33', cardinality 0..*).
+'mtm::di::LabeledEdge' (role 'mtm_di_LabeledEdge', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot23', cardinality 0..*).
+'mtm::di::Label' (role 'mtm_di_Label21', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot20', cardinality 0..*).
+'mtm::di::Style' (role 'mtm_di_Style', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot35', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot27', cardinality 0..*) is associated with 'mtm::di::Node' (role 'mtm_di_Node', cardinality 0..*).
+'mtm::di::Plane' (role 'mtm_di_Plane', cardinality 0..*) is associated with 'mtm::di::DiagramElement' (role 'mtm_di_DiagramElement4', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot15', cardinality 0..*) is associated with 'mtm::di::Diagram' (role 'mtm_di_Diagram', cardinality 0..*).
+'mtm::di::Label' (role 'mtm_di_Label', cardinality 0..*) is associated with 'mtm::di::Bounds' (role 'mtm_di_Bounds', cardinality 0..*).
+'mtm::di::Shape' (role 'mtm_di_Shape', cardinality 0..*) is associated with 'mtm::di::Bounds' (role 'mtm_di_Bounds6', cardinality 0..*).
+'mtm::di::DiagramElement' (role 'mtm_di_DiagramElement13', cardinality 0..*) is associated with 'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot12', cardinality 0..*).
+'mtm::di::DocumentRoot' (role 'mtm_di_DocumentRoot29', cardinality 0..*) is associated with 'mtm::di::Plane' (role 'mtm_di_Plane30', cardinality 0..*).

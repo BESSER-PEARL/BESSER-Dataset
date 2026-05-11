@@ -1,0 +1,271 @@
+The model has 104 class(es).
+The class 'limp::Else' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'limp::Expr' has no attributes.
+The class 'limp::IntegerWildCardExpr' has no attributes.
+The class 'limp::EquationBlock' has no attributes.
+The class 'limp::RecordTypeDef' has no attributes.
+The class 'limp::Equation' has no attributes.
+The class 'limp::TypeDeclaration' has the following attributes: 'name' of type str.
+The class 'limp::VoidType' has no attributes.
+The class 'limp::ArrayType' has no attributes.
+The class 'limp::Precondition' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'limp::RecordType' has no attributes.
+The class 'limp::VarBlock' has no attributes.
+The class 'limp::SomeVarBlock' has no attributes.
+The class 'limp::StringLiteralExpr' has the following attributes: 'stringVal' of type str.
+The class 'limp::RealLiteralExpr' has the following attributes: 'realVal' of type str.
+The class 'limp::Specification' has no attributes.
+The class 'limp::OutputArgList' has no attributes.
+The class 'limp::ExternalFunction' has the following attributes: 'name' of type str.
+The class 'limp::LocalArg' has no attributes.
+The class 'limp::FunctionRef' has no attributes.
+The class 'VariableRef' has no attributes.
+The class 'Expr' has no attributes.
+The class 'limp::IntegerType' has no attributes.
+The class 'limp::NoElse' has no attributes.
+The class 'limp::IdExpr' has no attributes.
+The class 'limp::TupleType' has no attributes.
+The class 'limp::GlobalDeclaration' has no attributes.
+The class 'limp::BooleanLiteralExpr' has the following attributes: 'boolVal' of type str.
+The class 'limp::UnaryMinusExpr' has no attributes.
+The class 'limp::LabelStatement' has the following attributes: 'name' of type str.
+The class 'limp::SomeAttributeBlock' has no attributes.
+The class 'limp::NoVarBlock' has no attributes.
+The class 'limp::ElseIf' has no attributes.
+The class 'limp::ChoiceExpr' has no attributes.
+The class 'limp::GotoStatement' has no attributes.
+The class 'limp::ReturnStatement' has no attributes.
+The class 'limp::TypeAlias' has no attributes.
+The class 'limp::RecordUpdateExpr' has the following attributes: 'field' of type str.
+The class 'limp::Postcondition' has the following attributes: 'name' of type str.
+The class 'limp::FreshVariable' has the following attributes: 'value' of type str.
+The class 'limp::ContinueStatement' has no attributes.
+The class 'limp::Declaration' has no attributes.
+The class 'limp::BinaryExpr' has the following attributes: 'op' of type str.
+The class 'limp::ExprList' has no attributes.
+The class 'limp::BoolType' has no attributes.
+The class 'limp::RecordExpr' has no attributes.
+The class 'limp::EnumTypeDef' has no attributes.
+The class 'limp::Attribute' has no attributes.
+The class 'Statement' has no attributes.
+The class 'limp::IfThenElseExpr' has no attributes.
+The class 'limp::RealType' has no attributes.
+The class 'limp::RecordFieldExpr' has the following attributes: 'fieldName' of type str.
+The class 'limp::RecordFieldType' has the following attributes: 'fieldName' of type str.
+The class 'limp::LocalProcedure' has the following attributes: 'name' of type str.
+The class 'VarBlock' has no attributes.
+The class 'limp::BreakStatement' has no attributes.
+The class 'limp::DefineUseRef' has no attributes.
+The class 'limp::Comment' has the following attributes: 'comment' of type str.
+The class 'AttributeBlock' has no attributes.
+The class 'FunctionRef' has no attributes.
+The class 'limp::OutputArg' has no attributes.
+The class 'limp::ForStatement' has no attributes.
+The class 'limp::ConstantDeclaration' has no attributes.
+The class 'limp::Statement' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'Equation' has no attributes.
+The class 'TypeDeclaration' has no attributes.
+The class 'limp::AttributeBlock' has no attributes.
+The class 'limp::NamedType' has no attributes.
+The class 'limp::IdList' has no attributes.
+The class 'limp::Import' has the following attributes: 'importURI' of type str.
+The class 'limp::VariableRef' has the following attributes: 'name' of type str.
+The class 'limp::StatementBlock' has no attributes.
+The class 'limp::NoAttributeBlock' has no attributes.
+The class 'limp::ArrayAccessExpr' has no attributes.
+The class 'limp::ExternalProcedure' has the following attributes: 'name' of type str.
+The class 'limp::SecondInit' has no attributes.
+The class 'limp::ArrayTypeDef' has the following attributes: 'size' of type str.
+The class 'limp::ElseBlock' has no attributes.
+The class 'limp::VoidStatement' has no attributes.
+The class 'limp::EnumType' has no attributes.
+The class 'limp::Type' has no attributes.
+The class 'limp::RecordAccessExpr' has the following attributes: 'field' of type str.
+The class 'limp::ArrayUpdateExpr' has no attributes.
+The class 'limp::EnumValue' has no attributes.
+The class 'limp::IntegerLiteralExpr' has the following attributes: 'intVal' of type str.
+The class 'limp::UnaryNegationExpr' has no attributes.
+The class 'limp::AssignmentStatement' has no attributes.
+The class 'limp::FcnCallExpr' has no attributes.
+The class 'limp::InputArgList' has no attributes.
+The class 'limp::InitExpr' has no attributes.
+The class 'limp::LocalFunction' has the following attributes: 'name' of type str.
+The class 'limp::AbstractType' has no attributes.
+The class 'limp::WhileStatement' has no attributes.
+The class 'limp::InputArg' has no attributes.
+The class 'limp::StringType' has no attributes.
+The class 'limp::IfThenElseStatement' has no attributes.
+The class 'limp::AbstractTypeDef' has no attributes.
+The class 'Else' has no attributes.
+The class 'limp::Define' has no attributes.
+The class 'limp::ArrayExpr' has no attributes.
+The class 'limp::Uses' has no attributes.
+'limp::EnumValue' is a specialization of 'VariableRef'.
+'limp::GotoStatement' is a specialization of 'Statement'.
+'limp::GlobalDeclaration' is a specialization of 'Declaration'.
+'limp::ArrayUpdateExpr' is a specialization of 'Expr'.
+'limp::ElseBlock' is a specialization of 'Else'.
+'limp::SomeVarBlock' is a specialization of 'VarBlock'.
+'limp::IdExpr' is a specialization of 'Expr'.
+'limp::IfThenElseExpr' is a specialization of 'Expr'.
+'limp::TypeAlias' is a specialization of 'TypeDeclaration'.
+'limp::ExternalProcedure' is a specialization of 'Declaration'.
+'limp::ArrayAccessExpr' is a specialization of 'Expr'.
+'limp::ArrayExpr' is a specialization of 'Expr'.
+'limp::Uses' is a specialization of 'Attribute'.
+'limp::RecordUpdateExpr' is a specialization of 'Expr'.
+'limp::WhileStatement' is a specialization of 'Statement'.
+'limp::ReturnStatement' is a specialization of 'Statement'.
+'limp::LocalProcedure' is a specialization of 'FunctionRef'.
+'limp::GlobalDeclaration' is a specialization of 'VariableRef'.
+'limp::StringType' is a specialization of 'Type'.
+'limp::AssignmentStatement' is a specialization of 'Statement'.
+'limp::RecordType' is a specialization of 'Type'.
+'limp::NoElse' is a specialization of 'Else'.
+'limp::RealType' is a specialization of 'Type'.
+'limp::AssignmentStatement' is a specialization of 'Equation'.
+'limp::FcnCallExpr' is a specialization of 'Expr'.
+'limp::NoVarBlock' is a specialization of 'VarBlock'.
+'limp::BoolType' is a specialization of 'Type'.
+'limp::ArrayType' is a specialization of 'Type'.
+'limp::LocalFunction' is a specialization of 'Declaration'.
+'limp::LabelStatement' is a specialization of 'Statement'.
+'limp::Postcondition' is a specialization of 'Attribute'.
+'limp::ExternalFunction' is a specialization of 'Declaration'.
+'limp::ContinueStatement' is a specialization of 'Statement'.
+'limp::FreshVariable' is a specialization of 'Expr'.
+'limp::ExternalFunction' is a specialization of 'FunctionRef'.
+'limp::ExternalProcedure' is a specialization of 'FunctionRef'.
+'limp::SomeAttributeBlock' is a specialization of 'AttributeBlock'.
+'limp::IntegerWildCardExpr' is a specialization of 'Expr'.
+'limp::BreakStatement' is a specialization of 'Statement'.
+'limp::NamedType' is a specialization of 'Type'.
+'limp::RecordTypeDef' is a specialization of 'TypeDeclaration'.
+'limp::IntegerLiteralExpr' is a specialization of 'Expr'.
+'limp::OutputArg' is a specialization of 'VariableRef'.
+'limp::VoidType' is a specialization of 'Type'.
+'limp::RecordAccessExpr' is a specialization of 'Expr'.
+'limp::TupleType' is a specialization of 'Type'.
+'limp::LocalArg' is a specialization of 'VariableRef'.
+'limp::LocalFunction' is a specialization of 'FunctionRef'.
+'limp::ConstantDeclaration' is a specialization of 'VariableRef'.
+'limp::ArrayTypeDef' is a specialization of 'TypeDeclaration'.
+'limp::Comment' is a specialization of 'Declaration'.
+'limp::ElseIf' is a specialization of 'Else'.
+'limp::ConstantDeclaration' is a specialization of 'Declaration'.
+'limp::Precondition' is a specialization of 'Attribute'.
+'limp::InitExpr' is a specialization of 'Expr'.
+'limp::BooleanLiteralExpr' is a specialization of 'Expr'.
+'limp::RealLiteralExpr' is a specialization of 'Expr'.
+'limp::IntegerType' is a specialization of 'Type'.
+'limp::VoidStatement' is a specialization of 'Equation'.
+'limp::SecondInit' is a specialization of 'Expr'.
+'limp::LocalProcedure' is a specialization of 'Declaration'.
+'limp::TypeDeclaration' is a specialization of 'Declaration'.
+'limp::Define' is a specialization of 'Attribute'.
+'limp::StringLiteralExpr' is a specialization of 'Expr'.
+'limp::VoidStatement' is a specialization of 'Statement'.
+'limp::AbstractType' is a specialization of 'Type'.
+'limp::ForStatement' is a specialization of 'Statement'.
+'limp::InputArg' is a specialization of 'VariableRef'.
+'limp::UnaryMinusExpr' is a specialization of 'Expr'.
+'limp::EnumType' is a specialization of 'Type'.
+'limp::NoAttributeBlock' is a specialization of 'AttributeBlock'.
+'limp::UnaryNegationExpr' is a specialization of 'Expr'.
+'limp::IfThenElseStatement' is a specialization of 'Statement'.
+'limp::ChoiceExpr' is a specialization of 'Expr'.
+'limp::Import' is a specialization of 'Declaration'.
+'limp::AbstractTypeDef' is a specialization of 'TypeDeclaration'.
+'limp::RecordExpr' is a specialization of 'Expr'.
+'limp::BinaryExpr' is a specialization of 'Expr'.
+'limp::EnumTypeDef' is a specialization of 'TypeDeclaration'.
+'limp::ArrayUpdateExpr' (role 'limp_ArrayUpdateExpr175', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr176', cardinality 0..*).
+'limp::LocalFunction' (role 'limp_LocalFunction16', cardinality 0..*) is associated with 'limp::VarBlock' (role 'limp_VarBlock', cardinality 0..*).
+'limp::Define' (role 'limp_Define', cardinality 0..*) is associated with 'limp::DefineUseRef' (role 'limp_DefineUseRef64', cardinality 0..*).
+'limp::ArrayTypeDef' (role 'limp_ArrayTypeDef129', cardinality 0..*) is associated with 'limp::ArrayType' (role 'limp_ArrayType', cardinality 0..*).
+'limp::RecordUpdateExpr' (role 'limp_RecordUpdateExpr', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr163', cardinality 0..*).
+'limp::ExternalProcedure' (role 'limp_ExternalProcedure7', cardinality 0..*) is associated with 'limp::OutputArgList' (role 'limp_OutputArgList', cardinality 0..*).
+'limp::OutputArg' (role 'limp_OutputArg55', cardinality 0..*) is associated with 'limp::Type' (role 'limp_Type56', cardinality 0..*).
+'limp::Equation' (role 'limp_Equation', cardinality 0..*) is associated with 'limp::EquationBlock' (role 'limp_EquationBlock103', cardinality 0..*).
+'limp::FunctionRef' (role 'limp_FunctionRef', cardinality 0..*) is associated with 'limp::FcnCallExpr' (role 'limp_FcnCallExpr', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr119', cardinality 0..*) is associated with 'limp::ExprList' (role 'limp_ExprList', cardinality 0..*).
+'limp::VariableRef' (role 'limp_VariableRef180', cardinality 0..*) is associated with 'limp::SecondInit' (role 'limp_SecondInit', cardinality 0..*).
+'limp::Attribute' (role 'limp_Attribute', cardinality 0..*) is associated with 'limp::SomeAttributeBlock' (role 'limp_SomeAttributeBlock', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr142', cardinality 0..*) is associated with 'limp::IfThenElseExpr' (role 'limp_IfThenElseExpr141', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr145', cardinality 0..*) is associated with 'limp::IfThenElseExpr' (role 'limp_IfThenElseExpr144', cardinality 0..*).
+'limp::NamedType' (role 'limp_NamedType', cardinality 0..*) is associated with 'limp::TypeAlias' (role 'limp_TypeAlias132', cardinality 0..*).
+'limp::ExprList' (role 'limp_ExprList186', cardinality 0..*) is associated with 'limp::FcnCallExpr' (role 'limp_FcnCallExpr185', cardinality 0..*).
+'limp::Precondition' (role 'limp_Precondition', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr58', cardinality 0..*).
+'limp::LocalProcedure' (role 'limp_LocalProcedure25', cardinality 0..*) is associated with 'limp::VarBlock' (role 'limp_VarBlock26', cardinality 0..*).
+'limp::Uses' (role 'limp_Uses', cardinality 0..*) is associated with 'limp::DefineUseRef' (role 'limp_DefineUseRef66', cardinality 0..*).
+'limp::WhileStatement' (role 'limp_WhileStatement85', cardinality 0..*) is associated with 'limp::StatementBlock' (role 'limp_StatementBlock86', cardinality 0..*).
+'limp::InputArgList' (role 'limp_InputArgList20', cardinality 0..*) is associated with 'limp::LocalProcedure' (role 'limp_LocalProcedure', cardinality 0..*).
+'limp::OutputArg' (role 'limp_OutputArg', cardinality 0..*) is associated with 'limp::ExternalFunction' (role 'limp_ExternalFunction3', cardinality 0..*).
+'limp::Type' (role 'limp_Type48', cardinality 0..*) is associated with 'limp::InputArg' (role 'limp_InputArg47', cardinality 0..*).
+'limp::IdList' (role 'limp_IdList105', cardinality 0..*) is associated with 'limp::VariableRef' (role 'limp_VariableRef', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr150', cardinality 0..*) is associated with 'limp::ChoiceExpr' (role 'limp_ChoiceExpr149', cardinality 0..*).
+'limp::TypeAlias' (role 'limp_TypeAlias', cardinality 0..*) is associated with 'limp::Type' (role 'limp_Type121', cardinality 0..*).
+'limp::ChoiceExpr' (role 'limp_ChoiceExpr', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr147', cardinality 0..*).
+'limp::OutputArg' (role 'limp_OutputArg14', cardinality 0..*) is associated with 'limp::LocalFunction' (role 'limp_LocalFunction13', cardinality 0..*).
+'limp::ConstantDeclaration' (role 'limp_ConstantDeclaration41', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr', cardinality 0..*).
+'limp::WhileStatement' (role 'limp_WhileStatement', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr83', cardinality 0..*).
+'limp::InputArgList' (role 'limp_InputArgList', cardinality 0..*) is associated with 'limp::ExternalFunction' (role 'limp_ExternalFunction', cardinality 0..*).
+'limp::InputArg' (role 'limp_InputArg', cardinality 0..*) is associated with 'limp::InputArgList' (role 'limp_InputArgList45', cardinality 0..*).
+'limp::IdExpr' (role 'limp_IdExpr', cardinality 0..*) is associated with 'limp::VariableRef' (role 'limp_VariableRef182', cardinality 0..*).
+'limp::RecordFieldExpr' (role 'limp_RecordFieldExpr116', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr117', cardinality 0..*).
+'limp::EnumTypeDef' (role 'limp_EnumTypeDef125', cardinality 0..*) is associated with 'limp::EnumType' (role 'limp_EnumType', cardinality 0..*).
+'limp::ArrayUpdateExpr' (role 'limp_ArrayUpdateExpr', cardinality 0..*) is associated with 'limp::ArrayAccessExpr' (role 'limp_ArrayAccessExpr173', cardinality 0..*).
+'limp::StatementBlock' (role 'limp_StatementBlock79', cardinality 0..*) is associated with 'limp::IfThenElseStatement' (role 'limp_IfThenElseStatement78', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr76', cardinality 0..*) is associated with 'limp::IfThenElseStatement' (role 'limp_IfThenElseStatement', cardinality 0..*).
+'limp::RecordTypeDef' (role 'limp_RecordTypeDef112', cardinality 0..*) is associated with 'limp::RecordExpr' (role 'limp_RecordExpr', cardinality 0..*).
+'limp::Declaration' (role 'limp_Declaration', cardinality 0..*) is associated with 'limp::Specification' (role 'limp_Specification', cardinality 0..*).
+'limp::OutputArgList' (role 'limp_OutputArgList23', cardinality 0..*) is associated with 'limp::LocalProcedure' (role 'limp_LocalProcedure22', cardinality 0..*).
+'limp::BinaryExpr' (role 'limp_BinaryExpr', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr152', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr74', cardinality 0..*) is associated with 'limp::AssignmentStatement' (role 'limp_AssignmentStatement73', cardinality 0..*).
+'limp::StatementBlock' (role 'limp_StatementBlock68', cardinality 0..*) is associated with 'limp::Statement' (role 'limp_Statement', cardinality 0..*).
+'limp::InitExpr' (role 'limp_InitExpr', cardinality 0..*) is associated with 'limp::VariableRef' (role 'limp_VariableRef178', cardinality 0..*).
+'limp::Type' (role 'limp_Type50', cardinality 0..*) is associated with 'limp::LocalArg' (role 'limp_LocalArg', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr62', cardinality 0..*) is associated with 'limp::DefineUseRef' (role 'limp_DefineUseRef', cardinality 0..*).
+'limp::RecordTypeDef' (role 'limp_RecordTypeDef', cardinality 0..*) is associated with 'limp::RecordFieldType' (role 'limp_RecordFieldType', cardinality 0..*).
+'limp::ForStatement' (role 'limp_ForStatement93', cardinality 0..*) is associated with 'limp::AssignmentStatement' (role 'limp_AssignmentStatement94', cardinality 0..*).
+'limp::RecordExpr' (role 'limp_RecordExpr114', cardinality 0..*) is associated with 'limp::RecordFieldExpr' (role 'limp_RecordFieldExpr', cardinality 0..*).
+'limp::GlobalDeclaration' (role 'limp_GlobalDeclaration', cardinality 0..*) is associated with 'limp::Type' (role 'limp_Type43', cardinality 0..*).
+'limp::IfThenElseStatement' (role 'limp_IfThenElseStatement81', cardinality 0..*) is associated with 'limp::Else' (role 'limp_Else', cardinality 0..*).
+'limp::AbstractTypeDef' (role 'limp_AbstractTypeDef', cardinality 0..*) is associated with 'limp::AbstractType' (role 'limp_AbstractType', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr110', cardinality 0..*) is associated with 'limp::ArrayExpr' (role 'limp_ArrayExpr109', cardinality 0..*).
+'limp::ForStatement' (role 'limp_ForStatement', cardinality 0..*) is associated with 'limp::AssignmentStatement' (role 'limp_AssignmentStatement88', cardinality 0..*).
+'limp::RecordType' (role 'limp_RecordType', cardinality 0..*) is associated with 'limp::RecordTypeDef' (role 'limp_RecordTypeDef127', cardinality 0..*).
+'limp::ArrayAccessExpr' (role 'limp_ArrayAccessExpr', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr168', cardinality 0..*).
+'limp::LabelStatement' (role 'limp_LabelStatement', cardinality 0..*) is associated with 'limp::GotoStatement' (role 'limp_GotoStatement', cardinality 0..*).
+'limp::SomeVarBlock' (role 'limp_SomeVarBlock', cardinality 0..*) is associated with 'limp::LocalArg' (role 'limp_LocalArg123', cardinality 0..*).
+'limp::ExternalProcedure' (role 'limp_ExternalProcedure9', cardinality 0..*) is associated with 'limp::AttributeBlock' (role 'limp_AttributeBlock', cardinality 0..*).
+'limp::Type' (role 'limp_Type37', cardinality 0..*) is associated with 'limp::RecordFieldType' (role 'limp_RecordFieldType36', cardinality 0..*).
+'limp::ForStatement' (role 'limp_ForStatement90', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr91', cardinality 0..*).
+'limp::Type' (role 'limp_Type188', cardinality 0..*) is associated with 'limp::TupleType' (role 'limp_TupleType', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr161', cardinality 0..*) is associated with 'limp::RecordAccessExpr' (role 'limp_RecordAccessExpr', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr139', cardinality 0..*) is associated with 'limp::IfThenElseExpr' (role 'limp_IfThenElseExpr', cardinality 0..*).
+'limp::Type' (role 'limp_Type39', cardinality 0..*) is associated with 'limp::ConstantDeclaration' (role 'limp_ConstantDeclaration', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr171', cardinality 0..*) is associated with 'limp::ArrayAccessExpr' (role 'limp_ArrayAccessExpr170', cardinality 0..*).
+'limp::UnaryNegationExpr' (role 'limp_UnaryNegationExpr', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr157', cardinality 0..*).
+'limp::ForStatement' (role 'limp_ForStatement96', cardinality 0..*) is associated with 'limp::StatementBlock' (role 'limp_StatementBlock97', cardinality 0..*).
+'limp::Postcondition' (role 'limp_Postcondition', cardinality 0..*) is associated with 'limp::Expr' (role 'limp_Expr60', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr101', cardinality 0..*) is associated with 'limp::GotoStatement' (role 'limp_GotoStatement100', cardinality 0..*).
+'limp::EnumValue' (role 'limp_EnumValue', cardinality 0..*) is associated with 'limp::EnumTypeDef' (role 'limp_EnumTypeDef', cardinality 0..*).
+'limp::InputArgList' (role 'limp_InputArgList5', cardinality 0..*) is associated with 'limp::ExternalProcedure' (role 'limp_ExternalProcedure', cardinality 0..*).
+'limp::LocalFunction' (role 'limp_LocalFunction', cardinality 0..*) is associated with 'limp::InputArgList' (role 'limp_InputArgList11', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr155', cardinality 0..*) is associated with 'limp::BinaryExpr' (role 'limp_BinaryExpr154', cardinality 0..*).
+'limp::AssignmentStatement' (role 'limp_AssignmentStatement', cardinality 0..*) is associated with 'limp::IdList' (role 'limp_IdList', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr166', cardinality 0..*) is associated with 'limp::RecordUpdateExpr' (role 'limp_RecordUpdateExpr165', cardinality 0..*).
+'limp::Type' (role 'limp_Type', cardinality 0..*) is associated with 'limp::ArrayTypeDef' (role 'limp_ArrayTypeDef', cardinality 0..*).
+'limp::IfThenElseStatement' (role 'limp_IfThenElseStatement137', cardinality 0..*) is associated with 'limp::ElseIf' (role 'limp_ElseIf', cardinality 0..*).
+'limp::LocalProcedure' (role 'limp_LocalProcedure31', cardinality 0..*) is associated with 'limp::StatementBlock' (role 'limp_StatementBlock', cardinality 0..*).
+'limp::ArrayExpr' (role 'limp_ArrayExpr', cardinality 0..*) is associated with 'limp::ArrayTypeDef' (role 'limp_ArrayTypeDef107', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr70', cardinality 0..*) is associated with 'limp::VoidStatement' (role 'limp_VoidStatement', cardinality 0..*).
+'limp::LocalFunction' (role 'limp_LocalFunction18', cardinality 0..*) is associated with 'limp::EquationBlock' (role 'limp_EquationBlock', cardinality 0..*).
+'limp::LocalProcedure' (role 'limp_LocalProcedure28', cardinality 0..*) is associated with 'limp::AttributeBlock' (role 'limp_AttributeBlock29', cardinality 0..*).
+'limp::StatementBlock' (role 'limp_StatementBlock135', cardinality 0..*) is associated with 'limp::ElseBlock' (role 'limp_ElseBlock', cardinality 0..*).
+'limp::Expr' (role 'limp_Expr159', cardinality 0..*) is associated with 'limp::UnaryMinusExpr' (role 'limp_UnaryMinusExpr', cardinality 0..*).
+'limp::OutputArgList' (role 'limp_OutputArgList52', cardinality 0..*) is associated with 'limp::OutputArg' (role 'limp_OutputArg53', cardinality 0..*).

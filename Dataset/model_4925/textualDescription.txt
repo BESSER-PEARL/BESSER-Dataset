@@ -1,0 +1,49 @@
+The model has 22 class(es).
+The class 'web::Link' has the following attributes: 'target' of type str; 'label' of type str.
+The class 'web::Image' has the following attributes: 'label' of type str; 'src' of type str.
+The class 'web::GalleryContent' has no attributes.
+The class 'web::ReleaseSection' has no attributes.
+The class 'web::Version' has the following attributes: 'name' of type str; 'state' of type str.
+The class 'web::HtmlContent' has the following attributes: 'data' of type str.
+The class 'web::Author' has the following attributes: 'name' of type str; 'plusLink' of type str; 'email' of type str.
+The class 'Content' has no attributes.
+The class 'web::FooterEntry' has the following attributes: 'name' of type str; 'link' of type str.
+The class 'Page' has no attributes.
+The class 'Container' has no attributes.
+The class 'web::Container' has no attributes.
+The class 'web::Release' has the following attributes: 'type' of type str; 'unqualifiedName' of type str; 'baseName' of type str; 'releaseNotesLink' of type str; 'date' of type date; 'buildId' of type str; 'name' of type str; 'alternateMsiName' of type str; 'javadoc' of type bool.
+The class 'web::Content' has no attributes.
+The class 'web::Site' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'web::NewsEntry' has the following attributes: 'title' of type str; 'description' of type str; 'date' of type date.
+The class 'web::SocialBar' has no attributes.
+The class 'web::Gallery' has the following attributes: 'label' of type str.
+The class 'web::NewsFeedPage' has no attributes.
+The class 'web::Page' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'web::SocialInformation' has the following attributes: 'plusUrl' of type str; 'twitterUrl' of type str; 'facebookUrl' of type str; 'url' of type str.
+The class 'web::ContentPage' has no attributes.
+The enumeration 'VersionState' has the following literals: 'IN_DEVELOPMENT', 'RELEASED', 'PLANNED'.
+The enumeration 'ReleaseType' has the following literals: 'nightly', 'milestone', 'release'.
+'web::NewsFeedPage' is a specialization of 'Page'.
+'web::SocialBar' is a specialization of 'Content'.
+'web::NewsEntry' is a specialization of 'Container'.
+'web::GalleryContent' is a specialization of 'Content'.
+'web::ContentPage' is a specialization of 'Container'.
+'web::ContentPage' is a specialization of 'Page'.
+'web::HtmlContent' is a specialization of 'Content'.
+'web::ReleaseSection' is a specialization of 'Content'.
+'web::Container' (role 'web_Container', cardinality 0..*) is associated with 'web::Content' (role 'web_Content', cardinality 0..*).
+'web::Image' (role 'web_Image', cardinality 0..*) is associated with 'web::Gallery' (role 'web_Gallery21', cardinality 0..*).
+'web::Link' (role 'web_Link', cardinality 0..*) is associated with 'web::Site' (role 'web_Site7', cardinality 0..*).
+'web::Site' (role 'web_Site5', cardinality 0..*) is associated with 'web::Author' (role 'web_Author', cardinality 0..*).
+'web::ReleaseSection' (role 'web_ReleaseSection', cardinality 0..*) is associated with 'web::Release' (role 'web_Release', cardinality 0..*).
+'web::SocialInformation' (role 'web_SocialInformation', cardinality 0..*) is associated with 'web::SocialBar' (role 'web_SocialBar', cardinality 0..*).
+'web::NewsEntry' (role 'web_NewsEntry', cardinality 0..*) is associated with 'web::Site' (role 'web_Site3', cardinality 0..*).
+'web::Version' (role 'Version', cardinality 0..*) is associated with 'web::Release' (role 'releases', cardinality 0..*).
+'web::Site' (role 'web_Site', cardinality 0..*) is associated with 'web::FooterEntry' (role 'web_FooterEntry', cardinality 0..*).
+'web::GalleryContent' (role 'web_GalleryContent', cardinality 0..*) is associated with 'web::Gallery' (role 'web_Gallery23', cardinality 0..*).
+'web::Page' (role 'pages', cardinality 0..*) is associated with 'web::Site' (role 'Site', cardinality 0..*).
+'web::Page' (role 'Page', cardinality 0..*) is associated with 'web::Site' (role 'site', cardinality 0..*).
+'web::Version' (role 'web_Version', cardinality 0..*) is associated with 'web::Site' (role 'web_Site9', cardinality 0..*).
+'web::Release' (role 'Release', cardinality 0..*) is associated with 'web::Version' (role 'version', cardinality 0..*).
+'web::Site' (role 'web_Site11', cardinality 0..*) is associated with 'web::Gallery' (role 'web_Gallery', cardinality 0..*).
+'web::NewsEntry' (role 'web_NewsEntry14', cardinality 0..*) is associated with 'web::Author' (role 'web_Author15', cardinality 0..*).

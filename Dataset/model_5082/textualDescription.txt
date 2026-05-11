@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Interface' has no attributes.
+The class 'adlsimple::Binding' has no attributes.
+The class 'adlsimple::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+The class 'adlsimple::Required' has no attributes.
+The class 'adlsimple::Provided' has no attributes.
+The class 'adlsimple::Component' has the following attributes: 'name' of type str.
+The class 'adlsimple::Base' has no attributes.
+'adlsimple::Provided' is a specialization of 'Interface'.
+'adlsimple::Required' is a specialization of 'Interface'.
+'adlsimple::Base' (role 'adlsimple_Base', cardinality 0..*) is associated with 'adlsimple::Component' (role 'adlsimple_Component11', cardinality 0..*).
+'adlsimple::Component' (role 'adlsimple_Component2', cardinality 0..*) is associated with 'adlsimple::Provided' (role 'adlsimple_Provided', cardinality 0..*).
+'adlsimple::Interface' (role 'adlsimple_Interface', cardinality 0..*) is associated with 'adlsimple::Binding' (role 'adlsimple_Binding', cardinality 0..*).
+'adlsimple::Binding' (role 'adlsimple_Binding8', cardinality 0..*) is associated with 'adlsimple::Interface' (role 'adlsimple_Interface9', cardinality 0..*).
+'adlsimple::Component' (role 'adlsimple_Component', cardinality 0..*) is associated with 'adlsimple::Required' (role 'adlsimple_Required', cardinality 0..*).
+'adlsimple::Interface' (role 'adlsimple_Interface6', cardinality 0..*) is associated with 'adlsimple::Binding' (role 'adlsimple_Binding5', cardinality 0..*).

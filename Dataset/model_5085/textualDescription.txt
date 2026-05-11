@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'adl199::AtomicComponent' has no attributes.
+The class 'adl199::Content' has the following attributes: 'expression' of type str; 'language' of type str.
+The class 'adl199::Binding' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'adl199::Delegation' has no attributes.
+The class 'adl199::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'adl199::Interface' has the following attributes: 'name' of type str; 'signature' of type str.
+The class 'Interface' has no attributes.
+The class 'adl199::Provided' has no attributes.
+The class 'adl199::Component' has no attributes.
+The class 'adl199::Required' has no attributes.
+'adl199::Provided' is a specialization of 'Interface'.
+'adl199::Component' is a specialization of 'AbstractComponent'.
+'adl199::Delegation' is a specialization of 'Interface'.
+'adl199::AtomicComponent' is a specialization of 'AbstractComponent'.
+'adl199::Required' is a specialization of 'Interface'.
+'adl199::AbstractComponent' (role 'adl199_AbstractComponent4', cardinality 0..*) is associated with 'adl199::Provided' (role 'adl199_Provided', cardinality 0..*).
+'adl199::Content' (role 'adl199_Content', cardinality 0..*) is associated with 'adl199::AbstractComponent' (role 'adl199_AbstractComponent', cardinality 0..*).
+'adl199::Binding' (role 'adl199_Binding', cardinality 0..*) is associated with 'adl199::Interface' (role 'adl199_Interface', cardinality 0..*).
+'adl199::Interface' (role 'adl199_Interface13', cardinality 0..*) is associated with 'adl199::Binding' (role 'adl199_Binding12', cardinality 0..*).
+'adl199::Delegation' (role 'adl199_Delegation', cardinality 0..*) is associated with 'adl199::AbstractComponent' (role 'adl199_AbstractComponent6', cardinality 0..*).
+'adl199::Binding' (role 'adl199_Binding9', cardinality 0..*) is associated with 'adl199::Interface' (role 'adl199_Interface10', cardinality 0..*).
+'adl199::AbstractComponent' (role 'adl199_AbstractComponent2', cardinality 0..*) is associated with 'adl199::Required' (role 'adl199_Required', cardinality 0..*).
+'adl199::Component' (role 'adl199_Component', cardinality 0..*) is associated with 'adl199::AbstractComponent' (role 'adl199_AbstractComponent18', cardinality 0..*).
+'adl199::Content' (role 'adl199_Content15', cardinality 0..*) is associated with 'adl199::AbstractComponent' (role 'adl199_AbstractComponent16', cardinality 0..*).

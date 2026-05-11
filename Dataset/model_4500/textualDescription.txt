@@ -1,0 +1,139 @@
+The model has 71 class(es).
+The class 'model::NormalDistribution' has the following attributes: 'meanValue' of type float; 'standardDeviation' of type float.
+The class 'model::MassUnit' has no attributes.
+The class 'model::Length' has no attributes.
+The class 'model::ThermodynamicTemperatureConversionFactor' has no attributes.
+The class 'MeasurementUncertaintyInformation' has no attributes.
+The class 'model::LevelDimension' has no attributes.
+The class 'model::TrafficIntensity' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'model::LengthConversionFactor' has no attributes.
+The class 'model::ThermodynamicTemperature' has no attributes.
+The class 'model::ConversionFactor' has the following attributes: 'multiplicator' of type float; 'offset' of type float.
+The class 'model::ElectricCurrent' has no attributes.
+The class 'model::LuminousIntensity' has no attributes.
+The class 'model::ElectricCurrentDimension' has no attributes.
+The class 'model::TrafficIntensityConversionFactor' has no attributes.
+The class 'model::QuantityValue' has the following attributes: 'value' of type float.
+The class 'model::EntropyConversionFactor' has no attributes.
+The class 'model::AngleDimension' has no attributes.
+The class 'model::MassConversionFactor' has no attributes.
+The class 'model::Dimension' has the following attributes: 'exponent' of type float.
+The class 'model::AmountOfSubstanceUnit' has no attributes.
+The class 'model::Sample' has no attributes.
+The class 'model::TimeConversionFactor' has no attributes.
+The class 'model::AmountOfSubstance' has no attributes.
+The class 'model::LevelUnit' has no attributes.
+The class 'model::DataStorageCapacity' has no attributes.
+The class 'model::DataStorageCapacityConversionFactor' has no attributes.
+The class 'model::AmountOfSubstanceConversionFactor' has no attributes.
+The class 'model::LuminousIntensityDimension' has no attributes.
+The class 'model::AmountOfSubstanceDimension' has no attributes.
+The class 'model::DataStorageCapacityUnit' has no attributes.
+The class 'model::TrafficIntensityDimension' has no attributes.
+The class 'model::TrafficIntensityUnit' has no attributes.
+The class 'model::Interval' has no attributes.
+The class 'model::Level' has no attributes.
+The class 'BaseQuantityUnit' has no attributes.
+The class 'model::MassDimension' has no attributes.
+The class 'model::TimeUnit' has no attributes.
+The class 'model::BaseQuantityUnit' has no attributes.
+The class 'model::LengthUnit' has no attributes.
+The class 'model::TimeDimension' has no attributes.
+The class 'model::ElectricCurrentUnit' has no attributes.
+The class 'model::LevelConversionFactor' has no attributes.
+The class 'model::AngleUnit' has no attributes.
+The class 'model::LengthDimension' has no attributes.
+The class 'model::LuminousIntensityConversionFactor' has no attributes.
+The class 'Quantity' has no attributes.
+The class 'model::EntropyUnit' has no attributes.
+The class 'model::DataStorageCapacityDimension' has no attributes.
+The class 'model::ThermodynamicTemperatureUnit' has no attributes.
+The class 'ConversionFactor' has no attributes.
+The class 'model::AngleConversionFactor' has no attributes.
+The class 'model::SystemOfUnits' has the following attributes: 'name' of type str; 'standardizationBody' of type str.
+The class 'Unit' has no attributes.
+The class 'model::ElectricCurrentConversionFactor' has no attributes.
+The class 'BaseQuantity' has no attributes.
+The class 'model::Mass' has no attributes.
+The class 'model::DerivedQuantityUnit' has no attributes.
+The class 'model::Entropy' has no attributes.
+The class 'model::ThermodynamicTemperatureDimension' has no attributes.
+The class 'model::EntropyDimension' has no attributes.
+The class 'model::BaseQuantity' has no attributes.
+The class 'model::DerivedQuantity' has no attributes.
+The class 'model::Quantity' has no attributes.
+The class 'model::MeasurementUncertaintyInformation' has no attributes.
+The class 'model::MeasurementUncertainty' has the following attributes: 'standardUncertainty' of type float.
+The class 'model::Time' has no attributes.
+The class 'model::Sampling' has the following attributes: 'measurementProcedure' of type str.
+The class 'model::Unit' has the following attributes: 'symbol' of type str; 'isDerivedUnit' of type bool; 'name' of type str; 'isIntervalScaled' of type bool; 'isRatioScaled' of type bool; 'isCoherentDerivedUnit' of type bool; 'isBaseUnit' of type bool.
+The class 'model::Angle' has no attributes.
+The class 'model::LuminousIntensityUnit' has no attributes.
+'model::BaseQuantityUnit' is a specialization of 'Unit'.
+'model::LevelConversionFactor' is a specialization of 'ConversionFactor'.
+'model::DerivedQuantityUnit' is a specialization of 'Unit'.
+'model::LuminousIntensity' is a specialization of 'BaseQuantity'.
+'model::MassConversionFactor' is a specialization of 'ConversionFactor'.
+'model::TrafficIntensityConversionFactor' is a specialization of 'ConversionFactor'.
+'model::TimeConversionFactor' is a specialization of 'ConversionFactor'.
+'model::LuminousIntensityConversionFactor' is a specialization of 'ConversionFactor'.
+'model::LevelUnit' is a specialization of 'BaseQuantityUnit'.
+'model::AngleConversionFactor' is a specialization of 'ConversionFactor'.
+'model::Entropy' is a specialization of 'BaseQuantity'.
+'model::LengthConversionFactor' is a specialization of 'ConversionFactor'.
+'model::ThermodynamicTemperatureUnit' is a specialization of 'BaseQuantityUnit'.
+'model::TimeUnit' is a specialization of 'BaseQuantityUnit'.
+'model::Sampling' is a specialization of 'MeasurementUncertaintyInformation'.
+'model::Mass' is a specialization of 'BaseQuantity'.
+'model::DataStorageCapacity' is a specialization of 'BaseQuantity'.
+'model::ElectricCurrent' is a specialization of 'BaseQuantity'.
+'model::EntropyConversionFactor' is a specialization of 'ConversionFactor'.
+'model::LuminousIntensityUnit' is a specialization of 'BaseQuantityUnit'.
+'model::ThermodynamicTemperatureDimension' is a specialization of 'Dimension'.
+'model::ElectricCurrentDimension' is a specialization of 'Dimension'.
+'model::EntropyDimension' is a specialization of 'Dimension'.
+'model::ThermodynamicTemperature' is a specialization of 'BaseQuantity'.
+'model::AmountOfSubstanceDimension' is a specialization of 'Dimension'.
+'model::AmountOfSubstanceUnit' is a specialization of 'BaseQuantityUnit'.
+'model::MassDimension' is a specialization of 'Dimension'.
+'model::AmountOfSubstance' is a specialization of 'BaseQuantity'.
+'model::NormalDistribution' is a specialization of 'MeasurementUncertaintyInformation'.
+'model::LengthUnit' is a specialization of 'BaseQuantityUnit'.
+'model::AngleUnit' is a specialization of 'BaseQuantityUnit'.
+'model::MassUnit' is a specialization of 'BaseQuantityUnit'.
+'model::Angle' is a specialization of 'BaseQuantity'.
+'model::ThermodynamicTemperatureConversionFactor' is a specialization of 'ConversionFactor'.
+'model::DerivedQuantity' is a specialization of 'Quantity'.
+'model::LuminousIntensityDimension' is a specialization of 'Dimension'.
+'model::Length' is a specialization of 'BaseQuantity'.
+'model::ElectricCurrentUnit' is a specialization of 'BaseQuantityUnit'.
+'model::ElectricCurrentConversionFactor' is a specialization of 'ConversionFactor'.
+'model::TrafficIntensityUnit' is a specialization of 'BaseQuantityUnit'.
+'model::LengthDimension' is a specialization of 'Dimension'.
+'model::DataStorageCapacityUnit' is a specialization of 'BaseQuantityUnit'.
+'model::Interval' is a specialization of 'MeasurementUncertaintyInformation'.
+'model::TrafficIntensityDimension' is a specialization of 'Dimension'.
+'model::AmountOfSubstanceConversionFactor' is a specialization of 'ConversionFactor'.
+'model::AngleDimension' is a specialization of 'Dimension'.
+'model::TrafficIntensity' is a specialization of 'BaseQuantity'.
+'model::DataStorageCapacityConversionFactor' is a specialization of 'ConversionFactor'.
+'model::Time' is a specialization of 'BaseQuantity'.
+'model::TimeDimension' is a specialization of 'Dimension'.
+'model::LevelDimension' is a specialization of 'Dimension'.
+'model::DataStorageCapacityDimension' is a specialization of 'Dimension'.
+'model::BaseQuantity' is a specialization of 'Quantity'.
+'model::EntropyUnit' is a specialization of 'BaseQuantityUnit'.
+'model::Level' is a specialization of 'BaseQuantity'.
+'model::Sample' (role 'model_Sample', cardinality 0..*) is associated with 'model::Sampling' (role 'model_Sampling', cardinality 0..*).
+'model::Unit' (role 'model_Unit', cardinality 0..*) is associated with 'model::Quantity' (role 'model_Quantity', cardinality 0..*).
+'model::Quantity' (role 'model_Quantity2', cardinality 0..*) is associated with 'model::QuantityValue' (role 'model_QuantityValue', cardinality 0..*).
+'model::Quantity' (role 'model_Quantity17', cardinality 0..*) is associated with 'model::Interval' (role 'model_Interval', cardinality 0..*).
+'model::Unit' (role 'model_Unit8', cardinality 0..*) is associated with 'model::SystemOfUnits' (role 'model_SystemOfUnits', cardinality 0..*).
+'model::Interval' (role 'model_Interval19', cardinality 0..*) is associated with 'model::Quantity' (role 'model_Quantity20', cardinality 0..*).
+'model::Unit' (role 'model_Unit11', cardinality 0..*) is associated with 'model::ConversionFactor' (role 'model_ConversionFactor10', cardinality 0..*).
+'model::Unit' (role 'model_Unit6', cardinality 0..*) is associated with 'model::ConversionFactor' (role 'model_ConversionFactor', cardinality 0..*).
+'model::Unit' (role 'model_Unit4', cardinality 0..*) is associated with 'model::Dimension' (role 'model_Dimension', cardinality 0..*).
+'model::MeasurementUncertaintyInformation' (role 'model_MeasurementUncertaintyInformation', cardinality 0..*) is associated with 'model::MeasurementUncertainty' (role 'model_MeasurementUncertainty15', cardinality 0..*).
+'model::MeasurementUncertainty' (role 'model_MeasurementUncertainty', cardinality 0..*) is associated with 'model::QuantityValue' (role 'model_QuantityValue13', cardinality 0..*).
+'model::Quantity' (role 'model_Quantity24', cardinality 0..*) is associated with 'model::Sample' (role 'model_Sample23', cardinality 0..*).

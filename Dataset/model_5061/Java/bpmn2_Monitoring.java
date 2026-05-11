@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class bpmn2_Monitoring extends BaseElement {
+
+
+
+
+
+
+    private bpmn2_FlowElement bpmn2_flowelement;
+
+
+    public bpmn2_Monitoring(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public bpmn2_FlowElement getBpmn2_flowelement() {
+        return bpmn2_flowelement;
+    }
+
+    public void setBpmn2_flowelement(bpmn2_FlowElement bpmn2_flowelement) {
+        this.bpmn2_flowelement = bpmn2_flowelement;
+    }
+
+}

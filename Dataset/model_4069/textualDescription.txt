@@ -1,0 +1,23 @@
+The model has 9 class(es).
+The class 'ModelElement' has no attributes.
+The class 'simpleuml::Association' has no attributes.
+The class 'simpleuml::ModelElement' has the following attributes: 'name' of type str.
+The class 'simpleuml::UMLClass' has the following attributes: 'kind' of type str.
+The class 'simpleuml::Attribute' has no attributes.
+The class 'simpleuml::UMLPackage' has no attributes.
+The class 'simpleuml::Classifier' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simpleuml::PrimitiveDataType' has no attributes.
+The enumeration 'Ignore' has the following literals: 'anotherlit', 'lit1'.
+'simpleuml::PrimitiveDataType' is a specialization of 'Classifier'.
+'simpleuml::Association' is a specialization of 'ModelElement'.
+'simpleuml::UMLClass' is a specialization of 'Classifier'.
+'simpleuml::Classifier' is a specialization of 'ModelElement'.
+'simpleuml::Attribute' is a specialization of 'ModelElement'.
+'simpleuml::Classifier' (role 'simpleuml_Classifier', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'simpleuml_Attribute', cardinality 0..*).
+'simpleuml::UMLClass' (role 'simpleuml_UMLClass4', cardinality 0..*) is associated with 'simpleuml::Association' (role 'simpleuml_Association', cardinality 0..*).
+'simpleuml::UMLClass' (role 'simpleuml_UMLClass', cardinality 0..*) is associated with 'simpleuml::UMLClass' (role 'simpleuml_UMLClass0', cardinality 0..*).
+'simpleuml::UMLClass' (role 'owner', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'Attribute', cardinality 0..*).
+'simpleuml::UMLClass' (role 'UMLClass', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'attribute', cardinality 0..*).
+'simpleuml::Association' (role 'simpleuml_Association6', cardinality 0..*) is associated with 'simpleuml::UMLClass' (role 'simpleuml_UMLClass7', cardinality 0..*).
+'simpleuml::UMLPackage' (role 'simpleuml_UMLPackage', cardinality 0..*) is associated with 'simpleuml::ModelElement' (role 'simpleuml_ModelElement', cardinality 0..*).

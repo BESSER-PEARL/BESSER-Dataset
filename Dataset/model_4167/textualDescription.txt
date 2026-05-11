@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'greetings::Greeting' has the following attributes: 'name' of type str.
+The class 'greetings::Model' has no attributes.
+'greetings::Model' (role 'greetings_Model', cardinality 0..*) is associated with 'greetings::Greeting' (role 'greetings_Greeting', cardinality 0..*).

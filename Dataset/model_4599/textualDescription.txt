@@ -1,0 +1,71 @@
+The model has 28 class(es).
+The class 'dot::Attributable' has no attributes.
+The class 'dot::Commentable' has the following attributes: 'comments' of type str.
+The class 'Statement' has no attributes.
+The class 'dot::Target' has the following attributes: 'operation' of type str.
+The class 'dot::EdgeStatement' has no attributes.
+The class 'dot::AbstractGraph' has no attributes.
+The class 'dot::Subgraph' has the following attributes: 'type' of type str.
+The class 'dot::NodeStatement' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'dot::Attribute' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'dot::Port' has the following attributes: 'compass' of type str.
+The class 'dot::NodeID' has no attributes.
+The class 'Attributable' has no attributes.
+The class 'dot::Connectable' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'StrictIdentifiable' has no attributes.
+The class 'dot::AList' has no attributes.
+The class 'AbstractGraph' has no attributes.
+The class 'dot::AttributeList' has no attributes.
+The class 'dot::Graph' has the following attributes: 'type' of type str; 'strict' of type str.
+The class 'dot::Statement' has no attributes.
+The class 'Connectable' has no attributes.
+The class 'dot::Identifiable' has the following attributes: 'id' of type str.
+The class 'dot::AttributeStatement' has the following attributes: 'context' of type str.
+The class 'dot::StrictIdentifiable' has the following attributes: 'id' of type str.
+The class 'dot::AssignmentStatement' has the following attributes: 'left' of type str; 'right' of type str.
+The class 'dot::StatementList' has no attributes.
+The class 'Attribute' has no attributes.
+The enumeration 'Compass' has the following literals: 'CENTER', 'NORTH_WEST', 'SOUTH_WEST', 'APPROPRIATE', 'NORTH', 'SOUTH', 'EAST', 'SOUTH_EAST', 'NORTH_EAST', 'WEST'.
+'dot::AttributeStatement' is a specialization of 'Commentable'.
+'dot::Subgraph' is a specialization of 'Connectable'.
+'dot::Graph' is a specialization of 'AbstractGraph'.
+'dot::AttributeStatement' is a specialization of 'Attributable'.
+'dot::Port' is a specialization of 'Identifiable'.
+'dot::StatementList' is a specialization of 'Commentable'.
+'dot::NodeStatement' is a specialization of 'Statement'.
+'dot::Graph' is a specialization of 'Commentable'.
+'dot::AssignmentStatement' is a specialization of 'Commentable'.
+'dot::AttributeStatement' is a specialization of 'Statement'.
+'dot::Subgraph' is a specialization of 'Commentable'.
+'dot::EdgeStatement' is a specialization of 'Statement'.
+'dot::AList' is a specialization of 'Commentable'.
+'dot::NodeID' is a specialization of 'Commentable'.
+'dot::AbstractGraph' is a specialization of 'Identifiable'.
+'dot::AssignmentStatement' is a specialization of 'Statement'.
+'dot::NodeStatement' is a specialization of 'Attributable'.
+'dot::Attribute' is a specialization of 'Commentable'.
+'dot::Port' is a specialization of 'Commentable'.
+'dot::NodeID' is a specialization of 'StrictIdentifiable'.
+'dot::EdgeStatement' is a specialization of 'Attributable'.
+'dot::Target' is a specialization of 'Commentable'.
+'dot::AttributeList' is a specialization of 'Commentable'.
+'dot::NodeID' is a specialization of 'Connectable'.
+'dot::Subgraph' is a specialization of 'AbstractGraph'.
+'dot::EdgeStatement' is a specialization of 'Commentable'.
+'dot::NodeStatement' is a specialization of 'Attribute'.
+'dot::AttributeList' (role 'dot_AttributeList9', cardinality 0..*) is associated with 'dot::AttributeList' (role 'dot_AttributeList11', cardinality 0..*).
+'dot::AList' (role 'dot_AList4', cardinality 0..*) is associated with 'dot::AList' (role 'dot_AList2', cardinality 0..*).
+'dot::StatementList' (role 'dot_StatementList20', cardinality 0..*) is associated with 'dot::StatementList' (role 'dot_StatementList22', cardinality 0..*).
+'dot::AList' (role 'dot_AList', cardinality 0..*) is associated with 'dot::Attribute' (role 'dot_Attribute', cardinality 0..*).
+'dot::Statement' (role 'dot_Statement', cardinality 0..*) is associated with 'dot::StatementList' (role 'dot_StatementList19', cardinality 0..*).
+'dot::StatementList' (role 'dot_StatementList', cardinality 0..*) is associated with 'dot::AbstractGraph' (role 'dot_AbstractGraph', cardinality 0..*).
+'dot::Target' (role 'dot_Target27', cardinality 0..*) is associated with 'dot::Connectable' (role 'dot_Connectable28', cardinality 0..*).
+'dot::NodeID' (role 'dot_NodeID', cardinality 0..*) is associated with 'dot::NodeStatement' (role 'dot_NodeStatement', cardinality 0..*).
+'dot::NodeID' (role 'dot_NodeID17', cardinality 0..*) is associated with 'dot::Port' (role 'dot_Port', cardinality 0..*).
+'dot::EdgeStatement' (role 'dot_EdgeStatement14', cardinality 0..*) is associated with 'dot::Target' (role 'dot_Target', cardinality 0..*).
+'dot::Target' (role 'dot_Target23', cardinality 0..*) is associated with 'dot::Target' (role 'dot_Target25', cardinality 0..*).
+'dot::Connectable' (role 'dot_Connectable', cardinality 0..*) is associated with 'dot::EdgeStatement' (role 'dot_EdgeStatement', cardinality 0..*).
+'dot::AList' (role 'dot_AList8', cardinality 0..*) is associated with 'dot::AttributeList' (role 'dot_AttributeList7', cardinality 0..*).
+'dot::AttributeList' (role 'dot_AttributeList', cardinality 0..*) is associated with 'dot::Attributable' (role 'dot_Attributable', cardinality 0..*).

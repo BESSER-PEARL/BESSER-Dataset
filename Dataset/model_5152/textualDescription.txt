@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'C' has no attributes.
+The class 'tests::A' has no attributes.
+The class 'tests::ObjectIntersectionOf::A::C' has no attributes.
+The class 'A' has no attributes.
+The class 'tests::ObjectUnionOf::A::B' has no attributes.
+The class 'tests::C' has no attributes.
+The class 'tests::B' has no attributes.
+The class 'ObjectIntersectionOf::A::C' has no attributes.
+The class 'ObjectUnionOf::A::B' has no attributes.
+'tests::B' is a specialization of 'ObjectIntersectionOf::A::C'.
+'tests::A' is a specialization of 'ObjectUnionOf::A::B'.
+'tests::ObjectIntersectionOf::A::C' is a specialization of 'C'.
+'tests::ObjectIntersectionOf::A::C' is a specialization of 'A'.
+'tests::B' is a specialization of 'ObjectUnionOf::A::B'.
+'tests::ObjectUnionOf::A::B' (role 'tests_ObjectUnionOf_A_B', cardinality 0..*) is associated with 'tests::A' (role 'tests_A', cardinality 0..*).

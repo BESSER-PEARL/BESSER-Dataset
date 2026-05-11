@@ -1,0 +1,128 @@
+The model has 33 class(es).
+The class 'myDsl::File' has no attributes.
+The class 'myDsl::Copy' has no attributes.
+The class 'myDsl::ArithOpDivide' has no attributes.
+The class 'myDsl::This' has no attributes.
+The class 'myDsl::Project' has the following attributes: 'name' of type str.
+The class 'myDsl::Seq' has no attributes.
+The class 'myDsl::Assign' has the following attributes: 'name' of type str.
+The class 'myDsl::Int' has the following attributes: 'value' of type int.
+The class 'myDsl::Skip' has no attributes.
+The class 'myDsl::If' has no attributes.
+The class 'myDsl::Fun' has the following attributes: 'name' of type str.
+The class 'myDsl::Var' has the following attributes: 'name' of type str.
+The class 'myDsl::Bool' has the following attributes: 'value' of type bool.
+The class 'myDsl::BObject' has no attributes.
+The class 'TopLevelCmd' has no attributes.
+The class 'myDsl::Def' has the following attributes: 'name' of type str.
+The class 'myDsl::CmpOpLess' has no attributes.
+The class 'myDsl::CmpOpEqual' has no attributes.
+The class 'myDsl::CmpOpUnequal' has no attributes.
+The class 'myDsl::ArithOpRemainder' has no attributes.
+The class 'Expr' has no attributes.
+The class 'myDsl::BoolOpOr' has no attributes.
+The class 'myDsl::With' has no attributes.
+The class 'myDsl::Field' has the following attributes: 'name' of type str.
+The class 'myDsl::ArithOpMinus' has no attributes.
+The class 'myDsl::BoolOpAnd' has no attributes.
+The class 'myDsl::ArithOpTimes' has no attributes.
+The class 'myDsl::TopLevelCmd' has no attributes.
+The class 'myDsl::ArithOpPlus' has no attributes.
+The class 'myDsl::Let' has the following attributes: 'name' of type str.
+The class 'myDsl::Expr' has no attributes.
+The class 'myDsl::App' has no attributes.
+The class 'myDsl::Not' has no attributes.
+'myDsl::If' is a specialization of 'Expr'.
+'myDsl::If' is a specialization of 'TopLevelCmd'.
+'myDsl::BoolOpOr' is a specialization of 'TopLevelCmd'.
+'myDsl::Not' is a specialization of 'Expr'.
+'myDsl::Var' is a specialization of 'TopLevelCmd'.
+'myDsl::Int' is a specialization of 'Expr'.
+'myDsl::ArithOpTimes' is a specialization of 'TopLevelCmd'.
+'myDsl::Project' is a specialization of 'Expr'.
+'myDsl::Copy' is a specialization of 'TopLevelCmd'.
+'myDsl::This' is a specialization of 'Expr'.
+'myDsl::Int' is a specialization of 'TopLevelCmd'.
+'myDsl::Assign' is a specialization of 'TopLevelCmd'.
+'myDsl::App' is a specialization of 'Expr'.
+'myDsl::BoolOpAnd' is a specialization of 'Expr'.
+'myDsl::Let' is a specialization of 'TopLevelCmd'.
+'myDsl::BObject' is a specialization of 'Expr'.
+'myDsl::ArithOpRemainder' is a specialization of 'Expr'.
+'myDsl::ArithOpPlus' is a specialization of 'TopLevelCmd'.
+'myDsl::ArithOpDivide' is a specialization of 'Expr'.
+'myDsl::With' is a specialization of 'Expr'.
+'myDsl::ArithOpMinus' is a specialization of 'TopLevelCmd'.
+'myDsl::CmpOpUnequal' is a specialization of 'Expr'.
+'myDsl::CmpOpEqual' is a specialization of 'TopLevelCmd'.
+'myDsl::CmpOpLess' is a specialization of 'TopLevelCmd'.
+'myDsl::BoolOpOr' is a specialization of 'Expr'.
+'myDsl::Var' is a specialization of 'Expr'.
+'myDsl::CmpOpLess' is a specialization of 'Expr'.
+'myDsl::ArithOpPlus' is a specialization of 'Expr'.
+'myDsl::Assign' is a specialization of 'Expr'.
+'myDsl::Project' is a specialization of 'TopLevelCmd'.
+'myDsl::Def' is a specialization of 'TopLevelCmd'.
+'myDsl::ArithOpDivide' is a specialization of 'TopLevelCmd'.
+'myDsl::Bool' is a specialization of 'Expr'.
+'myDsl::Not' is a specialization of 'TopLevelCmd'.
+'myDsl::Seq' is a specialization of 'Expr'.
+'myDsl::BObject' is a specialization of 'TopLevelCmd'.
+'myDsl::CmpOpUnequal' is a specialization of 'TopLevelCmd'.
+'myDsl::This' is a specialization of 'TopLevelCmd'.
+'myDsl::With' is a specialization of 'TopLevelCmd'.
+'myDsl::Seq' is a specialization of 'TopLevelCmd'.
+'myDsl::Fun' is a specialization of 'Expr'.
+'myDsl::Skip' is a specialization of 'Expr'.
+'myDsl::Let' is a specialization of 'Expr'.
+'myDsl::Skip' is a specialization of 'TopLevelCmd'.
+'myDsl::Fun' is a specialization of 'TopLevelCmd'.
+'myDsl::BoolOpAnd' is a specialization of 'TopLevelCmd'.
+'myDsl::Copy' is a specialization of 'Expr'.
+'myDsl::App' is a specialization of 'TopLevelCmd'.
+'myDsl::ArithOpTimes' is a specialization of 'Expr'.
+'myDsl::ArithOpRemainder' is a specialization of 'TopLevelCmd'.
+'myDsl::CmpOpEqual' is a specialization of 'Expr'.
+'myDsl::ArithOpMinus' is a specialization of 'Expr'.
+'myDsl::Bool' is a specialization of 'TopLevelCmd'.
+'myDsl::Expr' (role 'myDsl_Expr53', cardinality 0..*) is associated with 'myDsl::ArithOpTimes' (role 'myDsl_ArithOpTimes52', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr70', cardinality 0..*) is associated with 'myDsl::BoolOpOr' (role 'myDsl_BoolOpOr', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr75', cardinality 0..*) is associated with 'myDsl::Seq' (role 'myDsl_Seq', cardinality 0..*).
+'myDsl::CmpOpUnequal' (role 'myDsl_CmpOpUnequal', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr85', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr55', cardinality 0..*) is associated with 'myDsl::ArithOpDivide' (role 'myDsl_ArithOpDivide', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr78', cardinality 0..*) is associated with 'myDsl::Seq' (role 'myDsl_Seq77', cardinality 0..*).
+'myDsl::Project' (role 'myDsl_Project', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr8', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr43', cardinality 0..*) is associated with 'myDsl::ArithOpPlus' (role 'myDsl_ArithOpPlus42', cardinality 0..*).
+'myDsl::TopLevelCmd' (role 'myDsl_TopLevelCmd', cardinality 0..*) is associated with 'myDsl::File' (role 'myDsl_File', cardinality 0..*).
+'myDsl::Not' (role 'myDsl_Not', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr18', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr40', cardinality 0..*) is associated with 'myDsl::ArithOpPlus' (role 'myDsl_ArithOpPlus', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr28', cardinality 0..*) is associated with 'myDsl::Let' (role 'myDsl_Let', cardinality 0..*).
+'myDsl::Assign' (role 'myDsl_Assign', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr35', cardinality 0..*).
+'myDsl::BoolOpAnd' (role 'myDsl_BoolOpAnd67', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr68', cardinality 0..*).
+'myDsl::With' (role 'myDsl_With15', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr16', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr48', cardinality 0..*) is associated with 'myDsl::ArithOpMinus' (role 'myDsl_ArithOpMinus47', cardinality 0..*).
+'myDsl::CmpOpLess' (role 'myDsl_CmpOpLess', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr90', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr', cardinality 0..*) is associated with 'myDsl::Def' (role 'myDsl_Def', cardinality 0..*).
+'myDsl::BObject' (role 'myDsl_BObject', cardinality 0..*) is associated with 'myDsl::Field' (role 'myDsl_Field', cardinality 0..*).
+'myDsl::If' (role 'myDsl_If', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr20', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr33', cardinality 0..*) is associated with 'myDsl::Fun' (role 'myDsl_Fun', cardinality 0..*).
+'myDsl::CmpOpUnequal' (role 'myDsl_CmpOpUnequal87', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr88', cardinality 0..*).
+'myDsl::CmpOpEqual' (role 'myDsl_CmpOpEqual', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr80', cardinality 0..*).
+'myDsl::BoolOpOr' (role 'myDsl_BoolOpOr72', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr73', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr50', cardinality 0..*) is associated with 'myDsl::ArithOpTimes' (role 'myDsl_ArithOpTimes', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr63', cardinality 0..*) is associated with 'myDsl::ArithOpRemainder' (role 'myDsl_ArithOpRemainder62', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr83', cardinality 0..*) is associated with 'myDsl::CmpOpEqual' (role 'myDsl_CmpOpEqual82', cardinality 0..*).
+'myDsl::App' (role 'myDsl_App5', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr6', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr23', cardinality 0..*) is associated with 'myDsl::If' (role 'myDsl_If22', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr96', cardinality 0..*) is associated with 'myDsl::Field' (role 'myDsl_Field95', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr58', cardinality 0..*) is associated with 'myDsl::ArithOpDivide' (role 'myDsl_ArithOpDivide57', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr13', cardinality 0..*) is associated with 'myDsl::With' (role 'myDsl_With', cardinality 0..*).
+'myDsl::App' (role 'myDsl_App', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr3', cardinality 0..*).
+'myDsl::BoolOpAnd' (role 'myDsl_BoolOpAnd', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr65', cardinality 0..*).
+'myDsl::ArithOpRemainder' (role 'myDsl_ArithOpRemainder', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr60', cardinality 0..*).
+'myDsl::Let' (role 'myDsl_Let30', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr31', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr93', cardinality 0..*) is associated with 'myDsl::CmpOpLess' (role 'myDsl_CmpOpLess92', cardinality 0..*).
+'myDsl::Copy' (role 'myDsl_Copy', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr11', cardinality 0..*).
+'myDsl::Expr' (role 'myDsl_Expr45', cardinality 0..*) is associated with 'myDsl::ArithOpMinus' (role 'myDsl_ArithOpMinus', cardinality 0..*).
+'myDsl::Assign' (role 'myDsl_Assign37', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr38', cardinality 0..*).
+'myDsl::If' (role 'myDsl_If25', cardinality 0..*) is associated with 'myDsl::Expr' (role 'myDsl_Expr26', cardinality 0..*).

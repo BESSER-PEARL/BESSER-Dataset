@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'di::ContainerShape' has no attributes.
+The class 'di::DiNode' has the following attributes: 'modelElement' of type str.
+The class 'di::Diagram' has no attributes.
+The class 'di::EStringToStringMapEntry' has no attributes.
+The class 'di::Shape' has the following attributes: 'x' of type int; 'width' of type int; 'height' of type int; 'y' of type int.
+The class 'DiNode' has no attributes.
+The class 'ContainerShape' has no attributes.
+The class 'di::Link' has no attributes.
+'di::ContainerShape' is a specialization of 'DiNode'.
+'di::Diagram' is a specialization of 'ContainerShape'.
+'di::Shape' is a specialization of 'ContainerShape'.
+'di::Link' is a specialization of 'DiNode'.
+'di::Shape' (role 'di_Shape', cardinality 0..*) is associated with 'di::ContainerShape' (role 'di_ContainerShape', cardinality 0..*).
+'di::Diagram' (role 'di_Diagram', cardinality 0..*) is associated with 'di::Link' (role 'di_Link', cardinality 0..*).
+'di::Shape' (role 'Shape6', cardinality 0..*) is associated with 'di::Link' (role 'sourceLinks', cardinality 0..*).
+'di::Link' (role 'Link3', cardinality 0..*) is associated with 'di::Shape' (role 'source', cardinality 0..*).
+'di::Shape' (role 'Shape', cardinality 0..*) is associated with 'di::Link' (role 'targetLinks', cardinality 0..*).
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry', cardinality 0..*) is associated with 'di::DiNode' (role 'di_DiNode', cardinality 0..*).
+'di::Shape' (role 'target', cardinality 0..*) is associated with 'di::Link' (role 'Link', cardinality 0..*).

@@ -1,0 +1,71 @@
+The model has 28 class(es).
+The class 'gv::Graph' has the following attributes: 'type' of type str; 'strict' of type str.
+The class 'gv::Port' has the following attributes: 'compass' of type str.
+The class 'gv::Subgraph' has the following attributes: 'type' of type str.
+The class 'Statement' has no attributes.
+The class 'gv::AList' has no attributes.
+The class 'gv::AttributeList' has no attributes.
+The class 'gv::StatementList' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'gv::NodeStatement' has no attributes.
+The class 'Attributable' has no attributes.
+The class 'gv::AbstractGraph' has no attributes.
+The class 'StrictIdentifiable' has no attributes.
+The class 'gv::Commentable' has the following attributes: 'comments' of type str.
+The class 'AbstractGraph' has no attributes.
+The class 'gv::AttributeStatement' has the following attributes: 'context' of type str.
+The class 'gv::Identifiable' has the following attributes: 'id' of type str.
+The class 'gv::Statement' has no attributes.
+The class 'gv::NodeID' has no attributes.
+The class 'Connectable' has no attributes.
+The class 'gv::StrictIdentifiable' has the following attributes: 'id' of type str.
+The class 'gv::EdgeStatement' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'gv::AssignmentStatement' has the following attributes: 'right' of type str; 'left' of type str.
+The class 'Attribute' has no attributes.
+The class 'gv::Connectable' has no attributes.
+The class 'gv::Target' has the following attributes: 'operation' of type str.
+The class 'gv::Attributable' has no attributes.
+The class 'gv::Attribute' has the following attributes: 'key' of type str; 'value' of type str.
+The enumeration 'Compass' has the following literals: 'EAST', 'NORTH_WEST', 'CENTER', 'NORTH', 'NORTH_EAST', 'APPROPRIATE', 'SOUTH_EAST', 'SOUTH', 'WEST', 'SOUTH_WEST'.
+'gv::EdgeStatement' is a specialization of 'Commentable'.
+'gv::Graph' is a specialization of 'AbstractGraph'.
+'gv::AttributeStatement' is a specialization of 'Statement'.
+'gv::AList' is a specialization of 'Commentable'.
+'gv::NodeID' is a specialization of 'Connectable'.
+'gv::AssignmentStatement' is a specialization of 'Commentable'.
+'gv::NodeStatement' is a specialization of 'Attributable'.
+'gv::StatementList' is a specialization of 'Commentable'.
+'gv::NodeID' is a specialization of 'Commentable'.
+'gv::Subgraph' is a specialization of 'Commentable'.
+'gv::AbstractGraph' is a specialization of 'Identifiable'.
+'gv::Target' is a specialization of 'Commentable'.
+'gv::Attribute' is a specialization of 'Commentable'.
+'gv::Subgraph' is a specialization of 'AbstractGraph'.
+'gv::Subgraph' is a specialization of 'Connectable'.
+'gv::EdgeStatement' is a specialization of 'Statement'.
+'gv::Port' is a specialization of 'Identifiable'.
+'gv::NodeStatement' is a specialization of 'Attribute'.
+'gv::AssignmentStatement' is a specialization of 'Statement'.
+'gv::Graph' is a specialization of 'Commentable'.
+'gv::AttributeStatement' is a specialization of 'Commentable'.
+'gv::NodeID' is a specialization of 'StrictIdentifiable'.
+'gv::Port' is a specialization of 'Commentable'.
+'gv::NodeStatement' is a specialization of 'Statement'.
+'gv::AttributeList' is a specialization of 'Commentable'.
+'gv::EdgeStatement' is a specialization of 'Attributable'.
+'gv::Target' (role 'gv_Target29', cardinality 0..*) is associated with 'gv::Connectable' (role 'gv_Connectable30', cardinality 0..*).
+'gv::Connectable' (role 'gv_Connectable', cardinality 0..*) is associated with 'gv::EdgeStatement' (role 'gv_EdgeStatement', cardinality 0..*).
+'gv::AttributeList' (role 'gv_AttributeList9', cardinality 0..*) is associated with 'gv::AttributeList' (role 'gv_AttributeList11', cardinality 0..*).
+'gv::AttributeStatement' (role 'gv_AttributeStatement', cardinality 0..*) is associated with 'gv::AttributeList' (role 'gv_AttributeList13', cardinality 0..*).
+'gv::AList' (role 'gv_AList2', cardinality 0..*) is associated with 'gv::AList' (role 'gv_AList4', cardinality 0..*).
+'gv::AList' (role 'gv_AList8', cardinality 0..*) is associated with 'gv::AttributeList' (role 'gv_AttributeList7', cardinality 0..*).
+'gv::Port' (role 'gv_Port', cardinality 0..*) is associated with 'gv::NodeID' (role 'gv_NodeID19', cardinality 0..*).
+'gv::StatementList' (role 'gv_StatementList21', cardinality 0..*) is associated with 'gv::Statement' (role 'gv_Statement', cardinality 0..*).
+'gv::Target' (role 'gv_Target25', cardinality 0..*) is associated with 'gv::Target' (role 'gv_Target27', cardinality 0..*).
+'gv::StatementList' (role 'gv_StatementList22', cardinality 0..*) is associated with 'gv::StatementList' (role 'gv_StatementList24', cardinality 0..*).
+'gv::AList' (role 'gv_AList', cardinality 0..*) is associated with 'gv::Attribute' (role 'gv_Attribute', cardinality 0..*).
+'gv::Attributable' (role 'gv_Attributable', cardinality 0..*) is associated with 'gv::AttributeList' (role 'gv_AttributeList', cardinality 0..*).
+'gv::NodeStatement' (role 'gv_NodeStatement', cardinality 0..*) is associated with 'gv::NodeID' (role 'gv_NodeID', cardinality 0..*).
+'gv::Target' (role 'gv_Target', cardinality 0..*) is associated with 'gv::EdgeStatement' (role 'gv_EdgeStatement16', cardinality 0..*).
+'gv::AbstractGraph' (role 'gv_AbstractGraph', cardinality 0..*) is associated with 'gv::StatementList' (role 'gv_StatementList', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wbombardellis/BachelorThesis_WilliamBombardelliDaSilva/Examples/de.mdelab.mltgg.UmlClassDiagram2Java/model/classDiagram.ecore

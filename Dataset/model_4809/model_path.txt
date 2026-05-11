@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tolland/chefclipse/libs/emfjson/tests/org.eclipselabs.emfjson.junit/model/model.ecore

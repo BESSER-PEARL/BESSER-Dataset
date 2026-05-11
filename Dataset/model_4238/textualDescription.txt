@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'company::Person' has the following attributes: 'age' of type int; 'name' of type str; 'isUnemployed' of type bool; 'gender' of type str; 'salary' of type int; 'lastname' of type str.
+The class 'company::Company' has the following attributes: 'numberOfManager' of type int; 'name' of type str.
+The enumeration 'Gender' has the following literals: 'male', 'female'.
+'company::Person' (role 'manager', cardinality 0..*) is associated with 'company::Company' (role 'Company', cardinality 0..*).
+'company::Person' (role 'Person', cardinality 0..*) is associated with 'company::Company' (role 'managerCompanies', cardinality 0..*).

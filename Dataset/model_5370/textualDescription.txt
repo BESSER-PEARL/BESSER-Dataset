@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'RHS::X' has the following attributes: 'name' of type str.
+The class 'RHS::Y' has the following attributes: 'name' of type str.
+'RHS::Y' (role 'RHS_Y', cardinality 0..*) is associated with 'RHS::X' (role 'RHS_X', cardinality 0..*).

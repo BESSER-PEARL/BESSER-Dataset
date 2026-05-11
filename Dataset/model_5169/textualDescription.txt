@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'b::Model' has no attributes.
+The class 'b::B' has the following attributes: 'id' of type str.
+'b::Model' (role 'b_Model', cardinality 0..*) is associated with 'b::B' (role 'b_B', cardinality 0..*).

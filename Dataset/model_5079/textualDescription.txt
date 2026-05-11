@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'test::Input' has the following attributes: 'key' of type str; 'test' of type str.
+The class 'test::Output' has the following attributes: 'key' of type str.

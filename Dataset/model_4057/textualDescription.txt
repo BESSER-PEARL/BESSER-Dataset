@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'classdiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'classdiagram::Attribute' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'classdiagram::Method' has no attributes.
+The class 'classdiagram::Class' has no attributes.
+'classdiagram::Method' is a specialization of 'NamedElement'.
+'classdiagram::Attribute' is a specialization of 'NamedElement'.
+'classdiagram::Class' is a specialization of 'NamedElement'.
+'classdiagram::Class' (role 'Class', cardinality 0..*) is associated with 'classdiagram::Class' (role 'children', cardinality 0..*).
+'classdiagram::Class' (role 'Class4', cardinality 0..*) is associated with 'classdiagram::Class' (role 'super', cardinality 0..*).
+'classdiagram::Method' (role 'classdiagram_Method', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class7', cardinality 0..*).
+'classdiagram::Attribute' (role 'classdiagram_Attribute', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class', cardinality 0..*).

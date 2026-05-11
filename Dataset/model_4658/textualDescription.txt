@@ -1,0 +1,40 @@
+The model has 17 class(es).
+The class 'di::Point' has no attributes.
+The class 'di::LabeledEdge' has no attributes.
+The class 'di::Node' has no attributes.
+The class 'di::Label' has no attributes.
+The class 'di::Plane' has no attributes.
+The class 'di::Edge' has no attributes.
+The class 'di::Bounds' has no attributes.
+The class 'di::LabeledShape' has no attributes.
+The class 'Node' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'di::Diagram' has the following attributes: 'name' of type str; 'resolution' of type float; 'documentation' of type str.
+The class 'Edge' has no attributes.
+The class 'Shape' has no attributes.
+The class 'di::Style' has no attributes.
+The class 'di::Shape' has no attributes.
+The class 'di::DiagramElement' has no attributes.
+The class 'di::EObject' has no attributes.
+'di::Edge' is a specialization of 'DiagramElement'.
+'di::LabeledEdge' is a specialization of 'Edge'.
+'di::LabeledShape' is a specialization of 'Shape'.
+'di::Plane' is a specialization of 'Node'.
+'di::Node' is a specialization of 'DiagramElement'.
+'di::Label' is a specialization of 'Node'.
+'di::Shape' is a specialization of 'Node'.
+'di::Label' (role 'di_Label23', cardinality 0..*) is associated with 'di::Bounds' (role 'di_Bounds24', cardinality 0..*).
+'di::Plane' (role 'di_Plane', cardinality 0..*) is associated with 'di::DiagramElement' (role 'di_DiagramElement28', cardinality 0..*).
+'di::DiagramElement' (role 'DiagramElement12', cardinality 0..*) is associated with 'di::Diagram' (role 'owningDiagram', cardinality 0..*).
+'di::DiagramElement' (role 'di_DiagramElement', cardinality 0..*) is associated with 'di::EObject' (role 'di_EObject', cardinality 0..*).
+'di::DiagramElement' (role 'di_DiagramElement8', cardinality 0..*) is associated with 'di::Style' (role 'di_Style', cardinality 0..*).
+'di::Edge' (role 'di_Edge16', cardinality 0..*) is associated with 'di::DiagramElement' (role 'di_DiagramElement17', cardinality 0..*).
+'di::Edge' (role 'di_Edge19', cardinality 0..*) is associated with 'di::Point' (role 'di_Point', cardinality 0..*).
+'di::Shape' (role 'di_Shape', cardinality 0..*) is associated with 'di::Bounds' (role 'di_Bounds', cardinality 0..*).
+'di::DiagramElement' (role 'ownedElement', cardinality 0..*) is associated with 'di::DiagramElement' (role 'DiagramElement', cardinality 0..*).
+'di::DiagramElement' (role 'rootElement', cardinality 0..*) is associated with 'di::Diagram' (role 'Diagram', cardinality 0..*).
+'di::DiagramElement' (role 'owningElement', cardinality 0..*) is associated with 'di::DiagramElement' (role 'DiagramElement5', cardinality 0..*).
+'di::Label' (role 'di_Label26', cardinality 0..*) is associated with 'di::LabeledShape' (role 'di_LabeledShape', cardinality 0..*).
+'di::Edge' (role 'di_Edge', cardinality 0..*) is associated with 'di::DiagramElement' (role 'di_DiagramElement14', cardinality 0..*).
+'di::Label' (role 'di_Label', cardinality 0..*) is associated with 'di::LabeledEdge' (role 'di_LabeledEdge', cardinality 0..*).
+'di::Diagram' (role 'di_Diagram', cardinality 0..*) is associated with 'di::Style' (role 'di_Style10', cardinality 0..*).

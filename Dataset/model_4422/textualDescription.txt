@@ -1,0 +1,36 @@
+The model has 16 class(es).
+The class 'ArduinoMetamodel::delay' has no attributes.
+The class 'Pin' has no attributes.
+The class 'ArduinoMetamodel::Project' has no attributes.
+The class 'ArduinoMetamodel::PWM' has no attributes.
+The class 'ArduinoMetamodel::Analog' has the following attributes: 'ID' of type str.
+The class 'ArduinoMetamodel::State' has the following attributes: 'name' of type str; 'isInitial' of type bool.
+The class 'ArduinoMetamodel::Metodo' has the following attributes: 'nombre' of type str.
+The class 'ArduinoMetamodel::FiniteStateMachine' has no attributes.
+The class 'ArduinoMetamodel::Instruccion' has the following attributes: 'codigo' of type str.
+The class 'ArduinoMetamodel::ArduinoBoardUNO' has no attributes.
+The class 'ArduinoMetamodel::Pin' has the following attributes: 'pinMode' of type str; 'label' of type str.
+The class 'ArduinoMetamodel::Digital' has the following attributes: 'ID' of type str.
+The class 'ArduinoMetamodel::Transition' has no attributes.
+The class 'ArduinoMetamodel::Action' has no attributes.
+The class 'Instruccion' has no attributes.
+The class 'Analog' has no attributes.
+The enumeration 'DigitalID' has the following literals: 'D7', 'D2', 'D12', 'D8', 'D4', 'D13'.
+The enumeration 'AnalogID' has the following literals: 'A0', 'A5', 'A4', 'A1', 'A6', 'A2', 'A3'.
+The enumeration 'PinMode' has the following literals: 'INPUT', 'OUTPUT', 'INPUT_PULLUP'.
+'ArduinoMetamodel::Analog' is a specialization of 'Pin'.
+'ArduinoMetamodel::Digital' is a specialization of 'Pin'.
+'ArduinoMetamodel::delay' is a specialization of 'Instruccion'.
+'ArduinoMetamodel::PWM' is a specialization of 'Analog'.
+'ArduinoMetamodel::Analog' (role 'ArduinoMetamodel_Analog', cardinality 0..*) is associated with 'ArduinoMetamodel::ArduinoBoardUNO' (role 'ArduinoMetamodel_ArduinoBoardUNO8', cardinality 0..*).
+'ArduinoMetamodel::FiniteStateMachine' (role 'ArduinoMetamodel_FiniteStateMachine19', cardinality 0..*) is associated with 'ArduinoMetamodel::State' (role 'ArduinoMetamodel_State', cardinality 0..*).
+'ArduinoMetamodel::Digital' (role 'ArduinoMetamodel_Digital', cardinality 0..*) is associated with 'ArduinoMetamodel::ArduinoBoardUNO' (role 'ArduinoMetamodel_ArduinoBoardUNO6', cardinality 0..*).
+'ArduinoMetamodel::Transition' (role 'incoming', cardinality 0..*) is associated with 'ArduinoMetamodel::State' (role 'State17', cardinality 0..*).
+'ArduinoMetamodel::Transition' (role 'Transition13', cardinality 0..*) is associated with 'ArduinoMetamodel::State' (role 'source', cardinality 0..*).
+'ArduinoMetamodel::State' (role 'target', cardinality 0..*) is associated with 'ArduinoMetamodel::Transition' (role 'Transition', cardinality 0..*).
+'ArduinoMetamodel::Metodo' (role 'ArduinoMetamodel_Metodo10', cardinality 0..*) is associated with 'ArduinoMetamodel::Instruccion' (role 'ArduinoMetamodel_Instruccion', cardinality 0..*).
+'ArduinoMetamodel::Project' (role 'ArduinoMetamodel_Project4', cardinality 0..*) is associated with 'ArduinoMetamodel::FiniteStateMachine' (role 'ArduinoMetamodel_FiniteStateMachine', cardinality 0..*).
+'ArduinoMetamodel::Action' (role 'ArduinoMetamodel_Action', cardinality 0..*) is associated with 'ArduinoMetamodel::Transition' (role 'ArduinoMetamodel_Transition', cardinality 0..*).
+'ArduinoMetamodel::ArduinoBoardUNO' (role 'ArduinoMetamodel_ArduinoBoardUNO', cardinality 0..*) is associated with 'ArduinoMetamodel::Project' (role 'ArduinoMetamodel_Project', cardinality 0..*).
+'ArduinoMetamodel::State' (role 'State', cardinality 0..*) is associated with 'ArduinoMetamodel::Transition' (role 'outgoing', cardinality 0..*).
+'ArduinoMetamodel::Project' (role 'ArduinoMetamodel_Project2', cardinality 0..*) is associated with 'ArduinoMetamodel::Metodo' (role 'ArduinoMetamodel_Metodo', cardinality 0..*).

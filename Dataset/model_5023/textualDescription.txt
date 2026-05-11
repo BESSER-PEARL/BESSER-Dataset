@@ -1,0 +1,35 @@
+The model has 13 class(es).
+The class 'ordersystem::Address' has the following attributes: 'apartment' of type str; 'province' of type str; 'number' of type str; 'city' of type str; 'postalCode' of type str; 'country' of type str; 'street' of type str.
+The class 'ordersystem::Warehouse' has the following attributes: 'name' of type str.
+The class 'ordersystem::Order' has the following attributes: 'placedOn' of type str; 'filledOn' of type str; 'completed' of type bool; 'id' of type str.
+The class 'Product' has no attributes.
+The class 'ordersystem::Account' has the following attributes: 'paymentMethod' of type str; 'accountNumber' of type str.
+The class 'ordersystem::LineItem' has the following attributes: 'quantity' of type int; 'discount' of type float.
+The class 'ordersystem::InventoryItem' has the following attributes: 'nextStockDate' of type str; 'restockThreshold' of type int; 'inStock' of type int.
+The class 'ordersystem::OrderSystem' has the following attributes: 'version' of type int.
+The class 'ordersystem::special::LimitedEditionProduct' has the following attributes: 'availableUntil' of type str.
+The class 'ordersystem::special::PreferredCustomer' has the following attributes: 'since' of type str.
+The class 'ordersystem::Product' has the following attributes: 'price' of type float; 'sku' of type str; 'name' of type str.
+The class 'ordersystem::Customer' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+The class 'Customer' has no attributes.
+'ordersystem::special::LimitedEditionProduct' is a specialization of 'Product'.
+'ordersystem::special::PreferredCustomer' is a specialization of 'Customer'.
+'ordersystem::Customer' (role 'owner27', cardinality 0..*) is associated with 'ordersystem::Order' (role 'Order28', cardinality 0..*).
+'ordersystem::Warehouse' (role 'Warehouse14', cardinality 0..*) is associated with 'ordersystem::OrderSystem' (role 'owner13', cardinality 0..*).
+'ordersystem::Account' (role 'ordersystem_Account34', cardinality 0..*) is associated with 'ordersystem::Address' (role 'ordersystem_Address35', cardinality 0..*).
+'ordersystem::OrderSystem' (role 'OrderSystem', cardinality 0..*) is associated with 'ordersystem::Product' (role 'product', cardinality 0..*).
+'ordersystem::Product' (role 'ordersystem_Product21', cardinality 0..*) is associated with 'ordersystem::InventoryItem' (role 'ordersystem_InventoryItem', cardinality 0..*).
+'ordersystem::Order' (role 'order', cardinality 0..*) is associated with 'ordersystem::Customer' (role 'Customer', cardinality 0..*).
+'ordersystem::Warehouse' (role 'Warehouse', cardinality 0..*) is associated with 'ordersystem::InventoryItem' (role 'InventoryItem', cardinality 0..*).
+'ordersystem::Account' (role 'ordersystem_Account', cardinality 0..*) is associated with 'ordersystem::Address' (role 'ordersystem_Address32', cardinality 0..*).
+'ordersystem::Order' (role 'Order', cardinality 0..*) is associated with 'ordersystem::LineItem' (role 'item', cardinality 0..*).
+'ordersystem::OrderSystem' (role 'OrderSystem4', cardinality 0..*) is associated with 'ordersystem::Warehouse' (role 'warehouse', cardinality 0..*).
+'ordersystem::Account' (role 'Account', cardinality 0..*) is associated with 'ordersystem::Customer' (role 'owner25', cardinality 0..*).
+'ordersystem::OrderSystem' (role 'OrderSystem23', cardinality 0..*) is associated with 'ordersystem::Customer' (role 'customer', cardinality 0..*).
+'ordersystem::OrderSystem' (role 'owner8', cardinality 0..*) is associated with 'ordersystem::Customer' (role 'Customer9', cardinality 0..*).
+'ordersystem::Account' (role 'account', cardinality 0..*) is associated with 'ordersystem::Customer' (role 'Customer30', cardinality 0..*).
+'ordersystem::LineItem' (role 'ordersystem_LineItem', cardinality 0..*) is associated with 'ordersystem::Product' (role 'ordersystem_Product', cardinality 0..*).
+'ordersystem::Warehouse' (role 'ordersystem_Warehouse', cardinality 0..*) is associated with 'ordersystem::Address' (role 'ordersystem_Address', cardinality 0..*).
+'ordersystem::InventoryItem' (role 'item18', cardinality 0..*) is associated with 'ordersystem::Warehouse' (role 'Warehouse19', cardinality 0..*).
+'ordersystem::LineItem' (role 'LineItem', cardinality 0..*) is associated with 'ordersystem::Order' (role 'owner', cardinality 0..*).
+'ordersystem::OrderSystem' (role 'owner11', cardinality 0..*) is associated with 'ordersystem::Product' (role 'Product', cardinality 0..*).

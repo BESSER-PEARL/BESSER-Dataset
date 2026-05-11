@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'hExample::1::LHS::A' has no attributes.
+The class 'hExample::1::LHS::B' has the following attributes: 'name' of type str.
+'hExample::1::LHS::A' (role 'hExample_1_LHS_A', cardinality 0..*) is associated with 'hExample::1::LHS::B' (role 'hExample_1_LHS_B', cardinality 0..*).

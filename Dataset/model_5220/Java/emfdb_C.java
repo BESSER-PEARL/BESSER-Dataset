@@ -1,0 +1,52 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class emfdb_C  {
+
+    private String key;
+    private String value;
+
+
+
+
+
+    private emfdb_A emfdb_a;
+
+
+    public emfdb_C(
+        String key,        String value    ) {
+        this.key = key;
+        this.value = value;
+    }
+
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public emfdb_A getEmfdb_a() {
+        return emfdb_a;
+    }
+
+    public void setEmfdb_a(emfdb_A emfdb_a) {
+        this.emfdb_a = emfdb_a;
+    }
+
+}

@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Segment' has no attributes.
+The class 'kmLogo::VM::Turtle' has the following attributes: 'heading' of type str; 'penUp' of type str.
+The class 'kmLogo::VM::Point' has the following attributes: 'y' of type str; 'x' of type str.
+The class 'Point' has no attributes.
+The class 'kmLogo::VM::Segment' has no attributes.
+'Point' (role 'Point', cardinality 0..*) is associated with 'kmLogo::VM::Turtle' (role 'kmLogo_VM_Turtle', cardinality 0..*).
+'kmLogo::VM::Turtle' (role 'kmLogo_VM_Turtle4', cardinality 0..*) is associated with 'Point' (role 'Point5', cardinality 0..*).
+'kmLogo::VM::Segment' (role 'kmLogo_VM_Segment9', cardinality 0..*) is associated with 'Point' (role 'Point10', cardinality 0..*).
+'Point' (role 'Point7', cardinality 0..*) is associated with 'kmLogo::VM::Segment' (role 'kmLogo_VM_Segment', cardinality 0..*).
+'Segment' (role 'Segment', cardinality 0..*) is associated with 'kmLogo::VM::Turtle' (role 'kmLogo_VM_Turtle2', cardinality 0..*).

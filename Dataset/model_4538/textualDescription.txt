@@ -1,0 +1,23 @@
+The model has 13 class(es).
+The class 'roc::EObject' has no attributes.
+The class 'roc::Action' has the following attributes: 'intensity' of type str.
+The class 'roc::SingleAction' has the following attributes: 'actionName' of type str.
+The class 'roc::LeftRightDirection' has the following attributes: 'left' of type str; 'right' of type str.
+The class 'roc::CompleteAction' has the following attributes: 'actionName' of type str.
+The class 'roc::Movement' has no attributes.
+The class 'roc::Motion' has the following attributes: 'durationUnit' of type str; 'duration' of type str.
+The class 'roc::DirectedAction' has no attributes.
+The class 'roc::FullDirectedAction' has the following attributes: 'turnEyes' of type str; 'turnHead' of type str.
+The class 'roc::LeftRightDirectedAction' has the following attributes: 'tiltHead' of type str.
+The class 'roc::Direction' has the following attributes: 'RIGHT' of type str; 'DOWN' of type str; 'UP' of type str; 'LEFT' of type str.
+The class 'roc::Program' has no attributes.
+The class 'roc::Speed' has the following attributes: 'FULL' of type str; 'SLOWEST' of type str; 'NORMAL' of type str; 'FAST' of type str; 'SLOW' of type str.
+The enumeration 'Intensity' has the following literals: 'C', 'A', 'D', 'B', 'E'.
+The enumeration 'DurationUnit' has the following literals: 'MINUTES', 'MILLISECONDS', 'SECONDS'.
+'roc::Movement' (role 'roc_Movement2', cardinality 0..*) is associated with 'roc::Motion' (role 'roc_Motion', cardinality 0..*).
+'roc::Motion' (role 'roc_Motion4', cardinality 0..*) is associated with 'roc::Action' (role 'roc_Action', cardinality 0..*).
+'roc::DirectedAction' (role 'roc_DirectedAction', cardinality 0..*) is associated with 'roc::EObject' (role 'roc_EObject10', cardinality 0..*).
+'roc::Action' (role 'roc_Action8', cardinality 0..*) is associated with 'roc::EObject' (role 'roc_EObject', cardinality 0..*).
+'roc::Speed' (role 'roc_Speed', cardinality 0..*) is associated with 'roc::Motion' (role 'roc_Motion6', cardinality 0..*).
+'roc::Program' (role 'roc_Program', cardinality 0..*) is associated with 'roc::Movement' (role 'roc_Movement', cardinality 0..*).
+'roc::DirectedAction' (role 'roc_DirectedAction12', cardinality 0..*) is associated with 'roc::EObject' (role 'roc_EObject13', cardinality 0..*).

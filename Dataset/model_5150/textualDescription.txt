@@ -1,0 +1,259 @@
+The model has 57 class(es).
+The class 'xhtml::Ol' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str; 'li' of type str.
+The class 'xhtml::AContent' has the following attributes: 'mixed' of type str; 'group' of type str.
+The class 'xhtml::Flow' has the following attributes: 'mixed' of type str; 'group' of type str.
+The class 'xhtml::I' has the following attributes: 'class_' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::Em' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::Img' has the following attributes: 'hl7Id' of type str; 'width' of type str; 'height' of type str; 'src' of type str; 'class_' of type str; 'alt' of type str; 'lang' of type str; 'style' of type str; 'imageType' of type str.
+The class 'xhtml::Th' has the following attributes: 'valign' of type str; 'class_' of type str; 'style' of type str; 'charoff' of type str; 'align' of type str; 'colspan' of type str; 'rowspan' of type str; 'lang' of type str; 'char' of type str.
+The class 'xhtml::Samp' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Hr' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::Strong' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Acronym' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Span' has the following attributes: 'style' of type str; 'class_' of type str; 'lang' of type str.
+The class 'xhtml::Dl' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str; 'group' of type str.
+The class 'Flow' has no attributes.
+The class 'xhtml::A' has the following attributes: 'shape' of type str; 'coords' of type str; 'name' of type str; 'href' of type str; 'class_' of type str; 'type' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::Colgroup' has the following attributes: 'span' of type str; 'align' of type str; 'charoff' of type str; 'class_' of type str; 'width' of type str; 'lang' of type str; 'char' of type str; 'style' of type str; 'valign' of type str.
+The class 'xhtml::Pre' has the following attributes: 'lang' of type str; 'space' of type str; 'class_' of type str; 'style' of type str.
+The class 'xhtml::Td' has the following attributes: 'style' of type str; 'valign' of type str; 'charoff' of type str; 'align' of type str; 'rowspan' of type str; 'colspan' of type str; 'class_' of type str; 'char' of type str; 'lang' of type str.
+The class 'Inline' has no attributes.
+The class 'xhtml::Sub' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::Caption' has the following attributes: 'class_' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::Tt' has the following attributes: 'style' of type str; 'class_' of type str; 'lang' of type str.
+The class 'PreContent' has no attributes.
+The class 'xhtml::Del' has no attributes.
+The class 'xhtml::Br' has the following attributes: 'style' of type str; 'class_' of type str.
+The class 'xhtml::Table' has the following attributes: 'border' of type str; 'rules' of type str; 'frame' of type str; 'lang' of type str; 'width' of type str; 'cellspacing' of type str; 'style' of type str; 'cellpadding' of type str; 'class_' of type str; 'hl7Id' of type str.
+The class 'xhtml::Tfoot' has the following attributes: 'align' of type str; 'valign' of type str; 'charoff' of type str; 'class_' of type str; 'style' of type str; 'char' of type str; 'lang' of type str.
+The class 'xhtml::Blockquote' has the following attributes: 'class_' of type str; 'style' of type str; 'cite' of type str; 'lang' of type str.
+The class 'xhtml::Q' has the following attributes: 'cite1' of type str; 'lang' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::Li' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Dd' has the following attributes: 'class_' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::Ul' has the following attributes: 'style' of type str; 'class_' of type str; 'li' of type str; 'lang' of type str.
+The class 'xhtml::Dt' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::Tr' has the following attributes: 'style' of type str; 'char' of type str; 'charoff' of type str; 'align' of type str; 'group' of type str; 'valign' of type str; 'class_' of type str; 'lang' of type str.
+The class 'Block' has no attributes.
+The class 'xhtml::Code' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::P' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::Thead' has the following attributes: 'lang' of type str; 'class_' of type str; 'style' of type str; 'char' of type str; 'charoff' of type str; 'align' of type str; 'valign' of type str.
+The class 'xhtml::Var' has the following attributes: 'style' of type str; 'class_' of type str; 'lang' of type str.
+The class 'xhtml::Dfn' has the following attributes: 'style' of type str; 'class_' of type str; 'lang' of type str.
+The class 'xhtml::Cite' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::Kbd' has the following attributes: 'lang' of type str; 'class_' of type str; 'style' of type str.
+The class 'xhtml::Object' has the following attributes: 'mixed' of type str; 'group' of type str; 'hl7Id' of type str; 'name' of type str.
+The class 'xhtml::Sup' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Small' has the following attributes: 'style' of type str; 'lang' of type str; 'class_' of type str.
+The class 'xhtml::Ins' has no attributes.
+The class 'xhtml::Param' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'xhtml::Block' has the following attributes: 'block' of type str; 'mixed' of type str.
+The class 'xhtml::Col' has the following attributes: 'class_' of type str; 'style' of type str; 'align' of type str; 'charoff' of type str; 'span' of type str; 'width' of type str; 'char' of type str; 'lang' of type str; 'valign' of type str.
+The class 'xhtml::Div' has the following attributes: 'lang' of type str; 'title' of type str; 'hl7Id' of type str; 'style' of type str; 'class_' of type str.
+The class 'AContent' has no attributes.
+The class 'xhtml::B' has the following attributes: 'lang' of type str; 'style' of type str; 'class_' of type str.
+The class 'xhtml::Abbr' has the following attributes: 'class_' of type str; 'lang' of type str; 'style' of type str.
+The class 'xhtml::Big' has the following attributes: 'class_' of type str; 'style' of type str; 'lang' of type str.
+The class 'xhtml::Tbody' has the following attributes: 'lang' of type str; 'valign' of type str; 'align' of type str; 'class_' of type str; 'char' of type str; 'charoff' of type str; 'style' of type str.
+The class 'xhtml::Inline' has the following attributes: 'mixed' of type str; 'inline' of type str.
+The class 'xhtml::PreContent' has the following attributes: 'mixed' of type str; 'group' of type str.
+The enumeration 'ImageKind' has the following literals: 'imageGif', 'applicationPng', 'applicationPostscript', 'applicationJpeg', 'applicationSvgXml', 'applicationPdf'.
+The enumeration 'StyleSheet' has the following literals: 'BackgroundPink', 'NonNumbered', 'Indent', 'Note', 'BackgroundYellow', 'Requirement', 'BackgroundLime', 'BackgroundAqua'.
+The enumeration 'MifClassType' has the following literals: 'inserted', 'changed', 'deleted'.
+The enumeration 'TRules' has the following literals: 'rows', 'cols', 'groups', 'all', 'none'.
+The enumeration 'ParamName' has the following literals: 'constructType', 'artifact', 'code', 'domain', 'item', 'propertyName', 'annotationKind', 'realmNamespace', 'supplierBindingArgumentDatatype', 'conversionDatatype', 'relationshipName', 'stateName', 'root', 'version', 'subArtifact', 'termName', 'group', 'datatypeName', 'artifactName', 'codeSystemId', 'withinClassName', 'linkToEnd', 'attributeName', 'name', 'className', 'stateTransitionName', 'subjectAreaName', 'id'.
+The enumeration 'ObjectName' has the following literals: 'datatypeRef', 'subjectAreaRef', 'triggerEventRef', 'testCaseRef', 'testScenarioRef', 'itemName', 'transitionRef', 'storyboardRef', 'propertyRef', 'glossaryRef', 'glossaryTermRef', 'datatypeModelRef', 'interactionRef', 'vocabularyModelRef', 'vocabularyCodeSystemRef', 'associationEndRef', 'vocabularyValueSetRef', 'requirementRef', 'freehandDocumentRef', 'publicationRef', 'externalSpecRef', 'packageRef', 'stateRef', 'annotationRef', 'artifactGroupRef', 'footnote', 'figureRef', 'applicationRoleRef', 'attributeRef', 'domainInstanceExampleRef', 'staticModelRef', 'tableRef', 'conceptDomainRef', 'domainAnalysisModelRef', 'classRef', 'constructedElement', 'vocabularyCodeRef'.
+The enumeration 'ValignType' has the following literals: 'middle', 'bottom', 'top', 'baseline'.
+The enumeration 'TFrame' has the following literals: 'hsides', 'vsides', 'above', 'box', 'border', 'below', 'void', 'rhs', 'lhs'.
+The enumeration 'AlignType' has the following literals: 'right', 'justify', 'char', 'center', 'left'.
+The enumeration 'Shape' has the following literals: 'default', 'circle', 'rect', 'poly'.
+The enumeration 'MediaType' has the following literals: 'textPlain', 'audioMpeg', 'imagePng', 'applicationPdf', 'textXml', 'applicationMsword', 'imageJpeg', 'videoMpeg', 'textRtf', 'textHtml', 'imageGif'.
+'xhtml::P' is a specialization of 'Inline'.
+'xhtml::Big' is a specialization of 'Inline'.
+'xhtml::Kbd' is a specialization of 'Inline'.
+'xhtml::Cite' is a specialization of 'Inline'.
+'xhtml::Li' is a specialization of 'Flow'.
+'xhtml::Td' is a specialization of 'Flow'.
+'xhtml::Var' is a specialization of 'Inline'.
+'xhtml::Em' is a specialization of 'Inline'.
+'xhtml::Small' is a specialization of 'Inline'.
+'xhtml::B' is a specialization of 'Inline'.
+'xhtml::Code' is a specialization of 'Inline'.
+'xhtml::Caption' is a specialization of 'Inline'.
+'xhtml::Del' is a specialization of 'Flow'.
+'xhtml::Dd' is a specialization of 'Flow'.
+'xhtml::Ins' is a specialization of 'Flow'.
+'xhtml::A' is a specialization of 'AContent'.
+'xhtml::Strong' is a specialization of 'Inline'.
+'xhtml::I' is a specialization of 'Inline'.
+'xhtml::Dfn' is a specialization of 'Inline'.
+'xhtml::Sub' is a specialization of 'Inline'.
+'xhtml::Blockquote' is a specialization of 'Block'.
+'xhtml::Q' is a specialization of 'Inline'.
+'xhtml::Abbr' is a specialization of 'Inline'.
+'xhtml::Th' is a specialization of 'Flow'.
+'xhtml::Div' is a specialization of 'Flow'.
+'xhtml::Span' is a specialization of 'Inline'.
+'xhtml::Samp' is a specialization of 'Inline'.
+'xhtml::Tt' is a specialization of 'Inline'.
+'xhtml::Sup' is a specialization of 'Inline'.
+'xhtml::Dt' is a specialization of 'Inline'.
+'xhtml::Pre' is a specialization of 'PreContent'.
+'xhtml::Acronym' is a specialization of 'Inline'.
+'xhtml::Sup' (role 'xhtml_Sup', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent42', cardinality 0..*).
+'xhtml::Hr' (role 'xhtml_Hr252', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object251', cardinality 0..*).
+'xhtml::Col' (role 'xhtml_Col396', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table395', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object302', cardinality 0..*) is associated with 'xhtml::Q' (role 'xhtml_Q303', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow94', cardinality 0..*) is associated with 'xhtml::Br' (role 'xhtml_Br95', cardinality 0..*).
+'xhtml::Acronym' (role 'xhtml_Acronym379', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent378', cardinality 0..*).
+'xhtml::Kbd' (role 'xhtml_Kbd', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent30', cardinality 0..*).
+'xhtml::Acronym' (role 'xhtml_Acronym223', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline222', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent342', cardinality 0..*) is associated with 'xhtml::Big' (role 'xhtml_Big343', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline180', cardinality 0..*) is associated with 'xhtml::I' (role 'xhtml_I181', cardinality 0..*).
+'xhtml::Div' (role 'xhtml_Div237', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object236', cardinality 0..*).
+'xhtml::Samp' (role 'xhtml_Samp208', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline207', cardinality 0..*).
+'xhtml::Th' (role 'xhtml_Th', cardinality 0..*) is associated with 'xhtml::Tr' (role 'xhtml_Tr418', cardinality 0..*).
+'xhtml::Dl' (role 'xhtml_Dl246', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object245', cardinality 0..*).
+'xhtml::Tr' (role 'xhtml_Tr416', cardinality 0..*) is associated with 'xhtml::Thead' (role 'xhtml_Thead415', cardinality 0..*).
+'xhtml::Strong' (role 'xhtml_Strong352', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent351', cardinality 0..*).
+'xhtml::Sub' (role 'xhtml_Sub', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent40', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline201', cardinality 0..*) is associated with 'xhtml::Code' (role 'xhtml_Code202', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object268', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object270', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent345', cardinality 0..*) is associated with 'xhtml::Small' (role 'xhtml_Small346', cardinality 0..*).
+'xhtml::Var' (role 'xhtml_Var370', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent369', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow154', cardinality 0..*) is associated with 'xhtml::Sub' (role 'xhtml_Sub155', cardinality 0..*).
+'xhtml::Dfn' (role 'xhtml_Dfn199', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline198', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent339', cardinality 0..*) is associated with 'xhtml::B' (role 'xhtml_B340', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow115', cardinality 0..*) is associated with 'xhtml::Big' (role 'xhtml_Big116', cardinality 0..*).
+'xhtml::Sub' (role 'xhtml_Sub226', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline225', cardinality 0..*).
+'xhtml::Samp' (role 'xhtml_Samp', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent28', cardinality 0..*).
+'xhtml::Small' (role 'xhtml_Small288', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object287', cardinality 0..*).
+'xhtml::Span' (role 'xhtml_Span', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent2', cardinality 0..*).
+'xhtml::Var' (role 'xhtml_Var', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent32', cardinality 0..*).
+'xhtml::Big' (role 'xhtml_Big285', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object284', cardinality 0..*).
+'xhtml::Span' (role 'xhtml_Span98', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow97', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block59', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table', cardinality 0..*).
+'xhtml::Em' (role 'xhtml_Em122', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow121', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object311', cardinality 0..*) is associated with 'xhtml::Var' (role 'xhtml_Var312', cardinality 0..*).
+'xhtml::A' (role 'xhtml_A261', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object260', cardinality 0..*).
+'xhtml::Img' (role 'xhtml_Img161', cardinality 0..*) is associated with 'xhtml::Img' (role 'xhtml_Img159', cardinality 0..*).
+'xhtml::A' (role 'xhtml_A', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow92', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline', cardinality 0..*) is associated with 'xhtml::A' (role 'xhtml_A163', cardinality 0..*).
+'xhtml::Tr' (role 'xhtml_Tr410', cardinality 0..*) is associated with 'xhtml::Tbody' (role 'xhtml_Tbody409', cardinality 0..*).
+'xhtml::Li' (role 'xhtml_Li423', cardinality 0..*) is associated with 'xhtml::Ul' (role 'xhtml_Ul422', cardinality 0..*).
+'xhtml::Cite' (role 'xhtml_Cite', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent34', cardinality 0..*).
+'xhtml::Table' (role 'xhtml_Table407', cardinality 0..*) is associated with 'xhtml::Tr' (role 'xhtml_Tr', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object290', cardinality 0..*) is associated with 'xhtml::Em' (role 'xhtml_Em291', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow74', cardinality 0..*) is associated with 'xhtml::Ol' (role 'xhtml_Ol75', cardinality 0..*).
+'xhtml::Tfoot' (role 'xhtml_Tfoot412', cardinality 0..*) is associated with 'xhtml::Tr' (role 'xhtml_Tr413', cardinality 0..*).
+'xhtml::Acronym' (role 'xhtml_Acronym', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent38', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object314', cardinality 0..*) is associated with 'xhtml::Cite' (role 'xhtml_Cite315', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block49', cardinality 0..*) is associated with 'xhtml::Ol' (role 'xhtml_Ol', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline165', cardinality 0..*) is associated with 'xhtml::Br' (role 'xhtml_Br166', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object275', cardinality 0..*) is associated with 'xhtml::Tt' (role 'xhtml_Tt276', cardinality 0..*).
+'xhtml::Dl' (role 'xhtml_Dl', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block51', cardinality 0..*).
+'xhtml::Hr' (role 'xhtml_Hr84', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow83', cardinality 0..*).
+'xhtml::Blockquote' (role 'xhtml_Blockquote255', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object254', cardinality 0..*).
+'xhtml::Dfn' (role 'xhtml_Dfn297', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object296', cardinality 0..*).
+'xhtml::Strong' (role 'xhtml_Strong294', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object293', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow151', cardinality 0..*) is associated with 'xhtml::Acronym' (role 'xhtml_Acronym152', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object263', cardinality 0..*) is associated with 'xhtml::Br' (role 'xhtml_Br264', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object101', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow100', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object281', cardinality 0..*) is associated with 'xhtml::B' (role 'xhtml_B282', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow142', cardinality 0..*) is associated with 'xhtml::Var' (role 'xhtml_Var143', cardinality 0..*).
+'xhtml::Q' (role 'xhtml_Q', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent26', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow68', cardinality 0..*) is associated with 'xhtml::Div' (role 'xhtml_Div69', cardinality 0..*).
+'xhtml::Span' (role 'xhtml_Span267', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object266', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline228', cardinality 0..*) is associated with 'xhtml::Sup' (role 'xhtml_Sup229', cardinality 0..*).
+'xhtml::Table' (role 'xhtml_Table393', cardinality 0..*) is associated with 'xhtml::Caption' (role 'xhtml_Caption', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent22', cardinality 0..*) is associated with 'xhtml::Dfn' (role 'xhtml_Dfn', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline186', cardinality 0..*) is associated with 'xhtml::Big' (role 'xhtml_Big187', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object242', cardinality 0..*) is associated with 'xhtml::Ol' (role 'xhtml_Ol243', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object257', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table258', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow157', cardinality 0..*) is associated with 'xhtml::Sup' (role 'xhtml_Sup158', cardinality 0..*).
+'xhtml::Strong' (role 'xhtml_Strong125', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow124', cardinality 0..*).
+'xhtml::Abbr' (role 'xhtml_Abbr', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent36', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent8', cardinality 0..*) is associated with 'xhtml::Tt' (role 'xhtml_Tt', cardinality 0..*).
+'xhtml::B' (role 'xhtml_B113', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow112', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline216', cardinality 0..*) is associated with 'xhtml::Cite' (role 'xhtml_Cite217', cardinality 0..*).
+'xhtml::Pre' (role 'xhtml_Pre', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block53', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object278', cardinality 0..*) is associated with 'xhtml::I' (role 'xhtml_I279', cardinality 0..*).
+'xhtml::Code' (role 'xhtml_Code131', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow130', cardinality 0..*).
+'xhtml::Kbd' (role 'xhtml_Kbd367', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent366', cardinality 0..*).
+'xhtml::Img' (role 'xhtml_Img', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent6', cardinality 0..*).
+'xhtml::Small' (role 'xhtml_Small119', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow118', cardinality 0..*).
+'xhtml::Kbd' (role 'xhtml_Kbd211', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline210', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object305', cardinality 0..*) is associated with 'xhtml::Samp' (role 'xhtml_Samp306', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object308', cardinality 0..*) is associated with 'xhtml::Kbd' (role 'xhtml_Kbd309', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline174', cardinality 0..*) is associated with 'xhtml::Img' (role 'xhtml_Img175', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow71', cardinality 0..*) is associated with 'xhtml::Ul' (role 'xhtml_Ul72', cardinality 0..*).
+'xhtml::Blockquote' (role 'xhtml_Blockquote87', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow86', cardinality 0..*).
+'xhtml::Samp' (role 'xhtml_Samp364', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent363', cardinality 0..*).
+'xhtml::Block' (role 'xhtml_Block47', cardinality 0..*) is associated with 'xhtml::Ul' (role 'xhtml_Ul', cardinality 0..*).
+'xhtml::Tbody' (role 'xhtml_Tbody', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table405', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object231', cardinality 0..*) is associated with 'xhtml::Param' (role 'xhtml_Param', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow127', cardinality 0..*) is associated with 'xhtml::Dfn' (role 'xhtml_Dfn128', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent18', cardinality 0..*) is associated with 'xhtml::Em' (role 'xhtml_Em', cardinality 0..*).
+'xhtml::Span' (role 'xhtml_Span169', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline168', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow89', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table90', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent333', cardinality 0..*) is associated with 'xhtml::Tt' (role 'xhtml_Tt334', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline195', cardinality 0..*) is associated with 'xhtml::Strong' (role 'xhtml_Strong196', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline177', cardinality 0..*) is associated with 'xhtml::Tt' (role 'xhtml_Tt178', cardinality 0..*).
+'xhtml::Sup' (role 'xhtml_Sup327', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object326', cardinality 0..*).
+'xhtml::Li' (role 'xhtml_Li', cardinality 0..*) is associated with 'xhtml::Ol' (role 'xhtml_Ol329', cardinality 0..*).
+'xhtml::Var' (role 'xhtml_Var214', cardinality 0..*) is associated with 'xhtml::Inline' (role 'xhtml_Inline213', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent20', cardinality 0..*) is associated with 'xhtml::Strong' (role 'xhtml_Strong', cardinality 0..*).
+'xhtml::Code' (role 'xhtml_Code358', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent357', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent14', cardinality 0..*) is associated with 'xhtml::Big' (role 'xhtml_Big', cardinality 0..*).
+'xhtml::P' (role 'xhtml_P66', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow', cardinality 0..*).
+'xhtml::I' (role 'xhtml_I337', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent336', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline189', cardinality 0..*) is associated with 'xhtml::Small' (role 'xhtml_Small190', cardinality 0..*).
+'xhtml::Table' (role 'xhtml_Table401', cardinality 0..*) is associated with 'xhtml::Thead' (role 'xhtml_Thead', cardinality 0..*).
+'xhtml::Kbd' (role 'xhtml_Kbd140', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow139', cardinality 0..*).
+'xhtml::Sub' (role 'xhtml_Sub324', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object323', cardinality 0..*).
+'xhtml::Tfoot' (role 'xhtml_Tfoot', cardinality 0..*) is associated with 'xhtml::Table' (role 'xhtml_Table403', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow103', cardinality 0..*) is associated with 'xhtml::Img' (role 'xhtml_Img104', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent384', cardinality 0..*) is associated with 'xhtml::Sup' (role 'xhtml_Sup385', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline183', cardinality 0..*) is associated with 'xhtml::B' (role 'xhtml_B184', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline219', cardinality 0..*) is associated with 'xhtml::Abbr' (role 'xhtml_Abbr220', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object272', cardinality 0..*) is associated with 'xhtml::Img' (role 'xhtml_Img273', cardinality 0..*).
+'xhtml::Dt' (role 'xhtml_Dt', cardinality 0..*) is associated with 'xhtml::Dl' (role 'xhtml_Dl62', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object233', cardinality 0..*) is associated with 'xhtml::P' (role 'xhtml_P234', cardinality 0..*).
+'xhtml::Dfn' (role 'xhtml_Dfn355', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent354', cardinality 0..*).
+'xhtml::Pre' (role 'xhtml_Pre249', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object248', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent360', cardinality 0..*) is associated with 'xhtml::Q' (role 'xhtml_Q361', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent4', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object', cardinality 0..*).
+'xhtml::Blockquote' (role 'xhtml_Blockquote', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block57', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent375', cardinality 0..*) is associated with 'xhtml::Abbr' (role 'xhtml_Abbr376', cardinality 0..*).
+'xhtml::Br' (role 'xhtml_Br388', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent387', cardinality 0..*).
+'xhtml::Object' (role 'xhtml_Object317', cardinality 0..*) is associated with 'xhtml::Abbr' (role 'xhtml_Abbr318', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent24', cardinality 0..*) is associated with 'xhtml::Code' (role 'xhtml_Code', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent12', cardinality 0..*) is associated with 'xhtml::B' (role 'xhtml_B', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow109', cardinality 0..*) is associated with 'xhtml::I' (role 'xhtml_I110', cardinality 0..*).
+'xhtml::Ul' (role 'xhtml_Ul240', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object239', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent', cardinality 0..*) is associated with 'xhtml::A' (role 'xhtml_A331', cardinality 0..*).
+'xhtml::Em' (role 'xhtml_Em349', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent348', cardinality 0..*).
+'xhtml::Dd' (role 'xhtml_Dd', cardinality 0..*) is associated with 'xhtml::Dl' (role 'xhtml_Dl64', cardinality 0..*).
+'xhtml::Abbr' (role 'xhtml_Abbr149', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow148', cardinality 0..*).
+'xhtml::Samp' (role 'xhtml_Samp137', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow136', cardinality 0..*).
+'xhtml::Td' (role 'xhtml_Td', cardinality 0..*) is associated with 'xhtml::Tr' (role 'xhtml_Tr420', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent372', cardinality 0..*) is associated with 'xhtml::Cite' (role 'xhtml_Cite373', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow145', cardinality 0..*) is associated with 'xhtml::Cite' (role 'xhtml_Cite146', cardinality 0..*).
+'xhtml::P' (role 'xhtml_P', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block', cardinality 0..*).
+'xhtml::PreContent' (role 'xhtml_PreContent390', cardinality 0..*) is associated with 'xhtml::Span' (role 'xhtml_Span391', cardinality 0..*).
+'xhtml::Hr' (role 'xhtml_Hr', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block55', cardinality 0..*).
+'xhtml::I' (role 'xhtml_I', cardinality 0..*) is associated with 'xhtml::AContent' (role 'xhtml_AContent10', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow80', cardinality 0..*) is associated with 'xhtml::Pre' (role 'xhtml_Pre81', cardinality 0..*).
+'xhtml::Table' (role 'xhtml_Table398', cardinality 0..*) is associated with 'xhtml::Colgroup' (role 'xhtml_Colgroup399', cardinality 0..*).
+'xhtml::Sub' (role 'xhtml_Sub382', cardinality 0..*) is associated with 'xhtml::PreContent' (role 'xhtml_PreContent381', cardinality 0..*).
+'xhtml::Div' (role 'xhtml_Div', cardinality 0..*) is associated with 'xhtml::Block' (role 'xhtml_Block45', cardinality 0..*).
+'xhtml::Code' (role 'xhtml_Code300', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object299', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent16', cardinality 0..*) is associated with 'xhtml::Small' (role 'xhtml_Small', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline192', cardinality 0..*) is associated with 'xhtml::Em' (role 'xhtml_Em193', cardinality 0..*).
+'xhtml::AContent' (role 'xhtml_AContent', cardinality 0..*) is associated with 'xhtml::Br' (role 'xhtml_Br', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow77', cardinality 0..*) is associated with 'xhtml::Dl' (role 'xhtml_Dl78', cardinality 0..*).
+'xhtml::Q' (role 'xhtml_Q134', cardinality 0..*) is associated with 'xhtml::Flow' (role 'xhtml_Flow133', cardinality 0..*).
+'xhtml::Colgroup' (role 'xhtml_Colgroup', cardinality 0..*) is associated with 'xhtml::Col' (role 'xhtml_Col', cardinality 0..*).
+'xhtml::Acronym' (role 'xhtml_Acronym321', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object320', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline204', cardinality 0..*) is associated with 'xhtml::Q' (role 'xhtml_Q205', cardinality 0..*).
+'xhtml::Inline' (role 'xhtml_Inline171', cardinality 0..*) is associated with 'xhtml::Object' (role 'xhtml_Object172', cardinality 0..*).
+'xhtml::Flow' (role 'xhtml_Flow106', cardinality 0..*) is associated with 'xhtml::Tt' (role 'xhtml_Tt107', cardinality 0..*).

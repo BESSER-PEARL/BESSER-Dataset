@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'Instruction' has no attributes.
+The class 'Primitives::Back' has no attributes.
+The class 'Primitives::Primitive' has no attributes.
+The class 'Primitives::Instruction' has no attributes.
+The class 'Primitives::Left' has no attributes.
+The class 'Primitives::Right' has no attributes.
+The class 'Primitives::Expression' has no attributes.
+The class 'Primitives::Forward' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'Primitives::LogoProgram' has no attributes.
+'Primitives::Right' is a specialization of 'Primitive'.
+'Primitives::Forward' is a specialization of 'Primitive'.
+'Primitives::Primitive' is a specialization of 'Instruction'.
+'Primitives::Back' is a specialization of 'Primitive'.
+'Primitives::Left' is a specialization of 'Primitive'.
+'Primitives::Expression' is a specialization of 'Instruction'.
+'Primitives::Right' (role 'Primitives_Right', cardinality 0..*) is associated with 'Primitives::Expression' (role 'Primitives_Expression7', cardinality 0..*).
+'Primitives::Expression' (role 'Primitives_Expression3', cardinality 0..*) is associated with 'Primitives::Back' (role 'Primitives_Back', cardinality 0..*).
+'Primitives::Expression' (role 'Primitives_Expression', cardinality 0..*) is associated with 'Primitives::Forward' (role 'Primitives_Forward', cardinality 0..*).
+'Primitives::Instruction' (role 'Primitives_Instruction', cardinality 0..*) is associated with 'Primitives::LogoProgram' (role 'Primitives_LogoProgram', cardinality 0..*).
+'Primitives::Left' (role 'Primitives_Left', cardinality 0..*) is associated with 'Primitives::Expression' (role 'Primitives_Expression5', cardinality 0..*).

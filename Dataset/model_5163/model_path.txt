@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/IronMan1963/mde.refactoring/mde.refactoring/resources/Example4/metamodels/example4_Sirius.ecore

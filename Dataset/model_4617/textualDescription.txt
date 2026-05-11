@@ -1,0 +1,151 @@
+The model has 57 class(es).
+The class 'model::SubjectLocatorConstraint' has no attributes.
+The class 'model::NameType' has no attributes.
+The class 'model::ReifierConstraint' has no attributes.
+The class 'TopicType' has no attributes.
+The class 'ReifiableTopicType' has no attributes.
+The class 'model::AbstractConstraint' has no attributes.
+The class 'TMCLConstruct' has no attributes.
+The class 'model::AbstractRegExpTopicType' has the following attributes: 'regExp' of type str.
+The class 'AbstractRegExpConstraint' has no attributes.
+The class 'model::ScopedReifiableTopicType' has no attributes.
+The class 'model::Annotation' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'model::AssociationType' has no attributes.
+The class 'ScopedTopicType' has no attributes.
+The class 'model::TopicReifiesConstraint' has no attributes.
+The class 'Diagram' has no attributes.
+The class 'model::TypeNode' has the following attributes: 'image' of type str.
+The class 'AbstractUniqueValueTopicType' has no attributes.
+The class 'model::NameTypeConstraint' has no attributes.
+The class 'model::ItemIdentifierConstraint' has no attributes.
+The class 'AbstractConstraint' has no attributes.
+The class 'model::SubjectIdentifierConstraint' has no attributes.
+The class 'model::DomainDiagram' has no attributes.
+The class 'model::LabelPos' has the following attributes: 'posX' of type int; 'posY' of type int.
+The class 'model::AbstractRegExpConstraint' has the following attributes: 'regexp' of type str.
+The class 'model::Edge' has the following attributes: 'type' of type str.
+The class 'AbstractCardinalityConstraint' has no attributes.
+The class 'AbstractTypedCardinalityConstraint' has no attributes.
+The class 'model::Bendpoint' has the following attributes: 'posY' of type int; 'posX' of type int.
+The class 'model::AbstractTypedCardinalityConstraint' has no attributes.
+The class 'model::AbstractTypedConstraint' has no attributes.
+The class 'model::Node' has the following attributes: 'posX' of type int; 'posY' of type int.
+The class 'AbstractRegExpTopicType' has no attributes.
+The class 'model::RoleCombinationConstraint' has no attributes.
+The class 'model::File' has the following attributes: 'dirty' of type bool; 'filename' of type str; 'notes' of type str.
+The class 'model::TMCLConstruct' has the following attributes: 'see_also' of type str; 'comment' of type str; 'description' of type str.
+The class 'model::AssociationNode' has no attributes.
+The class 'model::AbstractCardinalityConstraint' has the following attributes: 'cardMax' of type str; 'cardMin' of type str.
+The class 'model::OccurrenceType' has the following attributes: 'dataType' of type str.
+The class 'model::TopicMapSchema' has the following attributes: 'baseLocator' of type str; 'version' of type str; 'name' of type str; 'includes' of type str; 'schemaResource' of type str.
+The class 'OnoObject' has no attributes.
+The class 'ScopedReifiableTopicType' has no attributes.
+The class 'model::RoleType' has no attributes.
+The class 'model::AssociationTypeConstraint' has no attributes.
+The class 'model::OnoObject' has the following attributes: 'id' of type int.
+The class 'model::AbstractUniqueValueTopicType' has the following attributes: 'unique' of type bool.
+The class 'model::RolePlayerConstraint' has no attributes.
+The class 'model::ScopedTopicType' has no attributes.
+The class 'model::Diagram' has the following attributes: 'name' of type str.
+The class 'AbstractTypedConstraint' has no attributes.
+The class 'model::RoleConstraint' has no attributes.
+The class 'model::MappingElement' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'model::Comment' has the following attributes: 'width' of type int; 'height' of type int; 'content' of type str.
+The class 'model::OccurrenceTypeConstraint' has no attributes.
+The class 'model::TopicType' has the following attributes: 'locators' of type str; 'identifiers' of type str; 'name' of type str; 'idType' of type str; 'abstract' of type bool; 'kind' of type str.
+The class 'Node' has no attributes.
+The class 'model::ReifiableTopicType' has no attributes.
+The class 'model::ScopeConstraint' has no attributes.
+The enumeration 'KindOfTopicType' has the following literals: 'RoleType', 'TopicType', 'AssociationType', 'ScopeType', 'OccurrenceType', 'NoType', 'NameType'.
+The enumeration 'EdgeType' has the following literals: 'IS_ATYPE', 'AKO_TYPE', 'ROLE_CONSTRAINT_TYPE'.
+The enumeration 'TopicId' has the following literals: 'SUBJECT_IDENTIFIER', 'SUBJECT_LOCATOR', 'IDENTIFIER', 'ITEM_IDENTIFIER'.
+'model::AbstractRegExpConstraint' is a specialization of 'AbstractConstraint'.
+'model::TypeNode' is a specialization of 'Node'.
+'model::ScopeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::NameTypeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::Annotation' is a specialization of 'OnoObject'.
+'model::Edge' is a specialization of 'OnoObject'.
+'model::AbstractCardinalityConstraint' is a specialization of 'AbstractConstraint'.
+'model::TopicReifiesConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::RoleType' is a specialization of 'TopicType'.
+'model::AbstractTypedCardinalityConstraint' is a specialization of 'AbstractTypedConstraint'.
+'model::AssociationType' is a specialization of 'ScopedReifiableTopicType'.
+'model::OccurrenceType' is a specialization of 'ScopedReifiableTopicType'.
+'model::AbstractUniqueValueTopicType' is a specialization of 'TopicType'.
+'model::OccurrenceType' is a specialization of 'AbstractUniqueValueTopicType'.
+'model::ScopedReifiableTopicType' is a specialization of 'ScopedTopicType'.
+'model::TopicMapSchema' is a specialization of 'TMCLConstruct'.
+'model::RoleCombinationConstraint' is a specialization of 'AbstractConstraint'.
+'model::TopicType' is a specialization of 'TMCLConstruct'.
+'model::RoleConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::NameType' is a specialization of 'AbstractRegExpTopicType'.
+'model::Node' is a specialization of 'OnoObject'.
+'model::File' is a specialization of 'OnoObject'.
+'model::TMCLConstruct' is a specialization of 'OnoObject'.
+'model::OccurrenceTypeConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::NameType' is a specialization of 'AbstractUniqueValueTopicType'.
+'model::OccurrenceType' is a specialization of 'AbstractRegExpTopicType'.
+'model::ScopedTopicType' is a specialization of 'TopicType'.
+'model::LabelPos' is a specialization of 'OnoObject'.
+'model::AbstractConstraint' is a specialization of 'TMCLConstruct'.
+'model::ReifiableTopicType' is a specialization of 'TopicType'.
+'model::ItemIdentifierConstraint' is a specialization of 'AbstractRegExpConstraint'.
+'model::AssociationTypeConstraint' is a specialization of 'AbstractTypedConstraint'.
+'model::SubjectIdentifierConstraint' is a specialization of 'AbstractRegExpConstraint'.
+'model::ReifierConstraint' is a specialization of 'AbstractTypedCardinalityConstraint'.
+'model::AbstractTypedConstraint' is a specialization of 'AbstractConstraint'.
+'model::Diagram' is a specialization of 'OnoObject'.
+'model::AbstractTypedCardinalityConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+'model::AssociationType' is a specialization of 'ScopedTopicType'.
+'model::AssociationNode' is a specialization of 'Node'.
+'model::NameType' is a specialization of 'ScopedTopicType'.
+'model::ItemIdentifierConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+'model::SubjectLocatorConstraint' is a specialization of 'AbstractRegExpConstraint'.
+'model::AbstractRegExpTopicType' is a specialization of 'TopicType'.
+'model::ScopedReifiableTopicType' is a specialization of 'ReifiableTopicType'.
+'model::Comment' is a specialization of 'Node'.
+'model::RolePlayerConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+'model::SubjectLocatorConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+'model::MappingElement' is a specialization of 'OnoObject'.
+'model::OccurrenceType' is a specialization of 'ScopedTopicType'.
+'model::NameType' is a specialization of 'ScopedReifiableTopicType'.
+'model::SubjectIdentifierConstraint' is a specialization of 'AbstractCardinalityConstraint'.
+'model::Bendpoint' is a specialization of 'OnoObject'.
+'model::DomainDiagram' is a specialization of 'Diagram'.
+'model::TopicType' (role 'model_TopicType78', cardinality 0..*) is associated with 'model::RoleCombinationConstraint' (role 'model_RoleCombinationConstraint77', cardinality 0..*).
+'model::RoleConstraint' (role 'model_RoleConstraint64', cardinality 0..*) is associated with 'model::AssociationType' (role 'model_AssociationType', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType25', cardinality 0..*) is associated with 'model::TopicMapSchema' (role 'model_TopicMapSchema', cardinality 0..*).
+'model::TMCLConstruct' (role 'model_TMCLConstruct', cardinality 0..*) is associated with 'model::Annotation' (role 'model_Annotation', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType0', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType6', cardinality 0..*) is associated with 'model::OccurrenceTypeConstraint' (role 'model_OccurrenceTypeConstraint', cardinality 0..*).
+'model::Diagram' (role 'model_Diagram', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge49', cardinality 0..*).
+'model::NameTypeConstraint' (role 'model_NameTypeConstraint', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType8', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType21', cardinality 0..*) is associated with 'model::RolePlayerConstraint' (role 'model_RolePlayerConstraint', cardinality 0..*).
+'model::AssociationTypeConstraint' (role 'model_AssociationTypeConstraint', cardinality 0..*) is associated with 'model::TopicMapSchema' (role 'model_TopicMapSchema27', cardinality 0..*).
+'model::AssociationTypeConstraint' (role 'model_AssociationTypeConstraint31', cardinality 0..*) is associated with 'model::RolePlayerConstraint' (role 'model_RolePlayerConstraint32', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType2', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType4', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType17', cardinality 0..*) is associated with 'model::TopicReifiesConstraint' (role 'model_TopicReifiesConstraint', cardinality 0..*).
+'model::AbstractTypedConstraint' (role 'model_AbstractTypedConstraint', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType61', cardinality 0..*).
+'model::Diagram' (role 'model_Diagram51', cardinality 0..*) is associated with 'model::Node' (role 'model_Node52', cardinality 0..*).
+'model::Comment' (role 'model_Comment', cardinality 0..*) is associated with 'model::Diagram' (role 'model_Diagram54', cardinality 0..*).
+'model::MappingElement' (role 'model_MappingElement', cardinality 0..*) is associated with 'model::TopicMapSchema' (role 'model_TopicMapSchema29', cardinality 0..*).
+'model::RolePlayerConstraint' (role 'model_RolePlayerConstraint43', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge42', cardinality 0..*).
+'model::TopicMapSchema' (role 'model_TopicMapSchema59', cardinality 0..*) is associated with 'model::File' (role 'model_File58', cardinality 0..*).
+'model::ReifiableTopicType' (role 'model_ReifiableTopicType', cardinality 0..*) is associated with 'model::ReifierConstraint' (role 'model_ReifierConstraint', cardinality 0..*).
+'model::AssociationTypeConstraint' (role 'model_AssociationTypeConstraint47', cardinality 0..*) is associated with 'model::AssociationNode' (role 'model_AssociationNode', cardinality 0..*).
+'model::Edge' (role 'model_Edge37', cardinality 0..*) is associated with 'model::Node' (role 'model_Node', cardinality 0..*).
+'model::ScopedTopicType' (role 'model_ScopedTopicType', cardinality 0..*) is associated with 'model::ScopeConstraint' (role 'model_ScopeConstraint', cardinality 0..*).
+'model::RoleCombinationConstraint' (role 'model_RoleCombinationConstraint74', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType75', cardinality 0..*).
+'model::AssociationType' (role 'model_AssociationType66', cardinality 0..*) is associated with 'model::RoleCombinationConstraint' (role 'model_RoleCombinationConstraint', cardinality 0..*).
+'model::Diagram' (role 'model_Diagram56', cardinality 0..*) is associated with 'model::File' (role 'model_File', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType19', cardinality 0..*) is associated with 'model::ItemIdentifierConstraint' (role 'model_ItemIdentifierConstraint', cardinality 0..*).
+'model::RoleCombinationConstraint' (role 'model_RoleCombinationConstraint71', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType72', cardinality 0..*).
+'model::Edge' (role 'model_Edge', cardinality 0..*) is associated with 'model::Bendpoint' (role 'model_Bendpoint', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType13', cardinality 0..*) is associated with 'model::TopicType' (role 'model_TopicType15', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType69', cardinality 0..*) is associated with 'model::RoleCombinationConstraint' (role 'model_RoleCombinationConstraint68', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType12', cardinality 0..*) is associated with 'model::SubjectLocatorConstraint' (role 'model_SubjectLocatorConstraint', cardinality 0..*).
+'model::Node' (role 'model_Node40', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge39', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType34', cardinality 0..*) is associated with 'model::TypeNode' (role 'model_TypeNode', cardinality 0..*).
+'model::LabelPos' (role 'model_LabelPos', cardinality 0..*) is associated with 'model::Edge' (role 'model_Edge45', cardinality 0..*).
+'model::RolePlayerConstraint' (role 'model_RolePlayerConstraint23', cardinality 0..*) is associated with 'model::RoleConstraint' (role 'model_RoleConstraint', cardinality 0..*).
+'model::TopicType' (role 'model_TopicType10', cardinality 0..*) is associated with 'model::SubjectIdentifierConstraint' (role 'model_SubjectIdentifierConstraint', cardinality 0..*).

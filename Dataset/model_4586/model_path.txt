@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/damenac/puzzle/examples/uml/fr.inria.diverse.puzzle.uml.activities.metamodel/models/Activities.ecore

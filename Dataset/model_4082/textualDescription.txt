@@ -1,0 +1,24 @@
+The model has 13 class(es).
+The class 'simpleuml::Property' has no attributes.
+The class 'simpleuml::Generalization' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Feature' has no attributes.
+The class 'simpleuml::StructuralFeature' has no attributes.
+The class 'simpleuml::NamedElement' has the following attributes: 'name' of type str.
+The class 'StructuralFeature' has no attributes.
+The class 'simpleuml::Feature' has no attributes.
+The class 'simpleuml::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'simpleuml::Classifier' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simpleuml::Class' has no attributes.
+'simpleuml::Class' is a specialization of 'Classifier'.
+'simpleuml::Classifier' is a specialization of 'Type'.
+'simpleuml::Feature' is a specialization of 'NamedElement'.
+'simpleuml::Property' is a specialization of 'StructuralFeature'.
+'simpleuml::Type' is a specialization of 'NamedElement'.
+'simpleuml::StructuralFeature' is a specialization of 'Feature'.
+'simpleuml::Generalization' (role 'simpleuml_Generalization', cardinality 0..*) is associated with 'simpleuml::Classifier' (role 'simpleuml_Classifier', cardinality 0..*).
+'simpleuml::Class' (role 'simpleuml_Class', cardinality 0..*) is associated with 'simpleuml::Property' (role 'simpleuml_Property', cardinality 0..*).
+'simpleuml::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'simpleuml::Generalization' (role 'generalization', cardinality 0..*).
+'simpleuml::Generalization' (role 'Generalization', cardinality 0..*) is associated with 'simpleuml::Classifier' (role 'specific', cardinality 0..*).

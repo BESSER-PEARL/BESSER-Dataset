@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'fragdial101::Attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'fragdial101::Provided' has no attributes.
+The class 'fragdial101::Include' has the following attributes: 'file' of type str.
+The class 'AbstractComponent' has no attributes.
+The class 'fragdial101::Required' has no attributes.
+The class 'fragdial101::Binding' has no attributes.
+The class 'fragdial101::Interface' has the following attributes: 'signature' of type str; 'name' of type str; 'contingency' of type str; 'cardinality' of type str; 'startProperty' of type str.
+The class 'fragdial101::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'fragdial101::Attributes' has the following attributes: 'signature' of type str.
+The class 'fragdial101::Component' has no attributes.
+The class 'fragdial101::Controller' has the following attributes: 'language' of type str; 'descriptor' of type str.
+The class 'fragdial101::Ldflag' has the following attributes: 'value' of type str.
+The class 'fragdial101::Output' has the following attributes: 'format' of type str.
+The class 'fragdial101::Content' has the following attributes: 'class_' of type str; 'language' of type str.
+The class 'Interface' has no attributes.
+'fragdial101::Component' is a specialization of 'AbstractComponent'.
+'fragdial101::Required' is a specialization of 'Interface'.
+'fragdial101::Provided' is a specialization of 'Interface'.
+'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent', cardinality 0..*) is associated with 'fragdial101::Content' (role 'fragdial101_Content', cardinality 0..*).
+'fragdial101::Provided' (role 'fragdial101_Provided', cardinality 0..*) is associated with 'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent10', cardinality 0..*).
+'fragdial101::Component' (role 'fragdial101_Component27', cardinality 0..*) is associated with 'fragdial101::Component' (role 'fragdial101_Component', cardinality 0..*).
+'fragdial101::Binding' (role 'fragdial101_Binding', cardinality 0..*) is associated with 'fragdial101::Interface' (role 'fragdial101_Interface', cardinality 0..*).
+'fragdial101::Attributes' (role 'fragdial101_Attributes26', cardinality 0..*) is associated with 'fragdial101::Attribute' (role 'fragdial101_Attribute', cardinality 0..*).
+'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent4', cardinality 0..*) is associated with 'fragdial101::Output' (role 'fragdial101_Output', cardinality 0..*).
+'fragdial101::Interface' (role 'fragdial101_Interface14', cardinality 0..*) is associated with 'fragdial101::Binding' (role 'fragdial101_Binding13', cardinality 0..*).
+'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent2', cardinality 0..*) is associated with 'fragdial101::Attributes' (role 'fragdial101_Attributes', cardinality 0..*).
+'fragdial101::Interface' (role 'fragdial101_Interface17', cardinality 0..*) is associated with 'fragdial101::Binding' (role 'fragdial101_Binding16', cardinality 0..*).
+'fragdial101::Content' (role 'fragdial101_Content22', cardinality 0..*) is associated with 'fragdial101::Include' (role 'fragdial101_Include', cardinality 0..*).
+'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent20', cardinality 0..*) is associated with 'fragdial101::Content' (role 'fragdial101_Content19', cardinality 0..*).
+'fragdial101::Ldflag' (role 'fragdial101_Ldflag', cardinality 0..*) is associated with 'fragdial101::Content' (role 'fragdial101_Content24', cardinality 0..*).
+'fragdial101::Required' (role 'fragdial101_Required', cardinality 0..*) is associated with 'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent8', cardinality 0..*).
+'fragdial101::AbstractComponent' (role 'fragdial101_AbstractComponent6', cardinality 0..*) is associated with 'fragdial101::Controller' (role 'fragdial101_Controller', cardinality 0..*).

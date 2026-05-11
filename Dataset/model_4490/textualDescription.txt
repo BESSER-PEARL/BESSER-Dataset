@@ -1,0 +1,54 @@
+The model has 23 class(es).
+The class 'dSL::ColorLiteral' has the following attributes: 'color' of type str.
+The class 'dSL::RightMovementAction' has no attributes.
+The class 'dSL::LeftRotatePoint' has the following attributes: 'leftdir' of type str.
+The class 'dSL::ExpressionBracket' has no attributes.
+The class 'dSL::MovementAction' has the following attributes: 'actionenum' of type str.
+The class 'dSL::Behaviors' has the following attributes: 'name' of type str.
+The class 'dSL::RotateMovementAction' has no attributes.
+The class 'dSL::EdgeLiteral' has the following attributes: 'edge' of type str.
+The class 'dSL::TouchLiteral' has the following attributes: 'touch' of type str.
+The class 'dSL::DistanceLiteral' has the following attributes: 'distance' of type int.
+The class 'dSL::Actions' has no attributes.
+The class 'Actions' has no attributes.
+The class 'dSL::MiddleRotatePoint' has the following attributes: 'middledir' of type str.
+The class 'dSL::ANDexpression' has no attributes.
+The class 'dSL::ORexpression' has no attributes.
+The class 'dSL::Expression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dSL::RightRotatePoint' has the following attributes: 'rightdir' of type str.
+The class 'RotateMovementAction' has no attributes.
+The class 'dSL::LeftMovementAction' has no attributes.
+The class 'dSL::RotatePoints' has the following attributes: 'degrees' of type int.
+The class 'RotatePoints' has no attributes.
+The class 'dSL::RobotBehavior' has no attributes.
+The enumeration 'EdgeEnum' has the following literals: 'FRONTRIGHT', 'BACK', 'FRONTLEFT'.
+The enumeration 'TouchEnum' has the following literals: 'LEFT', 'RIGHT'.
+The enumeration 'FBEnum' has the following literals: 'FORWARD', 'BACKWARD'.
+The enumeration 'LREnum' has the following literals: 'LEFT', 'RIGHT'.
+The enumeration 'ColorEnum' has the following literals: 'YELLOW', 'BLACK', 'WHITE', 'GREEN', 'BLUE', 'NONE', 'BROWN', 'RED'.
+The enumeration 'ActionEnum' has the following literals: 'STOP', 'BACKWARD', 'FORWARD'.
+'dSL::LeftMovementAction' is a specialization of 'Actions'.
+'dSL::RotatePoints' is a specialization of 'RotateMovementAction'.
+'dSL::MiddleRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::ANDexpression' is a specialization of 'Expression'.
+'dSL::RightMovementAction' is a specialization of 'Actions'.
+'dSL::TouchLiteral' is a specialization of 'Expression'.
+'dSL::ORexpression' is a specialization of 'Expression'.
+'dSL::LeftRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::EdgeLiteral' is a specialization of 'Expression'.
+'dSL::RightRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::ColorLiteral' is a specialization of 'Expression'.
+'dSL::DistanceLiteral' is a specialization of 'Expression'.
+'dSL::ExpressionBracket' is a specialization of 'Expression'.
+'dSL::RotateMovementAction' is a specialization of 'Actions'.
+'dSL::Expression' (role 'dSL_Expression19', cardinality 0..*) is associated with 'dSL::ORexpression' (role 'dSL_ORexpression18', cardinality 0..*).
+'dSL::ExpressionBracket' (role 'dSL_ExpressionBracket', cardinality 0..*) is associated with 'dSL::Expression' (role 'dSL_Expression9', cardinality 0..*).
+'dSL::Expression' (role 'dSL_Expression14', cardinality 0..*) is associated with 'dSL::ANDexpression' (role 'dSL_ANDexpression13', cardinality 0..*).
+'dSL::Behaviors' (role 'dSL_Behaviors4', cardinality 0..*) is associated with 'dSL::Actions' (role 'dSL_Actions', cardinality 0..*).
+'dSL::MovementAction' (role 'dSL_MovementAction', cardinality 0..*) is associated with 'dSL::LeftMovementAction' (role 'dSL_LeftMovementAction', cardinality 0..*).
+'dSL::RobotBehavior' (role 'dSL_RobotBehavior', cardinality 0..*) is associated with 'dSL::Behaviors' (role 'dSL_Behaviors', cardinality 0..*).
+'dSL::Expression' (role 'dSL_Expression16', cardinality 0..*) is associated with 'dSL::ORexpression' (role 'dSL_ORexpression', cardinality 0..*).
+'dSL::Expression' (role 'dSL_Expression11', cardinality 0..*) is associated with 'dSL::ANDexpression' (role 'dSL_ANDexpression', cardinality 0..*).
+'dSL::Expression' (role 'dSL_Expression', cardinality 0..*) is associated with 'dSL::Behaviors' (role 'dSL_Behaviors2', cardinality 0..*).
+'dSL::RightMovementAction' (role 'dSL_RightMovementAction', cardinality 0..*) is associated with 'dSL::MovementAction' (role 'dSL_MovementAction7', cardinality 0..*).

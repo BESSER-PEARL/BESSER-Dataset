@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'sWML::HypertextLayer' has no attributes.
+The class 'sWML::Class' has the following attributes: 'name' of type str.
+The class 'sWML::ContentLayer' has no attributes.
+The class 'sWML::WebModel' has the following attributes: 'name' of type str.
+The class 'sWML::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'sWML::IndexPage' has the following attributes: 'size' of type int; 'name' of type str.
+The enumeration 'SWMLTypes' has the following literals: 'Integer', 'Float', 'String', 'Email', 'Boolean'.
+'sWML::HypertextLayer' (role 'sWML_HypertextLayer4', cardinality 0..*) is associated with 'sWML::IndexPage' (role 'sWML_IndexPage', cardinality 0..*).
+'sWML::Class' (role 'sWML_Class9', cardinality 0..*) is associated with 'sWML::ContentLayer' (role 'sWML_ContentLayer8', cardinality 0..*).
+'sWML::WebModel' (role 'sWML_WebModel', cardinality 0..*) is associated with 'sWML::HypertextLayer' (role 'sWML_HypertextLayer', cardinality 0..*).
+'sWML::ContentLayer' (role 'sWML_ContentLayer', cardinality 0..*) is associated with 'sWML::WebModel' (role 'sWML_WebModel2', cardinality 0..*).
+'sWML::Class' (role 'sWML_Class11', cardinality 0..*) is associated with 'sWML::Attribute' (role 'sWML_Attribute', cardinality 0..*).
+'sWML::Class' (role 'sWML_Class', cardinality 0..*) is associated with 'sWML::IndexPage' (role 'sWML_IndexPage6', cardinality 0..*).

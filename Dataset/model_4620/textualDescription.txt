@@ -1,0 +1,142 @@
+The model has 52 class(es).
+The class 'trnetvisual::ParameterRef' has the following attributes: 'index' of type int.
+The class 'trnetvisual::ExternalAttributeCalculationCall' has the following attributes: 'qualifiedName' of type str; 'id' of type str.
+The class 'trnetvisual::AnyResult' has no attributes.
+The class 'trnetvisual::Next' has no attributes.
+The class 'Action' has no attributes.
+The class 'trnetvisual::Combinator' has no attributes.
+The class 'AttributeCalculation' has no attributes.
+The class 'trnetvisual::OptionalOperand' has no attributes.
+The class 'trnetvisual::External' has no attributes.
+The class 'trnetvisual::AttributeCalculation' has no attributes.
+The class 'trnetvisual::Keep' has no attributes.
+The class 'trnetvisual::Eventually' has no attributes.
+The class 'ApplicationCondition' has no attributes.
+The class 'Operand' has no attributes.
+The class 'trnetvisual::AnyOperand' has no attributes.
+The class 'ParameterRef' has no attributes.
+The class 'trnetvisual::Different' has no attributes.
+The class 'trnetvisual::ExternalAttributeCalculationCallParameter' has no attributes.
+The class 'trnetvisual::Result' has no attributes.
+The class 'trnetvisual::Pattern' has the following attributes: 'expected_size' of type float; 'id' of type str.
+The class 'FlowRule' has no attributes.
+The class 'trnetvisual::Operator' has the following attributes: 'id' of type str.
+The class 'trnetvisual::TrNetModel' has the following attributes: 'id' of type str.
+The class 'trnetvisual::Restriction' has no attributes.
+The class 'Restriction' has no attributes.
+The class 'trnetvisual::AntiOperand' has no attributes.
+The class 'trnetvisual::ExternalConditionCall' has the following attributes: 'qualifiedName' of type str; 'id' of type str.
+The class 'trnetvisual::OptionalNode' has no attributes.
+The class 'trnetvisual::EdgePattern' has the following attributes: 'name' of type str.
+The class 'trnetvisual::SomeResult' has the following attributes: 'count' of type int.
+The class 'trnetvisual::NodePattern' has the following attributes: 'name' of type str; 'id' of type str; 'expectedNumberOfDistinctValues' of type float.
+The class 'trnetvisual::FlowRule' has no attributes.
+The class 'trnetvisual::ExternalCalculationCall' has the following attributes: 'id' of type str; 'qualifiedName' of type str.
+The class 'Parameter' has no attributes.
+The class 'trnetvisual::ExternalActionCall' has the following attributes: 'id' of type str; 'qualifiedName' of type str.
+The class 'Result' has no attributes.
+The class 'trnetvisual::Parameter' has no attributes.
+The class 'trnetvisual::ExternalActionCallParameter' has no attributes.
+The class 'trnetvisual::Operand' has the following attributes: 'index' of type int.
+The class 'trnetvisual::SomeOperand' has the following attributes: 'count' of type int.
+The class 'trnetvisual::ExternalCalculationCallParameter' has no attributes.
+The class 'trnetvisual::ApplicationCondition' has no attributes.
+The class 'trnetvisual::AttributePattern' has the following attributes: 'expectedNumberOfDistinctValues' of type float; 'name' of type str.
+The class 'Operator' has no attributes.
+The class 'trnetvisual::MandatoryNode' has no attributes.
+The class 'trnetvisual::Same' has no attributes.
+The class 'trnetvisual::Action' has no attributes.
+The class 'trnetvisual::ExternalConditionCallParameter' has no attributes.
+The class 'Calculation' has no attributes.
+The class 'trnetvisual::NextDerived' has no attributes.
+The class 'trnetvisual::Calculation' has no attributes.
+The class 'NodePattern' has no attributes.
+'trnetvisual::Keep' is a specialization of 'Restriction'.
+'trnetvisual::External' is a specialization of 'Operator'.
+'trnetvisual::Combinator' is a specialization of 'Operator'.
+'trnetvisual::SomeResult' is a specialization of 'Result'.
+'trnetvisual::ExternalActionCall' is a specialization of 'Action'.
+'trnetvisual::Calculation' is a specialization of 'Parameter'.
+'trnetvisual::ExternalActionCallParameter' is a specialization of 'ParameterRef'.
+'trnetvisual::ExternalCalculationCall' is a specialization of 'Calculation'.
+'trnetvisual::ExternalCalculationCallParameter' is a specialization of 'ParameterRef'.
+'trnetvisual::OptionalOperand' is a specialization of 'Operand'.
+'trnetvisual::ExternalConditionCall' is a specialization of 'ApplicationCondition'.
+'trnetvisual::OptionalNode' is a specialization of 'NodePattern'.
+'trnetvisual::ExternalAttributeCalculationCallParameter' is a specialization of 'ParameterRef'.
+'trnetvisual::AnyResult' is a specialization of 'Result'.
+'trnetvisual::Same' is a specialization of 'Restriction'.
+'trnetvisual::ExternalAttributeCalculationCall' is a specialization of 'AttributeCalculation'.
+'trnetvisual::AttributeCalculation' is a specialization of 'Restriction'.
+'trnetvisual::Different' is a specialization of 'Restriction'.
+'trnetvisual::Eventually' is a specialization of 'FlowRule'.
+'trnetvisual::AttributePattern' is a specialization of 'Parameter'.
+'trnetvisual::NextDerived' is a specialization of 'FlowRule'.
+'trnetvisual::AntiOperand' is a specialization of 'Operand'.
+'trnetvisual::NodePattern' is a specialization of 'Parameter'.
+'trnetvisual::MandatoryNode' is a specialization of 'NodePattern'.
+'trnetvisual::ExternalConditionCallParameter' is a specialization of 'ParameterRef'.
+'trnetvisual::AnyOperand' is a specialization of 'Operand'.
+'trnetvisual::Next' is a specialization of 'FlowRule'.
+'trnetvisual::SomeOperand' is a specialization of 'Operand'.
+'trnetvisual::EdgePattern' (role 'incoming', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'NodePattern35', cardinality 0..*).
+'trnetvisual::AttributePattern' (role 'attributes', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'NodePattern57', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'NodePattern', cardinality 0..*) is associated with 'trnetvisual::EdgePattern' (role 'outgoing', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCallParameter' (role 'externalAttributeCalculationCallRef', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'Parameter', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCallParameter' (role 'ExternalAttributeCalculationCallParameter', cardinality 0..*) is associated with 'trnetvisual::ExternalAttributeCalculationCall' (role 'owner', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCallParameter' (role 'ExternalAttributeCalculationCallParameter91', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'parameter', cardinality 0..*).
+'trnetvisual::FlowRule' (role 'flowIn', cardinality 0..*) is associated with 'trnetvisual::Operator' (role 'Operator86', cardinality 0..*).
+'trnetvisual::Keep' (role 'keepOut', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'NodePattern59', cardinality 0..*).
+'trnetvisual::Result' (role 'Result', cardinality 0..*) is associated with 'trnetvisual::Pattern' (role 'pattern44', cardinality 0..*).
+'trnetvisual::Keep' (role 'Keep', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'target24', cardinality 0..*).
+'trnetvisual::Parameter' (role 'parameter97', cardinality 0..*) is associated with 'trnetvisual::ExternalCalculationCallParameter' (role 'ExternalCalculationCallParameter', cardinality 0..*).
+'trnetvisual::FlowRule' (role 'FlowRule71', cardinality 0..*) is associated with 'trnetvisual::Operator' (role 'target70', cardinality 0..*).
+'trnetvisual::FlowRule' (role 'trnetvisual_FlowRule', cardinality 0..*) is associated with 'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel10', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'NodePattern50', cardinality 0..*) is associated with 'trnetvisual::Same' (role 'sameIn', cardinality 0..*).
+'trnetvisual::Operator' (role 'trnetvisual_Operator73', cardinality 0..*) is associated with 'trnetvisual::ApplicationCondition' (role 'trnetvisual_ApplicationCondition', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCallParameter' (role 'parameters', cardinality 0..*) is associated with 'trnetvisual::ExternalAttributeCalculationCall' (role 'ExternalAttributeCalculationCall105', cardinality 0..*).
+'trnetvisual::ExternalCalculationCallParameter' (role 'ExternalCalculationCallParameter117', cardinality 0..*) is associated with 'trnetvisual::ExternalCalculationCall' (role 'owner116', cardinality 0..*).
+'trnetvisual::ExternalConditionCall' (role 'ExternalConditionCall', cardinality 0..*) is associated with 'trnetvisual::ExternalConditionCallParameter' (role 'parameters108', cardinality 0..*).
+'trnetvisual::Operator' (role 'Operator', cardinality 0..*) is associated with 'trnetvisual::Result' (role 'results', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCall' (role 'attributeExternalCalculationCall', cardinality 0..*) is associated with 'trnetvisual::AttributePattern' (role 'AttributePattern88', cardinality 0..*).
+'trnetvisual::Operand' (role 'Operand63', cardinality 0..*) is associated with 'trnetvisual::Operator' (role 'operator', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'target29', cardinality 0..*) is associated with 'trnetvisual::Different' (role 'Different', cardinality 0..*).
+'trnetvisual::Pattern' (role 'pattern', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'NodePattern39', cardinality 0..*).
+'trnetvisual::ExternalConditionCallParameter' (role 'ExternalConditionCallParameter', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'parameter93', cardinality 0..*).
+'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel', cardinality 0..*) is associated with 'trnetvisual::Pattern' (role 'trnetvisual_Pattern', cardinality 0..*).
+'trnetvisual::FlowRule' (role 'FlowRule', cardinality 0..*) is associated with 'trnetvisual::Operator' (role 'source68', cardinality 0..*).
+'trnetvisual::AttributePattern' (role 'AttributePattern', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'ownerNode', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'source', cardinality 0..*) is associated with 'trnetvisual::EdgePattern' (role 'EdgePattern15', cardinality 0..*).
+'trnetvisual::Parameter' (role 'parameter95', cardinality 0..*) is associated with 'trnetvisual::ExternalActionCallParameter' (role 'ExternalActionCallParameter', cardinality 0..*).
+'trnetvisual::Pattern' (role 'Pattern82', cardinality 0..*) is associated with 'trnetvisual::Operand' (role 'outgoingOperands', cardinality 0..*).
+'trnetvisual::ExternalActionCallParameter' (role 'externalActionCallRef', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'Parameter114', cardinality 0..*).
+'trnetvisual::Operand' (role 'trnetvisual_Operand', cardinality 0..*) is associated with 'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel6', cardinality 0..*).
+'trnetvisual::Operator' (role 'trnetvisual_Operator75', cardinality 0..*) is associated with 'trnetvisual::Action' (role 'trnetvisual_Action', cardinality 0..*).
+'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel2', cardinality 0..*) is associated with 'trnetvisual::Operator' (role 'trnetvisual_Operator', cardinality 0..*).
+'trnetvisual::ExternalActionCall' (role 'ExternalActionCall', cardinality 0..*) is associated with 'trnetvisual::ExternalActionCallParameter' (role 'parameters112', cardinality 0..*).
+'trnetvisual::Result' (role 'incomingResults', cardinality 0..*) is associated with 'trnetvisual::Pattern' (role 'Pattern77', cardinality 0..*).
+'trnetvisual::ExternalConditionCallParameter' (role 'ExternalConditionCallParameter100', cardinality 0..*) is associated with 'trnetvisual::ExternalConditionCall' (role 'owner99', cardinality 0..*).
+'trnetvisual::Operator' (role 'Operator84', cardinality 0..*) is associated with 'trnetvisual::FlowRule' (role 'flowOut', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'target19', cardinality 0..*) is associated with 'trnetvisual::Same' (role 'Same20', cardinality 0..*).
+'trnetvisual::Same' (role 'Same', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'source17', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'source26', cardinality 0..*) is associated with 'trnetvisual::Keep' (role 'Keep27', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'target', cardinality 0..*) is associated with 'trnetvisual::EdgePattern' (role 'EdgePattern', cardinality 0..*).
+'trnetvisual::Different' (role 'differentOut', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'NodePattern52', cardinality 0..*).
+'trnetvisual::Operator' (role 'operator65', cardinality 0..*) is associated with 'trnetvisual::Result' (role 'Result66', cardinality 0..*).
+'trnetvisual::ExternalCalculationCallParameter' (role 'parameters119', cardinality 0..*) is associated with 'trnetvisual::ExternalCalculationCall' (role 'ExternalCalculationCall', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'source31', cardinality 0..*) is associated with 'trnetvisual::Different' (role 'Different32', cardinality 0..*).
+'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel4', cardinality 0..*) is associated with 'trnetvisual::Restriction' (role 'trnetvisual_Restriction', cardinality 0..*).
+'trnetvisual::Pattern' (role 'Pattern', cardinality 0..*) is associated with 'trnetvisual::NodePattern' (role 'nodes', cardinality 0..*).
+'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel8', cardinality 0..*) is associated with 'trnetvisual::Result' (role 'trnetvisual_Result', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'NodePattern54', cardinality 0..*) is associated with 'trnetvisual::Different' (role 'differentIn', cardinality 0..*).
+'trnetvisual::ExternalCalculationCallParameter' (role 'externalCalculationCallRef', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'Parameter121', cardinality 0..*).
+'trnetvisual::Pattern' (role 'Pattern37', cardinality 0..*) is associated with 'trnetvisual::EdgePattern' (role 'edges', cardinality 0..*).
+'trnetvisual::Pattern' (role 'pattern46', cardinality 0..*) is associated with 'trnetvisual::Operand' (role 'Operand', cardinality 0..*).
+'trnetvisual::EdgePattern' (role 'EdgePattern42', cardinality 0..*) is associated with 'trnetvisual::Pattern' (role 'pattern41', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'NodePattern61', cardinality 0..*) is associated with 'trnetvisual::Keep' (role 'keepIn', cardinality 0..*).
+'trnetvisual::Operator' (role 'Operator80', cardinality 0..*) is associated with 'trnetvisual::Operand' (role 'operands', cardinality 0..*).
+'trnetvisual::NodePattern' (role 'NodePattern48', cardinality 0..*) is associated with 'trnetvisual::Same' (role 'sameOut', cardinality 0..*).
+'trnetvisual::ExternalActionCallParameter' (role 'ExternalActionCallParameter103', cardinality 0..*) is associated with 'trnetvisual::ExternalActionCall' (role 'owner102', cardinality 0..*).
+'trnetvisual::ExternalAttributeCalculationCall' (role 'ExternalAttributeCalculationCall', cardinality 0..*) is associated with 'trnetvisual::AttributePattern' (role 'result', cardinality 0..*).
+'trnetvisual::ExternalConditionCallParameter' (role 'externalConditionCallRef', cardinality 0..*) is associated with 'trnetvisual::Parameter' (role 'Parameter110', cardinality 0..*).
+'trnetvisual::TrNetModel' (role 'trnetvisual_TrNetModel12', cardinality 0..*) is associated with 'trnetvisual::Calculation' (role 'trnetvisual_Calculation', cardinality 0..*).

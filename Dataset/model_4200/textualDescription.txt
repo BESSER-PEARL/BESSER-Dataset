@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'a::Greeting' has the following attributes: 'name' of type str.
+The class 'a::Model' has no attributes.
+The class 'a::PackageDeclaration' has the following attributes: 'name' of type str.
+'a::Greeting' (role 'a_Greeting', cardinality 0..*) is associated with 'a::PackageDeclaration' (role 'a_PackageDeclaration2', cardinality 0..*).
+'a::Model' (role 'a_Model', cardinality 0..*) is associated with 'a::PackageDeclaration' (role 'a_PackageDeclaration', cardinality 0..*).

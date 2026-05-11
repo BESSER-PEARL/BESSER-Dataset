@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'company::Department' has the following attributes: 'ageSumOfEmployees' of type int; 'numberOfEmployees' of type int.
+The class 'company::Company' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'company::Person' has the following attributes: 'firstName' of type str; 'fullName' of type str; 'age' of type int.
+The class 'company::NamedElement' has the following attributes: 'name' of type str.
+'company::Person' is a specialization of 'NamedElement'.
+'company::Department' is a specialization of 'NamedElement'.
+'company::Company' is a specialization of 'NamedElement'.
+'company::Department' (role 'company_Department2', cardinality 0..*) is associated with 'company::Person' (role 'company_Person', cardinality 0..*).
+'company::Department' (role 'company_Department', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).
+'company::Person' (role 'company_Person3', cardinality 0..*) is associated with 'company::Person' (role 'company_Person5', cardinality 0..*).

@@ -1,0 +1,18 @@
+The model has 10 class(es).
+The class 'simpleUml::PackageElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simpleUml::Classifier' has no attributes.
+The class 'simpleUml::Package' has no attributes.
+The class 'simpleUml::Attribute' has no attributes.
+The class 'simpleUml::Class' has no attributes.
+The class 'simpleUml::UMLModelElement' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'simpleUml::Association' has no attributes.
+The class 'PackageElement' has no attributes.
+The class 'UMLModelElement' has no attributes.
+'simpleUml::Classifier' is a specialization of 'PackageElement'.
+'simpleUml::PackageElement' is a specialization of 'UMLModelElement'.
+'simpleUml::Package' is a specialization of 'UMLModelElement'.
+'simpleUml::Class' is a specialization of 'Classifier'.
+'simpleUml::Attribute' (role 'simpleUml_Attribute', cardinality 0..*) is associated with 'simpleUml::Class' (role 'simpleUml_Class', cardinality 0..*).
+'simpleUml::Package' (role 'namespace', cardinality 0..*) is associated with 'simpleUml::PackageElement' (role 'PackageElement', cardinality 0..*).
+'simpleUml::PackageElement' (role 'elements', cardinality 0..*) is associated with 'simpleUml::Package' (role 'Package', cardinality 0..*).

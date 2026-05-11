@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'root::Test' has the following attributes: 'att2' of type int; 'name' of type str; 'att1' of type int.

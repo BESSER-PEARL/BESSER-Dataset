@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cbrun/emf-compare/plugins/org.eclipse.emf.compare.mpatch.test/tests/dep_cycle/changed.ecore

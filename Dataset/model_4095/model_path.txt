@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KevinDelcourt/ExosJava/org.lpdql.automaton/model/automaton.ecore

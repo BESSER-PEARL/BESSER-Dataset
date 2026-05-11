@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'comp::Model' has no attributes.
+The class 'comp::Greeting' has the following attributes: 'name' of type str.
+'comp::Model' (role 'comp_Model', cardinality 0..*) is associated with 'comp::Greeting' (role 'comp_Greeting', cardinality 0..*).

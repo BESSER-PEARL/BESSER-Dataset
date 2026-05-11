@@ -1,0 +1,99 @@
+The model has 48 class(es).
+The class 'UML::Classifier' has no attributes.
+The class 'uml::UML::Classifier' has no attributes.
+The class 'uml::UML::Activity' has no attributes.
+The class 'uml::UML::ValueSpecification' has no attributes.
+The class 'uml::UML::ConnectorEnd' has no attributes.
+The class 'UML::Class' has no attributes.
+The class 'uml::UML::Property' has no attributes.
+The class 'uml::UML::PackageableElement' has no attributes.
+The class 'uml::UML::Package' has no attributes.
+The class 'uml::UML::BehavioralFeature' has no attributes.
+The class 'uml::UML::Port' has no attributes.
+The class 'uml::UML::Connector' has no attributes.
+The class 'uml::UML::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'uml::UML::ActivityNode' has the following attributes: 'name' of type str.
+The class 'UML::Feature' has no attributes.
+The class 'uml::UML::ActivityEdge' has no attributes.
+The class 'uml::UML::Interface' has no attributes.
+The class 'uml::UML::Constraint' has no attributes.
+The class 'UML::TypedElement' has no attributes.
+The class 'uml::UML::Action' has no attributes.
+The class 'UML::BehavioralFeature' has no attributes.
+The class 'uml::UML::Namespace' has no attributes.
+The class 'UML::StructuralFeature' has no attributes.
+The class 'uml::UML::CallOperationAction' has no attributes.
+The class 'UML::Type' has no attributes.
+The class 'UML::ValueSpecification' has no attributes.
+The class 'uml::UML::RedefinableElement' has no attributes.
+The class 'uml::UML::Feature' has no attributes.
+The class 'uml::UML::BehavioredClassifier' has no attributes.
+The class 'UML::ActivityNode' has no attributes.
+The class 'uml::UML::ConnectableElement' has no attributes.
+The class 'UML::Property' has no attributes.
+The class 'uml::UML::TypedElement' has no attributes.
+The class 'UML::Action' has no attributes.
+The class 'UML::Namespace' has no attributes.
+The class 'uml::UML::Behavior' has no attributes.
+The class 'UML::RedefinableElement' has no attributes.
+The class 'UML::BehavioredClassifier' has no attributes.
+The class 'uml::UML::Operation' has no attributes.
+The class 'UML::Behavior' has no attributes.
+The class 'UML::NamedElement' has no attributes.
+The class 'uml::UML::Type' has no attributes.
+The class 'UML::PackageableElement' has no attributes.
+The class 'uml::UML::InterfaceRealization' has no attributes.
+The class 'uml::UML::Class' has no attributes.
+The class 'UML::ConnectableElement' has no attributes.
+The class 'uml::UML::StructuralFeature' has no attributes.
+The class 'uml::UML::NamedElement' has the following attributes: 'name' of type str.
+'uml::UML::Package' is a specialization of 'UML::Namespace'.
+'uml::UML::StructuralFeature' is a specialization of 'UML::Feature'.
+'uml::UML::Activity' is a specialization of 'UML::Behavior'.
+'uml::UML::Operation' is a specialization of 'UML::BehavioralFeature'.
+'uml::UML::Behavior' is a specialization of 'UML::Class'.
+'uml::UML::Feature' is a specialization of 'UML::RedefinableElement'.
+'uml::UML::PackageableElement' is a specialization of 'UML::NamedElement'.
+'uml::UML::BehavioralFeature' is a specialization of 'UML::Feature'.
+'uml::UML::Class' is a specialization of 'UML::BehavioredClassifier'.
+'uml::UML::ConnectableElement' is a specialization of 'UML::TypedElement'.
+'uml::UML::Classifier' is a specialization of 'UML::Type'.
+'uml::UML::BehavioralFeature' is a specialization of 'UML::Namespace'.
+'uml::UML::RedefinableElement' is a specialization of 'UML::NamedElement'.
+'uml::UML::Interface' is a specialization of 'UML::Classifier'.
+'uml::UML::TypedElement' is a specialization of 'UML::NamedElement'.
+'uml::UML::Classifier' is a specialization of 'UML::Namespace'.
+'uml::UML::Property' is a specialization of 'UML::ConnectableElement'.
+'uml::UML::Port' is a specialization of 'UML::Property'.
+'uml::UML::Connector' is a specialization of 'UML::Feature'.
+'uml::UML::Action' is a specialization of 'UML::ActivityNode'.
+'uml::UML::CallOperationAction' is a specialization of 'UML::Action'.
+'uml::UML::Property' is a specialization of 'UML::StructuralFeature'.
+'uml::UML::OpaqueExpression' is a specialization of 'UML::ValueSpecification'.
+'uml::UML::Type' is a specialization of 'UML::PackageableElement'.
+'uml::UML::StructuralFeature' is a specialization of 'UML::TypedElement'.
+'uml::UML::BehavioredClassifier' is a specialization of 'UML::Classifier'.
+'uml::UML::Constraint' is a specialization of 'UML::PackageableElement'.
+'uml::UML::Namespace' is a specialization of 'UML::NamedElement'.
+'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode31', cardinality 0..*) is associated with 'uml::UML::ActivityEdge' (role 'uml_UML_ActivityEdge32', cardinality 0..*).
+'uml::UML::CallOperationAction' (role 'uml_UML_CallOperationAction', cardinality 0..*) is associated with 'uml::UML::Operation' (role 'uml_UML_Operation26', cardinality 0..*).
+'uml::UML::Operation' (role 'uml_UML_Operation', cardinality 0..*) is associated with 'uml::UML::Interface' (role 'uml_UML_Interface', cardinality 0..*).
+'uml::UML::Property' (role 'uml_UML_Property20', cardinality 0..*) is associated with 'uml::UML::Class' (role 'uml_UML_Class19', cardinality 0..*).
+'uml::UML::ConnectorEnd' (role 'uml_UML_ConnectorEnd42', cardinality 0..*) is associated with 'uml::UML::ConnectableElement' (role 'uml_UML_ConnectableElement', cardinality 0..*).
+'uml::UML::ActivityEdge' (role 'uml_UML_ActivityEdge37', cardinality 0..*) is associated with 'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode38', cardinality 0..*).
+'uml::UML::Operation' (role 'uml_UML_Operation14', cardinality 0..*) is associated with 'uml::UML::Class' (role 'uml_UML_Class', cardinality 0..*).
+'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode27', cardinality 0..*) is associated with 'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode29', cardinality 0..*).
+'uml::UML::Classifier' (role 'uml_UML_Classifier', cardinality 0..*) is associated with 'uml::UML::Feature' (role 'uml_UML_Feature', cardinality 0..*).
+'uml::UML::Property' (role 'uml_UML_Property', cardinality 0..*) is associated with 'uml::UML::Interface' (role 'uml_UML_Interface6', cardinality 0..*).
+'uml::UML::Behavior' (role 'uml_UML_Behavior', cardinality 0..*) is associated with 'uml::UML::BehavioredClassifier' (role 'uml_UML_BehavioredClassifier12', cardinality 0..*).
+'uml::UML::Class' (role 'uml_UML_Class16', cardinality 0..*) is associated with 'uml::UML::Classifier' (role 'uml_UML_Classifier17', cardinality 0..*).
+'uml::UML::Activity' (role 'uml_UML_Activity23', cardinality 0..*) is associated with 'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode', cardinality 0..*).
+'uml::UML::Type' (role 'uml_UML_Type', cardinality 0..*) is associated with 'uml::UML::TypedElement' (role 'uml_UML_TypedElement', cardinality 0..*).
+'uml::UML::Connector' (role 'uml_UML_Connector', cardinality 0..*) is associated with 'uml::UML::ConnectorEnd' (role 'uml_UML_ConnectorEnd', cardinality 0..*).
+'uml::UML::ActivityEdge' (role 'uml_UML_ActivityEdge', cardinality 0..*) is associated with 'uml::UML::Activity' (role 'uml_UML_Activity', cardinality 0..*).
+'uml::UML::Namespace' (role 'uml_UML_Namespace', cardinality 0..*) is associated with 'uml::UML::Constraint' (role 'uml_UML_Constraint', cardinality 0..*).
+'uml::UML::Interface' (role 'uml_UML_Interface8', cardinality 0..*) is associated with 'uml::UML::InterfaceRealization' (role 'uml_UML_InterfaceRealization', cardinality 0..*).
+'uml::UML::ActivityEdge' (role 'uml_UML_ActivityEdge34', cardinality 0..*) is associated with 'uml::UML::ActivityNode' (role 'uml_UML_ActivityNode35', cardinality 0..*).
+'uml::UML::PackageableElement' (role 'uml_UML_PackageableElement', cardinality 0..*) is associated with 'uml::UML::Package' (role 'uml_UML_Package', cardinality 0..*).
+'uml::UML::OpaqueExpression' (role 'uml_UML_OpaqueExpression', cardinality 0..*) is associated with 'uml::UML::Constraint' (role 'uml_UML_Constraint40', cardinality 0..*).
+'uml::UML::BehavioredClassifier' (role 'uml_UML_BehavioredClassifier', cardinality 0..*) is associated with 'uml::UML::InterfaceRealization' (role 'uml_UML_InterfaceRealization10', cardinality 0..*).

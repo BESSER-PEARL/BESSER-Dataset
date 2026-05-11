@@ -1,0 +1,31 @@
+The model has 15 class(es).
+The class 'polybot::Right' has no attributes.
+The class 'polybot::TakeDropObject' has no attributes.
+The class 'Move' has no attributes.
+The class 'polybot::Move' has the following attributes: 'speed' of type int; 'duration' of type int.
+The class 'polybot::While' has the following attributes: 'nb' of type int.
+The class 'polybot::Instruction' has no attributes.
+The class 'polybot::GoTo' has no attributes.
+The class 'polybot::Forward' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'polybot::IfObstacleDetected' has no attributes.
+The class 'polybot::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'polybot::Bot' has no attributes.
+The class 'polybot::Left' has no attributes.
+The class 'polybot::IfObjectDetected' has no attributes.
+The class 'polybot::Reverse' has no attributes.
+'polybot::GoTo' is a specialization of 'Move'.
+'polybot::Move' is a specialization of 'Instruction'.
+'polybot::Forward' is a specialization of 'Move'.
+'polybot::TakeDropObject' is a specialization of 'Instruction'.
+'polybot::Left' is a specialization of 'Move'.
+'polybot::Right' is a specialization of 'Move'.
+'polybot::While' is a specialization of 'Instruction'.
+'polybot::IfObjectDetected' is a specialization of 'Instruction'.
+'polybot::Reverse' is a specialization of 'Move'.
+'polybot::IfObstacleDetected' is a specialization of 'Instruction'.
+'polybot::Bot' (role 'polybot_Bot2', cardinality 0..*) is associated with 'polybot::Instruction' (role 'polybot_Instruction', cardinality 0..*).
+'polybot::Instruction' (role 'polybot_Instruction6', cardinality 0..*) is associated with 'polybot::IfObstacleDetected' (role 'polybot_IfObstacleDetected', cardinality 0..*).
+'polybot::Instruction' (role 'polybot_Instruction8', cardinality 0..*) is associated with 'polybot::While' (role 'polybot_While', cardinality 0..*).
+'polybot::Instruction' (role 'polybot_Instruction4', cardinality 0..*) is associated with 'polybot::IfObjectDetected' (role 'polybot_IfObjectDetected', cardinality 0..*).
+'polybot::Point' (role 'polybot_Point', cardinality 0..*) is associated with 'polybot::Bot' (role 'polybot_Bot', cardinality 0..*).

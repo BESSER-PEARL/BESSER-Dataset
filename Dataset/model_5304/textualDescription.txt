@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'root::SuperA' has no attributes.
+The class 'A' has no attributes.
+The class 'root::A' has no attributes.
+The class 'SuperA' has no attributes.
+The class 'root::B' has no attributes.
+The class 'root::SubA' has no attributes.
+'root::SubA' is a specialization of 'A'.
+'root::A' is a specialization of 'SuperA'.
+'root::A' (role 'root_A', cardinality 0..*) is associated with 'root::B' (role 'root_B', cardinality 0..*).

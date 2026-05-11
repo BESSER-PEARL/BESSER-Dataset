@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nloke/emfjson-gwt/org.eclipselabs.emfjson.gwt.test/model/model.ecore

@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'schemaprimerpo::USAddress' has the following attributes: 'name' of type str; 'city' of type str; 'state' of type str; 'country' of type str; 'zip' of type str; 'street' of type str.
+The class 'schemaprimerpo::PurchaseOrder' has the following attributes: 'comment' of type str; 'orderDate' of type str.
+The class 'schemaprimerpo::EStringToStringMapEntry' has no attributes.
+The class 'schemaprimerpo::Item' has the following attributes: 'partNum' of type str; 'shipDate' of type str; 'productName' of type str; 'uSPrice' of type str; 'quantity' of type str; 'comment' of type str.
+The class 'schemaprimerpo::DocumentRoot' has the following attributes: 'comment' of type str; 'mixed' of type str.
+'schemaprimerpo::DocumentRoot' (role 'schemaprimerpo_DocumentRoot2', cardinality 0..*) is associated with 'schemaprimerpo::EStringToStringMapEntry' (role 'schemaprimerpo_EStringToStringMapEntry3', cardinality 0..*).
+'schemaprimerpo::USAddress' (role 'schemaprimerpo_USAddress10', cardinality 0..*) is associated with 'schemaprimerpo::PurchaseOrder' (role 'schemaprimerpo_PurchaseOrder9', cardinality 0..*).
+'schemaprimerpo::USAddress' (role 'schemaprimerpo_USAddress', cardinality 0..*) is associated with 'schemaprimerpo::PurchaseOrder' (role 'schemaprimerpo_PurchaseOrder7', cardinality 0..*).
+'schemaprimerpo::DocumentRoot' (role 'schemaprimerpo_DocumentRoot', cardinality 0..*) is associated with 'schemaprimerpo::EStringToStringMapEntry' (role 'schemaprimerpo_EStringToStringMapEntry', cardinality 0..*).
+'schemaprimerpo::PurchaseOrder' (role 'schemaprimerpo_PurchaseOrder12', cardinality 0..*) is associated with 'schemaprimerpo::Item' (role 'schemaprimerpo_Item', cardinality 0..*).
+'schemaprimerpo::PurchaseOrder' (role 'schemaprimerpo_PurchaseOrder', cardinality 0..*) is associated with 'schemaprimerpo::DocumentRoot' (role 'schemaprimerpo_DocumentRoot5', cardinality 0..*).

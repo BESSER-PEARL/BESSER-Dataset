@@ -1,0 +1,24 @@
+The model has 13 class(es).
+The class 'gfsm::IntOperation' has no attributes.
+The class 'gfsm::GState' has no attributes.
+The class 'gfsm::GInitialState' has no attributes.
+The class 'State' has no attributes.
+The class 'GState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'FinalState' has no attributes.
+The class 'InitialState' has no attributes.
+The class 'gfsm::BooleanExpression' has no attributes.
+The class 'gfsm::GTransition' has no attributes.
+The class 'FSM' has no attributes.
+The class 'gfsm::GFinalState' has no attributes.
+The class 'gfsm::GFSM' has no attributes.
+'gfsm::GFSM' is a specialization of 'FSM'.
+'gfsm::GFinalState' is a specialization of 'FinalState'.
+'gfsm::GFinalState' is a specialization of 'GState'.
+'gfsm::GTransition' is a specialization of 'Transition'.
+'gfsm::GState' is a specialization of 'State'.
+'gfsm::GInitialState' is a specialization of 'GState'.
+'gfsm::GInitialState' is a specialization of 'InitialState'.
+'gfsm::BooleanExpression' (role 'gfsm_BooleanExpression', cardinality 0..*) is associated with 'gfsm::GTransition' (role 'gfsm_GTransition', cardinality 0..*).
+'gfsm::IntOperation' (role 'gfsm_IntOperation4', cardinality 0..*) is associated with 'gfsm::GState' (role 'gfsm_GState3', cardinality 0..*).
+'gfsm::IntOperation' (role 'gfsm_IntOperation', cardinality 0..*) is associated with 'gfsm::GState' (role 'gfsm_GState', cardinality 0..*).

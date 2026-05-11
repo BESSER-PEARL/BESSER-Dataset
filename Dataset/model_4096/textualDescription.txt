@@ -1,0 +1,21 @@
+The model has 7 class(es).
+The class 'automation::Transition' has no attributes.
+The class 'automation::State' has no attributes.
+The class 'automation::Automation' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'automation::Input' has no attributes.
+The class 'automation::Output' has no attributes.
+The class 'automation::NamedElement' has the following attributes: 'name' of type str.
+'automation::Output' is a specialization of 'NamedElement'.
+'automation::State' is a specialization of 'NamedElement'.
+'automation::Automation' is a specialization of 'NamedElement'.
+'automation::Transition' is a specialization of 'NamedElement'.
+'automation::Input' is a specialization of 'NamedElement'.
+'automation::Output' (role 'automation_Output', cardinality 0..*) is associated with 'automation::Transition' (role 'automation_Transition2', cardinality 0..*).
+'automation::Input' (role 'automation_Input', cardinality 0..*) is associated with 'automation::Transition' (role 'automation_Transition', cardinality 0..*).
+'automation::Automation' (role 'automation_Automation11', cardinality 0..*) is associated with 'automation::State' (role 'automation_State12', cardinality 0..*).
+'automation::Transition' (role 'automation_Transition9', cardinality 0..*) is associated with 'automation::Automation' (role 'automation_Automation', cardinality 0..*).
+'automation::State' (role 'automation_State7', cardinality 0..*) is associated with 'automation::Transition' (role 'automation_Transition6', cardinality 0..*).
+'automation::Output' (role 'automation_Output18', cardinality 0..*) is associated with 'automation::Automation' (role 'automation_Automation17', cardinality 0..*).
+'automation::Input' (role 'automation_Input15', cardinality 0..*) is associated with 'automation::Automation' (role 'automation_Automation14', cardinality 0..*).
+'automation::Transition' (role 'automation_Transition4', cardinality 0..*) is associated with 'automation::State' (role 'automation_State', cardinality 0..*).

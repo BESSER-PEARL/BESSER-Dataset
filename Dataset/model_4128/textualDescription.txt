@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'mathAssignmentLanguage::MathExp' has no attributes.
+The class 'mathAssignmentLanguage::Number' has the following attributes: 'value' of type int.
+The class 'mathAssignmentLanguage::Plus' has no attributes.
+The class 'Exp' has no attributes.
+The class 'mathAssignmentLanguage::ExpOp' has no attributes.
+The class 'mathAssignmentLanguage::Minus' has no attributes.
+The class 'mathAssignmentLanguage::Parenthesis' has no attributes.
+The class 'mathAssignmentLanguage::Div' has no attributes.
+The class 'ExpOp' has no attributes.
+The class 'mathAssignmentLanguage::Mult' has no attributes.
+The class 'mathAssignmentLanguage::Exp' has no attributes.
+'mathAssignmentLanguage::Minus' is a specialization of 'ExpOp'.
+'mathAssignmentLanguage::Mult' is a specialization of 'ExpOp'.
+'mathAssignmentLanguage::Plus' is a specialization of 'ExpOp'.
+'mathAssignmentLanguage::Number' is a specialization of 'Exp'.
+'mathAssignmentLanguage::Div' is a specialization of 'ExpOp'.
+'mathAssignmentLanguage::Parenthesis' is a specialization of 'Exp'.
+'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp5', cardinality 0..*) is associated with 'mathAssignmentLanguage::ExpOp' (role 'mathAssignmentLanguage_ExpOp', cardinality 0..*).
+'mathAssignmentLanguage::MathExp' (role 'mathAssignmentLanguage_MathExp', cardinality 0..*) is associated with 'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp', cardinality 0..*).
+'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp1', cardinality 0..*) is associated with 'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp3', cardinality 0..*).
+'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp6', cardinality 0..*) is associated with 'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp8', cardinality 0..*).
+'mathAssignmentLanguage::Parenthesis' (role 'mathAssignmentLanguage_Parenthesis', cardinality 0..*) is associated with 'mathAssignmentLanguage::Exp' (role 'mathAssignmentLanguage_Exp10', cardinality 0..*).

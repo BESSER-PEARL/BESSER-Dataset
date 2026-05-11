@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'classes::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'classes::Class' has the following attributes: 'name' of type str.
+The class 'classes::ClassDiagram' has the following attributes: 'name' of type str.
+The class 'classes::Reference' has the following attributes: 'name' of type str.
+The enumeration 'Type' has the following literals: 'string', 'integer', 'datetime', 'float', 'bool'.
+'classes::Class' (role 'Class7', cardinality 0..*) is associated with 'classes::Attribute' (role 'attributes', cardinality 0..*).
+'classes::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'classes::Class' (role 'cls', cardinality 0..*).
+'classes::Class' (role 'classes_Class', cardinality 0..*) is associated with 'classes::Attribute' (role 'classes_Attribute', cardinality 0..*).
+'classes::ClassDiagram' (role 'diagram', cardinality 0..*) is associated with 'classes::Class' (role 'Class', cardinality 0..*).
+'classes::Reference' (role 'classes_Reference', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class11', cardinality 0..*).
+'classes::ClassDiagram' (role 'ClassDiagram', cardinality 0..*) is associated with 'classes::Class' (role 'classes', cardinality 0..*).
+'classes::Reference' (role 'Reference', cardinality 0..*) is associated with 'classes::Class' (role 'cls3', cardinality 0..*).
+'classes::Reference' (role 'references', cardinality 0..*) is associated with 'classes::Class' (role 'Class9', cardinality 0..*).

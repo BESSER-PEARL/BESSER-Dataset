@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'p2::ProfileDefinition' has the following attributes: 'includeSourceBundles' of type bool.
+The class 'ModelElement' has no attributes.
+The class 'p2::Configuration' has the following attributes: 'wS' of type str; 'arch' of type str; 'oS' of type str.
+The class 'p2::Repository' has the following attributes: 'uRL' of type str; 'type' of type str.
+The class 'p2::RepositoryList' has the following attributes: 'name' of type str.
+The class 'p2::Requirement' has the following attributes: 'greedy' of type bool; 'iD' of type str; 'versionRange' of type str; 'type' of type str; 'name' of type str; 'optional' of type bool; 'namespace' of type str; 'filter' of type str.
+The enumeration 'RepositoryType' has the following literals: 'Artifact', 'Metadata', 'Combined'.
+The enumeration 'VersionSegment' has the following literals: 'Qualifier', 'Micro', 'Minor', 'Major'.
+The enumeration 'RequirementType' has the following literals: 'NONE', 'FEATURE', 'PROJECT'.
+'p2::Requirement' is a specialization of 'ModelElement'.
+'p2::RepositoryList' is a specialization of 'ModelElement'.
+'p2::Configuration' is a specialization of 'ModelElement'.
+'p2::Repository' is a specialization of 'ModelElement'.
+'p2::ProfileDefinition' is a specialization of 'ModelElement'.
+'p2::RepositoryList' (role 'p2_RepositoryList', cardinality 0..*) is associated with 'p2::Repository' (role 'p2_Repository4', cardinality 0..*).
+'p2::ProfileDefinition' (role 'p2_ProfileDefinition', cardinality 0..*) is associated with 'p2::Requirement' (role 'p2_Requirement', cardinality 0..*).
+'p2::ProfileDefinition' (role 'p2_ProfileDefinition2', cardinality 0..*) is associated with 'p2::Repository' (role 'p2_Repository', cardinality 0..*).

@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class droneDSLLib_Parallele4 extends Parallele {
+
+
+
+
+
+
+    private droneDSLLib_EObject dronedsllib_eobject;
+
+
+
+
+    private droneDSLLib_EObject dronedsllib_eobject;
+
+
+    public droneDSLLib_Parallele4(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public droneDSLLib_EObject getDronedsllib_eobject() {
+        return dronedsllib_eobject;
+    }
+
+    public void setDronedsllib_eobject(droneDSLLib_EObject dronedsllib_eobject) {
+        this.dronedsllib_eobject = dronedsllib_eobject;
+    }
+    public droneDSLLib_EObject getDronedsllib_eobject() {
+        return dronedsllib_eobject;
+    }
+
+    public void setDronedsllib_eobject(droneDSLLib_EObject dronedsllib_eobject) {
+        this.dronedsllib_eobject = dronedsllib_eobject;
+    }
+
+}

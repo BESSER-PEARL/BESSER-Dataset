@@ -1,0 +1,146 @@
+The model has 58 class(es).
+The class 'droneDSL::PourcentDecl' has no attributes.
+The class 'droneDSL::VarDecl' has the following attributes: 'name' of type str.
+The class 'droneDSL::RotationGauche' has no attributes.
+The class 'CommandeBasique' has no attributes.
+The class 'AR' has no attributes.
+The class 'Parallele' has no attributes.
+The class 'droneDSL::FonctionCallInterne' has no attributes.
+The class 'droneDSL::Parallele2' has no attributes.
+The class 'RGRD' has no attributes.
+The class 'droneDSL::Pourcent::vitesse::rotation::max' has no attributes.
+The class 'GDr' has no attributes.
+The class 'droneDSL::AR' has no attributes.
+The class 'droneDSL::PourcentExp' has no attributes.
+The class 'droneDSL::Prologue' has no attributes.
+The class 'droneDSL::Descendre' has no attributes.
+The class 'droneDSL::Parallele' has no attributes.
+The class 'SecondeExp' has no attributes.
+The class 'MD' has no attributes.
+The class 'droneDSL::DecollerAtterrir' has the following attributes: 'str' of type str.
+The class 'droneDSL::CommandeBasique' has no attributes.
+The class 'droneDSL::Decoller' has no attributes.
+The class 'droneDSL::Eloignement::max' has no attributes.
+The class 'droneDSL::FonctionDecl' has the following attributes: 'name' of type str.
+The class 'droneDSL::Model' has no attributes.
+The class 'droneDSL::Avancer' has no attributes.
+The class 'PourcentExp' has no attributes.
+The class 'droneDSL::SecondeExp' has no attributes.
+The class 'DecollerAtterrir' has no attributes.
+The class 'droneDSL::SecondeDecl' has no attributes.
+The class 'droneDSL::Pourcent::vitesse::deplacement::max' has no attributes.
+The class 'droneDSL::Monter' has no attributes.
+The class 'droneDSL::GDr' has no attributes.
+The class 'droneDSL::Gauche' has no attributes.
+The class 'FonctionCall' has no attributes.
+The class 'droneDSL::Parallele4' has no attributes.
+The class 'droneDSL::Main' has no attributes.
+The class 'droneDSL::RGRD' has no attributes.
+The class 'droneDSL::RotationDroite' has no attributes.
+The class 'droneDSL::Import' has the following attributes: 'name' of type str.
+The class 'droneDSL::Droite' has no attributes.
+The class 'droneDSL::FonctionCall' has no attributes.
+The class 'droneDSL::SecondeConst' has the following attributes: 'val' of type str.
+The class 'droneDSL::Pourcent::vitesse::hauteur::max' has no attributes.
+The class 'Mouvement' has no attributes.
+The class 'droneDSL::Atterrir' has no attributes.
+The class 'droneDSL::RefSecondeVar' has no attributes.
+The class 'droneDSL::Hauteur::max' has no attributes.
+The class 'droneDSL::FinDeMain' has the following attributes: 'accolade' of type str.
+The class 'droneDSL::EObject' has no attributes.
+The class 'droneDSL::MD' has no attributes.
+The class 'droneDSL::Parallele3' has no attributes.
+The class 'droneDSL::FonctionCallExterne' has the following attributes: 'name' of type str.
+The class 'droneDSL::Pause' has no attributes.
+The class 'droneDSL::PourcentConst' has the following attributes: 'val' of type str.
+The class 'droneDSL::RefPourcentVar' has no attributes.
+The class 'VarDecl' has no attributes.
+The class 'droneDSL::Reculer' has no attributes.
+The class 'droneDSL::Mouvement' has no attributes.
+'droneDSL::PourcentDecl' is a specialization of 'VarDecl'.
+'droneDSL::Parallele3' is a specialization of 'Parallele'.
+'droneDSL::RotationGauche' is a specialization of 'CommandeBasique'.
+'droneDSL::Avancer' is a specialization of 'AR'.
+'droneDSL::Monter' is a specialization of 'MD'.
+'droneDSL::Descendre' is a specialization of 'CommandeBasique'.
+'droneDSL::SecondeConst' is a specialization of 'SecondeExp'.
+'droneDSL::RefSecondeVar' is a specialization of 'SecondeExp'.
+'droneDSL::Droite' is a specialization of 'CommandeBasique'.
+'droneDSL::Atterrir' is a specialization of 'DecollerAtterrir'.
+'droneDSL::Descendre' is a specialization of 'MD'.
+'droneDSL::Gauche' is a specialization of 'GDr'.
+'droneDSL::RotationDroite' is a specialization of 'Mouvement'.
+'droneDSL::Parallele4' is a specialization of 'Parallele'.
+'droneDSL::Droite' is a specialization of 'GDr'.
+'droneDSL::RotationGauche' is a specialization of 'RGRD'.
+'droneDSL::Pause' is a specialization of 'CommandeBasique'.
+'droneDSL::SecondeDecl' is a specialization of 'VarDecl'.
+'droneDSL::PourcentConst' is a specialization of 'PourcentExp'.
+'droneDSL::RefPourcentVar' is a specialization of 'PourcentExp'.
+'droneDSL::FonctionCallInterne' is a specialization of 'FonctionCall'.
+'droneDSL::Gauche' is a specialization of 'CommandeBasique'.
+'droneDSL::Parallele2' is a specialization of 'Parallele'.
+'droneDSL::Descendre' is a specialization of 'Mouvement'.
+'droneDSL::Monter' is a specialization of 'CommandeBasique'.
+'droneDSL::Avancer' is a specialization of 'Mouvement'.
+'droneDSL::Monter' is a specialization of 'Mouvement'.
+'droneDSL::FonctionCallExterne' is a specialization of 'FonctionCall'.
+'droneDSL::RotationDroite' is a specialization of 'RGRD'.
+'droneDSL::RotationGauche' is a specialization of 'Mouvement'.
+'droneDSL::Reculer' is a specialization of 'AR'.
+'droneDSL::Gauche' is a specialization of 'Mouvement'.
+'droneDSL::Parallele' is a specialization of 'Mouvement'.
+'droneDSL::Reculer' is a specialization of 'Mouvement'.
+'droneDSL::Decoller' is a specialization of 'DecollerAtterrir'.
+'droneDSL::Avancer' is a specialization of 'CommandeBasique'.
+'droneDSL::Droite' is a specialization of 'Mouvement'.
+'droneDSL::RotationDroite' is a specialization of 'CommandeBasique'.
+'droneDSL::Reculer' is a specialization of 'CommandeBasique'.
+'droneDSL::RotationDroite' (role 'droneDSL_RotationDroite74', cardinality 0..*) is associated with 'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp75', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp77', cardinality 0..*) is associated with 'droneDSL::Pause' (role 'droneDSL_Pause', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp', cardinality 0..*) is associated with 'droneDSL::Monter' (role 'droneDSL_Monter', cardinality 0..*).
+'droneDSL::Model' (role 'droneDSL_Model4', cardinality 0..*) is associated with 'droneDSL::Main' (role 'droneDSL_Main', cardinality 0..*).
+'droneDSL::Main' (role 'droneDSL_Main92', cardinality 0..*) is associated with 'droneDSL::FinDeMain' (role 'droneDSL_FinDeMain', cardinality 0..*).
+'droneDSL::RotationDroite' (role 'droneDSL_RotationDroite', cardinality 0..*) is associated with 'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp72', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp47', cardinality 0..*) is associated with 'droneDSL::Avancer' (role 'droneDSL_Avancer', cardinality 0..*).
+'droneDSL::Pourcent::vitesse::hauteur::max' (role 'droneDSL_Pourcent_vitesse_hauteur_max', cardinality 0..*) is associated with 'droneDSL::PourcentConst' (role 'droneDSL_PourcentConst', cardinality 0..*).
+'droneDSL::FonctionDecl' (role 'droneDSL_FonctionDecl', cardinality 0..*) is associated with 'droneDSL::Model' (role 'droneDSL_Model6', cardinality 0..*).
+'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp55', cardinality 0..*) is associated with 'droneDSL::Reculer' (role 'droneDSL_Reculer54', cardinality 0..*).
+'droneDSL::Model' (role 'droneDSL_Model', cardinality 0..*) is associated with 'droneDSL::Import' (role 'droneDSL_Import', cardinality 0..*).
+'droneDSL::Parallele' (role 'droneDSL_Parallele', cardinality 0..*) is associated with 'droneDSL::EObject' (role 'droneDSL_EObject94', cardinality 0..*).
+'droneDSL::Parallele' (role 'droneDSL_Parallele96', cardinality 0..*) is associated with 'droneDSL::EObject' (role 'droneDSL_EObject97', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp42', cardinality 0..*) is associated with 'droneDSL::Descendre' (role 'droneDSL_Descendre', cardinality 0..*).
+'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp70', cardinality 0..*) is associated with 'droneDSL::RotationGauche' (role 'droneDSL_RotationGauche69', cardinality 0..*).
+'droneDSL::Hauteur::max' (role 'droneDSL_Hauteur_max26', cardinality 0..*) is associated with 'droneDSL::Prologue' (role 'droneDSL_Prologue25', cardinality 0..*).
+'droneDSL::PourcentDecl' (role 'droneDSL_PourcentDecl37', cardinality 0..*) is associated with 'droneDSL::RefPourcentVar' (role 'droneDSL_RefPourcentVar', cardinality 0..*).
+'droneDSL::Gauche' (role 'droneDSL_Gauche', cardinality 0..*) is associated with 'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp57', cardinality 0..*).
+'droneDSL::Hauteur::max' (role 'droneDSL_Hauteur_max', cardinality 0..*) is associated with 'droneDSL::SecondeConst' (role 'droneDSL_SecondeConst', cardinality 0..*).
+'droneDSL::Main' (role 'droneDSL_Main87', cardinality 0..*) is associated with 'droneDSL::EObject' (role 'droneDSL_EObject88', cardinality 0..*).
+'droneDSL::FonctionCallInterne' (role 'droneDSL_FonctionCallInterne', cardinality 0..*) is associated with 'droneDSL::FonctionDecl' (role 'droneDSL_FonctionDecl81', cardinality 0..*).
+'droneDSL::Pourcent::vitesse::rotation::max' (role 'droneDSL_Pourcent_vitesse_rotation_max', cardinality 0..*) is associated with 'droneDSL::PourcentConst' (role 'droneDSL_PourcentConst11', cardinality 0..*).
+'droneDSL::Pourcent::vitesse::hauteur::max' (role 'droneDSL_Pourcent_vitesse_hauteur_max17', cardinality 0..*) is associated with 'droneDSL::Prologue' (role 'droneDSL_Prologue16', cardinality 0..*).
+'droneDSL::Prologue' (role 'droneDSL_Prologue22', cardinality 0..*) is associated with 'droneDSL::Pourcent::vitesse::rotation::max' (role 'droneDSL_Pourcent_vitesse_rotation_max23', cardinality 0..*).
+'droneDSL::Model' (role 'droneDSL_Model2', cardinality 0..*) is associated with 'droneDSL::Prologue' (role 'droneDSL_Prologue', cardinality 0..*).
+'droneDSL::Droite' (role 'droneDSL_Droite64', cardinality 0..*) is associated with 'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp65', cardinality 0..*).
+'droneDSL::EObject' (role 'droneDSL_EObject103', cardinality 0..*) is associated with 'droneDSL::Parallele4' (role 'droneDSL_Parallele4', cardinality 0..*).
+'droneDSL::EObject' (role 'droneDSL_EObject106', cardinality 0..*) is associated with 'droneDSL::Parallele4' (role 'droneDSL_Parallele4105', cardinality 0..*).
+'droneDSL::Avancer' (role 'droneDSL_Avancer49', cardinality 0..*) is associated with 'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp50', cardinality 0..*).
+'droneDSL::Atterrir' (role 'droneDSL_Atterrir', cardinality 0..*) is associated with 'droneDSL::Main' (role 'droneDSL_Main90', cardinality 0..*).
+'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp', cardinality 0..*) is associated with 'droneDSL::Monter' (role 'droneDSL_Monter40', cardinality 0..*).
+'droneDSL::Prologue' (role 'droneDSL_Prologue28', cardinality 0..*) is associated with 'droneDSL::Eloignement::max' (role 'droneDSL_Eloignement_max29', cardinality 0..*).
+'droneDSL::EObject' (role 'droneDSL_EObject101', cardinality 0..*) is associated with 'droneDSL::Parallele3' (role 'droneDSL_Parallele3', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp62', cardinality 0..*) is associated with 'droneDSL::Droite' (role 'droneDSL_Droite', cardinality 0..*).
+'droneDSL::FonctionDecl' (role 'droneDSL_FonctionDecl79', cardinality 0..*) is associated with 'droneDSL::EObject' (role 'droneDSL_EObject', cardinality 0..*).
+'droneDSL::RefSecondeVar' (role 'droneDSL_RefSecondeVar', cardinality 0..*) is associated with 'droneDSL::SecondeDecl' (role 'droneDSL_SecondeDecl35', cardinality 0..*).
+'droneDSL::Pourcent::vitesse::deplacement::max' (role 'droneDSL_Pourcent_vitesse_deplacement_max', cardinality 0..*) is associated with 'droneDSL::PourcentConst' (role 'droneDSL_PourcentConst9', cardinality 0..*).
+'droneDSL::SecondeConst' (role 'droneDSL_SecondeConst31', cardinality 0..*) is associated with 'droneDSL::SecondeDecl' (role 'droneDSL_SecondeDecl', cardinality 0..*).
+'droneDSL::PourcentDecl' (role 'droneDSL_PourcentDecl', cardinality 0..*) is associated with 'droneDSL::PourcentConst' (role 'droneDSL_PourcentConst33', cardinality 0..*).
+'droneDSL::EObject' (role 'droneDSL_EObject99', cardinality 0..*) is associated with 'droneDSL::Parallele2' (role 'droneDSL_Parallele2', cardinality 0..*).
+'droneDSL::Import' (role 'droneDSL_Import83', cardinality 0..*) is associated with 'droneDSL::FonctionCallExterne' (role 'droneDSL_FonctionCallExterne', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp52', cardinality 0..*) is associated with 'droneDSL::Reculer' (role 'droneDSL_Reculer', cardinality 0..*).
+'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp45', cardinality 0..*) is associated with 'droneDSL::Descendre' (role 'droneDSL_Descendre44', cardinality 0..*).
+'droneDSL::SecondeConst' (role 'droneDSL_SecondeConst14', cardinality 0..*) is associated with 'droneDSL::Eloignement::max' (role 'droneDSL_Eloignement_max', cardinality 0..*).
+'droneDSL::SecondeExp' (role 'droneDSL_SecondeExp67', cardinality 0..*) is associated with 'droneDSL::RotationGauche' (role 'droneDSL_RotationGauche', cardinality 0..*).
+'droneDSL::Decoller' (role 'droneDSL_Decoller', cardinality 0..*) is associated with 'droneDSL::Main' (role 'droneDSL_Main85', cardinality 0..*).
+'droneDSL::PourcentExp' (role 'droneDSL_PourcentExp60', cardinality 0..*) is associated with 'droneDSL::Gauche' (role 'droneDSL_Gauche59', cardinality 0..*).
+'droneDSL::Prologue' (role 'droneDSL_Prologue19', cardinality 0..*) is associated with 'droneDSL::Pourcent::vitesse::deplacement::max' (role 'droneDSL_Pourcent_vitesse_deplacement_max20', cardinality 0..*).

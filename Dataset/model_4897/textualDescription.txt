@@ -1,0 +1,243 @@
+The model has 107 class(es).
+The class 'IUPresentationWithDetails' has no attributes.
+The class 'RequirementWrapper' has no attributes.
+The class 'aggregator::ExclusionRule' has no attributes.
+The class 'Bundles' has no attributes.
+The class 'aggregator::Status' has the following attributes: 'message' of type str; 'code' of type str.
+The class 'aggregator::p2view::Requirements' has no attributes.
+The class 'p2view::IUPresentation' has no attributes.
+The class 'aggregator::p2view::ProvidedCapabilities' has no attributes.
+The class 'aggregator::MavenMapping' has the following attributes: 'namePattern' of type str; 'artifactId' of type str; 'groupId' of type str.
+The class 'IProvidedCapability' has no attributes.
+The class 'aggregator::p2view::Miscellaneous' has no attributes.
+The class 'aggregator::p2view::Bundles' has no attributes.
+The class 'p2view::aggregator::IInstallableUnit' has no attributes.
+The class 'Touchpoints' has no attributes.
+The class 'aggregator::p2view::Touchpoints' has no attributes.
+The class 'p2view::aggregator::IUpdateDescriptor' has no attributes.
+The class 'aggregator::AvailableVersionsHeader' has no attributes.
+The class 'IRequirement' has no attributes.
+The class 'aggregator::Property' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'Product' has no attributes.
+The class 'OtherIU' has no attributes.
+The class 'aggregator::Bundle' has no attributes.
+The class 'Bundle' has no attributes.
+The class 'Category' has no attributes.
+The class 'aggregator::LabelProvider' has the following attributes: 'label' of type str.
+The class 'aggregator::p2view::Bundle' has no attributes.
+The class 'StatusProvider' has no attributes.
+The class 'aggregator::p2view::Features' has no attributes.
+The class 'Licenses' has no attributes.
+The class 'aggregator::MetadataRepository' has no attributes.
+The class 'aggregator::p2view::ProvidedCapabilityWrapper' has no attributes.
+The class 'aggregator::p2view::InstallableUnits' has no attributes.
+The class 'aggregator::EnabledStatusProvider' has the following attributes: 'branchEnabled' of type bool; 'enabled' of type bool.
+The class 'InfosProvider' has no attributes.
+The class 'InstallableUnits' has no attributes.
+The class 'aggregator::Aggregation' has the following attributes: 'mavenResult' of type bool; 'label' of type str; 'packedStrategy' of type str; 'type' of type str; 'sendmail' of type bool; 'buildRoot' of type str.
+The class 'Features' has no attributes.
+The class 'aggregator::p2view::Properties' has no attributes.
+The class 'aggregator::p2view::OtherIU' has no attributes.
+The class 'aggregator::StatusProvider' has no attributes.
+The class 'aggregator::p2view::Category' has no attributes.
+The class 'aggregator::p2view::RequirementWrapper' has no attributes.
+The class 'Fragments' has no attributes.
+The class 'aggregator::p2view::MetadataRepositoryStructuredView' has the following attributes: 'name' of type str; 'loaded' of type bool; 'location' of type str.
+The class 'aggregator::MapRule' has no attributes.
+The class 'aggregator::p2view::Categories' has no attributes.
+The class 'aggregator::MetadataRepositoryReference' has the following attributes: 'location' of type str; 'nature' of type str.
+The class 'aggregator::ChildrenProvider' has no attributes.
+The class 'ProvidedCapabilityWrapper' has no attributes.
+The class 'aggregator::p2view::Fragments' has no attributes.
+The class 'MappedUnit' has no attributes.
+The class 'p2view::aggregator::IRepositoryReference' has no attributes.
+The class 'ProvidedCapabilities' has no attributes.
+The class 'aggregator::p2view::IUPresentation' has the following attributes: 'type' of type str; 'label' of type str; 'description' of type str; 'version' of type str; 'filter' of type str; 'name' of type str; 'id' of type str.
+The class 'EnabledStatusProvider' has no attributes.
+The class 'IUDetails' has no attributes.
+The class 'MetadataRepositoryReference' has no attributes.
+The class 'MapRule' has no attributes.
+The class 'aggregator::Contact' has the following attributes: 'name' of type str; 'email' of type str.
+The class 'aggregator::IdentificationProvider' has no attributes.
+The class 'aggregator::Product' has no attributes.
+The class 'aggregator::p2view::RepositoryBrowser' has the following attributes: 'loading' of type bool.
+The class 'aggregator::p2view::Product' has no attributes.
+The class 'aggregator::CustomCategory' has the following attributes: 'description' of type str; 'identifier' of type str; 'label' of type str.
+The class 'aggregator::p2view::Feature' has no attributes.
+The class 'p2view::aggregator::MetadataRepository' has no attributes.
+The class 'aggregator::DescriptionProvider' has the following attributes: 'description' of type str.
+The class 'aggregator::Feature' has no attributes.
+The class 'aggregator::InfosProvider' has the following attributes: 'warnings' of type str; 'errors' of type str; 'infos' of type str.
+The class 'p2view::aggregator::Property' has no attributes.
+The class 'p2view::aggregator::IProvidedCapability' has no attributes.
+The class 'aggregator::p2view::IUDetails' has no attributes.
+The class 'Feature' has no attributes.
+The class 'aggregator::MavenItem' has the following attributes: 'artifactId' of type str; 'groupId' of type str.
+The class 'DescriptionProvider' has no attributes.
+The class 'p2view::aggregator::ITouchpointData' has no attributes.
+The class 'aggregator::ValidConfigurationsRule' has no attributes.
+The class 'Categories' has no attributes.
+The class 'p2view::aggregator::ILicense' has no attributes.
+The class 'p2view::aggregator::IRequirement' has no attributes.
+The class 'LabelProvider' has no attributes.
+The class 'aggregator::p2view::Products' has no attributes.
+The class 'aggregator::MappedUnit' has no attributes.
+The class 'RepositoryReferences' has no attributes.
+The class 'Miscellaneous' has no attributes.
+The class 'aggregator::p2view::IUPresentationWithDetails' has the following attributes: 'detailsResolved' of type str.
+The class 'InstallableUnitRequest' has no attributes.
+The class 'aggregator::Contribution' has the following attributes: 'label' of type str.
+The class 'aggregator::Configuration' has the following attributes: 'windowSystem' of type str; 'architecture' of type str; 'operatingSystem' of type str.
+The class 'Requirements' has no attributes.
+The class 'aggregator::p2view::RepositoryReferences' has no attributes.
+The class 'IdentificationProvider' has no attributes.
+The class 'Properties' has no attributes.
+The class 'MetadataRepositoryStructuredView' has no attributes.
+The class 'aggregator::InstallableUnitRequest' has the following attributes: 'versionRange' of type str; 'name' of type str.
+The class 'p2view::IUDetails' has no attributes.
+The class 'p2view::aggregator::ITouchpointType' has no attributes.
+The class 'Fragment' has no attributes.
+The class 'aggregator::AvailableVersion' has the following attributes: 'availableFrom' of type str; 'versionMatch' of type str; 'version' of type str; 'filter' of type str.
+The class 'aggregator::MappedRepository' has the following attributes: 'categoryPrefix' of type str; 'mirrorArtifacts' of type bool.
+The class 'IUPresentation' has no attributes.
+The class 'p2view::aggregator::ICopyright' has no attributes.
+The class 'aggregator::p2view::Licenses' has no attributes.
+The class 'aggregator::ValidationSet' has the following attributes: 'abstract' of type bool; 'label' of type str; 'extension' of type bool.
+The class 'aggregator::p2view::Fragment' has no attributes.
+The class 'aggregator::Category' has the following attributes: 'labelOverride' of type str.
+The class 'Products' has no attributes.
+The enumeration 'StatusCode' has the following literals: 'WAITING', 'BROKEN', 'OK'.
+The enumeration 'VersionMatch' has the following literals: 'BELOW', 'ABOVE', 'MATCHES'.
+The enumeration 'AggregationType' has the following literals: 'Nightly', 'Integration', 'Continuous', 'Stable', 'Release', 'Maintenance'.
+The enumeration 'OperatingSystem' has the following literals: 'AIX', 'Solaris', 'QNX', 'MacOSX', 'HPUX', 'Win32', 'Linux'.
+The enumeration 'Architecture' has the following literals: 'X86_64', 'IA64_32', 'S390X', 'X86', 'IA64', 'S390', 'Sparc', 'PPC64', 'PPC'.
+The enumeration 'WindowSystem' has the following literals: 'Photon', 'Win32', 'Motif', 'Carbon', 'GTK', 'Cocoa'.
+The enumeration 'InstallableUnitType' has the following literals: 'FRAGMENT', 'FEATURE', 'PRODUCT', 'OTHER', 'BUNDLE', 'CATEGORY'.
+The enumeration 'AvailableFrom' has the following literals: 'AGGREGATION', 'VALIDATION_SET', 'CONTRIBUTION', 'REPOSITORY'.
+The enumeration 'PackedStrategy' has the following literals: 'Verify', 'Skip', 'Copy', 'Unpack', 'UnpackAsSibling'.
+'aggregator::Configuration' is a specialization of 'EnabledStatusProvider'.
+'aggregator::MappedUnit' is a specialization of 'InstallableUnitRequest'.
+'aggregator::ValidationSet' is a specialization of 'DescriptionProvider'.
+'aggregator::MapRule' is a specialization of 'EnabledStatusProvider'.
+'aggregator::Aggregation' is a specialization of 'StatusProvider'.
+'aggregator::MappedUnit' is a specialization of 'IdentificationProvider'.
+'aggregator::p2view::RequirementWrapper' is a specialization of 'LabelProvider'.
+'aggregator::MapRule' is a specialization of 'DescriptionProvider'.
+'aggregator::p2view::Feature' is a specialization of 'IUPresentationWithDetails'.
+'aggregator::Product' is a specialization of 'MappedUnit'.
+'aggregator::ValidationSet' is a specialization of 'EnabledStatusProvider'.
+'aggregator::MappedRepository' is a specialization of 'MetadataRepositoryReference'.
+'aggregator::MapRule' is a specialization of 'InstallableUnitRequest'.
+'aggregator::p2view::Fragment' is a specialization of 'Bundle'.
+'aggregator::ExclusionRule' is a specialization of 'MapRule'.
+'aggregator::MavenMapping' is a specialization of 'InfosProvider'.
+'aggregator::MavenMapping' is a specialization of 'StatusProvider'.
+'aggregator::MappedRepository' is a specialization of 'DescriptionProvider'.
+'aggregator::Feature' is a specialization of 'MappedUnit'.
+'aggregator::InstallableUnitRequest' is a specialization of 'DescriptionProvider'.
+'aggregator::MetadataRepositoryReference' is a specialization of 'InfosProvider'.
+'aggregator::InstallableUnitRequest' is a specialization of 'InfosProvider'.
+'aggregator::ValidationSet' is a specialization of 'IdentificationProvider'.
+'aggregator::p2view::IUPresentationWithDetails' is a specialization of 'p2view::IUPresentation'.
+'aggregator::p2view::Product' is a specialization of 'IUPresentationWithDetails'.
+'aggregator::Bundle' is a specialization of 'MappedUnit'.
+'aggregator::Category' is a specialization of 'MappedUnit'.
+'aggregator::Contribution' is a specialization of 'DescriptionProvider'.
+'aggregator::MetadataRepositoryReference' is a specialization of 'EnabledStatusProvider'.
+'aggregator::CustomCategory' is a specialization of 'InfosProvider'.
+'aggregator::Aggregation' is a specialization of 'DescriptionProvider'.
+'aggregator::MappedRepository' is a specialization of 'IdentificationProvider'.
+'aggregator::Contribution' is a specialization of 'StatusProvider'.
+'aggregator::Contribution' is a specialization of 'InfosProvider'.
+'aggregator::MetadataRepositoryReference' is a specialization of 'StatusProvider'.
+'aggregator::CustomCategory' is a specialization of 'StatusProvider'.
+'aggregator::Contribution' is a specialization of 'EnabledStatusProvider'.
+'aggregator::p2view::Bundle' is a specialization of 'IUPresentationWithDetails'.
+'aggregator::p2view::RequirementWrapper' is a specialization of 'IRequirement'.
+'aggregator::p2view::IUPresentationWithDetails' is a specialization of 'p2view::IUDetails'.
+'aggregator::ValidationSet' is a specialization of 'InfosProvider'.
+'aggregator::Contribution' is a specialization of 'IdentificationProvider'.
+'aggregator::ValidationSet' is a specialization of 'StatusProvider'.
+'aggregator::MappedUnit' is a specialization of 'EnabledStatusProvider'.
+'aggregator::p2view::ProvidedCapabilityWrapper' is a specialization of 'IProvidedCapability'.
+'aggregator::Aggregation' is a specialization of 'InfosProvider'.
+'aggregator::p2view::ProvidedCapabilityWrapper' is a specialization of 'LabelProvider'.
+'aggregator::InstallableUnitRequest' is a specialization of 'StatusProvider'.
+'aggregator::p2view::OtherIU' is a specialization of 'IUPresentationWithDetails'.
+'aggregator::p2view::Category' is a specialization of 'IUPresentation'.
+'aggregator::ValidConfigurationsRule' is a specialization of 'MapRule'.
+'Bundles' (role 'Bundles67', cardinality 0..*) is associated with 'aggregator::p2view::Feature' (role 'aggregator_p2view_Feature66', cardinality 0..*).
+'aggregator::p2view::Miscellaneous' (role 'aggregator_p2view_Miscellaneous', cardinality 0..*) is associated with 'OtherIU' (role 'OtherIU', cardinality 0..*).
+'p2view::aggregator::ITouchpointType' (role 'p2view_aggregator_ITouchpointType', cardinality 0..*) is associated with 'aggregator::p2view::Touchpoints' (role 'aggregator_p2view_Touchpoints', cardinality 0..*).
+'p2view::aggregator::IInstallableUnit' (role 'p2view_aggregator_IInstallableUnit', cardinality 0..*) is associated with 'aggregator::p2view::IUPresentation' (role 'aggregator_p2view_IUPresentation', cardinality 0..*).
+'aggregator::MavenMapping' (role 'aggregator_MavenMapping19', cardinality 0..*) is associated with 'aggregator::Contribution' (role 'aggregator_Contribution18', cardinality 0..*).
+'IUPresentation' (role 'IUPresentation', cardinality 0..*) is associated with 'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits', cardinality 0..*).
+'aggregator::AvailableVersion' (role 'aggregator_AvailableVersion24', cardinality 0..*) is associated with 'aggregator::InstallableUnitRequest' (role 'aggregator_InstallableUnitRequest', cardinality 0..*).
+'aggregator::p2view::Requirements' (role 'aggregator_p2view_Requirements', cardinality 0..*) is associated with 'RequirementWrapper' (role 'RequirementWrapper', cardinality 0..*).
+'aggregator::p2view::Feature' (role 'aggregator_p2view_Feature', cardinality 0..*) is associated with 'Features' (role 'Features64', cardinality 0..*).
+'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits82', cardinality 0..*) is associated with 'Products' (role 'Products83', cardinality 0..*).
+'aggregator::MappedRepository' (role 'aggregator_MappedRepository32', cardinality 0..*) is associated with 'aggregator::Category' (role 'aggregator_Category', cardinality 0..*).
+'aggregator::MetadataRepository' (role 'aggregator_MetadataRepository', cardinality 0..*) is associated with 'aggregator::MetadataRepositoryReference' (role 'aggregator_MetadataRepositoryReference', cardinality 0..*).
+'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits85', cardinality 0..*) is associated with 'Bundles' (role 'Bundles86', cardinality 0..*).
+'aggregator::p2view::Category' (role 'aggregator_p2view_Category59', cardinality 0..*) is associated with 'Fragments' (role 'Fragments', cardinality 0..*).
+'Feature' (role 'Feature72', cardinality 0..*) is associated with 'aggregator::p2view::Features' (role 'aggregator_p2view_Features', cardinality 0..*).
+'Features' (role 'Features118', cardinality 0..*) is associated with 'aggregator::p2view::Product' (role 'aggregator_p2view_Product', cardinality 0..*).
+'aggregator::p2view::Fragments' (role 'aggregator_p2view_Fragments', cardinality 0..*) is associated with 'Fragment' (role 'Fragment', cardinality 0..*).
+'aggregator::Bundle' (role 'aggregator_Bundle', cardinality 0..*) is associated with 'aggregator::MappedRepository' (role 'aggregator_MappedRepository28', cardinality 0..*).
+'Fragments' (role 'Fragments89', cardinality 0..*) is associated with 'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits88', cardinality 0..*).
+'aggregator::MappedRepository' (role 'aggregator_MappedRepository34', cardinality 0..*) is associated with 'aggregator::MapRule' (role 'aggregator_MapRule', cardinality 0..*).
+'Bundles' (role 'Bundles', cardinality 0..*) is associated with 'aggregator::p2view::Category' (role 'aggregator_p2view_Category57', cardinality 0..*).
+'aggregator::p2view::Category' (role 'aggregator_p2view_Category53', cardinality 0..*) is associated with 'Features' (role 'Features', cardinality 0..*).
+'p2view::aggregator::IUpdateDescriptor' (role 'p2view_aggregator_IUpdateDescriptor', cardinality 0..*) is associated with 'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails100', cardinality 0..*).
+'Bundles' (role 'Bundles121', cardinality 0..*) is associated with 'aggregator::p2view::Product' (role 'aggregator_p2view_Product120', cardinality 0..*).
+'Properties' (role 'Properties111', cardinality 0..*) is associated with 'aggregator::p2view::MetadataRepositoryStructuredView' (role 'aggregator_p2view_MetadataRepositoryStructuredView110', cardinality 0..*).
+'aggregator::CustomCategory' (role 'categories', cardinality 0..*) is associated with 'aggregator::Feature' (role 'Feature', cardinality 0..*).
+'aggregator::p2view::Product' (role 'aggregator_p2view_Product123', cardinality 0..*) is associated with 'Fragments' (role 'Fragments124', cardinality 0..*).
+'aggregator::Contact' (role 'Contact', cardinality 0..*) is associated with 'aggregator::Aggregation' (role 'aggregation', cardinality 0..*).
+'aggregator::p2view::Category' (role 'aggregator_p2view_Category', cardinality 0..*) is associated with 'Categories' (role 'Categories', cardinality 0..*).
+'aggregator::p2view::Category' (role 'aggregator_p2view_Category55', cardinality 0..*) is associated with 'Products' (role 'Products', cardinality 0..*).
+'aggregator::CustomCategory' (role 'CustomCategory', cardinality 0..*) is associated with 'aggregator::Feature' (role 'features', cardinality 0..*).
+'aggregator::p2view::Touchpoints' (role 'aggregator_p2view_Touchpoints134', cardinality 0..*) is associated with 'p2view::aggregator::ITouchpointData' (role 'p2view_aggregator_ITouchpointData', cardinality 0..*).
+'aggregator::Contact' (role 'aggregator_Contact', cardinality 0..*) is associated with 'aggregator::Aggregation' (role 'aggregator_Aggregation7', cardinality 0..*).
+'Bundle' (role 'Bundle', cardinality 0..*) is associated with 'aggregator::p2view::Bundles' (role 'aggregator_p2view_Bundles', cardinality 0..*).
+'aggregator::p2view::ProvidedCapabilityWrapper' (role 'aggregator_p2view_ProvidedCapabilityWrapper', cardinality 0..*) is associated with 'p2view::aggregator::IProvidedCapability' (role 'p2view_aggregator_IProvidedCapability', cardinality 0..*).
+'aggregator::AvailableVersionsHeader' (role 'AvailableVersionsHeader', cardinality 0..*) is associated with 'aggregator::InstallableUnitRequest' (role 'installableUnitRequest', cardinality 0..*).
+'aggregator::Product' (role 'aggregator_Product', cardinality 0..*) is associated with 'aggregator::MappedRepository' (role 'aggregator_MappedRepository26', cardinality 0..*).
+'aggregator::p2view::RepositoryReferences' (role 'aggregator_p2view_RepositoryReferences', cardinality 0..*) is associated with 'p2view::aggregator::IRepositoryReference' (role 'p2view_aggregator_IRepositoryReference', cardinality 0..*).
+'IUDetails' (role 'IUDetails', cardinality 0..*) is associated with 'aggregator::p2view::Category' (role 'aggregator_p2view_Category61', cardinality 0..*).
+'aggregator::p2view::Products' (role 'aggregator_p2view_Products', cardinality 0..*) is associated with 'Product' (role 'Product', cardinality 0..*).
+'aggregator::MappedRepository' (role 'aggregator_MappedRepository30', cardinality 0..*) is associated with 'aggregator::Feature' (role 'aggregator_Feature', cardinality 0..*).
+'aggregator::Status' (role 'aggregator_Status', cardinality 0..*) is associated with 'aggregator::StatusProvider' (role 'aggregator_StatusProvider', cardinality 0..*).
+'aggregator::Configuration' (role 'aggregator_Configuration', cardinality 0..*) is associated with 'aggregator::Aggregation' (role 'aggregator_Aggregation2', cardinality 0..*).
+'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits76', cardinality 0..*) is associated with 'Categories' (role 'Categories77', cardinality 0..*).
+'aggregator::ValidConfigurationsRule' (role 'aggregator_ValidConfigurationsRule', cardinality 0..*) is associated with 'aggregator::Configuration' (role 'aggregator_Configuration49', cardinality 0..*).
+'aggregator::Aggregation' (role 'Aggregation', cardinality 0..*) is associated with 'aggregator::Contact' (role 'contacts', cardinality 0..*).
+'aggregator::MetadataRepositoryReference' (role 'aggregator_MetadataRepositoryReference44', cardinality 0..*) is associated with 'aggregator::ValidationSet' (role 'aggregator_ValidationSet43', cardinality 0..*).
+'ProvidedCapabilities' (role 'ProvidedCapabilities', cardinality 0..*) is associated with 'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails94', cardinality 0..*).
+'aggregator::p2view::MetadataRepositoryStructuredView' (role 'aggregator_p2view_MetadataRepositoryStructuredView115', cardinality 0..*) is associated with 'RepositoryReferences' (role 'RepositoryReferences', cardinality 0..*).
+'Features' (role 'Features80', cardinality 0..*) is associated with 'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits79', cardinality 0..*).
+'aggregator::ValidationSet' (role 'aggregator_ValidationSet40', cardinality 0..*) is associated with 'aggregator::Contribution' (role 'aggregator_Contribution41', cardinality 0..*).
+'aggregator::p2view::Categories' (role 'aggregator_p2view_Categories', cardinality 0..*) is associated with 'Category' (role 'Category', cardinality 0..*).
+'Miscellaneous' (role 'Miscellaneous', cardinality 0..*) is associated with 'aggregator::p2view::InstallableUnits' (role 'aggregator_p2view_InstallableUnits91', cardinality 0..*).
+'aggregator::ValidationSet' (role 'aggregator_ValidationSet', cardinality 0..*) is associated with 'aggregator::Aggregation' (role 'aggregator_Aggregation', cardinality 0..*).
+'InstallableUnits' (role 'InstallableUnits', cardinality 0..*) is associated with 'aggregator::p2view::MetadataRepositoryStructuredView' (role 'aggregator_p2view_MetadataRepositoryStructuredView', cardinality 0..*).
+'p2view::aggregator::MetadataRepository' (role 'p2view_aggregator_MetadataRepository', cardinality 0..*) is associated with 'aggregator::p2view::MetadataRepositoryStructuredView' (role 'aggregator_p2view_MetadataRepositoryStructuredView113', cardinality 0..*).
+'aggregator::p2view::Licenses' (role 'aggregator_p2view_Licenses', cardinality 0..*) is associated with 'p2view::aggregator::ILicense' (role 'p2view_aggregator_ILicense', cardinality 0..*).
+'aggregator::AvailableVersionsHeader' (role 'availableVersionsHeader', cardinality 0..*) is associated with 'aggregator::InstallableUnitRequest' (role 'InstallableUnitRequest', cardinality 0..*).
+'aggregator::Aggregation' (role 'aggregator_Aggregation4', cardinality 0..*) is associated with 'aggregator::CustomCategory' (role 'aggregator_CustomCategory', cardinality 0..*).
+'p2view::aggregator::Property' (role 'p2view_aggregator_Property', cardinality 0..*) is associated with 'aggregator::p2view::Properties' (role 'aggregator_p2view_Properties', cardinality 0..*).
+'p2view::aggregator::IRequirement' (role 'p2view_aggregator_IRequirement', cardinality 0..*) is associated with 'aggregator::p2view::RequirementWrapper' (role 'aggregator_p2view_RequirementWrapper', cardinality 0..*).
+'aggregator::AvailableVersionsHeader' (role 'aggregator_AvailableVersionsHeader', cardinality 0..*) is associated with 'aggregator::AvailableVersion' (role 'aggregator_AvailableVersion', cardinality 0..*).
+'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails96', cardinality 0..*) is associated with 'Properties' (role 'Properties', cardinality 0..*).
+'aggregator::p2view::RepositoryBrowser' (role 'aggregator_p2view_RepositoryBrowser', cardinality 0..*) is associated with 'MetadataRepositoryStructuredView' (role 'MetadataRepositoryStructuredView', cardinality 0..*).
+'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails98', cardinality 0..*) is associated with 'Touchpoints' (role 'Touchpoints', cardinality 0..*).
+'aggregator::Aggregation' (role 'aggregator_Aggregation9', cardinality 0..*) is associated with 'aggregator::MavenMapping' (role 'aggregator_MavenMapping', cardinality 0..*).
+'aggregator::ValidationSet' (role 'aggregator_ValidationSet47', cardinality 0..*) is associated with 'aggregator::ValidationSet' (role 'aggregator_ValidationSet45', cardinality 0..*).
+'aggregator::Contribution' (role 'aggregator_Contribution15', cardinality 0..*) is associated with 'aggregator::Contact' (role 'aggregator_Contact16', cardinality 0..*).
+'Licenses' (role 'Licenses', cardinality 0..*) is associated with 'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails104', cardinality 0..*).
+'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails', cardinality 0..*) is associated with 'Requirements' (role 'Requirements', cardinality 0..*).
+'aggregator::p2view::Feature' (role 'aggregator_p2view_Feature69', cardinality 0..*) is associated with 'Fragments' (role 'Fragments70', cardinality 0..*).
+'aggregator::Configuration' (role 'aggregator_Configuration36', cardinality 0..*) is associated with 'aggregator::MappedUnit' (role 'aggregator_MappedUnit', cardinality 0..*).
+'aggregator::p2view::IUDetails' (role 'aggregator_p2view_IUDetails102', cardinality 0..*) is associated with 'p2view::aggregator::ICopyright' (role 'p2view_aggregator_ICopyright', cardinality 0..*).
+'aggregator::p2view::ProvidedCapabilities' (role 'aggregator_p2view_ProvidedCapabilities', cardinality 0..*) is associated with 'ProvidedCapabilityWrapper' (role 'ProvidedCapabilityWrapper', cardinality 0..*).
+'aggregator::Contribution' (role 'aggregator_Contribution', cardinality 0..*) is associated with 'aggregator::MappedRepository' (role 'aggregator_MappedRepository', cardinality 0..*).

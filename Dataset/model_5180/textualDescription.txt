@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'MM1::ContainerMM1' has the following attributes: 'aname' of type int.
+The class 'MM1::C' has the following attributes: 'value' of type bool.
+The class 'MM1::D' has no attributes.
+The class 'MM1::B' has the following attributes: 'value' of type int.
+The class 'A' has no attributes.
+The class 'MM1::A' has the following attributes: 'name' of type str.
+'MM1::B' is a specialization of 'A'.
+'MM1::C' is a specialization of 'A'.
+'MM1::D' (role 'MM1_D', cardinality 0..*) is associated with 'MM1::ContainerMM1' (role 'MM1_ContainerMM12', cardinality 0..*).
+'MM1::ContainerMM1' (role 'MM1_ContainerMM1', cardinality 0..*) is associated with 'MM1::A' (role 'MM1_A', cardinality 0..*).

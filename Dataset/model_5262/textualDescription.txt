@@ -1,0 +1,123 @@
+The model has 66 class(es).
+The class 'BODYElement' has no attributes.
+The class 'HEADElement' has no attributes.
+The class 'defaultname::DIV' has the following attributes: 'align' of type str.
+The class 'defaultname::I' has no attributes.
+The class 'defaultname::HTML' has no attributes.
+The class 'defaultname::P' has no attributes.
+The class 'defaultname::PARAM' has the following attributes: 'paramValue' of type str; 'name' of type str.
+The class 'defaultname::H4' has no attributes.
+The class 'TABLEElement' has no attributes.
+The class 'defaultname::SUB' has no attributes.
+The class 'defaultname::BR' has the following attributes: 'clear' of type str.
+The class 'defaultname::TEXTAREA' has the following attributes: 'rows' of type str; 'cols' of type str; 'name' of type str.
+The class 'defaultname::TABLE' has the following attributes: 'cellpadding' of type str; 'border' of type str; 'cellspacing' of type str; 'width' of type str.
+The class 'defaultname::H2' has no attributes.
+The class 'FRAME' has no attributes.
+The class 'defaultname::STRIKE' has no attributes.
+The class 'defaultname::HTMLElement' has the following attributes: 'value' of type str.
+The class 'defaultname::UL' has no attributes.
+The class 'defaultname::FORM' has the following attributes: 'action' of type str; 'method' of type str.
+The class 'defaultname::APPLET' has the following attributes: 'align' of type str; 'applet' of type str; 'width' of type str; 'height' of type str; 'src' of type str; 'class_' of type str.
+The class 'defaultname::TITLE' has no attributes.
+The class 'defaultname::LINK' has the following attributes: 'ahref' of type str; 'title' of type str; 'type' of type str; 'rel' of type str.
+The class 'defaultname::OPTION' has the following attributes: 'optionValue' of type str; 'selected' of type str.
+The class 'defaultname::STRONG' has no attributes.
+The class 'defaultname::IMG' has the following attributes: 'usemap' of type str; 'vspace' of type str; 'hspace' of type str; 'alt' of type str; 'ismap' of type str; 'src' of type str; 'border' of type str; 'height' of type str; 'width' of type str; 'align' of type str.
+The class 'defaultname::HEADElement' has no attributes.
+The class 'defaultname::DL' has no attributes.
+The class 'defaultname::TR' has the following attributes: 'align' of type str; 'valign' of type str.
+The class 'defaultname::BODY' has the following attributes: 'background' of type str; 'text' of type str; 'link' of type str; 'bgcolor' of type str; 'alink' of type str; 'vlink' of type str.
+The class 'defaultname::BIG' has no attributes.
+The class 'defaultname::SPAN' has the following attributes: 'style' of type str.
+The class 'defaultname::FONT' has the following attributes: 'face' of type str; 'color' of type str; 'size' of type str.
+The class 'defaultname::PRE' has no attributes.
+The class 'defaultname::FRAMESET' has the following attributes: 'framespacing' of type str; 'cols' of type str; 'frameborder' of type str; 'border' of type str; 'rows' of type str.
+The class 'defaultname::TH' has no attributes.
+The class 'defaultname::NOEMBED' has no attributes.
+The class 'defaultname::STYLE' has no attributes.
+The class 'defaultname::FRAME' has the following attributes: 'name' of type str; 'src' of type str; 'marginwidth' of type str; 'scrolling' of type str; 'marginheight' of type str; 'noresize' of type str.
+The class 'defaultname::SUP' has no attributes.
+The class 'defaultname::H3' has no attributes.
+The class 'defaultname::SMALL' has no attributes.
+The class 'defaultname::BODYElement' has no attributes.
+The class 'defaultname::AREA' has the following attributes: 'shape' of type str; 'ahref' of type str; 'coords' of type str.
+The class 'defaultname::TT' has no attributes.
+The class 'ListElement' has no attributes.
+The class 'defaultname::EMBED' has the following attributes: 'src' of type str; 'vspace' of type str; 'height' of type str; 'align' of type str; 'border' of type str; 'hspace' of type str; 'width' of type str.
+The class 'defaultname::DD' has no attributes.
+The class 'defaultname::INPUT' has the following attributes: 'type' of type str; 'name' of type str; 'src' of type str; 'inputValue' of type str; 'size' of type str; 'align' of type str; 'maxlength' of type str; 'checked' of type str.
+The class 'defaultname::IFRAME' has no attributes.
+The class 'defaultname::OL' has the following attributes: 'start' of type str.
+The class 'defaultname::DT' has no attributes.
+The class 'defaultname::ListElement' has the following attributes: 'type' of type str.
+The class 'defaultname::OBJECT' has the following attributes: 'data' of type str; 'standby' of type str; 'type' of type str; 'classid' of type str; 'id' of type str.
+The class 'TD' has no attributes.
+The class 'defaultname::TD' has the following attributes: 'align' of type str; 'rowspan' of type str; 'colspan' of type str; 'valign' of type str; 'width' of type str.
+The class 'defaultname::H1' has no attributes.
+The class 'defaultname::HEAD' has no attributes.
+The class 'HTMLElement' has no attributes.
+The class 'defaultname::EM' has no attributes.
+The class 'defaultname::MAP' has no attributes.
+The class 'defaultname::B' has no attributes.
+The class 'defaultname::A' has the following attributes: 'name' of type str; 'ahref' of type str; 'id' of type str.
+The class 'defaultname::NOFRAME' has no attributes.
+The class 'defaultname::TABLEElement' has the following attributes: 'background' of type str; 'bgcolor' of type str.
+The class 'defaultname::LI' has the following attributes: 'liValue' of type str.
+The class 'defaultname::SELECT' has the following attributes: 'size' of type str; 'multiple' of type str; 'name' of type str.
+'defaultname::NOEMBED' is a specialization of 'BODYElement'.
+'defaultname::A' is a specialization of 'BODYElement'.
+'defaultname::BIG' is a specialization of 'BODYElement'.
+'defaultname::TD' is a specialization of 'TABLEElement'.
+'defaultname::TABLEElement' is a specialization of 'BODYElement'.
+'defaultname::BODYElement' is a specialization of 'HTMLElement'.
+'defaultname::BR' is a specialization of 'BODYElement'.
+'defaultname::HEAD' is a specialization of 'HTMLElement'.
+'defaultname::OL' is a specialization of 'ListElement'.
+'defaultname::MAP' is a specialization of 'BODYElement'.
+'defaultname::TABLE' is a specialization of 'TABLEElement'.
+'defaultname::UL' is a specialization of 'ListElement'.
+'defaultname::STRIKE' is a specialization of 'BODYElement'.
+'defaultname::H1' is a specialization of 'BODYElement'.
+'defaultname::STRONG' is a specialization of 'BODYElement'.
+'defaultname::H2' is a specialization of 'BODYElement'.
+'defaultname::TT' is a specialization of 'BODYElement'.
+'defaultname::TITLE' is a specialization of 'HEADElement'.
+'defaultname::H4' is a specialization of 'BODYElement'.
+'defaultname::HEADElement' is a specialization of 'HTMLElement'.
+'defaultname::PRE' is a specialization of 'BODYElement'.
+'defaultname::AREA' is a specialization of 'BODYElement'.
+'defaultname::TR' is a specialization of 'TABLEElement'.
+'defaultname::LINK' is a specialization of 'HEADElement'.
+'defaultname::EMBED' is a specialization of 'BODYElement'.
+'defaultname::SPAN' is a specialization of 'BODYElement'.
+'defaultname::TH' is a specialization of 'TD'.
+'defaultname::EM' is a specialization of 'BODYElement'.
+'defaultname::B' is a specialization of 'BODYElement'.
+'defaultname::IFRAME' is a specialization of 'FRAME'.
+'defaultname::LI' is a specialization of 'ListElement'.
+'defaultname::FONT' is a specialization of 'BODYElement'.
+'defaultname::DIV' is a specialization of 'BODYElement'.
+'defaultname::BODY' is a specialization of 'HTMLElement'.
+'defaultname::SUP' is a specialization of 'BODYElement'.
+'defaultname::IMG' is a specialization of 'BODYElement'.
+'defaultname::I' is a specialization of 'BODYElement'.
+'defaultname::SMALL' is a specialization of 'BODYElement'.
+'defaultname::STYLE' is a specialization of 'BODYElement'.
+'defaultname::SUB' is a specialization of 'BODYElement'.
+'defaultname::H3' is a specialization of 'BODYElement'.
+'defaultname::P' is a specialization of 'BODYElement'.
+'defaultname::BODY' (role 'body15', cardinality 0..*) is associated with 'defaultname::HTML' (role 'HTML16', cardinality 0..*).
+'defaultname::HEAD' (role 'head10', cardinality 0..*) is associated with 'defaultname::HTML' (role 'HTML', cardinality 0..*).
+'defaultname::HEADElement' (role 'headElements', cardinality 0..*) is associated with 'defaultname::HEAD' (role 'HEAD12', cardinality 0..*).
+'defaultname::HTMLElement' (role 'parent', cardinality 0..*) is associated with 'defaultname::HTMLElement' (role 'HTMLElement', cardinality 0..*).
+'defaultname::HTMLElement' (role 'children', cardinality 0..*) is associated with 'defaultname::HTMLElement' (role 'HTMLElement7', cardinality 0..*).
+'defaultname::BODY' (role 'BODY18', cardinality 0..*) is associated with 'defaultname::BODYElement' (role 'bodyElements', cardinality 0..*).
+'defaultname::TR' (role 'trs', cardinality 0..*) is associated with 'defaultname::TABLE' (role 'TABLE', cardinality 0..*).
+'defaultname::BODYElement' (role 'BODYElement', cardinality 0..*) is associated with 'defaultname::BODY' (role 'body', cardinality 0..*).
+'defaultname::HEAD' (role 'head', cardinality 0..*) is associated with 'defaultname::HEADElement' (role 'HEADElement', cardinality 0..*).
+'defaultname::HTML' (role 'html', cardinality 0..*) is associated with 'defaultname::HEAD' (role 'HEAD', cardinality 0..*).
+'defaultname::TD' (role 'tds', cardinality 0..*) is associated with 'defaultname::TR' (role 'TR23', cardinality 0..*).
+'defaultname::TR' (role 'TR', cardinality 0..*) is associated with 'defaultname::TABLE' (role 'table', cardinality 0..*).
+'defaultname::HTML' (role 'html2', cardinality 0..*) is associated with 'defaultname::BODY' (role 'BODY', cardinality 0..*).
+'defaultname::TD' (role 'TD', cardinality 0..*) is associated with 'defaultname::TR' (role 'tr', cardinality 0..*).

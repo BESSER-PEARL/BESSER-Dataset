@@ -1,0 +1,226 @@
+The model has 47 class(es).
+The class 'archimateC2::BusinessService' has no attributes.
+The class 'archimateC2::BusinessBehaviorElement' has no attributes.
+The class 'archimateC2::Network' has no attributes.
+The class 'archimateC2::ArchimateElement' has the following attributes: 'elementName' of type str; 'description' of type str.
+The class 'archimateC2::BusinessCollaboration' has the following attributes: 'collaboration' of type str.
+The class 'archimateC2::ArchimateModel' has no attributes.
+The class 'ApplicationComponent' has no attributes.
+The class 'archimateC2::BusinessInteraction' has no attributes.
+The class 'BehaviorElement' has no attributes.
+The class 'ArchimateElement' has no attributes.
+The class 'archimateC2::ActiveStructure' has no attributes.
+The class 'archimateC2::BehaviorElement' has no attributes.
+The class 'archimateC2::SystemSoftware' has no attributes.
+The class 'archimateC2::ApplicationFunction' has no attributes.
+The class 'archimateC2::ApplicationCollaboration' has no attributes.
+The class 'archimateC2::BusinessRole' has the following attributes: 'rank' of type int.
+The class 'archimateC2::ApplicationInteraction' has no attributes.
+The class 'archimateC2::InfrastructureService' has no attributes.
+The class 'Node' has no attributes.
+The class 'archimateC2::PassiveStructure' has no attributes.
+The class 'archimateC2::Product' has the following attributes: 'contract' of type str.
+The class 'archimateC2::Contract' has no attributes.
+The class 'BusinessBehaviorElement' has no attributes.
+The class 'archimateC2::BusinessActor' has no attributes.
+The class 'archimateC2::BusinessObject' has no attributes.
+The class 'archimateC2::BusinessFunction' has no attributes.
+The class 'archimateC2::Device' has no attributes.
+The class 'PassiveStructure' has no attributes.
+The class 'archimateC2::ApplicationInterface' has no attributes.
+The class 'ActiveStructure' has no attributes.
+The class 'archimateC2::BusinessProcess' has the following attributes: 'processID' of type str; 'processDesign' of type str; 'processType' of type str; 'processFullName' of type str; 'importance' of type int; 'missionary' of type bool.
+The class 'archimateC2::InfrastructureInterface' has no attributes.
+The class 'BusinessRole' has no attributes.
+The class 'archimateC2::ApplicationComponent' has no attributes.
+The class 'archimateC2::Value' has no attributes.
+The class 'ApplicationFunction' has no attributes.
+The class 'BusinessObject' has no attributes.
+The class 'archimateC2::Location' has the following attributes: 'address' of type str.
+The class 'archimateC2::CommunicationPath' has no attributes.
+The class 'archimateC2::Representation' has no attributes.
+The class 'archimateC2::Node' has no attributes.
+The class 'archimateC2::Meaning' has no attributes.
+The class 'archimateC2::ApplicationService' has no attributes.
+The class 'archimateC2::BusinessInterface' has no attributes.
+The class 'archimateC2::Artifact' has no attributes.
+The class 'archimateC2::DataObject' has no attributes.
+The class 'archimateC2::BusinessEvent' has no attributes.
+'archimateC2::CommunicationPath' is a specialization of 'ArchimateElement'.
+'archimateC2::Location' is a specialization of 'ActiveStructure'.
+'archimateC2::Representation' is a specialization of 'PassiveStructure'.
+'archimateC2::ApplicationInteraction' is a specialization of 'ApplicationFunction'.
+'archimateC2::ApplicationInterface' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessCollaboration' is a specialization of 'BusinessRole'.
+'archimateC2::Value' is a specialization of 'PassiveStructure'.
+'archimateC2::BusinessInterface' is a specialization of 'ActiveStructure'.
+'archimateC2::Device' is a specialization of 'Node'.
+'archimateC2::ActiveStructure' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessRole' is a specialization of 'ActiveStructure'.
+'archimateC2::DataObject' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessFunction' is a specialization of 'BusinessBehaviorElement'.
+'archimateC2::Artifact' is a specialization of 'ArchimateElement'.
+'archimateC2::Product' is a specialization of 'PassiveStructure'.
+'archimateC2::Network' is a specialization of 'ArchimateElement'.
+'archimateC2::Contract' is a specialization of 'BusinessObject'.
+'archimateC2::BusinessBehaviorElement' is a specialization of 'BehaviorElement'.
+'archimateC2::ApplicationService' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessActor' is a specialization of 'ActiveStructure'.
+'archimateC2::ApplicationComponent' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessService' is a specialization of 'BehaviorElement'.
+'archimateC2::BusinessInteraction' is a specialization of 'BusinessBehaviorElement'.
+'archimateC2::InfrastructureInterface' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessProcess' is a specialization of 'BusinessBehaviorElement'.
+'archimateC2::ApplicationFunction' is a specialization of 'ArchimateElement'.
+'archimateC2::BehaviorElement' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessEvent' is a specialization of 'ArchimateElement'.
+'archimateC2::PassiveStructure' is a specialization of 'ArchimateElement'.
+'archimateC2::InfrastructureService' is a specialization of 'ArchimateElement'.
+'archimateC2::BusinessObject' is a specialization of 'PassiveStructure'.
+'archimateC2::ApplicationCollaboration' is a specialization of 'ApplicationComponent'.
+'archimateC2::SystemSoftware' is a specialization of 'Node'.
+'archimateC2::Meaning' is a specialization of 'PassiveStructure'.
+'archimateC2::Node' is a specialization of 'ArchimateElement'.
+'archimateC2::DataObject' (role 'accessesDataObjectApplicationFunction', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'ApplicationFunction', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'usedByApplicationComponentInfrastructureService', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'InfrastructureService208', cardinality 0..*).
+'archimateC2::ArchimateElement' (role 'composedOfElementElement', cardinality 0..*) is associated with 'archimateC2::ArchimateElement' (role 'ArchimateElement5', cardinality 0..*).
+'archimateC2::InfrastructureService' (role 'InfrastructureService249', cardinality 0..*) is associated with 'archimateC2::Node' (role 'realizedByNodeInfrastructureService', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'realizedByBusinessBehaviorElementBusinessService', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'BusinessService62', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'ApplicationService131', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'usedByBusinessActorApplicationService', cardinality 0..*).
+'archimateC2::BusinessObject' (role 'realizedByBusinessObjectDataObject', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'DataObject', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'accessesBusinessObjectBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::BusinessObject' (role 'accessedByBusinessObjectBusinessEvent', cardinality 0..*) is associated with 'archimateC2::BusinessEvent' (role 'BusinessEvent', cardinality 0..*).
+'archimateC2::BusinessObject' (role 'BusinessObject42', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'accessedByBusinessServiceBusinessObject', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'usesBusinessActorApplicationService', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'BusinessActor158', cardinality 0..*).
+'archimateC2::Device' (role 'assignedToDeviceSystemSoftware', cardinality 0..*) is associated with 'archimateC2::SystemSoftware' (role 'SystemSoftware', cardinality 0..*).
+'archimateC2::BusinessActor' (role 'assignedToBusinessActorBusinessRole', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole125', cardinality 0..*).
+'archimateC2::Network' (role 'realizedByNetworkCommunicationPath', cardinality 0..*) is associated with 'archimateC2::CommunicationPath' (role 'CommunicationPath263', cardinality 0..*).
+'archimateC2::CommunicationPath' (role 'CommunicationPath', cardinality 0..*) is associated with 'archimateC2::Node' (role 'associatedWithNodeCommunicationPath', cardinality 0..*).
+'archimateC2::BusinessCollaboration' (role 'BusinessCollaboration', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'aggregatesBusinessRoleBusinessCollaboration', cardinality 0..*).
+'archimateC2::Location' (role 'archimateC2_Location268', cardinality 0..*) is associated with 'archimateC2::Network' (role 'archimateC2_Network267', cardinality 0..*).
+'archimateC2::Product' (role 'Product152', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'aggregatedByProductApplicationService', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'assignedToBusinessBehaviorElementBusinessRole', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole68', cardinality 0..*).
+'archimateC2::ArchimateElement' (role 'ArchimateElement8', cardinality 0..*) is associated with 'archimateC2::ArchimateElement' (role 'aggregatedByElementElement', cardinality 0..*).
+'archimateC2::ArchimateModel' (role 'archimateC2_ArchimateModel', cardinality 0..*) is associated with 'archimateC2::ArchimateElement' (role 'archimateC2_ArchimateElement', cardinality 0..*).
+'archimateC2::ArchimateElement' (role 'composesElementElement', cardinality 0..*) is associated with 'archimateC2::ArchimateElement' (role 'ArchimateElement', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'ApplicationInterface133', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'usesBusinessActorApplicationInterface', cardinality 0..*).
+'archimateC2::Product' (role 'aggregatesProductInfrastructureService', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'InfrastructureService', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement37', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'realisesBusinessServiceBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::BusinessService' (role 'BusinessService111', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'usedByElementBusinessRoleBusinessService', cardinality 0..*).
+'archimateC2::BusinessInterface' (role 'BusinessInterface123', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'usedByBusinessActorBusinessInterface', cardinality 0..*).
+'archimateC2::Meaning' (role 'Meaning', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'associatedWithBusinessObjectMeaning', cardinality 0..*).
+'archimateC2::Node' (role 'Node', cardinality 0..*) is associated with 'archimateC2::Location' (role 'assignedToLocationNode', cardinality 0..*).
+'archimateC2::CommunicationPath' (role 'associatedWithCommunicationPathNode', cardinality 0..*) is associated with 'archimateC2::Node' (role 'Node256', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'ApplicationService113', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'usedByBusinessRoleApplicationService', cardinality 0..*).
+'archimateC2::InfrastructureInterface' (role 'composedOfInfrastructureInterfaceNode', cardinality 0..*) is associated with 'archimateC2::Node' (role 'Node234', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'ApplicationFunction167', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'flowsFromApplicationFunctionApplicationFunction', cardinality 0..*).
+'archimateC2::BusinessInterface' (role 'BusinessInterface', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'assignedToBusinessServiceBusinessInterface', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'ApplicationInterface199', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'usedByApplicationComponentApplicationInterface', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent230', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'usesApplicationComponentInfrastructureService', cardinality 0..*).
+'archimateC2::CommunicationPath' (role 'archimateC2_CommunicationPath260', cardinality 0..*) is associated with 'archimateC2::Location' (role 'archimateC2_Location261', cardinality 0..*).
+'archimateC2::InfrastructureService' (role 'InfrastructureService212', cardinality 0..*) is associated with 'archimateC2::Artifact' (role 'accessesArtifactInfrastructureService', cardinality 0..*).
+'archimateC2::Value' (role 'Value', cardinality 0..*) is associated with 'archimateC2::Product' (role 'associatedWithProductValue', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'triggersToApplicationFunctionApplicationFunction', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'ApplicationFunction161', cardinality 0..*).
+'archimateC2::SystemSoftware' (role 'assignedToSystemSoftwareDevice', cardinality 0..*) is associated with 'archimateC2::Device' (role 'Device', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'assignedToApplicationFunctionApplicationComponent', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'ApplicationComponent174', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'realizedByApplicationFunctionApplicationService', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'ApplicationService172', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'composedOfApplicationInterfaceApplicationComponent', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'ApplicationComponent182', cardinality 0..*).
+'archimateC2::Representation' (role 'realizedByRepresentationBusinessObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject30', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'usesBusinessBehaviorElementApplicationservice', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'ApplicationService70', cardinality 0..*).
+'archimateC2::Location' (role 'archimateC2_Location91', cardinality 0..*) is associated with 'archimateC2::CommunicationPath' (role 'archimateC2_CommunicationPath', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'ApplicationService', cardinality 0..*) is associated with 'archimateC2::Product' (role 'aggregatesProductApplicationService', cardinality 0..*).
+'archimateC2::DataObject' (role 'accessesDataObjectApplicationService', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'ApplicationService136', cardinality 0..*).
+'archimateC2::Network' (role 'Network', cardinality 0..*) is associated with 'archimateC2::Device' (role 'associatedWithDeviceNetwork', cardinality 0..*).
+'archimateC2::InfrastructureService' (role 'assignedToInfrastructureServiceInfrastructureInterface', cardinality 0..*) is associated with 'archimateC2::InfrastructureInterface' (role 'InfrastructureInterface224', cardinality 0..*).
+'archimateC2::BusinessInterface' (role 'usesBusinessInterfaceBusinessRole', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole98', cardinality 0..*).
+'archimateC2::Product' (role 'aggregatedByProductBusinessService', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'BusinessService', cardinality 0..*).
+'archimateC2::BusinessService' (role 'BusinessService100', cardinality 0..*) is associated with 'archimateC2::BusinessInterface' (role 'assignedToBusinessInterfaceBusinessService', cardinality 0..*).
+'archimateC2::Node' (role 'Node238', cardinality 0..*) is associated with 'archimateC2::InfrastructureInterface' (role 'usesInfrastructureInterfaceNode', cardinality 0..*).
+'archimateC2::BusinessEvent' (role 'BusinessEvent58', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'triggersByBusinessBehaviorElementBusinessEvent', cardinality 0..*).
+'archimateC2::Product' (role 'aggregatedByProductContract', cardinality 0..*) is associated with 'archimateC2::Contract' (role 'Contract', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'triggeredByApplicationFunctionApplicationFunction', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'ApplicationFunction164', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'usedByBusinessRoleApplicationInterface', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole190', cardinality 0..*).
+'archimateC2::BusinessService' (role 'BusinessService64', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'usedByBusinessBehaviorElementBusinessService', cardinality 0..*).
+'archimateC2::Location' (role 'Location201', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'assignedFromLocationApplicationComponent', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'ApplicationFunction146', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'usesApplicationServiceApplicationFunction', cardinality 0..*).
+'archimateC2::Representation' (role 'Representation83', cardinality 0..*) is associated with 'archimateC2::Location' (role 'assignedToLocationRepresentation', cardinality 0..*).
+'archimateC2::Product' (role 'Product228', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'aggregatedByProductInfrastructureService', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'usedByApplicationComponentInfrastructureInterface', cardinality 0..*) is associated with 'archimateC2::InfrastructureInterface' (role 'InfrastructureInterface', cardinality 0..*).
+'archimateC2::Location' (role 'assignedToLocationApplicationComponent', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'ApplicationComponent87', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'aggregatesApplicationComponentApplicationCollaboration', cardinality 0..*) is associated with 'archimateC2::ApplicationCollaboration' (role 'ApplicationCollaboration', cardinality 0..*).
+'archimateC2::InfrastructureInterface' (role 'assignedToInfrastructureInterfaceInfrastructureService', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'InfrastructureService236', cardinality 0..*).
+'archimateC2::InfrastructureInterface' (role 'InfrastructureInterface245', cardinality 0..*) is associated with 'archimateC2::Node' (role 'composesNodeInfrastructureInterface', cardinality 0..*).
+'archimateC2::Product' (role 'Product', cardinality 0..*) is associated with 'archimateC2::Value' (role 'associatedWithValueProduct', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'ApplicationInterface', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'assignedFromBusinessServiceApplicationInterface', cardinality 0..*).
+'archimateC2::Location' (role 'Location251', cardinality 0..*) is associated with 'archimateC2::Node' (role 'assignedFromLocationNode', cardinality 0..*).
+'archimateC2::Network' (role 'associatedWithNetworkDevice', cardinality 0..*) is associated with 'archimateC2::Device' (role 'Device265', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'assignedFromApplicationComponentBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'ApplicationFunction195', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'assignedToApplicationComponentApplicationFunction', cardinality 0..*).
+'archimateC2::Location' (role 'archimateC2_Location', cardinality 0..*) is associated with 'archimateC2::Network' (role 'archimateC2_Network', cardinality 0..*).
+'archimateC2::Location' (role 'assignedToLocationArtifact', cardinality 0..*) is associated with 'archimateC2::Artifact' (role 'Artifact', cardinality 0..*).
+'archimateC2::Artifact' (role 'Artifact205', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'realizesApplicationComponentArtifact', cardinality 0..*).
+'archimateC2::Location' (role 'Location32', cardinality 0..*) is associated with 'archimateC2::Representation' (role 'assignedFromRepresentationLocation', cardinality 0..*).
+'archimateC2::DataObject' (role 'DataObject178', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'accessedByApplicationFunctionDataObject', cardinality 0..*).
+'archimateC2::BusinessActor' (role 'assignedFromBusinessActorLocation', cardinality 0..*) is associated with 'archimateC2::Location' (role 'Location129', cardinality 0..*).
+'archimateC2::Location' (role 'assignedToLocationBusinessObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject81', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent240', cardinality 0..*) is associated with 'archimateC2::InfrastructureInterface' (role 'usesApplicationComponentInfrastructureInterface', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'triggeredByBusinessBehaviorElementBusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement47', cardinality 0..*).
+'archimateC2::BusinessInterface' (role 'BusinessInterface102', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'composesBusinessRoleBusinessInterface', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'assignedToApplicationInterfaceApplicationService', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'ApplicationService186', cardinality 0..*).
+'archimateC2::BusinessService' (role 'BusinessService192', cardinality 0..*) is associated with 'archimateC2::ApplicationInterface' (role 'assigedToBusinessServiceApplicationInterface', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement39', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'usesBusinessServiceBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::BusinessActor' (role 'BusinessActor188', cardinality 0..*) is associated with 'archimateC2::ApplicationInterface' (role 'usedByBusinessActorApplicationInterface', cardinality 0..*).
+'archimateC2::BusinessObject' (role 'realizesBusinessObjectRepresentation', cardinality 0..*) is associated with 'archimateC2::Representation' (role 'Representation', cardinality 0..*).
+'archimateC2::BusinessInterface' (role 'BusinessInterface104', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'usedByBusinessRoleBusinessInterface', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'usedByApplicationFunctionApplicationService', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'ApplicationService176', cardinality 0..*).
+'archimateC2::Artifact' (role 'Artifact222', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'accessedByInfrastructureServiceArtifact', cardinality 0..*).
+'archimateC2::ApplicationInterface' (role 'ApplicationInterface197', cardinality 0..*) is associated with 'archimateC2::ApplicationComponent' (role 'composesApplicationComponentApplicationInterface', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'accessedByBusinessBehaviorElementBusinessObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject66', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'flowsToBusinessBehaviorElementBusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement53', cardinality 0..*).
+'archimateC2::Product' (role 'Product19', cardinality 0..*) is associated with 'archimateC2::Contract' (role 'aggregatesContractProduct', cardinality 0..*).
+'archimateC2::Location' (role 'assignedfromLocationDataObject', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'DataObject85', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'usedByBusinessBehaviorElementApplicationservice', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement154', cardinality 0..*).
+'archimateC2::Artifact' (role 'Artifact243', cardinality 0..*) is associated with 'archimateC2::Node' (role 'assignedToNodeArtifact', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent210', cardinality 0..*) is associated with 'archimateC2::ApplicationCollaboration' (role 'aggregatedByApplicationCollaborationApplicationComponent', cardinality 0..*).
+'archimateC2::ArchimateElement' (role 'aggregatesElementElement', cardinality 0..*) is associated with 'archimateC2::ArchimateElement' (role 'ArchimateElement11', cardinality 0..*).
+'archimateC2::BusinessRole' (role 'usesBusinessRoleApplicationInterface', cardinality 0..*) is associated with 'archimateC2::ApplicationInterface' (role 'ApplicationInterface115', cardinality 0..*).
+'archimateC2::BusinessObject' (role 'accessesBusinessObjectBusinessService', cardinality 0..*) is associated with 'archimateC2::BusinessService' (role 'BusinessService25', cardinality 0..*).
+'archimateC2::DataObject' (role 'realizesBusinessObjectDataObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject138', cardinality 0..*).
+'archimateC2::BusinessRole' (role 'BusinessRole156', cardinality 0..*) is associated with 'archimateC2::ApplicationService' (role 'usesBusinessRoleApplicationService', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'flowsToApplicationFunctionApplicationFunction', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'ApplicationFunction170', cardinality 0..*).
+'archimateC2::Network' (role 'Network258', cardinality 0..*) is associated with 'archimateC2::CommunicationPath' (role 'realizesCommunicationPathNetwork', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement75', cardinality 0..*) is associated with 'archimateC2::BusinessEvent' (role 'triggersByBusinessEventBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement109', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'assignedToBusinessRoleBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::Location' (role 'assignedToLocationBusinessActor', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'BusinessActor79', cardinality 0..*).
+'archimateC2::InfrastructureInterface' (role 'InfrastructureInterface247', cardinality 0..*) is associated with 'archimateC2::Node' (role 'usedByNodeInfrastructureInterface', cardinality 0..*).
+'archimateC2::Artifact' (role 'assignedToArtifactNode', cardinality 0..*) is associated with 'archimateC2::Node' (role 'Node214', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'realizesApplicationServiceApplicationFunction', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'ApplicationFunction144', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'triggersBusinessBehaviorElementBusinessEvent', cardinality 0..*) is associated with 'archimateC2::BusinessEvent' (role 'BusinessEvent60', cardinality 0..*).
+'archimateC2::ApplicationFunction' (role 'ApplicationFunction232', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'usesApplicationFunctionInfrastructureService', cardinality 0..*).
+'archimateC2::BusinessService' (role 'usesElementBusinessServiceBusinessRole', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole', cardinality 0..*).
+'archimateC2::Meaning' (role 'associatedWithMeaningBusinessObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject', cardinality 0..*).
+'archimateC2::Location' (role 'Location140', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'assignedToLocationDataObject', cardinality 0..*).
+'archimateC2::BusinessService' (role 'aggregatesBusinessServiceProduct', cardinality 0..*) is associated with 'archimateC2::Product' (role 'Product34', cardinality 0..*).
+'archimateC2::BusinessCollaboration' (role 'aggregatedByBusinessCollaborationBusinessRole', cardinality 0..*) is associated with 'archimateC2::BusinessRole' (role 'BusinessRole119', cardinality 0..*).
+'archimateC2::BusinessRole' (role 'assignedToBusinessRoleBusinessActor', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'BusinessActor106', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'accessedByApplicationServiceDataObject', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'DataObject150', cardinality 0..*).
+'archimateC2::ApplicationService' (role 'assignedToApplicationServiceApplicationInterface', cardinality 0..*) is associated with 'archimateC2::ApplicationInterface' (role 'ApplicationInterface148', cardinality 0..*).
+'archimateC2::BusinessService' (role 'usesElementBusinessServiceBusinessActor', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'BusinessActor', cardinality 0..*).
+'archimateC2::Node' (role 'Node226', cardinality 0..*) is associated with 'archimateC2::InfrastructureService' (role 'usesInfrastructureServiceNode', cardinality 0..*).
+'archimateC2::Artifact' (role 'assignedFromLocationArtifact', cardinality 0..*) is associated with 'archimateC2::Location' (role 'Location216', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent220', cardinality 0..*) is associated with 'archimateC2::Artifact' (role 'realizedByApplicationComponentArtifact', cardinality 0..*).
+'archimateC2::InfrastructureService' (role 'InfrastructureService180', cardinality 0..*) is associated with 'archimateC2::ApplicationFunction' (role 'usedByApplicationFunctionInfrastructureService', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'ApplicationComponent184', cardinality 0..*) is associated with 'archimateC2::ApplicationInterface' (role 'usesApplicationInterfaceApplicationComponent', cardinality 0..*).
+'archimateC2::ApplicationComponent' (role 'assignedToApplicationComponentBusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement203', cardinality 0..*).
+'archimateC2::BusinessActor' (role 'aggregatesBusinessActorBusinessCollaboration', cardinality 0..*) is associated with 'archimateC2::BusinessCollaboration' (role 'BusinessCollaboration121', cardinality 0..*).
+'archimateC2::Artifact' (role 'realizedByDataObjectArtifact', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'DataObject218', cardinality 0..*).
+'archimateC2::BusinessEvent' (role 'accessesBusinessEventBusinessObject', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'BusinessObject77', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement50', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'triggersToBusinessBehaviorElementBusinessBehaviorElement', cardinality 0..*).
+'archimateC2::BusinessEvent' (role 'triggersBusinessEventBusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement73', cardinality 0..*).
+'archimateC2::BusinessCollaboration' (role 'aggregatesByBusinessCollaborationBusinessActor', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'BusinessActor117', cardinality 0..*).
+'archimateC2::BusinessRole' (role 'BusinessRole94', cardinality 0..*) is associated with 'archimateC2::BusinessInterface' (role 'composedOfBusinessInterfaceBusinessRole', cardinality 0..*).
+'archimateC2::BusinessService' (role 'BusinessService127', cardinality 0..*) is associated with 'archimateC2::BusinessActor' (role 'usedByBusinessActorBusinessService', cardinality 0..*).
+'archimateC2::BusinessActor' (role 'BusinessActor96', cardinality 0..*) is associated with 'archimateC2::BusinessInterface' (role 'usesBusinessInterfaceBusinessActor', cardinality 0..*).
+'archimateC2::BusinessBehaviorElement' (role 'flowsFromBusinessBehaviorElementBusinessBehaviorElement', cardinality 0..*) is associated with 'archimateC2::BusinessBehaviorElement' (role 'BusinessBehaviorElement56', cardinality 0..*).
+'archimateC2::Artifact' (role 'Artifact142', cardinality 0..*) is associated with 'archimateC2::DataObject' (role 'realizesDataObjectArtifact', cardinality 0..*).
+'archimateC2::Location' (role 'Location', cardinality 0..*) is associated with 'archimateC2::BusinessObject' (role 'assignedFromBusinessObjectLocation', cardinality 0..*).

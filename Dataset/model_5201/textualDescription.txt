@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'model::A' has no attributes.
+The class 'model::B' has no attributes.
+The class 'model::C' has no attributes.
+The class 'model::D' has no attributes.

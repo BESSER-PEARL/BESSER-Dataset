@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'FaultyUMLmodel4::A' has the following attributes: 'w' of type bool; 'v' of type int.
+The class 'FaultyUMLmodel4::B' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'FaultyUMLmodel4::D' has the following attributes: 'z' of type bool.
+The class 'FaultyUMLmodel4::C' has the following attributes: 'u' of type int.
+'FaultyUMLmodel4::B' (role 'AB', cardinality 0..*) is associated with 'FaultyUMLmodel4::A' (role 'A', cardinality 0..*).
+'FaultyUMLmodel4::C' (role 'C', cardinality 0..*) is associated with 'FaultyUMLmodel4::A' (role 'CA', cardinality 0..*).
+'FaultyUMLmodel4::C' (role 'C11', cardinality 0..*) is associated with 'FaultyUMLmodel4::D' (role 'CD', cardinality 0..*).
+'FaultyUMLmodel4::A' (role 'BA', cardinality 0..*) is associated with 'FaultyUMLmodel4::B' (role 'B', cardinality 0..*).
+'FaultyUMLmodel4::B' (role 'CB', cardinality 0..*) is associated with 'FaultyUMLmodel4::C' (role 'C4', cardinality 0..*).
+'FaultyUMLmodel4::B' (role 'B8', cardinality 0..*) is associated with 'FaultyUMLmodel4::C' (role 'BC', cardinality 0..*).
+'FaultyUMLmodel4::C' (role 'DC', cardinality 0..*) is associated with 'FaultyUMLmodel4::D' (role 'D', cardinality 0..*).
+'FaultyUMLmodel4::A' (role 'A6', cardinality 0..*) is associated with 'FaultyUMLmodel4::C' (role 'AC', cardinality 0..*).

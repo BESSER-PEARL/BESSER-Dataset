@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'c::Bar' has the following attributes: 'value' of type str.
+The class 'c::AbstractClass' has the following attributes: 'name' of type str.
+The class 'Foo' has no attributes.
+The class 'c::Foo' has the following attributes: 'description' of type str.
+The class 'AbstractClass' has no attributes.
+'c::Foo' is a specialization of 'AbstractClass'.
+'c::Bar' is a specialization of 'Foo'.
+'c::Foo' (role 'c_Foo', cardinality 0..*) is associated with 'c::Bar' (role 'c_Bar', cardinality 0..*).
+'c::Foo' (role 'c_Foo3', cardinality 0..*) is associated with 'c::Bar' (role 'c_Bar2', cardinality 0..*).

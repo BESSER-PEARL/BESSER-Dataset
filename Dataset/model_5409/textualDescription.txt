@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'fta::Diagram' has the following attributes: 'id' of type str; 'detail' of type str; 'name' of type str.
+The class 'fta::Condition' has the following attributes: 'GateKind' of type str.
+The class 'Diagram' has no attributes.
+The class 'fta::FTA' has no attributes.
+The class 'fta::Event' has the following attributes: 'BaseEvent' of type bool.
+The class 'fta::Hazard' has no attributes.
+The enumeration 'GateType' has the following literals: 'ANDGate', 'ORGate'.
+'fta::Condition' is a specialization of 'Diagram'.
+'fta::Event' is a specialization of 'Diagram'.
+'fta::Hazard' is a specialization of 'Diagram'.
+'fta::Event' (role 'fta_Event', cardinality 0..*) is associated with 'fta::Condition' (role 'fta_Condition3', cardinality 0..*).
+'fta::Condition' (role 'fta_Condition', cardinality 0..*) is associated with 'fta::Hazard' (role 'fta_Hazard', cardinality 0..*).
+'fta::Event' (role 'fta_Event6', cardinality 0..*) is associated with 'fta::Condition' (role 'fta_Condition5', cardinality 0..*).
+'fta::FTA' (role 'fta_FTA', cardinality 0..*) is associated with 'fta::Diagram' (role 'fta_Diagram', cardinality 0..*).

@@ -1,0 +1,65 @@
+The model has 25 class(es).
+The class 'flowgraph::Block' has no attributes.
+The class 'Block' has no attributes.
+The class 'flowgraph::Stmt' has no attributes.
+The class 'Var' has no attributes.
+The class 'flowgraph::If' has no attributes.
+The class 'flowgraph::Exit' has no attributes.
+The class 'flowgraph::Return' has no attributes.
+The class 'flowgraph::Label' has no attributes.
+The class 'flowgraph::Conditional' has no attributes.
+The class 'flowgraph::Method' has no attributes.
+The class 'flowgraph::Continue' has no attributes.
+The class 'flowgraph::SimpleStmt' has no attributes.
+The class 'Item' has no attributes.
+The class 'JumpStmt' has no attributes.
+The class 'flowgraph::FlowInstr' has no attributes.
+The class 'flowgraph::Break' has no attributes.
+The class 'Conditional' has no attributes.
+The class 'flowgraph::Param' has no attributes.
+The class 'flowgraph::Item' has the following attributes: 'txt' of type str.
+The class 'Stmt' has no attributes.
+The class 'flowgraph::Var' has no attributes.
+The class 'FlowInstr' has no attributes.
+The class 'flowgraph::Expr' has no attributes.
+The class 'flowgraph::Loop' has no attributes.
+The class 'flowgraph::JumpStmt' has no attributes.
+'flowgraph::JumpStmt' is a specialization of 'Stmt'.
+'flowgraph::Param' is a specialization of 'Var'.
+'flowgraph::Block' is a specialization of 'Stmt'.
+'flowgraph::Loop' is a specialization of 'Conditional'.
+'flowgraph::Return' is a specialization of 'Stmt'.
+'flowgraph::Method' is a specialization of 'Block'.
+'flowgraph::FlowInstr' is a specialization of 'Item'.
+'flowgraph::JumpStmt' is a specialization of 'FlowInstr'.
+'flowgraph::SimpleStmt' is a specialization of 'FlowInstr'.
+'flowgraph::Var' is a specialization of 'Item'.
+'flowgraph::Break' is a specialization of 'JumpStmt'.
+'flowgraph::Return' is a specialization of 'FlowInstr'.
+'flowgraph::Expr' is a specialization of 'FlowInstr'.
+'flowgraph::Stmt' is a specialization of 'Item'.
+'flowgraph::Label' is a specialization of 'Stmt'.
+'flowgraph::Conditional' is a specialization of 'Stmt'.
+'flowgraph::Method' is a specialization of 'FlowInstr'.
+'flowgraph::Exit' is a specialization of 'FlowInstr'.
+'flowgraph::If' is a specialization of 'Conditional'.
+'flowgraph::SimpleStmt' is a specialization of 'Stmt'.
+'flowgraph::Continue' is a specialization of 'JumpStmt'.
+'flowgraph::JumpStmt' (role 'JumpStmt', cardinality 0..*) is associated with 'flowgraph::Label' (role 'label', cardinality 0..*).
+'flowgraph::Stmt' (role 'flowgraph_Stmt9', cardinality 0..*) is associated with 'flowgraph::Loop' (role 'flowgraph_Loop', cardinality 0..*).
+'flowgraph::Label' (role 'Label', cardinality 0..*) is associated with 'flowgraph::JumpStmt' (role 'jumps', cardinality 0..*).
+'flowgraph::FlowInstr' (role 'cfPrev', cardinality 0..*) is associated with 'flowgraph::FlowInstr' (role 'FlowInstr', cardinality 0..*).
+'flowgraph::Method' (role 'Method', cardinality 0..*) is associated with 'flowgraph::Var' (role 'vars', cardinality 0..*).
+'flowgraph::FlowInstr' (role 'flowgraph_FlowInstr', cardinality 0..*) is associated with 'flowgraph::FlowInstr' (role 'flowgraph_FlowInstr21', cardinality 0..*).
+'flowgraph::Method' (role 'method', cardinality 0..*) is associated with 'flowgraph::Var' (role 'Var', cardinality 0..*).
+'flowgraph::Stmt' (role 'flowgraph_Stmt2', cardinality 0..*) is associated with 'flowgraph::If' (role 'flowgraph_If', cardinality 0..*).
+'flowgraph::FlowInstr' (role 'cfNext', cardinality 0..*) is associated with 'flowgraph::FlowInstr' (role 'FlowInstr16', cardinality 0..*).
+'flowgraph::Label' (role 'flowgraph_Label', cardinality 0..*) is associated with 'flowgraph::Stmt' (role 'flowgraph_Stmt29', cardinality 0..*).
+'flowgraph::Var' (role 'Var20', cardinality 0..*) is associated with 'flowgraph::FlowInstr' (role 'users', cardinality 0..*).
+'flowgraph::Var' (role 'def_', cardinality 0..*) is associated with 'flowgraph::FlowInstr' (role 'FlowInstr24', cardinality 0..*).
+'flowgraph::Method' (role 'flowgraph_Method', cardinality 0..*) is associated with 'flowgraph::Exit' (role 'flowgraph_Exit', cardinality 0..*).
+'flowgraph::Expr' (role 'flowgraph_Expr', cardinality 0..*) is associated with 'flowgraph::Conditional' (role 'flowgraph_Conditional', cardinality 0..*).
+'flowgraph::FlowInstr' (role 'FlowInstr26', cardinality 0..*) is associated with 'flowgraph::Var' (role 'use', cardinality 0..*).
+'flowgraph::If' (role 'flowgraph_If4', cardinality 0..*) is associated with 'flowgraph::Stmt' (role 'flowgraph_Stmt5', cardinality 0..*).
+'flowgraph::Stmt' (role 'flowgraph_Stmt', cardinality 0..*) is associated with 'flowgraph::Block' (role 'flowgraph_Block', cardinality 0..*).
+'flowgraph::FlowInstr' (role 'definers', cardinality 0..*) is associated with 'flowgraph::Var' (role 'Var18', cardinality 0..*).

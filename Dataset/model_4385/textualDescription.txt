@@ -1,0 +1,93 @@
+The model has 35 class(es).
+The class 'gx10::MethodCall' has no attributes.
+The class 'gx10::Time' has no attributes.
+The class 'gx10::IntExpression' has no attributes.
+The class 'gx10::IntVar' has no attributes.
+The class 'gx10::Equal' has no attributes.
+The class 'gx10::Statement' has no attributes.
+The class 'gx10::BoolVarAccess' has no attributes.
+The class 'gx10::Finish' has no attributes.
+The class 'gx10::BoolExpression' has no attributes.
+The class 'gx10::While' has no attributes.
+The class 'gx10::Referentiable' has the following attributes: 'name' of type str.
+The class 'gx10::Program' has no attributes.
+The class 'gx10::ControlStructure' has no attributes.
+The class 'gx10::Plus' has no attributes.
+The class 'gx10::Async' has no attributes.
+The class 'gx10::BoolVar' has no attributes.
+The class 'Expression' has no attributes.
+The class 'gx10::MethodCallParameter' has the following attributes: 'name' of type str.
+The class 'gx10::Block' has no attributes.
+The class 'gx10::Method' has the following attributes: 'name' of type bool.
+The class 'gx10::If' has no attributes.
+The class 'IntBinaryOperation' has no attributes.
+The class 'gx10::Not' has no attributes.
+The class 'gx10::Print' has no attributes.
+The class 'gx10::Expression' has no attributes.
+The class 'gx10::False' has no attributes.
+The class 'gx10::IntVarAccess' has no attributes.
+The class 'ControlStructure' has no attributes.
+The class 'gx10::IntBinaryOperation' has no attributes.
+The class 'gx10::IntConst' has the following attributes: 'value' of type int.
+The class 'BoolExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'IntExpression' has no attributes.
+The class 'gx10::True' has no attributes.
+The class 'gx10::And' has no attributes.
+'gx10::Equal' is a specialization of 'BoolExpression'.
+'gx10::IntVar' is a specialization of 'Statement'.
+'gx10::IntVarAccess' is a specialization of 'IntExpression'.
+'gx10::BoolExpression' is a specialization of 'Expression'.
+'gx10::Plus' is a specialization of 'IntBinaryOperation'.
+'gx10::False' is a specialization of 'BoolExpression'.
+'gx10::Not' is a specialization of 'BoolExpression'.
+'gx10::Async' is a specialization of 'Statement'.
+'gx10::While' is a specialization of 'ControlStructure'.
+'gx10::And' is a specialization of 'BoolExpression'.
+'gx10::Block' is a specialization of 'Statement'.
+'gx10::BoolVarAccess' is a specialization of 'BoolExpression'.
+'gx10::IntConst' is a specialization of 'IntExpression'.
+'gx10::Print' is a specialization of 'Statement'.
+'gx10::IntBinaryOperation' is a specialization of 'IntExpression'.
+'gx10::IntExpression' is a specialization of 'Expression'.
+'gx10::ControlStructure' is a specialization of 'Statement'.
+'gx10::MethodCall' is a specialization of 'Expression'.
+'gx10::Expression' is a specialization of 'Statement'.
+'gx10::Finish' is a specialization of 'Statement'.
+'gx10::True' is a specialization of 'BoolExpression'.
+'gx10::If' is a specialization of 'ControlStructure'.
+'gx10::Time' is a specialization of 'IntBinaryOperation'.
+'gx10::BoolVar' is a specialization of 'Expression'.
+'gx10::Referentiable' (role 'gx10_Referentiable49', cardinality 0..*) is associated with 'gx10::IntVarAccess' (role 'gx10_IntVarAccess', cardinality 0..*).
+'gx10::And' (role 'gx10_And24', cardinality 0..*) is associated with 'gx10::BoolExpression' (role 'gx10_BoolExpression25', cardinality 0..*).
+'gx10::BoolVar' (role 'gx10_BoolVar41', cardinality 0..*) is associated with 'gx10::Referentiable' (role 'gx10_Referentiable42', cardinality 0..*).
+'gx10::And' (role 'gx10_And', cardinality 0..*) is associated with 'gx10::BoolExpression' (role 'gx10_BoolExpression22', cardinality 0..*).
+'gx10::Method' (role 'gx10_Method7', cardinality 0..*) is associated with 'gx10::Referentiable' (role 'gx10_Referentiable', cardinality 0..*).
+'gx10::IntVar' (role 'gx10_IntVar46', cardinality 0..*) is associated with 'gx10::Referentiable' (role 'gx10_Referentiable47', cardinality 0..*).
+'gx10::MethodCallParameter' (role 'inMethodCallParameter', cardinality 0..*) is associated with 'gx10::IntExpression' (role 'IntExpression', cardinality 0..*).
+'gx10::Method' (role 'Method', cardinality 0..*) is associated with 'gx10::Program' (role 'inProgram', cardinality 0..*).
+'gx10::While' (role 'gx10_While', cardinality 0..*) is associated with 'gx10::Block' (role 'gx10_Block18', cardinality 0..*).
+'gx10::Block' (role 'gx10_Block', cardinality 0..*) is associated with 'gx10::Method' (role 'gx10_Method4', cardinality 0..*).
+'gx10::Method' (role 'Method32', cardinality 0..*) is associated with 'gx10::MethodCall' (role 'calledBy', cardinality 0..*).
+'gx10::Method' (role 'gx10_Method', cardinality 0..*) is associated with 'gx10::Program' (role 'gx10_Program', cardinality 0..*).
+'gx10::IntExpression' (role 'methodCallParameterExpr', cardinality 0..*) is associated with 'gx10::MethodCallParameter' (role 'MethodCallParameter', cardinality 0..*).
+'gx10::Method' (role 'methodToCall', cardinality 0..*) is associated with 'gx10::MethodCall' (role 'MethodCall', cardinality 0..*).
+'gx10::Statement' (role 'blockStatements', cardinality 0..*) is associated with 'gx10::Block' (role 'Block', cardinality 0..*).
+'gx10::BoolVar' (role 'gx10_BoolVar', cardinality 0..*) is associated with 'gx10::BoolExpression' (role 'gx10_BoolExpression39', cardinality 0..*).
+'gx10::Expression' (role 'gx10_Expression', cardinality 0..*) is associated with 'gx10::Print' (role 'gx10_Print', cardinality 0..*).
+'gx10::MethodCall' (role 'inMethodCall', cardinality 0..*) is associated with 'gx10::MethodCallParameter' (role 'MethodCallParameter34', cardinality 0..*).
+'gx10::Async' (role 'gx10_Async', cardinality 0..*) is associated with 'gx10::Statement' (role 'gx10_Statement', cardinality 0..*).
+'gx10::Referentiable' (role 'gx10_Referentiable51', cardinality 0..*) is associated with 'gx10::BoolVarAccess' (role 'gx10_BoolVarAccess', cardinality 0..*).
+'gx10::MethodCallParameter' (role 'methodCallParameters', cardinality 0..*) is associated with 'gx10::MethodCall' (role 'MethodCall59', cardinality 0..*).
+'gx10::IntVar' (role 'gx10_IntVar', cardinality 0..*) is associated with 'gx10::IntExpression' (role 'gx10_IntExpression44', cardinality 0..*).
+'gx10::IntExpression' (role 'gx10_IntExpression', cardinality 0..*) is associated with 'gx10::IntBinaryOperation' (role 'gx10_IntBinaryOperation', cardinality 0..*).
+'gx10::BoolExpression' (role 'gx10_BoolExpression20', cardinality 0..*) is associated with 'gx10::Not' (role 'gx10_Not', cardinality 0..*).
+'gx10::Block' (role 'gx10_Block13', cardinality 0..*) is associated with 'gx10::If' (role 'gx10_If', cardinality 0..*).
+'gx10::Block' (role 'gx10_Block16', cardinality 0..*) is associated with 'gx10::If' (role 'gx10_If15', cardinality 0..*).
+'gx10::Program' (role 'Program', cardinality 0..*) is associated with 'gx10::Method' (role 'methods', cardinality 0..*).
+'gx10::ControlStructure' (role 'gx10_ControlStructure', cardinality 0..*) is associated with 'gx10::BoolExpression' (role 'gx10_BoolExpression', cardinality 0..*).
+'gx10::IntExpression' (role 'gx10_IntExpression56', cardinality 0..*) is associated with 'gx10::Equal' (role 'gx10_Equal55', cardinality 0..*).
+'gx10::IntExpression' (role 'gx10_IntExpression29', cardinality 0..*) is associated with 'gx10::IntBinaryOperation' (role 'gx10_IntBinaryOperation28', cardinality 0..*).
+'gx10::Statement' (role 'gx10_Statement36', cardinality 0..*) is associated with 'gx10::Finish' (role 'gx10_Finish', cardinality 0..*).
+'gx10::Block' (role 'inBlock', cardinality 0..*) is associated with 'gx10::Statement' (role 'Statement', cardinality 0..*).
+'gx10::Equal' (role 'gx10_Equal', cardinality 0..*) is associated with 'gx10::IntExpression' (role 'gx10_IntExpression53', cardinality 0..*).

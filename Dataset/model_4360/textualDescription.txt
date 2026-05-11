@@ -1,0 +1,45 @@
+The model has 19 class(es).
+The class 'simple::lang::FeatureCallExpression' has the following attributes: 'name' of type str.
+The class 'simple::lang::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'simple::lang::ComparisonExpression' has no attributes.
+The class 'simple::lang::ArithmeticExpression' has no attributes.
+The class 'simple::lang::WhileStatement' has no attributes.
+The class 'simple::lang::ExpressionStatement' has no attributes.
+The class 'FeatureCallExpression' has no attributes.
+The class 'simple::lang::LogicalExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'simple::lang::AssignmentStatement' has no attributes.
+The class 'simple::lang::SimpleLang' has no attributes.
+The class 'simple::lang::Expression' has no attributes.
+The class 'simple::lang::PropertyCallExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'simple::lang::Statement' has no attributes.
+The class 'simple::lang::MethodCallExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'simple::lang::Type' has no attributes.
+The class 'simple::lang::IfStatement' has no attributes.
+'simple::lang::AssignmentStatement' is a specialization of 'Statement'.
+'simple::lang::MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'simple::lang::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'simple::lang::IfStatement' is a specialization of 'Statement'.
+'simple::lang::BinaryExpression' is a specialization of 'Expression'.
+'simple::lang::LogicalExpression' is a specialization of 'BinaryExpression'.
+'simple::lang::ComparisonExpression' is a specialization of 'BinaryExpression'.
+'simple::lang::FeatureCallExpression' is a specialization of 'Expression'.
+'simple::lang::PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+'simple::lang::ExpressionStatement' is a specialization of 'Statement'.
+'simple::lang::WhileStatement' is a specialization of 'Statement'.
+'simple::lang::Expression' (role 'simple_lang_Expression12', cardinality 0..*) is associated with 'simple::lang::ExpressionStatement' (role 'simple_lang_ExpressionStatement', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression6', cardinality 0..*) is associated with 'simple::lang::BinaryExpression' (role 'simple_lang_BinaryExpression5', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression8', cardinality 0..*) is associated with 'simple::lang::FeatureCallExpression' (role 'simple_lang_FeatureCallExpression', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression14', cardinality 0..*) is associated with 'simple::lang::IfStatement' (role 'simple_lang_IfStatement', cardinality 0..*).
+'simple::lang::Statement' (role 'simple_lang_Statement25', cardinality 0..*) is associated with 'simple::lang::WhileStatement' (role 'simple_lang_WhileStatement24', cardinality 0..*).
+'simple::lang::Statement' (role 'simple_lang_Statement17', cardinality 0..*) is associated with 'simple::lang::IfStatement' (role 'simple_lang_IfStatement16', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression', cardinality 0..*) is associated with 'simple::lang::Type' (role 'simple_lang_Type', cardinality 0..*).
+'simple::lang::MethodCallExpression' (role 'simple_lang_MethodCallExpression', cardinality 0..*) is associated with 'simple::lang::Expression' (role 'simple_lang_Expression10', cardinality 0..*).
+'simple::lang::Statement' (role 'simple_lang_Statement20', cardinality 0..*) is associated with 'simple::lang::IfStatement' (role 'simple_lang_IfStatement19', cardinality 0..*).
+'simple::lang::SimpleLang' (role 'simple_lang_SimpleLang', cardinality 0..*) is associated with 'simple::lang::Statement' (role 'simple_lang_Statement', cardinality 0..*).
+'simple::lang::AssignmentStatement' (role 'simple_lang_AssignmentStatement', cardinality 0..*) is associated with 'simple::lang::Expression' (role 'simple_lang_Expression27', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression30', cardinality 0..*) is associated with 'simple::lang::AssignmentStatement' (role 'simple_lang_AssignmentStatement29', cardinality 0..*).
+'simple::lang::BinaryExpression' (role 'simple_lang_BinaryExpression', cardinality 0..*) is associated with 'simple::lang::Expression' (role 'simple_lang_Expression3', cardinality 0..*).
+'simple::lang::Expression' (role 'simple_lang_Expression22', cardinality 0..*) is associated with 'simple::lang::WhileStatement' (role 'simple_lang_WhileStatement', cardinality 0..*).

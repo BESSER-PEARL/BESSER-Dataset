@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'gametournament::Game' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'gametournament::Tournament' has the following attributes: 'startDate' of type date; 'prize' of type int; 'endDate' of type date; 'location' of type str; 'name' of type str.
+The class 'gametournament::QualificationPhase' has no attributes.
+The class 'gametournament::Gamer' has the following attributes: 'lastName' of type str; 'firstName' of type str; 'victories' of type int; 'matches' of type int; 'pseudo' of type str.
+The class 'gametournament::FinalPhase' has no attributes.
+The class 'gametournament::Pool' has no attributes.
+The enumeration 'GameType' has the following literals: 'RPG', 'COMBAT', 'FPS', 'STRATEGIC', 'ACTION'.
+'gametournament::Tournament' (role 'gametournament_Tournament4', cardinality 0..*) is associated with 'gametournament::FinalPhase' (role 'gametournament_FinalPhase', cardinality 0..*).
+'gametournament::Gamer' (role 'gametournament_Gamer17', cardinality 0..*) is associated with 'gametournament::Pool' (role 'gametournament_Pool16', cardinality 0..*).
+'gametournament::Pool' (role 'gametournament_Pool19', cardinality 0..*) is associated with 'gametournament::Gamer' (role 'gametournament_Gamer20', cardinality 0..*).
+'gametournament::Gamer' (role 'gametournament_Gamer', cardinality 0..*) is associated with 'gametournament::Tournament' (role 'gametournament_Tournament2', cardinality 0..*).
+'gametournament::QualificationPhase' (role 'gametournament_QualificationPhase', cardinality 0..*) is associated with 'gametournament::Tournament' (role 'gametournament_Tournament6', cardinality 0..*).
+'gametournament::Pool' (role 'gametournament_Pool', cardinality 0..*) is associated with 'gametournament::QualificationPhase' (role 'gametournament_QualificationPhase8', cardinality 0..*).
+'gametournament::Gamer' (role 'gametournament_Gamer11', cardinality 0..*) is associated with 'gametournament::FinalPhase' (role 'gametournament_FinalPhase10', cardinality 0..*).
+'gametournament::QualificationPhase' (role 'gametournament_QualificationPhase14', cardinality 0..*) is associated with 'gametournament::FinalPhase' (role 'gametournament_FinalPhase13', cardinality 0..*).
+'gametournament::Tournament' (role 'gametournament_Tournament', cardinality 0..*) is associated with 'gametournament::Game' (role 'gametournament_Game', cardinality 0..*).

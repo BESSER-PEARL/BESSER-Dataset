@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/manuelleduc/xp-gemoc-concurrent/without_metamodel/languages_workbenches/x10/fr.mleduc.gx10.model/model/gx10.ecore

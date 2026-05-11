@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'ancestor::C' has no attributes.
+The class 'ancestor::D' has no attributes.
+The class 'ancestor::A' has no attributes.
+The class 'ancestor::B' has no attributes.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/flower-platform/flower-platform-3/org.flowerplatform.emf_model.notation/emf_model/Notation.ecore

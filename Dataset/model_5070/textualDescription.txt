@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'accounting::BalanceAccount' has no attributes.
+The class 'accounting::JournalGroup' has the following attributes: 'name' of type str.
+The class 'Account' has no attributes.
+The class 'accounting::Vat' has the following attributes: 'name' of type str; 'rate' of type str.
+The class 'accounting::Report' has the following attributes: 'name' of type str.
+The class 'accounting::JournalStatement' has the following attributes: 'description' of type str; 'date' of type str; 'amount' of type str.
+The class 'accounting::AccountGroup' has the following attributes: 'name' of type str.
+The class 'accounting::ReportGroup' has the following attributes: 'name' of type str.
+The class 'accounting::Account' has the following attributes: 'name' of type str.
+The class 'accounting::PLAccount' has no attributes.
+The class 'accounting::Accounting' has the following attributes: 'name' of type str.
+'accounting::PLAccount' is a specialization of 'Account'.
+'accounting::BalanceAccount' is a specialization of 'Account'.
+'accounting::JournalStatement' (role 'accounting_JournalStatement21', cardinality 0..*) is associated with 'accounting::Account' (role 'accounting_Account22', cardinality 0..*).
+'accounting::BalanceAccount' (role 'BalanceAccount', cardinality 0..*) is associated with 'accounting::ReportGroup' (role 'report', cardinality 0..*).
+'accounting::JournalGroup' (role 'accounting_JournalGroup', cardinality 0..*) is associated with 'accounting::Accounting' (role 'accounting_Accounting10', cardinality 0..*).
+'accounting::Accounting' (role 'accounting_Accounting4', cardinality 0..*) is associated with 'accounting::Vat' (role 'accounting_Vat', cardinality 0..*).
+'accounting::BalanceAccount' (role 'account', cardinality 0..*) is associated with 'accounting::ReportGroup' (role 'ReportGroup', cardinality 0..*).
+'accounting::Report' (role 'accounting_Report27', cardinality 0..*) is associated with 'accounting::ReportGroup' (role 'accounting_ReportGroup', cardinality 0..*).
+'accounting::JournalStatement' (role 'accounting_JournalStatement', cardinality 0..*) is associated with 'accounting::JournalGroup' (role 'accounting_JournalGroup16', cardinality 0..*).
+'accounting::ReportGroup' (role 'accounting_ReportGroup30', cardinality 0..*) is associated with 'accounting::Report' (role 'accounting_Report29', cardinality 0..*).
+'accounting::ReportGroup' (role 'accounting_ReportGroup33', cardinality 0..*) is associated with 'accounting::ReportGroup' (role 'accounting_ReportGroup31', cardinality 0..*).
+'accounting::AccountGroup' (role 'accounting_AccountGroup2', cardinality 0..*) is associated with 'accounting::Accounting' (role 'accounting_Accounting', cardinality 0..*).
+'accounting::Accounting' (role 'accounting_Accounting6', cardinality 0..*) is associated with 'accounting::BalanceAccount' (role 'accounting_BalanceAccount', cardinality 0..*).
+'accounting::JournalStatement' (role 'accounting_JournalStatement18', cardinality 0..*) is associated with 'accounting::Account' (role 'accounting_Account19', cardinality 0..*).
+'accounting::JournalGroup' (role 'accounting_JournalGroup14', cardinality 0..*) is associated with 'accounting::JournalGroup' (role 'accounting_JournalGroup12', cardinality 0..*).
+'accounting::AccountGroup' (role 'accounting_AccountGroup', cardinality 0..*) is associated with 'accounting::Account' (role 'accounting_Account', cardinality 0..*).
+'accounting::Vat' (role 'accounting_Vat25', cardinality 0..*) is associated with 'accounting::JournalStatement' (role 'accounting_JournalStatement24', cardinality 0..*).
+'accounting::Report' (role 'accounting_Report', cardinality 0..*) is associated with 'accounting::Accounting' (role 'accounting_Accounting8', cardinality 0..*).

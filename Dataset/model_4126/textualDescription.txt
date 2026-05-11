@@ -1,0 +1,36 @@
+The model has 20 class(es).
+The class 'assignment2::ExpMultDiv' has no attributes.
+The class 'Primary' has no attributes.
+The class 'assignment2::Exp' has no attributes.
+The class 'assignment2::Div' has no attributes.
+The class 'assignment2::Plus' has no attributes.
+The class 'assignment2::Model' has no attributes.
+The class 'ExpMultDiv' has no attributes.
+The class 'assignment2::ExpMD' has no attributes.
+The class 'assignment2::ExpMinusPlus' has no attributes.
+The class 'assignment2::MathExp' has no attributes.
+The class 'assignment2::EObject' has no attributes.
+The class 'assignment2::Primary' has no attributes.
+The class 'assignment2::Minus' has no attributes.
+The class 'assignment2::ExpPM' has no attributes.
+The class 'ExpMinusPlus' has no attributes.
+The class 'ExpPM' has no attributes.
+The class 'assignment2::Parenthesis' has no attributes.
+The class 'assignment2::Mult' has no attributes.
+The class 'ExpMD' has no attributes.
+The class 'assignment2::Number' has the following attributes: 'value' of type int.
+'assignment2::Primary' is a specialization of 'ExpMultDiv'.
+'assignment2::Mult' is a specialization of 'ExpMD'.
+'assignment2::Minus' is a specialization of 'ExpPM'.
+'assignment2::Div' is a specialization of 'ExpMD'.
+'assignment2::ExpMultDiv' is a specialization of 'ExpMinusPlus'.
+'assignment2::Number' is a specialization of 'Primary'.
+'assignment2::Exp' is a specialization of 'ExpMultDiv'.
+'assignment2::Parenthesis' is a specialization of 'Primary'.
+'assignment2::Plus' is a specialization of 'ExpPM'.
+'assignment2::Parenthesis' (role 'assignment2_Parenthesis', cardinality 0..*) is associated with 'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus11', cardinality 0..*).
+'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus', cardinality 0..*) is associated with 'assignment2::MathExp' (role 'assignment2_MathExp2', cardinality 0..*).
+'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus7', cardinality 0..*) is associated with 'assignment2::EObject' (role 'assignment2_EObject', cardinality 0..*).
+'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus3', cardinality 0..*) is associated with 'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus5', cardinality 0..*).
+'assignment2::MathExp' (role 'assignment2_MathExp', cardinality 0..*) is associated with 'assignment2::Model' (role 'assignment2_Model', cardinality 0..*).
+'assignment2::ExpMultDiv' (role 'assignment2_ExpMultDiv', cardinality 0..*) is associated with 'assignment2::ExpMinusPlus' (role 'assignment2_ExpMinusPlus9', cardinality 0..*).

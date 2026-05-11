@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class arduino_Variable extends Expression, NamedElement {
+
+
+
+
+    public arduino_Variable(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

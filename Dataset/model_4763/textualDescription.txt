@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'Sequence' has no attributes.
+The class 'ctrlflow101::Function' has no attributes.
+The class 'ctrlflow101::Start' has no attributes.
+The class 'ctrlflow101::SequenceNode' has the following attributes: 'tMax' of type int; 'name' of type str; 'tMin' of type int.
+The class 'ctrlflow101::Token' has no attributes.
+The class 'ctrlflow101::And' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'ctrlflow101::Sequence' has the following attributes: 'weight' of type int.
+The class 'ctrlflow101::Final' has no attributes.
+The class 'ctrlflow101::Or' has no attributes.
+The class 'ctrlflow101::Loop' has no attributes.
+'ctrlflow101::Or' is a specialization of 'Sequence'.
+'ctrlflow101::Sequence' is a specialization of 'SequenceNode'.
+'ctrlflow101::And' is a specialization of 'Sequence'.
+'ctrlflow101::Function' is a specialization of 'SequenceNode'.
+'ctrlflow101::Final' is a specialization of 'Sequence'.
+'ctrlflow101::Loop' is a specialization of 'Sequence'.
+'ctrlflow101::Start' is a specialization of 'Sequence'.
+'ctrlflow101::Sequence' (role 'ctrlflow101_Sequence', cardinality 0..*) is associated with 'ctrlflow101::Function' (role 'ctrlflow101_Function3', cardinality 0..*).
+'ctrlflow101::Token' (role 'ctrlflow101_Token', cardinality 0..*) is associated with 'ctrlflow101::Function' (role 'ctrlflow101_Function5', cardinality 0..*).
+'ctrlflow101::Function' (role 'ctrlflow101_Function', cardinality 0..*) is associated with 'ctrlflow101::Function' (role 'ctrlflow101_Function0', cardinality 0..*).
+'ctrlflow101::SequenceNode' (role 'ctrlflow101_SequenceNode', cardinality 0..*) is associated with 'ctrlflow101::SequenceNode' (role 'ctrlflow101_SequenceNode6', cardinality 0..*).

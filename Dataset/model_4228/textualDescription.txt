@@ -1,0 +1,49 @@
+The model has 17 class(es).
+The class 'company104::Workstation' has the following attributes: 'ProfileDescription' of type str.
+The class 'company104::Flow' has no attributes.
+The class 'company104::ObjectiveReach' has the following attributes: 'statement' of type str; 'value' of type float.
+The class 'company104::Objective' has the following attributes: 'type' of type str; 'value' of type float; 'nature' of type str.
+The class 'company104::Interval' has the following attributes: 'dateFrom' of type str; 'dateTo' of type str.
+The class 'Interval' has no attributes.
+The class 'company104::Department' has no attributes.
+The class 'Function' has no attributes.
+The class 'company104::Agency' has the following attributes: 'Status' of type str; 'Accronym' of type str.
+The class 'company104::HierarchyLink' has the following attributes: 'hierarchy' of type str.
+The class 'NamedElement' has no attributes.
+The class 'company104::Employee' has the following attributes: 'address' of type int; 'socialSecurityNumber' of type str; 'fullName' of type str.
+The class 'company104::Goal' has the following attributes: 'statement' of type str.
+The class 'company104::Room' has no attributes.
+The class 'company104::Company' has no attributes.
+The class 'company104::NamedElement' has the following attributes: 'name' of type str.
+The class 'company104::Function' has no attributes.
+The enumeration 'ObjectiveNature' has the following literals: 'Performance', 'Quality', 'Human', 'Delay', 'Other', 'Legal', 'Environmental', 'Cost', 'Economical', 'None_'.
+The enumeration 'Hierarchy' has the following literals: 'Subordinate', 'Supervisor'.
+The enumeration 'ObjectiveType' has the following literals: 'Tactic', 'None_', 'Strategic', 'Operational'.
+The enumeration 'RoleType' has the following literals: 'Decision', 'Control', 'Transformation', 'Composite'.
+'company104::Agency' is a specialization of 'Function'.
+'company104::Room' is a specialization of 'Function'.
+'company104::Workstation' is a specialization of 'NamedElement'.
+'company104::Department' is a specialization of 'Function'.
+'company104::Goal' is a specialization of 'Interval'.
+'company104::Function' is a specialization of 'NamedElement'.
+'company104::Flow' is a specialization of 'NamedElement'.
+'company104::Agency' (role 'company104_Agency40', cardinality 0..*) is associated with 'company104::ObjectiveReach' (role 'company104_ObjectiveReach39', cardinality 0..*).
+'company104::Objective' (role 'company104_Objective', cardinality 0..*) is associated with 'company104::Goal' (role 'company104_Goal26', cardinality 0..*).
+'company104::Room' (role 'company104_Room19', cardinality 0..*) is associated with 'company104::Room' (role 'company104_Room21', cardinality 0..*).
+'company104::Room' (role 'company104_Room', cardinality 0..*) is associated with 'company104::Department' (role 'company104_Department', cardinality 0..*).
+'company104::Room' (role 'company104_Room11', cardinality 0..*) is associated with 'company104::Employee' (role 'company104_Employee10', cardinality 0..*).
+'company104::Flow' (role 'company104_Flow6', cardinality 0..*) is associated with 'company104::Function' (role 'company104_Function7', cardinality 0..*).
+'company104::ObjectiveReach' (role 'company104_ObjectiveReach36', cardinality 0..*) is associated with 'company104::Objective' (role 'company104_Objective37', cardinality 0..*).
+'company104::Workstation' (role 'inChargeOf', cardinality 0..*) is associated with 'company104::Employee' (role 'Employee', cardinality 0..*).
+'company104::Goal' (role 'company104_Goal', cardinality 0..*) is associated with 'company104::Company' (role 'company104_Company2', cardinality 0..*).
+'company104::Room' (role 'company104_Room23', cardinality 0..*) is associated with 'company104::Workstation' (role 'company104_Workstation', cardinality 0..*).
+'company104::Employee' (role 'company104_Employee', cardinality 0..*) is associated with 'company104::HierarchyLink' (role 'company104_HierarchyLink', cardinality 0..*).
+'company104::Agency' (role 'company104_Agency', cardinality 0..*) is associated with 'company104::Company' (role 'company104_Company', cardinality 0..*).
+'company104::Employee' (role 'company104_Employee18', cardinality 0..*) is associated with 'company104::HierarchyLink' (role 'company104_HierarchyLink17', cardinality 0..*).
+'company104::Workstation' (role 'Workstation', cardinality 0..*) is associated with 'company104::Employee' (role 'owners', cardinality 0..*).
+'company104::Agency' (role 'company104_Agency28', cardinality 0..*) is associated with 'company104::Department' (role 'company104_Department29', cardinality 0..*).
+'company104::Function' (role 'company104_Function42', cardinality 0..*) is associated with 'company104::Flow' (role 'company104_Flow43', cardinality 0..*).
+'company104::Agency' (role 'company104_Agency31', cardinality 0..*) is associated with 'company104::Employee' (role 'company104_Employee32', cardinality 0..*).
+'company104::Flow' (role 'company104_Flow', cardinality 0..*) is associated with 'company104::Function' (role 'company104_Function', cardinality 0..*).
+'company104::HierarchyLink' (role 'company104_HierarchyLink14', cardinality 0..*) is associated with 'company104::Employee' (role 'company104_Employee15', cardinality 0..*).
+'company104::ObjectiveReach' (role 'company104_ObjectiveReach', cardinality 0..*) is associated with 'company104::Agency' (role 'company104_Agency34', cardinality 0..*).

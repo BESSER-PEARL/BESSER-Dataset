@@ -1,0 +1,75 @@
+The model has 16 class(es).
+The class 'RoyalAndLoyal::TransactionReport' has the following attributes: 'balance' of type int; 'totalBurned' of type int; 'number' of type int; 'totalEarned' of type int; 'name' of type str.
+The class 'RoyalAndLoyal::Date' has the following attributes: 'day' of type int; 'month' of type int; 'year' of type int.
+The class 'RoyalAndLoyal::TransactionReportLine' has the following attributes: 'amount' of type float; 'points' of type int; 'partnerName' of type str; 'serviceDesc' of type str.
+The class 'RoyalAndLoyal::Membership' has no attributes.
+The class 'RoyalAndLoyal::LoyaltyProgram' has the following attributes: 'name' of type str.
+The class 'RoyalAndLoyal::Earning' has no attributes.
+The class 'RoyalAndLoyal::ServiceLevel' has the following attributes: 'name' of type str.
+The class 'RoyalAndLoyal::Transaction' has the following attributes: 'points' of type int; 'amount' of type float.
+The class 'Transaction' has no attributes.
+The class 'RoyalAndLoyal::ProgramPartner' has the following attributes: 'numberOfCustomers' of type int; 'name' of type str.
+The class 'RoyalAndLoyal::Container::RandL' has no attributes.
+The class 'RoyalAndLoyal::Customer' has the following attributes: 'name' of type str; 'isMale' of type bool; 'title' of type str; 'gender' of type str; 'age' of type int.
+The class 'RoyalAndLoyal::LoyaltyAccount' has the following attributes: 'points' of type int; 'number' of type int; 'totalPointsEarned' of type int.
+The class 'RoyalAndLoyal::CustomerCard' has the following attributes: 'valid' of type bool; 'color' of type str; 'printedName' of type str.
+The class 'RoyalAndLoyal::Service' has the following attributes: 'pointsEarned' of type int; 'description' of type str; 'pointsBurned' of type int; 'condition' of type bool; 'serviceNr' of type int.
+The class 'RoyalAndLoyal::Burning' has no attributes.
+The enumeration 'RandLColor' has the following literals: 'gold', 'silver'.
+The enumeration 'Gender' has the following literals: 'female', 'male'.
+'RoyalAndLoyal::Burning' is a specialization of 'Transaction'.
+'RoyalAndLoyal::Earning' is a specialization of 'Transaction'.
+'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram95', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'participants', cardinality 0..*).
+'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'RoyalAndLoyal_Membership51', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'currentLevel', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'Membership', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard59', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL58', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'cards', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'Customer', cardinality 0..*).
+'RoyalAndLoyal::TransactionReport' (role 'RoyalAndLoyal_TransactionReport', cardinality 0..*) is associated with 'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date20', cardinality 0..*).
+'RoyalAndLoyal::ProgramPartner' (role 'partners', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram18', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'ServiceLevel111', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'program', cardinality 0..*).
+'RoyalAndLoyal::TransactionReportLine' (role 'RoyalAndLoyal_TransactionReportLine', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL85', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'CustomerCard97', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'owner', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'levels', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'LoyaltyProgram', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'programs', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'ProgramPartner109', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'level', cardinality 0..*) is associated with 'RoyalAndLoyal::Service' (role 'Service', cardinality 0..*).
+'RoyalAndLoyal::Transaction' (role 'transactions', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyAccount' (role 'LoyaltyAccount', cardinality 0..*).
+'RoyalAndLoyal::Transaction' (role 'RoyalAndLoyal_Transaction', cardinality 0..*) is associated with 'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date', cardinality 0..*).
+'RoyalAndLoyal::Membership' (role 'Membership37', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'card', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'Service16', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'partner', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL81', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'RoyalAndLoyal_ProgramPartner', cardinality 0..*).
+'RoyalAndLoyal::TransactionReport' (role 'report', cardinality 0..*) is associated with 'RoyalAndLoyal::TransactionReportLine' (role 'TransactionReportLine', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL75', cardinality 0..*) is associated with 'RoyalAndLoyal::ServiceLevel' (role 'RoyalAndLoyal_ServiceLevel76', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'ServiceLevel', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'Membership42', cardinality 0..*).
+'RoyalAndLoyal::Transaction' (role 'transactions9', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'CustomerCard', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'RoyalAndLoyal_Service65', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL64', cardinality 0..*).
+'RoyalAndLoyal::TransactionReport' (role 'RoyalAndLoyal_TransactionReport26', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyAccount' (role 'RoyalAndLoyal_LoyaltyAccount73', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL72', cardinality 0..*).
+'RoyalAndLoyal::Membership' (role 'RoyalAndLoyal_Membership100', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer99', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'Service7', cardinality 0..*) is associated with 'RoyalAndLoyal::Transaction' (role 'transactions6', cardinality 0..*).
+'RoyalAndLoyal::Transaction' (role 'Transaction40', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'card39', cardinality 0..*).
+'RoyalAndLoyal::Membership' (role 'Membership47', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyAccount' (role 'LoyaltyAccount48', cardinality 0..*).
+'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date93', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer92', cardinality 0..*).
+'RoyalAndLoyal::TransactionReportLine' (role 'RoyalAndLoyal_TransactionReportLine105', cardinality 0..*) is associated with 'RoyalAndLoyal::Transaction' (role 'RoyalAndLoyal_Transaction106', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'generatedBy', cardinality 0..*) is associated with 'RoyalAndLoyal::Transaction' (role 'Transaction88', cardinality 0..*).
+'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date32', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard31', cardinality 0..*).
+'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date23', cardinality 0..*) is associated with 'RoyalAndLoyal::TransactionReport' (role 'RoyalAndLoyal_TransactionReport22', cardinality 0..*).
+'RoyalAndLoyal::Service' (role 'deliveredServices', cardinality 0..*) is associated with 'RoyalAndLoyal::ProgramPartner' (role 'ProgramPartner', cardinality 0..*).
+'RoyalAndLoyal::Membership' (role 'RoyalAndLoyal_Membership62', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL61', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL70', cardinality 0..*) is associated with 'RoyalAndLoyal::Earning' (role 'RoyalAndLoyal_Earning', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyAccount' (role 'account14', cardinality 0..*) is associated with 'RoyalAndLoyal::Transaction' (role 'Transaction', cardinality 0..*).
+'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date56', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL55', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL78', cardinality 0..*) is associated with 'RoyalAndLoyal::TransactionReport' (role 'RoyalAndLoyal_TransactionReport79', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyAccount' (role 'account', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'Membership12', cardinality 0..*).
+'RoyalAndLoyal::CustomerCard' (role 'CustomerCard45', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'Membership44', cardinality 0..*).
+'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date29', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard28', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'RoyalAndLoyal_LoyaltyProgram116', cardinality 0..*) is associated with 'RoyalAndLoyal::Membership' (role 'RoyalAndLoyal_Membership117', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'ServiceLevel90', cardinality 0..*) is associated with 'RoyalAndLoyal::Service' (role 'availableServices', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'programs113', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'Customer114', cardinality 0..*).
+'RoyalAndLoyal::Membership' (role 'RoyalAndLoyal_Membership', cardinality 0..*) is associated with 'RoyalAndLoyal::LoyaltyProgram' (role 'RoyalAndLoyal_LoyaltyProgram', cardinality 0..*).
+'RoyalAndLoyal::Burning' (role 'RoyalAndLoyal_Burning', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL83', cardinality 0..*).
+'RoyalAndLoyal::TransactionReportLine' (role 'RoyalAndLoyal_TransactionReportLine102', cardinality 0..*) is associated with 'RoyalAndLoyal::Date' (role 'RoyalAndLoyal_Date103', cardinality 0..*).
+'RoyalAndLoyal::ServiceLevel' (role 'RoyalAndLoyal_ServiceLevel', cardinality 0..*) is associated with 'RoyalAndLoyal::CustomerCard' (role 'RoyalAndLoyal_CustomerCard34', cardinality 0..*).
+'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL', cardinality 0..*) is associated with 'RoyalAndLoyal::Customer' (role 'RoyalAndLoyal_Customer53', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyProgram' (role 'RoyalAndLoyal_LoyaltyProgram68', cardinality 0..*) is associated with 'RoyalAndLoyal::Container::RandL' (role 'RoyalAndLoyal_Container_RandL67', cardinality 0..*).
+'RoyalAndLoyal::TransactionReport' (role 'TransactionReport', cardinality 0..*) is associated with 'RoyalAndLoyal::TransactionReportLine' (role 'lines', cardinality 0..*).
+'RoyalAndLoyal::LoyaltyAccount' (role 'RoyalAndLoyal_LoyaltyAccount', cardinality 0..*) is associated with 'RoyalAndLoyal::Service' (role 'RoyalAndLoyal_Service', cardinality 0..*).

@@ -1,0 +1,30 @@
+The model has 17 class(es).
+The class 'wh::Output' has the following attributes: 'vars' of type str.
+The class 'wh::Definition' has no attributes.
+The class 'wh::Nop' has the following attributes: 'nop' of type str.
+The class 'wh::Affect' has no attributes.
+The class 'wh::Command' has no attributes.
+The class 'wh::Input' has the following attributes: 'vars' of type str.
+The class 'wh::cons' has the following attributes: 'list' of type str.
+The class 'wh::Wh' has no attributes.
+The class 'wh::Program' has the following attributes: 'name' of type str.
+The class 'wh::Expr' has no attributes.
+The class 'wh::Commands' has no attributes.
+The class 'Expr' has no attributes.
+The class 'wh::Vars' has the following attributes: 'vars' of type str.
+The class 'wh::ExprSimple' has no attributes.
+The class 'ExprSimple' has no attributes.
+The class 'wh::EObject' has no attributes.
+The class 'wh::Exprs' has no attributes.
+'wh::ExprSimple' is a specialization of 'Expr'.
+'wh::cons' is a specialization of 'ExprSimple'.
+'wh::Exprs' (role 'wh_Exprs', cardinality 0..*) is associated with 'wh::Affect' (role 'wh_Affect15', cardinality 0..*).
+'wh::Wh' (role 'wh_Wh', cardinality 0..*) is associated with 'wh::Program' (role 'wh_Program', cardinality 0..*).
+'wh::EObject' (role 'wh_EObject', cardinality 0..*) is associated with 'wh::Command' (role 'wh_Command12', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands', cardinality 0..*) is associated with 'wh::Definition' (role 'wh_Definition6', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition', cardinality 0..*) is associated with 'wh::Program' (role 'wh_Program2', cardinality 0..*).
+'wh::Affect' (role 'wh_Affect', cardinality 0..*) is associated with 'wh::Vars' (role 'wh_Vars', cardinality 0..*).
+'wh::Exprs' (role 'wh_Exprs17', cardinality 0..*) is associated with 'wh::Expr' (role 'wh_Expr', cardinality 0..*).
+'wh::Commands' (role 'wh_Commands10', cardinality 0..*) is associated with 'wh::Command' (role 'wh_Command', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition8', cardinality 0..*) is associated with 'wh::Output' (role 'wh_Output', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition4', cardinality 0..*) is associated with 'wh::Input' (role 'wh_Input', cardinality 0..*).

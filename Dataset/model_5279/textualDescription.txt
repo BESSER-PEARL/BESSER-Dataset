@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'sample::SampleClassC' has no attributes.
+The class 'sample::SampleClassA' has the following attributes: 'sampleAttribute' of type str.
+The class 'SampleClassInterface' has no attributes.
+The class 'sample::SampleClassB' has no attributes.
+The class 'sample::SampleClassInterface' has no attributes.
+The enumeration 'Tristate' has the following literals: 'UNDEFINED', 'TRUE', 'FALSE'.
+'sample::SampleClassA' is a specialization of 'SampleClassInterface'.
+'sample::SampleClassC' (role 'sample_SampleClassC2', cardinality 0..*) is associated with 'sample::SampleClassB' (role 'sample_SampleClassB', cardinality 0..*).
+'sample::SampleClassC' (role 'sample_SampleClassC', cardinality 0..*) is associated with 'sample::SampleClassA' (role 'sample_SampleClassA', cardinality 0..*).

@@ -1,0 +1,55 @@
+The model has 19 class(es).
+The class 'whileCpp::ExprOr' has the following attributes: 'exprOr' of type str.
+The class 'whileCpp::Program' has no attributes.
+The class 'whileCpp::CommandWhile' has the following attributes: 'w' of type str.
+The class 'whileCpp::Vars' has the following attributes: 'varGen' of type str.
+The class 'whileCpp::ExprAnd' has the following attributes: 'exprAnd' of type str.
+The class 'whileCpp::ExprNot' has the following attributes: 'not_' of type str.
+The class 'whileCpp::Output' has the following attributes: 'varOut' of type str.
+The class 'whileCpp::Command' has the following attributes: 'nop' of type str.
+The class 'whileCpp::Exprs' has no attributes.
+The class 'whileCpp::ExprEq' has no attributes.
+The class 'whileCpp::Cons' has the following attributes: 'exprCons' of type str.
+The class 'whileCpp::Expr' has no attributes.
+The class 'whileCpp::Commands' has no attributes.
+The class 'whileCpp::CommandIf' has no attributes.
+The class 'whileCpp::CommandForEach' has no attributes.
+The class 'whileCpp::Definition' has no attributes.
+The class 'whileCpp::Input' has the following attributes: 'varIn' of type str.
+The class 'whileCpp::Function' has the following attributes: 'nom' of type str.
+The class 'whileCpp::ExprSimple' has the following attributes: 'vari' of type str; 'nomSymb' of type str; 'exprHead' of type str; 'symb' of type str; 'exprTail' of type str; 'nil' of type str.
+'whileCpp::Exprs' (role 'whileCpp_Exprs45', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr46', cardinality 0..*).
+'whileCpp::CommandIf' (role 'whileCpp_CommandIf', cardinality 0..*) is associated with 'whileCpp::Command' (role 'whileCpp_Command18', cardinality 0..*).
+'whileCpp::Cons' (role 'whileCpp_Cons84', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr85', cardinality 0..*).
+'whileCpp::ExprOr' (role 'whileCpp_ExprOr69', cardinality 0..*) is associated with 'whileCpp::ExprOr' (role 'whileCpp_ExprOr71', cardinality 0..*).
+'whileCpp::Expr' (role 'whileCpp_Expr', cardinality 0..*) is associated with 'whileCpp::CommandWhile' (role 'whileCpp_CommandWhile22', cardinality 0..*).
+'whileCpp::CommandForEach' (role 'whileCpp_CommandForEach', cardinality 0..*) is associated with 'whileCpp::Command' (role 'whileCpp_Command20', cardinality 0..*).
+'whileCpp::CommandWhile' (role 'whileCpp_CommandWhile24', cardinality 0..*) is associated with 'whileCpp::Commands' (role 'whileCpp_Commands25', cardinality 0..*).
+'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple57', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr58', cardinality 0..*).
+'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple82', cardinality 0..*) is associated with 'whileCpp::ExprEq' (role 'whileCpp_ExprEq81', cardinality 0..*).
+'whileCpp::Expr' (role 'whileCpp_Expr48', cardinality 0..*) is associated with 'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple', cardinality 0..*).
+'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple54', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr55', cardinality 0..*).
+'whileCpp::ExprAnd' (role 'whileCpp_ExprAnd', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr50', cardinality 0..*).
+'whileCpp::ExprAnd' (role 'whileCpp_ExprAnd64', cardinality 0..*) is associated with 'whileCpp::ExprAnd' (role 'whileCpp_ExprAnd66', cardinality 0..*).
+'whileCpp::Function' (role 'whileCpp_Function', cardinality 0..*) is associated with 'whileCpp::Program' (role 'whileCpp_Program', cardinality 0..*).
+'whileCpp::CommandForEach' (role 'whileCpp_CommandForEach42', cardinality 0..*) is associated with 'whileCpp::Commands' (role 'whileCpp_Commands43', cardinality 0..*).
+'whileCpp::Expr' (role 'whileCpp_Expr40', cardinality 0..*) is associated with 'whileCpp::CommandForEach' (role 'whileCpp_CommandForEach39', cardinality 0..*).
+'whileCpp::Command' (role 'whileCpp_Command', cardinality 0..*) is associated with 'whileCpp::Commands' (role 'whileCpp_Commands10', cardinality 0..*).
+'whileCpp::Function' (role 'whileCpp_Function2', cardinality 0..*) is associated with 'whileCpp::Definition' (role 'whileCpp_Definition', cardinality 0..*).
+'whileCpp::Command' (role 'whileCpp_Command16', cardinality 0..*) is associated with 'whileCpp::CommandWhile' (role 'whileCpp_CommandWhile', cardinality 0..*).
+'whileCpp::CommandForEach' (role 'whileCpp_CommandForEach36', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr37', cardinality 0..*).
+'whileCpp::CommandIf' (role 'whileCpp_CommandIf27', cardinality 0..*) is associated with 'whileCpp::Expr' (role 'whileCpp_Expr28', cardinality 0..*).
+'whileCpp::Expr' (role 'whileCpp_Expr76', cardinality 0..*) is associated with 'whileCpp::ExprEq' (role 'whileCpp_ExprEq75', cardinality 0..*).
+'whileCpp::ExprEq' (role 'whileCpp_ExprEq78', cardinality 0..*) is associated with 'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple79', cardinality 0..*).
+'whileCpp::ExprOr' (role 'whileCpp_ExprOr68', cardinality 0..*) is associated with 'whileCpp::ExprNot' (role 'whileCpp_ExprNot', cardinality 0..*).
+'whileCpp::Commands' (role 'whileCpp_Commands', cardinality 0..*) is associated with 'whileCpp::Definition' (role 'whileCpp_Definition6', cardinality 0..*).
+'whileCpp::ExprOr' (role 'whileCpp_ExprOr', cardinality 0..*) is associated with 'whileCpp::ExprAnd' (role 'whileCpp_ExprAnd63', cardinality 0..*).
+'whileCpp::CommandIf' (role 'whileCpp_CommandIf33', cardinality 0..*) is associated with 'whileCpp::Commands' (role 'whileCpp_Commands34', cardinality 0..*).
+'whileCpp::CommandIf' (role 'whileCpp_CommandIf30', cardinality 0..*) is associated with 'whileCpp::Commands' (role 'whileCpp_Commands31', cardinality 0..*).
+'whileCpp::Vars' (role 'whileCpp_Vars', cardinality 0..*) is associated with 'whileCpp::Command' (role 'whileCpp_Command12', cardinality 0..*).
+'whileCpp::Definition' (role 'whileCpp_Definition4', cardinality 0..*) is associated with 'whileCpp::Input' (role 'whileCpp_Input', cardinality 0..*).
+'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple52', cardinality 0..*) is associated with 'whileCpp::Cons' (role 'whileCpp_Cons', cardinality 0..*).
+'whileCpp::Exprs' (role 'whileCpp_Exprs', cardinality 0..*) is associated with 'whileCpp::Command' (role 'whileCpp_Command14', cardinality 0..*).
+'whileCpp::ExprNot' (role 'whileCpp_ExprNot73', cardinality 0..*) is associated with 'whileCpp::ExprEq' (role 'whileCpp_ExprEq', cardinality 0..*).
+'whileCpp::Expr' (role 'whileCpp_Expr61', cardinality 0..*) is associated with 'whileCpp::ExprSimple' (role 'whileCpp_ExprSimple60', cardinality 0..*).
+'whileCpp::Definition' (role 'whileCpp_Definition8', cardinality 0..*) is associated with 'whileCpp::Output' (role 'whileCpp_Output', cardinality 0..*).

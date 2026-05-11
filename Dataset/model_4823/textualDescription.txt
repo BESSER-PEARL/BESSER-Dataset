@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'Vehicle' has no attributes.
+The class 'trip::NamedElement' has the following attributes: 'name' of type str.
+The class 'trip::Vehicle' has the following attributes: 'nrOfSeats' of type int.
+The class 'trip::Car' has no attributes.
+The class 'trip::Person' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'trip::Van' has no attributes.
+The class 'trip::TripModel' has no attributes.
+The class 'trip::Trip' has no attributes.
+'trip::Person' is a specialization of 'NamedElement'.
+'trip::Car' is a specialization of 'Vehicle'.
+'trip::Van' is a specialization of 'Vehicle'.
+'trip::TripModel' is a specialization of 'NamedElement'.
+'trip::Trip' is a specialization of 'NamedElement'.
+'trip::Vehicle' is a specialization of 'NamedElement'.
+'trip::Trip' (role 'trip_Trip3', cardinality 0..*) is associated with 'trip::Person' (role 'trip_Person', cardinality 0..*).
+'trip::Trip' (role 'trips', cardinality 0..*) is associated with 'trip::Person' (role 'Person', cardinality 0..*).
+'trip::Vehicle' (role 'trip_Vehicle', cardinality 0..*) is associated with 'trip::Trip' (role 'trip_Trip', cardinality 0..*).
+'trip::TripModel' (role 'trip_TripModel', cardinality 0..*) is associated with 'trip::NamedElement' (role 'trip_NamedElement', cardinality 0..*).
+'trip::Trip' (role 'Trip', cardinality 0..*) is associated with 'trip::Person' (role 'passengers', cardinality 0..*).

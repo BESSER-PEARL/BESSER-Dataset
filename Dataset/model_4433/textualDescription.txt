@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'mindstorms::GoForward' has the following attributes: 'cm' of type int.
+The class 'mindstorms::Choreography' has the following attributes: 'name' of type str.
+The class 'Instruction' has no attributes.
+The class 'mindstorms::Instruction' has no attributes.
+The class 'mindstorms::Grab' has no attributes.
+The class 'mindstorms::Rotate' has the following attributes: 'random' of type bool; 'degrees' of type int.
+The class 'Action' has no attributes.
+The class 'mindstorms::Release' has no attributes.
+The class 'mindstorms::Action' has no attributes.
+'mindstorms::Grab' is a specialization of 'Action'.
+'mindstorms::Action' is a specialization of 'Instruction'.
+'mindstorms::Choreography' is a specialization of 'Instruction'.
+'mindstorms::Release' is a specialization of 'Action'.
+'mindstorms::Rotate' is a specialization of 'Action'.
+'mindstorms::GoForward' is a specialization of 'Action'.
+'mindstorms::Choreography' (role 'mindstorms_Choreography', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 11 class(es).
+The class 'simpleuml::Attribute' has no attributes.
+The class 'simpleuml::Classifier' has no attributes.
+The class 'simpleuml::UMLModelElement' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'simpleuml::Class' has no attributes.
+The class 'UMLModelElement' has no attributes.
+The class 'simpleuml::PackageElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'simpleuml::Package' has no attributes.
+The class 'simpleuml::Association' has no attributes.
+The class 'simpleuml::PrimitiveDataType' has no attributes.
+The class 'PackageElement' has no attributes.
+'simpleuml::Package' is a specialization of 'PackageElement'.
+'simpleuml::Association' is a specialization of 'PackageElement'.
+'simpleuml::PrimitiveDataType' is a specialization of 'Classifier'.
+'simpleuml::PackageElement' is a specialization of 'UMLModelElement'.
+'simpleuml::Classifier' is a specialization of 'PackageElement'.
+'simpleuml::Class' is a specialization of 'Classifier'.
+'simpleuml::Attribute' is a specialization of 'UMLModelElement'.
+'simpleuml::Class' (role 'Class', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'attributes', cardinality 0..*).
+'simpleuml::Association' (role 'Association', cardinality 0..*) is associated with 'simpleuml::Class' (role 'source', cardinality 0..*).
+'simpleuml::Attribute' (role 'typeOpposite', cardinality 0..*) is associated with 'simpleuml::Classifier' (role 'Classifier', cardinality 0..*).
+'simpleuml::Class' (role 'general', cardinality 0..*) is associated with 'simpleuml::Class' (role 'Class13', cardinality 0..*).
+'simpleuml::Classifier' (role 'type', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'Attribute17', cardinality 0..*).
+'simpleuml::Class' (role 'Class5', cardinality 0..*) is associated with 'simpleuml::Association' (role 'forward', cardinality 0..*).
+'simpleuml::Association' (role 'Association15', cardinality 0..*) is associated with 'simpleuml::Class' (role 'destination', cardinality 0..*).
+'simpleuml::Association' (role 'reverse', cardinality 0..*) is associated with 'simpleuml::Class' (role 'Class3', cardinality 0..*).
+'simpleuml::PackageElement' (role 'elements', cardinality 0..*) is associated with 'simpleuml::Package' (role 'Package', cardinality 0..*).
+'simpleuml::Class' (role 'generalOpposite', cardinality 0..*) is associated with 'simpleuml::Class' (role 'Class10', cardinality 0..*).
+'simpleuml::Class' (role 'owner', cardinality 0..*) is associated with 'simpleuml::Attribute' (role 'Attribute', cardinality 0..*).
+'simpleuml::PackageElement' (role 'PackageElement', cardinality 0..*) is associated with 'simpleuml::Package' (role 'namespace', cardinality 0..*).

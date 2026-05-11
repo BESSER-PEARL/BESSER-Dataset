@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/k3sle-examples/fr.inria.diverse.k3.sle.examples.logo.metamodel/model/Logo.ecore

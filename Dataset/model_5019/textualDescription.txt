@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'ppo::PurchaseOrder' has the following attributes: 'comment' of type str; 'orderDate' of type str.
+The class 'ppo::USAddress' has the following attributes: 'street' of type str; 'country' of type str; 'state' of type str; 'city' of type str; 'zip' of type int; 'name' of type str.
+The class 'ppo::Item' has the following attributes: 'comment' of type str; 'USPrice' of type int; 'partNum' of type str; 'quantity' of type int; 'shipDate' of type str; 'productName' of type str.
+'ppo::USAddress' (role 'ppo_USAddress', cardinality 0..*) is associated with 'ppo::PurchaseOrder' (role 'ppo_PurchaseOrder', cardinality 0..*).
+'ppo::PurchaseOrder' (role 'ppo_PurchaseOrder2', cardinality 0..*) is associated with 'ppo::USAddress' (role 'ppo_USAddress3', cardinality 0..*).
+'ppo::PurchaseOrder' (role 'ppo_PurchaseOrder5', cardinality 0..*) is associated with 'ppo::Item' (role 'ppo_Item', cardinality 0..*).

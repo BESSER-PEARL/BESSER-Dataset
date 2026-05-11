@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'myDsl2::Model' has no attributes.
+The class 'myDsl2::Greeting' has the following attributes: 'name' of type str.
+'myDsl2::Greeting' (role 'myDsl2_Greeting', cardinality 0..*) is associated with 'myDsl2::Model' (role 'myDsl2_Model', cardinality 0..*).

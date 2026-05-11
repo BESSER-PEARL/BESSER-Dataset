@@ -1,0 +1,89 @@
+The model has 43 class(es).
+The class 'activity::ActivityPartition' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'activity::Action' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'activity::AcceptEventAction' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'activity::ActivityParameterNode' has the following attributes: 'name' of type str.
+The class 'Activity' has no attributes.
+The class 'activity::FinalNode' has no attributes.
+The class 'activity::FlowFinalNode' has no attributes.
+The class 'activity::Object' has no attributes.
+The class 'activity::InputPin' has no attributes.
+The class 'activity::NamedElement' has the following attributes: 'qualifiedName' of type str; 'Name' of type str.
+The class 'activity::Pin' has no attributes.
+The class 'activity::DecisionNode' has no attributes.
+The class 'activity::MergeNode' has no attributes.
+The class 'activity::SendSignalAction' has no attributes.
+The class 'activity::DataStoreNode' has no attributes.
+The class 'activity::ActivityEdge' has no attributes.
+The class 'activity::AcceptTimeEventAction' has no attributes.
+The class 'activity::ObjectFlow' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'activity::InterruptEdge' has no attributes.
+The class 'activity::ControlFlow' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'activity::Connector' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'activity::ExecutableNode' has no attributes.
+The class 'Pin' has no attributes.
+The class 'activity::ActivityGroup' has the following attributes: 'name' of type str.
+The class 'activity::ActivityFinalNode' has no attributes.
+The class 'activity::CentralBufferNode' has no attributes.
+The class 'activity::InterruptibleActivityRegion' has no attributes.
+The class 'activity::ControlNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'activity::OutputPin' has no attributes.
+The class 'activity::ObjectNode' has no attributes.
+The class 'activity::ForkNode' has no attributes.
+The class 'activity::ActivityNode' has no attributes.
+The class 'activity::JoinNode' has no attributes.
+The class 'activity::Activity' has no attributes.
+The class 'activity::InitialNode' has no attributes.
+'activity::Connector' is a specialization of 'ControlNode'.
+'activity::ObjectNode' is a specialization of 'ActivityNode'.
+'activity::ControlFlow' is a specialization of 'ActivityEdge'.
+'activity::ForkNode' is a specialization of 'ControlNode'.
+'activity::InterruptEdge' is a specialization of 'ActivityEdge'.
+'activity::JoinNode' is a specialization of 'ControlNode'.
+'activity::ActivityPartition' is a specialization of 'ActivityGroup'.
+'activity::ActivityParameterNode' is a specialization of 'Activity'.
+'activity::DecisionNode' is a specialization of 'ControlNode'.
+'activity::ActivityNode' is a specialization of 'NamedElement'.
+'activity::ControlNode' is a specialization of 'ActivityNode'.
+'activity::InitialNode' is a specialization of 'ControlNode'.
+'activity::SendSignalAction' is a specialization of 'ExecutableNode'.
+'activity::FinalNode' is a specialization of 'ControlNode'.
+'activity::MergeNode' is a specialization of 'ControlNode'.
+'activity::ExecutableNode' is a specialization of 'ActivityNode'.
+'activity::ActivityGroup' is a specialization of 'Activity'.
+'activity::ActivityEdge' is a specialization of 'NamedElement'.
+'activity::Action' is a specialization of 'ExecutableNode'.
+'activity::FlowFinalNode' is a specialization of 'FinalNode'.
+'activity::Pin' is a specialization of 'ObjectNode'.
+'activity::Object' is a specialization of 'ObjectNode'.
+'activity::CentralBufferNode' is a specialization of 'ObjectNode'.
+'activity::AcceptTimeEventAction' is a specialization of 'ExecutableNode'.
+'activity::DataStoreNode' is a specialization of 'ObjectNode'.
+'activity::InputPin' is a specialization of 'Pin'.
+'activity::ActivityFinalNode' is a specialization of 'FinalNode'.
+'activity::OutputPin' is a specialization of 'Pin'.
+'activity::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'activity::AcceptEventAction' is a specialization of 'ExecutableNode'.
+'activity::ObjectFlow' is a specialization of 'ActivityEdge'.
+'activity::Action' (role 'activity_Action', cardinality 0..*) is associated with 'activity::OutputPin' (role 'activity_OutputPin', cardinality 0..*).
+'activity::ActivityNode' (role 'activity_ActivityNode', cardinality 0..*) is associated with 'activity::Activity' (role 'activity_Activity2', cardinality 0..*).
+'activity::ActivityEdge' (role 'outgoing', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'ActivityNode14', cardinality 0..*).
+'activity::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'target', cardinality 0..*).
+'activity::ActivityGroup' (role 'activity_ActivityGroup', cardinality 0..*) is associated with 'activity::Activity' (role 'activity_Activity8', cardinality 0..*).
+'activity::ActivityEdge' (role 'activity_ActivityEdge', cardinality 0..*) is associated with 'activity::Activity' (role 'activity_Activity', cardinality 0..*).
+'activity::ActivityParameterNode' (role 'activity_ActivityParameterNode10', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'activity_ActivityNode11', cardinality 0..*).
+'activity::ActivityPartition' (role 'activity_ActivityPartition20', cardinality 0..*) is associated with 'activity::ActivityPartition' (role 'activity_ActivityPartition18', cardinality 0..*).
+'activity::Connector' (role 'activity_Connector21', cardinality 0..*) is associated with 'activity::Connector' (role 'activity_Connector', cardinality 0..*).
+'activity::Action' (role 'activity_Action25', cardinality 0..*) is associated with 'activity::InputPin' (role 'activity_InputPin', cardinality 0..*).
+'activity::Activity' (role 'activity_Activity4', cardinality 0..*) is associated with 'activity::ActivityParameterNode' (role 'activity_ActivityParameterNode', cardinality 0..*).
+'activity::ActivityPartition' (role 'activity_ActivityPartition', cardinality 0..*) is associated with 'activity::Activity' (role 'activity_Activity6', cardinality 0..*).
+'activity::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'activity::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'activity::ActivityNode' (role 'source', cardinality 0..*) is associated with 'activity::ActivityEdge' (role 'ActivityEdge17', cardinality 0..*).

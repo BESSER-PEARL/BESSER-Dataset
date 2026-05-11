@@ -1,0 +1,207 @@
+The model has 88 class(es).
+The class 'CreateLineTool' has no attributes.
+The class 'table::description::CrossTableDescription' has no attributes.
+The class 'LineMapping' has no attributes.
+The class 'tool::EditMaskVariables' has no attributes.
+The class 'table::description::CreateLineTool' has no attributes.
+The class 'RepresentationNavigationDescription' has no attributes.
+The class 'description::CellUpdater' has no attributes.
+The class 'DRepresentationElement' has no attributes.
+The class 'table::description::ForegroundConditionalStyle' has the following attributes: 'predicateExpression' of type str.
+The class 'tool::RepresentationCreationDescription' has no attributes.
+The class 'CreateColumnTool' has no attributes.
+The class 'CreateCrossColumnTool' has no attributes.
+The class 'ForegroundStyleDescription' has no attributes.
+The class 'BackgroundConditionalStyle' has no attributes.
+The class 'LineContainer' has no attributes.
+The class 'description::EndUserDocumentedElement' has no attributes.
+The class 'table::description::TableDescription' has the following attributes: 'preconditionExpression' of type str; 'domainClass' of type str; 'initialHeaderColumnWidth' of type int.
+The class 'table::DCellStyle' has no attributes.
+The class 'table::DColumn' has the following attributes: 'width' of type int; 'visible' of type bool; 'label' of type str.
+The class 'ColorDescription' has no attributes.
+The class 'BackgroundStyleDescription' has no attributes.
+The class 'tool::RepresentationNavigationDescription' has no attributes.
+The class 'table::description::ForegroundStyleDescription' has the following attributes: 'labelSize' of type int; 'labelFormat' of type str.
+The class 'table::description::LineMapping' has the following attributes: 'semanticCandidatesExpression' of type str; 'domainClass' of type str; 'headerLabelExpression' of type str.
+The class 'LabelEditTool' has no attributes.
+The class 'FeatureColumnMapping' has no attributes.
+The class 'table::description::ColumnMapping' has the following attributes: 'headerLabelExpression' of type str; 'initialWidth' of type int.
+The class 'table::description::TableTool' has no attributes.
+The class 'table::DTable' has the following attributes: 'headerColumnWidth' of type int.
+The class 'description::table::EObject' has no attributes.
+The class 'description::TableTool' has no attributes.
+The class 'table::DTableElement' has no attributes.
+The class 'description::RepresentationDescription' has no attributes.
+The class 'table::description::EditionTableDescription' has no attributes.
+The class 'RepresentationElementMapping' has no attributes.
+The class 'table::DTargetColumn' has no attributes.
+The class 'DColumn' has no attributes.
+The class 'table::description::LabelEditTool' has no attributes.
+The class 'CreateTool' has no attributes.
+The class 'table::LineContainer' has no attributes.
+The class 'tool::VariableContainer' has no attributes.
+The class 'ElementColumnMapping' has no attributes.
+The class 'CreateCellTool' has no attributes.
+The class 'RepresentationCreationDescription' has no attributes.
+The class 'DTableElementStyle' has no attributes.
+The class 'table::description::CreateCrossColumnTool' has no attributes.
+The class 'table::description::TableCreationDescription' has no attributes.
+The class 'tool::AbstractToolDescription' has no attributes.
+The class 'CellUpdater' has no attributes.
+The class 'table::description::StyleUpdater' has no attributes.
+The class 'TableMapping' has no attributes.
+The class 'TableDescription' has no attributes.
+The class 'DSemanticDecorator' has no attributes.
+The class 'table::description::CreateTool' has no attributes.
+The class 'table::description::FeatureColumnMapping' has the following attributes: 'featureName' of type str; 'labelExpression' of type str; 'featureParentExpression' of type str.
+The class 'table::description::BackgroundConditionalStyle' has the following attributes: 'predicateExpression' of type str.
+The class 'table::DLine' has the following attributes: 'label' of type str; 'visible' of type bool; 'collapsed' of type bool.
+The class 'description::ColumnMapping' has no attributes.
+The class 'description::StyleUpdater' has no attributes.
+The class 'table::description::IntersectionMapping' has the following attributes: 'labelExpression' of type str; 'semanticCandidatesExpression' of type str; 'domainClass' of type str; 'columnFinderExpression' of type str; 'lineFinderExpression' of type str; 'preconditionExpression' of type str; 'useDomainClass' of type bool.
+The class 'DTableElement' has no attributes.
+The class 'table::description::BackgroundStyleDescription' has no attributes.
+The class 'ColumnMapping' has no attributes.
+The class 'description::TableMapping' has no attributes.
+The class 'tool::ModelOperation' has no attributes.
+The class 'table::description::DeleteLineTool' has no attributes.
+The class 'table::description::CellUpdater' has the following attributes: 'canEdit' of type str.
+The class 'ForegroundConditionalStyle' has no attributes.
+The class 'table::description::DeleteColumnTool' has no attributes.
+The class 'table::DFeatureColumn' has the following attributes: 'featureName' of type str.
+The class 'TableVariable' has no attributes.
+The class 'table::DTableElementStyle' has the following attributes: 'foregroundColor' of type str; 'defaultForegroundStyle' of type bool; 'defaultBackgroundStyle' of type bool; 'labelFormat' of type str; 'backgroundColor' of type str; 'labelSize' of type int.
+The class 'TableTool' has no attributes.
+The class 'DeleteTool' has no attributes.
+The class 'DeleteLineTool' has no attributes.
+The class 'DeleteColumnTool' has no attributes.
+The class 'description::AbstractVariable' has no attributes.
+The class 'table::description::TableMapping' has the following attributes: 'semanticElements' of type str.
+The class 'IntersectionMapping' has no attributes.
+The class 'table::description::CreateColumnTool' has no attributes.
+The class 'description::DocumentedElement' has no attributes.
+The class 'table::description::TableVariable' has the following attributes: 'documentation' of type str.
+The class 'DRepresentation' has no attributes.
+The class 'table::description::CreateCellTool' has no attributes.
+The class 'table::DCell' has the following attributes: 'label' of type str.
+The class 'table::description::DeleteTool' has no attributes.
+The class 'table::description::TableNavigationDescription' has no attributes.
+The class 'table::description::ElementColumnMapping' has the following attributes: 'semanticCandidatesExpression' of type str; 'domainClass' of type str.
+'table::description::LabelEditTool' is a specialization of 'TableTool'.
+'table::description::TableMapping' is a specialization of 'RepresentationElementMapping'.
+'table::description::DeleteLineTool' is a specialization of 'DeleteTool'.
+'table::description::DeleteColumnTool' is a specialization of 'DeleteTool'.
+'table::description::LineMapping' is a specialization of 'description::StyleUpdater'.
+'table::description::TableDescription' is a specialization of 'description::RepresentationDescription'.
+'table::description::FeatureColumnMapping' is a specialization of 'description::StyleUpdater'.
+'table::DColumn' is a specialization of 'DTableElement'.
+'table::description::CreateTool' is a specialization of 'tool::AbstractToolDescription'.
+'table::description::TableNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+'table::description::CrossTableDescription' is a specialization of 'TableDescription'.
+'table::DFeatureColumn' is a specialization of 'DColumn'.
+'table::DTargetColumn' is a specialization of 'DColumn'.
+'table::description::TableCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+'table::DCellStyle' is a specialization of 'DTableElementStyle'.
+'table::description::ColumnMapping' is a specialization of 'TableMapping'.
+'table::description::FeatureColumnMapping' is a specialization of 'description::CellUpdater'.
+'table::description::TableVariable' is a specialization of 'tool::VariableContainer'.
+'table::DTableElement' is a specialization of 'DRepresentationElement'.
+'table::DTargetColumn' is a specialization of 'DSemanticDecorator'.
+'table::description::IntersectionMapping' is a specialization of 'description::StyleUpdater'.
+'table::description::TableVariable' is a specialization of 'description::AbstractVariable'.
+'table::DTable' is a specialization of 'DRepresentation'.
+'table::description::CreateColumnTool' is a specialization of 'CreateTool'.
+'table::description::TableDescription' is a specialization of 'description::EndUserDocumentedElement'.
+'table::description::CreateLineTool' is a specialization of 'CreateTool'.
+'table::DLine' is a specialization of 'DTableElement'.
+'table::DLine' is a specialization of 'LineContainer'.
+'table::description::ElementColumnMapping' is a specialization of 'description::StyleUpdater'.
+'table::description::IntersectionMapping' is a specialization of 'description::CellUpdater'.
+'table::DCell' is a specialization of 'DTableElement'.
+'table::description::CreateCellTool' is a specialization of 'tool::AbstractToolDescription'.
+'table::description::DeleteTool' is a specialization of 'description::TableTool'.
+'table::description::EditionTableDescription' is a specialization of 'TableDescription'.
+'table::DCell' is a specialization of 'DSemanticDecorator'.
+'table::description::CreateCrossColumnTool' is a specialization of 'CreateTool'.
+'table::description::FeatureColumnMapping' is a specialization of 'description::ColumnMapping'.
+'table::DTable' is a specialization of 'LineContainer'.
+'table::description::ElementColumnMapping' is a specialization of 'description::ColumnMapping'.
+'table::description::LineMapping' is a specialization of 'description::TableMapping'.
+'table::description::CreateCellTool' is a specialization of 'description::TableTool'.
+'table::description::DeleteTool' is a specialization of 'tool::AbstractToolDescription'.
+'table::description::TableDescription' is a specialization of 'description::DocumentedElement'.
+'table::LineContainer' is a specialization of 'DSemanticDecorator'.
+'table::description::IntersectionMapping' is a specialization of 'description::TableMapping'.
+'table::description::CreateTool' is a specialization of 'description::TableTool'.
+'CellUpdater' (role 'CellUpdater', cardinality 0..*) is associated with 'table::DCell' (role 'table_DCell19', cardinality 0..*).
+'table::description::CreateColumnTool' (role 'create', cardinality 0..*) is associated with 'ElementColumnMapping' (role 'ElementColumnMapping122', cardinality 0..*).
+'table::description::TableTool' (role 'table_description_TableTool', cardinality 0..*) is associated with 'TableVariable' (role 'TableVariable', cardinality 0..*).
+'table::description::StyleUpdater' (role 'table_description_StyleUpdater107', cardinality 0..*) is associated with 'BackgroundStyleDescription' (role 'BackgroundStyleDescription', cardinality 0..*).
+'LineMapping' (role 'LineMapping', cardinality 0..*) is associated with 'table::DLine' (role 'table_DLine', cardinality 0..*).
+'table::LineContainer' (role 'LineContainer', cardinality 0..*) is associated with 'table::DLine' (role 'lines', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription139', cardinality 0..*) is associated with 'table::description::BackgroundStyleDescription' (role 'table_description_BackgroundStyleDescription', cardinality 0..*).
+'table::DColumn' (role 'column', cardinality 0..*) is associated with 'table::DCell' (role 'DCell29', cardinality 0..*).
+'table::DCell' (role 'table_DCell21', cardinality 0..*) is associated with 'IntersectionMapping' (role 'IntersectionMapping', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription', cardinality 0..*) is associated with 'table::description::ForegroundStyleDescription' (role 'table_description_ForegroundStyleDescription', cardinality 0..*).
+'table::DCell' (role 'table_DCell34', cardinality 0..*) is associated with 'table::DColumn' (role 'table_DColumn33', cardinality 0..*).
+'table::description::LineMapping' (role 'table_description_LineMapping90', cardinality 0..*) is associated with 'LineMapping' (role 'LineMapping91', cardinality 0..*).
+'table::description::StyleUpdater' (role 'table_description_StyleUpdater105', cardinality 0..*) is associated with 'ForegroundConditionalStyle' (role 'ForegroundConditionalStyle', cardinality 0..*).
+'table::description::CreateCellTool' (role 'create130', cardinality 0..*) is associated with 'IntersectionMapping' (role 'IntersectionMapping131', cardinality 0..*).
+'description::table::EObject' (role 'description_table_EObject', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription71', cardinality 0..*).
+'table::description::LineMapping' (role 'table_description_LineMapping', cardinality 0..*) is associated with 'LineMapping' (role 'LineMapping86', cardinality 0..*).
+'LineMapping' (role 'LineMapping126', cardinality 0..*) is associated with 'table::description::CreateLineTool' (role 'table_description_CreateLineTool', cardinality 0..*).
+'table::description::DeleteLineTool' (role 'delete135', cardinality 0..*) is associated with 'LineMapping' (role 'LineMapping136', cardinality 0..*).
+'table::DCell' (role 'DCell', cardinality 0..*) is associated with 'table::DLine' (role 'line', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription41', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription40', cardinality 0..*).
+'LineMapping' (role 'LineMapping93', cardinality 0..*) is associated with 'table::description::LineMapping' (role 'reusedSubLines', cardinality 0..*).
+'TableDescription' (role 'TableDescription145', cardinality 0..*) is associated with 'table::description::TableCreationDescription' (role 'table_description_TableCreationDescription', cardinality 0..*).
+'table::description::TableNavigationDescription' (role 'table_description_TableNavigationDescription', cardinality 0..*) is associated with 'TableDescription' (role 'TableDescription147', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription44', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription43', cardinality 0..*).
+'LineMapping' (role 'LineMapping58', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription57', cardinality 0..*).
+'DeleteLineTool' (role 'DeleteLineTool', cardinality 0..*) is associated with 'table::description::LineMapping' (role 'mapping', cardinality 0..*).
+'CreateCellTool' (role 'CreateCellTool', cardinality 0..*) is associated with 'table::description::IntersectionMapping' (role 'mapping116', cardinality 0..*).
+'FeatureColumnMapping' (role 'FeatureColumnMapping75', cardinality 0..*) is associated with 'table::description::EditionTableDescription' (role 'table_description_EditionTableDescription74', cardinality 0..*).
+'ColumnMapping' (role 'ColumnMapping114', cardinality 0..*) is associated with 'table::description::IntersectionMapping' (role 'table_description_IntersectionMapping113', cardinality 0..*).
+'CreateLineTool' (role 'CreateLineTool96', cardinality 0..*) is associated with 'table::description::LineMapping' (role 'table_description_LineMapping95', cardinality 0..*).
+'table::description::ElementColumnMapping' (role 'mapping101', cardinality 0..*) is associated with 'DeleteColumnTool' (role 'DeleteColumnTool', cardinality 0..*).
+'LabelEditTool' (role 'LabelEditTool', cardinality 0..*) is associated with 'table::description::CellUpdater' (role 'table_description_CellUpdater', cardinality 0..*).
+'table::description::BackgroundConditionalStyle' (role 'table_description_BackgroundConditionalStyle', cardinality 0..*) is associated with 'BackgroundStyleDescription' (role 'BackgroundStyleDescription143', cardinality 0..*).
+'table::description::ForegroundConditionalStyle' (role 'table_description_ForegroundConditionalStyle', cardinality 0..*) is associated with 'ForegroundStyleDescription' (role 'ForegroundStyleDescription141', cardinality 0..*).
+'table::DCellStyle' (role 'table_DCellStyle26', cardinality 0..*) is associated with 'TableMapping' (role 'TableMapping27', cardinality 0..*).
+'table::DCellStyle' (role 'table_DCellStyle23', cardinality 0..*) is associated with 'TableMapping' (role 'TableMapping24', cardinality 0..*).
+'table::description::CrossTableDescription' (role 'table_description_CrossTableDescription', cardinality 0..*) is associated with 'ElementColumnMapping' (role 'ElementColumnMapping', cardinality 0..*).
+'LineMapping' (role 'LineMapping111', cardinality 0..*) is associated with 'table::description::IntersectionMapping' (role 'table_description_IntersectionMapping', cardinality 0..*).
+'CreateLineTool' (role 'CreateLineTool66', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription65', cardinality 0..*).
+'TableMapping' (role 'TableMapping', cardinality 0..*) is associated with 'table::DTableElement' (role 'table_DTableElement', cardinality 0..*).
+'table::DColumn' (role 'columns', cardinality 0..*) is associated with 'table::DTable' (role 'DTable', cardinality 0..*).
+'tool::RepresentationNavigationDescription' (role 'tool_RepresentationNavigationDescription52', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription51', cardinality 0..*).
+'CreateColumnTool' (role 'CreateColumnTool', cardinality 0..*) is associated with 'table::description::ElementColumnMapping' (role 'mapping99', cardinality 0..*).
+'ElementColumnMapping' (role 'ElementColumnMapping124', cardinality 0..*) is associated with 'table::description::CreateCrossColumnTool' (role 'table_description_CreateCrossColumnTool', cardinality 0..*).
+'table::description::StyleUpdater' (role 'table_description_StyleUpdater109', cardinality 0..*) is associated with 'BackgroundConditionalStyle' (role 'BackgroundConditionalStyle', cardinality 0..*).
+'table::description::LineMapping' (role 'reusedInMappings', cardinality 0..*) is associated with 'LineMapping' (role 'LineMapping88', cardinality 0..*).
+'tool::ModelOperation' (role 'tool_ModelOperation', cardinality 0..*) is associated with 'table::description::TableTool' (role 'table_description_TableTool119', cardinality 0..*).
+'table::description::EditionTableDescription' (role 'table_description_EditionTableDescription77', cardinality 0..*) is associated with 'FeatureColumnMapping' (role 'FeatureColumnMapping78', cardinality 0..*).
+'table::description::CrossTableDescription' (role 'table_description_CrossTableDescription81', cardinality 0..*) is associated with 'IntersectionMapping' (role 'IntersectionMapping82', cardinality 0..*).
+'table::description::LabelEditTool' (role 'table_description_LabelEditTool', cardinality 0..*) is associated with 'tool::EditMaskVariables' (role 'tool_EditMaskVariables', cardinality 0..*).
+'table::description::TableDescription' (role 'table_description_TableDescription46', cardinality 0..*) is associated with 'tool::RepresentationNavigationDescription' (role 'tool_RepresentationNavigationDescription', cardinality 0..*).
+'table::description::CreateCellTool' (role 'table_description_CreateCellTool', cardinality 0..*) is associated with 'tool::EditMaskVariables' (role 'tool_EditMaskVariables128', cardinality 0..*).
+'LineMapping' (role 'LineMapping61', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription60', cardinality 0..*).
+'TableDescription' (role 'TableDescription', cardinality 0..*) is associated with 'table::DTable' (role 'table_DTable', cardinality 0..*).
+'table::description::TableDescription' (role 'table_description_TableDescription68', cardinality 0..*) is associated with 'CreateLineTool' (role 'CreateLineTool69', cardinality 0..*).
+'table::DColumn' (role 'table_DColumn36', cardinality 0..*) is associated with 'table::DTableElementStyle' (role 'table_DTableElementStyle37', cardinality 0..*).
+'table::DCellStyle' (role 'table_DCellStyle', cardinality 0..*) is associated with 'table::DCell' (role 'table_DCell17', cardinality 0..*).
+'CreateLineTool' (role 'CreateLineTool', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription63', cardinality 0..*).
+'CreateCrossColumnTool' (role 'CreateCrossColumnTool', cardinality 0..*) is associated with 'table::description::CrossTableDescription' (role 'table_description_CrossTableDescription84', cardinality 0..*).
+'table::DCell' (role 'cells', cardinality 0..*) is associated with 'table::DLine' (role 'DLine12', cardinality 0..*).
+'table::description::TableDescription' (role 'table_description_TableDescription48', cardinality 0..*) is associated with 'tool::RepresentationNavigationDescription' (role 'tool_RepresentationNavigationDescription49', cardinality 0..*).
+'table::DTable' (role 'table', cardinality 0..*) is associated with 'table::DColumn' (role 'DColumn', cardinality 0..*).
+'table::DCell' (role 'table_DCell', cardinality 0..*) is associated with 'table::DLine' (role 'table_DLine8', cardinality 0..*).
+'ElementColumnMapping' (role 'ElementColumnMapping133', cardinality 0..*) is associated with 'table::description::DeleteColumnTool' (role 'delete', cardinality 0..*).
+'ForegroundStyleDescription' (role 'ForegroundStyleDescription', cardinality 0..*) is associated with 'table::description::StyleUpdater' (role 'table_description_StyleUpdater', cardinality 0..*).
+'table::DCell' (role 'cells14', cardinality 0..*) is associated with 'table::DColumn' (role 'DColumn15', cardinality 0..*).
+'table::DLine' (role 'DLine', cardinality 0..*) is associated with 'table::LineContainer' (role 'container', cardinality 0..*).
+'table::description::TableDescription' (role 'table_description_TableDescription54', cardinality 0..*) is associated with 'LineMapping' (role 'LineMapping55', cardinality 0..*).
+'table::DTableElementStyle' (role 'table_DTableElementStyle', cardinality 0..*) is associated with 'table::DLine' (role 'table_DLine10', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription', cardinality 0..*) is associated with 'table::description::TableDescription' (role 'table_description_TableDescription', cardinality 0..*).
+'table::description::EditionTableDescription' (role 'table_description_EditionTableDescription', cardinality 0..*) is associated with 'FeatureColumnMapping' (role 'FeatureColumnMapping', cardinality 0..*).
+'table::DColumn' (role 'table_DColumn', cardinality 0..*) is associated with 'ColumnMapping' (role 'ColumnMapping', cardinality 0..*).

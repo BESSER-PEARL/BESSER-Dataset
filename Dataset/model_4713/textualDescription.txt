@@ -1,0 +1,346 @@
+The model has 136 class(es).
+The class 'NBVR::Vocabulary::VocNoun' has the following attributes: 'massNoun' of type bool.
+The class 'NBVR::Vocabulary::DateTime' has no attributes.
+The class 'QueryPhrase' has no attributes.
+The class 'Quantity' has no attributes.
+The class 'NBVR::Vocabulary::Noun' has no attributes.
+The class 'NBVR::Grammar::LexicalInstance' has no attributes.
+The class 'NBVR::Logic::RoleVariable' has no attributes.
+The class 'NBVR::Grammar::VerbPhrase' has the following attributes: 'negated' of type bool; 'modality' of type str.
+The class 'PartPhrase' has no attributes.
+The class 'Instance' has no attributes.
+The class 'SyntaxForm' has no attributes.
+The class 'NBVR::Grammar::RolePhrase' has no attributes.
+The class 'NBVR::Vocabulary::VocUnit' has no attributes.
+The class 'VerbRole' has no attributes.
+The class 'NBVR::Vocabulary::Adjunct' has no attributes.
+The class 'NBVR::Vocabulary::SyntaxForm' has the following attributes: 'isAuxForm' of type bool; 'text' of type str.
+The class 'NBVR::Vocabulary::Word' has no attributes.
+The class 'VocName' has no attributes.
+The class 'NBVR::Vocabulary::Formulation' has the following attributes: 'text' of type str; 'language' of type str.
+The class 'NBVR::Logic::Constant' has the following attributes: 'kind' of type str.
+The class 'NBVR::Logic::QuantityValue' has the following attributes: 'factor' of type str; 'unit' of type str.
+The class 'Keyword' has no attributes.
+The class 'Sentence' has no attributes.
+The class 'NBVR::Vocabulary::Particle' has no attributes.
+The class 'Quantification' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'NBVR::Grammar::ImplicationForm' has the following attributes: 'kind' of type str.
+The class 'NBVR::Grammar::Statement' has no attributes.
+The class 'Verb' has no attributes.
+The class 'Question' has no attributes.
+The class 'Formulation' has no attributes.
+The class 'Particle' has no attributes.
+The class 'SimpleNounPhrase' has no attributes.
+The class 'Constant' has no attributes.
+The class 'NumberWord' has no attributes.
+The class 'NBVR::Logic::Proposition' has the following attributes: 'text' of type str.
+The class 'NBVR::Vocabulary::IsVerb' has no attributes.
+The class 'NBVR::Vocabulary::Definition' has no attributes.
+The class 'NBVR::Vocabulary::FormulationForm' has no attributes.
+The class 'NBVR::Grammar::SimpleForm' has no attributes.
+The class 'NBVR::Grammar::GroupPhrase' has the following attributes: 'kind' of type str.
+The class 'NBVR::Grammar::SimpleNounPhrase' has no attributes.
+The class 'NBVR::Vocabulary::WordForm' has the following attributes: 'text' of type str.
+The class 'NBVR::Grammar::Condition' has the following attributes: 'otherwise' of type bool.
+The class 'RoleElement' has no attributes.
+The class 'NBVR::Grammar::Parse' has no attributes.
+The class 'NBVR::Grammar::QueryPhrase' has the following attributes: 'query' of type str.
+The class 'Condition' has no attributes.
+The class 'Term' has no attributes.
+The class 'NBVR::Grammar::PartPhrase' has no attributes.
+The class 'Qualifier' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'NBVR::Vocabulary::VocName' has no attributes.
+The class 'NBVR::Grammar::CompoundForm' has the following attributes: 'kind' of type str.
+The class 'NBVR::Vocabulary::Name' has no attributes.
+The class 'NBVR::Vocabulary::FormElement' has the following attributes: 'kind' of type str.
+The class 'NBVR::Logic::Set' has no attributes.
+The class 'NBVR::Grammar::Pronoun' has no attributes.
+The class 'NBVR::Logic::Modal' has the following attributes: 'kind' of type str.
+The class 'Argument' has no attributes.
+The class 'Word' has no attributes.
+The class 'NBVR::Logic::Predicate' has the following attributes: 'name' of type str.
+The class 'Quantifier' has no attributes.
+The class 'NBVR::Vocabulary::StringWord' has no attributes.
+The class 'NBVR::Vocabulary::VerbRole' has the following attributes: 'isRange' of type bool.
+The class 'RolePhrase' has no attributes.
+The class 'Nominalization' has no attributes.
+The class 'NBVR::Grammar::ProperName' has no attributes.
+The class 'VocabularyItem' has no attributes.
+The class 'NBVR::Vocabulary::VocabularyItem' has no attributes.
+The class 'NBVR::Grammar::SimpleQualifier' has no attributes.
+The class 'Variable' has no attributes.
+The class 'NBVR::Grammar::Instance' has no attributes.
+The class 'NBVR::Grammar::Modifier' has the following attributes: 'kind' of type str.
+The class 'WordForm' has no attributes.
+The class 'NBVR::Logic::ExtentConstant' has no attributes.
+The class 'NBVR::Grammar::Intension' has no attributes.
+The class 'VerbPhrase' has no attributes.
+The class 'NBVR::Vocabulary::Terminology' has no attributes.
+The class 'Vocabulary::FormulationForm' has no attributes.
+The class 'Grammar::ParseElement' has no attributes.
+The class 'LocalName' has no attributes.
+The class 'NBVR::Logic::Relation' has no attributes.
+The class 'NBVR::Logic::Connection' has the following attributes: 'kind' of type str.
+The class 'NBVR::Logic::ValueConstant' has the following attributes: 'name' of type str.
+The class 'Predicate' has no attributes.
+The class 'NBVR::Grammar::ParseElement' has no attributes.
+The class 'NBVR::Logic::Negation' has no attributes.
+The class 'SimpleQualifier' has no attributes.
+The class 'NBVR::Logic::Argument' has no attributes.
+The class 'NBVR::Vocabulary::RoleElement' has the following attributes: 'slot' of type int.
+The class 'VocUnit' has no attributes.
+The class 'ExtentConstant' has no attributes.
+The class 'NBVR::Grammar::RoleNoun' has no attributes.
+The class 'NBVR::Vocabulary::Keyword' has the following attributes: 'kind' of type str.
+The class 'NBVR::Vocabulary::ItemElement' has no attributes.
+The class 'NBVR::Grammar::Qualifier' has no attributes.
+The class 'RoleVariable' has no attributes.
+The class 'VocVerb' has no attributes.
+The class 'NBVR::Logic::Variable' has the following attributes: 'name' of type str.
+The class 'ModifiedTerm' has no attributes.
+The class 'FormulationForm' has no attributes.
+The class 'NBVR::Grammar::TypeNoun' has no attributes.
+The class 'NBVR::Grammar::QualifierChain' has no attributes.
+The class 'NBVR::Grammar::Quantifier' has the following attributes: 'kind' of type str; 'count' of type int.
+The class 'NBVR::Grammar::Nominalization' has no attributes.
+The class 'VocProperty' has no attributes.
+The class 'Proposition' has no attributes.
+The class 'ItemElement' has no attributes.
+The class 'NBVR::Vocabulary::Verb' has no attributes.
+The class 'NBVR::Logic::NominalConstant' has no attributes.
+The class 'NBVR::Grammar::LocalName' has no attributes.
+The class 'NBVR::Vocabulary::Term' has the following attributes: 'text' of type str.
+The class 'NBVR::Grammar::Question' has the following attributes: 'query' of type str.
+The class 'Set' has no attributes.
+The class 'QualifierChain' has no attributes.
+The class 'NBVR::Grammar::Quantity' has no attributes.
+The class 'NBVR::Vocabulary::VocVerb' has the following attributes: 'arity' of type int.
+The class 'FormElement' has no attributes.
+The class 'NBVR::Grammar::ModifiedTerm' has no attributes.
+The class 'ParseElement' has no attributes.
+The class 'NBVR::Vocabulary::Dictionary' has no attributes.
+The class 'NBVR::Vocabulary::NumberWord' has the following attributes: 'value' of type int; 'decimal' of type bool.
+The class 'NBVR::Logic::Implication' has no attributes.
+The class 'Relation' has no attributes.
+The class 'TypeNoun' has no attributes.
+The class 'NBVR::Vocabulary::Adjective' has no attributes.
+The class 'VocNoun' has no attributes.
+The class 'NBVR::Grammar::Dimension' has the following attributes: 'exponent' of type int.
+The class 'VocAdjective' has no attributes.
+The class 'NBVR::Grammar::Sentence' has no attributes.
+The class 'NBVR::Logic::Quantification' has the following attributes: 'kind' of type str; 'unique' of type bool.
+The class 'NBVR::Grammar::PropertyNoun' has no attributes.
+The class 'NBVR::Grammar::DomainForm' has the following attributes: 'modality' of type str.
+The class 'NBVR::Vocabulary::VocProperty' has no attributes.
+The class 'NBVR::Vocabulary::VocAdjective' has no attributes.
+The enumeration 'SentenceType' has the following literals: 'Modal', 'Equivalence', 'Compound', 'Other', 'Domain', 'Simple', 'Implication'.
+The enumeration 'Connective' has the following literals: 'And', 'Or', 'Nor', 'Eqv', 'OnlyIf', 'Xor', 'Unless', 'If'.
+The enumeration 'FormElementKind' has the following literals: 'ItemElement', 'ParticleElement', 'SubjectRole', 'ObjectRole', 'ParticleRole'.
+The enumeration 'PhraseType' has the following literals: 'RoleNoun', 'Anaphor', 'TypeNoun', 'LocalName', 'Property', 'Instance', 'Query', 'Group', 'Interrogative', 'Pronoun'.
+The enumeration 'VocItemKind' has the following literals: 'VerbConcept', 'NounConcept', 'ProperName', 'AdjectiveConcept', 'PropertyConcept'.
+The enumeration 'PropositionKind' has the following literals: 'Relation', 'Implication', 'Negation', 'Modal', 'Connection', 'Quantification'.
+The enumeration 'InstanceKind' has the following literals: 'Name', 'Question', 'String', 'Statement', 'Concept', 'Quantity', 'Number', 'Query'.
+The enumeration 'KeywordKind' has the following literals: 'K_Of', 'K_Self', 'K_Nothing', 'K_Less', 'K_Instead', 'K_How', 'K_And', 'K_This', 'K_May', 'K_Or', 'K_Another', 'K_Either', 'K_Any', 'K_Something', 'K_An', 'K_Exactly', 'K_Whether', 'K_Which', 'Anaphor', 'K_Why', 'K_All', 'K_Must', 'K_The', 'Function', 'K_At', 'K_No', 'K_Unless', 'K_Most', 'K_As', 'K_None', 'K_Same', 'K_Nor', 'K_There', 'K_That', 'K_Other', 'Pronoun', 'K_Different', 'K_Least', 'K_Always', 'K_Then', 'K_But', 'Genitive', 'K_Many', 'K_Together', 'K_Else', 'K_Only', 'Adjunct', 'K_More', 'K_When', 'K_Not', 'K_Where', 'K_Whose', 'K_Everything', 'K_One', 'K_Neither', 'K_Than', 'K_For', 'K_Anything', 'K_Both', 'K_What', 'K_If'.
+The enumeration 'ElementKind' has the following literals: 'None_', 'Sentence', 'Pronoun', 'Modifier', 'Group', 'Query', 'Property', 'Qualifier', 'Condition', 'Quantifier', 'Noun', 'Instance', 'Role'.
+The enumeration 'GroupKind' has the following literals: 'Joint', 'All', 'Neither', 'Choice', 'Instead'.
+The enumeration 'Modality' has the following literals: 'Negation', 'Impossibility', 'Possibility', 'Prohibition', 'Preference', 'Nonpreference', 'Permission', 'None_', 'Antipreference', 'PermittedNot', 'Obligation'.
+The enumeration 'QuantifierKind' has the following literals: 'Exactly1', 'AtMost1', 'AtLeastN', 'LessThanN', 'MoreThanN', 'Q_All', 'Q_Any', 'AtMostN', 'ExactlyN', 'Q_The', 'AtLeast1', 'Q_An', 'Q_No'.
+The enumeration 'QueryKind' has the following literals: 'Whether', 'Why', 'Any', 'HowMany', 'What', 'Where', 'How', 'When'.
+'NBVR::Vocabulary::Verb' is a specialization of 'Word'.
+'NBVR::Vocabulary::Adjective' is a specialization of 'Word'.
+'NBVR::Grammar::LexicalInstance' is a specialization of 'Instance'.
+'NBVR::Logic::NominalConstant' is a specialization of 'Constant'.
+'NBVR::Grammar::Sentence' is a specialization of 'Vocabulary::FormulationForm'.
+'NBVR::Grammar::Nominalization' is a specialization of 'Instance'.
+'NBVR::Logic::RoleVariable' is a specialization of 'Variable'.
+'NBVR::Vocabulary::Noun' is a specialization of 'Word'.
+'NBVR::Vocabulary::VocVerb' is a specialization of 'VocabularyItem'.
+'NBVR::Grammar::Condition' is a specialization of 'ParseElement'.
+'NBVR::Vocabulary::Definition' is a specialization of 'Formulation'.
+'NBVR::Vocabulary::DateTime' is a specialization of 'Word'.
+'NBVR::Grammar::Statement' is a specialization of 'Nominalization'.
+'NBVR::Grammar::Question' is a specialization of 'Nominalization'.
+'NBVR::Logic::QuantityValue' is a specialization of 'Constant'.
+'NBVR::Grammar::Sentence' is a specialization of 'Grammar::ParseElement'.
+'NBVR::Vocabulary::StringWord' is a specialization of 'Word'.
+'NBVR::Grammar::QualifierChain' is a specialization of 'Qualifier'.
+'NBVR::Grammar::Quantity' is a specialization of 'Instance'.
+'NBVR::Vocabulary::Keyword' is a specialization of 'Word'.
+'NBVR::Grammar::Qualifier' is a specialization of 'ParseElement'.
+'NBVR::Vocabulary::VocNoun' is a specialization of 'VocabularyItem'.
+'NBVR::Vocabulary::VocName' is a specialization of 'VocabularyItem'.
+'NBVR::Logic::Relation' is a specialization of 'Proposition'.
+'NBVR::Logic::ValueConstant' is a specialization of 'Constant'.
+'NBVR::Logic::ExtentConstant' is a specialization of 'Constant'.
+'NBVR::Vocabulary::NumberWord' is a specialization of 'Word'.
+'NBVR::Vocabulary::Adjunct' is a specialization of 'Word'.
+'NBVR::Grammar::Intension' is a specialization of 'Instance'.
+'NBVR::Grammar::SimpleQualifier' is a specialization of 'Qualifier'.
+'NBVR::Logic::Negation' is a specialization of 'Proposition'.
+'NBVR::Vocabulary::Name' is a specialization of 'Word'.
+'NBVR::Vocabulary::IsVerb' is a specialization of 'Verb'.
+'NBVR::Vocabulary::ItemElement' is a specialization of 'FormElement'.
+'NBVR::Vocabulary::Particle' is a specialization of 'FormElement'.
+'NBVR::Grammar::ModifiedTerm' is a specialization of 'SimpleNounPhrase'.
+'NBVR::Grammar::DomainForm' is a specialization of 'Sentence'.
+'NBVR::Vocabulary::VocProperty' is a specialization of 'VocabularyItem'.
+'NBVR::Grammar::LocalName' is a specialization of 'SimpleNounPhrase'.
+'NBVR::Grammar::TypeNoun' is a specialization of 'ModifiedTerm'.
+'NBVR::Vocabulary::VocUnit' is a specialization of 'VocName'.
+'NBVR::Grammar::RolePhrase' is a specialization of 'Grammar::ParseElement'.
+'NBVR::Logic::Implication' is a specialization of 'Proposition'.
+'NBVR::Grammar::SimpleForm' is a specialization of 'Sentence'.
+'NBVR::Grammar::Modifier' is a specialization of 'ParseElement'.
+'NBVR::Grammar::RolePhrase' is a specialization of 'Vocabulary::FormulationForm'.
+'NBVR::Grammar::Pronoun' is a specialization of 'ModifiedTerm'.
+'NBVR::Grammar::Instance' is a specialization of 'SimpleNounPhrase'.
+'NBVR::Grammar::RoleNoun' is a specialization of 'SimpleNounPhrase'.
+'NBVR::Grammar::CompoundForm' is a specialization of 'Sentence'.
+'NBVR::Logic::Connection' is a specialization of 'Proposition'.
+'NBVR::Logic::Proposition' is a specialization of 'FormulationForm'.
+'NBVR::Grammar::Quantifier' is a specialization of 'ParseElement'.
+'NBVR::Vocabulary::VocAdjective' is a specialization of 'VocabularyItem'.
+'NBVR::Grammar::ImplicationForm' is a specialization of 'Sentence'.
+'NBVR::Grammar::PropertyNoun' is a specialization of 'ModifiedTerm'.
+'NBVR::Vocabulary::RoleElement' is a specialization of 'FormElement'.
+'NBVR::Grammar::SimpleNounPhrase' is a specialization of 'RolePhrase'.
+'NBVR::Grammar::QueryPhrase' is a specialization of 'RolePhrase'.
+'NBVR::Logic::Modal' is a specialization of 'Proposition'.
+'NBVR::Grammar::GroupPhrase' is a specialization of 'RolePhrase'.
+'NBVR::Logic::Quantification' is a specialization of 'Proposition'.
+'NBVR::Grammar::ProperName' is a specialization of 'Instance'.
+'NBVR::Grammar::Modifier' (role 'NBVR_Grammar_Modifier148', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase149', cardinality 0..*).
+'NBVR::Vocabulary::Term' (role 'term16', cardinality 0..*) is associated with 'Particle' (role 'Particle', cardinality 0..*).
+'ParseElement' (role 'ParseElement', cardinality 0..*) is associated with 'NBVR::Vocabulary::Formulation' (role 'NBVR_Vocabulary_Formulation', cardinality 0..*).
+'Proposition' (role 'Proposition260', cardinality 0..*) is associated with 'NBVR::Logic::NominalConstant' (role 'NBVR_Logic_NominalConstant', cardinality 0..*).
+'NBVR::Grammar::Question' (role 'question', cardinality 0..*) is associated with 'QueryPhrase' (role 'QueryPhrase', cardinality 0..*).
+'NBVR::Grammar::Quantity' (role 'NBVR_Grammar_Quantity', cardinality 0..*) is associated with 'NumberWord' (role 'NumberWord', cardinality 0..*).
+'Question' (role 'Question', cardinality 0..*) is associated with 'NBVR::Grammar::QueryPhrase' (role 'queryPhrase', cardinality 0..*).
+'VocNoun' (role 'VocNoun65', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocProperty' (role 'NBVR_Vocabulary_VocProperty64', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'NBVR_Logic_Argument226', cardinality 0..*) is associated with 'Variable' (role 'Variable227', cardinality 0..*).
+'NBVR::Grammar::Pronoun' (role 'NBVR_Grammar_Pronoun', cardinality 0..*) is associated with 'Keyword' (role 'Keyword', cardinality 0..*).
+'Word' (role 'Word9', cardinality 0..*) is associated with 'NBVR::Vocabulary::WordForm' (role 'NBVR_Vocabulary_WordForm8', cardinality 0..*).
+'VocabularyItem' (role 'VocabularyItem29', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocabularyItem' (role 'NBVR_Vocabulary_VocabularyItem28', cardinality 0..*).
+'NBVR::Vocabulary::VocVerb' (role 'verb51', cardinality 0..*) is associated with 'Predicate' (role 'Predicate52', cardinality 0..*).
+'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb99', cardinality 0..*) is associated with 'WordForm' (role 'WordForm100', cardinality 0..*).
+'Variable' (role 'Variable217', cardinality 0..*) is associated with 'NBVR::Logic::Quantification' (role 'source', cardinality 0..*).
+'NBVR::Vocabulary::Word' (role 'NBVR_Vocabulary_Word4', cardinality 0..*) is associated with 'Word' (role 'Word', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'NBVR::Grammar::SimpleQualifier' (role 'qualifier', cardinality 0..*).
+'VocNoun' (role 'VocNoun74', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocAdjective' (role 'NBVR_Vocabulary_VocAdjective', cardinality 0..*).
+'VocabularyItem' (role 'VocabularyItem110', cardinality 0..*) is associated with 'NBVR::Vocabulary::Terminology' (role 'NBVR_Vocabulary_Terminology', cardinality 0..*).
+'Variable' (role 'Variable241', cardinality 0..*) is associated with 'NBVR::Logic::Set' (role 'set240', cardinality 0..*).
+'SyntaxForm' (role 'SyntaxForm60', cardinality 0..*) is associated with 'NBVR::Vocabulary::FormElement' (role 'elements', cardinality 0..*).
+'Proposition' (role 'Proposition252', cardinality 0..*) is associated with 'NBVR::Logic::Modal' (role 'NBVR_Logic_Modal', cardinality 0..*).
+'NBVR::Grammar::QueryPhrase' (role 'NBVR_Grammar_QueryPhrase', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase191', cardinality 0..*).
+'NBVR::Grammar::Sentence' (role 'NBVR_Grammar_Sentence', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase130', cardinality 0..*).
+'NBVR::Grammar::Condition' (role 'condition', cardinality 0..*) is associated with 'SimpleQualifier' (role 'SimpleQualifier', cardinality 0..*).
+'RolePhrase' (role 'RolePhrase162', cardinality 0..*) is associated with 'NBVR::Grammar::PartPhrase' (role 'NBVR_Grammar_PartPhrase', cardinality 0..*).
+'NBVR::Logic::Proposition' (role 'NBVR_Logic_Proposition', cardinality 0..*) is associated with 'Proposition' (role 'Proposition219', cardinality 0..*).
+'NBVR::Logic::Predicate' (role 'predicate', cardinality 0..*) is associated with 'RoleVariable' (role 'RoleVariable', cardinality 0..*).
+'WordForm' (role 'WordForm94', cardinality 0..*) is associated with 'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb93', cardinality 0..*).
+'NBVR::Grammar::LexicalInstance' (role 'NBVR_Grammar_LexicalInstance', cardinality 0..*) is associated with 'Word' (role 'Word186', cardinality 0..*).
+'WordForm' (role 'WordForm89', cardinality 0..*) is associated with 'NBVR::Vocabulary::Noun' (role 'NBVR_Vocabulary_Noun88', cardinality 0..*).
+'VerbRole' (role 'VerbRole158', cardinality 0..*) is associated with 'NBVR::Grammar::RoleNoun' (role 'NBVR_Grammar_RoleNoun', cardinality 0..*).
+'Predicate' (role 'Predicate', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocNoun' (role 'noun', cardinality 0..*).
+'NBVR::Grammar::Condition' (role 'NBVR_Grammar_Condition', cardinality 0..*) is associated with 'Sentence' (role 'Sentence', cardinality 0..*).
+'NBVR::Vocabulary::Term' (role 'term', cardinality 0..*) is associated with 'VerbRole' (role 'VerbRole', cardinality 0..*).
+'NBVR::Grammar::ParseElement' (role 'NBVR_Grammar_ParseElement', cardinality 0..*) is associated with 'ParseElement' (role 'ParseElement204', cardinality 0..*).
+'NBVR::Grammar::QualifierChain' (role 'chain', cardinality 0..*) is associated with 'SimpleQualifier' (role 'SimpleQualifier128', cardinality 0..*).
+'NBVR::Grammar::SimpleQualifier' (role 'qualifiers', cardinality 0..*) is associated with 'QualifierChain' (role 'QualifierChain', cardinality 0..*).
+'Particle' (role 'Particle165', cardinality 0..*) is associated with 'NBVR::Grammar::PartPhrase' (role 'NBVR_Grammar_PartPhrase164', cardinality 0..*).
+'Word' (role 'Word18', cardinality 0..*) is associated with 'NBVR::Vocabulary::Term' (role 'NBVR_Vocabulary_Term', cardinality 0..*).
+'NBVR::Vocabulary::VerbRole' (role 'NBVR_Vocabulary_VerbRole', cardinality 0..*) is associated with 'VocNoun' (role 'VocNoun', cardinality 0..*).
+'WordForm' (role 'WordForm86', cardinality 0..*) is associated with 'NBVR::Vocabulary::Noun' (role 'NBVR_Vocabulary_Noun', cardinality 0..*).
+'VocProperty' (role 'VocProperty72', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocUnit' (role 'NBVR_Vocabulary_VocUnit', cardinality 0..*).
+'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb105', cardinality 0..*) is associated with 'WordForm' (role 'WordForm106', cardinality 0..*).
+'NBVR::Logic::Predicate' (role 'predicate266', cardinality 0..*) is associated with 'VocVerb' (role 'VocVerb267', cardinality 0..*).
+'VocNoun' (role 'VocNoun211', cardinality 0..*) is associated with 'NBVR::Logic::Variable' (role 'NBVR_Logic_Variable210', cardinality 0..*).
+'Predicate' (role 'Predicate222', cardinality 0..*) is associated with 'NBVR::Logic::Relation' (role 'NBVR_Logic_Relation', cardinality 0..*).
+'VocVerb' (role 'VocVerb', cardinality 0..*) is associated with 'NBVR::Vocabulary::VerbRole' (role 'roles', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'NBVR_Logic_Argument', cardinality 0..*) is associated with 'Argument' (role 'Argument224', cardinality 0..*).
+'VocabularyItem' (role 'VocabularyItem113', cardinality 0..*) is associated with 'NBVR::Vocabulary::Terminology' (role 'NBVR_Vocabulary_Terminology112', cardinality 0..*).
+'NBVR::Grammar::Sentence' (role 'NBVR_Grammar_Sentence132', cardinality 0..*) is associated with 'Sentence' (role 'Sentence133', cardinality 0..*).
+'NBVR::Grammar::SimpleForm' (role 'NBVR_Grammar_SimpleForm', cardinality 0..*) is associated with 'VerbPhrase' (role 'VerbPhrase', cardinality 0..*).
+'VocProperty' (role 'VocProperty151', cardinality 0..*) is associated with 'NBVR::Grammar::PropertyNoun' (role 'NBVR_Grammar_PropertyNoun', cardinality 0..*).
+'NBVR::Grammar::RolePhrase' (role 'NBVR_Grammar_RolePhrase118', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'Term' (role 'Term', cardinality 0..*) is associated with 'NBVR::Vocabulary::Word' (role 'NBVR_Vocabulary_Word2', cardinality 0..*).
+'Set' (role 'Set', cardinality 0..*) is associated with 'NBVR::Logic::Variable' (role 'variable213', cardinality 0..*).
+'NBVR::Grammar::SimpleForm' (role 'NBVR_Grammar_SimpleForm170', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase171', cardinality 0..*).
+'VerbRole' (role 'VerbRole116', cardinality 0..*) is associated with 'NBVR::Grammar::RolePhrase' (role 'NBVR_Grammar_RolePhrase', cardinality 0..*).
+'VocVerb' (role 'VocVerb58', cardinality 0..*) is associated with 'NBVR::Vocabulary::SyntaxForm' (role 'form57', cardinality 0..*).
+'NBVR::Grammar::GroupPhrase' (role 'NBVR_Grammar_GroupPhrase', cardinality 0..*) is associated with 'SimpleNounPhrase' (role 'SimpleNounPhrase', cardinality 0..*).
+'TypeNoun' (role 'TypeNoun', cardinality 0..*) is associated with 'NBVR::Grammar::PropertyNoun' (role 'NBVR_Grammar_PropertyNoun156', cardinality 0..*).
+'NBVR::Vocabulary::VocProperty' (role 'NBVR_Vocabulary_VocProperty', cardinality 0..*) is associated with 'VocNoun' (role 'VocNoun62', cardinality 0..*).
+'NBVR::Grammar::CompoundForm' (role 'NBVR_Grammar_CompoundForm', cardinality 0..*) is associated with 'Sentence' (role 'Sentence184', cardinality 0..*).
+'Formulation' (role 'Formulation38', cardinality 0..*) is associated with 'NBVR::Vocabulary::FormulationForm' (role 'form', cardinality 0..*).
+'RolePhrase' (role 'RolePhrase174', cardinality 0..*) is associated with 'NBVR::Grammar::SimpleForm' (role 'NBVR_Grammar_SimpleForm173', cardinality 0..*).
+'NBVR::Vocabulary::Term' (role 'terms', cardinality 0..*) is associated with 'VocabularyItem' (role 'VocabularyItem', cardinality 0..*).
+'ItemElement' (role 'ItemElement', cardinality 0..*) is associated with 'NBVR::Vocabulary::Term' (role 'term23', cardinality 0..*).
+'NBVR::Grammar::DomainForm' (role 'NBVR_Grammar_DomainForm', cardinality 0..*) is associated with 'Sentence' (role 'Sentence198', cardinality 0..*).
+'VocProperty' (role 'VocProperty', cardinality 0..*) is associated with 'NBVR::Vocabulary::SyntaxForm' (role 'propertyForm', cardinality 0..*).
+'Term' (role 'Term42', cardinality 0..*) is associated with 'NBVR::Vocabulary::VerbRole' (role 'role', cardinality 0..*).
+'NBVR::Vocabulary::VocVerb' (role 'verb49', cardinality 0..*) is associated with 'SyntaxForm' (role 'SyntaxForm', cardinality 0..*).
+'NBVR::Grammar::SimpleQualifier' (role 'NBVR_Grammar_SimpleQualifier', cardinality 0..*) is associated with 'Sentence' (role 'Sentence125', cardinality 0..*).
+'Sentence' (role 'Sentence188', cardinality 0..*) is associated with 'NBVR::Grammar::Nominalization' (role 'NBVR_Grammar_Nominalization', cardinality 0..*).
+'NBVR::Grammar::Intension' (role 'NBVR_Grammar_Intension', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase196', cardinality 0..*).
+'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb102', cardinality 0..*) is associated with 'WordForm' (role 'WordForm103', cardinality 0..*).
+'NBVR::Logic::Negation' (role 'NBVR_Logic_Negation', cardinality 0..*) is associated with 'Proposition' (role 'Proposition254', cardinality 0..*).
+'SimpleNounPhrase' (role 'SimpleNounPhrase154', cardinality 0..*) is associated with 'NBVR::Grammar::PropertyNoun' (role 'NBVR_Grammar_PropertyNoun153', cardinality 0..*).
+'NBVR::Grammar::SimpleForm' (role 'NBVR_Grammar_SimpleForm168', cardinality 0..*) is associated with 'PartPhrase' (role 'PartPhrase', cardinality 0..*).
+'Sentence' (role 'Sentence176', cardinality 0..*) is associated with 'NBVR::Grammar::ImplicationForm' (role 'NBVR_Grammar_ImplicationForm', cardinality 0..*).
+'Predicate' (role 'Predicate256', cardinality 0..*) is associated with 'NBVR::Logic::RoleVariable' (role 'variables', cardinality 0..*).
+'NBVR::Logic::Variable' (role 'variable', cardinality 0..*) is associated with 'Quantification' (role 'Quantification', cardinality 0..*).
+'NBVR::Grammar::ImplicationForm' (role 'NBVR_Grammar_ImplicationForm181', cardinality 0..*) is associated with 'Sentence' (role 'Sentence182', cardinality 0..*).
+'SyntaxForm' (role 'SyntaxForm70', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocProperty' (role 'property', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'NBVR_Logic_Argument235', cardinality 0..*) is associated with 'Constant' (role 'Constant', cardinality 0..*).
+'NBVR::Logic::Set' (role 'set', cardinality 0..*) is associated with 'ExtentConstant' (role 'ExtentConstant', cardinality 0..*).
+'NBVR::Vocabulary::Formulation' (role 'formulations', cardinality 0..*) is associated with 'VocabularyItem' (role 'VocabularyItem36', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'arguments', cardinality 0..*) is associated with 'Relation' (role 'Relation237', cardinality 0..*).
+'Term' (role 'Term84', cardinality 0..*) is associated with 'NBVR::Vocabulary::ItemElement' (role 'element', cardinality 0..*).
+'Quantifier' (role 'Quantifier', cardinality 0..*) is associated with 'NBVR::Grammar::ModifiedTerm' (role 'NBVR_Grammar_ModifiedTerm', cardinality 0..*).
+'VocName' (role 'VocName', cardinality 0..*) is associated with 'NBVR::Grammar::ProperName' (role 'NBVR_Grammar_ProperName', cardinality 0..*).
+'NBVR::Logic::Quantification' (role 'NBVR_Logic_Quantification', cardinality 0..*) is associated with 'Proposition' (role 'Proposition215', cardinality 0..*).
+'Set' (role 'Set243', cardinality 0..*) is associated with 'NBVR::Logic::ExtentConstant' (role 'extent', cardinality 0..*).
+'NBVR::Vocabulary::WordForm' (role 'NBVR_Vocabulary_WordForm', cardinality 0..*) is associated with 'WordForm' (role 'WordForm6', cardinality 0..*).
+'RolePhrase' (role 'RolePhrase', cardinality 0..*) is associated with 'NBVR::Grammar::RolePhrase' (role 'NBVR_Grammar_RolePhrase120', cardinality 0..*).
+'VerbRole' (role 'VerbRole47', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocVerb' (role 'verb', cardinality 0..*).
+'NBVR::Logic::Implication' (role 'NBVR_Logic_Implication249', cardinality 0..*) is associated with 'Proposition' (role 'Proposition250', cardinality 0..*).
+'Term' (role 'Term32', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocabularyItem' (role 'concept31', cardinality 0..*).
+'RoleElement' (role 'RoleElement', cardinality 0..*) is associated with 'NBVR::Vocabulary::Particle' (role 'NBVR_Vocabulary_Particle', cardinality 0..*).
+'VerbRole' (role 'VerbRole82', cardinality 0..*) is associated with 'NBVR::Vocabulary::RoleElement' (role 'NBVR_Vocabulary_RoleElement', cardinality 0..*).
+'Argument' (role 'Argument', cardinality 0..*) is associated with 'NBVR::Logic::Relation' (role 'relation', cardinality 0..*).
+'Proposition' (role 'Proposition247', cardinality 0..*) is associated with 'NBVR::Logic::Implication' (role 'NBVR_Logic_Implication', cardinality 0..*).
+'NBVR::Vocabulary::Formulation' (role 'formulation', cardinality 0..*) is associated with 'FormulationForm' (role 'FormulationForm', cardinality 0..*).
+'NBVR::Logic::Variable' (role 'NBVR_Logic_Variable208', cardinality 0..*) is associated with 'Relation' (role 'Relation', cardinality 0..*).
+'NBVR::Logic::Predicate' (role 'predicate263', cardinality 0..*) is associated with 'VocNoun' (role 'VocNoun264', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'NBVR_Logic_Argument232', cardinality 0..*) is associated with 'VerbRole' (role 'VerbRole233', cardinality 0..*).
+'Proposition' (role 'Proposition245', cardinality 0..*) is associated with 'NBVR::Logic::Connection' (role 'NBVR_Logic_Connection', cardinality 0..*).
+'NBVR::Vocabulary::VocabularyItem' (role 'concept', cardinality 0..*) is associated with 'Formulation' (role 'Formulation', cardinality 0..*).
+'NBVR::Grammar::LocalName' (role 'NBVR_Grammar_LocalName202', cardinality 0..*) is associated with 'LocalName' (role 'LocalName', cardinality 0..*).
+'Proposition' (role 'Proposition', cardinality 0..*) is associated with 'NBVR::Logic::Variable' (role 'NBVR_Logic_Variable', cardinality 0..*).
+'NBVR::Vocabulary::Word' (role 'NBVR_Vocabulary_Word', cardinality 0..*) is associated with 'WordForm' (role 'WordForm', cardinality 0..*).
+'NBVR::Logic::Argument' (role 'NBVR_Logic_Argument229', cardinality 0..*) is associated with 'RolePhrase' (role 'RolePhrase230', cardinality 0..*).
+'NBVR::Logic::RoleVariable' (role 'NBVR_Logic_RoleVariable', cardinality 0..*) is associated with 'VerbRole' (role 'VerbRole258', cardinality 0..*).
+'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb', cardinality 0..*) is associated with 'WordForm' (role 'WordForm91', cardinality 0..*).
+'VocVerb' (role 'VocVerb44', cardinality 0..*) is associated with 'NBVR::Vocabulary::VocNoun' (role 'NBVR_Vocabulary_VocNoun', cardinality 0..*).
+'NBVR::Grammar::ModifiedTerm' (role 'NBVR_Grammar_ModifiedTerm140', cardinality 0..*) is associated with 'Qualifier' (role 'Qualifier', cardinality 0..*).
+'NBVR::Vocabulary::VocabularyItem' (role 'NBVR_Vocabulary_VocabularyItem', cardinality 0..*) is associated with 'VocabularyItem' (role 'VocabularyItem26', cardinality 0..*).
+'NBVR::Grammar::Quantity' (role 'NBVR_Grammar_Quantity144', cardinality 0..*) is associated with 'Dimension' (role 'Dimension', cardinality 0..*).
+'NBVR::Vocabulary::Dictionary' (role 'NBVR_Vocabulary_Dictionary', cardinality 0..*) is associated with 'Word' (role 'Word108', cardinality 0..*).
+'VocUnit' (role 'VocUnit', cardinality 0..*) is associated with 'NBVR::Grammar::Dimension' (role 'NBVR_Grammar_Dimension', cardinality 0..*).
+'WordForm' (role 'WordForm97', cardinality 0..*) is associated with 'NBVR::Vocabulary::Verb' (role 'NBVR_Vocabulary_Verb96', cardinality 0..*).
+'Sentence' (role 'Sentence179', cardinality 0..*) is associated with 'NBVR::Grammar::ImplicationForm' (role 'NBVR_Grammar_ImplicationForm178', cardinality 0..*).
+'VocVerb' (role 'VocVerb160', cardinality 0..*) is associated with 'NBVR::Grammar::VerbPhrase' (role 'NBVR_Grammar_VerbPhrase', cardinality 0..*).
+'Modifier' (role 'Modifier', cardinality 0..*) is associated with 'NBVR::Grammar::ModifiedTerm' (role 'NBVR_Grammar_ModifiedTerm138', cardinality 0..*).
+'FormElement' (role 'FormElement', cardinality 0..*) is associated with 'NBVR::Vocabulary::SyntaxForm' (role 'form54', cardinality 0..*).
+'Quantity' (role 'Quantity', cardinality 0..*) is associated with 'NBVR::Grammar::Quantifier' (role 'NBVR_Grammar_Quantifier', cardinality 0..*).
+'VocAdjective' (role 'VocAdjective', cardinality 0..*) is associated with 'NBVR::Grammar::Modifier' (role 'NBVR_Grammar_Modifier', cardinality 0..*).
+'NBVR::Vocabulary::WordForm' (role 'NBVR_Vocabulary_WordForm11', cardinality 0..*) is associated with 'Word' (role 'Word12', cardinality 0..*).
+'VocabularyItem' (role 'VocabularyItem21', cardinality 0..*) is associated with 'NBVR::Vocabulary::Term' (role 'NBVR_Vocabulary_Term20', cardinality 0..*).
+'NBVR::Grammar::TypeNoun' (role 'NBVR_Grammar_TypeNoun', cardinality 0..*) is associated with 'VocNoun' (role 'VocNoun135', cardinality 0..*).
+'NBVR::Vocabulary::VocProperty' (role 'NBVR_Vocabulary_VocProperty67', cardinality 0..*) is associated with 'VocVerb' (role 'VocVerb68', cardinality 0..*).
+'NBVR::Grammar::LocalName' (role 'NBVR_Grammar_LocalName', cardinality 0..*) is associated with 'Word' (role 'Word200', cardinality 0..*).
+'Term' (role 'Term80', cardinality 0..*) is associated with 'NBVR::Vocabulary::Particle' (role 'particle', cardinality 0..*).
+'NBVR::Vocabulary::VocAdjective' (role 'NBVR_Vocabulary_VocAdjective76', cardinality 0..*) is associated with 'VocVerb' (role 'VocVerb77', cardinality 0..*).

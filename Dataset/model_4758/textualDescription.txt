@@ -1,0 +1,48 @@
+The model has 22 class(es).
+The class 'effbd106::Final' has no attributes.
+The class 'Port' has no attributes.
+The class 'effbd106::Token' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'effbd106::OutputPort' has no attributes.
+The class 'effbd106::InputPort' has no attributes.
+The class 'effbd106::Function' has the following attributes: 'domain' of type str.
+The class 'effbd106::Sequence' has no attributes.
+The class 'effbd106::Item' has the following attributes: 'name' of type str.
+The class 'ProcessNode' has no attributes.
+The class 'effbd106::Loop' has no attributes.
+The class 'effbd106::SequenceNode' has the following attributes: 'name' of type str; 'tMax' of type int; 'tMin' of type int.
+The class 'effbd106::Flow' has no attributes.
+The class 'effbd106::LoopExit' has no attributes.
+The class 'effbd106::Port' has the following attributes: 'id' of type str.
+The class 'effbd106::ProcessNode' has the following attributes: 'label' of type str.
+The class 'effbd106::And' has no attributes.
+The class 'effbd106::Start' has no attributes.
+The class 'effbd106::Iteration' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'effbd106::Description' has the following attributes: 'content' of type str.
+The class 'effbd106::Or' has no attributes.
+The enumeration 'FunctionDomain' has the following literals: 'time', 'form', 'space'.
+'effbd106::Start' is a specialization of 'Sequence'.
+'effbd106::InputPort' is a specialization of 'Port'.
+'effbd106::Flow' is a specialization of 'ProcessNode'.
+'effbd106::OutputPort' is a specialization of 'Port'.
+'effbd106::LoopExit' is a specialization of 'Sequence'.
+'effbd106::Function' is a specialization of 'ProcessNode'.
+'effbd106::Or' is a specialization of 'Sequence'.
+'effbd106::Sequence' is a specialization of 'SequenceNode'.
+'effbd106::Loop' is a specialization of 'Sequence'.
+'effbd106::Iteration' is a specialization of 'Sequence'.
+'effbd106::And' is a specialization of 'Sequence'.
+'effbd106::Final' is a specialization of 'Sequence'.
+'effbd106::Function' is a specialization of 'SequenceNode'.
+'effbd106::Function' (role 'effbd106_Function13', cardinality 0..*) is associated with 'effbd106::Token' (role 'effbd106_Token', cardinality 0..*).
+'effbd106::InputPort' (role 'effbd106_InputPort18', cardinality 0..*) is associated with 'effbd106::Flow' (role 'effbd106_Flow17', cardinality 0..*).
+'effbd106::Function' (role 'effbd106_Function3', cardinality 0..*) is associated with 'effbd106::Sequence' (role 'effbd106_Sequence', cardinality 0..*).
+'effbd106::Function' (role 'effbd106_Function11', cardinality 0..*) is associated with 'effbd106::Description' (role 'effbd106_Description', cardinality 0..*).
+'effbd106::SequenceNode' (role 'effbd106_SequenceNode', cardinality 0..*) is associated with 'effbd106::SequenceNode' (role 'effbd106_SequenceNode14', cardinality 0..*).
+'effbd106::InputPort' (role 'effbd106_InputPort', cardinality 0..*) is associated with 'effbd106::Function' (role 'effbd106_Function9', cardinality 0..*).
+'effbd106::OutputPort' (role 'effbd106_OutputPort', cardinality 0..*) is associated with 'effbd106::Function' (role 'effbd106_Function7', cardinality 0..*).
+'effbd106::Flow' (role 'effbd106_Flow20', cardinality 0..*) is associated with 'effbd106::Item' (role 'effbd106_Item', cardinality 0..*).
+'effbd106::Flow' (role 'effbd106_Flow', cardinality 0..*) is associated with 'effbd106::Function' (role 'effbd106_Function5', cardinality 0..*).
+'effbd106::OutputPort' (role 'effbd106_OutputPort22', cardinality 0..*) is associated with 'effbd106::Flow' (role 'effbd106_Flow23', cardinality 0..*).
+'effbd106::Function' (role 'effbd106_Function', cardinality 0..*) is associated with 'effbd106::Function' (role 'effbd106_Function0', cardinality 0..*).

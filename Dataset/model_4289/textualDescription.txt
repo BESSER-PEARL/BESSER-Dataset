@@ -1,0 +1,75 @@
+The model has 16 class(es).
+The class 'eSport::Country' has the following attributes: 'name' of type str.
+The class 'eSport::FinalStage' has the following attributes: 'maxNbGames' of type int.
+The class 'Person' has no attributes.
+The class 'eSport::Tournament' has the following attributes: 'size' of type int; 'year' of type int; 'name' of type str; 'type' of type str.
+The class 'eSport::League' has the following attributes: 'season' of type str; 'size' of type int; 'year' of type int; 'name' of type str.
+The class 'eSport::Group' has no attributes.
+The class 'eSport::GroupStage' has the following attributes: 'type' of type str; 'maxNbGames' of type int; 'meetingsWithOtherGroups' of type int; 'meetingsInSameGroup' of type int.
+The class 'eSport::Root' has no attributes.
+The class 'eSport::Team' has the following attributes: 'championshipPoints' of type int; 'name' of type str.
+The class 'eSport::Coach' has no attributes.
+The class 'eSport::Capacity' has the following attributes: 'value' of type int; 'type' of type str.
+The class 'eSport::Zone' has the following attributes: 'name' of type str.
+The class 'eSport::Qualification' has the following attributes: 'name' of type str.
+The class 'eSport::Player' has the following attributes: 'position' of type str.
+The class 'eSport::Match' has the following attributes: 'type' of type str; 'loserWins' of type int.
+The class 'eSport::Person' has the following attributes: 'name' of type str; 'description' of type str; 'age' of type int.
+The enumeration 'TournamentType' has the following literals: 'regionals', 'riftRivals', 'playOff', 'promotion', 'allStars', 'worlds', 'midSeasonInvitational'.
+The enumeration 'CapacityType' has the following literals: 'leadership', 'pathing', 'experience', 'steal', 'splitPush', 'awareness', 'positioning', 'farm', 'escapeMechanics', 'aggressivity', 'draft', 'patience', 'objectivePlay', 'stressManagement', 'metaGame', 'playmakingMechanics', 'teamPlay'.
+The enumeration 'MatchType' has the following literals: 'semiFinal', 'quarterFinal', 'final', 'singleRoundElimination', 'group'.
+The enumeration 'Position' has the following literals: 'attackDamageCarry', 'jungle', 'midLane', 'support', 'topLane'.
+The enumeration 'GroupStageType' has the following literals: 'league', 'allStarsGroup', 'msiPlayIn', 'worldsPlayIn', 'riftRivalsGroup', 'msiGroup', 'worldsGroup'.
+The enumeration 'Season' has the following literals: 'spring', 'summer'.
+'eSport::Coach' is a specialization of 'Person'.
+'eSport::Player' is a specialization of 'Person'.
+'eSport::Group' (role 'groups', cardinality 0..*) is associated with 'eSport::GroupStage' (role 'GroupStage58', cardinality 0..*).
+'eSport::GroupStage' (role 'groupstage', cardinality 0..*) is associated with 'eSport::Group' (role 'Group65', cardinality 0..*).
+'eSport::Country' (role 'country', cardinality 0..*) is associated with 'eSport::Person' (role 'Person', cardinality 0..*).
+'eSport::Tournament' (role 'Tournament', cardinality 0..*) is associated with 'eSport::Country' (role 'countries', cardinality 0..*).
+'eSport::Tournament' (role 'tournamentTo', cardinality 0..*) is associated with 'eSport::Qualification' (role 'Qualification11', cardinality 0..*).
+'eSport::League' (role 'League84', cardinality 0..*) is associated with 'eSport::Qualification' (role 'qualifiesFor83', cardinality 0..*).
+'eSport::Tournament' (role 'Tournament27', cardinality 0..*) is associated with 'eSport::Zone' (role 'allowedZones', cardinality 0..*).
+'eSport::League' (role 'league', cardinality 0..*) is associated with 'eSport::GroupStage' (role 'GroupStage15', cardinality 0..*).
+'eSport::Match' (role 'matchs51', cardinality 0..*) is associated with 'eSport::FinalStage' (role 'FinalStage52', cardinality 0..*).
+'eSport::Match' (role 'Match60', cardinality 0..*) is associated with 'eSport::Group' (role 'group', cardinality 0..*).
+'eSport::Zone' (role 'zone', cardinality 0..*) is associated with 'eSport::League' (role 'League', cardinality 0..*).
+'eSport::Team' (role 'Team56', cardinality 0..*) is associated with 'eSport::Match' (role 'matchsLost', cardinality 0..*).
+'eSport::Country' (role 'Country19', cardinality 0..*) is associated with 'eSport::Person' (role 'persons', cardinality 0..*).
+'eSport::Root' (role 'eSport_Root87', cardinality 0..*) is associated with 'eSport::Tournament' (role 'eSport_Tournament', cardinality 0..*).
+'eSport::Tournament' (role 'Tournament74', cardinality 0..*) is associated with 'eSport::FinalStage' (role 'finalstages', cardinality 0..*).
+'eSport::Team' (role 'team', cardinality 0..*) is associated with 'eSport::Player' (role 'Player', cardinality 0..*).
+'eSport::Tournament' (role 'tournamentFrom', cardinality 0..*) is associated with 'eSport::Qualification' (role 'Qualification', cardinality 0..*).
+'eSport::GroupStage' (role 'groupstages', cardinality 0..*) is associated with 'eSport::Tournament' (role 'Tournament67', cardinality 0..*).
+'eSport::Group' (role 'Group', cardinality 0..*) is associated with 'eSport::Team' (role 'teams41', cardinality 0..*).
+'eSport::Zone' (role 'Zone24', cardinality 0..*) is associated with 'eSport::Country' (role 'countries23', cardinality 0..*).
+'eSport::Tournament' (role 'tournaments5', cardinality 0..*) is associated with 'eSport::Zone' (role 'Zone', cardinality 0..*).
+'eSport::Qualification' (role 'eSport_Qualification', cardinality 0..*) is associated with 'eSport::Root' (role 'eSport_Root96', cardinality 0..*).
+'eSport::Zone' (role 'Zone39', cardinality 0..*) is associated with 'eSport::Team' (role 'teams', cardinality 0..*).
+'eSport::Tournament' (role 'tournaments', cardinality 0..*) is associated with 'eSport::Country' (role 'Country', cardinality 0..*).
+'eSport::Match' (role 'matchs', cardinality 0..*) is associated with 'eSport::Group' (role 'Group49', cardinality 0..*).
+'eSport::Qualification' (role 'qualifiesFor', cardinality 0..*) is associated with 'eSport::Tournament' (role 'Tournament79', cardinality 0..*).
+'eSport::League' (role 'eSport_League', cardinality 0..*) is associated with 'eSport::Root' (role 'eSport_Root89', cardinality 0..*).
+'eSport::Team' (role 'Team63', cardinality 0..*) is associated with 'eSport::Group' (role 'groups62', cardinality 0..*).
+'eSport::Match' (role 'Match44', cardinality 0..*) is associated with 'eSport::Team' (role 'teamLoser', cardinality 0..*).
+'eSport::FinalStage' (role 'FinalStage47', cardinality 0..*) is associated with 'eSport::Team' (role 'teams46', cardinality 0..*).
+'eSport::Root' (role 'eSport_Root', cardinality 0..*) is associated with 'eSport::Zone' (role 'eSport_Zone', cardinality 0..*).
+'eSport::Team' (role 'Team77', cardinality 0..*) is associated with 'eSport::FinalStage' (role 'finalstages76', cardinality 0..*).
+'eSport::GroupStage' (role 'GroupStage', cardinality 0..*) is associated with 'eSport::Tournament' (role 'tournament8', cardinality 0..*).
+'eSport::Coach' (role 'coach', cardinality 0..*) is associated with 'eSport::Team' (role 'Team2', cardinality 0..*).
+'eSport::Team' (role 'Team', cardinality 0..*) is associated with 'eSport::Player' (role 'players', cardinality 0..*).
+'eSport::Capacity' (role 'eSport_Capacity', cardinality 0..*) is associated with 'eSport::Person' (role 'eSport_Person', cardinality 0..*).
+'eSport::Team' (role 'team37', cardinality 0..*) is associated with 'eSport::Coach' (role 'Coach', cardinality 0..*).
+'eSport::Root' (role 'eSport_Root93', cardinality 0..*) is associated with 'eSport::Person' (role 'eSport_Person94', cardinality 0..*).
+'eSport::Country' (role 'eSport_Country', cardinality 0..*) is associated with 'eSport::Root' (role 'eSport_Root98', cardinality 0..*).
+'eSport::FinalStage' (role 'FinalStage', cardinality 0..*) is associated with 'eSport::Tournament' (role 'tournament', cardinality 0..*).
+'eSport::Match' (role 'Match', cardinality 0..*) is associated with 'eSport::Team' (role 'teamWinner', cardinality 0..*).
+'eSport::Team' (role 'eSport_Team', cardinality 0..*) is associated with 'eSport::Root' (role 'eSport_Root91', cardinality 0..*).
+'eSport::Qualification' (role 'Qualification17', cardinality 0..*) is associated with 'eSport::League' (role 'leagueFrom', cardinality 0..*).
+'eSport::GroupStage' (role 'groupstage69', cardinality 0..*) is associated with 'eSport::League' (role 'League70', cardinality 0..*).
+'eSport::FinalStage' (role 'finalstage', cardinality 0..*) is associated with 'eSport::Match' (role 'Match72', cardinality 0..*).
+'eSport::Match' (role 'matchsWon', cardinality 0..*) is associated with 'eSport::Team' (role 'Team54', cardinality 0..*).
+'eSport::Zone' (role 'zone33', cardinality 0..*) is associated with 'eSport::Team' (role 'Team34', cardinality 0..*).
+'eSport::Qualification' (role 'qualifiesFrom', cardinality 0..*) is associated with 'eSport::Tournament' (role 'Tournament81', cardinality 0..*).
+'eSport::League' (role 'leagues', cardinality 0..*) is associated with 'eSport::Zone' (role 'Zone13', cardinality 0..*).
+'eSport::Zone' (role 'zone30', cardinality 0..*) is associated with 'eSport::Country' (role 'Country31', cardinality 0..*).

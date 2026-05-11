@@ -1,0 +1,57 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class boa_Let extends Expr {
+
+    private String name;
+
+
+
+
+
+    private boa_Expr boa_expr;
+
+
+
+
+    private boa_Expr boa_expr;
+
+
+    public boa_Let(
+        String name    ) {
+        super(
+        );
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boa_Expr getBoa_expr() {
+        return boa_expr;
+    }
+
+    public void setBoa_expr(boa_Expr boa_expr) {
+        this.boa_expr = boa_expr;
+    }
+    public boa_Expr getBoa_expr() {
+        return boa_expr;
+    }
+
+    public void setBoa_expr(boa_Expr boa_expr) {
+        this.boa_expr = boa_expr;
+    }
+
+}

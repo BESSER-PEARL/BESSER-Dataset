@@ -1,0 +1,33 @@
+The model has 12 class(es).
+The class 'classDiagram::UMLElement' has the following attributes: 'name' of type str.
+The class 'UMLElement' has no attributes.
+The class 'classDiagram::UMLAssoc' has no attributes.
+The class 'classDiagram::UMLStereotype' has the following attributes: 'text' of type str.
+The class 'classDiagram::UMLIncrement' has no attributes.
+The class 'classDiagram::UMLClass' has no attributes.
+The class 'classDiagram::UMLDiagramItem' has no attributes.
+The class 'classDiagram::UMLCardinality' has the following attributes: 'cardString' of type str.
+The class 'UMLIncrement' has no attributes.
+The class 'classDiagram::UMLClassDiagram' has no attributes.
+The class 'UMLDiagramItem' has no attributes.
+The class 'classDiagram::UMLRole' has the following attributes: 'adornment' of type str.
+'classDiagram::UMLStereotype' is a specialization of 'UMLIncrement'.
+'classDiagram::UMLCardinality' is a specialization of 'UMLIncrement'.
+'classDiagram::UMLAssoc' is a specialization of 'UMLDiagramItem'.
+'classDiagram::UMLClass' is a specialization of 'UMLDiagramItem'.
+'classDiagram::UMLIncrement' is a specialization of 'UMLElement'.
+'classDiagram::UMLRole' is a specialization of 'UMLIncrement'.
+'classDiagram::UMLDiagramItem' is a specialization of 'UMLIncrement'.
+'classDiagram::UMLClassDiagram' is a specialization of 'UMLElement'.
+'classDiagram::UMLAssoc' (role 'revLeftRole', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'UMLRole', cardinality 0..*).
+'classDiagram::UMLCardinality' (role 'card', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'UMLRole4', cardinality 0..*).
+'classDiagram::UMLElement' (role 'UMLElement', cardinality 0..*) is associated with 'classDiagram::UMLClassDiagram' (role 'diagram', cardinality 0..*).
+'classDiagram::UMLRole' (role 'rightRole', cardinality 0..*) is associated with 'classDiagram::UMLAssoc' (role 'UMLAssoc13', cardinality 0..*).
+'classDiagram::UMLStereotype' (role 'stereotypes', cardinality 0..*) is associated with 'classDiagram::UMLIncrement' (role 'UMLIncrement', cardinality 0..*).
+'classDiagram::UMLClass' (role 'UMLClass', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'roles', cardinality 0..*).
+'classDiagram::UMLElement' (role 'elements', cardinality 0..*) is associated with 'classDiagram::UMLClassDiagram' (role 'UMLClassDiagram', cardinality 0..*).
+'classDiagram::UMLRole' (role 'UMLRole7', cardinality 0..*) is associated with 'classDiagram::UMLClass' (role 'target', cardinality 0..*).
+'classDiagram::UMLAssoc' (role 'UMLAssoc', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'leftRole', cardinality 0..*).
+'classDiagram::UMLStereotype' (role 'UMLStereotype', cardinality 0..*) is associated with 'classDiagram::UMLIncrement' (role 'increment', cardinality 0..*).
+'classDiagram::UMLAssoc' (role 'revRightRole', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'UMLRole2', cardinality 0..*).
+'classDiagram::UMLCardinality' (role 'UMLCardinality', cardinality 0..*) is associated with 'classDiagram::UMLRole' (role 'revCard', cardinality 0..*).

@@ -1,0 +1,101 @@
+The model has 45 class(es).
+The class 'DomainElement' has no attributes.
+The class 'DEAssociationEnd' has no attributes.
+The class 'spinefm::MSPLModel::DomainElement' has the following attributes: 'id' of type str.
+The class 'spinefm::ProcessModel::DeletedContextInformations' has the following attributes: 'deletedContext' of type str.
+The class 'spinefm::ActionModel::Action' has the following attributes: 'id' of type str; 'type' of type str.
+The class 'spinefm::MSPLModel::MultipleSoftwareProductLine' has no attributes.
+The class 'spinefm::ActionModel::ActionDeselect' has no attributes.
+The class 'spinefm::FMModel::FeatureModel' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'spinefm::ProcessModel::GlobalContext' has no attributes.
+The class 'ConfigurationState' has no attributes.
+The class 'spinefm::ProcessModel::ContextManager' has no attributes.
+The class 'Feature' has no attributes.
+The class 'DEAssociation' has no attributes.
+The class 'Configuration' has no attributes.
+The class 'CompositeConfiguration' has no attributes.
+The class 'GlobalContext' has no attributes.
+The class 'spinefm::ActionModel::ActionAddCTConstraint' has no attributes.
+The class 'spinefm::FMModel::Constraint' has the following attributes: 'Rule' of type str.
+The class 'spinefm::ProcessModel::LocalContext' has no attributes.
+The class 'MultipleSoftwareProductLine' has no attributes.
+The class 'Link' has no attributes.
+The class 'Rule' has no attributes.
+The class 'spinefm::ConfigurationModel::Configuration' has the following attributes: 'description' of type str; 'id' of type str.
+The class 'FeatureModel' has no attributes.
+The class 'spinefm::FMModel::Group' has the following attributes: 'state' of type str.
+The class 'RestrictionFunction' has no attributes.
+The class 'ConfigurationProcessStep' has no attributes.
+The class 'LocalContext' has no attributes.
+The class 'spinefm::MSPLModel::MultiplicityElement' has the following attributes: 'id' of type str; 'lowerBound' of type int; 'upperBound' of type int.
+The class 'spinefm::FMModel::Feature' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'spinefm::MSPLModel::DEAssociationEnd' has the following attributes: 'id' of type str.
+The class 'MultiplicityElement' has no attributes.
+The class 'Context' has no attributes.
+The class 'Action' has no attributes.
+The class 'spinefm::ProcessModel::Context' has the following attributes: 'id' of type str.
+The class 'spinefm::ActionModel::Rule' has the following attributes: 'id' of type str.
+The class 'spinefm::MSPLModel::DEAssociation' has the following attributes: 'id' of type str.
+The class 'spinefm::ProcessModel::ConfigurationProcessStep' has the following attributes: 'description' of type str; 'id' of type str; 'userConfig' of type bool.
+The class 'Group' has no attributes.
+The class 'spinefm::ConfigurationModel::CompositeConfiguration' has the following attributes: 'name' of type str.
+The class 'spinefm::ConfigurationModel::Link' has the following attributes: 'id' of type str.
+The class 'spinefm::ActionModel::ConfigurationState' has the following attributes: 'id' of type str.
+The class 'spinefm::ActionModel::RestrictionFunction' has the following attributes: 'id' of type str.
+The class 'spinefm::ActionModel::ActionSelect' has no attributes.
+The class 'Constraint' has no attributes.
+The enumeration 'ActionType' has the following literals: 'MANUAL', 'FM', 'AUTOMATIC'.
+The enumeration 'GroupState' has the following literals: 'OR', 'MANDATORY', 'ALTERNATIVE', 'MUTEX', 'OPTIONAL'.
+'spinefm::ActionModel::ActionDeselect' is a specialization of 'Action'.
+'spinefm::ProcessModel::GlobalContext' is a specialization of 'Context'.
+'spinefm::ActionModel::ActionSelect' is a specialization of 'Action'.
+'spinefm::ProcessModel::LocalContext' is a specialization of 'Context'.
+'spinefm::ActionModel::ActionAddCTConstraint' is a specialization of 'Action'.
+'spinefm::ConfigurationModel::Configuration' (role 'configuration', cardinality 0..*) is associated with 'ConfigurationProcessStep' (role 'ConfigurationProcessStep', cardinality 0..*).
+'DomainElement' (role 'DomainElement35', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Configuration' (role 'spinefm_ConfigurationModel_Configuration34', cardinality 0..*).
+'spinefm::MSPLModel::MultipleSoftwareProductLine' (role 'spinefm_MSPLModel_MultipleSoftwareProductLine8', cardinality 0..*) is associated with 'DEAssociation' (role 'DEAssociation', cardinality 0..*).
+'spinefm::MSPLModel::DEAssociation' (role 'spinefm_MSPLModel_DEAssociation16', cardinality 0..*) is associated with 'DEAssociation' (role 'DEAssociation17', cardinality 0..*).
+'spinefm::ActionModel::ConfigurationState' (role 'spinefm_ActionModel_ConfigurationState84', cardinality 0..*) is associated with 'Feature' (role 'Feature85', cardinality 0..*).
+'DomainElement' (role 'DomainElement56', cardinality 0..*) is associated with 'spinefm::ProcessModel::ConfigurationProcessStep' (role 'spinefm_ProcessModel_ConfigurationProcessStep55', cardinality 0..*).
+'spinefm::ProcessModel::Context' (role 'spinefm_ProcessModel_Context', cardinality 0..*) is associated with 'ConfigurationProcessStep' (role 'ConfigurationProcessStep65', cardinality 0..*).
+'spinefm::MSPLModel::DEAssociationEnd' (role 'spinefm_MSPLModel_DEAssociationEnd', cardinality 0..*) is associated with 'MultiplicityElement' (role 'MultiplicityElement', cardinality 0..*).
+'Configuration' (role 'Configuration47', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::CompositeConfiguration' (role 'spinefm_ConfigurationModel_CompositeConfiguration', cardinality 0..*).
+'ConfigurationProcessStep' (role 'ConfigurationProcessStep38', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Configuration' (role 'spinefm_ConfigurationModel_Configuration37', cardinality 0..*).
+'spinefm::ProcessModel::ConfigurationProcessStep' (role 'CPSRef', cardinality 0..*) is associated with 'Configuration' (role 'Configuration63', cardinality 0..*).
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'spinefm::ActionModel::RestrictionFunction' (role 'spinefm_ActionModel_RestrictionFunction', cardinality 0..*).
+'spinefm::FMModel::Feature' (role 'spinefm_FMModel_Feature', cardinality 0..*) is associated with 'Group' (role 'Group', cardinality 0..*).
+'ConfigurationState' (role 'ConfigurationState93', cardinality 0..*) is associated with 'spinefm::ActionModel::Rule' (role 'spinefm_ActionModel_Rule92', cardinality 0..*).
+'RestrictionFunction' (role 'RestrictionFunction80', cardinality 0..*) is associated with 'spinefm::ActionModel::RestrictionFunction' (role 'spinefm_ActionModel_RestrictionFunction79', cardinality 0..*).
+'spinefm::ConfigurationModel::Link' (role 'spinefm_ConfigurationModel_Link44', cardinality 0..*) is associated with 'Configuration' (role 'Configuration45', cardinality 0..*).
+'Link' (role 'Link50', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::CompositeConfiguration' (role 'spinefm_ConfigurationModel_CompositeConfiguration49', cardinality 0..*).
+'MultiplicityElement' (role 'MultiplicityElement23', cardinality 0..*) is associated with 'spinefm::MSPLModel::DomainElement' (role 'spinefm_MSPLModel_DomainElement', cardinality 0..*).
+'Feature' (role 'Feature95', cardinality 0..*) is associated with 'spinefm::ActionModel::Action' (role 'spinefm_ActionModel_Action', cardinality 0..*).
+'spinefm::ProcessModel::DeletedContextInformations' (role 'spinefm_ProcessModel_DeletedContextInformations', cardinality 0..*) is associated with 'Context' (role 'Context76', cardinality 0..*).
+'Link' (role 'Link', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Configuration' (role 'spinefm_ConfigurationModel_Configuration', cardinality 0..*).
+'spinefm::ActionModel::Rule' (role 'spinefm_ActionModel_Rule', cardinality 0..*) is associated with 'Action' (role 'Action90', cardinality 0..*).
+'ConfigurationState' (role 'ConfigurationState', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Configuration' (role 'spinefm_ConfigurationModel_Configuration32', cardinality 0..*).
+'spinefm::ProcessModel::ConfigurationProcessStep' (role 'spinefm_ProcessModel_ConfigurationProcessStep61', cardinality 0..*) is associated with 'Context' (role 'Context', cardinality 0..*).
+'spinefm::MSPLModel::DEAssociation' (role 'spinefm_MSPLModel_DEAssociation11', cardinality 0..*) is associated with 'DEAssociationEnd' (role 'DEAssociationEnd', cardinality 0..*).
+'spinefm::MSPLModel::MultipleSoftwareProductLine' (role 'spinefm_MSPLModel_MultipleSoftwareProductLine', cardinality 0..*) is associated with 'DomainElement' (role 'DomainElement', cardinality 0..*).
+'Configuration' (role 'Configuration', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Link' (role 'spinefm_ConfigurationModel_Link', cardinality 0..*).
+'spinefm::MSPLModel::DomainElement' (role 'spinefm_MSPLModel_DomainElement27', cardinality 0..*) is associated with 'DEAssociation' (role 'DEAssociation28', cardinality 0..*).
+'spinefm::MSPLModel::DEAssociation' (role 'spinefm_MSPLModel_DEAssociation', cardinality 0..*) is associated with 'RestrictionFunction' (role 'RestrictionFunction', cardinality 0..*).
+'Feature' (role 'Feature82', cardinality 0..*) is associated with 'spinefm::ActionModel::ConfigurationState' (role 'spinefm_ActionModel_ConfigurationState', cardinality 0..*).
+'FeatureModel' (role 'FeatureModel', cardinality 0..*) is associated with 'spinefm::MSPLModel::DomainElement' (role 'spinefm_MSPLModel_DomainElement25', cardinality 0..*).
+'spinefm::FMModel::Group' (role 'spinefm_FMModel_Group', cardinality 0..*) is associated with 'Feature' (role 'Feature5', cardinality 0..*).
+'Configuration' (role 'Configuration68', cardinality 0..*) is associated with 'spinefm::ProcessModel::LocalContext' (role 'spinefm_ProcessModel_LocalContext', cardinality 0..*).
+'spinefm::ProcessModel::ConfigurationProcessStep' (role 'spinefm_ProcessModel_ConfigurationProcessStep', cardinality 0..*) is associated with 'Action' (role 'Action', cardinality 0..*).
+'spinefm::ActionModel::Action' (role 'spinefm_ActionModel_Action97', cardinality 0..*) is associated with 'FeatureModel' (role 'FeatureModel98', cardinality 0..*).
+'FeatureModel' (role 'FeatureModel88', cardinality 0..*) is associated with 'spinefm::ActionModel::ConfigurationState' (role 'spinefm_ActionModel_ConfigurationState87', cardinality 0..*).
+'CompositeConfiguration' (role 'CompositeConfiguration', cardinality 0..*) is associated with 'spinefm::ProcessModel::GlobalContext' (role 'spinefm_ProcessModel_GlobalContext', cardinality 0..*).
+'spinefm::ProcessModel::ConfigurationProcessStep' (role 'spinefm_ProcessModel_ConfigurationProcessStep58', cardinality 0..*) is associated with 'Action' (role 'Action59', cardinality 0..*).
+'spinefm::ActionModel::ActionAddCTConstraint' (role 'spinefm_ActionModel_ActionAddCTConstraint', cardinality 0..*) is associated with 'Constraint' (role 'Constraint100', cardinality 0..*).
+'spinefm::ProcessModel::ContextManager' (role 'spinefm_ProcessModel_ContextManager74', cardinality 0..*) is associated with 'LocalContext' (role 'LocalContext', cardinality 0..*).
+'spinefm::FMModel::FeatureModel' (role 'spinefm_FMModel_FeatureModel', cardinality 0..*) is associated with 'Feature' (role 'Feature', cardinality 0..*).
+'Constraint' (role 'Constraint', cardinality 0..*) is associated with 'spinefm::FMModel::FeatureModel' (role 'spinefm_FMModel_FeatureModel2', cardinality 0..*).
+'MultipleSoftwareProductLine' (role 'MultipleSoftwareProductLine', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::CompositeConfiguration' (role 'spinefm_ConfigurationModel_CompositeConfiguration52', cardinality 0..*).
+'spinefm::MSPLModel::DEAssociation' (role 'spinefm_MSPLModel_DEAssociation13', cardinality 0..*) is associated with 'DEAssociationEnd' (role 'DEAssociationEnd14', cardinality 0..*).
+'DomainElement' (role 'DomainElement21', cardinality 0..*) is associated with 'spinefm::MSPLModel::DEAssociationEnd' (role 'spinefm_MSPLModel_DEAssociationEnd20', cardinality 0..*).
+'spinefm::ProcessModel::ContextManager' (role 'spinefm_ProcessModel_ContextManager72', cardinality 0..*) is associated with 'GlobalContext' (role 'GlobalContext', cardinality 0..*).
+'DEAssociation' (role 'DEAssociation42', cardinality 0..*) is associated with 'spinefm::ConfigurationModel::Link' (role 'spinefm_ConfigurationModel_Link41', cardinality 0..*).
+'spinefm::ProcessModel::ContextManager' (role 'spinefm_ProcessModel_ContextManager', cardinality 0..*) is associated with 'MultipleSoftwareProductLine' (role 'MultipleSoftwareProductLine70', cardinality 0..*).

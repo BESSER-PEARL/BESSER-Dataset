@@ -1,0 +1,39 @@
+The model has 18 class(es).
+The class 'yuml::Inheritance' has no attributes.
+The class 'yuml::Model' has no attributes.
+The class 'ClassMember' has no attributes.
+The class 'yuml::ClassMember' has the following attributes: 'visibility' of type str; 'name' of type str.
+The class 'ModelElement' has no attributes.
+The class 'ColorableElement' has no attributes.
+The class 'yuml::Class' has the following attributes: 'name' of type str; 'stereotype' of type str.
+The class 'yuml::Cardinality' has the following attributes: 'upperBound' of type str; 'lowerBound' of type str.
+The class 'yuml::ModelElement' has no attributes.
+The class 'yuml::Note' has the following attributes: 'text' of type str.
+The class 'yuml::Method' has the following attributes: 'arguments' of type str.
+The class 'yuml::ColorableElement' has the following attributes: 'color' of type str.
+The class 'yuml::Relationship' has the following attributes: 'targetLabel' of type str; 'sourceLabel' of type str.
+The class 'yuml::Association' has the following attributes: 'type' of type str; 'targetVisibility' of type str; 'navigableTarget' of type bool; 'navigableSource' of type bool; 'sourceVisibility' of type str.
+The class 'yuml::Attribute' has the following attributes: 'stereotype' of type str; 'type' of type str.
+The class 'Relationship' has no attributes.
+The class 'yuml::NoteAssociation' has no attributes.
+The class 'yuml::Equivalence' has no attributes.
+The enumeration 'Visibility' has the following literals: 'package', 'unspecified', 'protected', 'private', 'public'.
+The enumeration 'AssociationType' has the following literals: 'aggregation', 'simpleAssociation', 'composition'.
+'yuml::Association' is a specialization of 'Relationship'.
+'yuml::Inheritance' is a specialization of 'Relationship'.
+'yuml::NoteAssociation' is a specialization of 'Relationship'.
+'yuml::Method' is a specialization of 'ClassMember'.
+'yuml::Equivalence' is a specialization of 'Relationship'.
+'yuml::ColorableElement' is a specialization of 'ModelElement'.
+'yuml::Class' is a specialization of 'ColorableElement'.
+'yuml::Relationship' is a specialization of 'ModelElement'.
+'yuml::Attribute' is a specialization of 'ClassMember'.
+'yuml::Note' is a specialization of 'ColorableElement'.
+'yuml::Relationship' (role 'yuml_Relationship', cardinality 0..*) is associated with 'yuml::Class' (role 'yuml_Class5', cardinality 0..*).
+'yuml::Cardinality' (role 'yuml_Cardinality11', cardinality 0..*) is associated with 'yuml::Association' (role 'yuml_Association10', cardinality 0..*).
+'yuml::ModelElement' (role 'yuml_ModelElement', cardinality 0..*) is associated with 'yuml::Model' (role 'yuml_Model', cardinality 0..*).
+'yuml::NoteAssociation' (role 'yuml_NoteAssociation', cardinality 0..*) is associated with 'yuml::Note' (role 'yuml_Note', cardinality 0..*).
+'yuml::Cardinality' (role 'yuml_Cardinality', cardinality 0..*) is associated with 'yuml::Association' (role 'yuml_Association', cardinality 0..*).
+'yuml::Class' (role 'yuml_Class', cardinality 0..*) is associated with 'yuml::Attribute' (role 'yuml_Attribute', cardinality 0..*).
+'yuml::Method' (role 'yuml_Method', cardinality 0..*) is associated with 'yuml::Class' (role 'yuml_Class3', cardinality 0..*).
+'yuml::ColorableElement' (role 'yuml_ColorableElement', cardinality 0..*) is associated with 'yuml::Relationship' (role 'yuml_Relationship7', cardinality 0..*).

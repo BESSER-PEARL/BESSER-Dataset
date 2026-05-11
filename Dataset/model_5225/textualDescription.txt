@@ -1,0 +1,8 @@
+The model has 7 class(es).
+The class 'root::B' has no attributes.
+The class 'root::sub::D' has no attributes.
+The class 'root::subsub::E' has no attributes.
+The class 'root::sub2::E' has no attributes.
+The class 'root::A' has no attributes.
+The class 'root::subsub::F' has no attributes.
+The class 'root::sub::C' has no attributes.

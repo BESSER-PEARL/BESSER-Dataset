@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'DeclarationType' has no attributes.
+The class 'Data::Attribut' has the following attributes: 'estTableau' of type bool; 'nom' of type str; 'typeStr' of type str.
+The class 'Data::Classe' has no attributes.
+The class 'Data::DeclarationType' has the following attributes: 'nom' of type str.
+The class 'Data::Modele' has no attributes.
+'Data::Classe' is a specialization of 'DeclarationType'.
+'Data::Attribut' (role 'Data_Attribut', cardinality 0..*) is associated with 'Data::Classe' (role 'Data_Classe', cardinality 0..*).
+'Data::Attribut' (role 'Data_Attribut2', cardinality 0..*) is associated with 'Data::Classe' (role 'Data_Classe3', cardinality 0..*).
+'Data::Classe' (role 'Data_Classe5', cardinality 0..*) is associated with 'Data::Modele' (role 'Data_Modele', cardinality 0..*).

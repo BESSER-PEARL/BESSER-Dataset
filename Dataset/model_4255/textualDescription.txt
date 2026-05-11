@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'properties::Person' has no attributes.
+The class 'Person' has no attributes.
+The class 'properties::Address' has no attributes.
+The class 'properties::Employee' has the following attributes: 'hasAge' of type int; 'hasSalary' of type int.
+'properties::Employee' is a specialization of 'Person'.
+'properties::Person' (role 'properties_Person', cardinality 0..*) is associated with 'properties::Address' (role 'properties_Address', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'Unit' has no attributes.
+The class 'units::av::PerJoinPointScope' has no attributes.
+The class 'units::av::EObject' has no attributes.
+The class 'units::av::GlobalScope' has no attributes.
+The class 'units::av::BaseUnit' has the following attributes: 'name' of type str.
+The class 'units::av::UnitLiteral' has no attributes.
+The class 'units::av::UnitPower' has the following attributes: 'exponent' of type int.
+The class 'units::av::UnitRepository' has no attributes.
+The class 'units::av::UnitCarryingElement' has the following attributes: 'unitSpecification' of type str.
+The class 'units::av::Advice' has no attributes.
+The class 'units::av::Unit' has no attributes.
+The class 'units::av::UnitMultiplication' has no attributes.
+'units::av::UnitPower' is a specialization of 'Unit'.
+'units::av::UnitMultiplication' is a specialization of 'Unit'.
+'units::av::UnitLiteral' is a specialization of 'Unit'.
+'units::av::EObject' (role 'units_av_EObject10', cardinality 0..*) is associated with 'units::av::GlobalScope' (role 'units_av_GlobalScope', cardinality 0..*).
+'units::av::Unit' (role 'units_av_Unit5', cardinality 0..*) is associated with 'units::av::UnitPower' (role 'units_av_UnitPower', cardinality 0..*).
+'units::av::PerJoinPointScope' (role 'units_av_PerJoinPointScope', cardinality 0..*) is associated with 'units::av::EObject' (role 'units_av_EObject12', cardinality 0..*).
+'units::av::UnitLiteral' (role 'units_av_UnitLiteral', cardinality 0..*) is associated with 'units::av::BaseUnit' (role 'units_av_BaseUnit7', cardinality 0..*).
+'units::av::UnitMultiplication' (role 'units_av_UnitMultiplication', cardinality 0..*) is associated with 'units::av::Unit' (role 'units_av_Unit3', cardinality 0..*).
+'units::av::EObject' (role 'units_av_EObject', cardinality 0..*) is associated with 'units::av::Advice' (role 'units_av_Advice', cardinality 0..*).
+'units::av::UnitCarryingElement' (role 'units_av_UnitCarryingElement', cardinality 0..*) is associated with 'units::av::Unit' (role 'units_av_Unit', cardinality 0..*).
+'units::av::BaseUnit' (role 'units_av_BaseUnit', cardinality 0..*) is associated with 'units::av::UnitRepository' (role 'units_av_UnitRepository', cardinality 0..*).

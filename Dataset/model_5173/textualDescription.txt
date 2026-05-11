@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Element' has no attributes.
+The class 'ABC::Element' has the following attributes: 'id' of type int.
+The class 'ABC::A' has the following attributes: 'a' of type str.
+The class 'ABC::B' has the following attributes: 'b' of type str.
+The class 'ABC::C' has the following attributes: 'c' of type str.
+The class 'ABC::Root' has no attributes.
+'ABC::C' is a specialization of 'Element'.
+'ABC::B' is a specialization of 'Element'.
+'ABC::A' is a specialization of 'Element'.
+'ABC::Element' (role 'ABC_Element3', cardinality 0..*) is associated with 'ABC::Element' (role 'ABC_Element1', cardinality 0..*).
+'ABC::Element' (role 'ABC_Element', cardinality 0..*) is associated with 'ABC::Root' (role 'ABC_Root', cardinality 0..*).

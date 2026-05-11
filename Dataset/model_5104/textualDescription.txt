@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'testPackage::AnotherType' has no attributes.
+The class 'testPackage::SuperType' has no attributes.
+The class 'testPackage::AnotherType2' has no attributes.
+The class 'testPackage::SubType' has no attributes.
+The class 'SuperType' has no attributes.
+'testPackage::SubType' is a specialization of 'SuperType'.
+'testPackage::SubType' (role 'testPackage_SubType', cardinality 0..*) is associated with 'testPackage::AnotherType2' (role 'testPackage_AnotherType25', cardinality 0..*).
+'testPackage::AnotherType' (role 'testPackage_AnotherType', cardinality 0..*) is associated with 'testPackage::SuperType' (role 'testPackage_SuperType', cardinality 0..*).
+'testPackage::AnotherType2' (role 'testPackage_AnotherType23', cardinality 0..*) is associated with 'testPackage::AnotherType' (role 'testPackage_AnotherType2', cardinality 0..*).

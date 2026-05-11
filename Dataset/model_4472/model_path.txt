@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diverse-project/k3/k3-samples-deployed/logo/k3.sample.maven.logo.model/model/ASMLogo.ecore

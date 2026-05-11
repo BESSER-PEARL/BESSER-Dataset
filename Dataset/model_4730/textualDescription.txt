@@ -1,0 +1,210 @@
+The model has 87 class(es).
+The class 'TypeDescriptor' has no attributes.
+The class 'logiclanguage::Count' has no attributes.
+The class 'logiclanguage::AggregatedParameterSubstitution' has no attributes.
+The class 'logiclanguage::TermDescription' has no attributes.
+The class 'logiclanguage::Plus' has no attributes.
+The class 'logiclanguage::ConstantAnnotation' has no attributes.
+The class 'QuantifiedExpression' has no attributes.
+The class 'logiclanguage::Equals' has no attributes.
+The class 'Constant' has no attributes.
+The class 'logiclanguage::SymbolicDeclaration' has the following attributes: 'name' of type str.
+The class 'logiclanguage::Variable' has no attributes.
+The class 'Relation' has no attributes.
+The class 'logiclanguage::BoolTypeReference' has no attributes.
+The class 'logiclanguage::TypeDefinition' has no attributes.
+The class 'logiclanguage::ProjectedAggregateExpression' has the following attributes: 'projectionIndex' of type int.
+The class 'logiclanguage::TransitiveClosure' has no attributes.
+The class 'logiclanguage::StringLiteral' has the following attributes: 'value' of type str.
+The class 'logiclanguage::Distinct' has no attributes.
+The class 'logiclanguage::SymbolicValue' has no attributes.
+The class 'logiclanguage::Exists' has no attributes.
+The class 'NumericOperation' has no attributes.
+The class 'logiclanguage::TypeDeclaration' has no attributes.
+The class 'PrimitiveTypeReference' has no attributes.
+The class 'logiclanguage::Not' has no attributes.
+The class 'logiclanguage::LessThan' has no attributes.
+The class 'logiclanguage::Divison' has no attributes.
+The class 'logiclanguage::And' has no attributes.
+The class 'logiclanguage::RelationDefinition' has no attributes.
+The class 'logiclanguage::ConstantDeclaration' has no attributes.
+The class 'logiclanguage::Min' has no attributes.
+The class 'Function' has no attributes.
+The class 'logiclanguage::IntLiteral' has the following attributes: 'value' of type int.
+The class 'logiclanguage::AtomicTerm' has no attributes.
+The class 'logiclanguage::RealLiteral' has the following attributes: 'value' of type str.
+The class 'logiclanguage::FunctionAnnotation' has no attributes.
+The class 'logiclanguage::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'logiclanguage::Type' has the following attributes: 'isAbstract' of type bool; 'name' of type str.
+The class 'logiclanguage::NumericOperation' has no attributes.
+The class 'logiclanguage::Multiply' has no attributes.
+The class 'logiclanguage::IntTypeReference' has no attributes.
+The class 'AggregateExpression' has no attributes.
+The class 'logiclanguage::Impl' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'logiclanguage::AssertionAnnotation' has no attributes.
+The class 'logiclanguage::RelationDeclaration' has no attributes.
+The class 'logiclanguage::Relation' has no attributes.
+The class 'logiclanguage::Minus' has no attributes.
+The class 'logiclanguage::AggregateExpression' has no attributes.
+The class 'logiclanguage::Term' has no attributes.
+The class 'logiclanguage::DefinedElement' has no attributes.
+The class 'logiclanguage::LessOrEqualThan' has no attributes.
+The class 'logiclanguage::Max' has no attributes.
+The class 'logiclanguage::FunctionDeclaration' has no attributes.
+The class 'logiclanguage::MoreOrEqualThan' has no attributes.
+The class 'SymbolicDeclaration' has no attributes.
+The class 'logiclanguage::MoreThan' has no attributes.
+The class 'BoolOperation' has no attributes.
+The class 'logiclanguage::RealTypeReference' has no attributes.
+The class 'logiclanguage::Iff' has no attributes.
+The class 'Term' has no attributes.
+The class 'logiclanguage::Function' has no attributes.
+The class 'logiclanguage::TypeReference' has no attributes.
+The class 'logiclanguage::FunctionDefinition' has no attributes.
+The class 'logiclanguage::Pow' has no attributes.
+The class 'logiclanguage::StringTypeReference' has no attributes.
+The class 'logiclanguage::IfThenElse' has no attributes.
+The class 'logiclanguage::Constant' has no attributes.
+The class 'logiclanguage::ConstantDefinition' has no attributes.
+The class 'AtomicTerm' has no attributes.
+The class 'logiclanguage::BoolOperation' has no attributes.
+The class 'logiclanguage::ComplexTypeReference' has no attributes.
+The class 'TermDescription' has no attributes.
+The class 'logiclanguage::TypeDescriptor' has no attributes.
+The class 'logiclanguage::Or' has no attributes.
+The class 'logiclanguage::QuantifiedExpression' has no attributes.
+The class 'logiclanguage::RelationAnnotation' has no attributes.
+The class 'Type' has no attributes.
+The class 'logiclanguage::PrimitiveTypeReference' has no attributes.
+The class 'logiclanguage::Mod' has no attributes.
+The class 'logiclanguage::UnknownBecauseUninterpreted' has no attributes.
+The class 'ProjectedAggregateExpression' has no attributes.
+The class 'logiclanguage::Sum' has no attributes.
+The class 'logiclanguage::PrimitiveRelation' has no attributes.
+The class 'logiclanguage::InstanceOf' has no attributes.
+The class 'logiclanguage::Forall' has no attributes.
+The class 'PrimitiveRelation' has no attributes.
+The class 'logiclanguage::Assertion' has the following attributes: 'name' of type str.
+'logiclanguage::AggregateExpression' is a specialization of 'Term'.
+'logiclanguage::ConstantDefinition' is a specialization of 'Constant'.
+'logiclanguage::RelationDefinition' is a specialization of 'Relation'.
+'logiclanguage::Divison' is a specialization of 'NumericOperation'.
+'logiclanguage::TypeDeclaration' is a specialization of 'Type'.
+'logiclanguage::StringLiteral' is a specialization of 'AtomicTerm'.
+'logiclanguage::IntTypeReference' is a specialization of 'PrimitiveTypeReference'.
+'logiclanguage::BoolTypeReference' is a specialization of 'PrimitiveTypeReference'.
+'logiclanguage::TransitiveClosure' is a specialization of 'Term'.
+'logiclanguage::RealLiteral' is a specialization of 'AtomicTerm'.
+'logiclanguage::MoreOrEqualThan' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::ConstantDeclaration' is a specialization of 'Constant'.
+'logiclanguage::Sum' is a specialization of 'ProjectedAggregateExpression'.
+'logiclanguage::Or' is a specialization of 'BoolOperation'.
+'logiclanguage::InstanceOf' is a specialization of 'Term'.
+'logiclanguage::Impl' is a specialization of 'BoolOperation'.
+'logiclanguage::ComplexTypeReference' is a specialization of 'TypeReference'.
+'logiclanguage::Iff' is a specialization of 'BoolOperation'.
+'logiclanguage::SymbolicValue' is a specialization of 'Term'.
+'logiclanguage::Forall' is a specialization of 'QuantifiedExpression'.
+'logiclanguage::Minus' is a specialization of 'NumericOperation'.
+'logiclanguage::Relation' is a specialization of 'SymbolicDeclaration'.
+'logiclanguage::Count' is a specialization of 'AggregateExpression'.
+'logiclanguage::FunctionDeclaration' is a specialization of 'Function'.
+'logiclanguage::Exists' is a specialization of 'QuantifiedExpression'.
+'logiclanguage::FunctionDefinition' is a specialization of 'Function'.
+'logiclanguage::AtomicTerm' is a specialization of 'Term'.
+'logiclanguage::SymbolicDeclaration' is a specialization of 'TermDescription'.
+'logiclanguage::MoreThan' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::And' is a specialization of 'BoolOperation'.
+'logiclanguage::RelationDeclaration' is a specialization of 'Relation'.
+'logiclanguage::TypeReference' is a specialization of 'TypeDescriptor'.
+'logiclanguage::DefinedElement' is a specialization of 'SymbolicDeclaration'.
+'logiclanguage::NumericOperation' is a specialization of 'Term'.
+'logiclanguage::PrimitiveRelation' is a specialization of 'Term'.
+'logiclanguage::Min' is a specialization of 'ProjectedAggregateExpression'.
+'logiclanguage::Term' is a specialization of 'TermDescription'.
+'logiclanguage::Max' is a specialization of 'ProjectedAggregateExpression'.
+'logiclanguage::Variable' is a specialization of 'SymbolicDeclaration'.
+'logiclanguage::Not' is a specialization of 'BoolOperation'.
+'logiclanguage::Multiply' is a specialization of 'NumericOperation'.
+'logiclanguage::RealTypeReference' is a specialization of 'PrimitiveTypeReference'.
+'logiclanguage::UnknownBecauseUninterpreted' is a specialization of 'Term'.
+'logiclanguage::LessThan' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::Type' is a specialization of 'TypeDescriptor'.
+'logiclanguage::Constant' is a specialization of 'SymbolicDeclaration'.
+'logiclanguage::Plus' is a specialization of 'NumericOperation'.
+'logiclanguage::LessOrEqualThan' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::Function' is a specialization of 'SymbolicDeclaration'.
+'logiclanguage::IfThenElse' is a specialization of 'Term'.
+'logiclanguage::QuantifiedExpression' is a specialization of 'Term'.
+'logiclanguage::ProjectedAggregateExpression' is a specialization of 'AggregateExpression'.
+'logiclanguage::PrimitiveTypeReference' is a specialization of 'TypeReference'.
+'logiclanguage::TypeDefinition' is a specialization of 'Type'.
+'logiclanguage::Equals' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::Distinct' is a specialization of 'PrimitiveRelation'.
+'logiclanguage::BoolOperation' is a specialization of 'Term'.
+'logiclanguage::BoolLiteral' is a specialization of 'AtomicTerm'.
+'logiclanguage::IntLiteral' is a specialization of 'AtomicTerm'.
+'logiclanguage::StringTypeReference' is a specialization of 'PrimitiveTypeReference'.
+'logiclanguage::Pow' is a specialization of 'NumericOperation'.
+'logiclanguage::Mod' is a specialization of 'NumericOperation'.
+'logiclanguage::Term' (role 'logiclanguage_Term39', cardinality 0..*) is associated with 'logiclanguage::Iff' (role 'logiclanguage_Iff38', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term', cardinality 0..*) is associated with 'logiclanguage::SymbolicValue' (role 'logiclanguage_SymbolicValue16', cardinality 0..*).
+'logiclanguage::AggregateExpression' (role 'logiclanguage_AggregateExpression126', cardinality 0..*) is associated with 'logiclanguage::AggregatedParameterSubstitution' (role 'logiclanguage_AggregatedParameterSubstitution', cardinality 0..*).
+'logiclanguage::AggregatedParameterSubstitution' (role 'logiclanguage_AggregatedParameterSubstitution131', cardinality 0..*) is associated with 'logiclanguage::Variable' (role 'logiclanguage_Variable132', cardinality 0..*).
+'logiclanguage::InstanceOf' (role 'logiclanguage_InstanceOf', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term111', cardinality 0..*).
+'logiclanguage::LessOrEqualThan' (role 'logiclanguage_LessOrEqualThan60', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term61', cardinality 0..*).
+'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference77', cardinality 0..*) is associated with 'logiclanguage::Relation' (role 'logiclanguage_Relation', cardinality 0..*).
+'logiclanguage::LessThan' (role 'logiclanguage_LessThan50', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term51', cardinality 0..*).
+'logiclanguage::ConstantDeclaration' (role 'logiclanguage_ConstantDeclaration', cardinality 0..*) is associated with 'logiclanguage::ConstantDefinition' (role 'logiclanguage_ConstantDefinition87', cardinality 0..*).
+'logiclanguage::AggregateExpression' (role 'logiclanguage_AggregateExpression', cardinality 0..*) is associated with 'logiclanguage::Relation' (role 'logiclanguage_Relation124', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term29', cardinality 0..*) is associated with 'logiclanguage::Impl' (role 'logiclanguage_Impl', cardinality 0..*).
+'logiclanguage::AggregateExpression' (role 'logiclanguage_AggregateExpression128', cardinality 0..*) is associated with 'logiclanguage::Variable' (role 'logiclanguage_Variable129', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term34', cardinality 0..*) is associated with 'logiclanguage::Not' (role 'logiclanguage_Not', cardinality 0..*).
+'logiclanguage::SymbolicValue' (role 'logiclanguage_SymbolicValue', cardinality 0..*) is associated with 'logiclanguage::SymbolicDeclaration' (role 'logiclanguage_SymbolicDeclaration', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term109', cardinality 0..*) is associated with 'logiclanguage::IfThenElse' (role 'logiclanguage_IfThenElse108', cardinality 0..*).
+'logiclanguage::Relation' (role 'logiclanguage_Relation122', cardinality 0..*) is associated with 'logiclanguage::TransitiveClosure' (role 'logiclanguage_TransitiveClosure121', cardinality 0..*).
+'logiclanguage::Variable' (role 'logiclanguage_Variable20', cardinality 0..*) is associated with 'logiclanguage::QuantifiedExpression' (role 'logiclanguage_QuantifiedExpression', cardinality 0..*).
+'logiclanguage::RelationDefinition' (role 'logiclanguage_RelationDefinition94', cardinality 0..*) is associated with 'logiclanguage::RelationDeclaration' (role 'logiclanguage_RelationDeclaration', cardinality 0..*).
+'logiclanguage::Assertion' (role 'logiclanguage_Assertion', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term73', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term119', cardinality 0..*) is associated with 'logiclanguage::TransitiveClosure' (role 'logiclanguage_TransitiveClosure118', cardinality 0..*).
+'logiclanguage::Function' (role 'target', cardinality 0..*) is associated with 'logiclanguage::FunctionAnnotation' (role 'logicproblem.ecoreFunctionAnnotation', cardinality 0..*).
+'logiclanguage::FunctionDefinition' (role 'logiclanguage_FunctionDefinition', cardinality 0..*) is associated with 'logiclanguage::Variable' (role 'logiclanguage_Variable96', cardinality 0..*).
+'logiclanguage::NumericOperation' (role 'logiclanguage_NumericOperation70', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term71', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term92', cardinality 0..*) is associated with 'logiclanguage::RelationDefinition' (role 'logiclanguage_RelationDefinition91', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term48', cardinality 0..*) is associated with 'logiclanguage::LessThan' (role 'logiclanguage_LessThan', cardinality 0..*).
+'logiclanguage::FunctionDeclaration' (role 'logiclanguage_FunctionDeclaration', cardinality 0..*) is associated with 'logiclanguage::FunctionDefinition' (role 'logiclanguage_FunctionDefinition98', cardinality 0..*).
+'logiclanguage::TypeDefinition' (role 'TypeDefinition', cardinality 0..*) is associated with 'logiclanguage::DefinedElement' (role 'elements', cardinality 0..*).
+'logiclanguage::Type' (role 'Type4', cardinality 0..*) is associated with 'logiclanguage::Type' (role 'subtypes', cardinality 0..*).
+'logiclanguage::MoreThan' (role 'logiclanguage_MoreThan', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term53', cardinality 0..*).
+'logiclanguage::DefinedElement' (role 'DefinedElement', cardinality 0..*) is associated with 'logiclanguage::TypeDefinition' (role 'definedInType', cardinality 0..*).
+'logiclanguage::Constant' (role 'logiclanguage_Constant', cardinality 0..*) is associated with 'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference81', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term46', cardinality 0..*) is associated with 'logiclanguage::Distinct' (role 'logiclanguage_Distinct', cardinality 0..*).
+'logiclanguage::Constant' (role 'target83', cardinality 0..*) is associated with 'logiclanguage::ConstantAnnotation' (role 'logicproblem.ecoreConstantAnnotation', cardinality 0..*).
+'logiclanguage::AssertionAnnotation' (role 'logicproblem.ecoreAssertionAnnotation', cardinality 0..*) is associated with 'logiclanguage::Assertion' (role 'target75', cardinality 0..*).
+'logiclanguage::ComplexTypeReference' (role 'logiclanguage_ComplexTypeReference', cardinality 0..*) is associated with 'logiclanguage::Type' (role 'logiclanguage_Type', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term41', cardinality 0..*) is associated with 'logiclanguage::Equals' (role 'logiclanguage_Equals', cardinality 0..*).
+'logiclanguage::And' (role 'logiclanguage_And', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term25', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term103', cardinality 0..*) is associated with 'logiclanguage::IfThenElse' (role 'logiclanguage_IfThenElse', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term56', cardinality 0..*) is associated with 'logiclanguage::MoreThan' (role 'logiclanguage_MoreThan55', cardinality 0..*).
+'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference114', cardinality 0..*) is associated with 'logiclanguage::InstanceOf' (role 'logiclanguage_InstanceOf113', cardinality 0..*).
+'logiclanguage::LessOrEqualThan' (role 'logiclanguage_LessOrEqualThan', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term58', cardinality 0..*).
+'logiclanguage::TypeDeclaration' (role 'logiclanguage_TypeDeclaration', cardinality 0..*) is associated with 'logiclanguage::TypeDefinition' (role 'logiclanguage_TypeDefinition', cardinality 0..*).
+'logiclanguage::Variable' (role 'logiclanguage_Variable', cardinality 0..*) is associated with 'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference18', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term32', cardinality 0..*) is associated with 'logiclanguage::Impl' (role 'logiclanguage_Impl31', cardinality 0..*).
+'logiclanguage::RelationAnnotation' (role 'logicproblem.ecoreRelationAnnotation', cardinality 0..*) is associated with 'logiclanguage::Relation' (role 'target79', cardinality 0..*).
+'logiclanguage::RelationDefinition' (role 'logiclanguage_RelationDefinition', cardinality 0..*) is associated with 'logiclanguage::Variable' (role 'logiclanguage_Variable89', cardinality 0..*).
+'logiclanguage::FunctionDefinition' (role 'logiclanguage_FunctionDefinition100', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term101', cardinality 0..*).
+'logiclanguage::Function' (role 'logiclanguage_Function11', cardinality 0..*) is associated with 'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference12', cardinality 0..*).
+'logiclanguage::Iff' (role 'logiclanguage_Iff', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term36', cardinality 0..*).
+'logiclanguage::IfThenElse' (role 'logiclanguage_IfThenElse105', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term106', cardinality 0..*).
+'logiclanguage::TransitiveClosure' (role 'logiclanguage_TransitiveClosure', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term116', cardinality 0..*).
+'logiclanguage::TypeReference' (role 'logiclanguage_TypeReference', cardinality 0..*) is associated with 'logiclanguage::Function' (role 'logiclanguage_Function', cardinality 0..*).
+'logiclanguage::MoreOrEqualThan' (role 'logiclanguage_MoreOrEqualThan65', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term66', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term85', cardinality 0..*) is associated with 'logiclanguage::ConstantDefinition' (role 'logiclanguage_ConstantDefinition', cardinality 0..*).
+'logiclanguage::Type' (role 'Type', cardinality 0..*) is associated with 'logiclanguage::Type' (role 'supertypes', cardinality 0..*).
+'logiclanguage::QuantifiedExpression' (role 'logiclanguage_QuantifiedExpression22', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term23', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term63', cardinality 0..*) is associated with 'logiclanguage::MoreOrEqualThan' (role 'logiclanguage_MoreOrEqualThan', cardinality 0..*).
+'logiclanguage::Or' (role 'logiclanguage_Or', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term27', cardinality 0..*).
+'logiclanguage::Term' (role 'logiclanguage_Term44', cardinality 0..*) is associated with 'logiclanguage::Equals' (role 'logiclanguage_Equals43', cardinality 0..*).
+'logiclanguage::NumericOperation' (role 'logiclanguage_NumericOperation', cardinality 0..*) is associated with 'logiclanguage::Term' (role 'logiclanguage_Term68', cardinality 0..*).

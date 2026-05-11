@@ -1,0 +1,62 @@
+The model has 26 class(es).
+The class 'behaviour::Plus' has no attributes.
+The class 'behaviour::FunctionCall' has the following attributes: 'funcName' of type str.
+The class 'Statement' has no attributes.
+The class 'behaviour::BinaryExpression' has no attributes.
+The class 'behaviour::AssignmentStatement' has the following attributes: 'varName' of type str.
+The class 'behaviour::CallFunctionStatement' has the following attributes: 'nameFunc' of type str.
+The class 'BinaryExpression' has no attributes.
+The class 'behaviour::ReadLine' has no attributes.
+The class 'behaviour::DeclarationStatement' has the following attributes: 'varType' of type str; 'varName' of type str.
+The class 'behaviour::ArithmeticOperation' has no attributes.
+The class 'behaviour::Statement' has no attributes.
+The class 'behaviour::Variable' has the following attributes: 'varName' of type str.
+The class 'Expression' has no attributes.
+The class 'behaviour::Equals' has no attributes.
+The class 'behaviour::Function' has the following attributes: 'name' of type str.
+The class 'behaviour::Literal' has the following attributes: 'vlaue' of type str.
+The class 'ArithmeticOperation' has no attributes.
+The class 'behaviour::ComparisonOperator' has no attributes.
+The class 'behaviour::ReturnStatement' has no attributes.
+The class 'behaviour::Expression' has no attributes.
+The class 'behaviour::Behaviour' has no attributes.
+The class 'behaviour::ExceptionStatement' has no attributes.
+The class 'behaviour::CondionalStatement' has no attributes.
+The class 'ComparisonOperator' has no attributes.
+The class 'behaviour::TryCatchStatement' has no attributes.
+The class 'behaviour::LoopStatement' has no attributes.
+'behaviour::LoopStatement' is a specialization of 'Statement'.
+'behaviour::AssignmentStatement' is a specialization of 'Statement'.
+'behaviour::Plus' is a specialization of 'ArithmeticOperation'.
+'behaviour::DeclarationStatement' is a specialization of 'Statement'.
+'behaviour::Equals' is a specialization of 'ComparisonOperator'.
+'behaviour::CondionalStatement' is a specialization of 'Statement'.
+'behaviour::Literal' is a specialization of 'Expression'.
+'behaviour::ComparisonOperator' is a specialization of 'BinaryExpression'.
+'behaviour::ReadLine' is a specialization of 'Expression'.
+'behaviour::ReturnStatement' is a specialization of 'Statement'.
+'behaviour::CallFunctionStatement' is a specialization of 'Statement'.
+'behaviour::ArithmeticOperation' is a specialization of 'BinaryExpression'.
+'behaviour::Variable' is a specialization of 'Expression'.
+'behaviour::FunctionCall' is a specialization of 'Expression'.
+'behaviour::ExceptionStatement' is a specialization of 'Statement'.
+'behaviour::TryCatchStatement' is a specialization of 'Statement'.
+'behaviour::BinaryExpression' is a specialization of 'Expression'.
+'behaviour::Expression' (role 'behaviour_Expression36', cardinality 0..*) is associated with 'behaviour::BinaryExpression' (role 'behaviour_BinaryExpression', cardinality 0..*).
+'behaviour::LoopStatement' (role 'behaviour_LoopStatement16', cardinality 0..*) is associated with 'behaviour::Statement' (role 'behaviour_Statement17', cardinality 0..*).
+'behaviour::CallFunctionStatement' (role 'behaviour_CallFunctionStatement', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression25', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression32', cardinality 0..*) is associated with 'behaviour::ExceptionStatement' (role 'behaviour_ExceptionStatement', cardinality 0..*).
+'behaviour::CondionalStatement' (role 'behaviour_CondionalStatement12', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression', cardinality 0..*).
+'behaviour::DeclarationStatement' (role 'behaviour_DeclarationStatement', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression21', cardinality 0..*).
+'behaviour::CondionalStatement' (role 'behaviour_CondionalStatement9', cardinality 0..*) is associated with 'behaviour::Statement' (role 'behaviour_Statement10', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression14', cardinality 0..*) is associated with 'behaviour::LoopStatement' (role 'behaviour_LoopStatement', cardinality 0..*).
+'behaviour::BinaryExpression' (role 'behaviour_BinaryExpression38', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression39', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression23', cardinality 0..*) is associated with 'behaviour::ReturnStatement' (role 'behaviour_ReturnStatement', cardinality 0..*).
+'behaviour::FunctionCall' (role 'behaviour_FunctionCall', cardinality 0..*) is associated with 'behaviour::Expression' (role 'behaviour_Expression34', cardinality 0..*).
+'behaviour::Statement' (role 'behaviour_Statement30', cardinality 0..*) is associated with 'behaviour::TryCatchStatement' (role 'behaviour_TryCatchStatement29', cardinality 0..*).
+'behaviour::Function' (role 'behaviour_Function', cardinality 0..*) is associated with 'behaviour::Behaviour' (role 'behaviour_Behaviour', cardinality 0..*).
+'behaviour::Statement' (role 'behaviour_Statement7', cardinality 0..*) is associated with 'behaviour::CondionalStatement' (role 'behaviour_CondionalStatement', cardinality 0..*).
+'behaviour::Expression' (role 'behaviour_Expression19', cardinality 0..*) is associated with 'behaviour::AssignmentStatement' (role 'behaviour_AssignmentStatement', cardinality 0..*).
+'behaviour::Function' (role 'behaviour_Function3', cardinality 0..*) is associated with 'behaviour::Behaviour' (role 'behaviour_Behaviour2', cardinality 0..*).
+'behaviour::Statement' (role 'behaviour_Statement27', cardinality 0..*) is associated with 'behaviour::TryCatchStatement' (role 'behaviour_TryCatchStatement', cardinality 0..*).
+'behaviour::Function' (role 'behaviour_Function5', cardinality 0..*) is associated with 'behaviour::Statement' (role 'behaviour_Statement', cardinality 0..*).

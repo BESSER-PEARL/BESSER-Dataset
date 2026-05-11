@@ -1,0 +1,96 @@
+The model has 48 class(es).
+The class 'simple::csp::Greater' has no attributes.
+The class 'simple::csp::Equal' has no attributes.
+The class 'Expression' has no attributes.
+The class 'simple::csp::Minus' has no attributes.
+The class 'simple::csp::VarOccurence' has no attributes.
+The class 'simple::csp::UnEqual' has no attributes.
+The class 'simple::csp::FalseValue' has no attributes.
+The class 'simple::csp::Domain' has no attributes.
+The class 'DescribedElement' has no attributes.
+The class 'simple::csp::Min' has no attributes.
+The class 'simple::csp::MinimizeGoal' has no attributes.
+The class 'simple::csp::Power' has no attributes.
+The class 'BooleanLiteral' has no attributes.
+The class 'simple::csp::SetOp' has no attributes.
+The class 'simple::csp::Sum' has no attributes.
+The class 'simple::csp::BinaryOp' has no attributes.
+The class 'simple::csp::GreaterEqual' has no attributes.
+The class 'SetOp' has no attributes.
+The class 'simple::csp::Not' has no attributes.
+The class 'simple::csp::Less' has no attributes.
+The class 'simple::csp::Variable' has no attributes.
+The class 'simple::csp::IntegerDomain' has the following attributes: 'maxValue' of type str; 'minValue' of type str.
+The class 'simple::csp::BooleanLiteral' has no attributes.
+The class 'BinaryOp' has no attributes.
+The class 'simple::csp::TrueValue' has no attributes.
+The class 'simple::csp::LessEqual' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'simple::csp::DescribedElement' has the following attributes: 'description' of type str.
+The class 'NamedElement' has no attributes.
+The class 'simple::csp::Expression' has no attributes.
+The class 'simple::csp::Problem' has no attributes.
+The class 'simple::csp::UnaryOp' has no attributes.
+The class 'UnaryOp' has no attributes.
+The class 'simple::csp::TypedElement' has the following attributes: 'type' of type str.
+The class 'simple::csp::And' has no attributes.
+The class 'simple::csp::Constraint' has no attributes.
+The class 'simple::csp::Operator' has no attributes.
+The class 'simple::csp::Times' has no attributes.
+The class 'simple::csp::Implies' has no attributes.
+The class 'simple::csp::Goal' has no attributes.
+The class 'simple::csp::NamedElement' has the following attributes: 'name' of type str.
+The class 'Operator' has no attributes.
+The class 'simple::csp::Or' has no attributes.
+The class 'simple::csp::Max' has no attributes.
+The class 'simple::csp::MaximizeGoal' has no attributes.
+The class 'Goal' has no attributes.
+The class 'simple::csp::Plus' has no attributes.
+The class 'Domain' has no attributes.
+The enumeration 'Type' has the following literals: 'INTEGER', 'BOOLEAN'.
+'simple::csp::Times' is a specialization of 'BinaryOp'.
+'simple::csp::TrueValue' is a specialization of 'BooleanLiteral'.
+'simple::csp::UnEqual' is a specialization of 'BinaryOp'.
+'simple::csp::Greater' is a specialization of 'BinaryOp'.
+'simple::csp::Plus' is a specialization of 'BinaryOp'.
+'simple::csp::MinimizeGoal' is a specialization of 'Goal'.
+'simple::csp::VarOccurence' is a specialization of 'Expression'.
+'simple::csp::Sum' is a specialization of 'SetOp'.
+'simple::csp::Min' is a specialization of 'SetOp'.
+'simple::csp::And' is a specialization of 'BinaryOp'.
+'simple::csp::FalseValue' is a specialization of 'BooleanLiteral'.
+'simple::csp::Equal' is a specialization of 'BinaryOp'.
+'simple::csp::Implies' is a specialization of 'BinaryOp'.
+'simple::csp::Constraint' is a specialization of 'NamedElement'.
+'simple::csp::BooleanLiteral' is a specialization of 'Expression'.
+'simple::csp::Less' is a specialization of 'BinaryOp'.
+'simple::csp::MaximizeGoal' is a specialization of 'Goal'.
+'simple::csp::Operator' is a specialization of 'Expression'.
+'simple::csp::BinaryOp' is a specialization of 'Operator'.
+'simple::csp::Goal' is a specialization of 'NamedElement'.
+'simple::csp::LessEqual' is a specialization of 'BinaryOp'.
+'simple::csp::Problem' is a specialization of 'NamedElement'.
+'simple::csp::UnaryOp' is a specialization of 'Operator'.
+'simple::csp::Variable' is a specialization of 'TypedElement'.
+'simple::csp::Variable' is a specialization of 'NamedElement'.
+'simple::csp::SetOp' is a specialization of 'Operator'.
+'simple::csp::Variable' is a specialization of 'DescribedElement'.
+'simple::csp::Minus' is a specialization of 'BinaryOp'.
+'simple::csp::GreaterEqual' is a specialization of 'BinaryOp'.
+'simple::csp::Not' is a specialization of 'UnaryOp'.
+'simple::csp::Or' is a specialization of 'BinaryOp'.
+'simple::csp::Max' is a specialization of 'SetOp'.
+'simple::csp::Power' is a specialization of 'BinaryOp'.
+'simple::csp::IntegerDomain' is a specialization of 'Domain'.
+'simple::csp::Problem' (role 'simple_csp_Problem', cardinality 0..*) is associated with 'simple::csp::Domain' (role 'simple_csp_Domain', cardinality 0..*).
+'simple::csp::BinaryOp' (role 'simple_csp_BinaryOp', cardinality 0..*) is associated with 'simple::csp::Expression' (role 'simple_csp_Expression14', cardinality 0..*).
+'simple::csp::Problem' (role 'simple_csp_Problem2', cardinality 0..*) is associated with 'simple::csp::Variable' (role 'simple_csp_Variable', cardinality 0..*).
+'simple::csp::Goal' (role 'simple_csp_Goal23', cardinality 0..*) is associated with 'simple::csp::Expression' (role 'simple_csp_Expression24', cardinality 0..*).
+'simple::csp::VarOccurence' (role 'simple_csp_VarOccurence', cardinality 0..*) is associated with 'simple::csp::Variable' (role 'simple_csp_Variable21', cardinality 0..*).
+'simple::csp::Domain' (role 'simple_csp_Domain8', cardinality 0..*) is associated with 'simple::csp::TypedElement' (role 'simple_csp_TypedElement', cardinality 0..*).
+'simple::csp::Problem' (role 'simple_csp_Problem4', cardinality 0..*) is associated with 'simple::csp::Constraint' (role 'simple_csp_Constraint', cardinality 0..*).
+'simple::csp::Expression' (role 'simple_csp_Expression19', cardinality 0..*) is associated with 'simple::csp::UnaryOp' (role 'simple_csp_UnaryOp', cardinality 0..*).
+'simple::csp::BinaryOp' (role 'simple_csp_BinaryOp16', cardinality 0..*) is associated with 'simple::csp::Expression' (role 'simple_csp_Expression17', cardinality 0..*).
+'simple::csp::Constraint' (role 'simple_csp_Constraint10', cardinality 0..*) is associated with 'simple::csp::Expression' (role 'simple_csp_Expression', cardinality 0..*).
+'simple::csp::SetOp' (role 'simple_csp_SetOp', cardinality 0..*) is associated with 'simple::csp::Expression' (role 'simple_csp_Expression12', cardinality 0..*).
+'simple::csp::Goal' (role 'simple_csp_Goal', cardinality 0..*) is associated with 'simple::csp::Problem' (role 'simple_csp_Problem6', cardinality 0..*).

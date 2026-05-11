@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'Logo::PenDown' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'Logo::Back' has no attributes.
+The class 'Logo::PenUp' has no attributes.
+The class 'Logo::Right' has no attributes.
+The class 'Logo::Expression' has no attributes.
+The class 'Logo::Primitive' has no attributes.
+The class 'Logo::Forward' has no attributes.
+The class 'Logo::Clear' has no attributes.
+The class 'Logo::Left' has no attributes.
+The class 'Logo::LogoProgram' has no attributes.
+'Logo::Right' is a specialization of 'Primitive'.
+'Logo::Clear' is a specialization of 'Primitive'.
+'Logo::PenUp' is a specialization of 'Primitive'.
+'Logo::PenDown' is a specialization of 'Primitive'.
+'Logo::Left' is a specialization of 'Primitive'.
+'Logo::Forward' is a specialization of 'Primitive'.
+'Logo::Back' is a specialization of 'Primitive'.
+'Logo::Forward' (role 'Logo_Forward', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression3', cardinality 0..*).
+'Logo::Back' (role 'Logo_Back', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression', cardinality 0..*).
+'Logo::LogoProgram' (role 'Logo_LogoProgram', cardinality 0..*) is associated with 'Logo::Primitive' (role 'Logo_Primitive', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression7', cardinality 0..*) is associated with 'Logo::Right' (role 'Logo_Right', cardinality 0..*).
+'Logo::Left' (role 'Logo_Left', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression5', cardinality 0..*).

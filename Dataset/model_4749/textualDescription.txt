@@ -1,0 +1,43 @@
+The model has 19 class(es).
+The class 'FPath::NameTest' has the following attributes: 'name' of type str.
+The class 'FPath::PathExp' has no attributes.
+The class 'FPath::ContextExp' has no attributes.
+The class 'FPath::LocatedElement' has the following attributes: 'commentsAfter' of type str; 'commentsBefore' of type str; 'location' of type str.
+The class 'FPath::NumberExp' has the following attributes: 'value' of type str.
+The class 'FPath::UnaryOperatorExp' has no attributes.
+The class 'FPath::Step' has the following attributes: 'axis' of type str.
+The class 'Test' has no attributes.
+The class 'OperatorExp' has no attributes.
+The class 'FPath::BinaryOperatorExp' has no attributes.
+The class 'FPath::FunctionCallExp' has the following attributes: 'name' of type str.
+The class 'FPath::WildcardTest' has no attributes.
+The class 'FPath::VariableExp' has the following attributes: 'name' of type str.
+The class 'FPath::Test' has no attributes.
+The class 'Expression' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'FPath::StringExp' has the following attributes: 'value' of type str.
+The class 'FPath::OperatorExp' has the following attributes: 'operator' of type str.
+The class 'FPath::Expression' has no attributes.
+The enumeration 'Axis' has the following literals: 'parent', 'attribute', 'interface', 'ancestor', 'siblingorself', 'ancestororself', 'component', 'child', 'descendant', 'sibling', 'descendantorself', 'internalinterface', 'binding'.
+'FPath::Step' is a specialization of 'LocatedElement'.
+'FPath::ContextExp' is a specialization of 'Expression'.
+'FPath::Test' is a specialization of 'LocatedElement'.
+'FPath::NumberExp' is a specialization of 'Expression'.
+'FPath::UnaryOperatorExp' is a specialization of 'OperatorExp'.
+'FPath::NameTest' is a specialization of 'Test'.
+'FPath::BinaryOperatorExp' is a specialization of 'OperatorExp'.
+'FPath::WildcardTest' is a specialization of 'Test'.
+'FPath::StringExp' is a specialization of 'Expression'.
+'FPath::FunctionCallExp' is a specialization of 'Expression'.
+'FPath::VariableExp' is a specialization of 'Expression'.
+'FPath::OperatorExp' is a specialization of 'Expression'.
+'FPath::Expression' is a specialization of 'LocatedElement'.
+'FPath::PathExp' is a specialization of 'Expression'.
+'FPath::PathExp' (role 'FPath_PathExp', cardinality 0..*) is associated with 'FPath::Expression' (role 'FPath_Expression2', cardinality 0..*).
+'FPath::Expression' (role 'FPath_Expression9', cardinality 0..*) is associated with 'FPath::BinaryOperatorExp' (role 'FPath_BinaryOperatorExp8', cardinality 0..*).
+'FPath::Step' (role 'FPath_Step13', cardinality 0..*) is associated with 'FPath::Test' (role 'FPath_Test', cardinality 0..*).
+'FPath::Step' (role 'FPath_Step', cardinality 0..*) is associated with 'FPath::PathExp' (role 'FPath_PathExp4', cardinality 0..*).
+'FPath::Expression' (role 'FPath_Expression11', cardinality 0..*) is associated with 'FPath::UnaryOperatorExp' (role 'FPath_UnaryOperatorExp', cardinality 0..*).
+'FPath::Expression' (role 'FPath_Expression16', cardinality 0..*) is associated with 'FPath::Step' (role 'FPath_Step15', cardinality 0..*).
+'FPath::FunctionCallExp' (role 'FPath_FunctionCallExp', cardinality 0..*) is associated with 'FPath::Expression' (role 'FPath_Expression', cardinality 0..*).
+'FPath::Expression' (role 'FPath_Expression6', cardinality 0..*) is associated with 'FPath::BinaryOperatorExp' (role 'FPath_BinaryOperatorExp', cardinality 0..*).

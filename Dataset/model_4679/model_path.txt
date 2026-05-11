@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/liberion1994/momot_updated/examples/tse/at.ac.tuwien.big.momot.examples.tse.resources/casestudy/Ecore2Maude/metamodels/Maude.ecore

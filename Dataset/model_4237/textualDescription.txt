@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'chartDsl::Project' has the following attributes: 'projectType' of type str; 'name' of type str.
+The class 'chartDsl::Task' has the following attributes: 'name' of type str.
+The class 'chartDsl::Company' has the following attributes: 'name' of type str.
+The class 'chartDsl::Employee' has the following attributes: 'name' of type str.
+The enumeration 'ProjectType' has the following literals: 'Development', 'Regie'.
+'chartDsl::Task' (role 'chartDsl_Task6', cardinality 0..*) is associated with 'chartDsl::Employee' (role 'chartDsl_Employee7', cardinality 0..*).
+'chartDsl::Project' (role 'chartDsl_Project', cardinality 0..*) is associated with 'chartDsl::Company' (role 'chartDsl_Company2', cardinality 0..*).
+'chartDsl::Task' (role 'chartDsl_Task', cardinality 0..*) is associated with 'chartDsl::Project' (role 'chartDsl_Project4', cardinality 0..*).
+'chartDsl::Company' (role 'chartDsl_Company', cardinality 0..*) is associated with 'chartDsl::Employee' (role 'chartDsl_Employee', cardinality 0..*).

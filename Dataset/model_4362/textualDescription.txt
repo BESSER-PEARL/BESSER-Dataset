@@ -1,0 +1,33 @@
+The model has 16 class(es).
+The class 'mpl::AtomicExpression' has no attributes.
+The class 'mpl::VariableRefrence' has no attributes.
+The class 'mpl::Program' has the following attributes: 'name' of type str.
+The class 'mpl::Assignment' has no attributes.
+The class 'Statement' has no attributes.
+The class 'AtomicExpression' has no attributes.
+The class 'mpl::LiteralValue' has the following attributes: 'rawValue' of type int.
+The class 'ArithmeticExpression' has no attributes.
+The class 'mpl::Statement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mpl::AddExpression' has no attributes.
+The class 'mpl::Expression' has no attributes.
+The class 'mpl::ArithmeticExpression' has no attributes.
+The class 'mpl::ExpressionStatement' has no attributes.
+The class 'mpl::Variable' has the following attributes: 'name' of type str.
+The class 'mpl::VariableDeclaration' has no attributes.
+'mpl::AtomicExpression' is a specialization of 'Expression'.
+'mpl::ArithmeticExpression' is a specialization of 'Expression'.
+'mpl::ExpressionStatement' is a specialization of 'Statement'.
+'mpl::AddExpression' is a specialization of 'ArithmeticExpression'.
+'mpl::LiteralValue' is a specialization of 'AtomicExpression'.
+'mpl::Assignment' is a specialization of 'Statement'.
+'mpl::VariableRefrence' is a specialization of 'AtomicExpression'.
+'mpl::Expression' (role 'mpl_Expression11', cardinality 0..*) is associated with 'mpl::ArithmeticExpression' (role 'mpl_ArithmeticExpression', cardinality 0..*).
+'mpl::Variable' (role 'mpl_Variable', cardinality 0..*) is associated with 'mpl::VariableDeclaration' (role 'mpl_VariableDeclaration4', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression9', cardinality 0..*) is associated with 'mpl::ExpressionStatement' (role 'mpl_ExpressionStatement', cardinality 0..*).
+'mpl::ArithmeticExpression' (role 'mpl_ArithmeticExpression13', cardinality 0..*) is associated with 'mpl::Expression' (role 'mpl_Expression14', cardinality 0..*).
+'mpl::Assignment' (role 'mpl_Assignment7', cardinality 0..*) is associated with 'mpl::VariableRefrence' (role 'mpl_VariableRefrence', cardinality 0..*).
+'mpl::Statement' (role 'mpl_Statement', cardinality 0..*) is associated with 'mpl::Program' (role 'mpl_Program2', cardinality 0..*).
+'mpl::VariableDeclaration' (role 'mpl_VariableDeclaration', cardinality 0..*) is associated with 'mpl::Program' (role 'mpl_Program', cardinality 0..*).
+'mpl::VariableRefrence' (role 'mpl_VariableRefrence16', cardinality 0..*) is associated with 'mpl::Variable' (role 'mpl_Variable17', cardinality 0..*).
+'mpl::Expression' (role 'mpl_Expression', cardinality 0..*) is associated with 'mpl::Assignment' (role 'mpl_Assignment', cardinality 0..*).

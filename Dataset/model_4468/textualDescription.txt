@@ -1,0 +1,22 @@
+The model has 12 class(es).
+The class 'polybot::modelling::language::Scene' has no attributes.
+The class 'polybot::modelling::language::Catch' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'polybot::modelling::language::TurnRight' has no attributes.
+The class 'polybot::modelling::language::Release' has no attributes.
+The class 'polybot::modelling::language::MoveStraight' has the following attributes: 'distance' of type int.
+The class 'polybot::modelling::language::Instruction' has the following attributes: 'name' of type str; 'nextInstruction' of type str; 'nextInstructionTrue' of type str; 'nextInstructionFalse' of type str.
+The class 'polybot::modelling::language::Robot' has the following attributes: 'debug' of type bool.
+The class 'Turn' has no attributes.
+The class 'polybot::modelling::language::ComeHome' has no attributes.
+The class 'polybot::modelling::language::TurnLeft' has no attributes.
+The class 'polybot::modelling::language::Turn' has the following attributes: 'angle' of type int.
+'polybot::modelling::language::ComeHome' is a specialization of 'Instruction'.
+'polybot::modelling::language::Turn' is a specialization of 'Instruction'.
+'polybot::modelling::language::TurnRight' is a specialization of 'Turn'.
+'polybot::modelling::language::TurnLeft' is a specialization of 'Turn'.
+'polybot::modelling::language::Catch' is a specialization of 'Instruction'.
+'polybot::modelling::language::MoveStraight' is a specialization of 'Instruction'.
+'polybot::modelling::language::Release' is a specialization of 'Instruction'.
+'polybot::modelling::language::Instruction' (role 'polybot_modelling_language_Instruction', cardinality 0..*) is associated with 'polybot::modelling::language::Robot' (role 'polybot_modelling_language_Robot2', cardinality 0..*).
+'polybot::modelling::language::Robot' (role 'polybot_modelling_language_Robot', cardinality 0..*) is associated with 'polybot::modelling::language::Scene' (role 'polybot_modelling_language_Scene', cardinality 0..*).

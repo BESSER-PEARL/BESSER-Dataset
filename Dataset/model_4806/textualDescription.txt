@@ -1,0 +1,37 @@
+The model has 15 class(es).
+The class 'model::ElementWithResources' has no attributes.
+The class 'model::StringToService' has the following attributes: 'key' of type str.
+The class 'model::StringToApplication' has the following attributes: 'key' of type str.
+The class 'model::Message' has the following attributes: 'avgResponseTime' of type str; 'timestamp' of type str; 'name' of type str; 'messageSize' of type str; 'uid' of type str.
+The class 'model::Cluster' has the following attributes: 'environment' of type str.
+The class 'model::StringToHost' has the following attributes: 'key' of type str.
+The class 'model::Host' has the following attributes: 'cores' of type str; 'name' of type str; 'hostAddress' of type str.
+The class 'model::StringToServiceInstance' has the following attributes: 'key' of type str.
+The class 'ElementWithResources' has no attributes.
+The class 'model::Application' has the following attributes: 'name' of type str; 'totalData' of type str; 'weight' of type str; 'totalMessages' of type str.
+The class 'model::ServiceInstance' has the following attributes: 'id' of type str; 'totalData' of type str; 'containers' of type str; 'address' of type str; 'totalMessages' of type str.
+The class 'model::StringToDoubleMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'Service' has no attributes.
+The class 'model::Affinity' has the following attributes: 'degree' of type str.
+The class 'model::Service' has the following attributes: 'stateful' of type str; 'application' of type str; 'name' of type str.
+The enumeration 'Environment' has the following literals: 'KUBERNETES', 'DOCKER_SWARM'.
+'model::ServiceInstance' is a specialization of 'ElementWithResources'.
+'model::Host' is a specialization of 'ElementWithResources'.
+'model::ServiceInstance' is a specialization of 'Service'.
+'model::ServiceInstance' (role 'model_ServiceInstance9', cardinality 0..*) is associated with 'model::Host' (role 'model_Host', cardinality 0..*).
+'model::Message' (role 'model_Message11', cardinality 0..*) is associated with 'model::ServiceInstance' (role 'model_ServiceInstance12', cardinality 0..*).
+'model::StringToDoubleMap' (role 'model_StringToDoubleMap', cardinality 0..*) is associated with 'model::Host' (role 'model_Host19', cardinality 0..*).
+'model::Service' (role 'model_Service26', cardinality 0..*) is associated with 'model::StringToService' (role 'model_StringToService', cardinality 0..*).
+'model::StringToServiceInstance' (role 'model_StringToServiceInstance31', cardinality 0..*) is associated with 'model::ServiceInstance' (role 'model_ServiceInstance32', cardinality 0..*).
+'model::StringToDoubleMap' (role 'model_StringToDoubleMap21', cardinality 0..*) is associated with 'model::ElementWithResources' (role 'model_ElementWithResources', cardinality 0..*).
+'model::Affinity' (role 'model_Affinity', cardinality 0..*) is associated with 'model::Service' (role 'model_Service', cardinality 0..*).
+'model::StringToDoubleMap' (role 'model_StringToDoubleMap24', cardinality 0..*) is associated with 'model::ElementWithResources' (role 'model_ElementWithResources23', cardinality 0..*).
+'model::StringToApplication' (role 'model_StringToApplication36', cardinality 0..*) is associated with 'model::Application' (role 'model_Application37', cardinality 0..*).
+'model::Host' (role 'model_Host29', cardinality 0..*) is associated with 'model::StringToHost' (role 'model_StringToHost28', cardinality 0..*).
+'model::Message' (role 'model_Message14', cardinality 0..*) is associated with 'model::ServiceInstance' (role 'model_ServiceInstance15', cardinality 0..*).
+'model::Affinity' (role 'model_Affinity5', cardinality 0..*) is associated with 'model::Service' (role 'model_Service6', cardinality 0..*).
+'model::Application' (role 'model_Application', cardinality 0..*) is associated with 'model::StringToService' (role 'model_StringToService34', cardinality 0..*).
+'model::StringToServiceInstance' (role 'model_StringToServiceInstance', cardinality 0..*) is associated with 'model::Host' (role 'model_Host17', cardinality 0..*).
+'model::ServiceInstance' (role 'model_ServiceInstance', cardinality 0..*) is associated with 'model::Message' (role 'model_Message', cardinality 0..*).
+'model::StringToHost' (role 'model_StringToHost', cardinality 0..*) is associated with 'model::Cluster' (role 'model_Cluster', cardinality 0..*).
+'model::Cluster' (role 'model_Cluster2', cardinality 0..*) is associated with 'model::StringToApplication' (role 'model_StringToApplication', cardinality 0..*).

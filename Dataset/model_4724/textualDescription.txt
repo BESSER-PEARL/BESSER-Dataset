@@ -1,0 +1,106 @@
+The model has 25 class(es).
+The class 'basic::TAnnotation' has no attributes.
+The class 'basic::TFieldDefinition' has no attributes.
+The class 'basic::TParameterList' has no attributes.
+The class 'basic::TMethod' has the following attributes: 'tName' of type str.
+The class 'basic::TElementWithId' has the following attributes: 'ID' of type int.
+The class 'basic::TInterface' has no attributes.
+The class 'basic::TAnnotatable' has no attributes.
+The class 'basic::TMember' has no attributes.
+The class 'TElementWithId' has no attributes.
+The class 'basic::TParameter' has no attributes.
+The class 'basic::TField' has the following attributes: 'tName' of type str.
+The class 'basic::TMethodDefinition' has no attributes.
+The class 'basic::TAnnotationType' has no attributes.
+The class 'basic::TPackage' has the following attributes: 'tName' of type str.
+The class 'TAbstractType' has no attributes.
+The class 'basic::TClass' has no attributes.
+The class 'TSignature' has no attributes.
+The class 'basic::TMethodSignature' has no attributes.
+The class 'basic::TypeGraph' has the following attributes: 'tName' of type str.
+The class 'basic::TSignature' has no attributes.
+The class 'TAnnotatable' has no attributes.
+The class 'basic::TFieldSignature' has no attributes.
+The class 'basic::TAbstractType' has the following attributes: 'tName' of type str; 'tLib' of type bool.
+The class 'TMember' has no attributes.
+The class 'basic::TAccess' has no attributes.
+'basic::TMember' is a specialization of 'TElementWithId'.
+'basic::TPackage' is a specialization of 'TAnnotatable'.
+'basic::TSignature' is a specialization of 'TAnnotatable'.
+'basic::TypeGraph' is a specialization of 'TElementWithId'.
+'basic::TAbstractType' is a specialization of 'TAnnotatable'.
+'basic::TMethodDefinition' is a specialization of 'TMember'.
+'basic::TFieldSignature' is a specialization of 'TSignature'.
+'basic::TPackage' is a specialization of 'TElementWithId'.
+'basic::TClass' is a specialization of 'TAbstractType'.
+'basic::TMethodSignature' is a specialization of 'TSignature'.
+'basic::TAccess' is a specialization of 'TElementWithId'.
+'basic::TMember' is a specialization of 'TAnnotatable'.
+'basic::TAbstractType' is a specialization of 'TElementWithId'.
+'basic::TParameter' is a specialization of 'TElementWithId'.
+'basic::TSignature' is a specialization of 'TElementWithId'.
+'basic::TAnnotation' is a specialization of 'TElementWithId'.
+'basic::TFieldDefinition' is a specialization of 'TMember'.
+'basic::TAnnotationType' is a specialization of 'TAbstractType'.
+'basic::TField' is a specialization of 'TElementWithId'.
+'basic::TParameterList' is a specialization of 'TElementWithId'.
+'basic::TMethod' is a specialization of 'TElementWithId'.
+'basic::TInterface' is a specialization of 'TAbstractType'.
+'basic::TAccess' (role 'TAccess', cardinality 0..*) is associated with 'basic::TMember' (role 'tTarget', cardinality 0..*).
+'basic::TAbstractType' (role 'TAbstractType68', cardinality 0..*) is associated with 'basic::TPackage' (role 'package', cardinality 0..*).
+'basic::TFieldDefinition' (role 'definitions', cardinality 0..*) is associated with 'basic::TFieldSignature' (role 'TFieldSignature15', cardinality 0..*).
+'basic::TMethod' (role 'TMethod', cardinality 0..*) is associated with 'basic::TMethodSignature' (role 'signatures49', cardinality 0..*).
+'basic::TAbstractType' (role 'TAbstractType100', cardinality 0..*) is associated with 'basic::TypeGraph' (role 'pg99', cardinality 0..*).
+'basic::TypeGraph' (role 'pg', cardinality 0..*) is associated with 'basic::TPackage' (role 'TPackage85', cardinality 0..*).
+'basic::TFieldDefinition' (role 'TFieldDefinition22', cardinality 0..*) is associated with 'basic::TFieldSignature' (role 'signature', cardinality 0..*).
+'basic::TMember' (role 'TMember119', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'definedBy', cardinality 0..*).
+'basic::TInterface' (role 'basic_TInterface', cardinality 0..*) is associated with 'basic::TPackage' (role 'basic_TPackage66', cardinality 0..*).
+'basic::TSignature' (role 'basic_TSignature', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'basic_TAbstractType117', cardinality 0..*).
+'basic::TMethodSignature' (role 'TMethodSignature34', cardinality 0..*) is associated with 'basic::TMethodDefinition' (role 'definitions33', cardinality 0..*).
+'basic::TMember' (role 'defines', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'TAbstractType', cardinality 0..*).
+'basic::TClass' (role 'basic_TClass94', cardinality 0..*) is associated with 'basic::TypeGraph' (role 'basic_TypeGraph93', cardinality 0..*).
+'basic::TFieldSignature' (role 'TFieldSignature', cardinality 0..*) is associated with 'basic::TField' (role 'field', cardinality 0..*).
+'basic::TAbstractType' (role 'ownedTypes114', cardinality 0..*) is associated with 'basic::TPackage' (role 'TPackage115', cardinality 0..*).
+'basic::TMethodDefinition' (role 'basic_TMethodDefinition', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'basic_TAbstractType47', cardinality 0..*).
+'basic::TParameter' (role 'TParameter75', cardinality 0..*) is associated with 'basic::TParameter' (role 'next', cardinality 0..*).
+'basic::TPackage' (role 'basic_TPackage', cardinality 0..*) is associated with 'basic::TClass' (role 'basic_TClass', cardinality 0..*).
+'basic::TParameter' (role 'basic_TParameter83', cardinality 0..*) is associated with 'basic::TParameterList' (role 'basic_TParameterList82', cardinality 0..*).
+'basic::TPackage' (role 'parent', cardinality 0..*) is associated with 'basic::TPackage' (role 'TPackage', cardinality 0..*).
+'basic::TClass' (role 'TClass', cardinality 0..*) is associated with 'basic::TClass' (role 'childClasses', cardinality 0..*).
+'basic::TFieldDefinition' (role 'hiding', cardinality 0..*) is associated with 'basic::TFieldDefinition' (role 'TFieldDefinition20', cardinality 0..*).
+'basic::TParameter' (role 'basic_TParameter', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'basic_TAbstractType77', cardinality 0..*).
+'basic::TParameterList' (role 'basic_TParameterList', cardinality 0..*) is associated with 'basic::TMethodSignature' (role 'basic_TMethodSignature', cardinality 0..*).
+'basic::TClass' (role 'parentClass', cardinality 0..*) is associated with 'basic::TClass' (role 'TClass10', cardinality 0..*).
+'basic::TMethod' (role 'method', cardinality 0..*) is associated with 'basic::TMethodSignature' (role 'TMethodSignature', cardinality 0..*).
+'basic::TAnnotation' (role 'tAnnotation', cardinality 0..*) is associated with 'basic::TAnnotatable' (role 'TAnnotatable', cardinality 0..*).
+'basic::TAccess' (role 'TAccess28', cardinality 0..*) is associated with 'basic::TMember' (role 'tSource', cardinality 0..*).
+'basic::TypeGraph' (role 'basic_TypeGraph96', cardinality 0..*) is associated with 'basic::TInterface' (role 'basic_TInterface97', cardinality 0..*).
+'basic::TMethodDefinition' (role 'TMethodDefinition45', cardinality 0..*) is associated with 'basic::TMethodDefinition' (role 'overloading', cardinality 0..*).
+'basic::TInterface' (role 'TInterface110', cardinality 0..*) is associated with 'basic::TInterface' (role 'parentInterfaces', cardinality 0..*).
+'basic::TPackage' (role 'TPackage63', cardinality 0..*) is associated with 'basic::TPackage' (role 'subpackage', cardinality 0..*).
+'basic::TypeGraph' (role 'TypeGraph112', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'ownedTypes', cardinality 0..*).
+'basic::TClass' (role 'TClass104', cardinality 0..*) is associated with 'basic::TInterface' (role 'implements', cardinality 0..*).
+'basic::TFieldDefinition' (role 'hiddenBy', cardinality 0..*) is associated with 'basic::TFieldDefinition' (role 'TFieldDefinition', cardinality 0..*).
+'basic::TypeGraph' (role 'basic_TypeGraph102', cardinality 0..*) is associated with 'basic::TAnnotationType' (role 'basic_TAnnotationType', cardinality 0..*).
+'basic::TAbstractType' (role 'basic_TAbstractType56', cardinality 0..*) is associated with 'basic::TMethodSignature' (role 'basic_TMethodSignature55', cardinality 0..*).
+'basic::TypeGraph' (role 'TypeGraph58', cardinality 0..*) is associated with 'basic::TPackage' (role 'packages', cardinality 0..*).
+'basic::TypeGraph' (role 'TypeGraph', cardinality 0..*) is associated with 'basic::TField' (role 'fields', cardinality 0..*).
+'basic::TPackage' (role 'basic_TPackage70', cardinality 0..*) is associated with 'basic::TypeGraph' (role 'basic_TypeGraph', cardinality 0..*).
+'basic::TAnnotatable' (role 'tAnnotated', cardinality 0..*) is associated with 'basic::TAnnotation' (role 'TAnnotation', cardinality 0..*).
+'basic::TAnnotation' (role 'annotations', cardinality 0..*) is associated with 'basic::TAnnotationType' (role 'TAnnotationType', cardinality 0..*).
+'basic::TMember' (role 'TMember', cardinality 0..*) is associated with 'basic::TAccess' (role 'accessedBy', cardinality 0..*).
+'basic::TAccess' (role 'tAccessing', cardinality 0..*) is associated with 'basic::TMember' (role 'TMember2', cardinality 0..*).
+'basic::TParameter' (role 'basic_TParameter80', cardinality 0..*) is associated with 'basic::TParameterList' (role 'basic_TParameterList79', cardinality 0..*).
+'basic::TAnnotation' (role 'TAnnotation121', cardinality 0..*) is associated with 'basic::TAnnotationType' (role 'type', cardinality 0..*).
+'basic::TInterface' (role 'TInterface', cardinality 0..*) is associated with 'basic::TClass' (role 'implementedBy', cardinality 0..*).
+'basic::TField' (role 'TField', cardinality 0..*) is associated with 'basic::TFieldSignature' (role 'signatures', cardinality 0..*).
+'basic::TypeGraph' (role 'pg87', cardinality 0..*) is associated with 'basic::TMethod' (role 'TMethod88', cardinality 0..*).
+'basic::TField' (role 'TField91', cardinality 0..*) is associated with 'basic::TypeGraph' (role 'pg90', cardinality 0..*).
+'basic::TMethodDefinition' (role 'overriddenBy', cardinality 0..*) is associated with 'basic::TMethodDefinition' (role 'TMethodDefinition', cardinality 0..*).
+'basic::TMethodDefinition' (role 'TMethodDefinition53', cardinality 0..*) is associated with 'basic::TMethodSignature' (role 'signature52', cardinality 0..*).
+'basic::TInterface' (role 'TInterface107', cardinality 0..*) is associated with 'basic::TInterface' (role 'childInterfaces', cardinality 0..*).
+'basic::TMethodDefinition' (role 'TMethodDefinition42', cardinality 0..*) is associated with 'basic::TMethodDefinition' (role 'overloadedBy', cardinality 0..*).
+'basic::TFieldSignature' (role 'basic_TFieldSignature', cardinality 0..*) is associated with 'basic::TAbstractType' (role 'basic_TAbstractType', cardinality 0..*).
+'basic::TMethodDefinition' (role 'TMethodDefinition39', cardinality 0..*) is associated with 'basic::TMethodDefinition' (role 'overriding', cardinality 0..*).
+'basic::TParameter' (role 'previous', cardinality 0..*) is associated with 'basic::TParameter' (role 'TParameter', cardinality 0..*).
+'basic::TypeGraph' (role 'TypeGraph30', cardinality 0..*) is associated with 'basic::TMethod' (role 'methods', cardinality 0..*).

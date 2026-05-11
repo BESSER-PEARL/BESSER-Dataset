@@ -1,0 +1,35 @@
+The model has 2 class(es).
+The class 'example::A' has no attributes.
+The class 'example::B' has no attributes.
+'example::B' (role 'B24', cardinality 0..*) is associated with 'example::A' (role 'a13', cardinality 0..*).
+'example::A' (role 'a14', cardinality 0..*) is associated with 'example::B' (role 'B26', cardinality 0..*).
+'example::A' (role 'A61', cardinality 0..*) is associated with 'example::B' (role 'b16', cardinality 0..*).
+'example::B' (role 'b4', cardinality 0..*) is associated with 'example::A' (role 'A37', cardinality 0..*).
+'example::B' (role 'B20', cardinality 0..*) is associated with 'example::A' (role 'a11', cardinality 0..*).
+'example::B' (role 'B8', cardinality 0..*) is associated with 'example::A' (role 'a5', cardinality 0..*).
+'example::A' (role 'a7', cardinality 0..*) is associated with 'example::B' (role 'B12', cardinality 0..*).
+'example::A' (role 'a10', cardinality 0..*) is associated with 'example::B' (role 'B18', cardinality 0..*).
+'example::A' (role 'A51', cardinality 0..*) is associated with 'example::B' (role 'b11', cardinality 0..*).
+'example::A' (role 'A45', cardinality 0..*) is associated with 'example::B' (role 'b8', cardinality 0..*).
+'example::A' (role 'a12', cardinality 0..*) is associated with 'example::B' (role 'B22', cardinality 0..*).
+'example::B' (role 'B30', cardinality 0..*) is associated with 'example::A' (role 'a16', cardinality 0..*).
+'example::A' (role 'a3', cardinality 0..*) is associated with 'example::B' (role 'B4', cardinality 0..*).
+'example::A' (role 'A39', cardinality 0..*) is associated with 'example::B' (role 'b5', cardinality 0..*).
+'example::B' (role 'b2', cardinality 0..*) is associated with 'example::A' (role 'A33', cardinality 0..*).
+'example::A' (role 'a2', cardinality 0..*) is associated with 'example::B' (role 'B2', cardinality 0..*).
+'example::A' (role 'A43', cardinality 0..*) is associated with 'example::B' (role 'b7', cardinality 0..*).
+'example::A' (role 'A47', cardinality 0..*) is associated with 'example::B' (role 'b9', cardinality 0..*).
+'example::B' (role 'b3', cardinality 0..*) is associated with 'example::A' (role 'A35', cardinality 0..*).
+'example::B' (role 'b6', cardinality 0..*) is associated with 'example::A' (role 'A41', cardinality 0..*).
+'example::A' (role 'a6', cardinality 0..*) is associated with 'example::B' (role 'B10', cardinality 0..*).
+'example::B' (role 'b13', cardinality 0..*) is associated with 'example::A' (role 'A55', cardinality 0..*).
+'example::A' (role 'a1', cardinality 0..*) is associated with 'example::B' (role 'B', cardinality 0..*).
+'example::B' (role 'b12', cardinality 0..*) is associated with 'example::A' (role 'A53', cardinality 0..*).
+'example::A' (role 'A57', cardinality 0..*) is associated with 'example::B' (role 'b14', cardinality 0..*).
+'example::A' (role 'a4', cardinality 0..*) is associated with 'example::B' (role 'B6', cardinality 0..*).
+'example::A' (role 'A59', cardinality 0..*) is associated with 'example::B' (role 'b15', cardinality 0..*).
+'example::A' (role 'A49', cardinality 0..*) is associated with 'example::B' (role 'b10', cardinality 0..*).
+'example::A' (role 'a8', cardinality 0..*) is associated with 'example::B' (role 'B14', cardinality 0..*).
+'example::A' (role 'a15', cardinality 0..*) is associated with 'example::B' (role 'B28', cardinality 0..*).
+'example::B' (role 'b1', cardinality 0..*) is associated with 'example::A' (role 'A', cardinality 0..*).
+'example::B' (role 'B16', cardinality 0..*) is associated with 'example::A' (role 'a9', cardinality 0..*).

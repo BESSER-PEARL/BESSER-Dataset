@@ -1,0 +1,97 @@
+The model has 39 class(es).
+The class 'trnet::Eventually' has no attributes.
+The class 'trnet::Pattern' has the following attributes: 'id' of type str; 'expected_size' of type int.
+The class 'trnet::NodePattern' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'Operator' has no attributes.
+The class 'trnet::StringLiteral' has the following attributes: 'value' of type str.
+The class 'trnet::AnyOperand' has no attributes.
+The class 'trnet::Equality' has no attributes.
+The class 'trnet::AttributePattern' has the following attributes: 'name' of type str.
+The class 'trnet::ExpressionOperator' has no attributes.
+The class 'trnet::Restriction' has no attributes.
+The class 'trnet::EdgePattern' has the following attributes: 'name' of type str.
+The class 'trnet::AnyResult' has no attributes.
+The class 'NodePattern' has no attributes.
+The class 'Restriction' has no attributes.
+The class 'trnet::FlowRule' has no attributes.
+The class 'trnet::TrNetModel' has the following attributes: 'id' of type str.
+The class 'trnet::NextDerived' has no attributes.
+The class 'trnet::Expression' has no attributes.
+The class 'Result' has no attributes.
+The class 'trnet::OptionalOperand' has no attributes.
+The class 'trnet::Operator' has the following attributes: 'id' of type str.
+The class 'trnet::MandatoryNode' has no attributes.
+The class 'trnet::AntiOperand' has no attributes.
+The class 'FlowRule' has no attributes.
+The class 'trnet::Keep' has no attributes.
+The class 'trnet::Next' has no attributes.
+The class 'trnet::SomeOperand' has the following attributes: 'count' of type int.
+The class 'trnet::SomeResult' has the following attributes: 'count' of type int.
+The class 'trnet::Combinator' has no attributes.
+The class 'trnet::Same' has no attributes.
+The class 'ExpressionOperator' has no attributes.
+The class 'trnet::Operand' has the following attributes: 'index' of type int.
+The class 'Expression' has no attributes.
+The class 'trnet::Different' has no attributes.
+The class 'Operand' has no attributes.
+The class 'trnet::Result' has no attributes.
+The class 'trnet::External' has no attributes.
+The class 'trnet::OptionalNode' has no attributes.
+The class 'trnet::Union' has no attributes.
+'trnet::Different' is a specialization of 'Restriction'.
+'trnet::External' is a specialization of 'Operator'.
+'trnet::Same' is a specialization of 'Restriction'.
+'trnet::OptionalNode' is a specialization of 'NodePattern'.
+'trnet::AnyResult' is a specialization of 'Result'.
+'trnet::AntiOperand' is a specialization of 'Operand'.
+'trnet::Union' is a specialization of 'Operator'.
+'trnet::OptionalOperand' is a specialization of 'Operand'.
+'trnet::Combinator' is a specialization of 'Operator'.
+'trnet::SomeOperand' is a specialization of 'Operand'.
+'trnet::Eventually' is a specialization of 'FlowRule'.
+'trnet::StringLiteral' is a specialization of 'Expression'.
+'trnet::AnyOperand' is a specialization of 'Operand'.
+'trnet::Keep' is a specialization of 'Restriction'.
+'trnet::Next' is a specialization of 'FlowRule'.
+'trnet::NextDerived' is a specialization of 'FlowRule'.
+'trnet::Equality' is a specialization of 'ExpressionOperator'.
+'trnet::MandatoryNode' is a specialization of 'NodePattern'.
+'trnet::SomeResult' is a specialization of 'Result'.
+'trnet::Operator' (role 'operator42', cardinality 0..*) is associated with 'trnet::Result' (role 'Result43', cardinality 0..*).
+'trnet::Result' (role 'results', cardinality 0..*) is associated with 'trnet::Operator' (role 'Operator63', cardinality 0..*).
+'trnet::NodePattern' (role 'target11', cardinality 0..*) is associated with 'trnet::Same' (role 'Same12', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern48', cardinality 0..*) is associated with 'trnet::Same' (role 'sameIn', cardinality 0..*).
+'trnet::Pattern' (role 'Pattern29', cardinality 0..*) is associated with 'trnet::EdgePattern' (role 'edges', cardinality 0..*).
+'trnet::EdgePattern' (role 'outgoing', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'NodePattern', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern65', cardinality 0..*) is associated with 'trnet::Different' (role 'differentOut', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern27', cardinality 0..*) is associated with 'trnet::EdgePattern' (role 'incoming', cardinality 0..*).
+'trnet::Keep' (role 'keepOut', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'NodePattern54', cardinality 0..*).
+'trnet::Operator' (role 'Operator', cardinality 0..*) is associated with 'trnet::Operand' (role 'operands', cardinality 0..*).
+'trnet::NodePattern' (role 'source18', cardinality 0..*) is associated with 'trnet::Different' (role 'Different19', cardinality 0..*).
+'trnet::Combinator' (role 'trnet_Combinator', cardinality 0..*) is associated with 'trnet::Restriction' (role 'trnet_Restriction', cardinality 0..*).
+'trnet::Operator' (role 'operator', cardinality 0..*) is associated with 'trnet::Operand' (role 'Operand40', cardinality 0..*).
+'trnet::Different' (role 'differentIn', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'NodePattern67', cardinality 0..*).
+'trnet::Keep' (role 'Keep24', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'source23', cardinality 0..*).
+'trnet::NodePattern' (role 'source', cardinality 0..*) is associated with 'trnet::EdgePattern' (role 'EdgePattern7', cardinality 0..*).
+'trnet::EdgePattern' (role 'EdgePattern34', cardinality 0..*) is associated with 'trnet::Pattern' (role 'pattern33', cardinality 0..*).
+'trnet::NodePattern' (role 'trnet_NodePattern', cardinality 0..*) is associated with 'trnet::AttributePattern' (role 'trnet_AttributePattern', cardinality 0..*).
+'trnet::TrNetModel' (role 'trnet_TrNetModel', cardinality 0..*) is associated with 'trnet::Pattern' (role 'trnet_Pattern', cardinality 0..*).
+'trnet::NodePattern' (role 'source9', cardinality 0..*) is associated with 'trnet::Same' (role 'Same', cardinality 0..*).
+'trnet::Result' (role 'Result', cardinality 0..*) is associated with 'trnet::Pattern' (role 'pattern38', cardinality 0..*).
+'trnet::TrNetModel' (role 'trnet_TrNetModel2', cardinality 0..*) is associated with 'trnet::Operator' (role 'trnet_Operator', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern56', cardinality 0..*) is associated with 'trnet::Keep' (role 'keepIn', cardinality 0..*).
+'trnet::Pattern' (role 'Pattern61', cardinality 0..*) is associated with 'trnet::Result' (role 'incommingResults', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern31', cardinality 0..*) is associated with 'trnet::Pattern' (role 'pattern', cardinality 0..*).
+'trnet::Pattern' (role 'Pattern', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'nodes', cardinality 0..*).
+'trnet::Union' (role 'trnet_Union', cardinality 0..*) is associated with 'trnet::Restriction' (role 'trnet_Restriction69', cardinality 0..*).
+'trnet::TrNetModel' (role 'trnet_TrNetModel72', cardinality 0..*) is associated with 'trnet::FlowRule' (role 'trnet_FlowRule71', cardinality 0..*).
+'trnet::Operand' (role 'Operand', cardinality 0..*) is associated with 'trnet::Pattern' (role 'pattern36', cardinality 0..*).
+'trnet::FlowRule' (role 'trnet_FlowRule74', cardinality 0..*) is associated with 'trnet::TrNetModel' (role 'trnet_TrNetModel75', cardinality 0..*).
+'trnet::Expression' (role 'trnet_Expression', cardinality 0..*) is associated with 'trnet::AttributePattern' (role 'trnet_AttributePattern50', cardinality 0..*).
+'trnet::NodePattern' (role 'NodePattern46', cardinality 0..*) is associated with 'trnet::Same' (role 'sameOut', cardinality 0..*).
+'trnet::EdgePattern' (role 'EdgePattern', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'target', cardinality 0..*).
+'trnet::Keep' (role 'Keep', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'target21', cardinality 0..*).
+'trnet::Operand' (role 'outgoingOperands', cardinality 0..*) is associated with 'trnet::Pattern' (role 'Pattern58', cardinality 0..*).
+'trnet::FlowRule' (role 'trnet_FlowRule', cardinality 0..*) is associated with 'trnet::TrNetModel' (role 'trnet_TrNetModel4', cardinality 0..*).
+'trnet::Different' (role 'Different', cardinality 0..*) is associated with 'trnet::NodePattern' (role 'target16', cardinality 0..*).
+'trnet::ExpressionOperator' (role 'trnet_ExpressionOperator', cardinality 0..*) is associated with 'trnet::AttributePattern' (role 'trnet_AttributePattern52', cardinality 0..*).

@@ -1,0 +1,119 @@
+The model has 41 class(es).
+The class 'cool::NewExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'cool::Class::' has no attributes.
+The class 'cool::Attr' has no attributes.
+The class 'cool::PrimaryExpression' has no attributes.
+The class 'cool::CompareExpression' has the following attributes: 'op' of type str.
+The class 'cool::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'cool::NegationExpression' has no attributes.
+The class 'cool::Program' has no attributes.
+The class 'cool::CaseExpression' has no attributes.
+The class 'Feature::' has no attributes.
+The class 'cool::IdentifiableElement' has the following attributes: 'name' of type str.
+The class 'cool::SelfTypeLiteral' has no attributes.
+The class 'cool::Type' has no attributes.
+The class 'cool::LetExpression' has no attributes.
+The class 'cool::Literal' has no attributes.
+The class 'cool::Minus' has no attributes.
+The class 'cool::AdditionExpression' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'cool::Method' has no attributes.
+The class 'IdentifiableElement' has no attributes.
+The class 'Literal' has no attributes.
+The class 'cool::MultiplicationExpression' has no attributes.
+The class 'cool::Div' has no attributes.
+The class 'cool::IntegerCompositeExpression' has no attributes.
+The class 'cool::DispatchExpression' has no attributes.
+The class 'cool::IdentifierRefExpression' has no attributes.
+The class 'cool::ConditionalExpression' has no attributes.
+The class 'cool::Feature::' has no attributes.
+The class 'cool::LoopExpression' has no attributes.
+The class 'cool::AssignmentExpression' has the following attributes: 'name' of type str.
+The class 'cool::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'cool::Case' has no attributes.
+The class 'cool::BlockExpression' has no attributes.
+The class 'cool::Expression' has no attributes.
+The class 'cool::ParenExpression' has no attributes.
+The class 'cool::LetDeclaration' has no attributes.
+The class 'cool::IsvoidExpression' has no attributes.
+The class 'cool::StringLiteral' has the following attributes: 'value' of type str.
+The class 'Type' has no attributes.
+The class 'cool::Formal' has no attributes.
+'cool::DispatchExpression' is a specialization of 'PrimaryExpression'.
+'cool::NewExpression' is a specialization of 'PrimaryExpression'.
+'cool::Case' is a specialization of 'IdentifiableElement'.
+'cool::IntegerCompositeExpression' is a specialization of 'PrimaryExpression'.
+'cool::Class::' is a specialization of 'Type'.
+'cool::MultiplicationExpression' is a specialization of 'Expression'.
+'cool::CompareExpression' is a specialization of 'Expression'.
+'cool::Div' is a specialization of 'Expression'.
+'cool::LetExpression' is a specialization of 'PrimaryExpression'.
+'cool::Formal' is a specialization of 'IdentifiableElement'.
+'cool::NegationExpression' is a specialization of 'PrimaryExpression'.
+'cool::PrimaryExpression' is a specialization of 'Expression'.
+'cool::AdditionExpression' is a specialization of 'Expression'.
+'cool::ConditionalExpression' is a specialization of 'PrimaryExpression'.
+'cool::LetDeclaration' is a specialization of 'IdentifiableElement'.
+'cool::StringLiteral' is a specialization of 'Literal'.
+'cool::SelfTypeLiteral' is a specialization of 'PrimaryExpression'.
+'cool::Minus' is a specialization of 'Expression'.
+'cool::Attr' is a specialization of 'Feature::'.
+'cool::Class::' is a specialization of 'IdentifiableElement'.
+'cool::IsvoidExpression' is a specialization of 'PrimaryExpression'.
+'cool::Method' is a specialization of 'Feature::'.
+'cool::Literal' is a specialization of 'PrimaryExpression'.
+'cool::CaseExpression' is a specialization of 'PrimaryExpression'.
+'cool::NumberLiteral' is a specialization of 'Literal'.
+'cool::BooleanLiteral' is a specialization of 'Literal'.
+'cool::LoopExpression' is a specialization of 'PrimaryExpression'.
+'cool::BlockExpression' is a specialization of 'PrimaryExpression'.
+'cool::ParenExpression' is a specialization of 'PrimaryExpression'.
+'cool::AssignmentExpression' is a specialization of 'PrimaryExpression'.
+'cool::IdentifierRefExpression' is a specialization of 'PrimaryExpression'.
+'cool::Feature::' is a specialization of 'IdentifiableElement'.
+'cool::Expression' (role 'cool_Expression91', cardinality 0..*) is associated with 'cool::Minus' (role 'cool_Minus', cardinality 0..*).
+'cool::Attr' (role 'cool_Attr8', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression79', cardinality 0..*) is associated with 'cool::Case' (role 'cool_Case78', cardinality 0..*).
+'cool::IsvoidExpression' (role 'cool_IsvoidExpression', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression59', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression94', cardinality 0..*) is associated with 'cool::Minus' (role 'cool_Minus93', cardinality 0..*).
+'cool::MultiplicationExpression' (role 'cool_MultiplicationExpression98', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression99', cardinality 0..*).
+'cool::Formal' (role 'cool_Formal17', cardinality 0..*) is associated with 'cool::Type' (role 'cool_Type18', cardinality 0..*).
+'cool::ParenExpression' (role 'cool_ParenExpression', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression21', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression101', cardinality 0..*) is associated with 'cool::Div' (role 'cool_Div', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression96', cardinality 0..*) is associated with 'cool::MultiplicationExpression' (role 'cool_MultiplicationExpression', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression44', cardinality 0..*) is associated with 'cool::ConditionalExpression' (role 'cool_ConditionalExpression', cardinality 0..*).
+'cool::LetExpression' (role 'cool_LetExpression62', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression63', cardinality 0..*).
+'cool::Program' (role 'cool_Program', cardinality 0..*) is associated with 'cool::Class::' (role 'cool_Class_', cardinality 0..*).
+'cool::DispatchExpression' (role 'cool_DispatchExpression33', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression34', cardinality 0..*).
+'cool::Feature::' (role 'cool_Feature_', cardinality 0..*) is associated with 'cool::Class::' (role 'cool_Class_4', cardinality 0..*).
+'cool::LoopExpression' (role 'cool_LoopExpression54', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression55', cardinality 0..*).
+'cool::AdditionExpression' (role 'cool_AdditionExpression', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression86', cardinality 0..*).
+'cool::Type' (role 'cool_Type6', cardinality 0..*) is associated with 'cool::Attr' (role 'cool_Attr', cardinality 0..*).
+'cool::Type' (role 'cool_Type66', cardinality 0..*) is associated with 'cool::LetDeclaration' (role 'cool_LetDeclaration65', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression23', cardinality 0..*) is associated with 'cool::AssignmentExpression' (role 'cool_AssignmentExpression', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression57', cardinality 0..*) is associated with 'cool::BlockExpression' (role 'cool_BlockExpression', cardinality 0..*).
+'cool::NegationExpression' (role 'cool_NegationExpression', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression25', cardinality 0..*).
+'cool::Method' (role 'cool_Method', cardinality 0..*) is associated with 'cool::Formal' (role 'cool_Formal', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression52', cardinality 0..*) is associated with 'cool::LoopExpression' (role 'cool_LoopExpression', cardinality 0..*).
+'cool::PrimaryExpression' (role 'cool_PrimaryExpression', cardinality 0..*) is associated with 'cool::DispatchExpression' (role 'cool_DispatchExpression39', cardinality 0..*).
+'cool::CaseExpression' (role 'cool_CaseExpression', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression71', cardinality 0..*).
+'cool::IdentifiableElement' (role 'cool_IdentifiableElement', cardinality 0..*) is associated with 'cool::IdentifierRefExpression' (role 'cool_IdentifierRefExpression', cardinality 0..*).
+'cool::DispatchExpression' (role 'cool_DispatchExpression41', cardinality 0..*) is associated with 'cool::Type' (role 'cool_Type42', cardinality 0..*).
+'cool::Class::' (role 'cool_Class_2', cardinality 0..*) is associated with 'cool::Type' (role 'cool_Type', cardinality 0..*).
+'cool::Type' (role 'cool_Type29', cardinality 0..*) is associated with 'cool::NewExpression' (role 'cool_NewExpression', cardinality 0..*).
+'cool::LetDeclaration' (role 'cool_LetDeclaration68', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression69', cardinality 0..*).
+'cool::ConditionalExpression' (role 'cool_ConditionalExpression46', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression47', cardinality 0..*).
+'cool::Method' (role 'cool_Method14', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression15', cardinality 0..*).
+'cool::Type' (role 'cool_Type76', cardinality 0..*) is associated with 'cool::Case' (role 'cool_Case75', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression104', cardinality 0..*) is associated with 'cool::Div' (role 'cool_Div103', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression27', cardinality 0..*) is associated with 'cool::IntegerCompositeExpression' (role 'cool_IntegerCompositeExpression', cardinality 0..*).
+'cool::Case' (role 'cool_Case', cardinality 0..*) is associated with 'cool::CaseExpression' (role 'cool_CaseExpression73', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression81', cardinality 0..*) is associated with 'cool::CompareExpression' (role 'cool_CompareExpression', cardinality 0..*).
+'cool::AdditionExpression' (role 'cool_AdditionExpression88', cardinality 0..*) is associated with 'cool::Expression' (role 'cool_Expression89', cardinality 0..*).
+'cool::Type' (role 'cool_Type12', cardinality 0..*) is associated with 'cool::Method' (role 'cool_Method11', cardinality 0..*).
+'cool::IdentifierRefExpression' (role 'cool_IdentifierRefExpression31', cardinality 0..*) is associated with 'cool::DispatchExpression' (role 'cool_DispatchExpression', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression84', cardinality 0..*) is associated with 'cool::CompareExpression' (role 'cool_CompareExpression83', cardinality 0..*).
+'cool::DispatchExpression' (role 'cool_DispatchExpression35', cardinality 0..*) is associated with 'cool::DispatchExpression' (role 'cool_DispatchExpression37', cardinality 0..*).
+'cool::LetExpression' (role 'cool_LetExpression', cardinality 0..*) is associated with 'cool::LetDeclaration' (role 'cool_LetDeclaration', cardinality 0..*).
+'cool::Expression' (role 'cool_Expression50', cardinality 0..*) is associated with 'cool::ConditionalExpression' (role 'cool_ConditionalExpression49', cardinality 0..*).

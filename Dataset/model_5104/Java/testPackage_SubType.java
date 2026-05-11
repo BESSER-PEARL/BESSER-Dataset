@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class testPackage_SubType extends SuperType {
+
+
+
+
+    public testPackage_SubType(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

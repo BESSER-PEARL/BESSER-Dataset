@@ -1,0 +1,41 @@
+The model has 19 class(es).
+The class 'effbd101::And' has no attributes.
+The class 'effbd101::Final' has no attributes.
+The class 'effbd101::Port' has the following attributes: 'id' of type str.
+The class 'effbd101::Or' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'effbd101::Description' has the following attributes: 'content' of type str.
+The class 'effbd101::ProcessNode' has the following attributes: 'label' of type str.
+The class 'effbd101::SequenceNode' has the following attributes: 'name' of type str.
+The class 'effbd101::InputPort' has no attributes.
+The class 'effbd101::Flow' has no attributes.
+The class 'effbd101::Item' has the following attributes: 'name' of type str.
+The class 'effbd101::Sequence' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'effbd101::Start' has no attributes.
+The class 'effbd101::Loop' has no attributes.
+The class 'effbd101::Function' has no attributes.
+The class 'Port' has no attributes.
+The class 'ProcessNode' has no attributes.
+The class 'effbd101::OutputPort' has no attributes.
+'effbd101::Function' is a specialization of 'ProcessNode'.
+'effbd101::InputPort' is a specialization of 'Port'.
+'effbd101::Start' is a specialization of 'Sequence'.
+'effbd101::Sequence' is a specialization of 'SequenceNode'.
+'effbd101::OutputPort' is a specialization of 'Port'.
+'effbd101::Function' is a specialization of 'SequenceNode'.
+'effbd101::Loop' is a specialization of 'Sequence'.
+'effbd101::Or' is a specialization of 'Sequence'.
+'effbd101::Final' is a specialization of 'Sequence'.
+'effbd101::And' is a specialization of 'Sequence'.
+'effbd101::Flow' is a specialization of 'ProcessNode'.
+'effbd101::Flow' (role 'effbd101_Flow18', cardinality 0..*) is associated with 'effbd101::Item' (role 'effbd101_Item', cardinality 0..*).
+'effbd101::Function' (role 'effbd101_Function3', cardinality 0..*) is associated with 'effbd101::Sequence' (role 'effbd101_Sequence', cardinality 0..*).
+'effbd101::Function' (role 'effbd101_Function0', cardinality 0..*) is associated with 'effbd101::Function' (role 'effbd101_Function', cardinality 0..*).
+'effbd101::OutputPort' (role 'effbd101_OutputPort', cardinality 0..*) is associated with 'effbd101::Function' (role 'effbd101_Function7', cardinality 0..*).
+'effbd101::Function' (role 'effbd101_Function11', cardinality 0..*) is associated with 'effbd101::Description' (role 'effbd101_Description', cardinality 0..*).
+'effbd101::Flow' (role 'effbd101_Flow21', cardinality 0..*) is associated with 'effbd101::OutputPort' (role 'effbd101_OutputPort20', cardinality 0..*).
+'effbd101::InputPort' (role 'effbd101_InputPort16', cardinality 0..*) is associated with 'effbd101::Flow' (role 'effbd101_Flow15', cardinality 0..*).
+'effbd101::SequenceNode' (role 'effbd101_SequenceNode12', cardinality 0..*) is associated with 'effbd101::SequenceNode' (role 'effbd101_SequenceNode', cardinality 0..*).
+'effbd101::Flow' (role 'effbd101_Flow', cardinality 0..*) is associated with 'effbd101::Function' (role 'effbd101_Function5', cardinality 0..*).
+'effbd101::Function' (role 'effbd101_Function9', cardinality 0..*) is associated with 'effbd101::InputPort' (role 'effbd101_InputPort', cardinality 0..*).

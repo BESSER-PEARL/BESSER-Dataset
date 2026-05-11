@@ -1,0 +1,1314 @@
+The model has 610 class(es).
+The class 'cobol::dataitems::RenamingDataName' has no attributes.
+The class 'ConditionalAndExpressionChild' has no attributes.
+The class 'DataDescriptorWater' has no attributes.
+The class 'cobol::references::Qualifiable' has no attributes.
+The class 'SelectStatementWater' has no attributes.
+The class 'cobol::references::AlphabetNameReference' has no attributes.
+The class 'cobol::dataitems::DataItemAttribute' has no attributes.
+The class 'cobol::conditions::NegatedAbbreviatedConditionalExpressionChild' has no attributes.
+The class 'CobolRoot' has no attributes.
+The class 'cobol::sentences::UseSentence' has no attributes.
+The class 'ios::ProcedureDirective' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'cobol::water::DataDescription' has the following attributes: 'value' of type str.
+The class 'cobol::arithmetics::UnaryArithmeticExpression' has no attributes.
+The class 'cobol::ios::InputFile' has no attributes.
+The class 'NegatedConditionalExpressionChild' has no attributes.
+The class 'cobol::environments::SuppressSpacing' has no attributes.
+The class 'cobol::conditions::AbbreviatedRelationalExpressionChild' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'cobol::references::DataNameReference' has no attributes.
+The class 'cobol::water::SelectStatementClause' has the following attributes: 'value' of type str.
+The class 'cobol::arithmetics::ArithmeticExpression' has no attributes.
+The class 'arithmetics::PrimaryExpression' has no attributes.
+The class 'cobol::conditions::AbbreviatedConditionalExpression' has no attributes.
+The class 'cobol::environments::SystemPunchDevice' has the following attributes: 'value' of type str.
+The class 'water::SortPhraseWater' has no attributes.
+The class 'cobol::water::ObjectComputerParagraphWater' has no attributes.
+The class 'cobol::water::CICSStatementWater' has no attributes.
+The class 'cobol::conditions::AbbreviatedConditionalExpressionChild' has no attributes.
+The class 'cobol::ios::OutputFile' has no attributes.
+The class 'MultiplicativeArithmeticExpressionChild' has no attributes.
+The class 'cobol::sentences::EntrySentence' has no attributes.
+The class 'cobol::conditions::ConditionalOrExpressionChild' has no attributes.
+The class 'water::UseStatementWater' has no attributes.
+The class 'ReferenceableElement' has no attributes.
+The class 'cobol::arithmetics::RangeExpressionChild' has no attributes.
+The class 'cobol::water::RepositoryDescription' has the following attributes: 'value' of type str.
+The class 'references::IdentifierReferenceQualifier' has no attributes.
+The class 'cobol::containers::CobolRoot' has no attributes.
+The class 'cobol::environments::Environment' has no attributes.
+The class 'cobol::arithmetics::MultiplicativeArithmeticExpressionChild' has no attributes.
+The class 'cobol::commons::URIableElement' has the following attributes: 'uri' of type str.
+The class 'parameters::Parametrizable' has no attributes.
+The class 'cobol::references::FileNameReference' has no attributes.
+The class 'identifiers::Identifier' has no attributes.
+The class 'cobol::water::SelectStatementWater' has no attributes.
+The class 'cobol::registers::LengthOf' has no attributes.
+The class 'cobol::water::IdentificationDivisionWater' has no attributes.
+The class 'SQLStatementWater' has no attributes.
+The class 'SimpleConditionChild' has no attributes.
+The class 'cobol::literals::Literal' has no attributes.
+The class 'cobol::operands::RoundedIdentifier' has no attributes.
+The class 'CICSStatementWater' has no attributes.
+The class 'cobol::operators::LTEQSign' has no attributes.
+The class 'cobol::statements::AfterUntilCondition' has no attributes.
+The class 'cobol::conditions::Condition' has no attributes.
+The class 'SignOperator' has no attributes.
+The class 'cobol::water::SortPhraseWater' has no attributes.
+The class 'cobol::arithmetics::PrimaryExpression' has no attributes.
+The class 'sentences::StatementContainer' has no attributes.
+The class 'cobol::registers::ShiftOut' has no attributes.
+The class 'cobol::conditions::NestedAbbreviatedConditionalExpression' has no attributes.
+The class 'ProcedureDivision' has no attributes.
+The class 'DirectSubscript' has no attributes.
+The class 'cobol::arithmetics::MultiplicativeArithmeticExpression' has no attributes.
+The class 'cobol::water::IOControlParagraphWater' has no attributes.
+The class 'cobol::environments::Console' has no attributes.
+The class 'cobol::water::OpenStatementWater' has no attributes.
+The class 'cobol::arithmetics::AdditiveArithmeticExpressionChild' has no attributes.
+The class 'UseStatementWater' has no attributes.
+The class 'cobol::conditions::AbbreviatedRelationalExpression' has no attributes.
+The class 'references::ReferenceableElement' has no attributes.
+The class 'DataName' has no attributes.
+The class 'EnvironmentDivision' has no attributes.
+The class 'cobol::environments::SystemLogicalInput' has the following attributes: 'value' of type str.
+The class 'Is' has no attributes.
+The class 'Negate' has no attributes.
+The class 'cobol::identifiers::All' has no attributes.
+The class 'cobol::conditions::SignCondition' has no attributes.
+The class 'water::InvokeStatementWater' has no attributes.
+The class 'DataItem' has no attributes.
+The class 'ios::OutputDirective' has no attributes.
+The class 'cobol::sentences::Sentence' has no attributes.
+The class 'RangeExpression' has no attributes.
+The class 'ios::FileDirective' has no attributes.
+The class 'cobol::containers::CompilationGroup' has no attributes.
+The class 'FileName' has no attributes.
+The class 'cobol::ios::FileDirective' has no attributes.
+The class 'cobol::sections::FileSection' has no attributes.
+The class 'cobol::dataitems::Usage' has the following attributes: 'usage' of type str; 'isNative' of type bool.
+The class 'Register' has no attributes.
+The class 'cobol::conditions::ExpressionList' has no attributes.
+The class 'cobol::dataitems::Global' has no attributes.
+The class 'cobol::paragraphs::IOSectionParagraph' has no attributes.
+The class 'cobol::conditions::ConditionalOrExpression' has no attributes.
+The class 'references::Qualifiable' has no attributes.
+The class 'cobol::divisions::IdentificationDivision' has the following attributes: 'properties' of type str.
+The class 'cobol::ios::ProcedureDirective' has no attributes.
+The class 'CloseStatementWater' has no attributes.
+The class 'cobol::containers::EmptyModel' has no attributes.
+The class 'cobol::identifiers::Qualifier' has no attributes.
+The class 'SortPhraseWater' has no attributes.
+The class 'DataDivision' has no attributes.
+The class 'cobol::commons::Commentable' has no attributes.
+The class 'Condition' has no attributes.
+The class 'cobol::references::ConditionNameReference' has no attributes.
+The class 'cobol::water::FileDescription' has the following attributes: 'value' of type str.
+The class 'RelationalOperator' has no attributes.
+The class 'cobol::ios::InputProcedure' has no attributes.
+The class 'ios::InputDirective' has no attributes.
+The class 'cobol::environments::SystemDevice' has no attributes.
+The class 'cobol::sections::DeclarativeSection' has no attributes.
+The class 'cobol::arithmetics::AdditiveArithmeticExpression' has no attributes.
+The class 'cobol::water::UseStatementWater' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'cobol::dataitems::Value' has no attributes.
+The class 'cobol::environments::SystemLogicalOutput' has the following attributes: 'value' of type str.
+The class 'ElementReference' has no attributes.
+The class 'cobol::water::InvokeStatementWater' has no attributes.
+The class 'cobol::sections::DataDivisionSection' has no attributes.
+The class 'water::IncompleteElement' has no attributes.
+The class 'cobol::sections::ConfigurationSection' has no attributes.
+The class 'cobol::commons::LabellableElement' has the following attributes: 'label' of type str.
+The class 'containers::CobolRoot' has no attributes.
+The class 'DataDivisionSection' has no attributes.
+The class 'divisions::Division' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'cobol::references::IdentifierReferenceQualifier' has no attributes.
+The class 'cobol::arithmetics::RangeExpression' has no attributes.
+The class 'CompilationUnit' has no attributes.
+The class 'Reference' has no attributes.
+The class 'cobol::water::RepositoryParagraphWater' has no attributes.
+The class 'cobol::conditions::NegatedConditionalExpression' has no attributes.
+The class 'water::SpecialNamesParagraphWater' has no attributes.
+The class 'Sentence' has no attributes.
+The class 'cobol::water::OpenStatementToken' has the following attributes: 'value' of type str.
+The class 'cobol::commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'cobol::statements::ArithmeticStatement' has the following attributes: 'corresponding' of type str.
+The class 'cobol::registers::AddressOf' has no attributes.
+The class 'references::ElementReference' has no attributes.
+The class 'cobol::arithmetics::PowerArithmeticExpression' has no attributes.
+The class 'cobol::containers::CompilationUnit' has no attributes.
+The class 'cobol::paragraphs::SpecialNamesParagraph' has no attributes.
+The class 'cobol::water::CloseStatementToken' has the following attributes: 'value' of type str.
+The class 'cobol::dataitems::DataItem' has the following attributes: 'levelNumber' of type str.
+The class 'Through' has no attributes.
+The class 'cobol::water::ObjectComputerDescription' has the following attributes: 'value' of type str.
+The class 'cobol::operators::GTPhrase' has no attributes.
+The class 'cobol::ios::IODirectives' has no attributes.
+The class 'cobol::paragraphs::ConfigurationSectionParagraph' has no attributes.
+The class 'cobol::statements::Start' has no attributes.
+The class 'PowerArithmeticExpressionChild' has no attributes.
+The class 'identifiers::IdentifierReference' has no attributes.
+The class 'PrimaryExpression' has no attributes.
+The class 'cobol::sections::EnvironmentDivisionSection' has no attributes.
+The class 'cobol::conditions::RelationalExpression' has no attributes.
+The class 'cobol::arithmetics::NestedArithmeticExpression' has no attributes.
+The class 'cobol::references::IndexNameReference' has no attributes.
+The class 'cobol::water::IOControlDescription' has the following attributes: 'value' of type str.
+The class 'Equal' has no attributes.
+The class 'ObjectComputerParagraphWater' has no attributes.
+The class 'cobol::paragraphs::DebuggingMode' has no attributes.
+The class 'cobol::conditions::ConditionalAndExpression' has no attributes.
+The class 'cobol::sections::WorkingStorageSection' has no attributes.
+The class 'Subscript' has no attributes.
+The class 'SpecialNameStatement' has no attributes.
+The class 'cobol::environments::AdvancedFunctionPrinting' has no attributes.
+The class 'SystemDevice' has no attributes.
+The class 'InvokeStatementWater' has no attributes.
+The class 'cobol::conditions::NegatedAbbreviatedConditionalExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'water::SelectStatementWater' has no attributes.
+The class 'water::CICSStatementWater' has no attributes.
+The class 'AdditiveOperator' has no attributes.
+The class 'ConditionalOrExpressionChild' has no attributes.
+The class 'cobol::references::ReferenceableElement' has no attributes.
+The class 'AcceptStatementWater' has no attributes.
+The class 'cobol::sentences::StatementContainer' has no attributes.
+The class 'cobol::conditions::ClassCondition' has no attributes.
+The class 'Declaratives' has no attributes.
+The class 'cobol::water::PriorityNumber' has the following attributes: 'value' of type str.
+The class 'UnaryArithmeticExpressionChild' has no attributes.
+The class 'EnvironmentDivisionSection' has no attributes.
+The class 'cobol::ios::OutputProcedure' has no attributes.
+The class 'cobol::references::ElementReference' has no attributes.
+The class 'cobol::dataitems::ConditionName' has no attributes.
+The class 'Label' has no attributes.
+The class 'cobol::water::ProgramDescription' has the following attributes: 'value' of type str.
+The class 'SpecialNamesParagraphWater' has no attributes.
+The class 'cobol::water::InvokeStatementToken' has the following attributes: 'value' of type str.
+The class 'cobol::environments::Channel' has the following attributes: 'value' of type str.
+The class 'cobol::water::AcceptStatementWater' has no attributes.
+The class 'ReferenceModifier' has no attributes.
+The class 'operands::ArithmeticOperand' has no attributes.
+The class 'RangeExpressionChild' has no attributes.
+The class 'water::DataDescriptorWater' has no attributes.
+The class 'DataItemAttribute' has no attributes.
+The class 'statements::ErrorHandled' has no attributes.
+The class 'cobol::registers::ReturnCode' has no attributes.
+The class 'cobol::sentences::EmptySentence' has no attributes.
+The class 'cobol::water::SpecialNamesClause' has the following attributes: 'value' of type str.
+The class 'Water' has no attributes.
+The class 'cobol::water::SQLStatementToken' has the following attributes: 'value' of type str.
+The class 'cobol::sections::LocalStorageSection' has no attributes.
+The class 'cobol::arithmetics::AssignmentExpression' has no attributes.
+The class 'conditions::SimpleConditionChild' has no attributes.
+The class 'cobol::references::MnemonicNameReference' has no attributes.
+The class 'FileDescriptorWater' has no attributes.
+The class 'cobol::water::AcceptStatementToken' has the following attributes: 'value' of type str.
+The class 'operands::PrimaryOperand' has no attributes.
+The class 'cobol::ios::OutputDirective' has no attributes.
+The class 'cobol::water::IncompleteElement' has no attributes.
+The class 'RepositoryParagraphWater' has no attributes.
+The class 'cobol::identifiers::ReferenceModifier' has no attributes.
+The class 'cobol::conditions::NegatedConditionalExpressionChild' has no attributes.
+The class 'cobol::water::SpecialNamesParagraphWater' has no attributes.
+The class 'IdentificationDivisionWater' has no attributes.
+The class 'operands::Operand' has no attributes.
+The class 'cobol::sections::IOSection' has no attributes.
+The class 'LogicalOperator' has no attributes.
+The class 'IdentifierReference' has no attributes.
+The class 'cobol::water::DataDescriptorWater' has no attributes.
+The class 'cobol::statements::Delete' has no attributes.
+The class 'cobol::dataitems::PictureString' has the following attributes: 'picture' of type str.
+The class 'cobol::identifiers::IdentifierReference' has no attributes.
+The class 'LessThanOrEqual' has no attributes.
+The class 'cobol::water::Dot' has no attributes.
+The class 'OpenStatementWater' has no attributes.
+The class 'AbbreviatedConditionalExpressionChild' has no attributes.
+The class 'cobol::operators::LTEQPhrase' has no attributes.
+The class 'cobol::water::Water' has no attributes.
+The class 'commons::NamedElement' has no attributes.
+The class 'cobol::references::SpecialNamesConditionNameReference' has no attributes.
+The class 'cobol::water::SQLStatementWater' has no attributes.
+The class 'cobol::arithmetics::UnaryArithmeticExpressionChild' has no attributes.
+The class 'cobol::water::SortPhraseToken' has the following attributes: 'value' of type str.
+The class 'references::ConditionName' has no attributes.
+The class 'cobol::water::FileDescriptorWater' has no attributes.
+The class 'cobol::sentences::ExitProcedure' has no attributes.
+The class 'cobol::sentences::ExecuteSentence' has no attributes.
+The class 'IODirectives' has no attributes.
+The class 'cobol::water::CICSStatementToken' has the following attributes: 'value' of type str.
+The class 'cobol::sections::LinkageStorageSection' has no attributes.
+The class 'MultiplicativeOperator' has no attributes.
+The class 'cobol::references::ConditionName' has no attributes.
+The class 'cobol::registers::WhenCompiled' has no attributes.
+The class 'ArithmeticOperand' has no attributes.
+The class 'cobol::conditions::SimpleConditionChild' has no attributes.
+The class 'cobol::registers::Register' has no attributes.
+The class 'cobol::arithmetics::PowerArithmeticExpressionChild' has no attributes.
+The class 'cobol::sections::Section' has the following attributes: 'segmentNumber' of type str.
+The class 'cobol::conditions::ConditionalAndExpressionChild' has no attributes.
+The class 'cobol::references::Reference' has no attributes.
+The class 'Qualifier' has no attributes.
+The class 'cobol::identifiers::RelativeSubscript' has no attributes.
+The class 'cobol::dataitems::External' has no attributes.
+The class 'AdditiveArithmeticExpressionChild' has no attributes.
+The class 'cobol::divisions::ProcedureDivision' has no attributes.
+The class 'cobol::conditions::NestedCondition' has no attributes.
+The class 'Commentable' has no attributes.
+The class 'cobol::operands::PrimaryOperand' has no attributes.
+The class 'ClassOperator' has no attributes.
+The class 'cobol::dataitems::GroupUsage' has no attributes.
+The class 'conditions::AbbreviatedRelationalExpressionChild' has no attributes.
+The class 'cobol::sentences::AlteredGoTo' has no attributes.
+The class 'IOControlParagraphWater' has no attributes.
+The class 'AbbreviatedRelationalExpressionChild' has no attributes.
+The class 'cobol::paragraphs::RepositoryParagraph' has no attributes.
+The class 'cobol::water::CloseStatementWater' has no attributes.
+The class 'cobol::water::UseStatementToken' has the following attributes: 'value' of type str.
+The class 'VaryingUntilCondition' has no attributes.
+The class 'cobol::environments::Pocket' has the following attributes: 'value' of type str.
+The class 'cobol::identifiers::DirectSubscript' has no attributes.
+The class 'IdentificationDivision' has no attributes.
+The class 'cobol::identifiers::LinageCounter' has no attributes.
+The class 'cobol::environments::UPSI' has the following attributes: 'value' of type str.
+The class 'GreaterThan' has no attributes.
+The class 'cobol::registers::ShiftIn' has no attributes.
+The class 'operands::ReplacementOperand' has no attributes.
+The class 'NegatedAbbreviatedConditionalExpressionChild' has no attributes.
+The class 'cobol::ios::InputDirective' has no attributes.
+The class 'cobol::operators::GreaterThan' has the following attributes: 'than' of type bool.
+The class 'cobol::statements::EvaluateCase' has no attributes.
+The class 'IncompleteElement' has no attributes.
+The class 'cobol::tables::IndexName' has no attributes.
+The class 'cobol::literals::PseudoLiteral' has the following attributes: 'value' of type str.
+The class 'cobol::statements::GoBack' has no attributes.
+The class 'cobol::specialnames::UPSISwitchIs' has no attributes.
+The class 'statements::Conditional' has no attributes.
+The class 'cobol::operators::ConditionAnd' has no attributes.
+The class 'water::ObjectComputerParagraphWater' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'ManipulatedStrings' has no attributes.
+The class 'cobol::literals::Null' has the following attributes: 'value' of type str.
+The class 'cobol::handlers::OnOverflow' has no attributes.
+The class 'cobol::dataitems::RecordName' has no attributes.
+The class 'AssignmentExpression' has no attributes.
+The class 'cobol::literals::NumericLiteral' has no attributes.
+The class 'cobol::operands::ReplacementOperand' has no attributes.
+The class 'cobol::operators::Multiplication' has no attributes.
+The class 'cobol::statements::Initialize' has no attributes.
+The class 'cobol::literals::Zero' has the following attributes: 'value' of type str.
+The class 'cobol::statements::IOFileDescriptor' has the following attributes: 'type' of type str.
+The class 'cobol::strings::SpecificCharacterBySpecificCharacter' has no attributes.
+The class 'water::IdentificationDivisionWater' has no attributes.
+The class 'cobol::specialnames::AlphabetType' has no attributes.
+The class 'cobol::handlers::InvalidKey' has no attributes.
+The class 'StatementContainer' has no attributes.
+The class 'cobol::functions::FunctionCall' has no attributes.
+The class 'cobol::statements::PerformNestedStatementFixedTimes' has no attributes.
+The class 'cobol::operators::ClassName' has no attributes.
+The class 'cobol::statements::Move' has the following attributes: 'corresponding' of type str.
+The class 'cobol::operators::Subtraction' has no attributes.
+The class 'cobol::statements::SwitchStatus' has the following attributes: 'status' of type str.
+The class 'cobol::labels::Run' has no attributes.
+The class 'IOSectionParagraph' has no attributes.
+The class 'NestedStatement' has no attributes.
+The class 'cobol::statements::SetStatement' has no attributes.
+The class 'cobol::strings::SpecificCharacter' has no attributes.
+The class 'cobol::operators::ConditionOr' has no attributes.
+The class 'cobol::statements::Conditional' has no attributes.
+The class 'cobol::handlers::NotOnSizeError' has no attributes.
+The class 'cobol::statements::Set' has no attributes.
+The class 'cobol::statements::Rewrite' has no attributes.
+The class 'Handler' has no attributes.
+The class 'SetStatement' has no attributes.
+The class 'cobol::functions::Argumentable' has no attributes.
+The class 'Paragraph' has no attributes.
+The class 'cobol::functions::OmittedArgument' has no attributes.
+The class 'cobol::literals::Characters' has no attributes.
+The class 'cobol::statements::Release' has no attributes.
+The class 'PrimaryOperand' has no attributes.
+The class 'cobol::statements::String' has no attributes.
+The class 'cobol::statements::SetIndexName' has the following attributes: 'adjust' of type str.
+The class 'cobol::labels::ProcedureRangeLabel' has no attributes.
+The class 'cobol::statements::Continue' has no attributes.
+The class 'cobol::operators::Negative' has no attributes.
+The class 'cobol::statements::Compute' has no attributes.
+The class 'Section' has no attributes.
+The class 'cobol::statements::Unstring' has no attributes.
+The class 'cobol::paragraphs::SourceComputerParagraph' has no attributes.
+The class 'cobol::operators::GTSign' has no attributes.
+The class 'cobol::strings::AnyCharacter' has no attributes.
+The class 'labels::StopLabel' has no attributes.
+The class 'cobol::identifiers::Subscript' has no attributes.
+The class 'cobol::operands::ArithmeticOperand' has no attributes.
+The class 'cobol::divisions::Division' has no attributes.
+The class 'cobol::operators::LTSign' has no attributes.
+The class 'Operand' has no attributes.
+The class 'cobol::paragraphs::IOControlParagraph' has no attributes.
+The class 'cobol::operators::GreaterThanOrEqual' has the following attributes: 'to' of type bool; 'than' of type bool.
+The class 'cobol::statements::Entry' has no attributes.
+The class 'DeclarativeSection' has no attributes.
+The class 'cobol::literals::DBCSLiteral' has no attributes.
+The class 'cobol::operators::Kanji' has no attributes.
+The class 'TableDimension' has no attributes.
+The class 'cobol::strings::StringManipulation' has no attributes.
+The class 'Operator' has no attributes.
+The class 'StopLabel' has no attributes.
+The class 'cobol::literals::IntegerLiteral' has the following attributes: 'value' of type float.
+The class 'cobol::operators::LTPhrase' has no attributes.
+The class 'cobol::literals::NationalHexLiteral' has the following attributes: 'value' of type float.
+The class 'cobol::statements::Jump' has no attributes.
+The class 'Replacement' has no attributes.
+The class 'cobol::statements::VaryingUntilCondition' has no attributes.
+The class 'cobol::strings::Location' has the following attributes: 'initial' of type bool; 'position' of type str.
+The class 'cobol::tables::TableDimension' has the following attributes: 'value' of type int.
+The class 'cobol::declaratives::Declaratives' has no attributes.
+The class 'cobol::paragraphs::Paragraph' has no attributes.
+The class 'cobol::statements::Read' has no attributes.
+The class 'labels::Procedure' has no attributes.
+The class 'SwitchStatus' has no attributes.
+The class 'LessThan' has no attributes.
+The class 'cobol::statements::Open' has no attributes.
+The class 'cobol::divisions::EnvironmentDivision' has no attributes.
+The class 'water::IOControlParagraphWater' has no attributes.
+The class 'cobol::statements::PerformUntilCondition' has the following attributes: 'position' of type str.
+The class 'cobol::operators::LessThanOrEqual' has the following attributes: 'than' of type bool; 'to' of type bool.
+The class 'NormalEvaluateCase' has no attributes.
+The class 'cobol::handlers::NotAtEndOfPage' has no attributes.
+The class 'cobol::statements::PerformFixedTimes' has no attributes.
+The class 'paragraphs::IOSectionParagraph' has no attributes.
+The class 'IndexNameReference' has no attributes.
+The class 'cobol::parameters::ByValueParameter' has no attributes.
+The class 'cobol::literals::AlphanumericLiteral' has the following attributes: 'value' of type str.
+The class 'operators::AdditiveOperator' has no attributes.
+The class 'Literal' has no attributes.
+The class 'cobol::statements::Evaluate' has no attributes.
+The class 'cobol::literals::Space' has the following attributes: 'value' of type str.
+The class 'cobol::files::SelectStatement' has the following attributes: 'isOptional' of type bool; 'externalFileNames' of type str.
+The class 'strings::Replacement' has no attributes.
+The class 'statements::IOStatement' has no attributes.
+The class 'cobol::statements::FileIOStatement' has no attributes.
+The class 'cobol::tables::KeyName' has the following attributes: 'keyOrder' of type str.
+The class 'cobol::operands::Encoding' has the following attributes: 'type' of type str.
+The class 'Division' has no attributes.
+The class 'cobol::handlers::NotInvalidKey' has no attributes.
+The class 'cobol::operators::MultiplicativeOperator' has no attributes.
+The class 'cobol::handlers::NotErrorHandler' has no attributes.
+The class 'cobol::statements::Cancel' has no attributes.
+The class 'cobol::strings::String' has no attributes.
+The class 'cobol::operators::DBCS' has no attributes.
+The class 'cobol::functions::Argument' has no attributes.
+The class 'SplittedString' has no attributes.
+The class 'cobol::statements::Return' has no attributes.
+The class 'cobol::literals::Quote' has the following attributes: 'value' of type str.
+The class 'statements::PerformFixedTimes' has no attributes.
+The class 'cobol::operators::AlphabeticUpper' has no attributes.
+The class 'statements::PerformNestedStatement' has no attributes.
+The class 'cobol::identifiers::Identifier' has no attributes.
+The class 'Environment' has no attributes.
+The class 'cobol::dataitems::DataName' has no attributes.
+The class 'cobol::handlers::OnSizeError' has no attributes.
+The class 'SymbolicCharacter' has no attributes.
+The class 'cobol::strings::AnyCharacterBySpecificCharacter' has no attributes.
+The class 'cobol::statements::BinarySearch' has no attributes.
+The class 'cobol::operators::Negate' has no attributes.
+The class 'ArithmeticStatement' has no attributes.
+The class 'AlphanumericLiteral' has no attributes.
+The class 'Jump' has no attributes.
+The class 'cobol::dataitems::Redefines' has no attributes.
+The class 'cobol::operators::Alphabetic' has no attributes.
+The class 'cobol::statements::IOStatement' has no attributes.
+The class 'cobol::statements::SerialSearch' has no attributes.
+The class 'cobol::strings::Replacement' has no attributes.
+The class 'cobol::statements::NextSentence' has no attributes.
+The class 'IndexName' has no attributes.
+The class 'FileStatus' has no attributes.
+The class 'cobol::statements::Divide' has no attributes.
+The class 'cobol::parameters::Parameter' has no attributes.
+The class 'cobol::statements::Accept' has no attributes.
+The class 'cobol::strings::SplittedString' has no attributes.
+The class 'cobol::operands::Operand' has no attributes.
+The class 'StringManipulation' has no attributes.
+The class 'cobol::files::FileName' has the following attributes: 'fileDescriptor' of type str.
+The class 'cobol::functions::ByValueArgument' has no attributes.
+The class 'cobol::operators::Numeric' has no attributes.
+The class 'cobol::labels::StopLabel' has no attributes.
+The class 'cobol::statements::ErrorHandled' has no attributes.
+The class 'paragraphs::ConfigurationSectionParagraph' has no attributes.
+The class 'cobol::statements::PerformNestedStatement' has no attributes.
+The class 'cobol::literals::FigurativeConstantLiteral' has no attributes.
+The class 'cobol::labels::ProcedureLabel' has no attributes.
+The class 'DecimalLiteral' has no attributes.
+The class 'cobol::statements::PerformProcedureFixedTimes' has no attributes.
+The class 'NotErrorHandler' has no attributes.
+The class 'cobol::verbs::Verb' has no attributes.
+The class 'cobol::specialnames::ConditionName' has no attributes.
+The class 'cobol::parameters::ByReferenceParameter' has no attributes.
+The class 'AlphabetNameReference' has no attributes.
+The class 'Conditional' has no attributes.
+The class 'statements::FileIOStatement' has no attributes.
+The class 'cobol::specialnames::CurrencySign' has the following attributes: 'pictureSymbol' of type str.
+The class 'cobol::handlers::OnException' has no attributes.
+The class 'IOFile' has no attributes.
+The class 'cobol::statements::NestedStatement' has no attributes.
+The class 'water::FileDescriptorWater' has no attributes.
+The class 'statements::Perform' has no attributes.
+The class 'AlphabetType' has no attributes.
+The class 'cobol::labels::Label' has no attributes.
+The class 'cobol::statements::Perform' has no attributes.
+The class 'cobol::parameters::Parametrizable' has no attributes.
+The class 'statements::NestedStatement' has no attributes.
+The class 'cobol::functions::ByReferenceArgument' has no attributes.
+The class 'cobol::specialnames::SpecialNameStatement' has no attributes.
+The class 'Location' has no attributes.
+The class 'cobol::statements::Condition' has no attributes.
+The class 'cobol::handlers::NotAtEnd' has no attributes.
+The class 'cobol::literals::FloatingDecimalLiteral' has no attributes.
+The class 'SelectStatement' has no attributes.
+The class 'AfterUntilCondition' has no attributes.
+The class 'cobol::strings::ConcatenatingStrings' has no attributes.
+The class 'cobol::files::FileStatus' has no attributes.
+The class 'cobol::operators::Operator' has no attributes.
+The class 'cobol::statements::Write' has no attributes.
+The class 'water::RepositoryParagraphWater' has no attributes.
+The class 'statements::PerformProcedure' has no attributes.
+The class 'cobol::labels::ProcedureRange' has no attributes.
+The class 'cobol::operators::Through' has the following attributes: 'value' of type str.
+The class 'ExpressionList' has no attributes.
+The class 'cobol::statements::Exit' has the following attributes: 'exitLabel' of type str.
+The class 'water::SQLStatementWater' has no attributes.
+The class 'ConstantLiteral' has no attributes.
+The class 'cobol::handlers::NotOnOverflow' has no attributes.
+The class 'KeyDescriptor' has no attributes.
+The class 'literals::NumericLiteral' has no attributes.
+The class 'String' has no attributes.
+The class 'cobol::operators::GTEQSign' has no attributes.
+The class 'cobol::statements::Close' has no attributes.
+The class 'cobol::tables::AdditionalIndexName' has no attributes.
+The class 'Perform' has no attributes.
+The class 'Argument' has no attributes.
+The class 'cobol::literals::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'statements::PerformUntilCondition' has no attributes.
+The class 'cobol::literals::FixedDecimalLiteral' has no attributes.
+The class 'cobol::statements::KeyDescriptor' has the following attributes: 'order' of type str.
+The class 'strings::Tallying' has no attributes.
+The class 'cobol::statements::Subtract' has no attributes.
+The class 'cobol::specialnames::CodeNameAlphabetType' has the following attributes: 'value' of type str.
+The class 'cobol::functions::ByContentArgument' has no attributes.
+The class 'MnemonicNameReference' has no attributes.
+The class 'cobol::specialnames::PredefinedAlphabetType' has the following attributes: 'value' of type str.
+The class 'Verb' has no attributes.
+The class 'cobol::statements::SearchStatement' has no attributes.
+The class 'FileNameReference' has no attributes.
+The class 'cobol::handlers::Handler' has no attributes.
+The class 'cobol::statements::GoTo' has no attributes.
+The class 'cobol::labels::Procedure' has no attributes.
+The class 'Write' has no attributes.
+The class 'cobol::strings::TallyingOccurrence' has no attributes.
+The class 'cobol::operators::GTEQPhrase' has no attributes.
+The class 'cobol::statements::Sort' has no attributes.
+The class 'cobol::literals::ConstantLiteral' has no attributes.
+The class 'IOFileDescriptor' has no attributes.
+The class 'cobol::statements::PerformProcedure' has no attributes.
+The class 'KeyName' has no attributes.
+The class 'cobol::operators::Positive' has no attributes.
+The class 'cobol::literals::AllLiteral' has no attributes.
+The class 'TallyingIn' has no attributes.
+The class 'cobol::specialnames::SymbolicCharacter' has no attributes.
+The class 'cobol::operators::AdditiveOperator' has no attributes.
+The class 'cobol::statements::PerformNestedStatementUntilCondition' has no attributes.
+The class 'specialnames::SpecialName' has no attributes.
+The class 'cobol::operators::Power' has no attributes.
+The class 'cobol::statements::SetSwitches' has no attributes.
+The class 'Tallying' has no attributes.
+The class 'cobol::literals::AlphanumericHexaDecimalLiteral' has no attributes.
+The class 'cobol::statements::Statement' has the following attributes: 'endVerb' of type bool.
+The class 'cobol::specialnames::SpecialName' has no attributes.
+The class 'statements::VaryingUntilCondition' has no attributes.
+The class 'cobol::statements::OtherEvaluateCase' has no attributes.
+The class 'EvaluateCase' has no attributes.
+The class 'strings::Occurrence' has no attributes.
+The class 'cobol::handlers::AtEnd' has no attributes.
+The class 'cobol::operators::RelationalOperator' has no attributes.
+The class 'AdditionalIndexName' has no attributes.
+The class 'cobol::paragraphs::FileControlParagraph' has no attributes.
+The class 'cobol::literals::Any' has no attributes.
+The class 'InputDirective' has no attributes.
+The class 'cobol::specialnames::OnStatus' has no attributes.
+The class 'cobol::operators::Division' has no attributes.
+The class 'cobol::statements::Display' has no attributes.
+The class 'cobol::statements::PerformProcedureUntilCondition' has no attributes.
+The class 'functions::Argumentable' has no attributes.
+The class 'cobol::operators::SignOperator' has no attributes.
+The class 'cobol::handlers::NotOnException' has no attributes.
+The class 'cobol::verbs::Is' has no attributes.
+The class 'cobol::strings::ReplacementOccurrence' has no attributes.
+The class 'DBCSLiteral' has no attributes.
+The class 'cobol::specialnames::ClassName' has no attributes.
+The class 'cobol::strings::Tallying' has no attributes.
+The class 'cobol::specialnames::MnemonicName' has no attributes.
+The class 'cobol::operators::LogicalOperator' has no attributes.
+The class 'Procedure' has no attributes.
+The class 'cobol::statements::NormalEvaluateCase' has no attributes.
+The class 'cobol::handlers::AtEndOfPage' has the following attributes: 'eop' of type str.
+The class 'cobol::statements::Multiply' has no attributes.
+The class 'cobol::operators::ClassOperator' has no attributes.
+The class 'cobol::operators::Equal' has the following attributes: 'to' of type bool.
+The class 'cobol::specialnames::SystemDeviceIs' has no attributes.
+The class 'cobol::labels::ProcedureRangeChild' has no attributes.
+The class 'ConcatenatingStrings' has no attributes.
+The class 'cobol::statements::Call' has no attributes.
+The class 'OutputDirective' has no attributes.
+The class 'cobol::statements::Add' has no attributes.
+The class 'cobol::specialnames::AlphabetName' has no attributes.
+The class 'FigurativeConstantLiteral' has no attributes.
+The class 'cobol::statements::Merge' has no attributes.
+The class 'cobol::specialnames::OffStatus' has no attributes.
+The class 'specialnames::SpecialNameStatement' has no attributes.
+The class 'cobol::strings::ManipulatedStrings' has no attributes.
+The class 'ConditionName' has no attributes.
+The class 'cobol::divisions::DataDivision' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'SpecialName' has no attributes.
+The class 'cobol::literals::LowValue' has the following attributes: 'value' of type str.
+The class 'cobol::operators::EqualSign' has no attributes.
+The class 'cobol::operators::AlphabeticLower' has no attributes.
+The class 'ProcedureRangeChild' has no attributes.
+The class 'GreaterThanOrEqual' has no attributes.
+The class 'cobol::operators::LessThan' has the following attributes: 'than' of type bool.
+The class 'SearchStatement' has no attributes.
+The class 'DebuggingMode' has no attributes.
+The class 'cobol::paragraphs::ObjectComputerParagraph' has no attributes.
+The class 'cobol::strings::Occurrence' has the following attributes: 'type' of type str.
+The class 'specialnames::MnemonicName' has no attributes.
+The class 'cobol::statements::Execute' has the following attributes: 'water' of type str.
+The class 'cobol::operators::Zero' has no attributes.
+The class 'cobol::operators::Addition' has no attributes.
+The class 'cobol::statements::IOFile' has no attributes.
+The class 'IntegerLiteral' has no attributes.
+The class 'cobol::literals::DecimalLiteral' has the following attributes: 'value' of type str.
+The class 'NumericLiteral' has no attributes.
+The class 'cobol::specialnames::SymbolicCharacterStatement' has no attributes.
+The class 'cobol::statements::Stop' has no attributes.
+The class 'cobol::literals::NationalLiteral' has the following attributes: 'value' of type str.
+The class 'ReplacementOperand' has no attributes.
+The class 'cobol::statements::TallyingIn' has no attributes.
+The class 'cobol::statements::Inspect' has no attributes.
+The class 'cobol::tables::Table' has no attributes.
+The class 'operators::UnaryOperator' has no attributes.
+The class 'dataitems::DataItem' has no attributes.
+The class 'cobol::statements::Replace' has the following attributes: 'replaceSwitch' of type bool.
+The class 'ConfigurationSectionParagraph' has no attributes.
+The class 'cobol::specialnames::ExplicitAlphabetType' has no attributes.
+The class 'ProcedureRangeLabel' has no attributes.
+The class 'water::AcceptStatementWater' has no attributes.
+The class 'cobol::operators::UnaryOperator' has no attributes.
+The class 'cobol::literals::HighValue' has the following attributes: 'value' of type str.
+The class 'cobol::operators::EqualPhrase' has no attributes.
+The enumeration 'SelectStatementClauses' has the following literals: 'indexed', 'sequential', 'random', 'mode', 'with_', 'areas', 'relative', 'area', 'padding', 'organization', 'record', 'delimiter', 'alternate', 'reserve', 'key', 'standard1', 'duplicates', 'access', 'is_', 'character', 'dynamic'.
+The enumeration 'ProgramDescriptionInfo' has the following literals: 'author', 'dateCompleted', 'dateWritten', 'security', 'installation'.
+The enumeration 'Occurrences' has the following literals: 'leading', 'all', 'first'.
+The enumeration 'LowValues' has the following literals: 'lowValues', 'lowValue'.
+The enumeration 'Positions' has the following literals: 'before', 'after'.
+The enumeration 'Orders' has the following literals: 'dsc', 'asc'.
+The enumeration 'IOTypes' has the following literals: 'input', 'output', 'extend', 'io'.
+The enumeration 'FileDescriptors' has the following literals: 'fd', 'sd'.
+The enumeration 'SpecialNamesClauses' has the following literals: 'comma', 'is_', 'xmlSchema', 'decimalPoint'.
+The enumeration 'ObjectComputerDescriptionInfo' has the following literals: 'modules', 'program', 'segmentLimit', 'memory', 'words', 'collating', 'characters', 'size', 'segment', 'sequence'.
+The enumeration 'FileDescriptionInfo' has the following literals: 'to', 'records', 'label', 'report', 'from_', 'standard', 'block', 'recording', 'omitted', 'on', 'u', 'value', 'mode', 'reports', 'with_', 'contains', 'top', 'v', 'data', 'linage', 'identification', 'varying', 'in_', 'depending', 'record', 'codeSet', 'is_', 'bottom', 'at', 'characters', 'footing', 'id', 'are', 's', 'lines', 'size', 'of', 'f'.
+The enumeration 'UPSISwitches' has the following literals: 'upsi5', 'upsi1', 'upsi0', 'upsi7', 'upsi4', 'upsi2', 'upsi6', 'upsi3'.
+The enumeration 'Usages' has the following literals: 'computational3', 'display1', 'index', 'display', 'comp', 'procedurePointer', 'national', 'computational1', 'packedDecimal', 'comp2', 'comp5', 'functionPointer', 'pointer', 'binary', 'comp1', 'comp4', 'comp3', 'computational', 'computational5', 'computational2', 'computational4'.
+The enumeration 'Corresponding' has the following literals: 'corresponding', 'corr'.
+The enumeration 'SystemPunchDevices' has the following literals: 'syspch', 'syspunch'.
+The enumeration 'Nulls' has the following literals: 'nulls', 'null'.
+The enumeration 'Quotes' has the following literals: 'quotes', 'quote'.
+The enumeration 'PredefinedAlphabetTypes' has the following literals: 'native', 'ebcdic', 'standard2', 'standard1'.
+The enumeration 'SystemOutputs' has the following literals: 'syslst', 'syslist', 'sysout'.
+The enumeration 'PictureStringCharacters' has the following literals: 'exponent', 'decimalPoint', 'comma', 'slash', 'leadingZero', 'blank', 'alphabetic', 'assumedDecimalPoint', 'asterik', 'escape', 'negative', 'debit', 'sign', 'numeric', 'zero', 'period', 'dollar', 'any', 'national', 'plus', 'credit'.
+The enumeration 'SortingOrder' has the following literals: 'dsc', 'asc'.
+The enumeration 'SystemInputs' has the following literals: 'sysin', 'sysipt'.
+The enumeration 'Channels' has the following literals: 'c9', 'c1', 'c5', 'c3', 'c7', 'c11', 'c8', 'c2', 'c12', 'c10', 'c4', 'c6'.
+The enumeration 'Zeroes' has the following literals: 'zeros', 'zeroes', 'zero'.
+The enumeration 'Properties' has the following literals: 'initial', 'recursive', 'common'.
+The enumeration 'AcceptStatementTokens' has the following literals: 'time', 'day', 'dateformat1', 'dateformat2', 'dow', 'from_', 'date'.
+The enumeration 'Spaces' has the following literals: 'space', 'spaces'.
+The enumeration 'CloseStatementTokens' has the following literals: 'rewind', 'reel', 'removal', 'no', 'lock', 'unit', 'for_', 'with_'.
+The enumeration 'EncodingTypes' has the following literals: 'nationalEdited', 'egcs', 'alphabetic', 'alphanumericEdited', 'alphanumeric', 'dbcs', 'national', 'numeric', 'numericEdited'.
+The enumeration 'Adjustings' has the following literals: 'down', 'up'.
+The enumeration 'OpenStatementTokens' has the following literals: 'no', 'rewind', 'with_', 'reversed'.
+The enumeration 'UseStatementTokens' has the following literals: 'all', 'after', 'reel', 'error', 'standard', 'ending', 'io', 'extend', 'for_', 'debugging', 'beginning', 'input', 'on', 'unit', 'label', 'output', 'global_', 'file', 'procedure', 'procedures', 'exception'.
+The enumeration 'HighValues' has the following literals: 'highValues', 'highValue'.
+The enumeration 'EOP' has the following literals: 'eop', 'endOfPage'.
+The enumeration 'Selects' has the following literals: 's3', 's4', 's1', 's2', 's5'.
+The enumeration 'Status' has the following literals: 'on', 'off'.
+The enumeration 'DataDescriptionInfo' has the following literals: 'leading', 'just', 'justified', 'zeros', 'synchronized', 'sign', 'right', 'sync', 'zero', 'when', 'is_', 'character', 'blank', 'zeroes', 'trailing', 'left', 'separate', 'date', 'format'.
+The enumeration 'RepositoryDescriptionInfo' has the following literals: 'is_', 'class_'.
+The enumeration 'InvokeStatementTokens' has the following literals: 'using', 'super', 'new', 'by', 'returning', 'self', 'value', 'length', 'of'.
+The enumeration 'IOControlDescriptionInfo' has the following literals: 'unit', 'area', 'contains', 'file', 'for_', 'apply', 'record', 'tape', 'rerun', 'of', 'sortMerge', 'position', 'every', 'on', 'records', 'multiple', 'same', 'writeOnly', 'sort', 'reel'.
+The enumeration 'ThroughPhrase' has the following literals: 'thru', 'through'.
+The enumeration 'ExitLabels' has the following literals: 'program', 'paragraph', 'method'.
+The enumeration 'SQLStatementTokens' has the following literals: 'declare', 'from_', 'select', 'delete', 'include', 'insert', 'into', 'update'.
+The enumeration 'CICSStatementTokens' has the following literals: 'load', 'qname', 'closepar', 'into', 'massinsert', 'rba', 'dataset', 'synconreturn', 'keylength', 'rewrite', 'queue', 'xrba', 'update', 'ridfld', 'equal', 'xctl', 'commarea', 'write', 'from_', 'item', 'sysid', 'start', 'length', 'main', 'gteq', 'ts', 'datalength', 'channel', 'td', 'file', 'next', 'sys', 'set', 'transid', 'rrn', 'inputmsglen', 'uncommitted', 'repeatable', 'read', 'writeq', 'deleteq', 'generic', 'consistent', 'openpar', 'numitems', 'program', 'inputmsg', 'tr', 'nosuspend', 'auxiliary', 'token'.
+The enumeration 'SortPhraseTokens' has the following literals: 'sequence', 'in_', 'is_', 'collating', 'with_', 'duplicates', 'order'.
+'cobol::environments::SystemDevice' is a specialization of 'Environment'.
+'cobol::statements::Evaluate' is a specialization of 'Statement'.
+'cobol::identifiers::Identifier' is a specialization of 'water::UseStatementWater'.
+'cobol::water::SQLStatementToken' is a specialization of 'SQLStatementWater'.
+'cobol::statements::SetSwitches' is a specialization of 'SetStatement'.
+'cobol::statements::PerformNestedStatementUntilCondition' is a specialization of 'statements::PerformUntilCondition'.
+'cobol::arithmetics::ArithmeticExpression' is a specialization of 'conditions::SimpleConditionChild'.
+'cobol::water::RepositoryDescription' is a specialization of 'RepositoryParagraphWater'.
+'cobol::water::OpenStatementWater' is a specialization of 'Water'.
+'cobol::water::UseStatementToken' is a specialization of 'UseStatementWater'.
+'cobol::registers::WhenCompiled' is a specialization of 'Register'.
+'cobol::water::CloseStatementWater' is a specialization of 'Water'.
+'cobol::water::UseStatementWater' is a specialization of 'Water'.
+'cobol::statements::PerformNestedStatementFixedTimes' is a specialization of 'statements::PerformFixedTimes'.
+'cobol::literals::Null' is a specialization of 'ConstantLiteral'.
+'cobol::statements::String' is a specialization of 'statements::Statement'.
+'cobol::arithmetics::PowerArithmeticExpressionChild' is a specialization of 'MultiplicativeArithmeticExpressionChild'.
+'cobol::identifiers::Identifier' is a specialization of 'water::ObjectComputerParagraphWater'.
+'cobol::arithmetics::RangeExpressionChild' is a specialization of 'ArithmeticExpression'.
+'cobol::ios::FileDirective' is a specialization of 'IODirectives'.
+'cobol::references::SpecialNamesConditionNameReference' is a specialization of 'references::ConditionName'.
+'cobol::statements::Call' is a specialization of 'statements::ErrorHandled'.
+'cobol::registers::Register' is a specialization of 'PrimaryOperand'.
+'cobol::statements::IOStatement' is a specialization of 'Statement'.
+'cobol::water::DataDescriptorWater' is a specialization of 'Water'.
+'cobol::references::MnemonicNameReference' is a specialization of 'references::ElementReference'.
+'cobol::identifiers::IdentifierReference' is a specialization of 'identifiers::Identifier'.
+'cobol::operators::AdditiveOperator' is a specialization of 'Operator'.
+'cobol::paragraphs::Paragraph' is a specialization of 'labels::Procedure'.
+'cobol::statements::Merge' is a specialization of 'water::IncompleteElement'.
+'cobol::statements::PerformProcedureFixedTimes' is a specialization of 'statements::PerformProcedure'.
+'cobol::literals::IntegerLiteral' is a specialization of 'water::IOControlParagraphWater'.
+'cobol::operators::Subtraction' is a specialization of 'operators::AdditiveOperator'.
+'cobol::statements::Execute' is a specialization of 'Statement'.
+'cobol::identifiers::Identifier' is a specialization of 'water::SortPhraseWater'.
+'cobol::literals::FixedDecimalLiteral' is a specialization of 'DecimalLiteral'.
+'cobol::statements::BinarySearch' is a specialization of 'SearchStatement'.
+'cobol::statements::Entry' is a specialization of 'statements::Statement'.
+'cobol::literals::DBCSLiteral' is a specialization of 'Literal'.
+'cobol::identifiers::Identifier' is a specialization of 'water::IOControlParagraphWater'.
+'cobol::arithmetics::RangeExpression' is a specialization of 'ArithmeticExpression'.
+'cobol::identifiers::Identifier' is a specialization of 'water::RepositoryParagraphWater'.
+'cobol::divisions::EnvironmentDivision' is a specialization of 'Division'.
+'cobol::operators::Multiplication' is a specialization of 'MultiplicativeOperator'.
+'cobol::operators::Negative' is a specialization of 'SignOperator'.
+'cobol::statements::Release' is a specialization of 'Statement'.
+'cobol::statements::OtherEvaluateCase' is a specialization of 'EvaluateCase'.
+'cobol::identifiers::Identifier' is a specialization of 'water::SQLStatementWater'.
+'cobol::water::AcceptStatementWater' is a specialization of 'Water'.
+'cobol::conditions::ClassCondition' is a specialization of 'NegatedConditionalExpressionChild'.
+'cobol::statements::AfterUntilCondition' is a specialization of 'VaryingUntilCondition'.
+'cobol::operators::LessThan' is a specialization of 'RelationalOperator'.
+'cobol::ios::OutputFile' is a specialization of 'ios::OutputDirective'.
+'cobol::water::CloseStatementToken' is a specialization of 'CloseStatementWater'.
+'cobol::water::InvokeStatementWater' is a specialization of 'Water'.
+'cobol::arithmetics::ArithmeticExpression' is a specialization of 'conditions::AbbreviatedRelationalExpressionChild'.
+'cobol::ios::InputFile' is a specialization of 'ios::FileDirective'.
+'cobol::water::FileDescription' is a specialization of 'FileDescriptorWater'.
+'cobol::arithmetics::UnaryArithmeticExpression' is a specialization of 'PowerArithmeticExpressionChild'.
+'cobol::divisions::IdentificationDivision' is a specialization of 'water::IncompleteElement'.
+'cobol::references::DataNameReference' is a specialization of 'references::IdentifierReferenceQualifier'.
+'cobol::statements::Unstring' is a specialization of 'statements::Statement'.
+'cobol::operators::RelationalOperator' is a specialization of 'Operator'.
+'cobol::ios::InputFile' is a specialization of 'ios::InputDirective'.
+'cobol::operators::ClassOperator' is a specialization of 'Operator'.
+'cobol::references::IdentifierReferenceQualifier' is a specialization of 'references::Qualifiable'.
+'cobol::references::SpecialNamesConditionNameReference' is a specialization of 'references::Qualifiable'.
+'cobol::water::SpecialNamesClause' is a specialization of 'SpecialNamesParagraphWater'.
+'cobol::statements::PerformProcedureFixedTimes' is a specialization of 'statements::PerformFixedTimes'.
+'cobol::containers::CompilationGroup' is a specialization of 'containers::CobolRoot'.
+'cobol::statements::Return' is a specialization of 'statements::Statement'.
+'cobol::divisions::IdentificationDivision' is a specialization of 'divisions::Division'.
+'cobol::water::SQLStatementWater' is a specialization of 'Water'.
+'cobol::references::IdentifierReferenceQualifier' is a specialization of 'references::ElementReference'.
+'cobol::identifiers::LinageCounter' is a specialization of 'identifiers::Identifier'.
+'cobol::identifiers::Identifier' is a specialization of 'water::InvokeStatementWater'.
+'cobol::water::DataDescription' is a specialization of 'DataDescriptorWater'.
+'cobol::literals::PseudoLiteral' is a specialization of 'Literal'.
+'cobol::statements::Continue' is a specialization of 'Jump'.
+'cobol::operators::Equal' is a specialization of 'RelationalOperator'.
+'cobol::operators::Kanji' is a specialization of 'ClassOperator'.
+'cobol::registers::ShiftIn' is a specialization of 'Register'.
+'cobol::statements::Sort' is a specialization of 'water::IncompleteElement'.
+'cobol::registers::ShiftOut' is a specialization of 'Register'.
+'cobol::operators::GreaterThan' is a specialization of 'RelationalOperator'.
+'cobol::water::InvokeStatementToken' is a specialization of 'InvokeStatementWater'.
+'cobol::statements::Close' is a specialization of 'statements::IOStatement'.
+'cobol::ios::ProcedureDirective' is a specialization of 'IODirectives'.
+'cobol::statements::PerformUntilCondition' is a specialization of 'statements::Perform'.
+'cobol::water::SortPhraseWater' is a specialization of 'Water'.
+'cobol::water::IdentificationDivisionWater' is a specialization of 'Water'.
+'cobol::dataitems::External' is a specialization of 'DataItemAttribute'.
+'cobol::environments::UPSI' is a specialization of 'Environment'.
+'cobol::containers::CompilationUnit' is a specialization of 'NamedElement'.
+'cobol::statements::SearchStatement' is a specialization of 'statements::Statement'.
+'cobol::references::AlphabetNameReference' is a specialization of 'ElementReference'.
+'cobol::dataitems::Global' is a specialization of 'DataItemAttribute'.
+'cobol::literals::NationalHexLiteral' is a specialization of 'DBCSLiteral'.
+'cobol::water::OpenStatementToken' is a specialization of 'OpenStatementWater'.
+'cobol::divisions::ProcedureDivision' is a specialization of 'divisions::Division'.
+'cobol::statements::Write' is a specialization of 'statements::Statement'.
+'cobol::environments::Pocket' is a specialization of 'SystemDevice'.
+'cobol::literals::Characters' is a specialization of 'Literal'.
+'cobol::operators::GTPhrase' is a specialization of 'GreaterThan'.
+'cobol::water::Dot' is a specialization of 'water::IdentificationDivisionWater'.
+'cobol::statements::Open' is a specialization of 'statements::IOStatement'.
+'cobol::environments::SystemPunchDevice' is a specialization of 'SystemDevice'.
+'cobol::literals::Literal' is a specialization of 'operands::PrimaryOperand'.
+'cobol::identifiers::Qualifier' is a specialization of 'ElementReference'.
+'cobol::dataitems::RenamingDataName' is a specialization of 'DataName'.
+'cobol::environments::AdvancedFunctionPrinting' is a specialization of 'SystemDevice'.
+'cobol::paragraphs::SourceComputerParagraph' is a specialization of 'ConfigurationSectionParagraph'.
+'cobol::identifiers::All' is a specialization of 'DirectSubscript'.
+'cobol::dataitems::ConditionName' is a specialization of 'DataItem'.
+'cobol::operators::LessThanOrEqual' is a specialization of 'RelationalOperator'.
+'cobol::identifiers::RelativeSubscript' is a specialization of 'Subscript'.
+'cobol::statements::Rewrite' is a specialization of 'Write'.
+'cobol::statements::Open' is a specialization of 'water::IncompleteElement'.
+'cobol::literals::ConstantLiteral' is a specialization of 'FigurativeConstantLiteral'.
+'cobol::statements::Move' is a specialization of 'Statement'.
+'cobol::statements::Return' is a specialization of 'statements::ErrorHandled'.
+'cobol::operators::Addition' is a specialization of 'operators::AdditiveOperator'.
+'cobol::ios::OutputDirective' is a specialization of 'IODirectives'.
+'cobol::containers::CompilationGroup' is a specialization of 'commons::NamedElement'.
+'cobol::operators::DBCS' is a specialization of 'ClassOperator'.
+'cobol::dataitems::Usage' is a specialization of 'DataItemAttribute'.
+'cobol::operators::Positive' is a specialization of 'SignOperator'.
+'cobol::statements::String' is a specialization of 'statements::ErrorHandled'.
+'cobol::statements::PerformProcedureUntilCondition' is a specialization of 'statements::PerformUntilCondition'.
+'cobol::literals::Any' is a specialization of 'Literal'.
+'cobol::operators::Addition' is a specialization of 'operators::UnaryOperator'.
+'cobol::statements::Inspect' is a specialization of 'Statement'.
+'cobol::arithmetics::NestedArithmeticExpression' is a specialization of 'PrimaryExpression'.
+'cobol::ios::InputDirective' is a specialization of 'IODirectives'.
+'cobol::water::CICSStatementToken' is a specialization of 'CICSStatementWater'.
+'cobol::statements::SearchStatement' is a specialization of 'statements::ErrorHandled'.
+'cobol::ios::InputProcedure' is a specialization of 'ios::ProcedureDirective'.
+'cobol::literals::AllLiteral' is a specialization of 'FigurativeConstantLiteral'.
+'cobol::divisions::Division' is a specialization of 'NamedElement'.
+'cobol::literals::DecimalLiteral' is a specialization of 'NumericLiteral'.
+'cobol::arithmetics::UnaryArithmeticExpressionChild' is a specialization of 'PowerArithmeticExpressionChild'.
+'cobol::environments::SuppressSpacing' is a specialization of 'SystemDevice'.
+'cobol::statements::Sort' is a specialization of 'statements::FileIOStatement'.
+'cobol::conditions::AbbreviatedRelationalExpressionChild' is a specialization of 'NegatedAbbreviatedConditionalExpressionChild'.
+'cobol::statements::VaryingUntilCondition' is a specialization of 'Conditional'.
+'cobol::identifiers::Identifier' is a specialization of 'water::SpecialNamesParagraphWater'.
+'cobol::statements::PerformProcedure' is a specialization of 'Perform'.
+'cobol::ios::InputProcedure' is a specialization of 'ios::InputDirective'.
+'cobol::identifiers::DirectSubscript' is a specialization of 'Subscript'.
+'cobol::literals::FloatingDecimalLiteral' is a specialization of 'DecimalLiteral'.
+'cobol::statements::GoTo' is a specialization of 'Jump'.
+'cobol::operators::ConditionOr' is a specialization of 'LogicalOperator'.
+'cobol::statements::Set' is a specialization of 'SetStatement'.
+'cobol::statements::Write' is a specialization of 'statements::ErrorHandled'.
+'cobol::statements::SetStatement' is a specialization of 'Statement'.
+'cobol::statements::PerformNestedStatementFixedTimes' is a specialization of 'statements::PerformNestedStatement'.
+'cobol::water::ObjectComputerDescription' is a specialization of 'ObjectComputerParagraphWater'.
+'cobol::references::ConditionNameReference' is a specialization of 'identifiers::IdentifierReference'.
+'cobol::literals::IntegerLiteral' is a specialization of 'water::ObjectComputerParagraphWater'.
+'cobol::identifiers::Identifier' is a specialization of 'operands::PrimaryOperand'.
+'cobol::identifiers::Identifier' is a specialization of 'water::IdentificationDivisionWater'.
+'cobol::statements::NextSentence' is a specialization of 'Jump'.
+'cobol::operators::Alphabetic' is a specialization of 'ClassOperator'.
+'cobol::identifiers::Identifier' is a specialization of 'water::SelectStatementWater'.
+'cobol::dataitems::Value' is a specialization of 'DataItemAttribute'.
+'cobol::environments::Environment' is a specialization of 'AcceptStatementWater'.
+'cobol::operators::LTSign' is a specialization of 'LessThan'.
+'cobol::literals::Space' is a specialization of 'ConstantLiteral'.
+'cobol::identifiers::Identifier' is a specialization of 'water::CICSStatementWater'.
+'cobol::paragraphs::IOControlParagraph' is a specialization of 'water::IncompleteElement'.
+'cobol::statements::Delete' is a specialization of 'statements::Statement'.
+'cobol::environments::SystemLogicalInput' is a specialization of 'SystemDevice'.
+'cobol::literals::AlphanumericLiteral' is a specialization of 'Literal'.
+'cobol::operators::Numeric' is a specialization of 'ClassOperator'.
+'cobol::statements::Initialize' is a specialization of 'Statement'.
+'cobol::statements::PerformUntilCondition' is a specialization of 'statements::VaryingUntilCondition'.
+'cobol::dataitems::PictureString' is a specialization of 'DataItemAttribute'.
+'cobol::water::SelectStatementClause' is a specialization of 'SelectStatementWater'.
+'cobol::literals::NumericLiteral' is a specialization of 'Literal'.
+'cobol::identifiers::LinageCounter' is a specialization of 'references::Qualifiable'.
+'cobol::operators::Power' is a specialization of 'Operator'.
+'cobol::literals::FigurativeConstantLiteral' is a specialization of 'Literal'.
+'cobol::references::SpecialNamesConditionNameReference' is a specialization of 'references::ElementReference'.
+'cobol::literals::Literal' is a specialization of 'water::InvokeStatementWater'.
+'cobol::literals::AlphanumericHexaDecimalLiteral' is a specialization of 'AlphanumericLiteral'.
+'cobol::arithmetics::PrimaryExpression' is a specialization of 'UnaryArithmeticExpressionChild'.
+'cobol::statements::Read' is a specialization of 'statements::ErrorHandled'.
+'cobol::statements::Delete' is a specialization of 'statements::ErrorHandled'.
+'cobol::operators::Division' is a specialization of 'MultiplicativeOperator'.
+'cobol::water::PriorityNumber' is a specialization of 'ObjectComputerParagraphWater'.
+'cobol::water::AcceptStatementToken' is a specialization of 'AcceptStatementWater'.
+'cobol::literals::HighValue' is a specialization of 'ConstantLiteral'.
+'cobol::ios::OutputProcedure' is a specialization of 'ios::OutputDirective'.
+'cobol::water::SortPhraseToken' is a specialization of 'SortPhraseWater'.
+'cobol::statements::SerialSearch' is a specialization of 'SearchStatement'.
+'cobol::literals::Zero' is a specialization of 'ConstantLiteral'.
+'cobol::ios::OutputProcedure' is a specialization of 'ios::ProcedureDirective'.
+'cobol::operators::LTPhrase' is a specialization of 'LessThan'.
+'cobol::statements::Replace' is a specialization of 'Statement'.
+'cobol::literals::BooleanLiteral' is a specialization of 'Literal'.
+'cobol::identifiers::IdentifierReference' is a specialization of 'references::ElementReference'.
+'cobol::operators::EqualSign' is a specialization of 'Equal'.
+'cobol::ios::OutputFile' is a specialization of 'ios::FileDirective'.
+'cobol::literals::Literal' is a specialization of 'labels::StopLabel'.
+'cobol::references::ConditionNameReference' is a specialization of 'references::ConditionName'.
+'cobol::operators::LTEQSign' is a specialization of 'LessThanOrEqual'.
+'cobol::statements::IOFile' is a specialization of 'IncompleteElement'.
+'cobol::statements::Read' is a specialization of 'statements::Statement'.
+'cobol::literals::IntegerLiteral' is a specialization of 'literals::NumericLiteral'.
+'cobol::paragraphs::Paragraph' is a specialization of 'commons::NamedElement'.
+'cobol::statements::PerformProcedureUntilCondition' is a specialization of 'statements::PerformProcedure'.
+'cobol::operators::MultiplicativeOperator' is a specialization of 'Operator'.
+'cobol::statements::Start' is a specialization of 'statements::ErrorHandled'.
+'cobol::registers::LengthOf' is a specialization of 'Register'.
+'cobol::statements::NormalEvaluateCase' is a specialization of 'EvaluateCase'.
+'cobol::sections::Section' is a specialization of 'commons::NamedElement'.
+'cobol::literals::Quote' is a specialization of 'ConstantLiteral'.
+'cobol::water::SpecialNamesParagraphWater' is a specialization of 'Water'.
+'cobol::literals::Literal' is a specialization of 'water::CICSStatementWater'.
+'cobol::paragraphs::FileControlParagraph' is a specialization of 'IOSectionParagraph'.
+'cobol::statements::SetIndexName' is a specialization of 'SetStatement'.
+'cobol::registers::ReturnCode' is a specialization of 'Register'.
+'cobol::references::FileNameReference' is a specialization of 'references::IdentifierReferenceQualifier'.
+'cobol::statements::EvaluateCase' is a specialization of 'NestedStatement'.
+'cobol::operators::GTSign' is a specialization of 'GreaterThan'.
+'cobol::water::SelectStatementWater' is a specialization of 'Water'.
+'cobol::operators::LTEQPhrase' is a specialization of 'LessThanOrEqual'.
+'cobol::statements::PerformFixedTimes' is a specialization of 'Perform'.
+'cobol::paragraphs::ObjectComputerParagraph' is a specialization of 'water::IncompleteElement'.
+'cobol::operators::ClassName' is a specialization of 'ClassOperator'.
+'cobol::identifiers::Identifier' is a specialization of 'water::DataDescriptorWater'.
+'cobol::identifiers::Identifier' is a specialization of 'water::FileDescriptorWater'.
+'cobol::divisions::DataDivision' is a specialization of 'Division'.
+'cobol::operators::SignOperator' is a specialization of 'Operator'.
+'cobol::water::IOControlParagraphWater' is a specialization of 'Water'.
+'cobol::water::CICSStatementWater' is a specialization of 'Water'.
+'cobol::literals::LowValue' is a specialization of 'ConstantLiteral'.
+'cobol::identifiers::IdentifierReference' is a specialization of 'references::Qualifiable'.
+'cobol::literals::NationalLiteral' is a specialization of 'DBCSLiteral'.
+'cobol::statements::Entry' is a specialization of 'parameters::Parametrizable'.
+'cobol::operators::Negate' is a specialization of 'Operator'.
+'cobol::operators::LogicalOperator' is a specialization of 'Operator'.
+'cobol::environments::SystemLogicalOutput' is a specialization of 'SystemDevice'.
+'cobol::environments::Console' is a specialization of 'SystemDevice'.
+'cobol::operators::UnaryOperator' is a specialization of 'Operator'.
+'cobol::operators::Zero' is a specialization of 'SignOperator'.
+'cobol::water::Dot' is a specialization of 'water::SQLStatementWater'.
+'cobol::operators::AlphabeticLower' is a specialization of 'ClassOperator'.
+'cobol::statements::Close' is a specialization of 'water::IncompleteElement'.
+'cobol::statements::PerformNestedStatementUntilCondition' is a specialization of 'statements::PerformNestedStatement'.
+'cobol::operators::Through' is a specialization of 'Operator'.
+'cobol::operators::GTEQSign' is a specialization of 'GreaterThanOrEqual'.
+'cobol::literals::Literal' is a specialization of 'water::SpecialNamesParagraphWater'.
+'cobol::statements::Merge' is a specialization of 'statements::FileIOStatement'.
+'cobol::literals::IntegerLiteral' is a specialization of 'water::FileDescriptorWater'.
+'cobol::operators::GreaterThanOrEqual' is a specialization of 'RelationalOperator'.
+'cobol::statements::Call' is a specialization of 'functions::Argumentable'.
+'cobol::water::IOControlDescription' is a specialization of 'IOControlParagraphWater'.
+'cobol::containers::EmptyModel' is a specialization of 'CobolRoot'.
+'cobol::sections::Section' is a specialization of 'labels::Procedure'.
+'cobol::statements::Unstring' is a specialization of 'statements::ErrorHandled'.
+'cobol::divisions::ProcedureDivision' is a specialization of 'parameters::Parametrizable'.
+'cobol::operators::ConditionAnd' is a specialization of 'LogicalOperator'.
+'cobol::paragraphs::IOControlParagraph' is a specialization of 'paragraphs::IOSectionParagraph'.
+'cobol::references::FileNameReference' is a specialization of 'references::ElementReference'.
+'cobol::literals::Literal' is a specialization of 'water::SelectStatementWater'.
+'cobol::statements::Jump' is a specialization of 'Statement'.
+'cobol::statements::GoBack' is a specialization of 'Jump'.
+'cobol::operators::Subtraction' is a specialization of 'operators::UnaryOperator'.
+'cobol::references::DataNameReference' is a specialization of 'identifiers::IdentifierReference'.
+'cobol::environments::Channel' is a specialization of 'SystemDevice'.
+'cobol::operators::AlphabeticUpper' is a specialization of 'ClassOperator'.
+'cobol::identifiers::Identifier' is a specialization of 'water::AcceptStatementWater'.
+'cobol::statements::Start' is a specialization of 'statements::Statement'.
+'cobol::water::FileDescriptorWater' is a specialization of 'Water'.
+'cobol::references::IndexNameReference' is a specialization of 'IdentifierReference'.
+'cobol::registers::AddressOf' is a specialization of 'Register'.
+'cobol::statements::FileIOStatement' is a specialization of 'Statement'.
+'cobol::statements::Call' is a specialization of 'statements::Statement'.
+'cobol::paragraphs::ObjectComputerParagraph' is a specialization of 'paragraphs::ConfigurationSectionParagraph'.
+'cobol::water::ProgramDescription' is a specialization of 'IdentificationDivisionWater'.
+'cobol::operators::GTEQPhrase' is a specialization of 'GreaterThanOrEqual'.
+'cobol::water::RepositoryParagraphWater' is a specialization of 'Water'.
+'cobol::statements::Cancel' is a specialization of 'Statement'.
+'cobol::references::MnemonicNameReference' is a specialization of 'references::Qualifiable'.
+'cobol::operators::EqualPhrase' is a specialization of 'Equal'.
+'cobol::water::ObjectComputerParagraphWater' is a specialization of 'Water'.
+'cobol::sections::DeclarativeSection' is a specialization of 'Section'.
+'cobol::specialnames::SystemDeviceIs' is a specialization of 'specialnames::MnemonicName'.
+'cobol::tables::IndexName' is a specialization of 'references::ReferenceableElement'.
+'cobol::functions::FunctionCall' is a specialization of 'identifiers::Identifier'.
+'cobol::conditions::ConditionalOrExpressionChild' is a specialization of 'Condition'.
+'cobol::specialnames::ClassName' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::statements::Subtract' is a specialization of 'ArithmeticStatement'.
+'cobol::functions::FunctionCall' is a specialization of 'commons::NamedElement'.
+'cobol::labels::StopLabel' is a specialization of 'Label'.
+'cobol::arithmetics::MultiplicativeArithmeticExpression' is a specialization of 'AdditiveArithmeticExpressionChild'.
+'cobol::operands::PrimaryOperand' is a specialization of 'operands::Operand'.
+'cobol::specialnames::AlphabetName' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::operands::ArithmeticOperand' is a specialization of 'Operand'.
+'cobol::specialnames::AlphabetName' is a specialization of 'specialnames::SpecialName'.
+'cobol::files::SelectStatement' is a specialization of 'IncompleteElement'.
+'cobol::conditions::ConditionalAndExpression' is a specialization of 'ConditionalOrExpressionChild'.
+'cobol::conditions::SignCondition' is a specialization of 'NegatedConditionalExpressionChild'.
+'cobol::conditions::RelationalExpression' is a specialization of 'NegatedConditionalExpressionChild'.
+'cobol::strings::AnyCharacterBySpecificCharacter' is a specialization of 'Replacement'.
+'cobol::sentences::ExitProcedure' is a specialization of 'Sentence'.
+'cobol::conditions::NegatedAbbreviatedConditionalExpressionChild' is a specialization of 'AbbreviatedConditionalExpressionChild'.
+'cobol::specialnames::CurrencySign' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::sentences::Sentence' is a specialization of 'StatementContainer'.
+'cobol::sentences::EntrySentence' is a specialization of 'Sentence'.
+'cobol::strings::SpecificCharacterBySpecificCharacter' is a specialization of 'Replacement'.
+'cobol::specialnames::UPSISwitchIs' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::specialnames::MnemonicName' is a specialization of 'SpecialName'.
+'cobol::statements::Add' is a specialization of 'ArithmeticStatement'.
+'cobol::handlers::NotAtEndOfPage' is a specialization of 'NotErrorHandler'.
+'cobol::conditions::NestedCondition' is a specialization of 'SimpleConditionChild'.
+'cobol::functions::ByContentArgument' is a specialization of 'Argument'.
+'cobol::conditions::NestedAbbreviatedConditionalExpression' is a specialization of 'AbbreviatedRelationalExpressionChild'.
+'cobol::handlers::NotAtEnd' is a specialization of 'NotErrorHandler'.
+'cobol::paragraphs::IOSectionParagraph' is a specialization of 'Paragraph'.
+'cobol::specialnames::SymbolicCharacterStatement' is a specialization of 'references::ElementReference'.
+'cobol::strings::TallyingOccurrence' is a specialization of 'strings::Occurrence'.
+'cobol::specialnames::SystemDeviceIs' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::files::FileName' is a specialization of 'references::ReferenceableElement'.
+'cobol::statements::Stop' is a specialization of 'Statement'.
+'cobol::statements::Condition' is a specialization of 'statements::NestedStatement'.
+'cobol::statements::ArithmeticStatement' is a specialization of 'statements::ErrorHandled'.
+'cobol::sentences::ExecuteSentence' is a specialization of 'StatementContainer'.
+'cobol::statements::Multiply' is a specialization of 'ArithmeticStatement'.
+'cobol::strings::TallyingOccurrence' is a specialization of 'strings::Tallying'.
+'cobol::statements::Exit' is a specialization of 'Statement'.
+'cobol::sentences::UseSentence' is a specialization of 'water::IncompleteElement'.
+'cobol::handlers::AtEndOfPage' is a specialization of 'Handler'.
+'cobol::statements::Accept' is a specialization of 'water::IncompleteElement'.
+'cobol::handlers::OnException' is a specialization of 'Handler'.
+'cobol::arithmetics::AdditiveArithmeticExpression' is a specialization of 'RangeExpressionChild'.
+'cobol::statements::Display' is a specialization of 'Statement'.
+'cobol::conditions::NegatedConditionalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'cobol::specialnames::CodeNameAlphabetType' is a specialization of 'AlphabetType'.
+'cobol::specialnames::CurrencySign' is a specialization of 'specialnames::SpecialName'.
+'cobol::handlers::NotOnSizeError' is a specialization of 'NotErrorHandler'.
+'cobol::statements::Accept' is a specialization of 'statements::Statement'.
+'cobol::handlers::OnSizeError' is a specialization of 'Handler'.
+'cobol::paragraphs::RepositoryParagraph' is a specialization of 'water::IncompleteElement'.
+'cobol::statements::Compute' is a specialization of 'statements::ErrorHandled'.
+'cobol::handlers::NotOnException' is a specialization of 'NotErrorHandler'.
+'cobol::specialnames::PredefinedAlphabetType' is a specialization of 'AlphabetType'.
+'cobol::labels::ProcedureRangeChild' is a specialization of 'ProcedureRangeLabel'.
+'cobol::operands::PrimaryOperand' is a specialization of 'operands::ArithmeticOperand'.
+'cobol::strings::SpecificCharacter' is a specialization of 'Tallying'.
+'cobol::specialnames::ConditionName' is a specialization of 'commons::NamedElement'.
+'cobol::dataitems::Redefines' is a specialization of 'DataItemAttribute'.
+'cobol::sections::ConfigurationSection' is a specialization of 'EnvironmentDivisionSection'.
+'cobol::functions::OmittedArgument' is a specialization of 'Argument'.
+'cobol::specialnames::ExplicitAlphabetType' is a specialization of 'AlphabetType'.
+'cobol::handlers::Handler' is a specialization of 'NestedStatement'.
+'cobol::specialnames::ConditionName' is a specialization of 'specialnames::SpecialName'.
+'cobol::specialnames::UPSISwitchIs' is a specialization of 'specialnames::MnemonicName'.
+'cobol::conditions::SimpleConditionChild' is a specialization of 'NegatedConditionalExpressionChild'.
+'cobol::dataitems::DataItem' is a specialization of 'references::ReferenceableElement'.
+'cobol::statements::Perform' is a specialization of 'Statement'.
+'cobol::operands::RoundedIdentifier' is a specialization of 'ArithmeticOperand'.
+'cobol::conditions::AbbreviatedRelationalExpression' is a specialization of 'NegatedAbbreviatedConditionalExpressionChild'.
+'cobol::labels::ProcedureRange' is a specialization of 'ProcedureRangeLabel'.
+'cobol::specialnames::SymbolicCharacter' is a specialization of 'SpecialName'.
+'cobol::arithmetics::MultiplicativeArithmeticExpressionChild' is a specialization of 'AdditiveArithmeticExpressionChild'.
+'cobol::strings::SplittedString' is a specialization of 'ManipulatedStrings'.
+'cobol::specialnames::OnStatus' is a specialization of 'ConditionName'.
+'cobol::dataitems::RecordName' is a specialization of 'DataItem'.
+'cobol::dataitems::DataItem' is a specialization of 'water::IncompleteElement'.
+'cobol::sections::EnvironmentDivisionSection' is a specialization of 'Section'.
+'cobol::handlers::NotErrorHandler' is a specialization of 'Handler'.
+'cobol::handlers::OnOverflow' is a specialization of 'Handler'.
+'cobol::commons::LabellableElement' is a specialization of 'Commentable'.
+'cobol::sentences::EmptySentence' is a specialization of 'Sentence'.
+'cobol::conditions::ConditionalAndExpressionChild' is a specialization of 'ConditionalOrExpressionChild'.
+'cobol::tables::Table' is a specialization of 'dataitems::DataItem'.
+'cobol::commons::NamedElement' is a specialization of 'Commentable'.
+'cobol::specialnames::SymbolicCharacterStatement' is a specialization of 'specialnames::SpecialNameStatement'.
+'cobol::references::ElementReference' is a specialization of 'Reference'.
+'cobol::strings::ManipulatedStrings' is a specialization of 'String'.
+'cobol::conditions::NegatedConditionalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'cobol::operands::PrimaryOperand' is a specialization of 'operands::ReplacementOperand'.
+'cobol::functions::ByReferenceArgument' is a specialization of 'Argument'.
+'cobol::commons::URIableElement' is a specialization of 'Commentable'.
+'cobol::handlers::NotOnOverflow' is a specialization of 'NotErrorHandler'.
+'cobol::operands::Encoding' is a specialization of 'ReplacementOperand'.
+'cobol::functions::FunctionCall' is a specialization of 'functions::Argumentable'.
+'cobol::handlers::NotInvalidKey' is a specialization of 'NotErrorHandler'.
+'cobol::handlers::AtEnd' is a specialization of 'Handler'.
+'cobol::conditions::AbbreviatedConditionalExpression' is a specialization of 'ConditionalAndExpressionChild'.
+'cobol::dataitems::DataName' is a specialization of 'DataItem'.
+'cobol::sentences::AlteredGoTo' is a specialization of 'Sentence'.
+'cobol::strings::ConcatenatingStrings' is a specialization of 'ManipulatedStrings'.
+'cobol::sections::IOSection' is a specialization of 'EnvironmentDivisionSection'.
+'cobol::arithmetics::AdditiveArithmeticExpressionChild' is a specialization of 'RangeExpressionChild'.
+'cobol::sections::DataDivisionSection' is a specialization of 'Section'.
+'cobol::paragraphs::ConfigurationSectionParagraph' is a specialization of 'Paragraph'.
+'cobol::sections::LinkageStorageSection' is a specialization of 'DataDivisionSection'.
+'cobol::parameters::ByValueParameter' is a specialization of 'Parameter'.
+'cobol::conditions::NegatedAbbreviatedConditionalExpression' is a specialization of 'AbbreviatedConditionalExpressionChild'.
+'cobol::parameters::ByReferenceParameter' is a specialization of 'Parameter'.
+'cobol::sections::WorkingStorageSection' is a specialization of 'DataDivisionSection'.
+'cobol::operands::ReplacementOperand' is a specialization of 'Operand'.
+'cobol::strings::ReplacementOccurrence' is a specialization of 'strings::Occurrence'.
+'cobol::statements::ArithmeticStatement' is a specialization of 'statements::Statement'.
+'cobol::functions::ByValueArgument' is a specialization of 'Argument'.
+'cobol::tables::Table' is a specialization of 'water::IncompleteElement'.
+'cobol::files::FileName' is a specialization of 'water::IncompleteElement'.
+'cobol::statements::Divide' is a specialization of 'ArithmeticStatement'.
+'cobol::labels::ProcedureLabel' is a specialization of 'ProcedureRangeChild'.
+'cobol::operands::PrimaryOperand' is a specialization of 'arithmetics::PrimaryExpression'.
+'cobol::strings::Replacement' is a specialization of 'StringManipulation'.
+'cobol::sections::LocalStorageSection' is a specialization of 'DataDivisionSection'.
+'cobol::arithmetics::PowerArithmeticExpression' is a specialization of 'MultiplicativeArithmeticExpressionChild'.
+'cobol::conditions::AbbreviatedConditionalExpressionChild' is a specialization of 'ConditionalAndExpressionChild'.
+'cobol::strings::ReplacementOccurrence' is a specialization of 'strings::Replacement'.
+'cobol::tables::AdditionalIndexName' is a specialization of 'ReferenceableElement'.
+'cobol::paragraphs::SpecialNamesParagraph' is a specialization of 'ConfigurationSectionParagraph'.
+'cobol::specialnames::SpecialName' is a specialization of 'ReferenceableElement'.
+'cobol::sections::FileSection' is a specialization of 'DataDivisionSection'.
+'cobol::parameters::Parameter' is a specialization of 'ReferenceableElement'.
+'cobol::statements::Condition' is a specialization of 'statements::Conditional'.
+'cobol::strings::Tallying' is a specialization of 'StringManipulation'.
+'cobol::paragraphs::RepositoryParagraph' is a specialization of 'paragraphs::ConfigurationSectionParagraph'.
+'cobol::statements::PerformNestedStatement' is a specialization of 'statements::Perform'.
+'cobol::strings::StringManipulation' is a specialization of 'String'.
+'cobol::specialnames::OffStatus' is a specialization of 'ConditionName'.
+'cobol::verbs::Is' is a specialization of 'Verb'.
+'cobol::statements::PerformNestedStatement' is a specialization of 'statements::NestedStatement'.
+'cobol::tables::IndexName' is a specialization of 'commons::NamedElement'.
+'cobol::labels::Run' is a specialization of 'StopLabel'.
+'cobol::labels::ProcedureRangeLabel' is a specialization of 'Label'.
+'cobol::handlers::InvalidKey' is a specialization of 'Handler'.
+'cobol::references::ReferenceableElement' is a specialization of 'NamedElement'.
+'cobol::specialnames::ClassName' is a specialization of 'specialnames::SpecialName'.
+'cobol::sentences::UseSentence' is a specialization of 'sentences::StatementContainer'.
+'cobol::conditions::ConditionalOrExpression' is a specialization of 'Condition'.
+'cobol::dataitems::GroupUsage' is a specialization of 'DataItemAttribute'.
+'cobol::strings::AnyCharacter' is a specialization of 'Tallying'.
+'cobol::statements::Compute' is a specialization of 'statements::Statement'.
+'cobol::statements::Condition' is a specialization of 'statements::Statement'.
+'NegatedConditionalExpressionChild' (role 'NegatedConditionalExpressionChild', cardinality 0..*) is associated with 'cobol::conditions::NegatedConditionalExpression' (role 'cobol_conditions_NegatedConditionalExpression', cardinality 0..*).
+'cobol::statements::PerformUntilCondition' (role 'cobol_statements_PerformUntilCondition', cardinality 0..*) is associated with 'Condition' (role 'Condition248', cardinality 0..*).
+'Statement' (role 'Statement120', cardinality 0..*) is associated with 'cobol::sentences::StatementContainer' (role 'cobol_sentences_StatementContainer', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference', cardinality 0..*) is associated with 'cobol::statements::GoTo' (role 'cobol_statements_GoTo', cardinality 0..*).
+'cobol::tables::Table' (role 'cobol_tables_Table345', cardinality 0..*) is associated with 'IndexName' (role 'IndexName', cardinality 0..*).
+'cobol::identifiers::Identifier' (role 'cobol_identifiers_Identifier', cardinality 0..*) is associated with 'ReferenceModifier' (role 'ReferenceModifier', cardinality 0..*).
+'NormalEvaluateCase' (role 'NormalEvaluateCase', cardinality 0..*) is associated with 'cobol::statements::SearchStatement' (role 'cobol_statements_SearchStatement', cardinality 0..*).
+'Through' (role 'Through382', cardinality 0..*) is associated with 'cobol::labels::ProcedureRange' (role 'cobol_labels_ProcedureRange381', cardinality 0..*).
+'Negate' (role 'Negate52', cardinality 0..*) is associated with 'cobol::conditions::ClassCondition' (role 'cobol_conditions_ClassCondition51', cardinality 0..*).
+'DebuggingMode' (role 'DebuggingMode', cardinality 0..*) is associated with 'cobol::paragraphs::SourceComputerParagraph' (role 'cobol_paragraphs_SourceComputerParagraph', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand250', cardinality 0..*) is associated with 'cobol::statements::PerformFixedTimes' (role 'cobol_statements_PerformFixedTimes', cardinality 0..*).
+'FileNameReference' (role 'FileNameReference', cardinality 0..*) is associated with 'cobol::statements::Return' (role 'cobol_statements_Return', cardinality 0..*).
+'LogicalOperator' (role 'LogicalOperator', cardinality 0..*) is associated with 'cobol::conditions::ConditionalOrExpression' (role 'cobol_conditions_ConditionalOrExpression2', cardinality 0..*).
+'MultiplicativeArithmeticExpressionChild' (role 'MultiplicativeArithmeticExpressionChild', cardinality 0..*) is associated with 'cobol::arithmetics::MultiplicativeArithmeticExpression' (role 'cobol_arithmetics_MultiplicativeArithmeticExpression', cardinality 0..*).
+'cobol::arithmetics::MultiplicativeArithmeticExpression' (role 'cobol_arithmetics_MultiplicativeArithmeticExpression63', cardinality 0..*) is associated with 'MultiplicativeOperator' (role 'MultiplicativeOperator', cardinality 0..*).
+'ArithmeticExpression' (role 'ArithmeticExpression305', cardinality 0..*) is associated with 'cobol::identifiers::ReferenceModifier' (role 'cobol_identifiers_ReferenceModifier304', cardinality 0..*).
+'ExpressionList' (role 'ExpressionList', cardinality 0..*) is associated with 'cobol::statements::Evaluate' (role 'cobol_statements_Evaluate210', cardinality 0..*).
+'ConcatenatingStrings' (role 'ConcatenatingStrings', cardinality 0..*) is associated with 'cobol::statements::String' (role 'cobol_statements_String177', cardinality 0..*).
+'cobol::statements::Unstring' (role 'cobol_statements_Unstring203', cardinality 0..*) is associated with 'Condition' (role 'Condition204', cardinality 0..*).
+'cobol::statements::PerformProcedureUntilCondition' (role 'cobol_statements_PerformProcedureUntilCondition', cardinality 0..*) is associated with 'AfterUntilCondition' (role 'AfterUntilCondition', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference328', cardinality 0..*) is associated with 'cobol::dataitems::Redefines' (role 'cobol_dataitems_Redefines', cardinality 0..*).
+'Identifier' (role 'Identifier207', cardinality 0..*) is associated with 'cobol::statements::Unstring' (role 'cobol_statements_Unstring206', cardinality 0..*).
+'Identifier' (role 'Identifier193', cardinality 0..*) is associated with 'cobol::statements::Unstring' (role 'cobol_statements_Unstring', cardinality 0..*).
+'Operand' (role 'Operand', cardinality 0..*) is associated with 'cobol::identifiers::Subscript' (role 'cobol_identifiers_Subscript', cardinality 0..*).
+'FileNameReference' (role 'FileNameReference270', cardinality 0..*) is associated with 'cobol::statements::IOFile' (role 'cobol_statements_IOFile', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand279', cardinality 0..*) is associated with 'cobol::statements::VaryingUntilCondition' (role 'cobol_statements_VaryingUntilCondition278', cardinality 0..*).
+'Tallying' (role 'Tallying406', cardinality 0..*) is associated with 'cobol::strings::TallyingOccurrence' (role 'cobol_strings_TallyingOccurrence', cardinality 0..*).
+'cobol::statements::Return' (role 'cobol_statements_Return165', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference166', cardinality 0..*).
+'FileNameReference' (role 'FileNameReference253', cardinality 0..*) is associated with 'cobol::statements::FileIOStatement' (role 'cobol_statements_FileIOStatement', cardinality 0..*).
+'cobol::statements::VaryingUntilCondition' (role 'cobol_statements_VaryingUntilCondition281', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand282', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand396', cardinality 0..*) is associated with 'cobol::strings::ManipulatedStrings' (role 'cobol_strings_ManipulatedStrings', cardinality 0..*).
+'cobol::statements::KeyDescriptor' (role 'cobol_statements_KeyDescriptor', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference266', cardinality 0..*).
+'cobol::divisions::Division' (role 'cobol_divisions_Division94', cardinality 0..*) is associated with 'StatementContainer' (role 'StatementContainer', cardinality 0..*).
+'cobol::ios::ProcedureDirective' (role 'cobol_ios_ProcedureDirective', cardinality 0..*) is associated with 'Label' (role 'Label', cardinality 0..*).
+'cobol::statements::Display' (role 'cobol_statements_Display', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand156', cardinality 0..*).
+'cobol::statements::Unstring' (role 'cobol_statements_Unstring201', cardinality 0..*) is associated with 'SplittedString' (role 'SplittedString', cardinality 0..*).
+'InputDirective' (role 'InputDirective', cardinality 0..*) is associated with 'cobol::statements::FileIOStatement' (role 'cobol_statements_FileIOStatement255', cardinality 0..*).
+'cobol::conditions::SignCondition' (role 'cobol_conditions_SignCondition39', cardinality 0..*) is associated with 'SignOperator' (role 'SignOperator', cardinality 0..*).
+'SimpleConditionChild' (role 'SimpleConditionChild47', cardinality 0..*) is associated with 'cobol::conditions::ClassCondition' (role 'cobol_conditions_ClassCondition', cardinality 0..*).
+'Literal' (role 'Literal', cardinality 0..*) is associated with 'cobol::specialnames::CurrencySign' (role 'cobol_specialnames_CurrencySign', cardinality 0..*).
+'cobol::statements::Delete' (role 'cobol_statements_Delete', cardinality 0..*) is associated with 'FileNameReference' (role 'FileNameReference295', cardinality 0..*).
+'Handler' (role 'Handler', cardinality 0..*) is associated with 'cobol::statements::ErrorHandled' (role 'cobol_statements_ErrorHandled', cardinality 0..*).
+'AbbreviatedConditionalExpressionChild' (role 'AbbreviatedConditionalExpressionChild', cardinality 0..*) is associated with 'cobol::conditions::AbbreviatedConditionalExpression' (role 'cobol_conditions_AbbreviatedConditionalExpression', cardinality 0..*).
+'cobol::specialnames::ClassName' (role 'cobol_specialnames_ClassName', cardinality 0..*) is associated with 'RangeExpression' (role 'RangeExpression335', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand179', cardinality 0..*) is associated with 'cobol::statements::Cancel' (role 'cobol_statements_Cancel', cardinality 0..*).
+'Section' (role 'Section', cardinality 0..*) is associated with 'cobol::divisions::Division' (role 'cobol_divisions_Division', cardinality 0..*).
+'Condition' (role 'Condition319', cardinality 0..*) is associated with 'cobol::dataitems::Value' (role 'cobol_dataitems_Value', cardinality 0..*).
+'cobol::specialnames::MnemonicName' (role 'cobol_specialnames_MnemonicName', cardinality 0..*) is associated with 'Environment' (role 'Environment337', cardinality 0..*).
+'cobol::statements::Display' (role 'cobol_statements_Display158', cardinality 0..*) is associated with 'Environment' (role 'Environment', cardinality 0..*).
+'Identifier' (role 'Identifier199', cardinality 0..*) is associated with 'cobol::statements::Unstring' (role 'cobol_statements_Unstring198', cardinality 0..*).
+'cobol::conditions::ClassCondition' (role 'cobol_conditions_ClassCondition54', cardinality 0..*) is associated with 'Is' (role 'Is55', cardinality 0..*).
+'cobol::statements::Move' (role 'cobol_statements_Move148', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand149', cardinality 0..*).
+'ArithmeticExpression' (role 'ArithmeticExpression302', cardinality 0..*) is associated with 'cobol::identifiers::ReferenceModifier' (role 'cobol_identifiers_ReferenceModifier', cardinality 0..*).
+'cobol::statements::FileIOStatement' (role 'cobol_statements_FileIOStatement257', cardinality 0..*) is associated with 'OutputDirective' (role 'OutputDirective', cardinality 0..*).
+'TableDimension' (role 'TableDimension350', cardinality 0..*) is associated with 'cobol::tables::Table' (role 'cobol_tables_Table349', cardinality 0..*).
+'Identifier' (role 'Identifier290', cardinality 0..*) is associated with 'cobol::statements::Start' (role 'cobol_statements_Start289', cardinality 0..*).
+'cobol::conditions::AbbreviatedRelationalExpression' (role 'cobol_conditions_AbbreviatedRelationalExpression26', cardinality 0..*) is associated with 'Negate' (role 'Negate27', cardinality 0..*).
+'ArithmeticExpression' (role 'ArithmeticExpression', cardinality 0..*) is associated with 'cobol::arithmetics::AssignmentExpression' (role 'cobol_arithmetics_AssignmentExpression70', cardinality 0..*).
+'Through' (role 'Through', cardinality 0..*) is associated with 'cobol::arithmetics::RangeExpression' (role 'cobol_arithmetics_RangeExpression76', cardinality 0..*).
+'Negate' (role 'Negate293', cardinality 0..*) is associated with 'cobol::statements::Start' (role 'cobol_statements_Start292', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'cobol::parameters::Parametrizable' (role 'cobol_parameters_Parametrizable', cardinality 0..*).
+'ArithmeticOperand' (role 'ArithmeticOperand', cardinality 0..*) is associated with 'cobol::statements::ArithmeticStatement' (role 'cobol_statements_ArithmeticStatement', cardinality 0..*).
+'cobol::statements::FileIOStatement' (role 'cobol_statements_FileIOStatement259', cardinality 0..*) is associated with 'KeyDescriptor' (role 'KeyDescriptor', cardinality 0..*).
+'ReferenceableElement' (role 'ReferenceableElement108', cardinality 0..*) is associated with 'cobol::references::ElementReference' (role 'cobol_references_ElementReference', cardinality 0..*).
+'DataItem' (role 'DataItem358', cardinality 0..*) is associated with 'cobol::files::FileName' (role 'cobol_files_FileName', cardinality 0..*).
+'cobol::containers::CompilationUnit' (role 'cobol_containers_CompilationUnit88', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit89', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'cobol::sections::DataDivisionSection' (role 'cobol_sections_DataDivisionSection', cardinality 0..*).
+'cobol::conditions::NestedAbbreviatedConditionalExpression' (role 'cobol_conditions_NestedAbbreviatedConditionalExpression', cardinality 0..*) is associated with 'Condition' (role 'Condition32', cardinality 0..*).
+'cobol::ios::FileDirective' (role 'cobol_ios_FileDirective', cardinality 0..*) is associated with 'FileNameReference' (role 'FileNameReference312', cardinality 0..*).
+'AssignmentExpression' (role 'AssignmentExpression', cardinality 0..*) is associated with 'cobol::statements::Compute' (role 'cobol_statements_Compute', cardinality 0..*).
+'RangeExpressionChild' (role 'RangeExpressionChild', cardinality 0..*) is associated with 'cobol::arithmetics::RangeExpression' (role 'cobol_arithmetics_RangeExpression', cardinality 0..*).
+'RangeExpression' (role 'RangeExpression332', cardinality 0..*) is associated with 'cobol::specialnames::ExplicitAlphabetType' (role 'cobol_specialnames_ExplicitAlphabetType', cardinality 0..*).
+'ConstantLiteral' (role 'ConstantLiteral', cardinality 0..*) is associated with 'cobol::literals::AllLiteral' (role 'cobol_literals_AllLiteral', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference276', cardinality 0..*) is associated with 'cobol::statements::VaryingUntilCondition' (role 'cobol_statements_VaryingUntilCondition', cardinality 0..*).
+'cobol::specialnames::UPSISwitchIs' (role 'cobol_specialnames_UPSISwitchIs', cardinality 0..*) is associated with 'ConditionName' (role 'ConditionName', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference370', cardinality 0..*) is associated with 'cobol::files::FileStatus' (role 'cobol_files_FileStatus', cardinality 0..*).
+'Identifier' (role 'Identifier234', cardinality 0..*) is associated with 'cobol::statements::Write' (role 'cobol_statements_Write', cardinality 0..*).
+'cobol::conditions::NestedCondition' (role 'cobol_conditions_NestedCondition', cardinality 0..*) is associated with 'Condition' (role 'Condition57', cardinality 0..*).
+'cobol::conditions::SignCondition' (role 'cobol_conditions_SignCondition44', cardinality 0..*) is associated with 'Is' (role 'Is45', cardinality 0..*).
+'AdditiveOperator' (role 'AdditiveOperator', cardinality 0..*) is associated with 'cobol::arithmetics::AdditiveArithmeticExpression' (role 'cobol_arithmetics_AdditiveArithmeticExpression60', cardinality 0..*).
+'Paragraph' (role 'Paragraph', cardinality 0..*) is associated with 'cobol::divisions::Division' (role 'cobol_divisions_Division92', cardinality 0..*).
+'Is' (role 'Is', cardinality 0..*) is associated with 'cobol::conditions::RelationalExpression' (role 'cobol_conditions_RelationalExpression13', cardinality 0..*).
+'cobol::sections::Section' (role 'cobol_sections_Section', cardinality 0..*) is associated with 'StatementContainer' (role 'StatementContainer111', cardinality 0..*).
+'cobol::statements::Stop' (role 'cobol_statements_Stop', cardinality 0..*) is associated with 'StopLabel' (role 'StopLabel', cardinality 0..*).
+'NegatedAbbreviatedConditionalExpressionChild' (role 'NegatedAbbreviatedConditionalExpressionChild', cardinality 0..*) is associated with 'cobol::conditions::NegatedAbbreviatedConditionalExpression' (role 'cobol_conditions_NegatedAbbreviatedConditionalExpression', cardinality 0..*).
+'cobol::statements::Release' (role 'cobol_statements_Release', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference261', cardinality 0..*).
+'cobol::statements::Write' (role 'cobol_statements_Write236', cardinality 0..*) is associated with 'Identifier' (role 'Identifier237', cardinality 0..*).
+'cobol::conditions::SignCondition' (role 'cobol_conditions_SignCondition', cardinality 0..*) is associated with 'SimpleConditionChild' (role 'SimpleConditionChild37', cardinality 0..*).
+'Location' (role 'Location', cardinality 0..*) is associated with 'cobol::strings::StringManipulation' (role 'cobol_strings_StringManipulation', cardinality 0..*).
+'cobol::files::SelectStatement' (role 'cobol_files_SelectStatement367', cardinality 0..*) is associated with 'FileNameReference' (role 'FileNameReference368', cardinality 0..*).
+'Statement' (role 'Statement145', cardinality 0..*) is associated with 'cobol::statements::NestedStatement' (role 'cobol_statements_NestedStatement', cardinality 0..*).
+'IntegerLiteral' (role 'IntegerLiteral310', cardinality 0..*) is associated with 'cobol::identifiers::RelativeSubscript' (role 'cobol_identifiers_RelativeSubscript309', cardinality 0..*).
+'cobol::statements::Write' (role 'cobol_statements_Write239', cardinality 0..*) is associated with 'IntegerLiteral' (role 'IntegerLiteral', cardinality 0..*).
+'cobol::conditions::NestedAbbreviatedConditionalExpression' (role 'cobol_conditions_NestedAbbreviatedConditionalExpression34', cardinality 0..*) is associated with 'Condition' (role 'Condition35', cardinality 0..*).
+'cobol::specialnames::SymbolicCharacterStatement' (role 'cobol_specialnames_SymbolicCharacterStatement', cardinality 0..*) is associated with 'SymbolicCharacter' (role 'SymbolicCharacter', cardinality 0..*).
+'Negate' (role 'Negate20', cardinality 0..*) is associated with 'cobol::conditions::NegatedAbbreviatedConditionalExpression' (role 'cobol_conditions_NegatedAbbreviatedConditionalExpression19', cardinality 0..*).
+'ReplacementOperand' (role 'ReplacementOperand', cardinality 0..*) is associated with 'cobol::strings::Replacement' (role 'cobol_strings_Replacement', cardinality 0..*).
+'StatementContainer' (role 'StatementContainer98', cardinality 0..*) is associated with 'cobol::paragraphs::Paragraph' (role 'cobol_paragraphs_Paragraph', cardinality 0..*).
+'DataItem' (role 'DataItem', cardinality 0..*) is associated with 'cobol::sections::DataDivisionSection' (role 'cobol_sections_DataDivisionSection117', cardinality 0..*).
+'RelationalOperator' (role 'RelationalOperator22', cardinality 0..*) is associated with 'cobol::conditions::AbbreviatedRelationalExpression' (role 'cobol_conditions_AbbreviatedRelationalExpression', cardinality 0..*).
+'cobol::functions::Argumentable' (role 'cobol_functions_Argumentable', cardinality 0..*) is associated with 'Argument' (role 'Argument', cardinality 0..*).
+'cobol::dataitems::DataItem' (role 'superentry', cardinality 0..*) is associated with 'DataItem' (role 'DataItem322', cardinality 0..*).
+'Replacement' (role 'Replacement408', cardinality 0..*) is associated with 'cobol::strings::ReplacementOccurrence' (role 'cobol_strings_ReplacementOccurrence', cardinality 0..*).
+'ArithmeticOperand' (role 'ArithmeticOperand128', cardinality 0..*) is associated with 'cobol::statements::ArithmeticStatement' (role 'cobol_statements_ArithmeticStatement127', cardinality 0..*).
+'cobol::sections::Section' (role 'cobol_sections_Section113', cardinality 0..*) is associated with 'Paragraph' (role 'Paragraph114', cardinality 0..*).
+'MnemonicNameReference' (role 'MnemonicNameReference', cardinality 0..*) is associated with 'cobol::statements::Write' (role 'cobol_statements_Write241', cardinality 0..*).
+'cobol::dataitems::DataItem' (role 'cobol_dataitems_DataItem', cardinality 0..*) is associated with 'DataItemAttribute' (role 'DataItemAttribute', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand399', cardinality 0..*) is associated with 'cobol::strings::ManipulatedStrings' (role 'cobol_strings_ManipulatedStrings398', cardinality 0..*).
+'Negate' (role 'Negate', cardinality 0..*) is associated with 'cobol::conditions::NegatedConditionalExpression' (role 'cobol_conditions_NegatedConditionalExpression5', cardinality 0..*).
+'Statement' (role 'Statement151', cardinality 0..*) is associated with 'cobol::statements::Condition' (role 'cobol_statements_Condition', cardinality 0..*).
+'cobol::statements::String' (role 'cobol_statements_String', cardinality 0..*) is associated with 'Identifier' (role 'Identifier172', cardinality 0..*).
+'ArithmeticOperand' (role 'ArithmeticOperand134', cardinality 0..*) is associated with 'cobol::statements::Multiply' (role 'cobol_statements_Multiply', cardinality 0..*).
+'cobol::statements::SearchStatement' (role 'cobol_statements_SearchStatement188', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand189', cardinality 0..*).
+'ProcedureDivision' (role 'ProcedureDivision', cardinality 0..*) is associated with 'cobol::containers::CompilationUnit' (role 'cobol_containers_CompilationUnit86', cardinality 0..*).
+'EnvironmentDivision' (role 'EnvironmentDivision', cardinality 0..*) is associated with 'cobol::containers::CompilationUnit' (role 'cobol_containers_CompilationUnit82', cardinality 0..*).
+'ProcedureRangeLabel' (role 'ProcedureRangeLabel', cardinality 0..*) is associated with 'cobol::statements::PerformProcedure' (role 'cobol_statements_PerformProcedure', cardinality 0..*).
+'Negate' (role 'Negate42', cardinality 0..*) is associated with 'cobol::conditions::SignCondition' (role 'cobol_conditions_SignCondition41', cardinality 0..*).
+'cobol::statements::SerialSearch' (role 'cobol_statements_SerialSearch', cardinality 0..*) is associated with 'Identifier' (role 'Identifier191', cardinality 0..*).
+'ArithmeticExpression' (role 'ArithmeticExpression78', cardinality 0..*) is associated with 'cobol::arithmetics::NestedArithmeticExpression' (role 'cobol_arithmetics_NestedArithmeticExpression', cardinality 0..*).
+'cobol::statements::Start' (role 'cobol_statements_Start', cardinality 0..*) is associated with 'FileNameReference' (role 'FileNameReference284', cardinality 0..*).
+'cobol::specialnames::AlphabetName' (role 'cobol_specialnames_AlphabetName', cardinality 0..*) is associated with 'AlphabetType' (role 'AlphabetType', cardinality 0..*).
+'cobol::divisions::ProcedureDivision' (role 'cobol_divisions_ProcedureDivision', cardinality 0..*) is associated with 'Declaratives' (role 'Declaratives', cardinality 0..*).
+'cobol::tables::IndexName' (role 'cobol_tables_IndexName', cardinality 0..*) is associated with 'AdditionalIndexName' (role 'AdditionalIndexName', cardinality 0..*).
+'FileStatus' (role 'FileStatus', cardinality 0..*) is associated with 'cobol::files::SelectStatement' (role 'cobol_files_SelectStatement', cardinality 0..*).
+'cobol::references::ReferenceableElement' (role 'aliasesTo', cardinality 0..*) is associated with 'ReferenceableElement' (role 'ReferenceableElement106', cardinality 0..*).
+'cobol::statements::Write' (role 'cobol_statements_Write243', cardinality 0..*) is associated with 'Identifier' (role 'Identifier244', cardinality 0..*).
+'ClassOperator' (role 'ClassOperator', cardinality 0..*) is associated with 'cobol::conditions::ClassCondition' (role 'cobol_conditions_ClassCondition49', cardinality 0..*).
+'cobol::conditions::RelationalExpression' (role 'cobol_conditions_RelationalExpression10', cardinality 0..*) is associated with 'Negate' (role 'Negate11', cardinality 0..*).
+'cobol::references::ReferenceableElement' (role 'aliasesFrom', cardinality 0..*) is associated with 'ReferenceableElement' (role 'ReferenceableElement', cardinality 0..*).
+'Identifier' (role 'Identifier229', cardinality 0..*) is associated with 'cobol::statements::Read' (role 'cobol_statements_Read228', cardinality 0..*).
+'cobol::specialnames::SymbolicCharacterStatement' (role 'cobol_specialnames_SymbolicCharacterStatement342', cardinality 0..*) is associated with 'AlphabetNameReference' (role 'AlphabetNameReference', cardinality 0..*).
+'Procedure' (role 'Procedure', cardinality 0..*) is associated with 'cobol::labels::ProcedureRangeChild' (role 'cobol_labels_ProcedureRangeChild', cardinality 0..*).
+'cobol::conditions::ConditionalAndExpression' (role 'cobol_conditions_ConditionalAndExpression', cardinality 0..*) is associated with 'ConditionalAndExpressionChild' (role 'ConditionalAndExpressionChild', cardinality 0..*).
+'cobol::arithmetics::AssignmentExpression' (role 'cobol_arithmetics_AssignmentExpression', cardinality 0..*) is associated with 'Equal' (role 'Equal', cardinality 0..*).
+'ProcedureRangeLabel' (role 'ProcedureRangeLabel142', cardinality 0..*) is associated with 'cobol::statements::Jump' (role 'cobol_statements_Jump', cardinality 0..*).
+'cobol::statements::SetSwitches' (role 'cobol_statements_SetSwitches', cardinality 0..*) is associated with 'SwitchStatus' (role 'SwitchStatus', cardinality 0..*).
+'cobol::strings::Location' (role 'cobol_strings_Location', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand403', cardinality 0..*).
+'SpecialNameStatement' (role 'SpecialNameStatement', cardinality 0..*) is associated with 'cobol::paragraphs::SpecialNamesParagraph' (role 'cobol_paragraphs_SpecialNamesParagraph', cardinality 0..*).
+'cobol::paragraphs::SpecialNamesParagraph' (role 'cobol_paragraphs_SpecialNamesParagraph103', cardinality 0..*) is associated with 'SpecialNamesParagraphWater' (role 'SpecialNamesParagraphWater', cardinality 0..*).
+'cobol::statements::TallyingIn' (role 'cobol_statements_TallyingIn', cardinality 0..*) is associated with 'Tallying' (role 'Tallying', cardinality 0..*).
+'cobol::statements::Read' (role 'cobol_statements_Read', cardinality 0..*) is associated with 'Identifier' (role 'Identifier226', cardinality 0..*).
+'cobol::tables::Table' (role 'cobol_tables_Table347', cardinality 0..*) is associated with 'KeyName' (role 'KeyName', cardinality 0..*).
+'cobol::conditions::ConditionalOrExpression' (role 'cobol_conditions_ConditionalOrExpression', cardinality 0..*) is associated with 'ConditionalOrExpressionChild' (role 'ConditionalOrExpressionChild', cardinality 0..*).
+'cobol::statements::SwitchStatus' (role 'cobol_statements_SwitchStatus', cardinality 0..*) is associated with 'MnemonicNameReference' (role 'MnemonicNameReference246', cardinality 0..*).
+'Argument' (role 'Argument391', cardinality 0..*) is associated with 'cobol::functions::Argumentable' (role 'cobol_functions_Argumentable390', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'cobol::conditions::ExpressionList' (role 'cobol_conditions_ExpressionList', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference196', cardinality 0..*) is associated with 'cobol::statements::Unstring' (role 'cobol_statements_Unstring195', cardinality 0..*).
+'FileNameReference' (role 'FileNameReference232', cardinality 0..*) is associated with 'cobol::statements::Read' (role 'cobol_statements_Read231', cardinality 0..*).
+'cobol::conditions::AbbreviatedRelationalExpression' (role 'cobol_conditions_AbbreviatedRelationalExpression29', cardinality 0..*) is associated with 'Is' (role 'Is30', cardinality 0..*).
+'TallyingIn' (role 'TallyingIn', cardinality 0..*) is associated with 'cobol::statements::Inspect' (role 'cobol_statements_Inspect', cardinality 0..*).
+'cobol::statements::IOStatement' (role 'cobol_statements_IOStatement', cardinality 0..*) is associated with 'IOFileDescriptor' (role 'IOFileDescriptor', cardinality 0..*).
+'cobol::labels::ProcedureLabel' (role 'cobol_labels_ProcedureLabel', cardinality 0..*) is associated with 'Section' (role 'Section385', cardinality 0..*).
+'cobol::tables::Table' (role 'cobol_tables_Table352', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference353', cardinality 0..*).
+'RelationalOperator' (role 'RelationalOperator', cardinality 0..*) is associated with 'cobol::conditions::RelationalExpression' (role 'cobol_conditions_RelationalExpression8', cardinality 0..*).
+'Condition' (role 'Condition153', cardinality 0..*) is associated with 'cobol::statements::Conditional' (role 'cobol_statements_Conditional', cardinality 0..*).
+'cobol::registers::Register' (role 'cobol_registers_Register', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand316', cardinality 0..*).
+'cobol::statements::Subtract' (role 'cobol_statements_Subtract', cardinality 0..*) is associated with 'ArithmeticOperand' (role 'ArithmeticOperand132', cardinality 0..*).
+'cobol::statements::Initialize' (role 'cobol_statements_Initialize', cardinality 0..*) is associated with 'Identifier' (role 'Identifier183', cardinality 0..*).
+'cobol::statements::IOFileDescriptor' (role 'cobol_statements_IOFileDescriptor', cardinality 0..*) is associated with 'IOFile' (role 'IOFile', cardinality 0..*).
+'DataItem' (role 'DataItem326', cardinality 0..*) is associated with 'cobol::dataitems::RecordName' (role 'cobol_dataitems_RecordName', cardinality 0..*).
+'cobol::statements::Divide' (role 'cobol_statements_Divide138', cardinality 0..*) is associated with 'Identifier' (role 'Identifier139', cardinality 0..*).
+'DataItemAttribute' (role 'DataItemAttribute361', cardinality 0..*) is associated with 'cobol::files::FileName' (role 'cobol_files_FileName360', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand387', cardinality 0..*) is associated with 'cobol::functions::Argument' (role 'cobol_functions_Argument', cardinality 0..*).
+'cobol::conditions::AbbreviatedRelationalExpression' (role 'cobol_conditions_AbbreviatedRelationalExpression24', cardinality 0..*) is associated with 'AbbreviatedRelationalExpressionChild' (role 'AbbreviatedRelationalExpressionChild', cardinality 0..*).
+'cobol::operands::RoundedIdentifier' (role 'cobol_operands_RoundedIdentifier', cardinality 0..*) is associated with 'Identifier' (role 'Identifier', cardinality 0..*).
+'Handler' (role 'Handler393', cardinality 0..*) is associated with 'cobol::handlers::NotErrorHandler' (role 'cobol_handlers_NotErrorHandler', cardinality 0..*).
+'FileName' (role 'FileName', cardinality 0..*) is associated with 'cobol::sections::FileSection' (role 'cobol_sections_FileSection', cardinality 0..*).
+'cobol::statements::Add' (role 'cobol_statements_Add', cardinality 0..*) is associated with 'ArithmeticOperand' (role 'ArithmeticOperand130', cardinality 0..*).
+'cobol::identifiers::IdentifierReference' (role 'cobol_identifiers_IdentifierReference300', cardinality 0..*) is associated with 'Qualifier' (role 'Qualifier', cardinality 0..*).
+'cobol::containers::CompilationUnit' (role 'cobol_containers_CompilationUnit84', cardinality 0..*) is associated with 'DataDivision' (role 'DataDivision', cardinality 0..*).
+'cobol::statements::Inspect' (role 'cobol_statements_Inspect218', cardinality 0..*) is associated with 'Replacement' (role 'Replacement219', cardinality 0..*).
+'cobol::water::IncompleteElement' (role 'cobol_water_IncompleteElement', cardinality 0..*) is associated with 'Water' (role 'Water', cardinality 0..*).
+'Sentence' (role 'Sentence', cardinality 0..*) is associated with 'cobol::sentences::Sentence' (role 'cobol_sentences_Sentence', cardinality 0..*).
+'ReplacementOperand' (role 'ReplacementOperand412', cardinality 0..*) is associated with 'cobol::strings::SpecificCharacterBySpecificCharacter' (role 'cobol_strings_SpecificCharacterBySpecificCharacter', cardinality 0..*).
+'cobol::statements::Divide' (role 'cobol_statements_Divide', cardinality 0..*) is associated with 'ArithmeticOperand' (role 'ArithmeticOperand136', cardinality 0..*).
+'cobol::statements::Call' (role 'cobol_statements_Call', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand181', cardinality 0..*).
+'Replacement' (role 'Replacement216', cardinality 0..*) is associated with 'cobol::statements::Inspect' (role 'cobol_statements_Inspect215', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand401', cardinality 0..*) is associated with 'cobol::strings::SplittedString' (role 'cobol_strings_SplittedString', cardinality 0..*).
+'Identifier' (role 'Identifier175', cardinality 0..*) is associated with 'cobol::statements::String' (role 'cobol_statements_String174', cardinality 0..*).
+'RelationalOperator' (role 'RelationalOperator287', cardinality 0..*) is associated with 'cobol::statements::Start' (role 'cobol_statements_Start286', cardinality 0..*).
+'cobol::arithmetics::UnaryArithmeticExpression' (role 'cobol_arithmetics_UnaryArithmeticExpression67', cardinality 0..*) is associated with 'UnaryOperator' (role 'UnaryOperator', cardinality 0..*).
+'cobol::statements::TallyingIn' (role 'cobol_statements_TallyingIn273', cardinality 0..*) is associated with 'Identifier' (role 'Identifier274', cardinality 0..*).
+'cobol::containers::CompilationGroup' (role 'cobol_containers_CompilationGroup', cardinality 0..*) is associated with 'CompilationUnit' (role 'CompilationUnit', cardinality 0..*).
+'StatementContainer' (role 'StatementContainer364', cardinality 0..*) is associated with 'cobol::files::FileName' (role 'cobol_files_FileName363', cardinality 0..*).
+'cobol::strings::SpecificCharacter' (role 'cobol_strings_SpecificCharacter', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand410', cardinality 0..*).
+'cobol::statements::SetStatement' (role 'cobol_statements_SetStatement', cardinality 0..*) is associated with 'PrimaryOperand' (role 'PrimaryOperand168', cardinality 0..*).
+'cobol::statements::Evaluate' (role 'cobol_statements_Evaluate', cardinality 0..*) is associated with 'EvaluateCase' (role 'EvaluateCase', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand222', cardinality 0..*) is associated with 'cobol::statements::Inspect' (role 'cobol_statements_Inspect221', cardinality 0..*).
+'cobol::statements::SetIndexName' (role 'cobol_statements_SetIndexName', cardinality 0..*) is associated with 'IndexNameReference' (role 'IndexNameReference', cardinality 0..*).
+'cobol::statements::Initialize' (role 'cobol_statements_Initialize185', cardinality 0..*) is associated with 'Replacement' (role 'Replacement', cardinality 0..*).
+'cobol::conditions::RelationalExpression' (role 'cobol_conditions_RelationalExpression', cardinality 0..*) is associated with 'SimpleConditionChild' (role 'SimpleConditionChild', cardinality 0..*).
+'UnaryArithmeticExpressionChild' (role 'UnaryArithmeticExpressionChild', cardinality 0..*) is associated with 'cobol::arithmetics::UnaryArithmeticExpression' (role 'cobol_arithmetics_UnaryArithmeticExpression', cardinality 0..*).
+'AdditiveOperator' (role 'AdditiveOperator307', cardinality 0..*) is associated with 'cobol::identifiers::RelativeSubscript' (role 'cobol_identifiers_RelativeSubscript', cardinality 0..*).
+'cobol::tables::Table' (role 'cobol_tables_Table', cardinality 0..*) is associated with 'TableDimension' (role 'TableDimension', cardinality 0..*).
+'IdentificationDivision' (role 'IdentificationDivision', cardinality 0..*) is associated with 'cobol::containers::CompilationUnit' (role 'cobol_containers_CompilationUnit', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference224', cardinality 0..*) is associated with 'cobol::statements::Set' (role 'cobol_statements_Set', cardinality 0..*).
+'cobol::labels::ProcedureRange' (role 'cobol_labels_ProcedureRange', cardinality 0..*) is associated with 'ProcedureRangeChild' (role 'ProcedureRangeChild', cardinality 0..*).
+'cobol::paragraphs::FileControlParagraph' (role 'cobol_paragraphs_FileControlParagraph', cardinality 0..*) is associated with 'SelectStatement' (role 'SelectStatement', cardinality 0..*).
+'cobol::dataitems::RenamingDataName' (role 'cobol_dataitems_RenamingDataName', cardinality 0..*) is associated with 'RangeExpression' (role 'RangeExpression', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference355', cardinality 0..*) is associated with 'cobol::tables::KeyName' (role 'cobol_tables_KeyName', cardinality 0..*).
+'cobol::identifiers::IdentifierReference' (role 'cobol_identifiers_IdentifierReference', cardinality 0..*) is associated with 'Subscript' (role 'Subscript', cardinality 0..*).
+'cobol::specialnames::SymbolicCharacter' (role 'cobol_specialnames_SymbolicCharacter', cardinality 0..*) is associated with 'IntegerLiteral' (role 'IntegerLiteral339', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand161', cardinality 0..*) is associated with 'cobol::statements::Accept' (role 'cobol_statements_Accept', cardinality 0..*).
+'PowerArithmeticExpressionChild' (role 'PowerArithmeticExpressionChild', cardinality 0..*) is associated with 'cobol::arithmetics::PowerArithmeticExpression' (role 'cobol_arithmetics_PowerArithmeticExpression', cardinality 0..*).
+'cobol::dataitems::DataItem' (role 'subentries', cardinality 0..*) is associated with 'DataItem' (role 'DataItem324', cardinality 0..*).
+'PrimaryOperand' (role 'PrimaryOperand', cardinality 0..*) is associated with 'cobol::statements::Move' (role 'cobol_statements_Move', cardinality 0..*).
+'cobol::statements::EvaluateCase' (role 'cobol_statements_EvaluateCase', cardinality 0..*) is associated with 'ExpressionList' (role 'ExpressionList212', cardinality 0..*).
+'cobol::statements::Release' (role 'cobol_statements_Release263', cardinality 0..*) is associated with 'IdentifierReference' (role 'IdentifierReference264', cardinality 0..*).
+'cobol::arithmetics::AdditiveArithmeticExpression' (role 'cobol_arithmetics_AdditiveArithmeticExpression', cardinality 0..*) is associated with 'AdditiveArithmeticExpressionChild' (role 'AdditiveArithmeticExpressionChild', cardinality 0..*).
+'cobol::parameters::Parametrizable' (role 'cobol_parameters_Parametrizable376', cardinality 0..*) is associated with 'Parameter' (role 'Parameter377', cardinality 0..*).
+'cobol::arithmetics::AssignmentExpression' (role 'cobol_arithmetics_AssignmentExpression72', cardinality 0..*) is associated with 'ArithmeticExpression' (role 'ArithmeticExpression73', cardinality 0..*).
+'DeclarativeSection' (role 'DeclarativeSection', cardinality 0..*) is associated with 'cobol::declaratives::Declaratives' (role 'cobol_declaratives_Declaratives', cardinality 0..*).
+'cobol::statements::Statement' (role 'cobol_statements_Statement', cardinality 0..*) is associated with 'Statement' (role 'Statement124', cardinality 0..*).
+'cobol::references::Qualifiable' (role 'cobol_references_Qualifiable', cardinality 0..*) is associated with 'ElementReference' (role 'ElementReference', cardinality 0..*).
+'IdentifierReference' (role 'IdentifierReference373', cardinality 0..*) is associated with 'cobol::files::FileStatus' (role 'cobol_files_FileStatus372', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'testFramework::TABLEACTION' has no attributes.
+The class 'testFramework::IDENTIFIER' has the following attributes: 'identifiervalue' of type str.
+The class 'testFramework::LABEL' has the following attributes: 'labelvalue' of type str.
+The class 'testFramework::Greeting' has the following attributes: 'summaryDetails' of type str; 'testcaseValue' of type int.
+The class 'testFramework::FIRSTACTION' has the following attributes: 'checktableAction' of type str.
+The class 'testFramework::Model' has no attributes.
+'testFramework::TABLEACTION' (role 'testFramework_TABLEACTION8', cardinality 0..*) is associated with 'testFramework::LABEL' (role 'testFramework_LABEL', cardinality 0..*).
+'testFramework::FIRSTACTION' (role 'testFramework_FIRSTACTION4', cardinality 0..*) is associated with 'testFramework::TABLEACTION' (role 'testFramework_TABLEACTION', cardinality 0..*).
+'testFramework::Greeting' (role 'testFramework_Greeting', cardinality 0..*) is associated with 'testFramework::Model' (role 'testFramework_Model', cardinality 0..*).
+'testFramework::IDENTIFIER' (role 'testFramework_IDENTIFIER', cardinality 0..*) is associated with 'testFramework::TABLEACTION' (role 'testFramework_TABLEACTION6', cardinality 0..*).
+'testFramework::FIRSTACTION' (role 'testFramework_FIRSTACTION', cardinality 0..*) is associated with 'testFramework::Greeting' (role 'testFramework_Greeting2', cardinality 0..*).

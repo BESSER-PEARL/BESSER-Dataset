@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'base::BaseType' has the following attributes: 'stuff' of type str.
+The class 'base::nested::SubA' has no attributes.
+The class 'BaseType' has no attributes.
+'base::nested::SubA' is a specialization of 'BaseType'.

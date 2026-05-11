@@ -1,0 +1,33 @@
+The model has 11 class(es).
+The class 'classDiagram::Package' has no attributes.
+The class 'classDiagram::Attribute' has the following attributes: 'accessModifier' of type str; 'isStatic' of type bool.
+The class 'Classifier' has no attributes.
+The class 'ModelingConcept' has no attributes.
+The class 'classDiagram::ModelingConcept' has the following attributes: 'name' of type str.
+The class 'classDiagram::Class' has the following attributes: 'isStatic' of type bool; 'isAbstract' of type bool; 'accessModifier' of type str.
+The class 'classDiagram::ClassModel' has no attributes.
+The class 'classDiagram::Type' has no attributes.
+The class 'classDiagram::Classifier' has no attributes.
+The class 'classDiagram::Method' has the following attributes: 'isStatic' of type bool; 'isAbstract' of type bool; 'accessModifier' of type str; 'body' of type str.
+The class 'classDiagram::ElementType' has the following attributes: 'isCollection' of type bool.
+The enumeration 'AccessModifier' has the following literals: 'public', 'protected', 'default', 'private'.
+'classDiagram::Type' is a specialization of 'Classifier'.
+'classDiagram::Method' is a specialization of 'ModelingConcept'.
+'classDiagram::Class' is a specialization of 'Classifier'.
+'classDiagram::Classifier' is a specialization of 'ModelingConcept'.
+'classDiagram::Attribute' is a specialization of 'ModelingConcept'.
+'classDiagram::Package' is a specialization of 'ModelingConcept'.
+'classDiagram::Class' (role 'supertypes', cardinality 0..*) is associated with 'classDiagram::Class' (role 'Class18', cardinality 0..*).
+'classDiagram::Attribute' (role 'classDiagram_Attribute', cardinality 0..*) is associated with 'classDiagram::Class' (role 'classDiagram_Class13', cardinality 0..*).
+'classDiagram::Class' (role 'Class', cardinality 0..*) is associated with 'classDiagram::Class' (role 'subtypes', cardinality 0..*).
+'classDiagram::Attribute' (role 'classDiagram_Attribute22', cardinality 0..*) is associated with 'classDiagram::ElementType' (role 'classDiagram_ElementType', cardinality 0..*).
+'classDiagram::Attribute' (role 'classDiagram_Attribute28', cardinality 0..*) is associated with 'classDiagram::Method' (role 'classDiagram_Method27', cardinality 0..*).
+'classDiagram::Method' (role 'classDiagram_Method24', cardinality 0..*) is associated with 'classDiagram::ElementType' (role 'classDiagram_ElementType25', cardinality 0..*).
+'classDiagram::Classifier' (role 'classDiagram_Classifier', cardinality 0..*) is associated with 'classDiagram::ElementType' (role 'classDiagram_ElementType30', cardinality 0..*).
+'classDiagram::Method' (role 'classDiagram_Method', cardinality 0..*) is associated with 'classDiagram::Class' (role 'classDiagram_Class20', cardinality 0..*).
+'classDiagram::ClassModel' (role 'classDiagram_ClassModel', cardinality 0..*) is associated with 'classDiagram::Package' (role 'classDiagram_Package', cardinality 0..*).
+'classDiagram::Package' (role 'Package', cardinality 0..*) is associated with 'classDiagram::Package' (role 'subpackages', cardinality 0..*).
+'classDiagram::Package' (role 'classDiagram_Package4', cardinality 0..*) is associated with 'classDiagram::ModelingConcept' (role 'classDiagram_ModelingConcept', cardinality 0..*).
+'classDiagram::Class' (role 'classDiagram_Class', cardinality 0..*) is associated with 'classDiagram::Package' (role 'classDiagram_Package11', cardinality 0..*).
+'classDiagram::Type' (role 'classDiagram_Type', cardinality 0..*) is associated with 'classDiagram::ClassModel' (role 'classDiagram_ClassModel2', cardinality 0..*).
+'classDiagram::Package' (role 'Package9', cardinality 0..*) is associated with 'classDiagram::Package' (role 'package', cardinality 0..*).

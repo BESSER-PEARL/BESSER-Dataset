@@ -1,0 +1,35 @@
+The model has 15 class(es).
+The class 'dot::Statement' has no attributes.
+The class 'dot::Identifiable' has the following attributes: 'id' of type str.
+The class 'dot::InnerNode' has no attributes.
+The class 'dot::Assignment' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'Node' has no attributes.
+The class 'dot::Edge' has no attributes.
+The class 'dot::AttributedItem' has no attributes.
+The class 'AttributedItem' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'dot::Settings' has the following attributes: 'type' of type str.
+The class 'dot::RecordNode' has no attributes.
+The class 'dot::Node' has no attributes.
+The class 'dot::Graph' has no attributes.
+The class 'dot::StringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The enumeration 'SettingsType' has the following literals: 'NODE', 'EDGE', 'GRAPH'.
+'dot::Assignment' is a specialization of 'Statement'.
+'dot::Node' is a specialization of 'Identifiable'.
+'dot::RecordNode' is a specialization of 'Node'.
+'dot::Edge' is a specialization of 'Statement'.
+'dot::Node' is a specialization of 'AttributedItem'.
+'dot::Graph' is a specialization of 'Identifiable'.
+'dot::Graph' is a specialization of 'Statement'.
+'dot::Edge' is a specialization of 'AttributedItem'.
+'dot::InnerNode' is a specialization of 'Node'.
+'dot::Settings' is a specialization of 'Statement'.
+'dot::Settings' is a specialization of 'AttributedItem'.
+'dot::Node' is a specialization of 'Statement'.
+'dot::AttributedItem' (role 'dot_AttributedItem', cardinality 0..*) is associated with 'dot::StringToStringMapEntry' (role 'dot_StringToStringMapEntry', cardinality 0..*).
+'dot::InnerNode' (role 'InnerNode', cardinality 0..*) is associated with 'dot::RecordNode' (role 'recordNode', cardinality 0..*).
+'dot::Edge' (role 'dot_Edge4', cardinality 0..*) is associated with 'dot::Node' (role 'dot_Node5', cardinality 0..*).
+'dot::Graph' (role 'dot_Graph', cardinality 0..*) is associated with 'dot::Statement' (role 'dot_Statement', cardinality 0..*).
+'dot::InnerNode' (role 'innerNodes', cardinality 0..*) is associated with 'dot::RecordNode' (role 'RecordNode', cardinality 0..*).
+'dot::Node' (role 'dot_Node', cardinality 0..*) is associated with 'dot::Edge' (role 'dot_Edge', cardinality 0..*).

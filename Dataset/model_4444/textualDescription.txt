@@ -1,0 +1,43 @@
+The model has 23 class(es).
+The class 'ioT::SensorType' has the following attributes: 'name' of type str.
+The class 'ioT::System' has no attributes.
+The class 'ioT::FetchData' has no attributes.
+The class 'ioT::Device' has the following attributes: 'name' of type str.
+The class 'ioT::FetchDataCondition' has the following attributes: 'condition' of type str.
+The class 'ioT::Portnumber' has the following attributes: 'number' of type int.
+The class 'ioT::Destination' has the following attributes: 'name' of type str.
+The class 'ioT::Ip' has the following attributes: 'ip' of type int.
+The class 'ioT::EObject' has no attributes.
+The class 'ioT::ServerTypes' has no attributes.
+The class 'ioT::Time' has the following attributes: 'time' of type int.
+The class 'ioT::DestinationTypes' has no attributes.
+The class 'ioT::DestinationType' has the following attributes: 'name' of type str.
+The class 'ioT::Server' has the following attributes: 'name' of type str.
+The class 'ioT::DeviceTypes' has no attributes.
+The class 'ioT::DeviceType' has the following attributes: 'name' of type str.
+The class 'ioT::Method' has the following attributes: 'name' of type str; 'parameters' of type str.
+The class 'ioT::SensorGroup' has the following attributes: 'name' of type str.
+The class 'ioT::FetchDataExpression' has the following attributes: 'timeUnit' of type str.
+The class 'ioT::SensorTypes' has no attributes.
+The class 'ioT::ServerType' has the following attributes: 'name' of type str.
+The class 'ioT::SensorGetMethod' has no attributes.
+The class 'ioT::Sensor' has the following attributes: 'name' of type str.
+'ioT::Portnumber' (role 'ioT_Portnumber', cardinality 0..*) is associated with 'ioT::Server' (role 'ioT_Server22', cardinality 0..*).
+'ioT::Sensor' (role 'ioT_Sensor5', cardinality 0..*) is associated with 'ioT::SensorGroup' (role 'ioT_SensorGroup', cardinality 0..*).
+'ioT::SensorGetMethod' (role 'ioT_SensorGetMethod8', cardinality 0..*) is associated with 'ioT::SensorType' (role 'ioT_SensorType9', cardinality 0..*).
+'ioT::DestinationType' (role 'ioT_DestinationType25', cardinality 0..*) is associated with 'ioT::Destination' (role 'ioT_Destination', cardinality 0..*).
+'ioT::EObject' (role 'ioT_EObject', cardinality 0..*) is associated with 'ioT::System' (role 'ioT_System', cardinality 0..*).
+'ioT::Device' (role 'ioT_Device14', cardinality 0..*) is associated with 'ioT::EObject' (role 'ioT_EObject15', cardinality 0..*).
+'ioT::Device' (role 'ioT_Device', cardinality 0..*) is associated with 'ioT::DeviceType' (role 'ioT_DeviceType12', cardinality 0..*).
+'ioT::Ip' (role 'ioT_Ip', cardinality 0..*) is associated with 'ioT::Server' (role 'ioT_Server20', cardinality 0..*).
+'ioT::Method' (role 'ioT_Method', cardinality 0..*) is associated with 'ioT::SensorGetMethod' (role 'ioT_SensorGetMethod', cardinality 0..*).
+'ioT::SensorTypes' (role 'ioT_SensorTypes', cardinality 0..*) is associated with 'ioT::SensorType' (role 'ioT_SensorType', cardinality 0..*).
+'ioT::FetchData' (role 'ioT_FetchData29', cardinality 0..*) is associated with 'ioT::EObject' (role 'ioT_EObject30', cardinality 0..*).
+'ioT::DeviceTypes' (role 'ioT_DeviceTypes', cardinality 0..*) is associated with 'ioT::DeviceType' (role 'ioT_DeviceType', cardinality 0..*).
+'ioT::FetchData' (role 'ioT_FetchData', cardinality 0..*) is associated with 'ioT::EObject' (role 'ioT_EObject27', cardinality 0..*).
+'ioT::FetchDataExpression' (role 'ioT_FetchDataExpression', cardinality 0..*) is associated with 'ioT::Time' (role 'ioT_Time', cardinality 0..*).
+'ioT::DestinationTypes' (role 'ioT_DestinationTypes', cardinality 0..*) is associated with 'ioT::DestinationType' (role 'ioT_DestinationType', cardinality 0..*).
+'ioT::ServerTypes' (role 'ioT_ServerTypes', cardinality 0..*) is associated with 'ioT::ServerType' (role 'ioT_ServerType', cardinality 0..*).
+'ioT::SensorType' (role 'ioT_SensorType3', cardinality 0..*) is associated with 'ioT::Sensor' (role 'ioT_Sensor', cardinality 0..*).
+'ioT::FetchData' (role 'ioT_FetchData32', cardinality 0..*) is associated with 'ioT::EObject' (role 'ioT_EObject33', cardinality 0..*).
+'ioT::ServerType' (role 'ioT_ServerType18', cardinality 0..*) is associated with 'ioT::Server' (role 'ioT_Server', cardinality 0..*).

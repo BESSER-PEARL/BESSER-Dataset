@@ -1,0 +1,71 @@
+The model has 32 class(es).
+The class 'bank::Bank' has no attributes.
+The class 'bank::InternalAccount' has no attributes.
+The class 'bank::Transaction' has the following attributes: 'amount' of type str; 'date' of type date; 'comment' of type str; 'id' of type str.
+The class 'bank::MobilePhone' has the following attributes: 'key' of type str; 'number' of type str.
+The class 'Device' has no attributes.
+The class 'bank::ContactMethod' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'ContactMethod' has no attributes.
+The class 'bank::DeviceTransaction' has no attributes.
+The class 'bank::Product' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'bank::Statement' has the following attributes: 'openingBalance' of type str; 'openingDate' of type date; 'closingDate' of type date; 'closingBalance' of type str.
+The class 'bank::Banker' has no attributes.
+The class 'bank::Token' has the following attributes: 'value' of type str.
+The class 'bank::PointOfSale' has the following attributes: 'id' of type str.
+The class 'bank::Account' has the following attributes: 'number' of type str; 'balance' of type str; 'description' of type str; 'periodStart' of type int.
+The class 'bank::CustomerAccount' has no attributes.
+The class 'bank::EMail' has the following attributes: 'eMailAddress' of type str.
+The class 'bank::OnlineTransaction' has no attributes.
+The class 'bank::TransactionInitiator' has no attributes.
+The class 'bank::BankerTransaction' has no attributes.
+The class 'Party' has no attributes.
+The class 'bank::Phone' has the following attributes: 'countryCode' of type int; 'extension' of type int; 'areaCode' of type int; 'phoneNumber' of type int.
+The class 'TransactionInitiator' has no attributes.
+The class 'bank::WebAddress' has the following attributes: 'url' of type str.
+The class 'bank::PostalAddress' has the following attributes: 'city' of type str; 'line2' of type str; 'postalCode' of type str; 'stateProvince' of type str; 'country' of type str; 'line1' of type str.
+The class 'Account' has no attributes.
+The class 'bank::OnlineSession' has the following attributes: 'end' of type date; 'internetAddress' of type str; 'start' of type date.
+The class 'bank::Customer' has no attributes.
+The class 'bank::Merchant' has no attributes.
+The class 'bank::Party' has the following attributes: 'name' of type str.
+The class 'bank::TokenTransaction' has no attributes.
+The class 'bank::Device' has no attributes.
+The class 'bank::Card' has the following attributes: 'deactivated' of type date; 'id' of type str; 'activated' of type date; 'expires' of type date; 'virtual' of type bool; 'issued' of type date.
+'bank::MobilePhone' is a specialization of 'Device'.
+'bank::Customer' is a specialization of 'Party'.
+'bank::Card' is a specialization of 'Device'.
+'bank::InternalAccount' is a specialization of 'Account'.
+'bank::OnlineSession' is a specialization of 'TransactionInitiator'.
+'bank::Token' is a specialization of 'TransactionInitiator'.
+'bank::EMail' is a specialization of 'ContactMethod'.
+'bank::Bank' is a specialization of 'Party'.
+'bank::WebAddress' is a specialization of 'ContactMethod'.
+'bank::Merchant' is a specialization of 'Party'.
+'bank::Banker' is a specialization of 'Party'.
+'bank::Phone' is a specialization of 'ContactMethod'.
+'bank::Banker' is a specialization of 'TransactionInitiator'.
+'bank::CustomerAccount' is a specialization of 'Account'.
+'bank::PostalAddress' is a specialization of 'ContactMethod'.
+'bank::Device' is a specialization of 'TransactionInitiator'.
+'bank::Token' (role 'bank_Token', cardinality 0..*) is associated with 'bank::Device' (role 'bank_Device', cardinality 0..*).
+'bank::CustomerAccount' (role 'CustomerAccount', cardinality 0..*) is associated with 'bank::Customer' (role 'owners', cardinality 0..*).
+'bank::Device' (role 'bank_Device32', cardinality 0..*) is associated with 'bank::CustomerAccount' (role 'bank_CustomerAccount', cardinality 0..*).
+'bank::Card' (role 'bank_Card28', cardinality 0..*) is associated with 'bank::Card' (role 'bank_Card26', cardinality 0..*).
+'bank::Customer' (role 'bank_Customer', cardinality 0..*) is associated with 'bank::Bank' (role 'bank_Bank7', cardinality 0..*).
+'bank::CustomerAccount' (role 'bank_CustomerAccount34', cardinality 0..*) is associated with 'bank::Product' (role 'bank_Product35', cardinality 0..*).
+'bank::Transaction' (role 'bank_Transaction', cardinality 0..*) is associated with 'bank::TransactionInitiator' (role 'bank_TransactionInitiator', cardinality 0..*).
+'bank::PostalAddress' (role 'bank_PostalAddress', cardinality 0..*) is associated with 'bank::PointOfSale' (role 'bank_PointOfSale22', cardinality 0..*).
+'bank::Token' (role 'bank_Token38', cardinality 0..*) is associated with 'bank::Merchant' (role 'bank_Merchant39', cardinality 0..*).
+'bank::Bank' (role 'bank_Bank3', cardinality 0..*) is associated with 'bank::Product' (role 'bank_Product', cardinality 0..*).
+'bank::PointOfSale' (role 'bank_PointOfSale30', cardinality 0..*) is associated with 'bank::DeviceTransaction' (role 'bank_DeviceTransaction', cardinality 0..*).
+'bank::ContactMethod' (role 'bank_ContactMethod', cardinality 0..*) is associated with 'bank::Party' (role 'bank_Party', cardinality 0..*).
+'bank::Merchant' (role 'bank_Merchant20', cardinality 0..*) is associated with 'bank::PointOfSale' (role 'bank_PointOfSale', cardinality 0..*).
+'bank::Transaction' (role 'credits', cardinality 0..*) is associated with 'bank::Statement' (role 'Statement17', cardinality 0..*).
+'bank::Statement' (role 'Statement', cardinality 0..*) is associated with 'bank::Transaction' (role 'debits', cardinality 0..*).
+'bank::Customer' (role 'bank_Customer12', cardinality 0..*) is associated with 'bank::OnlineSession' (role 'bank_OnlineSession', cardinality 0..*).
+'bank::Bank' (role 'bank_Bank', cardinality 0..*) is associated with 'bank::Merchant' (role 'bank_Merchant', cardinality 0..*).
+'bank::Bank' (role 'bank_Bank5', cardinality 0..*) is associated with 'bank::Account' (role 'bank_Account', cardinality 0..*).
+'bank::Merchant' (role 'bank_Merchant25', cardinality 0..*) is associated with 'bank::Card' (role 'bank_Card', cardinality 0..*).
+'bank::Account' (role 'bank_Account14', cardinality 0..*) is associated with 'bank::Statement' (role 'bank_Statement', cardinality 0..*).
+'bank::Customer' (role 'Customer', cardinality 0..*) is associated with 'bank::CustomerAccount' (role 'accounts', cardinality 0..*).
+'bank::Banker' (role 'bank_Banker', cardinality 0..*) is associated with 'bank::Bank' (role 'bank_Bank9', cardinality 0..*).

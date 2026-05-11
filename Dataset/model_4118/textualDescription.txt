@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'wh::Wh' has no attributes.
+The class 'wh::Program' has the following attributes: 'name' of type str.
+The class 'wh::Definition' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'wh::Command' has the following attributes: 'cmd' of type str.
+The class 'wh::Commands' has no attributes.
+'wh::Command' (role 'wh_Command', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands6', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition', cardinality 0..*) is associated with 'wh::Program' (role 'wh_Program2', cardinality 0..*).
+'wh::Definition' (role 'wh_Definition4', cardinality 0..*) is associated with 'wh::Commands' (role 'wh_Commands', cardinality 0..*).
+'wh::Program' (role 'wh_Program', cardinality 0..*) is associated with 'wh::Wh' (role 'wh_Wh', cardinality 0..*).

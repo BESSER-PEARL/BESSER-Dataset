@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'typeB::RootB' has no attributes.
+The class 'typeB::ElementB' has the following attributes: 'name' of type str.
+'typeB::RootB' (role 'typeB_RootB', cardinality 0..*) is associated with 'typeB::ElementB' (role 'typeB_ElementB', cardinality 0..*).

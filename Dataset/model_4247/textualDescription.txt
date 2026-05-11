@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'ce::Employee' has the following attributes: 'name' of type str; 'address' of type str; 'department' of type str.
+The class 'ce::Company' has the following attributes: 'name' of type str.
+'ce::Employee' (role 'ce_Employee', cardinality 0..*) is associated with 'ce::Company' (role 'ce_Company', cardinality 0..*).

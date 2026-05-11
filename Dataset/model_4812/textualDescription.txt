@@ -1,0 +1,161 @@
+The model has 65 class(es).
+The class 'TextContent' has no attributes.
+The class 'model::Property' has the following attributes: 'key' of type str; 'value' of type str; 'generated' of type bool.
+The class 'model::SketchModelActor' has no attributes.
+The class 'model::DiagramModelGroup' has no attributes.
+The class 'model::Cloneable' has no attributes.
+The class 'JunctionElement' has no attributes.
+The class 'model::SketchModel' has the following attributes: 'background' of type int.
+The class 'BorderObject' has no attributes.
+The class 'model::Properties' has no attributes.
+The class 'model::ZentaModel' has the following attributes: 'file' of type str; 'version' of type str.
+The class 'ZentaElement' has no attributes.
+The class 'model::DiagramModelComponent' has the following attributes: 'lineColor' of type str; 'lineWidth' of type int.
+The class 'FontAttribute' has no attributes.
+The class 'model::DiagramModelObject' has the following attributes: 'fillColor' of type str; 'elementShape' of type str.
+The class 'Documentable' has no attributes.
+The class 'model::Folder' has no attributes.
+The class 'Folder' has no attributes.
+The class 'model::FolderContainer' has no attributes.
+The class 'Properties' has no attributes.
+The class 'model::DiagramModelReference' has no attributes.
+The class 'model::FontAttribute' has the following attributes: 'fontColor' of type str; 'textAlignment' of type int; 'textPosition' of type int; 'font' of type str.
+The class 'Cloneable' has no attributes.
+The class 'model::ZentaModelElement' has no attributes.
+The class 'FolderContainer' has no attributes.
+The class 'model::DiagramModelBendpoint' has the following attributes: 'startX' of type int; 'endY' of type int; 'startY' of type int; 'endX' of type int.
+The class 'model::SketchModelSticky' has no attributes.
+The class 'model::Documentable' has the following attributes: 'documentation' of type str.
+The class 'model::BasicRelationship' has no attributes.
+The class 'model::DiagramModelImage' has no attributes.
+The class 'DiagramModelComponent' has no attributes.
+The class 'model::ZentaElement' has no attributes.
+The class 'model::InterfaceElement' has the following attributes: 'interfaceType' of type int.
+The class 'model::BorderObject' has the following attributes: 'borderColor' of type str.
+The class 'DiagramModelObject' has no attributes.
+The class 'model::DiagramModelZentaObject' has the following attributes: 'type' of type int.
+The class 'model::Adapter' has no attributes.
+The class 'model::DiagramModelContainer' has no attributes.
+The class 'model::Junction' has no attributes.
+The class 'Adapter' has no attributes.
+The class 'DiagramModelConnection' has no attributes.
+The class 'model::DiagramModelNote' has no attributes.
+The class 'DiagramModel' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'model::Nameable' has the following attributes: 'name' of type str.
+The class 'model::Bounds' has the following attributes: 'height' of type int; 'x' of type int; 'width' of type int; 'y' of type int.
+The class 'model::DiagramModelZentaConnection' has no attributes.
+The class 'model::TextContent' has the following attributes: 'content' of type str.
+The class 'model::DiagramModelConnection' has the following attributes: 'type' of type int; 'lineDecoration' of type str; 'text' of type str.
+The class 'model::OrJunction' has no attributes.
+The class 'model::Metamodel' has no attributes.
+The class 'model::BasicObject' has no attributes.
+The class 'model::ZentaDiagramModel' has the following attributes: 'viewpoint' of type int.
+The class 'model::Template' has the following attributes: 'path' of type str.
+The class 'ZentaModelElement' has no attributes.
+The class 'model::Lockable' has the following attributes: 'locked' of type bool.
+The class 'model::AndJunction' has no attributes.
+The class 'model::DiagramModel' has the following attributes: 'connectionRouterType' of type int.
+The class 'BasicObject' has no attributes.
+The class 'model::Identifier' has the following attributes: 'id' of type str.
+The class 'DiagramModelContainer' has no attributes.
+The class 'DiagramModelImageProvider' has no attributes.
+The class 'model::Attribute' has the following attributes: 'minOccurs' of type int; 'maxOccurs' of type int.
+The class 'Nameable' has no attributes.
+The class 'model::DiagramModelImageProvider' has the following attributes: 'imagePath' of type str.
+The class 'model::JunctionElement' has no attributes.
+'model::DiagramModelComponent' is a specialization of 'Identifier'.
+'model::Identifier' is a specialization of 'Nameable'.
+'model::DiagramModelComponent' is a specialization of 'Adapter'.
+'model::DiagramModelNote' is a specialization of 'TextContent'.
+'model::DiagramModelConnection' is a specialization of 'Documentable'.
+'model::DiagramModelConnection' is a specialization of 'Properties'.
+'model::SketchModel' is a specialization of 'DiagramModel'.
+'model::DiagramModelConnection' is a specialization of 'DiagramModelComponent'.
+'model::Folder' is a specialization of 'Identifier'.
+'model::ZentaModel' is a specialization of 'Documentable'.
+'model::DiagramModelZentaObject' is a specialization of 'DiagramModelObject'.
+'model::DiagramModelNote' is a specialization of 'DiagramModelObject'.
+'model::SketchModelSticky' is a specialization of 'DiagramModelObject'.
+'model::DiagramModelImage' is a specialization of 'DiagramModelImageProvider'.
+'model::Folder' is a specialization of 'ZentaModelElement'.
+'model::Folder' is a specialization of 'FolderContainer'.
+'model::Junction' is a specialization of 'JunctionElement'.
+'model::DiagramModel' is a specialization of 'Documentable'.
+'model::DiagramModelReference' is a specialization of 'DiagramModelObject'.
+'model::DiagramModelComponent' is a specialization of 'Nameable'.
+'model::ZentaModel' is a specialization of 'Identifier'.
+'model::JunctionElement' is a specialization of 'ZentaElement'.
+'model::OrJunction' is a specialization of 'JunctionElement'.
+'model::SketchModelSticky' is a specialization of 'DiagramModelContainer'.
+'model::SketchModelActor' is a specialization of 'Properties'.
+'model::DiagramModelImage' is a specialization of 'DiagramModelObject'.
+'model::DiagramModelGroup' is a specialization of 'DiagramModelContainer'.
+'model::SketchModelSticky' is a specialization of 'Properties'.
+'model::ZentaElement' is a specialization of 'Nameable'.
+'model::Folder' is a specialization of 'Properties'.
+'model::ZentaElement' is a specialization of 'Cloneable'.
+'model::DiagramModelComponent' is a specialization of 'Cloneable'.
+'model::ZentaModelElement' is a specialization of 'Adapter'.
+'model::Folder' is a specialization of 'Documentable'.
+'model::AndJunction' is a specialization of 'JunctionElement'.
+'model::DiagramModelZentaObject' is a specialization of 'DiagramModelContainer'.
+'model::DiagramModelZentaConnection' is a specialization of 'DiagramModelConnection'.
+'model::DiagramModelGroup' is a specialization of 'Properties'.
+'model::DiagramModelObject' is a specialization of 'DiagramModelComponent'.
+'model::DiagramModelConnection' is a specialization of 'FontAttribute'.
+'model::DiagramModelContainer' is a specialization of 'DiagramModelComponent'.
+'model::SketchModelSticky' is a specialization of 'TextContent'.
+'model::ZentaElement' is a specialization of 'ZentaModelElement'.
+'model::DiagramModelGroup' is a specialization of 'Documentable'.
+'model::DiagramModelGroup' is a specialization of 'DiagramModelObject'.
+'model::DiagramModelObject' is a specialization of 'FontAttribute'.
+'model::DiagramModelBendpoint' is a specialization of 'Cloneable'.
+'model::DiagramModelImage' is a specialization of 'BorderObject'.
+'model::ZentaModel' is a specialization of 'Folder'.
+'model::BasicRelationship' is a specialization of 'BasicObject'.
+'model::SketchModelActor' is a specialization of 'DiagramModelObject'.
+'model::ZentaModel' is a specialization of 'ZentaModelElement'.
+'model::ZentaModel' is a specialization of 'Properties'.
+'model::DiagramModel' is a specialization of 'Properties'.
+'model::DiagramModel' is a specialization of 'ZentaModelElement'.
+'model::ZentaModel' is a specialization of 'FolderContainer'.
+'model::ZentaModel' is a specialization of 'Nameable'.
+'model::ZentaDiagramModel' is a specialization of 'DiagramModel'.
+'model::ZentaElement' is a specialization of 'Documentable'.
+'model::DiagramModel' is a specialization of 'DiagramModelContainer'.
+'model::InterfaceElement' is a specialization of 'ZentaElement'.
+'model::ZentaElement' is a specialization of 'Identifier'.
+'model::ZentaElement' is a specialization of 'Properties'.
+'model::BasicObject' is a specialization of 'ZentaElement'.
+'model::Folder' is a specialization of 'Nameable'.
+'model::SketchModelActor' is a specialization of 'Documentable'.
+'model::Property' (role 'model_Property', cardinality 0..*) is associated with 'model::Properties' (role 'model_Properties', cardinality 0..*).
+'model::DiagramModelZentaObject' (role 'DiagramModelZentaObject', cardinality 0..*) is associated with 'model::ZentaElement' (role 'zentaElement', cardinality 0..*).
+'model::Template' (role 'Template', cardinality 0..*) is associated with 'model::Metamodel' (role 'metamodel', cardinality 0..*).
+'model::DiagramModelContainer' (role 'model_DiagramModelContainer', cardinality 0..*) is associated with 'model::DiagramModelObject' (role 'model_DiagramModelObject', cardinality 0..*).
+'model::BasicRelationship' (role 'model_BasicRelationship48', cardinality 0..*) is associated with 'model::Attribute' (role 'model_Attribute47', cardinality 0..*).
+'model::Template' (role 'model_Template', cardinality 0..*) is associated with 'model::DiagramModel' (role 'model_DiagramModel30', cardinality 0..*).
+'model::DiagramModelObject' (role 'model_DiagramModelObject10', cardinality 0..*) is associated with 'model::Bounds' (role 'model_Bounds', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection17', cardinality 0..*) is associated with 'model::DiagramModelObject' (role 'model_DiagramModelObject18', cardinality 0..*).
+'model::BasicObject' (role 'BasicObject', cardinality 0..*) is associated with 'model::Template' (role 'template', cardinality 0..*).
+'model::Template' (role 'Template40', cardinality 0..*) is associated with 'model::BasicObject' (role 'classes', cardinality 0..*).
+'model::BasicObject' (role 'BasicObject38', cardinality 0..*) is associated with 'model::BasicObject' (role 'ancestor', cardinality 0..*).
+'model::DiagramModelZentaObject' (role 'diagObjects', cardinality 0..*) is associated with 'model::ZentaElement' (role 'ZentaElement', cardinality 0..*).
+'model::DiagramModelZentaConnection' (role 'DiagramModelZentaConnection', cardinality 0..*) is associated with 'model::BasicRelationship' (role 'relationship', cardinality 0..*).
+'model::DiagramModel' (role 'model_DiagramModel8', cardinality 0..*) is associated with 'model::DiagramModelReference' (role 'model_DiagramModelReference', cardinality 0..*).
+'model::DiagramModelComponent' (role 'model_DiagramModelComponent', cardinality 0..*) is associated with 'model::DiagramModel' (role 'model_DiagramModel', cardinality 0..*).
+'model::Metamodel' (role 'Metamodel', cardinality 0..*) is associated with 'model::Template' (role 'templates', cardinality 0..*).
+'model::BasicObject' (role 'BasicObject35', cardinality 0..*) is associated with 'model::BasicObject' (role 'children', cardinality 0..*).
+'model::DiagramModelObject' (role 'model_DiagramModelObject12', cardinality 0..*) is associated with 'model::DiagramModelConnection' (role 'model_DiagramModelConnection', cardinality 0..*).
+'model::Folder' (role 'model_Folder4', cardinality 0..*) is associated with 'model::Nameable' (role 'model_Nameable', cardinality 0..*).
+'model::BasicRelationship' (role 'model_BasicRelationship43', cardinality 0..*) is associated with 'model::ZentaElement' (role 'model_ZentaElement44', cardinality 0..*).
+'model::DiagramModelZentaConnection' (role 'diagConnections', cardinality 0..*) is associated with 'model::BasicRelationship' (role 'BasicRelationship', cardinality 0..*).
+'model::FolderContainer' (role 'model_FolderContainer', cardinality 0..*) is associated with 'model::Folder' (role 'model_Folder', cardinality 0..*).
+'model::Attribute' (role 'model_Attribute', cardinality 0..*) is associated with 'model::BasicObject' (role 'model_BasicObject', cardinality 0..*).
+'model::ZentaModel' (role 'model_ZentaModel', cardinality 0..*) is associated with 'model::ZentaModelElement' (role 'model_ZentaModelElement', cardinality 0..*).
+'model::Attribute' (role 'model_Attribute50', cardinality 0..*) is associated with 'model::BasicObject' (role 'model_BasicObject51', cardinality 0..*).
+'model::ZentaElement' (role 'model_ZentaElement', cardinality 0..*) is associated with 'model::BasicRelationship' (role 'model_BasicRelationship', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection20', cardinality 0..*) is associated with 'model::DiagramModelObject' (role 'model_DiagramModelObject21', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection15', cardinality 0..*) is associated with 'model::DiagramModelObject' (role 'model_DiagramModelObject14', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection23', cardinality 0..*) is associated with 'model::DiagramModelBendpoint' (role 'model_DiagramModelBendpoint', cardinality 0..*).

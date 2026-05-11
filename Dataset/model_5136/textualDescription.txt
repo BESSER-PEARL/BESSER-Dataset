@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'test::C' has no attributes.
+The class 'test::B' has the following attributes: 'b' of type str.
+The class 'test::A' has the following attributes: 'a' of type str.
+'test::B' (role 'test_B', cardinality 0..*) is associated with 'test::A' (role 'test_A', cardinality 0..*).

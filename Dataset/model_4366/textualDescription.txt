@@ -1,0 +1,64 @@
+The model has 32 class(es).
+The class 'mil::LoadInstruction' has no attributes.
+The class 'JumpInstruction' has no attributes.
+The class 'mil::NegInstruction' has no attributes.
+The class 'mil::RegisterReference' has the following attributes: 'address' of type str.
+The class 'mil::ErrInstruction' has no attributes.
+The class 'mil::SubInstruction' has no attributes.
+The class 'mil::LeqInstruction' has no attributes.
+The class 'mil::StoreInstruction' has no attributes.
+The class 'mil::PrtInstruction' has the following attributes: 'value' of type str.
+The class 'mil::NeqInstruction' has no attributes.
+The class 'mil::Value' has no attributes.
+The class 'mil::JumpInstruction' has no attributes.
+The class 'mil::JpcInstruction' has no attributes.
+The class 'mil::CalInstruction' has no attributes.
+The class 'mil::Instruction' has no attributes.
+The class 'mil::InpInstruction' has no attributes.
+The class 'mil::AddInstruction' has no attributes.
+The class 'mil::ConstantInteger' has the following attributes: 'rawValue' of type int.
+The class 'Value' has no attributes.
+The class 'mil::JmpInstruction' has no attributes.
+The class 'mil::MILModel' has no attributes.
+The class 'mil::MulInstruction' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'mil::RetInstruction' has no attributes.
+The class 'mil::GeqInstruction' has no attributes.
+The class 'mil::LabelInstruction' has the following attributes: 'name' of type str.
+The class 'mil::GtInstruction' has no attributes.
+The class 'mil::DivInstruction' has no attributes.
+The class 'mil::EqInstruction' has no attributes.
+The class 'PrtInstruction' has no attributes.
+The class 'mil::YldInstruction' has no attributes.
+The class 'mil::LtInstruction' has no attributes.
+'mil::AddInstruction' is a specialization of 'Instruction'.
+'mil::YldInstruction' is a specialization of 'Instruction'.
+'mil::GeqInstruction' is a specialization of 'Instruction'.
+'mil::LtInstruction' is a specialization of 'Instruction'.
+'mil::JumpInstruction' is a specialization of 'Instruction'.
+'mil::RegisterReference' is a specialization of 'Value'.
+'mil::LoadInstruction' is a specialization of 'Instruction'.
+'mil::JpcInstruction' is a specialization of 'JumpInstruction'.
+'mil::CalInstruction' is a specialization of 'JumpInstruction'.
+'mil::ErrInstruction' is a specialization of 'PrtInstruction'.
+'mil::RetInstruction' is a specialization of 'Instruction'.
+'mil::EqInstruction' is a specialization of 'Instruction'.
+'mil::JmpInstruction' is a specialization of 'JumpInstruction'.
+'mil::InpInstruction' is a specialization of 'Instruction'.
+'mil::StoreInstruction' is a specialization of 'Instruction'.
+'mil::PrtInstruction' is a specialization of 'Instruction'.
+'mil::NeqInstruction' is a specialization of 'Instruction'.
+'mil::ConstantInteger' is a specialization of 'Value'.
+'mil::SubInstruction' is a specialization of 'Instruction'.
+'mil::NegInstruction' is a specialization of 'Instruction'.
+'mil::LabelInstruction' is a specialization of 'Instruction'.
+'mil::GtInstruction' is a specialization of 'Instruction'.
+'mil::LeqInstruction' is a specialization of 'Instruction'.
+'mil::DivInstruction' is a specialization of 'Instruction'.
+'mil::MulInstruction' is a specialization of 'Instruction'.
+'mil::InpInstruction' (role 'mil_InpInstruction', cardinality 0..*) is associated with 'mil::ConstantInteger' (role 'mil_ConstantInteger', cardinality 0..*).
+'mil::LabelInstruction' (role 'mil_LabelInstruction', cardinality 0..*) is associated with 'mil::JumpInstruction' (role 'mil_JumpInstruction', cardinality 0..*).
+'mil::StoreInstruction' (role 'mil_StoreInstruction', cardinality 0..*) is associated with 'mil::RegisterReference' (role 'mil_RegisterReference', cardinality 0..*).
+'mil::InpInstruction' (role 'mil_InpInstruction6', cardinality 0..*) is associated with 'mil::ConstantInteger' (role 'mil_ConstantInteger7', cardinality 0..*).
+'mil::MILModel' (role 'mil_MILModel', cardinality 0..*) is associated with 'mil::Instruction' (role 'mil_Instruction', cardinality 0..*).
+'mil::LoadInstruction' (role 'mil_LoadInstruction', cardinality 0..*) is associated with 'mil::Value' (role 'mil_Value', cardinality 0..*).

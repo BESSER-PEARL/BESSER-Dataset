@@ -1,0 +1,55 @@
+The model has 22 class(es).
+The class 'imp::IntConst' has the following attributes: 'value' of type int.
+The class 'imp::Value' has no attributes.
+The class 'Value' has no attributes.
+The class 'imp::ArrayValue' has no attributes.
+The class 'imp::While' has no attributes.
+The class 'imp::BoolValue' has the following attributes: 'value' of type bool.
+The class 'imp::BoolConst' has the following attributes: 'value' of type bool.
+The class 'imp::IntValue' has the following attributes: 'value' of type int.
+The class 'imp::Assign' has the following attributes: 'name' of type str.
+The class 'imp::If' has no attributes.
+The class 'imp::Binary' has the following attributes: 'op' of type str.
+The class 'imp::StringToValueMap' has the following attributes: 'key' of type str.
+The class 'imp::Expr' has no attributes.
+The class 'imp::ArrayDecl' has no attributes.
+The class 'imp::Var' has the following attributes: 'name' of type str.
+The class 'Expr' has no attributes.
+The class 'imp::Skip' has no attributes.
+The class 'imp::Block' has no attributes.
+The class 'imp::Stmt' has no attributes.
+The class 'imp::Unary' has the following attributes: 'op' of type str.
+The class 'imp::Store' has no attributes.
+The class 'Stmt' has no attributes.
+The enumeration 'BinaryOp' has the following literals: 'ADD', 'EQ', 'OR', 'SUB', 'GEQ', 'LT', 'AND', 'GT', 'MUL', 'LEQ'.
+The enumeration 'UnaryOp' has the following literals: 'NEGATE', 'NOT'.
+'imp::IntConst' is a specialization of 'Expr'.
+'imp::Assign' is a specialization of 'Stmt'.
+'imp::Var' is a specialization of 'Expr'.
+'imp::If' is a specialization of 'Stmt'.
+'imp::ArrayDecl' is a specialization of 'Expr'.
+'imp::ArrayValue' is a specialization of 'Value'.
+'imp::Binary' is a specialization of 'Expr'.
+'imp::Skip' is a specialization of 'Stmt'.
+'imp::Unary' is a specialization of 'Expr'.
+'imp::BoolValue' is a specialization of 'Value'.
+'imp::While' is a specialization of 'Stmt'.
+'imp::BoolConst' is a specialization of 'Expr'.
+'imp::Block' is a specialization of 'Stmt'.
+'imp::IntValue' is a specialization of 'Value'.
+'imp::Expr' (role 'imp_Expr21', cardinality 0..*) is associated with 'imp::Unary' (role 'imp_Unary', cardinality 0..*).
+'imp::ArrayValue' (role 'imp_ArrayValue', cardinality 0..*) is associated with 'imp::Value' (role 'imp_Value31', cardinality 0..*).
+'imp::Assign' (role 'imp_Assign', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr14', cardinality 0..*) is associated with 'imp::While' (role 'imp_While', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr33', cardinality 0..*) is associated with 'imp::ArrayDecl' (role 'imp_ArrayDecl', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr23', cardinality 0..*) is associated with 'imp::Binary' (role 'imp_Binary', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr26', cardinality 0..*) is associated with 'imp::Binary' (role 'imp_Binary25', cardinality 0..*).
+'imp::If' (role 'imp_If', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr6', cardinality 0..*).
+'imp::Assign' (role 'imp_Assign2', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr3', cardinality 0..*).
+'imp::If' (role 'imp_If8', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt9', cardinality 0..*).
+'imp::Var' (role 'imp_Var', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr19', cardinality 0..*).
+'imp::Value' (role 'imp_Value', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap29', cardinality 0..*).
+'imp::While' (role 'imp_While16', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt17', cardinality 0..*).
+'imp::If' (role 'imp_If11', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt12', cardinality 0..*).
+'imp::Block' (role 'imp_Block', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt', cardinality 0..*).
+'imp::Store' (role 'imp_Store', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap', cardinality 0..*).

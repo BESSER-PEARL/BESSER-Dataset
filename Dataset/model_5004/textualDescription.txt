@@ -1,0 +1,52 @@
+The model has 21 class(es).
+The class 'componentModel::PortType' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'AbstractFeatures' has no attributes.
+The class 'SystemPortDec' has no attributes.
+The class 'componentModel::OutPort' has no attributes.
+The class 'componentModel::ComponentType' has no attributes.
+The class 'componentModel::InPort' has no attributes.
+The class 'Port' has no attributes.
+The class 'componentModel::SystemPortOut' has no attributes.
+The class 'componentModel::ComponentModel' has no attributes.
+The class 'componentModel::ComponentFeature' has no attributes.
+The class 'componentModel::SystemDec' has no attributes.
+The class 'componentModel::CompConnDec' has no attributes.
+The class 'componentModel::ComponentImpl' has no attributes.
+The class 'componentModel::errorModes' has the following attributes: 'name' of type str.
+The class 'componentModel::Port' has the following attributes: 'name' of type str.
+The class 'componentModel::SystemPortIn' has no attributes.
+The class 'componentModel::SystemPortDec' has no attributes.
+The class 'componentModel::SystemConnDec' has no attributes.
+The class 'componentModel::AbstractFeatures' has the following attributes: 'name' of type str.
+The class 'componentModel::AbstractElement' has the following attributes: 'name' of type str.
+'componentModel::SystemPortDec' is a specialization of 'AbstractFeatures'.
+'componentModel::InPort' is a specialization of 'Port'.
+'componentModel::SystemPortIn' is a specialization of 'SystemPortDec'.
+'componentModel::CompConnDec' is a specialization of 'AbstractFeatures'.
+'componentModel::PortType' is a specialization of 'AbstractElement'.
+'componentModel::SystemPortOut' is a specialization of 'SystemPortDec'.
+'componentModel::SystemConnDec' is a specialization of 'AbstractElement'.
+'componentModel::OutPort' is a specialization of 'Port'.
+'componentModel::ComponentType' is a specialization of 'AbstractFeatures'.
+'componentModel::SystemDec' is a specialization of 'AbstractElement'.
+'componentModel::ComponentImpl' is a specialization of 'AbstractFeatures'.
+'componentModel::ComponentImpl' (role 'componentModel_ComponentImpl16', cardinality 0..*) is associated with 'componentModel::SystemPortOut' (role 'componentModel_SystemPortOut', cardinality 0..*).
+'componentModel::SystemConnDec' (role 'componentModel_SystemConnDec3', cardinality 0..*) is associated with 'componentModel::SystemPortDec' (role 'componentModel_SystemPortDec', cardinality 0..*).
+'componentModel::InPort' (role 'componentModel_InPort29', cardinality 0..*) is associated with 'componentModel::CompConnDec' (role 'componentModel_CompConnDec28', cardinality 0..*).
+'componentModel::ComponentType' (role 'componentModel_ComponentType', cardinality 0..*) is associated with 'componentModel::ComponentImpl' (role 'componentModel_ComponentImpl31', cardinality 0..*).
+'componentModel::Port' (role 'componentModel_Port', cardinality 0..*) is associated with 'componentModel::ComponentFeature' (role 'componentModel_ComponentFeature35', cardinality 0..*).
+'componentModel::OutPort' (role 'componentModel_OutPort23', cardinality 0..*) is associated with 'componentModel::CompConnDec' (role 'componentModel_CompConnDec22', cardinality 0..*).
+'componentModel::SystemPortOut' (role 'componentModel_SystemPortOut18', cardinality 0..*) is associated with 'componentModel::OutPort' (role 'componentModel_OutPort', cardinality 0..*).
+'componentModel::ComponentFeature' (role 'componentModel_ComponentFeature', cardinality 0..*) is associated with 'componentModel::ComponentType' (role 'componentModel_ComponentType33', cardinality 0..*).
+'componentModel::SystemPortDec' (role 'componentModel_SystemPortDec9', cardinality 0..*) is associated with 'componentModel::SystemConnDec' (role 'componentModel_SystemConnDec8', cardinality 0..*).
+'componentModel::SystemDec' (role 'componentModel_SystemDec', cardinality 0..*) is associated with 'componentModel::SystemConnDec' (role 'componentModel_SystemConnDec', cardinality 0..*).
+'componentModel::ComponentModel' (role 'componentModel_ComponentModel', cardinality 0..*) is associated with 'componentModel::AbstractElement' (role 'componentModel_AbstractElement', cardinality 0..*).
+'componentModel::PortType' (role 'componentModel_PortType', cardinality 0..*) is associated with 'componentModel::Port' (role 'componentModel_Port37', cardinality 0..*).
+'componentModel::SystemPortIn' (role 'componentModel_SystemPortIn14', cardinality 0..*) is associated with 'componentModel::InPort' (role 'componentModel_InPort', cardinality 0..*).
+'componentModel::AbstractFeatures' (role 'componentModel_AbstractFeatures', cardinality 0..*) is associated with 'componentModel::SystemDec' (role 'componentModel_SystemDec11', cardinality 0..*).
+'componentModel::ComponentImpl' (role 'componentModel_ComponentImpl20', cardinality 0..*) is associated with 'componentModel::CompConnDec' (role 'componentModel_CompConnDec', cardinality 0..*).
+'componentModel::SystemConnDec' (role 'componentModel_SystemConnDec5', cardinality 0..*) is associated with 'componentModel::SystemDec' (role 'componentModel_SystemDec6', cardinality 0..*).
+'componentModel::SystemPortIn' (role 'componentModel_SystemPortIn', cardinality 0..*) is associated with 'componentModel::ComponentImpl' (role 'componentModel_ComponentImpl', cardinality 0..*).
+'componentModel::errorModes' (role 'componentModel_errorModes', cardinality 0..*) is associated with 'componentModel::PortType' (role 'componentModel_PortType39', cardinality 0..*).
+'componentModel::ComponentImpl' (role 'componentModel_ComponentImpl26', cardinality 0..*) is associated with 'componentModel::CompConnDec' (role 'componentModel_CompConnDec25', cardinality 0..*).

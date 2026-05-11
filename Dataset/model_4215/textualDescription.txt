@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'helloworldext::GreetingMessage' has the following attributes: 'text' of type str.
+The class 'helloworldext::Greeting' has no attributes.
+The class 'helloworldext::Person' has the following attributes: 'name' of type str.
+'helloworldext::Greeting' (role 'helloworldext_Greeting', cardinality 0..*) is associated with 'helloworldext::GreetingMessage' (role 'helloworldext_GreetingMessage', cardinality 0..*).
+'helloworldext::Person' (role 'helloworldext_Person', cardinality 0..*) is associated with 'helloworldext::Greeting' (role 'helloworldext_Greeting2', cardinality 0..*).

@@ -1,0 +1,80 @@
+The model has 39 class(es).
+The class 'types::Type' has the following attributes: 'multivalued' of type bool; 'mayBeUndefined' of type bool; 'metamodelRef' of type str.
+The class 'types::SetType' has no attributes.
+The class 'types::Metaclass' has the following attributes: 'name' of type str; 'explicitOcurrence' of type bool.
+The class 'types::BooleanType' has no attributes.
+The class 'ReflectiveType' has no attributes.
+The class 'types::OrderedSetType' has no attributes.
+The class 'types::TypeError' has no attributes.
+The class 'types::OclUndefinedType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'types::ThisModuleType' has no attributes.
+The class 'Metaclass' has no attributes.
+The class 'types::MetaModel' has the following attributes: 'name' of type str.
+The class 'types::ReflectiveType' has no attributes.
+The class 'types::MapType' has no attributes.
+The class 'EStructuralFeature' has no attributes.
+The class 'types::TupleType' has no attributes.
+The class 'types::UnionType' has no attributes.
+The class 'types::RefType' has no attributes.
+The class 'types::UnresolvedTypeError' has no attributes.
+The class 'types::EnumType' has the following attributes: 'name' of type str.
+The class 'types::ReflectiveClass' has no attributes.
+The class 'types::EmptyCollection' has no attributes.
+The class 'types::PrimitiveType' has no attributes.
+The class 'types::EmptyCollectionType' has no attributes.
+The class 'types::FloatType' has no attributes.
+The class 'types::CollectionType' has no attributes.
+The class 'types::EObject' has no attributes.
+The class 'types::UnknownFeature' has no attributes.
+The class 'RefType' has no attributes.
+The class 'TypeError' has no attributes.
+The class 'types::SequenceType' has no attributes.
+The class 'types::IntegerType' has no attributes.
+The class 'types::TupleAttribute' has the following attributes: 'name' of type str.
+The class 'types::BagType' has no attributes.
+The class 'Type' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'types::StringType' has no attributes.
+The class 'types::EClass' has no attributes.
+The class 'types::Unknown' has no attributes.
+'types::ThisModuleType' is a specialization of 'Type'.
+'types::SetType' is a specialization of 'CollectionType'.
+'types::ReflectiveClass' is a specialization of 'ReflectiveType'.
+'types::UnresolvedTypeError' is a specialization of 'TypeError'.
+'types::EmptyCollection' is a specialization of 'Type'.
+'types::TupleType' is a specialization of 'Type'.
+'types::BagType' is a specialization of 'CollectionType'.
+'types::TypeError' is a specialization of 'Type'.
+'types::PrimitiveType' is a specialization of 'Type'.
+'types::EmptyCollectionType' is a specialization of 'Type'.
+'types::UnresolvedTypeError' is a specialization of 'Metaclass'.
+'types::Metaclass' is a specialization of 'RefType'.
+'types::Unknown' is a specialization of 'RefType'.
+'types::IntegerType' is a specialization of 'PrimitiveType'.
+'types::RefType' is a specialization of 'Type'.
+'types::OrderedSetType' is a specialization of 'CollectionType'.
+'types::UnknownFeature' is a specialization of 'EStructuralFeature'.
+'types::MapType' is a specialization of 'Type'.
+'types::OclUndefinedType' is a specialization of 'Type'.
+'types::EnumType' is a specialization of 'Type'.
+'types::BooleanType' is a specialization of 'PrimitiveType'.
+'types::ReflectiveType' is a specialization of 'Type'.
+'types::CollectionType' is a specialization of 'Type'.
+'types::FloatType' is a specialization of 'PrimitiveType'.
+'types::SequenceType' is a specialization of 'CollectionType'.
+'types::StringType' is a specialization of 'PrimitiveType'.
+'types::UnionType' is a specialization of 'Type'.
+'types::Type' (role 'types_Type8', cardinality 0..*) is associated with 'types::MapType' (role 'types_MapType7', cardinality 0..*).
+'types::MetaModel' (role 'types_MetaModel', cardinality 0..*) is associated with 'types::Metaclass' (role 'types_Metaclass20', cardinality 0..*).
+'types::Metaclass' (role 'types_Metaclass17', cardinality 0..*) is associated with 'types::EClass' (role 'types_EClass18', cardinality 0..*).
+'types::BooleanType' (role 'types_BooleanType', cardinality 0..*) is associated with 'types::Metaclass' (role 'types_Metaclass', cardinality 0..*).
+'types::CollectionType' (role 'types_CollectionType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type24', cardinality 0..*).
+'types::MapType' (role 'types_MapType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type5', cardinality 0..*).
+'types::EnumType' (role 'types_EnumType', cardinality 0..*) is associated with 'types::EObject' (role 'types_EObject15', cardinality 0..*).
+'types::EClass' (role 'types_EClass', cardinality 0..*) is associated with 'types::UnknownFeature' (role 'types_UnknownFeature', cardinality 0..*).
+'types::Type' (role 'types_Type11', cardinality 0..*) is associated with 'types::TupleAttribute' (role 'types_TupleAttribute10', cardinality 0..*).
+'types::Type' (role 'types_Type0', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'types::EObject' (role 'types_EObject', cardinality 0..*) is associated with 'types::TypeError' (role 'types_TypeError', cardinality 0..*).
+'types::UnionType' (role 'types_UnionType', cardinality 0..*) is associated with 'types::Type' (role 'types_Type22', cardinality 0..*).
+'types::TupleType' (role 'types_TupleType', cardinality 0..*) is associated with 'types::TupleAttribute' (role 'types_TupleAttribute', cardinality 0..*).

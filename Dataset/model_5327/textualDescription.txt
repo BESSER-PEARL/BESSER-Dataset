@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'root::container::border::node::3' has no attributes.
+The class 'root::container::border::node::1' has no attributes.
+The class 'root::container::border::node::2' has no attributes.

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'C' has no attributes.
+The class 'b::B' has the following attributes: 'custom_datatype' of type str; 'to_enum' of type str.
+'b::B' is a specialization of 'C'.

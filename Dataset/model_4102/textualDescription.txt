@@ -1,0 +1,32 @@
+The model has 11 class(es).
+The class 'Thing' has no attributes.
+The class 'ConceptASE::Segment' has the following attributes: 'Segment_length' of type int; 'Segment_height' of type int.
+The class 'ConceptASE::Signal' has the following attributes: 'Signal_actualState' of type str.
+The class 'ConceptASE::Switch' has the following attributes: 'Switch_actualState' of type str.
+The class 'ConceptASE::Route' has no attributes.
+The class 'ConceptASE::IndividualContainer' has no attributes.
+The class 'ConceptASE::Trackelement' has no attributes.
+The class 'Trackelement' has no attributes.
+The class 'ConceptASE::Thing' has no attributes.
+The class 'ConceptASE::SwitchPosition' has the following attributes: 'SwitchPosition_switchState' of type str.
+The class 'ConceptASE::Sensor' has the following attributes: 'Sensor_year' of type int.
+The enumeration 'SwitchStateKind' has the following literals: 'PointStateKind_FAILURE', 'PointStateKind_STRAIGHT', 'PointStateKind_LEFT', 'PointStateKind_RIGHT'.
+The enumeration 'SignalStateKind' has the following literals: 'SignalStateKind_FAILURE', 'SignalStateKind_GO', 'SignalStateKind_STOP'.
+'ConceptASE::SwitchPosition' is a specialization of 'Thing'.
+'ConceptASE::Segment' is a specialization of 'Trackelement'.
+'ConceptASE::Signal' is a specialization of 'Thing'.
+'ConceptASE::Trackelement' is a specialization of 'Thing'.
+'ConceptASE::Switch' is a specialization of 'Trackelement'.
+'ConceptASE::Route' is a specialization of 'Thing'.
+'ConceptASE::Sensor' is a specialization of 'Thing'.
+'ConceptASE::Thing' (role 'ConceptASE_Thing', cardinality 0..*) is associated with 'ConceptASE::IndividualContainer' (role 'ConceptASE_IndividualContainer', cardinality 0..*).
+'ConceptASE::Switch' (role 'Switch', cardinality 0..*) is associated with 'ConceptASE::SwitchPosition' (role 'Switch_switchPosition', cardinality 0..*).
+'ConceptASE::Trackelement' (role 'ConceptASE_Trackelement1', cardinality 0..*) is associated with 'ConceptASE::Trackelement' (role 'ConceptASE_Trackelement', cardinality 0..*).
+'ConceptASE::Signal' (role 'ConceptASE_Signal9', cardinality 0..*) is associated with 'ConceptASE::Route' (role 'ConceptASE_Route8', cardinality 0..*).
+'ConceptASE::SwitchPosition' (role 'Route_switchPosition', cardinality 0..*) is associated with 'ConceptASE::Route' (role 'Route', cardinality 0..*).
+'ConceptASE::SwitchPosition' (role 'SwitchPosition', cardinality 0..*) is associated with 'ConceptASE::Switch' (role 'SwitchPosition_switch', cardinality 0..*).
+'ConceptASE::Route' (role 'ConceptASE_Route', cardinality 0..*) is associated with 'ConceptASE::Signal' (role 'ConceptASE_Signal', cardinality 0..*).
+'ConceptASE::SwitchPosition' (role 'SwitchPosition6', cardinality 0..*) is associated with 'ConceptASE::Route' (role 'SwitchPosition_route', cardinality 0..*).
+'ConceptASE::Trackelement' (role 'Trackelement', cardinality 0..*) is associated with 'ConceptASE::Sensor' (role 'TrackElement_sensor', cardinality 0..*).
+'ConceptASE::Route' (role 'ConceptASE_Route11', cardinality 0..*) is associated with 'ConceptASE::Sensor' (role 'ConceptASE_Sensor', cardinality 0..*).
+'ConceptASE::Sensor' (role 'Sensor', cardinality 0..*) is associated with 'ConceptASE::Trackelement' (role 'Sensor_trackElement', cardinality 0..*).

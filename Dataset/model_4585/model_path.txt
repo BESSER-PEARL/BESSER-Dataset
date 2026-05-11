@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/paulvberlin/BaSiriusXtext/main/de.htw.activity.emf/model/activity.ecore

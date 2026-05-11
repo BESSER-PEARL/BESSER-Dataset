@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'pmtest::C' has no attributes.
+The class 'pmtest::B' has no attributes.
+The class 'pmtest::D' has the following attributes: 'j' of type int.
+The class 'A' has no attributes.
+The class 'pmtest::A' has the following attributes: 'i' of type int.
+'pmtest::B' is a specialization of 'A'.
+'pmtest::C' is a specialization of 'A'.
+'pmtest::A' (role 't', cardinality 0..*) is associated with 'pmtest::A' (role 'A4', cardinality 0..*).
+'pmtest::A' (role 's', cardinality 0..*) is associated with 'pmtest::A' (role 'A', cardinality 0..*).
+'pmtest::D' (role 'pmtest_D', cardinality 0..*) is associated with 'pmtest::A' (role 'pmtest_A', cardinality 0..*).

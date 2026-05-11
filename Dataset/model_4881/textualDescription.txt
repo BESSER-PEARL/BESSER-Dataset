@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'largemapvalue::StringToStringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'largemapvalue::TestElement' has the following attributes: 'testProp' of type str.
+'largemapvalue::TestElement' (role 'largemapvalue_TestElement', cardinality 0..*) is associated with 'largemapvalue::StringToStringMap' (role 'largemapvalue_StringToStringMap', cardinality 0..*).

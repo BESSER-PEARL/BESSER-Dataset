@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'pascal::Greeting' has the following attributes: 'name' of type str.
+The class 'pascal::Model' has no attributes.
+'pascal::Model' (role 'pascal_Model', cardinality 0..*) is associated with 'pascal::Greeting' (role 'pascal_Greeting', cardinality 0..*).

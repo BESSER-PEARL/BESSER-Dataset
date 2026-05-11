@@ -1,0 +1,38 @@
+The model has 18 class(es).
+The class 'KragsteinPackage::ImportedClass' has the following attributes: 'isInternal' of type bool; 'path' of type str; 'name' of type str.
+The class 'KragsteinPackage::Generalization' has the following attributes: 'type' of type str.
+The class 'KragsteinPackage::Class' has the following attributes: 'visibility' of type str; 'supplierElement' of type str; 'isSingletone' of type bool; 'superClass' of type str; 'name' of type str; 'isInterface' of type bool.
+The class 'KragsteinPackage::Link' has no attributes.
+The class 'KragsteinPackage::Dependency' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'KragsteinPackage::Note' has the following attributes: 'text' of type str; 'name' of type str.
+The class 'KragsteinPackage::Association' has no attributes.
+The class 'KragsteinPackage::Unit' has no attributes.
+The class 'KragsteinPackage::Attribute' has the following attributes: 'visibility' of type str; 'isStatic' of type bool; 'type' of type str; 'isConst' of type bool; 'value' of type str; 'name' of type str.
+The class 'KragsteinPackage::Aggregation' has no attributes.
+The class 'KragsteinPackage::Composition' has no attributes.
+The class 'KragsteinPackage::Realization' has no attributes.
+The class 'Unit' has no attributes.
+The class 'KragsteinPackage::Method' has the following attributes: 'isVirtual' of type bool; 'name' of type str; 'isConst' of type bool; 'visibility' of type str; 'isStatic' of type bool; 'type' of type str.
+The class 'KragsteinPackage::Parameter' has the following attributes: 'value' of type str; 'name' of type str; 'type' of type str.
+The class 'KragsteinPackage::Package' has the following attributes: 'name' of type str; 'path' of type str.
+The class 'KragsteinPackage::Relationship' has the following attributes: 'name' of type str; 'lowerBound' of type int; 'upperBound' of type int.
+'KragsteinPackage::Dependency' is a specialization of 'Relationship'.
+'KragsteinPackage::Realization' is a specialization of 'Relationship'.
+'KragsteinPackage::Aggregation' is a specialization of 'Relationship'.
+'KragsteinPackage::Note' is a specialization of 'Unit'.
+'KragsteinPackage::Class' is a specialization of 'Unit'.
+'KragsteinPackage::Composition' is a specialization of 'Relationship'.
+'KragsteinPackage::Association' is a specialization of 'Relationship'.
+'KragsteinPackage::Generalization' is a specialization of 'Relationship'.
+'KragsteinPackage::Class' (role 'KragsteinPackage_Class6', cardinality 0..*) is associated with 'KragsteinPackage::Attribute' (role 'KragsteinPackage_Attribute', cardinality 0..*).
+'KragsteinPackage::Method' (role 'KragsteinPackage_Method15', cardinality 0..*) is associated with 'KragsteinPackage::Parameter' (role 'KragsteinPackage_Parameter', cardinality 0..*).
+'KragsteinPackage::Relationship' (role 'KragsteinPackage_Relationship11', cardinality 0..*) is associated with 'KragsteinPackage::Class' (role 'KragsteinPackage_Class10', cardinality 0..*).
+'KragsteinPackage::ImportedClass' (role 'KragsteinPackage_ImportedClass', cardinality 0..*) is associated with 'KragsteinPackage::Class' (role 'KragsteinPackage_Class13', cardinality 0..*).
+'KragsteinPackage::Class' (role 'KragsteinPackage_Class', cardinality 0..*) is associated with 'KragsteinPackage::Relationship' (role 'KragsteinPackage_Relationship', cardinality 0..*).
+'KragsteinPackage::Link' (role 'KragsteinPackage_Link', cardinality 0..*) is associated with 'KragsteinPackage::Unit' (role 'KragsteinPackage_Unit17', cardinality 0..*).
+'KragsteinPackage::Link' (role 'KragsteinPackage_Link19', cardinality 0..*) is associated with 'KragsteinPackage::Unit' (role 'KragsteinPackage_Unit20', cardinality 0..*).
+'KragsteinPackage::Unit' (role 'KragsteinPackage_Unit23', cardinality 0..*) is associated with 'KragsteinPackage::Link' (role 'KragsteinPackage_Link22', cardinality 0..*).
+'KragsteinPackage::Class' (role 'KragsteinPackage_Class4', cardinality 0..*) is associated with 'KragsteinPackage::Relationship' (role 'KragsteinPackage_Relationship3', cardinality 0..*).
+'KragsteinPackage::Class' (role 'KragsteinPackage_Class8', cardinality 0..*) is associated with 'KragsteinPackage::Method' (role 'KragsteinPackage_Method', cardinality 0..*).
+'KragsteinPackage::Package' (role 'KragsteinPackage_Package', cardinality 0..*) is associated with 'KragsteinPackage::Unit' (role 'KragsteinPackage_Unit', cardinality 0..*).

@@ -1,0 +1,65 @@
+The model has 26 class(es).
+The class 'Secured' has no attributes.
+The class 'TypeElement' has no attributes.
+The class 'type::AttributePointer' has no attributes.
+The class 'type::Generalization' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'type::TypeReference' has no attributes.
+The class 'type::Primitive' has no attributes.
+The class 'type::PrimitivesGroup' has no attributes.
+The class 'type::Link' has the following attributes: 'uid' of type str.
+The class 'type::Parameter' has the following attributes: 'uid' of type str; 'name' of type str; 'order' of type int.
+The class 'type::EnumAttribute' has the following attributes: 'uid' of type str; 'value' of type str; 'name' of type str.
+The class 'type::Type' has no attributes.
+The class 'type::Relationship' has the following attributes: 'uid' of type str.
+The class 'type::Attribute' has the following attributes: 'name' of type str; 'uid' of type str; 'pk' of type bool.
+The class 'type::Operation' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'type::Enumerator' has no attributes.
+The class 'TypePointer' has no attributes.
+The class 'type::References' has no attributes.
+The class 'type::PackagePointer' has no attributes.
+The class 'type::Assosiation' has the following attributes: 'sourceOperation' of type str; 'type' of type str; 'targetOperation' of type str; 'internal' of type bool; 'containment' of type str.
+The class 'type::TypeElement' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'type::MethodPointer' has no attributes.
+The class 'type::TypeGroup' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'type::TypePointer' has no attributes.
+The class 'type::ReturnValue' has the following attributes: 'uid' of type str.
+The class 'Categorized' has no attributes.
+The enumeration 'RelationType' has the following literals: 'One2One', 'One2Many', 'Many2Many'.
+The enumeration 'Containment' has the following literals: 'Non', 'Target', 'Source'.
+'type::Operation' is a specialization of 'Categorized'.
+'type::ReturnValue' is a specialization of 'TypePointer'.
+'type::Enumerator' is a specialization of 'TypeElement'.
+'type::Enumerator' is a specialization of 'Categorized'.
+'type::Primitive' is a specialization of 'TypeElement'.
+'type::Type' is a specialization of 'Categorized'.
+'type::Attribute' is a specialization of 'TypePointer'.
+'type::TypeReference' is a specialization of 'TypePointer'.
+'type::Type' is a specialization of 'TypeElement'.
+'type::EnumAttribute' is a specialization of 'Categorized'.
+'type::References' is a specialization of 'Relationship'.
+'type::Assosiation' is a specialization of 'Relationship'.
+'type::Operation' is a specialization of 'Secured'.
+'type::Attribute' is a specialization of 'Categorized'.
+'type::Parameter' is a specialization of 'TypePointer'.
+'type::Relationship' is a specialization of 'Categorized'.
+'type::TypeReference' is a specialization of 'TypeElement'.
+'type::Generalization' is a specialization of 'Relationship'.
+'type::Link' (role 'type_Link21', cardinality 0..*) is associated with 'type::Attribute' (role 'type_Attribute22', cardinality 0..*).
+'type::ReturnValue' (role 'type_ReturnValue', cardinality 0..*) is associated with 'type::Operation' (role 'type_Operation25', cardinality 0..*).
+'type::Operation' (role 'type_Operation30', cardinality 0..*) is associated with 'type::Type' (role 'type_Type29', cardinality 0..*).
+'type::MethodPointer' (role 'type_MethodPointer', cardinality 0..*) is associated with 'type::Operation' (role 'type_Operation33', cardinality 0..*).
+'type::AttributePointer' (role 'type_AttributePointer', cardinality 0..*) is associated with 'type::Attribute' (role 'type_Attribute35', cardinality 0..*).
+'type::TypeElement' (role 'type_TypeElement', cardinality 0..*) is associated with 'type::TypeGroup' (role 'type_TypeGroup', cardinality 0..*).
+'type::Relationship' (role 'type_Relationship8', cardinality 0..*) is associated with 'type::TypeElement' (role 'type_TypeElement9', cardinality 0..*).
+'type::Assosiation' (role 'type_Assosiation', cardinality 0..*) is associated with 'type::Link' (role 'type_Link', cardinality 0..*).
+'type::EnumAttribute' (role 'type_EnumAttribute', cardinality 0..*) is associated with 'type::Enumerator' (role 'type_Enumerator', cardinality 0..*).
+'type::Parameter' (role 'type_Parameter', cardinality 0..*) is associated with 'type::Operation' (role 'type_Operation', cardinality 0..*).
+'type::TypeGroup' (role 'type_TypeGroup13', cardinality 0..*) is associated with 'type::PackagePointer' (role 'type_PackagePointer', cardinality 0..*).
+'type::TypeElement' (role 'type_TypeElement11', cardinality 0..*) is associated with 'type::TypePointer' (role 'type_TypePointer', cardinality 0..*).
+'type::TypePointer' (role 'type_TypePointer17', cardinality 0..*) is associated with 'type::Assosiation' (role 'type_Assosiation16', cardinality 0..*).
+'type::Attribute' (role 'type_Attribute', cardinality 0..*) is associated with 'type::Link' (role 'type_Link19', cardinality 0..*).
+'type::Relationship' (role 'type_Relationship', cardinality 0..*) is associated with 'type::TypeGroup' (role 'type_TypeGroup2', cardinality 0..*).
+'type::Type' (role 'type_Type', cardinality 0..*) is associated with 'type::Attribute' (role 'type_Attribute27', cardinality 0..*).
+'type::TypeElement' (role 'type_TypeElement6', cardinality 0..*) is associated with 'type::Relationship' (role 'type_Relationship5', cardinality 0..*).
+'type::PrimitivesGroup' (role 'type_PrimitivesGroup', cardinality 0..*) is associated with 'type::Primitive' (role 'type_Primitive', cardinality 0..*).

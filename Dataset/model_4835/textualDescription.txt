@@ -1,0 +1,292 @@
+The model has 54 class(es).
+The class 'contentfwk::Architecture' has the following attributes: 'ID' of type str.
+The class 'contentfwk::Function' has no attributes.
+The class 'contentfwk::Process' has the following attributes: 'processVolumetrics' of type str; 'processCritiality' of type str; 'isAutomated' of type bool.
+The class 'contentfwk::Measure' has no attributes.
+The class 'contentfwk::StrategicElement' has no attributes.
+The class 'contentfwk::InformationSystemService' has no attributes.
+The class 'contentfwk::Contract' has the following attributes: 'manageabilityCharacteristics' of type str; 'recoverabilityCharacteristics' of type str; 'serviceNameCaller' of type str; 'servicesTimes' of type str; 'growthPeriod' of type str; 'interoperabilityCharacteristics' of type str; 'credibilityCharacteristics' of type str; 'portabilityCharacteristics' of type str; 'behaviorCharacteristics' of type str; 'integrityCharacteristics' of type str; 'throughputPeriod' of type str; 'localizationCharacteristics' of type str; 'peakProfileLongTerm' of type str; 'availabilityQualityCharacteristics' of type str; 'performanceCharacteristics' of type str; 'privacyCharacteristics' of type str; 'securityCharacteristics' of type str; 'capacityCharacteristics' of type str; 'locatabilityCharacteristics' of type str; 'serviceNameCalled' of type str; 'internationalizationCharacteristics' of type str; 'peakProfileShortTerm' of type str; 'throughput' of type str; 'extensibilityCharacteristics' of type str; 'serviceabilityCharacteristics' of type str; 'contractControlRequirements' of type str; 'responseCharacteristics' of type str; 'resultControlRequirements' of type str; 'serviceQualityCharacteristics' of type str; 'qualityOfInformationRequired' of type str; 'growth' of type str; 'scalabilityCharacteristics' of type str; 'reliabilityCharacteristics' of type str.
+The class 'contentfwk::OrganizationUnit' has the following attributes: 'headcount' of type str.
+The class 'contentfwk::Control' has no attributes.
+The class 'contentfwk::Driver' has no attributes.
+The class 'contentfwk::WorkPackage' has the following attributes: 'capabilityDelivered' of type str; 'workPackageCategory' of type str.
+The class 'contentfwk::BusinessService' has no attributes.
+The class 'contentfwk::Principle' has the following attributes: 'metric' of type str; 'principleCategory' of type str; 'priority' of type str; 'statementOfPrinciple' of type str; 'implication' of type str; 'rationale' of type str.
+The class 'contentfwk::PhysicalDataComponent' has no attributes.
+The class 'contentfwk::Event' has no attributes.
+The class 'Standard' has no attributes.
+The class 'contentfwk::PhysicalTechnologyComponent' has the following attributes: 'version' of type str; 'vendor' of type str; 'moduleName' of type str; 'categoryTRM' of type str; 'productName' of type str.
+The class 'contentfwk::LogicalDataComponent' has no attributes.
+The class 'TechnologyComponent' has no attributes.
+The class 'Service' has no attributes.
+The class 'contentfwk::Requirement' has the following attributes: 'rationale' of type str; 'acceptanceCriteria' of type str; 'statementOfRequirement' of type str.
+The class 'contentfwk::DataComponent' has no attributes.
+The class 'contentfwk::ServiceQuality' has no attributes.
+The class 'contentfwk::LogicalTechnologyComponent' has the following attributes: 'categoryTRM' of type str.
+The class 'contentfwk::Constraint' has no attributes.
+The class 'contentfwk::Standard' has the following attributes: 'nextStandardReviewDate' of type date; 'retireDate' of type date; 'lastStandardReviewDate' of type date; 'standardClass' of type str; 'standardCreationDate' of type date.
+The class 'contentfwk::Service' has no attributes.
+The class 'Element' has no attributes.
+The class 'StrategicElement' has no attributes.
+The class 'contentfwk::ApplicationArchitecture' has no attributes.
+The class 'contentfwk::Role' has the following attributes: 'estimatedFTEs' of type str.
+The class 'contentfwk::Element' has the following attributes: 'description' of type str; 'sourceDescr' of type str; 'name' of type str; 'category' of type str; 'ID' of type str; 'ownerDescr' of type str.
+The class 'contentfwk::PhysicalApplicationComponent' has the following attributes: 'securityCharacteristics' of type str; 'peakProfileLongTerm' of type str; 'recoverabilityCharacteristics' of type str; 'serviceabilityCharacteristics' of type str; 'peakProfileShortTerm' of type str; 'growthPeriod' of type str; 'throughput' of type str; 'credibilityCharacteristics' of type str; 'performanceCharacteristics' of type str; 'growth' of type str; 'localizationCharacteristics' of type str; 'servicesTimes' of type str; 'lifeCycleStatus' of type str; 'availabilityCharacteristics' of type str; 'dateOfLastRelease' of type date; 'initialLiveDate' of type date; 'extensibilityCharacteristics' of type str; 'reliabilityCharacteristics' of type str; 'dateOfNextRelease' of type date; 'integrityCharacteristics' of type str; 'portabilityCharacteristics' of type str; 'internationalizationCharacteristics' of type str; 'privacyCharacteristics' of type str; 'capacityCharacteristics' of type str; 'locatabilityCharacteristics' of type str; 'interoperabilityCharacteristics' of type str; 'throughputPeriod' of type str; 'retirementDate' of type date; 'scalabilityCharacteristics' of type str; 'manageabilityCharacteristics' of type str.
+The class 'contentfwk::ApplicationComponent' has no attributes.
+The class 'contentfwk::PlatformService' has the following attributes: 'standardClass' of type str; 'categoryTRM' of type str.
+The class 'contentfwk::DataArchitecture' has no attributes.
+The class 'contentfwk::BusinessArchitecture' has no attributes.
+The class 'contentfwk::Actor' has the following attributes: 'actorGoal' of type str; 'actorTasks' of type str; 'FTEs' of type str.
+The class 'contentfwk::TechnologyArchitecture' has no attributes.
+The class 'contentfwk::Assumption' has no attributes.
+The class 'DataComponent' has no attributes.
+The class 'contentfwk::LogicalApplicationComponent' has no attributes.
+The class 'contentfwk::Location' has no attributes.
+The class 'contentfwk::Capability' has the following attributes: 'increments' of type str; 'businessValue' of type str.
+The class 'contentfwk::Objective' has no attributes.
+The class 'contentfwk::Goal' has no attributes.
+The class 'contentfwk::EnterpriseArchitecture' has the following attributes: 'ID' of type str.
+The class 'contentfwk::Gap' has no attributes.
+The class 'contentfwk::TechnologyComponent' has no attributes.
+The class 'ApplicationComponent' has no attributes.
+The class 'Architecture' has no attributes.
+The class 'contentfwk::StrategicArchitecture' has no attributes.
+The class 'contentfwk::Product' has no attributes.
+The class 'contentfwk::DataEntity' has the following attributes: 'privacyClassification' of type str; 'retentionClassification' of type str; 'dataEntityCategory' of type str.
+The enumeration 'WorkPackageCategory' has the following literals: 'Project', 'Portofolio', 'WorkStream', 'Program', 'WorkPackage'.
+The enumeration 'PrincipleCategory' has the following literals: 'DataPrinciple', 'ApplicationPrinciple', 'IntegrationPrinciple', 'TechnologyPrinciple', 'GuidingPrinciple', 'BusinessPrinciple'.
+The enumeration 'DataEntityCategory' has the following literals: 'InternallyStoredEntity', 'Message'.
+The enumeration 'StandardsClass' has the following literals: 'PhasingOut', 'Retired', 'Proposed', 'NonStandard', 'Standard', 'Provisional'.
+The enumeration 'LifeCycleStatus' has the following literals: 'Proposed', 'PhasingOut', 'Retired', 'Live', 'InDevelopment'.
+'contentfwk::Measure' is a specialization of 'Element'.
+'contentfwk::StrategicArchitecture' is a specialization of 'Architecture'.
+'contentfwk::LogicalTechnologyComponent' is a specialization of 'Element'.
+'contentfwk::Service' is a specialization of 'Standard'.
+'contentfwk::Capability' is a specialization of 'Element'.
+'contentfwk::BusinessService' is a specialization of 'Service'.
+'contentfwk::Gap' is a specialization of 'StrategicElement'.
+'contentfwk::LogicalApplicationComponent' is a specialization of 'Element'.
+'contentfwk::LogicalDataComponent' is a specialization of 'DataComponent'.
+'contentfwk::PhysicalApplicationComponent' is a specialization of 'ApplicationComponent'.
+'contentfwk::DataArchitecture' is a specialization of 'Architecture'.
+'contentfwk::Event' is a specialization of 'Element'.
+'contentfwk::Contract' is a specialization of 'Element'.
+'contentfwk::LogicalTechnologyComponent' is a specialization of 'TechnologyComponent'.
+'contentfwk::Product' is a specialization of 'Element'.
+'contentfwk::Goal' is a specialization of 'Element'.
+'contentfwk::Process' is a specialization of 'Standard'.
+'contentfwk::PhysicalTechnologyComponent' is a specialization of 'Element'.
+'contentfwk::LogicalDataComponent' is a specialization of 'Element'.
+'contentfwk::Requirement' is a specialization of 'StrategicElement'.
+'contentfwk::StrategicElement' is a specialization of 'Element'.
+'contentfwk::Control' is a specialization of 'Element'.
+'contentfwk::DataEntity' is a specialization of 'Element'.
+'contentfwk::InformationSystemService' is a specialization of 'Service'.
+'contentfwk::PhysicalTechnologyComponent' is a specialization of 'TechnologyComponent'.
+'contentfwk::PhysicalDataComponent' is a specialization of 'Element'.
+'contentfwk::BusinessService' is a specialization of 'Element'.
+'contentfwk::Objective' is a specialization of 'Element'.
+'contentfwk::Assumption' is a specialization of 'StrategicElement'.
+'contentfwk::PlatformService' is a specialization of 'Element'.
+'contentfwk::Process' is a specialization of 'Element'.
+'contentfwk::TechnologyComponent' is a specialization of 'Standard'.
+'contentfwk::Constraint' is a specialization of 'StrategicElement'.
+'contentfwk::Location' is a specialization of 'Element'.
+'contentfwk::WorkPackage' is a specialization of 'StrategicElement'.
+'contentfwk::Driver' is a specialization of 'Element'.
+'contentfwk::DataComponent' is a specialization of 'Standard'.
+'contentfwk::Role' is a specialization of 'Element'.
+'contentfwk::BusinessArchitecture' is a specialization of 'Architecture'.
+'contentfwk::LogicalApplicationComponent' is a specialization of 'ApplicationComponent'.
+'contentfwk::ApplicationArchitecture' is a specialization of 'Architecture'.
+'contentfwk::ApplicationComponent' is a specialization of 'Standard'.
+'contentfwk::OrganizationUnit' is a specialization of 'Element'.
+'contentfwk::Function' is a specialization of 'Standard'.
+'contentfwk::Actor' is a specialization of 'Element'.
+'contentfwk::PhysicalDataComponent' is a specialization of 'DataComponent'.
+'contentfwk::Function' is a specialization of 'Element'.
+'contentfwk::InformationSystemService' is a specialization of 'Element'.
+'contentfwk::PhysicalApplicationComponent' is a specialization of 'Element'.
+'contentfwk::TechnologyArchitecture' is a specialization of 'Architecture'.
+'contentfwk::Principle' is a specialization of 'StrategicElement'.
+'contentfwk::ServiceQuality' is a specialization of 'Element'.
+'contentfwk::Event' (role 'Event193', cardinality 0..*) is associated with 'contentfwk::Process' (role 'isResolvedByProcesses', cardinality 0..*).
+'contentfwk::OrganizationUnit' (role 'OrganizationUnit', cardinality 0..*) is associated with 'contentfwk::Driver' (role 'isMotivatedByDrivers', cardinality 0..*).
+'contentfwk::WorkPackage' (role 'WorkPackage', cardinality 0..*) is associated with 'contentfwk::Capability' (role 'deliversCapabilities', cardinality 0..*).
+'contentfwk::Measure' (role 'decomposesMeasure', cardinality 0..*) is associated with 'contentfwk::Measure' (role 'Measure244', cardinality 0..*).
+'contentfwk::Product' (role 'Product197', cardinality 0..*) is associated with 'contentfwk::Process' (role 'isProducedByProcesses', cardinality 0..*).
+'contentfwk::ServiceQuality' (role 'ServiceQuality377', cardinality 0..*) is associated with 'contentfwk::Service' (role 'appliesToServices', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'isRealizedByPhysicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent212', cardinality 0..*).
+'contentfwk::Location' (role 'Location297', cardinality 0..*) is associated with 'contentfwk::PhysicalDataComponent' (role 'containsPhysicalDataComponents', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent333', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'extendsLogicalTechnologyComponents', cardinality 0..*).
+'contentfwk::Objective' (role 'Objective235', cardinality 0..*) is associated with 'contentfwk::Measure' (role 'isTrackedAgainstMeasures', cardinality 0..*).
+'contentfwk::Process' (role 'Process200', cardinality 0..*) is associated with 'contentfwk::Process' (role 'isDecomposedByProcesses', cardinality 0..*).
+'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture25', cardinality 0..*) is associated with 'contentfwk::Product' (role 'contentfwk_Product', cardinality 0..*).
+'contentfwk::PhysicalApplicationComponent' (role 'isExtendedByPhysicalApplicationComponents', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'LogicalApplicationComponent313', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent215', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'isRealizedByPhysicalTechnologyComponents214', cardinality 0..*).
+'contentfwk::Service' (role 'Service187', cardinality 0..*) is associated with 'contentfwk::Process' (role 'supportsProcesses186', cardinality 0..*).
+'contentfwk::Event' (role 'resolvesEvents', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service252', cardinality 0..*).
+'contentfwk::LogicalDataComponent' (role 'LogicalDataComponent295', cardinality 0..*) is associated with 'contentfwk::PhysicalDataComponent' (role 'isExtendedByPhysicalDataComponents', cardinality 0..*).
+'contentfwk::Goal' (role 'contentfwk_Goal', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture3', cardinality 0..*).
+'contentfwk::Function' (role 'orchestratesFunctions', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process160', cardinality 0..*).
+'contentfwk::Service' (role 'orchestratesServices', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process375', cardinality 0..*).
+'contentfwk::LogicalDataComponent' (role 'LogicalDataComponent', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'encapsulatesDataEntities', cardinality 0..*).
+'contentfwk::PhysicalApplicationComponent' (role 'isDecomposedByPhysicalApplicationComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent325', cardinality 0..*).
+'contentfwk::LogicalDataComponent' (role 'residesWithinLogicalDataComponent', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'DataEntity291', cardinality 0..*).
+'contentfwk::Actor' (role 'contentfwk_Actor', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture9', cardinality 0..*).
+'contentfwk::Actor' (role 'containsActors98', cardinality 0..*) is associated with 'contentfwk::Location' (role 'Location99', cardinality 0..*).
+'contentfwk::Actor' (role 'isPerformedByActors', cardinality 0..*) is associated with 'contentfwk::Function' (role 'Function101', cardinality 0..*).
+'contentfwk::Location' (role 'Location284', cardinality 0..*) is associated with 'contentfwk::Location' (role 'isDecomposedByLocations', cardinality 0..*).
+'contentfwk::Service' (role 'Service246', cardinality 0..*) is associated with 'contentfwk::ServiceQuality' (role 'meetsServiceQualities', cardinality 0..*).
+'contentfwk::Process' (role 'Process373', cardinality 0..*) is associated with 'contentfwk::Service' (role 'decomposesServices', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'isImplementedOnLogicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service330', cardinality 0..*).
+'contentfwk::DataArchitecture' (role 'contentfwk_DataArchitecture34', cardinality 0..*) is associated with 'contentfwk::LogicalDataComponent' (role 'contentfwk_LogicalDataComponent', cardinality 0..*).
+'contentfwk::Event' (role 'Event', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'isResolvedByActors', cardinality 0..*).
+'contentfwk::Objective' (role 'decomposesObjective', cardinality 0..*) is associated with 'contentfwk::Objective' (role 'Objective67', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'encapsulatesPhysicalDataComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent302', cardinality 0..*).
+'contentfwk::Actor' (role 'decomposesActor', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor107', cardinality 0..*).
+'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture15', cardinality 0..*) is associated with 'contentfwk::BusinessService' (role 'contentfwk_BusinessService', cardinality 0..*).
+'contentfwk::StrategicElement' (role 'contentfwk_StrategicElement', cardinality 0..*) is associated with 'contentfwk::StrategicArchitecture' (role 'contentfwk_StrategicArchitecture351', cardinality 0..*).
+'contentfwk::Product' (role 'producesProducts', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit230', cardinality 0..*).
+'contentfwk::TechnologyArchitecture' (role 'contentfwk_TechnologyArchitecture41', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'contentfwk_LogicalTechnologyComponent', cardinality 0..*).
+'contentfwk::Process' (role 'supportsProcesses', cardinality 0..*) is associated with 'contentfwk::Function' (role 'Function179', cardinality 0..*).
+'contentfwk::Goal' (role 'createsGoals', cardinality 0..*) is associated with 'contentfwk::Driver' (role 'Driver50', cardinality 0..*).
+'contentfwk::Actor' (role 'containsActors', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit86', cardinality 0..*).
+'contentfwk::Measure' (role 'Measure241', cardinality 0..*) is associated with 'contentfwk::Measure' (role 'isDecomposedByMeasures', cardinality 0..*).
+'contentfwk::PlatformService' (role 'PlatformService', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'isSuppliedByLogicalTechnologyComponents', cardinality 0..*).
+'contentfwk::Role' (role 'isDecomposedByRoles', cardinality 0..*) is associated with 'contentfwk::Role' (role 'Role114', cardinality 0..*).
+'contentfwk::DataEntity' (role 'operatesOnDataEntities', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'LogicalApplicationComponent', cardinality 0..*).
+'contentfwk::Service' (role 'Service126', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'providesDataEntities', cardinality 0..*).
+'contentfwk::Capability' (role 'Capability', cardinality 0..*) is associated with 'contentfwk::WorkPackage' (role 'isDeliveredBy', cardinality 0..*).
+'contentfwk::Function' (role 'decomposesFunction', cardinality 0..*) is associated with 'contentfwk::Function' (role 'Function173', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor190', cardinality 0..*) is associated with 'contentfwk::Process' (role 'participatesInProcesses189', cardinality 0..*).
+'contentfwk::Service' (role 'Service249', cardinality 0..*) is associated with 'contentfwk::Contract' (role 'isGovernedAndMeasuredByContracts', cardinality 0..*).
+'contentfwk::Goal' (role 'realizesGoals', cardinality 0..*) is associated with 'contentfwk::Objective' (role 'Objective', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'LogicalApplicationComponent147', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'isDecomposedByLogicalApplicationComponents', cardinality 0..*).
+'contentfwk::Function' (role 'performsFunctions', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor152', cardinality 0..*).
+'contentfwk::DataEntity' (role 'contentfwk_DataEntity132', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'contentfwk_DataEntity134', cardinality 0..*).
+'contentfwk::DataEntity' (role 'contentfwk_DataEntity', cardinality 0..*) is associated with 'contentfwk::DataArchitecture' (role 'contentfwk_DataArchitecture', cardinality 0..*).
+'contentfwk::Location' (role 'operatesInLocation', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor272', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'contentfwk_PhysicalTechnologyComponent342', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'contentfwk_LogicalTechnologyComponent341', cardinality 0..*).
+'contentfwk::Location' (role 'Location', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'containsOrganizationUnits', cardinality 0..*).
+'contentfwk::Role' (role 'Role117', cardinality 0..*) is associated with 'contentfwk::Role' (role 'decomposesRole', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent339', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'isRequiredByLogicalTechnologyComponents', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent348', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'decomposesLogicalTechnologyComponent', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'decomposesPhysicalTechnologyComponent', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent228', cardinality 0..*).
+'contentfwk::Measure' (role 'isTrackedAgainstMeasures237', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service238', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'isDependentOnLogicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent345', cardinality 0..*).
+'contentfwk::Measure' (role 'Measure371', cardinality 0..*) is associated with 'contentfwk::Service' (role 'setsPerformanceCriteriaForServices', cardinality 0..*).
+'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent336', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'isDecomposedByLogicalTechnologyComponents', cardinality 0..*).
+'contentfwk::Function' (role 'providesGovernedInterfaceToAccessFunctions', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service156', cardinality 0..*).
+'contentfwk::Actor' (role 'isDecomposedByActors', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor104', cardinality 0..*).
+'contentfwk::Location' (role 'contentfwk_Location', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture23', cardinality 0..*).
+'contentfwk::Goal' (role 'isDecomposedByGoals', cardinality 0..*) is associated with 'contentfwk::Goal' (role 'Goal54', cardinality 0..*).
+'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture11', cardinality 0..*) is associated with 'contentfwk::Role' (role 'contentfwk_Role', cardinality 0..*).
+'contentfwk::Goal' (role 'Goal57', cardinality 0..*) is associated with 'contentfwk::Goal' (role 'decomposesGoal', cardinality 0..*).
+'contentfwk::Function' (role 'ownsFunctions', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit154', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'isDependentOnPhysicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent225', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor121', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'consumesDataEntities', cardinality 0..*).
+'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture31', cardinality 0..*) is associated with 'contentfwk::ServiceQuality' (role 'contentfwk_ServiceQuality', cardinality 0..*).
+'contentfwk::Process' (role 'Process233', cardinality 0..*) is associated with 'contentfwk::Product' (role 'producesProducts232', cardinality 0..*).
+'contentfwk::Location' (role 'operatesInLocation274', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit275', cardinality 0..*).
+'contentfwk::Objective' (role 'Objective175', cardinality 0..*) is associated with 'contentfwk::BusinessService' (role 'isSupportedByBusinessService', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor119', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'suppliesDataEntities', cardinality 0..*).
+'contentfwk::Process' (role 'ensuresCorrectOperationOfProcesses', cardinality 0..*) is associated with 'contentfwk::Control' (role 'Control', cardinality 0..*).
+'contentfwk::ServiceQuality' (role 'ServiceQuality', cardinality 0..*) is associated with 'contentfwk::Contract' (role 'appliesToContracts', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'containsPhysicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::Location' (role 'Location217', cardinality 0..*).
+'contentfwk::Service' (role 'isUpdatedThroughServices', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'DataEntity357', cardinality 0..*).
+'contentfwk::TechnologyArchitecture' (role 'contentfwk_TechnologyArchitecture39', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'contentfwk_PhysicalTechnologyComponent', cardinality 0..*).
+'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture17', cardinality 0..*) is associated with 'contentfwk::Process' (role 'contentfwk_Process', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'isRealizedThroughLogicalApplicationComponent', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service139', cardinality 0..*).
+'contentfwk::Objective' (role 'setsPerformanceCriteriaForObjectives', cardinality 0..*) is associated with 'contentfwk::Measure' (role 'Measure', cardinality 0..*).
+'contentfwk::Role' (role 'Role', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'isAssumedByActors', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'extendsLogicalApplicationComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent', cardinality 0..*).
+'contentfwk::Function' (role 'Function88', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'supportsActors', cardinality 0..*).
+'contentfwk::Driver' (role 'contentfwk_Driver', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture', cardinality 0..*).
+'contentfwk::Contract' (role 'Contract', cardinality 0..*) is associated with 'contentfwk::ServiceQuality' (role 'meetsServiceQuality', cardinality 0..*).
+'contentfwk::Objective' (role 'Objective63', cardinality 0..*) is associated with 'contentfwk::Objective' (role 'isDecomposedByObjectives', cardinality 0..*).
+'contentfwk::Event' (role 'generatesEvents', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process257', cardinality 0..*).
+'contentfwk::Function' (role 'Function111', cardinality 0..*) is associated with 'contentfwk::Role' (role 'canBeAccessedByRoles', cardinality 0..*).
+'contentfwk::Service' (role 'Service386', cardinality 0..*) is associated with 'contentfwk::Service' (role 'decomposesServices385', cardinality 0..*).
+'contentfwk::Function' (role 'contentfwk_Function168', cardinality 0..*) is associated with 'contentfwk::Function' (role 'contentfwk_Function170', cardinality 0..*).
+'contentfwk::Service' (role 'Service93', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'isProvidedToActors', cardinality 0..*).
+'contentfwk::Objective' (role 'contentfwk_Objective', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture5', cardinality 0..*).
+'contentfwk::Event' (role 'Event96', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'isGeneratedByActors', cardinality 0..*).
+'contentfwk::Function' (role 'Function', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'isOwnedByOrganizationUnit', cardinality 0..*).
+'contentfwk::DataEntity' (role 'contentfwk_DataEntity137', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'contentfwk_DataEntity135', cardinality 0..*).
+'contentfwk::DataEntity' (role 'contentfwk_DataEntity129', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'contentfwk_DataEntity131', cardinality 0..*).
+'contentfwk::Product' (role 'Product', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'isProducedByOrganizationUnits', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'isDecomposedByPhysicalTechnologyComponents', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent', cardinality 0..*).
+'contentfwk::PlatformService' (role 'suppliesPlatformServices', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent', cardinality 0..*).
+'contentfwk::Function' (role 'accessesFunctions', cardinality 0..*) is associated with 'contentfwk::Role' (role 'Role162', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'contentfwk_LogicalApplicationComponent143', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'contentfwk_LogicalApplicationComponent', cardinality 0..*).
+'contentfwk::Process' (role 'Process255', cardinality 0..*) is associated with 'contentfwk::Event' (role 'resolvesEvents254', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent281', cardinality 0..*) is associated with 'contentfwk::Location' (role 'isHostedInLocation280', cardinality 0..*).
+'contentfwk::ApplicationArchitecture' (role 'contentfwk_ApplicationArchitecture309', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'contentfwk_PhysicalApplicationComponent', cardinality 0..*).
+'contentfwk::Location' (role 'isHotedInLocation', cardinality 0..*) is associated with 'contentfwk::PhysicalDataComponent' (role 'PhysicalDataComponent', cardinality 0..*).
+'contentfwk::Actor' (role 'involvesActors', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process91', cardinality 0..*).
+'contentfwk::Control' (role 'isGuidedByControls', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process265', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'LogicalApplicationComponent367', cardinality 0..*) is associated with 'contentfwk::Service' (role 'implementsServices', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'PhysicalDataComponent293', cardinality 0..*) is associated with 'contentfwk::LogicalDataComponent' (role 'extendsLogicalDataComponents', cardinality 0..*).
+'contentfwk::Event' (role 'Event363', cardinality 0..*) is associated with 'contentfwk::Service' (role 'isResolvedByServices', cardinality 0..*).
+'contentfwk::DataEntity' (role 'DataEntity359', cardinality 0..*) is associated with 'contentfwk::Service' (role 'isAccessedByServices', cardinality 0..*).
+'contentfwk::Driver' (role 'isDecomposedByDrivers', cardinality 0..*) is associated with 'contentfwk::Driver' (role 'Driver', cardinality 0..*).
+'contentfwk::Process' (role 'isGeneratedByProcesses', cardinality 0..*) is associated with 'contentfwk::Event' (role 'Event195', cardinality 0..*).
+'contentfwk::Process' (role 'Process158', cardinality 0..*) is associated with 'contentfwk::Function' (role 'decomposesFunctions', cardinality 0..*).
+'contentfwk::Service' (role 'isBoundedByServices', cardinality 0..*) is associated with 'contentfwk::Function' (role 'Function355', cardinality 0..*).
+'contentfwk::Process' (role 'Process', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'involvesOrganizationUnits', cardinality 0..*).
+'contentfwk::Control' (role 'contentfwk_Control', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture19', cardinality 0..*).
+'contentfwk::Role' (role 'performsTaskInRoles', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor109', cardinality 0..*).
+'contentfwk::Element' (role 'Element270', cardinality 0..*) is associated with 'contentfwk::Element' (role 'delegates', cardinality 0..*).
+'contentfwk::Driver' (role 'Driver73', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'motivatesOrganizationUnits', cardinality 0..*).
+'contentfwk::Actor' (role 'isSuppliedByActors', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'DataEntity', cardinality 0..*).
+'contentfwk::ApplicationArchitecture' (role 'contentfwk_ApplicationArchitecture311', cardinality 0..*) is associated with 'contentfwk::InformationSystemService' (role 'contentfwk_InformationSystemService', cardinality 0..*).
+'contentfwk::Event' (role 'contentfwk_Event', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture21', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'belongsToOrganizationUnit', cardinality 0..*).
+'contentfwk::DataEntity' (role 'consumesDataEntities123', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service124', cardinality 0..*).
+'contentfwk::Contract' (role 'contentfwk_Contract', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture27', cardinality 0..*).
+'contentfwk::OrganizationUnit' (role 'OrganizationUnit181', cardinality 0..*) is associated with 'contentfwk::Process' (role 'participatesInProcesses', cardinality 0..*).
+'contentfwk::BusinessService' (role 'BusinessService', cardinality 0..*) is associated with 'contentfwk::Objective' (role 'supportsObjective', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent322', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'realizesPhysicalApplicationComponents', cardinality 0..*).
+'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent278', cardinality 0..*) is associated with 'contentfwk::Location' (role 'isHostedInLocation', cardinality 0..*).
+'contentfwk::Service' (role 'governsAndMeasuresBusinessServices', cardinality 0..*) is associated with 'contentfwk::Contract' (role 'Contract361', cardinality 0..*).
+'contentfwk::Goal' (role 'Goal', cardinality 0..*) is associated with 'contentfwk::Driver' (role 'addressesDrivers', cardinality 0..*).
+'contentfwk::Process' (role 'Process203', cardinality 0..*) is associated with 'contentfwk::Process' (role 'followsProcesses', cardinality 0..*).
+'contentfwk::Service' (role 'consumesServices', cardinality 0..*) is associated with 'contentfwk::Actor' (role 'Actor353', cardinality 0..*).
+'contentfwk::Function' (role 'Function177', cardinality 0..*) is associated with 'contentfwk::Process' (role 'isRealizedByProcesses', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor164', cardinality 0..*) is associated with 'contentfwk::Function' (role 'interactsWithFunctions', cardinality 0..*).
+'contentfwk::Actor' (role 'isConsumedByActors', cardinality 0..*) is associated with 'contentfwk::DataEntity' (role 'DataEntity84', cardinality 0..*).
+'contentfwk::Process' (role 'Process206', cardinality 0..*) is associated with 'contentfwk::Process' (role 'precedesProcesses', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'PhysicalDataComponent300', cardinality 0..*) is associated with 'contentfwk::PhysicalDataComponent' (role 'isDecomposedByPhysicalDataComponents', cardinality 0..*).
+'contentfwk::Service' (role 'contentfwk_Service', cardinality 0..*) is associated with 'contentfwk::Service' (role 'contentfwk_Service378', cardinality 0..*).
+'contentfwk::PhysicalApplicationComponent' (role 'contentfwk_PhysicalApplicationComponent316', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'contentfwk_PhysicalApplicationComponent318', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'contentfwk_PhysicalDataComponent', cardinality 0..*) is associated with 'contentfwk::DataArchitecture' (role 'contentfwk_DataArchitecture36', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'contentfwk_LogicalApplicationComponent307', cardinality 0..*) is associated with 'contentfwk::ApplicationArchitecture' (role 'contentfwk_ApplicationArchitecture', cardinality 0..*).
+'contentfwk::Driver' (role 'Driver48', cardinality 0..*) is associated with 'contentfwk::Driver' (role 'decomposesDriver', cardinality 0..*).
+'contentfwk::OrganizationUnit' (role 'isDecomposedByOrganizationUnits', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit78', cardinality 0..*).
+'contentfwk::Process' (role 'decomposesProcess', cardinality 0..*) is associated with 'contentfwk::Process' (role 'Process209', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor260', cardinality 0..*) is associated with 'contentfwk::Event' (role 'resolvesEvents259', cardinality 0..*).
+'contentfwk::Function' (role 'isDecomposedByFunctions', cardinality 0..*) is associated with 'contentfwk::Function' (role 'Function167', cardinality 0..*).
+'contentfwk::Actor' (role 'Actor263', cardinality 0..*) is associated with 'contentfwk::Event' (role 'generatesEvents262', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'PhysicalDataComponent320', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'encapsulatesPhysicalApplicationComponents', cardinality 0..*).
+'contentfwk::LogicalApplicationComponent' (role 'LogicalApplicationComponent150', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'decomposesLogicalApplicationComponent', cardinality 0..*).
+'contentfwk::Objective' (role 'isRealizedThroughObjectives', cardinality 0..*) is associated with 'contentfwk::Goal' (role 'Goal59', cardinality 0..*).
+'contentfwk::Function' (role 'contentfwk_Function', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture13', cardinality 0..*).
+'contentfwk::OrganizationUnit' (role 'decomposesOrganizationUnit', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit81', cardinality 0..*).
+'contentfwk::PhysicalTechnologyComponent' (role 'PhysicalTechnologyComponent222', cardinality 0..*) is associated with 'contentfwk::PhysicalTechnologyComponent' (role 'isRequiredByPhysicalTechnologyComponent', cardinality 0..*).
+'contentfwk::Process' (role 'isRealizedByProcesses183', cardinality 0..*) is associated with 'contentfwk::Service' (role 'Service184', cardinality 0..*).
+'contentfwk::OrganizationUnit' (role 'contentfwk_OrganizationUnit', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture7', cardinality 0..*).
+'contentfwk::Element' (role 'isDelegatedBy', cardinality 0..*) is associated with 'contentfwk::Element' (role 'Element', cardinality 0..*).
+'contentfwk::StrategicArchitecture' (role 'contentfwk_StrategicArchitecture', cardinality 0..*) is associated with 'contentfwk::Capability' (role 'contentfwk_Capability', cardinality 0..*).
+'contentfwk::PhysicalDataComponent' (role 'decomposesPhysicalDataComponent', cardinality 0..*) is associated with 'contentfwk::PhysicalDataComponent' (role 'PhysicalDataComponent305', cardinality 0..*).
+'contentfwk::Service' (role 'Service', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'isOwnedAndGovernedByOrganizationUnits', cardinality 0..*).
+'contentfwk::Service' (role 'Service382', cardinality 0..*) is associated with 'contentfwk::Service' (role 'isDecomposedByServices', cardinality 0..*).
+'contentfwk::Service' (role 'ownsAndGovernsServices', cardinality 0..*) is associated with 'contentfwk::OrganizationUnit' (role 'OrganizationUnit369', cardinality 0..*).
+'contentfwk::EnterpriseArchitecture' (role 'contentfwk_EnterpriseArchitecture', cardinality 0..*) is associated with 'contentfwk::Architecture' (role 'contentfwk_Architecture', cardinality 0..*).
+'contentfwk::Measure' (role 'contentfwk_Measure', cardinality 0..*) is associated with 'contentfwk::BusinessArchitecture' (role 'contentfwk_BusinessArchitecture29', cardinality 0..*).
+'contentfwk::DataEntity' (role 'DataEntity141', cardinality 0..*) is associated with 'contentfwk::LogicalApplicationComponent' (role 'isProcessesByLogicalApplicationComponents', cardinality 0..*).
+'contentfwk::Location' (role 'Location315', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'containsPhysicalApplicationComponents', cardinality 0..*).
+'contentfwk::PhysicalApplicationComponent' (role 'PhysicalApplicationComponent328', cardinality 0..*) is associated with 'contentfwk::PhysicalApplicationComponent' (role 'decomposesPhysicalApplicationComponent', cardinality 0..*).
+'contentfwk::TechnologyArchitecture' (role 'contentfwk_TechnologyArchitecture', cardinality 0..*) is associated with 'contentfwk::PlatformService' (role 'contentfwk_PlatformService', cardinality 0..*).
+'contentfwk::Service' (role 'providesPlatformForServices', cardinality 0..*) is associated with 'contentfwk::LogicalTechnologyComponent' (role 'LogicalTechnologyComponent365', cardinality 0..*).
+'contentfwk::Location' (role 'Location287', cardinality 0..*) is associated with 'contentfwk::Location' (role 'decomposesLocation', cardinality 0..*).

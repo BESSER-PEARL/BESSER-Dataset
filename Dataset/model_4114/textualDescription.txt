@@ -1,0 +1,60 @@
+The model has 27 class(es).
+The class 'py::Definition' has no attributes.
+The class 'py::Commands' has no attributes.
+The class 'py::Affect' has the following attributes: 'vars' of type str.
+The class 'py::EObject' has no attributes.
+The class 'py::ExprAnd' has no attributes.
+The class 'py::ExprList' has no attributes.
+The class 'py::ExprHd' has no attributes.
+The class 'py::While' has no attributes.
+The class 'py::FunctionP' has the following attributes: 'name' of type str.
+The class 'py::For' has no attributes.
+The class 'py::ExprOr' has no attributes.
+The class 'py::Program' has no attributes.
+The class 'py::ExprTl' has no attributes.
+The class 'py::Output' has the following attributes: 'vars' of type str.
+The class 'py::Input' has the following attributes: 'vars' of type str.
+The class 'py::If' has no attributes.
+The class 'py::ExprNot' has no attributes.
+The class 'py::Nop' has the following attributes: 'nop' of type str.
+The class 'py::ExprEq' has no attributes.
+The class 'py::Wh' has no attributes.
+The class 'py::ExprSimple' has the following attributes: 'varSimple' of type str; 'sym' of type str; 'str' of type str.
+The class 'py::ExprSym' has the following attributes: 'arg1' of type str.
+The class 'py::Command' has no attributes.
+The class 'py::Foreach' has the following attributes: 'var' of type str.
+The class 'py::Expr' has no attributes.
+The class 'py::ExprCons' has no attributes.
+The class 'py::LExpr' has no attributes.
+'py::Commands' (role 'py_Commands33', cardinality 0..*) is associated with 'py::Foreach' (role 'py_Foreach32', cardinality 0..*).
+'py::Expr' (role 'py_Expr62', cardinality 0..*) is associated with 'py::ExprSym' (role 'py_ExprSym', cardinality 0..*).
+'py::LExpr' (role 'py_LExpr', cardinality 0..*) is associated with 'py::ExprCons' (role 'py_ExprCons', cardinality 0..*).
+'py::If' (role 'py_If20', cardinality 0..*) is associated with 'py::Commands' (role 'py_Commands21', cardinality 0..*).
+'py::Command' (role 'py_Command', cardinality 0..*) is associated with 'py::Commands' (role 'py_Commands12', cardinality 0..*).
+'py::Output' (role 'py_Output', cardinality 0..*) is associated with 'py::Definition' (role 'py_Definition10', cardinality 0..*).
+'py::ExprEq' (role 'py_ExprEq', cardinality 0..*) is associated with 'py::ExprSimple' (role 'py_ExprSimple66', cardinality 0..*).
+'py::ExprNot' (role 'py_ExprNot', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr64', cardinality 0..*).
+'py::ExprAnd' (role 'py_ExprAnd44', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr45', cardinality 0..*).
+'py::LExpr' (role 'py_LExpr53', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr54', cardinality 0..*).
+'py::Definition' (role 'py_Definition6', cardinality 0..*) is associated with 'py::Input' (role 'py_Input', cardinality 0..*).
+'py::ExprList' (role 'py_ExprList', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr56', cardinality 0..*).
+'py::While' (role 'py_While37', cardinality 0..*) is associated with 'py::Commands' (role 'py_Commands38', cardinality 0..*).
+'py::Expr' (role 'py_Expr23', cardinality 0..*) is associated with 'py::Affect' (role 'py_Affect', cardinality 0..*).
+'py::ExprOr' (role 'py_ExprOr', cardinality 0..*) is associated with 'py::ExprSimple' (role 'py_ExprSimple47', cardinality 0..*).
+'py::Commands' (role 'py_Commands18', cardinality 0..*) is associated with 'py::If' (role 'py_If17', cardinality 0..*).
+'py::Foreach' (role 'py_Foreach', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr30', cardinality 0..*).
+'py::FunctionP' (role 'py_FunctionP4', cardinality 0..*) is associated with 'py::Definition' (role 'py_Definition', cardinality 0..*).
+'py::FunctionP' (role 'py_FunctionP', cardinality 0..*) is associated with 'py::Program' (role 'py_Program2', cardinality 0..*).
+'py::Commands' (role 'py_Commands', cardinality 0..*) is associated with 'py::Definition' (role 'py_Definition8', cardinality 0..*).
+'py::Wh' (role 'py_Wh', cardinality 0..*) is associated with 'py::Program' (role 'py_Program', cardinality 0..*).
+'py::While' (role 'py_While', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr35', cardinality 0..*).
+'py::Expr' (role 'py_Expr50', cardinality 0..*) is associated with 'py::ExprOr' (role 'py_ExprOr49', cardinality 0..*).
+'py::Expr' (role 'py_Expr', cardinality 0..*) is associated with 'py::If' (role 'py_If', cardinality 0..*).
+'py::ExprAnd' (role 'py_ExprAnd', cardinality 0..*) is associated with 'py::ExprSimple' (role 'py_ExprSimple', cardinality 0..*).
+'py::ExprHd' (role 'py_ExprHd', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr58', cardinality 0..*).
+'py::EObject' (role 'py_EObject', cardinality 0..*) is associated with 'py::Command' (role 'py_Command14', cardinality 0..*).
+'py::Expr' (role 'py_Expr60', cardinality 0..*) is associated with 'py::ExprTl' (role 'py_ExprTl', cardinality 0..*).
+'py::Expr' (role 'py_Expr69', cardinality 0..*) is associated with 'py::ExprEq' (role 'py_ExprEq68', cardinality 0..*).
+'py::For' (role 'py_For', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr25', cardinality 0..*).
+'py::Commands' (role 'py_Commands28', cardinality 0..*) is associated with 'py::For' (role 'py_For27', cardinality 0..*).
+'py::EObject' (role 'py_EObject41', cardinality 0..*) is associated with 'py::Expr' (role 'py_Expr40', cardinality 0..*).

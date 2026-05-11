@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'metric::Metric' has the following attributes: 'description' of type str; 'code' of type str; 'name' of type str.
+The class 'metric::AggregatedIntegerMetric' has the following attributes: 'standardDeviation' of type float; 'median' of type str; 'maximum' of type str; 'average' of type float; 'minimum' of type str.
+The class 'metric::Container' has no attributes.
+The class 'Metric' has no attributes.
+The class 'metric::SimpleMetric' has the following attributes: 'value' of type str.
+The class 'metric::AggregatedRealMetric' has the following attributes: 'standardDeviation' of type float; 'maximum' of type float; 'average' of type float; 'minimum' of type float; 'median' of type float.
+'metric::AggregatedRealMetric' is a specialization of 'Metric'.
+'metric::AggregatedIntegerMetric' is a specialization of 'Metric'.
+'metric::SimpleMetric' is a specialization of 'Metric'.
+'metric::Metric' (role 'metric_Metric', cardinality 0..*) is associated with 'metric::Container' (role 'metric_Container', cardinality 0..*).

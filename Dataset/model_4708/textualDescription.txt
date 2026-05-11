@@ -1,0 +1,469 @@
+The model has 206 class(es).
+The class 'smif::values::BaseUnitType' has no attributes.
+The class 'smif::values::UnitType' has the following attributes: 'ratio' of type str; 'offset' of type str; 'symbol' of type str.
+The class 'smif::expressions::Traversal' has the following attributes: 'inverse' of type str; 'traverseToRelation' of type str.
+The class 'TypePatternVariable' has no attributes.
+The class 'smif::properties::PropertyType' has no attributes.
+The class 'smif::properties::CharacteristicBinding' has no attributes.
+The class 'smif::properties::CharacteristicType' has no attributes.
+The class 'RecordType' has no attributes.
+The class 'smif::expressions::ExpressionContext' has no attributes.
+The class 'smif::patterns::PatternMatch' has no attributes.
+The class 'smif::expressions::ConstantReference' has no attributes.
+The class 'Type' has no attributes.
+The class 'smif::mapping::MatchEnd' has no attributes.
+The class 'Value' has no attributes.
+The class 'TechnicalIdentifier' has no attributes.
+The class 'smif::patterns::PatternVariable' has the following attributes: 'explicit' of type str; 'qualification' of type str.
+The class 'Proposition' has no attributes.
+The class 'smif::types::UnionType' has no attributes.
+The class 'smif::expressions::Equality' has no attributes.
+The class 'smif::lexicalscope::PhysicalPackage' has no attributes.
+The class 'ExpressionContext' has no attributes.
+The class 'smif::constraints::PropertyConstraint' has no attributes.
+The class 'Evaluation' has no attributes.
+The class 'smif::patterns::Computed' has no attributes.
+The class 'smif::identifiers::Term' has no attributes.
+The class 'InformationSource' has no attributes.
+The class 'smif::metadata::Statement' has no attributes.
+The class 'smif::values::UnitValue' has the following attributes: 'hasValue' of type str.
+The class 'smif::patterns::TypePatternVariable' has no attributes.
+The class 'smif::constraints::Enumerated' has no attributes.
+The class 'smif::properties::OwnedPropertyBinding' has no attributes.
+The class 'MultiplicityConstraint' has no attributes.
+The class 'smif::mapping::Mapping' has the following attributes: 'strength' of type str.
+The class 'smif::situations::ActualSituation' has no attributes.
+The class 'facets::Facet' has no attributes.
+The class 'properties::PropertyOwnerType' has no attributes.
+The class 'Thing' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'smif::lexicalscope::Include' has no attributes.
+The class 'smif::lexicalscope::LexicalScope' has no attributes.
+The class 'IRIIdentifier' has no attributes.
+The class 'Situation' has no attributes.
+The class 'smif::values::ScalarQuantity' has the following attributes: '_unnamed_ScalarQuantity' of type str.
+The class 'Record' has no attributes.
+The class 'patterns::Computed' has no attributes.
+The class 'patterns::PatternVariable' has no attributes.
+The class 'smif::patterns::PartVariable' has the following attributes: 'isBoundaryPart' of type str.
+The class 'smif::associations::Association' has no attributes.
+The class 'ExpressionNode' has no attributes.
+The class 'smif::properties::AnnotationProperty' has no attributes.
+The class 'Name' has no attributes.
+The class 'toplevel::ActualEntity' has no attributes.
+The class 'smif::constraints::TypeConstraint' has no attributes.
+The class 'smif::facets::FacetOfEntity' has no attributes.
+The class 'smif::constraints::Conditional' has no attributes.
+The class 'situations::ActualSituation' has no attributes.
+The class 'Definition' has no attributes.
+The class 'smif::patterns::FocusVariable' has no attributes.
+The class 'identifiers::UniqueIdentifier' has no attributes.
+The class 'PropertyTypeConstraint' has no attributes.
+The class 'IdentifiableEntity' has no attributes.
+The class 'smif::mapping::Facade' has no attributes.
+The class 'smif::metadata::InformationSource' has no attributes.
+The class 'RepresentationRule' has no attributes.
+The class 'smif::values::StructuredValueType' has no attributes.
+The class 'smif::constraints::MultiplicityConstraint' has the following attributes: 'mininumNumber' of type str; 'isSufficent' of type str; 'maximumNumber' of type str; 'atOnce' of type str.
+The class 'smif::patterns::PatternOfType' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'CharacteristicType' has no attributes.
+The class 'values::ValueType' has no attributes.
+The class 'smif::identifiers::TechnicalIdentifier' has no attributes.
+The class 'TypeConstraint' has no attributes.
+The class 'PropertyConstraint' has no attributes.
+The class 'smif::types::EntityType' has no attributes.
+The class 'toplevel::Context' has no attributes.
+The class 'Context' has no attributes.
+The class 'smif::constraints::PropertyTransitivityConstraint' has no attributes.
+The class 'UnitValue' has no attributes.
+The class 'patterns::Pattern' has no attributes.
+The class 'lexicalscope::LexicalScope' has no attributes.
+The class 'Facet' has no attributes.
+The class 'MatchRule' has no attributes.
+The class 'smif::toplevel::IdentifiableEntity' has no attributes.
+The class 'smif::situations::Situation' has no attributes.
+The class 'smif::toplevel::ActualEntity' has no attributes.
+The class 'EntityType' has no attributes.
+The class 'PropertyOwnerType' has no attributes.
+The class 'smif::patterns::Pattern' has no attributes.
+The class 'situations::SituationType' has no attributes.
+The class 'constraints::Rule' has no attributes.
+The class 'ConditionalRule' has no attributes.
+The class 'identifiers::TextIdentifier' has no attributes.
+The class 'smif::toplevel::Proposition' has no attributes.
+The class 'ObjectOperationType' has no attributes.
+The class 'properties::PropertyOwner' has no attributes.
+The class 'toplevel::Proposition' has no attributes.
+The class 'smif::patterns::ExpressionVariable' has no attributes.
+The class 'Term' has no attributes.
+The class 'properties::PropertyType' has no attributes.
+The class 'PropertyType' has no attributes.
+The class 'toplevel::TemporalEntity' has no attributes.
+The class 'UnitType' has no attributes.
+The class 'PropositionVariable' has no attributes.
+The class 'Package' has no attributes.
+The class 'smif::identifiers::Identifier' has no attributes.
+The class 'smif::facets::Role' has no attributes.
+The class 'Facade' has no attributes.
+The class 'PatternVariable' has no attributes.
+The class 'UniquenessConstraint' has no attributes.
+The class 'smif::constraints::Rule' has no attributes.
+The class 'FunctionCall' has no attributes.
+The class 'smif::values::Value' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'Prefix' has no attributes.
+The class 'smif::properties::PropertyOwnerType' has no attributes.
+The class 'values::Value' has no attributes.
+The class 'PatternOfType' has no attributes.
+The class 'metadata::Metadata' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'smif::lexicalscope::Package' has no attributes.
+The class 'smif::constraints::PropertyTypeConstraint' has the following attributes: 'prerequisiteType' of type str.
+The class 'Identifier' has no attributes.
+The class 'smif::lexicalscope::MOFPackage' has no attributes.
+The class 'smif::values::QuantityKind' has no attributes.
+The class 'smif::expressions::ObjectOperationType' has no attributes.
+The class 'smif::identifiers::IRIIdentifier' has no attributes.
+The class 'Equality' has no attributes.
+The class 'smif::lexicalscope::MappingPackage' has no attributes.
+The class 'smif::lexicalscope::Model' has no attributes.
+The class 'smif::constraints::CoveringConstraint' has no attributes.
+The class 'MatchEnd' has no attributes.
+The class 'smif::expressions::FunctionType' has no attributes.
+The class 'smif::constraints::UniquenessConstraint' has the following attributes: 'isPrimaryIdentity' of type str.
+The class 'PropertyBinding' has no attributes.
+The class 'smif::identifiers::TextIdentifier' has the following attributes: 'value' of type str.
+The class 'smif::types::Type' has no attributes.
+The class 'OwnedPropertyBinding' has no attributes.
+The class 'smif::identifiers::UniqueTextIdentifier' has no attributes.
+The class 'smif::relationships::RelationshipType' has no attributes.
+The class 'smif::metadata::Metadata' has no attributes.
+The class 'Statement' has no attributes.
+The class 'smif::records::Record' has no attributes.
+The class 'ConstantReference' has no attributes.
+The class 'properties::OwnedPropertyType' has no attributes.
+The class 'UniqueIdentifier' has no attributes.
+The class 'smif::relationships::Relationship' has no attributes.
+The class 'constraints::Conditional' has no attributes.
+The class 'smif::properties::PropertyOwner' has no attributes.
+The class 'smif::values::StructuredValue' has no attributes.
+The class 'smif::lexicalscope::LexicalReference' has no attributes.
+The class 'identifiers::Name' has no attributes.
+The class 'smif::lexicalscope::LogicalPackage' has no attributes.
+The class 'smif::lexicalscope::Prefix' has no attributes.
+The class 'smif::records::RecordType' has no attributes.
+The class 'smif::patterns::PropositionVariable' has no attributes.
+The class 'smif::constraints::FacetClassificationConstraint' has no attributes.
+The class 'smif::identifiers::Namespace' has no attributes.
+The class 'properties::PropertyBinding' has no attributes.
+The class 'smif::types::IntersectionType' has no attributes.
+The class 'LexicalScope' has no attributes.
+The class 'smif::properties::PropertyBinding' has no attributes.
+The class 'GeneralizationConstraint' has no attributes.
+The class 'smif::associations::AssociationType' has no attributes.
+The class 'ActualSituation' has no attributes.
+The class 'smif::constraints::ConditionalRule' has no attributes.
+The class 'smif::identifiers::UniqueIdentifier' has no attributes.
+The class 'smif::facets::Category' has no attributes.
+The class 'UniqueTextIdentifier' has no attributes.
+The class 'smif::facets::Phase' has no attributes.
+The class 'identifiers::UniqueTextIdentifier' has no attributes.
+The class 'ValueType' has no attributes.
+The class 'smif::expressions::FunctionCall' has no attributes.
+The class 'smif::constraints::Disjoint' has no attributes.
+The class 'smif::values::SystemOfUnits' has no attributes.
+The class 'smif::toplevel::TemporalEntity' has no attributes.
+The class 'smif::metadata::Definition' has the following attributes: 'textDefinition' of type str; 'summaryDescription' of type str.
+The class 'FunctionType' has no attributes.
+The class 'CoveringConstraint' has no attributes.
+The class 'smif::situations::SituationType' has no attributes.
+The class 'smif::properties::OwnedPropertyType' has no attributes.
+The class 'situations::Situation' has no attributes.
+The class 'Traversal' has no attributes.
+The class 'SystemOfUnits' has no attributes.
+The class 'PatternMatch' has no attributes.
+The class 'VariableBinding' has no attributes.
+The class 'Metadata' has no attributes.
+The class 'LexicalReference' has no attributes.
+The class 'smif::mapping::MatchRule' has the following attributes: 'coerce' of type str.
+The class 'smif::toplevel::Thing' has no attributes.
+The class 'TemporalEntity' has no attributes.
+The class 'smif::mapping::RepresentationRule' has the following attributes: 'mapAll' of type str.
+The class 'smif::values::ValueType' has no attributes.
+The class 'smif::facets::Facet' has no attributes.
+The class 'expressions::ExpressionContext' has no attributes.
+The class 'smif::identifiers::Name' has no attributes.
+The class 'smif::Repository' has no attributes.
+The class 'smif::expressions::ExpressionNode' has the following attributes: 'expressionText' of type str; 'expressionTextLanguage' of type str.
+The class 'smif::mapping::ComputedFacade' has no attributes.
+The class 'TextIdentifier' has no attributes.
+The class 'Rule' has no attributes.
+The class 'smif::constraints::Equivalent' has no attributes.
+The class 'smif::patterns::VariableBinding' has no attributes.
+The class 'smif::expressions::Evaluation' has no attributes.
+The class 'smif::constraints::GeneralizationConstraint' has the following attributes: 'redefines' of type str.
+The class 'smif::toplevel::Context' has no attributes.
+The class 'expressions::ExpressionNode' has no attributes.
+The enumeration 'AssertionStrength' has the following literals: 'Global', 'Local'.
+The enumeration 'VariableQualification' has the following literals: 'Assert', 'Optional', 'Negate', 'All', 'ExactlyOne', 'ThereExists', 'Select'.
+'smif::records::RecordType' is a specialization of 'properties::PropertyOwnerType'.
+'smif::lexicalscope::MOFPackage' is a specialization of 'Package'.
+'smif::identifiers::IRIIdentifier' is a specialization of 'TechnicalIdentifier'.
+'smif::records::Record' is a specialization of 'situations::ActualSituation'.
+'smif::facets::Phase' is a specialization of 'situations::SituationType'.
+'smif::mapping::Mapping' is a specialization of 'patterns::Pattern'.
+'smif::types::UnionType' is a specialization of 'Type'.
+'smif::values::StructuredValue' is a specialization of 'values::Value'.
+'smif::identifiers::Term' is a specialization of 'identifiers::Name'.
+'smif::patterns::PatternVariable' is a specialization of 'constraints::Conditional'.
+'smif::values::QuantityKind' is a specialization of 'ValueType'.
+'smif::constraints::PropertyTransitivityConstraint' is a specialization of 'PropertyConstraint'.
+'smif::relationships::Relationship' is a specialization of 'properties::PropertyOwner'.
+'smif::identifiers::UniqueIdentifier' is a specialization of 'Identifier'.
+'smif::values::ValueType' is a specialization of 'Type'.
+'smif::facets::Category' is a specialization of 'Facet'.
+'smif::patterns::PartVariable' is a specialization of 'TypePatternVariable'.
+'smif::types::IntersectionType' is a specialization of 'Type'.
+'smif::metadata::Metadata' is a specialization of 'Record'.
+'smif::constraints::UniquenessConstraint' is a specialization of 'TypeConstraint'.
+'smif::toplevel::Proposition' is a specialization of 'IdentifiableEntity'.
+'smif::identifiers::TechnicalIdentifier' is a specialization of 'UniqueTextIdentifier'.
+'smif::expressions::ObjectOperationType' is a specialization of 'FunctionType'.
+'smif::identifiers::TextIdentifier' is a specialization of 'Identifier'.
+'smif::properties::CharacteristicBinding' is a specialization of 'properties::PropertyBinding'.
+'smif::identifiers::Term' is a specialization of 'identifiers::UniqueTextIdentifier'.
+'smif::expressions::Evaluation' is a specialization of 'ExpressionContext'.
+'smif::values::UnitValue' is a specialization of 'Value'.
+'smif::properties::AnnotationProperty' is a specialization of 'CharacteristicType'.
+'smif::properties::CharacteristicBinding' is a specialization of 'situations::ActualSituation'.
+'smif::identifiers::UniqueTextIdentifier' is a specialization of 'identifiers::UniqueIdentifier'.
+'smif::mapping::ComputedFacade' is a specialization of 'Facade'.
+'smif::constraints::Enumerated' is a specialization of 'Rule'.
+'smif::relationships::Relationship' is a specialization of 'situations::ActualSituation'.
+'smif::properties::PropertyType' is a specialization of 'Type'.
+'smif::toplevel::ActualEntity' is a specialization of 'TemporalEntity'.
+'smif::values::ScalarQuantity' is a specialization of 'UnitValue'.
+'smif::expressions::Equality' is a specialization of 'ExpressionNode'.
+'smif::toplevel::IdentifiableEntity' is a specialization of 'Thing'.
+'smif::properties::OwnedPropertyType' is a specialization of 'PropertyType'.
+'smif::properties::CharacteristicType' is a specialization of 'situations::SituationType'.
+'smif::constraints::PropertyTypeConstraint' is a specialization of 'PropertyConstraint'.
+'smif::identifiers::UniqueTextIdentifier' is a specialization of 'identifiers::TextIdentifier'.
+'smif::mapping::RepresentationRule' is a specialization of 'ConditionalRule'.
+'smif::constraints::Disjoint' is a specialization of 'Rule'.
+'smif::expressions::ExpressionContext' is a specialization of 'IdentifiableEntity'.
+'smif::expressions::Traversal' is a specialization of 'expressions::ExpressionNode'.
+'smif::identifiers::Name' is a specialization of 'TextIdentifier'.
+'smif::patterns::PatternMatch' is a specialization of 'ActualSituation'.
+'smif::lexicalscope::Model' is a specialization of 'Package'.
+'smif::values::UnitType' is a specialization of 'ValueType'.
+'smif::situations::Situation' is a specialization of 'toplevel::Proposition'.
+'smif::identifiers::Namespace' is a specialization of 'Context'.
+'smif::constraints::ConditionalRule' is a specialization of 'constraints::Conditional'.
+'smif::constraints::GeneralizationConstraint' is a specialization of 'TypeConstraint'.
+'smif::patterns::PatternVariable' is a specialization of 'properties::OwnedPropertyType'.
+'smif::lexicalscope::LexicalScope' is a specialization of 'Namespace'.
+'smif::metadata::Statement' is a specialization of 'Metadata'.
+'smif::facets::FacetOfEntity' is a specialization of 'Relationship'.
+'smif::metadata::InformationSource' is a specialization of 'metadata::Metadata'.
+'smif::properties::PropertyOwnerType' is a specialization of 'Type'.
+'smif::constraints::MultiplicityConstraint' is a specialization of 'TypeConstraint'.
+'smif::situations::Situation' is a specialization of 'lexicalscope::LexicalScope'.
+'smif::situations::ActualSituation' is a specialization of 'situations::Situation'.
+'smif::expressions::ExpressionNode' is a specialization of 'ExpressionContext'.
+'smif::types::EntityType' is a specialization of 'Type'.
+'smif::constraints::TypeConstraint' is a specialization of 'Rule'.
+'smif::situations::Situation' is a specialization of 'toplevel::Context'.
+'smif::patterns::Pattern' is a specialization of 'situations::SituationType'.
+'smif::expressions::FunctionCall' is a specialization of 'expressions::ExpressionNode'.
+'smif::lexicalscope::PhysicalPackage' is a specialization of 'Package'.
+'smif::identifiers::Identifier' is a specialization of 'Value'.
+'smif::facets::Role' is a specialization of 'Facet'.
+'smif::values::Value' is a specialization of 'Thing'.
+'smif::constraints::CoveringConstraint' is a specialization of 'TypeConstraint'.
+'smif::properties::PropertyBinding' is a specialization of 'Thing'.
+'smif::constraints::FacetClassificationConstraint' is a specialization of 'GeneralizationConstraint'.
+'smif::patterns::Pattern' is a specialization of 'lexicalscope::LexicalScope'.
+'smif::records::Record' is a specialization of 'properties::PropertyOwner'.
+'smif::values::StructuredValue' is a specialization of 'properties::PropertyOwner'.
+'smif::constraints::Rule' is a specialization of 'Proposition'.
+'smif::values::SystemOfUnits' is a specialization of 'Context'.
+'smif::relationships::RelationshipType' is a specialization of 'properties::PropertyOwnerType'.
+'smif::records::RecordType' is a specialization of 'situations::SituationType'.
+'smif::patterns::Pattern' is a specialization of 'situations::Situation'.
+'smif::associations::Association' is a specialization of 'properties::PropertyOwner'.
+'smif::patterns::TypePatternVariable' is a specialization of 'PatternVariable'.
+'smif::types::Type' is a specialization of 'toplevel::Context'.
+'smif::toplevel::TemporalEntity' is a specialization of 'IdentifiableEntity'.
+'smif::toplevel::Context' is a specialization of 'IdentifiableEntity'.
+'smif::patterns::VariableBinding' is a specialization of 'OwnedPropertyBinding'.
+'smif::metadata::InformationSource' is a specialization of 'toplevel::ActualEntity'.
+'smif::expressions::FunctionType' is a specialization of 'expressions::ExpressionContext'.
+'smif::patterns::Pattern' is a specialization of 'properties::PropertyOwner'.
+'smif::facets::Facet' is a specialization of 'Type'.
+'smif::lexicalscope::LexicalReference' is a specialization of 'Context'.
+'smif::situations::Situation' is a specialization of 'toplevel::TemporalEntity'.
+'smif::mapping::MatchRule' is a specialization of 'Rule'.
+'smif::types::Type' is a specialization of 'lexicalscope::LexicalScope'.
+'smif::associations::AssociationType' is a specialization of 'PropertyOwnerType'.
+'smif::patterns::ExpressionVariable' is a specialization of 'patterns::Computed'.
+'smif::expressions::FunctionCall' is a specialization of 'properties::PropertyOwner'.
+'smif::properties::CharacteristicType' is a specialization of 'properties::PropertyType'.
+'smif::lexicalscope::MappingPackage' is a specialization of 'Package'.
+'smif::mapping::MatchEnd' is a specialization of 'constraints::Conditional'.
+'smif::mapping::MatchEnd' is a specialization of 'patterns::Computed'.
+'smif::values::BaseUnitType' is a specialization of 'UnitType'.
+'smif::patterns::ExpressionVariable' is a specialization of 'patterns::PatternVariable'.
+'smif::properties::PropertyOwner' is a specialization of 'Thing'.
+'smif::mapping::Mapping' is a specialization of 'constraints::Rule'.
+'smif::associations::Association' is a specialization of 'toplevel::Proposition'.
+'smif::situations::ActualSituation' is a specialization of 'toplevel::ActualEntity'.
+'smif::expressions::ConstantReference' is a specialization of 'ExpressionNode'.
+'smif::values::StructuredValueType' is a specialization of 'values::ValueType'.
+'smif::facets::Phase' is a specialization of 'facets::Facet'.
+'smif::constraints::PropertyConstraint' is a specialization of 'Rule'.
+'smif::mapping::Facade' is a specialization of 'RecordType'.
+'smif::lexicalscope::LogicalPackage' is a specialization of 'Package'.
+'smif::expressions::FunctionType' is a specialization of 'properties::PropertyOwnerType'.
+'smif::situations::SituationType' is a specialization of 'EntityType'.
+'smif::constraints::ConditionalRule' is a specialization of 'constraints::Rule'.
+'smif::patterns::PatternOfType' is a specialization of 'Pattern'.
+'smif::lexicalscope::Include' is a specialization of 'LexicalReference'.
+'smif::patterns::FocusVariable' is a specialization of 'TypePatternVariable'.
+'smif::metadata::Definition' is a specialization of 'Metadata'.
+'smif::relationships::RelationshipType' is a specialization of 'situations::SituationType'.
+'smif::properties::OwnedPropertyBinding' is a specialization of 'PropertyBinding'.
+'smif::lexicalscope::Package' is a specialization of 'LexicalScope'.
+'smif::expressions::Traversal' is a specialization of 'properties::PropertyOwner'.
+'smif::patterns::PropositionVariable' is a specialization of 'PatternVariable'.
+'smif::constraints::Equivalent' is a specialization of 'Rule'.
+'smif::lexicalscope::Prefix' is a specialization of 'UniqueTextIdentifier'.
+'smif::values::StructuredValueType' is a specialization of 'properties::PropertyOwnerType'.
+'IdentifiableEntity' (role 'IdentifiableEntity180', cardinality 0..*) is associated with 'smif::metadata::InformationSource' (role 'hasAuthoritativeSource', cardinality 0..*).
+'smif::toplevel::Thing' (role 'states', cardinality 0..*) is associated with 'LexicalScope' (role 'LexicalScope88', cardinality 0..*).
+'Package' (role 'Package', cardinality 0..*) is associated with 'smif::lexicalscope::Prefix' (role 'hasPrefix', cardinality 0..*).
+'Name' (role 'Name', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'names', cardinality 0..*).
+'smif::types::Type' (role 'multiplicityOf', cardinality 0..*) is associated with 'MultiplicityConstraint' (role 'MultiplicityConstraint', cardinality 0..*).
+'Type' (role 'Type126', cardinality 0..*) is associated with 'smif::patterns::PatternOfType' (role 'assertsPattern', cardinality 0..*).
+'LexicalScope' (role 'LexicalScope', cardinality 0..*) is associated with 'smif::Repository' (role 'smif_Repository', cardinality 0..*).
+'PropertyBinding' (role 'PropertyBinding92', cardinality 0..*) is associated with 'smif::toplevel::Thing' (role 'binds', cardinality 0..*).
+'smif::toplevel::Thing' (role 'smif_toplevel_Thing', cardinality 0..*) is associated with 'LexicalScope' (role 'LexicalScope82', cardinality 0..*).
+'Evaluation' (role 'Evaluation', cardinality 0..*) is associated with 'smif::expressions::ExpressionNode' (role 'evaluates', cardinality 0..*).
+'smif::mapping::MatchEnd' (role 'mapsTo', cardinality 0..*) is associated with 'PatternVariable' (role 'PatternVariable144', cardinality 0..*).
+'IdentifiableEntity' (role 'IdentifiableEntity', cardinality 0..*) is associated with 'smif::identifiers::Identifier' (role 'identifiedBy', cardinality 0..*).
+'smif::patterns::PatternVariable' (role 'hasSubset', cardinality 0..*) is associated with 'PatternVariable' (role 'PatternVariable115', cardinality 0..*).
+'PatternVariable' (role 'PatternVariable', cardinality 0..*) is associated with 'smif::patterns::Pattern' (role 'hasOwningPattern', cardinality 0..*).
+'smif::situations::Situation' (role 'matches', cardinality 0..*) is associated with 'PatternMatch' (role 'PatternMatch', cardinality 0..*).
+'Mapping' (role 'Mapping140', cardinality 0..*) is associated with 'smif::mapping::MatchRule' (role 'hasMapRule', cardinality 0..*).
+'Type' (role 'Type86', cardinality 0..*) is associated with 'smif::toplevel::Thing' (role 'categorizes', cardinality 0..*).
+'smif::lexicalscope::LexicalScope' (role 'smif_lexicalscope_LexicalScope', cardinality 0..*) is associated with 'Thing' (role 'Thing159', cardinality 0..*).
+'smif::metadata::Statement' (role 'smif_metadata_Statement', cardinality 0..*) is associated with 'ValueType' (role 'ValueType', cardinality 0..*).
+'smif::metadata::Statement' (role 'smif_metadata_Statement172', cardinality 0..*) is associated with 'ValueType' (role 'ValueType173', cardinality 0..*).
+'Definition' (role 'Definition', cardinality 0..*) is associated with 'smif::values::UnitType' (role 'smif_values_UnitType', cardinality 0..*).
+'ExpressionContext' (role 'ExpressionContext', cardinality 0..*) is associated with 'smif::types::Type' (role 'resultingType', cardinality 0..*).
+'smif::identifiers::UniqueIdentifier' (role 'scopesIdentifier', cardinality 0..*) is associated with 'Namespace' (role 'Namespace', cardinality 0..*).
+'Context' (role 'Context104', cardinality 0..*) is associated with 'smif::toplevel::Proposition' (role 'negates', cardinality 0..*).
+'Definition' (role 'Definition71', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'definesEntity', cardinality 0..*).
+'smif::toplevel::IdentifiableEntity' (role 'preferredFor', cardinality 0..*) is associated with 'Identifier' (role 'Identifier', cardinality 0..*).
+'RepresentationRule' (role 'RepresentationRule17', cardinality 0..*) is associated with 'smif::types::Type' (role 'representedBy', cardinality 0..*).
+'smif::metadata::Definition' (role 'smif_metadata_Definition', cardinality 0..*) is associated with 'IRIIdentifier' (role 'IRIIdentifier', cardinality 0..*).
+'InformationSource' (role 'InformationSource', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'madeStatement', cardinality 0..*).
+'PatternMatch' (role 'PatternMatch132', cardinality 0..*) is associated with 'smif::patterns::VariableBinding' (role '_unnamed_PatternMatch', cardinality 0..*).
+'smif::mapping::MatchEnd' (role 'assertedBy', cardinality 0..*) is associated with 'Type' (role 'Type142', cardinality 0..*).
+'Thing' (role 'Thing163', cardinality 0..*) is associated with 'smif::lexicalscope::LexicalScope' (role 'statedBy', cardinality 0..*).
+'Traversal' (role 'Traversal', cardinality 0..*) is associated with 'smif::properties::PropertyType' (role 'traversesThrough', cardinality 0..*).
+'Term' (role 'Term', cardinality 0..*) is associated with 'smif::metadata::Definition' (role 'smif_metadata_Definition185', cardinality 0..*).
+'smif::toplevel::IdentifiableEntity' (role 'resultedIn', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'ExpressionNode' (role 'ExpressionNode67', cardinality 0..*) is associated with 'smif::constraints::Conditional' (role 'smif_constraints_Conditional', cardinality 0..*).
+'Pattern' (role 'Pattern', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'ownsVariable', cardinality 0..*).
+'smif::patterns::PatternMatch' (role '_unnamed_VariableBinding', cardinality 0..*) is associated with 'VariableBinding' (role 'VariableBinding', cardinality 0..*).
+'smif::lexicalscope::Package' (role 'prefixOf', cardinality 0..*) is associated with 'Prefix' (role 'Prefix', cardinality 0..*).
+'Mapping' (role 'Mapping', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'referenceFocus', cardinality 0..*).
+'smif::properties::PropertyType' (role 'hasUnique', cardinality 0..*) is associated with 'UniquenessConstraint' (role 'UniquenessConstraint', cardinality 0..*).
+'smif::properties::PropertyBinding' (role 'hasBinding', cardinality 0..*) is associated with 'IdentifiableEntity' (role 'IdentifiableEntity193', cardinality 0..*).
+'smif::types::Type' (role 'isCoveredBy', cardinality 0..*) is associated with 'CoveringConstraint' (role 'CoveringConstraint', cardinality 0..*).
+'Thing' (role 'Thing32', cardinality 0..*) is associated with 'smif::expressions::ConstantReference' (role 'referencedBy', cardinality 0..*).
+'ValueType' (role 'ValueType176', cardinality 0..*) is associated with 'smif::metadata::Statement' (role 'smif_metadata_Statement175', cardinality 0..*).
+'smif::expressions::FunctionCall' (role 'isUsedBy', cardinality 0..*) is associated with 'FunctionType' (role 'FunctionType36', cardinality 0..*).
+'smif::patterns::PatternVariable' (role 'excludes', cardinality 0..*) is associated with 'PatternVariable' (role 'PatternVariable117', cardinality 0..*).
+'smif::toplevel::Thing' (role 'hasEqual', cardinality 0..*) is associated with 'Equality' (role 'Equality', cardinality 0..*).
+'smif::patterns::PropositionVariable' (role 'qualifiedWithin', cardinality 0..*) is associated with 'Proposition' (role 'Proposition124', cardinality 0..*).
+'smif::mapping::Mapping' (role 'referenceMapping', cardinality 0..*) is associated with 'PatternVariable' (role 'PatternVariable153', cardinality 0..*).
+'PatternOfType' (role 'PatternOfType', cardinality 0..*) is associated with 'smif::types::Type' (role 'subjectType', cardinality 0..*).
+'ConstantReference' (role 'ConstantReference', cardinality 0..*) is associated with 'smif::toplevel::Thing' (role 'hasValue', cardinality 0..*).
+'Type' (role 'Type55', cardinality 0..*) is associated with 'smif::constraints::MultiplicityConstraint' (role 'hasMultiplicity', cardinality 0..*).
+'smif::toplevel::IdentifiableEntity' (role 'about', cardinality 0..*) is associated with 'Record' (role 'Record', cardinality 0..*).
+'smif::constraints::MultiplicityConstraint' (role 'respectOf', cardinality 0..*) is associated with 'Type' (role 'Type53', cardinality 0..*).
+'smif::metadata::Statement' (role 'wasStatedIn', cardinality 0..*) is associated with 'IdentifiableEntity' (role 'IdentifiableEntity178', cardinality 0..*).
+'LexicalScope' (role 'LexicalScope167', cardinality 0..*) is associated with 'smif::lexicalscope::LexicalReference' (role 'references', cardinality 0..*).
+'smif::identifiers::Name' (role 'hasName', cardinality 0..*) is associated with 'IdentifiableEntity' (role 'IdentifiableEntity28', cardinality 0..*).
+'ExpressionNode' (role 'ExpressionNode', cardinality 0..*) is associated with 'smif::expressions::FunctionType' (role 'implements', cardinality 0..*).
+'smif::toplevel::Context' (role 'referencedScope', cardinality 0..*) is associated with 'LexicalReference' (role 'LexicalReference', cardinality 0..*).
+'PatternVariable' (role 'PatternVariable111', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'subsets', cardinality 0..*).
+'smif::patterns::Pattern' (role 'satisfies', cardinality 0..*) is associated with 'PatternMatch' (role 'PatternMatch108', cardinality 0..*).
+'smif::toplevel::Proposition' (role 'asserts', cardinality 0..*) is associated with 'Context' (role 'Context102', cardinality 0..*).
+'IdentifiableEntity' (role 'IdentifiableEntity202', cardinality 0..*) is associated with 'smif::records::Record' (role 'hasRecord', cardinality 0..*).
+'smif::properties::PropertyType' (role 'receiver', cardinality 0..*) is associated with 'ObjectOperationType' (role 'ObjectOperationType', cardinality 0..*).
+'smif::metadata::Metadata' (role 'hasMetadata', cardinality 0..*) is associated with 'IdentifiableEntity' (role 'IdentifiableEntity182', cardinality 0..*).
+'PropertyBinding' (role 'PropertyBinding200', cardinality 0..*) is associated with 'smif::properties::PropertyType' (role 'boundBy', cardinality 0..*).
+'Rule' (role 'Rule51', cardinality 0..*) is associated with 'smif::constraints::Rule' (role 'subsumes', cardinality 0..*).
+'smif::patterns::Computed' (role 'smif_patterns_Computed', cardinality 0..*) is associated with 'ExpressionNode' (role 'ExpressionNode134', cardinality 0..*).
+'smif::mapping::MatchEnd' (role 'concreteEnd', cardinality 0..*) is associated with 'MatchRule' (role 'MatchRule', cardinality 0..*).
+'IdentifiableEntity' (role 'IdentifiableEntity25', cardinality 0..*) is associated with 'smif::identifiers::Identifier' (role 'hasPreferred', cardinality 0..*).
+'smif::lexicalscope::LexicalReference' (role 'referencedByLR', cardinality 0..*) is associated with 'Context' (role 'Context165', cardinality 0..*).
+'smif::constraints::Rule' (role 'constrainedBy', cardinality 0..*) is associated with 'IdentifiableEntity' (role 'IdentifiableEntity48', cardinality 0..*).
+'Type' (role 'Type65', cardinality 0..*) is associated with 'smif::constraints::CoveringConstraint' (role 'hasCovering', cardinality 0..*).
+'Type' (role 'Type59', cardinality 0..*) is associated with 'smif::constraints::GeneralizationConstraint' (role 'hasSpecialization', cardinality 0..*).
+'IdentifiableEntity' (role 'IdentifiableEntity187', cardinality 0..*) is associated with 'smif::metadata::Definition' (role 'definedBy', cardinality 0..*).
+'smif::types::Type' (role 'aboutType', cardinality 0..*) is associated with 'RecordType' (role 'RecordType', cardinality 0..*).
+'smif::expressions::ExpressionContext' (role 'returnedBy', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'Context' (role 'Context', cardinality 0..*) is associated with 'smif::expressions::ExpressionContext' (role 'contextualizesExpress', cardinality 0..*).
+'Context' (role 'Context84', cardinality 0..*) is associated with 'smif::toplevel::Thing' (role 'contextualizes', cardinality 0..*).
+'smif::mapping::RepresentationRule' (role 'conceptRule', cardinality 0..*) is associated with 'Type' (role 'Type157', cardinality 0..*).
+'Thing' (role 'Thing', cardinality 0..*) is associated with 'smif::types::Type' (role 'hasType', cardinality 0..*).
+'smif::expressions::FunctionType' (role 'calls', cardinality 0..*) is associated with 'FunctionCall' (role 'FunctionCall', cardinality 0..*).
+'PropertyBinding' (role 'PropertyBinding', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'boundTo', cardinality 0..*).
+'UniqueIdentifier' (role 'UniqueIdentifier', cardinality 0..*) is associated with 'smif::identifiers::Namespace' (role 'uniqueWithin', cardinality 0..*).
+'Proposition' (role 'Proposition97', cardinality 0..*) is associated with 'smif::toplevel::Context' (role 'negatedWithin', cardinality 0..*).
+'smif::mapping::Mapping' (role 'mapRuleOf', cardinality 0..*) is associated with 'MatchRule' (role 'MatchRule151', cardinality 0..*).
+'smif::types::Type' (role 'hasGeneral', cardinality 0..*) is associated with 'GeneralizationConstraint' (role 'GeneralizationConstraint', cardinality 0..*).
+'smif::expressions::ExpressionNode' (role 'implementedBy', cardinality 0..*) is associated with 'FunctionType' (role 'FunctionType', cardinality 0..*).
+'smif::expressions::Equality' (role 'hasEquality', cardinality 0..*) is associated with 'Thing' (role 'Thing42', cardinality 0..*).
+'GeneralizationConstraint' (role 'GeneralizationConstraint10', cardinality 0..*) is associated with 'smif::types::Type' (role 'hasSpecific', cardinality 0..*).
+'smif::toplevel::IdentifiableEntity' (role 'identifies', cardinality 0..*) is associated with 'Identifier' (role 'Identifier73', cardinality 0..*).
+'smif::expressions::Evaluation' (role 'evaluatedBy', cardinality 0..*) is associated with 'ExpressionNode' (role 'ExpressionNode44', cardinality 0..*).
+'Mapping' (role 'Mapping122', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'concreteFocus', cardinality 0..*).
+'Metadata' (role 'Metadata', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'metadataAbout', cardinality 0..*).
+'MatchEnd' (role 'MatchEnd113', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'mapsVariable', cardinality 0..*).
+'PropertyType' (role 'PropertyType38', cardinality 0..*) is associated with 'smif::expressions::Traversal' (role 'traversedBy', cardinality 0..*).
+'smif::constraints::GeneralizationConstraint' (role 'hasGeneralization', cardinality 0..*) is associated with 'Type' (role 'Type61', cardinality 0..*).
+'PatternVariable' (role 'PatternVariable149', cardinality 0..*) is associated with 'smif::mapping::Mapping' (role 'concreteMapping', cardinality 0..*).
+'smif::properties::PropertyBinding' (role 'boundIn', cardinality 0..*) is associated with 'Thing' (role 'Thing189', cardinality 0..*).
+'smif::types::Type' (role 'representedType', cardinality 0..*) is associated with 'RepresentationRule' (role 'RepresentationRule', cardinality 0..*).
+'smif::types::Type' (role 'propertyOf', cardinality 0..*) is associated with 'PropertyType' (role 'PropertyType', cardinality 0..*).
+'MatchEnd' (role 'MatchEnd136', cardinality 0..*) is associated with 'smif::mapping::MatchRule' (role 'matchFrom', cardinality 0..*).
+'MatchRule' (role 'MatchRule147', cardinality 0..*) is associated with 'smif::mapping::MatchEnd' (role 'referenceEnd', cardinality 0..*).
+'ExpressionContext' (role 'ExpressionContext99', cardinality 0..*) is associated with 'smif::toplevel::Context' (role 'evaluatesIn', cardinality 0..*).
+'smif::mapping::MatchRule' (role 'matchTo', cardinality 0..*) is associated with 'MatchEnd' (role 'MatchEnd138', cardinality 0..*).
+'Type' (role 'Type204', cardinality 0..*) is associated with 'smif::records::RecordType' (role 'recordingTypes', cardinality 0..*).
+'smif::patterns::PatternMatch' (role 'satisfiedBy', cardinality 0..*) is associated with 'Pattern' (role 'Pattern129', cardinality 0..*).
+'smif::constraints::PropertyTypeConstraint' (role 'propertiesOfType', cardinality 0..*) is associated with 'Type' (role 'Type63', cardinality 0..*).
+'smif::expressions::ObjectOperationType' (role 'receivedBy', cardinality 0..*) is associated with 'PropertyType' (role 'PropertyType40', cardinality 0..*).
+'Proposition' (role 'Proposition', cardinality 0..*) is associated with 'smif::toplevel::Context' (role 'holdsWithin', cardinality 0..*).
+'Type' (role 'Type195', cardinality 0..*) is associated with 'smif::properties::PropertyType' (role 'hasProperty', cardinality 0..*).
+'PatternVariable' (role 'PatternVariable119', cardinality 0..*) is associated with 'smif::patterns::PatternVariable' (role 'excludedBy', cardinality 0..*).
+'Rule' (role 'Rule78', cardinality 0..*) is associated with 'smif::toplevel::IdentifiableEntity' (role 'constrains', cardinality 0..*).
+'Situation' (role 'Situation', cardinality 0..*) is associated with 'smif::patterns::PatternMatch' (role 'matchedBy', cardinality 0..*).
+'Type' (role 'Type155', cardinality 0..*) is associated with 'smif::mapping::RepresentationRule' (role 'representsRule', cardinality 0..*).
+'smif::types::Type' (role 'isOfType', cardinality 0..*) is associated with 'PropertyTypeConstraint' (role 'PropertyTypeConstraint', cardinality 0..*).
+'LexicalReference' (role 'LexicalReference161', cardinality 0..*) is associated with 'smif::lexicalscope::LexicalScope' (role 'extendsScope', cardinality 0..*).
+'smif::toplevel::Context' (role 'inContextOf', cardinality 0..*) is associated with 'Thing' (role 'Thing95', cardinality 0..*).
+'smif::values::SystemOfUnits' (role 'definedWithinSystem', cardinality 0..*) is associated with 'UnitType' (role 'UnitType', cardinality 0..*).
+'MultiplicityConstraint' (role 'MultiplicityConstraint13', cardinality 0..*) is associated with 'smif::types::Type' (role 'withRespectTo', cardinality 0..*).
+'smif::properties::PropertyBinding' (role 'hasBindingProperty', cardinality 0..*) is associated with 'PropertyType' (role 'PropertyType191', cardinality 0..*).
+'SystemOfUnits' (role 'SystemOfUnits', cardinality 0..*) is associated with 'smif::values::UnitType' (role 'unitOfSystem', cardinality 0..*).
+'MatchEnd' (role 'MatchEnd', cardinality 0..*) is associated with 'smif::types::Type' (role 'assertedType', cardinality 0..*).
+'Rule' (role 'Rule', cardinality 0..*) is associated with 'smif::constraints::Rule' (role 'subsumedBy', cardinality 0..*).
+'smif::toplevel::Proposition' (role 'qualifies', cardinality 0..*) is associated with 'PropositionVariable' (role 'PropositionVariable', cardinality 0..*).
+'PropertyType' (role 'PropertyType57', cardinality 0..*) is associated with 'smif::constraints::UniquenessConstraint' (role 'hasUniquenessConstraint', cardinality 0..*).

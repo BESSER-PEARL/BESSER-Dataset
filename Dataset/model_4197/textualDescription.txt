@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'xSampleDsl::Model' has no attributes.
+The class 'xSampleDsl::Greeting' has the following attributes: 'name' of type str.
+'xSampleDsl::Greeting' (role 'xSampleDsl_Greeting', cardinality 0..*) is associated with 'xSampleDsl::Model' (role 'xSampleDsl_Model', cardinality 0..*).

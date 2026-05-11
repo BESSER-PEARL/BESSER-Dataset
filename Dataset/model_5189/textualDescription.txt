@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'dispatch::G' has no attributes.
+The class 'B' has no attributes.
+The class 'dispatch::C' has no attributes.
+The class 'C' has no attributes.
+The class 'dispatch::E' has no attributes.
+The class 'dispatch::B' has no attributes.
+The class 'dispatch::A' has no attributes.
+The class 'dispatch::Container' has no attributes.
+The class 'dispatch::F' has no attributes.
+The class 'A' has no attributes.
+The class 'dispatch::D' has no attributes.
+'dispatch::F' is a specialization of 'C'.
+'dispatch::B' is a specialization of 'A'.
+'dispatch::G' is a specialization of 'C'.
+'dispatch::C' is a specialization of 'A'.
+'dispatch::D' is a specialization of 'B'.
+'dispatch::E' is a specialization of 'B'.
+'dispatch::Container' (role 'dispatch_Container', cardinality 0..*) is associated with 'dispatch::A' (role 'dispatch_A', cardinality 0..*).

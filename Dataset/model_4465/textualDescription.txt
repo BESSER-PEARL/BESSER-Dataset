@@ -1,0 +1,82 @@
+The model has 36 class(es).
+The class 'robot::TInteger' has the following attributes: 'Value' of type str.
+The class 'Values' has no attributes.
+The class 'robot::Sleep' has no attributes.
+The class 'robot::TurnRight' has no attributes.
+The class 'robot::Condition' has no attributes.
+The class 'robot::Operator' has the following attributes: 'type' of type str.
+The class 'robot::Var' has the following attributes: 'Name' of type str.
+The class 'robot::Whenever' has no attributes.
+The class 'robot::Sequence' has no attributes.
+The class 'robot::Sensor' has the following attributes: 'name' of type str.
+The class 'robot::Forward' has no attributes.
+The class 'robot::Stop' has no attributes.
+The class 'robot::TurnLeft' has no attributes.
+The class 'Var' has no attributes.
+The class 'Operation' has no attributes.
+The class 'robot::Movement' has the following attributes: 'duration' of type float.
+The class 'robot::Alternative' has no attributes.
+The class 'robot::Operation' has no attributes.
+The class 'robot::Value' has no attributes.
+The class 'robot::While' has no attributes.
+The class 'robot::Different' has no attributes.
+The class 'robot::TFloat' has the following attributes: 'Value' of type str.
+The class 'robot::Affectation' has no attributes.
+The class 'robot::Echo' has the following attributes: 'param' of type str.
+The class 'Movement' has no attributes.
+The class 'robot::Variable' has the following attributes: 'Name' of type str.
+The class 'robot::Event' has no attributes.
+The class 'robot::TString' has the following attributes: 'Value' of type str.
+The class 'robot::Declaration' has no attributes.
+The class 'Condition' has no attributes.
+The class 'robot::Backward' has no attributes.
+The class 'robot::Mission' has no attributes.
+The class 'robot::TBoolean' has the following attributes: 'Value' of type str.
+The class 'robot::Compare' has no attributes.
+The class 'robot::Values' has no attributes.
+The class 'Operator' has no attributes.
+The enumeration 'ESensor' has the following literals: 'lightFRF', 'distanceL', 'distanceFRB', 'distanceFLF', 'distanceBL', 'lightBL', 'lightFLB', 'distanceFRF', 'lightFLF', 'distanceBR', 'lightBR', 'lightFRB', 'distanceR', 'lightL', 'distanceFLB', 'lightR'.
+The enumeration 'EOperator' has the following literals: 'GTE', 'AND', 'DIFF', 'OR', 'LTE', 'GT', 'LT', 'EQ'.
+'robot::Declaration' is a specialization of 'Var'.
+'robot::Different' is a specialization of 'Operator'.
+'robot::While' is a specialization of 'Operation'.
+'robot::TString' is a specialization of 'Values'.
+'robot::Alternative' is a specialization of 'Operation'.
+'robot::Sequence' is a specialization of 'Operation'.
+'robot::Value' is a specialization of 'Condition'.
+'robot::Stop' is a specialization of 'Movement'.
+'robot::TurnRight' is a specialization of 'Movement'.
+'robot::TurnLeft' is a specialization of 'Movement'.
+'robot::Movement' is a specialization of 'Operation'.
+'robot::Whenever' is a specialization of 'Operation'.
+'robot::Sensor' is a specialization of 'Values'.
+'robot::Backward' is a specialization of 'Movement'.
+'robot::Event' is a specialization of 'Operation'.
+'robot::TFloat' is a specialization of 'Values'.
+'robot::Forward' is a specialization of 'Movement'.
+'robot::Sleep' is a specialization of 'Movement'.
+'robot::Affectation' is a specialization of 'Var'.
+'robot::Echo' is a specialization of 'Operation'.
+'robot::Var' is a specialization of 'Operation'.
+'robot::TBoolean' is a specialization of 'Values'.
+'robot::Compare' is a specialization of 'Condition'.
+'robot::Variable' is a specialization of 'Values'.
+'robot::TInteger' is a specialization of 'Values'.
+'robot::Operation' (role 'robot_Operation7', cardinality 0..*) is associated with 'robot::Alternative' (role 'robot_Alternative6', cardinality 0..*).
+'robot::Compare' (role 'robot_Compare39', cardinality 0..*) is associated with 'robot::Condition' (role 'robot_Condition40', cardinality 0..*).
+'robot::Value' (role 'robot_Value', cardinality 0..*) is associated with 'robot::Values' (role 'robot_Values33', cardinality 0..*).
+'robot::Sequence' (role 'robot_Sequence2', cardinality 0..*) is associated with 'robot::Operation' (role 'robot_Operation', cardinality 0..*).
+'robot::Event' (role 'robot_Event', cardinality 0..*) is associated with 'robot::Operation' (role 'robot_Operation11', cardinality 0..*).
+'robot::Whenever' (role 'robot_Whenever25', cardinality 0..*) is associated with 'robot::Operation' (role 'robot_Operation26', cardinality 0..*).
+'robot::Operation' (role 'robot_Operation14', cardinality 0..*) is associated with 'robot::Event' (role 'robot_Event13', cardinality 0..*).
+'robot::Operation' (role 'robot_Operation28', cardinality 0..*) is associated with 'robot::While' (role 'robot_While', cardinality 0..*).
+'robot::Compare' (role 'robot_Compare', cardinality 0..*) is associated with 'robot::Operator' (role 'robot_Operator', cardinality 0..*).
+'robot::Condition' (role 'robot_Condition17', cardinality 0..*) is associated with 'robot::Event' (role 'robot_Event16', cardinality 0..*).
+'robot::Mission' (role 'robot_Mission', cardinality 0..*) is associated with 'robot::Sequence' (role 'robot_Sequence', cardinality 0..*).
+'robot::Alternative' (role 'robot_Alternative9', cardinality 0..*) is associated with 'robot::Condition' (role 'robot_Condition', cardinality 0..*).
+'robot::Var' (role 'robot_Var', cardinality 0..*) is associated with 'robot::Values' (role 'robot_Values', cardinality 0..*).
+'robot::Whenever' (role 'robot_Whenever', cardinality 0..*) is associated with 'robot::Condition' (role 'robot_Condition20', cardinality 0..*).
+'robot::Condition' (role 'robot_Condition31', cardinality 0..*) is associated with 'robot::While' (role 'robot_While30', cardinality 0..*).
+'robot::Operation' (role 'robot_Operation23', cardinality 0..*) is associated with 'robot::Whenever' (role 'robot_Whenever22', cardinality 0..*).
+'robot::Alternative' (role 'robot_Alternative', cardinality 0..*) is associated with 'robot::Operation' (role 'robot_Operation4', cardinality 0..*).
+'robot::Condition' (role 'robot_Condition37', cardinality 0..*) is associated with 'robot::Compare' (role 'robot_Compare36', cardinality 0..*).

@@ -1,0 +1,42 @@
+The model has 16 class(es).
+The class 'SmartHouse::WashingMachine' has the following attributes: 'on' of type bool; 'loaded' of type bool.
+The class 'SmartHouse::Heating' has the following attributes: 'level' of type int; 'name' of type str.
+The class 'SmartHouse::AirConditioner' has the following attributes: 'level' of type str; 'freshAir' of type bool.
+The class 'SmartHouse::WaterHeater' has the following attributes: 'temp' of type str; 'on' of type bool; 'boost' of type bool.
+The class 'SmartHouse::Room' has the following attributes: 'air' of type int; 'bright' of type str; 'temp' of type float; 'name' of type str.
+The class 'SmartHouse::Gate' has the following attributes: 'outlocked' of type bool.
+The class 'SmartHouse::CoffeeMaker' has the following attributes: 'loaded' of type bool; 'warming' of type bool; 'on' of type bool.
+The class 'SmartHouse::House' has the following attributes: 'name' of type str; 'outtemp' of type str; 'time' of type str; 'eprice' of type str.
+The class 'SmartHouse::Security' has the following attributes: 'on' of type bool.
+The class 'SmartHouse::Projector' has the following attributes: 'volume' of type str; 'on' of type bool; 'brightness' of type str.
+The class 'SmartHouse::Person' has the following attributes: 'name' of type str.
+The class 'SmartHouse::Window' has the following attributes: 'curtainOn' of type bool; 'name' of type str; 'opened' of type bool.
+The class 'SmartHouse::Cooker' has the following attributes: 'on' of type bool.
+The class 'SmartHouse::EV' has the following attributes: 'level' of type str; 'name' of type str; 'pluged' of type bool; 'charging' of type bool.
+The class 'SmartHouse::Light' has the following attributes: 'level' of type str.
+The class 'SmartHouse::Sensor' has the following attributes: 'circle' of type str; 'battery' of type str; 'air' of type bool; 'temp' of type bool; 'brightness' of type bool.
+'SmartHouse::Gate' (role 'Gate', cardinality 0..*) is associated with 'SmartHouse::House' (role 'house7', cardinality 0..*).
+'SmartHouse::CoffeeMaker' (role 'CoffeeMaker', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'room38', cardinality 0..*).
+'SmartHouse::Room' (role 'Room42', cardinality 0..*) is associated with 'SmartHouse::Projector' (role 'projector', cardinality 0..*).
+'SmartHouse::House' (role 'SmartHouse_House', cardinality 0..*) is associated with 'SmartHouse::Person' (role 'SmartHouse_Person', cardinality 0..*).
+'SmartHouse::Room' (role 'Room46', cardinality 0..*) is associated with 'SmartHouse::CoffeeMaker' (role 'cm', cardinality 0..*).
+'SmartHouse::Security' (role 'sec', cardinality 0..*) is associated with 'SmartHouse::House' (role 'House12', cardinality 0..*).
+'SmartHouse::Room' (role 'room32', cardinality 0..*) is associated with 'SmartHouse::Projector' (role 'Projector', cardinality 0..*).
+'SmartHouse::Room' (role 'Room', cardinality 0..*) is associated with 'SmartHouse::House' (role 'house', cardinality 0..*).
+'SmartHouse::AirConditioner' (role 'ac', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'Room40', cardinality 0..*).
+'SmartHouse::House' (role 'house5', cardinality 0..*) is associated with 'SmartHouse::EV' (role 'EV', cardinality 0..*).
+'SmartHouse::WashingMachine' (role 'WashingMachine', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'room36', cardinality 0..*).
+'SmartHouse::House' (role 'House16', cardinality 0..*) is associated with 'SmartHouse::EV' (role 'ev', cardinality 0..*).
+'SmartHouse::Security' (role 'Security', cardinality 0..*) is associated with 'SmartHouse::House' (role 'house9', cardinality 0..*).
+'SmartHouse::Room' (role 'SmartHouse_Room27', cardinality 0..*) is associated with 'SmartHouse::Person' (role 'SmartHouse_Person28', cardinality 0..*).
+'SmartHouse::Gate' (role 'gate', cardinality 0..*) is associated with 'SmartHouse::House' (role 'House', cardinality 0..*).
+'SmartHouse::AirConditioner' (role 'AirConditioner', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'room25', cardinality 0..*).
+'SmartHouse::Room' (role 'Room44', cardinality 0..*) is associated with 'SmartHouse::WashingMachine' (role 'wm', cardinality 0..*).
+'SmartHouse::Light' (role 'SmartHouse_Light', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'SmartHouse_Room23', cardinality 0..*).
+'SmartHouse::Room' (role 'SmartHouse_Room', cardinality 0..*) is associated with 'SmartHouse::Window' (role 'SmartHouse_Window', cardinality 0..*).
+'SmartHouse::House' (role 'house3', cardinality 0..*) is associated with 'SmartHouse::WaterHeater' (role 'WaterHeater', cardinality 0..*).
+'SmartHouse::Room' (role 'SmartHouse_Room21', cardinality 0..*) is associated with 'SmartHouse::Heating' (role 'SmartHouse_Heating', cardinality 0..*).
+'SmartHouse::WaterHeater' (role 'wh', cardinality 0..*) is associated with 'SmartHouse::House' (role 'House14', cardinality 0..*).
+'SmartHouse::Sensor' (role 'SmartHouse_Sensor', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'SmartHouse_Room30', cardinality 0..*).
+'SmartHouse::House' (role 'House18', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'room', cardinality 0..*).
+'SmartHouse::Cooker' (role 'SmartHouse_Cooker', cardinality 0..*) is associated with 'SmartHouse::Room' (role 'SmartHouse_Room34', cardinality 0..*).

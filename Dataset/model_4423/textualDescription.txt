@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'iot::IotOperationDef' has no attributes.
+The class 'iot::HWComp' has the following attributes: 'name' of type str.
+The class 'iot::Actuator' has no attributes.
+The class 'iot::IotActivity' has no attributes.
+The class 'iot::System' has the following attributes: 'name' of type str.
+The class 'iot::Board' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'HWComp' has no attributes.
+The class 'iot::Sensor' has no attributes.
+The class 'iot::Sketch' has no attributes.
+The enumeration 'BoardType' has the following literals: 'Arduino', 'BeagleBoard', 'RaspberryPi'.
+'iot::Sensor' is a specialization of 'HWComp'.
+'iot::Actuator' is a specialization of 'HWComp'.
+'iot::Board' (role 'iot_Board', cardinality 0..*) is associated with 'iot::System' (role 'iot_System4', cardinality 0..*).
+'iot::IotActivity' (role 'iot_IotActivity', cardinality 0..*) is associated with 'iot::Sketch' (role 'iot_Sketch11', cardinality 0..*).
+'iot::System' (role 'iot_System6', cardinality 0..*) is associated with 'iot::Sketch' (role 'iot_Sketch', cardinality 0..*).
+'iot::HWComp' (role 'iot_HWComp2', cardinality 0..*) is associated with 'iot::System' (role 'iot_System', cardinality 0..*).
+'iot::HWComp' (role 'iot_HWComp9', cardinality 0..*) is associated with 'iot::Board' (role 'iot_Board8', cardinality 0..*).
+'iot::HWComp' (role 'iot_HWComp', cardinality 0..*) is associated with 'iot::IotOperationDef' (role 'iot_IotOperationDef', cardinality 0..*).

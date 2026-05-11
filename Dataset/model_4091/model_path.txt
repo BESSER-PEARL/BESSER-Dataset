@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tetrabox/statemachines/plugins/org.tetrabox.examples.statemachines.melange/model-gen/InterpretedStateMachinesMT.ecore

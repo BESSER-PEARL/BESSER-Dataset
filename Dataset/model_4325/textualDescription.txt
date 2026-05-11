@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'Measure::Category' has the following attributes: 'name' of type str; 'desc' of type str.
+The class 'Measure::IntegerMeasure' has the following attributes: 'value' of type str.
+The class 'Measure' has no attributes.
+The class 'Measure::RootMeasureSet' has the following attributes: 'modelType' of type str.
+The class 'Measure::PercentageMeasure' has the following attributes: 'value' of type str.
+The class 'Measure::Metric' has the following attributes: 'desc' of type str; 'name' of type str; 'preferredValue' of type str.
+The class 'Measure::MeasureSet' has the following attributes: 'elementName' of type str; 'elementType' of type str.
+The class 'Measure::DoubleMeasure' has the following attributes: 'value' of type str.
+The class 'Measure::Measure' has no attributes.
+The enumeration 'ModelKind' has the following literals: 'KM3', 'UML2'.
+The enumeration 'ElementKind' has the following literals: 'model', 'interface', 'metamodel', 'class_', 'package'.
+'Measure::IntegerMeasure' is a specialization of 'Measure'.
+'Measure::DoubleMeasure' is a specialization of 'Measure'.
+'Measure::PercentageMeasure' is a specialization of 'Measure'.
+'Measure::Category' (role 'Category', cardinality 0..*) is associated with 'Measure::RootMeasureSet' (role 'root', cardinality 0..*).
+'Measure::MeasureSet' (role 'MeasureSet', cardinality 0..*) is associated with 'Measure::RootMeasureSet' (role 'root2', cardinality 0..*).
+'Measure::RootMeasureSet' (role 'RootMeasureSet', cardinality 0..*) is associated with 'Measure::Category' (role 'categories', cardinality 0..*).
+'Measure::Metric' (role 'Measure_Metric', cardinality 0..*) is associated with 'Measure::Measure' (role 'Measure_Measure', cardinality 0..*).
+'Measure::Measure' (role 'Measure', cardinality 0..*) is associated with 'Measure::MeasureSet' (role 'owner', cardinality 0..*).
+'Measure::Category' (role 'category', cardinality 0..*) is associated with 'Measure::Metric' (role 'Metric', cardinality 0..*).
+'Measure::Metric' (role 'metrics', cardinality 0..*) is associated with 'Measure::Category' (role 'Category6', cardinality 0..*).
+'Measure::RootMeasureSet' (role 'RootMeasureSet9', cardinality 0..*) is associated with 'Measure::MeasureSet' (role 'measureSets', cardinality 0..*).
+'Measure::MeasureSet' (role 'subsets', cardinality 0..*) is associated with 'Measure::MeasureSet' (role 'MeasureSet15', cardinality 0..*).
+'Measure::MeasureSet' (role 'MeasureSet18', cardinality 0..*) is associated with 'Measure::Measure' (role 'measures', cardinality 0..*).
+'Measure::MeasureSet' (role 'MeasureSet12', cardinality 0..*) is associated with 'Measure::MeasureSet' (role 'parent', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'FlowDesigner::InitialState' has the following attributes: 'initialize' of type str.
+The class 'FlowDesigner::ActionState' has no attributes.
+The class 'Source' has no attributes.
+The class 'FlowDesigner::FinalState' has the following attributes: 'finalize' of type str.
+The class 'FlowDesigner::Source' has no attributes.
+The class 'FlowDesigner::Flow' has no attributes.
+The class 'FlowDesigner::Event' has the following attributes: 'guard' of type str; 'event' of type str; 'action' of type str.
+The class 'FlowDesigner::ViewState' has the following attributes: 'view' of type str.
+The class 'NamedState' has no attributes.
+The class 'FlowDesigner::NamedState' has the following attributes: 'name' of type str; 'exit' of type str; 'entry' of type str; 'activity' of type str.
+The class 'Target' has no attributes.
+The class 'FlowDesigner::Target' has no attributes.
+'FlowDesigner::ActionState' is a specialization of 'NamedState'.
+'FlowDesigner::FinalState' is a specialization of 'Target'.
+'FlowDesigner::NamedState' is a specialization of 'Source'.
+'FlowDesigner::InitialState' is a specialization of 'Source'.
+'FlowDesigner::NamedState' is a specialization of 'Target'.
+'FlowDesigner::ViewState' is a specialization of 'NamedState'.
+'FlowDesigner::InitialState' (role 'FlowDesigner_InitialState', cardinality 0..*) is associated with 'FlowDesigner::Flow' (role 'FlowDesigner_Flow', cardinality 0..*).
+'FlowDesigner::Target' (role 'FlowDesigner_Target', cardinality 0..*) is associated with 'FlowDesigner::Event' (role 'FlowDesigner_Event', cardinality 0..*).
+'FlowDesigner::NamedState' (role 'FlowDesigner_NamedState', cardinality 0..*) is associated with 'FlowDesigner::Flow' (role 'FlowDesigner_Flow5', cardinality 0..*).
+'FlowDesigner::FinalState' (role 'FlowDesigner_FinalState', cardinality 0..*) is associated with 'FlowDesigner::Flow' (role 'FlowDesigner_Flow7', cardinality 0..*).
+'FlowDesigner::Event' (role 'FlowDesigner_Event2', cardinality 0..*) is associated with 'FlowDesigner::Source' (role 'FlowDesigner_Source', cardinality 0..*).

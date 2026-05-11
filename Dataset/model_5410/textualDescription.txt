@@ -1,0 +1,69 @@
+The model has 19 class(es).
+The class 'fault::tree::IntermediateEvent' has no attributes.
+The class 'fault::tree::OR' has no attributes.
+The class 'fault::tree::Inhibit' has no attributes.
+The class 'fault::tree::ErrorType' has the following attributes: 'name' of type str.
+The class 'fault::tree::Hazard' has no attributes.
+The class 'fault::tree::FaultTree' has no attributes.
+The class 'Gate' has no attributes.
+The class 'fault::tree::UndevelopedEvent' has no attributes.
+The class 'fault::tree::Event' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'fault::tree::BasicEvent' has the following attributes: 'probability' of type float.
+The class 'fault::tree::XOR' has no attributes.
+The class 'fault::tree::FailureType' has the following attributes: 'name' of type str.
+The class 'fault::tree::Gate' has no attributes.
+The class 'IDBase' has no attributes.
+The class 'fault::tree::AND' has no attributes.
+The class 'fault::tree::FailureInstance' has the following attributes: 'name' of type str.
+The class 'Event' has no attributes.
+The class 'fault::tree::PriorAND' has no attributes.
+The class 'fault::tree::ErrorInstance' has the following attributes: 'name' of type str.
+'fault::tree::Hazard' is a specialization of 'Event'.
+'fault::tree::AND' is a specialization of 'Gate'.
+'fault::tree::ErrorType' is a specialization of 'IDBase'.
+'fault::tree::BasicEvent' is a specialization of 'Event'.
+'fault::tree::FailureType' is a specialization of 'IDBase'.
+'fault::tree::IntermediateEvent' is a specialization of 'Event'.
+'fault::tree::OR' is a specialization of 'Gate'.
+'fault::tree::PriorAND' is a specialization of 'Gate'.
+'fault::tree::XOR' is a specialization of 'Gate'.
+'fault::tree::FaultTree' is a specialization of 'IDBase'.
+'fault::tree::Event' is a specialization of 'IDBase'.
+'fault::tree::Inhibit' is a specialization of 'Gate'.
+'fault::tree::FailureInstance' is a specialization of 'IDBase'.
+'fault::tree::UndevelopedEvent' is a specialization of 'Event'.
+'fault::tree::ErrorInstance' is a specialization of 'IDBase'.
+'fault::tree::Gate' is a specialization of 'IDBase'.
+'fault::tree::ErrorInstance' (role 'instance44', cardinality 0..*) is associated with 'fault::tree::BasicEvent' (role 'BasicEvent', cardinality 0..*).
+'fault::tree::ErrorInstance' (role 'ErrorInstance40', cardinality 0..*) is associated with 'fault::tree::ErrorType' (role 'type39', cardinality 0..*).
+'fault::tree::ErrorInstance' (role 'ErrorInstance64', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'root63', cardinality 0..*).
+'fault::tree::FaultTree' (role 'FaultTree42', cardinality 0..*) is associated with 'fault::tree::ErrorType' (role 'error_type', cardinality 0..*).
+'fault::tree::Gate' (role 'fault_tree_Gate', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'fault_tree_Gate1', cardinality 0..*).
+'fault::tree::FailureInstance' (role 'fault_tree_FailureInstance', cardinality 0..*) is associated with 'fault::tree::FailureInstance' (role 'fault_tree_FailureInstance29', cardinality 0..*).
+'fault::tree::ErrorInstance' (role 'error_instance', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'FaultTree48', cardinality 0..*).
+'fault::tree::FailureInstance' (role 'fault_tree_FailureInstance32', cardinality 0..*) is associated with 'fault::tree::ErrorInstance' (role 'fault_tree_ErrorInstance', cardinality 0..*).
+'fault::tree::FaultTree' (role 'root', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'Gate52', cardinality 0..*).
+'fault::tree::FailureInstance' (role 'FailureInstance58', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'root57', cardinality 0..*).
+'fault::tree::IntermediateEvent' (role 'fault_tree_IntermediateEvent18', cardinality 0..*) is associated with 'fault::tree::Event' (role 'fault_tree_Event', cardinality 0..*).
+'fault::tree::Hazard' (role 'fault_tree_Hazard50', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'fault_tree_FaultTree', cardinality 0..*).
+'fault::tree::FailureType' (role 'FailureType61', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'root60', cardinality 0..*).
+'fault::tree::ErrorInstance' (role 'ErrorInstance', cardinality 0..*) is associated with 'fault::tree::BasicEvent' (role 'error', cardinality 0..*).
+'fault::tree::Gate' (role 'fault_tree_Gate6', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'fault_tree_Gate4', cardinality 0..*).
+'fault::tree::FaultTree' (role 'FaultTree', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'gate', cardinality 0..*).
+'fault::tree::FaultTree' (role 'root54', cardinality 0..*) is associated with 'fault::tree::Event' (role 'Event55', cardinality 0..*).
+'fault::tree::Hazard' (role 'fault_tree_Hazard', cardinality 0..*) is associated with 'fault::tree::IntermediateEvent' (role 'fault_tree_IntermediateEvent', cardinality 0..*).
+'fault::tree::BasicEvent' (role 'fault_tree_BasicEvent', cardinality 0..*) is associated with 'fault::tree::IntermediateEvent' (role 'fault_tree_IntermediateEvent37', cardinality 0..*).
+'fault::tree::Event' (role 'fault_tree_Event21', cardinality 0..*) is associated with 'fault::tree::IntermediateEvent' (role 'fault_tree_IntermediateEvent20', cardinality 0..*).
+'fault::tree::FaultTree' (role 'root66', cardinality 0..*) is associated with 'fault::tree::ErrorType' (role 'ErrorType67', cardinality 0..*).
+'fault::tree::Event' (role 'outputEvent', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'Gate', cardinality 0..*).
+'fault::tree::FaultTree' (role 'FaultTree25', cardinality 0..*) is associated with 'fault::tree::FailureType' (role 'failure_type', cardinality 0..*).
+'fault::tree::FailureInstance' (role 'FailureInstance23', cardinality 0..*) is associated with 'fault::tree::FailureType' (role 'type', cardinality 0..*).
+'fault::tree::FailureType' (role 'FailureType', cardinality 0..*) is associated with 'fault::tree::FailureInstance' (role 'instance', cardinality 0..*).
+'fault::tree::ErrorInstance' (role 'error46', cardinality 0..*) is associated with 'fault::tree::ErrorType' (role 'ErrorType', cardinality 0..*).
+'fault::tree::Event' (role 'Event8', cardinality 0..*) is associated with 'fault::tree::Gate' (role 'inputGate', cardinality 0..*).
+'fault::tree::Event' (role 'event', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'FaultTree14', cardinality 0..*).
+'fault::tree::FailureInstance' (role 'failure_instance', cardinality 0..*) is associated with 'fault::tree::FaultTree' (role 'FaultTree28', cardinality 0..*).
+'fault::tree::IntermediateEvent' (role 'IntermediateEvent', cardinality 0..*) is associated with 'fault::tree::FailureInstance' (role 'instance34', cardinality 0..*).
+'fault::tree::IntermediateEvent' (role 'event16', cardinality 0..*) is associated with 'fault::tree::FailureInstance' (role 'FailureInstance', cardinality 0..*).
+'fault::tree::Gate' (role 'outputGate', cardinality 0..*) is associated with 'fault::tree::Event' (role 'Event', cardinality 0..*).
+'fault::tree::Gate' (role 'Gate12', cardinality 0..*) is associated with 'fault::tree::Event' (role 'inputEvents', cardinality 0..*).

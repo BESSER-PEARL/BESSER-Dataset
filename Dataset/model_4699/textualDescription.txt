@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'Person' has no attributes.
+The class 'familytree::Wedding' has no attributes.
+The class 'familytree::FamilyTree' has the following attributes: 'name' of type str.
+The class 'familytree::Man' has no attributes.
+The class 'familytree::Woman' has no attributes.
+The class 'familytree::Person' has the following attributes: 'firstName' of type str; 'deathYear' of type int; 'lastName' of type str; 'birthYear' of type int.
+'familytree::Man' is a specialization of 'Person'.
+'familytree::Woman' is a specialization of 'Person'.
+'familytree::Person' (role 'children', cardinality 0..*) is associated with 'familytree::Person' (role 'Person7', cardinality 0..*).
+'familytree::Woman' (role 'wife', cardinality 0..*) is associated with 'familytree::Man' (role 'Man', cardinality 0..*).
+'familytree::Wedding' (role 'familytree_Wedding', cardinality 0..*) is associated with 'familytree::FamilyTree' (role 'familytree_FamilyTree2', cardinality 0..*).
+'familytree::Woman' (role 'Woman', cardinality 0..*) is associated with 'familytree::Man' (role 'husband', cardinality 0..*).
+'familytree::FamilyTree' (role 'familytree_FamilyTree', cardinality 0..*) is associated with 'familytree::Person' (role 'familytree_Person', cardinality 0..*).
+'familytree::Person' (role 'Person', cardinality 0..*) is associated with 'familytree::Person' (role 'parents', cardinality 0..*).
+'familytree::Wedding' (role 'familytree_Wedding11', cardinality 0..*) is associated with 'familytree::Woman' (role 'familytree_Woman', cardinality 0..*).
+'familytree::Man' (role 'familytree_Man', cardinality 0..*) is associated with 'familytree::Wedding' (role 'familytree_Wedding13', cardinality 0..*).

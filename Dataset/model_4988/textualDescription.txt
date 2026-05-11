@@ -1,0 +1,28 @@
+The model has 12 class(es).
+The class 'componentmodel::Component' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'componentmodel::Property' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'componentmodel::OutPort' has no attributes.
+The class 'componentmodel::Port' has the following attributes: 'type' of type str; 'name' of type str; 'description' of type str; 'typePackage' of type str.
+The class 'Port' has no attributes.
+The class 'Component' has no attributes.
+The class 'componentmodel::InPort' has no attributes.
+The class 'componentmodel::NumericProperty' has the following attributes: 'maxValue' of type float; 'defaultValue' of type float; 'minValue' of type float.
+The class 'componentmodel::EnumProperty' has the following attributes: 'literalValue' of type str.
+The class 'Property' has no attributes.
+The class 'componentmodel::CompositeComponent' has no attributes.
+The class 'componentmodel::PrimitiveComponent' has no attributes.
+'componentmodel::OutPort' is a specialization of 'Port'.
+'componentmodel::NumericProperty' is a specialization of 'Property'.
+'componentmodel::PrimitiveComponent' is a specialization of 'Component'.
+'componentmodel::EnumProperty' is a specialization of 'Property'.
+'componentmodel::InPort' is a specialization of 'Port'.
+'componentmodel::CompositeComponent' is a specialization of 'Component'.
+'componentmodel::InPort' (role 'sink', cardinality 0..*) is associated with 'componentmodel::OutPort' (role 'OutPort', cardinality 0..*).
+'componentmodel::Property' (role 'componentmodel_Property', cardinality 0..*) is associated with 'componentmodel::PrimitiveComponent' (role 'componentmodel_PrimitiveComponent', cardinality 0..*).
+'componentmodel::InPort' (role 'delegatesTo', cardinality 0..*) is associated with 'componentmodel::InPort' (role 'InPort9', cardinality 0..*).
+'componentmodel::OutPort' (role 'source', cardinality 0..*) is associated with 'componentmodel::InPort' (role 'InPort14', cardinality 0..*).
+'componentmodel::OutPort' (role 'OutPort12', cardinality 0..*) is associated with 'componentmodel::OutPort' (role 'propagatesTo', cardinality 0..*).
+'componentmodel::Component' (role 'componentmodel_Component', cardinality 0..*) is associated with 'componentmodel::Port' (role 'componentmodel_Port', cardinality 0..*).
+'componentmodel::InPort' (role 'delegatesFrom', cardinality 0..*) is associated with 'componentmodel::InPort' (role 'InPort', cardinality 0..*).
+'componentmodel::OutPort' (role 'propagatesFrom', cardinality 0..*) is associated with 'componentmodel::OutPort' (role 'OutPort17', cardinality 0..*).
+'componentmodel::CompositeComponent' (role 'componentmodel_CompositeComponent', cardinality 0..*) is associated with 'componentmodel::Component' (role 'componentmodel_Component3', cardinality 0..*).

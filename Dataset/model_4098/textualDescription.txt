@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'Train5::Segment' has no attributes.
+The class 'Train5::Station' has no attributes.
+The class 'Train5::SensorNetwork' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Train5::Route' has the following attributes: 'currentIndex' of type str; 'speed' of type str; 'leftOver' of type str.
+The class 'Train5::RailwayDiagram' has no attributes.
+The class 'Train5::NamedElement' has the following attributes: 'id' of type str.
+The class 'Train5::Switch' has no attributes.
+The class 'TrackElement' has no attributes.
+The class 'Train5::TrackElement' has the following attributes: 'State' of type str; 'length' of type str.
+The class 'Train5::RoutePart' has no attributes.
+The enumeration 'Signal' has the following literals: 'Go', 'STOP', 'Failure'.
+'Train5::TrackElement' is a specialization of 'NamedElement'.
+'Train5::RoutePart' is a specialization of 'NamedElement'.
+'Train5::Station' is a specialization of 'TrackElement'.
+'Train5::SensorNetwork' is a specialization of 'NamedElement'.
+'Train5::Switch' is a specialization of 'TrackElement'.
+'Train5::Segment' is a specialization of 'TrackElement'.
+'Train5::Route' is a specialization of 'NamedElement'.
+'Train5::Switch' (role 'Train5_Switch', cardinality 0..*) is associated with 'Train5::Segment' (role 'Train5_Segment', cardinality 0..*).
+'Train5::Route' (role 'Train5_Route13', cardinality 0..*) is associated with 'Train5::RailwayDiagram' (role 'Train5_RailwayDiagram12', cardinality 0..*).
+'Train5::RoutePart' (role 'Train5_RoutePart', cardinality 0..*) is associated with 'Train5::Route' (role 'Train5_Route2', cardinality 0..*).
+'Train5::RailwayDiagram' (role 'Train5_RailwayDiagram9', cardinality 0..*) is associated with 'Train5::SensorNetwork' (role 'Train5_SensorNetwork10', cardinality 0..*).
+'Train5::RailwayDiagram' (role 'Train5_RailwayDiagram', cardinality 0..*) is associated with 'Train5::TrackElement' (role 'Train5_TrackElement7', cardinality 0..*).
+'Train5::Route' (role 'Train5_Route', cardinality 0..*) is associated with 'Train5::TrackElement' (role 'Train5_TrackElement', cardinality 0..*).
+'Train5::TrackElement' (role 'Train5_TrackElement19', cardinality 0..*) is associated with 'Train5::RoutePart' (role 'Train5_RoutePart18', cardinality 0..*).
+'Train5::RoutePart' (role 'Train5_RoutePart16', cardinality 0..*) is associated with 'Train5::RoutePart' (role 'Train5_RoutePart14', cardinality 0..*).
+'Train5::RoutePart' (role 'Train5_RoutePart20', cardinality 0..*) is associated with 'Train5::RoutePart' (role 'Train5_RoutePart22', cardinality 0..*).
+'Train5::Switch' (role 'Train5_Switch5', cardinality 0..*) is associated with 'Train5::SensorNetwork' (role 'Train5_SensorNetwork', cardinality 0..*).

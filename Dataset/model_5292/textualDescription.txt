@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'MMA::Element' has the following attributes: 'name' of type str.
+The class 'Root' has no attributes.
+The class 'MMA::Root' has no attributes.
+The class 'MMA::A' has no attributes.
+The class 'MMA::B' has no attributes.
+The class 'Element' has no attributes.
+'MMA::A' is a specialization of 'Element'.
+'MMA::B' is a specialization of 'Element'.
+'Root' (role 'Root', cardinality 0..*) is associated with 'MMA::Element' (role 'children', cardinality 0..*).
+'MMA::Element' (role 'targets', cardinality 0..*) is associated with 'Element' (role 'Element4', cardinality 0..*).
+'Element' (role 'Element', cardinality 0..*) is associated with 'MMA::Root' (role 'parent', cardinality 0..*).
+'Element' (role 'Element2', cardinality 0..*) is associated with 'MMA::Element' (role 'sources', cardinality 0..*).

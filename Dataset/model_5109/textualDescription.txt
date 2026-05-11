@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'testPackage::Container' has no attributes.
+The class 'testPackage::TestElementA' has the following attributes: 'name' of type str; 'multi' of type int.
+The class 'testPackage::TestElementB' has no attributes.
+The class 'TestElementA' has no attributes.
+'testPackage::TestElementB' is a specialization of 'TestElementA'.
+'testPackage::TestElementA' (role 'testPackage_TestElementA2', cardinality 0..*) is associated with 'testPackage::TestElementB' (role 'testPackage_TestElementB', cardinality 0..*).
+'testPackage::Container' (role 'testPackage_Container', cardinality 0..*) is associated with 'testPackage::TestElementA' (role 'testPackage_TestElementA', cardinality 0..*).

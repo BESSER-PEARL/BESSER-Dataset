@@ -1,0 +1,74 @@
+The model has 29 class(es).
+The class 'builds::TestResult' has the following attributes: 'failCount' of type int; 'errorCount' of type int; 'duration' of type str; 'ignoredCount' of type int; 'passCount' of type int.
+The class 'builds::HealthReport' has the following attributes: 'health' of type int; 'description' of type str.
+The class 'builds::Artifact' has the following attributes: 'relativePath' of type str.
+The class 'builds::PlanParameterDefinition' has no attributes.
+The class 'BuildElement' has no attributes.
+The class 'builds::TestElement' has the following attributes: 'label' of type str; 'duration' of type str; 'errorOutput' of type str; 'output' of type str.
+The class 'builds::TestSuite' has no attributes.
+The class 'builds::BuildReference' has the following attributes: 'plan' of type str; 'build' of type str.
+The class 'builds::BuildServer' has the following attributes: 'connectorKind' of type str; 'repositoryUrl' of type str; 'location' of type str.
+The class 'ParameterDefinition' has no attributes.
+The class 'builds::ParameterDefinition' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'builds::BuildParameterDefinition' has the following attributes: 'buildPlanId' of type str.
+The class 'builds::PasswordParameterDefinition' has the following attributes: 'defaultValue' of type str.
+The class 'builds::BuildElement' has the following attributes: 'name' of type str; 'url' of type str; 'refreshDate' of type date; 'elementStatus' of type str; 'operations' of type str.
+The class 'builds::ChangeArtifact' has the following attributes: 'relativePath' of type str; 'prevRevision' of type str; 'editType' of type str; 'dead' of type bool; 'revision' of type str; 'file' of type str.
+The class 'builds::TestCase' has the following attributes: 'message' of type str; 'className' of type str; 'stackTrace' of type str; 'status' of type str; 'skipped' of type bool.
+The class 'builds::User' has the following attributes: 'id' of type str; 'email' of type str.
+The class 'builds::BuildCause' has the following attributes: 'description' of type str.
+The class 'builds::BuildPlan' has the following attributes: 'flags' of type str; 'summary' of type str; 'selected' of type bool; 'health' of type int; 'status' of type str; 'info' of type str; 'description' of type str; 'state' of type str; 'id' of type str.
+The class 'builds::ChangeSet' has the following attributes: 'kind' of type str.
+The class 'builds::FileParameterDefinition' has no attributes.
+The class 'builds::BuildModel' has no attributes.
+The class 'builds::Change' has the following attributes: 'date' of type str; 'revision' of type str; 'message' of type str.
+The class 'builds::StringToStringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'TestElement' has no attributes.
+The class 'builds::Build' has the following attributes: 'status' of type str; 'timestamp' of type str; 'label' of type str; 'displayName' of type str; 'duration' of type str; 'summary' of type str; 'state' of type str; 'id' of type str; 'buildNumber' of type int.
+The class 'builds::StringParameterDefinition' has the following attributes: 'defaultValue' of type str.
+The class 'builds::ChoiceParameterDefinition' has the following attributes: 'defaultValue' of type str; 'options' of type str.
+The class 'builds::BooleanParameterDefinition' has the following attributes: 'defaultValue' of type bool.
+The enumeration 'TestCaseResult' has the following literals: 'PASSED', 'SKIPPED', 'FIXED', 'FAILED', 'REGRESSION'.
+'builds::PlanParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::StringParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::PasswordParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::BuildPlan' is a specialization of 'BuildElement'.
+'builds::FileParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::BuildServer' is a specialization of 'BuildElement'.
+'builds::TestCase' is a specialization of 'TestElement'.
+'builds::Build' is a specialization of 'BuildElement'.
+'builds::TestSuite' is a specialization of 'TestElement'.
+'builds::BuildParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::ChoiceParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::BooleanParameterDefinition' is a specialization of 'ParameterDefinition'.
+'builds::User' is a specialization of 'BuildElement'.
+'builds::Artifact' is a specialization of 'BuildElement'.
+'builds::TestSuite' (role 'suite', cardinality 0..*) is associated with 'builds::TestCase' (role 'TestCase', cardinality 0..*).
+'builds::BuildModel' (role 'builds_BuildModel35', cardinality 0..*) is associated with 'builds::BuildPlan' (role 'builds_BuildPlan36', cardinality 0..*).
+'builds::Build' (role 'builds_Build6', cardinality 0..*) is associated with 'builds::BuildServer' (role 'builds_BuildServer', cardinality 0..*).
+'builds::Build' (role 'build', cardinality 0..*) is associated with 'builds::TestResult' (role 'TestResult', cardinality 0..*).
+'builds::BuildPlan' (role 'containingBuildPlan', cardinality 0..*) is associated with 'builds::ParameterDefinition' (role 'ParameterDefinition', cardinality 0..*).
+'builds::BuildCause' (role 'builds_BuildCause13', cardinality 0..*) is associated with 'builds::BuildReference' (role 'builds_BuildReference', cardinality 0..*).
+'builds::TestResult' (role 'result', cardinality 0..*) is associated with 'builds::TestSuite' (role 'TestSuite', cardinality 0..*).
+'builds::User' (role 'builds_User16', cardinality 0..*) is associated with 'builds::BuildCause' (role 'builds_BuildCause15', cardinality 0..*).
+'builds::BuildPlan' (role 'builds_BuildPlan', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build4', cardinality 0..*).
+'builds::BuildPlan' (role 'builds_BuildPlan27', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build28', cardinality 0..*).
+'builds::BuildPlan' (role 'builds_BuildPlan50', cardinality 0..*) is associated with 'builds::BuildParameterDefinition' (role 'builds_BuildParameterDefinition', cardinality 0..*).
+'builds::BuildPlan' (role 'BuildPlan', cardinality 0..*) is associated with 'builds::BuildPlan' (role 'parent', cardinality 0..*).
+'builds::User' (role 'builds_User', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build9', cardinality 0..*).
+'builds::StringToStringMap' (role 'builds_StringToStringMap', cardinality 0..*) is associated with 'builds::BuildElement' (role 'builds_BuildElement', cardinality 0..*).
+'builds::TestResult' (role 'TestResult55', cardinality 0..*) is associated with 'builds::TestSuite' (role 'suites', cardinality 0..*).
+'builds::BuildPlan' (role 'builds_BuildPlan19', cardinality 0..*) is associated with 'builds::BuildServer' (role 'builds_BuildServer20', cardinality 0..*).
+'builds::BuildPlan' (role 'builds_BuildPlan31', cardinality 0..*) is associated with 'builds::HealthReport' (role 'builds_HealthReport', cardinality 0..*).
+'builds::BuildModel' (role 'builds_BuildModel', cardinality 0..*) is associated with 'builds::BuildServer' (role 'builds_BuildServer33', cardinality 0..*).
+'builds::BuildPlan' (role 'BuildPlan48', cardinality 0..*) is associated with 'builds::ParameterDefinition' (role 'parameterDefinitions', cardinality 0..*).
+'builds::BuildModel' (role 'builds_BuildModel38', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build39', cardinality 0..*).
+'builds::Build' (role 'builds_Build2', cardinality 0..*) is associated with 'builds::ChangeSet' (role 'builds_ChangeSet', cardinality 0..*).
+'builds::Build' (role 'Build', cardinality 0..*) is associated with 'builds::TestResult' (role 'testResult', cardinality 0..*).
+'builds::Change' (role 'builds_Change', cardinality 0..*) is associated with 'builds::ChangeArtifact' (role 'builds_ChangeArtifact', cardinality 0..*).
+'builds::BuildCause' (role 'builds_BuildCause', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build11', cardinality 0..*).
+'builds::BuildPlan' (role 'BuildPlan25', cardinality 0..*) is associated with 'builds::BuildPlan' (role 'children', cardinality 0..*).
+'builds::Change' (role 'builds_Change46', cardinality 0..*) is associated with 'builds::ChangeSet' (role 'builds_ChangeSet45', cardinality 0..*).
+'builds::Change' (role 'builds_Change42', cardinality 0..*) is associated with 'builds::User' (role 'builds_User43', cardinality 0..*).
+'builds::TestSuite' (role 'TestSuite57', cardinality 0..*) is associated with 'builds::TestCase' (role 'cases', cardinality 0..*).
+'builds::Artifact' (role 'builds_Artifact', cardinality 0..*) is associated with 'builds::Build' (role 'builds_Build', cardinality 0..*).

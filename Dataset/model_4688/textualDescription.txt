@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'simpleALEnv::EqualityTest' has no attributes.
+The class 'simpleALEnv::ArithMinus' has no attributes.
+The class 'simpleALEnv::ArithPlus' has no attributes.
+The class 'ArithOp' has no attributes.
+The class 'simpleALEnv::ArithOp' has no attributes.
+The class 'simpleALEnv::RandRange' has the following attributes: 'max' of type int; 'min' of type int.
+The class 'simpleALEnv::IfStmt' has no attributes.
+The class 'Stmt' has no attributes.
+The class 'simpleALEnv::ALVarRef' has the following attributes: 'name' of type str.
+The class 'simpleALEnv::Block' has no attributes.
+The class 'simpleALEnv::Assign' has the following attributes: 'name' of type str.
+The class 'simpleALEnv::Print' has the following attributes: 'name' of type str.
+The class 'Arith' has no attributes.
+The class 'simpleALEnv::Stmt' has no attributes.
+The class 'simpleALEnv::ArithLit' has the following attributes: 'val' of type int.
+The class 'simpleALEnv::Arith' has no attributes.
+'simpleALEnv::ArithPlus' is a specialization of 'ArithOp'.
+'simpleALEnv::RandRange' is a specialization of 'Arith'.
+'simpleALEnv::Assign' is a specialization of 'Stmt'.
+'simpleALEnv::ALVarRef' is a specialization of 'Arith'.
+'simpleALEnv::ArithOp' is a specialization of 'Arith'.
+'simpleALEnv::ArithMinus' is a specialization of 'ArithOp'.
+'simpleALEnv::IfStmt' is a specialization of 'Stmt'.
+'simpleALEnv::Print' is a specialization of 'Stmt'.
+'simpleALEnv::ArithLit' is a specialization of 'Arith'.
+'simpleALEnv::EqualityTest' (role 'simpleALEnv_EqualityTest15', cardinality 0..*) is associated with 'simpleALEnv::Arith' (role 'simpleALEnv_Arith16', cardinality 0..*).
+'simpleALEnv::Arith' (role 'simpleALEnv_Arith19', cardinality 0..*) is associated with 'simpleALEnv::EqualityTest' (role 'simpleALEnv_EqualityTest18', cardinality 0..*).
+'simpleALEnv::IfStmt' (role 'simpleALEnv_IfStmt10', cardinality 0..*) is associated with 'simpleALEnv::Assign' (role 'simpleALEnv_Assign11', cardinality 0..*).
+'simpleALEnv::Arith' (role 'simpleALEnv_Arith4', cardinality 0..*) is associated with 'simpleALEnv::ArithOp' (role 'simpleALEnv_ArithOp3', cardinality 0..*).
+'simpleALEnv::Assign' (role 'simpleALEnv_Assign', cardinality 0..*) is associated with 'simpleALEnv::Arith' (role 'simpleALEnv_Arith6', cardinality 0..*).
+'simpleALEnv::Assign' (role 'simpleALEnv_Assign8', cardinality 0..*) is associated with 'simpleALEnv::IfStmt' (role 'simpleALEnv_IfStmt', cardinality 0..*).
+'simpleALEnv::Arith' (role 'simpleALEnv_Arith', cardinality 0..*) is associated with 'simpleALEnv::ArithOp' (role 'simpleALEnv_ArithOp', cardinality 0..*).
+'simpleALEnv::Block' (role 'simpleALEnv_Block', cardinality 0..*) is associated with 'simpleALEnv::Stmt' (role 'simpleALEnv_Stmt', cardinality 0..*).
+'simpleALEnv::EqualityTest' (role 'simpleALEnv_EqualityTest', cardinality 0..*) is associated with 'simpleALEnv::IfStmt' (role 'simpleALEnv_IfStmt13', cardinality 0..*).

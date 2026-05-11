@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adaussy/emf.compare.acceptance.tests/tests/emf.compare.q7.tests/resources/diagram/class/ts010_tc016/left.ecore

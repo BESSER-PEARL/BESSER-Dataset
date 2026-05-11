@@ -1,0 +1,42 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class viewpoint_tool_RepresentationNavigationDescription extends AbstractToolDescription {
+
+    private String navigationNameExpression;
+    private String browseExpression;
+
+
+
+    public viewpoint_tool_RepresentationNavigationDescription(
+        String navigationNameExpression,        String browseExpression    ) {
+        super(
+        );
+        this.navigationNameExpression = navigationNameExpression;
+        this.browseExpression = browseExpression;
+    }
+
+
+    public String getNavigationnameexpression() {
+        return navigationNameExpression;
+    }
+
+    public void setNavigationnameexpression(String navigationNameExpression) {
+        this.navigationNameExpression = navigationNameExpression;
+    }
+    public String getBrowseexpression() {
+        return browseExpression;
+    }
+
+    public void setBrowseexpression(String browseExpression) {
+        this.browseExpression = browseExpression;
+    }
+
+
+}

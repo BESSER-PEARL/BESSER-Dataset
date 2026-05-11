@@ -1,0 +1,50 @@
+The model has 14 class(es).
+The class 'classdiagram::Attribute' has no attributes.
+The class 'classdiagram::Typeable' has no attributes.
+The class 'classdiagram::TypedElement' has the following attributes: 'public' of type bool.
+The class 'classdiagram::Class' has no attributes.
+The class 'classdiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'classdiagram::ClassDiagram' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'classdiagram::Dependency' has the following attributes: 'name' of type str.
+The class 'classdiagram::Composition' has the following attributes: 'multiplicity' of type str.
+The class 'classdiagram::Operation' has no attributes.
+The class 'classdiagram::Association' has the following attributes: 'multiplicity' of type str.
+The class 'Typeable' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'classdiagram::DataType' has no attributes.
+'classdiagram::Attribute' is a specialization of 'TypedElement'.
+'classdiagram::Composition' is a specialization of 'NamedElement'.
+'classdiagram::DataType' is a specialization of 'Typeable'.
+'classdiagram::Class' is a specialization of 'Typeable'.
+'classdiagram::Typeable' is a specialization of 'NamedElement'.
+'classdiagram::TypedElement' is a specialization of 'NamedElement'.
+'classdiagram::Association' is a specialization of 'NamedElement'.
+'classdiagram::Operation' is a specialization of 'TypedElement'.
+'classdiagram::Class' (role 'owner11', cardinality 0..*) is associated with 'classdiagram::Operation' (role 'Operation', cardinality 0..*).
+'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram2', cardinality 0..*) is associated with 'classdiagram::Dependency' (role 'classdiagram_Dependency', cardinality 0..*).
+'classdiagram::TypedElement' (role 'classdiagram_TypedElement', cardinality 0..*) is associated with 'classdiagram::Typeable' (role 'classdiagram_Typeable42', cardinality 0..*).
+'classdiagram::Composition' (role 'compositionsAsConstituent', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class48', cardinality 0..*).
+'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram8', cardinality 0..*) is associated with 'classdiagram::Composition' (role 'classdiagram_Composition', cardinality 0..*).
+'classdiagram::Class' (role 'superclass', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class25', cardinality 0..*).
+'classdiagram::Class' (role 'Class33', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'ownedAttributes', cardinality 0..*).
+'classdiagram::Class' (role 'Class', cardinality 0..*) is associated with 'classdiagram::Class' (role 'nested', cardinality 0..*).
+'classdiagram::Class' (role 'subclasses', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class22', cardinality 0..*).
+'classdiagram::Class' (role 'Class35', cardinality 0..*) is associated with 'classdiagram::Operation' (role 'ownedOperations', cardinality 0..*).
+'classdiagram::Dependency' (role 'dependenciesAsDependee', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class38', cardinality 0..*).
+'classdiagram::Class' (role 'Class46', cardinality 0..*) is associated with 'classdiagram::Association' (role 'associationsAsTarget', cardinality 0..*).
+'classdiagram::Class' (role 'dependee', cardinality 0..*) is associated with 'classdiagram::Dependency' (role 'Dependency', cardinality 0..*).
+'classdiagram::Class' (role 'Class44', cardinality 0..*) is associated with 'classdiagram::Association' (role 'associationsAsSource', cardinality 0..*).
+'classdiagram::Association' (role 'Association', cardinality 0..*) is associated with 'classdiagram::Class' (role 'source', cardinality 0..*).
+'classdiagram::Class' (role 'nestedIn', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class19', cardinality 0..*).
+'classdiagram::Dependency' (role 'Dependency14', cardinality 0..*) is associated with 'classdiagram::Class' (role 'depender', cardinality 0..*).
+'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram', cardinality 0..*) is associated with 'classdiagram::Class' (role 'classdiagram_Class', cardinality 0..*).
+'classdiagram::Class' (role 'constituent', cardinality 0..*) is associated with 'classdiagram::Composition' (role 'Composition', cardinality 0..*).
+'classdiagram::DataType' (role 'classdiagram_DataType', cardinality 0..*) is associated with 'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram6', cardinality 0..*).
+'classdiagram::Association' (role 'Association28', cardinality 0..*) is associated with 'classdiagram::Class' (role 'target', cardinality 0..*).
+'classdiagram::Dependency' (role 'dependenciesAsDepender', cardinality 0..*) is associated with 'classdiagram::Class' (role 'Class40', cardinality 0..*).
+'classdiagram::Class' (role 'owner', cardinality 0..*) is associated with 'classdiagram::Attribute' (role 'Attribute', cardinality 0..*).
+'classdiagram::Composition' (role 'Composition31', cardinality 0..*) is associated with 'classdiagram::Class' (role 'composite', cardinality 0..*).
+'classdiagram::Class' (role 'Class50', cardinality 0..*) is associated with 'classdiagram::Composition' (role 'compositionsAsComposite', cardinality 0..*).
+'classdiagram::Association' (role 'classdiagram_Association', cardinality 0..*) is associated with 'classdiagram::ClassDiagram' (role 'classdiagram_ClassDiagram4', cardinality 0..*).
+'classdiagram::Typeable' (role 'classdiagram_Typeable', cardinality 0..*) is associated with 'classdiagram::Operation' (role 'classdiagram_Operation', cardinality 0..*).

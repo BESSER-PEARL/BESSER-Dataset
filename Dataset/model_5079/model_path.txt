@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dcsaszar/raqun/NModelCompare/testdata/two_parents.ecore

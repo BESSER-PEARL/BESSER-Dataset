@@ -1,0 +1,63 @@
+The model has 30 class(es).
+The class 'rule::Mod' has no attributes.
+The class 'rule::Add' has no attributes.
+The class 'IntegerExpression' has no attributes.
+The class 'rule::Greater' has no attributes.
+The class 'rule::Max' has no attributes.
+The class 'rule::Mult' has no attributes.
+The class 'rule::UnaryExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'rule::PopulationRange' has the following attributes: 'upperRange' of type int; 'lowerRange' of type int.
+The class 'rule::Sum' has no attributes.
+The class 'rule::Rule' has no attributes.
+The class 'NeighborsExpression' has no attributes.
+The class 'rule::Not' has no attributes.
+The class 'rule::Div' has no attributes.
+The class 'rule::Min' has no attributes.
+The class 'rule::Minus' has no attributes.
+The class 'rule::UMinus' has no attributes.
+The class 'rule::Or' has no attributes.
+The class 'rule::CellularAutomata' has no attributes.
+The class 'rule::Equal' has no attributes.
+The class 'rule::Lower' has no attributes.
+The class 'rule::IntegerLiteral' has the following attributes: 'val' of type int.
+The class 'rule::CurrentCellPopulation' has no attributes.
+The class 'rule::BinaryExpression' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'rule::Conditional' has no attributes.
+The class 'rule::And' has no attributes.
+The class 'rule::IntegerExpression' has no attributes.
+The class 'rule::Size' has no attributes.
+The class 'rule::NeighborsExpression' has no attributes.
+'rule::Greater' is a specialization of 'BinaryExpression'.
+'rule::CurrentCellPopulation' is a specialization of 'IntegerExpression'.
+'rule::Conditional' is a specialization of 'IntegerExpression'.
+'rule::Sum' is a specialization of 'NeighborsExpression'.
+'rule::Equal' is a specialization of 'BinaryExpression'.
+'rule::UnaryExpression' is a specialization of 'IntegerExpression'.
+'rule::Max' is a specialization of 'NeighborsExpression'.
+'rule::IntegerLiteral' is a specialization of 'IntegerExpression'.
+'rule::Or' is a specialization of 'BinaryExpression'.
+'rule::Mult' is a specialization of 'BinaryExpression'.
+'rule::Min' is a specialization of 'NeighborsExpression'.
+'rule::Lower' is a specialization of 'BinaryExpression'.
+'rule::Add' is a specialization of 'BinaryExpression'.
+'rule::Not' is a specialization of 'UnaryExpression'.
+'rule::Mod' is a specialization of 'BinaryExpression'.
+'rule::NeighborsExpression' is a specialization of 'IntegerExpression'.
+'rule::Div' is a specialization of 'BinaryExpression'.
+'rule::UMinus' is a specialization of 'UnaryExpression'.
+'rule::And' is a specialization of 'BinaryExpression'.
+'rule::Minus' is a specialization of 'BinaryExpression'.
+'rule::BinaryExpression' is a specialization of 'IntegerExpression'.
+'rule::Size' is a specialization of 'NeighborsExpression'.
+'rule::BinaryExpression' (role 'rule_BinaryExpression18', cardinality 0..*) is associated with 'rule::IntegerExpression' (role 'rule_IntegerExpression19', cardinality 0..*).
+'rule::CellularAutomata' (role 'rule_CellularAutomata', cardinality 0..*) is associated with 'rule::Rule' (role 'rule_Rule21', cardinality 0..*).
+'rule::IntegerExpression' (role 'rule_IntegerExpression16', cardinality 0..*) is associated with 'rule::BinaryExpression' (role 'rule_BinaryExpression', cardinality 0..*).
+'rule::UnaryExpression' (role 'rule_UnaryExpression', cardinality 0..*) is associated with 'rule::IntegerExpression' (role 'rule_IntegerExpression4', cardinality 0..*).
+'rule::IntegerExpression' (role 'rule_IntegerExpression6', cardinality 0..*) is associated with 'rule::Conditional' (role 'rule_Conditional', cardinality 0..*).
+'rule::IntegerExpression' (role 'rule_IntegerExpression12', cardinality 0..*) is associated with 'rule::Conditional' (role 'rule_Conditional11', cardinality 0..*).
+'rule::IntegerExpression' (role 'rule_IntegerExpression9', cardinality 0..*) is associated with 'rule::Conditional' (role 'rule_Conditional8', cardinality 0..*).
+'rule::Rule' (role 'rule_Rule', cardinality 0..*) is associated with 'rule::IntegerExpression' (role 'rule_IntegerExpression', cardinality 0..*).
+'rule::NeighborsExpression' (role 'rule_NeighborsExpression', cardinality 0..*) is associated with 'rule::PopulationRange' (role 'rule_PopulationRange14', cardinality 0..*).
+'rule::PopulationRange' (role 'rule_PopulationRange', cardinality 0..*) is associated with 'rule::Rule' (role 'rule_Rule2', cardinality 0..*).

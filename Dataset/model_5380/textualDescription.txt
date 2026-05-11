@@ -1,0 +1,40 @@
+The model has 18 class(es).
+The class 'FormElement' has no attributes.
+The class 'html::Option' has the following attributes: 'value' of type int; 'content' of type str.
+The class 'html::Select' has the following attributes: 'type' of type str.
+The class 'SelectionList' has no attributes.
+The class 'html::ColumnOption' has the following attributes: 'content' of type str; 'value' of type int.
+The class 'html::Page' has the following attributes: 'title' of type str; 'id' of type int; 'urlToSaveResponses' of type str; 'urlToGetRelationResult' of type str; 'description' of type str; 'urlToGetData' of type str.
+The class 'html::Graph' has the following attributes: 'type' of type str; 'title' of type str.
+The class 'html::TextArea' has the following attributes: 'maxLength' of type int; 'rows' of type int.
+The class 'html::Input' has the following attributes: 'type' of type str; 'max' of type int; 'step' of type int; 'checked' of type bool; 'min' of type int; 'maxLength' of type int.
+The class 'html::SelectComplex' has no attributes.
+The class 'html::View' has the following attributes: 'title' of type str.
+The class 'html::Editable' has the following attributes: 'required' of type bool; 'name' of type int.
+The class 'html::Label' has the following attributes: 'forText' of type int; 'content' of type str.
+The class 'html::SelectionList' has the following attributes: 'multiple' of type bool.
+The class 'html::FormElement' has the following attributes: 'visible' of type bool; 'id' of type str.
+The class 'Editable' has no attributes.
+The class 'html::Container' has the following attributes: 'name' of type str.
+The class 'html::Section' has the following attributes: 'id' of type int; 'title' of type str.
+The enumeration 'InputType' has the following literals: 'RANGE', 'DATE', 'EMAIL', 'TEXT', 'NUMBER'.
+The enumeration 'GraphType' has the following literals: 'BAR', 'PIE', 'NONE', 'SCALAR'.
+The enumeration 'SelectType' has the following literals: 'LIST', 'COMBO'.
+'html::Select' is a specialization of 'SelectionList'.
+'html::Input' is a specialization of 'Editable'.
+'html::SelectComplex' is a specialization of 'SelectionList'.
+'html::SelectionList' is a specialization of 'Editable'.
+'html::Editable' is a specialization of 'FormElement'.
+'html::TextArea' is a specialization of 'Editable'.
+'html::Label' is a specialization of 'FormElement'.
+'html::Option' (role 'html_Option8', cardinality 0..*) is associated with 'html::TextArea' (role 'html_TextArea', cardinality 0..*).
+'html::Page' (role 'html_Page', cardinality 0..*) is associated with 'html::Container' (role 'html_Container', cardinality 0..*).
+'html::Editable' (role 'html_Editable', cardinality 0..*) is associated with 'html::Label' (role 'html_Label', cardinality 0..*).
+'html::View' (role 'html_View', cardinality 0..*) is associated with 'html::Graph' (role 'html_Graph', cardinality 0..*).
+'html::View' (role 'html_View2', cardinality 0..*) is associated with 'html::Section' (role 'html_Section', cardinality 0..*).
+'html::Section' (role 'html_Section4', cardinality 0..*) is associated with 'html::FormElement' (role 'html_FormElement', cardinality 0..*).
+'html::Option' (role 'html_Option10', cardinality 0..*) is associated with 'html::FormElement' (role 'html_FormElement11', cardinality 0..*).
+'html::ColumnOption' (role 'html_ColumnOption', cardinality 0..*) is associated with 'html::SelectComplex' (role 'html_SelectComplex', cardinality 0..*).
+'html::Option' (role 'html_Option', cardinality 0..*) is associated with 'html::Select' (role 'html_Select', cardinality 0..*).
+'html::Page' (role 'html_Page18', cardinality 0..*) is associated with 'html::View' (role 'html_View19', cardinality 0..*).
+'html::Option' (role 'html_Option15', cardinality 0..*) is associated with 'html::SelectComplex' (role 'html_SelectComplex14', cardinality 0..*).

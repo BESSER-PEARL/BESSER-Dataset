@@ -1,0 +1,64 @@
+The model has 33 class(es).
+The class 'farmbot::modeling::MoveRelative' has no attributes.
+The class 'farmbot::modeling::ExecuteSequence' has the following attributes: 'id' of type int.
+The class 'SequenceInstruction' has no attributes.
+The class 'farmbot::modeling::SequenceInstruction' has no attributes.
+The class 'SequenceCommand' has no attributes.
+The class 'farmbot::modeling::IsEqualTo' has no attributes.
+The class 'farmbot::modeling::SendMessage' has the following attributes: 'messageType' of type str; 'message' of type str.
+The class 'farmbot::modeling::ListSequences' has no attributes.
+The class 'farmbot::modeling::IsGreaterThan' has no attributes.
+The class 'farmbot::modeling::Schedule' has the following attributes: 'sequence' of type int; 'startTime' of type str; 'repeat' of type bool; 'endDate' of type str; 'endTime' of type str; 'startDate' of type str; 'repeatUnit' of type str.
+The class 'farmbot::modeling::Command' has no attributes.
+The class 'farmbot::modeling::If' has no attributes.
+The class 'farmbot::modeling::FindHome' has the following attributes: 'axis' of type str.
+The class 'farmbot::modeling::TurnOff' has the following attributes: 'pin' of type int.
+The class 'farmbot::modeling::MoveAbsolute' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'Move' has no attributes.
+The class 'farmbot::modeling::TurnOnDigital' has the following attributes: 'pin' of type int.
+The class 'farmbot::modeling::RunFarmware' has the following attributes: 'name' of type str.
+The class 'farmbot::modeling::TurnOnAnalog' has the following attributes: 'pin' of type int; 'value' of type int.
+The class 'Command' has no attributes.
+The class 'farmbot::modeling::Move' has the following attributes: 'x' of type int; 'z' of type int; 'y' of type int; 'speed' of type int.
+The class 'farmbot::modeling::IsLowerThan' has no attributes.
+The class 'farmbot::modeling::BooleanExpression' has the following attributes: 'pinNumber' of type int; 'value' of type int; 'axe' of type str.
+The class 'farmbot::modeling::IsNotEqualTo' has no attributes.
+The class 'farmbot::modeling::ListScheduledEvents' has no attributes.
+The class 'farmbot::modeling::Farmbot' has no attributes.
+The class 'farmbot::modeling::Sequence' has the following attributes: 'name' of type str.
+The class 'farmbot::modeling::Wait' has the following attributes: 'duration' of type float.
+The class 'Instruction' has no attributes.
+The class 'farmbot::modeling::Instruction' has no attributes.
+The class 'farmbot::modeling::TakePhoto' has no attributes.
+The class 'farmbot::modeling::SequenceCommand' has no attributes.
+'farmbot::modeling::TurnOnDigital' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::Wait' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::TakePhoto' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::IsLowerThan' is a specialization of 'BooleanExpression'.
+'farmbot::modeling::TurnOnAnalog' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::TurnOff' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::SendMessage' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::ExecuteSequence' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::IsEqualTo' is a specialization of 'BooleanExpression'.
+'farmbot::modeling::Schedule' is a specialization of 'Command'.
+'farmbot::modeling::IsNotEqualTo' is a specialization of 'BooleanExpression'.
+'farmbot::modeling::RunFarmware' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::Sequence' is a specialization of 'Instruction'.
+'farmbot::modeling::Move' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::If' is a specialization of 'SequenceInstruction'.
+'farmbot::modeling::ListScheduledEvents' is a specialization of 'Command'.
+'farmbot::modeling::SequenceCommand' is a specialization of 'SequenceInstruction'.
+'farmbot::modeling::MoveRelative' is a specialization of 'Move'.
+'farmbot::modeling::IsGreaterThan' is a specialization of 'BooleanExpression'.
+'farmbot::modeling::SequenceInstruction' is a specialization of 'Instruction'.
+'farmbot::modeling::Command' is a specialization of 'Instruction'.
+'farmbot::modeling::FindHome' is a specialization of 'SequenceCommand'.
+'farmbot::modeling::MoveAbsolute' is a specialization of 'Move'.
+'farmbot::modeling::ListSequences' is a specialization of 'Command'.
+'farmbot::modeling::SequenceCommand' is a specialization of 'Command'.
+'farmbot::modeling::BooleanExpression' (role 'farmbot_modeling_BooleanExpression', cardinality 0..*) is associated with 'farmbot::modeling::If' (role 'farmbot_modeling_If', cardinality 0..*).
+'farmbot::modeling::Farmbot' (role 'farmbot_modeling_Farmbot', cardinality 0..*) is associated with 'farmbot::modeling::Instruction' (role 'farmbot_modeling_Instruction', cardinality 0..*).
+'farmbot::modeling::If' (role 'farmbot_modeling_If4', cardinality 0..*) is associated with 'farmbot::modeling::ExecuteSequence' (role 'farmbot_modeling_ExecuteSequence', cardinality 0..*).
+'farmbot::modeling::If' (role 'farmbot_modeling_If6', cardinality 0..*) is associated with 'farmbot::modeling::ExecuteSequence' (role 'farmbot_modeling_ExecuteSequence7', cardinality 0..*).
+'farmbot::modeling::SequenceInstruction' (role 'farmbot_modeling_SequenceInstruction', cardinality 0..*) is associated with 'farmbot::modeling::Sequence' (role 'farmbot_modeling_Sequence', cardinality 0..*).

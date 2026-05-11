@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'b::Ebook' has the following attributes: 'label' of type str; 'category' of type str; 'date' of type str; 'info' of type str.
+The class 'b::B' has the following attributes: 'id' of type str.
+The class 'b::Model' has no attributes.
+'b::B' (role 'b_B', cardinality 0..*) is associated with 'b::Model' (role 'b_Model', cardinality 0..*).
+'b::Model' (role 'b_Model2', cardinality 0..*) is associated with 'b::Ebook' (role 'b_Ebook', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jreimone/refactory/OntoMore/Tests/org.ontomore.transformation.test/expected/ObjectProperty_3.ecore

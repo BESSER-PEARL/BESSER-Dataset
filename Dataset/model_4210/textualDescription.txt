@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'myDsl::Model' has the following attributes: 'greetings' of type str.
+The class 'myDsl::Greeting' has the following attributes: 'name' of type str.

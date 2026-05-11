@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'CompanyModel::Employee' has the following attributes: 'isManager' of type bool; 'name' of type str.
+The class 'CompanyModel::Company' has the following attributes: 'name' of type str.
+The class 'CompanyModel::Product' has the following attributes: 'productID' of type int; 'name' of type str.
+The class 'CompanyModel::Department' has the following attributes: 'number' of type int.
+'CompanyModel::Department' (role 'CompanyModel_Department4', cardinality 0..*) is associated with 'CompanyModel::Product' (role 'CompanyModel_Product', cardinality 0..*).
+'CompanyModel::Department' (role 'CompanyModel_Department2', cardinality 0..*) is associated with 'CompanyModel::Employee' (role 'CompanyModel_Employee', cardinality 0..*).
+'CompanyModel::Company' (role 'CompanyModel_Company', cardinality 0..*) is associated with 'CompanyModel::Department' (role 'CompanyModel_Department', cardinality 0..*).

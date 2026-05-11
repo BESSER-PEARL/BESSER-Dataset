@@ -1,0 +1,31 @@
+The model has 12 class(es).
+The class 'simple::OO::concept::Behavior' has no attributes.
+The class 'simple::OO::concept::Dependency' has no attributes.
+The class 'simple::OO::concept::Operation' has no attributes.
+The class 'simple::OO::concept::Parameter' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'simple::OO::concept::Class' has the following attributes: 'isAbstract' of type bool.
+The class 'simple::OO::concept::NamedElement' has the following attributes: 'name' of type str.
+The class 'simple::OO::concept::Package' has no attributes.
+The class 'Feature' has no attributes.
+The class 'simple::OO::concept::Attribute' has no attributes.
+The class 'simple::OO::concept::Feature' has the following attributes: 'isPublic' of type bool; 'isProtected' of type bool; 'isPrivate' of type bool.
+The class 'Class' has no attributes.
+'simple::OO::concept::Class' is a specialization of 'NamedElement'.
+'simple::OO::concept::Behavior' is a specialization of 'Class'.
+'simple::OO::concept::Attribute' is a specialization of 'NamedElement'.
+'simple::OO::concept::Operation' is a specialization of 'Feature'.
+'simple::OO::concept::Attribute' is a specialization of 'Feature'.
+'simple::OO::concept::Package' is a specialization of 'NamedElement'.
+'simple::OO::concept::Operation' is a specialization of 'NamedElement'.
+'simple::OO::concept::Class' (role 'simple_OO_concept_Class11', cardinality 0..*) is associated with 'simple::OO::concept::Operation' (role 'simple_OO_concept_Operation', cardinality 0..*).
+'simple::OO::concept::Class' (role 'simple_OO_concept_Class12', cardinality 0..*) is associated with 'simple::OO::concept::Class' (role 'simple_OO_concept_Class14', cardinality 0..*).
+'simple::OO::concept::Dependency' (role 'simple_OO_concept_Dependency6', cardinality 0..*) is associated with 'simple::OO::concept::NamedElement' (role 'simple_OO_concept_NamedElement7', cardinality 0..*).
+'simple::OO::concept::Package' (role 'simple_OO_concept_Package', cardinality 0..*) is associated with 'simple::OO::concept::Class' (role 'simple_OO_concept_Class', cardinality 0..*).
+'simple::OO::concept::Parameter' (role 'simple_OO_concept_Parameter', cardinality 0..*) is associated with 'simple::OO::concept::Operation' (role 'simple_OO_concept_Operation19', cardinality 0..*).
+'simple::OO::concept::Dependency' (role 'simple_OO_concept_Dependency4', cardinality 0..*) is associated with 'simple::OO::concept::NamedElement' (role 'simple_OO_concept_NamedElement', cardinality 0..*).
+'simple::OO::concept::Class' (role 'simple_OO_concept_Class9', cardinality 0..*) is associated with 'simple::OO::concept::Attribute' (role 'simple_OO_concept_Attribute', cardinality 0..*).
+'simple::OO::concept::Class' (role 'simple_OO_concept_Class17', cardinality 0..*) is associated with 'simple::OO::concept::Attribute' (role 'simple_OO_concept_Attribute16', cardinality 0..*).
+'simple::OO::concept::Dependency' (role 'simple_OO_concept_Dependency', cardinality 0..*) is associated with 'simple::OO::concept::Package' (role 'simple_OO_concept_Package2', cardinality 0..*).
+'simple::OO::concept::Behavior' (role 'simple_OO_concept_Behavior', cardinality 0..*) is associated with 'simple::OO::concept::Operation' (role 'simple_OO_concept_Operation21', cardinality 0..*).
+'simple::OO::concept::Parameter' (role 'simple_OO_concept_Parameter23', cardinality 0..*) is associated with 'simple::OO::concept::Class' (role 'simple_OO_concept_Class24', cardinality 0..*).

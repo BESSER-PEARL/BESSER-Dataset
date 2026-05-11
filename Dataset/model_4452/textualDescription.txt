@@ -1,0 +1,96 @@
+The model has 36 class(es).
+The class 'wsmodel3::OutputOrchestrator' has no attributes.
+The class 'wsmodel3::AccesPoint' has the following attributes: 'ssid' of type str; 'pass_' of type str.
+The class 'wsmodel3::OutputBridge' has no attributes.
+The class 'Data' has no attributes.
+The class 'wsmodel3::ExternalAPI' has the following attributes: 'URI' of type str.
+The class 'Port' has no attributes.
+The class 'wsmodel3::Data' has the following attributes: 'Artefact' of type str; 'Date' of type str; 'Attribute' of type str; 'Location' of type str; 'Time' of type str; 'id' of type str.
+The class 'wsmodel3::OutputPort' has no attributes.
+The class 'wsmodel3::WebService' has no attributes.
+The class 'wsmodel3::Break' has the following attributes: 'expression' of type str.
+The class 'wsmodel3::Communication' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'wsmodel3::Orchestrator' has the following attributes: 'port' of type str; 'name' of type str.
+The class 'wsmodel3::System' has the following attributes: 'name' of type str.
+The class 'Bridge' has no attributes.
+The class 'wsmodel3::InputBridge' has the following attributes: 'URI' of type str.
+The class 'wsmodel3::InputPort' has no attributes.
+The class 'wsmodel3::DeviceData' has no attributes.
+The class 'wsmodel3::Sensor' has the following attributes: 'type' of type str.
+The class 'wsmodel3::Server' has the following attributes: 'host' of type str.
+The class 'wsmodel3::DBServer' has the following attributes: 'database' of type str; 'pass_' of type str; 'usser' of type str; 'port' of type int; 'type' of type str.
+The class 'wsmodel3::WebServer' has no attributes.
+The class 'wsmodel3::Actuator' has the following attributes: 'type' of type str.
+The class 'Server' has no attributes.
+The class 'wsmodel3::IoTNode' has no attributes.
+The class 'wsmodel3::Controller' has the following attributes: 'type' of type str.
+The class 'wsmodel3::MessageBroker' has the following attributes: 'host' of type str; 'usser' of type str; 'port' of type int; 'pass_' of type str; 'type' of type str.
+The class 'wsmodel3::CommunicationData' has no attributes.
+The class 'wsmodel3::Device' has the following attributes: 'name' of type str.
+The class 'Device' has no attributes.
+The class 'wsmodel3::REST' has the following attributes: 'port' of type int; 'URI' of type str.
+The class 'wsmodel3::Bridge' has the following attributes: 'port' of type int; 'topic' of type str; 'host' of type str.
+The class 'wsmodel3::Function' has the following attributes: 'expression' of type str.
+The class 'wsmodel3::OrchestratorData' has no attributes.
+The class 'wsmodel3::Port' has the following attributes: 'type' of type str; 'id' of type str.
+The class 'wsmodel3::InputOrchestrator' has the following attributes: 'URI' of type str.
+The class 'wsmodel3::IntegrationPattern' has no attributes.
+The enumeration 'DBType' has the following literals: 'Undefined', 'MySQL'.
+The enumeration 'ControllerType' has the following literals: 'ESP8266', 'Undefined'.
+The enumeration 'CommunicationType' has the following literals: 'Serial', 'WiFi', 'Undefined'.
+The enumeration 'SensorType' has the following literals: 'Button', 'TempHum', 'Vibration', 'Light', 'CO2', 'Temperature', 'HumidityG', 'Contact', 'Movement', 'Undefined'.
+The enumeration 'ActuatorType' has the following literals: 'Relay', 'Servo', 'Buzzer', 'Undefined', 'Led', 'LCD'.
+The enumeration 'MessageBrokerType' has the following literals: 'MQTT', 'Undefined'.
+The enumeration 'PortType' has the following literals: 'Digital', 'Analog'.
+'wsmodel3::DBServer' is a specialization of 'Server'.
+'wsmodel3::InputBridge' is a specialization of 'Bridge'.
+'wsmodel3::InputPort' is a specialization of 'Port'.
+'wsmodel3::Controller' is a specialization of 'Device'.
+'wsmodel3::OrchestratorData' is a specialization of 'Data'.
+'wsmodel3::CommunicationData' is a specialization of 'Data'.
+'wsmodel3::WebServer' is a specialization of 'Server'.
+'wsmodel3::OutputBridge' is a specialization of 'Bridge'.
+'wsmodel3::OutputPort' is a specialization of 'Port'.
+'wsmodel3::Actuator' is a specialization of 'Device'.
+'wsmodel3::DeviceData' is a specialization of 'Data'.
+'wsmodel3::Sensor' is a specialization of 'Device'.
+'wsmodel3::REST' (role 'wsmodel3_REST22', cardinality 0..*) is associated with 'wsmodel3::Device' (role 'wsmodel3_Device23', cardinality 0..*).
+'wsmodel3::Device' (role 'wsmodel3_Device', cardinality 0..*) is associated with 'wsmodel3::IoTNode' (role 'wsmodel3_IoTNode14', cardinality 0..*).
+'wsmodel3::System' (role 'wsmodel3_System2', cardinality 0..*) is associated with 'wsmodel3::Server' (role 'wsmodel3_Server', cardinality 0..*).
+'wsmodel3::Communication' (role 'wsmodel3_Communication30', cardinality 0..*) is associated with 'wsmodel3::CommunicationData' (role 'wsmodel3_CommunicationData', cardinality 0..*).
+'wsmodel3::REST' (role 'wsmodel3_REST86', cardinality 0..*) is associated with 'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator85', cardinality 0..*).
+'wsmodel3::Function' (role 'wsmodel3_Function', cardinality 0..*) is associated with 'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator59', cardinality 0..*).
+'wsmodel3::WebService' (role 'wsmodel3_WebService20', cardinality 0..*) is associated with 'wsmodel3::DBServer' (role 'wsmodel3_DBServer', cardinality 0..*).
+'wsmodel3::IoTNode' (role 'wsmodel3_IoTNode', cardinality 0..*) is associated with 'wsmodel3::System' (role 'wsmodel3_System4', cardinality 0..*).
+'wsmodel3::InputPort' (role 'wsmodel3_InputPort', cardinality 0..*) is associated with 'wsmodel3::Sensor' (role 'wsmodel3_Sensor', cardinality 0..*).
+'wsmodel3::Sensor' (role 'wsmodel3_Sensor46', cardinality 0..*) is associated with 'wsmodel3::OutputBridge' (role 'wsmodel3_OutputBridge45', cardinality 0..*).
+'wsmodel3::Bridge' (role 'wsmodel3_Bridge49', cardinality 0..*) is associated with 'wsmodel3::MessageBroker' (role 'wsmodel3_MessageBroker48', cardinality 0..*).
+'wsmodel3::IntegrationPattern' (role 'wsmodel3_IntegrationPattern51', cardinality 0..*) is associated with 'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator', cardinality 0..*).
+'wsmodel3::MessageBroker' (role 'wsmodel3_MessageBroker', cardinality 0..*) is associated with 'wsmodel3::System' (role 'wsmodel3_System10', cardinality 0..*).
+'wsmodel3::InputBridge' (role 'wsmodel3_InputBridge', cardinality 0..*) is associated with 'wsmodel3::Actuator' (role 'wsmodel3_Actuator42', cardinality 0..*).
+'wsmodel3::Function' (role 'wsmodel3_Function69', cardinality 0..*) is associated with 'wsmodel3::InputOrchestrator' (role 'wsmodel3_InputOrchestrator70', cardinality 0..*).
+'wsmodel3::System' (role 'wsmodel3_System6', cardinality 0..*) is associated with 'wsmodel3::AccesPoint' (role 'wsmodel3_AccesPoint', cardinality 0..*).
+'wsmodel3::InputOrchestrator' (role 'wsmodel3_InputOrchestrator57', cardinality 0..*) is associated with 'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator56', cardinality 0..*).
+'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator63', cardinality 0..*) is associated with 'wsmodel3::ExternalAPI' (role 'wsmodel3_ExternalAPI64', cardinality 0..*).
+'wsmodel3::REST' (role 'wsmodel3_REST67', cardinality 0..*) is associated with 'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator66', cardinality 0..*).
+'wsmodel3::Device' (role 'wsmodel3_Device25', cardinality 0..*) is associated with 'wsmodel3::DeviceData' (role 'wsmodel3_DeviceData', cardinality 0..*).
+'wsmodel3::WebServer' (role 'wsmodel3_WebServer54', cardinality 0..*) is associated with 'wsmodel3::IntegrationPattern' (role 'wsmodel3_IntegrationPattern53', cardinality 0..*).
+'wsmodel3::Communication' (role 'wsmodel3_Communication35', cardinality 0..*) is associated with 'wsmodel3::MessageBroker' (role 'wsmodel3_MessageBroker36', cardinality 0..*).
+'wsmodel3::WebService' (role 'wsmodel3_WebService16', cardinality 0..*) is associated with 'wsmodel3::REST' (role 'wsmodel3_REST', cardinality 0..*).
+'wsmodel3::System' (role 'wsmodel3_System8', cardinality 0..*) is associated with 'wsmodel3::IntegrationPattern' (role 'wsmodel3_IntegrationPattern', cardinality 0..*).
+'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator', cardinality 0..*) is associated with 'wsmodel3::Orchestrator' (role 'wsmodel3_Orchestrator61', cardinality 0..*).
+'wsmodel3::Communication' (role 'wsmodel3_Communication32', cardinality 0..*) is associated with 'wsmodel3::AccesPoint' (role 'wsmodel3_AccesPoint33', cardinality 0..*).
+'wsmodel3::Communication' (role 'wsmodel3_Communication', cardinality 0..*) is associated with 'wsmodel3::Controller' (role 'wsmodel3_Controller28', cardinality 0..*).
+'wsmodel3::Bridge' (role 'wsmodel3_Bridge', cardinality 0..*) is associated with 'wsmodel3::REST' (role 'wsmodel3_REST40', cardinality 0..*).
+'wsmodel3::System' (role 'wsmodel3_System', cardinality 0..*) is associated with 'wsmodel3::WebService' (role 'wsmodel3_WebService', cardinality 0..*).
+'wsmodel3::Actuator' (role 'wsmodel3_Actuator', cardinality 0..*) is associated with 'wsmodel3::OutputPort' (role 'wsmodel3_OutputPort', cardinality 0..*).
+'wsmodel3::Function' (role 'wsmodel3_Function72', cardinality 0..*) is associated with 'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator73', cardinality 0..*).
+'wsmodel3::InputBridge' (role 'wsmodel3_InputBridge81', cardinality 0..*) is associated with 'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator80', cardinality 0..*).
+'wsmodel3::WebService' (role 'wsmodel3_WebService18', cardinality 0..*) is associated with 'wsmodel3::WebServer' (role 'wsmodel3_WebServer', cardinality 0..*).
+'wsmodel3::Controller' (role 'wsmodel3_Controller', cardinality 0..*) is associated with 'wsmodel3::Port' (role 'wsmodel3_Port', cardinality 0..*).
+'wsmodel3::ExternalAPI' (role 'wsmodel3_ExternalAPI', cardinality 0..*) is associated with 'wsmodel3::System' (role 'wsmodel3_System12', cardinality 0..*).
+'wsmodel3::OutputBridge' (role 'wsmodel3_OutputBridge', cardinality 0..*) is associated with 'wsmodel3::InputOrchestrator' (role 'wsmodel3_InputOrchestrator', cardinality 0..*).
+'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator83', cardinality 0..*) is associated with 'wsmodel3::OrchestratorData' (role 'wsmodel3_OrchestratorData', cardinality 0..*).
+'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator88', cardinality 0..*) is associated with 'wsmodel3::ExternalAPI' (role 'wsmodel3_ExternalAPI89', cardinality 0..*).
+'wsmodel3::Break' (role 'wsmodel3_Break', cardinality 0..*) is associated with 'wsmodel3::Function' (role 'wsmodel3_Function75', cardinality 0..*).
+'wsmodel3::InputOrchestrator' (role 'wsmodel3_InputOrchestrator78', cardinality 0..*) is associated with 'wsmodel3::OutputOrchestrator' (role 'wsmodel3_OutputOrchestrator77', cardinality 0..*).

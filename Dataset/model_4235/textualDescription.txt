@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'employee::Employee' has the following attributes: 'hireDate' of type str; 'age' of type str; 'salary' of type str; 'name' of type str.
+The class 'employee::Department' has the following attributes: 'name' of type str.
+'employee::Employee' (role 'employee_Employee', cardinality 0..*) is associated with 'employee::Department' (role 'employee_Department', cardinality 0..*).

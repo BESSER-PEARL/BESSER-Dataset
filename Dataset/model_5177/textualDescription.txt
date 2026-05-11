@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'source::C' has no attributes.
+The class 'source::D' has no attributes.
+The class 'source::B' has no attributes.
+The class 'B' has no attributes.
+The class 'source::A' has no attributes.
+The class 'C' has no attributes.
+'source::D' is a specialization of 'B'.
+'source::B' is a specialization of 'C'.
+'source::A' (role 'source_A', cardinality 0..*) is associated with 'source::B' (role 'source_B', cardinality 0..*).

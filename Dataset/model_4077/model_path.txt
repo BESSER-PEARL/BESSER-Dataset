@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jesusc/emop/examples/mop.emf.examples/examples/SimpleUML.ecore

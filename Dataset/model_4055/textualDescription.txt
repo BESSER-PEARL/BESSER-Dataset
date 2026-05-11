@@ -1,0 +1,37 @@
+The model has 14 class(es).
+The class 'smalluml::Class' has no attributes.
+The class 'smalluml::Diagram' has no attributes.
+The class 'smalluml::Boolean' has no attributes.
+The class 'smalluml::Association' has no attributes.
+The class 'smalluml::Type' has no attributes.
+The class 'smalluml::Heritage' has no attributes.
+The class 'Type' has no attributes.
+The class 'smalluml::Float' has no attributes.
+The class 'smalluml::Method' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'smalluml::String' has no attributes.
+The class 'smalluml::Role' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'smalluml::NamedElement' has the following attributes: 'name' of type str.
+The class 'smalluml::Int' has no attributes.
+'smalluml::Type' is a specialization of 'NamedElement'.
+'smalluml::Heritage' is a specialization of 'NamedElement'.
+'smalluml::Int' is a specialization of 'Type'.
+'smalluml::Association' is a specialization of 'NamedElement'.
+'smalluml::String' is a specialization of 'Type'.
+'smalluml::Class' is a specialization of 'NamedElement'.
+'smalluml::Role' is a specialization of 'NamedElement'.
+'smalluml::Boolean' is a specialization of 'Type'.
+'smalluml::Method' is a specialization of 'NamedElement'.
+'smalluml::Float' is a specialization of 'Type'.
+'smalluml::Type' (role 'smalluml_Type5', cardinality 0..*) is associated with 'smalluml::Method' (role 'smalluml_Method4', cardinality 0..*).
+'smalluml::Diagram' (role 'smalluml_Diagram', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association22', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role17', cardinality 0..*) is associated with 'smalluml::Heritage' (role 'smalluml_Heritage16', cardinality 0..*).
+'smalluml::Heritage' (role 'smalluml_Heritage25', cardinality 0..*) is associated with 'smalluml::Diagram' (role 'smalluml_Diagram24', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class28', cardinality 0..*) is associated with 'smalluml::Diagram' (role 'smalluml_Diagram27', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class2', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role14', cardinality 0..*) is associated with 'smalluml::Heritage' (role 'smalluml_Heritage', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role12', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association11', cardinality 0..*).
+'smalluml::Method' (role 'smalluml_Method', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role19', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class20', cardinality 0..*).
+'smalluml::Method' (role 'smalluml_Method7', cardinality 0..*) is associated with 'smalluml::Type' (role 'smalluml_Type8', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role', cardinality 0..*) is associated with 'smalluml::Association' (role 'smalluml_Association', cardinality 0..*).

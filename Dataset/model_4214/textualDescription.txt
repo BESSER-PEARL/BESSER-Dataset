@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'mydsl::MyElement' has the following attributes: 'name' of type str.
+The class 'mydsl::MyReference' has no attributes.
+The class 'mydsl::MyAbstractElement' has no attributes.
+The class 'mydsl::MyModel' has the following attributes: 'name' of type str.
+The class 'MyAbstractElement' has no attributes.
+'mydsl::MyReference' is a specialization of 'MyAbstractElement'.
+'mydsl::MyElement' is a specialization of 'MyAbstractElement'.
+'mydsl::MyElement' (role 'mydsl_MyElement', cardinality 0..*) is associated with 'mydsl::MyReference' (role 'mydsl_MyReference', cardinality 0..*).
+'mydsl::MyAbstractElement' (role 'mydsl_MyAbstractElement', cardinality 0..*) is associated with 'mydsl::MyModel' (role 'mydsl_MyModel', cardinality 0..*).

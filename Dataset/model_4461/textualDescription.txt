@@ -1,0 +1,42 @@
+The model has 15 class(es).
+The class 'NamedElement' has no attributes.
+The class 'arduinoML::Sensor' has no attributes.
+The class 'arduinoML::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduinoML::BooleanCondition' has the following attributes: 'operator' of type str.
+The class 'Condition' has no attributes.
+The class 'arduinoML::Condition' has the following attributes: 'comparator' of type str; 'analogvalue' of type int; 'value' of type str.
+The class 'arduinoML::State' has no attributes.
+The class 'arduinoML::Brick' has the following attributes: 'pin' of type int; 'type' of type str.
+The class 'arduinoML::BaseCondition' has no attributes.
+The class 'arduinoML::App' has no attributes.
+The class 'Brick' has no attributes.
+The class 'arduinoML::Action' has the following attributes: 'analogvalue' of type int; 'value' of type str.
+The class 'arduinoML::SinkError' has the following attributes: 'value' of type int.
+The class 'arduinoML::Transition' has no attributes.
+The class 'arduinoML::Actuator' has no attributes.
+The enumeration 'Operator' has the following literals: 'OR', 'AND'.
+The enumeration 'Signal' has the following literals: 'HIGH', 'LOW'.
+The enumeration 'Type' has the following literals: 'digital', 'analog'.
+The enumeration 'Comparator' has the following literals: 'sup', 'inf', 'equ', 'esup', 'einf'.
+'arduinoML::App' is a specialization of 'NamedElement'.
+'arduinoML::State' is a specialization of 'NamedElement'.
+'arduinoML::Sensor' is a specialization of 'Brick'.
+'arduinoML::BaseCondition' is a specialization of 'Condition'.
+'arduinoML::BooleanCondition' is a specialization of 'Condition'.
+'arduinoML::Actuator' is a specialization of 'Brick'.
+'arduinoML::Brick' is a specialization of 'NamedElement'.
+'arduinoML::State' (role 'arduinoML_State5', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App4', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State14', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'arduinoML_Transition', cardinality 0..*).
+'arduinoML::BooleanCondition' (role 'arduinoML_BooleanCondition25', cardinality 0..*) is associated with 'arduinoML::SinkError' (role 'arduinoML_SinkError24', cardinality 0..*).
+'arduinoML::Transition' (role 'arduinoML_Transition17', cardinality 0..*) is associated with 'arduinoML::BaseCondition' (role 'arduinoML_BaseCondition', cardinality 0..*).
+'arduinoML::Transition' (role 'arduinoML_Transition19', cardinality 0..*) is associated with 'arduinoML::BooleanCondition' (role 'arduinoML_BooleanCondition', cardinality 0..*).
+'arduinoML::State' (role 'State', cardinality 0..*) is associated with 'arduinoML::Transition' (role 'transitions', cardinality 0..*).
+'arduinoML::Transition' (role 'Transition', cardinality 0..*) is associated with 'arduinoML::State' (role 'state', cardinality 0..*).
+'arduinoML::Brick' (role 'arduinoML_Brick', cardinality 0..*) is associated with 'arduinoML::App' (role 'arduinoML_App', cardinality 0..*).
+'arduinoML::State' (role 'arduinoML_State7', cardinality 0..*) is associated with 'arduinoML::Action' (role 'arduinoML_Action', cardinality 0..*).
+'arduinoML::State' (role 'state10', cardinality 0..*) is associated with 'arduinoML::SinkError' (role 'SinkError', cardinality 0..*).
+'arduinoML::Action' (role 'arduinoML_Action12', cardinality 0..*) is associated with 'arduinoML::Actuator' (role 'arduinoML_Actuator', cardinality 0..*).
+'arduinoML::App' (role 'arduinoML_App2', cardinality 0..*) is associated with 'arduinoML::State' (role 'arduinoML_State', cardinality 0..*).
+'arduinoML::SinkError' (role 'arduinoML_SinkError', cardinality 0..*) is associated with 'arduinoML::BaseCondition' (role 'arduinoML_BaseCondition22', cardinality 0..*).
+'arduinoML::Condition' (role 'arduinoML_Condition', cardinality 0..*) is associated with 'arduinoML::Sensor' (role 'arduinoML_Sensor', cardinality 0..*).
+'arduinoML::SinkError' (role 'errors', cardinality 0..*) is associated with 'arduinoML::State' (role 'State27', cardinality 0..*).

@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'Constraint' has no attributes.
+The class 'platoon::Constraint' has no attributes.
+The class 'platoon::World' has no attributes.
+The class 'platoon::Route' has the following attributes: 'name' of type str.
+The class 'platoon::FollowVehicle' has no attributes.
+The class 'platoon::ForwardCommand' has the following attributes: 'distance' of type int.
+The class 'Command' has no attributes.
+The class 'platoon::Vehicle' has the following attributes: 'name' of type str.
+The class 'platoon::TurnCommand' has the following attributes: 'direction' of type str.
+The class 'platoon::Command' has no attributes.
+The class 'Vehicle' has no attributes.
+The class 'platoon::LeadingVehicle' has no attributes.
+The class 'platoon::HeadwayConstraint' has the following attributes: 'min' of type int; 'max' of type int.
+The class 'platoon::Constraints' has no attributes.
+The class 'platoon::Platoon' has no attributes.
+'platoon::HeadwayConstraint' is a specialization of 'Constraint'.
+'platoon::ForwardCommand' is a specialization of 'Command'.
+'platoon::TurnCommand' is a specialization of 'Command'.
+'platoon::LeadingVehicle' is a specialization of 'Vehicle'.
+'platoon::FollowVehicle' is a specialization of 'Vehicle'.
+'platoon::Platoon' (role 'platoon_Platoon', cardinality 0..*) is associated with 'platoon::LeadingVehicle' (role 'platoon_LeadingVehicle', cardinality 0..*).
+'platoon::Constraint' (role 'platoon_Constraint', cardinality 0..*) is associated with 'platoon::Constraints' (role 'platoon_Constraints17', cardinality 0..*).
+'platoon::FollowVehicle' (role 'platoon_FollowVehicle5', cardinality 0..*) is associated with 'platoon::Vehicle' (role 'platoon_Vehicle', cardinality 0..*).
+'platoon::World' (role 'platoon_World12', cardinality 0..*) is associated with 'platoon::Route' (role 'platoon_Route13', cardinality 0..*).
+'platoon::Platoon' (role 'platoon_Platoon2', cardinality 0..*) is associated with 'platoon::FollowVehicle' (role 'platoon_FollowVehicle', cardinality 0..*).
+'platoon::Constraints' (role 'platoon_Constraints', cardinality 0..*) is associated with 'platoon::World' (role 'platoon_World15', cardinality 0..*).
+'platoon::Route' (role 'platoon_Route8', cardinality 0..*) is associated with 'platoon::LeadingVehicle' (role 'platoon_LeadingVehicle7', cardinality 0..*).
+'platoon::Command' (role 'platoon_Command', cardinality 0..*) is associated with 'platoon::Route' (role 'platoon_Route', cardinality 0..*).
+'platoon::Platoon' (role 'platoon_Platoon10', cardinality 0..*) is associated with 'platoon::World' (role 'platoon_World', cardinality 0..*).

@@ -1,0 +1,88 @@
+The model has 40 class(es).
+The class 'NamedElement' has no attributes.
+The class 'roverml::GPS' has no attributes.
+The class 'roverml::TriggeredTransition' has the following attributes: 'operator' of type str.
+The class 'roverml::SingleQuantity' has the following attributes: 'value' of type float.
+The class 'roverml::CompassTrigger' has no attributes.
+The class 'SingleQuantity' has no attributes.
+The class 'roverml::Wait' has no attributes.
+The class 'roverml::Block' has no attributes.
+The class 'roverml::NamedElement' has the following attributes: 'name' of type str.
+The class 'Component' has no attributes.
+The class 'roverml::Command' has no attributes.
+The class 'roverml::GpsTrigger' has no attributes.
+The class 'roverml::Transition' has no attributes.
+The class 'roverml::RoverSystem' has no attributes.
+The class 'roverml::Position' has no attributes.
+The class 'roverml::Move' has no attributes.
+The class 'Block' has no attributes.
+The class 'roverml::RoverProgram' has no attributes.
+The class 'roverml::Motor' has no attributes.
+The class 'roverml::Velocity' has the following attributes: 'velocityUnit' of type str.
+The class 'Command' has no attributes.
+The class 'roverml::SetLightColor' has the following attributes: 'color' of type str.
+The class 'Quantity' has no attributes.
+The class 'roverml::Terminate' has no attributes.
+The class 'roverml::Rotate' has no attributes.
+The class 'roverml::Actuator' has no attributes.
+The class 'roverml::DistanceSensorTrigger' has no attributes.
+The class 'roverml::Quantity' has no attributes.
+The class 'roverml::Time' has the following attributes: 'timeUnit' of type str.
+The class 'Transition' has no attributes.
+The class 'roverml::Length' has the following attributes: 'lengthUnit' of type str.
+The class 'roverml::Rover' has no attributes.
+The class 'roverml::Angle' has the following attributes: 'angleUnit' of type str.
+The class 'roverml::DistanceSensor' has no attributes.
+The class 'roverml::Component' has the following attributes: 'kind' of type str.
+The class 'roverml::Light' has no attributes.
+The class 'Actuator' has no attributes.
+The class 'roverml::Repeat' has the following attributes: 'count' of type int.
+The class 'roverml::Compass' has no attributes.
+The class 'roverml::Sensor' has no attributes.
+The enumeration 'Color' has the following literals: 'green', 'red', 'none', 'blue', 'yellow'.
+The enumeration 'LengthUnit' has the following literals: 'mm', 'cm', 'm'.
+The enumeration 'AngleUnit' has the following literals: 'degree', 'radian'.
+The enumeration 'TimeUnit' has the following literals: 'ns', 'min', 'ms', 'h', 's'.
+The enumeration 'VelocityUnit' has the following literals: 'cm_per_s', 'mm_per_s'.
+The enumeration 'ComparisonOperator' has the following literals: 'greater', 'unequal', 'equals', 'smaller'.
+'roverml::Move' is a specialization of 'Command'.
+'roverml::Actuator' is a specialization of 'Component'.
+'roverml::TriggeredTransition' is a specialization of 'Transition'.
+'roverml::Wait' is a specialization of 'Command'.
+'roverml::SetLightColor' is a specialization of 'Command'.
+'roverml::Terminate' is a specialization of 'Command'.
+'roverml::Angle' is a specialization of 'SingleQuantity'.
+'roverml::SingleQuantity' is a specialization of 'Quantity'.
+'roverml::Command' is a specialization of 'NamedElement'.
+'roverml::Rotate' is a specialization of 'Command'.
+'roverml::Repeat' is a specialization of 'Command'.
+'roverml::Transition' is a specialization of 'NamedElement'.
+'roverml::Length' is a specialization of 'SingleQuantity'.
+'roverml::Rover' is a specialization of 'NamedElement'.
+'roverml::Velocity' is a specialization of 'SingleQuantity'.
+'roverml::Motor' is a specialization of 'Actuator'.
+'roverml::Component' is a specialization of 'NamedElement'.
+'roverml::Repeat' is a specialization of 'Block'.
+'roverml::Time' is a specialization of 'SingleQuantity'.
+'roverml::Light' is a specialization of 'Actuator'.
+'roverml::Sensor' is a specialization of 'Component'.
+'roverml::RoverProgram' is a specialization of 'NamedElement'.
+'roverml::Position' is a specialization of 'Quantity'.
+'roverml::Block' (role 'roverml_Block', cardinality 0..*) is associated with 'roverml::RoverProgram' (role 'roverml_RoverProgram', cardinality 0..*).
+'roverml::Move' (role 'roverml_Move9', cardinality 0..*) is associated with 'roverml::Length' (role 'roverml_Length', cardinality 0..*).
+'roverml::Position' (role 'roverml_Position35', cardinality 0..*) is associated with 'roverml::Length' (role 'roverml_Length36', cardinality 0..*).
+'roverml::Command' (role 'roverml_Command23', cardinality 0..*) is associated with 'roverml::Transition' (role 'roverml_Transition22', cardinality 0..*).
+'roverml::Transition' (role 'roverml_Transition20', cardinality 0..*) is associated with 'roverml::Block' (role 'roverml_Block19', cardinality 0..*).
+'roverml::Angle' (role 'roverml_Angle', cardinality 0..*) is associated with 'roverml::Rotate' (role 'roverml_Rotate', cardinality 0..*).
+'roverml::Rover' (role 'roverml_Rover', cardinality 0..*) is associated with 'roverml::RoverProgram' (role 'roverml_RoverProgram2', cardinality 0..*).
+'roverml::Command' (role 'roverml_Command17', cardinality 0..*) is associated with 'roverml::Block' (role 'roverml_Block16', cardinality 0..*).
+'roverml::Transition' (role 'roverml_Transition25', cardinality 0..*) is associated with 'roverml::Command' (role 'roverml_Command26', cardinality 0..*).
+'roverml::Length' (role 'roverml_Length33', cardinality 0..*) is associated with 'roverml::Position' (role 'roverml_Position', cardinality 0..*).
+'roverml::Rover' (role 'roverml_Rover14', cardinality 0..*) is associated with 'roverml::Component' (role 'roverml_Component', cardinality 0..*).
+'roverml::Move' (role 'roverml_Move', cardinality 0..*) is associated with 'roverml::Velocity' (role 'roverml_Velocity', cardinality 0..*).
+'roverml::Wait' (role 'roverml_Wait', cardinality 0..*) is associated with 'roverml::Time' (role 'roverml_Time', cardinality 0..*).
+'roverml::RoverSystem' (role 'roverml_RoverSystem30', cardinality 0..*) is associated with 'roverml::RoverProgram' (role 'roverml_RoverProgram31', cardinality 0..*).
+'roverml::Transition' (role 'roverml_Transition6', cardinality 0..*) is associated with 'roverml::Command' (role 'roverml_Command5', cardinality 0..*).
+'roverml::RoverSystem' (role 'roverml_RoverSystem', cardinality 0..*) is associated with 'roverml::Rover' (role 'roverml_Rover28', cardinality 0..*).
+'roverml::Light' (role 'roverml_Light', cardinality 0..*) is associated with 'roverml::SetLightColor' (role 'roverml_SetLightColor', cardinality 0..*).
+'roverml::Command' (role 'roverml_Command', cardinality 0..*) is associated with 'roverml::Transition' (role 'roverml_Transition', cardinality 0..*).

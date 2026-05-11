@@ -1,0 +1,56 @@
+The model has 28 class(es).
+The class 'Element' has no attributes.
+The class 'Action' has no attributes.
+The class 'House2::LessThanCondition' has the following attributes: 'threshold' of type float.
+The class 'House2::Boiler' has the following attributes: 'isOn' of type bool.
+The class 'House2::Condition' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'House2::RollerBlind' has the following attributes: 'isUp' of type bool.
+The class 'Condition' has no attributes.
+The class 'House2::Room' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'House2::Action' has no attributes.
+The class 'House2::House' has no attributes.
+The class 'Container' has no attributes.
+The class 'House2::RainSensor' has the following attributes: 'active' of type bool.
+The class 'House2::NamedElement' has the following attributes: 'name' of type str.
+The class 'Actor' has no attributes.
+The class 'House2::TemperatureSensor' has the following attributes: 'temp' of type float.
+The class 'House2::GreaterThanCondition' has the following attributes: 'threshold' of type float.
+The class 'House2::EqualCondition' has the following attributes: 'boolcond' of type bool; 'valuecond' of type float.
+The class 'House2::Sensor' has no attributes.
+The class 'House2::Lamp' has the following attributes: 'isOn' of type bool.
+The class 'House2::TwilightSwitch' has the following attributes: 'active' of type bool.
+The class 'House2::ValueAction' has the following attributes: 'switchToValue' of type float.
+The class 'House2::BooleanAction' has the following attributes: 'switchTo' of type bool.
+The class 'House2::Container' has no attributes.
+The class 'House2::ControlRule' has no attributes.
+The class 'House2::Element' has no attributes.
+The class 'House2::Actor' has no attributes.
+'House2::ValueAction' is a specialization of 'Action'.
+'House2::BooleanAction' is a specialization of 'Action'.
+'House2::GreaterThanCondition' is a specialization of 'Condition'.
+'House2::Sensor' is a specialization of 'NamedElement'.
+'House2::RainSensor' is a specialization of 'Sensor'.
+'House2::Lamp' is a specialization of 'Actor'.
+'House2::Boiler' is a specialization of 'Actor'.
+'House2::Container' is a specialization of 'NamedElement'.
+'House2::House' is a specialization of 'Element'.
+'House2::Element' is a specialization of 'NamedElement'.
+'House2::TwilightSwitch' is a specialization of 'Sensor'.
+'House2::LessThanCondition' is a specialization of 'Condition'.
+'House2::Actor' is a specialization of 'NamedElement'.
+'House2::House' is a specialization of 'Container'.
+'House2::TemperatureSensor' is a specialization of 'Sensor'.
+'House2::EqualCondition' is a specialization of 'Condition'.
+'House2::RollerBlind' is a specialization of 'Actor'.
+'House2::Room' is a specialization of 'Container'.
+'House2::Sensor' (role 'House2_Sensor14', cardinality 0..*) is associated with 'House2::Condition' (role 'House2_Condition13', cardinality 0..*).
+'House2::Container' (role 'House2_Container', cardinality 0..*) is associated with 'House2::Element' (role 'House2_Element', cardinality 0..*).
+'House2::House' (role 'House2_House2', cardinality 0..*) is associated with 'House2::ControlRule' (role 'House2_ControlRule', cardinality 0..*).
+'House2::Container' (role 'House2_Container5', cardinality 0..*) is associated with 'House2::Sensor' (role 'House2_Sensor', cardinality 0..*).
+'House2::Actor' (role 'House2_Actor17', cardinality 0..*) is associated with 'House2::Action' (role 'House2_Action16', cardinality 0..*).
+'House2::House' (role 'House2_House', cardinality 0..*) is associated with 'House2::Room' (role 'House2_Room', cardinality 0..*).
+'House2::Container' (role 'House2_Container7', cardinality 0..*) is associated with 'House2::Actor' (role 'House2_Actor', cardinality 0..*).
+'House2::ControlRule' (role 'House2_ControlRule9', cardinality 0..*) is associated with 'House2::Condition' (role 'House2_Condition', cardinality 0..*).
+'House2::ControlRule' (role 'House2_ControlRule11', cardinality 0..*) is associated with 'House2::Action' (role 'House2_Action', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'epo2::GlobalLocation' has the following attributes: 'countryCode' of type int.
+The class 'GlobalLocation' has no attributes.
+The class 'epo2::USAddress' has the following attributes: 'zip' of type int; 'city' of type str; 'street' of type str; 'state' of type str.
+The class 'epo2::Customer' has the following attributes: 'customerID' of type int.
+The class 'epo2::Item' has the following attributes: 'productName' of type str; 'comment' of type str; 'USPrice' of type int; 'shipDate' of type str; 'partNum' of type str; 'quantity' of type int.
+The class 'Address' has no attributes.
+The class 'epo2::GlobalAddress' has the following attributes: 'location' of type str.
+The class 'epo2::Supplier' has the following attributes: 'name' of type str.
+The class 'epo2::PurchaseOrder' has the following attributes: 'comment' of type str; 'totalAmount' of type int; 'orderDate' of type str; 'status' of type str.
+The class 'epo2::Address' has the following attributes: 'country' of type str; 'name' of type str.
+The enumeration 'OrderStatus' has the following literals: 'Pending', 'Complete', 'BackOrder'.
+'epo2::USAddress' is a specialization of 'Address'.
+'epo2::GlobalAddress' is a specialization of 'GlobalLocation'.
+'epo2::GlobalAddress' is a specialization of 'Address'.
+'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder19', cardinality 0..*) is associated with 'epo2::Supplier' (role 'epo2_Supplier18', cardinality 0..*).
+'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder7', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder9', cardinality 0..*).
+'epo2::Supplier' (role 'epo2_Supplier15', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder16', cardinality 0..*).
+'epo2::Address' (role 'epo2_Address', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder', cardinality 0..*).
+'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder13', cardinality 0..*) is associated with 'epo2::Supplier' (role 'epo2_Supplier12', cardinality 0..*).
+'epo2::PurchaseOrder' (role 'order', cardinality 0..*) is associated with 'epo2::Item' (role 'Item', cardinality 0..*).
+'epo2::Customer' (role 'customer', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'PurchaseOrder21', cardinality 0..*).
+'epo2::Customer' (role 'Customer', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'orders', cardinality 0..*).
+'epo2::Supplier' (role 'epo2_Supplier', cardinality 0..*) is associated with 'epo2::Customer' (role 'epo2_Customer', cardinality 0..*).
+'epo2::Item' (role 'items', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'PurchaseOrder', cardinality 0..*).
+'epo2::Address' (role 'epo2_Address5', cardinality 0..*) is associated with 'epo2::PurchaseOrder' (role 'epo2_PurchaseOrder4', cardinality 0..*).

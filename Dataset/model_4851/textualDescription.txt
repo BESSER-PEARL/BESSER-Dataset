@@ -1,0 +1,44 @@
+The model has 21 class(es).
+The class 'aml::SpeedFeature' has the following attributes: 'value' of type float; 'name' of type str.
+The class 'aml::FormFeature' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'aml::SizeFeature' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'AbstractElements' has no attributes.
+The class 'aml::ProductPUIDFeature' has the following attributes: 'values' of type int; 'name' of type str.
+The class 'aml::Aml' has no attributes.
+The class 'aml::Feature' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'aml::MaxFeature' has the following attributes: 'value' of type int; 'name' of type str.
+The class 'aml::SuperEntity' has no attributes.
+The class 'aml::TypeFeature' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'aml::MinMax' has no attributes.
+The class 'aml::AbstractElements' has the following attributes: 'name' of type str.
+The class 'aml::TargetGroupFeature' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'aml::NetWorkFeature' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'aml::LengthFeature' has the following attributes: 'name' of type str; 'value' of type float.
+The class 'aml::Entity' has no attributes.
+The class 'aml::PriceRule' has no attributes.
+The class 'SuperEntity' has no attributes.
+The class 'aml::ColorFeature' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'aml::Drive' has no attributes.
+The class 'aml::Cable' has no attributes.
+The enumeration 'Color' has the following literals: 'Red', 'Black', 'White', 'Green', 'Grey'.
+'aml::Cable' is a specialization of 'SuperEntity'.
+'aml::SuperEntity' is a specialization of 'AbstractElements'.
+'aml::PriceRule' is a specialization of 'AbstractElements'.
+'aml::Drive' is a specialization of 'SuperEntity'.
+'aml::Entity' is a specialization of 'AbstractElements'.
+'aml::MinMax' is a specialization of 'AbstractElements'.
+'aml::Entity' (role 'aml_Entity', cardinality 0..*) is associated with 'aml::SuperEntity' (role 'aml_SuperEntity', cardinality 0..*).
+'aml::Drive' (role 'aml_Drive10', cardinality 0..*) is associated with 'aml::SpeedFeature' (role 'aml_SpeedFeature', cardinality 0..*).
+'aml::MinMax' (role 'aml_MinMax19', cardinality 0..*) is associated with 'aml::PriceRule' (role 'aml_PriceRule', cardinality 0..*).
+'aml::NetWorkFeature' (role 'aml_NetWorkFeature', cardinality 0..*) is associated with 'aml::Cable' (role 'aml_Cable15', cardinality 0..*).
+'aml::Feature' (role 'aml_Feature25', cardinality 0..*) is associated with 'aml::Entity' (role 'aml_Entity24', cardinality 0..*).
+'aml::MinMax' (role 'aml_MinMax', cardinality 0..*) is associated with 'aml::TargetGroupFeature' (role 'aml_TargetGroupFeature', cardinality 0..*).
+'aml::Feature' (role 'aml_Feature', cardinality 0..*) is associated with 'aml::PriceRule' (role 'aml_PriceRule21', cardinality 0..*).
+'aml::Drive' (role 'aml_Drive', cardinality 0..*) is associated with 'aml::TypeFeature' (role 'aml_TypeFeature', cardinality 0..*).
+'aml::ColorFeature' (role 'aml_ColorFeature', cardinality 0..*) is associated with 'aml::Cable' (role 'aml_Cable', cardinality 0..*).
+'aml::Drive' (role 'aml_Drive12', cardinality 0..*) is associated with 'aml::FormFeature' (role 'aml_FormFeature', cardinality 0..*).
+'aml::MinMax' (role 'aml_MinMax3', cardinality 0..*) is associated with 'aml::ProductPUIDFeature' (role 'aml_ProductPUIDFeature', cardinality 0..*).
+'aml::Cable' (role 'aml_Cable17', cardinality 0..*) is associated with 'aml::LengthFeature' (role 'aml_LengthFeature', cardinality 0..*).
+'aml::Aml' (role 'aml_Aml', cardinality 0..*) is associated with 'aml::AbstractElements' (role 'aml_AbstractElements', cardinality 0..*).
+'aml::Drive' (role 'aml_Drive8', cardinality 0..*) is associated with 'aml::SizeFeature' (role 'aml_SizeFeature', cardinality 0..*).
+'aml::MinMax' (role 'aml_MinMax5', cardinality 0..*) is associated with 'aml::MaxFeature' (role 'aml_MaxFeature', cardinality 0..*).

@@ -1,0 +1,53 @@
+The model has 17 class(es).
+The class 'WebApp::NamedElement' has the following attributes: 'Name' of type str.
+The class 'WebApp::FormElements' has no attributes.
+The class 'WebApp::Views' has no attributes.
+The class 'WebApp::Forms' has no attributes.
+The class 'WebApp::ActionMapping' has no attributes.
+The class 'WebApp::DynamicApplication' has no attributes.
+The class 'WebApp::IdElement' has the following attributes: 'Id' of type str.
+The class 'WebApp::Action' has no attributes.
+The class 'WebApp::Tables' has no attributes.
+The class 'WebApp::Entities' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'IdElement' has no attributes.
+The class 'WebApp::Controller' has no attributes.
+The class 'WebApp::Attribute' has the following attributes: 'value' of type str.
+The class 'WebApp::Dummies' has no attributes.
+The class 'WebApp::Pages' has no attributes.
+The class 'WebApp::styleElements' has no attributes.
+'WebApp::Tables' is a specialization of 'IdElement'.
+'WebApp::DynamicApplication' is a specialization of 'NamedElement'.
+'WebApp::Views' is a specialization of 'IdElement'.
+'WebApp::Forms' is a specialization of 'IdElement'.
+'WebApp::Controller' is a specialization of 'NamedElement'.
+'WebApp::Entities' is a specialization of 'NamedElement'.
+'WebApp::Pages' is a specialization of 'NamedElement'.
+'WebApp::styleElements' is a specialization of 'NamedElement'.
+'WebApp::FormElements' is a specialization of 'NamedElement'.
+'WebApp::Tables' is a specialization of 'NamedElement'.
+'WebApp::FormElements' is a specialization of 'IdElement'.
+'WebApp::Attribute' is a specialization of 'NamedElement'.
+'WebApp::styleElements' is a specialization of 'IdElement'.
+'WebApp::Views' is a specialization of 'NamedElement'.
+'WebApp::Action' is a specialization of 'NamedElement'.
+'WebApp::Forms' is a specialization of 'NamedElement'.
+'WebApp::Dummies' is a specialization of 'NamedElement'.
+'WebApp::Controller' (role 'WebApp_Controller', cardinality 0..*) is associated with 'WebApp::Action' (role 'WebApp_Action12', cardinality 0..*).
+'WebApp::ActionMapping' (role 'WebApp_ActionMapping', cardinality 0..*) is associated with 'WebApp::Action' (role 'WebApp_Action14', cardinality 0..*).
+'WebApp::Entities' (role 'WebApp_Entities21', cardinality 0..*) is associated with 'WebApp::Views' (role 'WebApp_Views22', cardinality 0..*).
+'WebApp::Pages' (role 'WebApp_Pages34', cardinality 0..*) is associated with 'WebApp::DynamicApplication' (role 'WebApp_DynamicApplication', cardinality 0..*).
+'WebApp::Dummies' (role 'WebApp_Dummies39', cardinality 0..*) is associated with 'WebApp::Attribute' (role 'WebApp_Attribute40', cardinality 0..*).
+'WebApp::Forms' (role 'WebApp_Forms', cardinality 0..*) is associated with 'WebApp::Views' (role 'WebApp_Views6', cardinality 0..*).
+'WebApp::Entities' (role 'WebApp_Entities29', cardinality 0..*) is associated with 'WebApp::Attribute' (role 'WebApp_Attribute', cardinality 0..*).
+'WebApp::Action' (role 'WebApp_Action16', cardinality 0..*) is associated with 'WebApp::Entities' (role 'WebApp_Entities', cardinality 0..*).
+'WebApp::styleElements' (role 'WebApp_styleElements', cardinality 0..*) is associated with 'WebApp::Views' (role 'WebApp_Views8', cardinality 0..*).
+'WebApp::Views' (role 'WebApp_Views', cardinality 0..*) is associated with 'WebApp::Pages' (role 'WebApp_Pages2', cardinality 0..*).
+'WebApp::Entities' (role 'WebApp_Entities37', cardinality 0..*) is associated with 'WebApp::DynamicApplication' (role 'WebApp_DynamicApplication36', cardinality 0..*).
+'WebApp::Pages' (role 'WebApp_Pages', cardinality 0..*) is associated with 'WebApp::Action' (role 'WebApp_Action', cardinality 0..*).
+'WebApp::Entities' (role 'WebApp_Entities25', cardinality 0..*) is associated with 'WebApp::Entities' (role 'WebApp_Entities23', cardinality 0..*).
+'WebApp::Tables' (role 'WebApp_Tables31', cardinality 0..*) is associated with 'WebApp::styleElements' (role 'WebApp_styleElements32', cardinality 0..*).
+'WebApp::ActionMapping' (role 'WebApp_ActionMapping18', cardinality 0..*) is associated with 'WebApp::Controller' (role 'WebApp_Controller19', cardinality 0..*).
+'WebApp::Forms' (role 'WebApp_Forms10', cardinality 0..*) is associated with 'WebApp::FormElements' (role 'WebApp_FormElements', cardinality 0..*).
+'WebApp::Entities' (role 'WebApp_Entities27', cardinality 0..*) is associated with 'WebApp::Dummies' (role 'WebApp_Dummies', cardinality 0..*).
+'WebApp::Tables' (role 'WebApp_Tables', cardinality 0..*) is associated with 'WebApp::Views' (role 'WebApp_Views4', cardinality 0..*).

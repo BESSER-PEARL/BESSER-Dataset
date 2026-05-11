@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'positionmm::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'positionmm::Counter' has the following attributes: 'script' of type str; 'position' of type int.
+The enumeration 'TypeScript' has the following literals: 'PostrmScript', 'PreinstScript', 'PostinstScript', 'PrermScript'.
+'positionmm::Counter' is a specialization of 'NamedElement'.

@@ -1,0 +1,33 @@
+The model has 12 class(es).
+The class 'Expression' has no attributes.
+The class 'mathCompiler::Plus' has no attributes.
+The class 'mathCompiler::Let' has the following attributes: 'id' of type str.
+The class 'mathCompiler::Num' has the following attributes: 'value' of type int.
+The class 'mathCompiler::Div' has no attributes.
+The class 'mathCompiler::Var' has the following attributes: 'id' of type str.
+The class 'mathCompiler::External' has the following attributes: 'exponent' of type int; 'base' of type int.
+The class 'mathCompiler::MathExp' has the following attributes: 'line' of type str.
+The class 'mathCompiler::Expression' has no attributes.
+The class 'mathCompiler::Minus' has no attributes.
+The class 'mathCompiler::Mult' has no attributes.
+The class 'mathCompiler::Expressions' has no attributes.
+'mathCompiler::Mult' is a specialization of 'Expression'.
+'mathCompiler::Let' is a specialization of 'Expression'.
+'mathCompiler::External' is a specialization of 'Expression'.
+'mathCompiler::Num' is a specialization of 'Expression'.
+'mathCompiler::Div' is a specialization of 'Expression'.
+'mathCompiler::Var' is a specialization of 'Expression'.
+'mathCompiler::Minus' is a specialization of 'Expression'.
+'mathCompiler::Plus' is a specialization of 'Expression'.
+'mathCompiler::Minus' (role 'mathCompiler_Minus', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression9', cardinality 0..*).
+'mathCompiler::Expression' (role 'mathCompiler_Expression19', cardinality 0..*) is associated with 'mathCompiler::Div' (role 'mathCompiler_Div', cardinality 0..*).
+'mathCompiler::Expression' (role 'mathCompiler_Expression7', cardinality 0..*) is associated with 'mathCompiler::Plus' (role 'mathCompiler_Plus6', cardinality 0..*).
+'mathCompiler::Let' (role 'mathCompiler_Let26', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression27', cardinality 0..*).
+'mathCompiler::Mult' (role 'mathCompiler_Mult16', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression17', cardinality 0..*).
+'mathCompiler::Mult' (role 'mathCompiler_Mult', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression14', cardinality 0..*).
+'mathCompiler::Expression' (role 'mathCompiler_Expression4', cardinality 0..*) is associated with 'mathCompiler::Plus' (role 'mathCompiler_Plus', cardinality 0..*).
+'mathCompiler::Expression' (role 'mathCompiler_Expression12', cardinality 0..*) is associated with 'mathCompiler::Minus' (role 'mathCompiler_Minus11', cardinality 0..*).
+'mathCompiler::MathExp' (role 'mathCompiler_MathExp2', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression', cardinality 0..*).
+'mathCompiler::MathExp' (role 'mathCompiler_MathExp', cardinality 0..*) is associated with 'mathCompiler::Expressions' (role 'mathCompiler_Expressions', cardinality 0..*).
+'mathCompiler::Let' (role 'mathCompiler_Let', cardinality 0..*) is associated with 'mathCompiler::Expression' (role 'mathCompiler_Expression24', cardinality 0..*).
+'mathCompiler::Expression' (role 'mathCompiler_Expression22', cardinality 0..*) is associated with 'mathCompiler::Div' (role 'mathCompiler_Div21', cardinality 0..*).

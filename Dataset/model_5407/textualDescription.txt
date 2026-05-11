@@ -1,0 +1,30 @@
+The model has 16 class(es).
+The class 'faultTree::Gate' has no attributes.
+The class 'faultTree::BasicEvent' has no attributes.
+The class 'faultTree::ExternalEvent' has no attributes.
+The class 'faultTree::OR::Gate' has no attributes.
+The class 'faultTree::IntermediateEvent' has no attributes.
+The class 'faultTree::Event' has the following attributes: 'description' of type str; 'title' of type str.
+The class 'faultTree::FTElement' has no attributes.
+The class 'Gate' has no attributes.
+The class 'FTElement' has no attributes.
+The class 'faultTree::UndevelopedEvent' has no attributes.
+The class 'ProbabalisticEvent' has no attributes.
+The class 'faultTree::FaultTree' has no attributes.
+The class 'faultTree::AND::Gate' has no attributes.
+The class 'Event' has no attributes.
+The class 'faultTree::Connector' has no attributes.
+The class 'faultTree::ProbabalisticEvent' has the following attributes: 'probability' of type float.
+'faultTree::FaultTree' is a specialization of 'FTElement'.
+'faultTree::ExternalEvent' is a specialization of 'ProbabalisticEvent'.
+'faultTree::AND::Gate' is a specialization of 'Gate'.
+'faultTree::ProbabalisticEvent' is a specialization of 'Event'.
+'faultTree::Gate' is a specialization of 'FTElement'.
+'faultTree::Connector' is a specialization of 'FTElement'.
+'faultTree::IntermediateEvent' is a specialization of 'Event'.
+'faultTree::OR::Gate' is a specialization of 'Gate'.
+'faultTree::BasicEvent' is a specialization of 'ProbabalisticEvent'.
+'faultTree::Event' is a specialization of 'FTElement'.
+'faultTree::UndevelopedEvent' is a specialization of 'ProbabalisticEvent'.
+'faultTree::FTElement' (role 'faultTree_FTElement3', cardinality 0..*) is associated with 'faultTree::Connector' (role 'faultTree_Connector2', cardinality 0..*).
+'faultTree::Connector' (role 'faultTree_Connector', cardinality 0..*) is associated with 'faultTree::FTElement' (role 'faultTree_FTElement', cardinality 0..*).

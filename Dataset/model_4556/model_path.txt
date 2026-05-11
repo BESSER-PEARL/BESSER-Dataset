@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/DR0ZZA/DSLs/Logo - Xtext/org.xtext.example.mydsl/model/generated/MyDsl.ecore

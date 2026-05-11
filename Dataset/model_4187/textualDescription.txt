@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'mDSL::Model' has no attributes.
+The class 'mDSL::Greeting' has the following attributes: 'name' of type str.
+'mDSL::Model' (role 'mDSL_Model', cardinality 0..*) is associated with 'mDSL::Greeting' (role 'mDSL_Greeting', cardinality 0..*).

@@ -1,0 +1,101 @@
+The model has 40 class(es).
+The class 'imp::Project' has the following attributes: 'ismethodcall' of type bool.
+The class 'imp::StringToValueMap' has the following attributes: 'key' of type str.
+The class 'imp::Member' has no attributes.
+The class 'imp::Block' has no attributes.
+The class 'imp::Expr' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'imp::This' has no attributes.
+The class 'imp::IntConst' has the following attributes: 'value' of type int.
+The class 'imp::IntValue' has the following attributes: 'value' of type int.
+The class 'Expr' has no attributes.
+The class 'imp::While' has no attributes.
+The class 'imp::Declaration' has the following attributes: 'name' of type str.
+The class 'imp::Symbol' has no attributes.
+The class 'imp::Stmt' has no attributes.
+The class 'imp::BoolConst' has the following attributes: 'value' of type bool.
+The class 'Member' has no attributes.
+The class 'imp::BoolValue' has the following attributes: 'value' of type bool.
+The class 'imp::NewClass' has no attributes.
+The class 'imp::ArrayDecl' has no attributes.
+The class 'imp::If' has no attributes.
+The class 'imp::AttributeDecl' has the following attributes: 'name' of type str.
+The class 'imp::Value' has no attributes.
+The class 'imp::Unary' has the following attributes: 'op' of type str.
+The class 'Value' has no attributes.
+The class 'imp::Program' has no attributes.
+The class 'imp::VarRef' has no attributes.
+The class 'imp::Class' has the following attributes: 'name' of type str.
+The class 'imp::Print' has no attributes.
+The class 'imp::ArrayValue' has no attributes.
+The class 'imp::Assignment' has no attributes.
+The class 'imp::Binary' has the following attributes: 'op' of type str.
+The class 'imp::StringConst' has the following attributes: 'value' of type str.
+The class 'imp::Return' has no attributes.
+The class 'Symbol' has no attributes.
+The class 'imp::NamedElement' has no attributes.
+The class 'imp::Store' has no attributes.
+The class 'imp::ParamDecl' has the following attributes: 'name' of type str.
+The class 'imp::MethodDecl' has the following attributes: 'name' of type str.
+The class 'imp::StringValue' has the following attributes: 'value' of type str.
+The class 'Stmt' has no attributes.
+The enumeration 'BinaryOp' has the following literals: 'LT', 'GEQ', 'ADD', 'OR', 'LEQ', 'SUB', 'MUL', 'GT', 'EQ', 'AND'.
+The enumeration 'UnaryOp' has the following literals: 'NOT', 'NEGATE'.
+'imp::Project' is a specialization of 'Expr'.
+'imp::AttributeDecl' is a specialization of 'Member'.
+'imp::NewClass' is a specialization of 'Expr'.
+'imp::Block' is a specialization of 'Stmt'.
+'imp::IntValue' is a specialization of 'Value'.
+'imp::IntConst' is a specialization of 'Expr'.
+'imp::VarRef' is a specialization of 'Expr'.
+'imp::Declaration' is a specialization of 'Symbol'.
+'imp::While' is a specialization of 'Stmt'.
+'imp::StringValue' is a specialization of 'Value'.
+'imp::Return' is a specialization of 'Stmt'.
+'imp::Expr' is a specialization of 'Stmt'.
+'imp::ArrayDecl' is a specialization of 'Expr'.
+'imp::This' is a specialization of 'Expr'.
+'imp::Print' is a specialization of 'Stmt'.
+'imp::Class' is a specialization of 'NamedElement'.
+'imp::Assignment' is a specialization of 'Stmt'.
+'imp::ParamDecl' is a specialization of 'Symbol'.
+'imp::If' is a specialization of 'Stmt'.
+'imp::Symbol' is a specialization of 'NamedElement'.
+'imp::Unary' is a specialization of 'Expr'.
+'imp::Binary' is a specialization of 'Expr'.
+'imp::MethodDecl' is a specialization of 'Member'.
+'imp::BoolValue' is a specialization of 'Value'.
+'imp::ArrayValue' is a specialization of 'Value'.
+'imp::Declaration' is a specialization of 'Stmt'.
+'imp::BoolConst' is a specialization of 'Expr'.
+'imp::StringConst' is a specialization of 'Expr'.
+'imp::Class' (role 'imp_Class50', cardinality 0..*) is associated with 'imp::NewClass' (role 'imp_NewClass', cardinality 0..*).
+'imp::Binary' (role 'imp_Binary', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr21', cardinality 0..*).
+'imp::If' (role 'imp_If', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr6', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr41', cardinality 0..*) is associated with 'imp::Return' (role 'imp_Return', cardinality 0..*).
+'imp::ArrayValue' (role 'imp_ArrayValue', cardinality 0..*) is associated with 'imp::Value' (role 'imp_Value29', cardinality 0..*).
+'imp::Stmt' (role 'imp_Stmt', cardinality 0..*) is associated with 'imp::Block' (role 'imp_Block', cardinality 0..*).
+'imp::MethodDecl' (role 'imp_MethodDecl36', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt37', cardinality 0..*).
+'imp::If' (role 'imp_If11', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt12', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr43', cardinality 0..*) is associated with 'imp::Print' (role 'imp_Print', cardinality 0..*).
+'imp::Member' (role 'imp_Member', cardinality 0..*) is associated with 'imp::Project' (role 'imp_Project59', cardinality 0..*).
+'imp::ArrayDecl' (role 'imp_ArrayDecl', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr31', cardinality 0..*).
+'imp::Project' (role 'imp_Project61', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr62', cardinality 0..*).
+'imp::While' (role 'imp_While16', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt17', cardinality 0..*).
+'imp::Class' (role 'imp_Class47', cardinality 0..*) is associated with 'imp::MethodDecl' (role 'imp_MethodDecl48', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr3', cardinality 0..*) is associated with 'imp::Declaration' (role 'imp_Declaration2', cardinality 0..*).
+'imp::If' (role 'imp_If8', cardinality 0..*) is associated with 'imp::Stmt' (role 'imp_Stmt9', cardinality 0..*).
+'imp::Program' (role 'imp_Program34', cardinality 0..*) is associated with 'imp::Class' (role 'imp_Class', cardinality 0..*).
+'imp::Program' (role 'imp_Program', cardinality 0..*) is associated with 'imp::MethodDecl' (role 'imp_MethodDecl', cardinality 0..*).
+'imp::Store' (role 'imp_Store', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap', cardinality 0..*).
+'imp::Unary' (role 'imp_Unary', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr19', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr14', cardinality 0..*) is associated with 'imp::While' (role 'imp_While', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr24', cardinality 0..*) is associated with 'imp::Binary' (role 'imp_Binary23', cardinality 0..*).
+'imp::Value' (role 'imp_Value', cardinality 0..*) is associated with 'imp::StringToValueMap' (role 'imp_StringToValueMap27', cardinality 0..*).
+'imp::MethodDecl' (role 'imp_MethodDecl39', cardinality 0..*) is associated with 'imp::ParamDecl' (role 'imp_ParamDecl', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr52', cardinality 0..*) is associated with 'imp::Assignment' (role 'imp_Assignment', cardinality 0..*).
+'imp::Assignment' (role 'imp_Assignment54', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr55', cardinality 0..*).
+'imp::Expr' (role 'imp_Expr57', cardinality 0..*) is associated with 'imp::Project' (role 'imp_Project', cardinality 0..*).
+'imp::Declaration' (role 'imp_Declaration', cardinality 0..*) is associated with 'imp::Expr' (role 'imp_Expr', cardinality 0..*).
+'imp::Symbol' (role 'imp_Symbol', cardinality 0..*) is associated with 'imp::VarRef' (role 'imp_VarRef', cardinality 0..*).
+'imp::Class' (role 'imp_Class45', cardinality 0..*) is associated with 'imp::AttributeDecl' (role 'imp_AttributeDecl', cardinality 0..*).

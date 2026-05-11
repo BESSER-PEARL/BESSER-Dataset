@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'notation::LayoutConstraint' has no attributes.
+The class 'LayoutConstraint' has no attributes.
+The class 'notation::Diagram' has the following attributes: 'name' of type str.
+The class 'notation::MindMapNode' has the following attributes: 'expanded' of type bool; 'side' of type int; 'hasChildren' of type bool.
+The class 'notation::Location' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'Node' has no attributes.
+The class 'notation::NotationElement' has the following attributes: 'id' of type str; 'idBeforeRemoval' of type str.
+The class 'NotationElement' has no attributes.
+The class 'notation::EObject' has no attributes.
+The class 'View' has no attributes.
+The class 'notation::Node' has no attributes.
+The class 'Location' has no attributes.
+The class 'notation::Edge' has no attributes.
+The class 'notation::View' has the following attributes: 'viewDetails' of type str; 'viewType' of type str.
+The class 'notation::Note' has the following attributes: 'text' of type str.
+The class 'notation::Bounds' has the following attributes: 'height' of type int; 'width' of type int.
+'notation::Note' is a specialization of 'Node'.
+'notation::Edge' is a specialization of 'View'.
+'notation::View' is a specialization of 'NotationElement'.
+'notation::Bounds' is a specialization of 'Location'.
+'notation::Diagram' is a specialization of 'View'.
+'notation::MindMapNode' is a specialization of 'Node'.
+'notation::Location' is a specialization of 'NotationElement'.
+'notation::Location' is a specialization of 'LayoutConstraint'.
+'notation::Node' is a specialization of 'View'.
+'notation::Node' (role 'notation_Node7', cardinality 0..*) is associated with 'notation::Bounds' (role 'notation_Bounds', cardinality 0..*).
+'notation::Edge' (role 'sourceEdges', cardinality 0..*) is associated with 'notation::View' (role 'View', cardinality 0..*).
+'notation::View' (role 'notation_View2', cardinality 0..*) is associated with 'notation::EObject' (role 'notation_EObject', cardinality 0..*).
+'notation::Edge' (role 'Edge', cardinality 0..*) is associated with 'notation::View' (role 'source', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge', cardinality 0..*) is associated with 'notation::Diagram' (role 'notation_Diagram', cardinality 0..*).
+'notation::View' (role 'View10', cardinality 0..*) is associated with 'notation::Edge' (role 'targetEdges', cardinality 0..*).
+'notation::Edge' (role 'Edge5', cardinality 0..*) is associated with 'notation::View' (role 'target', cardinality 0..*).
+'notation::Node' (role 'notation_Node', cardinality 0..*) is associated with 'notation::View' (role 'notation_View', cardinality 0..*).

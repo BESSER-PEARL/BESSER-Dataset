@@ -1,0 +1,207 @@
+The model has 85 class(es).
+The class 'qm::FactorAggregation' has no attributes.
+The class 'qm::Measure' has the following attributes: 'type' of type str.
+The class 'qm::ManualInstrument' has no attributes.
+The class 'qm::MeasureRanking' has no attributes.
+The class 'Instrument' has no attributes.
+The class 'qm::Specialization' has no attributes.
+The class 'qm::LinearFunction' has the following attributes: 'upperBound' of type float; 'lowerBound' of type float.
+The class 'qm::FormBasedEvaluation' has no attributes.
+The class 'qm::QIESLEvaluation' has no attributes.
+The class 'qm::NumberMeasurementResult' has no attributes.
+The class 'DescribedElement' has no attributes.
+The class 'qm::NamedElement' has the following attributes: 'title' of type str; 'name' of type str.
+The class 'qm::QIESLAggregation' has no attributes.
+The class 'qm::AnnotationBase' has no attributes.
+The class 'qm::Function' has no attributes.
+The class 'FormBasedEvaluation' has no attributes.
+The class 'MeasureEvaluation' has no attributes.
+The class 'CharacterizingElement' has no attributes.
+The class 'MeasurementMethod' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Measure' has no attributes.
+The class 'qm::NumberMeanMeasureAggregation' has no attributes.
+The class 'qm::TextEvaluation' has the following attributes: 'specification' of type str.
+The class 'qm::CharacterizingElement' has no attributes.
+The class 'qm::TaggedElement' has no attributes.
+The class 'FactorAggregation' has no attributes.
+The class 'qm::DoubleInterval' has the following attributes: 'upper' of type float; 'lower' of type float.
+The class 'Evaluation' has no attributes.
+The class 'qm::EvaluationResult' has no attributes.
+The class 'qm::Entity' has the following attributes: 'stakeholder' of type bool; 'useCase' of type bool.
+The class 'qm::FactorRanking' has no attributes.
+The class 'qm::LinearDecreasingFunction' has no attributes.
+The class 'qm::WeightedSumFactorAggregation' has no attributes.
+The class 'qm::QualityModelElement' has the following attributes: 'qualifiedName' of type str.
+The class 'qm::Annotation' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'qm::Tool' has no attributes.
+The class 'qm::Impact' has the following attributes: 'effect' of type str; 'justification' of type str.
+The class 'qm::SingleMeasureEvaluationResult' has the following attributes: 'ratioAffected' of type float.
+The class 'qm::MeasureEvaluation' has the following attributes: 'range' of type str.
+The class 'qm::FindingsMeasurementResult' has the following attributes: 'findings' of type str; 'count' of type int.
+The class 'qm::FactorRefinement' has no attributes.
+The class 'qm::MeasureRankingEvaluationResult' has the following attributes: 'ratioAffected' of type float.
+The class 'MeasureAggregation' has no attributes.
+The class 'Function' has no attributes.
+The class 'qm::TextAggregation' has the following attributes: 'specification' of type str.
+The class 'qm::Instrument' has no attributes.
+The class 'qm::FindingsUnionMeasureAggregation' has no attributes.
+The class 'qm::QualityModel' has the following attributes: 'schoolGradeBoundary5' of type str; 'schoolGradeBoundary6' of type str; 'schoolGradeBoundary4' of type str; 'schoolGradeBoundary2' of type str; 'schoolGradeBoundary3' of type str.
+The class 'qm::DescribedElement' has the following attributes: 'description' of type str.
+The class 'TaggedElement' has no attributes.
+The class 'qm::Ranking' has the following attributes: 'weight' of type float; 'rank' of type int.
+The class 'qm::LinearIncreasingFunction' has no attributes.
+The class 'qm::MultiMeasureEvaluation' has no attributes.
+The class 'qm::Decomposition' has no attributes.
+The class 'qm::ManualEvaluation' has no attributes.
+The class 'qm::Evaluation' has the following attributes: 'completeness' of type int; 'maximumPoints' of type int.
+The class 'qm::FindingMessage' has the following attributes: 'message' of type str; 'location' of type str.
+The class 'TextEvaluation' has no attributes.
+The class 'qm::FormBasedMeasureAggregation' has no attributes.
+The class 'MultiMeasureEvaluation' has no attributes.
+The class 'qm::MeasurementMethod' has no attributes.
+The class 'qm::Measurement' has no attributes.
+The class 'Result' has no attributes.
+The class 'qm::QualityModelResult' has the following attributes: 'system' of type str; 'date' of type date.
+The class 'qm::MultiMeasureEvaluationResult' has no attributes.
+The class 'qm::Result' has the following attributes: 'message' of type str.
+The class 'qm::Factor' has no attributes.
+The class 'FormBasedMeasureAggregation' has no attributes.
+The class 'LinearFunction' has no attributes.
+The class 'QualityModelElement' has no attributes.
+The class 'qm::MeasureAggregation' has no attributes.
+The class 'AnnotatedElement' has no attributes.
+The class 'qm::Source' has no attributes.
+The class 'MeasurementResult' has no attributes.
+The class 'EvaluationResult' has no attributes.
+The class 'qm::SingleMeasureEvaluation' has no attributes.
+The class 'qm::MeasurementResult' has no attributes.
+The class 'Ranking' has no attributes.
+The class 'qm::ToolBasedInstrument' has the following attributes: 'metric' of type str.
+The class 'qm::Tag' has no attributes.
+The class 'qm::WeightedSumMultiMeasureEvaluation' has no attributes.
+The class 'qm::MeasureRefinement' has no attributes.
+The class 'qm::NormalizationMeasure' has no attributes.
+The class 'qm::AnnotatedElement' has no attributes.
+The class 'TextAggregation' has no attributes.
+The enumeration 'Type' has the following literals: 'NONE', 'FINDINGS', 'NUMBER'.
+The enumeration 'Effect' has the following literals: 'POSITIVE', 'NEGATIVE'.
+'qm::Decomposition' is a specialization of 'AnnotatedElement'.
+'qm::TaggedElement' is a specialization of 'QualityModelElement'.
+'qm::SingleMeasureEvaluation' is a specialization of 'FormBasedEvaluation'.
+'qm::Impact' is a specialization of 'AnnotatedElement'.
+'qm::MeasurementResult' is a specialization of 'Result'.
+'qm::CharacterizingElement' is a specialization of 'NamedElement'.
+'qm::Entity' is a specialization of 'NamedElement'.
+'qm::MeasurementMethod' is a specialization of 'AnnotatedElement'.
+'qm::FactorRanking' is a specialization of 'Ranking'.
+'qm::LinearFunction' is a specialization of 'Function'.
+'qm::AnnotatedElement' is a specialization of 'TaggedElement'.
+'qm::MeasureAggregation' is a specialization of 'NamedElement'.
+'qm::QIESLEvaluation' is a specialization of 'TextEvaluation'.
+'qm::MeasureAggregation' is a specialization of 'MeasurementMethod'.
+'qm::MultiMeasureEvaluationResult' is a specialization of 'EvaluationResult'.
+'qm::NumberMeanMeasureAggregation' is a specialization of 'FormBasedMeasureAggregation'.
+'qm::NamedElement' is a specialization of 'DescribedElement'.
+'qm::Tag' is a specialization of 'NamedElement'.
+'qm::Specialization' is a specialization of 'AnnotatedElement'.
+'qm::FormBasedMeasureAggregation' is a specialization of 'MeasureAggregation'.
+'qm::Instrument' is a specialization of 'MeasurementMethod'.
+'qm::WeightedSumMultiMeasureEvaluation' is a specialization of 'MultiMeasureEvaluation'.
+'qm::ManualEvaluation' is a specialization of 'Evaluation'.
+'qm::QIESLAggregation' is a specialization of 'TextAggregation'.
+'qm::MeasureRefinement' is a specialization of 'AnnotatedElement'.
+'qm::QualityModel' is a specialization of 'NamedElement'.
+'qm::MultiMeasureEvaluation' is a specialization of 'FormBasedEvaluation'.
+'qm::TextEvaluation' is a specialization of 'Evaluation'.
+'qm::NormalizationMeasure' is a specialization of 'Measure'.
+'qm::FactorRefinement' is a specialization of 'AnnotatedElement'.
+'qm::ManualInstrument' is a specialization of 'NamedElement'.
+'qm::SingleMeasureEvaluationResult' is a specialization of 'EvaluationResult'.
+'qm::Measurement' is a specialization of 'AnnotatedElement'.
+'qm::MeasureRanking' is a specialization of 'Ranking'.
+'qm::ManualInstrument' is a specialization of 'Instrument'.
+'qm::FormBasedEvaluation' is a specialization of 'Evaluation'.
+'qm::LinearDecreasingFunction' is a specialization of 'LinearFunction'.
+'qm::Factor' is a specialization of 'CharacterizingElement'.
+'qm::Evaluation' is a specialization of 'NamedElement'.
+'qm::ToolBasedInstrument' is a specialization of 'Instrument'.
+'qm::DescribedElement' is a specialization of 'AnnotatedElement'.
+'qm::EvaluationResult' is a specialization of 'Result'.
+'qm::FindingsUnionMeasureAggregation' is a specialization of 'FormBasedMeasureAggregation'.
+'qm::Tool' is a specialization of 'NamedElement'.
+'qm::FactorAggregation' is a specialization of 'FormBasedEvaluation'.
+'qm::TextAggregation' is a specialization of 'MeasureAggregation'.
+'qm::SingleMeasureEvaluation' is a specialization of 'MeasureEvaluation'.
+'qm::FindingsMeasurementResult' is a specialization of 'MeasurementResult'.
+'qm::NumberMeasurementResult' is a specialization of 'MeasurementResult'.
+'qm::LinearIncreasingFunction' is a specialization of 'LinearFunction'.
+'qm::Measure' is a specialization of 'CharacterizingElement'.
+'qm::MeasureRanking' is a specialization of 'MeasureEvaluation'.
+'qm::WeightedSumFactorAggregation' is a specialization of 'FactorAggregation'.
+'qm::Source' is a specialization of 'NamedElement'.
+'qm::QualityModel' (role 'qualityModel12', cardinality 0..*) is associated with 'qm::Tag' (role 'Tag', cardinality 0..*).
+'qm::QualityModelResult' (role 'qm_QualityModelResult', cardinality 0..*) is associated with 'qm::MeasurementResult' (role 'qm_MeasurementResult', cardinality 0..*).
+'qm::MeasurementMethod' (role 'qm_MeasurementMethod111', cardinality 0..*) is associated with 'qm::MeasurementResult' (role 'qm_MeasurementResult110', cardinality 0..*).
+'qm::MultiMeasureEvaluationResult' (role 'qm_MultiMeasureEvaluationResult', cardinality 0..*) is associated with 'qm::MeasureRankingEvaluationResult' (role 'qm_MeasureRankingEvaluationResult', cardinality 0..*).
+'qm::Decomposition' (role 'Decomposition', cardinality 0..*) is associated with 'qm::Entity' (role 'child29', cardinality 0..*).
+'qm::Tool' (role 'tools', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel94', cardinality 0..*).
+'qm::FindingMessage' (role 'qm_FindingMessage', cardinality 0..*) is associated with 'qm::FindingsMeasurementResult' (role 'qm_FindingsMeasurementResult', cardinality 0..*).
+'qm::Measure' (role 'qm_Measure78', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor79', cardinality 0..*).
+'qm::AnnotationBase' (role 'qm_AnnotationBase', cardinality 0..*) is associated with 'qm::AnnotatedElement' (role 'qm_AnnotatedElement21', cardinality 0..*).
+'qm::MeasurementMethod' (role 'MeasurementMethod', cardinality 0..*) is associated with 'qm::QualityModel' (role 'qualityModel8', cardinality 0..*).
+'qm::Entity' (role 'entities', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel34', cardinality 0..*).
+'qm::Tool' (role 'qm_Tool', cardinality 0..*) is associated with 'qm::ToolBasedInstrument' (role 'qm_ToolBasedInstrument', cardinality 0..*).
+'qm::MeasureEvaluation' (role 'qm_MeasureEvaluation', cardinality 0..*) is associated with 'qm::Measure' (role 'qm_Measure100', cardinality 0..*).
+'qm::MeasurementMethod' (role 'qm_MeasurementMethod', cardinality 0..*) is associated with 'qm::Measure' (role 'qm_Measure89', cardinality 0..*).
+'qm::Entity' (role 'Entity', cardinality 0..*) is associated with 'qm::QualityModel' (role 'qualityModel', cardinality 0..*).
+'qm::Specialization' (role 'qm_Specialization', cardinality 0..*) is associated with 'qm::Entity' (role 'qm_Entity36', cardinality 0..*).
+'qm::QualityModel' (role 'qm_QualityModel', cardinality 0..*) is associated with 'qm::QualityModel' (role 'qm_QualityModel15', cardinality 0..*).
+'qm::WeightedSumFactorAggregation' (role 'qm_WeightedSumFactorAggregation', cardinality 0..*) is associated with 'qm::FactorRanking' (role 'qm_FactorRanking98', cardinality 0..*).
+'qm::MeasureEvaluation' (role 'qm_MeasureEvaluation104', cardinality 0..*) is associated with 'qm::Function' (role 'qm_Function', cardinality 0..*).
+'qm::MeasureRankingEvaluationResult' (role 'qm_MeasureRankingEvaluationResult125', cardinality 0..*) is associated with 'qm::MeasureRanking' (role 'qm_MeasureRanking126', cardinality 0..*).
+'qm::MeasureRefinement' (role 'qm_MeasureRefinement', cardinality 0..*) is associated with 'qm::Measure' (role 'qm_Measure', cardinality 0..*).
+'qm::Measure' (role 'qm_Measure87', cardinality 0..*) is associated with 'qm::Measure' (role 'qm_Measure85', cardinality 0..*).
+'qm::QualityModelElement' (role 'qm_QualityModelElement', cardinality 0..*) is associated with 'qm::Source' (role 'qm_Source', cardinality 0..*).
+'qm::Entity' (role 'qm_Entity44', cardinality 0..*) is associated with 'qm::CharacterizingElement' (role 'qm_CharacterizingElement', cardinality 0..*).
+'qm::Measurement' (role 'measures', cardinality 0..*) is associated with 'qm::Measure' (role 'Measure70', cardinality 0..*).
+'qm::Measure' (role 'Measure74', cardinality 0..*) is associated with 'qm::MeasureRefinement' (role 'refines73', cardinality 0..*).
+'qm::Factor' (role 'source', cardinality 0..*) is associated with 'qm::Impact' (role 'Impact', cardinality 0..*).
+'qm::Evaluation' (role 'evaluations', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel62', cardinality 0..*).
+'qm::Impact' (role 'qm_Impact', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor58', cardinality 0..*).
+'qm::Factor' (role 'qm_Factor', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor46', cardinality 0..*).
+'qm::Measure' (role 'child84', cardinality 0..*) is associated with 'qm::MeasureRefinement' (role 'MeasureRefinement', cardinality 0..*).
+'qm::EvaluationResult' (role 'qm_EvaluationResult', cardinality 0..*) is associated with 'qm::QualityModelResult' (role 'qm_QualityModelResult108', cardinality 0..*).
+'qm::NormalizationMeasure' (role 'qm_NormalizationMeasure', cardinality 0..*) is associated with 'qm::MeasureEvaluation' (role 'qm_MeasureEvaluation102', cardinality 0..*).
+'qm::QualityModel' (role 'qualityModel10', cardinality 0..*) is associated with 'qm::Tool' (role 'Tool', cardinality 0..*).
+'qm::Entity' (role 'child', cardinality 0..*) is associated with 'qm::Specialization' (role 'Specialization', cardinality 0..*).
+'qm::Measure' (role 'measures81', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel82', cardinality 0..*).
+'qm::Factor' (role 'Factor', cardinality 0..*) is associated with 'qm::QualityModel' (role 'qualityModel2', cardinality 0..*).
+'qm::EvaluationResult' (role 'qm_EvaluationResult115', cardinality 0..*) is associated with 'qm::DoubleInterval' (role 'qm_DoubleInterval116', cardinality 0..*).
+'qm::Measure' (role 'child76', cardinality 0..*) is associated with 'qm::Measurement' (role 'Measurement', cardinality 0..*).
+'qm::Evaluation' (role 'qm_Evaluation119', cardinality 0..*) is associated with 'qm::EvaluationResult' (role 'qm_EvaluationResult118', cardinality 0..*).
+'qm::QualityModel' (role 'QualityModel54', cardinality 0..*) is associated with 'qm::Factor' (role 'factors', cardinality 0..*).
+'qm::QualityModel' (role 'QualityModel23', cardinality 0..*) is associated with 'qm::Tag' (role 'tags', cardinality 0..*).
+'qm::QualityModel' (role 'qualityModel14', cardinality 0..*) is associated with 'qm::Source' (role 'Source', cardinality 0..*).
+'qm::Factor' (role 'qm_Factor68', cardinality 0..*) is associated with 'qm::Measurement' (role 'qm_Measurement', cardinality 0..*).
+'qm::Measure' (role 'Measure', cardinality 0..*) is associated with 'qm::QualityModel' (role 'qualityModel6', cardinality 0..*).
+'qm::FactorRanking' (role 'qm_FactorRanking', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor96', cardinality 0..*).
+'qm::MeasureRanking' (role 'qm_MeasureRanking', cardinality 0..*) is associated with 'qm::WeightedSumMultiMeasureEvaluation' (role 'qm_WeightedSumMultiMeasureEvaluation', cardinality 0..*).
+'qm::Annotation' (role 'qm_Annotation', cardinality 0..*) is associated with 'qm::AnnotatedElement' (role 'qm_AnnotatedElement', cardinality 0..*).
+'qm::QualityModel' (role 'qualityModel4', cardinality 0..*) is associated with 'qm::Evaluation' (role 'Evaluation', cardinality 0..*).
+'qm::Impact' (role 'influences', cardinality 0..*) is associated with 'qm::Factor' (role 'Factor56', cardinality 0..*).
+'qm::DoubleInterval' (role 'qm_DoubleInterval123', cardinality 0..*) is associated with 'qm::MeasureRankingEvaluationResult' (role 'qm_MeasureRankingEvaluationResult122', cardinality 0..*).
+'qm::Source' (role 'sources', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel', cardinality 0..*).
+'qm::Factor' (role 'qm_Factor60', cardinality 0..*) is associated with 'qm::Evaluation' (role 'qm_Evaluation', cardinality 0..*).
+'qm::FactorRefinement' (role 'refines', cardinality 0..*) is associated with 'qm::Factor' (role 'Factor64', cardinality 0..*).
+'qm::Entity' (role 'qm_Entity26', cardinality 0..*) is associated with 'qm::Entity' (role 'qm_Entity', cardinality 0..*).
+'qm::Specialization' (role 'isA', cardinality 0..*) is associated with 'qm::Entity' (role 'Entity38', cardinality 0..*).
+'qm::Tag' (role 'qm_Tag', cardinality 0..*) is associated with 'qm::TaggedElement' (role 'qm_TaggedElement', cardinality 0..*).
+'qm::Factor' (role 'qm_Factor52', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor50', cardinality 0..*).
+'qm::NumberMeasurementResult' (role 'qm_NumberMeasurementResult', cardinality 0..*) is associated with 'qm::DoubleInterval' (role 'qm_DoubleInterval', cardinality 0..*).
+'qm::MeasurementMethod' (role 'measurementMethods', cardinality 0..*) is associated with 'qm::QualityModel' (role 'QualityModel91', cardinality 0..*).
+'qm::FactorRefinement' (role 'qm_FactorRefinement', cardinality 0..*) is associated with 'qm::Factor' (role 'qm_Factor66', cardinality 0..*).
+'qm::Entity' (role 'qm_Entity40', cardinality 0..*) is associated with 'qm::Decomposition' (role 'qm_Decomposition', cardinality 0..*).
+'qm::Factor' (role 'child49', cardinality 0..*) is associated with 'qm::FactorRefinement' (role 'FactorRefinement', cardinality 0..*).
+'qm::Entity' (role 'qm_Entity32', cardinality 0..*) is associated with 'qm::Entity' (role 'qm_Entity30', cardinality 0..*).
+'qm::Decomposition' (role 'partOf', cardinality 0..*) is associated with 'qm::Entity' (role 'Entity42', cardinality 0..*).

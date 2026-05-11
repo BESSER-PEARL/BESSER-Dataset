@@ -1,0 +1,80 @@
+The model has 34 class(es).
+The class 'kmLogo::Greater' has no attributes.
+The class 'kmLogo::ParameterCall' has no attributes.
+The class 'kmLogo::Instruction' has no attributes.
+The class 'kmLogo::Block' has no attributes.
+The class 'kmLogo::Repeat' has no attributes.
+The class 'kmLogo::Div' has no attributes.
+The class 'ControlStructure' has no attributes.
+The class 'kmLogo::Equals' has no attributes.
+The class 'kmLogo::PenDown' has no attributes.
+The class 'kmLogo::ProcDeclaration' has the following attributes: 'name' of type str.
+The class 'kmLogo::Mult' has no attributes.
+The class 'kmLogo::Lower' has no attributes.
+The class 'kmLogo::Forward' has no attributes.
+The class 'kmLogo::If' has no attributes.
+The class 'kmLogo::Minus' has no attributes.
+The class 'kmLogo::Plus' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'BinaryExp' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'kmLogo::Expression' has no attributes.
+The class 'kmLogo::Constant' has the following attributes: 'integerValue' of type int.
+The class 'kmLogo::Back' has no attributes.
+The class 'kmLogo::Left' has no attributes.
+The class 'kmLogo::ControlStructure' has no attributes.
+The class 'kmLogo::BinaryExp' has no attributes.
+The class 'kmLogo::Primitive' has no attributes.
+The class 'kmLogo::ProcCall' has no attributes.
+The class 'Expression' has no attributes.
+The class 'kmLogo::While' has no attributes.
+The class 'kmLogo::Parameter' has the following attributes: 'name' of type str.
+The class 'kmLogo::Right' has no attributes.
+The class 'kmLogo::PenUp' has no attributes.
+The class 'kmLogo::Clear' has no attributes.
+The class 'kmLogo::LogoProgram' has no attributes.
+'kmLogo::BinaryExp' is a specialization of 'Expression'.
+'kmLogo::Equals' is a specialization of 'BinaryExp'.
+'kmLogo::PenDown' is a specialization of 'Primitive'.
+'kmLogo::PenUp' is a specialization of 'Primitive'.
+'kmLogo::ControlStructure' is a specialization of 'Instruction'.
+'kmLogo::Forward' is a specialization of 'Primitive'.
+'kmLogo::ParameterCall' is a specialization of 'Expression'.
+'kmLogo::Back' is a specialization of 'Primitive'.
+'kmLogo::Minus' is a specialization of 'BinaryExp'.
+'kmLogo::Right' is a specialization of 'Primitive'.
+'kmLogo::While' is a specialization of 'ControlStructure'.
+'kmLogo::Plus' is a specialization of 'BinaryExp'.
+'kmLogo::Block' is a specialization of 'Instruction'.
+'kmLogo::ProcDeclaration' is a specialization of 'Instruction'.
+'kmLogo::Div' is a specialization of 'BinaryExp'.
+'kmLogo::Greater' is a specialization of 'BinaryExp'.
+'kmLogo::Constant' is a specialization of 'Expression'.
+'kmLogo::If' is a specialization of 'ControlStructure'.
+'kmLogo::Primitive' is a specialization of 'Instruction'.
+'kmLogo::Lower' is a specialization of 'BinaryExp'.
+'kmLogo::Left' is a specialization of 'Primitive'.
+'kmLogo::Mult' is a specialization of 'BinaryExp'.
+'kmLogo::Clear' is a specialization of 'Primitive'.
+'kmLogo::Expression' is a specialization of 'Instruction'.
+'kmLogo::Repeat' is a specialization of 'ControlStructure'.
+'kmLogo::ProcCall' is a specialization of 'Expression'.
+'kmLogo::Expression' (role 'kmLogo_Expression5', cardinality 0..*) is associated with 'kmLogo::Left' (role 'kmLogo_Left', cardinality 0..*).
+'kmLogo::BinaryExp' (role 'kmLogo_BinaryExp11', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression12', cardinality 0..*).
+'kmLogo::ProcCall' (role 'ProcCall', cardinality 0..*) is associated with 'kmLogo::ProcDeclaration' (role 'declaration', cardinality 0..*).
+'kmLogo::ProcDeclaration' (role 'kmLogo_ProcDeclaration', cardinality 0..*) is associated with 'kmLogo::Parameter' (role 'kmLogo_Parameter', cardinality 0..*).
+'kmLogo::Repeat' (role 'kmLogo_Repeat', cardinality 0..*) is associated with 'kmLogo::Block' (role 'kmLogo_Block31', cardinality 0..*).
+'kmLogo::BinaryExp' (role 'kmLogo_BinaryExp', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression9', cardinality 0..*).
+'kmLogo::Expression' (role 'kmLogo_Expression7', cardinality 0..*) is associated with 'kmLogo::Right' (role 'kmLogo_Right', cardinality 0..*).
+'kmLogo::Back' (role 'kmLogo_Back', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression', cardinality 0..*).
+'kmLogo::Instruction' (role 'kmLogo_Instruction20', cardinality 0..*) is associated with 'kmLogo::ProcDeclaration' (role 'kmLogo_ProcDeclaration19', cardinality 0..*).
+'kmLogo::Forward' (role 'kmLogo_Forward', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression3', cardinality 0..*).
+'kmLogo::ParameterCall' (role 'kmLogo_ParameterCall', cardinality 0..*) is associated with 'kmLogo::Parameter' (role 'kmLogo_Parameter35', cardinality 0..*).
+'kmLogo::ControlStructure' (role 'kmLogo_ControlStructure', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression29', cardinality 0..*).
+'kmLogo::Instruction' (role 'kmLogo_Instruction', cardinality 0..*) is associated with 'kmLogo::LogoProgram' (role 'kmLogo_LogoProgram', cardinality 0..*).
+'kmLogo::If' (role 'kmLogo_If26', cardinality 0..*) is associated with 'kmLogo::Block' (role 'kmLogo_Block27', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block33', cardinality 0..*) is associated with 'kmLogo::While' (role 'kmLogo_While', cardinality 0..*).
+'kmLogo::Instruction' (role 'kmLogo_Instruction22', cardinality 0..*) is associated with 'kmLogo::Block' (role 'kmLogo_Block', cardinality 0..*).
+'kmLogo::ProcCall' (role 'procCall', cardinality 0..*) is associated with 'kmLogo::ProcDeclaration' (role 'ProcDeclaration', cardinality 0..*).
+'kmLogo::ProcCall' (role 'kmLogo_ProcCall', cardinality 0..*) is associated with 'kmLogo::Expression' (role 'kmLogo_Expression14', cardinality 0..*).
+'kmLogo::Block' (role 'kmLogo_Block24', cardinality 0..*) is associated with 'kmLogo::If' (role 'kmLogo_If', cardinality 0..*).

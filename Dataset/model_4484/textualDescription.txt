@@ -1,0 +1,48 @@
+The model has 20 class(es).
+The class 'behaviour::MovableObject' has no attributes.
+The class 'behaviour::Lift' has no attributes.
+The class 'behaviour::NamedElement' has the following attributes: 'name' of type str.
+The class 'behaviour::PerformAction' has no attributes.
+The class 'behaviour::Condition' has the following attributes: 'value' of type str; 'operation' of type str; 'key' of type str.
+The class 'behaviour::Instruction' has no attributes.
+The class 'behaviour::PlaceObject' has no attributes.
+The class 'behaviour::While' has no attributes.
+The class 'behaviour::SendMessage' has the following attributes: 'messageType' of type str.
+The class 'behaviour::MoveTo' has no attributes.
+The class 'behaviour::WaitForMessage' has the following attributes: 'timeout' of type float; 'type' of type str.
+The class 'behaviour::DroneBehaviour' has the following attributes: 'canBeInterrupted' of type bool.
+The class 'Instruction' has no attributes.
+The class 'behaviour::Pause' has the following attributes: 'duration' of type float.
+The class 'behaviour::Drone' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'behaviour::FieldObject' has no attributes.
+The class 'behaviour::Instruct' has no attributes.
+The class 'behaviour::Choice' has no attributes.
+The class 'behaviour::Action' has no attributes.
+The enumeration 'ConditionKind' has the following literals: 'LESSER_THAN', 'GREATER_THAN', 'EQUALS', 'NOT_EQUALS'.
+'behaviour::SendMessage' is a specialization of 'Instruction'.
+'behaviour::DroneBehaviour' is a specialization of 'NamedElement'.
+'behaviour::PlaceObject' is a specialization of 'Instruction'.
+'behaviour::MoveTo' is a specialization of 'Instruction'.
+'behaviour::WaitForMessage' is a specialization of 'Instruction'.
+'behaviour::While' is a specialization of 'Instruction'.
+'behaviour::Instruct' is a specialization of 'Instruction'.
+'behaviour::Choice' is a specialization of 'Instruction'.
+'behaviour::PerformAction' is a specialization of 'Instruction'.
+'behaviour::Pause' is a specialization of 'Instruction'.
+'behaviour::Lift' is a specialization of 'Instruction'.
+'behaviour::Instruction' (role 'behaviour_Instruction29', cardinality 0..*) is associated with 'behaviour::Instruct' (role 'behaviour_Instruct', cardinality 0..*).
+'behaviour::Choice' (role 'behaviour_Choice', cardinality 0..*) is associated with 'behaviour::Condition' (role 'behaviour_Condition', cardinality 0..*).
+'behaviour::Instruction' (role 'behaviour_Instruction19', cardinality 0..*) is associated with 'behaviour::WaitForMessage' (role 'behaviour_WaitForMessage', cardinality 0..*).
+'behaviour::DroneBehaviour' (role 'behaviour_DroneBehaviour', cardinality 0..*) is associated with 'behaviour::Instruction' (role 'behaviour_Instruction', cardinality 0..*).
+'behaviour::Choice' (role 'behaviour_Choice13', cardinality 0..*) is associated with 'behaviour::Instruction' (role 'behaviour_Instruction14', cardinality 0..*).
+'behaviour::While' (role 'behaviour_While26', cardinality 0..*) is associated with 'behaviour::Condition' (role 'behaviour_Condition27', cardinality 0..*).
+'behaviour::While' (role 'behaviour_While', cardinality 0..*) is associated with 'behaviour::Instruction' (role 'behaviour_Instruction24', cardinality 0..*).
+'behaviour::PerformAction' (role 'behaviour_PerformAction6', cardinality 0..*) is associated with 'behaviour::FieldObject' (role 'behaviour_FieldObject7', cardinality 0..*).
+'behaviour::Lift' (role 'behaviour_Lift', cardinality 0..*) is associated with 'behaviour::MovableObject' (role 'behaviour_MovableObject', cardinality 0..*).
+'behaviour::MoveTo' (role 'behaviour_MoveTo', cardinality 0..*) is associated with 'behaviour::FieldObject' (role 'behaviour_FieldObject', cardinality 0..*).
+'behaviour::Instruction' (role 'behaviour_Instruction22', cardinality 0..*) is associated with 'behaviour::WaitForMessage' (role 'behaviour_WaitForMessage21', cardinality 0..*).
+'behaviour::Condition' (role 'behaviour_Condition16', cardinality 0..*) is associated with 'behaviour::FieldObject' (role 'behaviour_FieldObject17', cardinality 0..*).
+'behaviour::Action' (role 'behaviour_Action', cardinality 0..*) is associated with 'behaviour::PerformAction' (role 'behaviour_PerformAction', cardinality 0..*).
+'behaviour::Choice' (role 'behaviour_Choice10', cardinality 0..*) is associated with 'behaviour::Instruction' (role 'behaviour_Instruction11', cardinality 0..*).
+'behaviour::Drone' (role 'behaviour_Drone', cardinality 0..*) is associated with 'behaviour::DroneBehaviour' (role 'behaviour_DroneBehaviour2', cardinality 0..*).

@@ -1,0 +1,98 @@
+The model has 44 class(es).
+The class 'iotdsl::Property' has no attributes.
+The class 'iotdsl::Enumeration' has no attributes.
+The class 'Content' has no attributes.
+The class 'iotdsl::Attribute' has the following attributes: 'name' of type str.
+The class 'iotdsl::AfterExpression' has no attributes.
+The class 'iotdsl::NotExpression' has no attributes.
+The class 'iotdsl::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'iotdsl::IotModel' has the following attributes: 'name' of type str.
+The class 'iotdsl::Type' has the following attributes: 'name' of type str.
+The class 'iotdsl::Device' has no attributes.
+The class 'iotdsl::Feature' has the following attributes: 'name' of type str.
+The class 'iotdsl::Rule' has the following attributes: 'name' of type str.
+The class 'iotdsl::DeclaredType' has no attributes.
+The class 'iotdsl::EventOccurrence' has the following attributes: 'operator' of type str.
+The class 'iotdsl::EnumLiteral' has the following attributes: 'name' of type str.
+The class 'iotdsl::Expression' has no attributes.
+The class 'iotdsl::NodeInstance' has the following attributes: 'name' of type str.
+The class 'iotdsl::Configuration' has the following attributes: 'confname' of type str.
+The class 'iotdsl::Gateway' has no attributes.
+The class 'iotdsl::BoolConstant' has the following attributes: 'value' of type str.
+The class 'iotdsl::TimingExpression' has no attributes.
+The class 'Node' has no attributes.
+The class 'iotdsl::Delay' has the following attributes: 'time' of type int; 'unit' of type str.
+The class 'iotdsl::AndExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'iotdsl::Capability' has no attributes.
+The class 'iotdsl::PrimitiveType' has no attributes.
+The class 'iotdsl::CommunicationPath' has the following attributes: 'protocol' of type str.
+The class 'iotdsl::Reaction' has no attributes.
+The class 'Value' has no attributes.
+The class 'iotdsl::Sensing' has no attributes.
+The class 'TimingExpression' has no attributes.
+The class 'iotdsl::Node' has no attributes.
+The class 'iotdsl::Actuating' has no attributes.
+The class 'iotdsl::Parameter' has the following attributes: 'name' of type str.
+The class 'iotdsl::IntConstant' has the following attributes: 'value' of type int.
+The class 'Feature' has no attributes.
+The class 'iotdsl::Value' has no attributes.
+The class 'iotdsl::WithinExpression' has no attributes.
+The class 'Capability' has no attributes.
+The class 'iotdsl::Content' has no attributes.
+The class 'iotdsl::StringConstant' has the following attributes: 'value' of type str.
+The class 'DeclaredType' has no attributes.
+The class 'Type' has no attributes.
+The enumeration 'Protocol' has the following literals: 'ip', 'zwave', 'dds', 'mqtt', 'zigbee'.
+The enumeration 'Unit' has the following literals: 'sec', 'milli', 'min', 'hour'.
+The enumeration 'Operator' has the following literals: 'equal', 'lesser', 'leq', 'neq', 'geq', 'greater'.
+The enumeration 'DefaultType' has the following literals: 'Void', 'Integer', 'Boolean', 'Real', 'String'.
+'iotdsl::Actuating' is a specialization of 'Capability'.
+'iotdsl::BoolConstant' is a specialization of 'Value'.
+'iotdsl::PrimitiveType' is a specialization of 'Type'.
+'iotdsl::IntConstant' is a specialization of 'Value'.
+'iotdsl::Type' is a specialization of 'Content'.
+'iotdsl::NotExpression' is a specialization of 'Expression'.
+'iotdsl::DeclaredType' is a specialization of 'Type'.
+'iotdsl::Rule' is a specialization of 'Content'.
+'iotdsl::Node' is a specialization of 'DeclaredType'.
+'iotdsl::WithinExpression' is a specialization of 'TimingExpression'.
+'iotdsl::AndExpression' is a specialization of 'Expression'.
+'iotdsl::Enumeration' is a specialization of 'DeclaredType'.
+'iotdsl::Sensing' is a specialization of 'Capability'.
+'iotdsl::StringConstant' is a specialization of 'Value'.
+'iotdsl::Property' is a specialization of 'Feature'.
+'iotdsl::Device' is a specialization of 'Node'.
+'iotdsl::Gateway' is a specialization of 'Node'.
+'iotdsl::AfterExpression' is a specialization of 'TimingExpression'.
+'iotdsl::EventOccurrence' is a specialization of 'Expression'.
+'iotdsl::TimingExpression' is a specialization of 'Expression'.
+'iotdsl::Configuration' is a specialization of 'Content'.
+'iotdsl::Capability' is a specialization of 'Feature'.
+'iotdsl::NotExpression' (role 'iotdsl_NotExpression', cardinality 0..*) is associated with 'iotdsl::EventOccurrence' (role 'iotdsl_EventOccurrence', cardinality 0..*).
+'iotdsl::Value' (role 'iotdsl_Value', cardinality 0..*) is associated with 'iotdsl::Property' (role 'iotdsl_Property', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression52', cardinality 0..*) is associated with 'iotdsl::TimingExpression' (role 'iotdsl_TimingExpression51', cardinality 0..*).
+'iotdsl::Content' (role 'iotdsl_Content', cardinality 0..*) is associated with 'iotdsl::IotModel' (role 'iotdsl_IotModel2', cardinality 0..*).
+'iotdsl::Configuration' (role 'iotdsl_Configuration', cardinality 0..*) is associated with 'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance', cardinality 0..*).
+'iotdsl::Reaction' (role 'iotdsl_Reaction41', cardinality 0..*) is associated with 'iotdsl::Attribute' (role 'iotdsl_Attribute42', cardinality 0..*).
+'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance27', cardinality 0..*) is associated with 'iotdsl::EventOccurrence' (role 'iotdsl_EventOccurrence26', cardinality 0..*).
+'iotdsl::TimingExpression' (role 'iotdsl_TimingExpression', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression49', cardinality 0..*).
+'iotdsl::Parameter' (role 'iotdsl_Parameter', cardinality 0..*) is associated with 'iotdsl::Capability' (role 'iotdsl_Capability', cardinality 0..*).
+'iotdsl::WithinExpression' (role 'iotdsl_WithinExpression', cardinality 0..*) is associated with 'iotdsl::Delay' (role 'iotdsl_Delay', cardinality 0..*).
+'iotdsl::Device' (role 'iotdsl_Device', cardinality 0..*) is associated with 'iotdsl::Feature' (role 'iotdsl_Feature', cardinality 0..*).
+'iotdsl::Type' (role 'iotdsl_Type14', cardinality 0..*) is associated with 'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance13', cardinality 0..*).
+'iotdsl::Actuating' (role 'iotdsl_Actuating', cardinality 0..*) is associated with 'iotdsl::Reaction' (role 'iotdsl_Reaction39', cardinality 0..*).
+'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance17', cardinality 0..*) is associated with 'iotdsl::CommunicationPath' (role 'iotdsl_CommunicationPath16', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression47', cardinality 0..*) is associated with 'iotdsl::AndExpression' (role 'iotdsl_AndExpression46', cardinality 0..*).
+'iotdsl::Configuration' (role 'iotdsl_Configuration11', cardinality 0..*) is associated with 'iotdsl::CommunicationPath' (role 'iotdsl_CommunicationPath', cardinality 0..*).
+'iotdsl::CommunicationPath' (role 'iotdsl_CommunicationPath19', cardinality 0..*) is associated with 'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance20', cardinality 0..*).
+'iotdsl::IotModel' (role 'iotdsl_IotModel', cardinality 0..*) is associated with 'iotdsl::Import' (role 'iotdsl_Import', cardinality 0..*).
+'iotdsl::EventOccurrence' (role 'iotdsl_EventOccurrence31', cardinality 0..*) is associated with 'iotdsl::Attribute' (role 'iotdsl_Attribute', cardinality 0..*).
+'iotdsl::EnumLiteral' (role 'iotdsl_EnumLiteral', cardinality 0..*) is associated with 'iotdsl::Enumeration' (role 'iotdsl_Enumeration', cardinality 0..*).
+'iotdsl::Rule' (role 'iotdsl_Rule', cardinality 0..*) is associated with 'iotdsl::Expression' (role 'iotdsl_Expression', cardinality 0..*).
+'iotdsl::EventOccurrence' (role 'iotdsl_EventOccurrence29', cardinality 0..*) is associated with 'iotdsl::Sensing' (role 'iotdsl_Sensing', cardinality 0..*).
+'iotdsl::Expression' (role 'iotdsl_Expression44', cardinality 0..*) is associated with 'iotdsl::AndExpression' (role 'iotdsl_AndExpression', cardinality 0..*).
+'iotdsl::Value' (role 'iotdsl_Value34', cardinality 0..*) is associated with 'iotdsl::EventOccurrence' (role 'iotdsl_EventOccurrence33', cardinality 0..*).
+'iotdsl::Type' (role 'iotdsl_Type', cardinality 0..*) is associated with 'iotdsl::Parameter' (role 'iotdsl_Parameter8', cardinality 0..*).
+'iotdsl::Reaction' (role 'iotdsl_Reaction36', cardinality 0..*) is associated with 'iotdsl::NodeInstance' (role 'iotdsl_NodeInstance37', cardinality 0..*).
+'iotdsl::Reaction' (role 'iotdsl_Reaction', cardinality 0..*) is associated with 'iotdsl::Rule' (role 'iotdsl_Rule23', cardinality 0..*).

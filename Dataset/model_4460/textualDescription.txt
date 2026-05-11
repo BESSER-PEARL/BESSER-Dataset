@@ -1,0 +1,39 @@
+The model has 14 class(es).
+The class 'arduinoml::Brick' has the following attributes: 'type' of type str; 'pin' of type int.
+The class 'Brick' has no attributes.
+The class 'arduinoml::Transition' has no attributes.
+The class 'arduinoml::App' has no attributes.
+The class 'Condition' has no attributes.
+The class 'arduinoml::State' has no attributes.
+The class 'arduinoml::SimpleCondition' has the following attributes: 'comparator' of type str; 'value' of type str.
+The class 'arduinoml::Action' has the following attributes: 'value' of type str.
+The class 'arduinoml::Sensor' has no attributes.
+The class 'arduinoml::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'arduinoml::MultipleCondition' has the following attributes: 'operators' of type str.
+The class 'arduinoml::Condition' has no attributes.
+The class 'arduinoml::Actuator' has no attributes.
+The enumeration 'OPERATOR' has the following literals: 'OR', 'AND'.
+The enumeration 'COMPARATOR' has the following literals: 'INFERIOR', 'INFERIOR_OR_EQUALS', 'EQUALS', 'SUPERIOR', 'SUPERIOR_OR_EQUALS', 'NON_EQUALS'.
+The enumeration 'BrickType' has the following literals: 'DIGITAL', 'ANALOGICAL'.
+'arduinoml::State' is a specialization of 'NamedElement'.
+'arduinoml::Actuator' is a specialization of 'Brick'.
+'arduinoml::Action' is a specialization of 'NamedElement'.
+'arduinoml::App' is a specialization of 'NamedElement'.
+'arduinoml::Brick' is a specialization of 'NamedElement'.
+'arduinoml::Condition' is a specialization of 'NamedElement'.
+'arduinoml::Sensor' is a specialization of 'Brick'.
+'arduinoml::SimpleCondition' is a specialization of 'Condition'.
+'arduinoml::MultipleCondition' is a specialization of 'Condition'.
+'arduinoml::App' (role 'arduinoml_App6', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition', cardinality 0..*).
+'arduinoml::Action' (role 'arduinoml_Action22', cardinality 0..*) is associated with 'arduinoml::Actuator' (role 'arduinoml_Actuator', cardinality 0..*).
+'arduinoml::SimpleCondition' (role 'arduinoml_SimpleCondition25', cardinality 0..*) is associated with 'arduinoml::MultipleCondition' (role 'arduinoml_MultipleCondition', cardinality 0..*).
+'arduinoml::Condition' (role 'arduinoml_Condition12', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition11', cardinality 0..*).
+'arduinoml::Transition' (role 'arduinoml_Transition8', cardinality 0..*) is associated with 'arduinoml::State' (role 'arduinoml_State9', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State17', cardinality 0..*) is associated with 'arduinoml::Action' (role 'arduinoml_Action', cardinality 0..*).
+'arduinoml::Brick' (role 'arduinoml_Brick', cardinality 0..*) is associated with 'arduinoml::App' (role 'arduinoml_App', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State15', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition14', cardinality 0..*).
+'arduinoml::SimpleCondition' (role 'arduinoml_SimpleCondition', cardinality 0..*) is associated with 'arduinoml::Sensor' (role 'arduinoml_Sensor', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State', cardinality 0..*) is associated with 'arduinoml::App' (role 'arduinoml_App2', cardinality 0..*).
+'arduinoml::App' (role 'arduinoml_App4', cardinality 0..*) is associated with 'arduinoml::Condition' (role 'arduinoml_Condition', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State19', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition20', cardinality 0..*).

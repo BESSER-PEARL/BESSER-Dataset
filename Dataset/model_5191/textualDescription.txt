@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'oo::remove::empty::B' has no attributes.
+The class 'oo::remove::empty::C' has no attributes.
+The class 'oo::remove::empty::A' has no attributes.
+The class 'B' has no attributes.
+'oo::remove::empty::C' is a specialization of 'B'.
+'oo::remove::empty::A' (role 'oo_remove_empty_A', cardinality 0..*) is associated with 'oo::remove::empty::B' (role 'oo_remove_empty_B', cardinality 0..*).

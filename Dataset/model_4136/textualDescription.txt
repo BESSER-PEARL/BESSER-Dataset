@@ -1,0 +1,34 @@
+The model has 12 class(es).
+The class 'Expression' has no attributes.
+The class 'asso::Mult' has no attributes.
+The class 'asso::Expression' has no attributes.
+The class 'asso::Plus' has no attributes.
+The class 'asso::Model' has no attributes.
+The class 'asso::NegFloatConstant' has the following attributes: 'value' of type float.
+The class 'asso::VariableRef' has no attributes.
+The class 'asso::Minus' has no attributes.
+The class 'asso::Variable' has the following attributes: 'name' of type str.
+The class 'asso::Div' has no attributes.
+The class 'asso::FloatConstant' has the following attributes: 'value' of type float.
+The class 'asso::EvalExpression' has no attributes.
+'asso::VariableRef' is a specialization of 'Expression'.
+'asso::NegFloatConstant' is a specialization of 'Expression'.
+'asso::Mult' is a specialization of 'Expression'.
+'asso::FloatConstant' is a specialization of 'Expression'.
+'asso::Div' is a specialization of 'Expression'.
+'asso::Plus' is a specialization of 'Expression'.
+'asso::Minus' is a specialization of 'Expression'.
+'asso::Expression' (role 'asso_Expression27', cardinality 0..*) is associated with 'asso::Mult' (role 'asso_Mult26', cardinality 0..*).
+'asso::EvalExpression' (role 'asso_EvalExpression', cardinality 0..*) is associated with 'asso::Model' (role 'asso_Model2', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression14', cardinality 0..*) is associated with 'asso::Plus' (role 'asso_Plus', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression', cardinality 0..*) is associated with 'asso::Variable' (role 'asso_Variable7', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression24', cardinality 0..*) is associated with 'asso::Mult' (role 'asso_Mult', cardinality 0..*).
+'asso::Variable' (role 'asso_Variable12', cardinality 0..*) is associated with 'asso::VariableRef' (role 'asso_VariableRef', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression22', cardinality 0..*) is associated with 'asso::Minus' (role 'asso_Minus21', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression17', cardinality 0..*) is associated with 'asso::Plus' (role 'asso_Plus16', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression19', cardinality 0..*) is associated with 'asso::Minus' (role 'asso_Minus', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression10', cardinality 0..*) is associated with 'asso::EvalExpression' (role 'asso_EvalExpression9', cardinality 0..*).
+'asso::Div' (role 'asso_Div', cardinality 0..*) is associated with 'asso::Expression' (role 'asso_Expression29', cardinality 0..*).
+'asso::Variable' (role 'asso_Variable3', cardinality 0..*) is associated with 'asso::Variable' (role 'asso_Variable5', cardinality 0..*).
+'asso::Model' (role 'asso_Model', cardinality 0..*) is associated with 'asso::Variable' (role 'asso_Variable', cardinality 0..*).
+'asso::Expression' (role 'asso_Expression32', cardinality 0..*) is associated with 'asso::Div' (role 'asso_Div31', cardinality 0..*).

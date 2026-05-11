@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/laoneo/redskin/ch.allon.redskin.core.model/model/shop.ecore

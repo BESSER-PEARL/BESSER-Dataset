@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'SuperA3' has no attributes.
+The class 'testmerge::SuperA3' has no attributes.
+The class 'testmerge::A3' has no attributes.
+The class 'testmerge::B3' has no attributes.
+'testmerge::A3' is a specialization of 'SuperA3'.
+'testmerge::A3' (role 'toA3', cardinality 0..*) is associated with 'testmerge::B3' (role 'B3', cardinality 0..*).
+'testmerge::A3' (role 'A3', cardinality 0..*) is associated with 'testmerge::B3' (role 'toB3', cardinality 0..*).

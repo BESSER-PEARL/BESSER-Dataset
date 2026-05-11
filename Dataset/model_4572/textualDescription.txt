@@ -1,0 +1,194 @@
+The model has 66 class(es).
+The class 'lua::Field::AddEntryToTable::Brackets' has no attributes.
+The class 'lua::LastStatement' has no attributes.
+The class 'lua::Statement' has no attributes.
+The class 'lua::Functioncall::Arguments' has no attributes.
+The class 'lua::Expression::Smaller::Equal' has no attributes.
+The class 'lua::Block' has no attributes.
+The class 'lua::Expression::Larger::Equal' has no attributes.
+The class 'lua::Expression::CallFunction' has no attributes.
+The class 'lua::Expression::Concatenation' has no attributes.
+The class 'lua::Expression::And' has no attributes.
+The class 'lua::Expression::Or' has no attributes.
+The class 'lua::Statement::FunctioncallOrAssignment' has no attributes.
+The class 'Expression' has no attributes.
+The class 'lua::Statement::For::Generic' has the following attributes: 'names' of type str.
+The class 'lua::Statement::If::Then::Else' has no attributes.
+The class 'lua::Expression::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'lua::Statement::Local::Variable::Declaration' has the following attributes: 'variableNames' of type str.
+The class 'lua::Expression::VariableName' has the following attributes: 'variable' of type str.
+The class 'lua::Expression::Number' has the following attributes: 'value' of type float.
+The class 'lua::Expression::AccessMember' has the following attributes: 'memberName' of type str.
+The class 'lua::Expression::AccessArray' has no attributes.
+The class 'lua::Statement::LocalFunction::Declaration' has the following attributes: 'functionName' of type str.
+The class 'lua::Statement::While' has no attributes.
+The class 'lua::Expression::Multiplication' has no attributes.
+The class 'Statement' has no attributes.
+The class 'lua::Statement::For::Numeric' has the following attributes: 'iteratorName' of type str.
+The class 'lua::Expression::Modulo' has no attributes.
+The class 'lua::Expression::Not::Equal' has no attributes.
+The class 'lua::Statement::If::Then::Else::ElseIfPart' has no attributes.
+The class 'lua::Expression' has no attributes.
+The class 'lua::Expression::Length' has no attributes.
+The class 'lua::Expression::Equal' has no attributes.
+The class 'lua::Statement::Repeat' has no attributes.
+The class 'lua::Expression::Division' has no attributes.
+The class 'lua::Expression::Exponentiation' has no attributes.
+The class 'lua::Statement::Assignment' has no attributes.
+The class 'lua::Expression::Invert' has no attributes.
+The class 'lua::Expression::Minus' has no attributes.
+The class 'lua::Expression::String' has the following attributes: 'value' of type str.
+The class 'lua::Expression::Plus' has no attributes.
+The class 'lua::Expression::TableConstructor' has no attributes.
+The class 'lua::Expression::Function' has no attributes.
+The class 'lua::Statement::GlobalFunction::Declaration' has the following attributes: 'functionName' of type str; 'prefix' of type str.
+The class 'lua::Expression::VarArgs' has no attributes.
+The class 'lua::Chunk' has no attributes.
+The class 'lua::Expression::Smaller' has no attributes.
+The class 'lua::Field::AddEntryToTable' has the following attributes: 'key' of type str.
+The class 'Field' has no attributes.
+The class 'lua::Function' has the following attributes: 'varArgs' of type bool; 'parameters' of type str.
+The class 'Chunk' has no attributes.
+The class 'lua::Statement::CallMemberFunction' has the following attributes: 'memberFunctionName' of type str.
+The class 'LastStatement::Return' has no attributes.
+The class 'lua::LastStatement::Break' has no attributes.
+The class 'LastStatement' has no attributes.
+The class 'lua::Field::AppendEntryToTable' has no attributes.
+The class 'lua::Expression::Larger' has no attributes.
+The class 'lua::LastStatement::ReturnWithValue' has no attributes.
+The class 'lua::Expression::False' has no attributes.
+The class 'Statement::FunctioncallOrAssignment' has no attributes.
+The class 'lua::Statement::CallFunction' has no attributes.
+The class 'lua::Statement::Block' has no attributes.
+The class 'lua::Expression::Nil' has no attributes.
+The class 'lua::Field' has no attributes.
+The class 'lua::Expression::Negate' has no attributes.
+The class 'lua::LastStatement::Return' has no attributes.
+The class 'lua::Expression::True' has no attributes.
+'lua::Expression::Negate' is a specialization of 'Expression'.
+'lua::Statement::CallFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'lua::Expression::Length' is a specialization of 'Expression'.
+'lua::Expression::Smaller' is a specialization of 'Expression'.
+'lua::Expression::False' is a specialization of 'Expression'.
+'lua::Expression::Invert' is a specialization of 'Expression'.
+'lua::Expression::True' is a specialization of 'Expression'.
+'lua::Expression::Exponentiation' is a specialization of 'Expression'.
+'lua::Expression::Larger' is a specialization of 'Expression'.
+'lua::Expression::TableConstructor' is a specialization of 'Expression'.
+'lua::Expression::Division' is a specialization of 'Expression'.
+'lua::Expression::Larger::Equal' is a specialization of 'Expression'.
+'lua::Expression::Modulo' is a specialization of 'Expression'.
+'lua::Statement::If::Then::Else' is a specialization of 'Statement'.
+'lua::Expression::VarArgs' is a specialization of 'Expression'.
+'lua::Expression::Concatenation' is a specialization of 'Expression'.
+'lua::Expression::AccessArray' is a specialization of 'Expression'.
+'lua::Expression::AccessMember' is a specialization of 'Expression'.
+'lua::Block' is a specialization of 'Chunk'.
+'lua::Expression::Smaller::Equal' is a specialization of 'Expression'.
+'lua::Expression::VariableName' is a specialization of 'Expression'.
+'lua::Field::AddEntryToTable::Brackets' is a specialization of 'Field'.
+'lua::Expression::Plus' is a specialization of 'Expression'.
+'lua::Expression::CallMemberFunction' is a specialization of 'Expression'.
+'lua::Expression::Or' is a specialization of 'Expression'.
+'lua::Expression::CallFunction' is a specialization of 'Expression'.
+'lua::Expression::Nil' is a specialization of 'Expression'.
+'lua::Statement::Local::Variable::Declaration' is a specialization of 'Statement'.
+'lua::Field::AddEntryToTable' is a specialization of 'Field'.
+'lua::Expression' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'lua::Statement::CallMemberFunction' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'lua::Statement::FunctioncallOrAssignment' is a specialization of 'Statement'.
+'lua::Field::AppendEntryToTable' is a specialization of 'Field'.
+'lua::LastStatement::ReturnWithValue' is a specialization of 'LastStatement::Return'.
+'lua::Expression::Multiplication' is a specialization of 'Expression'.
+'lua::Statement::LocalFunction::Declaration' is a specialization of 'Statement'.
+'lua::Expression::And' is a specialization of 'Expression'.
+'lua::Statement::Block' is a specialization of 'Statement'.
+'lua::Expression::String' is a specialization of 'Expression'.
+'lua::Expression::Function' is a specialization of 'Expression'.
+'lua::Statement::Repeat' is a specialization of 'Statement'.
+'lua::Statement::Assignment' is a specialization of 'Statement::FunctioncallOrAssignment'.
+'lua::Expression::Minus' is a specialization of 'Expression'.
+'lua::Statement::For::Numeric' is a specialization of 'Statement'.
+'lua::Expression::Number' is a specialization of 'Expression'.
+'lua::Statement::For::Generic' is a specialization of 'Statement'.
+'lua::LastStatement::Return' is a specialization of 'LastStatement'.
+'lua::Expression::Equal' is a specialization of 'Expression'.
+'lua::Statement::While' is a specialization of 'Statement'.
+'lua::Statement::GlobalFunction::Declaration' is a specialization of 'Statement'.
+'lua::Expression::Not::Equal' is a specialization of 'Expression'.
+'lua::LastStatement::Break' is a specialization of 'LastStatement'.
+'lua::Statement::LocalFunction::Declaration' (role 'lua_Statement_LocalFunction_Declaration', cardinality 0..*) is associated with 'lua::Function' (role 'lua_Function48', cardinality 0..*).
+'lua::Expression::Multiplication' (role 'lua_Expression_Multiplication', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression137', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression26', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else::ElseIfPart' (role 'lua_Statement_If_Then_Else_ElseIfPart25', cardinality 0..*).
+'lua::Expression::Multiplication' (role 'lua_Expression_Multiplication139', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression140', cardinality 0..*).
+'lua::Expression::Larger' (role 'lua_Expression_Larger', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression92', cardinality 0..*).
+'lua::Statement' (role 'lua_Statement', cardinality 0..*) is associated with 'lua::Block' (role 'lua_Block', cardinality 0..*).
+'lua::Statement::Assignment' (role 'lua_Statement_Assignment', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression67', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression147', cardinality 0..*) is associated with 'lua::Expression::Modulo' (role 'lua_Expression_Modulo', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression82', cardinality 0..*) is associated with 'lua::Expression::Or' (role 'lua_Expression_Or', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression122', cardinality 0..*) is associated with 'lua::Expression::Concatenation' (role 'lua_Expression_Concatenation', cardinality 0..*).
+'lua::LastStatement' (role 'lua_LastStatement', cardinality 0..*) is associated with 'lua::Block' (role 'lua_Block2', cardinality 0..*).
+'lua::Block' (role 'lua_Block18', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else' (role 'lua_Statement_If_Then_Else17', cardinality 0..*).
+'lua::Block' (role 'lua_Block10', cardinality 0..*) is associated with 'lua::Statement::Repeat' (role 'lua_Statement_Repeat', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression15', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else' (role 'lua_Statement_If_Then_Else', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression154', cardinality 0..*) is associated with 'lua::Expression::Length' (role 'lua_Expression_Length', cardinality 0..*).
+'lua::Expression::CallMemberFunction' (role 'lua_Expression_CallMemberFunction165', cardinality 0..*) is associated with 'lua::Functioncall::Arguments' (role 'lua_Functioncall_Arguments166', cardinality 0..*).
+'lua::Field' (role 'lua_Field', cardinality 0..*) is associated with 'lua::Expression::TableConstructor' (role 'lua_Expression_TableConstructor', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression61', cardinality 0..*) is associated with 'lua::Field' (role 'lua_Field60', cardinality 0..*).
+'lua::Statement::Assignment' (role 'lua_Statement_Assignment69', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression70', cardinality 0..*).
+'lua::Statement::For::Generic' (role 'lua_Statement_For_Generic', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression42', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression105', cardinality 0..*) is associated with 'lua::Expression::Smaller' (role 'lua_Expression_Smaller104', cardinality 0..*).
+'lua::Expression::Minus' (role 'lua_Expression_Minus134', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression135', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression168', cardinality 0..*) is associated with 'lua::Expression::CallFunction' (role 'lua_Expression_CallFunction', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression13', cardinality 0..*) is associated with 'lua::Statement::Repeat' (role 'lua_Statement_Repeat12', cardinality 0..*).
+'lua::Expression::Or' (role 'lua_Expression_Or84', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression85', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression112', cardinality 0..*) is associated with 'lua::Expression::Equal' (role 'lua_Expression_Equal', cardinality 0..*).
+'lua::Block' (role 'lua_Block4', cardinality 0..*) is associated with 'lua::Statement::Block' (role 'lua_Statement_Block', cardinality 0..*).
+'lua::Statement::GlobalFunction::Declaration' (role 'lua_Statement_GlobalFunction_Declaration', cardinality 0..*) is associated with 'lua::Function' (role 'lua_Function', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression176', cardinality 0..*) is associated with 'lua::Expression::AccessArray' (role 'lua_Expression_AccessArray175', cardinality 0..*).
+'lua::Statement::If::Then::Else::ElseIfPart' (role 'lua_Statement_If_Then_Else_ElseIfPart', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else' (role 'lua_Statement_If_Then_Else20', cardinality 0..*).
+'lua::Statement::For::Generic' (role 'lua_Statement_For_Generic44', cardinality 0..*) is associated with 'lua::Block' (role 'lua_Block45', cardinality 0..*).
+'lua::Block' (role 'lua_Block29', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else::ElseIfPart' (role 'lua_Statement_If_Then_Else_ElseIfPart28', cardinality 0..*).
+'lua::Statement::CallFunction' (role 'lua_Statement_CallFunction79', cardinality 0..*) is associated with 'lua::Functioncall::Arguments' (role 'lua_Functioncall_Arguments80', cardinality 0..*).
+'lua::Function' (role 'lua_Function52', cardinality 0..*) is associated with 'lua::Expression::Function' (role 'lua_Expression_Function', cardinality 0..*).
+'lua::Expression::Larger::Equal' (role 'lua_Expression_Larger_Equal99', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression100', cardinality 0..*).
+'lua::Functioncall::Arguments' (role 'lua_Functioncall_Arguments75', cardinality 0..*) is associated with 'lua::Statement::CallMemberFunction' (role 'lua_Statement_CallMemberFunction74', cardinality 0..*).
+'lua::Functioncall::Arguments' (role 'lua_Functioncall_Arguments', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression58', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression132', cardinality 0..*) is associated with 'lua::Expression::Minus' (role 'lua_Expression_Minus', cardinality 0..*).
+'lua::Expression::Not::Equal' (role 'lua_Expression_Not_Equal119', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression120', cardinality 0..*).
+'lua::Expression::CallFunction' (role 'lua_Expression_CallFunction170', cardinality 0..*) is associated with 'lua::Functioncall::Arguments' (role 'lua_Functioncall_Arguments171', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression107', cardinality 0..*) is associated with 'lua::Expression::Smaller::Equal' (role 'lua_Expression_Smaller_Equal', cardinality 0..*).
+'lua::Expression::Plus' (role 'lua_Expression_Plus129', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression130', cardinality 0..*).
+'lua::Expression::Negate' (role 'lua_Expression_Negate', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression152', cardinality 0..*).
+'lua::Statement::For::Numeric' (role 'lua_Statement_For_Numeric33', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression34', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression110', cardinality 0..*) is associated with 'lua::Expression::Smaller::Equal' (role 'lua_Expression_Smaller_Equal109', cardinality 0..*).
+'lua::Statement::While' (role 'lua_Statement_While', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression102', cardinality 0..*) is associated with 'lua::Expression::Smaller' (role 'lua_Expression_Smaller', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression178', cardinality 0..*) is associated with 'lua::Expression::AccessMember' (role 'lua_Expression_AccessMember', cardinality 0..*).
+'lua::Expression::Invert' (role 'lua_Expression_Invert', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression156', cardinality 0..*).
+'lua::Expression::AccessArray' (role 'lua_Expression_AccessArray', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression173', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression37', cardinality 0..*) is associated with 'lua::Statement::For::Numeric' (role 'lua_Statement_For_Numeric36', cardinality 0..*).
+'lua::Statement::CallMemberFunction' (role 'lua_Statement_CallMemberFunction', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression72', cardinality 0..*).
+'lua::Expression::Exponentiation' (role 'lua_Expression_Exponentiation', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression158', cardinality 0..*).
+'lua::Expression::Division' (role 'lua_Expression_Division', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression142', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression63', cardinality 0..*) is associated with 'lua::Field::AddEntryToTable::Brackets' (role 'lua_Field_AddEntryToTable_Brackets', cardinality 0..*).
+'lua::Expression::Exponentiation' (role 'lua_Expression_Exponentiation160', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression161', cardinality 0..*).
+'lua::Statement::Local::Variable::Declaration' (role 'lua_Statement_Local_Variable_Declaration', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression50', cardinality 0..*).
+'lua::Statement::While' (role 'lua_Statement_While7', cardinality 0..*) is associated with 'lua::Block' (role 'lua_Block8', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression125', cardinality 0..*) is associated with 'lua::Expression::Concatenation' (role 'lua_Expression_Concatenation124', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression97', cardinality 0..*) is associated with 'lua::Expression::Larger::Equal' (role 'lua_Expression_Larger_Equal', cardinality 0..*).
+'lua::Statement::For::Numeric' (role 'lua_Statement_For_Numeric', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression31', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression77', cardinality 0..*) is associated with 'lua::Statement::CallFunction' (role 'lua_Statement_CallFunction', cardinality 0..*).
+'lua::Expression::Division' (role 'lua_Expression_Division144', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression145', cardinality 0..*).
+'lua::Block' (role 'lua_Block40', cardinality 0..*) is associated with 'lua::Statement::For::Numeric' (role 'lua_Statement_For_Numeric39', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression95', cardinality 0..*) is associated with 'lua::Expression::Larger' (role 'lua_Expression_Larger94', cardinality 0..*).
+'lua::Expression::And' (role 'lua_Expression_And89', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression90', cardinality 0..*).
+'lua::Block' (role 'lua_Block56', cardinality 0..*) is associated with 'lua::Function' (role 'lua_Function55', cardinality 0..*).
+'lua::Expression::Not::Equal' (role 'lua_Expression_Not_Equal', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression117', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression65', cardinality 0..*) is associated with 'lua::LastStatement::ReturnWithValue' (role 'lua_LastStatement_ReturnWithValue', cardinality 0..*).
+'lua::Expression::And' (role 'lua_Expression_And', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression87', cardinality 0..*).
+'lua::Block' (role 'lua_Block23', cardinality 0..*) is associated with 'lua::Statement::If::Then::Else' (role 'lua_Statement_If_Then_Else22', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression163', cardinality 0..*) is associated with 'lua::Expression::CallMemberFunction' (role 'lua_Expression_CallMemberFunction', cardinality 0..*).
+'lua::Expression' (role 'lua_Expression127', cardinality 0..*) is associated with 'lua::Expression::Plus' (role 'lua_Expression_Plus', cardinality 0..*).
+'lua::Expression::Equal' (role 'lua_Expression_Equal114', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression115', cardinality 0..*).
+'lua::Expression::Modulo' (role 'lua_Expression_Modulo149', cardinality 0..*) is associated with 'lua::Expression' (role 'lua_Expression150', cardinality 0..*).

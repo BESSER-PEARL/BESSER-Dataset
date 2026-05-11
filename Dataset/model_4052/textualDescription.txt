@@ -1,0 +1,48 @@
+The model has 20 class(es).
+The class 'smalluml::UnlimitedNatural' has no attributes.
+The class 'smalluml::Type' has no attributes.
+The class 'smalluml::Role' has the following attributes: 'lowerBound' of type int; 'upperBound' of type int.
+The class 'NamedElement' has no attributes.
+The class 'smalluml::Class' has no attributes.
+The class 'Type' has no attributes.
+The class 'smalluml::Enumeration' has the following attributes: 'values' of type str.
+The class 'smalluml::NamedElement' has the following attributes: 'name' of type str.
+The class 'smalluml::Integer' has no attributes.
+The class 'smalluml::Parameter' has no attributes.
+The class 'smalluml::Package' has no attributes.
+The class 'smalluml::Composition' has no attributes.
+The class 'smalluml::String' has no attributes.
+The class 'smalluml::Real' has no attributes.
+The class 'Relation' has no attributes.
+The class 'smalluml::Method' has no attributes.
+The class 'smalluml::Attribute' has no attributes.
+The class 'smalluml::Bool' has no attributes.
+The class 'smalluml::Relation' has no attributes.
+The class 'smalluml::Reference' has no attributes.
+'smalluml::Method' is a specialization of 'NamedElement'.
+'smalluml::Enumeration' is a specialization of 'Type'.
+'smalluml::Enumeration' is a specialization of 'NamedElement'.
+'smalluml::Relation' is a specialization of 'NamedElement'.
+'smalluml::Real' is a specialization of 'Type'.
+'smalluml::Package' is a specialization of 'NamedElement'.
+'smalluml::Parameter' is a specialization of 'NamedElement'.
+'smalluml::Bool' is a specialization of 'Type'.
+'smalluml::Class' is a specialization of 'NamedElement'.
+'smalluml::String' is a specialization of 'Type'.
+'smalluml::Attribute' is a specialization of 'NamedElement'.
+'smalluml::Role' is a specialization of 'NamedElement'.
+'smalluml::Reference' is a specialization of 'Relation'.
+'smalluml::Integer' is a specialization of 'Type'.
+'smalluml::UnlimitedNatural' is a specialization of 'Type'.
+'smalluml::Composition' is a specialization of 'Relation'.
+'smalluml::Class' (role 'smalluml_Class5', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class3', cardinality 0..*).
+'smalluml::Role' (role 'smalluml_Role', cardinality 0..*) is associated with 'smalluml::Relation' (role 'smalluml_Relation', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type12', cardinality 0..*) is associated with 'smalluml::Method' (role 'smalluml_Method11', cardinality 0..*).
+'smalluml::Relation' (role 'smalluml_Relation18', cardinality 0..*) is associated with 'smalluml::Role' (role 'smalluml_Role19', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class22', cardinality 0..*) is associated with 'smalluml::Role' (role 'smalluml_Role21', cardinality 0..*).
+'smalluml::Class' (role 'smalluml_Class2', cardinality 0..*) is associated with 'smalluml::Attribute' (role 'smalluml_Attribute', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type15', cardinality 0..*) is associated with 'smalluml::Parameter' (role 'smalluml_Parameter14', cardinality 0..*).
+'smalluml::Type' (role 'smalluml_Type', cardinality 0..*) is associated with 'smalluml::Attribute' (role 'smalluml_Attribute7', cardinality 0..*).
+'smalluml::Method' (role 'smalluml_Method', cardinality 0..*) is associated with 'smalluml::Class' (role 'smalluml_Class', cardinality 0..*).
+'smalluml::Method' (role 'smalluml_Method9', cardinality 0..*) is associated with 'smalluml::Parameter' (role 'smalluml_Parameter', cardinality 0..*).
+'smalluml::NamedElement' (role 'smalluml_NamedElement', cardinality 0..*) is associated with 'smalluml::Package' (role 'smalluml_Package', cardinality 0..*).

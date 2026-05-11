@@ -1,0 +1,28 @@
+The model has 11 class(es).
+The class 'metrics::MetricAggregationRule' has the following attributes: 'period' of type str; 'intervalHint' of type str.
+The class 'metrics::MetricRetentionRules' has no attributes.
+The class 'metrics::MetricRetentionRule' has the following attributes: 'period' of type str; 'intervalHint' of type str.
+The class 'metrics::Addon' has no attributes.
+The class 'Rule' has no attributes.
+The class 'metrics::EObject' has no attributes.
+The class 'metrics::Metric' has the following attributes: 'name' of type str.
+The class 'metrics::MetricAggregationRules' has no attributes.
+The class 'metrics::MetricSource' has the following attributes: 'name' of type str.
+The class 'metrics::MetricRetentionPeriods' has the following attributes: 'metricRetentionPeriods' of type str.
+The class 'Base' has no attributes.
+The enumeration 'FixedMetricRetentionPeriod' has the following literals: 'Always', 'OneWeek', 'OneYear', 'OneMonth'.
+'metrics::MetricRetentionRule' is a specialization of 'Rule'.
+'metrics::Metric' is a specialization of 'Base'.
+'metrics::MetricAggregationRule' is a specialization of 'Rule'.
+'metrics::MetricSource' is a specialization of 'Base'.
+'metrics::MetricAggregationRules' (role 'metrics_MetricAggregationRules', cardinality 0..*) is associated with 'metrics::Addon' (role 'metrics_Addon6', cardinality 0..*).
+'metrics::MetricAggregationRules' (role 'metrics_MetricAggregationRules15', cardinality 0..*) is associated with 'metrics::MetricAggregationRule' (role 'metrics_MetricAggregationRule16', cardinality 0..*).
+'metrics::Addon' (role 'metrics_Addon4', cardinality 0..*) is associated with 'metrics::MetricRetentionRules' (role 'metrics_MetricRetentionRules', cardinality 0..*).
+'metrics::MetricRetentionRules' (role 'metrics_MetricRetentionRules18', cardinality 0..*) is associated with 'metrics::MetricRetentionRule' (role 'metrics_MetricRetentionRule', cardinality 0..*).
+'metrics::MetricRetentionRules' (role 'metrics_MetricRetentionRules12', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric11', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource20', cardinality 0..*) is associated with 'metrics::MetricAggregationRules' (role 'metrics_MetricAggregationRules21', cardinality 0..*).
+'metrics::Addon' (role 'metrics_Addon', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric', cardinality 0..*).
+'metrics::MetricAggregationRules' (role 'metrics_MetricAggregationRules9', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric8', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource23', cardinality 0..*) is associated with 'metrics::MetricRetentionRules' (role 'metrics_MetricRetentionRules24', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource', cardinality 0..*) is associated with 'metrics::Addon' (role 'metrics_Addon2', cardinality 0..*).
+'metrics::MetricAggregationRule' (role 'metrics_MetricAggregationRule', cardinality 0..*) is associated with 'metrics::EObject' (role 'metrics_EObject', cardinality 0..*).

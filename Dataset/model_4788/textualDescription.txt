@@ -1,0 +1,83 @@
+The model has 41 class(es).
+The class 'types::LongDouble' has no attributes.
+The class 'FloatingPoint' has no attributes.
+The class 'types::Branch' has no attributes.
+The class 'types::Long' has no attributes.
+The class 'types::UShort' has no attributes.
+The class 'types::DataLib' has no attributes.
+The class 'types::LongLong' has no attributes.
+The class 'types::WChar' has no attributes.
+The class 'types::Collection' has the following attributes: 'length' of type str.
+The class 'types::Enum' has the following attributes: 'literals' of type str; 'name' of type str.
+The class 'types::Boolean' has no attributes.
+The class 'Simple' has no attributes.
+The class 'types::Typedef' has the following attributes: 'name' of type str.
+The class 'types::Sequence' has no attributes.
+The class 'types::Double' has no attributes.
+The class 'types::Struct' has the following attributes: 'isDcpsDataType' of type bool; 'name' of type str.
+The class 'types::Array' has no attributes.
+The class 'types::SignedInt' has no attributes.
+The class 'types::Field' has the following attributes: 'name' of type str.
+The class 'types::ULongLong' has no attributes.
+The class 'Type' has no attributes.
+The class 'SignedInt' has no attributes.
+The class 'types::Key' has no attributes.
+The class 'types::ULong' has no attributes.
+The class 'OpenDDSLib' has no attributes.
+The class 'Int' has no attributes.
+The class 'types::UnsignedInt' has no attributes.
+The class 'types::WString' has no attributes.
+The class 'types::FloatingPoint' has no attributes.
+The class 'types::Int' has no attributes.
+The class 'Collection' has no attributes.
+The class 'types::Simple' has no attributes.
+The class 'types::String' has no attributes.
+The class 'types::Float' has no attributes.
+The class 'types::Octet' has no attributes.
+The class 'types::Union' has the following attributes: 'name' of type str.
+The class 'types::Short' has no attributes.
+The class 'types::Case' has the following attributes: 'literal' of type str.
+The class 'UnsignedInt' has no attributes.
+The class 'types::Char' has no attributes.
+The class 'types::Type' has no attributes.
+'types::Double' is a specialization of 'FloatingPoint'.
+'types::Float' is a specialization of 'FloatingPoint'.
+'types::ULongLong' is a specialization of 'UnsignedInt'.
+'types::Simple' is a specialization of 'Type'.
+'types::String' is a specialization of 'Collection'.
+'types::SignedInt' is a specialization of 'Int'.
+'types::Enum' is a specialization of 'Simple'.
+'types::Boolean' is a specialization of 'Simple'.
+'types::WString' is a specialization of 'Collection'.
+'types::FloatingPoint' is a specialization of 'Simple'.
+'types::Char' is a specialization of 'Simple'.
+'types::Long' is a specialization of 'SignedInt'.
+'types::Struct' is a specialization of 'Type'.
+'types::Int' is a specialization of 'Simple'.
+'types::Short' is a specialization of 'SignedInt'.
+'types::LongDouble' is a specialization of 'FloatingPoint'.
+'types::UShort' is a specialization of 'UnsignedInt'.
+'types::Typedef' is a specialization of 'Type'.
+'types::Array' is a specialization of 'Collection'.
+'types::ULong' is a specialization of 'UnsignedInt'.
+'types::LongLong' is a specialization of 'SignedInt'.
+'types::WChar' is a specialization of 'Simple'.
+'types::Octet' is a specialization of 'Simple'.
+'types::Sequence' is a specialization of 'Collection'.
+'types::Collection' is a specialization of 'Type'.
+'types::DataLib' is a specialization of 'OpenDDSLib'.
+'types::Union' is a specialization of 'Type'.
+'types::UnsignedInt' is a specialization of 'Int'.
+'types::Field' (role 'types_Field25', cardinality 0..*) is associated with 'types::Union' (role 'types_Union24', cardinality 0..*).
+'types::Type' (role 'types_Type6', cardinality 0..*) is associated with 'types::Field' (role 'types_Field5', cardinality 0..*).
+'types::Array' (role 'types_Array', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'types::Branch' (role 'types_Branch', cardinality 0..*) is associated with 'types::Field' (role 'types_Field', cardinality 0..*).
+'types::Case' (role 'types_Case', cardinality 0..*) is associated with 'types::Branch' (role 'types_Branch3', cardinality 0..*).
+'types::Type' (role 'types_Type27', cardinality 0..*) is associated with 'types::DataLib' (role 'types_DataLib', cardinality 0..*).
+'types::Union' (role 'types_Union21', cardinality 0..*) is associated with 'types::Type' (role 'types_Type22', cardinality 0..*).
+'types::Struct' (role 'types_Struct', cardinality 0..*) is associated with 'types::Field' (role 'types_Field12', cardinality 0..*).
+'types::Key' (role 'types_Key15', cardinality 0..*) is associated with 'types::Struct' (role 'types_Struct14', cardinality 0..*).
+'types::Field' (role 'types_Field8', cardinality 0..*) is associated with 'types::Key' (role 'types_Key', cardinality 0..*).
+'types::Type' (role 'types_Type17', cardinality 0..*) is associated with 'types::Typedef' (role 'types_Typedef', cardinality 0..*).
+'types::Branch' (role 'types_Branch19', cardinality 0..*) is associated with 'types::Union' (role 'types_Union', cardinality 0..*).
+'types::Type' (role 'types_Type10', cardinality 0..*) is associated with 'types::Sequence' (role 'types_Sequence', cardinality 0..*).

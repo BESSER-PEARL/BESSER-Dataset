@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MLM-Rearchitect-Exchange/mlm-rearchitecter-tool/Rearchitecter/test-resources/CloudML.ecore

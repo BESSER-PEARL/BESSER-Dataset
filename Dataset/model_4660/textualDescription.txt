@@ -1,0 +1,46 @@
+The model has 17 class(es).
+The class 'di::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'di::BPMNEdge' has the following attributes: 'messageVisibleKind' of type str.
+The class 'Diagram' has no attributes.
+The class 'di::EStringToStringMapEntry' has no attributes.
+The class 'LabeledShape' has no attributes.
+The class 'di::BaseElement' has no attributes.
+The class 'Plane' has no attributes.
+The class 'di::BPMNPlane' has no attributes.
+The class 'di::BPMNLabel' has no attributes.
+The class 'Style' has no attributes.
+The class 'di::BPMNLabelStyle' has no attributes.
+The class 'di::Font' has no attributes.
+The class 'LabeledEdge' has no attributes.
+The class 'di::DiagramElement' has no attributes.
+The class 'di::BPMNShape' has the following attributes: 'isMarkerVisible' of type bool; 'isHorizontal' of type bool; 'isExpanded' of type bool; 'isMessageVisible' of type bool; 'participantBandKind' of type str.
+The class 'di::BPMNDiagram' has no attributes.
+The class 'Label' has no attributes.
+The enumeration 'ParticipantBandKind' has the following literals: 'middle_initiating', 'middle_non_initiating', 'bottom_initiating', 'top_initiating', 'top_non_initiating', 'bottom_non_initiating'.
+The enumeration 'MessageVisibleKind' has the following literals: 'non_initiating', 'initiating'.
+'di::BPMNPlane' is a specialization of 'Plane'.
+'di::BPMNDiagram' is a specialization of 'Diagram'.
+'di::BPMNLabelStyle' is a specialization of 'Style'.
+'di::BPMNEdge' is a specialization of 'LabeledEdge'.
+'di::BPMNLabel' is a specialization of 'Label'.
+'di::BPMNShape' is a specialization of 'LabeledShape'.
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry3', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot2', cardinality 0..*).
+'di::BPMNShape' (role 'di_BPMNShape48', cardinality 0..*) is associated with 'di::BPMNShape' (role 'di_BPMNShape46', cardinality 0..*).
+'di::BPMNLabelStyle' (role 'di_BPMNLabelStyle21', cardinality 0..*) is associated with 'di::BPMNDiagram' (role 'di_BPMNDiagram20', cardinality 0..*).
+'di::BPMNDiagram' (role 'di_BPMNDiagram17', cardinality 0..*) is associated with 'di::BPMNPlane' (role 'di_BPMNPlane18', cardinality 0..*).
+'di::BPMNLabelStyle' (role 'di_BPMNLabelStyle', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot11', cardinality 0..*).
+'di::BPMNShape' (role 'di_BPMNShape41', cardinality 0..*) is associated with 'di::BPMNLabel' (role 'di_BPMNLabel42', cardinality 0..*).
+'di::DiagramElement' (role 'di_DiagramElement', cardinality 0..*) is associated with 'di::BPMNEdge' (role 'di_BPMNEdge28', cardinality 0..*).
+'di::BPMNEdge' (role 'di_BPMNEdge23', cardinality 0..*) is associated with 'di::BPMNLabel' (role 'di_BPMNLabel24', cardinality 0..*).
+'di::BPMNLabelStyle' (role 'di_BPMNLabelStyle34', cardinality 0..*) is associated with 'di::BPMNLabel' (role 'di_BPMNLabel33', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot7', cardinality 0..*) is associated with 'di::BPMNEdge' (role 'di_BPMNEdge', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot9', cardinality 0..*) is associated with 'di::BPMNLabel' (role 'di_BPMNLabel', cardinality 0..*).
+'di::DiagramElement' (role 'di_DiagramElement31', cardinality 0..*) is associated with 'di::BPMNEdge' (role 'di_BPMNEdge30', cardinality 0..*).
+'di::BPMNShape' (role 'di_BPMNShape44', cardinality 0..*) is associated with 'di::BaseElement' (role 'di_BaseElement45', cardinality 0..*).
+'di::BPMNPlane' (role 'di_BPMNPlane', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot13', cardinality 0..*).
+'di::BPMNDiagram' (role 'di_BPMNDiagram', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot5', cardinality 0..*).
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot', cardinality 0..*).
+'di::BaseElement' (role 'di_BaseElement', cardinality 0..*) is associated with 'di::BPMNEdge' (role 'di_BPMNEdge26', cardinality 0..*).
+'di::BaseElement' (role 'di_BaseElement39', cardinality 0..*) is associated with 'di::BPMNPlane' (role 'di_BPMNPlane38', cardinality 0..*).
+'di::BPMNLabelStyle' (role 'di_BPMNLabelStyle36', cardinality 0..*) is associated with 'di::Font' (role 'di_Font', cardinality 0..*).
+'di::BPMNShape' (role 'di_BPMNShape', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot15', cardinality 0..*).

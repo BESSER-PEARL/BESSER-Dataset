@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Data::Method' has the following attributes: 'return_' of type str; 'name' of type str; 'encapsulation' of type str.
+The class 'Data::Class' has the following attributes: 'name' of type str.
+The class 'Data::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'Data::Attribute' has the following attributes: 'type' of type str; 'name' of type str; 'encapsulation' of type str.
+The class 'Data::Model' has no attributes.
+'Data::Class' (role 'Data_Class', cardinality 0..*) is associated with 'Data::Model' (role 'Data_Model', cardinality 0..*).
+'Data::Method' (role 'Data_Method6', cardinality 0..*) is associated with 'Data::Parameter' (role 'Data_Parameter', cardinality 0..*).
+'Data::Class' (role 'Data_Class4', cardinality 0..*) is associated with 'Data::Method' (role 'Data_Method', cardinality 0..*).
+'Data::Attribute' (role 'Data_Attribute', cardinality 0..*) is associated with 'Data::Class' (role 'Data_Class2', cardinality 0..*).

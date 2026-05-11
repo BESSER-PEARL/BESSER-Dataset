@@ -1,0 +1,55 @@
+The model has 27 class(es).
+The class 'activitydiagram::InitialNode' has no attributes.
+The class 'activitydiagram::ActivityFinalNode' has no attributes.
+The class 'ObjectNode' has no attributes.
+The class 'ADElement' has no attributes.
+The class 'activitydiagram::FlowFinalNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'activitydiagram::ObjectNode' has no attributes.
+The class 'activitydiagram::TimeEventNode' has the following attributes: 'cycle' of type str.
+The class 'activitydiagram::ADElement' has the following attributes: 'name' of type str.
+The class 'activitydiagram::AcceptSignalNode' has the following attributes: 'signalId' of type str.
+The class 'activitydiagram::ActivityEdge' has the following attributes: 'guard' of type bool.
+The class 'activitydiagram::MergeNode' has no attributes.
+The class 'activitydiagram::ExpansionNode' has no attributes.
+The class 'activitydiagram::ActivityNode' has the following attributes: 'current' of type bool.
+The class 'activitydiagram::ActivityParameterNode' has the following attributes: 'parameter' of type str.
+The class 'activitydiagram::FinalNode' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'activitydiagram::ForkNode' has no attributes.
+The class 'activitydiagram::DataStoreNode' has no attributes.
+The class 'activitydiagram::ActionNode' has no attributes.
+The class 'activitydiagram::JoinNode' has no attributes.
+The class 'activitydiagram::SignalNode' has the following attributes: 'signalId' of type str.
+The class 'activitydiagram::Activity' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'activitydiagram::Pin' has no attributes.
+The class 'activitydiagram::ControlNode' has no attributes.
+The class 'activitydiagram::DecisionNode' has no attributes.
+'activitydiagram::FlowFinalNode' is a specialization of 'FinalNode'.
+'activitydiagram::FinalNode' is a specialization of 'ControlNode'.
+'activitydiagram::JoinNode' is a specialization of 'ControlNode'.
+'activitydiagram::ForkNode' is a specialization of 'ControlNode'.
+'activitydiagram::ActivityEdge' is a specialization of 'ADElement'.
+'activitydiagram::ActivityFinalNode' is a specialization of 'FinalNode'.
+'activitydiagram::Pin' is a specialization of 'ObjectNode'.
+'activitydiagram::ControlNode' is a specialization of 'ActivityNode'.
+'activitydiagram::ExpansionNode' is a specialization of 'ObjectNode'.
+'activitydiagram::ObjectNode' is a specialization of 'ActivityNode'.
+'activitydiagram::ActivityNode' is a specialization of 'ADElement'.
+'activitydiagram::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'activitydiagram::Activity' is a specialization of 'ADElement'.
+'activitydiagram::DecisionNode' is a specialization of 'ControlNode'.
+'activitydiagram::DataStoreNode' is a specialization of 'ObjectNode'.
+'activitydiagram::InitialNode' is a specialization of 'ControlNode'.
+'activitydiagram::AcceptSignalNode' is a specialization of 'ActivityNode'.
+'activitydiagram::TimeEventNode' is a specialization of 'ActivityNode'.
+'activitydiagram::ActionNode' is a specialization of 'ActivityNode'.
+'activitydiagram::SignalNode' is a specialization of 'ActivityNode'.
+'activitydiagram::MergeNode' is a specialization of 'ControlNode'.
+'activitydiagram::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'sedges', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'source', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'activitydiagram::Activity' (role 'Activity', cardinality 0..*) is associated with 'activitydiagram::ADElement' (role 'contains', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'ActivityNode7', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'tedges', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'target', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'ActivityEdge4', cardinality 0..*).
+'activitydiagram::Activity' (role 'activityDiag', cardinality 0..*) is associated with 'activitydiagram::ADElement' (role 'ADElement', cardinality 0..*).

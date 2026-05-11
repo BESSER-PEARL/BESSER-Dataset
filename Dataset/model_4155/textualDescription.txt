@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'prolog::Greeting' has the following attributes: 'name' of type str.
+The class 'prolog::Model' has no attributes.
+'prolog::Greeting' (role 'prolog_Greeting', cardinality 0..*) is associated with 'prolog::Model' (role 'prolog_Model', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'model::IPersonList' has no attributes.
+The class 'model::IPerson' has the following attributes: 'firstName' of type str.
+'model::IPersonList' (role 'model_IPersonList', cardinality 0..*) is associated with 'model::IPerson' (role 'model_IPerson', cardinality 0..*).

@@ -1,0 +1,33 @@
+The model has 12 class(es).
+The class 'dot::EdgeStatement' has no attributes.
+The class 'dot::Statement' has no attributes.
+The class 'dot::Port' has the following attributes: 'compass_pt' of type str; 'name' of type str.
+The class 'dot::Graph' has the following attributes: 'strict' of type bool; 'type' of type str; 'name' of type str.
+The class 'dot::AttributeStatement' has the following attributes: 'type' of type str.
+The class 'dot::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'dot::EdgeTarget' has the following attributes: 'operator' of type str.
+The class 'dot::Subgraph' has the following attributes: 'name' of type str.
+The class 'dot::Node' has the following attributes: 'name' of type str.
+The class 'Statement' has no attributes.
+The class 'dot::GraphvizModel' has no attributes.
+The class 'dot::NodeStatement' has no attributes.
+The enumeration 'GraphType' has the following literals: 'graph', 'digraph'.
+The enumeration 'AttributeType' has the following literals: 'graph', 'edge', 'node'.
+The enumeration 'EdgeOperator' has the following literals: 'directed', 'undirected'.
+'dot::Subgraph' is a specialization of 'Statement'.
+'dot::NodeStatement' is a specialization of 'Statement'.
+'dot::Attribute' is a specialization of 'Statement'.
+'dot::EdgeStatement' is a specialization of 'Statement'.
+'dot::AttributeStatement' is a specialization of 'Statement'.
+'dot::EdgeStatement' (role 'dot_EdgeStatement13', cardinality 0..*) is associated with 'dot::Attribute' (role 'dot_Attribute14', cardinality 0..*).
+'dot::Statement' (role 'dot_Statement24', cardinality 0..*) is associated with 'dot::Subgraph' (role 'dot_Subgraph23', cardinality 0..*).
+'dot::Graph' (role 'dot_Graph2', cardinality 0..*) is associated with 'dot::Statement' (role 'dot_Statement', cardinality 0..*).
+'dot::Port' (role 'dot_Port', cardinality 0..*) is associated with 'dot::Node' (role 'dot_Node7', cardinality 0..*).
+'dot::GraphvizModel' (role 'dot_GraphvizModel', cardinality 0..*) is associated with 'dot::Graph' (role 'dot_Graph', cardinality 0..*).
+'dot::Node' (role 'dot_Node9', cardinality 0..*) is associated with 'dot::EdgeStatement' (role 'dot_EdgeStatement', cardinality 0..*).
+'dot::EdgeTarget' (role 'dot_EdgeTarget', cardinality 0..*) is associated with 'dot::EdgeStatement' (role 'dot_EdgeStatement11', cardinality 0..*).
+'dot::Subgraph' (role 'dot_Subgraph', cardinality 0..*) is associated with 'dot::EdgeTarget' (role 'dot_EdgeTarget16', cardinality 0..*).
+'dot::Node' (role 'dot_Node19', cardinality 0..*) is associated with 'dot::EdgeTarget' (role 'dot_EdgeTarget18', cardinality 0..*).
+'dot::NodeStatement' (role 'dot_NodeStatement5', cardinality 0..*) is associated with 'dot::Attribute' (role 'dot_Attribute', cardinality 0..*).
+'dot::NodeStatement' (role 'dot_NodeStatement', cardinality 0..*) is associated with 'dot::Node' (role 'dot_Node', cardinality 0..*).
+'dot::Attribute' (role 'dot_Attribute21', cardinality 0..*) is associated with 'dot::AttributeStatement' (role 'dot_AttributeStatement', cardinality 0..*).

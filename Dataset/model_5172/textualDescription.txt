@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'binDsl::L' has no attributes.
+The class 'binDsl::B' has the following attributes: 'b' of type str.
+The class 'binDsl::N' has the following attributes: 'cond' of type bool.
+'binDsl::N' (role 'binDsl_N2', cardinality 0..*) is associated with 'binDsl::L' (role 'binDsl_L3', cardinality 0..*).
+'binDsl::L' (role 'binDsl_L5', cardinality 0..*) is associated with 'binDsl::B' (role 'binDsl_B', cardinality 0..*).
+'binDsl::L' (role 'binDsl_L', cardinality 0..*) is associated with 'binDsl::N' (role 'binDsl_N', cardinality 0..*).

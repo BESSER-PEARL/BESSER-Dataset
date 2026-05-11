@@ -1,0 +1,53 @@
+The model has 23 class(es).
+The class 'systemmodel::Outport' has no attributes.
+The class 'InterfaceBlock' has no attributes.
+The class 'systemmodel::Sum' has no attributes.
+The class 'Port' has no attributes.
+The class 'systemmodel::GainBlock' has the following attributes: 'gainfactor' of type str.
+The class 'systemmodel::VectorType' has the following attributes: 'size' of type str.
+The class 'SMElement' has no attributes.
+The class 'systemmodel::Port' has no attributes.
+The class 'systemmodel::SystemModel' has no attributes.
+The class 'systemmodel::DataType' has the following attributes: 'basetype' of type str.
+The class 'systemmodel::InputBlock' has no attributes.
+The class 'systemmodel::Signal' has no attributes.
+The class 'DataType' has no attributes.
+The class 'systemmodel::SMElement' has the following attributes: 'name' of type str.
+The class 'systemmodel::OutputBlock' has no attributes.
+The class 'systemmodel::InterfaceBlock' has no attributes.
+The class 'systemmodel::UnitDelay' has the following attributes: 'initialCondition' of type str.
+The class 'systemmodel::MatrixType' has the following attributes: 'rows' of type str; 'columns' of type str.
+The class 'Block' has no attributes.
+The class 'systemmodel::ScalarType' has no attributes.
+The class 'systemmodel::Block' has the following attributes: 'sequenceNumber' of type int.
+The class 'systemmodel::Saturation' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'systemmodel::Inport' has no attributes.
+'systemmodel::Inport' is a specialization of 'Port'.
+'systemmodel::ScalarType' is a specialization of 'DataType'.
+'systemmodel::Block' is a specialization of 'SMElement'.
+'systemmodel::SystemModel' is a specialization of 'SMElement'.
+'systemmodel::Saturation' is a specialization of 'Block'.
+'systemmodel::Port' is a specialization of 'SMElement'.
+'systemmodel::Sum' is a specialization of 'Block'.
+'systemmodel::Outport' is a specialization of 'Port'.
+'systemmodel::UnitDelay' is a specialization of 'Block'.
+'systemmodel::InterfaceBlock' is a specialization of 'Block'.
+'systemmodel::InputBlock' is a specialization of 'InterfaceBlock'.
+'systemmodel::Signal' is a specialization of 'SMElement'.
+'systemmodel::OutputBlock' is a specialization of 'InterfaceBlock'.
+'systemmodel::GainBlock' is a specialization of 'Block'.
+'systemmodel::DataType' is a specialization of 'SMElement'.
+'systemmodel::VectorType' is a specialization of 'DataType'.
+'systemmodel::MatrixType' is a specialization of 'DataType'.
+'systemmodel::Inport' (role 'dstPort', cardinality 0..*) is associated with 'systemmodel::Signal' (role 'Signal', cardinality 0..*).
+'systemmodel::SystemModel' (role 'systemmodel_SystemModel', cardinality 0..*) is associated with 'systemmodel::Block' (role 'systemmodel_Block', cardinality 0..*).
+'systemmodel::DataType' (role 'systemmodel_DataType19', cardinality 0..*) is associated with 'systemmodel::Port' (role 'systemmodel_Port', cardinality 0..*).
+'systemmodel::Outport' (role 'outports', cardinality 0..*) is associated with 'systemmodel::Block' (role 'Block17', cardinality 0..*).
+'systemmodel::DataType' (role 'systemmodel_DataType', cardinality 0..*) is associated with 'systemmodel::SystemModel' (role 'systemmodel_SystemModel4', cardinality 0..*).
+'systemmodel::Signal' (role 'inSignal', cardinality 0..*) is associated with 'systemmodel::Inport' (role 'Inport11', cardinality 0..*).
+'systemmodel::Inport' (role 'inports', cardinality 0..*) is associated with 'systemmodel::Block' (role 'Block', cardinality 0..*).
+'systemmodel::Block' (role 'parentBlock', cardinality 0..*) is associated with 'systemmodel::Inport' (role 'Inport', cardinality 0..*).
+'systemmodel::Signal' (role 'outSignals', cardinality 0..*) is associated with 'systemmodel::Outport' (role 'Outport9', cardinality 0..*).
+'systemmodel::Signal' (role 'Signal15', cardinality 0..*) is associated with 'systemmodel::Outport' (role 'srcPort', cardinality 0..*).
+'systemmodel::Outport' (role 'Outport', cardinality 0..*) is associated with 'systemmodel::Block' (role 'parentBlock7', cardinality 0..*).
+'systemmodel::SystemModel' (role 'systemmodel_SystemModel2', cardinality 0..*) is associated with 'systemmodel::Signal' (role 'systemmodel_Signal', cardinality 0..*).

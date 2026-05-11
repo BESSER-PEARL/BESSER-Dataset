@@ -1,0 +1,38 @@
+The model has 18 class(es).
+The class 'notation::View' has the following attributes: 'viewType' of type str; 'viewDetails' of type str.
+The class 'View' has no attributes.
+The class 'notation::Bounds' has the following attributes: 'width' of type int; 'height' of type int.
+The class 'notation::MindMapNode' has no attributes.
+The class 'notation::Location' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'LayoutConstraint' has no attributes.
+The class 'notation::NotationElement' has the following attributes: 'idBeforeRemoval' of type str; 'id' of type str.
+The class 'notation::EObject' has no attributes.
+The class 'notation::Diagram' has the following attributes: 'showLocationForNewElementsDialog' of type bool; 'name' of type str; 'locationForNewElements' of type str.
+The class 'notation::Edge' has no attributes.
+The class 'notation::LayoutConstraint' has no attributes.
+The class 'NotationElement' has no attributes.
+The class 'notation::CategorySeparator' has the following attributes: 'newChildCodeSyncType' of type str; 'category' of type str; 'newChildIcon' of type str.
+The class 'notation::ExpandableNode' has the following attributes: 'template' of type str; 'hasChildren' of type bool; 'expanded' of type bool.
+The class 'notation::Note' has the following attributes: 'text' of type str.
+The class 'Node' has no attributes.
+The class 'Location' has no attributes.
+The class 'notation::Node' has no attributes.
+'notation::View' is a specialization of 'NotationElement'.
+'notation::Node' is a specialization of 'View'.
+'notation::ExpandableNode' is a specialization of 'Node'.
+'notation::Bounds' is a specialization of 'Location'.
+'notation::Location' is a specialization of 'LayoutConstraint'.
+'notation::Note' is a specialization of 'Node'.
+'notation::MindMapNode' is a specialization of 'Node'.
+'notation::Location' is a specialization of 'NotationElement'.
+'notation::CategorySeparator' is a specialization of 'Node'.
+'notation::Diagram' is a specialization of 'View'.
+'notation::Edge' is a specialization of 'View'.
+'notation::Edge' (role 'Edge', cardinality 0..*) is associated with 'notation::View' (role 'source', cardinality 0..*).
+'notation::Diagram' (role 'notation_Diagram', cardinality 0..*) is associated with 'notation::Edge' (role 'notation_Edge', cardinality 0..*).
+'notation::View' (role 'target', cardinality 0..*) is associated with 'notation::Edge' (role 'Edge5', cardinality 0..*).
+'notation::View' (role 'notation_View2', cardinality 0..*) is associated with 'notation::EObject' (role 'notation_EObject', cardinality 0..*).
+'notation::Node' (role 'notation_Node', cardinality 0..*) is associated with 'notation::View' (role 'notation_View', cardinality 0..*).
+'notation::View' (role 'View10', cardinality 0..*) is associated with 'notation::Edge' (role 'targetEdges', cardinality 0..*).
+'notation::Node' (role 'notation_Node7', cardinality 0..*) is associated with 'notation::Bounds' (role 'notation_Bounds', cardinality 0..*).
+'notation::View' (role 'View', cardinality 0..*) is associated with 'notation::Edge' (role 'sourceEdges', cardinality 0..*).

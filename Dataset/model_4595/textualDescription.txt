@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'dot::GraphModel' has no attributes.
+The class 'dot::Node' has the following attributes: 'name' of type str.
+The class 'dot::DirectedGraph' has no attributes.
+The class 'dot::Attribute' has the following attributes: 'weight' of type int.
+The class 'Graph' has no attributes.
+The class 'dot::UnDirectedEdge' has no attributes.
+The class 'dot::Graph' has the following attributes: 'name' of type str.
+The class 'dot::DirectedEdge' has no attributes.
+The class 'dot::UndirectedGraph' has no attributes.
+'dot::DirectedGraph' is a specialization of 'Graph'.
+'dot::UndirectedGraph' is a specialization of 'Graph'.
+'dot::UnDirectedEdge' (role 'dot_UnDirectedEdge9', cardinality 0..*) is associated with 'dot::Attribute' (role 'dot_Attribute', cardinality 0..*).
+'dot::Node' (role 'dot_Node15', cardinality 0..*) is associated with 'dot::DirectedEdge' (role 'dot_DirectedEdge14', cardinality 0..*).
+'dot::DirectedEdge' (role 'dot_DirectedEdge11', cardinality 0..*) is associated with 'dot::Node' (role 'dot_Node12', cardinality 0..*).
+'dot::Attribute' (role 'dot_Attribute18', cardinality 0..*) is associated with 'dot::DirectedEdge' (role 'dot_DirectedEdge17', cardinality 0..*).
+'dot::Graph' (role 'dot_Graph', cardinality 0..*) is associated with 'dot::GraphModel' (role 'dot_GraphModel', cardinality 0..*).
+'dot::Node' (role 'dot_Node', cardinality 0..*) is associated with 'dot::UnDirectedEdge' (role 'dot_UnDirectedEdge4', cardinality 0..*).
+'dot::UndirectedGraph' (role 'dot_UndirectedGraph', cardinality 0..*) is associated with 'dot::UnDirectedEdge' (role 'dot_UnDirectedEdge', cardinality 0..*).
+'dot::DirectedGraph' (role 'dot_DirectedGraph', cardinality 0..*) is associated with 'dot::DirectedEdge' (role 'dot_DirectedEdge', cardinality 0..*).
+'dot::Node' (role 'dot_Node7', cardinality 0..*) is associated with 'dot::UnDirectedEdge' (role 'dot_UnDirectedEdge6', cardinality 0..*).

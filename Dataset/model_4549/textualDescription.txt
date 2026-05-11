@@ -1,0 +1,34 @@
+The model has 14 class(es).
+The class 'dronesSimulation::DronesSimulation' has no attributes.
+The class 'dronesSimulation::Drone' has no attributes.
+The class 'dronesSimulation::DroneInstance' has the following attributes: 'state' of type str; 'currentBattery' of type float.
+The class 'dronesSimulation::Obstacle' has no attributes.
+The class 'dronesSimulation::RoleInstance' has no attributes.
+The class 'dronesSimulation::Observation' has the following attributes: 'time' of type str; 'id' of type str.
+The class 'dronesSimulation::TaskInstance' has the following attributes: 'state' of type str.
+The class 'dronesSimulation::Task' has no attributes.
+The class 'dronesSimulation::DroneObservation' has no attributes.
+The class 'Observation' has no attributes.
+The class 'dronesSimulation::ObstacleObservation' has no attributes.
+The class 'dronesSimulation::Scenario' has no attributes.
+The class 'dronesSimulation::Position' has no attributes.
+The class 'dronesSimulation::Role' has no attributes.
+The enumeration 'DroneState' has the following literals: 'CREATED', 'MOVING', 'DONE', 'HOVERING'.
+The enumeration 'TaskState' has the following literals: 'IN_PROGRESS', 'NOT_STARTED', 'WAITING', 'DONE'.
+'dronesSimulation::ObstacleObservation' is a specialization of 'Observation'.
+'dronesSimulation::DroneObservation' is a specialization of 'Observation'.
+'dronesSimulation::Drone' (role 'dronesSimulation_Drone', cardinality 0..*) is associated with 'dronesSimulation::DroneInstance' (role 'dronesSimulation_DroneInstance6', cardinality 0..*).
+'dronesSimulation::RoleInstance' (role 'currentRole', cardinality 0..*) is associated with 'dronesSimulation::DroneInstance' (role 'DroneInstance', cardinality 0..*).
+'dronesSimulation::TaskInstance' (role 'dronesSimulation_TaskInstance', cardinality 0..*) is associated with 'dronesSimulation::DronesSimulation' (role 'dronesSimulation_DronesSimulation2', cardinality 0..*).
+'dronesSimulation::DronesSimulation' (role 'dronesSimulation_DronesSimulation4', cardinality 0..*) is associated with 'dronesSimulation::DroneInstance' (role 'dronesSimulation_DroneInstance', cardinality 0..*).
+'dronesSimulation::Observation' (role 'dronesSimulation_Observation', cardinality 0..*) is associated with 'dronesSimulation::DroneInstance' (role 'dronesSimulation_DroneInstance11', cardinality 0..*).
+'dronesSimulation::RoleInstance' (role 'RoleInstance15', cardinality 0..*) is associated with 'dronesSimulation::TaskInstance' (role 'taskInstance', cardinality 0..*).
+'dronesSimulation::RoleInstance' (role 'dronesSimulation_RoleInstance', cardinality 0..*) is associated with 'dronesSimulation::Role' (role 'dronesSimulation_Role', cardinality 0..*).
+'dronesSimulation::DroneInstance' (role 'dronesSimulation_DroneInstance8', cardinality 0..*) is associated with 'dronesSimulation::Position' (role 'dronesSimulation_Position', cardinality 0..*).
+'dronesSimulation::Scenario' (role 'dronesSimulation_Scenario', cardinality 0..*) is associated with 'dronesSimulation::DronesSimulation' (role 'dronesSimulation_DronesSimulation', cardinality 0..*).
+'dronesSimulation::Obstacle' (role 'dronesSimulation_Obstacle', cardinality 0..*) is associated with 'dronesSimulation::ObstacleObservation' (role 'dronesSimulation_ObstacleObservation', cardinality 0..*).
+'dronesSimulation::RoleInstance' (role 'roleInstances', cardinality 0..*) is associated with 'dronesSimulation::TaskInstance' (role 'TaskInstance', cardinality 0..*).
+'dronesSimulation::DroneObservation' (role 'dronesSimulation_DroneObservation', cardinality 0..*) is associated with 'dronesSimulation::Drone' (role 'dronesSimulation_Drone21', cardinality 0..*).
+'dronesSimulation::Task' (role 'dronesSimulation_Task', cardinality 0..*) is associated with 'dronesSimulation::TaskInstance' (role 'dronesSimulation_TaskInstance13', cardinality 0..*).
+'dronesSimulation::DroneObservation' (role 'dronesSimulation_DroneObservation23', cardinality 0..*) is associated with 'dronesSimulation::Position' (role 'dronesSimulation_Position24', cardinality 0..*).
+'dronesSimulation::DroneInstance' (role 'allocatedDrone', cardinality 0..*) is associated with 'dronesSimulation::RoleInstance' (role 'RoleInstance', cardinality 0..*).

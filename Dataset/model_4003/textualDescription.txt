@@ -1,0 +1,32 @@
+The model has 13 class(es).
+The class 'JavaMM::TestClass' has no attributes.
+The class 'JavaMM::Type' has the following attributes: 'name' of type str.
+The class 'JavaMM::PrimitiveType' has no attributes.
+The class 'JavaMM::Package' has the following attributes: 'name' of type str.
+The class 'JavaMM::Container' has the following attributes: 'type' of type str.
+The class 'JavaMM::EntityClass' has no attributes.
+The class 'Type' has no attributes.
+The class 'JavaMM::Class' has no attributes.
+The class 'JavaMM::Attribute' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'JavaMM::DAOClass' has no attributes.
+The class 'JavaMM::Annotation' has the following attributes: 'content' of type str; 'type' of type str.
+The class 'JavaMM::Program' has no attributes.
+The class 'Class' has no attributes.
+The enumeration 'Visibility' has the following literals: 'private', 'public'.
+'JavaMM::TestClass' is a specialization of 'Class'.
+'JavaMM::DAOClass' is a specialization of 'Class'.
+'JavaMM::EntityClass' is a specialization of 'Class'.
+'JavaMM::PrimitiveType' is a specialization of 'Type'.
+'JavaMM::Class' is a specialization of 'Type'.
+'JavaMM::Container' is a specialization of 'Type'.
+'JavaMM::DAOClass' (role 'JavaMM_DAOClass18', cardinality 0..*) is associated with 'JavaMM::TestClass' (role 'JavaMM_TestClass', cardinality 0..*).
+'JavaMM::Class' (role 'JavaMM_Class8', cardinality 0..*) is associated with 'JavaMM::Attribute' (role 'JavaMM_Attribute', cardinality 0..*).
+'JavaMM::Program' (role 'JavaMM_Program', cardinality 0..*) is associated with 'JavaMM::Package' (role 'JavaMM_Package', cardinality 0..*).
+'JavaMM::Package' (role 'JavaMM_Package6', cardinality 0..*) is associated with 'JavaMM::Class' (role 'JavaMM_Class', cardinality 0..*).
+'JavaMM::Annotation' (role 'JavaMM_Annotation', cardinality 0..*) is associated with 'JavaMM::Attribute' (role 'JavaMM_Attribute12', cardinality 0..*).
+'JavaMM::Container' (role 'JavaMM_Container', cardinality 0..*) is associated with 'JavaMM::Program' (role 'JavaMM_Program4', cardinality 0..*).
+'JavaMM::DAOClass' (role 'JavaMM_DAOClass', cardinality 0..*) is associated with 'JavaMM::EntityClass' (role 'JavaMM_EntityClass', cardinality 0..*).
+'JavaMM::PrimitiveType' (role 'JavaMM_PrimitiveType', cardinality 0..*) is associated with 'JavaMM::Program' (role 'JavaMM_Program2', cardinality 0..*).
+'JavaMM::Attribute' (role 'JavaMM_Attribute10', cardinality 0..*) is associated with 'JavaMM::Type' (role 'JavaMM_Type', cardinality 0..*).
+'JavaMM::Container' (role 'JavaMM_Container14', cardinality 0..*) is associated with 'JavaMM::Type' (role 'JavaMM_Type15', cardinality 0..*).
+'JavaMM::TestClass' (role 'JavaMM_TestClass20', cardinality 0..*) is associated with 'JavaMM::EntityClass' (role 'JavaMM_EntityClass21', cardinality 0..*).

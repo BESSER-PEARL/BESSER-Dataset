@@ -1,0 +1,76 @@
+The model has 33 class(es).
+The class 'dSL::RotateMovementAction' has no attributes.
+The class 'dSL::ANDexpression' has no attributes.
+The class 'dSL::Expression' has no attributes.
+The class 'dSL::Behavior' has the following attributes: 'name' of type str.
+The class 'dSL::MarsRoverExpedition' has no attributes.
+The class 'dSL::RightRotatePoint' has the following attributes: 'rightdir' of type str.
+The class 'dSL::MeasurementAction' has the following attributes: 'measure' of type str.
+The class 'dSL::ORexpression' has no attributes.
+The class 'dSL::EdgeLiteral' has the following attributes: 'edge' of type str.
+The class 'dSL::ExpressionBracket' has no attributes.
+The class 'dSL::MiddleRotatePoint' has the following attributes: 'middledir' of type str.
+The class 'RotatePoints' has no attributes.
+The class 'dSL::TrueLiteral' has the following attributes: 't' of type str.
+The class 'dSL::RightMovementAction' has no attributes.
+The class 'dSL::TouchLiteral' has the following attributes: 'touch' of type str.
+The class 'dSL::DepthLiteral' has the following attributes: 'back' of type str.
+The class 'dSL::EndCondition' has no attributes.
+The class 'RotateMovementAction' has no attributes.
+The class 'dSL::Mission' has the following attributes: 'name' of type str.
+The class 'dSL::ColorLiteral' has the following attributes: 'color' of type str.
+The class 'dSL::MoveAction' has the following attributes: 'dir' of type str.
+The class 'dSL::BehaviorName' has the following attributes: 'name' of type str.
+The class 'dSL::RotatePoints' has the following attributes: 'degrees' of type int.
+The class 'dSL::MovementAction' has the following attributes: 'actionenum' of type str.
+The class 'dSL::LeftRotatePoint' has the following attributes: 'leftdir' of type str.
+The class 'Actions' has no attributes.
+The class 'dSL::EndAfter' has the following attributes: 'time' of type int.
+The class 'dSL::Actions' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dSL::EndWhen' has the following attributes: 'times' of type int; 'name' of type str.
+The class 'EndCondition' has no attributes.
+The class 'dSL::LeftMovementAction' has no attributes.
+The class 'dSL::DistanceLiteral' has the following attributes: 'distance' of type int.
+The enumeration 'EdgeEnum' has the following literals: 'BACK', 'FRONTRIGHT', 'FRONTLEFT'.
+The enumeration 'TouchEnum' has the following literals: 'LEFT', 'RIGHT'.
+The enumeration 'Tenum' has the following literals: 'TRUE'.
+The enumeration 'LREnum' has the following literals: 'RIGHT', 'LEFT'.
+The enumeration 'FBEnum' has the following literals: 'BACKWARD', 'FORWARD'.
+The enumeration 'ActionEnum' has the following literals: 'BACKWARD', 'FORWARD', 'STOP'.
+The enumeration 'BackEnum' has the following literals: 'BACK'.
+The enumeration 'MAEnum' has the following literals: 'MEASURE'.
+The enumeration 'ColorEnum' has the following literals: 'BLACK', 'BROWN', 'GREEN', 'WHITE', 'YELLOW', 'RED', 'NONE', 'BLUE'.
+'dSL::ExpressionBracket' is a specialization of 'Expression'.
+'dSL::RotateMovementAction' is a specialization of 'Actions'.
+'dSL::TouchLiteral' is a specialization of 'Expression'.
+'dSL::EdgeLiteral' is a specialization of 'Expression'.
+'dSL::ORexpression' is a specialization of 'Expression'.
+'dSL::ANDexpression' is a specialization of 'Expression'.
+'dSL::MiddleRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::MoveAction' is a specialization of 'Actions'.
+'dSL::DepthLiteral' is a specialization of 'Expression'.
+'dSL::LeftMovementAction' is a specialization of 'Actions'.
+'dSL::RightRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::RotatePoints' is a specialization of 'RotateMovementAction'.
+'dSL::TrueLiteral' is a specialization of 'Expression'.
+'dSL::RightMovementAction' is a specialization of 'Actions'.
+'dSL::MeasurementAction' is a specialization of 'Actions'.
+'dSL::EndAfter' is a specialization of 'EndCondition'.
+'dSL::LeftRotatePoint' is a specialization of 'RotatePoints'.
+'dSL::DistanceLiteral' is a specialization of 'Expression'.
+'dSL::ColorLiteral' is a specialization of 'Expression'.
+'dSL::Expression' (role 'dSL_Expression19', cardinality 0..*) is associated with 'dSL::ANDexpression' (role 'dSL_ANDexpression', cardinality 0..*).
+'dSL::Mission' (role 'dSL_Mission6', cardinality 0..*) is associated with 'dSL::EndCondition' (role 'dSL_EndCondition', cardinality 0..*).
+'dSL::ORexpression' (role 'dSL_ORexpression26', cardinality 0..*) is associated with 'dSL::Expression' (role 'dSL_Expression27', cardinality 0..*).
+'dSL::Behavior' (role 'dSL_Behavior12', cardinality 0..*) is associated with 'dSL::Actions' (role 'dSL_Actions', cardinality 0..*).
+'dSL::ExpressionBracket' (role 'dSL_ExpressionBracket', cardinality 0..*) is associated with 'dSL::Expression' (role 'dSL_Expression17', cardinality 0..*).
+'dSL::EndWhen' (role 'dSL_EndWhen', cardinality 0..*) is associated with 'dSL::EndCondition' (role 'dSL_EndCondition8', cardinality 0..*).
+'dSL::MovementAction' (role 'dSL_MovementAction15', cardinality 0..*) is associated with 'dSL::RightMovementAction' (role 'dSL_RightMovementAction', cardinality 0..*).
+'dSL::ORexpression' (role 'dSL_ORexpression', cardinality 0..*) is associated with 'dSL::Expression' (role 'dSL_Expression24', cardinality 0..*).
+'dSL::MarsRoverExpedition' (role 'dSL_MarsRoverExpedition', cardinality 0..*) is associated with 'dSL::Mission' (role 'dSL_Mission', cardinality 0..*).
+'dSL::Behavior' (role 'dSL_Behavior', cardinality 0..*) is associated with 'dSL::MarsRoverExpedition' (role 'dSL_MarsRoverExpedition2', cardinality 0..*).
+'dSL::LeftMovementAction' (role 'dSL_LeftMovementAction', cardinality 0..*) is associated with 'dSL::MovementAction' (role 'dSL_MovementAction', cardinality 0..*).
+'dSL::Behavior' (role 'dSL_Behavior10', cardinality 0..*) is associated with 'dSL::Expression' (role 'dSL_Expression', cardinality 0..*).
+'dSL::Expression' (role 'dSL_Expression22', cardinality 0..*) is associated with 'dSL::ANDexpression' (role 'dSL_ANDexpression21', cardinality 0..*).
+'dSL::Mission' (role 'dSL_Mission4', cardinality 0..*) is associated with 'dSL::BehaviorName' (role 'dSL_BehaviorName', cardinality 0..*).

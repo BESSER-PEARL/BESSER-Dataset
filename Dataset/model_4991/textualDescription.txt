@@ -1,0 +1,106 @@
+The model has 42 class(es).
+The class 'simulink::Parameter' has the following attributes: 'value' of type str; 'type' of type str; 'readOnly' of type bool; 'name' of type str.
+The class 'simulink::OutPortBlock' has no attributes.
+The class 'PortBlock' has no attributes.
+The class 'simulink::SimulinkReference' has the following attributes: 'qualifier' of type str; 'name' of type str.
+The class 'Port' has no attributes.
+The class 'simulink::SingleConnection' has no attributes.
+The class 'Block' has no attributes.
+The class 'simulink::Block' has no attributes.
+The class 'SimulinkReference' has no attributes.
+The class 'SimulinkElement' has no attributes.
+The class 'simulink::ModelReference' has no attributes.
+The class 'InPortBlock' has no attributes.
+The class 'simulink::IdentifierReference' has no attributes.
+The class 'simulink::SimulinkModel' has the following attributes: 'version' of type str; 'library' of type bool; 'file' of type str.
+The class 'OutPort' has no attributes.
+The class 'simulink::From' has no attributes.
+The class 'simulink::GotoTagVisibility' has no attributes.
+The class 'simulink::BusCreator' has no attributes.
+The class 'simulink::Enable' has the following attributes: 'statesWhenEnabling' of type str.
+The class 'simulink::BusSelector' has the following attributes: 'outputAsBus' of type bool.
+The class 'BusSpecification' has no attributes.
+The class 'simulink::InPort' has no attributes.
+The class 'simulink::SimulinkElement' has the following attributes: 'name' of type str.
+The class 'simulink::VirtualBlock' has no attributes.
+The class 'simulink::BusSignalMapping' has the following attributes: 'mappingPath' of type str; 'incomplete' of type bool.
+The class 'Connection' has no attributes.
+The class 'simulink::PortBlock' has no attributes.
+The class 'simulink::LibraryLinkReference' has the following attributes: 'disabled' of type bool.
+The class 'simulink::Port' has no attributes.
+The class 'simulink::MultiConnection' has no attributes.
+The class 'simulink::BusSpecification' has no attributes.
+The class 'simulink::SubSystem' has the following attributes: 'tag' of type str.
+The class 'VirtualBlock' has no attributes.
+The class 'simulink::State' has no attributes.
+The class 'simulink::Connection' has the following attributes: 'lineName' of type str.
+The class 'simulink::Trigger' has the following attributes: 'triggerType' of type str; 'statesWhenEnabling' of type str.
+The class 'simulink::InPortBlock' has no attributes.
+The class 'simulink::EnableBlock' has no attributes.
+The class 'simulink::Goto' has the following attributes: 'gotoTag' of type str; 'tagVisibility' of type str.
+The class 'simulink::TriggerBlock' has no attributes.
+The class 'simulink::OutPort' has no attributes.
+The class 'InPort' has no attributes.
+The enumeration 'EnableStates' has the following literals: 'Reset', 'Inherit', 'Held'.
+The enumeration 'TriggerType' has the following literals: 'Rising', 'Falling', 'Either', 'FunctionCall'.
+The enumeration 'TagVisibility' has the following literals: 'Local', 'Global', 'Scoped'.
+'simulink::PortBlock' is a specialization of 'VirtualBlock'.
+'simulink::VirtualBlock' is a specialization of 'Block'.
+'simulink::BusSpecification' is a specialization of 'Block'.
+'simulink::OutPortBlock' is a specialization of 'PortBlock'.
+'simulink::MultiConnection' is a specialization of 'Connection'.
+'simulink::LibraryLinkReference' is a specialization of 'SimulinkReference'.
+'simulink::IdentifierReference' is a specialization of 'SimulinkReference'.
+'simulink::State' is a specialization of 'OutPort'.
+'simulink::TriggerBlock' is a specialization of 'InPortBlock'.
+'simulink::SingleConnection' is a specialization of 'Connection'.
+'simulink::BusCreator' is a specialization of 'BusSpecification'.
+'simulink::SimulinkModel' is a specialization of 'SimulinkElement'.
+'simulink::BusSelector' is a specialization of 'BusSpecification'.
+'simulink::InPort' is a specialization of 'Port'.
+'simulink::Connection' is a specialization of 'SimulinkElement'.
+'simulink::SubSystem' is a specialization of 'Block'.
+'simulink::InPortBlock' is a specialization of 'PortBlock'.
+'simulink::Block' is a specialization of 'SimulinkElement'.
+'simulink::Port' is a specialization of 'SimulinkElement'.
+'simulink::EnableBlock' is a specialization of 'InPortBlock'.
+'simulink::ModelReference' is a specialization of 'Block'.
+'simulink::Trigger' is a specialization of 'InPort'.
+'simulink::Goto' is a specialization of 'VirtualBlock'.
+'simulink::OutPort' is a specialization of 'Port'.
+'simulink::GotoTagVisibility' is a specialization of 'VirtualBlock'.
+'simulink::Enable' is a specialization of 'InPort'.
+'simulink::From' is a specialization of 'VirtualBlock'.
+'simulink::IdentifierReference' (role 'simulink_IdentifierReference', cardinality 0..*) is associated with 'simulink::SimulinkElement' (role 'simulink_SimulinkElement', cardinality 0..*).
+'simulink::LibraryLinkReference' (role 'simulink_LibraryLinkReference', cardinality 0..*) is associated with 'simulink::Block' (role 'simulink_Block16', cardinality 0..*).
+'simulink::BusSelector' (role 'simulink_BusSelector', cardinality 0..*) is associated with 'simulink::BusSpecification' (role 'simulink_BusSpecification', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block10', cardinality 0..*) is associated with 'simulink::OutPort' (role 'simulink_OutPort', cardinality 0..*).
+'simulink::SingleConnection' (role 'SingleConnection31', cardinality 0..*) is associated with 'simulink::MultiConnection' (role 'parent', cardinality 0..*).
+'simulink::ModelReference' (role 'simulink_ModelReference46', cardinality 0..*) is associated with 'simulink::IdentifierReference' (role 'simulink_IdentifierReference47', cardinality 0..*).
+'simulink::Goto' (role 'simulink_Goto', cardinality 0..*) is associated with 'simulink::GotoTagVisibility' (role 'simulink_GotoTagVisibility', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block4', cardinality 0..*) is associated with 'simulink::Trigger' (role 'simulink_Trigger', cardinality 0..*).
+'simulink::Parameter' (role 'simulink_Parameter20', cardinality 0..*) is associated with 'simulink::Port' (role 'simulink_Port', cardinality 0..*).
+'simulink::OutPort' (role 'OutPort', cardinality 0..*) is associated with 'simulink::Connection' (role 'connection', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block', cardinality 0..*) is associated with 'simulink::Parameter' (role 'simulink_Parameter', cardinality 0..*).
+'simulink::Block' (role 'Block', cardinality 0..*) is associated with 'simulink::Port' (role 'ports', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block14', cardinality 0..*) is associated with 'simulink::Block' (role 'simulink_Block12', cardinality 0..*).
+'simulink::PortBlock' (role 'portBlock', cardinality 0..*) is associated with 'simulink::Port' (role 'Port36', cardinality 0..*).
+'simulink::ModelReference' (role 'simulink_ModelReference', cardinality 0..*) is associated with 'simulink::SimulinkModel' (role 'simulink_SimulinkModel44', cardinality 0..*).
+'simulink::Block' (role 'simulink_Block8', cardinality 0..*) is associated with 'simulink::InPort' (role 'simulink_InPort', cardinality 0..*).
+'simulink::OutPort' (role 'simulink_OutPort53', cardinality 0..*) is associated with 'simulink::BusSignalMapping' (role 'simulink_BusSignalMapping52', cardinality 0..*).
+'simulink::Port' (role 'port', cardinality 0..*) is associated with 'simulink::PortBlock' (role 'PortBlock', cardinality 0..*).
+'simulink::Block' (role 'Block42', cardinality 0..*) is associated with 'simulink::SubSystem' (role 'parent41', cardinality 0..*).
+'simulink::Enable' (role 'simulink_Enable', cardinality 0..*) is associated with 'simulink::Block' (role 'simulink_Block6', cardinality 0..*).
+'simulink::From' (role 'From', cardinality 0..*) is associated with 'simulink::Goto' (role 'gotoBlock', cardinality 0..*).
+'simulink::InPort' (role 'to', cardinality 0..*) is associated with 'simulink::SingleConnection' (role 'SingleConnection', cardinality 0..*).
+'simulink::Connection' (role 'Connection', cardinality 0..*) is associated with 'simulink::OutPort' (role 'from_', cardinality 0..*).
+'simulink::SimulinkModel' (role 'simulink_SimulinkModel', cardinality 0..*) is associated with 'simulink::Block' (role 'simulink_Block29', cardinality 0..*).
+'simulink::SimulinkElement' (role 'simulink_SimulinkElement38', cardinality 0..*) is associated with 'simulink::SimulinkReference' (role 'simulink_SimulinkReference', cardinality 0..*).
+'simulink::SubSystem' (role 'SubSystem', cardinality 0..*) is associated with 'simulink::Block' (role 'subBlocks', cardinality 0..*).
+'simulink::MultiConnection' (role 'MultiConnection', cardinality 0..*) is associated with 'simulink::SingleConnection' (role 'connections', cardinality 0..*).
+'simulink::BusSignalMapping' (role 'BusSignalMapping', cardinality 0..*) is associated with 'simulink::BusSelector' (role 'selector', cardinality 0..*).
+'simulink::BusSignalMapping' (role 'mappings', cardinality 0..*) is associated with 'simulink::BusSelector' (role 'BusSelector', cardinality 0..*).
+'simulink::OutPort' (role 'simulink_OutPort50', cardinality 0..*) is associated with 'simulink::BusSignalMapping' (role 'simulink_BusSignalMapping', cardinality 0..*).
+'simulink::SingleConnection' (role 'connection34', cardinality 0..*) is associated with 'simulink::InPort' (role 'InPort', cardinality 0..*).
+'simulink::Port' (role 'Port', cardinality 0..*) is associated with 'simulink::Block' (role 'container', cardinality 0..*).
+'simulink::Goto' (role 'Goto', cardinality 0..*) is associated with 'simulink::From' (role 'fromBlocks', cardinality 0..*).

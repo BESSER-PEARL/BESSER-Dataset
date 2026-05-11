@@ -1,0 +1,13 @@
+The model has 9 class(es).
+The class 'ModeleTp3::pack2::D' has no attributes.
+The class 'ModeleTp3::pack2::C' has no attributes.
+The class 'ModeleTp3::Int' has no attributes.
+The class 'C' has no attributes.
+The class 'ModeleTp3::pack2::E' has no attributes.
+The class 'pack2::ModeleTp3::Int' has no attributes.
+The class 'pack1::ModeleTp3::Int' has no attributes.
+The class 'ModeleTp3::pack1::B' has no attributes.
+The class 'ModeleTp3::pack1::A' has no attributes.
+'ModeleTp3::pack2::D' is a specialization of 'C'.
+'pack2::ModeleTp3::Int' (role 'pack2_ModeleTp3_Int', cardinality 0..*) is associated with 'ModeleTp3::pack2::E' (role 'ModeleTp3_pack2_E', cardinality 0..*).
+'ModeleTp3::pack1::A' (role 'ModeleTp3_pack1_A', cardinality 0..*) is associated with 'pack1::ModeleTp3::Int' (role 'pack1_ModeleTp3_Int', cardinality 0..*).

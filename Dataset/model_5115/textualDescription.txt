@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'testPackage::SuperSuperClass' has no attributes.
+The class 'testPackage::DerivedClass' has no attributes.
+The class 'SuperClass' has no attributes.
+The class 'testPackage::SuperClass' has no attributes.
+The class 'SuperSuperClass' has no attributes.
+'testPackage::SuperClass' is a specialization of 'SuperSuperClass'.
+'testPackage::DerivedClass' is a specialization of 'SuperClass'.
+'testPackage::DerivedClass' is a specialization of 'SuperSuperClass'.

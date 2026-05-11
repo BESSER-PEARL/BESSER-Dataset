@@ -1,0 +1,53 @@
+The model has 16 class(es).
+The class 'arduino::Port5V' has no attributes.
+The class 'arduino::DigitalPort' has the following attributes: 'value' of type int.
+The class 'arduino::PortIO7' has no attributes.
+The class 'arduino::Bench' has the following attributes: 'name' of type str.
+The class 'arduino::TxPort' has no attributes.
+The class 'arduino::PortVIN' has no attributes.
+The class 'arduino::Port9V' has no attributes.
+The class 'arduino::Arduino' has the following attributes: 'label' of type str; 'firmataMode' of type str; 'series' of type str; 'name' of type str; 'status' of type str; 'board' of type str; 'synchronizing' of type bool; 'ver' of type str; 'lockedPin' of type str; 'comm' of type str; 'kind' of type str.
+The class 'arduino::RstPort' has no attributes.
+The class 'arduino::AREFPort' has no attributes.
+The class 'arduino::Port3V3' has no attributes.
+The class 'arduino::AnalogPort' has the following attributes: 'value' of type float.
+The class 'arduino::Port' has the following attributes: 'channel' of type int; 'report' of type str; 'name' of type str; 'map' of type str.
+The class 'Port' has no attributes.
+The class 'arduino::RxPort' has no attributes.
+The class 'arduino::GndPort' has no attributes.
+The enumeration 'ARDUINO_BOARD_KIND' has the following literals: 'MINI_328P', 'BT_ATMEGA_168', 'ATMEGA_168', 'LILYPAD_168', 'UNKNOWN', 'ATMEGA_8', 'MINI_168'.
+The enumeration 'ARDUINO_STATUS_MODE' has the following literals: 'CONNECTED', 'TRANSMITTING', 'DISCONNECTED'.
+The enumeration 'PWM_MODE' has the following literals: 'NONE', 'LOW', 'HIGH', 'UNKNOWN'.
+The enumeration 'PIN_MAPPING' has the following literals: 'PIN_D51', 'PIN_D4', 'PIN_A0', 'PIN_A13', 'PIN_D16', 'PIN_A14', 'PIN_D23', 'PIN_D42', 'PIN_D12', 'PIN_A11', 'PIN_A4', 'PIN_D34', 'PIN_D2', 'PIN_D28', 'PIN_D24', 'PIN_D31', 'UNKNOWN', 'PIN_D50', 'PIN_D27', 'PIN_A8', 'PIN_A17', 'PIN_D25', 'PIN_3V3_1', 'PIN_5V', 'PIN_A3', 'PIN_D30', 'PIN_D8', 'PIN_TX', 'PIN_D18', 'PIN_D41', 'PIN_A16', 'PIN_TX_I', 'PIN_VIN', 'PIN_D45', 'PIN_D9', 'PIN_A6', 'PIN_A20', 'PIN_D20', 'PIN_D29', 'PIN_D19', 'PIN_A24', 'PIN_AREF', 'PIN_GND_D', 'PIN_RST', 'PIN_D15', 'PIN_D26', 'PIN_D49', 'PIN_A1', 'PIN_D44', 'PIN_D38', 'PIN_D32', 'PIN_A21', 'PIN_D35', 'PIN_A18', 'PIN_A10', 'PIN_A19', 'PIN_9V', 'PIN_A7', 'PIN_D5', 'PIN_TX_O', 'PIN_A22', 'PIN_D22', 'PIN_D37', 'PIN_D11', 'PIN_A12', 'PIN_GND_3V', 'PIN_D14', 'PIN_D36', 'PIN_D33', 'PIN_D17', 'PIN_D6', 'PIN_A2', 'PIN_D39', 'PIN_D3', 'PIN_3V3_2', 'PIN_A23', 'PIN_D21', 'PIN_D10', 'PIN_D43', 'PIN_A9', 'PIN_RX', 'PIN_D48', 'PIN_D7', 'PIN_A15', 'PIN_D13', 'PIN_GND_9V', 'PIN_A5', 'PIN_D40', 'PIN_IO7', 'PIN_D52', 'PIN_D47', 'PIN_D46'.
+The enumeration 'ARDUINO_VER_BRAND_NAME' has the following literals: 'ARDUINO_NANO', 'UNKNOWN', 'LILYPAD', 'ARDUINO_PRO', 'ARDUINO_LEONARDO', 'ARDUINO_DIECIMILA', 'ARDUINO_DUEMILANOVE', 'FUNNEL_IO', 'ARDUINO_MINI', 'ARDUINO_UNO'.
+The enumeration 'ARDUINO_REPORT_MODE' has the following literals: 'DEACTIVATE', 'ACTIVATE'.
+The enumeration 'ARDUINO_ATMEGA_168_SERIES' has the following literals: '_168_NG', '_168_ATMEGA_328', 'UNKNOWN', '_168_ATMEGA_DIECIMILA', '_168_ATMEGA_1280', '_168_PRO', '_168_ATMEGA_328_PRO_8MHz', '_168_ATMEGA_168', '_168_ATMEGA_32U4'.
+The enumeration 'ARDUINO_COMM' has the following literals: 'USB', 'XBEE_SERIES_1', 'XBEE_PRO', 'UART', 'MINI_USB', 'NONE', 'BLUETOOTH', 'ETHERNET'.
+The enumeration 'PIN_MODE' has the following literals: 'SHIFT', 'I2C', 'UNKNOWN', 'ANALOG', 'SERVO', 'PWM', 'OUTPUT', 'INPUT'.
+The enumeration 'ARDUINO_BOARD_UID' has the following literals: 'PRO_ATMEGA_328', 'DIECIMILA_ATMEGA328', 'DUEMILANOVE_ATMEGA_328', 'FUNNEL_IO_ATMEGA328P', 'BT_ATMEGA_168', 'NANO_23_ATMEGA168', 'DIECMILA_ATMEGA_168', 'MINI_ATMEGA_168', 'MINI_PRO_ATMEGA_168', 'LEONARDO_ATMEGA32U4', 'DIECIMILA_ATMEGA_328P', 'PLACEHOLDER_VOID_BOARD', 'PRO_MINI_ATMEGA_168', 'DUEMILANOVE_ATMEGA_168', 'LILIPAD_ATMEGA_328V', 'MEGA_ATMEGA_1280', 'PRO_ATMEGA_168', 'UNO_ATMEGA328', 'NANO_30_ATMEGA328'.
+The enumeration 'ARDUINO_FIRMWARE_MODE' has the following literals: 'ARDUINO_FIRMATA_V22_I2C', 'ARDUINO_FIRMATA_V21', 'ARDUINO_FIRMATA_V23_I2C', 'ARDUINO_FIRMATA_V20_I2C', 'ARDUINO_FIRMATA_V23', 'ARDUINO_FIRMATA_V10', 'ARDUINO_FIRMATA_V10_SERVO', 'ARDUINO_FIRMATA_V11_I2C', 'ARDUINO_FIRMATA_V21_I2C', 'ARDUINO_FIRMATA_V11', 'ARDUINO_FIRMATA_V20', 'ARDUINO_FIRMATA_V11_SERVO', 'ARDUINO_DEFAULT', 'ARDUINO_FIRMATA_V22_SERVO', 'ARDUINO_FIRMATA_V22', 'ARDUINO_FIRMATA_V23_SERVO', 'ARDUINO_FIRMATA_V20_SERVO', 'ARDUINO_FIRMATA_V10_I2C', 'ARDUINO_FIRMATA_V21_SERVO'.
+'arduino::Port5V' is a specialization of 'Port'.
+'arduino::Port3V3' is a specialization of 'Port'.
+'arduino::DigitalPort' is a specialization of 'Port'.
+'arduino::Port9V' is a specialization of 'Port'.
+'arduino::PortIO7' is a specialization of 'Port'.
+'arduino::AnalogPort' is a specialization of 'Port'.
+'arduino::RxPort' is a specialization of 'Port'.
+'arduino::PortVIN' is a specialization of 'Port'.
+'arduino::AREFPort' is a specialization of 'Port'.
+'arduino::GndPort' is a specialization of 'Port'.
+'arduino::RstPort' is a specialization of 'Port'.
+'arduino::TxPort' is a specialization of 'Port'.
+'arduino::DigitalPort' (role 'arduino_DigitalPort', cardinality 0..*) is associated with 'arduino::Arduino' (role 'arduino_Arduino', cardinality 0..*).
+'arduino::Port3V3' (role 'arduino_Port3V3', cardinality 0..*) is associated with 'arduino::Arduino' (role 'arduino_Arduino10', cardinality 0..*).
+'arduino::TxPort' (role 'arduino_TxPort', cardinality 0..*) is associated with 'arduino::Arduino' (role 'arduino_Arduino4', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino2', cardinality 0..*) is associated with 'arduino::AnalogPort' (role 'arduino_AnalogPort', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino16', cardinality 0..*) is associated with 'arduino::Port5V' (role 'arduino_Port5V', cardinality 0..*).
+'arduino::PortIO7' (role 'arduino_PortIO7', cardinality 0..*) is associated with 'arduino::Arduino' (role 'arduino_Arduino18', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino12', cardinality 0..*) is associated with 'arduino::RstPort' (role 'arduino_RstPort', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino22', cardinality 0..*) is associated with 'arduino::AREFPort' (role 'arduino_AREFPort', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino24', cardinality 0..*) is associated with 'arduino::Bench' (role 'arduino_Bench', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino6', cardinality 0..*) is associated with 'arduino::GndPort' (role 'arduino_GndPort', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino14', cardinality 0..*) is associated with 'arduino::Port9V' (role 'arduino_Port9V', cardinality 0..*).
+'arduino::Arduino' (role 'arduino_Arduino20', cardinality 0..*) is associated with 'arduino::PortVIN' (role 'arduino_PortVIN', cardinality 0..*).
+'arduino::RxPort' (role 'arduino_RxPort', cardinality 0..*) is associated with 'arduino::Arduino' (role 'arduino_Arduino8', cardinality 0..*).

@@ -1,0 +1,59 @@
+The model has 22 class(es).
+The class 'prolog::Part' has no attributes.
+The class 'prolog::List' has no attributes.
+The class 'prolog::Additive' has the following attributes: 'operator' of type str.
+The class 'prolog::String' has the following attributes: 'text' of type str.
+The class 'Tail' has no attributes.
+The class 'Part' has no attributes.
+The class 'prolog::Numeral' has the following attributes: 'value' of type float.
+The class 'prolog::Assignment' has no attributes.
+The class 'prolog::Clause' has no attributes.
+The class 'prolog::Tail' has no attributes.
+The class 'Term' has no attributes.
+The class 'prolog::Multiplicative' has the following attributes: 'operator' of type str.
+The class 'prolog::Conjunction' has no attributes.
+The class 'prolog::Predicate' has the following attributes: 'name' of type str.
+The class 'prolog::VariableReference' has no attributes.
+The class 'prolog::Power' has no attributes.
+The class 'prolog::PrologProgram' has no attributes.
+The class 'prolog::Negation' has the following attributes: 'operator' of type str.
+The class 'prolog::BracketExpression' has no attributes.
+The class 'prolog::Term' has no attributes.
+The class 'prolog::Variable' has the following attributes: 'name' of type str.
+The class 'prolog::AnonymousVariable' has the following attributes: 'text' of type str.
+The enumeration 'MULTIPLICATIVE_OPERATOR' has the following literals: 'mult', 'div'.
+The enumeration 'ADDITIVE_OPERATOR' has the following literals: 'minus', 'plus'.
+'prolog::Variable' is a specialization of 'Term'.
+'prolog::Assignment' is a specialization of 'Part'.
+'prolog::Variable' is a specialization of 'Tail'.
+'prolog::Negation' is a specialization of 'Term'.
+'prolog::List' is a specialization of 'Tail'.
+'prolog::VariableReference' is a specialization of 'Term'.
+'prolog::List' is a specialization of 'Term'.
+'prolog::Power' is a specialization of 'Term'.
+'prolog::AnonymousVariable' is a specialization of 'Term'.
+'prolog::Numeral' is a specialization of 'Term'.
+'prolog::BracketExpression' is a specialization of 'Term'.
+'prolog::Predicate' is a specialization of 'Term'.
+'prolog::Additive' is a specialization of 'Term'.
+'prolog::Predicate' is a specialization of 'Part'.
+'prolog::String' is a specialization of 'Term'.
+'prolog::Multiplicative' is a specialization of 'Term'.
+'prolog::Clause' (role 'prolog_Clause', cardinality 0..*) is associated with 'prolog::PrologProgram' (role 'prolog_PrologProgram', cardinality 0..*).
+'prolog::VariableReference' (role 'prolog_VariableReference13', cardinality 0..*) is associated with 'prolog::Assignment' (role 'prolog_Assignment', cardinality 0..*).
+'prolog::Assignment' (role 'prolog_Assignment15', cardinality 0..*) is associated with 'prolog::Term' (role 'prolog_Term16', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term', cardinality 0..*) is associated with 'prolog::List' (role 'prolog_List', cardinality 0..*).
+'prolog::Negation' (role 'prolog_Negation', cardinality 0..*) is associated with 'prolog::Term' (role 'prolog_Term35', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term25', cardinality 0..*) is associated with 'prolog::Multiplicative' (role 'prolog_Multiplicative', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term10', cardinality 0..*) is associated with 'prolog::Predicate' (role 'prolog_Predicate9', cardinality 0..*).
+'prolog::Tail' (role 'prolog_Tail', cardinality 0..*) is associated with 'prolog::List' (role 'prolog_List7', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term23', cardinality 0..*) is associated with 'prolog::Additive' (role 'prolog_Additive22', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term20', cardinality 0..*) is associated with 'prolog::Additive' (role 'prolog_Additive', cardinality 0..*).
+'prolog::Conjunction' (role 'prolog_Conjunction', cardinality 0..*) is associated with 'prolog::Clause' (role 'prolog_Clause4', cardinality 0..*).
+'prolog::Clause' (role 'prolog_Clause2', cardinality 0..*) is associated with 'prolog::Predicate' (role 'prolog_Predicate', cardinality 0..*).
+'prolog::Power' (role 'prolog_Power', cardinality 0..*) is associated with 'prolog::Term' (role 'prolog_Term30', cardinality 0..*).
+'prolog::Power' (role 'prolog_Power32', cardinality 0..*) is associated with 'prolog::Term' (role 'prolog_Term33', cardinality 0..*).
+'prolog::BracketExpression' (role 'prolog_BracketExpression', cardinality 0..*) is associated with 'prolog::Term' (role 'prolog_Term37', cardinality 0..*).
+'prolog::Part' (role 'prolog_Part', cardinality 0..*) is associated with 'prolog::Conjunction' (role 'prolog_Conjunction18', cardinality 0..*).
+'prolog::Term' (role 'prolog_Term28', cardinality 0..*) is associated with 'prolog::Multiplicative' (role 'prolog_Multiplicative27', cardinality 0..*).
+'prolog::Variable' (role 'prolog_Variable', cardinality 0..*) is associated with 'prolog::VariableReference' (role 'prolog_VariableReference', cardinality 0..*).

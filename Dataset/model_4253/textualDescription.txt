@@ -1,0 +1,5 @@
+The model has 1 class(es).
+The class 'employee::Employee' has the following attributes: 'name' of type str; 'accounts' of type str.
+'employee::Employee' (role 'employee_Employee7', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee5', cardinality 0..*).
+'employee::Employee' (role 'employee_Employee4', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee2', cardinality 0..*).
+'employee::Employee' (role 'employee_Employee0', cardinality 0..*) is associated with 'employee::Employee' (role 'employee_Employee', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'ArduinoCard::BlockInteraction' has the following attributes: 'name' of type str; 'isHigh' of type bool.
+The class 'ArduinoCard::Block' has the following attributes: 'isAnalogic' of type str; 'name' of type str; 'pinNumber' of type int.
+The class 'BlockInteraction' has no attributes.
+The class 'ArduinoCard::Sensor' has no attributes.
+The class 'ArduinoCard::Card' has no attributes.
+The class 'ArduinoCard::Command' has no attributes.
+The class 'ArduinoCard::Condition' has no attributes.
+The class 'Block' has no attributes.
+The class 'ArduinoCard::Actuator' has no attributes.
+The class 'ArduinoCard::Transition' has the following attributes: 'name' of type str.
+The class 'ArduinoCard::State' has the following attributes: 'name' of type str; 'isInitial' of type bool.
+'ArduinoCard::Actuator' is a specialization of 'Block'.
+'ArduinoCard::Command' is a specialization of 'BlockInteraction'.
+'ArduinoCard::Sensor' is a specialization of 'Block'.
+'ArduinoCard::Condition' is a specialization of 'BlockInteraction'.
+'ArduinoCard::State' (role 'ArduinoCard_State2', cardinality 0..*) is associated with 'ArduinoCard::Command' (role 'ArduinoCard_Command', cardinality 0..*).
+'ArduinoCard::Sensor' (role 'ArduinoCard_Sensor', cardinality 0..*) is associated with 'ArduinoCard::Condition' (role 'ArduinoCard_Condition', cardinality 0..*).
+'ArduinoCard::Transition' (role 'ArduinoCard_Transition5', cardinality 0..*) is associated with 'ArduinoCard::State' (role 'ArduinoCard_State6', cardinality 0..*).
+'ArduinoCard::Card' (role 'ArduinoCard_Card15', cardinality 0..*) is associated with 'ArduinoCard::Transition' (role 'ArduinoCard_Transition16', cardinality 0..*).
+'ArduinoCard::Transition' (role 'ArduinoCard_Transition', cardinality 0..*) is associated with 'ArduinoCard::State' (role 'ArduinoCard_State', cardinality 0..*).
+'ArduinoCard::Command' (role 'ArduinoCard_Command11', cardinality 0..*) is associated with 'ArduinoCard::Actuator' (role 'ArduinoCard_Actuator', cardinality 0..*).
+'ArduinoCard::State' (role 'ArduinoCard_State13', cardinality 0..*) is associated with 'ArduinoCard::Card' (role 'ArduinoCard_Card', cardinality 0..*).
+'ArduinoCard::Transition' (role 'ArduinoCard_Transition8', cardinality 0..*) is associated with 'ArduinoCard::Condition' (role 'ArduinoCard_Condition9', cardinality 0..*).
+'ArduinoCard::Block' (role 'ArduinoCard_Block', cardinality 0..*) is associated with 'ArduinoCard::Card' (role 'ArduinoCard_Card20', cardinality 0..*).
+'ArduinoCard::Card' (role 'ArduinoCard_Card18', cardinality 0..*) is associated with 'ArduinoCard::BlockInteraction' (role 'ArduinoCard_BlockInteraction', cardinality 0..*).

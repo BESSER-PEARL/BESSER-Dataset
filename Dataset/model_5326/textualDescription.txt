@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'testPackage::ExistsInBoth' has no attributes.
+The class 'testPackage::OnlyInDocument' has no attributes.

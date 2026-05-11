@@ -1,0 +1,32 @@
+The model has 14 class(es).
+The class 'Person' has no attributes.
+The class 'hairDressersRegSys::Discounts' has the following attributes: 'Percentage' of type int; 'Name' of type str; 'Description' of type str.
+The class 'hairDressersRegSys::Service' has the following attributes: 'CostPerHour' of type str; 'Name' of type str; 'Time' of type date; 'Description' of type str.
+The class 'hairDressersRegSys::ServiceEmployee' has the following attributes: 'Role' of type str; 'EmployeeId' of type int.
+The class 'hairDressersRegSys::Products' has the following attributes: 'Description' of type str; 'Price' of type str; 'Name' of type str.
+The class 'hairDressersRegSys::Other' has the following attributes: 'AdditionalInformation' of type str.
+The class 'hairDressersRegSys::Invoice' has the following attributes: 'InvoiceNumber' of type int; 'Total' of type str; 'Date' of type str.
+The class 'Service' has no attributes.
+The class 'hairDressersRegSys::Appointment' has the following attributes: 'Date' of type date; 'StartTime' of type date; 'EndTime' of type date.
+The class 'hairDressersRegSys::Person' has the following attributes: 'FirstName' of type str; 'Address' of type str; 'DateOfBirth' of type date; 'LastName' of type str.
+The class 'hairDressersRegSys::Payment' has the following attributes: 'Date' of type date; 'PaymentMethod' of type str; 'AmountPaid' of type str.
+The class 'hairDressersRegSys::Haircuts' has the following attributes: 'IsWash' of type bool; 'IsCut' of type bool; 'IsShave' of type bool.
+The class 'hairDressersRegSys::Customer' has the following attributes: 'CustomerId' of type int.
+The class 'hairDressersRegSys::Styling' has the following attributes: 'IsWash' of type bool.
+'hairDressersRegSys::ServiceEmployee' is a specialization of 'Person'.
+'hairDressersRegSys::Customer' is a specialization of 'Person'.
+'hairDressersRegSys::Styling' is a specialization of 'Service'.
+'hairDressersRegSys::Haircuts' is a specialization of 'Service'.
+'hairDressersRegSys::Other' is a specialization of 'Service'.
+'hairDressersRegSys::Discounts' (role 'discounts11', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'Invoice12', cardinality 0..*).
+'hairDressersRegSys::Payment' (role 'payment', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'Invoice20', cardinality 0..*).
+'hairDressersRegSys::Discounts' (role 'discounts', cardinality 0..*) is associated with 'hairDressersRegSys::Customer' (role 'Customer', cardinality 0..*).
+'hairDressersRegSys::Invoice' (role 'invoice6', cardinality 0..*) is associated with 'hairDressersRegSys::Discounts' (role 'Discounts', cardinality 0..*).
+'hairDressersRegSys::Payment' (role 'Payment', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'invoice8', cardinality 0..*).
+'hairDressersRegSys::Appointment' (role 'hairDressersRegSys_Appointment2', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'hairDressersRegSys_Invoice', cardinality 0..*).
+'hairDressersRegSys::Service' (role 'hairDressersRegSys_Service', cardinality 0..*) is associated with 'hairDressersRegSys::Appointment' (role 'hairDressersRegSys_Appointment', cardinality 0..*).
+'hairDressersRegSys::Products' (role 'Products', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'invoice', cardinality 0..*).
+'hairDressersRegSys::ServiceEmployee' (role 'hairDressersRegSys_ServiceEmployee', cardinality 0..*) is associated with 'hairDressersRegSys::Appointment' (role 'hairDressersRegSys_Appointment18', cardinality 0..*).
+'hairDressersRegSys::Products' (role 'products', cardinality 0..*) is associated with 'hairDressersRegSys::Invoice' (role 'Invoice', cardinality 0..*).
+'hairDressersRegSys::Customer' (role 'customer', cardinality 0..*) is associated with 'hairDressersRegSys::Discounts' (role 'Discounts16', cardinality 0..*).
+'hairDressersRegSys::Appointment' (role 'hairDressersRegSys_Appointment14', cardinality 0..*) is associated with 'hairDressersRegSys::Customer' (role 'hairDressersRegSys_Customer', cardinality 0..*).

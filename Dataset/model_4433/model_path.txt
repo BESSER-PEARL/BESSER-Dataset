@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/leoCassiau/Travaux/Middleware/ObeoDesigner-Community/workspace/fr.obeo.dsl.tuto.mindstorms/model/mindstorms.ecore

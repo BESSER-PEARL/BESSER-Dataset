@@ -1,0 +1,79 @@
+The model has 39 class(es).
+The class 'WebApp::Delete' has no attributes.
+The class 'WebApp::QuestionBank' has no attributes.
+The class 'WebApp::RSSFeed' has the following attributes: 'items_to_display' of type int; 'feedname' of type str; 'show_date' of type str; 'url' of type str.
+The class 'WebApp::MultipleForQuestionnary' has no attributes.
+The class 'ExternalSource' has no attributes.
+The class 'PageS::Q' has no attributes.
+The class 'WebApp::Entity' has the following attributes: 'name' of type str.
+The class 'WebApp::TrueFalseForQuestionnary' has the following attributes: 'correct' of type str.
+The class 'SimpleQuestion' has no attributes.
+The class 'WebApp::Attribute' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'WebApp::TrueFalse' has no attributes.
+The class 'WebApp::Multiple' has no attributes.
+The class 'WebApp::WebPage' has the following attributes: 'name' of type str.
+The class 'TrueFalse' has no attributes.
+The class 'Multiple' has no attributes.
+The class 'WebPage' has no attributes.
+The class 'WebApp::Option' has the following attributes: 'text' of type str; 'fraction' of type int.
+The class 'WebApp::ExternalSource' has no attributes.
+The class 'WebApp::Question' has no attributes.
+The class 'WebApp::TrueFalseForSurvey' has no attributes.
+The class 'WebApp::SimpleQuestion' has the following attributes: 'visualRep' of type str; 'QuestionText' of type str.
+The class 'EntityWebPage' has no attributes.
+The class 'WebApp::MultipleForSurvey' has no attributes.
+The class 'WebApp::CRUD' has no attributes.
+The class 'WebApp::ExternalLink' has the following attributes: 'url' of type str.
+The class 'WebApp::Opened' has no attributes.
+The class 'WebApp::DataBase' has no attributes.
+The class 'WebApp::Details' has no attributes.
+The class 'WebApp::Home' has no attributes.
+The class 'WebApp::WebApp' has the following attributes: 'Password' of type str; 'name' of type str; 'User' of type str.
+The class 'WebApp::Index' has no attributes.
+The class 'WebApp::Questionnary' has the following attributes: 'feedback' of type bool.
+The class 'WebApp::Survey' has no attributes.
+The class 'WebApp::PageS::Q' has no attributes.
+The class 'WebApp::Create' has no attributes.
+The class 'WebApp::GroupOfQuestions' has the following attributes: 'name' of type str.
+The class 'WebApp::EntityWebPage' has no attributes.
+The class 'WebApp::Twitter' has the following attributes: 'username' of type str.
+The class 'Question' has no attributes.
+The enumeration 'VisualRepresentation' has the following literals: 'TEXTUAL', 'LINEAL_CHART', 'PIE_CHART', 'BAR_CHART'.
+The enumeration 'CorrectAnwser' has the following literals: 'False_', 'True_'.
+The enumeration 'MySqlType' has the following literals: 'BOOLEAN', 'INT', 'VARCHAR', 'REAL', 'DATE'.
+'WebApp::Questionnary' is a specialization of 'PageS::Q'.
+'WebApp::TrueFalse' is a specialization of 'SimpleQuestion'.
+'WebApp::Home' is a specialization of 'WebPage'.
+'WebApp::SimpleQuestion' is a specialization of 'Question'.
+'WebApp::Create' is a specialization of 'EntityWebPage'.
+'WebApp::Details' is a specialization of 'EntityWebPage'.
+'WebApp::TrueFalseForSurvey' is a specialization of 'TrueFalse'.
+'WebApp::TrueFalseForQuestionnary' is a specialization of 'TrueFalse'.
+'WebApp::Delete' is a specialization of 'EntityWebPage'.
+'WebApp::CRUD' is a specialization of 'EntityWebPage'.
+'WebApp::Index' is a specialization of 'EntityWebPage'.
+'WebApp::PageS::Q' is a specialization of 'WebPage'.
+'WebApp::MultipleForQuestionnary' is a specialization of 'Multiple'.
+'WebApp::RSSFeed' is a specialization of 'ExternalSource'.
+'WebApp::Twitter' is a specialization of 'ExternalSource'.
+'WebApp::EntityWebPage' is a specialization of 'WebPage'.
+'WebApp::Opened' is a specialization of 'SimpleQuestion'.
+'WebApp::MultipleForSurvey' is a specialization of 'Multiple'.
+'WebApp::GroupOfQuestions' is a specialization of 'Question'.
+'WebApp::Survey' is a specialization of 'PageS::Q'.
+'WebApp::Multiple' is a specialization of 'SimpleQuestion'.
+'WebApp::ExternalSource' (role 'WebApp_ExternalSource', cardinality 0..*) is associated with 'WebApp::WebPage' (role 'WebApp_WebPage11', cardinality 0..*).
+'WebApp::Option' (role 'WebApp_Option', cardinality 0..*) is associated with 'WebApp::Multiple' (role 'WebApp_Multiple', cardinality 0..*).
+'WebApp::EntityWebPage' (role 'WebApp_EntityWebPage', cardinality 0..*) is associated with 'WebApp::Entity' (role 'WebApp_Entity21', cardinality 0..*).
+'WebApp::Entity' (role 'WebApp_Entity24', cardinality 0..*) is associated with 'WebApp::DataBase' (role 'WebApp_DataBase23', cardinality 0..*).
+'WebApp::PageS::Q' (role 'WebApp_PageS_Q', cardinality 0..*) is associated with 'WebApp::Question' (role 'WebApp_Question', cardinality 0..*).
+'WebApp::Option' (role 'WebApp_Option29', cardinality 0..*) is associated with 'WebApp::MultipleForQuestionnary' (role 'WebApp_MultipleForQuestionnary', cardinality 0..*).
+'WebApp::GroupOfQuestions' (role 'WebApp_GroupOfQuestions', cardinality 0..*) is associated with 'WebApp::Question' (role 'WebApp_Question18', cardinality 0..*).
+'WebApp::WebApp' (role 'WebApp_WebApp', cardinality 0..*) is associated with 'WebApp::WebPage' (role 'WebApp_WebPage', cardinality 0..*).
+'WebApp::WebPage' (role 'WebApp_WebPage14', cardinality 0..*) is associated with 'WebApp::WebPage' (role 'WebApp_WebPage12', cardinality 0..*).
+'WebApp::Question' (role 'WebApp_Question27', cardinality 0..*) is associated with 'WebApp::QuestionBank' (role 'WebApp_QuestionBank26', cardinality 0..*).
+'WebApp::Attribute' (role 'WebApp_Attribute', cardinality 0..*) is associated with 'WebApp::Entity' (role 'WebApp_Entity', cardinality 0..*).
+'WebApp::Entity' (role 'WebApp_Entity6', cardinality 0..*) is associated with 'WebApp::Entity' (role 'WebApp_Entity8', cardinality 0..*).
+'WebApp::DataBase' (role 'WebApp_DataBase', cardinality 0..*) is associated with 'WebApp::WebApp' (role 'WebApp_WebApp2', cardinality 0..*).
+'WebApp::WebApp' (role 'WebApp_WebApp4', cardinality 0..*) is associated with 'WebApp::QuestionBank' (role 'WebApp_QuestionBank', cardinality 0..*).
+'WebApp::ExternalLink' (role 'WebApp_ExternalLink', cardinality 0..*) is associated with 'WebApp::WebPage' (role 'WebApp_WebPage16', cardinality 0..*).

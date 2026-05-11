@@ -1,0 +1,101 @@
+The model has 44 class(es).
+The class 'workflow::Block' has no attributes.
+The class 'workflow::Equal' has no attributes.
+The class 'workflow::If' has no attributes.
+The class 'workflow::And' has no attributes.
+The class 'workflow::VariableDeclaration' has the following attributes: 'type' of type str; 'isConstant' of type str.
+The class 'workflow::UMinus' has no attributes.
+The class 'workflow::Write' has no attributes.
+The class 'workflow::BinaryExpression' has no attributes.
+The class 'workflow::Not' has no attributes.
+The class 'workflow::Variable' has the following attributes: 'name' of type str.
+The class 'workflow::ProcedureCall' has the following attributes: 'name' of type str.
+The class 'workflow::GreaterThan' has no attributes.
+The class 'workflow::Statement' has no attributes.
+The class 'workflow::UnaryExpression' has no attributes.
+The class 'workflow::Read' has the following attributes: 'type' of type str.
+The class 'workflow::LessThanOrEqual' has no attributes.
+The class 'EqualityExpression' has no attributes.
+The class 'workflow::Expression' has no attributes.
+The class 'workflow::LogicExpression' has no attributes.
+The class 'workflow::ParameterDeclaration' has the following attributes: 'type' of type str.
+The class 'workflow::NotEqual' has no attributes.
+The class 'workflow::Addition' has no attributes.
+The class 'workflow::CompilationUnit' has the following attributes: 'language' of type str; 'name' of type str.
+The class 'workflow::ProcedureDeclaration' has the following attributes: 'returnType' of type str; 'accessModifier' of type str.
+The class 'Statement' has no attributes.
+The class 'LogicExpression' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'workflow::Multiplication' has no attributes.
+The class 'workflow::GreaterThanOrEqual' has no attributes.
+The class 'workflow::LessThan' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'workflow::ProcedureReturn' has no attributes.
+The class 'workflow::ArithmeticExpression' has no attributes.
+The class 'workflow::Declaration' has the following attributes: 'name' of type str.
+The class 'workflow::VariableAssignment' has no attributes.
+The class 'workflow::Division' has no attributes.
+The class 'workflow::EqualityExpression' has no attributes.
+The class 'workflow::Constant' has the following attributes: 'asInteger' of type str; 'asString' of type str; 'asBoolean' of type str; 'asReal' of type str.
+The class 'Declaration' has no attributes.
+The class 'workflow::Subtraction' has no attributes.
+The class 'workflow::While' has no attributes.
+The class 'Expression' has no attributes.
+The class 'workflow::Or' has no attributes.
+The enumeration 'AccessModifiers' has the following literals: 'public', 'private', 'default', 'protected'.
+The enumeration 'Type' has the following literals: 'double', 'float', 'int', 'long', 'string', 'boolean', 'void'.
+The enumeration 'Languages' has the following literals: 'Java', 'CS', 'Python', 'CPP'.
+'workflow::GreaterThan' is a specialization of 'EqualityExpression'.
+'workflow::Not' is a specialization of 'UnaryExpression'.
+'workflow::LogicExpression' is a specialization of 'BinaryExpression'.
+'workflow::EqualityExpression' is a specialization of 'BinaryExpression'.
+'workflow::UMinus' is a specialization of 'UnaryExpression'.
+'workflow::Declaration' is a specialization of 'Statement'.
+'workflow::ProcedureReturn' is a specialization of 'Statement'.
+'workflow::VariableDeclaration' is a specialization of 'Declaration'.
+'workflow::Read' is a specialization of 'Statement'.
+'workflow::Write' is a specialization of 'Statement'.
+'workflow::UnaryExpression' is a specialization of 'Expression'.
+'workflow::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'workflow::ProcedureDeclaration' is a specialization of 'Declaration'.
+'workflow::While' is a specialization of 'Statement'.
+'workflow::Multiplication' is a specialization of 'ArithmeticExpression'.
+'workflow::ProcedureCall' is a specialization of 'Expression'.
+'workflow::GreaterThanOrEqual' is a specialization of 'EqualityExpression'.
+'workflow::Constant' is a specialization of 'Expression'.
+'workflow::Variable' is a specialization of 'Expression'.
+'workflow::Block' is a specialization of 'Statement'.
+'workflow::ParameterDeclaration' is a specialization of 'Declaration'.
+'workflow::Division' is a specialization of 'ArithmeticExpression'.
+'workflow::Equal' is a specialization of 'EqualityExpression'.
+'workflow::Subtraction' is a specialization of 'ArithmeticExpression'.
+'workflow::And' is a specialization of 'LogicExpression'.
+'workflow::BinaryExpression' is a specialization of 'Expression'.
+'workflow::Addition' is a specialization of 'ArithmeticExpression'.
+'workflow::NotEqual' is a specialization of 'EqualityExpression'.
+'workflow::Expression' is a specialization of 'Statement'.
+'workflow::LessThan' is a specialization of 'EqualityExpression'.
+'workflow::Or' is a specialization of 'LogicExpression'.
+'workflow::VariableAssignment' is a specialization of 'Statement'.
+'workflow::LessThanOrEqual' is a specialization of 'EqualityExpression'.
+'workflow::If' is a specialization of 'Statement'.
+'workflow::While' (role 'workflow_While12', cardinality 0..*) is associated with 'workflow::Block' (role 'workflow_Block13', cardinality 0..*).
+'workflow::ProcedureReturn' (role 'workflow_ProcedureReturn', cardinality 0..*) is associated with 'workflow::Expression' (role 'workflow_Expression19', cardinality 0..*).
+'workflow::ParameterDeclaration' (role 'workflow_ParameterDeclaration', cardinality 0..*) is associated with 'workflow::ProcedureDeclaration' (role 'workflow_ProcedureDeclaration30', cardinality 0..*).
+'workflow::VariableAssignment' (role 'workflow_VariableAssignment16', cardinality 0..*) is associated with 'workflow::Expression' (role 'workflow_Expression17', cardinality 0..*).
+'workflow::Block' (role 'workflow_Block28', cardinality 0..*) is associated with 'workflow::ProcedureDeclaration' (role 'workflow_ProcedureDeclaration27', cardinality 0..*).
+'workflow::Expression' (role 'workflow_Expression34', cardinality 0..*) is associated with 'workflow::UnaryExpression' (role 'workflow_UnaryExpression', cardinality 0..*).
+'workflow::ProcedureDeclaration' (role 'workflow_ProcedureDeclaration', cardinality 0..*) is associated with 'workflow::CompilationUnit' (role 'workflow_CompilationUnit', cardinality 0..*).
+'workflow::Expression' (role 'workflow_Expression10', cardinality 0..*) is associated with 'workflow::While' (role 'workflow_While', cardinality 0..*).
+'workflow::Read' (role 'workflow_Read', cardinality 0..*) is associated with 'workflow::Variable' (role 'workflow_Variable23', cardinality 0..*).
+'workflow::Expression' (role 'workflow_Expression', cardinality 0..*) is associated with 'workflow::If' (role 'workflow_If', cardinality 0..*).
+'workflow::Statement' (role 'workflow_Statement', cardinality 0..*) is associated with 'workflow::Block' (role 'workflow_Block', cardinality 0..*).
+'workflow::Expression' (role 'workflow_Expression39', cardinality 0..*) is associated with 'workflow::BinaryExpression' (role 'workflow_BinaryExpression38', cardinality 0..*).
+'workflow::Variable' (role 'workflow_Variable', cardinality 0..*) is associated with 'workflow::VariableAssignment' (role 'workflow_VariableAssignment', cardinality 0..*).
+'workflow::ProcedureCall' (role 'workflow_ProcedureCall', cardinality 0..*) is associated with 'workflow::Expression' (role 'workflow_Expression32', cardinality 0..*).
+'workflow::VariableDeclaration' (role 'workflow_VariableDeclaration', cardinality 0..*) is associated with 'workflow::ProcedureDeclaration' (role 'workflow_ProcedureDeclaration25', cardinality 0..*).
+'workflow::Variable' (role 'workflow_Variable21', cardinality 0..*) is associated with 'workflow::Write' (role 'workflow_Write', cardinality 0..*).
+'workflow::If' (role 'workflow_If7', cardinality 0..*) is associated with 'workflow::Block' (role 'workflow_Block8', cardinality 0..*).
+'workflow::BinaryExpression' (role 'workflow_BinaryExpression', cardinality 0..*) is associated with 'workflow::Expression' (role 'workflow_Expression36', cardinality 0..*).
+'workflow::Block' (role 'workflow_Block5', cardinality 0..*) is associated with 'workflow::If' (role 'workflow_If4', cardinality 0..*).

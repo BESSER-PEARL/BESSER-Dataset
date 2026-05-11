@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'logo::Command' has no attributes.
+The class 'logo::ProgramUnit' has no attributes.
+The class 'logo::Move' has the following attributes: 'distance' of type float.
+The class 'Command' has no attributes.
+The class 'logo::Turn' has the following attributes: 'angle' of type float.
+The class 'logo::WhileNoObstacle' has the following attributes: 'distance' of type float.
+'logo::WhileNoObstacle' is a specialization of 'Command'.
+'logo::Move' is a specialization of 'Command'.
+'logo::Turn' is a specialization of 'Command'.
+'logo::ProgramUnit' (role 'logo_ProgramUnit', cardinality 0..*) is associated with 'logo::Command' (role 'logo_Command', cardinality 0..*).
+'logo::Command' (role 'logo_Command2', cardinality 0..*) is associated with 'logo::WhileNoObstacle' (role 'logo_WhileNoObstacle', cardinality 0..*).

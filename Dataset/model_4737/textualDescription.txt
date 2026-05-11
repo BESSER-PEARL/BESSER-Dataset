@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'Page' has no attributes.
+The class 'swml::Page' has the following attributes: 'name' of type str.
+The class 'swml::StaticPage' has no attributes.
+The class 'swml::ContentLayer' has the following attributes: 'name' of type str.
+The class 'Link' has no attributes.
+The class 'swml::CLink' has no attributes.
+The class 'DynamicPage' has no attributes.
+The class 'swml::Attribute' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'swml::IndexPage' has the following attributes: 'size' of type int.
+The class 'swml::DynamicPage' has no attributes.
+The class 'swml::DetailsPage' has no attributes.
+The class 'swml::HypertextLayer' has the following attributes: 'name' of type str.
+The class 'swml::WebModel' has the following attributes: 'name' of type str.
+The class 'swml::Link' has no attributes.
+The class 'swml::NCLink' has no attributes.
+The class 'swml::Class' has the following attributes: 'name' of type str.
+The enumeration 'SWMLTypes' has the following literals: 'Email', 'Boolean', 'Float', 'Integer', 'String'.
+'swml::DetailsPage' is a specialization of 'DynamicPage'.
+'swml::NCLink' is a specialization of 'Link'.
+'swml::StaticPage' is a specialization of 'Page'.
+'swml::IndexPage' is a specialization of 'DynamicPage'.
+'swml::CLink' is a specialization of 'Link'.
+'swml::DynamicPage' is a specialization of 'Page'.
+'swml::DynamicPage' (role 'swml_DynamicPage', cardinality 0..*) is associated with 'swml::Class' (role 'swml_Class17', cardinality 0..*).
+'swml::Link' (role 'swml_Link', cardinality 0..*) is associated with 'swml::Page' (role 'swml_Page19', cardinality 0..*).
+'swml::Page' (role 'source', cardinality 0..*) is associated with 'swml::Link' (role 'Link', cardinality 0..*).
+'swml::WebModel' (role 'swml_WebModel2', cardinality 0..*) is associated with 'swml::ContentLayer' (role 'swml_ContentLayer', cardinality 0..*).
+'swml::Link' (role 'links', cardinality 0..*) is associated with 'swml::Page' (role 'Page', cardinality 0..*).
+'swml::Class' (role 'swml_Class', cardinality 0..*) is associated with 'swml::ContentLayer' (role 'swml_ContentLayer9', cardinality 0..*).
+'swml::WebModel' (role 'swml_WebModel', cardinality 0..*) is associated with 'swml::HypertextLayer' (role 'swml_HypertextLayer', cardinality 0..*).
+'swml::Class' (role 'swml_Class13', cardinality 0..*) is associated with 'swml::Attribute' (role 'swml_Attribute14', cardinality 0..*).
+'swml::Page' (role 'swml_Page', cardinality 0..*) is associated with 'swml::HypertextLayer' (role 'swml_HypertextLayer4', cardinality 0..*).
+'swml::Attribute' (role 'swml_Attribute', cardinality 0..*) is associated with 'swml::Class' (role 'swml_Class11', cardinality 0..*).
+'swml::Page' (role 'swml_Page7', cardinality 0..*) is associated with 'swml::HypertextLayer' (role 'swml_HypertextLayer6', cardinality 0..*).

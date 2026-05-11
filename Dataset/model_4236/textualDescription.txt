@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'projectDsl::Task' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'projectDsl::Employee' has the following attributes: 'name' of type str; 'height' of type int; 'weight' of type int.
+The class 'projectDsl::Project' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'projectDsl::Employees' has no attributes.
+The class 'projectDsl::Company' has the following attributes: 'name' of type str.
+The enumeration 'taskType' has the following literals: 'documentation', 'development'.
+'projectDsl::Company' (role 'projectDsl_Company', cardinality 0..*) is associated with 'projectDsl::Employees' (role 'projectDsl_Employees', cardinality 0..*).
+'projectDsl::Task' (role 'projectDsl_Task', cardinality 0..*) is associated with 'projectDsl::Project' (role 'projectDsl_Project6', cardinality 0..*).
+'projectDsl::Project' (role 'projectDsl_Project', cardinality 0..*) is associated with 'projectDsl::Company' (role 'projectDsl_Company2', cardinality 0..*).
+'projectDsl::Employees' (role 'projectDsl_Employees4', cardinality 0..*) is associated with 'projectDsl::Employee' (role 'projectDsl_Employee', cardinality 0..*).

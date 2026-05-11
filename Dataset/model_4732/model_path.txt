@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/FaMoSA/csp.epsilon/metamodels/simple-scp.ecore

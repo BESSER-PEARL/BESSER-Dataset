@@ -1,0 +1,27 @@
+The model has 12 class(es).
+The class 'calculatrice::Calculatrice' has no attributes.
+The class 'CalcExpr' has no attributes.
+The class 'calculatrice::Calc' has the following attributes: 'boolName' of type str; 'varName' of type str; 'decl' of type bool.
+The class 'Condition' has no attributes.
+The class 'calculatrice::Boolean' has the following attributes: 'BoolValue' of type str.
+The class 'calculatrice::Number' has the following attributes: 'neg' of type bool; 'value' of type int.
+The class 'BoolExpr' has no attributes.
+The class 'calculatrice::CalcExpr' has the following attributes: 'op' of type str.
+The class 'Calc' has no attributes.
+The class 'calculatrice::VarCall' has the following attributes: 'varCall' of type str.
+The class 'calculatrice::Condition' has no attributes.
+The class 'calculatrice::BoolExpr' has the following attributes: 'op' of type str.
+'calculatrice::VarCall' is a specialization of 'CalcExpr'.
+'calculatrice::Boolean' is a specialization of 'BoolExpr'.
+'calculatrice::Condition' is a specialization of 'Calc'.
+'calculatrice::Number' is a specialization of 'CalcExpr'.
+'calculatrice::BoolExpr' is a specialization of 'Condition'.
+'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr22', cardinality 0..*) is associated with 'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr20', cardinality 0..*).
+'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr12', cardinality 0..*) is associated with 'calculatrice::Calc' (role 'calculatrice_Calc13', cardinality 0..*).
+'calculatrice::Calculatrice' (role 'calculatrice_Calculatrice', cardinality 0..*) is associated with 'calculatrice::Calc' (role 'calculatrice_Calc', cardinality 0..*).
+'calculatrice::Calc' (role 'calculatrice_Calc2', cardinality 0..*) is associated with 'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr', cardinality 0..*).
+'calculatrice::CalcExpr' (role 'calculatrice_CalcExpr', cardinality 0..*) is associated with 'calculatrice::Calc' (role 'calculatrice_Calc4', cardinality 0..*).
+'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr15', cardinality 0..*) is associated with 'calculatrice::Calc' (role 'calculatrice_Calc16', cardinality 0..*).
+'calculatrice::CalcExpr' (role 'calculatrice_CalcExpr7', cardinality 0..*) is associated with 'calculatrice::CalcExpr' (role 'calculatrice_CalcExpr5', cardinality 0..*).
+'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr19', cardinality 0..*) is associated with 'calculatrice::BoolExpr' (role 'calculatrice_BoolExpr17', cardinality 0..*).
+'calculatrice::CalcExpr' (role 'calculatrice_CalcExpr8', cardinality 0..*) is associated with 'calculatrice::CalcExpr' (role 'calculatrice_CalcExpr10', cardinality 0..*).

@@ -1,0 +1,53 @@
+The model has 25 class(es).
+The class 'webapp::NormalPage' has no attributes.
+The class 'webapp::RadioButton' has no attributes.
+The class 'Control' has no attributes.
+The class 'webapp::DropDownList' has no attributes.
+The class 'Page' has no attributes.
+The class 'webapp::Control' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'FormButton' has no attributes.
+The class 'webapp::DateBox' has the following attributes: 'format' of type str.
+The class 'webapp::Page' has the following attributes: 'title' of type str; 'default' of type bool; 'name' of type str.
+The class 'webapp::DynamicWebApp' has the following attributes: 'name' of type str.
+The class 'webapp::EmailBox' has no attributes.
+The class 'webapp::CheckBox' has the following attributes: 'text' of type str.
+The class 'webapp::NormalButton' has no attributes.
+The class 'TextBox' has no attributes.
+The class 'webapp::TextBox' has the following attributes: 'maxLength' of type int; 'size' of type int; 'required' of type bool; 'text' of type str.
+The class 'NormalControl' has no attributes.
+The class 'webapp::Link' has no attributes.
+The class 'webapp::FormButton' has the following attributes: 'text' of type str.
+The class 'webapp::Label' has no attributes.
+The class 'webapp::FormPage' has the following attributes: 'persist' of type bool.
+The class 'webapp::ResetButton' has no attributes.
+The class 'webapp::PasswordBox' has no attributes.
+The class 'webapp::SubmitButton' has no attributes.
+The class 'webapp::ListElement' has the following attributes: 'value' of type str.
+The class 'webapp::NormalControl' has the following attributes: 'text' of type str.
+The enumeration 'DateFormat' has the following literals: 'DayMonthYear', 'YearMonthDay'.
+'webapp::NormalControl' is a specialization of 'Control'.
+'webapp::DateBox' is a specialization of 'TextBox'.
+'webapp::Link' is a specialization of 'NormalControl'.
+'webapp::Label' is a specialization of 'NormalControl'.
+'webapp::Label' is a specialization of 'Control'.
+'webapp::TextBox' is a specialization of 'Control'.
+'webapp::CheckBox' is a specialization of 'Control'.
+'webapp::FormButton' is a specialization of 'Control'.
+'webapp::DropDownList' is a specialization of 'Control'.
+'webapp::NormalPage' is a specialization of 'Page'.
+'webapp::ResetButton' is a specialization of 'FormButton'.
+'webapp::SubmitButton' is a specialization of 'FormButton'.
+'webapp::PasswordBox' is a specialization of 'TextBox'.
+'webapp::FormPage' is a specialization of 'Page'.
+'webapp::EmailBox' is a specialization of 'TextBox'.
+'webapp::NormalButton' is a specialization of 'NormalControl'.
+'webapp::RadioButton' is a specialization of 'Control'.
+'webapp::Link' is a specialization of 'Control'.
+'webapp::RadioButton' (role 'webapp_RadioButton', cardinality 0..*) is associated with 'webapp::ListElement' (role 'webapp_ListElement11', cardinality 0..*).
+'webapp::NormalPage' (role 'webapp_NormalPage', cardinality 0..*) is associated with 'webapp::NormalControl' (role 'webapp_NormalControl', cardinality 0..*).
+'webapp::DynamicWebApp' (role 'webapp_DynamicWebApp', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page13', cardinality 0..*).
+'webapp::FormPage' (role 'webapp_FormPage2', cardinality 0..*) is associated with 'webapp::Page' (role 'webapp_Page3', cardinality 0..*).
+'webapp::Control' (role 'webapp_Control', cardinality 0..*) is associated with 'webapp::FormPage' (role 'webapp_FormPage5', cardinality 0..*).
+'webapp::Page' (role 'webapp_Page', cardinality 0..*) is associated with 'webapp::FormPage' (role 'webapp_FormPage', cardinality 0..*).
+'webapp::ListElement' (role 'webapp_ListElement', cardinality 0..*) is associated with 'webapp::DropDownList' (role 'webapp_DropDownList', cardinality 0..*).
+'webapp::Page' (role 'webapp_Page8', cardinality 0..*) is associated with 'webapp::Link' (role 'webapp_Link', cardinality 0..*).

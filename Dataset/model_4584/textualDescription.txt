@@ -1,0 +1,52 @@
+The model has 20 class(es).
+The class 'dsl::ActorList' has the following attributes: 'trigger' of type str.
+The class 'dsl::AnimtationActor' has the following attributes: 'animName' of type str; 'cycle' of type str; 'speed' of type str.
+The class 'dsl::ModelActor' has the following attributes: 'scale' of type int; 'modelPath' of type str.
+The class 'dsl::UnitWeaponLink' has no attributes.
+The class 'dsl::Model' has no attributes.
+The class 'dsl::PersistentEffect' has the following attributes: 'durations' of type str; 'ranges' of type str; 'periodCount' of type int.
+The class 'dsl::Actor' has the following attributes: 'name' of type str.
+The class 'dsl::Projectile' has the following attributes: 'speed' of type int; 'mass' of type int; 'precision' of type str; 'name' of type str.
+The class 'dsl::Color' has the following attributes: 'r' of type int; 'a' of type int; 'b' of type int; 'g' of type int.
+The class 'dsl::Turrent' has the following attributes: 'boneName' of type str; 'onIdle' of type str; 'idleSpeed' of type int; 'name' of type str; 'speed' of type int.
+The class 'dsl::ParticleActor' has the following attributes: 'nbRow' of type int; 'startSize' of type str; 'maxCount' of type int; 'spritePath' of type str; 'startVariation' of type str; 'add' of type str; 'nbCol' of type int; 'endSize' of type str; 'directionBone' of type str; 'duration' of type int; 'maxLife' of type str; 'minLife' of type str; 'perSecond' of type int; 'emissionBone' of type str.
+The class 'dsl::DamageEffect' has the following attributes: 'amount' of type int.
+The class 'dsl::Effect' has the following attributes: 'name' of type str.
+The class 'dsl::Race' has the following attributes: 'name' of type str.
+The class 'Actor' has no attributes.
+The class 'dsl::LauncherEffect' has no attributes.
+The class 'dsl::Mover' has the following attributes: 'heightmap' of type str; 'name' of type str; 'standingMode' of type str; 'pathfindingMode' of type str.
+The class 'Effect' has no attributes.
+The class 'dsl::Unit' has the following attributes: 'name' of type str; 'uIName' of type str; 'radius' of type str; 'separationRadius' of type str; 'speed' of type str; 'sight' of type int; 'mass' of type str; 'maxHealth' of type int.
+The class 'dsl::Weapon' has the following attributes: 'period' of type int; 'name' of type str; 'directionBone' of type str; 'scanRange' of type int; 'uIName' of type str; 'range' of type str; 'sourceBone' of type str.
+'dsl::ParticleActor' is a specialization of 'Actor'.
+'dsl::DamageEffect' is a specialization of 'Effect'.
+'dsl::PersistentEffect' is a specialization of 'Effect'.
+'dsl::ModelActor' is a specialization of 'Actor'.
+'dsl::LauncherEffect' is a specialization of 'Effect'.
+'dsl::AnimtationActor' is a specialization of 'Actor'.
+'dsl::Model' (role 'dsl_Model6', cardinality 0..*) is associated with 'dsl::Mover' (role 'dsl_Mover', cardinality 0..*).
+'dsl::Effect' (role 'dsl_Effect47', cardinality 0..*) is associated with 'dsl::PersistentEffect' (role 'dsl_PersistentEffect', cardinality 0..*).
+'dsl::Projectile' (role 'dsl_Projectile', cardinality 0..*) is associated with 'dsl::Model' (role 'dsl_Model14', cardinality 0..*).
+'dsl::Projectile' (role 'dsl_Projectile57', cardinality 0..*) is associated with 'dsl::Actor' (role 'dsl_Actor58', cardinality 0..*).
+'dsl::Weapon' (role 'dsl_Weapon36', cardinality 0..*) is associated with 'dsl::UnitWeaponLink' (role 'dsl_UnitWeaponLink35', cardinality 0..*).
+'dsl::Weapon' (role 'dsl_Weapon44', cardinality 0..*) is associated with 'dsl::Actor' (role 'dsl_Actor45', cardinality 0..*).
+'dsl::Effect' (role 'dsl_Effect42', cardinality 0..*) is associated with 'dsl::Weapon' (role 'dsl_Weapon41', cardinality 0..*).
+'dsl::Effect' (role 'dsl_Effect49', cardinality 0..*) is associated with 'dsl::LauncherEffect' (role 'dsl_LauncherEffect', cardinality 0..*).
+'dsl::Actor' (role 'dsl_Actor33', cardinality 0..*) is associated with 'dsl::Unit' (role 'dsl_Unit32', cardinality 0..*).
+'dsl::ModelActor' (role 'dsl_ModelActor', cardinality 0..*) is associated with 'dsl::ActorList' (role 'dsl_ActorList', cardinality 0..*).
+'dsl::Race' (role 'dsl_Race', cardinality 0..*) is associated with 'dsl::Model' (role 'dsl_Model4', cardinality 0..*).
+'dsl::Turrent' (role 'dsl_Turrent39', cardinality 0..*) is associated with 'dsl::UnitWeaponLink' (role 'dsl_UnitWeaponLink38', cardinality 0..*).
+'dsl::Color' (role 'dsl_Color19', cardinality 0..*) is associated with 'dsl::ParticleActor' (role 'dsl_ParticleActor18', cardinality 0..*).
+'dsl::Projectile' (role 'dsl_Projectile52', cardinality 0..*) is associated with 'dsl::LauncherEffect' (role 'dsl_LauncherEffect51', cardinality 0..*).
+'dsl::UnitWeaponLink' (role 'dsl_UnitWeaponLink', cardinality 0..*) is associated with 'dsl::Unit' (role 'dsl_Unit30', cardinality 0..*).
+'dsl::Race' (role 'dsl_Race25', cardinality 0..*) is associated with 'dsl::Unit' (role 'dsl_Unit24', cardinality 0..*).
+'dsl::Turrent' (role 'dsl_Turrent', cardinality 0..*) is associated with 'dsl::Model' (role 'dsl_Model12', cardinality 0..*).
+'dsl::Mover' (role 'dsl_Mover28', cardinality 0..*) is associated with 'dsl::Unit' (role 'dsl_Unit27', cardinality 0..*).
+'dsl::ParticleActor' (role 'dsl_ParticleActor', cardinality 0..*) is associated with 'dsl::Color' (role 'dsl_Color', cardinality 0..*).
+'dsl::Mover' (role 'dsl_Mover55', cardinality 0..*) is associated with 'dsl::Projectile' (role 'dsl_Projectile54', cardinality 0..*).
+'dsl::ActorList' (role 'dsl_ActorList21', cardinality 0..*) is associated with 'dsl::Actor' (role 'dsl_Actor22', cardinality 0..*).
+'dsl::Unit' (role 'dsl_Unit', cardinality 0..*) is associated with 'dsl::Model' (role 'dsl_Model2', cardinality 0..*).
+'dsl::Model' (role 'dsl_Model8', cardinality 0..*) is associated with 'dsl::Actor' (role 'dsl_Actor', cardinality 0..*).
+'dsl::Weapon' (role 'dsl_Weapon', cardinality 0..*) is associated with 'dsl::Model' (role 'dsl_Model', cardinality 0..*).
+'dsl::Model' (role 'dsl_Model10', cardinality 0..*) is associated with 'dsl::Effect' (role 'dsl_Effect', cardinality 0..*).

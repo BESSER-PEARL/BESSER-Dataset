@@ -1,0 +1,37 @@
+The model has 18 class(es).
+The class 'htmlElement' has no attributes.
+The class 'html5::input' has the following attributes: 'value' of type str; 'disable' of type str; 'type' of type str.
+The class 'html5::select::multiple' has the following attributes: 'multiple' of type str.
+The class 'html5::container' has the following attributes: 'class_' of type str.
+The class 'html5::option' has no attributes.
+The class 'html5::tr' has no attributes.
+The class 'html5::fieldset' has no attributes.
+The class 'html5::img' has the following attributes: 'src' of type str.
+The class 'html5::legend' has the following attributes: 'class_' of type str; 'valor' of type str.
+The class 'container' has no attributes.
+The class 'html5::html' has no attributes.
+The class 'html5::div' has no attributes.
+The class 'html5::button' has the following attributes: 'type' of type str.
+The class 'html5::dialog' has no attributes.
+The class 'html5::label' has the following attributes: 'valor' of type str.
+The class 'html5::td' has no attributes.
+The class 'html5::table' has no attributes.
+The class 'html5::htmlElement' has the following attributes: 'class_' of type str.
+The enumeration 'types' has the following literals: 'number', 'text', 'button'.
+'html5::label' is a specialization of 'htmlElement'.
+'html5::table' is a specialization of 'htmlElement'.
+'html5::fieldset' is a specialization of 'container'.
+'html5::div' is a specialization of 'container'.
+'html5::img' is a specialization of 'htmlElement'.
+'html5::input' is a specialization of 'htmlElement'.
+'html5::select::multiple' is a specialization of 'htmlElement'.
+'html5::dialog' is a specialization of 'htmlElement'.
+'html5::button' is a specialization of 'htmlElement'.
+'html5::legend' (role 'html5_legend', cardinality 0..*) is associated with 'html5::fieldset' (role 'html5_fieldset', cardinality 0..*).
+'html5::container' (role 'html5_container', cardinality 0..*) is associated with 'html5::html' (role 'html5_html', cardinality 0..*).
+'html5::table' (role 'html5_table', cardinality 0..*) is associated with 'html5::tr' (role 'html5_tr', cardinality 0..*).
+'html5::htmlElement' (role 'html5_htmlElement', cardinality 0..*) is associated with 'html5::td' (role 'html5_td4', cardinality 0..*).
+'html5::container' (role 'html5_container10', cardinality 0..*) is associated with 'html5::container' (role 'html5_container12', cardinality 0..*).
+'html5::select::multiple' (role 'html5_select_multiple', cardinality 0..*) is associated with 'html5::option' (role 'html5_option', cardinality 0..*).
+'html5::htmlElement' (role 'html5_htmlElement9', cardinality 0..*) is associated with 'html5::container' (role 'html5_container8', cardinality 0..*).
+'html5::tr' (role 'html5_tr2', cardinality 0..*) is associated with 'html5::td' (role 'html5_td', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Exp' has no attributes.
+The class 'exp::Add' has no attributes.
+The class 'exp::Lit' has the following attributes: 'value' of type int.
+The class 'exp::Exp' has no attributes.
+'exp::Lit' is a specialization of 'Exp'.
+'exp::Add' is a specialization of 'Exp'.
+'exp::Add' (role 'exp_Add', cardinality 0..*) is associated with 'exp::Exp' (role 'exp_Exp', cardinality 0..*).
+'exp::Exp' (role 'exp_Exp3', cardinality 0..*) is associated with 'exp::Add' (role 'exp_Add2', cardinality 0..*).

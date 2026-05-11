@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'myDsl::Expression' has the following attributes: 'value' of type int.
+The class 'Expression' has no attributes.
+The class 'myDsl::Define' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Conditional' has the following attributes: 'name' of type str; 'value3' of type int; 'value2' of type int.
+The class 'myDsl::Lambda' has the following attributes: 'name' of type str.
+The class 'myDsl::Operation' has the following attributes: 'value2' of type int; 'op' of type str.
+'myDsl::Lambda' is a specialization of 'Expression'.
+'myDsl::Define' is a specialization of 'Expression'.
+'myDsl::Conditional' is a specialization of 'Expression'.
+'myDsl::Operation' is a specialization of 'Expression'.
+'myDsl::Expression' (role 'myDsl_Expression', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'c::C' has no attributes.
+The class 'c::D' has no attributes.
+'c::D' (role 'c_D', cardinality 0..*) is associated with 'c::C' (role 'c_C', cardinality 0..*).

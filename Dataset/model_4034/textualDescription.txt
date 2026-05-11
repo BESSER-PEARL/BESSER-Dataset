@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'uml::15::to::20::associationEndToProperty::StructuralFeature' has the following attributes: 'isStatic' of type bool.
+The class 'StructuralFeature' has no attributes.
+The class 'uml::15::to::20::associationEndToProperty::Model' has no attributes.
+The class 'uml::15::to::20::associationEndToProperty::Property' has no attributes.
+The class 'uml::15::to::20::associationEndToProperty::Class' has no attributes.
+The class 'uml::15::to::20::associationEndToProperty::Operation' has no attributes.
+The class 'uml::15::to::20::associationEndToProperty::Association' has no attributes.
+The enumeration 'ScopeKind' has the following literals: 'instance', 'classifier'.
+The enumeration 'AggregationKind' has the following literals: 'shared', 'composite', 'none'.
+'uml::15::to::20::associationEndToProperty::Operation' is a specialization of 'StructuralFeature'.
+'uml::15::to::20::associationEndToProperty::Property' is a specialization of 'StructuralFeature'.
+'uml::15::to::20::associationEndToProperty::Class' (role 'class_', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Property' (role 'Property', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Operation' (role 'uml_15_to_20_associationEndToProperty_Operation', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Class' (role 'uml_15_to_20_associationEndToProperty_Class5', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Association' (role 'uml_15_to_20_associationEndToProperty_Association', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Model' (role 'uml_15_to_20_associationEndToProperty_Model2', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Model' (role 'uml_15_to_20_associationEndToProperty_Model', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Class' (role 'uml_15_to_20_associationEndToProperty_Class', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Association' (role 'association', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Property' (role 'Property7', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Property' (role 'attributes', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Class' (role 'Class', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Property' (role 'memberEnds', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Association' (role 'Association', cardinality 0..*).
+'uml::15::to::20::associationEndToProperty::Association' (role 'uml_15_to_20_associationEndToProperty_Association9', cardinality 0..*) is associated with 'uml::15::to::20::associationEndToProperty::Property' (role 'uml_15_to_20_associationEndToProperty_Property', cardinality 0..*).

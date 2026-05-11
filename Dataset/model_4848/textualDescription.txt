@@ -1,0 +1,139 @@
+The model has 41 class(es).
+The class 'core::AbstractRequirement' has the following attributes: 'risk' of type str.
+The class 'VerifiableElement' has no attributes.
+The class 'core::SystemOverview' has the following attributes: 'purpose' of type str; 'capabilities' of type str.
+The class 'AbstractRequirement' has no attributes.
+The class 'core::RefDerivedModelElements' has no attributes.
+The class 'RequirementsCoverageData' has no attributes.
+The class 'core::Conflict' has the following attributes: 'degree' of type str.
+The class 'core::Actor' has the following attributes: 'phoneNumber' of type str; 'email' of type str; 'address' of type str.
+The class 'core::ReferencedModelElements' has the following attributes: 'agregationType' of type str.
+The class 'Actor' has no attributes.
+The class 'core::Requirement' has no attributes.
+The class 'core::FormalLanguageExpression' has no attributes.
+The class 'core::Variable' has the following attributes: 'type' of type str.
+The class 'core::Category' has no attributes.
+The class 'core::IdentifiedElement' has the following attributes: 'name' of type str; 'id' of type str; 'description' of type str.
+The class 'core::ConstraintLanguagesSpecification' has no attributes.
+The class 'core::RefUserSelectedModelElements' has no attributes.
+The class 'core::Trace' has no attributes.
+The class 'core::ModelElementReference' has the following attributes: 'satisfactionLevel' of type str; 'weight' of type str; 'verifies' of type str; 'reason' of type str.
+The class 'core::RefExpressionCollectedModelElements' has no attributes.
+The class 'core::TraceModelElementReference' has the following attributes: 'container' of type bool.
+The class 'core::VerificationActivity' has the following attributes: 'passed' of type bool; 'verificationMethod' of type str.
+The class 'ModelElementReference' has no attributes.
+The class 'core::Rationale' has no attributes.
+The class 'core::RequirementsGroup' has no attributes.
+The class 'IdentifiedElement' has no attributes.
+The class 'core::Goal' has the following attributes: 'priority' of type str.
+The class 'core::Uncertainty' has the following attributes: 'scheduleImpact' of type str; 'precedence' of type str; 'maturityIndex' of type str; 'volatility' of type str; 'riskIndex' of type str; 'propRiskIndex' of type str; 'costsImpact' of type str.
+The class 'core::RequirementsCoverageData' has the following attributes: 'verificationLevel' of type str; 'nbRequirements' of type int.
+The class 'core::Assumption' has the following attributes: 'type' of type str.
+The class 'core::StakeHolder' has no attributes.
+The class 'ContractualElement' has no attributes.
+The class 'core::Expression' has no attributes.
+The class 'core::VerifiableElement' has the following attributes: 'verified' of type str.
+The class 'core::Specification' has the following attributes: 'version' of type str.
+The class 'core::RequirementsContainer' has the following attributes: 'type' of type str.
+The class 'ReferencedModelElements' has no attributes.
+The class 'core::SystemContext' has no attributes.
+The class 'core::Interaction' has the following attributes: 'direction' of type str.
+The class 'core::ContractualElement' has the following attributes: 'scheduleDate' of type str; 'originDate' of type str; 'satisfactionLevel' of type str; 'droppingReason' of type str; 'sources' of type str; 'timeCriticality' of type str; 'dropped' of type bool.
+The class 'core::EObject' has no attributes.
+The enumeration 'AssumptionType' has the following literals: 'Organizational', 'Technical', 'Managerial'.
+The enumeration 'ContainerType' has the following literals: 'And', 'Or'.
+The enumeration 'VerificationMethod' has the following literals: 'Test', 'Demonstration', 'Analysis', 'Inspection'.
+The enumeration 'VariableType' has the following literals: 'Both', 'Controlled', 'Monitored'.
+The enumeration 'AgregationType' has the following literals: 'Composition', 'Alternative'.
+The enumeration 'RiskKind' has the following literals: 'Medium', 'Low', 'High'.
+The enumeration 'Direction' has the following literals: 'In', 'InOut', 'Out'.
+'core::RequirementsGroup' is a specialization of 'VerifiableElement'.
+'core::VerifiableElement' is a specialization of 'ContractualElement'.
+'core::ModelElementReference' is a specialization of 'IdentifiedElement'.
+'core::Assumption' is a specialization of 'AbstractRequirement'.
+'core::SystemOverview' is a specialization of 'ContractualElement'.
+'core::Specification' is a specialization of 'VerifiableElement'.
+'core::Rationale' is a specialization of 'IdentifiedElement'.
+'core::RequirementsCoverageData' is a specialization of 'IdentifiedElement'.
+'core::Uncertainty' is a specialization of 'IdentifiedElement'.
+'core::RefDerivedModelElements' is a specialization of 'ReferencedModelElements'.
+'core::SystemContext' is a specialization of 'IdentifiedElement'.
+'core::VerificationActivity' is a specialization of 'IdentifiedElement'.
+'core::AbstractRequirement' is a specialization of 'VerifiableElement'.
+'core::TraceModelElementReference' is a specialization of 'ModelElementReference'.
+'core::Goal' is a specialization of 'ContractualElement'.
+'core::Variable' is a specialization of 'IdentifiedElement'.
+'core::RequirementsContainer' is a specialization of 'IdentifiedElement'.
+'core::Actor' is a specialization of 'IdentifiedElement'.
+'core::ContractualElement' is a specialization of 'IdentifiedElement'.
+'core::RefUserSelectedModelElements' is a specialization of 'ReferencedModelElements'.
+'core::Trace' is a specialization of 'ReferencedModelElements'.
+'core::Conflict' is a specialization of 'IdentifiedElement'.
+'core::TraceModelElementReference' is a specialization of 'RequirementsCoverageData'.
+'core::RefExpressionCollectedModelElements' is a specialization of 'ReferencedModelElements'.
+'core::ReferencedModelElements' is a specialization of 'IdentifiedElement'.
+'core::Requirement' is a specialization of 'AbstractRequirement'.
+'core::StakeHolder' is a specialization of 'Actor'.
+'core::Interaction' is a specialization of 'IdentifiedElement'.
+'core::ReferencedModelElements' (role 'parent', cardinality 0..*) is associated with 'core::ModelElementReference' (role 'ModelElementReference', cardinality 0..*).
+'core::Specification' (role 'core_Specification36', cardinality 0..*) is associated with 'core::Conflict' (role 'core_Conflict', cardinality 0..*).
+'core::ContractualElement' (role 'ContractualElement124', cardinality 0..*) is associated with 'core::Rationale' (role 'rationales', cardinality 0..*).
+'core::Variable' (role 'core_Variable62', cardinality 0..*) is associated with 'core::SystemContext' (role 'core_SystemContext61', cardinality 0..*).
+'core::RequirementsGroup' (role 'requirementGroups', cardinality 0..*) is associated with 'core::Specification' (role 'Specification', cardinality 0..*).
+'core::Specification' (role 'core_Specification38', cardinality 0..*) is associated with 'core::ConstraintLanguagesSpecification' (role 'core_ConstraintLanguagesSpecification', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement4', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement2', cardinality 0..*).
+'core::AbstractRequirement' (role 'requirements', cardinality 0..*) is associated with 'core::RequirementsGroup' (role 'RequirementsGroup84', cardinality 0..*).
+'core::Goal' (role 'Goal', cardinality 0..*) is associated with 'core::Conflict' (role 'conflicts', cardinality 0..*).
+'core::Requirement' (role 'Requirement', cardinality 0..*) is associated with 'core::Assumption' (role 'assumptions', cardinality 0..*).
+'core::VerificationActivity' (role 'VerificationActivity', cardinality 0..*) is associated with 'core::AbstractRequirement' (role 'requirement', cardinality 0..*).
+'core::EObject' (role 'core_EObject109', cardinality 0..*) is associated with 'core::VerificationActivity' (role 'core_VerificationActivity108', cardinality 0..*).
+'core::Requirement' (role 'core_Requirement127', cardinality 0..*) is associated with 'core::RequirementsContainer' (role 'core_RequirementsContainer126', cardinality 0..*).
+'core::SystemOverview' (role 'core_SystemOverview', cardinality 0..*) is associated with 'core::Specification' (role 'core_Specification31', cardinality 0..*).
+'core::Actor' (role 'core_Actor', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement19', cardinality 0..*).
+'core::RequirementsContainer' (role 'core_RequirementsContainer', cardinality 0..*) is associated with 'core::Requirement' (role 'core_Requirement101', cardinality 0..*).
+'core::VerificationActivity' (role 'core_VerificationActivity', cardinality 0..*) is associated with 'core::Specification' (role 'core_Specification34', cardinality 0..*).
+'core::ContractualElement' (role 'contract', cardinality 0..*) is associated with 'core::Rationale' (role 'Rationale', cardinality 0..*).
+'core::Expression' (role 'core_Expression24', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement23', cardinality 0..*).
+'core::Variable' (role 'core_Variable90', cardinality 0..*) is associated with 'core::AbstractRequirement' (role 'core_AbstractRequirement89', cardinality 0..*).
+'core::Variable' (role 'core_Variable87', cardinality 0..*) is associated with 'core::AbstractRequirement' (role 'core_AbstractRequirement86', cardinality 0..*).
+'core::EObject' (role 'core_EObject27', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement26', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement', cardinality 0..*) is associated with 'core::Uncertainty' (role 'core_Uncertainty', cardinality 0..*).
+'core::EObject' (role 'core_EObject16', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement15', cardinality 0..*).
+'core::SystemContext' (role 'core_SystemContext55', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject56', cardinality 0..*).
+'core::Interaction' (role 'core_Interaction', cardinality 0..*) is associated with 'core::Actor' (role 'core_Actor70', cardinality 0..*).
+'core::Requirement' (role 'core_Requirement91', cardinality 0..*) is associated with 'core::Requirement' (role 'core_Requirement', cardinality 0..*).
+'core::SystemContext' (role 'core_SystemContext', cardinality 0..*) is associated with 'core::SystemOverview' (role 'core_SystemOverview51', cardinality 0..*).
+'core::Conflict' (role 'Conflict', cardinality 0..*) is associated with 'core::Goal' (role 'goals', cardinality 0..*).
+'core::Variable' (role 'core_Variable121', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject122', cardinality 0..*).
+'core::EObject' (role 'core_EObject73', cardinality 0..*) is associated with 'core::Interaction' (role 'core_Interaction72', cardinality 0..*).
+'core::Requirement' (role 'core_Requirement97', cardinality 0..*) is associated with 'core::Requirement' (role 'core_Requirement99', cardinality 0..*).
+'core::RefExpressionCollectedModelElements' (role 'core_RefExpressionCollectedModelElements', cardinality 0..*) is associated with 'core::FormalLanguageExpression' (role 'core_FormalLanguageExpression', cardinality 0..*).
+'core::RequirementsGroup' (role 'RequirementsGroup', cardinality 0..*) is associated with 'core::Specification' (role 'specification', cardinality 0..*).
+'core::Variable' (role 'core_Variable', cardinality 0..*) is associated with 'core::SystemOverview' (role 'core_SystemOverview53', cardinality 0..*).
+'core::Assumption' (role 'imageAssumption', cardinality 0..*) is associated with 'core::Requirement' (role 'Requirement104', cardinality 0..*).
+'core::StakeHolder' (role 'core_StakeHolder', cardinality 0..*) is associated with 'core::Rationale' (role 'core_Rationale', cardinality 0..*).
+'core::ContractualElement' (role 'contractualElements', cardinality 0..*) is associated with 'core::StakeHolder' (role 'StakeHolder', cardinality 0..*).
+'core::ContractualElement' (role 'ContractualElement', cardinality 0..*) is associated with 'core::StakeHolder' (role 'stakeholders', cardinality 0..*).
+'core::EObject' (role 'core_EObject49', cardinality 0..*) is associated with 'core::SystemOverview' (role 'core_SystemOverview48', cardinality 0..*).
+'core::AbstractRequirement' (role 'core_AbstractRequirement', cardinality 0..*) is associated with 'core::AbstractRequirement' (role 'core_AbstractRequirement80', cardinality 0..*).
+'core::Trace' (role 'core_Trace', cardinality 0..*) is associated with 'core::Specification' (role 'core_Specification119', cardinality 0..*).
+'core::RequirementsGroup' (role 'group', cardinality 0..*) is associated with 'core::AbstractRequirement' (role 'AbstractRequirement', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement8', cardinality 0..*) is associated with 'core::Category' (role 'core_Category', cardinality 0..*).
+'core::Specification' (role 'core_Specification', cardinality 0..*) is associated with 'core::Actor' (role 'core_Actor29', cardinality 0..*).
+'core::ModelElementReference' (role 'core_ModelElementReference', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject116', cardinality 0..*).
+'core::EObject' (role 'core_EObject', cardinality 0..*) is associated with 'core::ContractualElement' (role 'core_ContractualElement6', cardinality 0..*).
+'core::VerificationActivity' (role 'core_VerificationActivity111', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression112', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement10', cardinality 0..*) is associated with 'core::ReferencedModelElements' (role 'core_ReferencedModelElements', cardinality 0..*).
+'core::Actor' (role 'core_Actor67', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject68', cardinality 0..*).
+'core::Assumption' (role 'Assumption', cardinality 0..*) is associated with 'core::Requirement' (role 'requirements94', cardinality 0..*).
+'core::Specification' (role 'core_Specification40', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject41', cardinality 0..*).
+'core::Assumption' (role 'Assumption96', cardinality 0..*) is associated with 'core::Requirement' (role 'imageRequirement', cardinality 0..*).
+'core::Requirement' (role 'core_Requirement130', cardinality 0..*) is associated with 'core::RequirementsContainer' (role 'core_RequirementsContainer129', cardinality 0..*).
+'core::SystemOverview' (role 'core_SystemOverview46', cardinality 0..*) is associated with 'core::Goal' (role 'core_Goal', cardinality 0..*).
+'core::SystemContext' (role 'core_SystemContext58', cardinality 0..*) is associated with 'core::Actor' (role 'core_Actor59', cardinality 0..*).
+'core::ReferencedModelElements' (role 'ReferencedModelElements', cardinality 0..*) is associated with 'core::ModelElementReference' (role 'modelElementReferences', cardinality 0..*).
+'core::EObject' (role 'core_EObject44', cardinality 0..*) is associated with 'core::Specification' (role 'core_Specification43', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement12', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject13', cardinality 0..*).
+'core::AbstractRequirement' (role 'AbstractRequirement106', cardinality 0..*) is associated with 'core::VerificationActivity' (role 'verifiedBy', cardinality 0..*).
+'core::SystemContext' (role 'core_SystemContext64', cardinality 0..*) is associated with 'core::EObject' (role 'core_EObject65', cardinality 0..*).
+'core::ContractualElement' (role 'core_ContractualElement21', cardinality 0..*) is associated with 'core::Expression' (role 'core_Expression', cardinality 0..*).

@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'testgramgen1::ProtoLink' has no attributes.
+The class 'testgramgen1::C' has no attributes.
+The class 'CNamedElement' has no attributes.
+The class 'testgramgen1::CNamedElement' has the following attributes: 'name' of type str.
+The class 'testgramgen1::System' has no attributes.
+The class 'testgramgen1::D' has no attributes.
+The class 'Node' has no attributes.
+The class 'testgramgen1::DerivedLink' has no attributes.
+The class 'testgramgen1::Node' has no attributes.
+The class 'testgramgen1::Component' has no attributes.
+The class 'testgramgen1::A' has no attributes.
+The class 'testgramgen1::B' has no attributes.
+The class 'ProtoLink' has no attributes.
+The class 'testgramgen1::DerivedComponent' has no attributes.
+The class 'Component' has no attributes.
+'testgramgen1::ProtoLink' is a specialization of 'Component'.
+'testgramgen1::A' is a specialization of 'Node'.
+'testgramgen1::DerivedLink' is a specialization of 'ProtoLink'.
+'testgramgen1::DerivedLink' is a specialization of 'CNamedElement'.
+'testgramgen1::DerivedComponent' is a specialization of 'Component'.
+'testgramgen1::C' is a specialization of 'CNamedElement'.
+'testgramgen1::B' is a specialization of 'Node'.
+'testgramgen1::D' is a specialization of 'Node'.
+'testgramgen1::Component' is a specialization of 'CNamedElement'.
+'testgramgen1::C' is a specialization of 'Node'.
+'testgramgen1::B' (role 'testgramgen1_B', cardinality 0..*) is associated with 'testgramgen1::DerivedLink' (role 'testgramgen1_DerivedLink14', cardinality 0..*).
+'testgramgen1::System' (role 'testgramgen1_System2', cardinality 0..*) is associated with 'testgramgen1::Node' (role 'testgramgen1_Node', cardinality 0..*).
+'testgramgen1::ProtoLink' (role 'testgramgen1_ProtoLink6', cardinality 0..*) is associated with 'testgramgen1::Component' (role 'testgramgen1_Component7', cardinality 0..*).
+'testgramgen1::Component' (role 'testgramgen1_Component12', cardinality 0..*) is associated with 'testgramgen1::DerivedLink' (role 'testgramgen1_DerivedLink', cardinality 0..*).
+'testgramgen1::Node' (role 'testgramgen1_Node10', cardinality 0..*) is associated with 'testgramgen1::ProtoLink' (role 'testgramgen1_ProtoLink9', cardinality 0..*).
+'testgramgen1::Component' (role 'testgramgen1_Component4', cardinality 0..*) is associated with 'testgramgen1::ProtoLink' (role 'testgramgen1_ProtoLink', cardinality 0..*).
+'testgramgen1::Component' (role 'testgramgen1_Component', cardinality 0..*) is associated with 'testgramgen1::System' (role 'testgramgen1_System', cardinality 0..*).

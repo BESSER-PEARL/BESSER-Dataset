@@ -1,0 +1,96 @@
+The model has 31 class(es).
+The class 'tExp::Singletons' has the following attributes: 'minSingletons' of type int; 'maxSingletons' of type int.
+The class 'tExp::StringExpression' has the following attributes: 'value' of type str.
+The class 'tExp::UnionExpr' has no attributes.
+The class 'tExp::Constraint' has the following attributes: 'split' of type str; 'parMax' of type str; 'parMin' of type str; 'together' of type str.
+The class 'tExp::Term' has the following attributes: 'name' of type str.
+The class 'tExp::Partition' has no attributes.
+The class 'tExp::TerminalExpr' has no attributes.
+The class 'tExp::VarExpr' has no attributes.
+The class 'tExp::FilterExpr' has no attributes.
+The class 'tExp::EventType' has the following attributes: 'name' of type str.
+The class 'PrologExpression' has no attributes.
+The class 'tExp::Channel' has the following attributes: 'reliability' of type str; 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'tExp::VariableExpression' has the following attributes: 'name' of type str.
+The class 'tExp::Msg' has the following attributes: 'performative' of type str.
+The class 'tExp::TraceExpression' has the following attributes: 'name' of type str; 'modulesL' of type str; 'decentralized' of type str; 'threshold' of type str; 'modules' of type str; 'partitionL' of type str; 'rolesL' of type str; 'bodyL' of type str; 'guiL' of type str; 'minimal' of type str; 'minimalL' of type str; 'constraintsL' of type str; 'thresholdL' of type str; 'typesL' of type str; 'channelsL' of type str; 'decentralizedL' of type str; 'gui' of type str.
+The class 'Constraint' has no attributes.
+The class 'tExp::NumberExpression' has the following attributes: 'value' of type str.
+The class 'tExp::Size' has the following attributes: 'maxSize' of type int; 'minSize' of type int.
+The class 'tExp::CatExpr' has no attributes.
+The class 'tExp::Domainmodel' has no attributes.
+The class 'tExp::Role' has the following attributes: 'name' of type str; 'args' of type str; 'class_' of type str.
+The class 'tExp::AndExpr' has no attributes.
+The class 'tExp::SeqExpr' has no attributes.
+The class 'tExp::PrologExpression' has the following attributes: 'op' of type str.
+The class 'tExp::Together' has no attributes.
+The class 'tExp::ShuffleExpr' has no attributes.
+The class 'tExp::ListExpression' has no attributes.
+The class 'tExp::Expression' has the following attributes: 'variable' of type str; 'operator' of type str; 'eps' of type str.
+The class 'tExp::AtomExpression' has the following attributes: 'atom' of type str.
+The class 'tExp::Cardinality' has the following attributes: 'maxCardinality' of type int; 'minCardinality' of type int.
+'tExp::StringExpression' is a specialization of 'PrologExpression'.
+'tExp::Singletons' is a specialization of 'Constraint'.
+'tExp::Size' is a specialization of 'Constraint'.
+'tExp::AndExpr' is a specialization of 'Expression'.
+'tExp::ListExpression' is a specialization of 'PrologExpression'.
+'tExp::FilterExpr' is a specialization of 'Expression'.
+'tExp::UnionExpr' is a specialization of 'Expression'.
+'tExp::CatExpr' is a specialization of 'Expression'.
+'tExp::SeqExpr' is a specialization of 'Expression'.
+'tExp::ShuffleExpr' is a specialization of 'Expression'.
+'tExp::NumberExpression' is a specialization of 'PrologExpression'.
+'tExp::AtomExpression' is a specialization of 'PrologExpression'.
+'tExp::Cardinality' is a specialization of 'Constraint'.
+'tExp::VariableExpression' is a specialization of 'PrologExpression'.
+'tExp::TerminalExpr' is a specialization of 'Expression'.
+'tExp::VarExpr' is a specialization of 'Expression'.
+'tExp::TraceExpression' (role 'tExp_TraceExpression13', cardinality 0..*) is associated with 'tExp::Partition' (role 'tExp_Partition', cardinality 0..*).
+'tExp::Channel' (role 'tExp_Channel57', cardinality 0..*) is associated with 'tExp::EventType' (role 'tExp_EventType56', cardinality 0..*).
+'tExp::AndExpr' (role 'tExp_AndExpr107', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression108', cardinality 0..*).
+'tExp::EventType' (role 'tExp_EventType48', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression49', cardinality 0..*).
+'tExp::AtomExpression' (role 'tExp_AtomExpression', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression88', cardinality 0..*).
+'tExp::ListExpression' (role 'tExp_ListExpression', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression90', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression44', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression46', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression105', cardinality 0..*) is associated with 'tExp::AndExpr' (role 'tExp_AndExpr', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression20', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression22', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression', cardinality 0..*) is associated with 'tExp::Term' (role 'tExp_Term19', cardinality 0..*).
+'tExp::EventType' (role 'tExp_EventType25', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression24', cardinality 0..*).
+'tExp::PrologExpression' (role 'tExp_PrologExpression28', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression27', cardinality 0..*).
+'tExp::Role' (role 'tExp_Role83', cardinality 0..*) is associated with 'tExp::Constraint' (role 'tExp_Constraint82', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression95', cardinality 0..*) is associated with 'tExp::ShuffleExpr' (role 'tExp_ShuffleExpr', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression121', cardinality 0..*) is associated with 'tExp::TerminalExpr' (role 'tExp_TerminalExpr', cardinality 0..*).
+'tExp::Msg' (role 'tExp_Msg65', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role66', cardinality 0..*).
+'tExp::PrologExpression' (role 'tExp_PrologExpression93', cardinality 0..*) is associated with 'tExp::ListExpression' (role 'tExp_ListExpression92', cardinality 0..*).
+'tExp::Together' (role 'tExp_Together79', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role80', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression38', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression40', cardinality 0..*).
+'tExp::CatExpr' (role 'tExp_CatExpr112', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression113', cardinality 0..*).
+'tExp::Constraint' (role 'tExp_Constraint85', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role86', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression100', cardinality 0..*) is associated with 'tExp::UnionExpr' (role 'tExp_UnionExpr', cardinality 0..*).
+'tExp::Term' (role 'tExp_Term', cardinality 0..*) is associated with 'tExp::TraceExpression' (role 'tExp_TraceExpression7', cardinality 0..*).
+'tExp::VarExpr' (role 'tExp_VarExpr', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression119', cardinality 0..*).
+'tExp::TraceExpression' (role 'tExp_TraceExpression15', cardinality 0..*) is associated with 'tExp::Constraint' (role 'tExp_Constraint', cardinality 0..*).
+'tExp::TraceExpression' (role 'tExp_TraceExpression11', cardinality 0..*) is associated with 'tExp::EventType' (role 'tExp_EventType', cardinality 0..*).
+'tExp::EventType' (role 'tExp_EventType51', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression52', cardinality 0..*).
+'tExp::Msg' (role 'tExp_Msg62', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role63', cardinality 0..*).
+'tExp::TraceExpression' (role 'tExp_TraceExpression9', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role', cardinality 0..*).
+'tExp::Msg' (role 'tExp_Msg68', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role69', cardinality 0..*).
+'tExp::SeqExpr' (role 'tExp_SeqExpr', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression115', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression30', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression31', cardinality 0..*).
+'tExp::PrologExpression' (role 'tExp_PrologExpression75', cardinality 0..*) is associated with 'tExp::Msg' (role 'tExp_Msg74', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression42', cardinality 0..*) is associated with 'tExp::Term' (role 'tExp_Term43', cardinality 0..*).
+'tExp::EventType' (role 'tExp_EventType54', cardinality 0..*) is associated with 'tExp::Msg' (role 'tExp_Msg', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression103', cardinality 0..*) is associated with 'tExp::UnionExpr' (role 'tExp_UnionExpr102', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression32', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression34', cardinality 0..*).
+'tExp::Domainmodel' (role 'tExp_Domainmodel', cardinality 0..*) is associated with 'tExp::TraceExpression' (role 'tExp_TraceExpression', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression36', cardinality 0..*) is associated with 'tExp::EventType' (role 'tExp_EventType37', cardinality 0..*).
+'tExp::Msg' (role 'tExp_Msg59', cardinality 0..*) is associated with 'tExp::Role' (role 'tExp_Role60', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression98', cardinality 0..*) is associated with 'tExp::ShuffleExpr' (role 'tExp_ShuffleExpr97', cardinality 0..*).
+'tExp::Expression' (role 'tExp_Expression110', cardinality 0..*) is associated with 'tExp::CatExpr' (role 'tExp_CatExpr', cardinality 0..*).
+'tExp::PrologExpression' (role 'tExp_PrologExpression1', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression', cardinality 0..*).
+'tExp::Partition' (role 'tExp_Partition77', cardinality 0..*) is associated with 'tExp::Together' (role 'tExp_Together', cardinality 0..*).
+'tExp::PrologExpression' (role 'tExp_PrologExpression3', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression5', cardinality 0..*).
+'tExp::FilterExpr' (role 'tExp_FilterExpr', cardinality 0..*) is associated with 'tExp::Expression' (role 'tExp_Expression117', cardinality 0..*).
+'tExp::Msg' (role 'tExp_Msg71', cardinality 0..*) is associated with 'tExp::PrologExpression' (role 'tExp_PrologExpression72', cardinality 0..*).
+'tExp::TraceExpression' (role 'tExp_TraceExpression17', cardinality 0..*) is associated with 'tExp::Channel' (role 'tExp_Channel', cardinality 0..*).

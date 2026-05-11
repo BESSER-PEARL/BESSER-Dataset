@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/gemoc/org.eclipse.sirius/plugins/org.eclipse.sirius.doc/specs/proposal/440296_Required_side_for_border_nodes/sample/border_node.ecore

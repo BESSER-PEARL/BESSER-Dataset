@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'testport::Base' has no attributes.
+The class 'testport::Component' has the following attributes: 'name' of type str.
+The class 'testport::Required' has no attributes.
+The class 'Component' has no attributes.
+'testport::Base' is a specialization of 'Component'.
+'testport::Component' (role 'testport_Component', cardinality 0..*) is associated with 'testport::Required' (role 'testport_Required', cardinality 0..*).
+'testport::Base' (role 'testport_Base', cardinality 0..*) is associated with 'testport::Base' (role 'testport_Base1', cardinality 0..*).

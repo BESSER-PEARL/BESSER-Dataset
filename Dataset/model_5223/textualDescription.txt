@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'FaultyRelations::A' has the following attributes: 'w' of type bool; 'v' of type int.
+The class 'FaultyRelations::B' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'FaultyRelations::C' has the following attributes: 'u' of type int.
+'FaultyRelations::A' (role 'CA', cardinality 0..*) is associated with 'FaultyRelations::C' (role 'C', cardinality 0..*).
+'FaultyRelations::C' (role 'BC', cardinality 0..*) is associated with 'FaultyRelations::B' (role 'B8', cardinality 0..*).
+'FaultyRelations::C' (role 'AC', cardinality 0..*) is associated with 'FaultyRelations::A' (role 'A6', cardinality 0..*).
+'FaultyRelations::B' (role 'AB', cardinality 0..*) is associated with 'FaultyRelations::A' (role 'A', cardinality 0..*).
+'FaultyRelations::B' (role 'B', cardinality 0..*) is associated with 'FaultyRelations::A' (role 'BA', cardinality 0..*).
+'FaultyRelations::C' (role 'C4', cardinality 0..*) is associated with 'FaultyRelations::B' (role 'CB', cardinality 0..*).

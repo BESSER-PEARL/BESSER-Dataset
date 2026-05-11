@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'Expression' has no attributes.
+The class 'Expression::Operation' has the following attributes: 'op' of type str.
+The class 'Expression::Expression' has the following attributes: 'value' of type float.
+'Expression::Operation' is a specialization of 'Expression'.
+'Expression::Expression' (role 'Expression_Expression', cardinality 0..*) is associated with 'Expression::Operation' (role 'Expression_Operation', cardinality 0..*).
+'Expression::Expression' (role 'Expression', cardinality 0..*) is associated with 'Expression::Operation' (role 'operation', cardinality 0..*).
+'Expression::Operation' (role 'Operation', cardinality 0..*) is associated with 'Expression::Expression' (role 'left', cardinality 0..*).

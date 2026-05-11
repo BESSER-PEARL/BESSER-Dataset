@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'NamedElement' has no attributes.
+The class 'ktest301::Interface' has no attributes.
+The class 'ktest301::Provided' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'ktest301::Type' has the following attributes: 'signature' of type str.
+The class 'Interface' has no attributes.
+The class 'ktest301::NamedElement' has the following attributes: 'name' of type str.
+The class 'ktest301::Content' has the following attributes: 'language' of type str; 'class_' of type str.
+The class 'ktest301::Attributes' has the following attributes: 'signature' of type str.
+The class 'ktest301::Item' has no attributes.
+The class 'Type' has no attributes.
+The class 'ktest301::AbstractComponent' has no attributes.
+The class 'ktest301::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'ktest301::Binding' has no attributes.
+The class 'ktest301::Component' has no attributes.
+The class 'ktest301::Required' has no attributes.
+'ktest301::Component' is a specialization of 'NamedElement'.
+'ktest301::Item' is a specialization of 'NamedElement'.
+'ktest301::Required' is a specialization of 'Type'.
+'ktest301::Provided' is a specialization of 'Type'.
+'ktest301::Binding' is a specialization of 'NamedElement'.
+'ktest301::Component' is a specialization of 'AbstractComponent'.
+'ktest301::Type' is a specialization of 'Interface'.
+'ktest301::Interface' is a specialization of 'NamedElement'.
+'ktest301::Provided' (role 'ktest301_Provided', cardinality 0..*) is associated with 'ktest301::AbstractComponent' (role 'ktest301_AbstractComponent6', cardinality 0..*).
+'ktest301::Required' (role 'ktest301_Required', cardinality 0..*) is associated with 'ktest301::AbstractComponent' (role 'ktest301_AbstractComponent4', cardinality 0..*).
+'ktest301::Type' (role 'ktest301_Type', cardinality 0..*) is associated with 'ktest301::Item' (role 'ktest301_Item', cardinality 0..*).
+'ktest301::AbstractComponent' (role 'ktest301_AbstractComponent', cardinality 0..*) is associated with 'ktest301::Content' (role 'ktest301_Content', cardinality 0..*).
+'ktest301::Attributes' (role 'ktest301_Attributes', cardinality 0..*) is associated with 'ktest301::AbstractComponent' (role 'ktest301_AbstractComponent2', cardinality 0..*).
+'ktest301::Attributes' (role 'ktest301_Attributes15', cardinality 0..*) is associated with 'ktest301::Attribute' (role 'ktest301_Attribute', cardinality 0..*).
+'ktest301::Interface' (role 'ktest301_Interface13', cardinality 0..*) is associated with 'ktest301::Binding' (role 'ktest301_Binding12', cardinality 0..*).
+'ktest301::Component' (role 'ktest301_Component', cardinality 0..*) is associated with 'ktest301::Component' (role 'ktest301_Component16', cardinality 0..*).
+'ktest301::Binding' (role 'ktest301_Binding9', cardinality 0..*) is associated with 'ktest301::Interface' (role 'ktest301_Interface10', cardinality 0..*).
+'ktest301::Binding' (role 'ktest301_Binding', cardinality 0..*) is associated with 'ktest301::Interface' (role 'ktest301_Interface', cardinality 0..*).

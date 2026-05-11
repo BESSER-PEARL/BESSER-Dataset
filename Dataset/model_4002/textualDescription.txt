@@ -1,0 +1,32 @@
+The model has 13 class(es).
+The class 'tallerE1Java::Package' has the following attributes: 'name' of type str.
+The class 'tallerE1Java::PrimitiveType' has no attributes.
+The class 'tallerE1Java::Attribute' has the following attributes: 'visibility' of type str; 'name' of type str.
+The class 'tallerE1Java::TestClass' has no attributes.
+The class 'tallerE1Java::Annotation' has the following attributes: 'type' of type str; 'content' of type str.
+The class 'tallerE1Java::DAOClass' has no attributes.
+The class 'tallerE1Java::Program' has no attributes.
+The class 'tallerE1Java::Class' has no attributes.
+The class 'Class' has no attributes.
+The class 'tallerE1Java::EntityClass' has no attributes.
+The class 'tallerE1Java::Type' has the following attributes: 'name' of type str.
+The class 'tallerE1Java::Container' has the following attributes: 'type' of type str.
+The class 'Type' has no attributes.
+The enumeration 'Visibility' has the following literals: 'private', 'public'.
+'tallerE1Java::PrimitiveType' is a specialization of 'Type'.
+'tallerE1Java::Class' is a specialization of 'Type'.
+'tallerE1Java::EntityClass' is a specialization of 'Class'.
+'tallerE1Java::DAOClass' is a specialization of 'Class'.
+'tallerE1Java::TestClass' is a specialization of 'Class'.
+'tallerE1Java::Container' is a specialization of 'Type'.
+'tallerE1Java::Attribute' (role 'tallerE1Java_Attribute12', cardinality 0..*) is associated with 'tallerE1Java::Annotation' (role 'tallerE1Java_Annotation', cardinality 0..*).
+'tallerE1Java::Package' (role 'tallerE1Java_Package6', cardinality 0..*) is associated with 'tallerE1Java::Class' (role 'tallerE1Java_Class', cardinality 0..*).
+'tallerE1Java::Attribute' (role 'tallerE1Java_Attribute', cardinality 0..*) is associated with 'tallerE1Java::Class' (role 'tallerE1Java_Class8', cardinality 0..*).
+'tallerE1Java::Type' (role 'tallerE1Java_Type', cardinality 0..*) is associated with 'tallerE1Java::Attribute' (role 'tallerE1Java_Attribute10', cardinality 0..*).
+'tallerE1Java::Container' (role 'tallerE1Java_Container', cardinality 0..*) is associated with 'tallerE1Java::Program' (role 'tallerE1Java_Program4', cardinality 0..*).
+'tallerE1Java::Package' (role 'tallerE1Java_Package', cardinality 0..*) is associated with 'tallerE1Java::Program' (role 'tallerE1Java_Program', cardinality 0..*).
+'tallerE1Java::EntityClass' (role 'tallerE1Java_EntityClass21', cardinality 0..*) is associated with 'tallerE1Java::TestClass' (role 'tallerE1Java_TestClass20', cardinality 0..*).
+'tallerE1Java::Container' (role 'tallerE1Java_Container14', cardinality 0..*) is associated with 'tallerE1Java::Type' (role 'tallerE1Java_Type15', cardinality 0..*).
+'tallerE1Java::TestClass' (role 'tallerE1Java_TestClass', cardinality 0..*) is associated with 'tallerE1Java::DAOClass' (role 'tallerE1Java_DAOClass18', cardinality 0..*).
+'tallerE1Java::EntityClass' (role 'tallerE1Java_EntityClass', cardinality 0..*) is associated with 'tallerE1Java::DAOClass' (role 'tallerE1Java_DAOClass', cardinality 0..*).
+'tallerE1Java::Program' (role 'tallerE1Java_Program2', cardinality 0..*) is associated with 'tallerE1Java::PrimitiveType' (role 'tallerE1Java_PrimitiveType', cardinality 0..*).

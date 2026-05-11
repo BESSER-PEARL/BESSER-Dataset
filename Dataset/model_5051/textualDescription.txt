@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'customerDsl::POBox' has the following attributes: 'number' of type int.
+The class 'customerDsl::StreetAddress' has the following attributes: 'city' of type str; 'street' of type str.
+The class 'customerDsl::Order' has the following attributes: 'channel' of type str; 'name' of type str.
+The class 'customerDsl::Product' has the following attributes: 'price' of type int; 'name' of type str.
+The class 'customerDsl::Customer' has the following attributes: 'fullName' of type str; 'name' of type str.
+The class 'customerDsl::CustomerDb' has no attributes.
+The class 'customerDsl::Address' has the following attributes: 'name' of type str; 'zip' of type str.
+The class 'Address' has no attributes.
+The enumeration 'OrderChannel' has the following literals: 'WEB', 'PHONE', 'MAIL'.
+'customerDsl::POBox' is a specialization of 'Address'.
+'customerDsl::StreetAddress' is a specialization of 'Address'.
+'customerDsl::Order' (role 'customerDsl_Order8', cardinality 0..*) is associated with 'customerDsl::Customer' (role 'customerDsl_Customer9', cardinality 0..*).
+'customerDsl::Product' (role 'customerDsl_Product', cardinality 0..*) is associated with 'customerDsl::CustomerDb' (role 'customerDsl_CustomerDb4', cardinality 0..*).
+'customerDsl::Customer' (role 'customerDsl_Customer', cardinality 0..*) is associated with 'customerDsl::CustomerDb' (role 'customerDsl_CustomerDb', cardinality 0..*).
+'customerDsl::CustomerDb' (role 'customerDsl_CustomerDb2', cardinality 0..*) is associated with 'customerDsl::Order' (role 'customerDsl_Order', cardinality 0..*).
+'customerDsl::Address' (role 'customerDsl_Address12', cardinality 0..*) is associated with 'customerDsl::Order' (role 'customerDsl_Order11', cardinality 0..*).
+'customerDsl::Customer' (role 'customerDsl_Customer6', cardinality 0..*) is associated with 'customerDsl::Address' (role 'customerDsl_Address', cardinality 0..*).

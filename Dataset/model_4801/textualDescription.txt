@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'testModel::upperBoundLeaf' has the following attributes: 'name' of type str.
+The class 'testModel::ContainedLeaf' has the following attributes: 'Character' of type str; 'byteArray' of type str; 'byteObject' of type str; 'elementType' of type str; 'double' of type float; 'DoubleObj' of type str; 'float' of type float; 'char' of type str; 'date' of type date; 'name' of type str.
+The class 'testModel::referedLeaf' has the following attributes: 'ShortObj' of type str; 'name' of type str; 'Float' of type str; 'int' of type int; 'Integer' of type str; 'short' of type str; 'LongObj' of type str; 'long' of type str; 'notChangeable' of type str.
+The class 'testModel::Leafs' has no attributes.
+The class 'testModel::multiRefLeaf' has the following attributes: 'name' of type str.
+The class 'testModel::Node' has the following attributes: 'bigint' of type str; 'Boolean' of type str; 'name' of type str; 'byte' of type str; 'bigdeci' of type str; 'bool' of type bool.
+The class 'Leafs' has no attributes.
+The enumeration 'ElementType' has the following literals: 'Type1', 'Type2'.
+'testModel::upperBoundLeaf' is a specialization of 'Leafs'.
+'testModel::multiRefLeaf' is a specialization of 'Leafs'.
+'testModel::referedLeaf' is a specialization of 'Leafs'.
+'testModel::ContainedLeaf' (role 'testModel_ContainedLeaf7', cardinality 0..*) is associated with 'testModel::upperBoundLeaf' (role 'testModel_upperBoundLeaf', cardinality 0..*).
+'testModel::Node' (role 'testModel_Node', cardinality 0..*) is associated with 'testModel::Node' (role 'testModel_Node0', cardinality 0..*).
+'testModel::ContainedLeaf' (role 'testModel_ContainedLeaf5', cardinality 0..*) is associated with 'testModel::referedLeaf' (role 'testModel_referedLeaf', cardinality 0..*).
+'testModel::ContainedLeaf' (role 'testModel_ContainedLeaf', cardinality 0..*) is associated with 'testModel::Node' (role 'testModel_Node3', cardinality 0..*).
+'testModel::multiRefLeaf' (role 'testModel_multiRefLeaf', cardinality 0..*) is associated with 'testModel::referedLeaf' (role 'testModel_referedLeaf9', cardinality 0..*).

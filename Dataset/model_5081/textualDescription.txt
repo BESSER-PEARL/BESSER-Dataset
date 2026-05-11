@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'NamedElement' has no attributes.
+The class 'adlrecurs::Attributes' has the following attributes: 'signature' of type str.
+The class 'adlrecurs::AbstractComponent' has no attributes.
+The class 'adlrecurs::Binding' has no attributes.
+The class 'adlrecurs::Content' has the following attributes: 'language' of type str; 'class_' of type str.
+The class 'adlrecurs::Provided' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'adlrecurs::Component' has no attributes.
+The class 'adlrecurs::Type' has the following attributes: 'signature' of type str.
+The class 'Type' has no attributes.
+The class 'adlrecurs::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'Interface' has no attributes.
+The class 'adlrecurs::NamedElement' has the following attributes: 'name' of type str.
+The class 'adlrecurs::Item' has no attributes.
+The class 'adlrecurs::Required' has no attributes.
+The class 'adlrecurs::Interface' has no attributes.
+'adlrecurs::Interface' is a specialization of 'NamedElement'.
+'adlrecurs::Required' is a specialization of 'Type'.
+'adlrecurs::Binding' is a specialization of 'NamedElement'.
+'adlrecurs::Component' is a specialization of 'NamedElement'.
+'adlrecurs::Type' is a specialization of 'Interface'.
+'adlrecurs::Item' is a specialization of 'NamedElement'.
+'adlrecurs::Component' is a specialization of 'AbstractComponent'.
+'adlrecurs::Provided' is a specialization of 'Type'.
+'adlrecurs::Interface' (role 'adlrecurs_Interface', cardinality 0..*) is associated with 'adlrecurs::Binding' (role 'adlrecurs_Binding', cardinality 0..*).
+'adlrecurs::AbstractComponent' (role 'adlrecurs_AbstractComponent6', cardinality 0..*) is associated with 'adlrecurs::Provided' (role 'adlrecurs_Provided', cardinality 0..*).
+'adlrecurs::Binding' (role 'adlrecurs_Binding9', cardinality 0..*) is associated with 'adlrecurs::Interface' (role 'adlrecurs_Interface10', cardinality 0..*).
+'adlrecurs::AbstractComponent' (role 'adlrecurs_AbstractComponent2', cardinality 0..*) is associated with 'adlrecurs::Attributes' (role 'adlrecurs_Attributes', cardinality 0..*).
+'adlrecurs::Binding' (role 'adlrecurs_Binding12', cardinality 0..*) is associated with 'adlrecurs::Interface' (role 'adlrecurs_Interface13', cardinality 0..*).
+'adlrecurs::Content' (role 'adlrecurs_Content', cardinality 0..*) is associated with 'adlrecurs::AbstractComponent' (role 'adlrecurs_AbstractComponent', cardinality 0..*).
+'adlrecurs::Required' (role 'adlrecurs_Required', cardinality 0..*) is associated with 'adlrecurs::AbstractComponent' (role 'adlrecurs_AbstractComponent4', cardinality 0..*).
+'adlrecurs::Item' (role 'adlrecurs_Item', cardinality 0..*) is associated with 'adlrecurs::Type' (role 'adlrecurs_Type', cardinality 0..*).
+'adlrecurs::Attribute' (role 'adlrecurs_Attribute', cardinality 0..*) is associated with 'adlrecurs::Attributes' (role 'adlrecurs_Attributes15', cardinality 0..*).
+'adlrecurs::Component' (role 'adlrecurs_Component', cardinality 0..*) is associated with 'adlrecurs::Component' (role 'adlrecurs_Component16', cardinality 0..*).

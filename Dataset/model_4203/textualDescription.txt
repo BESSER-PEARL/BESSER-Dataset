@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'helloScoping::Model' has no attributes.
+The class 'helloScoping::FieldReference' has no attributes.
+The class 'helloScoping::Greeting' has the following attributes: 'name' of type str.
+The class 'helloScoping::Field' has the following attributes: 'name' of type str.
+'helloScoping::Greeting' (role 'helloScoping_Greeting7', cardinality 0..*) is associated with 'helloScoping::FieldReference' (role 'helloScoping_FieldReference', cardinality 0..*).
+'helloScoping::FieldReference' (role 'helloScoping_FieldReference9', cardinality 0..*) is associated with 'helloScoping::Field' (role 'helloScoping_Field10', cardinality 0..*).
+'helloScoping::Greeting' (role 'helloScoping_Greeting3', cardinality 0..*) is associated with 'helloScoping::Greeting' (role 'helloScoping_Greeting1', cardinality 0..*).
+'helloScoping::Model' (role 'helloScoping_Model', cardinality 0..*) is associated with 'helloScoping::Greeting' (role 'helloScoping_Greeting', cardinality 0..*).
+'helloScoping::Field' (role 'helloScoping_Field', cardinality 0..*) is associated with 'helloScoping::Greeting' (role 'helloScoping_Greeting5', cardinality 0..*).

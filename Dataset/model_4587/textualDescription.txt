@@ -1,0 +1,118 @@
+The model has 40 class(es).
+The class 'ObjectNode' has no attributes.
+The class 'ActivitiesProv::JoinNode' has the following attributes: 'isCombineDuplicate' of type bool.
+The class 'ActivitiesProv::ActivityParameterNode' has no attributes.
+The class 'ActivitiesProv::ForkNode' has no attributes.
+The class 'ActivitiesProv::DecisionNode' has no attributes.
+The class 'ActivitiesProv::ControlFlow' has no attributes.
+The class 'ActivitiesProv::ActivityNode' has no attributes.
+The class 'ActivitiesProv::ExecutableNode' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'ActivitiesProv::LoopNode' has the following attributes: 'isTestedFirst' of type bool.
+The class 'ActivityGroup' has no attributes.
+The class 'ActivitiesProv::InitialNode' has no attributes.
+The class 'ActivitiesProv::CentralBufferNode' has no attributes.
+The class 'ActivitiesProv::ObjectFlow' has the following attributes: 'isMulticast' of type bool; 'isControlType' of type bool; 'isMultireceive' of type bool.
+The class 'ActivitiesProv::FlowFinalNode' has no attributes.
+The class 'ActivitiesProv::ExceptionHandler' has no attributes.
+The class 'ActivitiesProv::MergeNode' has no attributes.
+The class 'ActivitiesProv::StructuredActivityNode' has the following attributes: 'mustIsolate' of type bool.
+The class 'ActivitiesProv::ObjectNode' has no attributes.
+The class 'ActivitiesProv::Clause' has no attributes.
+The class 'ActivitiesProv::DataStoreNode' has no attributes.
+The class 'ActivitiesProv::ExpansionNode' has no attributes.
+The class 'ActivitiesProv::ParameterSet' has no attributes.
+The class 'ActivitiesProv::ActivityEdge' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'ActivitiesProv::FinalNode' has no attributes.
+The class 'ActivitiesProv::ActivityPartition' has no attributes.
+The class 'StructuredActivityNode' has no attributes.
+The class 'ExecutableNode' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'ActivitiesProv::ActivityGroup' has no attributes.
+The class 'ActivitiesProv::Activity' has the following attributes: 'isReadOnly' of type bool; 'isSingleExecution' of type bool.
+The class 'FinalNode' has no attributes.
+The class 'ActivitiesProv::ConditionalNode' has the following attributes: 'isAssumed' of type bool; 'isDeterminate' of type bool.
+The class 'ActivitiesProv::SequenceNode' has no attributes.
+The class 'ActivitiesProv::InterruptibleActivityRegion' has no attributes.
+The class 'ActivitiesProv::ActivityFinalNode' has no attributes.
+The class 'ActivitiesProv::ControlNode' has no attributes.
+The class 'CentralBufferNode' has no attributes.
+The class 'ActivitiesProv::ExpansionRegion' has no attributes.
+'ActivitiesProv::DataStoreNode' is a specialization of 'CentralBufferNode'.
+'ActivitiesProv::ExpansionRegion' is a specialization of 'StructuredActivityNode'.
+'ActivitiesProv::DecisionNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::FlowFinalNode' is a specialization of 'FinalNode'.
+'ActivitiesProv::StructuredActivityNode' is a specialization of 'ExecutableNode'.
+'ActivitiesProv::CentralBufferNode' is a specialization of 'ObjectNode'.
+'ActivitiesProv::ObjectNode' is a specialization of 'ActivityNode'.
+'ActivitiesProv::ActivityFinalNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::ActivityFinalNode' is a specialization of 'FinalNode'.
+'ActivitiesProv::ForkNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::InterruptibleActivityRegion' is a specialization of 'ActivityGroup'.
+'ActivitiesProv::ControlFlow' is a specialization of 'ActivityEdge'.
+'ActivitiesProv::ExecutableNode' is a specialization of 'ActivityNode'.
+'ActivitiesProv::LoopNode' is a specialization of 'StructuredActivityNode'.
+'ActivitiesProv::ObjectFlow' is a specialization of 'ActivityEdge'.
+'ActivitiesProv::SequenceNode' is a specialization of 'StructuredActivityNode'.
+'ActivitiesProv::ControlNode' is a specialization of 'ActivityNode'.
+'ActivitiesProv::StructuredActivityNode' is a specialization of 'ActivityGroup'.
+'ActivitiesProv::InitialNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::ExpansionNode' is a specialization of 'ObjectNode'.
+'ActivitiesProv::FinalNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::ConditionalNode' is a specialization of 'StructuredActivityNode'.
+'ActivitiesProv::MergeNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'ActivitiesProv::ActivityPartition' is a specialization of 'ActivityGroup'.
+'ActivitiesProv::JoinNode' is a specialization of 'ControlNode'.
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode22', cardinality 0..*) is associated with 'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition23', cardinality 0..*).
+'ActivitiesProv::ExceptionHandler' (role 'ActivitiesProv_ExceptionHandler124', cardinality 0..*) is associated with 'ActivitiesProv::ObjectNode' (role 'ActivitiesProv_ObjectNode', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge45', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode46', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode', cardinality 0..*) is associated with 'ActivitiesProv::ExceptionHandler' (role 'ActivitiesProv_ExceptionHandler', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup36', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity37', cardinality 0..*).
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode19', cardinality 0..*) is associated with 'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge20', cardinality 0..*).
+'ActivitiesProv::ConditionalNode' (role 'ActivitiesProv_ConditionalNode107', cardinality 0..*) is associated with 'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode108', cardinality 0..*).
+'ActivitiesProv::InterruptibleActivityRegion' (role 'ActivitiesProv_InterruptibleActivityRegion', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode25', cardinality 0..*).
+'ActivitiesProv::Clause' (role 'ActivitiesProv_Clause114', cardinality 0..*) is associated with 'ActivitiesProv::Clause' (role 'ActivitiesProv_Clause112', cardinality 0..*).
+'ActivitiesProv::Clause' (role 'ActivitiesProv_Clause111', cardinality 0..*) is associated with 'ActivitiesProv::Clause' (role 'ActivitiesProv_Clause109', cardinality 0..*).
+'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition74', cardinality 0..*) is associated with 'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition72', cardinality 0..*).
+'ActivitiesProv::ExpansionNode' (role 'ActivitiesProv_ExpansionNode128', cardinality 0..*) is associated with 'ActivitiesProv::ExpansionRegion' (role 'ActivitiesProv_ExpansionRegion127', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge52', cardinality 0..*) is associated with 'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge50', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge92', cardinality 0..*) is associated with 'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode91', cardinality 0..*).
+'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition76', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode77', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity2', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode98', cardinality 0..*) is associated with 'ActivitiesProv::LoopNode' (role 'ActivitiesProv_LoopNode97', cardinality 0..*).
+'ActivitiesProv::ConditionalNode' (role 'ActivitiesProv_ConditionalNode', cardinality 0..*) is associated with 'ActivitiesProv::Clause' (role 'ActivitiesProv_Clause', cardinality 0..*).
+'ActivitiesProv::ExceptionHandler' (role 'ActivitiesProv_ExceptionHandler121', cardinality 0..*) is associated with 'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode122', cardinality 0..*).
+'ActivitiesProv::InterruptibleActivityRegion' (role 'ActivitiesProv_InterruptibleActivityRegion82', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode83', cardinality 0..*).
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity', cardinality 0..*).
+'ActivitiesProv::ExpansionRegion' (role 'ActivitiesProv_ExpansionRegion134', cardinality 0..*) is associated with 'ActivitiesProv::ExpansionNode' (role 'ActivitiesProv_ExpansionNode133', cardinality 0..*).
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode10', cardinality 0..*) is associated with 'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup11', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup34', cardinality 0..*) is associated with 'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup32', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge43', cardinality 0..*) is associated with 'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup42', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge63', cardinality 0..*) is associated with 'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode64', cardinality 0..*).
+'ActivitiesProv::ExpansionRegion' (role 'ActivitiesProv_ExpansionRegion', cardinality 0..*) is associated with 'ActivitiesProv::ExpansionNode' (role 'ActivitiesProv_ExpansionNode', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode116', cardinality 0..*) is associated with 'ActivitiesProv::SequenceNode' (role 'ActivitiesProv_SequenceNode', cardinality 0..*).
+'ActivitiesProv::ExpansionNode' (role 'ActivitiesProv_ExpansionNode130', cardinality 0..*) is associated with 'ActivitiesProv::ExpansionRegion' (role 'ActivitiesProv_ExpansionRegion131', cardinality 0..*).
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode14', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode12', cardinality 0..*).
+'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity86', cardinality 0..*) is associated with 'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode85', cardinality 0..*).
+'ActivitiesProv::DecisionNode' (role 'ActivitiesProv_DecisionNode', cardinality 0..*) is associated with 'ActivitiesProv::ObjectFlow' (role 'ActivitiesProv_ObjectFlow', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge57', cardinality 0..*) is associated with 'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition58', cardinality 0..*).
+'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity6', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup39', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode40', cardinality 0..*).
+'ActivitiesProv::LoopNode' (role 'ActivitiesProv_LoopNode100', cardinality 0..*) is associated with 'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode101', cardinality 0..*).
+'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode28', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode27', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge48', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode49', cardinality 0..*).
+'ActivitiesProv::InterruptibleActivityRegion' (role 'ActivitiesProv_InterruptibleActivityRegion79', cardinality 0..*) is associated with 'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge80', cardinality 0..*).
+'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity8', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode105', cardinality 0..*) is associated with 'ActivitiesProv::ConditionalNode' (role 'ActivitiesProv_ConditionalNode104', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge68', cardinality 0..*) is associated with 'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition67', cardinality 0..*).
+'ActivitiesProv::InterruptibleActivityRegion' (role 'ActivitiesProv_InterruptibleActivityRegion61', cardinality 0..*) is associated with 'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge60', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup29', cardinality 0..*) is associated with 'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup31', cardinality 0..*).
+'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode89', cardinality 0..*) is associated with 'ActivitiesProv::StructuredActivityNode' (role 'ActivitiesProv_StructuredActivityNode88', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge17', cardinality 0..*) is associated with 'ActivitiesProv::ActivityNode' (role 'ActivitiesProv_ActivityNode16', cardinality 0..*).
+'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition71', cardinality 0..*) is associated with 'ActivitiesProv::ActivityPartition' (role 'ActivitiesProv_ActivityPartition69', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode119', cardinality 0..*) is associated with 'ActivitiesProv::ExceptionHandler' (role 'ActivitiesProv_ExceptionHandler118', cardinality 0..*).
+'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge', cardinality 0..*) is associated with 'ActivitiesProv::Activity' (role 'ActivitiesProv_Activity4', cardinality 0..*).
+'ActivitiesProv::ActivityGroup' (role 'ActivitiesProv_ActivityGroup55', cardinality 0..*) is associated with 'ActivitiesProv::ActivityEdge' (role 'ActivitiesProv_ActivityEdge54', cardinality 0..*).
+'ActivitiesProv::ExecutableNode' (role 'ActivitiesProv_ExecutableNode95', cardinality 0..*) is associated with 'ActivitiesProv::LoopNode' (role 'ActivitiesProv_LoopNode', cardinality 0..*).

@@ -1,0 +1,57 @@
+The model has 25 class(es).
+The class 'webApplication::content::Page' has no attributes.
+The class 'webApplication::data::RelatedEntity' has no attributes.
+The class 'Column' has no attributes.
+The class 'DataSource' has no attributes.
+The class 'Content' has no attributes.
+The class 'webApplication::content::Field' has the following attributes: 'type' of type str.
+The class 'webApplication::content::Content' has no attributes.
+The class 'webApplication::content::Link' has no attributes.
+The class 'Link' has no attributes.
+The class 'Entity' has no attributes.
+The class 'webApplication::content::Form' has no attributes.
+The class 'Field' has no attributes.
+The class 'webApplication::content::CRUDForm' has no attributes.
+The class 'webApplication::data::DataSource' has no attributes.
+The class 'webApplication::content::MultipleContent' has the following attributes: 'size' of type int; 'paginated' of type bool.
+The class 'Page' has no attributes.
+The class 'Named' has no attributes.
+The class 'webApplication::data::Column' has the following attributes: 'type' of type str; 'PK' of type bool; 'lenght' of type int.
+The class 'RelatedEntity' has no attributes.
+The class 'webApplication::content::Menu' has the following attributes: 'itemName' of type str; 'order' of type int; 'url' of type str.
+The class 'Form' has no attributes.
+The class 'webApplication::data::Entity' has the following attributes: 'numberOfColumns' of type str.
+The class 'webApplication::content::SingleContent' has no attributes.
+The class 'webApplication::WebApplicationModel' has no attributes.
+The class 'webApplication::Named' has the following attributes: 'name' of type str.
+The enumeration 'FieldType' has the following literals: 'CheckBox', 'RadioButton', 'TextBox', 'SubmitButton'.
+The enumeration 'ColumnType' has the following literals: 'String', 'Boolean', 'Float', 'Text', 'Integer'.
+'webApplication::WebApplicationModel' is a specialization of 'Named'.
+'webApplication::content::SingleContent' is a specialization of 'Content'.
+'webApplication::content::CRUDForm' is a specialization of 'Form'.
+'webApplication::data::DataSource' is a specialization of 'Named'.
+'webApplication::content::Page' is a specialization of 'Named'.
+'webApplication::content::MultipleContent' is a specialization of 'Content'.
+'webApplication::content::Field' is a specialization of 'Named'.
+'webApplication::content::Menu' is a specialization of 'Content'.
+'webApplication::content::Link' is a specialization of 'Named'.
+'webApplication::content::Form' is a specialization of 'Named'.
+'webApplication::data::Column' is a specialization of 'Named'.
+'webApplication::data::RelatedEntity' is a specialization of 'Named'.
+'webApplication::data::Entity' is a specialization of 'Named'.
+'webApplication::content::Content' is a specialization of 'Named'.
+'Entity' (role 'Entity6', cardinality 0..*) is associated with 'webApplication::data::DataSource' (role 'webApplication_data_DataSource', cardinality 0..*).
+'webApplication::content::Page' (role 'webApplication_content_Page17', cardinality 0..*) is associated with 'Link' (role 'Link', cardinality 0..*).
+'webApplication::content::Content' (role 'webApplication_content_Content', cardinality 0..*) is associated with 'DataSource' (role 'DataSource21', cardinality 0..*).
+'webApplication::content::CRUDForm' (role 'webApplication_content_CRUDForm', cardinality 0..*) is associated with 'Field' (role 'Field', cardinality 0..*).
+'webApplication::data::Entity' (role 'webApplication_data_Entity9', cardinality 0..*) is associated with 'RelatedEntity' (role 'RelatedEntity', cardinality 0..*).
+'webApplication::data::RelatedEntity' (role 'webApplication_data_RelatedEntity', cardinality 0..*) is associated with 'Entity' (role 'Entity14', cardinality 0..*).
+'webApplication::WebApplicationModel' (role 'webApplication_WebApplicationModel4', cardinality 0..*) is associated with 'Page' (role 'Page', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'webApplication::data::Entity' (role 'webApplication_data_Entity', cardinality 0..*).
+'webApplication::data::Entity' (role 'webApplication_data_Entity11', cardinality 0..*) is associated with 'Entity' (role 'Entity12', cardinality 0..*).
+'webApplication::WebApplicationModel' (role 'webApplication_WebApplicationModel', cardinality 0..*) is associated with 'Entity' (role 'Entity', cardinality 0..*).
+'Content' (role 'Content', cardinality 0..*) is associated with 'webApplication::content::Page' (role 'webApplication_content_Page', cardinality 0..*).
+'webApplication::content::Link' (role 'webApplication_content_Link', cardinality 0..*) is associated with 'Page' (role 'Page23', cardinality 0..*).
+'Page' (role 'Page26', cardinality 0..*) is associated with 'webApplication::content::Link' (role 'webApplication_content_Link25', cardinality 0..*).
+'webApplication::WebApplicationModel' (role 'webApplication_WebApplicationModel2', cardinality 0..*) is associated with 'DataSource' (role 'DataSource', cardinality 0..*).
+'webApplication::content::Page' (role 'webApplication_content_Page19', cardinality 0..*) is associated with 'Form' (role 'Form', cardinality 0..*).

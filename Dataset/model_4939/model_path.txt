@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Malinoski/IMT/OpenEHR2RichUbi.v5/metamodels/richubi/olds/rich_interface_components.ecore

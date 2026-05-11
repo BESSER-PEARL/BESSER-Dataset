@@ -1,0 +1,83 @@
+The model has 35 class(es).
+The class 'terms::NamedOperator' has no attributes.
+The class 'terms::OperatorDecl' has no attributes.
+The class 'terms::HLMarking' has no attributes.
+The class 'terms::MultisetOperator' has no attributes.
+The class 'terms::Empty' has no attributes.
+The class 'terms::Condition' has no attributes.
+The class 'terms::ProductSort' has no attributes.
+The class 'SortDecl' has no attributes.
+The class 'terms::MultisetSort' has no attributes.
+The class 'terms::Type' has no attributes.
+The class 'OperatorDecl' has no attributes.
+The class 'terms::NamedSort' has no attributes.
+The class 'terms::All' has no attributes.
+The class 'Operator' has no attributes.
+The class 'terms::Partition' has no attributes.
+The class 'terms::UserSort' has no attributes.
+The class 'terms::Term' has no attributes.
+The class 'terms::PartitionElement' has no attributes.
+The class 'Sort' has no attributes.
+The class 'terms::TermsDeclaration' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'terms::HLAnnotation' has no attributes.
+The class 'terms::UserOperator' has no attributes.
+The class 'terms::Operator' has no attributes.
+The class 'terms::BuiltInOperator' has no attributes.
+The class 'terms::Variable' has no attributes.
+The class 'terms::SortDecl' has no attributes.
+The class 'terms::VariableDecl' has no attributes.
+The class 'Term' has no attributes.
+The class 'terms::BuiltInSort' has no attributes.
+The class 'terms::Sort' has no attributes.
+The class 'TermsDeclaration' has no attributes.
+The class 'terms::BuiltInConstant' has no attributes.
+The class 'terms::Declarations' has no attributes.
+The class 'terms::Declaration' has no attributes.
+The class 'terms::Tuple' has no attributes.
+'terms::VariableDecl' is a specialization of 'TermsDeclaration'.
+'terms::BuiltInSort' is a specialization of 'Sort'.
+'terms::Tuple' is a specialization of 'Operator'.
+'terms::BuiltInConstant' is a specialization of 'Operator'.
+'terms::BuiltInOperator' is a specialization of 'Operator'.
+'terms::NamedOperator' is a specialization of 'OperatorDecl'.
+'terms::ProductSort' is a specialization of 'Sort'.
+'terms::Operator' is a specialization of 'Term'.
+'terms::SortDecl' is a specialization of 'TermsDeclaration'.
+'terms::NamedSort' is a specialization of 'SortDecl'.
+'terms::UserSort' is a specialization of 'Sort'.
+'terms::UserOperator' is a specialization of 'Operator'.
+'terms::Variable' is a specialization of 'Term'.
+'terms::MultisetSort' is a specialization of 'Sort'.
+'terms::OperatorDecl' is a specialization of 'TermsDeclaration'.
+'terms::MultisetOperator' is a specialization of 'Operator'.
+'terms::VariableDecl' (role 'containerVariableDecl', cardinality 0..*) is associated with 'terms::Sort' (role 'Sort32', cardinality 0..*).
+'terms::VariableDecl' (role 'terms_VariableDecl', cardinality 0..*) is associated with 'terms::Variable' (role 'terms_Variable', cardinality 0..*).
+'terms::Sort' (role 'Sort', cardinality 0..*) is associated with 'terms::MultisetSort' (role 'multi', cardinality 0..*).
+'terms::TermsDeclaration' (role 'TermsDeclaration', cardinality 0..*) is associated with 'terms::Declarations' (role 'containerDeclarations', cardinality 0..*).
+'terms::MultisetSort' (role 'MultisetSort', cardinality 0..*) is associated with 'terms::Sort' (role 'basis', cardinality 0..*).
+'terms::ProductSort' (role 'containerProductSort', cardinality 0..*) is associated with 'terms::Sort' (role 'Sort37', cardinality 0..*).
+'terms::HLMarking' (role 'hlcorestructure.ecoreHLMarking', cardinality 0..*) is associated with 'terms::Term' (role 'structure19', cardinality 0..*).
+'terms::VariableDecl' (role 'VariableDecl45', cardinality 0..*) is associated with 'terms::NamedOperator' (role 'containerNamedOperator44', cardinality 0..*).
+'terms::NamedSort' (role 'containerNamedSort', cardinality 0..*) is associated with 'terms::Sort' (role 'Sort39', cardinality 0..*).
+'terms::NamedOperator' (role 'containerNamedOperator', cardinality 0..*) is associated with 'terms::Term' (role 'Term42', cardinality 0..*).
+'terms::Term' (role 'structure23', cardinality 0..*) is associated with 'terms::HLAnnotation' (role 'hlcorestructure.ecoreHLAnnotation', cardinality 0..*).
+'terms::Term' (role 'structure21', cardinality 0..*) is associated with 'terms::Condition' (role 'hlcorestructure.ecoreCondition', cardinality 0..*).
+'terms::Sort' (role 'sortdef', cardinality 0..*) is associated with 'terms::NamedSort' (role 'NamedSort', cardinality 0..*).
+'terms::UserOperator' (role 'terms_UserOperator', cardinality 0..*) is associated with 'terms::OperatorDecl' (role 'terms_OperatorDecl', cardinality 0..*).
+'terms::VariableDecl' (role 'parameters', cardinality 0..*) is associated with 'terms::NamedOperator' (role 'NamedOperator34', cardinality 0..*).
+'terms::Sort' (role 'refsort', cardinality 0..*) is associated with 'terms::All' (role 'multisets.ecoreAll', cardinality 0..*).
+'terms::Sort' (role 'def_', cardinality 0..*) is associated with 'terms::Partition' (role 'partitions.ecorePartition', cardinality 0..*).
+'terms::Sort' (role 'sort', cardinality 0..*) is associated with 'terms::VariableDecl' (role 'VariableDecl', cardinality 0..*).
+'terms::Term' (role 'def_17', cardinality 0..*) is associated with 'terms::NamedOperator' (role 'NamedOperator', cardinality 0..*).
+'terms::UserSort' (role 'terms_UserSort', cardinality 0..*) is associated with 'terms::SortDecl' (role 'terms_SortDecl', cardinality 0..*).
+'terms::Term' (role 'terms_Term', cardinality 0..*) is associated with 'terms::Sort' (role 'terms_Sort', cardinality 0..*).
+'terms::Declaration' (role 'hlcorestructure.ecoreDeclaration', cardinality 0..*) is associated with 'terms::Declarations' (role 'structure', cardinality 0..*).
+'terms::Operator' (role 'terms_Operator29', cardinality 0..*) is associated with 'terms::Sort' (role 'terms_Sort30', cardinality 0..*).
+'terms::ProductSort' (role 'ProductSort', cardinality 0..*) is associated with 'terms::Sort' (role 'elementSort', cardinality 0..*).
+'terms::Sort' (role 'structure8', cardinality 0..*) is associated with 'terms::Type' (role 'hlcorestructure.ecoreType', cardinality 0..*).
+'terms::Term' (role 'subterm', cardinality 0..*) is associated with 'terms::Operator' (role 'Operator', cardinality 0..*).
+'terms::Sort' (role 'terms_Sort27', cardinality 0..*) is associated with 'terms::Operator' (role 'terms_Operator', cardinality 0..*).
+'terms::TermsDeclaration' (role 'declaration', cardinality 0..*) is associated with 'terms::Declarations' (role 'Declarations', cardinality 0..*).
+'terms::Operator' (role 'containerOperator', cardinality 0..*) is associated with 'terms::Term' (role 'Term', cardinality 0..*).
+'terms::Sort' (role 'refsort11', cardinality 0..*) is associated with 'terms::Empty' (role 'multisets.ecoreEmpty', cardinality 0..*).
+'terms::Term' (role 'partitionelementconstants', cardinality 0..*) is associated with 'terms::PartitionElement' (role 'partitions.ecorePartitionElement', cardinality 0..*).

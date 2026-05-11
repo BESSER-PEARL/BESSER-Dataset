@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'rules::core::Plus' has no attributes.
+The class 'BinaryExp' has no attributes.
+The class 'rules::core::Max' has no attributes.
+The class 'rules::core::Filter' has no attributes.
+The class 'Expression' has no attributes.
+The class 'rules::core::Equals' has no attributes.
+The class 'rules::core::Rule' has no attributes.
+The class 'rules::core::Mult' has no attributes.
+The class 'rules::core::Greater' has no attributes.
+The class 'rules::core::If' has no attributes.
+The class 'rules::core::Lower' has no attributes.
+The class 'rules::core::Constant' has the following attributes: 'integerValue' of type int.
+The class 'rules::core::Expression' has no attributes.
+The class 'rules::core::Div' has no attributes.
+The class 'rules::core::Min' has no attributes.
+The class 'rules::core::Minus' has no attributes.
+The class 'rules::core::BinaryExp' has no attributes.
+'rules::core::Mult' is a specialization of 'BinaryExp'.
+'rules::core::Plus' is a specialization of 'BinaryExp'.
+'rules::core::Constant' is a specialization of 'Expression'.
+'rules::core::BinaryExp' is a specialization of 'Expression'.
+'rules::core::Lower' is a specialization of 'BinaryExp'.
+'rules::core::Greater' is a specialization of 'BinaryExp'.
+'rules::core::Equals' is a specialization of 'BinaryExp'.
+'rules::core::Max' is a specialization of 'BinaryExp'.
+'rules::core::If' is a specialization of 'Expression'.
+'rules::core::Min' is a specialization of 'BinaryExp'.
+'rules::core::Div' is a specialization of 'BinaryExp'.
+'rules::core::Minus' is a specialization of 'BinaryExp'.
+'rules::core::BinaryExp' (role 'rules_core_BinaryExp', cardinality 0..*) is associated with 'rules::core::Expression' (role 'rules_core_Expression2', cardinality 0..*).
+'rules::core::Rule' (role 'rules_core_Rule', cardinality 0..*) is associated with 'rules::core::Expression' (role 'rules_core_Expression', cardinality 0..*).
+'rules::core::Expression' (role 'rules_core_Expression13', cardinality 0..*) is associated with 'rules::core::If' (role 'rules_core_If12', cardinality 0..*).
+'rules::core::Expression' (role 'rules_core_Expression10', cardinality 0..*) is associated with 'rules::core::If' (role 'rules_core_If9', cardinality 0..*).
+'rules::core::BinaryExp' (role 'rules_core_BinaryExp4', cardinality 0..*) is associated with 'rules::core::Expression' (role 'rules_core_Expression5', cardinality 0..*).
+'rules::core::Expression' (role 'rules_core_Expression7', cardinality 0..*) is associated with 'rules::core::If' (role 'rules_core_If', cardinality 0..*).

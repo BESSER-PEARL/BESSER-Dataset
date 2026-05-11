@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Starbeuck/ESIR2/COMP/org.xtext.example.Comp/model/generated/Comp.ecore

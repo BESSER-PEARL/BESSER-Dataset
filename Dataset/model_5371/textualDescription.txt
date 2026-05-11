@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'hExample::1::RHS::Y' has the following attributes: 'label' of type str.
+The class 'hExample::1::RHS::X' has no attributes.
+'hExample::1::RHS::X' (role 'hExample_1_RHS_X', cardinality 0..*) is associated with 'hExample::1::RHS::Y' (role 'hExample_1_RHS_Y', cardinality 0..*).

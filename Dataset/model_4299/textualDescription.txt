@@ -1,0 +1,42 @@
+The model has 20 class(es).
+The class 'metrics::MetricSource' has the following attributes: 'name' of type str; 'metricLocation' of type str.
+The class 'metrics::DataKind' has no attributes.
+The class 'metrics::MappingRecordXLS' has the following attributes: 'row' of type str; 'column' of type str.
+The class 'metrics::Mapping' has no attributes.
+The class 'DataKind' has no attributes.
+The class 'metrics::Value' has no attributes.
+The class 'metrics::MappingXLSColumn' has the following attributes: 'column' of type str.
+The class 'metrics::MappingRecord' has the following attributes: 'message' of type str.
+The class 'metrics::MappingCSV' has no attributes.
+The class 'metrics::DateTimeRange' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'metrics::Unit' has no attributes.
+The class 'metrics::ValueDataKind' has the following attributes: 'valueKind' of type str; 'kindHint' of type str.
+The class 'metrics::MappingXLS' has the following attributes: 'headerRow' of type str; 'sheetNumber' of type str; 'firstDataRow' of type str.
+The class 'metrics::MetricValueRange' has the following attributes: 'periodHint' of type str; 'kindHint' of type str.
+The class 'metrics::MappingRDBMS' has no attributes.
+The class 'metrics::IdentifierDataKind' has the following attributes: 'objectKind' of type str; 'objectProperty' of type str.
+The class 'MappingRecord' has no attributes.
+The class 'metrics::MappingStatistic' has the following attributes: 'message' of type str; 'totalRecords' of type str.
+The class 'metrics::Metric' has the following attributes: 'measurementKind' of type str; 'metricCalculation' of type str; 'measurementPoint' of type str; 'description' of type str; 'name' of type str.
+The enumeration 'ObjectKindType' has the following literals: 'EQUIPMENT', 'FUNCTION', 'NODE', 'RELATIONSHIP'.
+The enumeration 'KindHintType' has the following literals: 'AVG', 'BH'.
+The enumeration 'ValueKindType' has the following literals: 'METRIC', 'DATETIME', 'PERIOD', 'NULL'.
+'metrics::MappingRDBMS' is a specialization of 'Mapping'.
+'metrics::ValueDataKind' is a specialization of 'DataKind'.
+'metrics::IdentifierDataKind' is a specialization of 'DataKind'.
+'metrics::MappingRecordXLS' is a specialization of 'MappingRecord'.
+'metrics::MappingCSV' is a specialization of 'Mapping'.
+'metrics::MappingXLS' is a specialization of 'Mapping'.
+'metrics::Metric' (role 'Metric', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metricSourceRef', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic15', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metrics_MetricSource14', cardinality 0..*).
+'metrics::Metric' (role 'metricRefs', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'MetricSource', cardinality 0..*).
+'metrics::DateTimeRange' (role 'metrics_DateTimeRange', cardinality 0..*) is associated with 'metrics::MappingStatistic' (role 'metrics_MappingStatistic2', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource', cardinality 0..*) is associated with 'metrics::Mapping' (role 'metrics_Mapping', cardinality 0..*).
+'metrics::MappingXLS' (role 'metrics_MappingXLS', cardinality 0..*) is associated with 'metrics::MappingXLSColumn' (role 'metrics_MappingXLSColumn', cardinality 0..*).
+'metrics::ValueDataKind' (role 'metrics_ValueDataKind', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric18', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric6', cardinality 0..*).
+'metrics::MappingRecord' (role 'metrics_MappingRecord', cardinality 0..*) is associated with 'metrics::MappingStatistic' (role 'metrics_MappingStatistic', cardinality 0..*).
+'metrics::Value' (role 'metrics_Value', cardinality 0..*) is associated with 'metrics::MetricValueRange' (role 'metrics_MetricValueRange', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric10', cardinality 0..*) is associated with 'metrics::Unit' (role 'metrics_Unit', cardinality 0..*).
+'metrics::DataKind' (role 'metrics_DataKind', cardinality 0..*) is associated with 'metrics::MappingXLSColumn' (role 'metrics_MappingXLSColumn5', cardinality 0..*).

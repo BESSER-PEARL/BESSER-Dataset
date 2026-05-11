@@ -1,0 +1,133 @@
+The model has 49 class(es).
+The class 'Contact' has no attributes.
+The class 'model::ItemAccountType' has the following attributes: 'value' of type str.
+The class 'model::ShippingCategory' has no attributes.
+The class 'model::UserProperty' has the following attributes: 'default' of type str; 'value' of type str; 'user' of type str; 'global_' of type str.
+The class 'model::Payment' has the following attributes: 'discountValue' of type str; 'unpaidText' of type str; 'netDays' of type str; 'paidText' of type str; 'code' of type str; 'depositText' of type str; 'description' of type str; 'discountDays' of type str.
+The class 'model::AbstractCategory' has no attributes.
+The class 'Document' has no attributes.
+The class 'model::VoucherItem' has the following attributes: 'price' of type str; 'posNr' of type str; 'itemVoucherType' of type str.
+The class 'model::IDescribableEntity' has the following attributes: 'description' of type str.
+The class 'model::Confirmation' has no attributes.
+The class 'model::Tenant' has no attributes.
+The class 'model::TextModule' has the following attributes: 'text' of type str.
+The class 'model::Credit' has no attributes.
+The class 'model::Proforma' has no attributes.
+The class 'IDescribableEntity' has no attributes.
+The class 'model::VAT' has the following attributes: 'salesEqualizationTax' of type str; 'description' of type str; 'taxValue' of type str.
+The class 'model::Creditor' has no attributes.
+The class 'model::Delivery' has no attributes.
+The class 'model::Role' has no attributes.
+The class 'model::IndividualDocumentInfo' has the following attributes: 'noVatName' of type str; 'shippingAutoVat' of type str; 'paymentDescription' of type str; 'shippingValue' of type str; 'paymentText' of type str; 'shippingDescription' of type str; 'shippingVatDescription' of type str; 'paymentName' of type str; 'shippingName' of type str; 'noVatDescription' of type str; 'shippingVatValue' of type str.
+The class 'model::ProductBlockPrice' has the following attributes: 'price' of type str; 'block' of type str.
+The class 'model::WebshopStateMapping' has the following attributes: 'fakturamaOrderState' of type str; 'webshopState' of type str.
+The class 'model::Address' has the following attributes: 'cityAddon' of type str; 'zip' of type str; 'manualAddress' of type str; 'street' of type str; 'city' of type str; 'countryCode' of type str.
+The class 'model::Offer' has no attributes.
+The class 'AbstractCategory' has no attributes.
+The class 'model::Document' has the following attributes: 'deposit' of type str; 'documentDate' of type date; 'printed' of type str; 'itemsRebate' of type str; 'paid' of type str; 'addressFirstLine' of type str; 'transactionId' of type str; 'consultant' of type str; 'payDate' of type date; 'serviceDate' of type date; 'vestingPeriodStart' of type date; 'message3' of type str; 'message' of type str; 'webshopId' of type str; 'orderDate' of type date; 'billingType' of type str; 'webshopDate' of type date; 'totalValue' of type str; 'paidValue' of type str; 'vestingPeriodEnd' of type date; 'odtPath' of type str; 'shippingValue' of type str; 'progress' of type str; 'customerRef' of type str; 'pdfPath' of type str; 'dueDays' of type str; 'printTemplate' of type str; 'message2' of type str; 'netGross' of type str; 'shippingAutoVat' of type str.
+The class 'model::TextCategory' has no attributes.
+The class 'model::Shipping' has the following attributes: 'code' of type str; 'autoVat' of type str; 'shippingValue' of type str.
+The class 'model::ProductOptions' has the following attributes: 'sequenceNumber' of type str; 'attributeValue' of type str.
+The class 'model::Letter' has no attributes.
+The class 'model::IEntity' has the following attributes: 'name' of type str; 'deleted' of type str; 'modifiedBy' of type str; 'validFrom' of type date; 'id' of type str; 'validTo' of type date; 'dateAdded' of type date; 'modified' of type date.
+The class 'model::Product' has the following attributes: 'weight' of type str; 'price1' of type str; 'block1' of type str; 'block2' of type str; 'price4' of type str; 'cdf03' of type str; 'price5' of type str; 'sellingUnit' of type str; 'picture' of type str; 'block3' of type str; 'quantity' of type str; 'price2' of type str; 'webshopId' of type str; 'costPrice' of type str; 'price3' of type str; 'itemNumber' of type str; 'cdf01' of type str; 'block4' of type str; 'quantityUnit' of type str; 'gtin' of type str; 'block5' of type str; 'cdf02' of type str.
+The class 'model::Debitor' has no attributes.
+The class 'model::Contact' has the following attributes: 'discount' of type str; 'webshopName' of type str; 'website' of type str; 'note' of type str; 'useNetGross' of type str; 'gln' of type str; 'title' of type str; 'fax' of type str; 'gender' of type str; 'company' of type str; 'mandateReference' of type str; 'vatNumber' of type str; 'mobile' of type str; 'birthday' of type date; 'customerNumber' of type str; 'supplierNumber' of type str; 'email' of type str; 'vatNumberValid' of type str; 'useSalesEqualizationTax' of type str; 'firstName' of type str; 'reliability' of type str; 'phone' of type str; 'contactType' of type str.
+The class 'model::Order' has no attributes.
+The class 'model::Invoice' has no attributes.
+The class 'model::WebShop' has the following attributes: 'webshopVendor' of type str; 'webshopVersion' of type str.
+The class 'model::VoucherCategory' has no attributes.
+The class 'model::BankAccount' has the following attributes: 'bankCode' of type str; 'bankName' of type str; 'iban' of type str; 'accountHolder' of type str; 'bic' of type str.
+The class 'IEntity' has no attributes.
+The class 'model::ProductCategory' has no attributes.
+The class 'model::Dunning' has the following attributes: 'dunningLevel' of type str.
+The class 'model::ItemListTypeCategory' has no attributes.
+The class 'model::VATCategory' has no attributes.
+The class 'model::DocumentItem' has the following attributes: 'itemType' of type str; 'price' of type str; 'itemNumber' of type str; 'optional' of type str; 'quantityUnit' of type str; 'weight' of type str; 'tara' of type str; 'gtin' of type str; 'description' of type str; 'originQuantity' of type str; 'vestingPeriodStart' of type date; 'noVat' of type str; 'quantity' of type str; 'vestingPeriodEnd' of type date; 'posNr' of type str; 'itemRebate' of type str; 'picture' of type str.
+The class 'model::User' has the following attributes: 'userName' of type str; 'password' of type str.
+The class 'model::ContactCategory' has no attributes.
+The class 'model::CEFACTCode' has the following attributes: 'abbreviation_de' of type str; 'name_de' of type str; 'abbreviation_en' of type str; 'target' of type str; 'code' of type str.
+The class 'model::Voucher' has the following attributes: 'paidValue' of type str; 'voucherNumber' of type str; 'documentNumber' of type str; 'discounted' of type str; 'doNotBook' of type str; 'voucherType' of type str; 'totalValue' of type str; 'voucherDate' of type date.
+The enumeration 'ReliabilityType' has the following literals: 'GOOD', 'NONE', 'MEDIUM', 'POOR'.
+The enumeration 'BillingType' has the following literals: 'OFFER', 'PROFORMA', 'NONE', 'ORDER', 'DUNNING', 'LETTER', 'DELIVERY', 'CREDIT', 'INVOICE', 'CONFIRMATION'.
+The enumeration 'VoucherType' has the following literals: 'EXPENDITURE', 'RECEIPTVOUCHER'.
+The enumeration 'ShippingVatType' has the following literals: 'SHIPPINGVATFIX', 'SHIPPINGVATNET', 'SHIPPINGVATGROSS'.
+The enumeration 'ContactType' has the following literals: 'DELIVERY', 'BILLING'.
+The enumeration 'ItemType' has the following literals: 'DELIVERY_PART', 'SUBTOTAL', 'FREETEXT', 'POSITION'.
+'model::Confirmation' is a specialization of 'Document'.
+'model::VoucherItem' is a specialization of 'IEntity'.
+'model::Document' is a specialization of 'IEntity'.
+'model::TextCategory' is a specialization of 'AbstractCategory'.
+'model::Debitor' is a specialization of 'Contact'.
+'model::BankAccount' is a specialization of 'IEntity'.
+'model::ProductBlockPrice' is a specialization of 'IEntity'.
+'model::IndividualDocumentInfo' is a specialization of 'IEntity'.
+'model::DocumentItem' is a specialization of 'IEntity'.
+'model::Proforma' is a specialization of 'Document'.
+'model::ItemListTypeCategory' is a specialization of 'AbstractCategory'.
+'model::Letter' is a specialization of 'Document'.
+'model::ShippingCategory' is a specialization of 'AbstractCategory'.
+'model::WebshopStateMapping' is a specialization of 'IEntity'.
+'model::Dunning' is a specialization of 'Document'.
+'model::TextModule' is a specialization of 'IEntity'.
+'model::User' is a specialization of 'IEntity'.
+'model::Creditor' is a specialization of 'Contact'.
+'model::Voucher' is a specialization of 'IEntity'.
+'model::VATCategory' is a specialization of 'AbstractCategory'.
+'model::WebShop' is a specialization of 'IEntity'.
+'model::Delivery' is a specialization of 'Document'.
+'model::Shipping' is a specialization of 'IDescribableEntity'.
+'model::AbstractCategory' is a specialization of 'IEntity'.
+'model::Address' is a specialization of 'IEntity'.
+'model::IDescribableEntity' is a specialization of 'IEntity'.
+'model::Payment' is a specialization of 'IEntity'.
+'model::Offer' is a specialization of 'Document'.
+'model::UserProperty' is a specialization of 'IEntity'.
+'model::Tenant' is a specialization of 'IEntity'.
+'model::VoucherCategory' is a specialization of 'AbstractCategory'.
+'model::Product' is a specialization of 'IDescribableEntity'.
+'model::ContactCategory' is a specialization of 'AbstractCategory'.
+'model::ProductCategory' is a specialization of 'AbstractCategory'.
+'model::Role' is a specialization of 'IEntity'.
+'model::ProductOptions' is a specialization of 'IEntity'.
+'model::ItemAccountType' is a specialization of 'IEntity'.
+'model::Invoice' is a specialization of 'Document'.
+'model::Order' is a specialization of 'Document'.
+'model::Contact' is a specialization of 'IEntity'.
+'model::CEFACTCode' is a specialization of 'IEntity'.
+'model::VAT' is a specialization of 'IEntity'.
+'model::Credit' is a specialization of 'Document'.
+'model::WebShop' (role 'model_WebShop', cardinality 0..*) is associated with 'model::WebshopStateMapping' (role 'model_WebshopStateMapping', cardinality 0..*).
+'model::AbstractCategory' (role 'model_AbstractCategory0', cardinality 0..*) is associated with 'model::AbstractCategory' (role 'model_AbstractCategory', cardinality 0..*).
+'model::Product' (role 'model_Product52', cardinality 0..*) is associated with 'model::ProductCategory' (role 'model_ProductCategory', cardinality 0..*).
+'model::Product' (role 'model_Product56', cardinality 0..*) is associated with 'model::VAT' (role 'model_VAT57', cardinality 0..*).
+'model::Contact' (role 'model_Contact3', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact5', cardinality 0..*).
+'model::Tenant' (role 'model_Tenant', cardinality 0..*) is associated with 'model::User' (role 'model_User', cardinality 0..*).
+'model::VoucherItem' (role 'model_VoucherItem', cardinality 0..*) is associated with 'model::Voucher' (role 'model_Voucher40', cardinality 0..*).
+'model::Contact' (role 'model_Contact18', cardinality 0..*) is associated with 'model::Document' (role 'model_Document17', cardinality 0..*).
+'model::Invoice' (role 'model_Invoice', cardinality 0..*) is associated with 'model::Document' (role 'model_Document20', cardinality 0..*).
+'model::VoucherCategory' (role 'model_VoucherCategory', cardinality 0..*) is associated with 'model::Voucher' (role 'model_Voucher', cardinality 0..*).
+'model::TextCategory' (role 'model_TextCategory', cardinality 0..*) is associated with 'model::TextModule' (role 'model_TextModule', cardinality 0..*).
+'model::VoucherItem' (role 'model_VoucherItem44', cardinality 0..*) is associated with 'model::VAT' (role 'model_VAT45', cardinality 0..*).
+'model::VAT' (role 'model_VAT', cardinality 0..*) is associated with 'model::Document' (role 'model_Document24', cardinality 0..*).
+'model::VATCategory' (role 'model_VATCategory', cardinality 0..*) is associated with 'model::VAT' (role 'model_VAT70', cardinality 0..*).
+'model::ShippingCategory' (role 'model_ShippingCategory', cardinality 0..*) is associated with 'model::Shipping' (role 'model_Shipping64', cardinality 0..*).
+'model::Shipping' (role 'model_Shipping', cardinality 0..*) is associated with 'model::Document' (role 'model_Document29', cardinality 0..*).
+'model::Role' (role 'model_Role', cardinality 0..*) is associated with 'model::User' (role 'model_User68', cardinality 0..*).
+'model::DocumentItem' (role 'model_DocumentItem34', cardinality 0..*) is associated with 'model::Product' (role 'model_Product', cardinality 0..*).
+'model::VoucherItem' (role 'model_VoucherItem42', cardinality 0..*) is associated with 'model::ItemAccountType' (role 'model_ItemAccountType', cardinality 0..*).
+'model::Payment' (role 'model_Payment', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact9', cardinality 0..*).
+'model::IndividualDocumentInfo' (role 'model_IndividualDocumentInfo', cardinality 0..*) is associated with 'model::Document' (role 'model_Document', cardinality 0..*).
+'model::ItemListTypeCategory' (role 'model_ItemListTypeCategory', cardinality 0..*) is associated with 'model::ItemAccountType' (role 'model_ItemAccountType47', cardinality 0..*).
+'model::Address' (role 'model_Address', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact', cardinality 0..*).
+'model::VAT' (role 'model_VAT62', cardinality 0..*) is associated with 'model::Shipping' (role 'model_Shipping61', cardinality 0..*).
+'model::Document' (role 'model_Document26', cardinality 0..*) is associated with 'model::Payment' (role 'model_Payment27', cardinality 0..*).
+'model::BankAccount' (role 'model_BankAccount', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact11', cardinality 0..*).
+'model::Payment' (role 'model_Payment49', cardinality 0..*) is associated with 'model::VoucherCategory' (role 'model_VoucherCategory50', cardinality 0..*).
+'model::Document' (role 'model_Document22', cardinality 0..*) is associated with 'model::DocumentItem' (role 'model_DocumentItem', cardinality 0..*).
+'model::Document' (role 'model_Document14', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact15', cardinality 0..*).
+'model::ContactCategory' (role 'model_ContactCategory', cardinality 0..*) is associated with 'model::Contact' (role 'model_Contact7', cardinality 0..*).
+'model::VAT' (role 'model_VAT37', cardinality 0..*) is associated with 'model::DocumentItem' (role 'model_DocumentItem36', cardinality 0..*).
+'model::Document' (role 'model_Document30', cardinality 0..*) is associated with 'model::Document' (role 'model_Document32', cardinality 0..*).
+'model::ProductBlockPrice' (role 'model_ProductBlockPrice', cardinality 0..*) is associated with 'model::Product' (role 'model_Product59', cardinality 0..*).
+'model::Product' (role 'model_Product54', cardinality 0..*) is associated with 'model::ProductOptions' (role 'model_ProductOptions', cardinality 0..*).

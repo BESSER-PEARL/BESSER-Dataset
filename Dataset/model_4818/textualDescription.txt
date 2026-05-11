@@ -1,0 +1,411 @@
+The model has 182 class(es).
+The class 'model::ApplicationEvent' has no attributes.
+The class 'model::InfluenceRelationship' has the following attributes: 'strength' of type str.
+The class 'Connectable' has no attributes.
+The class 'model::ApplicationCollaboration' has no attributes.
+The class 'model::Contract' has no attributes.
+The class 'TextPosition' has no attributes.
+The class 'model::TechnologyInteraction' has no attributes.
+The class 'model::ActiveStructureElement' has no attributes.
+The class 'OtherRelationship' has no attributes.
+The class 'model::Junction' has the following attributes: 'type' of type str.
+The class 'model::FolderContainer' has no attributes.
+The class 'TextAlignment' has no attributes.
+The class 'model::PassiveStructureElement' has no attributes.
+The class 'model::ApplicationProcess' has no attributes.
+The class 'PassiveStructureElement' has no attributes.
+The class 'BorderType' has no attributes.
+The class 'model::Documentable' has the following attributes: 'documentation' of type str.
+The class 'model::BorderType' has the following attributes: 'borderType' of type int.
+The class 'model::Artifact' has no attributes.
+The class 'ActiveStructureElement' has no attributes.
+The class 'model::LineObject' has the following attributes: 'lineColor' of type str; 'lineWidth' of type int.
+The class 'model::TechnologyEvent' has no attributes.
+The class 'model::TechnologyElement' has no attributes.
+The class 'DynamicRelationship' has no attributes.
+The class 'model::Nameable' has the following attributes: 'name' of type str.
+The class 'MotivationElement' has no attributes.
+The class 'model::DiagramModelArchimateConnection' has no attributes.
+The class 'Features' has no attributes.
+The class 'model::ArchimateConcept' has no attributes.
+The class 'model::ApplicationFunction' has no attributes.
+The class 'LineObject' has no attributes.
+The class 'ApplicationElement' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'DiagramModelImageProvider' has no attributes.
+The class 'model::Cloneable' has no attributes.
+The class 'model::Value' has no attributes.
+The class 'DependendencyRelationship' has no attributes.
+The class 'model::DiagramModelBendpoint' has the following attributes: 'endY' of type int; 'endX' of type int; 'startY' of type int; 'startX' of type int.
+The class 'model::ArchimateModel' has the following attributes: 'version' of type str; 'file' of type str; 'purpose' of type str.
+The class 'model::DistributionNetwork' has no attributes.
+The class 'DiagramModelComponent' has no attributes.
+The class 'model::DiagramModelGroup' has no attributes.
+The class 'DiagramModel' has no attributes.
+The class 'model::ServingRelationship' has no attributes.
+The class 'TextContent' has no attributes.
+The class 'StructuralRelationship' has no attributes.
+The class 'model::Principle' has no attributes.
+The class 'model::TextContent' has the following attributes: 'content' of type str.
+The class 'model::FontAttribute' has the following attributes: 'fontColor' of type str; 'font' of type str.
+The class 'model::CompositionRelationship' has no attributes.
+The class 'model::BusinessInteraction' has no attributes.
+The class 'model::Location' has no attributes.
+The class 'model::DiagramModelNote' has no attributes.
+The class 'StrategyBehaviorElement' has no attributes.
+The class 'model::Plateau' has no attributes.
+The class 'model::Device' has no attributes.
+The class 'model::DynamicRelationship' has no attributes.
+The class 'model::BusinessCollaboration' has no attributes.
+The class 'ImplementationMigrationElement' has no attributes.
+The class 'model::Deliverable' has no attributes.
+The class 'model::BusinessInterface' has no attributes.
+The class 'model::BusinessFunction' has no attributes.
+The class 'model::Folder' has the following attributes: 'type' of type str.
+The class 'model::ApplicationService' has no attributes.
+The class 'model::Resource' has no attributes.
+The class 'Cloneable' has no attributes.
+The class 'StrategyElement' has no attributes.
+The class 'ArchimateElement' has no attributes.
+The class 'TechnologyObject' has no attributes.
+The class 'model::Goal' has no attributes.
+The class 'model::BusinessActor' has no attributes.
+The class 'model::DiagramModelImage' has no attributes.
+The class 'model::Feature' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'model::ApplicationInterface' has no attributes.
+The class 'model::DiagramModelContainer' has no attributes.
+The class 'BehaviorElement' has no attributes.
+The class 'ArchimateRelationship' has no attributes.
+The class 'model::TechnologyInterface' has no attributes.
+The class 'model::StrategyElement' has no attributes.
+The class 'model::TextPosition' has the following attributes: 'textPosition' of type int.
+The class 'StructureElement' has no attributes.
+The class 'model::AggregationRelationship' has no attributes.
+The class 'model::DiagramModel' has the following attributes: 'connectionRouterType' of type int.
+The class 'DiagramModelArchimateComponent' has no attributes.
+The class 'model::Connectable' has no attributes.
+The class 'model::Grouping' has no attributes.
+The class 'ArchimateModelObject' has no attributes.
+The class 'model::ArchimateDiagramModel' has the following attributes: 'viewpoint' of type str.
+The class 'model::Identifier' has the following attributes: 'id' of type str.
+The class 'Adapter' has no attributes.
+The class 'model::ImplementationMigrationElement' has no attributes.
+The class 'model::BusinessProcess' has no attributes.
+The class 'model::Metadata' has no attributes.
+The class 'model::Representation' has no attributes.
+The class 'model::TechnologyCollaboration' has no attributes.
+The class 'model::ApplicationElement' has no attributes.
+The class 'PhysicalElement' has no attributes.
+The class 'Properties' has no attributes.
+The class 'model::TechnologyService' has no attributes.
+The class 'model::DiagramModelReference' has no attributes.
+The class 'Documentable' has no attributes.
+The class 'model::DiagramModelObject' has the following attributes: 'fillColor' of type str; 'alpha' of type int.
+The class 'TechnologyElement' has no attributes.
+The class 'model::WorkPackage' has no attributes.
+The class 'model::SketchModel' has the following attributes: 'background' of type int.
+The class 'model::DiagramModelArchimateObject' has the following attributes: 'type' of type int.
+The class 'model::Gap' has no attributes.
+The class 'model::BusinessEvent' has no attributes.
+The class 'model::Capability' has no attributes.
+The class 'model::BusinessElement' has no attributes.
+The class 'model::Adapter' has no attributes.
+The class 'model::Meaning' has no attributes.
+The class 'model::TriggeringRelationship' has no attributes.
+The class 'model::AccessRelationship' has the following attributes: 'accessType' of type int.
+The class 'model::CourseOfAction' has no attributes.
+The class 'model::FlowRelationship' has no attributes.
+The class 'model::Equipment' has no attributes.
+The class 'model::ImplementationEvent' has no attributes.
+The class 'model::StructureElement' has no attributes.
+The class 'model::DiagramModelConnection' has the following attributes: 'text' of type str; 'type' of type int; 'textPosition' of type int.
+The class 'model::Outcome' has no attributes.
+The class 'model::ValueStream' has no attributes.
+The class 'DiagramModelObject' has no attributes.
+The class 'model::DataObject' has no attributes.
+The class 'model::BorderObject' has the following attributes: 'borderColor' of type str.
+The class 'model::DiagramModelComponent' has no attributes.
+The class 'model::Node' has no attributes.
+The class 'FontAttribute' has no attributes.
+The class 'model::BehaviorElement' has no attributes.
+The class 'model::AssociationRelationship' has the following attributes: 'directed' of type bool.
+The class 'model::ApplicationInteraction' has no attributes.
+The class 'model::BusinessService' has no attributes.
+The class 'Identifier' has no attributes.
+The class 'DiagramModelConnection' has no attributes.
+The class 'model::PhysicalElement' has no attributes.
+The class 'model::Properties' has no attributes.
+The class 'ArchimateConcept' has no attributes.
+The class 'model::RealizationRelationship' has no attributes.
+The class 'model::Property' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'model::OtherRelationship' has no attributes.
+The class 'model::Bounds' has the following attributes: 'width' of type int; 'x' of type int; 'height' of type int; 'y' of type int.
+The class 'model::DependendencyRelationship' has no attributes.
+The class 'model::SpecializationRelationship' has no attributes.
+The class 'model::Assessment' has no attributes.
+The class 'model::ArchimateModelObject' has no attributes.
+The class 'model::AssignmentRelationship' has no attributes.
+The class 'FolderContainer' has no attributes.
+The class 'model::SystemSoftware' has no attributes.
+The class 'BorderObject' has no attributes.
+The class 'model::EObject' has no attributes.
+The class 'model::CommunicationNetwork' has no attributes.
+The class 'model::Product' has no attributes.
+The class 'model::ArchimateRelationship' has no attributes.
+The class 'model::SketchModelSticky' has no attributes.
+The class 'BusinessObject' has no attributes.
+The class 'model::SketchModelActor' has no attributes.
+The class 'model::Requirement' has no attributes.
+The class 'model::BusinessObject' has no attributes.
+The class 'model::DiagramModelArchimateComponent' has no attributes.
+The class 'model::StructuralRelationship' has no attributes.
+The class 'model::Facility' has no attributes.
+The class 'model::DiagramModelImageProvider' has the following attributes: 'imagePath' of type str.
+The class 'model::TechnologyFunction' has no attributes.
+The class 'model::CompositeElement' has no attributes.
+The class 'model::Lockable' has the following attributes: 'locked' of type bool.
+The class 'model::TechnologyProcess' has no attributes.
+The class 'model::Stakeholder' has no attributes.
+The class 'model::Constraint' has no attributes.
+The class 'model::MotivationElement' has no attributes.
+The class 'model::BusinessRole' has no attributes.
+The class 'model::TechnologyObject' has no attributes.
+The class 'CompositeElement' has no attributes.
+The class 'model::TextAlignment' has the following attributes: 'textAlignment' of type int.
+The class 'model::StrategyBehaviorElement' has no attributes.
+The class 'model::ApplicationComponent' has no attributes.
+The class 'model::Path' has no attributes.
+The class 'model::ArchimateElement' has no attributes.
+The class 'BusinessElement' has no attributes.
+The class 'model::Driver' has no attributes.
+The class 'DiagramModelContainer' has no attributes.
+The class 'model::Material' has no attributes.
+The class 'model::Features' has no attributes.
+The enumeration 'FolderType' has the following literals: 'user', 'implementation_migration', 'strategy', 'business', 'relations', 'application', 'other', 'diagrams', 'technology', 'motivation'.
+'model::DiagramModelGroup' is a specialization of 'TextPosition'.
+'model::Folder' is a specialization of 'Documentable'.
+'model::ApplicationInterface' is a specialization of 'ApplicationElement'.
+'model::DependendencyRelationship' is a specialization of 'ArchimateRelationship'.
+'model::ApplicationComponent' is a specialization of 'ApplicationElement'.
+'model::Equipment' is a specialization of 'ActiveStructureElement'.
+'model::Facility' is a specialization of 'PhysicalElement'.
+'model::ArchimateModel' is a specialization of 'FolderContainer'.
+'model::ApplicationService' is a specialization of 'ApplicationElement'.
+'model::BusinessInterface' is a specialization of 'ActiveStructureElement'.
+'model::BusinessFunction' is a specialization of 'BehaviorElement'.
+'model::Junction' is a specialization of 'ArchimateElement'.
+'model::Resource' is a specialization of 'StructureElement'.
+'model::InfluenceRelationship' is a specialization of 'DependendencyRelationship'.
+'model::BusinessProcess' is a specialization of 'BusinessElement'.
+'model::Plateau' is a specialization of 'ImplementationMigrationElement'.
+'model::BusinessEvent' is a specialization of 'BehaviorElement'.
+'model::SketchModelActor' is a specialization of 'Documentable'.
+'model::TechnologyInteraction' is a specialization of 'BehaviorElement'.
+'model::DiagramModelConnection' is a specialization of 'Connectable'.
+'model::ApplicationProcess' is a specialization of 'ApplicationElement'.
+'model::DiagramModel' is a specialization of 'Documentable'.
+'model::DiagramModelComponent' is a specialization of 'ArchimateModelObject'.
+'model::Resource' is a specialization of 'StrategyElement'.
+'model::DiagramModelArchimateObject' is a specialization of 'DiagramModelArchimateComponent'.
+'model::DiagramModelArchimateObject' is a specialization of 'TextPosition'.
+'model::Folder' is a specialization of 'ArchimateModelObject'.
+'model::DiagramModelObject' is a specialization of 'FontAttribute'.
+'model::DiagramModelArchimateConnection' is a specialization of 'DiagramModelArchimateComponent'.
+'model::SystemSoftware' is a specialization of 'TechnologyElement'.
+'model::TechnologyFunction' is a specialization of 'TechnologyElement'.
+'model::Gap' is a specialization of 'ImplementationMigrationElement'.
+'model::FlowRelationship' is a specialization of 'DynamicRelationship'.
+'model::SketchModelSticky' is a specialization of 'TextPosition'.
+'model::ApplicationInterface' is a specialization of 'ActiveStructureElement'.
+'model::ArchimateModel' is a specialization of 'Properties'.
+'model::DiagramModel' is a specialization of 'Properties'.
+'model::ArchimateConcept' is a specialization of 'Properties'.
+'model::DynamicRelationship' is a specialization of 'ArchimateRelationship'.
+'model::ArchimateModelObject' is a specialization of 'Identifier'.
+'model::TechnologyEvent' is a specialization of 'BehaviorElement'.
+'model::TechnologyFunction' is a specialization of 'BehaviorElement'.
+'model::StructureElement' is a specialization of 'ArchimateElement'.
+'model::DiagramModelArchimateComponent' is a specialization of 'Connectable'.
+'model::ApplicationInteraction' is a specialization of 'ApplicationElement'.
+'model::ArchimateConcept' is a specialization of 'Cloneable'.
+'model::ApplicationComponent' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelComponent' is a specialization of 'Nameable'.
+'model::BusinessActor' is a specialization of 'BusinessElement'.
+'model::DiagramModelImage' is a specialization of 'DiagramModelImageProvider'.
+'model::Node' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelGroup' is a specialization of 'DiagramModelObject'.
+'model::SketchModelActor' is a specialization of 'Properties'.
+'model::Node' is a specialization of 'TechnologyElement'.
+'model::DiagramModelArchimateObject' is a specialization of 'DiagramModelContainer'.
+'model::Goal' is a specialization of 'MotivationElement'.
+'model::DiagramModelComponent' is a specialization of 'Cloneable'.
+'model::DiagramModelObject' is a specialization of 'TextAlignment'.
+'model::Stakeholder' is a specialization of 'ActiveStructureElement'.
+'model::Material' is a specialization of 'TechnologyObject'.
+'model::BusinessInteraction' is a specialization of 'BehaviorElement'.
+'model::ArchimateModelObject' is a specialization of 'Features'.
+'model::AccessRelationship' is a specialization of 'DependendencyRelationship'.
+'model::Folder' is a specialization of 'FolderContainer'.
+'model::BusinessCollaboration' is a specialization of 'ActiveStructureElement'.
+'model::Constraint' is a specialization of 'MotivationElement'.
+'model::DiagramModelGroup' is a specialization of 'DiagramModelContainer'.
+'model::DiagramModelConnection' is a specialization of 'LineObject'.
+'model::BusinessRole' is a specialization of 'BusinessElement'.
+'model::TechnologyEvent' is a specialization of 'TechnologyElement'.
+'model::SketchModelSticky' is a specialization of 'DiagramModelObject'.
+'model::Deliverable' is a specialization of 'PassiveStructureElement'.
+'model::SketchModelSticky' is a specialization of 'TextContent'.
+'model::DiagramModelComponent' is a specialization of 'Identifier'.
+'model::BusinessFunction' is a specialization of 'BusinessElement'.
+'model::DiagramModelConnection' is a specialization of 'Documentable'.
+'model::BusinessActor' is a specialization of 'ActiveStructureElement'.
+'model::Artifact' is a specialization of 'TechnologyObject'.
+'model::BusinessCollaboration' is a specialization of 'BusinessElement'.
+'model::SketchModelSticky' is a specialization of 'DiagramModelContainer'.
+'model::BehaviorElement' is a specialization of 'ArchimateElement'.
+'model::DiagramModelConnection' is a specialization of 'FontAttribute'.
+'model::TechnologyProcess' is a specialization of 'TechnologyElement'.
+'model::TechnologyService' is a specialization of 'BehaviorElement'.
+'model::CourseOfAction' is a specialization of 'BehaviorElement'.
+'model::CompositionRelationship' is a specialization of 'StructuralRelationship'.
+'model::Gap' is a specialization of 'PassiveStructureElement'.
+'model::ApplicationCollaboration' is a specialization of 'ActiveStructureElement'.
+'model::Stakeholder' is a specialization of 'MotivationElement'.
+'model::SpecializationRelationship' is a specialization of 'OtherRelationship'.
+'model::MotivationElement' is a specialization of 'ArchimateElement'.
+'model::Path' is a specialization of 'ActiveStructureElement'.
+'model::AggregationRelationship' is a specialization of 'StructuralRelationship'.
+'model::DiagramModel' is a specialization of 'ArchimateModelObject'.
+'model::ArchimateConcept' is a specialization of 'Documentable'.
+'model::Equipment' is a specialization of 'PhysicalElement'.
+'model::BusinessElement' is a specialization of 'ArchimateElement'.
+'model::DiagramModelArchimateObject' is a specialization of 'DiagramModelObject'.
+'model::Folder' is a specialization of 'Properties'.
+'model::DiagramModelNote' is a specialization of 'TextPosition'.
+'model::ApplicationFunction' is a specialization of 'BehaviorElement'.
+'model::DiagramModelReference' is a specialization of 'TextPosition'.
+'model::DistributionNetwork' is a specialization of 'PhysicalElement'.
+'model::ArchimateModel' is a specialization of 'ArchimateModelObject'.
+'model::Principle' is a specialization of 'MotivationElement'.
+'model::BusinessObject' is a specialization of 'PassiveStructureElement'.
+'model::Value' is a specialization of 'MotivationElement'.
+'model::DiagramModelObject' is a specialization of 'LineObject'.
+'model::Contract' is a specialization of 'BusinessObject'.
+'model::Product' is a specialization of 'BusinessElement'.
+'model::TechnologyInteraction' is a specialization of 'TechnologyElement'.
+'model::RealizationRelationship' is a specialization of 'StructuralRelationship'.
+'model::Location' is a specialization of 'CompositeElement'.
+'model::DiagramModelArchimateConnection' is a specialization of 'DiagramModelConnection'.
+'model::ValueStream' is a specialization of 'StrategyBehaviorElement'.
+'model::DiagramModelImage' is a specialization of 'DiagramModelObject'.
+'model::ApplicationInteraction' is a specialization of 'BehaviorElement'.
+'model::ArchimateConcept' is a specialization of 'ArchimateModelObject'.
+'model::Facility' is a specialization of 'ActiveStructureElement'.
+'model::ArchimateDiagramModel' is a specialization of 'DiagramModel'.
+'model::AssociationRelationship' is a specialization of 'DependendencyRelationship'.
+'model::DiagramModelImage' is a specialization of 'Properties'.
+'model::PassiveStructureElement' is a specialization of 'StructureElement'.
+'model::TriggeringRelationship' is a specialization of 'DynamicRelationship'.
+'model::Product' is a specialization of 'CompositeElement'.
+'model::Deliverable' is a specialization of 'ImplementationMigrationElement'.
+'model::WorkPackage' is a specialization of 'BehaviorElement'.
+'model::StrategyElement' is a specialization of 'ArchimateElement'.
+'model::DiagramModelGroup' is a specialization of 'Documentable'.
+'model::ApplicationElement' is a specialization of 'ArchimateElement'.
+'model::Grouping' is a specialization of 'CompositeElement'.
+'model::SketchModelSticky' is a specialization of 'Properties'.
+'model::StrategyBehaviorElement' is a specialization of 'BehaviorElement'.
+'model::CourseOfAction' is a specialization of 'StrategyElement'.
+'model::Assessment' is a specialization of 'MotivationElement'.
+'model::Meaning' is a specialization of 'MotivationElement'.
+'model::PhysicalElement' is a specialization of 'ArchimateElement'.
+'model::SystemSoftware' is a specialization of 'ActiveStructureElement'.
+'model::ApplicationService' is a specialization of 'BehaviorElement'.
+'model::Representation' is a specialization of 'BusinessElement'.
+'model::Device' is a specialization of 'ActiveStructureElement'.
+'model::TechnologyCollaboration' is a specialization of 'ActiveStructureElement'.
+'model::Connectable' is a specialization of 'DiagramModelComponent'.
+'model::DiagramModelReference' is a specialization of 'DiagramModelObject'.
+'model::BusinessInterface' is a specialization of 'BusinessElement'.
+'model::TechnologyInterface' is a specialization of 'TechnologyElement'.
+'model::Requirement' is a specialization of 'MotivationElement'.
+'model::TechnologyInterface' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelContainer' is a specialization of 'DiagramModelComponent'.
+'model::DiagramModelNote' is a specialization of 'Properties'.
+'model::DataObject' is a specialization of 'ApplicationElement'.
+'model::DiagramModelConnection' is a specialization of 'Properties'.
+'model::BusinessEvent' is a specialization of 'BusinessElement'.
+'model::ActiveStructureElement' is a specialization of 'StructureElement'.
+'model::ArchimateModelObject' is a specialization of 'Adapter'.
+'model::Representation' is a specialization of 'PassiveStructureElement'.
+'model::TechnologyElement' is a specialization of 'ArchimateElement'.
+'model::StrategyBehaviorElement' is a specialization of 'StrategyElement'.
+'model::ImplementationMigrationElement' is a specialization of 'ArchimateElement'.
+'model::CommunicationNetwork' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelNote' is a specialization of 'BorderType'.
+'model::WorkPackage' is a specialization of 'ImplementationMigrationElement'.
+'model::ApplicationFunction' is a specialization of 'ApplicationElement'.
+'model::DataObject' is a specialization of 'PassiveStructureElement'.
+'model::StructuralRelationship' is a specialization of 'ArchimateRelationship'.
+'model::BusinessService' is a specialization of 'BehaviorElement'.
+'model::ArchimateRelationship' is a specialization of 'ArchimateConcept'.
+'model::BusinessInteraction' is a specialization of 'BusinessElement'.
+'model::BusinessObject' is a specialization of 'BusinessElement'.
+'model::DiagramModelObject' is a specialization of 'Connectable'.
+'model::TechnologyService' is a specialization of 'TechnologyElement'.
+'model::Device' is a specialization of 'TechnologyElement'.
+'model::TechnologyObject' is a specialization of 'PassiveStructureElement'.
+'model::ImplementationEvent' is a specialization of 'ImplementationMigrationElement'.
+'model::DiagramModelComponent' is a specialization of 'Adapter'.
+'model::BusinessProcess' is a specialization of 'BehaviorElement'.
+'model::ApplicationCollaboration' is a specialization of 'ApplicationElement'.
+'model::Plateau' is a specialization of 'CompositeElement'.
+'model::Material' is a specialization of 'PhysicalElement'.
+'model::DiagramModelImage' is a specialization of 'Documentable'.
+'model::SketchModelActor' is a specialization of 'DiagramModelObject'.
+'model::TechnologyProcess' is a specialization of 'BehaviorElement'.
+'model::ServingRelationship' is a specialization of 'DependendencyRelationship'.
+'model::DistributionNetwork' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelGroup' is a specialization of 'Properties'.
+'model::DiagramModelBendpoint' is a specialization of 'Cloneable'.
+'model::BusinessService' is a specialization of 'BusinessElement'.
+'model::DiagramModelGroup' is a specialization of 'BorderType'.
+'model::DiagramModelNote' is a specialization of 'DiagramModelObject'.
+'model::ApplicationEvent' is a specialization of 'ApplicationElement'.
+'model::ArchimateElement' is a specialization of 'ArchimateConcept'.
+'model::Path' is a specialization of 'TechnologyElement'.
+'model::DiagramModelImage' is a specialization of 'BorderObject'.
+'model::DiagramModel' is a specialization of 'DiagramModelContainer'.
+'model::CompositeElement' is a specialization of 'ArchimateElement'.
+'model::AssignmentRelationship' is a specialization of 'StructuralRelationship'.
+'model::CommunicationNetwork' is a specialization of 'TechnologyElement'.
+'model::DiagramModelNote' is a specialization of 'TextContent'.
+'model::ApplicationEvent' is a specialization of 'BehaviorElement'.
+'model::Outcome' is a specialization of 'MotivationElement'.
+'model::ArchimateModelObject' is a specialization of 'Nameable'.
+'model::TechnologyCollaboration' is a specialization of 'TechnologyElement'.
+'model::TechnologyObject' is a specialization of 'TechnologyElement'.
+'model::Capability' is a specialization of 'StrategyBehaviorElement'.
+'model::SketchModel' is a specialization of 'DiagramModel'.
+'model::OtherRelationship' is a specialization of 'ArchimateRelationship'.
+'model::Driver' is a specialization of 'MotivationElement'.
+'model::ApplicationProcess' is a specialization of 'BehaviorElement'.
+'model::BusinessRole' is a specialization of 'ActiveStructureElement'.
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection16', cardinality 0..*) is associated with 'model::Connectable' (role 'model_Connectable15', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection22', cardinality 0..*) is associated with 'model::Connectable' (role 'model_Connectable23', cardinality 0..*).
+'model::ArchimateRelationship' (role 'model_ArchimateRelationship31', cardinality 0..*) is associated with 'model::DiagramModelArchimateConnection' (role 'model_DiagramModelArchimateConnection', cardinality 0..*).
+'model::EObject' (role 'model_EObject', cardinality 0..*) is associated with 'model::Folder' (role 'model_Folder6', cardinality 0..*).
+'model::Property' (role 'model_Property', cardinality 0..*) is associated with 'model::Properties' (role 'model_Properties', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection25', cardinality 0..*) is associated with 'model::Connectable' (role 'model_Connectable26', cardinality 0..*).
+'model::DiagramModelObject' (role 'model_DiagramModelObject', cardinality 0..*) is associated with 'model::DiagramModelContainer' (role 'model_DiagramModelContainer', cardinality 0..*).
+'model::DiagramModelConnection' (role 'model_DiagramModelConnection', cardinality 0..*) is associated with 'model::Connectable' (role 'model_Connectable', cardinality 0..*).
+'model::Metadata' (role 'model_Metadata12', cardinality 0..*) is associated with 'model::ArchimateModel' (role 'model_ArchimateModel', cardinality 0..*).
+'model::DiagramModelBendpoint' (role 'model_DiagramModelBendpoint', cardinality 0..*) is associated with 'model::DiagramModelConnection' (role 'model_DiagramModelConnection28', cardinality 0..*).
+'model::Feature' (role 'model_Feature', cardinality 0..*) is associated with 'model::Features' (role 'model_Features', cardinality 0..*).
+'model::Bounds' (role 'model_Bounds', cardinality 0..*) is associated with 'model::DiagramModelObject' (role 'model_DiagramModelObject20', cardinality 0..*).
+'model::ArchimateElement' (role 'model_ArchimateElement', cardinality 0..*) is associated with 'model::DiagramModelArchimateObject' (role 'model_DiagramModelArchimateObject', cardinality 0..*).
+'model::DiagramModelReference' (role 'model_DiagramModelReference', cardinality 0..*) is associated with 'model::DiagramModel' (role 'model_DiagramModel', cardinality 0..*).
+'model::Property' (role 'model_Property3', cardinality 0..*) is associated with 'model::Metadata' (role 'model_Metadata', cardinality 0..*).
+'model::FolderContainer' (role 'model_FolderContainer', cardinality 0..*) is associated with 'model::Folder' (role 'model_Folder', cardinality 0..*).
+'model::ArchimateRelationship' (role 'model_ArchimateRelationship', cardinality 0..*) is associated with 'model::ArchimateConcept' (role 'model_ArchimateConcept', cardinality 0..*).
+'model::ArchimateRelationship' (role 'model_ArchimateRelationship9', cardinality 0..*) is associated with 'model::ArchimateConcept' (role 'model_ArchimateConcept10', cardinality 0..*).

@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class jkind_Field  {
+
+    private String name;
+
+
+
+
+
+    private jkind_RecordType jkind_recordtype;
+
+
+    public jkind_Field(
+        String name    ) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public jkind_RecordType getJkind_recordtype() {
+        return jkind_recordtype;
+    }
+
+    public void setJkind_recordtype(jkind_RecordType jkind_recordtype) {
+        this.jkind_recordtype = jkind_recordtype;
+    }
+
+}

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ctron/eclipse_scada_book/src/docbkx/05_hmi/02_visual_interface/VisualInterface.ecore

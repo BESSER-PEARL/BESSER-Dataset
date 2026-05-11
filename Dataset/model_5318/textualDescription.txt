@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'subsub::SSC' has no attributes.
+The class 'main::M' has no attributes.
+The class 'main::subsub::SSC' has no attributes.
+'subsub::SSC' (role 'subsub_SSC', cardinality 0..*) is associated with 'main::M' (role 'main_M', cardinality 0..*).

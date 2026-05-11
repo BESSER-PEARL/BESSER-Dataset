@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'UML2::ProtocolStateMachine' has no attributes.
+The class 'UML2::StateMachine' has no attributes.
+The class 'UML2::Behavior' has no attributes.
+The class 'OpaqueExpression' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UML2::Expression' has no attributes.
+The class 'UML2::ParameterSet' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'UML2::Activity' has no attributes.
+The class 'UML2::OpaqueExpression' has no attributes.
+The class 'UML2::Parameter' has the following attributes: 'direction' of type str.
+The class 'UML2::Interaction' has no attributes.
+The enumeration 'ParameterDirectionKind' has the following literals: 'in_', 'return_', 'out', 'inout'.
+'UML2::Interaction' is a specialization of 'Behavior'.
+'UML2::Activity' is a specialization of 'Behavior'.
+'UML2::Expression' is a specialization of 'OpaqueExpression'.
+'UML2::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'UML2::StateMachine' is a specialization of 'Behavior'.
+'UML2::Behavior' (role 'UML2_Behavior', cardinality 0..*) is associated with 'UML2::OpaqueExpression' (role 'UML2_OpaqueExpression', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior2', cardinality 0..*) is associated with 'UML2::ParameterSet' (role 'UML2_ParameterSet', cardinality 0..*).

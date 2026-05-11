@@ -1,0 +1,63 @@
+The model has 24 class(es).
+The class 'uml::Classifier' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'uml::PackageableElement' has no attributes.
+The class 'uml::TypedElement' has no attributes.
+The class 'uml::NamedElement' has the following attributes: 'name' of type str; 'visibility' of type str.
+The class 'uml::Parameter' has no attributes.
+The class 'uml::Operation' has no attributes.
+The class 'uml::Feature' has no attributes.
+The class 'uml::Package' has no attributes.
+The class 'uml::Behavior' has no attributes.
+The class 'uml::Class' has the following attributes: 'isAbstract' of type str; 'isLeaf' of type str.
+The class 'Element' has no attributes.
+The class 'uml::Model' has no attributes.
+The class 'uml::Dependency' has no attributes.
+The class 'uml::Property' has no attributes.
+The class 'uml::Type' has no attributes.
+The class 'Class' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Package' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'Feature' has no attributes.
+The class 'uml::Element' has no attributes.
+The class 'Type' has no attributes.
+The enumeration 'VisibilityKind' has the following literals: 'private', 'package', 'protected', 'public'.
+'uml::Operation' is a specialization of 'NamedElement'.
+'uml::TypedElement' is a specialization of 'NamedElement'.
+'uml::Parameter' is a specialization of 'Element'.
+'uml::Package' is a specialization of 'PackageableElement'.
+'uml::Class' is a specialization of 'Classifier'.
+'uml::Classifier' is a specialization of 'NamedElement'.
+'uml::Dependency' is a specialization of 'PackageableElement'.
+'uml::PackageableElement' is a specialization of 'NamedElement'.
+'uml::Package' is a specialization of 'NamedElement'.
+'uml::Operation' is a specialization of 'Feature'.
+'uml::Parameter' is a specialization of 'TypedElement'.
+'uml::Property' is a specialization of 'NamedElement'.
+'uml::Behavior' is a specialization of 'Class'.
+'uml::Operation' is a specialization of 'Element'.
+'uml::Type' is a specialization of 'PackageableElement'.
+'uml::Classifier' is a specialization of 'Type'.
+'uml::Classifier' is a specialization of 'Element'.
+'uml::Package' is a specialization of 'Element'.
+'uml::Property' is a specialization of 'TypedElement'.
+'uml::Model' is a specialization of 'Package'.
+'uml::NamedElement' is a specialization of 'Element'.
+'uml::Feature' is a specialization of 'NamedElement'.
+'uml::Property' is a specialization of 'Feature'.
+'uml::Property' is a specialization of 'Element'.
+'uml::PackageableElement' is a specialization of 'Element'.
+'uml::Dependency' is a specialization of 'Element'.
+'uml::NamedElement' (role 'uml_NamedElement16', cardinality 0..*) is associated with 'uml::Dependency' (role 'uml_Dependency15', cardinality 0..*).
+'uml::Class' (role 'uml_Class8', cardinality 0..*) is associated with 'uml::Property' (role 'uml_Property', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier11', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class10', cardinality 0..*).
+'uml::Classifier' (role 'uml_Classifier', cardinality 0..*) is associated with 'uml::Class' (role 'uml_Class', cardinality 0..*).
+'uml::NamedElement' (role 'uml_NamedElement', cardinality 0..*) is associated with 'uml::Dependency' (role 'uml_Dependency', cardinality 0..*).
+'uml::Class' (role 'uml_Class5', cardinality 0..*) is associated with 'uml::Operation' (role 'uml_Operation6', cardinality 0..*).
+'uml::Operation' (role 'uml_Operation2', cardinality 0..*) is associated with 'uml::Behavior' (role 'uml_Behavior', cardinality 0..*).
+'uml::Type' (role 'uml_Type', cardinality 0..*) is associated with 'uml::TypedElement' (role 'uml_TypedElement', cardinality 0..*).
+'uml::Operation' (role 'uml_Operation', cardinality 0..*) is associated with 'uml::Parameter' (role 'uml_Parameter', cardinality 0..*).
+'uml::Package' (role 'uml_Package', cardinality 0..*) is associated with 'uml::PackageableElement' (role 'uml_PackageableElement', cardinality 0..*).
+'uml::Element' (role 'uml_Element', cardinality 0..*) is associated with 'uml::Element' (role 'uml_Element18', cardinality 0..*).

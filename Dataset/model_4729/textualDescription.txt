@@ -1,0 +1,158 @@
+The model has 78 class(es).
+The class 'PredicateIndicator' has no attributes.
+The class 'prolog::expressions::LessThan' has no attributes.
+The class 'prolog::expressions::Multiplication' has no attributes.
+The class 'prolog::expressions::SoftCut' has no attributes.
+The class 'prolog::Rule' has no attributes.
+The class 'prolog::expressions::NegativeNumber' has no attributes.
+The class 'prolog::expressions::Is' has no attributes.
+The class 'prolog::expressions::LogicalAnd' has no attributes.
+The class 'prolog::expressions::BitwiseShiftLeft' has no attributes.
+The class 'prolog::expressions::NotProvable' has no attributes.
+The class 'prolog::expressions::StructuralEquivalence' has no attributes.
+The class 'prolog::expressions::As' has no attributes.
+The class 'prolog::directives::Public' has no attributes.
+The class 'prolog::expressions::IntegerDivision' has no attributes.
+The class 'prolog::expressions::NotUnifiable' has no attributes.
+The class 'prolog::expressions::BitwiseNegation' has no attributes.
+The class 'prolog::ControlPredicate' has no attributes.
+The class 'prolog::expressions::StructuralEquivalenceNotProvable' has no attributes.
+The class 'Clause' has no attributes.
+The class 'prolog::expressions::Xor' has no attributes.
+The class 'prolog::directives::Discontiguous' has no attributes.
+The class 'prolog::expressions::Plus' has no attributes.
+The class 'Expression' has no attributes.
+The class 'prolog::expressions::Expression' has no attributes.
+The class 'prolog::expressions::BinaryExpression' has no attributes.
+The class 'prolog::expressions::ParticalUnification' has no attributes.
+The class 'prolog::Comment' has the following attributes: 'value' of type str.
+The class 'prolog::Clause' has no attributes.
+The class 'prolog::Fail' has no attributes.
+The class 'prolog::expressions::Condition' has no attributes.
+The class 'prolog::expressions::Equivalence' has no attributes.
+The class 'prolog::Fact' has no attributes.
+The class 'prolog::expressions::BinaryOr' has no attributes.
+The class 'prolog::expressions::Rem' has no attributes.
+The class 'prolog::expressions::LogicalOr' has no attributes.
+The class 'prolog::True' has no attributes.
+The class 'prolog::expressions::EqualOrStandardOrderAfter' has no attributes.
+The class 'prolog::expressions::Division' has no attributes.
+The class 'prolog::expressions::GreaterThan' has no attributes.
+The class 'Term' has no attributes.
+The class 'prolog::Program' has no attributes.
+The class 'prolog::CompoundTerm' has the following attributes: 'value' of type str.
+The class 'prolog::directives::Directive' has the following attributes: 'name' of type str.
+The class 'prolog::expressions::GreaterOrEqual' has no attributes.
+The class 'prolog::expressions::Unification' has no attributes.
+The class 'prolog::False' has no attributes.
+The class 'prolog::List' has no attributes.
+The class 'prolog::expressions::Div' has no attributes.
+The class 'prolog::Cut' has no attributes.
+The class 'prolog::expressions::StandardOrderAfter' has no attributes.
+The class 'prolog::directives::PredicateIndicator' has the following attributes: 'arity' of type int; 'name' of type str.
+The class 'prolog::directives::Dynamic' has no attributes.
+The class 'ControlPredicate' has no attributes.
+The class 'prolog::expressions::Power' has no attributes.
+The class 'prolog::expressions::LessOrEqual' has no attributes.
+The class 'Directive' has no attributes.
+The class 'prolog::expressions::StandardOrderBefore' has no attributes.
+The class 'prolog::AtomicQuotedString' has the following attributes: 'value' of type str.
+The class 'prolog::expressions::PositiveNumber' has no attributes.
+The class 'prolog::expressions::EqualOrStandardOrderBefore' has no attributes.
+The class 'prolog::expressions::BinaryAnd' has no attributes.
+The class 'prolog::expressions::Univ' has no attributes.
+The class 'prolog::Term' has no attributes.
+The class 'prolog::AtomicNumber' has the following attributes: 'value' of type int.
+The class 'prolog::expressions::Rdiv' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'prolog::expressions::Minus' has no attributes.
+The class 'prolog::expressions::Mod' has no attributes.
+The class 'prolog::expressions::UnaryExpression' has no attributes.
+The class 'prolog::directives::Multifile' has no attributes.
+The class 'prolog::expressions::NonEqualNumber' has no attributes.
+The class 'prolog::expressions::ModuleCall' has no attributes.
+The class 'prolog::directives::Volatile' has no attributes.
+The class 'prolog::expressions::SubDict' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'prolog::expressions::Disequality' has no attributes.
+The class 'prolog::directives::Table' has no attributes.
+The class 'prolog::expressions::NumberEqual' has no attributes.
+'prolog::Term' is a specialization of 'Expression'.
+'prolog::expressions::Minus' is a specialization of 'BinaryExpression'.
+'prolog::expressions::StructuralEquivalence' is a specialization of 'BinaryExpression'.
+'prolog::CompoundTerm' is a specialization of 'Clause'.
+'prolog::directives::Table' is a specialization of 'Clause'.
+'prolog::expressions::NumberEqual' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Condition' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Unification' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Power' is a specialization of 'BinaryExpression'.
+'prolog::expressions::LogicalOr' is a specialization of 'BinaryExpression'.
+'prolog::Fact' is a specialization of 'Clause'.
+'prolog::expressions::Division' is a specialization of 'BinaryExpression'.
+'prolog::expressions::PositiveNumber' is a specialization of 'UnaryExpression'.
+'prolog::expressions::BinaryExpression' is a specialization of 'Expression'.
+'prolog::expressions::BinaryOr' is a specialization of 'BinaryExpression'.
+'prolog::expressions::NegativeNumber' is a specialization of 'UnaryExpression'.
+'prolog::directives::Public' is a specialization of 'Directive'.
+'prolog::expressions::SoftCut' is a specialization of 'BinaryExpression'.
+'prolog::expressions::StandardOrderBefore' is a specialization of 'BinaryExpression'.
+'prolog::expressions::As' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Plus' is a specialization of 'BinaryExpression'.
+'prolog::expressions::StructuralEquivalenceNotProvable' is a specialization of 'BinaryExpression'.
+'prolog::expressions::IntegerDivision' is a specialization of 'BinaryExpression'.
+'prolog::expressions::GreaterOrEqual' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Univ' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Mod' is a specialization of 'BinaryExpression'.
+'prolog::expressions::UnaryExpression' is a specialization of 'Expression'.
+'prolog::directives::Directive' is a specialization of 'Clause'.
+'prolog::AtomicNumber' is a specialization of 'Term'.
+'prolog::directives::Multifile' is a specialization of 'Directive'.
+'prolog::expressions::Disequality' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Rem' is a specialization of 'BinaryExpression'.
+'prolog::Fail' is a specialization of 'ControlPredicate'.
+'prolog::directives::Discontiguous' is a specialization of 'Directive'.
+'prolog::Rule' is a specialization of 'Clause'.
+'prolog::expressions::NotUnifiable' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Div' is a specialization of 'BinaryExpression'.
+'prolog::directives::Volatile' is a specialization of 'Directive'.
+'prolog::CompoundTerm' is a specialization of 'Term'.
+'prolog::expressions::Equivalence' is a specialization of 'BinaryExpression'.
+'prolog::expressions::NotProvable' is a specialization of 'UnaryExpression'.
+'prolog::expressions::Rdiv' is a specialization of 'BinaryExpression'.
+'prolog::expressions::NonEqualNumber' is a specialization of 'BinaryExpression'.
+'prolog::expressions::LessThan' is a specialization of 'BinaryExpression'.
+'prolog::expressions::LogicalAnd' is a specialization of 'BinaryExpression'.
+'prolog::expressions::BinaryAnd' is a specialization of 'BinaryExpression'.
+'prolog::expressions::ParticalUnification' is a specialization of 'BinaryExpression'.
+'prolog::expressions::LessOrEqual' is a specialization of 'BinaryExpression'.
+'prolog::List' is a specialization of 'Term'.
+'prolog::expressions::GreaterThan' is a specialization of 'BinaryExpression'.
+'prolog::AtomicQuotedString' is a specialization of 'Term'.
+'prolog::expressions::StandardOrderAfter' is a specialization of 'BinaryExpression'.
+'prolog::True' is a specialization of 'ControlPredicate'.
+'prolog::ControlPredicate' is a specialization of 'Term'.
+'prolog::expressions::EqualOrStandardOrderAfter' is a specialization of 'BinaryExpression'.
+'prolog::expressions::BitwiseShiftLeft' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Xor' is a specialization of 'BinaryExpression'.
+'prolog::Cut' is a specialization of 'ControlPredicate'.
+'prolog::directives::Dynamic' is a specialization of 'Directive'.
+'prolog::expressions::EqualOrStandardOrderBefore' is a specialization of 'BinaryExpression'.
+'prolog::expressions::Multiplication' is a specialization of 'BinaryExpression'.
+'prolog::expressions::BitwiseNegation' is a specialization of 'UnaryExpression'.
+'prolog::expressions::SubDict' is a specialization of 'BinaryExpression'.
+'prolog::expressions::ModuleCall' is a specialization of 'BinaryExpression'.
+'prolog::Comment' is a specialization of 'Clause'.
+'prolog::expressions::Is' is a specialization of 'BinaryExpression'.
+'prolog::False' is a specialization of 'ControlPredicate'.
+'prolog::Clause' (role 'prolog_Clause', cardinality 0..*) is associated with 'prolog::Program' (role 'prolog_Program', cardinality 0..*).
+'Expression' (role 'Expression23', cardinality 0..*) is associated with 'prolog::expressions::BinaryExpression' (role 'prolog_expressions_BinaryExpression22', cardinality 0..*).
+'Expression' (role 'Expression6', cardinality 0..*) is associated with 'prolog::List' (role 'prolog_List5', cardinality 0..*).
+'Expression' (role 'Expression20', cardinality 0..*) is associated with 'prolog::expressions::BinaryExpression' (role 'prolog_expressions_BinaryExpression', cardinality 0..*).
+'prolog::Rule' (role 'prolog_Rule12', cardinality 0..*) is associated with 'Expression' (role 'Expression13', cardinality 0..*).
+'prolog::Rule' (role 'prolog_Rule', cardinality 0..*) is associated with 'prolog::CompoundTerm' (role 'prolog_CompoundTerm10', cardinality 0..*).
+'Expression' (role 'Expression18', cardinality 0..*) is associated with 'prolog::expressions::UnaryExpression' (role 'prolog_expressions_UnaryExpression', cardinality 0..*).
+'prolog::Fact' (role 'prolog_Fact', cardinality 0..*) is associated with 'prolog::CompoundTerm' (role 'prolog_CompoundTerm8', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'prolog::CompoundTerm' (role 'prolog_CompoundTerm', cardinality 0..*).
+'PredicateIndicator' (role 'PredicateIndicator', cardinality 0..*) is associated with 'prolog::directives::Directive' (role 'prolog_directives_Directive', cardinality 0..*).
+'prolog::List' (role 'prolog_List', cardinality 0..*) is associated with 'Expression' (role 'Expression3', cardinality 0..*).
+'PredicateIndicator' (role 'PredicateIndicator16', cardinality 0..*) is associated with 'prolog::directives::Table' (role 'prolog_directives_Table', cardinality 0..*).

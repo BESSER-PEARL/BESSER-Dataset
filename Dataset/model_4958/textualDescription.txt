@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'TypedElement' has no attributes.
+The class 'testmodel::TypedElement' has no attributes.
+The class 'Model' has no attributes.
+The class 'testmodel::Attribute' has no attributes.
+The class 'testmodel::Class' has no attributes.
+The class 'testmodel::Association' has the following attributes: 'secondLabel' of type str; 'firstLabel' of type str.
+The class 'testmodel::Model' has no attributes.
+The class 'testmodel::ModelElement' has no attributes.
+The class 'testmodel::Group' has no attributes.
+The class 'testmodel::NamedElement' has the following attributes: 'name' of type str.
+The class 'ModelElement' has no attributes.
+The class 'NamedElement' has no attributes.
+'testmodel::Group' is a specialization of 'Model'.
+'testmodel::Group' is a specialization of 'ModelElement'.
+'testmodel::Class' is a specialization of 'ModelElement'.
+'testmodel::Attribute' is a specialization of 'TypedElement'.
+'testmodel::TypedElement' is a specialization of 'NamedElement'.
+'testmodel::Association' is a specialization of 'ModelElement'.
+'testmodel::ModelElement' is a specialization of 'NamedElement'.
+'testmodel::Class' (role 'testmodel_Class5', cardinality 0..*) is associated with 'testmodel::Association' (role 'testmodel_Association', cardinality 0..*).
+'testmodel::Class' (role 'Class', cardinality 0..*) is associated with 'testmodel::Attribute' (role 'attributes', cardinality 0..*).
+'testmodel::Class' (role 'testmodel_Class', cardinality 0..*) is associated with 'testmodel::TypedElement' (role 'testmodel_TypedElement', cardinality 0..*).
+'testmodel::Class' (role 'testmodel_Class8', cardinality 0..*) is associated with 'testmodel::Association' (role 'testmodel_Association7', cardinality 0..*).
+'testmodel::ModelElement' (role 'testmodel_ModelElement', cardinality 0..*) is associated with 'testmodel::Model' (role 'testmodel_Model', cardinality 0..*).
+'testmodel::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'testmodel::Class' (role 'owner', cardinality 0..*).

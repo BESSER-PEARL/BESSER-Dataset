@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'robot::Turn' has no attributes.
+The class 'robot::StopEngine' has no attributes.
+The class 'robot::Instruction' has no attributes.
+The class 'robot::HasTurned' has no attributes.
+The class 'robot::Move' has no attributes.
+The class 'robot::Program' has no attributes.
+The class 'robot::If' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'robot::StopProgram' has no attributes.
+The class 'robot::Not' has no attributes.
+The class 'robot::ExpBool' has no attributes.
+The class 'robot::SetTurnAngle' has no attributes.
+The class 'robot::While' has no attributes.
+The class 'ExpBool' has no attributes.
+The class 'robot::Bip' has no attributes.
+The class 'robot::Obstacle' has no attributes.
+The class 'robot::And' has no attributes.
+'robot::SetTurnAngle' is a specialization of 'Instruction'.
+'robot::Turn' is a specialization of 'Instruction'.
+'robot::Move' is a specialization of 'Instruction'.
+'robot::Obstacle' is a specialization of 'ExpBool'.
+'robot::Not' is a specialization of 'ExpBool'.
+'robot::HasTurned' is a specialization of 'ExpBool'.
+'robot::StopEngine' is a specialization of 'Instruction'.
+'robot::Bip' is a specialization of 'Instruction'.
+'robot::And' is a specialization of 'ExpBool'.
+'robot::While' is a specialization of 'ExpBool'.
+'robot::StopProgram' is a specialization of 'Instruction'.
+'robot::If' is a specialization of 'ExpBool'.
+'robot::ExpBool' (role 'robot_ExpBool', cardinality 0..*) is associated with 'robot::While' (role 'robot_While', cardinality 0..*).
+'robot::And' (role 'robot_And', cardinality 0..*) is associated with 'robot::ExpBool' (role 'robot_ExpBool13', cardinality 0..*).
+'robot::ExpBool' (role 'robot_ExpBool16', cardinality 0..*) is associated with 'robot::And' (role 'robot_And15', cardinality 0..*).
+'robot::Program' (role 'robot_Program', cardinality 0..*) is associated with 'robot::Instruction' (role 'robot_Instruction', cardinality 0..*).
+'robot::ExpBool' (role 'robot_ExpBool8', cardinality 0..*) is associated with 'robot::If' (role 'robot_If', cardinality 0..*).
+'robot::ExpBool' (role 'robot_ExpBool6', cardinality 0..*) is associated with 'robot::Not' (role 'robot_Not', cardinality 0..*).
+'robot::While' (role 'robot_While3', cardinality 0..*) is associated with 'robot::Instruction' (role 'robot_Instruction4', cardinality 0..*).
+'robot::Instruction' (role 'robot_Instruction11', cardinality 0..*) is associated with 'robot::If' (role 'robot_If10', cardinality 0..*).

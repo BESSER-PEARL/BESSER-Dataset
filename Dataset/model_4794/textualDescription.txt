@@ -1,0 +1,136 @@
+The model has 49 class(es).
+The class 'jkind::RecordExpr' has no attributes.
+The class 'Expr' has no attributes.
+The class 'TypeDef' has no attributes.
+The class 'jkind::VariableGroup' has no attributes.
+The class 'jkind::BoolType' has no attributes.
+The class 'jkind::Variable' has no attributes.
+The class 'jkind::Ivc' has no attributes.
+The class 'jkind::File' has no attributes.
+The class 'jkind::Type' has no attributes.
+The class 'jkind::RealizabilityInputs' has no attributes.
+The class 'jkind::IdExpr' has no attributes.
+The class 'jkind::Constant' has no attributes.
+The class 'jkind::ArrayType' has the following attributes: 'size' of type str.
+The class 'jkind::Expr' has no attributes.
+The class 'jkind::IdRef' has the following attributes: 'name' of type str.
+The class 'jkind::UserType' has no attributes.
+The class 'jkind::RealExpr' has the following attributes: 'val' of type str.
+The class 'jkind::SubrangeType' has the following attributes: 'high' of type str; 'low' of type str.
+The class 'jkind::IntExpr' has the following attributes: 'val' of type str.
+The class 'jkind::CastExpr' has the following attributes: 'op' of type str.
+The class 'jkind::Assertion' has no attributes.
+The class 'jkind::IntType' has no attributes.
+The class 'jkind::RecordAccessExpr' has no attributes.
+The class 'jkind::ArrayUpdateExpr' has no attributes.
+The class 'jkind::ArrayExpr' has no attributes.
+The class 'jkind::EnumValue' has no attributes.
+The class 'jkind::CallExpr' has no attributes.
+The class 'jkind::CondactExpr' has no attributes.
+The class 'jkind::ArrayAccessExpr' has no attributes.
+The class 'IdRef' has no attributes.
+The class 'jkind::RecordType' has no attributes.
+The class 'jkind::Node' has the following attributes: 'main' of type str.
+The class 'jkind::Property' has no attributes.
+The class 'jkind::Function' has no attributes.
+The class 'jkind::IfThenElseExpr' has no attributes.
+The class 'jkind::AbbreviationType' has no attributes.
+The class 'jkind::RealType' has no attributes.
+The class 'jkind::TupleExpr' has no attributes.
+The class 'jkind::RecordUpdateExpr' has no attributes.
+The class 'jkind::Callable' has the following attributes: 'name' of type str.
+The class 'jkind::EnumType' has no attributes.
+The class 'jkind::UnaryExpr' has the following attributes: 'op' of type str.
+The class 'jkind::TypeDef' has the following attributes: 'name' of type str.
+The class 'jkind::Equation' has no attributes.
+The class 'jkind::Field' has the following attributes: 'name' of type str.
+The class 'jkind::BinaryExpr' has the following attributes: 'op' of type str.
+The class 'Type' has no attributes.
+The class 'Callable' has no attributes.
+The class 'jkind::BoolExpr' has the following attributes: 'val' of type str.
+'jkind::Constant' is a specialization of 'IdRef'.
+'jkind::Function' is a specialization of 'Callable'.
+'jkind::CallExpr' is a specialization of 'Expr'.
+'jkind::SubrangeType' is a specialization of 'Type'.
+'jkind::ArrayAccessExpr' is a specialization of 'Expr'.
+'jkind::RealType' is a specialization of 'Type'.
+'jkind::RecordType' is a specialization of 'TypeDef'.
+'jkind::IntExpr' is a specialization of 'Expr'.
+'jkind::EnumType' is a specialization of 'TypeDef'.
+'jkind::CondactExpr' is a specialization of 'Expr'.
+'jkind::AbbreviationType' is a specialization of 'TypeDef'.
+'jkind::ArrayType' is a specialization of 'Type'.
+'jkind::CastExpr' is a specialization of 'Expr'.
+'jkind::UserType' is a specialization of 'Type'.
+'jkind::RecordUpdateExpr' is a specialization of 'Expr'.
+'jkind::Variable' is a specialization of 'IdRef'.
+'jkind::UnaryExpr' is a specialization of 'Expr'.
+'jkind::IfThenElseExpr' is a specialization of 'Expr'.
+'jkind::BoolType' is a specialization of 'Type'.
+'jkind::IdExpr' is a specialization of 'Expr'.
+'jkind::RecordExpr' is a specialization of 'Expr'.
+'jkind::RealExpr' is a specialization of 'Expr'.
+'jkind::EnumValue' is a specialization of 'IdRef'.
+'jkind::ArrayExpr' is a specialization of 'Expr'.
+'jkind::ArrayUpdateExpr' is a specialization of 'Expr'.
+'jkind::BinaryExpr' is a specialization of 'Expr'.
+'jkind::RecordAccessExpr' is a specialization of 'Expr'.
+'jkind::TupleExpr' is a specialization of 'Expr'.
+'jkind::BoolExpr' is a specialization of 'Expr'.
+'jkind::IntType' is a specialization of 'Type'.
+'jkind::Node' is a specialization of 'Callable'.
+'jkind::ArrayUpdateExpr' (role 'jkind_ArrayUpdateExpr', cardinality 0..*) is associated with 'jkind::ArrayAccessExpr' (role 'jkind_ArrayAccessExpr93', cardinality 0..*).
+'jkind::Property' (role 'jkind_Property', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node18', cardinality 0..*).
+'jkind::Ivc' (role 'jkind_Ivc', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node20', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr75', cardinality 0..*) is associated with 'jkind::RecordAccessExpr' (role 'jkind_RecordAccessExpr', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr68', cardinality 0..*) is associated with 'jkind::BinaryExpr' (role 'jkind_BinaryExpr', cardinality 0..*).
+'jkind::IfThenElseExpr' (role 'jkind_IfThenElseExpr101', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr102', cardinality 0..*).
+'jkind::RecordAccessExpr' (role 'jkind_RecordAccessExpr77', cardinality 0..*) is associated with 'jkind::Field' (role 'jkind_Field78', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr71', cardinality 0..*) is associated with 'jkind::BinaryExpr' (role 'jkind_BinaryExpr70', cardinality 0..*).
+'jkind::Field' (role 'jkind_Field83', cardinality 0..*) is associated with 'jkind::RecordUpdateExpr' (role 'jkind_RecordUpdateExpr82', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr125', cardinality 0..*) is associated with 'jkind::RecordExpr' (role 'jkind_RecordExpr124', cardinality 0..*).
+'jkind::EnumType' (role 'jkind_EnumType', cardinality 0..*) is associated with 'jkind::EnumValue' (role 'jkind_EnumValue', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr99', cardinality 0..*) is associated with 'jkind::IfThenElseExpr' (role 'jkind_IfThenElseExpr', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr49', cardinality 0..*) is associated with 'jkind::CallExpr' (role 'jkind_CallExpr48', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr73', cardinality 0..*) is associated with 'jkind::UnaryExpr' (role 'jkind_UnaryExpr', cardinality 0..*).
+'jkind::File' (role 'jkind_File6', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr80', cardinality 0..*) is associated with 'jkind::RecordUpdateExpr' (role 'jkind_RecordUpdateExpr', cardinality 0..*).
+'jkind::Constant' (role 'jkind_Constant10', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr', cardinality 0..*).
+'jkind::AbbreviationType' (role 'jkind_AbbreviationType', cardinality 0..*) is associated with 'jkind::Type' (role 'jkind_Type57', cardinality 0..*).
+'jkind::File' (role 'jkind_File4', cardinality 0..*) is associated with 'jkind::Function' (role 'jkind_Function', cardinality 0..*).
+'jkind::RecordUpdateExpr' (role 'jkind_RecordUpdateExpr85', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr86', cardinality 0..*).
+'jkind::Variable' (role 'jkind_Variable30', cardinality 0..*) is associated with 'jkind::Equation' (role 'jkind_Equation29', cardinality 0..*).
+'jkind::VariableGroup' (role 'jkind_VariableGroup', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node12', cardinality 0..*).
+'jkind::VariableGroup' (role 'jkind_VariableGroup26', cardinality 0..*) is associated with 'jkind::Type' (role 'jkind_Type27', cardinality 0..*).
+'jkind::RecordExpr' (role 'jkind_RecordExpr121', cardinality 0..*) is associated with 'jkind::Field' (role 'jkind_Field122', cardinality 0..*).
+'jkind::Variable' (role 'jkind_Variable36', cardinality 0..*) is associated with 'jkind::Property' (role 'jkind_Property35', cardinality 0..*).
+'jkind::Assertion' (role 'jkind_Assertion', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node16', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr91', cardinality 0..*) is associated with 'jkind::ArrayAccessExpr' (role 'jkind_ArrayAccessExpr90', cardinality 0..*).
+'jkind::RealizabilityInputs' (role 'jkind_RealizabilityInputs', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node22', cardinality 0..*).
+'jkind::ArrayUpdateExpr' (role 'jkind_ArrayUpdateExpr95', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr96', cardinality 0..*).
+'jkind::Equation' (role 'jkind_Equation', cardinality 0..*) is associated with 'jkind::Node' (role 'jkind_Node14', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr109', cardinality 0..*) is associated with 'jkind::CondactExpr' (role 'jkind_CondactExpr', cardinality 0..*).
+'jkind::Constant' (role 'jkind_Constant', cardinality 0..*) is associated with 'jkind::File' (role 'jkind_File2', cardinality 0..*).
+'jkind::UserType' (role 'jkind_UserType', cardinality 0..*) is associated with 'jkind::TypeDef' (role 'jkind_TypeDef66', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr45', cardinality 0..*) is associated with 'jkind::Assertion' (role 'jkind_Assertion44', cardinality 0..*).
+'jkind::Callable' (role 'jkind_Callable51', cardinality 0..*) is associated with 'jkind::VariableGroup' (role 'jkind_VariableGroup52', cardinality 0..*).
+'jkind::Callable' (role 'jkind_Callable54', cardinality 0..*) is associated with 'jkind::VariableGroup' (role 'jkind_VariableGroup55', cardinality 0..*).
+'jkind::CallExpr' (role 'jkind_CallExpr', cardinality 0..*) is associated with 'jkind::Callable' (role 'jkind_Callable', cardinality 0..*).
+'jkind::CondactExpr' (role 'jkind_CondactExpr111', cardinality 0..*) is associated with 'jkind::CallExpr' (role 'jkind_CallExpr112', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr127', cardinality 0..*) is associated with 'jkind::TupleExpr' (role 'jkind_TupleExpr', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr107', cardinality 0..*) is associated with 'jkind::CastExpr' (role 'jkind_CastExpr', cardinality 0..*).
+'jkind::ArrayExpr' (role 'jkind_ArrayExpr', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr117', cardinality 0..*).
+'jkind::IdExpr' (role 'jkind_IdExpr', cardinality 0..*) is associated with 'jkind::IdRef' (role 'jkind_IdRef', cardinality 0..*).
+'jkind::Type' (role 'jkind_Type61', cardinality 0..*) is associated with 'jkind::RecordType' (role 'jkind_RecordType60', cardinality 0..*).
+'jkind::Variable' (role 'jkind_Variable', cardinality 0..*) is associated with 'jkind::VariableGroup' (role 'jkind_VariableGroup24', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr88', cardinality 0..*) is associated with 'jkind::ArrayAccessExpr' (role 'jkind_ArrayAccessExpr', cardinality 0..*).
+'jkind::Type' (role 'jkind_Type', cardinality 0..*) is associated with 'jkind::Constant' (role 'jkind_Constant8', cardinality 0..*).
+'jkind::Ivc' (role 'jkind_Ivc38', cardinality 0..*) is associated with 'jkind::Variable' (role 'jkind_Variable39', cardinality 0..*).
+'jkind::Type' (role 'jkind_Type64', cardinality 0..*) is associated with 'jkind::ArrayType' (role 'jkind_ArrayType', cardinality 0..*).
+'jkind::RecordType' (role 'jkind_RecordType119', cardinality 0..*) is associated with 'jkind::RecordExpr' (role 'jkind_RecordExpr', cardinality 0..*).
+'jkind::Expr' (role 'jkind_Expr115', cardinality 0..*) is associated with 'jkind::CondactExpr' (role 'jkind_CondactExpr114', cardinality 0..*).
+'jkind::RealizabilityInputs' (role 'jkind_RealizabilityInputs41', cardinality 0..*) is associated with 'jkind::Variable' (role 'jkind_Variable42', cardinality 0..*).
+'jkind::File' (role 'jkind_File', cardinality 0..*) is associated with 'jkind::TypeDef' (role 'jkind_TypeDef', cardinality 0..*).
+'jkind::Equation' (role 'jkind_Equation32', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr33', cardinality 0..*).
+'jkind::RecordType' (role 'jkind_RecordType', cardinality 0..*) is associated with 'jkind::Field' (role 'jkind_Field', cardinality 0..*).
+'jkind::IfThenElseExpr' (role 'jkind_IfThenElseExpr104', cardinality 0..*) is associated with 'jkind::Expr' (role 'jkind_Expr105', cardinality 0..*).

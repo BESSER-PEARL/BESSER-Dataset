@@ -1,0 +1,31 @@
+The model has 13 class(es).
+The class 'base::ModelTrace' has the following attributes: 'name' of type str.
+The class 'base::AllInstancesAccess' has the following attributes: 'ofKind' of type bool.
+The class 'Access' has no attributes.
+The class 'base::ElementAccess' has no attributes.
+The class 'base::PropertyAccess' has the following attributes: 'value' of type str.
+The class 'base::Access' has no attributes.
+The class 'base::ExecutionTrace' has no attributes.
+The class 'base::IdElement' has the following attributes: 'id' of type str.
+The class 'base::ModelTypeTrace' has the following attributes: 'name' of type str.
+The class 'base::PropertyTrace' has the following attributes: 'name' of type str.
+The class 'IdElement' has no attributes.
+The class 'base::ModuleTrace' has the following attributes: 'source' of type str.
+The class 'base::ModelElementTrace' has the following attributes: 'uri' of type str.
+'base::ModelTrace' is a specialization of 'IdElement'.
+'base::PropertyAccess' is a specialization of 'Access'.
+'base::ModelTypeTrace' is a specialization of 'IdElement'.
+'base::PropertyTrace' is a specialization of 'IdElement'.
+'base::Access' is a specialization of 'IdElement'.
+'base::AllInstancesAccess' is a specialization of 'Access'.
+'base::ExecutionTrace' is a specialization of 'IdElement'.
+'base::ElementAccess' is a specialization of 'Access'.
+'base::ModuleTrace' is a specialization of 'IdElement'.
+'base::ModelElementTrace' is a specialization of 'IdElement'.
+'base::PropertyAccess' (role 'base_PropertyAccess', cardinality 0..*) is associated with 'base::PropertyTrace' (role 'base_PropertyTrace', cardinality 0..*).
+'base::ModelTypeTrace' (role 'base_ModelTypeTrace', cardinality 0..*) is associated with 'base::AllInstancesAccess' (role 'base_AllInstancesAccess', cardinality 0..*).
+'base::ModelElementTrace' (role 'base_ModelElementTrace7', cardinality 0..*) is associated with 'base::ModelTrace' (role 'base_ModelTrace8', cardinality 0..*).
+'base::ModelTypeTrace' (role 'base_ModelTypeTrace5', cardinality 0..*) is associated with 'base::ModelTrace' (role 'base_ModelTrace', cardinality 0..*).
+'base::Access' (role 'base_Access', cardinality 0..*) is associated with 'base::ExecutionTrace' (role 'base_ExecutionTrace', cardinality 0..*).
+'base::ElementAccess' (role 'base_ElementAccess', cardinality 0..*) is associated with 'base::ModelElementTrace' (role 'base_ModelElementTrace', cardinality 0..*).
+'base::PropertyTrace' (role 'base_PropertyTrace10', cardinality 0..*) is associated with 'base::ModelElementTrace' (role 'base_ModelElementTrace11', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'adl::Binding' has no attributes.
+The class 'adl::Interface' has no attributes.
+The class 'adl::Type' has the following attributes: 'signature' of type str.
+The class 'adl::Required' has no attributes.
+The class 'AbstractComponent' has no attributes.
+The class 'adl::Component' has no attributes.
+The class 'adl::AbstractComponent' has no attributes.
+The class 'Interface' has no attributes.
+The class 'adl::Provided' has no attributes.
+The class 'Type' has no attributes.
+The class 'adl::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'adl::Interface' is a specialization of 'NamedElement'.
+'adl::Binding' is a specialization of 'NamedElement'.
+'adl::Type' is a specialization of 'Interface'.
+'adl::Component' is a specialization of 'AbstractComponent'.
+'adl::Component' is a specialization of 'NamedElement'.
+'adl::Provided' is a specialization of 'Type'.
+'adl::Required' is a specialization of 'Type'.
+'adl::Binding' (role 'adl_Binding8', cardinality 0..*) is associated with 'adl::Interface' (role 'adl_Interface9', cardinality 0..*).
+'adl::Interface' (role 'adl_Interface6', cardinality 0..*) is associated with 'adl::Binding' (role 'adl_Binding5', cardinality 0..*).
+'adl::Binding' (role 'adl_Binding', cardinality 0..*) is associated with 'adl::Interface' (role 'adl_Interface', cardinality 0..*).
+'adl::Component' (role 'adl_Component', cardinality 0..*) is associated with 'adl::Component' (role 'adl_Component10', cardinality 0..*).
+'adl::AbstractComponent' (role 'adl_AbstractComponent2', cardinality 0..*) is associated with 'adl::Provided' (role 'adl_Provided', cardinality 0..*).
+'adl::AbstractComponent' (role 'adl_AbstractComponent', cardinality 0..*) is associated with 'adl::Required' (role 'adl_Required', cardinality 0..*).

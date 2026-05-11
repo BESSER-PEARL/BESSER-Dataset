@@ -1,0 +1,75 @@
+The model has 25 class(es).
+The class 'langage::while::Commands' has no attributes.
+The class 'langage::while::Expr' has no attributes.
+The class 'langage::while::Input' has no attributes.
+The class 'langage::while::Function' has no attributes.
+The class 'langage::while::SYMB' has the following attributes: 'bs' of type str; 'cf' of type str.
+The class 'langage::while::Model' has no attributes.
+The class 'langage::while::Foreach' has no attributes.
+The class 'langage::while::If' has no attributes.
+The class 'langage::while::Vars' has no attributes.
+The class 'langage::while::ExprSimple' has the following attributes: 'nil' of type str; 'mot' of type str.
+The class 'langage::while::LExpr' has no attributes.
+The class 'langage::while::Ifconfort' has no attributes.
+The class 'langage::while::ExprNot' has no attributes.
+The class 'langage::while::While' has no attributes.
+The class 'langage::while::VAR' has the following attributes: 'bv' of type str; 'cf' of type str.
+The class 'langage::while::ExprOr' has no attributes.
+The class 'langage::while::For' has no attributes.
+The class 'langage::while::ExprEq' has no attributes.
+The class 'langage::while::Program' has the following attributes: 'u' of type str.
+The class 'langage::while::Output' has no attributes.
+The class 'langage::while::Assign' has no attributes.
+The class 'langage::while::ExprAnd' has no attributes.
+The class 'langage::while::Exprs' has no attributes.
+The class 'langage::while::Definition' has no attributes.
+The class 'langage::while::Command' has the following attributes: 'nop' of type str.
+'langage::while::Program' (role 'langage_while_Program3', cardinality 0..*) is associated with 'langage::while::Program' (role 'langage_while_Program5', cardinality 0..*).
+'langage::while::LExpr' (role 'langage_while_LExpr', cardinality 0..*) is associated with 'langage::while::ExprSimple' (role 'langage_while_ExprSimple91', cardinality 0..*).
+'langage::while::Command' (role 'langage_while_Command32', cardinality 0..*) is associated with 'langage::while::Foreach' (role 'langage_while_Foreach', cardinality 0..*).
+'langage::while::ExprOr' (role 'langage_while_ExprOr104', cardinality 0..*) is associated with 'langage::while::ExprNot' (role 'langage_while_ExprNot', cardinality 0..*).
+'langage::while::Commands' (role 'langage_while_Commands67', cardinality 0..*) is associated with 'langage::while::Foreach' (role 'langage_while_Foreach66', cardinality 0..*).
+'langage::while::If' (role 'langage_while_If51', cardinality 0..*) is associated with 'langage::while::Expr' (role 'langage_while_Expr52', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr70', cardinality 0..*) is associated with 'langage::while::Ifconfort' (role 'langage_while_Ifconfort69', cardinality 0..*).
+'langage::while::Ifconfort' (role 'langage_while_Ifconfort', cardinality 0..*) is associated with 'langage::while::Command' (role 'langage_while_Command34', cardinality 0..*).
+'langage::while::ExprOr' (role 'langage_while_ExprOr', cardinality 0..*) is associated with 'langage::while::ExprAnd' (role 'langage_while_ExprAnd99', cardinality 0..*).
+'langage::while::VAR' (role 'langage_while_VAR20', cardinality 0..*) is associated with 'langage::while::Output' (role 'langage_while_Output19', cardinality 0..*).
+'langage::while::ExprEq' (role 'langage_while_ExprEq114', cardinality 0..*) is associated with 'langage::while::ExprSimple' (role 'langage_while_ExprSimple115', cardinality 0..*).
+'langage::while::For' (role 'langage_while_For', cardinality 0..*) is associated with 'langage::while::Command' (role 'langage_while_Command28', cardinality 0..*).
+'langage::while::Ifconfort' (role 'langage_while_Ifconfort72', cardinality 0..*) is associated with 'langage::while::Commands' (role 'langage_while_Commands73', cardinality 0..*).
+'langage::while::Command' (role 'langage_while_Command30', cardinality 0..*) is associated with 'langage::while::If' (role 'langage_while_If', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr', cardinality 0..*) is associated with 'langage::while::While' (role 'langage_while_While40', cardinality 0..*).
+'langage::while::Commands' (role 'langage_while_Commands55', cardinality 0..*) is associated with 'langage::while::If' (role 'langage_while_If54', cardinality 0..*).
+'langage::while::Command' (role 'langage_while_Command', cardinality 0..*) is associated with 'langage::while::Commands' (role 'langage_while_Commands22', cardinality 0..*).
+'langage::while::Commands' (role 'langage_while_Commands58', cardinality 0..*) is associated with 'langage::while::If' (role 'langage_while_If57', cardinality 0..*).
+'langage::while::ExprOr' (role 'langage_while_ExprOr102', cardinality 0..*) is associated with 'langage::while::ExprAnd' (role 'langage_while_ExprAnd101', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr64', cardinality 0..*) is associated with 'langage::while::Foreach' (role 'langage_while_Foreach63', cardinality 0..*).
+'langage::while::ExprEq' (role 'langage_while_ExprEq120', cardinality 0..*) is associated with 'langage::while::Expr' (role 'langage_while_Expr121', cardinality 0..*).
+'langage::while::While' (role 'langage_while_While42', cardinality 0..*) is associated with 'langage::while::Commands' (role 'langage_while_Commands43', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr46', cardinality 0..*) is associated with 'langage::while::For' (role 'langage_while_For45', cardinality 0..*).
+'langage::while::ExprEq' (role 'langage_while_ExprEq117', cardinality 0..*) is associated with 'langage::while::ExprSimple' (role 'langage_while_ExprSimple118', cardinality 0..*).
+'langage::while::ExprEq' (role 'langage_while_ExprEq', cardinality 0..*) is associated with 'langage::while::ExprNot' (role 'langage_while_ExprNot109', cardinality 0..*).
+'langage::while::SYMB' (role 'langage_while_SYMB', cardinality 0..*) is associated with 'langage::while::Function' (role 'langage_while_Function7', cardinality 0..*).
+'langage::while::ExprNot' (role 'langage_while_ExprNot111', cardinality 0..*) is associated with 'langage::while::ExprEq' (role 'langage_while_ExprEq112', cardinality 0..*).
+'langage::while::ExprSimple' (role 'langage_while_ExprSimple', cardinality 0..*) is associated with 'langage::while::Expr' (role 'langage_while_Expr81', cardinality 0..*).
+'langage::while::VAR' (role 'langage_while_VAR', cardinality 0..*) is associated with 'langage::while::Input' (role 'langage_while_Input17', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr83', cardinality 0..*) is associated with 'langage::while::ExprAnd' (role 'langage_while_ExprAnd', cardinality 0..*).
+'langage::while::Model' (role 'langage_while_Model', cardinality 0..*) is associated with 'langage::while::Program' (role 'langage_while_Program', cardinality 0..*).
+'langage::while::Definition' (role 'langage_while_Definition', cardinality 0..*) is associated with 'langage::while::Function' (role 'langage_while_Function9', cardinality 0..*).
+'langage::while::Vars' (role 'langage_while_Vars75', cardinality 0..*) is associated with 'langage::while::VAR' (role 'langage_while_VAR76', cardinality 0..*).
+'langage::while::Command' (role 'langage_while_Command26', cardinality 0..*) is associated with 'langage::while::While' (role 'langage_while_While', cardinality 0..*).
+'langage::while::ExprSimple' (role 'langage_while_ExprSimple85', cardinality 0..*) is associated with 'langage::while::VAR' (role 'langage_while_VAR86', cardinality 0..*).
+'langage::while::Function' (role 'langage_while_Function', cardinality 0..*) is associated with 'langage::while::Program' (role 'langage_while_Program2', cardinality 0..*).
+'langage::while::ExprOr' (role 'langage_while_ExprOr106', cardinality 0..*) is associated with 'langage::while::ExprNot' (role 'langage_while_ExprNot107', cardinality 0..*).
+'langage::while::Definition' (role 'langage_while_Definition15', cardinality 0..*) is associated with 'langage::while::Output' (role 'langage_while_Output', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr61', cardinality 0..*) is associated with 'langage::while::Foreach' (role 'langage_while_Foreach60', cardinality 0..*).
+'langage::while::Expr' (role 'langage_while_Expr97', cardinality 0..*) is associated with 'langage::while::LExpr' (role 'langage_while_LExpr96', cardinality 0..*).
+'langage::while::Command' (role 'langage_while_Command24', cardinality 0..*) is associated with 'langage::while::Assign' (role 'langage_while_Assign', cardinality 0..*).
+'langage::while::Exprs' (role 'langage_while_Exprs78', cardinality 0..*) is associated with 'langage::while::Expr' (role 'langage_while_Expr79', cardinality 0..*).
+'langage::while::Definition' (role 'langage_while_Definition11', cardinality 0..*) is associated with 'langage::while::Input' (role 'langage_while_Input', cardinality 0..*).
+'langage::while::Vars' (role 'langage_while_Vars', cardinality 0..*) is associated with 'langage::while::Assign' (role 'langage_while_Assign36', cardinality 0..*).
+'langage::while::Assign' (role 'langage_while_Assign38', cardinality 0..*) is associated with 'langage::while::Exprs' (role 'langage_while_Exprs', cardinality 0..*).
+'langage::while::Definition' (role 'langage_while_Definition13', cardinality 0..*) is associated with 'langage::while::Commands' (role 'langage_while_Commands', cardinality 0..*).
+'langage::while::ExprSimple' (role 'langage_while_ExprSimple93', cardinality 0..*) is associated with 'langage::while::Expr' (role 'langage_while_Expr94', cardinality 0..*).
+'langage::while::ExprSimple' (role 'langage_while_ExprSimple88', cardinality 0..*) is associated with 'langage::while::SYMB' (role 'langage_while_SYMB89', cardinality 0..*).
+'langage::while::For' (role 'langage_while_For48', cardinality 0..*) is associated with 'langage::while::Commands' (role 'langage_while_Commands49', cardinality 0..*).

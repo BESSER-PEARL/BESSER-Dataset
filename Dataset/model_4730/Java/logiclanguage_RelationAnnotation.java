@@ -1,0 +1,34 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class logiclanguage_RelationAnnotation  {
+
+
+
+
+
+
+    private logiclanguage_Relation logiclanguage_relation;
+
+
+    public logiclanguage_RelationAnnotation(
+    ) {
+    }
+
+
+
+    public logiclanguage_Relation getLogiclanguage_relation() {
+        return logiclanguage_relation;
+    }
+
+    public void setLogiclanguage_relation(logiclanguage_Relation logiclanguage_relation) {
+        this.logiclanguage_relation = logiclanguage_relation;
+    }
+
+}

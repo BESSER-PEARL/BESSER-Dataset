@@ -1,0 +1,130 @@
+The model has 41 class(es).
+The class 'data::Transformation' has no attributes.
+The class 'data::Classification' has the following attributes: 'name' of type str.
+The class 'data::Phone' has the following attributes: 'countryCode' of type str; 'number' of type str; 'areaCode' of type str.
+The class 'data::Tag' has no attributes.
+The class 'data::MetaInformation' has no attributes.
+The class 'data::Image' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'Item' has no attributes.
+The class 'data::Mashup' has no attributes.
+The class 'Extension' has no attributes.
+The class 'data::Connection' has no attributes.
+The class 'data::InstantMessenger' has the following attributes: 'username' of type str.
+The class 'data::Document' has no attributes.
+The class 'data::Location' has the following attributes: 'country' of type str; 'city' of type str; 'longitude' of type str; 'state' of type str; 'latitude' of type str; 'houseNumber' of type str; 'zipCode' of type str; 'street' of type str.
+The class 'data::Video' has no attributes.
+The class 'data::ThumbRanking' has no attributes.
+The class 'data::Extension' has no attributes.
+The class 'data::Person' has the following attributes: 'dateOfBirth' of type date; 'lastname' of type str; 'title' of type str; 'firstname' of type str.
+The class 'Ranking' has no attributes.
+The class 'data::Organisation' has no attributes.
+The class 'data::InformationObject' has the following attributes: 'alternativeNames' of type str; 'verifiedName' of type str; 'name' of type str.
+The class 'InformationObject' has no attributes.
+The class 'data::WebAccount' has the following attributes: 'service' of type str; 'username' of type str.
+The class 'data::ViewRanking' has no attributes.
+The class 'data::Ranking' has the following attributes: 'date' of type date.
+The class 'data::Category' has no attributes.
+The class 'data::Identifier' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'data::Attachment' has the following attributes: 'cachedFileName' of type str; 'noCache' of type str; 'fileUrl' of type str; 'cachedFileUrl' of type str; 'cachedOnly' of type str; 'fileIdentifier' of type str; 'fileExtension' of type str.
+The class 'data::Item' has the following attributes: 'created' of type date; 'stringValue' of type str; 'ident' of type str; 'uri' of type str; 'lastModified' of type date; 'stringXML' of type str.
+The class 'MetaInformation' has no attributes.
+The class 'data::WebSite' has the following attributes: 'shortenedUrl' of type str; 'adress' of type str; 'title' of type str.
+The class 'data::StarRanking' has the following attributes: 'normalizedValue' of type str.
+The class 'data::IndoorLocation' has the following attributes: 'name' of type str.
+The class 'data::Binary' has the following attributes: 'bytes' of type str.
+The class 'Attachment' has no attributes.
+The class 'data::DataSet' has the following attributes: 'identPrefix' of type str; 'lastModified' of type date; 'created' of type date; 'logLevel' of type str; 'identCounter' of type str; 'cacheFolder' of type str; 'cacheFileAttachements' of type str; 'keepDeletedItemsList' of type str.
+The class 'data::MetaTag' has the following attributes: 'name' of type str.
+The class 'data::DeletedItem' has the following attributes: 'deleted' of type date; 'identOfDeleted' of type str.
+The class 'data::Event' has the following attributes: 'date' of type date.
+The class 'Classification' has no attributes.
+The class 'data::Content' has the following attributes: 'locale' of type str.
+The class 'data::Email' has the following attributes: 'adress' of type str.
+'data::Person' is a specialization of 'InformationObject'.
+'data::Location' is a specialization of 'MetaInformation'.
+'data::Content' is a specialization of 'InformationObject'.
+'data::DeletedItem' is a specialization of 'Item'.
+'data::MetaTag' is a specialization of 'Item'.
+'data::ViewRanking' is a specialization of 'Ranking'.
+'data::StarRanking' is a specialization of 'Ranking'.
+'data::Image' is a specialization of 'Attachment'.
+'data::Event' is a specialization of 'MetaInformation'.
+'data::Phone' is a specialization of 'MetaInformation'.
+'data::Category' is a specialization of 'Classification'.
+'data::Video' is a specialization of 'Attachment'.
+'data::WebAccount' is a specialization of 'MetaInformation'.
+'data::InformationObject' is a specialization of 'Item'.
+'data::Document' is a specialization of 'Attachment'.
+'data::MetaInformation' is a specialization of 'Extension'.
+'data::Attachment' is a specialization of 'Extension'.
+'data::ThumbRanking' is a specialization of 'Ranking'.
+'data::WebSite' is a specialization of 'MetaInformation'.
+'data::Extension' is a specialization of 'Item'.
+'data::Binary' is a specialization of 'Attachment'.
+'data::Connection' is a specialization of 'Extension'.
+'data::Classification' is a specialization of 'Item'.
+'data::Transformation' is a specialization of 'Attachment'.
+'data::Identifier' is a specialization of 'Item'.
+'data::IndoorLocation' is a specialization of 'MetaInformation'.
+'data::Organisation' is a specialization of 'InformationObject'.
+'data::InstantMessenger' is a specialization of 'MetaInformation'.
+'data::Email' is a specialization of 'MetaInformation'.
+'data::Tag' is a specialization of 'Classification'.
+'data::Ranking' is a specialization of 'Extension'.
+'data::Item' (role 'metaTagged', cardinality 0..*) is associated with 'data::MetaTag' (role 'MetaTag', cardinality 0..*).
+'data::ThumbRanking' (role 'thumbRankings', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject89', cardinality 0..*).
+'data::Content' (role 'data_Content', cardinality 0..*) is associated with 'data::Document' (role 'data_Document', cardinality 0..*).
+'data::Content' (role 'parentContent', cardinality 0..*) is associated with 'data::Content' (role 'Content27', cardinality 0..*).
+'data::DataSet' (role 'data_DataSet', cardinality 0..*) is associated with 'data::Mashup' (role 'data_Mashup', cardinality 0..*).
+'data::Person' (role 'Person73', cardinality 0..*) is associated with 'data::Organisation' (role 'leaderOf', cardinality 0..*).
+'data::IndoorLocation' (role 'parentIndoorLocation', cardinality 0..*) is associated with 'data::IndoorLocation' (role 'IndoorLocation105', cardinality 0..*).
+'data::Item' (role 'Item47', cardinality 0..*) is associated with 'data::Item' (role 'deletedIfDeleted', cardinality 0..*).
+'data::Connection' (role 'Connection19', cardinality 0..*) is associated with 'data::InformationObject' (role 'to', cardinality 0..*).
+'data::Category' (role 'Category23', cardinality 0..*) is associated with 'data::InformationObject' (role 'mainCategorized', cardinality 0..*).
+'data::Connection' (role 'connectedTo', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject93', cardinality 0..*).
+'data::IndoorLocation' (role 'IndoorLocation102', cardinality 0..*) is associated with 'data::IndoorLocation' (role 'indoorLocations101', cardinality 0..*).
+'data::Item' (role 'Item50', cardinality 0..*) is associated with 'data::Item' (role 'deleteOnDelete', cardinality 0..*).
+'data::InformationObject' (role 'categorized', cardinality 0..*) is associated with 'data::Category' (role 'Category', cardinality 0..*).
+'data::Person' (role 'participants', cardinality 0..*) is associated with 'data::Organisation' (role 'Organisation2', cardinality 0..*).
+'data::Category' (role 'categories', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject', cardinality 0..*).
+'data::Binary' (role 'data_Binary', cardinality 0..*) is associated with 'data::InformationObject' (role 'data_InformationObject21', cardinality 0..*).
+'data::Content' (role 'contributed', cardinality 0..*) is associated with 'data::Person' (role 'Person', cardinality 0..*).
+'data::Identifier' (role 'Identifier', cardinality 0..*) is associated with 'data::Item' (role 'identified', cardinality 0..*).
+'data::Video' (role 'data_Video', cardinality 0..*) is associated with 'data::Content' (role 'data_Content37', cardinality 0..*).
+'data::DataSet' (role 'dataSet', cardinality 0..*) is associated with 'data::Item' (role 'Item', cardinality 0..*).
+'data::Organisation' (role 'Organisation78', cardinality 0..*) is associated with 'data::Organisation' (role 'parentOrganisation', cardinality 0..*).
+'data::Category' (role 'categories60', cardinality 0..*) is associated with 'data::Category' (role 'Category61', cardinality 0..*).
+'data::Person' (role 'Person30', cardinality 0..*) is associated with 'data::Content' (role 'authored', cardinality 0..*).
+'data::DataSet' (role 'data_DataSet41', cardinality 0..*) is associated with 'data::DeletedItem' (role 'data_DeletedItem', cardinality 0..*).
+'data::IndoorLocation' (role 'indoorLocations', cardinality 0..*) is associated with 'data::Location' (role 'Location', cardinality 0..*).
+'data::InformationObject' (role 'InformationObject85', cardinality 0..*) is associated with 'data::StarRanking' (role 'starRankings', cardinality 0..*).
+'data::ViewRanking' (role 'ViewRanking', cardinality 0..*) is associated with 'data::InformationObject' (role 'rankedInformationObject16', cardinality 0..*).
+'data::Content' (role 'Content34', cardinality 0..*) is associated with 'data::Content' (role 'contents', cardinality 0..*).
+'data::IndoorLocation' (role 'IndoorLocation', cardinality 0..*) is associated with 'data::Location' (role 'location', cardinality 0..*).
+'data::ViewRanking' (role 'viewRankings', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject87', cardinality 0..*).
+'data::MetaInformation' (role 'metaInformations', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject97', cardinality 0..*).
+'data::Content' (role 'Content', cardinality 0..*) is associated with 'data::Person' (role 'author', cardinality 0..*).
+'data::StarRanking' (role 'StarRanking', cardinality 0..*) is associated with 'data::InformationObject' (role 'rankedInformationObject', cardinality 0..*).
+'data::Organisation' (role 'organisations', cardinality 0..*) is associated with 'data::Organisation' (role 'Organisation71', cardinality 0..*).
+'data::Connection' (role 'connectedBy', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject95', cardinality 0..*).
+'data::Person' (role 'data_Person', cardinality 0..*) is associated with 'data::Person' (role 'data_Person6', cardinality 0..*).
+'data::Item' (role 'forcedDeleteOnDelete', cardinality 0..*) is associated with 'data::Item' (role 'Item56', cardinality 0..*).
+'data::Organisation' (role 'participates', cardinality 0..*) is associated with 'data::Person' (role 'Person75', cardinality 0..*).
+'data::InformationObject' (role 'InformationObject68', cardinality 0..*) is associated with 'data::Tag' (role 'tags', cardinality 0..*).
+'data::InformationObject' (role 'tagged', cardinality 0..*) is associated with 'data::Tag' (role 'Tag', cardinality 0..*).
+'data::InformationObject' (role 'rankedInformationObject14', cardinality 0..*) is associated with 'data::ThumbRanking' (role 'ThumbRanking', cardinality 0..*).
+'data::MetaTag' (role 'metaTags', cardinality 0..*) is associated with 'data::Item' (role 'Item80', cardinality 0..*).
+'data::Content' (role 'transformed', cardinality 0..*) is associated with 'data::Transformation' (role 'Transformation', cardinality 0..*).
+'data::Connection' (role 'Connection', cardinality 0..*) is associated with 'data::InformationObject' (role 'from_', cardinality 0..*).
+'data::Item' (role 'Item107', cardinality 0..*) is associated with 'data::Identifier' (role 'identifiedBy', cardinality 0..*).
+'data::Ranking' (role 'ranked', cardinality 0..*) is associated with 'data::Person' (role 'Person82', cardinality 0..*).
+'data::Item' (role 'forcedDeletedIfDeleted', cardinality 0..*) is associated with 'data::Item' (role 'Item53', cardinality 0..*).
+'data::Person' (role 'leader', cardinality 0..*) is associated with 'data::Organisation' (role 'Organisation', cardinality 0..*).
+'data::Image' (role 'data_Image', cardinality 0..*) is associated with 'data::InformationObject' (role 'data_InformationObject', cardinality 0..*).
+'data::Category' (role 'Category64', cardinality 0..*) is associated with 'data::Category' (role 'parentCategory', cardinality 0..*).
+'data::Category' (role 'mainCategory', cardinality 0..*) is associated with 'data::InformationObject' (role 'InformationObject66', cardinality 0..*).
+'data::Content' (role 'Content5', cardinality 0..*) is associated with 'data::Person' (role 'contributors', cardinality 0..*).
+'data::Ranking' (role 'Ranking', cardinality 0..*) is associated with 'data::Person' (role 'ranker', cardinality 0..*).
+'data::Item' (role 'items', cardinality 0..*) is associated with 'data::DataSet' (role 'DataSet', cardinality 0..*).
+'data::MetaInformation' (role 'MetaInformation', cardinality 0..*) is associated with 'data::InformationObject' (role 'informationObjects', cardinality 0..*).
+'data::Transformation' (role 'transformations', cardinality 0..*) is associated with 'data::Content' (role 'Content91', cardinality 0..*).

@@ -1,0 +1,55 @@
+The model has 20 class(es).
+The class 'di::GradientShape' has the following attributes: 'verticalGradient' of type bool; 'usingGradient' of type bool; 'gradientColor' of type int.
+The class 'di::Node' has the following attributes: 'allOutgoingLines' of type str; 'allIncomingLines' of type str.
+The class 'di::Ruler' has the following attributes: 'unit' of type str.
+The class 'di::Container' has the following attributes: 'allShapes' of type str; 'allLines' of type str.
+The class 'di::Guide' has the following attributes: 'position' of type int.
+The class 'di::Comment' has no attributes.
+The class 'di::Line' has the following attributes: 'sourceAnchor' of type str; 'sourceNode' of type str; 'targetNode' of type str; 'style' of type str; 'width' of type int; 'targetAnchor' of type str; 'lineDash' of type int; 'color' of type int.
+The class 'View' has no attributes.
+The class 'di::Grid' has the following attributes: 'style' of type str; 'color' of type int; 'spacing' of type int.
+The class 'di::EObject' has no attributes.
+The class 'Container' has no attributes.
+The class 'di::Shape' has the following attributes: 'foreground' of type int; 'background' of type int; 'bounds' of type str.
+The class 'di::CommentLink' has no attributes.
+The class 'Node' has no attributes.
+The class 'di::ElementEntry' has the following attributes: 'value' of type str.
+The class 'Shape' has no attributes.
+The class 'di::Connector' has no attributes.
+The class 'di::Diagram' has the following attributes: 'snapToGrid' of type bool; 'snapToGeometry' of type bool; 'rulers' of type str.
+The class 'di::View' has the following attributes: 'label' of type str; 'id' of type str.
+The class 'Line' has no attributes.
+The enumeration 'LineStyle' has the following literals: 'DASH', 'LINE_CUSTOM', 'SOLID', 'DASHDOT', 'DOT', 'DASHDOTDOT'.
+The enumeration 'RulerUnit' has the following literals: 'CENTIMETERS', 'PIXELS', 'INCHES'.
+The enumeration 'Alignment' has the following literals: 'BOTTOM', 'RIGHT', 'CENTER', 'TOP', 'LEFT'.
+'di::Connector' is a specialization of 'Line'.
+'di::Diagram' is a specialization of 'Container'.
+'di::GradientShape' is a specialization of 'Shape'.
+'di::Comment' is a specialization of 'Shape'.
+'di::CommentLink' is a specialization of 'Line'.
+'di::Node' is a specialization of 'View'.
+'di::Shape' is a specialization of 'Container'.
+'di::Shape' is a specialization of 'Node'.
+'di::Container' is a specialization of 'View'.
+'di::Line' is a specialization of 'Node'.
+'di::Comment' (role 'Comment', cardinality 0..*) is associated with 'di::CommentLink' (role 'inputs', cardinality 0..*).
+'di::Node' (role 'Node21', cardinality 0..*) is associated with 'di::Connector' (role 'outgoingLines', cardinality 0..*).
+'di::Connector' (role 'incomingLines', cardinality 0..*) is associated with 'di::Node' (role 'Node', cardinality 0..*).
+'di::Comment' (role 'target25', cardinality 0..*) is associated with 'di::CommentLink' (role 'CommentLink26', cardinality 0..*).
+'di::Grid' (role 'di_Grid', cardinality 0..*) is associated with 'di::Diagram' (role 'di_Diagram18', cardinality 0..*).
+'di::Shape' (role 'di_Shape', cardinality 0..*) is associated with 'di::Container' (role 'di_Container', cardinality 0..*).
+'di::Connector' (role 'di_Connector', cardinality 0..*) is associated with 'di::EObject' (role 'di_EObject23', cardinality 0..*).
+'di::ElementEntry' (role 'di_ElementEntry', cardinality 0..*) is associated with 'di::Guide' (role 'di_Guide', cardinality 0..*).
+'di::EObject' (role 'di_EObject', cardinality 0..*) is associated with 'di::View' (role 'di_View', cardinality 0..*).
+'di::ElementEntry' (role 'di_ElementEntry34', cardinality 0..*) is associated with 'di::View' (role 'di_View35', cardinality 0..*).
+'di::CommentLink' (role 'di_CommentLink', cardinality 0..*) is associated with 'di::Diagram' (role 'di_Diagram11', cardinality 0..*).
+'di::Ruler' (role 'di_Ruler16', cardinality 0..*) is associated with 'di::Diagram' (role 'di_Diagram15', cardinality 0..*).
+'di::CommentLink' (role 'CommentLink', cardinality 0..*) is associated with 'di::Node' (role 'source', cardinality 0..*).
+'di::Comment' (role 'di_Comment', cardinality 0..*) is associated with 'di::Diagram' (role 'di_Diagram', cardinality 0..*).
+'di::Node' (role 'target', cardinality 0..*) is associated with 'di::Connector' (role 'Connector5', cardinality 0..*).
+'di::Guide' (role 'Guide', cardinality 0..*) is associated with 'di::Ruler' (role 'ruler', cardinality 0..*).
+'di::Diagram' (role 'di_Diagram13', cardinality 0..*) is associated with 'di::Ruler' (role 'di_Ruler', cardinality 0..*).
+'di::Container' (role 'di_Container8', cardinality 0..*) is associated with 'di::Line' (role 'di_Line', cardinality 0..*).
+'di::CommentLink' (role 'commentLinks', cardinality 0..*) is associated with 'di::Node' (role 'Node28', cardinality 0..*).
+'di::Connector' (role 'Connector', cardinality 0..*) is associated with 'di::Node' (role 'source3', cardinality 0..*).
+'di::Ruler' (role 'Ruler', cardinality 0..*) is associated with 'di::Guide' (role 'guides', cardinality 0..*).

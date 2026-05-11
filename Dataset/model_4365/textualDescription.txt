@@ -1,0 +1,33 @@
+The model has 15 class(es).
+The class 'design::Aggregation' has no attributes.
+The class 'design::Generalization' has no attributes.
+The class 'design::Classifier' has the following attributes: 'accessModifier' of type str; 'name' of type str.
+The class 'design::Class' has no attributes.
+The class 'design::Composition' has no attributes.
+The class 'design::Interface' has no attributes.
+The class 'design::Design' has the following attributes: 'language' of type str.
+The class 'design::Operation' has the following attributes: 'returnType' of type str; 'name' of type str.
+The class 'design::Association' has no attributes.
+The class 'design::Dependency' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'Relation' has no attributes.
+The class 'design::Relation' has no attributes.
+The class 'design::Attribute' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'design::Realization' has no attributes.
+The enumeration 'AccessModifiers' has the following literals: 'public', 'protected', 'private'.
+The enumeration 'Types' has the following literals: 'float', 'void', 'string', 'double', 'long', 'boolean', 'int'.
+The enumeration 'Languages' has the following literals: 'CS', 'CPP', 'Python', 'Java'.
+'design::Aggregation' is a specialization of 'Relation'.
+'design::Class' is a specialization of 'Classifier'.
+'design::Association' is a specialization of 'Relation'.
+'design::Generalization' is a specialization of 'Relation'.
+'design::Dependency' is a specialization of 'Relation'.
+'design::Interface' is a specialization of 'Classifier'.
+'design::Composition' is a specialization of 'Relation'.
+'design::Realization' is a specialization of 'Relation'.
+'design::Classifier' (role 'design_Classifier8', cardinality 0..*) is associated with 'design::Relation' (role 'design_Relation7', cardinality 0..*).
+'design::Classifier' (role 'design_Classifier5', cardinality 0..*) is associated with 'design::Relation' (role 'design_Relation4', cardinality 0..*).
+'design::Design' (role 'design_Design', cardinality 0..*) is associated with 'design::Classifier' (role 'design_Classifier', cardinality 0..*).
+'design::Operation' (role 'design_Operation', cardinality 0..*) is associated with 'design::Classifier' (role 'design_Classifier12', cardinality 0..*).
+'design::Classifier' (role 'design_Classifier10', cardinality 0..*) is associated with 'design::Attribute' (role 'design_Attribute', cardinality 0..*).
+'design::Design' (role 'design_Design2', cardinality 0..*) is associated with 'design::Relation' (role 'design_Relation', cardinality 0..*).

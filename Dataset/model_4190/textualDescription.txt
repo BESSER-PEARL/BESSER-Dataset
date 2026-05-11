@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'evlDSL::Greeting' has the following attributes: 'name' of type str.
+The class 'evlDSL::Model' has no attributes.
+'evlDSL::Greeting' (role 'evlDSL_Greeting', cardinality 0..*) is associated with 'evlDSL::Model' (role 'evlDSL_Model', cardinality 0..*).

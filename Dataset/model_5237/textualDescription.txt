@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'Basic4::C' has the following attributes: 'a' of type bool; 'c' of type bool; 'd' of type bool; 'b' of type bool.

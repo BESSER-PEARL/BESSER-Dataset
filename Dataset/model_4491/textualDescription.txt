@@ -1,0 +1,20 @@
+The model has 6 class(es).
+The class 'missionsDSL::Condition' has the following attributes: 'sensor' of type str; 'relation' of type str.
+The class 'missionsDSL::Mission' has the following attributes: 'priority' of type int; 'type' of type str; 'name' of type str.
+The class 'missionsDSL::Action' has the following attributes: 'duration' of type int; 'action' of type str; 'value' of type int.
+The class 'missionsDSL::Robot' has the following attributes: 'slaveAddress' of type str; 'minAngle' of type int; 'defaultSpeed' of type int; 'maxAngle' of type int; 'slowSpeed' of type int; 'refreshRate' of type int.
+The class 'missionsDSL::NewMissions' has no attributes.
+The class 'missionsDSL::Value' has the following attributes: 'integer' of type int; 'color' of type str; 'bool' of type str.
+The enumeration 'Sensor' has the following literals: 'touch', 'color', 'proximity'.
+The enumeration 'Color' has the following literals: 'GREEN', 'RED', 'WHITE', 'BLUE', 'YELLOW', 'BROWN', 'BLACK'.
+The enumeration 'MissionType' has the following literals: 'FIND', 'FINDINORDER', 'AVOID', 'FINDSIMULTANEOUS'.
+The enumeration 'Relation' has the following literals: 'LE', 'GE', 'LT', 'GT', 'EQ'.
+The enumeration 'EV3_ACTION' has the following literals: 'HALT', 'STOP', 'ROTATE', 'PLAY', 'REVERSE'.
+'missionsDSL::Mission' (role 'missionsDSL_Mission5', cardinality 0..*) is associated with 'missionsDSL::Condition' (role 'missionsDSL_Condition', cardinality 0..*).
+'missionsDSL::Action' (role 'missionsDSL_Action14', cardinality 0..*) is associated with 'missionsDSL::Condition' (role 'missionsDSL_Condition13', cardinality 0..*).
+'missionsDSL::Mission' (role 'missionsDSL_Mission', cardinality 0..*) is associated with 'missionsDSL::Robot' (role 'missionsDSL_Robot', cardinality 0..*).
+'missionsDSL::Mission' (role 'missionsDSL_Mission7', cardinality 0..*) is associated with 'missionsDSL::Action' (role 'missionsDSL_Action', cardinality 0..*).
+'missionsDSL::Mission' (role 'missionsDSL_Mission3', cardinality 0..*) is associated with 'missionsDSL::Robot' (role 'missionsDSL_Robot2', cardinality 0..*).
+'missionsDSL::Value' (role 'missionsDSL_Value', cardinality 0..*) is associated with 'missionsDSL::Condition' (role 'missionsDSL_Condition11', cardinality 0..*).
+'missionsDSL::Mission' (role 'missionsDSL_Mission9', cardinality 0..*) is associated with 'missionsDSL::NewMissions' (role 'missionsDSL_NewMissions', cardinality 0..*).
+'missionsDSL::Mission' (role 'missionsDSL_Mission17', cardinality 0..*) is associated with 'missionsDSL::NewMissions' (role 'missionsDSL_NewMissions16', cardinality 0..*).

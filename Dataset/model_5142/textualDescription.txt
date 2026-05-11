@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'mytest::A' has the following attributes: 'name' of type str.
+The class 'mytest::MyRoot' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'mytest::B' has no attributes.
+'mytest::A' is a specialization of 'EModelElement'.
+'mytest::MyRoot' (role 'mytest_MyRoot', cardinality 0..*) is associated with 'mytest::A' (role 'mytest_A', cardinality 0..*).
+'mytest::A' (role 'A', cardinality 0..*) is associated with 'mytest::B' (role 'b', cardinality 0..*).
+'mytest::MyRoot' (role 'mytest_MyRoot4', cardinality 0..*) is associated with 'mytest::B' (role 'mytest_B', cardinality 0..*).
+'mytest::A' (role 'a', cardinality 0..*) is associated with 'mytest::B' (role 'B', cardinality 0..*).

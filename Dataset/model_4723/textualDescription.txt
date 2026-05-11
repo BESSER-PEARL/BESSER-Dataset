@@ -1,0 +1,58 @@
+The model has 21 class(es).
+The class 'simpliC::Decl' has the following attributes: 'name' of type str.
+The class 'Stmt' has no attributes.
+The class 'simpliC::Stmt' has no attributes.
+The class 'simpliC::Call' has no attributes.
+The class 'simpliC::ExprCall' has no attributes.
+The class 'simpliC::Args' has the following attributes: 'name' of type str.
+The class 'simpliC::IDuse' has no attributes.
+The class 'simpliC::Assign' has the following attributes: 'var' of type str.
+The class 'Factor' has no attributes.
+The class 'simpliC::Ifstmt' has no attributes.
+The class 'simpliC::Expr' has the following attributes: 'op' of type str.
+The class 'simpliC::Return' has no attributes.
+The class 'simpliC::TFact' has the following attributes: 'op' of type str.
+The class 'simpliC::Block' has no attributes.
+The class 'simpliC::Model' has no attributes.
+The class 'simpliC::Function' has the following attributes: 'name' of type str.
+The class 'simpliC::Type' has the following attributes: 'name' of type str.
+The class 'simpliC::Whilestmt' has no attributes.
+The class 'simpliC::Typedef' has the following attributes: 'name' of type str.
+The class 'simpliC::EObject' has no attributes.
+The class 'simpliC::Factor' has no attributes.
+'simpliC::ExprCall' is a specialization of 'Factor'.
+'simpliC::Call' is a specialization of 'Stmt'.
+'simpliC::Whilestmt' is a specialization of 'Stmt'.
+'simpliC::Return' is a specialization of 'Stmt'.
+'simpliC::Assign' is a specialization of 'Stmt'.
+'simpliC::Decl' is a specialization of 'Stmt'.
+'simpliC::Typedef' is a specialization of 'Stmt'.
+'simpliC::Ifstmt' is a specialization of 'Stmt'.
+'simpliC::IDuse' is a specialization of 'Factor'.
+'simpliC::Block' is a specialization of 'Stmt'.
+'simpliC::Expr' (role 'simpliC_Expr39', cardinality 0..*) is associated with 'simpliC::Decl' (role 'simpliC_Decl38', cardinality 0..*).
+'simpliC::Ifstmt' (role 'simpliC_Ifstmt24', cardinality 0..*) is associated with 'simpliC::Block' (role 'simpliC_Block25', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr45', cardinality 0..*) is associated with 'simpliC::EObject' (role 'simpliC_EObject46', cardinality 0..*).
+'simpliC::Function' (role 'simpliC_Function', cardinality 0..*) is associated with 'simpliC::Model' (role 'simpliC_Model', cardinality 0..*).
+'simpliC::Function' (role 'simpliC_Function14', cardinality 0..*) is associated with 'simpliC::ExprCall' (role 'simpliC_ExprCall', cardinality 0..*).
+'simpliC::TFact' (role 'simpliC_TFact50', cardinality 0..*) is associated with 'simpliC::Expr' (role 'simpliC_Expr51', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr27', cardinality 0..*) is associated with 'simpliC::Whilestmt' (role 'simpliC_Whilestmt', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr32', cardinality 0..*) is associated with 'simpliC::Return' (role 'simpliC_Return', cardinality 0..*).
+'simpliC::Stmt' (role 'simpliC_Stmt', cardinality 0..*) is associated with 'simpliC::Block' (role 'simpliC_Block8', cardinality 0..*).
+'simpliC::Whilestmt' (role 'simpliC_Whilestmt29', cardinality 0..*) is associated with 'simpliC::Block' (role 'simpliC_Block30', cardinality 0..*).
+'simpliC::Function' (role 'simpliC_Function4', cardinality 0..*) is associated with 'simpliC::Args' (role 'simpliC_Args', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr43', cardinality 0..*) is associated with 'simpliC::EObject' (role 'simpliC_EObject', cardinality 0..*).
+'simpliC::Decl' (role 'simpliC_Decl36', cardinality 0..*) is associated with 'simpliC::Typedef' (role 'simpliC_Typedef', cardinality 0..*).
+'simpliC::IDuse' (role 'simpliC_IDuse', cardinality 0..*) is associated with 'simpliC::Decl' (role 'simpliC_Decl53', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr48', cardinality 0..*) is associated with 'simpliC::TFact' (role 'simpliC_TFact', cardinality 0..*).
+'simpliC::Assign' (role 'simpliC_Assign', cardinality 0..*) is associated with 'simpliC::Expr' (role 'simpliC_Expr41', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr19', cardinality 0..*) is associated with 'simpliC::Ifstmt' (role 'simpliC_Ifstmt', cardinality 0..*).
+'simpliC::Ifstmt' (role 'simpliC_Ifstmt21', cardinality 0..*) is associated with 'simpliC::Block' (role 'simpliC_Block22', cardinality 0..*).
+'simpliC::Block' (role 'simpliC_Block', cardinality 0..*) is associated with 'simpliC::Function' (role 'simpliC_Function6', cardinality 0..*).
+'simpliC::Type' (role 'simpliC_Type56', cardinality 0..*) is associated with 'simpliC::Args' (role 'simpliC_Args55', cardinality 0..*).
+'simpliC::Function' (role 'simpliC_Function10', cardinality 0..*) is associated with 'simpliC::Call' (role 'simpliC_Call', cardinality 0..*).
+'simpliC::Call' (role 'simpliC_Call12', cardinality 0..*) is associated with 'simpliC::Expr' (role 'simpliC_Expr', cardinality 0..*).
+'simpliC::Decl' (role 'simpliC_Decl', cardinality 0..*) is associated with 'simpliC::Type' (role 'simpliC_Type34', cardinality 0..*).
+'simpliC::EObject' (role 'simpliC_EObject59', cardinality 0..*) is associated with 'simpliC::Typedef' (role 'simpliC_Typedef58', cardinality 0..*).
+'simpliC::Type' (role 'simpliC_Type', cardinality 0..*) is associated with 'simpliC::Function' (role 'simpliC_Function2', cardinality 0..*).
+'simpliC::Expr' (role 'simpliC_Expr17', cardinality 0..*) is associated with 'simpliC::ExprCall' (role 'simpliC_ExprCall16', cardinality 0..*).

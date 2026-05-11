@@ -1,0 +1,43 @@
+The model has 17 class(es).
+The class 'dot::stmt' has no attributes.
+The class 'dot::attr::list' has no attributes.
+The class 'dot::attr::stmt' has the following attributes: 'type' of type str.
+The class 'dot::a::list' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'dot::attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'dot::graph' has the following attributes: 'type' of type str; 'strict' of type bool; 'name' of type str.
+The class 'stmt' has no attributes.
+The class 'dot::edge::stmt::node' has no attributes.
+The class 'dot::edge::stmt::subgraph' has no attributes.
+The class 'dot::node::stmt' has the following attributes: 'name' of type str.
+The class 'dot::node::id' has the following attributes: 'name' of type str.
+The class 'dot::graphvizmodel' has no attributes.
+The class 'dot::edgeRHS' has the following attributes: 'op' of type str.
+The class 'dot::edgeRHS::node' has no attributes.
+The class 'edgeRHS' has no attributes.
+The class 'dot::edgeRHS::subgraph' has no attributes.
+The class 'dot::subgraph' has the following attributes: 'name' of type str.
+The enumeration 'edgeop' has the following literals: 'directed', 'undirected'.
+The enumeration 'attributetype' has the following literals: 'node', 'edge', 'graph'.
+The enumeration 'graphtype' has the following literals: 'graph', 'digraph'.
+'dot::edgeRHS::subgraph' is a specialization of 'edgeRHS'.
+'dot::edge::stmt::node' is a specialization of 'stmt'.
+'dot::subgraph' is a specialization of 'stmt'.
+'dot::edge::stmt::subgraph' is a specialization of 'stmt'.
+'dot::attribute' is a specialization of 'stmt'.
+'dot::edgeRHS::node' is a specialization of 'edgeRHS'.
+'dot::node::stmt' is a specialization of 'stmt'.
+'dot::attr::stmt' is a specialization of 'stmt'.
+'dot::attr::stmt' (role 'dot_attr_stmt', cardinality 0..*) is associated with 'dot::attr::list' (role 'dot_attr_list18', cardinality 0..*).
+'dot::attr::list' (role 'dot_attr_list20', cardinality 0..*) is associated with 'dot::a::list' (role 'dot_a_list', cardinality 0..*).
+'dot::subgraph' (role 'dot_subgraph', cardinality 0..*) is associated with 'dot::edge::stmt::subgraph' (role 'dot_edge_stmt_subgraph', cardinality 0..*).
+'dot::subgraph' (role 'dot_subgraph22', cardinality 0..*) is associated with 'dot::stmt' (role 'dot_stmt23', cardinality 0..*).
+'dot::attr::list' (role 'dot_attr_list14', cardinality 0..*) is associated with 'dot::edge::stmt::subgraph' (role 'dot_edge_stmt_subgraph13', cardinality 0..*).
+'dot::edgeRHS::node' (role 'dot_edgeRHS_node', cardinality 0..*) is associated with 'dot::node::id' (role 'dot_node_id25', cardinality 0..*).
+'dot::edge::stmt::node' (role 'dot_edge_stmt_node5', cardinality 0..*) is associated with 'dot::edgeRHS' (role 'dot_edgeRHS', cardinality 0..*).
+'dot::edgeRHS::subgraph' (role 'dot_edgeRHS_subgraph', cardinality 0..*) is associated with 'dot::subgraph' (role 'dot_subgraph27', cardinality 0..*).
+'dot::edge::stmt::node' (role 'dot_edge_stmt_node7', cardinality 0..*) is associated with 'dot::attr::list' (role 'dot_attr_list', cardinality 0..*).
+'dot::stmt' (role 'dot_stmt', cardinality 0..*) is associated with 'dot::graph' (role 'dot_graph2', cardinality 0..*).
+'dot::node::stmt' (role 'dot_node_stmt', cardinality 0..*) is associated with 'dot::attr::list' (role 'dot_attr_list16', cardinality 0..*).
+'dot::graph' (role 'dot_graph', cardinality 0..*) is associated with 'dot::graphvizmodel' (role 'dot_graphvizmodel', cardinality 0..*).
+'dot::edge::stmt::node' (role 'dot_edge_stmt_node', cardinality 0..*) is associated with 'dot::node::id' (role 'dot_node_id', cardinality 0..*).
+'dot::edgeRHS' (role 'dot_edgeRHS11', cardinality 0..*) is associated with 'dot::edge::stmt::subgraph' (role 'dot_edge_stmt_subgraph10', cardinality 0..*).

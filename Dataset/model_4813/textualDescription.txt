@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'trip::model::OtherService' has no attributes.
+The class 'trip::model::TripModel' has no attributes.
+The class 'Service' has no attributes.
+The class 'trip::model::Service' has the following attributes: 'Cost' of type float; 'Type' of type str; 'name' of type str; 'Duration' of type int; 'Rating' of type int.
+The class 'trip::model::location' has the following attributes: 'name' of type str.
+The class 'trip::model::Trip' has the following attributes: 'Start' of type date; 'End' of type date; 'name' of type str.
+The class 'trip::model::TravelService' has no attributes.
+'trip::model::TravelService' is a specialization of 'Service'.
+'trip::model::OtherService' is a specialization of 'Service'.
+'trip::model::location' (role 'trip_model_location', cardinality 0..*) is associated with 'trip::model::OtherService' (role 'trip_model_OtherService', cardinality 0..*).
+'trip::model::TravelService' (role 'trip_model_TravelService4', cardinality 0..*) is associated with 'trip::model::location' (role 'trip_model_location5', cardinality 0..*).
+'trip::model::location' (role 'trip_model_location2', cardinality 0..*) is associated with 'trip::model::TravelService' (role 'trip_model_TravelService', cardinality 0..*).
+'trip::model::TripModel' (role 'trip_model_TripModel', cardinality 0..*) is associated with 'trip::model::Trip' (role 'trip_model_Trip14', cardinality 0..*).
+'trip::model::Service' (role 'trip_model_Service', cardinality 0..*) is associated with 'trip::model::Trip' (role 'trip_model_Trip', cardinality 0..*).
+'trip::model::location' (role 'trip_model_location17', cardinality 0..*) is associated with 'trip::model::TripModel' (role 'trip_model_TripModel16', cardinality 0..*).
+'trip::model::location' (role 'trip_model_location12', cardinality 0..*) is associated with 'trip::model::Trip' (role 'trip_model_Trip11', cardinality 0..*).
+'trip::model::location' (role 'trip_model_location9', cardinality 0..*) is associated with 'trip::model::Trip' (role 'trip_model_Trip8', cardinality 0..*).

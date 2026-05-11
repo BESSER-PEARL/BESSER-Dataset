@@ -1,0 +1,53 @@
+The model has 19 class(es).
+The class 'robo::Program' has the following attributes: 'name' of type str.
+The class 'Expr' has no attributes.
+The class 'robo::condition::Condition' has no attributes.
+The class 'robo::Setup' has no attributes.
+The class 'robo::command::Drive' has the following attributes: 'direction' of type str.
+The class 'robo::command::Command' has no attributes.
+The class 'robo::Robot' has no attributes.
+The class 'robo::condition::Comparison' has the following attributes: 'operator' of type str.
+The class 'robo::command::Loop' has no attributes.
+The class 'robo::command::Branch' has no attributes.
+The class 'robo::command::Assignment' has the following attributes: 'variable' of type str.
+The class 'Command' has no attributes.
+The class 'robo::expression::Operation' has the following attributes: 'operator' of type str.
+The class 'Condition' has no attributes.
+The class 'robo::Sensor' has the following attributes: 'port' of type str; 'name' of type str; 'type' of type str; 'mode' of type str.
+The class 'robo::expression::Expr' has no attributes.
+The class 'robo::expression::Variable' has the following attributes: 'name' of type str.
+The class 'robo::expression::Literal' has the following attributes: 'value' of type float.
+The class 'robo::Motor' has the following attributes: 'reversed' of type bool; 'speed' of type float; 'port' of type str; 'type' of type str.
+The enumeration 'SensorPort' has the following literals: 'S1', 'S2', 'S4', 'S3'.
+The enumeration 'Direction' has the following literals: 'RIGHT', 'LEFT', 'FORWARD', 'BACKWARD'.
+The enumeration 'MotorType' has the following literals: 'LARGE', 'MEDIUM'.
+The enumeration 'ExprOperation' has the following literals: 'PLUS', 'MULTIPLY', 'DIVIDE', 'MINUS'.
+The enumeration 'SensorType' has the following literals: 'COLOR'.
+The enumeration 'MotorPort' has the following literals: 'A', 'D', 'C', 'B'.
+The enumeration 'SensorMode' has the following literals: 'RED', 'COLOR_ID', 'AMBIENT'.
+The enumeration 'ComparisonOperator' has the following literals: 'EQUAL', 'GREATER_OR_EQUAL', 'GREATER', 'LESS_OR_EQUAL', 'UNEQUAL', 'LESS'.
+'robo::command::Drive' is a specialization of 'Command'.
+'robo::command::Loop' is a specialization of 'Command'.
+'robo::expression::Operation' is a specialization of 'Expr'.
+'robo::condition::Comparison' is a specialization of 'Condition'.
+'robo::command::Branch' is a specialization of 'Command'.
+'robo::command::Assignment' is a specialization of 'Command'.
+'robo::expression::Variable' is a specialization of 'Expr'.
+'robo::expression::Literal' is a specialization of 'Expr'.
+'robo::Setup' (role 'robo_Setup4', cardinality 0..*) is associated with 'robo::Motor' (role 'robo_Motor', cardinality 0..*).
+'Expr' (role 'Expr26', cardinality 0..*) is associated with 'robo::command::Assignment' (role 'robo_command_Assignment', cardinality 0..*).
+'robo::Program' (role 'robo_Program11', cardinality 0..*) is associated with 'Command' (role 'Command', cardinality 0..*).
+'robo::command::Branch' (role 'robo_command_Branch', cardinality 0..*) is associated with 'Condition' (role 'Condition21', cardinality 0..*).
+'robo::Setup' (role 'robo_Setup', cardinality 0..*) is associated with 'robo::Robot' (role 'robo_Robot2', cardinality 0..*).
+'robo::command::Loop' (role 'robo_command_Loop18', cardinality 0..*) is associated with 'Command' (role 'Command19', cardinality 0..*).
+'robo::expression::Operation' (role 'robo_expression_Operation30', cardinality 0..*) is associated with 'Expr' (role 'Expr31', cardinality 0..*).
+'Expr' (role 'Expr', cardinality 0..*) is associated with 'robo::command::Drive' (role 'robo_command_Drive', cardinality 0..*).
+'robo::command::Loop' (role 'robo_command_Loop', cardinality 0..*) is associated with 'Condition' (role 'Condition16', cardinality 0..*).
+'Expr' (role 'Expr28', cardinality 0..*) is associated with 'robo::expression::Operation' (role 'robo_expression_Operation', cardinality 0..*).
+'Expr' (role 'Expr33', cardinality 0..*) is associated with 'robo::condition::Comparison' (role 'robo_condition_Comparison', cardinality 0..*).
+'robo::condition::Comparison' (role 'robo_condition_Comparison35', cardinality 0..*) is associated with 'Expr' (role 'Expr36', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'robo::command::Drive' (role 'robo_command_Drive14', cardinality 0..*).
+'robo::Setup' (role 'robo_Setup9', cardinality 0..*) is associated with 'robo::Sensor' (role 'robo_Sensor', cardinality 0..*).
+'Command' (role 'Command24', cardinality 0..*) is associated with 'robo::command::Branch' (role 'robo_command_Branch23', cardinality 0..*).
+'robo::Program' (role 'robo_Program', cardinality 0..*) is associated with 'robo::Robot' (role 'robo_Robot', cardinality 0..*).
+'robo::Setup' (role 'robo_Setup6', cardinality 0..*) is associated with 'robo::Motor' (role 'robo_Motor7', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class '::101companies::Company' has the following attributes: 'totalSalary' of type float; 'name' of type str.
+The class '::101companies::Department' has the following attributes: 'name' of type str; 'totalSalary' of type float.
+The class '::101companies::Employee' has the following attributes: 'salary' of type float; 'name' of type str; 'address' of type str.
+'::101companies::Department' (role '_101companies_Department6', cardinality 0..*) is associated with '::101companies::Department' (role '_101companies_Department8', cardinality 0..*).
+'::101companies::Department' (role '_101companies_Department', cardinality 0..*) is associated with '::101companies::Company' (role '_101companies_Company', cardinality 0..*).
+'::101companies::Employee' (role '_101companies_Employee', cardinality 0..*) is associated with '::101companies::Department' (role '_101companies_Department2', cardinality 0..*).
+'::101companies::Employee' (role '_101companies_Employee5', cardinality 0..*) is associated with '::101companies::Department' (role '_101companies_Department4', cardinality 0..*).

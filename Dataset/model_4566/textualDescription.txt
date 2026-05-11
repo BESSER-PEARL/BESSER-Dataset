@@ -1,0 +1,88 @@
+The model has 37 class(es).
+The class 'robot::Device' has the following attributes: 'proxy' of type bool; 'dataType' of type str; 'default' of type str; 'max' of type str; 'access' of type str; 'dataSize' of type int; 'min' of type str.
+The class 'Channel' has no attributes.
+The class 'robot::MotoringDevice' has no attributes.
+The class 'robot::Protocol' has the following attributes: 'bufferSize' of type int; 'version' of type str; 'remainingBuffer' of type int.
+The class 'robot::Findable' has no attributes.
+The class 'robot::TextChannel' has no attributes.
+The class 'MotoringDevice' has no attributes.
+The class 'robot::CommandChannel' has no attributes.
+The class 'robot::AudioChannel' has no attributes.
+The class 'Storable' has no attributes.
+The class 'robot::Control' has the following attributes: 'frameLimit' of type int; 'version' of type str.
+The class 'Findable' has no attributes.
+The class 'robot::DeviceListener' has no attributes.
+The class 'robot::ChannelDevice' has no attributes.
+The class 'robot::Robot' has the following attributes: 'version' of type str; 'standard' of type str; 'provider' of type str.
+The class 'robot::Sensor' has the following attributes: 'throttle' of type int.
+The class 'robot::ColorChannel' has the following attributes: 'mode' of type str.
+The class 'Simulacra' has no attributes.
+The class 'robot::Simulacra' has no attributes.
+The class 'robot::NamedElement' has the following attributes: 'name' of type str; 'comment' of type str; 'literal' of type str.
+The class 'NamedElement' has no attributes.
+The class 'robot::Storable' has no attributes.
+The class 'robot::Channel' has no attributes.
+The class 'robot::VoiceChannel' has no attributes.
+The class 'SensoryDevice' has no attributes.
+The class 'LinearChannel' has no attributes.
+The class 'robot::Command' has the following attributes: 'id' of type int.
+The class 'robot::Event' has the following attributes: 'id' of type int.
+The class 'robot::SensoryDevice' has no attributes.
+The class 'robot::FileChannel' has no attributes.
+The class 'robot::Port' has the following attributes: 'mode' of type str.
+The class 'Device' has no attributes.
+The class 'robot::LinearChannel' has the following attributes: 'mode' of type str.
+The class 'robot::Roboid' has the following attributes: 'uid' of type str; 'id' of type str; 'version' of type str; 'provider' of type str; 'address' of type str.
+The class 'robot::Effector' has the following attributes: 'sustain' of type int; 'throttle' of type int.
+The class 'ChannelDevice' has no attributes.
+The class 'robot::MatrixChannel' has no attributes.
+The enumeration 'DataType' has the following literals: 'SHORT', 'FLOAT', 'UNSIGNED_BYTE', 'UNSIGNED_SHORT', 'BYTE', 'INTEGER', 'STRING', 'IMAGE'.
+The enumeration 'ColorMode' has the following literals: 'BLUE', 'GREEN', 'GRAY', 'RED', 'RGB', 'RED_GREEN'.
+The enumeration 'AccessType' has the following literals: 'PRIVATE', 'PUBLIC'.
+The enumeration 'LinearMode' has the following literals: 'SUSTAIN', 'LINEAR'.
+The enumeration 'IoMode' has the following literals: 'DIGITAL_OUTPUT', 'NONE', 'SERVO_OUTPUT', 'DIGITAL_INPUT', 'PWM_OUTPUT', 'ANALOG_INPUT'.
+The enumeration 'AudioMode' has the following literals: 'MONO', 'STEREO'.
+'robot::MatrixChannel' is a specialization of 'LinearChannel'.
+'robot::CommandChannel' is a specialization of 'Channel'.
+'robot::ColorChannel' is a specialization of 'Channel'.
+'robot::AudioChannel' is a specialization of 'Channel'.
+'robot::FileChannel' is a specialization of 'Channel'.
+'robot::Robot' is a specialization of 'Storable'.
+'robot::Control' is a specialization of 'NamedElement'.
+'robot::Roboid' is a specialization of 'Findable'.
+'robot::SensoryDevice' is a specialization of 'Device'.
+'robot::Roboid' is a specialization of 'NamedElement'.
+'robot::Sensor' is a specialization of 'SensoryDevice'.
+'robot::Robot' is a specialization of 'NamedElement'.
+'robot::Event' is a specialization of 'SensoryDevice'.
+'robot::ChannelDevice' is a specialization of 'Device'.
+'robot::Port' is a specialization of 'ChannelDevice'.
+'robot::Device' is a specialization of 'NamedElement'.
+'robot::Effector' is a specialization of 'MotoringDevice'.
+'robot::Protocol' is a specialization of 'NamedElement'.
+'robot::Roboid' is a specialization of 'Simulacra'.
+'robot::Device' is a specialization of 'Storable'.
+'robot::LinearChannel' is a specialization of 'Channel'.
+'robot::Robot' is a specialization of 'Findable'.
+'robot::Channel' is a specialization of 'NamedElement'.
+'robot::Roboid' is a specialization of 'Storable'.
+'robot::TextChannel' is a specialization of 'Channel'.
+'robot::Command' is a specialization of 'MotoringDevice'.
+'robot::VoiceChannel' is a specialization of 'Channel'.
+'robot::MotoringDevice' is a specialization of 'ChannelDevice'.
+'robot::Device' is a specialization of 'Simulacra'.
+'robot::Event' (role 'robot_Event24', cardinality 0..*) is associated with 'robot::Event' (role 'robot_Event', cardinality 0..*).
+'robot::Command' (role 'robot_Command28', cardinality 0..*) is associated with 'robot::Event' (role 'robot_Event27', cardinality 0..*).
+'robot::Roboid' (role 'robot_Roboid3', cardinality 0..*) is associated with 'robot::Roboid' (role 'robot_Roboid5', cardinality 0..*).
+'robot::Effector' (role 'robot_Effector', cardinality 0..*) is associated with 'robot::Sensor' (role 'robot_Sensor18', cardinality 0..*).
+'robot::Effector' (role 'robot_Effector19', cardinality 0..*) is associated with 'robot::Effector' (role 'robot_Effector21', cardinality 0..*).
+'robot::Control' (role 'robot_Control14', cardinality 0..*) is associated with 'robot::Channel' (role 'robot_Channel', cardinality 0..*).
+'robot::Roboid' (role 'robot_Roboid', cardinality 0..*) is associated with 'robot::Robot' (role 'robot_Robot', cardinality 0..*).
+'robot::Roboid' (role 'robot_Roboid12', cardinality 0..*) is associated with 'robot::Roboid' (role 'robot_Roboid10', cardinality 0..*).
+'robot::Command' (role 'robot_Command', cardinality 0..*) is associated with 'robot::Command' (role 'robot_Command22', cardinality 0..*).
+'robot::Roboid' (role 'robot_Roboid7', cardinality 0..*) is associated with 'robot::Protocol' (role 'robot_Protocol', cardinality 0..*).
+'robot::Robot' (role 'robot_Robot2', cardinality 0..*) is associated with 'robot::Control' (role 'robot_Control', cardinality 0..*).
+'robot::Roboid' (role 'robot_Roboid9', cardinality 0..*) is associated with 'robot::Device' (role 'robot_Device', cardinality 0..*).
+'robot::Sensor' (role 'robot_Sensor15', cardinality 0..*) is associated with 'robot::Sensor' (role 'robot_Sensor', cardinality 0..*).
+'robot::ChannelDevice' (role 'robot_ChannelDevice', cardinality 0..*) is associated with 'robot::Channel' (role 'robot_Channel32', cardinality 0..*).
+'robot::Port' (role 'robot_Port29', cardinality 0..*) is associated with 'robot::Port' (role 'robot_Port', cardinality 0..*).

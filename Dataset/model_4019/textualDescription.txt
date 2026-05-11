@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Data::Model' has no attributes.
+The class 'Data::Attribut' has the following attributes: 'nom' of type str; 'type' of type str.
+The class 'Data::Classe' has the following attributes: 'nom' of type str.
+The class 'Data::Methode' has the following attributes: 'nom' of type str; 'typeRetour' of type str.
+'Data::Methode' (role 'Data_Methode4', cardinality 0..*) is associated with 'Data::Attribut' (role 'Data_Attribut5', cardinality 0..*).
+'Data::Methode' (role 'Data_Methode', cardinality 0..*) is associated with 'Data::Classe' (role 'Data_Classe2', cardinality 0..*).
+'Data::Model' (role 'Data_Model', cardinality 0..*) is associated with 'Data::Classe' (role 'Data_Classe7', cardinality 0..*).
+'Data::Attribut' (role 'Data_Attribut', cardinality 0..*) is associated with 'Data::Classe' (role 'Data_Classe', cardinality 0..*).

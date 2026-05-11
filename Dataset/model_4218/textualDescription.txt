@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'talltree::TallNode' has the following attributes: 'name' of type str; 'height' of type int.
+'talltree::TallNode' (role 'TallNode', cardinality 0..*) is associated with 'talltree::TallNode' (role 'parent', cardinality 0..*).
+'talltree::TallNode' (role 'TallNode4', cardinality 0..*) is associated with 'talltree::TallNode' (role 'children', cardinality 0..*).

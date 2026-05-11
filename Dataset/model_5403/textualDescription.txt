@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'UML2::Reception' has no attributes.
+The class 'UML2::Class' has the following attributes: 'isActive' of type bool.
+'UML2::Class' (role 'UML2_Class', cardinality 0..*) is associated with 'UML2::Reception' (role 'UML2_Reception', cardinality 0..*).

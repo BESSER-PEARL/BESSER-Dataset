@@ -1,0 +1,75 @@
+The model has 34 class(es).
+The class 'IODevice' has no attributes.
+The class 'iotw::StateSchema' has no attributes.
+The class 'iotw::BluetoothHC06' has the following attributes: 'pinVCC' of type str; 'pinTXD' of type str; 'pinRXD' of type str; 'pinGND' of type str.
+The class 'iotw::LM35' has the following attributes: 'pin1' of type str.
+The class 'iotw::StateComponent' has the following attributes: 'name' of type str.
+The class 'iotw::Connection' has the following attributes: 'kind' of type str; 'routerKind' of type str; 'label' of type str; 'bendpoints' of type str.
+The class 'iotw::Button' has the following attributes: 'pin1' of type str.
+The class 'iotw::Component' has the following attributes: 'constraints' of type str; 'id' of type str.
+The class 'iotw::DHT11' has the following attributes: 'pinGND' of type str; 'pinData' of type str; 'pinVcc' of type str.
+The class 'iotw::IODevice' has no attributes.
+The class 'iotw::EndPoint' has no attributes.
+The class 'iotw::LED' has the following attributes: 'pin2' of type str; 'pin1' of type str.
+The class 'iotw::Decision' has no attributes.
+The class 'iotw::Device' has the following attributes: 'name' of type str.
+The class 'Connectivity' has no attributes.
+The class 'Component' has no attributes.
+The class 'iotw::InputDevice' has no attributes.
+The class 'iotw::StartPoint' has no attributes.
+The class 'StateComponent' has no attributes.
+The class 'iotw::WifiESP8266' has the following attributes: 'pinTX' of type str; 'sSID_ST' of type str; 'port' of type int; 'pinGND' of type str; 'iP' of type str; 'pinCHPD' of type str; 'mode' of type str; 'protocol' of type str; 'password_AccessPoint' of type str; 'password_ST' of type str; 'sSID_AccessPoint' of type str; 'pinVcc' of type str; 'pinRX' of type str; 'baud' of type str; 'idConnection' of type str; 'connectedChannel' of type str.
+The class 'OutputDevice' has no attributes.
+The class 'iotw::Keypad4x4' has the following attributes: 'nameButton9' of type str; 'nameButton0' of type str; 'pin1' of type str; 'pin6' of type str; 'keys' of type str; 'nameButton2' of type str; 'cols' of type int; 'pin2' of type str; 'pin4' of type str; 'nameButton1' of type str; 'pin7' of type str; 'nameButton4' of type str; 'nameButtonHash' of type str; 'nameButtonAsterisk' of type str; 'nameButtonB' of type str; 'pin8' of type str; 'pin5' of type str; 'nameButton7' of type str; 'nameButton8' of type str; 'nameButton3' of type str; 'nameButton6' of type str; 'nameButtonA' of type str; 'nameButton5' of type str; 'rows' of type int; 'nameButtonD' of type str; 'pin3' of type str; 'nameButtonC' of type str.
+The class 'iotw::StateFrame' has the following attributes: 'content' of type str.
+The class 'iotw::CDS' has the following attributes: 'pinD0' of type str; 'pinVcc' of type str; 'pinGND' of type str.
+The class 'iotw::I2CLCD' has the following attributes: 'pinVcc' of type str; 'pinGND' of type str; 'type' of type str; 'pinSDA' of type str; 'pinSCL' of type str.
+The class 'iotw::Mainboard' has the following attributes: 'name' of type str.
+The class 'Device' has no attributes.
+The class 'iotw::ArduinoWiFiESP8266WeMosD1' has the following attributes: 'wifiMode' of type str; 'pinSCL' of type str; 'gateway' of type str; 'subnet' of type str; 'pinD8' of type str; 'pinD0' of type str; 'ip' of type str; 'pinSDA' of type str; 'pinD6' of type str; 'pinD7' of type str; 'pinD5' of type str; 'pinA0' of type str; 'pinD3' of type str; 'baud' of type int; 'pinD2' of type str; 'password' of type str; 'dns' of type str; 'pinD1' of type str; 'ssid' of type str; 'pinD4' of type str.
+The class 'iotw::OutputDevice' has no attributes.
+The class 'InputDevice' has no attributes.
+The class 'Mainboard' has no attributes.
+The class 'iotw::Buzzer' has the following attributes: 'pin2' of type str; 'Time' of type int; 'Tone' of type int; 'pin1' of type str.
+The class 'iotw::ArduinoUNOR3' has the following attributes: 'pin11' of type str; 'pin6' of type str; 'pin4' of type str; 'pin13' of type str; 'pin7' of type str; 'pin10' of type str; 'pin8' of type str; 'pinA5' of type str; 'pinA3' of type str; 'pin1' of type str; 'pin5' of type str; 'pin9' of type str; 'pinA1' of type str; 'pin3' of type str; 'pinA4' of type str; 'pinA2' of type str; 'pin2' of type str; 'pin12' of type str; 'pin0' of type str; 'pinA0' of type str.
+The class 'iotw::Connectivity' has no attributes.
+The enumeration 'WifiIDConnection' has the following literals: 'id_1', 'id_4', 'id_2', 'id_3', 'id_0'.
+The enumeration 'ESP8266WiFiMode' has the following literals: 'WIFI_AP', 'WIFI_AP_STA', 'WIFI_OFF', 'WIFI_STA'.
+The enumeration 'I2CLCDType' has the following literals: 'I2CLCD2004', 'I2CLCD1602'.
+The enumeration 'ListProtocol' has the following literals: 'TCP', 'UDP'.
+The enumeration 'ConnectionKind' has the following literals: 'OUTSIDE_FLOW', 'STATE_FLOW'.
+The enumeration 'WifiMode' has the following literals: 'Both', 'Station', 'Access_Point'.
+The enumeration 'RouterKind' has the following literals: 'BENDPOINT', 'MANHATTAN'.
+The enumeration 'ListConnectionChannel' has the following literals: 'Single', 'Multiple'.
+The enumeration 'ListBaud' has the following literals: 'baud_38400', 'baud_250000', 'baud_9600', 'baud_57600', 'baud_230400', 'baud_74880', 'baud_19200', 'baud_115200'.
+'iotw::StateComponent' is a specialization of 'Component'.
+'iotw::LED' is a specialization of 'OutputDevice'.
+'iotw::EndPoint' is a specialization of 'StateComponent'.
+'iotw::DHT11' is a specialization of 'InputDevice'.
+'iotw::Connectivity' is a specialization of 'Device'.
+'iotw::Decision' is a specialization of 'StateComponent'.
+'iotw::Button' is a specialization of 'InputDevice'.
+'iotw::InputDevice' is a specialization of 'IODevice'.
+'iotw::BluetoothHC06' is a specialization of 'Connectivity'.
+'iotw::Keypad4x4' is a specialization of 'InputDevice'.
+'iotw::StateFrame' is a specialization of 'StateComponent'.
+'iotw::CDS' is a specialization of 'InputDevice'.
+'iotw::WifiESP8266' is a specialization of 'Connectivity'.
+'iotw::I2CLCD' is a specialization of 'OutputDevice'.
+'iotw::LM35' is a specialization of 'InputDevice'.
+'iotw::OutputDevice' is a specialization of 'IODevice'.
+'iotw::StartPoint' is a specialization of 'StateComponent'.
+'iotw::Buzzer' is a specialization of 'OutputDevice'.
+'iotw::IODevice' is a specialization of 'Device'.
+'iotw::Device' is a specialization of 'Component'.
+'iotw::ArduinoUNOR3' is a specialization of 'Mainboard'.
+'iotw::ArduinoWiFiESP8266WeMosD1' is a specialization of 'Mainboard'.
+'iotw::Mainboard' (role 'mainboard', cardinality 0..*) is associated with 'iotw::Device' (role 'Device', cardinality 0..*).
+'iotw::Connection' (role 'iotw_Connection2', cardinality 0..*) is associated with 'iotw::Component' (role 'iotw_Component3', cardinality 0..*).
+'iotw::Connection' (role 'Connection', cardinality 0..*) is associated with 'iotw::StateSchema' (role 'stateSchema', cardinality 0..*).
+'iotw::StateSchema' (role 'StateSchema', cardinality 0..*) is associated with 'iotw::Connection' (role 'connnections', cardinality 0..*).
+'iotw::StateComponent' (role 'iotw_StateComponent', cardinality 0..*) is associated with 'iotw::StateSchema' (role 'iotw_StateSchema', cardinality 0..*).
+'iotw::Mainboard' (role 'Mainboard', cardinality 0..*) is associated with 'iotw::Device' (role 'devices', cardinality 0..*).
+'iotw::Connection' (role 'iotw_Connection9', cardinality 0..*) is associated with 'iotw::StateComponent' (role 'iotw_StateComponent8', cardinality 0..*).
+'iotw::Connection' (role 'iotw_Connection', cardinality 0..*) is associated with 'iotw::Component' (role 'iotw_Component', cardinality 0..*).
+'iotw::StateComponent' (role 'iotw_StateComponent11', cardinality 0..*) is associated with 'iotw::Connection' (role 'iotw_Connection12', cardinality 0..*).

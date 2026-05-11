@@ -1,0 +1,22 @@
+The model has 7 class(es).
+The class 'umlMM::Class' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'umlMM::Associaton' has the following attributes: 'name' of type str.
+The class 'umlMM::Classifier' has the following attributes: 'name' of type str.
+The class 'umlMM::Package' has the following attributes: 'name' of type str.
+The class 'umlMM::Datatype' has no attributes.
+The class 'umlMM::Attribute' has the following attributes: 'name' of type str.
+'umlMM::Class' is a specialization of 'Classifier'.
+'umlMM::Datatype' is a specialization of 'Classifier'.
+'umlMM::Attribute' (role 'attribute', cardinality 0..*) is associated with 'umlMM::Class' (role 'Class15', cardinality 0..*).
+'umlMM::Class' (role 'Class6', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'sourceOf', cardinality 0..*).
+'umlMM::Class' (role 'destination', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'Associaton8', cardinality 0..*).
+'umlMM::Classifier' (role 'Classifier', cardinality 0..*) is associated with 'umlMM::Package' (role 'namespace2', cardinality 0..*).
+'umlMM::Attribute' (role 'Attribute17', cardinality 0..*) is associated with 'umlMM::Classifier' (role 'type', cardinality 0..*).
+'umlMM::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'umlMM::Class' (role 'Owner', cardinality 0..*).
+'umlMM::Package' (role 'Package19', cardinality 0..*) is associated with 'umlMM::Classifier' (role 'classifier', cardinality 0..*).
+'umlMM::Package' (role 'Package', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'Association', cardinality 0..*).
+'umlMM::Package' (role 'namespace', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'Associaton', cardinality 0..*).
+'umlMM::Attribute' (role 'typeOf', cardinality 0..*) is associated with 'umlMM::Classifier' (role 'Classifier13', cardinality 0..*).
+'umlMM::Class' (role 'Class', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'destinationOf', cardinality 0..*).
+'umlMM::Class' (role 'source', cardinality 0..*) is associated with 'umlMM::Associaton' (role 'Associaton10', cardinality 0..*).

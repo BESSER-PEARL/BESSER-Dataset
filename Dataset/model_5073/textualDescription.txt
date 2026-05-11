@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'rental::Rental' has the following attributes: 'endDate' of type date; 'startDate' of type date.
+The class 'rental::RentalAgency' has the following attributes: 'name' of type str.
+The class 'rental::Customer' has the following attributes: 'lastName' of type str; 'firstName' of type str.
+The class 'rental::RentalObject' has the following attributes: 'name' of type str; 'ID' of type str; 'picture' of type str.
+The enumeration 'StreetType' has the following literals: 'Street', 'Road'.
+'rental::RentalAgency' (role 'parentAgency', cardinality 0..*) is associated with 'rental::RentalObject' (role 'RentalObject', cardinality 0..*).
+'rental::Rental' (role 'rental_Rental', cardinality 0..*) is associated with 'rental::Customer' (role 'rental_Customer', cardinality 0..*).
+'rental::Rental' (role 'rental_Rental10', cardinality 0..*) is associated with 'rental::RentalObject' (role 'rental_RentalObject', cardinality 0..*).
+'rental::RentalAgency' (role 'parentAgency2', cardinality 0..*) is associated with 'rental::Customer' (role 'Customer', cardinality 0..*).
+'rental::Rental' (role 'Rental', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'parentAgency4', cardinality 0..*).
+'rental::RentalAgency' (role 'RentalAgency7', cardinality 0..*) is associated with 'rental::RentalObject' (role 'objectsToRent', cardinality 0..*).
+'rental::RentalAgency' (role 'RentalAgency12', cardinality 0..*) is associated with 'rental::Rental' (role 'rentals', cardinality 0..*).
+'rental::RentalAgency' (role 'RentalAgency', cardinality 0..*) is associated with 'rental::Customer' (role 'customers', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'raspduinoDSL::Sensor' has no attributes.
+The class 'raspduinoDSL::Actuator' has no attributes.
+The class 'AbstractDevice' has no attributes.
+The class 'raspduinoDSL::ChangeActuator' has the following attributes: 'ActuatorState' of type str.
+The class 'raspduinoDSL::SensorListener' has the following attributes: 'l' of type int; 'type' of type str; 'h' of type int.
+The class 'raspduinoDSL::AbstractDevice' has the following attributes: 'name' of type str; 'pin' of type str.
+The class 'raspduinoDSL::Model' has the following attributes: 'name' of type str; 'hardware' of type str.
+The class 'raspduinoDSL::EventHandler' has the following attributes: 'name' of type str.
+The class 'raspduinoDSL::Timer' has the following attributes: 'hours' of type int; 'repeattype' of type str; 'minutes' of type int; 'secs' of type int.
+'raspduinoDSL::Actuator' is a specialization of 'AbstractDevice'.
+'raspduinoDSL::Sensor' is a specialization of 'AbstractDevice'.
+'raspduinoDSL::ChangeActuator' (role 'raspduinoDSL_ChangeActuator10', cardinality 0..*) is associated with 'raspduinoDSL::Actuator' (role 'raspduinoDSL_Actuator', cardinality 0..*).
+'raspduinoDSL::EventHandler' (role 'raspduinoDSL_EventHandler15', cardinality 0..*) is associated with 'raspduinoDSL::SensorListener' (role 'raspduinoDSL_SensorListener14', cardinality 0..*).
+'raspduinoDSL::ChangeActuator' (role 'raspduinoDSL_ChangeActuator', cardinality 0..*) is associated with 'raspduinoDSL::EventHandler' (role 'raspduinoDSL_EventHandler8', cardinality 0..*).
+'raspduinoDSL::EventHandler' (role 'raspduinoDSL_EventHandler18', cardinality 0..*) is associated with 'raspduinoDSL::Timer' (role 'raspduinoDSL_Timer17', cardinality 0..*).
+'raspduinoDSL::AbstractDevice' (role 'raspduinoDSL_AbstractDevice', cardinality 0..*) is associated with 'raspduinoDSL::Model' (role 'raspduinoDSL_Model', cardinality 0..*).
+'raspduinoDSL::SensorListener' (role 'raspduinoDSL_SensorListener', cardinality 0..*) is associated with 'raspduinoDSL::Model' (role 'raspduinoDSL_Model4', cardinality 0..*).
+'raspduinoDSL::Sensor' (role 'raspduinoDSL_Sensor', cardinality 0..*) is associated with 'raspduinoDSL::SensorListener' (role 'raspduinoDSL_SensorListener12', cardinality 0..*).
+'raspduinoDSL::Model' (role 'raspduinoDSL_Model6', cardinality 0..*) is associated with 'raspduinoDSL::Timer' (role 'raspduinoDSL_Timer', cardinality 0..*).
+'raspduinoDSL::EventHandler' (role 'raspduinoDSL_EventHandler', cardinality 0..*) is associated with 'raspduinoDSL::Model' (role 'raspduinoDSL_Model2', cardinality 0..*).

@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'adl202::Provided' has no attributes.
+The class 'adl202::BindingAttributes' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'adl202::Component' has the following attributes: 'name' of type str.
+The class 'adl202::Required' has no attributes.
+The class 'Interface' has no attributes.
+The class 'adl202::Binding' has the following attributes: 'name' of type str.
+The class 'adl202::Content' has the following attributes: 'expression' of type str; 'language' of type str.
+The class 'adl202::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+'adl202::Required' is a specialization of 'Interface'.
+'adl202::Provided' is a specialization of 'Interface'.
+'adl202::Component' (role 'adl202_Component2', cardinality 0..*) is associated with 'adl202::Required' (role 'adl202_Required', cardinality 0..*).
+'adl202::Binding' (role 'adl202_Binding14', cardinality 0..*) is associated with 'adl202::BindingAttributes' (role 'adl202_BindingAttributes', cardinality 0..*).
+'adl202::Provided' (role 'adl202_Provided25', cardinality 0..*) is associated with 'adl202::Required' (role 'adl202_Required26', cardinality 0..*).
+'adl202::Binding' (role 'adl202_Binding23', cardinality 0..*) is associated with 'adl202::Provided' (role 'adl202_Provided22', cardinality 0..*).
+'adl202::Content' (role 'adl202_Content19', cardinality 0..*) is associated with 'adl202::Component' (role 'adl202_Component20', cardinality 0..*).
+'adl202::Binding' (role 'adl202_Binding16', cardinality 0..*) is associated with 'adl202::Provided' (role 'adl202_Provided17', cardinality 0..*).
+'adl202::Binding' (role 'adl202_Binding11', cardinality 0..*) is associated with 'adl202::Required' (role 'adl202_Required12', cardinality 0..*).
+'adl202::Component' (role 'adl202_Component6', cardinality 0..*) is associated with 'adl202::Binding' (role 'adl202_Binding', cardinality 0..*).
+'adl202::Content' (role 'adl202_Content', cardinality 0..*) is associated with 'adl202::Component' (role 'adl202_Component', cardinality 0..*).
+'adl202::Component' (role 'adl202_Component7', cardinality 0..*) is associated with 'adl202::Component' (role 'adl202_Component9', cardinality 0..*).
+'adl202::Provided' (role 'adl202_Provided', cardinality 0..*) is associated with 'adl202::Component' (role 'adl202_Component4', cardinality 0..*).

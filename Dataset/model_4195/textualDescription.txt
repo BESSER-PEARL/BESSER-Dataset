@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'dSL::Greeting' has no attributes.
+The class 'dSL::Model' has no attributes.
+The class 'dSL::EClass' has no attributes.
+'dSL::Model' (role 'dSL_Model', cardinality 0..*) is associated with 'dSL::Greeting' (role 'dSL_Greeting', cardinality 0..*).
+'dSL::Greeting' (role 'dSL_Greeting2', cardinality 0..*) is associated with 'dSL::EClass' (role 'dSL_EClass', cardinality 0..*).

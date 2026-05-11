@@ -1,0 +1,160 @@
+The model has 75 class(es).
+The class 'gestionmodelosconsultas::entitymodel::Attribute' has the following attributes: 'attributeType' of type str; 'name' of type str; 'type' of type str; 'value' of type str; 'visible' of type bool.
+The class 'RealizacionDiagramEntity' has no attributes.
+The class 'gestionmodelosconsultas::cotracir::Propietario' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::ElementoRealizacionValueAttribute' has the following attributes: 'nombre' of type str.
+The class 'gestionmodelosconsultas::cotracir::Detallado' has no attributes.
+The class 'Value' has no attributes.
+The class 'ElementoConsulta' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::ElementoRealizacionDiagramEntity' has the following attributes: 'tipo' of type str; 'nombreModelElementEntity' of type str.
+The class 'gestionmodelosconsultas::cotracir::Consolidado' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::Value' has the following attributes: 'value' of type str.
+The class 'gestionmodelosconsultas::modeloconsultas::ModeloConsulta' has the following attributes: 'nombre' of type str.
+The class 'model::EADiagram' has no attributes.
+The class 'resultset::Resultado' has no attributes.
+The class 'gestionmodelosconsultas::modeloconsultas::FactoryModeloConsulta' has no attributes.
+The class 'modeloconsultas::gestionmodelosconsultas::ModelFactory' has no attributes.
+The class 'gestionmodelosconsultas::ModelFactory' has no attributes.
+The class 'gestionmodelosconsultas::model::Relacion' has the following attributes: 'order' of type str; 'estereotipo' of type str.
+The class 'factoryrules::RulesFactory' has no attributes.
+The class 'ElementoModelo' has no attributes.
+The class 'FactoryModeloConsulta' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::ElementoRealizacionVisibleAttribute' has the following attributes: 'nombre' of type str.
+The class 'DiagramEntity' has no attributes.
+The class 'gestionmodelosconsultas::model::Campo' has the following attributes: 'seleccion' of type bool; 'nombreCampo' of type str; 'criterio' of type str.
+The class 'gestionmodelosconsultas::factoryrules::RulesFactory' has no attributes.
+The class 'gestionmodelosconsultas::model::EADiagram' has the following attributes: 'nombre' of type str.
+The class 'model::ElementoConsulta' has no attributes.
+The class 'factoryrules::gestionmodelosconsultas::ModelFactory' has no attributes.
+The class 'gestionmodelosconsultas::model::ViewModel' has no attributes.
+The class 'factoryrules::Rule' has no attributes.
+The class 'EADiagram' has no attributes.
+The class 'gestionmodelosconsultas::model::ElementoConsulta' has the following attributes: 'order' of type str.
+The class 'factoryrules::ChildRule' has no attributes.
+The class 'model::Campo' has no attributes.
+The class 'gestionmodelosconsultas::factoryrules::ChildRule' has the following attributes: 'name' of type str.
+The class 'gestionmodelosconsultas::model::Proyeccion' has no attributes.
+The class 'gestionmodelosconsultas::model::ElementoModelo' has the following attributes: 'nombre' of type str.
+The class 'gestionmodelosconsultas::factoryrules::EntityName' has no attributes.
+The class 'model::ElementoModelo' has no attributes.
+The class 'ChildRule' has no attributes.
+The class 'gestionmodelosconsultas::resultset::Resultado' has the following attributes: 'nombre' of type str.
+The class 'gestionmodelosconsultas::factoryrules::RelationName' has no attributes.
+The class 'resultset::ResultElement' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::Entity' has no attributes.
+The class 'gestionmodelosconsultas::resultset::ElementoModeloResultado' has the following attributes: 'key' of type str.
+The class 'ModelElementEntity' has no attributes.
+The class 'ResultElement' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'resultset::ElementoModeloResultado' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::EntityRelation' has the following attributes: 'atributtePrimaryKeyTarget' of type str; 'atributteForeingKeySource' of type str; 'multiplicityTarget' of type str; 'multiplicitySource' of type str.
+The class 'gestionmodelosconsultas::cotracir::Trama' has no attributes.
+The class 'Entity' has no attributes.
+The class 'model::Relacion' has no attributes.
+The class 'gestionmodelosconsultas::factoryrules::Rule' has the following attributes: 'name' of type str.
+The class 'ElementoModeloResultado' has no attributes.
+The class 'ElementoRealizacionValueAttribute' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::Trama' has the following attributes: 'CADENA_TRAMA' of type str; 'ID' of type str.
+The class 'ElementoRealizacionVisibleAttribute' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::Consolidado' has the following attributes: 'RUTA_DESPACHO' of type str; 'ESTADO_CONSOLIDADO' of type str; 'HORA_DESPACHO' of type str; 'ESTADO_IMPRESION' of type str; 'REGISTRO_CONSOLIDADO' of type str; 'TOTAL_RECAUDO_BRUTO' of type str; 'ID' of type str; 'TOTAL_RECAUDO_DESPACHO' of type str.
+The class 'gestionmodelosconsultas::entitymodel::ModelElementEntity' has the following attributes: 'stereotype' of type str; 'name' of type str.
+The class 'gestionmodelosconsultas::resultcotracir::Propietario' has the following attributes: 'CEDULA' of type str; 'NOMBRE' of type str; 'ID' of type str.
+The class 'ElementoRealizacionDiagramEntity' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::Planilla' has the following attributes: 'TOTAL_DEPOSITO' of type str; 'USUARIO' of type str; 'TOTAL' of type str; 'ID' of type str; 'NOMBRE_PERSONA' of type str; 'TOTAL_RECAUDO_BRUTO' of type str; 'NUMERO_MOVIL' of type str; 'APELLIDO' of type str; 'TOTAL_RECAUDO_NETO' of type str; 'FECHA' of type str; 'CEDULA' of type str; 'TOTAL_GASTOS' of type str; 'CEDULA_CONDUCTOR' of type str; 'HORA_MODIFICACION' of type str; 'LIQUIDADO' of type str; 'CONDUCTOR' of type str.
+The class 'gestionmodelosconsultas::entitymodel::DiagramEntity' has no attributes.
+The class 'gestionmodelosconsultas::resultset::ResultElement' has no attributes.
+The class 'entitymodel::gestionmodelosconsultas::ModelFactory' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::Transaccion' has the following attributes: 'ID' of type str; 'ESTADO_TRANSACCION' of type str; 'VALOR' of type str; 'HORA' of type str; 'TIPO' of type str; 'DESCRIPCION' of type str; 'CATEGORIA' of type str.
+The class 'gestionmodelosconsultas::entitymodel::RealizacionDiagramEntity' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::NewClass' has no attributes.
+The class 'ModeloConsulta' has no attributes.
+The class 'gestionmodelosconsultas::resultcotracir::Detallado' has the following attributes: 'TOTAL_RECAUDO_TARIFA' of type str; 'REGISTRO_RECAUDO' of type str; 'COSTO_TARIFA' of type str; 'ID' of type str; 'NOMBRE' of type str; 'REGISTRO' of type str.
+The class 'gestionmodelosconsultas::entitymodel::SimpleRelation' has no attributes.
+The class 'gestionmodelosconsultas::cotracir::Planilla' has no attributes.
+The class 'EntityRelation' has no attributes.
+The class 'gestionmodelosconsultas::cotracir::Transaccion' has no attributes.
+The class 'gestionmodelosconsultas::entitymodel::AssociativeEntity' has no attributes.
+The enumeration 'Multiplicity' has the following literals: 'one_to_many', 'one_to_one', 'many_to_one'.
+The enumeration 'NombreCampo' has the following literals: 'RUTA_DESPACHO', 'TOTAL_GASTOS', 'ID', 'TOTAL_DEPOSITO', 'HORA_DESPACHO', 'CONDUCTOR', 'TOTAL_RECAUDO_NETO', 'REGISTRO_CONSOLIDADO', 'TOTAL_RECAUDO_RUTO', 'TOTAL_RECAUDO_DESPACHO', 'ESTADO_TRANSACCION', 'ESTADO_CONSOLIDADO', 'CEDULA_CONDUCTOR', 'ESTADO_IMPRESION', 'FECHA', 'default', 'LIQUIDADO', 'USUARIO', 'CADENA_TRAMA', 'NUMERO_MOVIL', 'NOMBRE_PERSONA', 'VALOR', 'APELLIDO', 'CEDULA', 'CATEGORIA', 'HORA_MODIFICACION', 'NOMBRE', 'REGISTRO', 'DESCRIPCION', 'TOTAL_RECAUDO_TARIFA', 'COSTO_TARIFA', 'REGISTRO_RECAUDO', 'TIPO', 'TOTAL', 'HORA', 'TOTAL_RECAUDO_BRUTO'.
+The enumeration 'AttributeType' has the following literals: 'primaryKey', 'ordinary'.
+The enumeration 'Type' has the following literals: 'string', 'float', 'int', 'date'.
+The enumeration 'TipoModelElementEntity' has the following literals: 'relation', 'entity'.
+'gestionmodelosconsultas::resultcotracir::Planilla' is a specialization of 'ElementoModeloResultado'.
+'gestionmodelosconsultas::resultcotracir::Detallado' is a specialization of 'ElementoModeloResultado'.
+'gestionmodelosconsultas::cotracir::Transaccion' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::cotracir::Trama' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::cotracir::Propietario' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::cotracir::Detallado' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::factoryrules::EntityName' is a specialization of 'ChildRule'.
+'gestionmodelosconsultas::cotracir::Planilla' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::entitymodel::Entity' is a specialization of 'ModelElementEntity'.
+'gestionmodelosconsultas::cotracir::Consolidado' is a specialization of 'ElementoConsulta'.
+'gestionmodelosconsultas::factoryrules::RelationName' is a specialization of 'ChildRule'.
+'gestionmodelosconsultas::entitymodel::EntityRelation' is a specialization of 'ModelElementEntity'.
+'gestionmodelosconsultas::entitymodel::SimpleRelation' is a specialization of 'EntityRelation'.
+'gestionmodelosconsultas::entitymodel::AssociativeEntity' is a specialization of 'Entity'.
+'gestionmodelosconsultas::model::Relacion' is a specialization of 'ElementoModelo'.
+'gestionmodelosconsultas::model::ViewModel' is a specialization of 'EADiagram'.
+'gestionmodelosconsultas::model::ElementoConsulta' is a specialization of 'ElementoModelo'.
+'gestionmodelosconsultas::model::Proyeccion' is a specialization of 'EADiagram'.
+'gestionmodelosconsultas::resultset::ElementoModeloResultado' is a specialization of 'ResultElement'.
+'gestionmodelosconsultas::resultcotracir::Transaccion' is a specialization of 'ElementoModeloResultado'.
+'gestionmodelosconsultas::resultcotracir::Trama' is a specialization of 'ElementoModeloResultado'.
+'gestionmodelosconsultas::resultcotracir::Consolidado' is a specialization of 'ElementoModeloResultado'.
+'gestionmodelosconsultas::resultcotracir::Propietario' is a specialization of 'ElementoModeloResultado'.
+'model::ElementoModelo' (role 'ElementoModelo', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::ElementoModelo' (role 'to', cardinality 0..*).
+'model::ElementoConsulta' (role 'ElementoConsulta94', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::EADiagram' (role 'EADiagram93', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::Entity' (role 'Entity', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'factoryrules::RulesFactory' (role 'RulesFactory', cardinality 0..*) is associated with 'gestionmodelosconsultas::ModelFactory' (role 'ModelFactory', cardinality 0..*).
+'factoryrules::Rule' (role 'Rule', cardinality 0..*) is associated with 'gestionmodelosconsultas::factoryrules::RulesFactory' (role 'RulesFactory8', cardinality 0..*).
+'Attribute' (role 'Attribute52', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ElementoRealizacionValueAttribute' (role 'ElementoRealizacionValueAttribute51', cardinality 0..*).
+'gestionmodelosconsultas::resultset::ElementoModeloResultado' (role 'ElementoModeloResultado', cardinality 0..*) is associated with 'resultset::ElementoModeloResultado' (role 'ElementoModeloResultado106', cardinality 0..*).
+'model::ElementoConsulta' (role 'model_ElementoConsulta', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::Relacion' (role 'gestionmodelosconsultas_model_Relacion', cardinality 0..*).
+'Entity' (role 'Entity24', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::EntityRelation' (role 'gestionmodelosconsultas_entitymodel_EntityRelation23', cardinality 0..*).
+'ModeloConsulta' (role 'ModeloConsulta80', cardinality 0..*) is associated with 'gestionmodelosconsultas::modeloconsultas::FactoryModeloConsulta' (role 'FactoryModeloConsulta79', cardinality 0..*).
+'gestionmodelosconsultas::modeloconsultas::ModeloConsulta' (role 'listModeloConsulta', cardinality 0..*) is associated with 'FactoryModeloConsulta' (role 'FactoryModeloConsulta71', cardinality 0..*).
+'Entity' (role 'Entity33', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::DiagramEntity' (role 'ownedByFactoryEntity', cardinality 0..*).
+'ElementoRealizacionValueAttribute' (role 'ElementoRealizacionValueAttribute', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::Attribute' (role 'valueAttribute', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::ElementoRealizacionVisibleAttribute' (role 'ElementoRealizacionVisibleAttribute61', cardinality 0..*) is associated with 'Attribute' (role 'Attribute62', cardinality 0..*).
+'resultset::Resultado' (role 'Resultado110', cardinality 0..*) is associated with 'gestionmodelosconsultas::resultset::ResultElement' (role 'listResultElement', cardinality 0..*).
+'DiagramEntity' (role 'DiagramEntity19', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::EntityRelation' (role 'listEntityRelation', cardinality 0..*).
+'gestionmodelosconsultas::model::ElementoModelo' (role 'from_', cardinality 0..*) is associated with 'model::ElementoModelo' (role 'ElementoModelo100', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::ElementoRealizacionValueAttribute' (role 'listElementoRealizacionAttribute', cardinality 0..*) is associated with 'ElementoRealizacionDiagramEntity' (role 'ElementoRealizacionDiagramEntity54', cardinality 0..*).
+'FactoryModeloConsulta' (role 'FactoryModeloConsulta', cardinality 0..*) is associated with 'gestionmodelosconsultas::ModelFactory' (role 'ModelFactory2', cardinality 0..*).
+'model::ElementoConsulta' (role 'model_ElementoConsulta86', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::Relacion' (role 'gestionmodelosconsultas_model_Relacion85', cardinality 0..*).
+'resultset::ElementoModeloResultado' (role 'ElementoModeloResultado108', cardinality 0..*) is associated with 'gestionmodelosconsultas::resultset::ElementoModeloResultado' (role 'listElementoModeloResultado', cardinality 0..*).
+'factoryrules::ChildRule' (role 'ChildRule', cardinality 0..*) is associated with 'gestionmodelosconsultas::factoryrules::Rule' (role 'Rule12', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::ElementoRealizacionDiagramEntity' (role 'ElementoRealizacionDiagramEntity44', cardinality 0..*) is associated with 'ModelElementEntity' (role 'ModelElementEntity', cardinality 0..*).
+'model::EADiagram' (role 'EADiagram82', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::Relacion' (role 'listRelacion', cardinality 0..*).
+'model::EADiagram' (role 'EADiagram', cardinality 0..*) is associated with 'gestionmodelosconsultas::modeloconsultas::ModeloConsulta' (role 'ModeloConsulta73', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::DiagramEntity' (role 'theFactoryEntity', cardinality 0..*) is associated with 'EntityRelation' (role 'EntityRelation', cardinality 0..*).
+'ElementoRealizacionVisibleAttribute' (role 'ElementoRealizacionVisibleAttribute', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::Attribute' (role 'visibleAttribute', cardinality 0..*).
+'ElementoRealizacionValueAttribute' (role 'ElementoRealizacionValueAttribute64', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::Value' (role 'values', cardinality 0..*).
+'Entity' (role 'Entity21', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::EntityRelation' (role 'gestionmodelosconsultas_entitymodel_EntityRelation', cardinality 0..*).
+'ModeloConsulta' (role 'ModeloConsulta102', cardinality 0..*) is associated with 'gestionmodelosconsultas::resultset::Resultado' (role 'listResultado', cardinality 0..*).
+'ElementoRealizacionVisibleAttribute' (role 'ElementoRealizacionVisibleAttribute40', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::RealizacionDiagramEntity' (role 'RealizacionDiagramEntity39', cardinality 0..*).
+'gestionmodelosconsultas::ModelFactory' (role 'ModelFactory4', cardinality 0..*) is associated with 'DiagramEntity' (role 'DiagramEntity', cardinality 0..*).
+'model::EADiagram' (role 'EADiagram96', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::ElementoConsulta' (role 'listElementoConsulta', cardinality 0..*).
+'model::Relacion' (role 'Relacion', cardinality 0..*) is associated with 'gestionmodelosconsultas::model::EADiagram' (role 'EADiagram89', cardinality 0..*).
+'factoryrules::Rule' (role 'Rule14', cardinality 0..*) is associated with 'gestionmodelosconsultas::factoryrules::ChildRule' (role 'listChildRule', cardinality 0..*).
+'RealizacionDiagramEntity' (role 'RealizacionDiagramEntity46', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ElementoRealizacionDiagramEntity' (role 'listElementoRealizacionDiagramEntity', cardinality 0..*).
+'Value' (role 'Value57', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ElementoRealizacionValueAttribute' (role 'ElementoRealizacionValueAttribute56', cardinality 0..*).
+'resultset::Resultado' (role 'Resultado', cardinality 0..*) is associated with 'gestionmodelosconsultas::modeloconsultas::ModeloConsulta' (role 'ModeloConsulta75', cardinality 0..*).
+'ModeloConsulta' (role 'ModeloConsulta', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::RealizacionDiagramEntity' (role 'realizacionDiagramEntity', cardinality 0..*).
+'ElementoRealizacionDiagramEntity' (role 'ElementoRealizacionDiagramEntity', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ModelElementEntity' (role 'modelElementEntity', cardinality 0..*).
+'RealizacionDiagramEntity' (role 'RealizacionDiagramEntity66', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::Value' (role 'listValues', cardinality 0..*).
+'factoryrules::RulesFactory' (role 'RulesFactory10', cardinality 0..*) is associated with 'gestionmodelosconsultas::factoryrules::Rule' (role 'listRuleDiagramEntity', cardinality 0..*).
+'Value' (role 'Value', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::RealizacionDiagramEntity' (role 'RealizacionDiagramEntity42', cardinality 0..*).
+'gestionmodelosconsultas::resultset::Resultado' (role 'Resultado104', cardinality 0..*) is associated with 'resultset::ResultElement' (role 'ResultElement', cardinality 0..*).
+'gestionmodelosconsultas::model::ElementoConsulta' (role 'ownedElementoConsulta', cardinality 0..*) is associated with 'model::Campo' (role 'Campo', cardinality 0..*).
+'factoryrules::gestionmodelosconsultas::ModelFactory' (role 'ModelFactory6', cardinality 0..*) is associated with 'gestionmodelosconsultas::factoryrules::RulesFactory' (role 'rulesFactory', cardinality 0..*).
+'DiagramEntity' (role 'DiagramEntity16', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::Entity' (role 'listEntity', cardinality 0..*).
+'gestionmodelosconsultas::model::EADiagram' (role 'listEADiagram', cardinality 0..*) is associated with 'ModeloConsulta' (role 'ModeloConsulta91', cardinality 0..*).
+'ElementoRealizacionValueAttribute' (role 'ElementoRealizacionValueAttribute49', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ElementoRealizacionDiagramEntity' (role 'ElementoRealizacionDiagramEntity48', cardinality 0..*).
+'gestionmodelosconsultas::model::Campo' (role 'listCampos', cardinality 0..*) is associated with 'model::ElementoConsulta' (role 'ElementoConsulta', cardinality 0..*).
+'ElementoRealizacionDiagramEntity' (role 'ElementoRealizacionDiagramEntity37', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::RealizacionDiagramEntity' (role 'RealizacionDiagramEntity', cardinality 0..*).
+'modeloconsultas::gestionmodelosconsultas::ModelFactory' (role 'ModelFactory77', cardinality 0..*) is associated with 'gestionmodelosconsultas::modeloconsultas::FactoryModeloConsulta' (role 'factoryModeloConsultas', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::DiagramEntity' (role 'diagramEntity', cardinality 0..*) is associated with 'entitymodel::gestionmodelosconsultas::ModelFactory' (role 'ModelFactory31', cardinality 0..*).
+'RealizacionDiagramEntity' (role 'RealizacionDiagramEntity69', cardinality 0..*) is associated with 'gestionmodelosconsultas::modeloconsultas::ModeloConsulta' (role 'ModeloConsulta68', cardinality 0..*).
+'gestionmodelosconsultas::entitymodel::Attribute' (role 'listAttributes', cardinality 0..*) is associated with 'Entity' (role 'Entity26', cardinality 0..*).
+'RealizacionDiagramEntity' (role 'RealizacionDiagramEntity59', cardinality 0..*) is associated with 'gestionmodelosconsultas::entitymodel::ElementoRealizacionVisibleAttribute' (role 'realizacionVisibleAttribute', cardinality 0..*).

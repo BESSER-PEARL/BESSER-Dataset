@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'metrics::RuleSetMetrics' has the following attributes: 'totalNumberOfNodes' of type int; 'totalNumberOfEdges' of type int; 'totalNumberOfAttributes' of type int; 'numberOfRules' of type int.
+The class 'metrics::RuleMetrics' has the following attributes: 'numberOfAttributes' of type int; 'numberOfEdges' of type int; 'numberOfNodes' of type int.
+The class 'metrics::Rule' has no attributes.
+'metrics::Rule' (role 'metrics_Rule', cardinality 0..*) is associated with 'metrics::RuleSetMetrics' (role 'metrics_RuleSetMetrics2', cardinality 0..*).
+'metrics::RuleSetMetrics' (role 'metrics_RuleSetMetrics', cardinality 0..*) is associated with 'metrics::RuleMetrics' (role 'metrics_RuleMetrics', cardinality 0..*).
+'metrics::Rule' (role 'metrics_Rule5', cardinality 0..*) is associated with 'metrics::RuleMetrics' (role 'metrics_RuleMetrics4', cardinality 0..*).

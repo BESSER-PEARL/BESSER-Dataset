@@ -1,0 +1,49 @@
+The model has 21 class(es).
+The class 'solution::Attribute' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'EditablePage' has no attributes.
+The class 'solution::ContextualLink' has no attributes.
+The class 'solution::EntityPage' has no attributes.
+The class 'solution::CreatePage' has no attributes.
+The class 'solution::UpdatePage' has no attributes.
+The class 'solution::DeletePage' has no attributes.
+The class 'solution::DynamicPage' has no attributes.
+The class 'solution::WebApplication' has the following attributes: 'name' of type str.
+The class 'solution::NonContextualLink' has no attributes.
+The class 'DynamicPage' has no attributes.
+The class 'solution::Relationship' has the following attributes: 'lowerBound' of type int; 'roleName' of type str; 'upperBound' of type int.
+The class 'solution::StaticPage' has no attributes.
+The class 'solution::IndexPage' has no attributes.
+The class 'solution::EditablePage' has no attributes.
+The class 'solution::Link' has the following attributes: 'name' of type str.
+The class 'solution::Entity' has the following attributes: 'name' of type str.
+The class 'Link' has no attributes.
+The class 'solution::WebPage' has the following attributes: 'name' of type str; 'relativeUrl' of type str.
+The class 'EntityPage' has no attributes.
+The class 'WebPage' has no attributes.
+The enumeration 'DataType' has the following literals: 'Boolean', 'Integer', 'Float', 'String'.
+'solution::NonContextualLink' is a specialization of 'Link'.
+'solution::DynamicPage' is a specialization of 'WebPage'.
+'solution::UpdatePage' is a specialization of 'EditablePage'.
+'solution::ContextualLink' is a specialization of 'Link'.
+'solution::StaticPage' is a specialization of 'WebPage'.
+'solution::DeletePage' is a specialization of 'EditablePage'.
+'solution::EditablePage' is a specialization of 'EntityPage'.
+'solution::CreatePage' is a specialization of 'EditablePage'.
+'solution::IndexPage' is a specialization of 'DynamicPage'.
+'solution::EntityPage' is a specialization of 'DynamicPage'.
+'solution::Entity' (role 'solution_Entity8', cardinality 0..*) is associated with 'solution::Attribute' (role 'solution_Attribute9', cardinality 0..*).
+'solution::Relationship' (role 'solution_Relationship16', cardinality 0..*) is associated with 'solution::Relationship' (role 'solution_Relationship14', cardinality 0..*).
+'solution::WebApplication' (role 'solution_WebApplication4', cardinality 0..*) is associated with 'solution::StaticPage' (role 'solution_StaticPage', cardinality 0..*).
+'solution::WebApplication' (role 'solution_WebApplication', cardinality 0..*) is associated with 'solution::Entity' (role 'solution_Entity', cardinality 0..*).
+'solution::NonContextualLink' (role 'solution_NonContextualLink', cardinality 0..*) is associated with 'solution::WebPage' (role 'solution_WebPage20', cardinality 0..*).
+'solution::Entity' (role 'solution_Entity6', cardinality 0..*) is associated with 'solution::Attribute' (role 'solution_Attribute', cardinality 0..*).
+'solution::Relationship' (role 'solution_Relationship', cardinality 0..*) is associated with 'solution::Entity' (role 'solution_Entity13', cardinality 0..*).
+'solution::WebPage' (role 'solution_WebPage', cardinality 0..*) is associated with 'solution::WebApplication' (role 'solution_WebApplication2', cardinality 0..*).
+'solution::Entity' (role 'solution_Entity29', cardinality 0..*) is associated with 'solution::ContextualLink' (role 'solution_ContextualLink', cardinality 0..*).
+'solution::Link' (role 'solution_Link', cardinality 0..*) is associated with 'solution::WebPage' (role 'solution_WebPage18', cardinality 0..*).
+'solution::Entity' (role 'source', cardinality 0..*) is associated with 'solution::Relationship' (role 'Relationship', cardinality 0..*).
+'solution::EntityPage' (role 'solution_EntityPage31', cardinality 0..*) is associated with 'solution::EditablePage' (role 'solution_EditablePage', cardinality 0..*).
+'solution::WebPage' (role 'solution_WebPage27', cardinality 0..*) is associated with 'solution::Link' (role 'solution_Link26', cardinality 0..*).
+'solution::Relationship' (role 'relationships', cardinality 0..*) is associated with 'solution::Entity' (role 'Entity', cardinality 0..*).
+'solution::EntityPage' (role 'solution_EntityPage', cardinality 0..*) is associated with 'solution::DynamicPage' (role 'solution_DynamicPage24', cardinality 0..*).
+'solution::Entity' (role 'solution_Entity22', cardinality 0..*) is associated with 'solution::DynamicPage' (role 'solution_DynamicPage', cardinality 0..*).

@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'compositestates::AbstractState' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'compositestates::State' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'compositestates::Pseudostate' has the following attributes: 'kind' of type str.
+The class 'compositestates::Transition' has no attributes.
+The class 'compositestates::Region' has no attributes.
+The class 'compositestates::NamedElement' has the following attributes: 'name' of type str.
+The enumeration 'PseudostateKind' has the following literals: 'initial'.
+'compositestates::Pseudostate' is a specialization of 'AbstractState'.
+'compositestates::State' is a specialization of 'AbstractState'.
+'compositestates::Region' is a specialization of 'NamedElement'.
+'compositestates::AbstractState' (role 'AbstractState9', cardinality 0..*) is associated with 'compositestates::Transition' (role 'outgoing', cardinality 0..*).
+'compositestates::Region' (role 'ownerRegion', cardinality 0..*) is associated with 'compositestates::AbstractState' (role 'AbstractState', cardinality 0..*).
+'compositestates::Transition' (role 'incoming', cardinality 0..*) is associated with 'compositestates::AbstractState' (role 'AbstractState11', cardinality 0..*).
+'compositestates::State' (role 'State', cardinality 0..*) is associated with 'compositestates::Region' (role 'ownedRegions', cardinality 0..*).
+'compositestates::Transition' (role 'Transition5', cardinality 0..*) is associated with 'compositestates::AbstractState' (role 'source', cardinality 0..*).
+'compositestates::State' (role 'ownerState', cardinality 0..*) is associated with 'compositestates::Region' (role 'Region', cardinality 0..*).
+'compositestates::AbstractState' (role 'target', cardinality 0..*) is associated with 'compositestates::Transition' (role 'Transition', cardinality 0..*).
+'compositestates::AbstractState' (role 'subvertex', cardinality 0..*) is associated with 'compositestates::Region' (role 'Region7', cardinality 0..*).

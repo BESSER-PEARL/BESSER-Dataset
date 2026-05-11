@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tdegueul/ale-xbase/examples/composition/simpleb/model/simpleb.ecore

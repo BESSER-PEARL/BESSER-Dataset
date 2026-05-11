@@ -1,0 +1,97 @@
+The model has 31 class(es).
+The class 'dsl::DiffElement' has no attributes.
+The class 'dsl::Boolean::Object' has the following attributes: 'value' of type bool.
+The class 'dsl::EqualElement' has no attributes.
+The class 'dsl::Action' has no attributes.
+The class 'dsl::SmallerElement' has no attributes.
+The class 'dsl::Number::Object' has the following attributes: 'value' of type str.
+The class 'dsl::State' has the following attributes: 'name' of type str.
+The class 'dsl::MinusElement' has no attributes.
+The class 'dsl::RunTimeModel' has no attributes.
+The class 'dsl::LargerElement' has no attributes.
+The class 'dsl::AndElement' has no attributes.
+The class 'dsl::Resource::Object' has no attributes.
+The class 'dsl::SmallerEqualElement' has no attributes.
+The class 'Element' has no attributes.
+The class 'dsl::MultiplicationElement' has no attributes.
+The class 'dsl::LargerEqualElement' has no attributes.
+The class 'dsl::Resource' has the following attributes: 'name' of type str.
+The class 'dsl::Specification' has the following attributes: 'specID' of type str; 'priority' of type int.
+The class 'dsl::Trigger' has no attributes.
+The class 'dsl::ElseDoSpec' has no attributes.
+The class 'dsl::AppMetaData' has the following attributes: 'appID' of type str.
+The class 'dsl::NegateElement' has no attributes.
+The class 'dsl::EnvironmentMetaData' has no attributes.
+The class 'dsl::IfDoSpec' has no attributes.
+The class 'dsl::State::Object' has no attributes.
+The class 'dsl::PlusElement' has no attributes.
+The class 'dsl::OrElement' has no attributes.
+The class 'dsl::ModuloElement' has no attributes.
+The class 'dsl::ElseIfDoSpec' has no attributes.
+The class 'dsl::DivisionElement' has no attributes.
+The class 'dsl::Element' has no attributes.
+'dsl::OrElement' is a specialization of 'Element'.
+'dsl::SmallerEqualElement' is a specialization of 'Element'.
+'dsl::DivisionElement' is a specialization of 'Element'.
+'dsl::PlusElement' is a specialization of 'Element'.
+'dsl::ModuloElement' is a specialization of 'Element'.
+'dsl::Boolean::Object' is a specialization of 'Element'.
+'dsl::AndElement' is a specialization of 'Element'.
+'dsl::Resource::Object' is a specialization of 'Element'.
+'dsl::SmallerElement' is a specialization of 'Element'.
+'dsl::Number::Object' is a specialization of 'Element'.
+'dsl::MinusElement' is a specialization of 'Element'.
+'dsl::MultiplicationElement' is a specialization of 'Element'.
+'dsl::State::Object' is a specialization of 'Element'.
+'dsl::NegateElement' is a specialization of 'Element'.
+'dsl::LargerElement' is a specialization of 'Element'.
+'dsl::LargerEqualElement' is a specialization of 'Element'.
+'dsl::DiffElement' is a specialization of 'Element'.
+'dsl::EqualElement' is a specialization of 'Element'.
+'dsl::Specification' (role 'dsl_Specification', cardinality 0..*) is associated with 'dsl::AppMetaData' (role 'dsl_AppMetaData5', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element83', cardinality 0..*) is associated with 'dsl::PlusElement' (role 'dsl_PlusElement', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action37', cardinality 0..*) is associated with 'dsl::Resource' (role 'dsl_Resource38', cardinality 0..*).
+'dsl::Specification' (role 'dsl_Specification7', cardinality 0..*) is associated with 'dsl::Trigger' (role 'dsl_Trigger', cardinality 0..*).
+'dsl::SmallerEqualElement' (role 'dsl_SmallerEqualElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element78', cardinality 0..*).
+'dsl::AndElement' (role 'dsl_AndElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element48', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element63', cardinality 0..*) is associated with 'dsl::LargerElement' (role 'dsl_LargerElement', cardinality 0..*).
+'dsl::PlusElement' (role 'dsl_PlusElement85', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element86', cardinality 0..*).
+'dsl::State' (role 'dsl_State41', cardinality 0..*) is associated with 'dsl::Action' (role 'dsl_Action40', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element106', cardinality 0..*) is associated with 'dsl::ModuloElement' (role 'dsl_ModuloElement105', cardinality 0..*).
+'dsl::EnvironmentMetaData' (role 'dsl_EnvironmentMetaData', cardinality 0..*) is associated with 'dsl::RunTimeModel' (role 'dsl_RunTimeModel', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element96', cardinality 0..*) is associated with 'dsl::MultiplicationElement' (role 'dsl_MultiplicationElement95', cardinality 0..*).
+'dsl::MultiplicationElement' (role 'dsl_MultiplicationElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element93', cardinality 0..*).
+'dsl::Specification' (role 'dsl_Specification11', cardinality 0..*) is associated with 'dsl::ElseIfDoSpec' (role 'dsl_ElseIfDoSpec', cardinality 0..*).
+'dsl::EqualElement' (role 'dsl_EqualElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element58', cardinality 0..*).
+'dsl::ElseDoSpec' (role 'dsl_ElseDoSpec', cardinality 0..*) is associated with 'dsl::Specification' (role 'dsl_Specification13', cardinality 0..*).
+'dsl::IfDoSpec' (role 'dsl_IfDoSpec23', cardinality 0..*) is associated with 'dsl::Action' (role 'dsl_Action', cardinality 0..*).
+'dsl::ModuloElement' (role 'dsl_ModuloElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element103', cardinality 0..*).
+'dsl::Resource' (role 'dsl_Resource', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State', cardinality 0..*).
+'dsl::IfDoSpec' (role 'dsl_IfDoSpec21', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element', cardinality 0..*).
+'dsl::LargerEqualElement' (role 'dsl_LargerEqualElement70', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element71', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element88', cardinality 0..*) is associated with 'dsl::MinusElement' (role 'dsl_MinusElement', cardinality 0..*).
+'dsl::ElseIfDoSpec' (role 'dsl_ElseIfDoSpec25', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element26', cardinality 0..*).
+'dsl::DiffElement' (role 'dsl_DiffElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element53', cardinality 0..*).
+'dsl::RunTimeModel' (role 'dsl_RunTimeModel2', cardinality 0..*) is associated with 'dsl::AppMetaData' (role 'dsl_AppMetaData', cardinality 0..*).
+'dsl::Resource' (role 'dsl_Resource16', cardinality 0..*) is associated with 'dsl::Trigger' (role 'dsl_Trigger15', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action29', cardinality 0..*) is associated with 'dsl::ElseIfDoSpec' (role 'dsl_ElseIfDoSpec28', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element81', cardinality 0..*) is associated with 'dsl::SmallerEqualElement' (role 'dsl_SmallerEqualElement80', cardinality 0..*).
+'dsl::DivisionElement' (role 'dsl_DivisionElement100', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element101', cardinality 0..*).
+'dsl::State' (role 'dsl_State19', cardinality 0..*) is associated with 'dsl::Trigger' (role 'dsl_Trigger18', cardinality 0..*).
+'dsl::SmallerElement' (role 'dsl_SmallerElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element73', cardinality 0..*).
+'dsl::LargerElement' (role 'dsl_LargerElement65', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element66', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element46', cardinality 0..*) is associated with 'dsl::OrElement' (role 'dsl_OrElement45', cardinality 0..*).
+'dsl::NegateElement' (role 'dsl_NegateElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element112', cardinality 0..*).
+'dsl::Resource' (role 'dsl_Resource35', cardinality 0..*) is associated with 'dsl::EnvironmentMetaData' (role 'dsl_EnvironmentMetaData34', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element98', cardinality 0..*) is associated with 'dsl::DivisionElement' (role 'dsl_DivisionElement', cardinality 0..*).
+'dsl::LargerEqualElement' (role 'dsl_LargerEqualElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element68', cardinality 0..*).
+'dsl::DiffElement' (role 'dsl_DiffElement55', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element56', cardinality 0..*).
+'dsl::Specification' (role 'dsl_Specification9', cardinality 0..*) is associated with 'dsl::IfDoSpec' (role 'dsl_IfDoSpec', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action32', cardinality 0..*) is associated with 'dsl::ElseDoSpec' (role 'dsl_ElseDoSpec31', cardinality 0..*).
+'dsl::SmallerElement' (role 'dsl_SmallerElement75', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element76', cardinality 0..*).
+'dsl::Element' (role 'dsl_Element91', cardinality 0..*) is associated with 'dsl::MinusElement' (role 'dsl_MinusElement90', cardinality 0..*).
+'dsl::AndElement' (role 'dsl_AndElement50', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element51', cardinality 0..*).
+'dsl::OrElement' (role 'dsl_OrElement', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element43', cardinality 0..*).
+'dsl::State::Object' (role 'dsl_State_Object', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State110', cardinality 0..*).
+'dsl::EqualElement' (role 'dsl_EqualElement60', cardinality 0..*) is associated with 'dsl::Element' (role 'dsl_Element61', cardinality 0..*).
+'dsl::Resource::Object' (role 'dsl_Resource_Object', cardinality 0..*) is associated with 'dsl::Resource' (role 'dsl_Resource108', cardinality 0..*).

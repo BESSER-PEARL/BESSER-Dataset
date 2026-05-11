@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'QualityMetrics::AggregatedRealMetric' has the following attributes: 'Maximum' of type float; 'Minimum' of type float; 'StandardDeviation' of type float; 'Median' of type float; 'Average' of type float.
+The class 'QualityMetrics::AggregatedIntegerMetric' has the following attributes: 'StandardDeviation' of type float; 'Maximum' of type int; 'Minimum' of type int; 'Average' of type float; 'Median' of type int.
+The class 'QualityMetrics::SimpleMetric' has the following attributes: 'Value' of type int.
+The class 'QualityMetrics::Metric' has the following attributes: 'Metric' of type str.
+The class 'Metric' has no attributes.
+The class 'QualityMetrics::Metrics' has the following attributes: 'TrafoName' of type str.
+'QualityMetrics::AggregatedRealMetric' is a specialization of 'Metric'.
+'QualityMetrics::SimpleMetric' is a specialization of 'Metric'.
+'QualityMetrics::AggregatedIntegerMetric' is a specialization of 'Metric'.
+'QualityMetrics::Metrics' (role 'QualityMetrics_Metrics4', cardinality 0..*) is associated with 'QualityMetrics::AggregatedRealMetric' (role 'QualityMetrics_AggregatedRealMetric', cardinality 0..*).
+'QualityMetrics::AggregatedIntegerMetric' (role 'QualityMetrics_AggregatedIntegerMetric', cardinality 0..*) is associated with 'QualityMetrics::Metrics' (role 'QualityMetrics_Metrics2', cardinality 0..*).
+'QualityMetrics::SimpleMetric' (role 'QualityMetrics_SimpleMetric', cardinality 0..*) is associated with 'QualityMetrics::Metrics' (role 'QualityMetrics_Metrics', cardinality 0..*).

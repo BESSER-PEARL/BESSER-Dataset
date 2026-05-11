@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/damenac/puzzle/examples/fsm-logo-flowchart/puzzle.examples.overlap.logo.metamodel/models/logo.ecore

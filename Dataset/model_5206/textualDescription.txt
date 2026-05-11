@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'FaultyUMLmodel::A' has the following attributes: 'v' of type int; 'w' of type bool.
+The class 'FaultyUMLmodel::D' has the following attributes: 'z' of type bool.
+The class 'FaultyUMLmodel::B' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'FaultyUMLmodel::C' has the following attributes: 'u' of type int.

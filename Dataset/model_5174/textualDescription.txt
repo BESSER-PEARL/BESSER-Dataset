@@ -1,0 +1,88 @@
+The model has 38 class(es).
+The class 'testmodel::C' has the following attributes: 'c' of type str.
+The class 'testmodel::B' has the following attributes: 'b' of type str.
+The class 'testmodel::A' has the following attributes: 'a' of type str.
+The class 'testmodel::SubInterface2' has no attributes.
+The class 'testmodel::SubClass4' has no attributes.
+The class 'A' has no attributes.
+The class 'testmodel::SubClass3' has no attributes.
+The class 'testmodel::SubInterface6' has no attributes.
+The class 'testmodel::SubInterface5' has no attributes.
+The class 'SuperInterface' has no attributes.
+The class 'testmodel::SubInterface7' has no attributes.
+The class 'testmodel::Target' has no attributes.
+The class 'testmodel::SuperAbstractClass' has no attributes.
+The class 'testmodel::SubAbstractClass5' has no attributes.
+The class 'testmodel::SubClass7' has no attributes.
+The class 'SubInterface2' has no attributes.
+The class 'testmodel::Source' has no attributes.
+The class 'SuperClass' has no attributes.
+The class 'testmodel::SubClass5' has no attributes.
+The class 'testmodel::SubAbstractClass7' has no attributes.
+The class 'testmodel::SubClass6' has no attributes.
+The class 'SuperAbstractClass' has no attributes.
+The class 'testmodel::SuperInterface' has no attributes.
+The class 'testmodel::SubAbstractClass1' has no attributes.
+The class 'SubClass1' has no attributes.
+The class 'testmodel::SubInterface3' has no attributes.
+The class 'testmodel::SubInterface1' has no attributes.
+The class 'testmodel::SubInterface4' has no attributes.
+The class 'testmodel::SubAbstractClass4' has no attributes.
+The class 'testmodel::SubClass2' has no attributes.
+The class 'testmodel::SubClass1' has no attributes.
+The class 'testmodel::SubAbstractClass3' has no attributes.
+The class 'B' has no attributes.
+The class 'SubInterface1' has no attributes.
+The class 'testmodel::SubAbstractClass6' has no attributes.
+The class 'testmodel::SubAbstractClass2' has no attributes.
+The class 'testmodel::SuperClass' has no attributes.
+The class 'SubAbstractClass1' has no attributes.
+'testmodel::SubAbstractClass7' is a specialization of 'SubAbstractClass1'.
+'testmodel::SubClass5' is a specialization of 'SubAbstractClass1'.
+'testmodel::SubAbstractClass6' is a specialization of 'SubClass1'.
+'testmodel::SubInterface4' is a specialization of 'SubInterface2'.
+'testmodel::SubInterface7' is a specialization of 'SubAbstractClass1'.
+'testmodel::SubAbstractClass1' is a specialization of 'SuperInterface'.
+'testmodel::SubAbstractClass6' is a specialization of 'SubInterface1'.
+'testmodel::SubAbstractClass4' is a specialization of 'SubInterface2'.
+'testmodel::SubClass3' is a specialization of 'SuperClass'.
+'testmodel::SubAbstractClass4' is a specialization of 'SubInterface1'.
+'testmodel::SubInterface3' is a specialization of 'SuperClass'.
+'testmodel::SubAbstractClass5' is a specialization of 'SubInterface1'.
+'testmodel::B' is a specialization of 'A'.
+'testmodel::SubInterface7' is a specialization of 'SubClass1'.
+'testmodel::SubClass7' is a specialization of 'SubAbstractClass1'.
+'testmodel::SubClass5' is a specialization of 'SubInterface1'.
+'testmodel::SubClass1' is a specialization of 'SuperInterface'.
+'testmodel::C' is a specialization of 'B'.
+'testmodel::SubInterface1' is a specialization of 'SuperInterface'.
+'testmodel::SubInterface6' is a specialization of 'SubClass1'.
+'testmodel::SubInterface2' is a specialization of 'SuperAbstractClass'.
+'testmodel::SubAbstractClass3' is a specialization of 'SuperClass'.
+'testmodel::SubAbstractClass7' is a specialization of 'SubClass1'.
+'testmodel::SubInterface6' is a specialization of 'SubInterface1'.
+'testmodel::SubClass6' is a specialization of 'SubInterface1'.
+'testmodel::SubInterface5' is a specialization of 'SubInterface1'.
+'testmodel::SubClass4' is a specialization of 'SubInterface1'.
+'testmodel::SubClass7' is a specialization of 'SubClass1'.
+'testmodel::SubAbstractClass2' is a specialization of 'SuperAbstractClass'.
+'testmodel::SubInterface4' is a specialization of 'SubInterface1'.
+'testmodel::SubClass6' is a specialization of 'SubClass1'.
+'testmodel::SubInterface5' is a specialization of 'SubAbstractClass1'.
+'testmodel::SubClass2' is a specialization of 'SuperAbstractClass'.
+'testmodel::SubClass4' is a specialization of 'SubInterface2'.
+'testmodel::SubAbstractClass5' is a specialization of 'SubAbstractClass1'.
+'testmodel::Target' (role 'many_many_no_no25', cardinality 0..*) is associated with 'testmodel::Source' (role 'Source26', cardinality 0..*).
+'testmodel::Source' (role 'testmodel_Source5', cardinality 0..*) is associated with 'testmodel::Target' (role 'testmodel_Target6', cardinality 0..*).
+'testmodel::Target' (role 'one_one_no_yes31', cardinality 0..*) is associated with 'testmodel::Source' (role 'Source32', cardinality 0..*).
+'testmodel::Source' (role 'one_many_no_yes', cardinality 0..*) is associated with 'testmodel::Target' (role 'Target16', cardinality 0..*).
+'testmodel::Target' (role 'Target', cardinality 0..*) is associated with 'testmodel::Source' (role 'one_one_no_no', cardinality 0..*).
+'testmodel::Source' (role 'Source23', cardinality 0..*) is associated with 'testmodel::Target' (role 'one_many_no_no22', cardinality 0..*).
+'testmodel::Source' (role 'testmodel_Source8', cardinality 0..*) is associated with 'testmodel::Target' (role 'testmodel_Target9', cardinality 0..*).
+'testmodel::Source' (role 'Source29', cardinality 0..*) is associated with 'testmodel::Target' (role 'one_many_no_yes28', cardinality 0..*).
+'testmodel::Source' (role 'Source', cardinality 0..*) is associated with 'testmodel::Target' (role 'one_one_no_no20', cardinality 0..*).
+'testmodel::Target' (role 'Target12', cardinality 0..*) is associated with 'testmodel::Source' (role 'one_many_no_no', cardinality 0..*).
+'testmodel::Source' (role 'testmodel_Source', cardinality 0..*) is associated with 'testmodel::Target' (role 'testmodel_Target', cardinality 0..*).
+'testmodel::Source' (role 'testmodel_Source2', cardinality 0..*) is associated with 'testmodel::Target' (role 'testmodel_Target3', cardinality 0..*).
+'testmodel::Source' (role 'many_many_no_no', cardinality 0..*) is associated with 'testmodel::Target' (role 'Target14', cardinality 0..*).
+'testmodel::Source' (role 'one_one_no_yes', cardinality 0..*) is associated with 'testmodel::Target' (role 'Target18', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'demo::model::Employee' has the following attributes: 'firstname' of type str; 'birthday' of type date; 'lastname' of type str; 'position' of type str; 'phone' of type str; 'email' of type str.
+The class 'demo::model::Address' has the following attributes: 'country' of type str; 'city' of type str; 'state' of type str; 'zipcode' of type int; 'street' of type str.
+The class 'demo::model::Company' has the following attributes: 'name' of type str.
+'demo::model::Company' (role 'company', cardinality 0..*) is associated with 'demo::model::Employee' (role 'Employee', cardinality 0..*).
+'demo::model::Company' (role 'Company', cardinality 0..*) is associated with 'demo::model::Employee' (role 'employees', cardinality 0..*).
+'demo::model::Employee' (role 'demo_model_Employee', cardinality 0..*) is associated with 'demo::model::Address' (role 'demo_model_Address', cardinality 0..*).

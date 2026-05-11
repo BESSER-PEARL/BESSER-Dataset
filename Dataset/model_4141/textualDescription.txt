@@ -1,0 +1,47 @@
+The model has 18 class(es).
+The class 'arithmetic::FunctionCall' has no attributes.
+The class 'arithmetic::SumExpression' has the following attributes: 'upper' of type int; 'lower' of type int.
+The class 'arithmetic::Import' has no attributes.
+The class 'AbstractDefinition' has no attributes.
+The class 'arithmetic::DeclaredParameter' has no attributes.
+The class 'arithmetic::Minus' has no attributes.
+The class 'arithmetic::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'arithmetic::AbstractDefinition' has the following attributes: 'name' of type str.
+The class 'arithmetic::Module' has the following attributes: 'name' of type str.
+The class 'Statement' has no attributes.
+The class 'arithmetic::Statement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'arithmetic::Plus' has no attributes.
+The class 'arithmetic::Definition' has no attributes.
+The class 'arithmetic::Div' has no attributes.
+The class 'arithmetic::Expression' has no attributes.
+The class 'arithmetic::Evaluation' has no attributes.
+The class 'arithmetic::Multi' has no attributes.
+'arithmetic::Definition' is a specialization of 'Statement'.
+'arithmetic::SumExpression' is a specialization of 'Expression'.
+'arithmetic::Multi' is a specialization of 'Expression'.
+'arithmetic::Evaluation' is a specialization of 'Statement'.
+'arithmetic::Definition' is a specialization of 'AbstractDefinition'.
+'arithmetic::FunctionCall' is a specialization of 'Expression'.
+'arithmetic::Plus' is a specialization of 'Expression'.
+'arithmetic::NumberLiteral' is a specialization of 'Expression'.
+'arithmetic::DeclaredParameter' is a specialization of 'AbstractDefinition'.
+'arithmetic::Minus' is a specialization of 'Expression'.
+'arithmetic::Div' is a specialization of 'Expression'.
+'arithmetic::Expression' (role 'arithmetic_Expression32', cardinality 0..*) is associated with 'arithmetic::Div' (role 'arithmetic_Div', cardinality 0..*).
+'arithmetic::Expression' (role 'arithmetic_Expression35', cardinality 0..*) is associated with 'arithmetic::Div' (role 'arithmetic_Div34', cardinality 0..*).
+'arithmetic::Multi' (role 'arithmetic_Multi', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression27', cardinality 0..*).
+'arithmetic::AbstractDefinition' (role 'arithmetic_AbstractDefinition', cardinality 0..*) is associated with 'arithmetic::FunctionCall' (role 'arithmetic_FunctionCall', cardinality 0..*).
+'arithmetic::Multi' (role 'arithmetic_Multi29', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression30', cardinality 0..*).
+'arithmetic::Definition' (role 'arithmetic_Definition8', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression', cardinality 0..*).
+'arithmetic::SumExpression' (role 'arithmetic_SumExpression14', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression15', cardinality 0..*).
+'arithmetic::Import' (role 'arithmetic_Import4', cardinality 0..*) is associated with 'arithmetic::Module' (role 'arithmetic_Module5', cardinality 0..*).
+'arithmetic::Plus' (role 'arithmetic_Plus19', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression20', cardinality 0..*).
+'arithmetic::Definition' (role 'arithmetic_Definition', cardinality 0..*) is associated with 'arithmetic::DeclaredParameter' (role 'arithmetic_DeclaredParameter', cardinality 0..*).
+'arithmetic::Minus' (role 'arithmetic_Minus24', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression25', cardinality 0..*).
+'arithmetic::Plus' (role 'arithmetic_Plus', cardinality 0..*) is associated with 'arithmetic::Expression' (role 'arithmetic_Expression17', cardinality 0..*).
+'arithmetic::Expression' (role 'arithmetic_Expression22', cardinality 0..*) is associated with 'arithmetic::Minus' (role 'arithmetic_Minus', cardinality 0..*).
+'arithmetic::Import' (role 'arithmetic_Import', cardinality 0..*) is associated with 'arithmetic::Module' (role 'arithmetic_Module', cardinality 0..*).
+'arithmetic::Statement' (role 'arithmetic_Statement', cardinality 0..*) is associated with 'arithmetic::Module' (role 'arithmetic_Module2', cardinality 0..*).
+'arithmetic::SumExpression' (role 'arithmetic_SumExpression', cardinality 0..*) is associated with 'arithmetic::DeclaredParameter' (role 'arithmetic_DeclaredParameter12', cardinality 0..*).
+'arithmetic::Expression' (role 'arithmetic_Expression10', cardinality 0..*) is associated with 'arithmetic::Evaluation' (role 'arithmetic_Evaluation', cardinality 0..*).

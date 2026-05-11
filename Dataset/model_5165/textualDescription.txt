@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'opposite1::ClassA' has no attributes.
+The class 'AbstractSuperClass' has no attributes.
+The class 'opposite1::AbstractSuperClass' has no attributes.
+The class 'opposite1::Root' has no attributes.
+The class 'opposite1::ClassB' has no attributes.
+'opposite1::ClassB' is a specialization of 'AbstractSuperClass'.
+'opposite1::ClassA' is a specialization of 'AbstractSuperClass'.
+'opposite1::Root' (role 'opposite1_Root', cardinality 0..*) is associated with 'opposite1::AbstractSuperClass' (role 'opposite1_AbstractSuperClass', cardinality 0..*).
+'opposite1::ClassA' (role 'a', cardinality 0..*) is associated with 'opposite1::ClassB' (role 'ClassB', cardinality 0..*).
+'opposite1::ClassA' (role 'ClassA', cardinality 0..*) is associated with 'opposite1::ClassB' (role 'b', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Obeo/emf.compare.acceptance.tests/workspace/DynamicEMF/bug389810/test.ecore

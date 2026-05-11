@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/CoWolf/CoWolf/de.uni_stuttgart.iste.cowolf.model.fault_tree/model/FaultTree.ecore

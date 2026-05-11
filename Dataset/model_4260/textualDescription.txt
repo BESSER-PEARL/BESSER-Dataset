@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'bz321765::Employee' has the following attributes: 'title' of type str; 'salary' of type str.
+The class 'bz321765::EmployeePK' has the following attributes: 'lastName' of type str; 'id' of type str; 'firstName' of type str.
+'bz321765::Employee' (role 'bz321765_Employee', cardinality 0..*) is associated with 'bz321765::EmployeePK' (role 'bz321765_EmployeePK', cardinality 0..*).

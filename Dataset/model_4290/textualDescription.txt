@@ -1,0 +1,32 @@
+The model has 9 class(es).
+The class 'model::Innings' has the following attributes: 'total' of type int; 'Summary' of type str; 'wicketsDown' of type int; 'overCount' of type str; 'noOvers' of type int.
+The class 'model::Over' has the following attributes: 'validBalls' of type int; 'runs' of type int; 'isComplete' of type bool; 'BALLS_IN_OVER' of type int.
+The class 'model::Ball' has the following attributes: 'runValue' of type int; 'runs' of type str; 'switchEnds' of type str.
+The class 'model::ExtraBall' has the following attributes: 'extraType' of type str; 'isValidBall' of type str.
+The class 'model::WicketBall' has the following attributes: 'howOut' of type str.
+The class 'model::Team' has the following attributes: 'name' of type str.
+The class 'Ball' has no attributes.
+The class 'model::Player' has the following attributes: 'howOut' of type str; 'noOversBowled' of type str; 'name' of type str; 'noBallsFaced' of type int; 'runsScored' of type int.
+The class 'model::Game' has the following attributes: 'venue' of type str; 'date' of type date.
+The enumeration 'BallType' has the following literals: 'one_run', 'dot_ball', 'three_runs', 'six_runs', 'two_runs', 'four_runs'.
+The enumeration 'ExtraType' has the following literals: 'Bye', 'Wide', 'NoBall', 'LegBye'.
+The enumeration 'HowOut' has the following literals: 'Bowled', 'Run_Out', 'Stumped', 'Lbw', 'Caught'.
+'model::ExtraBall' is a specialization of 'Ball'.
+'model::WicketBall' is a specialization of 'Ball'.
+'model::WicketBall' (role 'model_WicketBall', cardinality 0..*) is associated with 'model::Player' (role 'model_Player28', cardinality 0..*).
+'model::Ball' (role 'ballsFaced', cardinality 0..*) is associated with 'model::Player' (role 'Player19', cardinality 0..*).
+'model::Player' (role 'batsman', cardinality 0..*) is associated with 'model::Ball' (role 'Ball', cardinality 0..*).
+'model::Team' (role 'model_Team25', cardinality 0..*) is associated with 'model::Player' (role 'model_Player26', cardinality 0..*).
+'model::Over' (role 'Over', cardinality 0..*) is associated with 'model::Innings' (role 'innings', cardinality 0..*).
+'model::Game' (role 'model_Game', cardinality 0..*) is associated with 'model::Innings' (role 'model_Innings', cardinality 0..*).
+'model::Player' (role 'Player', cardinality 0..*) is associated with 'model::Over' (role 'oversBowled', cardinality 0..*).
+'model::Innings' (role 'model_Innings11', cardinality 0..*) is associated with 'model::Player' (role 'model_Player', cardinality 0..*).
+'model::WicketBall' (role 'WicketBall', cardinality 0..*) is associated with 'model::Player' (role 'playerOut', cardinality 0..*).
+'model::Innings' (role 'model_Innings5', cardinality 0..*) is associated with 'model::Team' (role 'model_Team6', cardinality 0..*).
+'model::Player' (role 'Player30', cardinality 0..*) is associated with 'model::WicketBall' (role 'wicketball', cardinality 0..*).
+'model::Innings' (role 'Innings', cardinality 0..*) is associated with 'model::Over' (role 'overs', cardinality 0..*).
+'model::Over' (role 'Over22', cardinality 0..*) is associated with 'model::Player' (role 'bowler', cardinality 0..*).
+'model::Over' (role 'model_Over', cardinality 0..*) is associated with 'model::Ball' (role 'model_Ball', cardinality 0..*).
+'model::Game' (role 'model_Game2', cardinality 0..*) is associated with 'model::Team' (role 'model_Team', cardinality 0..*).
+'model::Innings' (role 'model_Innings8', cardinality 0..*) is associated with 'model::Team' (role 'model_Team9', cardinality 0..*).
+'model::Player' (role 'model_Player14', cardinality 0..*) is associated with 'model::Innings' (role 'model_Innings13', cardinality 0..*).

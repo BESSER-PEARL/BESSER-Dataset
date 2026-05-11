@@ -1,0 +1,64 @@
+The model has 27 class(es).
+The class 'whileDsl::ExprSimple' has the following attributes: 'term' of type str.
+The class 'whileDsl::Exprs' has no attributes.
+The class 'whileDsl::ForeachCommand' has the following attributes: 'expElement' of type str.
+The class 'whileDsl::IfCommand' has no attributes.
+The class 'whileDsl::ExprSimpleWithExpr' has the following attributes: 'operation' of type str.
+The class 'whileDsl::Function' has the following attributes: 'functionName' of type str.
+The class 'whileDsl::Expr' has no attributes.
+The class 'whileDsl::WhileCommand' has no attributes.
+The class 'whileDsl::Output' has the following attributes: 'variables' of type str.
+The class 'whileDsl::LExpr' has no attributes.
+The class 'whileDsl::ExprSimpleWithSymbolLExpr' has the following attributes: 'symbol' of type str.
+The class 'whileDsl::ExprNot' has the following attributes: 'negation' of type bool.
+The class 'whileDsl::EObject' has no attributes.
+The class 'whileDsl::ExprOr' has no attributes.
+The class 'Command' has no attributes.
+The class 'whileDsl::Definition' has no attributes.
+The class 'whileDsl::Command' has no attributes.
+The class 'whileDsl::ExprAnd' has no attributes.
+The class 'whileDsl::Model' has no attributes.
+The class 'whileDsl::Input' has the following attributes: 'variables' of type str.
+The class 'whileDsl::NopCommand' has no attributes.
+The class 'whileDsl::ExprEq' has no attributes.
+The class 'whileDsl::Commands' has no attributes.
+The class 'whileDsl::VarsCommand' has no attributes.
+The class 'whileDsl::Vars' has the following attributes: 'variables' of type str.
+The class 'whileDsl::ForCommand' has no attributes.
+The class 'whileDsl::ExprSimpleWithLExpr' has the following attributes: 'operation' of type str.
+'whileDsl::NopCommand' is a specialization of 'Command'.
+'whileDsl::ForeachCommand' is a specialization of 'Command'.
+'whileDsl::WhileCommand' is a specialization of 'Command'.
+'whileDsl::IfCommand' is a specialization of 'Command'.
+'whileDsl::VarsCommand' is a specialization of 'Command'.
+'whileDsl::ForCommand' is a specialization of 'Command'.
+'whileDsl::LExpr' (role 'whileDsl_LExpr41', cardinality 0..*) is associated with 'whileDsl::ExprSimpleWithSymbolLExpr' (role 'whileDsl_ExprSimpleWithSymbolLExpr', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands19', cardinality 0..*) is associated with 'whileDsl::ForCommand' (role 'whileDsl_ForCommand18', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands24', cardinality 0..*) is associated with 'whileDsl::IfCommand' (role 'whileDsl_IfCommand23', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr44', cardinality 0..*) is associated with 'whileDsl::LExpr' (role 'whileDsl_LExpr43', cardinality 0..*).
+'whileDsl::IfCommand' (role 'whileDsl_IfCommand', cardinality 0..*) is associated with 'whileDsl::Expr' (role 'whileDsl_Expr21', cardinality 0..*).
+'whileDsl::EObject' (role 'whileDsl_EObject', cardinality 0..*) is associated with 'whileDsl::ExprSimple' (role 'whileDsl_ExprSimple', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr64', cardinality 0..*) is associated with 'whileDsl::ExprEq' (role 'whileDsl_ExprEq63', cardinality 0..*).
+'whileDsl::VarsCommand' (role 'whileDsl_VarsCommand35', cardinality 0..*) is associated with 'whileDsl::Exprs' (role 'whileDsl_Exprs', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands10', cardinality 0..*) is associated with 'whileDsl::Command' (role 'whileDsl_Command', cardinality 0..*).
+'whileDsl::VarsCommand' (role 'whileDsl_VarsCommand', cardinality 0..*) is associated with 'whileDsl::Vars' (role 'whileDsl_Vars', cardinality 0..*).
+'whileDsl::LExpr' (role 'whileDsl_LExpr', cardinality 0..*) is associated with 'whileDsl::ExprSimpleWithLExpr' (role 'whileDsl_ExprSimpleWithLExpr', cardinality 0..*).
+'whileDsl::ExprEq' (role 'whileDsl_ExprEq60', cardinality 0..*) is associated with 'whileDsl::ExprSimple' (role 'whileDsl_ExprSimple61', cardinality 0..*).
+'whileDsl::ForeachCommand' (role 'whileDsl_ForeachCommand', cardinality 0..*) is associated with 'whileDsl::Expr' (role 'whileDsl_Expr29', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr16', cardinality 0..*) is associated with 'whileDsl::ForCommand' (role 'whileDsl_ForCommand', cardinality 0..*).
+'whileDsl::ExprSimple' (role 'whileDsl_ExprSimple58', cardinality 0..*) is associated with 'whileDsl::ExprEq' (role 'whileDsl_ExprEq57', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr49', cardinality 0..*) is associated with 'whileDsl::EObject' (role 'whileDsl_EObject50', cardinality 0..*).
+'whileDsl::Function' (role 'whileDsl_Function', cardinality 0..*) is associated with 'whileDsl::Model' (role 'whileDsl_Model', cardinality 0..*).
+'whileDsl::Function' (role 'whileDsl_Function2', cardinality 0..*) is associated with 'whileDsl::Definition' (role 'whileDsl_Definition', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr47', cardinality 0..*) is associated with 'whileDsl::Exprs' (role 'whileDsl_Exprs46', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands27', cardinality 0..*) is associated with 'whileDsl::IfCommand' (role 'whileDsl_IfCommand26', cardinality 0..*).
+'whileDsl::ExprSimpleWithExpr' (role 'whileDsl_ExprSimpleWithExpr', cardinality 0..*) is associated with 'whileDsl::Expr' (role 'whileDsl_Expr39', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands', cardinality 0..*) is associated with 'whileDsl::Definition' (role 'whileDsl_Definition6', cardinality 0..*).
+'whileDsl::ExprNot' (role 'whileDsl_ExprNot', cardinality 0..*) is associated with 'whileDsl::ExprOr' (role 'whileDsl_ExprOr53', cardinality 0..*).
+'whileDsl::Expr' (role 'whileDsl_Expr', cardinality 0..*) is associated with 'whileDsl::WhileCommand' (role 'whileDsl_WhileCommand', cardinality 0..*).
+'whileDsl::Definition' (role 'whileDsl_Definition4', cardinality 0..*) is associated with 'whileDsl::Input' (role 'whileDsl_Input', cardinality 0..*).
+'whileDsl::ExprEq' (role 'whileDsl_ExprEq', cardinality 0..*) is associated with 'whileDsl::ExprNot' (role 'whileDsl_ExprNot55', cardinality 0..*).
+'whileDsl::ExprAnd' (role 'whileDsl_ExprAnd', cardinality 0..*) is associated with 'whileDsl::ExprOr' (role 'whileDsl_ExprOr', cardinality 0..*).
+'whileDsl::Output' (role 'whileDsl_Output', cardinality 0..*) is associated with 'whileDsl::Definition' (role 'whileDsl_Definition8', cardinality 0..*).
+'whileDsl::Commands' (role 'whileDsl_Commands14', cardinality 0..*) is associated with 'whileDsl::WhileCommand' (role 'whileDsl_WhileCommand13', cardinality 0..*).
+'whileDsl::ForeachCommand' (role 'whileDsl_ForeachCommand31', cardinality 0..*) is associated with 'whileDsl::Commands' (role 'whileDsl_Commands32', cardinality 0..*).

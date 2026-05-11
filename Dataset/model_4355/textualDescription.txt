@@ -1,0 +1,57 @@
+The model has 24 class(es).
+The class 'model::EmptyStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'Action' has no attributes.
+The class 'model::ConstantDeclarationStatement' has no attributes.
+The class 'model::Statement' has no attributes.
+The class 'model::ReferenceExpression' has no attributes.
+The class 'model::Action' has no attributes.
+The class 'model::AssignmentStatement' has no attributes.
+The class 'model::BreakStatement' has no attributes.
+The class 'model::ReturnStatement' has no attributes.
+The class 'model::ProcedureDeclaration' has no attributes.
+The class 'model::Block' has no attributes.
+The class 'model::ConstantDeclaration' has no attributes.
+The class 'model::ForStatement' has no attributes.
+The class 'model::ParameterDeclaration' has no attributes.
+The class 'model::ChoiceStatement' has no attributes.
+The class 'model::Expression' has no attributes.
+The class 'model::IfStatement' has no attributes.
+The class 'model::Branch' has no attributes.
+The class 'FunctionDeclaration' has no attributes.
+The class 'model::VariableDeclaration' has no attributes.
+The class 'model::ExpressionStatement' has no attributes.
+The class 'model::VariableDeclarationStatement' has no attributes.
+The class 'model::SwitchStatement' has no attributes.
+'model::SwitchStatement' is a specialization of 'Statement'.
+'model::AssignmentStatement' is a specialization of 'Statement'.
+'model::IfStatement' is a specialization of 'Statement'.
+'model::Block' is a specialization of 'Action'.
+'model::ProcedureDeclaration' is a specialization of 'FunctionDeclaration'.
+'model::VariableDeclarationStatement' is a specialization of 'Statement'.
+'model::ReturnStatement' is a specialization of 'Statement'.
+'model::ChoiceStatement' is a specialization of 'Statement'.
+'model::ConstantDeclarationStatement' is a specialization of 'Statement'.
+'model::EmptyStatement' is a specialization of 'Statement'.
+'model::BreakStatement' is a specialization of 'Statement'.
+'model::ForStatement' is a specialization of 'Statement'.
+'model::ExpressionStatement' is a specialization of 'Statement'.
+'model::Statement' is a specialization of 'Action'.
+'model::ReferenceExpression' (role 'model_ReferenceExpression', cardinality 0..*) is associated with 'model::AssignmentStatement' (role 'model_AssignmentStatement', cardinality 0..*).
+'model::Branch' (role 'model_Branch14', cardinality 0..*) is associated with 'model::IfStatement' (role 'model_IfStatement', cardinality 0..*).
+'model::Branch' (role 'model_Branch5', cardinality 0..*) is associated with 'model::Action' (role 'model_Action6', cardinality 0..*).
+'model::ConstantDeclaration' (role 'model_ConstantDeclaration', cardinality 0..*) is associated with 'model::ConstantDeclarationStatement' (role 'model_ConstantDeclarationStatement', cardinality 0..*).
+'model::ForStatement' (role 'model_ForStatement22', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression23', cardinality 0..*).
+'model::Action' (role 'model_Action26', cardinality 0..*) is associated with 'model::ForStatement' (role 'model_ForStatement25', cardinality 0..*).
+'model::ParameterDeclaration' (role 'model_ParameterDeclaration', cardinality 0..*) is associated with 'model::ForStatement' (role 'model_ForStatement', cardinality 0..*).
+'model::VariableDeclarationStatement' (role 'model_VariableDeclarationStatement', cardinality 0..*) is associated with 'model::VariableDeclaration' (role 'model_VariableDeclaration', cardinality 0..*).
+'model::ProcedureDeclaration' (role 'model_ProcedureDeclaration', cardinality 0..*) is associated with 'model::Block' (role 'model_Block', cardinality 0..*).
+'model::Expression' (role 'model_Expression12', cardinality 0..*) is associated with 'model::ReturnStatement' (role 'model_ReturnStatement', cardinality 0..*).
+'model::Branch' (role 'model_Branch19', cardinality 0..*) is associated with 'model::SwitchStatement' (role 'model_SwitchStatement18', cardinality 0..*).
+'model::ForStatement' (role 'model_ForStatement28', cardinality 0..*) is associated with 'model::Action' (role 'model_Action29', cardinality 0..*).
+'model::Branch' (role 'model_Branch', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression', cardinality 0..*).
+'model::Expression' (role 'model_Expression35', cardinality 0..*) is associated with 'model::AssignmentStatement' (role 'model_AssignmentStatement34', cardinality 0..*).
+'model::Block' (role 'model_Block2', cardinality 0..*) is associated with 'model::Action' (role 'model_Action', cardinality 0..*).
+'model::ExpressionStatement' (role 'model_ExpressionStatement', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression10', cardinality 0..*).
+'model::Branch' (role 'model_Branch31', cardinality 0..*) is associated with 'model::ChoiceStatement' (role 'model_ChoiceStatement', cardinality 0..*).
+'model::SwitchStatement' (role 'model_SwitchStatement', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression16', cardinality 0..*).

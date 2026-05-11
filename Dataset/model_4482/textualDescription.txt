@@ -1,0 +1,78 @@
+The model has 32 class(es).
+The class 'BinaryExpr' has no attributes.
+The class 'Logo::Integer' has the following attributes: 'value' of type int.
+The class 'Logo::Double' has the following attributes: 'value' of type float.
+The class 'Logo::Procedure' has the following attributes: 'name' of type str.
+The class 'Logo::VarReference' has no attributes.
+The class 'Logo::Primitive' has no attributes.
+The class 'Logo::Instruction' has no attributes.
+The class 'Logo::Right' has no attributes.
+The class 'ControlStructure' has no attributes.
+The class 'Logo::Literal' has no attributes.
+The class 'Logo::BinaryExpr' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'Logo::While' has no attributes.
+The class 'Logo::VarDecl' has the following attributes: 'name' of type str.
+The class 'Primitive' has no attributes.
+The class 'Logo::ProcedureCall' has no attributes.
+The class 'Logo::If' has no attributes.
+The class 'Logo::Expression' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'Logo::LogoProgram' has no attributes.
+The class 'Logo::ControlStructure' has no attributes.
+The class 'Logo::Boolean' has the following attributes: 'value' of type bool.
+The class 'Logo::Back' has no attributes.
+The class 'Logo::Left' has no attributes.
+The class 'Logo::Assignation' has no attributes.
+The class 'Logo::Forward' has no attributes.
+The class 'Logo::Void' has no attributes.
+The class 'Logo::BooleanExpr' has the following attributes: 'operator' of type str.
+The class 'Logo::Block' has no attributes.
+The class 'Logo::String' has the following attributes: 'value' of type str.
+The class 'Logo::ArithmeticExpr' has the following attributes: 'operator' of type str.
+The enumeration 'ArithmeticOperator' has the following literals: 'mult', 'plus', 'minus', 'div'.
+The enumeration 'BooleanOperator' has the following literals: 'lowerThan', 'greaterThan', 'diff', 'equal'.
+'Logo::BooleanExpr' is a specialization of 'BinaryExpr'.
+'Logo::Double' is a specialization of 'Literal'.
+'Logo::Left' is a specialization of 'Primitive'.
+'Logo::String' is a specialization of 'Literal'.
+'Logo::Void' is a specialization of 'Literal'.
+'Logo::BinaryExpr' is a specialization of 'Expression'.
+'Logo::While' is a specialization of 'ControlStructure'.
+'Logo::VarDecl' is a specialization of 'Instruction'.
+'Logo::Back' is a specialization of 'Primitive'.
+'Logo::ControlStructure' is a specialization of 'Instruction'.
+'Logo::Integer' is a specialization of 'Literal'.
+'Logo::Procedure' is a specialization of 'Instruction'.
+'Logo::ArithmeticExpr' is a specialization of 'BinaryExpr'.
+'Logo::Right' is a specialization of 'Primitive'.
+'Logo::Forward' is a specialization of 'Primitive'.
+'Logo::Assignation' is a specialization of 'Instruction'.
+'Logo::If' is a specialization of 'ControlStructure'.
+'Logo::Expression' is a specialization of 'Instruction'.
+'Logo::Primitive' is a specialization of 'Instruction'.
+'Logo::Block' is a specialization of 'ControlStructure'.
+'Logo::Boolean' is a specialization of 'Literal'.
+'Logo::Literal' is a specialization of 'Expression'.
+'Logo::ProcedureCall' is a specialization of 'Expression'.
+'Logo::VarReference' is a specialization of 'Expression'.
+'Logo::If' (role 'Logo_If', cardinality 0..*) is associated with 'Logo::Block' (role 'Logo_Block', cardinality 0..*).
+'Logo::If' (role 'Logo_If14', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression15', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression28', cardinality 0..*) is associated with 'Logo::BinaryExpr' (role 'Logo_BinaryExpr27', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression', cardinality 0..*) is associated with 'Logo::Forward' (role 'Logo_Forward', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression3', cardinality 0..*) is associated with 'Logo::Back' (role 'Logo_Back', cardinality 0..*).
+'Logo::Block' (role 'Logo_Block30', cardinality 0..*) is associated with 'Logo::Procedure' (role 'Logo_Procedure', cardinality 0..*).
+'Logo::VarDecl' (role 'Logo_VarDecl36', cardinality 0..*) is associated with 'Logo::Assignation' (role 'Logo_Assignation', cardinality 0..*).
+'Logo::While' (role 'Logo_While22', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression23', cardinality 0..*).
+'Logo::Instruction' (role 'Logo_Instruction', cardinality 0..*) is associated with 'Logo::LogoProgram' (role 'Logo_LogoProgram', cardinality 0..*).
+'Logo::BinaryExpr' (role 'Logo_BinaryExpr', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression25', cardinality 0..*).
+'Logo::Procedure' (role 'Logo_Procedure32', cardinality 0..*) is associated with 'Logo::Literal' (role 'Logo_Literal', cardinality 0..*).
+'Logo::Block' (role 'Logo_Block17', cardinality 0..*) is associated with 'Logo::Instruction' (role 'Logo_Instruction18', cardinality 0..*).
+'Logo::While' (role 'Logo_While', cardinality 0..*) is associated with 'Logo::Block' (role 'Logo_Block20', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression5', cardinality 0..*) is associated with 'Logo::Left' (role 'Logo_Left', cardinality 0..*).
+'Logo::Procedure' (role 'Logo_Procedure34', cardinality 0..*) is associated with 'Logo::ProcedureCall' (role 'Logo_ProcedureCall', cardinality 0..*).
+'Logo::Assignation' (role 'Logo_Assignation38', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression39', cardinality 0..*).
+'Logo::VarDecl' (role 'Logo_VarDecl', cardinality 0..*) is associated with 'Logo::Expression' (role 'Logo_Expression9', cardinality 0..*).
+'Logo::VarDecl' (role 'Logo_VarDecl11', cardinality 0..*) is associated with 'Logo::VarReference' (role 'Logo_VarReference', cardinality 0..*).
+'Logo::Expression' (role 'Logo_Expression7', cardinality 0..*) is associated with 'Logo::Right' (role 'Logo_Right', cardinality 0..*).

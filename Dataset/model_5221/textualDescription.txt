@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'anytype::A' has the following attributes: 'doub' of type str; 'lon' of type str; 'name' of type str.
+The class 'anytype::TestAny' has the following attributes: 'myAny' of type str; 'a' of type str; 'name' of type str; 'any' of type str.
+The class 'anytype::EObject' has no attributes.
+The class 'anytype::B' has the following attributes: 'name' of type str.
+The class 'anytype::C' has no attributes.
+'anytype::EObject' (role 'anytype_EObject4', cardinality 0..*) is associated with 'anytype::TestAny' (role 'anytype_TestAny3', cardinality 0..*).
+'anytype::TestAny' (role 'anytype_TestAny', cardinality 0..*) is associated with 'anytype::EObject' (role 'anytype_EObject', cardinality 0..*).
+'anytype::A' (role 'anytype_A', cardinality 0..*) is associated with 'anytype::B' (role 'anytype_B', cardinality 0..*).

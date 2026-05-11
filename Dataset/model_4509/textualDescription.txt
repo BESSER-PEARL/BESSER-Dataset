@@ -1,0 +1,41 @@
+The model has 18 class(es).
+The class 'pyrep::AbstractDataMove' has no attributes.
+The class 'pyrep::AbstractCrossMove' has no attributes.
+The class 'pyrep::Move' has the following attributes: 'distance' of type str.
+The class 'DataMove' has no attributes.
+The class 'pyrep::AbstractMove' has no attributes.
+The class 'Entity' has no attributes.
+The class 'pyrep::Robot' has the following attributes: 'name' of type str; 'port' of type int.
+The class 'pyrep::Turn' has no attributes.
+The class 'pyrep::Entity' has no attributes.
+The class 'pyrep::IP' has the following attributes: 'ip' of type str; 'name' of type str.
+The class 'pyrep::Wheel' has the following attributes: 'radius' of type str; 'name' of type str.
+The class 'pyrep::DataMove' has the following attributes: 'velocity' of type str; 'name' of type bool; 'type' of type str.
+The class 'pyrep::Environment' has the following attributes: 'name' of type str.
+The class 'pyrep::Sensor' has the following attributes: 'name' of type str.
+The class 'pyrep::Model' has no attributes.
+The class 'pyrep::TypeSensor' has the following attributes: 'typeName' of type str.
+The class 'AbstractDataMove' has no attributes.
+The class 'pyrep::MoveCollection' has the following attributes: 'name' of type str; 'concurrent' of type bool.
+'pyrep::Environment' is a specialization of 'Entity'.
+'pyrep::Robot' is a specialization of 'Entity'.
+'pyrep::Wheel' is a specialization of 'Entity'.
+'pyrep::Turn' is a specialization of 'DataMove'.
+'pyrep::Sensor' is a specialization of 'Entity'.
+'pyrep::TypeSensor' is a specialization of 'Entity'.
+'pyrep::Move' is a specialization of 'DataMove'.
+'pyrep::IP' is a specialization of 'Entity'.
+'pyrep::AbstractCrossMove' is a specialization of 'AbstractDataMove'.
+'pyrep::MoveCollection' is a specialization of 'Entity'.
+'pyrep::DataMove' is a specialization of 'Entity'.
+'pyrep::AbstractMove' is a specialization of 'AbstractDataMove'.
+'pyrep::Robot' (role 'pyrep_Robot7', cardinality 0..*) is associated with 'pyrep::Wheel' (role 'pyrep_Wheel', cardinality 0..*).
+'pyrep::Environment' (role 'pyrep_Environment3', cardinality 0..*) is associated with 'pyrep::Robot' (role 'pyrep_Robot', cardinality 0..*).
+'pyrep::MoveCollection' (role 'pyrep_MoveCollection9', cardinality 0..*) is associated with 'pyrep::Robot' (role 'pyrep_Robot10', cardinality 0..*).
+'pyrep::AbstractCrossMove' (role 'pyrep_AbstractCrossMove', cardinality 0..*) is associated with 'pyrep::DataMove' (role 'pyrep_DataMove15', cardinality 0..*).
+'pyrep::Environment' (role 'pyrep_Environment', cardinality 0..*) is associated with 'pyrep::IP' (role 'pyrep_IP', cardinality 0..*).
+'pyrep::AbstractMove' (role 'pyrep_AbstractMove', cardinality 0..*) is associated with 'pyrep::DataMove' (role 'pyrep_DataMove', cardinality 0..*).
+'pyrep::Sensor' (role 'pyrep_Sensor', cardinality 0..*) is associated with 'pyrep::TypeSensor' (role 'pyrep_TypeSensor', cardinality 0..*).
+'pyrep::AbstractDataMove' (role 'pyrep_AbstractDataMove', cardinality 0..*) is associated with 'pyrep::MoveCollection' (role 'pyrep_MoveCollection12', cardinality 0..*).
+'pyrep::Model' (role 'pyrep_Model', cardinality 0..*) is associated with 'pyrep::Entity' (role 'pyrep_Entity', cardinality 0..*).
+'pyrep::Environment' (role 'pyrep_Environment5', cardinality 0..*) is associated with 'pyrep::MoveCollection' (role 'pyrep_MoveCollection', cardinality 0..*).

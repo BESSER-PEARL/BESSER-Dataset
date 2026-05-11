@@ -1,0 +1,31 @@
+The model has 11 class(es).
+The class 'UmlModelElement' has no attributes.
+The class 'SimpleUML::UmlPackageElement' has no attributes.
+The class 'SimpleUML::UmlAttribute' has no attributes.
+The class 'SimpleUML::UmlClassifier' has no attributes.
+The class 'SimpleUML::UmlPrimitiveDataType' has no attributes.
+The class 'SimpleUML::UmlAssociation' has no attributes.
+The class 'UmlPackageElement' has no attributes.
+The class 'SimpleUML::UmlClass' has no attributes.
+The class 'SimpleUML::UmlModelElement' has the following attributes: 'id' of type str; 'umlKind' of type str; 'umlName' of type str.
+The class 'UmlClassifier' has no attributes.
+The class 'SimpleUML::UmlPackage' has no attributes.
+'SimpleUML::UmlAssociation' is a specialization of 'UmlPackageElement'.
+'SimpleUML::UmlClassifier' is a specialization of 'UmlPackageElement'.
+'SimpleUML::UmlClass' is a specialization of 'UmlClassifier'.
+'SimpleUML::UmlPrimitiveDataType' is a specialization of 'UmlClassifier'.
+'SimpleUML::UmlAttribute' is a specialization of 'UmlModelElement'.
+'SimpleUML::UmlPackageElement' is a specialization of 'UmlModelElement'.
+'SimpleUML::UmlPackage' is a specialization of 'UmlModelElement'.
+'SimpleUML::UmlClass' (role 'umlSource', cardinality 0..*) is associated with 'SimpleUML::UmlAssociation' (role 'UmlAssociation8', cardinality 0..*).
+'SimpleUML::UmlClassifier' (role 'UmlClassifier', cardinality 0..*) is associated with 'SimpleUML::UmlAttribute' (role 'umlAttribute1', cardinality 0..*).
+'SimpleUML::UmlClass' (role 'UmlClass15', cardinality 0..*) is associated with 'SimpleUML::UmlClass' (role 'umlGeneral', cardinality 0..*).
+'SimpleUML::UmlPackage' (role 'UmlPackage', cardinality 0..*) is associated with 'SimpleUML::UmlPackageElement' (role 'umlOwnedElement', cardinality 0..*).
+'SimpleUML::UmlClassifier' (role 'umlType', cardinality 0..*) is associated with 'SimpleUML::UmlAttribute' (role 'UmlAttribute17', cardinality 0..*).
+'SimpleUML::UmlClass' (role 'UmlClass2', cardinality 0..*) is associated with 'SimpleUML::UmlAssociation' (role 'umlReverse', cardinality 0..*).
+'SimpleUML::UmlClass' (role 'UmlClass', cardinality 0..*) is associated with 'SimpleUML::UmlAssociation' (role 'umlForward', cardinality 0..*).
+'SimpleUML::UmlClass' (role 'umlSpecific', cardinality 0..*) is associated with 'SimpleUML::UmlClass' (role 'UmlClass12', cardinality 0..*).
+'SimpleUML::UmlAssociation' (role 'UmlAssociation', cardinality 0..*) is associated with 'SimpleUML::UmlClass' (role 'umlDestination', cardinality 0..*).
+'SimpleUML::UmlPackageElement' (role 'UmlPackageElement', cardinality 0..*) is associated with 'SimpleUML::UmlPackage' (role 'umlNamespace', cardinality 0..*).
+'SimpleUML::UmlAttribute' (role 'UmlAttribute', cardinality 0..*) is associated with 'SimpleUML::UmlClass' (role 'umlOwner', cardinality 0..*).
+'SimpleUML::UmlAttribute' (role 'umlAttribute', cardinality 0..*) is associated with 'SimpleUML::UmlClass' (role 'UmlClass4', cardinality 0..*).

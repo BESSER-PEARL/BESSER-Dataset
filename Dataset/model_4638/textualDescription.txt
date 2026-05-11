@@ -1,0 +1,47 @@
+The model has 24 class(es).
+The class 'notation::Figure' has no attributes.
+The class 'notation::GraphicalElement' has the following attributes: 'stroke' of type str; 'y' of type int; 'x' of type int; 'fill' of type str; 'height' of type int; 'width' of type int.
+The class 'TextualElement' has no attributes.
+The class 'notation::Definition' has no attributes.
+The class 'notation::Rectangle' has no attributes.
+The class 'Value' has no attributes.
+The class 'GraphicalElement' has no attributes.
+The class 'notation::NotationElement' has no attributes.
+The class 'notation::Line' has no attributes.
+The class 'NotationElement' has no attributes.
+The class 'notation::Token' has no attributes.
+The class 'notation::Keyword' has no attributes.
+The class 'notation::TextualElement' has the following attributes: 'fill' of type str.
+The class 'notation::ReferenceValue' has no attributes.
+The class 'notation::EReference' has no attributes.
+The class 'IdElement' has no attributes.
+The class 'notation::IdElement' has the following attributes: 'id' of type str.
+The class 'notation::Label' has no attributes.
+The class 'Figure' has no attributes.
+The class 'notation::AttributeValue' has no attributes.
+The class 'notation::SyntaxOf' has no attributes.
+The class 'notation::Composite' has no attributes.
+The class 'notation::Value' has the following attributes: 'separator' of type str.
+The class 'notation::EAttribute' has no attributes.
+The enumeration 'Color' has the following literals: 'BLUE', 'GREEN', 'RED', 'BLACK'.
+'notation::Value' is a specialization of 'TextualElement'.
+'notation::ReferenceValue' is a specialization of 'Value'.
+'notation::Token' is a specialization of 'TextualElement'.
+'notation::NotationElement' is a specialization of 'IdElement'.
+'notation::SyntaxOf' is a specialization of 'NotationElement'.
+'notation::Composite' is a specialization of 'NotationElement'.
+'notation::Line' is a specialization of 'GraphicalElement'.
+'notation::AttributeValue' is a specialization of 'Value'.
+'notation::Keyword' is a specialization of 'TextualElement'.
+'notation::Rectangle' is a specialization of 'Figure'.
+'notation::Figure' is a specialization of 'GraphicalElement'.
+'notation::TextualElement' is a specialization of 'NotationElement'.
+'notation::Label' is a specialization of 'GraphicalElement'.
+'notation::GraphicalElement' is a specialization of 'NotationElement'.
+'notation::ReferenceValue' (role 'notation_ReferenceValue', cardinality 0..*) is associated with 'notation::EReference' (role 'notation_EReference', cardinality 0..*).
+'notation::EAttribute' (role 'notation_EAttribute', cardinality 0..*) is associated with 'notation::Value' (role 'notation_Value', cardinality 0..*).
+'notation::SyntaxOf' (role 'notation_SyntaxOf', cardinality 0..*) is associated with 'notation::EReference' (role 'notation_EReference4', cardinality 0..*).
+'notation::Composite' (role 'notation_Composite', cardinality 0..*) is associated with 'notation::NotationElement' (role 'notation_NotationElement8', cardinality 0..*).
+'notation::Definition' (role 'notation_Definition', cardinality 0..*) is associated with 'notation::NotationElement' (role 'notation_NotationElement10', cardinality 0..*).
+'notation::NotationElement' (role 'notation_NotationElement', cardinality 0..*) is associated with 'notation::SyntaxOf' (role 'notation_SyntaxOf6', cardinality 0..*).
+'notation::TextualElement' (role 'notation_TextualElement', cardinality 0..*) is associated with 'notation::Label' (role 'notation_Label', cardinality 0..*).

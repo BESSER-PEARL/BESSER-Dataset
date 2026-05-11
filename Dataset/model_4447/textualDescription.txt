@@ -1,0 +1,183 @@
+The model has 85 class(es).
+The class 'ioT::GE' has no attributes.
+The class 'ioT::ExternalOf' has no attributes.
+The class 'ioT::SendCommand' has no attributes.
+The class 'ioT::Program' has no attributes.
+The class 'ioT::IntExpression' has the following attributes: 'value' of type int.
+The class 'ioT::NE' has no attributes.
+The class 'ioT::LIGHTSENSOR' has no attributes.
+The class 'ioT::IoTDevice' has no attributes.
+The class 'ioT::ToVar' has no attributes.
+The class 'ioT::LEDAction' has the following attributes: 'state' of type str.
+The class 'VarOrList' has no attributes.
+The class 'ioT::ReadVariable' has no attributes.
+The class 'ioT::Comparison' has no attributes.
+The class 'ExpressionRight' has no attributes.
+The class 'Device' has no attributes.
+The class 'ioT::DeviceConfig' has no attributes.
+The class 'ioT::False' has no attributes.
+The class 'ioT::LE' has no attributes.
+The class 'ioT::UnixSerialAddress' has no attributes.
+The class 'ioT::Action' has no attributes.
+The class 'ioT::True' has no attributes.
+The class 'ioT::IpAddress' has no attributes.
+The class 'ioT::ArrowCommand' has no attributes.
+The class 'ioT::AND' has no attributes.
+The class 'Comparison' has no attributes.
+The class 'ioT::ConnectStatement' has no attributes.
+The class 'ioT::ComparisonOp' has the following attributes: 'op' of type str.
+The class 'ioT::Declaration' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'ioT::VarAccess' has no attributes.
+The class 'Bool' has no attributes.
+The class 'ioT::Command' has no attributes.
+The class 'ioT::HUMIDITY' has no attributes.
+The class 'ioT::ClearListAction' has no attributes.
+The class 'ioT::ReadSensor' has no attributes.
+The class 'ioT::Address' has the following attributes: 'value' of type str.
+The class 'ioT::MINUTES' has no attributes.
+The class 'ioT::ConnectionConfig' has the following attributes: 'type' of type str.
+The class 'ioT::Expression' has no attributes.
+The class 'ioT::ItemVariable' has no attributes.
+The class 'ioT::EQ' has no attributes.
+The class 'ioT::ExpressionLeft' has no attributes.
+The class 'ExpressionLeft' has no attributes.
+The class 'ioT::Bool' has no attributes.
+The class 'ioT::Block' has no attributes.
+The class 'ioT::WEEKS' has no attributes.
+The class 'Address' has no attributes.
+The class 'ioT::WifiStatement' has no attributes.
+The class 'TIMEUNIT' has no attributes.
+The class 'ioT::GT' has no attributes.
+The class 'ioT::VarOrList' has the following attributes: 'name' of type str.
+The class 'ioT::ExpressionRight' has no attributes.
+The class 'ioT::MILLISECONDS' has no attributes.
+The class 'ioT::IfStatement' has no attributes.
+The class 'ioT::Config' has the following attributes: 'name' of type str.
+The class 'ioT::PyList' has no attributes.
+The class 'ioT::Variable' has no attributes.
+The class 'ioT::TEMPERATURE' has no attributes.
+The class 'Config' has no attributes.
+The class 'ioT::WindowsSerialAddress' has no attributes.
+The class 'ioT::HOURS' has no attributes.
+The class 'ioT::ItemInt' has the following attributes: 'value' of type int.
+The class 'ioT::Device' has the following attributes: 'name' of type str.
+The class 'ioT::Model' has no attributes.
+The class 'ioT::SECONDS' has no attributes.
+The class 'Action' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ioT::LT' has no attributes.
+The class 'ioT::Loop' has no attributes.
+The class 'ioT::ItemBool' has no attributes.
+The class 'ioT::EQL' has no attributes.
+The class 'ioT::SENSOR' has no attributes.
+The class 'ioT::AddToList' has no attributes.
+The class 'ComparisonOp' has no attributes.
+The class 'ioT::BoolExpression' has no attributes.
+The class 'ioT::ElseBlock' has no attributes.
+The class 'ioT::ReadConnection' has no attributes.
+The class 'ioT::OR' has no attributes.
+The class 'ioT::ExternalRight' has no attributes.
+The class 'Command' has no attributes.
+The class 'ioT::DAYS' has no attributes.
+The class 'ioT::ExternalDeclaration' has the following attributes: 'name' of type str.
+The class 'SENSOR' has no attributes.
+The class 'ioT::ControllerDevice' has no attributes.
+The class 'ioT::ListenStatement' has the following attributes: 'ip' of type str; 'port' of type int.
+The class 'ioT::TIMEUNIT' has no attributes.
+'ioT::ControllerDevice' is a specialization of 'Device'.
+'ioT::ToVar' is a specialization of 'ExpressionRight'.
+'ioT::True' is a specialization of 'Bool'.
+'ioT::EQL' is a specialization of 'Comparison'.
+'ioT::GE' is a specialization of 'ComparisonOp'.
+'ioT::MILLISECONDS' is a specialization of 'TIMEUNIT'.
+'ioT::VarAccess' is a specialization of 'Expression'.
+'ioT::NE' is a specialization of 'ComparisonOp'.
+'ioT::ReadVariable' is a specialization of 'ExpressionLeft'.
+'ioT::HUMIDITY' is a specialization of 'SENSOR'.
+'ioT::Expression' is a specialization of 'ExpressionLeft'.
+'ioT::ArrowCommand' is a specialization of 'Command'.
+'ioT::SECONDS' is a specialization of 'TIMEUNIT'.
+'ioT::UnixSerialAddress' is a specialization of 'Address'.
+'ioT::OR' is a specialization of 'Comparison'.
+'ioT::AND' is a specialization of 'Comparison'.
+'ioT::ExternalRight' is a specialization of 'ExpressionRight'.
+'ioT::DeviceConfig' is a specialization of 'Config'.
+'ioT::False' is a specialization of 'Bool'.
+'ioT::WindowsSerialAddress' is a specialization of 'Address'.
+'ioT::Variable' is a specialization of 'VarOrList'.
+'ioT::EQ' is a specialization of 'ComparisonOp'.
+'ioT::WEEKS' is a specialization of 'TIMEUNIT'.
+'ioT::ExternalOf' is a specialization of 'ExpressionLeft'.
+'ioT::LT' is a specialization of 'ComparisonOp'.
+'ioT::LE' is a specialization of 'ComparisonOp'.
+'ioT::SendCommand' is a specialization of 'ExpressionRight'.
+'ioT::ReadSensor' is a specialization of 'ExpressionLeft'.
+'ioT::ItemVariable' is a specialization of 'Comparison'.
+'ioT::ItemInt' is a specialization of 'Comparison'.
+'ioT::IoTDevice' is a specialization of 'Device'.
+'ioT::LIGHTSENSOR' is a specialization of 'SENSOR'.
+'ioT::AddToList' is a specialization of 'ExpressionRight'.
+'ioT::IntExpression' is a specialization of 'Expression'.
+'ioT::ClearListAction' is a specialization of 'Action'.
+'ioT::ItemBool' is a specialization of 'Comparison'.
+'ioT::ReadConnection' is a specialization of 'ExpressionLeft'.
+'ioT::GT' is a specialization of 'ComparisonOp'.
+'ioT::LEDAction' is a specialization of 'Action'.
+'ioT::Action' is a specialization of 'Command'.
+'ioT::BoolExpression' is a specialization of 'Expression'.
+'ioT::IpAddress' is a specialization of 'Address'.
+'ioT::TEMPERATURE' is a specialization of 'SENSOR'.
+'ioT::PyList' is a specialization of 'VarOrList'.
+'ioT::IfStatement' is a specialization of 'Command'.
+'ioT::DAYS' is a specialization of 'TIMEUNIT'.
+'ioT::HOURS' is a specialization of 'TIMEUNIT'.
+'ioT::Block' is a specialization of 'ExpressionRight'.
+'ioT::MINUTES' is a specialization of 'TIMEUNIT'.
+'ioT::ConnectionConfig' is a specialization of 'Config'.
+'ioT::Comparison' (role 'ioT_Comparison', cardinality 0..*) is associated with 'ioT::IfStatement' (role 'ioT_IfStatement', cardinality 0..*).
+'ioT::IfStatement' (role 'ioT_IfStatement71', cardinality 0..*) is associated with 'ioT::Command' (role 'ioT_Command72', cardinality 0..*).
+'ioT::EQL' (role 'ioT_EQL', cardinality 0..*) is associated with 'ioT::Comparison' (role 'ioT_Comparison87', cardinality 0..*).
+'ioT::Program' (role 'ioT_Program12', cardinality 0..*) is associated with 'ioT::ConnectStatement' (role 'ioT_ConnectStatement', cardinality 0..*).
+'ioT::ItemBool' (role 'ioT_ItemBool', cardinality 0..*) is associated with 'ioT::Bool' (role 'ioT_Bool96', cardinality 0..*).
+'ioT::Expression' (role 'ioT_Expression', cardinality 0..*) is associated with 'ioT::Loop' (role 'ioT_Loop32', cardinality 0..*).
+'ioT::WifiStatement' (role 'ioT_WifiStatement22', cardinality 0..*) is associated with 'ioT::ConnectionConfig' (role 'ioT_ConnectionConfig', cardinality 0..*).
+'ioT::Comparison' (role 'ioT_Comparison77', cardinality 0..*) is associated with 'ioT::OR' (role 'ioT_OR', cardinality 0..*).
+'ioT::Comparison' (role 'ioT_Comparison82', cardinality 0..*) is associated with 'ioT::AND' (role 'ioT_AND', cardinality 0..*).
+'ioT::Program' (role 'ioT_Program14', cardinality 0..*) is associated with 'ioT::VarOrList' (role 'ioT_VarOrList', cardinality 0..*).
+'ioT::ExpressionLeft' (role 'ioT_ExpressionLeft', cardinality 0..*) is associated with 'ioT::ArrowCommand' (role 'ioT_ArrowCommand', cardinality 0..*).
+'ioT::ExternalDeclaration' (role 'ioT_ExternalDeclaration', cardinality 0..*) is associated with 'ioT::Model' (role 'ioT_Model', cardinality 0..*).
+'ioT::ConnectStatement' (role 'ioT_ConnectStatement29', cardinality 0..*) is associated with 'ioT::ConnectionConfig' (role 'ioT_ConnectionConfig30', cardinality 0..*).
+'ioT::ExternalOf' (role 'ioT_ExternalOf', cardinality 0..*) is associated with 'ioT::ExternalDeclaration' (role 'ioT_ExternalDeclaration42', cardinality 0..*).
+'ioT::Config' (role 'ioT_Config6', cardinality 0..*) is associated with 'ioT::Declaration' (role 'ioT_Declaration', cardinality 0..*).
+'ioT::Device' (role 'ioT_Device68', cardinality 0..*) is associated with 'ioT::SendCommand' (role 'ioT_SendCommand', cardinality 0..*).
+'ioT::SENSOR' (role 'ioT_SENSOR', cardinality 0..*) is associated with 'ioT::ReadSensor' (role 'ioT_ReadSensor', cardinality 0..*).
+'ioT::Comparison' (role 'ioT_Comparison92', cardinality 0..*) is associated with 'ioT::EQL' (role 'ioT_EQL91', cardinality 0..*).
+'ioT::ConnectStatement' (role 'ioT_ConnectStatement24', cardinality 0..*) is associated with 'ioT::Device' (role 'ioT_Device25', cardinality 0..*).
+'ioT::Program' (role 'ioT_Program16', cardinality 0..*) is associated with 'ioT::ListenStatement' (role 'ioT_ListenStatement', cardinality 0..*).
+'ioT::Device' (role 'ioT_Device8', cardinality 0..*) is associated with 'ioT::Program' (role 'ioT_Program', cardinality 0..*).
+'ioT::ExpressionRight' (role 'ioT_ExpressionRight60', cardinality 0..*) is associated with 'ioT::ArrowCommand' (role 'ioT_ArrowCommand59', cardinality 0..*).
+'ioT::ExternalDeclaration' (role 'ioT_ExternalDeclaration50', cardinality 0..*) is associated with 'ioT::ExternalRight' (role 'ioT_ExternalRight', cardinality 0..*).
+'ioT::Device' (role 'ioT_Device', cardinality 0..*) is associated with 'ioT::Model' (role 'ioT_Model4', cardinality 0..*).
+'ioT::PyList' (role 'ioT_PyList66', cardinality 0..*) is associated with 'ioT::AddToList' (role 'ioT_AddToList', cardinality 0..*).
+'ioT::Loop' (role 'ioT_Loop', cardinality 0..*) is associated with 'ioT::Program' (role 'ioT_Program18', cardinality 0..*).
+'ioT::ReadVariable' (role 'ioT_ReadVariable', cardinality 0..*) is associated with 'ioT::Variable' (role 'ioT_Variable', cardinality 0..*).
+'ioT::Variable' (role 'ioT_Variable94', cardinality 0..*) is associated with 'ioT::ItemVariable' (role 'ioT_ItemVariable', cardinality 0..*).
+'ioT::VarOrList' (role 'ioT_VarOrList45', cardinality 0..*) is associated with 'ioT::ExternalOf' (role 'ioT_ExternalOf44', cardinality 0..*).
+'ioT::VarAccess' (role 'ioT_VarAccess', cardinality 0..*) is associated with 'ioT::VarOrList' (role 'ioT_VarOrList62', cardinality 0..*).
+'ioT::ComparisonOp' (role 'ioT_ComparisonOp', cardinality 0..*) is associated with 'ioT::EQL' (role 'ioT_EQL89', cardinality 0..*).
+'ioT::Variable' (role 'ioT_Variable64', cardinality 0..*) is associated with 'ioT::ToVar' (role 'ioT_ToVar', cardinality 0..*).
+'ioT::Config' (role 'ioT_Config', cardinality 0..*) is associated with 'ioT::Model' (role 'ioT_Model2', cardinality 0..*).
+'ioT::ConnectStatement' (role 'ioT_ConnectStatement27', cardinality 0..*) is associated with 'ioT::Address' (role 'ioT_Address', cardinality 0..*).
+'ioT::Command' (role 'ioT_Command', cardinality 0..*) is associated with 'ioT::Loop' (role 'ioT_Loop36', cardinality 0..*).
+'ioT::ReadConnection' (role 'ioT_ReadConnection', cardinality 0..*) is associated with 'ioT::Device' (role 'ioT_Device40', cardinality 0..*).
+'ioT::Comparison' (role 'ioT_Comparison85', cardinality 0..*) is associated with 'ioT::AND' (role 'ioT_AND84', cardinality 0..*).
+'ioT::Comparison' (role 'ioT_Comparison80', cardinality 0..*) is associated with 'ioT::OR' (role 'ioT_OR79', cardinality 0..*).
+'ioT::ClearListAction' (role 'ioT_ClearListAction', cardinality 0..*) is associated with 'ioT::PyList' (role 'ioT_PyList', cardinality 0..*).
+'ioT::Block' (role 'ioT_Block', cardinality 0..*) is associated with 'ioT::Command' (role 'ioT_Command48', cardinality 0..*).
+'ioT::WifiStatement' (role 'ioT_WifiStatement', cardinality 0..*) is associated with 'ioT::Program' (role 'ioT_Program10', cardinality 0..*).
+'ioT::BoolExpression' (role 'ioT_BoolExpression', cardinality 0..*) is associated with 'ioT::Bool' (role 'ioT_Bool', cardinality 0..*).
+'ioT::ListenStatement' (role 'ioT_ListenStatement20', cardinality 0..*) is associated with 'ioT::ExpressionRight' (role 'ioT_ExpressionRight', cardinality 0..*).
+'ioT::Command' (role 'ioT_Command52', cardinality 0..*) is associated with 'ioT::ElseBlock' (role 'ioT_ElseBlock', cardinality 0..*).
+'ioT::Variable' (role 'ioT_Variable54', cardinality 0..*) is associated with 'ioT::Expression' (role 'ioT_Expression55', cardinality 0..*).
+'ioT::IfStatement' (role 'ioT_IfStatement74', cardinality 0..*) is associated with 'ioT::ElseBlock' (role 'ioT_ElseBlock75', cardinality 0..*).
+'ioT::TIMEUNIT' (role 'ioT_TIMEUNIT', cardinality 0..*) is associated with 'ioT::Loop' (role 'ioT_Loop34', cardinality 0..*).

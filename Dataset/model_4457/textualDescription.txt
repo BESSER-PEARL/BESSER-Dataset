@@ -1,0 +1,35 @@
+The model has 15 class(es).
+The class 'arduinoml::Brick' has the following attributes: 'pin' of type int.
+The class 'arduinoml::Action' has no attributes.
+The class 'Action' has no attributes.
+The class 'arduinoml::Actuator' has no attributes.
+The class 'arduinoml::State' has no attributes.
+The class 'arduinoml::Wait' has the following attributes: 'waitingTime' of type int.
+The class 'arduinoml::On' has no attributes.
+The class 'arduinoml::Board' has no attributes.
+The class 'arduinoml::NamedElement' has the following attributes: 'name' of type str.
+The class 'arduinoml::Sensor' has no attributes.
+The class 'arduinoml::Transition' has no attributes.
+The class 'arduinoml::Trigger' has the following attributes: 'value' of type str.
+The class 'Brick' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'arduinoml::Off' has no attributes.
+The enumeration 'DigitalValue' has the following literals: 'OFF', 'ON'.
+'arduinoml::Off' is a specialization of 'Action'.
+'arduinoml::State' is a specialization of 'NamedElement'.
+'arduinoml::Wait' is a specialization of 'Action'.
+'arduinoml::Sensor' is a specialization of 'Brick'.
+'arduinoml::Transition' is a specialization of 'NamedElement'.
+'arduinoml::Brick' is a specialization of 'NamedElement'.
+'arduinoml::Actuator' is a specialization of 'Brick'.
+'arduinoml::On' is a specialization of 'Action'.
+'arduinoml::State' (role 'source', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'Transition', cardinality 0..*).
+'arduinoml::Board' (role 'arduinoml_Board2', cardinality 0..*) is associated with 'arduinoml::State' (role 'arduinoml_State3', cardinality 0..*).
+'arduinoml::Sensor' (role 'arduinoml_Sensor', cardinality 0..*) is associated with 'arduinoml::Trigger' (role 'arduinoml_Trigger17', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State10', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'arduinoml_Transition', cardinality 0..*).
+'arduinoml::Brick' (role 'arduinoml_Brick', cardinality 0..*) is associated with 'arduinoml::Board' (role 'arduinoml_Board5', cardinality 0..*).
+'arduinoml::State' (role 'arduinoml_State7', cardinality 0..*) is associated with 'arduinoml::Action' (role 'arduinoml_Action', cardinality 0..*).
+'arduinoml::Board' (role 'arduinoml_Board', cardinality 0..*) is associated with 'arduinoml::State' (role 'arduinoml_State', cardinality 0..*).
+'arduinoml::Transition' (role 'arduinoml_Transition12', cardinality 0..*) is associated with 'arduinoml::Trigger' (role 'arduinoml_Trigger', cardinality 0..*).
+'arduinoml::State' (role 'State', cardinality 0..*) is associated with 'arduinoml::Transition' (role 'eventCode', cardinality 0..*).
+'arduinoml::Action' (role 'arduinoml_Action15', cardinality 0..*) is associated with 'arduinoml::Actuator' (role 'arduinoml_Actuator', cardinality 0..*).

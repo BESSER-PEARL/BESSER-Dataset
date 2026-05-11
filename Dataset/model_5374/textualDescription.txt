@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'hExample::3::RHS::X' has the following attributes: 'att2' of type str; 'att1' of type str.

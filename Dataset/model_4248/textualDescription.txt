@@ -1,0 +1,31 @@
+The model has 19 class(es).
+The class 'restapp::model::PhysicalCard' has the following attributes: 'id' of type int; 'number' of type int; 'status' of type int.
+The class 'restapp::model::Employee' has the following attributes: 'name' of type str; 'rg' of type str; 'zipcode' of type str; 'contracted' of type date; 'status' of type int; 'id' of type int; 'phone' of type str; 'address' of type str; 'fired' of type date; 'mobile' of type str; 'comission' of type float; 'salary' of type float; 'cpf' of type str; 'working' of type bool.
+The class 'Employee' has no attributes.
+The class 'Provider' has no attributes.
+The class 'Category' has no attributes.
+The class 'User' has no attributes.
+The class 'Product' has no attributes.
+The class 'restapp::model::Category' has the following attributes: 'id' of type int; 'description' of type str; 'status' of type int; 'name' of type str.
+The class 'restapp::model::Purchase' has the following attributes: 'date' of type date; 'discount' of type int; 'totalValue' of type float; 'id' of type int; 'totalWithDiscount' of type float.
+The class 'restapp::model::ProductsPurchase' has the following attributes: 'unityDiscount' of type int; 'unityValue' of type float; 'quantity' of type int; 'unityValueWithDiscount' of type float.
+The class 'restapp::model::Product' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type int; 'status' of type int; 'stock' of type int.
+The class 'Card' has no attributes.
+The class 'restapp::model::Card' has the following attributes: 'change' of type float; 'discount' of type int; 'totalValueWithDiscount' of type float; 'totalValue' of type float; 'sellDate' of type date; 'id' of type int; 'payedValue' of type float.
+The class 'restapp::model::Provider' has the following attributes: 'id' of type int; 'CNPJ' of type str; 'phone' of type str; 'name' of type str; 'Address' of type str; 'contact' of type str.
+The class 'restapp::model::ProductsCard' has the following attributes: 'id' of type int; 'date' of type date.
+The class 'restapp::model::Price' has the following attributes: 'date' of type date; 'id' of type int; 'value' of type float.
+The class 'PhysicalCard' has no attributes.
+The class 'Purchase' has no attributes.
+The class 'restapp::model::User' has the following attributes: 'id' of type int; 'status' of type int; 'password' of type str; 'user' of type str.
+'Purchase' (role 'Purchase', cardinality 0..*) is associated with 'restapp::model::ProductsPurchase' (role 'restapp_model_ProductsPurchase', cardinality 0..*).
+'Product' (role 'Product', cardinality 0..*) is associated with 'restapp::model::Price' (role 'restapp_model_Price', cardinality 0..*).
+'restapp::model::Purchase' (role 'restapp_model_Purchase5', cardinality 0..*) is associated with 'User' (role 'User', cardinality 0..*).
+'Product' (role 'Product9', cardinality 0..*) is associated with 'restapp::model::ProductsPurchase' (role 'restapp_model_ProductsPurchase8', cardinality 0..*).
+'restapp::model::Product' (role 'restapp_model_Product', cardinality 0..*) is associated with 'Category' (role 'Category', cardinality 0..*).
+'Employee' (role 'Employee', cardinality 0..*) is associated with 'restapp::model::User' (role 'restapp_model_User', cardinality 0..*).
+'Product' (role 'Product12', cardinality 0..*) is associated with 'restapp::model::ProductsCard' (role 'restapp_model_ProductsCard', cardinality 0..*).
+'PhysicalCard' (role 'PhysicalCard', cardinality 0..*) is associated with 'restapp::model::Card' (role 'restapp_model_Card', cardinality 0..*).
+'User' (role 'User17', cardinality 0..*) is associated with 'restapp::model::ProductsCard' (role 'restapp_model_ProductsCard16', cardinality 0..*).
+'restapp::model::Purchase' (role 'restapp_model_Purchase', cardinality 0..*) is associated with 'Provider' (role 'Provider', cardinality 0..*).
+'Card' (role 'Card', cardinality 0..*) is associated with 'restapp::model::ProductsCard' (role 'restapp_model_ProductsCard14', cardinality 0..*).

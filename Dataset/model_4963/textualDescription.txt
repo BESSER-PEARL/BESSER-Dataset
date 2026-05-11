@@ -1,0 +1,109 @@
+The model has 49 class(es).
+The class 'crom::l1::ModelElement' has no attributes.
+The class 'crom::l1::RoleGroupElement' has no attributes.
+The class 'AntiRigidType' has no attributes.
+The class 'crom::l1::RoleImplication' has no attributes.
+The class 'crom::l1::Attribute' has no attributes.
+The class 'crom::l1::RoleType' has no attributes.
+The class 'crom::l1::Constraint' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'RigidType' has no attributes.
+The class 'Relation' has no attributes.
+The class 'RoleGroupElement' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'crom::l1::AbstractRole' has no attributes.
+The class 'crom::l1::NamedElement' has the following attributes: 'name' of type str.
+The class 'crom::l1::Group' has no attributes.
+The class 'crom::l1::RigidType' has no attributes.
+The class 'Type' has no attributes.
+The class 'crom::l1::TypedElement' has no attributes.
+The class 'crom::l1::NaturalInheritance' has no attributes.
+The class 'RoleConstraint' has no attributes.
+The class 'crom::l1::RoleConstraint' has no attributes.
+The class 'Model' has no attributes.
+The class 'crom::l1::DataInheritance' has no attributes.
+The class 'crom::l1::Player' has no attributes.
+The class 'crom::l1::CompartmentType' has no attributes.
+The class 'Inheritance' has no attributes.
+The class 'crom::l1::RoleProhibition' has no attributes.
+The class 'crom::l1::Relation' has no attributes.
+The class 'crom::l1::RoleEquivalence' has no attributes.
+The class 'AbstractRole' has no attributes.
+The class 'crom::l1::Inheritance' has no attributes.
+The class 'crom::l1::Fulfillment' has no attributes.
+The class 'crom::l1::Parameter' has no attributes.
+The class 'RelationTarget' has no attributes.
+The class 'crom::l1::DataType' has no attributes.
+The class 'crom::l1::RelationTarget' has no attributes.
+The class 'crom::l1::RoleGroup' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'crom::l1::Part' has the following attributes: 'lower' of type int; 'upper' of type int.
+The class 'TypedElement' has no attributes.
+The class 'crom::l1::Test' has no attributes.
+The class 'crom::l1::AbstractRoleRef' has no attributes.
+The class 'crom::l1::AntiRigidType' has no attributes.
+The class 'crom::l1::Model' has no attributes.
+The class 'crom::l1::Type' has no attributes.
+The class 'Player' has no attributes.
+The class 'crom::l1::CompartmentInheritance' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'crom::l1::Operation' has the following attributes: 'operation' of type str.
+The class 'crom::l1::NaturalType' has no attributes.
+'crom::l1::RoleType' is a specialization of 'AntiRigidType'.
+'crom::l1::CompartmentType' is a specialization of 'RigidType'.
+'crom::l1::RoleImplication' is a specialization of 'RoleConstraint'.
+'crom::l1::DataType' is a specialization of 'RigidType'.
+'crom::l1::Inheritance' is a specialization of 'Relation'.
+'crom::l1::AntiRigidType' is a specialization of 'Type'.
+'crom::l1::RoleConstraint' is a specialization of 'Constraint'.
+'crom::l1::TypedElement' is a specialization of 'NamedElement'.
+'crom::l1::RoleProhibition' is a specialization of 'RoleConstraint'.
+'crom::l1::Attribute' is a specialization of 'TypedElement'.
+'crom::l1::Parameter' is a specialization of 'TypedElement'.
+'crom::l1::NaturalType' is a specialization of 'Player'.
+'crom::l1::RoleType' is a specialization of 'RelationTarget'.
+'crom::l1::AbstractRole' is a specialization of 'RoleGroupElement'.
+'crom::l1::CompartmentInheritance' is a specialization of 'Inheritance'.
+'crom::l1::RelationTarget' is a specialization of 'NamedElement'.
+'crom::l1::Test' is a specialization of 'Constraint'.
+'crom::l1::RoleType' is a specialization of 'AbstractRole'.
+'crom::l1::Type' is a specialization of 'RelationTarget'.
+'crom::l1::Fulfillment' is a specialization of 'Relation'.
+'crom::l1::RigidType' is a specialization of 'Type'.
+'crom::l1::RigidType' is a specialization of 'ModelElement'.
+'crom::l1::Group' is a specialization of 'Model'.
+'crom::l1::RoleGroup' is a specialization of 'AbstractRole'.
+'crom::l1::ModelElement' is a specialization of 'NamedElement'.
+'crom::l1::NaturalType' is a specialization of 'RigidType'.
+'crom::l1::RoleEquivalence' is a specialization of 'RoleConstraint'.
+'crom::l1::DataInheritance' is a specialization of 'Inheritance'.
+'crom::l1::NaturalInheritance' is a specialization of 'Inheritance'.
+'crom::l1::AbstractRoleRef' is a specialization of 'RoleGroupElement'.
+'crom::l1::CompartmentType' is a specialization of 'Player'.
+'crom::l1::Group' is a specialization of 'ModelElement'.
+'crom::l1::RoleGroup' is a specialization of 'RelationTarget'.
+'crom::l1::Operation' is a specialization of 'TypedElement'.
+'crom::l1::CompartmentType' (role 'crom_l1_CompartmentType33', cardinality 0..*) is associated with 'crom::l1::CompartmentType' (role 'crom_l1_CompartmentType31', cardinality 0..*).
+'crom::l1::DataType' (role 'crom_l1_DataType', cardinality 0..*) is associated with 'crom::l1::DataInheritance' (role 'crom_l1_DataInheritance', cardinality 0..*).
+'crom::l1::DataInheritance' (role 'crom_l1_DataInheritance36', cardinality 0..*) is associated with 'crom::l1::DataType' (role 'crom_l1_DataType37', cardinality 0..*).
+'crom::l1::Model' (role 'crom_l1_Model2', cardinality 0..*) is associated with 'crom::l1::Relation' (role 'crom_l1_Relation', cardinality 0..*).
+'crom::l1::NaturalType' (role 'crom_l1_NaturalType16', cardinality 0..*) is associated with 'crom::l1::NaturalInheritance' (role 'crom_l1_NaturalInheritance15', cardinality 0..*).
+'crom::l1::CompartmentType' (role 'CompartmentType', cardinality 0..*) is associated with 'crom::l1::Part' (role 'parts', cardinality 0..*).
+'crom::l1::Model' (role 'crom_l1_Model', cardinality 0..*) is associated with 'crom::l1::ModelElement' (role 'crom_l1_ModelElement', cardinality 0..*).
+'crom::l1::Part' (role 'crom_l1_Part', cardinality 0..*) is associated with 'crom::l1::AbstractRole' (role 'crom_l1_AbstractRole27', cardinality 0..*).
+'crom::l1::Relation' (role 'crom_l1_Relation18', cardinality 0..*) is associated with 'crom::l1::RelationTarget' (role 'crom_l1_RelationTarget', cardinality 0..*).
+'crom::l1::Type' (role 'Type6', cardinality 0..*) is associated with 'crom::l1::Attribute' (role 'attributes', cardinality 0..*).
+'crom::l1::AbstractRole' (role 'crom_l1_AbstractRole25', cardinality 0..*) is associated with 'crom::l1::AbstractRoleRef' (role 'crom_l1_AbstractRoleRef', cardinality 0..*).
+'crom::l1::Parameter' (role 'crom_l1_Parameter', cardinality 0..*) is associated with 'crom::l1::Operation' (role 'crom_l1_Operation', cardinality 0..*).
+'crom::l1::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'crom::l1::Type' (role 'owner', cardinality 0..*).
+'crom::l1::CompartmentInheritance' (role 'crom_l1_CompartmentInheritance41', cardinality 0..*) is associated with 'crom::l1::CompartmentType' (role 'crom_l1_CompartmentType42', cardinality 0..*).
+'crom::l1::Fulfillment' (role 'crom_l1_Fulfillment', cardinality 0..*) is associated with 'crom::l1::AbstractRole' (role 'crom_l1_AbstractRole', cardinality 0..*).
+'crom::l1::Constraint' (role 'crom_l1_Constraint', cardinality 0..*) is associated with 'crom::l1::CompartmentType' (role 'crom_l1_CompartmentType', cardinality 0..*).
+'crom::l1::Type' (role 'owner9', cardinality 0..*) is associated with 'crom::l1::Operation' (role 'Operation', cardinality 0..*).
+'crom::l1::CompartmentInheritance' (role 'crom_l1_CompartmentInheritance', cardinality 0..*) is associated with 'crom::l1::CompartmentType' (role 'crom_l1_CompartmentType39', cardinality 0..*).
+'crom::l1::CompartmentType' (role 'whole', cardinality 0..*) is associated with 'crom::l1::Part' (role 'Part', cardinality 0..*).
+'crom::l1::Relation' (role 'crom_l1_Relation21', cardinality 0..*) is associated with 'crom::l1::RelationTarget' (role 'crom_l1_RelationTarget20', cardinality 0..*).
+'crom::l1::Type' (role 'crom_l1_Type', cardinality 0..*) is associated with 'crom::l1::TypedElement' (role 'crom_l1_TypedElement', cardinality 0..*).
+'crom::l1::NaturalInheritance' (role 'crom_l1_NaturalInheritance', cardinality 0..*) is associated with 'crom::l1::NaturalType' (role 'crom_l1_NaturalType', cardinality 0..*).
+'crom::l1::RoleGroup' (role 'crom_l1_RoleGroup', cardinality 0..*) is associated with 'crom::l1::RoleGroupElement' (role 'crom_l1_RoleGroupElement', cardinality 0..*).
+'crom::l1::Player' (role 'crom_l1_Player', cardinality 0..*) is associated with 'crom::l1::Fulfillment' (role 'crom_l1_Fulfillment12', cardinality 0..*).
+'crom::l1::Operation' (role 'operations', cardinality 0..*) is associated with 'crom::l1::Type' (role 'Type', cardinality 0..*).

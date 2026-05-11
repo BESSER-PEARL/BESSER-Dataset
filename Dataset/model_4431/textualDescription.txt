@@ -1,0 +1,51 @@
+The model has 23 class(es).
+The class 'gyro::Child' has no attributes.
+The class 'Node' has no attributes.
+The class 'gyro::Waiting' has the following attributes: 'time' of type int.
+The class 'gyro::Motor' has the following attributes: 'rightMotor' of type int; 'leftMotor' of type int.
+The class 'Behavior' has no attributes.
+The class 'gyro::StatusChange' has the following attributes: 'changeSuccess' of type str; 'changeFailure' of type str; 'changeRunning' of type str.
+The class 'gyro::GyroSpecification' has the following attributes: 'name' of type str.
+The class 'Action' has no attributes.
+The class 'gyro::Node' has the following attributes: 'name' of type str.
+The class 'gyro::Servo' has the following attributes: 'minimalPosition' of type int; 'step' of type int; 'maximalPosition' of type int.
+The class 'gyro::Parallel' has no attributes.
+The class 'gyro::Condition' has no attributes.
+The class 'gyro::Priority' has no attributes.
+The class 'gyro::Action' has no attributes.
+The class 'gyro::Sequential' has no attributes.
+The class 'gyro::Actuate' has no attributes.
+The class 'Condition' has no attributes.
+The class 'gyro::Sibling' has no attributes.
+The class 'gyro::Bumpers' has the following attributes: 'bumperKind' of type str.
+The class 'Actuate' has no attributes.
+The class 'gyro::Distance' has the following attributes: 'kind' of type str; 'value' of type int.
+The class 'gyro::Behavior' has no attributes.
+The class 'gyro::LED' has the following attributes: 'status' of type str.
+The enumeration 'BumperKind' has the following literals: 'Left', 'Right'.
+The enumeration 'FailureState' has the following literals: 'Success', 'Failure', 'Running'.
+The enumeration 'SuccessState' has the following literals: 'Running', 'Failure', 'Success'.
+The enumeration 'LightStatus' has the following literals: 'On', 'Off'.
+The enumeration 'DistanceKind' has the following literals: 'Major', 'Minor'.
+The enumeration 'RunningState' has the following literals: 'Failure', 'Running', 'Success'.
+'gyro::Actuate' is a specialization of 'Action'.
+'gyro::Servo' is a specialization of 'Actuate'.
+'gyro::Waiting' is a specialization of 'Condition'.
+'gyro::Motor' is a specialization of 'Actuate'.
+'gyro::Behavior' is a specialization of 'Node'.
+'gyro::Sequential' is a specialization of 'Behavior'.
+'gyro::Parallel' is a specialization of 'Behavior'.
+'gyro::Distance' is a specialization of 'Condition'.
+'gyro::Priority' is a specialization of 'Behavior'.
+'gyro::Action' is a specialization of 'Node'.
+'gyro::StatusChange' is a specialization of 'Behavior'.
+'gyro::Bumpers' is a specialization of 'Condition'.
+'gyro::Condition' is a specialization of 'Action'.
+'gyro::LED' is a specialization of 'Actuate'.
+'gyro::GyroSpecification' (role 'gyro_GyroSpecification2', cardinality 0..*) is associated with 'gyro::Child' (role 'gyro_Child', cardinality 0..*).
+'gyro::Node' (role 'gyro_Node9', cardinality 0..*) is associated with 'gyro::Child' (role 'gyro_Child8', cardinality 0..*).
+'gyro::Node' (role 'gyro_Node15', cardinality 0..*) is associated with 'gyro::Sibling' (role 'gyro_Sibling14', cardinality 0..*).
+'gyro::Child' (role 'gyro_Child6', cardinality 0..*) is associated with 'gyro::Behavior' (role 'gyro_Behavior', cardinality 0..*).
+'gyro::GyroSpecification' (role 'gyro_GyroSpecification', cardinality 0..*) is associated with 'gyro::Node' (role 'gyro_Node', cardinality 0..*).
+'gyro::Node' (role 'gyro_Node12', cardinality 0..*) is associated with 'gyro::Sibling' (role 'gyro_Sibling11', cardinality 0..*).
+'gyro::GyroSpecification' (role 'gyro_GyroSpecification4', cardinality 0..*) is associated with 'gyro::Sibling' (role 'gyro_Sibling', cardinality 0..*).

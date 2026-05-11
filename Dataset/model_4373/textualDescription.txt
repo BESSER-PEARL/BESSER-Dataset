@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'expressions::Model' has no attributes.
+The class 'expressions::BinaryOperator' has no attributes.
+The class 'expressions::And' has no attributes.
+The class 'expressions::Neg' has no attributes.
+The class 'expressions::Implies' has no attributes.
+The class 'expressions::Or' has no attributes.
+The class 'expressions::Number' has no attributes.
+The class 'expressions::UnaryOperator' has no attributes.
+The class 'UnaryOperator' has no attributes.
+The class 'Expression' has no attributes.
+The class 'expressions::Any' has no attributes.
+The class 'expressions::Feature' has the following attributes: 'name' of type str.
+The class 'expressions::All' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'BinaryOperator' has no attributes.
+'expressions::Feature' is a specialization of 'Expression'.
+'expressions::UnaryOperator' is a specialization of 'Expression'.
+'expressions::Any' is a specialization of 'UnaryOperator'.
+'expressions::All' is a specialization of 'UnaryOperator'.
+'expressions::Number' is a specialization of 'UnaryOperator'.
+'expressions::BinaryOperator' is a specialization of 'Expression'.
+'expressions::Neg' is a specialization of 'UnaryOperator'.
+'expressions::And' is a specialization of 'BinaryOperator'.
+'expressions::Or' is a specialization of 'BinaryOperator'.
+'expressions::Implies' is a specialization of 'BinaryOperator'.
+'expressions::Expression' (role 'expressions_Expression7', cardinality 0..*) is associated with 'expressions::Model' (role 'expressions_Model', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression3', cardinality 0..*) is associated with 'expressions::BinaryOperator' (role 'expressions_BinaryOperator2', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression5', cardinality 0..*) is associated with 'expressions::UnaryOperator' (role 'expressions_UnaryOperator', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'expressions::BinaryOperator' (role 'expressions_BinaryOperator', cardinality 0..*).

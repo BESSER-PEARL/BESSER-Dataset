@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BackupTheBerlios/oslo-project-svn/trunk/org.oslo.ocl20.examples/models/Company.ecore

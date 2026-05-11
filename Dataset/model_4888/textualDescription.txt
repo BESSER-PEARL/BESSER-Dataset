@@ -1,0 +1,132 @@
+The model has 74 class(es).
+The class 'p2::ICopyright' has the following attributes: 'body' of type str; 'location' of type str.
+The class 'IRepositoryReference' has no attributes.
+The class 'p2::SimpleArtifactRepository' has no attributes.
+The class 'p2::InstallableUnit' has no attributes.
+The class 'IRequirementChange' has no attributes.
+The class 'p2::RepositoryReference' has no attributes.
+The class 'p2::IFileArtifactRepository' has no attributes.
+The class 'p2::Repository' has no attributes.
+The class 'p2::IArtifactKey' has the following attributes: 'version' of type str; 'classifier' of type str; 'id' of type str.
+The class 'p2::ArtifactRepository' has no attributes.
+The class 'p2::Copyright' has no attributes.
+The class 'p2::TouchpointInstruction' has no attributes.
+The class 'p2::IVersionedId' has the following attributes: 'id' of type str; 'version' of type str.
+The class 'p2::IArtifactRepository' has no attributes.
+The class 'p2::IRequiredCapability' has the following attributes: 'namespace' of type str; 'name' of type str; 'range' of type str.
+The class 'ICopyright' has no attributes.
+The class 'p2::IQueryable' has no attributes.
+The class 'ITouchpointType' has no attributes.
+The class 'p2::IMetadataRepository' has no attributes.
+The class 'p2::MappingRule' has the following attributes: 'output' of type str; 'filter' of type str.
+The class 'IInstallableUnitFragment' has no attributes.
+The class 'p2::InstallableUnitFragment' has no attributes.
+The class 'IFileArtifactRepository' has no attributes.
+The class 'p2::IArtifactDescriptor' has no attributes.
+The class 'IArtifactKey' has no attributes.
+The class 'p2::IInstallableUnitPatch' has no attributes.
+The class 'p2::ITouchpointType' has the following attributes: 'id' of type str; 'version' of type str.
+The class 'p2::ProcessingStepDescriptor' has no attributes.
+The class 'p2::ArtifactKey' has no attributes.
+The class 'p2::InstallableUnitPatch' has no attributes.
+The class 'IProvidedCapability' has no attributes.
+The class 'IRequiredCapability' has no attributes.
+The class 'p2::Comparable' has no attributes.
+The class 'IProcessingStepDescriptor' has no attributes.
+The class 'p2::IProvidedCapability' has the following attributes: 'version' of type str; 'name' of type str; 'namespace' of type str.
+The class 'p2::ITouchpointData' has no attributes.
+The class 'p2::IUpdateDescriptor' has the following attributes: 'location' of type str; 'severity' of type int; 'description' of type str.
+The class 'p2::ProvidedCapability' has no attributes.
+The class 'p2::SimpleArtifactDescriptor' has no attributes.
+The class 'IInstallableUnitPatch' has no attributes.
+The class 'IUpdateDescriptor' has no attributes.
+The class 'IInstallableUnit' has no attributes.
+The class 'ArtifactRepository' has no attributes.
+The class 'p2::MetadataRepository' has no attributes.
+The class 'p2::TouchpointData' has no attributes.
+The class 'p2::IAdaptable' has no attributes.
+The class 'p2::UpdateDescriptor' has no attributes.
+The class 'p2::IProcessingStepDescriptor' has the following attributes: 'required' of type bool; 'data' of type str; 'processorId' of type str.
+The class 'p2::IRepositoryReference' has the following attributes: 'location' of type str; 'nickname' of type str; 'options' of type int; 'type' of type int.
+The class 'p2::License' has no attributes.
+The class 'p2::RequiredCapability' has no attributes.
+The class 'p2::InstructionMap' has the following attributes: 'key' of type str.
+The class 'p2::Requirement' has no attributes.
+The class 'InstallableUnit' has no attributes.
+The class 'IArtifactDescriptor' has no attributes.
+The class 'p2::RequirementChange' has no attributes.
+The class 'p2::ITouchpointInstruction' has the following attributes: 'importAttribute' of type str; 'body' of type str.
+The class 'p2::IRequirement' has the following attributes: 'filter' of type str; 'greedy' of type bool; 'min' of type str; 'max' of type str; 'description' of type str; 'matches' of type str.
+The class 'p2::ArtifactDescriptor' has no attributes.
+The class 'p2::IInstallableUnitFragment' has no attributes.
+The class 'IArtifactRepository' has no attributes.
+The class 'ILicense' has no attributes.
+The class 'ArtifactDescriptor' has no attributes.
+The class 'p2::TouchpointType' has no attributes.
+The class 'p2::ArtifactsByKey' has no attributes.
+The class 'p2::IInstallableUnit' has the following attributes: 'singleton' of type bool; 'resolved' of type bool; 'filter' of type str.
+The class 'Requirement' has no attributes.
+The class 'p2::IRequirementChange' has no attributes.
+The class 'ITouchpointData' has no attributes.
+The class 'IRequirement' has no attributes.
+The class 'p2::Property' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'p2::IRepository' has the following attributes: 'provider' of type str; 'version' of type str; 'modifiable' of type bool; 'name' of type str; 'location' of type str; 'type' of type str; 'provisioningAgent' of type str; 'description' of type str.
+The class 'ITouchpointInstruction' has no attributes.
+The class 'p2::ILicense' has the following attributes: 'body' of type str; 'UUID' of type str; 'location' of type str.
+'p2::RequiredCapability' is a specialization of 'IRequiredCapability'.
+'p2::SimpleArtifactRepository' is a specialization of 'ArtifactRepository'.
+'p2::IInstallableUnitPatch' is a specialization of 'IInstallableUnit'.
+'p2::License' is a specialization of 'ILicense'.
+'p2::TouchpointType' is a specialization of 'ITouchpointType'.
+'p2::IRequiredCapability' is a specialization of 'IRequirement'.
+'p2::IInstallableUnitFragment' is a specialization of 'IInstallableUnit'.
+'p2::RequirementChange' is a specialization of 'IRequirementChange'.
+'p2::RepositoryReference' is a specialization of 'IRepositoryReference'.
+'p2::TouchpointData' is a specialization of 'ITouchpointData'.
+'p2::SimpleArtifactRepository' is a specialization of 'IFileArtifactRepository'.
+'p2::UpdateDescriptor' is a specialization of 'IUpdateDescriptor'.
+'p2::InstallableUnitPatch' is a specialization of 'IInstallableUnitPatch'.
+'p2::ProvidedCapability' is a specialization of 'IProvidedCapability'.
+'p2::ArtifactKey' is a specialization of 'IArtifactKey'.
+'p2::InstallableUnitFragment' is a specialization of 'IInstallableUnitFragment'.
+'p2::InstallableUnit' is a specialization of 'IInstallableUnit'.
+'p2::TouchpointInstruction' is a specialization of 'ITouchpointInstruction'.
+'p2::IFileArtifactRepository' is a specialization of 'IArtifactRepository'.
+'p2::RequiredCapability' is a specialization of 'Requirement'.
+'p2::InstallableUnitPatch' is a specialization of 'InstallableUnit'.
+'p2::ProcessingStepDescriptor' is a specialization of 'IProcessingStepDescriptor'.
+'p2::SimpleArtifactDescriptor' is a specialization of 'ArtifactDescriptor'.
+'p2::ArtifactDescriptor' is a specialization of 'IArtifactDescriptor'.
+'p2::Copyright' is a specialization of 'ICopyright'.
+'p2::InstallableUnitFragment' is a specialization of 'InstallableUnit'.
+'p2::Requirement' is a specialization of 'IRequirement'.
+'p2::InstructionMap' (role 'p2_InstructionMap59', cardinality 0..*) is associated with 'p2::TouchpointData' (role 'p2_TouchpointData', cardinality 0..*).
+'p2::IRequirement' (role 'p2_IRequirement', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit20', cardinality 0..*).
+'p2::MetadataRepository' (role 'p2_MetadataRepository', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit50', cardinality 0..*).
+'p2::IRequirementChange' (role 'p2_IRequirementChange', cardinality 0..*) is associated with 'p2::IInstallableUnitPatch' (role 'p2_IInstallableUnitPatch', cardinality 0..*).
+'p2::ArtifactDescriptor' (role 'p2_ArtifactDescriptor2', cardinality 0..*) is associated with 'p2::IProcessingStepDescriptor' (role 'p2_IProcessingStepDescriptor', cardinality 0..*).
+'p2::IProvidedCapability' (role 'p2_IProvidedCapability', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit22', cardinality 0..*).
+'p2::InstallableUnit' (role 'p2_InstallableUnit', cardinality 0..*) is associated with 'p2::Property' (role 'p2_Property40', cardinality 0..*).
+'p2::IRequirement' (role 'p2_IRequirement25', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit24', cardinality 0..*).
+'p2::IArtifactKey' (role 'p2_IArtifactKey', cardinality 0..*) is associated with 'p2::ArtifactsByKey' (role 'p2_ArtifactsByKey5', cardinality 0..*).
+'p2::ArtifactsByKey' (role 'p2_ArtifactsByKey7', cardinality 0..*) is associated with 'p2::IArtifactDescriptor' (role 'p2_IArtifactDescriptor', cardinality 0..*).
+'p2::Property' (role 'p2_Property', cardinality 0..*) is associated with 'p2::ArtifactDescriptor' (role 'p2_ArtifactDescriptor', cardinality 0..*).
+'p2::ITouchpointType' (role 'p2_ITouchpointType', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit29', cardinality 0..*).
+'p2::InstallableUnitFragment' (role 'p2_InstallableUnitFragment', cardinality 0..*) is associated with 'p2::IRequirement' (role 'p2_IRequirement42', cardinality 0..*).
+'p2::IRequiredCapability' (role 'p2_IRequiredCapability', cardinality 0..*) is associated with 'p2::IRequirementChange' (role 'p2_IRequirementChange45', cardinality 0..*).
+'p2::SimpleArtifactRepository' (role 'p2_SimpleArtifactRepository', cardinality 0..*) is associated with 'p2::MappingRule' (role 'p2_MappingRule', cardinality 0..*).
+'p2::SimpleArtifactDescriptor' (role 'p2_SimpleArtifactDescriptor', cardinality 0..*) is associated with 'p2::Property' (role 'p2_Property57', cardinality 0..*).
+'p2::ITouchpointInstruction' (role 'p2_ITouchpointInstruction', cardinality 0..*) is associated with 'p2::InstructionMap' (role 'p2_InstructionMap', cardinality 0..*).
+'p2::ILicense' (role 'p2_ILicense', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit18', cardinality 0..*).
+'p2::IRequirement' (role 'p2_IRequirement35', cardinality 0..*) is associated with 'p2::IInstallableUnitPatch' (role 'p2_IInstallableUnitPatch34', cardinality 0..*).
+'p2::IInstallableUnit' (role 'p2_IInstallableUnit14', cardinality 0..*) is associated with 'p2::ICopyright' (role 'p2_ICopyright', cardinality 0..*).
+'p2::IInstallableUnitPatch' (role 'p2_IInstallableUnitPatch37', cardinality 0..*) is associated with 'p2::IRequirement' (role 'p2_IRequirement38', cardinality 0..*).
+'p2::IInstallableUnit' (role 'p2_IInstallableUnit27', cardinality 0..*) is associated with 'p2::ITouchpointData' (role 'p2_ITouchpointData', cardinality 0..*).
+'p2::IInstallableUnit' (role 'p2_IInstallableUnit16', cardinality 0..*) is associated with 'p2::IInstallableUnitFragment' (role 'p2_IInstallableUnitFragment', cardinality 0..*).
+'p2::IArtifactDescriptor' (role 'p2_IArtifactDescriptor9', cardinality 0..*) is associated with 'p2::IArtifactKey' (role 'p2_IArtifactKey10', cardinality 0..*).
+'p2::Property' (role 'p2_Property54', cardinality 0..*) is associated with 'p2::Repository' (role 'p2_Repository', cardinality 0..*).
+'p2::IRepositoryReference' (role 'p2_IRepositoryReference', cardinality 0..*) is associated with 'p2::MetadataRepository' (role 'p2_MetadataRepository52', cardinality 0..*).
+'p2::IUpdateDescriptor' (role 'p2_IUpdateDescriptor', cardinality 0..*) is associated with 'p2::IInstallableUnit' (role 'p2_IInstallableUnit31', cardinality 0..*).
+'p2::ArtifactRepository' (role 'p2_ArtifactRepository', cardinality 0..*) is associated with 'p2::ArtifactsByKey' (role 'p2_ArtifactsByKey', cardinality 0..*).
+'p2::IInstallableUnit' (role 'p2_IInstallableUnit', cardinality 0..*) is associated with 'p2::IArtifactKey' (role 'p2_IArtifactKey12', cardinality 0..*).
+'p2::IRequirementChange' (role 'p2_IRequirementChange47', cardinality 0..*) is associated with 'p2::IRequiredCapability' (role 'p2_IRequiredCapability48', cardinality 0..*).

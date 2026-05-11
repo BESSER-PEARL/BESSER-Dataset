@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'adl203::Component' has the following attributes: 'name' of type str.
+The class 'adl203::Required' has no attributes.
+The class 'adl203::Content' has the following attributes: 'expression' of type str; 'language' of type str.
+The class 'adl203::Binding' has the following attributes: 'name' of type str.
+The class 'Interface' has no attributes.
+The class 'adl203::Provided' has no attributes.
+The class 'adl203::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+The class 'adl203::BindingAttributes' has the following attributes: 'value' of type str; 'name' of type str.
+'adl203::Required' is a specialization of 'Interface'.
+'adl203::Provided' is a specialization of 'Interface'.
+'adl203::Component' (role 'adl203_Component9', cardinality 0..*) is associated with 'adl203::Component' (role 'adl203_Component7', cardinality 0..*).
+'adl203::Binding' (role 'adl203_Binding23', cardinality 0..*) is associated with 'adl203::Provided' (role 'adl203_Provided22', cardinality 0..*).
+'adl203::Required' (role 'adl203_Required26', cardinality 0..*) is associated with 'adl203::Provided' (role 'adl203_Provided25', cardinality 0..*).
+'adl203::Content' (role 'adl203_Content19', cardinality 0..*) is associated with 'adl203::Component' (role 'adl203_Component20', cardinality 0..*).
+'adl203::Component' (role 'adl203_Component', cardinality 0..*) is associated with 'adl203::Content' (role 'adl203_Content', cardinality 0..*).
+'adl203::Binding' (role 'adl203_Binding', cardinality 0..*) is associated with 'adl203::Component' (role 'adl203_Component6', cardinality 0..*).
+'adl203::Binding' (role 'adl203_Binding11', cardinality 0..*) is associated with 'adl203::Required' (role 'adl203_Required12', cardinality 0..*).
+'adl203::Component' (role 'adl203_Component2', cardinality 0..*) is associated with 'adl203::Required' (role 'adl203_Required', cardinality 0..*).
+'adl203::BindingAttributes' (role 'adl203_BindingAttributes', cardinality 0..*) is associated with 'adl203::Binding' (role 'adl203_Binding14', cardinality 0..*).
+'adl203::Provided' (role 'adl203_Provided', cardinality 0..*) is associated with 'adl203::Component' (role 'adl203_Component4', cardinality 0..*).
+'adl203::Binding' (role 'adl203_Binding16', cardinality 0..*) is associated with 'adl203::Provided' (role 'adl203_Provided17', cardinality 0..*).

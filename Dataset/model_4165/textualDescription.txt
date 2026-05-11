@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'noJdt::Model' has no attributes.
+The class 'noJdt::Greeting' has the following attributes: 'name' of type str.
+'noJdt::Greeting' (role 'noJdt_Greeting', cardinality 0..*) is associated with 'noJdt::Model' (role 'noJdt_Model', cardinality 0..*).
+'noJdt::Greeting' (role 'noJdt_Greeting3', cardinality 0..*) is associated with 'noJdt::Greeting' (role 'noJdt_Greeting1', cardinality 0..*).

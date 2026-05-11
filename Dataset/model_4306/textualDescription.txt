@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'metrics::Value' has no attributes.
+The class 'metrics::MetricSource' has the following attributes: 'name' of type str; 'lastContact' of type str; 'lastPurge' of type str; 'location' of type str; 'metrickind' of type str.
+'metrics::MetricSource' (role 'metrics_MetricSource', cardinality 0..*) is associated with 'metrics::Value' (role 'metrics_Value', cardinality 0..*).

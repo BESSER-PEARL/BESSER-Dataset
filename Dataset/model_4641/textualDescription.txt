@@ -1,0 +1,237 @@
+The model has 108 class(es).
+The class 'notation::StringListValueStyle' has the following attributes: 'stringListValue' of type str.
+The class 'notation::DiagramStyle' has no attributes.
+The class 'notation::DoubleListValueStyle' has the following attributes: 'doubleListValue' of type str.
+The class 'notation::Connector' has no attributes.
+The class 'LayoutConstraint' has no attributes.
+The class 'Bendpoints' has no attributes.
+The class 'BasicCompartment' has no attributes.
+The class 'DescriptionStyle' has no attributes.
+The class 'Diagram' has no attributes.
+The class 'notation::Size' has the following attributes: 'height' of type int; 'width' of type int.
+The class 'notation::LineTypeStyle' has the following attributes: 'lineType' of type str.
+The class 'Location' has no attributes.
+The class 'notation::IdentityAnchor' has the following attributes: 'id' of type str.
+The class 'notation::NodeEntry' has the following attributes: 'value' of type str.
+The class 'BasicDecorationNode' has no attributes.
+The class 'notation::CanonicalStyle' has the following attributes: 'canonical' of type bool.
+The class 'notation::Shape' has no attributes.
+The class 'notation::TextStyle' has the following attributes: 'textAlignment' of type str.
+The class 'NamedStyle' has no attributes.
+The class 'notation::StringObjectConverter' has no attributes.
+The class 'notation::DoubleValueStyle' has the following attributes: 'doubleValue' of type float.
+The class 'notation::DecorationNode' has no attributes.
+The class 'notation::ImageBufferStyle' has no attributes.
+The class 'notation::FilteringStyle' has the following attributes: 'filteringKeys' of type str; 'filtering' of type str.
+The class 'notation::Node' has no attributes.
+The class 'FillStyle' has no attributes.
+The class 'notation::MultiDiagramLinkStyle' has no attributes.
+The class 'notation::FillStyle' has the following attributes: 'fillColor' of type int; 'transparency' of type int; 'gradient' of type str.
+The class 'notation::Compartment' has no attributes.
+The class 'notation::EObject' has no attributes.
+The class 'ShapeStyle' has no attributes.
+The class 'notation::EObjectListValueStyle' has no attributes.
+The class 'notation::StringToPropertyValueMapEntry' has the following attributes: 'key' of type str.
+The class 'notation::RoutingStyle' has the following attributes: 'avoidObstructions' of type bool; 'closestDistance' of type bool; 'smoothness' of type str; 'jumpLinksReverse' of type bool; 'jumpLinkStatus' of type str; 'jumpLinkType' of type str; 'routing' of type str.
+The class 'notation::RelativeBendpoints' has the following attributes: 'points' of type str.
+The class 'notation::ListValueStyle' has the following attributes: 'rawValuesList' of type str.
+The class 'DiagramStyle' has no attributes.
+The class 'notation::TitleStyle' has the following attributes: 'showTitle' of type bool.
+The class 'ConnectorStyle' has no attributes.
+The class 'DrawerStyle' has no attributes.
+The class 'notation::HintedDiagramLinkStyle' has the following attributes: 'hint' of type str.
+The class 'notation::ConnectorStyle' has no attributes.
+The class 'notation::ListCompartment' has no attributes.
+The class 'notation::PropertiesSetStyle' has no attributes.
+The class 'notation::NamedStyle' has the following attributes: 'name' of type str.
+The class 'FilteringStyle' has no attributes.
+The class 'Edge' has no attributes.
+The class 'notation::BooleanValueStyle' has the following attributes: 'booleanValue' of type bool.
+The class 'notation::View' has the following attributes: 'mutable' of type bool; 'visible' of type bool; 'type' of type str.
+The class 'FontStyle' has no attributes.
+The class 'notation::ShapeStyle' has no attributes.
+The class 'DiagramLinkStyle' has no attributes.
+The class 'RoundedCornersStyle' has no attributes.
+The class 'RoutingStyle' has no attributes.
+The class 'notation::ByteArrayValueStyle' has the following attributes: 'byteArrayValue' of type str.
+The class 'PageStyle' has no attributes.
+The class 'notation::Anchor' has no attributes.
+The class 'BasicSemanticCompartment' has no attributes.
+The class 'Anchor' has no attributes.
+The class 'DataTypeStyle' has no attributes.
+The class 'Size' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'notation::LayoutConstraint' has no attributes.
+The class 'DecorationNode' has no attributes.
+The class 'LineStyle' has no attributes.
+The class 'CanonicalStyle' has no attributes.
+The class 'notation::GuideStyle' has no attributes.
+The class 'notation::Image' has the following attributes: 'data' of type str.
+The class 'ImageStyle' has no attributes.
+The class 'notation::LineStyle' has the following attributes: 'lineWidth' of type int; 'lineColor' of type int.
+The class 'notation::BasicCompartment' has no attributes.
+The class 'notation::Bounds' has no attributes.
+The class 'notation::Bendpoints' has no attributes.
+The class 'notation::Style' has no attributes.
+The class 'notation::BasicDecorationNode' has no attributes.
+The class 'notation::IntListValueStyle' has the following attributes: 'intListValue' of type int.
+The class 'notation::StandardDiagram' has no attributes.
+The class 'TitleStyle' has no attributes.
+The class 'notation::EDataType' has no attributes.
+The class 'notation::SortingStyle' has the following attributes: 'sortingKeys' of type str; 'sorting' of type str.
+The class 'notation::ArrowStyle' has the following attributes: 'arrowSource' of type str; 'arrowTarget' of type str.
+The class 'notation::Diagram' has the following attributes: 'name' of type str; 'measurementUnit' of type str.
+The class 'SortingStyle' has no attributes.
+The class 'notation::FontStyle' has the following attributes: 'strikeThrough' of type bool; 'fontHeight' of type int; 'underline' of type bool; 'italic' of type bool; 'fontColor' of type int; 'bold' of type bool; 'fontName' of type str.
+The class 'notation::RoundedCornersStyle' has the following attributes: 'roundedBendpointsRadius' of type int.
+The class 'notation::Edge' has no attributes.
+The class 'notation::BooleanListValueStyle' has the following attributes: 'booleanListValue' of type str.
+The class 'View' has no attributes.
+The class 'notation::ImageStyle' has the following attributes: 'maintainAspectRatio' of type str; 'antiAlias' of type str.
+The class 'notation::Location' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'notation::DrawerStyle' has the following attributes: 'collapsed' of type bool.
+The class 'notation::DataTypeStyle' has no attributes.
+The class 'notation::PageStyle' has the following attributes: 'pageHeight' of type int; 'pageWidth' of type int; 'pageY' of type int; 'pageX' of type int.
+The class 'StringObjectConverter' has no attributes.
+The class 'notation::SemanticListCompartment' has no attributes.
+The class 'notation::Guide' has the following attributes: 'position' of type int.
+The class 'notation::BasicSemanticCompartment' has no attributes.
+The class 'Node' has no attributes.
+The class 'notation::SingleValueStyle' has the following attributes: 'rawValue' of type str.
+The class 'notation::PropertyValue' has the following attributes: 'rawValue' of type str.
+The class 'Style' has no attributes.
+The class 'notation::DiagramLinkStyle' has no attributes.
+The class 'notation::DescriptionStyle' has the following attributes: 'description' of type str.
+The class 'notation::IntValueStyle' has the following attributes: 'intValue' of type int.
+The class 'notation::EObjectValueStyle' has no attributes.
+The class 'notation::Ratio' has the following attributes: 'value' of type float.
+The class 'GuideStyle' has no attributes.
+The class 'notation::StringValueStyle' has the following attributes: 'stringValue' of type str.
+The enumeration 'Routing' has the following literals: 'Rectilinear', 'Manual', 'Tree'.
+The enumeration 'JumpLinkStatus' has the following literals: 'Above', 'None_', 'All', 'Below'.
+The enumeration 'ArrowType' has the following literals: 'OpenArrow', 'SolidArrow', 'None_'.
+The enumeration 'LineType' has the following literals: 'Solid', 'Dash', 'Dot', 'DashDotDot', 'DashDot', 'Double'.
+The enumeration 'SortingDirection' has the following literals: 'Descending', 'Ascending'.
+The enumeration 'Filtering' has the following literals: 'Automatic', 'Manual', 'None_'.
+The enumeration 'Alignment' has the following literals: 'Left', 'Top', 'Center', 'Bottom', 'Right'.
+The enumeration 'JumpLinkType' has the following literals: 'Square', 'Chamfered', 'Semicircle'.
+The enumeration 'Smoothness' has the following literals: 'None_', 'More', 'Normal', 'Less'.
+The enumeration 'Sorting' has the following literals: 'Manual', 'Automatic', 'None_'.
+The enumeration 'GradientStyle' has the following literals: 'Horizontal', 'Vertical'.
+The enumeration 'TextAlignment' has the following literals: 'Center', 'Left', 'Right'.
+The enumeration 'MeasurementUnit' has the following literals: 'Himetric', 'Pixel'.
+'notation::StandardDiagram' is a specialization of 'Diagram'.
+'notation::FilteringStyle' is a specialization of 'Style'.
+'notation::SemanticListCompartment' is a specialization of 'FilteringStyle'.
+'notation::Shape' is a specialization of 'Node'.
+'notation::Edge' is a specialization of 'View'.
+'notation::DecorationNode' is a specialization of 'BasicDecorationNode'.
+'notation::DiagramStyle' is a specialization of 'GuideStyle'.
+'notation::FontStyle' is a specialization of 'Style'.
+'notation::PageStyle' is a specialization of 'Style'.
+'notation::RoundedCornersStyle' is a specialization of 'Style'.
+'notation::ListCompartment' is a specialization of 'TitleStyle'.
+'notation::IdentityAnchor' is a specialization of 'Anchor'.
+'notation::LineStyle' is a specialization of 'Style'.
+'notation::ConnectorStyle' is a specialization of 'LineStyle'.
+'notation::DiagramStyle' is a specialization of 'PageStyle'.
+'notation::FillStyle' is a specialization of 'Style'.
+'notation::Compartment' is a specialization of 'BasicCompartment'.
+'notation::ListCompartment' is a specialization of 'SortingStyle'.
+'notation::BooleanValueStyle' is a specialization of 'NamedStyle'.
+'notation::ShapeStyle' is a specialization of 'FontStyle'.
+'notation::IntValueStyle' is a specialization of 'NamedStyle'.
+'notation::ShapeStyle' is a specialization of 'LineStyle'.
+'notation::BasicCompartment' is a specialization of 'DrawerStyle'.
+'notation::EObjectValueStyle' is a specialization of 'NamedStyle'.
+'notation::IntListValueStyle' is a specialization of 'NamedStyle'.
+'notation::Shape' is a specialization of 'ShapeStyle'.
+'notation::NamedStyle' is a specialization of 'Style'.
+'notation::Ratio' is a specialization of 'LayoutConstraint'.
+'notation::ByteArrayValueStyle' is a specialization of 'NamedStyle'.
+'notation::SemanticListCompartment' is a specialization of 'TitleStyle'.
+'notation::PropertiesSetStyle' is a specialization of 'NamedStyle'.
+'notation::ArrowStyle' is a specialization of 'Style'.
+'notation::DiagramStyle' is a specialization of 'DescriptionStyle'.
+'notation::ConnectorStyle' is a specialization of 'RoutingStyle'.
+'notation::SortingStyle' is a specialization of 'Style'.
+'notation::TextStyle' is a specialization of 'Style'.
+'notation::ListCompartment' is a specialization of 'FilteringStyle'.
+'notation::BasicSemanticCompartment' is a specialization of 'DrawerStyle'.
+'notation::DrawerStyle' is a specialization of 'Style'.
+'notation::HintedDiagramLinkStyle' is a specialization of 'DiagramLinkStyle'.
+'notation::ShapeStyle' is a specialization of 'FillStyle'.
+'notation::SemanticListCompartment' is a specialization of 'SortingStyle'.
+'notation::ListCompartment' is a specialization of 'BasicCompartment'.
+'notation::HintedDiagramLinkStyle' is a specialization of 'Style'.
+'notation::GuideStyle' is a specialization of 'Style'.
+'notation::ListValueStyle' is a specialization of 'DataTypeStyle'.
+'notation::Diagram' is a specialization of 'View'.
+'notation::BasicCompartment' is a specialization of 'DecorationNode'.
+'notation::DataTypeStyle' is a specialization of 'NamedStyle'.
+'notation::SemanticListCompartment' is a specialization of 'BasicSemanticCompartment'.
+'notation::Bounds' is a specialization of 'Location'.
+'notation::ImageBufferStyle' is a specialization of 'ImageStyle'.
+'notation::CanonicalStyle' is a specialization of 'Style'.
+'notation::ShapeStyle' is a specialization of 'DescriptionStyle'.
+'notation::MultiDiagramLinkStyle' is a specialization of 'Style'.
+'notation::StringValueStyle' is a specialization of 'NamedStyle'.
+'notation::DiagramLinkStyle' is a specialization of 'Style'.
+'notation::RelativeBendpoints' is a specialization of 'Bendpoints'.
+'notation::SingleValueStyle' is a specialization of 'DataTypeStyle'.
+'notation::DoubleValueStyle' is a specialization of 'NamedStyle'.
+'notation::View' is a specialization of 'EModelElement'.
+'notation::Bounds' is a specialization of 'Size'.
+'notation::BasicDecorationNode' is a specialization of 'Node'.
+'notation::LineTypeStyle' is a specialization of 'Style'.
+'notation::Connector' is a specialization of 'ConnectorStyle'.
+'notation::RoutingStyle' is a specialization of 'RoundedCornersStyle'.
+'notation::BasicSemanticCompartment' is a specialization of 'BasicDecorationNode'.
+'notation::Location' is a specialization of 'LayoutConstraint'.
+'notation::PropertyValue' is a specialization of 'StringObjectConverter'.
+'notation::DescriptionStyle' is a specialization of 'Style'.
+'notation::TitleStyle' is a specialization of 'Style'.
+'notation::BooleanListValueStyle' is a specialization of 'NamedStyle'.
+'notation::Compartment' is a specialization of 'TitleStyle'.
+'notation::Compartment' is a specialization of 'CanonicalStyle'.
+'notation::Size' is a specialization of 'LayoutConstraint'.
+'notation::EObjectListValueStyle' is a specialization of 'NamedStyle'.
+'notation::Connector' is a specialization of 'Edge'.
+'notation::ImageStyle' is a specialization of 'Style'.
+'notation::StandardDiagram' is a specialization of 'DiagramStyle'.
+'notation::DoubleListValueStyle' is a specialization of 'NamedStyle'.
+'notation::ShapeStyle' is a specialization of 'RoundedCornersStyle'.
+'notation::Node' is a specialization of 'View'.
+'notation::StringListValueStyle' is a specialization of 'NamedStyle'.
+'notation::DataTypeStyle' is a specialization of 'StringObjectConverter'.
+'notation::FilteringStyle' (role 'notation_FilteringStyle', cardinality 0..*) is associated with 'notation::EObject' (role 'notation_EObject42', cardinality 0..*).
+'notation::View' (role 'notation_View', cardinality 0..*) is associated with 'notation::Node' (role 'notation_Node15', cardinality 0..*).
+'notation::GuideStyle' (role 'notation_GuideStyle34', cardinality 0..*) is associated with 'notation::Guide' (role 'notation_Guide35', cardinality 0..*).
+'notation::PropertiesSetStyle' (role 'notation_PropertiesSetStyle', cardinality 0..*) is associated with 'notation::StringToPropertyValueMapEntry' (role 'notation_StringToPropertyValueMapEntry', cardinality 0..*).
+'notation::Node' (role 'notation_Node40', cardinality 0..*) is associated with 'notation::NodeEntry' (role 'notation_NodeEntry39', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge', cardinality 0..*) is associated with 'notation::Bendpoints' (role 'notation_Bendpoints', cardinality 0..*).
+'notation::EDataType' (role 'notation_EDataType', cardinality 0..*) is associated with 'notation::PropertyValue' (role 'notation_PropertyValue49', cardinality 0..*).
+'notation::EObject' (role 'notation_EObject', cardinality 0..*) is associated with 'notation::SortingStyle' (role 'notation_SortingStyle', cardinality 0..*).
+'notation::GuideStyle' (role 'notation_GuideStyle', cardinality 0..*) is associated with 'notation::Guide' (role 'notation_Guide', cardinality 0..*).
+'notation::DataTypeStyle' (role 'notation_DataTypeStyle', cardinality 0..*) is associated with 'notation::EDataType' (role 'notation_EDataType51', cardinality 0..*).
+'notation::NodeEntry' (role 'notation_NodeEntry', cardinality 0..*) is associated with 'notation::Guide' (role 'notation_Guide37', cardinality 0..*).
+'notation::Edge' (role 'targetEdges', cardinality 0..*) is associated with 'notation::View' (role 'View2', cardinality 0..*).
+'notation::StringToPropertyValueMapEntry' (role 'notation_StringToPropertyValueMapEntry47', cardinality 0..*) is associated with 'notation::PropertyValue' (role 'notation_PropertyValue', cardinality 0..*).
+'notation::Edge' (role 'Edge', cardinality 0..*) is associated with 'notation::View' (role 'source', cardinality 0..*).
+'notation::View' (role 'notation_View24', cardinality 0..*) is associated with 'notation::Node' (role 'notation_Node25', cardinality 0..*).
+'notation::Edge' (role 'sourceEdges', cardinality 0..*) is associated with 'notation::View' (role 'View', cardinality 0..*).
+'notation::View' (role 'target', cardinality 0..*) is associated with 'notation::Edge' (role 'Edge13', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge28', cardinality 0..*) is associated with 'notation::Diagram' (role 'notation_Diagram27', cardinality 0..*).
+'notation::EObject' (role 'notation_EObject55', cardinality 0..*) is associated with 'notation::EObjectListValueStyle' (role 'notation_EObjectListValueStyle', cardinality 0..*).
+'notation::LayoutConstraint' (role 'notation_LayoutConstraint', cardinality 0..*) is associated with 'notation::Node' (role 'notation_Node', cardinality 0..*).
+'notation::Diagram' (role 'notation_Diagram59', cardinality 0..*) is associated with 'notation::MultiDiagramLinkStyle' (role 'notation_MultiDiagramLinkStyle', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge31', cardinality 0..*) is associated with 'notation::Diagram' (role 'notation_Diagram30', cardinality 0..*).
+'notation::EObjectValueStyle' (role 'notation_EObjectValueStyle', cardinality 0..*) is associated with 'notation::EObject' (role 'notation_EObject53', cardinality 0..*).
+'notation::Diagram' (role 'notation_Diagram', cardinality 0..*) is associated with 'notation::View' (role 'notation_View22', cardinality 0..*).
+'notation::EObject' (role 'notation_EObject20', cardinality 0..*) is associated with 'notation::View' (role 'notation_View19', cardinality 0..*).
+'notation::Image' (role 'notation_Image', cardinality 0..*) is associated with 'notation::ImageBufferStyle' (role 'notation_ImageBufferStyle', cardinality 0..*).
+'notation::ImageStyle' (role 'notation_ImageStyle', cardinality 0..*) is associated with 'notation::Bounds' (role 'notation_Bounds', cardinality 0..*).
+'notation::Anchor' (role 'notation_Anchor', cardinality 0..*) is associated with 'notation::Edge' (role 'notation_Edge5', cardinality 0..*).
+'notation::View' (role 'notation_View17', cardinality 0..*) is associated with 'notation::Style' (role 'notation_Style', cardinality 0..*).
+'notation::Edge' (role 'notation_Edge7', cardinality 0..*) is associated with 'notation::Anchor' (role 'notation_Anchor8', cardinality 0..*).
+'notation::DiagramLinkStyle' (role 'notation_DiagramLinkStyle', cardinality 0..*) is associated with 'notation::Diagram' (role 'notation_Diagram57', cardinality 0..*).

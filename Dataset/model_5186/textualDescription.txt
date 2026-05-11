@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'multi::B' has no attributes.
+The class 'multi::A' has no attributes.
+The class 'A' has no attributes.
+The class 'multi::C' has no attributes.
+The class 'B' has no attributes.
+'multi::C' is a specialization of 'B'.
+'multi::C' is a specialization of 'A'.

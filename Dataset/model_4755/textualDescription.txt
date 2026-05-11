@@ -1,0 +1,48 @@
+The model has 22 class(es).
+The class 'effbd201::InputPort' has no attributes.
+The class 'effbd201::Description' has the following attributes: 'content' of type str.
+The class 'effbd201::SequenceNode' has the following attributes: 'tMax' of type int; 'tMin' of type int; 'name' of type str.
+The class 'effbd201::And' has no attributes.
+The class 'ProcessNode' has no attributes.
+The class 'effbd201::ProcessNode' has the following attributes: 'label' of type str.
+The class 'effbd201::Item' has the following attributes: 'name' of type str.
+The class 'effbd201::Or' has no attributes.
+The class 'effbd201::Final' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'effbd201::Start' has no attributes.
+The class 'effbd201::LoopExit' has no attributes.
+The class 'effbd201::OutputPort' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'effbd201::Port' has the following attributes: 'id' of type str.
+The class 'effbd201::Flow' has no attributes.
+The class 'effbd201::Sequence' has no attributes.
+The class 'effbd201::Iteration' has no attributes.
+The class 'effbd201::Function' has the following attributes: 'domain' of type str.
+The class 'effbd201::Token' has no attributes.
+The class 'effbd201::Loop' has no attributes.
+The class 'Port' has no attributes.
+The enumeration 'FunctionDomain' has the following literals: 'time', 'space', 'form'.
+'effbd201::Function' is a specialization of 'ProcessNode'.
+'effbd201::Or' is a specialization of 'Sequence'.
+'effbd201::Final' is a specialization of 'Sequence'.
+'effbd201::InputPort' is a specialization of 'Port'.
+'effbd201::Iteration' is a specialization of 'Sequence'.
+'effbd201::OutputPort' is a specialization of 'Port'.
+'effbd201::Function' is a specialization of 'SequenceNode'.
+'effbd201::Start' is a specialization of 'Sequence'.
+'effbd201::And' is a specialization of 'Sequence'.
+'effbd201::Loop' is a specialization of 'Sequence'.
+'effbd201::Sequence' is a specialization of 'SequenceNode'.
+'effbd201::LoopExit' is a specialization of 'Sequence'.
+'effbd201::Flow' is a specialization of 'ProcessNode'.
+'effbd201::Function' (role 'effbd201_Function3', cardinality 0..*) is associated with 'effbd201::Sequence' (role 'effbd201_Sequence', cardinality 0..*).
+'effbd201::Description' (role 'effbd201_Description', cardinality 0..*) is associated with 'effbd201::Function' (role 'effbd201_Function11', cardinality 0..*).
+'effbd201::Function' (role 'effbd201_Function5', cardinality 0..*) is associated with 'effbd201::Flow' (role 'effbd201_Flow', cardinality 0..*).
+'effbd201::Token' (role 'effbd201_Token', cardinality 0..*) is associated with 'effbd201::Function' (role 'effbd201_Function13', cardinality 0..*).
+'effbd201::Flow' (role 'effbd201_Flow22', cardinality 0..*) is associated with 'effbd201::Item' (role 'effbd201_Item', cardinality 0..*).
+'effbd201::Function' (role 'effbd201_Function0', cardinality 0..*) is associated with 'effbd201::Function' (role 'effbd201_Function', cardinality 0..*).
+'effbd201::OutputPort' (role 'effbd201_OutputPort', cardinality 0..*) is associated with 'effbd201::Function' (role 'effbd201_Function7', cardinality 0..*).
+'effbd201::Flow' (role 'effbd201_Flow19', cardinality 0..*) is associated with 'effbd201::Port' (role 'effbd201_Port20', cardinality 0..*).
+'effbd201::Function' (role 'effbd201_Function9', cardinality 0..*) is associated with 'effbd201::InputPort' (role 'effbd201_InputPort', cardinality 0..*).
+'effbd201::SequenceNode' (role 'effbd201_SequenceNode14', cardinality 0..*) is associated with 'effbd201::SequenceNode' (role 'effbd201_SequenceNode', cardinality 0..*).
+'effbd201::Port' (role 'effbd201_Port', cardinality 0..*) is associated with 'effbd201::Flow' (role 'effbd201_Flow17', cardinality 0..*).

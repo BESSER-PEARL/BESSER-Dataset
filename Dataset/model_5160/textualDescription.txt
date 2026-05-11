@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'astrans::B' has no attributes.
+The class 'astrans::A' has no attributes.
+'astrans::B' (role 'astrans_B6', cardinality 0..*) is associated with 'astrans::B' (role 'astrans_B4', cardinality 0..*).
+'astrans::A' (role 'astrans_A2', cardinality 0..*) is associated with 'astrans::B' (role 'astrans_B3', cardinality 0..*).
+'astrans::A' (role 'astrans_A', cardinality 0..*) is associated with 'astrans::B' (role 'astrans_B', cardinality 0..*).

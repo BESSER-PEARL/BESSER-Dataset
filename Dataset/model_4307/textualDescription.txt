@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'metrics::Metric' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'metrics::MetricsSet' has the following attributes: 'name' of type str.
+'metrics::MetricsSet' (role 'metrics_MetricsSet', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric', cardinality 0..*).

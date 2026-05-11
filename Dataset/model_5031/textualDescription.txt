@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'NamedElement' has no attributes.
+The class 'accounting::WorkPackage' has the following attributes: 'comment' of type str; 'task' of type str; 'hours' of type float; 'date' of type date.
+The class 'accounting::Employees' has no attributes.
+The class 'accounting::Clients' has no attributes.
+The class 'accounting::Invoice' has the following attributes: 'dueDate' of type date; 'invoiceDate' of type date; 'id' of type str; 'unitAmount' of type float; 'state' of type str.
+The class 'accounting::Order' has the following attributes: 'paymentOffset' of type int; 'pricePerUnit' of type float; 'id' of type str.
+The class 'accounting::Project' has no attributes.
+The class 'accounting::Client' has no attributes.
+The class 'accounting::Deliverable' has the following attributes: 'dueDate' of type date; 'unitAmount' of type float.
+The class 'accounting::NamedElement' has the following attributes: 'name' of type str.
+The class 'accounting::Employee' has the following attributes: 'emails' of type str.
+The enumeration 'InvoiceState' has the following literals: 'Invoiced', 'Paid', 'New'.
+'accounting::Project' is a specialization of 'NamedElement'.
+'accounting::Client' is a specialization of 'NamedElement'.
+'accounting::Employee' is a specialization of 'NamedElement'.
+'accounting::Order' (role 'Order', cardinality 0..*) is associated with 'accounting::Project' (role 'project', cardinality 0..*).
+'accounting::WorkPackage' (role 'accounting_WorkPackage', cardinality 0..*) is associated with 'accounting::Employee' (role 'accounting_Employee14', cardinality 0..*).
+'accounting::Invoice' (role 'invoices', cardinality 0..*) is associated with 'accounting::Order' (role 'Order12', cardinality 0..*).
+'accounting::Project' (role 'accounting_Project', cardinality 0..*) is associated with 'accounting::WorkPackage' (role 'accounting_WorkPackage16', cardinality 0..*).
+'accounting::Deliverable' (role 'Deliverable', cardinality 0..*) is associated with 'accounting::Order' (role 'order', cardinality 0..*).
+'accounting::Project' (role 'Project', cardinality 0..*) is associated with 'accounting::Client' (role 'client', cardinality 0..*).
+'accounting::Order' (role 'order7', cardinality 0..*) is associated with 'accounting::Invoice' (role 'Invoice', cardinality 0..*).
+'accounting::Client' (role 'accounting_Client', cardinality 0..*) is associated with 'accounting::Clients' (role 'accounting_Clients', cardinality 0..*).
+'accounting::Order' (role 'orders', cardinality 0..*) is associated with 'accounting::Project' (role 'Project4', cardinality 0..*).
+'accounting::Project' (role 'projects', cardinality 0..*) is associated with 'accounting::Client' (role 'Client', cardinality 0..*).
+'accounting::Employee' (role 'accounting_Employee19', cardinality 0..*) is associated with 'accounting::Employees' (role 'accounting_Employees', cardinality 0..*).
+'accounting::Deliverable' (role 'deliverables', cardinality 0..*) is associated with 'accounting::Order' (role 'Order9', cardinality 0..*).
+'accounting::Invoice' (role 'accounting_Invoice', cardinality 0..*) is associated with 'accounting::Employee' (role 'accounting_Employee', cardinality 0..*).

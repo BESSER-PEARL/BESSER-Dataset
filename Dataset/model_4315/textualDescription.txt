@@ -1,0 +1,227 @@
+The model has 70 class(es).
+The class 'DimensionalMeasurement' has no attributes.
+The class 'smm::MeasurementRelationship' has no attributes.
+The class 'smm::NamedMeasure' has no attributes.
+The class 'smm::RefinementMeasurementRelationship' has no attributes.
+The class 'SmmElement' has no attributes.
+The class 'SmmRelationship' has no attributes.
+The class 'DirectMeasure' has no attributes.
+The class 'smm::MofElement' has no attributes.
+The class 'smm::Operation' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'Measure' has no attributes.
+The class 'smm::Measurement' has the following attributes: 'breakValue' of type str; 'error' of type str.
+The class 'smm::DirectMeasurement' has no attributes.
+The class 'DimensionalMeasure' has no attributes.
+The class 'smm::MeasureLibrary' has no attributes.
+The class 'smm::RecursiveMeasureRelationship' has no attributes.
+The class 'smm::AbstractMeasureElement' has no attributes.
+The class 'smm::OCLOperation' has the following attributes: 'context' of type str; 'body' of type str.
+The class 'smm::DimensionalMeasure' has the following attributes: 'unit' of type str.
+The class 'smm::RescaleMeasureRelationship' has no attributes.
+The class 'smm::RatioMeasurement' has no attributes.
+The class 'smm::DimensionalMeasurement' has the following attributes: 'value' of type str.
+The class 'smm::BinaryMeasure' has the following attributes: 'functor' of type str.
+The class 'BinaryMeasure' has no attributes.
+The class 'smm::NamedMeasurement' has no attributes.
+The class 'DirectMeasurement' has no attributes.
+The class 'smm::SmmElement' has the following attributes: 'description' of type str; 'shortDescription' of type str; 'name' of type str.
+The class 'smm::Scope' has the following attributes: 'class_' of type str.
+The class 'smm::Observation' has the following attributes: 'whenObserved' of type str; 'observer' of type str; 'tool' of type str.
+The class 'smm::SmmRelationship' has no attributes.
+The class 'smm::CollectiveMeasure' has the following attributes: 'accumulator' of type str.
+The class 'smm::Attribute' has the following attributes: 'tag' of type str; 'value' of type str.
+The class 'MeasurementRelationship' has no attributes.
+The class 'smm::Count' has no attributes.
+The class 'smm::Base1MeasurementRelationship' has no attributes.
+The class 'smm::EquivalentMeasureRelationship' has no attributes.
+The class 'smm::Measure' has the following attributes: 'visible' of type str; 'measurementLabelFormat' of type str; 'measureLabelFormat' of type str.
+The class 'smm::MeasureRelationship' has no attributes.
+The class 'smm::RankingMeasurementRelationship' has no attributes.
+The class 'Measurement' has no attributes.
+The class 'smm::CategoryRelationship' has no attributes.
+The class 'smm::Ranking' has no attributes.
+The class 'smm::BinaryMeasurement' has the following attributes: 'isBaseSupplied' of type str.
+The class 'smm::ObservedMeasure' has no attributes.
+The class 'smm::RefinementMeasureRelationship' has no attributes.
+The class 'smm::RankingMeasureRelationship' has no attributes.
+The class 'smm::Characteristic' has no attributes.
+The class 'smm::SmmModel' has no attributes.
+The class 'smm::Base1MeasureRelationship' has no attributes.
+The class 'smm::BaseMeasureRelationship' has no attributes.
+The class 'smm::MeasureCategory' has no attributes.
+The class 'smm::RescaleMeasurementRelationship' has no attributes.
+The class 'smm::BaseMeasurementRelationship' has no attributes.
+The class 'smm::DirectMeasure' has no attributes.
+The class 'smm::RecursiveMeasurementRelationship' has no attributes.
+The class 'smm::Counting' has no attributes.
+The class 'smm::RankingInterval' has the following attributes: 'minimumEndpoint' of type str; 'symbol' of type str; 'maximumOpen' of type str; 'minimumOpen' of type str; 'maximumEndpoint' of type str.
+The class 'smm::RescaledMeasure' has the following attributes: 'formula' of type str.
+The class 'smm::Base2MeasurementRelationship' has no attributes.
+The class 'BinaryMeasurement' has no attributes.
+The class 'smm::RatioMeasure' has no attributes.
+The class 'smm::CollectiveMeasurement' has the following attributes: 'accumulator' of type str; 'isBaseSupplied' of type str.
+The class 'smm::Base2MeasureRelationship' has no attributes.
+The class 'smm::Annotation' has the following attributes: 'text' of type str.
+The class 'MeasureRelationship' has no attributes.
+The class 'AbstractMeasureElement' has no attributes.
+The class 'smm::ObservationScope' has the following attributes: 'scopeUri' of type str.
+The class 'smm::RescaledMeasurement' has the following attributes: 'isBaseSupplied' of type str.
+The class 'smm::Grade' has the following attributes: 'value' of type str; 'isBaseSupplied' of type str.
+The class 'smm::Argument' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'smm::EquivalentMeasurementRelationship' has no attributes.
+The enumeration 'Accumulator' has the following literals: 'maximum', 'sum', 'average', 'standardDeviation', 'minimum'.
+'smm::BinaryMeasure' is a specialization of 'DimensionalMeasure'.
+'smm::EquivalentMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::RefinementMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::SmmRelationship' is a specialization of 'SmmElement'.
+'smm::DimensionalMeasurement' is a specialization of 'Measurement'.
+'smm::MeasureRelationship' is a specialization of 'SmmRelationship'.
+'smm::ObservedMeasure' is a specialization of 'SmmRelationship'.
+'smm::RecursiveMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::BaseMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::Base2MeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::Grade' is a specialization of 'Measurement'.
+'smm::RankingInterval' is a specialization of 'SmmElement'.
+'smm::DirectMeasurement' is a specialization of 'DimensionalMeasurement'.
+'smm::CollectiveMeasure' is a specialization of 'DimensionalMeasure'.
+'smm::Characteristic' is a specialization of 'AbstractMeasureElement'.
+'smm::BaseMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::CategoryRelationship' is a specialization of 'SmmRelationship'.
+'smm::DimensionalMeasure' is a specialization of 'Measure'.
+'smm::Ranking' is a specialization of 'Measure'.
+'smm::RankingMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::RescaleMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::Attribute' is a specialization of 'SmmElement'.
+'smm::Measure' is a specialization of 'AbstractMeasureElement'.
+'smm::Measurement' is a specialization of 'SmmElement'.
+'smm::Count' is a specialization of 'DirectMeasurement'.
+'smm::MeasureCategory' is a specialization of 'AbstractMeasureElement'.
+'smm::NamedMeasurement' is a specialization of 'DimensionalMeasurement'.
+'smm::Counting' is a specialization of 'DirectMeasure'.
+'smm::EquivalentMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::SmmModel' is a specialization of 'SmmElement'.
+'smm::MeasureLibrary' is a specialization of 'SmmElement'.
+'smm::Operation' is a specialization of 'AbstractMeasureElement'.
+'smm::RescaleMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::CollectiveMeasurement' is a specialization of 'DimensionalMeasurement'.
+'smm::AbstractMeasureElement' is a specialization of 'SmmElement'.
+'smm::RescaledMeasurement' is a specialization of 'DimensionalMeasurement'.
+'smm::Scope' is a specialization of 'AbstractMeasureElement'.
+'smm::Argument' is a specialization of 'SmmElement'.
+'smm::Base1MeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::RatioMeasurement' is a specialization of 'BinaryMeasurement'.
+'smm::Base1MeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::RefinementMeasureRelationship' is a specialization of 'MeasureRelationship'.
+'smm::ObservationScope' is a specialization of 'SmmElement'.
+'smm::Base2MeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::DirectMeasure' is a specialization of 'DimensionalMeasure'.
+'smm::BinaryMeasurement' is a specialization of 'DimensionalMeasurement'.
+'smm::OCLOperation' is a specialization of 'AbstractMeasureElement'.
+'smm::Observation' is a specialization of 'SmmElement'.
+'smm::RescaledMeasure' is a specialization of 'DimensionalMeasure'.
+'smm::MeasurementRelationship' is a specialization of 'SmmRelationship'.
+'smm::RatioMeasure' is a specialization of 'BinaryMeasure'.
+'smm::RecursiveMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::RankingMeasurementRelationship' is a specialization of 'MeasurementRelationship'.
+'smm::Annotation' is a specialization of 'SmmElement'.
+'smm::NamedMeasure' is a specialization of 'DimensionalMeasure'.
+'smm::RankingMeasurementRelationship' (role 'rankingTo168', cardinality 0..*) is associated with 'smm::Grade' (role 'Grade', cardinality 0..*).
+'smm::CategoryRelationship' (role 'smm_CategoryRelationship117', cardinality 0..*) is associated with 'smm::MeasureLibrary' (role 'smm_MeasureLibrary116', cardinality 0..*).
+'smm::Measurement' (role 'Measurement181', cardinality 0..*) is associated with 'smm::RecursiveMeasurementRelationship' (role 'recursiveFrom180', cardinality 0..*).
+'smm::Measurement' (role 'smm_Measurement159', cardinality 0..*) is associated with 'smm::ObservedMeasure' (role 'smm_ObservedMeasure158', cardinality 0..*).
+'smm::AbstractMeasureElement' (role 'smm_AbstractMeasureElement', cardinality 0..*) is associated with 'smm::CategoryRelationship' (role 'smm_CategoryRelationship27', cardinality 0..*).
+'smm::DimensionalMeasure' (role 'to45', cardinality 0..*) is associated with 'smm::RankingMeasureRelationship' (role 'RankingMeasureRelationship', cardinality 0..*).
+'smm::BaseMeasureRelationship' (role 'BaseMeasureRelationship', cardinality 0..*) is associated with 'smm::CollectiveMeasure' (role 'from_31', cardinality 0..*).
+'smm::DimensionalMeasure' (role 'DimensionalMeasure7', cardinality 0..*) is associated with 'smm::Base2MeasureRelationship' (role 'baseMeasure2From', cardinality 0..*).
+'smm::Observation' (role 'smm_Observation153', cardinality 0..*) is associated with 'smm::Argument' (role 'smm_Argument', cardinality 0..*).
+'smm::Ranking' (role 'from_162', cardinality 0..*) is associated with 'smm::RankingMeasureRelationship' (role 'RankingMeasureRelationship163', cardinality 0..*).
+'smm::Base1MeasureRelationship' (role 'baseMeasure1From', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'DimensionalMeasure', cardinality 0..*).
+'smm::Base2MeasureRelationship' (role 'Base2MeasureRelationship', cardinality 0..*) is associated with 'smm::BinaryMeasure' (role 'from_20', cardinality 0..*).
+'smm::Measure' (role 'Measure173', cardinality 0..*) is associated with 'smm::RecursiveMeasureRelationship' (role 'recursiveTo', cardinality 0..*).
+'smm::BinaryMeasurement' (role 'from_24', cardinality 0..*) is associated with 'smm::Base2MeasurementRelationship' (role 'Base2MeasurementRelationship', cardinality 0..*).
+'smm::MeasureCategory' (role 'MeasureCategory109', cardinality 0..*) is associated with 'smm::MeasureCategory' (role 'category', cardinality 0..*).
+'smm::Base1MeasureRelationship' (role 'Base1MeasureRelationship', cardinality 0..*) is associated with 'smm::BinaryMeasure' (role 'from_', cardinality 0..*).
+'smm::RankingMeasurementRelationship' (role 'RankingMeasurementRelationship72', cardinality 0..*) is associated with 'smm::Grade' (role 'from_71', cardinality 0..*).
+'smm::RecursiveMeasurementRelationship' (role 'RecursiveMeasurementRelationship', cardinality 0..*) is associated with 'smm::Measurement' (role 'from_133', cardinality 0..*).
+'smm::Annotation' (role 'smm_Annotation', cardinality 0..*) is associated with 'smm::SmmElement' (role 'smm_SmmElement215', cardinality 0..*).
+'smm::MeasurementRelationship' (role 'smm_MeasurementRelationship', cardinality 0..*) is associated with 'smm::Measurement' (role 'smm_Measurement138', cardinality 0..*).
+'smm::Measure' (role 'categoryMeasure', cardinality 0..*) is associated with 'smm::MeasureCategory' (role 'MeasureCategory', cardinality 0..*).
+'smm::MeasureCategory' (role 'category111', cardinality 0..*) is associated with 'smm::Measure' (role 'Measure112', cardinality 0..*).
+'smm::Base1MeasurementRelationship' (role 'baseMeasurement1From', cardinality 0..*) is associated with 'smm::DimensionalMeasurement' (role 'DimensionalMeasurement', cardinality 0..*).
+'smm::RescaleMeasurementRelationship' (role 'rescaleFrom202', cardinality 0..*) is associated with 'smm::RescaledMeasurement' (role 'RescaledMeasurement', cardinality 0..*).
+'smm::RescaleMeasureRelationship' (role 'RescaleMeasureRelationship', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'from_43', cardinality 0..*).
+'smm::MeasureLibrary' (role 'smm_MeasureLibrary220', cardinality 0..*) is associated with 'smm::SmmModel' (role 'smm_SmmModel219', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'DimensionalMeasurement205', cardinality 0..*) is associated with 'smm::RescaleMeasurementRelationship' (role 'rescaleTo204', cardinality 0..*).
+'smm::DirectMeasure' (role 'smm_DirectMeasure', cardinality 0..*) is associated with 'smm::Operation' (role 'smm_Operation', cardinality 0..*).
+'smm::Measurement' (role 'Measurement', cardinality 0..*) is associated with 'smm::EquivalentMeasurementRelationship' (role 'equivalentTo66', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'from_56', cardinality 0..*) is associated with 'smm::RescaleMeasurementRelationship' (role 'RescaleMeasurementRelationship', cardinality 0..*).
+'smm::Base2MeasureRelationship' (role 'baseMeasure2To', cardinality 0..*) is associated with 'smm::BinaryMeasure' (role 'BinaryMeasure5', cardinality 0..*).
+'smm::Measure' (role 'Measure175', cardinality 0..*) is associated with 'smm::RecursiveMeasureRelationship' (role 'recursiveFrom', cardinality 0..*).
+'smm::EquivalentMeasureRelationship' (role 'smm_EquivalentMeasureRelationship', cardinality 0..*) is associated with 'smm::Operation' (role 'smm_Operation61', cardinality 0..*).
+'smm::RescaleMeasureRelationship' (role 'rescaleFrom', cardinality 0..*) is associated with 'smm::RescaledMeasure' (role 'RescaledMeasure', cardinality 0..*).
+'smm::Operation' (role 'smm_Operation211', cardinality 0..*) is associated with 'smm::Scope' (role 'smm_Scope210', cardinality 0..*).
+'smm::MeasureCategory' (role 'MeasureCategory106', cardinality 0..*) is associated with 'smm::MeasureCategory' (role 'categoryElement', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'DimensionalMeasurement171', cardinality 0..*) is associated with 'smm::RankingMeasurementRelationship' (role 'rankingFrom170', cardinality 0..*).
+'smm::MeasureRelationship' (role 'smm_MeasureRelationship100', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure99', cardinality 0..*).
+'smm::Operation' (role 'smm_Operation120', cardinality 0..*) is associated with 'smm::MeasureRelationship' (role 'smm_MeasureRelationship119', cardinality 0..*).
+'smm::BaseMeasureRelationship' (role 'BaseMeasureRelationship35', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'to', cardinality 0..*).
+'smm::DimensionalMeasure' (role 'DimensionalMeasure166', cardinality 0..*) is associated with 'smm::RankingMeasureRelationship' (role 'rankingFrom', cardinality 0..*).
+'smm::Measure' (role 'to86', cardinality 0..*) is associated with 'smm::EquivalentMeasureRelationship' (role 'EquivalentMeasureRelationship87', cardinality 0..*).
+'smm::RefinementMeasurementRelationship' (role 'RefinementMeasurementRelationship', cardinality 0..*) is associated with 'smm::Measurement' (role 'from_123', cardinality 0..*).
+'smm::Measurement' (role 'to130', cardinality 0..*) is associated with 'smm::EquivalentMeasurementRelationship' (role 'EquivalentMeasurementRelationship131', cardinality 0..*).
+'smm::RescaleMeasureRelationship' (role 'rescaleTo', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'DimensionalMeasure197', cardinality 0..*).
+'smm::Scope' (role 'smm_Scope', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure77', cardinality 0..*).
+'smm::BaseMeasureRelationship' (role 'baseMeasureFrom', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'DimensionalMeasure14', cardinality 0..*).
+'smm::RecursiveMeasureRelationship' (role 'RecursiveMeasureRelationship92', cardinality 0..*) is associated with 'smm::Measure' (role 'to91', cardinality 0..*).
+'smm::Operation' (role 'smm_Operation97', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure96', cardinality 0..*).
+'smm::Measure' (role 'smm_Measure102', cardinality 0..*) is associated with 'smm::MeasureRelationship' (role 'smm_MeasureRelationship103', cardinality 0..*).
+'smm::DimensionalMeasure' (role 'to37', cardinality 0..*) is associated with 'smm::Base1MeasureRelationship' (role 'Base1MeasureRelationship38', cardinality 0..*).
+'smm::Measure' (role 'Measure183', cardinality 0..*) is associated with 'smm::RefinementMeasureRelationship' (role 'refinementTo', cardinality 0..*).
+'smm::CategoryRelationship' (role 'smm_CategoryRelationship', cardinality 0..*) is associated with 'smm::MeasureCategory' (role 'smm_MeasureCategory', cardinality 0..*).
+'smm::Characteristic' (role 'smm_Characteristic28', cardinality 0..*) is associated with 'smm::Characteristic' (role 'smm_Characteristic', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'DimensionalMeasurement17', cardinality 0..*) is associated with 'smm::BaseMeasurementRelationship' (role 'baseMeasurementFrom', cardinality 0..*).
+'smm::EquivalentMeasurementRelationship' (role 'EquivalentMeasurementRelationship', cardinality 0..*) is associated with 'smm::Measurement' (role 'from_128', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'to53', cardinality 0..*) is associated with 'smm::Base2MeasurementRelationship' (role 'Base2MeasurementRelationship54', cardinality 0..*).
+'smm::RefinementMeasureRelationship' (role 'refinementFrom', cardinality 0..*) is associated with 'smm::Measure' (role 'Measure185', cardinality 0..*).
+'smm::MeasurementRelationship' (role 'smm_MeasurementRelationship144', cardinality 0..*) is associated with 'smm::Measurement' (role 'smm_Measurement143', cardinality 0..*).
+'smm::SmmElement' (role 'smm_SmmElement213', cardinality 0..*) is associated with 'smm::Attribute' (role 'smm_Attribute', cardinality 0..*).
+'smm::ObservedMeasure' (role 'smm_ObservedMeasure', cardinality 0..*) is associated with 'smm::Observation' (role 'smm_Observation147', cardinality 0..*).
+'smm::ObservedMeasure' (role 'smm_ObservedMeasure155', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure156', cardinality 0..*).
+'smm::Ranking' (role 'Ranking', cardinality 0..*) is associated with 'smm::RankingMeasureRelationship' (role 'rankingTo', cardinality 0..*).
+'smm::Operation' (role 'smm_Operation208', cardinality 0..*) is associated with 'smm::Scope' (role 'smm_Scope207', cardinality 0..*).
+'smm::BaseMeasurementRelationship' (role 'baseMeasurementTo', cardinality 0..*) is associated with 'smm::CollectiveMeasurement' (role 'CollectiveMeasurement', cardinality 0..*).
+'smm::Measurement' (role 'to125', cardinality 0..*) is associated with 'smm::RefinementMeasurementRelationship' (role 'RefinementMeasurementRelationship126', cardinality 0..*).
+'smm::EquivalentMeasurementRelationship' (role 'equivalentFrom68', cardinality 0..*) is associated with 'smm::Measurement' (role 'Measurement69', cardinality 0..*).
+'smm::RescaleMeasurementRelationship' (role 'RescaleMeasurementRelationship200', cardinality 0..*) is associated with 'smm::RescaledMeasurement' (role 'to199', cardinality 0..*).
+'smm::CollectiveMeasure' (role 'CollectiveMeasure', cardinality 0..*) is associated with 'smm::BaseMeasureRelationship' (role 'baseMeasureTo', cardinality 0..*).
+'smm::Base2MeasurementRelationship' (role 'baseMeasurement2To', cardinality 0..*) is associated with 'smm::BinaryMeasurement' (role 'BinaryMeasurement9', cardinality 0..*).
+'smm::Measurement' (role 'Measurement188', cardinality 0..*) is associated with 'smm::RefinementMeasurementRelationship' (role 'refinementTo187', cardinality 0..*).
+'smm::MofElement' (role 'smm_MofElement', cardinality 0..*) is associated with 'smm::Measurement' (role 'smm_Measurement', cardinality 0..*).
+'smm::EquivalentMeasureRelationship' (role 'EquivalentMeasureRelationship', cardinality 0..*) is associated with 'smm::Measure' (role 'from_84', cardinality 0..*).
+'smm::ObservationScope' (role 'smm_ObservationScope', cardinality 0..*) is associated with 'smm::Observation' (role 'smm_Observation', cardinality 0..*).
+'smm::RecursiveMeasurementRelationship' (role 'recursiveTo177', cardinality 0..*) is associated with 'smm::Measurement' (role 'Measurement178', cardinality 0..*).
+'smm::Base2MeasureRelationship' (role 'Base2MeasureRelationship41', cardinality 0..*) is associated with 'smm::DimensionalMeasure' (role 'to40', cardinality 0..*).
+'smm::Base1MeasurementRelationship' (role 'Base1MeasurementRelationship51', cardinality 0..*) is associated with 'smm::DimensionalMeasurement' (role 'to50', cardinality 0..*).
+'smm::Measure' (role 'to81', cardinality 0..*) is associated with 'smm::RefinementMeasureRelationship' (role 'RefinementMeasureRelationship82', cardinality 0..*).
+'smm::Base1MeasureRelationship' (role 'baseMeasure1To', cardinality 0..*) is associated with 'smm::BinaryMeasure' (role 'BinaryMeasure', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'to47', cardinality 0..*) is associated with 'smm::BaseMeasurementRelationship' (role 'BaseMeasurementRelationship48', cardinality 0..*).
+'smm::CollectiveMeasurement' (role 'from_33', cardinality 0..*) is associated with 'smm::BaseMeasurementRelationship' (role 'BaseMeasurementRelationship', cardinality 0..*).
+'smm::Base2MeasurementRelationship' (role 'baseMeasurement2From', cardinality 0..*) is associated with 'smm::DimensionalMeasurement' (role 'DimensionalMeasurement11', cardinality 0..*).
+'smm::AbstractMeasureElement' (role 'smm_AbstractMeasureElement114', cardinality 0..*) is associated with 'smm::MeasureLibrary' (role 'smm_MeasureLibrary', cardinality 0..*).
+'smm::Ranking' (role 'smm_Ranking', cardinality 0..*) is associated with 'smm::RankingInterval' (role 'smm_RankingInterval', cardinality 0..*).
+'smm::Measure' (role 'Measure64', cardinality 0..*) is associated with 'smm::EquivalentMeasureRelationship' (role 'equivalentFrom', cardinality 0..*).
+'smm::Base1MeasurementRelationship' (role 'Base1MeasurementRelationship', cardinality 0..*) is associated with 'smm::BinaryMeasurement' (role 'from_22', cardinality 0..*).
+'smm::Measurement' (role 'smm_Measurement140', cardinality 0..*) is associated with 'smm::MeasurementRelationship' (role 'smm_MeasurementRelationship141', cardinality 0..*).
+'smm::EquivalentMeasureRelationship' (role 'equivalentTo', cardinality 0..*) is associated with 'smm::Measure' (role 'Measure', cardinality 0..*).
+'smm::RescaleMeasureRelationship' (role 'RescaleMeasureRelationship194', cardinality 0..*) is associated with 'smm::RescaledMeasure' (role 'to193', cardinality 0..*).
+'smm::SmmRelationship' (role 'smm_SmmRelationship', cardinality 0..*) is associated with 'smm::Observation' (role 'smm_Observation151', cardinality 0..*).
+'smm::Observation' (role 'smm_Observation149', cardinality 0..*) is associated with 'smm::SmmElement' (role 'smm_SmmElement', cardinality 0..*).
+'smm::RecursiveMeasurementRelationship' (role 'RecursiveMeasurementRelationship136', cardinality 0..*) is associated with 'smm::Measurement' (role 'to135', cardinality 0..*).
+'smm::BinaryMeasurement' (role 'BinaryMeasurement', cardinality 0..*) is associated with 'smm::Base1MeasurementRelationship' (role 'baseMeasurement1To', cardinality 0..*).
+'smm::Characteristic' (role 'smm_Characteristic75', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure', cardinality 0..*).
+'smm::RefinementMeasurementRelationship' (role 'refinementFrom190', cardinality 0..*) is associated with 'smm::Measurement' (role 'Measurement191', cardinality 0..*).
+'smm::MeasureRelationship' (role 'smm_MeasureRelationship', cardinality 0..*) is associated with 'smm::Measure' (role 'smm_Measure94', cardinality 0..*).
+'smm::RecursiveMeasureRelationship' (role 'RecursiveMeasureRelationship', cardinality 0..*) is associated with 'smm::Measure' (role 'from_89', cardinality 0..*).
+'smm::Measure' (role 'from_79', cardinality 0..*) is associated with 'smm::RefinementMeasureRelationship' (role 'RefinementMeasureRelationship', cardinality 0..*).
+'smm::Observation' (role 'smm_Observation217', cardinality 0..*) is associated with 'smm::SmmModel' (role 'smm_SmmModel', cardinality 0..*).
+'smm::DimensionalMeasurement' (role 'to58', cardinality 0..*) is associated with 'smm::RankingMeasurementRelationship' (role 'RankingMeasurementRelationship', cardinality 0..*).

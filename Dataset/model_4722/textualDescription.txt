@@ -1,0 +1,58 @@
+The model has 20 class(es).
+The class 'DEVS' has no attributes.
+The class 'PhaseTransition' has no attributes.
+The class 'Model::AtomicDEVS' has no attributes.
+The class 'Model::ExtTrans' has no attributes.
+The class 'Model::IntTransition' has no attributes.
+The class 'Port' has no attributes.
+The class 'Model::Port' has the following attributes: 'portId' of type str.
+The class 'Model::CoupledDEVS' has no attributes.
+The class 'Model::Event' has no attributes.
+The class 'Model::OPort' has no attributes.
+The class 'Model::EClassifier' has no attributes.
+The class 'Model::PhaseTransition' has no attributes.
+The class 'Model::IPort' has no attributes.
+The class 'Model::ConfTrans' has no attributes.
+The class 'Model::Variable' has the following attributes: 'name' of type str.
+The class 'Model::EOC' has no attributes.
+The class 'Model::EIC' has no attributes.
+The class 'Model::DEVS' has the following attributes: 'name' of type str.
+The class 'Model::Phase' has the following attributes: 'phaseID' of type str; 'timeAdvance' of type float.
+The class 'Model::IC' has no attributes.
+'Model::OPort' is a specialization of 'Port'.
+'Model::AtomicDEVS' is a specialization of 'DEVS'.
+'Model::ConfTrans' is a specialization of 'PhaseTransition'.
+'Model::IPort' is a specialization of 'Port'.
+'Model::ExtTrans' is a specialization of 'PhaseTransition'.
+'Model::IntTransition' is a specialization of 'PhaseTransition'.
+'Model::CoupledDEVS' is a specialization of 'DEVS'.
+'Model::Event' (role 'Model_Event55', cardinality 0..*) is associated with 'Model::ExtTrans' (role 'Model_ExtTrans54', cardinality 0..*).
+'Model::Event' (role 'Model_Event49', cardinality 0..*) is associated with 'Model::ConfTrans' (role 'Model_ConfTrans48', cardinality 0..*).
+'Model::IC' (role 'Model_IC34', cardinality 0..*) is associated with 'Model::OPort' (role 'Model_OPort35', cardinality 0..*).
+'Model::IPort' (role 'Model_IPort32', cardinality 0..*) is associated with 'Model::EIC' (role 'Model_EIC31', cardinality 0..*).
+'Model::IntTransition' (role 'Model_IntTransition46', cardinality 0..*) is associated with 'Model::Event' (role 'Model_Event', cardinality 0..*).
+'Model::OPort' (role 'Model_OPort41', cardinality 0..*) is associated with 'Model::EOC' (role 'Model_EOC40', cardinality 0..*).
+'Model::IPort' (role 'Model_IPort29', cardinality 0..*) is associated with 'Model::EIC' (role 'Model_EIC28', cardinality 0..*).
+'Model::Port' (role 'Model_Port58', cardinality 0..*) is associated with 'Model::Event' (role 'Model_Event57', cardinality 0..*).
+'Model::AtomicDEVS' (role 'Model_AtomicDEVS12', cardinality 0..*) is associated with 'Model::Phase' (role 'Model_Phase', cardinality 0..*).
+'Model::DEVS' (role 'Model_DEVS3', cardinality 0..*) is associated with 'Model::IPort' (role 'Model_IPort', cardinality 0..*).
+'Model::AtomicDEVS' (role 'Model_AtomicDEVS10', cardinality 0..*) is associated with 'Model::ExtTrans' (role 'Model_ExtTrans', cardinality 0..*).
+'Model::IntTransition' (role 'Model_IntTransition', cardinality 0..*) is associated with 'Model::AtomicDEVS' (role 'Model_AtomicDEVS', cardinality 0..*).
+'Model::EClassifier' (role 'Model_EClassifier', cardinality 0..*) is associated with 'Model::Port' (role 'Model_Port26', cardinality 0..*).
+'Model::Variable' (role 'Model_Variable64', cardinality 0..*) is associated with 'Model::Phase' (role 'Model_Phase63', cardinality 0..*).
+'Model::Variable' (role 'Model_Variable71', cardinality 0..*) is associated with 'Model::EClassifier' (role 'Model_EClassifier72', cardinality 0..*).
+'Model::AtomicDEVS' (role 'Model_AtomicDEVS8', cardinality 0..*) is associated with 'Model::ConfTrans' (role 'Model_ConfTrans', cardinality 0..*).
+'Model::Port' (role 'Model_Port', cardinality 0..*) is associated with 'Model::DEVS' (role 'Model_DEVS24', cardinality 0..*).
+'Model::DEVS' (role 'Model_DEVS0', cardinality 0..*) is associated with 'Model::DEVS' (role 'Model_DEVS', cardinality 0..*).
+'Model::EOC' (role 'Model_EOC43', cardinality 0..*) is associated with 'Model::OPort' (role 'Model_OPort44', cardinality 0..*).
+'Model::EOC' (role 'Model_EOC', cardinality 0..*) is associated with 'Model::CoupledDEVS' (role 'Model_CoupledDEVS22', cardinality 0..*).
+'Model::IPort' (role 'Model_IPort38', cardinality 0..*) is associated with 'Model::IC' (role 'Model_IC37', cardinality 0..*).
+'Model::EIC' (role 'Model_EIC', cardinality 0..*) is associated with 'Model::CoupledDEVS' (role 'Model_CoupledDEVS18', cardinality 0..*).
+'Model::Phase' (role 'Model_Phase69', cardinality 0..*) is associated with 'Model::PhaseTransition' (role 'Model_PhaseTransition68', cardinality 0..*).
+'Model::Variable' (role 'Model_Variable', cardinality 0..*) is associated with 'Model::AtomicDEVS' (role 'Model_AtomicDEVS14', cardinality 0..*).
+'Model::Event' (role 'Model_Event52', cardinality 0..*) is associated with 'Model::ConfTrans' (role 'Model_ConfTrans51', cardinality 0..*).
+'Model::Phase' (role 'Model_Phase66', cardinality 0..*) is associated with 'Model::PhaseTransition' (role 'Model_PhaseTransition', cardinality 0..*).
+'Model::CoupledDEVS' (role 'Model_CoupledDEVS', cardinality 0..*) is associated with 'Model::DEVS' (role 'Model_DEVS16', cardinality 0..*).
+'Model::Event' (role 'Model_Event60', cardinality 0..*) is associated with 'Model::EClassifier' (role 'Model_EClassifier61', cardinality 0..*).
+'Model::OPort' (role 'Model_OPort', cardinality 0..*) is associated with 'Model::DEVS' (role 'Model_DEVS5', cardinality 0..*).
+'Model::CoupledDEVS' (role 'Model_CoupledDEVS20', cardinality 0..*) is associated with 'Model::IC' (role 'Model_IC', cardinality 0..*).

@@ -1,0 +1,28 @@
+The model has 11 class(es).
+The class 'Feature' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'types::Parameter' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'types::Operation' has no attributes.
+The class 'types::Feature' has no attributes.
+The class 'types::Event' has no attributes.
+The class 'types::TypedElement' has no attributes.
+The class 'types::Property' has no attributes.
+The class 'types::Library' has the following attributes: 'id' of type str.
+'types::Feature' is a specialization of 'TypedElement'.
+'types::Type' is a specialization of 'NamedElement'.
+'types::Parameter' is a specialization of 'TypedElement'.
+'types::Feature' is a specialization of 'NamedElement'.
+'types::Property' is a specialization of 'Feature'.
+'types::Operation' is a specialization of 'Feature'.
+'types::Parameter' is a specialization of 'NamedElement'.
+'types::Event' is a specialization of 'Feature'.
+'types::Parameter' (role 'parameters', cardinality 0..*) is associated with 'types::Operation' (role 'Operation', cardinality 0..*).
+'types::Library' (role 'Library', cardinality 0..*) is associated with 'types::Type' (role 'types', cardinality 0..*).
+'types::Operation' (role 'owningOperation', cardinality 0..*) is associated with 'types::Parameter' (role 'Parameter', cardinality 0..*).
+'types::Type' (role 'types_Type2', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'types::Type' (role 'Type', cardinality 0..*) is associated with 'types::Library' (role 'owningLibrary', cardinality 0..*).
+'types::Type' (role 'types_Type10', cardinality 0..*) is associated with 'types::TypedElement' (role 'types_TypedElement', cardinality 0..*).
+'types::Type' (role 'owningType', cardinality 0..*) is associated with 'types::Feature' (role 'Feature', cardinality 0..*).
+'types::Feature' (role 'features', cardinality 0..*) is associated with 'types::Type' (role 'Type6', cardinality 0..*).

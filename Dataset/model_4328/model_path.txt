@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/MDE4RTS/src/main/resources/hawk/smm.ecore

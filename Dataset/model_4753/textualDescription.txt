@@ -1,0 +1,25 @@
+The model has 12 class(es).
+The class 'fM::Formula' has no attributes.
+The class 'fM::Var' has the following attributes: 'not_' of type bool; 'name' of type str.
+The class 'Formula' has no attributes.
+The class 'Child' has no attributes.
+The class 'fM::Node' has the following attributes: 'open_relation' of type str; 'close_relation' of type str.
+The class 'fM::Leaf' has no attributes.
+The class 'fM::FeatureModel' has no attributes.
+The class 'fM::FeatureDiagram' has no attributes.
+The class 'fM::Rule' has no attributes.
+The class 'fM::Constraints' has no attributes.
+The class 'fM::RuleElement' has the following attributes: 'close_operator' of type str; 'open_operator' of type str.
+The class 'fM::Child' has the following attributes: 'name' of type str; 'mandatory' of type bool.
+'fM::RuleElement' is a specialization of 'Formula'.
+'fM::Leaf' is a specialization of 'Child'.
+'fM::Node' is a specialization of 'Child'.
+'fM::Var' is a specialization of 'Formula'.
+'fM::Child' (role 'fM_Child', cardinality 0..*) is associated with 'fM::FeatureDiagram' (role 'fM_FeatureDiagram4', cardinality 0..*).
+'fM::Rule' (role 'fM_Rule', cardinality 0..*) is associated with 'fM::Constraints' (role 'fM_Constraints8', cardinality 0..*).
+'fM::Child' (role 'fM_Child6', cardinality 0..*) is associated with 'fM::Node' (role 'fM_Node', cardinality 0..*).
+'fM::Var' (role 'fM_Var14', cardinality 0..*) is associated with 'fM::RuleElement' (role 'fM_RuleElement13', cardinality 0..*).
+'fM::Constraints' (role 'fM_Constraints', cardinality 0..*) is associated with 'fM::FeatureModel' (role 'fM_FeatureModel2', cardinality 0..*).
+'fM::Formula' (role 'fM_Formula', cardinality 0..*) is associated with 'fM::Rule' (role 'fM_Rule10', cardinality 0..*).
+'fM::FeatureModel' (role 'fM_FeatureModel', cardinality 0..*) is associated with 'fM::FeatureDiagram' (role 'fM_FeatureDiagram', cardinality 0..*).
+'fM::Var' (role 'fM_Var', cardinality 0..*) is associated with 'fM::RuleElement' (role 'fM_RuleElement', cardinality 0..*).

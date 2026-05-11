@@ -1,0 +1,18 @@
+The model has 11 class(es).
+The class 'ElementX' has no attributes.
+The class 'TypeB::ElementR' has the following attributes: 'nameR' of type str.
+The class 'TypeB::ElementX' has the following attributes: 'nameX' of type str.
+The class 'TypeB::AnotherElement' has the following attributes: 'additionalField' of type str; 'nameElement' of type str; 'abstractBaseName' of type str; 'type' of type str.
+The class 'TypeB::ElementY' has the following attributes: 'nameY' of type str.
+The class 'TypeB::Element' has the following attributes: 'abstractBaseName' of type str; 'type' of type str; 'nameElement' of type str.
+The class 'TypeB::SubElement' has the following attributes: 'additionalField' of type str.
+The class 'ElementR' has no attributes.
+The class 'TypeB::ListElement' has the following attributes: 'nameListElement' of type str.
+The class 'TypeB::ElementS' has the following attributes: 'nameS' of type str.
+The class 'Element' has no attributes.
+'TypeB::ElementY' is a specialization of 'ElementX'.
+'TypeB::ElementS' is a specialization of 'ElementR'.
+'TypeB::SubElement' is a specialization of 'Element'.
+'Element' (role 'Element', cardinality 0..*) is associated with 'TypeB::ListElement' (role 'TypeB_ListElement', cardinality 0..*).
+'ElementR' (role 'ElementR', cardinality 0..*) is associated with 'TypeB::ListElement' (role 'TypeB_ListElement4', cardinality 0..*).
+'ElementX' (role 'ElementX', cardinality 0..*) is associated with 'TypeB::ListElement' (role 'TypeB_ListElement2', cardinality 0..*).

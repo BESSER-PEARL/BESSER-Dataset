@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'mytest::B' has the following attributes: 'enumatt' of type str.
+The class 'B' has no attributes.
+The class 'mytest::MyRoot' has no attributes.
+The class 'mytest::A' has the following attributes: 'name' of type str.
+The class 'mytest::C' has no attributes.
+The enumeration 'MyEnum' has the following literals: 'ABC', 'DEF'.
+'mytest::C' is a specialization of 'B'.
+'mytest::B' (role 'mytest_B5', cardinality 0..*) is associated with 'mytest::MyRoot' (role 'mytest_MyRoot4', cardinality 0..*).
+'mytest::MyRoot' (role 'mytest_MyRoot', cardinality 0..*) is associated with 'mytest::A' (role 'mytest_A', cardinality 0..*).
+'mytest::MyRoot' (role 'mytest_MyRoot2', cardinality 0..*) is associated with 'mytest::B' (role 'mytest_B', cardinality 0..*).

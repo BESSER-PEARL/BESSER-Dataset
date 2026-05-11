@@ -1,0 +1,55 @@
+The model has 23 class(es).
+The class 'arduino::Actuadores' has the following attributes: 'pin' of type str.
+The class 'arduino::Instrucciones' has no attributes.
+The class 'arduino::Encender' has no attributes.
+The class 'arduino::Servo' has the following attributes: 'angulo' of type str; 'libreria' of type str.
+The class 'arduino::While' has the following attributes: 'operando' of type str; 'valor' of type str; 'referencia' of type str.
+The class 'arduino::Temperatura' has the following attributes: 'temperatura' of type str.
+The class 'Actuadores' has no attributes.
+The class 'arduino::Buzzer' has no attributes.
+The class 'arduino::PIR' has no attributes.
+The class 'arduino::Potenciometro' has no attributes.
+The class 'arduino::LDR' has no attributes.
+The class 'arduino::Sketch' has the following attributes: 'Nombre' of type str.
+The class 'arduino::Variar' has the following attributes: 'pwm' of type str.
+The class 'arduino::Boton' has no attributes.
+The class 'Bloques' has no attributes.
+The class 'Instrucciones' has no attributes.
+The class 'arduino::Bloques' has no attributes.
+The class 'arduino::Led' has no attributes.
+The class 'arduino::If' has the following attributes: 'operando' of type str; 'valor' of type str; 'referencia' of type str.
+The class 'Sensores' has no attributes.
+The class 'arduino::Sensores' has the following attributes: 'pin' of type str; 'med' of type str.
+The class 'arduino::Apagar' has no attributes.
+The class 'arduino::Esperar' has the following attributes: 'miliseg' of type str.
+The enumeration 'operandos' has the following literals: 'menorigual', 'mayor', 'diferente', 'igual', 'menor', 'mayorigual'.
+'arduino::Esperar' is a specialization of 'Instrucciones'.
+'arduino::While' is a specialization of 'Bloques'.
+'arduino::Encender' is a specialization of 'Instrucciones'.
+'arduino::Potenciometro' is a specialization of 'Sensores'.
+'arduino::If' is a specialization of 'Bloques'.
+'arduino::Variar' is a specialization of 'Instrucciones'.
+'arduino::Servo' is a specialization of 'Actuadores'.
+'arduino::Apagar' is a specialization of 'Instrucciones'.
+'arduino::Temperatura' is a specialization of 'Sensores'.
+'arduino::LDR' is a specialization of 'Sensores'.
+'arduino::Boton' is a specialization of 'Sensores'.
+'arduino::Buzzer' is a specialization of 'Actuadores'.
+'arduino::Led' is a specialization of 'Actuadores'.
+'arduino::PIR' is a specialization of 'Sensores'.
+'arduino::Encender' (role 'arduino_Encender22', cardinality 0..*) is associated with 'arduino::Esperar' (role 'arduino_Esperar23', cardinality 0..*).
+'arduino::Sensores' (role 'arduino_Sensores11', cardinality 0..*) is associated with 'arduino::Actuadores' (role 'arduino_Actuadores12', cardinality 0..*).
+'arduino::Esperar' (role 'arduino_Esperar', cardinality 0..*) is associated with 'arduino::Apagar' (role 'arduino_Apagar', cardinality 0..*).
+'arduino::Bloques' (role 'arduino_Bloques26', cardinality 0..*) is associated with 'arduino::Bloques' (role 'arduino_Bloques24', cardinality 0..*).
+'arduino::Bloques' (role 'arduino_Bloques', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch6', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch4', cardinality 0..*) is associated with 'arduino::Instrucciones' (role 'arduino_Instrucciones', cardinality 0..*).
+'arduino::Actuadores' (role 'arduino_Actuadores8', cardinality 0..*) is associated with 'arduino::Instrucciones' (role 'arduino_Instrucciones9', cardinality 0..*).
+'arduino::Bloques' (role 'arduino_Bloques34', cardinality 0..*) is associated with 'arduino::Sensores' (role 'arduino_Sensores35', cardinality 0..*).
+'arduino::Sensores' (role 'arduino_Sensores', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*).
+'arduino::Bloques' (role 'arduino_Bloques37', cardinality 0..*) is associated with 'arduino::Actuadores' (role 'arduino_Actuadores38', cardinality 0..*).
+'arduino::Instrucciones' (role 'arduino_Instrucciones32', cardinality 0..*) is associated with 'arduino::Bloques' (role 'arduino_Bloques31', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch2', cardinality 0..*) is associated with 'arduino::Actuadores' (role 'arduino_Actuadores', cardinality 0..*).
+'arduino::Encender' (role 'arduino_Encender', cardinality 0..*) is associated with 'arduino::Esperar' (role 'arduino_Esperar20', cardinality 0..*).
+'arduino::Bloques' (role 'arduino_Bloques28', cardinality 0..*) is associated with 'arduino::Actuadores' (role 'arduino_Actuadores29', cardinality 0..*).
+'arduino::Apagar' (role 'arduino_Apagar18', cardinality 0..*) is associated with 'arduino::Esperar' (role 'arduino_Esperar17', cardinality 0..*).
+'arduino::Sensores' (role 'arduino_Sensores15', cardinality 0..*) is associated with 'arduino::Variar' (role 'arduino_Variar', cardinality 0..*).

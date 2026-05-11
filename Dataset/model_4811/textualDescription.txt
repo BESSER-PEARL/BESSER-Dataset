@@ -1,0 +1,846 @@
+The model has 309 class(es).
+The class 'Operation' has no attributes.
+The class 'XSDSchema' has no attributes.
+The class 'model::xsd::XSDCardinalityFacet' has the following attributes: 'value' of type str.
+The class 'model::Variables' has no attributes.
+The class 'XSDLengthFacet' has no attributes.
+The class 'model::OnEvent' has no attributes.
+The class 'model::xsd::XSDIdentityConstraintDefinition' has the following attributes: 'identityConstraintCategory' of type str.
+The class 'xsd::XSDScope' has no attributes.
+The class 'Output' has no attributes.
+The class 'model::wsdl::IList' has no attributes.
+The class 'model::Process' has the following attributes: 'suppressJoinFailure' of type str; 'variableAccessSerializable' of type str; 'expressionLanguage' of type str; 'queryLanguage' of type str; 'abstractProcessProfile' of type str; 'exitOnStandardFault' of type str; 'name' of type str; 'targetNamespace' of type str.
+The class 'model::Source' has no attributes.
+The class 'XSDRedefineContent' has no attributes.
+The class 'model::xsd::XSDWhiteSpaceFacet' has the following attributes: 'value' of type str.
+The class 'model::xsd::XSDModelGroupDefinition' has the following attributes: 'modelGroupDefinitionReference' of type bool.
+The class 'wsdl::IBindingOperation' has no attributes.
+The class 'XSDConstrainingFacet' has no attributes.
+The class 'model::xsd::XSDMinExclusiveFacet' has no attributes.
+The class 'wsdl::IBindingFault' has no attributes.
+The class 'model::wsdl::IBindingOutput' has no attributes.
+The class 'model::Variable' has the following attributes: 'name' of type str.
+The class 'wsdl::ExtensibilityElement' has no attributes.
+The class 'model::xsd::XSDFeature' has the following attributes: 'featureReference' of type bool; 'global_' of type bool; 'lexicalValue' of type str; 'form' of type str; 'value' of type str; 'constraint' of type str.
+The class 'model::PartnerActivity' has no attributes.
+The class 'model::xsd::XSDMaxInclusiveFacet' has no attributes.
+The class 'model::To' has no attributes.
+The class 'wsdl::IFault' has no attributes.
+The class 'model::xsd::XSDComplexTypeDefinition' has the following attributes: 'lexicalFinal' of type str; 'final' of type str; 'mixed' of type bool; 'derivationMethod' of type str; 'contentTypeCategory' of type str; 'prohibitedSubstitutions' of type str; 'block' of type str; 'abstract' of type bool.
+The class 'model::OnAlarm' has no attributes.
+The class 'model::wsdl::IImport' has no attributes.
+The class 'Expression' has no attributes.
+The class 'XSDMaxInclusiveFacet' has no attributes.
+The class 'model::wsdl::BindingInput' has the following attributes: 'name' of type str.
+The class 'model::wsdl::IPart' has no attributes.
+The class 'XSDMinInclusiveFacet' has no attributes.
+The class 'model::ToPart' has no attributes.
+The class 'model::xsd::XSDScope' has no attributes.
+The class 'XSDFixedFacet' has no attributes.
+The class 'model::xsd::XSDNamedComponent' has the following attributes: 'uRI' of type str; 'targetNamespace' of type str; 'name' of type str; 'qName' of type str; 'aliasURI' of type str; 'aliasName' of type str.
+The class 'wsdl::ISchema' has no attributes.
+The class 'model::OpaqueActivity' has no attributes.
+The class 'model::wsdl::IOutput' has no attributes.
+The class 'model::Reply' has the following attributes: 'faultName' of type str.
+The class 'model::wsdl::IAttributeExtensible' has no attributes.
+The class 'model::xsd::XSDFractionDigitsFacet' has the following attributes: 'value' of type int.
+The class 'model::wsdl::UnknownExtensibilityElement' has no attributes.
+The class 'model::UnknownExtensibilityAttribute' has no attributes.
+The class 'Import' has no attributes.
+The class 'wsdl::IOutput' has no attributes.
+The class 'model::CompensateScope' has no attributes.
+The class 'model::Import' has the following attributes: 'namespace' of type str; 'importType' of type str; 'location' of type str.
+The class 'model::xsd::XSDPatternFacet' has the following attributes: 'value' of type str.
+The class 'wsdl::IBindingOutput' has no attributes.
+The class 'model::xsd::XSDTerm' has no attributes.
+The class 'model::MessageExchanges' has no attributes.
+The class 'XSDTypeDefinition' has no attributes.
+The class 'XSDXPathDefinition' has no attributes.
+The class 'model::wsdl::IOperation' has no attributes.
+The class 'wsdl::IAttributeExtensible' has no attributes.
+The class 'model::Assign' has the following attributes: 'validate' of type str.
+The class 'xsd::XSDRedefinableComponent' has no attributes.
+The class 'model::Sequence' has no attributes.
+The class 'XSDFeature' has no attributes.
+The class 'model::messageproperties::PropertyAlias' has the following attributes: 'propertyName' of type str; 'messageType' of type str; 'XSDElement' of type str; 'type' of type str; 'part' of type str; 'ID' of type str.
+The class 'model::wsdl::IPortType' has no attributes.
+The class 'model::Target' has no attributes.
+The class 'model::wsdl::IURL' has no attributes.
+The class 'wsdl::IPortType' has no attributes.
+The class 'XSDNamedComponent' has no attributes.
+The class 'XSDParticle' has no attributes.
+The class 'model::wsdl::IService' has no attributes.
+The class 'model::wsdl::PortType' has the following attributes: 'undefined' of type bool; 'qName' of type str.
+The class 'model::xsd::XSDAttributeGroupContent' has no attributes.
+The class 'model::Empty' has no attributes.
+The class 'XSDMinFacet' has no attributes.
+The class 'XSDTotalDigitsFacet' has no attributes.
+The class 'ExtensibleElement' has no attributes.
+The class 'model::ExtensionActivity' has no attributes.
+The class 'model::Validate' has no attributes.
+The class 'model::xsd::XSDDiagnostic' has the following attributes: 'node' of type str; 'message' of type str; 'substitutions' of type str; 'locationURI' of type str; 'annotationURI' of type str; 'severity' of type str; 'line' of type int; 'column' of type int; 'key' of type str.
+The class 'model::wsdl::Input' has no attributes.
+The class 'XSDScope' has no attributes.
+The class 'model::xsd::XSDFacet' has the following attributes: 'lexicalValue' of type str; 'effectiveValue' of type str; 'facetName' of type str.
+The class 'model::wsdl::IObject' has no attributes.
+The class 'model::xsd::XSDFixedFacet' has the following attributes: 'fixed' of type bool.
+The class 'model::ServiceRef' has the following attributes: 'referenceScheme' of type str; 'value' of type str.
+The class 'model::xsd::XSDParticle' has the following attributes: 'minOccurs' of type int; 'maxOccurs' of type int.
+The class 'BindingFault' has no attributes.
+The class 'model::wsdl::IPort' has no attributes.
+The class 'BindingOperation' has no attributes.
+The class 'model::xsd::XSDAnnotation' has the following attributes: 'applicationInformation' of type str; 'attributes' of type str; 'userInformation' of type str.
+The class 'XSDSchemaCompositor' has no attributes.
+The class 'PartnerActivity' has no attributes.
+The class 'xsd::XSDFeature' has no attributes.
+The class 'model::CorrelationSets' has no attributes.
+The class 'model::xsd::XSDSchema' has the following attributes: 'elementFormDefault' of type str; 'version' of type str; 'finalDefault' of type str; 'document' of type str; 'targetNamespace' of type str; 'blockDefault' of type str; 'schemaLocation' of type str; 'attributeFormDefault' of type str.
+The class 'wsdl::IInput' has no attributes.
+The class 'model::Links' has no attributes.
+The class 'Property' has no attributes.
+The class 'model::wsdl::Binding' has the following attributes: 'undefined' of type bool; 'qName' of type str.
+The class 'model::Correlations' has no attributes.
+The class 'XSDModelGroupDefinition' has no attributes.
+The class 'model::wsdl::Output' has no attributes.
+The class 'wsdl::IPart' has no attributes.
+The class 'XSDFundamentalFacet' has no attributes.
+The class 'model::messageproperties::Query' has the following attributes: 'value' of type str; 'queryLanguage' of type str.
+The class 'IExtensibilityElement' has no attributes.
+The class 'model::xsd::XSDElementDeclaration' has the following attributes: 'substitutionGroupExclusions' of type str; 'circular' of type bool; 'block' of type str; 'nillable' of type bool; 'abstract' of type bool; 'lexicalFinal' of type str; 'elementDeclarationReference' of type bool; 'disallowedSubstitutions' of type str.
+The class 'Part' has no attributes.
+The class 'XSDMinLengthFacet' has no attributes.
+The class 'model::wsdl::BindingOutput' has the following attributes: 'name' of type str.
+The class 'model::xsd::XSDSimpleTypeDefinition' has the following attributes: 'variety' of type str; 'validFacets' of type str; 'lexicalFinal' of type str; 'final' of type str.
+The class 'xsd::XSDComplexTypeContent' has no attributes.
+The class 'model::Throw' has the following attributes: 'faultName' of type str.
+The class 'model::wsdl::IBindingInput' has no attributes.
+The class 'Input' has no attributes.
+The class 'model::wsdl::Message' has the following attributes: 'undefined' of type bool; 'qName' of type str.
+The class 'model::xsd::XSDRepeatableFacet' has no attributes.
+The class 'model::AbstractAssignBound' has no attributes.
+The class 'xsd::XSDParticleContent' has no attributes.
+The class 'model::ForEach' has the following attributes: 'parallel' of type str.
+The class 'XSDNumericFacet' has no attributes.
+The class 'wsdl::ExtensibleElement' has no attributes.
+The class 'model::xsd::XSDInclude' has no attributes.
+The class 'Activity' has no attributes.
+The class 'model::Correlation' has the following attributes: 'pattern' of type str; 'initiate' of type str.
+The class 'XSDComplexTypeContent' has no attributes.
+The class 'model::BPELExtensibleElement' has no attributes.
+The class 'XSDAttributeGroupDefinition' has no attributes.
+The class 'model::wsdl::IFault' has no attributes.
+The class 'XSDComponent' has no attributes.
+The class 'model::partnerlinktype::Role' has the following attributes: 'portType' of type str; 'name' of type str; 'ID' of type str.
+The class 'model::wsdl::Import' has the following attributes: 'locationURI' of type str; 'namespaceURI' of type str.
+The class 'model::FaultHandler' has no attributes.
+The class 'model::Compensate' has no attributes.
+The class 'model::wsdl::IInput' has no attributes.
+The class 'model::Catch' has the following attributes: 'faultName' of type str.
+The class 'Definition' has no attributes.
+The class 'model::Extension' has the following attributes: 'namespace' of type str; 'mustUnderstand' of type str.
+The class 'Service' has no attributes.
+The class 'XSDSimpleTypeDefinition' has no attributes.
+The class 'XSDSchemaDirective' has no attributes.
+The class 'XSDPatternFacet' has no attributes.
+The class 'model::Receive' has the following attributes: 'createInstance' of type str.
+The class 'Binding' has no attributes.
+The class 'model::If' has no attributes.
+The class 'model::Copy' has the following attributes: 'keepSrcElementName' of type str; 'ignoreMissingFromData' of type str.
+The class 'model::wsdl::XSDSchemaExtensibilityElement' has the following attributes: 'documentBaseURI' of type str.
+The class 'xsd::XSDTerm' has no attributes.
+The class 'model::wsdl::IExtensibilityElement' has no attributes.
+The class 'model::xsd::XSDOrderedFacet' has the following attributes: 'value' of type str.
+The class 'model::Sources' has no attributes.
+The class 'model::wsdl::IBindingOperation' has no attributes.
+The class 'XSDCardinalityFacet' has no attributes.
+The class 'model::wsdl::Service' has the following attributes: 'undefined' of type bool; 'qName' of type str.
+The class 'model::wsdl::IMessage' has no attributes.
+The class 'model::BooleanExpression' has no attributes.
+The class 'UnknownExtensibilityElement' has no attributes.
+The class 'XSDMinExclusiveFacet' has no attributes.
+The class 'XSDFacet' has no attributes.
+The class 'model::Query' has the following attributes: 'value' of type str; 'queryLanguage' of type str.
+The class 'Message' has no attributes.
+The class 'wsdl::IMessage' has no attributes.
+The class 'XSDDiagnostic' has no attributes.
+The class 'model::FromParts' has no attributes.
+The class 'model::xsd::XSDBoundedFacet' has the following attributes: 'value' of type bool.
+The class 'model::wsdl::Port' has the following attributes: 'name' of type str.
+The class 'model::wsdl::Part' has the following attributes: 'elementName' of type str; 'typeName' of type str; 'name' of type str.
+The class 'wsdl::IExtensibilityElement' has no attributes.
+The class 'model::Expression' has the following attributes: 'body' of type str; 'opaque' of type str; 'expressionLanguage' of type str.
+The class 'model::xsd::XSDNumericFacet' has the following attributes: 'value' of type bool.
+The class 'PortType' has no attributes.
+The class 'model::xsd::XSDImport' has the following attributes: 'namespace' of type str.
+The class 'wsdl::IElementExtensible' has no attributes.
+The class 'IAttributeExtensible' has no attributes.
+The class 'model::xsd::XSDTotalDigitsFacet' has the following attributes: 'value' of type int.
+The class 'model::wsdl::Fault' has no attributes.
+The class 'XSDBoundedFacet' has no attributes.
+The class 'model::CompletionCondition' has no attributes.
+The class 'ExtensibilityElement' has no attributes.
+The class 'XSDTerm' has no attributes.
+The class 'wsdl::IService' has no attributes.
+The class 'model::FromPart' has no attributes.
+The class 'XSDSchemaContent' has no attributes.
+The class 'XSDElementDeclaration' has no attributes.
+The class 'model::xsd::XSDMinInclusiveFacet' has no attributes.
+The class 'model::xsd::XSDSchemaContent' has no attributes.
+The class 'model::wsdl::MessageReference' has the following attributes: 'name' of type str.
+The class 'xsd::XSDNamedComponent' has no attributes.
+The class 'model::Targets' has no attributes.
+The class 'model::xsd::XSDRedefinableComponent' has the following attributes: 'circular' of type bool.
+The class 'model::wsdl::ExtensibilityElement' has the following attributes: 'required' of type bool; 'elementType' of type str.
+The class 'model::xsd::XSDConstrainingFacet' has no attributes.
+The class 'XSDFractionDigitsFacet' has no attributes.
+The class 'IElementExtensible' has no attributes.
+The class 'model::wsdl::IBindingFault' has no attributes.
+The class 'XSDAttributeDeclaration' has no attributes.
+The class 'model::xsd::XSDSchemaCompositor' has no attributes.
+The class 'xsd::XSDComponent' has no attributes.
+The class 'XSDIdentityConstraintDefinition' has no attributes.
+The class 'xsd::XSDSchemaContent' has no attributes.
+The class 'model::Flow' has no attributes.
+The class 'model::xsd::XSDAttributeDeclaration' has the following attributes: 'attributeDeclarationReference' of type bool.
+The class 'model::From' has the following attributes: 'literal' of type str; 'unsafeLiteral' of type str; 'endpointReference' of type str; 'opaque' of type str.
+The class 'model::wsdl::BindingOperation' has the following attributes: 'name' of type str.
+The class 'wsdl::IBinding' has no attributes.
+The class 'model::xsd::XSDMaxExclusiveFacet' has no attributes.
+The class 'model::wsdl::IBinding' has no attributes.
+The class 'BindingInput' has no attributes.
+The class 'XSDMaxLengthFacet' has no attributes.
+The class 'model::xsd::XSDAttributeUse' has the following attributes: 'constraint' of type str; 'required' of type bool; 'value' of type str; 'lexicalValue' of type str; 'use' of type str.
+The class 'XSDWhiteSpaceFacet' has no attributes.
+The class 'XSDOrderedFacet' has no attributes.
+The class 'model::xsd::XSDRedefineContent' has no attributes.
+The class 'model::PartnerLinks' has no attributes.
+The class 'model::wsdl::BindingFault' has the following attributes: 'name' of type str.
+The class 'model::xsd::XSDModelGroup' has the following attributes: 'compositor' of type str.
+The class 'XSDRepeatableFacet' has no attributes.
+The class 'model::xsd::XSDMinFacet' has the following attributes: 'value' of type str; 'exclusive' of type bool; 'inclusive' of type bool.
+The class 'model::wsdl::Definition' has the following attributes: 'encoding' of type str; 'location' of type str; 'targetNamespace' of type str; 'qName' of type str.
+The class 'model::RepeatUntil' has no attributes.
+The class 'xsd::XSDTypeDefinition' has no attributes.
+The class 'model::CompensationHandler' has no attributes.
+The class 'model::wsdl::IExtensionRegistry' has no attributes.
+The class 'Role' has no attributes.
+The class 'model::xsd::XSDRedefine' has no attributes.
+The class 'model::messageproperties::Property' has the following attributes: 'type' of type str; 'qName' of type str; 'name' of type str; 'ID' of type str.
+The class 'BPELExtensibleElement' has no attributes.
+The class 'model::wsdl::IDefinition' has no attributes.
+The class 'PartnerLinkType' has no attributes.
+The class 'model::xsd::XSDConcreteComponent' has the following attributes: 'element' of type str.
+The class 'model::Scope' has the following attributes: 'exitOnStandardFault' of type str; 'isolated' of type str.
+The class 'XSDMaxFacet' has no attributes.
+The class 'model::Rethrow' has no attributes.
+The class 'model::partnerlinktype::PartnerLinkType' has the following attributes: 'name' of type str; 'ID' of type str.
+The class 'wsdl::IOperation' has no attributes.
+The class 'model::wsdl::Namespace' has the following attributes: 'prefix' of type str; 'URI' of type str.
+The class 'XSDModelGroup' has no attributes.
+The class 'wsdl::IDefinition' has no attributes.
+The class 'model::wsdl::ISchema' has no attributes.
+The class 'XSDMaxExclusiveFacet' has no attributes.
+The class 'Query' has no attributes.
+The class 'XSDNotationDeclaration' has no attributes.
+The class 'model::xsd::XSDXPathDefinition' has the following attributes: 'variety' of type str; 'value' of type str.
+The class 'model::MessageExchange' has the following attributes: 'name' of type str.
+The class 'model::Wait' has no attributes.
+The class 'BindingOutput' has no attributes.
+The class 'model::xsd::XSDMaxLengthFacet' has the following attributes: 'value' of type int.
+The class 'XSDAttributeGroupContent' has no attributes.
+The class 'XSDEnumerationFacet' has no attributes.
+The class 'model::Extensions' has no attributes.
+The class 'Port' has no attributes.
+The class 'model::wsdl::WSDLElement' has the following attributes: 'documentationElement' of type str; 'element' of type str.
+The class 'model::xsd::XSDLengthFacet' has the following attributes: 'value' of type int.
+The class 'model::OnMessage' has no attributes.
+The class 'WSDLElement' has no attributes.
+The class 'model::xsd::XSDTypeDefinition' has no attributes.
+The class 'model::Link' has the following attributes: 'name' of type str.
+The class 'model::Condition' has no attributes.
+The class 'Fault' has no attributes.
+The class 'model::wsdl::IElementExtensible' has no attributes.
+The class 'wsdl::MessageReference' has no attributes.
+The class 'model::wsdl::IIterator' has no attributes.
+The class 'XSDAnnotation' has no attributes.
+The class 'model::wsdl::ExtensibleElement' has no attributes.
+The class 'model::xsd::XSDNotationDeclaration' has the following attributes: 'systemIdentifier' of type str; 'publicIdentifier' of type str.
+The class 'model::xsd::XSDMaxFacet' has the following attributes: 'value' of type str; 'exclusive' of type bool; 'inclusive' of type bool.
+The class 'model::CorrelationSet' has the following attributes: 'name' of type str.
+The class 'wsdl::IBindingInput' has no attributes.
+The class 'model::Documentation' has the following attributes: 'lang' of type str; 'value' of type str; 'source' of type str.
+The class 'wsdl::ITypes' has no attributes.
+The class 'model::EventHandler' has no attributes.
+The class 'model::xsd::XSDMinLengthFacet' has the following attributes: 'value' of type int.
+The class 'model::xsd::XSDFundamentalFacet' has no attributes.
+The class 'model::ToParts' has no attributes.
+The class 'XSDAttributeUse' has no attributes.
+The class 'model::TerminationHandler' has no attributes.
+The class 'model::xsd::XSDParticleContent' has no attributes.
+The class 'wsdl::IImport' has no attributes.
+The class 'xsd::XSDRedefineContent' has no attributes.
+The class 'model::Activity' has the following attributes: 'suppressJoinFailure' of type str; 'name' of type str.
+The class 'model::Invoke' has no attributes.
+The class 'XSDParticleContent' has no attributes.
+The class 'XSDConcreteComponent' has no attributes.
+The class 'xsd::XSDAttributeGroupContent' has no attributes.
+The class 'model::xsd::XSDComplexTypeContent' has no attributes.
+The class 'model::While' has no attributes.
+The class 'model::wsdl::ITypes' has no attributes.
+The class 'wsdl::IPort' has no attributes.
+The class 'model::Exit' has no attributes.
+The class 'model::xsd::XSDComponent' has no attributes.
+The class 'model::CatchAll' has no attributes.
+The class 'model::wsdl::Types' has no attributes.
+The class 'Namespace' has no attributes.
+The class 'model::xsd::XSDWildcard' has the following attributes: 'namespaceConstraintCategory' of type str; 'namespaceConstraint' of type str; 'processContents' of type str; 'lexicalNamespaceConstraint' of type str.
+The class 'AbstractAssignBound' has no attributes.
+The class 'model::xsd::XSDEnumerationFacet' has the following attributes: 'value' of type str.
+The class 'model::Pick' has the following attributes: 'createInstance' of type str.
+The class 'model::wsdl::Operation' has the following attributes: 'style' of type str; 'undefined' of type bool; 'name' of type str.
+The class 'model::Branches' has the following attributes: 'countCompletedBranchesOnly' of type str.
+The class 'model::wsdl::IMap' has no attributes.
+The class 'model::ElseIf' has no attributes.
+The class 'XSDWildcard' has no attributes.
+The class 'model::xsd::XSDSchemaDirective' has the following attributes: 'schemaLocation' of type str.
+The class 'model::PartnerLink' has the following attributes: 'initializePartnerRole' of type str; 'name' of type str.
+The class 'model::Else' has no attributes.
+The class 'Types' has no attributes.
+The class 'wsdl::WSDLElement' has no attributes.
+The class 'model::xsd::XSDAttributeGroupDefinition' has the following attributes: 'attributeGroupDefinitionReference' of type bool.
+The enumeration 'XSDSubstitutionGroupExclusions' has the following literals: 'extension', 'restriction'.
+The enumeration 'XSDDisallowedSubstitutions' has the following literals: 'substitution', 'all', 'restriction', 'extension'.
+The enumeration 'XSDVariety' has the following literals: 'list', 'union', 'atomic'.
+The enumeration 'XSDForm' has the following literals: 'unqualified', 'qualified'.
+The enumeration 'XSDProhibitedSubstitutions' has the following literals: 'restriction', 'all', 'extension'.
+The enumeration 'XSDIdentityConstraintCategory' has the following literals: 'keyref', 'unique', 'key'.
+The enumeration 'XSDWhiteSpace' has the following literals: 'preserve', 'collapse', 'replace'.
+The enumeration 'XSDXPathVariety' has the following literals: 'selector', 'field'.
+The enumeration 'XSDAttributeUseCategory' has the following literals: 'required', 'prohibited', 'optional'.
+The enumeration 'XSDComplexFinal' has the following literals: 'extension', 'all', 'restriction'.
+The enumeration 'EndpointReferenceRole' has the following literals: 'myRole', 'partnerRole'.
+The enumeration 'XSDCardinality' has the following literals: 'countablyInfinite', 'finite'.
+The enumeration 'XSDDerivationMethod' has the following literals: 'extension', 'restriction'.
+The enumeration 'XSDContentTypeCategory' has the following literals: 'empty', 'elementOnly', 'simple', 'mixed'.
+The enumeration 'XSDCompositor' has the following literals: 'all', 'sequence', 'choice'.
+The enumeration 'XSDNamespaceConstraintCategory' has the following literals: 'any', 'set', 'not_'.
+The enumeration 'XSDOrdered' has the following literals: 'partial', 'false', 'total'.
+The enumeration 'CorrelationPattern' has the following literals: 'response', 'requestresponse', 'request'.
+The enumeration 'XSDProcessContents' has the following literals: 'strict', 'skip', 'lax'.
+The enumeration 'XSDSimpleFinal' has the following literals: 'restriction', 'list', 'union', 'all'.
+The enumeration 'XSDDiagnosticSeverity' has the following literals: 'warning', 'fatal', 'information', 'error'.
+The enumeration 'XSDConstraint' has the following literals: 'fixed', 'default'.
+'model::OpaqueActivity' is a specialization of 'Activity'.
+'model::TerminationHandler' is a specialization of 'BPELExtensibleElement'.
+'model::UnknownExtensibilityAttribute' is a specialization of 'UnknownExtensibilityElement'.
+'model::wsdl::Part' is a specialization of 'wsdl::ExtensibleElement'.
+'model::Empty' is a specialization of 'Activity'.
+'model::xsd::XSDFractionDigitsFacet' is a specialization of 'XSDFixedFacet'.
+'model::xsd::XSDAnnotation' is a specialization of 'xsd::XSDRedefineContent'.
+'model::wsdl::MessageReference' is a specialization of 'ExtensibleElement'.
+'model::PartnerLink' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::ISchema' is a specialization of 'IExtensibilityElement'.
+'model::xsd::XSDMaxExclusiveFacet' is a specialization of 'XSDMaxFacet'.
+'model::xsd::XSDElementDeclaration' is a specialization of 'xsd::XSDSchemaContent'.
+'model::wsdl::BindingInput' is a specialization of 'wsdl::ExtensibleElement'.
+'model::Exit' is a specialization of 'Activity'.
+'model::wsdl::Port' is a specialization of 'wsdl::IPort'.
+'model::xsd::XSDPatternFacet' is a specialization of 'XSDRepeatableFacet'.
+'model::To' is a specialization of 'AbstractAssignBound'.
+'model::wsdl::IOperation' is a specialization of 'IElementExtensible'.
+'model::Links' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDElementDeclaration' is a specialization of 'xsd::XSDFeature'.
+'model::Invoke' is a specialization of 'PartnerActivity'.
+'model::xsd::XSDEnumerationFacet' is a specialization of 'XSDRepeatableFacet'.
+'model::xsd::XSDSchema' is a specialization of 'XSDScope'.
+'model::wsdl::BindingOutput' is a specialization of 'wsdl::ExtensibleElement'.
+'model::Variable' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDTerm' is a specialization of 'xsd::XSDParticleContent'.
+'model::xsd::XSDFixedFacet' is a specialization of 'XSDConstrainingFacet'.
+'model::wsdl::ExtensibleElement' is a specialization of 'wsdl::IAttributeExtensible'.
+'model::messageproperties::Property' is a specialization of 'ExtensibilityElement'.
+'model::xsd::XSDRepeatableFacet' is a specialization of 'XSDConstrainingFacet'.
+'model::wsdl::UnknownExtensibilityElement' is a specialization of 'ExtensibilityElement'.
+'model::xsd::XSDComplexTypeDefinition' is a specialization of 'xsd::XSDTypeDefinition'.
+'model::Catch' is a specialization of 'BPELExtensibleElement'.
+'model::Targets' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::IService' is a specialization of 'IElementExtensible'.
+'model::Flow' is a specialization of 'Activity'.
+'model::xsd::XSDCardinalityFacet' is a specialization of 'XSDFundamentalFacet'.
+'model::wsdl::IBindingInput' is a specialization of 'IElementExtensible'.
+'model::wsdl::BindingOperation' is a specialization of 'wsdl::ExtensibleElement'.
+'model::messageproperties::Query' is a specialization of 'ExtensibilityElement'.
+'model::wsdl::Operation' is a specialization of 'wsdl::ExtensibleElement'.
+'model::xsd::XSDMaxLengthFacet' is a specialization of 'XSDFixedFacet'.
+'model::PartnerLinks' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::ExtensibleElement' is a specialization of 'wsdl::WSDLElement'.
+'model::wsdl::IMessage' is a specialization of 'IElementExtensible'.
+'model::Scope' is a specialization of 'Activity'.
+'model::xsd::XSDFacet' is a specialization of 'XSDComponent'.
+'model::Compensate' is a specialization of 'Activity'.
+'model::xsd::XSDAttributeDeclaration' is a specialization of 'xsd::XSDFeature'.
+'model::xsd::XSDFundamentalFacet' is a specialization of 'XSDFacet'.
+'model::xsd::XSDNamedComponent' is a specialization of 'XSDComponent'.
+'model::Else' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDRedefineContent' is a specialization of 'XSDSchemaContent'.
+'model::xsd::XSDInclude' is a specialization of 'XSDSchemaCompositor'.
+'model::Variables' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDParticle' is a specialization of 'XSDComplexTypeContent'.
+'model::xsd::XSDTypeDefinition' is a specialization of 'xsd::XSDRedefineContent'.
+'model::xsd::XSDWildcard' is a specialization of 'XSDTerm'.
+'model::wsdl::Service' is a specialization of 'wsdl::IService'.
+'model::xsd::XSDModelGroupDefinition' is a specialization of 'xsd::XSDParticleContent'.
+'model::CorrelationSets' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::BindingFault' is a specialization of 'wsdl::ExtensibleElement'.
+'model::xsd::XSDXPathDefinition' is a specialization of 'XSDComponent'.
+'model::xsd::XSDModelGroup' is a specialization of 'XSDTerm'.
+'model::xsd::XSDRedefinableComponent' is a specialization of 'xsd::XSDNamedComponent'.
+'model::BooleanExpression' is a specialization of 'Expression'.
+'model::wsdl::Part' is a specialization of 'wsdl::IPart'.
+'model::xsd::XSDFeature' is a specialization of 'XSDNamedComponent'.
+'model::Link' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDConstrainingFacet' is a specialization of 'XSDFacet'.
+'model::xsd::XSDRedefinableComponent' is a specialization of 'xsd::XSDRedefineContent'.
+'model::wsdl::Definition' is a specialization of 'wsdl::ExtensibleElement'.
+'model::xsd::XSDScope' is a specialization of 'XSDComponent'.
+'model::Source' is a specialization of 'BPELExtensibleElement'.
+'model::Expression' is a specialization of 'ExtensibilityElement'.
+'model::wsdl::PortType' is a specialization of 'wsdl::IPortType'.
+'model::xsd::XSDMinInclusiveFacet' is a specialization of 'XSDMinFacet'.
+'model::xsd::XSDParticleContent' is a specialization of 'XSDConcreteComponent'.
+'model::PartnerActivity' is a specialization of 'Activity'.
+'model::CorrelationSet' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::PortType' is a specialization of 'wsdl::ExtensibleElement'.
+'model::wsdl::Import' is a specialization of 'wsdl::IImport'.
+'model::BPELExtensibleElement' is a specialization of 'ExtensibleElement'.
+'model::Copy' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDAttributeGroupDefinition' is a specialization of 'xsd::XSDRedefinableComponent'.
+'model::xsd::XSDComplexTypeContent' is a specialization of 'XSDComponent'.
+'model::xsd::XSDModelGroupDefinition' is a specialization of 'xsd::XSDRedefinableComponent'.
+'model::xsd::XSDMaxInclusiveFacet' is a specialization of 'XSDMaxFacet'.
+'model::wsdl::Operation' is a specialization of 'wsdl::IOperation'.
+'model::xsd::XSDNotationDeclaration' is a specialization of 'xsd::XSDSchemaContent'.
+'model::OnAlarm' is a specialization of 'BPELExtensibleElement'.
+'model::Query' is a specialization of 'WSDLElement'.
+'model::Throw' is a specialization of 'Activity'.
+'model::wsdl::BindingOperation' is a specialization of 'wsdl::IBindingOperation'.
+'model::Branches' is a specialization of 'Expression'.
+'model::ElseIf' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::ExtensibilityElement' is a specialization of 'wsdl::WSDLElement'.
+'model::Reply' is a specialization of 'PartnerActivity'.
+'model::To' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDBoundedFacet' is a specialization of 'XSDFundamentalFacet'.
+'model::Reply' is a specialization of 'Activity'.
+'model::Target' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDRedefine' is a specialization of 'XSDSchemaCompositor'.
+'model::Validate' is a specialization of 'Activity'.
+'model::wsdl::Port' is a specialization of 'wsdl::ExtensibleElement'.
+'model::partnerlinktype::PartnerLinkType' is a specialization of 'ExtensibilityElement'.
+'model::xsd::XSDOrderedFacet' is a specialization of 'XSDFundamentalFacet'.
+'model::MessageExchanges' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Message' is a specialization of 'wsdl::IMessage'.
+'model::xsd::XSDTotalDigitsFacet' is a specialization of 'XSDFixedFacet'.
+'model::xsd::XSDMinExclusiveFacet' is a specialization of 'XSDMinFacet'.
+'model::xsd::XSDIdentityConstraintDefinition' is a specialization of 'XSDNamedComponent'.
+'model::xsd::XSDAttributeGroupDefinition' is a specialization of 'xsd::XSDAttributeGroupContent'.
+'model::xsd::XSDLengthFacet' is a specialization of 'XSDFixedFacet'.
+'model::FromParts' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Service' is a specialization of 'wsdl::ExtensibleElement'.
+'model::wsdl::IBindingOperation' is a specialization of 'IElementExtensible'.
+'model::OnMessage' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Output' is a specialization of 'wsdl::MessageReference'.
+'model::wsdl::IInput' is a specialization of 'IAttributeExtensible'.
+'model::Sources' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDSchemaContent' is a specialization of 'XSDConcreteComponent'.
+'model::xsd::XSDNotationDeclaration' is a specialization of 'xsd::XSDNamedComponent'.
+'model::EventHandler' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDComponent' is a specialization of 'XSDConcreteComponent'.
+'model::xsd::XSDWhiteSpaceFacet' is a specialization of 'XSDFixedFacet'.
+'model::wsdl::IFault' is a specialization of 'IAttributeExtensible'.
+'model::xsd::XSDTerm' is a specialization of 'xsd::XSDComponent'.
+'model::xsd::XSDAttributeUse' is a specialization of 'xsd::XSDAttributeGroupContent'.
+'model::Extensions' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDComplexTypeDefinition' is a specialization of 'xsd::XSDScope'.
+'model::wsdl::IBinding' is a specialization of 'IElementExtensible'.
+'model::Documentation' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::XSDSchemaExtensibilityElement' is a specialization of 'wsdl::ExtensibilityElement'.
+'model::xsd::XSDSimpleTypeDefinition' is a specialization of 'xsd::XSDComplexTypeContent'.
+'model::Import' is a specialization of 'BPELExtensibleElement'.
+'model::MessageExchange' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDSchemaDirective' is a specialization of 'XSDSchemaContent'.
+'model::Rethrow' is a specialization of 'Activity'.
+'model::RepeatUntil' is a specialization of 'Activity'.
+'model::wsdl::IPort' is a specialization of 'IElementExtensible'.
+'model::xsd::XSDImport' is a specialization of 'XSDSchemaDirective'.
+'model::If' is a specialization of 'Activity'.
+'model::xsd::XSDAttributeDeclaration' is a specialization of 'xsd::XSDSchemaContent'.
+'model::xsd::XSDMaxFacet' is a specialization of 'XSDFixedFacet'.
+'model::FaultHandler' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::XSDSchemaExtensibilityElement' is a specialization of 'wsdl::ISchema'.
+'model::Wait' is a specialization of 'Activity'.
+'model::Pick' is a specialization of 'Activity'.
+'model::xsd::XSDSchemaCompositor' is a specialization of 'XSDSchemaDirective'.
+'model::Process' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::IOutput' is a specialization of 'IAttributeExtensible'.
+'model::wsdl::Import' is a specialization of 'wsdl::ExtensibleElement'.
+'model::wsdl::Binding' is a specialization of 'wsdl::ExtensibleElement'.
+'model::xsd::XSDAttributeUse' is a specialization of 'xsd::XSDComponent'.
+'model::xsd::XSDAttributeGroupDefinition' is a specialization of 'xsd::XSDRedefineContent'.
+'model::partnerlinktype::Role' is a specialization of 'ExtensibilityElement'.
+'model::wsdl::BindingFault' is a specialization of 'wsdl::IBindingFault'.
+'model::Receive' is a specialization of 'PartnerActivity'.
+'model::xsd::XSDDiagnostic' is a specialization of 'XSDConcreteComponent'.
+'model::ToParts' is a specialization of 'BPELExtensibleElement'.
+'model::From' is a specialization of 'BPELExtensibleElement'.
+'model::CatchAll' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Output' is a specialization of 'wsdl::IOutput'.
+'model::CompensationHandler' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDMinLengthFacet' is a specialization of 'XSDFixedFacet'.
+'model::messageproperties::PropertyAlias' is a specialization of 'ExtensibilityElement'.
+'model::Assign' is a specialization of 'Activity'.
+'model::wsdl::Definition' is a specialization of 'wsdl::IDefinition'.
+'model::wsdl::Types' is a specialization of 'wsdl::ExtensibleElement'.
+'model::CompensateScope' is a specialization of 'Activity'.
+'model::From' is a specialization of 'AbstractAssignBound'.
+'model::xsd::XSDMinFacet' is a specialization of 'XSDFixedFacet'.
+'model::xsd::XSDAnnotation' is a specialization of 'xsd::XSDComponent'.
+'model::wsdl::Types' is a specialization of 'wsdl::ITypes'.
+'model::Condition' is a specialization of 'Expression'.
+'model::wsdl::Message' is a specialization of 'wsdl::ExtensibleElement'.
+'model::xsd::XSDModelGroupDefinition' is a specialization of 'xsd::XSDRedefineContent'.
+'model::Extension' is a specialization of 'BPELExtensibleElement'.
+'model::xsd::XSDAttributeGroupContent' is a specialization of 'XSDConcreteComponent'.
+'model::xsd::XSDSimpleTypeDefinition' is a specialization of 'xsd::XSDTypeDefinition'.
+'model::wsdl::Fault' is a specialization of 'wsdl::IFault'.
+'model::Correlations' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::IBindingOutput' is a specialization of 'IElementExtensible'.
+'model::wsdl::IBindingFault' is a specialization of 'IElementExtensible'.
+'model::xsd::XSDTypeDefinition' is a specialization of 'xsd::XSDRedefinableComponent'.
+'model::wsdl::Input' is a specialization of 'wsdl::MessageReference'.
+'model::Correlation' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::IImport' is a specialization of 'IAttributeExtensible'.
+'model::While' is a specialization of 'Activity'.
+'model::wsdl::IDefinition' is a specialization of 'IElementExtensible'.
+'model::wsdl::ExtensibilityElement' is a specialization of 'wsdl::IExtensibilityElement'.
+'model::wsdl::BindingOutput' is a specialization of 'wsdl::IBindingOutput'.
+'model::wsdl::ExtensibleElement' is a specialization of 'wsdl::IElementExtensible'.
+'model::ExtensionActivity' is a specialization of 'Activity'.
+'model::CompletionCondition' is a specialization of 'BPELExtensibleElement'.
+'model::Activity' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::IPart' is a specialization of 'IAttributeExtensible'.
+'model::wsdl::IPortType' is a specialization of 'IAttributeExtensible'.
+'model::OnEvent' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Input' is a specialization of 'wsdl::IInput'.
+'model::ServiceRef' is a specialization of 'ExtensibleElement'.
+'model::wsdl::Fault' is a specialization of 'wsdl::MessageReference'.
+'model::ForEach' is a specialization of 'Activity'.
+'model::xsd::XSDElementDeclaration' is a specialization of 'xsd::XSDTerm'.
+'model::ToPart' is a specialization of 'BPELExtensibleElement'.
+'model::wsdl::Binding' is a specialization of 'wsdl::IBinding'.
+'model::Sequence' is a specialization of 'Activity'.
+'model::wsdl::BindingInput' is a specialization of 'wsdl::IBindingInput'.
+'model::xsd::XSDNumericFacet' is a specialization of 'XSDFundamentalFacet'.
+'model::FromPart' is a specialization of 'BPELExtensibleElement'.
+'model::Invoke' (role 'model_Invoke39', cardinality 0..*) is associated with 'model::FaultHandler' (role 'model_FaultHandler40', cardinality 0..*).
+'model::PartnerLink' (role 'model_PartnerLink250', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent249', cardinality 0..*).
+'XSDFacet' (role 'XSDFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition690', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema593', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema594', cardinality 0..*).
+'model::xsd::XSDModelGroupDefinition' (role 'model_xsd_XSDModelGroupDefinition', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation538', cardinality 0..*).
+'XSDParticle' (role 'XSDParticle', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition467', cardinality 0..*).
+'model::Variable' (role 'model_Variable237', cardinality 0..*) is associated with 'XSDTypeDefinition' (role 'XSDTypeDefinition238', cardinality 0..*).
+'model::ElseIf' (role 'model_ElseIf333', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity334', cardinality 0..*).
+'model::Variable' (role 'model_Variable35', cardinality 0..*) is associated with 'model::Invoke' (role 'model_Invoke34', cardinality 0..*).
+'model::xsd::XSDFacet' (role 'model_xsd_XSDFacet507', cardinality 0..*) is associated with 'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition508', cardinality 0..*).
+'model::Activity' (role 'model_Activity90', cardinality 0..*) is associated with 'model::While' (role 'model_While', cardinality 0..*).
+'model::Condition' (role 'model_Condition331', cardinality 0..*) is associated with 'model::ElseIf' (role 'model_ElseIf330', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema579', cardinality 0..*) is associated with 'XSDDiagnostic' (role 'XSDDiagnostic580', cardinality 0..*).
+'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition703', cardinality 0..*) is associated with 'XSDTypeDefinition' (role 'XSDTypeDefinition704', cardinality 0..*).
+'model::Condition' (role 'model_Condition', cardinality 0..*) is associated with 'model::While' (role 'model_While92', cardinality 0..*).
+'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration499', cardinality 0..*) is associated with 'XSDElementDeclaration' (role 'XSDElementDeclaration500', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema576', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation577', cardinality 0..*).
+'model::AbstractAssignBound' (role 'model_AbstractAssignBound162', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression163', cardinality 0..*).
+'model::Receive' (role 'model_Receive', cardinality 0..*) is associated with 'model::Variable' (role 'model_Variable74', cardinality 0..*).
+'XSDAttributeDeclaration' (role 'XSDAttributeDeclaration', cardinality 0..*) is associated with 'model::xsd::XSDAttributeDeclaration' (role 'model_xsd_XSDAttributeDeclaration419', cardinality 0..*).
+'XSDPatternFacet' (role 'XSDPatternFacet673', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition672', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation544', cardinality 0..*) is associated with 'model::xsd::XSDNotationDeclaration' (role 'model_xsd_XSDNotationDeclaration', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition', cardinality 0..*) is associated with 'model::From' (role 'model_From167', cardinality 0..*).
+'XSDWildcard' (role 'XSDWildcard', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition427', cardinality 0..*).
+'model::Activity' (role 'model_Activity', cardinality 0..*) is associated with 'model::Process' (role 'model_Process4', cardinality 0..*).
+'Message' (role 'Message262', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent261', cardinality 0..*).
+'model::Variable' (role 'model_Variable231', cardinality 0..*) is associated with 'Message' (role 'Message232', cardinality 0..*).
+'model::Wait' (role 'model_Wait', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression', cardinality 0..*).
+'model::Extensions' (role 'model_Extensions', cardinality 0..*) is associated with 'model::Process' (role 'model_Process14', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition360', cardinality 0..*) is associated with 'model::wsdl::Part' (role 'model_wsdl_Part', cardinality 0..*).
+'UnknownExtensibilityElement' (role 'UnknownExtensibilityElement', cardinality 0..*) is associated with 'model::wsdl::UnknownExtensibilityElement' (role 'model_wsdl_UnknownExtensibilityElement', cardinality 0..*).
+'model::xsd::XSDParticle' (role 'model_xsd_XSDParticle547', cardinality 0..*) is associated with 'XSDTerm' (role 'XSDTerm', cardinality 0..*).
+'XSDModelGroupDefinition' (role 'XSDModelGroupDefinition', cardinality 0..*) is associated with 'model::xsd::XSDModelGroupDefinition' (role 'model_xsd_XSDModelGroupDefinition542', cardinality 0..*).
+'model::Variable' (role 'model_Variable234', cardinality 0..*) is associated with 'XSDElementDeclaration' (role 'XSDElementDeclaration235', cardinality 0..*).
+'model::Scope' (role 'model_Scope134', cardinality 0..*) is associated with 'model::EventHandler' (role 'model_EventHandler135', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema565', cardinality 0..*) is associated with 'XSDTypeDefinition' (role 'XSDTypeDefinition566', cardinality 0..*).
+'model::Activity' (role 'model_Activity309', cardinality 0..*) is associated with 'model::ForEach' (role 'model_ForEach308', cardinality 0..*).
+'Part' (role 'Part358', cardinality 0..*) is associated with 'model::wsdl::Message' (role 'model_wsdl_Message', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition445', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition444', cardinality 0..*).
+'model::wsdl::BindingInput' (role 'model_wsdl_BindingInput', cardinality 0..*) is associated with 'Input' (role 'Input402', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema562', cardinality 0..*) is associated with 'XSDAttributeGroupDefinition' (role 'XSDAttributeGroupDefinition563', cardinality 0..*).
+'model::wsdl::ExtensibleElement' (role 'model_wsdl_ExtensibleElement', cardinality 0..*) is associated with 'ExtensibilityElement' (role 'ExtensibilityElement', cardinality 0..*).
+'model::wsdl::Part' (role 'model_wsdl_Part362', cardinality 0..*) is associated with 'XSDElementDeclaration' (role 'XSDElementDeclaration363', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage181', cardinality 0..*) is associated with 'model::Correlations' (role 'model_Correlations182', cardinality 0..*).
+'model::RepeatUntil' (role 'model_RepeatUntil313', cardinality 0..*) is associated with 'model::Condition' (role 'model_Condition314', cardinality 0..*).
+'Output' (role 'Output404', cardinality 0..*) is associated with 'model::wsdl::BindingOutput' (role 'model_wsdl_BindingOutput', cardinality 0..*).
+'XSDPatternFacet' (role 'XSDPatternFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition642', cardinality 0..*).
+'PortType' (role 'PortType', cardinality 0..*) is associated with 'model::PartnerActivity' (role 'model_PartnerActivity70', cardinality 0..*).
+'Definition' (role 'Definition', cardinality 0..*) is associated with 'model::wsdl::Import' (role 'model_wsdl_Import', cardinality 0..*).
+'BindingFault' (role 'BindingFault', cardinality 0..*) is associated with 'model::wsdl::BindingOperation' (role 'model_wsdl_BindingOperation378', cardinality 0..*).
+'model::ToPart' (role 'model_ToPart346', cardinality 0..*) is associated with 'model::ToParts' (role 'model_ToParts345', cardinality 0..*).
+'XSDModelGroup' (role 'XSDModelGroup', cardinality 0..*) is associated with 'model::xsd::XSDModelGroupDefinition' (role 'model_xsd_XSDModelGroupDefinition540', cardinality 0..*).
+'model::ToParts' (role 'model_ToParts62', cardinality 0..*) is associated with 'model::Reply' (role 'model_Reply61', cardinality 0..*).
+'model::Link' (role 'Link200', cardinality 0..*) is associated with 'model::Source' (role 'sources', cardinality 0..*).
+'model::xsd::XSDAttributeUse' (role 'model_xsd_XSDAttributeUse', cardinality 0..*) is associated with 'XSDAttributeDeclaration' (role 'XSDAttributeDeclaration437', cardinality 0..*).
+'Message' (role 'Message386', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition385', cardinality 0..*).
+'model::Link' (role 'Link', cardinality 0..*) is associated with 'model::Source' (role 'Source', cardinality 0..*).
+'model::MessageExchange' (role 'model_MessageExchange80', cardinality 0..*) is associated with 'model::Receive' (role 'model_Receive79', cardinality 0..*).
+'model::xsd::XSDModelGroup' (role 'model_xsd_XSDModelGroup535', cardinality 0..*) is associated with 'XSDParticle' (role 'XSDParticle536', cardinality 0..*).
+'model::Scope' (role 'model_Scope125', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity126', cardinality 0..*).
+'model::CompensationHandler' (role 'model_CompensationHandler147', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity148', cardinality 0..*).
+'XSDMaxFacet' (role 'XSDMaxFacet661', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition660', cardinality 0..*).
+'model::AbstractAssignBound' (role 'model_AbstractAssignBound154', cardinality 0..*) is associated with 'model::PartnerLink' (role 'model_PartnerLink155', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition666', cardinality 0..*) is associated with 'XSDMaxLengthFacet' (role 'XSDMaxLengthFacet667', cardinality 0..*).
+'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition458', cardinality 0..*) is associated with 'XSDWildcard' (role 'XSDWildcard459', cardinality 0..*).
+'model::Invoke' (role 'model_Invoke37', cardinality 0..*) is associated with 'model::CompensationHandler' (role 'model_CompensationHandler', cardinality 0..*).
+'model::Activity' (role 'model_Activity209', cardinality 0..*) is associated with 'model::Target' (role 'model_Target', cardinality 0..*).
+'Role' (role 'Role723', cardinality 0..*) is associated with 'model::partnerlinktype::PartnerLinkType' (role 'model_partnerlinktype_PartnerLinkType', cardinality 0..*).
+'model::CorrelationSet' (role 'model_CorrelationSet', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'model::Invoke' (role 'model_Invoke44', cardinality 0..*) is associated with 'model::ToParts' (role 'model_ToParts', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition644', cardinality 0..*) is associated with 'XSDCardinalityFacet' (role 'XSDCardinalityFacet', cardinality 0..*).
+'model::Activity' (role 'model_Activity104', cardinality 0..*) is associated with 'model::OnAlarm' (role 'model_OnAlarm103', cardinality 0..*).
+'XSDParticle' (role 'XSDParticle710', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition709', cardinality 0..*).
+'model::Condition' (role 'model_Condition280', cardinality 0..*) is associated with 'model::Targets' (role 'model_Targets279', cardinality 0..*).
+'BindingOutput' (role 'BindingOutput', cardinality 0..*) is associated with 'model::wsdl::BindingOperation' (role 'model_wsdl_BindingOperation376', cardinality 0..*).
+'model::PartnerLink' (role 'model_PartnerLink19', cardinality 0..*) is associated with 'Role' (role 'Role20', cardinality 0..*).
+'model::Variable' (role 'model_Variable292', cardinality 0..*) is associated with 'model::ToPart' (role 'model_ToPart', cardinality 0..*).
+'Operation' (role 'Operation256', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent255', cardinality 0..*).
+'model::Process' (role 'model_Process10', cardinality 0..*) is associated with 'model::CorrelationSets' (role 'model_CorrelationSets', cardinality 0..*).
+'model::Variable' (role 'model_Variable', cardinality 0..*) is associated with 'model::Invoke' (role 'model_Invoke', cardinality 0..*).
+'model::Variable' (role 'model_Variable240', cardinality 0..*) is associated with 'model::From' (role 'model_From241', cardinality 0..*).
+'model::wsdl::Operation' (role 'model_wsdl_Operation', cardinality 0..*) is associated with 'Input' (role 'Input', cardinality 0..*).
+'model::Scope' (role 'model_Scope131', cardinality 0..*) is associated with 'model::CorrelationSets' (role 'model_CorrelationSets132', cardinality 0..*).
+'XSDWildcard' (role 'XSDWildcard462', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition461', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition465', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition464', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition621', cardinality 0..*) is associated with 'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition622', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation530', cardinality 0..*) is associated with 'model::xsd::XSDModelGroup' (role 'model_xsd_XSDModelGroup', cardinality 0..*).
+'model::wsdl::PortType' (role 'model_wsdl_PortType', cardinality 0..*) is associated with 'Operation' (role 'Operation348', cardinality 0..*).
+'model::If' (role 'model_If', cardinality 0..*) is associated with 'model::Condition' (role 'model_Condition321', cardinality 0..*).
+'XSDLengthFacet' (role 'XSDLengthFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition636', cardinality 0..*).
+'XSDElementDeclaration' (role 'XSDElementDeclaration503', cardinality 0..*) is associated with 'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration502', cardinality 0..*).
+'Query' (role 'Query', cardinality 0..*) is associated with 'model::messageproperties::PropertyAlias' (role 'model_messageproperties_PropertyAlias721', cardinality 0..*).
+'XSDSchemaContent' (role 'XSDSchemaContent', cardinality 0..*) is associated with 'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema', cardinality 0..*).
+'model::AbstractAssignBound' (role 'model_AbstractAssignBound152', cardinality 0..*) is associated with 'Part' (role 'Part', cardinality 0..*).
+'model::CompensateScope' (role 'model_CompensateScope', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity145', cardinality 0..*).
+'XSDSchema' (role 'XSDSchema', cardinality 0..*) is associated with 'model::wsdl::Import' (role 'model_wsdl_Import399', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition602', cardinality 0..*) is associated with 'XSDConstrainingFacet' (role 'XSDConstrainingFacet', cardinality 0..*).
+'model::OnAlarm' (role 'model_OnAlarm109', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression110', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage169', cardinality 0..*) is associated with 'model::Variable' (role 'model_Variable170', cardinality 0..*).
+'model::Correlation' (role 'model_Correlation', cardinality 0..*) is associated with 'model::CorrelationSet' (role 'model_CorrelationSet193', cardinality 0..*).
+'model::wsdl::Binding' (role 'model_wsdl_Binding370', cardinality 0..*) is associated with 'BindingOperation' (role 'BindingOperation', cardinality 0..*).
+'Service' (role 'Service', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition394', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition669', cardinality 0..*) is associated with 'XSDFractionDigitsFacet' (role 'XSDFractionDigitsFacet670', cardinality 0..*).
+'model::Links' (role 'model_Links223', cardinality 0..*) is associated with 'model::Link' (role 'model_Link', cardinality 0..*).
+'model::OnEvent' (role 'model_OnEvent273', cardinality 0..*) is associated with 'model::MessageExchange' (role 'model_MessageExchange274', cardinality 0..*).
+'model::xsd::XSDConcreteComponent' (role 'model_xsd_XSDConcreteComponent', cardinality 0..*) is associated with 'XSDConcreteComponent' (role 'XSDConcreteComponent', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'model::PartnerActivity' (role 'model_PartnerActivity72', cardinality 0..*).
+'model::Correlations' (role 'model_Correlations', cardinality 0..*) is associated with 'model::PartnerActivity' (role 'model_PartnerActivity68', cardinality 0..*).
+'model::Expression' (role 'model_Expression113', cardinality 0..*) is associated with 'model::OnAlarm' (role 'model_OnAlarm112', cardinality 0..*).
+'Part' (role 'Part719', cardinality 0..*) is associated with 'model::messageproperties::PropertyAlias' (role 'model_messageproperties_PropertyAlias', cardinality 0..*).
+'model::Variable' (role 'model_Variable287', cardinality 0..*) is associated with 'model::FromPart' (role 'model_FromPart', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition681', cardinality 0..*) is associated with 'XSDMinLengthFacet' (role 'XSDMinLengthFacet682', cardinality 0..*).
+'model::Target' (role 'targets', cardinality 0..*) is associated with 'model::Link' (role 'Link207', cardinality 0..*).
+'PortType' (role 'PortType389', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition388', cardinality 0..*).
+'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition600', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition', cardinality 0..*).
+'XSDElementDeclaration' (role 'XSDElementDeclaration', cardinality 0..*) is associated with 'model::Catch' (role 'model_Catch57', cardinality 0..*).
+'model::wsdl::Operation' (role 'model_wsdl_Operation355', cardinality 0..*) is associated with 'Part' (role 'Part356', cardinality 0..*).
+'model::Correlation' (role 'model_Correlation229', cardinality 0..*) is associated with 'model::Correlations' (role 'model_Correlations228', cardinality 0..*).
+'Output' (role 'Output', cardinality 0..*) is associated with 'model::wsdl::Operation' (role 'model_wsdl_Operation351', cardinality 0..*).
+'XSDXPathDefinition' (role 'XSDXPathDefinition', cardinality 0..*) is associated with 'model::xsd::XSDIdentityConstraintDefinition' (role 'model_xsd_XSDIdentityConstraintDefinition521', cardinality 0..*).
+'PortType' (role 'PortType176', cardinality 0..*) is associated with 'model::OnMessage' (role 'model_OnMessage175', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage178', cardinality 0..*) is associated with 'model::PartnerLink' (role 'model_PartnerLink179', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition701', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition700', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation553', cardinality 0..*) is associated with 'model::xsd::XSDRepeatableFacet' (role 'model_xsd_XSDRepeatableFacet', cardinality 0..*).
+'model::Scope' (role 'model_Scope140', cardinality 0..*) is associated with 'model::TerminationHandler' (role 'model_TerminationHandler', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition618', cardinality 0..*) is associated with 'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition619', cardinality 0..*).
+'model::xsd::XSDAttributeDeclaration' (role 'model_xsd_XSDAttributeDeclaration', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation', cardinality 0..*).
+'model::Extension' (role 'model_Extension', cardinality 0..*) is associated with 'model::Extensions' (role 'model_Extensions285', cardinality 0..*).
+'model::If' (role 'model_If327', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity328', cardinality 0..*).
+'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration491', cardinality 0..*) is associated with 'XSDTypeDefinition' (role 'XSDTypeDefinition492', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema556', cardinality 0..*) is associated with 'XSDElementDeclaration' (role 'XSDElementDeclaration557', cardinality 0..*).
+'model::Process' (role 'model_Process16', cardinality 0..*) is associated with 'model::MessageExchanges' (role 'model_MessageExchanges', cardinality 0..*).
+'PortType' (role 'PortType259', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent258', cardinality 0..*).
+'model::Activity' (role 'model_Activity30', cardinality 0..*) is associated with 'model::Sources' (role 'model_Sources', cardinality 0..*).
+'model::Condition' (role 'model_Condition205', cardinality 0..*) is associated with 'model::Source' (role 'model_Source204', cardinality 0..*).
+'model::Activity' (role 'model_Activity53', cardinality 0..*) is associated with 'model::Catch' (role 'model_Catch52', cardinality 0..*).
+'Fault' (role 'Fault', cardinality 0..*) is associated with 'model::wsdl::Operation' (role 'model_wsdl_Operation353', cardinality 0..*).
+'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration488', cardinality 0..*) is associated with 'XSDTypeDefinition' (role 'XSDTypeDefinition489', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition678', cardinality 0..*) is associated with 'XSDTotalDigitsFacet' (role 'XSDTotalDigitsFacet679', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation692', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition', cardinality 0..*).
+'model::Query' (role 'model_Query', cardinality 0..*) is associated with 'model::AbstractAssignBound' (role 'model_AbstractAssignBound160', cardinality 0..*).
+'model::xsd::XSDAttributeUse' (role 'model_xsd_XSDAttributeUse439', cardinality 0..*) is associated with 'XSDAttributeDeclaration' (role 'XSDAttributeDeclaration440', cardinality 0..*).
+'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation486', cardinality 0..*).
+'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition469', cardinality 0..*) is associated with 'XSDWildcard' (role 'XSDWildcard470', cardinality 0..*).
+'XSDAttributeUse' (role 'XSDAttributeUse453', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition452', cardinality 0..*).
+'XSDSchemaDirective' (role 'XSDSchemaDirective', cardinality 0..*) is associated with 'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema582', cardinality 0..*).
+'model::FromPart' (role 'model_FromPart289', cardinality 0..*) is associated with 'Part' (role 'Part290', cardinality 0..*).
+'XSDIdentityConstraintDefinition' (role 'XSDIdentityConstraintDefinition', cardinality 0..*) is associated with 'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration494', cardinality 0..*).
+'model::CorrelationSets' (role 'model_CorrelationSets268', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent267', cardinality 0..*).
+'XSDXPathDefinition' (role 'XSDXPathDefinition524', cardinality 0..*) is associated with 'model::xsd::XSDIdentityConstraintDefinition' (role 'model_xsd_XSDIdentityConstraintDefinition523', cardinality 0..*).
+'model::xsd::XSDDiagnostic' (role 'model_xsd_XSDDiagnostic483', cardinality 0..*) is associated with 'XSDConcreteComponent' (role 'XSDConcreteComponent484', cardinality 0..*).
+'model::CompletionCondition' (role 'model_CompletionCondition339', cardinality 0..*) is associated with 'model::Branches' (role 'model_Branches', cardinality 0..*).
+'model::Scope' (role 'model_Scope122', cardinality 0..*) is associated with 'model::CompensationHandler' (role 'model_CompensationHandler123', cardinality 0..*).
+'Import' (role 'Import', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation505', cardinality 0..*) is associated with 'model::xsd::XSDFacet' (role 'model_xsd_XSDFacet', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation549', cardinality 0..*) is associated with 'model::xsd::XSDRedefine' (role 'model_xsd_XSDRedefine', cardinality 0..*).
+'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition608', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition607', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition612', cardinality 0..*) is associated with 'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition613', cardinality 0..*).
+'model::Activity' (role 'model_Activity226', cardinality 0..*) is associated with 'model::CatchAll' (role 'model_CatchAll225', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition624', cardinality 0..*) is associated with 'XSDMinFacet' (role 'XSDMinFacet', cardinality 0..*).
+'XSDFractionDigitsFacet' (role 'XSDFractionDigitsFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition654', cardinality 0..*).
+'XSDComplexTypeContent' (role 'XSDComplexTypeContent', cardinality 0..*) is associated with 'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition447', cardinality 0..*).
+'model::PartnerLinks' (role 'model_PartnerLinks138', cardinality 0..*) is associated with 'model::Scope' (role 'model_Scope137', cardinality 0..*).
+'XSDOrderedFacet' (role 'XSDOrderedFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition656', cardinality 0..*).
+'model::xsd::XSDXPathDefinition' (role 'model_xsd_XSDXPathDefinition', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation717', cardinality 0..*).
+'model::Expression' (role 'model_Expression107', cardinality 0..*) is associated with 'model::OnAlarm' (role 'model_OnAlarm106', cardinality 0..*).
+'XSDFundamentalFacet' (role 'XSDFundamentalFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition610', cardinality 0..*).
+'model::Scope' (role 'model_Scope', cardinality 0..*) is associated with 'model::FaultHandler' (role 'model_FaultHandler120', cardinality 0..*).
+'model::xsd::XSDAttributeDeclaration' (role 'model_xsd_XSDAttributeDeclaration416', cardinality 0..*) is associated with 'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition417', cardinality 0..*).
+'model::Scope' (role 'model_Scope128', cardinality 0..*) is associated with 'model::Variables' (role 'model_Variables129', cardinality 0..*).
+'model::xsd::XSDSchemaCompositor' (role 'model_xsd_XSDSchemaCompositor', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema596', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition638', cardinality 0..*) is associated with 'XSDWhiteSpaceFacet' (role 'XSDWhiteSpaceFacet', cardinality 0..*).
+'model::Variable' (role 'model_Variable59', cardinality 0..*) is associated with 'model::Reply' (role 'model_Reply', cardinality 0..*).
+'model::CompletionCondition' (role 'model_CompletionCondition306', cardinality 0..*) is associated with 'model::ForEach' (role 'model_ForEach305', cardinality 0..*).
+'model::wsdl::Port' (role 'model_wsdl_Port', cardinality 0..*) is associated with 'Binding' (role 'Binding', cardinality 0..*).
+'Message' (role 'Message', cardinality 0..*) is associated with 'model::Catch' (role 'model_Catch55', cardinality 0..*).
+'model::Copy' (role 'model_Copy116', cardinality 0..*) is associated with 'model::To' (role 'model_To', cardinality 0..*).
+'BindingInput' (role 'BindingInput', cardinality 0..*) is associated with 'model::wsdl::BindingOperation' (role 'model_wsdl_BindingOperation374', cardinality 0..*).
+'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation442', cardinality 0..*).
+'model::Variable' (role 'model_Variable218', cardinality 0..*) is associated with 'model::Variables' (role 'model_Variables217', cardinality 0..*).
+'model::xsd::XSDElementDeclaration' (role 'model_xsd_XSDElementDeclaration496', cardinality 0..*) is associated with 'XSDElementDeclaration' (role 'XSDElementDeclaration497', cardinality 0..*).
+'XSDFeature' (role 'XSDFeature', cardinality 0..*) is associated with 'model::xsd::XSDFeature' (role 'model_xsd_XSDFeature511', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema568', cardinality 0..*) is associated with 'XSDModelGroupDefinition' (role 'XSDModelGroupDefinition569', cardinality 0..*).
+'XSDNumericFacet' (role 'XSDNumericFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition646', cardinality 0..*).
+'model::PartnerLinks' (role 'model_PartnerLinks', cardinality 0..*) is associated with 'model::Process' (role 'model_Process', cardinality 0..*).
+'model::FromParts' (role 'model_FromParts', cardinality 0..*) is associated with 'model::Invoke' (role 'model_Invoke42', cardinality 0..*).
+'model::Target' (role 'Target', cardinality 0..*) is associated with 'model::Link' (role 'Link47', cardinality 0..*).
+'model::OnAlarm' (role 'model_OnAlarm', cardinality 0..*) is associated with 'model::Pick' (role 'model_Pick95', cardinality 0..*).
+'model::Source' (role 'model_Source', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity202', cardinality 0..*).
+'Message' (role 'Message366', cardinality 0..*) is associated with 'model::wsdl::Part' (role 'model_wsdl_Part365', cardinality 0..*).
+'model::AbstractAssignBound' (role 'model_AbstractAssignBound', cardinality 0..*) is associated with 'model::Variable' (role 'model_Variable150', cardinality 0..*).
+'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition', cardinality 0..*) is associated with 'model::xsd::XSDAttributeDeclaration' (role 'model_xsd_XSDAttributeDeclaration414', cardinality 0..*).
+'XSDConcreteComponent' (role 'XSDConcreteComponent474', cardinality 0..*) is associated with 'model::xsd::XSDConcreteComponent' (role 'model_xsd_XSDConcreteComponent473', cardinality 0..*).
+'XSDAttributeDeclaration' (role 'XSDAttributeDeclaration560', cardinality 0..*) is associated with 'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema559', cardinality 0..*).
+'model::Variables' (role 'model_Variables', cardinality 0..*) is associated with 'model::Process' (role 'model_Process2', cardinality 0..*).
+'model::Links' (role 'model_Links', cardinality 0..*) is associated with 'model::Flow' (role 'model_Flow99', cardinality 0..*).
+'model::CorrelationSets' (role 'model_CorrelationSets220', cardinality 0..*) is associated with 'model::CorrelationSet' (role 'model_CorrelationSet221', cardinality 0..*).
+'model::ServiceRef' (role 'model_ServiceRef', cardinality 0..*) is associated with 'model::From' (role 'model_From165', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema587', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema588', cardinality 0..*).
+'model::xsd::XSDWildcard' (role 'model_xsd_XSDWildcard', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation712', cardinality 0..*).
+'model::Reply' (role 'model_Reply64', cardinality 0..*) is associated with 'model::MessageExchange' (role 'model_MessageExchange', cardinality 0..*).
+'model::PartnerLink' (role 'model_PartnerLink212', cardinality 0..*) is associated with 'model::PartnerLinks' (role 'model_PartnerLinks211', cardinality 0..*).
+'model::xsd::XSDRedefine' (role 'model_xsd_XSDRedefine551', cardinality 0..*) is associated with 'XSDRedefineContent' (role 'XSDRedefineContent', cardinality 0..*).
+'model::xsd::XSDConcreteComponent' (role 'model_xsd_XSDConcreteComponent476', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema477', cardinality 0..*).
+'model::Variable' (role 'model_Variable247', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent246', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema571', cardinality 0..*) is associated with 'XSDIdentityConstraintDefinition' (role 'XSDIdentityConstraintDefinition572', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation516', cardinality 0..*) is associated with 'model::xsd::XSDIdentityConstraintDefinition' (role 'model_xsd_XSDIdentityConstraintDefinition', cardinality 0..*).
+'XSDAttributeGroupContent' (role 'XSDAttributeGroupContent', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition423', cardinality 0..*).
+'XSDScope' (role 'XSDScope', cardinality 0..*) is associated with 'model::xsd::XSDFeature' (role 'model_xsd_XSDFeature', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage190', cardinality 0..*) is associated with 'model::MessageExchange' (role 'model_MessageExchange191', cardinality 0..*).
+'XSDConstrainingFacet' (role 'XSDConstrainingFacet605', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition604', cardinality 0..*).
+'model::Copy' (role 'model_Copy', cardinality 0..*) is associated with 'model::Assign' (role 'model_Assign', cardinality 0..*).
+'XSDElementDeclaration' (role 'XSDElementDeclaration265', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent264', cardinality 0..*).
+'XSDDiagnostic' (role 'XSDDiagnostic', cardinality 0..*) is associated with 'model::xsd::XSDConcreteComponent' (role 'model_xsd_XSDConcreteComponent479', cardinality 0..*).
+'Part' (role 'Part295', cardinality 0..*) is associated with 'model::ToPart' (role 'model_ToPart294', cardinality 0..*).
+'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema584', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema585', cardinality 0..*).
+'model::Scope' (role 'model_Scope142', cardinality 0..*) is associated with 'model::MessageExchanges' (role 'model_MessageExchanges143', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation715', cardinality 0..*) is associated with 'model::xsd::XSDWildcard' (role 'model_xsd_XSDWildcard714', cardinality 0..*).
+'model::Activity' (role 'model_Activity317', cardinality 0..*) is associated with 'model::TerminationHandler' (role 'model_TerminationHandler316', cardinality 0..*).
+'model::OnEvent' (role 'model_OnEvent243', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity244', cardinality 0..*).
+'XSDMinLengthFacet' (role 'XSDMinLengthFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition650', cardinality 0..*).
+'model::FaultHandler' (role 'model_FaultHandler24', cardinality 0..*) is associated with 'model::Catch' (role 'model_Catch', cardinality 0..*).
+'model::OnEvent' (role 'model_OnEvent', cardinality 0..*) is associated with 'model::EventHandler' (role 'model_EventHandler198', cardinality 0..*).
+'model::Correlations' (role 'model_Correlations253', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent252', cardinality 0..*).
+'XSDAttributeGroupDefinition' (role 'XSDAttributeGroupDefinition', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition432', cardinality 0..*).
+'XSDMaxInclusiveFacet' (role 'XSDMaxInclusiveFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition628', cardinality 0..*).
+'model::Activity' (role 'model_Activity173', cardinality 0..*) is associated with 'model::OnMessage' (role 'model_OnMessage172', cardinality 0..*).
+'model::Activity' (role 'model_Activity311', cardinality 0..*) is associated with 'model::RepeatUntil' (role 'model_RepeatUntil', cardinality 0..*).
+'XSDMaxLengthFacet' (role 'XSDMaxLengthFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition648', cardinality 0..*).
+'model::FromParts' (role 'model_FromParts271', cardinality 0..*) is associated with 'model::OnEvent' (role 'model_OnEvent270', cardinality 0..*).
+'model::wsdl::Definition' (role 'model_wsdl_Definition391', cardinality 0..*) is associated with 'Binding' (role 'Binding392', cardinality 0..*).
+'model::xsd::XSDImport' (role 'model_xsd_XSDImport', cardinality 0..*) is associated with 'XSDAnnotation' (role 'XSDAnnotation526', cardinality 0..*).
+'model::Documentation' (role 'model_Documentation', cardinality 0..*) is associated with 'model::BPELExtensibleElement' (role 'model_BPELExtensibleElement', cardinality 0..*).
+'model::PartnerActivity' (role 'model_PartnerActivity', cardinality 0..*) is associated with 'model::PartnerLink' (role 'model_PartnerLink66', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition675', cardinality 0..*) is associated with 'XSDEnumerationFacet' (role 'XSDEnumerationFacet676', cardinality 0..*).
+'Property' (role 'Property158', cardinality 0..*) is associated with 'model::AbstractAssignBound' (role 'model_AbstractAssignBound157', cardinality 0..*).
+'model::wsdl::BindingOperation' (role 'model_wsdl_BindingOperation', cardinality 0..*) is associated with 'Operation' (role 'Operation372', cardinality 0..*).
+'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition455', cardinality 0..*) is associated with 'XSDAttributeGroupContent' (role 'XSDAttributeGroupContent456', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition632', cardinality 0..*) is associated with 'XSDMinExclusiveFacet' (role 'XSDMinExclusiveFacet', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition687', cardinality 0..*) is associated with 'XSDMinFacet' (role 'XSDMinFacet688', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation698', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition697', cardinality 0..*).
+'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition616', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition615', cardinality 0..*).
+'model::Source' (role 'model_Source283', cardinality 0..*) is associated with 'model::Sources' (role 'model_Sources282', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition626', cardinality 0..*) is associated with 'XSDMaxFacet' (role 'XSDMaxFacet', cardinality 0..*).
+'model::Validate' (role 'model_Validate', cardinality 0..*) is associated with 'model::Variable' (role 'model_Variable319', cardinality 0..*).
+'model::Catch' (role 'model_Catch49', cardinality 0..*) is associated with 'model::Variable' (role 'model_Variable50', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage184', cardinality 0..*) is associated with 'Operation' (role 'Operation185', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation695', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition694', cardinality 0..*).
+'model::wsdl::Binding' (role 'model_wsdl_Binding', cardinality 0..*) is associated with 'PortType' (role 'PortType368', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition658', cardinality 0..*) is associated with 'XSDBoundedFacet' (role 'XSDBoundedFacet', cardinality 0..*).
+'XSDLengthFacet' (role 'XSDLengthFacet685', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition684', cardinality 0..*).
+'model::wsdl::Service' (role 'model_wsdl_Service', cardinality 0..*) is associated with 'Port' (role 'Port', cardinality 0..*).
+'XSDTotalDigitsFacet' (role 'XSDTotalDigitsFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition652', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation421', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition', cardinality 0..*).
+'model::xsd::XSDComplexTypeDefinition' (role 'model_xsd_XSDComplexTypeDefinition449', cardinality 0..*) is associated with 'XSDComplexTypeContent' (role 'XSDComplexTypeContent450', cardinality 0..*).
+'model::Copy' (role 'model_Copy118', cardinality 0..*) is associated with 'model::From' (role 'model_From', cardinality 0..*).
+'model::Variable' (role 'model_Variable303', cardinality 0..*) is associated with 'model::ForEach' (role 'model_ForEach302', cardinality 0..*).
+'model::ForEach' (role 'model_ForEach299', cardinality 0..*) is associated with 'model::Expression' (role 'model_Expression300', cardinality 0..*).
+'model::Flow' (role 'model_Flow101', cardinality 0..*) is associated with 'model::CompletionCondition' (role 'model_CompletionCondition', cardinality 0..*).
+'model::EventHandler' (role 'model_EventHandler195', cardinality 0..*) is associated with 'model::OnAlarm' (role 'model_OnAlarm196', cardinality 0..*).
+'model::CatchAll' (role 'model_CatchAll', cardinality 0..*) is associated with 'model::FaultHandler' (role 'model_FaultHandler26', cardinality 0..*).
+'model::FromParts' (role 'model_FromParts188', cardinality 0..*) is associated with 'model::OnMessage' (role 'model_OnMessage187', cardinality 0..*).
+'XSDWildcard' (role 'XSDWildcard435', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition434', cardinality 0..*).
+'model::xsd::XSDSchemaDirective' (role 'model_xsd_XSDSchemaDirective', cardinality 0..*) is associated with 'XSDSchema' (role 'XSDSchema598', cardinality 0..*).
+'Namespace' (role 'Namespace', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition396', cardinality 0..*).
+'XSDNotationDeclaration' (role 'XSDNotationDeclaration', cardinality 0..*) is associated with 'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema574', cardinality 0..*).
+'model::PartnerLink' (role 'model_PartnerLink22', cardinality 0..*) is associated with 'PartnerLinkType' (role 'PartnerLinkType', cardinality 0..*).
+'model::Targets' (role 'model_Targets', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity28', cardinality 0..*).
+'model::Expression' (role 'model_Expression86', cardinality 0..*) is associated with 'model::Wait' (role 'model_Wait85', cardinality 0..*).
+'Types' (role 'Types', cardinality 0..*) is associated with 'model::wsdl::Definition' (role 'model_wsdl_Definition383', cardinality 0..*).
+'XSDSimpleTypeDefinition' (role 'XSDSimpleTypeDefinition707', cardinality 0..*) is associated with 'model::xsd::XSDTypeDefinition' (role 'model_xsd_XSDTypeDefinition706', cardinality 0..*).
+'model::If' (role 'model_If325', cardinality 0..*) is associated with 'model::Else' (role 'model_Else', cardinality 0..*).
+'model::xsd::XSDDiagnostic' (role 'model_xsd_XSDDiagnostic', cardinality 0..*) is associated with 'XSDConcreteComponent' (role 'XSDConcreteComponent481', cardinality 0..*).
+'XSDSchema' (role 'XSDSchema409', cardinality 0..*) is associated with 'model::wsdl::XSDSchemaExtensibilityElement' (role 'model_wsdl_XSDSchemaExtensibilityElement', cardinality 0..*).
+'model::wsdl::MessageReference' (role 'model_wsdl_MessageReference', cardinality 0..*) is associated with 'Message' (role 'Message411', cardinality 0..*).
+'model::xsd::XSDModelGroup' (role 'model_xsd_XSDModelGroup532', cardinality 0..*) is associated with 'XSDParticle' (role 'XSDParticle533', cardinality 0..*).
+'model::PartnerLink' (role 'model_PartnerLink', cardinality 0..*) is associated with 'Role' (role 'Role', cardinality 0..*).
+'model::Process' (role 'model_Process12', cardinality 0..*) is associated with 'model::Import' (role 'model_Import', cardinality 0..*).
+'model::Sequence' (role 'model_Sequence', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity88', cardinality 0..*).
+'XSDAttributeUse' (role 'XSDAttributeUse', cardinality 0..*) is associated with 'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition425', cardinality 0..*).
+'XSDIdentityConstraintDefinition' (role 'XSDIdentityConstraintDefinition519', cardinality 0..*) is associated with 'model::xsd::XSDIdentityConstraintDefinition' (role 'model_xsd_XSDIdentityConstraintDefinition518', cardinality 0..*).
+'Fault' (role 'Fault406', cardinality 0..*) is associated with 'model::wsdl::BindingFault' (role 'model_wsdl_BindingFault', cardinality 0..*).
+'model::ElseIf' (role 'model_ElseIf', cardinality 0..*) is associated with 'model::If' (role 'model_If323', cardinality 0..*).
+'model::FromPart' (role 'model_FromPart343', cardinality 0..*) is associated with 'model::FromParts' (role 'model_FromParts342', cardinality 0..*).
+'model::MessageExchange' (role 'model_MessageExchange215', cardinality 0..*) is associated with 'model::MessageExchanges' (role 'model_MessageExchanges214', cardinality 0..*).
+'model::Expression' (role 'model_Expression297', cardinality 0..*) is associated with 'model::ForEach' (role 'model_ForEach', cardinality 0..*).
+'model::Receive' (role 'model_Receive76', cardinality 0..*) is associated with 'model::FromParts' (role 'model_FromParts77', cardinality 0..*).
+'XSDWhiteSpaceFacet' (role 'XSDWhiteSpaceFacet664', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition663', cardinality 0..*).
+'model::Activity' (role 'model_Activity97', cardinality 0..*) is associated with 'model::Flow' (role 'model_Flow', cardinality 0..*).
+'XSDAnnotation' (role 'XSDAnnotation528', cardinality 0..*) is associated with 'model::xsd::XSDInclude' (role 'model_xsd_XSDInclude', cardinality 0..*).
+'XSDSchema' (role 'XSDSchema591', cardinality 0..*) is associated with 'model::xsd::XSDSchema' (role 'model_xsd_XSDSchema590', cardinality 0..*).
+'XSDTypeDefinition' (role 'XSDTypeDefinition514', cardinality 0..*) is associated with 'model::xsd::XSDFeature' (role 'model_xsd_XSDFeature513', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition640', cardinality 0..*) is associated with 'XSDEnumerationFacet' (role 'XSDEnumerationFacet', cardinality 0..*).
+'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition630', cardinality 0..*) is associated with 'XSDMinInclusiveFacet' (role 'XSDMinInclusiveFacet', cardinality 0..*).
+'model::xsd::XSDParticle' (role 'model_xsd_XSDParticle', cardinality 0..*) is associated with 'XSDParticleContent' (role 'XSDParticleContent', cardinality 0..*).
+'model::Else' (role 'model_Else336', cardinality 0..*) is associated with 'model::Activity' (role 'model_Activity337', cardinality 0..*).
+'model::FaultHandler' (role 'model_FaultHandler', cardinality 0..*) is associated with 'model::Process' (role 'model_Process6', cardinality 0..*).
+'model::Targets' (role 'model_Targets276', cardinality 0..*) is associated with 'model::Target' (role 'model_Target277', cardinality 0..*).
+'model::xsd::XSDAttributeGroupDefinition' (role 'model_xsd_XSDAttributeGroupDefinition429', cardinality 0..*) is associated with 'XSDWildcard' (role 'XSDWildcard430', cardinality 0..*).
+'model::Variable' (role 'model_Variable82', cardinality 0..*) is associated with 'model::Throw' (role 'model_Throw', cardinality 0..*).
+'model::OnMessage' (role 'model_OnMessage', cardinality 0..*) is associated with 'model::Pick' (role 'model_Pick', cardinality 0..*).
+'model::EventHandler' (role 'model_EventHandler', cardinality 0..*) is associated with 'model::Process' (role 'model_Process8', cardinality 0..*).
+'XSDMaxExclusiveFacet' (role 'XSDMaxExclusiveFacet', cardinality 0..*) is associated with 'model::xsd::XSDSimpleTypeDefinition' (role 'model_xsd_XSDSimpleTypeDefinition634', cardinality 0..*).

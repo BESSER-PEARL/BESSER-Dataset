@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'familytree::FamilyTree' has no attributes.
+The class 'familytree::Member' has the following attributes: 'age' of type int; 'name' of type str.
+'familytree::Member' (role 'Member5', cardinality 0..*) is associated with 'familytree::Member' (role 'children', cardinality 0..*).
+'familytree::Member' (role 'parents', cardinality 0..*) is associated with 'familytree::Member' (role 'Member', cardinality 0..*).
+'familytree::FamilyTree' (role 'familytree_FamilyTree', cardinality 0..*) is associated with 'familytree::Member' (role 'familytree_Member', cardinality 0..*).

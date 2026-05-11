@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'dsl::timeUnitValue' has the following attributes: 'unit' of type str.
+The class 'dsl::Mission' has no attributes.
+The class 'dsl::ColorValue' has the following attributes: 'color' of type str.
+The class 'dsl::SensorType' has no attributes.
+The class 'dsl::UltrasonicSensor' has the following attributes: 'distance' of type str; 'comparator' of type str.
+The class 'dsl::TouchSensor' has the following attributes: 'key' of type str.
+The class 'SensorType' has no attributes.
+The class 'dsl::Task' has the following attributes: 'time' of type int; 'action' of type str; 'name' of type str; 'nrOfTimes' of type int.
+The class 'dsl::ColorSensor' has the following attributes: 'distinct' of type bool.
+The class 'dsl::Ignorables' has the following attributes: 'AVOID_OBJECTS' of type str.
+The enumeration 'TouchSensorSides' has the following literals: 'BOTH', 'RIGHT', 'ANY', 'LEFT'.
+The enumeration 'timeUnit' has the following literals: 'SECONDS', 'MILISECONDS'.
+The enumeration 'Colors' has the following literals: 'LIGHT_GRAY', 'GRAY', 'ORANGE', 'PINK', 'GREEN', 'BLUE', 'BLACK', 'MAGENTA', 'CYAN', 'YELLOW', 'WHITE', 'RED', 'DARK_GRAY'.
+The enumeration 'CompareOperator' has the following literals: 'NEQ', 'LEQ', 'G', 'GEQ', 'L', 'EQ'.
+The enumeration 'Actions' has the following literals: 'BEEP', 'ROTATE_L', 'ROTATE_R', 'MEASURE', 'STOP_DRIVING', 'TURN_AROUND', 'DRIVE_FORWARD', 'DRIVE_BACKWARD', 'DRIVETOEDGE'.
+The enumeration 'Directions' has the following literals: 'E', 'NE', 'SE', 'SW', 'S', 'NW', 'N', 'W'.
+'dsl::TouchSensor' is a specialization of 'SensorType'.
+'dsl::ColorSensor' is a specialization of 'SensorType'.
+'dsl::UltrasonicSensor' is a specialization of 'SensorType'.
+'dsl::Task' (role 'dsl_Task4', cardinality 0..*) is associated with 'dsl::Ignorables' (role 'dsl_Ignorables', cardinality 0..*).
+'dsl::Task' (role 'dsl_Task2', cardinality 0..*) is associated with 'dsl::SensorType' (role 'dsl_SensorType', cardinality 0..*).
+'dsl::Task' (role 'dsl_Task6', cardinality 0..*) is associated with 'dsl::timeUnitValue' (role 'dsl_timeUnitValue', cardinality 0..*).
+'dsl::ColorSensor' (role 'dsl_ColorSensor', cardinality 0..*) is associated with 'dsl::ColorValue' (role 'dsl_ColorValue', cardinality 0..*).
+'dsl::ColorSensor' (role 'dsl_ColorSensor9', cardinality 0..*) is associated with 'dsl::ColorValue' (role 'dsl_ColorValue10', cardinality 0..*).
+'dsl::Mission' (role 'dsl_Mission', cardinality 0..*) is associated with 'dsl::Task' (role 'dsl_Task', cardinality 0..*).

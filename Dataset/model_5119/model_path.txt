@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kevoree/kmf-samples/diva/org.kevoree.modeling.sample.diva.kt/metamodel/diva.ecore

@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'input::A' has no attributes.
+'input::A' (role 'input_A0', cardinality 0..*) is associated with 'input::A' (role 'input_A', cardinality 0..*).
+'input::A' (role 'input_A4', cardinality 0..*) is associated with 'input::A' (role 'input_A2', cardinality 0..*).

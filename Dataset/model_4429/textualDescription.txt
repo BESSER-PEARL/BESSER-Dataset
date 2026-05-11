@@ -1,0 +1,121 @@
+The model has 64 class(es).
+The class 'Cabeca' has no attributes.
+The class 'arduino::Acoes::Condicionais' has no attributes.
+The class 'Acoes::Condicionais' has no attributes.
+The class 'arduino::Condicao' has no attributes.
+The class 'arduino::Robo' has the following attributes: 'Nome' of type str.
+The class 'arduino::Desligar::Cores' has the following attributes: 'nome' of type str.
+The class 'arduino::Virar::Esquerda' has the following attributes: 'nome' of type str.
+The class 'arduino::Corpo::Modificavel' has the following attributes: 'tempo' of type int; 'evitarObstaculo' of type bool.
+The class 'arduino::Ligar::Vermelho' has the following attributes: 'nome' of type str.
+The class 'arduino::Cabeca::Modificavel' has the following attributes: 'graus' of type int.
+The class 'arduino::Unica::Cor' has no attributes.
+The class 'Condicao' has no attributes.
+The class 'arduino::Inicio' has the following attributes: 'evitarObstaculo' of type bool; 'nome' of type str.
+The class 'arduino::Centrar' has the following attributes: 'nome' of type str.
+The class 'Verde' has no attributes.
+The class 'arduino::Ligar::Cores::Arco::Iris' has the following attributes: 'nome' of type str.
+The class 'arduino::Desligar::Intermitencia' has the following attributes: 'nome' of type str.
+The class 'Varias::Cores' has no attributes.
+The class 'arduino::Corpo' has the following attributes: 'evitarObstaculo' of type bool.
+The class 'arduino::Distancia::Infra::Vermelhos' has the following attributes: 'distancia' of type int.
+The class 'arduino::If' has the following attributes: 'nome' of type str.
+The class 'arduino::Rodar::Esquerda::Tempo' has no attributes.
+The class 'arduino::Rodar::Direita::Tempo' has no attributes.
+The class 'arduino::Tricolor' has no attributes.
+The class 'arduino::Virar::45::Drt' has the following attributes: 'nome' of type str.
+The class 'arduino::Ligar::Verde' has the following attributes: 'nome' of type str.
+The class 'arduino::Ligar::LED::Verde' has the following attributes: 'nome' of type str.
+The class 'arduino::Virar::para::X::Graus' has no attributes.
+The class 'arduino::Virar::Max::Esq' has the following attributes: 'nome' of type str.
+The class 'arduino::LED' has no attributes.
+The class 'arduino::Bumper::Pressionado' has the following attributes: 'nome' of type str.
+The class 'arduino::Virar::Direita' has the following attributes: 'nome' of type str.
+The class 'arduino::Desligar::Cor' has the following attributes: 'nome' of type str.
+The class 'Corpo::Modificavel' has no attributes.
+The class 'arduino::Ligar::Cores::Policia' has the following attributes: 'nome' of type str.
+The class 'Corpo' has no attributes.
+The class 'Unica::Cor' has no attributes.
+The class 'arduino::Acoes::Modificaveis' has no attributes.
+The class 'arduino::Transicoes' has no attributes.
+The class 'arduino::Parar' has the following attributes: 'nome' of type str.
+The class 'LED' has no attributes.
+The class 'Acao' has no attributes.
+The class 'arduino::Varias::Cores' has no attributes.
+The class 'arduino::Fim' has the following attributes: 'nome' of type str.
+The class 'Cabeca::Modificavel' has no attributes.
+The class 'arduino::Ligar::Azul' has the following attributes: 'nome' of type str.
+The class 'arduino::Mover::Tras' has the following attributes: 'nome' of type str.
+The class 'arduino::Ligar::Intermitencia' has the following attributes: 'nome' of type str.
+The class 'arduino::While' has the following attributes: 'nome' of type str.
+The class 'arduino::Mover::Frente' has the following attributes: 'nome' of type str.
+The class 'arduino::Acao' has no attributes.
+The class 'arduino::Cabeca' has no attributes.
+The class 'arduino::Mover::Tras::Tempo' has no attributes.
+The class 'arduino::Mover::Aleatoriamente' has the following attributes: 'nome' of type str.
+The class 'Acoes::Modificaveis' has no attributes.
+The class 'arduino::Acoes::Predefinidas' has no attributes.
+The class 'arduino::Mover::Frente::Tempo' has no attributes.
+The class 'arduino::Verde' has no attributes.
+The class 'arduino::Parar::Tempo' has no attributes.
+The class 'arduino::Virar::Max::Drt' has the following attributes: 'nome' of type str.
+The class 'Tricolor' has no attributes.
+The class 'arduino::Desligar::LED::Verde' has the following attributes: 'nome' of type str.
+The class 'Acoes::Predefinidas' has no attributes.
+The class 'arduino::Virar::45::Esq' has the following attributes: 'nome' of type str.
+'arduino::Virar::45::Esq' is a specialization of 'Cabeca'.
+'arduino::If' is a specialization of 'Acoes::Condicionais'.
+'arduino::Acoes::Modificaveis' is a specialization of 'Acao'.
+'arduino::Distancia::Infra::Vermelhos' is a specialization of 'Condicao'.
+'arduino::Virar::Direita' is a specialization of 'Corpo'.
+'arduino::Cabeca' is a specialization of 'Acoes::Predefinidas'.
+'arduino::Mover::Tras' is a specialization of 'Corpo'.
+'arduino::Virar::45::Drt' is a specialization of 'Cabeca'.
+'arduino::Unica::Cor' is a specialization of 'Tricolor'.
+'arduino::Centrar' is a specialization of 'Cabeca'.
+'arduino::Desligar::Intermitencia' is a specialization of 'Verde'.
+'arduino::Acoes::Condicionais' is a specialization of 'Acao'.
+'arduino::Rodar::Esquerda::Tempo' is a specialization of 'Corpo::Modificavel'.
+'arduino::Virar::Max::Esq' is a specialization of 'Cabeca'.
+'arduino::Fim' is a specialization of 'Acao'.
+'arduino::Ligar::Azul' is a specialization of 'Unica::Cor'.
+'arduino::Ligar::Intermitencia' is a specialization of 'Verde'.
+'arduino::Ligar::Cores::Arco::Iris' is a specialization of 'Varias::Cores'.
+'arduino::Virar::Max::Drt' is a specialization of 'Cabeca'.
+'arduino::Ligar::LED::Verde' is a specialization of 'Verde'.
+'arduino::Virar::Esquerda' is a specialization of 'Corpo'.
+'arduino::Cabeca::Modificavel' is a specialization of 'Acoes::Modificaveis'.
+'arduino::Corpo::Modificavel' is a specialization of 'Acoes::Modificaveis'.
+'arduino::Inicio' is a specialization of 'Acao'.
+'arduino::Mover::Frente' is a specialization of 'Corpo'.
+'arduino::Desligar::Cores' is a specialization of 'Varias::Cores'.
+'arduino::Desligar::LED::Verde' is a specialization of 'Verde'.
+'arduino::Desligar::Cor' is a specialization of 'Unica::Cor'.
+'arduino::Verde' is a specialization of 'LED'.
+'arduino::Virar::para::X::Graus' is a specialization of 'Cabeca::Modificavel'.
+'arduino::Acoes::Predefinidas' is a specialization of 'Acao'.
+'arduino::Ligar::Cores::Policia' is a specialization of 'Varias::Cores'.
+'arduino::Tricolor' is a specialization of 'LED'.
+'arduino::Varias::Cores' is a specialization of 'Tricolor'.
+'arduino::Mover::Aleatoriamente' is a specialization of 'Corpo'.
+'arduino::Ligar::Verde' is a specialization of 'Unica::Cor'.
+'arduino::Mover::Tras::Tempo' is a specialization of 'Corpo::Modificavel'.
+'arduino::Rodar::Direita::Tempo' is a specialization of 'Corpo::Modificavel'.
+'arduino::LED' is a specialization of 'Acoes::Predefinidas'.
+'arduino::Parar' is a specialization of 'Corpo'.
+'arduino::Bumper::Pressionado' is a specialization of 'Condicao'.
+'arduino::Ligar::Vermelho' is a specialization of 'Unica::Cor'.
+'arduino::While' is a specialization of 'Acoes::Condicionais'.
+'arduino::Parar::Tempo' is a specialization of 'Corpo::Modificavel'.
+'arduino::Corpo' is a specialization of 'Acoes::Predefinidas'.
+'arduino::Mover::Frente::Tempo' is a specialization of 'Corpo::Modificavel'.
+'arduino::Condicao' (role 'arduino_Condicao12', cardinality 0..*) is associated with 'arduino::Acoes::Condicionais' (role 'arduino_Acoes_Condicionais', cardinality 0..*).
+'arduino::Acao' (role 'arduino_Acao14', cardinality 0..*) is associated with 'arduino::While' (role 'arduino_While', cardinality 0..*).
+'arduino::If' (role 'arduino_If', cardinality 0..*) is associated with 'arduino::Acao' (role 'arduino_Acao16', cardinality 0..*).
+'arduino::Transicoes' (role 'Transicoes7', cardinality 0..*) is associated with 'arduino::Acao' (role 'Acao_de_Entrada', cardinality 0..*).
+'arduino::Acao' (role 'Acao10', cardinality 0..*) is associated with 'arduino::Transicoes' (role 'Transicao_de_Entrada', cardinality 0..*).
+'arduino::Robo' (role 'arduino_Robo4', cardinality 0..*) is associated with 'arduino::Condicao' (role 'arduino_Condicao', cardinality 0..*).
+'arduino::Acao' (role 'arduino_Acao', cardinality 0..*) is associated with 'arduino::Robo' (role 'arduino_Robo', cardinality 0..*).
+'arduino::Acao' (role 'Acao_de_Saida', cardinality 0..*) is associated with 'arduino::Transicoes' (role 'Transicoes', cardinality 0..*).
+'arduino::Transicoes' (role 'Transicao_de_Saida', cardinality 0..*) is associated with 'arduino::Acao' (role 'Acao', cardinality 0..*).
+'arduino::Transicoes' (role 'arduino_Transicoes', cardinality 0..*) is associated with 'arduino::Robo' (role 'arduino_Robo2', cardinality 0..*).

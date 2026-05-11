@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'B' has no attributes.
+The class 'diamon::D' has no attributes.
+The class 'diamon::A' has no attributes.
+The class 'diamon::C' has no attributes.
+The class 'A' has no attributes.
+The class 'C' has no attributes.
+The class 'diamon::B' has no attributes.
+'diamon::C' is a specialization of 'A'.
+'diamon::B' is a specialization of 'A'.
+'diamon::D' is a specialization of 'C'.
+'diamon::D' is a specialization of 'B'.

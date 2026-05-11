@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/xtext-extras/org.eclipse.xtext.common.types/model/JavaVMTypes.ecore

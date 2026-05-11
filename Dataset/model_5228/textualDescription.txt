@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'projectPlanning::Employee' has the following attributes: 'name' of type str; 'hasResource' of type int.
+The class 'projectPlanning::Rating' has the following attributes: 'rating' of type int.
+The class 'projectPlanning::Project' has the following attributes: 'name' of type str; 'requiresResources' of type int.
+The class 'projectPlanning::Capability' has the following attributes: 'name' of type str.
+The class 'projectPlanning::ProjectPlan' has no attributes.
+The class 'projectPlanning::Assignment' has no attributes.
+'projectPlanning::Project' (role 'projectPlanning_Project', cardinality 0..*) is associated with 'projectPlanning::ProjectPlan' (role 'projectPlanning_ProjectPlan4', cardinality 0..*).
+'projectPlanning::ProjectPlan' (role 'projectPlanning_ProjectPlan8', cardinality 0..*) is associated with 'projectPlanning::Assignment' (role 'projectPlanning_Assignment', cardinality 0..*).
+'projectPlanning::Rating' (role 'projectPlanning_Rating', cardinality 0..*) is associated with 'projectPlanning::ProjectPlan' (role 'projectPlanning_ProjectPlan6', cardinality 0..*).
+'projectPlanning::ProjectPlan' (role 'projectPlanning_ProjectPlan', cardinality 0..*) is associated with 'projectPlanning::Capability' (role 'projectPlanning_Capability', cardinality 0..*).
+'projectPlanning::Employee' (role 'projectPlanning_Employee13', cardinality 0..*) is associated with 'projectPlanning::Capability' (role 'projectPlanning_Capability14', cardinality 0..*).
+'projectPlanning::Capability' (role 'projectPlanning_Capability20', cardinality 0..*) is associated with 'projectPlanning::Rating' (role 'projectPlanning_Rating19', cardinality 0..*).
+'projectPlanning::Project' (role 'projectPlanning_Project10', cardinality 0..*) is associated with 'projectPlanning::Capability' (role 'projectPlanning_Capability11', cardinality 0..*).
+'projectPlanning::Employee' (role 'projectPlanning_Employee26', cardinality 0..*) is associated with 'projectPlanning::Assignment' (role 'projectPlanning_Assignment25', cardinality 0..*).
+'projectPlanning::Rating' (role 'projectPlanning_Rating17', cardinality 0..*) is associated with 'projectPlanning::Employee' (role 'projectPlanning_Employee16', cardinality 0..*).
+'projectPlanning::Project' (role 'projectPlanning_Project23', cardinality 0..*) is associated with 'projectPlanning::Assignment' (role 'projectPlanning_Assignment22', cardinality 0..*).
+'projectPlanning::ProjectPlan' (role 'projectPlanning_ProjectPlan2', cardinality 0..*) is associated with 'projectPlanning::Employee' (role 'projectPlanning_Employee', cardinality 0..*).

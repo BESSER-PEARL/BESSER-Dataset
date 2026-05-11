@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'xunit::Action' has the following attributes: 'desc' of type str.
+The class 'xunit::TestCase' has no attributes.
+The class 'xunit::DataValue' has the following attributes: 'value' of type str.
+The class 'xunit::ExpectedValue' has no attributes.
+The class 'xunit::TestSuite' has no attributes.
+The class 'DataValue' has no attributes.
+The class 'xunit::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'xunit::Assertion' has the following attributes: 'type' of type str.
+'xunit::TestCase' is a specialization of 'NamedElement'.
+'xunit::ExpectedValue' is a specialization of 'DataValue'.
+'xunit::TestSuite' is a specialization of 'NamedElement'.
+'xunit::Assertion' is a specialization of 'NamedElement'.
+'xunit::TestCase' (role 'xunit_TestCase4', cardinality 0..*) is associated with 'xunit::TestSuite' (role 'xunit_TestSuite5', cardinality 0..*).
+'xunit::Assertion' (role 'xunit_Assertion9', cardinality 0..*) is associated with 'xunit::Action' (role 'xunit_Action', cardinality 0..*).
+'xunit::Assertion' (role 'xunit_Assertion7', cardinality 0..*) is associated with 'xunit::ExpectedValue' (role 'xunit_ExpectedValue', cardinality 0..*).
+'xunit::ExpectedValue' (role 'xunit_ExpectedValue14', cardinality 0..*) is associated with 'xunit::Assertion' (role 'xunit_Assertion15', cardinality 0..*).
+'xunit::Assertion' (role 'xunit_Assertion', cardinality 0..*) is associated with 'xunit::TestCase' (role 'xunit_TestCase2', cardinality 0..*).
+'xunit::TestCase' (role 'xunit_TestCase12', cardinality 0..*) is associated with 'xunit::Assertion' (role 'xunit_Assertion11', cardinality 0..*).
+'xunit::TestSuite' (role 'xunit_TestSuite', cardinality 0..*) is associated with 'xunit::TestCase' (role 'xunit_TestCase', cardinality 0..*).

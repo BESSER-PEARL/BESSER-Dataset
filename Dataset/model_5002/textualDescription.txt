@@ -1,0 +1,74 @@
+The model has 26 class(es).
+The class 'cloudml::NodeInstance' has the following attributes: 'publicAddress' of type str; 'id' of type str.
+The class 'cloudml::ArtefactPort' has the following attributes: 'portNumber' of type int; 'isRemote' of type bool.
+The class 'cloudml::ServerPort' has no attributes.
+The class 'cloudml::ClientPortInstance' has no attributes.
+The class 'cloudml::ArtefactPortInstance' has no attributes.
+The class 'cloudml::Property' has the following attributes: 'value' of type str.
+The class 'NamedElement' has no attributes.
+The class 'cloudml::Composite' has no attributes.
+The class 'cloudml::DeploymentModel' has no attributes.
+The class 'cloudml::Provider' has the following attributes: 'credentials' of type str.
+The class 'cloudml::BindingInstance' has no attributes.
+The class 'WithProperties' has no attributes.
+The class 'cloudml::ClientPort' has the following attributes: 'isOptional' of type bool.
+The class 'cloudml::ServerPortInstance' has no attributes.
+The class 'ArtefactPortInstance' has no attributes.
+The class 'ArtefactPort' has no attributes.
+The class 'cloudml::NamedElement' has the following attributes: 'name' of type str.
+The class 'cloudml::Artefact' has no attributes.
+The class 'cloudml::ArtefactInstance' has no attributes.
+The class 'cloudml::Binding' has no attributes.
+The class 'cloudml::Node' has the following attributes: 'groupName' of type str; 'minCore' of type int; 'minDisk' of type int; 'imageID' of type str; 'minRam' of type int; 'location' of type str; 'privateKey' of type str; 'sshKey' of type str; 'OS' of type str; 'securityGroup' of type str; 'is64os' of type bool.
+The class 'cloudml::CloudMLElement' has no attributes.
+The class 'cloudml::UploadCommand' has the following attributes: 'source' of type str; 'target' of type str.
+The class 'cloudml::WithProperties' has no attributes.
+The class 'CloudMLElement' has no attributes.
+The class 'cloudml::Resource' has the following attributes: 'configurationCommand' of type str; 'retrievingCommand' of type str; 'stopCommand' of type str; 'startCommand' of type str; 'deployingCommand' of type str.
+'cloudml::ArtefactPort' is a specialization of 'WithProperties'.
+'cloudml::BindingInstance' is a specialization of 'WithProperties'.
+'cloudml::ServerPort' is a specialization of 'ArtefactPort'.
+'cloudml::WithProperties' is a specialization of 'NamedElement'.
+'cloudml::Resource' is a specialization of 'WithProperties'.
+'cloudml::Composite' is a specialization of 'NamedElement'.
+'cloudml::DeploymentModel' is a specialization of 'WithProperties'.
+'cloudml::Provider' is a specialization of 'WithProperties'.
+'cloudml::ServerPortInstance' is a specialization of 'ArtefactPortInstance'.
+'cloudml::ArtefactPortInstance' is a specialization of 'WithProperties'.
+'cloudml::ClientPortInstance' is a specialization of 'ArtefactPortInstance'.
+'cloudml::Artefact' is a specialization of 'WithProperties'.
+'cloudml::NodeInstance' is a specialization of 'WithProperties'.
+'cloudml::Property' is a specialization of 'NamedElement'.
+'cloudml::Binding' is a specialization of 'WithProperties'.
+'cloudml::NamedElement' is a specialization of 'CloudMLElement'.
+'cloudml::ClientPort' is a specialization of 'ArtefactPort'.
+'cloudml::Node' is a specialization of 'WithProperties'.
+'cloudml::ArtefactInstance' is a specialization of 'WithProperties'.
+'cloudml::Binding' (role 'cloudml_Binding45', cardinality 0..*) is associated with 'cloudml::ClientPort' (role 'cloudml_ClientPort46', cardinality 0..*).
+'cloudml::Artefact' (role 'cloudml_Artefact', cardinality 0..*) is associated with 'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel4', cardinality 0..*).
+'cloudml::NodeInstance' (role 'cloudml_NodeInstance40', cardinality 0..*) is associated with 'cloudml::Node' (role 'cloudml_Node41', cardinality 0..*).
+'cloudml::ArtefactPort' (role 'cloudml_ArtefactPort28', cardinality 0..*) is associated with 'cloudml::ArtefactPortInstance' (role 'cloudml_ArtefactPortInstance', cardinality 0..*).
+'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel14', cardinality 0..*) is associated with 'cloudml::BindingInstance' (role 'cloudml_BindingInstance', cardinality 0..*).
+'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance38', cardinality 0..*) is associated with 'cloudml::ClientPortInstance' (role 'cloudml_ClientPortInstance', cardinality 0..*).
+'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel10', cardinality 0..*) is associated with 'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance', cardinality 0..*).
+'cloudml::Resource' (role 'cloudml_Resource', cardinality 0..*) is associated with 'cloudml::UploadCommand' (role 'cloudml_UploadCommand', cardinality 0..*).
+'cloudml::Resource' (role 'cloudml_Resource19', cardinality 0..*) is associated with 'cloudml::Artefact' (role 'cloudml_Artefact18', cardinality 0..*).
+'cloudml::Binding' (role 'cloudml_Binding54', cardinality 0..*) is associated with 'cloudml::Resource' (role 'cloudml_Resource55', cardinality 0..*).
+'cloudml::WithProperties' (role 'cloudml_WithProperties', cardinality 0..*) is associated with 'cloudml::Property' (role 'cloudml_Property', cardinality 0..*).
+'cloudml::Artefact' (role 'cloudml_Artefact23', cardinality 0..*) is associated with 'cloudml::ClientPort' (role 'cloudml_ClientPort', cardinality 0..*).
+'cloudml::Provider' (role 'cloudml_Provider26', cardinality 0..*) is associated with 'cloudml::Node' (role 'cloudml_Node25', cardinality 0..*).
+'cloudml::ServerPortInstance' (role 'cloudml_ServerPortInstance64', cardinality 0..*) is associated with 'cloudml::BindingInstance' (role 'cloudml_BindingInstance63', cardinality 0..*).
+'cloudml::NodeInstance' (role 'cloudml_NodeInstance', cardinality 0..*) is associated with 'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel12', cardinality 0..*).
+'cloudml::Composite' (role 'cloudml_Composite', cardinality 0..*) is associated with 'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance43', cardinality 0..*).
+'cloudml::ServerPortInstance' (role 'cloudml_ServerPortInstance', cardinality 0..*) is associated with 'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance36', cardinality 0..*).
+'cloudml::BindingInstance' (role 'cloudml_BindingInstance57', cardinality 0..*) is associated with 'cloudml::Binding' (role 'cloudml_Binding58', cardinality 0..*).
+'cloudml::Resource' (role 'cloudml_Resource52', cardinality 0..*) is associated with 'cloudml::Binding' (role 'cloudml_Binding51', cardinality 0..*).
+'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance30', cardinality 0..*) is associated with 'cloudml::Artefact' (role 'cloudml_Artefact31', cardinality 0..*).
+'cloudml::Binding' (role 'cloudml_Binding', cardinality 0..*) is associated with 'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel8', cardinality 0..*).
+'cloudml::ArtefactPort' (role 'cloudml_ArtefactPort', cardinality 0..*) is associated with 'cloudml::Artefact' (role 'cloudml_Artefact16', cardinality 0..*).
+'cloudml::ServerPort' (role 'cloudml_ServerPort', cardinality 0..*) is associated with 'cloudml::Artefact' (role 'cloudml_Artefact21', cardinality 0..*).
+'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel6', cardinality 0..*) is associated with 'cloudml::Node' (role 'cloudml_Node', cardinality 0..*).
+'cloudml::ClientPortInstance' (role 'cloudml_ClientPortInstance61', cardinality 0..*) is associated with 'cloudml::BindingInstance' (role 'cloudml_BindingInstance60', cardinality 0..*).
+'cloudml::Binding' (role 'cloudml_Binding48', cardinality 0..*) is associated with 'cloudml::ServerPort' (role 'cloudml_ServerPort49', cardinality 0..*).
+'cloudml::ArtefactInstance' (role 'cloudml_ArtefactInstance33', cardinality 0..*) is associated with 'cloudml::NodeInstance' (role 'cloudml_NodeInstance34', cardinality 0..*).
+'cloudml::Provider' (role 'cloudml_Provider', cardinality 0..*) is associated with 'cloudml::DeploymentModel' (role 'cloudml_DeploymentModel', cardinality 0..*).

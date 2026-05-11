@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'demo1::TestExpression' has no attributes.
+The class 'demo1::EObject' has no attributes.
+The class 'demo1::Category' has the following attributes: 'name' of type str.
+The class 'demo1::RatioExpression' has the following attributes: 'ratio' of type int.
+The class 'demo1::Model' has no attributes.
+The class 'demo1::Rule' has no attributes.
+The class 'demo1::RuleExpression' has no attributes.
+'demo1::RatioExpression' (role 'demo1_RatioExpression', cardinality 0..*) is associated with 'demo1::RuleExpression' (role 'demo1_RuleExpression10', cardinality 0..*).
+'demo1::Category' (role 'demo1_Category13', cardinality 0..*) is associated with 'demo1::TestExpression' (role 'demo1_TestExpression12', cardinality 0..*).
+'demo1::Model' (role 'demo1_Model', cardinality 0..*) is associated with 'demo1::Category' (role 'demo1_Category', cardinality 0..*).
+'demo1::Rule' (role 'demo1_Rule', cardinality 0..*) is associated with 'demo1::Model' (role 'demo1_Model2', cardinality 0..*).
+'demo1::TestExpression' (role 'demo1_TestExpression', cardinality 0..*) is associated with 'demo1::RuleExpression' (role 'demo1_RuleExpression8', cardinality 0..*).
+'demo1::RuleExpression' (role 'demo1_RuleExpression', cardinality 0..*) is associated with 'demo1::Rule' (role 'demo1_Rule4', cardinality 0..*).
+'demo1::EObject' (role 'demo1_EObject', cardinality 0..*) is associated with 'demo1::Rule' (role 'demo1_Rule6', cardinality 0..*).

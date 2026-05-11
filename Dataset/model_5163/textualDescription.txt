@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'example4::Sirius::Element' has no attributes.
+The class 'example4::Sirius::Container' has no attributes.
+The class 'example4::Sirius::B' has no attributes.
+The class 'example4::Sirius::A' has no attributes.
+'example4::Sirius::A' (role 'example4_Sirius_A', cardinality 0..*) is associated with 'example4::Sirius::Element' (role 'example4_Sirius_Element2', cardinality 0..*).
+'example4::Sirius::B' (role 'example4_Sirius_B', cardinality 0..*) is associated with 'example4::Sirius::Element' (role 'example4_Sirius_Element4', cardinality 0..*).
+'example4::Sirius::Container' (role 'example4_Sirius_Container', cardinality 0..*) is associated with 'example4::Sirius::Element' (role 'example4_Sirius_Element', cardinality 0..*).

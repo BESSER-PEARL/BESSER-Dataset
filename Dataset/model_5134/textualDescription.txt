@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'TestMerge::A' has the following attributes: 'attr1' of type str.
+The class 'TestMerge::B' has no attributes.
+'TestMerge::A' (role 'TestMerge_A', cardinality 0..*) is associated with 'TestMerge::B' (role 'TestMerge_B', cardinality 0..*).

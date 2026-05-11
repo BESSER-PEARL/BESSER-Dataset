@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'testPackage::Class1' has no attributes.
+The class 'testPackage::Class4' has no attributes.
+The class 'testPackage::Class3' has no attributes.
+The class 'testPackage::Class5' has no attributes.
+The class 'testPackage::HubClass' has no attributes.
+The class 'testPackage::Class2' has no attributes.
+'testPackage::Class2' (role 'testPackage_Class2', cardinality 0..*) is associated with 'testPackage::HubClass' (role 'testPackage_HubClass2', cardinality 0..*).
+'testPackage::Class1' (role 'testPackage_Class1', cardinality 0..*) is associated with 'testPackage::HubClass' (role 'testPackage_HubClass', cardinality 0..*).
+'testPackage::HubClass' (role 'testPackage_HubClass4', cardinality 0..*) is associated with 'testPackage::Class3' (role 'testPackage_Class3', cardinality 0..*).
+'testPackage::HubClass' (role 'testPackage_HubClass8', cardinality 0..*) is associated with 'testPackage::Class5' (role 'testPackage_Class5', cardinality 0..*).
+'testPackage::HubClass' (role 'testPackage_HubClass6', cardinality 0..*) is associated with 'testPackage::Class4' (role 'testPackage_Class4', cardinality 0..*).

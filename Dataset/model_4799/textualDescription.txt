@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'primitives::Primitive' has the following attributes: 'byte' of type str; 'float' of type float; 'doubleObj' of type str; 'int' of type int; 'date' of type date; 'double' of type float; 'javaObj' of type str; 'long' of type str; 'short' of type str; 'longObj' of type str; 'bigdecimal' of type str; 'floatObj' of type str; 'byteObj' of type str; 'characterObj' of type str; 'boolean' of type bool; 'string' of type str; 'shortObj' of type str; 'char' of type str; 'javaClass' of type str; 'bigint' of type str; 'integerObj' of type str; 'booleanObj' of type str; 'byteArray' of type str.
+The class 'primitives::Bag' has the following attributes: 'id' of type str.
+'primitives::Primitive' (role 'primitives_Primitive', cardinality 0..*) is associated with 'primitives::Bag' (role 'primitives_Bag', cardinality 0..*).
+'primitives::Bag' (role 'primitives_Bag1', cardinality 0..*) is associated with 'primitives::Bag' (role 'primitives_Bag3', cardinality 0..*).

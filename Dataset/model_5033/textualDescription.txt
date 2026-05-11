@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'customers::Address' has the following attributes: 'town' of type str; 'zipCode' of type str; 'street' of type str.
+The class 'customers::CustomersDB' has the following attributes: 'comment' of type str.
+The class 'customers::CanadaAddress' has the following attributes: 'province' of type str.
+The class 'customers::USAddress' has the following attributes: 'state' of type str.
+The class 'customers::Customer' has the following attributes: 'lastName' of type str; 'comment' of type str; 'firstName' of type str; 'dateOfBirth' of type date.
+The class 'customers::CreditCard' has the following attributes: 'ccNumber' of type str; 'type' of type str; 'expiresDate' of type date.
+The class 'Address' has no attributes.
+The enumeration 'USStates' has the following literals: 'UNKNOWN', 'AL', 'CO', 'AR', 'AS', 'CA', 'AZ', 'AK'.
+The enumeration 'CanadaProvinces' has the following literals: 'AB', 'BC', 'NT', 'NB', 'MB', 'NL', 'UNKNOWN'.
+'customers::CanadaAddress' is a specialization of 'Address'.
+'customers::USAddress' is a specialization of 'Address'.
+'customers::CreditCard' (role 'CreditCard', cardinality 0..*) is associated with 'customers::Customer' (role 'holder', cardinality 0..*).
+'customers::Customer' (role 'customers_Customer4', cardinality 0..*) is associated with 'customers::CustomersDB' (role 'customers_CustomersDB', cardinality 0..*).
+'customers::Address' (role 'customers_Address', cardinality 0..*) is associated with 'customers::Customer' (role 'customers_Customer', cardinality 0..*).
+'customers::Customer' (role 'Customer', cardinality 0..*) is associated with 'customers::CreditCard' (role 'creditCard', cardinality 0..*).

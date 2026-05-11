@@ -1,0 +1,45 @@
+The model has 23 class(es).
+The class 'farrusco::Servo' has the following attributes: 'inc' of type int; 'max' of type int; 'min' of type int.
+The class 'farrusco::Filho' has no attributes.
+The class 'farrusco::Robot' has the following attributes: 'Name' of type str.
+The class 'Node' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'farrusco::Actuate' has no attributes.
+The class 'farrusco::Node' has no attributes.
+The class 'farrusco::Irmao' has no attributes.
+The class 'farrusco::Motor' has the following attributes: 'MotorLeft' of type int; 'MotorRight' of type int.
+The class 'Actuate' has no attributes.
+The class 'Action' has no attributes.
+The class 'farrusco::Distancia' has the following attributes: 'distancia' of type int; 'how_sucess' of type bool.
+The class 'farrusco::Paralelo' has no attributes.
+The class 'farrusco::Espera' has the following attributes: 'time' of type int.
+The class 'Condition' has no attributes.
+The class 'farrusco::Prioridade' has no attributes.
+The class 'farrusco::LED' has the following attributes: 'on_off' of type bool.
+The class 'farrusco::BumperEsquerdo' has no attributes.
+The class 'farrusco::Behavior' has the following attributes: 'Name' of type str.
+The class 'farrusco::AlterarEstado' has the following attributes: 'fail_policy' of type int; 'runn_policy' of type int; 'succ_policy' of type int.
+The class 'farrusco::Condition' has no attributes.
+The class 'farrusco::BumperDireito' has no attributes.
+The class 'farrusco::Action' has the following attributes: 'name' of type str.
+'farrusco::Espera' is a specialization of 'Condition'.
+'farrusco::Condition' is a specialization of 'Action'.
+'farrusco::Servo' is a specialization of 'Actuate'.
+'farrusco::Behavior' is a specialization of 'Node'.
+'farrusco::Actuate' is a specialization of 'Action'.
+'farrusco::Distancia' is a specialization of 'Condition'.
+'farrusco::AlterarEstado' is a specialization of 'Behavior'.
+'farrusco::BumperEsquerdo' is a specialization of 'Condition'.
+'farrusco::Prioridade' is a specialization of 'Behavior'.
+'farrusco::LED' is a specialization of 'Actuate'.
+'farrusco::BumperDireito' is a specialization of 'Condition'.
+'farrusco::Action' is a specialization of 'Node'.
+'farrusco::Motor' is a specialization of 'Actuate'.
+'farrusco::Paralelo' is a specialization of 'Behavior'.
+'farrusco::Irmao' (role 'farrusco_Irmao14', cardinality 0..*) is associated with 'farrusco::Node' (role 'farrusco_Node15', cardinality 0..*).
+'farrusco::Filho' (role 'farrusco_Filho6', cardinality 0..*) is associated with 'farrusco::Behavior' (role 'farrusco_Behavior', cardinality 0..*).
+'farrusco::Filho' (role 'farrusco_Filho8', cardinality 0..*) is associated with 'farrusco::Node' (role 'farrusco_Node9', cardinality 0..*).
+'farrusco::Robot' (role 'farrusco_Robot2', cardinality 0..*) is associated with 'farrusco::Filho' (role 'farrusco_Filho', cardinality 0..*).
+'farrusco::Node' (role 'farrusco_Node12', cardinality 0..*) is associated with 'farrusco::Irmao' (role 'farrusco_Irmao11', cardinality 0..*).
+'farrusco::Robot' (role 'farrusco_Robot4', cardinality 0..*) is associated with 'farrusco::Irmao' (role 'farrusco_Irmao', cardinality 0..*).
+'farrusco::Node' (role 'farrusco_Node', cardinality 0..*) is associated with 'farrusco::Robot' (role 'farrusco_Robot', cardinality 0..*).

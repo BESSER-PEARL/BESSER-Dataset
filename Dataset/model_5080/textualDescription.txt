@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'Interface' has no attributes.
+The class 'adlrecur::Provided' has no attributes.
+The class 'adlrecur::Base' has no attributes.
+The class 'adlrecur::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+The class 'adlrecur::Component' has the following attributes: 'name' of type str.
+The class 'Component' has no attributes.
+The class 'adlrecur::Required' has no attributes.
+The class 'adlrecur::Binding' has no attributes.
+'adlrecur::Base' is a specialization of 'Component'.
+'adlrecur::Required' is a specialization of 'Interface'.
+'adlrecur::Provided' is a specialization of 'Interface'.
+'adlrecur::Component' (role 'adlrecur_Component2', cardinality 0..*) is associated with 'adlrecur::Provided' (role 'adlrecur_Provided', cardinality 0..*).
+'adlrecur::Required' (role 'adlrecur_Required', cardinality 0..*) is associated with 'adlrecur::Component' (role 'adlrecur_Component', cardinality 0..*).
+'adlrecur::Binding' (role 'adlrecur_Binding5', cardinality 0..*) is associated with 'adlrecur::Interface' (role 'adlrecur_Interface6', cardinality 0..*).
+'adlrecur::Base' (role 'adlrecur_Base', cardinality 0..*) is associated with 'adlrecur::Base' (role 'adlrecur_Base10', cardinality 0..*).
+'adlrecur::Interface' (role 'adlrecur_Interface', cardinality 0..*) is associated with 'adlrecur::Binding' (role 'adlrecur_Binding', cardinality 0..*).
+'adlrecur::Binding' (role 'adlrecur_Binding8', cardinality 0..*) is associated with 'adlrecur::Interface' (role 'adlrecur_Interface9', cardinality 0..*).

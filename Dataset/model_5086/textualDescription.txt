@@ -1,0 +1,42 @@
+The model has 18 class(es).
+The class 'fragdial::Provided' has no attributes.
+The class 'fragdial::Controller' has the following attributes: 'language' of type str; 'descriptor' of type str.
+The class 'fragdial::Content' has the following attributes: 'class_' of type str; 'language' of type str.
+The class 'fragdial::AbstractComponent' has the following attributes: 'name' of type str.
+The class 'fragdial::Attributes' has the following attributes: 'signature' of type str.
+The class 'AbstractComponent' has no attributes.
+The class 'fragdial::Binding' has no attributes.
+The class 'fragdial::Attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'fragdial::Include' has the following attributes: 'file' of type str.
+The class 'fragdial::Component3' has no attributes.
+The class 'fragdial::Component' has no attributes.
+The class 'fragdial::Required' has no attributes.
+The class 'fragdial::Output' has the following attributes: 'format' of type str.
+The class 'Interface' has no attributes.
+The class 'fragdial::Interface' has the following attributes: 'contingency' of type str; 'cardinality' of type str; 'startProperty' of type str; 'signature' of type str; 'name' of type str.
+The class 'fragdial::Component1' has no attributes.
+The class 'fragdial::Component2' has no attributes.
+The class 'fragdial::Ldflag' has the following attributes: 'value' of type str.
+'fragdial::Component1' is a specialization of 'AbstractComponent'.
+'fragdial::Required' is a specialization of 'Interface'.
+'fragdial::Provided' is a specialization of 'Interface'.
+'fragdial::Component2' is a specialization of 'AbstractComponent'.
+'fragdial::Component3' is a specialization of 'AbstractComponent'.
+'fragdial::Component' is a specialization of 'AbstractComponent'.
+'fragdial::Binding' (role 'fragdial_Binding', cardinality 0..*) is associated with 'fragdial::Interface' (role 'fragdial_Interface', cardinality 0..*).
+'fragdial::Component1' (role 'fragdial_Component132', cardinality 0..*) is associated with 'fragdial::Component2' (role 'fragdial_Component2', cardinality 0..*).
+'fragdial::Content' (role 'fragdial_Content', cardinality 0..*) is associated with 'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent', cardinality 0..*).
+'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent4', cardinality 0..*) is associated with 'fragdial::Output' (role 'fragdial_Output', cardinality 0..*).
+'fragdial::Attributes' (role 'fragdial_Attributes', cardinality 0..*) is associated with 'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent2', cardinality 0..*).
+'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent20', cardinality 0..*) is associated with 'fragdial::Content' (role 'fragdial_Content19', cardinality 0..*).
+'fragdial::Binding' (role 'fragdial_Binding16', cardinality 0..*) is associated with 'fragdial::Interface' (role 'fragdial_Interface17', cardinality 0..*).
+'fragdial::Include' (role 'fragdial_Include', cardinality 0..*) is associated with 'fragdial::Content' (role 'fragdial_Content22', cardinality 0..*).
+'fragdial::Component' (role 'fragdial_Component30', cardinality 0..*) is associated with 'fragdial::Component' (role 'fragdial_Component28', cardinality 0..*).
+'fragdial::Content' (role 'fragdial_Content24', cardinality 0..*) is associated with 'fragdial::Ldflag' (role 'fragdial_Ldflag', cardinality 0..*).
+'fragdial::Component1' (role 'fragdial_Component1', cardinality 0..*) is associated with 'fragdial::Component' (role 'fragdial_Component', cardinality 0..*).
+'fragdial::Provided' (role 'fragdial_Provided', cardinality 0..*) is associated with 'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent10', cardinality 0..*).
+'fragdial::Interface' (role 'fragdial_Interface14', cardinality 0..*) is associated with 'fragdial::Binding' (role 'fragdial_Binding13', cardinality 0..*).
+'fragdial::Attributes' (role 'fragdial_Attributes26', cardinality 0..*) is associated with 'fragdial::Attribute' (role 'fragdial_Attribute', cardinality 0..*).
+'fragdial::Required' (role 'fragdial_Required', cardinality 0..*) is associated with 'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent8', cardinality 0..*).
+'fragdial::Component3' (role 'fragdial_Component3', cardinality 0..*) is associated with 'fragdial::Component2' (role 'fragdial_Component234', cardinality 0..*).
+'fragdial::AbstractComponent' (role 'fragdial_AbstractComponent6', cardinality 0..*) is associated with 'fragdial::Controller' (role 'fragdial_Controller', cardinality 0..*).

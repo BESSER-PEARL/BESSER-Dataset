@@ -1,0 +1,48 @@
+The model has 24 class(es).
+The class 'rover::Compass' has no attributes.
+The class 'rover::SetLightColor' has the following attributes: 'color' of type str.
+The class 'rover::Block' has the following attributes: 'name' of type str.
+The class 'rover::directionFacing' has the following attributes: 'currentlyFacing' of type float.
+The class 'rover::Program' has the following attributes: 'name' of type str.
+The class 'rover::Component' has the following attributes: 'name' of type str.
+The class 'rover::Actuator' has no attributes.
+The class 'rover::PositionQuantity' has no attributes.
+The class 'rover::Tansition' has the following attributes: 'comparedQuantity' of type str; 'operationUsed' of type str.
+The class 'Sensor' has no attributes.
+The class 'rover::Command' has no attributes.
+The class 'rover::Repeate' has the following attributes: 'count' of type int.
+The class 'rover::SingleQuantity' has no attributes.
+The class 'Actuator' has no attributes.
+The class 'rover::Wait' has the following attributes: 'time' of type int.
+The class 'rover::Move' has the following attributes: 'length' of type int; 'velocity' of type int.
+The class 'rover::Rotate' has the following attributes: 'angel' of type int.
+The class 'Component' has no attributes.
+The class 'rover::DistanceSensor' has the following attributes: 'remainingDistance' of type float.
+The class 'rover::Rover' has no attributes.
+The class 'rover::Light' has no attributes.
+The class 'rover::Motor' has no attributes.
+The class 'rover::Sensor' has no attributes.
+The class 'rover::GPS' has the following attributes: 'currentPosition' of type float.
+'rover::Compass' is a specialization of 'Sensor'.
+'rover::Actuator' is a specialization of 'Component'.
+'rover::GPS' is a specialization of 'Sensor'.
+'rover::Sensor' is a specialization of 'Component'.
+'rover::Light' is a specialization of 'Actuator'.
+'rover::Motor' is a specialization of 'Actuator'.
+'rover::DistanceSensor' is a specialization of 'Sensor'.
+'rover::directionFacing' is a specialization of 'Sensor'.
+'rover::Tansition' (role 'rover_Tansition10', cardinality 0..*) is associated with 'rover::Block' (role 'rover_Block9', cardinality 0..*).
+'rover::Tansition' (role 'incomingTransition', cardinality 0..*) is associated with 'rover::Command' (role 'Command26', cardinality 0..*).
+'rover::Command' (role 'sourceCommand', cardinality 0..*) is associated with 'rover::Tansition' (role 'Tansition', cardinality 0..*).
+'rover::Tansition' (role 'outgoingTransition', cardinality 0..*) is associated with 'rover::Command' (role 'Command', cardinality 0..*).
+'rover::Block' (role 'rover_Block7', cardinality 0..*) is associated with 'rover::Command' (role 'rover_Command', cardinality 0..*).
+'rover::Command' (role 'rover_Command20', cardinality 0..*) is associated with 'rover::SetLightColor' (role 'rover_SetLightColor', cardinality 0..*).
+'rover::Rover' (role 'rover_Rover', cardinality 0..*) is associated with 'rover::Component' (role 'rover_Component', cardinality 0..*).
+'rover::Tansition' (role 'rover_Tansition', cardinality 0..*) is associated with 'rover::Sensor' (role 'rover_Sensor', cardinality 0..*).
+'rover::Repeate' (role 'rover_Repeate', cardinality 0..*) is associated with 'rover::Command' (role 'rover_Command12', cardinality 0..*).
+'rover::Rotate' (role 'rover_Rotate', cardinality 0..*) is associated with 'rover::Command' (role 'rover_Command14', cardinality 0..*).
+'rover::Program' (role 'rover_Program', cardinality 0..*) is associated with 'rover::Rover' (role 'rover_Rover2', cardinality 0..*).
+'rover::Program' (role 'rover_Program5', cardinality 0..*) is associated with 'rover::Block' (role 'rover_Block', cardinality 0..*).
+'rover::Wait' (role 'rover_Wait', cardinality 0..*) is associated with 'rover::Command' (role 'rover_Command18', cardinality 0..*).
+'rover::Move' (role 'rover_Move', cardinality 0..*) is associated with 'rover::Command' (role 'rover_Command16', cardinality 0..*).
+'rover::Tansition' (role 'Tansition23', cardinality 0..*) is associated with 'rover::Command' (role 'targetCommand', cardinality 0..*).

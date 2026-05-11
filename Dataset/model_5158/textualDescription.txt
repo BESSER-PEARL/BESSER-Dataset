@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'depcycle::A' has no attributes.
+The class 'depcycle::B' has no attributes.
+'depcycle::B' (role 'depcycle_B2', cardinality 0..*) is associated with 'depcycle::A' (role 'depcycle_A3', cardinality 0..*).
+'depcycle::A' (role 'depcycle_A', cardinality 0..*) is associated with 'depcycle::B' (role 'depcycle_B', cardinality 0..*).

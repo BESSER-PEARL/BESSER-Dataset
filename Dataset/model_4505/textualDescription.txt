@@ -1,0 +1,94 @@
+The model has 39 class(es).
+The class 'rcl::VarRef' has the following attributes: 'name' of type str.
+The class 'rcl::BooleanValue' has the following attributes: 'bValue' of type bool.
+The class 'Query' has no attributes.
+The class 'rcl::StringValue' has the following attributes: 'sValue' of type str.
+The class 'rcl::Param' has the following attributes: 'name' of type str.
+The class 'rcl::HumidityQuery' has no attributes.
+The class 'rcl::RoverValue' has no attributes.
+The class 'rcl::BooleanExpression' has the following attributes: 'op' of type str.
+The class 'rcl::RoverExpression' has no attributes.
+The class 'RoverValue' has no attributes.
+The class 'rcl::Conditional' has no attributes.
+The class 'rcl::TemperatureQuery' has no attributes.
+The class 'rcl::BackwardMinAction' has no attributes.
+The class 'rcl::RclBlock' has no attributes.
+The class 'rcl::SendAction' has the following attributes: 'message' of type str.
+The class 'rcl::NumberValue' has the following attributes: 'nValue' of type int.
+The class 'rcl::ForwardMinAction' has no attributes.
+The class 'RoverExpression' has no attributes.
+The class 'rcl::BackwardAction' has no attributes.
+The class 'BooleanValue' has no attributes.
+The class 'rcl::MessageQuery' has no attributes.
+The class 'rcl::Query' has no attributes.
+The class 'rcl::Statement' has no attributes.
+The class 'rcl::StopAction' has no attributes.
+The class 'rcl::Action' has no attributes.
+The class 'rcl::TurnAction' has no attributes.
+The class 'rcl::NumericExpression' has the following attributes: 'op' of type str.
+The class 'rcl::TurnDegAction' has no attributes.
+The class 'rcl::ForwardAction' has no attributes.
+The class 'Action' has no attributes.
+The class 'rcl::ObstacleQuery' has the following attributes: 'front' of type bool.
+The class 'NumberValue' has no attributes.
+The class 'Statement' has no attributes.
+The class 'rcl::Loop' has no attributes.
+The class 'rcl::StringExpression' has the following attributes: 'op' of type str.
+The class 'rcl::VarAssignment' has the following attributes: 'name' of type str.
+The class 'rcl::RoverProgram' has the following attributes: 'name' of type str.
+The class 'StringValue' has no attributes.
+The class 'rcl::LogAction' has the following attributes: 'message' of type str.
+The enumeration 'NumericOperator' has the following literals: 'eq', 'geq', 'neq', 'lt', 'leq', 'gt'.
+The enumeration 'StringOperator' has the following literals: 'neq', 'eq'.
+The enumeration 'BooleanOperator' has the following literals: 'eq', 'neq'.
+'rcl::BooleanValue' is a specialization of 'RoverValue'.
+'rcl::ForwardMinAction' is a specialization of 'Action'.
+'rcl::VarAssignment' is a specialization of 'Statement'.
+'rcl::StopAction' is a specialization of 'Action'.
+'rcl::Conditional' is a specialization of 'Statement'.
+'rcl::StringExpression' is a specialization of 'RoverExpression'.
+'rcl::TurnAction' is a specialization of 'Action'.
+'rcl::BackwardAction' is a specialization of 'Action'.
+'rcl::ForwardAction' is a specialization of 'Action'.
+'rcl::ObstacleQuery' is a specialization of 'Query'.
+'rcl::TemperatureQuery' is a specialization of 'NumberValue'.
+'rcl::MessageQuery' is a specialization of 'StringValue'.
+'rcl::BackwardMinAction' is a specialization of 'Action'.
+'rcl::HumidityQuery' is a specialization of 'NumberValue'.
+'rcl::NumberValue' is a specialization of 'RoverValue'.
+'rcl::VarRef' is a specialization of 'StringValue'.
+'rcl::MessageQuery' is a specialization of 'Query'.
+'rcl::BooleanExpression' is a specialization of 'RoverExpression'.
+'rcl::VarRef' is a specialization of 'Statement'.
+'rcl::HumidityQuery' is a specialization of 'Query'.
+'rcl::SendAction' is a specialization of 'Action'.
+'rcl::LogAction' is a specialization of 'Action'.
+'rcl::VarRef' is a specialization of 'NumberValue'.
+'rcl::Action' is a specialization of 'Statement'.
+'rcl::VarRef' is a specialization of 'BooleanValue'.
+'rcl::StringValue' is a specialization of 'RoverValue'.
+'rcl::TemperatureQuery' is a specialization of 'Query'.
+'rcl::TurnDegAction' is a specialization of 'Action'.
+'rcl::ObstacleQuery' is a specialization of 'BooleanValue'.
+'rcl::NumericExpression' is a specialization of 'RoverExpression'.
+'rcl::Loop' is a specialization of 'Statement'.
+'rcl::RclBlock' is a specialization of 'Statement'.
+'rcl::StringExpression' (role 'rcl_StringExpression', cardinality 0..*) is associated with 'rcl::StringValue' (role 'rcl_StringValue', cardinality 0..*).
+'rcl::NumberValue' (role 'rcl_NumberValue31', cardinality 0..*) is associated with 'rcl::ForwardMinAction' (role 'rcl_ForwardMinAction', cardinality 0..*).
+'rcl::Conditional' (role 'rcl_Conditional', cardinality 0..*) is associated with 'rcl::RoverExpression' (role 'rcl_RoverExpression', cardinality 0..*).
+'rcl::RoverProgram' (role 'rcl_RoverProgram', cardinality 0..*) is associated with 'rcl::Param' (role 'rcl_Param', cardinality 0..*).
+'rcl::RoverExpression' (role 'rcl_RoverExpression13', cardinality 0..*) is associated with 'rcl::Loop' (role 'rcl_Loop', cardinality 0..*).
+'rcl::Loop' (role 'rcl_Loop15', cardinality 0..*) is associated with 'rcl::RclBlock' (role 'rcl_RclBlock16', cardinality 0..*).
+'rcl::RclBlock' (role 'rcl_RclBlock', cardinality 0..*) is associated with 'rcl::RoverProgram' (role 'rcl_RoverProgram2', cardinality 0..*).
+'rcl::BooleanExpression' (role 'rcl_BooleanExpression28', cardinality 0..*) is associated with 'rcl::BooleanValue' (role 'rcl_BooleanValue29', cardinality 0..*).
+'rcl::Statement' (role 'stmts', cardinality 0..*) is associated with 'rcl::RclBlock' (role 'RclBlock', cardinality 0..*).
+'rcl::RoverValue' (role 'rcl_RoverValue', cardinality 0..*) is associated with 'rcl::VarAssignment' (role 'rcl_VarAssignment', cardinality 0..*).
+'rcl::BooleanExpression' (role 'rcl_BooleanExpression', cardinality 0..*) is associated with 'rcl::BooleanValue' (role 'rcl_BooleanValue', cardinality 0..*).
+'rcl::RclBlock' (role 'enclosing', cardinality 0..*) is associated with 'rcl::Statement' (role 'Statement', cardinality 0..*).
+'rcl::NumericExpression' (role 'rcl_NumericExpression20', cardinality 0..*) is associated with 'rcl::NumberValue' (role 'rcl_NumberValue21', cardinality 0..*).
+'rcl::NumericExpression' (role 'rcl_NumericExpression', cardinality 0..*) is associated with 'rcl::NumberValue' (role 'rcl_NumberValue', cardinality 0..*).
+'rcl::StringExpression' (role 'rcl_StringExpression24', cardinality 0..*) is associated with 'rcl::StringValue' (role 'rcl_StringValue25', cardinality 0..*).
+'rcl::Conditional' (role 'rcl_Conditional10', cardinality 0..*) is associated with 'rcl::RclBlock' (role 'rcl_RclBlock11', cardinality 0..*).
+'rcl::Conditional' (role 'rcl_Conditional7', cardinality 0..*) is associated with 'rcl::RclBlock' (role 'rcl_RclBlock8', cardinality 0..*).
+'rcl::NumberValue' (role 'rcl_NumberValue35', cardinality 0..*) is associated with 'rcl::TurnDegAction' (role 'rcl_TurnDegAction', cardinality 0..*).
+'rcl::BackwardMinAction' (role 'rcl_BackwardMinAction', cardinality 0..*) is associated with 'rcl::NumberValue' (role 'rcl_NumberValue33', cardinality 0..*).

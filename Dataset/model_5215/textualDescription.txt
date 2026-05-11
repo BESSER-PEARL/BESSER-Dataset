@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'emfdb::C' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'emfdb::D' has the following attributes: 'name' of type str.
+The class 'emfdb::B' has the following attributes: 'string' of type str.
+The class 'emfdb::E' has the following attributes: 'name' of type str.
+The class 'emfdb::A' has the following attributes: 'string' of type str; 'primitiveValues' of type float; 'strings' of type str; 'notUniqueValues' of type float.
+'emfdb::C' (role 'emfdb_C', cardinality 0..*) is associated with 'emfdb::A' (role 'emfdb_A2', cardinality 0..*).
+'emfdb::A' (role 'emfdb_A', cardinality 0..*) is associated with 'emfdb::B' (role 'emfdb_B', cardinality 0..*).
+'emfdb::E' (role 'emfdb_E', cardinality 0..*) is associated with 'emfdb::D' (role 'emfdb_D6', cardinality 0..*).
+'emfdb::B' (role 'emfdb_B4', cardinality 0..*) is associated with 'emfdb::D' (role 'emfdb_D', cardinality 0..*).

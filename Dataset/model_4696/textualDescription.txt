@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'basicfamily::Person' has the following attributes: 'name' of type str.
+The class 'basicfamily::Family' has the following attributes: 'name' of type str.
+The class 'basicfamily::Man' has no attributes.
+The class 'Person' has no attributes.
+The class 'basicfamily::Woman' has no attributes.
+'basicfamily::Woman' is a specialization of 'Person'.
+'basicfamily::Man' is a specialization of 'Person'.
+'basicfamily::Person' (role 'parents', cardinality 0..*) is associated with 'basicfamily::Person' (role 'Person', cardinality 0..*).
+'basicfamily::Person' (role 'basicfamily_Person9', cardinality 0..*) is associated with 'basicfamily::Family' (role 'basicfamily_Family', cardinality 0..*).
+'basicfamily::Person' (role 'basicfamily_Person7', cardinality 0..*) is associated with 'basicfamily::Man' (role 'basicfamily_Man', cardinality 0..*).
+'basicfamily::Person' (role 'basicfamily_Person', cardinality 0..*) is associated with 'basicfamily::Woman' (role 'basicfamily_Woman', cardinality 0..*).
+'basicfamily::Person' (role 'children', cardinality 0..*) is associated with 'basicfamily::Person' (role 'Person4', cardinality 0..*).

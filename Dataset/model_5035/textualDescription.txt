@@ -1,0 +1,51 @@
+The model has 24 class(es).
+The class 'Tagged' has no attributes.
+The class 'party::Party' has the following attributes: 'uid' of type str; 'name' of type str.
+The class 'party::DateEffectiveObject' has the following attributes: 'end' of type date; 'start' of type date.
+The class 'party::Custom' has the following attributes: 'location' of type str.
+The class 'URL' has no attributes.
+The class 'party::Tagged' has the following attributes: 'comment' of type str.
+The class 'party::USAddress' has the following attributes: 'recipient' of type str; 'street1' of type str; 'street2' of type str; 'state' of type str; 'city' of type str; 'zip' of type str.
+The class 'party::ContactInfo' has the following attributes: 'category' of type str.
+The class 'party::URL' has the following attributes: 'address' of type str.
+The class 'Party' has no attributes.
+The class 'DateEffectiveObject' has no attributes.
+The class 'party::Person' has the following attributes: 'title' of type str.
+The class 'party::Address' has the following attributes: 'country' of type str.
+The class 'party::MatrixRelationship' has the following attributes: 'name' of type str.
+The class 'party::Organization' has the following attributes: 'organizationType' of type str.
+The class 'ContactInfo' has no attributes.
+The class 'party::Web' has no attributes.
+The class 'party::EMail' has no attributes.
+The class 'party::Phone' has the following attributes: 'countryCode' of type str; 'areaCode' of type int; 'number' of type str.
+The class 'party::Tag' has the following attributes: 'comment' of type str; 'value' of type str; 'name' of type str.
+The class 'party::Identity' has the following attributes: 'value' of type str; 'type' of type str; 'comment' of type str.
+The class 'Address' has no attributes.
+The class 'party::Role' has the following attributes: 'name' of type str.
+The class 'party::CommonObject' has no attributes.
+'party::DateEffectiveObject' is a specialization of 'Tagged'.
+'party::ContactInfo' is a specialization of 'DateEffectiveObject'.
+'party::EMail' is a specialization of 'URL'.
+'party::Organization' is a specialization of 'Party'.
+'party::Address' is a specialization of 'ContactInfo'.
+'party::Party' is a specialization of 'Tagged'.
+'party::USAddress' is a specialization of 'Address'.
+'party::URL' is a specialization of 'ContactInfo'.
+'party::MatrixRelationship' is a specialization of 'DateEffectiveObject'.
+'party::Custom' is a specialization of 'ContactInfo'.
+'party::Web' is a specialization of 'URL'.
+'party::Person' is a specialization of 'Party'.
+'party::Phone' is a specialization of 'ContactInfo'.
+'party::Role' is a specialization of 'DateEffectiveObject'.
+'party::Party' (role 'owner', cardinality 0..*) is associated with 'party::ContactInfo' (role 'ContactInfo', cardinality 0..*).
+'party::Role' (role 'roles', cardinality 0..*) is associated with 'party::CommonObject' (role 'CommonObject', cardinality 0..*).
+'party::Tagged' (role 'party_Tagged', cardinality 0..*) is associated with 'party::Tag' (role 'party_Tag', cardinality 0..*).
+'party::Organization' (role 'Organization', cardinality 0..*) is associated with 'party::Party' (role 'children', cardinality 0..*).
+'party::Organization' (role 'parent', cardinality 0..*) is associated with 'party::Party' (role 'Party6', cardinality 0..*).
+'party::CommonObject' (role 'owner15', cardinality 0..*) is associated with 'party::Role' (role 'Role', cardinality 0..*).
+'party::Role' (role 'party_Role', cardinality 0..*) is associated with 'party::Party' (role 'party_Party12', cardinality 0..*).
+'party::Organization' (role 'party_Organization10', cardinality 0..*) is associated with 'party::MatrixRelationship' (role 'party_MatrixRelationship', cardinality 0..*).
+'party::MatrixRelationship' (role 'party_MatrixRelationship17', cardinality 0..*) is associated with 'party::Party' (role 'party_Party18', cardinality 0..*).
+'party::Party' (role 'party_Party8', cardinality 0..*) is associated with 'party::Organization' (role 'party_Organization', cardinality 0..*).
+'party::Party' (role 'Party', cardinality 0..*) is associated with 'party::ContactInfo' (role 'contactInfo', cardinality 0..*).
+'party::Identity' (role 'party_Identity', cardinality 0..*) is associated with 'party::Party' (role 'party_Party', cardinality 0..*).

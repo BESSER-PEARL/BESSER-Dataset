@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/adilinam/QVTdCaseStudy/org.eclipse.ocl.examples.project.royalandloyal/oclsrc/RoyalAndLoyal/RoyalAndLoyal.ecore

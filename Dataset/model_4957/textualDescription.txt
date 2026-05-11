@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'extmetadata::Class' has no attributes.
+The class 'extmetadata::Attribute' has no attributes.
+The class 'extmetadata::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'extmetadata::Attribute' is a specialization of 'NamedElement'.
+'extmetadata::Class' is a specialization of 'NamedElement'.
+'extmetadata::Attribute' (role 'extmetadata_Attribute2', cardinality 0..*) is associated with 'extmetadata::Class' (role 'extmetadata_Class3', cardinality 0..*).
+'extmetadata::Attribute' (role 'extmetadata_Attribute', cardinality 0..*) is associated with 'extmetadata::Class' (role 'extmetadata_Class', cardinality 0..*).

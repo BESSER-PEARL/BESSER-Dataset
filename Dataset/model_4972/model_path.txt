@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/BGCX067/fabr3c-svn-to-git/trunk/org.reliablesource.cuttlefish.core/uml/class diagrams/orgreliablesourcecuttlefishcoremodel.ecore

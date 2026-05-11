@@ -1,0 +1,26 @@
+The model has 14 class(es).
+The class 'Graphql::Int' has no attributes.
+The class 'Graphql::Schema' has the following attributes: 'name' of type str.
+The class 'Graphql::ScalarType' has no attributes.
+The class 'Graphql::Type' has the following attributes: 'name' of type str.
+The class 'Graphql::Boolean' has no attributes.
+The class 'Graphql::Float' has no attributes.
+The class 'Graphql::EnumValue' has the following attributes: 'value' of type str; 'number' of type str.
+The class 'Graphql::String' has no attributes.
+The class 'Graphql::Attribute' has the following attributes: 'isArray' of type str; 'typeName' of type str; 'name' of type str; 'isNullable' of type str.
+The class 'ScalarType' has no attributes.
+The class 'Type' has no attributes.
+The class 'Graphql::ID' has no attributes.
+The class 'Graphql::SystemType' has no attributes.
+The class 'Graphql::Enum' has no attributes.
+'Graphql::ID' is a specialization of 'ScalarType'.
+'Graphql::SystemType' is a specialization of 'Type'.
+'Graphql::Int' is a specialization of 'ScalarType'.
+'Graphql::Float' is a specialization of 'ScalarType'.
+'Graphql::String' is a specialization of 'ScalarType'.
+'Graphql::Boolean' is a specialization of 'ScalarType'.
+'Graphql::ScalarType' is a specialization of 'Type'.
+'Graphql::Enum' is a specialization of 'Type'.
+'Graphql::Schema' (role 'Graphql_Schema', cardinality 0..*) is associated with 'Graphql::Type' (role 'Graphql_Type2', cardinality 0..*).
+'Graphql::Type' (role 'Graphql_Type', cardinality 0..*) is associated with 'Graphql::Attribute' (role 'Graphql_Attribute', cardinality 0..*).
+'Graphql::EnumValue' (role 'Graphql_EnumValue', cardinality 0..*) is associated with 'Graphql::Enum' (role 'Graphql_Enum', cardinality 0..*).

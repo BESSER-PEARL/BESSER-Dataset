@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arnaudcoj/compil_calc/org.xtext.example.calculatrice/model/generated/Calculatrice.ecore

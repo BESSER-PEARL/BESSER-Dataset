@@ -1,0 +1,45 @@
+The model has 19 class(es).
+The class 'form::SelectionCondition' has no attributes.
+The class 'form::VisibilityCondition' has no attributes.
+The class 'form::Text' has the following attributes: 'content' of type str.
+The class 'form::SelectionField' has the following attributes: 'selectionFieldType' of type str.
+The class 'form::Heading' has the following attributes: 'level' of type int.
+The class 'form::TextField' has the following attributes: 'encrypted' of type bool.
+The class 'form::SelectionItem' has the following attributes: 'selected' of type bool; 'label' of type str.
+The class 'form::Page' has the following attributes: 'title' of type str.
+The class 'InputField' has no attributes.
+The class 'form::ListItem' has the following attributes: 'label' of type str.
+The class 'form::List' has the following attributes: 'ordered' of type bool.
+The class 'form::PageElement' has the following attributes: 'elementId' of type str.
+The class 'form::InputField' has the following attributes: 'label' of type str; 'mandatory' of type bool.
+The class 'form::Paragraph' has no attributes.
+The class 'Text' has no attributes.
+The class 'form::TextArea' has no attributes.
+The class 'form::Form' has no attributes.
+The class 'PageElement' has no attributes.
+The class 'VisibilityCondition' has no attributes.
+The enumeration 'SelectionFieldType' has the following literals: 'Combobox', 'Radio', 'Checkbox'.
+'form::SelectionField' is a specialization of 'InputField'.
+'form::TextArea' is a specialization of 'InputField'.
+'form::SelectionCondition' is a specialization of 'VisibilityCondition'.
+'form::Text' is a specialization of 'PageElement'.
+'form::InputField' is a specialization of 'PageElement'.
+'form::Paragraph' is a specialization of 'Text'.
+'form::Heading' is a specialization of 'Text'.
+'form::TextField' is a specialization of 'InputField'.
+'form::List' is a specialization of 'PageElement'.
+'form::Page' (role 'page', cardinality 0..*) is associated with 'form::PageElement' (role 'PageElement', cardinality 0..*).
+'form::VisibilityCondition' (role 'visibilityConditions', cardinality 0..*) is associated with 'form::Page' (role 'Page24', cardinality 0..*).
+'form::PageElement' (role 'form_PageElement', cardinality 0..*) is associated with 'form::VisibilityCondition' (role 'form_VisibilityCondition', cardinality 0..*).
+'form::Page' (role 'page17', cardinality 0..*) is associated with 'form::VisibilityCondition' (role 'VisibilityCondition', cardinality 0..*).
+'form::SelectionCondition' (role 'form_SelectionCondition', cardinality 0..*) is associated with 'form::SelectionItem' (role 'form_SelectionItem', cardinality 0..*).
+'form::List' (role 'form_List', cardinality 0..*) is associated with 'form::ListItem' (role 'form_ListItem', cardinality 0..*).
+'form::Page' (role 'form_Page', cardinality 0..*) is associated with 'form::Form' (role 'form_Form', cardinality 0..*).
+'form::Page' (role 'form_Page3', cardinality 0..*) is associated with 'form::Form' (role 'form_Form2', cardinality 0..*).
+'form::Page' (role 'Page15', cardinality 0..*) is associated with 'form::Page' (role 'nextPage', cardinality 0..*).
+'form::SelectionItem' (role 'items', cardinality 0..*) is associated with 'form::SelectionField' (role 'SelectionField', cardinality 0..*).
+'form::Page' (role 'Page19', cardinality 0..*) is associated with 'form::PageElement' (role 'elements', cardinality 0..*).
+'form::Page' (role 'form_Page9', cardinality 0..*) is associated with 'form::Page' (role 'form_Page7', cardinality 0..*).
+'form::Page' (role 'form_Page6', cardinality 0..*) is associated with 'form::Page' (role 'form_Page4', cardinality 0..*).
+'form::SelectionField' (role 'field', cardinality 0..*) is associated with 'form::SelectionItem' (role 'SelectionItem', cardinality 0..*).
+'form::Page' (role 'previousPage', cardinality 0..*) is associated with 'form::Page' (role 'Page', cardinality 0..*).

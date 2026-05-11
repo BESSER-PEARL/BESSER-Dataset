@@ -1,0 +1,33 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Logo_Procedure extends Instruction {
+
+    private String name;
+
+
+
+    public Logo_Procedure(
+        String name    ) {
+        super(
+        );
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+}

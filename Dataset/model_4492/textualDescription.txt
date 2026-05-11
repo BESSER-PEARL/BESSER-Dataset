@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'taskDSL::DriveUntil' has the following attributes: 'object' of type str; 'speed' of type str; 'color' of type str.
+The class 'taskDSL::DSL' has no attributes.
+The class 'taskDSL::Action' has no attributes.
+The class 'Action' has no attributes.
+The class 'taskDSL::Avoid' has the following attributes: 'object' of type str; 'color' of type str.
+The class 'taskDSL::DriveAction' has no attributes.
+The class 'taskDSL::Mission' has the following attributes: 'name' of type str.
+The class 'taskDSL::Task' has the following attributes: 'name' of type str.
+The class 'taskDSL::MoveBack' has the following attributes: 'meters' of type int.
+The class 'taskDSL::Detector' has no attributes.
+The class 'taskDSL::TurnLeft' has the following attributes: 'degrees' of type int.
+The class 'DriveAction' has no attributes.
+The class 'taskDSL::TurnRight' has the following attributes: 'degrees' of type int.
+The class 'taskDSL::Investigate' has the following attributes: 'speed' of type str.
+The class 'taskDSL::Speak' has the following attributes: 'text' of type str.
+The class 'taskDSL::FollowLine' has the following attributes: 'distance' of type int.
+The enumeration 'Object' has the following literals: 'LAKE', 'ROCK'.
+The enumeration 'Color' has the following literals: 'RED', 'GREEN', 'BLUE'.
+The enumeration 'Speed' has the following literals: 'FAST', 'SLOW', 'NORMAL'.
+'taskDSL::Investigate' is a specialization of 'Action'.
+'taskDSL::FollowLine' is a specialization of 'Action'.
+'taskDSL::MoveBack' is a specialization of 'DriveAction'.
+'taskDSL::DriveUntil' is a specialization of 'Action'.
+'taskDSL::TurnLeft' is a specialization of 'DriveAction'.
+'taskDSL::Speak' is a specialization of 'Action'.
+'taskDSL::TurnRight' is a specialization of 'DriveAction'.
+'taskDSL::DSL' (role 'taskDSL_DSL', cardinality 0..*) is associated with 'taskDSL::Mission' (role 'taskDSL_Mission', cardinality 0..*).
+'taskDSL::DriveAction' (role 'taskDSL_DriveAction', cardinality 0..*) is associated with 'taskDSL::Avoid' (role 'taskDSL_Avoid13', cardinality 0..*).
+'taskDSL::Detector' (role 'taskDSL_Detector', cardinality 0..*) is associated with 'taskDSL::Task' (role 'taskDSL_Task9', cardinality 0..*).
+'taskDSL::Task' (role 'taskDSL_Task', cardinality 0..*) is associated with 'taskDSL::DSL' (role 'taskDSL_DSL2', cardinality 0..*).
+'taskDSL::Avoid' (role 'taskDSL_Avoid', cardinality 0..*) is associated with 'taskDSL::Detector' (role 'taskDSL_Detector11', cardinality 0..*).
+'taskDSL::Task' (role 'taskDSL_Task5', cardinality 0..*) is associated with 'taskDSL::Mission' (role 'taskDSL_Mission4', cardinality 0..*).
+'taskDSL::Action' (role 'taskDSL_Action', cardinality 0..*) is associated with 'taskDSL::Task' (role 'taskDSL_Task7', cardinality 0..*).

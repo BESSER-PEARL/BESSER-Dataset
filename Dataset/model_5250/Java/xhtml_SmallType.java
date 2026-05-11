@@ -1,0 +1,60 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class xhtml_SmallType extends Inline {
+
+    private String style;
+    private String title;
+    private String class_;
+    private String id;
+
+
+
+    public xhtml_SmallType(
+        String style,        String title,        String class_,        String id    ) {
+        super(
+        );
+        this.style = style;
+        this.title = title;
+        this.class_ = class_;
+        this.id = id;
+    }
+
+
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getClass_() {
+        return class_;
+    }
+
+    public void setClass_(String class_) {
+        this.class_ = class_;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+}

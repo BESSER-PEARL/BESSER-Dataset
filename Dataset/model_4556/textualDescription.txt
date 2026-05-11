@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'myDsl::CMD' has no attributes.
+The class 'myDsl::PROGRAM' has no attributes.
+The class 'myDsl::PENCOLOUR' has the following attributes: 'colour' of type str.
+The class 'myDsl::PENSTATE' has the following attributes: 'penState' of type str.
+The class 'myDsl::PAPER' has the following attributes: 'sizeY' of type int; 'paperColour' of type str; 'sizeX' of type int.
+The class 'CMD' has no attributes.
+The class 'myDsl::RIGHT' has the following attributes: 'amount' of type int.
+The class 'myDsl::LEFT' has the following attributes: 'amount' of type int.
+The class 'myDsl::MOVE' has the following attributes: 'amount' of type int.
+The class 'myDsl::TURTLE' has the following attributes: 'startPosX' of type int; 'startPosY' of type int.
+'myDsl::PENSTATE' is a specialization of 'CMD'.
+'myDsl::PENCOLOUR' is a specialization of 'CMD'.
+'myDsl::MOVE' is a specialization of 'CMD'.
+'myDsl::LEFT' is a specialization of 'CMD'.
+'myDsl::RIGHT' is a specialization of 'CMD'.
+'myDsl::PAPER' is a specialization of 'CMD'.
+'myDsl::TURTLE' is a specialization of 'CMD'.
+'myDsl::CMD' (role 'myDsl_CMD', cardinality 0..*) is associated with 'myDsl::PROGRAM' (role 'myDsl_PROGRAM', cardinality 0..*).

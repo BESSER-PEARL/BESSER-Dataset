@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'greetings::Greeting' has no attributes.
+The class 'greetings::HelloGreeting' has the following attributes: 'name' of type str.
+The class 'greetings::RefGreeting' has no attributes.
+The class 'greetings::Model' has no attributes.
+The class 'Greeting' has no attributes.
+'greetings::RefGreeting' is a specialization of 'Greeting'.
+'greetings::HelloGreeting' is a specialization of 'Greeting'.
+'greetings::HelloGreeting' (role 'greetings_HelloGreeting', cardinality 0..*) is associated with 'greetings::HelloGreeting' (role 'greetings_HelloGreeting1', cardinality 0..*).
+'greetings::Greeting' (role 'greetings_Greeting', cardinality 0..*) is associated with 'greetings::Model' (role 'greetings_Model', cardinality 0..*).
+'greetings::HelloGreeting' (role 'greetings_HelloGreeting4', cardinality 0..*) is associated with 'greetings::RefGreeting' (role 'greetings_RefGreeting', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'units::UnitMultiplication' has no attributes.
+The class 'units::Unit' has no attributes.
+The class 'Unit' has no attributes.
+The class 'units::UnitRepository' has no attributes.
+The class 'units::UnitLiteral' has no attributes.
+The class 'units::UnitCarryingElement' has the following attributes: 'unitSpecification' of type str.
+The class 'units::UnitPower' has the following attributes: 'exponent' of type int.
+The class 'units::BaseUnit' has the following attributes: 'name' of type str.
+'units::UnitPower' is a specialization of 'Unit'.
+'units::UnitLiteral' is a specialization of 'Unit'.
+'units::UnitMultiplication' is a specialization of 'Unit'.
+'units::BaseUnit' (role 'units_BaseUnit7', cardinality 0..*) is associated with 'units::UnitLiteral' (role 'units_UnitLiteral', cardinality 0..*).
+'units::Unit' (role 'units_Unit3', cardinality 0..*) is associated with 'units::UnitMultiplication' (role 'units_UnitMultiplication', cardinality 0..*).
+'units::UnitPower' (role 'units_UnitPower', cardinality 0..*) is associated with 'units::Unit' (role 'units_Unit5', cardinality 0..*).
+'units::UnitRepository' (role 'units_UnitRepository', cardinality 0..*) is associated with 'units::BaseUnit' (role 'units_BaseUnit', cardinality 0..*).
+'units::UnitCarryingElement' (role 'units_UnitCarryingElement', cardinality 0..*) is associated with 'units::Unit' (role 'units_Unit', cardinality 0..*).

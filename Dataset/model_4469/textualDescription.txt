@@ -1,0 +1,79 @@
+The model has 34 class(es).
+The class 'Expression' has no attributes.
+The class 'logoASM::Repeat' has no attributes.
+The class 'logoASM::Parameter' has the following attributes: 'name' of type str.
+The class 'logoASM::ProcCall' has no attributes.
+The class 'logoASM::Back' has no attributes.
+The class 'logoASM::Constant' has the following attributes: 'integerValue' of type int.
+The class 'logoASM::Minus' has no attributes.
+The class 'logoASM::Equals' has no attributes.
+The class 'logoASM::PenUp' has no attributes.
+The class 'logoASM::Lower' has no attributes.
+The class 'BinaryExp' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'logoASM::Left' has no attributes.
+The class 'logoASM::Greater' has no attributes.
+The class 'logoASM::Plus' has no attributes.
+The class 'logoASM::If' has no attributes.
+The class 'logoASM::Block' has no attributes.
+The class 'logoASM::Instruction' has no attributes.
+The class 'logoASM::LogoProgram' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'logoASM::Expression' has no attributes.
+The class 'logoASM::Forward' has no attributes.
+The class 'logoASM::Div' has no attributes.
+The class 'ControlStructure' has no attributes.
+The class 'logoASM::Primitive' has no attributes.
+The class 'logoASM::Clear' has no attributes.
+The class 'logoASM::Mult' has no attributes.
+The class 'logoASM::While' has no attributes.
+The class 'logoASM::Right' has no attributes.
+The class 'logoASM::ControlStructure' has no attributes.
+The class 'logoASM::PenDown' has no attributes.
+The class 'logoASM::ParameterCall' has no attributes.
+The class 'logoASM::ProcDeclaration' has the following attributes: 'name' of type str.
+The class 'logoASM::BinaryExp' has no attributes.
+'logoASM::Block' is a specialization of 'Instruction'.
+'logoASM::Lower' is a specialization of 'BinaryExp'.
+'logoASM::Forward' is a specialization of 'Primitive'.
+'logoASM::Plus' is a specialization of 'BinaryExp'.
+'logoASM::Primitive' is a specialization of 'Instruction'.
+'logoASM::ProcCall' is a specialization of 'Expression'.
+'logoASM::Div' is a specialization of 'BinaryExp'.
+'logoASM::PenDown' is a specialization of 'Primitive'.
+'logoASM::Repeat' is a specialization of 'ControlStructure'.
+'logoASM::Left' is a specialization of 'Primitive'.
+'logoASM::PenUp' is a specialization of 'Primitive'.
+'logoASM::Right' is a specialization of 'Primitive'.
+'logoASM::BinaryExp' is a specialization of 'Expression'.
+'logoASM::Minus' is a specialization of 'BinaryExp'.
+'logoASM::Expression' is a specialization of 'Instruction'.
+'logoASM::Greater' is a specialization of 'BinaryExp'.
+'logoASM::ParameterCall' is a specialization of 'Expression'.
+'logoASM::Equals' is a specialization of 'BinaryExp'.
+'logoASM::If' is a specialization of 'ControlStructure'.
+'logoASM::ProcDeclaration' is a specialization of 'Instruction'.
+'logoASM::ControlStructure' is a specialization of 'Instruction'.
+'logoASM::While' is a specialization of 'ControlStructure'.
+'logoASM::Clear' is a specialization of 'Primitive'.
+'logoASM::Back' is a specialization of 'Primitive'.
+'logoASM::Constant' is a specialization of 'Expression'.
+'logoASM::Mult' is a specialization of 'BinaryExp'.
+'logoASM::Expression' (role 'logoASM_Expression4', cardinality 0..*) is associated with 'logoASM::Left' (role 'logoASM_Left', cardinality 0..*).
+'logoASM::ProcDeclaration' (role 'logoASM_ProcDeclaration17', cardinality 0..*) is associated with 'logoASM::Parameter' (role 'logoASM_Parameter', cardinality 0..*).
+'logoASM::ParameterCall' (role 'logoASM_ParameterCall', cardinality 0..*) is associated with 'logoASM::Parameter' (role 'logoASM_Parameter34', cardinality 0..*).
+'logoASM::LogoProgram' (role 'logoASM_LogoProgram', cardinality 0..*) is associated with 'logoASM::Instruction' (role 'logoASM_Instruction36', cardinality 0..*).
+'logoASM::Block' (role 'logoASM_Block30', cardinality 0..*) is associated with 'logoASM::Repeat' (role 'logoASM_Repeat', cardinality 0..*).
+'logoASM::ProcCall' (role 'logoASM_ProcCall15', cardinality 0..*) is associated with 'logoASM::ProcDeclaration' (role 'logoASM_ProcDeclaration', cardinality 0..*).
+'logoASM::Instruction' (role 'logoASM_Instruction', cardinality 0..*) is associated with 'logoASM::ProcDeclaration' (role 'logoASM_ProcDeclaration19', cardinality 0..*).
+'logoASM::Block' (role 'logoASM_Block32', cardinality 0..*) is associated with 'logoASM::While' (role 'logoASM_While', cardinality 0..*).
+'logoASM::Expression' (role 'logoASM_Expression', cardinality 0..*) is associated with 'logoASM::Back' (role 'logoASM_Back', cardinality 0..*).
+'logoASM::Block' (role 'logoASM_Block', cardinality 0..*) is associated with 'logoASM::Instruction' (role 'logoASM_Instruction21', cardinality 0..*).
+'logoASM::ProcCall' (role 'logoASM_ProcCall', cardinality 0..*) is associated with 'logoASM::Expression' (role 'logoASM_Expression13', cardinality 0..*).
+'logoASM::ControlStructure' (role 'logoASM_ControlStructure', cardinality 0..*) is associated with 'logoASM::Expression' (role 'logoASM_Expression28', cardinality 0..*).
+'logoASM::Expression' (role 'logoASM_Expression11', cardinality 0..*) is associated with 'logoASM::BinaryExp' (role 'logoASM_BinaryExp10', cardinality 0..*).
+'logoASM::If' (role 'logoASM_If', cardinality 0..*) is associated with 'logoASM::Block' (role 'logoASM_Block23', cardinality 0..*).
+'logoASM::Expression' (role 'logoASM_Expression2', cardinality 0..*) is associated with 'logoASM::Forward' (role 'logoASM_Forward', cardinality 0..*).
+'logoASM::If' (role 'logoASM_If25', cardinality 0..*) is associated with 'logoASM::Block' (role 'logoASM_Block26', cardinality 0..*).
+'logoASM::BinaryExp' (role 'logoASM_BinaryExp', cardinality 0..*) is associated with 'logoASM::Expression' (role 'logoASM_Expression8', cardinality 0..*).
+'logoASM::Right' (role 'logoASM_Right', cardinality 0..*) is associated with 'logoASM::Expression' (role 'logoASM_Expression6', cardinality 0..*).

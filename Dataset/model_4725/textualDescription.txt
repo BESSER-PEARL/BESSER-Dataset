@@ -1,0 +1,408 @@
+The model has 175 class(es).
+The class 'asmeta::structure::AgentInitialization' has no attributes.
+The class 'asmeta::basictransitionrules::ExtendRule' has no attributes.
+The class 'Property' has no attributes.
+The class 'asmeta::structure::FunctionInitialization' has no attributes.
+The class 'asmeta::derivedtransitionrules::IterativeWhileRule' has no attributes.
+The class 'asmeta::basicterms::CollectionTerm' has the following attributes: 'size' of type str.
+The class 'asmeta::basictransitionrules::BasicRule' has no attributes.
+The class 'asmeta::domains::StringDomain' has no attributes.
+The class 'basictransitionrules::MacroCallRule' has no attributes.
+The class 'Function' has no attributes.
+The class 'asmeta::basicterms::LocationTerm' has no attributes.
+The class 'AbstractTd' has no attributes.
+The class 'asmeta::domains::Domain' has no attributes.
+The class 'asmeta::basictransitionrules::ConditionalRule' has no attributes.
+The class 'asmeta::furtherterms::CaseTerm' has the following attributes: 'resultTerms' of type str.
+The class 'asmeta::domains::AnyDomain' has no attributes.
+The class 'BasicRule' has no attributes.
+The class 'asmeta::basictransitionrules::ForallRule' has the following attributes: 'ranges' of type str.
+The class 'StructuredTd' has no attributes.
+The class 'DynamicFunction' has no attributes.
+The class 'BasicFunction' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'asmeta::domains::EnumTd' has no attributes.
+The class 'domains::TypeDomain' has no attributes.
+The class 'basictransitionrules::MacroDeclaration' has no attributes.
+The class 'asmeta::furtherterms::SequenceCt' has no attributes.
+The class 'asmeta::furtherterms::VariableBindingTerm' has no attributes.
+The class 'asmeta::turbotransitionrules::IterateRule' has no attributes.
+The class 'IntegerDomain' has no attributes.
+The class 'RealDomain' has no attributes.
+The class 'asmeta::derivedtransitionrules::DerivedRule' has no attributes.
+The class 'asmeta::furtherterms::RealTerm' has no attributes.
+The class 'asmeta::domains::BasicTd' has no attributes.
+The class 'asmeta::basictransitionrules::SkipRule' has no attributes.
+The class 'asmeta::domains::PowersetDomain' has no attributes.
+The class 'asmeta::definitions::MonitoredFunction' has no attributes.
+The class 'asmeta::furtherterms::NaturalTerm' has no attributes.
+The class 'asmeta::domains::BagDomain' has no attributes.
+The class 'ExportClause' has no attributes.
+The class 'asmeta::structure::Initialization' has no attributes.
+The class 'asmeta::domains::BooleanDomain' has no attributes.
+The class 'DerivedRule' has no attributes.
+The class 'DomainDefinition' has no attributes.
+The class 'asmeta::turbotransitionrules::TurboCallRule' has the following attributes: 'parameters' of type str.
+The class 'asmeta::basicterms::VariableTerm' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'asmeta::domains::ProductDomain' has the following attributes: 'domains' of type str.
+The class 'asmeta::furtherterms::MapCt' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'domains::StructuredTd' has no attributes.
+The class 'asmeta::structure::DomainInitialization' has no attributes.
+The class 'ExtendedTerm' has no attributes.
+The class 'turbotransitionrules::TurboDeclaration' has no attributes.
+The class 'asmeta::basicterms::RuleAsTerm' has no attributes.
+The class 'domains::Domain' has no attributes.
+The class 'asmeta::basicterms::ExtendedTerm' has no attributes.
+The class 'asmeta::basicterms::DomainTerm' has no attributes.
+The class 'asmeta::structure::Header' has no attributes.
+The class 'ComplexDomain' has no attributes.
+The class 'asmeta::furtherterms::ComplexTerm' has no attributes.
+The class 'asmeta::definitions::Property' has no attributes.
+The class 'asmeta::derivedtransitionrules::BasicDerivedRule' has no attributes.
+The class 'asmeta::definitions::SharedFunction' has no attributes.
+The class 'Asm' has no attributes.
+The class 'asmeta::structure::FunctionDefinition' has no attributes.
+The class 'asmeta::turbotransitionrules::TryCatchRule' has no attributes.
+The class 'asmeta::furtherterms::FiniteQuantificationTerm' has the following attributes: 'ranges' of type str.
+The class 'asmeta::basictransitionrules::LetRule' has no attributes.
+The class 'asmeta::basicterms::BooleanTerm' has no attributes.
+The class 'asmeta::turbotransitionrules::TurboLocalStateRule' has no attributes.
+The class 'asmeta::basicterms::ConstantTerm' has the following attributes: 'symbol' of type str.
+The class 'asmeta::definitions::ControlledFunction' has no attributes.
+The class 'asmeta::basicterms::Term' has no attributes.
+The class 'asmeta::definitions::DynamicFunction' has no attributes.
+The class 'asmeta::basicterms::UndefTerm' has no attributes.
+The class 'asmeta::definitions::LocalFunction' has no attributes.
+The class 'asmeta::derivedtransitionrules::CaseRule' has the following attributes: 'caseBranches' of type str.
+The class 'asmeta::definitions::StaticFunction' has no attributes.
+The class 'asmeta::basictransitionrules::TermAsRule' has the following attributes: 'parameters' of type str.
+The class 'basicterms::VariableTerm' has no attributes.
+The class 'asmeta::basicterms::FunctionTerm' has no attributes.
+The class 'asmeta::basictransitionrules::MacroCallRule' has the following attributes: 'parameters' of type str.
+The class 'RuleDeclaration' has no attributes.
+The class 'asmeta::domains::SequenceDomain' has no attributes.
+The class 'asmeta::turbotransitionrules::TurboDeclaration' has no attributes.
+The class 'Invariant' has no attributes.
+The class 'domains::EnumElement' has no attributes.
+The class 'asmeta::derivedtransitionrules::TurboDerivedRule' has no attributes.
+The class 'asmeta::furtherterms::ComprehensionTerm' has the following attributes: 'ranges' of type str.
+The class 'TypeDomain' has no attributes.
+The class 'asmeta::furtherterms::EnumTerm' has no attributes.
+The class 'asmeta::furtherterms::ExistTerm' has no attributes.
+The class 'FunctionInitialization' has no attributes.
+The class 'asmeta::definitions::DerivedFunction' has no attributes.
+The class 'asmeta::furtherterms::ForallTerm' has no attributes.
+The class 'LocalFunction' has no attributes.
+The class 'asmeta::structure::ExportClause' has no attributes.
+The class 'asmeta::structure::Signature' has no attributes.
+The class 'asmeta::turbotransitionrules::TurboReturnRule' has no attributes.
+The class 'asmeta::domains::RuleDomain' has the following attributes: 'domains' of type str.
+The class 'asmeta::domains::AbstractTd' has the following attributes: 'isDynamic' of type str.
+The class 'TurboRule' has no attributes.
+The class 'asmeta::furtherterms::SetCt' has no attributes.
+The class 'BasicTerm' has no attributes.
+The class 'basicterms::TupleTerm' has no attributes.
+The class 'asmeta::derivedtransitionrules::RecursiveWhileRule' has no attributes.
+The class 'turbotransitionrules::TurboCallRule' has no attributes.
+The class 'Domain' has no attributes.
+The class 'asmeta::turbotransitionrules::SeqRule' has the following attributes: 'rules' of type str.
+The class 'asmeta::structure::NamedElement' has the following attributes: 'name' of type str.
+The class 'DomainInitialization' has no attributes.
+The class 'CollectionTerm' has no attributes.
+The class 'basictransitionrules::Rule' has no attributes.
+The class 'ImportClause' has no attributes.
+The class 'Rule' has no attributes.
+The class 'asmeta::domains::AgentDomain' has no attributes.
+The class 'ComprehensionTerm' has no attributes.
+The class 'asmeta::furtherterms::CharTerm' has no attributes.
+The class 'asmeta::domains::StructuredTd' has no attributes.
+The class 'asmeta::furtherterms::SequenceTerm' has the following attributes: 'terms' of type str.
+The class 'asmeta::basictransitionrules::MacroDeclaration' has no attributes.
+The class 'FiniteQuantificationTerm' has no attributes.
+The class 'asmeta::turbotransitionrules::TurboRule' has no attributes.
+The class 'Body' has no attributes.
+The class 'asmeta::basicterms::TupleTerm' has the following attributes: 'arity' of type str; 'terms' of type str.
+The class 'asmeta::basictransitionrules::UpdateRule' has no attributes.
+The class 'asmeta::domains::NaturalDomain' has no attributes.
+The class 'asmeta::domains::ComplexDomain' has no attributes.
+The class 'asmeta::furtherterms::IntegerTerm' has no attributes.
+The class 'asmeta::furtherterms::BagTerm' has no attributes.
+The class 'asmeta::domains::TypeDomain' has no attributes.
+The class 'Initialization' has no attributes.
+The class 'asmeta::definitions::Invariant' has no attributes.
+The class 'FunctionTerm' has no attributes.
+The class 'asmeta::structure::Asm' has the following attributes: 'isAsynchr' of type str.
+The class 'ConstantTerm' has no attributes.
+The class 'basicterms::Term' has no attributes.
+The class 'furtherterms::FiniteQuantificationTerm' has no attributes.
+The class 'TurboDerivedRule' has no attributes.
+The class 'asmeta::domains::CharDomain' has no attributes.
+The class 'BasicDerivedRule' has no attributes.
+The class 'asmeta::furtherterms::ConditionalTerm' has no attributes.
+The class 'Term' has no attributes.
+The class 'asmeta::basictransitionrules::ChooseRule' has the following attributes: 'ranges' of type str.
+The class 'asmeta::domains::RealDomain' has no attributes.
+The class 'asmeta::basicterms::BasicTerm' has no attributes.
+The class 'asmeta::definitions::BasicFunction' has no attributes.
+The class 'asmeta::basictransitionrules::BlockRule' has the following attributes: 'rules' of type str.
+The class 'asmeta::furtherterms::BagCt' has no attributes.
+The class 'AgentInitialization' has no attributes.
+The class 'asmeta::furtherterms::StringTerm' has no attributes.
+The class 'FunctionDefinition' has no attributes.
+The class 'asmeta::furtherterms::LetTerm' has no attributes.
+The class 'asmeta::domains::ReserveDomain' has no attributes.
+The class 'asmeta::domains::IntegerDomain' has no attributes.
+The class 'asmeta::furtherterms::ExistUniqueTerm' has no attributes.
+The class 'asmeta::basicterms::SetTerm' has no attributes.
+The class 'VariableBindingTerm' has no attributes.
+The class 'asmeta::definitions::OutFunction' has no attributes.
+The class 'asmeta::domains::UndefDomain' has no attributes.
+The class 'asmeta::structure::Body' has no attributes.
+The class 'asmeta::definitions::Classifier' has no attributes.
+The class 'BasicTd' has no attributes.
+The class 'asmeta::basictransitionrules::Rule' has no attributes.
+The class 'domains::ConcreteDomain' has no attributes.
+The class 'basictransitionrules::TermAsRule' has no attributes.
+The class 'asmeta::definitions::Function' has the following attributes: 'arity' of type str.
+The class 'asmeta::structure::DomainDefinition' has no attributes.
+The class 'asmeta::structure::ImportClause' has the following attributes: 'moduleName' of type str.
+The class 'Header' has no attributes.
+The class 'asmeta::domains::MapDomain' has no attributes.
+The class 'asmeta::domains::EnumElement' has the following attributes: 'symbol' of type str.
+The class 'asmeta::domains::ConcreteDomain' has the following attributes: 'isDynamic' of type str.
+The class 'asmeta::furtherterms::MapTerm' has no attributes.
+The class 'asmeta::definitions::RuleDeclaration' has the following attributes: 'arity' of type str.
+The class 'Signature' has no attributes.
+The enumeration 'VariableKind' has the following literals: 'logicalVar', 'ruleVar', 'locationVar'.
+'asmeta::domains::SequenceDomain' is a specialization of 'StructuredTd'.
+'asmeta::domains::MapDomain' is a specialization of 'StructuredTd'.
+'asmeta::domains::BasicTd' is a specialization of 'TypeDomain'.
+'asmeta::derivedtransitionrules::RecursiveWhileRule' is a specialization of 'TurboDerivedRule'.
+'asmeta::domains::AnyDomain' is a specialization of 'TypeDomain'.
+'asmeta::derivedtransitionrules::BasicDerivedRule' is a specialization of 'DerivedRule'.
+'asmeta::furtherterms::BagTerm' is a specialization of 'CollectionTerm'.
+'asmeta::basicterms::SetTerm' is a specialization of 'CollectionTerm'.
+'asmeta::basicterms::LocationTerm' is a specialization of 'FunctionTerm'.
+'asmeta::turbotransitionrules::SeqRule' is a specialization of 'TurboRule'.
+'asmeta::definitions::SharedFunction' is a specialization of 'DynamicFunction'.
+'asmeta::furtherterms::SetCt' is a specialization of 'ComprehensionTerm'.
+'asmeta::furtherterms::SequenceCt' is a specialization of 'ComprehensionTerm'.
+'asmeta::domains::IntegerDomain' is a specialization of 'RealDomain'.
+'asmeta::structure::Initialization' is a specialization of 'NamedElement'.
+'asmeta::furtherterms::VariableBindingTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::definitions::Invariant' is a specialization of 'Property'.
+'asmeta::domains::ConcreteDomain' is a specialization of 'Domain'.
+'asmeta::derivedtransitionrules::TurboDerivedRule' is a specialization of 'DerivedRule'.
+'asmeta::basicterms::VariableTerm' is a specialization of 'BasicTerm'.
+'asmeta::basictransitionrules::ConditionalRule' is a specialization of 'BasicRule'.
+'asmeta::basicterms::RuleAsTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::basicterms::DomainTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::furtherterms::ForallTerm' is a specialization of 'FiniteQuantificationTerm'.
+'asmeta::domains::ProductDomain' is a specialization of 'StructuredTd'.
+'asmeta::basicterms::BooleanTerm' is a specialization of 'ConstantTerm'.
+'asmeta::turbotransitionrules::TurboCallRule' is a specialization of 'TurboRule'.
+'asmeta::basictransitionrules::BasicRule' is a specialization of 'Rule'.
+'asmeta::basictransitionrules::UpdateRule' is a specialization of 'BasicRule'.
+'asmeta::domains::AgentDomain' is a specialization of 'AbstractTd'.
+'asmeta::basicterms::ExtendedTerm' is a specialization of 'Term'.
+'asmeta::furtherterms::CaseTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::basicterms::FunctionTerm' is a specialization of 'BasicTerm'.
+'asmeta::basictransitionrules::SkipRule' is a specialization of 'BasicRule'.
+'asmeta::definitions::DerivedFunction' is a specialization of 'Function'.
+'asmeta::basicterms::ConstantTerm' is a specialization of 'BasicTerm'.
+'asmeta::domains::RealDomain' is a specialization of 'ComplexDomain'.
+'asmeta::definitions::RuleDeclaration' is a specialization of 'Classifier'.
+'asmeta::domains::ReserveDomain' is a specialization of 'AbstractTd'.
+'asmeta::derivedtransitionrules::IterativeWhileRule' is a specialization of 'TurboDerivedRule'.
+'asmeta::domains::EnumTd' is a specialization of 'TypeDomain'.
+'asmeta::furtherterms::ComplexTerm' is a specialization of 'ConstantTerm'.
+'asmeta::definitions::StaticFunction' is a specialization of 'BasicFunction'.
+'asmeta::domains::UndefDomain' is a specialization of 'BasicTd'.
+'asmeta::furtherterms::BagCt' is a specialization of 'ComprehensionTerm'.
+'asmeta::basicterms::UndefTerm' is a specialization of 'ConstantTerm'.
+'asmeta::basicterms::CollectionTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::definitions::OutFunction' is a specialization of 'DynamicFunction'.
+'asmeta::domains::CharDomain' is a specialization of 'BasicTd'.
+'asmeta::derivedtransitionrules::DerivedRule' is a specialization of 'Rule'.
+'asmeta::basicterms::BasicTerm' is a specialization of 'Term'.
+'asmeta::domains::BooleanDomain' is a specialization of 'BasicTd'.
+'asmeta::domains::StructuredTd' is a specialization of 'TypeDomain'.
+'asmeta::furtherterms::ExistTerm' is a specialization of 'FiniteQuantificationTerm'.
+'asmeta::derivedtransitionrules::CaseRule' is a specialization of 'BasicDerivedRule'.
+'asmeta::domains::NaturalDomain' is a specialization of 'IntegerDomain'.
+'asmeta::turbotransitionrules::TurboDeclaration' is a specialization of 'RuleDeclaration'.
+'asmeta::definitions::LocalFunction' is a specialization of 'DynamicFunction'.
+'asmeta::domains::RuleDomain' is a specialization of 'StructuredTd'.
+'asmeta::basicterms::TupleTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::furtherterms::EnumTerm' is a specialization of 'ConstantTerm'.
+'asmeta::definitions::BasicFunction' is a specialization of 'Function'.
+'asmeta::definitions::Function' is a specialization of 'Classifier'.
+'asmeta::basictransitionrules::ExtendRule' is a specialization of 'BasicRule'.
+'asmeta::furtherterms::RealTerm' is a specialization of 'ConstantTerm'.
+'asmeta::furtherterms::SequenceTerm' is a specialization of 'CollectionTerm'.
+'asmeta::definitions::Classifier' is a specialization of 'NamedElement'.
+'asmeta::definitions::DynamicFunction' is a specialization of 'BasicFunction'.
+'asmeta::structure::Asm' is a specialization of 'NamedElement'.
+'asmeta::definitions::MonitoredFunction' is a specialization of 'DynamicFunction'.
+'asmeta::turbotransitionrules::TurboReturnRule' is a specialization of 'TurboRule'.
+'asmeta::domains::PowersetDomain' is a specialization of 'StructuredTd'.
+'asmeta::furtherterms::NaturalTerm' is a specialization of 'ConstantTerm'.
+'asmeta::furtherterms::IntegerTerm' is a specialization of 'ConstantTerm'.
+'asmeta::turbotransitionrules::TurboRule' is a specialization of 'Rule'.
+'asmeta::definitions::ControlledFunction' is a specialization of 'DynamicFunction'.
+'asmeta::turbotransitionrules::TurboLocalStateRule' is a specialization of 'TurboRule'.
+'asmeta::turbotransitionrules::TryCatchRule' is a specialization of 'TurboRule'.
+'asmeta::furtherterms::LetTerm' is a specialization of 'VariableBindingTerm'.
+'asmeta::turbotransitionrules::IterateRule' is a specialization of 'TurboRule'.
+'asmeta::furtherterms::StringTerm' is a specialization of 'ConstantTerm'.
+'asmeta::basictransitionrules::ForallRule' is a specialization of 'BasicRule'.
+'asmeta::basictransitionrules::BlockRule' is a specialization of 'BasicRule'.
+'asmeta::basictransitionrules::LetRule' is a specialization of 'BasicRule'.
+'asmeta::furtherterms::MapTerm' is a specialization of 'CollectionTerm'.
+'asmeta::furtherterms::MapCt' is a specialization of 'ComprehensionTerm'.
+'asmeta::domains::TypeDomain' is a specialization of 'Domain'.
+'asmeta::definitions::Property' is a specialization of 'Classifier'.
+'asmeta::basictransitionrules::MacroDeclaration' is a specialization of 'RuleDeclaration'.
+'asmeta::basictransitionrules::TermAsRule' is a specialization of 'Rule'.
+'asmeta::basictransitionrules::ChooseRule' is a specialization of 'BasicRule'.
+'asmeta::furtherterms::ExistUniqueTerm' is a specialization of 'FiniteQuantificationTerm'.
+'asmeta::domains::ComplexDomain' is a specialization of 'BasicTd'.
+'asmeta::furtherterms::CharTerm' is a specialization of 'ConstantTerm'.
+'asmeta::furtherterms::FiniteQuantificationTerm' is a specialization of 'VariableBindingTerm'.
+'asmeta::domains::AbstractTd' is a specialization of 'TypeDomain'.
+'asmeta::furtherterms::ConditionalTerm' is a specialization of 'ExtendedTerm'.
+'asmeta::furtherterms::ComprehensionTerm' is a specialization of 'VariableBindingTerm'.
+'asmeta::domains::StringDomain' is a specialization of 'BasicTd'.
+'asmeta::domains::BagDomain' is a specialization of 'StructuredTd'.
+'asmeta::basictransitionrules::MacroCallRule' is a specialization of 'BasicRule'.
+'asmeta::domains::Domain' is a specialization of 'Classifier'.
+'asmeta::domains::ConcreteDomain' (role 'initializedDomain', cardinality 0..*) is associated with 'DomainInitialization' (role 'DomainInitialization271', cardinality 0..*).
+'asmeta::basictransitionrules::ConditionalRule' (role 'asmeta_basictransitionrules_ConditionalRule', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term189', cardinality 0..*).
+'asmeta::basictransitionrules::ChooseRule' (role 'asmeta_basictransitionrules_ChooseRule184', cardinality 0..*) is associated with 'basicterms::VariableTerm' (role 'basicterms_VariableTerm185', cardinality 0..*).
+'basicterms::TupleTerm' (role 'basicterms_TupleTerm', cardinality 0..*) is associated with 'asmeta::furtherterms::MapTerm' (role 'asmeta_furtherterms_MapTerm', cardinality 0..*).
+'asmeta::basicterms::Term' (role 'asmeta_basicterms_Term', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain', cardinality 0..*).
+'domains::Domain' (role 'Domain', cardinality 0..*) is associated with 'asmeta::structure::Signature' (role 'signature', cardinality 0..*).
+'asmeta::structure::DomainInitialization' (role 'asmeta_structure_DomainInitialization', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term70', cardinality 0..*).
+'asmeta::definitions::RuleDeclaration' (role 'constrainedRule', cardinality 0..*) is associated with 'Invariant' (role 'Invariant', cardinality 0..*).
+'turbotransitionrules::TurboCallRule' (role 'turbotransitionrules_TurboCallRule', cardinality 0..*) is associated with 'asmeta::turbotransitionrules::TurboReturnRule' (role 'asmeta_turbotransitionrules_TurboReturnRule145', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term200', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ForallRule' (role 'asmeta_basictransitionrules_ForallRule199', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule157', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::RecursiveWhileRule' (role 'asmeta_derivedtransitionrules_RecursiveWhileRule', cardinality 0..*).
+'asmeta::domains::BagDomain' (role 'asmeta_domains_BagDomain', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain276', cardinality 0..*).
+'Invariant' (role 'Invariant267', cardinality 0..*) is associated with 'asmeta::domains::Domain' (role 'constrainedDomain', cardinality 0..*).
+'asmeta::structure::Initialization' (role 'initialState110', cardinality 0..*) is associated with 'FunctionInitialization' (role 'FunctionInitialization', cardinality 0..*).
+'FunctionDefinition' (role 'FunctionDefinition251', cardinality 0..*) is associated with 'asmeta::definitions::Function' (role 'definedFunction', cardinality 0..*).
+'asmeta::furtherterms::BagTerm' (role 'asmeta_furtherterms_BagTerm', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term35', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term182', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ChooseRule' (role 'asmeta_basictransitionrules_ChooseRule181', cardinality 0..*).
+'asmeta::structure::Body' (role 'asmeta_structure_Body55', cardinality 0..*) is associated with 'DomainDefinition' (role 'DomainDefinition', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term97', cardinality 0..*) is associated with 'asmeta::structure::FunctionDefinition' (role 'asmeta_structure_FunctionDefinition', cardinality 0..*).
+'asmeta::structure::Header' (role 'asmeta_structure_Header118', cardinality 0..*) is associated with 'ExportClause' (role 'ExportClause', cardinality 0..*).
+'Signature' (role 'Signature', cardinality 0..*) is associated with 'asmeta::structure::Header' (role 'headerSection', cardinality 0..*).
+'asmeta::turbotransitionrules::TryCatchRule' (role 'asmeta_turbotransitionrules_TryCatchRule149', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule150', cardinality 0..*).
+'asmeta::structure::Signature' (role 'signature75', cardinality 0..*) is associated with 'Function' (role 'Function76', cardinality 0..*).
+'asmeta::structure::FunctionInitialization' (role 'initialization', cardinality 0..*) is associated with 'DynamicFunction' (role 'DynamicFunction', cardinality 0..*).
+'ImportClause' (role 'ImportClause', cardinality 0..*) is associated with 'asmeta::structure::Header' (role 'asmeta_structure_Header', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term162', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::IterativeWhileRule' (role 'asmeta_derivedtransitionrules_IterativeWhileRule', cardinality 0..*).
+'asmeta::basictransitionrules::LetRule' (role 'asmeta_basictransitionrules_LetRule', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule205', cardinality 0..*).
+'asmeta::definitions::Function' (role 'constrainedFunction', cardinality 0..*) is associated with 'Invariant' (role 'Invariant253', cardinality 0..*).
+'asmeta::turbotransitionrules::TryCatchRule' (role 'asmeta_turbotransitionrules_TryCatchRule', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term147', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule230', cardinality 0..*) is associated with 'asmeta::definitions::RuleDeclaration' (role 'asmeta_definitions_RuleDeclaration229', cardinality 0..*).
+'FunctionDefinition' (role 'FunctionDefinition', cardinality 0..*) is associated with 'asmeta::structure::Body' (role 'asmeta_structure_Body', cardinality 0..*).
+'asmeta::turbotransitionrules::TurboCallRule' (role 'asmeta_turbotransitionrules_TurboCallRule', cardinality 0..*) is associated with 'turbotransitionrules::TurboDeclaration' (role 'turbotransitionrules_TurboDeclaration', cardinality 0..*).
+'RuleDeclaration' (role 'RuleDeclaration', cardinality 0..*) is associated with 'asmeta::basicterms::RuleAsTerm' (role 'asmeta_basicterms_RuleAsTerm', cardinality 0..*).
+'asmeta::basictransitionrules::LetRule' (role 'asmeta_basictransitionrules_LetRule207', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term208', cardinality 0..*).
+'asmeta::structure::ImportClause' (role 'asmeta_structure_ImportClause94', cardinality 0..*) is associated with 'RuleDeclaration' (role 'RuleDeclaration95', cardinality 0..*).
+'asmeta::structure::Initialization' (role 'defaultInitialState', cardinality 0..*) is associated with 'Asm' (role 'Asm114', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain89', cardinality 0..*) is associated with 'asmeta::structure::ImportClause' (role 'asmeta_structure_ImportClause', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term238', cardinality 0..*) is associated with 'asmeta::definitions::Invariant' (role 'asmeta_definitions_Invariant', cardinality 0..*).
+'Function' (role 'Function', cardinality 0..*) is associated with 'asmeta::basicterms::FunctionTerm' (role 'asmeta_basicterms_FunctionTerm43', cardinality 0..*).
+'asmeta::furtherterms::FiniteQuantificationTerm' (role 'finiteQuantificationTerm', cardinality 0..*) is associated with 'basicterms::VariableTerm' (role 'VariableTerm', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain249', cardinality 0..*) is associated with 'asmeta::definitions::Function' (role 'asmeta_definitions_Function248', cardinality 0..*).
+'Initialization' (role 'Initialization125', cardinality 0..*) is associated with 'asmeta::structure::Asm' (role 'asm', cardinality 0..*).
+'AgentInitialization' (role 'AgentInitialization', cardinality 0..*) is associated with 'asmeta::structure::Initialization' (role 'initialState112', cardinality 0..*).
+'asmeta::structure::FunctionInitialization' (role 'asmeta_structure_FunctionInitialization', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term62', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term170', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::CaseRule' (role 'asmeta_derivedtransitionrules_CaseRule169', cardinality 0..*).
+'asmeta::structure::DomainInitialization' (role 'domainInitialization', cardinality 0..*) is associated with 'Initialization' (role 'Initialization72', cardinality 0..*).
+'asmeta::structure::Signature' (role 'signature78', cardinality 0..*) is associated with 'Header' (role 'Header', cardinality 0..*).
+'asmeta::turbotransitionrules::TurboDeclaration' (role 'asmeta_turbotransitionrules_TurboDeclaration', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain134', cardinality 0..*).
+'asmeta::furtherterms::ConditionalTerm' (role 'asmeta_furtherterms_ConditionalTerm', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term11', cardinality 0..*).
+'asmeta::basictransitionrules::UpdateRule' (role 'asmeta_basictransitionrules_UpdateRule', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term221', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain49', cardinality 0..*) is associated with 'asmeta::structure::AgentInitialization' (role 'asmeta_structure_AgentInitialization48', cardinality 0..*).
+'asmeta::turbotransitionrules::IterateRule' (role 'asmeta_turbotransitionrules_IterateRule', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule155', cardinality 0..*).
+'Body' (role 'Body', cardinality 0..*) is associated with 'asmeta::structure::Asm' (role 'asm127', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain261', cardinality 0..*) is associated with 'asmeta::domains::MapDomain' (role 'asmeta_domains_MapDomain', cardinality 0..*).
+'asmeta::basicterms::VariableTerm' (role 'variable', cardinality 0..*) is associated with 'furtherterms::FiniteQuantificationTerm' (role 'FiniteQuantificationTerm', cardinality 0..*).
+'asmeta::definitions::Function' (role 'function', cardinality 0..*) is associated with 'Signature' (role 'Signature255', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term6', cardinality 0..*) is associated with 'asmeta::furtherterms::LetTerm' (role 'asmeta_furtherterms_LetTerm5', cardinality 0..*).
+'asmeta::structure::Body' (role 'bodySection', cardinality 0..*) is associated with 'Asm' (role 'Asm', cardinality 0..*).
+'asmeta::structure::DomainDefinition' (role 'asmeta_structure_DomainDefinition', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term104', cardinality 0..*).
+'Header' (role 'Header130', cardinality 0..*) is associated with 'asmeta::structure::Asm' (role 'asm129', cardinality 0..*).
+'asmeta::furtherterms::ComprehensionTerm' (role 'asmeta_furtherterms_ComprehensionTerm', cardinality 0..*) is associated with 'basicterms::VariableTerm' (role 'basicterms_VariableTerm19', cardinality 0..*).
+'asmeta::derivedtransitionrules::IterativeWhileRule' (role 'asmeta_derivedtransitionrules_IterativeWhileRule164', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule165', cardinality 0..*).
+'FunctionInitialization' (role 'FunctionInitialization234', cardinality 0..*) is associated with 'asmeta::definitions::DynamicFunction' (role 'initializedFunction', cardinality 0..*).
+'basictransitionrules::MacroCallRule' (role 'basictransitionrules_MacroCallRule', cardinality 0..*) is associated with 'asmeta::structure::AgentInitialization' (role 'asmeta_structure_AgentInitialization', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'asmeta::structure::Body' (role 'asmeta_structure_Body53', cardinality 0..*).
+'basicterms::Term' (role 'Term', cardinality 0..*) is associated with 'asmeta::basictransitionrules::TermAsRule' (role 'termAsRule', cardinality 0..*).
+'asmeta::turbotransitionrules::TurboLocalStateRule' (role 'asmeta_turbotransitionrules_TurboLocalStateRule137', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule138', cardinality 0..*).
+'asmeta::domains::SequenceDomain' (role 'asmeta_domains_SequenceDomain', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain257', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule179', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ChooseRule' (role 'asmeta_basictransitionrules_ChooseRule178', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule153', cardinality 0..*) is associated with 'asmeta::turbotransitionrules::TryCatchRule' (role 'asmeta_turbotransitionrules_TryCatchRule152', cardinality 0..*).
+'asmeta::furtherterms::ConditionalTerm' (role 'asmeta_furtherterms_ConditionalTerm16', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term17', cardinality 0..*).
+'Initialization' (role 'Initialization60', cardinality 0..*) is associated with 'asmeta::structure::FunctionInitialization' (role 'functionInitialization', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term33', cardinality 0..*) is associated with 'asmeta::furtherterms::CaseTerm' (role 'asmeta_furtherterms_CaseTerm32', cardinality 0..*).
+'asmeta::definitions::RuleDeclaration' (role 'ruleDeclaration', cardinality 0..*) is associated with 'Body' (role 'Body232', cardinality 0..*).
+'asmeta::domains::Domain' (role 'domain', cardinality 0..*) is associated with 'Signature' (role 'Signature269', cardinality 0..*).
+'asmeta::basicterms::SetTerm' (role 'asmeta_basicterms_SetTerm', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term38', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm216', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ExtendRule' (role 'asmeta_basictransitionrules_ExtendRule215', cardinality 0..*).
+'asmeta::definitions::Invariant' (role 'constraint243', cardinality 0..*) is associated with 'Function' (role 'Function244', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term22', cardinality 0..*) is associated with 'asmeta::furtherterms::ComprehensionTerm' (role 'asmeta_furtherterms_ComprehensionTerm21', cardinality 0..*).
+'asmeta::structure::ExportClause' (role 'asmeta_structure_ExportClause86', cardinality 0..*) is associated with 'RuleDeclaration' (role 'RuleDeclaration87', cardinality 0..*).
+'asmeta::basictransitionrules::ExtendRule' (role 'asmeta_basictransitionrules_ExtendRule', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain213', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term9', cardinality 0..*) is associated with 'asmeta::furtherterms::FiniteQuantificationTerm' (role 'asmeta_furtherterms_FiniteQuantificationTerm', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term160', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::RecursiveWhileRule' (role 'asmeta_derivedtransitionrules_RecursiveWhileRule159', cardinality 0..*).
+'asmeta::structure::Signature' (role 'asmeta_structure_Signature', cardinality 0..*) is associated with 'domains::StructuredTd' (role 'domains_StructuredTd', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term167', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::CaseRule' (role 'asmeta_derivedtransitionrules_CaseRule', cardinality 0..*).
+'asmeta::furtherterms::ConditionalTerm' (role 'asmeta_furtherterms_ConditionalTerm13', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term14', cardinality 0..*).
+'asmeta::domains::ConcreteDomain' (role 'asmeta_domains_ConcreteDomain', cardinality 0..*) is associated with 'domains::TypeDomain' (role 'domains_TypeDomain', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain259', cardinality 0..*) is associated with 'asmeta::domains::PowersetDomain' (role 'asmeta_domains_PowersetDomain', cardinality 0..*).
+'asmeta::basictransitionrules::ConditionalRule' (role 'asmeta_basictransitionrules_ConditionalRule191', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule192', cardinality 0..*).
+'asmeta::turbotransitionrules::TurboLocalStateRule' (role 'asmeta_turbotransitionrules_TurboLocalStateRule140', cardinality 0..*) is associated with 'LocalFunction' (role 'LocalFunction', cardinality 0..*).
+'asmeta::furtherterms::CaseTerm' (role 'asmeta_furtherterms_CaseTerm', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term27', cardinality 0..*).
+'Initialization' (role 'Initialization', cardinality 0..*) is associated with 'asmeta::structure::AgentInitialization' (role 'agentInitialization', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm', cardinality 0..*) is associated with 'asmeta::furtherterms::LetTerm' (role 'asmeta_furtherterms_LetTerm', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain84', cardinality 0..*) is associated with 'asmeta::structure::ExportClause' (role 'asmeta_structure_ExportClause83', cardinality 0..*).
+'DomainInitialization' (role 'DomainInitialization', cardinality 0..*) is associated with 'asmeta::structure::Initialization' (role 'initialState', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm211', cardinality 0..*) is associated with 'asmeta::basictransitionrules::LetRule' (role 'asmeta_basictransitionrules_LetRule210', cardinality 0..*).
+'asmeta::basictransitionrules::ForallRule' (role 'asmeta_basictransitionrules_ForallRule202', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule203', cardinality 0..*).
+'asmeta::furtherterms::CaseTerm' (role 'asmeta_furtherterms_CaseTerm29', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term30', cardinality 0..*).
+'domains::ConcreteDomain' (role 'ConcreteDomain107', cardinality 0..*) is associated with 'asmeta::structure::DomainDefinition' (role 'definition106', cardinality 0..*).
+'domains::Domain' (role 'domains_Domain246', cardinality 0..*) is associated with 'asmeta::definitions::Function' (role 'asmeta_definitions_Function', cardinality 0..*).
+'asmeta::basictransitionrules::ConditionalRule' (role 'asmeta_basictransitionrules_ConditionalRule194', cardinality 0..*) is associated with 'basictransitionrules::Rule' (role 'basictransitionrules_Rule195', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term143', cardinality 0..*) is associated with 'asmeta::turbotransitionrules::TurboReturnRule' (role 'asmeta_turbotransitionrules_TurboReturnRule', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule173', cardinality 0..*) is associated with 'asmeta::derivedtransitionrules::CaseRule' (role 'asmeta_derivedtransitionrules_CaseRule172', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm226', cardinality 0..*) is associated with 'asmeta::definitions::RuleDeclaration' (role 'asmeta_definitions_RuleDeclaration', cardinality 0..*).
+'asmeta::structure::ImportClause' (role 'asmeta_structure_ImportClause91', cardinality 0..*) is associated with 'Function' (role 'Function92', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule', cardinality 0..*) is associated with 'asmeta::turbotransitionrules::TurboLocalStateRule' (role 'asmeta_turbotransitionrules_TurboLocalStateRule', cardinality 0..*).
+'domains::Domain' (role 'Domain236', cardinality 0..*) is associated with 'asmeta::definitions::Invariant' (role 'constraint', cardinality 0..*).
+'Function' (role 'Function102', cardinality 0..*) is associated with 'asmeta::structure::FunctionDefinition' (role 'definition', cardinality 0..*).
+'basicterms::Term' (role 'basicterms_Term', cardinality 0..*) is associated with 'asmeta::furtherterms::LetTerm' (role 'asmeta_furtherterms_LetTerm3', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule219', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ExtendRule' (role 'asmeta_basictransitionrules_ExtendRule218', cardinality 0..*).
+'asmeta::basictransitionrules::MacroCallRule' (role 'asmeta_basictransitionrules_MacroCallRule', cardinality 0..*) is associated with 'basictransitionrules::MacroDeclaration' (role 'basictransitionrules_MacroDeclaration187', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm197', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ForallRule' (role 'asmeta_basictransitionrules_ForallRule', cardinality 0..*).
+'asmeta::structure::Asm' (role 'asmeta_structure_Asm', cardinality 0..*) is associated with 'Initialization' (role 'Initialization123', cardinality 0..*).
+'asmeta::domains::MapDomain' (role 'asmeta_domains_MapDomain263', cardinality 0..*) is associated with 'domains::Domain' (role 'domains_Domain264', cardinality 0..*).
+'asmeta::domains::ConcreteDomain' (role 'definedDomain', cardinality 0..*) is associated with 'DomainDefinition' (role 'DomainDefinition273', cardinality 0..*).
+'domains::EnumElement' (role 'domains_EnumElement', cardinality 0..*) is associated with 'asmeta::domains::EnumTd' (role 'asmeta_domains_EnumTd', cardinality 0..*).
+'Function' (role 'Function81', cardinality 0..*) is associated with 'asmeta::structure::ExportClause' (role 'asmeta_structure_ExportClause', cardinality 0..*).
+'asmeta::structure::DomainInitialization' (role 'initialization68', cardinality 0..*) is associated with 'domains::ConcreteDomain' (role 'ConcreteDomain', cardinality 0..*).
+'asmeta::definitions::Invariant' (role 'constraint240', cardinality 0..*) is associated with 'RuleDeclaration' (role 'RuleDeclaration241', cardinality 0..*).
+'asmeta::furtherterms::ComprehensionTerm' (role 'asmeta_furtherterms_ComprehensionTerm24', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term25', cardinality 0..*).
+'asmeta::basicterms::FunctionTerm' (role 'asmeta_basicterms_FunctionTerm', cardinality 0..*) is associated with 'basicterms::TupleTerm' (role 'basicterms_TupleTerm41', cardinality 0..*).
+'basictransitionrules::MacroDeclaration' (role 'basictransitionrules_MacroDeclaration', cardinality 0..*) is associated with 'asmeta::structure::Asm' (role 'asmeta_structure_Asm132', cardinality 0..*).
+'basictransitionrules::TermAsRule' (role 'TermAsRule', cardinality 0..*) is associated with 'asmeta::basicterms::Term' (role 'term', cardinality 0..*).
+'asmeta::structure::Body' (role 'asmBody', cardinality 0..*) is associated with 'RuleDeclaration' (role 'RuleDeclaration57', cardinality 0..*).
+'basictransitionrules::Rule' (role 'basictransitionrules_Rule176', cardinality 0..*) is associated with 'asmeta::basictransitionrules::ChooseRule' (role 'asmeta_basictransitionrules_ChooseRule', cardinality 0..*).
+'asmeta::basictransitionrules::UpdateRule' (role 'asmeta_basictransitionrules_UpdateRule223', cardinality 0..*) is associated with 'basicterms::Term' (role 'basicterms_Term224', cardinality 0..*).
+'basicterms::VariableTerm' (role 'basicterms_VariableTerm66', cardinality 0..*) is associated with 'asmeta::structure::FunctionInitialization' (role 'asmeta_structure_FunctionInitialization65', cardinality 0..*).
+'asmeta::structure::FunctionDefinition' (role 'asmeta_structure_FunctionDefinition99', cardinality 0..*) is associated with 'basicterms::VariableTerm' (role 'basicterms_VariableTerm100', cardinality 0..*).
+'asmeta::structure::Header' (role 'headerSection120', cardinality 0..*) is associated with 'Asm' (role 'Asm121', cardinality 0..*).

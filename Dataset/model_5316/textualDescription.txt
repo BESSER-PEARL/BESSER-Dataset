@@ -1,0 +1,44 @@
+The model has 20 class(es).
+The class 'refinher2::A' has no attributes.
+The class 'refinher2::Y' has no attributes.
+The class 'refinher2::DG' has no attributes.
+The class 'CE' has no attributes.
+The class 'refinher2::DR' has no attributes.
+The class 'refinher2::H' has no attributes.
+The class 'refinher2::E' has no attributes.
+The class 'refinher2::AB' has no attributes.
+The class 'refinher2::CE' has no attributes.
+The class 'E' has no attributes.
+The class 'N' has no attributes.
+The class 'refinher2::N' has no attributes.
+The class 'DNamedElement' has no attributes.
+The class 'M' has no attributes.
+The class 'refinher2::DC' has no attributes.
+The class 'refinher2::BB' has no attributes.
+The class 'A' has no attributes.
+The class 'refinher2::DL' has no attributes.
+The class 'refinher2::M' has no attributes.
+The class 'refinher2::DNamedElement' has the following attributes: 'name' of type str.
+'refinher2::N' is a specialization of 'A'.
+'refinher2::DL' is a specialization of 'CE'.
+'refinher2::H' is a specialization of 'N'.
+'refinher2::BB' is a specialization of 'DNamedElement'.
+'refinher2::CE' is a specialization of 'E'.
+'refinher2::E' is a specialization of 'DNamedElement'.
+'refinher2::N' is a specialization of 'DNamedElement'.
+'refinher2::Y' is a specialization of 'N'.
+'refinher2::N' is a specialization of 'M'.
+'refinher2::DC' is a specialization of 'CE'.
+'refinher2::A' is a specialization of 'DNamedElement'.
+'refinher2::CE' is a specialization of 'A'.
+'refinher2::AB' is a specialization of 'DNamedElement'.
+'refinher2::DR' is a specialization of 'E'.
+'refinher2::N' (role 'refinher2_N', cardinality 0..*) is associated with 'refinher2::E' (role 'refinher2_E', cardinality 0..*).
+'refinher2::DG' (role 'refinher2_DG7', cardinality 0..*) is associated with 'refinher2::BB' (role 'refinher2_BB8', cardinality 0..*).
+'refinher2::E' (role 'refinher2_E17', cardinality 0..*) is associated with 'refinher2::H' (role 'refinher2_H', cardinality 0..*).
+'refinher2::A' (role 'refinher2_A14', cardinality 0..*) is associated with 'refinher2::N' (role 'refinher2_N15', cardinality 0..*).
+'refinher2::AB' (role 'refinher2_AB12', cardinality 0..*) is associated with 'refinher2::A' (role 'refinher2_A', cardinality 0..*).
+'refinher2::M' (role 'refinher2_M', cardinality 0..*) is associated with 'refinher2::E' (role 'refinher2_E2', cardinality 0..*).
+'refinher2::DG' (role 'refinher2_DG10', cardinality 0..*) is associated with 'refinher2::AB' (role 'refinher2_AB', cardinality 0..*).
+'refinher2::DG' (role 'refinher2_DG', cardinality 0..*) is associated with 'refinher2::N' (role 'refinher2_N5', cardinality 0..*).
+'refinher2::DL' (role 'refinher2_DL', cardinality 0..*) is associated with 'refinher2::BB' (role 'refinher2_BB', cardinality 0..*).

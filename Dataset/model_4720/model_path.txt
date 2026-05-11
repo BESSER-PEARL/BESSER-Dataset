@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset-mtl/repos/dvojtise/cellularautomata/deprecated/org.kermeta.language.sample.cellularautomata.rules.model/metamodel/rules.ecore

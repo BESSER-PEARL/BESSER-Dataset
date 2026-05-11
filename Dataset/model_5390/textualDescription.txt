@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'nonemf::B' has no attributes.
+The class 'Serializable' has no attributes.
+The class 'nonemf::MySerializableClass' has the following attributes: 'somethingInteresting' of type str.
+The class 'nonemf::A' has no attributes.
+The class 'nonemf::Serializable' has no attributes.
+The enumeration 'TestA' does not specify any literals.
+The enumeration 'TestB' does not specify any literals.
+'nonemf::MySerializableClass' is a specialization of 'Serializable'.

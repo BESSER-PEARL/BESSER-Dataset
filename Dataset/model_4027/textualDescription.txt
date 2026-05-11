@@ -1,0 +1,52 @@
+The model has 17 class(es).
+The class 'UML::14::MethodenWert' has the following attributes: 'standartWert' of type str; 'art' of type str.
+The class 'UML::14::Kommentar' has the following attributes: 'inhalt' of type str.
+The class 'UML::14::Verbindungsende' has the following attributes: 'istNavigierbar' of type str; 'sichtbarkeit' of type str.
+The class 'UML::14::InstanzAnzahl' has the following attributes: 'obergrenze' of type str; 'untergrenze' of type str.
+The class 'UML::14::Benanntes' has the following attributes: 'beschreibung' of type str.
+The class 'UML::14::Schachtel' has no attributes.
+The class 'UML::14::Einschraenkung' has the following attributes: 'beschreibung' of type str.
+The class 'UML::14::Aufzaehlung' has no attributes.
+The class 'UML::14::Eigenschaft' has the following attributes: 'sichtbarkeit' of type str; 'initialWert' of type str.
+The class 'Benanntes' has no attributes.
+The class 'UML::14::root' has no attributes.
+The class 'UML::14::Konzept' has the following attributes: 'istAktiev' of type str.
+The class 'UML::14::Verhalten' has the following attributes: 'inhlat' of type str; 'sichtbarkeit' of type str.
+The class 'UML::14::Aufzaehlungswert' has the following attributes: 'wert' of type str.
+The class 'UML::14::Vererbung' has the following attributes: 'unterscheidung' of type str.
+The class 'UML::14::Einfach' has no attributes.
+The class 'UML::14::Verbindung' has no attributes.
+'UML::14::Verbindung' is a specialization of 'Benanntes'.
+'UML::14::Verbindungsende' is a specialization of 'Benanntes'.
+'UML::14::Verhalten' is a specialization of 'Benanntes'.
+'UML::14::Einfach' is a specialization of 'Benanntes'.
+'UML::14::Eigenschaft' is a specialization of 'Benanntes'.
+'UML::14::MethodenWert' is a specialization of 'Benanntes'.
+'UML::14::Aufzaehlung' is a specialization of 'Benanntes'.
+'UML::14::Schachtel' is a specialization of 'Benanntes'.
+'UML::14::Konzept' is a specialization of 'Benanntes'.
+'UML::14::Konzept' (role 'UML_14_Konzept30', cardinality 0..*) is associated with 'UML::14::Verhalten' (role 'UML_14_Verhalten31', cardinality 0..*).
+'UML::14::Verbindungsende' (role 'UML_14_Verbindungsende24', cardinality 0..*) is associated with 'UML::14::Eigenschaft' (role 'UML_14_Eigenschaft25', cardinality 0..*).
+'UML::14::Aufzaehlung' (role 'UML_14_Aufzaehlung8', cardinality 0..*) is associated with 'UML::14::Eigenschaft' (role 'UML_14_Eigenschaft7', cardinality 0..*).
+'UML::14::Schachtel' (role 'UML_14_Schachtel42', cardinality 0..*) is associated with 'UML::14::Aufzaehlung' (role 'UML_14_Aufzaehlung43', cardinality 0..*).
+'UML::14::Verhalten' (role 'UML_14_Verhalten', cardinality 0..*) is associated with 'UML::14::MethodenWert' (role 'UML_14_MethodenWert4', cardinality 0..*).
+'UML::14::Einfach' (role 'UML_14_Einfach', cardinality 0..*) is associated with 'UML::14::MethodenWert' (role 'UML_14_MethodenWert2', cardinality 0..*).
+'UML::14::Eigenschaft' (role 'UML_14_Eigenschaft', cardinality 0..*) is associated with 'UML::14::InstanzAnzahl' (role 'UML_14_InstanzAnzahl', cardinality 0..*).
+'UML::14::Eigenschaft' (role 'UML_14_Eigenschaft10', cardinality 0..*) is associated with 'UML::14::Einfach' (role 'UML_14_Einfach11', cardinality 0..*).
+'UML::14::Kommentar' (role 'UML_14_Kommentar', cardinality 0..*) is associated with 'UML::14::Benanntes' (role 'UML_14_Benanntes', cardinality 0..*).
+'UML::14::Konzept' (role 'UML_14_Konzept37', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel36', cardinality 0..*).
+'UML::14::Konzept' (role 'UML_14_Konzept', cardinality 0..*) is associated with 'UML::14::Vererbung' (role 'UML_14_Vererbung', cardinality 0..*).
+'UML::14::Eigenschaft' (role 'UML_14_Eigenschaft28', cardinality 0..*) is associated with 'UML::14::Konzept' (role 'UML_14_Konzept27', cardinality 0..*).
+'UML::14::Konzept' (role 'UML_14_Konzept19', cardinality 0..*) is associated with 'UML::14::Verbindungsende' (role 'UML_14_Verbindungsende', cardinality 0..*).
+'UML::14::Verbindung' (role 'Verbindung', cardinality 0..*) is associated with 'UML::14::Verbindungsende' (role 'verbinder', cardinality 0..*).
+'UML::14::Einschraenkung' (role 'UML_14_Einschraenkung', cardinality 0..*) is associated with 'UML::14::Benanntes' (role 'UML_14_Benanntes54', cardinality 0..*).
+'UML::14::Einfach' (role 'UML_14_Einfach51', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel50', cardinality 0..*).
+'UML::14::Vererbung' (role 'UML_14_Vererbung14', cardinality 0..*) is associated with 'UML::14::Konzept' (role 'UML_14_Konzept15', cardinality 0..*).
+'UML::14::Verbindung' (role 'UML_14_Verbindung', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel48', cardinality 0..*).
+'UML::14::root' (role 'UML_14_root', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel', cardinality 0..*).
+'UML::14::Schachtel' (role 'UML_14_Schachtel40', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel38', cardinality 0..*).
+'UML::14::Verbindungsende' (role 'UML_14_Verbindungsende21', cardinality 0..*) is associated with 'UML::14::InstanzAnzahl' (role 'UML_14_InstanzAnzahl22', cardinality 0..*).
+'UML::14::Vererbung' (role 'UML_14_Vererbung46', cardinality 0..*) is associated with 'UML::14::Schachtel' (role 'UML_14_Schachtel45', cardinality 0..*).
+'UML::14::Aufzaehlungswert' (role 'UML_14_Aufzaehlungswert', cardinality 0..*) is associated with 'UML::14::Aufzaehlung' (role 'UML_14_Aufzaehlung33', cardinality 0..*).
+'UML::14::Verbindung' (role 'link', cardinality 0..*) is associated with 'UML::14::Verbindungsende' (role 'Verbindungsende', cardinality 0..*).
+'UML::14::Aufzaehlung' (role 'UML_14_Aufzaehlung', cardinality 0..*) is associated with 'UML::14::MethodenWert' (role 'UML_14_MethodenWert', cardinality 0..*).

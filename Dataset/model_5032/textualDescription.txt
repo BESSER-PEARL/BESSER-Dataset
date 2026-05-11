@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'shop::Transaction' has the following attributes: 'price' of type float; 'endDate' of type date; 'number' of type str; 'paidDate' of type date; 'startDate' of type date.
+The class 'shop::Order' has the following attributes: 'number' of type str; 'comments' of type str.
+The class 'shop::Customer' has the following attributes: 'surname' of type str; 'telephoneNr' of type str; 'hotel' of type str; 'familyName' of type str; 'comments' of type str; 'address' of type str.
+The class 'shop::ProductCategory' has the following attributes: 'name' of type str.
+The class 'shop::PriceCategory' has the following attributes: 'prices' of type float; 'name' of type str.
+The class 'shop::Product' has the following attributes: 'name' of type str; 'number' of type str; 'description' of type str.
+'shop::Product' (role 'shop_Product13', cardinality 0..*) is associated with 'shop::Transaction' (role 'shop_Transaction', cardinality 0..*).
+'shop::Product' (role 'shop_Product', cardinality 0..*) is associated with 'shop::PriceCategory' (role 'shop_PriceCategory', cardinality 0..*).
+'shop::Order' (role 'Order', cardinality 0..*) is associated with 'shop::Transaction' (role 'transactions', cardinality 0..*).
+'shop::Order' (role 'order', cardinality 0..*) is associated with 'shop::Transaction' (role 'Transaction', cardinality 0..*).
+'shop::ProductCategory' (role 'productCategory', cardinality 0..*) is associated with 'shop::Product' (role 'Product', cardinality 0..*).
+'shop::Order' (role 'shop_Order', cardinality 0..*) is associated with 'shop::Customer' (role 'shop_Customer', cardinality 0..*).
+'shop::Product' (role 'products', cardinality 0..*) is associated with 'shop::ProductCategory' (role 'ProductCategory', cardinality 0..*).
+'shop::ProductCategory' (role 'ProductCategory8', cardinality 0..*) is associated with 'shop::ProductCategory' (role 'subCategorys', cardinality 0..*).
+'shop::ProductCategory' (role 'ProductCategory5', cardinality 0..*) is associated with 'shop::ProductCategory' (role 'parent', cardinality 0..*).

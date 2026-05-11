@@ -1,0 +1,123 @@
+The model has 55 class(es).
+The class 'componentModel::SimpleParameterType' has no attributes.
+The class 'componentModel::ProvidedDelegationConnector' has no attributes.
+The class 'componentModel::Char' has no attributes.
+The class 'componentModel::ViewType' has no attributes.
+The class 'componentModel::Interface' has the following attributes: 'name' of type str.
+The class 'componentModel::RequiredDelegationConnector' has no attributes.
+The class 'componentModel::Void' has no attributes.
+The class 'componentModel::AllocationViewType' has no attributes.
+The class 'componentModel::Int' has no attributes.
+The class 'componentModel::String' has no attributes.
+The class 'componentModel::Float' has no attributes.
+The class 'componentModel::Date' has no attributes.
+The class 'componentModel::Boolean' has no attributes.
+The class 'componentModel::SystemIndependentViewPoint' has no attributes.
+The class 'componentModel::AssemblyViewPoint' has no attributes.
+The class 'componentModel::AssemblyViewType' has no attributes.
+The class 'componentModel::ServiceEffectSpecification' has no attributes.
+The class 'Action' has no attributes.
+The class 'componentModel::ProvidedRole' has the following attributes: 'name' of type str.
+The class 'componentModel::Service' has no attributes.
+The class 'componentModel::Parameter' has the following attributes: 'name' of type str.
+The class 'componentModel::Type' has no attributes.
+The class 'componentModel::AssemblyContext' has the following attributes: 'name' of type str.
+The class 'componentModel::List' has no attributes.
+The class 'componentModel::InternalAction' has no attributes.
+The class 'componentModel::DeploymentViewPoint' has no attributes.
+The class 'componentModel::CompositeComponent' has no attributes.
+The class 'componentModel::System' has no attributes.
+The class 'componentModel::RequiredRole' has the following attributes: 'name' of type str.
+The class 'Component' has no attributes.
+The class 'componentModel::Branch' has no attributes.
+The class 'componentModel::DelegationConnector' has no attributes.
+The class 'componentModel::Action' has no attributes.
+The class 'componentModel::ViewPoint' has no attributes.
+The class 'componentModel::Loop' has no attributes.
+The class 'componentModel::ComplexParameterType' has no attributes.
+The class 'componentModel::ParameterTyp' has no attributes.
+The class 'componentModel::Repository' has no attributes.
+The class 'componentModel::Double' has no attributes.
+The class 'componentModel::EnvironmentViewType' has no attributes.
+The class 'componentModel::AssemblyConnector' has no attributes.
+The class 'componentModel::Component' has the following attributes: 'name' of type str.
+The class 'ViewPoint' has no attributes.
+The class 'ParameterTyp' has no attributes.
+The class 'DelegationConnector' has no attributes.
+The class 'Type' has no attributes.
+The class 'componentModel::Signature' has the following attributes: 'name' of type str.
+The class 'componentModel::InterfaceServiceMapTuple' has no attributes.
+The class 'ViewType' has no attributes.
+The class 'componentModel::ExternalCall' has no attributes.
+The class 'componentModel::RepositoryViewType' has no attributes.
+The class 'componentModel::Long' has no attributes.
+The class 'SimpleParameterType' has no attributes.
+The class 'AssemblyViewType' has no attributes.
+The class 'componentModel::Map' has no attributes.
+'componentModel::AllocationViewType' is a specialization of 'ViewType'.
+'componentModel::Boolean' is a specialization of 'SimpleParameterType'.
+'componentModel::Char' is a specialization of 'SimpleParameterType'.
+'componentModel::String' is a specialization of 'SimpleParameterType'.
+'componentModel::Map' is a specialization of 'SimpleParameterType'.
+'componentModel::SimpleParameterType' is a specialization of 'ParameterTyp'.
+'componentModel::Parameter' is a specialization of 'SimpleParameterType'.
+'componentModel::Double' is a specialization of 'SimpleParameterType'.
+'componentModel::AssemblyContext' is a specialization of 'AssemblyViewType'.
+'componentModel::Branch' is a specialization of 'Action'.
+'componentModel::ProvidedDelegationConnector' is a specialization of 'DelegationConnector'.
+'componentModel::RequiredDelegationConnector' is a specialization of 'DelegationConnector'.
+'componentModel::Int' is a specialization of 'SimpleParameterType'.
+'componentModel::Long' is a specialization of 'SimpleParameterType'.
+'componentModel::Float' is a specialization of 'SimpleParameterType'.
+'componentModel::EnvironmentViewType' is a specialization of 'ViewType'.
+'componentModel::Repository' is a specialization of 'ViewType'.
+'componentModel::CompositeComponent' is a specialization of 'Component'.
+'componentModel::List' is a specialization of 'SimpleParameterType'.
+'componentModel::ExternalCall' is a specialization of 'Action'.
+'componentModel::AssemblyViewPoint' is a specialization of 'ViewPoint'.
+'componentModel::DeploymentViewPoint' is a specialization of 'ViewPoint'.
+'componentModel::AssemblyViewType' is a specialization of 'ViewType'.
+'componentModel::SystemIndependentViewPoint' is a specialization of 'ViewPoint'.
+'componentModel::ComplexParameterType' is a specialization of 'ParameterTyp'.
+'componentModel::ParameterTyp' is a specialization of 'Type'.
+'componentModel::RepositoryViewType' is a specialization of 'ViewType'.
+'componentModel::InternalAction' is a specialization of 'Action'.
+'componentModel::Void' is a specialization of 'Type'.
+'componentModel::Date' is a specialization of 'SimpleParameterType'.
+'componentModel::Loop' is a specialization of 'Action'.
+'componentModel::Component' (role 'componentModel_Component4', cardinality 0..*) is associated with 'componentModel::ServiceEffectSpecification' (role 'componentModel_ServiceEffectSpecification', cardinality 0..*).
+'componentModel::ProvidedDelegationConnector' (role 'componentModel_ProvidedDelegationConnector67', cardinality 0..*) is associated with 'componentModel::ProvidedRole' (role 'componentModel_ProvidedRole68', cardinality 0..*).
+'componentModel::System' (role 'componentModel_System53', cardinality 0..*) is associated with 'componentModel::Interface' (role 'componentModel_Interface54', cardinality 0..*).
+'componentModel::Action' (role 'componentModel_Action19', cardinality 0..*) is associated with 'componentModel::Branch' (role 'componentModel_Branch', cardinality 0..*).
+'componentModel::AssemblyContext' (role 'AssemblyContext', cardinality 0..*) is associated with 'componentModel::RequiredRole' (role 'requiredrole', cardinality 0..*).
+'componentModel::Interface' (role 'componentModel_Interface39', cardinality 0..*) is associated with 'componentModel::RequiredDelegationConnector' (role 'componentModel_RequiredDelegationConnector38', cardinality 0..*).
+'componentModel::Component' (role 'componentModel_Component6', cardinality 0..*) is associated with 'componentModel::InterfaceServiceMapTuple' (role 'componentModel_InterfaceServiceMapTuple', cardinality 0..*).
+'componentModel::ViewType' (role 'componentModel_ViewType', cardinality 0..*) is associated with 'componentModel::ViewPoint' (role 'componentModel_ViewPoint', cardinality 0..*).
+'componentModel::Service' (role 'componentModel_Service45', cardinality 0..*) is associated with 'componentModel::Interface' (role 'componentModel_Interface46', cardinality 0..*).
+'componentModel::Component' (role 'componentModel_Component30', cardinality 0..*) is associated with 'componentModel::AssemblyContext' (role 'componentModel_AssemblyContext', cardinality 0..*).
+'componentModel::ProvidedRole' (role 'componentModel_ProvidedRole62', cardinality 0..*) is associated with 'componentModel::Interface' (role 'componentModel_Interface63', cardinality 0..*).
+'componentModel::AssemblyConnector' (role 'componentModel_AssemblyConnector', cardinality 0..*) is associated with 'componentModel::Component' (role 'componentModel_Component8', cardinality 0..*).
+'componentModel::ServiceEffectSpecification' (role 'componentModel_ServiceEffectSpecification17', cardinality 0..*) is associated with 'componentModel::Action' (role 'componentModel_Action', cardinality 0..*).
+'componentModel::Signature' (role 'componentModel_Signature49', cardinality 0..*) is associated with 'componentModel::Service' (role 'componentModel_Service48', cardinality 0..*).
+'componentModel::Repository' (role 'componentModel_Repository73', cardinality 0..*) is associated with 'componentModel::RepositoryViewType' (role 'componentModel_RepositoryViewType', cardinality 0..*).
+'componentModel::RequiredRole' (role 'componentModel_RequiredRole57', cardinality 0..*) is associated with 'componentModel::Interface' (role 'componentModel_Interface58', cardinality 0..*).
+'componentModel::RequiredDelegationConnector' (role 'componentModel_RequiredDelegationConnector', cardinality 0..*) is associated with 'componentModel::RequiredRole' (role 'componentModel_RequiredRole36', cardinality 0..*).
+'componentModel::ExternalCall' (role 'componentModel_ExternalCall', cardinality 0..*) is associated with 'componentModel::Service' (role 'componentModel_Service23', cardinality 0..*).
+'componentModel::Signature' (role 'componentModel_Signature43', cardinality 0..*) is associated with 'componentModel::Type' (role 'componentModel_Type', cardinality 0..*).
+'componentModel::AssemblyContext' (role 'componentModel_AssemblyContext71', cardinality 0..*) is associated with 'componentModel::CompositeComponent' (role 'componentModel_CompositeComponent', cardinality 0..*).
+'componentModel::ProvidedRole' (role 'ProvidedRole', cardinality 0..*) is associated with 'componentModel::AssemblyContext' (role 'assemblycontext', cardinality 0..*).
+'componentModel::AssemblyContext' (role 'AssemblyContext60', cardinality 0..*) is associated with 'componentModel::ProvidedRole' (role 'providedrole', cardinality 0..*).
+'componentModel::Loop' (role 'componentModel_Loop', cardinality 0..*) is associated with 'componentModel::Action' (role 'componentModel_Action21', cardinality 0..*).
+'componentModel::AssemblyConnector' (role 'componentModel_AssemblyConnector34', cardinality 0..*) is associated with 'componentModel::RequiredRole' (role 'componentModel_RequiredRole', cardinality 0..*).
+'componentModel::Interface' (role 'componentModel_Interface25', cardinality 0..*) is associated with 'componentModel::Signature' (role 'componentModel_Signature', cardinality 0..*).
+'componentModel::Repository' (role 'componentModel_Repository', cardinality 0..*) is associated with 'componentModel::Component' (role 'componentModel_Component', cardinality 0..*).
+'componentModel::AssemblyContext' (role 'assemblycontext28', cardinality 0..*) is associated with 'componentModel::RequiredRole' (role 'RequiredRole', cardinality 0..*).
+'componentModel::Interface' (role 'componentModel_Interface65', cardinality 0..*) is associated with 'componentModel::ProvidedDelegationConnector' (role 'componentModel_ProvidedDelegationConnector', cardinality 0..*).
+'componentModel::Parameter' (role 'componentModel_Parameter75', cardinality 0..*) is associated with 'componentModel::ParameterTyp' (role 'componentModel_ParameterTyp', cardinality 0..*).
+'componentModel::Interface' (role 'componentModel_Interface', cardinality 0..*) is associated with 'componentModel::Repository' (role 'componentModel_Repository2', cardinality 0..*).
+'componentModel::DelegationConnector' (role 'componentModel_DelegationConnector', cardinality 0..*) is associated with 'componentModel::Component' (role 'componentModel_Component10', cardinality 0..*).
+'componentModel::AssemblyConnector' (role 'componentModel_AssemblyConnector32', cardinality 0..*) is associated with 'componentModel::ProvidedRole' (role 'componentModel_ProvidedRole', cardinality 0..*).
+'componentModel::System' (role 'componentModel_System', cardinality 0..*) is associated with 'componentModel::AssemblyContext' (role 'componentModel_AssemblyContext51', cardinality 0..*).
+'componentModel::InterfaceServiceMapTuple' (role 'componentModel_InterfaceServiceMapTuple12', cardinality 0..*) is associated with 'componentModel::Interface' (role 'componentModel_Interface13', cardinality 0..*).
+'componentModel::Parameter' (role 'componentModel_Parameter', cardinality 0..*) is associated with 'componentModel::Signature' (role 'componentModel_Signature41', cardinality 0..*).
+'componentModel::Service' (role 'componentModel_Service', cardinality 0..*) is associated with 'componentModel::InterfaceServiceMapTuple' (role 'componentModel_InterfaceServiceMapTuple15', cardinality 0..*).

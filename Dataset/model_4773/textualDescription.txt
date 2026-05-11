@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'types::UserType' has no attributes.
+The class 'types::ServiceType' has no attributes.
+The class 'Type' has no attributes.
+The class 'types::Operation' has the following attributes: 'name' of type str.
+The class 'types::PrimitiveType' has no attributes.
+The class 'types::EObject' has no attributes.
+The class 'types::ClassType' has no attributes.
+The class 'types::TypeReference' has no attributes.
+The class 'UserType' has no attributes.
+The class 'types::Type' has the following attributes: 'name' of type str.
+The class 'TypeReference' has no attributes.
+The class 'types::Property' has the following attributes: 'name' of type str.
+The class 'types::ArrayType' has the following attributes: 'size' of type int.
+'types::PrimitiveType' is a specialization of 'Type'.
+'types::ArrayType' is a specialization of 'TypeReference'.
+'types::UserType' is a specialization of 'Type'.
+'types::ServiceType' is a specialization of 'UserType'.
+'types::ClassType' is a specialization of 'UserType'.
+'types::TypeReference' (role 'types_TypeReference17', cardinality 0..*) is associated with 'types::Operation' (role 'types_Operation16', cardinality 0..*).
+'types::Property' (role 'types_Property12', cardinality 0..*) is associated with 'types::ServiceType' (role 'types_ServiceType', cardinality 0..*).
+'types::TypeReference' (role 'types_TypeReference7', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'types::TypeReference' (role 'types_TypeReference10', cardinality 0..*) is associated with 'types::TypeReference' (role 'types_TypeReference8', cardinality 0..*).
+'types::ClassType' (role 'types_ClassType3', cardinality 0..*) is associated with 'types::Property' (role 'types_Property', cardinality 0..*).
+'types::Operation' (role 'types_Operation19', cardinality 0..*) is associated with 'types::Property' (role 'types_Property20', cardinality 0..*).
+'types::ClassType' (role 'types_ClassType', cardinality 0..*) is associated with 'types::ClassType' (role 'types_ClassType0', cardinality 0..*).
+'types::Property' (role 'types_Property5', cardinality 0..*) is associated with 'types::TypeReference' (role 'types_TypeReference', cardinality 0..*).
+'types::Operation' (role 'types_Operation', cardinality 0..*) is associated with 'types::ServiceType' (role 'types_ServiceType14', cardinality 0..*).
+'types::EObject' (role 'types_EObject', cardinality 0..*) is associated with 'types::Operation' (role 'types_Operation22', cardinality 0..*).

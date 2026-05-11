@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'mathInterpreter::Minus' has no attributes.
+The class 'mathInterpreter::MathExp' has no attributes.
+The class 'mathInterpreter::Plus' has no attributes.
+The class 'mathInterpreter::Multiply' has no attributes.
+The class 'mathInterpreter::Num' has the following attributes: 'value' of type int.
+The class 'mathInterpreter::Exp' has no attributes.
+The class 'mathInterpreter::Divide' has no attributes.
+The class 'mathInterpreter::Expression' has no attributes.
+The class 'Expression' has no attributes.
+'mathInterpreter::Multiply' is a specialization of 'Expression'.
+'mathInterpreter::Plus' is a specialization of 'Expression'.
+'mathInterpreter::Minus' is a specialization of 'Expression'.
+'mathInterpreter::Exp' is a specialization of 'Expression'.
+'mathInterpreter::Num' is a specialization of 'Expression'.
+'mathInterpreter::Divide' is a specialization of 'Expression'.
+'mathInterpreter::Exp' (role 'mathInterpreter_Exp', cardinality 0..*) is associated with 'mathInterpreter::Expression' (role 'mathInterpreter_Expression5', cardinality 0..*).
+'mathInterpreter::Expression' (role 'mathInterpreter_Expression8', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp7', cardinality 0..*).
+'mathInterpreter::Expression' (role 'mathInterpreter_Expression11', cardinality 0..*) is associated with 'mathInterpreter::Exp' (role 'mathInterpreter_Exp10', cardinality 0..*).
+'mathInterpreter::Expression' (role 'mathInterpreter_Expression1', cardinality 0..*) is associated with 'mathInterpreter::Expression' (role 'mathInterpreter_Expression3', cardinality 0..*).
+'mathInterpreter::MathExp' (role 'mathInterpreter_MathExp', cardinality 0..*) is associated with 'mathInterpreter::Expression' (role 'mathInterpreter_Expression', cardinality 0..*).

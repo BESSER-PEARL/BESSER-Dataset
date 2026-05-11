@@ -1,0 +1,62 @@
+The model has 31 class(es).
+The class 'SuperCommand' has no attributes.
+The class 'xDrone::Command' has no attributes.
+The class 'xDrone::LeftWall' has the following attributes: 'value' of type str.
+The class 'xDrone::Color' has the following attributes: 'color_value' of type str.
+The class 'xDrone::Right' has the following attributes: 'distance' of type str.
+The class 'xDrone::Down' has the following attributes: 'distance' of type str.
+The class 'xDrone::RotateR' has the following attributes: 'angle' of type str.
+The class 'xDrone::Main' has no attributes.
+The class 'xDrone::Drone' has the following attributes: 'rotation' of type str.
+The class 'Command' has no attributes.
+The class 'xDrone::Walls' has no attributes.
+The class 'xDrone::Origin' has no attributes.
+The class 'xDrone::Size' has no attributes.
+The class 'xDrone::FrontWall' has the following attributes: 'value' of type str.
+The class 'xDrone::Wait' has the following attributes: 'seconds' of type str.
+The class 'xDrone::Object' has the following attributes: 'object_name' of type str.
+The class 'xDrone::Program' has no attributes.
+The class 'xDrone::Environment' has no attributes.
+The class 'xDrone::Left' has the following attributes: 'distance' of type str.
+The class 'xDrone::BackWall' has the following attributes: 'value' of type str.
+The class 'xDrone::GoTo' has the following attributes: 'object_name' of type str.
+The class 'xDrone::SuperCommand' has no attributes.
+The class 'xDrone::Position' has no attributes.
+The class 'xDrone::Forward' has the following attributes: 'distance' of type str.
+The class 'xDrone::Backward' has the following attributes: 'distance' of type str.
+The class 'xDrone::RightWall' has the following attributes: 'value' of type str.
+The class 'xDrone::UpWall' has the following attributes: 'value' of type str.
+The class 'xDrone::RotateL' has the following attributes: 'angle' of type str.
+The class 'xDrone::Fly' has the following attributes: 'takeoff' of type str; 'land' of type str.
+The class 'xDrone::Vector' has the following attributes: 'x' of type str; 'z' of type str; 'y' of type str.
+The class 'xDrone::Up' has the following attributes: 'distance' of type str.
+'xDrone::Left' is a specialization of 'Command'.
+'xDrone::Wait' is a specialization of 'Command'.
+'xDrone::Up' is a specialization of 'Command'.
+'xDrone::Command' is a specialization of 'SuperCommand'.
+'xDrone::Forward' is a specialization of 'Command'.
+'xDrone::RotateL' is a specialization of 'Command'.
+'xDrone::Backward' is a specialization of 'Command'.
+'xDrone::Down' is a specialization of 'Command'.
+'xDrone::Right' is a specialization of 'Command'.
+'xDrone::RotateR' is a specialization of 'Command'.
+'xDrone::GoTo' is a specialization of 'Command'.
+'xDrone::Origin' (role 'xDrone_Origin22', cardinality 0..*) is associated with 'xDrone::Vector' (role 'xDrone_Vector', cardinality 0..*).
+'xDrone::Size' (role 'xDrone_Size24', cardinality 0..*) is associated with 'xDrone::Vector' (role 'xDrone_Vector25', cardinality 0..*).
+'xDrone::BackWall' (role 'xDrone_BackWall', cardinality 0..*) is associated with 'xDrone::Walls' (role 'xDrone_Walls34', cardinality 0..*).
+'xDrone::Walls' (role 'xDrone_Walls36', cardinality 0..*) is associated with 'xDrone::LeftWall' (role 'xDrone_LeftWall', cardinality 0..*).
+'xDrone::Position' (role 'xDrone_Position27', cardinality 0..*) is associated with 'xDrone::Vector' (role 'xDrone_Vector28', cardinality 0..*).
+'xDrone::Object' (role 'xDrone_Object18', cardinality 0..*) is associated with 'xDrone::Size' (role 'xDrone_Size', cardinality 0..*).
+'xDrone::Fly' (role 'xDrone_Fly', cardinality 0..*) is associated with 'xDrone::Main' (role 'xDrone_Main2', cardinality 0..*).
+'xDrone::SuperCommand' (role 'xDrone_SuperCommand', cardinality 0..*) is associated with 'xDrone::Fly' (role 'xDrone_Fly6', cardinality 0..*).
+'xDrone::Walls' (role 'xDrone_Walls', cardinality 0..*) is associated with 'xDrone::Environment' (role 'xDrone_Environment10', cardinality 0..*).
+'xDrone::Walls' (role 'xDrone_Walls30', cardinality 0..*) is associated with 'xDrone::FrontWall' (role 'xDrone_FrontWall', cardinality 0..*).
+'xDrone::Walls' (role 'xDrone_Walls32', cardinality 0..*) is associated with 'xDrone::RightWall' (role 'xDrone_RightWall', cardinality 0..*).
+'xDrone::Environment' (role 'xDrone_Environment8', cardinality 0..*) is associated with 'xDrone::Drone' (role 'xDrone_Drone', cardinality 0..*).
+'xDrone::Origin' (role 'xDrone_Origin', cardinality 0..*) is associated with 'xDrone::Object' (role 'xDrone_Object16', cardinality 0..*).
+'xDrone::Color' (role 'xDrone_Color', cardinality 0..*) is associated with 'xDrone::Object' (role 'xDrone_Object20', cardinality 0..*).
+'xDrone::Drone' (role 'xDrone_Drone14', cardinality 0..*) is associated with 'xDrone::Position' (role 'xDrone_Position', cardinality 0..*).
+'xDrone::Main' (role 'xDrone_Main', cardinality 0..*) is associated with 'xDrone::Program' (role 'xDrone_Program', cardinality 0..*).
+'xDrone::Main' (role 'xDrone_Main4', cardinality 0..*) is associated with 'xDrone::Environment' (role 'xDrone_Environment', cardinality 0..*).
+'xDrone::Object' (role 'xDrone_Object', cardinality 0..*) is associated with 'xDrone::Environment' (role 'xDrone_Environment12', cardinality 0..*).
+'xDrone::Walls' (role 'xDrone_Walls38', cardinality 0..*) is associated with 'xDrone::UpWall' (role 'xDrone_UpWall', cardinality 0..*).

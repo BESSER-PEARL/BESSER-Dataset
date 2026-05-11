@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'testup::G' has no attributes.
+The class 'testup::F' has no attributes.
+The class 'testup::AUp' has no attributes.
+The class 'testup::D' has the following attributes: 'newAttribute' of type str.
+The class 'testup::B' has the following attributes: 'newAttribute' of type str.
+The class 'E' has no attributes.
+The class 'G' has no attributes.
+The class 'testup::E' has the following attributes: 'newAttribute' of type str.
+The class 'AUp' has no attributes.
+'testup::F' is a specialization of 'G'.
+'testup::F' is a specialization of 'E'.
+'testup::E' is a specialization of 'AUp'.
+'testup::D' (role 'testup_D', cardinality 0..*) is associated with 'testup::AUp' (role 'testup_AUp2', cardinality 0..*).
+'testup::AUp' (role 'testup_AUp', cardinality 0..*) is associated with 'testup::B' (role 'testup_B', cardinality 0..*).

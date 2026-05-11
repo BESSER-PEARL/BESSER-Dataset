@@ -1,0 +1,41 @@
+The model has 11 class(es).
+The class 'faultTree::Transfer' has the following attributes: 'name' of type str.
+The class 'faultTree::IntermediateEvent' has the following attributes: 'probability' of type float.
+The class 'Transfer' has no attributes.
+The class 'faultTree::FaultTree' has the following attributes: 'name' of type str.
+The class 'faultTree::Event' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'faultTree::TransferIn' has no attributes.
+The class 'Event' has no attributes.
+The class 'faultTree::ConditioningEvent' has the following attributes: 'condition' of type str.
+The class 'faultTree::TransferOut' has no attributes.
+The class 'faultTree::PrimaryEvent' has the following attributes: 'type' of type str; 'probability' of type float.
+The class 'faultTree::Gate' has the following attributes: 'probability' of type float; 'type' of type str; 'name' of type str.
+The enumeration 'GateType' has the following literals: 'PAND', 'INHIBIT', 'OR', 'XOR', 'AND'.
+The enumeration 'PrimaryEventType' has the following literals: 'BASIC', 'EXTERNAL', 'UNDEVELOPED'.
+'faultTree::TransferIn' is a specialization of 'Transfer'.
+'faultTree::TransferOut' is a specialization of 'Transfer'.
+'faultTree::PrimaryEvent' is a specialization of 'Event'.
+'faultTree::ConditioningEvent' is a specialization of 'Event'.
+'faultTree::IntermediateEvent' is a specialization of 'Event'.
+'faultTree::TransferIn' (role 'transferIns', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'FaultTree39', cardinality 0..*).
+'faultTree::Gate' (role 'Gate', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'faultTree', cardinality 0..*).
+'faultTree::Event' (role 'Event', cardinality 0..*) is associated with 'faultTree::Gate' (role 'topGates', cardinality 0..*).
+'faultTree::Event' (role 'faultTree_Event', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'faultTree_FaultTree', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'IntermediateEvent37', cardinality 0..*) is associated with 'faultTree::TransferIn' (role 'transferIn', cardinality 0..*).
+'faultTree::TransferIn' (role 'TransferIn32', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'event', cardinality 0..*).
+'faultTree::TransferOut' (role 'TransferOut', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'faultTree9', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'faultTree_IntermediateEvent', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'faultTree_FaultTree3', cardinality 0..*).
+'faultTree::Event' (role 'inputs', cardinality 0..*) is associated with 'faultTree::Gate' (role 'Gate19', cardinality 0..*).
+'faultTree::FaultTree' (role 'faultTree_FaultTree5', cardinality 0..*) is associated with 'faultTree::PrimaryEvent' (role 'faultTree_PrimaryEvent', cardinality 0..*).
+'faultTree::Gate' (role 'bottomGate', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'IntermediateEvent', cardinality 0..*).
+'faultTree::FaultTree' (role 'FaultTree44', cardinality 0..*) is associated with 'faultTree::TransferOut' (role 'transferOut43', cardinality 0..*).
+'faultTree::FaultTree' (role 'FaultTree', cardinality 0..*) is associated with 'faultTree::Gate' (role 'gates', cardinality 0..*).
+'faultTree::FaultTree' (role 'faultTree_FaultTree7', cardinality 0..*) is associated with 'faultTree::ConditioningEvent' (role 'faultTree_ConditioningEvent', cardinality 0..*).
+'faultTree::FaultTree' (role 'faultTree11', cardinality 0..*) is associated with 'faultTree::TransferIn' (role 'TransferIn', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'IntermediateEvent30', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'topEvent', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'IntermediateEvent41', cardinality 0..*) is associated with 'faultTree::TransferOut' (role 'transferOut', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'bottomEvent', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'IntermediateEvent27', cardinality 0..*).
+'faultTree::Gate' (role 'Gate24', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'output', cardinality 0..*).
+'faultTree::FaultTree' (role 'faultTree_FaultTree13', cardinality 0..*) is associated with 'faultTree::IntermediateEvent' (role 'faultTree_IntermediateEvent14', cardinality 0..*).
+'faultTree::Event' (role 'faultTree_Event21', cardinality 0..*) is associated with 'faultTree::FaultTree' (role 'faultTree_FaultTree22', cardinality 0..*).
+'faultTree::IntermediateEvent' (role 'event34', cardinality 0..*) is associated with 'faultTree::TransferOut' (role 'TransferOut35', cardinality 0..*).

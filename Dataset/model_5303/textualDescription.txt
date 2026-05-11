@@ -1,0 +1,11 @@
+The model has 10 class(es).
+The class 'a::e::ce1' has no attributes.
+The class 'a::b::cb2' has no attributes.
+The class 'a::e::ce2' has no attributes.
+The class 'a::d::cd2' has no attributes.
+The class 'a::c::cc2' has no attributes.
+The class 'a::c::cc1' has no attributes.
+The class 'a::b::cb1' has no attributes.
+The class 'a::ca1' has no attributes.
+The class 'a::ca2' has no attributes.
+The class 'a::d::cd1' has no attributes.

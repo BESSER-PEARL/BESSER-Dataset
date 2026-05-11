@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'foo::A' has the following attributes: 'fooA' of type str.
+The class 'foo::J' has no attributes.
+The class 'foo::B' has no attributes.
+The class 'J' has no attributes.
+The class 'B' has no attributes.
+'foo::B' is a specialization of 'J'.
+'B' (role 'B', cardinality 0..*) is associated with 'foo::A' (role 'foo_A', cardinality 0..*).

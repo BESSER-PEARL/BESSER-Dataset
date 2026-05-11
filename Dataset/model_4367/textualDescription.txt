@@ -1,0 +1,56 @@
+The model has 24 class(es).
+The class 'minilang::Program' has the following attributes: 'y' of type float; 'x' of type float; 'angle' of type str; 'distance' of type float.
+The class 'minilang::Value' has no attributes.
+The class 'minilang::BinaryOperation' has no attributes.
+The class 'minilang::VariableAffect' has no attributes.
+The class 'minilang::IfStmt' has no attributes.
+The class 'minilang::Method' has the following attributes: 'name' of type str.
+The class 'Condition' has no attributes.
+The class 'minilang::Sum' has no attributes.
+The class 'minilang::RotateLeft' has no attributes.
+The class 'minilang::Move' has no attributes.
+The class 'minilang::Statement' has no attributes.
+The class 'minilang::Line' has the following attributes: 'y2' of type float; 'y1' of type float; 'x1' of type float; 'x2' of type float.
+The class 'minilang::CallMethod' has no attributes.
+The class 'Value' has no attributes.
+The class 'minilang::Variable' has the following attributes: 'value' of type float; 'name' of type str.
+The class 'minilang::Block' has no attributes.
+The class 'minilang::RotateRight' has no attributes.
+The class 'minilang::Constant' has the following attributes: 'value' of type float.
+The class 'Statement' has no attributes.
+The class 'minilang::Condition' has no attributes.
+The class 'minilang::GreaterThan' has no attributes.
+The class 'minilang::VariableRef' has no attributes.
+The class 'minilang::Modulo' has no attributes.
+The class 'BinaryOperation' has no attributes.
+The enumeration 'Cardinals' has the following literals: 'WEST', 'SOUTH', 'EAST', 'NORTH'.
+'minilang::Move' is a specialization of 'Statement'.
+'minilang::VariableRef' is a specialization of 'Value'.
+'minilang::Modulo' is a specialization of 'BinaryOperation'.
+'minilang::RotateLeft' is a specialization of 'Statement'.
+'minilang::BinaryOperation' is a specialization of 'Value'.
+'minilang::VariableAffect' is a specialization of 'Statement'.
+'minilang::Sum' is a specialization of 'BinaryOperation'.
+'minilang::GreaterThan' is a specialization of 'Condition'.
+'minilang::Constant' is a specialization of 'Value'.
+'minilang::CallMethod' is a specialization of 'Statement'.
+'minilang::IfStmt' is a specialization of 'Statement'.
+'minilang::RotateRight' is a specialization of 'Statement'.
+'minilang::Variable' (role 'minilang_Variable25', cardinality 0..*) is associated with 'minilang::VariableAffect' (role 'minilang_VariableAffect', cardinality 0..*).
+'minilang::Variable' (role 'minilang_Variable23', cardinality 0..*) is associated with 'minilang::VariableRef' (role 'minilang_VariableRef', cardinality 0..*).
+'minilang::GreaterThan' (role 'minilang_GreaterThan20', cardinality 0..*) is associated with 'minilang::Value' (role 'minilang_Value21', cardinality 0..*).
+'minilang::CallMethod' (role 'minilang_CallMethod', cardinality 0..*) is associated with 'minilang::Method' (role 'minilang_Method35', cardinality 0..*).
+'minilang::Value' (role 'minilang_Value30', cardinality 0..*) is associated with 'minilang::BinaryOperation' (role 'minilang_BinaryOperation', cardinality 0..*).
+'minilang::IfStmt' (role 'minilang_IfStmt', cardinality 0..*) is associated with 'minilang::Block' (role 'minilang_Block12', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block', cardinality 0..*) is associated with 'minilang::Method' (role 'minilang_Method8', cardinality 0..*).
+'minilang::Statement' (role 'minilang_Statement', cardinality 0..*) is associated with 'minilang::Block' (role 'minilang_Block10', cardinality 0..*).
+'minilang::Program' (role 'program', cardinality 0..*) is associated with 'minilang::Method' (role 'Method', cardinality 0..*).
+'minilang::Value' (role 'minilang_Value', cardinality 0..*) is associated with 'minilang::GreaterThan' (role 'minilang_GreaterThan', cardinality 0..*).
+'minilang::Method' (role 'minilang_Method', cardinality 0..*) is associated with 'minilang::Program' (role 'minilang_Program', cardinality 0..*).
+'minilang::Value' (role 'minilang_Value33', cardinality 0..*) is associated with 'minilang::BinaryOperation' (role 'minilang_BinaryOperation32', cardinality 0..*).
+'minilang::Block' (role 'minilang_Block15', cardinality 0..*) is associated with 'minilang::IfStmt' (role 'minilang_IfStmt14', cardinality 0..*).
+'minilang::Value' (role 'minilang_Value28', cardinality 0..*) is associated with 'minilang::VariableAffect' (role 'minilang_VariableAffect27', cardinality 0..*).
+'minilang::IfStmt' (role 'minilang_IfStmt17', cardinality 0..*) is associated with 'minilang::Condition' (role 'minilang_Condition', cardinality 0..*).
+'minilang::Method' (role 'methods', cardinality 0..*) is associated with 'minilang::Program' (role 'Program', cardinality 0..*).
+'minilang::Program' (role 'minilang_Program5', cardinality 0..*) is associated with 'minilang::Line' (role 'minilang_Line', cardinality 0..*).
+'minilang::Program' (role 'minilang_Program3', cardinality 0..*) is associated with 'minilang::Variable' (role 'minilang_Variable', cardinality 0..*).

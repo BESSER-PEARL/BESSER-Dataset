@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'MetricValue' has no attributes.
+The class 'Metrics::StringMetricValue' has the following attributes: 'value' of type str.
+The class 'Metrics::IntegerMetricValue' has the following attributes: 'value' of type str.
+The class 'Metrics::Metric' has the following attributes: 'name' of type str.
+The class 'Metrics::BooleanMetricValue' has the following attributes: 'value' of type str.
+The class 'Metrics::MetricValue' has the following attributes: 'tag' of type str.
+The class 'Metrics::DoubleMetricValue' has the following attributes: 'value' of type str.
+'Metrics::BooleanMetricValue' is a specialization of 'MetricValue'.
+'Metrics::StringMetricValue' is a specialization of 'MetricValue'.
+'Metrics::IntegerMetricValue' is a specialization of 'MetricValue'.
+'Metrics::DoubleMetricValue' is a specialization of 'MetricValue'.
+'Metrics::Metric' (role 'Metrics_Metric', cardinality 0..*) is associated with 'MetricValue' (role 'MetricValue', cardinality 0..*).

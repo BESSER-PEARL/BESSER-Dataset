@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'doublemulti::D' has no attributes.
+The class 'doublemulti::A' has no attributes.
+The class 'B' has no attributes.
+The class 'doublemulti::B' has no attributes.
+The class 'doublemulti::C' has no attributes.
+The class 'A' has no attributes.
+'doublemulti::D' is a specialization of 'A'.
+'doublemulti::C' is a specialization of 'A'.
+'doublemulti::D' is a specialization of 'B'.
+'doublemulti::C' is a specialization of 'B'.

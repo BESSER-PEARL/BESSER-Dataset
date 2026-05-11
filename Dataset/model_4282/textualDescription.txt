@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'bowling::Player' has the following attributes: 'isProfessional' of type bool; 'height' of type float; 'name' of type str; 'dateOfBirth' of type date.
+The class 'bowling::League' has the following attributes: 'name' of type str.
+'bowling::Player' (role 'bowling_Player', cardinality 0..*) is associated with 'bowling::League' (role 'bowling_League', cardinality 0..*).

@@ -1,0 +1,74 @@
+The model has 26 class(es).
+The class 'UML::Element' has the following attributes: 'visibility' of type str; 'name' of type str.
+The class 'TypedElement' has no attributes.
+The class 'PackageableElement' has no attributes.
+The class 'UML::Parameter' has the following attributes: 'direction' of type str.
+The class 'UML::Enumeration' has no attributes.
+The class 'Element' has no attributes.
+The class 'UML::LiteralUnlimitedNatural' has the following attributes: 'value' of type int.
+The class 'UML::TypedElement' has no attributes.
+The class 'UML::PackageableElement' has no attributes.
+The class 'UML::TemplateBinding' has no attributes.
+The class 'UML::Class' has no attributes.
+The class 'UML::Package' has no attributes.
+The class 'UML::Model' has no attributes.
+The class 'UML::Generalization' has no attributes.
+The class 'UML::Property' has the following attributes: 'isStatic' of type bool.
+The class 'Class' has no attributes.
+The class 'UML::EnumerationLiteral' has no attributes.
+The class 'UML::Operation' has no attributes.
+The class 'UML::Association' has no attributes.
+The class 'UML::LiteralInteger' has no attributes.
+The class 'UML::PrimitiveType' has no attributes.
+The class 'UML::Interface' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'UML::TemplateParameterSubstitution' has no attributes.
+The class 'UML::Attribute' has no attributes.
+The class 'Package' has no attributes.
+'UML::Package' is a specialization of 'PackageableElement'.
+'UML::Class' is a specialization of 'Package'.
+'UML::Model' is a specialization of 'Package'.
+'UML::Association' is a specialization of 'Package'.
+'UML::Enumeration' is a specialization of 'Class'.
+'UML::Parameter' is a specialization of 'TypedElement'.
+'UML::Generalization' is a specialization of 'Element'.
+'UML::PackageableElement' is a specialization of 'Element'.
+'UML::Attribute' is a specialization of 'TypedElement'.
+'UML::LiteralInteger' is a specialization of 'Package'.
+'UML::Property' is a specialization of 'Attribute'.
+'UML::LiteralUnlimitedNatural' is a specialization of 'Package'.
+'UML::EnumerationLiteral' is a specialization of 'Package'.
+'UML::TemplateParameterSubstitution' is a specialization of 'Element'.
+'UML::PrimitiveType' is a specialization of 'Package'.
+'UML::Operation' is a specialization of 'Package'.
+'UML::Interface' is a specialization of 'Class'.
+'UML::TemplateBinding' is a specialization of 'Element'.
+'UML::TypedElement' is a specialization of 'Element'.
+'UML::LiteralUnlimitedNatural' (role 'UML_LiteralUnlimitedNatural', cardinality 0..*) is associated with 'UML::TypedElement' (role 'UML_TypedElement6', cardinality 0..*).
+'UML::Operation' (role 'UML_Operation21', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class', cardinality 0..*).
+'UML::Class' (role 'UML_Class31', cardinality 0..*) is associated with 'UML::Generalization' (role 'UML_Generalization', cardinality 0..*).
+'UML::Property' (role 'UML_Property', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association', cardinality 0..*).
+'UML::Association' (role 'UML_Association16', cardinality 0..*) is associated with 'UML::Property' (role 'UML_Property15', cardinality 0..*).
+'UML::Property' (role 'UML_Property12', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association13', cardinality 0..*).
+'UML::Package' (role 'UML_Package66', cardinality 0..*) is associated with 'UML::TemplateBinding' (role 'UML_TemplateBinding65', cardinality 0..*).
+'UML::Enumeration' (role 'UML_Enumeration', cardinality 0..*) is associated with 'UML::EnumerationLiteral' (role 'UML_EnumerationLiteral', cardinality 0..*).
+'UML::Generalization' (role 'UML_Generalization48', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class49', cardinality 0..*).
+'UML::Class' (role 'UML_Class34', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class36', cardinality 0..*).
+'UML::Property' (role 'UML_Property8', cardinality 0..*) is associated with 'UML::Property' (role 'UML_Property10', cardinality 0..*).
+'UML::Parameter' (role 'UML_Parameter', cardinality 0..*) is associated with 'UML::Operation' (role 'UML_Operation', cardinality 0..*).
+'UML::Class' (role 'UML_Class33', cardinality 0..*) is associated with 'UML::TemplateBinding' (role 'UML_TemplateBinding', cardinality 0..*).
+'UML::TemplateBinding' (role 'UML_TemplateBinding62', cardinality 0..*) is associated with 'UML::TemplateParameterSubstitution' (role 'UML_TemplateParameterSubstitution63', cardinality 0..*).
+'UML::Enumeration' (role 'UML_Enumeration40', cardinality 0..*) is associated with 'UML::EnumerationLiteral' (role 'UML_EnumerationLiteral39', cardinality 0..*).
+'UML::Generalization' (role 'UML_Generalization45', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class46', cardinality 0..*).
+'UML::Attribute' (role 'UML_Attribute', cardinality 0..*) is associated with 'UML::Class' (role 'UML_Class26', cardinality 0..*).
+'UML::Association' (role 'UML_Association51', cardinality 0..*) is associated with 'UML::Property' (role 'UML_Property52', cardinality 0..*).
+'UML::TemplateParameterSubstitution' (role 'UML_TemplateParameterSubstitution59', cardinality 0..*) is associated with 'UML::TemplateBinding' (role 'UML_TemplateBinding60', cardinality 0..*).
+'UML::PackageableElement' (role 'UML_PackageableElement', cardinality 0..*) is associated with 'UML::Package' (role 'UML_Package', cardinality 0..*).
+'UML::Property' (role 'UML_Property55', cardinality 0..*) is associated with 'UML::Association' (role 'UML_Association54', cardinality 0..*).
+'UML::Enumeration' (role 'UML_Enumeration42', cardinality 0..*) is associated with 'UML::EnumerationLiteral' (role 'UML_EnumerationLiteral43', cardinality 0..*).
+'UML::Package' (role 'UML_Package2', cardinality 0..*) is associated with 'UML::TypedElement' (role 'UML_TypedElement', cardinality 0..*).
+'UML::Package' (role 'UML_Package57', cardinality 0..*) is associated with 'UML::TemplateParameterSubstitution' (role 'UML_TemplateParameterSubstitution', cardinality 0..*).
+'UML::Interface' (role 'UML_Interface24', cardinality 0..*) is associated with 'UML::Operation' (role 'UML_Operation23', cardinality 0..*).
+'UML::Interface' (role 'UML_Interface', cardinality 0..*) is associated with 'UML::Property' (role 'UML_Property18', cardinality 0..*).
+'UML::TypedElement' (role 'UML_TypedElement4', cardinality 0..*) is associated with 'UML::LiteralInteger' (role 'UML_LiteralInteger', cardinality 0..*).
+'UML::Class' (role 'UML_Class28', cardinality 0..*) is associated with 'UML::Operation' (role 'UML_Operation29', cardinality 0..*).

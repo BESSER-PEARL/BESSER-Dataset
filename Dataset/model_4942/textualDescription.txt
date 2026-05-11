@@ -1,0 +1,237 @@
+The model has 68 class(es).
+The class 'ric::InlineComponent' has the following attributes: 'text' of type str.
+The class 'ric::Form' has the following attributes: 'name' of type str; 'method' of type str.
+The class 'ric::ObjectComponent' has the following attributes: 'align' of type str; 'border' of type int; 'vspace' of type int; 'width' of type int; 'height' of type int; 'hspace' of type int.
+The class 'ric::Link' has the following attributes: 'title' of type str.
+The class 'ric::EventComponent' has no attributes.
+The class 'List' has no attributes.
+The class 'ric::Checkbox' has the following attributes: 'checked' of type bool.
+The class 'ric::Span' has the following attributes: 'align' of type str.
+The class 'ric::ContextualNavigationRegion' has no attributes.
+The class 'ric::UnorderedList' has the following attributes: 'type' of type str.
+The class 'ric::InputFile' has the following attributes: 'charWidth' of type int; 'readonly' of type bool; 'maxChars' of type int.
+The class 'ric::Radio' has the following attributes: 'checked' of type bool.
+The class 'ric::RadioGroup' has the following attributes: 'orientation' of type str.
+The class 'IdentifiableComponent' has no attributes.
+The class 'ric::SearchRegion' has no attributes.
+The class 'ric::ContentRegion' has no attributes.
+The class 'ric::MessageDialog' has the following attributes: 'autoOpen' of type bool; 'resizable' of type bool; 'minWidthResize' of type int; 'modal' of type bool; 'maxWidthResize' of type int; 'minHeightResize' of type int; 'width' of type int; 'maxHeightResize' of type int; 'message' of type str; 'height' of type int; 'title' of type str.
+The class 'ric::Datepicker' has the following attributes: 'numberMonthsToShow' of type int; 'showButtonImage' of type bool; 'showButtonClosePanel' of type bool; 'locale' of type str; 'dateFormat' of type str; 'showMonthMenu' of type bool; 'showWeekOfYear' of type bool; 'showYearMenu' of type bool.
+The class 'ric::RequiredFieldConstraint' has no attributes.
+The class 'ClassifiableComponent' has no attributes.
+The class 'ric::ValueConstraint' has the following attributes: 'logicalOperator' of type str; 'matchingOperator' of type str; 'matchingValue' of type str.
+The class 'ric::Heading' has the following attributes: 'level' of type str.
+The class 'RichWidget' has no attributes.
+The class 'ric::AccordionPanel' has no attributes.
+The class 'ric::Logo' has no attributes.
+The class 'ric::PhraseElement' has the following attributes: 'phraseType' of type str; 'title' of type str.
+The class 'ric::SelectItem' has the following attributes: 'value' of type str; 'itemLabel' of type str; 'selected' of type bool.
+The class 'ric::Paragraph' has the following attributes: 'align' of type str.
+The class 'ric::BlockLevelComponent' has no attributes.
+The class 'ric::TextArea' has the following attributes: 'cols' of type int; 'readonly' of type bool; 'rols' of type int.
+The class 'EventComponent' has no attributes.
+The class 'ric::FooterRegion' has no attributes.
+The class 'ric::Tab' has the following attributes: 'title' of type str.
+The class 'ric::TabbedPanel' has no attributes.
+The class 'ric::HeaderRegion' has no attributes.
+The class 'ric::NumberValueConstraint' has no attributes.
+The class 'ric::NavigationRegion' has the following attributes: 'orientation' of type str.
+The class 'ric::ValidDateConstraint' has the following attributes: 'dateFormat' of type str.
+The class 'ric::ClassifiableComponent' has the following attributes: 'class_' of type str.
+The class 'ric::LinkGroup' has the following attributes: 'title' of type str.
+The class 'ric::FormControl' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'ric::RichWidget' has no attributes.
+The class 'ric::List' has no attributes.
+The class 'ric::IdentifiableComponent' has the following attributes: 'id' of type str.
+The class 'ric::MessageDialogButton' has the following attributes: 'event' of type str; 'label' of type str.
+The class 'ric::TextField' has the following attributes: 'charWidth' of type int; 'readonly' of type bool; 'maxChars' of type int; 'password' of type bool.
+The class 'InlineComponent' has no attributes.
+The class 'FormControl' has no attributes.
+The class 'ric::Document' has the following attributes: 'fileName' of type str; 'title' of type str; 'index' of type bool.
+The class 'ric::Section' has the following attributes: 'title' of type str.
+The class 'ric::Div' has the following attributes: 'align' of type str.
+The class 'ric::LineBreak' has no attributes.
+The class 'ric::Button' has the following attributes: 'image' of type str; 'type' of type str; 'disabled' of type bool.
+The class 'BlockLevelComponent' has no attributes.
+The class 'FormControlConstraint' has no attributes.
+The class 'ric::Label' has the following attributes: 'format' of type str; 'text' of type str.
+The class 'ric::Script' has the following attributes: 'name' of type str; 'implementation' of type str; 'type' of type str.
+The class 'ric::Fieldset' has the following attributes: 'legendFormat' of type str; 'legend' of type str; 'legendAlign' of type str.
+The class 'ric::CheckGroup' has the following attributes: 'orientation' of type str.
+The class 'ric::Portal' has the following attributes: 'name' of type str; 'documentsExtension' of type str.
+The class 'ric::Select' has the following attributes: 'multiple' of type bool; 'size' of type int.
+The class 'ric::Image' has the following attributes: 'src' of type str; 'alt' of type str.
+The class 'ObjectComponent' has no attributes.
+The class 'ric::ListItem' has the following attributes: 'format' of type str; 'text' of type str.
+The class 'ric::FormControlConstraint' has no attributes.
+The class 'ric::Event' has the following attributes: 'type' of type str.
+The class 'ric::OrderedList' has the following attributes: 'type' of type str.
+The class 'TextField' has no attributes.
+The enumeration 'EventType' has the following literals: 'ondblclick', 'onload', 'onmousedown', 'onmousemove', 'onreset', 'onmouseup', 'onmouseout', 'onfocus', 'onkeydown', 'onselect', 'onblur', 'onclick', 'onsubmit', 'onunload', 'onchange', 'onkeyup', 'onmouseover', 'onkeypress'.
+The enumeration 'ObjectAlign' has the following literals: 'right', 'textTop', 'baseline', 'middle', 'bottom', 'default', 'left', 'absoluteBottom', 'absoluteMiddle', 'top'.
+The enumeration 'HeadingLevel' has the following literals: 'h3', 'h2', 'h4', 'h1', 'h6', 'h5'.
+The enumeration 'MessageDialogEvent' has the following literals: 'closeDialog'.
+The enumeration 'Orientation' has the following literals: 'Vertical', 'Horizontal'.
+The enumeration 'ScriptType' has the following literals: 'textJavaScript', 'textTcl', 'textVBScript'.
+The enumeration 'SubmitFormMethod' has the following literals: 'post', 'get'.
+The enumeration 'MatchingOperator' has the following literals: 'Different', 'LessThan', 'Equals', 'LessOrEqualsThan', 'GreaterThan', 'Contains', 'GreaterOrEqualsThan'.
+The enumeration 'OrderedListType' has the following literals: 'UpperRoman', 'LowerAlpha', 'UpperAlpha', 'ArabicNumber', 'none', 'LowerRoman'.
+The enumeration 'ButtonType' has the following literals: 'Push', 'Reset', 'Submit'.
+The enumeration 'DateFormat' has the following literals: 'ISO8601', 'Medium', 'Full', 'Default', 'Short'.
+The enumeration 'LogicalOperator' has the following literals: 'AND', 'OR'.
+The enumeration 'Locale' has the following literals: 'Spanish', 'English_UK', 'German', 'Portuguese_Brazilian'.
+The enumeration 'FieldSetLegendAlign' has the following literals: 'bottom', 'center', 'top', 'left', 'right'.
+The enumeration 'UnorderedListType' has the following literals: 'none', 'square', 'circle', 'disc'.
+The enumeration 'PhraseElementType' has the following literals: 'EntryFromUser', 'StrongerEmphasis', 'VariableInstance', 'Citation', 'Definition', 'Emphasis', 'Acronym', 'ComputerCode', 'None_', 'SampleProgramOutput', 'Abbreviation'.
+The enumeration 'Align' has the following literals: 'right', 'center', 'left', 'justify'.
+The enumeration 'Extension' has the following literals: 'jsp', 'php', 'html', 'asp', 'xhtml'.
+'ric::Div' is a specialization of 'EventComponent'.
+'ric::AccordionPanel' is a specialization of 'RichWidget'.
+'ric::Image' is a specialization of 'ClassifiableComponent'.
+'ric::FormControl' is a specialization of 'ClassifiableComponent'.
+'ric::Link' is a specialization of 'IdentifiableComponent'.
+'ric::Paragraph' is a specialization of 'IdentifiableComponent'.
+'ric::Heading' is a specialization of 'IdentifiableComponent'.
+'ric::Image' is a specialization of 'ObjectComponent'.
+'ric::Heading' is a specialization of 'EventComponent'.
+'ric::PhraseElement' is a specialization of 'IdentifiableComponent'.
+'ric::Image' is a specialization of 'EventComponent'.
+'ric::Heading' is a specialization of 'ClassifiableComponent'.
+'ric::ValidDateConstraint' is a specialization of 'FormControlConstraint'.
+'ric::TextArea' is a specialization of 'FormControl'.
+'ric::InputFile' is a specialization of 'FormControl'.
+'ric::Div' is a specialization of 'IdentifiableComponent'.
+'ric::ValueConstraint' is a specialization of 'FormControlConstraint'.
+'ric::OrderedList' is a specialization of 'List'.
+'ric::Heading' is a specialization of 'InlineComponent'.
+'ric::Link' is a specialization of 'EventComponent'.
+'ric::UnorderedList' is a specialization of 'List'.
+'ric::FormControl' is a specialization of 'EventComponent'.
+'ric::PhraseElement' is a specialization of 'InlineComponent'.
+'ric::Form' is a specialization of 'IdentifiableComponent'.
+'ric::Fieldset' is a specialization of 'IdentifiableComponent'.
+'ric::Paragraph' is a specialization of 'InlineComponent'.
+'ric::Paragraph' is a specialization of 'ClassifiableComponent'.
+'ric::Datepicker' is a specialization of 'RichWidget'.
+'ric::NumberValueConstraint' is a specialization of 'FormControlConstraint'.
+'ric::TextField' is a specialization of 'FormControl'.
+'ric::Form' is a specialization of 'ClassifiableComponent'.
+'ric::Label' is a specialization of 'ClassifiableComponent'.
+'ric::RequiredFieldConstraint' is a specialization of 'FormControlConstraint'.
+'ric::LineBreak' is a specialization of 'IdentifiableComponent'.
+'ric::Div' is a specialization of 'BlockLevelComponent'.
+'ric::RichWidget' is a specialization of 'ClassifiableComponent'.
+'ric::Button' is a specialization of 'FormControl'.
+'ric::Form' is a specialization of 'EventComponent'.
+'ric::Select' is a specialization of 'FormControl'.
+'ric::Datepicker' is a specialization of 'TextField'.
+'ric::Image' is a specialization of 'IdentifiableComponent'.
+'ric::Paragraph' is a specialization of 'EventComponent'.
+'ric::List' is a specialization of 'EventComponent'.
+'ric::Checkbox' is a specialization of 'FormControl'.
+'ric::Link' is a specialization of 'ClassifiableComponent'.
+'ric::MessageDialog' is a specialization of 'RichWidget'.
+'ric::PhraseElement' is a specialization of 'EventComponent'.
+'ric::RichWidget' is a specialization of 'IdentifiableComponent'.
+'ric::Label' is a specialization of 'IdentifiableComponent'.
+'ric::LineBreak' is a specialization of 'ClassifiableComponent'.
+'ric::Link' is a specialization of 'InlineComponent'.
+'ric::Document' is a specialization of 'EventComponent'.
+'ric::List' is a specialization of 'IdentifiableComponent'.
+'ric::Span' is a specialization of 'InlineComponent'.
+'ric::TabbedPanel' is a specialization of 'RichWidget'.
+'ric::Span' is a specialization of 'ClassifiableComponent'.
+'ric::PhraseElement' is a specialization of 'ClassifiableComponent'.
+'ric::FormControl' is a specialization of 'IdentifiableComponent'.
+'ric::List' is a specialization of 'ClassifiableComponent'.
+'ric::Div' is a specialization of 'ClassifiableComponent'.
+'ric::Span' is a specialization of 'IdentifiableComponent'.
+'ric::Fieldset' is a specialization of 'EventComponent'.
+'ric::Fieldset' is a specialization of 'ClassifiableComponent'.
+'ric::Span' is a specialization of 'EventComponent'.
+'ric::Radio' is a specialization of 'FormControl'.
+'ric::List' (role 'ric_List', cardinality 0..*) is associated with 'ric::Div' (role 'ric_Div38', cardinality 0..*).
+'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent180', cardinality 0..*) is associated with 'ric::FooterRegion' (role 'ric_FooterRegion179', cardinality 0..*).
+'ric::ContentRegion' (role 'ric_ContentRegion', cardinality 0..*) is associated with 'ric::Portal' (role 'ric_Portal109', cardinality 0..*).
+'ric::Form' (role 'ric_Form150', cardinality 0..*) is associated with 'ric::SearchRegion' (role 'ric_SearchRegion149', cardinality 0..*).
+'ric::LineBreak' (role 'ric_LineBreak68', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab67', cardinality 0..*).
+'ric::FormControl' (role 'ric_FormControl', cardinality 0..*) is associated with 'ric::Label' (role 'ric_Label', cardinality 0..*).
+'ric::HeaderRegion' (role 'ric_HeaderRegion', cardinality 0..*) is associated with 'ric::Portal' (role 'ric_Portal', cardinality 0..*).
+'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion137', cardinality 0..*) is associated with 'ric::LineBreak' (role 'ric_LineBreak138', cardinality 0..*).
+'ric::FooterRegion' (role 'ric_FooterRegion188', cardinality 0..*) is associated with 'ric::RichWidget' (role 'ric_RichWidget189', cardinality 0..*).
+'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent62', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab61', cardinality 0..*).
+'ric::Div' (role 'ric_Div43', cardinality 0..*) is associated with 'ric::Fieldset' (role 'ric_Fieldset44', cardinality 0..*).
+'ric::ListItem' (role 'ric_ListItem', cardinality 0..*) is associated with 'ric::OrderedList' (role 'ric_OrderedList', cardinality 0..*).
+'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent47', cardinality 0..*) is associated with 'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent45', cardinality 0..*).
+'ric::ListItem' (role 'ric_ListItem192', cardinality 0..*) is associated with 'ric::UnorderedList' (role 'ric_UnorderedList', cardinality 0..*).
+'ric::Div' (role 'ric_Div', cardinality 0..*) is associated with 'ric::ObjectComponent' (role 'ric_ObjectComponent', cardinality 0..*).
+'ric::LinkGroup' (role 'ric_LinkGroup204', cardinality 0..*) is associated with 'ric::Link' (role 'ric_Link205', cardinality 0..*).
+'ric::FormControl' (role 'ric_FormControl11', cardinality 0..*) is associated with 'ric::ValidDateConstraint' (role 'ric_ValidDateConstraint', cardinality 0..*).
+'ric::TabbedPanel' (role 'ric_TabbedPanel', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab', cardinality 0..*).
+'ric::LineBreak' (role 'ric_LineBreak', cardinality 0..*) is associated with 'ric::Div' (role 'ric_Div34', cardinality 0..*).
+'ric::Script' (role 'ric_Script', cardinality 0..*) is associated with 'ric::Event' (role 'ric_Event13', cardinality 0..*).
+'ric::RichWidget' (role 'ric_RichWidget168', cardinality 0..*) is associated with 'ric::Document' (role 'ric_Document167', cardinality 0..*).
+'ric::FooterRegion' (role 'ric_FooterRegion185', cardinality 0..*) is associated with 'ric::LineBreak' (role 'ric_LineBreak186', cardinality 0..*).
+'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion143', cardinality 0..*) is associated with 'ric::List' (role 'ric_List144', cardinality 0..*).
+'ric::LineBreak' (role 'ric_LineBreak165', cardinality 0..*) is associated with 'ric::Document' (role 'ric_Document164', cardinality 0..*).
+'ric::Fieldset' (role 'ric_Fieldset', cardinality 0..*) is associated with 'ric::Form' (role 'ric_Form16', cardinality 0..*).
+'ric::RichWidget' (role 'ric_RichWidget71', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab70', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent177', cardinality 0..*) is associated with 'ric::FooterRegion' (role 'ric_FooterRegion176', cardinality 0..*).
+'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent132', cardinality 0..*) is associated with 'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion131', cardinality 0..*).
+'ric::Form' (role 'ric_Form41', cardinality 0..*) is associated with 'ric::Div' (role 'ric_Div40', cardinality 0..*).
+'ric::Section' (role 'ric_Section', cardinality 0..*) is associated with 'ric::AccordionPanel' (role 'ric_AccordionPanel', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent129', cardinality 0..*) is associated with 'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion128', cardinality 0..*).
+'ric::ObjectComponent' (role 'ric_ObjectComponent162', cardinality 0..*) is associated with 'ric::Document' (role 'ric_Document161', cardinality 0..*).
+'ric::HeaderRegion' (role 'ric_HeaderRegion121', cardinality 0..*) is associated with 'ric::LineBreak' (role 'ric_LineBreak122', cardinality 0..*).
+'ric::Portal' (role 'ric_Portal103', cardinality 0..*) is associated with 'ric::NavigationRegion' (role 'ric_NavigationRegion', cardinality 0..*).
+'ric::RichWidget' (role 'ric_RichWidget', cardinality 0..*) is associated with 'ric::Div' (role 'ric_Div36', cardinality 0..*).
+'ric::Label' (role 'ric_Label197', cardinality 0..*) is associated with 'ric::RadioGroup' (role 'ric_RadioGroup196', cardinality 0..*).
+'ric::FormControl' (role 'ric_FormControl3', cardinality 0..*) is associated with 'ric::PhraseElement' (role 'ric_PhraseElement', cardinality 0..*).
+'ric::List' (role 'ric_List74', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab73', cardinality 0..*).
+'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent84', cardinality 0..*) is associated with 'ric::Section' (role 'ric_Section83', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent50', cardinality 0..*) is associated with 'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent49', cardinality 0..*).
+'ric::Section' (role 'ric_Section86', cardinality 0..*) is associated with 'ric::ObjectComponent' (role 'ric_ObjectComponent87', cardinality 0..*).
+'ric::Form' (role 'ric_Form20', cardinality 0..*) is associated with 'ric::InlineComponent' (role 'ric_InlineComponent', cardinality 0..*).
+'ric::Portal' (role 'ric_Portal111', cardinality 0..*) is associated with 'ric::FooterRegion' (role 'ric_FooterRegion', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent156', cardinality 0..*) is associated with 'ric::Document' (role 'ric_Document155', cardinality 0..*).
+'ric::HeaderRegion' (role 'ric_HeaderRegion118', cardinality 0..*) is associated with 'ric::InlineComponent' (role 'ric_InlineComponent119', cardinality 0..*).
+'ric::List' (role 'ric_List171', cardinality 0..*) is associated with 'ric::Document' (role 'ric_Document170', cardinality 0..*).
+'ric::CheckGroup' (role 'ric_CheckGroup', cardinality 0..*) is associated with 'ric::Fieldset' (role 'ric_Fieldset31', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent53', cardinality 0..*) is associated with 'ric::InlineComponent' (role 'ric_InlineComponent51', cardinality 0..*).
+'ric::Document' (role 'ric_Document', cardinality 0..*) is associated with 'ric::Form' (role 'ric_Form', cardinality 0..*).
+'ric::MessageDialog' (role 'ric_MessageDialog', cardinality 0..*) is associated with 'ric::MessageDialogButton' (role 'ric_MessageDialogButton', cardinality 0..*).
+'ric::Section' (role 'ric_Section80', cardinality 0..*) is associated with 'ric::InlineComponent' (role 'ric_InlineComponent81', cardinality 0..*).
+'ric::Section' (role 'ric_Section89', cardinality 0..*) is associated with 'ric::LineBreak' (role 'ric_LineBreak90', cardinality 0..*).
+'ric::FormControl' (role 'ric_FormControl5', cardinality 0..*) is associated with 'ric::ValueConstraint' (role 'ric_ValueConstraint', cardinality 0..*).
+'ric::CheckGroup' (role 'ric_CheckGroup201', cardinality 0..*) is associated with 'ric::Label' (role 'ric_Label202', cardinality 0..*).
+'ric::Event' (role 'ric_Event24', cardinality 0..*) is associated with 'ric::Label' (role 'ric_Label23', cardinality 0..*).
+'ric::Form' (role 'ric_Form18', cardinality 0..*) is associated with 'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent', cardinality 0..*).
+'ric::ObjectComponent' (role 'ric_ObjectComponent65', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab64', cardinality 0..*).
+'ric::Fieldset' (role 'ric_Fieldset26', cardinality 0..*) is associated with 'ric::FormControl' (role 'ric_FormControl27', cardinality 0..*).
+'ric::Form' (role 'ric_Form77', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab76', cardinality 0..*).
+'ric::Document' (role 'ric_Document55', cardinality 0..*) is associated with 'ric::Link' (role 'ric_Link', cardinality 0..*).
+'ric::SearchRegion' (role 'ric_SearchRegion', cardinality 0..*) is associated with 'ric::Portal' (role 'ric_Portal107', cardinality 0..*).
+'ric::Section' (role 'ric_Section95', cardinality 0..*) is associated with 'ric::List' (role 'ric_List96', cardinality 0..*).
+'ric::Document' (role 'ric_Document153', cardinality 0..*) is associated with 'ric::ContentRegion' (role 'ric_ContentRegion152', cardinality 0..*).
+'ric::NumberValueConstraint' (role 'ric_NumberValueConstraint', cardinality 0..*) is associated with 'ric::FormControl' (role 'ric_FormControl7', cardinality 0..*).
+'ric::RequiredFieldConstraint' (role 'ric_RequiredFieldConstraint', cardinality 0..*) is associated with 'ric::FormControl' (role 'ric_FormControl9', cardinality 0..*).
+'ric::LinkGroup' (role 'ric_LinkGroup208', cardinality 0..*) is associated with 'ric::LinkGroup' (role 'ric_LinkGroup206', cardinality 0..*).
+'ric::Form' (role 'ric_Form147', cardinality 0..*) is associated with 'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion146', cardinality 0..*).
+'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion', cardinality 0..*) is associated with 'ric::Portal' (role 'ric_Portal105', cardinality 0..*).
+'ric::Logo' (role 'ric_Logo124', cardinality 0..*) is associated with 'ric::Image' (role 'ric_Image', cardinality 0..*).
+'ric::Event' (role 'ric_Event', cardinality 0..*) is associated with 'ric::EventComponent' (role 'ric_EventComponent', cardinality 0..*).
+'ric::Form' (role 'ric_Form99', cardinality 0..*) is associated with 'ric::Section' (role 'ric_Section98', cardinality 0..*).
+'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion140', cardinality 0..*) is associated with 'ric::RichWidget' (role 'ric_RichWidget141', cardinality 0..*).
+'ric::Section' (role 'ric_Section92', cardinality 0..*) is associated with 'ric::RichWidget' (role 'ric_RichWidget93', cardinality 0..*).
+'ric::Document' (role 'ric_Document158', cardinality 0..*) is associated with 'ric::BlockLevelComponent' (role 'ric_BlockLevelComponent159', cardinality 0..*).
+'ric::Fieldset' (role 'ric_Fieldset29', cardinality 0..*) is associated with 'ric::RadioGroup' (role 'ric_RadioGroup', cardinality 0..*).
+'ric::Select' (role 'ric_Select', cardinality 0..*) is associated with 'ric::SelectItem' (role 'ric_SelectItem', cardinality 0..*).
+'ric::Checkbox' (role 'ric_Checkbox', cardinality 0..*) is associated with 'ric::CheckGroup' (role 'ric_CheckGroup199', cardinality 0..*).
+'ric::RadioGroup' (role 'ric_RadioGroup194', cardinality 0..*) is associated with 'ric::Radio' (role 'ric_Radio', cardinality 0..*).
+'ric::ContextualNavigationRegion' (role 'ric_ContextualNavigationRegion134', cardinality 0..*) is associated with 'ric::ObjectComponent' (role 'ric_ObjectComponent135', cardinality 0..*).
+'ric::HeaderRegion' (role 'ric_HeaderRegion115', cardinality 0..*) is associated with 'ric::NavigationRegion' (role 'ric_NavigationRegion116', cardinality 0..*).
+'ric::NavigationRegion' (role 'ric_NavigationRegion126', cardinality 0..*) is associated with 'ric::LinkGroup' (role 'ric_LinkGroup', cardinality 0..*).
+'ric::InlineComponent' (role 'ric_InlineComponent59', cardinality 0..*) is associated with 'ric::Tab' (role 'ric_Tab58', cardinality 0..*).
+'ric::FooterRegion' (role 'ric_FooterRegion182', cardinality 0..*) is associated with 'ric::ObjectComponent' (role 'ric_ObjectComponent183', cardinality 0..*).
+'ric::Logo' (role 'ric_Logo', cardinality 0..*) is associated with 'ric::HeaderRegion' (role 'ric_HeaderRegion113', cardinality 0..*).
+'ric::Document' (role 'ric_Document173', cardinality 0..*) is associated with 'ric::Form' (role 'ric_Form174', cardinality 0..*).

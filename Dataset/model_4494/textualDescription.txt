@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'dSL::Distance' has the following attributes: 'value' of type int.
+The class 'dSL::Angle' has the following attributes: 'value' of type int; 'away' of type bool.
+The class 'dSL::ActionList' has no attributes.
+The class 'dSL::ConditionList' has no attributes.
+The class 'dSL::Specification' has no attributes.
+The class 'dSL::Rule' has no attributes.
+The class 'dSL::Action' has the following attributes: 'driveDistance' of type bool; 'direction' of type str; 'driveDirection' of type bool; 'probeLake' of type bool; 'showLakes' of type bool; 'blinkLights' of type bool; 'steer' of type bool.
+The class 'dSL::Condition' has the following attributes: 'collision' of type bool; 'isProbed' of type bool; 'atLake' of type bool; 'not_' of type bool; 'allLakes' of type bool.
+The enumeration 'Direction' has the following literals: 'BACKWARD', 'FORWARD'.
+'dSL::Distance' (role 'dSL_Distance16', cardinality 0..*) is associated with 'dSL::Action' (role 'dSL_Action15', cardinality 0..*).
+'dSL::ConditionList' (role 'dSL_ConditionList', cardinality 0..*) is associated with 'dSL::Rule' (role 'dSL_Rule2', cardinality 0..*).
+'dSL::Condition' (role 'dSL_Condition', cardinality 0..*) is associated with 'dSL::ConditionList' (role 'dSL_ConditionList6', cardinality 0..*).
+'dSL::Action' (role 'dSL_Action', cardinality 0..*) is associated with 'dSL::ActionList' (role 'dSL_ActionList13', cardinality 0..*).
+'dSL::Condition' (role 'dSL_Condition9', cardinality 0..*) is associated with 'dSL::Condition' (role 'dSL_Condition7', cardinality 0..*).
+'dSL::Angle' (role 'dSL_Angle', cardinality 0..*) is associated with 'dSL::Action' (role 'dSL_Action18', cardinality 0..*).
+'dSL::Distance' (role 'dSL_Distance', cardinality 0..*) is associated with 'dSL::Condition' (role 'dSL_Condition11', cardinality 0..*).
+'dSL::ActionList' (role 'dSL_ActionList', cardinality 0..*) is associated with 'dSL::Rule' (role 'dSL_Rule4', cardinality 0..*).
+'dSL::Specification' (role 'dSL_Specification', cardinality 0..*) is associated with 'dSL::Rule' (role 'dSL_Rule', cardinality 0..*).

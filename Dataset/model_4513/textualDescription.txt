@@ -1,0 +1,35 @@
+The model has 14 class(es).
+The class 'iotsystem::Actuator' has no attributes.
+The class 'iotsystem::Parameter' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'iotsystem::Sensor' has no attributes.
+The class 'iotsystem::Action' has the following attributes: 'action' of type str.
+The class 'iotsystem::IotSystem' has no attributes.
+The class 'iotsystem::Device' has no attributes.
+The class 'iotsystem::Condition' has the following attributes: 'expectedValue' of type float; 'relationalOperator' of type str.
+The class 'iotsystem::Resource' has the following attributes: 'measurement' of type str; 'url' of type str.
+The class 'iotsystem::DigitalArtifact' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'iotsystem::NamedElement' has the following attributes: 'name' of type str.
+The class 'iotsystem::PhysicalEntity' has no attributes.
+The class 'iotsystem::Rule' has no attributes.
+The class 'Device' has no attributes.
+The enumeration 'Actions' has the following literals: 'SMS', 'EMAIL'.
+The enumeration 'RelationalOperator' has the following literals: 'MINOREQUAL', 'MAJOREQUAL', 'DIFFERENT', 'MINOR', 'EQUAL', 'MAJOR'.
+The enumeration 'EnvironmentConditions' has the following literals: 'SOUND', 'LIGHT', 'TEMPERATURE'.
+'iotsystem::PhysicalEntity' is a specialization of 'NamedElement'.
+'iotsystem::Device' is a specialization of 'NamedElement'.
+'iotsystem::DigitalArtifact' is a specialization of 'NamedElement'.
+'iotsystem::IotSystem' is a specialization of 'NamedElement'.
+'iotsystem::Sensor' is a specialization of 'Device'.
+'iotsystem::Actuator' is a specialization of 'Device'.
+'iotsystem::Rule' is a specialization of 'NamedElement'.
+'iotsystem::PhysicalEntity' (role 'iotsystem_PhysicalEntity', cardinality 0..*) is associated with 'iotsystem::Device' (role 'iotsystem_Device12', cardinality 0..*).
+'iotsystem::Rule' (role 'iotsystem_Rule8', cardinality 0..*) is associated with 'iotsystem::Condition' (role 'iotsystem_Condition', cardinality 0..*).
+'iotsystem::Action' (role 'iotsystem_Action10', cardinality 0..*) is associated with 'iotsystem::Parameter' (role 'iotsystem_Parameter', cardinality 0..*).
+'iotsystem::Resource' (role 'iotsystem_Resource', cardinality 0..*) is associated with 'iotsystem::Device' (role 'iotsystem_Device', cardinality 0..*).
+'iotsystem::Resource' (role 'iotsystem_Resource2', cardinality 0..*) is associated with 'iotsystem::DigitalArtifact' (role 'iotsystem_DigitalArtifact', cardinality 0..*).
+'iotsystem::IotSystem' (role 'iotsystem_IotSystem', cardinality 0..*) is associated with 'iotsystem::PhysicalEntity' (role 'iotsystem_PhysicalEntity14', cardinality 0..*).
+'iotsystem::DigitalArtifact' (role 'iotsystem_DigitalArtifact17', cardinality 0..*) is associated with 'iotsystem::IotSystem' (role 'iotsystem_IotSystem16', cardinality 0..*).
+'iotsystem::Rule' (role 'iotsystem_Rule', cardinality 0..*) is associated with 'iotsystem::DigitalArtifact' (role 'iotsystem_DigitalArtifact4', cardinality 0..*).
+'iotsystem::Action' (role 'iotsystem_Action', cardinality 0..*) is associated with 'iotsystem::Rule' (role 'iotsystem_Rule6', cardinality 0..*).
+'iotsystem::Condition' (role 'iotsystem_Condition19', cardinality 0..*) is associated with 'iotsystem::Sensor' (role 'iotsystem_Sensor', cardinality 0..*).

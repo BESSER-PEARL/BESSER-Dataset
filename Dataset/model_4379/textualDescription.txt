@@ -1,0 +1,71 @@
+The model has 29 class(es).
+The class 'Element' has no attributes.
+The class 'classmodel::Parameter' has the following attributes: 'implicit' of type str; 'name' of type str.
+The class 'classmodel::Operation' has the following attributes: 'body' of type str; 'static' of type bool.
+The class 'classmodel::Package' has the following attributes: 'name' of type str.
+The class 'classmodel::Datatype' has no attributes.
+The class 'classmodel::Feature' has the following attributes: 'constraint' of type str; 'name' of type str; 'visibility' of type str; 'value' of type str.
+The class 'classmodel::Multiplicity' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'Feature' has no attributes.
+The class 'classmodel::Element' has no attributes.
+The class 'classmodel::Relationship' has the following attributes: 'label' of type str.
+The class 'classmodel::Generalization' has no attributes.
+The class 'classmodel::Array' has no attributes.
+The class 'classmodel::Model' has no attributes.
+The class 'classmodel::Entity' has the following attributes: 'name' of type str.
+The class 'classmodel::Attribute' has the following attributes: 'static' of type bool; 'implicit' of type str.
+The class 'classmodel::Reference' has no attributes.
+The class 'classmodel::Annotation' has no attributes.
+The class 'classmodel::Composition' has the following attributes: 'headLabel' of type str; 'tailVisibility' of type str; 'tailNavigable' of type bool; 'headVisibility' of type str; 'headNavigable' of type bool; 'tailLabel' of type str.
+The class 'classmodel::Enumeration' has the following attributes: 'constraint' of type str.
+The class 'classmodel::Import' has the following attributes: 'importURI' of type str.
+The class 'classmodel::Type' has the following attributes: 'visibility' of type str.
+The class 'classmodel::Association' has the following attributes: 'tailVisibility' of type str; 'headVisibility' of type str; 'headNavigable' of type bool; 'headLabel' of type str; 'tailNavigable' of type bool; 'tailLabel' of type str.
+The class 'classmodel::Dependency' has no attributes.
+The class 'classmodel::Constant' has no attributes.
+The class 'classmodel::Aggregation' has the following attributes: 'tailVisibility' of type str; 'headVisibility' of type str; 'headNavigable' of type bool; 'tailLabel' of type str; 'tailNavigable' of type bool; 'headLabel' of type str.
+The class 'Relationship' has no attributes.
+The class 'classmodel::Realization' has no attributes.
+The class 'classmodel::Classifier' has the following attributes: 'constraint' of type str.
+The class 'Entity' has no attributes.
+The enumeration 'Visibility' has the following literals: 'PRIVATE', 'PUBLIC', 'PROTECTED', 'PACKAGE_PRIVATE'.
+'classmodel::Association' is a specialization of 'Relationship'.
+'classmodel::Datatype' is a specialization of 'Entity'.
+'classmodel::Attribute' is a specialization of 'Feature'.
+'classmodel::Composition' is a specialization of 'Relationship'.
+'classmodel::Generalization' is a specialization of 'Relationship'.
+'classmodel::Dependency' is a specialization of 'Relationship'.
+'classmodel::Entity' is a specialization of 'Element'.
+'classmodel::Realization' is a specialization of 'Relationship'.
+'classmodel::Enumeration' is a specialization of 'Entity'.
+'classmodel::Operation' is a specialization of 'Feature'.
+'classmodel::Constant' is a specialization of 'Feature'.
+'classmodel::Aggregation' is a specialization of 'Relationship'.
+'classmodel::Package' is a specialization of 'Element'.
+'classmodel::Classifier' is a specialization of 'Entity'.
+'classmodel::Relationship' is a specialization of 'Element'.
+'classmodel::Array' (role 'classmodel_Array53', cardinality 0..*) is associated with 'classmodel::Multiplicity' (role 'classmodel_Multiplicity54', cardinality 0..*).
+'classmodel::Association' (role 'classmodel_Association27', cardinality 0..*) is associated with 'classmodel::Multiplicity' (role 'classmodel_Multiplicity28', cardinality 0..*).
+'classmodel::Multiplicity' (role 'classmodel_Multiplicity33', cardinality 0..*) is associated with 'classmodel::Aggregation' (role 'classmodel_Aggregation32', cardinality 0..*).
+'classmodel::Array' (role 'classmodel_Array', cardinality 0..*) is associated with 'classmodel::Reference' (role 'classmodel_Reference51', cardinality 0..*).
+'classmodel::Feature' (role 'classmodel_Feature19', cardinality 0..*) is associated with 'classmodel::Enumeration' (role 'classmodel_Enumeration18', cardinality 0..*).
+'classmodel::Aggregation' (role 'classmodel_Aggregation', cardinality 0..*) is associated with 'classmodel::Multiplicity' (role 'classmodel_Multiplicity30', cardinality 0..*).
+'classmodel::Reference' (role 'classmodel_Reference48', cardinality 0..*) is associated with 'classmodel::Entity' (role 'classmodel_Entity49', cardinality 0..*).
+'classmodel::Element' (role 'classmodel_Element6', cardinality 0..*) is associated with 'classmodel::Package' (role 'classmodel_Package', cardinality 0..*).
+'classmodel::Model' (role 'classmodel_Model2', cardinality 0..*) is associated with 'classmodel::Element' (role 'classmodel_Element', cardinality 0..*).
+'classmodel::Reference' (role 'classmodel_Reference46', cardinality 0..*) is associated with 'classmodel::Attribute' (role 'classmodel_Attribute', cardinality 0..*).
+'classmodel::Multiplicity' (role 'classmodel_Multiplicity35', cardinality 0..*) is associated with 'classmodel::Composition' (role 'classmodel_Composition', cardinality 0..*).
+'classmodel::Reference' (role 'classmodel_Reference44', cardinality 0..*) is associated with 'classmodel::Parameter' (role 'classmodel_Parameter43', cardinality 0..*).
+'classmodel::Type' (role 'classmodel_Type10', cardinality 0..*) is associated with 'classmodel::Classifier' (role 'classmodel_Classifier9', cardinality 0..*).
+'classmodel::Relationship' (role 'classmodel_Relationship23', cardinality 0..*) is associated with 'classmodel::Entity' (role 'classmodel_Entity24', cardinality 0..*).
+'classmodel::Entity' (role 'classmodel_Entity21', cardinality 0..*) is associated with 'classmodel::Relationship' (role 'classmodel_Relationship', cardinality 0..*).
+'classmodel::Enumeration' (role 'classmodel_Enumeration', cardinality 0..*) is associated with 'classmodel::Type' (role 'classmodel_Type16', cardinality 0..*).
+'classmodel::Annotation' (role 'classmodel_Annotation', cardinality 0..*) is associated with 'classmodel::Element' (role 'classmodel_Element4', cardinality 0..*).
+'classmodel::Model' (role 'classmodel_Model', cardinality 0..*) is associated with 'classmodel::Import' (role 'classmodel_Import', cardinality 0..*).
+'classmodel::Reference' (role 'classmodel_Reference', cardinality 0..*) is associated with 'classmodel::Operation' (role 'classmodel_Operation41', cardinality 0..*).
+'classmodel::Entity' (role 'classmodel_Entity', cardinality 0..*) is associated with 'classmodel::Type' (role 'classmodel_Type14', cardinality 0..*).
+'classmodel::Classifier' (role 'classmodel_Classifier', cardinality 0..*) is associated with 'classmodel::Type' (role 'classmodel_Type', cardinality 0..*).
+'classmodel::Composition' (role 'classmodel_Composition37', cardinality 0..*) is associated with 'classmodel::Multiplicity' (role 'classmodel_Multiplicity38', cardinality 0..*).
+'classmodel::Feature' (role 'classmodel_Feature', cardinality 0..*) is associated with 'classmodel::Classifier' (role 'classmodel_Classifier12', cardinality 0..*).
+'classmodel::Association' (role 'classmodel_Association', cardinality 0..*) is associated with 'classmodel::Multiplicity' (role 'classmodel_Multiplicity', cardinality 0..*).
+'classmodel::Operation' (role 'classmodel_Operation', cardinality 0..*) is associated with 'classmodel::Parameter' (role 'classmodel_Parameter', cardinality 0..*).

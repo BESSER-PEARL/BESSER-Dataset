@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'BinaryCalculator::BitSeq' has no attributes.
+The class 'BinaryCalculator::Model' has no attributes.
+The class 'BinaryCalculator::Bit' has the following attributes: 'value' of type str.
+The class 'BitSeq' has no attributes.
+The class 'BinaryCalculator::BinaryCalculator' has the following attributes: 'description' of type str.
+The class 'BinaryCalculator::Value' has the following attributes: 'value' of type str.
+The class 'BinaryCalculator::L' has no attributes.
+'BinaryCalculator::Bit' is a specialization of 'BitSeq'.
+'BinaryCalculator::L' is a specialization of 'BitSeq'.
+'BinaryCalculator::BinaryCalculator' (role 'BinaryCalculator_BinaryCalculator4', cardinality 0..*) is associated with 'BinaryCalculator::Value' (role 'BinaryCalculator_Value', cardinality 0..*).
+'BinaryCalculator::Bit' (role 'BinaryCalculator_Bit', cardinality 0..*) is associated with 'BinaryCalculator::L' (role 'BinaryCalculator_L8', cardinality 0..*).
+'BinaryCalculator::L' (role 'BinaryCalculator_L', cardinality 0..*) is associated with 'BinaryCalculator::BitSeq' (role 'BinaryCalculator_BitSeq6', cardinality 0..*).
+'BinaryCalculator::BitSeq' (role 'BinaryCalculator_BitSeq', cardinality 0..*) is associated with 'BinaryCalculator::BinaryCalculator' (role 'BinaryCalculator_BinaryCalculator2', cardinality 0..*).
+'BinaryCalculator::BinaryCalculator' (role 'BinaryCalculator_BinaryCalculator', cardinality 0..*) is associated with 'BinaryCalculator::Model' (role 'BinaryCalculator_Model', cardinality 0..*).

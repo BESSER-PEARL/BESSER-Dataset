@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/smee/amor/org.infai.backend.tests/src/testmodels/bflow/notation_1.01.ecore

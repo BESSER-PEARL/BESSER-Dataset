@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'qualitymodel::LeafAttribute' has the following attributes: 'normalizationKind' of type str; 'normalizationMax' of type float; 'numSamples' of type int; 'normalizationMin' of type float; 'operator' of type str.
+The class 'qualitymodel::CompositeAttribute' has the following attributes: 'operator' of type str.
+The class 'qualitymodel::ConfigurationProfile' has the following attributes: 'ID' of type int.
+The class 'qualitymodel::HistoricalData' has the following attributes: 'instant' of type str; 'value' of type float.
+The class 'qualitymodel::Preference' has the following attributes: 'threshold' of type float; 'weight' of type float.
+The class 'qualitymodel::Metric' has the following attributes: 'probeName' of type str; 'descriptionName' of type str; 'resourceName' of type str; 'data' of type str.
+The class 'Attribute' has no attributes.
+The class 'qualitymodel::Attribute' has the following attributes: 'name' of type str.
+The enumeration 'MetricAggregationOperator' has the following literals: 'MAXIMUM', 'MINIMUM', 'AVERAGE', 'SUM'.
+The enumeration 'MetricNormalizationKind' has the following literals: 'BENEFIT', 'COST'.
+The enumeration 'AttributeAggregationOperator' has the following literals: 'SIMULTANEITY', 'NEUTRALITY', 'REPLACEABILITY'.
+'qualitymodel::CompositeAttribute' is a specialization of 'Attribute'.
+'qualitymodel::LeafAttribute' is a specialization of 'Attribute'.
+'qualitymodel::Attribute' (role 'qualitymodel_Attribute5', cardinality 0..*) is associated with 'qualitymodel::Preference' (role 'qualitymodel_Preference', cardinality 0..*).
+'qualitymodel::HistoricalData' (role 'qualitymodel_HistoricalData', cardinality 0..*) is associated with 'qualitymodel::Attribute' (role 'qualitymodel_Attribute3', cardinality 0..*).
+'qualitymodel::Preference' (role 'qualitymodel_Preference7', cardinality 0..*) is associated with 'qualitymodel::ConfigurationProfile' (role 'qualitymodel_ConfigurationProfile', cardinality 0..*).
+'qualitymodel::Metric' (role 'qualitymodel_Metric10', cardinality 0..*) is associated with 'qualitymodel::ConfigurationProfile' (role 'qualitymodel_ConfigurationProfile9', cardinality 0..*).
+'qualitymodel::Metric' (role 'qualitymodel_Metric', cardinality 0..*) is associated with 'qualitymodel::LeafAttribute' (role 'qualitymodel_LeafAttribute', cardinality 0..*).
+'qualitymodel::Attribute' (role 'qualitymodel_Attribute', cardinality 0..*) is associated with 'qualitymodel::CompositeAttribute' (role 'qualitymodel_CompositeAttribute', cardinality 0..*).

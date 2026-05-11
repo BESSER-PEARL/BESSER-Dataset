@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'p::A' has no attributes.
+The class 'B' has no attributes.
+The class 'p::B' has no attributes.
+'p::A' is a specialization of 'B'.

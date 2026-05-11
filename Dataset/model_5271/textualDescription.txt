@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'clazz::B' has the following attributes: 'name' of type str.
+The class 'clazz::Annotation' has the following attributes: 'tag' of type str.
+The class 'clazz::BRef' has the following attributes: 'name' of type str.
+'clazz::Annotation' (role 'clazz_Annotation', cardinality 0..*) is associated with 'clazz::B' (role 'clazz_B', cardinality 0..*).
+'clazz::BRef' (role 'clazz_BRef', cardinality 0..*) is associated with 'clazz::B' (role 'clazz_B2', cardinality 0..*).

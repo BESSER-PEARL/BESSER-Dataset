@@ -1,0 +1,36 @@
+The model has 16 class(es).
+The class 'Number' has no attributes.
+The class 'metricDSL::MetricDefinition' has no attributes.
+The class 'metricDSL::StepwiseMetric' has no attributes.
+The class 'metricDSL::Number' has the following attributes: 'name' of type str.
+The class 'metricDSL::MetricModel' has the following attributes: 'importURI' of type str.
+The class 'metricDSL::WeightedMetric' has no attributes.
+The class 'Metric' has no attributes.
+The class 'metricDSL::Metric' has the following attributes: 'name' of type str.
+The class 'metricDSL::Parameter' has the following attributes: 'description' of type str; 'shortname' of type str; 'defaultValue' of type float.
+The class 'metricDSL::MetricAndWeight' has no attributes.
+The class 'metricDSL::InternalMetric' has the following attributes: 'shortName' of type str; 'description' of type str.
+The class 'metricDSL::Constant' has the following attributes: 'value' of type float.
+The class 'metricDSL::BoundAndWeight' has no attributes.
+The class 'metricDSL::ExternalMetric' has no attributes.
+The class 'metricDSL::RatioMetric' has no attributes.
+The class 'MetricDefinition' has no attributes.
+'metricDSL::InternalMetric' is a specialization of 'Metric'.
+'metricDSL::WeightedMetric' is a specialization of 'MetricDefinition'.
+'metricDSL::Constant' is a specialization of 'Number'.
+'metricDSL::ExternalMetric' is a specialization of 'Metric'.
+'metricDSL::StepwiseMetric' is a specialization of 'MetricDefinition'.
+'metricDSL::Parameter' is a specialization of 'Number'.
+'metricDSL::RatioMetric' is a specialization of 'MetricDefinition'.
+'metricDSL::StepwiseMetric' (role 'metricDSL_StepwiseMetric', cardinality 0..*) is associated with 'metricDSL::Metric' (role 'metricDSL_Metric6', cardinality 0..*).
+'metricDSL::BoundAndWeight' (role 'metricDSL_BoundAndWeight18', cardinality 0..*) is associated with 'metricDSL::Number' (role 'metricDSL_Number19', cardinality 0..*).
+'metricDSL::Number' (role 'metricDSL_Number', cardinality 0..*) is associated with 'metricDSL::InternalMetric' (role 'metricDSL_InternalMetric', cardinality 0..*).
+'metricDSL::MetricAndWeight' (role 'metricDSL_MetricAndWeight', cardinality 0..*) is associated with 'metricDSL::WeightedMetric' (role 'metricDSL_WeightedMetric', cardinality 0..*).
+'metricDSL::StepwiseMetric' (role 'metricDSL_StepwiseMetric8', cardinality 0..*) is associated with 'metricDSL::BoundAndWeight' (role 'metricDSL_BoundAndWeight', cardinality 0..*).
+'metricDSL::Metric' (role 'metricDSL_Metric10', cardinality 0..*) is associated with 'metricDSL::RatioMetric' (role 'metricDSL_RatioMetric', cardinality 0..*).
+'metricDSL::MetricModel' (role 'metricDSL_MetricModel', cardinality 0..*) is associated with 'metricDSL::Metric' (role 'metricDSL_Metric', cardinality 0..*).
+'metricDSL::Metric' (role 'metricDSL_Metric22', cardinality 0..*) is associated with 'metricDSL::MetricAndWeight' (role 'metricDSL_MetricAndWeight21', cardinality 0..*).
+'metricDSL::Number' (role 'metricDSL_Number25', cardinality 0..*) is associated with 'metricDSL::MetricAndWeight' (role 'metricDSL_MetricAndWeight24', cardinality 0..*).
+'metricDSL::BoundAndWeight' (role 'metricDSL_BoundAndWeight15', cardinality 0..*) is associated with 'metricDSL::Number' (role 'metricDSL_Number16', cardinality 0..*).
+'metricDSL::Metric' (role 'metricDSL_Metric13', cardinality 0..*) is associated with 'metricDSL::RatioMetric' (role 'metricDSL_RatioMetric12', cardinality 0..*).
+'metricDSL::InternalMetric' (role 'metricDSL_InternalMetric3', cardinality 0..*) is associated with 'metricDSL::MetricDefinition' (role 'metricDSL_MetricDefinition', cardinality 0..*).

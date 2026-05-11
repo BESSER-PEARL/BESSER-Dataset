@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'Primary' has no attributes.
+The class 'mathInterpeter::Number' has the following attributes: 'value' of type int.
+The class 'mathInterpeter::Div' has no attributes.
+The class 'mathInterpeter::Exp' has no attributes.
+The class 'mathInterpeter::Parenthesis' has no attributes.
+The class 'mathInterpeter::Primary' has no attributes.
+The class 'mathInterpeter::Mult' has no attributes.
+The class 'mathInterpeter::MathExp' has no attributes.
+The class 'Exp' has no attributes.
+The class 'mathInterpeter::Minus' has no attributes.
+The class 'mathInterpeter::Plus' has no attributes.
+'mathInterpeter::Primary' is a specialization of 'Exp'.
+'mathInterpeter::Number' is a specialization of 'Primary'.
+'mathInterpeter::Div' is a specialization of 'Exp'.
+'mathInterpeter::Minus' is a specialization of 'Exp'.
+'mathInterpeter::Mult' is a specialization of 'Exp'.
+'mathInterpeter::Parenthesis' is a specialization of 'Primary'.
+'mathInterpeter::Plus' is a specialization of 'Exp'.
+'mathInterpeter::MathExp' (role 'mathInterpeter_MathExp', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp', cardinality 0..*).
+'mathInterpeter::Parenthesis' (role 'mathInterpeter_Parenthesis', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp2', cardinality 0..*).
+'mathInterpeter::Exp' (role 'mathInterpeter_Exp18', cardinality 0..*) is associated with 'mathInterpeter::Div' (role 'mathInterpeter_Div', cardinality 0..*).
+'mathInterpeter::Plus' (role 'mathInterpeter_Plus6', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp7', cardinality 0..*).
+'mathInterpeter::Plus' (role 'mathInterpeter_Plus', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp4', cardinality 0..*).
+'mathInterpeter::Minus' (role 'mathInterpeter_Minus', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp9', cardinality 0..*).
+'mathInterpeter::Mult' (role 'mathInterpeter_Mult', cardinality 0..*) is associated with 'mathInterpeter::Exp' (role 'mathInterpeter_Exp14', cardinality 0..*).
+'mathInterpeter::Exp' (role 'mathInterpeter_Exp12', cardinality 0..*) is associated with 'mathInterpeter::Minus' (role 'mathInterpeter_Minus11', cardinality 0..*).
+'mathInterpeter::Primary' (role 'mathInterpeter_Primary', cardinality 0..*) is associated with 'mathInterpeter::Mult' (role 'mathInterpeter_Mult16', cardinality 0..*).
+'mathInterpeter::Primary' (role 'mathInterpeter_Primary21', cardinality 0..*) is associated with 'mathInterpeter::Div' (role 'mathInterpeter_Div20', cardinality 0..*).

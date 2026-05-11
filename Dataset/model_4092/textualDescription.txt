@@ -1,0 +1,63 @@
+The model has 29 class(es).
+The class 'statemachines::almostuml::Event' has no attributes.
+The class 'statemachines::EventOccurrence' has no attributes.
+The class 'statemachines::almostuml::FinalState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'statemachines::almostuml::Vertex' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'statemachines::almostuml::Region' has no attributes.
+The class 'State' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'statemachines::almostuml::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'statemachines::almostuml::StateMachine' has no attributes.
+The class 'Event' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'Region' has no attributes.
+The class 'statemachines::almostuml::State' has no attributes.
+The class 'statemachines::CustomEvent' has no attributes.
+The class 'statemachines::almostuml::Behavior' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'statemachines::CustomSystem' has no attributes.
+The class 'statemachines::almostuml::Transition' has no attributes.
+The class 'statemachines::almostuml::Constraint' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'almostuml::Vertex' has no attributes.
+The class 'statemachines::almostuml::Trigger' has no attributes.
+The class 'almostuml::NamedElement' has no attributes.
+The class 'statemachines::Util' has no attributes.
+The class 'almostuml::statemachines::EventOccurrence' has no attributes.
+The class 'statemachines::almostuml::Pseudostate' has the following attributes: 'kind' of type str.
+The enumeration 'PseudostateKind' has the following literals: 'initial', 'fork', 'choice', 'junction', 'join'.
+'statemachines::almostuml::FinalState' is a specialization of 'State'.
+'statemachines::almostuml::State' is a specialization of 'almostuml::Vertex'.
+'statemachines::almostuml::Behavior' is a specialization of 'NamedElement'.
+'statemachines::almostuml::Vertex' is a specialization of 'NamedElement'.
+'statemachines::almostuml::Transition' is a specialization of 'NamedElement'.
+'statemachines::almostuml::State' is a specialization of 'almostuml::NamedElement'.
+'statemachines::almostuml::Event' is a specialization of 'NamedElement'.
+'statemachines::CustomEvent' is a specialization of 'Event'.
+'statemachines::almostuml::Trigger' is a specialization of 'NamedElement'.
+'statemachines::almostuml::Region' is a specialization of 'NamedElement'.
+'statemachines::almostuml::Pseudostate' is a specialization of 'State'.
+'statemachines::almostuml::StateMachine' is a specialization of 'NamedElement'.
+'statemachines::EventOccurrence' (role 'statemachines_EventOccurrence', cardinality 0..*) is associated with 'statemachines::CustomEvent' (role 'statemachines_CustomEvent4', cardinality 0..*).
+'statemachines::almostuml::State' (role 'statemachines_almostuml_State21', cardinality 0..*) is associated with 'Region' (role 'Region22', cardinality 0..*).
+'Vertex' (role 'Vertex26', cardinality 0..*) is associated with 'statemachines::almostuml::Transition' (role 'statemachines_almostuml_Transition', cardinality 0..*).
+'statemachines::almostuml::Trigger' (role 'statemachines_almostuml_Trigger', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'statemachines::CustomSystem' (role 'statemachines_CustomSystem2', cardinality 0..*) is associated with 'statemachines::CustomEvent' (role 'statemachines_CustomEvent', cardinality 0..*).
+'Behavior' (role 'Behavior', cardinality 0..*) is associated with 'statemachines::almostuml::State' (role 'statemachines_almostuml_State', cardinality 0..*).
+'Trigger' (role 'Trigger', cardinality 0..*) is associated with 'statemachines::almostuml::Transition' (role 'statemachines_almostuml_Transition31', cardinality 0..*).
+'statemachines::almostuml::Transition' (role 'statemachines_almostuml_Transition35', cardinality 0..*) is associated with 'Behavior' (role 'Behavior36', cardinality 0..*).
+'statemachines::almostuml::State' (role 'statemachines_almostuml_State15', cardinality 0..*) is associated with 'Behavior' (role 'Behavior16', cardinality 0..*).
+'statemachines::almostuml::State' (role 'statemachines_almostuml_State18', cardinality 0..*) is associated with 'Behavior' (role 'Behavior19', cardinality 0..*).
+'statemachines::CustomSystem' (role 'statemachines_CustomSystem', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine', cardinality 0..*).
+'Vertex' (role 'Vertex29', cardinality 0..*) is associated with 'statemachines::almostuml::Transition' (role 'statemachines_almostuml_Transition28', cardinality 0..*).
+'Region' (role 'Region', cardinality 0..*) is associated with 'statemachines::almostuml::StateMachine' (role 'stateMachine', cardinality 0..*).
+'Region' (role 'Region24', cardinality 0..*) is associated with 'statemachines::almostuml::Vertex' (role 'subvertex', cardinality 0..*).
+'Constraint' (role 'Constraint', cardinality 0..*) is associated with 'statemachines::almostuml::Transition' (role 'statemachines_almostuml_Transition33', cardinality 0..*).
+'statemachines::almostuml::StateMachine' (role 'statemachines_almostuml_StateMachine', cardinality 0..*) is associated with 'almostuml::statemachines::EventOccurrence' (role 'almostuml_statemachines_EventOccurrence', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'statemachines::almostuml::Region' (role 'statemachines_almostuml_Region12', cardinality 0..*).
+'statemachines::almostuml::Region' (role 'container', cardinality 0..*) is associated with 'Vertex' (role 'Vertex', cardinality 0..*).
+'statemachines::almostuml::Region' (role 'region', cardinality 0..*) is associated with 'StateMachine' (role 'StateMachine10', cardinality 0..*).
+'Transition' (role 'Transition', cardinality 0..*) is associated with 'statemachines::almostuml::Region' (role 'statemachines_almostuml_Region', cardinality 0..*).

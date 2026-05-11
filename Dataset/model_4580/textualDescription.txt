@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'dsl::Parametre' has the following attributes: 'name' of type str.
+The class 'dsl::Fonctionnalite' has the following attributes: 'name' of type str.
+The class 'dsl::IDevice' has the following attributes: 'typeof' of type str; 'name' of type str.
+The class 'EJavaObject' has no attributes.
+The class 'dsl::EJavaObject' has no attributes.
+The class 'dsl::Action' has no attributes.
+The class 'dsl::Robot' has the following attributes: 'name' of type str.
+The class 'dsl::Object' has no attributes.
+The class 'Fonctionnalite' has no attributes.
+The class 'dsl::Capture' has no attributes.
+The class 'dsl::Device' has the following attributes: 'name' of type str.
+'dsl::Capture' is a specialization of 'Fonctionnalite'.
+'dsl::Action' is a specialization of 'Fonctionnalite'.
+'dsl::Object' is a specialization of 'EJavaObject'.
+'dsl::Device' (role 'dsl_Device', cardinality 0..*) is associated with 'dsl::Fonctionnalite' (role 'dsl_Fonctionnalite3', cardinality 0..*).
+'dsl::Robot' (role 'dsl_Robot', cardinality 0..*) is associated with 'dsl::IDevice' (role 'dsl_IDevice', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action', cardinality 0..*) is associated with 'dsl::EJavaObject' (role 'dsl_EJavaObject7', cardinality 0..*).
+'dsl::Parametre' (role 'dsl_Parametre5', cardinality 0..*) is associated with 'dsl::EJavaObject' (role 'dsl_EJavaObject', cardinality 0..*).
+'dsl::Fonctionnalite' (role 'dsl_Fonctionnalite', cardinality 0..*) is associated with 'dsl::Parametre' (role 'dsl_Parametre', cardinality 0..*).

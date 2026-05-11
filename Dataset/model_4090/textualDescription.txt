@@ -1,0 +1,36 @@
+The model has 12 class(es).
+The class 'sihuhu::SwitchConnection' has no attributes.
+The class 'sihuhu::Train' has no attributes.
+The class 'TrackElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sihuhu::World' has no attributes.
+The class 'sihuhu::TrackElement' has no attributes.
+The class 'sihuhu::Rail' has no attributes.
+The class 'sihuhu::Track' has no attributes.
+The class 'sihuhu::Signal' has the following attributes: 'enabled' of type bool.
+The class 'sihuhu::Switch' has no attributes.
+The class 'sihuhu::NamedElement' has the following attributes: 'name' of type str.
+The class 'Rail' has no attributes.
+'sihuhu::TrackElement' is a specialization of 'NamedElement'.
+'sihuhu::Signal' is a specialization of 'NamedElement'.
+'sihuhu::Train' is a specialization of 'NamedElement'.
+'sihuhu::Switch' is a specialization of 'TrackElement'.
+'sihuhu::SwitchConnection' is a specialization of 'Rail'.
+'sihuhu::Track' is a specialization of 'NamedElement'.
+'sihuhu::Rail' is a specialization of 'TrackElement'.
+'sihuhu::World' is a specialization of 'NamedElement'.
+'sihuhu::Rail' (role 'sihuhu_Rail', cardinality 0..*) is associated with 'sihuhu::Track' (role 'sihuhu_Track4', cardinality 0..*).
+'sihuhu::Rail' (role 'sihuhu_Rail11', cardinality 0..*) is associated with 'sihuhu::Signal' (role 'sihuhu_Signal12', cardinality 0..*).
+'sihuhu::Switch' (role 'sihuhu_Switch19', cardinality 0..*) is associated with 'sihuhu::SwitchConnection' (role 'sihuhu_SwitchConnection', cardinality 0..*).
+'sihuhu::TrackElement' (role 'sihuhu_TrackElement28', cardinality 0..*) is associated with 'sihuhu::Train' (role 'sihuhu_Train27', cardinality 0..*).
+'sihuhu::Track' (role 'sihuhu_Track', cardinality 0..*) is associated with 'sihuhu::World' (role 'sihuhu_World', cardinality 0..*).
+'sihuhu::TrackElement' (role 'sihuhu_TrackElement', cardinality 0..*) is associated with 'sihuhu::Rail' (role 'sihuhu_Rail14', cardinality 0..*).
+'sihuhu::Signal' (role 'sihuhu_Signal', cardinality 0..*) is associated with 'sihuhu::Rail' (role 'sihuhu_Rail9', cardinality 0..*).
+'sihuhu::Train' (role 'sihuhu_Train', cardinality 0..*) is associated with 'sihuhu::World' (role 'sihuhu_World2', cardinality 0..*).
+'sihuhu::Track' (role 'sihuhu_Track6', cardinality 0..*) is associated with 'sihuhu::Switch' (role 'sihuhu_Switch', cardinality 0..*).
+'sihuhu::Switch' (role 'sihuhu_Switch24', cardinality 0..*) is associated with 'sihuhu::SwitchConnection' (role 'sihuhu_SwitchConnection25', cardinality 0..*).
+'sihuhu::TrackElement' (role 'onTracks', cardinality 0..*) is associated with 'sihuhu::Train' (role 'Train', cardinality 0..*).
+'sihuhu::Rail' (role 'sihuhu_Rail32', cardinality 0..*) is associated with 'sihuhu::Signal' (role 'sihuhu_Signal31', cardinality 0..*).
+'sihuhu::TrackElement' (role 'sihuhu_TrackElement17', cardinality 0..*) is associated with 'sihuhu::Rail' (role 'sihuhu_Rail16', cardinality 0..*).
+'sihuhu::TrackElement' (role 'TrackElement', cardinality 0..*) is associated with 'sihuhu::Train' (role 'train', cardinality 0..*).
+'sihuhu::Switch' (role 'sihuhu_Switch21', cardinality 0..*) is associated with 'sihuhu::Rail' (role 'sihuhu_Rail22', cardinality 0..*).

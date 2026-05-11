@@ -1,0 +1,39 @@
+The model has 13 class(es).
+The class 'model::AbstractType' has the following attributes: 'name' of type str.
+The class 'model::ConcreteTypeTwo' has the following attributes: 'propTypeTwo' of type str.
+The class 'model::Node' has the following attributes: 'label' of type str.
+The class 'model::EStringToStringMapEntry' has no attributes.
+The class 'AbstractType' has no attributes.
+The class 'model::Container' has no attributes.
+The class 'model::ObjectWithMap' has no attributes.
+The class 'model::User' has the following attributes: 'birthDate' of type date; 'sex' of type str; 'userId' of type str; 'name' of type str.
+The class 'model::Address' has the following attributes: 'street' of type str; 'addId' of type str; 'city' of type str; 'number' of type str.
+The class 'model::ConcreteTypeOne' has the following attributes: 'propTypeOne' of type str.
+The class 'model::PrimaryObject' has the following attributes: 'name' of type str; 'unsettableAttribute' of type str; 'featureMapReferenceCollection' of type str; 'unsettableAttributeWithNonNullDefault' of type str; 'featureMapAttributeCollection' of type str; 'featureMapAttributeType1' of type str; 'idAttribute' of type str; 'featureMapAttributeType2' of type str.
+The class 'model::TargetObject' has the following attributes: 'arrayAttribute' of type str; 'singleAttribute' of type str.
+The class 'model::ETypes' has the following attributes: 'uris' of type str; 'eBigDecimal' of type str; 'eDoubles' of type str; 'eChar' of type str; 'eBooleans' of type str; 'doubleValue' of type str; 'eByteArray' of type str; 'eStrings' of type str; 'eDouble' of type float; 'eString' of type str; 'eByte' of type str; 'eLong' of type str; 'eBigInteger' of type str; 'eInts' of type int; 'eInt' of type int; 'eFloat' of type float; 'eBoolean' of type bool; 'eShort' of type str; 'eDate' of type date.
+The enumeration 'Sex' has the following literals: 'FEMALE', 'MALE'.
+'model::ConcreteTypeOne' is a specialization of 'AbstractType'.
+'model::ConcreteTypeTwo' is a specialization of 'AbstractType'.
+'model::ObjectWithMap' (role 'model_ObjectWithMap', cardinality 0..*) is associated with 'model::EStringToStringMapEntry' (role 'model_EStringToStringMapEntry', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject37', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject36', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject10', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject8', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject18', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject19', cardinality 0..*).
+'model::Node' (role 'source', cardinality 0..*) is associated with 'model::Node' (role 'Node', cardinality 0..*).
+'model::Node' (role 'model_Node', cardinality 0..*) is associated with 'model::Node' (role 'model_Node47', cardinality 0..*).
+'model::User' (role 'model_User0', cardinality 0..*) is associated with 'model::User' (role 'model_User', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject16', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject15', cardinality 0..*).
+'model::Node' (role 'Node46', cardinality 0..*) is associated with 'model::Node' (role 'target', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject13', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject12', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject30', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject31', cardinality 0..*).
+'model::Address' (role 'model_Address', cardinality 0..*) is associated with 'model::User' (role 'model_User6', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject33', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject34', cardinality 0..*).
+'model::Node' (role 'model_Node54', cardinality 0..*) is associated with 'model::Node' (role 'model_Node52', cardinality 0..*).
+'model::AbstractType' (role 'model_AbstractType39', cardinality 0..*) is associated with 'model::AbstractType' (role 'model_AbstractType41', cardinality 0..*).
+'model::Node' (role 'model_Node49', cardinality 0..*) is associated with 'model::Node' (role 'model_Node51', cardinality 0..*).
+'model::PrimaryObject' (role 'model_PrimaryObject21', cardinality 0..*) is associated with 'model::TargetObject' (role 'model_TargetObject22', cardinality 0..*).
+'model::Container' (role 'model_Container', cardinality 0..*) is associated with 'model::AbstractType' (role 'model_AbstractType', cardinality 0..*).
+'model::User' (role 'model_User2', cardinality 0..*) is associated with 'model::User' (role 'model_User4', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject28', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject27', cardinality 0..*).
+'model::TargetObject' (role 'model_TargetObject25', cardinality 0..*) is associated with 'model::PrimaryObject' (role 'model_PrimaryObject24', cardinality 0..*).

@@ -1,0 +1,216 @@
+The model has 100 class(es).
+The class 'becontent::SystemAttributeDate' has no attributes.
+The class 'becontent::Skin' has the following attributes: 'name' of type str.
+The class 'becontent::CustomRelation' has no attributes.
+The class 'becontent::AttributePosition' has no attributes.
+The class 'becontent::Date' has the following attributes: 'name' of type str; 'label' of type str; 'isMandatory' of type bool.
+The class 'becontent::SystemAttributePosition' has no attributes.
+The class 'becontent::AttributeColor' has no attributes.
+The class 'becontent::AttributePassword' has no attributes.
+The class 'becontent::TypedSystemAttribute' has the following attributes: 'isMandatory' of type bool; 'name' of type str.
+The class 'becontent::Parameter' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'becontent::DefinitionItem' has no attributes.
+The class 'becontent::UnsetParameter' has the following attributes: 'name' of type str.
+The class 'becontent::AttributeLongDate' has no attributes.
+The class 'becontent::AttributeFile' has no attributes.
+The class 'becontent::EntityManagerPage' has the following attributes: 'skin' of type str; 'fileName' of type str.
+The class 'FormElement' has no attributes.
+The class 'BeContentElement' has no attributes.
+The class 'becontent::AttributeDate' has no attributes.
+The class 'becontent::SystemRelation' has no attributes.
+The class 'DefinitionItem' has no attributes.
+The class 'becontent::LongDate' has the following attributes: 'label' of type str; 'isMandatory' of type bool; 'name' of type str.
+The class 'becontent::ApplyItem' has the following attributes: 'prefix' of type str; 'key' of type str.
+The class 'becontent::Copy' has the following attributes: 'fieldName1' of type str; 'fieldName2' of type str.
+The class 'becontent::Content' has the following attributes: 'style' of type str; 'limit' of type int; 'presentationFields' of type str; 'template' of type str; 'orderFields' of type str; 'joinCondition' of type str; 'filter' of type str; '_id_model' of type str.
+The class 'becontent::SystemAttributeInteger' has the following attributes: 'isPrimaryKey' of type bool.
+The class 'becontent::ExtendedForm' has the following attributes: 'className' of type str.
+The class 'ApplyCommand' has no attributes.
+The class 'becontent::BeContentModel' has no attributes.
+The class 'becontent::SystemAttributeLongDate' has no attributes.
+The class 'becontent::SystemEntityField' has the following attributes: 'isPresented' of type bool; 'isSearchPresentationBody' of type bool; 'isTextSearch' of type bool; 'isSearchPresentationHead' of type bool.
+The class 'becontent::SystemAttributeVarchar' has the following attributes: 'length' of type int; 'isPrimaryKey' of type bool.
+The class 'becontent::Relation' has the following attributes: 'name' of type str; 'variableName' of type str.
+The class 'Entity' has no attributes.
+The class 'becontent::Validation' has the following attributes: 'message' of type str; '_id_model' of type str; 'condition' of type str.
+The class 'EntityField' has no attributes.
+The class 'becontent::Reference' has the following attributes: 'name' of type str.
+The class 'becontent::NotStructuredElement' has the following attributes: 'helper' of type str.
+The class 'becontent::ConditionalTemplate' has the following attributes: 'falseTemplate' of type str; 'conditionExp' of type str; 'trueTemplate' of type str; 'fieldName' of type str; '_id_model' of type str.
+The class 'becontent::CustomPager' has the following attributes: 'order' of type str; 'filter' of type str; 'query' of type str; 'length' of type int; 'template' of type str; 'className' of type str; '_id_model' of type str.
+The class 'becontent::Apply' has the following attributes: 'prefix' of type str.
+The class 'becontent::BeContentElement' has no attributes.
+The class 'becontent::AttributeImage' has no attributes.
+The class 'becontent::SystemEntity' has no attributes.
+The class 'becontent::Form' has the following attributes: 'name' of type str; 'method' of type str; 'description' of type str.
+The class 'becontent::AttributeText' has no attributes.
+The class 'Relation' has no attributes.
+The class 'becontent::FileToFolderExtension' has the following attributes: '_id_model' of type str; 'extensionValue' of type str; 'extensionKey' of type str.
+The class 'becontent::ViewItem' has no attributes.
+The class 'TypedSystemAttribute' has no attributes.
+The class 'becontent::AttributeVarchar' has the following attributes: 'length' of type int; 'isPrimaryKey' of type bool.
+The class 'becontent::Select' has the following attributes: 'values' of type str; 'isMandatory' of type bool; 'label' of type str; 'name' of type str.
+The class 'becontent::Handler' has the following attributes: 'mainSkinPlaceholder' of type str; 'mainSkinWithPager' of type bool; 'fileName' of type str; 'mainSkinPagerLength' of type int.
+The class 'becontent::ApplyCommand' has no attributes.
+The class 'becontent::Editor' has the following attributes: 'rows' of type int; 'name' of type str; 'columns' of type int; 'label' of type str; 'isMandatory' of type bool.
+The class 'becontent::Color' has the following attributes: 'name' of type str; 'defaultColor' of type str; 'label' of type str.
+The class 'becontent::SystemReference' has the following attributes: 'name' of type str.
+The class 'TypedAttribute' has no attributes.
+The class 'becontent::SystemAttributeColor' has no attributes.
+The class 'becontent::JoinEntity' has the following attributes: '_id_model' of type str.
+The class 'becontent::Image' has the following attributes: 'isMandatory' of type bool; 'name' of type str; 'label' of type str.
+The class 'becontent::Template' has the following attributes: '_id_model' of type str; 'path' of type str.
+The class 'becontent::ApplyIndexed' has no attributes.
+The class 'becontent::HierarchicalPosition' has the following attributes: 'label' of type str; 'referenceField' of type str; 'size' of type int; 'controlledField' of type str; 'name' of type str.
+The class 'becontent::FileToFolder' has the following attributes: 'extension' of type str; 'extensionMessage' of type str; 'isMandatory' of type bool; 'label' of type str; 'name' of type str.
+The class 'becontent::Propagate' has the following attributes: 'fieldName2' of type str; 'fieldName1' of type str.
+The class 'becontent::Checkbox' has the following attributes: 'name' of type str; 'isChecked' of type bool; 'label' of type str; 'value' of type str.
+The class 'becontent::Skinlet' has the following attributes: '_id_model' of type str; 'template' of type str.
+The class 'becontent::SystemAttributePassword' has no attributes.
+The class 'becontent::SystemAttributeText' has no attributes.
+The class 'becontent::Text' has the following attributes: 'size' of type int; 'name' of type str; 'isMandatory' of type bool; 'maxLength' of type int; 'label' of type str.
+The class 'becontent::EntityField' has the following attributes: 'isSearchPresentationHead' of type bool; 'isSearchPresentationBody' of type bool; 'isPresented' of type bool; 'isTextSearch' of type bool.
+The class 'becontent::Password' has the following attributes: 'maxLength' of type int; 'name' of type str; 'label' of type str; 'size' of type int; 'isMandatory' of type bool.
+The class 'NotStructuredElement' has no attributes.
+The class 'becontent::Channel' has the following attributes: '_id_model' of type str; 'parameters' of type str.
+The class 'becontent::RadioFromReference' has the following attributes: 'isMandatory' of type bool; 'label' of type str; 'name' of type str; 'restrictCondition' of type str.
+The class 'becontent::SelectFromReference' has the following attributes: 'isMandatory' of type bool; 'restrictCondition' of type str; 'name' of type str; 'label' of type str.
+The class 'becontent::ContentCommand' has the following attributes: '_id_model' of type str.
+The class 'becontent::Year' has the following attributes: 'start' of type int; 'end' of type int; 'name' of type str; 'label' of type str; 'isMandatory' of type bool.
+The class 'becontent::Link' has the following attributes: 'size' of type int; 'maxLength' of type int; 'isMandatory' of type bool; 'label' of type str; 'name' of type str.
+The class 'becontent::FormElement' has no attributes.
+The class 'becontent::AttributeFileToFolder' has no attributes.
+The class 'becontent::RadioButton' has the following attributes: 'values' of type str; 'label' of type str; 'name' of type str.
+The class 'becontent::TypedAttribute' has the following attributes: 'name' of type str; 'isMandatory' of type bool.
+The class 'becontent::SystemAttributeFile' has no attributes.
+The class 'becontent::File' has the following attributes: 'isMandatory' of type bool; 'label' of type str; 'extension' of type str; 'name' of type str; 'extensionMessage' of type str.
+The class 'becontent::SystemAttributeFileToFolder' has no attributes.
+The class 'becontent::Trigger' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'becontent::AttributeInteger' has the following attributes: 'isPrimaryKey' of type bool.
+The class 'becontent::Textarea' has the following attributes: 'name' of type str; 'isMandatory' of type bool; 'columns' of type int; 'label' of type str; 'rows' of type int.
+The class 'SystemEntityField' has no attributes.
+The class 'becontent::Position' has the following attributes: 'isMandatory' of type bool; 'name' of type str; 'label' of type str; 'size' of type int; 'controlledField' of type str.
+The class 'becontent::Section' has the following attributes: 'name' of type str; 'text' of type str.
+The class 'ContentCommand' has no attributes.
+The class 'becontent::CustomEntity' has no attributes.
+The class 'becontent::Hidden' has the following attributes: 'name' of type str; 'values' of type str.
+The class 'Form' has no attributes.
+The class 'ViewItem' has no attributes.
+The class 'becontent::SystemAttributeImage' has no attributes.
+The class 'becontent::RelationManager' has the following attributes: 'orientation' of type str; 'label' of type str; 'name' of type str; 'restrictCondition' of type str.
+The class 'becontent::Entity' has the following attributes: 'presentationString' of type str; 'rssFilter' of type str; 'isOwned' of type bool; 'variableName' of type str; 'name' of type str.
+The enumeration 'ContentStyle' has the following literals: 'hierarchical', 'normal'.
+The enumeration 'ConditionalTemplateExpType' has the following literals: 'isNotEmpty'.
+The enumeration 'FormMethodType' has the following literals: 'post', 'get'.
+The enumeration 'OrientationType' has the following literals: 'left', 'right'.
+The enumeration 'ConditionType' has the following literals: 'implies', 'dateLessEqual', 'equal'.
+'becontent::Hidden' is a specialization of 'NotStructuredElement'.
+'becontent::CustomRelation' is a specialization of 'Relation'.
+'becontent::Link' is a specialization of 'NotStructuredElement'.
+'becontent::Propagate' is a specialization of 'ContentCommand'.
+'becontent::Textarea' is a specialization of 'NotStructuredElement'.
+'becontent::Image' is a specialization of 'NotStructuredElement'.
+'becontent::SystemRelation' is a specialization of 'Relation'.
+'becontent::ApplyItem' is a specialization of 'ApplyCommand'.
+'becontent::DefinitionItem' is a specialization of 'BeContentElement'.
+'becontent::ApplyCommand' is a specialization of 'ContentCommand'.
+'becontent::Entity' is a specialization of 'DefinitionItem'.
+'becontent::Relation' is a specialization of 'DefinitionItem'.
+'becontent::Handler' is a specialization of 'BeContentElement'.
+'becontent::ApplyIndexed' is a specialization of 'ApplyCommand'.
+'becontent::Text' is a specialization of 'NotStructuredElement'.
+'becontent::NotStructuredElement' is a specialization of 'FormElement'.
+'becontent::Password' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeImage' is a specialization of 'TypedSystemAttribute'.
+'becontent::Skin' is a specialization of 'ViewItem'.
+'becontent::Checkbox' is a specialization of 'NotStructuredElement'.
+'becontent::AttributeFile' is a specialization of 'TypedAttribute'.
+'becontent::Color' is a specialization of 'NotStructuredElement'.
+'becontent::Apply' is a specialization of 'ApplyCommand'.
+'becontent::Year' is a specialization of 'NotStructuredElement'.
+'becontent::CustomEntity' is a specialization of 'Entity'.
+'becontent::SystemReference' is a specialization of 'SystemEntityField'.
+'becontent::SystemAttributeLongDate' is a specialization of 'TypedSystemAttribute'.
+'becontent::Copy' is a specialization of 'ContentCommand'.
+'becontent::Form' is a specialization of 'FormElement'.
+'becontent::LongDate' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributePassword' is a specialization of 'TypedSystemAttribute'.
+'becontent::RadioFromReference' is a specialization of 'NotStructuredElement'.
+'becontent::HierarchicalPosition' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeDate' is a specialization of 'TypedSystemAttribute'.
+'becontent::Channel' is a specialization of 'BeContentElement'.
+'becontent::Parameter' is a specialization of 'ContentCommand'.
+'becontent::UnsetParameter' is a specialization of 'ContentCommand'.
+'becontent::Position' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeText' is a specialization of 'TypedSystemAttribute'.
+'becontent::SystemEntity' is a specialization of 'Entity'.
+'becontent::FileToFolder' is a specialization of 'NotStructuredElement'.
+'becontent::SelectFromReference' is a specialization of 'NotStructuredElement'.
+'becontent::Content' is a specialization of 'ViewItem'.
+'becontent::Trigger' is a specialization of 'ContentCommand'.
+'becontent::AttributeText' is a specialization of 'TypedAttribute'.
+'becontent::AttributePassword' is a specialization of 'TypedAttribute'.
+'becontent::AttributeVarchar' is a specialization of 'TypedAttribute'.
+'becontent::TypedAttribute' is a specialization of 'EntityField'.
+'becontent::FileToFolderExtension' is a specialization of 'BeContentElement'.
+'becontent::SystemAttributeInteger' is a specialization of 'TypedSystemAttribute'.
+'becontent::Editor' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeFile' is a specialization of 'TypedSystemAttribute'.
+'becontent::ExtendedForm' is a specialization of 'Form'.
+'becontent::Skinlet' is a specialization of 'ViewItem'.
+'becontent::AttributeLongDate' is a specialization of 'TypedAttribute'.
+'becontent::Reference' is a specialization of 'EntityField'.
+'becontent::Template' is a specialization of 'ViewItem'.
+'becontent::AttributeImage' is a specialization of 'TypedAttribute'.
+'becontent::Select' is a specialization of 'NotStructuredElement'.
+'becontent::AttributeColor' is a specialization of 'TypedAttribute'.
+'becontent::EntityManagerPage' is a specialization of 'BeContentElement'.
+'becontent::Date' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeVarchar' is a specialization of 'TypedSystemAttribute'.
+'becontent::AttributeDate' is a specialization of 'TypedAttribute'.
+'becontent::RadioButton' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributeFileToFolder' is a specialization of 'TypedSystemAttribute'.
+'becontent::File' is a specialization of 'NotStructuredElement'.
+'becontent::SystemAttributePosition' is a specialization of 'TypedSystemAttribute'.
+'becontent::Section' is a specialization of 'NotStructuredElement'.
+'becontent::AttributeInteger' is a specialization of 'TypedAttribute'.
+'becontent::SystemAttributeColor' is a specialization of 'TypedSystemAttribute'.
+'becontent::AttributeFileToFolder' is a specialization of 'TypedAttribute'.
+'becontent::RelationManager' is a specialization of 'NotStructuredElement'.
+'becontent::TypedSystemAttribute' is a specialization of 'SystemEntityField'.
+'becontent::AttributePosition' is a specialization of 'TypedAttribute'.
+'becontent::Validation' (role 'becontent_Validation64', cardinality 0..*) is associated with 'becontent::Form' (role 'becontent_Form63', cardinality 0..*).
+'becontent::RadioFromReference' (role 'becontent_RadioFromReference', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity73', cardinality 0..*).
+'becontent::NotStructuredElement' (role 'becontent_NotStructuredElement69', cardinality 0..*) is associated with 'becontent::Validation' (role 'becontent_Validation68', cardinality 0..*).
+'becontent::Validation' (role 'becontent_Validation', cardinality 0..*) is associated with 'becontent::EntityManagerPage' (role 'becontent_EntityManagerPage54', cardinality 0..*).
+'becontent::EntityManagerPage' (role 'becontent_EntityManagerPage52', cardinality 0..*) is associated with 'becontent::CustomPager' (role 'becontent_CustomPager', cardinality 0..*).
+'becontent::CustomRelation' (role 'becontent_CustomRelation', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity8', cardinality 0..*).
+'becontent::Content' (role 'becontent_Content', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity35', cardinality 0..*).
+'becontent::JoinEntity' (role 'becontent_JoinEntity46', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity47', cardinality 0..*).
+'becontent::Validation' (role 'becontent_Validation66', cardinality 0..*) is associated with 'becontent::NotStructuredElement' (role 'becontent_NotStructuredElement', cardinality 0..*).
+'becontent::ContentCommand' (role 'becontent_ContentCommand', cardinality 0..*) is associated with 'becontent::Content' (role 'becontent_Content39', cardinality 0..*).
+'becontent::SystemEntity' (role 'becontent_SystemEntity21', cardinality 0..*) is associated with 'becontent::SystemReference' (role 'becontent_SystemReference', cardinality 0..*).
+'becontent::Form' (role 'becontent_Form60', cardinality 0..*) is associated with 'becontent::CustomPager' (role 'becontent_CustomPager61', cardinality 0..*).
+'becontent::Channel' (role 'becontent_Channel', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity3', cardinality 0..*).
+'becontent::Content' (role 'becontent_Content37', cardinality 0..*) is associated with 'becontent::JoinEntity' (role 'becontent_JoinEntity', cardinality 0..*).
+'becontent::Entity' (role 'becontent_Entity71', cardinality 0..*) is associated with 'becontent::SelectFromReference' (role 'becontent_SelectFromReference', cardinality 0..*).
+'becontent::Content' (role 'becontent_Content41', cardinality 0..*) is associated with 'becontent::ConditionalTemplate' (role 'becontent_ConditionalTemplate', cardinality 0..*).
+'becontent::Handler' (role 'becontent_Handler30', cardinality 0..*) is associated with 'becontent::Skin' (role 'becontent_Skin', cardinality 0..*).
+'becontent::AttributeFileToFolder' (role 'becontent_AttributeFileToFolder', cardinality 0..*) is associated with 'becontent::FileToFolderExtension' (role 'becontent_FileToFolderExtension', cardinality 0..*).
+'becontent::Entity' (role 'becontent_Entity26', cardinality 0..*) is associated with 'becontent::Channel' (role 'becontent_Channel25', cardinality 0..*).
+'becontent::JoinEntity' (role 'becontent_JoinEntity42', cardinality 0..*) is associated with 'becontent::JoinEntity' (role 'becontent_JoinEntity44', cardinality 0..*).
+'becontent::BeContentElement' (role 'becontent_BeContentElement', cardinality 0..*) is associated with 'becontent::BeContentModel' (role 'becontent_BeContentModel', cardinality 0..*).
+'becontent::Reference' (role 'becontent_Reference', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity18', cardinality 0..*).
+'becontent::SystemEntity' (role 'becontent_SystemEntity13', cardinality 0..*) is associated with 'becontent::SystemRelation' (role 'becontent_SystemRelation', cardinality 0..*).
+'becontent::FileToFolderExtension' (role 'becontent_FileToFolderExtension23', cardinality 0..*) is associated with 'becontent::SystemAttributeFileToFolder' (role 'becontent_SystemAttributeFileToFolder', cardinality 0..*).
+'becontent::DefinitionItem' (role 'becontent_DefinitionItem', cardinality 0..*) is associated with 'becontent::Form' (role 'becontent_Form56', cardinality 0..*).
+'becontent::ApplyCommand' (role 'becontent_ApplyCommand', cardinality 0..*) is associated with 'becontent::ViewItem' (role 'becontent_ViewItem49', cardinality 0..*).
+'becontent::Handler' (role 'becontent_Handler28', cardinality 0..*) is associated with 'becontent::ViewItem' (role 'becontent_ViewItem', cardinality 0..*).
+'becontent::ViewItem' (role 'becontent_ViewItem33', cardinality 0..*) is associated with 'becontent::Handler' (role 'becontent_Handler32', cardinality 0..*).
+'becontent::Form' (role 'becontent_Form58', cardinality 0..*) is associated with 'becontent::FormElement' (role 'becontent_FormElement', cardinality 0..*).
+'becontent::Entity' (role 'becontent_Entity11', cardinality 0..*) is associated with 'becontent::CustomRelation' (role 'becontent_CustomRelation10', cardinality 0..*).
+'becontent::Form' (role 'becontent_Form', cardinality 0..*) is associated with 'becontent::EntityManagerPage' (role 'becontent_EntityManagerPage', cardinality 0..*).
+'becontent::SystemEntity' (role 'becontent_SystemEntity', cardinality 0..*) is associated with 'becontent::SystemEntityField' (role 'becontent_SystemEntityField', cardinality 0..*).
+'becontent::EntityField' (role 'becontent_EntityField', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity', cardinality 0..*).
+'becontent::SystemEntity' (role 'becontent_SystemEntity16', cardinality 0..*) is associated with 'becontent::SystemRelation' (role 'becontent_SystemRelation15', cardinality 0..*).
+'becontent::Handler' (role 'becontent_Handler', cardinality 0..*) is associated with 'becontent::Entity' (role 'becontent_Entity5', cardinality 0..*).

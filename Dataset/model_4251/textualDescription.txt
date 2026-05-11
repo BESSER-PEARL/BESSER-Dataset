@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Employees::EmployeeContainer' has no attributes.
+The class 'Employees::Employee' has the following attributes: 'name' of type str; 'ID' of type int; 'salary' of type int.
+'Employees::EmployeeContainer' (role 'Employees_EmployeeContainer', cardinality 0..*) is associated with 'Employees::Employee' (role 'Employees_Employee', cardinality 0..*).

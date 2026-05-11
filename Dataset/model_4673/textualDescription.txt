@@ -1,0 +1,69 @@
+The model has 27 class(es).
+The class 'picojava::Dot' has no attributes.
+The class 'picojava::WhileStmt' has no attributes.
+The class 'picojava::PrimitiveDecl' has no attributes.
+The class 'picojava::Exp' has the following attributes: 'isValue' of type bool.
+The class 'picojava::UnknownDecl' has no attributes.
+The class 'BlockStmt' has no attributes.
+The class 'picojava::Stmt' has no attributes.
+The class 'TypeDecl' has no attributes.
+The class 'picojava::IdUse' has the following attributes: 'Name' of type str; 'isQualified' of type bool.
+The class 'Stmt' has no attributes.
+The class 'IdUse' has no attributes.
+The class 'picojava::VariableUse' has no attributes.
+The class 'picojava::Program' has no attributes.
+The class 'picojava::ClassDecl' has the following attributes: 'hasCycleOnSuperclassChain' of type bool.
+The class 'picojava::Use' has no attributes.
+The class 'picojava::Decl' has the following attributes: 'isUnknown' of type bool; 'Name' of type str.
+The class 'picojava::BooleanLiteral' has the following attributes: 'Value' of type str.
+The class 'picojava::TypeDecl' has the following attributes: 'isQualified' of type bool.
+The class 'Access' has no attributes.
+The class 'Exp' has no attributes.
+The class 'picojava::VarDecl' has no attributes.
+The class 'picojava::Block' has no attributes.
+The class 'picojava::AssignStmt' has no attributes.
+The class 'picojava::TypeUse' has no attributes.
+The class 'Decl' has no attributes.
+The class 'picojava::BlockStmt' has no attributes.
+The class 'picojava::Access' has no attributes.
+'picojava::Use' is a specialization of 'IdUse'.
+'picojava::BooleanLiteral' is a specialization of 'Exp'.
+'picojava::VarDecl' is a specialization of 'Decl'.
+'picojava::UnknownDecl' is a specialization of 'TypeDecl'.
+'picojava::PrimitiveDecl' is a specialization of 'TypeDecl'.
+'picojava::Decl' is a specialization of 'BlockStmt'.
+'picojava::VariableUse' is a specialization of 'IdUse'.
+'picojava::Dot' is a specialization of 'Access'.
+'picojava::WhileStmt' is a specialization of 'Stmt'.
+'picojava::TypeUse' is a specialization of 'IdUse'.
+'picojava::IdUse' is a specialization of 'Access'.
+'picojava::AssignStmt' is a specialization of 'Stmt'.
+'picojava::Access' is a specialization of 'Exp'.
+'picojava::ClassDecl' is a specialization of 'TypeDecl'.
+'picojava::Stmt' is a specialization of 'BlockStmt'.
+'picojava::TypeDecl' is a specialization of 'Decl'.
+'picojava::TypeDecl' (role 'picojava_TypeDecl44', cardinality 0..*) is associated with 'picojava::Exp' (role 'picojava_Exp43', cardinality 0..*).
+'picojava::IdUse' (role 'picojava_IdUse', cardinality 0..*) is associated with 'picojava::ClassDecl' (role 'picojava_ClassDecl', cardinality 0..*).
+'picojava::ClassDecl' (role 'picojava_ClassDecl26', cardinality 0..*) is associated with 'picojava::ClassDecl' (role 'picojava_ClassDecl28', cardinality 0..*).
+'picojava::Access' (role 'picojava_Access52', cardinality 0..*) is associated with 'picojava::Dot' (role 'picojava_Dot', cardinality 0..*).
+'picojava::IdUse' (role 'picojava_IdUse55', cardinality 0..*) is associated with 'picojava::Dot' (role 'picojava_Dot54', cardinality 0..*).
+'picojava::WhileStmt' (role 'picojava_WhileStmt', cardinality 0..*) is associated with 'picojava::Exp' (role 'picojava_Exp36', cardinality 0..*).
+'picojava::Decl' (role 'picojava_Decl15', cardinality 0..*) is associated with 'picojava::PrimitiveDecl' (role 'picojava_PrimitiveDecl16', cardinality 0..*).
+'picojava::VarDecl' (role 'picojava_VarDecl', cardinality 0..*) is associated with 'picojava::Access' (role 'picojava_Access30', cardinality 0..*).
+'picojava::Program' (role 'picojava_Program2', cardinality 0..*) is associated with 'picojava::TypeDecl' (role 'picojava_TypeDecl', cardinality 0..*).
+'picojava::Access' (role 'picojava_Access50', cardinality 0..*) is associated with 'picojava::IdUse' (role 'picojava_IdUse49', cardinality 0..*).
+'picojava::UnknownDecl' (role 'picojava_UnknownDecl', cardinality 0..*) is associated with 'picojava::Program' (role 'picojava_Program4', cardinality 0..*).
+'picojava::WhileStmt' (role 'picojava_WhileStmt38', cardinality 0..*) is associated with 'picojava::Stmt' (role 'picojava_Stmt', cardinality 0..*).
+'picojava::Decl' (role 'picojava_Decl47', cardinality 0..*) is associated with 'picojava::Access' (role 'picojava_Access46', cardinality 0..*).
+'picojava::Block' (role 'picojava_Block', cardinality 0..*) is associated with 'picojava::Program' (role 'picojava_Program', cardinality 0..*).
+'picojava::PrimitiveDecl' (role 'picojava_PrimitiveDecl', cardinality 0..*) is associated with 'picojava::Program' (role 'picojava_Program6', cardinality 0..*).
+'picojava::AssignStmt' (role 'picojava_AssignStmt', cardinality 0..*) is associated with 'picojava::Access' (role 'picojava_Access32', cardinality 0..*).
+'picojava::Block' (role 'picojava_Block10', cardinality 0..*) is associated with 'picojava::Decl' (role 'picojava_Decl', cardinality 0..*).
+'picojava::TypeDecl' (role 'picojava_TypeDecl18', cardinality 0..*) is associated with 'picojava::Access' (role 'picojava_Access', cardinality 0..*).
+'picojava::Decl' (role 'picojava_Decl12', cardinality 0..*) is associated with 'picojava::TypeDecl' (role 'picojava_TypeDecl13', cardinality 0..*).
+'picojava::Exp' (role 'picojava_Exp', cardinality 0..*) is associated with 'picojava::AssignStmt' (role 'picojava_AssignStmt34', cardinality 0..*).
+'picojava::Block' (role 'picojava_Block8', cardinality 0..*) is associated with 'picojava::BlockStmt' (role 'picojava_BlockStmt', cardinality 0..*).
+'picojava::Block' (role 'picojava_Block25', cardinality 0..*) is associated with 'picojava::ClassDecl' (role 'picojava_ClassDecl24', cardinality 0..*).
+'picojava::WhileStmt' (role 'picojava_WhileStmt40', cardinality 0..*) is associated with 'picojava::PrimitiveDecl' (role 'picojava_PrimitiveDecl41', cardinality 0..*).
+'picojava::Decl' (role 'picojava_Decl21', cardinality 0..*) is associated with 'picojava::TypeDecl' (role 'picojava_TypeDecl20', cardinality 0..*).
+'picojava::PrimitiveDecl' (role 'picojava_PrimitiveDecl57', cardinality 0..*) is associated with 'picojava::BooleanLiteral' (role 'picojava_BooleanLiteral', cardinality 0..*).

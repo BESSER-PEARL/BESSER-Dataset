@@ -1,0 +1,32 @@
+The model has 11 class(es).
+The class 'Concept::Trackelement' has no attributes.
+The class 'Concept::IndividualContainer' has no attributes.
+The class 'Concept::Switch' has the following attributes: 'Switch_actualState' of type str.
+The class 'Concept::Signal' has the following attributes: 'Signal_actualState' of type str.
+The class 'Concept::Route' has no attributes.
+The class 'Concept::Thing' has no attributes.
+The class 'Concept::Sensor' has no attributes.
+The class 'Concept::SwitchPosition' has the following attributes: 'SwitchPosition_switchState' of type str.
+The class 'Trackelement' has no attributes.
+The class 'Thing' has no attributes.
+The class 'Concept::Segment' has the following attributes: 'Segment_length' of type int.
+The enumeration 'SignalStateKind' has the following literals: 'SignalStateKind_STOP', 'SignalStateKind_GO', 'SignalStateKind_FAILURE'.
+The enumeration 'SwitchStateKind' has the following literals: 'PointStateKind_RIGHT', 'PointStateKind_LEFT', 'PointStateKind_STRAIGHT', 'PointStateKind_FAILURE'.
+'Concept::Sensor' is a specialization of 'Thing'.
+'Concept::SwitchPosition' is a specialization of 'Thing'.
+'Concept::Trackelement' is a specialization of 'Thing'.
+'Concept::Segment' is a specialization of 'Trackelement'.
+'Concept::Switch' is a specialization of 'Trackelement'.
+'Concept::Route' is a specialization of 'Thing'.
+'Concept::Signal' is a specialization of 'Thing'.
+'Concept::Route' (role 'Concept_Route11', cardinality 0..*) is associated with 'Concept::Sensor' (role 'Concept_Sensor', cardinality 0..*).
+'Concept::SwitchPosition' (role 'Route_switchPosition', cardinality 0..*) is associated with 'Concept::Route' (role 'Route', cardinality 0..*).
+'Concept::Trackelement' (role 'Trackelement', cardinality 0..*) is associated with 'Concept::Sensor' (role 'TrackElement_sensor', cardinality 0..*).
+'Concept::Sensor' (role 'Sensor', cardinality 0..*) is associated with 'Concept::Trackelement' (role 'Sensor_trackElement', cardinality 0..*).
+'Concept::Signal' (role 'Concept_Signal9', cardinality 0..*) is associated with 'Concept::Route' (role 'Concept_Route8', cardinality 0..*).
+'Concept::SwitchPosition' (role 'SwitchPosition', cardinality 0..*) is associated with 'Concept::Switch' (role 'SwitchPosition_switch', cardinality 0..*).
+'Concept::SwitchPosition' (role 'Switch_switchPosition', cardinality 0..*) is associated with 'Concept::Switch' (role 'Switch', cardinality 0..*).
+'Concept::SwitchPosition' (role 'SwitchPosition6', cardinality 0..*) is associated with 'Concept::Route' (role 'SwitchPosition_route', cardinality 0..*).
+'Concept::Route' (role 'Concept_Route', cardinality 0..*) is associated with 'Concept::Signal' (role 'Concept_Signal', cardinality 0..*).
+'Concept::Trackelement' (role 'Concept_Trackelement', cardinality 0..*) is associated with 'Concept::Trackelement' (role 'Concept_Trackelement1', cardinality 0..*).
+'Concept::Thing' (role 'Concept_Thing', cardinality 0..*) is associated with 'Concept::IndividualContainer' (role 'Concept_IndividualContainer', cardinality 0..*).

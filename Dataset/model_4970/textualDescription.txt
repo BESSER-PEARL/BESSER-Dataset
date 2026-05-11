@@ -1,0 +1,25 @@
+The model has 10 class(es).
+The class 'ModelElement' has no attributes.
+The class 'umlsimp::ModelElement' has the following attributes: 'name' of type str.
+The class 'umlsimp::Class' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'umlsimp::Model' has no attributes.
+The class 'umlsimp::DataType' has no attributes.
+The class 'umlsimp::Parameter' has no attributes.
+The class 'umlsimp::TypedElement' has no attributes.
+The class 'umlsimp::Operation' has no attributes.
+The class 'umlsimp::Property' has the following attributes: 'visibility' of type str.
+The enumeration 'visType' has the following literals: 'public', 'private'.
+'umlsimp::DataType' is a specialization of 'ModelElement'.
+'umlsimp::Operation' is a specialization of 'TypedElement'.
+'umlsimp::Class' is a specialization of 'ModelElement'.
+'umlsimp::Property' is a specialization of 'TypedElement'.
+'umlsimp::TypedElement' is a specialization of 'ModelElement'.
+'umlsimp::Parameter' is a specialization of 'TypedElement'.
+'umlsimp::TypedElement' (role 'umlsimp_TypedElement', cardinality 0..*) is associated with 'umlsimp::DataType' (role 'umlsimp_DataType', cardinality 0..*).
+'umlsimp::Class' (role 'Class', cardinality 0..*) is associated with 'umlsimp::Operation' (role 'operations', cardinality 0..*).
+'umlsimp::Class' (role 'class_', cardinality 0..*) is associated with 'umlsimp::Property' (role 'Property', cardinality 0..*).
+'umlsimp::Operation' (role 'umlsimp_Operation', cardinality 0..*) is associated with 'umlsimp::Parameter' (role 'umlsimp_Parameter', cardinality 0..*).
+'umlsimp::Operation' (role 'Operation', cardinality 0..*) is associated with 'umlsimp::Class' (role 'class_2', cardinality 0..*).
+'umlsimp::Class' (role 'Class6', cardinality 0..*) is associated with 'umlsimp::Property' (role 'properties', cardinality 0..*).
+'umlsimp::Model' (role 'umlsimp_Model', cardinality 0..*) is associated with 'umlsimp::ModelElement' (role 'umlsimp_ModelElement', cardinality 0..*).

@@ -1,0 +1,76 @@
+The model has 33 class(es).
+The class 'VisualInterface::Shape' has the following attributes: 'fill' of type bool; 'lineWidth' of type float; 'outline' of type bool; 'antialias' of type str; 'alpha' of type str.
+The class 'Shape' has no attributes.
+The class 'VisualInterface::XYContainer' has no attributes.
+The class 'VisualInterface::FigureContainer' has no attributes.
+The class 'VisualInterface::StringToStringMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'Primitive' has no attributes.
+The class 'VisualInterface::Dimension' has the following attributes: 'height' of type float; 'width' of type float.
+The class 'VisualInterface::GridContainer' has the following attributes: 'horizontalSpacing' of type int; 'marginWidth' of type int; 'marginHeight' of type int; 'equalWidth' of type bool; 'columns' of type int; 'verticalSpacing' of type int.
+The class 'Container' has no attributes.
+The class 'VisualInterface::SystemCursor' has the following attributes: 'type' of type str.
+The class 'VisualInterface::Connection' has no attributes.
+The class 'VisualInterface::SymbolReference' has the following attributes: 'zoom' of type str; 'uri' of type str; 'onCreateProperties' of type str.
+The class 'VisualInterface::Arc' has the following attributes: 'start' of type int; 'length' of type int.
+The class 'VisualInterface::Cursor' has no attributes.
+The class 'VisualInterface::Primitive' has the following attributes: 'name' of type str.
+The class 'VisualInterface::BorderContainer' has the following attributes: 'horizontalSpacing' of type int; 'verticalSpacing' of type int.
+The class 'VisualInterface::StackContainer' has no attributes.
+The class 'VisualInterface::Symbol' has the following attributes: 'onUpdate' of type str; 'onInit' of type str; 'backgroundColor' of type str; 'scriptModules' of type str; 'onDispose' of type str.
+The class 'VisualInterface::Ellipse' has no attributes.
+The class 'VisualInterface::Child' has the following attributes: 'name' of type str.
+The class 'Cursor' has no attributes.
+The class 'Child' has no attributes.
+The class 'VisualInterface::Rectangle' has no attributes.
+The class 'VisualInterface::GridChild' has the following attributes: 'heightHint' of type str; 'horizontalAlignment' of type str; 'spanCols' of type int; 'verticalAlignment' of type str; 'widthHint' of type str; 'grabVerticalSpace' of type bool; 'spanRows' of type str; 'grabHorizontalSpace' of type bool.
+The class 'VisualInterface::BorderChild' has the following attributes: 'alignment' of type str.
+The class 'VisualInterface::Line' has no attributes.
+The class 'VisualInterface::Position' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'VisualInterface::Container' has no attributes.
+The class 'VisualInterface::XYChild' has no attributes.
+The class 'Figure' has no attributes.
+The class 'VisualInterface::Image' has the following attributes: 'uri' of type str.
+The class 'VisualInterface::Text' has the following attributes: 'textAlignment' of type str; 'textPlacement' of type str; 'fontBold' of type bool; 'iconAlignment' of type str; 'text' of type str; 'fontSize' of type int; 'labelAlignment' of type str; 'fontItalic' of type bool; 'fontName' of type str.
+The class 'VisualInterface::Figure' has the following attributes: 'onDoubleClick' of type str; 'border' of type str; 'opaque' of type str; 'toolTip' of type str; 'backgroundColor' of type str; 'foregroundColor' of type str; 'onClick' of type str; 'visible' of type bool.
+The enumeration 'GridAlignment' has the following literals: 'CENTER', 'END', 'BEGINNING', 'FILL'.
+The enumeration 'Alignment' has the following literals: 'TOP', 'BOTTOM', 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'SystemCursorType' has the following literals: 'HAND', 'ARROW'.
+The enumeration 'Orientation' has the following literals: 'EAST', 'WEST', 'SOUTH', 'NORTH'.
+'VisualInterface::SymbolReference' is a specialization of 'Primitive'.
+'VisualInterface::Text' is a specialization of 'Figure'.
+'VisualInterface::SystemCursor' is a specialization of 'Cursor'.
+'VisualInterface::BorderChild' is a specialization of 'Child'.
+'VisualInterface::Line' is a specialization of 'Shape'.
+'VisualInterface::Ellipse' is a specialization of 'Shape'.
+'VisualInterface::Image' is a specialization of 'Figure'.
+'VisualInterface::Figure' is a specialization of 'Primitive'.
+'VisualInterface::Shape' is a specialization of 'Figure'.
+'VisualInterface::FigureContainer' is a specialization of 'Figure'.
+'VisualInterface::GridContainer' is a specialization of 'Container'.
+'VisualInterface::Arc' is a specialization of 'Shape'.
+'VisualInterface::StackContainer' is a specialization of 'Container'.
+'VisualInterface::XYChild' is a specialization of 'Child'.
+'VisualInterface::Container' is a specialization of 'Primitive'.
+'VisualInterface::GridChild' is a specialization of 'Child'.
+'VisualInterface::XYContainer' is a specialization of 'Container'.
+'VisualInterface::BorderContainer' is a specialization of 'Container'.
+'VisualInterface::Rectangle' is a specialization of 'Shape'.
+'VisualInterface::Cursor' (role 'VisualInterface_Cursor23', cardinality 0..*) is associated with 'VisualInterface::Figure' (role 'VisualInterface_Figure22', cardinality 0..*).
+'VisualInterface::Dimension' (role 'VisualInterface_Dimension14', cardinality 0..*) is associated with 'VisualInterface::XYChild' (role 'VisualInterface_XYChild13', cardinality 0..*).
+'VisualInterface::Connection' (role 'VisualInterface_Connection34', cardinality 0..*) is associated with 'VisualInterface::Primitive' (role 'VisualInterface_Primitive35', cardinality 0..*).
+'VisualInterface::Dimension' (role 'VisualInterface_Dimension', cardinality 0..*) is associated with 'VisualInterface::Symbol' (role 'VisualInterface_Symbol6', cardinality 0..*).
+'VisualInterface::Primitive' (role 'VisualInterface_Primitive32', cardinality 0..*) is associated with 'VisualInterface::Connection' (role 'VisualInterface_Connection31', cardinality 0..*).
+'VisualInterface::Primitive' (role 'VisualInterface_Primitive10', cardinality 0..*) is associated with 'VisualInterface::Child' (role 'VisualInterface_Child', cardinality 0..*).
+'VisualInterface::SymbolReference' (role 'VisualInterface_SymbolReference', cardinality 0..*) is associated with 'VisualInterface::StringToStringMap' (role 'VisualInterface_StringToStringMap25', cardinality 0..*).
+'VisualInterface::GridContainer' (role 'VisualInterface_GridContainer', cardinality 0..*) is associated with 'VisualInterface::GridChild' (role 'VisualInterface_GridChild', cardinality 0..*).
+'VisualInterface::BorderChild' (role 'VisualInterface_BorderChild', cardinality 0..*) is associated with 'VisualInterface::BorderContainer' (role 'VisualInterface_BorderContainer', cardinality 0..*).
+'VisualInterface::FigureContainer' (role 'VisualInterface_FigureContainer', cardinality 0..*) is associated with 'VisualInterface::Primitive' (role 'VisualInterface_Primitive29', cardinality 0..*).
+'VisualInterface::Symbol' (role 'VisualInterface_Symbol4', cardinality 0..*) is associated with 'VisualInterface::Cursor' (role 'VisualInterface_Cursor', cardinality 0..*).
+'VisualInterface::Primitive' (role 'VisualInterface_Primitive37', cardinality 0..*) is associated with 'VisualInterface::StackContainer' (role 'VisualInterface_StackContainer', cardinality 0..*).
+'VisualInterface::Figure' (role 'VisualInterface_Figure', cardinality 0..*) is associated with 'VisualInterface::Dimension' (role 'VisualInterface_Dimension20', cardinality 0..*).
+'VisualInterface::XYChild' (role 'VisualInterface_XYChild', cardinality 0..*) is associated with 'VisualInterface::Position' (role 'VisualInterface_Position', cardinality 0..*).
+'VisualInterface::Symbol' (role 'VisualInterface_Symbol', cardinality 0..*) is associated with 'VisualInterface::Primitive' (role 'VisualInterface_Primitive', cardinality 0..*).
+'VisualInterface::Symbol' (role 'VisualInterface_Symbol8', cardinality 0..*) is associated with 'VisualInterface::Connection' (role 'VisualInterface_Connection', cardinality 0..*).
+'VisualInterface::Line' (role 'VisualInterface_Line', cardinality 0..*) is associated with 'VisualInterface::Position' (role 'VisualInterface_Position18', cardinality 0..*).
+'VisualInterface::XYChild' (role 'VisualInterface_XYChild16', cardinality 0..*) is associated with 'VisualInterface::XYContainer' (role 'VisualInterface_XYContainer', cardinality 0..*).
+'VisualInterface::Symbol' (role 'VisualInterface_Symbol2', cardinality 0..*) is associated with 'VisualInterface::StringToStringMap' (role 'VisualInterface_StringToStringMap', cardinality 0..*).

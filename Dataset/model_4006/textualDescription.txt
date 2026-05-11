@@ -1,0 +1,20 @@
+The model has 9 class(es).
+The class 'NamedElement' has no attributes.
+The class 'classes::Class' has no attributes.
+The class 'classes::Package' has no attributes.
+The class 'classes::Namespace' has no attributes.
+The class 'classes::Root' has no attributes.
+The class 'classes::Element' has no attributes.
+The class 'classes::NamedElement' has the following attributes: 'name' of type str.
+The class 'Namespace' has no attributes.
+The class 'Element' has no attributes.
+'classes::Namespace' is a specialization of 'Element'.
+'classes::Package' is a specialization of 'Namespace'.
+'classes::Class' is a specialization of 'NamedElement'.
+'classes::Package' is a specialization of 'NamedElement'.
+'classes::Root' is a specialization of 'Element'.
+'classes::NamedElement' is a specialization of 'Element'.
+'classes::Package' (role 'classes_Package3', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package1', cardinality 0..*).
+'classes::Class' (role 'classes_Class6', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class4', cardinality 0..*).
+'classes::Root' (role 'classes_Root', cardinality 0..*) is associated with 'classes::Package' (role 'classes_Package8', cardinality 0..*).
+'classes::Package' (role 'classes_Package', cardinality 0..*) is associated with 'classes::Class' (role 'classes_Class', cardinality 0..*).

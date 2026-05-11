@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'activator::Model' has no attributes.
+The class 'activator::Greeting' has the following attributes: 'name' of type str.
+'activator::Model' (role 'activator_Model', cardinality 0..*) is associated with 'activator::Greeting' (role 'activator_Greeting', cardinality 0..*).

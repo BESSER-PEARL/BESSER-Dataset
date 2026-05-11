@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gssi/ATL-zoo-copy/ATLZoo/ListMetamodelRefactoring/ListMetamodelRefactoring/Metamodel/TypeB.ecore

@@ -1,0 +1,23 @@
+The model has 10 class(es).
+The class 'itemflow101::InputPort' has no attributes.
+The class 'itemflow101::Flow' has no attributes.
+The class 'Port' has no attributes.
+The class 'ProcessNode' has no attributes.
+The class 'itemflow101::Port' has the following attributes: 'id' of type str.
+The class 'itemflow101::Function' has no attributes.
+The class 'itemflow101::OutputPort' has no attributes.
+The class 'itemflow101::ProcessNode' has the following attributes: 'label' of type str.
+The class 'itemflow101::Description' has the following attributes: 'content' of type str.
+The class 'itemflow101::Item' has the following attributes: 'name' of type str.
+'itemflow101::Function' is a specialization of 'ProcessNode'.
+'itemflow101::OutputPort' is a specialization of 'Port'.
+'itemflow101::Flow' is a specialization of 'ProcessNode'.
+'itemflow101::InputPort' is a specialization of 'Port'.
+'itemflow101::Function' (role 'itemflow101_Function9', cardinality 0..*) is associated with 'itemflow101::Description' (role 'itemflow101_Description', cardinality 0..*).
+'itemflow101::InputPort' (role 'itemflow101_InputPort', cardinality 0..*) is associated with 'itemflow101::Function' (role 'itemflow101_Function7', cardinality 0..*).
+'itemflow101::Function' (role 'itemflow101_Function5', cardinality 0..*) is associated with 'itemflow101::OutputPort' (role 'itemflow101_OutputPort', cardinality 0..*).
+'itemflow101::Flow' (role 'itemflow101_Flow', cardinality 0..*) is associated with 'itemflow101::Function' (role 'itemflow101_Function', cardinality 0..*).
+'itemflow101::OutputPort' (role 'itemflow101_OutputPort16', cardinality 0..*) is associated with 'itemflow101::Flow' (role 'itemflow101_Flow17', cardinality 0..*).
+'itemflow101::Function' (role 'itemflow101_Function1', cardinality 0..*) is associated with 'itemflow101::Function' (role 'itemflow101_Function3', cardinality 0..*).
+'itemflow101::Flow' (role 'itemflow101_Flow11', cardinality 0..*) is associated with 'itemflow101::InputPort' (role 'itemflow101_InputPort12', cardinality 0..*).
+'itemflow101::Item' (role 'itemflow101_Item', cardinality 0..*) is associated with 'itemflow101::Flow' (role 'itemflow101_Flow14', cardinality 0..*).

@@ -1,0 +1,31 @@
+The model has 14 class(es).
+The class 'myDsl::Operacao' has no attributes.
+The class 'myDsl::Greeting' has no attributes.
+The class 'myDsl::Atributos' has no attributes.
+The class 'myDsl::Entidades' has no attributes.
+The class 'myDsl::ApiNome' has the following attributes: 'nome' of type str.
+The class 'myDsl::OperacaoCascada' has the following attributes: 'operacao' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Atributo' has no attributes.
+The class 'myDsl::Api' has no attributes.
+The class 'myDsl::Nome::Atributo' has the following attributes: 'nome' of type str.
+The class 'myDsl::Associacao' has the following attributes: 'associacao' of type str.
+The class 'myDsl::Entidade' has no attributes.
+The class 'myDsl::Nome' has the following attributes: 'nome' of type str.
+The class 'myDsl::AtributoTipo' has the following attributes: 'tipoColecao' of type str; 'tipoPrimitivo' of type str; 'tipoObjeto' of type str.
+'myDsl::Associacao' (role 'myDsl_Associacao', cardinality 0..*) is associated with 'myDsl::Atributo' (role 'myDsl_Atributo26', cardinality 0..*).
+'myDsl::Entidades' (role 'myDsl_Entidades10', cardinality 0..*) is associated with 'myDsl::Entidade' (role 'myDsl_Entidade11', cardinality 0..*).
+'myDsl::Atributo' (role 'myDsl_Atributo24', cardinality 0..*) is associated with 'myDsl::AtributoTipo' (role 'myDsl_AtributoTipo', cardinality 0..*).
+'myDsl::Entidade' (role 'myDsl_Entidade15', cardinality 0..*) is associated with 'myDsl::Atributos' (role 'myDsl_Atributos', cardinality 0..*).
+'myDsl::Entidade' (role 'myDsl_Entidade13', cardinality 0..*) is associated with 'myDsl::Nome' (role 'myDsl_Nome', cardinality 0..*).
+'myDsl::Operacao' (role 'myDsl_Operacao30', cardinality 0..*) is associated with 'myDsl::OperacaoCascada' (role 'myDsl_OperacaoCascada', cardinality 0..*).
+'myDsl::Atributo' (role 'myDsl_Atributo20', cardinality 0..*) is associated with 'myDsl::Atributos' (role 'myDsl_Atributos19', cardinality 0..*).
+'myDsl::Entidades' (role 'myDsl_Entidades8', cardinality 0..*) is associated with 'myDsl::Entidade' (role 'myDsl_Entidade', cardinality 0..*).
+'myDsl::Greeting' (role 'myDsl_Greeting2', cardinality 0..*) is associated with 'myDsl::Api' (role 'myDsl_Api', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*).
+'myDsl::ApiNome' (role 'myDsl_ApiNome', cardinality 0..*) is associated with 'myDsl::Api' (role 'myDsl_Api4', cardinality 0..*).
+'myDsl::Atributos' (role 'myDsl_Atributos17', cardinality 0..*) is associated with 'myDsl::Atributo' (role 'myDsl_Atributo', cardinality 0..*).
+'myDsl::Atributo' (role 'myDsl_Atributo28', cardinality 0..*) is associated with 'myDsl::Operacao' (role 'myDsl_Operacao', cardinality 0..*).
+'myDsl::Api' (role 'myDsl_Api6', cardinality 0..*) is associated with 'myDsl::Entidades' (role 'myDsl_Entidades', cardinality 0..*).
+'myDsl::Operacao' (role 'myDsl_Operacao32', cardinality 0..*) is associated with 'myDsl::OperacaoCascada' (role 'myDsl_OperacaoCascada33', cardinality 0..*).
+'myDsl::Atributo' (role 'myDsl_Atributo22', cardinality 0..*) is associated with 'myDsl::Nome::Atributo' (role 'myDsl_Nome_Atributo', cardinality 0..*).

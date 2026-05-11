@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'Classifier' has no attributes.
+The class 'classmm::Classifier' has no attributes.
+The class 'classmm::Attribute' has the following attributes: 'multivalued' of type bool; 'visibility' of type str.
+The class 'classmm::DataType' has no attributes.
+The class 'classmm::NamedElt' has the following attributes: 'name' of type str.
+The class 'classmm::Class' has the following attributes: 'isAbstract' of type bool; 'visibility' of type str.
+The class 'NamedElt' has no attributes.
+The class 'classmm::Parameter' has no attributes.
+The class 'classmm::Method' has no attributes.
+The class 'classmm::Package' has no attributes.
+The enumeration 'Visibility' has the following literals: 'public', 'protected', 'package', 'private'.
+'classmm::DataType' is a specialization of 'Classifier'.
+'classmm::Attribute' is a specialization of 'NamedElt'.
+'classmm::Parameter' is a specialization of 'NamedElt'.
+'classmm::Classifier' is a specialization of 'NamedElt'.
+'classmm::Class' is a specialization of 'Classifier'.
+'classmm::Package' is a specialization of 'NamedElt'.
+'classmm::Method' is a specialization of 'NamedElt'.
+'classmm::Method' (role 'Method', cardinality 0..*) is associated with 'classmm::Class' (role 'owner5', cardinality 0..*).
+'classmm::Class' (role 'Class11', cardinality 0..*) is associated with 'classmm::Method' (role 'methods', cardinality 0..*).
+'classmm::Class' (role 'owner', cardinality 0..*) is associated with 'classmm::Attribute' (role 'Attribute', cardinality 0..*).
+'classmm::Class' (role 'classes', cardinality 0..*) is associated with 'classmm::Package' (role 'Package', cardinality 0..*).
+'classmm::Class' (role 'Class9', cardinality 0..*) is associated with 'classmm::Package' (role 'package', cardinality 0..*).
+'classmm::Attribute' (role 'classmm_Attribute', cardinality 0..*) is associated with 'classmm::Classifier' (role 'classmm_Classifier', cardinality 0..*).
+'classmm::Method' (role 'Method17', cardinality 0..*) is associated with 'classmm::Parameter' (role 'params', cardinality 0..*).
+'classmm::Parameter' (role 'classmm_Parameter', cardinality 0..*) is associated with 'classmm::Classifier' (role 'classmm_Classifier15', cardinality 0..*).
+'classmm::Class' (role 'classmm_Class', cardinality 0..*) is associated with 'classmm::Class' (role 'classmm_Class1', cardinality 0..*).
+'classmm::Class' (role 'Class', cardinality 0..*) is associated with 'classmm::Attribute' (role 'att', cardinality 0..*).
+'classmm::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'classmm::Method' (role 'owner13', cardinality 0..*).

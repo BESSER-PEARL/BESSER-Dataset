@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/PSI-Polska/texo/tests/org.eclipse.emf.texo.test.model/models/non-emf.ecore

@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'ale1::A1' has no attributes.
+The class 'ale1::RA2' has no attributes.
+The class 'ale1::RA1' has no attributes.
+'ale1::RA2' (role 'ale1_RA2', cardinality 0..*) is associated with 'ale1::A1' (role 'ale1_A12', cardinality 0..*).
+'ale1::RA1' (role 'ale1_RA1', cardinality 0..*) is associated with 'ale1::A1' (role 'ale1_A1', cardinality 0..*).

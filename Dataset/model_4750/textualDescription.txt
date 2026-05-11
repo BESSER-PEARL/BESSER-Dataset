@@ -1,0 +1,21 @@
+The model has 9 class(es).
+The class 'ed2::ED2' has the following attributes: 'name' of type str.
+The class 'TreeElement' has no attributes.
+The class 'ed2::Node' has no attributes.
+The class 'ed2::TreeParent' has the following attributes: 'name' of type str; 'index' of type str; 'type' of type str.
+The class 'ed2::Leaf' has no attributes.
+The class 'ed2::TreeObject' has the following attributes: 'name' of type str; 'type' of type str; 'index' of type str.
+The class 'ed2::Model' has no attributes.
+The class 'ed2::EDD' has the following attributes: 'name' of type str.
+The class 'ed2::TreeElement' has the following attributes: 'name' of type str; 'index' of type str; 'type' of type str.
+The enumeration 'TreeElementType' has the following literals: 'yes', 'dont_know', 'empty', 'inadmissible', 'no', 'trusted'.
+'ed2::Node' is a specialization of 'TreeElement'.
+'ed2::Leaf' is a specialization of 'TreeElement'.
+'ed2::TreeObject' (role 'ed2_TreeObject9', cardinality 0..*) is associated with 'ed2::TreeParent' (role 'ed2_TreeParent8', cardinality 0..*).
+'ed2::Node' (role 'ed2_Node', cardinality 0..*) is associated with 'ed2::Leaf' (role 'ed2_Leaf', cardinality 0..*).
+'ed2::TreeParent' (role 'ed2_TreeParent12', cardinality 0..*) is associated with 'ed2::TreeParent' (role 'ed2_TreeParent10', cardinality 0..*).
+'ed2::Node' (role 'ed2_Node4', cardinality 0..*) is associated with 'ed2::Node' (role 'ed2_Node6', cardinality 0..*).
+'ed2::TreeParent' (role 'ed2_TreeParent', cardinality 0..*) is associated with 'ed2::EDD' (role 'ed2_EDD2', cardinality 0..*).
+'ed2::TreeObject' (role 'ed2_TreeObject', cardinality 0..*) is associated with 'ed2::EDD' (role 'ed2_EDD', cardinality 0..*).
+'ed2::ED2' (role 'ed2_ED215', cardinality 0..*) is associated with 'ed2::Model' (role 'ed2_Model', cardinality 0..*).
+'ed2::ED2' (role 'ed2_ED2', cardinality 0..*) is associated with 'ed2::TreeElement' (role 'ed2_TreeElement', cardinality 0..*).

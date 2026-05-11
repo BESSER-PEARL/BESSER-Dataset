@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'di::Bendpoint' has the following attributes: 'sourceX' of type str; 'sourceY' of type str; 'targetX' of type str; 'targetY' of type str.
+The class 'di::Diagram' has no attributes.
+The class 'View' has no attributes.
+The class 'di::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'di::Connector' has the following attributes: 'source' of type str; 'target' of type str.
+The class 'di::Style' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'di::EStringToStringMapEntry' has no attributes.
+The class 'di::Node' has no attributes.
+The class 'di::View' has the following attributes: 'id' of type str; 'definition' of type str; 'targetConnector' of type str; 'context' of type str; 'sourceConnector' of type str.
+'di::Connector' is a specialization of 'View'.
+'di::Node' is a specialization of 'View'.
+'di::Diagram' is a specialization of 'View'.
+'di::DocumentRoot' (role 'di_DocumentRoot5', cardinality 0..*) is associated with 'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry6', cardinality 0..*).
+'di::Bendpoint' (role 'di_Bendpoint9', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot8', cardinality 0..*).
+'di::Node' (role 'di_Node', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot19', cardinality 0..*).
+'di::Bendpoint' (role 'di_Bendpoint', cardinality 0..*) is associated with 'di::Connector' (role 'di_Connector', cardinality 0..*).
+'di::Diagram' (role 'di_Diagram17', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot16', cardinality 0..*).
+'di::Connector' (role 'di_Connector12', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot11', cardinality 0..*).
+'di::DocumentRoot' (role 'di_DocumentRoot21', cardinality 0..*) is associated with 'di::Style' (role 'di_Style', cardinality 0..*).
+'di::Style' (role 'di_Style24', cardinality 0..*) is associated with 'di::View' (role 'di_View23', cardinality 0..*).
+'di::EStringToStringMapEntry' (role 'di_EStringToStringMapEntry', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot', cardinality 0..*).
+'di::Node' (role 'di_Node27', cardinality 0..*) is associated with 'di::View' (role 'di_View26', cardinality 0..*).
+'di::Diagram' (role 'di_Diagram', cardinality 0..*) is associated with 'di::Connector' (role 'di_Connector2', cardinality 0..*).
+'di::View' (role 'di_View', cardinality 0..*) is associated with 'di::DocumentRoot' (role 'di_DocumentRoot14', cardinality 0..*).

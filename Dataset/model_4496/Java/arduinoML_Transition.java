@@ -1,0 +1,79 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class arduinoML_Transition  {
+
+    private String value;
+
+
+
+
+
+    private arduinoML_State arduinoml_state;
+
+
+
+
+    private arduinoML_Sensor arduinoml_sensor;
+
+
+
+
+    private arduinoML_State arduinoml_state;
+
+
+
+
+    private arduinoML_State arduinoml_state;
+
+
+    public arduinoML_Transition(
+        String value    ) {
+        this.value = value;
+    }
+
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public arduinoML_State getArduinoml_state() {
+        return arduinoml_state;
+    }
+
+    public void setArduinoml_state(arduinoML_State arduinoml_state) {
+        this.arduinoml_state = arduinoml_state;
+    }
+    public arduinoML_Sensor getArduinoml_sensor() {
+        return arduinoml_sensor;
+    }
+
+    public void setArduinoml_sensor(arduinoML_Sensor arduinoml_sensor) {
+        this.arduinoml_sensor = arduinoml_sensor;
+    }
+    public arduinoML_State getArduinoml_state() {
+        return arduinoml_state;
+    }
+
+    public void setArduinoml_state(arduinoML_State arduinoml_state) {
+        this.arduinoml_state = arduinoml_state;
+    }
+    public arduinoML_State getArduinoml_state() {
+        return arduinoml_state;
+    }
+
+    public void setArduinoml_state(arduinoML_State arduinoml_state) {
+        this.arduinoml_state = arduinoml_state;
+    }
+
+}

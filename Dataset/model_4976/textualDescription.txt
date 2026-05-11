@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'ComponentLanguageShallow::Component' has no attributes.
+The class 'ComponentLanguageShallow::Port' has no attributes.
+The class 'ComponentLanguageShallow::OutPort' has no attributes.
+The class 'ComponentLanguageShallow::InPort' has no attributes.
+The class 'Port' has no attributes.
+The class 'ComponentLanguageShallow::Connector' has no attributes.
+'ComponentLanguageShallow::OutPort' is a specialization of 'Port'.
+'ComponentLanguageShallow::InPort' is a specialization of 'Port'.
+'ComponentLanguageShallow::Port' (role 'ComponentLanguageShallow_Port2', cardinality 0..*) is associated with 'ComponentLanguageShallow::Connector' (role 'ComponentLanguageShallow_Connector', cardinality 0..*).
+'ComponentLanguageShallow::Port' (role 'ComponentLanguageShallow_Port5', cardinality 0..*) is associated with 'ComponentLanguageShallow::Connector' (role 'ComponentLanguageShallow_Connector4', cardinality 0..*).
+'ComponentLanguageShallow::Component' (role 'ComponentLanguageShallow_Component', cardinality 0..*) is associated with 'ComponentLanguageShallow::Port' (role 'ComponentLanguageShallow_Port', cardinality 0..*).

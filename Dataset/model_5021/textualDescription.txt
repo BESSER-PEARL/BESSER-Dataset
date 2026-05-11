@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'esof::homework4::q2::USAddress' has the following attributes: 'name' of type str; 'zip' of type int; 'street' of type str; 'country' of type str; 'state' of type str; 'city' of type str.
+The class 'esof::homework4::q2::Item' has the following attributes: 'USPrice' of type int; 'partNum' of type str; 'shipDate' of type str; 'comment' of type str; 'quantity' of type int; 'productName' of type str.
+The class 'esof::homework4::q2::PurchaseOrder' has the following attributes: 'comment' of type str; 'orderDate' of type str.
+'esof::homework4::q2::PurchaseOrder' (role 'esof_homework4_q2_PurchaseOrder4', cardinality 0..*) is associated with 'esof::homework4::q2::USAddress' (role 'esof_homework4_q2_USAddress5', cardinality 0..*).
+'esof::homework4::q2::Item' (role 'esof_homework4_q2_Item', cardinality 0..*) is associated with 'esof::homework4::q2::PurchaseOrder' (role 'esof_homework4_q2_PurchaseOrder', cardinality 0..*).
+'esof::homework4::q2::PurchaseOrder' (role 'esof_homework4_q2_PurchaseOrder2', cardinality 0..*) is associated with 'esof::homework4::q2::USAddress' (role 'esof_homework4_q2_USAddress', cardinality 0..*).

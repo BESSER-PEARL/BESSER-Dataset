@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'familytree::FamilyTree' has no attributes.
+The class 'familytree::Woman' has no attributes.
+The class 'familytree::Person' has the following attributes: 'died' of type bool; 'firstName' of type str; 'imagePaths' of type str; 'nameOfBirth' of type str; 'relationshipStatus' of type str; 'secondName' of type str; 'dayOfDeath' of type date; 'locationOfBirth' of type str; 'dayOfBirth' of type date.
+The class 'familytree::Man' has no attributes.
+The class 'Person' has no attributes.
+The enumeration 'RelationshipStatus' has the following literals: 'Married', 'Widowed', 'Liaised', 'Single', 'Divorced'.
+'familytree::Woman' is a specialization of 'Person'.
+'familytree::Man' is a specialization of 'Person'.
+'familytree::Person' (role 'inRelationWith', cardinality 0..*) is associated with 'familytree::Person' (role 'Person10', cardinality 0..*).
+'familytree::Person' (role 'children', cardinality 0..*) is associated with 'familytree::Person' (role 'Person4', cardinality 0..*).
+'familytree::Person' (role 'Person7', cardinality 0..*) is associated with 'familytree::Person' (role 'inRelationTo', cardinality 0..*).
+'familytree::FamilyTree' (role 'familytree_FamilyTree', cardinality 0..*) is associated with 'familytree::Person' (role 'familytree_Person', cardinality 0..*).
+'familytree::Person' (role 'Person', cardinality 0..*) is associated with 'familytree::Person' (role 'parents', cardinality 0..*).

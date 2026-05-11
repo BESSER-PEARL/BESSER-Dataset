@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/Xpect/org.eclipse.xpect.releng/xtext-examples/org.eclipse.xtext.example.arithmetics/model/generated/Arithmetics.ecore

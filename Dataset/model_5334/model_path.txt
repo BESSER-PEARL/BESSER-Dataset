@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/ModelWriter/UC-TR-03/clafer4emf/com.clafer4emf.transformations.test/test.ecore

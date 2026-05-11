@@ -1,0 +1,35 @@
+The model has 17 class(es).
+The class 'mathInterpreter::Primary' has no attributes.
+The class 'mathInterpreter::Multiply' has no attributes.
+The class 'mathInterpreter::Plus' has no attributes.
+The class 'mathInterpreter::Minus' has no attributes.
+The class 'mathInterpreter::Expression' has no attributes.
+The class 'mathInterpreter::EObject' has no attributes.
+The class 'mathInterpreter::Divide' has no attributes.
+The class 'PlusOrMinus' has no attributes.
+The class 'mathInterpreter::VariableRef' has no attributes.
+The class 'mathInterpreter::Solution' has no attributes.
+The class 'mathInterpreter::Variable' has the following attributes: 'name' of type str.
+The class 'mathInterpreter::PlusOrMinus' has the following attributes: 'operator' of type str.
+The class 'mathInterpreter::MultiplyOrDivide' has the following attributes: 'operator' of type str.
+The class 'mathInterpreter::Bracket' has no attributes.
+The class 'Primary' has no attributes.
+The class 'MultiplyOrDivide' has no attributes.
+The class 'mathInterpreter::Num' has the following attributes: 'value' of type int.
+'mathInterpreter::Multiply' is a specialization of 'MultiplyOrDivide'.
+'mathInterpreter::Minus' is a specialization of 'PlusOrMinus'.
+'mathInterpreter::Divide' is a specialization of 'MultiplyOrDivide'.
+'mathInterpreter::Plus' is a specialization of 'PlusOrMinus'.
+'mathInterpreter::Bracket' is a specialization of 'Primary'.
+'mathInterpreter::Num' is a specialization of 'Primary'.
+'mathInterpreter::VariableRef' is a specialization of 'Primary'.
+'mathInterpreter::Expression' (role 'mathInterpreter_Expression20', cardinality 0..*) is associated with 'mathInterpreter::Bracket' (role 'mathInterpreter_Bracket', cardinality 0..*).
+'mathInterpreter::Expression' (role 'mathInterpreter_Expression5', cardinality 0..*) is associated with 'mathInterpreter::Variable' (role 'mathInterpreter_Variable4', cardinality 0..*).
+'mathInterpreter::Variable' (role 'mathInterpreter_Variable', cardinality 0..*) is associated with 'mathInterpreter::Solution' (role 'mathInterpreter_Solution', cardinality 0..*).
+'mathInterpreter::EObject' (role 'mathInterpreter_EObject', cardinality 0..*) is associated with 'mathInterpreter::PlusOrMinus' (role 'mathInterpreter_PlusOrMinus9', cardinality 0..*).
+'mathInterpreter::Variable' (role 'mathInterpreter_Variable18', cardinality 0..*) is associated with 'mathInterpreter::VariableRef' (role 'mathInterpreter_VariableRef', cardinality 0..*).
+'mathInterpreter::Primary' (role 'mathInterpreter_Primary', cardinality 0..*) is associated with 'mathInterpreter::MultiplyOrDivide' (role 'mathInterpreter_MultiplyOrDivide16', cardinality 0..*).
+'mathInterpreter::Solution' (role 'mathInterpreter_Solution2', cardinality 0..*) is associated with 'mathInterpreter::Expression' (role 'mathInterpreter_Expression', cardinality 0..*).
+'mathInterpreter::MultiplyOrDivide' (role 'mathInterpreter_MultiplyOrDivide13', cardinality 0..*) is associated with 'mathInterpreter::EObject' (role 'mathInterpreter_EObject14', cardinality 0..*).
+'mathInterpreter::PlusOrMinus' (role 'mathInterpreter_PlusOrMinus', cardinality 0..*) is associated with 'mathInterpreter::Expression' (role 'mathInterpreter_Expression7', cardinality 0..*).
+'mathInterpreter::PlusOrMinus' (role 'mathInterpreter_PlusOrMinus11', cardinality 0..*) is associated with 'mathInterpreter::MultiplyOrDivide' (role 'mathInterpreter_MultiplyOrDivide', cardinality 0..*).

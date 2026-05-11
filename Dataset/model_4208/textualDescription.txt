@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'myDsl::Conditional' has the following attributes: 'value2' of type int; 'value3' of type int.
+The class 'myDsl::Square' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Lambda' has no attributes.
+The class 'myDsl::Define' has no attributes.
+The class 'myDsl::Operation' has the following attributes: 'value2' of type int; 'op' of type str.
+The class 'Greeting' has no attributes.
+The class 'myDsl::Greeting' has the following attributes: 'value' of type int; 'name' of type str.
+'myDsl::Conditional' is a specialization of 'Greeting'.
+'myDsl::Operation' is a specialization of 'Greeting'.
+'myDsl::Lambda' is a specialization of 'Greeting'.
+'myDsl::Define' is a specialization of 'Greeting'.
+'myDsl::Square' is a specialization of 'Greeting'.
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*).

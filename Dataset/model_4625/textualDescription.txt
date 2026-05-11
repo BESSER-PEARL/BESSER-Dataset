@@ -1,0 +1,84 @@
+The model has 36 class(es).
+The class 'model::TimeTrigger' has the following attributes: 'period' of type str; 'onTrigger' of type str.
+The class 'model::Primitive' has the following attributes: 'name' of type str.
+The class 'model::Line' has no attributes.
+The class 'model::Shape' has the following attributes: 'outline' of type bool; 'antialias' of type str; 'fill' of type bool; 'lineWidth' of type float; 'alpha' of type str.
+The class 'model::Ellipse' has no attributes.
+The class 'model::Dimension' has the following attributes: 'height' of type float; 'width' of type float.
+The class 'Cursor' has no attributes.
+The class 'model::SystemCursor' has the following attributes: 'type' of type str.
+The class 'model::GridChild' has the following attributes: 'horizontalAlignment' of type str; 'grabVerticalSpace' of type bool; 'spanRows' of type str; 'verticalAlignment' of type str; 'widthHint' of type str; 'grabHorizontalSpace' of type bool; 'heightHint' of type str; 'spanCols' of type int.
+The class 'model::SymbolReference' has the following attributes: 'zoom' of type str; 'uri' of type str; 'onCreateProperties' of type str.
+The class 'model::XYChild' has no attributes.
+The class 'model::FigureContainer' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'Shape' has no attributes.
+The class 'model::BorderChild' has the following attributes: 'alignment' of type str.
+The class 'model::Image' has the following attributes: 'imageAlignment' of type str; 'uri' of type str.
+The class 'model::Rectangle' has no attributes.
+The class 'Container' has no attributes.
+The class 'model::RoundedRectangle' has no attributes.
+The class 'model::StringToStringMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'model::BorderContainer' has the following attributes: 'verticalSpacing' of type int; 'horizontalSpacing' of type int.
+The class 'model::XYContainer' has no attributes.
+The class 'model::StackContainer' has no attributes.
+The class 'model::Child' has the following attributes: 'name' of type str.
+The class 'model::Polygon' has no attributes.
+The class 'model::Symbol' has the following attributes: 'backgroundColor' of type str; 'onUpdate' of type str; 'onDispose' of type str; 'backgroundImage' of type str; 'scriptModules' of type str; 'onInit' of type str.
+The class 'model::Position' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'model::Container' has no attributes.
+The class 'model::Connection' has no attributes.
+The class 'model::Arc' has the following attributes: 'length' of type int; 'start' of type int.
+The class 'model::GridContainer' has the following attributes: 'horizontalSpacing' of type int; 'verticalSpacing' of type int; 'marginHeight' of type int; 'equalWidth' of type bool; 'columns' of type int; 'marginWidth' of type int.
+The class 'Figure' has no attributes.
+The class 'model::Figure' has the following attributes: 'onDoubleClick' of type str; 'visible' of type bool; 'onMouseIn' of type str; 'toolTip' of type str; 'opaque' of type str; 'foregroundColor' of type str; 'onMouseDrag' of type str; 'backgroundColor' of type str; 'onClick' of type str; 'onMouseMove' of type str; 'border' of type str; 'onMouseHover' of type str; 'onMouseOut' of type str.
+The class 'Child' has no attributes.
+The class 'model::Cursor' has no attributes.
+The class 'model::Text' has the following attributes: 'iconAlignment' of type str; 'textPlacement' of type str; 'textAlignment' of type str; 'alpha' of type str; 'labelAlignment' of type str; 'fontSize' of type int; 'fontName' of type str; 'fontItalic' of type bool; 'fontBold' of type bool; 'text' of type str.
+The enumeration 'SystemCursorType' has the following literals: 'ARROW', 'HAND'.
+The enumeration 'Alignment' has the following literals: 'RIGHT', 'CENTER', 'LEFT', 'TOP', 'BOTTOM'.
+The enumeration 'Orientation' has the following literals: 'EAST', 'SOUTH', 'NORTH', 'WEST'.
+The enumeration 'GridAlignment' has the following literals: 'BEGINNING', 'CENTER', 'END', 'FILL'.
+'model::GridContainer' is a specialization of 'Container'.
+'model::Image' is a specialization of 'Figure'.
+'model::StackContainer' is a specialization of 'Container'.
+'model::GridChild' is a specialization of 'Child'.
+'model::Arc' is a specialization of 'Shape'.
+'model::SystemCursor' is a specialization of 'Cursor'.
+'model::Rectangle' is a specialization of 'Shape'.
+'model::RoundedRectangle' is a specialization of 'Shape'.
+'model::Figure' is a specialization of 'Primitive'.
+'model::Text' is a specialization of 'Figure'.
+'model::Polygon' is a specialization of 'Shape'.
+'model::Shape' is a specialization of 'Figure'.
+'model::Container' is a specialization of 'Primitive'.
+'model::XYContainer' is a specialization of 'Container'.
+'model::BorderContainer' is a specialization of 'Container'.
+'model::Line' is a specialization of 'Shape'.
+'model::FigureContainer' is a specialization of 'Figure'.
+'model::SymbolReference' is a specialization of 'Primitive'.
+'model::BorderChild' is a specialization of 'Child'.
+'model::XYChild' is a specialization of 'Child'.
+'model::Ellipse' is a specialization of 'Shape'.
+'model::FigureContainer' (role 'model_FigureContainer', cardinality 0..*) is associated with 'model::Primitive' (role 'model_Primitive31', cardinality 0..*).
+'model::Symbol' (role 'model_Symbol10', cardinality 0..*) is associated with 'model::TimeTrigger' (role 'model_TimeTrigger', cardinality 0..*).
+'model::Figure' (role 'model_Figure24', cardinality 0..*) is associated with 'model::Cursor' (role 'model_Cursor25', cardinality 0..*).
+'model::StackContainer' (role 'model_StackContainer', cardinality 0..*) is associated with 'model::Primitive' (role 'model_Primitive39', cardinality 0..*).
+'model::Position' (role 'model_Position41', cardinality 0..*) is associated with 'model::Polygon' (role 'model_Polygon', cardinality 0..*).
+'model::Connection' (role 'model_Connection36', cardinality 0..*) is associated with 'model::Primitive' (role 'model_Primitive37', cardinality 0..*).
+'model::Dimension' (role 'model_Dimension43', cardinality 0..*) is associated with 'model::RoundedRectangle' (role 'model_RoundedRectangle', cardinality 0..*).
+'model::XYChild' (role 'model_XYChild18', cardinality 0..*) is associated with 'model::XYContainer' (role 'model_XYContainer', cardinality 0..*).
+'model::Dimension' (role 'model_Dimension', cardinality 0..*) is associated with 'model::Symbol' (role 'model_Symbol6', cardinality 0..*).
+'model::GridContainer' (role 'model_GridContainer', cardinality 0..*) is associated with 'model::GridChild' (role 'model_GridChild', cardinality 0..*).
+'model::XYChild' (role 'model_XYChild', cardinality 0..*) is associated with 'model::Position' (role 'model_Position', cardinality 0..*).
+'model::SymbolReference' (role 'model_SymbolReference', cardinality 0..*) is associated with 'model::StringToStringMap' (role 'model_StringToStringMap27', cardinality 0..*).
+'model::BorderContainer' (role 'model_BorderContainer', cardinality 0..*) is associated with 'model::BorderChild' (role 'model_BorderChild', cardinality 0..*).
+'model::Connection' (role 'model_Connection33', cardinality 0..*) is associated with 'model::Primitive' (role 'model_Primitive34', cardinality 0..*).
+'model::Dimension' (role 'model_Dimension22', cardinality 0..*) is associated with 'model::Figure' (role 'model_Figure', cardinality 0..*).
+'model::Line' (role 'model_Line', cardinality 0..*) is associated with 'model::Position' (role 'model_Position20', cardinality 0..*).
+'model::Symbol' (role 'model_Symbol4', cardinality 0..*) is associated with 'model::Cursor' (role 'model_Cursor', cardinality 0..*).
+'model::Symbol' (role 'model_Symbol', cardinality 0..*) is associated with 'model::Primitive' (role 'model_Primitive', cardinality 0..*).
+'model::Connection' (role 'model_Connection', cardinality 0..*) is associated with 'model::Symbol' (role 'model_Symbol8', cardinality 0..*).
+'model::Primitive' (role 'model_Primitive12', cardinality 0..*) is associated with 'model::Child' (role 'model_Child', cardinality 0..*).
+'model::Dimension' (role 'model_Dimension16', cardinality 0..*) is associated with 'model::XYChild' (role 'model_XYChild15', cardinality 0..*).
+'model::Symbol' (role 'model_Symbol2', cardinality 0..*) is associated with 'model::StringToStringMap' (role 'model_StringToStringMap', cardinality 0..*).

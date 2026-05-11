@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'benchmark::InputData' has no attributes.
+The class 'benchmark::Variant' has no attributes.
+The class 'benchmark::Property' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'benchmark::TestCase' has no attributes.
+The class 'benchmark::NamedElement' has the following attributes: 'name' of type str.
+The class 'benchmark::TimeResult' has the following attributes: 'elapsedTime' of type str; 'elapsedMaxTime' of type str.
+The class 'benchmark::Scenario' has no attributes.
+'benchmark::TestCase' is a specialization of 'NamedElement'.
+'benchmark::Variant' is a specialization of 'NamedElement'.
+'benchmark::InputData' is a specialization of 'NamedElement'.
+'benchmark::Scenario' is a specialization of 'NamedElement'.
+'benchmark::TimeResult' (role 'results', cardinality 0..*) is associated with 'benchmark::Variant' (role 'Variant', cardinality 0..*).
+'benchmark::TestCase' (role 'TestCase', cardinality 0..*) is associated with 'benchmark::InputData' (role 'inputData', cardinality 0..*).
+'benchmark::Property' (role 'benchmark_Property13', cardinality 0..*) is associated with 'benchmark::TimeResult' (role 'benchmark_TimeResult12', cardinality 0..*).
+'benchmark::TimeResult' (role 'benchmark_TimeResult', cardinality 0..*) is associated with 'benchmark::TestCase' (role 'benchmark_TestCase7', cardinality 0..*).
+'benchmark::Property' (role 'benchmark_Property', cardinality 0..*) is associated with 'benchmark::NamedElement' (role 'benchmark_NamedElement', cardinality 0..*).
+'benchmark::TestCase' (role 'tests', cardinality 0..*) is associated with 'benchmark::InputData' (role 'InputData', cardinality 0..*).
+'benchmark::TimeResult' (role 'TimeResult', cardinality 0..*) is associated with 'benchmark::Variant' (role 'variant', cardinality 0..*).
+'benchmark::Variant' (role 'benchmark_Variant', cardinality 0..*) is associated with 'benchmark::Scenario' (role 'benchmark_Scenario4', cardinality 0..*).
+'benchmark::Scenario' (role 'benchmark_Scenario', cardinality 0..*) is associated with 'benchmark::InputData' (role 'benchmark_InputData', cardinality 0..*).
+'benchmark::TestCase' (role 'benchmark_TestCase', cardinality 0..*) is associated with 'benchmark::Scenario' (role 'benchmark_Scenario2', cardinality 0..*).

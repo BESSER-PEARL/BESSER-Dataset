@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/wwu-acse-2015/CustomerDSLSample/de.wwu.pi.acse.customerDsl/model/generated/CustomerDsl.ecore

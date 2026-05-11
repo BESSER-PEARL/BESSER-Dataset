@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'myDsl::GreetingReference' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'AbstractGreeting' has no attributes.
+The class 'myDsl::AbstractGreeting' has the following attributes: 'name' of type str.
+The class 'myDsl::Greeting' has no attributes.
+'myDsl::Greeting' is a specialization of 'AbstractGreeting'.
+'myDsl::GreetingReference' is a specialization of 'AbstractGreeting'.
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::AbstractGreeting' (role 'myDsl_AbstractGreeting', cardinality 0..*).
+'myDsl::AbstractGreeting' (role 'myDsl_AbstractGreeting2', cardinality 0..*) is associated with 'myDsl::GreetingReference' (role 'myDsl_GreetingReference', cardinality 0..*).

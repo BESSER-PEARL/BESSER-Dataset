@@ -1,0 +1,26 @@
+The model has 16 class(es).
+The class 'marsRover::color::indication' has the following attributes: 'color' of type str; 'name' of type str.
+The class 'marsRover::indication' has the following attributes: 'name' of type str.
+The class 'marsRover::mission' has the following attributes: 'name' of type str.
+The class 'marsRover::after::action' has the following attributes: 'action' of type str.
+The class 'marsRover::EObject' has no attributes.
+The class 'marsRover::detect::rocks' has the following attributes: 'name' of type str; 'number_of_rocks' of type int.
+The class 'marsRover::bumpers' has the following attributes: 'name' of type str.
+The class 'marsRover::message' has the following attributes: 'msg' of type str; 'name' of type str.
+The class 'marsRover::sound' has the following attributes: 'name' of type str; 'duration' of type int; 'frequency' of type int.
+The class 'marsRover::Robot' has the following attributes: 'name' of type str; 'slave_address' of type str; 'special_speed' of type int; 'drive_speed' of type int.
+The class 'marsRover::ultra' has the following attributes: 'distance' of type int; 'name' of type str.
+The class 'marsRover::push::obstacles' has the following attributes: 'name' of type str.
+The class 'marsRover::park' has the following attributes: 'name' of type str.
+The class 'marsRover::detect::lakes' has the following attributes: 'number_of_lakes' of type int; 'name' of type str; 'lakes_colors' of type str.
+The class 'marsRover::avoid::lakes' has the following attributes: 'name' of type str.
+The class 'marsRover::avoid::obstacles' has the following attributes: 'name' of type str.
+The enumeration 'Color' has the following literals: 'COLOR_BLUE', 'COLOR_BLACK', 'COLOR_RED', 'COLOR_OFF', 'COLOR_GREEN', 'COLOR_WHITE', 'COLOR_ORANGE'.
+The enumeration 'LED_Color' has the following literals: 'LED_GREEN', 'LED_ORANGE', 'LED_RED', 'LED_OFF'.
+'marsRover::EObject' (role 'marsRover_EObject', cardinality 0..*) is associated with 'marsRover::mission' (role 'marsRover_mission2', cardinality 0..*).
+'marsRover::after::action' (role 'marsRover_after_action9', cardinality 0..*) is associated with 'marsRover::indication' (role 'marsRover_indication', cardinality 0..*).
+'marsRover::indication' (role 'marsRover_indication11', cardinality 0..*) is associated with 'marsRover::EObject' (role 'marsRover_EObject12', cardinality 0..*).
+'marsRover::detect::lakes' (role 'marsRover_detect_lakes', cardinality 0..*) is associated with 'marsRover::after::action' (role 'marsRover_after_action', cardinality 0..*).
+'marsRover::EObject' (role 'marsRover_EObject4', cardinality 0..*) is associated with 'marsRover::avoid::obstacles' (role 'marsRover_avoid_obstacles', cardinality 0..*).
+'marsRover::mission' (role 'marsRover_mission', cardinality 0..*) is associated with 'marsRover::Robot' (role 'marsRover_Robot', cardinality 0..*).
+'marsRover::after::action' (role 'marsRover_after_action7', cardinality 0..*) is associated with 'marsRover::detect::rocks' (role 'marsRover_detect_rocks', cardinality 0..*).

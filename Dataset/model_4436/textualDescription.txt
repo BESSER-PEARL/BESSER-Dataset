@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'dsl::TouchSensor' has the following attributes: 'key' of type str.
+The class 'dsl::UltrasonicSensor' has the following attributes: 'distance' of type str; 'comparator' of type str.
+The class 'SensorType' has no attributes.
+The class 'dsl::SensorType' has no attributes.
+The class 'dsl::Ignorables' has the following attributes: 'AVOID_OBJECTS' of type str.
+The class 'dsl::ColorSensor' has the following attributes: 'key' of type str.
+The class 'dsl::Mission' has no attributes.
+The class 'dsl::Task' has the following attributes: 'action' of type str; 'name' of type str; 'ignoreBehavior' of type bool.
+The enumeration 'Colors' has the following literals: 'LIGHT_GRAY', 'RED', 'CYAN', 'WHITE', 'BLACK', 'GRAY', 'PINK', 'ORANGE', 'GREEN', 'BLUE', 'MAGENTA', 'DARK_GRAY', 'YELLOW'.
+The enumeration 'TouchSensorSides' has the following literals: 'BOTH', 'RIGHT', 'LEFT'.
+The enumeration 'CompareOperator' has the following literals: 'EQ', 'L', 'LEQ', 'G', 'GEQ', 'NEQ'.
+The enumeration 'Actions' has the following literals: 'ROTATE_R', 'STOP_DRIVING', 'DRIVETOEDGE', 'TURN_AROUND', 'BEEP', 'DRIVE_FORWARD', 'DRIVE_BACKWARD', 'ROTATE_L', 'MEASURE'.
+The enumeration 'Directions' has the following literals: 'N', 'NE', 'S', 'SE', 'NW', 'SW', 'E', 'W'.
+'dsl::ColorSensor' is a specialization of 'SensorType'.
+'dsl::UltrasonicSensor' is a specialization of 'SensorType'.
+'dsl::TouchSensor' is a specialization of 'SensorType'.
+'dsl::Task' (role 'dsl_Task', cardinality 0..*) is associated with 'dsl::Mission' (role 'dsl_Mission', cardinality 0..*).
+'dsl::Task' (role 'dsl_Task2', cardinality 0..*) is associated with 'dsl::SensorType' (role 'dsl_SensorType', cardinality 0..*).

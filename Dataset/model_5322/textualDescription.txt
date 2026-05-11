@@ -1,0 +1,5 @@
+The model has 3 class(es).
+The class 'NestedTest' has no attributes.
+The class 'root::nested::NestedTest' has no attributes.
+The class 'root::RootTest' has no attributes.
+'root::RootTest' (role 'root_RootTest', cardinality 0..*) is associated with 'NestedTest' (role 'NestedTest', cardinality 0..*).

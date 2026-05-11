@@ -1,0 +1,21 @@
+The model has 11 class(es).
+The class 'SubExpression2' has no attributes.
+The class 'expression::NegativeIntExpression' has the following attributes: 'value' of type str; 'isNegative' of type str.
+The class 'expression::ExpressionList' has no attributes.
+The class 'Expression' has no attributes.
+The class 'SubExpression' has no attributes.
+The class 'expression::BooleanExpression' has the following attributes: 'value' of type str.
+The class 'expression::StringExpression' has the following attributes: 'value' of type str.
+The class 'expression::Expression' has no attributes.
+The class 'expression::SubExpression' has no attributes.
+The class 'expression::IncludingExpression' has no attributes.
+The class 'expression::SubExpression2' has no attributes.
+'expression::SubExpression' is a specialization of 'Expression'.
+'expression::StringExpression' is a specialization of 'SubExpression2'.
+'expression::SubExpression2' is a specialization of 'Expression'.
+'expression::BooleanExpression' is a specialization of 'SubExpression'.
+'expression::NegativeIntExpression' is a specialization of 'SubExpression2'.
+'expression::IncludingExpression' is a specialization of 'SubExpression'.
+'expression::ExpressionList' (role 'expression_ExpressionList', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression5', cardinality 0..*).
+'expression::IncludingExpression' (role 'expression_IncludingExpression', cardinality 0..*) is associated with 'expression::Expression' (role 'expression_Expression', cardinality 0..*).
+'expression::Expression' (role 'expression_Expression3', cardinality 0..*) is associated with 'expression::IncludingExpression' (role 'expression_IncludingExpression2', cardinality 0..*).

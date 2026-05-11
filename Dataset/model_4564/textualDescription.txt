@@ -1,0 +1,49 @@
+The model has 22 class(es).
+The class 'Command' has no attributes.
+The class 'BoolExp' has no attributes.
+The class 'robot::FlotCtrl::IfBlock' has no attributes.
+The class 'robot::robot::StopEngineCmd' has no attributes.
+The class 'robot::FlotCtrl::NegExp' has no attributes.
+The class 'robot::robot::StopProgramCmd' has no attributes.
+The class 'robot::robot::SetTurnAngleCmd' has the following attributes: 'angle' of type str.
+The class 'robot::robot::PrintCmd' has the following attributes: 'msg' of type str; 'line' of type str; 'duration' of type str; 'col' of type str.
+The class 'robot::FlotCtrl::Expression' has no attributes.
+The class 'robot::robot::MoveCmd' has the following attributes: 'power' of type str.
+The class 'Expression' has no attributes.
+The class 'robot::robot::ObstacleCmd' has the following attributes: 'distance' of type str.
+The class 'robot::robot::Command' has no attributes.
+The class 'robot::robot::TurnCmd' has the following attributes: 'power' of type str; 'angle' of type str.
+The class 'robot::FlotCtrl::AndExp' has no attributes.
+The class 'robot::FlotCtrl::WhileLoop' has no attributes.
+The class 'robot::FlotCtrl::BoolExp' has no attributes.
+The class 'robot::robot::HasTurnedCmd' has the following attributes: 'angle' of type str.
+The class 'robot::robot::Bip' has the following attributes: 'repet' of type str; 'duration' of type str; 'power' of type str.
+The class 'FlotCtrl::BoolExp' has no attributes.
+The class 'robot::Command' has no attributes.
+The class 'robot::robot::ProgramUnit' has no attributes.
+'robot::robot::TurnCmd' is a specialization of 'Command'.
+'robot::FlotCtrl::BoolExp' is a specialization of 'Expression'.
+'robot::FlotCtrl::NegExp' is a specialization of 'BoolExp'.
+'robot::robot::HasTurnedCmd' is a specialization of 'FlotCtrl::BoolExp'.
+'robot::robot::Command' is a specialization of 'Expression'.
+'robot::FlotCtrl::WhileLoop' is a specialization of 'Expression'.
+'robot::FlotCtrl::AndExp' is a specialization of 'BoolExp'.
+'robot::robot::PrintCmd' is a specialization of 'Command'.
+'robot::robot::StopProgramCmd' is a specialization of 'Command'.
+'robot::robot::SetTurnAngleCmd' is a specialization of 'Command'.
+'robot::FlotCtrl::IfBlock' is a specialization of 'Expression'.
+'robot::robot::MoveCmd' is a specialization of 'Command'.
+'robot::robot::ObstacleCmd' is a specialization of 'FlotCtrl::BoolExp'.
+'robot::robot::ObstacleCmd' is a specialization of 'robot::Command'.
+'robot::robot::HasTurnedCmd' is a specialization of 'robot::Command'.
+'robot::robot::StopEngineCmd' is a specialization of 'Command'.
+'robot::robot::Bip' is a specialization of 'Command'.
+'robot::FlotCtrl::AndExp' (role 'robot_FlotCtrl_AndExp', cardinality 0..*) is associated with 'BoolExp' (role 'BoolExp8', cardinality 0..*).
+'robot::FlotCtrl::IfBlock' (role 'robot_FlotCtrl_IfBlock15', cardinality 0..*) is associated with 'Expression' (role 'Expression16', cardinality 0..*).
+'robot::FlotCtrl::WhileLoop' (role 'robot_FlotCtrl_WhileLoop3', cardinality 0..*) is associated with 'Expression' (role 'Expression4', cardinality 0..*).
+'robot::robot::ProgramUnit' (role 'robot_robot_ProgramUnit', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'robot::FlotCtrl::IfBlock' (role 'robot_FlotCtrl_IfBlock18', cardinality 0..*) is associated with 'Expression' (role 'Expression19', cardinality 0..*).
+'BoolExp' (role 'BoolExp', cardinality 0..*) is associated with 'robot::FlotCtrl::WhileLoop' (role 'robot_FlotCtrl_WhileLoop', cardinality 0..*).
+'BoolExp' (role 'BoolExp13', cardinality 0..*) is associated with 'robot::FlotCtrl::IfBlock' (role 'robot_FlotCtrl_IfBlock', cardinality 0..*).
+'robot::FlotCtrl::AndExp' (role 'robot_FlotCtrl_AndExp10', cardinality 0..*) is associated with 'BoolExp' (role 'BoolExp11', cardinality 0..*).
+'robot::FlotCtrl::NegExp' (role 'robot_FlotCtrl_NegExp', cardinality 0..*) is associated with 'BoolExp' (role 'BoolExp6', cardinality 0..*).

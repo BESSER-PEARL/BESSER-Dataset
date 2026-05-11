@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'p::ThisClassWasFirst' has no attributes.
+The class 'p::append' has no attributes.
+The class 'p::ThisClassWasMiddle' has no attributes.
+The class 'p::ThisClassWasLast' has no attributes.

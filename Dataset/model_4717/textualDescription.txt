@@ -1,0 +1,47 @@
+The model has 22 class(es).
+The class 'core::Lower' has no attributes.
+The class 'core::Rule' has no attributes.
+The class 'core::Or' has no attributes.
+The class 'core::And' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'core::Greater' has no attributes.
+The class 'core::Filter' has no attributes.
+The class 'core::Conditional' has no attributes.
+The class 'core::Mod' has no attributes.
+The class 'core::BinaryExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'core::IntegerLiteral' has the following attributes: 'val' of type int.
+The class 'core::Add' has no attributes.
+The class 'core::Not' has no attributes.
+The class 'core::UMinus' has no attributes.
+The class 'core::Equal' has no attributes.
+The class 'core::Div' has no attributes.
+The class 'core::Minus' has no attributes.
+The class 'core::IntegerExpression' has no attributes.
+The class 'core::UnaryExpression' has no attributes.
+The class 'core::Mult' has no attributes.
+The class 'IntegerExpression' has no attributes.
+'core::And' is a specialization of 'BinaryExpression'.
+'core::BinaryExpression' is a specialization of 'IntegerExpression'.
+'core::Or' is a specialization of 'BinaryExpression'.
+'core::IntegerLiteral' is a specialization of 'IntegerExpression'.
+'core::Lower' is a specialization of 'BinaryExpression'.
+'core::Equal' is a specialization of 'BinaryExpression'.
+'core::Div' is a specialization of 'BinaryExpression'.
+'core::Not' is a specialization of 'UnaryExpression'.
+'core::Mod' is a specialization of 'BinaryExpression'.
+'core::Minus' is a specialization of 'BinaryExpression'.
+'core::Greater' is a specialization of 'BinaryExpression'.
+'core::UMinus' is a specialization of 'UnaryExpression'.
+'core::Conditional' is a specialization of 'IntegerExpression'.
+'core::Mult' is a specialization of 'BinaryExpression'.
+'core::UnaryExpression' is a specialization of 'IntegerExpression'.
+'core::Add' is a specialization of 'BinaryExpression'.
+'core::IntegerExpression' (role 'core_IntegerExpression4', cardinality 0..*) is associated with 'core::UnaryExpression' (role 'core_UnaryExpression', cardinality 0..*).
+'core::Rule' (role 'core_Rule', cardinality 0..*) is associated with 'core::IntegerExpression' (role 'core_IntegerExpression', cardinality 0..*).
+'core::Rule' (role 'core_Rule2', cardinality 0..*) is associated with 'core::Filter' (role 'core_Filter', cardinality 0..*).
+'core::IntegerExpression' (role 'core_IntegerExpression14', cardinality 0..*) is associated with 'core::BinaryExpression' (role 'core_BinaryExpression', cardinality 0..*).
+'core::Conditional' (role 'core_Conditional8', cardinality 0..*) is associated with 'core::IntegerExpression' (role 'core_IntegerExpression9', cardinality 0..*).
+'core::IntegerExpression' (role 'core_IntegerExpression17', cardinality 0..*) is associated with 'core::BinaryExpression' (role 'core_BinaryExpression16', cardinality 0..*).
+'core::Conditional' (role 'core_Conditional11', cardinality 0..*) is associated with 'core::IntegerExpression' (role 'core_IntegerExpression12', cardinality 0..*).
+'core::IntegerExpression' (role 'core_IntegerExpression6', cardinality 0..*) is associated with 'core::Conditional' (role 'core_Conditional', cardinality 0..*).

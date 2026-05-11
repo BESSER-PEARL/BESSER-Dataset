@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Element' has no attributes.
+The class 'TransitionQVT::C' has the following attributes: 'c' of type str.
+The class 'TransitionQVT::B' has the following attributes: 'boss' of type str.
+The class 'TransitionQVT::Root' has no attributes.
+The class 'TransitionQVT::A' has the following attributes: 'reduction' of type str; 'height' of type float.
+The class 'TransitionQVT::Element' has the following attributes: 'id' of type int.
+'TransitionQVT::A' is a specialization of 'Element'.
+'TransitionQVT::C' is a specialization of 'Element'.
+'TransitionQVT::B' is a specialization of 'Element'.
+'TransitionQVT::Root' (role 'TransitionQVT_Root', cardinality 0..*) is associated with 'TransitionQVT::Element' (role 'TransitionQVT_Element', cardinality 0..*).
+'TransitionQVT::Element' (role 'TransitionQVT_Element3', cardinality 0..*) is associated with 'TransitionQVT::Element' (role 'TransitionQVT_Element1', cardinality 0..*).

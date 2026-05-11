@@ -1,0 +1,25 @@
+The model has 13 class(es).
+The class 'simpleal::Block' has no attributes.
+The class 'simpleal::ArithOp' has no attributes.
+The class 'simpleal::ArithLit' has the following attributes: 'val' of type int.
+The class 'simpleal::ArithPlus' has no attributes.
+The class 'simpleal::Stmt' has no attributes.
+The class 'simpleal::Assign' has the following attributes: 'name' of type str.
+The class 'ArithOp' has no attributes.
+The class 'simpleal::VarRef' has the following attributes: 'name' of type str.
+The class 'simpleal::Print' has the following attributes: 'name' of type str.
+The class 'Arith' has no attributes.
+The class 'simpleal::ArithMinus' has no attributes.
+The class 'simpleal::Arith' has no attributes.
+The class 'Stmt' has no attributes.
+'simpleal::VarRef' is a specialization of 'Arith'.
+'simpleal::Print' is a specialization of 'Stmt'.
+'simpleal::ArithOp' is a specialization of 'Arith'.
+'simpleal::Assign' is a specialization of 'Stmt'.
+'simpleal::ArithLit' is a specialization of 'Arith'.
+'simpleal::ArithMinus' is a specialization of 'ArithOp'.
+'simpleal::ArithPlus' is a specialization of 'ArithOp'.
+'simpleal::Stmt' (role 'simpleal_Stmt', cardinality 0..*) is associated with 'simpleal::Block' (role 'simpleal_Block', cardinality 0..*).
+'simpleal::Assign' (role 'simpleal_Assign', cardinality 0..*) is associated with 'simpleal::Arith' (role 'simpleal_Arith6', cardinality 0..*).
+'simpleal::Arith' (role 'simpleal_Arith', cardinality 0..*) is associated with 'simpleal::ArithOp' (role 'simpleal_ArithOp', cardinality 0..*).
+'simpleal::ArithOp' (role 'simpleal_ArithOp3', cardinality 0..*) is associated with 'simpleal::Arith' (role 'simpleal_Arith4', cardinality 0..*).

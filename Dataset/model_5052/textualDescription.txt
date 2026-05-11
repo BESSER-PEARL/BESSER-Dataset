@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'eShop::Product' has the following attributes: 'stock' of type int; 'price' of type int.
+The class 'eShop::Customer' has the following attributes: 'name' of type int.
+The class 'eShop::Sale' has the following attributes: 'id' of type int; 'paid' of type bool; 'amount' of type int.
+The class 'Customer' has no attributes.
+The class 'eShop::GoldCustomer' has no attributes.
+The class 'eShop::SaleLine' has the following attributes: 'quantity' of type int.
+The class 'eShop::Portal' has the following attributes: 'name' of type str; 'url' of type str.
+'eShop::GoldCustomer' is a specialization of 'Customer'.
+'eShop::Sale' (role 'sale6', cardinality 0..*) is associated with 'eShop::SaleLine' (role 'SaleLine', cardinality 0..*).
+'eShop::Sale' (role 'Sale', cardinality 0..*) is associated with 'eShop::Customer' (role 'purchaser', cardinality 0..*).
+'eShop::Product' (role 'product', cardinality 0..*) is associated with 'eShop::SaleLine' (role 'SaleLine11', cardinality 0..*).
+'eShop::Portal' (role 'Portal', cardinality 0..*) is associated with 'eShop::Customer' (role 'customers', cardinality 0..*).
+'eShop::Product' (role 'Product', cardinality 0..*) is associated with 'eShop::SaleLine' (role 'salesLines', cardinality 0..*).
+'eShop::Portal' (role 'portal', cardinality 0..*) is associated with 'eShop::Customer' (role 'Customer', cardinality 0..*).
+'eShop::SaleLine' (role 'lines', cardinality 0..*) is associated with 'eShop::Sale' (role 'Sale8', cardinality 0..*).
+'eShop::Sale' (role 'sale', cardinality 0..*) is associated with 'eShop::Customer' (role 'Customer4', cardinality 0..*).

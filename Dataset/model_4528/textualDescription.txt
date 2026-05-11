@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'Vehicle' has no attributes.
+The class 'platoon::Right' has no attributes.
+The class 'platoon::Route' has the following attributes: 'name' of type str.
+The class 'platoon::Action' has no attributes.
+The class 'platoon::Turn' has no attributes.
+The class 'platoon::Model' has no attributes.
+The class 'Turn' has no attributes.
+The class 'platoon::Constraints' has the following attributes: 'minHeadway' of type int; 'maxHeadway' of type int.
+The class 'platoon::Vehicle' has the following attributes: 'name' of type str.
+The class 'platoon::Platoon' has no attributes.
+The class 'platoon::LV' has no attributes.
+The class 'platoon::FV' has no attributes.
+The class 'Action' has no attributes.
+The class 'platoon::Forward' has the following attributes: 'distance' of type int.
+The class 'platoon::Left' has no attributes.
+'platoon::FV' is a specialization of 'Vehicle'.
+'platoon::Right' is a specialization of 'Turn'.
+'platoon::Forward' is a specialization of 'Action'.
+'platoon::LV' is a specialization of 'Vehicle'.
+'platoon::Turn' is a specialization of 'Action'.
+'platoon::Left' is a specialization of 'Turn'.
+'platoon::LV' (role 'platoon_LV12', cardinality 0..*) is associated with 'platoon::Route' (role 'platoon_Route13', cardinality 0..*).
+'platoon::Vehicle' (role 'platoon_Vehicle', cardinality 0..*) is associated with 'platoon::FV' (role 'platoon_FV10', cardinality 0..*).
+'platoon::Model' (role 'platoon_Model2', cardinality 0..*) is associated with 'platoon::Route' (role 'platoon_Route', cardinality 0..*).
+'platoon::LV' (role 'platoon_LV', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon6', cardinality 0..*).
+'platoon::Action' (role 'platoon_Action', cardinality 0..*) is associated with 'platoon::Route' (role 'platoon_Route15', cardinality 0..*).
+'platoon::Constraints' (role 'platoon_Constraints', cardinality 0..*) is associated with 'platoon::Model' (role 'platoon_Model4', cardinality 0..*).
+'platoon::Model' (role 'platoon_Model', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon', cardinality 0..*).
+'platoon::FV' (role 'platoon_FV', cardinality 0..*) is associated with 'platoon::Platoon' (role 'platoon_Platoon8', cardinality 0..*).

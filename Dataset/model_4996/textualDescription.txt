@@ -1,0 +1,83 @@
+The model has 37 class(es).
+The class 'Resource' has no attributes.
+The class 'ddsm::StormCluster' has the following attributes: 'number_of_workers' of type str.
+The class 'ddsm::VM' has the following attributes: 'minRam' of type str; 'maxRam' of type str; 'instances' of type str; 'imageId' of type str; 'is64os' of type str; 'publicPorts' of type str; 'securityGroup' of type str; 'privateKey' of type str; 'providerSpecificTypeName' of type str; 'minStorage' of type str; 'os' of type str; 'genericSize' of type str; 'sshKey' of type str; 'maxStorage' of type str; 'minCores' of type str; 'publicAddress' of type str; 'maxCores' of type str.
+The class 'ddsm::InternalComponent' has no attributes.
+The class 'ddsm::Provider' has the following attributes: 'type' of type str; 'credentialsPath' of type str.
+The class 'Component' has no attributes.
+The class 'ddsm::ProvidedPort' has no attributes.
+The class 'ddsm::StormSupervisor' has the following attributes: 'workerStartTimeout' of type str; 'heartbeatFrequency' of type str; 'cpuCapacity' of type str; 'memoryCapacity' of type str.
+The class 'ddsm::ExecutionPlatform' has no attributes.
+The class 'ExternalComponent' has no attributes.
+The class 'ddsm::StormNimbus' has the following attributes: 'taskTimeout' of type str; 'retryTimes' of type str; 'retryInterval' of type str; 'monitorFrequency' of type str; 'queueSize' of type str; 'supervisorTimeout' of type str.
+The class 'ddsm::HDFSNameNode' has no attributes.
+The class 'ddsm::YarnNodeManager' has no attributes.
+The class 'ddsm::ExternalComponent' has the following attributes: 'location' of type str; 'region' of type str; 'serviceType' of type str; 'password' of type str; 'login' of type str.
+The class 'ddsm::RequiredPort' has the following attributes: 'isMandatory' of type bool.
+The class 'ddsm::CloudElement' has the following attributes: 'description' of type str; 'elementId' of type str.
+The class 'ddsm::Zookeeper' has the following attributes: 'initLimit' of type str; 'syncLimit' of type str; 'tickTime' of type str.
+The class 'ddsm::ChefResource' has the following attributes: 'cookbookId' of type str.
+The class 'ddsm::HDFSDataNode' has no attributes.
+The class 'InternalComponent' has no attributes.
+The class 'ddsm::Port' has the following attributes: 'isLocal' of type bool; 'portNumber' of type str.
+The class 'Cluster' has no attributes.
+The class 'ddsm::Kafka' has no attributes.
+The class 'Port' has no attributes.
+The class 'ddsm::DDSM' has the following attributes: 'description' of type str; 'modelId' of type str.
+The class 'ddsm::ClientNode' has the following attributes: 'type' of type str; 'artifactUrl' of type str; 'mainClass' of type str.
+The class 'ddsm::Resource' has the following attributes: 'stopCommand' of type str; 'startCommand' of type str; 'resourceId' of type str; 'downloadCommand' of type str; 'createCommand' of type str; 'configureCommand' of type str; 'installCommand' of type str.
+The class 'ddsm::ProvidedExecutionPlatform' has no attributes.
+The class 'ddsm::YarnResourceManager' has no attributes.
+The class 'ddsm::Component' has no attributes.
+The class 'ddsm::Relationship' has no attributes.
+The class 'ddsm::RequiredExecutionPlatform' has the following attributes: 'isMandatory' of type bool.
+The class 'ddsm::Property' has the following attributes: 'propertyId' of type str; 'value' of type str.
+The class 'ddsm::Cluster' has no attributes.
+The class 'ddsm::ExecutionBinding' has no attributes.
+The class 'CloudElement' has no attributes.
+The class 'ExecutionPlatform' has no attributes.
+The enumeration 'VMSize' has the following literals: 'Medium', 'Large', 'Small'.
+The enumeration 'ProviderType' has the following literals: 'Flexiant', 'Openstack'.
+'ddsm::StormCluster' is a specialization of 'Cluster'.
+'ddsm::StormSupervisor' is a specialization of 'InternalComponent'.
+'ddsm::HDFSDataNode' is a specialization of 'InternalComponent'.
+'ddsm::VM' is a specialization of 'ExternalComponent'.
+'ddsm::ChefResource' is a specialization of 'Resource'.
+'ddsm::RequiredExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'ddsm::HDFSNameNode' is a specialization of 'InternalComponent'.
+'ddsm::RequiredPort' is a specialization of 'Port'.
+'ddsm::YarnResourceManager' is a specialization of 'InternalComponent'.
+'ddsm::ClientNode' is a specialization of 'InternalComponent'.
+'ddsm::Relationship' is a specialization of 'CloudElement'.
+'ddsm::ExecutionBinding' is a specialization of 'CloudElement'.
+'ddsm::Provider' is a specialization of 'CloudElement'.
+'ddsm::ProvidedExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'ddsm::ExternalComponent' is a specialization of 'Component'.
+'ddsm::ExecutionPlatform' is a specialization of 'CloudElement'.
+'ddsm::Component' is a specialization of 'CloudElement'.
+'ddsm::StormNimbus' is a specialization of 'InternalComponent'.
+'ddsm::Zookeeper' is a specialization of 'InternalComponent'.
+'ddsm::InternalComponent' is a specialization of 'Component'.
+'ddsm::YarnNodeManager' is a specialization of 'InternalComponent'.
+'ddsm::Kafka' is a specialization of 'InternalComponent'.
+'ddsm::Cluster' is a specialization of 'ExternalComponent'.
+'ddsm::ProvidedPort' is a specialization of 'Port'.
+'ddsm::Port' is a specialization of 'CloudElement'.
+'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort', cardinality 0..*) is associated with 'ddsm::Component' (role 'ddsm_Component', cardinality 0..*).
+'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform', cardinality 0..*) is associated with 'ddsm::Component' (role 'ddsm_Component5', cardinality 0..*).
+'ddsm::Property' (role 'ddsm_Property', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement2', cardinality 0..*).
+'ddsm::Relationship' (role 'ddsm_Relationship', cardinality 0..*) is associated with 'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort19', cardinality 0..*).
+'ddsm::InternalComponent' (role 'ddsm_InternalComponent11', cardinality 0..*) is associated with 'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform', cardinality 0..*).
+'ddsm::InternalComponent' (role 'ddsm_InternalComponent9', cardinality 0..*) is associated with 'ddsm::InternalComponent' (role 'ddsm_InternalComponent7', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement', cardinality 0..*).
+'ddsm::DDSM' (role 'ddsm_DDSM', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement30', cardinality 0..*).
+'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort13', cardinality 0..*) is associated with 'ddsm::Component' (role 'ddsm_Component14', cardinality 0..*).
+'ddsm::Property' (role 'ddsm_Property33', cardinality 0..*) is associated with 'ddsm::DDSM' (role 'ddsm_DDSM32', cardinality 0..*).
+'ddsm::Cluster' (role 'ddsm_Cluster', cardinality 0..*) is associated with 'ddsm::VM' (role 'ddsm_VM', cardinality 0..*).
+'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform24', cardinality 0..*) is associated with 'ddsm::ExecutionBinding' (role 'ddsm_ExecutionBinding', cardinality 0..*).
+'ddsm::Component' (role 'ddsm_Component17', cardinality 0..*) is associated with 'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform16', cardinality 0..*).
+'ddsm::Relationship' (role 'ddsm_Relationship21', cardinality 0..*) is associated with 'ddsm::RequiredPort' (role 'ddsm_RequiredPort22', cardinality 0..*).
+'ddsm::Provider' (role 'ddsm_Provider', cardinality 0..*) is associated with 'ddsm::ExternalComponent' (role 'ddsm_ExternalComponent', cardinality 0..*).
+'ddsm::ExecutionBinding' (role 'ddsm_ExecutionBinding26', cardinality 0..*) is associated with 'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform27', cardinality 0..*).
+'ddsm::DDSM' (role 'ddsm_DDSM35', cardinality 0..*) is associated with 'ddsm::Resource' (role 'ddsm_Resource36', cardinality 0..*).
+'ddsm::InternalComponent' (role 'ddsm_InternalComponent', cardinality 0..*) is associated with 'ddsm::RequiredPort' (role 'ddsm_RequiredPort', cardinality 0..*).

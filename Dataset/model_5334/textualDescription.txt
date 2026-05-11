@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'Root::ClaferA' has no attributes.

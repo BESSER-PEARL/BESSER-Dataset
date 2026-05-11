@@ -1,0 +1,66 @@
+The model has 30 class(es).
+The class 'Component' has no attributes.
+The class 'iotw::InputDevice' has no attributes.
+The class 'iotw::LED' has the following attributes: 'pin1' of type str; 'pin2' of type str.
+The class 'iotw::Device' has the following attributes: 'name' of type str.
+The class 'IODevice' has no attributes.
+The class 'iotw::IODevice' has no attributes.
+The class 'iotw::EndPoint' has no attributes.
+The class 'iotw::Button' has the following attributes: 'pin1' of type str.
+The class 'iotw::Buzzer' has the following attributes: 'pin2' of type str; 'Time' of type int; 'pin1' of type str; 'Tone' of type int.
+The class 'InputDevice' has no attributes.
+The class 'OutputDevice' has no attributes.
+The class 'iotw::WifiESP8266' has the following attributes: 'pinGND' of type str; 'baud' of type str; 'password_ST' of type str; 'protocol' of type str; 'pinRX' of type str; 'pinCHPD' of type str; 'connectedChannel' of type str; 'sSID_ST' of type str; 'idConnection' of type str; 'iP' of type str; 'sSID_AccessPoint' of type str; 'mode' of type str; 'pinVcc' of type str; 'port' of type int; 'password_AccessPoint' of type str; 'pinTX' of type str.
+The class 'iotw::Connection' has the following attributes: 'label' of type str; 'routerKind' of type str; 'kind' of type str; 'bendpoints' of type str.
+The class 'iotw::OutputDevice' has no attributes.
+The class 'Mainboard' has no attributes.
+The class 'iotw::Keypad4x4' has the following attributes: 'nameButtonD' of type str; 'pin2' of type str; 'rows' of type int; 'cols' of type int; 'nameButton0' of type str; 'nameButton7' of type str; 'nameButton8' of type str; 'pin7' of type str; 'nameButtonC' of type str; 'keys' of type str; 'nameButton4' of type str; 'pin1' of type str; 'nameButton3' of type str; 'pin5' of type str; 'nameButtonHash' of type str; 'nameButton2' of type str; 'pin3' of type str; 'nameButton6' of type str; 'nameButton1' of type str; 'pin8' of type str; 'nameButtonB' of type str; 'nameButtonA' of type str; 'nameButton5' of type str; 'pin6' of type str; 'pin4' of type str; 'nameButtonAsterisk' of type str; 'nameButton9' of type str.
+The class 'iotw::Component' has the following attributes: 'id' of type str; 'constraints' of type str.
+The class 'Device' has no attributes.
+The class 'iotw::BluetoothHC06' has the following attributes: 'pinRXD' of type str; 'pinTXD' of type str; 'pinVCC' of type str; 'pinGND' of type str.
+The class 'iotw::ArduinoUNOR3' has the following attributes: 'pinA3' of type str; 'pinA5' of type str; 'pin9' of type str; 'pin12' of type str; 'pin4' of type str; 'pin8' of type str; 'pinA4' of type str; 'pinA1' of type str; 'pin2' of type str; 'pin6' of type str; 'pinA2' of type str; 'pin11' of type str; 'pinA0' of type str; 'pin0' of type str; 'pin3' of type str; 'pin1' of type str; 'pin5' of type str; 'pin7' of type str; 'pin13' of type str; 'pin10' of type str.
+The class 'StateComponent' has no attributes.
+The class 'iotw::Decision' has no attributes.
+The class 'iotw::Connectivity' has no attributes.
+The class 'iotw::StateComponent' has the following attributes: 'name' of type str.
+The class 'iotw::StartPoint' has no attributes.
+The class 'iotw::StateSchema' has no attributes.
+The class 'iotw::StateFrame' has the following attributes: 'content' of type str.
+The class 'Connectivity' has no attributes.
+The class 'iotw::I2CLCD' has the following attributes: 'pinGND' of type str; 'pinSCL' of type str; 'pinVcc' of type str; 'type' of type str; 'pinSDA' of type str.
+The class 'iotw::Mainboard' has the following attributes: 'name' of type str.
+The enumeration 'ListProtocol' has the following literals: 'UDP', 'TCP'.
+The enumeration 'RouterKind' has the following literals: 'BENDPOINT', 'MANHATTAN'.
+The enumeration 'ListConnectionChannel' has the following literals: 'Multiple', 'Single'.
+The enumeration 'ConnectionKind' has the following literals: 'STATE_FLOW', 'OUTSIDE_FLOW'.
+The enumeration 'WifiIDConnection' has the following literals: 'id_3', 'id_4', 'id_2', 'id_1', 'id_0'.
+The enumeration 'I2CLCDType' has the following literals: 'I2CLCD2004', 'I2CLCD1602'.
+The enumeration 'ListBaud' has the following literals: 'baud_19200', 'baud_57600', 'baud_115200', 'baud_250000', 'baud_9600', 'baud_38400', 'baud_74880', 'baud_230400'.
+The enumeration 'WifiMode' has the following literals: 'Both', 'Station', 'Access_Point'.
+'iotw::WifiESP8266' is a specialization of 'Connectivity'.
+'iotw::IODevice' is a specialization of 'Device'.
+'iotw::I2CLCD' is a specialization of 'OutputDevice'.
+'iotw::StateFrame' is a specialization of 'StateComponent'.
+'iotw::BluetoothHC06' is a specialization of 'Connectivity'.
+'iotw::StateComponent' is a specialization of 'Component'.
+'iotw::Buzzer' is a specialization of 'OutputDevice'.
+'iotw::Keypad4x4' is a specialization of 'InputDevice'.
+'iotw::Button' is a specialization of 'InputDevice'.
+'iotw::EndPoint' is a specialization of 'StateComponent'.
+'iotw::ArduinoUNOR3' is a specialization of 'Mainboard'.
+'iotw::StartPoint' is a specialization of 'StateComponent'.
+'iotw::InputDevice' is a specialization of 'IODevice'.
+'iotw::OutputDevice' is a specialization of 'IODevice'.
+'iotw::LED' is a specialization of 'OutputDevice'.
+'iotw::Connectivity' is a specialization of 'Device'.
+'iotw::Device' is a specialization of 'Component'.
+'iotw::Decision' is a specialization of 'StateComponent'.
+'iotw::Connection' (role 'iotw_Connection2', cardinality 0..*) is associated with 'iotw::Component' (role 'iotw_Component3', cardinality 0..*).
+'iotw::Connection' (role 'Connection', cardinality 0..*) is associated with 'iotw::StateSchema' (role 'stateSchema', cardinality 0..*).
+'iotw::Connection' (role 'iotw_Connection9', cardinality 0..*) is associated with 'iotw::StateComponent' (role 'iotw_StateComponent8', cardinality 0..*).
+'iotw::Connection' (role 'iotw_Connection12', cardinality 0..*) is associated with 'iotw::StateComponent' (role 'iotw_StateComponent11', cardinality 0..*).
+'iotw::Mainboard' (role 'mainboard', cardinality 0..*) is associated with 'iotw::Device' (role 'Device', cardinality 0..*).
+'iotw::Component' (role 'iotw_Component', cardinality 0..*) is associated with 'iotw::Connection' (role 'iotw_Connection', cardinality 0..*).
+'iotw::Mainboard' (role 'Mainboard', cardinality 0..*) is associated with 'iotw::Device' (role 'devices', cardinality 0..*).
+'iotw::Connection' (role 'connnections', cardinality 0..*) is associated with 'iotw::StateSchema' (role 'StateSchema', cardinality 0..*).
+'iotw::StateComponent' (role 'iotw_StateComponent', cardinality 0..*) is associated with 'iotw::StateSchema' (role 'iotw_StateSchema', cardinality 0..*).

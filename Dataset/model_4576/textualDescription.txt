@@ -1,0 +1,140 @@
+The model has 48 class(es).
+The class 'sensinact::DSL::Expression::And' has no attributes.
+The class 'sensinact::DSL::Expression::Larger' has no attributes.
+The class 'sensinact::DSL::Object::Number' has the following attributes: 'value' of type str.
+The class 'sensinact::EObject' has no attributes.
+The class 'sensinact::DSL::IfDo' has no attributes.
+The class 'sensinact::DSL::CEP::COUNT' has no attributes.
+The class 'sensinact::DSL::CEP::AVG' has no attributes.
+The class 'sensinact::DSL::CEP::COINCIDE' has no attributes.
+The class 'sensinact::DSL::ResourceAction' has the following attributes: 'variable' of type str; 'actiontype' of type str.
+The class 'sensinact::DSL::Expression::Smaller::Equal' has no attributes.
+The class 'sensinact::DSL::Expression::Modulo' has no attributes.
+The class 'sensinact::DSL::Expression' has no attributes.
+The class 'sensinact::DSL::ListActions' has no attributes.
+The class 'sensinact::DSL::CEP::DURATION' has no attributes.
+The class 'sensinact::DSL::CEP::DURATION::SEC' has the following attributes: 'sec' of type str.
+The class 'sensinact::DSL::CEP::MIN' has no attributes.
+The class 'sensinact::DSL::CEP::DURATION::MIN' has the following attributes: 'min' of type str.
+The class 'sensinact::DSL::REF' has the following attributes: 'name' of type str.
+The class 'sensinact::DSL::CEP::STATEMENT' has no attributes.
+The class 'sensinact::DSL::Expression::Negate' has no attributes.
+The class 'sensinact::DSL::ListParam' has no attributes.
+The class 'sensinact::DSL::Object::Boolean' has the following attributes: 'value' of type bool.
+The class 'sensinact::DSL::Expression::Division' has no attributes.
+The class 'sensinact::DSL::On' has no attributes.
+The class 'sensinact::DSL::CEP::SUM' has no attributes.
+The class 'sensinact::Sensinact' has no attributes.
+The class 'sensinact::DSL::Expression::Equal' has no attributes.
+The class 'sensinact::DSL::Expression::Multiplication' has no attributes.
+The class 'sensinact::DSL::Expression::Smaller' has no attributes.
+The class 'sensinact::DSL::REF::CONDITION' has no attributes.
+The class 'sensinact::DSL::Expression::Diff' has no attributes.
+The class 'sensinact::DSL::ECA::STATEMENT' has no attributes.
+The class 'sensinact::DSL::FLAG::AUTOSTART' has the following attributes: 'activated' of type bool.
+The class 'sensinact::DSL::CEP::AFTER' has no attributes.
+The class 'sensinact::DSL::CEP::BEFORE' has no attributes.
+The class 'sensinact::DSL::SENSINACT' has no attributes.
+The class 'DSL::Expression' has no attributes.
+The class 'sensinact::DSL::Resource' has the following attributes: 'resourceID' of type str; 'deviceID' of type str; 'gatewayID' of type str; 'serviceID' of type str.
+The class 'sensinact::DSL::CEP::MAX' has no attributes.
+The class 'sensinact::DSL::Expression::Larger::Equal' has no attributes.
+The class 'sensinact::DSL::Object::Ref' has no attributes.
+The class 'DSL::REF' has no attributes.
+The class 'sensinact::DSL::Object::String' has the following attributes: 'value' of type str.
+The class 'sensinact::DSL::Expression::Or' has no attributes.
+The class 'sensinact::DSL::ElseIfDo' has no attributes.
+The class 'sensinact::DSL::Expression::Plus' has no attributes.
+The class 'sensinact::DSL::Expression::Minus' has no attributes.
+The class 'sensinact::DSL::ElseDo' has no attributes.
+'sensinact::DSL::Expression::Equal' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Object::Boolean' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::And' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Smaller::Equal' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Resource' is a specialization of 'DSL::REF'.
+'sensinact::DSL::Object::Number' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Minus' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Division' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Plus' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Larger' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Or' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::CEP::STATEMENT' is a specialization of 'DSL::REF'.
+'sensinact::DSL::Expression::Larger::Equal' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Smaller' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Negate' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Object::String' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Object::Ref' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Modulo' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Diff' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression::Multiplication' is a specialization of 'DSL::Expression'.
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression147', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Plus' (role 'sensinact_DSL_Expression_Plus146', cardinality 0..*).
+'sensinact::DSL::Expression::Minus' (role 'sensinact_DSL_Expression_Minus', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression149', cardinality 0..*).
+'sensinact::DSL::CEP::STATEMENT' (role 'sensinact_DSL_CEP_STATEMENT35', cardinality 0..*) is associated with 'sensinact::EObject' (role 'sensinact_EObject', cardinality 0..*).
+'sensinact::DSL::CEP::MIN' (role 'sensinact_DSL_CEP_MIN', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION66', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression112', cardinality 0..*) is associated with 'sensinact::DSL::Expression::And' (role 'sensinact_DSL_Expression_And111', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression107', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Or' (role 'sensinact_DSL_Expression_Or106', cardinality 0..*).
+'sensinact::DSL::ECA::STATEMENT' (role 'sensinact_DSL_ECA_STATEMENT16', cardinality 0..*) is associated with 'sensinact::DSL::ElseIfDo' (role 'sensinact_DSL_ElseIfDo', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression134', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Smaller' (role 'sensinact_DSL_Expression_Smaller', cardinality 0..*).
+'sensinact::DSL::ElseIfDo' (role 'sensinact_DSL_ElseIfDo27', cardinality 0..*) is associated with 'sensinact::DSL::ListActions' (role 'sensinact_DSL_ListActions28', cardinality 0..*).
+'sensinact::DSL::Expression::Smaller' (role 'sensinact_DSL_Expression_Smaller136', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression137', cardinality 0..*).
+'sensinact::DSL::Expression::Smaller::Equal' (role 'sensinact_DSL_Expression_Smaller_Equal141', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression142', cardinality 0..*).
+'sensinact::DSL::CEP::AFTER' (role 'sensinact_DSL_CEP_AFTER39', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION40', cardinality 0..*).
+'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT8', cardinality 0..*) is associated with 'sensinact::DSL::On' (role 'sensinact_DSL_On', cardinality 0..*).
+'sensinact::DSL::Expression::Minus' (role 'sensinact_DSL_Expression_Minus151', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression152', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression104', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Or' (role 'sensinact_DSL_Expression_Or', cardinality 0..*).
+'sensinact::DSL::Expression::Multiplication' (role 'sensinact_DSL_Expression_Multiplication', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression154', cardinality 0..*).
+'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT2', cardinality 0..*) is associated with 'sensinact::DSL::FLAG::AUTOSTART' (role 'sensinact_DSL_FLAG_AUTOSTART', cardinality 0..*).
+'sensinact::DSL::IfDo' (role 'sensinact_DSL_IfDo22', cardinality 0..*) is associated with 'sensinact::DSL::ListActions' (role 'sensinact_DSL_ListActions', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION71', cardinality 0..*) is associated with 'sensinact::DSL::CEP::MAX' (role 'sensinact_DSL_CEP_MAX', cardinality 0..*).
+'sensinact::DSL::CEP::COUNT' (role 'sensinact_DSL_CEP_COUNT88', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION89', cardinality 0..*).
+'sensinact::DSL::CEP::MAX' (role 'sensinact_DSL_CEP_MAX73', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION74', cardinality 0..*).
+'sensinact::DSL::Object::Ref' (role 'sensinact_DSL_Object_Ref', cardinality 0..*) is associated with 'sensinact::DSL::REF' (role 'sensinact_DSL_REF169', cardinality 0..*).
+'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION56', cardinality 0..*) is associated with 'sensinact::DSL::CEP::BEFORE' (role 'sensinact_DSL_CEP_BEFORE55', cardinality 0..*).
+'sensinact::DSL::Expression::Multiplication' (role 'sensinact_DSL_Expression_Multiplication156', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression157', cardinality 0..*).
+'sensinact::DSL::Expression::Division' (role 'sensinact_DSL_Expression_Division', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression159', cardinality 0..*).
+'sensinact::DSL::ECA::STATEMENT' (role 'sensinact_DSL_ECA_STATEMENT14', cardinality 0..*) is associated with 'sensinact::DSL::IfDo' (role 'sensinact_DSL_IfDo', cardinality 0..*).
+'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT10', cardinality 0..*) is associated with 'sensinact::DSL::ECA::STATEMENT' (role 'sensinact_DSL_ECA_STATEMENT', cardinality 0..*).
+'sensinact::DSL::Expression::Division' (role 'sensinact_DSL_Expression_Division161', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression162', cardinality 0..*).
+'sensinact::DSL::ElseIfDo' (role 'sensinact_DSL_ElseIfDo24', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression25', cardinality 0..*).
+'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION64', cardinality 0..*) is associated with 'sensinact::DSL::CEP::COINCIDE' (role 'sensinact_DSL_CEP_COINCIDE63', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION37', cardinality 0..*) is associated with 'sensinact::DSL::CEP::AFTER' (role 'sensinact_DSL_CEP_AFTER', cardinality 0..*).
+'sensinact::DSL::ResourceAction' (role 'sensinact_DSL_ResourceAction', cardinality 0..*) is associated with 'sensinact::DSL::ListActions' (role 'sensinact_DSL_ListActions94', cardinality 0..*).
+'sensinact::DSL::CEP::AFTER' (role 'sensinact_DSL_CEP_AFTER42', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION', cardinality 0..*).
+'sensinact::DSL::Expression::Plus' (role 'sensinact_DSL_Expression_Plus', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression144', cardinality 0..*).
+'sensinact::DSL::CEP::SUM' (role 'sensinact_DSL_CEP_SUM', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION81', cardinality 0..*).
+'sensinact::DSL::On' (role 'sensinact_DSL_On12', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION', cardinality 0..*).
+'sensinact::DSL::Expression::Smaller::Equal' (role 'sensinact_DSL_Expression_Smaller_Equal', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression139', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION47', cardinality 0..*) is associated with 'sensinact::DSL::CEP::BEFORE' (role 'sensinact_DSL_CEP_BEFORE', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression122', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Equal' (role 'sensinact_DSL_Expression_Equal121', cardinality 0..*).
+'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT4', cardinality 0..*) is associated with 'sensinact::DSL::Resource' (role 'sensinact_DSL_Resource', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression132', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Larger::Equal' (role 'sensinact_DSL_Expression_Larger_Equal131', cardinality 0..*).
+'sensinact::DSL::REF' (role 'sensinact_DSL_REF97', cardinality 0..*) is associated with 'sensinact::DSL::ResourceAction' (role 'sensinact_DSL_ResourceAction96', cardinality 0..*).
+'sensinact::DSL::CEP::MIN' (role 'sensinact_DSL_CEP_MIN68', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION69', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression117', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Diff' (role 'sensinact_DSL_Expression_Diff116', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression129', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Larger::Equal' (role 'sensinact_DSL_Expression_Larger_Equal', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression171', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Negate' (role 'sensinact_DSL_Expression_Negate', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION76', cardinality 0..*) is associated with 'sensinact::DSL::CEP::AVG' (role 'sensinact_DSL_CEP_AVG', cardinality 0..*).
+'sensinact::DSL::CEP::AFTER' (role 'sensinact_DSL_CEP_AFTER44', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION45', cardinality 0..*).
+'sensinact::DSL::REF' (role 'sensinact_DSL_REF', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION33', cardinality 0..*).
+'sensinact::DSL::ListParam' (role 'sensinact_DSL_ListParam101', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression102', cardinality 0..*).
+'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION53', cardinality 0..*) is associated with 'sensinact::DSL::CEP::BEFORE' (role 'sensinact_DSL_CEP_BEFORE52', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression167', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Modulo' (role 'sensinact_DSL_Expression_Modulo166', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression164', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Modulo' (role 'sensinact_DSL_Expression_Modulo', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION50', cardinality 0..*) is associated with 'sensinact::DSL::CEP::BEFORE' (role 'sensinact_DSL_CEP_BEFORE49', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression124', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Larger' (role 'sensinact_DSL_Expression_Larger', cardinality 0..*).
+'sensinact::DSL::ResourceAction' (role 'sensinact_DSL_ResourceAction99', cardinality 0..*) is associated with 'sensinact::DSL::ListParam' (role 'sensinact_DSL_ListParam', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION61', cardinality 0..*) is associated with 'sensinact::DSL::CEP::COINCIDE' (role 'sensinact_DSL_CEP_COINCIDE60', cardinality 0..*).
+'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression114', cardinality 0..*) is associated with 'sensinact::DSL::Expression::Diff' (role 'sensinact_DSL_Expression_Diff', cardinality 0..*).
+'sensinact::DSL::CEP::AVG' (role 'sensinact_DSL_CEP_AVG78', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION79', cardinality 0..*).
+'sensinact::DSL::Expression::Larger' (role 'sensinact_DSL_Expression_Larger126', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression127', cardinality 0..*).
+'sensinact::DSL::Expression::And' (role 'sensinact_DSL_Expression_And', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression109', cardinality 0..*).
+'sensinact::DSL::CEP::STATEMENT' (role 'sensinact_DSL_CEP_STATEMENT', cardinality 0..*) is associated with 'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT6', cardinality 0..*).
+'sensinact::DSL::IfDo' (role 'sensinact_DSL_IfDo20', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression', cardinality 0..*).
+'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION86', cardinality 0..*) is associated with 'sensinact::DSL::CEP::COUNT' (role 'sensinact_DSL_CEP_COUNT', cardinality 0..*).
+'sensinact::DSL::Expression::Equal' (role 'sensinact_DSL_Expression_Equal', cardinality 0..*) is associated with 'sensinact::DSL::Expression' (role 'sensinact_DSL_Expression119', cardinality 0..*).
+'sensinact::DSL::ElseDo' (role 'sensinact_DSL_ElseDo30', cardinality 0..*) is associated with 'sensinact::DSL::ListActions' (role 'sensinact_DSL_ListActions31', cardinality 0..*).
+'sensinact::DSL::CEP::COINCIDE' (role 'sensinact_DSL_CEP_COINCIDE', cardinality 0..*) is associated with 'sensinact::DSL::REF::CONDITION' (role 'sensinact_DSL_REF_CONDITION58', cardinality 0..*).
+'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION91', cardinality 0..*) is associated with 'sensinact::EObject' (role 'sensinact_EObject92', cardinality 0..*).
+'sensinact::DSL::ECA::STATEMENT' (role 'sensinact_DSL_ECA_STATEMENT18', cardinality 0..*) is associated with 'sensinact::DSL::ElseDo' (role 'sensinact_DSL_ElseDo', cardinality 0..*).
+'sensinact::DSL::SENSINACT' (role 'sensinact_DSL_SENSINACT', cardinality 0..*) is associated with 'sensinact::Sensinact' (role 'sensinact_Sensinact', cardinality 0..*).
+'sensinact::DSL::CEP::SUM' (role 'sensinact_DSL_CEP_SUM83', cardinality 0..*) is associated with 'sensinact::DSL::CEP::DURATION' (role 'sensinact_DSL_CEP_DURATION84', cardinality 0..*).

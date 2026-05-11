@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'class::Clazz' has the following attributes: 'id' of type str.
+The class 'class::ClassDiagram' has the following attributes: 'id' of type str.
+The class 'class::Association' has the following attributes: 'id' of type str.
+The class 'class::Attribute' has the following attributes: 'id' of type str.
+'class::Clazz' (role 'class_Clazz5', cardinality 0..*) is associated with 'class::Clazz' (role 'class_Clazz7', cardinality 0..*).
+'class::Attribute' (role 'class_Attribute', cardinality 0..*) is associated with 'class::Clazz' (role 'class_Clazz4', cardinality 0..*).
+'class::Clazz' (role 'class_Clazz10', cardinality 0..*) is associated with 'class::Association' (role 'class_Association9', cardinality 0..*).
+'class::Clazz' (role 'class_Clazz13', cardinality 0..*) is associated with 'class::Association' (role 'class_Association12', cardinality 0..*).
+'class::Clazz' (role 'class_Clazz', cardinality 0..*) is associated with 'class::ClassDiagram' (role 'class_ClassDiagram', cardinality 0..*).
+'class::ClassDiagram' (role 'class_ClassDiagram2', cardinality 0..*) is associated with 'class::Association' (role 'class_Association', cardinality 0..*).

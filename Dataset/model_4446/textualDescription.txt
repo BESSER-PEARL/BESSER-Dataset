@@ -1,0 +1,55 @@
+The model has 25 class(es).
+The class 'Iteration' has no attributes.
+The class 'iot::IterativeLoop' has the following attributes: 'operator' of type str; 'var' of type str.
+The class 'iot::ProvidedPort' has the following attributes: 'UUID' of type str; 'name' of type str.
+The class 'iot::Hardware' has the following attributes: 'mode' of type bool; 'type' of type str; 'pinNumber' of type int; 'timeInterval' of type int.
+The class 'iot::Iteration' has no attributes.
+The class 'iot::Actuator' has the following attributes: 'toggle' of type bool.
+The class 'iot::Sequence' has no attributes.
+The class 'iot::ThenPort' has no attributes.
+The class 'iot::ConditionPort' has no attributes.
+The class 'iot::Sensor' has the following attributes: 'script' of type str.
+The class 'Item' has no attributes.
+The class 'iot::CounterLoop' has the following attributes: 'counter' of type int.
+The class 'RequiredPort' has no attributes.
+The class 'Component' has no attributes.
+The class 'iot::IfPort' has the following attributes: 'var' of type str; 'operator' of type str; 'condition' of type bool.
+The class 'iot::Software' has no attributes.
+The class 'Hardware' has no attributes.
+The class 'iot::Branching' has no attributes.
+The class 'iot::Component' has no attributes.
+The class 'iot::Item' has the following attributes: 'UUID' of type str; 'name' of type str; 'newThread' of type bool.
+The class 'Controller' has no attributes.
+The class 'iot::RequiredPort' has the following attributes: 'method' of type str; 'name' of type str; 'UUID' of type str; 'args' of type str.
+The class 'iot::ElsePort' has no attributes.
+The class 'iot::Snippet' has the following attributes: 'scriptPath' of type str.
+The class 'iot::Controller' has no attributes.
+The enumeration 'Operator' has the following literals: 'EQ', 'LT', 'GE', 'GT', 'LE', 'NE'.
+'iot::Actuator' is a specialization of 'Hardware'.
+'iot::Iteration' is a specialization of 'Controller'.
+'iot::Branching' is a specialization of 'Controller'.
+'iot::Sequence' is a specialization of 'Controller'.
+'iot::Software' is a specialization of 'Component'.
+'iot::Hardware' is a specialization of 'Component'.
+'iot::Snippet' is a specialization of 'Component'.
+'iot::ConditionPort' is a specialization of 'RequiredPort'.
+'iot::Sensor' is a specialization of 'Hardware'.
+'iot::IterativeLoop' is a specialization of 'Iteration'.
+'iot::ThenPort' is a specialization of 'RequiredPort'.
+'iot::IfPort' is a specialization of 'RequiredPort'.
+'iot::ElsePort' is a specialization of 'RequiredPort'.
+'iot::Component' is a specialization of 'Item'.
+'iot::Controller' is a specialization of 'Item'.
+'iot::CounterLoop' is a specialization of 'Iteration'.
+'iot::IterativeLoop' (role 'iot_IterativeLoop', cardinality 0..*) is associated with 'iot::ConditionPort' (role 'iot_ConditionPort', cardinality 0..*).
+'iot::Sequence' (role 'iot_Sequence', cardinality 0..*) is associated with 'iot::RequiredPort' (role 'iot_RequiredPort11', cardinality 0..*).
+'iot::Branching' (role 'iot_Branching6', cardinality 0..*) is associated with 'iot::ThenPort' (role 'iot_ThenPort', cardinality 0..*).
+'iot::Item' (role 'iot_Item3', cardinality 0..*) is associated with 'iot::ProvidedPort' (role 'iot_ProvidedPort', cardinality 0..*).
+'iot::ProvidedPort' (role 'iot_ProvidedPort21', cardinality 0..*) is associated with 'iot::RequiredPort' (role 'iot_RequiredPort20', cardinality 0..*).
+'iot::Component' (role 'iot_Component', cardinality 0..*) is associated with 'iot::RequiredPort' (role 'iot_RequiredPort13', cardinality 0..*).
+'iot::Controller' (role 'iot_Controller', cardinality 0..*) is associated with 'iot::ProvidedPort' (role 'iot_ProvidedPort18', cardinality 0..*).
+'iot::ElsePort' (role 'iot_ElsePort', cardinality 0..*) is associated with 'iot::Branching' (role 'iot_Branching8', cardinality 0..*).
+'iot::RequiredPort' (role 'iot_RequiredPort', cardinality 0..*) is associated with 'iot::Iteration' (role 'iot_Iteration', cardinality 0..*).
+'iot::ProvidedPort' (role 'iot_ProvidedPort16', cardinality 0..*) is associated with 'iot::Component' (role 'iot_Component15', cardinality 0..*).
+'iot::Software' (role 'iot_Software', cardinality 0..*) is associated with 'iot::Item' (role 'iot_Item', cardinality 0..*).
+'iot::IfPort' (role 'iot_IfPort', cardinality 0..*) is associated with 'iot::Branching' (role 'iot_Branching', cardinality 0..*).

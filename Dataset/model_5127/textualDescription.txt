@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'junitresult::Testsuites' has the following attributes: 'disabled' of type int; 'time' of type float.
+The class 'junitresult::Skipped' has no attributes.
+The class 'junitresult::JunitResult' has no attributes.
+The class 'JunitResult' has no attributes.
+The class 'junitresult::Testsuite' has the following attributes: 'system_out' of type str; 'timestamp' of type date; 'system_err' of type str; 'time' of type float; 'hostname' of type str; 'disabled' of type int; 'skipped' of type int; 'package' of type str; 'id' of type int.
+The class 'junitresult::Error' has no attributes.
+The class 'AbstractAggregatedTest' has no attributes.
+The class 'junitresult::NegativeResult' has the following attributes: 'type' of type str; 'message' of type str; 'value' of type str.
+The class 'NegativeResult' has no attributes.
+The class 'junitresult::Failure' has no attributes.
+The class 'junitresult::Testcase' has the following attributes: 'status' of type str; 'assertions' of type str; 'classname' of type str; 'system_err' of type str; 'time' of type float; 'system_out' of type str; 'name' of type str.
+The class 'junitresult::Property' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'junitresult::AbstractAggregatedTest' has the following attributes: 'name' of type str; 'failures' of type int; 'errors' of type int; 'tests' of type int.
+The class 'junitresult::Testrun' has the following attributes: 'project' of type str; 'ignored' of type int; 'started' of type int.
+'junitresult::Skipped' is a specialization of 'NegativeResult'.
+'junitresult::Failure' is a specialization of 'NegativeResult'.
+'junitresult::Testrun' is a specialization of 'AbstractAggregatedTest'.
+'junitresult::AbstractAggregatedTest' is a specialization of 'JunitResult'.
+'junitresult::Testsuites' is a specialization of 'AbstractAggregatedTest'.
+'junitresult::Testsuite' is a specialization of 'AbstractAggregatedTest'.
+'junitresult::Error' is a specialization of 'NegativeResult'.
+'junitresult::Error' (role 'junitresult_Error', cardinality 0..*) is associated with 'junitresult::Testcase' (role 'junitresult_Testcase8', cardinality 0..*).
+'junitresult::Testcase' (role 'junitresult_Testcase6', cardinality 0..*) is associated with 'junitresult::Failure' (role 'junitresult_Failure', cardinality 0..*).
+'junitresult::Testcase' (role 'junitresult_Testcase', cardinality 0..*) is associated with 'junitresult::Testsuite' (role 'junitresult_Testsuite2', cardinality 0..*).
+'junitresult::Testsuite' (role 'junitresult_Testsuite', cardinality 0..*) is associated with 'junitresult::Property' (role 'junitresult_Property', cardinality 0..*).
+'junitresult::Skipped' (role 'junitresult_Skipped', cardinality 0..*) is associated with 'junitresult::Testcase' (role 'junitresult_Testcase4', cardinality 0..*).
+'junitresult::Testsuite' (role 'junitresult_Testsuite10', cardinality 0..*) is associated with 'junitresult::AbstractAggregatedTest' (role 'junitresult_AbstractAggregatedTest', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'TreeElement' has no attributes.
+The class 'edd::TreeElement' has the following attributes: 'name' of type str; 'index' of type str.
+The class 'edd::EDD' has the following attributes: 'name' of type str.
+The class 'edd::Leaf' has no attributes.
+The class 'edd::Node' has no attributes.
+'edd::Leaf' is a specialization of 'TreeElement'.
+'edd::Node' is a specialization of 'TreeElement'.
+'edd::TreeElement' (role 'edd_TreeElement2', cardinality 0..*) is associated with 'edd::Node' (role 'edd_Node', cardinality 0..*).
+'edd::EDD' (role 'edd_EDD', cardinality 0..*) is associated with 'edd::TreeElement' (role 'edd_TreeElement', cardinality 0..*).

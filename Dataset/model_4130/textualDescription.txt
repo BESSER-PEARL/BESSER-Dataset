@@ -1,0 +1,63 @@
+The model has 35 class(es).
+The class 'PlusMinus' has no attributes.
+The class 'mathinterpreter::Multiply' has no attributes.
+The class 'Primary' has no attributes.
+The class 'mathinterpreter::External' has the following attributes: 'name' of type str.
+The class 'PowExpression' has no attributes.
+The class 'mathinterpreter::Minus' has no attributes.
+The class 'Number' has no attributes.
+The class 'mathinterpreter::DefParenthesis' has no attributes.
+The class 'mathinterpreter::Pow' has no attributes.
+The class 'MathExpression' has no attributes.
+The class 'mathinterpreter::Power' has no attributes.
+The class 'mathinterpreter::Function' has no attributes.
+The class 'mathinterpreter::PowExpression' has no attributes.
+The class 'mathinterpreter::DefineExpr' has no attributes.
+The class 'mathinterpreter::MultiplyDivide' has no attributes.
+The class 'mathinterpreter::Model' has no attributes.
+The class 'mathinterpreter::VariableName' has the following attributes: 'name' of type str.
+The class 'PMExpression' has no attributes.
+The class 'MDExpression' has no attributes.
+The class 'mathinterpreter::EObject' has no attributes.
+The class 'MultiplyDivide' has no attributes.
+The class 'mathinterpreter::MathExpression' has the following attributes: 'description' of type str.
+The class 'mathinterpreter::Primary' has no attributes.
+The class 'mathinterpreter::Variable' has the following attributes: 'name' of type str.
+The class 'mathinterpreter::Number' has the following attributes: 'value' of type int.
+The class 'mathinterpreter::Positive' has no attributes.
+The class 'mathinterpreter::PlusMinus' has no attributes.
+The class 'mathinterpreter::PMParenthesis' has no attributes.
+The class 'mathinterpreter::MDExpression' has no attributes.
+The class 'mathinterpreter::PMExpression' has no attributes.
+The class 'mathinterpreter::Divide' has no attributes.
+The class 'mathinterpreter::Plus' has no attributes.
+The class 'DefParenthesis' has no attributes.
+The class 'mathinterpreter::Negative' has no attributes.
+The class 'Power' has no attributes.
+'mathinterpreter::DefineExpr' is a specialization of 'MathExpression'.
+'mathinterpreter::Minus' is a specialization of 'PlusMinus'.
+'mathinterpreter::Multiply' is a specialization of 'MultiplyDivide'.
+'mathinterpreter::PowExpression' is a specialization of 'MDExpression'.
+'mathinterpreter::MDExpression' is a specialization of 'PMExpression'.
+'mathinterpreter::Divide' is a specialization of 'MultiplyDivide'.
+'mathinterpreter::DefParenthesis' is a specialization of 'Primary'.
+'mathinterpreter::External' is a specialization of 'Primary'.
+'mathinterpreter::Primary' is a specialization of 'PowExpression'.
+'mathinterpreter::Function' is a specialization of 'MathExpression'.
+'mathinterpreter::Positive' is a specialization of 'Number'.
+'mathinterpreter::Number' is a specialization of 'Primary'.
+'mathinterpreter::Negative' is a specialization of 'Number'.
+'mathinterpreter::Pow' is a specialization of 'Power'.
+'mathinterpreter::VariableName' is a specialization of 'Primary'.
+'mathinterpreter::Plus' is a specialization of 'PlusMinus'.
+'mathinterpreter::DefineExpr' is a specialization of 'DefParenthesis'.
+'mathinterpreter::PMParenthesis' is a specialization of 'Primary'.
+'mathinterpreter::EObject' (role 'mathinterpreter_EObject', cardinality 0..*) is associated with 'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression12', cardinality 0..*).
+'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression14', cardinality 0..*) is associated with 'mathinterpreter::MDExpression' (role 'mathinterpreter_MDExpression', cardinality 0..*).
+'mathinterpreter::MathExpression' (role 'mathinterpreter_MathExpression2', cardinality 0..*) is associated with 'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression', cardinality 0..*).
+'mathinterpreter::DefineExpr' (role 'mathinterpreter_DefineExpr', cardinality 0..*) is associated with 'mathinterpreter::Variable' (role 'mathinterpreter_Variable', cardinality 0..*).
+'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression6', cardinality 0..*) is associated with 'mathinterpreter::Variable' (role 'mathinterpreter_Variable5', cardinality 0..*).
+'mathinterpreter::MathExpression' (role 'mathinterpreter_MathExpression', cardinality 0..*) is associated with 'mathinterpreter::Model' (role 'mathinterpreter_Model', cardinality 0..*).
+'mathinterpreter::Primary' (role 'mathinterpreter_Primary', cardinality 0..*) is associated with 'mathinterpreter::External' (role 'mathinterpreter_External', cardinality 0..*).
+'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression8', cardinality 0..*) is associated with 'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression10', cardinality 0..*).
+'mathinterpreter::PMParenthesis' (role 'mathinterpreter_PMParenthesis', cardinality 0..*) is associated with 'mathinterpreter::PMExpression' (role 'mathinterpreter_PMExpression16', cardinality 0..*).

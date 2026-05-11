@@ -1,0 +1,53 @@
+The model has 17 class(es).
+The class 'caracteristica::Caracteristica' has no attributes.
+The class 'PontoDeVariacao' has no attributes.
+The class 'caracteristica::PontoDeVariacao' has no attributes.
+The class 'caracteristica::VariacaoDois' has the following attributes: 'cardinalidadeMaxima' of type str; 'cardinalidadeMinimaOr' of type str; 'cardinalidadeMaximaOr' of type str.
+The class 'caracteristica::CaracteristicaMandatoria' has no attributes.
+The class 'caracteristica::CaracteristicaRaiz' has no attributes.
+The class 'caracteristica::CaracteristicaAgrupada' has no attributes.
+The class 'caracteristica::Atributo' has the following attributes: 'tipoValor' of type str.
+The class 'caracteristica::Variacao' has the following attributes: 'cardinalidadeMaxima' of type str; 'cardinalidadeMinima' of type str.
+The class 'caracteristica::ElementoCaracteristico' has no attributes.
+The class 'caracteristica::LPS' has the following attributes: 'nome' of type str.
+The class 'Elemento' has no attributes.
+The class 'caracteristica::Elemento' has the following attributes: 'nome' of type str.
+The class 'caracteristica::CaracteristicaOpcional' has no attributes.
+The class 'Caracteristica' has no attributes.
+The class 'ElementoCaracteristico' has no attributes.
+The class 'caracteristica::Variante' has no attributes.
+The enumeration 'Validade' has the following literals: 'Permanente', 'Volatil', 'Frequente', 'Raramente'.
+The enumeration 'Origem' has the following literals: 'Usuario', 'Sentida', 'Derivada', 'Perfil'.
+The enumeration 'Presenca' has the following literals: 'AUSENTE', 'PRESENTE'.
+The enumeration 'OperadorRelacional' has the following literals: 'MAIORIGUAL', 'MENORIGUAL', 'DIFERENTE', 'MENOR', 'MAIOR', 'IGUAL'.
+The enumeration 'Qualidade' has the following literals: 'Alto', 'Baixo'.
+The enumeration 'OperadorLogico' has the following literals: 'OR', 'AND'.
+The enumeration 'CardinalidadeMaxima' has the following literals: 'OR', 'XOR'.
+The enumeration 'OperadorAcaoLogico' has the following literals: 'AND'.
+The enumeration 'TipoValor' has the following literals: 'TFloat', 'TString', 'TBoolean', 'TInteger'.
+'caracteristica::Atributo' is a specialization of 'Elemento'.
+'caracteristica::Variante' is a specialization of 'PontoDeVariacao'.
+'caracteristica::ElementoCaracteristico' is a specialization of 'Elemento'.
+'caracteristica::CaracteristicaOpcional' is a specialization of 'Caracteristica'.
+'caracteristica::VariacaoDois' is a specialization of 'Caracteristica'.
+'caracteristica::CaracteristicaAgrupada' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::CaracteristicaRaiz' is a specialization of 'Caracteristica'.
+'caracteristica::Variacao' is a specialization of 'PontoDeVariacao'.
+'caracteristica::Variacao' is a specialization of 'Elemento'.
+'caracteristica::Variante' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::CaracteristicaAgrupada' is a specialization of 'Caracteristica'.
+'caracteristica::Variante' is a specialization of 'Caracteristica'.
+'caracteristica::Caracteristica' is a specialization of 'Elemento'.
+'caracteristica::CaracteristicaMandatoria' is a specialization of 'Caracteristica'.
+'caracteristica::CaracteristicaOpcional' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::VariacaoDois' is a specialization of 'ElementoCaracteristico'.
+'caracteristica::Caracteristica' (role 'caracteristicaFilha', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'Caracteristica4', cardinality 0..*).
+'caracteristica::Variacao' (role 'Variacao', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'caracteristicaPai9', cardinality 0..*).
+'caracteristica::Variacao' (role 'variacaoPai', cardinality 0..*) is associated with 'caracteristica::Variante' (role 'Variante', cardinality 0..*).
+'caracteristica::Variante' (role 'variantes', cardinality 0..*) is associated with 'caracteristica::Variacao' (role 'Variacao18', cardinality 0..*).
+'caracteristica::LPS' (role 'caracteristica_LPS13', cardinality 0..*) is associated with 'caracteristica::CaracteristicaRaiz' (role 'caracteristica_CaracteristicaRaiz', cardinality 0..*).
+'caracteristica::Elemento' (role 'caracteristica_Elemento', cardinality 0..*) is associated with 'caracteristica::LPS' (role 'caracteristica_LPS', cardinality 0..*).
+'caracteristica::Variacao' (role 'variacoes', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'Caracteristica16', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'Caracteristica', cardinality 0..*) is associated with 'caracteristica::Atributo' (role 'atributo', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'caracteristicaPai11', cardinality 0..*) is associated with 'caracteristica::Atributo' (role 'Atributo', cardinality 0..*).
+'caracteristica::Caracteristica' (role 'Caracteristica7', cardinality 0..*) is associated with 'caracteristica::Caracteristica' (role 'caracteristicaPai', cardinality 0..*).

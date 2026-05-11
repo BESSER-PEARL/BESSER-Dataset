@@ -1,0 +1,26 @@
+The model has 11 class(es).
+The class 'adl402::Required' has no attributes.
+The class 'Binding' has no attributes.
+The class 'adl402::EClass2' has no attributes.
+The class 'adl402::Provided' has no attributes.
+The class 'Interface' has no attributes.
+The class 'adl402::Component' has the following attributes: 'name' of type str.
+The class 'adl402::EClass0' has the following attributes: 'EAttribute0' of type str.
+The class 'adl402::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+The class 'adl402::EClass1' has no attributes.
+The class 'adl402::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+The class 'adl402::Binding' has no attributes.
+'adl402::EClass1' is a specialization of 'Binding'.
+'adl402::Provided' is a specialization of 'Interface'.
+'adl402::EClass2' is a specialization of 'Binding'.
+'adl402::Required' is a specialization of 'Interface'.
+'adl402::Interface' (role 'adl402_Interface6', cardinality 0..*) is associated with 'adl402::Binding' (role 'adl402_Binding5', cardinality 0..*).
+'adl402::Interface' (role 'adl402_Interface', cardinality 0..*) is associated with 'adl402::Binding' (role 'adl402_Binding', cardinality 0..*).
+'adl402::Content' (role 'content', cardinality 0..*) is associated with 'adl402::Component' (role 'Component', cardinality 0..*).
+'adl402::EClass0' (role 'adl402_EClass016', cardinality 0..*) is associated with 'adl402::EClass0' (role 'adl402_EClass018', cardinality 0..*).
+'adl402::Component' (role 'adl402_Component', cardinality 0..*) is associated with 'adl402::Component' (role 'adl402_Component9', cardinality 0..*).
+'adl402::Required' (role 'adl402_Required', cardinality 0..*) is associated with 'adl402::Component' (role 'adl402_Component12', cardinality 0..*).
+'adl402::Provided' (role 'adl402_Provided', cardinality 0..*) is associated with 'adl402::Component' (role 'adl402_Component14', cardinality 0..*).
+'adl402::Interface' (role 'adl402_Interface3', cardinality 0..*) is associated with 'adl402::Binding' (role 'adl402_Binding2', cardinality 0..*).
+'adl402::Content' (role 'Content', cardinality 0..*) is associated with 'adl402::Component' (role 'contentParent', cardinality 0..*).
+'adl402::EClass0' (role 'adl402_EClass0', cardinality 0..*) is associated with 'adl402::Content' (role 'adl402_Content', cardinality 0..*).

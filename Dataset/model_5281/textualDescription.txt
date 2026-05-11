@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'AB::A' has the following attributes: 'i' of type int.
+The class 'AB::B' has the following attributes: 'name' of type str.
+'AB::A' (role 'AB_A', cardinality 0..*) is associated with 'AB::B' (role 'AB_B', cardinality 0..*).

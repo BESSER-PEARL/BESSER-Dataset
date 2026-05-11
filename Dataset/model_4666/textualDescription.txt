@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'boolexp::Fals' has no attributes.
+The class 'boolexp::BinaryExp' has no attributes.
+The class 'Exp' has no attributes.
+The class 'boolexp::And' has no attributes.
+The class 'boolexp::Or' has no attributes.
+The class 'BinaryExp' has no attributes.
+The class 'Lit' has no attributes.
+The class 'boolexp::Lit' has no attributes.
+The class 'boolexp::Tru' has no attributes.
+The class 'boolexp::Exp' has no attributes.
+'boolexp::Fals' is a specialization of 'Lit'.
+'boolexp::Or' is a specialization of 'BinaryExp'.
+'boolexp::Tru' is a specialization of 'Lit'.
+'boolexp::BinaryExp' is a specialization of 'Exp'.
+'boolexp::Lit' is a specialization of 'Exp'.
+'boolexp::And' is a specialization of 'BinaryExp'.
+'boolexp::Exp' (role 'boolexp_Exp', cardinality 0..*) is associated with 'boolexp::BinaryExp' (role 'boolexp_BinaryExp', cardinality 0..*).
+'boolexp::BinaryExp' (role 'boolexp_BinaryExp2', cardinality 0..*) is associated with 'boolexp::Exp' (role 'boolexp_Exp3', cardinality 0..*).

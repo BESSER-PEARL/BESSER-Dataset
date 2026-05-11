@@ -1,0 +1,67 @@
+The model has 30 class(es).
+The class 'Type' has no attributes.
+The class 'types::TypedElement' has no attributes.
+The class 'types::Integer' has no attributes.
+The class 'types::Feature' has no attributes.
+The class 'types::Package' has no attributes.
+The class 'ParameterizedType' has no attributes.
+The class 'types::Type' has the following attributes: 'scheme' of type str.
+The class 'types::Parameter' has no attributes.
+The class 'types::ParameterizedType' has no attributes.
+The class 'types::ComplexType' has no attributes.
+The class 'types::Void' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'TypeConstraint' has no attributes.
+The class 'types::Boolean' has no attributes.
+The class 'types::Enumerator' has the following attributes: 'literalValue' of type str.
+The class 'Feature' has no attributes.
+The class 'types::Event' has no attributes.
+The class 'types::RangeConstraint' has the following attributes: 'lowerBound' of type str; 'upperBound' of type str.
+The class 'types::String' has no attributes.
+The class 'PackageMember' has no attributes.
+The class 'types::PackageMember' has no attributes.
+The class 'types::TypeParameter' has no attributes.
+The class 'types::PrimitiveType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'types::TypeConstraint' has the following attributes: 'value' of type str.
+The class 'types::EnumerationType' has no attributes.
+The class 'types::Property' has no attributes.
+The class 'types::Operation' has no attributes.
+The class 'types::Real' has no attributes.
+'types::Type' is a specialization of 'PackageMember'.
+'types::TypeParameter' is a specialization of 'Type'.
+'types::EnumerationType' is a specialization of 'PrimitiveType'.
+'types::Property' is a specialization of 'Feature'.
+'types::Event' is a specialization of 'Feature'.
+'types::Real' is a specialization of 'PrimitiveType'.
+'types::Feature' is a specialization of 'TypedElement'.
+'types::PrimitiveType' is a specialization of 'Type'.
+'types::Package' is a specialization of 'NamedElement'.
+'types::Boolean' is a specialization of 'PrimitiveType'.
+'types::Integer' is a specialization of 'PrimitiveType'.
+'types::Parameter' is a specialization of 'NamedElement'.
+'types::ParameterizedType' is a specialization of 'Type'.
+'types::Parameter' is a specialization of 'TypedElement'.
+'types::Enumerator' is a specialization of 'NamedElement'.
+'types::Operation' is a specialization of 'Feature'.
+'types::String' is a specialization of 'PrimitiveType'.
+'types::Void' is a specialization of 'PrimitiveType'.
+'types::RangeConstraint' is a specialization of 'TypeConstraint'.
+'types::Feature' is a specialization of 'NamedElement'.
+'types::PackageMember' is a specialization of 'NamedElement'.
+'types::ComplexType' is a specialization of 'ParameterizedType'.
+'types::Parameter' (role 'parameters', cardinality 0..*) is associated with 'types::Operation' (role 'Operation', cardinality 0..*).
+'types::ComplexType' (role 'ComplexType', cardinality 0..*) is associated with 'types::Feature' (role 'features', cardinality 0..*).
+'types::TypedElement' (role 'types_TypedElement8', cardinality 0..*) is associated with 'types::Type' (role 'types_Type9', cardinality 0..*).
+'types::ParameterizedType' (role 'types_ParameterizedType', cardinality 0..*) is associated with 'types::TypeParameter' (role 'types_TypeParameter20', cardinality 0..*).
+'types::ComplexType' (role 'types_ComplexType', cardinality 0..*) is associated with 'types::ComplexType' (role 'types_ComplexType14', cardinality 0..*).
+'types::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'types::Operation' (role 'owningOperation', cardinality 0..*).
+'types::Feature' (role 'Feature', cardinality 0..*) is associated with 'types::ComplexType' (role 'owningType', cardinality 0..*).
+'types::PrimitiveType' (role 'types_PrimitiveType11', cardinality 0..*) is associated with 'types::PrimitiveType' (role 'types_PrimitiveType', cardinality 0..*).
+'types::EnumerationType' (role 'EnumerationType', cardinality 0..*) is associated with 'types::Enumerator' (role 'enumerator', cardinality 0..*).
+'types::Package' (role 'types_Package', cardinality 0..*) is associated with 'types::PackageMember' (role 'types_PackageMember', cardinality 0..*).
+'types::EnumerationType' (role 'owningEnumeration', cardinality 0..*) is associated with 'types::Enumerator' (role 'Enumerator', cardinality 0..*).
+'types::TypeParameter' (role 'types_TypeParameter', cardinality 0..*) is associated with 'types::Type' (role 'types_Type18', cardinality 0..*).
+'types::Type' (role 'types_Type6', cardinality 0..*) is associated with 'types::TypedElement' (role 'types_TypedElement', cardinality 0..*).
+'types::TypeConstraint' (role 'types_TypeConstraint', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'vmLogo::Turtle' has the following attributes: 'penUp' of type str; 'heading' of type str.
+The class 'vmLogo::Segment' has no attributes.
+The class 'vmLogo::Point' has the following attributes: 'x' of type str; 'y' of type str.
+'vmLogo::Segment' (role 'vmLogo_Segment', cardinality 0..*) is associated with 'vmLogo::Turtle' (role 'vmLogo_Turtle2', cardinality 0..*).
+'vmLogo::Segment' (role 'vmLogo_Segment10', cardinality 0..*) is associated with 'vmLogo::Point' (role 'vmLogo_Point11', cardinality 0..*).
+'vmLogo::Point' (role 'vmLogo_Point8', cardinality 0..*) is associated with 'vmLogo::Segment' (role 'vmLogo_Segment7', cardinality 0..*).
+'vmLogo::Point' (role 'vmLogo_Point', cardinality 0..*) is associated with 'vmLogo::Turtle' (role 'vmLogo_Turtle', cardinality 0..*).
+'vmLogo::Point' (role 'vmLogo_Point5', cardinality 0..*) is associated with 'vmLogo::Turtle' (role 'vmLogo_Turtle4', cardinality 0..*).

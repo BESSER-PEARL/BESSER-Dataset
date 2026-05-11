@@ -1,0 +1,201 @@
+The model has 78 class(es).
+The class 'henshin::text::RuleNodeTypes' has no attributes.
+The class 'henshin::text::JavaClassValue' has the following attributes: 'value' of type str.
+The class 'henshin::text::AndExpression' has no attributes.
+The class 'henshin::text::CheckDangling' has the following attributes: 'checkDangling' of type bool.
+The class 'henshin::text::NumberValue' has the following attributes: 'value' of type str.
+The class 'henshin::text::EPackageImport' has no attributes.
+The class 'henshin::text::EqualityExpression' has the following attributes: 'op' of type str.
+The class 'ModelElement' has no attributes.
+The class 'henshin::text::SequentialProperties' has no attributes.
+The class 'henshin::text::UnitElement' has no attributes.
+The class 'henshin::text::NaturalValue' has the following attributes: 'value' of type int.
+The class 'henshin::text::JavaImport' has the following attributes: 'packagename' of type str.
+The class 'henshin::text::Attribute' has the following attributes: 'update' of type str; 'actiontype' of type str.
+The class 'henshin::text::Conditions' has no attributes.
+The class 'henshin::text::List' has no attributes.
+The class 'henshin::text::ComparisonExpression' has the following attributes: 'op' of type str.
+The class 'henshin::text::PlusExpression' has no attributes.
+The class 'henshin::text::ConditionGraphElements' has no attributes.
+The class 'henshin::text::IndependentUnit' has no attributes.
+The class 'henshin::text::ParameterValue' has no attributes.
+The class 'henshin::text::JavaAttributeValue' has the following attributes: 'value' of type str.
+The class 'henshin::text::Rule' has no attributes.
+The class 'henshin::text::EPackage' has no attributes.
+The class 'henshin::text::LoopUnit' has no attributes.
+The class 'ConditionGraphElements' has no attributes.
+The class 'henshin::text::ConditionGraphRef' has no attributes.
+The class 'henshin::text::ModelElement' has the following attributes: 'name' of type str.
+The class 'henshin::text::MinusExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'henshin::text::Edge' has the following attributes: 'actiontype' of type str.
+The class 'henshin::text::ConditionEdges' has no attributes.
+The class 'henshin::text::BoolValue' has the following attributes: 'value' of type bool.
+The class 'henshin::text::Expression' has no attributes.
+The class 'henshin::text::PriorityUnit' has no attributes.
+The class 'henshin::text::BracketExpression' has no attributes.
+The class 'henshin::text::Model' has no attributes.
+The class 'henshin::text::OrExpression' has no attributes.
+The class 'henshin::text::ConditionGraph' has the following attributes: 'name' of type str.
+The class 'henshin::text::NotExpression' has no attributes.
+The class 'henshin::text::EClass' has no attributes.
+The class 'henshin::text::Call' has no attributes.
+The class 'henshin::text::Match' has no attributes.
+The class 'henshin::text::Graph' has no attributes.
+The class 'henshin::text::EAttribute' has no attributes.
+The class 'henshin::text::MultiRuleReuseNode' has no attributes.
+The class 'SequentialProperties' has no attributes.
+The class 'GraphElements' has no attributes.
+The class 'henshin::text::StringValue' has the following attributes: 'value' of type str.
+The class 'henshin::text::ConditionReuseNode' has no attributes.
+The class 'henshin::text::GraphElements' has no attributes.
+The class 'henshin::text::Parameter' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'henshin::text::IteratedUnit' has no attributes.
+The class 'henshin::text::AND' has no attributes.
+The class 'henshin::text::RuleElement' has no attributes.
+The class 'henshin::text::ConditionalUnit' has no attributes.
+The class 'henshin::text::Unit' has no attributes.
+The class 'henshin::text::Strict' has the following attributes: 'strict' of type bool.
+The class 'henshin::text::Logic' has no attributes.
+The class 'henshin::text::IntegerValue' has the following attributes: 'value' of type str.
+The class 'henshin::text::Formula' has no attributes.
+The class 'henshin::text::ORorXOR' has the following attributes: 'op' of type str.
+The class 'RuleNodeTypes' has no attributes.
+The class 'henshin::text::InjectiveMatching' has the following attributes: 'injectiveMatching' of type bool.
+The class 'henshin::text::Edges' has no attributes.
+The class 'henshin::text::ConditionEdge' has no attributes.
+The class 'Logic' has no attributes.
+The class 'ConditionNodeTypes' has no attributes.
+The class 'henshin::text::ParameterType' has the following attributes: 'enumType' of type str.
+The class 'henshin::text::MulOrDivExpression' has the following attributes: 'op' of type str.
+The class 'henshin::text::Node' has the following attributes: 'actiontype' of type str.
+The class 'UnitElement' has no attributes.
+The class 'henshin::text::Rollback' has the following attributes: 'rollback' of type bool.
+The class 'henshin::text::EReference' has no attributes.
+The class 'henshin::text::ConditionNodeTypes' has the following attributes: 'name' of type str.
+The class 'henshin::text::ConditionNode' has no attributes.
+The class 'RuleElement' has no attributes.
+The class 'henshin::text::MultiRule' has the following attributes: 'name' of type str.
+The class 'henshin::text::Not' has no attributes.
+The enumeration 'Type' has the following literals: 'eJavaClass', 'eCharacterObject', 'eResource', 'eShortObject', 'eEList', 'eJavaObject', 'eLong', 'eBooleanObject', 'eByte', 'eShort', 'eResourceSet', 'eByteObject', 'eInvocationTargetException', 'eBigDecimal', 'eFloatObject', 'eBigInteger', 'eDouble', 'eByteArray', 'eFeatureMap', 'eDoubleObject', 'eIntegerObject', 'eString', 'eFeatureMapEntry', 'eTreeIterator', 'eDate', 'eInt', 'eBoolean', 'eLongObject', 'eChar', 'eMap', 'eEnumerator', 'eFloat', 'eDiagnosticChain'.
+The enumeration 'ParameterKind' has the following literals: 'UNKNOWN', 'INOUT', 'IN', 'OUT', 'VAR'.
+'henshin::text::OrExpression' is a specialization of 'Expression'.
+'henshin::text::InjectiveMatching' is a specialization of 'RuleElement'.
+'henshin::text::PlusExpression' is a specialization of 'Expression'.
+'henshin::text::Graph' is a specialization of 'RuleElement'.
+'henshin::text::NaturalValue' is a specialization of 'Expression'.
+'henshin::text::ConditionNode' is a specialization of 'ConditionNodeTypes'.
+'henshin::text::Formula' is a specialization of 'GraphElements'.
+'henshin::text::Conditions' is a specialization of 'RuleElement'.
+'henshin::text::EqualityExpression' is a specialization of 'Expression'.
+'henshin::text::JavaAttributeValue' is a specialization of 'Expression'.
+'henshin::text::MinusExpression' is a specialization of 'Expression'.
+'henshin::text::StringValue' is a specialization of 'Expression'.
+'henshin::text::Call' is a specialization of 'UnitElement'.
+'henshin::text::ComparisonExpression' is a specialization of 'Expression'.
+'henshin::text::IteratedUnit' is a specialization of 'UnitElement'.
+'henshin::text::Node' is a specialization of 'ConditionNodeTypes'.
+'henshin::text::CheckDangling' is a specialization of 'RuleElement'.
+'henshin::text::ConditionReuseNode' is a specialization of 'ConditionGraphElements'.
+'henshin::text::LoopUnit' is a specialization of 'UnitElement'.
+'henshin::text::Node' is a specialization of 'GraphElements'.
+'henshin::text::JavaClassValue' is a specialization of 'Expression'.
+'henshin::text::IntegerValue' is a specialization of 'Expression'.
+'henshin::text::MulOrDivExpression' is a specialization of 'Expression'.
+'henshin::text::NumberValue' is a specialization of 'Expression'.
+'henshin::text::Unit' is a specialization of 'ModelElement'.
+'henshin::text::ConditionGraphRef' is a specialization of 'Logic'.
+'henshin::text::Strict' is a specialization of 'SequentialProperties'.
+'henshin::text::Edges' is a specialization of 'GraphElements'.
+'henshin::text::ORorXOR' is a specialization of 'Logic'.
+'henshin::text::NotExpression' is a specialization of 'Expression'.
+'henshin::text::Rule' is a specialization of 'ModelElement'.
+'henshin::text::MultiRuleReuseNode' is a specialization of 'GraphElements'.
+'henshin::text::Rollback' is a specialization of 'SequentialProperties'.
+'henshin::text::SequentialProperties' is a specialization of 'UnitElement'.
+'henshin::text::Node' is a specialization of 'RuleNodeTypes'.
+'henshin::text::Formula' is a specialization of 'ConditionGraphElements'.
+'henshin::text::AndExpression' is a specialization of 'Expression'.
+'henshin::text::ConditionNode' is a specialization of 'ConditionGraphElements'.
+'henshin::text::PriorityUnit' is a specialization of 'UnitElement'.
+'henshin::text::MultiRuleReuseNode' is a specialization of 'RuleNodeTypes'.
+'henshin::text::Not' is a specialization of 'Logic'.
+'henshin::text::BoolValue' is a specialization of 'Expression'.
+'henshin::text::ConditionalUnit' is a specialization of 'UnitElement'.
+'henshin::text::JavaImport' is a specialization of 'RuleElement'.
+'henshin::text::IndependentUnit' is a specialization of 'UnitElement'.
+'henshin::text::MultiRule' is a specialization of 'GraphElements'.
+'henshin::text::ParameterValue' is a specialization of 'Expression'.
+'henshin::text::AND' is a specialization of 'Logic'.
+'henshin::text::ConditionEdges' is a specialization of 'ConditionGraphElements'.
+'henshin::text::BracketExpression' is a specialization of 'Expression'.
+'henshin::text::IteratedUnit' (role 'henshin_text_IteratedUnit79', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement80', cardinality 0..*).
+'henshin::text::Edge' (role 'henshin_text_Edge16', cardinality 0..*) is associated with 'henshin::text::EReference' (role 'henshin_text_EReference', cardinality 0..*).
+'henshin::text::MultiRule' (role 'henshin_text_MultiRule', cardinality 0..*) is associated with 'henshin::text::RuleElement' (role 'henshin_text_RuleElement', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression145', cardinality 0..*) is associated with 'henshin::text::MulOrDivExpression' (role 'henshin_text_MulOrDivExpression144', cardinality 0..*).
+'henshin::text::Logic' (role 'henshin_text_Logic98', cardinality 0..*) is associated with 'henshin::text::AND' (role 'henshin_text_AND', cardinality 0..*).
+'henshin::text::PlusExpression' (role 'henshin_text_PlusExpression134', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression135', cardinality 0..*).
+'henshin::text::Logic' (role 'henshin_text_Logic101', cardinality 0..*) is associated with 'henshin::text::AND' (role 'henshin_text_AND100', cardinality 0..*).
+'henshin::text::ConditionEdge' (role 'henshin_text_ConditionEdge38', cardinality 0..*) is associated with 'henshin::text::ConditionNodeTypes' (role 'henshin_text_ConditionNodeTypes', cardinality 0..*).
+'henshin::text::Attribute' (role 'henshin_text_Attribute', cardinality 0..*) is associated with 'henshin::text::Node' (role 'henshin_text_Node19', cardinality 0..*).
+'henshin::text::MultiRuleReuseNode' (role 'henshin_text_MultiRuleReuseNode23', cardinality 0..*) is associated with 'henshin::text::Attribute' (role 'henshin_text_Attribute24', cardinality 0..*).
+'henshin::text::LoopUnit' (role 'henshin_text_LoopUnit', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement82', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression125', cardinality 0..*) is associated with 'henshin::text::EqualityExpression' (role 'henshin_text_EqualityExpression124', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression', cardinality 0..*) is associated with 'henshin::text::Conditions' (role 'henshin_text_Conditions', cardinality 0..*).
+'henshin::text::ConditionGraphRef' (role 'henshin_text_ConditionGraphRef', cardinality 0..*) is associated with 'henshin::text::ConditionGraph' (role 'henshin_text_ConditionGraph105', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression140', cardinality 0..*) is associated with 'henshin::text::MinusExpression' (role 'henshin_text_MinusExpression139', cardinality 0..*).
+'henshin::text::ConditionNode' (role 'henshin_text_ConditionNode', cardinality 0..*) is associated with 'henshin::text::EClass' (role 'henshin_text_EClass46', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression115', cardinality 0..*) is associated with 'henshin::text::OrExpression' (role 'henshin_text_OrExpression114', cardinality 0..*).
+'henshin::text::EClass' (role 'henshin_text_EClass87', cardinality 0..*) is associated with 'henshin::text::ParameterType' (role 'henshin_text_ParameterType86', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression130', cardinality 0..*) is associated with 'henshin::text::ComparisonExpression' (role 'henshin_text_ComparisonExpression129', cardinality 0..*).
+'henshin::text::EReference' (role 'henshin_text_EReference44', cardinality 0..*) is associated with 'henshin::text::ConditionEdge' (role 'henshin_text_ConditionEdge43', cardinality 0..*).
+'henshin::text::ORorXOR' (role 'henshin_text_ORorXOR', cardinality 0..*) is associated with 'henshin::text::Logic' (role 'henshin_text_Logic93', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression112', cardinality 0..*) is associated with 'henshin::text::OrExpression' (role 'henshin_text_OrExpression', cardinality 0..*).
+'henshin::text::Edges' (role 'henshin_text_Edges', cardinality 0..*) is associated with 'henshin::text::Edge' (role 'henshin_text_Edge', cardinality 0..*).
+'henshin::text::ConditionEdge' (role 'henshin_text_ConditionEdge40', cardinality 0..*) is associated with 'henshin::text::ConditionNodeTypes' (role 'henshin_text_ConditionNodeTypes41', cardinality 0..*).
+'henshin::text::RuleElement' (role 'henshin_text_RuleElement89', cardinality 0..*) is associated with 'henshin::text::Rule' (role 'henshin_text_Rule', cardinality 0..*).
+'henshin::text::ConditionGraph' (role 'henshin_text_ConditionGraph', cardinality 0..*) is associated with 'henshin::text::Formula' (role 'henshin_text_Formula33', cardinality 0..*).
+'henshin::text::Logic' (role 'henshin_text_Logic103', cardinality 0..*) is associated with 'henshin::text::Not' (role 'henshin_text_Not', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression120', cardinality 0..*) is associated with 'henshin::text::AndExpression' (role 'henshin_text_AndExpression119', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression149', cardinality 0..*) is associated with 'henshin::text::NotExpression' (role 'henshin_text_NotExpression', cardinality 0..*).
+'henshin::text::GraphElements' (role 'henshin_text_GraphElements', cardinality 0..*) is associated with 'henshin::text::Graph' (role 'henshin_text_Graph', cardinality 0..*).
+'henshin::text::List' (role 'henshin_text_List65', cardinality 0..*) is associated with 'henshin::text::IndependentUnit' (role 'henshin_text_IndependentUnit', cardinality 0..*).
+'henshin::text::Match' (role 'henshin_text_Match58', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression59', cardinality 0..*).
+'henshin::text::Edge' (role 'henshin_text_Edge13', cardinality 0..*) is associated with 'henshin::text::RuleNodeTypes' (role 'henshin_text_RuleNodeTypes14', cardinality 0..*).
+'henshin::text::Match' (role 'henshin_text_Match55', cardinality 0..*) is associated with 'henshin::text::EAttribute' (role 'henshin_text_EAttribute56', cardinality 0..*).
+'henshin::text::EPackageImport' (role 'henshin_text_EPackageImport4', cardinality 0..*) is associated with 'henshin::text::EPackage' (role 'henshin_text_EPackage', cardinality 0..*).
+'henshin::text::List' (role 'henshin_text_List', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement63', cardinality 0..*).
+'henshin::text::Logic' (role 'henshin_text_Logic96', cardinality 0..*) is associated with 'henshin::text::ORorXOR' (role 'henshin_text_ORorXOR95', cardinality 0..*).
+'henshin::text::ComparisonExpression' (role 'henshin_text_ComparisonExpression', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression127', cardinality 0..*).
+'henshin::text::Unit' (role 'henshin_text_Unit', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement91', cardinality 0..*).
+'henshin::text::ModelElement' (role 'henshin_text_ModelElement6', cardinality 0..*) is associated with 'henshin::text::Parameter' (role 'henshin_text_Parameter', cardinality 0..*).
+'henshin::text::Formula' (role 'henshin_text_Formula', cardinality 0..*) is associated with 'henshin::text::Logic' (role 'henshin_text_Logic', cardinality 0..*).
+'henshin::text::ConditionGraph' (role 'henshin_text_ConditionGraph35', cardinality 0..*) is associated with 'henshin::text::ConditionGraphElements' (role 'henshin_text_ConditionGraphElements', cardinality 0..*).
+'henshin::text::EAttribute' (role 'henshin_text_EAttribute', cardinality 0..*) is associated with 'henshin::text::Attribute' (role 'henshin_text_Attribute26', cardinality 0..*).
+'henshin::text::IteratedUnit' (role 'henshin_text_IteratedUnit', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression77', cardinality 0..*).
+'henshin::text::Call' (role 'henshin_text_Call', cardinality 0..*) is associated with 'henshin::text::ModelElement' (role 'henshin_text_ModelElement107', cardinality 0..*).
+'henshin::text::ConditionNode' (role 'henshin_text_ConditionNode48', cardinality 0..*) is associated with 'henshin::text::Match' (role 'henshin_text_Match', cardinality 0..*).
+'henshin::text::UnitElement' (role 'henshin_text_UnitElement67', cardinality 0..*) is associated with 'henshin::text::ConditionalUnit' (role 'henshin_text_ConditionalUnit', cardinality 0..*).
+'henshin::text::AndExpression' (role 'henshin_text_AndExpression', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression117', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression132', cardinality 0..*) is associated with 'henshin::text::PlusExpression' (role 'henshin_text_PlusExpression', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression137', cardinality 0..*) is associated with 'henshin::text::MinusExpression' (role 'henshin_text_MinusExpression', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression122', cardinality 0..*) is associated with 'henshin::text::EqualityExpression' (role 'henshin_text_EqualityExpression', cardinality 0..*).
+'henshin::text::JavaClassValue' (role 'henshin_text_JavaClassValue', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression153', cardinality 0..*).
+'henshin::text::MulOrDivExpression' (role 'henshin_text_MulOrDivExpression', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression142', cardinality 0..*).
+'henshin::text::MultiRuleReuseNode' (role 'henshin_text_MultiRuleReuseNode', cardinality 0..*) is associated with 'henshin::text::Node' (role 'henshin_text_Node21', cardinality 0..*).
+'henshin::text::EPackageImport' (role 'henshin_text_EPackageImport', cardinality 0..*) is associated with 'henshin::text::Model' (role 'henshin_text_Model', cardinality 0..*).
+'henshin::text::ConditionReuseNode' (role 'henshin_text_ConditionReuseNode52', cardinality 0..*) is associated with 'henshin::text::Match' (role 'henshin_text_Match53', cardinality 0..*).
+'henshin::text::PriorityUnit' (role 'henshin_text_PriorityUnit', cardinality 0..*) is associated with 'henshin::text::List' (role 'henshin_text_List75', cardinality 0..*).
+'henshin::text::UnitElement' (role 'henshin_text_UnitElement60', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement', cardinality 0..*).
+'henshin::text::Parameter' (role 'henshin_text_Parameter84', cardinality 0..*) is associated with 'henshin::text::ParameterType' (role 'henshin_text_ParameterType', cardinality 0..*).
+'henshin::text::Attribute' (role 'henshin_text_Attribute28', cardinality 0..*) is associated with 'henshin::text::Expression' (role 'henshin_text_Expression29', cardinality 0..*).
+'henshin::text::ConditionNodeTypes' (role 'henshin_text_ConditionNodeTypes50', cardinality 0..*) is associated with 'henshin::text::ConditionReuseNode' (role 'henshin_text_ConditionReuseNode', cardinality 0..*).
+'henshin::text::Expression' (role 'henshin_text_Expression147', cardinality 0..*) is associated with 'henshin::text::BracketExpression' (role 'henshin_text_BracketExpression', cardinality 0..*).
+'henshin::text::ConditionEdge' (role 'henshin_text_ConditionEdge', cardinality 0..*) is associated with 'henshin::text::ConditionEdges' (role 'henshin_text_ConditionEdges', cardinality 0..*).
+'henshin::text::RuleNodeTypes' (role 'henshin_text_RuleNodeTypes', cardinality 0..*) is associated with 'henshin::text::Edge' (role 'henshin_text_Edge11', cardinality 0..*).
+'henshin::text::Call' (role 'henshin_text_Call109', cardinality 0..*) is associated with 'henshin::text::Parameter' (role 'henshin_text_Parameter110', cardinality 0..*).
+'henshin::text::EClass' (role 'henshin_text_EClass', cardinality 0..*) is associated with 'henshin::text::Node' (role 'henshin_text_Node', cardinality 0..*).
+'henshin::text::Model' (role 'henshin_text_Model2', cardinality 0..*) is associated with 'henshin::text::ModelElement' (role 'henshin_text_ModelElement', cardinality 0..*).
+'henshin::text::ConditionalUnit' (role 'henshin_text_ConditionalUnit69', cardinality 0..*) is associated with 'henshin::text::UnitElement' (role 'henshin_text_UnitElement70', cardinality 0..*).
+'henshin::text::UnitElement' (role 'henshin_text_UnitElement73', cardinality 0..*) is associated with 'henshin::text::ConditionalUnit' (role 'henshin_text_ConditionalUnit72', cardinality 0..*).
+'henshin::text::Parameter' (role 'henshin_text_Parameter151', cardinality 0..*) is associated with 'henshin::text::ParameterValue' (role 'henshin_text_ParameterValue', cardinality 0..*).

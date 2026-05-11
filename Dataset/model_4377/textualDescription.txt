@@ -1,0 +1,106 @@
+The model has 45 class(es).
+The class 'siple::ArithmeticExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'siple::While' has no attributes.
+The class 'siple::LogicExpression' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'siple::LesserThanEqual' has no attributes.
+The class 'siple::RealCoercion' has no attributes.
+The class 'siple::Read' has the following attributes: 'Type' of type str.
+The class 'siple::GreaterThanEqual' has no attributes.
+The class 'siple::Statement' has no attributes.
+The class 'siple::ProcedureReturn' has the following attributes: 'Type' of type str.
+The class 'siple::Equal' has no attributes.
+The class 'siple::Not' has no attributes.
+The class 'siple::Addition' has no attributes.
+The class 'siple::UMinus' has no attributes.
+The class 'siple::Block' has no attributes.
+The class 'UnaryExpression' has no attributes.
+The class 'siple::BinaryExpression' has no attributes.
+The class 'siple::CompilationUnit' has no attributes.
+The class 'LogicExpression' has no attributes.
+The class 'siple::ProcedureCall' has no attributes.
+The class 'siple::VariableDeclaration' has the following attributes: 'DeclaredType' of type str.
+The class 'siple::Declaration' has the following attributes: 'IsParameterDeclaration' of type bool; 'Name' of type str; 'Type' of type str.
+The class 'siple::ProcedureDeclaration' has the following attributes: 'ReturnType' of type str.
+The class 'siple::NestedExpression' has no attributes.
+The class 'siple::If' has no attributes.
+The class 'siple::And' has no attributes.
+The class 'siple::Subtraction' has no attributes.
+The class 'siple::Dereference' has no attributes.
+The class 'siple::Constant' has the following attributes: 'AsInteger' of type str; 'AsBoolean' of type str; 'Lexem' of type str; 'AsReal' of type str.
+The class 'siple::Or' has no attributes.
+The class 'siple::Expression' has the following attributes: 'Type' of type str.
+The class 'siple::GreaterThan' has no attributes.
+The class 'siple::VariableAssignment' has the following attributes: 'Type' of type str.
+The class 'Expression' has no attributes.
+The class 'siple::Division' has no attributes.
+The class 'siple::Multiplication' has no attributes.
+The class 'siple::Reference' has the following attributes: 'Name' of type str.
+The class 'siple::LesserThan' has no attributes.
+The class 'EqualityExpression' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'siple::EqualityExpression' has no attributes.
+The class 'ArithmeticExpression' has no attributes.
+The class 'siple::UnaryExpression' has no attributes.
+The class 'siple::Write' has the following attributes: 'Type' of type str.
+'siple::Expression' is a specialization of 'Statement'.
+'siple::ProcedureReturn' is a specialization of 'Statement'.
+'siple::LesserThan' is a specialization of 'EqualityExpression'.
+'siple::UnaryExpression' is a specialization of 'Expression'.
+'siple::Write' is a specialization of 'Statement'.
+'siple::While' is a specialization of 'Statement'.
+'siple::And' is a specialization of 'LogicExpression'.
+'siple::VariableDeclaration' is a specialization of 'Declaration'.
+'siple::ProcedureDeclaration' is a specialization of 'Declaration'.
+'siple::Reference' is a specialization of 'Expression'.
+'siple::Or' is a specialization of 'LogicExpression'.
+'siple::UMinus' is a specialization of 'UnaryExpression'.
+'siple::BinaryExpression' is a specialization of 'Expression'.
+'siple::LogicExpression' is a specialization of 'BinaryExpression'.
+'siple::Block' is a specialization of 'Statement'.
+'siple::GreaterThanEqual' is a specialization of 'EqualityExpression'.
+'siple::LesserThanEqual' is a specialization of 'EqualityExpression'.
+'siple::Multiplication' is a specialization of 'ArithmeticExpression'.
+'siple::If' is a specialization of 'Statement'.
+'siple::Declaration' is a specialization of 'Statement'.
+'siple::Read' is a specialization of 'Statement'.
+'siple::EqualityExpression' is a specialization of 'BinaryExpression'.
+'siple::ArithmeticExpression' is a specialization of 'BinaryExpression'.
+'siple::ProcedureCall' is a specialization of 'Expression'.
+'siple::GreaterThan' is a specialization of 'EqualityExpression'.
+'siple::Equal' is a specialization of 'EqualityExpression'.
+'siple::RealCoercion' is a specialization of 'UnaryExpression'.
+'siple::Division' is a specialization of 'ArithmeticExpression'.
+'siple::VariableAssignment' is a specialization of 'Statement'.
+'siple::Constant' is a specialization of 'Expression'.
+'siple::NestedExpression' is a specialization of 'Expression'.
+'siple::Not' is a specialization of 'UnaryExpression'.
+'siple::Addition' is a specialization of 'ArithmeticExpression'.
+'siple::Subtraction' is a specialization of 'ArithmeticExpression'.
+'siple::Dereference' is a specialization of 'UnaryExpression'.
+'siple::ProcedureCall' (role 'siple_ProcedureCall46', cardinality 0..*) is associated with 'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration47', cardinality 0..*).
+'siple::Block' (role 'siple_Block21', cardinality 0..*) is associated with 'siple::While' (role 'siple_While20', cardinality 0..*).
+'siple::Block' (role 'siple_Block8', cardinality 0..*) is associated with 'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration9', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression30', cardinality 0..*) is associated with 'siple::Write' (role 'siple_Write', cardinality 0..*).
+'siple::NestedExpression' (role 'siple_NestedExpression', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression49', cardinality 0..*).
+'siple::If' (role 'siple_If', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression', cardinality 0..*).
+'siple::BinaryExpression' (role 'siple_BinaryExpression55', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression56', cardinality 0..*).
+'siple::Statement' (role 'siple_Statement', cardinality 0..*) is associated with 'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration4', cardinality 0..*).
+'siple::VariableDeclaration' (role 'siple_VariableDeclaration', cardinality 0..*) is associated with 'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration34', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression53', cardinality 0..*) is associated with 'siple::BinaryExpression' (role 'siple_BinaryExpression', cardinality 0..*).
+'siple::Declaration' (role 'siple_Declaration', cardinality 0..*) is associated with 'siple::CompilationUnit' (role 'siple_CompilationUnit', cardinality 0..*).
+'siple::Block' (role 'siple_Block37', cardinality 0..*) is associated with 'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration36', cardinality 0..*).
+'siple::VariableAssignment' (role 'siple_VariableAssignment25', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression26', cardinality 0..*).
+'siple::Statement' (role 'siple_Statement6', cardinality 0..*) is associated with 'siple::Block' (role 'siple_Block', cardinality 0..*).
+'siple::Reference' (role 'siple_Reference', cardinality 0..*) is associated with 'siple::Declaration' (role 'siple_Declaration39', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression18', cardinality 0..*) is associated with 'siple::While' (role 'siple_While', cardinality 0..*).
+'siple::ProcedureDeclaration' (role 'siple_ProcedureDeclaration', cardinality 0..*) is associated with 'siple::CompilationUnit' (role 'siple_CompilationUnit2', cardinality 0..*).
+'siple::ProcedureCall' (role 'siple_ProcedureCall43', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression44', cardinality 0..*).
+'siple::VariableAssignment' (role 'siple_VariableAssignment', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression23', cardinality 0..*).
+'siple::Block' (role 'siple_Block16', cardinality 0..*) is associated with 'siple::If' (role 'siple_If15', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression51', cardinality 0..*) is associated with 'siple::UnaryExpression' (role 'siple_UnaryExpression', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression41', cardinality 0..*) is associated with 'siple::ProcedureCall' (role 'siple_ProcedureCall', cardinality 0..*).
+'siple::Expression' (role 'siple_Expression28', cardinality 0..*) is associated with 'siple::ProcedureReturn' (role 'siple_ProcedureReturn', cardinality 0..*).
+'siple::Read' (role 'siple_Read', cardinality 0..*) is associated with 'siple::Expression' (role 'siple_Expression32', cardinality 0..*).
+'siple::If' (role 'siple_If12', cardinality 0..*) is associated with 'siple::Block' (role 'siple_Block13', cardinality 0..*).

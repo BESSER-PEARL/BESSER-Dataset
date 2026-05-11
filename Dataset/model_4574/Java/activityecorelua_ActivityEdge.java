@@ -1,0 +1,36 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class activityecorelua_ActivityEdge extends NamedElement {
+
+
+
+
+
+
+    private activityecorelua_Activity activityecorelua_activity;
+
+
+    public activityecorelua_ActivityEdge(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public activityecorelua_Activity getActivityecorelua_activity() {
+        return activityecorelua_activity;
+    }
+
+    public void setActivityecorelua_activity(activityecorelua_Activity activityecorelua_activity) {
+        this.activityecorelua_activity = activityecorelua_activity;
+    }
+
+}

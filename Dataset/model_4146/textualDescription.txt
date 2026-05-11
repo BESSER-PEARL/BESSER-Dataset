@@ -1,0 +1,43 @@
+The model has 17 class(es).
+The class 'arithmetics::Statement' has no attributes.
+The class 'arithmetics::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'arithmetics::DeclaredParameter' has no attributes.
+The class 'arithmetics::Definition' has no attributes.
+The class 'arithmetics::FunctionCall' has no attributes.
+The class 'Statement' has no attributes.
+The class 'arithmetics::Module' has the following attributes: 'name' of type str.
+The class 'Expression' has no attributes.
+The class 'arithmetics::Minus' has no attributes.
+The class 'arithmetics::Plus' has no attributes.
+The class 'arithmetics::AbstractDefinition' has the following attributes: 'name' of type str.
+The class 'arithmetics::Multi' has no attributes.
+The class 'arithmetics::Evaluation' has no attributes.
+The class 'AbstractDefinition' has no attributes.
+The class 'arithmetics::Expression' has no attributes.
+The class 'arithmetics::Div' has no attributes.
+The class 'arithmetics::NumberLiteral' has the following attributes: 'value' of type str.
+'arithmetics::Plus' is a specialization of 'Expression'.
+'arithmetics::Multi' is a specialization of 'Expression'.
+'arithmetics::Minus' is a specialization of 'Expression'.
+'arithmetics::Definition' is a specialization of 'AbstractDefinition'.
+'arithmetics::FunctionCall' is a specialization of 'Expression'.
+'arithmetics::Div' is a specialization of 'Expression'.
+'arithmetics::DeclaredParameter' is a specialization of 'AbstractDefinition'.
+'arithmetics::Definition' is a specialization of 'Statement'.
+'arithmetics::Evaluation' is a specialization of 'Statement'.
+'arithmetics::NumberLiteral' is a specialization of 'Expression'.
+'arithmetics::Expression' (role 'arithmetics_Expression14', cardinality 0..*) is associated with 'arithmetics::Minus' (role 'arithmetics_Minus', cardinality 0..*).
+'arithmetics::FunctionCall' (role 'arithmetics_FunctionCall', cardinality 0..*) is associated with 'arithmetics::AbstractDefinition' (role 'arithmetics_AbstractDefinition', cardinality 0..*).
+'arithmetics::Plus' (role 'arithmetics_Plus', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression9', cardinality 0..*).
+'arithmetics::Minus' (role 'arithmetics_Minus16', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression17', cardinality 0..*).
+'arithmetics::Expression' (role 'arithmetics_Expression19', cardinality 0..*) is associated with 'arithmetics::Multi' (role 'arithmetics_Multi', cardinality 0..*).
+'arithmetics::Multi' (role 'arithmetics_Multi21', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression22', cardinality 0..*).
+'arithmetics::Div' (role 'arithmetics_Div26', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression27', cardinality 0..*).
+'arithmetics::Evaluation' (role 'arithmetics_Evaluation', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression7', cardinality 0..*).
+'arithmetics::DeclaredParameter' (role 'arithmetics_DeclaredParameter', cardinality 0..*) is associated with 'arithmetics::Definition' (role 'arithmetics_Definition', cardinality 0..*).
+'arithmetics::Plus' (role 'arithmetics_Plus11', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression12', cardinality 0..*).
+'arithmetics::Definition' (role 'arithmetics_Definition5', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression', cardinality 0..*).
+'arithmetics::Import' (role 'arithmetics_Import', cardinality 0..*) is associated with 'arithmetics::Module' (role 'arithmetics_Module', cardinality 0..*).
+'arithmetics::Div' (role 'arithmetics_Div', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression24', cardinality 0..*).
+'arithmetics::FunctionCall' (role 'arithmetics_FunctionCall30', cardinality 0..*) is associated with 'arithmetics::Expression' (role 'arithmetics_Expression31', cardinality 0..*).
+'arithmetics::Statement' (role 'arithmetics_Statement', cardinality 0..*) is associated with 'arithmetics::Module' (role 'arithmetics_Module2', cardinality 0..*).

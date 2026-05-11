@@ -1,0 +1,57 @@
+The model has 28 class(es).
+The class 'Legolang::controlflow::tantqueue' has no attributes.
+The class 'Legolang::Robot::hasTurned' has no attributes.
+The class 'controlflow::ExprBool' has no attributes.
+The class 'Legolang::controlflow::not' has no attributes.
+The class 'Legolang::Robot::obstacle' has no attributes.
+The class 'Expr' has no attributes.
+The class 'Legolang::Robot::turnAngle' has no attributes.
+The class 'Legolang::Robot::turn' has no attributes.
+The class 'Legolang::Robot::stopEngine' has no attributes.
+The class 'ExprBool' has no attributes.
+The class 'controlflow::operator' has no attributes.
+The class 'operator' has no attributes.
+The class 'opBinaire' has no attributes.
+The class 'Legolang::controlflow::operator' has no attributes.
+The class 'Legolang::Robot::OrderRobot' has no attributes.
+The class 'Legolang::controlflow::opBinaire' has no attributes.
+The class 'Legolang::controlflow::ExprBool' has no attributes.
+The class 'Legolang::Robot::display' has no attributes.
+The class 'opUnaire' has no attributes.
+The class 'OrderRobot' has no attributes.
+The class 'Legolang::Robot::move' has no attributes.
+The class 'Legolang::controlflow::and' has no attributes.
+The class 'Legolang::controlflow::si' has no attributes.
+The class 'Legolang::controlflow::Program' has no attributes.
+The class 'Legolang::Robot::bip' has no attributes.
+The class 'tantqueue' has no attributes.
+The class 'Legolang::controlflow::opUnaire' has no attributes.
+The class 'Legolang::controlflow::Expr' has no attributes.
+'Legolang::controlflow::opBinaire' is a specialization of 'operator'.
+'Legolang::Robot::stopEngine' is a specialization of 'OrderRobot'.
+'Legolang::controlflow::si' is a specialization of 'Expr'.
+'Legolang::controlflow::tantqueue' is a specialization of 'Expr'.
+'Legolang::Robot::hasTurned' is a specialization of 'OrderRobot'.
+'Legolang::controlflow::ExprBool' is a specialization of 'Expr'.
+'Legolang::Robot::turn' is a specialization of 'OrderRobot'.
+'Legolang::Robot::bip' is a specialization of 'OrderRobot'.
+'Legolang::controlflow::opUnaire' is a specialization of 'controlflow::ExprBool'.
+'Legolang::Robot::turnAngle' is a specialization of 'OrderRobot'.
+'Legolang::Robot::obstacle' is a specialization of 'OrderRobot'.
+'Legolang::Robot::display' is a specialization of 'OrderRobot'.
+'Legolang::controlflow::opUnaire' is a specialization of 'controlflow::operator'.
+'Legolang::controlflow::and' is a specialization of 'opBinaire'.
+'Legolang::controlflow::not' is a specialization of 'opUnaire'.
+'Legolang::Robot::move' is a specialization of 'OrderRobot'.
+'Legolang::controlflow::Expr' (role 'Legolang_controlflow_Expr12', cardinality 0..*) is associated with 'OrderRobot' (role 'OrderRobot', cardinality 0..*).
+'tantqueue' (role 'tantqueue21', cardinality 0..*) is associated with 'Legolang::controlflow::ExprBool' (role 'Legolang_controlflow_ExprBool', cardinality 0..*).
+'Expr' (role 'Expr23', cardinality 0..*) is associated with 'Legolang::controlflow::Program' (role 'Legolang_controlflow_Program', cardinality 0..*).
+'tantqueue' (role 'tantqueue', cardinality 0..*) is associated with 'Legolang::controlflow::Expr' (role 'Legolang_controlflow_Expr', cardinality 0..*).
+'ExprBool' (role 'ExprBool16', cardinality 0..*) is associated with 'Legolang::controlflow::opBinaire' (role 'Legolang_controlflow_opBinaire15', cardinality 0..*).
+'Legolang::controlflow::si' (role 'Legolang_controlflow_si', cardinality 0..*) is associated with 'ExprBool' (role 'ExprBool6', cardinality 0..*).
+'Expr' (role 'Expr2', cardinality 0..*) is associated with 'Legolang::controlflow::tantqueue' (role 'Legolang_controlflow_tantqueue', cardinality 0..*).
+'Expr' (role 'Expr9', cardinality 0..*) is associated with 'Legolang::controlflow::si' (role 'Legolang_controlflow_si8', cardinality 0..*).
+'Legolang::controlflow::opBinaire' (role 'Legolang_controlflow_opBinaire', cardinality 0..*) is associated with 'opBinaire' (role 'opBinaire', cardinality 0..*).
+'ExprBool' (role 'ExprBool', cardinality 0..*) is associated with 'Legolang::controlflow::tantqueue' (role 'Legolang_controlflow_tantqueue4', cardinality 0..*).
+'Legolang::Robot::OrderRobot' (role 'Legolang_Robot_OrderRobot', cardinality 0..*) is associated with 'Expr' (role 'Expr', cardinality 0..*).
+'ExprBool' (role 'ExprBool19', cardinality 0..*) is associated with 'Legolang::controlflow::opBinaire' (role 'Legolang_controlflow_opBinaire18', cardinality 0..*).

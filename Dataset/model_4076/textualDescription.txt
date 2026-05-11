@@ -1,0 +1,29 @@
+The model has 11 class(es).
+The class 'Classifier' has no attributes.
+The class 'umlMM::Classifier' has no attributes.
+The class 'PackageElement' has no attributes.
+The class 'umlMM::PrimitiveDataType' has no attributes.
+The class 'umlMM::UMLModelElement' has the following attributes: 'name' of type str; 'kind' of type str.
+The class 'umlMM::Package' has no attributes.
+The class 'UMLModelElement' has no attributes.
+The class 'umlMM::Attribute' has no attributes.
+The class 'umlMM::Association' has no attributes.
+The class 'umlMM::PackageElement' has no attributes.
+The class 'umlMM::Class' has no attributes.
+'umlMM::Classifier' is a specialization of 'PackageElement'.
+'umlMM::Association' is a specialization of 'PackageElement'.
+'umlMM::Class' is a specialization of 'Classifier'.
+'umlMM::Attribute' is a specialization of 'UMLModelElement'.
+'umlMM::PrimitiveDataType' is a specialization of 'Classifier'.
+'umlMM::PackageElement' is a specialization of 'UMLModelElement'.
+'umlMM::Package' is a specialization of 'UMLModelElement'.
+'umlMM::Association' (role 'Association', cardinality 0..*) is associated with 'umlMM::Class' (role 'destination', cardinality 0..*).
+'umlMM::Association' (role 'forward', cardinality 0..*) is associated with 'umlMM::Class' (role 'Class2', cardinality 0..*).
+'umlMM::Class' (role 'owner', cardinality 0..*) is associated with 'umlMM::Attribute' (role 'Attribute', cardinality 0..*).
+'umlMM::Class' (role 'source', cardinality 0..*) is associated with 'umlMM::Association' (role 'Association11', cardinality 0..*).
+'umlMM::Package' (role 'Package', cardinality 0..*) is associated with 'umlMM::PackageElement' (role 'elements', cardinality 0..*).
+'umlMM::Class' (role 'Class4', cardinality 0..*) is associated with 'umlMM::Attribute' (role 'attribute', cardinality 0..*).
+'umlMM::Class' (role 'Class', cardinality 0..*) is associated with 'umlMM::Association' (role 'reverse', cardinality 0..*).
+'umlMM::Attribute' (role 'umlMM_Attribute', cardinality 0..*) is associated with 'umlMM::Classifier' (role 'umlMM_Classifier', cardinality 0..*).
+'umlMM::Package' (role 'namespace', cardinality 0..*) is associated with 'umlMM::PackageElement' (role 'PackageElement', cardinality 0..*).
+'umlMM::Class' (role 'umlMM_Class7', cardinality 0..*) is associated with 'umlMM::Class' (role 'umlMM_Class', cardinality 0..*).

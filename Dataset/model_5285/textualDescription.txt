@@ -1,0 +1,8 @@
+The model has 5 class(es).
+The class 'B' has no attributes.
+The class 'Example::Ba' has the following attributes: 'ba' of type str.
+The class 'Example::B' has the following attributes: 'b' of type str.
+The class 'Example::Bb' has no attributes.
+The class 'Example::A' has the following attributes: 'a' of type str.
+'Example::Ba' is a specialization of 'B'.
+'Example::Bb' is a specialization of 'B'.

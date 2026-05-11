@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'helloWorldDsl::Model' has no attributes.
+The class 'helloWorldDsl::Greeting' has the following attributes: 'name' of type str.
+'helloWorldDsl::Greeting' (role 'helloWorldDsl_Greeting', cardinality 0..*) is associated with 'helloWorldDsl::Model' (role 'helloWorldDsl_Model', cardinality 0..*).

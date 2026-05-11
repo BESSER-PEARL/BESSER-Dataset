@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'N' has no attributes.
+The class 'test::test2::B' has the following attributes: 'nb2' of type int; 'nb' of type int.
+The class 'test::A' has no attributes.
+The class 'B' has no attributes.
+The class 'test::N' has the following attributes: 'n' of type str.
+'test::A' is a specialization of 'N'.
+'test::test2::B' is a specialization of 'N'.
+'test::A' (role 'test_A', cardinality 0..*) is associated with 'B' (role 'B', cardinality 0..*).

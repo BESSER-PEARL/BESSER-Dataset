@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'xyz::X' has no attributes.
+The class 'xyz::Y' has no attributes.
+The class 'xyz::Z' has no attributes.
+'xyz::Y' (role 'xyz_Y', cardinality 0..*) is associated with 'xyz::X' (role 'xyz_X', cardinality 0..*).
+'xyz::Z' (role 'xyz_Z', cardinality 0..*) is associated with 'xyz::Y' (role 'xyz_Y2', cardinality 0..*).

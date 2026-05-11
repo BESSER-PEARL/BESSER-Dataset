@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'astransast::BAS' has no attributes.
+The class 'astransast::AAS' has no attributes.
+'astransast::BAS' (role 'astransast_BAS3', cardinality 0..*) is associated with 'astransast::AAS' (role 'astransast_AAS2', cardinality 0..*).
+'astransast::BAS' (role 'astransast_BAS', cardinality 0..*) is associated with 'astransast::AAS' (role 'astransast_AAS', cardinality 0..*).
+'astransast::BAS' (role 'astransast_BAS6', cardinality 0..*) is associated with 'astransast::BAS' (role 'astransast_BAS4', cardinality 0..*).

@@ -1,0 +1,36 @@
+The model has 20 class(es).
+The class 'helloWeb::Down' has the following attributes: 'distance' of type str.
+The class 'helloWeb::Snapshot' has the following attributes: 'image_name' of type str.
+The class 'helloWeb::UserFunction' has the following attributes: 'name' of type str.
+The class 'helloWeb::Up' has the following attributes: 'distance' of type str.
+The class 'helloWeb::FunctionName' has the following attributes: 'func_name' of type str.
+The class 'helloWeb::Main' has the following attributes: 'land' of type str; 'takeoff' of type str.
+The class 'helloWeb::Program' has no attributes.
+The class 'helloWeb::Right' has the following attributes: 'distance' of type str.
+The class 'helloWeb::Wait' has the following attributes: 'seconds' of type str.
+The class 'helloWeb::FeatureMatch' has the following attributes: 'image_name' of type str.
+The class 'helloWeb::Forward' has the following attributes: 'distance' of type str.
+The class 'helloWeb::Command' has no attributes.
+The class 'helloWeb::SuperCommand' has no attributes.
+The class 'Command' has no attributes.
+The class 'helloWeb::Backward' has the following attributes: 'distance' of type str.
+The class 'helloWeb::RotateR' has the following attributes: 'angle' of type int.
+The class 'helloWeb::RotateL' has the following attributes: 'angle' of type int.
+The class 'helloWeb::RecordedFlight' has the following attributes: 'video_name' of type str.
+The class 'SuperCommand' has no attributes.
+The class 'helloWeb::Left' has the following attributes: 'distance' of type str.
+'helloWeb::Forward' is a specialization of 'Command'.
+'helloWeb::Wait' is a specialization of 'Command'.
+'helloWeb::FunctionName' is a specialization of 'SuperCommand'.
+'helloWeb::Left' is a specialization of 'Command'.
+'helloWeb::RotateL' is a specialization of 'Command'.
+'helloWeb::RotateR' is a specialization of 'Command'.
+'helloWeb::Down' is a specialization of 'Command'.
+'helloWeb::Snapshot' is a specialization of 'Command'.
+'helloWeb::Backward' is a specialization of 'Command'.
+'helloWeb::Right' is a specialization of 'Command'.
+'helloWeb::Up' is a specialization of 'Command'.
+'helloWeb::Command' is a specialization of 'SuperCommand'.
+'helloWeb::Main' (role 'helloWeb_Main2', cardinality 0..*) is associated with 'helloWeb::SuperCommand' (role 'helloWeb_SuperCommand', cardinality 0..*).
+'helloWeb::UserFunction' (role 'helloWeb_UserFunction', cardinality 0..*) is associated with 'helloWeb::Command' (role 'helloWeb_Command', cardinality 0..*).
+'helloWeb::Main' (role 'helloWeb_Main', cardinality 0..*) is associated with 'helloWeb::Program' (role 'helloWeb_Program', cardinality 0..*).

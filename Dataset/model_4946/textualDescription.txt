@@ -1,0 +1,176 @@
+The model has 65 class(es).
+The class 'Duplicable' has no attributes.
+The class 'form::IFrameWidget' has no attributes.
+The class 'form::Widget' has the following attributes: 'returnTypeModifier' of type str; 'realHtmlAttributes' of type str; 'displayDependentWidgetOnlyOnEventTriggered' of type bool; 'mandatory' of type bool; 'showDisplayLabel' of type str; 'allowHTMLForDisplayLabel' of type bool; 'version' of type str; 'labelPosition' of type str; 'readOnly' of type bool; 'injectWidgetCondition' of type bool.
+The class 'form::HiddenWidget' has no attributes.
+The class 'Element' has no attributes.
+The class 'MultipleValuatedFormField' has no attributes.
+The class 'form::Info' has no attributes.
+The class 'form::Form' has the following attributes: 'showPageLabel' of type str; 'nLine' of type int; 'allowHTMLInPageLabel' of type bool; 'nColumn' of type int; 'version' of type str.
+The class 'form::DurationFormField' has the following attributes: 'sec' of type str; 'hour' of type str; 'min' of type str; 'day' of type str.
+The class 'form::SuggestBox' has the following attributes: 'maxItems' of type int; 'asynchronous' of type bool; 'useMaxItems' of type bool; 'delay' of type int.
+The class 'form::TableExpression' has no attributes.
+The class 'form::FileWidget' has the following attributes: 'intialResourceList' of type str; 'usePreview' of type bool; 'updateDocument' of type bool; 'downloadOnly' of type bool; 'inputType' of type str; 'initialResourcePath' of type str; 'outputDocumentName' of type str; 'downloadType' of type str.
+The class 'form::SelectFormField' has no attributes.
+The class 'form::Column' has the following attributes: 'number' of type int; 'width' of type str.
+The class 'form::PasswordFormField' has the following attributes: 'maxLength' of type int.
+The class 'form::ComboFormField' has no attributes.
+The class 'form::TextFormField' has the following attributes: 'maxLength' of type int.
+The class 'form::MultipleValuatedFormField' has no attributes.
+The class 'form::GroupIterator' has the following attributes: 'className' of type str.
+The class 'form::CSSCustomizable' has no attributes.
+The class 'form::ItemContainer' has the following attributes: 'itemClass' of type str.
+The class 'form::ViewForm' has no attributes.
+The class 'form::NextFormButton' has no attributes.
+The class 'form::Expression' has no attributes.
+The class 'form::RichTextAreaFormField' has no attributes.
+The class 'CSSCustomizable' has no attributes.
+The class 'form::HtmlWidget' has no attributes.
+The class 'form::FormButton' has the following attributes: 'labelBehavior' of type str.
+The class 'form::ListFormField' has the following attributes: 'maxHeigth' of type int.
+The class 'form::Duplicable' has the following attributes: 'limitMinNumberOfDuplication' of type bool; 'duplicate' of type bool; 'limitNumberOfDuplication' of type bool.
+The class 'form::Group' has the following attributes: 'showBorder' of type bool; 'useIterator' of type bool.
+The class 'form::FormField' has the following attributes: 'exampleMessagePosition' of type str; 'description' of type str.
+The class 'form::Validable' has the following attributes: 'useDefaultValidator' of type str; 'below' of type bool.
+The class 'form::Line' has the following attributes: 'number' of type int; 'height' of type str.
+The class 'form::EStringToStringMapEntry' has no attributes.
+The class 'form::TextAreaFormField' has the following attributes: 'maxHeigth' of type int; 'maxLength' of type int.
+The class 'form::MessageInfo' has no attributes.
+The class 'form::PreviousFormButton' has no attributes.
+The class 'form::WidgetLayoutInfo' has the following attributes: 'horizontalSpan' of type int; 'column' of type int; 'verticalSpan' of type int; 'line' of type int.
+The class 'FormButton' has no attributes.
+The class 'form::DateFormField' has the following attributes: 'initialFormat' of type str; 'displayFormat' of type str.
+The class 'ConnectableElement' has no attributes.
+The class 'form::Table' has the following attributes: 'allowSelection' of type bool; 'usePagination' of type bool; 'selectionModeIsMultiple' of type bool.
+The class 'SingleValuatedFormField' has no attributes.
+The class 'Form' has no attributes.
+The class 'form::WidgetDependency' has the following attributes: 'triggerRefreshOnModification' of type bool; 'eventTypes' of type str.
+The class 'form::Operation' has no attributes.
+The class 'form::CheckBoxMultipleFormField' has no attributes.
+The class 'form::CheckBoxSingleFormField' has no attributes.
+The class 'form::SubmitFormButton' has no attributes.
+The class 'form::Validator' has the following attributes: 'validatorClass' of type str; 'htmlClass' of type str; 'name' of type str; 'belowField' of type bool.
+The class 'Validable' has no attributes.
+The class 'Info' has no attributes.
+The class 'FormField' has no attributes.
+The class 'form::MandatoryFieldsCustomization' has no attributes.
+The class 'Widget' has no attributes.
+The class 'form::TextInfo' has no attributes.
+The class 'form::RadioFormField' has no attributes.
+The class 'form::AbstractTable' has the following attributes: 'useVerticalHeader' of type bool; 'firstRowIsHeader' of type bool; 'rightColumnIsHeader' of type bool; 'initializedUsingCells' of type bool; 'useHorizontalHeader' of type bool; 'leftColumnIsHeader' of type bool; 'LastRowIsHeader' of type bool.
+The class 'form::Document' has no attributes.
+The class 'ItemContainer' has no attributes.
+The class 'AbstractTable' has no attributes.
+The class 'form::ImageWidget' has the following attributes: 'isADocument' of type bool.
+The class 'form::DynamicTable' has the following attributes: 'limitMaxNumberOfColumn' of type bool; 'allowAddRemoveRow' of type bool; 'allowAddRemoveColumn' of type bool; 'limitMaxNumberOfRow' of type bool; 'limitMinNumberOfRow' of type bool; 'limitMinNumberOfColumn' of type bool.
+The class 'form::SingleValuatedFormField' has no attributes.
+The enumeration 'LabelPosition' has the following literals: 'Right', 'Up', 'Left', 'Down'.
+The enumeration 'EventDependencyType' has the following literals: 'onValueChange', 'onChange', 'onClick', 'onBlur'.
+The enumeration 'FileWidgetDownloadType' has the following literals: 'Browse', 'Both', 'URL'.
+The enumeration 'FileWidgetInputType' has the following literals: 'Resource', 'Document', 'URL'.
+'form::PreviousFormButton' is a specialization of 'FormButton'.
+'form::RadioFormField' is a specialization of 'MultipleValuatedFormField'.
+'form::GroupIterator' is a specialization of 'Element'.
+'form::RadioFormField' is a specialization of 'ItemContainer'.
+'form::AbstractTable' is a specialization of 'Widget'.
+'form::Table' is a specialization of 'AbstractTable'.
+'form::Info' is a specialization of 'Widget'.
+'form::Widget' is a specialization of 'CSSCustomizable'.
+'form::HiddenWidget' is a specialization of 'Duplicable'.
+'form::DateFormField' is a specialization of 'SingleValuatedFormField'.
+'form::MessageInfo' is a specialization of 'Info'.
+'form::IFrameWidget' is a specialization of 'Info'.
+'form::FormField' is a specialization of 'Validable'.
+'form::AbstractTable' is a specialization of 'Duplicable'.
+'form::ImageWidget' is a specialization of 'Duplicable'.
+'form::HiddenWidget' is a specialization of 'SingleValuatedFormField'.
+'form::DurationFormField' is a specialization of 'SingleValuatedFormField'.
+'form::Widget' is a specialization of 'Element'.
+'form::Group' is a specialization of 'Widget'.
+'form::CheckBoxMultipleFormField' is a specialization of 'ItemContainer'.
+'form::SubmitFormButton' is a specialization of 'FormButton'.
+'form::TextInfo' is a specialization of 'Duplicable'.
+'form::ListFormField' is a specialization of 'MultipleValuatedFormField'.
+'form::HtmlWidget' is a specialization of 'Info'.
+'form::Table' is a specialization of 'MultipleValuatedFormField'.
+'form::ComboFormField' is a specialization of 'MultipleValuatedFormField'.
+'form::PasswordFormField' is a specialization of 'SingleValuatedFormField'.
+'form::CheckBoxMultipleFormField' is a specialization of 'MultipleValuatedFormField'.
+'form::CheckBoxSingleFormField' is a specialization of 'SingleValuatedFormField'.
+'form::DynamicTable' is a specialization of 'SingleValuatedFormField'.
+'form::DynamicTable' is a specialization of 'AbstractTable'.
+'form::MandatoryFieldsCustomization' is a specialization of 'CSSCustomizable'.
+'form::FormButton' is a specialization of 'Widget'.
+'form::TextAreaFormField' is a specialization of 'SingleValuatedFormField'.
+'form::SuggestBox' is a specialization of 'MultipleValuatedFormField'.
+'form::SubmitFormButton' is a specialization of 'ConnectableElement'.
+'form::FileWidget' is a specialization of 'Duplicable'.
+'form::RichTextAreaFormField' is a specialization of 'SingleValuatedFormField'.
+'form::SelectFormField' is a specialization of 'MultipleValuatedFormField'.
+'form::FileWidget' is a specialization of 'SingleValuatedFormField'.
+'form::Form' is a specialization of 'ConnectableElement'.
+'form::FormField' is a specialization of 'Duplicable'.
+'form::Form' is a specialization of 'Validable'.
+'form::TextFormField' is a specialization of 'SingleValuatedFormField'.
+'form::MultipleValuatedFormField' is a specialization of 'FormField'.
+'form::NextFormButton' is a specialization of 'FormButton'.
+'form::Group' is a specialization of 'Duplicable'.
+'form::TextInfo' is a specialization of 'Info'.
+'form::ViewForm' is a specialization of 'Form'.
+'form::FormField' is a specialization of 'Widget'.
+'form::DurationFormField' is a specialization of 'ItemContainer'.
+'form::SingleValuatedFormField' is a specialization of 'FormField'.
+'form::ImageWidget' is a specialization of 'Widget'.
+'form::Form' (role 'form_Form19', cardinality 0..*) is associated with 'form::Operation' (role 'form_Operation', cardinality 0..*).
+'form::Form' (role 'form_Form', cardinality 0..*) is associated with 'form::EStringToStringMapEntry' (role 'form_EStringToStringMapEntry', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression21', cardinality 0..*).
+'form::Expression' (role 'form_Expression49', cardinality 0..*) is associated with 'form::Widget' (role 'form_Widget48', cardinality 0..*).
+'form::Widget' (role 'form_Widget45', cardinality 0..*) is associated with 'form::WidgetDependency' (role 'form_WidgetDependency46', cardinality 0..*).
+'form::Expression' (role 'form_Expression87', cardinality 0..*) is associated with 'form::MultipleValuatedFormField' (role 'form_MultipleValuatedFormField', cardinality 0..*).
+'form::Widget' (role 'form_Widget72', cardinality 0..*) is associated with 'form::Operation' (role 'form_Operation73', cardinality 0..*).
+'form::Form' (role 'form_Form11', cardinality 0..*) is associated with 'form::Line' (role 'form_Line', cardinality 0..*).
+'form::Widget' (role 'form_Widget', cardinality 0..*) is associated with 'form::WidgetDependency' (role 'form_WidgetDependency', cardinality 0..*).
+'form::EStringToStringMapEntry' (role 'form_EStringToStringMapEntry38', cardinality 0..*) is associated with 'form::CSSCustomizable' (role 'form_CSSCustomizable', cardinality 0..*).
+'form::Table' (role 'form_Table', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression110', cardinality 0..*).
+'form::Group' (role 'form_Group80', cardinality 0..*) is associated with 'form::Line' (role 'form_Line81', cardinality 0..*).
+'form::Expression' (role 'form_Expression52', cardinality 0..*) is associated with 'form::Widget' (role 'form_Widget51', cardinality 0..*).
+'form::Widget' (role 'form_Widget69', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression70', cardinality 0..*).
+'form::Expression' (role 'form_Expression121', cardinality 0..*) is associated with 'form::DynamicTable' (role 'form_DynamicTable120', cardinality 0..*).
+'form::Operation' (role 'form_Operation92', cardinality 0..*) is associated with 'form::SubmitFormButton' (role 'form_SubmitFormButton', cardinality 0..*).
+'form::Group' (role 'form_Group83', cardinality 0..*) is associated with 'form::GroupIterator' (role 'form_GroupIterator', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable32', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression33', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable26', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression27', cardinality 0..*).
+'form::Validable' (role 'form_Validable', cardinality 0..*) is associated with 'form::Validator' (role 'form_Validator6', cardinality 0..*).
+'form::WidgetDependency' (role 'form_WidgetDependency43', cardinality 0..*) is associated with 'form::Widget' (role 'form_Widget42', cardinality 0..*).
+'form::DynamicTable' (role 'form_DynamicTable', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression118', cardinality 0..*).
+'form::Widget' (role 'form_Widget57', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression58', cardinality 0..*).
+'form::FileWidget' (role 'form_FileWidget', cardinality 0..*) is associated with 'form::Document' (role 'form_Document', cardinality 0..*).
+'form::AbstractTable' (role 'form_AbstractTable108', cardinality 0..*) is associated with 'form::TableExpression' (role 'form_TableExpression', cardinality 0..*).
+'form::Expression' (role 'form_Expression103', cardinality 0..*) is associated with 'form::AbstractTable' (role 'form_AbstractTable', cardinality 0..*).
+'form::Expression' (role 'form_Expression96', cardinality 0..*) is associated with 'form::FileWidget' (role 'form_FileWidget95', cardinality 0..*).
+'form::Widget' (role 'form_Widget60', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression61', cardinality 0..*).
+'form::Group' (role 'form_Group77', cardinality 0..*) is associated with 'form::Column' (role 'form_Column78', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable29', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression30', cardinality 0..*).
+'form::Form' (role 'form_Form13', cardinality 0..*) is associated with 'form::Widget' (role 'form_Widget14', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable35', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression36', cardinality 0..*).
+'form::Expression' (role 'form_Expression101', cardinality 0..*) is associated with 'form::ImageWidget' (role 'form_ImageWidget100', cardinality 0..*).
+'form::Expression' (role 'form_Expression132', cardinality 0..*) is associated with 'form::MandatoryFieldsCustomization' (role 'form_MandatoryFieldsCustomization131', cardinality 0..*).
+'form::Expression' (role 'form_Expression113', cardinality 0..*) is associated with 'form::Table' (role 'form_Table112', cardinality 0..*).
+'form::FormField' (role 'form_FormField', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression85', cardinality 0..*).
+'form::Expression' (role 'form_Expression90', cardinality 0..*) is associated with 'form::MultipleValuatedFormField' (role 'form_MultipleValuatedFormField89', cardinality 0..*).
+'form::Widget' (role 'form_Widget54', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression55', cardinality 0..*).
+'form::Expression' (role 'form_Expression', cardinality 0..*) is associated with 'form::Validator' (role 'form_Validator', cardinality 0..*).
+'form::Group' (role 'form_Group', cardinality 0..*) is associated with 'form::Widget' (role 'form_Widget75', cardinality 0..*).
+'form::Widget' (role 'form_Widget63', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression64', cardinality 0..*).
+'form::Expression' (role 'form_Expression129', cardinality 0..*) is associated with 'form::MandatoryFieldsCustomization' (role 'form_MandatoryFieldsCustomization', cardinality 0..*).
+'form::Duplicable' (role 'form_Duplicable23', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression24', cardinality 0..*).
+'form::Form' (role 'form_Form9', cardinality 0..*) is associated with 'form::Column' (role 'form_Column', cardinality 0..*).
+'form::Widget' (role 'form_Widget66', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression67', cardinality 0..*).
+'form::Widget' (role 'form_Widget40', cardinality 0..*) is associated with 'form::WidgetLayoutInfo' (role 'form_WidgetLayoutInfo', cardinality 0..*).
+'form::ImageWidget' (role 'form_ImageWidget', cardinality 0..*) is associated with 'form::Document' (role 'form_Document98', cardinality 0..*).
+'form::Expression' (role 'form_Expression4', cardinality 0..*) is associated with 'form::Validator' (role 'form_Validator3', cardinality 0..*).
+'form::DynamicTable' (role 'form_DynamicTable126', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression127', cardinality 0..*).
+'form::Expression' (role 'form_Expression17', cardinality 0..*) is associated with 'form::Form' (role 'form_Form16', cardinality 0..*).
+'form::Expression' (role 'form_Expression124', cardinality 0..*) is associated with 'form::DynamicTable' (role 'form_DynamicTable123', cardinality 0..*).
+'form::AbstractTable' (role 'form_AbstractTable105', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression106', cardinality 0..*).
+'form::Table' (role 'form_Table115', cardinality 0..*) is associated with 'form::Expression' (role 'form_Expression116', cardinality 0..*).

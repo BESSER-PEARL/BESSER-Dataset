@@ -1,0 +1,67 @@
+The model has 33 class(es).
+The class 'dsl::SlackPUT' has the following attributes: 'team' of type str; 'value' of type str; 'channel' of type str.
+The class 'dsl::Fetch' has the following attributes: 'value' of type str; 'source' of type str.
+The class 'Action' has no attributes.
+The class 'dsl::Action' has the following attributes: 'name' of type str.
+The class 'dsl::TrelloGET' has the following attributes: 'board' of type str; 'value' of type str; 'authtoken' of type str; 'useraccount' of type str; 'target' of type str; 'key' of type str.
+The class 'dsl::LoadCsv' has the following attributes: 'delim' of type str; 'to' of type str; 'source' of type str; 'value' of type str.
+The class 'dsl::Doozle' has the following attributes: 'on' of type str; 'target' of type str; 'value' of type str.
+The class 'dsl::Transform' has the following attributes: 'on' of type str; 'value' of type str.
+The class 'dsl::Abort' has the following attributes: 'value' of type str.
+The class 'dsl::WriteCsv' has the following attributes: 'delim' of type str; 'to' of type str; 'source' of type str; 'value' of type str.
+The class 'dsl::Rest' has the following attributes: 'urldata' of type str; 'headerdatafrom' of type str; 'ackdata' of type str; 'headerdata' of type str; 'method' of type str; 'parentName' of type str; 'parentdata' of type str; 'ackdatato' of type str; 'resourcedatafrom' of type str; 'postdatafrom' of type str; 'url' of type str; 'authtoken' of type str.
+The class 'dsl::Expression' has the following attributes: 'operator' of type str; 'rhs' of type str; 'lhs' of type str.
+The class 'dsl::Updatedaudit' has the following attributes: 'value' of type str; 'logsink' of type str; 'datasource' of type str.
+The class 'dsl::GooglecontactSelectAll' has the following attributes: 'account' of type str; 'value' of type str; 'ptwelveFile' of type str; 'dbSrc' of type str; 'privateKey' of type str; 'project' of type str; 'impersonatedUser' of type str.
+The class 'dsl::TrelloPUT' has the following attributes: 'value' of type str; 'source' of type str; 'key' of type str; 'list' of type str; 'useraccount' of type str; 'authtoken' of type str.
+The class 'dsl::FBCLead' has the following attributes: 'appSecret' of type str; 'campaignId' of type str; 'accessToken' of type str; 'accountId' of type str; 'value' of type str; 'target' of type str.
+The class 'dsl::Catch' has the following attributes: 'name' of type str.
+The class 'dsl::FirebaseReactiveNotification' has the following attributes: 'classFqn' of type str; 'fbjson' of type str; 'url' of type str; 'groupPath' of type str; 'dbSrc' of type str.
+The class 'dsl::SmsLeadSms' has the following attributes: 'value' of type str; 'sender' of type str; 'dryrunNumber' of type str; 'dbSrc' of type str; 'privateKey' of type str; 'account' of type str; 'url' of type str.
+The class 'dsl::RestPart' has the following attributes: 'partData' of type str; 'partName' of type str.
+The class 'dsl::GooglecalPUT' has the following attributes: 'dbSrc' of type str; 'impersonatedUser' of type str; 'privateKey' of type str; 'project' of type str; 'account' of type str; 'ptwelveFile' of type str; 'value' of type str.
+The class 'dsl::FirebaseDatabasePut' has the following attributes: 'url' of type str; 'value' of type str; 'fbjson' of type str; 'dbSrc' of type str; 'classFqn' of type str; 'groupPath' of type str.
+The class 'dsl::ExecJava' has the following attributes: 'dbSrc' of type str; 'classFqn' of type str; 'value' of type str.
+The class 'dsl::Try' has the following attributes: 'name' of type str.
+The class 'dsl::Callprocess' has the following attributes: 'source' of type str; 'datasource' of type str; 'target' of type str; 'value' of type str.
+The class 'dsl::GooglecontactPUT' has the following attributes: 'dbSrc' of type str; 'account' of type str; 'privateKey' of type str; 'impersonatedUser' of type str; 'ptwelveFile' of type str; 'value' of type str; 'project' of type str.
+The class 'dsl::ClickSendSms' has the following attributes: 'target' of type str; 'userid' of type str; 'value' of type str; 'securityKey' of type str.
+The class 'dsl::SendMail' has the following attributes: 'dbSrc' of type str; 'value' of type str; 'dryrunMail' of type str; 'privateKey' of type str; 'impersonatedUser' of type str.
+The class 'dsl::FBFormDownload' has the following attributes: 'accessToken' of type str; 'formId' of type str; 'target' of type str; 'accountId' of type str; 'appSecret' of type str; 'value' of type str.
+The class 'dsl::Process' has the following attributes: 'name' of type str.
+The class 'dsl::Copydata' has the following attributes: 'source' of type str; 'to' of type str; 'value' of type str.
+The class 'dsl::Finally' has the following attributes: 'name' of type str.
+The class 'dsl::Dropfile' has the following attributes: 'target' of type str.
+'dsl::SendMail' is a specialization of 'Action'.
+'dsl::Updatedaudit' is a specialization of 'Action'.
+'dsl::Doozle' is a specialization of 'Action'.
+'dsl::LoadCsv' is a specialization of 'Action'.
+'dsl::FBFormDownload' is a specialization of 'Action'.
+'dsl::GooglecontactPUT' is a specialization of 'Action'.
+'dsl::Fetch' is a specialization of 'Action'.
+'dsl::GooglecontactSelectAll' is a specialization of 'Action'.
+'dsl::GooglecalPUT' is a specialization of 'Action'.
+'dsl::FBCLead' is a specialization of 'Action'.
+'dsl::TrelloGET' is a specialization of 'Action'.
+'dsl::Abort' is a specialization of 'Action'.
+'dsl::FirebaseReactiveNotification' is a specialization of 'Action'.
+'dsl::Callprocess' is a specialization of 'Action'.
+'dsl::ExecJava' is a specialization of 'Action'.
+'dsl::WriteCsv' is a specialization of 'Action'.
+'dsl::SmsLeadSms' is a specialization of 'Action'.
+'dsl::SlackPUT' is a specialization of 'Action'.
+'dsl::TrelloPUT' is a specialization of 'Action'.
+'dsl::Rest' is a specialization of 'Action'.
+'dsl::Dropfile' is a specialization of 'Action'.
+'dsl::Copydata' is a specialization of 'Action'.
+'dsl::ClickSendSms' is a specialization of 'Action'.
+'dsl::Transform' is a specialization of 'Action'.
+'dsl::FirebaseDatabasePut' is a specialization of 'Action'.
+'dsl::Process' (role 'dsl_Process2', cardinality 0..*) is associated with 'dsl::Catch' (role 'dsl_Catch', cardinality 0..*).
+'dsl::Rest' (role 'dsl_Rest', cardinality 0..*) is associated with 'dsl::RestPart' (role 'dsl_RestPart', cardinality 0..*).
+'dsl::Try' (role 'dsl_Try', cardinality 0..*) is associated with 'dsl::Process' (role 'dsl_Process', cardinality 0..*).
+'dsl::Try' (role 'dsl_Try6', cardinality 0..*) is associated with 'dsl::Action' (role 'dsl_Action', cardinality 0..*).
+'dsl::Expression' (role 'dsl_Expression', cardinality 0..*) is associated with 'dsl::Action' (role 'dsl_Action14', cardinality 0..*).
+'dsl::Catch' (role 'dsl_Catch11', cardinality 0..*) is associated with 'dsl::Action' (role 'dsl_Action12', cardinality 0..*).
+'dsl::Finally' (role 'dsl_Finally', cardinality 0..*) is associated with 'dsl::Process' (role 'dsl_Process4', cardinality 0..*).
+'dsl::Action' (role 'dsl_Action9', cardinality 0..*) is associated with 'dsl::Finally' (role 'dsl_Finally8', cardinality 0..*).

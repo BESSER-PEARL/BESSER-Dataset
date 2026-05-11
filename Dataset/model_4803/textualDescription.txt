@@ -1,0 +1,55 @@
+The model has 29 class(es).
+The class 'pltest::Interface' has no attributes.
+The class 'pltest::GrandChild' has no attributes.
+The class 'pltest::GrandGrandChildF' has no attributes.
+The class 'Child3' has no attributes.
+The class 'pltest::Red' has the following attributes: 'redness' of type int.
+The class 'pltest::TestClassifier' has no attributes.
+The class 'pltest::GrandChildD' has no attributes.
+The class 'GrandChildD' has no attributes.
+The class 'TestClassifier' has no attributes.
+The class 'pltest::Circle' has the following attributes: 'circumference' of type float; 'diameter' of type str; 'area' of type float.
+The class 'pltest::Numbers' has the following attributes: 'bigDecimal' of type str; 'int' of type int; 'float' of type float; 'bigInt' of type str; 'double' of type float; 'long' of type str.
+The class 'pltest::TestPackage' has no attributes.
+The class 'pltest::Common' has no attributes.
+The class 'pltest::Base' has no attributes.
+The class 'TestPackageableElement' has no attributes.
+The class 'Child1' has no attributes.
+The class 'pltest::TestPackageableElement' has no attributes.
+The class 'pltest::TestClass' has no attributes.
+The class 'pltest::GrandGrandChildE' has no attributes.
+The class 'Base' has no attributes.
+The class 'Common' has no attributes.
+The class 'pltest::Child1' has the following attributes: 'name' of type str.
+The class 'pltest::GrandChild2' has no attributes.
+The class 'pltest::TestInterface' has no attributes.
+The class 'pltest::WhatEver' has no attributes.
+The class 'pltest::Child3' has no attributes.
+The class 'Child2' has no attributes.
+The class 'Interface' has no attributes.
+The class 'pltest::Child2' has no attributes.
+'pltest::Common' is a specialization of 'Base'.
+'pltest::TestPackage' is a specialization of 'TestPackageableElement'.
+'pltest::GrandChild2' is a specialization of 'Child2'.
+'pltest::GrandChildD' is a specialization of 'Child3'.
+'pltest::GrandGrandChildF' is a specialization of 'GrandChildD'.
+'pltest::Child1' is a specialization of 'Interface'.
+'pltest::GrandGrandChildF' is a specialization of 'Child2'.
+'pltest::Child2' is a specialization of 'Interface'.
+'pltest::GrandGrandChildE' is a specialization of 'GrandChildD'.
+'pltest::TestInterface' is a specialization of 'TestClassifier'.
+'pltest::TestClass' is a specialization of 'TestClassifier'.
+'pltest::Child1' is a specialization of 'Common'.
+'pltest::Child2' is a specialization of 'Child3'.
+'pltest::GrandGrandChildE' is a specialization of 'Child1'.
+'pltest::GrandChild' is a specialization of 'Child1'.
+'pltest::Child2' is a specialization of 'Common'.
+'pltest::GrandChild' is a specialization of 'Child3'.
+'pltest::TestClassifier' is a specialization of 'TestPackageableElement'.
+'pltest::Common' (role 'pltest_Common2', cardinality 0..*) is associated with 'pltest::Child2' (role 'pltest_Child2', cardinality 0..*).
+'pltest::Circle' (role 'pltest_Circle5', cardinality 0..*) is associated with 'pltest::WhatEver' (role 'pltest_WhatEver', cardinality 0..*).
+'pltest::Child1' (role 'pltest_Child1', cardinality 0..*) is associated with 'pltest::Common' (role 'pltest_Common', cardinality 0..*).
+'pltest::Circle' (role 'pltest_Circle', cardinality 0..*) is associated with 'pltest::Red' (role 'pltest_Red', cardinality 0..*).
+'pltest::TestPackageableElement' (role 'pltest_TestPackageableElement', cardinality 0..*) is associated with 'pltest::TestPackage' (role 'pltest_TestPackage', cardinality 0..*).
+'pltest::TestClassifier' (role 'pltest_TestClassifier', cardinality 0..*) is associated with 'pltest::TestClass' (role 'pltest_TestClass', cardinality 0..*).
+'pltest::TestPackage' (role 'pltest_TestPackage8', cardinality 0..*) is associated with 'pltest::TestPackageableElement' (role 'pltest_TestPackageableElement9', cardinality 0..*).

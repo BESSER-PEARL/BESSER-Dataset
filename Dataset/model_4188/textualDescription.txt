@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'anyaBasic::Model' has no attributes.
+The class 'anyaBasic::Greeting' has the following attributes: 'name' of type str.
+'anyaBasic::Greeting' (role 'anyaBasic_Greeting', cardinality 0..*) is associated with 'anyaBasic::Model' (role 'anyaBasic_Model', cardinality 0..*).

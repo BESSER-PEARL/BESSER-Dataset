@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'main::sub2::Sub2Type' has the following attributes: 'name' of type str.
+The class 'main::sub1::Sub1Type' has the following attributes: 'name' of type str.
+The class 'main::MainType' has the following attributes: 'name' of type str.

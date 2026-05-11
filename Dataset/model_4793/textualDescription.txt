@@ -1,0 +1,110 @@
+The model has 51 class(es).
+The class 'types::Boolean' has no attributes.
+The class 'Typed' has no attributes.
+The class 'types::UShort' has no attributes.
+The class 'types::IdlWChar' has no attributes.
+The class 'types::Any' has no attributes.
+The class 'types::DefaultCaseLabel' has no attributes.
+The class 'types::LongDouble' has no attributes.
+The class 'Declarator' has no attributes.
+The class 'types::EnumType' has no attributes.
+The class 'types::StructType' has no attributes.
+The class 'TemplateType' has no attributes.
+The class 'types::ValueBaseType' has no attributes.
+The class 'types::LongLong' has no attributes.
+The class 'types::Long' has no attributes.
+The class 'IdlType' has no attributes.
+The class 'types::VoidType' has no attributes.
+The class 'types::IdlType' has no attributes.
+The class 'types::StructForwardDcl' has no attributes.
+The class 'types::ForwardDcl' has no attributes.
+The class 'types::ElementSpec' has no attributes.
+The class 'types::TypeDef' has no attributes.
+The class 'types::IdlChar' has no attributes.
+The class 'types::Case' has no attributes.
+The class 'types::Short' has no attributes.
+The class 'types::ULong' has no attributes.
+The class 'types::Expression' has no attributes.
+The class 'IdlTypeDcl' has no attributes.
+The class 'types::PrimitiveType' has no attributes.
+The class 'types::ULongLong' has no attributes.
+The class 'types::Enumeration' has no attributes.
+The class 'types::ExprCaseLabel' has no attributes.
+The class 'types::SequenceType' has no attributes.
+The class 'types::Double' has no attributes.
+The class 'types::FixedPtType' has no attributes.
+The class 'MemberContainer' has no attributes.
+The class 'types::CaseLabel' has no attributes.
+The class 'types::UnionForwardDcl' has no attributes.
+The class 'types::Switch' has no attributes.
+The class 'types::IdlString' has no attributes.
+The class 'types::TemplateType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'types::Octet' has no attributes.
+The class 'types::Float' has no attributes.
+The class 'CaseLabel' has no attributes.
+The class 'types::UnionType' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'types::Declarator' has no attributes.
+The class 'types::WChar' has no attributes.
+The class 'types::WString' has no attributes.
+The class 'types::IdlObject' has no attributes.
+The class 'FileRegion' has no attributes.
+'types::WString' is a specialization of 'TemplateType'.
+'types::Double' is a specialization of 'PrimitiveType'.
+'types::StructType' is a specialization of 'MemberContainer'.
+'types::VoidType' is a specialization of 'IdlType'.
+'types::DefaultCaseLabel' is a specialization of 'CaseLabel'.
+'types::Float' is a specialization of 'PrimitiveType'.
+'types::Long' is a specialization of 'PrimitiveType'.
+'types::ULong' is a specialization of 'PrimitiveType'.
+'types::EnumType' is a specialization of 'IdlTypeDcl'.
+'types::CaseLabel' is a specialization of 'FileRegion'.
+'types::ExprCaseLabel' is a specialization of 'CaseLabel'.
+'types::Any' is a specialization of 'PrimitiveType'.
+'types::StructType' is a specialization of 'IdlTypeDcl'.
+'types::UnionType' is a specialization of 'IdlTypeDcl'.
+'types::Octet' is a specialization of 'PrimitiveType'.
+'types::LongDouble' is a specialization of 'PrimitiveType'.
+'types::TypeDef' is a specialization of 'IdlTypeDcl'.
+'types::IdlObject' is a specialization of 'PrimitiveType'.
+'types::LongLong' is a specialization of 'PrimitiveType'.
+'types::UnionForwardDcl' is a specialization of 'IdlTypeDcl'.
+'types::Case' is a specialization of 'FileRegion'.
+'types::ValueBaseType' is a specialization of 'PrimitiveType'.
+'types::TypeDef' is a specialization of 'TypedElement'.
+'types::UShort' is a specialization of 'PrimitiveType'.
+'types::Enumeration' is a specialization of 'IdlTypeDcl'.
+'types::FixedPtType' is a specialization of 'TemplateType'.
+'types::WChar' is a specialization of 'PrimitiveType'.
+'types::IdlString' is a specialization of 'TemplateType'.
+'types::Enumeration' is a specialization of 'Declarator'.
+'types::SequenceType' is a specialization of 'Typed'.
+'types::ElementSpec' is a specialization of 'FileRegion'.
+'types::StructForwardDcl' is a specialization of 'IdlTypeDcl'.
+'types::ULongLong' is a specialization of 'PrimitiveType'.
+'types::Boolean' is a specialization of 'PrimitiveType'.
+'types::IdlWChar' is a specialization of 'PrimitiveType'.
+'types::PrimitiveType' is a specialization of 'IdlType'.
+'types::SequenceType' is a specialization of 'TemplateType'.
+'types::IdlChar' is a specialization of 'PrimitiveType'.
+'types::Switch' is a specialization of 'FileRegion'.
+'types::Short' is a specialization of 'PrimitiveType'.
+'types::TemplateType' is a specialization of 'IdlType'.
+'types::EnumType' (role 'types_EnumType', cardinality 0..*) is associated with 'types::Enumeration' (role 'types_Enumeration', cardinality 0..*).
+'types::StructForwardDcl' (role 'StructForwardDcl', cardinality 0..*) is associated with 'types::StructType' (role 'implementation19', cardinality 0..*).
+'types::StructType' (role 'StructType', cardinality 0..*) is associated with 'types::StructForwardDcl' (role 'forwardDcl24', cardinality 0..*).
+'types::Case' (role 'types_Case9', cardinality 0..*) is associated with 'types::ElementSpec' (role 'types_ElementSpec', cardinality 0..*).
+'types::Expression' (role 'types_Expression26', cardinality 0..*) is associated with 'types::FixedPtType' (role 'types_FixedPtType', cardinality 0..*).
+'types::IdlType' (role 'types_IdlType13', cardinality 0..*) is associated with 'types::ElementSpec' (role 'types_ElementSpec12', cardinality 0..*).
+'types::Expression' (role 'types_Expression29', cardinality 0..*) is associated with 'types::FixedPtType' (role 'types_FixedPtType28', cardinality 0..*).
+'types::UnionForwardDcl' (role 'forwardDcl', cardinality 0..*) is associated with 'types::UnionType' (role 'UnionType', cardinality 0..*).
+'types::TemplateType' (role 'types_TemplateType', cardinality 0..*) is associated with 'types::Expression' (role 'types_Expression21', cardinality 0..*).
+'types::Switch' (role 'types_Switch3', cardinality 0..*) is associated with 'types::IdlType' (role 'types_IdlType', cardinality 0..*).
+'types::ForwardDcl' (role 'types_ForwardDcl', cardinality 0..*) is associated with 'types::StructType' (role 'types_StructType', cardinality 0..*).
+'types::Case' (role 'types_Case7', cardinality 0..*) is associated with 'types::CaseLabel' (role 'types_CaseLabel', cardinality 0..*).
+'types::Declarator' (role 'types_Declarator', cardinality 0..*) is associated with 'types::ElementSpec' (role 'types_ElementSpec15', cardinality 0..*).
+'types::ExprCaseLabel' (role 'types_ExprCaseLabel', cardinality 0..*) is associated with 'types::Expression' (role 'types_Expression', cardinality 0..*).
+'types::Switch' (role 'types_Switch5', cardinality 0..*) is associated with 'types::Case' (role 'types_Case', cardinality 0..*).
+'types::Switch' (role 'types_Switch', cardinality 0..*) is associated with 'types::UnionType' (role 'types_UnionType', cardinality 0..*).
+'types::UnionForwardDcl' (role 'UnionForwardDcl', cardinality 0..*) is associated with 'types::UnionType' (role 'implementation', cardinality 0..*).

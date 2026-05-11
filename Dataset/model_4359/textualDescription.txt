@@ -1,0 +1,362 @@
+The model has 160 class(es).
+The class 'TrgTypeExpression' has no attributes.
+The class 'TrgVariablePlace' has no attributes.
+The class 'TrgBranch' has no attributes.
+The class 'TrgFunctionCall' has no attributes.
+The class 'SrcBusy' has no attributes.
+The class 'TrgSession' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgPropertyCallPlace' has the following attributes: 'propName' of type str.
+The class 'jointPackage::CPL2SPL::TrgControlMethodName' has the following attributes: 'name' of type str.
+The class 'SrcAction' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgDeclaration' has the following attributes: 'name' of type str.
+The class 'TrgNamedBranch' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgStatement' has no attributes.
+The class 'TrgSelectDefault' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgVariable' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgIntegerConstant' has the following attributes: 'value' of type int.
+The class 'TrgErrorResponse' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgFunctionCallExp' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgConstantExp' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgServerErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'jointPackage::CPL2SPL::TrgBreakStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgArgument' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSIPMethodName' has the following attributes: 'name' of type str.
+The class 'jointPackage::CPL2SPL::SrcOutgoing' has no attributes.
+The class 'SrcRedirection' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcAction' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgStructureProperty' has the following attributes: 'name' of type str.
+The class 'SrcReject' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgWhenStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgWithExp' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgRegistration' has no attributes.
+The class 'SrcSignallingAction' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSelectCase' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcIncoming' has no attributes.
+The class 'TrgDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgVariableDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgURIConstant' has the following attributes: 'uri' of type str.
+The class 'jointPackage::CPL2SPL::TrgSelectStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgNamedBranch' has the following attributes: 'name' of type str.
+The class 'SrcElement' has no attributes.
+The class 'SrcDefault' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgConstant' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcDefault' has no attributes.
+The class 'TrgMethodName' has no attributes.
+The class 'TrgPlace' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgDialog' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgPlace' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcNoAnswer' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSwitchedLanguage' has the following attributes: 'matches' of type str.
+The class 'TrgSelectMember' has no attributes.
+The class 'TrgVariableDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcNotPresent' has no attributes.
+The class 'TrgResponse' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgDeclarationStat' has no attributes.
+The class 'TrgService' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSequenceConstant' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgWhenHeader' has the following attributes: 'headerId' of type str.
+The class 'jointPackage::CPL2SPL::TrgDefaultBranch' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgStringConstant' has the following attributes: 'value' of type str.
+The class 'jointPackage::CPL2SPL::SrcAddressSwitch' has the following attributes: 'subField' of type str; 'field' of type str.
+The class 'jointPackage::CPL2SPL::TrgOperatorExp' has the following attributes: 'opName' of type str.
+The class 'jointPackage::CPL2SPL::SrcPrioritySwitch' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcProxy' has the following attributes: 'timeout' of type str; 'recurse' of type str; 'ordering' of type str.
+The class 'jointPackage::CPL2SPL::SrcFailure' has no attributes.
+The class 'TrgConstant' has no attributes.
+The class 'SrcOutgoing' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgBooleanConstant' has the following attributes: 'value' of type bool.
+The class 'jointPackage::CPL2SPL::TrgErrorResponse' has no attributes.
+The class 'SrcSwitchedAddress' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgMessageField' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcLocation' has the following attributes: 'url' of type str; 'clear' of type str; 'priority' of type str.
+The class 'jointPackage::CPL2SPL::TrgRedirectionErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'jointPackage::CPL2SPL::TrgBranch' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgReasonMessageField' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgReasonExp' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSubAction' has the following attributes: 'id' of type str.
+The class 'jointPackage::CPL2SPL::TrgForwardExp' has the following attributes: 'isParallel' of type bool.
+The class 'jointPackage::CPL2SPL::SrcNode' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgRemoteFunctionDeclaration' has the following attributes: 'functionLocation' of type str.
+The class 'jointPackage::CPL2SPL::SrcSwitchedAddress' has the following attributes: 'is_' of type str; 'subDomainOf' of type str; 'contains' of type str.
+The class 'jointPackage::CPL2SPL::TrgRequestURIExp' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcRedirection' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgLocalFunctionDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgForeachStat' has the following attributes: 'iteratorName' of type str.
+The class 'jointPackage::CPL2SPL::TrgBlockExp' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgLocatedElement' has the following attributes: 'commentsAfter' of type str; 'location' of type str; 'commentsBefore' of type str.
+The class 'jointPackage::CPL2SPL::TrgFunctionDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::JointMM' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcBusy' has no attributes.
+The class 'TrgArgument' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgProgram' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgMethodName' has no attributes.
+The class 'SrcNodeContainer' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgFunctionCallStat' has no attributes.
+The class 'SrcSubAction' has no attributes.
+The class 'SrcNotPresent' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSIPHeaderPlace' has the following attributes: 'header' of type str.
+The class 'jointPackage::CPL2SPL::TrgSequenceType' has the following attributes: 'size' of type int; 'modifier' of type str; 'type' of type str.
+The class 'SrcNode' has no attributes.
+The class 'SrcFailure' has no attributes.
+The class 'SrcSwitchedString' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcElement' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSwitch' has no attributes.
+The class 'SrcSwitchedPriority' has no attributes.
+The class 'TrgStatement' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcReject' has the following attributes: 'reason' of type str; 'status' of type str.
+The class 'TrgServerErrorResponse' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSimpleType' has the following attributes: 'type' of type str.
+The class 'TrgLocatedElement' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgClientErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'jointPackage::CPL2SPL::SrcOtherwise' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgExpression' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSwitchedTime' has the following attributes: 'byWeekNo' of type str; 'dtend' of type str; 'until' of type str; 'byMinute' of type str; 'byYearDay' of type str; 'bySecond' of type str; 'freq' of type str; 'byHour' of type str; 'byDay' of type str; 'bySetPos' of type str; 'dtstart' of type str; 'byMonth' of type str; 'count' of type str; 'wkst' of type str; 'duration' of type str; 'interval' of type str; 'byMonthDay' of type str.
+The class 'jointPackage::CPL2SPL::SrcSubCall' has the following attributes: 'ref' of type str.
+The class 'jointPackage::CPL2SPL::TrgDefinedType' has the following attributes: 'typeName' of type str.
+The class 'SrcIncoming' has no attributes.
+The class 'TrgVariable' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSwitchedPriority' has the following attributes: 'less' of type str; 'greater' of type str; 'equal' of type str.
+The class 'jointPackage::CPL2SPL::SrcSwitchedString' has the following attributes: 'is_' of type str; 'contains' of type str.
+The class 'SrcOtherwise' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcCPL' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgReturnStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgGlobalErrorResponse' has the following attributes: 'errorKind' of type str.
+The class 'TrgExpression' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcNodeContainer' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgResponse' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcRedirect' has the following attributes: 'permanent' of type str.
+The class 'jointPackage::CPL2SPL::TrgCompoundStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgPopExp' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgService' has the following attributes: 'name' of type str.
+The class 'jointPackage::CPL2SPL::TrgVariablePlace' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgStructureDeclaration' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgEvent' has the following attributes: 'eventId' of type str.
+The class 'jointPackage::CPL2SPL::SrcCPLModel' has no attributes.
+The class 'TrgMessageField' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSelectDefault' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgFunctionCall' has no attributes.
+The class 'SrcSwitchedTime' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgResponseConstant' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSuccessResponse' has the following attributes: 'successKind' of type str.
+The class 'jointPackage::CPL2SPL::SrcStringSwitch' has the following attributes: 'field' of type str.
+The class 'TrgWhenHeader' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcLanguageSwitch' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgTypeExpression' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgPushStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSession' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSelectMember' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgContinueStat' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcSignallingAction' has no attributes.
+The class 'TrgMethod' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgBODYExp' has no attributes.
+The class 'SrcSwitchedLanguage' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgHeadedMessageField' has the following attributes: 'headerId' of type str.
+The class 'TrgSelectCase' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgSetStat' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgMethod' has the following attributes: 'direction' of type str.
+The class 'SrcSwitch' has no attributes.
+The class 'jointPackage::CPL2SPL::SrcTimeSwitch' has the following attributes: 'tzurl' of type str; 'tzid' of type str.
+The class 'TrgFunctionDeclaration' has no attributes.
+The class 'SrcNoAnswer' has no attributes.
+The class 'jointPackage::CPL2SPL::TrgIfStat' has no attributes.
+The enumeration 'Direction' has the following literals: 'inout', 'out', 'in_'.
+The enumeration 'SIPMethod' has the following literals: 'CANCEL', 'INVITE', 'SUBSCRIBE', 'OPTIONS', 'REGISTER', 'REINVITE', 'REREGISTER', 'ACK', 'REACK', 'NOTIFY', 'RESUBSCRIBE', 'BYE'.
+The enumeration 'GlobalErrorKind' has the following literals: 'BUSY_EVERYWHERE', 'NOT_ACCEPTABLE', 'DOES_NOT_EXIST_ANYWHERE', 'DECLINE'.
+The enumeration 'Modifier' has the following literals: 'LIFO', 'FIFO'.
+The enumeration 'SuccessKind' has the following literals: 'OK', 'ACCEPTED'.
+The enumeration 'ServerErrorKind' has the following literals: 'SERVER_INTERNAL_ERROR', 'VERSION_NOT_SUPPORTED', 'NOT_IMPLEMENTED', 'BAD_GATEWAY', 'MESSAGE_TOO_LARGE', 'SERVICE_UNAVAILABLE', 'SERVER_TIMEOUT'.
+The enumeration 'FunctionLocation' has the following literals: 'local', 'remote'.
+The enumeration 'SIPHeader' has the following literals: 'MAX_FORWARDS', 'VIA', 'EVENT', 'TO', 'CONTACT', 'SUBSCRIPTION_STATE', 'CALL_ID', 'CSEQ', 'FROM'.
+The enumeration 'ClientErrorKind' has the following literals: 'REQUEST_ENTITY_TOO_LARGE', 'REQUEST_TIMEOUT', 'INTERVAL_TOO_BRIEF', 'REQUEST_TERMINATED', 'NOT_ACCEPTABLE_HERE', 'FORBIDDEN', 'CALL_OR_TRANSACTION_DOES_NOT_EXIST', 'NOT_FOUND', 'NOT_ACCEPTABLE', 'BAD_REQUEST', 'UNDECIPHERABLE', 'BAD_EXTENSION', 'PROXY_AUTHENTICATION_REQUIRED', 'LOOP_DETECTED', 'EXTENSION_REQUIRED', 'TEMPORARILY_UNAVAILABLE', 'METHOD_NOT_ALLOWED', 'ADDRESS_INCOMPLETE', 'AMBIGUOUS', 'BUSY_HERE', 'TOO_MANY_HOPS', 'REQUEST_PENDING', 'UNAUTHORIZED', 'REQUESTURI_TOO_LONG', 'PAYMENT_REQUIRED', 'UNSUPPORTED_MEDIA_TYPE', 'GONE', 'UNSUPPORTED_URI_SCHEME'.
+The enumeration 'ControlMethod' has the following literals: 'uninvite', 'unregister', 'undeploy', 'unsubscribe', 'deploy'.
+The enumeration 'RedirectionErrorKind' has the following literals: 'ALTERNATIVE_SERVICE', 'MOVED_TEMPORARILY', 'USE_PROXY', 'MULTIPLE_CHOICES', 'MOVED_PERMANENTLY'.
+The enumeration 'PrimitiveType' has the following literals: 'uri', 'string', 'void', 'time', 'bool', 'int', 'response', 'request'.
+'jointPackage::CPL2SPL::TrgPushStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgStructureProperty' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcSubCall' is a specialization of 'SrcNode'.
+'jointPackage::CPL2SPL::TrgPropertyCallPlace' is a specialization of 'TrgVariablePlace'.
+'jointPackage::CPL2SPL::TrgCompoundStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::SrcSwitchedLanguage' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgVariable' is a specialization of 'TrgVariablePlace'.
+'jointPackage::CPL2SPL::TrgService' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcTimeSwitch' is a specialization of 'SrcSwitch'.
+'jointPackage::CPL2SPL::TrgBooleanConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::TrgBreakStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::SrcCPL' is a specialization of 'SrcElement'.
+'jointPackage::CPL2SPL::SrcNoAnswer' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::SrcSwitchedString' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgFunctionCallExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgMessageField' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgIntegerConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::TrgVariablePlace' is a specialization of 'TrgPlace'.
+'jointPackage::CPL2SPL::TrgRedirectionErrorResponse' is a specialization of 'TrgErrorResponse'.
+'jointPackage::CPL2SPL::TrgIfStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::SrcAction' is a specialization of 'SrcNode'.
+'jointPackage::CPL2SPL::TrgVariableDeclaration' is a specialization of 'TrgDeclaration'.
+'jointPackage::CPL2SPL::TrgRequestURIExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgMethodName' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgOperatorExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::SrcPrioritySwitch' is a specialization of 'SrcSwitch'.
+'jointPackage::CPL2SPL::TrgResponseConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::TrgMethod' is a specialization of 'TrgSession'.
+'jointPackage::CPL2SPL::TrgForeachStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgReasonExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::SrcNode' is a specialization of 'SrcElement'.
+'jointPackage::CPL2SPL::TrgStringConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::SrcNodeContainer' is a specialization of 'SrcElement'.
+'jointPackage::CPL2SPL::TrgBODYExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgHeadedMessageField' is a specialization of 'TrgMessageField'.
+'jointPackage::CPL2SPL::TrgErrorResponse' is a specialization of 'TrgResponse'.
+'jointPackage::CPL2SPL::TrgSIPHeaderPlace' is a specialization of 'TrgPlace'.
+'jointPackage::CPL2SPL::SrcAddressSwitch' is a specialization of 'SrcSwitch'.
+'jointPackage::CPL2SPL::SrcBusy' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgFunctionDeclaration' is a specialization of 'TrgDeclaration'.
+'jointPackage::CPL2SPL::TrgSetStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::SrcOtherwise' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgReturnStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgClientErrorResponse' is a specialization of 'TrgErrorResponse'.
+'jointPackage::CPL2SPL::TrgServerErrorResponse' is a specialization of 'TrgErrorResponse'.
+'jointPackage::CPL2SPL::TrgBlockExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::SrcReject' is a specialization of 'SrcSignallingAction'.
+'jointPackage::CPL2SPL::SrcIncoming' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgSelectDefault' is a specialization of 'TrgSelectMember'.
+'jointPackage::CPL2SPL::TrgURIConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::SrcSubAction' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgDefinedType' is a specialization of 'TrgTypeExpression'.
+'jointPackage::CPL2SPL::SrcStringSwitch' is a specialization of 'SrcSwitch'.
+'jointPackage::CPL2SPL::SrcSwitch' is a specialization of 'SrcNode'.
+'jointPackage::CPL2SPL::SrcRedirect' is a specialization of 'SrcSignallingAction'.
+'jointPackage::CPL2SPL::TrgTypeExpression' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgNamedBranch' is a specialization of 'TrgBranch'.
+'jointPackage::CPL2SPL::SrcRedirection' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgResponse' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgWhenStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgDefaultBranch' is a specialization of 'TrgBranch'.
+'jointPackage::CPL2SPL::SrcSwitchedPriority' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgWithExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgStructureDeclaration' is a specialization of 'TrgDeclaration'.
+'jointPackage::CPL2SPL::TrgStatement' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgRemoteFunctionDeclaration' is a specialization of 'TrgFunctionDeclaration'.
+'jointPackage::CPL2SPL::TrgProgram' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcLocation' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgConstantExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgDialog' is a specialization of 'TrgSession'.
+'jointPackage::CPL2SPL::TrgFunctionCall' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgBranch' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcLocation' is a specialization of 'SrcNode'.
+'jointPackage::CPL2SPL::SrcNotPresent' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::SrcFailure' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgSession' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgLocalFunctionDeclaration' is a specialization of 'TrgFunctionDeclaration'.
+'jointPackage::CPL2SPL::TrgPopExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgPlace' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgArgument' is a specialization of 'TrgVariableDeclaration'.
+'jointPackage::CPL2SPL::TrgSelectStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgDeclarationStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgDeclaration' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcLanguageSwitch' is a specialization of 'SrcSwitch'.
+'jointPackage::CPL2SPL::TrgSequenceType' is a specialization of 'TrgTypeExpression'.
+'jointPackage::CPL2SPL::TrgSIPMethodName' is a specialization of 'TrgMethodName'.
+'jointPackage::CPL2SPL::TrgContinueStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgSuccessResponse' is a specialization of 'TrgResponse'.
+'jointPackage::CPL2SPL::SrcSwitchedAddress' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::SrcSignallingAction' is a specialization of 'SrcAction'.
+'jointPackage::CPL2SPL::SrcProxy' is a specialization of 'SrcSignallingAction'.
+'jointPackage::CPL2SPL::TrgSelectCase' is a specialization of 'TrgSelectMember'.
+'jointPackage::CPL2SPL::TrgGlobalErrorResponse' is a specialization of 'TrgErrorResponse'.
+'jointPackage::CPL2SPL::TrgSequenceConstant' is a specialization of 'TrgConstant'.
+'jointPackage::CPL2SPL::TrgConstant' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::SrcSwitchedTime' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::SrcOutgoing' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgEvent' is a specialization of 'TrgSession'.
+'jointPackage::CPL2SPL::TrgSimpleType' is a specialization of 'TrgTypeExpression'.
+'jointPackage::CPL2SPL::TrgSelectMember' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgExpression' is a specialization of 'TrgLocatedElement'.
+'jointPackage::CPL2SPL::TrgRegistration' is a specialization of 'TrgSession'.
+'jointPackage::CPL2SPL::TrgForwardExp' is a specialization of 'TrgExpression'.
+'jointPackage::CPL2SPL::TrgReasonMessageField' is a specialization of 'TrgMessageField'.
+'jointPackage::CPL2SPL::SrcDefault' is a specialization of 'SrcNodeContainer'.
+'jointPackage::CPL2SPL::TrgControlMethodName' is a specialization of 'TrgMethodName'.
+'jointPackage::CPL2SPL::TrgFunctionCallStat' is a specialization of 'TrgStatement'.
+'jointPackage::CPL2SPL::TrgWhenHeader' is a specialization of 'TrgVariableDeclaration'.
+'TrgSession' (role 'TrgSession36', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgRegistration' (role 'jointPackage_CPL2SPL_TrgRegistration35', cardinality 0..*).
+'SrcSubAction' (role 'SrcSubAction', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcCPL' (role 'jointPackage_CPL2SPL_SrcCPL', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression84', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgReturnStat' (role 'jointPackage_CPL2SPL_TrgReturnStat', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgWithExp' (role 'jointPackage_CPL2SPL_TrgWithExp138', cardinality 0..*) is associated with 'TrgMessageField' (role 'TrgMessageField', cardinality 0..*).
+'SrcOtherwise' (role 'SrcOtherwise', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcSwitch' (role 'jointPackage_CPL2SPL_SrcSwitch26', cardinality 0..*).
+'TrgConstant' (role 'TrgConstant151', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSequenceConstant' (role 'jointPackage_CPL2SPL_TrgSequenceConstant', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgFunctionDeclaration' (role 'jointPackage_CPL2SPL_TrgFunctionDeclaration', cardinality 0..*) is associated with 'TrgTypeExpression' (role 'TrgTypeExpression63', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgEvent' (role 'jointPackage_CPL2SPL_TrgEvent', cardinality 0..*) is associated with 'TrgDeclaration' (role 'TrgDeclaration42', cardinality 0..*).
+'TrgConstant' (role 'TrgConstant125', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSelectCase' (role 'jointPackage_CPL2SPL_TrgSelectCase', cardinality 0..*).
+'TrgStatement' (role 'TrgStatement123', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSelectMember' (role 'jointPackage_CPL2SPL_TrgSelectMember', cardinality 0..*).
+'TrgVariable' (role 'TrgVariable', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgWhenStat' (role 'jointPackage_CPL2SPL_TrgWhenStat', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgOperatorExp' (role 'jointPackage_CPL2SPL_TrgOperatorExp131', cardinality 0..*) is associated with 'TrgExpression' (role 'TrgExpression132', cardinality 0..*).
+'TrgArgument' (role 'TrgArgument', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgMethod' (role 'jointPackage_CPL2SPL_TrgMethod51', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcNodeContainer' (role 'jointPackage_CPL2SPL_SrcNodeContainer', cardinality 0..*) is associated with 'SrcNode' (role 'SrcNode', cardinality 0..*).
+'TrgServerErrorResponse' (role 'TrgServerErrorResponse', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::JointMM' (role 'jointPackage_CPL2SPL_JointMM2', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgWhenStat' (role 'jointPackage_CPL2SPL_TrgWhenStat99', cardinality 0..*) is associated with 'TrgStatement' (role 'TrgStatement100', cardinality 0..*).
+'TrgWhenHeader' (role 'TrgWhenHeader', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgWhenStat' (role 'jointPackage_CPL2SPL_TrgWhenStat97', cardinality 0..*).
+'TrgVariablePlace' (role 'TrgVariablePlace', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgPropertyCallPlace' (role 'jointPackage_CPL2SPL_TrgPropertyCallPlace', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression80', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSetStat' (role 'jointPackage_CPL2SPL_TrgSetStat79', cardinality 0..*).
+'SrcOutgoing' (role 'SrcOutgoing', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcCPL' (role 'jointPackage_CPL2SPL_SrcCPL6', cardinality 0..*).
+'TrgSelectDefault' (role 'TrgSelectDefault', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSelectStat' (role 'jointPackage_CPL2SPL_TrgSelectStat114', cardinality 0..*).
+'TrgTypeExpression' (role 'TrgTypeExpression59', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgVariableDeclaration' (role 'jointPackage_CPL2SPL_TrgVariableDeclaration', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgRegistration' (role 'jointPackage_CPL2SPL_TrgRegistration', cardinality 0..*) is associated with 'TrgDeclaration' (role 'TrgDeclaration33', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcAddressSwitch' (role 'jointPackage_CPL2SPL_SrcAddressSwitch', cardinality 0..*) is associated with 'SrcSwitchedAddress' (role 'SrcSwitchedAddress', cardinality 0..*).
+'TrgFunctionDeclaration' (role 'TrgFunctionDeclaration', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgFunctionCall' (role 'jointPackage_CPL2SPL_TrgFunctionCall', cardinality 0..*).
+'TrgStatement' (role 'TrgStatement94', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgIfStat' (role 'jointPackage_CPL2SPL_TrgIfStat93', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgBranch' (role 'jointPackage_CPL2SPL_TrgBranch', cardinality 0..*) is associated with 'TrgStatement' (role 'TrgStatement57', cardinality 0..*).
+'TrgMethod' (role 'TrgMethod', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgDialog' (role 'jointPackage_CPL2SPL_TrgDialog40', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgStructureProperty' (role 'jointPackage_CPL2SPL_TrgStructureProperty', cardinality 0..*) is associated with 'TrgTypeExpression' (role 'TrgTypeExpression', cardinality 0..*).
+'TrgDeclaration' (role 'TrgDeclaration147', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgVariable' (role 'jointPackage_CPL2SPL_TrgVariable', cardinality 0..*).
+'TrgStatement' (role 'TrgStatement108', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgForeachStat' (role 'jointPackage_CPL2SPL_TrgForeachStat107', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgCompoundStat' (role 'jointPackage_CPL2SPL_TrgCompoundStat', cardinality 0..*) is associated with 'TrgStatement' (role 'TrgStatement76', cardinality 0..*).
+'TrgPlace' (role 'TrgPlace', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSetStat' (role 'jointPackage_CPL2SPL_TrgSetStat', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgPushStat' (role 'jointPackage_CPL2SPL_TrgPushStat', cardinality 0..*) is associated with 'TrgPlace' (role 'TrgPlace117', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcCPL' (role 'jointPackage_CPL2SPL_SrcCPL8', cardinality 0..*) is associated with 'SrcIncoming' (role 'SrcIncoming', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgReturnStat' (role 'jointPackage_CPL2SPL_TrgReturnStat86', cardinality 0..*) is associated with 'TrgNamedBranch' (role 'TrgNamedBranch', cardinality 0..*).
+'TrgDeclaration' (role 'TrgDeclaration', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgService' (role 'jointPackage_CPL2SPL_TrgService', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcProxy' (role 'jointPackage_CPL2SPL_SrcProxy20', cardinality 0..*) is associated with 'SrcFailure' (role 'SrcFailure', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcPrioritySwitch' (role 'jointPackage_CPL2SPL_SrcPrioritySwitch', cardinality 0..*) is associated with 'SrcSwitchedPriority' (role 'SrcSwitchedPriority', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcProxy' (role 'jointPackage_CPL2SPL_SrcProxy16', cardinality 0..*) is associated with 'SrcNoAnswer' (role 'SrcNoAnswer', cardinality 0..*).
+'TrgFunctionCall' (role 'TrgFunctionCall144', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgFunctionCallExp' (role 'jointPackage_CPL2SPL_TrgFunctionCallExp', cardinality 0..*).
+'SrcNotPresent' (role 'SrcNotPresent', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcSwitch' (role 'jointPackage_CPL2SPL_SrcSwitch', cardinality 0..*).
+'SrcBusy' (role 'SrcBusy', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcProxy' (role 'jointPackage_CPL2SPL_SrcProxy', cardinality 0..*).
+'TrgConstant' (role 'TrgConstant127', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgConstantExp' (role 'jointPackage_CPL2SPL_TrgConstantExp', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgFunctionCall' (role 'jointPackage_CPL2SPL_TrgFunctionCall73', cardinality 0..*) is associated with 'TrgExpression' (role 'TrgExpression74', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcProxy' (role 'jointPackage_CPL2SPL_SrcProxy22', cardinality 0..*) is associated with 'SrcDefault' (role 'SrcDefault', cardinality 0..*).
+'TrgFunctionCall' (role 'TrgFunctionCall', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgFunctionCallStat' (role 'jointPackage_CPL2SPL_TrgFunctionCallStat', cardinality 0..*).
+'SrcSwitchedTime' (role 'SrcSwitchedTime', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcTimeSwitch' (role 'jointPackage_CPL2SPL_SrcTimeSwitch', cardinality 0..*).
+'TrgArgument' (role 'TrgArgument66', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgFunctionDeclaration' (role 'jointPackage_CPL2SPL_TrgFunctionDeclaration65', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression134', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgForwardExp' (role 'jointPackage_CPL2SPL_TrgForwardExp', cardinality 0..*).
+'TrgArgument' (role 'TrgArgument70', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgStructureDeclaration' (role 'jointPackage_CPL2SPL_TrgStructureDeclaration', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgWhenHeader' (role 'jointPackage_CPL2SPL_TrgWhenHeader', cardinality 0..*) is associated with 'TrgConstant' (role 'TrgConstant', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression110', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSelectStat' (role 'jointPackage_CPL2SPL_TrgSelectStat', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgForeachStat' (role 'jointPackage_CPL2SPL_TrgForeachStat', cardinality 0..*) is associated with 'TrgExpression' (role 'TrgExpression105', cardinality 0..*).
+'TrgDeclaration' (role 'TrgDeclaration38', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgDialog' (role 'jointPackage_CPL2SPL_TrgDialog', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgIfStat' (role 'jointPackage_CPL2SPL_TrgIfStat90', cardinality 0..*) is associated with 'TrgStatement' (role 'TrgStatement91', cardinality 0..*).
+'TrgStatement' (role 'TrgStatement', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgMethod' (role 'jointPackage_CPL2SPL_TrgMethod53', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgDeclarationStat' (role 'jointPackage_CPL2SPL_TrgDeclarationStat', cardinality 0..*) is associated with 'TrgDeclaration' (role 'TrgDeclaration82', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression129', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgOperatorExp' (role 'jointPackage_CPL2SPL_TrgOperatorExp', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgResponseConstant' (role 'jointPackage_CPL2SPL_TrgResponseConstant', cardinality 0..*) is associated with 'TrgResponse' (role 'TrgResponse', cardinality 0..*).
+'TrgPlace' (role 'TrgPlace142', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgPopExp' (role 'jointPackage_CPL2SPL_TrgPopExp', cardinality 0..*).
+'TrgSession' (role 'TrgSession', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgService' (role 'jointPackage_CPL2SPL_TrgService31', cardinality 0..*).
+'TrgStatement' (role 'TrgStatement103', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgWhenStat' (role 'jointPackage_CPL2SPL_TrgWhenStat102', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression140', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgBlockExp' (role 'jointPackage_CPL2SPL_TrgBlockExp', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgProgram' (role 'jointPackage_CPL2SPL_TrgProgram', cardinality 0..*) is associated with 'TrgService' (role 'TrgService', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgMethod' (role 'jointPackage_CPL2SPL_TrgMethod49', cardinality 0..*) is associated with 'TrgMethodName' (role 'TrgMethodName', cardinality 0..*).
+'SrcElement' (role 'SrcElement', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::SrcCPLModel' (role 'jointPackage_CPL2SPL_SrcCPLModel', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcLanguageSwitch' (role 'jointPackage_CPL2SPL_SrcLanguageSwitch', cardinality 0..*) is associated with 'SrcSwitchedLanguage' (role 'SrcSwitchedLanguage', cardinality 0..*).
+'SrcReject' (role 'SrcReject', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::JointMM' (role 'jointPackage_CPL2SPL_JointMM', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcStringSwitch' (role 'jointPackage_CPL2SPL_SrcStringSwitch', cardinality 0..*) is associated with 'SrcSwitchedString' (role 'SrcSwitchedString', cardinality 0..*).
+'jointPackage::CPL2SPL::SrcProxy' (role 'jointPackage_CPL2SPL_SrcProxy18', cardinality 0..*) is associated with 'SrcRedirection' (role 'SrcRedirection', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgLocalFunctionDeclaration' (role 'jointPackage_CPL2SPL_TrgLocalFunctionDeclaration', cardinality 0..*) is associated with 'TrgStatement' (role 'TrgStatement68', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgMethod' (role 'jointPackage_CPL2SPL_TrgMethod55', cardinality 0..*) is associated with 'TrgBranch' (role 'TrgBranch', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression120', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgPushStat' (role 'jointPackage_CPL2SPL_TrgPushStat119', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgVariableDeclaration' (role 'jointPackage_CPL2SPL_TrgVariableDeclaration61', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgEvent' (role 'jointPackage_CPL2SPL_TrgEvent44', cardinality 0..*) is associated with 'TrgMethod' (role 'TrgMethod45', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgMethod' (role 'jointPackage_CPL2SPL_TrgMethod', cardinality 0..*) is associated with 'TrgTypeExpression' (role 'TrgTypeExpression47', cardinality 0..*).
+'jointPackage::CPL2SPL::TrgMessageField' (role 'jointPackage_CPL2SPL_TrgMessageField', cardinality 0..*) is associated with 'TrgExpression' (role 'TrgExpression149', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression136', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgWithExp' (role 'jointPackage_CPL2SPL_TrgWithExp', cardinality 0..*).
+'TrgSelectCase' (role 'TrgSelectCase', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgSelectStat' (role 'jointPackage_CPL2SPL_TrgSelectStat112', cardinality 0..*).
+'TrgExpression' (role 'TrgExpression88', cardinality 0..*) is associated with 'jointPackage::CPL2SPL::TrgIfStat' (role 'jointPackage_CPL2SPL_TrgIfStat', cardinality 0..*).

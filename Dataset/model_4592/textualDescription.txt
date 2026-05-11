@@ -1,0 +1,44 @@
+The model has 18 class(es).
+The class 'minuml2::ForkNode' has no attributes.
+The class 'minuml2::ActivityEdge' has no attributes.
+The class 'minuml2::Activity' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'minuml2::ModelElement' has the following attributes: 'name' of type str.
+The class 'minuml2::JoinNode' has no attributes.
+The class 'minuml2::InitialNode' has no attributes.
+The class 'minuml2::ActivityNode' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'minuml2::ObjectFlow' has no attributes.
+The class 'minuml2::DecisionNode' has no attributes.
+The class 'minuml2::OpaqueExpression' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'minuml2::ActivityPartition' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'minuml2::OpaqueAction' has no attributes.
+The class 'minuml2::ActivityFinalNode' has no attributes.
+The class 'minuml2::ObjectNode' has no attributes.
+The class 'minuml2::ControlFlow' has no attributes.
+'minuml2::ControlFlow' is a specialization of 'ActivityEdge'.
+'minuml2::JoinNode' is a specialization of 'ActivityNode'.
+'minuml2::ActivityPartition' is a specialization of 'ModelElement'.
+'minuml2::ActivityNode' is a specialization of 'ModelElement'.
+'minuml2::Activity' is a specialization of 'ModelElement'.
+'minuml2::DecisionNode' is a specialization of 'ActivityNode'.
+'minuml2::ObjectFlow' is a specialization of 'ActivityEdge'.
+'minuml2::InitialNode' is a specialization of 'ActivityNode'.
+'minuml2::ObjectNode' is a specialization of 'ActivityNode'.
+'minuml2::OpaqueAction' is a specialization of 'ActivityNode'.
+'minuml2::ForkNode' is a specialization of 'ActivityNode'.
+'minuml2::ActivityFinalNode' is a specialization of 'ActivityNode'.
+'minuml2::ActivityEdge' is a specialization of 'ModelElement'.
+'minuml2::ObjectFlow' (role 'minuml2_ObjectFlow', cardinality 0..*) is associated with 'minuml2::ModelElement' (role 'minuml2_ModelElement22', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'ActivityNode18', cardinality 0..*).
+'minuml2::Activity' (role 'minuml2_Activity', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'minuml2_ActivityNode', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge20', cardinality 0..*) is associated with 'minuml2::OpaqueExpression' (role 'minuml2_OpaqueExpression', cardinality 0..*).
+'minuml2::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'minuml2::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge12', cardinality 0..*) is associated with 'minuml2::ActivityPartition' (role 'minuml2_ActivityPartition11', cardinality 0..*).
+'minuml2::ActivityNode' (role 'minuml2_ActivityNode9', cardinality 0..*) is associated with 'minuml2::ActivityPartition' (role 'minuml2_ActivityPartition8', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge', cardinality 0..*) is associated with 'minuml2::Activity' (role 'minuml2_Activity3', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'ActivityEdge', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'source', cardinality 0..*).
+'minuml2::ModelElement' (role 'minuml2_ModelElement', cardinality 0..*) is associated with 'minuml2::ActivityPartition' (role 'minuml2_ActivityPartition', cardinality 0..*).
+'minuml2::ActivityNode' (role 'target', cardinality 0..*) is associated with 'minuml2::ActivityEdge' (role 'ActivityEdge15', cardinality 0..*).
+'minuml2::Activity' (role 'minuml2_Activity5', cardinality 0..*) is associated with 'minuml2::ActivityPartition' (role 'minuml2_ActivityPartition6', cardinality 0..*).

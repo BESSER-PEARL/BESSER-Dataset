@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Element' has no attributes.
+The class 'myDsl::Element' has no attributes.
+The class 'myDsl::Person' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Greeting' has no attributes.
+'myDsl::Greeting' is a specialization of 'Element'.
+'myDsl::Person' is a specialization of 'Element'.
+'myDsl::Element' (role 'myDsl_Element', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).
+'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*) is associated with 'myDsl::Person' (role 'myDsl_Person', cardinality 0..*).

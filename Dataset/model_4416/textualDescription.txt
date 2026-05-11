@@ -1,0 +1,83 @@
+The model has 41 class(es).
+The class 'mindstorms::Release' has no attributes.
+The class 'mindstorms::UltrasonicSensor' has the following attributes: 'value' of type float; 'operator' of type str.
+The class 'mindstorms::ColorSensor' has the following attributes: 'color' of type str.
+The class 'mindstorms::Grab' has no attributes.
+The class 'Block' has no attributes.
+The class 'mindstorms::Main' has no attributes.
+The class 'mindstorms::Instruction' has no attributes.
+The class 'mindstorms::NamedElement' has the following attributes: 'name' of type str.
+The class 'mindstorms::ExploreForward' has no attributes.
+The class 'mindstorms::Condition' has no attributes.
+The class 'mindstorms::TouchSensor' has the following attributes: 'isPressed' of type bool.
+The class 'mindstorms::GoToEnemy' has no attributes.
+The class 'mindstorms::Flow' has no attributes.
+The class 'mindstorms::BlockContainer' has no attributes.
+The class 'mindstorms::ReuseInstruction' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'mindstorms::ReturnToBase' has no attributes.
+The class 'Flow' has no attributes.
+The class 'mindstorms::GoBackward' has the following attributes: 'infinite' of type bool; 'cm' of type int.
+The class 'mindstorms::AvoidObstacle' has no attributes.
+The class 'mindstorms::Procedure' has no attributes.
+The class 'mindstorms::Block' has no attributes.
+The class 'mindstorms::Behavior' has no attributes.
+The class 'mindstorms::Rotate' has the following attributes: 'random' of type bool; 'degrees' of type int.
+The class 'mindstorms::Sensor' has no attributes.
+The class 'mindstorms::ConditionContainer' has no attributes.
+The class 'ConditionContainer' has no attributes.
+The class 'Action' has no attributes.
+The class 'mindstorms::ReturnBottleToBase' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'mindstorms::If' has no attributes.
+The class 'mindstorms::Action' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'mindstorms::GoTo' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'mindstorms::Delay' has the following attributes: 'ms' of type int.
+The class 'NamedElement' has no attributes.
+The class 'Condition' has no attributes.
+The class 'BlockContainer' has no attributes.
+The class 'mindstorms::While' has no attributes.
+The class 'mindstorms::GoForward' has the following attributes: 'infinite' of type bool; 'cm' of type int.
+The class 'mindstorms::Arbitrator' has no attributes.
+The enumeration 'Color' has the following literals: 'NONE', 'MAGENTA', 'WHITE', 'GRAY', 'BLUE', 'PINK', 'CYAN', 'BROWN', 'RED', 'DARK_GRAY', 'ORANGE', 'GREEN', 'BLACK', 'YELLOW', 'LIGHT_GRAY'.
+The enumeration 'OperatorKind' has the following literals: 'notEqual', 'lowerOrEqual', 'equal', 'upperOrEqual'.
+'mindstorms::GoForward' is a specialization of 'Action'.
+'mindstorms::Flow' is a specialization of 'BlockContainer'.
+'mindstorms::Sensor' is a specialization of 'Condition'.
+'mindstorms::If' is a specialization of 'Flow'.
+'mindstorms::Behavior' is a specialization of 'NamedElement'.
+'mindstorms::TouchSensor' is a specialization of 'Sensor'.
+'mindstorms::Arbitrator' is a specialization of 'Instruction'.
+'mindstorms::Delay' is a specialization of 'Action'.
+'mindstorms::AvoidObstacle' is a specialization of 'Behavior'.
+'mindstorms::Arbitrator' is a specialization of 'ConditionContainer'.
+'mindstorms::ReturnBottleToBase' is a specialization of 'Behavior'.
+'mindstorms::GoBackward' is a specialization of 'Action'.
+'mindstorms::Grab' is a specialization of 'Action'.
+'mindstorms::Block' is a specialization of 'Instruction'.
+'mindstorms::ReturnToBase' is a specialization of 'Action'.
+'mindstorms::Procedure' is a specialization of 'Instruction'.
+'mindstorms::ColorSensor' is a specialization of 'Sensor'.
+'mindstorms::Release' is a specialization of 'Action'.
+'mindstorms::Procedure' is a specialization of 'BlockContainer'.
+'mindstorms::Instruction' is a specialization of 'NamedElement'.
+'mindstorms::Rotate' is a specialization of 'Action'.
+'mindstorms::While' is a specialization of 'Flow'.
+'mindstorms::GoToEnemy' is a specialization of 'Action'.
+'mindstorms::Sensor' is a specialization of 'NamedElement'.
+'mindstorms::ReuseInstruction' is a specialization of 'Instruction'.
+'mindstorms::UltrasonicSensor' is a specialization of 'Sensor'.
+'mindstorms::Behavior' is a specialization of 'BlockContainer'.
+'mindstorms::ExploreForward' is a specialization of 'Behavior'.
+'mindstorms::Action' is a specialization of 'Block'.
+'mindstorms::Flow' is a specialization of 'ConditionContainer'.
+'mindstorms::Flow' is a specialization of 'Block'.
+'mindstorms::Behavior' is a specialization of 'ConditionContainer'.
+'mindstorms::GoTo' is a specialization of 'Action'.
+'mindstorms::Arbitrator' (role 'mindstorms_Arbitrator4', cardinality 0..*) is associated with 'mindstorms::Behavior' (role 'mindstorms_Behavior5', cardinality 0..*).
+'mindstorms::ConditionContainer' (role 'mindstorms_ConditionContainer', cardinality 0..*) is associated with 'mindstorms::Condition' (role 'mindstorms_Condition', cardinality 0..*).
+'mindstorms::Instruction' (role 'mindstorms_Instruction', cardinality 0..*) is associated with 'mindstorms::Main' (role 'mindstorms_Main', cardinality 0..*).
+'mindstorms::BlockContainer' (role 'mindstorms_BlockContainer', cardinality 0..*) is associated with 'mindstorms::Block' (role 'mindstorms_Block', cardinality 0..*).
+'mindstorms::ReuseInstruction' (role 'mindstorms_ReuseInstruction', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction7', cardinality 0..*).
+'mindstorms::Arbitrator' (role 'mindstorms_Arbitrator', cardinality 0..*) is associated with 'mindstorms::Behavior' (role 'mindstorms_Behavior', cardinality 0..*).

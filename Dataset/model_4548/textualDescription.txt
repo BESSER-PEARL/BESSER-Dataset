@@ -1,0 +1,67 @@
+The model has 24 class(es).
+The class 'dronesStructure::Drone' has no attributes.
+The class 'dronesStructure::Position' has the following attributes: 'y' of type float; 'x' of type float; 'z' of type float.
+The class 'dronesStructure::Capability' has no attributes.
+The class 'Region' has no attributes.
+The class 'dronesStructure::MovementCapability' has no attributes.
+The class 'dronesStructure::RequiredCapability' has the following attributes: 'minimalValue' of type float.
+The class 'NamedElement' has no attributes.
+The class 'dronesStructure::ScanningCapability' has no attributes.
+The class 'dronesStructure::DroneType' has the following attributes: 'idleEneryConsumption' of type float; 'maxBatteryCapacity' of type float; 'weight' of type float.
+The class 'dronesStructure::Obstacle' has no attributes.
+The class 'dronesStructure::Task' has no attributes.
+The class 'dronesStructure::Role' has no attributes.
+The class 'dronesStructure::Charger' has no attributes.
+The class 'Capability' has no attributes.
+The class 'dronesStructure::ProvidedCapability' has the following attributes: 'maximalValue' of type float; 'energyConsumptionPerValue' of type float.
+The class 'dronesStructure::ScenarioBounds' has no attributes.
+The class 'dronesStructure::DronesStructure' has no attributes.
+The class 'dronesStructure::Dimension' has the following attributes: 'height' of type float; 'depth' of type float; 'width' of type float.
+The class 'dronesStructure::NamedElement' has the following attributes: 'name' of type str.
+The class 'AABB' has no attributes.
+The class 'dronesStructure::Scenario' has the following attributes: 'maximumCommunicationDistance' of type float; 'safeCommunicationDistance' of type float.
+The class 'dronesStructure::AABB' has no attributes.
+The class 'dronesStructure::Region' has no attributes.
+The class 'dronesStructure::CooperativeAction' has the following attributes: 'duration' of type float; 'startTimeout' of type float.
+'dronesStructure::Obstacle' is a specialization of 'NamedElement'.
+'dronesStructure::Region' is a specialization of 'AABB'.
+'dronesStructure::Drone' is a specialization of 'NamedElement'.
+'dronesStructure::Task' is a specialization of 'NamedElement'.
+'dronesStructure::Region' is a specialization of 'NamedElement'.
+'dronesStructure::Charger' is a specialization of 'Region'.
+'dronesStructure::MovementCapability' is a specialization of 'Capability'.
+'dronesStructure::DroneType' is a specialization of 'NamedElement'.
+'dronesStructure::Role' is a specialization of 'NamedElement'.
+'dronesStructure::ScenarioBounds' is a specialization of 'AABB'.
+'dronesStructure::ScanningCapability' is a specialization of 'Capability'.
+'dronesStructure::Capability' is a specialization of 'NamedElement'.
+'dronesStructure::CooperativeAction' is a specialization of 'NamedElement'.
+'dronesStructure::Obstacle' is a specialization of 'AABB'.
+'dronesStructure::Scenario' is a specialization of 'NamedElement'.
+'dronesStructure::DroneType' (role 'DroneType', cardinality 0..*) is associated with 'dronesStructure::ProvidedCapability' (role 'providedCapabilities', cardinality 0..*).
+'dronesStructure::Drone' (role 'dronesStructure_Drone37', cardinality 0..*) is associated with 'dronesStructure::Position' (role 'dronesStructure_Position', cardinality 0..*).
+'dronesStructure::Task' (role 'dronesStructure_Task49', cardinality 0..*) is associated with 'dronesStructure::CooperativeAction' (role 'dronesStructure_CooperativeAction50', cardinality 0..*).
+'dronesStructure::Obstacle' (role 'dronesStructure_Obstacle', cardinality 0..*) is associated with 'dronesStructure::Scenario' (role 'dronesStructure_Scenario12', cardinality 0..*).
+'dronesStructure::Task' (role 'dronesStructure_Task', cardinality 0..*) is associated with 'dronesStructure::Scenario' (role 'dronesStructure_Scenario16', cardinality 0..*).
+'dronesStructure::Role' (role 'Role35', cardinality 0..*) is associated with 'dronesStructure::RequiredCapability' (role 'requiredCapabilities', cardinality 0..*).
+'dronesStructure::Region' (role 'region', cardinality 0..*) is associated with 'dronesStructure::Task' (role 'Task', cardinality 0..*).
+'dronesStructure::DronesStructure' (role 'dronesStructure_DronesStructure', cardinality 0..*) is associated with 'dronesStructure::Scenario' (role 'dronesStructure_Scenario', cardinality 0..*).
+'dronesStructure::Drone' (role 'dronesStructure_Drone', cardinality 0..*) is associated with 'dronesStructure::Scenario' (role 'dronesStructure_Scenario8', cardinality 0..*).
+'dronesStructure::CooperativeAction' (role 'CooperativeAction', cardinality 0..*) is associated with 'dronesStructure::Role' (role 'roles', cardinality 0..*).
+'dronesStructure::DroneType' (role 'dronesStructure_DroneType21', cardinality 0..*) is associated with 'dronesStructure::Dimension' (role 'dronesStructure_Dimension', cardinality 0..*).
+'dronesStructure::CooperativeAction' (role 'cooperativeAction', cardinality 0..*) is associated with 'dronesStructure::Role' (role 'Role', cardinality 0..*).
+'dronesStructure::DroneType' (role 'dronesStructure_DroneType40', cardinality 0..*) is associated with 'dronesStructure::Drone' (role 'dronesStructure_Drone39', cardinality 0..*).
+'dronesStructure::Dimension' (role 'dronesStructure_Dimension45', cardinality 0..*) is associated with 'dronesStructure::AABB' (role 'dronesStructure_AABB44', cardinality 0..*).
+'dronesStructure::DroneType' (role 'dronesStructure_DroneType', cardinality 0..*) is associated with 'dronesStructure::DronesStructure' (role 'dronesStructure_DronesStructure2', cardinality 0..*).
+'dronesStructure::ProvidedCapability' (role 'dronesStructure_ProvidedCapability26', cardinality 0..*) is associated with 'dronesStructure::Capability' (role 'dronesStructure_Capability27', cardinality 0..*).
+'dronesStructure::ProvidedCapability' (role 'dronesStructure_ProvidedCapability', cardinality 0..*) is associated with 'dronesStructure::DroneType' (role 'dronesStructure_DroneType19', cardinality 0..*).
+'dronesStructure::DroneType' (role 'dronesStructure_DroneType23', cardinality 0..*) is associated with 'dronesStructure::ProvidedCapability' (role 'dronesStructure_ProvidedCapability24', cardinality 0..*).
+'dronesStructure::Role' (role 'role', cardinality 0..*) is associated with 'dronesStructure::RequiredCapability' (role 'RequiredCapability', cardinality 0..*).
+'dronesStructure::Position' (role 'dronesStructure_Position42', cardinality 0..*) is associated with 'dronesStructure::AABB' (role 'dronesStructure_AABB', cardinality 0..*).
+'dronesStructure::DronesStructure' (role 'dronesStructure_DronesStructure6', cardinality 0..*) is associated with 'dronesStructure::Capability' (role 'dronesStructure_Capability', cardinality 0..*).
+'dronesStructure::CooperativeAction' (role 'dronesStructure_CooperativeAction', cardinality 0..*) is associated with 'dronesStructure::DronesStructure' (role 'dronesStructure_DronesStructure4', cardinality 0..*).
+'dronesStructure::Capability' (role 'dronesStructure_Capability33', cardinality 0..*) is associated with 'dronesStructure::RequiredCapability' (role 'dronesStructure_RequiredCapability', cardinality 0..*).
+'dronesStructure::ScenarioBounds' (role 'dronesStructure_ScenarioBounds', cardinality 0..*) is associated with 'dronesStructure::Scenario' (role 'dronesStructure_Scenario10', cardinality 0..*).
+'dronesStructure::Scenario' (role 'dronesStructure_Scenario14', cardinality 0..*) is associated with 'dronesStructure::Region' (role 'dronesStructure_Region', cardinality 0..*).
+'dronesStructure::Task' (role 'tasks', cardinality 0..*) is associated with 'dronesStructure::Region' (role 'Region', cardinality 0..*).
+'dronesStructure::DroneType' (role 'droneType', cardinality 0..*) is associated with 'dronesStructure::ProvidedCapability' (role 'ProvidedCapability', cardinality 0..*).

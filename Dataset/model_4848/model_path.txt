@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/juli1/rdalte/fr.openpeople.rdal.model/model/metamodel/rdal.ecore

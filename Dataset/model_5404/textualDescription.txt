@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'UML2::TimeConstraint' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'UML2::DurationConstraint' has no attributes.
+The class 'UML2::Constraint' has no attributes.
+The class 'IntervalConstraint' has no attributes.
+The class 'UML2::IntervalConstraint' has no attributes.
+The class 'UML2::Operation' has the following attributes: 'isQuery' of type bool.
+The class 'UML2::InteractionConstraint' has no attributes.
+'UML2::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'UML2::IntervalConstraint' is a specialization of 'Constraint'.
+'UML2::InteractionConstraint' is a specialization of 'Constraint'.
+'UML2::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'UML2::Operation' (role 'UML2_Operation', cardinality 0..*) is associated with 'UML2::Constraint' (role 'UML2_Constraint', cardinality 0..*).

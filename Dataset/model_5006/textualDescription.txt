@@ -1,0 +1,99 @@
+The model has 38 class(es).
+The class 'component::CorbaConnectorProfile' has the following attributes: 'rtcConnectorProfile' of type str.
+The class 'ContextHandler' has no attributes.
+The class 'CorbaObserver' has no attributes.
+The class 'component::ContextHandler' has no attributes.
+The class 'IAdaptable' has no attributes.
+The class 'component::OutPort' has no attributes.
+The class 'PortSynchronizer' has no attributes.
+The class 'component::PortConnector' has no attributes.
+The class 'IPropertyMap' has no attributes.
+The class 'component::PortSynchronizer' has the following attributes: 'originalPortString' of type str.
+The class 'component::CorbaLogObserver' has no attributes.
+The class 'component::Component' has the following attributes: 'venderL' of type str; 'required' of type bool; 'deActivation' of type str; 'outportDirection' of type str; 'instanceNameL' of type str; 'shutDown' of type str; 'descriptionL' of type str; 'typeNameL' of type str; 'categoryL' of type str; 'resetting' of type str; 'versionL' of type str; 'startUp' of type str; 'activation' of type str; 'pathId' of type str; 'initialize' of type str; 'componentId' of type str; 'compositeTypeL' of type str; 'finalize' of type str.
+The class 'component::IPropertyMap' has no attributes.
+The class 'component::ServicePort' has no attributes.
+The class 'component::ComponentSpecification' has the following attributes: 'aliasName' of type str; 'rtcType' of type str; 'specUnLoad' of type bool.
+The class 'component::CorbaContextHandler' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Component' has no attributes.
+The class 'component::CorbaConfigurationSet' has the following attributes: 'sDOConfigurationSet' of type str.
+The class 'component::ConfigurationSet' has the following attributes: 'id' of type str.
+The class 'WrapperObject' has no attributes.
+The class 'ConnectorProfile' has no attributes.
+The class 'ConfigurationSet' has no attributes.
+The class 'component::CorbaStatusObserver' has no attributes.
+The class 'component::NameValue' has the following attributes: 'value' of type str; 'typeName' of type str; 'name' of type str.
+The class 'component::ConnectorProfile' has the following attributes: 'pushPolicy' of type str; 'targetString' of type str; 'outportBufferReadTimeout' of type str; 'outportBufferWriteTimeout' of type str; 'name' of type str; 'subscriptionTypeAvailable' of type bool; 'interfaceType' of type str; 'isReverse' of type bool; 'dataflowType' of type str; 'timestampPolicy' of type str; 'pushRate' of type str; 'skipCount' of type str; 'dataType' of type str; 'inportBufferWriteTimeout' of type str; 'outportSerializerType' of type str; 'pushIntervalAvailable' of type bool; 'inportBufferEmptyPolicy' of type str; 'inportBufferReadTimeout' of type str; 'outportBufferFullPolicy' of type str; 'skipCountAvailable' of type bool; 'sourceString' of type str; 'inportBufferFullPolicy' of type str; 'inportSerializerType' of type str; 'connectorId' of type str; 'outportBufferLength' of type str; 'subscriptionType' of type str; 'pushPolicyAvailable' of type bool; 'outportBufferEmptyPolicy' of type str; 'inportBufferLength' of type str.
+The class 'component::CorbaObserver' has the following attributes: 'servant' of type str; 'serviceProfile' of type str.
+The class 'CorbaWrapperObject' has no attributes.
+The class 'component::Port' has the following attributes: 'interfaceType' of type str; 'allowAnyDataType' of type bool; 'originalPortString' of type str; 'dataType' of type str; 'interfaces' of type str; 'allowAnyInterfaceType' of type bool; 'allowAnySubscriptionType' of type bool; 'dataflowType' of type str; 'nameL' of type str; 'allowAnyDataflowType' of type bool; 'subscriptionType' of type str.
+The class 'component::SystemDiagram' has the following attributes: 'creationDate' of type str; 'ConnectorProcessing' of type bool; 'updateDate' of type str; 'systemId' of type str; 'kind' of type str.
+The class 'Port' has no attributes.
+The class 'component::CorbaPortSynchronizer' has the following attributes: 'rTCPortProfile' of type str.
+The class 'component::CorbaComponent' has the following attributes: 'componentState' of type int; 'sDOOrganization' of type str; 'ior' of type str; 'rTCParticipationContexts' of type str; 'sDOConfiguration' of type str; 'rTCRTObjects' of type str; 'rTCExecutionContexts' of type str; 'rTCComponentProfile' of type str.
+The class 'component::ExecutionContext' has the following attributes: 'kindL' of type int; 'rateL' of type str; 'stateL' of type int.
+The class 'component::EIntegerObjectToPointMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'component::CorbaExecutionContext' has the following attributes: 'rtcExecutionContextProfile' of type str.
+The class 'component::InPort' has no attributes.
+The class 'ExecutionContext' has no attributes.
+The enumeration 'SystemDiagramKind' has the following literals: 'OFFLINE', 'ONLINE'.
+'component::CorbaPortSynchronizer' is a specialization of 'PortSynchronizer'.
+'component::CorbaExecutionContext' is a specialization of 'CorbaWrapperObject'.
+'component::CorbaComponent' is a specialization of 'CorbaWrapperObject'.
+'component::ConfigurationSet' is a specialization of 'WrapperObject'.
+'component::InPort' is a specialization of 'Port'.
+'component::Component' is a specialization of 'WrapperObject'.
+'component::ExecutionContext' is a specialization of 'IPropertyMap'.
+'component::PortConnector' is a specialization of 'WrapperObject'.
+'component::CorbaStatusObserver' is a specialization of 'CorbaObserver'.
+'component::CorbaObserver' is a specialization of 'IAdaptable'.
+'component::IPropertyMap' is a specialization of 'IAdaptable'.
+'component::CorbaConnectorProfile' is a specialization of 'ConnectorProfile'.
+'component::ServicePort' is a specialization of 'Port'.
+'component::CorbaPortSynchronizer' is a specialization of 'CorbaWrapperObject'.
+'component::CorbaLogObserver' is a specialization of 'CorbaObserver'.
+'component::CorbaConfigurationSet' is a specialization of 'ConfigurationSet'.
+'component::Component' is a specialization of 'IPropertyMap'.
+'component::Port' is a specialization of 'WrapperObject'.
+'component::ConnectorProfile' is a specialization of 'WrapperObject'.
+'component::CorbaComponent' is a specialization of 'Component'.
+'component::CorbaObserver' is a specialization of 'IPropertyMap'.
+'component::ComponentSpecification' is a specialization of 'Component'.
+'component::ContextHandler' is a specialization of 'IAdaptable'.
+'component::CorbaExecutionContext' is a specialization of 'ExecutionContext'.
+'component::OutPort' is a specialization of 'Port'.
+'component::NameValue' is a specialization of 'WrapperObject'.
+'component::SystemDiagram' is a specialization of 'IPropertyMap'.
+'component::ConnectorProfile' is a specialization of 'IPropertyMap'.
+'component::PortSynchronizer' is a specialization of 'IPropertyMap'.
+'component::CorbaContextHandler' is a specialization of 'ContextHandler'.
+'component::SystemDiagram' is a specialization of 'ModelElement'.
+'component::ExecutionContext' is a specialization of 'WrapperObject'.
+'component::SystemDiagram' (role 'component_SystemDiagram38', cardinality 0..*) is associated with 'component::Component' (role 'component_Component37', cardinality 0..*).
+'component::Port' (role 'component_Port48', cardinality 0..*) is associated with 'component::PortSynchronizer' (role 'component_PortSynchronizer', cardinality 0..*).
+'component::CorbaLogObserver' (role 'component_CorbaLogObserver', cardinality 0..*) is associated with 'component::CorbaComponent' (role 'component_CorbaComponent63', cardinality 0..*).
+'component::InPort' (role 'component_InPort', cardinality 0..*) is associated with 'component::Component' (role 'component_Component15', cardinality 0..*).
+'component::NameValue' (role 'component_NameValue', cardinality 0..*) is associated with 'component::ConfigurationSet' (role 'component_ConfigurationSet46', cardinality 0..*).
+'component::Component' (role 'component_Component32', cardinality 0..*) is associated with 'component::ContextHandler' (role 'component_ContextHandler', cardinality 0..*).
+'component::Component' (role 'component_Component44', cardinality 0..*) is associated with 'component::ExecutionContext' (role 'component_ExecutionContext43', cardinality 0..*).
+'component::Port' (role 'component_Port60', cardinality 0..*) is associated with 'component::PortConnector' (role 'component_PortConnector59', cardinality 0..*).
+'component::ExecutionContext' (role 'component_ExecutionContext40', cardinality 0..*) is associated with 'component::Component' (role 'component_Component41', cardinality 0..*).
+'component::EIntegerObjectToPointMapEntry' (role 'component_EIntegerObjectToPointMapEntry', cardinality 0..*) is associated with 'component::PortConnector' (role 'component_PortConnector54', cardinality 0..*).
+'component::Component' (role 'component_Component8', cardinality 0..*) is associated with 'component::ConfigurationSet' (role 'component_ConfigurationSet', cardinality 0..*).
+'component::ServicePort' (role 'component_ServicePort', cardinality 0..*) is associated with 'component::Component' (role 'component_Component19', cardinality 0..*).
+'component::PortConnector' (role 'component_PortConnector56', cardinality 0..*) is associated with 'component::Port' (role 'component_Port57', cardinality 0..*).
+'component::Component' (role 'component_Component22', cardinality 0..*) is associated with 'component::Component' (role 'component_Component20', cardinality 0..*).
+'component::SystemDiagram' (role 'component_SystemDiagram3', cardinality 0..*) is associated with 'component::SystemDiagram' (role 'component_SystemDiagram1', cardinality 0..*).
+'component::ConfigurationSet' (role 'component_ConfigurationSet11', cardinality 0..*) is associated with 'component::Component' (role 'component_Component10', cardinality 0..*).
+'component::ExecutionContext' (role 'component_ExecutionContext', cardinality 0..*) is associated with 'component::Component' (role 'component_Component24', cardinality 0..*).
+'component::PortConnector' (role 'component_PortConnector', cardinality 0..*) is associated with 'component::ConnectorProfile' (role 'component_ConnectorProfile52', cardinality 0..*).
+'component::Component' (role 'component_Component29', cardinality 0..*) is associated with 'component::ExecutionContext' (role 'component_ExecutionContext30', cardinality 0..*).
+'component::Port' (role 'component_Port', cardinality 0..*) is associated with 'component::Component' (role 'component_Component13', cardinality 0..*).
+'component::OutPort' (role 'component_OutPort', cardinality 0..*) is associated with 'component::Component' (role 'component_Component17', cardinality 0..*).
+'component::CorbaStatusObserver' (role 'component_CorbaStatusObserver', cardinality 0..*) is associated with 'component::CorbaComponent' (role 'component_CorbaComponent', cardinality 0..*).
+'component::Component' (role 'component_Component26', cardinality 0..*) is associated with 'component::ExecutionContext' (role 'component_ExecutionContext27', cardinality 0..*).
+'component::Port' (role 'component_Port50', cardinality 0..*) is associated with 'component::ConnectorProfile' (role 'component_ConnectorProfile', cardinality 0..*).
+'component::Component' (role 'component_Component34', cardinality 0..*) is associated with 'component::ContextHandler' (role 'component_ContextHandler35', cardinality 0..*).
+'component::Component' (role 'component_Component', cardinality 0..*) is associated with 'component::SystemDiagram' (role 'component_SystemDiagram', cardinality 0..*).
+'component::SystemDiagram' (role 'component_SystemDiagram5', cardinality 0..*) is associated with 'component::Component' (role 'component_Component6', cardinality 0..*).

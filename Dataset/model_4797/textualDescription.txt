@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'alldatatypes::Element' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'Type' has no attributes.
+The class 'alldatatypes::Enums' has the following attributes: 'enums' of type str; 'enum_01' of type str; 'heavy' of type str; 'enum_1' of type str; 'states' of type str; 'notEditableEnum_01' of type str; 'statesMax2' of type str; 'statesMin1Max2' of type str; 'enum_01_EmptyDefault' of type str.
+The class 'alldatatypes::Booleans' has the following attributes: 'notEditableBoolean_01' of type bool; 'boolean_01_EmptyDefault' of type bool; 'boolean_1' of type bool; 'boolean_01' of type bool.
+The class 'alldatatypes::Shorts' has the following attributes: 'notEditableShort_01' of type str; 'short_1' of type str; 'short_01_EmptyDefault' of type str; 'short_01' of type str.
+The class 'Element' has no attributes.
+The class 'alldatatypes::Integers' has the following attributes: 'int_01' of type int; 'notEditableInt_01' of type int; 'int_1' of type int; 'ints' of type int; 'hiddenInt_01' of type int; 'int_01_EmptyDefault' of type int.
+The class 'alldatatypes::Strings' has the following attributes: 'link_01' of type str; 'html_01' of type str; 'text_01_EmptyDefault' of type str; 'text_1' of type str; 'notEditableText_01' of type str; 'text_01' of type str; 'textarea' of type str.
+The class 'alldatatypes::Longs' has the following attributes: 'long_01' of type str; 'notEditableLong_01' of type str; 'long_01_EmptyDefault' of type str; 'long_1' of type str.
+The class 'alldatatypes::BigIntegers' has the following attributes: 'bigInt_1' of type str; 'bigInt_01_EmptyDefault' of type str; 'bigInts' of type str; 'notEditableBigInt_01' of type str; 'bigInt_01' of type str.
+The class 'alldatatypes::BigDecimals' has the following attributes: 'bigDecimal_01_EmptyDefault' of type str; 'bigDecimal_1' of type str; 'notEditableBigDecimal_01' of type str; 'bigDecimals' of type str; 'bigDecimal_01' of type str.
+The class 'alldatatypes::Floats' has the following attributes: 'float_01_EmptyDefault' of type float; 'float_01' of type float; 'float_1' of type float; 'notEditableFloat_01' of type float.
+The class 'alldatatypes::Dates' has the following attributes: 'date_01_HMSms' of type date; 'dateEmptyDefault_01' of type date; 'date_01' of type date; 'date_01_HM' of type date; 'dates' of type date; 'notEditableDate_01' of type date; 'date_01_HMS' of type date; 'date_1' of type date.
+The class 'alldatatypes::Type' has no attributes.
+The class 'alldatatypes::Doubles' has the following attributes: 'double_1' of type float; 'double_01_EmptyDefault' of type float; 'double_01' of type float; 'notEditableDouble_01' of type float.
+The class 'alldatatypes::Root' has no attributes.
+The enumeration 'Heavy' has the following literals: 'OPEN', 'OPEN1', 'MOVING2', 'MOVING4', 'MOVING1', 'MOVE1', 'MOVE', 'CLOSE', 'MOVING3', 'MOVING', 'DELETE4', 'CLOS1E', 'OPEN2', 'DELETE1', 'DELETE3', 'CLOSE2', 'MOVE3', 'DELETE2', 'OPEN3', 'CLOSE4', 'CLOSE3', 'MOVE2', 'OPEN4', 'MOVE4', 'DELETE'.
+The enumeration 'StateWithoutDefault' has the following literals: 'DELETE', 'MOVING', 'MOVE', 'OPEN', 'CLOSE'.
+The enumeration 'AEnum' has the following literals: 'ENUM1', 'ENUM0'.
+'alldatatypes::Strings' is a specialization of 'Type'.
+'alldatatypes::Type' is a specialization of 'Element'.
+'alldatatypes::Root' is a specialization of 'Element'.
+'alldatatypes::Booleans' is a specialization of 'Type'.
+'alldatatypes::Floats' is a specialization of 'Type'.
+'alldatatypes::BigIntegers' is a specialization of 'Type'.
+'alldatatypes::BigDecimals' is a specialization of 'Type'.
+'alldatatypes::Dates' is a specialization of 'Type'.
+'alldatatypes::Doubles' is a specialization of 'Type'.
+'alldatatypes::Shorts' is a specialization of 'Type'.
+'alldatatypes::Integers' is a specialization of 'Type'.
+'alldatatypes::Longs' is a specialization of 'Type'.
+'alldatatypes::Enums' is a specialization of 'Type'.
+'alldatatypes::Type' (role 'alldatatypes_Type', cardinality 0..*) is associated with 'alldatatypes::Root' (role 'alldatatypes_Root', cardinality 0..*).

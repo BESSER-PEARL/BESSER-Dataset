@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'properties::Employee' has no attributes.
+The class 'properties::Department' has no attributes.
+'properties::Department' (role 'properties_Department3', cardinality 0..*) is associated with 'properties::Employee' (role 'properties_Employee2', cardinality 0..*).
+'properties::Department' (role 'properties_Department', cardinality 0..*) is associated with 'properties::Employee' (role 'properties_Employee', cardinality 0..*).

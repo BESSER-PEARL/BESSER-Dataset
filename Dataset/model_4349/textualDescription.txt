@@ -1,0 +1,62 @@
+The model has 21 class(es).
+The class 'EStructuralFeature' has no attributes.
+The class 'EClassifier' has no attributes.
+The class 'RefinementsEcore::EModelElement' has no attributes.
+The class 'RefinementsEcore::EParameter' has no attributes.
+The class 'ENamedElement' has no attributes.
+The class 'RefinementsEcore::EEnum' has no attributes.
+The class 'RefinementsEcore::EAttribute' has the following attributes: 'iD' of type int.
+The class 'RefinementsEcore::EDataType' has the following attributes: 'serializable' of type bool.
+The class 'ETypedElement' has no attributes.
+The class 'RefinementsEcore::ETypedElement' has the following attributes: 'required' of type bool; 'unique' of type bool; 'upperBound' of type int; 'lowerBound' of type int; 'many' of type bool; 'ordered' of type bool.
+The class 'RefinementsEcore::ENamedElement' has the following attributes: 'name' of type str.
+The class 'RefinementsEcore::EReference' has the following attributes: 'container' of type bool; 'containment' of type bool; 'resolveProxies' of type bool.
+The class 'RefinementsEcore::EOperation' has no attributes.
+The class 'RefinementsEcore::EStructuralFeature' has the following attributes: 'derived' of type bool; 'unsettable' of type bool; 'volatile' of type bool; 'changeable' of type bool; 'defaultValueLiteral' of type str; 'transient' of type bool.
+The class 'RefinementsEcore::EAnnotation' has the following attributes: 'source' of type str.
+The class 'RefinementsEcore::EEnumLiteral' has the following attributes: 'literal' of type str; 'value' of type int.
+The class 'RefinementsEcore::EClassifier' has the following attributes: 'instanceTypeName' of type str; 'instanceClass' of type str; 'instanceClassName' of type str.
+The class 'EDataType' has no attributes.
+The class 'RefinementsEcore::EPackage' has the following attributes: 'nsURI' of type str; 'nsPrefix' of type str.
+The class 'EModelElement' has no attributes.
+The class 'RefinementsEcore::EClass' has the following attributes: 'interface' of type bool; 'abstract' of type bool.
+'RefinementsEcore::ETypedElement' is a specialization of 'ENamedElement'.
+'RefinementsEcore::EParameter' is a specialization of 'ETypedElement'.
+'RefinementsEcore::EEnumLiteral' is a specialization of 'ENamedElement'.
+'RefinementsEcore::EReference' is a specialization of 'EStructuralFeature'.
+'RefinementsEcore::EClassifier' is a specialization of 'ENamedElement'.
+'RefinementsEcore::EAnnotation' is a specialization of 'EModelElement'.
+'RefinementsEcore::EPackage' is a specialization of 'ENamedElement'.
+'RefinementsEcore::EEnum' is a specialization of 'EDataType'.
+'RefinementsEcore::EOperation' is a specialization of 'ETypedElement'.
+'RefinementsEcore::EDataType' is a specialization of 'EClassifier'.
+'RefinementsEcore::EStructuralFeature' is a specialization of 'ETypedElement'.
+'RefinementsEcore::EAttribute' is a specialization of 'EStructuralFeature'.
+'RefinementsEcore::ENamedElement' is a specialization of 'EModelElement'.
+'RefinementsEcore::EClass' is a specialization of 'EClassifier'.
+'RefinementsEcore::EAnnotation' (role 'EAnnotation', cardinality 0..*) is associated with 'RefinementsEcore::EModelElement' (role 'eModelElement', cardinality 0..*).
+'RefinementsEcore::EOperation' (role 'eOperations', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'EClass', cardinality 0..*).
+'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass39', cardinality 0..*) is associated with 'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference38', cardinality 0..*).
+'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference41', cardinality 0..*) is associated with 'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute42', cardinality 0..*).
+'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference43', cardinality 0..*) is associated with 'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference45', cardinality 0..*).
+'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute1', cardinality 0..*) is associated with 'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute3', cardinality 0..*).
+'RefinementsEcore::EClassifier' (role 'eClassifiers', cardinality 0..*) is associated with 'RefinementsEcore::EPackage' (role 'EPackage', cardinality 0..*).
+'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass9', cardinality 0..*).
+'RefinementsEcore::EAnnotation' (role 'eAnnotations', cardinality 0..*) is associated with 'RefinementsEcore::EModelElement' (role 'EModelElement', cardinality 0..*).
+'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute', cardinality 0..*) is associated with 'RefinementsEcore::EDataType' (role 'RefinementsEcore_EDataType', cardinality 0..*).
+'RefinementsEcore::EOperation' (role 'EOperation33', cardinality 0..*) is associated with 'RefinementsEcore::EParameter' (role 'eParameters', cardinality 0..*).
+'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass5', cardinality 0..*).
+'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute12', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass11', cardinality 0..*).
+'RefinementsEcore::EClass' (role 'RefinementsEcore_EClass14', cardinality 0..*) is associated with 'RefinementsEcore::EAttribute' (role 'RefinementsEcore_EAttribute15', cardinality 0..*).
+'RefinementsEcore::EOperation' (role 'RefinementsEcore_EOperation', cardinality 0..*) is associated with 'RefinementsEcore::EClassifier' (role 'RefinementsEcore_EClassifier', cardinality 0..*).
+'RefinementsEcore::EStructuralFeature' (role 'eStructuralFeatures', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'EClass47', cardinality 0..*).
+'RefinementsEcore::EPackage' (role 'EPackage31', cardinality 0..*) is associated with 'RefinementsEcore::EPackage' (role 'eSubpackages', cardinality 0..*).
+'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference34', cardinality 0..*) is associated with 'RefinementsEcore::EReference' (role 'RefinementsEcore_EReference36', cardinality 0..*).
+'RefinementsEcore::ETypedElement' (role 'RefinementsEcore_ETypedElement', cardinality 0..*) is associated with 'RefinementsEcore::EClassifier' (role 'RefinementsEcore_EClassifier49', cardinality 0..*).
+'RefinementsEcore::EEnum' (role 'EEnum', cardinality 0..*) is associated with 'RefinementsEcore::EEnumLiteral' (role 'eLiterals', cardinality 0..*).
+'RefinementsEcore::EStructuralFeature' (role 'EStructuralFeature', cardinality 0..*) is associated with 'RefinementsEcore::EClass' (role 'eContainingClass17', cardinality 0..*).
+'RefinementsEcore::EClass' (role 'eContainingClass', cardinality 0..*) is associated with 'RefinementsEcore::EOperation' (role 'EOperation', cardinality 0..*).
+'RefinementsEcore::EEnum' (role 'eEnum', cardinality 0..*) is associated with 'RefinementsEcore::EEnumLiteral' (role 'EEnumLiteral', cardinality 0..*).
+'RefinementsEcore::EParameter' (role 'EParameter', cardinality 0..*) is associated with 'RefinementsEcore::EOperation' (role 'eOperation', cardinality 0..*).
+'RefinementsEcore::EPackage' (role 'EPackage28', cardinality 0..*) is associated with 'RefinementsEcore::EPackage' (role 'eSuperPackage', cardinality 0..*).
+'RefinementsEcore::EClassifier' (role 'EClassifier', cardinality 0..*) is associated with 'RefinementsEcore::EPackage' (role 'ePackage', cardinality 0..*).

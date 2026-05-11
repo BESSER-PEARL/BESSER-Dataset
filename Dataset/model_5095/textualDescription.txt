@@ -1,0 +1,35 @@
+The model has 16 class(es).
+The class 'adl301::Provided' has no attributes.
+The class 'adl301::Component' has no attributes.
+The class 'adl301::Type' has the following attributes: 'signature' of type str.
+The class 'AbstractComponent' has no attributes.
+The class 'adl301::Attributes' has the following attributes: 'signature' of type str.
+The class 'adl301::Attribute' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'adl301::Binding' has no attributes.
+The class 'adl301::Item' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'adl301::NamedElement' has the following attributes: 'name' of type str.
+The class 'adl301::AbstractComponent' has no attributes.
+The class 'Interface' has no attributes.
+The class 'adl301::Required' has no attributes.
+The class 'adl301::Content' has the following attributes: 'class_' of type str; 'language' of type str.
+The class 'adl301::Interface' has no attributes.
+'adl301::Type' is a specialization of 'Interface'.
+'adl301::Provided' is a specialization of 'Type'.
+'adl301::Component' is a specialization of 'AbstractComponent'.
+'adl301::Component' is a specialization of 'NamedElement'.
+'adl301::Interface' is a specialization of 'NamedElement'.
+'adl301::Required' is a specialization of 'Type'.
+'adl301::Item' is a specialization of 'NamedElement'.
+'adl301::Binding' is a specialization of 'NamedElement'.
+'adl301::Binding' (role 'adl301_Binding12', cardinality 0..*) is associated with 'adl301::Interface' (role 'adl301_Interface13', cardinality 0..*).
+'adl301::Item' (role 'adl301_Item', cardinality 0..*) is associated with 'adl301::Type' (role 'adl301_Type', cardinality 0..*).
+'adl301::AbstractComponent' (role 'adl301_AbstractComponent4', cardinality 0..*) is associated with 'adl301::Required' (role 'adl301_Required', cardinality 0..*).
+'adl301::AbstractComponent' (role 'adl301_AbstractComponent', cardinality 0..*) is associated with 'adl301::Content' (role 'adl301_Content', cardinality 0..*).
+'adl301::Attributes' (role 'adl301_Attributes', cardinality 0..*) is associated with 'adl301::AbstractComponent' (role 'adl301_AbstractComponent2', cardinality 0..*).
+'adl301::Interface' (role 'adl301_Interface', cardinality 0..*) is associated with 'adl301::Binding' (role 'adl301_Binding', cardinality 0..*).
+'adl301::Interface' (role 'adl301_Interface10', cardinality 0..*) is associated with 'adl301::Binding' (role 'adl301_Binding9', cardinality 0..*).
+'adl301::Component' (role 'adl301_Component', cardinality 0..*) is associated with 'adl301::Component' (role 'adl301_Component16', cardinality 0..*).
+'adl301::Provided' (role 'adl301_Provided', cardinality 0..*) is associated with 'adl301::AbstractComponent' (role 'adl301_AbstractComponent6', cardinality 0..*).
+'adl301::Attributes' (role 'adl301_Attributes15', cardinality 0..*) is associated with 'adl301::Attribute' (role 'adl301_Attribute', cardinality 0..*).

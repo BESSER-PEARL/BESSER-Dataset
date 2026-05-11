@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'DNamedElement' has no attributes.
+The class 'CE' has no attributes.
+The class 'refinher3::DG' has no attributes.
+The class 'refinher3::M' has the following attributes: 'id' of type str.
+The class 'A' has no attributes.
+The class 'refinher3::CE' has no attributes.
+The class 'refinher3::A' has no attributes.
+The class 'refinher3::E' has no attributes.
+The class 'E' has no attributes.
+The class 'refinher3::DC' has no attributes.
+The class 'refinher3::BB' has no attributes.
+The class 'refinher3::DL' has no attributes.
+The class 'refinher3::N' has the following attributes: 'nam' of type str.
+The class 'refinher3::DNamedElement' has the following attributes: 'name' of type str.
+The class 'refinher3::Foobar' has no attributes.
+The class 'refinher3::DR' has no attributes.
+'refinher3::BB' is a specialization of 'DNamedElement'.
+'refinher3::DR' is a specialization of 'E'.
+'refinher3::Foobar' is a specialization of 'DNamedElement'.
+'refinher3::DC' is a specialization of 'CE'.
+'refinher3::DL' is a specialization of 'CE'.
+'refinher3::A' is a specialization of 'DNamedElement'.
+'refinher3::E' is a specialization of 'DNamedElement'.
+'refinher3::CE' is a specialization of 'A'.
+'refinher3::CE' is a specialization of 'E'.
+'refinher3::Foobar' (role 'refinher3_Foobar', cardinality 0..*) is associated with 'refinher3::M' (role 'refinher3_M16', cardinality 0..*).
+'refinher3::M' (role 'refinher3_M', cardinality 0..*) is associated with 'refinher3::DG' (role 'refinher3_DG11', cardinality 0..*).
+'refinher3::M' (role 'refinher3_M13', cardinality 0..*) is associated with 'refinher3::E' (role 'refinher3_E14', cardinality 0..*).
+'refinher3::N' (role 'refinher3_N3', cardinality 0..*) is associated with 'refinher3::E' (role 'refinher3_E2', cardinality 0..*).
+'refinher3::N' (role 'refinher3_N9', cardinality 0..*) is associated with 'refinher3::DG' (role 'refinher3_DG8', cardinality 0..*).
+'refinher3::N' (role 'refinher3_N', cardinality 0..*) is associated with 'refinher3::E' (role 'refinher3_E', cardinality 0..*).
+'refinher3::BB' (role 'refinher3_BB', cardinality 0..*) is associated with 'refinher3::DL' (role 'refinher3_DL', cardinality 0..*).
+'refinher3::DG' (role 'refinher3_DG', cardinality 0..*) is associated with 'refinher3::BB' (role 'refinher3_BB6', cardinality 0..*).

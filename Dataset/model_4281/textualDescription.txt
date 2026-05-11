@@ -1,0 +1,17 @@
+The model has 5 class(es).
+The class 'bowling::Game' has the following attributes: 'frames' of type int; 'date' of type date.
+The class 'bowling::Tournament' has the following attributes: 'type' of type str; 'title' of type str.
+The class 'bowling::Matchup' has no attributes.
+The class 'bowling::Playerlist' has the following attributes: 'name' of type str.
+The class 'bowling::Player' has the following attributes: 'isProfessional' of type bool; 'firstname' of type str; 'city' of type str; 'dateOfBirth' of type date; 'height' of type float; 'streetnumber' of type int; 'lastname' of type str; 'street' of type str.
+The enumeration 'TournamentType' has the following literals: 'Amateur', 'Pro'.
+'bowling::Player' (role 'Player', cardinality 0..*) is associated with 'bowling::Game' (role 'game', cardinality 0..*).
+'bowling::Game' (role 'game5', cardinality 0..*) is associated with 'bowling::Matchup' (role 'Matchup', cardinality 0..*).
+'bowling::Game' (role 'Game', cardinality 0..*) is associated with 'bowling::Player' (role 'player', cardinality 0..*).
+'bowling::Tournament' (role 'tournament17', cardinality 0..*) is associated with 'bowling::Playerlist' (role 'Playerlist18', cardinality 0..*).
+'bowling::Tournament' (role 'Tournament', cardinality 0..*) is associated with 'bowling::Matchup' (role 'matchups', cardinality 0..*).
+'bowling::Game' (role 'Game7', cardinality 0..*) is associated with 'bowling::Matchup' (role 'matchup', cardinality 0..*).
+'bowling::Matchup' (role 'Matchup15', cardinality 0..*) is associated with 'bowling::Tournament' (role 'tournament', cardinality 0..*).
+'bowling::Player' (role 'player2', cardinality 0..*) is associated with 'bowling::Playerlist' (role 'Playerlist', cardinality 0..*).
+'bowling::Player' (role 'Player10', cardinality 0..*) is associated with 'bowling::Playerlist' (role 'playerlist', cardinality 0..*).
+'bowling::Tournament' (role 'Tournament13', cardinality 0..*) is associated with 'bowling::Playerlist' (role 'playerlist12', cardinality 0..*).

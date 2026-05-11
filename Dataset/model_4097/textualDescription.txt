@@ -1,0 +1,59 @@
+The model has 17 class(es).
+The class 'Signal' has no attributes.
+The class 'RDM::TurnoutSignal' has no attributes.
+The class 'RDM::Signal' has the following attributes: 'allowedSpeed' of type str.
+The class 'RDM::RouteElement' has no attributes.
+The class 'RDM::ConnectionPoint' has the following attributes: 'direction' of type str.
+The class 'RDM::Section' has no attributes.
+The class 'RDM::TrackElement' has no attributes.
+The class 'RDM::TurnoutDesiredDirection' has the following attributes: 'desiredDirection' of type str.
+The class 'RDM::RailwayDomainModel' has no attributes.
+The class 'RDM::Turnout' has the following attributes: 'currentDirection' of type str; 'switchingDirection' of type str.
+The class 'RDM::Route' has no attributes.
+The class 'RDM::Station' has no attributes.
+The class 'RDM::RDMElement' has the following attributes: 'length' of type int; 'name' of type str.
+The class 'Section' has no attributes.
+The class 'RDM::Train' has the following attributes: 'maxSpeed' of type str; 'headingSpeed' of type str.
+The class 'RDMElement' has no attributes.
+The class 'TrackElement' has no attributes.
+The enumeration 'Speed' has the following literals: 'FOURTY', 'TWENTY', 'ZERO', 'SIXTY'.
+The enumeration 'TurnoutDirection' has the following literals: 'STRAIGHT', 'LEFT', 'RIGHT'.
+The enumeration 'ConnectionDirection' has the following literals: 'TOP', 'RIGHT', 'STRAIGHT', 'LEFT'.
+'RDM::Signal' is a specialization of 'RDMElement'.
+'RDM::Section' is a specialization of 'TrackElement'.
+'RDM::Train' is a specialization of 'RDMElement'.
+'RDM::TurnoutDesiredDirection' is a specialization of 'RDMElement'.
+'RDM::TurnoutSignal' is a specialization of 'Signal'.
+'RDM::TrackElement' is a specialization of 'RDMElement'.
+'RDM::Route' is a specialization of 'RDMElement'.
+'RDM::ConnectionPoint' is a specialization of 'RDMElement'.
+'RDM::Turnout' is a specialization of 'TrackElement'.
+'RDM::RouteElement' is a specialization of 'RDMElement'.
+'RDM::Station' is a specialization of 'Section'.
+'RDM::TrackElement' (role 'RDM_TrackElement28', cardinality 0..*) is associated with 'RDM::ConnectionPoint' (role 'RDM_ConnectionPoint29', cardinality 0..*).
+'RDM::RouteElement' (role 'RDM_RouteElement52', cardinality 0..*) is associated with 'RDM::RouteElement' (role 'RDM_RouteElement50', cardinality 0..*).
+'RDM::Signal' (role 'Signal', cardinality 0..*) is associated with 'RDM::ConnectionPoint' (role 'standsOn41', cardinality 0..*).
+'RDM::TrackElement' (role 'standsOn', cardinality 0..*) is associated with 'RDM::Train' (role 'Train', cardinality 0..*).
+'RDM::RouteElement' (role 'RDM_RouteElement46', cardinality 0..*) is associated with 'RDM::TrackElement' (role 'RDM_TrackElement47', cardinality 0..*).
+'RDM::Station' (role 'RDM_Station', cardinality 0..*) is associated with 'RDM::Train' (role 'RDM_Train16', cardinality 0..*).
+'RDM::Station' (role 'RDM_Station19', cardinality 0..*) is associated with 'RDM::Train' (role 'RDM_Train18', cardinality 0..*).
+'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel', cardinality 0..*) is associated with 'RDM::Train' (role 'RDM_Train', cardinality 0..*).
+'RDM::ConnectionPoint' (role 'ConnectionPoint', cardinality 0..*) is associated with 'RDM::Signal' (role 'holds', cardinality 0..*).
+'RDM::Turnout' (role 'RDM_Turnout', cardinality 0..*) is associated with 'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel4', cardinality 0..*).
+'RDM::RouteElement' (role 'RouteElement36', cardinality 0..*) is associated with 'RDM::TurnoutDesiredDirection' (role 'desiredDirection', cardinality 0..*).
+'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel10', cardinality 0..*) is associated with 'RDM::TurnoutDesiredDirection' (role 'RDM_TurnoutDesiredDirection', cardinality 0..*).
+'RDM::Turnout' (role 'RDM_Turnout54', cardinality 0..*) is associated with 'RDM::TurnoutSignal' (role 'RDM_TurnoutSignal', cardinality 0..*).
+'RDM::TrackElement' (role 'TrackElement', cardinality 0..*) is associated with 'RDM::Train' (role 'occupiedBy', cardinality 0..*).
+'RDM::Route' (role 'RDM_Route', cardinality 0..*) is associated with 'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel12', cardinality 0..*).
+'RDM::Turnout' (role 'RDM_Turnout34', cardinality 0..*) is associated with 'RDM::TurnoutDesiredDirection' (role 'RDM_TurnoutDesiredDirection33', cardinality 0..*).
+'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel14', cardinality 0..*) is associated with 'RDM::RouteElement' (role 'RDM_RouteElement', cardinality 0..*).
+'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel2', cardinality 0..*) is associated with 'RDM::Section' (role 'RDM_Section', cardinality 0..*).
+'RDM::Route' (role 'belongsTo', cardinality 0..*) is associated with 'RDM::RouteElement' (role 'RouteElement', cardinality 0..*).
+'RDM::Signal' (role 'RDM_Signal', cardinality 0..*) is associated with 'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel8', cardinality 0..*).
+'RDM::Route' (role 'RDM_Route22', cardinality 0..*) is associated with 'RDM::Train' (role 'RDM_Train21', cardinality 0..*).
+'RDM::TrackElement' (role 'RDM_TrackElement', cardinality 0..*) is associated with 'RDM::Signal' (role 'RDM_Signal26', cardinality 0..*).
+'RDM::TurnoutDesiredDirection' (role 'TurnoutDesiredDirection', cardinality 0..*) is associated with 'RDM::RouteElement' (role 'routeElement', cardinality 0..*).
+'RDM::RailwayDomainModel' (role 'RDM_RailwayDomainModel6', cardinality 0..*) is associated with 'RDM::ConnectionPoint' (role 'RDM_ConnectionPoint', cardinality 0..*).
+'RDM::TrackElement' (role 'RDM_TrackElement44', cardinality 0..*) is associated with 'RDM::ConnectionPoint' (role 'RDM_ConnectionPoint43', cardinality 0..*).
+'RDM::Station' (role 'RDM_Station38', cardinality 0..*) is associated with 'RDM::Signal' (role 'RDM_Signal39', cardinality 0..*).
+'RDM::Route' (role 'Route', cardinality 0..*) is associated with 'RDM::RouteElement' (role 'firstElement', cardinality 0..*).

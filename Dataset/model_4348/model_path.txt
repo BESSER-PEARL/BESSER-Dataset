@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/igorventorim/modeldrivenchatbot/br.ufes.inf.mdc/model/mdc.ecore

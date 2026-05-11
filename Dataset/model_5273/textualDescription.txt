@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'AddBindingTarget::Type3' has no attributes.
+The class 'AddBindingTarget::Type1' has the following attributes: 'name' of type str.
+The class 'AddBindingTarget::Type2' has the following attributes: 'name' of type str.
+'AddBindingTarget::Type2' (role 'AddBindingTarget_Type2', cardinality 0..*) is associated with 'AddBindingTarget::Type1' (role 'AddBindingTarget_Type1', cardinality 0..*).
+'AddBindingTarget::Type1' (role 'AddBindingTarget_Type12', cardinality 0..*) is associated with 'AddBindingTarget::Type3' (role 'AddBindingTarget_Type3', cardinality 0..*).

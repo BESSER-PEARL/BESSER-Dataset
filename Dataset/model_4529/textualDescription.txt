@@ -1,0 +1,76 @@
+The model has 32 class(es).
+The class 'behaviour::Behaviour' has the following attributes: 'crs' of type str.
+The class 'behaviour::Stop' has no attributes.
+The class 'behaviour::NamedElement' has the following attributes: 'name' of type str.
+The class 'behaviour::Circle' has the following attributes: 'duration' of type float; 'radius' of type float; 'clockwise' of type bool; 'altitude' of type float.
+The class 'behaviour::CheckNotification' has no attributes.
+The class 'behaviour::Feedback' has the following attributes: 'actionName' of type str.
+The class 'behaviour::GoTo' has the following attributes: 'strategy' of type str.
+The class 'Move' has no attributes.
+The class 'behaviour::UnicastNotify' has no attributes.
+The class 'behaviour::Slot' has no attributes.
+The class 'behaviour::Notify' has no attributes.
+The class 'behaviour::DeviceAction' has the following attributes: 'actionName' of type str.
+The class 'behaviour::BroadcastNotify' has no attributes.
+The class 'behaviour::MulticastNotify' has no attributes.
+The class 'behaviour::Move' has no attributes.
+The class 'behaviour::HeadTo' has the following attributes: 'direction' of type float.
+The class 'behaviour::Parameter' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'Action' has no attributes.
+The class 'behaviour::TakeOff' has the following attributes: 'altitude' of type float.
+The class 'behaviour::Land' has no attributes.
+The class 'behaviour::CommunicationAction' has no attributes.
+The class 'behaviour::Drone' has the following attributes: 'typeName' of type str; 'travelMode' of type str.
+The class 'behaviour::Hover' has the following attributes: 'duration' of type float.
+The class 'behaviour::MoveTransition' has the following attributes: 'fluid' of type bool.
+The class 'behaviour::Choice' has the following attributes: 'conditionIdentifier' of type str.
+The class 'NamedElement' has no attributes.
+The class 'MoveTransition' has no attributes.
+The class 'Notify' has no attributes.
+The class 'behaviour::Action' has no attributes.
+The class 'behaviour::Start' has no attributes.
+The class 'CommunicationAction' has no attributes.
+The class 'behaviour::Coordinate' has the following attributes: 'latitude' of type float; 'altitude' of type float; 'longitude' of type float; 'heading' of type float.
+The enumeration 'TravelMode' has the following literals: 'NORMAL', 'AGGRESSIVE', 'SAFE'.
+The enumeration 'GoToStrategy' has the following literals: 'DIRECT', 'HORIZONTAL_FIRST', 'VERTICAL_FIRST'.
+'behaviour::Move' is a specialization of 'NamedElement'.
+'behaviour::GoTo' is a specialization of 'Move'.
+'behaviour::CommunicationAction' is a specialization of 'Action'.
+'behaviour::CheckNotification' is a specialization of 'CommunicationAction'.
+'behaviour::Feedback' is a specialization of 'CommunicationAction'.
+'behaviour::TakeOff' is a specialization of 'Move'.
+'behaviour::Choice' is a specialization of 'MoveTransition'.
+'behaviour::UnicastNotify' is a specialization of 'Notify'.
+'behaviour::Drone' is a specialization of 'NamedElement'.
+'behaviour::DeviceAction' is a specialization of 'Action'.
+'behaviour::Start' is a specialization of 'Move'.
+'behaviour::HeadTo' is a specialization of 'Move'.
+'behaviour::Notify' is a specialization of 'CommunicationAction'.
+'behaviour::Slot' is a specialization of 'NamedElement'.
+'behaviour::Hover' is a specialization of 'Move'.
+'behaviour::Stop' is a specialization of 'Move'.
+'behaviour::MulticastNotify' is a specialization of 'Notify'.
+'behaviour::Action' is a specialization of 'NamedElement'.
+'behaviour::Circle' is a specialization of 'Move'.
+'behaviour::Behaviour' is a specialization of 'NamedElement'.
+'behaviour::BroadcastNotify' is a specialization of 'Notify'.
+'behaviour::Land' is a specialization of 'Move'.
+'behaviour::Coordinate' (role 'behaviour_Coordinate17', cardinality 0..*) is associated with 'behaviour::GoTo' (role 'behaviour_GoTo', cardinality 0..*).
+'behaviour::Coordinate' (role 'behaviour_Coordinate', cardinality 0..*) is associated with 'behaviour::Drone' (role 'behaviour_Drone2', cardinality 0..*).
+'behaviour::Drone' (role 'behaviour_Drone25', cardinality 0..*) is associated with 'behaviour::MulticastNotify' (role 'behaviour_MulticastNotify', cardinality 0..*).
+'behaviour::Drone' (role 'behaviour_Drone4', cardinality 0..*) is associated with 'behaviour::Move' (role 'behaviour_Move', cardinality 0..*).
+'behaviour::MoveTransition' (role 'behaviour_MoveTransition36', cardinality 0..*) is associated with 'behaviour::Move' (role 'behaviour_Move37', cardinality 0..*).
+'behaviour::Move' (role 'behaviour_Move34', cardinality 0..*) is associated with 'behaviour::MoveTransition' (role 'behaviour_MoveTransition33', cardinality 0..*).
+'behaviour::Behaviour' (role 'behaviour_Behaviour', cardinality 0..*) is associated with 'behaviour::Drone' (role 'behaviour_Drone', cardinality 0..*).
+'behaviour::Parameter' (role 'behaviour_Parameter39', cardinality 0..*) is associated with 'behaviour::Feedback' (role 'behaviour_Feedback', cardinality 0..*).
+'behaviour::Slot' (role 'behaviour_Slot', cardinality 0..*) is associated with 'behaviour::Drone' (role 'behaviour_Drone8', cardinality 0..*).
+'behaviour::Move' (role 'behaviour_Move12', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action', cardinality 0..*).
+'behaviour::Coordinate' (role 'behaviour_Coordinate19', cardinality 0..*) is associated with 'behaviour::Circle' (role 'behaviour_Circle', cardinality 0..*).
+'behaviour::Slot' (role 'behaviour_Slot27', cardinality 0..*) is associated with 'behaviour::CheckNotification' (role 'behaviour_CheckNotification', cardinality 0..*).
+'behaviour::Slot' (role 'behaviour_Slot31', cardinality 0..*) is associated with 'behaviour::MoveTransition' (role 'behaviour_MoveTransition30', cardinality 0..*).
+'behaviour::Move' (role 'behaviour_Move14', cardinality 0..*) is associated with 'behaviour::Action' (role 'behaviour_Action15', cardinality 0..*).
+'behaviour::UnicastNotify' (role 'behaviour_UnicastNotify', cardinality 0..*) is associated with 'behaviour::Drone' (role 'behaviour_Drone23', cardinality 0..*).
+'behaviour::Choice' (role 'behaviour_Choice', cardinality 0..*) is associated with 'behaviour::Move' (role 'behaviour_Move10', cardinality 0..*).
+'behaviour::MoveTransition' (role 'behaviour_MoveTransition', cardinality 0..*) is associated with 'behaviour::Drone' (role 'behaviour_Drone6', cardinality 0..*).
+'behaviour::Notify' (role 'behaviour_Notify', cardinality 0..*) is associated with 'behaviour::Slot' (role 'behaviour_Slot21', cardinality 0..*).
+'behaviour::DeviceAction' (role 'behaviour_DeviceAction', cardinality 0..*) is associated with 'behaviour::Parameter' (role 'behaviour_Parameter', cardinality 0..*).

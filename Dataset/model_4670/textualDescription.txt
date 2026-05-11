@@ -1,0 +1,122 @@
+The model has 49 class(es).
+The class 'boa::Bool' has the following attributes: 'value' of type bool.
+The class 'boa::Int' has the following attributes: 'value' of type int.
+The class 'boa::EvalIntRes' has the following attributes: 'value' of type int.
+The class 'boa::TopLevelCmd' has no attributes.
+The class 'boa::Seq' has no attributes.
+The class 'boa::ArithOpMinus' has no attributes.
+The class 'boa::BObject' has no attributes.
+The class 'boa::CmpOpEqual' has no attributes.
+The class 'boa::With' has no attributes.
+The class 'boa::If' has no attributes.
+The class 'boa::BoolOpAnd' has no attributes.
+The class 'boa::EvalBoolRes' has the following attributes: 'value' of type bool.
+The class 'boa::File' has no attributes.
+The class 'boa::Let' has the following attributes: 'name' of type str.
+The class 'EvalRes' has no attributes.
+The class 'boa::CmpOp' has no attributes.
+The class 'boa::Copy' has no attributes.
+The class 'boa::BoolOpOr' has no attributes.
+The class 'boa::App' has no attributes.
+The class 'boa::ArithOpTimes' has no attributes.
+The class 'boa::Assign' has the following attributes: 'name' of type str.
+The class 'Expr' has no attributes.
+The class 'boa::Var' has the following attributes: 'name' of type str.
+The class 'boa::Field' has the following attributes: 'name' of type str.
+The class 'boa::ArithOpDivide' has no attributes.
+The class 'boa::Expr' has no attributes.
+The class 'boa::CmpOpLess' has no attributes.
+The class 'boa::Fun' has the following attributes: 'name' of type str.
+The class 'boa::EvalRes' has no attributes.
+The class 'boa::EvalBoundFunRes' has no attributes.
+The class 'boa::EvalMapRes' has no attributes.
+The class 'boa::ArithOp' has no attributes.
+The class 'boa::StringToEvalResMap' has the following attributes: 'key' of type str.
+The class 'boa::Skip' has no attributes.
+The class 'boa::This' has no attributes.
+The class 'boa::Not' has no attributes.
+The class 'boa::Ctx' has no attributes.
+The class 'boa::EvalFunRes' has the following attributes: 'name' of type str.
+The class 'EvalFunRes' has no attributes.
+The class 'boa::BoolOp' has no attributes.
+The class 'ArithOp' has no attributes.
+The class 'BoolOp' has no attributes.
+The class 'boa::Project' has the following attributes: 'name' of type str.
+The class 'boa::CmpOpUnequal' has no attributes.
+The class 'boa::ArithOpRemainder' has no attributes.
+The class 'CmpOp' has no attributes.
+The class 'boa::ArithOpPlus' has no attributes.
+The class 'boa::Def' has the following attributes: 'name' of type str.
+The class 'TopLevelCmd' has no attributes.
+'boa::Expr' is a specialization of 'TopLevelCmd'.
+'boa::If' is a specialization of 'Expr'.
+'boa::CmpOpUnequal' is a specialization of 'CmpOp'.
+'boa::Not' is a specialization of 'Expr'.
+'boa::EvalMapRes' is a specialization of 'EvalRes'.
+'boa::ArithOpPlus' is a specialization of 'ArithOp'.
+'boa::With' is a specialization of 'Expr'.
+'boa::Int' is a specialization of 'Expr'.
+'boa::BObject' is a specialization of 'Expr'.
+'boa::Fun' is a specialization of 'Expr'.
+'boa::Copy' is a specialization of 'Expr'.
+'boa::Def' is a specialization of 'TopLevelCmd'.
+'boa::Assign' is a specialization of 'Expr'.
+'boa::CmpOp' is a specialization of 'Expr'.
+'boa::Seq' is a specialization of 'Expr'.
+'boa::ArithOpDivide' is a specialization of 'ArithOp'.
+'boa::Let' is a specialization of 'Expr'.
+'boa::CmpOpLess' is a specialization of 'CmpOp'.
+'boa::Skip' is a specialization of 'Expr'.
+'boa::BoolOp' is a specialization of 'Expr'.
+'boa::ArithOpTimes' is a specialization of 'ArithOp'.
+'boa::EvalIntRes' is a specialization of 'EvalRes'.
+'boa::Project' is a specialization of 'Expr'.
+'boa::CmpOpEqual' is a specialization of 'CmpOp'.
+'boa::Bool' is a specialization of 'Expr'.
+'boa::ArithOp' is a specialization of 'Expr'.
+'boa::EvalFunRes' is a specialization of 'EvalRes'.
+'boa::BoolOpAnd' is a specialization of 'BoolOp'.
+'boa::BoolOpOr' is a specialization of 'BoolOp'.
+'boa::App' is a specialization of 'Expr'.
+'boa::EvalBoundFunRes' is a specialization of 'EvalFunRes'.
+'boa::ArithOpRemainder' is a specialization of 'ArithOp'.
+'boa::Var' is a specialization of 'Expr'.
+'boa::This' is a specialization of 'Expr'.
+'boa::ArithOpMinus' is a specialization of 'ArithOp'.
+'boa::EvalBoolRes' is a specialization of 'EvalRes'.
+'boa::Expr' (role 'boa_Expr12', cardinality 0..*) is associated with 'boa::Field' (role 'boa_Field11', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr63', cardinality 0..*) is associated with 'boa::Seq' (role 'boa_Seq', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr19', cardinality 0..*) is associated with 'boa::With' (role 'boa_With18', cardinality 0..*).
+'boa::Assign' (role 'boa_Assign', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr48', cardinality 0..*).
+'boa::ArithOp' (role 'boa_ArithOp23', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr24', cardinality 0..*).
+'boa::Ctx' (role 'boa_Ctx79', cardinality 0..*) is associated with 'boa::EvalFunRes' (role 'boa_EvalFunRes78', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr56', cardinality 0..*) is associated with 'boa::BoolOpAnd' (role 'boa_BoolOpAnd55', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr46', cardinality 0..*) is associated with 'boa::Fun' (role 'boa_Fun', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr53', cardinality 0..*) is associated with 'boa::BoolOpAnd' (role 'boa_BoolOpAnd', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr51', cardinality 0..*) is associated with 'boa::Assign' (role 'boa_Assign50', cardinality 0..*).
+'boa::If' (role 'boa_If38', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr39', cardinality 0..*).
+'boa::ArithOp' (role 'boa_ArithOp', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr21', cardinality 0..*).
+'boa::Ctx' (role 'boa_Ctx', cardinality 0..*) is associated with 'boa::StringToEvalResMap' (role 'boa_StringToEvalResMap', cardinality 0..*).
+'boa::EvalFunRes' (role 'boa_EvalFunRes', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr76', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr33', cardinality 0..*) is associated with 'boa::If' (role 'boa_If', cardinality 0..*).
+'boa::App' (role 'boa_App5', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr6', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr', cardinality 0..*) is associated with 'boa::Def' (role 'boa_Def', cardinality 0..*).
+'boa::BoolOpOr' (role 'boa_BoolOpOr60', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr61', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr3', cardinality 0..*) is associated with 'boa::App' (role 'boa_App', cardinality 0..*).
+'boa::StringToEvalResMap' (role 'boa_StringToEvalResMap72', cardinality 0..*) is associated with 'boa::EvalRes' (role 'boa_EvalRes', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr66', cardinality 0..*) is associated with 'boa::Seq' (role 'boa_Seq65', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr28', cardinality 0..*) is associated with 'boa::CmpOp' (role 'boa_CmpOp', cardinality 0..*).
+'boa::TopLevelCmd' (role 'boa_TopLevelCmd', cardinality 0..*) is associated with 'boa::File' (role 'boa_File', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr36', cardinality 0..*) is associated with 'boa::If' (role 'boa_If35', cardinality 0..*).
+'boa::CmpOp' (role 'boa_CmpOp30', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr31', cardinality 0..*).
+'boa::With' (role 'boa_With', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr16', cardinality 0..*).
+'boa::BoolOpOr' (role 'boa_BoolOpOr', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr58', cardinality 0..*).
+'boa::StringToEvalResMap' (role 'boa_StringToEvalResMap74', cardinality 0..*) is associated with 'boa::EvalMapRes' (role 'boa_EvalMapRes', cardinality 0..*).
+'boa::Field' (role 'boa_Field', cardinality 0..*) is associated with 'boa::BObject' (role 'boa_BObject', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr41', cardinality 0..*) is associated with 'boa::Let' (role 'boa_Let', cardinality 0..*).
+'boa::Not' (role 'boa_Not', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr26', cardinality 0..*).
+'boa::Ctx' (role 'boa_Ctx69', cardinality 0..*) is associated with 'boa::StringToEvalResMap' (role 'boa_StringToEvalResMap70', cardinality 0..*).
+'boa::EvalBoundFunRes' (role 'boa_EvalBoundFunRes', cardinality 0..*) is associated with 'boa::StringToEvalResMap' (role 'boa_StringToEvalResMap81', cardinality 0..*).
+'boa::Project' (role 'boa_Project', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr8', cardinality 0..*).
+'boa::Let' (role 'boa_Let43', cardinality 0..*) is associated with 'boa::Expr' (role 'boa_Expr44', cardinality 0..*).
+'boa::Expr' (role 'boa_Expr14', cardinality 0..*) is associated with 'boa::Copy' (role 'boa_Copy', cardinality 0..*).

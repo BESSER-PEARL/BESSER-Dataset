@@ -1,0 +1,64 @@
+The model has 27 class(es).
+The class 'types::TypeReference' has no attributes.
+The class 'types::PropertyReference' has no attributes.
+The class 'Type' has no attributes.
+The class 'ComplexType' has no attributes.
+The class 'types::NamedType' has the following attributes: 'name' of type str.
+The class 'types::EnumerationType' has no attributes.
+The class 'DeclarationTypeReference' has no attributes.
+The class 'types::CharLiteral' has the following attributes: 'value' of type str.
+The class 'types::Literal' has no attributes.
+The class 'NamedType' has no attributes.
+The class 'types::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'types::Property' has the following attributes: 'name' of type str; 'storageModifier' of type str.
+The class 'types::PrimitiveType' has no attributes.
+The class 'types::Model' has the following attributes: 'name' of type str.
+The class 'types::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'types::Type' has no attributes.
+The class 'types::StringLiteral' has the following attributes: 'value' of type str.
+The class 'types::NumberLiteral' has the following attributes: 'value' of type str.
+The class 'types::EntityRelationship' has the following attributes: 'kind' of type str.
+The class 'Literal' has no attributes.
+The class 'types::EnumerationLiteral' has the following attributes: 'name' of type str.
+The class 'types::MapType' has the following attributes: 'size' of type int.
+The class 'types::EntityType' has the following attributes: 'storageModifier' of type str.
+The class 'types::ComplexType' has no attributes.
+The class 'types::MappedByReference' has no attributes.
+The class 'types::CollectionType' has the following attributes: 'size' of type int.
+The class 'types::DeclarationTypeReference' has no attributes.
+The enumeration 'TypeStorageModifier' has the following literals: 'EMBEDDABLE', 'STORABLE'.
+The enumeration 'EntityRelationshipKind' has the following literals: 'UNIQUE', 'MANY'.
+The enumeration 'PropertyStorageModifier' has the following literals: 'VARIABLE', 'VALUE', 'TRANSIENT'.
+'types::MapType' is a specialization of 'DeclarationTypeReference'.
+'types::CollectionType' is a specialization of 'Type'.
+'types::TypeReference' is a specialization of 'DeclarationTypeReference'.
+'types::PrimitiveType' is a specialization of 'NamedType'.
+'types::BooleanLiteral' is a specialization of 'Literal'.
+'types::EntityType' is a specialization of 'ComplexType'.
+'types::EnumerationType' is a specialization of 'ComplexType'.
+'types::StringLiteral' is a specialization of 'Literal'.
+'types::MapType' is a specialization of 'Type'.
+'types::NamedType' is a specialization of 'Type'.
+'types::CharLiteral' is a specialization of 'Literal'.
+'types::PropertyReference' is a specialization of 'Literal'.
+'types::CollectionType' is a specialization of 'DeclarationTypeReference'.
+'types::ComplexType' is a specialization of 'NamedType'.
+'types::NumberLiteral' is a specialization of 'Literal'.
+'types::MappedByReference' (role 'types_MappedByReference34', cardinality 0..*) is associated with 'types::MappedByReference' (role 'types_MappedByReference32', cardinality 0..*).
+'types::MappedByReference' (role 'types_MappedByReference', cardinality 0..*) is associated with 'types::EntityRelationship' (role 'types_EntityRelationship28', cardinality 0..*).
+'types::CollectionType' (role 'types_CollectionType', cardinality 0..*) is associated with 'types::TypeReference' (role 'types_TypeReference', cardinality 0..*).
+'types::PropertyReference' (role 'types_PropertyReference', cardinality 0..*) is associated with 'types::Property' (role 'types_Property21', cardinality 0..*).
+'types::ComplexType' (role 'types_ComplexType13', cardinality 0..*) is associated with 'types::ComplexType' (role 'types_ComplexType11', cardinality 0..*).
+'types::EntityRelationship' (role 'types_EntityRelationship', cardinality 0..*) is associated with 'types::Property' (role 'types_Property19', cardinality 0..*).
+'types::Property' (role 'types_Property26', cardinality 0..*) is associated with 'types::Literal' (role 'types_Literal', cardinality 0..*).
+'types::MappedByReference' (role 'types_MappedByReference30', cardinality 0..*) is associated with 'types::Property' (role 'types_Property31', cardinality 0..*).
+'types::DeclarationTypeReference' (role 'types_DeclarationTypeReference', cardinality 0..*) is associated with 'types::Property' (role 'types_Property17', cardinality 0..*).
+'types::TypeReference' (role 'types_TypeReference5', cardinality 0..*) is associated with 'types::MapType' (role 'types_MapType', cardinality 0..*).
+'types::PropertyReference' (role 'types_PropertyReference24', cardinality 0..*) is associated with 'types::Property' (role 'types_Property23', cardinality 0..*).
+'types::TypeReference' (role 'types_TypeReference10', cardinality 0..*) is associated with 'types::NamedType' (role 'types_NamedType', cardinality 0..*).
+'types::ComplexType' (role 'types_ComplexType', cardinality 0..*) is associated with 'types::Model' (role 'types_Model2', cardinality 0..*).
+'types::EnumerationType' (role 'types_EnumerationType', cardinality 0..*) is associated with 'types::EnumerationLiteral' (role 'types_EnumerationLiteral', cardinality 0..*).
+'types::Property' (role 'types_Property37', cardinality 0..*) is associated with 'types::PropertyReference' (role 'types_PropertyReference36', cardinality 0..*).
+'types::Property' (role 'types_Property', cardinality 0..*) is associated with 'types::EntityType' (role 'types_EntityType', cardinality 0..*).
+'types::Import' (role 'types_Import', cardinality 0..*) is associated with 'types::Model' (role 'types_Model', cardinality 0..*).
+'types::TypeReference' (role 'types_TypeReference8', cardinality 0..*) is associated with 'types::MapType' (role 'types_MapType7', cardinality 0..*).

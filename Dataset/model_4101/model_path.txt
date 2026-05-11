@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/beatrizsanchez/epsilon.reactive.workflow/examples/consume-gradle-plugins/resources/Metamodel/railway.ecore

@@ -1,0 +1,68 @@
+The model has 28 class(es).
+The class 'metrics::MappingRecord' has the following attributes: 'count' of type str; 'message' of type str; 'column' of type str.
+The class 'metrics::ValueDataKind' has the following attributes: 'format' of type str; 'kindHint' of type str; 'valueKind' of type str.
+The class 'metrics::MetricSource' has the following attributes: 'name' of type str; 'filterPattern' of type str; 'metricLocation' of type str.
+The class 'DataKind' has no attributes.
+The class 'metrics::MappingStatistic' has the following attributes: 'intervalEstimate' of type str; 'message' of type str; 'totalRecords' of type str.
+The class 'metrics::MetricRetentionRules' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'metrics::MetricRetentionRule' has the following attributes: 'intervalHint' of type str; 'period' of type str.
+The class 'metrics::Unit' has no attributes.
+The class 'metrics::MetricAggregationRule' has no attributes.
+The class 'Base' has no attributes.
+The class 'metrics::MappingRDBMS' has the following attributes: 'query' of type str; 'password' of type str; 'dateFormat' of type str; 'databaseType' of type str; 'user' of type str; 'timeFormat' of type str; 'dateTimeFormat' of type str.
+The class 'metrics::MappingExternal' has the following attributes: 'classURI' of type str; 'pluginID' of type str.
+The class 'metrics::Expression' has no attributes.
+The class 'metrics::MetricValueRange' has the following attributes: 'intervalHint' of type str; 'kindHint' of type str.
+The class 'metrics::MappingColumn' has the following attributes: 'column' of type str.
+The class 'metrics::Metric' has the following attributes: 'measurementPoint' of type str; 'name' of type str; 'measurementKind' of type str; 'description' of type str.
+The class 'metrics::MetricRetentionPeriods' has the following attributes: 'metricRetentionPeriods' of type str.
+The class 'metrics::DateTimeRange' has no attributes.
+The class 'metrics::Mapping' has the following attributes: 'intervalHint' of type str; 'firstDataRow' of type str; 'headerRow' of type str.
+The class 'metrics::Value' has no attributes.
+The class 'metrics::IdentifierDataKind' has the following attributes: 'objectKind' of type str; 'objectProperty' of type str; 'pattern' of type str.
+The class 'metrics::RuleSet' has no attributes.
+The class 'metrics::MappingCSV' has the following attributes: 'filterPattern' of type str; 'delimiter' of type str.
+The class 'metrics::MetricAggregationRules' has no attributes.
+The class 'metrics::DataKind' has no attributes.
+The class 'metrics::MappingXLS' has the following attributes: 'filterPattern' of type str; 'sheetNumber' of type str.
+The class 'Rule' has no attributes.
+The enumeration 'DatabaseTypeType' has the following literals: 'Oracle', 'Postgres'.
+The enumeration 'ObjectKindType' has the following literals: 'RELATIONSHIP', 'NODE', 'FUNCTION', 'EQUIPMENT'.
+The enumeration 'FixedMetricRetentionPeriod' has the following literals: 'OneWeek', 'OneYear', 'OneMonth', 'Always'.
+The enumeration 'KindHintType' has the following literals: 'BH', 'AVG'.
+The enumeration 'ValueKindType' has the following literals: 'TIME', 'DATETIME', 'NULL', 'METRIC', 'INTERVAL', 'DATE'.
+'metrics::MappingExternal' is a specialization of 'Mapping'.
+'metrics::Metric' is a specialization of 'Base'.
+'metrics::MappingColumn' is a specialization of 'Base'.
+'metrics::MappingXLS' is a specialization of 'Mapping'.
+'metrics::MetricSource' is a specialization of 'Base'.
+'metrics::MappingRecord' is a specialization of 'Base'.
+'metrics::IdentifierDataKind' is a specialization of 'DataKind'.
+'metrics::MappingRDBMS' is a specialization of 'Mapping'.
+'metrics::MetricRetentionRule' is a specialization of 'Rule'.
+'metrics::MappingCSV' is a specialization of 'Mapping'.
+'metrics::MappingStatistic' is a specialization of 'Base'.
+'metrics::ValueDataKind' is a specialization of 'DataKind'.
+'metrics::Mapping' is a specialization of 'Base'.
+'metrics::MetricAggregationRule' is a specialization of 'Rule'.
+'metrics::MetricRetentionRules' (role 'metrics_MetricRetentionRules', cardinality 0..*) is associated with 'metrics::MetricRetentionRule' (role 'metrics_MetricRetentionRule', cardinality 0..*).
+'metrics::MetricAggregationRule' (role 'metrics_MetricAggregationRule', cardinality 0..*) is associated with 'metrics::Expression' (role 'metrics_Expression24', cardinality 0..*).
+'metrics::MetricValueRange' (role 'metrics_MetricValueRange', cardinality 0..*) is associated with 'metrics::Value' (role 'metrics_Value', cardinality 0..*).
+'metrics::Mapping' (role 'metrics_Mapping30', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metrics_MetricSource29', cardinality 0..*).
+'metrics::Unit' (role 'metrics_Unit', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric22', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic8', cardinality 0..*) is associated with 'metrics::DateTimeRange' (role 'metrics_DateTimeRange', cardinality 0..*).
+'metrics::Mapping' (role 'metrics_Mapping2', cardinality 0..*) is associated with 'metrics::MappingColumn' (role 'metrics_MappingColumn3', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric15', cardinality 0..*) is associated with 'metrics::Metric' (role 'metrics_Metric', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric41', cardinality 0..*) is associated with 'metrics::ValueDataKind' (role 'metrics_ValueDataKind', cardinality 0..*).
+'metrics::RuleSet' (role 'metrics_RuleSet38', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metrics_MetricSource37', cardinality 0..*).
+'metrics::MetricAggregationRules' (role 'metrics_MetricAggregationRules', cardinality 0..*) is associated with 'metrics::MetricAggregationRule' (role 'metrics_MetricAggregationRule26', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic14', cardinality 0..*) is associated with 'metrics::MappingStatistic' (role 'metrics_MappingStatistic12', cardinality 0..*).
+'metrics::MetricSource' (role 'metrics_MetricSource35', cardinality 0..*) is associated with 'metrics::RuleSet' (role 'metrics_RuleSet', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric18', cardinality 0..*) is associated with 'metrics::Expression' (role 'metrics_Expression', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic33', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metrics_MetricSource32', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic', cardinality 0..*) is associated with 'metrics::MappingRecord' (role 'metrics_MappingRecord', cardinality 0..*).
+'metrics::MappingColumn' (role 'metrics_MappingColumn', cardinality 0..*) is associated with 'metrics::Mapping' (role 'metrics_Mapping', cardinality 0..*).
+'metrics::Metric' (role 'metrics_Metric20', cardinality 0..*) is associated with 'metrics::MetricSource' (role 'metrics_MetricSource', cardinality 0..*).
+'metrics::DataKind' (role 'metrics_DataKind', cardinality 0..*) is associated with 'metrics::MappingColumn' (role 'metrics_MappingColumn5', cardinality 0..*).
+'metrics::MappingStatistic' (role 'metrics_MappingStatistic10', cardinality 0..*) is associated with 'metrics::DateTimeRange' (role 'metrics_DateTimeRange11', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Subunit' has no attributes.
+The class 'company::Employee' has the following attributes: 'salary' of type float.
+The class 'company::Company' has no attributes.
+The class 'company::Subunit' has no attributes.
+The class 'company::Person' has the following attributes: 'name' of type str; 'address' of type str.
+The class 'company::Dept' has the following attributes: 'name' of type str.
+'company::Dept' is a specialization of 'Subunit'.
+'company::Employee' is a specialization of 'Subunit'.
+'company::Employee' (role 'company_Employee6', cardinality 0..*) is associated with 'company::Person' (role 'company_Person', cardinality 0..*).
+'company::Dept' (role 'company_Dept2', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee', cardinality 0..*).
+'company::Dept' (role 'company_Dept', cardinality 0..*) is associated with 'company::Company' (role 'company_Company', cardinality 0..*).
+'company::Subunit' (role 'company_Subunit', cardinality 0..*) is associated with 'company::Dept' (role 'company_Dept4', cardinality 0..*).

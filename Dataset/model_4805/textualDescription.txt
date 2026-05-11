@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'model::IHost' has the following attributes: 'address' of type str; 'name' of type str.
+The class 'model::IServiceTypeID' has the following attributes: 'ecfServiceName' of type str; 'ecfProtocols' of type str; 'ecfServices' of type str; 'ecfScopes' of type str; 'ecfNamingAuthority' of type str; 'ecfServiceTypeID' of type str.
+The class 'model::INetwork' has no attributes.
+The class 'model::IServiceInfo' has the following attributes: 'ecfLocation' of type str; 'ecfPriority' of type int; 'ecfWeight' of type int; 'ecfName' of type str; 'ecfServiceInfo' of type str.
+The class 'model::IServiceID' has the following attributes: 'ecfServiceName' of type str; 'ecfServiceID' of type str.
+'model::IServiceID' (role 'model_IServiceID', cardinality 0..*) is associated with 'model::IServiceInfo' (role 'model_IServiceInfo', cardinality 0..*).
+'model::IServiceID' (role 'model_IServiceID6', cardinality 0..*) is associated with 'model::IServiceTypeID' (role 'model_IServiceTypeID', cardinality 0..*).
+'model::INetwork' (role 'model_INetwork', cardinality 0..*) is associated with 'model::IHost' (role 'model_IHost', cardinality 0..*).
+'model::IHost' (role 'model_IHost3', cardinality 0..*) is associated with 'model::IServiceInfo' (role 'model_IServiceInfo4', cardinality 0..*).

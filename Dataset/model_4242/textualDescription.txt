@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'company::Person' has the following attributes: 'address' of type str; 'name' of type str.
+The class 'company::Company' has no attributes.
+The class 'company::Subunit' has no attributes.
+The class 'company::Dept' has the following attributes: 'name' of type str.
+The class 'company::Employee' has the following attributes: 'salary' of type float.
+'company::Subunit' (role 'company_Subunit11', cardinality 0..*) is associated with 'company::Dept' (role 'company_Dept12', cardinality 0..*).
+'company::Company' (role 'company_Company', cardinality 0..*) is associated with 'company::Dept' (role 'company_Dept', cardinality 0..*).
+'company::Employee' (role 'company_Employee', cardinality 0..*) is associated with 'company::Dept' (role 'company_Dept2', cardinality 0..*).
+'company::Person' (role 'company_Person', cardinality 0..*) is associated with 'company::Employee' (role 'company_Employee6', cardinality 0..*).
+'company::Dept' (role 'company_Dept4', cardinality 0..*) is associated with 'company::Subunit' (role 'company_Subunit', cardinality 0..*).
+'company::Employee' (role 'company_Employee9', cardinality 0..*) is associated with 'company::Subunit' (role 'company_Subunit8', cardinality 0..*).

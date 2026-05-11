@@ -1,0 +1,104 @@
+The model has 43 class(es).
+The class 'diva::NaryTerm' has no attributes.
+The class 'Expression' has no attributes.
+The class 'diva::Model' has no attributes.
+The class 'diva::Annotation' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'diva::NotTerm' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'diva::ContextExpression' has no attributes.
+The class 'diva::PropertyPriority' has the following attributes: 'priority' of type str.
+The class 'diva::PriorityRule' has no attributes.
+The class 'diva::EnumLiteral' has no attributes.
+The class 'diva::VariantTerm' has no attributes.
+The class 'diva::VariabilityModel' has no attributes.
+The class 'diva::BaseModel' has no attributes.
+The class 'diva::Property' has the following attributes: 'direction' of type str.
+The class 'VariableTerm' has no attributes.
+The class 'diva::Expression' has the following attributes: 'text' of type str.
+The class 'diva::AspectModel' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'diva::Variable' has no attributes.
+The class 'diva::Term' has no attributes.
+The class 'NaryTerm' has no attributes.
+The class 'diva::OrTerm' has no attributes.
+The class 'DiVAModelElement' has no attributes.
+The class 'Term' has no attributes.
+The class 'diva::BooleanTerm' has no attributes.
+The class 'diva::BooleanVariable' has no attributes.
+The class 'Model' has no attributes.
+The class 'diva::Invariant' has no attributes.
+The class 'diva::NamedElement' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'diva::VariantExpression' has no attributes.
+The class 'diva::VariableTerm' has no attributes.
+The class 'diva::EnumTerm' has no attributes.
+The class 'diva::Variant' has no attributes.
+The class 'Variable' has no attributes.
+The class 'diva::Rule' has no attributes.
+The class 'Rule' has no attributes.
+The class 'diva::DiVAModelElement' has no attributes.
+The class 'diva::PropertyValue' has the following attributes: 'value' of type str.
+The class 'diva::Dimension' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'diva::EnumVariable' has no attributes.
+The class 'diva::MultiplicityConstraint' has the following attributes: 'lower' of type str; 'upper' of type str.
+The class 'diva::Constraint' has no attributes.
+The class 'diva::AndTerm' has no attributes.
+'diva::NaryTerm' is a specialization of 'Term'.
+'diva::EnumVariable' is a specialization of 'Variable'.
+'diva::AspectModel' is a specialization of 'Model'.
+'diva::BaseModel' is a specialization of 'Model'.
+'diva::VariabilityModel' is a specialization of 'DiVAModelElement'.
+'diva::NotTerm' is a specialization of 'Term'.
+'diva::Term' is a specialization of 'DiVAModelElement'.
+'diva::Constraint' is a specialization of 'NamedElement'.
+'diva::Variable' is a specialization of 'NamedElement'.
+'diva::Model' is a specialization of 'DiVAModelElement'.
+'diva::AndTerm' is a specialization of 'NaryTerm'.
+'diva::Property' is a specialization of 'NamedElement'.
+'diva::VariantExpression' is a specialization of 'Expression'.
+'diva::VariantTerm' is a specialization of 'Term'.
+'diva::VariableTerm' is a specialization of 'Term'.
+'diva::Dimension' is a specialization of 'NamedElement'.
+'diva::PropertyPriority' is a specialization of 'DiVAModelElement'.
+'diva::ContextExpression' is a specialization of 'Expression'.
+'diva::MultiplicityConstraint' is a specialization of 'Constraint'.
+'diva::EnumLiteral' is a specialization of 'NamedElement'.
+'diva::NamedElement' is a specialization of 'DiVAModelElement'.
+'diva::PropertyValue' is a specialization of 'DiVAModelElement'.
+'diva::BooleanVariable' is a specialization of 'Variable'.
+'diva::PriorityRule' is a specialization of 'Rule'.
+'diva::Rule' is a specialization of 'NamedElement'.
+'diva::EnumTerm' is a specialization of 'VariableTerm'.
+'diva::BooleanTerm' is a specialization of 'VariableTerm'.
+'diva::Expression' is a specialization of 'DiVAModelElement'.
+'diva::Variant' is a specialization of 'NamedElement'.
+'diva::Invariant' is a specialization of 'Constraint'.
+'diva::OrTerm' is a specialization of 'NaryTerm'.
+'diva::ContextExpression' (role 'diva_ContextExpression43', cardinality 0..*) is associated with 'diva::PriorityRule' (role 'diva_PriorityRule', cardinality 0..*).
+'diva::Variant' (role 'diva_Variant29', cardinality 0..*) is associated with 'diva::ContextExpression' (role 'diva_ContextExpression', cardinality 0..*).
+'diva::Dimension' (role 'diva_Dimension', cardinality 0..*) is associated with 'diva::VariabilityModel' (role 'diva_VariabilityModel6', cardinality 0..*).
+'diva::VariableTerm' (role 'diva_VariableTerm', cardinality 0..*) is associated with 'diva::Variable' (role 'diva_Variable18', cardinality 0..*).
+'diva::ContextExpression' (role 'diva_ContextExpression32', cardinality 0..*) is associated with 'diva::Variant' (role 'diva_Variant31', cardinality 0..*).
+'diva::Variant' (role 'Variant', cardinality 0..*) is associated with 'diva::Dimension' (role 'type', cardinality 0..*).
+'diva::VariantExpression' (role 'diva_VariantExpression', cardinality 0..*) is associated with 'diva::Variant' (role 'diva_Variant27', cardinality 0..*).
+'diva::EnumLiteral' (role 'diva_EnumLiteral', cardinality 0..*) is associated with 'diva::EnumVariable' (role 'diva_EnumVariable', cardinality 0..*).
+'diva::BaseModel' (role 'diva_BaseModel', cardinality 0..*) is associated with 'diva::VariabilityModel' (role 'diva_VariabilityModel', cardinality 0..*).
+'diva::PropertyPriority' (role 'diva_PropertyPriority', cardinality 0..*) is associated with 'diva::PriorityRule' (role 'diva_PriorityRule45', cardinality 0..*).
+'diva::Dimension' (role 'diva_Dimension38', cardinality 0..*) is associated with 'diva::MultiplicityConstraint' (role 'diva_MultiplicityConstraint', cardinality 0..*).
+'diva::Variant' (role 'diva_Variant22', cardinality 0..*) is associated with 'diva::AspectModel' (role 'diva_AspectModel', cardinality 0..*).
+'diva::Property' (role 'diva_Property36', cardinality 0..*) is associated with 'diva::Dimension' (role 'diva_Dimension35', cardinality 0..*).
+'diva::Variant' (role 'diva_Variant', cardinality 0..*) is associated with 'diva::VariantTerm' (role 'diva_VariantTerm', cardinality 0..*).
+'diva::Term' (role 'diva_Term15', cardinality 0..*) is associated with 'diva::NaryTerm' (role 'diva_NaryTerm', cardinality 0..*).
+'diva::MultiplicityConstraint' (role 'diva_MultiplicityConstraint53', cardinality 0..*) is associated with 'diva::ContextExpression' (role 'diva_ContextExpression54', cardinality 0..*).
+'diva::Invariant' (role 'diva_Invariant', cardinality 0..*) is associated with 'diva::Expression' (role 'diva_Expression', cardinality 0..*).
+'diva::Term' (role 'diva_Term', cardinality 0..*) is associated with 'diva::NotTerm' (role 'diva_NotTerm', cardinality 0..*).
+'diva::Annotation' (role 'diva_Annotation', cardinality 0..*) is associated with 'diva::DiVAModelElement' (role 'diva_DiVAModelElement', cardinality 0..*).
+'diva::VariabilityModel' (role 'diva_VariabilityModel2', cardinality 0..*) is associated with 'diva::Variable' (role 'diva_Variable', cardinality 0..*).
+'diva::PropertyPriority' (role 'diva_PropertyPriority50', cardinality 0..*) is associated with 'diva::Property' (role 'diva_Property51', cardinality 0..*).
+'diva::Expression' (role 'diva_Expression40', cardinality 0..*) is associated with 'diva::Term' (role 'diva_Term41', cardinality 0..*).
+'diva::Rule' (role 'diva_Rule', cardinality 0..*) is associated with 'diva::VariabilityModel' (role 'diva_VariabilityModel8', cardinality 0..*).
+'diva::Variant' (role 'diva_Variant25', cardinality 0..*) is associated with 'diva::PropertyValue' (role 'diva_PropertyValue', cardinality 0..*).
+'diva::VariabilityModel' (role 'diva_VariabilityModel4', cardinality 0..*) is associated with 'diva::Property' (role 'diva_Property', cardinality 0..*).
+'diva::EnumTerm' (role 'diva_EnumTerm', cardinality 0..*) is associated with 'diva::EnumLiteral' (role 'diva_EnumLiteral20', cardinality 0..*).
+'diva::Property' (role 'diva_Property48', cardinality 0..*) is associated with 'diva::PropertyValue' (role 'diva_PropertyValue47', cardinality 0..*).
+'diva::Dimension' (role 'Dimension', cardinality 0..*) is associated with 'diva::Variant' (role 'variant', cardinality 0..*).
+'diva::Constraint' (role 'diva_Constraint', cardinality 0..*) is associated with 'diva::VariabilityModel' (role 'diva_VariabilityModel10', cardinality 0..*).

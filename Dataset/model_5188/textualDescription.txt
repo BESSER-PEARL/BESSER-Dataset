@@ -1,0 +1,18 @@
+The model has 12 class(es).
+The class 'ecore::B' has no attributes.
+The class 'EOperation' has no attributes.
+The class 'ecore::C' has no attributes.
+The class 'B' has no attributes.
+The class 'ecore::Y' has no attributes.
+The class 'ecore::A' has no attributes.
+The class 'C' has no attributes.
+The class 'ecore::X' has no attributes.
+The class 'ecore::EOperation' has no attributes.
+The class 'Y' has no attributes.
+The class 'A' has no attributes.
+The class 'ecore::EClass' has no attributes.
+'ecore::X' is a specialization of 'A'.
+'ecore::EClass' is a specialization of 'C'.
+'ecore::A' is a specialization of 'EOperation'.
+'ecore::C' is a specialization of 'B'.
+'ecore::C' is a specialization of 'Y'.

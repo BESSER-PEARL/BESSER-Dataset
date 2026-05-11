@@ -1,0 +1,111 @@
+The model has 36 class(es).
+The class 'paplj::Binding' has no attributes.
+The class 'paplj::Assignment' has no attributes.
+The class 'paplj::And' has no attributes.
+The class 'paplj::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'paplj::This' has no attributes.
+The class 'paplj::Var' has the following attributes: 'methodInvocation' of type bool.
+The class 'paplj::Lt' has no attributes.
+The class 'Member' has no attributes.
+The class 'paplj::Add' has no attributes.
+The class 'Symbol' has no attributes.
+The class 'paplj::If' has no attributes.
+The class 'paplj::Symbol' has the following attributes: 'name' of type str.
+The class 'paplj::Expr' has no attributes.
+The class 'paplj::Program' has the following attributes: 'name' of type str.
+The class 'paplj::Min' has no attributes.
+The class 'Expr' has no attributes.
+The class 'paplj::Sub' has no attributes.
+The class 'paplj::Type' has the following attributes: 'name' of type str.
+The class 'paplj::Not' has no attributes.
+The class 'paplj::Field' has no attributes.
+The class 'paplj::Null' has no attributes.
+The class 'paplj::Mul' has no attributes.
+The class 'paplj::Eq' has no attributes.
+The class 'paplj::Method' has no attributes.
+The class 'paplj::Let' has no attributes.
+The class 'paplj::Div' has no attributes.
+The class 'paplj::MemberRef' has the following attributes: 'methodInvocation' of type bool.
+The class 'paplj::Or' has no attributes.
+The class 'paplj::Block2' has no attributes.
+The class 'paplj::Num' has the following attributes: 'value' of type int.
+The class 'paplj::Param' has no attributes.
+The class 'paplj::New' has no attributes.
+The class 'paplj::Bool' has the following attributes: 'true' of type bool.
+The class 'paplj::Cast' has no attributes.
+The class 'paplj::Member' has no attributes.
+The class 'paplj::Neq' has no attributes.
+'paplj::If' is a specialization of 'Expr'.
+'paplj::Div' is a specialization of 'Expr'.
+'paplj::Var' is a specialization of 'Expr'.
+'paplj::Member' is a specialization of 'Symbol'.
+'paplj::Param' is a specialization of 'Symbol'.
+'paplj::Eq' is a specialization of 'Expr'.
+'paplj::Sub' is a specialization of 'Expr'.
+'paplj::Method' is a specialization of 'Member'.
+'paplj::And' is a specialization of 'Expr'.
+'paplj::Binding' is a specialization of 'Symbol'.
+'paplj::This' is a specialization of 'Expr'.
+'paplj::Null' is a specialization of 'Expr'.
+'paplj::Assignment' is a specialization of 'Expr'.
+'paplj::Not' is a specialization of 'Expr'.
+'paplj::Num' is a specialization of 'Expr'.
+'paplj::Bool' is a specialization of 'Expr'.
+'paplj::Cast' is a specialization of 'Expr'.
+'paplj::Mul' is a specialization of 'Expr'.
+'paplj::New' is a specialization of 'Expr'.
+'paplj::Let' is a specialization of 'Expr'.
+'paplj::Min' is a specialization of 'Expr'.
+'paplj::Lt' is a specialization of 'Expr'.
+'paplj::Neq' is a specialization of 'Expr'.
+'paplj::Add' is a specialization of 'Expr'.
+'paplj::MemberRef' is a specialization of 'Expr'.
+'paplj::Field' is a specialization of 'Member'.
+'paplj::Or' is a specialization of 'Expr'.
+'paplj::Block2' is a specialization of 'Expr'.
+'paplj::Expr' (role 'paplj_Expr37', cardinality 0..*) is associated with 'paplj::Assignment' (role 'paplj_Assignment36', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type11', cardinality 0..*) is associated with 'paplj::Symbol' (role 'paplj_Symbol', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr47', cardinality 0..*) is associated with 'paplj::And' (role 'paplj_And46', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr99', cardinality 0..*) is associated with 'paplj::MemberRef' (role 'paplj_MemberRef98', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr49', cardinality 0..*) is associated with 'paplj::Eq' (role 'paplj_Eq', cardinality 0..*).
+'paplj::Min' (role 'paplj_Min', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr91', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type103', cardinality 0..*) is associated with 'paplj::New' (role 'paplj_New', cardinality 0..*).
+'paplj::Let' (role 'paplj_Let', cardinality 0..*) is associated with 'paplj::Binding' (role 'paplj_Binding29', cardinality 0..*).
+'paplj::Add' (role 'paplj_Add66', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr67', cardinality 0..*).
+'paplj::Or' (role 'paplj_Or41', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr42', cardinality 0..*).
+'paplj::Symbol' (role 'paplj_Symbol105', cardinality 0..*) is associated with 'paplj::Var' (role 'paplj_Var', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr62', cardinality 0..*) is associated with 'paplj::Lt' (role 'paplj_Lt61', cardinality 0..*).
+'paplj::Lt' (role 'paplj_Lt', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr59', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type', cardinality 0..*) is associated with 'paplj::Program' (role 'paplj_Program2', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr79', cardinality 0..*) is associated with 'paplj::Div' (role 'paplj_Div', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr39', cardinality 0..*) is associated with 'paplj::Or' (role 'paplj_Or', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr24', cardinality 0..*) is associated with 'paplj::If' (role 'paplj_If23', cardinality 0..*).
+'paplj::Div' (role 'paplj_Div81', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr82', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr74', cardinality 0..*) is associated with 'paplj::Mul' (role 'paplj_Mul', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type101', cardinality 0..*) is associated with 'paplj::Null' (role 'paplj_Null', cardinality 0..*).
+'paplj::Neq' (role 'paplj_Neq56', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr57', cardinality 0..*).
+'paplj::Mul' (role 'paplj_Mul76', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr77', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr72', cardinality 0..*) is associated with 'paplj::Sub' (role 'paplj_Sub71', cardinality 0..*).
+'paplj::Method' (role 'paplj_Method14', cardinality 0..*) is associated with 'paplj::Block2' (role 'paplj_Block2', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr16', cardinality 0..*) is associated with 'paplj::Binding' (role 'paplj_Binding', cardinality 0..*).
+'paplj::Program' (role 'paplj_Program', cardinality 0..*) is associated with 'paplj::Import' (role 'paplj_Import', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type7', cardinality 0..*) is associated with 'paplj::Type' (role 'paplj_Type5', cardinality 0..*).
+'paplj::Neq' (role 'paplj_Neq', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr54', cardinality 0..*).
+'paplj::Assignment' (role 'paplj_Assignment', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr34', cardinality 0..*).
+'paplj::Member' (role 'paplj_Member96', cardinality 0..*) is associated with 'paplj::MemberRef' (role 'paplj_MemberRef95', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr93', cardinality 0..*) is associated with 'paplj::MemberRef' (role 'paplj_MemberRef', cardinality 0..*).
+'paplj::Type' (role 'paplj_Type87', cardinality 0..*) is associated with 'paplj::Cast' (role 'paplj_Cast86', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr52', cardinality 0..*) is associated with 'paplj::Eq' (role 'paplj_Eq51', cardinality 0..*).
+'paplj::Var' (role 'paplj_Var107', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr108', cardinality 0..*).
+'paplj::Not' (role 'paplj_Not', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr89', cardinality 0..*).
+'paplj::Cast' (role 'paplj_Cast', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr84', cardinality 0..*).
+'paplj::Member' (role 'paplj_Member', cardinality 0..*) is associated with 'paplj::Type' (role 'paplj_Type9', cardinality 0..*).
+'paplj::Block2' (role 'paplj_Block218', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr19', cardinality 0..*).
+'paplj::Add' (role 'paplj_Add', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr64', cardinality 0..*).
+'paplj::Program' (role 'paplj_Program4', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr', cardinality 0..*).
+'paplj::Sub' (role 'paplj_Sub', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr69', cardinality 0..*).
+'paplj::And' (role 'paplj_And', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr44', cardinality 0..*).
+'paplj::Expr' (role 'paplj_Expr32', cardinality 0..*) is associated with 'paplj::Let' (role 'paplj_Let31', cardinality 0..*).
+'paplj::If' (role 'paplj_If', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr21', cardinality 0..*).
+'paplj::If' (role 'paplj_If26', cardinality 0..*) is associated with 'paplj::Expr' (role 'paplj_Expr27', cardinality 0..*).
+'paplj::Param' (role 'paplj_Param', cardinality 0..*) is associated with 'paplj::Method' (role 'paplj_Method', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'A' has no attributes.
+The class 'astrans::B' has no attributes.
+The class 'astrans::A' has no attributes.
+The class 'E' has no attributes.
+'astrans::B' is a specialization of 'E'.
+'astrans::B' is a specialization of 'A'.

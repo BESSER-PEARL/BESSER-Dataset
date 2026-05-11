@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'Instruction' has no attributes.
+The class 'PrimitivesProv::Right' has no attributes.
+The class 'PrimitivesProv::Forward' has no attributes.
+The class 'PrimitivesProv::Left' has no attributes.
+The class 'PrimitivesProv::Instruction' has no attributes.
+The class 'Primitive' has no attributes.
+The class 'PrimitivesProv::Primitive' has no attributes.
+The class 'PrimitivesProv::Back' has no attributes.
+The class 'PrimitivesProv::LogoProgram' has no attributes.
+'PrimitivesProv::Forward' is a specialization of 'Primitive'.
+'PrimitivesProv::Back' is a specialization of 'Primitive'.
+'PrimitivesProv::Primitive' is a specialization of 'Instruction'.
+'PrimitivesProv::Right' is a specialization of 'Primitive'.
+'PrimitivesProv::Left' is a specialization of 'Primitive'.
+'PrimitivesProv::LogoProgram' (role 'PrimitivesProv_LogoProgram', cardinality 0..*) is associated with 'PrimitivesProv::Instruction' (role 'PrimitivesProv_Instruction', cardinality 0..*).

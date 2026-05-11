@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'cherry1to2::Greeting' has the following attributes: 'name' of type str.
+The class 'cherry1to2::Model' has no attributes.
+'cherry1to2::Greeting' (role 'cherry1to2_Greeting', cardinality 0..*) is associated with 'cherry1to2::Model' (role 'cherry1to2_Model', cardinality 0..*).

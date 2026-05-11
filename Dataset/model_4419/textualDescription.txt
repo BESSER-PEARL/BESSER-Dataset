@@ -1,0 +1,109 @@
+The model has 53 class(es).
+The class 'arduino::AbstractDevice' has the following attributes: 'name' of type str; 'pin' of type str.
+The class 'arduino::LoopItem' has no attributes.
+The class 'arduino::Sensor' has the following attributes: 'analog' of type bool; 'pullup' of type bool.
+The class 'PortProtocol' has no attributes.
+The class 'OutOnlyMessage' has no attributes.
+The class 'arduino::SupportData' has no attributes.
+The class 'OutInMessage' has no attributes.
+The class 'arduino::SupportSpecification' has the following attributes: 'supportType' of type str.
+The class 'arduino::Precondition' has the following attributes: 'op' of type str.
+The class 'arduino::ServeDispatch' has no attributes.
+The class 'arduino::SystemDefinition' has no attributes.
+The class 'InOperation' has no attributes.
+The class 'arduino::IODevice' has the following attributes: 'analog' of type bool; 'pullup' of type bool.
+The class 'arduino::Request' has no attributes.
+The class 'arduino::Serial' has no attributes.
+The class 'arduino::OutOnlyMessage' has no attributes.
+The class 'arduino::Invitation' has no attributes.
+The class 'arduino::Handler' has the following attributes: 'name' of type str.
+The class 'arduino::PortConnectionData' has the following attributes: 'host' of type str; 'port' of type int.
+The class 'arduino::AcceptInvitation' has no attributes.
+The class 'HighLevelOperation' has no attributes.
+The class 'arduino::Actuator' has no attributes.
+The class 'arduino::DemandRequest' has no attributes.
+The class 'arduino::Message' has no attributes.
+The class 'arduino::OutInMessage' has the following attributes: 'name' of type str.
+The class 'arduino::Task' has the following attributes: 'external' of type bool; 'name' of type str.
+The class 'arduino::Precondition1' has no attributes.
+The class 'arduino::PortTCP' has the following attributes: 'supportType' of type str.
+The class 'InAcquireOperation' has no attributes.
+The class 'SupportData' has no attributes.
+The class 'arduino::InOperation' has no attributes.
+The class 'arduino::TCP' has no attributes.
+The class 'arduino::Poll' has the following attributes: 'type' of type str; 'l' of type int; 'h' of type int.
+The class 'arduino::EmptyPrecondition' has the following attributes: 'name' of type str.
+The class 'OutOperation' has no attributes.
+The class 'arduino::HighLevelOperation' has no attributes.
+The class 'Message' has no attributes.
+The class 'arduino::Dispatch' has the following attributes: 'name' of type str.
+The class 'arduino::AskInvitation' has no attributes.
+The class 'arduino::Sketch' has the following attributes: 'hardware' of type str; 'defineSystem' of type bool; 'name' of type str.
+The class 'arduino::ExplicitSupportData' has the following attributes: 'host' of type str; 'port' of type int.
+The class 'arduino::PortProtocol' has no attributes.
+The class 'arduino::InAcquireOperation' has no attributes.
+The class 'arduino::IP' has the following attributes: 'value' of type str.
+The class 'SupportSpecification' has no attributes.
+The class 'arduino::ForwardDispatch' has no attributes.
+The class 'arduino::Interrupt' has the following attributes: 'name' of type str; 'eventKind' of type str; 'interruptKind' of type str.
+The class 'arduino::EObject' has no attributes.
+The class 'AbstractDevice' has no attributes.
+The class 'arduino::GrantRequest' has no attributes.
+The class 'arduino::SensorValuePrecondition' has the following attributes: 'value' of type str; 'cond' of type str.
+The class 'arduino::OutOperation' has no attributes.
+The class 'arduino::CommunicationParams' has the following attributes: 'baudrate' of type int; 'ip' of type str; 'subnet' of type str; 'mac' of type str; 'dns' of type str; 'gateway' of type str; 'type' of type str.
+'arduino::Request' is a specialization of 'OutInMessage'.
+'arduino::ForwardDispatch' is a specialization of 'OutOperation'.
+'arduino::GrantRequest' is a specialization of 'InAcquireOperation'.
+'arduino::OutOperation' is a specialization of 'HighLevelOperation'.
+'arduino::PortTCP' is a specialization of 'PortProtocol'.
+'arduino::InOperation' is a specialization of 'HighLevelOperation'.
+'arduino::DemandRequest' is a specialization of 'OutOperation'.
+'arduino::ExplicitSupportData' is a specialization of 'SupportData'.
+'arduino::Serial' is a specialization of 'SupportSpecification'.
+'arduino::TCP' is a specialization of 'SupportSpecification'.
+'arduino::ServeDispatch' is a specialization of 'InAcquireOperation'.
+'arduino::InAcquireOperation' is a specialization of 'InOperation'.
+'arduino::AskInvitation' is a specialization of 'OutOperation'.
+'arduino::Invitation' is a specialization of 'OutInMessage'.
+'arduino::OutInMessage' is a specialization of 'Message'.
+'arduino::Dispatch' is a specialization of 'OutOnlyMessage'.
+'arduino::AcceptInvitation' is a specialization of 'InAcquireOperation'.
+'arduino::OutOnlyMessage' is a specialization of 'Message'.
+'arduino::Sensor' is a specialization of 'AbstractDevice'.
+'arduino::Actuator' is a specialization of 'AbstractDevice'.
+'arduino::IODevice' is a specialization of 'AbstractDevice'.
+'arduino::LoopItem' (role 'arduino_LoopItem20', cardinality 0..*) is associated with 'arduino::Task' (role 'arduino_Task21', cardinality 0..*).
+'arduino::AskInvitation' (role 'arduino_AskInvitation61', cardinality 0..*) is associated with 'arduino::Task' (role 'arduino_Task62', cardinality 0..*).
+'arduino::SystemDefinition' (role 'arduino_SystemDefinition18', cardinality 0..*) is associated with 'arduino::HighLevelOperation' (role 'arduino_HighLevelOperation', cardinality 0..*).
+'arduino::Sensor' (role 'arduino_Sensor31', cardinality 0..*) is associated with 'arduino::Poll' (role 'arduino_Poll30', cardinality 0..*).
+'arduino::Handler' (role 'arduino_Handler28', cardinality 0..*) is associated with 'arduino::Interrupt' (role 'arduino_Interrupt27', cardinality 0..*).
+'arduino::DemandRequest' (role 'arduino_DemandRequest53', cardinality 0..*) is associated with 'arduino::Task' (role 'arduino_Task54', cardinality 0..*).
+'arduino::Message' (role 'arduino_Message', cardinality 0..*) is associated with 'arduino::SystemDefinition' (role 'arduino_SystemDefinition16', cardinality 0..*).
+'arduino::Dispatch' (role 'arduino_Dispatch66', cardinality 0..*) is associated with 'arduino::ServeDispatch' (role 'arduino_ServeDispatch', cardinality 0..*).
+'arduino::CommunicationParams' (role 'arduino_CommunicationParams', cardinality 0..*) is associated with 'arduino::SystemDefinition' (role 'arduino_SystemDefinition14', cardinality 0..*).
+'arduino::PortTCP' (role 'arduino_PortTCP', cardinality 0..*) is associated with 'arduino::PortConnectionData' (role 'arduino_PortConnectionData', cardinality 0..*).
+'arduino::InAcquireOperation' (role 'arduino_InAcquireOperation50', cardinality 0..*) is associated with 'arduino::SupportSpecification' (role 'arduino_SupportSpecification', cardinality 0..*).
+'arduino::GrantRequest' (role 'arduino_GrantRequest', cardinality 0..*) is associated with 'arduino::Request' (role 'arduino_Request64', cardinality 0..*).
+'arduino::Poll' (role 'arduino_Poll', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch6', cardinality 0..*).
+'arduino::Task' (role 'arduino_Task', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch8', cardinality 0..*).
+'arduino::AbstractDevice' (role 'arduino_AbstractDevice', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch', cardinality 0..*).
+'arduino::SupportData' (role 'arduino_SupportData', cardinality 0..*) is associated with 'arduino::TCP' (role 'arduino_TCP', cardinality 0..*).
+'arduino::Precondition' (role 'arduino_Precondition40', cardinality 0..*) is associated with 'arduino::Precondition' (role 'arduino_Precondition38', cardinality 0..*).
+'arduino::Precondition' (role 'arduino_Precondition', cardinality 0..*) is associated with 'arduino::LoopItem' (role 'arduino_LoopItem23', cardinality 0..*).
+'arduino::Sensor' (role 'arduino_Sensor', cardinality 0..*) is associated with 'arduino::Interrupt' (role 'arduino_Interrupt25', cardinality 0..*).
+'arduino::Task' (role 'arduino_Task48', cardinality 0..*) is associated with 'arduino::InAcquireOperation' (role 'arduino_InAcquireOperation', cardinality 0..*).
+'arduino::AcceptInvitation' (role 'arduino_AcceptInvitation', cardinality 0..*) is associated with 'arduino::Invitation' (role 'arduino_Invitation68', cardinality 0..*).
+'arduino::Precondition' (role 'arduino_Precondition37', cardinality 0..*) is associated with 'arduino::Precondition1' (role 'arduino_Precondition1', cardinality 0..*).
+'arduino::AskInvitation' (role 'arduino_AskInvitation', cardinality 0..*) is associated with 'arduino::Invitation' (role 'arduino_Invitation', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch2', cardinality 0..*) is associated with 'arduino::Handler' (role 'arduino_Handler', cardinality 0..*).
+'arduino::ForwardDispatch' (role 'arduino_ForwardDispatch57', cardinality 0..*) is associated with 'arduino::Task' (role 'arduino_Task58', cardinality 0..*).
+'arduino::LoopItem' (role 'arduino_LoopItem', cardinality 0..*) is associated with 'arduino::Sketch' (role 'arduino_Sketch10', cardinality 0..*).
+'arduino::Request' (role 'arduino_Request', cardinality 0..*) is associated with 'arduino::DemandRequest' (role 'arduino_DemandRequest', cardinality 0..*).
+'arduino::OutOperation' (role 'arduino_OutOperation', cardinality 0..*) is associated with 'arduino::Task' (role 'arduino_Task46', cardinality 0..*).
+'arduino::ForwardDispatch' (role 'arduino_ForwardDispatch', cardinality 0..*) is associated with 'arduino::Dispatch' (role 'arduino_Dispatch', cardinality 0..*).
+'arduino::Precondition1' (role 'arduino_Precondition142', cardinality 0..*) is associated with 'arduino::EObject' (role 'arduino_EObject', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch12', cardinality 0..*) is associated with 'arduino::SystemDefinition' (role 'arduino_SystemDefinition', cardinality 0..*).
+'arduino::Sketch' (role 'arduino_Sketch4', cardinality 0..*) is associated with 'arduino::Interrupt' (role 'arduino_Interrupt', cardinality 0..*).
+'arduino::SensorValuePrecondition' (role 'arduino_SensorValuePrecondition', cardinality 0..*) is associated with 'arduino::Sensor' (role 'arduino_Sensor44', cardinality 0..*).
+'arduino::Handler' (role 'arduino_Handler34', cardinality 0..*) is associated with 'arduino::Poll' (role 'arduino_Poll33', cardinality 0..*).

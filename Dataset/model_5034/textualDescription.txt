@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'Customer' has no attributes.
+The class 'CarRentalModel::VipCustomer' has the following attributes: 'discount' of type float.
+The class 'CarRentalModel::Customer' has the following attributes: 'identifier' of type str; 'lastname' of type str; 'surname' of type str.
+The class 'CarRentalModel::Order' has the following attributes: 'price' of type float; 'orderDate' of type date.
+The class 'CarRentalModel::Agency' has the following attributes: 'street' of type str; 'zip' of type int; 'place' of type str.
+The class 'CarRentalModel::Craft' has the following attributes: 'vin' of type int; 'charge' of type float; 'licenseNo' of type str.
+The class 'CarRentalModel::Automobile' has the following attributes: 'isCabrio' of type bool.
+The class 'CarRentalModel::Motorcycle' has the following attributes: 'cm3' of type int.
+The class 'Craft' has no attributes.
+The class 'CarRentalModel::CarRental' has no attributes.
+'CarRentalModel::Automobile' is a specialization of 'Craft'.
+'CarRentalModel::VipCustomer' is a specialization of 'Customer'.
+'CarRentalModel::Motorcycle' is a specialization of 'Craft'.
+'CarRentalModel::Customer' (role 'CarRentalModel_Customer', cardinality 0..*) is associated with 'CarRentalModel::CarRental' (role 'CarRentalModel_CarRental', cardinality 0..*).
+'CarRentalModel::Order' (role 'bestellungen', cardinality 0..*) is associated with 'CarRentalModel::Customer' (role 'Customer', cardinality 0..*).
+'CarRentalModel::Agency' (role 'CarRentalModel_Agency', cardinality 0..*) is associated with 'CarRentalModel::CarRental' (role 'CarRentalModel_CarRental2', cardinality 0..*).
+'CarRentalModel::Craft' (role 'craft', cardinality 0..*) is associated with 'CarRentalModel::Order' (role 'Order12', cardinality 0..*).
+'CarRentalModel::Customer' (role 'customer', cardinality 0..*) is associated with 'CarRentalModel::Order' (role 'Order', cardinality 0..*).
+'CarRentalModel::Craft' (role 'Craft', cardinality 0..*) is associated with 'CarRentalModel::Order' (role 'rentBy', cardinality 0..*).
+'CarRentalModel::Craft' (role 'CarRentalModel_Craft', cardinality 0..*) is associated with 'CarRentalModel::CarRental' (role 'CarRentalModel_CarRental4', cardinality 0..*).
+'CarRentalModel::Agency' (role 'CarRentalModel_Agency7', cardinality 0..*) is associated with 'CarRentalModel::CarRental' (role 'CarRentalModel_CarRental6', cardinality 0..*).

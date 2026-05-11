@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'FaultyUMLmodel3::A' has the following attributes: 'd' of type int; 'a' of type int; 'b' of type int; 'c' of type int.

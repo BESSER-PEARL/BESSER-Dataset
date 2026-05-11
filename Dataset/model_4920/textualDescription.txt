@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'web::service::GenericFunctionProvider' has no attributes.
+The class 'web::service::MessageFormatter' has the following attributes: 'name' of type str.
+The class 'web::service::Service' has no attributes.
+The class 'FunctionProvider' has no attributes.
+The class 'MessageFormatter' has no attributes.
+The class 'web::service::FunctionProvider' has the following attributes: 'name' of type str.
+The class 'web::service::Endpoint' has the following attributes: 'name' of type str.
+The class 'DataRecogniser' has no attributes.
+The class 'web::service::GenericDataRecogniser' has no attributes.
+The class 'web::service::DataRecogniser' has the following attributes: 'name' of type str.
+The class 'web::service::GenericMessageFormatter' has no attributes.
+'web::service::GenericMessageFormatter' is a specialization of 'MessageFormatter'.
+'web::service::GenericFunctionProvider' is a specialization of 'FunctionProvider'.
+'web::service::GenericDataRecogniser' is a specialization of 'DataRecogniser'.
+'web::service::Service' (role 'web_service_Service', cardinality 0..*) is associated with 'web::service::Endpoint' (role 'web_service_Endpoint', cardinality 0..*).
+'web::service::MessageFormatter' (role 'web_service_MessageFormatter', cardinality 0..*) is associated with 'web::service::Endpoint' (role 'web_service_Endpoint2', cardinality 0..*).
+'web::service::Endpoint' (role 'web_service_Endpoint6', cardinality 0..*) is associated with 'web::service::DataRecogniser' (role 'web_service_DataRecogniser', cardinality 0..*).
+'web::service::FunctionProvider' (role 'web_service_FunctionProvider', cardinality 0..*) is associated with 'web::service::Endpoint' (role 'web_service_Endpoint4', cardinality 0..*).

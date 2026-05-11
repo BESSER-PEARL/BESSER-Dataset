@@ -1,0 +1,67 @@
+The model has 35 class(es).
+The class 'typesystem::ArrayType' has the following attributes: 'dimensionality' of type int; 'multidimensional' of type bool; 'dimensional' of type bool.
+The class 'typesystem::DataType' has no attributes.
+The class 'typesystem::AnyDataType' has no attributes.
+The class 'Expression' has no attributes.
+The class 'typesystem::RealLiteral' has the following attributes: 'value' of type float.
+The class 'typesystem::Unit' has the following attributes: 'wildcard' of type bool; 'scale' of type int.
+The class 'typesystem::UnitFactor' has the following attributes: 'exponent' of type int; 'symbol' of type str.
+The class 'typesystem::PrimitiveType' has no attributes.
+The class 'typesystem::ComplexType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'typesystem::NumericType' has no attributes.
+The class 'typesystem::GaussianType' has no attributes.
+The class 'typesystem::StringLiteral' has the following attributes: 'value' of type str.
+The class 'typesystem::UnitDenominator' has no attributes.
+The class 'typesystem::UnitProduct' has no attributes.
+The class 'typesystem::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'typesystem::BooleanLiteral' has the following attributes: 'true' of type bool.
+The class 'ArrayType' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'typesystem::Literal' has no attributes.
+The class 'DataType' has no attributes.
+The class 'NumericLiteral' has no attributes.
+The class 'typesystem::UnitNumerator' has no attributes.
+The class 'typesystem::ArrayDimension' has no attributes.
+The class 'typesystem::InvalidDataType' has no attributes.
+The class 'typesystem::TensorType' has the following attributes: 'vector' of type bool; 'matrix' of type bool.
+The class 'typesystem::RealType' has no attributes.
+The class 'typesystem::Expression' has no attributes.
+The class 'typesystem::NumericLiteral' has the following attributes: 'modifier' of type str.
+The class 'UnitProduct' has no attributes.
+The class 'Literal' has no attributes.
+The class 'typesystem::IntegerType' has no attributes.
+The class 'typesystem::BooleanType' has no attributes.
+The class 'typesystem::UnitType' has no attributes.
+The class 'typesystem::StringType' has no attributes.
+The enumeration 'OperatorKind' has the following literals: 'Root', 'Implies', 'LessThanOrEqualTo', 'GreaterThanOrEqualTo', 'Transpose', 'NotEqualTo', 'Divide', 'GreaterThan', 'ElementWiseMultiply', 'LessThan', 'LogicalAnd', 'Negate', 'LogicalNot', 'Subtract', 'Multiply', 'LogicalOr', 'Add', 'EqualTo', 'Power', 'ElementWisePower', 'ElementWiseDivide'.
+'typesystem::BooleanLiteral' is a specialization of 'Literal'.
+'typesystem::StringLiteral' is a specialization of 'Literal'.
+'typesystem::TensorType' is a specialization of 'ArrayType'.
+'typesystem::NumericType' is a specialization of 'PrimitiveType'.
+'typesystem::IntegerLiteral' is a specialization of 'NumericLiteral'.
+'typesystem::ComplexType' is a specialization of 'NumericType'.
+'typesystem::NumericLiteral' is a specialization of 'Literal'.
+'typesystem::AnyDataType' is a specialization of 'DataType'.
+'typesystem::ArrayType' is a specialization of 'DataType'.
+'typesystem::UnitNumerator' is a specialization of 'UnitProduct'.
+'typesystem::UnitType' is a specialization of 'DataType'.
+'typesystem::IntegerType' is a specialization of 'NumericType'.
+'typesystem::UnitDenominator' is a specialization of 'UnitProduct'.
+'typesystem::Literal' is a specialization of 'Expression'.
+'typesystem::GaussianType' is a specialization of 'NumericType'.
+'typesystem::RealLiteral' is a specialization of 'NumericLiteral'.
+'typesystem::BooleanType' is a specialization of 'PrimitiveType'.
+'typesystem::RealType' is a specialization of 'NumericType'.
+'typesystem::StringType' is a specialization of 'PrimitiveType'.
+'typesystem::PrimitiveType' is a specialization of 'DataType'.
+'typesystem::InvalidDataType' is a specialization of 'DataType'.
+'typesystem::UnitNumerator' (role 'typesystem_UnitNumerator', cardinality 0..*) is associated with 'typesystem::Unit' (role 'typesystem_Unit10', cardinality 0..*).
+'typesystem::Expression' (role 'typesystem_Expression', cardinality 0..*) is associated with 'typesystem::ArrayDimension' (role 'typesystem_ArrayDimension8', cardinality 0..*).
+'typesystem::NumericType' (role 'typesystem_NumericType', cardinality 0..*) is associated with 'typesystem::Unit' (role 'typesystem_Unit', cardinality 0..*).
+'typesystem::NumericLiteral' (role 'typesystem_NumericLiteral', cardinality 0..*) is associated with 'typesystem::Unit' (role 'typesystem_Unit15', cardinality 0..*).
+'typesystem::DataType' (role 'typesystem_DataType4', cardinality 0..*) is associated with 'typesystem::ArrayType' (role 'typesystem_ArrayType3', cardinality 0..*).
+'typesystem::UnitProduct' (role 'typesystem_UnitProduct', cardinality 0..*) is associated with 'typesystem::UnitFactor' (role 'typesystem_UnitFactor', cardinality 0..*).
+'typesystem::UnitDenominator' (role 'typesystem_UnitDenominator', cardinality 0..*) is associated with 'typesystem::Unit' (role 'typesystem_Unit12', cardinality 0..*).
+'typesystem::ArrayType' (role 'typesystem_ArrayType', cardinality 0..*) is associated with 'typesystem::DataType' (role 'typesystem_DataType', cardinality 0..*).
+'typesystem::ArrayType' (role 'typesystem_ArrayType6', cardinality 0..*) is associated with 'typesystem::ArrayDimension' (role 'typesystem_ArrayDimension', cardinality 0..*).

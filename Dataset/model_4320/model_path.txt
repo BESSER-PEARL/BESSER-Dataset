@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KristopherBorn/multiCDA/de.bigtrafo.measurement.compactness/model/RuleSetMetrics.ecore

@@ -1,0 +1,142 @@
+The model has 69 class(es).
+The class 'kernel::commons::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'Usage' has no attributes.
+The class 'Expression' has no attributes.
+The class 'kernel::expressions::SubExpression' has no attributes.
+The class 'kernel::parameters::Parameter' has the following attributes: 'byReference' of type bool; 'correspondingArgument' of type str.
+The class 'ReferenceableElement' has no attributes.
+The class 'KernelRoot' has no attributes.
+The class 'Argument' has no attributes.
+The class 'MainProcedure' has no attributes.
+The class 'ReturnSite' has no attributes.
+The class 'kernel::statements::ParallelBlock' has the following attributes: 'order' of type str.
+The class 'kernel::statements::Skip' has no attributes.
+The class 'End' has no attributes.
+The class 'kernel::statements::Conditional' has no attributes.
+The class 'ExceptionHandlerStatement' has no attributes.
+The class 'statements::StatementContainer' has no attributes.
+The class 'kernel::expressions::Affects' has no attributes.
+The class 'kernel::statements::Block' has no attributes.
+The class 'SubExpression' has no attributes.
+The class 'kernel::members::Member' has no attributes.
+The class 'kernel::statements::Abort' has no attributes.
+The class 'ProcedureCall' has no attributes.
+The class 'kernel::expressions::Usage' has no attributes.
+The class 'references::ReferenceableElement' has no attributes.
+The class 'kernel::statements::StatementWithException' has no attributes.
+The class 'kernel::containers::CompilationUnit' has no attributes.
+The class 'kernel::statements::ExceptionHandlerStatement' has no attributes.
+The class 'procedures::ProcedureCall' has no attributes.
+The class 'kernel::statements::Return' has no attributes.
+The class 'kernel::procedures::Procedure' has no attributes.
+The class 'Jump' has no attributes.
+The class 'members::Member' has no attributes.
+The class 'kernel::dataitems::DataItem' has no attributes.
+The class 'kernel::expressions::Defines' has no attributes.
+The class 'Member' has no attributes.
+The class 'DataItem' has no attributes.
+The class 'Statement' has no attributes.
+The class 'kernel::expressions::Definition' has no attributes.
+The class 'Definition' has no attributes.
+The class 'kernel::statements::Statement' has no attributes.
+The class 'kernel::references::Argument' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'kernel::expressions::Uses' has no attributes.
+The class 'kernel::expressions::Expression' has no attributes.
+The class 'kernel::statements::WhileLoop' has no attributes.
+The class 'kernel::statements::ProcedureCall' has no attributes.
+The class 'commons::Variable' has no attributes.
+The class 'kernel::references::Reference' has no attributes.
+The class 'procedures::Procedure' has no attributes.
+The class 'Start' has no attributes.
+The class 'kernel::references::ReferenceableElement' has no attributes.
+The class 'kernel::statements::StatementContainer' has no attributes.
+The class 'kernel::statements::ExpressionStatement' has no attributes.
+The class 'kernel::statements::StatementListContainer' has no attributes.
+The class 'statements::Conditional' has no attributes.
+The class 'kernel::references::ElementReference' has no attributes.
+The class 'statements::StatementListContainer' has no attributes.
+The class 'kernel::procedures::MainProcedure' has no attributes.
+The class 'kernel::statements::Condition' has no attributes.
+The class 'kernel::statements::Goto' has no attributes.
+The class 'kernel::containers::KernelRoot' has no attributes.
+The class 'kernel::statements::Jump' has no attributes.
+The class 'commons::LabellableElement' has no attributes.
+The class 'references::ElementReference' has no attributes.
+The class 'kernel::statements::NonDeterministicBlock' has no attributes.
+The class 'LabellableElement' has no attributes.
+The class 'ElementReference' has no attributes.
+The enumeration 'ExecutionOrder' has the following literals: 'r2l', 'interleaved', 'l2r'.
+'kernel::statements::ExceptionHandlerStatement' is a specialization of 'commons::LabellableElement'.
+'kernel::references::ReferenceableElement' is a specialization of 'NamedElement'.
+'kernel::statements::Condition' is a specialization of 'statements::StatementContainer'.
+'kernel::statements::WhileLoop' is a specialization of 'statements::StatementContainer'.
+'kernel::expressions::Affects' is a specialization of 'Definition'.
+'kernel::parameters::Parameter' is a specialization of 'DataItem'.
+'kernel::containers::KernelRoot' is a specialization of 'LabellableElement'.
+'kernel::statements::ProcedureCall' is a specialization of 'references::ElementReference'.
+'kernel::procedures::Procedure' is a specialization of 'procedures::Procedure'.
+'kernel::expressions::Expression' is a specialization of 'LabellableElement'.
+'kernel::statements::Block' is a specialization of 'statements::Statement'.
+'kernel::statements::StatementWithException' is a specialization of 'statements::StatementContainer'.
+'kernel::statements::Block' is a specialization of 'statements::StatementListContainer'.
+'kernel::procedures::Procedure' is a specialization of 'references::ReferenceableElement'.
+'kernel::statements::Return' is a specialization of 'Statement'.
+'kernel::statements::WhileLoop' is a specialization of 'statements::Conditional'.
+'kernel::statements::Abort' is a specialization of 'Statement'.
+'kernel::statements::ProcedureCall' is a specialization of 'statements::Statement'.
+'kernel::statements::Condition' is a specialization of 'statements::Conditional'.
+'kernel::statements::NonDeterministicBlock' is a specialization of 'statements::StatementListContainer'.
+'kernel::procedures::MainProcedure' is a specialization of 'LabellableElement'.
+'kernel::statements::Skip' is a specialization of 'Statement'.
+'kernel::procedures::Procedure' is a specialization of 'commons::LabellableElement'.
+'kernel::dataitems::DataItem' is a specialization of 'commons::Variable'.
+'kernel::statements::ParallelBlock' is a specialization of 'statements::Statement'.
+'kernel::dataitems::DataItem' is a specialization of 'members::Member'.
+'kernel::statements::Statement' is a specialization of 'members::Member'.
+'kernel::statements::Jump' is a specialization of 'Statement'.
+'kernel::references::Argument' is a specialization of 'ElementReference'.
+'kernel::expressions::Definition' is a specialization of 'SubExpression'.
+'kernel::expressions::SubExpression' is a specialization of 'ElementReference'.
+'kernel::statements::Condition' is a specialization of 'statements::Statement'.
+'kernel::expressions::Uses' is a specialization of 'Usage'.
+'kernel::dataitems::DataItem' is a specialization of 'references::ReferenceableElement'.
+'kernel::statements::Statement' is a specialization of 'commons::LabellableElement'.
+'kernel::statements::StatementWithException' is a specialization of 'statements::Statement'.
+'kernel::procedures::Procedure' is a specialization of 'members::Member'.
+'kernel::expressions::Usage' is a specialization of 'SubExpression'.
+'kernel::containers::CompilationUnit' is a specialization of 'KernelRoot'.
+'kernel::statements::ExpressionStatement' is a specialization of 'Statement'.
+'kernel::statements::Goto' is a specialization of 'Jump'.
+'kernel::statements::ExceptionHandlerStatement' is a specialization of 'statements::StatementContainer'.
+'kernel::statements::WhileLoop' is a specialization of 'statements::Statement'.
+'kernel::statements::ParallelBlock' is a specialization of 'statements::StatementListContainer'.
+'kernel::expressions::Defines' is a specialization of 'Definition'.
+'kernel::statements::ProcedureCall' is a specialization of 'procedures::ProcedureCall'.
+'kernel::statements::NonDeterministicBlock' is a specialization of 'statements::Statement'.
+'kernel::statements::Jump' (role 'kernel_statements_Jump', cardinality 0..*) is associated with 'LabellableElement' (role 'LabellableElement', cardinality 0..*).
+'kernel::containers::CompilationUnit' (role 'kernel_containers_CompilationUnit40', cardinality 0..*) is associated with 'End' (role 'End41', cardinality 0..*).
+'kernel::procedures::MainProcedure' (role 'kernel_procedures_MainProcedure', cardinality 0..*) is associated with 'Member' (role 'Member23', cardinality 0..*).
+'ReturnSite' (role 'ReturnSite', cardinality 0..*) is associated with 'kernel::statements::ProcedureCall' (role 'kernel_statements_ProcedureCall10', cardinality 0..*).
+'kernel::procedures::Procedure' (role 'kernel_procedures_Procedure19', cardinality 0..*) is associated with 'Start' (role 'Start', cardinality 0..*).
+'kernel::containers::CompilationUnit' (role 'kernel_containers_CompilationUnit37', cardinality 0..*) is associated with 'Start' (role 'Start38', cardinality 0..*).
+'kernel::procedures::Procedure' (role 'kernel_procedures_Procedure15', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'MainProcedure' (role 'MainProcedure', cardinality 0..*) is associated with 'kernel::containers::CompilationUnit' (role 'kernel_containers_CompilationUnit', cardinality 0..*).
+'End' (role 'End29', cardinality 0..*) is associated with 'kernel::procedures::MainProcedure' (role 'kernel_procedures_MainProcedure28', cardinality 0..*).
+'ReferenceableElement' (role 'ReferenceableElement', cardinality 0..*) is associated with 'kernel::references::ElementReference' (role 'kernel_references_ElementReference', cardinality 0..*).
+'kernel::statements::Condition' (role 'kernel_statements_Condition', cardinality 0..*) is associated with 'Statement' (role 'Statement4', cardinality 0..*).
+'kernel::expressions::Definition' (role 'kernel_expressions_Definition', cardinality 0..*) is associated with 'Usage' (role 'Usage', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'kernel::statements::Conditional' (role 'kernel_statements_Conditional', cardinality 0..*).
+'kernel::procedures::MainProcedure' (role 'kernel_procedures_MainProcedure25', cardinality 0..*) is associated with 'Start' (role 'Start26', cardinality 0..*).
+'kernel::containers::CompilationUnit' (role 'kernel_containers_CompilationUnit34', cardinality 0..*) is associated with 'Member' (role 'Member35', cardinality 0..*).
+'kernel::statements::ProcedureCall' (role 'kernel_statements_ProcedureCall', cardinality 0..*) is associated with 'Argument' (role 'Argument', cardinality 0..*).
+'kernel::statements::StatementWithException' (role 'kernel_statements_StatementWithException', cardinality 0..*) is associated with 'ExceptionHandlerStatement' (role 'ExceptionHandlerStatement', cardinality 0..*).
+'Statement' (role 'Statement2', cardinality 0..*) is associated with 'kernel::statements::StatementContainer' (role 'kernel_statements_StatementContainer', cardinality 0..*).
+'kernel::statements::ExpressionStatement' (role 'kernel_statements_ExpressionStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression12', cardinality 0..*).
+'kernel::procedures::Procedure' (role 'kernel_procedures_Procedure', cardinality 0..*) is associated with 'Member' (role 'Member', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'kernel::statements::StatementListContainer' (role 'kernel_statements_StatementListContainer', cardinality 0..*).
+'kernel::procedures::Procedure' (role 'kernel_procedures_Procedure17', cardinality 0..*) is associated with 'ProcedureCall' (role 'ProcedureCall', cardinality 0..*).
+'End' (role 'End', cardinality 0..*) is associated with 'kernel::procedures::Procedure' (role 'kernel_procedures_Procedure21', cardinality 0..*).
+'SubExpression' (role 'SubExpression', cardinality 0..*) is associated with 'kernel::expressions::Expression' (role 'kernel_expressions_Expression', cardinality 0..*).

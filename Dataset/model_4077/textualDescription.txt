@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'SimpleUML::Feature' has the following attributes: 'isMultivalued' of type bool.
+The class 'SimpleUML::NamedElement' has the following attributes: 'name' of type str.
+The class 'SimpleUML::Class' has no attributes.
+The class 'SimpleUML::Package' has no attributes.
+The class 'NamedElement' has no attributes.
+'SimpleUML::Feature' is a specialization of 'NamedElement'.
+'SimpleUML::Class' is a specialization of 'NamedElement'.
+'SimpleUML::Feature' (role 'SimpleUML_Feature', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'SimpleUML_Class', cardinality 0..*).
+'SimpleUML::Package' (role 'Package', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'classes', cardinality 0..*).
+'SimpleUML::Package' (role 'pkg', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'Class', cardinality 0..*).
+'SimpleUML::Feature' (role 'SimpleUML_Feature4', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'SimpleUML_Class5', cardinality 0..*).

@@ -1,0 +1,109 @@
+The model has 48 class(es).
+The class 'notation::SyntaxOf' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'notation::DiagramElement' has no attributes.
+The class 'GraphicalElement' has no attributes.
+The class 'notation::Token' has no attributes.
+The class 'Value' has no attributes.
+The class 'Style' has no attributes.
+The class 'notation::Relation' has no attributes.
+The class 'notation::Line' has no attributes.
+The class 'notation::Diamond' has no attributes.
+The class 'notation::BorderStyle' has the following attributes: 'color' of type str; 'texture' of type str; 'thickness' of type float.
+The class 'notation::ReferenceValue' has no attributes.
+The class 'notation::Icon' has the following attributes: 'iconType' of type str.
+The class 'notation::Rectangle' has no attributes.
+The class 'notation::Style' has no attributes.
+The class 'TextualElement' has no attributes.
+The class 'notation::IDElement' has the following attributes: 'ID' of type str.
+The class 'notation::FigureContainment' has the following attributes: 'layout' of type str.
+The class 'notation::Circle' has no attributes.
+The class 'notation::GraphicalElement' has no attributes.
+The class 'notation::Point' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'notation::LineStyle' has the following attributes: 'brightness' of type int; 'thickness' of type float; 'length' of type float; 'orientation' of type str; 'color' of type str; 'texture' of type str.
+The class 'Figure' has no attributes.
+The class 'notation::Triangle' has no attributes.
+The class 'notation::Composite' has the following attributes: 'layout' of type str.
+The class 'notation::Polyline' has no attributes.
+The class 'notation::IconStyle' has the following attributes: 'height' of type float; 'orientation' of type str; 'width' of type float; 'color' of type str; 'brightness' of type int.
+The class 'notation::NotationDefinition' has the following attributes: 'Type' of type str.
+The class 'notation::Cube' has no attributes.
+The class 'notation::Keyword' has no attributes.
+The class 'notation::FigureStyle' has the following attributes: 'fillTexture' of type str; 'fillTextureColor' of type str; 'orientation' of type str; 'fillOrientation' of type str; 'width' of type float; 'fillColor' of type str; 'height' of type float; 'brightness' of type int.
+The class 'notation::Compartment' has the following attributes: 'layout' of type str.
+The class 'notation::Node' has no attributes.
+The class 'notation::Cylinder' has no attributes.
+The class 'notation::Label' has no attributes.
+The class 'notation::TextualContainment' has the following attributes: 'layout' of type str.
+The class 'notation::Figure' has no attributes.
+The class 'notation::Link' has no attributes.
+The class 'notation::Square' has no attributes.
+The class 'notation::TextualElement' has no attributes.
+The class 'notation::TextStyle' has the following attributes: 'bold' of type bool; 'fontColor' of type str; 'fontName' of type str; 'italic' of type bool; 'underlined' of type bool; 'fontSize' of type int.
+The class 'notation::Roundtangle' has no attributes.
+The class 'Relation' has no attributes.
+The class 'IDElement' has no attributes.
+The class 'notation::AttributeValue' has no attributes.
+The class 'notation::Value' has no attributes.
+The class 'notation::DiagramDefinition' has the following attributes: 'Legend' of type str; 'allowChunks' of type bool; 'targetedAudience' of type str; 'Level' of type int.
+The class 'notation::Image' has the following attributes: 'path' of type str.
+The enumeration 'IconType' has the following literals: 'ARROW', 'CROSS', 'LETTER'.
+The enumeration 'DefinitionType' has the following literals: 'HYBRID', 'TEXTUAL', 'GRAPHICAL'.
+The enumeration 'Color' has the following literals: 'WHITE', 'DARK_BLUE', 'CYAN', 'BLACK', 'DARK_GRAY', 'DARK_GREEN', 'LIGHT_GREEN', 'GRAY', 'YELLOW', 'GREEN', 'LIGHT_BLUE', 'BLUE', 'ORANGE', 'LIGHT_GRAY', 'RED'.
+The enumeration 'FillTextureType' has the following literals: 'STRIP', 'NONE', 'DASHDOTDOT', 'DOT', 'DASH', 'DASHDOT'.
+The enumeration 'AudienceType' has the following literals: 'BEGINNER', 'BOTH', 'EXPERT'.
+The enumeration 'LineTextureType' has the following literals: 'SOLID', 'INVISIBLE', 'DOUBLE', 'DASHDOTDOT', 'DASH', 'DOT', 'DASHDOT'.
+The enumeration 'Orientation' has the following literals: 'RIGHT_DIAGONAL', 'VERTICAL', 'HORIZONTAL', 'LEFT_DIAGONAL'.
+The enumeration 'Layout' has the following literals: 'HORIZONTAL', 'UNKNOWN', 'VERTICAL'.
+'notation::TextualElement' is a specialization of 'IDElement'.
+'notation::Polyline' is a specialization of 'Figure'.
+'notation::Compartment' is a specialization of 'Relation'.
+'notation::SyntaxOf' is a specialization of 'GraphicalElement'.
+'notation::Relation' is a specialization of 'DiagramElement'.
+'notation::Figure' is a specialization of 'GraphicalElement'.
+'notation::Icon' is a specialization of 'GraphicalElement'.
+'notation::Line' is a specialization of 'GraphicalElement'.
+'notation::GraphicalElement' is a specialization of 'IDElement'.
+'notation::Cube' is a specialization of 'Figure'.
+'notation::DiagramElement' is a specialization of 'IDElement'.
+'notation::Composite' is a specialization of 'GraphicalElement'.
+'notation::Keyword' is a specialization of 'TextualElement'.
+'notation::Node' is a specialization of 'DiagramElement'.
+'notation::LineStyle' is a specialization of 'Style'.
+'notation::Image' is a specialization of 'GraphicalElement'.
+'notation::AttributeValue' is a specialization of 'Value'.
+'notation::BorderStyle' is a specialization of 'Style'.
+'notation::Link' is a specialization of 'Relation'.
+'notation::Rectangle' is a specialization of 'Figure'.
+'notation::TextStyle' is a specialization of 'Style'.
+'notation::Token' is a specialization of 'TextualElement'.
+'notation::Circle' is a specialization of 'Figure'.
+'notation::Diamond' is a specialization of 'Figure'.
+'notation::Cylinder' is a specialization of 'Figure'.
+'notation::IconStyle' is a specialization of 'Style'.
+'notation::ReferenceValue' is a specialization of 'Value'.
+'notation::Triangle' is a specialization of 'Figure'.
+'notation::Roundtangle' is a specialization of 'Figure'.
+'notation::Square' is a specialization of 'Figure'.
+'notation::Label' is a specialization of 'GraphicalElement'.
+'notation::FigureStyle' is a specialization of 'Style'.
+'notation::Value' is a specialization of 'TextualElement'.
+'notation::SyntaxOf' (role 'notation_SyntaxOf', cardinality 0..*) is associated with 'notation::DiagramElement' (role 'notation_DiagramElement9', cardinality 0..*).
+'notation::DiagramDefinition' (role 'notation_DiagramDefinition2', cardinality 0..*) is associated with 'notation::DiagramElement' (role 'notation_DiagramElement', cardinality 0..*).
+'notation::FigureContainment' (role 'notation_FigureContainment', cardinality 0..*) is associated with 'notation::Figure' (role 'notation_Figure26', cardinality 0..*).
+'notation::Compartment' (role 'notation_Compartment', cardinality 0..*) is associated with 'notation::Node' (role 'notation_Node5', cardinality 0..*).
+'notation::TextualElement' (role 'notation_TextualElement', cardinality 0..*) is associated with 'notation::TextualContainment' (role 'notation_TextualContainment32', cardinality 0..*).
+'notation::GraphicalElement' (role 'notation_GraphicalElement14', cardinality 0..*) is associated with 'notation::Composite' (role 'notation_Composite', cardinality 0..*).
+'notation::Node' (role 'notation_Node', cardinality 0..*) is associated with 'notation::GraphicalElement' (role 'notation_GraphicalElement', cardinality 0..*).
+'notation::Figure' (role 'notation_Figure', cardinality 0..*) is associated with 'notation::FigureStyle' (role 'notation_FigureStyle', cardinality 0..*).
+'notation::LineStyle' (role 'notation_LineStyle', cardinality 0..*) is associated with 'notation::Line' (role 'notation_Line', cardinality 0..*).
+'notation::GraphicalElement' (role 'notation_GraphicalElement12', cardinality 0..*) is associated with 'notation::Image' (role 'notation_Image', cardinality 0..*).
+'notation::GraphicalElement' (role 'notation_GraphicalElement29', cardinality 0..*) is associated with 'notation::FigureContainment' (role 'notation_FigureContainment28', cardinality 0..*).
+'notation::Point' (role 'notation_Point', cardinality 0..*) is associated with 'notation::Polyline' (role 'notation_Polyline', cardinality 0..*).
+'notation::TextStyle' (role 'notation_TextStyle', cardinality 0..*) is associated with 'notation::Label' (role 'notation_Label', cardinality 0..*).
+'notation::TextualContainment' (role 'notation_TextualContainment', cardinality 0..*) is associated with 'notation::Label' (role 'notation_Label20', cardinality 0..*).
+'notation::GraphicalElement' (role 'notation_GraphicalElement7', cardinality 0..*) is associated with 'notation::Link' (role 'notation_Link', cardinality 0..*).
+'notation::Composite' (role 'notation_Composite16', cardinality 0..*) is associated with 'notation::GraphicalElement' (role 'notation_GraphicalElement17', cardinality 0..*).
+'notation::BorderStyle' (role 'notation_BorderStyle', cardinality 0..*) is associated with 'notation::Figure' (role 'notation_Figure24', cardinality 0..*).
+'notation::NotationDefinition' (role 'notation_NotationDefinition', cardinality 0..*) is associated with 'notation::DiagramDefinition' (role 'notation_DiagramDefinition', cardinality 0..*).
+'notation::Icon' (role 'notation_Icon', cardinality 0..*) is associated with 'notation::IconStyle' (role 'notation_IconStyle', cardinality 0..*).

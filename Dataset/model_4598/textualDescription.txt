@@ -1,0 +1,87 @@
+The model has 34 class(es).
+The class 'DOT::UndirectedArc' has no attributes.
+The class 'DOT::SimpleLabel' has the following attributes: 'content' of type str.
+The class 'DOT::Shape' has the following attributes: 'height' of type int; 'width' of type int; 'peripheries' of type int.
+The class 'DOT::Compartment' has no attributes.
+The class 'DOT::ArrowShape' has the following attributes: 'isPlain' of type bool; 'clipping' of type str; 'size' of type int.
+The class 'DOT::GraphElement' has the following attributes: 'name' of type str; 'color' of type str; 'style' of type str.
+The class 'DOT::HorizontalCompartment' has no attributes.
+The class 'DOT::Label' has no attributes.
+The class 'DOT::RecordNodeShape' has no attributes.
+The class 'DOT::MNodeShape' has no attributes.
+The class 'DOT::Anchor' has the following attributes: 'name' of type str.
+The class 'ComplexNodeShape' has no attributes.
+The class 'DOT::PolygonNodeShape' has the following attributes: 'isRegular' of type bool; 'distortion' of type int; 'sides' of type int; 'orientation' of type int; 'skew' of type int.
+The class 'DOT::Node' has the following attributes: 'fixedSize' of type bool; 'fontname' of type str; 'height' of type int; 'width' of type int; 'fontsize' of type int.
+The class 'DOT::SubGraph' has the following attributes: 'labelloc' of type str.
+The class 'DOT::ComplexLabel' has no attributes.
+The class 'GraphElement' has no attributes.
+The class 'NodeShape' has no attributes.
+The class 'Compartment' has no attributes.
+The class 'Label' has no attributes.
+The class 'DOT::PointNodeShape' has no attributes.
+The class 'DOT::NodeShape' has no attributes.
+The class 'DOT::Layer' has the following attributes: 'layerSeparator' of type str.
+The class 'DOT::SimpleCompartment' has the following attributes: 'content' of type str.
+The class 'DOT::Arc' has the following attributes: 'constraint' of type bool; 'minlen' of type int; 'sameTail' of type str; 'sameHead' of type str; 'group' of type str; 'decorate' of type bool.
+The class 'DOT::Graph' has the following attributes: 'type' of type str; 'boundingBox' of type str; 'center' of type bool; 'size' of type str; 'labelloc' of type str; 'rankDir' of type str; 'concentrate' of type bool; 'nodeSeparation' of type float; 'ordering' of type str; 'labeljust' of type str; 'compound' of type bool; 'ratio' of type str.
+The class 'Nodelike' has no attributes.
+The class 'DOT::DirectedArc' has the following attributes: 'head_lp' of type float; 'tail_lp' of type float.
+The class 'DOT::SimpleNodeShape' has no attributes.
+The class 'DOT::Nodelike' has no attributes.
+The class 'Shape' has no attributes.
+The class 'DOT::VerticalCompartment' has no attributes.
+The class 'DOT::ComplexNodeShape' has no attributes.
+The class 'Arc' has no attributes.
+'DOT::UndirectedArc' is a specialization of 'Arc'.
+'DOT::SubGraph' is a specialization of 'Nodelike'.
+'DOT::Arc' is a specialization of 'GraphElement'.
+'DOT::HorizontalCompartment' is a specialization of 'Compartment'.
+'DOT::Layer' is a specialization of 'GraphElement'.
+'DOT::VerticalCompartment' is a specialization of 'Compartment'.
+'DOT::NodeShape' is a specialization of 'Shape'.
+'DOT::MNodeShape' is a specialization of 'ComplexNodeShape'.
+'DOT::SimpleLabel' is a specialization of 'Label'.
+'DOT::Graph' is a specialization of 'GraphElement'.
+'DOT::Nodelike' is a specialization of 'GraphElement'.
+'DOT::PolygonNodeShape' is a specialization of 'ComplexNodeShape'.
+'DOT::SimpleNodeShape' is a specialization of 'NodeShape'.
+'DOT::RecordNodeShape' is a specialization of 'ComplexNodeShape'.
+'DOT::SimpleCompartment' is a specialization of 'Compartment'.
+'DOT::ComplexLabel' is a specialization of 'Label'.
+'DOT::ArrowShape' is a specialization of 'Shape'.
+'DOT::ComplexNodeShape' is a specialization of 'NodeShape'.
+'DOT::Node' is a specialization of 'Nodelike'.
+'DOT::Shape' is a specialization of 'GraphElement'.
+'DOT::DirectedArc' is a specialization of 'Arc'.
+'DOT::PointNodeShape' is a specialization of 'NodeShape'.
+'DOT::NodeShape' (role 'DOT_NodeShape', cardinality 0..*) is associated with 'DOT::Node' (role 'DOT_Node', cardinality 0..*).
+'DOT::Nodelike' (role 'fromNode', cardinality 0..*) is associated with 'DOT::Arc' (role 'Arc20', cardinality 0..*).
+'DOT::DirectedArc' (role 'DOT_DirectedArc', cardinality 0..*) is associated with 'DOT::ArrowShape' (role 'DOT_ArrowShape', cardinality 0..*).
+'DOT::Nodelike' (role 'nodes27', cardinality 0..*) is associated with 'DOT::Layer' (role 'Layer28', cardinality 0..*).
+'DOT::SubGraph' (role 'SubGraph', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'nodes', cardinality 0..*).
+'DOT::Arc' (role 'refers', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'Nodelike33', cardinality 0..*).
+'DOT::Layer' (role 'layers15', cardinality 0..*) is associated with 'DOT::Arc' (role 'Arc', cardinality 0..*).
+'DOT::GraphElement' (role 'element', cardinality 0..*) is associated with 'DOT::Label' (role 'Label', cardinality 0..*).
+'DOT::Arc' (role 'DOT_Arc40', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'DOT_Nodelike41', cardinality 0..*).
+'DOT::Label' (role 'DOT_Label', cardinality 0..*) is associated with 'DOT::DirectedArc' (role 'DOT_DirectedArc44', cardinality 0..*).
+'DOT::Anchor' (role 'anchor', cardinality 0..*) is associated with 'DOT::Compartment' (role 'Compartment7', cardinality 0..*).
+'DOT::DirectedArc' (role 'DOT_DirectedArc49', cardinality 0..*) is associated with 'DOT::ArrowShape' (role 'DOT_ArrowShape50', cardinality 0..*).
+'DOT::Arc' (role 'DOT_Arc', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'DOT_Nodelike', cardinality 0..*).
+'DOT::Label' (role 'label', cardinality 0..*) is associated with 'DOT::GraphElement' (role 'GraphElement', cardinality 0..*).
+'DOT::Compartment' (role 'DOT_Compartment', cardinality 0..*) is associated with 'DOT::Compartment' (role 'DOT_Compartment3', cardinality 0..*).
+'DOT::Nodelike' (role 'Nodelike35', cardinality 0..*) is associated with 'DOT::Arc' (role 'referredBy', cardinality 0..*).
+'DOT::Label' (role 'DOT_Label52', cardinality 0..*) is associated with 'DOT::MNodeShape' (role 'DOT_MNodeShape', cardinality 0..*).
+'DOT::Nodelike' (role 'toNode', cardinality 0..*) is associated with 'DOT::Arc' (role 'Arc22', cardinality 0..*).
+'DOT::Compartment' (role 'Compartment', cardinality 0..*) is associated with 'DOT::ComplexLabel' (role 'complexLabel', cardinality 0..*).
+'DOT::Graph' (role 'graph11', cardinality 0..*) is associated with 'DOT::Layer' (role 'Layer', cardinality 0..*).
+'DOT::Graph' (role 'graph', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'Nodelike', cardinality 0..*).
+'DOT::SubGraph' (role 'owner', cardinality 0..*) is associated with 'DOT::Nodelike' (role 'Nodelike30', cardinality 0..*).
+'DOT::Arc' (role 'arcs', cardinality 0..*) is associated with 'DOT::Layer' (role 'Layer37', cardinality 0..*).
+'DOT::MNodeShape' (role 'DOT_MNodeShape54', cardinality 0..*) is associated with 'DOT::Label' (role 'DOT_Label55', cardinality 0..*).
+'DOT::Label' (role 'DOT_Label47', cardinality 0..*) is associated with 'DOT::DirectedArc' (role 'DOT_DirectedArc46', cardinality 0..*).
+'DOT::Nodelike' (role 'nodes24', cardinality 0..*) is associated with 'DOT::Graph' (role 'Graph25', cardinality 0..*).
+'DOT::Nodelike' (role 'Nodelike13', cardinality 0..*) is associated with 'DOT::Layer' (role 'layers', cardinality 0..*).
+'DOT::Layer' (role 'layers17', cardinality 0..*) is associated with 'DOT::Graph' (role 'Graph', cardinality 0..*).
+'DOT::Compartment' (role 'source', cardinality 0..*) is associated with 'DOT::Anchor' (role 'Anchor', cardinality 0..*).
+'DOT::Compartment' (role 'compartments', cardinality 0..*) is associated with 'DOT::ComplexLabel' (role 'ComplexLabel', cardinality 0..*).

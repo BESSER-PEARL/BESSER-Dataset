@@ -1,0 +1,62 @@
+The model has 22 class(es).
+The class 'gseq::Equality' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'gseq::If' has no attributes.
+The class 'gseq::False' has no attributes.
+The class 'gseq::Print' has no attributes.
+The class 'gseq::Assign' has the following attributes: 'varName' of type str.
+The class 'IntegerExpression' has no attributes.
+The class 'gseq::Var' has the following attributes: 'varName' of type str.
+The class 'gseq::MethodCall' has no attributes.
+The class 'gseq::Method' has the following attributes: 'name' of type str.
+The class 'Operation' has no attributes.
+The class 'gseq::Plus' has no attributes.
+The class 'gseq::Not' has no attributes.
+The class 'gseq::BooleanExpression' has no attributes.
+The class 'gseq::Const' has the following attributes: 'value' of type str.
+The class 'gseq::IntegerExpression' has no attributes.
+The class 'gseq::And' has no attributes.
+The class 'gseq::Operation' has no attributes.
+The class 'gseq::While' has no attributes.
+The class 'gseq::True' has no attributes.
+The class 'gseq::GreaterThan' has no attributes.
+The class 'gseq::Program' has no attributes.
+'gseq::And' is a specialization of 'BooleanExpression'.
+'gseq::Not' is a specialization of 'BooleanExpression'.
+'gseq::Var' is a specialization of 'IntegerExpression'.
+'gseq::Print' is a specialization of 'Operation'.
+'gseq::MethodCall' is a specialization of 'IntegerExpression'.
+'gseq::BooleanExpression' is a specialization of 'Operation'.
+'gseq::IntegerExpression' is a specialization of 'Operation'.
+'gseq::True' is a specialization of 'BooleanExpression'.
+'gseq::False' is a specialization of 'BooleanExpression'.
+'gseq::If' is a specialization of 'Operation'.
+'gseq::Plus' is a specialization of 'IntegerExpression'.
+'gseq::While' is a specialization of 'Operation'.
+'gseq::Const' is a specialization of 'IntegerExpression'.
+'gseq::Assign' is a specialization of 'Operation'.
+'gseq::GreaterThan' is a specialization of 'BooleanExpression'.
+'gseq::Equality' is a specialization of 'BooleanExpression'.
+'gseq::GreaterThan' (role 'gseq_GreaterThan38', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression39', cardinality 0..*).
+'gseq::Plus' (role 'gseq_Plus33', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression34', cardinality 0..*).
+'gseq::Method' (role 'Method9', cardinality 0..*) is associated with 'gseq::MethodCall' (role 'calledBy', cardinality 0..*).
+'gseq::Operation' (role 'gseq_Operation', cardinality 0..*) is associated with 'gseq::Print' (role 'gseq_Print', cardinality 0..*).
+'gseq::Method' (role 'executedBy', cardinality 0..*) is associated with 'gseq::Operation' (role 'Operation', cardinality 0..*).
+'gseq::Plus' (role 'gseq_Plus', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression31', cardinality 0..*).
+'gseq::Equality' (role 'gseq_Equality', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression', cardinality 0..*).
+'gseq::BooleanExpression' (role 'gseq_BooleanExpression', cardinality 0..*) is associated with 'gseq::If' (role 'gseq_If16', cardinality 0..*).
+'gseq::BooleanExpression' (role 'gseq_BooleanExpression27', cardinality 0..*) is associated with 'gseq::And' (role 'gseq_And26', cardinality 0..*).
+'gseq::IntegerExpression' (role 'gseq_IntegerExpression29', cardinality 0..*) is associated with 'gseq::Assign' (role 'gseq_Assign', cardinality 0..*).
+'gseq::Method' (role 'gseq_Method', cardinality 0..*) is associated with 'gseq::Program' (role 'gseq_Program', cardinality 0..*).
+'gseq::Operation' (role 'operations', cardinality 0..*) is associated with 'gseq::Method' (role 'Method6', cardinality 0..*).
+'gseq::Method' (role 'methodToCall', cardinality 0..*) is associated with 'gseq::MethodCall' (role 'MethodCall', cardinality 0..*).
+'gseq::While' (role 'gseq_While43', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression44', cardinality 0..*).
+'gseq::Not' (role 'gseq_Not', cardinality 0..*) is associated with 'gseq::BooleanExpression' (role 'gseq_BooleanExpression22', cardinality 0..*).
+'gseq::Program' (role 'inProgram', cardinality 0..*) is associated with 'gseq::Method' (role 'Method', cardinality 0..*).
+'gseq::Equality' (role 'gseq_Equality19', cardinality 0..*) is associated with 'gseq::IntegerExpression' (role 'gseq_IntegerExpression20', cardinality 0..*).
+'gseq::Operation' (role 'gseq_Operation11', cardinality 0..*) is associated with 'gseq::If' (role 'gseq_If', cardinality 0..*).
+'gseq::BooleanExpression' (role 'gseq_BooleanExpression24', cardinality 0..*) is associated with 'gseq::And' (role 'gseq_And', cardinality 0..*).
+'gseq::IntegerExpression' (role 'gseq_IntegerExpression36', cardinality 0..*) is associated with 'gseq::GreaterThan' (role 'gseq_GreaterThan', cardinality 0..*).
+'gseq::While' (role 'gseq_While', cardinality 0..*) is associated with 'gseq::BooleanExpression' (role 'gseq_BooleanExpression41', cardinality 0..*).
+'gseq::Program' (role 'Program', cardinality 0..*) is associated with 'gseq::Method' (role 'methods', cardinality 0..*).
+'gseq::If' (role 'gseq_If13', cardinality 0..*) is associated with 'gseq::Operation' (role 'gseq_Operation14', cardinality 0..*).

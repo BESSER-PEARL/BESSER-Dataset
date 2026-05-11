@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'N' has no attributes.
+The class 'uml2::N' has the following attributes: 'n' of type str.
+The class 'uml2::test2::B' has the following attributes: 'nb' of type int; 'nb2' of type int.
+The class 'B' has no attributes.
+The class 'uml2::Classe' has no attributes.
+'uml2::Classe' is a specialization of 'N'.
+'uml2::test2::B' is a specialization of 'N'.
+'uml2::Classe' (role 'uml2_Classe', cardinality 0..*) is associated with 'B' (role 'B', cardinality 0..*).

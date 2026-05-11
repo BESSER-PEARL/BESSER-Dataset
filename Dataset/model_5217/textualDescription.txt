@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'TypeB::A' has the following attributes: 'name' of type str.
+The class 'TypeB::B' has the following attributes: 'name' of type str.
+The class 'TypeB::C' has the following attributes: 'name' of type str.
+'TypeB::B' (role 'TypeB_B2', cardinality 0..*) is associated with 'TypeB::A' (role 'TypeB_A3', cardinality 0..*).
+'TypeB::A' (role 'TypeB_A', cardinality 0..*) is associated with 'TypeB::B' (role 'TypeB_B', cardinality 0..*).

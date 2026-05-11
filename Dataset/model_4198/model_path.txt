@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atb/eson/tests/org.eclipse.emf.eson.tests.xtextintegration/src-gen/org/eclipse/emf/eson/xtextintegration/MyDsl.ecore

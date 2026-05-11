@@ -1,0 +1,679 @@
+The model has 171 class(es).
+The class 'BPMN2Model::EndEvent' has no attributes.
+The class 'BPMN2Model::ItemAwareElement' has no attributes.
+The class 'BPMN2Model::GlobalChoreographyTask' has no attributes.
+The class 'BPMN2Model::CatchEvent' has the following attributes: 'parallelMultiple' of type bool.
+The class 'BPMN2Model::ResourceParameter' has the following attributes: 'isRequired' of type bool; 'name' of type str.
+The class 'BPMN2Model::CallableElement' has the following attributes: 'name' of type str.
+The class 'EventDefinition' has no attributes.
+The class 'FlowNode' has no attributes.
+The class 'RootElement' has no attributes.
+The class 'BPMN2Model::SendTask' has the following attributes: 'implementation' of type str.
+The class 'BPMN2Model::DataState' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Signal' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::LaneSet' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::GlobalConversation' has no attributes.
+The class 'BPMN2Model::ReceiveTask' has the following attributes: 'instantiate' of type bool; 'implementation' of type str.
+The class 'BPMN2Model::EscalationEventDefinition' has no attributes.
+The class 'BPMN2Model::FlowNode' has no attributes.
+The class 'BPMN2Model::Definitions' has the following attributes: 'typeLanguage' of type str; 'expressionLanguage' of type str; 'targetNamespace' of type str; 'exporterVersion' of type str; 'name' of type str; 'exporter' of type str.
+The class 'CatchEvent' has no attributes.
+The class 'BPMN2Model::FormalExpression' has the following attributes: 'language' of type str; 'mixed' of type str; 'body' of type str.
+The class 'BPMN2Model::Association' has the following attributes: 'associationDirection' of type str.
+The class 'BPMN2Model::ConversationAssociation' has no attributes.
+The class 'BPMN2Model::Performer' has no attributes.
+The class 'Collaboration' has no attributes.
+The class 'BPMN2Model::Relationship' has the following attributes: 'direction' of type str; 'type' of type str.
+The class 'Performer' has no attributes.
+The class 'BPMN2Model::CancelEventDefinition' has no attributes.
+The class 'BPMN2Model::GlobalScriptTask' has the following attributes: 'scriptLanguage' of type str; 'script' of type str.
+The class 'BPMN2Model::IntermediateThrowEvent' has no attributes.
+The class 'BPMN2Model::StandardLoopCharacteristics' has the following attributes: 'testBefore' of type bool.
+The class 'BPMN2Model::PartnerEntity' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Interface' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::InclusiveGateway' has no attributes.
+The class 'BPMN2Model::DataObject' has the following attributes: 'isCollection' of type bool.
+The class 'BPMN2Model::SubConversation' has no attributes.
+The class 'BPMN2Model::Process' has the following attributes: 'processType' of type str; 'isExecutable' of type bool; 'isClosed' of type bool.
+The class 'LoopCharacteristics' has no attributes.
+The class 'BPMN2Model::EStringToStringMapEntry' has no attributes.
+The class 'BPMN2Model::CorrelationKey' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Assignment' has no attributes.
+The class 'BPMN2Model::FlowElement' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Message' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Gateway' has the following attributes: 'gatewayDirection' of type str.
+The class 'BPMN2Model::CorrelationProperty' has the following attributes: 'name' of type str.
+The class 'BPMNBase' has no attributes.
+The class 'BPMN2Model::CorrelationPropertyRetrievalExpression' has no attributes.
+The class 'BPMN2Model::GlobalTask' has no attributes.
+The class 'BPMN2Model::SignalEventDefinition' has no attributes.
+The class 'Choreography' has no attributes.
+The class 'BPMN2Model::Expression' has no attributes.
+The class 'BPMN2Model::ConditionalEventDefinition' has no attributes.
+The class 'BPMN2Model::GlobalManualTask' has no attributes.
+The class 'BPMN2Model::TextAnnotation' has the following attributes: 'text' of type str; 'textFormat' of type str.
+The class 'SubProcess' has no attributes.
+The class 'BPMN2Model::DataOutput' has the following attributes: 'isCollection' of type bool; 'name' of type str.
+The class 'Task' has no attributes.
+The class 'BPMN2Model::GlobalUserTask' has the following attributes: 'implementation' of type str.
+The class 'Expression' has no attributes.
+The class 'BPMN2Model::BPMNBase' has no attributes.
+The class 'BPMN2Model::DataObjectReference' has no attributes.
+The class 'BPMN2Model::OutputSet' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::DataInputAssociation' has no attributes.
+The class 'BPMN2Model::MultiInstanceLoopCharacteristics' has the following attributes: 'behavior' of type str; 'isSequential' of type bool.
+The class 'BPMN2Model::TimerEventDefinition' has no attributes.
+The class 'BPMN2Model::Escalation' has the following attributes: 'escalationCode' of type str; 'name' of type str.
+The class 'BPMN2Model::ImplicitThrowEvent' has no attributes.
+The class 'BPMN2Model::ResourceAssignmentExpression' has no attributes.
+The class 'BPMN2Model::ParticipantMultiplicity' has the following attributes: 'maximum' of type int; 'minimum' of type int.
+The class 'BPMN2Model::CategoryValue' has the following attributes: 'value' of type str.
+The class 'BPMN2Model::Activity' has the following attributes: 'isForCompensation' of type bool; 'startQuantity' of type int; 'completionQuantity' of type int.
+The class 'BPMN2Model::EventBasedGateway' has the following attributes: 'eventGatewayType' of type str; 'instantiate' of type bool.
+The class 'BPMN2Model::ExclusiveGateway' has no attributes.
+The class 'BPMN2Model::Transaction' has the following attributes: 'protocol' of type str; 'method' of type str.
+The class 'CallableElement' has no attributes.
+The class 'BPMN2Model::DataInput' has the following attributes: 'isCollection' of type bool; 'name' of type str.
+The class 'BPMN2Model::InputOutputSpecification' has no attributes.
+The class 'BPMN2Model::Choreography' has no attributes.
+The class 'BPMN2Model::ErrorEventDefinition' has no attributes.
+The class 'BPMN2Model::Participant' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::ComplexGateway' has no attributes.
+The class 'BPMN2Model::ThrowEvent' has no attributes.
+The class 'BPMN2Model::ExtensionDefinition' has the following attributes: 'name' of type str.
+The class 'ChoreographyActivity' has no attributes.
+The class 'BPMN2Model::DataAssociation' has no attributes.
+The class 'BPMN2Model::EObject' has no attributes.
+The class 'ResourceRole' has no attributes.
+The class 'BPMN2Model::Lane' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Error' has the following attributes: 'name' of type str; 'errorCode' of type str.
+The class 'BPMN2Model::StartEvent' has the following attributes: 'isInterrupting' of type bool.
+The class 'BPMN2Model::GlobalBusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'BPMN2Model::ComplexBehaviorDefinition' has no attributes.
+The class 'BPMN2Model::CorrelationPropertyBinding' has no attributes.
+The class 'BPMN2Model::ResourceRole' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::ServiceTask' has the following attributes: 'implementation' of type str.
+The class 'BPMN2Model::EndPoint' has no attributes.
+The class 'InteractionNode' has no attributes.
+The class 'BPMN2Model::ResourceParameterBinding' has no attributes.
+The class 'BPMN2Model::IntermediateCatchEvent' has no attributes.
+The class 'BPMN2Model::PartnerRole' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::ParticipantAssociation' has no attributes.
+The class 'ItemAwareElement' has no attributes.
+The class 'Gateway' has no attributes.
+The class 'BPMN2Model::Artifact' has no attributes.
+The class 'BPMN2Model::Import' has the following attributes: 'namespace' of type str; 'location' of type str; 'importType' of type str.
+The class 'Activity' has no attributes.
+The class 'BPMN2Model::Event' has no attributes.
+The class 'BPMN2Model::InputOutputBinding' has no attributes.
+The class 'BPMN2Model::ParallelGateway' has no attributes.
+The class 'BPMN2Model::ConversationLink' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Property' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::InteractionNode' has no attributes.
+The class 'BPMN2Model::ConversationNode' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::ChoreographyTask' has no attributes.
+The class 'BPMN2Model::CompensateEventDefinition' has the following attributes: 'waitForCompletion' of type bool.
+The class 'BPMN2Model::ChoreographyActivity' has the following attributes: 'loopType' of type str.
+The class 'BPMN2Model::Group' has no attributes.
+The class 'BPMN2Model::LinkEventDefinition' has the following attributes: 'name' of type str.
+The class 'Event' has no attributes.
+The class 'BPMN2Model::MessageFlowAssociation' has no attributes.
+The class 'BPMN2Model::MessageEventDefinition' has no attributes.
+The class 'BPMN2Model::SubChoreography' has no attributes.
+The class 'BPMN2Model::BaseElement' has the following attributes: 'anyAttribute' of type str; 'id' of type str.
+The class 'BPMN2Model::InputSet' has the following attributes: 'name' of type str.
+The class 'EObject' has no attributes.
+The class 'BPMN2Model::MessageFlow' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::FlowElementsContainer' has no attributes.
+The class 'BPMN2Model::TerminateEventDefinition' has no attributes.
+The class 'BPMN2Model::BusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'BPMN2Model::ExtensionAttributeDefinition' has the following attributes: 'isReference' of type bool; 'type' of type str; 'name' of type str.
+The class 'HumanPerformer' has no attributes.
+The class 'BPMN2Model::CallChoreography' has no attributes.
+The class 'BPMN2Model::ItemDefinition' has the following attributes: 'isCollection' of type bool; 'itemKind' of type str.
+The class 'BPMN2Model::Rendering' has no attributes.
+The class 'BPMN2Model::PotentialOwner' has no attributes.
+The class 'BPMN2Model::CallActivity' has no attributes.
+The class 'BPMN2Model::Task' has no attributes.
+The class 'BPMN2Model::Extension' has the following attributes: 'xsdDefinition' of type str; 'mustUnderstand' of type bool.
+The class 'BPMN2Model::HumanPerformer' has no attributes.
+The class 'BPMN2Model::Monitoring' has no attributes.
+The class 'GlobalTask' has no attributes.
+The class 'BPMN2Model::CorrelationSubscription' has no attributes.
+The class 'ThrowEvent' has no attributes.
+The class 'FlowElement' has no attributes.
+The class 'BPMN2Model::CallConversation' has no attributes.
+The class 'FlowElementsContainer' has no attributes.
+The class 'BPMN2Model::RootElement' has no attributes.
+The class 'BPMN2Model::AdHocSubProcess' has the following attributes: 'ordering' of type str; 'cancelRemainingInstances' of type bool.
+The class 'BPMN2Model::Operation' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::Conversation' has no attributes.
+The class 'BPMN2Model::DataStore' has the following attributes: 'name' of type str; 'isUnlimited' of type bool; 'capacity' of type int.
+The class 'BPMN2Model::SubProcess' has the following attributes: 'triggeredByEvent' of type bool.
+The class 'BPMN2Model::BoundaryEvent' has the following attributes: 'cancelActivity' of type bool.
+The class 'Artifact' has no attributes.
+The class 'BPMN2Model::Documentation' has the following attributes: 'textFormat' of type str; 'mixed' of type str; 'text' of type str.
+The class 'ConversationNode' has no attributes.
+The class 'BPMN2Model::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'BPMN2Model::EventDefinition' has no attributes.
+The class 'BPMN2Model::UserTask' has the following attributes: 'implementation' of type str.
+The class 'BPMN2Model::Collaboration' has the following attributes: 'isClosed' of type bool; 'name' of type str.
+The class 'BPMN2Model::DataOutputAssociation' has no attributes.
+The class 'BaseElement' has no attributes.
+The class 'BPMN2Model::LoopCharacteristics' has no attributes.
+The class 'BPMN2Model::ExtensionAttributeValue' has the following attributes: 'value' of type str.
+The class 'BPMN2Model::SequenceFlow' has the following attributes: 'isImmediate' of type bool.
+The class 'BPMN2Model::ManualTask' has no attributes.
+The class 'BPMN2Model::ScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'BPMN2Model::Auditing' has no attributes.
+The class 'BPMN2Model::Resource' has the following attributes: 'name' of type str.
+The class 'DataAssociation' has no attributes.
+The class 'BPMN2Model::Category' has the following attributes: 'name' of type str.
+The class 'BPMN2Model::DataStoreReference' has no attributes.
+The enumeration 'AssociationDirection' has the following literals: 'One', 'Both', 'None_'.
+The enumeration 'RelationshipDirection' has the following literals: 'Forward', 'Both', 'Backward', 'None_'.
+The enumeration 'ChoreographyLoopType' has the following literals: 'MultiInstanceSequential', 'MultiInstanceParallel', 'Standard', 'None_'.
+The enumeration 'ItemKind' has the following literals: 'Information', 'Physical'.
+The enumeration 'MultiInstanceBehavior' has the following literals: 'Complex', 'None_', 'One', 'All'.
+The enumeration 'AdHocOrdering' has the following literals: 'Sequential', 'Parallel'.
+The enumeration 'GatewayDirection' has the following literals: 'Unspecified', 'Diverging', 'Mixed', 'Converging'.
+The enumeration 'EventBasedGatewayType' has the following literals: 'Parallel', 'Exclusive'.
+The enumeration 'ProcessType' has the following literals: 'Public', 'Private', 'None_'.
+'BPMN2Model::OutputSet' is a specialization of 'BaseElement'.
+'BPMN2Model::ResourceParameter' is a specialization of 'BaseElement'.
+'BPMN2Model::ParticipantMultiplicity' is a specialization of 'BPMNBase'.
+'BPMN2Model::GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+'BPMN2Model::Expression' is a specialization of 'BaseElement'.
+'BPMN2Model::Operation' is a specialization of 'BaseElement'.
+'BPMN2Model::GlobalChoreographyTask' is a specialization of 'Choreography'.
+'BPMN2Model::CorrelationSubscription' is a specialization of 'BaseElement'.
+'BPMN2Model::GlobalTask' is a specialization of 'CallableElement'.
+'BPMN2Model::PotentialOwner' is a specialization of 'HumanPerformer'.
+'BPMN2Model::ThrowEvent' is a specialization of 'Event'.
+'BPMN2Model::IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+'BPMN2Model::DataObjectReference' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::Signal' is a specialization of 'RootElement'.
+'BPMN2Model::Interface' is a specialization of 'RootElement'.
+'BPMN2Model::Performer' is a specialization of 'ResourceRole'.
+'BPMN2Model::DataOutput' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::BusinessRuleTask' is a specialization of 'Task'.
+'BPMN2Model::Gateway' is a specialization of 'FlowNode'.
+'BPMN2Model::LoopCharacteristics' is a specialization of 'BaseElement'.
+'BPMN2Model::ErrorEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::DataAssociation' is a specialization of 'BaseElement'.
+'BPMN2Model::Task' is a specialization of 'InteractionNode'.
+'BPMN2Model::LaneSet' is a specialization of 'BaseElement'.
+'BPMN2Model::FlowElement' is a specialization of 'BaseElement'.
+'BPMN2Model::DataStoreReference' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::SubProcess' is a specialization of 'FlowElementsContainer'.
+'BPMN2Model::ServiceTask' is a specialization of 'Task'.
+'BPMN2Model::DataObject' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::ExclusiveGateway' is a specialization of 'Gateway'.
+'BPMN2Model::DocumentRoot' is a specialization of 'BPMNBase'.
+'BPMN2Model::SignalEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::CategoryValue' is a specialization of 'BaseElement'.
+'BPMN2Model::DataInput' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::Participant' is a specialization of 'BaseElement'.
+'BPMN2Model::CompensateEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::ResourceAssignmentExpression' is a specialization of 'BPMNBase'.
+'BPMN2Model::EndPoint' is a specialization of 'RootElement'.
+'BPMN2Model::SequenceFlow' is a specialization of 'FlowElement'.
+'BPMN2Model::EventBasedGateway' is a specialization of 'Gateway'.
+'BPMN2Model::Monitoring' is a specialization of 'BaseElement'.
+'BPMN2Model::Activity' is a specialization of 'FlowNode'.
+'BPMN2Model::Lane' is a specialization of 'BaseElement'.
+'BPMN2Model::CorrelationKey' is a specialization of 'BaseElement'.
+'BPMN2Model::Import' is a specialization of 'BPMNBase'.
+'BPMN2Model::FormalExpression' is a specialization of 'Expression'.
+'BPMN2Model::GlobalManualTask' is a specialization of 'GlobalTask'.
+'BPMN2Model::Process' is a specialization of 'CallableElement'.
+'BPMN2Model::TextAnnotation' is a specialization of 'Artifact'.
+'BPMN2Model::TimerEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::CallableElement' is a specialization of 'RootElement'.
+'BPMN2Model::GlobalConversation' is a specialization of 'Collaboration'.
+'BPMN2Model::InclusiveGateway' is a specialization of 'Gateway'.
+'BPMN2Model::ScriptTask' is a specialization of 'Task'.
+'BPMN2Model::DataOutputAssociation' is a specialization of 'DataAssociation'.
+'BPMN2Model::ConversationNode' is a specialization of 'InteractionNode'.
+'BPMN2Model::Artifact' is a specialization of 'BaseElement'.
+'BPMN2Model::CallChoreography' is a specialization of 'ChoreographyActivity'.
+'BPMN2Model::ItemDefinition' is a specialization of 'RootElement'.
+'BPMN2Model::ParticipantAssociation' is a specialization of 'BaseElement'.
+'BPMN2Model::InputOutputSpecification' is a specialization of 'BaseElement'.
+'BPMN2Model::ParallelGateway' is a specialization of 'Gateway'.
+'BPMN2Model::ChoreographyActivity' is a specialization of 'FlowNode'.
+'BPMN2Model::CancelEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::DataStore' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::InputSet' is a specialization of 'BaseElement'.
+'BPMN2Model::TerminateEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::EventDefinition' is a specialization of 'RootElement'.
+'BPMN2Model::EscalationEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::ExtensionAttributeDefinition' is a specialization of 'BPMNBase'.
+'BPMN2Model::SendTask' is a specialization of 'Task'.
+'BPMN2Model::ComplexGateway' is a specialization of 'Gateway'.
+'BPMN2Model::MessageEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::ResourceParameterBinding' is a specialization of 'BPMNBase'.
+'BPMN2Model::EndEvent' is a specialization of 'ThrowEvent'.
+'BPMN2Model::Documentation' is a specialization of 'BaseElement'.
+'BPMN2Model::FlowNode' is a specialization of 'FlowElement'.
+'BPMN2Model::ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+'BPMN2Model::CallConversation' is a specialization of 'ConversationNode'.
+'BPMN2Model::DataState' is a specialization of 'BaseElement'.
+'BPMN2Model::InteractionNode' is a specialization of 'BPMNBase'.
+'BPMN2Model::ManualTask' is a specialization of 'Task'.
+'BPMN2Model::ExtensionDefinition' is a specialization of 'BPMNBase'.
+'BPMN2Model::ResourceRole' is a specialization of 'BaseElement'.
+'BPMN2Model::Choreography' is a specialization of 'FlowElementsContainer'.
+'BPMN2Model::UserTask' is a specialization of 'Task'.
+'BPMN2Model::BaseElement' is a specialization of 'BPMNBase'.
+'BPMN2Model::CallActivity' is a specialization of 'Activity'.
+'BPMN2Model::Category' is a specialization of 'RootElement'.
+'BPMN2Model::ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+'BPMN2Model::StartEvent' is a specialization of 'CatchEvent'.
+'BPMN2Model::HumanPerformer' is a specialization of 'Performer'.
+'BPMN2Model::SubProcess' is a specialization of 'Activity'.
+'BPMN2Model::Error' is a specialization of 'RootElement'.
+'BPMN2Model::ExtensionAttributeValue' is a specialization of 'BPMNBase'.
+'BPMN2Model::ConversationLink' is a specialization of 'BaseElement'.
+'BPMN2Model::Relationship' is a specialization of 'BaseElement'.
+'BPMN2Model::CatchEvent' is a specialization of 'Event'.
+'BPMN2Model::AdHocSubProcess' is a specialization of 'SubProcess'.
+'BPMN2Model::GlobalUserTask' is a specialization of 'GlobalTask'.
+'BPMN2Model::DataStore' is a specialization of 'RootElement'.
+'BPMN2Model::ReceiveTask' is a specialization of 'Task'.
+'BPMN2Model::StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'BPMN2Model::DataObjectReference' is a specialization of 'FlowElement'.
+'BPMN2Model::Event' is a specialization of 'FlowNode'.
+'BPMN2Model::RootElement' is a specialization of 'BaseElement'.
+'BPMN2Model::GlobalScriptTask' is a specialization of 'GlobalTask'.
+'BPMN2Model::MessageFlow' is a specialization of 'BaseElement'.
+'BPMN2Model::Process' is a specialization of 'FlowElementsContainer'.
+'BPMN2Model::Participant' is a specialization of 'InteractionNode'.
+'BPMN2Model::ConversationNode' is a specialization of 'BaseElement'.
+'BPMN2Model::ConversationAssociation' is a specialization of 'BaseElement'.
+'BPMN2Model::Definitions' is a specialization of 'BaseElement'.
+'BPMN2Model::CorrelationProperty' is a specialization of 'RootElement'.
+'BPMN2Model::Task' is a specialization of 'Activity'.
+'BPMN2Model::Resource' is a specialization of 'RootElement'.
+'BPMN2Model::ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'BPMN2Model::InputOutputBinding' is a specialization of 'BPMNBase'.
+'BPMN2Model::SubChoreography' is a specialization of 'ChoreographyActivity'.
+'BPMN2Model::BPMNBase' is a specialization of 'EObject'.
+'BPMN2Model::PartnerEntity' is a specialization of 'RootElement'.
+'BPMN2Model::CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+'BPMN2Model::DataInputAssociation' is a specialization of 'DataAssociation'.
+'BPMN2Model::Conversation' is a specialization of 'ConversationNode'.
+'BPMN2Model::Rendering' is a specialization of 'BaseElement'.
+'BPMN2Model::Auditing' is a specialization of 'BaseElement'.
+'BPMN2Model::Transaction' is a specialization of 'SubProcess'.
+'BPMN2Model::PartnerRole' is a specialization of 'RootElement'.
+'BPMN2Model::Group' is a specialization of 'Artifact'.
+'BPMN2Model::SubConversation' is a specialization of 'ConversationNode'.
+'BPMN2Model::DataObject' is a specialization of 'FlowElement'.
+'BPMN2Model::Escalation' is a specialization of 'BPMNBase'.
+'BPMN2Model::CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+'BPMN2Model::ItemAwareElement' is a specialization of 'BaseElement'.
+'BPMN2Model::Message' is a specialization of 'RootElement'.
+'BPMN2Model::BoundaryEvent' is a specialization of 'CatchEvent'.
+'BPMN2Model::MessageFlowAssociation' is a specialization of 'BaseElement'.
+'BPMN2Model::SubChoreography' is a specialization of 'FlowElementsContainer'.
+'BPMN2Model::Association' is a specialization of 'Artifact'.
+'BPMN2Model::ChoreographyTask' is a specialization of 'ChoreographyActivity'.
+'BPMN2Model::FlowElementsContainer' is a specialization of 'BaseElement'.
+'BPMN2Model::Extension' is a specialization of 'BPMNBase'.
+'BPMN2Model::Event' is a specialization of 'InteractionNode'.
+'BPMN2Model::Choreography' is a specialization of 'Collaboration'.
+'BPMN2Model::Assignment' is a specialization of 'BaseElement'.
+'BPMN2Model::Property' is a specialization of 'ItemAwareElement'.
+'BPMN2Model::IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+'BPMN2Model::Collaboration' is a specialization of 'RootElement'.
+'BPMN2Model::DataStoreReference' is a specialization of 'FlowElement'.
+'BPMN2Model::LinkEventDefinition' is a specialization of 'EventDefinition'.
+'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent853', cardinality 0..*) is associated with 'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition854', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot200', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation', cardinality 0..*).
+'BPMN2Model::CallableElement' (role 'BPMN2Model_CallableElement344', cardinality 0..*) is associated with 'BPMN2Model::InputOutputBinding' (role 'BPMN2Model_InputOutputBinding345', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot48', cardinality 0..*) is associated with 'BPMN2Model::CategoryValue' (role 'BPMN2Model_CategoryValue', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity411', cardinality 0..*) is associated with 'BPMN2Model::CompensateEventDefinition' (role 'BPMN2Model_CompensateEventDefinition410', cardinality 0..*).
+'BPMN2Model::Group' (role 'BPMN2Model_Group', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot150', cardinality 0..*).
+'BPMN2Model::Performer' (role 'BPMN2Model_Performer', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot154', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process756', cardinality 0..*) is associated with 'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole757', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression863', cardinality 0..*) is associated with 'BPMN2Model::TimerEventDefinition' (role 'BPMN2Model_TimerEventDefinition862', cardinality 0..*).
+'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification342', cardinality 0..*) is associated with 'BPMN2Model::CallableElement' (role 'BPMN2Model_CallableElement341', cardinality 0..*).
+'BPMN2Model::DataOutput' (role 'BPMN2Model_DataOutput', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot92', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot194', cardinality 0..*) is associated with 'BPMN2Model::MessageFlowAssociation' (role 'BPMN2Model_MessageFlowAssociation', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot58', cardinality 0..*) is associated with 'BPMN2Model::CompensateEventDefinition' (role 'BPMN2Model_CompensateEventDefinition', cardinality 0..*).
+'BPMN2Model::SignalEventDefinition' (role 'BPMN2Model_SignalEventDefinition', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot248', cardinality 0..*).
+'BPMN2Model::Choreography' (role 'BPMN2Model_Choreography330', cardinality 0..*) is associated with 'BPMN2Model::CallChoreography' (role 'BPMN2Model_CallChoreography329', cardinality 0..*).
+'BPMN2Model::PartnerRole' (role 'BPMN2Model_PartnerRole741', cardinality 0..*) is associated with 'BPMN2Model::Participant' (role 'BPMN2Model_Participant742', cardinality 0..*).
+'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode432', cardinality 0..*) is associated with 'BPMN2Model::ConversationAssociation' (role 'BPMN2Model_ConversationAssociation431', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot144', cardinality 0..*) is associated with 'BPMN2Model::GlobalScriptTask' (role 'BPMN2Model_GlobalScriptTask', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot52', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration', cardinality 0..*).
+'BPMN2Model::ImplicitThrowEvent' (role 'BPMN2Model_ImplicitThrowEvent417', cardinality 0..*) is associated with 'BPMN2Model::ComplexBehaviorDefinition' (role 'BPMN2Model_ComplexBehaviorDefinition416', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant381', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration380', cardinality 0..*).
+'BPMN2Model::Extension' (role 'BPMN2Model_Extension', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot126', cardinality 0..*).
+'BPMN2Model::CallConversation' (role 'BPMN2Model_CallConversation332', cardinality 0..*) is associated with 'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation333', cardinality 0..*).
+'BPMN2Model::Signal' (role 'BPMN2Model_Signal', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot246', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot236', cardinality 0..*).
+'BPMN2Model::Message' (role 'BPMN2Model_Message769', cardinality 0..*) is associated with 'BPMN2Model::ReceiveTask' (role 'BPMN2Model_ReceiveTask768', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot70', cardinality 0..*) is associated with 'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink', cardinality 0..*).
+'BPMN2Model::ExtensionAttributeValue' (role 'BPMN2Model_ExtensionAttributeValue', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot128', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot178', cardinality 0..*) is associated with 'BPMN2Model::Lane' (role 'BPMN2Model_Lane', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot116', cardinality 0..*) is associated with 'BPMN2Model::EscalationEventDefinition' (role 'BPMN2Model_EscalationEventDefinition', cardinality 0..*).
+'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration407', cardinality 0..*) is associated with 'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink408', cardinality 0..*).
+'BPMN2Model::ComplexGateway' (role 'BPMN2Model_ComplexGateway419', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression420', cardinality 0..*).
+'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration766', cardinality 0..*) is associated with 'BPMN2Model::Process' (role 'BPMN2Model_Process765', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics688', cardinality 0..*) is associated with 'BPMN2Model::ComplexBehaviorDefinition' (role 'BPMN2Model_ComplexBehaviorDefinition689', cardinality 0..*).
+'BPMN2Model::TimerEventDefinition' (role 'BPMN2Model_TimerEventDefinition859', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression860', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process744', cardinality 0..*) is associated with 'BPMN2Model::Auditing' (role 'BPMN2Model_Auditing745', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'BPMN2Model_InputSet848', cardinality 0..*) is associated with 'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent847', cardinality 0..*).
+'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition650', cardinality 0..*) is associated with 'BPMN2Model::Message' (role 'BPMN2Model_Message649', cardinality 0..*).
+'BPMN2Model::CallConversation' (role 'BPMN2Model_CallConversation335', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration336', cardinality 0..*).
+'BPMN2Model::Operation' (role 'BPMN2Model_Operation703', cardinality 0..*) is associated with 'BPMN2Model::Message' (role 'BPMN2Model_Message704', cardinality 0..*).
+'BPMN2Model::HumanPerformer' (role 'BPMN2Model_HumanPerformer', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot152', cardinality 0..*).
+'BPMN2Model::GlobalChoreographyTask' (role 'BPMN2Model_GlobalChoreographyTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot138', cardinality 0..*).
+'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation327', cardinality 0..*) is associated with 'BPMN2Model::CallChoreography' (role 'BPMN2Model_CallChoreography326', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot182', cardinality 0..*) is associated with 'BPMN2Model::LinkEventDefinition' (role 'BPMN2Model_LinkEventDefinition', cardinality 0..*).
+'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey372', cardinality 0..*) is associated with 'BPMN2Model::ChoreographyActivity' (role 'BPMN2Model_ChoreographyActivity371', cardinality 0..*).
+'BPMN2Model::UserTask' (role 'BPMN2Model_UserTask865', cardinality 0..*) is associated with 'BPMN2Model::Rendering' (role 'BPMN2Model_Rendering866', cardinality 0..*).
+'BPMN2Model::Message' (role 'BPMN2Model_Message701', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation700', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot220', cardinality 0..*) is associated with 'BPMN2Model::Property' (role 'BPMN2Model_Property', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement320', cardinality 0..*) is associated with 'BPMN2Model::ExtensionDefinition' (role 'BPMN2Model_ExtensionDefinition', cardinality 0..*).
+'BPMN2Model::Interface' (role 'BPMN2Model_Interface', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot166', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant440', cardinality 0..*) is associated with 'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode439', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics694', cardinality 0..*) is associated with 'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition695', cardinality 0..*).
+'BPMN2Model::MessageFlowAssociation' (role 'BPMN2Model_MessageFlowAssociation399', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration398', cardinality 0..*).
+'BPMN2Model::Gateway' (role 'BPMN2Model_Gateway', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot134', cardinality 0..*).
+'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent844', cardinality 0..*) is associated with 'BPMN2Model::DataInputAssociation' (role 'BPMN2Model_DataInputAssociation845', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'BPMN2Model_OutputSet354', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent353', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot218', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'BPMN2Model_DataInput842', cardinality 0..*) is associated with 'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent841', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot202', cardinality 0..*) is associated with 'BPMN2Model::OutputSet' (role 'BPMN2Model_OutputSet', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot244', cardinality 0..*) is associated with 'BPMN2Model::ServiceTask' (role 'BPMN2Model_ServiceTask', cardinality 0..*).
+'BPMN2Model::ConversationAssociation' (role 'BPMN2Model_ConversationAssociation393', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration392', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot212', cardinality 0..*) is associated with 'BPMN2Model::PartnerEntity' (role 'BPMN2Model_PartnerEntity', cardinality 0..*).
+'BPMN2Model::Artifact' (role 'BPMN2Model_Artifact387', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration386', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot108', cardinality 0..*) is associated with 'BPMN2Model::EndPoint' (role 'BPMN2Model_EndPoint', cardinality 0..*).
+'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot174', cardinality 0..*).
+'BPMN2Model::CallableElement' (role 'BPMN2Model_CallableElement338', cardinality 0..*) is associated with 'BPMN2Model::Interface' (role 'BPMN2Model_Interface339', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot196', cardinality 0..*) is associated with 'BPMN2Model::Monitoring' (role 'BPMN2Model_Monitoring', cardinality 0..*).
+'BPMN2Model::MessageFlowAssociation' (role 'BPMN2Model_MessageFlowAssociation667', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow668', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot168', cardinality 0..*) is associated with 'BPMN2Model::IntermediateCatchEvent' (role 'BPMN2Model_IntermediateCatchEvent', cardinality 0..*).
+'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot132', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot54', cardinality 0..*) is associated with 'BPMN2Model::ChoreographyActivity' (role 'BPMN2Model_ChoreographyActivity', cardinality 0..*).
+'BPMN2Model::ResourceParameter' (role 'BPMN2Model_ResourceParameter', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot232', cardinality 0..*).
+'BPMN2Model::LinkEventDefinition' (role 'LinkEventDefinition647', cardinality 0..*) is associated with 'BPMN2Model::LinkEventDefinition' (role 'source', cardinality 0..*).
+'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode662', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow661', cardinality 0..*).
+'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode665', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow664', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot46', cardinality 0..*) is associated with 'BPMN2Model::Category' (role 'BPMN2Model_Category', cardinality 0..*).
+'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode429', cardinality 0..*) is associated with 'BPMN2Model::ConversationAssociation' (role 'BPMN2Model_ConversationAssociation428', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot230', cardinality 0..*) is associated with 'BPMN2Model::ResourceAssignmentExpression' (role 'BPMN2Model_ResourceAssignmentExpression', cardinality 0..*).
+'BPMN2Model::ImplicitThrowEvent' (role 'BPMN2Model_ImplicitThrowEvent', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot158', cardinality 0..*).
+'BPMN2Model::ComplexGateway' (role 'BPMN2Model_ComplexGateway', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot62', cardinality 0..*).
+'BPMN2Model::Activity' (role 'Activity', cardinality 0..*) is associated with 'BPMN2Model::BoundaryEvent' (role 'boundaryEventRefs', cardinality 0..*).
+'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition357', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent356', cardinality 0..*).
+'BPMN2Model::EventBasedGateway' (role 'BPMN2Model_EventBasedGateway', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot120', cardinality 0..*).
+'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot156', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot206', cardinality 0..*).
+'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation396', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration395', cardinality 0..*).
+'BPMN2Model::Message' (role 'BPMN2Model_Message659', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow658', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process753', cardinality 0..*) is associated with 'BPMN2Model::Artifact' (role 'BPMN2Model_Artifact754', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot224', cardinality 0..*) is associated with 'BPMN2Model::Relationship' (role 'BPMN2Model_Relationship', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject778', cardinality 0..*) is associated with 'BPMN2Model::Relationship' (role 'BPMN2Model_Relationship777', cardinality 0..*).
+'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey402', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration401', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot136', cardinality 0..*) is associated with 'BPMN2Model::GlobalBusinessRuleTask' (role 'BPMN2Model_GlobalBusinessRuleTask', cardinality 0..*).
+'BPMN2Model::ReceiveTask' (role 'BPMN2Model_ReceiveTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot222', cardinality 0..*).
+'BPMN2Model::CallableElement' (role 'BPMN2Model_CallableElement324', cardinality 0..*) is associated with 'BPMN2Model::CallActivity' (role 'BPMN2Model_CallActivity323', cardinality 0..*).
+'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink434', cardinality 0..*) is associated with 'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode', cardinality 0..*).
+'BPMN2Model::ReceiveTask' (role 'BPMN2Model_ReceiveTask771', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation772', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot170', cardinality 0..*) is associated with 'BPMN2Model::IntermediateThrowEvent' (role 'BPMN2Model_IntermediateThrowEvent', cardinality 0..*).
+'BPMN2Model::Error' (role 'BPMN2Model_Error', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot110', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot216', cardinality 0..*) is associated with 'BPMN2Model::PotentialOwner' (role 'BPMN2Model_PotentialOwner', cardinality 0..*).
+'BPMN2Model::DataOutputAssociation' (role 'BPMN2Model_DataOutputAssociation351', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent350', cardinality 0..*).
+'BPMN2Model::Rendering' (role 'BPMN2Model_Rendering', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot226', cardinality 0..*).
+'BPMN2Model::Import' (role 'BPMN2Model_Import626', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition625', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot118', cardinality 0..*) is associated with 'BPMN2Model::Event' (role 'BPMN2Model_Event', cardinality 0..*).
+'BPMN2Model::ChoreographyTask' (role 'BPMN2Model_ChoreographyTask377', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow378', cardinality 0..*).
+'BPMN2Model::MessageEventDefinition' (role 'BPMN2Model_MessageEventDefinition652', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation653', cardinality 0..*).
+'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition360', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent359', cardinality 0..*).
+'BPMN2Model::CategoryValue' (role 'BPMN2Model_CategoryValue363', cardinality 0..*) is associated with 'BPMN2Model::Category' (role 'BPMN2Model_Category362', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression857', cardinality 0..*) is associated with 'BPMN2Model::TimerEventDefinition' (role 'BPMN2Model_TimerEventDefinition856', cardinality 0..*).
+'BPMN2Model::ConditionalEventDefinition' (role 'BPMN2Model_ConditionalEventDefinition', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot64', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot210', cardinality 0..*) is associated with 'BPMN2Model::ParticipantMultiplicity' (role 'BPMN2Model_ParticipantMultiplicity', cardinality 0..*).
+'BPMN2Model::SendTask' (role 'BPMN2Model_SendTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot240', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant375', cardinality 0..*) is associated with 'BPMN2Model::ChoreographyActivity' (role 'BPMN2Model_ChoreographyActivity374', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot68', cardinality 0..*) is associated with 'BPMN2Model::ConversationAssociation' (role 'BPMN2Model_ConversationAssociation', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot176', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition', cardinality 0..*).
+'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent850', cardinality 0..*) is associated with 'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition851', cardinality 0..*).
+'BPMN2Model::StandardLoopCharacteristics' (role 'BPMN2Model_StandardLoopCharacteristics', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot250', cardinality 0..*).
+'BPMN2Model::Choreography' (role 'BPMN2Model_Choreography', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot50', cardinality 0..*).
+'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot208', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot104', cardinality 0..*) is associated with 'BPMN2Model::Documentation' (role 'BPMN2Model_Documentation', cardinality 0..*).
+'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot40', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'BPMN2Model_DataInput683', cardinality 0..*) is associated with 'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics682', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'BPMN2Model_InputSet', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot164', cardinality 0..*).
+'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow443', cardinality 0..*) is associated with 'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode442', cardinality 0..*).
+'BPMN2Model::LinkEventDefinition' (role 'target', cardinality 0..*) is associated with 'BPMN2Model::LinkEventDefinition' (role 'LinkEventDefinition', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process761', cardinality 0..*) is associated with 'BPMN2Model::Process' (role 'BPMN2Model_Process763', cardinality 0..*).
+'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement366', cardinality 0..*) is associated with 'BPMN2Model::CategoryValue' (role 'BPMN2Model_CategoryValue365', cardinality 0..*).
+'BPMN2Model::CorrelationSubscription' (role 'BPMN2Model_CorrelationSubscription760', cardinality 0..*) is associated with 'BPMN2Model::Process' (role 'BPMN2Model_Process759', cardinality 0..*).
+'BPMN2Model::DataOutput' (role 'BPMN2Model_DataOutput348', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent347', cardinality 0..*).
+'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement677', cardinality 0..*) is associated with 'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics676', cardinality 0..*).
+'BPMN2Model::MessageEventDefinition' (role 'BPMN2Model_MessageEventDefinition655', cardinality 0..*) is associated with 'BPMN2Model::Message' (role 'BPMN2Model_Message656', cardinality 0..*).
+'BPMN2Model::Resource' (role 'BPMN2Model_Resource', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot228', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot242', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow', cardinality 0..*).
+'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink436', cardinality 0..*) is associated with 'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode437', cardinality 0..*).
+'BPMN2Model::Message' (role 'BPMN2Model_Message', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot188', cardinality 0..*).
+'BPMN2Model::ScriptTask' (role 'BPMN2Model_ScriptTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot238', cardinality 0..*).
+'BPMN2Model::Resource' (role 'BPMN2Model_Resource780', cardinality 0..*) is associated with 'BPMN2Model::ResourceParameter' (role 'BPMN2Model_ResourceParameter781', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot56', cardinality 0..*) is associated with 'BPMN2Model::ChoreographyTask' (role 'BPMN2Model_ChoreographyTask', cardinality 0..*).
+'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot192', cardinality 0..*).
+'BPMN2Model::MessageFlowAssociation' (role 'BPMN2Model_MessageFlowAssociation670', cardinality 0..*) is associated with 'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow671', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot172', cardinality 0..*) is associated with 'BPMN2Model::InputOutputBinding' (role 'BPMN2Model_InputOutputBinding', cardinality 0..*).
+'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration404', cardinality 0..*) is associated with 'BPMN2Model::Choreography' (role 'BPMN2Model_Choreography405', cardinality 0..*).
+'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression414', cardinality 0..*) is associated with 'BPMN2Model::ComplexBehaviorDefinition' (role 'BPMN2Model_ComplexBehaviorDefinition413', cardinality 0..*).
+'BPMN2Model::DataOutputAssociation' (role 'BPMN2Model_DataOutputAssociation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot94', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot184', cardinality 0..*) is associated with 'BPMN2Model::LoopCharacteristics' (role 'BPMN2Model_LoopCharacteristics', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot162', cardinality 0..*) is associated with 'BPMN2Model::InclusiveGateway' (role 'BPMN2Model_InclusiveGateway', cardinality 0..*).
+'BPMN2Model::ResourceAssignmentExpression' (role 'BPMN2Model_ResourceAssignmentExpression783', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression784', cardinality 0..*).
+'BPMN2Model::LaneSet' (role 'BPMN2Model_LaneSet', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot180', cardinality 0..*).
+'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration389', cardinality 0..*) is associated with 'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode390', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics691', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression692', cardinality 0..*).
+'BPMN2Model::ResourceParameterBinding' (role 'BPMN2Model_ResourceParameterBinding', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot234', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics697', cardinality 0..*) is associated with 'BPMN2Model::EventDefinition' (role 'BPMN2Model_EventDefinition698', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression790', cardinality 0..*) is associated with 'BPMN2Model::ResourceParameterBinding' (role 'BPMN2Model_ResourceParameterBinding789', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot44', cardinality 0..*) is associated with 'BPMN2Model::CatchEvent' (role 'BPMN2Model_CatchEvent', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot204', cardinality 0..*) is associated with 'BPMN2Model::ParallelGateway' (role 'BPMN2Model_ParallelGateway', cardinality 0..*).
+'BPMN2Model::MessageFlow' (role 'BPMN2Model_MessageFlow384', cardinality 0..*) is associated with 'BPMN2Model::Collaboration' (role 'BPMN2Model_Collaboration383', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot124', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot60', cardinality 0..*) is associated with 'BPMN2Model::ComplexBehaviorDefinition' (role 'BPMN2Model_ComplexBehaviorDefinition', cardinality 0..*).
+'BPMN2Model::Monitoring' (role 'BPMN2Model_Monitoring748', cardinality 0..*) is associated with 'BPMN2Model::Process' (role 'BPMN2Model_Process747', cardinality 0..*).
+'BPMN2Model::EndEvent' (role 'BPMN2Model_EndEvent', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot106', cardinality 0..*).
+'BPMN2Model::ConditionalEventDefinition' (role 'BPMN2Model_ConditionalEventDefinition425', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression426', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot186', cardinality 0..*) is associated with 'BPMN2Model::ManualTask' (role 'BPMN2Model_ManualTask', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics673', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression674', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot160', cardinality 0..*) is associated with 'BPMN2Model::Import' (role 'BPMN2Model_Import', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject775', cardinality 0..*) is associated with 'BPMN2Model::Relationship' (role 'BPMN2Model_Relationship774', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot130', cardinality 0..*) is associated with 'BPMN2Model::FlowNode' (role 'BPMN2Model_FlowNode', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot214', cardinality 0..*) is associated with 'BPMN2Model::PartnerRole' (role 'BPMN2Model_PartnerRole', cardinality 0..*).
+'BPMN2Model::ErrorEventDefinition' (role 'BPMN2Model_ErrorEventDefinition', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot112', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot190', cardinality 0..*) is associated with 'BPMN2Model::MessageEventDefinition' (role 'BPMN2Model_MessageEventDefinition', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot114', cardinality 0..*) is associated with 'BPMN2Model::Escalation' (role 'BPMN2Model_Escalation', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot198', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant369', cardinality 0..*) is associated with 'BPMN2Model::ChoreographyActivity' (role 'BPMN2Model_ChoreographyActivity368', cardinality 0..*).
+'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement680', cardinality 0..*) is associated with 'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics679', cardinality 0..*).
+'BPMN2Model::Process' (role 'BPMN2Model_Process750', cardinality 0..*) is associated with 'BPMN2Model::Property' (role 'BPMN2Model_Property751', cardinality 0..*).
+'BPMN2Model::Operation' (role 'BPMN2Model_Operation818', cardinality 0..*) is associated with 'BPMN2Model::ServiceTask' (role 'BPMN2Model_ServiceTask817', cardinality 0..*).
+'BPMN2Model::ComplexGateway' (role 'BPMN2Model_ComplexGateway422', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow423', cardinality 0..*).
+'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey473', cardinality 0..*) is associated with 'BPMN2Model::CorrelationSubscription' (role 'BPMN2Model_CorrelationSubscription472', cardinality 0..*).
+'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement545', cardinality 0..*) is associated with 'BPMN2Model::Monitoring' (role 'BPMN2Model_Monitoring546', cardinality 0..*).
+'BPMN2Model::Artifact' (role 'BPMN2Model_Artifact833', cardinality 0..*) is associated with 'BPMN2Model::SubChoreography' (role 'BPMN2Model_SubChoreography832', cardinality 0..*).
+'BPMN2Model::Relationship' (role 'BPMN2Model_Relationship512', cardinality 0..*) is associated with 'BPMN2Model::Definitions' (role 'BPMN2Model_Definitions511', cardinality 0..*).
+'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey446', cardinality 0..*) is associated with 'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode445', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression827', cardinality 0..*) is associated with 'BPMN2Model::StandardLoopCharacteristics' (role 'BPMN2Model_StandardLoopCharacteristics826', cardinality 0..*).
+'BPMN2Model::InclusiveGateway' (role 'BPMN2Model_InclusiveGateway575', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow576', cardinality 0..*).
+'BPMN2Model::EndPoint' (role 'BPMN2Model_EndPoint724', cardinality 0..*) is associated with 'BPMN2Model::Participant' (role 'BPMN2Model_Participant723', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot102', cardinality 0..*) is associated with 'BPMN2Model::Definitions' (role 'BPMN2Model_Definitions', cardinality 0..*).
+'BPMN2Model::Error' (role 'BPMN2Model_Error518', cardinality 0..*) is associated with 'BPMN2Model::ErrorEventDefinition' (role 'BPMN2Model_ErrorEventDefinition517', cardinality 0..*).
+'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement548', cardinality 0..*) is associated with 'BPMN2Model::CategoryValue' (role 'BPMN2Model_CategoryValue549', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot34', cardinality 0..*) is associated with 'BPMN2Model::CallConversation' (role 'BPMN2Model_CallConversation', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'DataInput602', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'inputSetWithWhileExecuting', cardinality 0..*).
+'BPMN2Model::SequenceFlow' (role 'incoming', cardinality 0..*) is associated with 'BPMN2Model::FlowNode' (role 'FlowNode815', cardinality 0..*).
+'BPMN2Model::DataOutput' (role 'optionalOutputRefs', cardinality 0..*) is associated with 'BPMN2Model::OutputSet' (role 'OutputSet', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement22', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot21', cardinality 0..*).
+'BPMN2Model::Association' (role 'BPMN2Model_Association311', cardinality 0..*) is associated with 'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement312', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'outputSetWithOptional', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'DataOutput713', cardinality 0..*).
+'BPMN2Model::Definitions' (role 'BPMN2Model_Definitions505', cardinality 0..*) is associated with 'BPMN2Model::Extension' (role 'BPMN2Model_Extension506', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot36', cardinality 0..*) is associated with 'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode', cardinality 0..*).
+'BPMN2Model::CorrelationPropertyBinding' (role 'BPMN2Model_CorrelationPropertyBinding457', cardinality 0..*) is associated with 'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression458', cardinality 0..*).
+'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement478', cardinality 0..*) is associated with 'BPMN2Model::DataAssociation' (role 'BPMN2Model_DataAssociation477', cardinality 0..*).
+'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression560', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition561', cardinality 0..*).
+'BPMN2Model::ConversationNode' (role 'BPMN2Model_ConversationNode836', cardinality 0..*) is associated with 'BPMN2Model::SubConversation' (role 'BPMN2Model_SubConversation835', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot90', cardinality 0..*) is associated with 'BPMN2Model::DataObjectReference' (role 'BPMN2Model_DataObjectReference', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'InputSet718', cardinality 0..*) is associated with 'BPMN2Model::OutputSet' (role 'outputSetRefs717', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot66', cardinality 0..*) is associated with 'BPMN2Model::Conversation' (role 'BPMN2Model_Conversation', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot76', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyBinding' (role 'BPMN2Model_CorrelationPropertyBinding', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement314', cardinality 0..*) is associated with 'BPMN2Model::ExtensionAttributeValue' (role 'BPMN2Model_ExtensionAttributeValue315', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot38', cardinality 0..*) is associated with 'BPMN2Model::CancelEventDefinition' (role 'BPMN2Model_CancelEventDefinition', cardinality 0..*).
+'BPMN2Model::SubProcess' (role 'BPMN2Model_SubProcess', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot258', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity281', cardinality 0..*) is associated with 'BPMN2Model::Property' (role 'BPMN2Model_Property282', cardinality 0..*).
+'BPMN2Model::Import' (role 'BPMN2Model_Import503', cardinality 0..*) is associated with 'BPMN2Model::Definitions' (role 'BPMN2Model_Definitions502', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'BPMN2Model_DataInput', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot84', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant564', cardinality 0..*) is associated with 'BPMN2Model::GlobalChoreographyTask' (role 'BPMN2Model_GlobalChoreographyTask563', cardinality 0..*).
+'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification593', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'BPMN2Model_InputSet594', cardinality 0..*).
+'BPMN2Model::Task' (role 'BPMN2Model_Task', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot260', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'InputSet489', cardinality 0..*) is associated with 'BPMN2Model::DataInput' (role 'dataInputRefs', cardinality 0..*).
+'BPMN2Model::GlobalUserTask' (role 'BPMN2Model_GlobalUserTask569', cardinality 0..*) is associated with 'BPMN2Model::Rendering' (role 'BPMN2Model_Rendering570', cardinality 0..*).
+'BPMN2Model::InputOutputBinding' (role 'BPMN2Model_InputOutputBinding584', cardinality 0..*) is associated with 'BPMN2Model::OutputSet' (role 'BPMN2Model_OutputSet585', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'BPMN2Model_InputSet579', cardinality 0..*) is associated with 'BPMN2Model::InputOutputBinding' (role 'BPMN2Model_InputOutputBinding578', cardinality 0..*).
+'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole801', cardinality 0..*) is associated with 'BPMN2Model::ResourceAssignmentExpression' (role 'BPMN2Model_ResourceAssignmentExpression802', cardinality 0..*).
+'BPMN2Model::LaneSet' (role 'BPMN2Model_LaneSet641', cardinality 0..*) is associated with 'BPMN2Model::Lane' (role 'BPMN2Model_Lane642', cardinality 0..*).
+'BPMN2Model::TextAnnotation' (role 'BPMN2Model_TextAnnotation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot267', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot96', cardinality 0..*) is associated with 'BPMN2Model::DataState' (role 'BPMN2Model_DataState', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity287', cardinality 0..*) is associated with 'BPMN2Model::DataOutputAssociation' (role 'BPMN2Model_DataOutputAssociation288', cardinality 0..*).
+'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification278', cardinality 0..*) is associated with 'BPMN2Model::Activity' (role 'BPMN2Model_Activity277', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant729', cardinality 0..*) is associated with 'BPMN2Model::Process' (role 'BPMN2Model_Process730', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'DataInput600', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'inputSetWithOptional', cardinality 0..*).
+'BPMN2Model::Definitions' (role 'BPMN2Model_Definitions508', cardinality 0..*) is associated with 'BPMN2Model::RootElement' (role 'BPMN2Model_RootElement509', cardinality 0..*).
+'BPMN2Model::CallChoreography' (role 'BPMN2Model_CallChoreography', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot32', cardinality 0..*).
+'BPMN2Model::TerminateEventDefinition' (role 'BPMN2Model_TerminateEventDefinition', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot262', cardinality 0..*).
+'BPMN2Model::CorrelationSubscription' (role 'BPMN2Model_CorrelationSubscription469', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyBinding' (role 'BPMN2Model_CorrelationPropertyBinding470', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot42', cardinality 0..*) is associated with 'BPMN2Model::RootElement' (role 'BPMN2Model_RootElement', cardinality 0..*).
+'BPMN2Model::SendTask' (role 'BPMN2Model_SendTask804', cardinality 0..*) is associated with 'BPMN2Model::Message' (role 'BPMN2Model_Message805', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot275', cardinality 0..*) is associated with 'BPMN2Model::UserTask' (role 'BPMN2Model_UserTask', cardinality 0..*).
+'BPMN2Model::DataStore' (role 'BPMN2Model_DataStore', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot98', cardinality 0..*).
+'BPMN2Model::FlowNode' (role 'flowNodeRefs', cardinality 0..*) is associated with 'BPMN2Model::Lane' (role 'Lane', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot24', cardinality 0..*) is associated with 'BPMN2Model::BoundaryEvent' (role 'BPMN2Model_BoundaryEvent', cardinality 0..*).
+'BPMN2Model::GlobalConversation' (role 'BPMN2Model_GlobalConversation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot140', cardinality 0..*).
+'BPMN2Model::AdHocSubProcess' (role 'BPMN2Model_AdHocSubProcess299', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression300', cardinality 0..*).
+'BPMN2Model::DataState' (role 'BPMN2Model_DataState620', cardinality 0..*) is associated with 'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement619', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'OutputSet495', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'whileExecutingOutputRefs', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot142', cardinality 0..*) is associated with 'BPMN2Model::GlobalManualTask' (role 'BPMN2Model_GlobalManualTask', cardinality 0..*).
+'BPMN2Model::CorrelationProperty' (role 'BPMN2Model_CorrelationProperty451', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyRetrievalExpression' (role 'BPMN2Model_CorrelationPropertyRetrievalExpression452', cardinality 0..*).
+'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression464', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyRetrievalExpression' (role 'BPMN2Model_CorrelationPropertyRetrievalExpression463', cardinality 0..*).
+'BPMN2Model::Signal' (role 'BPMN2Model_Signal824', cardinality 0..*) is associated with 'BPMN2Model::SignalEventDefinition' (role 'BPMN2Model_SignalEventDefinition823', cardinality 0..*).
+'BPMN2Model::GlobalTask' (role 'BPMN2Model_GlobalTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot146', cardinality 0..*).
+'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition821', cardinality 0..*) is associated with 'BPMN2Model::Signal' (role 'BPMN2Model_Signal820', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot72', cardinality 0..*) is associated with 'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey', cardinality 0..*).
+'BPMN2Model::Auditing' (role 'BPMN2Model_Auditing543', cardinality 0..*) is associated with 'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement542', cardinality 0..*).
+'BPMN2Model::Artifact' (role 'BPMN2Model_Artifact', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot11', cardinality 0..*).
+'BPMN2Model::DataObject' (role 'BPMN2Model_DataObject', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot88', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement632', cardinality 0..*) is associated with 'BPMN2Model::Lane' (role 'BPMN2Model_Lane631', cardinality 0..*).
+'BPMN2Model::Interface' (role 'BPMN2Model_Interface613', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation614', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant739', cardinality 0..*) is associated with 'BPMN2Model::PartnerEntity' (role 'BPMN2Model_PartnerEntity738', cardinality 0..*).
+'BPMN2Model::CorrelationProperty' (role 'BPMN2Model_CorrelationProperty461', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyBinding' (role 'BPMN2Model_CorrelationPropertyBinding460', cardinality 0..*).
+'BPMN2Model::Assignment' (role 'BPMN2Model_Assignment302', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression303', cardinality 0..*).
+'BPMN2Model::ExtensionDefinition' (role 'ExtensionDefinition', cardinality 0..*) is associated with 'BPMN2Model::ExtensionAttributeDefinition' (role 'extensionAttributeDefinitions', cardinality 0..*).
+'BPMN2Model::Artifact' (role 'BPMN2Model_Artifact839', cardinality 0..*) is associated with 'BPMN2Model::SubProcess' (role 'BPMN2Model_SubProcess838', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot273', cardinality 0..*) is associated with 'BPMN2Model::Transaction' (role 'BPMN2Model_Transaction', cardinality 0..*).
+'BPMN2Model::ResourceParameter' (role 'BPMN2Model_ResourceParameter793', cardinality 0..*) is associated with 'BPMN2Model::ResourceParameterBinding' (role 'BPMN2Model_ResourceParameterBinding792', cardinality 0..*).
+'BPMN2Model::Operation' (role 'BPMN2Model_Operation582', cardinality 0..*) is associated with 'BPMN2Model::InputOutputBinding' (role 'BPMN2Model_InputOutputBinding581', cardinality 0..*).
+'BPMN2Model::EStringToStringMapEntry' (role 'BPMN2Model_EStringToStringMapEntry', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot', cardinality 0..*).
+'BPMN2Model::Lane' (role 'BPMN2Model_Lane638', cardinality 0..*) is associated with 'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement639', cardinality 0..*).
+'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation735', cardinality 0..*) is associated with 'BPMN2Model::Participant' (role 'BPMN2Model_Participant736', cardinality 0..*).
+'BPMN2Model::ThrowEvent' (role 'BPMN2Model_ThrowEvent', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot269', cardinality 0..*).
+'BPMN2Model::Escalation' (role 'BPMN2Model_Escalation524', cardinality 0..*) is associated with 'BPMN2Model::EscalationEventDefinition' (role 'BPMN2Model_EscalationEventDefinition523', cardinality 0..*).
+'BPMN2Model::StartEvent' (role 'BPMN2Model_StartEvent', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot252', cardinality 0..*).
+'BPMN2Model::Resource' (role 'BPMN2Model_Resource796', cardinality 0..*) is associated with 'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole795', cardinality 0..*).
+'BPMN2Model::DataAssociation' (role 'BPMN2Model_DataAssociation483', cardinality 0..*) is associated with 'BPMN2Model::Assignment' (role 'BPMN2Model_Assignment484', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'outputSetWithWhileExecuting', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'DataOutput715', cardinality 0..*).
+'BPMN2Model::Operation' (role 'BPMN2Model_Operation706', cardinality 0..*) is associated with 'BPMN2Model::Error' (role 'BPMN2Model_Error707', cardinality 0..*).
+'BPMN2Model::Activity' (role 'attachedToRef', cardinality 0..*) is associated with 'BPMN2Model::BoundaryEvent' (role 'BoundaryEvent', cardinality 0..*).
+'BPMN2Model::ExtensionAttributeValue' (role 'BPMN2Model_ExtensionAttributeValue536', cardinality 0..*) is associated with 'BPMN2Model::EObject' (role 'BPMN2Model_EObject537', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot74', cardinality 0..*) is associated with 'BPMN2Model::CorrelationProperty' (role 'BPMN2Model_CorrelationProperty', cardinality 0..*).
+'BPMN2Model::BusinessRuleTask' (role 'BPMN2Model_BusinessRuleTask', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot26', cardinality 0..*).
+'BPMN2Model::ExtensionAttributeValue' (role 'BPMN2Model_ExtensionAttributeValue539', cardinality 0..*) is associated with 'BPMN2Model::ExtensionAttributeDefinition' (role 'BPMN2Model_ExtensionAttributeDefinition', cardinality 0..*).
+'BPMN2Model::FormalExpression' (role 'BPMN2Model_FormalExpression481', cardinality 0..*) is associated with 'BPMN2Model::DataAssociation' (role 'BPMN2Model_DataAssociation480', cardinality 0..*).
+'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow530', cardinality 0..*) is associated with 'BPMN2Model::ExclusiveGateway' (role 'BPMN2Model_ExclusiveGateway529', cardinality 0..*).
+'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement554', cardinality 0..*) is associated with 'BPMN2Model::FlowElementsContainer' (role 'BPMN2Model_FlowElementsContainer553', cardinality 0..*).
+'BPMN2Model::ParticipantAssociation' (role 'BPMN2Model_ParticipantAssociation732', cardinality 0..*) is associated with 'BPMN2Model::Participant' (role 'BPMN2Model_Participant733', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot19', cardinality 0..*).
+'BPMN2Model::ExclusiveGateway' (role 'BPMN2Model_ExclusiveGateway', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot122', cardinality 0..*).
+'BPMN2Model::DataAssociation' (role 'BPMN2Model_DataAssociation475', cardinality 0..*) is associated with 'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement', cardinality 0..*).
+'BPMN2Model::FlowNode' (role 'FlowNode', cardinality 0..*) is associated with 'BPMN2Model::Lane' (role 'lanes', cardinality 0..*).
+'BPMN2Model::Association' (role 'BPMN2Model_Association308', cardinality 0..*) is associated with 'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement309', cardinality 0..*).
+'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition623', cardinality 0..*) is associated with 'BPMN2Model::ItemAwareElement' (role 'BPMN2Model_ItemAwareElement622', cardinality 0..*).
+'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition455', cardinality 0..*) is associated with 'BPMN2Model::CorrelationProperty' (role 'BPMN2Model_CorrelationProperty454', cardinality 0..*).
+'BPMN2Model::Message' (role 'BPMN2Model_Message467', cardinality 0..*) is associated with 'BPMN2Model::CorrelationPropertyRetrievalExpression' (role 'BPMN2Model_CorrelationPropertyRetrievalExpression466', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot13', cardinality 0..*) is associated with 'BPMN2Model::Assignment' (role 'BPMN2Model_Assignment', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'optionalInputRefs', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'InputSet', cardinality 0..*).
+'BPMN2Model::StandardLoopCharacteristics' (role 'BPMN2Model_StandardLoopCharacteristics829', cardinality 0..*) is associated with 'BPMN2Model::Expression' (role 'BPMN2Model_Expression830', cardinality 0..*).
+'BPMN2Model::DataInput' (role 'whileExecutingInputRefs', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'InputSet487', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot80', cardinality 0..*) is associated with 'BPMN2Model::CorrelationSubscription' (role 'BPMN2Model_CorrelationSubscription', cardinality 0..*).
+'BPMN2Model::Error' (role 'BPMN2Model_Error514', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition515', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot28', cardinality 0..*) is associated with 'BPMN2Model::CallableElement' (role 'BPMN2Model_CallableElement', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression306', cardinality 0..*) is associated with 'BPMN2Model::Assignment' (role 'BPMN2Model_Assignment305', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity290', cardinality 0..*) is associated with 'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole291', cardinality 0..*).
+'BPMN2Model::FlowElementsContainer' (role 'BPMN2Model_FlowElementsContainer', cardinality 0..*) is associated with 'BPMN2Model::LaneSet' (role 'BPMN2Model_LaneSet551', cardinality 0..*).
+'BPMN2Model::DataOutput' (role 'BPMN2Model_DataOutput591', cardinality 0..*) is associated with 'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification590', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject265', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot264', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot17', cardinality 0..*) is associated with 'BPMN2Model::Auditing' (role 'BPMN2Model_Auditing', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'BPMN2Model_OutputSet597', cardinality 0..*) is associated with 'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification596', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'OutputSet497', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'dataOutputRefs', cardinality 0..*).
+'BPMN2Model::Participant' (role 'BPMN2Model_Participant726', cardinality 0..*) is associated with 'BPMN2Model::ParticipantMultiplicity' (role 'BPMN2Model_ParticipantMultiplicity727', cardinality 0..*).
+'BPMN2Model::CallActivity' (role 'BPMN2Model_CallActivity', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot30', cardinality 0..*).
+'BPMN2Model::DataInputAssociation' (role 'BPMN2Model_DataInputAssociation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot86', cardinality 0..*).
+'BPMN2Model::InputOutputSpecification' (role 'BPMN2Model_InputOutputSpecification587', cardinality 0..*) is associated with 'BPMN2Model::DataInput' (role 'BPMN2Model_DataInput588', cardinality 0..*).
+'BPMN2Model::Property' (role 'BPMN2Model_Property527', cardinality 0..*) is associated with 'BPMN2Model::Event' (role 'BPMN2Model_Event526', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot7', cardinality 0..*) is associated with 'BPMN2Model::AdHocSubProcess' (role 'BPMN2Model_AdHocSubProcess', cardinality 0..*).
+'BPMN2Model::FlowNode' (role 'sourceRef', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'SequenceFlow558', cardinality 0..*).
+'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode610', cardinality 0..*) is associated with 'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink611', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject629', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition628', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity296', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow297', cardinality 0..*).
+'BPMN2Model::DataObject' (role 'BPMN2Model_DataObject492', cardinality 0..*) is associated with 'BPMN2Model::DataObjectReference' (role 'BPMN2Model_DataObjectReference491', cardinality 0..*).
+'BPMN2Model::CorrelationKey' (role 'BPMN2Model_CorrelationKey448', cardinality 0..*) is associated with 'BPMN2Model::CorrelationProperty' (role 'BPMN2Model_CorrelationProperty449', cardinality 0..*).
+'BPMN2Model::ResourceParameter' (role 'BPMN2Model_ResourceParameter786', cardinality 0..*) is associated with 'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition787', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'outputSetRefs', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'DataOutput', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot256', cardinality 0..*) is associated with 'BPMN2Model::SubConversation' (role 'BPMN2Model_SubConversation', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot100', cardinality 0..*) is associated with 'BPMN2Model::DataStoreReference' (role 'BPMN2Model_DataStoreReference', cardinality 0..*).
+'BPMN2Model::Extension' (role 'BPMN2Model_Extension532', cardinality 0..*) is associated with 'BPMN2Model::ExtensionDefinition' (role 'BPMN2Model_ExtensionDefinition533', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject617', cardinality 0..*) is associated with 'BPMN2Model::Interface' (role 'BPMN2Model_Interface616', cardinality 0..*).
+'BPMN2Model::ExtensionDefinition' (role 'extensionDefinition', cardinality 0..*) is associated with 'BPMN2Model::ExtensionAttributeDefinition' (role 'ExtensionAttributeDefinition', cardinality 0..*).
+'BPMN2Model::DataAssociation' (role 'BPMN2Model_DataAssociation', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot82', cardinality 0..*).
+'BPMN2Model::FlowNode' (role 'targetRef', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'SequenceFlow', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity293', cardinality 0..*) is associated with 'BPMN2Model::LoopCharacteristics' (role 'BPMN2Model_LoopCharacteristics294', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot148', cardinality 0..*) is associated with 'BPMN2Model::GlobalUserTask' (role 'BPMN2Model_GlobalUserTask', cardinality 0..*).
+'BPMN2Model::Operation' (role 'BPMN2Model_Operation808', cardinality 0..*) is associated with 'BPMN2Model::SendTask' (role 'BPMN2Model_SendTask807', cardinality 0..*).
+'BPMN2Model::Association' (role 'BPMN2Model_Association', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot15', cardinality 0..*).
+'BPMN2Model::OutputSet' (role 'OutputSet605', cardinality 0..*) is associated with 'BPMN2Model::InputSet' (role 'inputSetRefs604', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot5', cardinality 0..*).
+'BPMN2Model::BaseElement' (role 'BPMN2Model_BaseElement317', cardinality 0..*) is associated with 'BPMN2Model::Documentation' (role 'BPMN2Model_Documentation318', cardinality 0..*).
+'BPMN2Model::ResourceParameterBinding' (role 'BPMN2Model_ResourceParameterBinding799', cardinality 0..*) is associated with 'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole798', cardinality 0..*).
+'BPMN2Model::InputSet' (role 'inputSetRefs', cardinality 0..*) is associated with 'BPMN2Model::DataInput' (role 'DataInput', cardinality 0..*).
+'BPMN2Model::Expression' (role 'BPMN2Model_Expression811', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'BPMN2Model_SequenceFlow810', cardinality 0..*).
+'BPMN2Model::Lane' (role 'BPMN2Model_Lane635', cardinality 0..*) is associated with 'BPMN2Model::LaneSet' (role 'BPMN2Model_LaneSet636', cardinality 0..*).
+'BPMN2Model::ConversationLink' (role 'BPMN2Model_ConversationLink608', cardinality 0..*) is associated with 'BPMN2Model::InteractionNode' (role 'BPMN2Model_InteractionNode607', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot271', cardinality 0..*) is associated with 'BPMN2Model::TimerEventDefinition' (role 'BPMN2Model_TimerEventDefinition', cardinality 0..*).
+'BPMN2Model::Activity' (role 'BPMN2Model_Activity284', cardinality 0..*) is associated with 'BPMN2Model::DataInputAssociation' (role 'BPMN2Model_DataInputAssociation285', cardinality 0..*).
+'BPMN2Model::ItemDefinition' (role 'BPMN2Model_ItemDefinition521', cardinality 0..*) is associated with 'BPMN2Model::Escalation' (role 'BPMN2Model_Escalation520', cardinality 0..*).
+'BPMN2Model::SubChoreography' (role 'BPMN2Model_SubChoreography', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot254', cardinality 0..*).
+'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot2', cardinality 0..*) is associated with 'BPMN2Model::EStringToStringMapEntry' (role 'BPMN2Model_EStringToStringMapEntry3', cardinality 0..*).
+'BPMN2Model::CorrelationPropertyRetrievalExpression' (role 'BPMN2Model_CorrelationPropertyRetrievalExpression', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot78', cardinality 0..*).
+'BPMN2Model::EObject' (role 'BPMN2Model_EObject710', cardinality 0..*) is associated with 'BPMN2Model::Operation' (role 'BPMN2Model_Operation709', cardinality 0..*).
+'BPMN2Model::FlowNode' (role 'FlowNode813', cardinality 0..*) is associated with 'BPMN2Model::SequenceFlow' (role 'outgoing', cardinality 0..*).
+'BPMN2Model::CategoryValue' (role 'BPMN2Model_CategoryValue573', cardinality 0..*) is associated with 'BPMN2Model::Group' (role 'BPMN2Model_Group572', cardinality 0..*).
+'BPMN2Model::GlobalTask' (role 'BPMN2Model_GlobalTask566', cardinality 0..*) is associated with 'BPMN2Model::ResourceRole' (role 'BPMN2Model_ResourceRole567', cardinality 0..*).
+'BPMN2Model::Interface' (role 'BPMN2Model_Interface721', cardinality 0..*) is associated with 'BPMN2Model::Participant' (role 'BPMN2Model_Participant720', cardinality 0..*).
+'BPMN2Model::FlowElement' (role 'BPMN2Model_FlowElement', cardinality 0..*) is associated with 'BPMN2Model::DocumentRoot' (role 'BPMN2Model_DocumentRoot9', cardinality 0..*).
+'BPMN2Model::DataStoreReference' (role 'BPMN2Model_DataStoreReference499', cardinality 0..*) is associated with 'BPMN2Model::DataStore' (role 'BPMN2Model_DataStore500', cardinality 0..*).
+'BPMN2Model::MultiInstanceLoopCharacteristics' (role 'BPMN2Model_MultiInstanceLoopCharacteristics685', cardinality 0..*) is associated with 'BPMN2Model::DataOutput' (role 'BPMN2Model_DataOutput686', cardinality 0..*).

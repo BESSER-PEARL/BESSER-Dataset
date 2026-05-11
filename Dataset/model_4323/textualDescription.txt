@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'metric::Metric' has no attributes.
+The class 'metric::Constraint' has no attributes.
+The class 'Metric' has no attributes.
+The class 'metric::ConstraintMetrics' has the following attributes: 'numberOfConstraintsByKind' of type str.
+The class 'metric::ConstraintMetric' has the following attributes: 'calledProperties' of type str; 'expressionDepth' of type int; 'calledOperations' of type str; 'numberOfLetExpressions' of type int; 'numberOfIfExpressions' of type int; 'usedIterators' of type str; 'expressionCount' of type int; 'usedLiterals' of type str.
+The class 'ConstraintMetric' has no attributes.
+'metric::ConstraintMetric' is a specialization of 'Metric'.
+'metric::ConstraintMetrics' is a specialization of 'ConstraintMetric'.
+'metric::Constraint' (role 'metric_Constraint5', cardinality 0..*) is associated with 'metric::ConstraintMetric' (role 'metric_ConstraintMetric4', cardinality 0..*).
+'metric::ConstraintMetric' (role 'metric_ConstraintMetric', cardinality 0..*) is associated with 'metric::ConstraintMetrics' (role 'metric_ConstraintMetrics', cardinality 0..*).
+'metric::Constraint' (role 'metric_Constraint', cardinality 0..*) is associated with 'metric::ConstraintMetrics' (role 'metric_ConstraintMetrics2', cardinality 0..*).

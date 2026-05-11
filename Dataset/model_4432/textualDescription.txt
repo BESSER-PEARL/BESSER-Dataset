@@ -1,0 +1,33 @@
+The model has 17 class(es).
+The class 'mindstorms::EdgeInstruction' has no attributes.
+The class 'Instruction' has no attributes.
+The class 'mindstorms::GoBackward' has the following attributes: 'infinite' of type bool; 'cm' of type int.
+The class 'mindstorms::Grab' has no attributes.
+The class 'Action' has no attributes.
+The class 'Block' has no attributes.
+The class 'mindstorms::GoForward' has the following attributes: 'cm' of type int; 'infinite' of type bool.
+The class 'mindstorms::Begin' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'mindstorms::Block' has no attributes.
+The class 'mindstorms::Rotate' has the following attributes: 'random' of type bool; 'degrees' of type int.
+The class 'mindstorms::End' has no attributes.
+The class 'mindstorms::Action' has no attributes.
+The class 'mindstorms::Instruction' has no attributes.
+The class 'mindstorms::Choreography' has no attributes.
+The class 'mindstorms::Release' has no attributes.
+The class 'mindstorms::NamedElement' has the following attributes: 'name' of type str.
+'mindstorms::GoForward' is a specialization of 'Action'.
+'mindstorms::Instruction' is a specialization of 'NamedElement'.
+'mindstorms::Begin' is a specialization of 'Action'.
+'mindstorms::Rotate' is a specialization of 'Action'.
+'mindstorms::Grab' is a specialization of 'Action'.
+'mindstorms::Block' is a specialization of 'Instruction'.
+'mindstorms::Action' is a specialization of 'Block'.
+'mindstorms::Release' is a specialization of 'Action'.
+'mindstorms::GoBackward' is a specialization of 'Action'.
+'mindstorms::Choreography' is a specialization of 'Instruction'.
+'mindstorms::End' is a specialization of 'Action'.
+'mindstorms::Choreography' (role 'mindstorms_Choreography', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction', cardinality 0..*).
+'mindstorms::Instruction' (role 'mindstorms_Instruction8', cardinality 0..*) is associated with 'mindstorms::EdgeInstruction' (role 'mindstorms_EdgeInstruction7', cardinality 0..*).
+'mindstorms::Choreography' (role 'mindstorms_Choreography2', cardinality 0..*) is associated with 'mindstorms::EdgeInstruction' (role 'mindstorms_EdgeInstruction', cardinality 0..*).
+'mindstorms::EdgeInstruction' (role 'mindstorms_EdgeInstruction4', cardinality 0..*) is associated with 'mindstorms::Instruction' (role 'mindstorms_Instruction5', cardinality 0..*).

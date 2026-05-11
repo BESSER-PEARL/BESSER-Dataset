@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Excilyano/Domain-specific-language/workspace/org.eclipse.example.bowlingmodel/bowling.ecore

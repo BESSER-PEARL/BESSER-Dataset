@@ -1,0 +1,20 @@
+The model has 6 class(es).
+The class 'rental::RentalObject' has the following attributes: 'ID' of type str; 'name' of type str; 'available' of type bool.
+The class 'rental::License' has the following attributes: 'number' of type int; 'validityDate' of type date.
+The class 'rental::Customer' has the following attributes: 'firstName' of type str; 'name' of type str.
+The class 'rental::Address' has the following attributes: 'streetType' of type str; 'number' of type int; 'streetName' of type str; 'zipCode' of type str; 'city' of type str.
+The class 'rental::Rental' has the following attributes: 'endDate' of type date; 'startDate' of type date.
+The class 'rental::RentalAgency' has the following attributes: 'name' of type str.
+The enumeration 'StreetType' has the following literals: 'Road', 'Street'.
+'rental::RentalAgency' (role 'RentalAgency11', cardinality 0..*) is associated with 'rental::RentalObject' (role 'objectsToRent', cardinality 0..*).
+'rental::Rental' (role 'rental_Rental17', cardinality 0..*) is associated with 'rental::RentalObject' (role 'rental_RentalObject', cardinality 0..*).
+'rental::Customer' (role 'owner', cardinality 0..*) is associated with 'rental::License' (role 'License', cardinality 0..*).
+'rental::Customer' (role 'rental_Customer15', cardinality 0..*) is associated with 'rental::Rental' (role 'rental_Rental', cardinality 0..*).
+'rental::Rental' (role 'rentals', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'RentalAgency19', cardinality 0..*).
+'rental::Rental' (role 'Rental', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'parentAgency5', cardinality 0..*).
+'rental::Address' (role 'rental_Address7', cardinality 0..*) is associated with 'rental::Customer' (role 'rental_Customer', cardinality 0..*).
+'rental::RentalObject' (role 'RentalObject', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'parentAgency', cardinality 0..*).
+'rental::Customer' (role 'Customer', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'parentAgency3', cardinality 0..*).
+'rental::Address' (role 'rental_Address', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'rental_RentalAgency', cardinality 0..*).
+'rental::Customer' (role 'customers', cardinality 0..*) is associated with 'rental::RentalAgency' (role 'RentalAgency', cardinality 0..*).
+'rental::Customer' (role 'Customer13', cardinality 0..*) is associated with 'rental::License' (role 'licenses', cardinality 0..*).

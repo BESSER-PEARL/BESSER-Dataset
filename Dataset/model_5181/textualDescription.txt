@@ -1,0 +1,34 @@
+The model has 12 class(es).
+The class 'manypov2::JK' has no attributes.
+The class 'manypov2::J' has no attributes.
+The class 'manypov2::F' has no attributes.
+The class 'manypov2::E' has no attributes.
+The class 'manypov2::B' has no attributes.
+The class 'manypov2::K' has no attributes.
+The class 'manypov2::A' has no attributes.
+The class 'manypov2::N' has no attributes.
+The class 'manypov2::M' has no attributes.
+The class 'manypov2::C' has no attributes.
+The class 'manypov2::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+'manypov2::N' is a specialization of 'Named'.
+'manypov2::M' is a specialization of 'Named'.
+'manypov2::K' is a specialization of 'Named'.
+'manypov2::J' is a specialization of 'Named'.
+'manypov2::B' is a specialization of 'Named'.
+'manypov2::E' is a specialization of 'Named'.
+'manypov2::F' is a specialization of 'Named'.
+'manypov2::JK' is a specialization of 'Named'.
+'manypov2::C' is a specialization of 'Named'.
+'manypov2::A' is a specialization of 'Named'.
+'manypov2::K' (role 'manypov2_K14', cardinality 0..*) is associated with 'manypov2::M' (role 'manypov2_M', cardinality 0..*).
+'manypov2::K' (role 'manypov2_K16', cardinality 0..*) is associated with 'manypov2::N' (role 'manypov2_N', cardinality 0..*).
+'manypov2::K' (role 'manypov2_K19', cardinality 0..*) is associated with 'manypov2::JK' (role 'manypov2_JK18', cardinality 0..*).
+'manypov2::B' (role 'manypov2_B', cardinality 0..*) is associated with 'manypov2::A' (role 'manypov2_A', cardinality 0..*).
+'manypov2::E' (role 'manypov2_E', cardinality 0..*) is associated with 'manypov2::A' (role 'manypov2_A2', cardinality 0..*).
+'manypov2::A' (role 'manypov2_A4', cardinality 0..*) is associated with 'manypov2::J' (role 'manypov2_J', cardinality 0..*).
+'manypov2::C' (role 'manypov2_C', cardinality 0..*) is associated with 'manypov2::B' (role 'manypov2_B8', cardinality 0..*).
+'manypov2::JK' (role 'manypov2_JK', cardinality 0..*) is associated with 'manypov2::J' (role 'manypov2_J12', cardinality 0..*).
+'manypov2::N' (role 'manypov2_N22', cardinality 0..*) is associated with 'manypov2::M' (role 'manypov2_M21', cardinality 0..*).
+'manypov2::K' (role 'manypov2_K', cardinality 0..*) is associated with 'manypov2::A' (role 'manypov2_A6', cardinality 0..*).
+'manypov2::E' (role 'manypov2_E10', cardinality 0..*) is associated with 'manypov2::F' (role 'manypov2_F', cardinality 0..*).

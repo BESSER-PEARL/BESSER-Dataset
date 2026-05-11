@@ -1,0 +1,206 @@
+The model has 88 class(es).
+The class 'gmfgraph::LineBorder' has the following attributes: 'width' of type int.
+The class 'LayoutData' has no attributes.
+The class 'gmfgraph::RealFigure' has the following attributes: 'name' of type str.
+The class 'Identity' has no attributes.
+The class 'AbstractFigure' has no attributes.
+The class 'gmfgraph::Label' has the following attributes: 'text' of type str.
+The class 'gmfgraph::PolylineDecoration' has no attributes.
+The class 'gmfgraph::LayoutData' has no attributes.
+The class 'gmfgraph::CustomBorder' has no attributes.
+The class 'gmfgraph::DiagramElement' has no attributes.
+The class 'gmfgraph::FigureAccessor' has the following attributes: 'accessor' of type str.
+The class 'Layoutable' has no attributes.
+The class 'gmfgraph::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'DecorationFigure' has no attributes.
+The class 'gmfgraph::Compartment' has the following attributes: 'collapsible' of type bool; 'needsTitle' of type bool.
+The class 'gmfgraph::FlowLayout' has the following attributes: 'vertical' of type bool; 'forceSingleLine' of type bool; 'minorAlignment' of type str; 'minorSpacing' of type int; 'majorAlignment' of type str; 'majorSpacing' of type int; 'matchMinorSize' of type bool.
+The class 'gmfgraph::Polyline' has no attributes.
+The class 'gmfgraph::Polygon' has no attributes.
+The class 'gmfgraph::Shape' has the following attributes: 'lineWidth' of type int; 'outline' of type bool; 'xorOutline' of type bool; 'lineKind' of type str; 'xorFill' of type bool; 'fill' of type bool.
+The class 'gmfgraph::XYLayout' has no attributes.
+The class 'gmfgraph::Canvas' has no attributes.
+The class 'gmfgraph::ConstantColor' has the following attributes: 'value' of type str.
+The class 'gmfgraph::DecorationFigure' has no attributes.
+The class 'gmfgraph::FigureGallery' has the following attributes: 'implementationBundle' of type str.
+The class 'gmfgraph::BorderLayoutData' has the following attributes: 'alignment' of type str; 'vertical' of type bool.
+The class 'gmfgraph::GridLayout' has the following attributes: 'equalWidth' of type bool; 'numColumns' of type int.
+The class 'gmfgraph::PolygonDecoration' has no attributes.
+The class 'Polygon' has no attributes.
+The class 'gmfgraph::CustomClass' has the following attributes: 'qualifiedClassName' of type str.
+The class 'gmfgraph::BasicFont' has the following attributes: 'faceName' of type str; 'height' of type int; 'style' of type str.
+The class 'gmfgraph::GradientFacet' has the following attributes: 'direction' of type str.
+The class 'Border' has no attributes.
+The class 'ConnectionFigure' has no attributes.
+The class 'gmfgraph::AbstractNode' has no attributes.
+The class 'Layout' has no attributes.
+The class 'gmfgraph::RGBColor' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'gmfgraph::AlignmentFacet' has the following attributes: 'alignment' of type str.
+The class 'Color' has no attributes.
+The class 'gmfgraph::VisualFacet' has no attributes.
+The class 'gmfgraph::Figure' has no attributes.
+The class 'gmfgraph::AbstractFigure' has no attributes.
+The class 'gmfgraph::DiagramLabel' has the following attributes: 'elementIcon' of type bool; 'external' of type bool.
+The class 'gmfgraph::StackLayout' has no attributes.
+The class 'gmfgraph::Identity' has the following attributes: 'name' of type str.
+The class 'gmfgraph::BorderLayout' has no attributes.
+The class 'gmfgraph::Layoutable' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'gmfgraph::Connection' has no attributes.
+The class 'gmfgraph::Color' has no attributes.
+The class 'gmfgraph::Layout' has no attributes.
+The class 'gmfgraph::CustomLayoutData' has no attributes.
+The class 'gmfgraph::CustomConnection' has no attributes.
+The class 'CustomFigure' has no attributes.
+The class 'gmfgraph::RoundedRectangle' has the following attributes: 'cornerHeight' of type int; 'cornerWidth' of type int.
+The class 'gmfgraph::Dimension' has the following attributes: 'dy' of type int; 'dx' of type int.
+The class 'gmfgraph::LabeledContainer' has no attributes.
+The class 'CustomClass' has no attributes.
+The class 'gmfgraph::ChildAccess' has the following attributes: 'accessor' of type str.
+The class 'gmfgraph::ScalablePolygon' has no attributes.
+The class 'gmfgraph::FigureRef' has no attributes.
+The class 'gmfgraph::XYLayoutData' has no attributes.
+The class 'gmfgraph::PolylineConnection' has no attributes.
+The class 'gmfgraph::Insets' has the following attributes: 'top' of type int; 'bottom' of type int; 'right' of type int; 'left' of type int.
+The class 'gmfgraph::CustomFigure' has no attributes.
+The class 'gmfgraph::Border' has no attributes.
+The class 'gmfgraph::CustomLayout' has no attributes.
+The class 'Figure' has no attributes.
+The class 'gmfgraph::MarginBorder' has no attributes.
+The class 'Node' has no attributes.
+The class 'gmfgraph::Node' has the following attributes: 'resizeConstraint' of type str; 'affixedParentSide' of type str.
+The class 'gmfgraph::Font' has no attributes.
+The class 'Polyline' has no attributes.
+The class 'gmfgraph::ConnectionFigure' has no attributes.
+The class 'RealFigure' has no attributes.
+The class 'gmfgraph::Ellipse' has no attributes.
+The class 'gmfgraph::FigureDescriptor' has no attributes.
+The class 'gmfgraph::GeneralFacet' has the following attributes: 'identifier' of type str; 'data' of type str.
+The class 'gmfgraph::Rectangle' has no attributes.
+The class 'gmfgraph::CustomDecoration' has no attributes.
+The class 'gmfgraph::CustomAttribute' has the following attributes: 'name' of type str; 'multiStatementValue' of type bool; 'directAccess' of type bool; 'value' of type str.
+The class 'Shape' has no attributes.
+The class 'gmfgraph::DefaultSizeFacet' has no attributes.
+The class 'gmfgraph::LabelOffsetFacet' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'VisualFacet' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'Font' has no attributes.
+The class 'gmfgraph::GridLayoutData' has the following attributes: 'verticalAlignment' of type str; 'grabExcessVerticalSpace' of type bool; 'verticalSpan' of type int; 'horizontalAlignment' of type str; 'horizontalIndent' of type int; 'horizontalSpan' of type int; 'grabExcessHorizontalSpace' of type bool.
+The class 'gmfgraph::CompoundBorder' has no attributes.
+The enumeration 'Direction' has the following literals: 'NORTH', 'EAST_WEST', 'SOUTH_EAST', 'NORTH_SOUTH', 'NORTH_EAST', 'EAST', 'NONE', 'WEST', 'SOUTH_WEST', 'NORTH_WEST', 'SOUTH', 'NSEW'.
+The enumeration 'LineKind' has the following literals: 'LINE_CUSTOM', 'LINE_DOT', 'LINE_DASHDOTDOT', 'LINE_DASH', 'LINE_DASHDOT', 'LINE_SOLID'.
+The enumeration 'Alignment' has the following literals: 'BEGINNING', 'FILL', 'END', 'CENTER'.
+The enumeration 'ColorConstants' has the following literals: 'darkBlue', 'blue', 'white', 'orange', 'darkGreen', 'cyan', 'lightBlue', 'lightGreen', 'lightGray', 'yellow', 'black', 'green', 'red', 'gray', 'darkGray'.
+The enumeration 'FontStyle' has the following literals: 'ITALIC', 'NORMAL', 'BOLD'.
+'gmfgraph::DecorationFigure' is a specialization of 'RealFigure'.
+'gmfgraph::FlowLayout' is a specialization of 'Layout'.
+'gmfgraph::CustomFigure' is a specialization of 'CustomClass'.
+'gmfgraph::CompoundBorder' is a specialization of 'Border'.
+'gmfgraph::AbstractFigure' is a specialization of 'Figure'.
+'gmfgraph::CustomLayout' is a specialization of 'CustomClass'.
+'gmfgraph::LineBorder' is a specialization of 'Border'.
+'gmfgraph::PolylineConnection' is a specialization of 'Polyline'.
+'gmfgraph::AlignmentFacet' is a specialization of 'VisualFacet'.
+'gmfgraph::Figure' is a specialization of 'Layoutable'.
+'gmfgraph::Compartment' is a specialization of 'DiagramElement'.
+'gmfgraph::RoundedRectangle' is a specialization of 'Shape'.
+'gmfgraph::ConnectionFigure' is a specialization of 'RealFigure'.
+'gmfgraph::DefaultSizeFacet' is a specialization of 'VisualFacet'.
+'gmfgraph::CustomBorder' is a specialization of 'Border'.
+'gmfgraph::StackLayout' is a specialization of 'Layout'.
+'gmfgraph::PolylineDecoration' is a specialization of 'DecorationFigure'.
+'gmfgraph::RealFigure' is a specialization of 'AbstractFigure'.
+'gmfgraph::GradientFacet' is a specialization of 'VisualFacet'.
+'gmfgraph::CustomDecoration' is a specialization of 'DecorationFigure'.
+'gmfgraph::PolylineDecoration' is a specialization of 'Polyline'.
+'gmfgraph::Shape' is a specialization of 'RealFigure'.
+'gmfgraph::BorderLayoutData' is a specialization of 'LayoutData'.
+'gmfgraph::ScalablePolygon' is a specialization of 'Polygon'.
+'gmfgraph::MarginBorder' is a specialization of 'Border'.
+'gmfgraph::LabelOffsetFacet' is a specialization of 'VisualFacet'.
+'gmfgraph::BasicFont' is a specialization of 'Font'.
+'gmfgraph::DiagramLabel' is a specialization of 'Node'.
+'gmfgraph::CustomDecoration' is a specialization of 'CustomFigure'.
+'gmfgraph::Polygon' is a specialization of 'Polyline'.
+'gmfgraph::LabeledContainer' is a specialization of 'RealFigure'.
+'gmfgraph::FigureGallery' is a specialization of 'Identity'.
+'gmfgraph::Canvas' is a specialization of 'Identity'.
+'gmfgraph::Connection' is a specialization of 'DiagramElement'.
+'gmfgraph::Polyline' is a specialization of 'Shape'.
+'gmfgraph::FigureDescriptor' is a specialization of 'Identity'.
+'gmfgraph::XYLayout' is a specialization of 'Layout'.
+'gmfgraph::CustomBorder' is a specialization of 'CustomClass'.
+'gmfgraph::XYLayoutData' is a specialization of 'LayoutData'.
+'gmfgraph::Label' is a specialization of 'RealFigure'.
+'gmfgraph::Rectangle' is a specialization of 'Shape'.
+'gmfgraph::GridLayoutData' is a specialization of 'LayoutData'.
+'gmfgraph::GeneralFacet' is a specialization of 'VisualFacet'.
+'gmfgraph::PolylineConnection' is a specialization of 'ConnectionFigure'.
+'gmfgraph::CustomLayout' is a specialization of 'Layout'.
+'gmfgraph::CustomFigure' is a specialization of 'RealFigure'.
+'gmfgraph::RGBColor' is a specialization of 'Color'.
+'gmfgraph::AbstractNode' is a specialization of 'DiagramElement'.
+'gmfgraph::CustomLayoutData' is a specialization of 'CustomClass'.
+'gmfgraph::ConstantColor' is a specialization of 'Color'.
+'gmfgraph::DiagramElement' is a specialization of 'Identity'.
+'gmfgraph::BorderLayout' is a specialization of 'Layout'.
+'gmfgraph::CustomConnection' is a specialization of 'ConnectionFigure'.
+'gmfgraph::FigureRef' is a specialization of 'AbstractFigure'.
+'gmfgraph::PolygonDecoration' is a specialization of 'DecorationFigure'.
+'gmfgraph::Node' is a specialization of 'AbstractNode'.
+'gmfgraph::CustomConnection' is a specialization of 'CustomFigure'.
+'gmfgraph::PolygonDecoration' is a specialization of 'Polygon'.
+'gmfgraph::CustomLayoutData' is a specialization of 'LayoutData'.
+'gmfgraph::GridLayout' is a specialization of 'Layout'.
+'gmfgraph::Ellipse' is a specialization of 'Shape'.
+'gmfgraph::FigureDescriptor' (role 'gmfgraph_FigureDescriptor57', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure58', cardinality 0..*).
+'gmfgraph::Figure' (role 'gmfgraph_Figure40', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension41', cardinality 0..*).
+'gmfgraph::Insets' (role 'gmfgraph_Insets', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure48', cardinality 0..*).
+'gmfgraph::ChildAccess' (role 'gmfgraph_ChildAccess62', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure63', cardinality 0..*).
+'gmfgraph::DiagramElement' (role 'gmfgraph_DiagramElement16', cardinality 0..*) is associated with 'gmfgraph::VisualFacet' (role 'gmfgraph_VisualFacet', cardinality 0..*).
+'gmfgraph::ChildAccess' (role 'gmfgraph_ChildAccess21', cardinality 0..*) is associated with 'gmfgraph::Compartment' (role 'gmfgraph_Compartment20', cardinality 0..*).
+'gmfgraph::Border' (role 'gmfgraph_Border', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure50', cardinality 0..*).
+'gmfgraph::Color' (role 'gmfgraph_Color', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure32', cardinality 0..*).
+'gmfgraph::RealFigure' (role 'gmfgraph_RealFigure79', cardinality 0..*) is associated with 'gmfgraph::FigureAccessor' (role 'gmfgraph_FigureAccessor', cardinality 0..*).
+'gmfgraph::Color' (role 'gmfgraph_Color83', cardinality 0..*) is associated with 'gmfgraph::LineBorder' (role 'gmfgraph_LineBorder', cardinality 0..*).
+'gmfgraph::Point' (role 'gmfgraph_Point72', cardinality 0..*) is associated with 'gmfgraph::Polyline' (role 'gmfgraph_Polyline', cardinality 0..*).
+'gmfgraph::Dimension' (role 'gmfgraph_Dimension44', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure43', cardinality 0..*).
+'gmfgraph::Figure' (role 'gmfgraph_Figure70', cardinality 0..*) is associated with 'gmfgraph::Shape' (role 'gmfgraph_Shape', cardinality 0..*).
+'gmfgraph::Figure' (role 'gmfgraph_Figure34', cardinality 0..*) is associated with 'gmfgraph::Color' (role 'gmfgraph_Color35', cardinality 0..*).
+'gmfgraph::CustomFigure' (role 'gmfgraph_CustomFigure', cardinality 0..*) is associated with 'gmfgraph::FigureAccessor' (role 'gmfgraph_FigureAccessor81', cardinality 0..*).
+'gmfgraph::LayoutData' (role 'layoutData', cardinality 0..*) is associated with 'gmfgraph::Layoutable' (role 'Layoutable', cardinality 0..*).
+'gmfgraph::CompoundBorder' (role 'gmfgraph_CompoundBorder89', cardinality 0..*) is associated with 'gmfgraph::Border' (role 'gmfgraph_Border90', cardinality 0..*).
+'gmfgraph::RealFigure' (role 'gmfgraph_RealFigure65', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure66', cardinality 0..*).
+'gmfgraph::Figure' (role 'gmfgraph_Figure52', cardinality 0..*) is associated with 'gmfgraph::Point' (role 'gmfgraph_Point', cardinality 0..*).
+'gmfgraph::BorderLayout' (role 'gmfgraph_BorderLayout', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension103', cardinality 0..*).
+'gmfgraph::ChildAccess' (role 'gmfgraph_ChildAccess', cardinality 0..*) is associated with 'gmfgraph::Node' (role 'gmfgraph_Node18', cardinality 0..*).
+'gmfgraph::Point' (role 'gmfgraph_Point55', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure54', cardinality 0..*).
+'gmfgraph::DiagramLabel' (role 'gmfgraph_DiagramLabel26', cardinality 0..*) is associated with 'gmfgraph::ChildAccess' (role 'gmfgraph_ChildAccess27', cardinality 0..*).
+'gmfgraph::Point' (role 'gmfgraph_Point105', cardinality 0..*) is associated with 'gmfgraph::XYLayoutData' (role 'gmfgraph_XYLayoutData', cardinality 0..*).
+'gmfgraph::Layoutable' (role 'owner95', cardinality 0..*) is associated with 'gmfgraph::LayoutData' (role 'LayoutData', cardinality 0..*).
+'gmfgraph::Node' (role 'gmfgraph_Node', cardinality 0..*) is associated with 'gmfgraph::Canvas' (role 'gmfgraph_Canvas2', cardinality 0..*).
+'gmfgraph::Font' (role 'gmfgraph_Font', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure46', cardinality 0..*).
+'gmfgraph::DecorationFigure' (role 'gmfgraph_DecorationFigure', cardinality 0..*) is associated with 'gmfgraph::PolylineConnection' (role 'gmfgraph_PolylineConnection', cardinality 0..*).
+'gmfgraph::Layoutable' (role 'gmfgraph_Layoutable', cardinality 0..*) is associated with 'gmfgraph::Layout' (role 'gmfgraph_Layout', cardinality 0..*).
+'gmfgraph::Border' (role 'gmfgraph_Border87', cardinality 0..*) is associated with 'gmfgraph::CompoundBorder' (role 'gmfgraph_CompoundBorder', cardinality 0..*).
+'gmfgraph::FigureGallery' (role 'gmfgraph_FigureGallery12', cardinality 0..*) is associated with 'gmfgraph::FigureDescriptor' (role 'gmfgraph_FigureDescriptor', cardinality 0..*).
+'gmfgraph::GridLayoutData' (role 'gmfgraph_GridLayoutData', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension93', cardinality 0..*).
+'gmfgraph::CustomClass' (role 'gmfgraph_CustomClass', cardinality 0..*) is associated with 'gmfgraph::CustomAttribute' (role 'gmfgraph_CustomAttribute', cardinality 0..*).
+'gmfgraph::GridLayout' (role 'gmfgraph_GridLayout', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension98', cardinality 0..*).
+'gmfgraph::Figure' (role 'gmfgraph_Figure', cardinality 0..*) is associated with 'gmfgraph::FigureDescriptor' (role 'gmfgraph_FigureDescriptor30', cardinality 0..*).
+'gmfgraph::Dimension' (role 'gmfgraph_Dimension38', cardinality 0..*) is associated with 'gmfgraph::Figure' (role 'gmfgraph_Figure37', cardinality 0..*).
+'gmfgraph::FigureDescriptor' (role 'owner', cardinality 0..*) is associated with 'gmfgraph::ChildAccess' (role 'ChildAccess', cardinality 0..*).
+'gmfgraph::FigureGallery' (role 'gmfgraph_FigureGallery10', cardinality 0..*) is associated with 'gmfgraph::RealFigure' (role 'gmfgraph_RealFigure', cardinality 0..*).
+'gmfgraph::Connection' (role 'gmfgraph_Connection', cardinality 0..*) is associated with 'gmfgraph::Canvas' (role 'gmfgraph_Canvas4', cardinality 0..*).
+'gmfgraph::FigureRef' (role 'gmfgraph_FigureRef', cardinality 0..*) is associated with 'gmfgraph::RealFigure' (role 'gmfgraph_RealFigure68', cardinality 0..*).
+'gmfgraph::MarginBorder' (role 'gmfgraph_MarginBorder', cardinality 0..*) is associated with 'gmfgraph::Insets' (role 'gmfgraph_Insets85', cardinality 0..*).
+'gmfgraph::Canvas' (role 'gmfgraph_Canvas', cardinality 0..*) is associated with 'gmfgraph::FigureGallery' (role 'gmfgraph_FigureGallery', cardinality 0..*).
+'gmfgraph::Canvas' (role 'gmfgraph_Canvas6', cardinality 0..*) is associated with 'gmfgraph::Compartment' (role 'gmfgraph_Compartment', cardinality 0..*).
+'gmfgraph::DiagramLabel' (role 'gmfgraph_DiagramLabel', cardinality 0..*) is associated with 'gmfgraph::Canvas' (role 'gmfgraph_Canvas8', cardinality 0..*).
+'gmfgraph::XYLayoutData' (role 'gmfgraph_XYLayoutData107', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension108', cardinality 0..*).
+'gmfgraph::DecorationFigure' (role 'gmfgraph_DecorationFigure76', cardinality 0..*) is associated with 'gmfgraph::PolylineConnection' (role 'gmfgraph_PolylineConnection75', cardinality 0..*).
+'gmfgraph::DefaultSizeFacet' (role 'gmfgraph_DefaultSizeFacet', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension', cardinality 0..*).
+'gmfgraph::DiagramLabel' (role 'gmfgraph_DiagramLabel23', cardinality 0..*) is associated with 'gmfgraph::ChildAccess' (role 'gmfgraph_ChildAccess24', cardinality 0..*).
+'gmfgraph::FigureDescriptor' (role 'gmfgraph_FigureDescriptor14', cardinality 0..*) is associated with 'gmfgraph::DiagramElement' (role 'gmfgraph_DiagramElement', cardinality 0..*).
+'gmfgraph::ChildAccess' (role 'accessors', cardinality 0..*) is associated with 'gmfgraph::FigureDescriptor' (role 'FigureDescriptor', cardinality 0..*).
+'gmfgraph::GridLayout' (role 'gmfgraph_GridLayout100', cardinality 0..*) is associated with 'gmfgraph::Dimension' (role 'gmfgraph_Dimension101', cardinality 0..*).

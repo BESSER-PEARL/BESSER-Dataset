@@ -1,0 +1,66 @@
+The model has 31 class(es).
+The class 'ReflectiveType' has no attributes.
+The class 'atl::types::UnionType' has no attributes.
+The class 'annotations::atl::types::EObject' has no attributes.
+The class 'atl::types::FloatType' has no attributes.
+The class 'annotations::atl::types::Type' has no attributes.
+The class 'atl::types::ThisModuleType' has no attributes.
+The class 'atl::types::Metaclass' has the following attributes: 'name' of type str.
+The class 'atl::types::TupleType' has no attributes.
+The class 'atl::types::EObject' has no attributes.
+The class 'Type' has no attributes.
+The class 'atl::types::IntegerType' has no attributes.
+The class 'atl::types::annotations::AtlAnnotation' has no attributes.
+The class 'atl::types::EmptyCollection' has no attributes.
+The class 'atl::types::ReflectiveClass' has no attributes.
+The class 'atl::types::PrimitiveType' has no attributes.
+The class 'atl::types::annotations::HelperAnnotation' has the following attributes: 'name' of type str.
+The class 'AtlAnnotation' has no attributes.
+The class 'atl::types::annotations::BindingAnnotation' has the following attributes: 'name' of type str.
+The class 'PrimitiveType' has no attributes.
+The class 'atl::types::annotations::ExpressionAnnotation' has no attributes.
+The class 'atl::types::EnumType' has the following attributes: 'name' of type str.
+The class 'atl::types::RefType' has no attributes.
+The class 'atl::types::MapType' has no attributes.
+The class 'atl::types::StringType' has no attributes.
+The class 'atl::types::EClass' has no attributes.
+The class 'atl::types::ReflectiveType' has no attributes.
+The class 'atl::types::BooleanType' has no attributes.
+The class 'atl::types::TupleAttribute' has the following attributes: 'name' of type str.
+The class 'atl::types::Type' has the following attributes: 'multivalued' of type bool.
+The class 'RefType' has no attributes.
+The class 'atl::types::Unknown' has no attributes.
+'atl::types::annotations::ExpressionAnnotation' is a specialization of 'AtlAnnotation'.
+'atl::types::UnionType' is a specialization of 'Type'.
+'atl::types::ReflectiveType' is a specialization of 'Type'.
+'atl::types::BooleanType' is a specialization of 'PrimitiveType'.
+'atl::types::TupleType' is a specialization of 'Type'.
+'atl::types::ThisModuleType' is a specialization of 'Type'.
+'atl::types::IntegerType' is a specialization of 'PrimitiveType'.
+'atl::types::Unknown' is a specialization of 'RefType'.
+'atl::types::PrimitiveType' is a specialization of 'Type'.
+'atl::types::Metaclass' is a specialization of 'RefType'.
+'atl::types::EmptyCollection' is a specialization of 'Type'.
+'atl::types::StringType' is a specialization of 'PrimitiveType'.
+'atl::types::ReflectiveClass' is a specialization of 'ReflectiveType'.
+'atl::types::annotations::HelperAnnotation' is a specialization of 'AtlAnnotation'.
+'atl::types::FloatType' is a specialization of 'PrimitiveType'.
+'atl::types::annotations::BindingAnnotation' is a specialization of 'AtlAnnotation'.
+'atl::types::EnumType' is a specialization of 'Type'.
+'atl::types::RefType' is a specialization of 'Type'.
+'atl::types::MapType' is a specialization of 'Type'.
+'atl::types::Type' (role 'atl_types_Type11', cardinality 0..*) is associated with 'atl::types::UnionType' (role 'atl_types_UnionType', cardinality 0..*).
+'annotations::atl::types::Type' (role 'annotations_atl_types_Type', cardinality 0..*) is associated with 'atl::types::annotations::HelperAnnotation' (role 'atl_types_annotations_HelperAnnotation14', cardinality 0..*).
+'atl::types::Type' (role 'atl_types_Type4', cardinality 0..*) is associated with 'atl::types::MapType' (role 'atl_types_MapType3', cardinality 0..*).
+'atl::types::EClass' (role 'atl_types_EClass', cardinality 0..*) is associated with 'atl::types::Metaclass' (role 'atl_types_Metaclass', cardinality 0..*).
+'annotations::atl::types::Type' (role 'annotations_atl_types_Type22', cardinality 0..*) is associated with 'atl::types::annotations::BindingAnnotation' (role 'atl_types_annotations_BindingAnnotation21', cardinality 0..*).
+'atl::types::annotations::BindingAnnotation' (role 'atl_types_annotations_BindingAnnotation24', cardinality 0..*) is associated with 'annotations::atl::types::Type' (role 'annotations_atl_types_Type25', cardinality 0..*).
+'atl::types::EObject' (role 'atl_types_EObject', cardinality 0..*) is associated with 'atl::types::EnumType' (role 'atl_types_EnumType', cardinality 0..*).
+'atl::types::TupleType' (role 'atl_types_TupleType', cardinality 0..*) is associated with 'atl::types::TupleAttribute' (role 'atl_types_TupleAttribute', cardinality 0..*).
+'atl::types::TupleAttribute' (role 'atl_types_TupleAttribute6', cardinality 0..*) is associated with 'atl::types::Type' (role 'atl_types_Type7', cardinality 0..*).
+'atl::types::annotations::BindingAnnotation' (role 'atl_types_annotations_BindingAnnotation18', cardinality 0..*) is associated with 'annotations::atl::types::EObject' (role 'annotations_atl_types_EObject19', cardinality 0..*).
+'annotations::atl::types::Type' (role 'annotations_atl_types_Type30', cardinality 0..*) is associated with 'atl::types::annotations::ExpressionAnnotation' (role 'atl_types_annotations_ExpressionAnnotation29', cardinality 0..*).
+'annotations::atl::types::EObject' (role 'annotations_atl_types_EObject16', cardinality 0..*) is associated with 'atl::types::annotations::BindingAnnotation' (role 'atl_types_annotations_BindingAnnotation', cardinality 0..*).
+'annotations::atl::types::EObject' (role 'annotations_atl_types_EObject27', cardinality 0..*) is associated with 'atl::types::annotations::ExpressionAnnotation' (role 'atl_types_annotations_ExpressionAnnotation', cardinality 0..*).
+'annotations::atl::types::EObject' (role 'annotations_atl_types_EObject', cardinality 0..*) is associated with 'atl::types::annotations::HelperAnnotation' (role 'atl_types_annotations_HelperAnnotation', cardinality 0..*).
+'atl::types::MapType' (role 'atl_types_MapType', cardinality 0..*) is associated with 'atl::types::Type' (role 'atl_types_Type', cardinality 0..*).

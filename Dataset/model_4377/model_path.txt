@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/NanaEB/jastemf/jastemf-examples/siple/org.jastemf.siple/specifications/siple/model/siple.ecore

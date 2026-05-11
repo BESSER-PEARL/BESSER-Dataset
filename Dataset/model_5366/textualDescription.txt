@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'attributes::DocumentRoot' has the following attributes: 'mixed' of type str; 'comment' of type str.
+The class 'attributes::R' has the following attributes: 'name' of type str.
+The class 'attributes::A' has the following attributes: 'c' of type str; 'id' of type str; 'd' of type str; 'b' of type str; 'comment' of type str; 'name' of type str.
+The class 'attributes::EStringToStringMapEntry' has no attributes.
+'attributes::A' (role 'attributes_A', cardinality 0..*) is associated with 'attributes::R' (role 'attributes_R', cardinality 0..*).
+'attributes::EStringToStringMapEntry' (role 'attributes_EStringToStringMapEntry', cardinality 0..*) is associated with 'attributes::DocumentRoot' (role 'attributes_DocumentRoot', cardinality 0..*).
+'attributes::DocumentRoot' (role 'attributes_DocumentRoot3', cardinality 0..*) is associated with 'attributes::EStringToStringMapEntry' (role 'attributes_EStringToStringMapEntry4', cardinality 0..*).

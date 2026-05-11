@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'testPackage::SubClass' has no attributes.
+The class 'testPackage::SuperClass' has no attributes.
+'testPackage::SubClass' (role 'testPackage_SubClass', cardinality 0..*) is associated with 'testPackage::SuperClass' (role 'testPackage_SuperClass', cardinality 0..*).

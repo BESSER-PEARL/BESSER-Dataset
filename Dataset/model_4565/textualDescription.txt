@@ -1,0 +1,46 @@
+The model has 23 class(es).
+The class 'robot::Statement' has no attributes.
+The class 'robot::TrueCondition' has no attributes.
+The class 'robot::UntilStatement' has no attributes.
+The class 'robot::PrintStatement' has the following attributes: 'text' of type str.
+The class 'Condition' has no attributes.
+The class 'robot::ConditionalStatement' has no attributes.
+The class 'ConditionalStatement' has no attributes.
+The class 'robot::Robot' has no attributes.
+The class 'robot::Scenario' has no attributes.
+The class 'robot::ControlStatement' has the following attributes: 'value' of type int.
+The class 'NamedElement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'robot::NamedElement' has the following attributes: 'name' of type str.
+The class 'ControlStatement' has no attributes.
+The class 'robot::WhileStatement' has no attributes.
+The class 'robot::ObjectAheadCondition' has no attributes.
+The class 'robot::RightStatement' has no attributes.
+The class 'robot::StatementBlock' has no attributes.
+The class 'robot::Condition' has no attributes.
+The class 'robot::ForwardStatement' has no attributes.
+The class 'robot::Connection' has the following attributes: 'port' of type int; 'ip' of type str.
+The class 'robot::IfStatement' has no attributes.
+The class 'robot::ExecuteStatement' has no attributes.
+'robot::RightStatement' is a specialization of 'ControlStatement'.
+'robot::ControlStatement' is a specialization of 'Statement'.
+'robot::ExecuteStatement' is a specialization of 'Statement'.
+'robot::UntilStatement' is a specialization of 'ConditionalStatement'.
+'robot::TrueCondition' is a specialization of 'Condition'.
+'robot::WhileStatement' is a specialization of 'ConditionalStatement'.
+'robot::Scenario' is a specialization of 'NamedElement'.
+'robot::IfStatement' is a specialization of 'ConditionalStatement'.
+'robot::Robot' is a specialization of 'NamedElement'.
+'robot::PrintStatement' is a specialization of 'Statement'.
+'robot::ConditionalStatement' is a specialization of 'Statement'.
+'robot::ObjectAheadCondition' is a specialization of 'Condition'.
+'robot::ForwardStatement' is a specialization of 'ControlStatement'.
+'robot::StatementBlock' (role 'robot_StatementBlock14', cardinality 0..*) is associated with 'robot::ConditionalStatement' (role 'robot_ConditionalStatement13', cardinality 0..*).
+'robot::StatementBlock' (role 'robot_StatementBlock18', cardinality 0..*) is associated with 'robot::Statement' (role 'robot_Statement', cardinality 0..*).
+'robot::Robot' (role 'robot_Robot4', cardinality 0..*) is associated with 'robot::Scenario' (role 'robot_Scenario5', cardinality 0..*).
+'robot::ExecuteStatement' (role 'robot_ExecuteStatement', cardinality 0..*) is associated with 'robot::Scenario' (role 'robot_Scenario16', cardinality 0..*).
+'robot::Robot' (role 'robot_Robot2', cardinality 0..*) is associated with 'robot::StatementBlock' (role 'robot_StatementBlock', cardinality 0..*).
+'robot::Connection' (role 'robot_Connection', cardinality 0..*) is associated with 'robot::Robot' (role 'robot_Robot7', cardinality 0..*).
+'robot::StatementBlock' (role 'robot_StatementBlock10', cardinality 0..*) is associated with 'robot::Scenario' (role 'robot_Scenario9', cardinality 0..*).
+'robot::Robot' (role 'robot_Robot', cardinality 0..*) is associated with 'robot::Scenario' (role 'robot_Scenario', cardinality 0..*).
+'robot::Condition' (role 'robot_Condition', cardinality 0..*) is associated with 'robot::ConditionalStatement' (role 'robot_ConditionalStatement', cardinality 0..*).

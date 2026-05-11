@@ -1,0 +1,44 @@
+The model has 19 class(es).
+The class 'myffbd::OutputPort' has no attributes.
+The class 'myffbd::Description' has the following attributes: 'content' of type str.
+The class 'myffbd::Or' has no attributes.
+The class 'myffbd::Flow' has no attributes.
+The class 'myffbd::And' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'myffbd::InputPort' has no attributes.
+The class 'myffbd::Loop' has no attributes.
+The class 'myffbd::SequenceNode' has the following attributes: 'name' of type str.
+The class 'myffbd::Final' has no attributes.
+The class 'myffbd::Start' has no attributes.
+The class 'myffbd::Function' has the following attributes: 'tMax' of type int; 'tMin' of type int; 'domain' of type str.
+The class 'myffbd::Token' has no attributes.
+The class 'myffbd::Port' has the following attributes: 'id' of type str.
+The class 'myffbd::LoopExit' has no attributes.
+The class 'myffbd::Item' has the following attributes: 'name' of type str.
+The class 'myffbd::PortType' has the following attributes: 'type' of type str.
+The class 'Port' has no attributes.
+The class 'myffbd::Iteration' has no attributes.
+The enumeration 'FunctionDomain' has the following literals: 'form', 'time', 'space'.
+'myffbd::OutputPort' is a specialization of 'Port'.
+'myffbd::Function' is a specialization of 'SequenceNode'.
+'myffbd::InputPort' is a specialization of 'Port'.
+'myffbd::Iteration' is a specialization of 'SequenceNode'.
+'myffbd::And' is a specialization of 'SequenceNode'.
+'myffbd::LoopExit' is a specialization of 'SequenceNode'.
+'myffbd::Start' is a specialization of 'SequenceNode'.
+'myffbd::Final' is a specialization of 'SequenceNode'.
+'myffbd::Or' is a specialization of 'SequenceNode'.
+'myffbd::Loop' is a specialization of 'SequenceNode'.
+'myffbd::InputPort' (role 'myffbd_InputPort', cardinality 0..*) is associated with 'myffbd::Function' (role 'myffbd_Function7', cardinality 0..*).
+'myffbd::SequenceNode' (role 'myffbd_SequenceNode16', cardinality 0..*) is associated with 'myffbd::SequenceNode' (role 'myffbd_SequenceNode14', cardinality 0..*).
+'myffbd::Flow' (role 'myffbd_Flow25', cardinality 0..*) is associated with 'myffbd::Item' (role 'myffbd_Item', cardinality 0..*).
+'myffbd::Port' (role 'myffbd_Port', cardinality 0..*) is associated with 'myffbd::Flow' (role 'myffbd_Flow', cardinality 0..*).
+'myffbd::Port' (role 'myffbd_Port28', cardinality 0..*) is associated with 'myffbd::Flow' (role 'myffbd_Flow27', cardinality 0..*).
+'myffbd::Function' (role 'myffbd_Function11', cardinality 0..*) is associated with 'myffbd::Token' (role 'myffbd_Token', cardinality 0..*).
+'myffbd::Function' (role 'myffbd_Function13', cardinality 0..*) is associated with 'myffbd::PortType' (role 'myffbd_PortType', cardinality 0..*).
+'myffbd::Description' (role 'myffbd_Description', cardinality 0..*) is associated with 'myffbd::Function' (role 'myffbd_Function9', cardinality 0..*).
+'myffbd::Function' (role 'myffbd_Function3', cardinality 0..*) is associated with 'myffbd::SequenceNode' (role 'myffbd_SequenceNode', cardinality 0..*).
+'myffbd::PortType' (role 'myffbd_PortType20', cardinality 0..*) is associated with 'myffbd::Port' (role 'myffbd_Port19', cardinality 0..*).
+'myffbd::Function' (role 'myffbd_Function5', cardinality 0..*) is associated with 'myffbd::OutputPort' (role 'myffbd_OutputPort', cardinality 0..*).
+'myffbd::Function' (role 'myffbd_Function', cardinality 0..*) is associated with 'myffbd::Function' (role 'myffbd_Function0', cardinality 0..*).
+'myffbd::Port' (role 'myffbd_Port23', cardinality 0..*) is associated with 'myffbd::Flow' (role 'myffbd_Flow22', cardinality 0..*).

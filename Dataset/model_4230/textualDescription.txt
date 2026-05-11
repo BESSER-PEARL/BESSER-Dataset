@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'CompanyLanguage::CEO' has the following attributes: 'name' of type str.
+The class 'CompanyLanguage::Company' has the following attributes: 'name' of type str.
+The class 'CompanyLanguage::Admin' has the following attributes: 'name' of type str.
+The class 'CompanyLanguage::Employee' has the following attributes: 'name' of type str.
+'CompanyLanguage::Company' (role 'CompanyLanguage_Company9', cardinality 0..*) is associated with 'CompanyLanguage::Admin' (role 'CompanyLanguage_Admin10', cardinality 0..*).
+'CompanyLanguage::Employee' (role 'CompanyLanguage_Employee', cardinality 0..*) is associated with 'CompanyLanguage::CEO' (role 'CompanyLanguage_CEO2', cardinality 0..*).
+'CompanyLanguage::CEO' (role 'CompanyLanguage_CEO7', cardinality 0..*) is associated with 'CompanyLanguage::Company' (role 'CompanyLanguage_Company6', cardinality 0..*).
+'CompanyLanguage::Employee' (role 'CompanyLanguage_Employee4', cardinality 0..*) is associated with 'CompanyLanguage::Company' (role 'CompanyLanguage_Company', cardinality 0..*).
+'CompanyLanguage::CEO' (role 'CompanyLanguage_CEO', cardinality 0..*) is associated with 'CompanyLanguage::Admin' (role 'CompanyLanguage_Admin', cardinality 0..*).

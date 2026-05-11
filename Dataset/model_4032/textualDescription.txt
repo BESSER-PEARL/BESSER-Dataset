@@ -1,0 +1,40 @@
+The model has 13 class(es).
+The class 'uml::association' has the following attributes: 'kind' of type str; 'destination' of type str; 'source' of type str; 'name' of type str; 'oID' of type str.
+The class 'uml::ownerClassifier' has no attributes.
+The class 'uml::generalClass' has no attributes.
+The class 'uml::classifiersAndAssociations' has the following attributes: 'group' of type str.
+The class 'uml::attribute' has the following attributes: 'name' of type str; 'oID' of type str; 'kind' of type str.
+The class 'uml::UML' has no attributes.
+The class 'uml::class::' has the following attributes: 'kind' of type str; 'oID' of type str; 'name' of type str.
+The class 'uml::package::' has the following attributes: 'oID' of type str; 'name' of type str; 'kind' of type str.
+The class 'uml::packages' has the following attributes: 'group' of type str.
+The class 'uml::primitiveDataType' has the following attributes: 'name' of type str; 'oID' of type str; 'kind' of type str.
+The class 'uml::EStringToStringMapEntry' has no attributes.
+The class 'uml::attributes' has the following attributes: 'group' of type str.
+The class 'uml::DocumentRoot' has the following attributes: 'mixed' of type str.
+'uml::generalClass' (role 'uml_generalClass', cardinality 0..*) is associated with 'uml::class::' (role 'uml_class_', cardinality 0..*).
+'uml::DocumentRoot' (role 'uml_DocumentRoot46', cardinality 0..*) is associated with 'uml::UML' (role 'uml_UML', cardinality 0..*).
+'uml::DocumentRoot' (role 'uml_DocumentRoot27', cardinality 0..*) is associated with 'uml::class::' (role 'uml_class_28', cardinality 0..*).
+'uml::attribute' (role 'uml_attribute', cardinality 0..*) is associated with 'uml::ownerClassifier' (role 'uml_ownerClassifier', cardinality 0..*).
+'uml::classifiersAndAssociations' (role 'uml_classifiersAndAssociations58', cardinality 0..*) is associated with 'uml::package::' (role 'uml_package_57', cardinality 0..*).
+'uml::class::' (role 'uml_class_49', cardinality 0..*) is associated with 'uml::generalClass' (role 'uml_generalClass48', cardinality 0..*).
+'uml::ownerClassifier' (role 'uml_ownerClassifier37', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot36', cardinality 0..*).
+'uml::DocumentRoot' (role 'uml_DocumentRoot41', cardinality 0..*) is associated with 'uml::packages' (role 'uml_packages', cardinality 0..*).
+'uml::attribute' (role 'uml_attribute2', cardinality 0..*) is associated with 'uml::attributes' (role 'uml_attributes', cardinality 0..*).
+'uml::package::' (role 'uml_package_61', cardinality 0..*) is associated with 'uml::packages' (role 'uml_packages60', cardinality 0..*).
+'uml::packages' (role 'uml_packages64', cardinality 0..*) is associated with 'uml::UML' (role 'uml_UML63', cardinality 0..*).
+'uml::package::' (role 'uml_package_', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot39', cardinality 0..*).
+'uml::class::' (role 'uml_class_5', cardinality 0..*) is associated with 'uml::attributes' (role 'uml_attributes6', cardinality 0..*).
+'uml::class::' (role 'uml_class_52', cardinality 0..*) is associated with 'uml::ownerClassifier' (role 'uml_ownerClassifier51', cardinality 0..*).
+'uml::class::' (role 'uml_class_8', cardinality 0..*) is associated with 'uml::classifiersAndAssociations' (role 'uml_classifiersAndAssociations', cardinality 0..*).
+'uml::attribute' (role 'uml_attribute22', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot21', cardinality 0..*).
+'uml::association' (role 'uml_association19', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot18', cardinality 0..*).
+'uml::generalClass' (role 'uml_generalClass34', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot33', cardinality 0..*).
+'uml::classifiersAndAssociations' (role 'uml_classifiersAndAssociations31', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot30', cardinality 0..*).
+'uml::EStringToStringMapEntry' (role 'uml_EStringToStringMapEntry', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot', cardinality 0..*).
+'uml::EStringToStringMapEntry' (role 'uml_EStringToStringMapEntry16', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot15', cardinality 0..*).
+'uml::primitiveDataType' (role 'uml_primitiveDataType', cardinality 0..*) is associated with 'uml::classifiersAndAssociations' (role 'uml_classifiersAndAssociations10', cardinality 0..*).
+'uml::primitiveDataType' (role 'uml_primitiveDataType44', cardinality 0..*) is associated with 'uml::DocumentRoot' (role 'uml_DocumentRoot43', cardinality 0..*).
+'uml::classifiersAndAssociations' (role 'uml_classifiersAndAssociations12', cardinality 0..*) is associated with 'uml::association' (role 'uml_association', cardinality 0..*).
+'uml::DocumentRoot' (role 'uml_DocumentRoot24', cardinality 0..*) is associated with 'uml::attributes' (role 'uml_attributes25', cardinality 0..*).
+'uml::primitiveDataType' (role 'uml_primitiveDataType55', cardinality 0..*) is associated with 'uml::ownerClassifier' (role 'uml_ownerClassifier54', cardinality 0..*).

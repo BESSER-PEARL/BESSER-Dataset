@@ -1,0 +1,51 @@
+The model has 24 class(es).
+The class 'effbd902::Final' has no attributes.
+The class 'SequenceNode' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'effbd902::Loop' has no attributes.
+The class 'effbd902::ProcessNode' has the following attributes: 'label' of type str.
+The class 'effbd902::LoopExit' has no attributes.
+The class 'Port' has no attributes.
+The class 'effbd902::SequenceNode' has the following attributes: 'tMax' of type int; 'tMin' of type int; 'name' of type str.
+The class 'effbd902::Iteration' has no attributes.
+The class 'effbd902::Token' has no attributes.
+The class 'ProcessNode' has no attributes.
+The class 'effbd902::InputPort' has no attributes.
+The class 'effbd902::Sequence' has no attributes.
+The class 'effbd902::Port' has the following attributes: 'id' of type str.
+The class 'effbd902::Item' has the following attributes: 'name' of type str.
+The class 'effbd902::And' has no attributes.
+The class 'effbd902::Start' has no attributes.
+The class 'effbd902::Function' has the following attributes: 'domain' of type str.
+The class 'effbd902::Description' has the following attributes: 'content' of type str.
+The class 'effbd902::Flow' has no attributes.
+The class 'effbd902::Or' has no attributes.
+The class 'AbstractFunction' has no attributes.
+The class 'effbd902::OutputPort' has no attributes.
+The class 'effbd902::AbstractFunction' has the following attributes: 'id' of type str.
+The enumeration 'FunctionDomain' has the following literals: 'space', 'form', 'time'.
+'effbd902::Sequence' is a specialization of 'SequenceNode'.
+'effbd902::OutputPort' is a specialization of 'Port'.
+'effbd902::LoopExit' is a specialization of 'Sequence'.
+'effbd902::Final' is a specialization of 'Sequence'.
+'effbd902::Or' is a specialization of 'Sequence'.
+'effbd902::Loop' is a specialization of 'Sequence'.
+'effbd902::InputPort' is a specialization of 'Port'.
+'effbd902::Function' is a specialization of 'SequenceNode'.
+'effbd902::Function' is a specialization of 'AbstractFunction'.
+'effbd902::Flow' is a specialization of 'ProcessNode'.
+'effbd902::Function' is a specialization of 'ProcessNode'.
+'effbd902::Iteration' is a specialization of 'Sequence'.
+'effbd902::And' is a specialization of 'Sequence'.
+'effbd902::Start' is a specialization of 'Sequence'.
+'effbd902::Function' (role 'effbd902_Function8', cardinality 0..*) is associated with 'effbd902::InputPort' (role 'effbd902_InputPort', cardinality 0..*).
+'effbd902::SequenceNode' (role 'effbd902_SequenceNode13', cardinality 0..*) is associated with 'effbd902::SequenceNode' (role 'effbd902_SequenceNode', cardinality 0..*).
+'effbd902::Function' (role 'effbd902_Function6', cardinality 0..*) is associated with 'effbd902::OutputPort' (role 'effbd902_OutputPort', cardinality 0..*).
+'effbd902::Sequence' (role 'effbd902_Sequence', cardinality 0..*) is associated with 'effbd902::Function' (role 'effbd902_Function2', cardinality 0..*).
+'effbd902::Flow' (role 'effbd902_Flow19', cardinality 0..*) is associated with 'effbd902::Item' (role 'effbd902_Item', cardinality 0..*).
+'effbd902::Flow' (role 'effbd902_Flow', cardinality 0..*) is associated with 'effbd902::Function' (role 'effbd902_Function4', cardinality 0..*).
+'effbd902::Function' (role 'effbd902_Function', cardinality 0..*) is associated with 'effbd902::AbstractFunction' (role 'effbd902_AbstractFunction', cardinality 0..*).
+'effbd902::Flow' (role 'effbd902_Flow16', cardinality 0..*) is associated with 'effbd902::InputPort' (role 'effbd902_InputPort17', cardinality 0..*).
+'effbd902::Function' (role 'effbd902_Function10', cardinality 0..*) is associated with 'effbd902::Description' (role 'effbd902_Description', cardinality 0..*).
+'effbd902::Token' (role 'effbd902_Token', cardinality 0..*) is associated with 'effbd902::Function' (role 'effbd902_Function12', cardinality 0..*).
+'effbd902::Flow' (role 'effbd902_Flow22', cardinality 0..*) is associated with 'effbd902::OutputPort' (role 'effbd902_OutputPort21', cardinality 0..*).

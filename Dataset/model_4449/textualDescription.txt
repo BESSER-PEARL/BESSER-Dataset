@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'iot::Arduino' has the following attributes: 'model' of type str; 'pins' of type int.
+The class 'iot::Board' has no attributes.
+The class 'iot::Motor' has the following attributes: 'library' of type str; 'degrees' of type str; 'name' of type str; 'pins' of type int.
+'iot::Board' (role 'iot_Board2', cardinality 0..*) is associated with 'iot::Motor' (role 'iot_Motor', cardinality 0..*).
+'iot::Arduino' (role 'iot_Arduino4', cardinality 0..*) is associated with 'iot::Motor' (role 'iot_Motor5', cardinality 0..*).
+'iot::Arduino' (role 'iot_Arduino', cardinality 0..*) is associated with 'iot::Board' (role 'iot_Board', cardinality 0..*).
+'iot::Motor' (role 'iot_Motor6', cardinality 0..*) is associated with 'iot::Motor' (role 'iot_Motor8', cardinality 0..*).

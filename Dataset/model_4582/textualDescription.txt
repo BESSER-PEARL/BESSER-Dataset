@@ -1,0 +1,49 @@
+The model has 24 class(es).
+The class 'sparrow::FBCLead' has the following attributes: 'campaignId' of type str; 'accessToken' of type str; 'value' of type str; 'target' of type str; 'appSecret' of type str; 'accountId' of type str.
+The class 'sparrow::Rest' has the following attributes: 'urldata' of type str; 'postdatafrom' of type str; 'ackdatato' of type str; 'headerdatafrom' of type str; 'resourcedatafrom' of type str; 'headerdata' of type str; 'parentName' of type str; 'parentdata' of type str; 'authtoken' of type str; 'method' of type str; 'ackdata' of type str; 'url' of type str.
+The class 'sparrow::Doozle' has the following attributes: 'target' of type str; 'value' of type str; 'on' of type str.
+The class 'sparrow::SlackPUT' has the following attributes: 'value' of type str; 'channel' of type str; 'team' of type str.
+The class 'sparrow::WriteCsv' has the following attributes: 'source' of type str; 'value' of type str; 'delim' of type str; 'to' of type str.
+The class 'sparrow::Callprocess' has the following attributes: 'value' of type str; 'source' of type str; 'target' of type str; 'datasource' of type str.
+The class 'sparrow::TrelloPUT' has the following attributes: 'useraccount' of type str; 'value' of type str; 'list' of type str; 'key' of type str; 'source' of type str; 'authtoken' of type str.
+The class 'sparrow::Catch' has the following attributes: 'name' of type str.
+The class 'sparrow::Fetch' has the following attributes: 'value' of type str; 'source' of type str.
+The class 'sparrow::LoadCsv' has the following attributes: 'delim' of type str; 'to' of type str; 'value' of type str; 'source' of type str.
+The class 'sparrow::Process' has the following attributes: 'name' of type str.
+The class 'Action' has no attributes.
+The class 'sparrow::Updatedaudit' has the following attributes: 'value' of type str; 'logsink' of type str.
+The class 'sparrow::RestPart' has the following attributes: 'partName' of type str; 'partData' of type str.
+The class 'sparrow::Try' has the following attributes: 'name' of type str.
+The class 'sparrow::Expression' has the following attributes: 'rhs' of type str; 'operator' of type str; 'lhs' of type str.
+The class 'sparrow::Transform' has the following attributes: 'value' of type str; 'on' of type str.
+The class 'sparrow::Action' has the following attributes: 'name' of type str.
+The class 'sparrow::TrelloGET' has the following attributes: 'target' of type str; 'board' of type str; 'authtoken' of type str; 'key' of type str; 'value' of type str; 'useraccount' of type str.
+The class 'sparrow::Copydata' has the following attributes: 'to' of type str; 'source' of type str; 'value' of type str.
+The class 'sparrow::Sms' has the following attributes: 'value' of type str; 'target' of type str.
+The class 'sparrow::Finally' has the following attributes: 'name' of type str.
+The class 'sparrow::Dropfile' has the following attributes: 'target' of type str.
+The class 'sparrow::GooglecalPUT' has the following attributes: 'useraccount' of type str; 'value' of type str; 'authstore' of type str; 'source' of type str; 'key' of type str.
+'sparrow::WriteCsv' is a specialization of 'Action'.
+'sparrow::TrelloPUT' is a specialization of 'Action'.
+'sparrow::FBCLead' is a specialization of 'Action'.
+'sparrow::SlackPUT' is a specialization of 'Action'.
+'sparrow::Rest' is a specialization of 'Action'.
+'sparrow::LoadCsv' is a specialization of 'Action'.
+'sparrow::Transform' is a specialization of 'Action'.
+'sparrow::Updatedaudit' is a specialization of 'Action'.
+'sparrow::TrelloGET' is a specialization of 'Action'.
+'sparrow::GooglecalPUT' is a specialization of 'Action'.
+'sparrow::Sms' is a specialization of 'Action'.
+'sparrow::Fetch' is a specialization of 'Action'.
+'sparrow::Callprocess' is a specialization of 'Action'.
+'sparrow::Dropfile' is a specialization of 'Action'.
+'sparrow::Copydata' is a specialization of 'Action'.
+'sparrow::Doozle' is a specialization of 'Action'.
+'sparrow::Action' (role 'sparrow_Action', cardinality 0..*) is associated with 'sparrow::Try' (role 'sparrow_Try6', cardinality 0..*).
+'sparrow::Action' (role 'sparrow_Action14', cardinality 0..*) is associated with 'sparrow::Expression' (role 'sparrow_Expression', cardinality 0..*).
+'sparrow::Try' (role 'sparrow_Try', cardinality 0..*) is associated with 'sparrow::Process' (role 'sparrow_Process', cardinality 0..*).
+'sparrow::Process' (role 'sparrow_Process2', cardinality 0..*) is associated with 'sparrow::Catch' (role 'sparrow_Catch', cardinality 0..*).
+'sparrow::Catch' (role 'sparrow_Catch11', cardinality 0..*) is associated with 'sparrow::Action' (role 'sparrow_Action12', cardinality 0..*).
+'sparrow::Process' (role 'sparrow_Process4', cardinality 0..*) is associated with 'sparrow::Finally' (role 'sparrow_Finally', cardinality 0..*).
+'sparrow::Rest' (role 'sparrow_Rest', cardinality 0..*) is associated with 'sparrow::RestPart' (role 'sparrow_RestPart', cardinality 0..*).
+'sparrow::Action' (role 'sparrow_Action9', cardinality 0..*) is associated with 'sparrow::Finally' (role 'sparrow_Finally8', cardinality 0..*).

@@ -1,0 +1,99 @@
+The model has 42 class(es).
+The class 'roverml::DistanceSensor' has the following attributes: 'distance' of type float.
+The class 'roverml::Move' has the following attributes: 'velocity' of type float; 'length' of type float.
+The class 'Command' has no attributes.
+The class 'roverml::SingleQuantity' has no attributes.
+The class 'roverml::Terminate' has no attributes.
+The class 'roverml::GPS' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'roverml::Command' has no attributes.
+The class 'roverml::GPSTrigger' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'Actuator' has no attributes.
+The class 'roverml::Compass' has the following attributes: 'angle' of type int.
+The class 'roverml::Regular' has no attributes.
+The class 'roverml::Light' has no attributes.
+The class 'Transition' has no attributes.
+The class 'roverml::Rotate' has the following attributes: 'angle' of type int.
+The class 'roverml::Triggered' has the following attributes: 'operator' of type str.
+The class 'roverml::Repeat' has the following attributes: 'numberOfReps' of type int.
+The class 'roverml::Block' has no attributes.
+The class 'roverml::SetLightColor' has the following attributes: 'color' of type str.
+The class 'Quantity' has no attributes.
+The class 'roverml::Actuator' has no attributes.
+The class 'roverml::Rover' has no attributes.
+The class 'roverml::Position' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'roverml::Length' has the following attributes: 'units' of type str.
+The class 'roverml::Motor' has no attributes.
+The class 'roverml::Angle' has the following attributes: 'units' of type str.
+The class 'roverml::Sensor' has no attributes.
+The class 'roverml::Component' has no attributes.
+The class 'Component' has no attributes.
+The class 'roverml::Program' has no attributes.
+The class 'roverml::Wait' has the following attributes: 'time' of type int.
+The class 'roverml::Velocity' has the following attributes: 'units' of type str.
+The class 'Sensor' has no attributes.
+The class 'roverml::Quantity' has no attributes.
+The class 'SingleQuantity' has no attributes.
+The class 'Triggered' has no attributes.
+The class 'roverml::Time' has the following attributes: 'units' of type str.
+The class 'NamedElement' has no attributes.
+The class 'roverml::NamedElement' has the following attributes: 'name' of type str.
+The class 'roverml::Transition' has no attributes.
+The class 'roverml::DistanceSensorTrigger' has the following attributes: 'dist' of type float.
+The class 'roverml::System' has no attributes.
+The class 'roverml::CompassTrigger' has the following attributes: 'angle' of type int.
+The enumeration 'VelocityUnits' has the following literals: 'MILLIMETERS_PER_SECOND', 'CENTIMETERS_PER_SECOND'.
+The enumeration 'TimeUnits' has the following literals: 'SECONDS', 'NANOSECONDS', 'MINUTES', 'HOURS', 'MILLISECONDS'.
+The enumeration 'LengthUnits' has the following literals: 'MILLIMETERS', 'METERS', 'CENTIMETERS'.
+The enumeration 'AngleUnits' has the following literals: 'DEGREES', 'RADIANS'.
+The enumeration 'Colours' has the following literals: 'GREEN', 'BLUE', 'RED', 'NONE', 'YELLOW'.
+'roverml::System' is a specialization of 'NamedElement'.
+'roverml::Regular' is a specialization of 'Transition'.
+'roverml::Terminate' is a specialization of 'Command'.
+'roverml::Move' is a specialization of 'Command'.
+'roverml::Wait' is a specialization of 'Command'.
+'roverml::Component' is a specialization of 'NamedElement'.
+'roverml::Velocity' is a specialization of 'SingleQuantity'.
+'roverml::GPS' is a specialization of 'Sensor'.
+'roverml::SetLightColor' is a specialization of 'Command'.
+'roverml::Rotate' is a specialization of 'Command'.
+'roverml::Triggered' is a specialization of 'Transition'.
+'roverml::Motor' is a specialization of 'Actuator'.
+'roverml::GPSTrigger' is a specialization of 'Triggered'.
+'roverml::Position' is a specialization of 'Quantity'.
+'roverml::Repeat' is a specialization of 'Command'.
+'roverml::Compass' is a specialization of 'Sensor'.
+'roverml::Angle' is a specialization of 'SingleQuantity'.
+'roverml::CompassTrigger' is a specialization of 'Triggered'.
+'roverml::Sensor' is a specialization of 'Component'.
+'roverml::Rover' is a specialization of 'NamedElement'.
+'roverml::DistanceSensor' is a specialization of 'Sensor'.
+'roverml::DistanceSensorTrigger' is a specialization of 'Triggered'.
+'roverml::Length' is a specialization of 'SingleQuantity'.
+'roverml::Actuator' is a specialization of 'Component'.
+'roverml::SingleQuantity' is a specialization of 'Quantity'.
+'roverml::Light' is a specialization of 'Actuator'.
+'roverml::Time' is a specialization of 'SingleQuantity'.
+'roverml::Program' is a specialization of 'NamedElement'.
+'roverml::Repeat' (role 'roverml_Repeat', cardinality 0..*) is associated with 'roverml::Command' (role 'roverml_Command29', cardinality 0..*).
+'roverml::DistanceSensorTrigger' (role 'roverml_DistanceSensorTrigger', cardinality 0..*) is associated with 'roverml::Length' (role 'roverml_Length31', cardinality 0..*).
+'roverml::Component' (role 'roverml_Component', cardinality 0..*) is associated with 'roverml::Rover' (role 'roverml_Rover4', cardinality 0..*).
+'roverml::Rotate' (role 'roverml_Rotate', cardinality 0..*) is associated with 'roverml::Angle' (role 'roverml_Angle', cardinality 0..*).
+'roverml::Length' (role 'roverml_Length', cardinality 0..*) is associated with 'roverml::Move' (role 'roverml_Move26', cardinality 0..*).
+'roverml::Block' (role 'roverml_Block', cardinality 0..*) is associated with 'roverml::Program' (role 'roverml_Program9', cardinality 0..*).
+'roverml::Command' (role 'Command22', cardinality 0..*) is associated with 'roverml::Transition' (role 'incomingTransitions', cardinality 0..*).
+'roverml::Command' (role 'source', cardinality 0..*) is associated with 'roverml::Transition' (role 'Transition', cardinality 0..*).
+'roverml::Program' (role 'roverml_Program6', cardinality 0..*) is associated with 'roverml::Rover' (role 'roverml_Rover7', cardinality 0..*).
+'roverml::Program' (role 'roverml_Program', cardinality 0..*) is associated with 'roverml::System' (role 'roverml_System', cardinality 0..*).
+'roverml::Command' (role 'target', cardinality 0..*) is associated with 'roverml::Transition' (role 'Transition16', cardinality 0..*).
+'roverml::Component' (role 'roverml_Component19', cardinality 0..*) is associated with 'roverml::Command' (role 'roverml_Command18', cardinality 0..*).
+'roverml::System' (role 'roverml_System2', cardinality 0..*) is associated with 'roverml::Rover' (role 'roverml_Rover', cardinality 0..*).
+'roverml::GPS' (role 'roverml_GPS', cardinality 0..*) is associated with 'roverml::GPSTrigger' (role 'roverml_GPSTrigger40', cardinality 0..*).
+'roverml::GPSTrigger' (role 'roverml_GPSTrigger', cardinality 0..*) is associated with 'roverml::Position' (role 'roverml_Position', cardinality 0..*).
+'roverml::Transition' (role 'outgoingTransitions', cardinality 0..*) is associated with 'roverml::Command' (role 'Command', cardinality 0..*).
+'roverml::Velocity' (role 'roverml_Velocity', cardinality 0..*) is associated with 'roverml::Move' (role 'roverml_Move', cardinality 0..*).
+'roverml::Block' (role 'roverml_Block11', cardinality 0..*) is associated with 'roverml::Transition' (role 'roverml_Transition', cardinality 0..*).
+'roverml::DistanceSensorTrigger' (role 'roverml_DistanceSensorTrigger33', cardinality 0..*) is associated with 'roverml::DistanceSensor' (role 'roverml_DistanceSensor', cardinality 0..*).
+'roverml::Time' (role 'roverml_Time', cardinality 0..*) is associated with 'roverml::Wait' (role 'roverml_Wait', cardinality 0..*).
+'roverml::Compass' (role 'roverml_Compass', cardinality 0..*) is associated with 'roverml::CompassTrigger' (role 'roverml_CompassTrigger37', cardinality 0..*).
+'roverml::Block' (role 'roverml_Block13', cardinality 0..*) is associated with 'roverml::Command' (role 'roverml_Command', cardinality 0..*).
+'roverml::CompassTrigger' (role 'roverml_CompassTrigger', cardinality 0..*) is associated with 'roverml::Angle' (role 'roverml_Angle35', cardinality 0..*).

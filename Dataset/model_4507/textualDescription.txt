@@ -1,0 +1,37 @@
+The model has 17 class(es).
+The class 'smartHome::SensorType' has the following attributes: 'name' of type str.
+The class 'smartHome::Event' has the following attributes: 'description' of type str.
+The class 'smartHome::BooleanSensor' has the following attributes: 'value' of type bool.
+The class 'smartHome::Condition' has no attributes.
+The class 'smartHome::IntegerSensor' has the following attributes: 'value' of type int.
+The class 'smartHome::AnalogSensorType' has no attributes.
+The class 'SensorType' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'smartHome::BooleanCondition' has the following attributes: 'operator' of type str; 'operand' of type bool.
+The class 'smartHome::SmartHome' has no attributes.
+The class 'smartHome::Rule' has no attributes.
+The class 'smartHome::Duration' has the following attributes: 'unit' of type str; 'value' of type int.
+The class 'Condition' has no attributes.
+The class 'smartHome::IntegerCondition' has the following attributes: 'operand' of type int; 'operator' of type str.
+The class 'smartHome::Sensor' has the following attributes: 'name' of type str; 'dataFile' of type str.
+The class 'smartHome::Location' has the following attributes: 'name' of type str.
+The class 'smartHome::BooleanSensorType' has no attributes.
+The enumeration 'DurationUnit' has the following literals: 'SECOND', 'MINUTE'.
+The enumeration 'BooleanOperator' has the following literals: 'IS_NOT', 'IS'.
+The enumeration 'IntegerOperator' has the following literals: 'SUPERIOR', 'EQUALS', 'INFERIOR'.
+'smartHome::AnalogSensorType' is a specialization of 'SensorType'.
+'smartHome::BooleanSensorType' is a specialization of 'SensorType'.
+'smartHome::IntegerSensor' is a specialization of 'Sensor'.
+'smartHome::BooleanSensor' is a specialization of 'Sensor'.
+'smartHome::BooleanCondition' is a specialization of 'Condition'.
+'smartHome::IntegerCondition' is a specialization of 'Condition'.
+'smartHome::Rule' (role 'smartHome_Rule11', cardinality 0..*) is associated with 'smartHome::Condition' (role 'smartHome_Condition', cardinality 0..*).
+'smartHome::Rule' (role 'smartHome_Rule', cardinality 0..*) is associated with 'smartHome::SmartHome' (role 'smartHome_SmartHome9', cardinality 0..*).
+'smartHome::Duration' (role 'smartHome_Duration', cardinality 0..*) is associated with 'smartHome::Rule' (role 'smartHome_Rule15', cardinality 0..*).
+'smartHome::IntegerCondition' (role 'smartHome_IntegerCondition', cardinality 0..*) is associated with 'smartHome::IntegerSensor' (role 'smartHome_IntegerSensor', cardinality 0..*).
+'smartHome::SensorType' (role 'smartHome_SensorType7', cardinality 0..*) is associated with 'smartHome::SmartHome' (role 'smartHome_SmartHome6', cardinality 0..*).
+'smartHome::Sensor' (role 'smartHome_Sensor', cardinality 0..*) is associated with 'smartHome::SensorType' (role 'smartHome_SensorType', cardinality 0..*).
+'smartHome::SmartHome' (role 'smartHome_SmartHome', cardinality 0..*) is associated with 'smartHome::Location' (role 'smartHome_Location4', cardinality 0..*).
+'smartHome::BooleanCondition' (role 'smartHome_BooleanCondition', cardinality 0..*) is associated with 'smartHome::BooleanSensor' (role 'smartHome_BooleanSensor', cardinality 0..*).
+'smartHome::Rule' (role 'smartHome_Rule13', cardinality 0..*) is associated with 'smartHome::Event' (role 'smartHome_Event', cardinality 0..*).
+'smartHome::Location' (role 'smartHome_Location', cardinality 0..*) is associated with 'smartHome::Sensor' (role 'smartHome_Sensor2', cardinality 0..*).

@@ -1,0 +1,136 @@
+The model has 71 class(es).
+The class 'archimateC3::Goal' has no attributes.
+The class 'archimateC3::Principle' has no attributes.
+The class 'BusinessRole' has no attributes.
+The class 'archimateC3::ApplicationService' has no attributes.
+The class 'Node' has no attributes.
+The class 'archimateC3::ApplicationFunction' has no attributes.
+The class 'archimateC3::BusinessInteraction' has no attributes.
+The class 'archimateC3::BusinessCollaboration' has no attributes.
+The class 'archimateC3::ArchimateElement' has the following attributes: 'description' of type str; 'elementName' of type str.
+The class 'archimateC3::Triggering' has no attributes.
+The class 'archimateC3::Constraint' has no attributes.
+The class 'archimateC3::PassiveStructure' has no attributes.
+The class 'archimateC3::Contract' has no attributes.
+The class 'archimateC3::ArchimateModel' has no attributes.
+The class 'ArchimateElement' has no attributes.
+The class 'archimateC3::ApplicationInterface' has no attributes.
+The class 'ActiveStructure' has no attributes.
+The class 'archimateC3::BusinessObject' has no attributes.
+The class 'archimateC3::Plateau' has no attributes.
+The class 'BehaviorElement' has no attributes.
+The class 'archimateC3::ArchimateRelation' has the following attributes: 'connectorName' of type str.
+The class 'archimateC3::Realization' has no attributes.
+The class 'archimateC3::Specialization' has no attributes.
+The class 'archimateC3::BusinessService' has no attributes.
+The class 'archimateC3::Assignment' has no attributes.
+The class 'archimateC3::ApplicationComponent' has no attributes.
+The class 'archimateC3::ApplicationCollaboration' has no attributes.
+The class 'archimateC3::UsedBy' has no attributes.
+The class 'archimateC3::BusinessProcess' has the following attributes: 'processID' of type str; 'missionary' of type bool; 'processDesign' of type str; 'processType' of type str; 'processFullName' of type str; 'importance' of type int.
+The class 'archimateC3::value' has no attributes.
+The class 'archimateC3::Meaning' has no attributes.
+The class 'archimateC3::BehaviorElement' has no attributes.
+The class 'BusinessObject' has no attributes.
+The class 'archimateC3::Access' has no attributes.
+The class 'PassiveStructure' has no attributes.
+The class 'ArchimateRelation' has no attributes.
+The class 'archimateC3::Composition' has no attributes.
+The class 'archimateC3::Deliverable' has no attributes.
+The class 'archimateC3::Gap' has no attributes.
+The class 'archimateC3::Aggregation' has no attributes.
+The class 'ApplicationFunction' has no attributes.
+The class 'archimateC3::Association' has no attributes.
+The class 'archimateC3::Representation' has no attributes.
+The class 'archimateC3::BusinessBehaviorElement' has no attributes.
+The class 'archimateC3::Product' has no attributes.
+The class 'archimateC3::BusinessRole' has no attributes.
+The class 'archimateC3::BusinessFunction' has no attributes.
+The class 'archimateC3::Network' has no attributes.
+The class 'archimateC3::Assessment' has no attributes.
+The class 'BusinessBehaviorElement' has no attributes.
+The class 'archimateC3::BusinessInterface' has no attributes.
+The class 'archimateC3::InfrastructureService' has no attributes.
+The class 'archimateC3::SystemSoftware' has no attributes.
+The class 'archimateC3::InfrastructureInterface' has no attributes.
+The class 'archimateC3::DataObject' has no attributes.
+The class 'archimateC3::BusinessEvent' has no attributes.
+The class 'archimateC3::BusinessActor' has no attributes.
+The class 'archimateC3::Flow' has no attributes.
+The class 'archimateC3::Location' has the following attributes: 'address' of type str.
+The class 'ApplicationComponent' has no attributes.
+The class 'archimateC3::WorkPackage' has no attributes.
+The class 'archimateC3::Node' has no attributes.
+The class 'archimateC3::ApplicationInteraction' has no attributes.
+The class 'archimateC3::Stakeholder' has no attributes.
+The class 'archimateC3::ActiveStructure' has no attributes.
+The class 'archimateC3::Group' has the following attributes: 'groupName' of type str.
+The class 'archimateC3::Driver' has no attributes.
+The class 'archimateC3::Requirement' has no attributes.
+The class 'archimateC3::CommunicationPath' has no attributes.
+The class 'archimateC3::Artifact' has no attributes.
+The class 'archimateC3::Device' has no attributes.
+'archimateC3::Product' is a specialization of 'PassiveStructure'.
+'archimateC3::value' is a specialization of 'PassiveStructure'.
+'archimateC3::ApplicationInterface' is a specialization of 'ArchimateElement'.
+'archimateC3::Realization' is a specialization of 'ArchimateRelation'.
+'archimateC3::DataObject' is a specialization of 'ArchimateElement'.
+'archimateC3::Access' is a specialization of 'ArchimateRelation'.
+'archimateC3::ApplicationCollaboration' is a specialization of 'ApplicationComponent'.
+'archimateC3::InfrastructureService' is a specialization of 'ArchimateElement'.
+'archimateC3::Plateau' is a specialization of 'ArchimateElement'.
+'archimateC3::CommunicationPath' is a specialization of 'ArchimateElement'.
+'archimateC3::Contract' is a specialization of 'BusinessObject'.
+'archimateC3::BusinessInterface' is a specialization of 'ActiveStructure'.
+'archimateC3::PassiveStructure' is a specialization of 'ArchimateElement'.
+'archimateC3::Assignment' is a specialization of 'ArchimateRelation'.
+'archimateC3::BusinessBehaviorElement' is a specialization of 'BehaviorElement'.
+'archimateC3::Stakeholder' is a specialization of 'ArchimateElement'.
+'archimateC3::Representation' is a specialization of 'PassiveStructure'.
+'archimateC3::Location' is a specialization of 'ActiveStructure'.
+'archimateC3::Requirement' is a specialization of 'ArchimateElement'.
+'archimateC3::Gap' is a specialization of 'ArchimateElement'.
+'archimateC3::Device' is a specialization of 'Node'.
+'archimateC3::Node' is a specialization of 'ArchimateElement'.
+'archimateC3::Deliverable' is a specialization of 'ArchimateElement'.
+'archimateC3::WorkPackage' is a specialization of 'ArchimateElement'.
+'archimateC3::BusinessEvent' is a specialization of 'ArchimateElement'.
+'archimateC3::Flow' is a specialization of 'ArchimateRelation'.
+'archimateC3::BusinessFunction' is a specialization of 'BusinessBehaviorElement'.
+'archimateC3::Goal' is a specialization of 'ArchimateElement'.
+'archimateC3::Composition' is a specialization of 'ArchimateRelation'.
+'archimateC3::SystemSoftware' is a specialization of 'Node'.
+'archimateC3::Principle' is a specialization of 'ArchimateElement'.
+'archimateC3::BusinessProcess' is a specialization of 'BusinessBehaviorElement'.
+'archimateC3::BusinessObject' is a specialization of 'PassiveStructure'.
+'archimateC3::Constraint' is a specialization of 'ArchimateElement'.
+'archimateC3::Network' is a specialization of 'ArchimateElement'.
+'archimateC3::Specialization' is a specialization of 'ArchimateRelation'.
+'archimateC3::Driver' is a specialization of 'ArchimateElement'.
+'archimateC3::ApplicationFunction' is a specialization of 'ArchimateElement'.
+'archimateC3::ActiveStructure' is a specialization of 'ArchimateElement'.
+'archimateC3::BusinessCollaboration' is a specialization of 'BusinessRole'.
+'archimateC3::BusinessService' is a specialization of 'BehaviorElement'.
+'archimateC3::Triggering' is a specialization of 'ArchimateRelation'.
+'archimateC3::ApplicationComponent' is a specialization of 'ArchimateElement'.
+'archimateC3::BusinessInteraction' is a specialization of 'BusinessBehaviorElement'.
+'archimateC3::BusinessRole' is a specialization of 'ActiveStructure'.
+'archimateC3::Assessment' is a specialization of 'ArchimateElement'.
+'archimateC3::UsedBy' is a specialization of 'ArchimateRelation'.
+'archimateC3::InfrastructureInterface' is a specialization of 'ArchimateElement'.
+'archimateC3::Meaning' is a specialization of 'PassiveStructure'.
+'archimateC3::Aggregation' is a specialization of 'ArchimateRelation'.
+'archimateC3::Artifact' is a specialization of 'ArchimateElement'.
+'archimateC3::ApplicationService' is a specialization of 'ArchimateElement'.
+'archimateC3::ApplicationInteraction' is a specialization of 'ApplicationFunction'.
+'archimateC3::Association' is a specialization of 'ArchimateRelation'.
+'archimateC3::BehaviorElement' is a specialization of 'ArchimateElement'.
+'archimateC3::BusinessActor' is a specialization of 'ActiveStructure'.
+'archimateC3::ArchimateElement' (role 'ArchimateElement', cardinality 0..*) is associated with 'archimateC3::ArchimateElement' (role 'composes', cardinality 0..*).
+'archimateC3::ArchimateRelation' (role 'archimateC3_ArchimateRelation', cardinality 0..*) is associated with 'archimateC3::ArchimateModel' (role 'archimateC3_ArchimateModel2', cardinality 0..*).
+'archimateC3::ArchimateElement' (role 'archimateC3_ArchimateElement15', cardinality 0..*) is associated with 'archimateC3::ArchimateRelation' (role 'archimateC3_ArchimateRelation14', cardinality 0..*).
+'archimateC3::ArchimateElement' (role 'ArchimateElement9', cardinality 0..*) is associated with 'archimateC3::ArchimateElement' (role 'composedOf', cardinality 0..*).
+'archimateC3::ArchimateModel' (role 'archimateC3_ArchimateModel4', cardinality 0..*) is associated with 'archimateC3::Group' (role 'archimateC3_Group', cardinality 0..*).
+'archimateC3::ArchimateElement' (role 'archimateC3_ArchimateElement18', cardinality 0..*) is associated with 'archimateC3::Group' (role 'archimateC3_Group17', cardinality 0..*).
+'archimateC3::ArchimateModel' (role 'archimateC3_ArchimateModel', cardinality 0..*) is associated with 'archimateC3::ArchimateElement' (role 'archimateC3_ArchimateElement', cardinality 0..*).
+'archimateC3::ArchimateElement' (role 'archimateC3_ArchimateElement12', cardinality 0..*) is associated with 'archimateC3::ArchimateRelation' (role 'archimateC3_ArchimateRelation11', cardinality 0..*).

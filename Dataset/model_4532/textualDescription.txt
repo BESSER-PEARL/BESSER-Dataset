@@ -1,0 +1,83 @@
+The model has 25 class(es).
+The class 'drone::Property' has no attributes.
+The class 'drone::EObject' has no attributes.
+The class 'drone::CapabilityProperties' has no attributes.
+The class 'drone::Equipment' has no attributes.
+The class 'drone::TaskDescriptor' has no attributes.
+The class 'drone::Robot' has no attributes.
+The class 'drone::RobotMissionContainer' has no attributes.
+The class 'drone::MeasureDimension' has no attributes.
+The class 'drone::Battery' has no attributes.
+The class 'drone::Mission' has no attributes.
+The class 'drone::PropertyKeyContainer' has no attributes.
+The class 'drone::Capability' has no attributes.
+The class 'PropertyValue' has no attributes.
+The class 'drone::PropertyKey' has no attributes.
+The class 'drone::Coordinate' has the following attributes: 'altitude' of type float; 'latitude' of type float; 'longitude' of type float.
+The class 'drone::AreaObject' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'drone::Task' has no attributes.
+The class 'drone::Size' has no attributes.
+The class 'drone::StringValue' has the following attributes: 'value' of type str.
+The class 'drone::NamedElement' has the following attributes: 'name' of type str.
+The class 'drone::MeasureConversion' has the following attributes: 'rate' of type float.
+The class 'drone::Position' has no attributes.
+The class 'drone::MeasureValue' has the following attributes: 'value' of type float.
+The class 'drone::PropertyValue' has no attributes.
+'drone::StringValue' is a specialization of 'PropertyValue'.
+'drone::Mission' is a specialization of 'NamedElement'.
+'drone::PropertyKey' is a specialization of 'NamedElement'.
+'drone::PropertyKeyContainer' is a specialization of 'NamedElement'.
+'drone::Capability' is a specialization of 'NamedElement'.
+'drone::MeasureDimension' is a specialization of 'NamedElement'.
+'drone::Robot' is a specialization of 'NamedElement'.
+'drone::Equipment' is a specialization of 'NamedElement'.
+'drone::MeasureValue' is a specialization of 'PropertyValue'.
+'drone::Task' is a specialization of 'NamedElement'.
+'drone::AreaObject' is a specialization of 'NamedElement'.
+'drone::Property' (role 'drone_Property21', cardinality 0..*) is associated with 'drone::PropertyValue' (role 'drone_PropertyValue', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot', cardinality 0..*) is associated with 'drone::Position' (role 'drone_Position25', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot36', cardinality 0..*) is associated with 'drone::Property' (role 'drone_Property37', cardinality 0..*).
+'drone::Position' (role 'drone_Position', cardinality 0..*) is associated with 'drone::Coordinate' (role 'drone_Coordinate', cardinality 0..*).
+'drone::Property' (role 'drone_Property19', cardinality 0..*) is associated with 'drone::AreaObject' (role 'drone_AreaObject18', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot34', cardinality 0..*) is associated with 'drone::Task' (role 'drone_Task', cardinality 0..*).
+'drone::Battery' (role 'drone_Battery62', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue63', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer86', cardinality 0..*) is associated with 'drone::Robot' (role 'drone_Robot87', cardinality 0..*).
+'drone::Task' (role 'tasks', cardinality 0..*) is associated with 'drone::Mission' (role 'Mission', cardinality 0..*).
+'drone::Capability' (role 'drone_Capability75', cardinality 0..*) is associated with 'drone::Equipment' (role 'drone_Equipment74', cardinality 0..*).
+'drone::MeasureDimension' (role 'drone_MeasureDimension', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue77', cardinality 0..*).
+'drone::Equipment' (role 'drone_Equipment', cardinality 0..*) is associated with 'drone::Robot' (role 'drone_Robot32', cardinality 0..*).
+'drone::MeasureValue' (role 'drone_MeasureValue60', cardinality 0..*) is associated with 'drone::Battery' (role 'drone_Battery59', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer100', cardinality 0..*) is associated with 'drone::EObject' (role 'drone_EObject', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot27', cardinality 0..*) is associated with 'drone::Size' (role 'drone_Size28', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer98', cardinality 0..*) is associated with 'drone::PropertyKeyContainer' (role 'drone_PropertyKeyContainer', cardinality 0..*).
+'drone::Property' (role 'drone_Property106', cardinality 0..*) is associated with 'drone::CapabilityProperties' (role 'drone_CapabilityProperties105', cardinality 0..*).
+'drone::Position' (role 'drone_Position14', cardinality 0..*) is associated with 'drone::AreaObject' (role 'drone_AreaObject13', cardinality 0..*).
+'drone::Capability' (role 'drone_Capability', cardinality 0..*) is associated with 'drone::Robot' (role 'drone_Robot46', cardinality 0..*).
+'drone::AreaObject' (role 'drone_AreaObject16', cardinality 0..*) is associated with 'drone::Size' (role 'drone_Size', cardinality 0..*).
+'drone::MeasureDimension' (role 'drone_MeasureDimension90', cardinality 0..*) is associated with 'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer89', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot39', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot44', cardinality 0..*) is associated with 'drone::Mission' (role 'drone_Mission', cardinality 0..*).
+'drone::Size' (role 'drone_Size53', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue54', cardinality 0..*).
+'drone::Task' (role 'task', cardinality 0..*) is associated with 'drone::TaskDescriptor' (role 'TaskDescriptor', cardinality 0..*).
+'drone::MeasureValue' (role 'drone_MeasureValue66', cardinality 0..*) is associated with 'drone::Battery' (role 'drone_Battery65', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot41', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue42', cardinality 0..*).
+'drone::Mission' (role 'mission', cardinality 0..*) is associated with 'drone::Task' (role 'Task', cardinality 0..*).
+'drone::CapabilityProperties' (role 'drone_CapabilityProperties', cardinality 0..*) is associated with 'drone::Robot' (role 'drone_Robot48', cardinality 0..*).
+'drone::Robot' (role 'drone_Robot30', cardinality 0..*) is associated with 'drone::Battery' (role 'drone_Battery', cardinality 0..*).
+'drone::PropertyKey' (role 'drone_PropertyKey', cardinality 0..*) is associated with 'drone::Property' (role 'drone_Property23', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer92', cardinality 0..*) is associated with 'drone::AreaObject' (role 'drone_AreaObject93', cardinality 0..*).
+'drone::Property' (role 'drone_Property', cardinality 0..*) is associated with 'drone::TaskDescriptor' (role 'drone_TaskDescriptor5', cardinality 0..*).
+'drone::Size' (role 'drone_Size56', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue57', cardinality 0..*).
+'drone::CapabilityProperties' (role 'drone_CapabilityProperties108', cardinality 0..*) is associated with 'drone::Capability' (role 'drone_Capability109', cardinality 0..*).
+'drone::Property' (role 'drone_Property72', cardinality 0..*) is associated with 'drone::Equipment' (role 'drone_Equipment71', cardinality 0..*).
+'drone::PropertyKeyContainer' (role 'drone_PropertyKeyContainer102', cardinality 0..*) is associated with 'drone::PropertyKey' (role 'drone_PropertyKey103', cardinality 0..*).
+'drone::AreaObject' (role 'drone_AreaObject', cardinality 0..*) is associated with 'drone::TaskDescriptor' (role 'drone_TaskDescriptor', cardinality 0..*).
+'drone::Size' (role 'drone_Size50', cardinality 0..*) is associated with 'drone::MeasureValue' (role 'drone_MeasureValue51', cardinality 0..*).
+'drone::Property' (role 'drone_Property69', cardinality 0..*) is associated with 'drone::Battery' (role 'drone_Battery68', cardinality 0..*).
+'drone::Property' (role 'drone_Property11', cardinality 0..*) is associated with 'drone::Position' (role 'drone_Position10', cardinality 0..*).
+'drone::MeasureConversion' (role 'drone_MeasureConversion', cardinality 0..*) is associated with 'drone::MeasureDimension' (role 'drone_MeasureDimension79', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer95', cardinality 0..*) is associated with 'drone::Capability' (role 'drone_Capability96', cardinality 0..*).
+'drone::RobotMissionContainer' (role 'drone_RobotMissionContainer', cardinality 0..*) is associated with 'drone::Mission' (role 'drone_Mission84', cardinality 0..*).
+'drone::Task' (role 'Task7', cardinality 0..*) is associated with 'drone::TaskDescriptor' (role 'descriptor', cardinality 0..*).
+'drone::MeasureDimension' (role 'drone_MeasureDimension81', cardinality 0..*) is associated with 'drone::MeasureConversion' (role 'drone_MeasureConversion82', cardinality 0..*).

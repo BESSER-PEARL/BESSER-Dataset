@@ -1,0 +1,58 @@
+The model has 25 class(es).
+The class 'while::l::ExprAnd' has no attributes.
+The class 'while::l::If' has no attributes.
+The class 'while::l::Nop' has the following attributes: 'nop' of type str.
+The class 'while::l::ExprList' has no attributes.
+The class 'while::l::Input' has the following attributes: 'vars' of type str.
+The class 'while::l::Command' has no attributes.
+The class 'while::l::Function' has the following attributes: 'name' of type str.
+The class 'while::l::Wh' has no attributes.
+The class 'while::l::While' has no attributes.
+The class 'while::l::ExprCons' has no attributes.
+The class 'while::l::Expr' has no attributes.
+The class 'while::l::ExprSimple' has the following attributes: 'str' of type str; 'sym' of type str; 'varSimple' of type str; 'nameFunction' of type str.
+The class 'while::l::Affect' has the following attributes: 'vars' of type str.
+The class 'while::l::Definition' has no attributes.
+The class 'while::l::ExprTl' has no attributes.
+The class 'while::l::ExprOr' has no attributes.
+The class 'while::l::Program' has no attributes.
+The class 'while::l::ExprNot' has no attributes.
+The class 'while::l::ExprSym' has the following attributes: 'arg1' of type str.
+The class 'while::l::ExprEq' has no attributes.
+The class 'while::l::ExprHd' has no attributes.
+The class 'while::l::EObject' has no attributes.
+The class 'while::l::Commands' has no attributes.
+The class 'while::l::Output' has the following attributes: 'vars' of type str.
+The class 'while::l::For' has no attributes.
+'while::l::Definition' (role 'while_l_Definition6', cardinality 0..*) is associated with 'while::l::Input' (role 'while_l_Input', cardinality 0..*).
+'while::l::ExprOr' (role 'while_l_ExprOr49', cardinality 0..*) is associated with 'while::l::Expr' (role 'while_l_Expr50', cardinality 0..*).
+'while::l::Function' (role 'while_l_Function4', cardinality 0..*) is associated with 'while::l::Definition' (role 'while_l_Definition', cardinality 0..*).
+'while::l::ExprSimple' (role 'while_l_ExprSimple42', cardinality 0..*) is associated with 'while::l::ExprAnd' (role 'while_l_ExprAnd', cardinality 0..*).
+'while::l::ExprTl' (role 'while_l_ExprTl', cardinality 0..*) is associated with 'while::l::Expr' (role 'while_l_Expr61', cardinality 0..*).
+'while::l::ExprEq' (role 'while_l_ExprEq67', cardinality 0..*) is associated with 'while::l::ExprSimple' (role 'while_l_ExprSimple68', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr35', cardinality 0..*) is associated with 'while::l::EObject' (role 'while_l_EObject36', cardinality 0..*).
+'while::l::While' (role 'while_l_While', cardinality 0..*) is associated with 'while::l::Expr' (role 'while_l_Expr30', cardinality 0..*).
+'while::l::While' (role 'while_l_While32', cardinality 0..*) is associated with 'while::l::Commands' (role 'while_l_Commands33', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr57', cardinality 0..*) is associated with 'while::l::ExprList' (role 'while_l_ExprList', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr59', cardinality 0..*) is associated with 'while::l::ExprHd' (role 'while_l_ExprHd', cardinality 0..*).
+'while::l::Commands' (role 'while_l_Commands12', cardinality 0..*) is associated with 'while::l::Command' (role 'while_l_Command', cardinality 0..*).
+'while::l::Affect' (role 'while_l_Affect', cardinality 0..*) is associated with 'while::l::Expr' (role 'while_l_Expr23', cardinality 0..*).
+'while::l::ExprAnd' (role 'while_l_ExprAnd44', cardinality 0..*) is associated with 'while::l::Expr' (role 'while_l_Expr45', cardinality 0..*).
+'while::l::Program' (role 'while_l_Program2', cardinality 0..*) is associated with 'while::l::Function' (role 'while_l_Function', cardinality 0..*).
+'while::l::ExprSimple' (role 'while_l_ExprSimple47', cardinality 0..*) is associated with 'while::l::ExprOr' (role 'while_l_ExprOr', cardinality 0..*).
+'while::l::Commands' (role 'while_l_Commands21', cardinality 0..*) is associated with 'while::l::If' (role 'while_l_If20', cardinality 0..*).
+'while::l::Commands' (role 'while_l_Commands', cardinality 0..*) is associated with 'while::l::Definition' (role 'while_l_Definition8', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr25', cardinality 0..*) is associated with 'while::l::For' (role 'while_l_For', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr', cardinality 0..*) is associated with 'while::l::If' (role 'while_l_If', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr52', cardinality 0..*) is associated with 'while::l::ExprCons' (role 'while_l_ExprCons', cardinality 0..*).
+'while::l::ExprSimple' (role 'while_l_ExprSimple', cardinality 0..*) is associated with 'while::l::Input' (role 'while_l_Input40', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr55', cardinality 0..*) is associated with 'while::l::ExprCons' (role 'while_l_ExprCons54', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr38', cardinality 0..*) is associated with 'while::l::ExprEq' (role 'while_l_ExprEq', cardinality 0..*).
+'while::l::ExprSimple' (role 'while_l_ExprSimple71', cardinality 0..*) is associated with 'while::l::ExprEq' (role 'while_l_ExprEq70', cardinality 0..*).
+'while::l::EObject' (role 'while_l_EObject', cardinality 0..*) is associated with 'while::l::Command' (role 'while_l_Command14', cardinality 0..*).
+'while::l::Expr' (role 'while_l_Expr63', cardinality 0..*) is associated with 'while::l::ExprSym' (role 'while_l_ExprSym', cardinality 0..*).
+'while::l::Program' (role 'while_l_Program', cardinality 0..*) is associated with 'while::l::Wh' (role 'while_l_Wh', cardinality 0..*).
+'while::l::Output' (role 'while_l_Output', cardinality 0..*) is associated with 'while::l::Definition' (role 'while_l_Definition10', cardinality 0..*).
+'while::l::Commands' (role 'while_l_Commands18', cardinality 0..*) is associated with 'while::l::If' (role 'while_l_If17', cardinality 0..*).
+'while::l::ExprEq' (role 'while_l_ExprEq65', cardinality 0..*) is associated with 'while::l::ExprNot' (role 'while_l_ExprNot', cardinality 0..*).
+'while::l::For' (role 'while_l_For27', cardinality 0..*) is associated with 'while::l::Commands' (role 'while_l_Commands28', cardinality 0..*).

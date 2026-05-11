@@ -1,0 +1,65 @@
+The model has 31 class(es).
+The class 'eel::MeasureUnboundProductOperation' has no attributes.
+The class 'TypedMeasure' has no attributes.
+The class 'MeasureUnboundOperation' has no attributes.
+The class 'eel::Integral' has the following attributes: 'function' of type str.
+The class 'eel::PowerComputation' has no attributes.
+The class 'eel::MeasureBinaryProductOperation' has no attributes.
+The class 'MeasureValue' has no attributes.
+The class 'eel::Interval' has no attributes.
+The class 'eel::EnergyComputation' has no attributes.
+The class 'eel::MeasureUnboundSumOperation' has no attributes.
+The class 'eel::Platform' has the following attributes: 'name' of type str.
+The class 'MeasurementUncertaintyInformation' has no attributes.
+The class 'eel::Variable' has the following attributes: 'value' of type str; 'name' of type str; 'vibility' of type str.
+The class 'eel::MeasureBinarySumOperation' has no attributes.
+The class 'eel::MeasureValue' has the following attributes: 'value' of type str.
+The class 'eel::MeasureAttribute' has the following attributes: 'att' of type str.
+The class 'eel::MeasureUnboundOperation' has no attributes.
+The class 'eel::Sample' has no attributes.
+The class 'Measure' has no attributes.
+The class 'MeasureBinaryOperation' has no attributes.
+The class 'eel::MeasurementUncertainty' has the following attributes: 'standardUncertainty' of type str.
+The class 'eel::MeasureOCL' has the following attributes: 'oclQuery' of type str.
+The class 'eel::MeasureCast' has no attributes.
+The class 'eel::NormalDistribution' has the following attributes: 'meanValue' of type str; 'standardDeviation' of type str.
+The class 'eel::MeasureBinaryOperation' has no attributes.
+The class 'eel::Sampling' has the following attributes: 'measurementProcedure' of type str.
+The class 'eel::TypedMeasure' has the following attributes: 'type' of type str.
+The class 'eel::Measure' has the following attributes: 'targetClass' of type str; 'targetOperation' of type str; 'name' of type str; 'subname' of type str.
+The class 'eel::RealTimeDuration' has no attributes.
+The class 'MeasureBinaryProductOperation' has no attributes.
+The class 'eel::MeasurementUncertaintyInformation' has no attributes.
+The enumeration 'Visibility' has the following literals: 'GLOBAL', 'LOCAL'.
+The enumeration 'Type' has the following literals: 'Power', 'Energy', 'Current', 'Voltage', 'Frequency', 'Duration', 'Scalar'.
+'eel::RealTimeDuration' is a specialization of 'MeasureValue'.
+'eel::MeasureValue' is a specialization of 'TypedMeasure'.
+'eel::MeasureAttribute' is a specialization of 'MeasureValue'.
+'eel::MeasureCast' is a specialization of 'TypedMeasure'.
+'eel::MeasureOCL' is a specialization of 'MeasureValue'.
+'eel::TypedMeasure' is a specialization of 'Measure'.
+'eel::NormalDistribution' is a specialization of 'MeasurementUncertaintyInformation'.
+'eel::MeasureUnboundProductOperation' is a specialization of 'MeasureUnboundOperation'.
+'eel::Integral' is a specialization of 'MeasurementUncertaintyInformation'.
+'eel::MeasureBinaryOperation' is a specialization of 'TypedMeasure'.
+'eel::MeasureBinarySumOperation' is a specialization of 'MeasureBinaryOperation'.
+'eel::EnergyComputation' is a specialization of 'MeasureBinaryProductOperation'.
+'eel::MeasureUnboundSumOperation' is a specialization of 'MeasureUnboundOperation'.
+'eel::MeasureBinaryProductOperation' is a specialization of 'MeasureBinaryOperation'.
+'eel::Sampling' is a specialization of 'MeasurementUncertaintyInformation'.
+'eel::Interval' is a specialization of 'MeasurementUncertaintyInformation'.
+'eel::PowerComputation' is a specialization of 'MeasureBinaryProductOperation'.
+'eel::MeasureUnboundOperation' is a specialization of 'TypedMeasure'.
+'eel::Platform' (role 'eel_Platform2', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure', cardinality 0..*).
+'eel::Measure' (role 'eel_Measure20', cardinality 0..*) is associated with 'eel::Interval' (role 'eel_Interval19', cardinality 0..*).
+'eel::Interval' (role 'eel_Interval23', cardinality 0..*) is associated with 'eel::Integral' (role 'eel_Integral', cardinality 0..*).
+'eel::MeasureBinaryOperation' (role 'eel_MeasureBinaryOperation10', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure11', cardinality 0..*).
+'eel::Sample' (role 'eel_Sample', cardinality 0..*) is associated with 'eel::Sampling' (role 'eel_Sampling', cardinality 0..*).
+'eel::Sample' (role 'eel_Sample25', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure26', cardinality 0..*).
+'eel::Measure' (role 'eel_Measure17', cardinality 0..*) is associated with 'eel::Interval' (role 'eel_Interval', cardinality 0..*).
+'eel::MeasureBinaryOperation' (role 'eel_MeasureBinaryOperation', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure8', cardinality 0..*).
+'eel::MeasureCast' (role 'eel_MeasureCast', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure6', cardinality 0..*).
+'eel::MeasurementUncertainty' (role 'eel_MeasurementUncertainty', cardinality 0..*) is associated with 'eel::Measure' (role 'eel_Measure4', cardinality 0..*).
+'eel::Measure' (role 'eel_Measure13', cardinality 0..*) is associated with 'eel::MeasureUnboundOperation' (role 'eel_MeasureUnboundOperation', cardinality 0..*).
+'eel::MeasurementUncertaintyInformation' (role 'eel_MeasurementUncertaintyInformation', cardinality 0..*) is associated with 'eel::MeasurementUncertainty' (role 'eel_MeasurementUncertainty15', cardinality 0..*).
+'eel::Platform' (role 'eel_Platform', cardinality 0..*) is associated with 'eel::Variable' (role 'eel_Variable', cardinality 0..*).

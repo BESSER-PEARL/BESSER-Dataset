@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'Interface' has no attributes.
+The class 'adl201::Content' has the following attributes: 'language' of type str; 'expression' of type str.
+The class 'adl201::Provided' has no attributes.
+The class 'adl201::Interface' has the following attributes: 'signature' of type str; 'name' of type str.
+The class 'adl201::BindingAttributes' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'adl201::Component' has the following attributes: 'name' of type str.
+The class 'adl201::Required' has no attributes.
+The class 'adl201::Binding' has the following attributes: 'name' of type str.
+'adl201::Required' is a specialization of 'Interface'.
+'adl201::Provided' is a specialization of 'Interface'.
+'adl201::Provided' (role 'adl201_Provided17', cardinality 0..*) is associated with 'adl201::Binding' (role 'adl201_Binding16', cardinality 0..*).
+'adl201::Component' (role 'adl201_Component', cardinality 0..*) is associated with 'adl201::Content' (role 'adl201_Content', cardinality 0..*).
+'adl201::Required' (role 'adl201_Required', cardinality 0..*) is associated with 'adl201::Component' (role 'adl201_Component2', cardinality 0..*).
+'adl201::Binding' (role 'adl201_Binding14', cardinality 0..*) is associated with 'adl201::BindingAttributes' (role 'adl201_BindingAttributes', cardinality 0..*).
+'adl201::Component' (role 'adl201_Component4', cardinality 0..*) is associated with 'adl201::Provided' (role 'adl201_Provided', cardinality 0..*).
+'adl201::Component' (role 'adl201_Component20', cardinality 0..*) is associated with 'adl201::Content' (role 'adl201_Content19', cardinality 0..*).
+'adl201::Binding' (role 'adl201_Binding23', cardinality 0..*) is associated with 'adl201::Provided' (role 'adl201_Provided22', cardinality 0..*).
+'adl201::Component' (role 'adl201_Component9', cardinality 0..*) is associated with 'adl201::Component' (role 'adl201_Component7', cardinality 0..*).
+'adl201::Required' (role 'adl201_Required12', cardinality 0..*) is associated with 'adl201::Binding' (role 'adl201_Binding11', cardinality 0..*).
+'adl201::Provided' (role 'adl201_Provided25', cardinality 0..*) is associated with 'adl201::Required' (role 'adl201_Required26', cardinality 0..*).
+'adl201::Component' (role 'adl201_Component6', cardinality 0..*) is associated with 'adl201::Binding' (role 'adl201_Binding', cardinality 0..*).

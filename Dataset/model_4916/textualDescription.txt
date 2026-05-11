@@ -1,0 +1,212 @@
+The model has 95 class(es).
+The class 'service::template::SplitJoin' has no attributes.
+The class 'template::service::Service' has no attributes.
+The class 'service::syntax::Endpoint' has the following attributes: 'name' of type str; 'location' of type str.
+The class 'service::architecture::ServiceTemplateMatchmaker' has no attributes.
+The class 'Message' has no attributes.
+The class 'service::template::GroundTemplate' has the following attributes: 'name' of type str.
+The class 'service::template::ControlConstructBag' has no attributes.
+The class 'service::architecture::DeployedService' has the following attributes: 'artifact' of type str.
+The class 'service::semantics::IOEP' has no attributes.
+The class 'OperationDescription' has no attributes.
+The class 'GroundTemplate' has no attributes.
+The class 'TemplateFlow' has no attributes.
+The class 'service::template::BoundTemplateParameter' has no attributes.
+The class 'service::architecture::ServiceMatchmaker' has no attributes.
+The class 'ServiceFramework' has no attributes.
+The class 'service::template::ControlConstruct' has no attributes.
+The class 'service::template::RepeatUntil' has no attributes.
+The class 'service::semantics::ServiceParameter' has the following attributes: 'name' of type str.
+The class 'service::template::BoundProcessModel' has no attributes.
+The class 'service::architecture::ServiceFramework' has no attributes.
+The class 'service::architecture::ExecutionFramework' has the following attributes: 'container' of type str.
+The class 'service::template::Choice' has no attributes.
+The class 'service::ServiceProvider' has the following attributes: 'isType' of type str.
+The class 'service::ServiceImplemetation' has the following attributes: 'uri' of type str; 'language' of type str.
+The class 'semantics::service::Service' has no attributes.
+The class 'service::template::Perform' has no attributes.
+The class 'service::architecture::TemplateRepository' has no attributes.
+The class 'BoundTemplateParameter' has no attributes.
+The class 'syntax::service::TopLevelElement' has no attributes.
+The class 'ServiceOutput' has no attributes.
+The class 'TemplateConstraint' has no attributes.
+The class 'service::semantics::ProcessModel' has the following attributes: 'name' of type str.
+The class 'semantics::service::Antecedent' has no attributes.
+The class 'ServiceInput' has no attributes.
+The class 'IntervalThing' has no attributes.
+The class 'service::template::ServiceTemplate' has the following attributes: 'URI' of type str.
+The class 'semantics::service::EObject' has no attributes.
+The class 'service::syntax::Message' has the following attributes: 'name' of type str.
+The class 'service::architecture::ServiceDirectory' has no attributes.
+The class 'service::semantics::ServiceGrounding' has the following attributes: 'bindParams' of type str; 'name' of type str.
+The class 'service::syntax::InterfaceDescription' has the following attributes: 'name' of type str.
+The class 'service::template::TemplateConstraint' has no attributes.
+The class 'service::Service' has the following attributes: 'name' of type str; 'namespace' of type str; 'description' of type str.
+The class 'Iterate' has no attributes.
+The class 'BoundProcessModel' has no attributes.
+The class 'service::architecture::TemplateMatchmaker' has no attributes.
+The class 'ServiceProfile' has no attributes.
+The class 'service::template::IfThenElse' has no attributes.
+The class 'Binding' has no attributes.
+The class 'ServiceDirectory' has no attributes.
+The class 'IOEP' has no attributes.
+The class 'service::semantics::ServiceCondition' has no attributes.
+The class 'service::semantics::ServiceResult' has no attributes.
+The class 'service::template::AbstractProcessModel' has the following attributes: 'name' of type str.
+The class 'ServiceParameter' has no attributes.
+The class 'ControlConstructBag' has no attributes.
+The class 'service::template::Sequence' has no attributes.
+The class 'architecture::TemplateMatchmaker' has no attributes.
+The class 'Agent' has no attributes.
+The class 'ExecutionFramework' has no attributes.
+The class 'service::template::AnyOrder' has no attributes.
+The class 'ServiceResult' has no attributes.
+The class 'DeployedService' has no attributes.
+The class 'syntax::service::ServiceImplemetation' has no attributes.
+The class 'syntax::service::TopLevelComplexType' has no attributes.
+The class 'Endpoint' has no attributes.
+The class 'service::template::Iterate' has no attributes.
+The class 'service::template::Split' has no attributes.
+The class 'InterfaceDescription' has no attributes.
+The class 'ServiceCondition' has no attributes.
+The class 'ControlConstructList' has no attributes.
+The class 'service::syntax::OperationDescription' has the following attributes: 'name' of type str.
+The class 'ServiceTemplateMatchmaker' has no attributes.
+The class 'service::ServiceConsumer' has the following attributes: 'isType' of type str.
+The class 'syntax::service::SchemaType' has no attributes.
+The class 'ServiceGrounding' has no attributes.
+The class 'service::template::TemplateFlow' has no attributes.
+The class 'TemplateRepository' has no attributes.
+The class 'service::semantics::ServiceProfile' has the following attributes: 'serviceClassification' of type str; 'name' of type str.
+The class 'service::template::ControlConstructList' has no attributes.
+The class 'AbstractProcessModel' has no attributes.
+The class 'ServiceCategory' has no attributes.
+The class 'service::semantics::ServiceOutput' has no attributes.
+The class 'architecture::ServiceMatchmaker' has no attributes.
+The class 'ControlConstruct' has no attributes.
+The class 'ProcessModel' has no attributes.
+The class 'ServiceTemplate' has no attributes.
+The class 'service::syntax::Binding' has the following attributes: 'name' of type str; 'transport' of type str; 'style' of type str.
+The class 'service::semantics::ServiceInput' has no attributes.
+The class 'service::template::IntervalThing' has no attributes.
+The class 'template::service::Antecedent' has no attributes.
+The class 'service::semantics::ServiceCategory' has the following attributes: 'name' of type str; 'code' of type str; 'value' of type str; 'taxonomy' of type str.
+The class 'semantics::service::Consequent' has no attributes.
+The class 'service::template::RepeatWhile' has no attributes.
+The class 'service::SL' has no attributes.
+The enumeration 'ServiceType' has the following literals: 'external', 'internal'.
+The enumeration 'ServiceImpLanguage' has the following literals: 'Java_JSP', 'Java_EJB'.
+The enumeration 'TransportProtocol' has the following literals: 'MIME', 'HTTP', 'SOAP'.
+The enumeration 'StyleEncoding' has the following literals: 'Document_Literal', 'RPC_Encoded'.
+The enumeration 'ContainerType' has the following literals: 'axis'.
+'service::ServiceProvider' is a specialization of 'Agent'.
+'service::template::Iterate' is a specialization of 'ControlConstruct'.
+'service::template::AnyOrder' is a specialization of 'ControlConstruct'.
+'service::template::RepeatWhile' is a specialization of 'Iterate'.
+'service::template::Split' is a specialization of 'ControlConstruct'.
+'service::semantics::ProcessModel' is a specialization of 'IOEP'.
+'service::ServiceConsumer' is a specialization of 'Agent'.
+'service::template::AbstractProcessModel' is a specialization of 'IOEP'.
+'service::template::Perform' is a specialization of 'ControlConstruct'.
+'service::template::IfThenElse' is a specialization of 'ControlConstruct'.
+'service::template::RepeatUntil' is a specialization of 'Iterate'.
+'service::template::Sequence' is a specialization of 'ControlConstruct'.
+'service::template::Choice' is a specialization of 'ControlConstruct'.
+'service::architecture::ServiceTemplateMatchmaker' is a specialization of 'architecture::TemplateMatchmaker'.
+'service::semantics::ServiceInput' is a specialization of 'ServiceParameter'.
+'service::semantics::ServiceOutput' is a specialization of 'ServiceParameter'.
+'service::template::SplitJoin' is a specialization of 'ControlConstruct'.
+'service::architecture::ServiceTemplateMatchmaker' is a specialization of 'architecture::ServiceMatchmaker'.
+'service::ServiceImplemetation' (role 'service_ServiceImplemetation', cardinality 0..*) is associated with 'service::ServiceProvider' (role 'service_ServiceProvider10', cardinality 0..*).
+'service::semantics::IOEP' (role 'service_semantics_IOEP79', cardinality 0..*) is associated with 'ServiceCondition' (role 'ServiceCondition80', cardinality 0..*).
+'BoundProcessModel' (role 'BoundProcessModel', cardinality 0..*) is associated with 'service::template::GroundTemplate' (role 'service_template_GroundTemplate99', cardinality 0..*).
+'service::syntax::Endpoint' (role 'service_syntax_Endpoint', cardinality 0..*) is associated with 'Binding' (role 'Binding41', cardinality 0..*).
+'syntax::service::SchemaType' (role 'syntax_service_SchemaType29', cardinality 0..*) is associated with 'service::syntax::InterfaceDescription' (role 'service_syntax_InterfaceDescription28', cardinality 0..*).
+'InterfaceDescription' (role 'InterfaceDescription', cardinality 0..*) is associated with 'service::Service' (role 'service_Service2', cardinality 0..*).
+'InterfaceDescription' (role 'InterfaceDescription67', cardinality 0..*) is associated with 'service::semantics::ServiceGrounding' (role 'service_semantics_ServiceGrounding66', cardinality 0..*).
+'service::template::RepeatUntil' (role 'service_template_RepeatUntil139', cardinality 0..*) is associated with 'ControlConstruct' (role 'ControlConstruct140', cardinality 0..*).
+'service::Service' (role 'service_Service14', cardinality 0..*) is associated with 'service::SL' (role 'service_SL', cardinality 0..*).
+'service::template::BoundProcessModel' (role 'service_template_BoundProcessModel', cardinality 0..*) is associated with 'AbstractProcessModel' (role 'AbstractProcessModel108', cardinality 0..*).
+'service::syntax::Binding' (role 'binding', cardinality 0..*) is associated with 'InterfaceDescription' (role 'InterfaceDescription47', cardinality 0..*).
+'semantics::service::Consequent' (role 'semantics_service_Consequent', cardinality 0..*) is associated with 'service::semantics::ServiceResult' (role 'service_semantics_ServiceResult75', cardinality 0..*).
+'service::syntax::Message' (role 'service_syntax_Message', cardinality 0..*) is associated with 'syntax::service::TopLevelComplexType' (role 'syntax_service_TopLevelComplexType', cardinality 0..*).
+'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile56', cardinality 0..*) is associated with 'ServiceOutput' (role 'ServiceOutput', cardinality 0..*).
+'semantics::service::Service' (role 'Service69', cardinality 0..*) is associated with 'service::semantics::ProcessModel' (role 'describedBy', cardinality 0..*).
+'ServiceInput' (role 'ServiceInput77', cardinality 0..*) is associated with 'service::semantics::IOEP' (role 'service_semantics_IOEP', cardinality 0..*).
+'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile60', cardinality 0..*) is associated with 'ServiceCondition' (role 'ServiceCondition', cardinality 0..*).
+'service::template::Choice' (role 'service_template_Choice', cardinality 0..*) is associated with 'ControlConstructBag' (role 'ControlConstructBag116', cardinality 0..*).
+'TemplateFlow' (role 'TemplateFlow', cardinality 0..*) is associated with 'service::template::ServiceTemplate' (role 'service_template_ServiceTemplate', cardinality 0..*).
+'service::Service' (role 'supportedBy', cardinality 0..*) is associated with 'ServiceGrounding' (role 'ServiceGrounding', cardinality 0..*).
+'ExecutionFramework' (role 'ExecutionFramework188', cardinality 0..*) is associated with 'service::architecture::DeployedService' (role 'deployedService', cardinality 0..*).
+'Message' (role 'Message36', cardinality 0..*) is associated with 'service::syntax::OperationDescription' (role 'service_syntax_OperationDescription35', cardinality 0..*).
+'DeployedService' (role 'DeployedService186', cardinality 0..*) is associated with 'service::architecture::ExecutionFramework' (role 'deploy', cardinality 0..*).
+'service::template::GroundTemplate' (role 'service_template_GroundTemplate97', cardinality 0..*) is associated with 'BoundTemplateParameter' (role 'BoundTemplateParameter', cardinality 0..*).
+'template::service::Antecedent' (role 'template_service_Antecedent137', cardinality 0..*) is associated with 'service::template::RepeatUntil' (role 'service_template_RepeatUntil', cardinality 0..*).
+'service::ServiceConsumer' (role 'service_ServiceConsumer', cardinality 0..*) is associated with 'service::Service' (role 'service_Service12', cardinality 0..*).
+'ServiceDirectory' (role 'ServiceDirectory', cardinality 0..*) is associated with 'service::architecture::ServiceFramework' (role 'service_architecture_ServiceFramework165', cardinality 0..*).
+'template::service::Antecedent' (role 'template_service_Antecedent142', cardinality 0..*) is associated with 'service::template::RepeatWhile' (role 'service_template_RepeatWhile', cardinality 0..*).
+'service::template::ControlConstructBag' (role 'service_template_ControlConstructBag', cardinality 0..*) is associated with 'ControlConstruct' (role 'ControlConstruct157', cardinality 0..*).
+'IntervalThing' (role 'IntervalThing', cardinality 0..*) is associated with 'service::template::ControlConstruct' (role 'service_template_ControlConstruct', cardinality 0..*).
+'ControlConstructList' (role 'ControlConstructList155', cardinality 0..*) is associated with 'service::template::ControlConstructList' (role 'service_template_ControlConstructList154', cardinality 0..*).
+'ControlConstructBag' (role 'ControlConstructBag', cardinality 0..*) is associated with 'service::template::AnyOrder' (role 'service_template_AnyOrder', cardinality 0..*).
+'AbstractProcessModel' (role 'AbstractProcessModel', cardinality 0..*) is associated with 'service::template::ServiceTemplate' (role 'service_template_ServiceTemplate91', cardinality 0..*).
+'Message' (role 'Message', cardinality 0..*) is associated with 'service::syntax::OperationDescription' (role 'service_syntax_OperationDescription', cardinality 0..*).
+'service::template::ControlConstructList' (role 'service_template_ControlConstructList', cardinality 0..*) is associated with 'ControlConstruct' (role 'ControlConstruct152', cardinality 0..*).
+'service::template::ServiceTemplate' (role 'service_template_ServiceTemplate89', cardinality 0..*) is associated with 'ServiceParameter' (role 'ServiceParameter', cardinality 0..*).
+'ProcessModel' (role 'ProcessModel111', cardinality 0..*) is associated with 'service::template::BoundProcessModel' (role 'service_template_BoundProcessModel110', cardinality 0..*).
+'ServiceDirectory' (role 'ServiceDirectory176', cardinality 0..*) is associated with 'service::architecture::ServiceMatchmaker' (role 'service_architecture_ServiceMatchmaker', cardinality 0..*).
+'service::template::Perform' (role 'service_template_Perform', cardinality 0..*) is associated with 'AbstractProcessModel' (role 'AbstractProcessModel126', cardinality 0..*).
+'service::template::Perform' (role 'service_template_Perform131', cardinality 0..*) is associated with 'ServiceParameter' (role 'ServiceParameter132', cardinality 0..*).
+'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile54', cardinality 0..*) is associated with 'ServiceInput' (role 'ServiceInput', cardinality 0..*).
+'ServiceOutput' (role 'ServiceOutput83', cardinality 0..*) is associated with 'service::semantics::IOEP' (role 'service_semantics_IOEP82', cardinality 0..*).
+'service::ServiceProvider' (role 'service_ServiceProvider17', cardinality 0..*) is associated with 'service::SL' (role 'service_SL16', cardinality 0..*).
+'Binding' (role 'Binding', cardinality 0..*) is associated with 'service::syntax::InterfaceDescription' (role 'type', cardinality 0..*).
+'ControlConstruct' (role 'ControlConstruct', cardinality 0..*) is associated with 'service::template::TemplateFlow' (role 'service_template_TemplateFlow', cardinality 0..*).
+'service::Service' (role 'service_Service8', cardinality 0..*) is associated with 'service::ServiceProvider' (role 'service_ServiceProvider', cardinality 0..*).
+'service::architecture::ServiceDirectory' (role 'service_architecture_ServiceDirectory183', cardinality 0..*) is associated with 'InterfaceDescription' (role 'InterfaceDescription184', cardinality 0..*).
+'service::syntax::Message' (role 'service_syntax_Message39', cardinality 0..*) is associated with 'syntax::service::TopLevelElement' (role 'syntax_service_TopLevelElement', cardinality 0..*).
+'semantics::service::Antecedent' (role 'semantics_service_Antecedent73', cardinality 0..*) is associated with 'service::semantics::ServiceResult' (role 'service_semantics_ServiceResult', cardinality 0..*).
+'service::architecture::ServiceFramework' (role 'service_architecture_ServiceFramework167', cardinality 0..*) is associated with 'TemplateRepository' (role 'TemplateRepository', cardinality 0..*).
+'ProcessModel' (role 'ProcessModel64', cardinality 0..*) is associated with 'service::semantics::ServiceGrounding' (role 'service_semantics_ServiceGrounding', cardinality 0..*).
+'AbstractProcessModel' (role 'AbstractProcessModel129', cardinality 0..*) is associated with 'service::template::Perform' (role 'service_template_Perform128', cardinality 0..*).
+'service::template::ControlConstructBag' (role 'service_template_ControlConstructBag159', cardinality 0..*) is associated with 'ControlConstructBag' (role 'ControlConstructBag160', cardinality 0..*).
+'template::service::Antecedent' (role 'template_service_Antecedent118', cardinality 0..*) is associated with 'service::template::IfThenElse' (role 'service_template_IfThenElse', cardinality 0..*).
+'service::template::GroundTemplate' (role 'service_template_GroundTemplate', cardinality 0..*) is associated with 'ServiceTemplate' (role 'ServiceTemplate', cardinality 0..*).
+'ServiceResult' (role 'ServiceResult86', cardinality 0..*) is associated with 'service::semantics::IOEP' (role 'service_semantics_IOEP85', cardinality 0..*).
+'ServiceParameter' (role 'ServiceParameter106', cardinality 0..*) is associated with 'service::template::BoundTemplateParameter' (role 'service_template_BoundTemplateParameter105', cardinality 0..*).
+'GroundTemplate' (role 'GroundTemplate', cardinality 0..*) is associated with 'service::Service' (role 'expose', cardinality 0..*).
+'ServiceParameter' (role 'ServiceParameter103', cardinality 0..*) is associated with 'service::template::BoundTemplateParameter' (role 'service_template_BoundTemplateParameter', cardinality 0..*).
+'service::template::GroundTemplate' (role 'adaptedBy', cardinality 0..*) is associated with 'template::service::Service' (role 'Service101', cardinality 0..*).
+'ServiceCategory' (role 'ServiceCategory', cardinality 0..*) is associated with 'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile52', cardinality 0..*).
+'Endpoint' (role 'Endpoint178', cardinality 0..*) is associated with 'service::architecture::ServiceDirectory' (role 'service_architecture_ServiceDirectory', cardinality 0..*).
+'service::architecture::ServiceFramework' (role 'service_architecture_ServiceFramework', cardinality 0..*) is associated with 'ServiceTemplateMatchmaker' (role 'ServiceTemplateMatchmaker', cardinality 0..*).
+'service::syntax::InterfaceDescription' (role 'service_syntax_InterfaceDescription26', cardinality 0..*) is associated with 'syntax::service::SchemaType' (role 'syntax_service_SchemaType', cardinality 0..*).
+'service::architecture::TemplateMatchmaker' (role 'service_architecture_TemplateMatchmaker', cardinality 0..*) is associated with 'TemplateRepository' (role 'TemplateRepository174', cardinality 0..*).
+'service::template::Split' (role 'service_template_Split', cardinality 0..*) is associated with 'ControlConstructBag' (role 'ControlConstructBag148', cardinality 0..*).
+'service::architecture::TemplateRepository' (role 'service_architecture_TemplateRepository', cardinality 0..*) is associated with 'ServiceTemplate' (role 'ServiceTemplate169', cardinality 0..*).
+'ServiceResult' (role 'ServiceResult', cardinality 0..*) is associated with 'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile58', cardinality 0..*).
+'semantics::service::Service' (role 'Service', cardinality 0..*) is associated with 'service::semantics::ServiceProfile' (role 'presents', cardinality 0..*).
+'TemplateConstraint' (role 'TemplateConstraint', cardinality 0..*) is associated with 'service::template::ServiceTemplate' (role 'service_template_ServiceTemplate93', cardinality 0..*).
+'service::template::Sequence' (role 'service_template_Sequence', cardinality 0..*) is associated with 'ControlConstructList' (role 'ControlConstructList', cardinality 0..*).
+'service::Service' (role 'service_Service', cardinality 0..*) is associated with 'Endpoint' (role 'Endpoint', cardinality 0..*).
+'service::Service' (role 'describes', cardinality 0..*) is associated with 'ProcessModel' (role 'ProcessModel', cardinality 0..*).
+'service::semantics::ServiceGrounding' (role 'supports', cardinality 0..*) is associated with 'semantics::service::Service' (role 'Service62', cardinality 0..*).
+'ControlConstruct' (role 'ControlConstruct124', cardinality 0..*) is associated with 'service::template::IfThenElse' (role 'service_template_IfThenElse123', cardinality 0..*).
+'service::template::SplitJoin' (role 'service_template_SplitJoin', cardinality 0..*) is associated with 'ControlConstructBag' (role 'ControlConstructBag150', cardinality 0..*).
+'service::semantics::ServiceParameter' (role 'service_semantics_ServiceParameter', cardinality 0..*) is associated with 'semantics::service::EObject' (role 'semantics_service_EObject', cardinality 0..*).
+'template::service::Antecedent' (role 'template_service_Antecedent', cardinality 0..*) is associated with 'service::template::TemplateConstraint' (role 'service_template_TemplateConstraint', cardinality 0..*).
+'ExecutionFramework' (role 'ExecutionFramework', cardinality 0..*) is associated with 'service::architecture::ServiceFramework' (role 'service_architecture_ServiceFramework163', cardinality 0..*).
+'service::semantics::ServiceProfile' (role 'service_semantics_ServiceProfile', cardinality 0..*) is associated with 'ProcessModel' (role 'ProcessModel50', cardinality 0..*).
+'semantics::service::Antecedent' (role 'semantics_service_Antecedent', cardinality 0..*) is associated with 'service::semantics::ServiceCondition' (role 'service_semantics_ServiceCondition', cardinality 0..*).
+'service::template::IfThenElse' (role 'service_template_IfThenElse120', cardinality 0..*) is associated with 'ControlConstruct' (role 'ControlConstruct121', cardinality 0..*).
+'service::SL' (role 'service_SL19', cardinality 0..*) is associated with 'service::ServiceConsumer' (role 'service_ServiceConsumer20', cardinality 0..*).
+'DeployedService' (role 'DeployedService', cardinality 0..*) is associated with 'service::syntax::Endpoint' (role 'service_syntax_Endpoint45', cardinality 0..*).
+'service::syntax::InterfaceDescription' (role 'service_syntax_InterfaceDescription', cardinality 0..*) is associated with 'OperationDescription' (role 'OperationDescription', cardinality 0..*).
+'service::template::Perform' (role 'service_template_Perform134', cardinality 0..*) is associated with 'ServiceTemplate' (role 'ServiceTemplate135', cardinality 0..*).
+'Message' (role 'Message33', cardinality 0..*) is associated with 'service::syntax::OperationDescription' (role 'service_syntax_OperationDescription32', cardinality 0..*).
+'service::Service' (role 'presentedBy', cardinality 0..*) is associated with 'ServiceProfile' (role 'ServiceProfile', cardinality 0..*).
+'GroundTemplate' (role 'GroundTemplate172', cardinality 0..*) is associated with 'service::architecture::TemplateRepository' (role 'service_architecture_TemplateRepository171', cardinality 0..*).
+'ControlConstruct' (role 'ControlConstruct145', cardinality 0..*) is associated with 'service::template::RepeatWhile' (role 'service_template_RepeatWhile144', cardinality 0..*).
+'ServiceFramework' (role 'ServiceFramework', cardinality 0..*) is associated with 'service::SL' (role 'service_SL22', cardinality 0..*).
+'ServiceProfile' (role 'ServiceProfile181', cardinality 0..*) is associated with 'service::architecture::ServiceDirectory' (role 'service_architecture_ServiceDirectory180', cardinality 0..*).
+'syntax::service::ServiceImplemetation' (role 'syntax_service_ServiceImplemetation', cardinality 0..*) is associated with 'service::syntax::Endpoint' (role 'service_syntax_Endpoint43', cardinality 0..*).

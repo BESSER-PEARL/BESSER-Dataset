@@ -1,0 +1,529 @@
+The model has 167 class(es).
+The class 'ResourceRole' has no attributes.
+The class 'bpmn2::ExclusiveGateway' has no attributes.
+The class 'bpmn2::HumanPerformer' has no attributes.
+The class 'bpmn2::Documentation' has the following attributes: 'text' of type str; 'textFormat' of type str.
+The class 'ChoreographyActivity' has no attributes.
+The class 'bpmn2::Event' has no attributes.
+The class 'bpmn2::DataAssociation' has no attributes.
+The class 'bpmn2::GlobalUserTask' has the following attributes: 'implementation' of type str.
+The class 'bpmn2::LaneSet' has the following attributes: 'name' of type str.
+The class 'bpmn2::DataObject' has the following attributes: 'isCollection' of type bool.
+The class 'bpmn2::Gateway' has the following attributes: 'gatewayDirection' of type str.
+The class 'GlobalTask' has no attributes.
+The class 'bpmn2::CallableElement' has the following attributes: 'name' of type str.
+The class 'bpmn2::ChoreographyTask' has no attributes.
+The class 'bpmn2::Group' has no attributes.
+The class 'FlowElementsContainer' has no attributes.
+The class 'bpmn2::ParallelGateway' has no attributes.
+The class 'bpmn2::Lane' has the following attributes: 'name' of type str.
+The class 'bpmn2::Error' has the following attributes: 'name' of type str; 'errorCode' of type str.
+The class 'bpmn2::Category' has the following attributes: 'name' of type str.
+The class 'RootElement' has no attributes.
+The class 'bpmn2::AdHocSubProcess' has the following attributes: 'ordering' of type str; 'cancelRemainingInstances' of type bool.
+The class 'bpmn2::EObject' has no attributes.
+The class 'bpmn2::CompensateEventDefinition' has the following attributes: 'waitForCompletion' of type bool.
+The class 'bpmn2::PotentialOwner' has no attributes.
+The class 'bpmn2::Conversation' has no attributes.
+The class 'bpmn2::Rendering' has no attributes.
+The class 'bpmn2::ResourceAssignmentExpression' has the following attributes: 'id' of type str.
+The class 'bpmn2::Participant' has the following attributes: 'name' of type str.
+The class 'bpmn2::DataInputAssociation' has no attributes.
+The class 'bpmn2::Expression' has no attributes.
+The class 'HumanPerformer' has no attributes.
+The class 'bpmn2::ParticipantAssociation' has no attributes.
+The class 'bpmn2::CallChoreography' has no attributes.
+The class 'bpmn2::GlobalManualTask' has no attributes.
+The class 'InteractionNode' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'bpmn2::Process' has the following attributes: 'isClosed' of type bool; 'processType' of type str; 'isExecutable' of type bool.
+The class 'bpmn2::FlowNode' has no attributes.
+The class 'LoopCharacteristics' has no attributes.
+The class 'bpmn2::CancelEventDefinition' has no attributes.
+The class 'bpmn2::Assignment' has no attributes.
+The class 'bpmn2::EndPoint' has no attributes.
+The class 'DataAssociation' has no attributes.
+The class 'bpmn2::ExtensionAttributeDefinition' has the following attributes: 'isReference' of type bool; 'name' of type str; 'id' of type str; 'type' of type str.
+The class 'EventDefinition' has no attributes.
+The class 'bpmn2::ErrorEventDefinition' has no attributes.
+The class 'bpmn2::Definitions' has the following attributes: 'typeLanguage' of type str; 'expressionLanguage' of type str; 'exporter' of type str; 'targetNamespace' of type str; 'name' of type str; 'exporterVersion' of type str.
+The class 'Expression' has no attributes.
+The class 'bpmn2::TextAnnotation' has the following attributes: 'text' of type str; 'textFormat' of type str.
+The class 'bpmn2::Property' has the following attributes: 'name' of type str.
+The class 'bpmn2::BoundaryEvent' has the following attributes: 'cancelActivity' of type bool.
+The class 'bpmn2::MultiInstanceLoopCharacteristics' has the following attributes: 'isSequential' of type bool; 'behavior' of type str.
+The class 'SubProcess' has no attributes.
+The class 'bpmn2::ConditionalEventDefinition' has no attributes.
+The class 'bpmn2::CorrelationKey' has the following attributes: 'name' of type str.
+The class 'bpmn2::InputSet' has the following attributes: 'name' of type str.
+The class 'bpmn2::Transaction' has the following attributes: 'protocol' of type str; 'method' of type str.
+The class 'bpmn2::IntermediateCatchEvent' has no attributes.
+The class 'Performer' has no attributes.
+The class 'bpmn2::UserTask' has the following attributes: 'implementation' of type str.
+The class 'ThrowEvent' has no attributes.
+The class 'bpmn2::Artifact' has no attributes.
+The class 'bpmn2::BusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'bpmn2::SignalEventDefinition' has no attributes.
+The class 'bpmn2::ManualTask' has no attributes.
+The class 'bpmn2::SubChoreography' has no attributes.
+The class 'bpmn2::FormalExpression' has the following attributes: 'language' of type str.
+The class 'bpmn2::ConversationAssociation' has no attributes.
+The class 'bpmn2::ScriptTask' has the following attributes: 'scriptFormat' of type str; 'script' of type str.
+The class 'bpmn2::ResourceRole' has the following attributes: 'name' of type str.
+The class 'bpmn2::DataOutputAssociation' has no attributes.
+The class 'bpmn2::GlobalChoreographyTask' has no attributes.
+The class 'bpmn2::PartnerEntity' has the following attributes: 'name' of type str.
+The class 'bpmn2::EventDefinition' has no attributes.
+The class 'bpmn2::ComplexBehaviorDefinition' has no attributes.
+The class 'ItemAwareElement' has no attributes.
+The class 'bpmn2::Choreography' has no attributes.
+The class 'bpmn2::GlobalTask' has no attributes.
+The class 'bpmn2::LinkEventDefinition' has the following attributes: 'name' of type str.
+The class 'bpmn2::InputOutputBinding' has the following attributes: 'id' of type str.
+The class 'bpmn2::EventBasedGateway' has the following attributes: 'instantiate' of type bool; 'eventGatewayType' of type str.
+The class 'bpmn2::ConversationLink' has the following attributes: 'name' of type str.
+The class 'CallableElement' has no attributes.
+The class 'Task' has no attributes.
+The class 'bpmn2::ImplicitThrowEvent' has no attributes.
+The class 'bpmn2::ReceiveTask' has the following attributes: 'implementation' of type str; 'instantiate' of type bool.
+The class 'bpmn2::Extension' has the following attributes: 'id' of type str; 'mustUnderstand' of type bool.
+The class 'bpmn2::ConversationNode' has the following attributes: 'name' of type str.
+The class 'bpmn2::SequenceFlow' has the following attributes: 'isImmediate' of type bool.
+The class 'bpmn2::EndEvent' has no attributes.
+The class 'bpmn2::ChoreographyActivity' has the following attributes: 'loopType' of type str.
+The class 'bpmn2::Performer' has no attributes.
+The class 'bpmn2::CorrelationProperty' has the following attributes: 'name' of type str.
+The class 'bpmn2::Import' has the following attributes: 'location' of type str; 'id' of type str; 'importType' of type str; 'namespace' of type str.
+The class 'bpmn2::LoopCharacteristics' has no attributes.
+The class 'bpmn2::IntermediateThrowEvent' has no attributes.
+The class 'FlowElement' has no attributes.
+The class 'bpmn2::SubProcess' has the following attributes: 'triggeredByEvent' of type bool.
+The class 'bpmn2::CallActivity' has no attributes.
+The class 'bpmn2::CatchEvent' has the following attributes: 'parallelMultiple' of type bool.
+The class 'ConversationNode' has no attributes.
+The class 'bpmn2::Association' has the following attributes: 'associationDirection' of type str.
+The class 'bpmn2::BPMNDiagram' has no attributes.
+The class 'bpmn2::StandardLoopCharacteristics' has the following attributes: 'testBefore' of type bool.
+The class 'bpmn2::ExtensionAttributeValue' has the following attributes: 'id' of type str.
+The class 'bpmn2::DataInput' has the following attributes: 'isCollection' of type bool; 'name' of type str.
+The class 'Collaboration' has no attributes.
+The class 'bpmn2::Resource' has the following attributes: 'name' of type str.
+The class 'bpmn2::ResourceParameter' has the following attributes: 'isRequired' of type bool; 'name' of type str.
+The class 'bpmn2::CallConversation' has no attributes.
+The class 'bpmn2::Monitoring' has no attributes.
+The class 'bpmn2::ServiceTask' has the following attributes: 'implementation' of type str.
+The class 'bpmn2::Relationship' has the following attributes: 'type' of type str; 'direction' of type str.
+The class 'bpmn2::Escalation' has the following attributes: 'id' of type str; 'name' of type str; 'escalationCode' of type str.
+The class 'bpmn2::Activity' has the following attributes: 'startQuantity' of type int; 'isForCompensation' of type bool; 'completionQuantity' of type int.
+The class 'bpmn2::TerminateEventDefinition' has no attributes.
+The class 'bpmn2::Interface' has the following attributes: 'name' of type str.
+The class 'bpmn2::BaseElement' has the following attributes: 'description' of type str; 'id' of type str.
+The class 'bpmn2::SendTask' has the following attributes: 'implementation' of type str.
+The class 'bpmn2::Message' has the following attributes: 'name' of type str.
+The class 'bpmn2::MessageFlowAssociation' has no attributes.
+The class 'bpmn2::StartEvent' has the following attributes: 'isInterrupting' of type bool.
+The class 'bpmn2::GlobalScriptTask' has the following attributes: 'scriptLanguage' of type str; 'script' of type str.
+The class 'Choreography' has no attributes.
+The class 'bpmn2::TimerEventDefinition' has no attributes.
+The class 'bpmn2::CorrelationPropertyRetrievalExpression' has no attributes.
+The class 'bpmn2::PartnerRole' has the following attributes: 'name' of type str.
+The class 'bpmn2::FlowElement' has the following attributes: 'name' of type str.
+The class 'BaseElement' has no attributes.
+The class 'bpmn2::ParticipantMultiplicity' has the following attributes: 'id' of type str; 'minimum' of type int; 'maximum' of type int.
+The class 'bpmn2::RootElement' has no attributes.
+The class 'bpmn2::CorrelationSubscription' has no attributes.
+The class 'bpmn2::MessageEventDefinition' has no attributes.
+The class 'bpmn2::ItemDefinition' has the following attributes: 'itemKind' of type str; 'isCollection' of type bool.
+The class 'FlowNode' has no attributes.
+The class 'bpmn2::GlobalConversation' has no attributes.
+The class 'bpmn2::CorrelationPropertyBinding' has no attributes.
+The class 'bpmn2::Operation' has the following attributes: 'name' of type str.
+The class 'bpmn2::ComplexGateway' has no attributes.
+The class 'bpmn2::InteractionNode' has no attributes.
+The class 'bpmn2::DataStore' has the following attributes: 'isUnlimited' of type bool; 'name' of type str; 'capacity' of type int.
+The class 'bpmn2::ThrowEvent' has no attributes.
+The class 'bpmn2::ResourceParameterBinding' has the following attributes: 'id' of type str.
+The class 'bpmn2::Signal' has the following attributes: 'name' of type str.
+The class 'bpmn2::OutputSet' has the following attributes: 'name' of type str.
+The class 'bpmn2::DataOutput' has the following attributes: 'isCollection' of type bool; 'name' of type str.
+The class 'bpmn2::ItemAwareElement' has no attributes.
+The class 'bpmn2::Task' has no attributes.
+The class 'bpmn2::SubConversation' has no attributes.
+The class 'bpmn2::DataObjectReference' has no attributes.
+The class 'bpmn2::GlobalBusinessRuleTask' has the following attributes: 'implementation' of type str.
+The class 'bpmn2::InputOutputSpecification' has no attributes.
+The class 'bpmn2::FlowElementsContainer' has no attributes.
+The class 'bpmn2::EscalationEventDefinition' has no attributes.
+The class 'bpmn2::CategoryValue' has the following attributes: 'value' of type str.
+The class 'bpmn2::Collaboration' has the following attributes: 'isClosed' of type bool; 'name' of type str.
+The class 'bpmn2::MessageFlow' has the following attributes: 'name' of type str.
+The class 'bpmn2::InclusiveGateway' has no attributes.
+The class 'bpmn2::DataState' has the following attributes: 'name' of type str.
+The class 'bpmn2::ExtensionDefinition' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'Gateway' has no attributes.
+The class 'bpmn2::DataStoreReference' has no attributes.
+The class 'bpmn2::Auditing' has no attributes.
+The class 'CatchEvent' has no attributes.
+The class 'Activity' has no attributes.
+The class 'Event' has no attributes.
+The enumeration 'AdHocOrdering' has the following literals: 'Sequential', 'Parallel'.
+The enumeration 'ProcessType' has the following literals: 'Private', 'Public', 'None_'.
+The enumeration 'RelationshipDirection' has the following literals: 'Both', 'Backward', 'None_', 'Forward'.
+The enumeration 'ChoreographyLoopType' has the following literals: 'None_', 'MultiInstanceSequential', 'MultiInstanceParallel', 'Standard'.
+The enumeration 'MultiInstanceBehavior' has the following literals: 'Complex', 'None_', 'All', 'One'.
+The enumeration 'GatewayDirection' has the following literals: 'Diverging', 'Mixed', 'Converging', 'Unspecified'.
+The enumeration 'ItemKind' has the following literals: 'Physical', 'Information'.
+The enumeration 'EventBasedGatewayType' has the following literals: 'Exclusive', 'Parallel'.
+The enumeration 'AssociationDirection' has the following literals: 'One', 'Both', 'None_'.
+'bpmn2::CatchEvent' is a specialization of 'Event'.
+'bpmn2::TimerEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::EndEvent' is a specialization of 'ThrowEvent'.
+'bpmn2::DataInputAssociation' is a specialization of 'DataAssociation'.
+'bpmn2::SubChoreography' is a specialization of 'ChoreographyActivity'.
+'bpmn2::Collaboration' is a specialization of 'RootElement'.
+'bpmn2::FlowElement' is a specialization of 'BaseElement'.
+'bpmn2::CallActivity' is a specialization of 'Activity'.
+'bpmn2::GlobalChoreographyTask' is a specialization of 'Choreography'.
+'bpmn2::PotentialOwner' is a specialization of 'HumanPerformer'.
+'bpmn2::Rendering' is a specialization of 'BaseElement'.
+'bpmn2::ReceiveTask' is a specialization of 'Task'.
+'bpmn2::InputOutputSpecification' is a specialization of 'BaseElement'.
+'bpmn2::InclusiveGateway' is a specialization of 'Gateway'.
+'bpmn2::DataOutputAssociation' is a specialization of 'DataAssociation'.
+'bpmn2::Interface' is a specialization of 'RootElement'.
+'bpmn2::DataStoreReference' is a specialization of 'ItemAwareElement'.
+'bpmn2::GlobalTask' is a specialization of 'CallableElement'.
+'bpmn2::MessageFlow' is a specialization of 'BaseElement'.
+'bpmn2::ItemAwareElement' is a specialization of 'BaseElement'.
+'bpmn2::FormalExpression' is a specialization of 'Expression'.
+'bpmn2::DataStore' is a specialization of 'ItemAwareElement'.
+'bpmn2::ConversationNode' is a specialization of 'BaseElement'.
+'bpmn2::ScriptTask' is a specialization of 'Task'.
+'bpmn2::ConversationNode' is a specialization of 'InteractionNode'.
+'bpmn2::ResourceParameter' is a specialization of 'BaseElement'.
+'bpmn2::Artifact' is a specialization of 'BaseElement'.
+'bpmn2::ConditionalEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::TerminateEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::Conversation' is a specialization of 'ConversationNode'.
+'bpmn2::DataObject' is a specialization of 'ItemAwareElement'.
+'bpmn2::Lane' is a specialization of 'BaseElement'.
+'bpmn2::UserTask' is a specialization of 'Task'.
+'bpmn2::DataStoreReference' is a specialization of 'FlowElement'.
+'bpmn2::Participant' is a specialization of 'InteractionNode'.
+'bpmn2::EventBasedGateway' is a specialization of 'Gateway'.
+'bpmn2::DataObject' is a specialization of 'FlowElement'.
+'bpmn2::DataObjectReference' is a specialization of 'ItemAwareElement'.
+'bpmn2::Monitoring' is a specialization of 'BaseElement'.
+'bpmn2::Property' is a specialization of 'ItemAwareElement'.
+'bpmn2::ConversationLink' is a specialization of 'BaseElement'.
+'bpmn2::ManualTask' is a specialization of 'Task'.
+'bpmn2::Task' is a specialization of 'Activity'.
+'bpmn2::PartnerRole' is a specialization of 'RootElement'.
+'bpmn2::Operation' is a specialization of 'BaseElement'.
+'bpmn2::ImplicitThrowEvent' is a specialization of 'ThrowEvent'.
+'bpmn2::SendTask' is a specialization of 'Task'.
+'bpmn2::ConversationAssociation' is a specialization of 'BaseElement'.
+'bpmn2::MultiInstanceLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'bpmn2::DataOutput' is a specialization of 'ItemAwareElement'.
+'bpmn2::SubProcess' is a specialization of 'FlowElementsContainer'.
+'bpmn2::InputSet' is a specialization of 'BaseElement'.
+'bpmn2::CorrelationSubscription' is a specialization of 'BaseElement'.
+'bpmn2::Transaction' is a specialization of 'SubProcess'.
+'bpmn2::ComplexGateway' is a specialization of 'Gateway'.
+'bpmn2::ServiceTask' is a specialization of 'Task'.
+'bpmn2::SubChoreography' is a specialization of 'FlowElementsContainer'.
+'bpmn2::BusinessRuleTask' is a specialization of 'Task'.
+'bpmn2::CorrelationProperty' is a specialization of 'RootElement'.
+'bpmn2::Participant' is a specialization of 'BaseElement'.
+'bpmn2::CallConversation' is a specialization of 'ConversationNode'.
+'bpmn2::OutputSet' is a specialization of 'BaseElement'.
+'bpmn2::GlobalConversation' is a specialization of 'Collaboration'.
+'bpmn2::Activity' is a specialization of 'FlowNode'.
+'bpmn2::EventDefinition' is a specialization of 'RootElement'.
+'bpmn2::SequenceFlow' is a specialization of 'FlowElement'.
+'bpmn2::ChoreographyTask' is a specialization of 'ChoreographyActivity'.
+'bpmn2::RootElement' is a specialization of 'BaseElement'.
+'bpmn2::ErrorEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::ChoreographyActivity' is a specialization of 'FlowNode'.
+'bpmn2::ParticipantAssociation' is a specialization of 'BaseElement'.
+'bpmn2::Event' is a specialization of 'InteractionNode'.
+'bpmn2::CancelEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::ThrowEvent' is a specialization of 'Event'.
+'bpmn2::ResourceRole' is a specialization of 'BaseElement'.
+'bpmn2::LaneSet' is a specialization of 'BaseElement'.
+'bpmn2::GlobalScriptTask' is a specialization of 'GlobalTask'.
+'bpmn2::CorrelationPropertyBinding' is a specialization of 'BaseElement'.
+'bpmn2::Message' is a specialization of 'RootElement'.
+'bpmn2::MessageFlowAssociation' is a specialization of 'BaseElement'.
+'bpmn2::Group' is a specialization of 'Artifact'.
+'bpmn2::Gateway' is a specialization of 'FlowNode'.
+'bpmn2::GlobalUserTask' is a specialization of 'GlobalTask'.
+'bpmn2::DataStore' is a specialization of 'RootElement'.
+'bpmn2::Assignment' is a specialization of 'BaseElement'.
+'bpmn2::FlowElementsContainer' is a specialization of 'BaseElement'.
+'bpmn2::CorrelationKey' is a specialization of 'BaseElement'.
+'bpmn2::Error' is a specialization of 'RootElement'.
+'bpmn2::HumanPerformer' is a specialization of 'Performer'.
+'bpmn2::ExclusiveGateway' is a specialization of 'Gateway'.
+'bpmn2::CallableElement' is a specialization of 'RootElement'.
+'bpmn2::Performer' is a specialization of 'ResourceRole'.
+'bpmn2::Activity' is a specialization of 'InteractionNode'.
+'bpmn2::Relationship' is a specialization of 'BaseElement'.
+'bpmn2::StandardLoopCharacteristics' is a specialization of 'LoopCharacteristics'.
+'bpmn2::EndPoint' is a specialization of 'RootElement'.
+'bpmn2::Choreography' is a specialization of 'Collaboration'.
+'bpmn2::DataState' is a specialization of 'BaseElement'.
+'bpmn2::StartEvent' is a specialization of 'CatchEvent'.
+'bpmn2::FlowNode' is a specialization of 'FlowElement'.
+'bpmn2::ComplexBehaviorDefinition' is a specialization of 'BaseElement'.
+'bpmn2::CompensateEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::Definitions' is a specialization of 'BaseElement'.
+'bpmn2::CategoryValue' is a specialization of 'BaseElement'.
+'bpmn2::TextAnnotation' is a specialization of 'Artifact'.
+'bpmn2::DataObjectReference' is a specialization of 'FlowElement'.
+'bpmn2::ParallelGateway' is a specialization of 'Gateway'.
+'bpmn2::Category' is a specialization of 'RootElement'.
+'bpmn2::Expression' is a specialization of 'BaseElement'.
+'bpmn2::SignalEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::Association' is a specialization of 'Artifact'.
+'bpmn2::SubConversation' is a specialization of 'ConversationNode'.
+'bpmn2::Process' is a specialization of 'FlowElementsContainer'.
+'bpmn2::Signal' is a specialization of 'RootElement'.
+'bpmn2::CallChoreography' is a specialization of 'ChoreographyActivity'.
+'bpmn2::AdHocSubProcess' is a specialization of 'SubProcess'.
+'bpmn2::SubProcess' is a specialization of 'Activity'.
+'bpmn2::IntermediateThrowEvent' is a specialization of 'ThrowEvent'.
+'bpmn2::MessageEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::BoundaryEvent' is a specialization of 'CatchEvent'.
+'bpmn2::Resource' is a specialization of 'RootElement'.
+'bpmn2::GlobalBusinessRuleTask' is a specialization of 'GlobalTask'.
+'bpmn2::Choreography' is a specialization of 'FlowElementsContainer'.
+'bpmn2::LinkEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::Auditing' is a specialization of 'BaseElement'.
+'bpmn2::ItemDefinition' is a specialization of 'RootElement'.
+'bpmn2::Event' is a specialization of 'FlowNode'.
+'bpmn2::CorrelationPropertyRetrievalExpression' is a specialization of 'BaseElement'.
+'bpmn2::Documentation' is a specialization of 'BaseElement'.
+'bpmn2::LoopCharacteristics' is a specialization of 'BaseElement'.
+'bpmn2::Process' is a specialization of 'CallableElement'.
+'bpmn2::IntermediateCatchEvent' is a specialization of 'CatchEvent'.
+'bpmn2::DataAssociation' is a specialization of 'BaseElement'.
+'bpmn2::DataInput' is a specialization of 'ItemAwareElement'.
+'bpmn2::EscalationEventDefinition' is a specialization of 'EventDefinition'.
+'bpmn2::GlobalManualTask' is a specialization of 'GlobalTask'.
+'bpmn2::PartnerEntity' is a specialization of 'RootElement'.
+'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression304', cardinality 0..*) is associated with 'bpmn2::DataAssociation' (role 'bpmn2_DataAssociation', cardinality 0..*).
+'bpmn2::InteractionNode' (role 'targetRef204', cardinality 0..*) is associated with 'bpmn2::ConversationLink' (role 'ConversationLink', cardinality 0..*).
+'bpmn2::ParticipantAssociation' (role 'bpmn2_ParticipantAssociation188', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant189', cardinality 0..*).
+'bpmn2::CorrelationSubscription' (role 'bpmn2_CorrelationSubscription262', cardinality 0..*) is associated with 'bpmn2::CorrelationPropertyBinding' (role 'bpmn2_CorrelationPropertyBinding', cardinality 0..*).
+'bpmn2::ExtensionDefinition' (role 'bpmn2_ExtensionDefinition337', cardinality 0..*) is associated with 'bpmn2::Extension' (role 'bpmn2_Extension', cardinality 0..*).
+'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole123', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process122', cardinality 0..*).
+'bpmn2::ParticipantMultiplicity' (role 'bpmn2_ParticipantMultiplicity', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant197', cardinality 0..*).
+'bpmn2::EscalationEventDefinition' (role 'bpmn2_EscalationEventDefinition', cardinality 0..*) is associated with 'bpmn2::Escalation' (role 'bpmn2_Escalation', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics440', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'bpmn2_DataOutput441', cardinality 0..*).
+'bpmn2::FlowElement' (role 'bpmn2_FlowElement140', cardinality 0..*) is associated with 'bpmn2::Monitoring' (role 'bpmn2_Monitoring141', cardinality 0..*).
+'bpmn2::FlowNode' (role 'FlowNode163', cardinality 0..*) is associated with 'bpmn2::SequenceFlow' (role 'incoming', cardinality 0..*).
+'bpmn2::GlobalTask' (role 'bpmn2_GlobalTask', cardinality 0..*) is associated with 'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole', cardinality 0..*).
+'bpmn2::Import' (role 'bpmn2_Import478', cardinality 0..*) is associated with 'bpmn2::Definitions' (role 'bpmn2_Definitions', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression367', cardinality 0..*) is associated with 'bpmn2::TimerEventDefinition' (role 'bpmn2_TimerEventDefinition366', cardinality 0..*).
+'bpmn2::RootElement' (role 'bpmn2_RootElement', cardinality 0..*) is associated with 'bpmn2::Definitions' (role 'bpmn2_Definitions486', cardinality 0..*).
+'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode230', cardinality 0..*) is associated with 'bpmn2::ConversationAssociation' (role 'bpmn2_ConversationAssociation229', cardinality 0..*).
+'bpmn2::InteractionNode' (role 'sourceRef206', cardinality 0..*) is associated with 'bpmn2::ConversationLink' (role 'ConversationLink207', cardinality 0..*).
+'bpmn2::ParticipantAssociation' (role 'bpmn2_ParticipantAssociation390', cardinality 0..*) is associated with 'bpmn2::CallConversation' (role 'bpmn2_CallConversation389', cardinality 0..*).
+'bpmn2::Artifact' (role 'bpmn2_Artifact427', cardinality 0..*) is associated with 'bpmn2::SubProcess' (role 'bpmn2_SubProcess', cardinality 0..*).
+'bpmn2::Artifact' (role 'bpmn2_Artifact', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process125', cardinality 0..*).
+'bpmn2::BaseElement' (role 'bpmn2_BaseElement5', cardinality 0..*) is associated with 'bpmn2::ExtensionAttributeValue' (role 'bpmn2_ExtensionAttributeValue', cardinality 0..*).
+'bpmn2::StandardLoopCharacteristics' (role 'bpmn2_StandardLoopCharacteristics', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression459', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition37', cardinality 0..*) is associated with 'bpmn2::Error' (role 'bpmn2_Error36', cardinality 0..*).
+'bpmn2::Activity' (role 'bpmn2_Activity277', cardinality 0..*) is associated with 'bpmn2::Property' (role 'bpmn2_Property278', cardinality 0..*).
+'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode392', cardinality 0..*) is associated with 'bpmn2::SubConversation' (role 'bpmn2_SubConversation', cardinality 0..*).
+'bpmn2::Signal' (role 'bpmn2_Signal382', cardinality 0..*) is associated with 'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition383', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'bpmn2_SequenceFlow326', cardinality 0..*) is associated with 'bpmn2::ComplexGateway' (role 'bpmn2_ComplexGateway325', cardinality 0..*).
+'bpmn2::BPMNDiagram' (role 'bpmn2_BPMNDiagram', cardinality 0..*) is associated with 'bpmn2::Definitions' (role 'bpmn2_Definitions488', cardinality 0..*).
+'bpmn2::DataInput' (role 'bpmn2_DataInput348', cardinality 0..*) is associated with 'bpmn2::ThrowEvent' (role 'bpmn2_ThrowEvent347', cardinality 0..*).
+'bpmn2::Category' (role 'bpmn2_Category', cardinality 0..*) is associated with 'bpmn2::CategoryValue' (role 'bpmn2_CategoryValue423', cardinality 0..*).
+'bpmn2::Process' (role 'bpmn2_Process118', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process116', cardinality 0..*).
+'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement309', cardinality 0..*) is associated with 'bpmn2::DataAssociation' (role 'bpmn2_DataAssociation308', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'bpmn2_SequenceFlow330', cardinality 0..*) is associated with 'bpmn2::InclusiveGateway' (role 'bpmn2_InclusiveGateway', cardinality 0..*).
+'bpmn2::LinkEventDefinition' (role 'LinkEventDefinition', cardinality 0..*) is associated with 'bpmn2::LinkEventDefinition' (role 'source', cardinality 0..*).
+'bpmn2::ServiceTask' (role 'bpmn2_ServiceTask', cardinality 0..*) is associated with 'bpmn2::Operation' (role 'bpmn2_Operation425', cardinality 0..*).
+'bpmn2::BaseElement' (role 'bpmn2_BaseElement151', cardinality 0..*) is associated with 'bpmn2::Lane' (role 'bpmn2_Lane150', cardinality 0..*).
+'bpmn2::Event' (role 'bpmn2_Event', cardinality 0..*) is associated with 'bpmn2::Property' (role 'bpmn2_Property302', cardinality 0..*).
+'bpmn2::CorrelationProperty' (role 'bpmn2_CorrelationProperty243', cardinality 0..*) is associated with 'bpmn2::CorrelationPropertyRetrievalExpression' (role 'bpmn2_CorrelationPropertyRetrievalExpression', cardinality 0..*).
+'bpmn2::Lane' (role 'bpmn2_Lane154', cardinality 0..*) is associated with 'bpmn2::BaseElement' (role 'bpmn2_BaseElement155', cardinality 0..*).
+'bpmn2::Collaboration' (role 'bpmn2_Collaboration', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process120', cardinality 0..*).
+'bpmn2::Resource' (role 'bpmn2_Resource99', cardinality 0..*) is associated with 'bpmn2::ResourceParameter' (role 'bpmn2_ResourceParameter', cardinality 0..*).
+'bpmn2::ExtensionDefinition' (role 'bpmn2_ExtensionDefinition', cardinality 0..*) is associated with 'bpmn2::BaseElement' (role 'bpmn2_BaseElement', cardinality 0..*).
+'bpmn2::Auditing' (role 'bpmn2_Auditing', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process', cardinality 0..*).
+'bpmn2::ParticipantAssociation' (role 'bpmn2_ParticipantAssociation', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration172', cardinality 0..*).
+'bpmn2::Process' (role 'bpmn2_Process202', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant201', cardinality 0..*).
+'bpmn2::InteractionNode' (role 'bpmn2_InteractionNode221', cardinality 0..*) is associated with 'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow220', cardinality 0..*).
+'bpmn2::CorrelationProperty' (role 'bpmn2_CorrelationProperty268', cardinality 0..*) is associated with 'bpmn2::CorrelationPropertyBinding' (role 'bpmn2_CorrelationPropertyBinding267', cardinality 0..*).
+'bpmn2::ThrowEvent' (role 'bpmn2_ThrowEvent344', cardinality 0..*) is associated with 'bpmn2::DataInputAssociation' (role 'bpmn2_DataInputAssociation345', cardinality 0..*).
+'bpmn2::SubChoreography' (role 'bpmn2_SubChoreography', cardinality 0..*) is associated with 'bpmn2::Artifact' (role 'bpmn2_Artifact411', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation24', cardinality 0..*) is associated with 'bpmn2::Error' (role 'bpmn2_Error', cardinality 0..*).
+'bpmn2::Assignment' (role 'bpmn2_Assignment', cardinality 0..*) is associated with 'bpmn2::DataAssociation' (role 'bpmn2_DataAssociation306', cardinality 0..*).
+'bpmn2::CompensateEventDefinition' (role 'bpmn2_CompensateEventDefinition', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'bpmn2_Activity359', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'SequenceFlow158', cardinality 0..*) is associated with 'bpmn2::FlowNode' (role 'targetRef', cardinality 0..*).
+'bpmn2::Auditing' (role 'bpmn2_Auditing138', cardinality 0..*) is associated with 'bpmn2::FlowElement' (role 'bpmn2_FlowElement137', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics451', cardinality 0..*) is associated with 'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition452', cardinality 0..*).
+'bpmn2::CatchEvent' (role 'bpmn2_CatchEvent296', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'bpmn2_DataOutput297', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression429', cardinality 0..*).
+'bpmn2::DataOutput' (role 'DataOutput71', cardinality 0..*) is associated with 'bpmn2::OutputSet' (role 'outputSetWithOptional', cardinality 0..*).
+'bpmn2::CorrelationPropertyRetrievalExpression' (role 'bpmn2_CorrelationPropertyRetrievalExpression250', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message251', cardinality 0..*).
+'bpmn2::EndPoint' (role 'bpmn2_EndPoint', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant199', cardinality 0..*).
+'bpmn2::InputSet' (role 'InputSet62', cardinality 0..*) is associated with 'bpmn2::DataInput' (role 'whileExecutingInputRefs', cardinality 0..*).
+'bpmn2::DataObject' (role 'bpmn2_DataObject', cardinality 0..*) is associated with 'bpmn2::DataObjectReference' (role 'bpmn2_DataObjectReference', cardinality 0..*).
+'bpmn2::TimerEventDefinition' (role 'bpmn2_TimerEventDefinition363', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression364', cardinality 0..*).
+'bpmn2::Lane' (role 'bpmn2_Lane147', cardinality 0..*) is associated with 'bpmn2::LaneSet' (role 'bpmn2_LaneSet148', cardinality 0..*).
+'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow213', cardinality 0..*) is associated with 'bpmn2::MessageFlowAssociation' (role 'bpmn2_MessageFlowAssociation212', cardinality 0..*).
+'bpmn2::Extension' (role 'bpmn2_Extension481', cardinality 0..*) is associated with 'bpmn2::Definitions' (role 'bpmn2_Definitions480', cardinality 0..*).
+'bpmn2::DataInput' (role 'optionalInputRefs', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'InputSet', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation91', cardinality 0..*) is associated with 'bpmn2::InputOutputBinding' (role 'bpmn2_InputOutputBinding90', cardinality 0..*).
+'bpmn2::EObject' (role 'bpmn2_EObject27', cardinality 0..*) is associated with 'bpmn2::Operation' (role 'bpmn2_Operation26', cardinality 0..*).
+'bpmn2::CategoryValue' (role 'CategoryValue', cardinality 0..*) is associated with 'bpmn2::FlowElement' (role 'categorizedFlowElements', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics431', cardinality 0..*) is associated with 'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement432', cardinality 0..*).
+'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode232', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant233', cardinality 0..*).
+'bpmn2::EObject' (role 'bpmn2_EObject12', cardinality 0..*) is associated with 'bpmn2::ExtensionAttributeValue' (role 'bpmn2_ExtensionAttributeValue11', cardinality 0..*).
+'bpmn2::ImplicitThrowEvent' (role 'bpmn2_ImplicitThrowEvent', cardinality 0..*) is associated with 'bpmn2::ComplexBehaviorDefinition' (role 'bpmn2_ComplexBehaviorDefinition457', cardinality 0..*).
+'bpmn2::BoundaryEvent' (role 'BoundaryEvent', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'attachedToRef', cardinality 0..*).
+'bpmn2::OutputSet' (role 'OutputSet', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'inputSetRefs59', cardinality 0..*).
+'bpmn2::Resource' (role 'bpmn2_Resource', cardinality 0..*) is associated with 'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole93', cardinality 0..*).
+'bpmn2::Choreography' (role 'bpmn2_Choreography406', cardinality 0..*) is associated with 'bpmn2::CallChoreography' (role 'bpmn2_CallChoreography', cardinality 0..*).
+'bpmn2::CatchEvent' (role 'bpmn2_CatchEvent291', cardinality 0..*) is associated with 'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation21', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message22', cardinality 0..*).
+'bpmn2::Collaboration' (role 'bpmn2_Collaboration176', cardinality 0..*) is associated with 'bpmn2::ConversationAssociation' (role 'bpmn2_ConversationAssociation', cardinality 0..*).
+'bpmn2::DataAssociation' (role 'bpmn2_DataAssociation311', cardinality 0..*) is associated with 'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement312', cardinality 0..*).
+'bpmn2::ParticipantAssociation' (role 'bpmn2_ParticipantAssociation191', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant192', cardinality 0..*).
+'bpmn2::EObject' (role 'bpmn2_EObject332', cardinality 0..*) is associated with 'bpmn2::Relationship' (role 'bpmn2_Relationship', cardinality 0..*).
+'bpmn2::PartnerRole' (role 'bpmn2_PartnerRole', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant396', cardinality 0..*).
+'bpmn2::ResourceParameter' (role 'bpmn2_ResourceParameter101', cardinality 0..*) is associated with 'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition102', cardinality 0..*).
+'bpmn2::ExtensionDefinition' (role 'extensionDefinition', cardinality 0..*) is associated with 'bpmn2::ExtensionAttributeDefinition' (role 'ExtensionAttributeDefinition', cardinality 0..*).
+'bpmn2::SendTask' (role 'bpmn2_SendTask468', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message469', cardinality 0..*).
+'bpmn2::Artifact' (role 'bpmn2_Artifact170', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration169', cardinality 0..*).
+'bpmn2::ComplexBehaviorDefinition' (role 'bpmn2_ComplexBehaviorDefinition454', cardinality 0..*) is associated with 'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression455', cardinality 0..*).
+'bpmn2::DataInput' (role 'DataInput', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'inputSetRefs', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message29', cardinality 0..*).
+'bpmn2::ChoreographyActivity' (role 'bpmn2_ChoreographyActivity403', cardinality 0..*) is associated with 'bpmn2::CorrelationKey' (role 'bpmn2_CorrelationKey404', cardinality 0..*).
+'bpmn2::Association' (role 'bpmn2_Association', cardinality 0..*) is associated with 'bpmn2::BaseElement' (role 'bpmn2_BaseElement418', cardinality 0..*).
+'bpmn2::Choreography' (role 'bpmn2_Choreography', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration167', cardinality 0..*).
+'bpmn2::DataInputAssociation' (role 'bpmn2_DataInputAssociation', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'bpmn2_Activity284', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation466', cardinality 0..*) is associated with 'bpmn2::SendTask' (role 'bpmn2_SendTask', cardinality 0..*).
+'bpmn2::CorrelationProperty' (role 'bpmn2_CorrelationProperty', cardinality 0..*) is associated with 'bpmn2::CorrelationKey' (role 'bpmn2_CorrelationKey241', cardinality 0..*).
+'bpmn2::DataOutput' (role 'dataOutputRefs', cardinality 0..*) is associated with 'bpmn2::OutputSet' (role 'OutputSet82', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition246', cardinality 0..*) is associated with 'bpmn2::CorrelationProperty' (role 'bpmn2_CorrelationProperty245', cardinality 0..*).
+'bpmn2::InputSet' (role 'bpmn2_InputSet339', cardinality 0..*) is associated with 'bpmn2::ThrowEvent' (role 'bpmn2_ThrowEvent', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics448', cardinality 0..*) is associated with 'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition449', cardinality 0..*).
+'bpmn2::CallableElement' (role 'bpmn2_CallableElement44', cardinality 0..*) is associated with 'bpmn2::InputOutputBinding' (role 'bpmn2_InputOutputBinding', cardinality 0..*).
+'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification46', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'bpmn2_InputSet', cardinality 0..*).
+'bpmn2::OutputSet' (role 'outputSetWithWhileExecuting', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'DataOutput73', cardinality 0..*).
+'bpmn2::DataOutput' (role 'DataOutput', cardinality 0..*) is associated with 'bpmn2::OutputSet' (role 'outputSetRefs', cardinality 0..*).
+'bpmn2::Import' (role 'bpmn2_Import', cardinality 0..*) is associated with 'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition34', cardinality 0..*).
+'bpmn2::Assignment' (role 'bpmn2_Assignment314', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression315', cardinality 0..*).
+'bpmn2::Process' (role 'bpmn2_Process127', cardinality 0..*) is associated with 'bpmn2::CorrelationSubscription' (role 'bpmn2_CorrelationSubscription', cardinality 0..*).
+'bpmn2::ComplexBehaviorDefinition' (role 'bpmn2_ComplexBehaviorDefinition', cardinality 0..*) is associated with 'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics446', cardinality 0..*).
+'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole272', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'bpmn2_Activity271', cardinality 0..*).
+'bpmn2::Process' (role 'bpmn2_Process115', cardinality 0..*) is associated with 'bpmn2::Property' (role 'bpmn2_Property', cardinality 0..*).
+'bpmn2::CallableElement' (role 'bpmn2_CallableElement41', cardinality 0..*) is associated with 'bpmn2::Interface' (role 'bpmn2_Interface42', cardinality 0..*).
+'bpmn2::InputOutputBinding' (role 'bpmn2_InputOutputBinding84', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'bpmn2_InputSet85', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression', cardinality 0..*) is associated with 'bpmn2::ResourceParameterBinding' (role 'bpmn2_ResourceParameterBinding104', cardinality 0..*).
+'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration184', cardinality 0..*).
+'bpmn2::DataState' (role 'bpmn2_DataState', cardinality 0..*) is associated with 'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement68', cardinality 0..*).
+'bpmn2::ResourceParameterBinding' (role 'bpmn2_ResourceParameterBinding106', cardinality 0..*) is associated with 'bpmn2::ResourceParameter' (role 'bpmn2_ResourceParameter107', cardinality 0..*).
+'bpmn2::LaneSet' (role 'bpmn2_LaneSet', cardinality 0..*) is associated with 'bpmn2::FlowElementsContainer' (role 'bpmn2_FlowElementsContainer135', cardinality 0..*).
+'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode227', cardinality 0..*) is associated with 'bpmn2::ConversationAssociation' (role 'bpmn2_ConversationAssociation226', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition357', cardinality 0..*) is associated with 'bpmn2::Escalation' (role 'bpmn2_Escalation356', cardinality 0..*).
+'bpmn2::ChoreographyTask' (role 'bpmn2_ChoreographyTask', cardinality 0..*) is associated with 'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow413', cardinality 0..*).
+'bpmn2::ConversationLink' (role 'bpmn2_ConversationLink', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration186', cardinality 0..*).
+'bpmn2::Definitions' (role 'bpmn2_Definitions483', cardinality 0..*) is associated with 'bpmn2::Relationship' (role 'bpmn2_Relationship484', cardinality 0..*).
+'bpmn2::Process' (role 'Process', cardinality 0..*) is associated with 'bpmn2::Process' (role 'decomposes', cardinality 0..*).
+'bpmn2::DataInput' (role 'DataInput57', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'inputSetWithWhileExecuting', cardinality 0..*).
+'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration180', cardinality 0..*).
+'bpmn2::FlowNode' (role 'FlowNode', cardinality 0..*) is associated with 'bpmn2::Lane' (role 'lanes', cardinality 0..*).
+'bpmn2::Collaboration' (role 'bpmn2_Collaboration387', cardinality 0..*) is associated with 'bpmn2::CallConversation' (role 'bpmn2_CallConversation', cardinality 0..*).
+'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification52', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'bpmn2_DataOutput', cardinality 0..*).
+'bpmn2::MessageFlowAssociation' (role 'bpmn2_MessageFlowAssociation', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration174', cardinality 0..*).
+'bpmn2::CorrelationKey' (role 'bpmn2_CorrelationKey', cardinality 0..*) is associated with 'bpmn2::Collaboration' (role 'bpmn2_Collaboration182', cardinality 0..*).
+'bpmn2::CorrelationPropertyRetrievalExpression' (role 'bpmn2_CorrelationPropertyRetrievalExpression248', cardinality 0..*) is associated with 'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression', cardinality 0..*).
+'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics434', cardinality 0..*) is associated with 'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement435', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition66', cardinality 0..*) is associated with 'bpmn2::ItemAwareElement' (role 'bpmn2_ItemAwareElement', cardinality 0..*).
+'bpmn2::Activity' (role 'bpmn2_Activity', cardinality 0..*) is associated with 'bpmn2::LoopCharacteristics' (role 'bpmn2_LoopCharacteristics', cardinality 0..*).
+'bpmn2::LinkEventDefinition' (role 'target', cardinality 0..*) is associated with 'bpmn2::LinkEventDefinition' (role 'LinkEventDefinition372', cardinality 0..*).
+'bpmn2::OutputSet' (role 'bpmn2_OutputSet289', cardinality 0..*) is associated with 'bpmn2::CatchEvent' (role 'bpmn2_CatchEvent', cardinality 0..*).
+'bpmn2::GlobalUserTask' (role 'bpmn2_GlobalUserTask', cardinality 0..*) is associated with 'bpmn2::Rendering' (role 'bpmn2_Rendering321', cardinality 0..*).
+'bpmn2::MessageEventDefinition' (role 'bpmn2_MessageEventDefinition', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message374', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'bpmn2_SequenceFlow', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression161', cardinality 0..*).
+'bpmn2::MessageFlowAssociation' (role 'bpmn2_MessageFlowAssociation215', cardinality 0..*) is associated with 'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow216', cardinality 0..*).
+'bpmn2::OutputSet' (role 'OutputSet80', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'whileExecutingOutputRefs', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation377', cardinality 0..*) is associated with 'bpmn2::MessageEventDefinition' (role 'bpmn2_MessageEventDefinition376', cardinality 0..*).
+'bpmn2::Signal' (role 'bpmn2_Signal', cardinality 0..*) is associated with 'bpmn2::SignalEventDefinition' (role 'bpmn2_SignalEventDefinition', cardinality 0..*).
+'bpmn2::ExtensionAttributeValue' (role 'bpmn2_ExtensionAttributeValue17', cardinality 0..*) is associated with 'bpmn2::ExtensionAttributeDefinition' (role 'bpmn2_ExtensionAttributeDefinition', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression476', cardinality 0..*) is associated with 'bpmn2::AdHocSubProcess' (role 'bpmn2_AdHocSubProcess', cardinality 0..*).
+'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification50', cardinality 0..*) is associated with 'bpmn2::DataInput' (role 'bpmn2_DataInput', cardinality 0..*).
+'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression253', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject254', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression379', cardinality 0..*) is associated with 'bpmn2::ConditionalEventDefinition' (role 'bpmn2_ConditionalEventDefinition', cardinality 0..*).
+'bpmn2::TimerEventDefinition' (role 'bpmn2_TimerEventDefinition', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression361', cardinality 0..*).
+'bpmn2::InputSet' (role 'InputSet64', cardinality 0..*) is associated with 'bpmn2::DataInput' (role 'dataInputRefs', cardinality 0..*).
+'bpmn2::ChoreographyActivity' (role 'bpmn2_ChoreographyActivity', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant398', cardinality 0..*).
+'bpmn2::Participant' (role 'bpmn2_Participant415', cardinality 0..*) is associated with 'bpmn2::GlobalChoreographyTask' (role 'bpmn2_GlobalChoreographyTask', cardinality 0..*).
+'bpmn2::Group' (role 'bpmn2_Group', cardinality 0..*) is associated with 'bpmn2::CategoryValue' (role 'bpmn2_CategoryValue', cardinality 0..*).
+'bpmn2::Documentation' (role 'bpmn2_Documentation', cardinality 0..*) is associated with 'bpmn2::BaseElement' (role 'bpmn2_BaseElement7', cardinality 0..*).
+'bpmn2::ExtensionDefinition' (role 'ExtensionDefinition', cardinality 0..*) is associated with 'bpmn2::ExtensionAttributeDefinition' (role 'extensionAttributeDefinitions', cardinality 0..*).
+'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole97', cardinality 0..*) is associated with 'bpmn2::ResourceAssignmentExpression' (role 'bpmn2_ResourceAssignmentExpression', cardinality 0..*).
+'bpmn2::Lane' (role 'bpmn2_Lane', cardinality 0..*) is associated with 'bpmn2::LaneSet' (role 'bpmn2_LaneSet145', cardinality 0..*).
+'bpmn2::ExclusiveGateway' (role 'bpmn2_ExclusiveGateway', cardinality 0..*) is associated with 'bpmn2::SequenceFlow' (role 'bpmn2_SequenceFlow328', cardinality 0..*).
+'bpmn2::ResourceParameterBinding' (role 'bpmn2_ResourceParameterBinding', cardinality 0..*) is associated with 'bpmn2::ResourceRole' (role 'bpmn2_ResourceRole95', cardinality 0..*).
+'bpmn2::Operation' (role 'bpmn2_Operation471', cardinality 0..*) is associated with 'bpmn2::ReceiveTask' (role 'bpmn2_ReceiveTask', cardinality 0..*).
+'bpmn2::Participant' (role 'bpmn2_Participant401', cardinality 0..*) is associated with 'bpmn2::ChoreographyActivity' (role 'bpmn2_ChoreographyActivity400', cardinality 0..*).
+'bpmn2::Monitoring' (role 'bpmn2_Monitoring', cardinality 0..*) is associated with 'bpmn2::Process' (role 'bpmn2_Process113', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression318', cardinality 0..*) is associated with 'bpmn2::Assignment' (role 'bpmn2_Assignment317', cardinality 0..*).
+'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition300', cardinality 0..*) is associated with 'bpmn2::CatchEvent' (role 'bpmn2_CatchEvent299', cardinality 0..*).
+'bpmn2::StandardLoopCharacteristics' (role 'bpmn2_StandardLoopCharacteristics461', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression462', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition257', cardinality 0..*) is associated with 'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression256', cardinality 0..*).
+'bpmn2::DataInput' (role 'bpmn2_DataInput438', cardinality 0..*) is associated with 'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics437', cardinality 0..*).
+'bpmn2::Collaboration' (role 'bpmn2_Collaboration178', cardinality 0..*) is associated with 'bpmn2::Participant' (role 'bpmn2_Participant', cardinality 0..*).
+'bpmn2::ExtensionAttributeValue' (role 'bpmn2_ExtensionAttributeValue14', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject15', cardinality 0..*).
+'bpmn2::DataStoreReference' (role 'bpmn2_DataStoreReference', cardinality 0..*) is associated with 'bpmn2::DataStore' (role 'bpmn2_DataStore', cardinality 0..*).
+'bpmn2::OutputSet' (role 'OutputSet78', cardinality 0..*) is associated with 'bpmn2::DataOutput' (role 'optionalOutputRefs', cardinality 0..*).
+'bpmn2::Message' (role 'bpmn2_Message224', cardinality 0..*) is associated with 'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow223', cardinality 0..*).
+'bpmn2::ParticipantAssociation' (role 'bpmn2_ParticipantAssociation409', cardinality 0..*) is associated with 'bpmn2::CallChoreography' (role 'bpmn2_CallChoreography408', cardinality 0..*).
+'bpmn2::Activity' (role 'bpmn2_Activity286', cardinality 0..*) is associated with 'bpmn2::DataOutputAssociation' (role 'bpmn2_DataOutputAssociation', cardinality 0..*).
+'bpmn2::CallableElement' (role 'bpmn2_CallableElement464', cardinality 0..*) is associated with 'bpmn2::CallActivity' (role 'bpmn2_CallActivity', cardinality 0..*).
+'bpmn2::DataInput' (role 'DataInput55', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'inputSetWithOptional', cardinality 0..*).
+'bpmn2::OutputSet' (role 'outputSetRefs75', cardinality 0..*) is associated with 'bpmn2::InputSet' (role 'InputSet76', cardinality 0..*).
+'bpmn2::InteractionNode' (role 'bpmn2_InteractionNode', cardinality 0..*) is associated with 'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow218', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'bpmn2_SequenceFlow275', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'bpmn2_Activity274', cardinality 0..*).
+'bpmn2::DataOutputAssociation' (role 'bpmn2_DataOutputAssociation294', cardinality 0..*) is associated with 'bpmn2::CatchEvent' (role 'bpmn2_CatchEvent293', cardinality 0..*).
+'bpmn2::EObject' (role 'bpmn2_EObject', cardinality 0..*) is associated with 'bpmn2::Interface' (role 'bpmn2_Interface2', cardinality 0..*).
+'bpmn2::CategoryValue' (role 'categoryValueRef', cardinality 0..*) is associated with 'bpmn2::FlowElement' (role 'FlowElement', cardinality 0..*).
+'bpmn2::Interface' (role 'bpmn2_Interface', cardinality 0..*) is associated with 'bpmn2::Operation' (role 'bpmn2_Operation', cardinality 0..*).
+'bpmn2::ThrowEvent' (role 'bpmn2_ThrowEvent341', cardinality 0..*) is associated with 'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition342', cardinality 0..*).
+'bpmn2::Error' (role 'bpmn2_Error353', cardinality 0..*) is associated with 'bpmn2::ErrorEventDefinition' (role 'bpmn2_ErrorEventDefinition', cardinality 0..*).
+'bpmn2::ConversationLink' (role 'outgoingConversationLinks', cardinality 0..*) is associated with 'bpmn2::InteractionNode' (role 'InteractionNode', cardinality 0..*).
+'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification48', cardinality 0..*) is associated with 'bpmn2::OutputSet' (role 'bpmn2_OutputSet', cardinality 0..*).
+'bpmn2::EventDefinition' (role 'bpmn2_EventDefinition351', cardinality 0..*) is associated with 'bpmn2::ThrowEvent' (role 'bpmn2_ThrowEvent350', cardinality 0..*).
+'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification', cardinality 0..*) is associated with 'bpmn2::CallableElement' (role 'bpmn2_CallableElement', cardinality 0..*).
+'bpmn2::CorrelationSubscription' (role 'bpmn2_CorrelationSubscription259', cardinality 0..*) is associated with 'bpmn2::CorrelationKey' (role 'bpmn2_CorrelationKey260', cardinality 0..*).
+'bpmn2::BoundaryEvent' (role 'boundaryEventRefs', cardinality 0..*) is associated with 'bpmn2::Activity' (role 'Activity', cardinality 0..*).
+'bpmn2::FormalExpression' (role 'bpmn2_FormalExpression265', cardinality 0..*) is associated with 'bpmn2::CorrelationPropertyBinding' (role 'bpmn2_CorrelationPropertyBinding264', cardinality 0..*).
+'bpmn2::Relationship' (role 'bpmn2_Relationship334', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject335', cardinality 0..*).
+'bpmn2::ReceiveTask' (role 'bpmn2_ReceiveTask473', cardinality 0..*) is associated with 'bpmn2::Message' (role 'bpmn2_Message474', cardinality 0..*).
+'bpmn2::InputOutputBinding' (role 'bpmn2_InputOutputBinding87', cardinality 0..*) is associated with 'bpmn2::OutputSet' (role 'bpmn2_OutputSet88', cardinality 0..*).
+'bpmn2::FlowElement' (role 'bpmn2_FlowElement', cardinality 0..*) is associated with 'bpmn2::FlowElementsContainer' (role 'bpmn2_FlowElementsContainer', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'outgoing', cardinality 0..*) is associated with 'bpmn2::FlowNode' (role 'FlowNode165', cardinality 0..*).
+'bpmn2::Rendering' (role 'bpmn2_Rendering', cardinality 0..*) is associated with 'bpmn2::UserTask' (role 'bpmn2_UserTask', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression444', cardinality 0..*) is associated with 'bpmn2::MultiInstanceLoopCharacteristics' (role 'bpmn2_MultiInstanceLoopCharacteristics443', cardinality 0..*).
+'bpmn2::Lane' (role 'Lane', cardinality 0..*) is associated with 'bpmn2::FlowNode' (role 'flowNodeRefs', cardinality 0..*).
+'bpmn2::SequenceFlow' (role 'SequenceFlow', cardinality 0..*) is associated with 'bpmn2::FlowNode' (role 'sourceRef', cardinality 0..*).
+'bpmn2::CorrelationKey' (role 'bpmn2_CorrelationKey239', cardinality 0..*) is associated with 'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode238', cardinality 0..*).
+'bpmn2::InteractionNode' (role 'InteractionNode210', cardinality 0..*) is associated with 'bpmn2::ConversationLink' (role 'incomingConversationLinks', cardinality 0..*).
+'bpmn2::Activity' (role 'bpmn2_Activity280', cardinality 0..*) is associated with 'bpmn2::InputOutputSpecification' (role 'bpmn2_InputOutputSpecification281', cardinality 0..*).
+'bpmn2::ComplexGateway' (role 'bpmn2_ComplexGateway', cardinality 0..*) is associated with 'bpmn2::Expression' (role 'bpmn2_Expression323', cardinality 0..*).
+'bpmn2::MessageFlow' (role 'bpmn2_MessageFlow236', cardinality 0..*) is associated with 'bpmn2::ConversationNode' (role 'bpmn2_ConversationNode235', cardinality 0..*).
+'bpmn2::ItemDefinition' (role 'bpmn2_ItemDefinition31', cardinality 0..*) is associated with 'bpmn2::EObject' (role 'bpmn2_EObject32', cardinality 0..*).
+'bpmn2::Participant' (role 'bpmn2_Participant194', cardinality 0..*) is associated with 'bpmn2::Interface' (role 'bpmn2_Interface195', cardinality 0..*).
+'bpmn2::Association' (role 'bpmn2_Association420', cardinality 0..*) is associated with 'bpmn2::BaseElement' (role 'bpmn2_BaseElement421', cardinality 0..*).
+'bpmn2::Expression' (role 'bpmn2_Expression110', cardinality 0..*) is associated with 'bpmn2::ResourceAssignmentExpression' (role 'bpmn2_ResourceAssignmentExpression109', cardinality 0..*).
+'bpmn2::Participant' (role 'bpmn2_Participant394', cardinality 0..*) is associated with 'bpmn2::PartnerEntity' (role 'bpmn2_PartnerEntity', cardinality 0..*).
+'bpmn2::Message' (role 'bpmn2_Message', cardinality 0..*) is associated with 'bpmn2::Operation' (role 'bpmn2_Operation19', cardinality 0..*).
+'bpmn2::Process' (role 'decomposedBy', cardinality 0..*) is associated with 'bpmn2::Process' (role 'Process132', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'root::nestedPackage1::NestedClass1' has no attributes.
+The class 'root::noLiterals::NoLitClass' has the following attributes: 'attribute2' of type str.
+The class 'root::RootClass' has the following attributes: 'attribute1' of type str.
+The class 'NestedClass1' has no attributes.
+The enumeration 'NoLitEnum' has the following literals: 'literal'.
+The enumeration 'RootEnum' has the following literals: 'literal'.
+'root::noLiterals::NoLitClass' (role 'root_noLiterals_NoLitClass', cardinality 0..*) is associated with 'NestedClass1' (role 'NestedClass12', cardinality 0..*).
+'root::RootClass' (role 'root_RootClass', cardinality 0..*) is associated with 'NestedClass1' (role 'NestedClass1', cardinality 0..*).

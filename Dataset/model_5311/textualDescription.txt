@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'TypeB::BStringElement' has the following attributes: 'stringValue' of type str.
+The class 'TypeB::BDoubleElement' has the following attributes: 'doubleValue' of type float.

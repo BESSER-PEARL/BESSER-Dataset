@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'logo::Instruction' has no attributes.
+The class 'logo::Forward' has the following attributes: 'steps' of type int.
+The class 'logo::Right' has the following attributes: 'angle' of type int.
+The class 'logo::ProcDeclaration' has the following attributes: 'name' of type str.
+The class 'logo::Parameter' has the following attributes: 'name' of type str.
+The class 'logo::LogoProgram' has no attributes.
+The class 'logo::Left' has the following attributes: 'angle' of type int.
+The class 'Instruction' has no attributes.
+The class 'logo::ProcCall' has the following attributes: 'actualArgs' of type int.
+'logo::Forward' is a specialization of 'Instruction'.
+'logo::ProcDeclaration' is a specialization of 'Instruction'.
+'logo::Left' is a specialization of 'Instruction'.
+'logo::Right' is a specialization of 'Instruction'.
+'logo::ProcCall' is a specialization of 'Instruction'.
+'logo::ProcDeclaration' (role 'logo_ProcDeclaration', cardinality 0..*) is associated with 'logo::Parameter' (role 'logo_Parameter', cardinality 0..*).
+'logo::ProcDeclaration' (role 'logo_ProcDeclaration6', cardinality 0..*) is associated with 'logo::ProcCall' (role 'logo_ProcCall', cardinality 0..*).
+'logo::Instruction' (role 'logo_Instruction', cardinality 0..*) is associated with 'logo::LogoProgram' (role 'logo_LogoProgram', cardinality 0..*).
+'logo::ProcDeclaration' (role 'logo_ProcDeclaration3', cardinality 0..*) is associated with 'logo::Instruction' (role 'logo_Instruction4', cardinality 0..*).

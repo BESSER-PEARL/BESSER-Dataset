@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'myDsl::Define' has no attributes.
+The class 'myDsl::Greeting' has the following attributes: 'value' of type int.
+The class 'Greeting' has no attributes.
+The class 'myDsl::Selecao' has no attributes.
+The class 'myDsl::Expressao' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+'myDsl::Expressao' is a specialization of 'Greeting'.
+'myDsl::Define' is a specialization of 'Greeting'.
+'myDsl::Selecao' is a specialization of 'Greeting'.
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*).
+'myDsl::Selecao' (role 'myDsl_Selecao', cardinality 0..*) is associated with 'myDsl::Define' (role 'myDsl_Define', cardinality 0..*).
+'myDsl::Greeting' (role 'myDsl_Greeting2', cardinality 0..*) is associated with 'myDsl::Expressao' (role 'myDsl_Expressao', cardinality 0..*).

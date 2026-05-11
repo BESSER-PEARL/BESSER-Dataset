@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'bug1312::B' has no attributes.
+The class 'bug1312::Root' has no attributes.
+The class 'bug1312::C' has no attributes.
+'bug1312::C' (role 'bug1312_C', cardinality 0..*) is associated with 'bug1312::Root' (role 'bug1312_Root2', cardinality 0..*).
+'bug1312::B' (role 'bug1312_B', cardinality 0..*) is associated with 'bug1312::Root' (role 'bug1312_Root', cardinality 0..*).

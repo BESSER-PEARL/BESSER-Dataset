@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'SimpleUML::NamedElement' has the following attributes: 'name' of type str.
+The class 'SimpleUML::Class' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'SimpleUML::Package' has no attributes.
+The class 'SimpleUML::Property' has the following attributes: 'primitiveType' of type str; 'isContainment' of type bool.
+'SimpleUML::Property' is a specialization of 'NamedElement'.
+'SimpleUML::Class' is a specialization of 'NamedElement'.
+'SimpleUML::Package' is a specialization of 'NamedElement'.
+'SimpleUML::Property' (role 'SimpleUML_Property5', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'SimpleUML_Class6', cardinality 0..*).
+'SimpleUML::Class' (role 'SimpleUML_Class3', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'SimpleUML_Class1', cardinality 0..*).
+'SimpleUML::Property' (role 'SimpleUML_Property', cardinality 0..*) is associated with 'SimpleUML::Class' (role 'SimpleUML_Class', cardinality 0..*).
+'SimpleUML::Class' (role 'SimpleUML_Class8', cardinality 0..*) is associated with 'SimpleUML::Package' (role 'SimpleUML_Package', cardinality 0..*).

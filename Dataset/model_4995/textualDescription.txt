@@ -1,0 +1,129 @@
+The model has 53 class(es).
+The class 'simulink::TruthTable' has no attributes.
+The class 'simulink::Vertex' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'StateflowElement' has no attributes.
+The class 'simulink::InPort' has no attributes.
+The class 'simulink::Action' has the following attributes: 'statement' of type str.
+The class 'Reference' has no attributes.
+The class 'simulink::Connection' has no attributes.
+The class 'simulink::OutPortBlock' has no attributes.
+The class 'simulink::BlockReference' has no attributes.
+The class 'simulink::SimulinkModel' has the following attributes: 'isLibrary' of type bool; 'file' of type str.
+The class 'simulink::OutPort' has no attributes.
+The class 'simulink::Chart' has the following attributes: 'decomposition' of type str.
+The class 'simulink::Port' has the following attributes: 'portNumber' of type int; 'dataType' of type str.
+The class 'simulink::PortBlock' has the following attributes: 'portNumber' of type int.
+The class 'simulink::CompositeStateflowElement' has no attributes.
+The class 'Data' has no attributes.
+The class 'simulink::Reference' has no attributes.
+The class 'simulink::InPortBlock' has no attributes.
+The class 'OutPort' has no attributes.
+The class 'simulink::ActionTable' has no attributes.
+The class 'simulink::Block' has no attributes.
+The class 'simulink::SFWGuard' has the following attributes: 'statement' of type str.
+The class 'simulink::Decision' has the following attributes: 'id' of type int; 'actionReference' of type str.
+The class 'simulink::SFWTrigger' has the following attributes: 'statement' of type str.
+The class 'simulink::TruthTableChart' has no attributes.
+The class 'ContainableStateflowElement' has no attributes.
+The class 'simulink::ActionEntry' has the following attributes: 'actionReference' of type str; 'description' of type str; 'actionStatement' of type str.
+The class 'simulink::ConditionTable' has no attributes.
+The class 'simulink::OutputData' has no attributes.
+The class 'simulink::DecisionEntry' has the following attributes: 'conditionOutcome' of type str.
+The class 'TruthTable' has no attributes.
+The class 'CompositeStateflowElement' has no attributes.
+The class 'simulink::ModelReference' has the following attributes: 'modelName' of type str.
+The class 'simulink::Data' has no attributes.
+The class 'SubSystem' has no attributes.
+The class 'simulink::Transition' has the following attributes: 'isDefaultTransition' of type bool; 'executionOrder' of type int.
+The class 'simulink::Function' has the following attributes: 'signature' of type str.
+The class 'simulink::ContainableTruthTable' has no attributes.
+The class 'simulink::InputData' has no attributes.
+The class 'Port' has no attributes.
+The class 'simulink::LocalData' has the following attributes: 'dataType' of type str.
+The class 'Block' has no attributes.
+The class 'simulink::SimulinkElement' has the following attributes: 'handle' of type str; 'name' of type str.
+The class 'simulink::Junction' has no attributes.
+The class 'simulink::Condition' has the following attributes: 'description' of type str; 'statement' of type str.
+The class 'simulink::State' has the following attributes: 'decomposition' of type str; 'executionOrder' of type int.
+The class 'SimulinkElement' has no attributes.
+The class 'PortBlock' has no attributes.
+The class 'simulink::StateflowElement' has the following attributes: 'id' of type int; 'path' of type str.
+The class 'simulink::SubSystem' has no attributes.
+The class 'simulink::ContainableStateflowElement' has no attributes.
+The class 'InPort' has no attributes.
+The enumeration 'DecompositionType' has the following literals: 'EXCLUSIVE_OR', 'PARALLEL_AND'.
+'simulink::BlockReference' is a specialization of 'Reference'.
+'simulink::Chart' is a specialization of 'CompositeStateflowElement'.
+'simulink::Reference' is a specialization of 'SubSystem'.
+'simulink::CompositeStateflowElement' is a specialization of 'StateflowElement'.
+'simulink::SubSystem' is a specialization of 'Block'.
+'simulink::Data' is a specialization of 'ContainableStateflowElement'.
+'simulink::StateflowElement' is a specialization of 'SimulinkElement'.
+'simulink::Function' is a specialization of 'CompositeStateflowElement'.
+'simulink::InPort' is a specialization of 'Port'.
+'simulink::Block' is a specialization of 'SimulinkElement'.
+'simulink::SimulinkModel' is a specialization of 'SubSystem'.
+'simulink::State' is a specialization of 'CompositeStateflowElement'.
+'simulink::Vertex' is a specialization of 'ContainableStateflowElement'.
+'simulink::Connection' is a specialization of 'SimulinkElement'.
+'simulink::Port' is a specialization of 'SimulinkElement'.
+'simulink::ContainableTruthTable' is a specialization of 'TruthTable'.
+'simulink::Chart' is a specialization of 'Block'.
+'simulink::InputData' is a specialization of 'Data'.
+'simulink::TruthTableChart' is a specialization of 'Block'.
+'simulink::OutPortBlock' is a specialization of 'PortBlock'.
+'simulink::InPortBlock' is a specialization of 'PortBlock'.
+'simulink::LocalData' is a specialization of 'Data'.
+'simulink::TruthTable' is a specialization of 'StateflowElement'.
+'simulink::Transition' is a specialization of 'ContainableStateflowElement'.
+'simulink::TruthTableChart' is a specialization of 'TruthTable'.
+'simulink::ContainableTruthTable' is a specialization of 'ContainableStateflowElement'.
+'simulink::Junction' is a specialization of 'Vertex'.
+'simulink::OutputData' is a specialization of 'Data'.
+'simulink::Function' is a specialization of 'ContainableStateflowElement'.
+'simulink::PortBlock' is a specialization of 'Block'.
+'simulink::InputData' is a specialization of 'InPort'.
+'simulink::ModelReference' is a specialization of 'Reference'.
+'simulink::State' is a specialization of 'Vertex'.
+'simulink::OutPort' is a specialization of 'Port'.
+'simulink::ContainableStateflowElement' is a specialization of 'StateflowElement'.
+'simulink::OutputData' is a specialization of 'OutPort'.
+'simulink::Block' (role 'simulink_Block', cardinality 0..*) is associated with 'simulink::Reference' (role 'simulink_Reference', cardinality 0..*).
+'simulink::Action' (role 'entryActions', cardinality 0..*) is associated with 'simulink::State' (role 'State', cardinality 0..*).
+'simulink::Action' (role 'Action29', cardinality 0..*) is associated with 'simulink::Transition' (role 'transition28', cardinality 0..*).
+'simulink::Action' (role 'Action22', cardinality 0..*) is associated with 'simulink::State' (role 'stateExit', cardinality 0..*).
+'simulink::Decision' (role 'simulink_Decision', cardinality 0..*) is associated with 'simulink::ConditionTable' (role 'simulink_ConditionTable50', cardinality 0..*).
+'simulink::OutPort' (role 'OutPort', cardinality 0..*) is associated with 'simulink::Connection' (role 'connection', cardinality 0..*).
+'simulink::Action' (role 'Action20', cardinality 0..*) is associated with 'simulink::State' (role 'stateDuring', cardinality 0..*).
+'simulink::Port' (role 'Port', cardinality 0..*) is associated with 'simulink::Block' (role 'block', cardinality 0..*).
+'simulink::CompositeStateflowElement' (role 'parent42', cardinality 0..*) is associated with 'simulink::ContainableStateflowElement' (role 'ContainableStateflowElement', cardinality 0..*).
+'simulink::ConditionTable' (role 'simulink_ConditionTable', cardinality 0..*) is associated with 'simulink::TruthTable' (role 'simulink_TruthTable', cardinality 0..*).
+'simulink::DecisionEntry' (role 'simulink_DecisionEntry', cardinality 0..*) is associated with 'simulink::Decision' (role 'simulink_Decision56', cardinality 0..*).
+'simulink::SFWGuard' (role 'SFWGuard', cardinality 0..*) is associated with 'simulink::Transition' (role 'transition', cardinality 0..*).
+'simulink::OutPort' (role 'from_', cardinality 0..*) is associated with 'simulink::Connection' (role 'Connection6', cardinality 0..*).
+'simulink::SubSystem' (role 'simulink_SubSystem', cardinality 0..*) is associated with 'simulink::Connection' (role 'simulink_Connection', cardinality 0..*).
+'simulink::Transition' (role 'transition31', cardinality 0..*) is associated with 'simulink::SFWTrigger' (role 'SFWTrigger', cardinality 0..*).
+'simulink::Transition' (role 'Transition', cardinality 0..*) is associated with 'simulink::Vertex' (role 'destination', cardinality 0..*).
+'simulink::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'simulink::Transition' (role 'outgoingTransitions', cardinality 0..*).
+'simulink::Condition' (role 'simulink_Condition', cardinality 0..*) is associated with 'simulink::ConditionTable' (role 'simulink_ConditionTable52', cardinality 0..*).
+'simulink::ActionTable' (role 'simulink_ActionTable54', cardinality 0..*) is associated with 'simulink::ActionEntry' (role 'simulink_ActionEntry', cardinality 0..*).
+'simulink::InPort' (role 'to', cardinality 0..*) is associated with 'simulink::Connection' (role 'Connection', cardinality 0..*).
+'simulink::DecisionEntry' (role 'simulink_DecisionEntry58', cardinality 0..*) is associated with 'simulink::Condition' (role 'simulink_Condition59', cardinality 0..*).
+'simulink::PortBlock' (role 'PortBlock', cardinality 0..*) is associated with 'simulink::Port' (role 'port', cardinality 0..*).
+'simulink::Block' (role 'Block8', cardinality 0..*) is associated with 'simulink::SubSystem' (role 'parent', cardinality 0..*).
+'simulink::Transition' (role 'incomingTransitions', cardinality 0..*) is associated with 'simulink::Vertex' (role 'Vertex25', cardinality 0..*).
+'simulink::CompositeStateflowElement' (role 'CompositeStateflowElement', cardinality 0..*) is associated with 'simulink::ContainableStateflowElement' (role 'children', cardinality 0..*).
+'simulink::Action' (role 'duringActions', cardinality 0..*) is associated with 'simulink::State' (role 'State38', cardinality 0..*).
+'simulink::State' (role 'State40', cardinality 0..*) is associated with 'simulink::Action' (role 'exitActions', cardinality 0..*).
+'simulink::Transition' (role 'Transition61', cardinality 0..*) is associated with 'simulink::SFWTrigger' (role 'trigger', cardinality 0..*).
+'simulink::Block' (role 'Block', cardinality 0..*) is associated with 'simulink::Port' (role 'ownedPorts', cardinality 0..*).
+'simulink::TruthTable' (role 'simulink_TruthTable48', cardinality 0..*) is associated with 'simulink::Data' (role 'simulink_Data', cardinality 0..*).
+'simulink::State' (role 'stateEntry', cardinality 0..*) is associated with 'simulink::Action' (role 'Action', cardinality 0..*).
+'simulink::Port' (role 'Port11', cardinality 0..*) is associated with 'simulink::PortBlock' (role 'portBlock', cardinality 0..*).
+'simulink::Vertex' (role 'source', cardinality 0..*) is associated with 'simulink::Transition' (role 'Transition17', cardinality 0..*).
+'simulink::InPort' (role 'InPort', cardinality 0..*) is associated with 'simulink::Connection' (role 'connection14', cardinality 0..*).
+'simulink::SubSystem' (role 'SubSystem', cardinality 0..*) is associated with 'simulink::Block' (role 'subBlocks', cardinality 0..*).
+'simulink::Transition' (role 'Transition35', cardinality 0..*) is associated with 'simulink::Action' (role 'triggeredActions', cardinality 0..*).
+'simulink::SFWGuard' (role 'guard', cardinality 0..*) is associated with 'simulink::Transition' (role 'Transition33', cardinality 0..*).
+'simulink::TruthTable' (role 'simulink_TruthTable46', cardinality 0..*) is associated with 'simulink::ActionTable' (role 'simulink_ActionTable', cardinality 0..*).

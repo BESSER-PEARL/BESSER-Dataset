@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'BaseContaineeB' has no attributes.
+The class 'MetamodelInheritance2::BaseContaineeC' has no attributes.
+The class 'MetamodelInheritance2::ChildA' has no attributes.
+The class 'MetamodelInheritance2::ChildContaineeD' has no attributes.
+The class 'MetamodelInheritance2::ChildB' has no attributes.
+The class 'BaseContaineeA' has no attributes.
+'MetamodelInheritance2::ChildA' is a specialization of 'BaseContaineeA'.
+'MetamodelInheritance2::ChildB' is a specialization of 'BaseContaineeB'.
+'MetamodelInheritance2::ChildB' (role 'MetamodelInheritance2_ChildB', cardinality 0..*) is associated with 'MetamodelInheritance2::ChildA' (role 'MetamodelInheritance2_ChildA', cardinality 0..*).
+'MetamodelInheritance2::ChildA' (role 'MetamodelInheritance2_ChildA4', cardinality 0..*) is associated with 'MetamodelInheritance2::BaseContaineeC' (role 'MetamodelInheritance2_BaseContaineeC', cardinality 0..*).
+'MetamodelInheritance2::ChildA' (role 'MetamodelInheritance2_ChildA2', cardinality 0..*) is associated with 'MetamodelInheritance2::ChildContaineeD' (role 'MetamodelInheritance2_ChildContaineeD', cardinality 0..*).
+'MetamodelInheritance2::ChildB' (role 'MetamodelInheritance2_ChildB6', cardinality 0..*) is associated with 'MetamodelInheritance2::ChildA' (role 'MetamodelInheritance2_ChildA7', cardinality 0..*).
+'MetamodelInheritance2::ChildContaineeD' (role 'MetamodelInheritance2_ChildContaineeD10', cardinality 0..*) is associated with 'MetamodelInheritance2::ChildB' (role 'MetamodelInheritance2_ChildB9', cardinality 0..*).

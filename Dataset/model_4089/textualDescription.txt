@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'Behavior::Transition' has no attributes.
+The class 'Behavior::System' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Behavior::Component' has no attributes.
+The class 'Behavior::State' has no attributes.
+The class 'Behavior::NamedElement' has the following attributes: 'name' of type str.
+The class 'Behavior::Event' has no attributes.
+'Behavior::Transition' is a specialization of 'NamedElement'.
+'Behavior::Component' is a specialization of 'NamedElement'.
+'Behavior::State' is a specialization of 'NamedElement'.
+'Behavior::System' is a specialization of 'NamedElement'.
+'Behavior::Event' is a specialization of 'NamedElement'.
+'Behavior::Component' (role 'Behavior_Component6', cardinality 0..*) is associated with 'Behavior::Transition' (role 'Behavior_Transition', cardinality 0..*).
+'Behavior::Transition' (role 'Behavior_Transition17', cardinality 0..*) is associated with 'Behavior::State' (role 'Behavior_State18', cardinality 0..*).
+'Behavior::Event' (role 'Behavior_Event24', cardinality 0..*) is associated with 'Behavior::Transition' (role 'Behavior_Transition23', cardinality 0..*).
+'Behavior::System' (role 'Behavior_System2', cardinality 0..*) is associated with 'Behavior::Event' (role 'Behavior_Event', cardinality 0..*).
+'Behavior::Component' (role 'Behavior_Component4', cardinality 0..*) is associated with 'Behavior::State' (role 'Behavior_State', cardinality 0..*).
+'Behavior::Component' (role 'Behavior_Component8', cardinality 0..*) is associated with 'Behavior::State' (role 'Behavior_State9', cardinality 0..*).
+'Behavior::Transition' (role 'Behavior_Transition14', cardinality 0..*) is associated with 'Behavior::State' (role 'Behavior_State15', cardinality 0..*).
+'Behavior::Transition' (role 'Behavior_Transition20', cardinality 0..*) is associated with 'Behavior::Event' (role 'Behavior_Event21', cardinality 0..*).
+'Behavior::Transition' (role 'Behavior_Transition11', cardinality 0..*) is associated with 'Behavior::State' (role 'Behavior_State12', cardinality 0..*).
+'Behavior::Component' (role 'Behavior_Component', cardinality 0..*) is associated with 'Behavior::System' (role 'Behavior_System', cardinality 0..*).

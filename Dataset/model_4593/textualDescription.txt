@@ -1,0 +1,34 @@
+The model has 18 class(es).
+The class 'minuml2::ActivityFinalNode' has no attributes.
+The class 'minuml2::ObjectFlow' has no attributes.
+The class 'minuml2::DecisionNode' has no attributes.
+The class 'minuml2::ForkNode' has no attributes.
+The class 'minuml2::Activity' has no attributes.
+The class 'minuml2::JoinNode' has no attributes.
+The class 'minuml2::ControlFlow' has no attributes.
+The class 'minuml2::ActivityPartition' has no attributes.
+The class 'ActivityGroup' has no attributes.
+The class 'minuml2::ActivityEdge' has no attributes.
+The class 'minuml2::OpaqueExpression' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'minuml2::ActivityNode' has no attributes.
+The class 'minuml2::ActivityGroup' has no attributes.
+The class 'minuml2::OpaqueAction' has no attributes.
+The class 'minuml2::ValueSpecification' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The class 'ActivityNode' has no attributes.
+'minuml2::JoinNode' is a specialization of 'ActivityNode'.
+'minuml2::ControlFlow' is a specialization of 'ActivityEdge'.
+'minuml2::ActivityPartition' is a specialization of 'ActivityGroup'.
+'minuml2::ObjectFlow' is a specialization of 'ActivityEdge'.
+'minuml2::OpaqueAction' is a specialization of 'ActivityNode'.
+'minuml2::ForkNode' is a specialization of 'ActivityNode'.
+'minuml2::OpaqueExpression' is a specialization of 'ValueSpecification'.
+'minuml2::DecisionNode' is a specialization of 'ActivityNode'.
+'minuml2::ActivityFinalNode' is a specialization of 'ActivityNode'.
+'minuml2::Activity' (role 'minuml2_Activity2', cardinality 0..*) is associated with 'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge', cardinality 0..*).
+'minuml2::Activity' (role 'minuml2_Activity', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'minuml2_ActivityNode', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge9', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'minuml2_ActivityNode10', cardinality 0..*).
+'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge6', cardinality 0..*) is associated with 'minuml2::ActivityNode' (role 'minuml2_ActivityNode7', cardinality 0..*).
+'minuml2::Activity' (role 'minuml2_Activity4', cardinality 0..*) is associated with 'minuml2::ActivityGroup' (role 'minuml2_ActivityGroup', cardinality 0..*).
+'minuml2::ValueSpecification' (role 'minuml2_ValueSpecification', cardinality 0..*) is associated with 'minuml2::ActivityEdge' (role 'minuml2_ActivityEdge12', cardinality 0..*).

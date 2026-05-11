@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'myDsl::Greeting' has the following attributes: 'name' of type str.
+'myDsl::Greeting' (role 'myDsl_Greeting', cardinality 0..*) is associated with 'myDsl::Greeting' (role 'myDsl_Greeting0', cardinality 0..*).

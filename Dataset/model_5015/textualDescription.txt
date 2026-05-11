@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'Address' has no attributes.
+The class 'extendedPO2::Supplier' has the following attributes: 'name' of type str.
+The class 'extendedPO2::USAddress' has the following attributes: 'street' of type str; 'zip' of type int; 'state' of type str; 'city' of type str.
+The class 'extendedPO2::Address' has the following attributes: 'name' of type str; 'country' of type str.
+The class 'extendedPO2::Customer' has the following attributes: 'customerID' of type int.
+The class 'extendedPO2::PurchaseOrder' has the following attributes: 'comment' of type str; 'totalAmount' of type int; 'status' of type str; 'orderDate' of type str.
+The class 'extendedPO2::Item' has the following attributes: 'productName' of type str; 'partNum' of type str; 'USPrice' of type int; 'shipDate' of type str; 'comment' of type str; 'quantity' of type int.
+The class 'extendedPO2::GlobalAddress' has the following attributes: 'location' of type str.
+The enumeration 'OrderStatus' has the following literals: 'Complete', 'BackOrder', 'Pending'.
+'extendedPO2::GlobalAddress' is a specialization of 'Address'.
+'extendedPO2::USAddress' is a specialization of 'Address'.
+'extendedPO2::Item' (role 'items', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'PurchaseOrder', cardinality 0..*).
+'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder3', cardinality 0..*) is associated with 'extendedPO2::Address' (role 'extendedPO2_Address4', cardinality 0..*).
+'extendedPO2::PurchaseOrder' (role 'orders', cardinality 0..*) is associated with 'extendedPO2::Customer' (role 'Customer', cardinality 0..*).
+'extendedPO2::Address' (role 'extendedPO2_Address', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder', cardinality 0..*).
+'extendedPO2::Customer' (role 'customer', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'PurchaseOrder11', cardinality 0..*).
+'extendedPO2::Supplier' (role 'extendedPO2_Supplier15', cardinality 0..*) is associated with 'extendedPO2::Customer' (role 'extendedPO2_Customer', cardinality 0..*).
+'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder18', cardinality 0..*) is associated with 'extendedPO2::Supplier' (role 'extendedPO2_Supplier17', cardinality 0..*).
+'extendedPO2::Item' (role 'Item', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'order', cardinality 0..*).
+'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder13', cardinality 0..*) is associated with 'extendedPO2::Supplier' (role 'extendedPO2_Supplier', cardinality 0..*).
+'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder5', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder7', cardinality 0..*).
+'extendedPO2::Supplier' (role 'extendedPO2_Supplier20', cardinality 0..*) is associated with 'extendedPO2::PurchaseOrder' (role 'extendedPO2_PurchaseOrder21', cardinality 0..*).
